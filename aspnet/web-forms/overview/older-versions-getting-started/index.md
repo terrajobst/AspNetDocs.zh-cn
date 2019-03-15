@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/index
 title: 较旧版本的 Web 窗体入门 |Microsoft Docs
 author: rick-anderson
-description: 有关 ASP.NET Web 窗体 4 及更早版本的文档。
+description: 有关 ASP.NET Web 窗体 4 及更早版本的教程。
 ms.author: riande
 ms.date: 10/18/2014
 ms.assetid: e03585c2-80bf-4083-99ba-9fcbc883ccd8
@@ -11,7 +11,7 @@ msc.type: chapter
 ---
 <a name="older-versions---web-forms-getting-started"></a>较旧版本的 Web 窗体入门
 ====================
-> 有关 ASP.NET Web 窗体 4 及更早版本的文档。
+> 有关 ASP.NET Web 窗体 4 及更早版本的教程。
 
 
 - [ASP.NET 4 - Tailspin Spyworks](tailspin-spyworks/index.md)
