@@ -8,24 +8,24 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: c18911680b59448cd67190f71e951a3fcf3d0478
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 85e4369ee458043eec59fb27e317d18466f61f32
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044124"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422527"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验：One ASP.NET：集 ASP.NET Web 窗体、MVC 和 Web API 于一身
 ====================
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
-[下载 Web 训练营培训工具包](http://aka.ms/webcamps-training-kit)
+[下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
 
 > ASP.NET 是一个用于构建网站、 应用和服务使用专用的技术，如 MVC、 Web API 以及其他框架。 ASP.NET 自创建以来看到与展开并表示需要具有集成这些技术，在向工作已最新的工作**One ASP.NET**。
 > 
 > Visual Studio 2013 引入了新的统一的项目系统可让您构建的应用程序和一个项目中使用所有的 ASP.NET 技术。 此功能消除了需要的项目并坚持，开始时选择一种技术，而是鼓励使用一个项目中的多个 ASP.NET 框架。
 > 
-> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>

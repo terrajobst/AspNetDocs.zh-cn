@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: e8e0809b-25c4-4c3b-8d12-9a17048148ae
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4212b7bff41d76eaef18d638cf28441b50061159
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd66affc6ceab864ca753287f484a37c7671f20f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024624"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423047"
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>分页 DataList 或 Repeater 控件中的报表数据 (C#)
 ====================
@@ -127,7 +127,7 @@ ms.locfileid: "57024624"
 
 必须在回发之间记住的页索引和页大小值。 它们可以存储在视图状态、 持久保存到在查询字符串、 会话变量中存储或记住使用某些其他方法。 对于本教程中，我们将使用查询字符串，这样做的好处是允许要设置为书签的数据的特定页面。
 
-具体而言，使用的查询字符串字段 pageIndex 和的 pageSize`pageIndex`和`pageSize`参数，分别 （请参阅图 7）。 请花费片刻时间来设置这些参数的默认值，如赢得 t 的查询字符串值时必须存在的用户首次访问此页。 有关`pageIndex`，默认值设置为 0 （这将显示数据的第一页） 和`pageSize`的默认值为 4。
+具体而言，使用的查询字符串字段 pageIndex 和的 pageSize`pageIndex`和`pageSize`参数，分别 （请参阅图 7）。 因为查询字符串值不会出现在用户首次访问此页时，请花费片刻时间来设置这些参数的默认值。 有关`pageIndex`，默认值设置为 0 （这将显示数据的第一页） 和`pageSize`的默认值为 4。
 
 
 [![使用查询字符串作为源的 pageIndex 和 pageSize 参数](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 5236695e-5c70-4887-baee-0bfb0afb3448
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad716222335e8b6f2484953296cc263119718105
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4bbe5c120a6f17a7dca08e6fc855018a2e23797
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055324"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421955"
 ---
 <a name="filling-a-list-using-cascadingdropdown-vb"></a>使用 CascadingDropDown 填充列表 (VB)
 ====================
@@ -54,7 +54,7 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 
 [!code-vb[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample4.vb)]
 
-因此重要的方面是该方法需要返回类型的数组`CascadingDropDownNameValue`（由 ASP.NET AJAX 控件工具包定义）。 在中`CascadingDropDownNameValue`构造函数，首先必须提供的列表项的文本，然后其值，就像`<option value="VALUE">NAME</option>`像在 HTML 中。 下面是一些示例数据：
+因此重要的方面是该方法需要返回类型的数组`CascadingDropDownNameValue`（由 ASP.NET AJAX 控件工具包定义）。 在中`CascadingDropDownNameValue`构造函数中，首先必须提供的列表项的文本，然后其值，就像`<option value="VALUE">NAME</option>`像在 HTML 中。 下面是一些示例数据：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample5.aspx)]
 

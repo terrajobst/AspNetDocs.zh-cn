@@ -8,12 +8,12 @@ ms.date: 03/08/2013
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
-ms.openlocfilehash: a3e8b42cdadf99df6971a278834b1429e129ce72
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a3021f166262ee953b0cbe9ea88762a385925b88
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041184"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423095"
 ---
 <a name="breezeangular-template"></a>Breeze/Angular 模板
 ====================
@@ -89,7 +89,7 @@ Breeze/Angular SPA 模板上是一种变体[KnockoutJS SPA 模板](../introducti
 
 验证逻辑是通过 Breeze 的执行的客户端。 服务器模型类上的验证特性是传播到客户端，并自动执行之前客户端与服务器联系。
 
-查看网络流量。 请注意，Breeze 检测到错误时，已连接到服务器的任何调用。 每个有效的更改时为"/ api/Todo/SaveChanges"的 POST 请求。 Breeze 捆绑包所做的更改并将其发送到一起以单个请求到 Web API 控制器`SaveChanges`方法。 这就是不同于 KockoutJS SPA 模板，这使得 PUT、 POST 和 DELETE 分别为每个项的请求。
+查看网络流量。 请注意，Breeze 检测到错误时，已连接到服务器的任何调用。 每个有效的更改时为"/ api/Todo/SaveChanges"的 POST 请求。 Breeze 捆绑包所做的更改并将其发送到一起以单个请求到 Web API 控制器`SaveChanges`方法。 这就是不同于 KnockoutJS SPA 模板，这使得 PUT、 POST 和 DELETE 分别为每个项的请求。
 
 此外，请注意没有任何网络流量时切换之间任务列表和有关页。 这是因为查询被限定到本地缓存中变得轻而易举。
 
@@ -107,7 +107,7 @@ UI 体系结构支持在控制器中的演示文稿代码区分开来的视图�
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-KockoutJS SPA 模板相同的基本体系结构。 但是，实现是要简单得多：已删除 Dto，并且已到 Breeze.NET 委派大多数实体框架的详细信息。
+KnockoutJS SPA 模板相同的基本体系结构。 但是，实现是要简单得多：已删除 Dto，并且已到 Breeze.NET 委派大多数实体框架的详细信息。
 
 ## <a name="next-steps"></a>后续步骤
 

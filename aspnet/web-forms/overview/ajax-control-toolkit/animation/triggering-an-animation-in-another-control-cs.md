@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ad6dfecf71a7577215e43222a8788e5c48d0c4c2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6216f24e497936245280f337477b287ff2afb080
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041464"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421383"
 ---
 <a name="triggering-an-animation-in-another-control-c"></a>触发另一控件的动画 (C#)
 ====================
@@ -54,7 +54,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample6.aspx)]
 
-请注意特殊单个动画的显示的顺序。 首先，在动画运行后，获取停用按钮。 由于没有任何`AnimationTarget`属性中`<EnableAction>`元素，此动画应用于原始控件: 按钮。 接下来两个动画步骤应执行 parallelly (`<Parallel>`元素)。 两者都具有其`AnimationTarget`属性设置为`"Panel1"`，因此对面板中，而不是按钮进行动画处理。
+请注意特殊单个动画的显示的顺序。 首先，在动画运行后，获取停用按钮。 由于没有任何`AnimationTarget`属性中`<EnableAction>`元素，此动画应用于原始控件: 按钮。 接下来两个动画步骤应执行以并行 (`<Parallel>`元素)。 两者都具有其`AnimationTarget`属性设置为`"Panel1"`，因此对面板中，而不是按钮进行动画处理。
 
 
 [![按钮上的鼠标单击启动面板动画](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)

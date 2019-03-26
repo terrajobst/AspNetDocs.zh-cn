@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 92c70297-4430-4e4e-919a-9c2333a8d09a
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: be6ddbdfbe8da33871355c2a7917a7ce7008d81b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a319e2eb71da1bf693b1bd14ae368c844e7daeb1
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054864"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440256"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>迭代 4 – 使应用程序松散耦合 (VB)
 ====================
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 
 当松散耦合应用程序时，但是，您可以进行更改的一部分应用程序无需接触应用程序的其他部分。 例如，您可以切换数据访问技术而无需修改你验证或控制器的逻辑。
 
-在此迭代中，我们将充分利用，我们可以重构我们的联系人管理器应用程序更松散耦合的应用程序的多个软件设计模式。 我们完成时结束-赢得 t 联系人管理器执行任何操作，它并没有未这样做之前。 但是，我们将能够将应用程序在将来更轻松地更改。
+在此迭代中，我们将充分利用，我们可以重构我们的联系人管理器应用程序更松散耦合的应用程序的多个软件设计模式。 完成后，联系人管理器结束-赢得 t 执行它未执行此操作之前的任何内容。 但是，我们将能够将应用程序在将来更轻松地更改。
 
 > [!NOTE] 
 > 
@@ -165,7 +165,7 @@ IContactManagerService 接口包含在列表 5 中。
 
 但是，我们的服务层需要能够将验证错误消息传递回控制器层。 如何才能使服务层进行通信而无需联系在一起的控制器和服务层验证错误消息？ 我们可以利用名为软件设计模式[Decorator 模式](http://en.wikipedia.org/wiki/Decorator_pattern)。
 
-在控制器使用名为 ModelState ModelStateDictionary 来表示验证错误。 因此，你可能想要将 ModelState 从控制器层传递到服务层。 但是，在服务层中使用 ModelState 将使您的服务层依赖于 ASP.NET MVC framework 的一项功能。 这会十分严重，因为某一天，可能想要使用的服务层与 WPF 应用程序而不是 ASP.NET MVC 应用程序。 在这种情况下，对 t 想要引用 ASP.NET MVC 框架使用 ModelStateDictionary 类。
+在控制器使用名为 ModelState ModelStateDictionary 来表示验证错误。 因此，你可能想要将 ModelState 从控制器层传递到服务层。 但是，在服务层中使用 ModelState 将使您的服务层依赖于 ASP.NET MVC framework 的一项功能。 这会十分严重，因为某一天，可能想要使用的服务层与 WPF 应用程序而不是 ASP.NET MVC 应用程序。 在这种情况下，你不想要引用 ASP.NET MVC 框架使用 ModelStateDictionary 类。
 
 修饰器模式使您能够以实现接口的新类中包装现有的类。 我们的联系人管理器项目中包括列表 7 中包含的 ModelStateWrapper 类。 ModelStateWrapper 类在代码清单 8 中实现该接口。
 

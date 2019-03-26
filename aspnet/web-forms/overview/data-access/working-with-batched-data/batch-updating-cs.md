@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: 4e849bcc-c557-4bc3-937e-f7453ee87265
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c878056273ea821e4dd4481fa1b6f7690f22b285
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 27c043ff64b80dfbe05795c20bb1e71723f93c75
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062474"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421565"
 ---
 <a name="batch-updating-c"></a>批量更新 (C#)
 ====================
@@ -241,7 +241,7 @@ ms.locfileid: "57062474"
 
 每个行`ProductID`获取从`DataKeys`集合和相应`ProductsRow`从选择`ProductsDataTable`。 四个 TemplateField 输入的控件以编程方式进行引用，而它们的值分配给`ProductsRow`实例 s 属性。 在每个 GridView 后行的值已用于更新`ProductsDataTable`，它传递给 BLL s`UpdateWithTransaction`方法，正如我们看到在上一教程中，只是调用向下 DAL 的`UpdateWithTransaction`方法。
 
-本教程使用的批处理更新算法更新中的每一行`ProductsDataTable`GridView，无论是否已更改产品的信息中的行相对应。 而此类 blind 更新计划运行 t 通常性能问题，它们可能会导致多余记录如果您重新审核更改为数据库表。 回到[执行批处理更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md)教程，我们探讨了使用 DataList 更新接口一批，并添加了代码，只会更新实际已由用户修改这些记录。 可使用从技术[执行批处理更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md)更新代码，在本教程中，如果所需的。
+本教程使用的批处理更新算法更新中的每一行`ProductsDataTable`GridView，无论是否已更改产品的信息中的行相对应。 虽然这种盲更新通常并不性能问题，它们可能会导致多余记录如果您重新审核更改为数据库表。 回到[执行批处理更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md)教程，我们探讨了使用 DataList 更新接口一批，并添加了代码，只会更新实际已由用户修改这些记录。 可使用从技术[执行批处理更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md)更新代码，在本教程中，如果所需的。
 
 > [!NOTE]
 > 当数据源绑定到 GridView 通过其智能标记，Visual Studio 会自动向数据源 s 主值 GridView 的`DataKeyNames`属性。 如果您未绑定 ObjectDataSource 到 GridView s 智能标记通过 GridView 步骤 1 中所述，则将需要手动设置 GridView s`DataKeyNames`属性设置为产品 id 才能访问`ProductID`通过每一行的值`DataKeys`集合。
@@ -269,7 +269,7 @@ ms.locfileid: "57062474"
 
 `BatchMethodAlternate` 首先创建一个新的空`ProductsDataTable`名为`products`。 然后，它通过 GridView s 的步骤`Rows`集合并为每一行获取特定产品信息使用 BLL 的`GetProductByProductID(productID)`方法。 检索到`ProductsRow`实例具有相同的方式更新其属性`BatchUpdate`，但更新导入的行后`products``ProductsDataTable`通过 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx)。
 
-之后`foreach`循环完成后，`products`包含一个`ProductsRow`GridView 中的每一行的实例。 由于每个`ProductsRow`已添加到实例`products`（而不是已更新），如果我们会盲目地将其传递给`UpdateWithTransaction`方法`ProductsTableAdatper`将尝试将每个记录插入数据库。 相反，我们需要指定这些行的每个已修改了 （未添加）。
+之后`foreach`循环完成后，`products`包含一个`ProductsRow`GridView 中的每一行的实例。 由于每个`ProductsRow`已添加到实例`products`（而不是已更新），如果我们会盲目地将其传递给`UpdateWithTransaction`方法`ProductsTableAdapter`将尝试将每个记录插入数据库。 相反，我们需要指定这些行的每个已修改了 （未添加）。
 
 这可以通过将新方法添加到名为 BLL `UpdateProductsWithTransaction`。 `UpdateProductsWithTransaction`如下所示的设置`RowState`的每个`ProductsRow`实例中`ProductsDataTable`到`Modified`，然后将传递`ProductsDataTable`为 DAL 的`UpdateWithTransaction`方法。
 

@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 7ad0ec27021514b447e569e479a9e9127e3f75fa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fc533fb3673639769ecdfa8b3d02ff40133cb27
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037644"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421618"
 ---
 <a name="part-3-creating-an-admin-controller"></a>第 3 部分：创建管理员控制器
 ====================
@@ -95,7 +95,7 @@ Entity Framework 有一个不错的功能，你可以在启动时，在数据库
 
 此时，我们还没有编写任何客户端代码，但你可以调用的 web API 使用 web 浏览器或 HTTP 调试工具如[Fiddler](http://www.fiddler2.com/fiddler2/)。 在 Visual Studio 中，按 F5 启动调试。 在 web 浏览器将打开到`http://localhost:*portnum*/`，其中*portnum*是某些端口号。
 
-发送到 HTTP 请求"`http://localhost:*portnum*/api/admin`。 第一个请求可能完成，速度慢，因为 Entify Framework 需要创建和设置数据库的种子。 响应应类似于下面：
+发送到 HTTP 请求"`http://localhost:*portnum*/api/admin`。 因为实体框架需要创建和设置数据库的种子速度可能较慢，若要完成，第一个请求。 响应应类似于下面：
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 

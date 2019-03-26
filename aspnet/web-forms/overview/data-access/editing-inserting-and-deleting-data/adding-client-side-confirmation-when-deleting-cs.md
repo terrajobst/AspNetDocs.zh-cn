@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: f6e2a12a-2b5e-48fd-8db3-1e94a500c19a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b8cca6ece2eb008170192dc1774a6f88c1b37a21
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a3e35e7b27d646569692a2eb715dcf40b7967473
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034824"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423190"
 ---
 <a name="adding-client-side-confirmation-when-deleting-c"></a>删除时添加客户端确认 (C#)
 ====================
@@ -38,7 +38,7 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 **图 1**:JavaScript`confirm(string)`方法显示一个模式，客户端的消息框
 
 
-在窗体提交，如果值为`false`返回，则从客户端事件处理程序已取消提交窗体。 使用此功能，我们可以让删除按钮的客户端`onclick`事件处理程序返回的值对的调用`confirm("Are you sure you want to delete this product?")`。 如果用户单击取消，`confirm(string)`将返回 false，从而导致取消提交窗体。 无回发时，删除结束-赢得 t 的删除按钮被单击的产品。 如果，但是，用户单击确定确认对话框中的，回发将继续减弱，将删除该产品。 请查阅[使用 JavaScript s`confirm()`方法控制窗体提交到](http://www.webreference.com/programming/javascript/confirm/)有关此技术的详细信息。
+在窗体提交，如果值为`false`返回，则从客户端事件处理程序已取消提交窗体。 使用此功能，我们可以让删除按钮的客户端`onclick`事件处理程序返回的值对的调用`confirm("Are you sure you want to delete this product?")`。 如果用户单击取消，`confirm(string)`将返回 false，从而导致取消提交窗体。 无回发时，不会删除其删除按钮被单击的产品。 如果，但是，用户单击确定确认对话框中的，回发将继续减弱，将删除该产品。 请查阅[使用 JavaScript s`confirm()`方法控制窗体提交到](http://www.webreference.com/programming/javascript/confirm/)有关此技术的详细信息。
 
 会稍有添加所需的客户端脚本不同，如果使用的模板与使用 CommandField 相比。 因此，在本教程中我们将看 FormView 和 GridView 示例。
 

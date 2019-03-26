@@ -2,24 +2,24 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 title: 在使用 ASP.NET Web API OData v4 中打开类型 |Microsoft Docs
 author: microsoft
-description: OData v4 中开放类型是包含动态属性，除了在类型定义中声明的任何属性的 stuctured 类型。 打开...
+description: OData v4 中开放类型是结构化的类型，其中包含动态属性，除了在类型定义中声明的任何属性。 打开...
 ms.author: riande
 ms.date: 09/15/2014
 ms.assetid: f25f5ac5-4800-4950-abe5-c97750a27fc6
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 77771d85532b8b622c2ad4ca219a38990e474c9c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f901e5efc38e5cda6eb606b6bc1ecfe7dea3599c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042584"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423424"
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>在使用 ASP.NET Web API OData v4 中打开类型
 ====================
 by [Microsoft](https://github.com/microsoft)
 
-> 在 OData v4*打开类型*是 stuctured 类型，其中包含动态属性，除了在类型定义中声明的任何属性。 开放类型，可以添加到数据模型的灵活性。 本教程演示如何在 ASP.NET Web API OData 中使用开放类型。
+> 在 OData v4*打开类型*是结构化的类型，其中包含动态属性，除了在类型定义中声明的任何属性。 开放类型，可以添加到数据模型的灵活性。 本教程演示如何在 ASP.NET Web API OData 中使用开放类型。
 > 
 > 本教程假定您已经知道如何在 ASP.NET Web API 中创建 OData 终结点。 如果不是，应首先阅读[创建 OData v4 终结点](create-an-odata-v4-endpoint.md)第一个。
 > 

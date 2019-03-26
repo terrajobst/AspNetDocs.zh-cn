@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 5d9a2999-fcc4-4c45-a018-271fddf74a3b
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 5819d789f31b9452d40ae3aa7f821f101ae126ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c0cfd4f900c88f953cf7004a987bc267a1e1b4a2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049474"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422028"
 ---
 <a name="adding-validation-to-the-model"></a>向模型添加验证
 ====================
@@ -55,7 +55,7 @@ ASP.NET MVC 的核心设计原则之一是 DRY (&quot;不要自我重复&quot;)�
 
 [!code-console[Main](adding-validation-to-the-model/samples/sample3.cmd)]
 
-此命令完成后，Visual Studio 会打开定义新的类文件`DbMIgration`派生类指定的名称 (*AddDataAnnotationsMig*)，然后在`Up`方法您可以看到更新的代码架构的约束。 `Title`并`Genre`字段不再可以为 null （即，您必须输入一个值） 和`Rating`字段具有最大长度为 5。
+此命令完成后，Visual Studio 会打开定义新的类文件`DbMigration`派生类指定的名称 (*AddDataAnnotationsMig*)，然后在`Up`方法您可以看到更新的代码架构的约束。 `Title`并`Genre`字段不再可以为 null （即，您必须输入一个值） 和`Rating`字段具有最大长度为 5。
 
 验证特性指定要对应用这些特性的模型属性强制执行的行为。 `Required`属性指示属性必须具有一个值; 在此示例中，电影已具有值`Title`， `ReleaseDate`， `Genre`，和`Price`属性才有效。 `Range` 特性将值限制在指定范围内。 `StringLength` 特性使你能够设置字符串属性的最大长度，以及可选的最小长度。 内部类型 (如`decimal, int, float, DateTime`) 所需的默认值，而无须`Required`属性。
 

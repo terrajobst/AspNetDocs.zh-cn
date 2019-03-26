@@ -8,12 +8,12 @@ ms.date: 03/31/2014
 ms.assetid: 6d497001-fa80-4765-b4cc-181fe90b894e
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 039923a91d957765fa8b2c0cfe11abc8790c1e88
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 067542e8b8aa9909bbb2147f8e11e34604986d87
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052674"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424022"
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web 窗体连接复原和命令截获
 ====================
@@ -141,7 +141,7 @@ ms.locfileid: "57052674"
 
 以下几行代码是哪些因素会导致在 Entity Framework 将查询发送到数据库时要运行的侦听器代码。 请注意，因为创建单独的侦听器类进行模拟暂时性错误和日志记录，你可以单独启用和禁用它们。   
   
- 您可以添加使用侦听器`DbInterception.Add`你的代码; 中的任意位置的方法其实不一定要在`Application_Start`方法。 另一个选项，如果您没有添加中的侦听器`Application_Start`方法，就是要更新或添加名为的类*WingtipToysConfiguration.cs*并将以上代码的构造函数的末尾添加`WingtipToysbConfiguration`类。
+ 您可以添加使用侦听器`DbInterception.Add`你的代码; 中的任意位置的方法其实不一定要在`Application_Start`方法。 另一个选项，如果您没有添加中的侦听器`Application_Start`方法，就是要更新或添加名为的类*WingtipToysConfiguration.cs*并将以上代码的构造函数的末尾添加`WingtipToysConfiguration`类。
 
 只要您将此代码中，请注意不要执行`DbInterception.Add`相同的侦听器的时间超过一次，或者你将获得其他侦听器实例。 例如，如果两次添加日志记录的侦听器，将看到两个日志对于每个 SQL 查询。
 
@@ -156,7 +156,7 @@ ms.locfileid: "57052674"
 3. 输入一个新的产品名为"引发"与相应的说明、 价格和图像文件。
 4. 按**添加产品**按钮。  
    您会注意到浏览器看起来时实体框架重试查询多次挂起数秒钟的时间。 首次重试发生速度非常快，然后在每个额外的重试之前等待会增加。 此过程的调用每次重试之前再等待*指数退避算法*。
-5. 等待，直到页面已不再 atttempting 加载。
+5. 等待，直到页面不再尝试加载。
 6. 停止项目，看看 Visual Studio**输出**窗口以查看跟踪输出。 您可以找到**输出**通过选择窗口**调试** - &gt; **Windows**  - &gt; **输出**。 您可能需要滚动浏览多个由记录器写入其他日志。  
   
    请注意，您可以看到实际的 SQL 查询发送到数据库。 您看到一些初始查询和命令的实体框架执行的操作以开始，请检查数据库版本和迁移历史记录表。   

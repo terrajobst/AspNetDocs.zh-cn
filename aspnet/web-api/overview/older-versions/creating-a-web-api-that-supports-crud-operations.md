@@ -8,12 +8,12 @@ ms.date: 01/28/2012
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: ba061b26b8527e447f25f6046057542a54f989a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f3cb0004075ef7687ca1096bd407c342b4d0b7be
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052914"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423736"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>启用 ASP.NET Web API 1 中的 CRUD 操作
 ====================
@@ -109,7 +109,7 @@ API 的产品定义为两种资源类型的 Uri:
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample2.cs)]
 
-现在将另一个类添加到模型文件夹，名为&quot;化 ProductRepository。&quot;此类将实现 `IProductRespository` 接口。 添加以下实现：
+现在将另一个类添加到模型文件夹，名为&quot;化 ProductRepository。&quot;此类将实现 `IProductRepository` 接口。 添加以下实现：
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample3.cs)]
 
@@ -216,7 +216,7 @@ ASP.NET Web API，使易于操作的 HTTP 响应消息。 以下是改进了的�
 
 ## <a name="deleting-a-resource"></a>删除资源
 
-若要删除 resourse，定义的"删除..."方法。
+若要删除某个资源，定义"删除..."方法。
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample12.cs)]
 

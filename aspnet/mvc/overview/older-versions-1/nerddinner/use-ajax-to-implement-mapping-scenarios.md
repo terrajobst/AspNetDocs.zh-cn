@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: f7de23ca46e6dc00fe8075e28068a8b3f95d02cd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9beddfcaf568bf374271fb9fcb3af3a38aff4b72
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053254"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424828"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>使用 AJAX 实现映射方案
 ====================
@@ -150,7 +150,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](use-ajax-to-implement-mapping-scenarios/samples/sample10.cs)]
 
-SearchController SearchByLocation 操作方法在内部调用 DinnerRespository 获取一系列附近 dinners FindByLocation 方法。 而不是 Dinner 对象直接返回到客户端，不过，它改为返回 JsonDinner 对象。 JsonDinner 类公开了一部分 Dinner 属性 (例如： 出于安全原因，它并不公开为 dinner 已接受的人员的名称)。 它还包括一个 RSVPCount 属性不存在上 Dinner – 和其动态计算通过关联与特定 dinner 的 RSVP 对象的计数。
+SearchController SearchByLocation 操作方法在内部调用 DinnerRepository 获取一系列附近 dinners FindByLocation 方法。 而不是 Dinner 对象直接返回到客户端，不过，它改为返回 JsonDinner 对象。 JsonDinner 类公开了一部分 Dinner 属性 (例如： 出于安全原因，它并不公开为 dinner 已接受的人员的名称)。 它还包括一个 RSVPCount 属性不存在上 Dinner – 和其动态计算通过关联与特定 dinner 的 RSVP 对象的计数。
 
 我们然后控制器基类上使用 json （） 帮助器方法返回 dinners 使用基于 JSON 的传输格式的序列。 JSON 是用于表示简单的数据结构以标准文本格式。 下面是 JSON 格式的两个 JsonDinner 对象列表如下所示从我们的操作方法返回时的示例：
 

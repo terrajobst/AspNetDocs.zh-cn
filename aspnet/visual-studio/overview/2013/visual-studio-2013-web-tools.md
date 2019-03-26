@@ -8,18 +8,18 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 82248efd767c1110b9a4067b7d0c0e2ecafcbef9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 54d86de49bf61305b17fc80964723c518abd467b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049884"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423242"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验：Visual Studio 2013 Web 工具
 ====================
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
-[下载 Web 训练营培训工具包](http://aka.ms/webcamps-training-kit)
+[下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
 
 > Visual Studio 是一个极好开发环境。基于 NET 的 Windows 和 web 项目。 它包括一个强大的文本编辑器，可以轻松地用来编辑不含项目的独立文件。
 > 
@@ -27,7 +27,7 @@ ms.locfileid: "57049884"
 > 
 > 所有这种能力也是可用于扩展，使其易于扩展，具有强大的新功能以满足你需求的编辑器。 Web Essentials 是一系列 （主要） 与 web 相关增强功能 Visual Studio。 它还包括了许多新的 IntelliSense 完成 （尤其是对于 CSS)、 新的浏览器链接功能、 自动 JSHint 的 JavaScript 文件、 HTML 和 CSS 和对新式 web 开发至关重要的许多其他功能的新的警告。
 > 
-> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>

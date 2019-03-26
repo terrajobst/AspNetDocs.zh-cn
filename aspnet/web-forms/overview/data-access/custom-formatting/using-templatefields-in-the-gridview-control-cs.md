@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 11de31e8-a78a-4f96-bd75-66e994175902
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4d1cad54d07ba3756d653685b3e04cb66e5ca98b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 163b66323325f24430f8f5fda40aab5b9e8f3b85
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044204"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426063"
 ---
 <a name="using-templatefields-in-the-gridview-control-c"></a>在 GridView 控件中使用 TemplateField (C#)
 ====================
@@ -148,9 +148,9 @@ TemplateField 正如您所看到的包括两个模板`ItemTemplate`具有一个�
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample4.aspx)]
 
 
-[![每个员工的第一个和最后一个名称显示在一个列](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
+[![将一个列中显示每个员工的第一个和最后一个名称](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
 
-**图 10**:每个员工的第一个和最后一个名称显示在一个列 ([单击此项可查看原尺寸图像](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
+**图 10**:将一个列中显示每个员工的第一个和最后一个名称 ([单击此项可查看原尺寸图像](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
 
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>步骤 3：使用日历控件显示`HiredDate`字段

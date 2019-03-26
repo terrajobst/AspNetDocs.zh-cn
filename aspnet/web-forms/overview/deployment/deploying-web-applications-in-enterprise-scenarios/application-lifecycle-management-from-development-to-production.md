@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 7cb9c949936c3af73d4c904d401c36d4d83f3e18
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 998191a21388d76fb18b59fca9bcea7a40507c86
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045684"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425569"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a>应用程序生命周期管理：从开发到生产
 ====================
@@ -26,7 +26,7 @@ ms.locfileid: "57045684"
 > 本主题旨在提供的高级概述[系列教程](deploying-web-applications-in-enterprise-scenarios.md)在企业中的 web 部署。 如果您不熟悉一些此处所述的概念，不用担心&#x2014;按照这些教程提供有关的所有这些任务和技术的详细的信息。
 > 
 > > [!NOTE]
-> > 为了简单起见为起见，本主题不讨论更新数据库，作为部署过程的一部分。 但是，对数据库功能进行增量更新，是许多企业部署方案的要求和有关如何实现这一点稍后在本教程系列中的指南。 有关详细信息，请参阅[部署数据库项目](../web-deployment-in-the-enterprise/deploying-database-projects.md)。
+> > 为简单起见，本主题不讨论部署过程的一部分的更新数据库。 但是，对数据库功能进行增量更新，是许多企业部署方案的要求和有关如何实现这一点稍后在本教程系列中的指南。 有关详细信息，请参阅[部署数据库项目](../web-deployment-in-the-enterprise/deploying-database-projects.md)。
 
 
 ## <a name="overview"></a>概述

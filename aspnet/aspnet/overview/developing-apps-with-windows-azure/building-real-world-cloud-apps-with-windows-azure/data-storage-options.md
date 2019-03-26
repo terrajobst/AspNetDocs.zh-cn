@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 17e11c33d6bf2a75e99e3bda4d6ab89c5b1631f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9969a68a3e1aa043845fb5affd6d3b73dec4136d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042854"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425387"
 ---
-<a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项 （使用 Azure 构建实际云应用）
-====================
+# <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项 （使用 Azure 构建实际云应用）
+
 通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -62,13 +62,13 @@ ms.locfileid: "57042854"
 
 在 Azure 上， [HDInsight](https://azure.microsoft.com/services/hdinsight/)使您能够处理和分析，并使用 Hadoop 的强大功能进行大数据从中获取新信息。 例如，您可以使用它来分析 web 服务器日志：
 
-- 启用 web 服务器日志记录到存储帐户。 此设置 Azure 将日志写入将 Blob 服务用于你的应用程序对每个 HTTP 请求。 Blob 服务基本上是云文件存储，以及它与 HDInsight 可以很好地集成。 
+- 启用 web 服务器日志记录到存储帐户。 此设置 Azure 将日志写入将 Blob 服务用于你的应用程序对每个 HTTP 请求。 Blob 服务基本上是云文件存储，以及它与 HDInsight 可以很好地集成。
 
     ![日志以 Blob 存储](data-storage-options/_static/image2.png)
-- 当应用程序获取流量，web 服务器 IIS 日志将写入 Blob 存储。 
+- 当应用程序获取流量，web 服务器 IIS 日志将写入 Blob 存储。
 
     ![Web 服务器日志](data-storage-options/_static/image3.png)
-- 在门户中，单击**新建** - **Data Services** - **HDInsight** - **快速创建**，并指定 HDInsight 群集名称、 群集大小 （HDInsight 群集数据节点数），以及用户名和密码为 HDInsight 群集。 
+- 在门户中，单击**新建** - **Data Services** - **HDInsight** - **快速创建**，并指定 HDInsight 群集名称、 群集大小 （HDInsight 群集数据节点数），以及用户名和密码为 HDInsight 群集。
 
     ![HDInsight](data-storage-options/_static/image4.png)
 
@@ -175,7 +175,7 @@ Fix It 应用程序使用关系数据库来存储任务。 中所示的环境创
 
 ![新创建的 SQL 数据库](data-storage-options/_static/image10.png)
 
-使 Azure does 在几秒内容可能需要在一天或每周或更长时间才能在本地环境中完成。 因为可以轻松地创建的数据库会自动在脚本中或通过使用管理 API，可以动态进行横向扩展通过将数据分散到多个 < o:p > 数据库，只要被编程为此，你的应用程序。 < /o: p >
+使 Azure does 在几秒内容可能需要在一天或每周或更长时间才能在本地环境中完成。 并且由于可以轻松地创建的数据库会自动在脚本中或通过使用管理 API，可以动态横向扩展通过你的数据分散到多个数据库，只要被编程为此，你的应用程序。
 
 这是我们的平台即服务模型的示例。 无需管理的服务器，我们执行此操作。 无需担心如何备份，我们执行此操作。 在高可用性-运行自动在三个服务器之间复制数据库中的数据。 如果一台计算机出现故障，我们自动故障转移，并且会丢失任何数据。 定期修补服务器，无需担心的。
 
@@ -267,7 +267,7 @@ Fix It 应用包含它的 CRUD 操作使用的数据存储区使用一个存储�
 
 选择一个数据库平台：
 
-- [高度可缩放解决方案的数据访问：使用 SQL、 NoSQL 和 Polyglot 持久性](http://aka.ms/dag-doc)。 电子书 Microsoft 模式与实践中的深度中放入不同类型的数据存储适用于云应用程序。
+- [高度可缩放解决方案的数据访问：使用 SQL、 NoSQL 和 Polyglot 持久性](https://aka.ms/dag-doc)。 电子书 Microsoft 模式与实践中的深度中放入不同类型的数据存储适用于云应用程序。
 - [Microsoft 模式和做法-Azure 指南](https://msdn.microsoft.com/library/ff898430.aspx)。 请参阅数据一致性入门、 数据复制和同步的指导，索引表模式、 具体化视图模式。
 - [基址：备用 Acid](http://queue.acm.org/detail.cfm?id=1394128)。 有关数据的一致性和可伸缩性方面做出权衡的文章。
 - [在这七个星期中的七个数据库：现代数据库和 NoSQL 运动指南](https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1934356921)。 本书由 Eric 雷德蒙德和 Jim R.Wilson。 强烈建议引入自己的当前可用的数据存储平台范围的。

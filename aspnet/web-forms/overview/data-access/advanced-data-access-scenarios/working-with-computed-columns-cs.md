@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 57459065-ed7c-4dfe-ac9c-54c093abc261
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5ef548c627cd40159bb3961f479401657a2ac394
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 097d68bdcde7de713ce2e7c829c0611d4c82d64d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041934"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424746"
 ---
 <a name="working-with-computed-columns-c"></a>处理计算列 (C#)
 ====================
@@ -32,7 +32,7 @@ Microsoft SQL Server 允许*[计算所得的列](https://msdn.microsoft.com/libr
 
 使用的难题之一的计算列使用 TableAdapter 使用的临时 SQL 语句是，TableAdapter s`INSERT`和`UPDATE`查询自动重新生成任何 TableAdapter 配置向导已完成的时间。 因此，计算的列中手动删除从`INSERT`和`UPDATE`重新运行该向导时，查询将重新出现。 尽管使用存储的过程的 Tableadapter 不会受到此受到攻击，它们具有其自己的我们将在步骤 3 中解决的异常。
 
-在本教程中，我们将添加到计算的列`Suppliers`Northwind 数据库中表，然后创建相应的 TableAdapter 以使用此表，其计算所得的列。 我们将使用存储的过程而不是临时 SQL 语句，以便使用 TableAdapter 配置向导时丢失了我们的自定义计划运行 t 我们 TableAdapter。
+在本教程中，我们将添加到计算的列`Suppliers`Northwind 数据库中表，然后创建相应的 TableAdapter 以使用此表，其计算所得的列。 我们将使用存储的过程而不是临时 SQL 语句，以便使用 TableAdapter 配置向导时，我们自定义项不会丢失我们 TableAdapter。
 
 让我们来开始 ！
 

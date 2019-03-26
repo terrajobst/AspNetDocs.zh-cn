@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 142c8e93422ac03d2f2205b6635f88b982b4c9e2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 91a1c967fbe74dbda8f8ac9635fdccbe05b0b6cc
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024844"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423892"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>配置数据访问层的连接和命令级别的设置 (C#)
 ====================
@@ -106,7 +106,7 @@ TableAdapter 类实例化时，成员变量`_connection`等同于`null`。 当`C
 
 此部分的类公开基础连接对象的一个属性： `ConnectionString`。 如果你想要使整个连接对象由于篇幅所限 TableAdapter 的更高版本，或者可以更改`Connection`属性的保护级别。 我们在步骤 1 中检查自动生成的代码演示的 TableAdapter s`Connection`属性标记为`internal`，这意味着，它只能访问由在同一程序集中的类。 这可以更改，但是，通过 TableAdapter 的`ConnectionModifier`属性。
 
-打开`Northwind`数据集，单击`ProductsTableAdatper`在设计器并导航到属性窗口。 您会看见`ConnectionModifier`设置为其默认值， `Assembly`。 若要使`Connection`属性的类型化数据集 s 程序集，更改外部可用`ConnectionModifier`属性设置为`Public`。
+打开`Northwind`数据集，单击`ProductsTableAdapter`在设计器并导航到属性窗口。 您会看见`ConnectionModifier`设置为其默认值， `Assembly`。 若要使`Connection`属性的类型化数据集 s 程序集，更改外部可用`ConnectionModifier`属性设置为`Public`。
 
 
 [![可通过 ConnectionModifier 属性配置连接属性 s 可访问性级别](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)

@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 512d2e2b39467635390fa175546f79d8c9f89f4a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a09169327d8eed45a83b232354af74a14aa89817
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038144"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425036"
 ---
 # <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>不得在 ASP.NET 中执行的操作和转而应执行的操作
 
@@ -151,7 +151,7 @@ Web 服务器控件包含数十个属性用于设置在行中样式属性。 例
 
 建议：永远不会设置为 false。
 
-默认情况下，设置 EnbableViewStateMac 为 true。 即使你的应用程序未使用视图状态，请不设置 enableviewstatemac 设为 false。 此值设置为 false 将使你的应用程序容易受到跨站点脚本。
+默认情况下，设置 enableviewstatemac 设为 true。 即使你的应用程序未使用视图状态，请不设置 enableviewstatemac 设为 false。 此值设置为 false 将使你的应用程序容易受到跨站点脚本。
 
 从 ASP.NET 4.5.2 开始，运行时强制实施**EnableViewStateMac = true**。 即使将其设置为 false 时，运行时将忽略此值，并继续执行设置的值为 true。 有关详细信息，请参阅[ASP.NET 4.5.2 和 EnableViewStateMac](https://blogs.msdn.com/b/webdev/archive/2014/05/07/asp-net-4-5-2-and-enableviewstatemac.aspx)。
 

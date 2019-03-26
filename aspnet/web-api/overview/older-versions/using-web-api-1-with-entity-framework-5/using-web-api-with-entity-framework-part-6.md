@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 91ee29ee-0689-40ee-914a-e7dd733b6622
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 642ff4554ed3664af0b5cc8e49d6b236c568131b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 21cfbd0bf691ea033e9a5a873ab49c83507750d5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054434"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425959"
 ---
 <a name="part-6-creating-product-and-order-controllers"></a>第 6 部分：创建产品和订单控制器
 ====================
@@ -96,7 +96,7 @@ HTTP 响应将包含产品数量与的数组：
 
 [!code-json[Main](using-web-api-with-entity-framework-part-6/samples/sample10.json)]
 
-这是一个结构良好的顺序，并且实体框架将值得庆幸的是将其插入到数据库。 但是，它包含的产品实体的以前不存在。 客户端只需在我们的数据库创建一个新的产品 ！ 如果用户知道 koala 熊的顺序，这将是顺序 fullfilment 部门层大为吃惊。 要说明的是，实际上谨慎接受 POST 或 PUT 请求中的数据。
+这是一个结构良好的顺序，并且实体框架将值得庆幸的是将其插入到数据库。 但是，它包含的产品实体的以前不存在。 客户端只需在我们的数据库创建一个新的产品 ！ 如果用户知道 koala 熊的顺序，这将是订单履行部门层大为吃惊。 要说明的是，实际上谨慎接受 POST 或 PUT 请求中的数据。
 
 若要避免此问题，请更改`PostOrder`方法才能`OrderDTO`实例。 使用`OrderDTO`若要创建`Order`。
 

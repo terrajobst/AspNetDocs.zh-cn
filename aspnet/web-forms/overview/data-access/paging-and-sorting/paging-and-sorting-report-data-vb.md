@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2e1cc844122b0fdebbc0be09f88baa11a461ab8e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 23f14251c280e1da3a51612ed538ecbc0f5b8d54
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038614"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424347"
 ---
 <a name="paging-and-sorting-report-data-vb"></a>分页和排序报表数据 (VB)
 ====================
@@ -194,7 +194,7 @@ ms.locfileid: "57038614"
 
 [!code-vb[Main](paging-and-sorting-report-data-vb/samples/sample6.vb)]
 
-此代码首先清除中项的布局`PageList`DropDownList。 这可能是多余的因为一个对 t 期望的页数，若要更改，但其他用户可能会同时使用系统、 添加或删除的记录`Products`表。 此类插入或删除无法更改数据的页数。
+此代码首先清除中项的布局`PageList`DropDownList。 这可能是多余的因为其中一个并不指望页数，若要更改，但其他用户可能会同时使用系统、 添加或删除的记录`Products`表。 此类插入或删除无法更改数据的页数。
 
 接下来，我们需要再次创建页号并具有一个映射到当前的 GridView`PageIndex`默认选中状态。 我们实现此目的使用从 0 到循环`PageCount - 1`，添加一个新`ListItem`中每个迭代和设置其`Selected`属性设置为 true，如果当前迭代索引等于 GridView 的`PageIndex`属性。
 
@@ -253,7 +253,7 @@ ms.locfileid: "57038614"
 
 [!code-aspx[Main](paging-and-sorting-report-data-vb/samples/sample9.aspx)]
 
-可以配置一个字段，以便它 s 不可排序通过清除其`SortExpression`属性 （将其分配给一个空字符串）。 为了说明这一点，想象一下，我们并没有 t 想要让客户对我们的产品价格进行排序。 `UnitPrice` BoundField 的`SortExpression`从声明性标记或通过字段对话框中 （这是通过单击 GridView s 智能标记中的编辑列链接的访问），可以删除属性。
+可以配置一个字段，以便它 s 不可排序通过清除其`SortExpression`属性 （将其分配给一个空字符串）。 为了说明这一点，假设我们也不想让客户对我们的产品价格进行排序。 `UnitPrice` BoundField 的`SortExpression`从声明性标记或通过字段对话框中 （这是通过单击 GridView s 智能标记中的编辑列链接的访问），可以删除属性。
 
 
 ![结果已按升序排序单价](paging-and-sorting-report-data-vb/_static/image27.png)

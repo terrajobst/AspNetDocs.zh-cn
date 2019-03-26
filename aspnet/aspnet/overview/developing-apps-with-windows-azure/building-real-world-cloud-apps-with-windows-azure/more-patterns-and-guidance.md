@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 3de929ff7253928f2f9cd9b033ef6c643744e91c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 87dbbc0b598a6592b511383a5487a04b302b0994
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050794"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425660"
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多模式和指南 （使用 Azure 构建实际云应用）
 ====================
@@ -61,7 +61,7 @@ ms.locfileid: "57050794"
 代码示例
 
 - [Fix It 应用程序附带此电子书](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002)。
-- [云服务在 Azure 中用于 Visual Studio 2012 C# 中的基础知识](http://aka.ms/csf)。 在 Microsoft 代码库站点的可下载项目包含代码和文档开发的 Microsoft 客户咨询团队 (CAT)。 演示了许多防故障和构建大视频系列和防故障白皮书倡导的最佳实践。 代码库页还链接到项目的作者的大量文档--请参阅尤其[云服务基础知识 wiki 集合](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx)项目说明的顶部附近的蓝色框中的链接。 此项目，并与其对应的文档仍主动开发，使其更好的选择的多个主题的信息比类似，但较旧的白皮书。
+- [云服务在 Azure 中用于 Visual Studio 2012 C# 中的基础知识](https://aka.ms/csf)。 在 Microsoft 代码库站点的可下载项目包含代码和文档开发的 Microsoft 客户咨询团队 (CAT)。 演示了许多防故障和构建大视频系列和防故障白皮书倡导的最佳实践。 代码库页还链接到项目的作者的大量文档--请参阅尤其[云服务基础知识 wiki 集合](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx)项目说明的顶部附近的蓝色框中的链接。 此项目，并与其对应的文档仍主动开发，使其更好的选择的多个主题的信息比类似，但较旧的白皮书。
 
 打印件丛书
 
@@ -101,7 +101,7 @@ ms.locfileid: "57050794"
 - Edward Wu-有关 SSO 章提供了示例代码。
 - Guang Yang-编写了 PowerShell 自动化脚本。
 
-成员[Microsoft 开发人员指南 Advisory Council](http://aka.ms/DGAC) (DGAC) 还查看并已注释的草稿：
+成员[Microsoft 开发人员指南 Advisory Council](https://aka.ms/DGAC) (DGAC) 还查看并已注释的草稿：
 
 - Jean-luc Boucho
 - Catalin Gheorghiu

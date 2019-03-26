@@ -8,12 +8,12 @@ ms.date: 04/01/2013
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: c081064a32151a71fc4f3ea407e0c48a1539432a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fba368e4017fea65ff96e2540d486662cc6b45f8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042524"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423723"
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>创建 ASP.NET web API 帮助页
 ====================
@@ -85,7 +85,7 @@ ms.locfileid: "57042524"
 
 ![](creating-api-help-pages/_static/image7.png)
 
-接下来，打开的代码`ValuesController`/Controllers/ValuesControler.cs 中定义的 API 控制器。 将一些文档注释添加到控制器方法。 例如：
+接下来，打开的代码`ValuesController`/Controllers/ValuesController.cs 中定义的 API 控制器。 将一些文档注释添加到控制器方法。 例如：
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample4.cs)]
 

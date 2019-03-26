@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 263a6e0aed51a681193333b53eff8f03847fc3aa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6d5af6563bdf3872110497f4b142dd7353c8d64c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047574"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426115"
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中 ASP.NET 和 Web 开发的新增功能
 ====================
@@ -737,7 +737,7 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
 1. 转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image64.png "登录到 Windows Azure 门户")
 

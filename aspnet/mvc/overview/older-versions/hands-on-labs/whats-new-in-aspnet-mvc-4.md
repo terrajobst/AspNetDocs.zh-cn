@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 9d5a51a5887ecbbc96fce1416b88aa849bc3674e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0c4b7b2641c91cbb63ec46fa707c004f7273a303
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053494"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422683"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新增功能
 
@@ -144,7 +144,7 @@ ASP.NET MVC 4 是一个框架，用于构建可缩放的基于标准的 web 应�
     *jQuery 验证*
 
     > [!NOTE]
-    > 请注意，这两个日志中的第一节中的部分，您可以记录中使用该站点中的注册帐户和可以使用另一个身份验证服务，如 google （默认情况下禁用） 的 altenativelly 登录的第二个部分。
+    > 请注意，在部分中，你可以记录中使用的站点中的已注册的帐户和你可在使用另一个身份验证服务，如 google （默认情况下禁用） 或者登录的第二个部分中的第一个部分中的两个日志。
 5. 关闭浏览器以停止调试器并返回到 Visual Studio。
 6. 打开文件**AuthConfig.cs**位于**应用\_启动**文件夹。
 7. 从注册 Google 客户端的最后一行中删除注释*OAuth*身份验证。
@@ -429,7 +429,7 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 <a id="Task_2_-_Creating_Mobile_Views"></a>
 #### <a name="task-2---creating-mobile-views"></a>任务 2-创建移动视图
 
-在此任务中，将改写，以便进行更好地 appareance 在移动设备中的内容创建索引视图的移动版本。
+在此任务中，将使用适用于移动设备中更好的外观的内容创建索引视图的移动版本。
 
 1. 复制**Views\Home\Index.cshtml**查看并将其创建副本、 重命名的新文件粘贴**Index.Mobile.cshtml**。
 2. 打开新创建**Index.Mobile.cshtml**查看和替换现有&lt;ul&gt;标记，此代码。 通过执行此操作，你将更新&lt;ul&gt; jQuery 移动数据批注，以使用从 jQuery 移动主题的标记。
@@ -512,15 +512,15 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
 
     分部视图使用的新方法**ViewContext.HttpContext.GetOverriddenBrowser()** 来确定 web 请求的来源并显示相应的链接以切换到桌面或移动视图。
 
-    **GetOverridenBrowser**方法将返回**HttpBrowserCapabilitiesBase**对应于当前设置为请求的用户代理的实例 （实际或重写）。 可以使用此值来获取属性，如**IsMobileDevice**。
+    **GetOverriddenBrowser**方法将返回**HttpBrowserCapabilitiesBase**对应于当前设置为请求的用户代理的实例 （实际或重写）。 可以使用此值来获取属性，如**IsMobileDevice**。
 
     ![ViewSwitcher 分部视图](whats-new-in-aspnet-mvc-4/_static/image30.png "ViewSwitcher 分部视图")
 
     *ViewSwitcher 分部视图*
 4. 打开**ViewSwitcherController.cs**类位于**控制器**文件夹。 签出该 SwitchView 操作由 ViewSwitcher 组件中的链接，请注意，新的 HttpContext 方法。
 
-    - **HttpContext.ClearOverridenBrowser()** 方法移除当前请求的任何重写的用户代理。
-    - **HttpContext.SetOverridenBrowser()** 方法重写请求的实际用户代理值使用指定的用户代理。  
+    - **HttpContext.ClearOverriddenBrowser()** 方法移除当前请求的任何重写的用户代理。
+    - **HttpContext.SetOverriddenBrowser()** 方法重写请求的实际用户代理值使用指定的用户代理。  
         ![ViewSwitcher 控制器](whats-new-in-aspnet-mvc-4/_static/image31.png "ViewSwitcher 控制器")  
 *ViewSwitcher 控制器*
 
@@ -580,8 +580,8 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
 > [!NOTE]
 > 测试请求的 iPhone 简化出于演示目的，并且可能无法按预期的每个 iPhone 用户代理字符串 （对应于示例测试是区分大小写） 的这种方式。
 
-4. 创建一份 **\_Layout.Mobile.cshtml**中的文件**views/shared**文件夹并将复制到重命名&quot;  **\_Layout.iPhone.csthml**&quot;.
-5. 打开 **\_Layout.iPhone.csthml**在上一步中创建。
+4. 创建一份 **\_Layout.Mobile.cshtml**中的文件**views/shared**文件夹并将复制到重命名&quot;  **\_Layout.iPhone.cshtml**&quot;.
+5. 打开 **\_Layout.iPhone.cshtml**在上一步中创建。
 6. 数据角色属性设置为使用找到的 div 元素**页上**并将更改**数据主题**归于&quot; &quot;。
 
 
@@ -904,7 +904,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
 1. 转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](whats-new-in-aspnet-mvc-4/_static/image61.png "登录到 Windows Azure 门户")
 

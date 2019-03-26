@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 121a3a35c8255f1423d7008930315f76bbb8e8f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b361470c769b61a7b407797158eb695fe5084eda
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053094"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423489"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a>向缓存页添加动态内容 (VB)
 ====================
@@ -72,7 +72,7 @@ RenderNews 方法传递给 WriteSubstitution() 方法。 请注意，不会调�
 
 列表 4 包含公开两个方法的 Visual Basic 模块：RenderBanner() 和 RenderBannerInternal()。 RenderBanner() 方法表示实际的帮助器方法。 此方法，以便你可以在一个视图，就像任何其他帮助器方法中调用 Html.RenderBanner() 扩展标准的 ASP.NET MVC HtmlHelper 类。
 
-RenderBanner() 方法调用将 RenderBannerInternal() 方法传递给 WriteSubsitution() 方法 HttpResponse.WriteSubstitution() 方法。
+RenderBanner() 方法调用将 RenderBannerInternal() 方法传递给 WriteSubstitution() 方法 HttpResponse.WriteSubstitution() 方法。
 
 RenderBannerInternal() 方法为私有方法。 此方法不会公开为一个帮助器方法。 RenderBannerInternal() 方法随机从列表中的三个横幅广告图像返回一个横幅广告图像。
 

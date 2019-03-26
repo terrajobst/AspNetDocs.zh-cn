@@ -8,12 +8,12 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 6df35a420a0733003808a12d065b03f08ef56dd9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 60fffd7cd5139b2be34968c1f33474be867f0962
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048044"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422878"
 ---
 <a name="high-frequency-realtime-with-signalr-1x"></a>使用 SignalR 1.x 实现高频率实时功能
 ====================
@@ -136,7 +136,7 @@ ms.locfileid: "57048044"
 
 ## <a name="add-the-client-loop"></a>添加客户端循环
 
-由于发送的每个鼠标移动事件中的形状的位置将创建不必要数量的网络流量，从客户端的消息需要受到限制。 我们将使用 javascript`setInterval`函数来设置一个循环，将新的位置信息发送到服务器以固定费率。 此循环是"游戏循环"，驱动器的所有功能的游戏或其他模拟重复调用函数的非常基本表示形式。
+由于发送的每个鼠标移动事件中的形状的位置将创建不必要的网络流量大小，请从客户端的消息需要受到限制。 我们将使用 javascript`setInterval`函数来设置一个循环，将新的位置信息发送到服务器以固定费率。 此循环是"游戏循环"，驱动器的所有功能的游戏或其他模拟重复调用函数的非常基本表示形式。
 
 1. 更新要匹配下面的代码段的 HTML 页面中的客户端代码。
 

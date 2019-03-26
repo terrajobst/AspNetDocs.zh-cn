@@ -8,12 +8,12 @@ ms.date: 03/06/2014
 ms.assetid: 7ef5f73c-ca60-43c1-bdb2-702800347e7e
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 2a22c5b686cb8e02054f421f78a8fc910af7ce28
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bbb38ddde49cdeea4255e0e05bd559ddd9e5f692
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062734"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425985"
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>适用于 Visual Studio 2013 的 ASP.NET 和 Web 工具 2013.2 发行说明
 ====================
@@ -112,7 +112,7 @@ Firefox 会使用其自己的证书存储，因此它将显示一条警告。
 
     `<div data-bind="text: foo.bar.baz.etc" />`
 
-    显示 IntelilSense 是 JavaScript 对象的完整的 IntelliSense。
+    显示 IntelliSense 是 JavaScript 对象的完整的 IntelliSense。
 
     ![Intellisense 显示完整的 JavaScript 对象](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image15.png)
 - **中的 HTML，Razor，CSS，更少的新 URL 选取器和 Sass 文档**:VS 2013 与外部 Web 窗体页没有 URL 选取器一起提供。 为 HTML，Razor，CSS，更少的新 URL 选取器和 Sass 编辑器是能够理解的对话框免费使用，fluent 键入选取... 并筛选器文件列出相应的 img 标记和链接。
@@ -177,12 +177,13 @@ Firefox 会使用其自己的证书存储，因此它将显示一条警告。
 NuGet 2.8.1 RTM 将在 2014 年 4 月发布。 以下是要点从发行说明，但请检查[完整的发行说明](http://docs.nuget.org/docs/release-notes/nuget-2.8)有关这些更改的详细信息。
 
 - **目标 Windows Phone 8.1 应用程序**:NuGet 2.8.1 现在支持针对 Windows Phone 8.1 应用程序使用 WindowsPhoneApp、 WPA、 WindowsPhoneApp81 和 WPA81 时，目标框架名字对象。
+
 - **针对依赖项的修补程序解决**:在解析包依赖项，NuGet 已从历史上看实现选择满足对包依赖项的最小主版本号和次包版本的策略。 与不同的主版本号和次版本，但是，修补程序版本是始终解析为的最高版本。 该行为是善意的但缺乏安装具有依赖项包的确定性创建它。
 - **DependencyVersion 开关**:尽管 NuGet 2.8 更改*默认*行为对于解析的依赖关系，它还将添加更加精确地控制通过-DependencyVersion 开关的依赖关系解析过程中包管理器控制台。 开关可以启用对可能的最低版本 （默认行为）、 可能的最高版本，或最高次要或修补程序版本的解析依赖项。 此开关仅适用于在 powershell 命令中的安装包。
 - **DependencyVersion 属性**:除了上面详细说明的功能还允许 NuGet 在 nuget.config 文件中设置新属性-DependencyVersion 开关定义默认值什么，如果在调用中未指定-DependencyVersion 开关安装包。 NuGet 包管理器对话框中的任何安装包操作还会遵循此值。 若要设置此值，请将以下属性添加到在 nuget.config 文件：
 
     `<config> <add key="dependencyversion" value="Highest" /> </config>`
-- **预览使用-whatif NuGet 操作**:一些 NuGet 包可以有深入的依赖项关系图，并且在这种情况下，它可以在安装过程中会有所帮助、 卸载或更新操作，以首先查看会发生什么情况。 NuGet 2.8 添加标准 PowerShell-如果切换到启用可视化命令将应用于包的完整闭包的安装包、 卸载包和更新包命令。
+- **预览使用-WhatIf NuGet 操作**:一些 NuGet 包可以有深入的依赖项关系图，并且在这种情况下，它可以在安装过程中会有所帮助、 卸载或更新操作，以首先查看会发生什么情况。 NuGet 2.8 添加标准 PowerShell-如果切换到启用可视化命令将应用于包的完整闭包的安装包、 卸载包和更新包命令。
 - **降级包**:不常见安装包的预发布版本，以便调查的新功能，然后决定要回滚到上次的稳定版本。 之前 NuGet 2.8，这是一个多步骤过程，以及卸载预发行包和其依赖项，然后安装较早版本。 使用 NuGet 2.8，但是，更新包将现在回滚整个包闭包 （例如包的依赖项树） 到以前的版本。
 - **开发依赖项**:作为 NuGet 包-包括用于优化开发过程的工具，可以提供许多不同类型的功能。 这些组件，它们可有助于开发新的包，而不应将发布更高版本时，新的包的依赖项。 NuGet 2.8 允许包将自身标识为 developmentDependency.nuspec 文件中。 安装时，此元数据将也添加到已在其中安装了包的项目的 packages.config 文件。 在 nuget.exe 包期间该 packages.config 文件更高版本分析的 NuGet 依赖项，它将排除这些依赖项标记为开发依赖项。
 - **针对不同平台的单独的 packages.config 文件**:开发针对多个目标平台的应用程序，时，通常会为每个相应的生成环境中有不同的项目文件。 也很常见使用不同的 NuGet 包在不同的项目文件中，如包具有不同级别的不同平台的支持。 NuGet 2.8 支持改进了这种情况下通过创建不同的特定于平台的项目文件的不同 packages.config 文件。
@@ -205,7 +206,7 @@ NuGet 2.8.1 RTM 将在 2014 年 4 月发布。 以下是要点从发行说明，
 - [属性路由改进](../../../mvc/overview/releases/mvc51-release-notes.md#AttributeRouting)
 - [Bootstrap 支持编辑器模板](../../../mvc/overview/releases/mvc51-release-notes.md#Bootstrap)
 - [在视图中的枚举支持](../../../mvc/overview/releases/mvc51-release-notes.md#Enum)
-- [Unobstrusive 支持 MinLength / MaxLength 属性](../../../mvc/overview/releases/mvc51-release-notes.md#Unobtrusive)
+- [非介入式支持 MinLength / MaxLength 属性](../../../mvc/overview/releases/mvc51-release-notes.md#Unobtrusive)
 - [支持非介入式 Ajax 中的 this 上下文](../../../mvc/overview/releases/mvc51-release-notes.md#thisContext)
 - 各种[bug 修复](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=v5.1%20Preview%7cv5.1%20RTM&assignedTo=All&component=MVC&sortField=AssignedTo&sortDirection=Ascending&page=0&reasonClosed=Fixed)
 

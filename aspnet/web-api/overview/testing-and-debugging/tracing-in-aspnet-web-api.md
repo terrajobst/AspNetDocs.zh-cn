@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: e0d525e497cf41a79820417a9c832fa6b5cd7f8a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 59bce8c511167e8ba8a8db6f1842e352c90f3039
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031534"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424893"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
 ====================
@@ -89,7 +89,7 @@ ms.locfileid: "57031534"
 
 本部分介绍如何编写 Web API 的自定义跟踪编写器。
 
-Microsoft.AspNet.WebApi.Tracing 包是基于 Web API 中的更多常规跟踪基础结构。 而不是使用 Microsoft.AspNet.WebApi.Tracing，您也可以插入一些其他跟踪/登录库中，如[NLog](http://nlog-project.org/)或[log4net](http://logging.apache.org/log4net/)。
+Microsoft.AspNet.WebApi.Tracing 包是基于 Web API 中的更多常规跟踪基础结构。 而不是使用 Microsoft.AspNet.WebApi.Tracing，您也可以插入一些其他跟踪/日志记录库中，如[NLog](http://nlog-project.org/)或[log4net](http://logging.apache.org/log4net/)。
 
 若要收集跟踪，实现**ITraceWriter**接口。 下面是一个简单的示例：
 

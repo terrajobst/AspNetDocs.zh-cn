@@ -8,12 +8,12 @@ ms.date: 05/20/2012
 ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
-ms.openlocfilehash: e936bdfa52f786ec86d3e84eac3cd644225b6f92
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9cfbed49c1022fbf26160e89aed3ab474f5e0fdc
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039244"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425686"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API 中的内容协商
 ====================
@@ -48,7 +48,7 @@ HTTP 规范 (RFC 2616) 定义为"有可用的多种表示形式时选择的最�
 
 [!code-console[Main](content-negotiation/samples/sample3.cmd)]
 
-在此示例中，客户端请求的 JSON、 Javascript 或"任何"(\*/\*)。 服务器响应的 JSON 表示形式的`Product`对象。 请注意，在响应中的内容类型标头设置为&quot;应用程序 /json&quot;。
+在此示例中，客户端请求的 JSON、 Javascript 或"任何"(\*/\*)。 从服务器返回的 JSON 表示形式`Product`对象。 请注意，在响应中的内容类型标头设置为&quot;应用程序 /json&quot;。
 
 此外可以返回一个控制器**HttpResponseMessage**对象。 若要指定响应正文的 CLR 对象，调用**CreateResponse**扩展方法：
 
@@ -62,7 +62,7 @@ HTTP 规范 (RFC 2616) 定义为"有可用的多种表示形式时选择的最�
 
 首先，获取管道**IContentNegotiator**服务从**HttpConfiguration**对象。 它还可以获取从媒体格式化程序的列表**HttpConfiguration.Formatters**集合。
 
-接下来，调用管道**IContentNegotiatior.Negotiate**、 传入：
+接下来，调用管道**IContentNegotiator.Negotiate**、 传入：
 
 - 要序列化的对象类型
 - 媒体格式化程序的集合
@@ -73,7 +73,7 @@ HTTP 规范 (RFC 2616) 定义为"有可用的多种表示形式时选择的最�
 - 若要使用的格式化程序
 - 响应的媒体类型
 
-如果不找到任何格式化程序，则**Negotiate**方法将返回**null**，和客户端收到 HTTP 错误 406 （不可接受）。
+如果不找到任何格式化程序，则**Negotiate**方法将返回**null**，并且客户会收到 HTTP 错误 406 （不可接受）。
 
 下面的代码演示如何在控制器可直接调用内容协商：
 

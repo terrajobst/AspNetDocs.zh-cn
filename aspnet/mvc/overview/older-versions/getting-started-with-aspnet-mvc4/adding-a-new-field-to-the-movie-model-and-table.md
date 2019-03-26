@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 0f9b659b67a9a62635091b1e87169bce1218281a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a1f56a48c0c5b16993a853532689a2b524a1f92e
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060694"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425439"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>向电影模型和表添加新字段
 ====================
@@ -142,7 +142,7 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 `add-migration`命令会通知迁移框架以检查当前电影模型与当前的电影数据库架构并创建必要的代码以将数据库迁移到新模型。 AddRatingMig 是任意参数并用于命名迁移文件。 最好使用迁移步骤有意义的名称。
 
-此命令完成后，Visual Studio 会打开定义新的类文件`DbMIgration`派生的类，然后在`Up`方法您可以看到创建的新列的代码。
+此命令完成后，Visual Studio 会打开定义新的类文件`DbMigration`派生的类，然后在`Up`方法您可以看到创建的新列的代码。
 
 [!code-csharp[Main](adding-a-new-field-to-the-movie-model-and-table/samples/sample8.cs)]
 

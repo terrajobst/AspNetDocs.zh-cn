@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 49d8a66c-3ea8-4087-839f-179d1d94512a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d4fa3e3e7bbe335af31423ec4fdd60e9791c2b0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dea7b1e8cd5be795acd27868066384fe52b065f7
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043304"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422189"
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (C#)
 ====================
@@ -98,7 +98,7 @@ ms.locfileid: "57043304"
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>步骤 2：适当地处理 DAL 级别的异常
 
-尽管我们可编辑的 GridView 浅显有效用户时输入的已编辑的产品的名称、 价格和库存数量的合法值，输入非法值会导致异常。 例如，省略`ProductName`值的原因[NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp)以来引发`ProductName`中的属性`ProdcutsRow`类具有其`AllowDBNull`属性设置为`false`; 如果数据库已关闭，`SqlException`尝试连接到数据库时，TableAdapter 将引发。 不采取任何措施，这些异常向上冒泡从数据访问层业务逻辑层，则 ASP.NET 页中，最后到 ASP.NET 运行时。
+尽管我们可编辑的 GridView 浅显有效用户时输入的已编辑的产品的名称、 价格和库存数量的合法值，输入非法值会导致异常。 例如，省略`ProductName`值的原因[NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp)以来引发`ProductName`中的属性`ProductsRow`类具有其`AllowDBNull`属性设置为`false`; 如果数据库已关闭，`SqlException`尝试连接到数据库时，TableAdapter 将引发。 不采取任何措施，这些异常向上冒泡从数据访问层业务逻辑层，则 ASP.NET 页中，最后到 ASP.NET 运行时。
 
 具体取决于如何配置 web 应用程序以及是否正在访问应用程序从`localhost`，未处理的异常可能会导致常规服务器错误页、 详细的错误报表或用户友好的网页。 请参阅[Web 应用程序中的错误处理 ASP.NET](http://www.15seconds.com/issue/030102.htm)并[customErrors 元素](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx)为 ASP.NET 运行时如何响应未捕获的异常的详细信息。
 

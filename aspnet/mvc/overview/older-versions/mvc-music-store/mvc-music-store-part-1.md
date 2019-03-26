@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d84a525221e40b79853be55069367134d17fb5ec
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f252fd5c0e5962353720e47ba888d2b6b325a1c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035954"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421903"
 ---
 <a name="part-1-overview-and-file-new-project"></a>第 1 部分：概述和文件->新建项目
 ====================
@@ -60,7 +60,7 @@ MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Web Dev
 
 ![](mvc-music-store-part-1/_static/image6.jpg)
 
-除了客户 faceing 页，我们还将生成一个管理员部分，其中显示了一系列唱片集从其管理员可以创建、 编辑、 并删除唱片集：
+除了面向客户的页面，我们还将生成一个管理员部分，其中显示了一系列唱片集从其管理员可以创建、 编辑，并删除唱片集：
 
 ![](mvc-music-store-part-1/_static/image7.jpg)
 

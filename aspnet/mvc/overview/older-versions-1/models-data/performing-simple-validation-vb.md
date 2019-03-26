@@ -8,12 +8,12 @@ ms.date: 03/02/2009
 ms.assetid: df6cf4b7-0bb3-4c4e-b17a-bd78a759a6bc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1d0bd6917bab61b17d1cafcf0cd9eb1983275dc8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 31faf2e89e6acb25854455902c1a6fdffebd293c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057644"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423177"
 ---
 <a name="performing-simple-validation-vb"></a>执行简单验证 (VB)
 ====================
@@ -90,7 +90,7 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 
 - 输入验证错误的应用于&lt;输入&gt;Html.TextBox() 帮助程序呈现的标记。
 - 字段验证错误的应用于&lt;s p a n&gt; Html.ValidationMessage() 帮助程序呈现的标记。
-- 验证摘要错误-应用于&lt;ul&gt; Html.ValidationSumamry() 帮助程序呈现的标记。
+- 验证摘要错误-应用于&lt;ul&gt; Html.ValidationSummary() 帮助程序呈现的标记。
 
 可以修改这些级联样式表类，并因此通过修改 Site.css 文件内容的文件夹中修改的验证错误，外观。
 

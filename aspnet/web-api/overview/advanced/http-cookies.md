@@ -8,12 +8,12 @@ ms.date: 09/17/2012
 ms.assetid: 243db2ec-8f67-4a5e-a382-4ddcec4b4164
 msc.legacyurl: /web-api/overview/advanced/http-cookies
 msc.type: authoredcontent
-ms.openlocfilehash: 61e0c47efdd92a3a0b329930aeec757b446eb9b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ee717085a02f4c5f5d664cfd2fa82c21864e4055
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044734"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425816"
 ---
 <a name="http-cookies-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP Cookie
 ====================
@@ -25,7 +25,7 @@ ms.locfileid: "57044734"
 
 本部分提供 cookie 在 HTTP 级别的实现方式的简要的概述。 有关详细信息，请查阅[RFC 6265](http://tools.ietf.org/html/rfc6265)。
 
-Cookie 是一种服务器发送的 HTTP 响应中的数据。 客户端 （可选） 将存储在 cookie，并返回对 subsequet 请求。 这允许客户端和服务器共享状态。 若要设置一个 cookie，服务器在响应中包含的 Set-cookie 标头。 Cookie 的格式是一个名称-值对，具有可选特性。 例如：
+Cookie 是一种服务器发送的 HTTP 响应中的数据。 客户端 （可选） 将存储在 cookie 并将其返回在后续请求。 这允许客户端和服务器共享状态。 若要设置一个 cookie，服务器在响应中包含的 Set-cookie 标头。 Cookie 的格式是一个名称-值对，具有可选特性。 例如：
 
 [!code-powershell[Main](http-cookies/samples/sample1.ps1)]
 

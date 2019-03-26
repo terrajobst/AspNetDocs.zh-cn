@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 4c56f64a-086a-44ce-99c2-4c69604cd7fd
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7b7ba2fb3f1bba0447e700c84a017266cba305e6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd54a1d8ae3a2913c9d8a11c5b31ba1c829450d2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045014"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425309"
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的媒体格式化程序
 ====================
@@ -46,7 +46,7 @@ ms.locfileid: "57045014"
 若要创建媒体格式化程序，请从这些类之一派生：
 
 - [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx)。 此类使用异步读取和写入方法。
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx)。 此类派生自**MediaTypeFormatter**但使用 sychronous 读/写方法。
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx)。 此类派生自**MediaTypeFormatter**但使用同步读/写的方法。
 
 派生自**BufferedMediaTypeFormatter**是更简单，因为没有异步代码，但它也意味着在 I/O 期间可以阻止调用线程。
 
@@ -56,7 +56,7 @@ ms.locfileid: "57045014"
 
 [!code-csharp[Main](media-formatters/samples/sample3.cs)]
 
-若要实现 CSV 格式化程序，定义一个类，派生自**BufferedMediaTypeFormater**:
+若要实现 CSV 格式化程序，定义一个类，派生自**BufferedMediaTypeFormatter**:
 
 [!code-csharp[Main](media-formatters/samples/sample4.cs)]
 

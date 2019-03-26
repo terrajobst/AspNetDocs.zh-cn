@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 0dea8b077878139a3f513cb51447b86a93fe55b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: abb1ef355bd7614daaab8c205d9d53065856cd23
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057704"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424360"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
 ====================
@@ -139,7 +139,7 @@ Page Inspector 允许您查找其位置可能不太明显的标记。 然后可�
 
 单击**检查**将 Page Inspector 置于检查模式。
 
-单击显示"你 logohere"页的上半部分。 正在检查中更多详细信息，因此您将鼠标指针移动无法再更改浏览器窗口中的显示的特定元素。
+单击显示"Your logo here"的页的上半部分。 正在检查中更多详细信息，因此您将鼠标指针移动无法再更改浏览器窗口中的显示的特定元素。
 
 现在，转到鼠标指针**HTML**窗口。 移动鼠标指针时，Page Inspector 概述了中的元素**HTML**窗口，并突出显示浏览器窗口中的相应元素。
 

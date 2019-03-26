@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: e902881d3dab6a902cb747a197a32f317d199723
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 71e566523d658eb8198453f354a12e63a4c38495
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025984"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421032"
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 提供动态更新
 ====================
@@ -78,7 +78,7 @@ by [Microsoft](https://github.com/microsoft)
 
 第一个库引用的核心 ASP.NET AJAX 客户端脚本库。 此文件为大约 24 k （压缩） 的大小，并包含核心客户端 AJAX 功能。 第二个库包含将与 ASP.NET MVC 内置 AJAX 帮助器方法 （我们稍后将使用） 相集成的实用工具函数。
 
-我们可以然后更新视图模板代码我们之前添加，以便而不是输出"您未注册此事件的"消息，我们改为呈现链接的推送时将执行调用我们的 RSVP 控制器上我们 RSVPForEvent 操作方法的 AJAX 调用和 RSVPs 用户：
+我们可以然后更新视图模板代码我们之前添加，以便不需要输出"您未注册此事件的"消息，我们改为呈现链接的推送时将执行调用我们的 RSVP 控制器上我们 RSVPForEvent 操作方法的 AJAX 调用和 RSVPs 用户：
 
 [!code-aspx[Main](use-ajax-to-deliver-dynamic-updates/samples/sample6.aspx)]
 

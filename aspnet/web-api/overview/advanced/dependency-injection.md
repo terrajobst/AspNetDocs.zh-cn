@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 318a2f1c587feb360212a390bb5de7bdc127513d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5011d42d0c2200bc782ab548f6bfa0d952f6e72
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043864"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420915"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的依赖关系注入
 ====================
@@ -49,7 +49,7 @@ ms.locfileid: "57043864"
 
 - 如果你想要替换`ProductRepository`使用不同的实现，您还需要修改控制器类。
 - 如果`ProductRepository`具有依赖关系，您必须配置这些控制器中。 对于具有多个控制器的大型项目，配置代码变得分散于整个项目。
-- 很难进行单元测试，因为控制器是硬编码查询数据库。 对于单元测试时，应使用的 mock 或存根 （stub） 存储库，这是不可能成为当前设计。
+- 很难进行单元测试，因为控制器是硬编码查询数据库。 对于单元测试时，应使用的 mock 或存根 （stub） 存储库，这是不可能与当前的设计。
 
 我们可以解决这些问题由*注入*到控制器的存储库。 首先，重构`ProductRepository`到接口的类：
 

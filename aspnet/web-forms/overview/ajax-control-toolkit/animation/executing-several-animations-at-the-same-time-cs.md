@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 219149e1-3ee9-4b79-8fe4-7433f6b7d15b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d70f7b9170cbd3307dae4cdb4f9ee735e3c5bee8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f228ca600691ea4820ecdb79dea5e70054975f32
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032764"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422943"
 ---
 <a name="executing-several-animations-at-the-same-time-c"></a>执行多个动画 (C#)
 ====================
@@ -52,7 +52,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample5.aspx)]
 
-和确实： 当运行此脚本，面板将显示，则调整大小时 (超过 threefolding 其宽度和 halfing 窗体的高度) 以及同时淡出。
+和确实： 当你运行此脚本，面板会显示，然后调整大小活动 （两个以上倍，以便其宽度和高度的一半来） 和同时淡出。
 
 
 [![在面板是淡出和调整大小 （包括其内容，得益于浏览器的呈现引擎）](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)

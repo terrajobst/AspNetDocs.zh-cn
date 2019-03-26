@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 54e263e277852d2d478ce5bccd4164254498831a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 957facaf2988fedb6615e95701af5155cbcb23d2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024744"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423086"
 ---
 <a name="dependency-injection-in-signalr"></a>SignalR 中的依赖项注入
 ====================
@@ -59,7 +59,7 @@ ms.locfileid: "57024744"
 
 [!code-csharp[Main](dependency-injection/samples/sample3.cs)]
 
-现在，该对象不负责选择的`ILogger`使用。 你可以从交换机`ILogger`而无需更改依赖于它的对象的实现。
+现在，该对象不负责选择的`ILogger`使用。 您可以切换`ILogger`而无需更改依赖于它的对象的实现。
 
 [!code-csharp[Main](dependency-injection/samples/sample4.cs)]
 
@@ -179,7 +179,7 @@ Visual Studio 将创建名为的新接口`IStockTicker`，并且也会更改`Sto
 
 [!code-csharp[Main](dependency-injection/samples/sample18.cs)]
 
-一个匿名函数，返回此代码 creatres **IHubConnection**。 **WhenInjectedInto**方法会示意 Ninject 时要使用此函数仅创建`IStockTicker`实例。 原因是 SignalR 创建**IHubConnectionContext**实例在内部，并且我们不想要重写 SignalR 如何创建它们。 此函数仅适用于我们`StockTicker`类。
+此代码将创建一个匿名函数，返回**IHubConnection**。 **WhenInjectedInto**方法会示意 Ninject 时要使用此函数仅创建`IStockTicker`实例。 原因是 SignalR 创建**IHubConnectionContext**实例在内部，并且我们不想要重写 SignalR 如何创建它们。 此函数仅适用于我们`StockTicker`类。
 
 传递到依赖关系解析程序**MapSignalR**通过添加中心配置的方法：
 

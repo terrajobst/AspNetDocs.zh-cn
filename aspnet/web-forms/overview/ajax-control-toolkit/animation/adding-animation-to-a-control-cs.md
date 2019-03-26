@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aa977883af931bb74b791104cf4ee3212079e43a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: aac6e97ae5d3d777c3644515628d2669076a88c4
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031334"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421916"
 ---
 <a name="adding-animation-to-a-control-c"></a>将动画添加到控件 (C#)
 ====================
@@ -65,7 +65,7 @@ Framework 附带了动画，每个由其自己的 XML 元素表示一组。 下�
 - `<Resize>` （更改大小）
 - `<Scale>` （按比例更改大小）
 
-在此示例中，面板应淡出。该动画应需要 1.5 秒钟的时间 (`Duration`属性)，显示每秒 24 帧 （动画步骤） (`Fps` attributs)。 下面是完整标记`AnimationExtender`控件：
+在此示例中，面板应淡出。该动画应需要 1.5 秒钟的时间 (`Duration`属性)，显示每秒 24 帧 （动画步骤） (`Fps`属性)。 下面是完整标记`AnimationExtender`控件：
 
 [!code-aspx[Main](adding-animation-to-a-control-cs/samples/sample5.aspx)]
 

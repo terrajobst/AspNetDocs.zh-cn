@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef4242ff3bd1dd86f4d58bd04ba08e8b90fdaa4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 50fdcc1959b8f3a02ec5bbe0eb7417ffb8a260a3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037514"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425896"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>使用实体框架在 ASP.NET MVC 应用程序中更新相关的数据
 ====================
@@ -93,7 +93,7 @@ ms.locfileid: "57037514"
 
 运行**创建**页面 (显示课程索引页，然后单击**创建新**) 并输入新课程的数据：
 
-| “值” | 设置 |
+| 值 | 设置 |
 | ----- | ------- |
 | 数字 | 输入*1000年*。 |
 | 标题 | 输入*代数*。 |
@@ -131,7 +131,7 @@ ms.locfileid: "57037514"
 对引用`RetryLimitExceededException`需要`using`语句; 若要将其添加-将鼠标悬停`RetryLimitExceededException`。 将显示以下消息：![ 重试异常消息](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
 
 
-选择**显示 potentital 修复**，然后**使用 System.Data.Entity.Infrastructure**
+选择**显示潜在修复**，然后**使用 System.Data.Entity.Infrastructure**
 
 ![解析为重试异常](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image14.png)
 

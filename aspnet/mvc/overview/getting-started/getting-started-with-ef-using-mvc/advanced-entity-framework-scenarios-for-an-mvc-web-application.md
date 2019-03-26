@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: d0208c8890467ec6044d807aeee7c7ae02e18790
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d7cc83a5b78a60f575f5c3065079679189296a0c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032514"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425270"
 ---
 # <a name="tutorial-learn-about-advanced-ef-scenarios-for-an-mvc-5-web-app"></a>教程：了解有关 EF 的 MVC 5 Web 应用的高级方案
 
@@ -85,7 +85,7 @@ ms.locfileid: "57032514"
 
 假设 Contoso 大学管理员想要能够在数据库中，如更改的每个课程的可修读人数执行大容量更改。 如果该大学有大量的课程，检索所有实体并单独更改会降低效率。 在本部分中，你将实现一个网页，使用户能够指定一个参数，通过要更改所有课程的可修读人数和将通过执行 SQL 中进行更改`UPDATE`语句。 
 
-在中*CourseContoller.cs*，添加`UpdateCourseCredits`方法`HttpGet`和`HttpPost`:
+在中*CourseController.cs*，添加`UpdateCourseCredits`方法`HttpGet`和`HttpPost`:
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample4.cs)]
 

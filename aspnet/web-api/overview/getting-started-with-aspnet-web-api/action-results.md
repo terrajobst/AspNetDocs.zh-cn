@@ -8,12 +8,12 @@ ms.date: 02/03/2014
 ms.assetid: 2fc4797c-38ef-4cc7-926c-ca431c4739e8
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: b2b5ae5e5cef19e75a184aa28ac838a31e5ef1fd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c255cebfd6b0c632c000d24288a4dd4cf73c8a1c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061774"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422020"
 ---
 <a name="action-results-in-web-api-2"></a>Web API 2 的操作结果
 ====================
@@ -83,7 +83,7 @@ Web API 使用 Accept 标头中请求选择格式化程序。 有关详细信息
 
 如果控制器操作返回**IHttpActionResult**，Web API 调用**ExecuteAsync**方法创建**HttpResponseMessage**。 然后它会将转换**HttpResponseMessage**到 HTTP 响应消息。
 
-下面是简单的实现**IHttpActionResult**创建纯文本响应：
+下面是一个简单的实现**IHttpActionResult**创建纯文本响应：
 
 [!code-csharp[Main](action-results/samples/sample7.cs)]
 

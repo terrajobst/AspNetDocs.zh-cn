@@ -8,12 +8,12 @@ ms.date: 02/06/2013
 ms.assetid: b91e6424-1544-4747-bd0b-d1f8418c9653
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 4ba53e15dab83368097a58ba4d0d2e46d113d1d2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0e43ec6b1cbe922b00f0f71d08aed4d0f4c08af8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065244"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425855"
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>安全指南为 ASP.NET Web API 2 OData
 ====================
@@ -25,7 +25,7 @@ ms.locfileid: "57065244"
 
 查询语义均基于实体数据模型 (EDM) 中，不是基础的模型类型。 可以从 EDM 排除某属性，它将看不到查询。 例如，假设您的模型包含具有薪金属性的员工类型。 你可能想要从 EDM 来隐藏客户端从排除此属性。
 
-有两种方式可以排除从 EDM 属性。 可以设置 **[IgnoreDataMember]** 模型类中的属性上的属性：
+有两种方法来从 EDM 排除某属性。 可以设置 **[IgnoreDataMember]** 模型类中的属性上的属性：
 
 [!code-csharp[Main](odata-security-guidance/samples/sample1.cs)]
 

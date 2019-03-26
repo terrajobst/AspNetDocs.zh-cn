@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 561acc9b473bac7d39e7ed4d511d8b979657131d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: afcfc92b4e0db8092f83b67c6c227af91bdc0cbb
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035744"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426039"
 ---
 <a name="batch-inserting-c"></a>批量插入 (C#)
 ====================
@@ -195,7 +195,7 @@ ms.locfileid: "57035744"
 接下来，为插入的界面中的发货和取消按钮控件中的添加产品创建事件处理程序。 单击任一按钮时，我们需要还原到显示接口。 创建`Click`两个事件处理程序按钮的控件，使它们调用`ReturnToDisplayInterface`，我们将暂时不可用的方法。 除了隐藏`InsertingInterface`面板，显示`DisplayInterface`面板中，`ReturnToDisplayInterface`方法需要返回到其预先编辑状态的 Web 控件。 这涉及到设置 Dropdownlist`SelectedIndex`属性设置为 0 和清除`Text`文本框控件的属性。
 
 > [!NOTE]
-> 可能会发生什么情况，请考虑如果我们无效 t 返回到显示接口之前将控件返回到其预先编辑状态。 用户可能会单击进程，产品交付按钮，输入从发货的产品，然后单击添加从发货的产品。 这会将产品添加并将用户返回到显示接口。 此时，用户可能想要添加另一次寄。 单击它们将返回到插入接口，但 DropDownList 的过程，产品交付按钮时选择和文本框值仍会使用其以前的值填充。
+> 可能会发生什么情况，请考虑如果我们也不返回到显示接口之前返回到其预先编辑状态的控件。 用户可能会单击进程，产品交付按钮，输入从发货的产品，然后单击添加从发货的产品。 这会将产品添加并将用户返回到显示接口。 此时，用户可能想要添加另一次寄。 单击它们将返回到插入接口，但 DropDownList 的过程，产品交付按钮时选择和文本框值仍会使用其以前的值填充。
 
 
 [!code-csharp[Main](batch-inserting-cs/samples/sample5.cs)]
@@ -215,7 +215,7 @@ ms.locfileid: "57035744"
 
 ## <a name="step-4-adding-the-products"></a>步骤 4：添加产品
 
-保持本教程是从发货按钮 s 保存到数据库中添加产品的产品的所有`Click`事件处理程序。 这可以通过创建`ProductsDataTable`并添加`ProductsRow`提供的产品名称的每个实例。 一次这些`ProductsRow`中添加了我们将调用`ProductsBLL`类 s`UpdateWithTransaction`方法并传入`ProductsDataTable`。 请记住，`UpdateWithTransaction`方法，它返回中创建[包装事务内的数据库修改](wrapping-database-modifications-within-a-transaction-cs.md)教程中，传递`ProductsDataTable`到`ProductsTableAdapter`s`UpdateWithTransaction`方法。 在这里，ADO.NET 事务中启动和 TableAdatper 问题`INSERT`数据库中为每个添加到语句`ProductsRow`DataTable 中。 假定所有产品都添加未生成错误，则在提交事务，否则它将回滚。
+保持本教程是从发货按钮 s 保存到数据库中添加产品的产品的所有`Click`事件处理程序。 这可以通过创建`ProductsDataTable`并添加`ProductsRow`提供的产品名称的每个实例。 一次这些`ProductsRow`中添加了我们将调用`ProductsBLL`类 s`UpdateWithTransaction`方法并传入`ProductsDataTable`。 请记住，`UpdateWithTransaction`方法，它返回中创建[包装事务内的数据库修改](wrapping-database-modifications-within-a-transaction-cs.md)教程中，传递`ProductsDataTable`到`ProductsTableAdapter`s`UpdateWithTransaction`方法。 在这里，ADO.NET 事务中启动和 TableAdapter 问题`INSERT`数据库中为每个添加到语句`ProductsRow`DataTable 中。 假定所有产品都添加未生成错误，则在提交事务，否则它将回滚。
 
 用于从发货按钮 s 添加产品代码`Click`事件处理程序还需要执行一些错误检查。 由于没有任何 RequiredFieldValidators 插入接口中使用，则用户可以输入价格为的产品时省略其名称。 由于产品的名称是必需的如果此类情况展开需要提醒用户，并不继续执行插入操作。 完整`Click`事件处理程序代码如下所示：
 

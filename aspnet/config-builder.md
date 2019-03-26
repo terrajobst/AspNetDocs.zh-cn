@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e2f3781623af5a32149e1db1c17b67ce43b7da0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030644"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423958"
 ---
 # <a name="configuration-builders-for-aspnet"></a>ASP.NET 的配置生成器
 
@@ -137,7 +137,7 @@ ms.locfileid: "57030644"
 
 例如，使用以前*web.config*文件中，设置键/值在上一环境编辑器映像，和前面的代码中，以下值：
 
-|  键              | “值” |
+|  键              | 值 |
 | ----------------- | ------------ |
 |     ServiceID           | 从 env 变量 AppSetting_ServiceID|
 |    default            | 从 env AppSetting_default 值 |
@@ -191,7 +191,7 @@ ms.locfileid: "57030644"
 
 此配置生成器提供了一个功能类似于[ASP.NET Core 机密管理器](/aspnet/core/security/app-secrets)。
 
-[UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/)可在.NET Framework 项目中，但必须指定机密文件。 或者，可以定义`UserSecretsId`属性在项目文件，并创建正确的位置进行读取的原始机密文件。 若要保留从你的项目的外部依赖关系，密钥文件是 XML 格式。 XML 格式设置是实现详细信息，和格式不应依赖。 如果您需要共享*secrets.json*使用.NET Core 项目文件，请考虑使用[SimpleJsonConfigBuilder](#simplejsonconfig)。 `SimpleJsonConfigBuilder`设置格式的.NET Core 还应考虑可能发生变更的实现细节。
+[UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/)可在.NET Framework 项目中，但必须指定机密文件。 或者，可以定义`UserSecretsId`属性在项目文件，并创建正确的位置进行读取的原始机密文件。 若要保留从你的项目的外部依赖关系，密钥文件是 XML 格式。 XML 格式设置是实现详细信息，和格式不应依赖。 如果您需要共享*secrets.json*使用.NET Core 项目文件，请考虑使用[SimpleJsonConfigBuilder](#simplejsonconfigbuilder)。 `SimpleJsonConfigBuilder`设置格式的.NET Core 还应考虑可能发生变更的实现细节。
 
 配置属性`UserSecretsConfigBuilder`:
 
@@ -278,7 +278,7 @@ ms.locfileid: "57030644"
 
 * `jsonFile` - 必需。 指定要读取从 JSON 文件。 `~`可以在开始使用字符引用应用程序根。
 * `optional` -布尔值，默认值是`true`。 可防止引发异常，如果找不到 JSON 文件。
-* `jsonMode` - `[Flat|Sectional]`。 默认为 `Flat`。 当`jsonMode`是`Flat`，JSON 文件是一个平面键/值源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是一个平面键/值源。 当`SimpleJsonConfigBuilder`中配置`Sectional`模式：
+* `jsonMode` - `[Flat|Sectional]`。 `Flat` 默认值。 当`jsonMode`是`Flat`，JSON 文件是一个平面键/值源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是一个平面键/值源。 当`SimpleJsonConfigBuilder`中配置`Sectional`模式：
 
   * 从概念上讲，为多个字典只是在最高级别对 JSON 文件被划分。
   * 每个字典仅应用于附加到它们的顶级属性名称匹配的配置节。 例如：

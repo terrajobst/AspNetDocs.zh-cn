@@ -8,12 +8,12 @@ ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 94a72f22cbcd7fa84528dde502cceaa1e26dcaa1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ea149b6450cf02c993c7690752a05396802336be
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049224"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425049"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>使用 Glimpse 分析和调试 ASP.NET MVC 应用
 ====================
@@ -58,7 +58,7 @@ ms.locfileid: "57049224"
 
 如果必须显示在收藏夹栏，您可以拖放 Glimpse 按钮，将其添加为 bookmarklets:
 
-![使用 Glimpse boookmarklets IE](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image5.png)
+![使用 Glimpse bookmarklets IE](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image5.png)
 
 你现在可以导航您的应用程序，并**Heads 平视显示**(HUD) 显示在页面底部。
 
@@ -104,11 +104,11 @@ ms.locfileid: "57049224"
 <a id="da"></a>
 ## <a name="using-glimpse-on-azure"></a>在 Azure 上使用 Glimpse
 
-大致了解默认安全策略只允许要在本地主机显示的大致了解数据。 您可以更改此安全策略，以便您可以查看此数据 （如 Azure 上的 web 应用） 的远程服务器上。 在 Azure 上的测试环境，将添加到底部的突出显示的标记*web.confg*文件以启用初步了解：
+大致了解默认安全策略只允许要在本地主机显示的大致了解数据。 您可以更改此安全策略，以便您可以查看此数据 （如 Azure 上的 web 应用） 的远程服务器上。 在 Azure 上的测试环境，将添加到底部的突出显示的标记*web.config*文件以启用初步了解：
 
 [!code-xml[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample3.xml?highlight=2-6)]
 
-与此项更改就，任何用户可以在远程站点上查看你大致了解数据。 考虑将上面的标记添加到发布配置文件，因此它仅部署应用时使用该发布配置文件 (例如，在 Azure 测试 proifle。)若要限制大致了解数据，我们将添加`canViewGlimpseData`角色和仅允许此角色，以查看大致了解数据的用户。
+与此项更改就，任何用户可以在远程站点上查看你大致了解数据。 考虑将上面的标记添加到发布配置文件，因此它仅部署应用时使用该发布配置文件 （例如，Azure 的测试配置文件。）若要限制大致了解数据，我们将添加`canViewGlimpseData`角色和仅允许此角色，以查看大致了解数据的用户。
 
 删除从注释*GlimpseSecurityPolicy.cs*文件，并更改[IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx)从调用`Administrator`到`canViewGlimpseData`角色：
 

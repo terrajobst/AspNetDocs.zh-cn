@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: 21a178de-4c5a-4211-8a9c-74ec576c0f30
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 9b27ccc6ce26e8266947c531d299ba69bbec4fde
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5eff66b701d775a553a51437e540619b4524a58f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055824"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421552"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>使用 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 2 部分
 ====================
@@ -24,7 +24,7 @@ ms.locfileid: "57055824"
 
 ## <a name="adding-an-automatic-datetime-template"></a>添加自动的 DateTime 模板
 
-在本教程的第一部分，您了解了如何将属性添加到模型以显式指定的格式设置，以及如何可以显式指定用于呈现模型的模板。 例如， [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)属性在以下代码显式指定的格式设置`ReleaseDate`属性。
+在本教程的第一部分，您了解了如何将属性添加到模型以显式指定的格式设置，以及如何可以显式指定用于呈现模型的模板。 例如， [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)下面的代码中的特性显式指定的格式设置`ReleaseDate`属性。
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample1.cs)]
 
@@ -104,7 +104,7 @@ ms.locfileid: "57055824"
 
 这一次`ReleaseDate`属性将显示日期不包括的时间，而无需红色粗体日期。 这说明了数据的名称的模板类型 (在这种情况下`DateTime`) 会自动使用来显示该类型的所有模型属性。 重命名后*添加*文件为*LoudDateTime.cshtml*，ASP.NET 无法再找到中的模板*Views\Movies\DisplayTemplates*文件夹中，因此使用它*添加*模板从 * Views\Movies\Shared\*文件夹。
 
-（模板匹配是不区分大小写，因此无法创建模板文件的名称与任何大小写。 例如， *DATETIME.chstml，添加*，并*添加*将所有匹配`DateTime`类型。)
+（模板匹配是不区分大小写，因此无法创建模板文件的名称与任何大小写。 例如，*添加，添加*，并*添加*将所有匹配`DateTime`类型。)
 
 若要查看： 在此情况下，`ReleaseDate`正在使用显示字段*Views\Movies\DisplayTemplates\DateTime.cshtml*模板，其中使用短日期格式显示数据，但否则会添加任何特殊格式。
 

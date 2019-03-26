@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d951fab4fea59226e5d34bbf468377d436df944
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 106f7498a70339556d0662a986d71a01a21074ab
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046194"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424529"
 ---
 <a name="debugging-stored-procedures-vb"></a>调试存储过程 (VB)
 ====================
@@ -48,7 +48,7 @@ SQL Server 2005 提供 T-SQL 和托管的数据库对象调试支持。 但是�
 
 Visual Studio 可以调试在本地和远程 SQL Server 实例上的存储的过程。 本地 SQL Server 实例是安装在 Visual Studio 的同一台计算机上。 如果你使用的 SQL Server 数据库不在你的开发计算机上，它被视为远程实例。 这些教程中我们一直在使用本地 SQL Server 实例。 调试远程的 SQL server 实例上的存储的过程需要比时调试的本地实例上的存储的过程的详细配置步骤。
 
-如果使用本地 SQL Server 实例，可以从步骤 1 开始，并在学习本教程末尾。 如果使用远程 SQL Server 实例，但是，您将首先需要确保您在调试时将记录到开发计算机与远程实例具有 SQL Server 登录名的 Windows 用户帐户。 Moveover，此数据库登录名和用于从正在运行的 ASP.NET 应用程序连接到数据库的数据库登录名必须是成员的`sysadmin`角色。 配置 Visual Studio 和 SQL Server，若要调试的远程实例的详细信息本教程结束时，在远程实例部分看到调试 T-SQL 的数据库对象。
+如果使用本地 SQL Server 实例，可以从步骤 1 开始，并在学习本教程末尾。 如果使用远程 SQL Server 实例，但是，您将首先需要确保您在调试时将记录到开发计算机与远程实例具有 SQL Server 登录名的 Windows 用户帐户。 此外，此数据库登录名和用于从正在运行的 ASP.NET 应用程序连接到数据库的数据库登录名必须是成员的`sysadmin`角色。 配置 Visual Studio 和 SQL Server，若要调试的远程实例的详细信息本教程结束时，在远程实例部分看到调试 T-SQL 的数据库对象。
 
 最后，了解调试支持 T-SQL 的数据库对象都不为调试.NET 应用程序的支持丰富的功能。 例如，断点条件和筛选器不支持，只能使用调试窗口中的一个子集，不能使用编辑并继续、 即时窗口呈现毫无意义，等等。 请参阅[调试器命令和功能的限制](https://msdn.microsoft.com/library/ms165035(VS.80).aspx)有关详细信息。
 

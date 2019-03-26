@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8bea3d4bc19a5a47240abeb2cc015116814a8fdf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: afd1551d72fa3a5b925d7499c86731db4b6f0b61
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043034"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422007"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>排序、 筛选和分页与 ASP.NET MVC 应用程序 (10 的 3) 中的实体框架
 ====================
@@ -21,16 +21,16 @@ ms.locfileid: "57043034"
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 想要获取有关系列教程的信息，请参阅[第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 您可以从头开始的系列教程或[下载本章节的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)并从这里开始。
+> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 5 Code First 和 Visual Studio 2012 的 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 您可以从头开始的系列教程或[下载本章节的初学者项目](building-the-ef5-mvc4-chapter-downloads.md)并从这里开始。
 > 
 > > [!NOTE] 
 > > 
 > > 如果遇到无法解决的问题[下载已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)并尝试重现你的问题。 通过比较您的代码与已完成的代码，通常可以找到问题的解决方案。 一些常见错误以及如何解决这些问题，请参阅[错误和解决方法。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
 
-上一教程中实现一组基本的 CRUD 操作执行的 web 页面`Student`实体。 在本教程将添加排序、 筛选和分页功能**学生**索引页。 你还将创建具有简单分组功能的页面。
+上一教程中实现一组基本的 CRUD 操作执行的 web 页面`Student`实体。 在本教程将添加排序、 筛选和分页功能**学生**索引页。 同时，还将创建一个执行简单分组的页面。
 
-下图显示你完成本教程后相关页面的样子。 列标题是一个链接，用户可以单击它使数据按该列排序。 反复单击列标题可在升序排列和降序排列之间切换。
+下图展示了完成操作后的页面外观。 列标题是用户可以单击以按该列排序的链接。 重复单击列标题可在升降排序顺序之间切换。
 
 ![Students_Index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
@@ -44,24 +44,24 @@ ms.locfileid: "57043034"
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-此代码从 URL 中的查询字符串中接收`sortOrder`参数。 ASP.NET MVC 提供查询字符串值作为操作方法的参数。 "Name"或"Date"，后面可以选择性跟用于指定降序顺序的下划线和"desc"构成参数字符串。 默认排序顺序为升序。
+此代码接收来自 URL 中的查询字符串的 `sortOrder` 参数。 ASP.NET MVC 提供查询字符串值作为操作方法的参数。 该参数将是一个字符串，可为“Name”或“Date”，可选择后跟下划线和字符串“desc”来指定降序。 默认排序顺序为升序。
 
-第一次请求索引页时，没有任何查询字符串。 学生显示按升序排序依据`LastName`，这是默认设置，如在 fall-through 事例所建立`switch`语句。 当用户单击列标题的超链接，将向`Index`方法提供相应的`sortOrder`查询字符串。
+首次请求索引页时，没有任何查询字符串。 学生显示按升序排序依据`LastName`，这是默认设置，如在 fall-through 事例所建立`switch`语句。 当用户单击列标题超链接时，查询字符串中会提供相应的 `sortOrder` 值。
 
 这两个`ViewBag`使用变量，以便该视图可以配置与相应的查询字符串值的列标题超链接：
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
-这两个语句都使用了三目运算符。 第一个指定，如果`sortOrder`参数为 null 或为空，`ViewBag.NameSortParm`应设置为"名称\_desc"; 否则为它应设置为空字符串。  这两个语句使试图能够如下所示设置列标题的超链接：
+这些是三元语句。 第一个指定，如果`sortOrder`参数为 null 或为空，`ViewBag.NameSortParm`应设置为"名称\_desc"; 否则为它应设置为空字符串。 通过这两个语句，视图可如下设置列标题超链接：
 
-| 当前的排序顺序 | Last Name 超链接 | Date 超链接 |
+| 当前排序顺序 | 姓氏超链接 | 日期超链接 |
 | --- | --- | --- |
-| Last Name 升序排列 | descending | ascending |
-| Last Name 降序排列 | ascending | ascending |
-| Date 升序排列 | ascending | descending |
-| Date 降序排列 | ascending | ascending |
+| 姓氏升序 | descending | ascending |
+| 姓氏降序 | ascending | ascending |
+| 日期升序 | ascending | descending |
+| 日期降序 | ascending | ascending |
 
-该方法使用[LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx)指定要作为排序依据的列。 该代码会创建[IQueryable](https://msdn.microsoft.com/library/bb351562.aspx)变量之前`switch`语句，将修改在`switch`语句，并调用`ToList`方法之后`switch`语句。 当你创建和修改`IQueryable`变量时数据库不会接收到任何查询。 您将转换之前未执行查询`IQueryable`对象通过调用一个方法，如集合`ToList`。 因此，此代码导致直到才执行单个查询`return View`语句。
+该方法使用[LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx)指定要作为排序依据的列。 该代码会创建[IQueryable](https://msdn.microsoft.com/library/bb351562.aspx)变量之前`switch`语句，将修改在`switch`语句，并调用`ToList`方法之后`switch`语句。 当创建和修改 `IQueryable` 变量时，不会向数据库发送任何查询。 您将转换之前未执行查询`IQueryable`对象通过调用一个方法，如集合`ToList`。 因此，此代码导致直到才执行单个查询`return View`语句。
 
 ### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>添加列标题超链接到学生索引视图
 
@@ -81,7 +81,7 @@ ms.locfileid: "57043034"
 
 ## <a name="add-a-search-box-to-the-students-index-page"></a>向学生索引页添加搜索框
 
-向视图添加一个文本框和提交按钮来向索引页添加搜索框，并在`Index`方法中做相应更改。 你可以在文本框中输入字符串搜索名字和姓氏字段中的内容。
+要向学生索引页添加筛选功能，需将文本框和提交按钮添加到视图，并在 `Index` 方法中做出相应的更改。 在文本框中输入一个字符串以在名字和姓氏字段中进行搜索。
 
 ### <a name="add-filtering-functionality-to-the-index-method"></a>向 Index 方法添加筛选功能
 
@@ -89,13 +89,13 @@ ms.locfileid: "57043034"
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-在`Index`方法中添加`searchString`参数。 你还向 LINQ 语句添加`where`clausethat 仅选择的学生的名字或姓氏中包含搜索字符串。 从将添加到索引视图的文本框中接收搜索字符串值。添加的语句[其中](https://msdn.microsoft.com/library/bb535040.aspx)子句执行仅当没有要搜索的值。
+已向 `Index` 方法添加 `searchString` 参数。 你还向 LINQ 语句添加`where`子句仅选择的学生的名字或姓氏中包含搜索字符串。 从将添加到索引视图的文本框中接收搜索字符串值。添加的语句[其中](https://msdn.microsoft.com/library/bb535040.aspx)子句执行仅当没有要搜索的值。
 
 > [!NOTE]
-> 在许多情况下可以对实体框架实体集或作为内存中集合上的扩展方法调用相同的方法。 结果通常都是相同，但在某些情况下可能会不同。 例如，.NET Framework 实现`Contains`方法将空字符串传递给它，而 SQL Server Compact 4.0 的实体框架提供程序返回空字符串零行，则返回所有行。 因此该示例中的代码 (将放`Where`内的语句`if`语句) 可确保对于所有版本的 SQL Server 获得相同的结果。 此外，.NET Framework 实现`Contains`方法默认情况下，执行区分大小写比较，但实体框架 SQL Server 提供程序默认情况下执行不区分大小写的比较。 因此，调用`ToUpper`使测试显式不区分大小写的方法可确保结果不更改时更改代码更高版本以使用存储库，它将返回`IEnumerable`而不是集合`IQueryable`对象。 (当你对`IEnumerable`集合调用`Contains`方法，你将获取.NET Framework 的实现; 当对`IQueryable`对象调用它，则会得到数据库驱动的实现。)
+> 在许多情况下可以对实体框架实体集或作为内存中集合上的扩展方法调用相同的方法。 结果通常都是相同，但在某些情况下可能会不同。 例如，.NET Framework 实现`Contains`方法将空字符串传递给它，而 SQL Server Compact 4.0 的实体框架提供程序返回空字符串零行，则返回所有行。 因此该示例中的代码 (将放`Where`内的语句`if`语句) 可确保对于所有版本的 SQL Server 获得相同的结果。 此外，.NET Framework 实现`Contains`方法默认情况下，执行区分大小写比较，但实体框架 SQL Server 提供程序默认情况下执行不区分大小写的比较。 因此，调用`ToUpper`使测试显式不区分大小写的方法可确保结果不更改时更改代码更高版本以使用存储库，它将返回`IEnumerable`而不是集合`IQueryable`对象。 （在 `IEnumerable` 集合上调用 `Contains` 方法时，将获得 .NET Framework 实现；当在 `IQueryable` 对象上调用它时，将获得数据库提供程序实现。）
 
 
-### <a name="add-a-search-box-to-the-student-index-view"></a>向学生索引视图添加搜索框
+### <a name="add-a-search-box-to-the-student-index-view"></a>向“学生索引”视图添加搜索框
 
 在中*Views\Student\Index.cshtml*，添加打开之前立即突出显示的代码`table`若要创建标题栏、 文本框中，标记和一个**搜索**按钮。
 
@@ -141,13 +141,13 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-第一次显示页面，或如果用户未单击分页或排序链接，则所有参数都为 null。 如果单击分页链接后，`page`变量将包含要显示的页码。
+第一次显示页面时，或者如果用户没有单击分页或排序链接，所有参数都将为 NULL。 如果单击分页链接后，`page`变量将包含要显示的页码。
 
 `A ViewBag` 属性提供了与当前的排序顺序中，视图，因为此值必须包含在分页链接为了保持排序顺序都分页时相同：
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs)]
 
-另一个属性， `ViewBag.CurrentFilter`，视图提供当前筛选器字符串。 为了在分页过程中维护筛选规则，以及在页面重新显示的时候把筛选值恢复到文本框中，该值一定要被包含进分页链接里。 如果分页期间更改搜索字符串，显示的页会被重置为 1，因为新的筛选器可能会导致显示不同的数据。 在文本框中输入值并按下提交按钮，则会更改搜索字符串。 在这种情况下，`searchString`参数不为 null。
+另一个属性， `ViewBag.CurrentFilter`，视图提供当前筛选器字符串。 此值必须包含在分页链接中，以便在分页过程中保持筛选器设置，并且在页面重新显示时必须将其还原到文本框中。 如果在分页过程中搜索字符串发生变化，则页面必须重置为 1，因为新的筛选器会导致显示不同的数据。 在文本框中输入值并按下提交按钮，则会更改搜索字符串。 在这种情况下，`searchString`参数不为 null。
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 
@@ -155,7 +155,7 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList`方法从参数中获取页号。 两个问号表示[null 合并运算符](https://msdn.microsoft.com/library/ms173224.aspx)。 Null 合并运算符可以为 null 的类型定义一个默认值; 表达式`(page ?? 1)`意味着返回的值，如果`page`参数为 null 则返回 1，如果`page`指定了一个值则返回指定的值。
+`ToPagedList` 方法需要一个页码。 两个问号表示[null 合并运算符](https://msdn.microsoft.com/library/ms173224.aspx)。 NULL 合并运算符为可为 NULL 的类型定义默认值；表达式 `(page ?? 1)` 表示如果 `page` 有值，则返回该值，如果 `page` 为 NULL，则返回 1。
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>向学生索引视图添加分页链接
 
@@ -163,7 +163,7 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cshtml?highlight=6,9,14-20,56-58)]
 
-在页面顶部`@model`的语句表示视图现在获取的是`PagedList`对象而不是`List`对象。
+页面顶部的 `@model` 语句指定视图现在获取的是 `PagedList` 对象，而不是 `List` 对象。
 
 `using`语句`PagedList.Mvc`，访问 MVC 帮助程序的分页按钮。
 
@@ -171,13 +171,13 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-默认值[BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx)提交表单数据对于 POST，这意味着，参数将 HTTP 消息正文中而不是在 URL 作为查询字符串传递。 指定使用 HTTP GET 时，表单数据是通过 URL 查询字符串传输，这使得用户能够使用该 URL 来创建书签。 [使用 HTTP GET 的 W3C 指南](http://www.w3.org/2001/tag/doc/whenToUseGet.html)指定操作不会导致更新时应使用 GET。
+默认值[BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx)提交表单数据对于 POST，这意味着，参数将 HTTP 消息正文中而不是在 URL 作为查询字符串传递。 当指定 HTTP GET 时，表单数据作为查询字符串在 URL 中传递，从而使用户能够将 URL 加入书签。 [使用 HTTP GET 的 W3C 指南](http://www.w3.org/2001/tag/doc/whenToUseGet.html)指定操作不会导致更新时应使用 GET。
 
 单击新页面时可以看到当前的搜索字符串，将使用当前搜索字符串初始化文本框。
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cshtml?highlight=1)]
 
-列标题链接使用查询字符串将当前的搜索字符串传递到控制器，以便用户可以在筛选结果中进行排序：
+列标题链接使用查询字符串向控制器传递当前搜索字符串，以便用户可以在筛选结果中进行排序：
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cshtml?highlight=1)]
 
@@ -203,9 +203,9 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 ## <a name="create-an-about-page-that-shows-student-statistics"></a>创建有关页面，其中显示学生统计信息
 
-对于 Contoso 大学网站的一页，将显示每个注册日期注册学生的数量。 这要求在分组上再进行分组和简单计算。 要完成此操作，需要执行以下操作：
+对于 Contoso 大学网站的一页，将显示每个注册日期注册学生的数量。 这需要对组进行分组和简单计算。 若要完成此操作，需要执行以下操作：
 
-- 创建一个视图模型类，该视图类是需要传递到该视图的数据的抽象。
+- 为需要传递给视图的数据创建一个视图模型类。
 - 修改`About`中的方法`Home`控制器。
 - 修改`About`视图。
 
@@ -215,7 +215,7 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample18.cs)]
 
-### <a name="modify-the-home-controller"></a>修改 Home 控制器
+### <a name="modify-the-home-controller"></a>修改主控制器
 
 在中*HomeController.cs*，添加以下`using`语句的文件的顶部：
 
@@ -229,19 +229,19 @@ NuGet **PagedList.Mvc**会自动安装包**PagedList**包作为依赖项。 **Pa
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample21.cs)]
 
-LINQ 语句将学生实体按修读日期分组，计算每个组中的实体数并将结果存储在`EnrollmentDateGroup`视图模型对象的集合中。
+LINQ 语句按注册日期对学生实体进行分组，计算每组中实体的数量，并将结果存储在 `EnrollmentDateGroup` 视图模型对象的集合中。
 
 添加`Dispose`方法：
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample22.cs)]
 
-### <a name="modify-the-about-view"></a>修改关于视图
+### <a name="modify-the-about-view"></a>修改“关于”视图
 
 中的代码替换*Views\Home\About.cshtml*文件使用以下代码：
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample23.cshtml)]
 
-运行应用并单击**有关**链接。 表格中显示了每个修读日期的学生计数。
+运行应用并单击**有关**链接。 表格中会显示每个注册日期的学生计数。
 
 ![About_page](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image10.png)
 

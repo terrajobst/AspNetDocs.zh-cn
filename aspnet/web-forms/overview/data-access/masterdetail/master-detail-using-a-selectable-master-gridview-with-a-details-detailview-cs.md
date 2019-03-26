@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 0f982827-f8f9-420d-b36b-57b23f5aa519
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9d75c80b4c1bac5011acc896d91ff2fcd5a19298
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a5623c34ad7f8c9b5effed318a04b204ab66ecaa
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064794"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425192"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>使用带有详细信息 DetailView 的可选母版 GridView 来实现母版/详细信息查看 (C#)
 ====================
@@ -153,7 +153,7 @@ GridView 的最后一个标记是：
 
 在此环境及前面的三个教程中，我们已经看到许多用于显示母版/详细信息报表的方法。 在本教程中，我们探讨使用可选择 GridView 来存放主记录和 DetailsView 相同页面上显示有关所选的主记录的详细信息。 在之前的教程介绍了如何显示母版/详细信息报表使用 Dropdownlist 和上一个 web 页面，详细信息记录在另一台显示主记录。
 
-本教程最后会探讨母版/详细信息报表。 从下一步 tutorialwe 将开始我们的自定义格式设置使用 GridView、 DetailsView 和 FormView 的探索。 我们将看到如何自定义基于绑定到它们的数据在这些控件的外观、 如何汇总在 GridView 的页脚中的数据以及如何使用模板来获取更高的控制布局。
+本教程最后会探讨母版/详细信息报表。 从下一教程，我们将开始我们的自定义格式设置使用 GridView、 DetailsView 和 FormView 的探索。 我们将看到如何自定义基于绑定到它们的数据在这些控件的外观、 如何汇总在 GridView 的页脚中的数据以及如何使用模板来获取更高的控制布局。
 
 快乐编程 ！
 

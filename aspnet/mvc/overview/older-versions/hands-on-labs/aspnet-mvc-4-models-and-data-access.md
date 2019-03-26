@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 26896e6ee3c02e8f939296ecbfb8b7d500940765
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 10c2f6379f6d3139dd3bcf1027ff456e074298c3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061024"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425088"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 
@@ -148,7 +148,7 @@ ms.locfileid: "57061024"
     ![添加 StoreDB ADO.NET 实体数据模型](aspnet-mvc-4-models-and-data-access/_static/image6.png "添加 StoreDB ADO.NET 实体数据模型")
 
     *添加 StoreDB ADO.NET 实体数据模型*
-2. **实体数据模型向导**将出现。 此向导将引导您完成创建模型层。 由于该模型应创建基于现有的数据库 recentyl 添加，因此选择**从数据库生成**然后单击**下一步**。
+2. **实体数据模型向导**将出现。 此向导将引导您完成创建模型层。 因为应根据最近添加的现有数据库创建模型，所以请选择**从数据库生成**然后单击**下一步**。
 
     ![选择模型内容](aspnet-mvc-4-models-and-data-access/_static/image7.png "选择模型内容")
 
@@ -280,7 +280,7 @@ ms.locfileid: "57061024"
 <a id="Task_1_-_Populating_Sample_Data"></a>
 #### <a name="task-1---populating-sample-data"></a>任务 1-填充示例数据
 
-在此任务中，将开始创建使用代码优先时填充示例数据的数据库。
+在此任务中，将使用代码优先最初创建它时填充示例数据的数据库。
 
 1. 打开**开始**解决方案位于**源/Ex2-CreatingADatabaseCodeFirst/开始/** 文件夹。 否则，可能会继续使用 **最终** 解决方案通过完成上一练习中获取。
 
@@ -580,7 +580,7 @@ ms.locfileid: "57061024"
 1. 转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](aspnet-mvc-4-models-and-data-access/_static/image31.png "登录到 Windows Azure 门户")
 

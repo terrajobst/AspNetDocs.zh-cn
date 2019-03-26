@@ -8,12 +8,12 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 611a4b59b2ea2eee771f4060fb5d5af041b2ccc6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 132560c0280a2e4096ea4e9a715c32bc880a8b82
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061884"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421422"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用，实现 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录 (C#)
 ====================
@@ -92,7 +92,7 @@ ms.locfileid: "57061884"
 6. 选择**Web**选项卡，然后粘贴到 SSL URL**项目 Url**框。 保存文件 (Ctl + S)。 将需要此 URL 来配置 Facebook 和 Google 身份验证应用。  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image10.png)
-7. 添加[RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)属性为`Home`控制器需要的所有请求必须使用 HTTPS。 更安全的方法是将添加[RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)筛选器添加到应用程序。 请参阅的部分&quot;保护应用程序使用 SSL 和 Authorize 属性&quot;中我 tutoral[使用身份验证和 SQL 数据库创建 ASP.NET MVC 应用并将其部署到 Azure 应用服务](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 下面显示了主控制器的一部分。
+7. 添加[RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)属性为`Home`控制器需要的所有请求必须使用 HTTPS。 更安全的方法是将添加[RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)筛选器添加到应用程序。 请参阅的部分&quot;保护应用程序使用 SSL 和 Authorize 属性&quot;在我的教程[使用身份验证和 SQL 数据库创建 ASP.NET MVC 应用并将其部署到 Azure 应用服务](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 下面显示了主控制器的一部分。
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample1.cs?highlight=1)]
 8. 按 Ctrl+F5 运行应用程序。 如果在过去，在已安装了证书，可以跳过本部分的其余部分并跳转到[OAuth 2 中创建的 Google 应用程序和应用连接到该项目](#goog)，否则，请按照说明信任自签名IIS Express 已生成的证书。  

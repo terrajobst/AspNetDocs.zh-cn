@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: f701488025ec84a17651f9abff43f84531d35689
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b384fe08ebd6a106b9469debfb13014e87534b8f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046934"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425920"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付 （使用 Azure 构建实际云应用）
 ====================
@@ -32,7 +32,7 @@ ms.locfileid: "57046934"
 
 通常，我们建议不要向你的开发和过渡环境进行持续交付。 大多数团队，甚至在 Microsoft，对于生产部署需要手动审查和批准流程。 对于生产的开发团队的关键人员的支持，或在低流量期间可用时，将执行可能想要确保它的部署。 但没有执行任何操作，以防用户完全自动执行开发和测试环境，以便开发人员只需签入更改和环境进行验收测试设置。
 
-下图出自[Microsoft 模式和实践电子书有关持续交付](http://aka.ms/ReleasePipeline)说明了典型的工作流。 单击此图像可查看它在其原始上下文中的完整大小。
+下图出自[Microsoft 模式和实践电子书有关持续交付](https://aka.ms/ReleasePipeline)说明了典型的工作流。 单击此图像可查看它在其原始上下文中的完整大小。
 
 [![持续交付工作流](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
@@ -66,7 +66,7 @@ Azure DevOps 服务提供了大量功能可帮助您进行从规划到部署的�
 
 另请参阅以下资源：
 
-- [构建发布管道与 Team Foundation Server 2012](http://aka.ms/ReleasePipeline)。 电子书、 动手实验和示例代码由 Microsoft 模式和实践，深入介绍到持续交付。 介绍使用 Visual Studio 实验室管理工具版和 Visual Studio Release Management。
+- [构建发布管道与 Team Foundation Server 2012](https://aka.ms/ReleasePipeline)。 电子书、 动手实验和示例代码由 Microsoft 模式和实践，深入介绍到持续交付。 介绍使用 Visual Studio 实验室管理工具版和 Visual Studio Release Management。
 - [ALM Rangers DevOps 工具和指南](https://aka.ms/vsarsolutions/)。 ALM Rangers 引入 DevOps Workbench 示例配套解决方案和协作的模式中的实用指南&amp;实践书籍*构建发布管道与 TFS 2012*，作为更好地开始了解 DevOps 的概念&amp;Release Management 适用于 TFS 2012 和进行检验。 本指南演示如何生成一次，将部署到多个环境。
 - [使用 Visual Studio 2012 对连续交付测试](https://msdn.microsoft.com/library/jj159345.aspx)。 电子书由 Microsoft 模式和实践，解释了如何将集成使用持续交付的自动化测试。
 - [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker)。 旨在捕获从 TFS （基于标签） 生成、 生成它、 将其打包，允许某人 DevOps 角色，才能配置它的特定方面并将其推送到 Azure 的工具的源代码。 该工具以支持操作以"回滚"到以前部署的版本跟踪部署过程。 该工具没有外部依赖关系，并可以函数独立使用 TFS Api 和 Azure SDK。

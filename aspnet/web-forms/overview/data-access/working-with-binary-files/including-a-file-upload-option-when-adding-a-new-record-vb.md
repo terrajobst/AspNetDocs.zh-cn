@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 22ca0d85fac598b2f845be4bd5c18fdcbd3bc3a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2c23cbac0a94607a05de4e1ef5b8e5b0874a1a5e
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061764"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424191"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>添加新纪录时增加文件上载选项 (VB)
 ====================
@@ -73,7 +73,7 @@ ms.locfileid: "57061764"
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample2.vb)]
 
 > [!NOTE]
-> 请确保你已添加之前保存类型化数据集`InsertWithPicture`向 BLL 方法。 由于`CategoriesTableAdapter`类的代码是自动生成基于类型化数据集，如果 don t 首先将所做的更改保存到类型化数据集`Adapter`赢得 t 属性了解`InsertWithPicture`方法。
+> 请确保你已添加之前保存类型化数据集`InsertWithPicture`向 BLL 方法。 由于`CategoriesTableAdapter`类的代码是自动生成基于类型化数据集，如果 don t 首先将所做的更改保存到类型化数据集`Adapter`属性不会知道有关`InsertWithPicture`方法。
 
 
 ## <a name="step-3-listing-the-existing-categories-and-their-binary-data"></a>步骤 3：列出现有的类别和二进制数据
@@ -231,7 +231,7 @@ ms.locfileid: "57061764"
 **图 9**:一条警告消息是显示如果上传无效的文件类型 ([单击此项可查看原尺寸图像](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image16.png))
 
 
-一次您已验证的页面要求图片要上传和获胜的 t 接受非 PDF 或非 JPG 文件，添加具有有效的 JPG 图片的新类别将手册字段留空。 单击插入按钮后，页面将回发，一条新记录将添加到`Categories`表直接在数据库中存储的已上载的图像 s 二进制内容。 GridView 更新，并显示新添加的类别中，对应的行，但如图 10 所示，新类别的图片未正确呈现。
+一次您已验证，该网页要求上传并不会接受非 PDF 或非 JPG 文件，添加新类别与有效的 JPG 图片，图片将手册字段留空。 单击插入按钮后，页面将回发，一条新记录将添加到`Categories`表直接在数据库中存储的已上载的图像 s 二进制内容。 GridView 更新，并显示新添加的类别中，对应的行，但如图 10 所示，新类别的图片未正确呈现。
 
 
 [![新的类别不显示图片的 s](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image17.png)

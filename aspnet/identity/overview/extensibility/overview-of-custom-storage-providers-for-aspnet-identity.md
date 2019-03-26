@@ -8,12 +8,12 @@ ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: e7461098f93bf64d6ff0d0e4ecdb64338f96be8b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d819fabf4f367c8f6d0ce857bc248a2b812c2b21
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064054"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422202"
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自定义存储提供程序概述
 ====================
@@ -82,7 +82,7 @@ ASP.NET 标识包含的类称为管理器和存储。 管理器是用于执行�
 
 有很多自由设计自定义的存储库时的存储提供程序。 只需创建要在应用程序中使用的功能的存储库。 例如，如果不在应用程序中使用角色，你不必创建存储的角色或用户角色。 你的技术和现有的基础结构可能需要与 ASP.NET Identity 的默认实现很大差异的结构。 数据访问层，在提供的逻辑以使用你的存储库的结构。
 
-有关 MySQL 的实现，以 ASP.NET 标识 2.0 的数据存储库，请参阅[MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql)。
+有关 MySQL 的数据存储库的 ASP.NET 标识 2.0 实现，请参阅[MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql)。
 
 数据访问层中提供的逻辑将 ASP.NET 标识中的数据保存到数据源。 自定义的存储提供程序的数据访问层可能包括以下类用于存储用户和角色信息。
 

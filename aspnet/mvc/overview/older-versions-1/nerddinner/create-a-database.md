@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 983f3ffa-08b8-4868-b8c9-aa34593fc683
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: b6ab0740f251889f0fa0561809cac2bbe79bcb3a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48ca2984ca8e4ec5b2bc49952a8718aa26138aea
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064904"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423697"
 ---
 <a name="create-a-database"></a>创建数据库
 ====================
@@ -94,7 +94,7 @@ by [Microsoft](https://github.com/microsoft)
 
 现在，我们会在我们的数据库中有两个表。 我们最后一个架构设计步骤将设置这两个表 – 之间的"多"关系，以便我们可以将 Dinner 的每一行与零个或多个将应用于它的 RSVP 行相关联。 我们将执行此操作通过配置 RSVP 表的"DinnerID"列"Dinners"表中有"DinnerID"列的外键关系。
 
-为此我们将在服务器资源管理器中双击该中打开表设计器中的 RSVP 表。 然后，我们将选择"DinnerID"列中，右键单击，然后选择"Relationshps..."上下文菜单命令：
+为此我们将在服务器资源管理器中双击该中打开表设计器中的 RSVP 表。 然后，我们将选择"DinnerID"列中，右键单击，然后选择"关系..."上下文菜单命令：
 
 ![](create-a-database/_static/image12.png)
 

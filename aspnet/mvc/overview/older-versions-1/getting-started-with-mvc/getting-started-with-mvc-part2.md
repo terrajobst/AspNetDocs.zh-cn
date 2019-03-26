@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 9a8ecac5203234c140783bbe3a518d35f6a57675
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b593c6225c05c7405c9d8b78abfd29a087d47b04
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057994"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421254"
 ---
 <a name="adding-a-controller"></a>添加控制器
 ====================
@@ -56,7 +56,7 @@ ASP.NET MVC 调用不同的控制器类 （和其中不同的操作方法），�
 
 /[Controller]/[ActionName]/[Parameters]
 
-URL 的第一个部分确定要执行的控制器类。 因此 /HelloWorld 将映射到 HelloWorldController 类。 URL 的第二部分确定要执行的类上的操作方法。 /HelloWorld/Index 时会导致 HelloWorldcontroller 类执行的 index （） 方法。 请注意，我们只需要访问上述 /HelloWorld 和表示为索引的方法。 这是因为名为"Index"的方法是如果有一个未显式指定调用在控制器的默认方法。
+URL 的第一个部分确定要执行的控制器类。 因此 /HelloWorld 将映射到 HelloWorldController 类。 URL 的第二部分确定要执行的类上的操作方法。 /HelloWorld/Index 时会导致 HelloWorldController 类执行的 index （） 方法。 请注意，我们只需要访问上述 /HelloWorld 和表示为索引的方法。 这是因为名为"Index"的方法是如果有一个未显式指定调用在控制器的默认方法。
 
 [![这是我的默认操作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 

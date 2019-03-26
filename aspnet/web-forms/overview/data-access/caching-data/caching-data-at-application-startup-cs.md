@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c97058e5fd54dfd0393ec5ad020ad957d9719784
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 692b2a13664a9a5153a85a230dd513b022518316
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064064"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423977"
 ---
 <a name="caching-data-at-application-startup-c"></a>在应用程序启动时缓存数据 (C#)
 ====================
@@ -103,7 +103,7 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 [!code-csharp[Main](caching-data-at-application-startup-cs/samples/sample5.cs)]
 
-若要将项添加到其任何基于时间的到期时间的数据缓存，请使用`System.Web.Caching.Cache.NoAbsoluteExpiration`和`System.Web.Caching.Cache.NoSlidingExpiration`作为输入参数的值。 数据缓存的这一特定重载`Insert`已选择的方法，以便我们可以指定*优先级*的缓存项。 优先级用于确定哪些项目清理从缓存中，当可用内存不足。 此处，我们使用优先级`NotRemovable`，这可确保此缓存项赢得 t 被清理。
+若要将项添加到其任何基于时间的到期时间的数据缓存，请使用`System.Web.Caching.Cache.NoAbsoluteExpiration`和`System.Web.Caching.Cache.NoSlidingExpiration`作为输入参数的值。 数据缓存的这一特定重载`Insert`已选择的方法，以便我们可以指定*优先级*的缓存项。 优先级用于确定哪些项目清理从缓存中，当可用内存不足。 此处，我们使用优先级`NotRemovable`，这可确保不会清理此缓存项。
 
 > [!NOTE]
 > 本教程中的下载实现`StaticCache`类使用静态成员变量方法。 应用程序状态和数据缓存技术的代码位于类文件中的注释。

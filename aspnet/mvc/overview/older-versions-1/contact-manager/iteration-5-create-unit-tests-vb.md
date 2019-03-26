@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6aee4c01c1555dd2ea95d26a005d61ddab09f6fe
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8b34a9f7690777cfcc79d87a5e19586646d5b0d9
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062144"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425699"
 ---
 <a name="iteration-5--create-unit-tests-vb"></a>迭代 5 — 创建单元测试 (VB)
 ====================
@@ -146,7 +146,7 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 
 - CreateContact()-向方法传递了有效的联系人时，测试该 CreateContact() 返回值 true。
 - CreateContactRequiredFirstName()-CreateContact() 方法被通过的测试，将一条错误消息添加到模型状态时缺少的名字的联系人。
-- CreateContactRequredLastName()-CreateContact() 方法被通过的测试，将一条错误消息添加到模型状态时缺少姓氏的联系人。
+- CreateContactRequiredLastName()-CreateContact() 方法被通过的测试，将一条错误消息添加到模型状态时缺少姓氏的联系人。
 - CreateContactInvalidPhone()-CreateContact() 方法被通过的测试，将一条错误消息添加到模型状态时的联系人电话号码无效。
 - CreateContactInvalidEmail()-测试，将一条错误消息添加到模型状态无效的电子邮件地址的联系人时传递给 CreateContact() 方法...
 

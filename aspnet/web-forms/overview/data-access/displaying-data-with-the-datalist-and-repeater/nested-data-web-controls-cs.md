@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: ad3cb0ec-26cf-42d7-b81b-184a34ec9f86
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 032321b5cf5323058c114e652512854f9866d447
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2fda8883a1cd45a7018c639efcce94cf0e59974c
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062604"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440295"
 ---
 <a name="nested-data-web-controls-c"></a>嵌套的数据 Web 控件 (C#)
 ====================
@@ -140,7 +140,7 @@ Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自�
 若要使用此新技术这些更改后，请花点时间查看通过浏览器页面。 输出应与输出相同时使用 ObjectDataSource 和`ItemDataBound`事件处理程序方法 （回头查看图 5，请参阅屏幕截图）。
 
 > [!NOTE]
-> 它可能看起来通话创建`GetProductsInCategory(categoryID)`ASP.NET 页面 + s 代码隐藏类中的方法。 毕竟，此方法只需创建的实例`ProductsBLL`类，并返回的结果及其`GetProductsByCategoryID(categoryID)`方法。 为什么不只是调用此方法直接从内部中继器中的数据绑定语法如： `DataSource='<%# ProductsBLL.GetProductsByCategoryID((int)(Eval("CategoryID"))) %>'`？ 尽管此语法赢得了我们的当前实现不起作用`ProductsBLL`类 (由于`GetProductsByCategoryID(categoryID)`方法是实例方法)，您可以修改`ProductsBLL`包括静态`GetProductsByCategoryID(categoryID)`方法或具有包括静态类`Instance()`方法返回的新实例`ProductsBLL`类。
+> 它可能看起来通话创建`GetProductsInCategory(categoryID)`ASP.NET 页面 + s 代码隐藏类中的方法。 毕竟，此方法只需创建的实例`ProductsBLL`类，并返回的结果及其`GetProductsByCategoryID(categoryID)`方法。 为什么不只是调用此方法直接从内部中继器中的数据绑定语法如： `DataSource='<%# ProductsBLL.GetProductsByCategoryID((int)(Eval("CategoryID"))) %>'`？ 尽管此语法不起作用的我们当前的实现`ProductsBLL`类 (由于`GetProductsByCategoryID(categoryID)`方法是实例方法)，您可以修改`ProductsBLL`包括静态`GetProductsByCategoryID(categoryID)`方法或具有包括静态类`Instance()`方法返回的新实例`ProductsBLL`类。
 
 
 虽然此类修改将不再需要`GetProductsInCategory(categoryID)`ASP.NET 页面 + s 代码隐藏类中的方法，代码隐藏类方法使我们更灵活地使用检索的数据，我们稍后将看到。
@@ -151,7 +151,7 @@ Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自�
 
 给定*N*系统中的类别，这种方法网络*N* + 1 调用数据库数据库查询来获取所有类别，然后*N*调用以获取产品特定于每个类别。 但是，我们可以检索仅使用两个数据库调用一次调用获取所有各类别以及一个用于获取所有产品的所有所需的数据。 一旦我们有的所有产品，我们可以筛选这些产品因此，只有匹配当前的产品`CategoryID`绑定到该类别 s 内部 Repeater。
 
-若要提供此功能，我们只需稍做修改到`GetProductsInCategory(categoryID)`中我们的 ASP.NET 页面 + s 代码隐藏类的方法。 而不是盲目地返回的结果`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法中，我们可以改为第一次访问*所有*的产品 (如果它们没有 t 已访问)，然后返回的只是筛选的视图产品基于传入的`CategoryID`。
+若要提供此功能，我们只需稍做修改到`GetProductsInCategory(categoryID)`中我们的 ASP.NET 页面 + s 代码隐藏类的方法。 而不是盲目地返回的结果`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法中，我们可以改为第一次访问*所有*的产品 （如果它们尚未已访问），然后返回的只是筛选的视图产品基于传入的`CategoryID`。
 
 
 [!code-csharp[Main](nested-data-web-controls-cs/samples/sample8.cs)]

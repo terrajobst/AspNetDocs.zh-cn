@@ -8,21 +8,20 @@ ms.date: 04/09/2015
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 1d5b44ccce423dda8ac77029e361a531b6c91b26
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 14a8ec16fe741d87a23bfa45046386a2c08d2f27
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056344"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424334"
 ---
-<a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建议的资源
-====================
+# <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建议的资源
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本主题提供有关如何使用 ASP.NET 标识的文档资源的链接。
-> 
+>
 > 如果您知道很好的博客文章[堆栈溢出](http://stackoverflow.com)线程或都非常有用，任何其他链接[向我们发送一封电子邮件](mailto:aspnetue@microsoft.com?subject=Identity recommended resources)与链接或只是将保留在此页底部的消息。
-
 
 - [ASP.NET 标识入门](#gettingstarted)
 - [新特色必须读取文章](#feat)
@@ -35,6 +34,7 @@ ms.locfileid: "57056344"
 - [问： &amp; （问题/答案）](#qand)
 
 <a id="gettingstarted"></a>
+
 ## <a name="getting-started-with-aspnet-identity"></a>ASP.NET Identity 入门
 
 - [MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)本教程演示如何编写 ASP.NET MVC 5 应用程序使用 Facebook 和 Google OAuth 2 授权。 它还演示如何将其他数据添加到标识数据库。
@@ -44,6 +44,7 @@ ms.locfileid: "57056344"
 - [具有 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
+
 ## <a name="new-featured-must-read-articles"></a>新特色必须读取文章
 
 - [演练：Microsoft 帐户身份验证的标识，ASP.NET MVC](http://www.benday.com/2014/02/25/walkthrough-asp-net-mvc-identity-with-microsoft-account-authentication/)通过[Benjamin Day](http://www.benday.com/about/)
@@ -53,6 +54,7 @@ ms.locfileid: "57056344"
 - [ASP.NET 标识 2.0:自定义用户和角色](http://typecastexception.com/post/2014/06/22/ASPNET-Identity-20-Customizing-Users-and-Roles.aspx)
 
 <a id="adv"></a>
+
 ## <a name="intermediate-aspnet-identity"></a>中间的 ASP.NET 标识
 
 - [帐户确认和密码恢复与 ASP.NET 标识](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
@@ -64,6 +66,7 @@ ms.locfileid: "57056344"
 - [ASP.NET 标识 – 用户锁定](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
 
 <a id="samp"></a>
+
 ## <a name="where-to-ask-questions-request-features-report-a-bug-and-nightly-builds"></a>提出问题、 提出功能请求，报告 bug 和每夜生成的位置
 
 - For StackOverflow，使用标记[aspnet 标识](http://stackoverflow.com/questions/tagged/asp.net-identity)
@@ -71,6 +74,7 @@ ms.locfileid: "57056344"
 - [GitHub 上的 ASP.NET 标识](https://github.com/aspnet/AspNetIdentity)获取每夜构建版本，请求功能打开的 bug。
 
 <a id="blog"></a>
+
 ## <a name="blog-posts-on-identity"></a>关于标识的博客文章
 
 - [在 ASP.NET 标识中的 SecurityStamp 是什么？](http://stackoverflow.com/questions/19487322/what-is-asp-net-identitys-iusersecuritystampstoretuser-interface/19505060#19505060)
@@ -120,6 +124,7 @@ ms.locfileid: "57056344"
 - [从 ASP.NET 成员资格将移动到 ASP.NET 标识](http://webdojo.sharepoint.com/ajmatthews/_layouts/15/start.aspx#/Lists/Posts/Post.aspx?ID=2)通过 Alistair Matthews
 
 <a id="video"></a>
+
 ## <a name="videos"></a>视频
 
 - 第 9 频道[保护 ASP.NET 应用程序和服务：现代应用程序的安全改动](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B421#fbid=PhVT9E1WRtr?hashlink=fbid)通过 Ido Flatow
@@ -132,6 +137,7 @@ ms.locfileid: "57056344"
 - [捷克语 ASP.NET 标识](https://www.youtube.com/watch?v=tVbZp5brcpY)此讲座中我们将展示如何部署基本身份验证、 如何添加 Twitter 或 Facebook 等外部标识提供程序的支持以及如何使用一次性密码 (OTP)。 [ASP.NET 标识 je nástupce 成员资格的角色提供程序&#367;v tedy knihovna ASP.NET pro zajišt&#283;ní autentizace uživatel&#367;。 V této p&#345;ednášce si ukážeme，jak nasad]
 
 <a id="cust"></a>
+
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>ASP.NET 标识的自定义存储提供程序
 
 如果你想要编写自己的提供程序，请阅读[概述的自定义存储提供程序的 ASP.NET 标识](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)并[实现 ASP.NET 标识](http://odetocode.com/blogs/scott/archive/2014/01/20/implementing-asp-net-identity.aspx)然后检查一个列出的 OSS 项目的源下面。
@@ -144,7 +150,7 @@ ms.locfileid: "57056344"
 - [Azure 表存储](https://www.nuget.org/packages/accidentalfish.aspnet.identity.azure/)由 James randall 简要介绍。
 - Azure 表存储：[AspNet.Identity.TableStorage](https://github.com/stuartleeks/leeksnet.AspNet.Identity.TableStorage)由[ @stuartleeks ](https://twitter.com/stuartleeks)。
 - [CouchDB / 通过 Daniel Wertheim Cloudant。](https://github.com/danielwertheim/mycouch.aspnet.identity)
-- 弹性搜索[h:弹性标识](https://github.com/bmbsqd/elastic-identity)通过 Bombsquad AB.
+- [弹性搜索：弹性标识](https://github.com/bmbsqd/elastic-identity)通过 Bombsquad AB.
 - [MongoDB](http://www.nuget.org/packages/MongoDB.AspNet.Identity/)由 Jonathan Sheely Jonathan Sheely。
 - [NHibernate.AspNet.Identity](https://github.com/milesibastos/NHibernate.AspNet.Identity) Antônio Milesi Bastos 通过。
 - [RavenDB](http://www.nuget.org/packages/AspNet.Identity.RavenDB/1.0.0)由[ @tourismgeek ](https://twitter.com/tourismgeek)。
@@ -153,11 +159,13 @@ ms.locfileid: "57056344"
 - 若要生成的"数据库优先"的用户存储的 EF 代码的 T4 模板：[AspNet.Identity.EntityFramework](https://github.com/cbfrank/AspNet.Identity.EntityFramework)
 
 <a id="additional"></a>
+
 ## <a name="additional-aspnet-identity-resources"></a>其他 ASP.NET 身份资源
 
 - [引入 owin Yahoo 和 LinkedIn OAuth 安全提供程序](http://blog.beabigrockstar.com/introducing-the-yahoo-linkedin-oauth-security-providers-for-owin/)通过 Jerrie Pelser 有关 Yahoo 和 LinkedIn 的说明。
 
 <a id="qand"></a>
+
 ## <a name="qampa-questionanswer"></a>问：&amp;（问题/答案）
 
 - 问：锁定用户对已启用"记住我"（因此它们无需在该计算机/浏览器经历 2FA） 未锁定。为何以及如何防止的？ 答案[此处](http://stackoverflow.com/questions/24312247/locked-out-users-can-login-if-they-have-auth-cookie)。
@@ -177,6 +185,6 @@ ms.locfileid: "57056344"
 - 问：如何使安全令牌失效？ 答案[此处](http://stackoverflow.com/questions/22755700/revoke-token-generated-by-usertokenprovider-in-asp-net-identity-2-0/22767286#22767286)。
 - 问：如何实现是存储在 cookie 中间件中的声明？ 答案[此处](http://stackoverflow.com/questions/22320632/storing-retrieving-user-data-without-database-when-using-owin-cookie-authenticat/22541856#22541856)。
 - 问：我想要具有 PIN 或检查我的 MVC 应用中每个操作方法上的安全，但我想要存储用户成功，以便它们不具有到该操作方法的每个请求上输入 PIN。 答案[此处](http://stackoverflow.com/questions/22479958/security-check-an-user-to-a-access-controller-action/22486075#22486075)。
-- 问：我将为保存从社交提供程序返回电子邮件地址为 DB，我该怎么办？ 答案[此处](http://stackoverflow.com/questions/22888397/save-claims-to-db-on-login/22970969#22970969):
+- 问：我将为 DB，将返回电子邮件地址从社交网络提供商保存我该怎么办？ 答案[此处](http://stackoverflow.com/questions/22888397/save-claims-to-db-on-login/22970969#22970969):
 - 问：如何检测时用户登录这两个与/与出"记住我"cookie？ 答案[此处](http://stackoverflow.com/questions/22956486/how-can-i-detect-when-a-user-logs-in-with-microsoft-aspnet-identity/22970698#22970698)。
 - 问：可以在调用登录后修改中使用 OWIN 的 ASP.NET 标识的声明？ 答：调用 SignIn 正是你将要执行时想要修改该用户的声明。 它基本上会导致 ClaimsIdentity 要序列化到的 cookie，这就是原因请参阅显示在后续请求上的新声明。

@@ -8,18 +8,18 @@ ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c3557bb2be2807b11874937fcc629b5b773e463
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 03409e2fda831a07bbc5321ad842633b23ec25e5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054564"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422403"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)
 ====================
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
-[下载 Web 训练营培训工具包](http://aka.ms/webcamps-training-kit)
+[下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
 
 > 在传统 web 应用程序，客户端 （浏览器） 可以启动与服务器之间的通信请求页面。 然后，在服务器处理请求，并将页面的 HTML 发送到客户端。 在后续页面 （例如用户导航到链接或提交的数据窗体） 交互的新请求发送到服务器，并且流将重新启动： 在服务器处理请求并将新页面发送到浏览器以响应新的操作请求ed 由客户端。
 > 
@@ -29,7 +29,7 @@ ms.locfileid: "57054564"
 > 
 > 在本动手实验，您将利用这些技术，以实现极客测验，基于 SPA 概念的琐碎内容网站。 首先将实现使用 ASP.NET Web API 公开所需的终结点检索测验问题并将存储答案的服务层。 然后，你将构建丰富且高度可响应用户界面使用 AngularJS 和 CSS3 转换效果。
 > 
-> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 ## <a name="overview"></a>概述
@@ -98,7 +98,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 <a id="Ex1Task1"></a>
 #### <a name="task-1--creating-the-initial-project-for-geek-quiz"></a>任务 1 – 创建初始项目适用于极客测验
 
-在此任务将启动 ASP.NET Web API 基于为支持创建新的 ASP.NET MVC 项目**One ASP.NET**项目附带了 Visual Studio 的类型。 **一个 ASP.NET**统一所有 ASP.NET 技术并为您提供混合和匹配它们作为所需的选项。 然后，您将添加实体框架模型的类和数据库 initializator 插入测验问题。
+在此任务将启动 ASP.NET Web API 基于为支持创建新的 ASP.NET MVC 项目**One ASP.NET**项目附带了 Visual Studio 的类型。 **一个 ASP.NET**统一所有 ASP.NET 技术并为您提供混合和匹配它们作为所需的选项。 然后，您将添加实体框架模型的类和数据库初始值设定项插入测验问题。
 
 1. 打开**Visual Studio Express 2013 for Web** ，然后选择**文件 |新建项目...** 启动一个新的解决方案。
 

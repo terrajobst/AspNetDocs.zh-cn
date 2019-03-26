@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: 6f81b633-9d01-4e52-ae4a-2ea6bc109475
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 28926276e183ae7cf7ed4087d8c73044741389e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6733aa228bb96b5d34ae2770d32fe0063d7052f1
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034504"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424096"
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义的排序用户界面 (C#)
 ====================
@@ -79,7 +79,7 @@ ms.locfileid: "57034504"
 **图 3**:一种方法涉及将分隔符行添加到数据源
 
 
-我在引号中使用术语分隔符记录，因为没有特殊的分隔符记录;相反，我们必须以某种方式的标记中的数据源的特定记录用作分隔符，而不是普通的数据行。 有关我们的示例，我们重新绑定`ProductsDataTable`实例与 GridView，由组成`ProductRows`。 我们可能会通过设置一条记录标记为一个分隔符行及其`CategoryID`属性设置为`-1`（因为通常情况下存在一个此类值无法 t）。
+我在引号中使用术语分隔符记录，因为没有特殊的分隔符记录;相反，我们必须以某种方式的标记中的数据源的特定记录用作分隔符，而不是普通的数据行。 有关我们的示例，我们重新绑定`ProductsDataTable`实例与 GridView，由组成`ProductRows`。 我们可能会通过设置一条记录标记为一个分隔符行及其`CategoryID`属性设置为`-1`（因为此类值无法正常情况下存在）。
 
 若要利用此技术 d 我们需要执行以下步骤：
 

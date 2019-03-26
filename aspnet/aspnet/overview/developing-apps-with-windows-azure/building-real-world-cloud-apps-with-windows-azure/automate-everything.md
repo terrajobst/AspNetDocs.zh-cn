@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d0ce344bcb036819feba6218edc8dd90af501f50
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 18e988279b56e479b0bb27de2f01ab22a2e70301
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039674"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422605"
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有内容 （构建使用 Azure 的真实世界云应用程序）
 ====================
@@ -159,7 +159,7 @@ ms.locfileid: "57039674"
 - 使用创建应用程序数据库和成员资格数据库`New-AzureSqlDatabase`cmdlet。
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
-- 为每个数据库调用本地定义的函数 tocreates 连接字符串。 应用程序将使用这些连接字符串访问数据库。 
+- 调用本地定义的函数来创建每个数据库的连接字符串。 应用程序将使用这些连接字符串访问数据库。 
 
     [!code-powershell[Main](automate-everything/samples/sample12.ps1?highlight=1-2)]
 

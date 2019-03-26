@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: 9673bef3-892c-45ba-a7d8-0da3d6f48ec5
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3124d53bad0040938c6a1090971ceecdf8c92333
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e02796a7ffe854b746100a5f17d00c811a2b973c
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041264"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440308"
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-vb"></a>使用 SqlDataSource 插入、更新和删除数据 (VB)
 ====================
@@ -119,7 +119,7 @@ ms.locfileid: "57041264"
 单击删除按钮，产生的回发，GridView 将分配`ProductID`参数的值的`DataKeys`集合值的行的删除按钮被单击，并调用 SqlDataSource 的`Delete()`方法。 SqlDataSource 控件随后连接到数据库并执行`DELETE`语句。 然后，GridView 重新绑定到 SqlDataSource 取回，显示当前的产品集 （其中不再包括只是删除记录）。
 
 > [!NOTE]
-> 由于 GridView 使用其`DataKeys`集合来填充 SqlDataSource 参数，它 s 重要的 GridView s`DataKeyNames`属性设置为列构成的主键，SqlDataSource 的`SelectCommand`返回这些列。 此外，它非常重要的参数名中 SqlDataSource s`DeleteCommand`设置为`@ProductID`。 如果`DataKeyNames`属性未设置或未命名参数`@ProductsID`，单击删除按钮将导致回发，但实际上获胜的不会删除任何记录。
+> 由于 GridView 使用其`DataKeys`集合来填充 SqlDataSource 参数，它 s 重要的 GridView s`DataKeyNames`属性设置为列构成的主键，SqlDataSource 的`SelectCommand`返回这些列。 此外，它非常重要的参数名中 SqlDataSource s`DeleteCommand`设置为`@ProductID`。 如果`DataKeyNames`属性未设置或未命名参数`@ProductsID`，单击删除按钮会导致回发，但实际上不会删除任何记录。
 
 
 图 5 以图形方式描绘了这种交互。 回头[检查与插入、 更新和删除的事件相关联](../editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)教程，了解与插入、 更新和删除数据 Web 控件关联的事件链上的更多详细讨论。
@@ -192,7 +192,7 @@ ms.locfileid: "57041264"
 
 虽然`INSERT`， `UPDATE`，和`DELETE`语句可以手动输入，请考虑以下省时的提示。 最初，以便它返回将仅从数据设置 SqlDataSource`Products`表。 使用配置数据源向导的指定的列从表或视图的屏幕，以便可以自动生成`INSERT`， `UPDATE`，和`DELETE`语句。 然后，完成向导后，选择要配置从属性窗口 SelectQuery （或者，或者，请返回到的配置数据源向导，但使用指定自定义 SQL 语句或存储的过程选项）。 然后更新`SELECT`语句以包括`JOIN`语法。 此方法的优点是省时的自动生成的 SQL 语句，并允许进行更多自定义`SELECT`语句。
 
-自动生成的另一个限制`INSERT`， `UPDATE`，并`DELETE`语句是中的列`INSERT`并`UPDATE`语句基于返回的列`SELECT`语句。 我们可能需要更新或插入更多或更少的字段，但是。 例如，在步骤 2 中示例中，也许我们想要具有`UnitPrice`BoundField 是只读的。 在这种情况下，其长度应不 t 出现在`UpdateCommand`。 或者，我们可能想要在 GridView 中设置不会出现一个表字段的值。 例如，当添加新记录我们可能希望`QuantityPerUnit`值设置为待办事项。
+自动生成的另一个限制`INSERT`， `UPDATE`，并`DELETE`语句是中的列`INSERT`并`UPDATE`语句基于返回的列`SELECT`语句。 我们可能需要更新或插入更多或更少的字段，但是。 例如，在步骤 2 中示例中，也许我们想要具有`UnitPrice`BoundField 是只读的。 在这种情况下，它不应出现在`UpdateCommand`。 或者，我们可能想要在 GridView 中设置不会出现一个表字段的值。 例如，当添加新记录我们可能希望`QuantityPerUnit`值设置为待办事项。
 
 如果此类自定义项是必需的则需要以手动，使其通过属性窗口中，指定自定义 SQL 语句或存储的过程选项在向导中，或通过声明性语法。
 
@@ -204,7 +204,7 @@ ms.locfileid: "57041264"
 
 为了使数据 Web 控件以利用其内置的插入、 编辑和删除功能，它们绑定到数据源控件必须提供这种功能。 对于 SqlDataSource，这意味着`INSERT`， `UPDATE`，并`DELETE`SQL 语句必须分配给`InsertCommand`， `UpdateCommand`，并`DeleteCommand`属性。 这些属性和相应的参数集合，可以手动添加或通过配置数据源向导自动生成。 在本教程中，我们将探讨这两种技术。
 
-我们探讨了与对象的数据源中使用乐观并发[实现乐观并发](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)教程。 SqlDataSource 控件还提供开放式并发支持。 如自动生成时在步骤 2 中所述`INSERT`， `UPDATE`，和`DELETE`语句，该向导提供了使用开放式并发选项。 我们将在下一教程中看到的通过 SqlDataSource 使用乐观并发修改`WHERE`中的子句`UPDATE`和`DELETE`语句，以确保其他列的值还 t 自上次数据更改在页面上显示。
+我们探讨了与对象的数据源中使用乐观并发[实现乐观并发](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)教程。 SqlDataSource 控件还提供开放式并发支持。 如自动生成时在步骤 2 中所述`INSERT`， `UPDATE`，和`DELETE`语句，该向导提供了使用开放式并发选项。 我们将在下一教程中看到的通过 SqlDataSource 使用乐观并发修改`WHERE`中的子句`UPDATE`和`DELETE`语句以确保最后一个数据以来尚未更改的其他列的值在页面上显示。
 
 快乐编程 ！
 

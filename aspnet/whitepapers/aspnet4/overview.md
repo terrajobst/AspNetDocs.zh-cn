@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 775286df610df9040cbf04125b1742b6befa055b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 93ee29ae125e9442ee755998768a8105dfb485c0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043154"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424295"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 ====================
@@ -945,7 +945,7 @@ Visual Studio 还支持空网站项目类型，不包含任何文件根本下, �
 
 在 ASP.NET 3.5 SP1 和更早版本中，该框架呈现*禁用*特性的 HTML 标记中任何控制其*已启用*属性设置为*false*。 但是，根据 HTML 4.01 规范，仅*输入*元素应具有此属性。
 
-在 ASP.NET 4 中，可以设置*controlRenderingCompatabilityVersion*属性设置为"3.5"，如以下示例所示：
+在 ASP.NET 4 中，可以设置*controlRenderingCompatibilityVersion*属性设置为"3.5"，如以下示例所示：
 
 [!code-xml[Main](overview/samples/sample70.xml)]
 
@@ -957,7 +957,7 @@ Visual Studio 还支持空网站项目类型，不包含任何文件根本下, �
 
 [!code-html[Main](overview/samples/sample72.html)]
 
-在 ASP.NET 4 中，可以设置*controlRenderingCompatabilityVersion*为"4.0"。 在这种情况下，仅控制呈现的*输入*元素将呈现*禁用*属性时控件的*已启用*属性设置为*false*. 控件不呈现 HTML*输入*改为呈现元素*类*引用可用于定义一个已禁用的控件外观的 CSS 类的属性。 例如，*标签*中前面的示例所示的控件将生成以下标记：
+在 ASP.NET 4 中，可以设置*controlRenderingCompatibilityVersion*为"4.0"。 在这种情况下，仅控制呈现的*输入*元素将呈现*禁用*属性时控件的*已启用*属性设置为*false*. 控件不呈现 HTML*输入*改为呈现元素*类*引用可用于定义一个已禁用的控件外观的 CSS 类的属性。 例如，*标签*中前面的示例所示的控件将生成以下标记：
 
 [!code-html[Main](overview/samples/sample73.html)]
 

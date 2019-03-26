@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: dced55386c3f810e406c5c2b3f0071b45e3b2dbd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 481a0ee9b19e5d35d736b2cc937a124900bce446
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041574"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426128"
 ---
 # <a name="tutorial-create-the-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>教程：创建的 Web 应用程序和 ef 数据模型数据库优先使用 ASP.NET MVC
 
@@ -64,7 +64,7 @@ ms.locfileid: "57041574"
 
 如果必须在开发环境中定义的数据库连接，可能会看到其中一个预先选择这些连接。 但是，你想要创建新的连接到在本教程的第一部分创建的数据库。 单击**新的连接**按钮。
 
-在连接属性窗口中，提供了创建数据库时所在的本地服务器的名称 (在这种情况下 **(localdb) \Projects13**)。 提供服务器名称后, 从可用数据库中选择 ContosoUniversityData。
+在连接属性窗口中，提供了创建数据库时所在的本地服务器的名称 (在这种情况下 **(localdb) \ProjectsV13**)。 提供服务器名称后, 从可用数据库中选择 ContosoUniversityData。
 
 ![设置连接属性](creating-the-web-application/_static/image8.png)
 

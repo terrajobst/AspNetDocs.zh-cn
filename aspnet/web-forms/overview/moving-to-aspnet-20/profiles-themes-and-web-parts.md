@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 98559c2a378c72bc5664faafe5436753050b574f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 010adaba61b15ca4421c2d3a4a7590becb53897b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062764"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422840"
 ---
 <a name="profiles-themes-and-web-parts"></a>配置文件、主题和 Web 部件
 ====================
@@ -222,7 +222,7 @@ Web 应用程序的最重要方面之一在站点之间是一致的外观。 ASP
 3. 从文件的列表中选择 Web 配置文件，并单击添加。
 4. 右键单击解决方案资源管理器中的项目，然后选择添加新项。
 5. 选择外观文件，然后单击添加。
-6. 单击是当询问您可能要将应用内的文件放置\_主题文件夹。
+6. 单击是当询问您是否要将应用内的文件放\_主题文件夹。
 7. 右键单击 SkinFile 文件夹应用内\_在解决方案资源管理器中的主题文件夹，然后选择添加新项。
 8. 从文件的列表中选择样式表并单击添加。 您现在拥有的所有实现您的新主题所需文件。 但是，Visual Studio 具有名为您的主题文件夹 SkinFile。 右键单击该文件夹并将名称更改为 CoolTheme。
 9. 打开 SkinFile.skin 文件并添加以下代码文件的末尾： 

@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: d7fa3cb61608ea089141931cb9362359cdc92619
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4fab68555eeb27420e60a28aca2f2c0fb9a73e3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031464"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421513"
 ---
 <a name="membership"></a>成员身份
 ====================
@@ -42,7 +42,7 @@ ASP.NET 成员身份基于窗体身份验证模型是否成功从 ASP.NET 1.x。
 
 ## <a name="creating-the-membership-database"></a>创建成员资格数据库
 
-如果您正在使用 SQL Server 7.0 或更高版本作为成员身份存储，可以使用 aspnet\_regsql 实用程序 （可非常轻松地从 Visual Studio.NET 2005年命令提示符） 将数据库配置。 Aspnet\_regsql 实用程序可以在命令提示符工具或通过 GUI 向导。 向导方法是将数据库配置的最简单方法。 若要访问该向导，只需运行以下命令：
+如果你使用 SQL Server 7.0 或更高版本作为成员身份存储，可以使用 aspnet\_regsql 实用程序 （可非常轻松地从 Visual Studio.NET 2005年命令提示符） 将数据库配置。 Aspnet\_regsql 实用程序可以在命令提示符工具或通过 GUI 向导。 向导方法是将数据库配置的最简单方法。 若要访问该向导，只需运行以下命令：
 
 `aspnet_regsql W`
 
@@ -107,7 +107,7 @@ ASP.NET SQL Server 安装向导在向导中指定的实例中创建该网站。 
 
 ## <a name="login-control"></a>Login 控件
 
-Login 控件提供一个接口，使用户能够登录到成员资格系统。 你提供用户名和密码 textboxt 和登录按钮。 许多其他常见功能，如将其注册为那些尚未做这样一个复选框，允许在后续的访问会自动登录到用户的用户的链接、 密码提示等的链接。登录名控件的所有功能都都可自定义通过控件的属性。
+Login 控件提供一个接口，使用户能够登录到成员资格系统。 它提供使用用户名和密码文本框和一个登录按钮。 许多其他常见功能，如将其注册为那些尚未做这样一个复选框，允许在后续的访问会自动登录到用户的用户的链接、 密码提示等的链接。登录名控件的所有功能都都可自定义通过控件的属性。
 
 在 ASP.NET 1.x 中，开发人员必须编写大量的代码以使用窗体身份验证时执行搜索。 ASP.NET 2.0 成员身份，你可以对用户进行验证而无需编写任何代码。 ASP.NET 会自动为您执行用户执行的查找。 (如果不使用 ASP.NET 成员资格将登录控件，则可以使用**OnAuthenticate**方法来验证用户。)
 

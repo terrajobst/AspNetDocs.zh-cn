@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 43878bc101ef97e8bbb6c150f4125707da7660c9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cd6197a9cbed822ba874a19823521a3711be9201
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027434"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422709"
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>适用于 Visual Studio 2013 的 ASP.NET 和 Web 工具发行说明
 ====================
@@ -357,7 +357,7 @@ ASP.NET Web API 现在完全支持 OWIN，并可以在任何 OWIN 支持主机�
 
 ### <a name="cross-domain-support"></a>跨域支持
 
-在 SignalR 1.x 中的，跨域请求已由单个 EnableCrossDomain 标志控制。 此标志控制 JSONP 和 CORS 请求。 对于更大的灵活性，所有的 CORS 支持已从 SignalR 的服务器组件 （JavaScript lients 仍使用 CORS 通常如果检测到由浏览器支持它），以及新的 OWIN 中间件变得可用于支持这些方案。
+在 SignalR 1.x 中的，跨域请求已由单个 EnableCrossDomain 标志控制。 此标志控制 JSONP 和 CORS 请求。 对于更大的灵活性，所有的 CORS 支持已从 SignalR 的服务器组件 （JavaScript 客户端仍使用 CORS 通常如果检测到由浏览器支持它），以及新的 OWIN 中间件变得可用于支持这些方案。
 
 在 SignalR 2.0 中，如果 JSONP 客户端上 （支持需要跨域请求旧版浏览器中），它将需要通过设置显式启用`EnableJSONP`上`HubConfiguration`对象传递给`true`，如下所示。 JSONP 是默认禁用，因为它比 CORS 不太安全。
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 00304f67138873318b63c5e2ad0cd69aa7449521
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f1f5ebbf5170f205be331b6402951fb429196046
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041664"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423710"
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>生成使用 ASP.NET Web API 的 RESTful Api
 ====================
@@ -528,7 +528,7 @@ ASP.NET 网站上有一个专用于在 ASP.NET Web API 框架的区域[ [ https:
 1. 转到[Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 借助 Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 借助 Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](build-restful-apis-with-aspnet-web-api/_static/image39.png "登录到 Windows Azure 门户")
 

@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 55fab6bb7a1041a14f8734a0d2ae1238b3801149
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 719999f47dea7172f32a5040c79e569d0ec41ab0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042954"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425895"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>插入、 更新和删除数据 (VB) 的概述
 ====================
@@ -179,7 +179,7 @@ GridView 控件为行级编辑和删除提供内置支持。 配置一个 GridVi
 分配给的值`DeleteParameters`的值`DataKeyNames`其删除按钮被单击的行的字段。 因此很重要的 GridView 的`DataKeyNames`属性正确设置。 如果缺失，`DeleteParameters`的值将分配`Nothing`在步骤 1 中，这又不会导致在步骤 2 中任何已删除的记录。
 
 > [!NOTE]
-> `DataKeys`集合存储在 GridView 的控件状态，也就是说，`DataKeys`值将记住在回发之间，即使已禁用的 GridView 的视图状态。 但是，它是非常重要的 Gridview 支持编辑或删除 （默认行为） 的视图状态保持启用状态。 如果设置 GridView s`EnableViewState`属性设置为`false`、 编辑和删除行为将适用于单个用户，能够正常工作，但如果删除数据的并发用户，存在这些并发的用户可能意外的可能性删除或编辑记录该它们无效 t 计划。 请参阅我博客文章，[警告：并发发出与 ASP.NET 2.0 Gridview/DetailsView/FormViews 支持编辑和/或删除和其视图状态禁用](http://scottonwriting.net/sowblog/posts/10054.aspx)，有关详细信息。
+> `DataKeys`集合存储在 GridView 的控件状态，也就是说，`DataKeys`值将记住在回发之间，即使已禁用的 GridView 的视图状态。 但是，它是非常重要的 Gridview 支持编辑或删除 （默认行为） 的视图状态保持启用状态。 如果设置 GridView s`EnableViewState`属性设置为`false`、 编辑和删除行为将适用于单个用户，能够正常工作，但如果删除数据的并发用户，存在这些并发的用户可能意外的可能性删除或编辑不想的记录。 请参阅我博客文章，[警告：并发发出与 ASP.NET 2.0 Gridview/DetailsView/FormViews 支持编辑和/或删除和其视图状态禁用](http://scottonwriting.net/sowblog/posts/10054.aspx)，有关详细信息。
 
 
 此相同的警告也适用于 DetailsViews 和 FormViews。

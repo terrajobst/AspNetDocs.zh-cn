@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f1173feb-11ee-4017-8f3f-86599ea6ae13
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c8bbd20cb64fb27a0a6de2cdc14743f6961f4bf0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5e12f4ec9a6e8c53ee88388355ecfbd81b100c3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057874"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422255"
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a>迭代 2 – 使应用程序外表美观的 (C#)
 ====================
@@ -112,7 +112,7 @@ ASP.NET MVC 设计库具有不同的设计样式的不错的选择。 库提供�
 
 但是，您可能需要创建你的网站的完全唯一设计。 在这种情况下，最好使用网站设计公司。 我决定采用此方法的联系人管理器应用程序的设计。
 
-我压缩了联系人管理器从迭代 #1 并发送到设计公司的项目。 它们不归 Visual Studio （感到难为情它们 ！），但该无效 t 出现问题。 他们就能够从免费下载 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)网站，然后打开 Visual Web Developer 中的联系人管理器应用程序。 在几天，它们必须生成图 7 中的设计。
+我压缩了联系人管理器从迭代 #1 并发送到设计公司的项目。 没有 Visual Studio （感到难为情它们 ！），但是，未出现问题。 他们就能够从免费下载 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)网站，然后打开 Visual Web Developer 中的联系人管理器应用程序。 在几天，它们必须生成图 7 中的设计。
 
 
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)

@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 2e31b60b-8723-4f14-b7ee-37859454dc3b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 76b3dbd502eff7c97f57fdacd120ac2312aaceae
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 262e4e303daeda56b6590c8f2f925850b216f300
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061014"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422332"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>添加 GridView 单选按钮列 (VB)
 ====================
@@ -179,7 +179,7 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample5.aspx)]
 
-在这里，`GetUniqueRadioButton`并`GetRadioButtonValue`会返回相应的代码隐藏类中定义的方法`id`和`value`属性值为每个单选按钮。 这种方法非常适用于将分配`id`并`value`属性，但不如人意时无需指定`checked`属性值，因为数据绑定语法仅执行时数据首先绑定到 GridView。 因此，如果这个 GridView 有启用视图状态，格式设置方法将仅时，会激发第一次加载页面 （或当 GridView 显式重新绑定到数据源），因此设置的函数和`checked`上调用结束-赢得 t 属性回发。 它 s 相当微妙的问题和有点超出了本文中，因此，我将保留在此范围。 但是，我执行鼓励您尝试使用上述方法，通过，其中将有疑问的点到工作。 虽然此类练习结束-赢得不能获得您更加接近的有效版本，它将帮助培养 GridView 和数据绑定生命周期的更深入地了解。
+在这里，`GetUniqueRadioButton`并`GetRadioButtonValue`会返回相应的代码隐藏类中定义的方法`id`和`value`属性值为每个单选按钮。 这种方法非常适用于将分配`id`并`value`属性，但不如人意时无需指定`checked`属性值，因为数据绑定语法仅执行时数据首先绑定到 GridView。 因此，如果这个 GridView 有启用视图状态，格式设置方法将仅时，会激发第一次加载页面 （或当 GridView 显式重新绑定到数据源），并因此设置的函数`checked`不会在调用属性回发。 它 s 相当微妙的问题和有点超出了本文中，因此，我将保留在此范围。 但是，我执行鼓励您尝试使用上述方法，通过，其中将有疑问的点到工作。 虽然这种活动不会帮助您更加接近为有效版本，它将帮助培养 GridView 和数据绑定生命周期的更深入地了解。
 
 注入自定义的其他方法，低级别标记中的模板和本教程中，我们将使用的方法是添加[文本控件](https://msdn.microsoft.com/library/sz4949ks(VS.80).aspx)到模板。 然后，在 GridView s`RowCreated`或`RowDataBound`事件处理程序，可以以编程方式访问文字控件并将其`Text`属性设置为标记发出。
 

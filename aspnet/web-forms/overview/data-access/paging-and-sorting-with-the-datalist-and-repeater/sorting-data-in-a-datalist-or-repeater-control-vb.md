@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: 97c13898-0741-45f9-b3fa-7540ab1679e6
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad940afd03b66c17a4d8b1e5c727c317022fbc0a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 58d4c14e2b888f933457fe421235499943354182
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040974"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422918"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>排序 DataList 或 Repeater 控件中的数据 (VB)
 ====================
@@ -135,7 +135,7 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 
 
 > [!NOTE]
-> 单击刷新按钮会导致数据自动进行重新排序因为已禁用的 Repeater 的视图状态，从而导致 Repeater 重新绑定到其数据源上每次回发。 如果你已留 Repeater s 启用视图状态，更改排序下拉列表结束-赢得 t 上的排序顺序产生任何影响。 若要解决此问题，创建事件处理程序的刷新按钮 s`Click`事件和重新绑定到其数据源 Repeater (通过调用 Repeater 的`DataBind()`方法)。
+> 单击刷新按钮会导致数据自动进行重新排序因为已禁用的 Repeater 的视图状态，从而导致 Repeater 重新绑定到其数据源上每次回发。 如果你已留 Repeater s 启用视图状态，更改排序下拉列表不会产生任何影响排序顺序。 若要解决此问题，创建事件处理程序的刷新按钮 s`Click`事件和重新绑定到其数据源 Repeater (通过调用 Repeater 的`DataBind()`方法)。
 
 
 ## <a name="remembering-the-sort-expression-and-direction"></a>记住的排序表达式和方向

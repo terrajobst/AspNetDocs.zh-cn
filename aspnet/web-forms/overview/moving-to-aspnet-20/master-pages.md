@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: f40eb338a1b6b8eebb6578dd7938e96a05b1617f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 644beb37bf893a590be03dd0929c5870af6fbe87
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055114"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425764"
 ---
 <a name="master-pages"></a>母版页
 ====================
@@ -94,7 +94,7 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 
 1. 将光标置于表的每个单元格并设置*valign*属性设置为*顶部*。
 2. 从工具箱中的表 （的标头单元格。） 的顶部单元插入 ContentPlaceHolder 控件
-3. 当插入此 ContentPlaceHolder 控件时，您会注意到行的高度将几乎整个页面占用，如图 4 中所示。 不能胜，此时。
+3. 当插入此 ContentPlaceHolder 控件时，您会注意到行的高度将几乎整个页面占用，如图 4 中所示。 不必担心，在这里。
 
 
 ![作为 ContentPlaceHolder 相同单元中是空的空间](master-pages/_static/image1.gif)
@@ -127,7 +127,7 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 2. 选择 exercise1.master 在中，选择一个母版页对话框图 7 中所示。
 3. 单击确定以添加新的内容页面。
 
-新的内容页出现在 Visual Studio 为每个 ContentPlaceHolder 控件在母版页上的其中一个内容控件。 默认情况下，内容控件是空的以便可以添加自己的内容。 如果您可能喜欢它们使用 ContentPlaceHolder 控件在母版页上的内容，只需单击智能标记符号 （在右上角的控件的小黑色箭头），然后选择*默认为母版内容*从智能标记，如中所示**图 8**。 执行此操作时，菜单项将变为*创建自定义内容*。 此时，单击从母版页允许您定义该特定的内容控件的自定义内容中删除内容。
+新的内容页出现在 Visual Studio 为每个 ContentPlaceHolder 控件在母版页上的其中一个内容控件。 默认情况下，内容控件是空的以便可以添加自己的内容。 如果你想要为它们使用 ContentPlaceHolder 控件在母版页上的内容，只需单击智能标记符号 （在右上角的控件的小黑色箭头），然后选择*默认为母版内容*从智能标记，如中所示**图 8**。 执行此操作时，菜单项将变为*创建自定义内容*。 此时，单击从母版页允许您定义该特定的内容控件的自定义内容中删除内容。
 
 
 ![设置默认为母版页的页面内容的内容控件](master-pages/_static/image4.gif)

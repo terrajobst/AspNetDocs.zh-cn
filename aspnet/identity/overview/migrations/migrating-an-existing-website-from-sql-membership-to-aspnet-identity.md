@@ -8,19 +8,18 @@ ms.date: 12/19/2014
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 393d14799973e9126379743f63f79a7131206f38
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b80f2f5cc4702c3e406d8989905c56508711e788
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037814"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426076"
 ---
-<a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>将现有网站从 SQL 成员身份迁移到 ASP.NET Identity
-====================
+# <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>将现有网站从 SQL 成员身份迁移到 ASP.NET Identity
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程说明了将迁移角色的数据创建新的 ASP.NET 标识系统中使用 SQL 成员资格用户与现有 web 应用程序的步骤。 这种方法涉及到一个 ASP.NET 标识和挂钩到它的新/老类中所需的更改现有数据库架构。 您采用此方法后将数据库迁移后，将轻松处理标识对将来的更新。
-
 
 对于本教程，我们将使用 Visual Studio 2010 创建用户和角色的数据创建一个 web 应用程序模板 （Web 窗体）。 然后，我们将使用 SQL 脚本来将现有数据库迁移到所需的标识系统表。 接下来我们将安装所需的 NuGet 包并添加新帐户管理页用于成员资格管理标识系统。 为迁移的测试，创建使用 SQL 成员资格的用户应该能够以用户身份登录，新用户应能注册。 您可以找到完整示例[此处](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/SQLMembership-Identity-OWIN/)。 另请参阅[从 ASP.NET 成员身份迁移到 ASP.NET 标识](http://travis.io/blog/2015/03/24/migrate-from-aspnet-membership-to-aspnet-identity.html)。
 
@@ -50,7 +49,7 @@ ms.locfileid: "57037814"
 
 1. 安装 Visual Studio Express 2013 for Web 或与 Visual Studio 2013[最新的更新](https://www.microsoft.com/download/details.aspx?id=44921)。
 2. 已安装版本的 Visual Studio 中打开的更高版本的项目。 如果在计算机上未安装 SQL Server Express，打开项目，因为连接字符串使用 SQL Express 时显示一条提示。 您可以选择要安装 SQL Express 或作为变通解决更改到 LocalDb 连接字符串。 本文中我们会将其更改为 LocalDb。
-3. 打开 web.config 并更改中的连接字符串。到 (LocalDb)，为 v11.0 SQLExpess。 删除用户实例 = true 连接字符串。
+3. 打开 web.config 并更改中的连接字符串。到 (LocalDb)，为 v11.0 SQLExpress。 删除用户实例 = true 连接字符串。
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image3.jpg)
 4. 打开服务器资源管理器并验证可以观察表架构和数据。
@@ -86,7 +85,7 @@ ms.locfileid: "57037814"
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | string | Id | RoleId | ProviderKey | Id |
-| 用户名 | string | name | UserId | UserId | ClaimType |
+| 用户名 | string | 名称 | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | string |  |  |  | 用户\_Id |
 | 电子邮件 | string |  |  |  |  |
@@ -115,7 +114,7 @@ ms.locfileid: "57037814"
 
 [!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
-此数据库生成脚本可用作其中我们会进行其他更改，以添加新列并将数据复制开始。 这样做的优点是，我们生成`_MigrationHistory`EntityFramework 用于模型的类标识发布的未来版本的更改时，修改数据库架构的表。 
+此数据库生成脚本可用作其中我们会进行其他更改，以添加新列并将数据复制开始。 这样做的优点是，我们生成`_MigrationHistory`EntityFramework 用于模型的类标识发布的未来版本的更改时，修改数据库架构的表。
 
 SQL 成员资格用户信息有其他属性标识用户模型类即电子邮件中的属性、 密码尝试次数、 上次登录日期、 最后一个锁定日期等。这是有用的信息，我们想让它转入标识系统。 这可以通过将其他属性添加到用户模型并将其映射回数据库中表的列。 我们可以执行此操作，请添加该子类`IdentityUser`模型。 我们可以将属性添加到此自定义类和编辑 SQL 脚本，以创建表时添加相应的列。 此类的代码是一文中作了进一步介绍。 用于创建的 SQL 脚本`AspnetUsers`表后会添加新属性
 
@@ -125,7 +124,7 @@ SQL 成员资格用户信息有其他属性标识用户模型类即电子邮件�
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 
-在上述 SQL 语句中，从每个用户的信息*aspnet\_用户*并*aspnet\_成员身份*表复制到的列*AspnetUsers*表。 当我们复制的密码时，此处这样做的唯一修改。 由于 SQL 成员资格中的密码的加密算法使用 PasswordSalt 和 PasswordFormat，我们将复制的太以及经过哈希处理密码，以便可以使用用于解密密码的标识。 这当挂接自定义密码哈希计算器文章中进一步说明。 
+在上述 SQL 语句中，从每个用户的信息*aspnet\_用户*并*aspnet\_成员身份*表复制到的列*AspnetUsers*表。 当我们复制的密码时，此处这样做的唯一修改。 由于 SQL 成员资格中的密码的加密算法使用 PasswordSalt 和 PasswordFormat，我们将复制的太以及经过哈希处理密码，以便可以使用用于解密密码的标识。 这当挂接自定义密码哈希计算器文章中进一步说明。
 
 此脚本文件是特定于此示例。 对于具有其他表的应用程序，开发人员可以按照类似的方法上用户 model 类添加其他属性，并将它们映射到在 AspnetUsers 表中的列。 若要运行脚本，
 
@@ -158,7 +157,7 @@ SQL 成员资格用户信息有其他属性标识用户模型类即电子邮件�
 
 在本示例中，AspNetRoles、 AspNetUserClaims、 AspNetLogins 和 AspNetUserRole 表具有类似于标识系统的现有实现的列。 因此我们可以重复使用现有的类将映射到这些表。 AspNetUser 表有一些额外的列将用它们来存储 SQL 成员资格表中的其他信息。 这可以通过创建模型类，可以扩展 IdentityUser 的现有实现并添加其他属性映射。
 
-1. 在项目中的可用来创建 Models 文件夹，并添加用户的类。 类的名称应与 AspnetUsers 表中的鉴别器列中添加的数据。
+1. 在项目中创建 Models 文件夹，并添加用户的类。 类的名称应与 AspnetUsers 表中的鉴别器列中添加的数据。
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image10.png)
 
@@ -199,7 +198,7 @@ SQL 成员资格用户信息有其他属性标识用户模型类即电子邮件�
 - Register.aspx.cs 和 Login.aspx.cs 代码隐藏类使用`UserManager`从标识包创建的用户。 对于此示例使用 UserManager Models 文件夹中添加前面所述的步骤。
 - 使用而不是 IdentityUser Register.aspx.cs 和 Login.aspx.cs 代码隐藏类中创建的用户类。 这在我们的自定义用户类挂接到标识系统。
 - 要创建数据库的部件，可以跳过。
-- 开发人员需要设置新用户 ApplicationId，以匹配当前应用程序 id。 这可以通过查询此应用程序 ApplicationId 之前 Register.aspx.cs 类中创建一个用户对象并将其设置前创建用户。 
+- 开发人员需要设置新用户 ApplicationId，以匹配当前应用程序 id。 这可以通过查询此应用程序 ApplicationId 之前 Register.aspx.cs 类中创建一个用户对象并将其设置前创建用户。
 
     示例:
 

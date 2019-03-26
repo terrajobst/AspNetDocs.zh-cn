@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7695ffad0599701840da83670af3940569e01c21
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 879f0f491461ec49c4eef9dc8add747ac2b22f90
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037774"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422098"
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource 实现乐观并发 (VB)
 ====================
@@ -28,7 +28,7 @@ ms.locfileid: "57037774"
 
 在前面的教程中，我们将探讨如何添加插入、 更新和删除 SqlDataSource 控件的功能。 简单地说，要提供这些功能我们需要指定相应`INSERT`， `UPDATE`，或`DELETE`控件 s 中的 SQL 语句`InsertCommand`， `UpdateCommand`，或`DeleteCommand`属性以及相应中的参数`InsertParameters`， `UpdateParameters`，和`DeleteParameters`集合。 尽管可以手动指定这些属性和集合，配置数据源向导 s 高级的按钮提供了生成`INSERT`， `UPDATE`，和`DELETE`语句复选框，将自动创建这些语句基于`SELECT`语句。
 
-与生成一起`INSERT`， `UPDATE`，和`DELETE`语句复选框，高级 SQL 生成选项对话框中包括使用开放式并发选项 （请参阅图 1）。 选中之后，`WHERE`子句中自动生成`UPDATE`和`DELETE`语句经过修改，以仅执行更新或删除如果由于用户修改基础数据库数据功能，那么 t 最后将数据加载到网格。
+与生成一起`INSERT`， `UPDATE`，和`DELETE`语句复选框，高级 SQL 生成选项对话框中包括使用开放式并发选项 （请参阅图 1）。 选中之后，`WHERE`子句中自动生成`UPDATE`和`DELETE`语句经过修改，以仅执行更新或删除如果自用户上次到网格中加载数据以来尚未修改基础数据库数据。
 
 
 ![可以添加乐观并发支持从高级 SQL 生成选项对话框](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.gif)
@@ -52,7 +52,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 **图 2**:当两个用户同时更新的记录那里 s 可能覆盖对其他更改的一个用户 s ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png))
 
 
-若要防止这种情况下打开的窗体[并发控制](http://en.wikipedia.org/wiki/Concurrency_control)必须实现。 [乐观并发](http://en.wikipedia.org/wiki/Optimistic_concurrency_control)本教程的重点工作可能会有并发冲突不时地，大多数的此类冲突结束-赢得 t 时间出现发生的假设。 因此，如果确实会发生冲突，乐观并发控制只需将通知用户其更改-无法进行保存，因为另一个用户已修改相同的数据。
+若要防止这种情况下打开的窗体[并发控制](http://en.wikipedia.org/wiki/Concurrency_control)必须实现。 [乐观并发](http://en.wikipedia.org/wiki/Optimistic_concurrency_control)焦点本教程适用于假设可能偶尔会，并发冲突那里时，大多数情况下不会产生此类冲突。 因此，如果确实会发生冲突，乐观并发控制只需将通知用户其更改-无法进行保存，因为另一个用户已修改相同的数据。
 
 > [!NOTE]
 > 对于其中假定将是许多并发冲突或者如果此类冲突不容许的应用程序，然后悲观并发控制可以改用。 回头[实现乐观并发](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)教程，了解在保守式并发控制的更深入讨论。
@@ -66,7 +66,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 **图 3**:适用于更新或删除直至成功，原始值必须为等于当前的数据库值 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png))
 
 
-有多种方法实现乐观并发 (请参阅[Peter A.Bromberg](http://peterbromberg.net/) s [Optmistic 并发更新逻辑](http://www.eggheadcafe.com/articles/20050719.asp)的简要介绍一下使用多种)。 使用 SqlDataSource （以及 ADO.NET 类型化数据集在我们的数据访问层中使用） 的方法增强`WHERE`子句，以包括所有原始值的比较。 以下`UPDATE`语句，例如，更新的名称和产品的价格仅当当前的数据库值是否等于更新 GridView 中的记录时最初检索到的值。 `@ProductName`并`@UnitPrice`参数包含由用户输入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初加载到了 GridView 时单击编辑按钮的值：
+有多种方法实现乐观并发 (请参阅[Peter A.Bromberg](http://peterbromberg.net/)的[乐观并发更新逻辑](http://www.eggheadcafe.com/articles/20050719.asp)的简要介绍一下使用多种)。 使用 SqlDataSource （以及 ADO.NET 类型化数据集在我们的数据访问层中使用） 的方法增强`WHERE`子句，以包括所有原始值的比较。 以下`UPDATE`语句，例如，更新的名称和产品的价格仅当当前的数据库值是否等于更新 GridView 中的记录时最初检索到的值。 `@ProductName`并`@UnitPrice`参数包含由用户输入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初加载到了 GridView 时单击编辑按钮的值：
 
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample1.sql)]
@@ -129,7 +129,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample6.sql)]
 
-`UnitPrice`中的列`Products`表可以有`NULL`值。 如果特定的记录都`NULL`值`UnitPrice`，则`WHERE`子句部分`[UnitPrice] = @original_UnitPrice`会*始终*计算结果为 False，因为`NULL = NULL`始终返回 False。 因此，它包含的记录`NULL`值不能编辑或删除，作为`UPDATE`并`DELETE`语句`WHERE`子句结束-赢得 t 返回要更新或删除任何行。
+`UnitPrice`中的列`Products`表可以有`NULL`值。 如果特定的记录都`NULL`值`UnitPrice`，则`WHERE`子句部分`[UnitPrice] = @original_UnitPrice`会*始终*计算结果为 False，因为`NULL = NULL`始终返回 False。 因此，它包含的记录`NULL`值不能编辑或删除，作为`UPDATE`并`DELETE`语句`WHERE`子句不会返回任何行来更新或删除。
 
 > [!NOTE]
 > 此 bug 第一次报告给 Microsoft 在 2004 年 6 月的中[SqlDataSource 生成错误的 SQL 语句](https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=93937)和据说计划在下一版本的 ASP.NET 中予以解决。
@@ -189,7 +189,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 > Delete 的工作方式相同的方式。 使用两个打开的浏览器窗口，首先编辑使用其中一个，给定的产品，然后保存其更改。 在保存后所做的更改在一个浏览器中，单击同一中的其他产品的删除按钮。 由于原始值 don t 中匹配`DELETE`语句的`WHERE`子句中，删除以静默方式失败。
 
 
-从最终用户 s 的角度在第二个浏览器窗口中，单击网格中的更新按钮返回到预先编辑模式，但他们的更改已丢失。 但是，这里 s 其更改无效 t 坚持没有可视反馈。 理想情况下，如果用户的更改都将丢失到并发冲突，我们 d 通知他们并，这样一来，保留在编辑模式下的网格。 让我们来看看如何实现此目的。
+从最终用户 s 的角度在第二个浏览器窗口中，单击网格中的更新按钮返回到预先编辑模式，但他们的更改已丢失。 但是，这里 s 他们的更改不坚持没有可视反馈。 理想情况下，如果用户的更改都将丢失到并发冲突，我们 d 通知他们并，这样一来，保留在编辑模式下的网格。 让我们来看看如何实现此目的。
 
 ## <a name="step-3-determining-when-a-concurrency-violation-has-occurred"></a>步骤 3：确定当发生并发冲突
 

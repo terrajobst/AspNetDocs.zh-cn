@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: cf5acaf5-d4f6-4957-badc-b89956b285f3
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f79c446a0c9407309ab65cd993df544e883afb22
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8dd23b960df6511f65882820cb26d4af4ccf5c58
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038424"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421526"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>使用 DataList 控件每行显示多条记录 (C#)
 ====================
@@ -66,7 +66,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 
 默认行为时 DataList 是垂直在单个列中，多行表中，其项进行布局更改此行为可以轻松地通过 DataList s [ `RepeatDirection`属性](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx)。 `RepeatDirection`属性可接受两个可能值之一：`Horizontal`或`Vertical`（默认值）。
 
-通过更改`RepeatDirection`属性从`Vertical`到`Horizontal`，DataList 呈现其记录在单个行中，创建每个数据源项的一列。 为了说明这种效果，DataList 在设计器上单击，然后，从属性窗口中更改`RepeatDirection`属性从`Vertical`到`Horiztonal`。 立即时，在设计器调整 DataList 的布局中，创建一个单行、 多列的界面 （参见图 3）。
+通过更改`RepeatDirection`属性从`Vertical`到`Horizontal`，DataList 呈现其记录在单个行中，创建每个数据源项的一列。 为了说明这种效果，DataList 在设计器上单击，然后，从属性窗口中更改`RepeatDirection`属性从`Vertical`到`Horizontal`。 立即时，在设计器调整 DataList 的布局中，创建一个单行、 多列的界面 （参见图 3）。
 
 
 [![RepeatDirection 属性决定了如何方向 DataList 的项的布局推出](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image7.png)

@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: db0f160b-901c-46d3-865e-7ab6cd4ed68d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 78b488263fbb0c646d9bf6ee8c4ace2ff63ccf9d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8fb2481342fa309941257feae792d9aa3c7bf721
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040094"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422670"
 ---
 <a name="iteration-1--create-the-application-c"></a>迭代 1 – 创建应用程序 (C#)
 ====================
@@ -88,7 +88,7 @@ ASP.NET MVC 框架。 您可以从以下地址下载 ASP.NET MVC framework:
 ASP.NET MVC Web 应用程序项目。 启动 Visual Studio 并选择菜单选项**文件，新的项目**。 **新的项目**对话框 （请参见图 1）。 选择**Web**项目类型和**ASP.NET MVC Web 应用程序**模板。 为新项目命名*ContactManager* ，然后单击确定按钮。
 
 
-请确保你具有从顶部的下拉列表中选择的.NET Framework 3.5 角**新的项目**对话框。 否则，赢得 t 的 ASP.NET MVC Web 应用程序模板显示。
+请确保你具有从顶部的下拉列表中选择的.NET Framework 3.5 角**新的项目**对话框。 否则，不会出现的 ASP.NET MVC Web 应用程序模板。
 
 
 [![新建项目对话框](iteration-1-create-the-application-cs/_static/image1.jpg)](iteration-1-create-the-application-cs/_static/image1.png)
@@ -96,7 +96,7 @@ ASP.NET MVC Web 应用程序项目。 启动 Visual Studio 并选择菜单选项
 **图 01**:新项目对话框 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image2.png))
 
 
-ASP.NET MVC 应用程序**创建单元测试项目**此时将显示对话框。 可以使用此对话框以指示你想要创建并创建 ASP.NET MVC 应用程序时向你的解决方案添加单元测试项目。 尽管我们获得了 t 是构建此小版本中的单元测试，应选择选项**可以，请创建单元测试项目**由于我们计划在后续迭代中添加单元测试。 首次创建新的 ASP.NET MVC 项目时添加的测试项目是比创建 ASP.NET MVC 项目后再添加一个测试项目容易得多。
+ASP.NET MVC 应用程序**创建单元测试项目**此时将显示对话框。 可以使用此对话框以指示你想要创建并创建 ASP.NET MVC 应用程序时向你的解决方案添加单元测试项目。 尽管我们不会生成此小版本中的单元测试，但应选择选项**可以，请创建单元测试项目**由于我们计划在后续迭代中添加单元测试。 首次创建新的 ASP.NET MVC 项目时添加的测试项目是比创建 ASP.NET MVC 项目后再添加一个测试项目容易得多。
 
 > [!NOTE] 
 > 
@@ -442,7 +442,7 @@ Html.ActionLink( { id=item.Id }) %&gt;
 
 ## <a name="changing-the-name-of-the-default-controller"></a>更改默认控制器的名称
 
-它可能会给您带来麻烦的我们的控制器类名称使用联系人名为 HomeController 类。 长度应不 t 将控制器命名为 ContactController？
+它可能会给您带来麻烦的我们的控制器类名称使用联系人名为 HomeController 类。 不应将控制器命名为 ContactController？
 
 此问题很容易修复。 首先，我们需要重构的主控制器的名称。 Visual Studio 代码编辑器中打开 HomeController 类中，右键单击类的名称并选择菜单选项**重构重命名**。 选择此菜单选项打开重命名对话框。
 

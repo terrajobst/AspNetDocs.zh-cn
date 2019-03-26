@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 49545652-98af-46ba-9dbc-9ab529805d9b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ae27b25a0a7f37cc273d88d7165c8be33ce2f6cc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3524983e347cc5ca0d34b2abe463477244a1129e
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052524"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425452"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-c"></a>从 GridView 页脚插入新记录 (C#)
 ====================
@@ -207,7 +207,7 @@ ms.locfileid: "57052524"
 [!code-csharp[Main](inserting-a-new-record-from-the-gridview-s-footer-cs/samples/sample6.cs)]
 
 > [!NOTE]
-> 您可能想知道为什么事件处理程序很麻烦检查`Page.IsValid`属性。 毕竟，如果插入的界面中提供无效的数据，则取消获胜的 t 回发？ 这种假设是正确的只要用户未禁用 JavaScript，或采取了一些措施来绕过客户端验证逻辑。 简单地说，一个应永远不会依赖于严格客户端验证;应始终处理数据之前执行服务器端检查的有效性。
+> 您可能想知道为什么事件处理程序很麻烦检查`Page.IsValid`属性。 毕竟，不会回发当取消插入接口提供了无效的数据？ 这种假设是正确的只要用户未禁用 JavaScript，或采取了一些措施来绕过客户端验证逻辑。 简单地说，一个应永远不会依赖于严格客户端验证;应始终处理数据之前执行服务器端检查的有效性。
 
 
 我们在步骤 1 中创建`ProductsDataSource`ObjectDataSource，以便其`Insert()`方法映射到`ProductsBLL`类的`AddProduct`方法。 要插入到新的记录`Products`表中，我们可以只需调用 ObjectDataSource 的`Insert()`方法：

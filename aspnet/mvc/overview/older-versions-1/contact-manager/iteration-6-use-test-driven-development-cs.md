@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c4358a1b979ab95d8ac25551e21ee95d75e5eae
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d456952bea9a1933247382f4786809b0b2f32034
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026194"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440321"
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>迭代 6 – 使用测试驱动开发 (C#)
 ====================
@@ -80,9 +80,9 @@ by [Microsoft](https://github.com/microsoft)
 
 ## <a name="what-gets-tested"></a>获取测试内容
 
-如我们在上一次迭代中所述，通常没有为数据访问逻辑编写单元测试或查看逻辑。 您不 t 写入的数据访问逻辑的单元测试，因为访问数据库是一个相对较慢的操作。 您不视图逻辑的 t 写入单元测试，因为访问视图需要快速启动的 web 服务器，这是一个相对较慢的操作。 长度应不 t 编写单元测试，除非可以执行测试，非常快
+如我们在上一次迭代中所述，通常没有为数据访问逻辑编写单元测试或查看逻辑。 您不 t 写入的数据访问逻辑的单元测试，因为访问数据库是一个相对较慢的操作。 您不视图逻辑的 t 写入单元测试，因为访问视图需要快速启动的 web 服务器，这是一个相对较慢的操作。 除非可以执行测试，非常快，不应编写单元测试
 
-由于测试驱动开发，由单元测试，我们专注于最初编写控制器和业务逻辑。 我们避免触及视图的数据库。 我们获得了 t 修改数据库或本教程的最后才创建我们的视图。 我们开始可以测试内容。
+由于测试驱动开发，由单元测试，我们专注于最初编写控制器和业务逻辑。 我们避免触及视图的数据库。 我们不会修改数据库或本教程的最后才创建我们的视图。 我们开始可以测试内容。
 
 ## <a name="creating-user-stories"></a>创建用户情景
 
@@ -246,10 +246,10 @@ by [Microsoft](https://github.com/microsoft)
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | int | False |
-| name | nvarchar(50) | False |
+| 名称 | nvarchar(50) | False |
 
 
-接下来，我们需要从联系人表中删除的所有数据 (否则，我们获得了能够创建联系人和组表之间的关系)。 请执行以下步骤：
+接下来，我们需要从联系人表中删除的所有数据 （否则，我们将无法创建联系人和组表之间的关系）。 请执行以下步骤：
 
 1. 右键单击联系人表，然后选择菜单选项**显示表数据**。
 2. 删除的所有行。
@@ -309,7 +309,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
-我们还没有真正实现任何与使用联系人组相关的方法。 目前，EntityContactManagerRepository 类 IContactManagerRepository 界面中列出的联系人组方法的每个具有存根 （stub） 方法。 例如，ListGroups() 方法当前如下所示：
+实际上，我们尚未实现任何一种方法与使用联系人组相关。 目前，EntityContactManagerRepository 类 IContactManagerRepository 界面中列出的联系人组方法的每个具有存根 （stub） 方法。 例如，ListGroups() 方法当前如下所示：
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample15.cs)]
 

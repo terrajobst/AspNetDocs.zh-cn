@@ -8,12 +8,12 @@ ms.date: 03/31/2014
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 57066b8ce3254caf59cf927d16d96f8bc22a8acd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 270268b77f398084169843e20b0a2bf9f1c2a011
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046474"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423151"
 ---
 <a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
 ====================
@@ -53,7 +53,7 @@ Web API 配置设置中定义[HttpConfiguration](https://msdn.microsoft.com/libr
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>配置与 ASP.NET 托管的 Web API
 
-在 ASP.NET 应用程序，通过调用来配置 Web API [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx)中**应用程序\_启动**方法。 **配置**方法采用一个委托，其类型的参数**HttpConfiguration**。 执行所有委托在你配置。
+在 ASP.NET 应用程序，通过调用来配置 Web API [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx)中**应用程序\_启动**方法。 **配置**方法采用一个委托，其类型的参数**HttpConfiguration**。 执行所有委托内配置。
 
 下面是使用匿名委托的示例：
 

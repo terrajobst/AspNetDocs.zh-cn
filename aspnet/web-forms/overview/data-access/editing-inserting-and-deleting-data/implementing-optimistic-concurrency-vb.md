@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 2646968c-2826-4418-b1d0-62610ed177e3
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e33e4b401d957f4aa5560193dd8af0e53ca3b631
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 06ee6f8ea415ddde4e47acacaa74a29cbf9a0478
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032694"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425582"
 ---
 <a name="implementing-optimistic-concurrency-vb"></a>实现乐观并发 (VB)
 ====================
@@ -60,7 +60,7 @@ ms.locfileid: "57032694"
 **图 2**:适用于更新或删除直至成功，原始值必须为等于当前的数据库值 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-vb/_static/image6.png))
 
 
-有多种方法实现乐观并发 (请参阅[Peter A.Bromberg](http://peterbromberg.net/)的[Optmistic 并发更新逻辑](http://www.eggheadcafe.com/articles/20050719.asp)的简要介绍一下使用多种)。 ADO.NET 类型化数据集提供了一种可配置为只是一个复选框的刻度线的实现。 为类型化数据集在 TableAdapter 扩充 TableAdapter 的启用乐观并发`UPDATE`并`DELETE`语句以包括所有中的原始值的比较`WHERE`子句。 以下`UPDATE`语句，例如，更新的名称和产品的价格仅当当前的数据库值是否等于更新 GridView 中的记录时最初检索到的值。 `@ProductName`并`@UnitPrice`参数包含由用户输入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初加载到了 GridView 时单击编辑按钮的值：
+有多种方法实现乐观并发 (请参阅[Peter A.Bromberg](http://peterbromberg.net/)的[乐观并发更新逻辑](http://www.eggheadcafe.com/articles/20050719.asp)的简要介绍一下使用多种)。 ADO.NET 类型化数据集提供了一种可配置为只是一个复选框的刻度线的实现。 为类型化数据集在 TableAdapter 扩充 TableAdapter 的启用乐观并发`UPDATE`并`DELETE`语句以包括所有中的原始值的比较`WHERE`子句。 以下`UPDATE`语句，例如，更新的名称和产品的价格仅当当前的数据库值是否等于更新 GridView 中的记录时最初检索到的值。 `@ProductName`并`@UnitPrice`参数包含由用户输入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初加载到了 GridView 时单击编辑按钮的值：
 
 
 [!code-sql[Main](implementing-optimistic-concurrency-vb/samples/sample1.sql)]

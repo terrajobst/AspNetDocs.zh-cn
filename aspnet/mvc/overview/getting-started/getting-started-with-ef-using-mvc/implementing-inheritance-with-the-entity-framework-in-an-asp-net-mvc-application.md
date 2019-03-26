@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 79513edce7ac3044f6f547149400cba7d307edfa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3ebabd626e0b862e09f19552648406aab959f882
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027634"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423307"
 ---
 # <a name="template-implement-inheritance-with-ef-in-an-aspnet-mvc-5-app"></a>模板：使用 EF 的 ASP.NET MVC 5 应用程序中实现继承
 
@@ -73,7 +73,7 @@ TPC 和 TPH 继承模式通常提供更好的性能在实体框架中比 TPT 继
 
 ## <a name="update-instructor-and-student"></a>更新 Instructor 和 Student
 
-现在，更新*Instructor.cs*并*Sudent.cs*继承中的值*Person.sc*。
+现在，更新*Instructor.cs*并*Student.cs*继承中的值*Person.sc*。
 
 在中*Instructor.cs*，派生`Instructor`类`Person`类，并删除键和姓名字段。 代码将如下所示：
 

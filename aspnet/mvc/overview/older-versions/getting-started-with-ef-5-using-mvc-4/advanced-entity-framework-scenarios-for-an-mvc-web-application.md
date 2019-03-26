@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa6ff439790f70cd60d0985a791df26d69c7107
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 18a292ada33936ea03f2d51427c160541424c8d1
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059294"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425608"
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>高级的 Entity Framework 方案 MVC Web 应用程序 (10 / 10)
 ====================
@@ -110,7 +110,7 @@ ms.locfileid: "57059294"
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample7.cs)]
 
-在中*CourseContoller.cs*，添加`UpdateCourseCredits`方法：
+在中*CourseController.cs*，添加`UpdateCourseCredits`方法：
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample8.cs)]
 

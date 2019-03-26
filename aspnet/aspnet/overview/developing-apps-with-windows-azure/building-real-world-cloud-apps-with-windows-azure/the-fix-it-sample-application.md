@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: de3c8ea29f2c271136f58d8165bb92f4ab28ce83
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a73fac6107be45455465b506a019bcc9a41b1deb
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034214"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425517"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录：修复它示例应用程序 （构建使用 Azure 的真实世界云应用程序）
 ====================
@@ -376,13 +376,13 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 
 部署云服务之前，你需要更新一些配置文件。
 
-在 MyFixIt.WorkerRoler\app.config 下, `connectionStrings`，将的值为`appdb`使用 SQL 数据库的实际连接字符串的连接字符串。 可以从门户获取连接字符串。 在门户中，单击**SQL 数据库** - **appdb** - **查看 SQL 数据库的 ADO.Net、 ODBC、 PHP 和 JDBC 连接字符串**。 复制 ADO.NET 连接字符串并将值粘贴到 app.config 文件。 替换为"{你\_密码\_此处}"使用自己的数据库密码。 (假设您使用脚本来部署 MVC 应用程序，指定中的数据库密码`SqlDatabasePassword`脚本参数。)
+在 MyFixIt.WorkerRole\app.config 下, `connectionStrings`，将的值为`appdb`使用 SQL 数据库的实际连接字符串的连接字符串。 可以从门户获取连接字符串。 在门户中，单击**SQL 数据库** - **appdb** - **查看 SQL 数据库的 ADO.Net、 ODBC、 PHP 和 JDBC 连接字符串**。 复制 ADO.NET 连接字符串并将值粘贴到 app.config 文件。 替换为"{你\_密码\_此处}"使用自己的数据库密码。 (假设您使用脚本来部署 MVC 应用程序，指定中的数据库密码`SqlDatabasePassword`脚本参数。)
 
 结果应如以下所示：
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample32.xml)]
 
-在同一个 MyFixIt.WorkerRoler\app.config 文件中，在`appSettings`，两个占位符值替换为 Azure 存储帐户。
+在同一个 MyFixIt.WorkerRole\app.config 文件中，在`appSettings`，两个占位符值替换为 Azure 存储帐户。
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample33.xml?highlight=2-3)]
 

@@ -8,12 +8,12 @@ ms.date: 01/12/2012
 ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: 542790b7f475cc641ed26ff3187c25c25118e0ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ef83ef22e17ab7bda035d0f11ab936fe56d58800
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037824"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423021"
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>检查 ASP.NET MVC 如何支持 DropDownList 帮助程序
 ====================
@@ -197,7 +197,7 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/library
 
 ### <a name="which-approach-should-you-use"></a>您应该使用哪种方法？
 
-显示所有三种方法是可接受的。 许多开发人员更愿意使用 explictily pass`SelectList`到`DropDownList`使用`ViewBag`。 此方法具有附加的优势的让你灵活地使用找不到更合适的名称。 一个需要注意的是不能将命名`ViewBag SelectList`对象模型属性与相同的名称。
+显示所有三种方法是可接受的。 许多开发人员更喜欢显式传递`SelectList`到`DropDownList`使用`ViewBag`。 此方法具有附加的优势的让你灵活地使用找不到更合适的名称。 一个需要注意的是不能将命名`ViewBag SelectList`对象模型属性与相同的名称。
 
 一些开发人员更喜欢 ViewModel 方法。 其他人考虑更冗长的标记，并生成 HTML 视图模型方法的缺点。
 

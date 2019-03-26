@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 0170fda6849c1dfb53b44908ea55ba2cad0dd067
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4c8628cc289610e287c0a3bc3c8a4c7a833c9fde
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036614"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423411"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自定义操作筛选器
 
@@ -261,7 +261,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > 此自定义操作筛选器是几乎比你在上一练习中创建相同的。 主要区别是，它有 *&quot;记录由&quot;* 更新与此新类的名称以标识针对筛选器属性已注册的日志。
+    > 此自定义操作筛选器是几乎比你在上一练习中创建相同的。 主要区别是，它有*&quot;记录由&quot;* 更新与此新类的名称以标识注册日志的筛选器的属性。
 
 <a id="Ex2Task2"></a>
 
@@ -292,7 +292,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 <a id="Task_3_Managing_Filter_Ordering"></a>
 #### <a name="task-3-managing-filter-ordering"></a>任务 3:管理筛选器排序
 
-在本任务中，您将学习如何使用顺序属性设置管理筛选器的执行顺序。
+在本任务中，您将学习如何使用 Order 属性管理筛选器的执行顺序。
 
 1. 打开**StoreController**类位于**MvcMusicStore\Controllers**并指定**顺序**喜欢这两个筛选器中的属性如下所示。
 
@@ -325,7 +325,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 <a id="Task_4_Registering_Filters_Globally"></a>
 #### <a name="task-4-registering-filters-globally"></a>任务 4:注册全局筛选器
 
-在此任务中，将更新解决方案，以注册新的筛选器 (**MyNewCustomActionFilter**) 作为全局筛选器。 通过执行此操作，将会触发的所有操作执行应用程序中，而不仅限 StoreController 的如在上一任务中所示。
+在此任务中，将更新解决方案，以注册新的筛选器 (**MyNewCustomActionFilter**) 作为全局筛选器。 通过执行此操作，将会触发的执行应用程序中，而不仅限 StoreController 的如在上一任务中所示的所有操作。
 
 1. 在中**StoreController**类中，删除 **[MyNewCustomActionFilter]** 属性和 order 属性从 **[CustomActionFilter]**。 其外观应如下所示：
 
@@ -375,7 +375,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;使用版本 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)** . 以下说明将指导您完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 与 Windows Azure SDK</em>&quot;。
+1. 转到 [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 与 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果还没有**Web 平台安装程序**将重定向以下载并安装。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -419,7 +419,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 1. 转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](aspnet-mvc-4-custom-action-filters/_static/image17.png "登录到 Windows Azure 门户")
 

@@ -7,18 +7,18 @@ ms.author: riande
 ms.date: 11/24/2017
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: be237bee43bc5e32939cb0b3e0948fd8b35bd1eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0c360f580285967c8fab8d33ccbb9557a7316ee1
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058984"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423129"
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>从.NET 客户端 (C#) 中调用 Web API
 ====================
 通过[Mike Wasson](https://github.com/MikeWasson)和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[下载已完成的项目](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 
+[下载已完成的项目](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 
 
 本教程演示如何从.NET 应用程序调用 web API 使用[System.Net.Http.HttpClient。](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
@@ -164,7 +164,7 @@ resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 
 若要测试客户端应用：
 
-1. [下载](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 验证服务器应用程序正常工作。 有关 exaxmple，`http://localhost:64195/api/products`应返回的产品的列表。
+1. [下载](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 验证服务器应用程序正常工作。 例如，`http://localhost:64195/api/products`应返回的产品的列表。
 2. 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用程序中使用的端口。
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

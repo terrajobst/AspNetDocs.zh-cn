@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: d4998c8b739b4b1a06699a17464a7399a87a8595
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3db54a134e8f842cab1d3471c69f5a8e2039d83d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039484"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423606"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>动手实验：使用 SignalR 实现实时 Web 应用程序
 ====================
@@ -22,7 +22,7 @@ ms.locfileid: "57039484"
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-[下载 Web 训练营培训工具包](http://aka.ms/webcamps-training-kit)
+[下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
 
 > 实时 Web 应用程序功能推送服务器端的情况下，实时连接的客户端到内容的功能。 面向 ASP.NET 开发人员**ASP.NET SignalR**是一个库，以将实时 web 功能添加到其应用程序。 它利用多个传输协议，会自动选择给定客户端和服务器的最佳可用的传输最佳的可用传输。 它利用**WebSocket**，一个 HTML5 API，使浏览器和服务器之间的双向通信。
 > 
@@ -34,7 +34,7 @@ ms.locfileid: "57039484"
 > 
 > ![SignalR 体系结构](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>

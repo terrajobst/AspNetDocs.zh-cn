@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 84c7baca-1c54-4c44-8f52-4282122d6acb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 3f9222c7b485f552da91f4875c882db7e03cdd0a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 52aba3fa5948d32180fbf135444433771b17756d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046744"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425634"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖项注入
 
@@ -361,7 +361,7 @@ MVC Music 商店现在提供开始解决方案中包括用于管理名为的存�
     (代码段- *ASP.NET 依赖关系注入实验-Ex02-注册 CustomViewPageActivator*)
 
     [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample16.cs)]
-5. ASP.NET MVC 4 默认依赖关系解析程序替换的实例**UnityDependencyResolver**。 若要执行此操作，请替换**Initialise**方法内容与以下代码：
+5. ASP.NET MVC 4 默认依赖关系解析程序替换的实例**UnityDependencyResolver**。 若要执行此操作，请替换**初始化**方法内容与以下代码：
 
     (代码段- *ASP.NET 依赖关系注入实验-Ex02-更新依赖关系解析程序*)
 
@@ -508,7 +508,7 @@ MVC Music 商店现在提供开始解决方案中包括用于管理名为的存�
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;使用版本 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)** . 以下说明将指导您完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 与 Windows Azure SDK</em>&quot;。
+1. 转到 [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 与 Windows Azure SDK</em>&quot;。
 2. 单击**立即安装**。 如果还没有**Web 平台安装程序**将重定向以下载并安装。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 

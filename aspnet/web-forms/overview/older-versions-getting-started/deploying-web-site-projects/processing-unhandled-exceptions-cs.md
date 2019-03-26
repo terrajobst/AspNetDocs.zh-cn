@@ -8,18 +8,18 @@ ms.date: 06/09/2009
 ms.assetid: 5bc1afd5-2484-4528-b158-ab218ba150e8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d94f0a3c931100d2c79513b1ad7ae0e77d7fcff6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a8b029e7187881c14117fa813ce787b51a561382
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060704"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424504"
 ---
 <a name="processing-unhandled-exceptions-c"></a>处理未经处理的异常 (C#)
 ====================
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[查看或下载示例代码](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples)（[如何下载](/aspnet/core/tutorials/index#how-to-download-a-sample)）
+[查看或下载示例代码](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples)（[如何下载](/aspnet/core/tutorials/index#how-to-download-a-sample)）
 
 > 出现运行时错误，则在生产环境中的 web 应用程序时，通知开发人员以及记录错误，以便它可以诊断在以后的时间很重要。 本教程概述 ASP.NET 如何处理运行时错误时，并探讨一种方法的自定义代码执行时由 ASP.NET 运行时未处理的异常气泡。
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 22b8379fd2d97aeb85137e1cc128fe5d053f44ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c20341a7fa0f5c5382ce7f2f6d459c4a6bec509f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047524"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424087"
 ---
 <a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 横向扩展
 ====================
@@ -144,7 +144,7 @@ Redis 是内存中键 / 值存储。 它还支持发布/订阅模型的消息传
 
 ![](scaleout-with-redis/_static/image6.png)
 
-**安装 Web 部署 3.0。** 当你运行 IIS 管理器，它将提示你安装 Microsoft Web 平台，或者可以[下载 intstaller](https://go.microsoft.com/fwlink/?LinkId=255386)。 在平台安装程序中，搜索 Web 部署并安装 Web Deploy 3.0
+**安装 Web 部署 3.0。** 当你运行 IIS 管理器，它将提示你安装 Microsoft Web 平台，或者可以[下载安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)。 在平台安装程序中，搜索 Web 部署并安装 Web Deploy 3.0
 
 ![](scaleout-with-redis/_static/image7.png)
 

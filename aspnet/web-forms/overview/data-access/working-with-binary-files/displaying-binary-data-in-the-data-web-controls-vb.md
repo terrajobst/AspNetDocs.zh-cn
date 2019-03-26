@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 9201656a-e1c2-4020-824b-18fb632d2925
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42db8122d75689f8a0e6961826b06f53622d6313
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 19c377e0f0cd9b27ac7c05af0ab050d8e213fe69
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035644"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424646"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>显示数据 Web 控件中的二进制数据 (VB)
 ====================
@@ -183,7 +183,7 @@ ms.locfileid: "57035644"
 如果，也可能导致此异常`CategoriesTableAdapter`s `GetCategoryWithBinaryDataByCategoryID` s 方法`SELECT`语句已恢复主查询的列列表中，出现这种情况，如果正在使用的临时 SQL 语句，并且你已重新运行该向导的 TableAdapter s主查询。 检查以确保`GetCategoryWithBinaryDataByCategoryID`s 方法`SELECT`语句仍包含`Picture`列。
 
 > [!NOTE]
-> 每次`DisplayCategoryPicture.aspx`是访问时，对数据库进行访问，并返回指定的类别的图片数据。 如果自上次已查看更改类别的图片功能，那么 t，不过，这就是做很多无用功。 幸运的是，HTTP 允许*条件获取*。 条件性 GET 发出 HTTP 请求的客户端中将发送沿[ `If-Modified-Since` HTTP 标头](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)，它提供的日期和时间在客户端上次从 web 服务器中检索此资源。 如果内容未更改由于这指定日期，因此，web 服务器可能会响应[不会修改状态代码 (304)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)和放弃发回请求的资源的内容。 简单地说，此技术使无需发送资源的内容，如果它未被修改自客户端上次访问以来的 web 服务器。
+> 每次`DisplayCategoryPicture.aspx`是访问时，对数据库进行访问，并返回指定的类别的图片数据。 如果自用户上次查看它尚未更改类别的图片，不过，这就是做很多无用功。 幸运的是，HTTP 允许*条件获取*。 条件性 GET 发出 HTTP 请求的客户端中将发送沿[ `If-Modified-Since` HTTP 标头](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)，它提供的日期和时间在客户端上次从 web 服务器中检索此资源。 如果内容未更改由于这指定日期，因此，web 服务器可能会响应[不会修改状态代码 (304)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)和放弃发回请求的资源的内容。 简单地说，此技术使无需发送资源的内容，如果它未被修改自客户端上次访问以来的 web 服务器。
 
 
 若要实现此行为，但是，要求您添加`PictureLastModified`列添加到`Categories`表，以捕获时`Picture`检查代码以及上次更新列`If-Modified-Since`标头。 有关详细信息`If-Modified-Since`标头和条件 GET 工作流，请参阅[HTTP 条件 GET RSS 黑客](http://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers)并[更深入地看看 ASP.NET 页中执行 HTTP 请求](http://aspnet.4guysfromrolla.com/articles/122204-1.aspx)。

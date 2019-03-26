@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 187ee9cd-bc70-479b-bfed-f568b8da96eb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 8671ae8e9408e6f05135fa27d56480477521c4ba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 45aab00140f63cd84ea1b7ba22f655b0e4373f97
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056774"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423073"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助程序、窗体和验证
 
@@ -710,7 +710,7 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
     > 
     > 此外，可以将 ClientValidationEnabled 属性分配到任何控制器具有自定义行为。
 2. 打开**Create.cshtml**处**Views\StoreManager**。
-3. 以下脚本文件，请确保**jquery.validate**并**jquery.validate.unobtrusive**，查看站点中引用&quot; **~/bundles/jqueryval**&quot;捆绑包。
+3. 以下脚本文件，请确保**jquery.validate**并**jquery.validate.unobtrusive**，通过视图中引用&quot; **~/bundles/jqueryval**&quot;捆绑包。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample22.cshtml)]
 
