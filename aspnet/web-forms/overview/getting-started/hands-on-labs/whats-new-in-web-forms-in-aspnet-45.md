@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 54e0234d6f13ce62803dbe55a836414a93a207b2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 78cb6dec71e6b4974fdea4f205d1a36ebdfc3104
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026474"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424439"
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 中 Web 窗体的新增功能
 ====================
@@ -51,7 +51,7 @@ ms.locfileid: "57026474"
 - 在 Web 窗体中使用新的模型绑定功能
 - 将值提供程序用于将页面数据映射到代码隐藏方法
 - 用户输入验证中使用数据注释
-- 在 Web 窗体中执行 advange unobstrusive 使用 jQuery 的客户端验证
+- 利用 Web 窗体中使用 jQuery 非介入式客户端验证
 - 实现粒度请求验证
 - 实现在 Web 窗体中处理的异步页面
 
@@ -407,13 +407,13 @@ ASP.NET 4.5 引入了 Web 窗体的数据批注验证。 而不是让每个输�
     > [EmailAddress(ErrorMessage=&quot;Invalid Email&quot;), MaxLength(56)]: Two annotations in the same line.
     > 
     > 此外可以定义自己的错误消息中的每个属性。
-3. 打开**CustomerDetails.aspx**和 FormView 控件在 EditItemTemplate InsertItemTemplate 部分中删除的第一个和最后一个名称字段的所有 RequiredFieldvalidators。
+3. 打开**CustomerDetails.aspx**和 FormView 控件在 EditItemTemplate InsertItemTemplate 部分中删除的第一个和最后一个名称字段的所有 RequiredFieldValidators。
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample24.aspx)]
 
     > [!NOTE]
     > 使用数据注释的一个优点是不会在应用程序页面中重复验证逻辑。 您在模型中，定义一次，并使用它跨所有操作数据的应用程序页。
-4. 打开**CustomerDetails.aspx**代码隐藏和找到 SaveCustomer 方法。 此方法调用时插入新客户，并接收客户参数来自 FormView 控件值。 当页面控件与参数对象发生之间的映射，ASP.NET 将执行针对所有数据批注的模型验证特性和 ModelState 字典填充遇到的错误，如果有的话。
+4. 打开**CustomerDetails.aspx**代码隐藏和找到 SaveCustomer 方法。 此方法调用时插入新客户，并接收客户参数来自 FormView 控件值。 当页之间的映射控制和参数对象出现，ASP.NET 将执行针对所有数据批注特性的模型验证，如果有遇到的错误，并用来填充 ModelState 字典。
 
     ModelState.IsValid 将仅返回 true，如果执行验证后，您在模型上的所有字段都是有效。
 
@@ -623,7 +623,7 @@ Web 应用程序中的异步方法可用于优化 ASP.NET 线程池的使用的�
 - 在 Web 窗体中使用新的模型绑定功能
 - 将值提供程序用于将页面数据映射到代码隐藏方法
 - 用户输入验证中使用数据注释
-- 在 Web 窗体中执行 advange unobstrusive 使用 jQuery 的客户端验证
+- 利用 Web 窗体中使用 jQuery 非介入式客户端验证
 - 实现粒度请求验证
 - 实现在 Web 窗体中处理的异步页面
 
@@ -678,7 +678,7 @@ Web 应用程序中的异步方法可用于优化 ASP.NET 线程池的使用的�
 1. 转到[Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 借助 Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 借助 Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](whats-new-in-web-forms-in-aspnet-45/_static/image30.png "登录到 Windows Azure 门户")
 

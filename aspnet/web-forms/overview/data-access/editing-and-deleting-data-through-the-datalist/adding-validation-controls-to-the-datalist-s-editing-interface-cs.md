@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 3ecc21c5-da0e-40ab-abb4-fac1e47398ad
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2fe85d6513a229f11b3aad7c7cc6c7124c94d70f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c552dd54830152afbe100ed03fb6764ddfb590dd
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047184"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422657"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>向 DataList 的编辑界面添加验证控件 (C#)
 ====================
@@ -156,10 +156,10 @@ ASP.NET 验证控件的所有重复他们立即在回发时的验证逻辑并报
 
 [!code-csharp[Main](adding-validation-controls-to-the-datalist-s-editing-interface-cs/samples/sample2.cs)]
 
-添加此元素，该产品将尝试提交的数据是有效时才进行更新。 大多数用户结束-赢得 t 能够回发无效数据，因为验证控件客户端脚本，但其浏览器不支持 JavaScript 或具有支持的 JavaScript 的用户禁用，可以跳过客户端检查和提交无效数据。
+添加此元素，该产品将尝试提交的数据是有效时才进行更新。 大多数用户不能将数据回发无效数据，因为验证控件客户端脚本，但用户的浏览器不支持 JavaScript 或的已禁用 JavaScript 支持，可以跳过客户端检查和提交无效数据。
 
 > [!NOTE]
-> 敏锐的读者的 GridView 中，更新数据时将会记得，我们并没有无需显式检查`Page.IsValid`我们页的代码隐藏类中的属性。 这是因为 GridView 咨询`Page.IsValid`我们和仅继续进行更新，仅当返回的值的属性`True`。
+> 敏锐的读者都记得，当使用 GridView 中更新数据，我们不需要显式检查`Page.IsValid`我们页的代码隐藏类中的属性。 这是因为 GridView 咨询`Page.IsValid`我们和仅继续进行更新，仅当返回的值的属性`True`。
 
 
 ## <a name="step-3-summarizing-data-entry-problems"></a>步骤 3：汇总数据输入问题
