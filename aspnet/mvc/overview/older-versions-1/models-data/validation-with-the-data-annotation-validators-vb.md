@@ -8,12 +8,12 @@ ms.date: 05/29/2009
 ms.assetid: 0d23ff2b-f2ec-434a-be3b-1180beeccba3
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8159693adced7f102f6fe1457d7b103f8596d231
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6bfe11a40bbdf0cd9dfe4d81d9c7436a5adb9491
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025544"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420681"
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>使用数据注释验证程序进行验证 (VB)
 ====================
@@ -55,7 +55,7 @@ by [Microsoft](https://github.com/microsoft)
 当您使用数据批注模型联编程序时，使用验证程序属性来执行验证。 System.ComponentModel.DataAnnotations 命名空间包含以下验证程序属性：
 
 - 范围-可以验证是否属性的值介于指定的值范围之间。
-- ReqularExpression – 可以验证是否属性的值与指定正则表达式模式相匹配。
+- 正则表达式 – 可以验证是否属性的值与指定正则表达式模式相匹配。
 - 所需 – 使你能够将标记为必需属性。
 - StringLength – 可用于指定字符串属性的最大长度。
 - 验证-所有验证程序属性的基类。

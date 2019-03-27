@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 07b8905d-78ac-4252-97fb-8675b3fb0bbf
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e07da4b5263ac3c6db19c375ca00cbcf87e0b35a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b44ef5e92df8cc3b8660a8ce9e4ccc9b74c135d2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042174"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422722"
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>数据库开发和部署策略 (VB)
 ====================
@@ -66,7 +66,7 @@ ms.locfileid: "57042174"
 
 记录中的文本信息的数据库更改的主要优势是简单。 您不 t 需要知道如何创建和更改数据库对象的 SQL 语法。 相反，可以在文本信息记录所做的更改，实现通过 SQL Server Management Studio s 图形用户界面。
 
-维护你更改日志中的文本信息，不可否认，不于某些项目，例如在范围内，较大的非常复杂和获胜 t 工作具有对数据模型中，频繁更改或涉及多个开发人员。 但我曾见过这种方法很好地对数据模型仅偶尔更改且其中个人开发人员不具有坚实的背景中创建和更改数据库对象的 SQL 语法的小型的人式项目中的工作。
+维护你更改日志中的文本信息是，不可否认，不非常复杂的不会十分适用于某些项目，例如大型处于范围内，已对数据模型中，频繁更改或涉及多个开发人员。 但我曾见过这种方法很好地对数据模型仅偶尔更改且其中个人开发人员不具有坚实的背景中创建和更改数据库对象的 SQL 语法的小型的人式项目中的工作。
 
 > [!NOTE]
 > 虽然更改日志中的信息，从技术上讲，直到部署时，才需要我建议保持更改的历史记录。 但是，而不是维护一个不断增长更改日志文件，请考虑让每个数据库版本不同的更改日志文件。 通常您将希望到版本数据库每次部署它。 通过维护的更改日志的日志可以从该基线，开始重新创建任何数据库版本通过执行更改日志脚本从版本 1 开始，并继续执行直到达到版本需要重新创建。

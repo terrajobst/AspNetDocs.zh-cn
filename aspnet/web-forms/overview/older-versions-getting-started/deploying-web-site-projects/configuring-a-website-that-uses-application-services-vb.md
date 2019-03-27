@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d5fe8dc8486cf08e0aaf0e107069972eee7fbada
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 472770477e83fc0bbe24995e5558d0e8624082ae
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041914"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425998"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>配置使用应用程序服务的网站 (VB)
 ====================
@@ -138,7 +138,7 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 **图 4**:确认数据库对象已添加到生产数据库 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image12.jpg))
 
 
-您只需要使用`aspnet_regsql.exe`工具时部署 web 应用程序第一次或首次使用应用程序服务启动后。 一旦这些数据库对象是在生产数据库上他们赢得 t 需要重新添加或修改。
+您只需要使用`aspnet_regsql.exe`工具时部署 web 应用程序第一次或首次使用应用程序服务启动后。 一旦这些数据库对象而无需重新添加或修改在生产数据库上。
 
 ### <a name="copying-user-accounts-from-development-to-production"></a>复制从开发到生产环境的用户帐户
 
@@ -148,7 +148,7 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 
 除了`ApplicationId`列中，`aspnet_Applications`该表还包括`ApplicationName`列中，它提供应用程序的更多的用户友好名称。 当网站试图使用用户帐户，如验证从登录页上，用户的凭据必须告知`SqlMembershipProvider`类要使用的应用程序。 它通常会通过提供应用程序名称，这并此值来自中的提供程序的配置`Web.config`-具体通过`applicationName`属性。
 
-但会发生什么情况`applicationName`属性中未指定`Web.config`？ 这种情况下成员资格系统使用的应用程序根路径为`applicationName`值。 如果`applicationName`属性中未显式设置`Web.config`，然后，则可能会开发环境和生产环境使用不同的应用程序的根，因此将无法与不同的应用程序相关联应用程序服务中的名称。 如果出现这种不匹配，则在开发环境中创建这些用户将具有`ApplicationId`与不匹配的值`ApplicationId`生产环境的值。 最终结果是赢得 t 这些用户能够登录。
+但会发生什么情况`applicationName`属性中未指定`Web.config`？ 这种情况下成员资格系统使用的应用程序根路径为`applicationName`值。 如果`applicationName`属性中未显式设置`Web.config`，然后，则可能会开发环境和生产环境使用不同的应用程序的根，因此将无法与不同的应用程序相关联应用程序服务中的名称。 如果出现这种不匹配，则在开发环境中创建这些用户将具有`ApplicationId`与不匹配的值`ApplicationId`生产环境的值。 最终结果是，这些用户将无法登录。
 
 > [!NOTE]
 > 如果您发现自己处于这种情况下-使用用户帐户复制到生产环境且不匹配`ApplicationId`值-可以编写查询以更新这些不正确`ApplicationId`值到`ApplicationId`用于生产。 更新后，请在开发环境中创建的帐户的用户现在将能够登录到生产上的 web 应用程序。

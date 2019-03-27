@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: d8e837a5d56871d271590859c2e82336111cc87a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d3bc39a37cace003c3fda6691f0dd7f893128b07
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029404"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425244"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
 
@@ -389,7 +389,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
    (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample7.cshtml)]
-5. 包括一个 div 来呈现每个页的正文部分。 替换 <strong>@RenderBody（)</strong>以下 higlighted 代码：(C#)
+5. 包括一个 div 来呈现每个页的正文部分。 替换 <strong>@RenderBody（)</strong>用以下突出显示的代码：(C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample8.cshtml)]
 
@@ -800,7 +800,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
    > 
    > 尽管这种方法有效，但它依赖于硬编码的字符串。 如果您更高版本重命名控制器，您将必须手动更改此指令。 更好的替代方法是使用**的 HTML 帮助器**方法。 ASP.NET MVC 包括一个 HTML 帮助器方法，可用于此类任务。 **Html.ActionLink()** 帮助器方法，可轻松构建 HTML **&lt;&gt;** 链接，以确保 URL 路径为正确编码的 URL。
    > 
-   > Htlm.ActionLink 有多个重载。 在此练习将使用一个采用三个参数：
+   > Html.ActionLink 有多个重载。 在此练习将使用一个采用三个参数：
    > 
    > 1. 链接文本，将显示类型名称
    > 2. 控制器操作名称 (**浏览**)
@@ -1017,7 +1017,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 1. 转到[Windows Azure 管理门户](https://manage.windowsazure.com/)并使用与你的订阅关联的 Microsoft 凭据登录。
 
     > [!NOTE]
-    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure 可以免费托管 10 个 ASP.NET 网站，然后随着流量增长情况。 你可以注册[此处](https://aka.ms/aspnet-hol-azure)。
 
     ![登录到 Windows Azure 门户](aspnet-mvc-4-fundamentals/_static/image48.png "登录到 Windows Azure 门户")
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 38ac8250-8854-444c-b9ab-8998faa41c5a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 110f6dd05d038438bc061d3ee907a5e2da8968c6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cf8b6de7274c3ae025464e1b01a365ec158ae5f8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062294"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424386"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>通过用户控件和 JavaScript 使用 DynamicPopulate (C#)
 ====================
@@ -52,7 +52,7 @@ ms.locfileid: "57062294"
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample5.aspx)]
 
-再一次可能会注意该控件中使用的奇怪 ID:`mcd1$myDate`而不是`myDate`。 以前，使用的 JavaScript 代码`mcd1_dpe1`访问`DynamicPopulateExtender`而不是`dpe1`。此命名策略是一个特殊的要求时使用`DynamicPopulateExtender`用户控件内。 此外，您必须将用户控件嵌入特定的方式，以使其工作。 创建一个新的 ASP.NET 页面并注册你只需实现的用户控件标记前缀：
+再一次可能会注意该控件中使用的奇怪 ID:`mcd1$myDate`而不是`myDate`。 以前，使用的 JavaScript 代码`mcd1_dpe1`访问`DynamicPopulateExtender`而不是`dpe1`。此命名策略是一个特殊的要求时使用`DynamicPopulateExtender`用户控件内。 此外，您必须在特定的方式，以使其工作中嵌入用户控件。 创建一个新的 ASP.NET 页面并注册你只需实现的用户控件标记前缀：
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample6.aspx)]
 
