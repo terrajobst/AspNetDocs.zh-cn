@@ -8,6 +8,12 @@ ms.date: 09/17/2013
 ms.assetid: 3437215a-c4ba-46ed-8378-d61c79c9d38c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development
 msc.type: chapter
+ms.openlocfilehash: 026b49288dc2acec213bec44e4c176a41ac283ae
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022124"
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a><span data-ttu-id="74687-103">开始使用 Entity Framework 6 数据库第一种使用 MVC 5</span><span class="sxs-lookup"><span data-stu-id="74687-103">Getting Started with Entity Framework 6 Database First Using MVC 5</span></span>
 ====================
