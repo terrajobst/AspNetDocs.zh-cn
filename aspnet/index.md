@@ -7,6 +7,12 @@ ms.author: riande
 title: ASP.NET 文档
 ms.date: 08/24/2018
 description: 了解如何开发 ASP.NET 和 ASP.NET Web 应用程序。 获取文档、示例代码、教程等等。
+ms.openlocfilehash: d46c4b3f39a540244905be3e6cb9a48373613190
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423739"
 ---
 <div id="main" class="v2">
     <div class="container">
