@@ -8,15 +8,15 @@ ms.date: 02/15/2013
 ms.assetid: e733027a-525f-47ae-b1c0-2e5ecf6677aa
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
-ms.openlocfilehash: a91de204f821cd8301485330518170e458f5da4d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3d8a6a102788cb6b5612e9bc537e1c13e7798c54
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378931"
 ---
-<a name="aspnet-web-deployment-using-visual-studio"></a>使用 Visual Studio 的 ASP.NET Web 部署
-====================
+# <a name="aspnet-web-deployment-using-visual-studio"></a>使用 Visual Studio 的 ASP.NET Web 部署
+
 > 本系列教程演示如何通过将其部署到 Windows Azure 网站或第三方托管提供商通过 internet 使用 SQL Server (不 SQL Server Compact) 可使用 ASP.NET web 应用程序。 需要 Visual Studio 2012 的 ASP.NET 和 Web 工具 2012.2 更新或 Visual Studio 2010。 有关特定于 SQL Server Compact 的信息，请参阅[通过 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 部署](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 
 

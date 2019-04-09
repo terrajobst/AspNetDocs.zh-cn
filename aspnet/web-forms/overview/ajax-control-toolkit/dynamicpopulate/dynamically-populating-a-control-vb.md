@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 27305347-7b5d-4519-97b7-197a357e7f6e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cda816cab99867aac8770c420cab7a78ba699e4e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c9fdbe5f0e24aa3f09f11a67c6d13a32897e8b85
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052024"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388369"
 ---
-<a name="dynamically-populating-a-control-vb"></a>动态填充控件 (VB)
-====================
+# <a name="dynamically-populating-a-control-vb"></a>动态填充控件 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate0VB.pdf)
@@ -66,7 +66,7 @@ Web 服务然后另存为`DynamicPopulate.vb.asmx`。 或者，可以实现`getD
 在浏览器中运行 ASP.NET 页并单击按钮;你将收到月-日-年格式的当前日期。
 
 
-[![单击此按钮从服务器中检索日期](dynamically-populating-a-control-vb/_static/image2.png)](dynamically-populating-a-control-vb/_static/image1.png)
+[![A 单击此按钮从服务器中检索日期](dynamically-populating-a-control-vb/_static/image2.png)](dynamically-populating-a-control-vb/_static/image1.png)
 
 单击此按钮从服务器中检索日期 ([单击此项可查看原尺寸图像](dynamically-populating-a-control-vb/_static/image3.png))
 

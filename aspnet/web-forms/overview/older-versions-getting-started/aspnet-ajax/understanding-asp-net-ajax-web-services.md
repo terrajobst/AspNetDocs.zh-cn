@@ -8,15 +8,15 @@ ms.date: 03/28/2008
 ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5e59077373b68b907391eff5349e1925222792a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e576e11d63f940f1683ed26d217ff255a31b007c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388408"
 ---
-<a name="understanding-aspnet-ajax-web-services"></a>了解 ASP.NET AJAX Web 服务
-====================
+# <a name="understanding-aspnet-ajax-web-services"></a>了解 ASP.NET AJAX Web 服务
+
 通过[Scott Cate](https://github.com/scottcate)
 
 [下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial05_Web_Services_with_MS_Ajax_cs.pdf)
@@ -38,20 +38,21 @@ Web 服务是.NET framework 为分布式系统之间交换数据提供的跨平�
 
 使用 Visual Studio 2008 创建新网站项目后，web.config 文件具有新添加的内容可能不熟悉 Visual Studio 的早期版本的用户的数。 因此，它们可以在页时其他人定义所需的 HttpHandlers 和 HttpModules，这些修改的一些值映射到 ASP.NET AJAX 控件"asp"前缀。 列表 1 显示了所做的修改`<httpHandlers>`影响 Web 服务调用的 web.config 中的元素。 删除 HttpHandler 使用处理.asmx 调用的默认值并将其替换为 ScriptHandlerFactory 类位于 System.Web.Extensions.dll 程序集。 System.Web.Extensions.dll 包含所有由 ASP.NET AJAX 的核心功能。
 
-**代码清单 1。ASP.NET AJAX Web 服务处理程序配置**
+**代码清单 1。 ASP.NET AJAX Web 服务处理程序配置**
 
 [!code-xml[Main](understanding-asp-net-ajax-web-services/samples/sample1.xml)]
 
 使用 JavaScript Web 服务代理以允许 JavaScript 对象表示法 (JSON) 调用，以从 ASP.NET AJAX 页面对.NET Web 服务，进行此 HttpHandler 替换。 ASP.NET AJAX 将 JSON 消息发送到 Web 服务，而不是标准的简单对象访问协议 (SOAP) 调用通常与 Web 服务相关联。 这会导致较小的请求和响应消息的整体。 它还允许针对更高效的客户端处理的数据由于 ASP.NET AJAX JavaScript 库进行优化，以使用 JSON 对象。 列表 2 和清单 3 显示示例的 Web 服务请求和响应消息序列化为 JSON 格式。 代码清单 2 中所示的请求消息传递的值为"比利时"国家/地区参数，而清单 3 中的响应消息传递客户对象的数组和及其相关的属性。
 
-**代码清单 2。Web 服务请求消息序列化为 JSON**
+**代码清单 2。 Web 服务请求消息序列化为 JSON**
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *> [!NOTE] 操作名称定义为 web 服务中; 的 URL 的一部分此外，通过 JSON 不始终提交请求消息。Web 服务可以利用 ScriptMethod 属性 UseHttpGet 参数设置为 true，这会导致通过传递参数的查询字符串参数。*
+> *> [!NOTE]
+> 操作名称定义为 web 服务中; 的 URL 的一部分此外，通过 JSON 不始终提交请求消息。 Web 服务可以利用 ScriptMethod 属性 UseHttpGet 参数设置为 true，这会导致通过传递参数的查询字符串参数。*
 
 
-**代码清单 3。Web 服务响应消息序列化为 JSON**
+**代码清单 3。 Web 服务响应消息序列化为 JSON**
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample3.json)]
 
@@ -65,7 +66,7 @@ ASP.NET AJAX 框架提供了多种不同的方式来调用 Web 服务。 可以�
 
 列表 4 显示了将 WebMethod 特性应用于名为 GetCustomersByCountry() 的方法的示例。
 
-**列表 4。在 Web 服务中使用 WebMethod 属性**
+**列表 4。 在 Web 服务中使用 WebMethod 属性**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample4.cs)]
 
@@ -77,7 +78,7 @@ GetCustomersByCountry() 方法接受一个国家/地区参数并返回客户对�
 
 列表 5 显示了将 ScriptService 属性应用于名为 CustomersService 的 Web 服务类的示例。
 
-**列表 5。使用启用 AJAX 的 Web 服务将 ScriptService 属性**
+**列表 5。 使用启用 AJAX 的 Web 服务将 ScriptService 属性**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample5.cs)]
 
@@ -89,7 +90,7 @@ ScriptService 属性是必须在.NET Web 服务，以使其以由 ASP.NET AJAX �
 
 属性可用于 Web 方法应接受的 UseHttpGet GET 请求而不是发出的 POST 请求。 使用带 Web 方法的输入参数的 URL 转换为查询字符串参数发送请求。 UseHttpGet 属性默认值为 false，并仅应设置为`true`时已知的操作将 safe 和敏感数据时未传递给 Web 服务。 列表 6 显示了与 UseHttpGet 属性使用 ScriptMethod 属性的示例。
 
-**代码清单 6。将用于 UseHttpGet 属性 ScriptMethod 属性。**
+**代码清单 6。 将用于 UseHttpGet 属性 ScriptMethod 属性。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample6.cs)]
 
@@ -101,7 +102,7 @@ ScriptService 属性是必须在.NET Web 服务，以使其以由 ASP.NET AJAX �
 
 列表 7 显示了使用 ResponseFormat 属性来指定应从 Web 方法返回的 XML 数据的示例。
 
-**列表 7。将用于 ResponseFormat 属性 ScriptMethod 属性。**
+**列表 7。 将用于 ResponseFormat 属性 ScriptMethod 属性。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample7.cs)]
 
@@ -109,7 +110,7 @@ ResponseFormat 属性还可以与 XmlSerializeString 属性一起使用。 XmlSe
 
 代码清单 8 显示了使用 XmlSerializeString 属性以强制将其序列化为 XML 的字符串的示例。
 
-**代码清单 8。ScriptMethod 属性将用于 XmlSerializeString 属性**
+**代码清单 8。 ScriptMethod 属性将用于 XmlSerializeString 属性**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample8.cs)]
 
@@ -125,19 +126,19 @@ ResponseFormat 属性还可以与 XmlSerializeString 属性一起使用。 XmlSe
 
 在其中嵌套复杂类型由 Web 服务还必须使用在客户端页面中的情况下，ASP.NET AJAX generatescripttype; 属性可以添加到 Web 服务。 例如，列表 9 中所示的 CustomerDetails 类包含地址和性别属性的***表示嵌套的复杂类型。***
 
-**列表 9。如下所示的 CustomerDetails 类包含两个嵌套的复杂类型。**
+**列表 9。 如下所示的 CustomerDetails 类包含两个嵌套的复杂类型。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample10.cs)]
 
 列表 9 中所示 CustomerDetails 类中定义的地址和性别对象不会自动上提供可用于通过 JavaScript 客户端由于它们是嵌套的类型 （地址是一个类和性别是一个枚举）。 可以在其中使用 Web 服务中的嵌套的类型必须在客户端上可用的情况下，使用前面所述 generatescripttype; 属性 （请参阅列表 10）。 在其中从服务返回其他嵌套的复杂类型的情况下，此属性可以添加多个时间。 它可以应用到 Web 服务类直接或更高版本特定的 Web 方法。
 
-**代码清单 10。使用 GenerateScriptService 属性定义嵌套的类型应可供客户端。**
+**代码清单 10。 使用 GenerateScriptService 属性定义嵌套的类型应可供客户端。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample11.cs)]
 
 通过应用`GenerateScriptType`属性为 Web 服务、 地址和性别类型将自动成为可供使用的客户端的 ASP.NET AJAX JavaScript 代码。 自动生成并发送到客户端通过 Web 服务上添加 generatescripttype; 属性的 JavaScript 的示例列表 11 所示。 您将了解如何在本文后面部分使用嵌套的复杂类型。
 
-**代码清单 11。提供给 ASP.NET AJAX 页面嵌套的复杂类型。**
+**代码清单 11。 提供给 ASP.NET AJAX 页面嵌套的复杂类型。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample12.cs)]
 
@@ -151,13 +152,14 @@ ResponseFormat 属性还可以与 XmlSerializeString 属性一起使用。 XmlSe
 
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample13.aspx)]
 
-**列表 12。定义 ASP.NET AJAX 页面中使用的 Web 服务。**
+**列表 12。 定义 ASP.NET AJAX 页面中使用的 Web 服务。**
 
 添加对通过 ScriptManager 控件 CustomersService.asmx 的引用会导致要动态生成并且由页面引用的 JavaScript 代理。 通过使用嵌入代理&lt;脚本&gt;标记并通过调用 CustomersService.asmx 文件并向它的末尾追加 /js 动态加载。 下面的示例演示如何 JavaScript 代理嵌入在页中调试在 web.config 中处于禁用状态时：
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *> [!NOTE] 如果想要查看实际生成的 JavaScript 代理代码可以 Internet Explorer 的地址框中键入所需的.NET Web 服务的 URL，它的后面附加 /js。*
+> *> [!NOTE]
+> 如果想要查看实际生成的 JavaScript 代理代码可以 Internet Explorer 的地址框中键入所需的.NET Web 服务的 URL，它的后面附加 /js。*
 
 
 如果在 web.config 中作为页将嵌入的 JavaScript 代理的调试版本中启用调试，如下所示：
@@ -174,14 +176,14 @@ ResponseFormat 属性还可以与 XmlSerializeString 属性一起使用。 XmlSe
 
 使用 JavaScript 代理来调用一个名为 GetCustomersByCountry() 的 Web 方法的示例所示列表 13。 当最终用户单击页面上的按钮时调用 GetCustomersByCountry() 函数。
 
-**代码清单 13。调用 Web 服务时使用的 JavaScript 代理。**
+**代码清单 13。 调用 Web 服务时使用的 JavaScript 代理。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample17.js)]
 
 此调用引用 InterfaceTraining 命名空间，在服务中定义 CustomersService 类和 GetCustomersByCountry Web 方法。 它将传递从 textbox 获取的国家/地区值，以及一个名为 OnWSRequestComplete 异步 Web 服务调用返回时应调用的回调函数。 OnWSRequestComplete 处理从服务返回的客户对象数组，并将其转换到页面中显示的表。 从调用生成的输出是图 1 所示。
 
 
-[![获取对 Web 服务的异步 AJAX 调用，从而将数据绑定。](understanding-asp-net-ajax-web-services/_static/image2.png)](understanding-asp-net-ajax-web-services/_static/image1.png)
+[![B协获得的数据，从而对 Web 服务的异步 AJAX 调用。](understanding-asp-net-ajax-web-services/_static/image2.png)](understanding-asp-net-ajax-web-services/_static/image1.png)
 
 **图 1**:获取对 Web 服务的异步 AJAX 调用，从而将数据绑定。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-web-services/_static/image3.png))
 
@@ -192,14 +194,14 @@ JavaScript 代理还可以对 Web 服务的单向调用应调用 Web 方法，�
 
 对 Web 服务的异步回调可能会遇到不同类型的错误，例如网络已关闭 Web 服务不可用或返回异常。 幸运的是，通过 ScriptManager 生成 JavaScript 代理对象允许多个回调被定义为处理错误和失败除了前面所示的 success 回调。 可以对 Web 方法的调用中的标准的回调函数后立即定义错误回调函数，如列表 14 中所示。
 
-**代码清单 14。定义了错误的回调函数并显示错误。**
+**代码清单 14。 定义了错误的回调函数并显示错误。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample18.js)]
 
 调用 Web 服务时出现的任何错误都将触发 OnWSRequestFailed() 回调函数调用，它接受一个表示错误作为参数的对象。 错误对象公开若干不同的功能以确定错误的原因以及在调用已超时。列表 14 显示了使用不同的错误函数的示例，图 2 显示的函数生成的输出的示例。
 
 
-[![通过调用 ASP.NET AJAX 错误函数生成的输出。](understanding-asp-net-ajax-web-services/_static/image5.png)](understanding-asp-net-ajax-web-services/_static/image4.png)
+[![O输出由调用 ASP.NET AJAX 错误函数生成的。](understanding-asp-net-ajax-web-services/_static/image5.png)](understanding-asp-net-ajax-web-services/_static/image4.png)
 
 **图 2**:通过调用 ASP.NET AJAX 错误函数生成的输出。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-web-services/_static/image6.png))
 
@@ -212,7 +214,7 @@ JavaScript 代理还可以对 Web 服务的单向调用应调用 Web 方法，�
 
 列表 15 显示了调用一个名为 GetRssFeed() 返回一个 XmlElement 对象的 Web 方法的示例。 GetRssFeed() 接受一个参数表示的 rss 源检索的 URL。
 
-**代码清单 15。使用从 Web 服务返回的 XML 数据。**
+**代码清单 15。 使用从 Web 服务返回的 XML 数据。**
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample19.html)]
 
@@ -225,14 +227,14 @@ JavaScript 代理还可以对 Web 服务的单向调用应调用 Web 方法，�
 若要回答此问题，假设 ASP.NET AJAX 页面显示客户数据，并允许最终用户能够更新客户的地址。 如果 Web 服务指定的地址类型 （CustomerDetails 类中定义的复杂类型），可以发送到客户端的更新过程可以分为分隔功能，以便更好的代码重新使用。
 
 
-[![从调用返回 RSS 数据的 Web 服务创建的输出。](understanding-asp-net-ajax-web-services/_static/image8.png)](understanding-asp-net-ajax-web-services/_static/image7.png)
+[![O输出从调用返回 RSS 数据的 Web 服务创建的。](understanding-asp-net-ajax-web-services/_static/image8.png)](understanding-asp-net-ajax-web-services/_static/image7.png)
 
 **图 3**:从调用返回 RSS 数据的 Web 服务创建的输出。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-web-services/_static/image9.png))
 
 
 列表 16 显示了调用模型命名空间中定义的地址对象的客户端代码的示例使用更新后的数据填充它，并将其分配给 CustomerDetails 对象的地址属性。 然后将 CustomerDetails 对象传递给 Web 服务进行处理。
 
-**代码清单 16。使用嵌套的复杂类型**
+**代码清单 16。 使用嵌套的复杂类型**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample20.js)]
 
@@ -246,13 +248,13 @@ ASP.NET AJAX 提供了另一种机制以 Web 服务类似于调用而无需创�
 
 列表 17 显示了在 ASP.NET 代码旁置类中定义两个页面方法的示例。 这些方法从应用中的业务层类中检索数据\_网站的代码文件夹。
 
-**列表 17。定义页面方法。**
+**列表 17。 定义页面方法。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample22.cs)]
 
 ScriptManager 的页中检测存在 Web 方法时它会生成对上文所述的 PageMethods 对象的动态引用。 调用 Web 方法是通过引用该方法应传递任何必需的参数数据的名称后跟 PageMethods 类实现的。 列表 18 显示了调用前面所示的两个页面方法的示例。
 
-**列表 18。调用页面方法与 PageMethods JavaScript 对象。**
+**列表 18。 调用页面方法与 PageMethods JavaScript 对象。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample23.js)]
 
@@ -273,14 +275,14 @@ AutoCompleteExtender 控件可用来扩展现有功能的 textbox 和帮助用�
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample25.aspx)]
 
 
-[![使用 AutoCompleteExtender 控件。](understanding-asp-net-ajax-web-services/_static/image11.png)](understanding-asp-net-ajax-web-services/_static/image10.png)
+[![U发挥最大功效 AutoCompleteExtender 控件。](understanding-asp-net-ajax-web-services/_static/image11.png)](understanding-asp-net-ajax-web-services/_static/image10.png)
 
 **图 4**:使用 AutoCompleteExtender 控件。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-web-services/_static/image12.png))
 
 
 一旦网站已配置为使用 ASP.NET AJAX 工具包，AutoCompleteExtender 控件可以添加到页更像添加常规的 ASP.NET 服务器控件。 列表 19 显示了使用该控件以调用 Web 服务的示例。
 
-**列表 19。使用 ASP.NET AJAX 工具包 AutoCompleteExtender 控件。**
+**列表 19。 使用 ASP.NET AJAX 工具包 AutoCompleteExtender 控件。**
 
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample26.aspx)]
 
@@ -288,11 +290,11 @@ AutoCompleteExtender 具有多个不同的属性包括在服务器控件上找�
 
 被调用的 Web 服务必须具有应用，如前面所述，ScriptService 属性和目标 Web 方法必须接受名为 prefixText 和计数的两个参数。 PrefixText 参数表示的最终用户键入的字符，计数参数表示要返回的邮件数 （默认值为 10）。 列表 20 显示了由前面的列表 19 所示 AutoCompleteExtender 控件调用 GetCustomerIDs Web 方法的示例。 Web 方法调用，反过来调用数据层处理筛选数据并返回匹配结果的方法的业务层方法。 数据层方法的代码列出 21 所示。
 
-**列表 20。筛选从 AutoCompleteExtender 控件发送的数据。**
+**列表 20。 筛选从 AutoCompleteExtender 控件发送的数据。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample27.cs)]
 
-**列表 21。筛选基于最终用户输入的结果。**
+**列表 21。 筛选基于最终用户输入的结果。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample28.cs)]
 

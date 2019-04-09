@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 18a292ada33936ea03f2d51427c160541424c8d1
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a1218b1fb5a8ee28ea6ee3d3c5af979e86821ed7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425608"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391190"
 ---
-<a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>高级的 Entity Framework 方案 MVC Web 应用程序 (10 / 10)
-====================
+# <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>高级的 Entity Framework 方案 MVC Web 应用程序 (10 / 10)
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -306,7 +306,7 @@ Entity Framework 通过比较的实体的当前值与原始值来判断更改实
 
 错误消息：
 
-*对一个或多个实体的验证失败。请参阅 EntityValidationErrors 属性的更多详细信息。* (从*`Update-Database`* PMC 命令。)
+*对一个或多个实体的验证失败。 请参阅 EntityValidationErrors 属性的更多详细信息。* (从*`Update-Database`* PMC 命令。)
 
 解决方案：
 
@@ -316,7 +316,8 @@ Entity Framework 通过比较的实体的当前值与原始值来判断更改实
 
 错误消息：
 
-*不能访问 HTTP 错误 500.19-内部服务器错误，请求的页面，因为该页的相关的配置数据无效。*
+*HTTP 错误 500.19 - 内部服务器错误  
+不能访问请求的页面，因为该页的相关的配置数据无效。*
 
 解决方案：
 
@@ -326,7 +327,7 @@ Entity Framework 通过比较的实体的当前值与原始值来判断更改实
 
 错误消息：
 
-*建立与 SQL Server 的连接时发生与网络相关或特定于实例的错误。未找到或无法访问服务器。验证实例名称正确以及 SQL Server 配置为允许远程连接。(提供程序：SQL 网络接口，错误：26-定位指定的服务器/实例时出错)*
+*建立到 SQL Server 的连接时出现与网络相关或特定于实例的错误。 未找到或无法访问服务器。 请验证实例名称是否正确，SQL Server 是否已配置为允许远程连接。 （提供程序：SQL 网络接口，错误：26 - 定位指定服务器/实例出错）*
 
 解决方案：
 

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 219149e1-3ee9-4b79-8fe4-7433f6b7d15b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f228ca600691ea4820ecdb79dea5e70054975f32
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0d9c566a301c8b64e33e67b0e9415a5955b5436e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422943"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388213"
 ---
-<a name="executing-several-animations-at-the-same-time-c"></a>执行多个动画 (C#)
-====================
+# <a name="executing-several-animations-at-the-same-time-c"></a>执行多个动画 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation2.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation2CS.pdf)
@@ -55,7 +55,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 和确实： 当你运行此脚本，面板会显示，然后调整大小活动 （两个以上倍，以便其宽度和高度的一半来） 和同时淡出。
 
 
-[![在面板是淡出和调整大小 （包括其内容，得益于浏览器的呈现引擎）](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
+[![T他面板淡出，调整大小 （包括其内容，得益于浏览器的呈现引擎）](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
 
 淡出和调整大小 （包括其内容，得益于浏览器的呈现引擎） 面板 ([单击此项可查看原尺寸图像](executing-several-animations-at-the-same-time-cs/_static/image3.png))
 

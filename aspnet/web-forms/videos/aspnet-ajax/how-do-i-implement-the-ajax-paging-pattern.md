@@ -8,15 +8,15 @@ ms.date: 03/06/2007
 ms.assetid: deba7d7e-3da2-48a1-8a9e-49c36c4bcc39
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-paging-pattern
 msc.type: video
-ms.openlocfilehash: 1db4791587855a29b609e34e955880a80e44018f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a332d8114e26fc23797176daa31940fa840a30fc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386237"
 ---
-<a name="how-do-i-implement-the-ajax-paging-pattern"></a>[如何实现:]实现 AJAX 分页模式？
-====================
+# <a name="how-do-i-implement-the-ajax-paging-pattern"></a>[如何实现:]实现 AJAX 分页模式？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中我们将了解如何使用 ASP.NET AJAX 实现分页模式，从而使 ASP.NET 应用程序以显示大量的数据作为被分成较小"页"的数据，并允许用户在页面之间移动向前和向后。

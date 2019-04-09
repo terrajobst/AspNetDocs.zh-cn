@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: 09279194-bcf9-4b59-a09d-c68e5926a758
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ea6d2deaaad1112f4a5ce4e4ea5534c6eab35a8d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 70640ac12b52d50c92d1d7f65c1116b2ec36d883
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058654"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381765"
 ---
-<a name="deploying-your-site-using-an-ftp-client-vb"></a>使用 FTP 客户端部署站点 (VB)
-====================
+# <a name="deploying-your-site-using-an-ftp-client-vb"></a>使用 FTP 客户端部署站点 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_03_VB.zip)或[下载 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial03_DeployingViaFTP_vb.pdf)
@@ -69,7 +69,7 @@ ms.locfileid: "57058654"
 > 具有源代码文件在生产服务器上，没有什么坏处它们将被忽略。 ASP.NET，以便即使生产服务器上存在的源代码文件将无法访问它们对你的网站的访客，默认情况下禁止对源代码文件的 HTTP 请求。 (即，如果用户尝试访问`http://www.yoursite.com/Default.aspx.vb`他们将得到一个错误页面，介绍的这些类型的文件-`.vb`文件-被禁止。)
 
 
-[![使用 FTP 客户端将从您的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器。](deploying-your-site-using-an-ftp-client-vb/_static/image2.png)](deploying-your-site-using-an-ftp-client-vb/_static/image1.png)
+[![Use FTP 客户端将从你的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器。](deploying-your-site-using-an-ftp-client-vb/_static/image2.png)](deploying-your-site-using-an-ftp-client-vb/_static/image1.png)
 
 **图 1**:使用 FTP 客户端将从你的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器 ([单击此项可查看原尺寸图像](deploying-your-site-using-an-ftp-client-vb/_static/image3.png))
 
@@ -82,7 +82,7 @@ ms.locfileid: "57058654"
 > 如果遇到错误时查看你的应用程序需要一段时间来确保您部署正确的文件集。 接下来，检查错误消息，请参阅是否它将显示有关该问题有什么解决办法。 接下来，转到 web 主机公司的支持人员或将问题发布到相应论坛[ASP.NET 论坛](https://forums.asp.net/)。
 
 
-[![通讯簿评审站点是在具有 Internet 连接的任何人都现在可访问。](deploying-your-site-using-an-ftp-client-vb/_static/image5.png)](deploying-your-site-using-an-ftp-client-vb/_static/image4.png)
+[![T他通讯簿评审站点是现在可以访问在具有 Internet 连接的任何人。](deploying-your-site-using-an-ftp-client-vb/_static/image5.png)](deploying-your-site-using-an-ftp-client-vb/_static/image4.png)
 
 **图 2**:通讯簿评审站点是现在可以访问在具有 Internet 连接的任何人 ([单击此项可查看原尺寸图像](deploying-your-site-using-an-ftp-client-vb/_static/image6.png))
 
@@ -124,7 +124,7 @@ ms.locfileid: "57058654"
 图 3 显示了所需的文件复制后 FileZilla。 正如您所看到的 ASP.NET 源代码文件，如`About.aspx.vb`，因为需要时使用自动部署代码文件均存在于本地计算机 （开发环境） 和 web 宿主提供程序 （在生产环境）编译。
 
 
-[![使用 FTP 客户端将从您的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器](deploying-your-site-using-an-ftp-client-vb/_static/image8.png)](deploying-your-site-using-an-ftp-client-vb/_static/image7.png)
+[![Use FTP 客户端将从你的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器](deploying-your-site-using-an-ftp-client-vb/_static/image8.png)](deploying-your-site-using-an-ftp-client-vb/_static/image7.png)
 
 **图 3**:使用 FTP 客户端将从你的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器 ([单击此项可查看原尺寸图像](deploying-your-site-using-an-ftp-client-vb/_static/image9.png))
 

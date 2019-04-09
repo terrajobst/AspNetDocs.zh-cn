@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 4c8628cc289610e287c0a3bc3c8a4c7a833c9fde
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 32587c7b0fd3075cd46678922b40bda2019f3a26
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423411"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381128"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自定义操作筛选器
 
@@ -59,7 +59,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 
 如果您不熟悉 Visual Studio 代码段，并想要了解如何使用它们，您可以从本文档引用的附录&quot;[附录 c:使用代码片段](#AppendixC)&quot;。
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -234,7 +234,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 <a id="Ex2Task1"></a>
 
 <a id="Task_1_Creating_a_new_Custom_Action_Filter"></a>
-#### <a name="task-1-creating-a-new-custom-action-filter"></a>任务 1:创建新的自定义操作筛选器
+#### <a name="task-1-creating-a-new-custom-action-filter"></a>任务 1：创建新的自定义操作筛选器
 
 在此任务中，您将创建新的自定义操作筛选器可将注入到 StoreController 类中，学习如何管理筛选器的执行顺序。
 
@@ -266,7 +266,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 <a id="Ex2Task2"></a>
 
 <a id="Task_2_Injecting_a_new_Code_Interceptor_into_the_StoreController_Class"></a>
-#### <a name="task-2-injecting-a-new-code-interceptor-into-the-storecontroller-class"></a>任务 2:将新代码拦截器注入到 StoreController 类
+#### <a name="task-2-injecting-a-new-code-interceptor-into-the-storecontroller-class"></a>任务 2：将新代码拦截器注入到 StoreController 类
 
 在此任务中，会将新的自定义筛选器添加到 StoreController 类，并运行解决方案，以验证这两种筛选器协同工作。
 
@@ -290,7 +290,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 <a id="Ex2Task3"></a>
 
 <a id="Task_3_Managing_Filter_Ordering"></a>
-#### <a name="task-3-managing-filter-ordering"></a>任务 3:管理筛选器排序
+#### <a name="task-3-managing-filter-ordering"></a>任务 3：管理筛选器排序
 
 在本任务中，您将学习如何使用 Order 属性管理筛选器的执行顺序。
 
@@ -354,7 +354,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 > 此外，可以部署此应用程序到 Windows Azure Web Sites 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 

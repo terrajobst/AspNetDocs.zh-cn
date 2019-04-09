@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 22e99600-8d18-4a94-a20e-a3a62bb63798
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f7004192edd636f4660f3184c3e725a6bfda865c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 727ef89069d3f1ddf22e993e1e3dceb144a43389
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050594"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390611"
 ---
-<a name="customizing-the-data-modification-interface-c"></a>自定义数据修改界面 (C#)
-====================
+# <a name="customizing-the-data-modification-interface-c"></a>自定义数据修改界面 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_20_CS.exe)或[下载 PDF](customizing-the-data-modification-interface-cs/_static/datatutorial20cs1.pdf)
@@ -31,7 +31,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 在中[前面的教程](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)我们已了解如何通过添加验证 Web 控件自定义数据修改接口。 在本教程中我们将介绍如何自定义的实际数据集合 Web 控件，替换 BoundField 和 CheckBoxField 的标准文本框和复选框控件与其他输入 Web 控件。 具体而言，我们将构建可编辑的 GridView 允许产品的名称、 类别、 供应商和已停止使用的状态更新。 在编辑时的特定行，category 和 supplier 字段将呈现为 Dropdownlist 中,，它包含可用类别和供应商可供选择的组。 此外，我们将使用提供两个选项的 RadioButtonList 控件替换 CheckBoxField 的默认复选框："活动"和"停止"。
 
 
-[![GridView 的编辑界面包括 Dropdownlist 和单选按钮](customizing-the-data-modification-interface-cs/_static/image2.png)](customizing-the-data-modification-interface-cs/_static/image1.png)
+[![T他 GridView 编辑接口包括 Dropdownlist 和单选按钮](customizing-the-data-modification-interface-cs/_static/image2.png)](customizing-the-data-modification-interface-cs/_static/image1.png)
 
 **图 1**:GridView 的编辑界面包括 Dropdownlist 和单选按钮 ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image3.png))
 
@@ -56,7 +56,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 使用`UpdateProduct`重载添加，我们已准备好创建我们可编辑的 GridView。 打开`CustomizedUI.aspx`页中`EditInsertDelete`文件夹并将 GridView 控件添加到设计器。 从 GridView 的智能标记，接下来，创建新对象数据源。 配置对象数据源以检索产品信息通过`ProductBLL`类的`GetProducts()`方法以及更新产品数据使用`UpdateProduct`我们刚刚创建的重载。 从 INSERT 和 DELETE 的选项卡，从下拉列表中选择 （无）。
 
 
-[![配置对象数据源以使用刚刚创建的 UpdateProduct 重载](customizing-the-data-modification-interface-cs/_static/image5.png)](customizing-the-data-modification-interface-cs/_static/image4.png)
+[![C配置使用 UpdateProduct 重载刚创建的 ObjectDataSource](customizing-the-data-modification-interface-cs/_static/image5.png)](customizing-the-data-modification-interface-cs/_static/image4.png)
 
 **图 2**:配置为使用 ObjectDataSource`UpdateProduct`重载只是创建 ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image6.png))
 
@@ -80,7 +80,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 更改后，在设计器将类似于图 3 使用 GridView 的声明性语法如下所示。
 
 
-[![从 GridView 中删除不必要的字段](customizing-the-data-modification-interface-cs/_static/image8.png)](customizing-the-data-modification-interface-cs/_static/image7.png)
+[![Remove 从 GridView 不必要的字段](customizing-the-data-modification-interface-cs/_static/image8.png)](customizing-the-data-modification-interface-cs/_static/image7.png)
 
 **图 3**:从 GridView 中删除不必要的字段 ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image9.png))
 
@@ -90,7 +90,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 此时已完成 GridView 的只读的行为。 查看数据时，每个产品中呈现为显示产品的名称、 类别、 供应商，GridView 中的行和停用状态。
 
 
-[![GridView 的只读接口已完成](customizing-the-data-modification-interface-cs/_static/image11.png)](customizing-the-data-modification-interface-cs/_static/image10.png)
+[![T他 GridView 的只读接口是完成](customizing-the-data-modification-interface-cs/_static/image11.png)](customizing-the-data-modification-interface-cs/_static/image10.png)
 
 **图 4**:GridView 的只读接口已完成 ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image12.png))
 
@@ -124,7 +124,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 如我们在前面的教程所见，可以通过设计器或直接从声明性语法编辑模板。 若要通过设计器中编辑它，请单击 GridView 的智能标记中的编辑模板链接并选择使用类别字段`EditItemTemplate`。 删除标签 Web 控件并替换 DropDownList 控件，将 DropDownList 的 ID 属性设置为`Categories`。
 
 
-[![删除文本框中，并将 DropDownList 添加到 EditItemTemplate](customizing-the-data-modification-interface-cs/_static/image14.png)](customizing-the-data-modification-interface-cs/_static/image13.png)
+[![Remove 文本框并添加到 EditItemTemplate DropDownList](customizing-the-data-modification-interface-cs/_static/image14.png)](customizing-the-data-modification-interface-cs/_static/image13.png)
 
 **图 5**:删除文本框中，并添加到 DropDownList `EditItemTemplate` ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image15.png))
 
@@ -132,7 +132,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 接下来，我们需要填充 DropDownList 与可用的类别。 单击 DropDownList 的智能标记中的选择数据源链接，然后选择创建名为新 ObjectDataSource `CategoriesDataSource`。
 
 
-[![创建一个名为 CategoriesDataSource 的新 ObjectDataSource 控件](customizing-the-data-modification-interface-cs/_static/image17.png)](customizing-the-data-modification-interface-cs/_static/image16.png)
+[![C创建新 ObjectDataSource 控件名为 CategoriesDataSource](customizing-the-data-modification-interface-cs/_static/image17.png)](customizing-the-data-modification-interface-cs/_static/image16.png)
 
 **图 6**:创建新的 ObjectDataSource 控件命名`CategoriesDataSource`([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image18.png))
 
@@ -140,7 +140,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 若要让此 ObjectDataSource 返回所有类别，将其绑定到`CategoriesBLL`类的`GetCategories()`方法。
 
 
-[![将对象数据源绑定到 CategoriesBLL GetCategories() 方法](customizing-the-data-modification-interface-cs/_static/image20.png)](customizing-the-data-modification-interface-cs/_static/image19.png)
+[![Bind CategoriesBLL GetCategories() 方法 ObjectDataSource](customizing-the-data-modification-interface-cs/_static/image20.png)](customizing-the-data-modification-interface-cs/_static/image19.png)
 
 **图 7**:将绑定到 ObjectDataSource`CategoriesBLL`的`GetCategories()`方法 ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image21.png))
 
@@ -148,7 +148,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 最后，配置 DropDownList 的设置，以便`CategoryName`字段显示在每个 DropDownList`ListItem`与`CategoryID`用作值的字段。
 
 
-[![已显示类别名称字段和类别 Id 用作值](customizing-the-data-modification-interface-cs/_static/image23.png)](customizing-the-data-modification-interface-cs/_static/image22.png)
+[![H保存显示的类别名称字段和类别 Id 用作值](customizing-the-data-modification-interface-cs/_static/image23.png)](customizing-the-data-modification-interface-cs/_static/image22.png)
 
 **图 8**:具有`CategoryName`显示字段和`CategoryID`用作值 ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image24.png))
 
@@ -167,7 +167,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 添加到两个 Dropdownlist 后`EditItemTemplate`s，浏览器中加载的页面和单击 Chef Anton Cajun Seasoning 产品的编辑按钮。 如图 9 所示，该产品的类别和供应商列呈现为包含可用类别和供应商可供选择的下拉列表。 但请注意，*第一个*这两个下拉列表中的项选择默认情况下，（饮料类别） 和特殊液体作为供应商，即使 Chef Anton Cajun Seasoning 是提供的新奥尔良 Cajun Condiment带来快乐。
 
 
-[![默认情况下选择下拉列表中的第一个项](customizing-the-data-modification-interface-cs/_static/image26.png)](customizing-the-data-modification-interface-cs/_static/image25.png)
+[![T默认情况下选择他的下拉列表中第一项](customizing-the-data-modification-interface-cs/_static/image26.png)](customizing-the-data-modification-interface-cs/_static/image25.png)
 
 **图 9**:默认情况下选择下拉列表中的第一个项 ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image27.png))
 
@@ -181,7 +181,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 或者，您可以通过在设计器编辑模板并单击 DropDownList 的智能标记中的编辑 DataBindings 链接通过设置 DropDownList 的数据绑定。 接下来，指示`SelectedValue`应将属性绑定到`CategoryID`字段使用双向数据绑定 （请参阅图 10）。 重复在声明性或设计器进程绑定`SupplierID`数据字段到`Suppliers`DropDownList。
 
 
-[![将 CategoryID 绑定到使用双向数据绑定的 DropDownList 的 SelectedValue 属性](customizing-the-data-modification-interface-cs/_static/image29.png)](customizing-the-data-modification-interface-cs/_static/image28.png)
+[![Bind DropDownList 的 SelectedValue 属性使用双向数据绑定到 CategoryID](customizing-the-data-modification-interface-cs/_static/image29.png)](customizing-the-data-modification-interface-cs/_static/image28.png)
 
 **图 10**:将绑定`CategoryID`到 DropDownList`SelectedValue`属性使用双向数据绑定 ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image30.png))
 
@@ -189,7 +189,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 绑定到应用后`SelectedValue`的两个 Dropdownlist 属性中，编辑的产品的类别和供应商列将默认为当前产品的值。 单击更新，`CategoryID`并`SupplierID`下拉列表中选定的项的值将传递到`UpdateProduct`方法。 图 11 显示了本教程后已添加的数据绑定语句;请注意如何 Chef Anton Cajun Seasoning 的所选的下拉列表项已正确 Condiment 和新奥尔良 Cajun 带来快乐。
 
 
-[![默认情况下选择编辑产品的当前类别和供应商的值](customizing-the-data-modification-interface-cs/_static/image32.png)](customizing-the-data-modification-interface-cs/_static/image31.png)
+[![T默认情况下选择他编辑产品的当前类别和供应商值](customizing-the-data-modification-interface-cs/_static/image32.png)](customizing-the-data-modification-interface-cs/_static/image31.png)
 
 **图 11**:默认情况下选择编辑产品的当前类别和供应商的值 ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image33.png))
 
@@ -219,7 +219,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 与此额外`ListItem`，现在可以分配编辑界面`NULL`到产品的值`CategoryID`和`SupplierID`字段，如图 12 中所示。
 
 
-[![选择 （无） 将 NULL 值分配为产品的类别或供应商](customizing-the-data-modification-interface-cs/_static/image35.png)](customizing-the-data-modification-interface-cs/_static/image34.png)
+[![C选择要将 NULL 值分配为产品的类别或供应商 （无）](customizing-the-data-modification-interface-cs/_static/image35.png)](customizing-the-data-modification-interface-cs/_static/image34.png)
 
 **图 12**:选择 （无） 待分配`NULL`产品的类别或供应商的值 ([单击以查看实际尺寸的图像](customizing-the-data-modification-interface-cs/_static/image36.png))
 
@@ -233,7 +233,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 将为两者中的复选框`ItemTemplate`并`EditItemTemplate`RadioButtonList 控件后，设置这两个 RadioButtonLists'`ID`属性设置为`DiscontinuedChoice`。 接下来，指示 RadioButtonLists 应每个包含两个单选按钮，一个标记为"活动"，值为"False"，另一个标记为"停用"，值为"True"。 若要完成此您可以输入`<asp:ListItem>`元素中的直接通过声明性语法或使用`ListItem`从设计器的集合编辑器。 图 13 显示了`ListItem`集合编辑器后两个单选按钮选项已指定。
 
 
-[![添加](customizing-the-data-modification-interface-cs/_static/image38.png)](customizing-the-data-modification-interface-cs/_static/image37.png)
+[![Add](customizing-the-data-modification-interface-cs/_static/image38.png)](customizing-the-data-modification-interface-cs/_static/image37.png)
 
 **图 13**:将"活动"和"停止"选项添加到 RadioButtonList ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image39.png))
 
@@ -250,7 +250,7 @@ BoundFields CheckBoxFields GridView 和 DetailsView 控件使用简化的过程�
 这些更改，`Discontinued`列的复选框列表从转换到的 （请参阅图 14） 的单选按钮对列表。 在编辑某个产品时，相应的单选按钮处于选中状态，并选择其他单选按钮，然后单击更新可以更新产品的已停止使用的状态。
 
 
-[![单选按钮对已替换为已停止使用复选框](customizing-the-data-modification-interface-cs/_static/image41.png)](customizing-the-data-modification-interface-cs/_static/image40.png)
+[![T他 Discontinued 复选框已替换为单选按钮对](customizing-the-data-modification-interface-cs/_static/image41.png)](customizing-the-data-modification-interface-cs/_static/image40.png)
 
 **图 14**:停止使用复选框已替换为单选按钮对 ([单击此项可查看原尺寸图像](customizing-the-data-modification-interface-cs/_static/image42.png))
 

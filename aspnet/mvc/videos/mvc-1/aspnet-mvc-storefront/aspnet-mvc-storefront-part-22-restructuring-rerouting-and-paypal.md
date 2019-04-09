@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: 81190124-d0f6-4e4b-a48f-2613cc5a6aa7
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal
 msc.type: video
-ms.openlocfilehash: 189125563764d4eb8e8bc42befb21239be1bd8d5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 772ddf69baf8daf5d3f0b13ed92efb80c561c38b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049184"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388824"
 ---
-<a name="aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal"></a>ASP.NET MVC 店面第 22 部分：重构、重新路由和 PayPal
-====================
+# <a name="aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal"></a>ASP.NET MVC 店面第 22 部分：重构、重新路由和 PayPal
+
 通过[Rob conery 专攻](https://github.com/robconery)
 
 在本集中有点重构若要清理结束某些任务。 我还将更改路由，以简单得多。 最后，我将 PayPal 添加为签出选项。

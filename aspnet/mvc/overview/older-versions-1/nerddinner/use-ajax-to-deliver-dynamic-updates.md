@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 71e566523d658eb8198453f354a12e63a4c38495
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 56ebc40aa500b62811bac0a5041fa9aa4f91f4ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421032"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391047"
 ---
-<a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 提供动态更新
-====================
+# <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 提供动态更新
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -112,9 +112,9 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-html[Main](use-ajax-to-deliver-dynamic-updates/samples/sample9.html)]
 
-*提示： 请确保已安装 VS 2008 SP1，使更加丰富的 JavaScript 文件 （包括 jQuery） 的 intellisense 支持的 JavaScript intellisense 修补程序。您可以下载它从： http://tinyurl.com/vs2008javascripthotfix*
+*提示： 请确保已安装 VS 2008 SP1，使更加丰富的 JavaScript 文件 （包括 jQuery） 的 intellisense 支持的 JavaScript intellisense 修补程序。 您可以下载它从： http://tinyurl.com/vs2008javascripthotfix*
 
-通常使用 JQuery 编写的代码使用全局"$ （）"检索使用 CSS 选择器的一个或多个 HTML 元素的 JavaScript 方法。 例如， <em>$("#rsvpmsg")</em>选择 id 为 rsvpmsg，任何 HTML 元素时<em>$(".something")</em>会选择所有元素与"内容"CSS 类名称。 您还可以编写更高级的查询像"返回所有选中的单选按钮"使用下面的选择器查询： <em>$("输入 [@type= 单选] [@checked]")</em>。
+通常使用 JQuery 编写的代码使用全局"$ （）"检索使用 CSS 选择器的一个或多个 HTML 元素的 JavaScript 方法。 例如， *$("#rsvpmsg")* 选择 id 为 rsvpmsg，任何 HTML 元素时 *$(".something")* 会选择所有元素与"内容"CSS 类名称。 您还可以编写更高级的查询像"返回所有选中的单选按钮"使用下面的选择器查询： *$("输入 [@type= 单选] [@checked]")*。
 
 选择元素后，可以对其执行操作，如隐藏这些调用方法： *$("#rsvpmsg").hide();*
 

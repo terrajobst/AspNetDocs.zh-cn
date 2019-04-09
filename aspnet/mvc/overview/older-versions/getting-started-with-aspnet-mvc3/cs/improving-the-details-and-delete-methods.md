@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 3f42edd9-c5b8-4712-9055-970f7d38e350
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 255374eb21568d05569f8af6727ad4b558acfc2f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4003dba8530d2e72c514c572ffc28ef942fd437
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031914"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379360"
 ---
-<a name="improving-the-details-and-delete-methods-c"></a>改进 Details 和 Delete 方法 (C#)
-====================
+# <a name="improving-the-details-and-delete-methods-c"></a>改进 Details 和 Delete 方法 (C#)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
@@ -85,4 +85,4 @@ ms.locfileid: "57031914"
 -Scott Hanselman ([ http://hanselman.com ](http://hanselman.com)并[ @shanselman ](http://twitter.com/shanselman) Twitter 上) 和 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [上一篇](adding-validation-to-the-model.md)
+> [上一个](adding-validation-to-the-model.md)

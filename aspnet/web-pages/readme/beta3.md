@@ -8,15 +8,15 @@ ms.date: 01/10/2011
 ms.assetid: ffa3d5c9-91e5-4da3-b409-560b0c7fbbf0
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 3d729d1b0615533dddceff484acb3d42247f6cab
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7f0c5ff599235157bd11f5f86a26b8882e0f29dc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060494"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381804"
 ---
-<a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET 网页 (Razor) Beta 3 版本自述文件
-====================
+# <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET 网页 (Razor) Beta 3 版本自述文件
+
 > Web Matrix 和 ASP.NET 网页 (Razor) Beta 3 版本自述文件
 
 2010 年 11 月 9日
@@ -117,7 +117,7 @@ ms.locfileid: "57060494"
 文档的本节介绍新功能、 更改和使用 Razor 语法的 Beta 3 版本的 ASP.NET Web Pages 的已知的问题。
 
 - [新增功能](#NewFeatures)
-- [更改](#Changes)
+- [Changes](#Changes)
 - [问题](#Issues)
 
 <a id="NewFeatures"></a>
@@ -381,17 +381,17 @@ ms.locfileid: "57060494"
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
-#### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>问题：Microsoft Visual c + + 2008年运行时库是必需的
+#### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>问题：Microsoft Visual C++ 2008年运行时库是必需的
 
-> 本机 Dll 的 SQL Server Compact 4.0 需要 Microsoft Visual c + + 2008年运行时库 （x86、 IA64 和 x64）、 Service Pack 1。
+> 本机 Dll 的 SQL Server Compact 4.0 需要 Microsoft Visual C++ 2008年运行时库 （x86、 IA64 和 x64）、 Service Pack 1。
 > 
 > **解决方法**  
-> 安装.NET Framework 3.5 SP1。 这还会安装 Visual c + + 2008年运行时库 SP1。 可以从以下位置下载库：   
+> 安装.NET Framework 3.5 SP1。 这还会安装该视觉对象C++2008 运行时库 SP1。 可以从以下位置下载库：   
 >   
-> [Microsoft Visual c + + 2008 Service Pack 1 可再发行组件包 ATL 安全更新](https://go.microsoft.com/fwlink/?LinkId=194827)
+> [Microsoft Visual C++ 2008 Service Pack 1 可再发行组件包 ATL 安全更新](https://go.microsoft.com/fwlink/?LinkId=194827)
 > 
 > [!NOTE]
-> 请注意，安装.NET Framework 2.0，3.0，或 4*不*安装 Visual c + + 2008年运行时库 SP1。
+> 请注意，安装.NET Framework 2.0，3.0，或 4*不*安装视觉对象C++2008 运行时库 SP1。
 
 
 #### <a name="issue-if-sql-server-compact-is-installed-prior-to-installing-net-framework-on-the-computer-its-provider-invariant-name-is-not-registered-in-the-net-framework-machineconfig-file"></a>问题：如果 SQL Server Compact 安装的计算机上安装.NET Framework 之前，其提供程序固定名称未注册.NET Framework machine.config 文件中
@@ -454,7 +454,7 @@ ms.locfileid: "57060494"
 
 > 浏览到 WCF 应用程序会导致类似于以下错误：
 > 
-> *无法加载文件或程序集 Microsoft.Web.Administration，版本 = 7.0.0.0，区域性 = 中性，PublicKeyToken = 31bf3856ad364e35 或其某个依赖项。系统找不到指定的文件。*
+> *无法加载文件或程序集 Microsoft.Web.Administration，版本 = 7.0.0.0，区域性 = 中性，PublicKeyToken = 31bf3856ad364e35 或其某个依赖项。 系统找不到指定的文件。*
 > 
 > 发生这种情况是因为默认情况下，IIS Express 的 Beta 版本不支持 WCF。
 > 
@@ -545,9 +545,9 @@ ms.locfileid: "57060494"
 有关 WebMatrix Beta 3 的详细信息，请参阅以下网站：
 
 - [IIS.net](http://iis.net/)
-- [ASP.NET 2.0](https://asp.net/webmatrix)
+- [ASP.NET](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
-* * *
+---
 
 © 2010 Microsoft Corporation. 保留所有权利。 [使用条款](https://msdn.microsoft.cos/cc300389.aspx)。

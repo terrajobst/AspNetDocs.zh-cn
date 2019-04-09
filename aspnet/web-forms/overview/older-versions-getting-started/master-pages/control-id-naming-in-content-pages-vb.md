@@ -2,26 +2,26 @@
 uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 title: 控件 ID 命名 (VB) 的内容页面中 |Microsoft Docs
 author: rick-anderson
-description: 说明了如何 ContentPlaceHolder 控件作为命名容器的因此可以以编程方式使用困难 （通过 FindConrol) 控件...
+description: 说明了如何 ContentPlaceHolder 控件作为命名容器的因此可以以编程方式使用困难 （通过 FindControl) 控件...
 ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6e9a751538ca28250e4e776ff2c6c3f0185ffbe6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dd60d02c2c3840edd4c0e1244623fcea0cb2db0b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059304"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386315"
 ---
-<a name="control-id-naming-in-content-pages-vb"></a>内容页中的控件 ID 命名 (VB)
-====================
+# <a name="control-id-naming-in-content-pages-vb"></a>内容页中的控件 ID 命名 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_05_VB.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_05_VB.pdf)
 
-> 说明了如何 ContentPlaceHolder 控件作为命名容器的因此可以以编程方式使用困难 （通过 FindConrol) 控件。 探讨此问题和解决方法。 此外介绍了如何以编程方式访问生成的 ClientID 值。
+> 说明了如何 ContentPlaceHolder 控件作为命名容器的因此可以以编程方式使用困难 （通过 FindControl) 控件。 探讨此问题和解决方法。 此外介绍了如何以编程方式访问生成的 ClientID 值。
 
 
 ## <a name="introduction"></a>介绍
@@ -83,7 +83,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 图 3 显示了通过 Visual Studio 设计器进行查看时页。
 
 
-[![此页包含三个 Web 控件： 文本框、 按钮和标签](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
+[![T他页包含三个 Web 控件： 文本框、 按钮和标签](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
 
 **图 03**:页包含三个 Web 控件： 文本框、 按钮和标签 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-vb/_static/image5.png))
 
@@ -133,7 +133,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 后输入此代码，请访问`IDIssues.aspx`通过浏览器页上，输入你的年龄，然后单击"提交"按钮。 单击"提交"按钮时`NullReferenceException`引发 （请参见图 5）。
 
 
-[![引发 NullReferenceException](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
+[![A 引发 NullReferenceException](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
 
 **图 05**:一个`NullReferenceException`引发 ([单击以查看实际尺寸的图像](control-id-naming-in-content-pages-vb/_static/image9.png))
 
@@ -173,7 +173,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 这一次，访问该网页通过浏览器中，输入你的年龄，然后单击"提交"按钮显示在消息`Results`标签、 按预期方式。
 
 
-[![标签中显示用户的年龄](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
+[![T他用户年龄是标签中显示的](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
 
 **图 06**:标签中显示用户的年龄 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-vb/_static/image12.png))
 
@@ -200,7 +200,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 利用此代码，返回到`IDIssues.aspx`页面的代码隐藏类并注释掉当前`FindControl`方法调用。 将它们替换为对调用`Page.FindControlRecursive("controlID")`。 什么是关于扩展方法是，它们显示直接在 IntelliSense 下拉列表中。 如图 7 所示，当您键入`Page`，然后点击句点`FindControlRecursive`IntelliSense 以及其他下拉列表中包含方法`Control`类方法。
 
 
-[![扩展方法均包含在 IntelliSense 下拉列表](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
+[![E扩展名方法均包含在 IntelliSense 下拉列表](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
 
 **图 07**:扩展方法均包含在 IntelliSense 下拉列表 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-vb/_static/image15.png))
 

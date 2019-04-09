@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d1cf97a7f1dc9bae2774518cdfc13da48fc7ada2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29f7dded2f6fc2e8ce588dab2949b59ddb6f1fc4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043074"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388902"
 ---
-<a name="creating-model-classes-with-the-entity-framework-c"></a>使用 Entity Framework 创建模型类 (C#)
-====================
+# <a name="creating-model-classes-with-the-entity-framework-c"></a>使用 Entity Framework 创建模型类 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 了解如何使用实体向导创建一个 ADO.NET 实体数据模型。 在本教程的过程中，我们构建的 web 应用程序演示了如何选择、 插入、 更新和删除数据库数据使用实体框架。
@@ -116,7 +116,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 让我们开始构建我们的电影数据库应用程序通过创建页，显示电影记录的列表。 列表 1 中的主页控制器公开名为 index （） 操作。 Index （） 操作返回的所有电影记录从电影数据库表通过利用 Entity Framework。
 
-**Listing 1 – Controllers\HomeController.cs**
+**代码清单 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](creating-model-classes-with-the-entity-framework-cs/samples/sample1.cs)]
 
@@ -219,4 +219,4 @@ Delete （） 操作首先检索的电影 Id 相匹配的实体传递给该操�
 首先，我们讨论了如何使用实体数据模型向导生成实体数据模型从 Visual Studio 中。 接下来，您将了解如何使用 LINQ to Entities 从数据库表中检索一组数据库记录。 最后，我们使用实体框架来插入、 更新和删除数据库记录。
 
 > [!div class="step-by-step"]
-> [下一页](creating-model-classes-with-linq-to-sql-cs.md)
+> [下一步](creating-model-classes-with-linq-to-sql-cs.md)

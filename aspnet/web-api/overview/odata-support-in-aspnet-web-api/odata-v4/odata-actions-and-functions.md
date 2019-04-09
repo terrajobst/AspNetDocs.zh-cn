@@ -8,15 +8,15 @@ ms.date: 06/27/2014
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: 45b84ec4ee76e83ece99bf6841c28e13c3ab7728
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6b0388c0e60f4a81ddb52a13fe2d05c2c7d27313
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063224"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380855"
 ---
-<a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>操作和使用 ASP.NET Web API 2.2 OData v4 中的函数
-====================
+# <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>操作和使用 ASP.NET Web API 2.2 OData v4 中的函数
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 在 OData 中，操作和函数是一种方法来添加未轻松地定义为对实体的 CRUD 操作的服务器端行为。 本教程演示如何将操作和函数添加到使用 Web API 2.2 的 OData v4 终结点。 本教程在本教程以[创建 OData v4 终结点使用 ASP.NET Web API 2](create-an-odata-v4-endpoint.md)

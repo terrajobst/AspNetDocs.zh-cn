@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: f640e063-150e-453d-8cfc-7e54a6ce0f1e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b9c6ff228e73ce63f7a0b046110db656103d6d5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3df4258b2de309aed5a3a598caeb1e7332c321f6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383951"
 ---
-<a name="iteration-7--add-ajax-functionality-vb"></a>迭代 7 – 添加 Ajax 功能 (VB)
-====================
+# <a name="iteration-7--add-ajax-functionality-vb"></a>迭代 7 – 添加 Ajax 功能 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-7-add-ajax-functionality-vb/_static/contactmanager_7_vb1.zip)
@@ -94,7 +94,7 @@ by [Microsoft](https://github.com/microsoft)
 让我们来首先修改索引视图，以便显示联系人的视图的区域，仅单击联系人组更新。 图 1 中的红色框包含我们想要更新的区域。
 
 
-[![更新仅联系人](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
+[![Updating 唯一联系人](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
 
 **图 01**:更新仅联系人 ([单击此项可查看原尺寸图像](iteration-7-add-ajax-functionality-vb/_static/image2.png))
 
@@ -194,7 +194,7 @@ ASP.NET AJAX 浏览器历史记录，您需要做三件事：
 目前，若要删除联系人，您需要单击删除链接上，然后单击删除确认页中显示删除按钮 （请参见图 2）。 这看起来好像很多的页请求来执行简单删除的数据库记录。
 
 
-[![删除确认页](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
+[![T他删除确认页](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
 
 **图 02**:删除确认页 ([单击此项可查看原尺寸图像](iteration-7-add-ajax-functionality-vb/_static/image4.png))
 
@@ -241,4 +241,4 @@ AjaxDelete() 操作是使用 AcceptVerbs 属性进行修饰。 此属性会阻�
 最后，我们创建支持 HTTP DELETE 操作的删除链接。 通过执行 Ajax 删除，我们使用户能够删除数据库记录，而无需用户请求额外的删除确认页面。
 
 > [!div class="step-by-step"]
-> [上一篇](iteration-6-use-test-driven-development-vb.md)
+> [上一个](iteration-6-use-test-driven-development-vb.md)

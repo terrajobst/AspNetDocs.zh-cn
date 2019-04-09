@@ -8,15 +8,15 @@ ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 01d117260ef458453bee79285a37a8977221998c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29c3670ad7ab93acb0be878e5bd961d0ea446eee
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396221"
 ---
-<a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保护 Web API 使用单个帐户和 ASP.NET Web API 2.2 中的本地登录名
-====================
+# <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保护 Web API 使用单个帐户和 ASP.NET Web API 2.2 中的本地登录名
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 [下载示例应用程序](https://github.com/MikeWasson/LocalAccountsApp)
@@ -199,10 +199,10 @@ HTTP 响应：
 
 下面是实现这些功能的主应用程序类：
 
-- `AccountController`。 提供用于管理用户帐户的 Web API 终结点。 `Register`操作是我们在本教程中使用只有一个。 在类上的其他方法还支持密码重置、 社交登录名和其他功能。
+- `AccountController`. 提供用于管理用户帐户的 Web API 终结点。 `Register`操作是我们在本教程中使用只有一个。 在类上的其他方法还支持密码重置、 社交登录名和其他功能。
 - `ApplicationUser`/Models/IdentityModels.cs 中定义。 此类是 EF 模型的成员资格数据库中的用户帐户。
 - `ApplicationUserManager`定义在 /App\_Start/IdentityConfig.cs 派生出此类[UserManager](https://msdn.microsoft.com/library/dn613290.aspx)和用户帐户，如创建新用户，验证密码，等等，对执行操作和自动保存对数据库进行更改。
-- `ApplicationOAuthProvider`。 此对象插入到 OWIN 中间件，并处理由中间件引发的事件。 它派生[OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)。
+- `ApplicationOAuthProvider`. 此对象插入到 OWIN 中间件，并处理由中间件引发的事件。 它派生[OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)。
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 
@@ -253,7 +253,7 @@ OAuth 中间件完全不了解的用户帐户。 提供程序之间的中间件�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [ASP.NET Identity](../../../identity/index.md)
+- [ASP.NET 标识](../../../identity/index.md)
 - [了解 SPA 模板中的安全功能的 VS2013 RC](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx)。 MSDN 博客文章 Hongye Sun。
 - [仔细分析 Web API 个人帐户模板 – 第 2 部分：本地帐户](http://leastprivilege.com/2013/11/26/dissecting-the-web-api-individual-accounts-templatepart-2-local-accounts/)。 Dominick Baier 的博客文章。
 - [托管身份验证和 Web API 与 OWIN](http://brockallen.com/2013/10/27/host-authentication-and-web-api-with-owin-and-active-vs-passive-authentication-middleware/)。 将详细介绍`SuppressDefaultHostAuthentication`和`HostAuthenticationFilter`由 Brock Allen。

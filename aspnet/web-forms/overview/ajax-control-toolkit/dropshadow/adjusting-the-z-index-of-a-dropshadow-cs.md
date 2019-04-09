@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 14133833-e518-4347-87b9-6b6f71f14a77
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5cee2acfac74c0790a7ad82bbfb503a8a16f6b47
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cc9407ba15474f58437817c9536d6040e0ea2e84
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024604"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381429"
 ---
-<a name="adjusting-the-z-index-of-a-dropshadow-c"></a>调整 DropShadow 的 Z-索引 (C#)
-====================
+# <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>调整 DropShadow 的 Z-索引 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1CS.pdf)
@@ -56,14 +56,14 @@ AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 但�
 然后，`DropShadowExtender`控件不与菜单控件不再冲突。
 
 
-[![之前：菜单项不可见](adjusting-the-z-index-of-a-dropshadow-cs/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image1.png)
+[![B之前：菜单项不可见](adjusting-the-z-index-of-a-dropshadow-cs/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image1.png)
 
 在此之前:菜单项不可见 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-cs/_static/image3.png))
 
 
-[![之后：菜单项显示](adjusting-the-z-index-of-a-dropshadow-cs/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image4.png)
+[![A页符：菜单项会显示](adjusting-the-z-index-of-a-dropshadow-cs/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image4.png)
 
 之后：将显示菜单项 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png))
 
 > [!div class="step-by-step"]
-> [下一页](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [下一步](manipulating-dropshadow-properties-from-client-code-cs.md)

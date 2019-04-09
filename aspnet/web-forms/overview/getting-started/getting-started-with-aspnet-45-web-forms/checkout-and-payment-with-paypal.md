@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: b59a395e255823a732aef1b899612063e09b2424
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a0895c2246bc08f50645a865ce2dfffecfbb56a6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391151"
 ---
-<a name="checkout-and-payment-with-paypal"></a>使用 PayPal 结帐和付款
-====================
+# <a name="checkout-and-payment-with-paypal"></a>使用 PayPal 结帐和付款
+
 通过[Erik Reitan](https://github.com/Erikre)
 
 [下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -250,7 +250,7 @@ ASP.NET Web 窗体提供了增强的成员身份和身份验证的选项。 这�
 
 PayPal 是接受付款网上商店通过基于 web 的计费平台。 接下来，本教程介绍如何将 PayPal 的 Express 签出功能集成到你的应用程序。 快速签出，客户可使用 PayPal 支付他们添加到购物车的项。
 
-### <a name="create-paylpal-test-accounts"></a>创建 PaylPal 测试帐户
+### <a name="create-paypal-test-accounts"></a>创建 PayPal 测试帐户
 
 若要使用 PayPal 测试环境，必须创建并验证开发人员测试帐户。 开发人员测试帐户将用于创建购买者测试帐户和卖方测试帐户。 开发人员测试帐户凭据还将允许 Wingtip Toys 示例应用程序访问 PayPal 测试环境。
 
@@ -277,7 +277,7 @@ PayPal 是接受付款网上商店通过基于 web 的计费平台。 接下来�
 7. 通过单击创建购买者测试帐户**创建帐户**按钮。  
  **沙盒测试帐户**显示页。 
 
-    ![签出和使用 PayPal-PaylPal 帐户付款](checkout-and-payment-with-paypal/_static/image17.png)
+    ![签出和使用 PayPal 的 PayPal 帐户付款](checkout-and-payment-with-paypal/_static/image17.png)
 8. 上**沙盒测试帐户**页上，单击**主持人**电子邮件帐户。  
     **配置文件**并**通知**显示选项。
 9. 选择**配置文件**选项，然后单击**API 凭据**若要查看 API 商家测试帐户的凭据。

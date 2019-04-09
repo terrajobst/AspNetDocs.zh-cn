@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: 9041f8d15a449a517594f8051c3d9f0ceb18a8a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: faad1530a499fd3f46a6a6c6e7c194ba6c55fa6c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038544"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386289"
 ---
-<a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>应用 IE 安全更新后，“服务器应用程序不可用”错误修复
-====================
+# <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>应用 IE 安全更新后，“服务器应用程序不可用”错误修复
+
 > 本白皮书介绍会影响 ASP.NET 1.0 应用程序在 Windows XP Professional 上运行的 Internet explorer 与 MS03 32 安全更新解决了问题的修补程序。
 > 
 > 适用于 ASP.NET 1.0 和 Windows XP Professional。
@@ -58,16 +58,16 @@ Microsoft 使用 Internet Explorer 的安全修补程序 MS03 32 安全更新和
 
 下表详细介绍了平台和版本受此问题。
 
-| .NET Framework | 平台 | 受影响 |
+| .NET Framework | Platform | 受影响 |
 | --- | --- | --- |
-| 版本 1.0 | Windows 2000 Professional | No |
+| 版本 1.0 | Windows 2000 Professional | 否 |
 | 版本 1.0 | Windows 2000 Server | 否 |
 | 版本 1.0 | Windows XP Professional | 是 |
-| 版本 1.0 | Windows Server 2003 | No |
+| 版本 1.0 | Windows Server 2003 | 否 |
 | 版本 1.0 | 使用 Cassini 的 Windows XP Home | 否 |
 | 版本 1.1 | Windows 2000 Professional | 否 |
 | 版本 1.1 | Windows 2000 Server | 否 |
-| 版本 1.1 | Windows XP Professional | No |
+| 版本 1.1 | Windows XP Professional | 否 |
 | 版本 1.1 | Windows Server 2003 | 否 |
 | 版本 1.1 | 使用 Cassini 的 Windows XP Home | 否 |
 

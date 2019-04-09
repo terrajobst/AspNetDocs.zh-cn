@@ -8,15 +8,15 @@ ms.date: 11/15/2011
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 3e463e0fb8e6af228480fc4795e1bd0ee5badac9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6d1251da10705867ad25b53afd69bb70c647fc18
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022014"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388655"
 ---
-<a name="whitepapers"></a>白皮书
-====================
+# <a name="whitepapers"></a>白皮书
+
 - [白皮书](overview.md)
 - [ASP.NET 4 和 Visual Studio 2010 Web 开发概述](aspnet4/index.md)
 
@@ -28,9 +28,9 @@ ms.locfileid: "57022014"
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [通过 IIS 6.0 运行 ASP.NET 1.1](aspnet-and-iis6.md)
-- [如何：将移动页面添加到 ASP.NET Web 窗体 / MVC 应用程序](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
+- [如何：向 ASP.NET Web 窗体 / MVC 应用程序添加移动页面](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
 - [应用 IE 安全更新后，“服务器应用程序不可用”错误修复](ms03-32-issue.md)
-- [ .NET Framework 1.0 和 .NET Framework 1.1 的 ASP.NET 并行执行](side-by-side-with-10.md)
+- [.NET Framework 1.0 和 .NET Framework 1.1 的 ASP.NET 并行执行](side-by-side-with-10.md)
 - [ASP.NET MVC 4](mvc4-release-notes.md)
 - [请求验证 - 阻止脚本攻击](request-validation.md)
 - [ASP.NET 数据访问 - 推荐的资源](aspnet-data-access-content-map.md)

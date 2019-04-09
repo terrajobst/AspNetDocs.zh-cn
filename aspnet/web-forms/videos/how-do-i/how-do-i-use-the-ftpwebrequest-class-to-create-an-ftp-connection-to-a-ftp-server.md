@@ -8,15 +8,15 @@ ms.date: 12/18/2008
 ms.assetid: 99a0394d-96aa-445c-a338-43961cc717e8
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server
 msc.type: video
-ms.openlocfilehash: 9a06fc8b67286d88f14eecbd7e1aa8f107eaddff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d6e638a9a0028961045b3230927e6e3e95378317
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037424"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385860"
 ---
-<a name="how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server"></a>[如何实现:]使用 FtpWebRequest 类创建与 FTP 服务器的 FTP 连接
-====================
+# <a name="how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server"></a>[如何实现:]使用 FtpWebRequest 类创建与 FTP 服务器的 FTP 连接
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在此视频的 Chris Pels 演示如何使用 FtpWebRequest 类创建的 FTP 连接并将文件传输。 首先，创建一个简单的.aspx 窗体，以选择要传输到 FTP 服务器的文件。 接下来，请参阅的重要方法和需要进行配置，以便建立 FTP 连接 FtpWebRequest 类的属性。 然后，了解如何获取该本地文件的内容，因此可以使用 StreamReader 和一个 StreamWriter，若要将其写入到 FtpWebRequest 传输文件。 最后，获取 FtpWebResponse 来确定传输的结果。 这种方法可以用于以编程方式传输文件的 web 应用程序。

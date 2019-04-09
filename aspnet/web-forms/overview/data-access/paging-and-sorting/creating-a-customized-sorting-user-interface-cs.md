@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 6f81b633-9d01-4e52-ae4a-2ea6bc109475
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6733aa228bb96b5d34ae2770d32fe0063d7052f1
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 34a182278cfa57369643ab151492532bc92bd623
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424096"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393491"
 ---
-<a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义的排序用户界面 (C#)
-====================
+# <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义的排序用户界面 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_CS.exe)或[下载 PDF](creating-a-customized-sorting-user-interface-cs/_static/datatutorial27cs1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "58424096"
 为了突出显示已排序组之间的边界，很多网站，请使用一个用户界面，将添加此类组之间的分隔符。 图 1 所示类似的分隔符使用户能够更快地查找特定组和标识其边界，以及确定在数据中存在哪些不同的组。
 
 
-[![每个类别组是明确标识](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
+[![E支票类别组是明确标识](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
 
 **图 1**:每个类别组是明确标识 ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ ms.locfileid: "58424096"
 请花费片刻时间为止的浏览器中查看我们的进度。 图 2 显示了可排序的 GridView，其数据按类别按字母顺序进行排序时。
 
 
-[![可排序的 GridView s 数据按类别排序](creating-a-customized-sorting-user-interface-cs/_static/image5.png)](creating-a-customized-sorting-user-interface-cs/_static/image4.png)
+[![T他可排序的 GridView s 数据是按类别排序的](creating-a-customized-sorting-user-interface-cs/_static/image5.png)](creating-a-customized-sorting-user-interface-cs/_static/image4.png)
 
 **图 2**:按类别排序数据的可排序的 GridView s ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image6.png))
 
@@ -100,7 +100,7 @@ ms.locfileid: "58424096"
 若要添加每个排序组之间的分隔符行，我们可以直接操作此控件层次结构后已创建。 我们可以确信 GridView 的控件层次结构已创建最后一次通过呈现页面时的时间。 因此，这种方法都会重写`Page`类的`Render`方法，此时 GridView s 最终的控件层次结构更新以包含所需的分隔符的行。 图 4 说明了此过程。
 
 
-[![一种替代方式操作 GridView 的控件层次结构](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
+[![An 另一种技术操作 GridView 的控件层次结构](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
 
 **图 4**:一种替代方式操作 GridView 的控件层次结构 ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image10.png))
 
@@ -156,12 +156,12 @@ ms.locfileid: "58424096"
 当前代码的排序接口添加排序组标头，通过任何 BoundField 进行排序时 （请参阅图 5 中，其中显示了屏幕截图，供应商进行排序时）。 但是，按任何其他字段类型 （如 CheckBoxField 或 TemplateField） 进行排序，排序组标头时，却找不到 （见图 6）。
 
 
-[![排序接口通过 BoundFields 进行排序时包含对组排序标头](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
+[![T他排序接口包括排序组标头由 BoundFields 进行排序时](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
 
 **图 5**:排序接口包括排序组标头时排序 BoundFields ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image13.png))
 
 
-[![排序组标头是缺少时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
+[![T他排序组标头是缺少时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
 
 **图 6**:排序组标头是缺少时排序 CheckBoxField ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image16.png))
 
@@ -178,7 +178,7 @@ ms.locfileid: "58424096"
 上面的代码添加，现通过停止使用 CheckBoxField 进行排序时存在排序组标头 （请参阅图 7）。
 
 
-[![排序组标头是现在存在时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
+[![T他排序组标头是现在存在时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
 
 **图 7**:排序组标头是现在存在时排序 CheckBoxField ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image19.png))
 

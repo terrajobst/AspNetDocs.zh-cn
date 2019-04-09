@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: 5cb00916-8f46-491f-be25-4739a615d619
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: f9f100ccaf5e9cfdaf0633f9bfebbad273212a0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 51e3010f6e01434c495201af4af3bbdcde993da7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054234"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398431"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 示例应用程序是虚构的 Contoso 大学网站。 其中包括学生录取、课程创建和讲师分配等功能。
@@ -212,4 +212,4 @@ ms.locfileid: "57054234"
 你现在已创建网站、 数据库和数据模型。 在下一个演练中将开始处理数据使用的数据模型和 ASP.NET`EntityDataSource`控件。
 
 > [!div class="step-by-step"]
-> [下一页](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [下一步](the-entity-framework-and-aspnet-getting-started-part-2.md)

@@ -8,15 +8,15 @@ ms.date: 02/22/2019
 ms.assetid: 97f6164f-59cf-45c0-b820-e4aa29b45396
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 69c0d217f605096d968435c062ee9931f8dff75f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 31589b3713b1f1a9b98d12906bfef81f8bf5e3f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048794"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386147"
 ---
-<a name="working-with-ssl-in-web-api"></a>使用 Web API 中的 SSL
-====================
+# <a name="working-with-ssl-in-web-api"></a>使用 Web API 中的 SSL
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 通过一般 HTTP 几个常见的身份验证方案不安全。 具体而言，基本身份验证和窗体身份验证发送未加密的凭据。 若要为安全的这些身份验证方案*必须*使用 SSL。 此外，可以使用 SSL 客户端证书进行身份验证的客户端。

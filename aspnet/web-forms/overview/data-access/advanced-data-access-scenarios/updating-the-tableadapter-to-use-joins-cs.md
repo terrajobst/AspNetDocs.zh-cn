@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 675531a7-cb54-4dd6-89ac-2636e4c285a5
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d5b69b502cf650a477b2841c25ad3f1ab5f8da93
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 297496e590caf9c8ded83cb16b5fef1dfc542dc7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381381"
 ---
-<a name="updating-the-tableadapter-to-use-joins-c"></a>更新 TableAdapter 以使用 JOIN (C#)
-====================
+# <a name="updating-the-tableadapter-to-use-joins-c"></a>更新 TableAdapter 以使用 JOIN (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_69_CS.zip)或[下载 PDF](updating-the-tableadapter-to-use-joins-cs/_static/datatutorial69cs1.pdf)
@@ -64,7 +64,7 @@ ms.locfileid: "57050624"
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample3.sql)]
 
 
-[![输入包含联接的主查询](updating-the-tableadapter-to-use-joins-cs/_static/image2.png)](updating-the-tableadapter-to-use-joins-cs/_static/image1.png)
+[![Enter 主查询包含联接](updating-the-tableadapter-to-use-joins-cs/_static/image2.png)](updating-the-tableadapter-to-use-joins-cs/_static/image1.png)
 
 **图 1**:输入包含的主查询`JOIN`s ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image3.png))
 
@@ -88,7 +88,7 @@ ms.locfileid: "57050624"
 TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`， `UpdateCommand`，和`DeleteCommand`属性。 若要确认这一点，单击设计器中对 tableadapter，然后转到属性窗口。 那里，你将看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`属性设置为 （无）。
 
 
-[![InsertCommand、 UpdateCommand 和 DeleteCommand 属性设置为 （无）](updating-the-tableadapter-to-use-joins-cs/_static/image7.png)](updating-the-tableadapter-to-use-joins-cs/_static/image6.png)
+[![T他 InsertCommand、 UpdateCommand 和 DeleteCommand 属性设置为 （无）](updating-the-tableadapter-to-use-joins-cs/_static/image7.png)](updating-the-tableadapter-to-use-joins-cs/_static/image6.png)
 
 **图 4**:`InsertCommand`， `UpdateCommand`，并`DeleteCommand`属性设置为 （无） ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image8.png))
 
@@ -108,7 +108,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 首先打开`NorthwindWithSprocs`中的数据集`~/App_Code/DAL`文件夹。 右键单击设计器上，从上下文菜单中，选择添加选项并选取 TableAdapter 菜单项。 这将启动 TableAdapter 配置向导。 如图 5 所示，让向导创建新的存储的过程，并单击下一步。 有关创建新刷新器存储过程从 TableAdapter 的向导，请查阅[创建新存储过程的类型化数据集 s Tableadapter](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)教程。
 
 
-[![选择创建新存储的过程选项](updating-the-tableadapter-to-use-joins-cs/_static/image10.png)](updating-the-tableadapter-to-use-joins-cs/_static/image9.png)
+[![S选择创建新存储的过程选项](updating-the-tableadapter-to-use-joins-cs/_static/image10.png)](updating-the-tableadapter-to-use-joins-cs/_static/image9.png)
 
 **图 5**:选择创建新存储过程选项 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-cs/_static/image11.png))
 
@@ -123,7 +123,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 以下步骤可用于命名的 TableAdapter 的存储过程。 使用名称`Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`，如图 6 中所示。
 
 
-[![名称的 TableAdapter 的存储过程](updating-the-tableadapter-to-use-joins-cs/_static/image13.png)](updating-the-tableadapter-to-use-joins-cs/_static/image12.png)
+[![N\ 名称的 TableAdapter s 存储过程](updating-the-tableadapter-to-use-joins-cs/_static/image13.png)](updating-the-tableadapter-to-use-joins-cs/_static/image12.png)
 
 **图 6**:命名 TableAdapter s 存储过程 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-cs/_static/image14.png))
 
@@ -131,7 +131,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 最后一步会提示我们命名为 TableAdapter 的方法。 使用`Fill`和`GetEmployees`为方法名称。 此外请务必保留创建方法以更新将直接发送到数据库 (GenerateDBDirectMethods) 复选框已选中。
 
 
-[![名称的 TableAdapter 的方法填充和 GetEmployees](updating-the-tableadapter-to-use-joins-cs/_static/image16.png)](updating-the-tableadapter-to-use-joins-cs/_static/image15.png)
+[![N名 （） 方法填充的 TableAdapter s 和 GetEmployees](updating-the-tableadapter-to-use-joins-cs/_static/image16.png)](updating-the-tableadapter-to-use-joins-cs/_static/image15.png)
 
 **图 7**:命名的 TableAdapter s 方法`Fill`并`GetEmployees`([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image17.png))
 
@@ -139,7 +139,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 完成向导后，请花费片刻时间来检查数据库中的存储的过程。 应会看到四个新的： `Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`。 接下来，检查`EmployeesDataTable`和`EmployeesTableAdapter`刚刚创建。 数据表中的主查询所返回的每个字段的列。 单击 TableAdapter，然后转到属性窗口。 那里，你将看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`属性正确配置为调用相应的存储的过程。
 
 
-[![TableAdapter 包括插入、 更新和删除功能](updating-the-tableadapter-to-use-joins-cs/_static/image19.png)](updating-the-tableadapter-to-use-joins-cs/_static/image18.png)
+[![T他 TableAdapter 包括插入，、 更新和删除功能](updating-the-tableadapter-to-use-joins-cs/_static/image19.png)](updating-the-tableadapter-to-use-joins-cs/_static/image18.png)
 
 **图 8**:TableAdapter 包括插入、 更新和删除功能 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-cs/_static/image20.png))
 
@@ -156,7 +156,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 更新后`SELECT`语句，通过转到文件菜单并选择保存的更改保存`Employees_Select`。 或者，可以单击工具栏中的保存图标或按 Ctrl + S。 保存后所做的更改，请右键单击`Employees_Select`在服务器资源管理器存储过程，并选择执行。 这将运行存储的过程并在输出窗口中显示其结果 （请参阅图 9）。
 
 
-[![在输出窗口中显示存储过程结果](updating-the-tableadapter-to-use-joins-cs/_static/image22.png)](updating-the-tableadapter-to-use-joins-cs/_static/image21.png)
+[![T他存储过程结果将显示在输出窗口](updating-the-tableadapter-to-use-joins-cs/_static/image22.png)](updating-the-tableadapter-to-use-joins-cs/_static/image21.png)
 
 **图 9**:在输出窗口中显示存储过程结果 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-cs/_static/image23.png))
 
@@ -173,7 +173,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 通过右键单击启动`EmployeesTableAdapter`并从上下文菜单中选择配置。 这将打开 TableAdapter 配置向导，其中列出了用于选择、 插入、 更新和删除，以及它们的返回值和参数 （如果有） 的存储的过程。 图 10 显示了此向导。 这里我们可以看到`Employees_Select`存储过程现在返回`ManagerFirstName`和`ManagerLastName`字段。
 
 
-[![该向导显示 Employees_Select 的更新的列列表存储过程](updating-the-tableadapter-to-use-joins-cs/_static/image25.png)](updating-the-tableadapter-to-use-joins-cs/_static/image24.png)
+[![T他向导显示的更新列列表 Employees_Select 存储过程的](updating-the-tableadapter-to-use-joins-cs/_static/image25.png)](updating-the-tableadapter-to-use-joins-cs/_static/image24.png)
 
 **图 10**:向导将显示为更新列列表`Employees_Select`存储过程 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image26.png))
 
@@ -181,7 +181,7 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 单击完成完成向导。 在数据集设计器中，返回时`EmployeesDataTable`包含两个附加列：`ManagerFirstName`和`ManagerLastName`。
 
 
-[![EmployeesDataTable 包含两个新列](updating-the-tableadapter-to-use-joins-cs/_static/image28.png)](updating-the-tableadapter-to-use-joins-cs/_static/image27.png)
+[![T他 EmployeesDataTable 包含两个新列](updating-the-tableadapter-to-use-joins-cs/_static/image28.png)](updating-the-tableadapter-to-use-joins-cs/_static/image27.png)
 
 **图 11**:`EmployeesDataTable`包含两个新列 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image29.png))
 
@@ -204,12 +204,12 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 配置要使用 ObjectDataSource`EmployeesBLLWithSprocs`类，并从选择和删除选项卡，确保`GetEmployees`和`DeleteEmployee`方法从下拉列表中选择。 单击完成以完成 ObjectDataSource 的配置。
 
 
-[![配置对象数据源以使用 EmployeesBLLWithSprocs 类](updating-the-tableadapter-to-use-joins-cs/_static/image31.png)](updating-the-tableadapter-to-use-joins-cs/_static/image30.png)
+[![C配置对象数据源以使用 EmployeesBLLWithSprocs 类](updating-the-tableadapter-to-use-joins-cs/_static/image31.png)](updating-the-tableadapter-to-use-joins-cs/_static/image30.png)
 
 **图 12**:配置为使用 ObjectDataSource`EmployeesBLLWithSprocs`类 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image32.png))
 
 
-[![具有 ObjectDataSource 使用 GetEmployees 和 DeleteEmployee 方法](updating-the-tableadapter-to-use-joins-cs/_static/image34.png)](updating-the-tableadapter-to-use-joins-cs/_static/image33.png)
+[![Have ObjectDataSource 使用 GetEmployees 和 DeleteEmployee 方法](updating-the-tableadapter-to-use-joins-cs/_static/image34.png)](updating-the-tableadapter-to-use-joins-cs/_static/image33.png)
 
 **图 13**:拥有 ObjectDataSource`GetEmployees`并`DeleteEmployee`方法 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image35.png))
 
@@ -224,7 +224,7 @@ Visual Studio 将为每个到 GridView 添加 BoundField`EmployeesDataTable`的�
 通过浏览器访问测试页。 如图 14 所示，此页将列出每个雇员和他或她 manager s 名称 （假定他们具有一个）。
 
 
-[![在 Employees_Select 联接存储过程返回的管理器的名称](updating-the-tableadapter-to-use-joins-cs/_static/image37.png)](updating-the-tableadapter-to-use-joins-cs/_static/image36.png)
+[![T他参与 Employees_Select 存储过程返回的管理器名称](updating-the-tableadapter-to-use-joins-cs/_static/image37.png)](updating-the-tableadapter-to-use-joins-cs/_static/image36.png)
 
 **图 14**:`JOIN`中`Employees_Select`存储过程返回的管理器名称 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-cs/_static/image38.png))
 
@@ -232,7 +232,7 @@ Visual Studio 将为每个到 GridView 添加 BoundField`EmployeesDataTable`的�
 单击删除按钮启动删除工作流，最终会执行`Employees_Delete`存储过程。 但是，尝试`DELETE`存储过程中的语句将因外键约束冲突而失败 （请参阅图 15）。 具体而言，每个雇员中具有一个或多个记录`Orders`表，导致删除失败。
 
 
-[![删除外键约束冲突中具有相应的订单结果的员工](updating-the-tableadapter-to-use-joins-cs/_static/image40.png)](updating-the-tableadapter-to-use-joins-cs/_static/image39.png)
+[![Deleting 员工在外键约束冲突中具有相应的订单结果](updating-the-tableadapter-to-use-joins-cs/_static/image40.png)](updating-the-tableadapter-to-use-joins-cs/_static/image39.png)
 
 **图 15**:删除外键约束冲突中具有相应的订单结果的员工 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-cs/_static/image41.png))
 

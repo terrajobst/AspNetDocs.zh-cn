@@ -8,15 +8,15 @@ ms.date: 03/14/2014
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: 6df0c9d2f38ad1d39abd62787c600ef80da8e8e0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3f36f0c504678e1e8b40aef99db81ab99101568b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040534"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383883"
 ---
-<a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET Web 部署 - 推荐的资源
-====================
+# <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET Web 部署 - 推荐的资源
+
 > 本主题提供有关如何部署的资源 （发布） ASP.NET web 文档的链接到 IIS 的应用程序通过使用 Visual Studio 2010、 Visual Web Developer 2010 和更高版本。
 > 
 > 如果您知道很好的博客文章[堆栈溢出](http://stackoverflow.com)线程或都非常有用，任何其他链接[向我们发送一封电子邮件](mailto:aspnetue@microsoft.com?subject=Deployment%20Content%20Map)与链接。

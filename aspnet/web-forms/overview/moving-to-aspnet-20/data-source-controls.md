@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 78fd0e92-f9c6-4e96-a5e9-0375b307a828
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: ba00024e93beba6eab226dd0d381d8734061e095
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3ba9fdaaf655f6510d3ebf6ce0930fbf4000add3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388863"
 ---
-<a name="data-source-controls"></a>数据源控件
-====================
+# <a name="data-source-controls"></a>数据源控件
+
 by [Microsoft](https://github.com/microsoft)
 
 > DataGrid 控件在 ASP.NET 1.x 标记为在 Web 应用程序中的数据访问中一项重大改进。 但是，它不是因为它可能是用户友好的。 它仍然需要相当长的代码可以从中获得更有用的功能。 在 1.x 中的所有数据访问工作中的模型就是这样。

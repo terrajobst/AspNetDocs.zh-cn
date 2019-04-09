@@ -8,15 +8,15 @@ ms.date: 11/11/2009
 ms.assetid: 26dfc502-d164-4261-8006-ffde9a3e3447
 msc.legacyurl: /web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-multi-monitor-support
 msc.type: video
-ms.openlocfilehash: 04dcebefdefe933ccbc5471224f6604b281ed096
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8ed863a546c5ecb58308e292a0294e294e1e263e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058444"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378203"
 ---
-<a name="visual-studio-2010-quick-hit---multi-monitor-support"></a>Visual Studio 2010"快速命中"-多监视器支持
-====================
+# <a name="visual-studio-2010-quick-hit---multi-monitor-support"></a>Visual Studio 2010"快速命中"-多监视器支持
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中将了解有关 Visual Studio 支持的多个监视器方案以提高你的屏幕空间，使用和优化总体开发工作流。 

@@ -8,15 +8,15 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 9b627a66007aec09a404147698e2bef06c7e7794
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053184"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383832"
 ---
-<a name="bundling-and-minification"></a>捆绑和缩小
-====================
+# <a name="bundling-and-minification"></a>捆绑和缩小
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 捆绑和缩小是两种方法在 ASP.NET 4.5 中用于提高请求加载时间。 捆绑和缩小的请求数减少到服务器并减少请求的资产 （如 CSS 和 JavaScript。） 的大小，从而提高加载时间
@@ -52,7 +52,7 @@ ms.locfileid: "57053184"
 
 除了删除注释和不必要的空格，以下参数和变量名称已重命名 （缩短），如下所示：
 
-| **Original** | **重命名** |
+| **原始** | **重命名** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | T |
@@ -62,7 +62,7 @@ ms.locfileid: "57053184"
 
 下表显示了单独列出所有资产并在示例程序中使用绑定和缩减 (B/M) 的几个重要区别。
 
-|  | **使用 B/M** | **而无需 B/M** | **更改** |
+|  | **使用 B/M** | **Without B/M** | **更改** |
 | --- | --- | --- | --- |
 | **文件请求** | 9 | 34 | 256% |
 | **发送的 KB** | 3.26 | 11.92 | 266% |
@@ -165,7 +165,7 @@ ms.locfileid: "57053184"
 
 下表显示添加到使用通配符，如所示的捆绑的文件：
 
-| **Call** | **添加文件或引发异常** |
+| **调用** | **添加文件或引发异常** |
 | --- | --- |
 | Include("~/Scripts/Common/\*.js") | *AddAltToImg.js*， *ToggleDiv.js*， *ToggleImg.js* |
 | Include("~/Scripts/Common/T\*.js") | 无效的模式的异常。 通配符字符只能在前缀或后缀上。 |

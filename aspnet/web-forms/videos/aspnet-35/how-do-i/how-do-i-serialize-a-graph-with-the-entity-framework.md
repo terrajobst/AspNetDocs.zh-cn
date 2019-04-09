@@ -8,15 +8,15 @@ ms.date: 05/22/2008
 ms.assetid: e8b41eed-5423-43d1-a54b-62f04bff371e
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-serialize-a-graph-with-the-entity-framework
 msc.type: video
-ms.openlocfilehash: 6aef8c9d466bbf7e8e5a3863780272ab9779dfe4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7dd5e8908c0601306e45d2fb32db265a35a411c7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064974"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378086"
 ---
-<a name="how-do-i-serialize-a-graph-with-the-entity-framework"></a>[如何实现:]序列化具有实体框架的关系图
-====================
+# <a name="how-do-i-serialize-a-graph-with-the-entity-framework"></a>[如何实现:]序列化具有实体框架的关系图
+
 通过[Brian Dawson](https://twitter.com/briandawson)
 
 在此介绍性视频 Brian Dawson 将演示如何开发 ASP.NET 应用程序使用 ADO.NET 实体框架时序列化图形。
