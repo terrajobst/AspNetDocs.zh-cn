@@ -8,15 +8,15 @@ ms.date: 04/01/2008
 ms.assetid: f9adcb5d-6d70-4885-a3bf-ed95efb4da1a
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c60433f800ccb2dbaaae49421c6cde1431fef528
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ba70db591c373fd9514fdb7079af83a511067162
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061644"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380829"
 ---
-<a name="recovering-and-changing-passwords-vb"></a>恢复和更改密码 (VB)
-====================
+# <a name="recovering-and-changing-passwords-vb"></a>恢复和更改密码 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/VB.13.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial13_ChangingPasswords_vb.pdf)
@@ -63,7 +63,7 @@ PasswordRecovery 控件包含三个视图：
 图 1 说明 PasswordRecovery 的接口和行为的成员身份配置影响。
 
 
-[![RequiresQuestionAndAnswer、 EnablePasswordRetrieval 和 EnablePasswordReset 影响 PasswordRecovery 控件的外观和行为](recovering-and-changing-passwords-vb/_static/image2.png)](recovering-and-changing-passwords-vb/_static/image1.png)
+[![T他 RequiresQuestionAndAnswer、 EnablePasswordRetrieval 和 EnablePasswordReset 影响 PasswordRecovery 控件的外观和行为](recovering-and-changing-passwords-vb/_static/image2.png)](recovering-and-changing-passwords-vb/_static/image1.png)
 
 **图 1**:`RequiresQuestionAndAnswer`， `EnablePasswordRetrieval`，并`EnablePasswordReset`影响 PasswordRecovery 控件的外观和行为 ([单击以查看实际尺寸的图像](recovering-and-changing-passwords-vb/_static/image3.png))
 
@@ -93,7 +93,7 @@ PasswordRecovery 控件包含三个视图：
 一旦已配置的 SMTP 设置，请访问`RecoverPassword.aspx`通过浏览器的页。 首先，请尝试输入的用户名的用户存储中不存在。 如图 2 所示，PasswordRecovery 控件将显示一条消息指出无法访问用户信息。 可以通过控件的自定义消息的文本[`UserNameFailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)。
 
 
-[![如果输入无效的用户名，显示一条错误消息](recovering-and-changing-passwords-vb/_static/image5.png)](recovering-and-changing-passwords-vb/_static/image4.png)
+[![A如果输入无效的用户名，显示 n 个错误消息](recovering-and-changing-passwords-vb/_static/image5.png)](recovering-and-changing-passwords-vb/_static/image4.png)
 
 **图 2**:如果输入无效的用户名显示一条错误消息 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image6.png))
 
@@ -101,7 +101,7 @@ PasswordRecovery 控件包含三个视图：
 现在，输入用户名。 使用知道的电子邮件地址可以访问和回答其安全系统中的帐户的用户名。 输入用户名并单击提交后, PasswordRecovery 控件显示其问题的视图。 作为使用用户名视图中，如果输入不正确回答 PasswordRecovery 控件显示错误消息 （请参见图 3）。 使用[`QuestionFailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx)自定义此错误消息。
 
 
-[![如果用户输入无效的安全提示问题答案，显示一条错误消息](recovering-and-changing-passwords-vb/_static/image8.png)](recovering-and-changing-passwords-vb/_static/image7.png)
+[![A如果用户输入无效的安全提示问题答案，显示 n 个错误消息](recovering-and-changing-passwords-vb/_static/image8.png)](recovering-and-changing-passwords-vb/_static/image7.png)
 
 **图 3**:如果用户输入无效的安全提示问题答案显示一条错误消息 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image9.png))
 
@@ -109,7 +109,7 @@ PasswordRecovery 控件包含三个视图：
 最后，输入正确的安全答案，并单击提交。 在后台，PasswordRecovery 控制将生成随机密码，将其分配给用户帐户，将发送一封电子邮件，通知其新密码的用户 （请参阅图 4），然后显示成功视图。
 
 
-[![向用户发送一封电子邮件使用 His 的新密码](recovering-and-changing-passwords-vb/_static/image11.png)](recovering-and-changing-passwords-vb/_static/image10.png)
+[![T他用户发送一封电子邮件使用 His 的新密码](recovering-and-changing-passwords-vb/_static/image11.png)](recovering-and-changing-passwords-vb/_static/image10.png)
 
 **图 4**:向用户发送一封电子邮件使用 His 的新密码 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image12.png))
 
@@ -145,7 +145,7 @@ PasswordRecovery 控件包含三个视图：
 执行这些更改重新访问后`RecoverPassword.aspx`页，并输入用户名和安全答案。 你收到应如图 5 中所示的电子邮件。 请注意，`webmaster@example.com`已经将抄送和，已更新的主题和正文。
 
 
-[![已更新主题、 正文和抄送列表](recovering-and-changing-passwords-vb/_static/image14.png)](recovering-and-changing-passwords-vb/_static/image13.png)
+[![T他主题、 正文和抄送列表已更新](recovering-and-changing-passwords-vb/_static/image14.png)](recovering-and-changing-passwords-vb/_static/image13.png)
 
 **图 5**:主题、 正文和抄送已更新列表 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image15.png))
 
@@ -197,7 +197,7 @@ PasswordRecovery 控件包含三个视图：
 打开`ChangePassword.aspx`页上，并将 ChangePassword 控件添加到页上，其命名为`ChangePwd`。 此时，设计视图应显示更改密码查看 （请参阅图 6）。 如 PasswordRecovery 控件后，你可以在视图之间切换通过控件的智能标记。 此外，这些视图的外观是通过各种类型的样式属性或将它们转换为模板，可自定义。
 
 
-[![ChangePassword 控件添加到页面](recovering-and-changing-passwords-vb/_static/image17.png)](recovering-and-changing-passwords-vb/_static/image16.png)
+[![Add ChangePassword 控件与页](recovering-and-changing-passwords-vb/_static/image17.png)](recovering-and-changing-passwords-vb/_static/image16.png)
 
 **图 6**:ChangePassword 控件添加到页 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image18.png))
 
@@ -215,7 +215,7 @@ ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个
 请访问`ChangePassword.aspx`通过浏览器页并更改你的密码。 请注意，是否输入不能满足密码长度和成员身份配置中指定的非字母数字字符要求的新密码将显示一条错误消息 （请参阅图 7）。
 
 
-[![ChangePassword 控件添加到页面](recovering-and-changing-passwords-vb/_static/image20.png)](recovering-and-changing-passwords-vb/_static/image19.png)
+[![Add ChangePassword 控件与页](recovering-and-changing-passwords-vb/_static/image20.png)](recovering-and-changing-passwords-vb/_static/image19.png)
 
 **图 7**:ChangePassword 控件添加到页 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image21.png))
 
@@ -235,7 +235,7 @@ ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个
 进行这些更改之后, 重新访问该页并再次更改密码。 这一次，ChangePassword 控件将发送到用户的电子邮件地址上文件的自定义的 HTML 格式的电子邮件 （请参阅图 8）。
 
 
-[![电子邮件消息会通知用户，他们的密码已更改](recovering-and-changing-passwords-vb/_static/image23.png)](recovering-and-changing-passwords-vb/_static/image22.png)
+[![An 个电子邮件消息通知后更改了用户，他们的密码](recovering-and-changing-passwords-vb/_static/image23.png)](recovering-and-changing-passwords-vb/_static/image22.png)
 
 **图 8**:电子邮件消息通知用户，他们的密码已更改 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image24.png))
 
@@ -273,7 +273,7 @@ ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个
 输入新密码，在第二个文本框中，确认，并单击更新用户按钮后，才会回发和`aspnet_Membership_SetPassword`调用存储的过程时，更新用户的密码。 建议对此功能感兴趣的这些读取器进一步熟悉代码，然后重扩展的功能，包括将一封电子邮件发送到已更改其密码的用户。
 
 
-[![管理员可能会更改用户的密码](recovering-and-changing-passwords-vb/_static/image26.png)](recovering-and-changing-passwords-vb/_static/image25.png)
+[![An 管理员可更改用户的密码](recovering-and-changing-passwords-vb/_static/image26.png)](recovering-and-changing-passwords-vb/_static/image25.png)
 
 **图 9**:管理员可能会更改用户的密码 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-vb/_static/image27.png))
 
@@ -297,7 +297,7 @@ ASP.NET 提供了两个控件，帮助用户管理其密码。 PasswordRecovery 
 - [ChangePassword 控件快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/changepassword.aspx)
 - [PasswordRecovery 控件快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/passwordrecovery.aspx)
 - [在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
-- [`System.Net.Mail` 常见问题](http://www.systemnetmail.com/)
+- [`System.Net.Mail` 常见问题解答](http://www.systemnetmail.com/)
 
 ### <a name="about-the-author"></a>关于作者
 

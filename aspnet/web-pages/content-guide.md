@@ -8,22 +8,22 @@ ms.date: 01/13/2011
 ms.assetid: b558e481-775a-4aa0-bd3b-ad61e530c2d2
 msc.legacyurl: /web-pages/content-guide
 msc.type: content
-ms.openlocfilehash: e5c2edcceeda977919c1212719786630e7bb8a4f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e410ac0c6d3430c00e171775d842ee30eeab021
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028934"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383145"
 ---
-<a name="webmatrix-content-guide"></a>WebMatrix 内容指南
-====================
+# <a name="webmatrix-content-guide"></a>WebMatrix 内容指南
+
 
 > [!NOTE] 
 > WebMatrix 是不再建议将其作为一个集成的开发环境为 ASP.NET Web Pages。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或[Visual Studio Code](https://code.visualstudio.com/)。
 
 WebMatrix 是一套工具，可轻松地为 Microsoft Windows 构建网站。 它包括 IIS Express （开发 web 服务器）、 ASP.NET (web 编程框架)，和 SQL Server Compact （嵌入的数据库）。 若要查看 WebMatrix 的快速教程，请参阅[WebMatrix 概述](https://www.microsoft.com/web/webmatrix/)。 若要查看热门的 WebMatrix 功能，请参阅[WebMatrix 功能](https://www.microsoft.com/web/webmatrix/features/)。
 
-| **方案** | **Content** |
+| **方案** | **内容** |
 | --- | --- |
 | 开始使用 WebMatrix | [WebMatrix 简介](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/intro.mp4)（视频） [Getting Started with WebMatrix 和 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202889) [从头开始](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/walkthrough1b.mp4)（视频） 了解如何使用 ASP.NET Razor 代码编写自定义网站。 [在第一个网站使用 WebMatrix](https://go.microsoft.com/fwlink/?LinkId=208553) [Web 应用程序开始](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/walkthrough2b.mp4)（视频） 使用免费的开放源代码应用程序来创建你自己的站点。 |
 | 安装组件 （包括 WebMatrix） | [使用 Microsoft Web 平台安装程序](https://www.iis.net/learn/install/web-platform-installer/using-the-microsoft-web-platform-installer) [Web 平台安装程序 2.0 演练](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-20-walkthrough) [Web 平台安装程序资源](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-resources) |
@@ -50,7 +50,7 @@ WebMatrix 是一套工具，可轻松地为 Microsoft Windows 构建网站。 �
 
 ## <a name="additional-resources"></a>其他资源
 
-**Read**
+**读取**
 
 - [WebMatrix 的 Microsoft Web Camps 培训工具包](http://trainingkit.webcamps.ms/WebMatrix.htm)
 - [提交 bug 或建议](https://go.microsoft.com/fwlink/?LinkId=195940)
@@ -68,7 +68,7 @@ WebMatrix 是一套工具，可轻松地为 Microsoft Windows 构建网站。 �
 - [开始试用 Web 应用](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/walkthrough2b.mp4)
 - [很小，但完整的包](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-compact.mp4)
 - [与您共同成长](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-extend.mp4)
-- [开放源代码](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-webapps-b.mp4)
+- [开放源](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-webapps-b.mp4)
 - [数据库变得简单](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-databases.mp4)
 - [简洁的界面，简单的体验](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-ux.mp4)
 - [从简单到代码](https://mediadl.microsoft.com/mediadl/www/s/silverlight/video/web/webmatrix/webx-aspnetpages.mp4)

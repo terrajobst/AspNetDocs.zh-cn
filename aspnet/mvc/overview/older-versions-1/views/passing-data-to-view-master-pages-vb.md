@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b840e0a5cc325a043ae88c10f52cca418589119
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7de5a1545ee59e671058f09789ce69d5062d3655
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055794"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380972"
 ---
-<a name="passing-data-to-view-master-pages-vb"></a>向视图母版页传递数据 (VB)
-====================
+# <a name="passing-data-to-view-master-pages-vb"></a>向视图母版页传递数据 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_VB.pdf)
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 假设您要构建电影数据库应用程序，并且你想要在应用程序中每一页上显示电影类别列表 （见图 1）。 此外，假设电影类别的列表存储在数据库表中。 在这种情况下，最好从数据库检索类别和呈现的视图母版页中的电影类别列表。
 
 
-[![在视图母版页中显示电影类别](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
+[![D视图母版页中的 isplaying 电影类别](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
 
 **图 01**:在视图母版页中显示电影类别 ([单击此项可查看原尺寸图像](passing-data-to-view-master-pages-vb/_static/image3.png))
 
@@ -59,7 +59,7 @@ MVC 应用程序中传递给视图 （包括视图母版页） 的所有数据�
 `Details()`操作还将添加名为类别和电影的两个密钥。 类别键中，再次重申，表示电影类别视图主页所显示的列表。 电影键表示电影的详细信息视图页所显示的特定类别的列表 （请参见图 2）。
 
 
-[![详细信息视图](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
+[![T他的详细信息视图](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
 
 **图 02**:详细信息视图 ([单击此项可查看原尺寸图像](passing-data-to-view-master-pages-vb/_static/image6.png))
 
@@ -115,4 +115,4 @@ ApplicationController 类都包含在清单 4。
 接下来，我们将探讨更理想的策略中添加数据视图母版页需查看数据。 无需在每个控制器操作添加的视图数据，我们添加了一次应用程序控制器中的视图数据。 这样一来，将数据传递到视图母版页中的 ASP.NET MVC 应用程序时，可以避免重复代码。
 
 > [!div class="step-by-step"]
-> [上一篇](creating-page-layouts-with-view-master-pages-vb.md)
+> [上一个](creating-page-layouts-with-view-master-pages-vb.md)

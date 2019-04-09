@@ -8,15 +8,15 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: abb1ef355bd7614daaab8c205d9d53065856cd23
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ef0ae42e1c6114849a311164eac242db6dab2b1d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424360"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385789"
 ---
-<a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
-====================
+# <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
+
 由 Tim Ammann
 
 > 在 Visual Studio 2012 中的 Page Inspector 是一个 web 开发工具，使用集成浏览器。 在集成浏览器中选择任何元素和 Page Inspector 立即突出显示元素的源和 CSS。 可以浏览任何 MVC 视图、 快速查找源呈现的标记，并使用浏览器工具直接在 Visual Studio 环境。

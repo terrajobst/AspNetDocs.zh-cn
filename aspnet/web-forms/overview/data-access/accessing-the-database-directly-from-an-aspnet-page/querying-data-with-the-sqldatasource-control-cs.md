@@ -8,15 +8,15 @@ ms.date: 02/20/2007
 ms.assetid: 60512d6a-b572-4b7a-beb3-3e44b4d2020c
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d15e09c2b790c4d1e6b278c4ea35bab7f66b861
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f6aa0e4535f88a04419695114d07ea2cf6ac7036
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040594"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381154"
 ---
-<a name="querying-data-with-the-sqldatasource-control-c"></a>使用 SqlDataSource 控件查询数据 (C#)
-====================
+# <a name="querying-data-with-the-sqldatasource-control-c"></a>使用 SqlDataSource 控件查询数据 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_47_CS.exe)或[下载 PDF](querying-data-with-the-sqldatasource-control-cs/_static/datatutorial47cs1.pdf)
@@ -79,7 +79,7 @@ AccessDataSource 和 SqlDataSource 控件之间的唯一区别是指定的数据
 在其他文件夹中，喜欢`Default.aspx`在`SqlDataSource`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](querying-data-with-the-sqldatasource-control-cs/_static/image5.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image4.gif)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](querying-data-with-the-sqldatasource-control-cs/_static/image5.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image4.gif)
 
 **图 4**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](querying-data-with-the-sqldatasource-control-cs/_static/image6.gif))
 
@@ -155,7 +155,7 @@ AccessDataSource 和 SqlDataSource 控件之间的唯一区别是指定的数据
 SqlDataSource 配置之后，它可以绑定到数据 Web 控件，如 GridView、 DetailsView。 对于本教程，让我们来显示 GridView 中的数据。 从工具箱中，将 GridView 拖到绘图页上，并将其绑定到`ProductsDataSource`SqlDataSource 通过从 GridView s 智能标记中的下拉列表中选择数据源。
 
 
-[![添加一个 GridView，并将其绑定到 SqlDataSource 控件](querying-data-with-the-sqldatasource-control-cs/_static/image13.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image12.gif)
+[![Add GridView 并将其绑定到 SqlDataSource 控件](querying-data-with-the-sqldatasource-control-cs/_static/image13.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image12.gif)
 
 **图 10**:添加一个 GridView，并将其绑定到 SqlDataSource 控件 ([单击此项可查看原尺寸图像](querying-data-with-the-sqldatasource-control-cs/_static/image14.gif))
 
@@ -170,7 +170,7 @@ SqlDataSource 配置之后，它可以绑定到数据 Web 控件，如 GridView�
 访问本页可通过浏览器。 如图 11 所示，GridView 列出了每个产品 s `ProductID`， `ProductName`，和`UnitPrice`值。
 
 
-[![GridView 显示每个产品 s 产品 id、 产品名称和单价值](querying-data-with-the-sqldatasource-control-cs/_static/image16.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image15.gif)
+[![T他 GridView 显示每个产品的 ProductID，产品名称和单价值](querying-data-with-the-sqldatasource-control-cs/_static/image16.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image15.gif)
 
 **图 11**:GridView 显示每个产品 s `ProductID`， `ProductName`，并`UnitPrice`值 ([单击以查看实际尺寸的图像](querying-data-with-the-sqldatasource-control-cs/_static/image17.gif))
 
@@ -228,7 +228,7 @@ SqlDataSource 可以配置为通过更改返回而不是数据集 DataReader 及
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-cs/samples/sample5.aspx)]
 
 
-[![GridView 显示每个产品的 ID、 名称和关联的类别名称](querying-data-with-the-sqldatasource-control-cs/_static/image22.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image21.gif)
+[![T他 GridView 显示每个产品的 ID、 名称和关联的类别名称](querying-data-with-the-sqldatasource-control-cs/_static/image22.gif)](querying-data-with-the-sqldatasource-control-cs/_static/image21.gif)
 
 **图 15**:GridView 显示了每个产品的 ID、 名称和关联的类别名称 ([单击此项可查看原尺寸图像](querying-data-with-the-sqldatasource-control-cs/_static/image23.gif))
 
@@ -260,4 +260,4 @@ SqlDataSource 可以配置为通过更改返回而不是数据集 DataReader 及
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Susan Connery、 伯纳黛特 Leigh 和 David Suru。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [下一步](using-parameterized-queries-with-the-sqldatasource-cs.md)

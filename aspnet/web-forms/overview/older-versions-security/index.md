@@ -8,15 +8,15 @@ ms.date: 10/18/2014
 ms.assetid: 2f952638-6b1f-48b6-b019-1c5d1e9ab746
 msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
-ms.openlocfilehash: 5a2eeef18163d0d408e4aba33bad7464ebf600a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: afd786a25c8dc23eba1bbf6ed3f6512c64f2e72d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023504"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378570"
 ---
-<a name="older-versions---security"></a>旧版本 - 安全
-====================
+# <a name="older-versions---security"></a>旧版本 - 安全
+
 > 为 ASP.NET 4 和更早的 Web 窗体应用程序的安全性、 身份验证和授权主题。
 
 
@@ -53,6 +53,6 @@ ms.locfileid: "57023504"
     - [生成用于从多个用户帐户中选择一个帐户的界面 (C#)](admin/building-an-interface-to-select-one-user-account-from-many-cs.md)
     - [恢复和更改密码 (C#)](admin/recovering-and-changing-passwords-cs.md)
     - [解锁和审批用户帐户 (C#)](admin/unlocking-and-approving-user-accounts-cs.md)
-    - [生成用于从多个用户帐户中选择一个帐户的接口 (VB)](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
+    - [生成用于从多个用户帐户中选择一个帐户的界面 (VB)](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
     - [恢复和更改密码 (VB)](admin/recovering-and-changing-passwords-vb.md)
     - [解锁和审批用户帐户 (VB)](admin/unlocking-and-approving-user-accounts-vb.md)

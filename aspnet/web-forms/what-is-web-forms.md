@@ -8,15 +8,15 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: e135cfa2945b9e7e5269eb436ff0c1dff20aacdf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cb7a4ff9dbf746c0729129445042e53e506df5d2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039064"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385730"
 ---
-<a name="what-is-web-forms"></a>什么是 Web 窗体
-====================
+# <a name="what-is-web-forms"></a>什么是 Web 窗体
+
 ASP.NET Web 窗体是 ASP.NET web 应用程序框架的一部分，包含[Visual Studio](https://www.asp.net/downloads)。 它是一个可用于创建 ASP.NET web 应用程序的四个编程模型，有些则是 ASP.NET MVC、 ASP.NET Web Pages 和 ASP.NET 单页面应用程序。
 
 Web 窗体是用户请求使用其浏览器的页面。 可以编写这些页面的 HTML，结合使用客户端脚本、 服务器控件和服务器代码。 当用户请求页面时，编译和框架，在服务器上执行，然后在框架生成浏览器可以呈现的 HTML 标记。 ASP.NET Web 窗体页中的任何浏览器或客户端设备向用户显示信息。

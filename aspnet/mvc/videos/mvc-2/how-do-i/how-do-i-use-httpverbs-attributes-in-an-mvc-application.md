@@ -8,15 +8,15 @@ ms.date: 12/30/2009
 ms.assetid: d2488a1d-0f3f-4994-8fbe-4f59b8c9503e
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application
 msc.type: video
-ms.openlocfilehash: d55151dc12c35c172a854d0caafe30a4f70c8c52
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bda3b122aaf2970b9238d7120ad15fb06672c85b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378073"
 ---
-<a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>如何实现:在 MVC 应用程序中使用 HttpVerbs 属性？
-====================
+# <a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>如何实现:在 MVC 应用程序中使用 HttpVerbs 属性？
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在此视频的 Chris Pels 中显示了如何使用 HttpVerbs 属性来控制对 MVC 操作的访问。 首先，使用默认控制器和视图进行编辑的信息创建一个示例应用程序。 接下来，第二个索引操作将添加到具有该限制仅当使用 HTTP POST 时被调用的 HttpPost 属性的控制器。 作为一篇后续 AcceptVerbs() 属性作为实现的可选语法针对 Visual Studio 2008。 然后讨论使用 HttpVerbs 防止与使用 HTTP GET 来从链接执行删除关联的安全风险。

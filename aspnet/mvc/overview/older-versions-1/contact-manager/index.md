@@ -8,20 +8,20 @@ ms.date: 09/28/2011
 ms.assetid: 6b0f1fd7-6768-4549-ae9c-be9131103c4d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager
 msc.type: chapter
-ms.openlocfilehash: 164aeba48e0cf9af036d5e2c1146060f3ae3879f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4faccca531b330cc52c338bae98fab484de753f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021544"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378996"
 ---
-<a name="contact-manager"></a>联系人管理器
-====================
+# <a name="contact-manager"></a>联系人管理器
+
 > 如何生成整个联系人管理应用程序从头到尾完成。
 
 
 - [迭代 1 – 创建应用程序 (C#)](iteration-1-create-the-application-cs.md)
-- [迭代 2 – 使应用程序外表美观 (C#)](iteration-2-make-the-application-look-nice-cs.md)
+- [迭代 2 – 使应用程序外表美观的 (C#)](iteration-2-make-the-application-look-nice-cs.md)
 - [迭代 3 – 添加表单验证 (C#)](iteration-3-add-form-validation-cs.md)
 - [迭代 4 – 使应用程序松散耦合 (C#)](iteration-4-make-the-application-loosely-coupled-cs.md)
 - [迭代 5 — 创建单元测试 (C#)](iteration-5-create-unit-tests-cs.md)

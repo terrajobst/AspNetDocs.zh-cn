@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8b34a9f7690777cfcc79d87a5e19586646d5b0d9
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425699"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380660"
 ---
-<a name="iteration-5--create-unit-tests-vb"></a>迭代 5 — 创建单元测试 (VB)
-====================
+# <a name="iteration-5--create-unit-tests-vb"></a>迭代 5 — 创建单元测试 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
@@ -116,12 +116,12 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 4. 通过选择菜单选项将 Moq 程序集的引用添加到你的测试项目**项目中，添加引用**以打开**添加引用**对话框。 在浏览选项卡，浏览到你在其中解压缩 Moq 文件夹并选择 Moq.dll 程序集。 单击**确定**按钮 （请参见图 2）。
 
 
-[![取消阻塞 Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
+[![Unblocking Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **图 01**:取消阻塞 Moq ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image2.png))
 
 
-[![添加 Moq 后引用](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+[![R添加 Moq 后 eferences](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **图 02**:添加 Moq 后的引用 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image4.png))
 
@@ -184,7 +184,7 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 可以通过选择菜单选项在列表 1 中运行单元测试**测试，运行，解决方案 （CTRL + R、 A） 中的所有测试**。 在测试结果窗口中显示测试结果 （请参阅图 4）。
 
 
-[![测试结果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
+[![T测试结果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **图 04**:测试结果 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image8.png))
 

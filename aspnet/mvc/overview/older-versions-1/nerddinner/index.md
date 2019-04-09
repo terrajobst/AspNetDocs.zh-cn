@@ -8,26 +8,26 @@ ms.date: 09/28/2011
 ms.assetid: 6edfe14c-415a-4281-b6fa-69e9b38a82c8
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner
 msc.type: chapter
-ms.openlocfilehash: 39a7f1b44ffe33b27097a53a8e5c1f47ea1cdd73
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 263ffc1ab815c1f7d6c1ee008f4fbe61316b7231
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380738"
 ---
-<a name="nerddinner"></a>NerdDinner
-====================
+# <a name="nerddinner"></a>NerdDinner
+
 > 如何生成使用 ASP.NET MVC 1 NerdDinner.com 网站。 有关 ASP.NET MVC 版本，请访问[NerdDinner GitHub 上的](https://github.com/AspNetMVPSamples/NerdDinner)。
 
 
-- [NerdDinner 的简介教程](introducing-the-nerddinner-tutorial.md)
-- [创建新的 ASP.NET MVC 项目](create-a-new-aspnet-mvc-project.md)
+- [NerdDinner 教程简介](introducing-the-nerddinner-tutorial.md)
+- [新建 ASP.NET MVC 项目](create-a-new-aspnet-mvc-project.md)
 - [创建数据库](create-a-database.md)
 - [生成具有业务规则验证功能的模型](build-a-model-with-business-rule-validations.md)
 - [使用控制器和视图实现列表/详细信息 UI](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-- [提供来自窗体输入支持的 CRUD（创建、读取、更新和删除）数据](provide-crud-create-read-update-delete-data-form-entry-support.md)
+- [提供 CRUD（创建、读取、更新和删除）数据窗体输入支持](provide-crud-create-read-update-delete-data-form-entry-support.md)
 - [使用 ViewData 和实现 ViewModel 类](use-viewdata-and-implement-viewmodel-classes.md)
-- [使用母版页和部分的重用 UI](re-use-ui-using-master-pages-and-partials.md)
+- [使用母版页和部分重用 UI](re-use-ui-using-master-pages-and-partials.md)
 - [实现高效数据分页](implement-efficient-data-paging.md)
 - [使用身份验证和授权保护应用程序](secure-applications-using-authentication-and-authorization.md)
 - [使用 AJAX 提供动态更新](use-ajax-to-deliver-dynamic-updates.md)

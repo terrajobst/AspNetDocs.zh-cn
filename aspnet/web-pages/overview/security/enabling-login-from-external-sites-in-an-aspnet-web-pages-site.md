@@ -8,15 +8,15 @@ ms.date: 02/21/2014
 ms.assetid: ef852096-a5bf-47b3-9945-125cde065093
 msc.legacyurl: /web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 188a9203ba7b04f5a88d0f802f1a05bf35d58d8c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a93835e685716b3be59023b9f84a006e38f48e89
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045654"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380441"
 ---
-<a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中使用外部站点中的日志记录
-====================
+# <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中使用外部站点中的日志记录
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文介绍如何登录到你使用 Facebook、 Google、 Twitter、 Yahoo 和其他站点的 ASP.NET Web Pages (Razor) 站点 — 即，如何在你的站点中支持 OAuth 和 OpenID。

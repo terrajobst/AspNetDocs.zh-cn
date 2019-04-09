@@ -8,15 +8,15 @@ ms.date: 06/29/2010
 ms.assetid: 1dcc27a0-f9a9-4e34-94bf-7c35190ea08d
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-migrate-the-shopping-cart
 msc.type: video
-ms.openlocfilehash: d96b3bba8013c984ae0f2df12085e0e9bd1813cd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bb7a6e1208d97cf27e05a6ab5753d02485addc8e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378957"
 ---
-<a name="tailspin-spyworks---migrate-the-shopping-cart"></a>Tailspin Spyworks - 迁移购物车
-====================
+# <a name="tailspin-spyworks---migrate-the-shopping-cart"></a>Tailspin Spyworks - 迁移购物车
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner 演示如何将匿名用户的购物车转换为一个最终签出的 Tailspin Spyworks 示例 Web 窗体应用程序之前的已经过身份验证。
