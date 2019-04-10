@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
-title: 实现自定义 MySQL ASP.NET 标识存储提供程序 |Microsoft Docs
+title: 实现自定义 MySQL ASP.NET 标识存储提供程序的 ASP.NET 4.x
 author: raquelsa
 description: ASP.NET 标识是一个可扩展的系统，这样就可以创建自己的存储提供程序并将其插入到你的应用程序而无需重新处理应用...
 ms.author: riande
 ms.date: 05/22/2015
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 4f9803f0717245ede73466f4c54c2aa3b7ae3882
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 224fa56a455affcbbdf76eceee5422850415037e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425946"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420765"
 ---
-<a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>实现自定义 MySQL ASP.NET Identity 存储提供程序
-====================
+# <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>实现自定义 MySQL ASP.NET Identity 存储提供程序
+
 通过[Raquel Soares De Almeida](https://github.com/raquelsa)， [Suhas Joshi](https://github.com/suhasj)， [Tom FitzMacken](https://github.com/tfitzmac)
 
 > ASP.NET 标识是一个可扩展的系统，这样就可以创建自己的存储提供程序并将其插入到你的应用程序而无需重新使用该应用程序。 本主题介绍如何创建 ASP.NET 标识的 MySQL 存储提供程序。 有关创建自定义存储提供程序的概述，请参阅[概述的自定义存储提供程序的 ASP.NET 标识](overview-of-custom-storage-providers-for-aspnet-identity.md)。

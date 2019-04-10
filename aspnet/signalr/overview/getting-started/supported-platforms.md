@@ -8,15 +8,15 @@ ms.date: 04/18/2018
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 60fa74b54797efbe14ba525160b2f750a4f5a451
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 89730e591bb94022d16fe1a78a4350b38e0bf7a4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063414"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420882"
 ---
-<a name="supported-platforms"></a>受支持的平台
-====================
+# <a name="supported-platforms"></a>支持的平台
+
 通过[Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -37,7 +37,7 @@ SignalR 服务器组件可以驻留在不同的服务器配置。 本部分介�
 
 SignalR 服务器组件可以托管在以下服务器或客户端操作系统。 请注意，对于使用 Websocket 的 SignalR，Windows Server 2012、 Windows Server 2016 或 Windows 8 需 （WebSocket 可以使用 Windows Azure 网站上，只要站点的.NET framework 版本设置为 4.5，并且在站点中启用 Web 套接字配置页）。
 
-- Windows Server 2016
+- Windows 2016 Server
 - Windows Server 2012
 - Windows Server 2008 r2
 - Windows 10

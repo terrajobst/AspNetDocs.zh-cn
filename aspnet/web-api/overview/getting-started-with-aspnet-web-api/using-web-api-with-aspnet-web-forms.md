@@ -1,27 +1,30 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
-title: ASP.NET Web 窗体中使用 Web API |Microsoft Docs
+title: Web API 中使用 ASP.NET Web 窗体的 ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 教程代码地将 Web API 添加到 ASP.NET 窗体应用程序，asp.net 4.x
 ms.author: riande
 ms.date: 04/03/2012
+ms.custom: seoapril2019
 ms.assetid: 25da8c3f-4e90-4946-9765-4f160985e1e4
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
 msc.type: authoredcontent
-ms.openlocfilehash: a14bf0abd8c5d603cf3859891f855415cf3df9f3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ae553b62998fefd128e12711cbde958ea42d8c63
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055684"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422572"
 ---
-<a name="using-web-api-with-aspnet-web-forms"></a>向 ASP.NET Web 窗体使用 Web API
-====================
+# <a name="using-web-api-with-aspnet-web-forms"></a>向 ASP.NET Web 窗体使用 Web API
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-尽管 ASP.NET Web API 与 ASP.NET MVC 一起打包，很容易地将 Web API 添加到传统的 ASP.NET Web 窗体应用程序。 本教程将指导你完成的步骤。
+本教程将指导你完成将 Web API 添加到 ASP.NET 中传统的 ASP.NET Web 窗体应用程序的步骤 4.x。 
 
 ## <a name="overview"></a>概述
+
+尽管 ASP.NET Web API 与 ASP.NET MVC 一起打包，很容易地将 Web API 添加到传统的 ASP.NET Web 窗体应用程序。
 
 若要在 Web 窗体应用程序中使用 Web API，有两个主要步骤：
 

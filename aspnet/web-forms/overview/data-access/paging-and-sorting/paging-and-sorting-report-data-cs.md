@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15e23b09df13f11c69a2fd6c721981e632a25434
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: dc5b2a2888eebb4b812caf3fc11bf109d54bb73d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422111"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420687"
 ---
-<a name="paging-and-sorting-report-data-c"></a>分页和排序报表数据 (C#)
-====================
+# <a name="paging-and-sorting-report-data-c"></a>分页和排序报表数据 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_24_CS.exe)或[下载 PDF](paging-and-sorting-report-data-cs/_static/datatutorial24cs1.pdf)
@@ -67,7 +67,7 @@ ms.locfileid: "58422111"
 
 ## <a name="step-2-displaying-product-information-in-a-gridview"></a>步骤 2：在 GridView 中显示的产品信息
 
-我们实际上实现分页和排序功能之前，让我们来首先创建标准非-srotable，列出了产品信息的非可分页 GridView。 这是一项任务我们已多次在此之前完成本教程系列因此以下步骤应该比较熟悉。 首先打开`SimplePagingSorting.aspx`页上，并将 GridView 控件从工具箱拖到设计器中，设置其`ID`属性设置为`Products`。 接下来，创建新对象数据源使用 ProductsBLL 类的`GetProducts()`方法以返回所有产品信息。
+我们实际上实现分页和排序功能之前，让我们来首先创建一个标准的非可排序、 不可分页 GridView，列出了产品信息。 这是一项任务我们已多次在此之前完成本教程系列因此以下步骤应该比较熟悉。 首先打开`SimplePagingSorting.aspx`页上，并将 GridView 控件从工具箱拖到设计器中，设置其`ID`属性设置为`Products`。 接下来，创建新对象数据源使用 ProductsBLL 类的`GetProducts()`方法以返回所有产品信息。
 
 
 ![检索有关所有使用 GetProducts() 方法的产品信息](paging-and-sorting-report-data-cs/_static/image4.png)
@@ -91,7 +91,7 @@ ms.locfileid: "58422111"
 图 6 显示了我们到目前为止的浏览器查看时。 请注意页面列出所有在一个屏幕中，显示每个产品的名称、 类别、 供应商、 价格、 产品和停用状态。
 
 
-[![列出了每个产品](paging-and-sorting-report-data-cs/_static/image7.png)](paging-and-sorting-report-data-cs/_static/image6.png)
+[![E列出产品的支票](paging-and-sorting-report-data-cs/_static/image7.png)](paging-and-sorting-report-data-cs/_static/image6.png)
 
 **图 6**:列出了每个产品 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image8.png))
 
@@ -101,7 +101,7 @@ ms.locfileid: "58422111"
 列出*所有*的一个屏幕上的产品可能会导致用户仔细阅读数据的信息过载。 若要帮助使结果更易于管理，我们可以分解成较小的数据页的数据，并允许用户一次遍历一页数据。 若要完成这只需检查从 GridView s 智能标记启用分页复选框 (这将设置 GridView s [ `AllowPaging`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx)到`true`)。
 
 
-[![检查启用分页复选框来添加分页支持](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
+[![C为了增加点乐趣启用分页复选框以添加分页支持](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
 
 **图 7**:选中启用分页复选框添加分页支持到 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image11.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "58422111"
 图 8 显示了 web 页上选中的 GridView s 启用分页复选框后，通过浏览器访问时，`PagerStyle`并`PagerSettings`通过进行了配置`GridView.skin`文件。 请注意如何唯一十个记录将显示，并且分页界面指示我们正在查看数据的第一页。
 
 
-[![使用启用了分页，每次显示仅记录的子集](paging-and-sorting-report-data-cs/_static/image13.png)](paging-and-sorting-report-data-cs/_static/image12.png)
+[![W一次显示分页启用，仅记录的子集的第 i 个](paging-and-sorting-report-data-cs/_static/image13.png)](paging-and-sorting-report-data-cs/_static/image12.png)
 
 **图 8**:使用启用了分页，仅记录的子集显示一次 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image14.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "58422111"
 当用户单击其中一个分页界面中的页码时，回发时，才会和页面重新加载请求的页面 + s 记录显示。 图 9 显示的结果，如果选择查看数据的最后一页。 请注意，最后一页仅包含一条记录;这是因为总数，从而导致与单独记录每个页面以及一页的 10 条记录的 8 个页面中有 81 记录。
 
 
-[![单击页码导致回发，并显示相应记录的子集](paging-and-sorting-report-data-cs/_static/image16.png)](paging-and-sorting-report-data-cs/_static/image15.png)
+[![C单击页号上导致回发和显示的相应记录子集](paging-and-sorting-report-data-cs/_static/image16.png)](paging-and-sorting-report-data-cs/_static/image15.png)
 
 **图 9**:单击页码导致回发并显示相应记录子集 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image17.png))
 
@@ -182,7 +182,7 @@ ms.locfileid: "58422111"
 添加此元素后，用户现已显示一条消息指出正在访问哪些页面和有多少总页的数据。
 
 
-[![显示当前页码和总页数](paging-and-sorting-report-data-cs/_static/image19.png)](paging-and-sorting-report-data-cs/_static/image18.png)
+[![T显示他当前页码和总页数数](paging-and-sorting-report-data-cs/_static/image19.png)](paging-and-sorting-report-data-cs/_static/image18.png)
 
 **图 10**:显示当前页码和总页数 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image20.png))
 
@@ -206,7 +206,7 @@ ms.locfileid: "58422111"
 如图 11 所示，只更改 GridView 的`PageIndex`属性会导致数据重新绑定到 GridView。 在 GridView`DataBound`事件处理程序，相应的 DropDownList`ListItem`处于选中状态。
 
 
-[![用户将自动转到第六个页时选择页面 6 下拉列表项](paging-and-sorting-report-data-cs/_static/image22.png)](paging-and-sorting-report-data-cs/_static/image21.png)
+[![T他用户是自动转到第六个页时选择页面 6 下拉列表项](paging-and-sorting-report-data-cs/_static/image22.png)](paging-and-sorting-report-data-cs/_static/image21.png)
 
 **图 11**:用户将自动转到第六个页时选择页面 6 下拉列表项 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image23.png))
 
@@ -231,7 +231,7 @@ ms.locfileid: "58422111"
 之后此 CSS 元素后，访问通过浏览器页面时在屏幕上将看到类似于图 12。 具体而言，图 12 显示结果后单击价格字段 s 标头链接。
 
 
-[![结果已按升序排序单价](paging-and-sorting-report-data-cs/_static/image25.png)](paging-and-sorting-report-data-cs/_static/image24.png)
+[![T他结果已按升序顺序 UnitPrice](paging-and-sorting-report-data-cs/_static/image25.png)](paging-and-sorting-report-data-cs/_static/image24.png)
 
 **图 12**:结果具有已按升序顺序单价 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image26.png))
 
@@ -264,7 +264,7 @@ ms.locfileid: "58422111"
 一次`SortExpression`属性已被移除。 `UnitPrice` BoundField 标头将呈现为文本而不是作为链接，从而防止用户对数据进行排序的价格。
 
 
-[![通过删除 SortExpression 属性，用户不再可以进行排序的产品价格](paging-and-sorting-report-data-cs/_static/image29.png)](paging-and-sorting-report-data-cs/_static/image28.png)
+[![By 删除 SortExpression 属性，用户将无法再进行排序的产品价格](paging-and-sorting-report-data-cs/_static/image29.png)](paging-and-sorting-report-data-cs/_static/image28.png)
 
 **图 14**:通过删除 SortExpression 属性，用户可以不再对产品的价格 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image30.png))
 
@@ -283,7 +283,7 @@ ms.locfileid: "58422111"
 单击此按钮使用户返回到第一页与按定价从最代价高昂的开销最少 （请参阅图 15） 排序的产品。
 
 
-[![单击按钮进行排序的产品从成本最高到最低](paging-and-sorting-report-data-cs/_static/image32.png)](paging-and-sorting-report-data-cs/_static/image31.png)
+[![C单击按钮订单的产品从最高到最小](paging-and-sorting-report-data-cs/_static/image32.png)](paging-and-sorting-report-data-cs/_static/image31.png)
 
 **图 15**:单击按钮进行排序的产品从最高到最少 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-cs/_static/image33.png))
 
@@ -306,4 +306,4 @@ ms.locfileid: "58422111"
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 > [!div class="step-by-step"]
-> [下一页](efficiently-paging-through-large-amounts-of-data-cs.md)
+> [下一步](efficiently-paging-through-large-amounts-of-data-cs.md)

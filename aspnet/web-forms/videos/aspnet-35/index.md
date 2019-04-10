@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 2e6e9c24-bb97-446a-b05e-1bd88824d352
 msc.legacyurl: /web-forms/videos/aspnet-35
 msc.type: chapter
-ms.openlocfilehash: 331298981c89e83e7ef9ac260c4da6e38acb97ab
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b858dfc24a14e182319122320d8bb6af3b8fcb3c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422689"
 ---
-<a name="aspnet-35"></a>ASP.NET 3.5
-====================
+# <a name="aspnet-35"></a>ASP.NET 3.5
+
 > 如何生成 ASP.NET 3.5 应用程序，这是新功能。
 
 
@@ -29,7 +29,7 @@ ms.locfileid: "57021894"
     - [向 CSS 文件动态添加元素和创建新的 CSS](how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly.md)
     - [高级级联样式表功能和管理](how-do-i/how-do-i-advance-cascading-style-sheet-features-and-management.md)
     - [将 .NET 2.0 Windows 窗体应用程序转换为 .NET 3.5](how-do-i/how-do-i-converting-a-net-20-windows-forms-application-to-net-35.md)
-    - [开始使用 Entity Framework](how-do-i/how-do-i-get-started-with-the-entity-framework.md)
+    - [Entity Framework 入门](how-do-i/how-do-i-get-started-with-the-entity-framework.md)
     - [使用新的实体数据源](how-do-i/how-do-i-use-the-new-entity-data-source.md)
     - [使用 Entity Framework 序列化图形](how-do-i/how-do-i-serialize-a-graph-with-the-entity-framework.md)
     - [使用 MSBuild 自动处理 ASP.NET 编译器和合并实用工具](how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities.md)
@@ -38,7 +38,7 @@ ms.locfileid: "57021894"
     - [Visual Studio 2008 对 ASP.NET AJAX 的支持](aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
     - [将 AJAX 功能添加到现有的 ASP.NET 页面](aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
     - [在网站中创建并使用启用 AJAX 的 Web 服务](aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-    - [ASP.NET AJAX:ASP.NET AJAX 的演示](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+    - [ASP.NET AJAX：关于 ASP.NET AJAX 的演示](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
     - [ADO.NET 数据服务和 ASP.NET AJAX 支持](aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
     - [ASP.NET AJAX 历史记录简介](aspnet-ajax/introduction-to-aspnet-ajax-history.md)
     - [使用脚本组合提升 AJAX 性能](aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)

@@ -8,15 +8,15 @@ ms.date: 10/17/2013
 ms.assetid: 715a4059-d307-4631-abbb-c789c95d6eb4
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 94a4598595d025267c69933a03be2c164066cc98
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 08106dd6df491da817e0d449e85a09a8bc0fc77c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053174"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422052"
 ---
-<a name="introduction-to-signalr-security-signalr-1x"></a>SignalR 安全性简介 (SignalR 1.x)
-====================
+# <a name="introduction-to-signalr-security-signalr-1x"></a>SignalR 安全性简介 (SignalR 1.x)
+
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom FitzMacken](https://github.com/tfitzmac)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "57053174"
     - [安全地处理来自客户端的输入](#input)
     - [协调与活动连接的用户状态中的更改](#reconcile)
     - [自动生成的 JavaScript 代理文件](#autogen)
-    - [异常](#exceptions)
+    - [Exceptions](#exceptions)
 
 <a id="concepts"></a>
 

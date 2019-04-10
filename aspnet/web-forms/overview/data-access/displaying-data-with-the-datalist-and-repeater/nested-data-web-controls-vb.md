@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: 8b7fcf7b-722b-498d-a4e4-7c93701e0c95
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5e0807f6db3ad4ef9377843d60824e6cd43dd245
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 0d0aa2c52df284bae48907d0c0c1e5d4587c1b9e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440373"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421415"
 ---
-<a name="nested-data-web-controls-vb"></a>嵌套的数据 Web 控件 (VB)
-====================
+# <a name="nested-data-web-controls-vb"></a>嵌套的数据 Web 控件 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_32_VB.exe)或[下载 PDF](nested-data-web-controls-vb/_static/datatutorial32vb1.pdf)
@@ -35,7 +35,7 @@ ms.locfileid: "58440373"
 在本教程中我们将探讨如何使用 Repeater 嵌套在另一个 Repeater。 外部 Repeater 将包含在数据库中，每个类别的项显示类别名称和说明。 每个类别项 s 内部 Repeater 将显示属于该类别的每个产品的信息 （请参阅图 1） 中的项目符号列表。 我们的示例将演示了如何以声明方式和以编程方式填充内部 Repeater。
 
 
-[![列出每个类别，以及其产品，](nested-data-web-controls-vb/_static/image2.png)](nested-data-web-controls-vb/_static/image1.png)
+[![E列出支票类别，以及其产品](nested-data-web-controls-vb/_static/image2.png)](nested-data-web-controls-vb/_static/image1.png)
 
 **图 1**:列出其产品，每个类别 ([单击此项可查看原尺寸图像](nested-data-web-controls-vb/_static/image3.png))
 
@@ -47,7 +47,7 @@ ms.locfileid: "58440373"
 首先打开`NestedControls.aspx`页中`DataListRepeaterBasics`文件夹并将 Repeater 控件添加到页上，设置其`ID`属性设置为`CategoryList`。 从 Repeater s 智能标记中，选择创建名为新 ObjectDataSource `CategoriesDataSource`。
 
 
-[![命名新 ObjectDataSource CategoriesDataSource](nested-data-web-controls-vb/_static/image5.png)](nested-data-web-controls-vb/_static/image4.png)
+[![N\ 新 ObjectDataSource CategoriesDataSource 名称](nested-data-web-controls-vb/_static/image5.png)](nested-data-web-controls-vb/_static/image4.png)
 
 **图 2**:命名新 ObjectDataSource `CategoriesDataSource` ([单击以查看实际尺寸的图像](nested-data-web-controls-vb/_static/image6.png))
 
@@ -55,7 +55,7 @@ ms.locfileid: "58440373"
 以便它将从其数据配置 ObjectDataSource`CategoriesBLL`类的`GetCategories`方法。
 
 
-[![配置对象数据源使用 CategoriesBLL 类的 GetCategories 方法](nested-data-web-controls-vb/_static/image8.png)](nested-data-web-controls-vb/_static/image7.png)
+[![C配置对象数据源以使用 CategoriesBLL 类的 GetCategories 方法](nested-data-web-controls-vb/_static/image8.png)](nested-data-web-controls-vb/_static/image7.png)
 
 **图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories`方法 ([单击以查看实际尺寸的图像](nested-data-web-controls-vb/_static/image9.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "58440373"
 图 4 显示了我们的浏览器查看时的进度。
 
 
-[![每个类别名称和描述列出，则分隔水平标尺](nested-data-web-controls-vb/_static/image11.png)](nested-data-web-controls-vb/_static/image10.png)
+[![E支票类别名称和描述列出，则用水平标尺分隔](nested-data-web-controls-vb/_static/image11.png)](nested-data-web-controls-vb/_static/image10.png)
 
 **图 4**:每个类别名称和描述列出，则用水平标尺分隔 ([单击此项可查看原尺寸图像](nested-data-web-controls-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "58440373"
 与此事件处理程序中， `ProductsByCategoryList` Repeater 中每个`RepeaterItem`绑定到这些产品`RepeaterItem`的类别。 图 5 显示生成的输出的屏幕截图。
 
 
-[![外部 Repeater 列出了每个类别;内部的一个为该类别中列出的产品](nested-data-web-controls-vb/_static/image14.png)](nested-data-web-controls-vb/_static/image13.png)
+[![T他 Outer Repeater 列出了每个类别;内部的一个列出该类别的产品](nested-data-web-controls-vb/_static/image14.png)](nested-data-web-controls-vb/_static/image13.png)
 
 **图 5**:外部 Repeater 列出了每个类别;内部一个列出该类别的产品 ([单击此项可查看原尺寸图像](nested-data-web-controls-vb/_static/image15.png))
 
@@ -183,4 +183,4 @@ Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Zack Jones 和 Liz Shulok。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](showing-multiple-records-per-row-with-the-datalist-control-vb.md)
+> [上一个](showing-multiple-records-per-row-with-the-datalist-control-vb.md)

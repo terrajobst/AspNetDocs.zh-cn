@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: ecf99fa894c1f662542aa8a613195b828bf2c67b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061434"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420752"
 ---
-<a name="server-controls"></a>服务器控件
-====================
+# <a name="server-controls"></a>服务器控件
+
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 增强了服务器控件在许多方面。 在此模块中，我们将介绍一些 ASP.NET 2.0 的方式对体系结构更改，Visual Studio 2005 处理服务器控件。
@@ -99,7 +99,7 @@ ASP.NET 1.1 中的文档类型定义如下所示：
 
 [!code-html[Main](server-controls/samples/sample7.html)]
 
-如果愿意，您可以更改通过配置文件中的 xhtmlConformance 节点的默认 XHML 符合性。 例如，web.config 文件中的以下节点将更改为 XHTML 1.0 Strict 的 XHTML 符合性：
+如果愿意，您可以更改通过配置文件中的 xhtmlConformance 节点的默认 XHTML 符合性。 例如，web.config 文件中的以下节点将更改为 XHTML 1.0 Strict 的 XHTML 符合性：
 
 [!code-xml[Main](server-controls/samples/sample8.xml)]
 

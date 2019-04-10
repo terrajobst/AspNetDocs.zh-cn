@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 49d8a66c-3ea8-4087-839f-179d1d94512a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dea7b1e8cd5be795acd27868066384fe52b065f7
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 14b9070a462741aab7230963e3e1298368b8e6aa
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422189"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420986"
 ---
-<a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (C#)
-====================
+# <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_18_CS.exe)或[下载 PDF](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/datatutorial18cs1.pdf)
@@ -50,7 +50,7 @@ ms.locfileid: "58422189"
 完成此方法中，我们就准备好创建允许进行编辑这四个特定产品字段的 ASP.NET 页。 打开`ErrorHandling.aspx`页中`EditInsertDelete`文件夹，并在设计器中翻页添加 GridView。 将 GridView 绑定到新的对象数据源，映射`Select()`方法`ProductsBLL`类的`GetProducts()`方法并`Update()`方法`UpdateProduct`刚创建的重载。
 
 
-[![使用接受四个输入的参数的 UpdateProduct 方法重载](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image1.png)
+[![Use UpdateProduct 方法重载，接受四个输入参数](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image1.png)
 
 **图 1**:使用`UpdateProduct`方法重载，接受四个输入参数 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ ms.locfileid: "58422189"
 上一教程中我们介绍了如何设置格式`UnitPrice`BoundField 为货币在只读模式和编辑模式中。 让我们来做同一此处。 回想一下，这需要设置 BoundField`DataFormatString`属性设置为`{0:c}`，将其`HtmlEncode`属性设置为`false`，并将其`ApplyFormatInEditMode`到`true`，如图 2 所示。
 
 
-[![将显示单价 BoundField 配置为一种货币](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image4.png)
+[![C配置为显示为货币 UnitPrice BoundField](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image4.png)
 
 **图 2**:配置`UnitPrice`BoundField 作为一种货币的显示 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image6.png))
 
@@ -75,7 +75,7 @@ ms.locfileid: "58422189"
 我们 GridView 包括`QuantityPerUnit`BoundField，但此 BoundField 应仅出于显示目的，不应由用户可编辑。 若要这样安排，只需设置 BoundFields'`ReadOnly`属性设置为`true`。
 
 
-[![使 QuantityPerUnit BoundField 成为只读](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image8.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image7.png)
+[![M请 QuantityPerUnit BoundField 只读](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image8.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image7.png)
 
 **图 3**:请`QuantityPerUnit`BoundField 只读的 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image9.png))
 
@@ -83,7 +83,7 @@ ms.locfileid: "58422189"
 最后，检查从 GridView 的智能标记启用编辑复选框。 完成这些步骤后`ErrorHandling.aspx`页面的设计器应类似于图 4。
 
 
-[![删除所有但时需要 BoundFields 并检查编辑复选框启用](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image11.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image10.png)
+[![Remove 以外的所有所需 BoundFields 并选中启用编辑复选框](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image11.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image10.png)
 
 **图 4**:删除以外的所有所需 BoundFields 并选中启用编辑复选框 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "58422189"
 现在我们有一系列的产品的所有`ProductName`， `QuantityPerUnit`， `UnitPrice`，和`UnitsInStock`字段; 但是，仅`ProductName`， `UnitPrice`，和`UnitsInStock`可编辑字段。
 
 
-[![用户现在可以轻松地编辑产品的名称、 价格和库存字段中的单元](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image14.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image13.png)
+[![User 可立即轻松地编辑产品的名称、 价格和单位中的股票字段](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image14.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image13.png)
 
 **图 5**:用户可立即轻松地编辑产品的名称、 价格和库存字段中的单元 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image15.png))
 
@@ -105,7 +105,7 @@ ms.locfileid: "58422189"
 图 6 显示了屏幕时尝试将产品更新而无需指定遇到`ProductName`值。 这是通过显示详细的错误报告的默认`localhost`。
 
 
-[![省略产品的名称将显示异常详细信息](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image17.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image16.png)
+[![Omitting 产品名称将显示异常详细信息](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image17.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image16.png)
 
 **图 6**:省略该产品的名称将显示异常详细信息 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image18.png))
 
@@ -117,7 +117,7 @@ ms.locfileid: "58422189"
 首先，将标签添加到 ASP.NET 页上，设置其`ID`属性设置为`ExceptionDetails`并清除其`Text`属性。 若要绘制到此消息的用户的关注，设置其`CssClass`属性设置为`Warning`，它是我们添加到一个 CSS 类`Styles.css`上一教程中的文件。 回想一下，此 CSS 类会导致将标签的文本以红色、 斜体、 粗体、 特大型字体显示。
 
 
-[![向页面添加一个标签 Web 控件](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image20.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image19.png)
+[![Add 标签 Web 控件与页](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image20.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image19.png)
 
 **图 7**:向页面添加一个标签 Web 控件 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image21.png))
 
@@ -172,12 +172,12 @@ ms.locfileid: "58422189"
 图 9 显示了此页的屏幕截图时省略产品; 的名称图 10 显示了结果，如果输入非法`UnitPrice`值 (-50)。
 
 
-[![ProductName BoundField 必须包含值](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image24.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image23.png)
+[![T他 ProductName BoundField 必须包含值](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image24.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image23.png)
 
 **图 9**:`ProductName` BoundField 必须包含值 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image25.png))
 
 
-[![负单价值是不允许](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image27.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image26.png)
+[![Negative 单价值是不允许使用](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image27.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image26.png)
 
 **图 10**:负`UnitPrice`的值为不允许 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image28.png))
 
@@ -200,7 +200,7 @@ ms.locfileid: "58422189"
 此更改是两次以上的现有价格的任何价格更新将导致`ApplicationException`引发。 就像从 DAL，此 BLL 引发所引发的异常`ApplicationException`可以检测到并且在 GridView 中处理`RowUpdated`事件处理程序。 事实上，`RowUpdated`事件处理程序的代码编写的如将正确检测到此异常并显示`ApplicationException`的`Message`属性值。 图 11 显示了屏幕快照时用户尝试更新 Chai 的价格为 50.00 美元，这是多个双精度 19.95 美元及其当前股价。
 
 
-[![业务规则不允许产品的价格一倍以上的价格上调](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image30.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image29.png)
+[![T他业务规则禁止价格提高产品的价格两倍多的](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image30.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image29.png)
 
 **图 11**:业务规则禁止产品的价格一倍以上的价格增加 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image31.png))
 

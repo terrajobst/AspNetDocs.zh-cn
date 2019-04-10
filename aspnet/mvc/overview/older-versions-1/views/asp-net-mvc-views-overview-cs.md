@@ -8,15 +8,15 @@ ms.date: 02/16/2008
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a8e64a99549584f150d64d909ac97210257b1147
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4c35761f9cd44c866242cfe6f4f2d924e81d754
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042964"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421324"
 ---
-<a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 视图概述 (C#)
-====================
+# <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 视图概述 (C#)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 什么是 ASP.NET MVC 视图，它与有何 HTML 页面？ 在本教程中，Stephen Walther 向您介绍视图，并演示如何，您可以充分利用查看数据和视图中的 HTML 帮助程序。
@@ -104,7 +104,7 @@ View();
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
 
-[![新建项目对话框](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
+[![T他新建项目对话框中](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
 
 **图 01**:一个标准的登录窗体 ([单击此项可查看原尺寸图像](asp-net-mvc-views-overview-cs/_static/image2.png))
 
@@ -150,4 +150,4 @@ View();
 本教程提供简要介绍 ASP.NET MVC 视图、 视图数据和 HTML 帮助程序。 在第一个部分中，您学习了如何将新视图添加到你的项目。 您学习了，您必须要从特定控制器调用，到正确的文件夹添加一个视图。 接下来，我们讨论了 HTML 帮助程序的主题。 您学习了如何 HTML 帮助器使您能够轻松地生成标准的 HTML 内容。 最后，您学习了如何利用的视图数据将数据从控制器传递到视图。
 
 > [!div class="step-by-step"]
-> [下一页](creating-custom-html-helpers-cs.md)
+> [下一步](creating-custom-html-helpers-cs.md)

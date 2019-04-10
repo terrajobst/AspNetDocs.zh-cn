@@ -8,15 +8,15 @@ ms.date: 08/20/2008
 ms.assetid: 00a12df9-1f89-4fc5-9d43-19a8d5b80392
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
 msc.type: video
-ms.openlocfilehash: baf7a037b5315cc15f8d0fb78e509bc675863f18
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5b26ef9ddb1461d01f7e6862f1cd5605fee532a8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421714"
 ---
-<a name="displaying-a-table-of-database-data"></a>显示数据库数据表
-====================
+# <a name="displaying-a-table-of-database-data"></a>显示数据库数据表
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 需要在 ASP.NET MVC 视图中显示的一组数据库记录？ 了解 HTML 表中显示的记录的两种方法。 了解如何执行所有格式设置的内联。 你还了解如何使用 ASP.NET MVC 用户控件创建模板。

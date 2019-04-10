@@ -8,15 +8,15 @@ ms.date: 02/14/2008
 ms.assetid: babf24f7-f830-4091-a415-02a2661c724b
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-working-with-visual-studio-2008-net-framework
 msc.type: video
-ms.openlocfilehash: dc3a3f8b4b4bd67fb74b704f97d90fd2bfe75d11
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0659439de6aad2e491a7077493090bdb03a52384
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031544"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422871"
 ---
-<a name="how-do-i-working-with-visual-studio-2008-net-framework"></a>[如何实现:]使用 Visual Studio 2008.NET Framework
-====================
+# <a name="how-do-i-working-with-visual-studio-2008-net-framework"></a>[如何实现:]使用 Visual Studio 2008.NET Framework
+
 通过 Asli Bilgin
 
 在本视频中我将演示如何使用 Visual Studio 2008 能够使用各种版本的.NET framework。 这称为多目标。 我将介绍 Visual Studio 2008 中的新模板。

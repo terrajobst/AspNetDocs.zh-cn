@@ -8,15 +8,15 @@ ms.date: 04/05/2010
 ms.assetid: cfe2a6a0-1e56-4dc8-9537-c8ec76ba96a4
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4a6942df142ef40b92a8461afbc5f61fdfbde4ba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4d8afd13fc693c828850bec53664a4db7d91dede
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037844"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420596"
 ---
-<a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
-====================
+# <a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载 PDF](creating-a-data-access-layer-cs/_static/datatutorial01cs1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57037844"
 我们可以创建我们的数据访问层 (DAL) 之前，我们首先需要创建一个网站并设置我们的数据库。 首先，创建新文件系统基于 ASP.NET web 站点。 若要完成此操作，请转到文件菜单并选择新网站，显示新建网站对话框。 选择 ASP.NET 网站模板、 将位置下拉列表设置为文件系统、 选择一个文件夹以将该 web 站点，并将语言设置为 C#。
 
 
-[![创建新的文件基于系统的 Web 站点](creating-a-data-access-layer-cs/_static/image2.png)](creating-a-data-access-layer-cs/_static/image1.png)
+[![Create New File System-Based 网站](creating-a-data-access-layer-cs/_static/image2.png)](creating-a-data-access-layer-cs/_static/image1.png)
 
 **图 1**:创建 New File System-Based 网站 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image3.png))
 
@@ -92,7 +92,7 @@ ms.locfileid: "57037844"
 我们将使用这些教程的体系结构的强类型化数据集。 图 3 说明了使用类型化数据集的应用程序的不同层之间的工作流。
 
 
-[![所有数据访问代码都交付给 DAL](creating-a-data-access-layer-cs/_static/image6.png)](creating-a-data-access-layer-cs/_static/image5.png)
+[![A数据访问代码交付给 DAL ll](creating-a-data-access-layer-cs/_static/image6.png)](creating-a-data-access-layer-cs/_static/image5.png)
 
 **图 3**:所有数据访问代码都交付给 DAL ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image7.png))
 
@@ -102,7 +102,7 @@ ms.locfileid: "57037844"
 若要开始创建 DAL，我们先将类型化数据集添加到我们的项目。 若要完成此操作，右键单击解决方案资源管理器中的项目节点并选择新项添加。 从模板列表中选择数据集选项并将其命名**Northwind.xsd**。
 
 
-[![选择将新的数据集添加到你的项目](creating-a-data-access-layer-cs/_static/image9.png)](creating-a-data-access-layer-cs/_static/image8.png)
+[![C若要将新的数据集添加到你的项目的选择](creating-a-data-access-layer-cs/_static/image9.png)](creating-a-data-access-layer-cs/_static/image8.png)
 
 **图 4**:选择将新的数据集添加到您的项目 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image10.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "57037844"
 TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉列表显示了在服务器资源管理器中的这些数据库。 如果您没有到服务器资源管理器添加 Northwind 数据库，可以在此时间为此，单击新建连接按钮。
 
 
-[![从下拉列表中选择 Northwind 数据库](creating-a-data-access-layer-cs/_static/image12.png)](creating-a-data-access-layer-cs/_static/image11.png)
+[![C选择下拉列表从 Northwind 数据库](creating-a-data-access-layer-cs/_static/image12.png)](creating-a-data-access-layer-cs/_static/image11.png)
 
 **图 5**:从下拉列表中选择 Northwind 数据库 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image13.png))
 
@@ -124,7 +124,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 选择数据库并单击下一步之后, 您将要求你想要保存连接字符串中的**Web.config**文件。 通过将保存的连接字符串将避免必须硬编码在 TableAdapter 类中，这样可以简化操作，如果连接字符串信息在将来发生更改。 如果选择将连接字符串保存在配置文件中将被放置在 **&lt;connectionStrings&gt;** 部分中，可以是[（可选） 加密](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)以改进安全或更高版本通过新的 ASP.NET 2.0 属性页内 IIS GUI 管理工具的说明进行操作，这是更适合管理员已修改。
 
 
-[![将连接字符串保存到 Web.config](creating-a-data-access-layer-cs/_static/image15.png)](creating-a-data-access-layer-cs/_static/image14.png)
+[![S保存到 Web.config 连接字符串](creating-a-data-access-layer-cs/_static/image15.png)](creating-a-data-access-layer-cs/_static/image14.png)
 
 **图 6**:保存到的连接字符串**Web.config** ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image16.png))
 
@@ -134,7 +134,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 若要开始定义我们首先必须指示我们想要发出查询的 TableAdapter 的 SQL 查询。 我们可以使用临时 SQL 语句，创建新的存储的过程，或使用现有的存储的过程。 对于这些教程中，我们将使用的临时 SQL 语句。 请参阅[Brian Noyes](http://briannoyes.net/)的文章[与 Visual Studio 2005 数据集设计器将数据访问层构建](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)有关使用存储的过程的示例。
 
 
-[![查询使用的临时 SQL 语句的数据](creating-a-data-access-layer-cs/_static/image18.png)](creating-a-data-access-layer-cs/_static/image17.png)
+[![Query 使用的临时 SQL 语句的数据](creating-a-data-access-layer-cs/_static/image18.png)](creating-a-data-access-layer-cs/_static/image17.png)
 
 **图 7**:查询使用的临时 SQL 语句的数据 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image19.png))
 
@@ -142,7 +142,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 现在我们可以在 SQL 查询中手动键入。 当在 TableAdapter 中创建第一种方法通常想要让查询返回这些列需要在相应的 DataTable 中表达的。 我们可以通过创建返回所有列和中的所有行的查询来实现此目的**产品**表：
 
 
-[![在文本框中输入 SQL 查询](creating-a-data-access-layer-cs/_static/image21.png)](creating-a-data-access-layer-cs/_static/image20.png)
+[![Enter SQL 查询到文本框中](creating-a-data-access-layer-cs/_static/image21.png)](creating-a-data-access-layer-cs/_static/image20.png)
 
 **图 8**:输入 SQL 查询到文本框 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image22.png))
 
@@ -150,7 +150,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 或者，使用查询生成器，并以图形方式构造查询，如图 9 中所示。
 
 
-[![通过查询编辑器中以图形方式创建查询](creating-a-data-access-layer-cs/_static/image24.png)](creating-a-data-access-layer-cs/_static/image23.png)
+[![C创建查询以图形方式，通过查询编辑器](creating-a-data-access-layer-cs/_static/image24.png)](creating-a-data-access-layer-cs/_static/image23.png)
 
 **图 9**:创建查询以图形方式，通过查询编辑器中 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image25.png))
 
@@ -158,7 +158,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 在创建查询，然后再移到下一个屏幕上，单击高级选项按钮。 在网站项目中，"生成 Insert、 Update 和 Delete 语句"是唯一一种高级选项选择默认设置。如果从类库或 Windows 项目运行此向导还将选择"使用开放式并发"选项。 现在将"使用开放式并发"选项保留未选中状态。 在将来的教程中，我们将介绍乐观并发。
 
 
-[![选择仅生成 Insert、 Update 和 Delete 语句选项](creating-a-data-access-layer-cs/_static/image27.png)](creating-a-data-access-layer-cs/_static/image26.png)
+[![S选择仅生成 Insert、 Update 和 Delete 语句选项](creating-a-data-access-layer-cs/_static/image27.png)](creating-a-data-access-layer-cs/_static/image26.png)
 
 **图 10**:选择仅生成 Insert、 Update 和 Delete 语句选项 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image28.png))
 
@@ -173,7 +173,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 最后一个复选框，"GenerateDBDirectMethods，"如果选中，创建**insert （)**， **update （)**，并**delete （)** TableAdapter 的方法。 如果选中此选项，所有更新将都需要通过 TableAdapter 的唯一 **update （)** 方法，后者采用在类型化数据集、 数据表、 单个数据行或返回数据行的数组。 (如果已在图 9 中的高级属性中此复选框未选中"生成 Insert、 Update 和 Delete 语句"选项设置不起作用。)我们将保留选中此复选框。
 
 
-[![GetData 方法名称更改为 GetProducts](creating-a-data-access-layer-cs/_static/image30.png)](creating-a-data-access-layer-cs/_static/image29.png)
+[![C更改到 GetProducts 从 GetData 方法名称](creating-a-data-access-layer-cs/_static/image30.png)](creating-a-data-access-layer-cs/_static/image29.png)
 
 **图 11**:将方法名称由**GetData**到**GetProducts** ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image31.png))
 
@@ -181,7 +181,7 @@ TableAdapter 配置向导会首先提示您选择要使用的数据库。 下拉
 单击完成完成向导。 在向导关闭后我们将返回到数据集设计器，其中显示我们刚刚创建的 DataTable。 可以看到列表中的列**产品**DataTable (**ProductID**， **ProductName**，等等)，以及的方法**ProductsTableAdapter** (**Fill()** 并**GetProducts()**)。
 
 
-[![产品数据表和 ProductsTableAdapter 已添加到类型化数据集](creating-a-data-access-layer-cs/_static/image33.png)](creating-a-data-access-layer-cs/_static/image32.png)
+[![T他产品 DataTable 和 ProductsTableAdapter 已添加到类型化数据集](creating-a-data-access-layer-cs/_static/image33.png)](creating-a-data-access-layer-cs/_static/image32.png)
 
 **图 12**:**产品**DataTable 并**ProductsTableAdapter**已添加到类型化数据集 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image34.png))
 
@@ -203,7 +203,7 @@ AllProducts.aspx.cs
 [!code-csharp[Main](creating-a-data-access-layer-cs/samples/sample3.cs)]
 
 
-[![在 GridView 中显示的产品列表](creating-a-data-access-layer-cs/_static/image36.png)](creating-a-data-access-layer-cs/_static/image35.png)
+[![T在 GridView 中显示他的产品列表](creating-a-data-access-layer-cs/_static/image36.png)](creating-a-data-access-layer-cs/_static/image35.png)
 
 **图 13**:在 GridView 中显示的产品列表 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image37.png))
 
@@ -225,7 +225,7 @@ AllProducts.aspx.cs
 我们首先提示您有关是否要使用的临时 SQL 语句或新的或现有的存储的过程访问数据库。 让我们选择使用同样的临时 SQL 语句。 接下来，我们会要求我们要使用哪些类型的 SQL 查询。 由于我们要返回属于指定类别的所有产品，因此我们想要编写**选择**语句返回的行。
 
 
-[![选择创建的 SELECT 语句返回的行](creating-a-data-access-layer-cs/_static/image40.png)](creating-a-data-access-layer-cs/_static/image39.png)
+[![C若要创建选择语句的返回行的选择](creating-a-data-access-layer-cs/_static/image40.png)](creating-a-data-access-layer-cs/_static/image39.png)
 
 **图 15**:选择创建**选择**语句的返回行 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image41.png))
 
@@ -233,7 +233,7 @@ AllProducts.aspx.cs
 下一步是定义用于访问数据的 SQL 查询。 由于我们要返回属于特定类别的那些产品，因此我将使用相同<strong>选择</strong>从语句<strong>GetProducts()</strong>，但将添加以下<strong>其中</strong>子句：<strong>其中 CategoryID = @CategoryID</strong> 。 <strong>@CategoryID</strong>参数到 TableAdapter 向导指示我们要创建的方法，将需要输入的参数的相应类型 （也就是说，可以为 null 的整数）。
 
 
-[![输入查询以仅返回在指定的类别中的产品](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
+[![Enter 对仅返回产品指定类别中的查询](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
 
 **图 16**:输入查询以仅返回产品中指定的类别 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image44.png))
 
@@ -241,7 +241,7 @@ AllProducts.aspx.cs
 在最后一步我们可以选择一种数据访问模式来使用，以及自定义生成的方法的名称。 用于填充图案，让我们将名称更改为<strong>FillByCategoryID</strong> ，并返回数据表返回模式 (<strong>获取*X</strong>* 方法)，让我们使用<strong>GetProductsByCategoryID</strong>。
 
 
-[![选择的 TableAdapter 方法的名称](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
+[![C选择的 TableAdapter 方法的名称](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
 
 **图 17**:选择的 TableAdapter 方法的名称 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image47.png))
 
@@ -259,7 +259,7 @@ AllProducts.aspx.cs
 这些参数化的查询可以直接从数据集设计器进行测试。 右键单击 TableAdapter 中的方法，并选择预览数据。 接下来，输入要使用的参数，并单击预览的值。
 
 
-[![显示这些产品属于饮料类别](creating-a-data-access-layer-cs/_static/image50.png)](creating-a-data-access-layer-cs/_static/image49.png)
+[![T显示软管饮料类别的产品属于](creating-a-data-access-layer-cs/_static/image50.png)](creating-a-data-access-layer-cs/_static/image49.png)
 
 **图 19**:显示这些产品属于饮料类别 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image51.png))
 
@@ -275,7 +275,7 @@ Beverages.aspx.cs
 [!code-csharp[Main](creating-a-data-access-layer-cs/samples/sample5.cs)]
 
 
-[![显示饮料类别中的这些产品](creating-a-data-access-layer-cs/_static/image53.png)](creating-a-data-access-layer-cs/_static/image52.png)
+[![T显示软管饮料类别中的产品](creating-a-data-access-layer-cs/_static/image53.png)](creating-a-data-access-layer-cs/_static/image52.png)
 
 **图 20**:显示饮料类别中的这些产品 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image54.png))
 
@@ -285,7 +285,7 @@ Beverages.aspx.cs
 有两种模式通常用于插入、 更新和删除数据。 第一种模式，我将其称为数据库直接模式，包括创建方法，调用时，问题**插入**，**更新**，或**删除**命令对一条数据库记录的数据库。 若要插入、 更新或删除的值中，此类方法中的一系列相对应的标量值 （整数、 字符串、 布尔值、 Datetime，等） 通常传递。 例如，对于这种模式**产品**delete 方法需要整数参数中的表，该值指示**ProductID**要删除的记录，而 insert 方法将需要字符串为**ProductName**、 十进制用于**UnitPrice**，为一个整数**UnitsOnStock**，依次类推。
 
 
-[![每个插入、 更新和删除请求发送到数据库立即](creating-a-data-access-layer-cs/_static/image56.png)](creating-a-data-access-layer-cs/_static/image55.png)
+[![E支票插入、 更新和删除请求发送到数据库立即](creating-a-data-access-layer-cs/_static/image56.png)](creating-a-data-access-layer-cs/_static/image55.png)
 
 **图 21**:每个插入、 更新和删除请求发送到数据库立即 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image57.png))
 
@@ -293,7 +293,7 @@ Beverages.aspx.cs
 其他模式，我将引用作为批更新模式，这是更新整个数据集、 DataTable 或 Datarow 的一种方法调用中的集合。 此模式与开发人员删除、 插入、 和修改数据表中的数据行，然后将这些数据行或 DataTable 传递给 update 方法。 此方法然后枚举传递中对 Datarow，确定是否它们已被修改、 添加或删除 (通过 DataRow [RowState 属性](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx)值)，并发出相应的数据库请求，每个记录。
 
 
-[![调用 Update 方法时，所有更改将与数据库都同步](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
+[![A调用的 ll 更改将同步数据库时 Update 方法使用](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
 
 **图 22**:调用 Update 方法时，所有更改将与数据库都同步 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image60.png))
 
@@ -303,7 +303,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 这两种数据修改模式使用 TableAdapter **InsertCommand**， **UpdateCommand**，和**DeleteCommand**属性来颁发其**插入**，**更新**，和**删除**命令到数据库。 可以检查和修改**InsertCommand**， **UpdateCommand**，并**DeleteCommand**单击数据集设计器中对 tableadapter，然后将属性到属性窗口中。 (请确保已选择 TableAdapter，并且**ProductsTableAdapter**对象是在属性窗口中的下拉列表中选择。)
 
 
-[![TableAdapter 具有 InsertCommand、 UpdateCommand 和 DeleteCommand 属性](creating-a-data-access-layer-cs/_static/image62.png)](creating-a-data-access-layer-cs/_static/image61.png)
+[![T他 TableAdapter 具有 InsertCommand、 UpdateCommand 和 DeleteCommand 属性](creating-a-data-access-layer-cs/_static/image62.png)](creating-a-data-access-layer-cs/_static/image61.png)
 
 **图 23**:Tableadapter **InsertCommand**， **UpdateCommand**，并**DeleteCommand**属性 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image63.png))
 
@@ -311,7 +311,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 若要检查或修改任何这些数据库命令属性，单击**CommandText**子属性，这将显示查询生成器。
 
 
-[![在查询生成器中配置 INSERT、 UPDATE 和 DELETE 语句](creating-a-data-access-layer-cs/_static/image65.png)](creating-a-data-access-layer-cs/_static/image64.png)
+[![C配置插入、 更新和删除语句中查询生成器](creating-a-data-access-layer-cs/_static/image65.png)](creating-a-data-access-layer-cs/_static/image64.png)
 
 **图 24**:配置**插入**，**更新**，并**删除**查询生成器中的语句 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image66.png))
 
@@ -331,7 +331,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 若要创建此类自定义的方法，返回到数据集设计器。 右键单击 TableAdapter，然后选择添加的查询，返回到 TableAdapter 向导。 在第二个屏幕上我们可以指示要创建查询的类型。 让我们创建的方法添加一个新产品，然后返回新添加的记录的值**ProductID**。 因此，选择创建**插入**查询。
 
 
-[![创建一个方法用于将新行添加到产品表](creating-a-data-access-layer-cs/_static/image68.png)](creating-a-data-access-layer-cs/_static/image67.png)
+[![C创建用于将新行添加到产品表的方法](creating-a-data-access-layer-cs/_static/image68.png)](creating-a-data-access-layer-cs/_static/image67.png)
 
 **图 25**:创建一个方法来向其中添加新行**产品**表 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image69.png))
 
@@ -339,7 +339,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 在下一个屏幕**InsertCommand**的**CommandText**出现。 通过此查询添加来扩充**选择作用域\_IDENTITY()** 在查询结束时，这将返回插入到的最后一个标识值**标识**同一作用域中的列。 (请参阅[技术文档](https://msdn.microsoft.com/library/ms190315.aspx)有关详细信息**作用域\_IDENTITY()** 以及为什么你可能希望对[使用作用域\_IDENTITY() 替代 @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).)请确保您最终**插入**之前添加语句以分号**选择**语句。
 
 
-[![增加要返回 scope_identity （） 值的查询](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
+[![Augment 查询以返回 scope_identity （） 值](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
 
 **图 26**:增强对返回的查询**作用域\_IDENTITY()** 值 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image72.png))
 
@@ -347,7 +347,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 最后，将该新方法**InsertProduct**。
 
 
-[![将新的方法名称设置为 InsertProduct](creating-a-data-access-layer-cs/_static/image74.png)](creating-a-data-access-layer-cs/_static/image73.png)
+[![Set InsertProduct 到新的方法名称](creating-a-data-access-layer-cs/_static/image74.png)](creating-a-data-access-layer-cs/_static/image73.png)
 
 **图 27**:将新的方法名称设置为**InsertProduct** ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image75.png))
 
@@ -357,7 +357,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 默认情况下，insert 方法问题非查询方法，这意味着它们返回受影响的行数。 但是，我们想**InsertProduct**方法以返回由查询不受影响的行数返回的值。 若要实现此目的，调整**InsertProduct**方法的**ExecuteMode**属性设置为**标量**。
 
 
-[![ExecuteMode 属性更改为标量](creating-a-data-access-layer-cs/_static/image77.png)](creating-a-data-access-layer-cs/_static/image76.png)
+[![C更改到标量 ExecuteMode 属性](creating-a-data-access-layer-cs/_static/image77.png)](creating-a-data-access-layer-cs/_static/image76.png)
 
 **图 28**:更改**ExecuteMode**属性设置为**标量**([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image78.png))
 
@@ -375,7 +375,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample9.sql)]
 
 
-[![SELECT 语句更新 GetProducts() 方法](creating-a-data-access-layer-cs/_static/image80.png)](creating-a-data-access-layer-cs/_static/image79.png)
+[![Update GetProducts() 方法的选择语句](creating-a-data-access-layer-cs/_static/image80.png)](creating-a-data-access-layer-cs/_static/image79.png)
 
 **图 29**:更新**选择**语句**GetProducts()** 方法 ([单击以查看实际尺寸的图像](creating-a-data-access-layer-cs/_static/image81.png))
 
@@ -444,7 +444,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
       [!code-sql[Main](creating-a-data-access-layer-cs/samples/sample21.sql)]
 
 
-[![数据集设计器后已添加四个 Tableadapter](creating-a-data-access-layer-cs/_static/image84.png)](creating-a-data-access-layer-cs/_static/image83.png)
+[![T他数据集设计器后四个 Tableadapter 添加](creating-a-data-access-layer-cs/_static/image84.png)](creating-a-data-access-layer-cs/_static/image83.png)
 
 **图 31**:数据集设计器后四个 Tableadapter 已添加 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image85.png))
 
@@ -454,7 +454,7 @@ TableAdapter 默认情况下，使用批更新模式，但也支持 DB 直接模
 将 Tableadapter 和数据表添加到类型化数据集表示为 XML 架构定义文件 (**Northwind.xsd**)。 可以通过右键单击查看此架构信息**Northwind.xsd**文件在解决方案资源管理器中，并选择查看代码。
 
 
-[![Northwinds 的 XML 架构定义 (XSD) 文件类型化数据集](creating-a-data-access-layer-cs/_static/image87.png)](creating-a-data-access-layer-cs/_static/image86.png)
+[![T他 Northwinds 类型化数据集的 XML 架构定义 (XSD) 文件](creating-a-data-access-layer-cs/_static/image87.png)](creating-a-data-access-layer-cs/_static/image86.png)
 
 **图 32**:Northwinds 类型化数据集的 XML 架构定义 (XSD) 文件 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image88.png))
 
@@ -501,7 +501,7 @@ SuppliersAndProducts.aspx.cs
 [!code-csharp[Main](creating-a-data-access-layer-cs/samples/sample25.cs)]
 
 
-[![在左侧列中，在右侧及其产品列出供应商的公司名称](creating-a-data-access-layer-cs/_static/image92.png)](creating-a-data-access-layer-cs/_static/image91.png)
+[![T在左侧列中，在右侧及其产品列出他供应商的公司名称](creating-a-data-access-layer-cs/_static/image92.png)](creating-a-data-access-layer-cs/_static/image91.png)
 
 **图 35**:在左侧列中，在右侧及其产品列出供应商的公司名称 ([单击此项可查看原尺寸图像](creating-a-data-access-layer-cs/_static/image93.png))
 
@@ -541,4 +541,4 @@ SuppliersAndProducts.aspx.cs
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Ron 绿色、 Hilton Giesenow、 Dennis Patterson、 Liz Shulok，Abel Gomez 和 Carlos Santos。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](creating-a-business-logic-layer-cs.md)
+> [下一步](creating-a-business-logic-layer-cs.md)

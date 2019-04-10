@@ -8,15 +8,15 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 54d86de49bf61305b17fc80964723c518abd467b
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 874542305bd3f47066cfae595919285ed079aa53
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423242"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421064"
 ---
-<a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验：Visual Studio 2013 Web 工具
-====================
+# <a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验：Visual Studio 2013 Web 工具
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 [下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
@@ -74,7 +74,7 @@ ms.locfileid: "58423242"
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>练习
@@ -511,7 +511,7 @@ Web Essentials 2013，样式表和 HTML 页面生成 Id 和类名称的列表。
 
     *视图中包含的音频播放器*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

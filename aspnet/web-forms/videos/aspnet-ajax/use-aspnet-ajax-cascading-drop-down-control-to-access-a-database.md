@@ -8,15 +8,15 @@ ms.date: 03/13/2008
 ms.assetid: 3c21fefc-6858-40e1-8307-22f68cbd0e31
 msc.legacyurl: /web-forms/videos/aspnet-ajax/use-aspnet-ajax-cascading-drop-down-control-to-access-a-database
 msc.type: video
-ms.openlocfilehash: aa81898f3277722150dd4f08cc343ca06ce37854
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: be8cc54920a7c74b162aac8a809d8eaf8f2be08e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036334"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418100"
 ---
-<a name="use-aspnet-ajax-cascading-drop-down-control-to-access-a-database"></a>使用 ASP.NET AJAX 级联下拉列表控件访问数据库
-====================
+# <a name="use-aspnet-ajax-cascading-drop-down-control-to-access-a-database"></a>使用 ASP.NET AJAX 级联下拉列表控件访问数据库
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 此视频演示如何 ASP。NET 的标准 DropDownList 会启用 AJAX 的使用 CascadingDropDown 控件扩展程序从 ASP.NET AJAX 控件工具包。 此外将看到 web 窗体以从数据库中提取数据是多么容易。

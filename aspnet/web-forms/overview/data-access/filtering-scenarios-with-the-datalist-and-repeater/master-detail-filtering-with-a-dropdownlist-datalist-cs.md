@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 07fa47ae-e491-4a2f-b265-d342b9ddef46
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 13627c502d00ee67aeb873a6a4a58e3d74377fba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d6b5c234c8d0da5500ecf554c5e23cb52e94f411
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053754"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421844"
 ---
-<a name="masterdetail-filtering-with-a-dropdownlist-c"></a>使用一个 DropDownList 实现母版/详细信息筛选 (C#)
-====================
+# <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>使用一个 DropDownList 实现母版/详细信息筛选 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_33_CS.exe)或[下载 PDF](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/datatutorial33cs1.pdf)
@@ -49,7 +49,7 @@ ms.locfileid: "57053754"
 接下来，打开`Default.aspx`页上，并将其拖`SectionLevelTutorialListing.ascx`从用户控制`UserControls`文件夹拖到设计图面。 此用户控件，我们在中创建[母版页和站点导航](../introduction/master-pages-and-site-navigation-cs.md)教程中，枚举站点图，并从项目符号列表中的当前部分显示这些教程。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image2.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image2.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image4.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "57053754"
 我们的母版/详细信息报表将列出与所选的列表项的产品显示在下拉列表中，类别后面 DataList 中的页。 然后，领先于我们的第一个任务是已在 DropDownList 中显示的类别。 首先打开`FilterByDropDownList.aspx`页中`DataListRepeaterFiltering`文件夹，然后从工具箱拖动到页面的设计器将 DropDownList。 接下来，设置 DropDownList`ID`属性设置为`Categories`。 单击选择数据源链接从 DropDownList 的智能标记并创建名为新 ObjectDataSource `CategoriesDataSource`。
 
 
-[![添加名为 CategoriesDataSource 新 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image6.png)
+[![Add 新对象数据源名为 CategoriesDataSource](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image6.png)
 
 **图 4**:添加新对象数据源名为`CategoriesDataSource`([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image8.png))
 
@@ -77,7 +77,7 @@ ms.locfileid: "57053754"
 配置新对象数据源，以便它将调用`CategoriesBLL`类的`GetCategories()`方法。 配置的 ObjectDataSource 我们仍然需要指定应在 DropDownList 中显示哪些数据源字段和后一个应为每个列表项的值相关联。 具有`CategoryName`字段与显示和`CategoryID`为每个列表项的值。
 
 
-[![作为值的类别名称字段和使用 CategoryID 使 DropDownList 显示](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image9.png)
+[![Have DropDownList 的值显示的类别名称字段和使用 CategoryID](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image9.png)
 
 **图 5**:使 DropDownList 显示`CategoryName`字段并使用`CategoryID`作为值 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image11.png))
 
@@ -85,7 +85,7 @@ ms.locfileid: "57053754"
 现在我们有从记录将填充 DropDownList 控件`Categories`表 （全部在大约六秒钟内完成）。 图 6 显示了我们到目前为止的浏览器查看时。
 
 
-[![下拉列表列出了当前类别](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image12.png)
+[![A 下拉列表列出了当前类别](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image12.png)
 
 **图 6**:下拉列表列出了当前类别 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image14.png))
 
@@ -95,7 +95,7 @@ ms.locfileid: "57053754"
 我们的母版/详细信息报表的最后一步是列出与所选类别关联的产品。 若要实现此目的，向页面添加 DataList 并创建名为新 ObjectDataSource `ProductsByCategoryDataSource`。 具有`ProductsByCategoryDataSource`控件检索其数据从`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 由于此母版/详细信息报表是只读的选择 (None) 选项中的 INSERT、 UPDATE 和 DELETE 的选项卡。
 
 
-[![选择 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image15.png)
+[![S选择 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image15.png)
 
 **图 7**:选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "57053754"
 单击下一步后, ObjectDataSource 向导提示我们输入的值的源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
 
 
-[![将类别 id 参数设置为 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
+[![Set categoryID 参数到 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
 **图 8**:设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
@@ -119,12 +119,12 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 图 9 和 10 说明了操作中的母版/详细信息报表。
 
 
-[![当首次访问的页面，显示饮料产品](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image21.png)
+[![W显示的页、 饮料产品的第一个访问 hen](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image21.png)
 
 **图 9**:当首次访问的页面，显示饮料产品 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image23.png))
 
 
-[![选择一种新产品 （生成） 将自动导致回发，更新 DataList](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image24.png)
+[![S选择新产品 （生成） 会自动导致回发时，更新 DataList](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image24.png)
 
 **图 10**:选择一种新产品 （生成） 将自动导致回发，更新 DataList ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image26.png))
 
@@ -156,7 +156,7 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 因此我们选择了值`0`对于"--选择一个类别-"列表项都是因为值为系统中不有任何类别`0`，因此任何产品记录时，将返回选定了"--选择一个类别-"的列表项。 若要确认这一点，请花费片刻时间访问通过浏览器页面。 如图 13 所示，当最初查看页上选定了"--选择一个类别-"的列表项并不显示任何产品。
 
 
-[![时](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image29.png)
+[![When](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image29.png)
 
 **图 13**:无产品时选择"--选择一个类别-"列表项时，会显示 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
@@ -180,4 +180,4 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Randy Schmidt。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](master-detail-filtering-acess-two-pages-datalist-cs.md)
+> [下一步](master-detail-filtering-acess-two-pages-datalist-cs.md)

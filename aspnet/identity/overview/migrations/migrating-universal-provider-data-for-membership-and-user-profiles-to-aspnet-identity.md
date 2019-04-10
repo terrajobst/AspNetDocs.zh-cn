@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
-title: 将通用提供程序的数据迁移的成员身份和用户配置文件到 ASP.NET 标识 (C#) |Microsoft Docs
+title: 成员身份和用户配置文件到 ASP.NET 标识迁移通用提供程序数据 (C#)-ASP.NET 4.x
 author: rustd
 description: 本教程中介绍的步骤所需迁移用户和角色的数据和创建使用现有应用的通用提供程序的用户配置文件数据...
 ms.author: riande
 ms.date: 12/13/2013
+ms.custom: seoapril2019
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: a91bb6ac51819d7dbb8eb3c63bd36a9d830eecce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1043dce4cdd62f94ae9d2344a9301c1b03426f3d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058454"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422260"
 ---
-<a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>将成员身份和用户配置文件的通用提供程序数据迁移到 ASP.NET Identity (C#)
-====================
+# <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>将成员身份和用户配置文件的通用提供程序数据迁移到 ASP.NET Identity (C#)
+
 通过[Pranav rastogi 撰写](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Robert McMurray](https://github.com/rmcmurray)， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程介绍所需迁移用户和角色的数据和创建使用现有的应用程序到 ASP.NET 标识模型的通用提供程序的用户配置文件数据的步骤。 迁移用户配置文件数据可在具有 SQL 成员身份的应用程序，此处提及的方法。

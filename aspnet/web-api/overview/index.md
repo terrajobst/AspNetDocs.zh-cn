@@ -1,29 +1,30 @@
 ---
 uid: web-api/overview/index
-title: Web API 指南 |Microsoft Docs
+title: Web API Guidance - ASP.NET 4.x
 author: rick-anderson
-description: ''
+description: ASP.NET Web API 指南列表 asp.net 4.x
 ms.author: riande
 ms.date: 01/17/2012
+ms.custom: seoapril2019
 ms.assetid: daca6735-b5d3-4ef5-af33-ee682926238b
 msc.legacyurl: /web-api/overview
 msc.type: book
-ms.openlocfilehash: 3246bdc946ad862a0fa1c03f69d4a4f1d067e24c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 304c0d71e5e18f9d3f0768464fe39d6e6946600d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422897"
 ---
-<a name="web-api-guidance"></a>Web API 指南
-====================
+# <a name="web-api-guidance"></a>Web API 指南
+
 - [入门](getting-started-with-aspnet-web-api/index.md)
 
     - [Web API 2 入门 (C#)](getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
     - [Web API 2 的操作结果](getting-started-with-aspnet-web-api/action-results.md)
     - [向 ASP.NET Web 窗体使用 Web API](getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
     - [创建 Web API 帮助页](getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-    - [动手实验：生成使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+    - [动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 - [路由](web-api-routing-and-actions/index.md)
 
     - [Web API 中的路由](web-api-routing-and-actions/routing-in-aspnet-web-api.md)
@@ -93,7 +94,7 @@ ms.locfileid: "57023394"
     - [Web API 中的身份验证和授权](security/authentication-and-authorization-in-aspnet-web-api.md)
     - [在 Web API 2.2 中使用单独的帐户保护 Web API](security/individual-accounts-in-web-api.md)
     - [使用 Web API 的外部身份验证服务 (C#)](security/external-authentication-services.md)
-    - [在 Web API 中抵御跨站点请求伪造攻击 (CSRF)](security/preventing-cross-site-request-forgery-csrf-attacks.md)
+    - [在 Web API 中抵御跨站点请求伪造 (CSRF) 攻击](security/preventing-cross-site-request-forgery-csrf-attacks.md)
     - [在 Web API 2 中启用跨域请求](security/enabling-cross-origin-requests-in-web-api.md)
     - [Web API 2 中的身份验证筛选器](security/authentication-filters.md)
     - [Web API 中的基本身份验证](security/basic-authentication.md)
@@ -111,8 +112,8 @@ ms.locfileid: "57023394"
     - [从 .NET 客户端调用 Web API (C#)](advanced/calling-a-web-api-from-a-net-client.md)
     - [Web API 中的 HTTP 消息处理程序](advanced/http-message-handlers.md)
     - [Web API 中的 HTTPClient 消息处理程序](advanced/httpclient-message-handlers.md)
-    - [Web API 中发送 HTML 窗体数据：窗体 url 编码的数据](advanced/sending-html-form-data-part-1.md)
-    - [Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](advanced/sending-html-form-data-part-2.md)
+    - [在 Web API 中发送 HTML 窗体数据：窗体 URL 编码的数据](advanced/sending-html-form-data-part-1.md)
+    - [在 Web API 中发送 HTML 窗体数据：文件上载和多部分 MIME](advanced/sending-html-form-data-part-2.md)
     - [ASP.NET Web API 中的 HTTP Cookie](advanced/http-cookies.md)
 - [发布](releases/index.md)
 

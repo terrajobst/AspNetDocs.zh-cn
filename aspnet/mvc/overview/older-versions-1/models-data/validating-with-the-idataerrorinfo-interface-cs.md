@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b80535db32c4567135407aeb99967bb40c279ddb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3e1399d17840a2f5301349cb91deb07b0cc34363
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025334"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421974"
 ---
-<a name="validating-with-the-idataerrorinfo-interface-c"></a>使用 IDataErrorInfo 接口进行验证 (C#)
-====================
+# <a name="validating-with-the-idataerrorinfo-interface-c"></a>使用 IDataErrorInfo 接口进行验证 (C#)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 演示了如何通过在 model 类中实现 IDataErrorInfo 接口显示自定义验证错误消息。
@@ -31,7 +31,7 @@ ms.locfileid: "57025334"
 <a id="0.5_table01"></a>
 
 
-| **列名称** | **数据类型** | **允许 null 值** |
+| **列名** | **数据类型** | **允许为 Null** |
 | --- | --- | --- |
 | Id | Int | False |
 | 标题 | Nvarchar(100) | False |
@@ -42,7 +42,7 @@ ms.locfileid: "57025334"
 在本教程中，我可以使用 Microsoft 实体框架来生成我的数据库模型类。 实体框架生成的 Movie 类显示在图 1 中。
 
 
-[![电影实体](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
+[![T他的电影实体](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
 
 **图 01**:电影实体 ([单击此项可查看原尺寸图像](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
 
@@ -73,7 +73,7 @@ ms.locfileid: "57025334"
 由实体框架生成的 Movie 类。 展开解决方案资源管理器窗口中的 MoviesDBModel.edmx 文件并在代码编辑器中打开 MoviesDBModel.Designer.cs 文件访问时，可以看到 Movie 类的代码 （请参见图 2）。
 
 
-[![电影实体的代码](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
+[![T他的电影实体代码](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
 
 **图 02**:电影实体的代码 ([单击此项可查看原尺寸图像](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
 
@@ -147,7 +147,7 @@ DefaultModelBinder 还会检查 IDataErrorInfo.Error 属性。 此属性用于�
 不需要修改主控制器，以任何方式使用修改后的 Movie 类。 图 3 中显示的页说明了当标题或总监窗体字段中不输入任何值时，会发生什么情况。
 
 
-[![自动创建的操作方法](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
+[![C操作方法自动](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
 
 **图 03**:具有缺失值的窗体 ([单击此项可查看原尺寸图像](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
 

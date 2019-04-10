@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
-title: ASP.NET Web API 2 中的路由约定 Odata |Microsoft Docs
+title: ASP.NET Web API 2 中的路由约定 Odata 的 ASP.NET 4.x
 author: MikeWasson
-description: 本文介绍 Web API 使用的 OData 终结点的路由约定。
+description: 描述该 Web API 2 中的 OData 终结点的 ASP.NET 4.x 使用路由约定。
 ms.author: riande
 ms.date: 07/31/2013
+ms.custom: seoapril2019
 ms.assetid: adbc175a-14eb-4ab2-a441-d056ffa8266f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
-ms.openlocfilehash: 0199ccde100c8c3ab70db912b8ab984e0617f9dd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8916f8b7a024636be1be055457081487f46a7936
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027114"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421623"
 ---
-<a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由约定 Odata
-====================
+# <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由约定 Odata
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-> 本文介绍 Web API 使用的 OData 终结点的路由约定。
+> 本文介绍的路由约定中的 OData 终结点的 ASP.NET 4.x 使用该 Web API 2。
 
 
 当 Web API 获取 OData 请求时，但它会将请求映射到控制器名称和操作名称。 映射为基础的 HTTP 方法和 URI。 例如，`GET /odata/Products(1)`映射到`ProductsController.GetProduct`。

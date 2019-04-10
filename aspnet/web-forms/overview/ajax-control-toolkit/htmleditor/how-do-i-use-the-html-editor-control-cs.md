@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: f47e6224-c2e5-4472-b069-b6c7b6115200
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7bd7c5a604c897ac6dce92123e9e7ae4157d3e0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8027a77ab3504848a28ce9bdc7779092b28759ce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037494"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421155"
 ---
-<a name="how-do-i-use-the-html-editor-control-c"></a>如何使用 HTML 编辑器控件？ (C#)
-====================
+# <a name="how-do-i-use-the-html-editor-control-c"></a>如何使用 HTML 编辑器控件？ (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过按钮在工具栏中的 HTML 内容。
@@ -25,7 +25,7 @@ by [Microsoft](https://github.com/microsoft)
 本教程的目的是为你提供了 AJAX 控件工具包中包含的 HTML 编辑器控件的概述。 HTML 编辑器包含可用于更改字体大小、 选择一种字体、 更改背景色、 修改的前景色，选项添加链接，添加图像，更改文本对齐方式，并执行剪切、 复制和粘贴 （见图 1） 的操作。
 
 
-[![HTML 编辑器](how-do-i-use-the-html-editor-control-cs/_static/image1.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image1.png)
+[![T他 HTML 编辑器](how-do-i-use-the-html-editor-control-cs/_static/image1.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image1.png)
 
 **图 01**:HTML 编辑器 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-cs/_static/image2.png))
 
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 HTML 编辑器，您可以输入使用设计模式下的内容，也可以直接输入 HTML。 你还提供用于预览 HTML 内容的选项 （请参见图 2）。
 
 
-[![设计、 HTML 和预览按钮](how-do-i-use-the-html-editor-control-cs/_static/image2.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image3.png)
+[![Design，HTML，并预览按钮](how-do-i-use-the-html-editor-control-cs/_static/image2.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image3.png)
 
 **图 02**:设计、 HTML 和预览按钮 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-cs/_static/image4.png))
 
@@ -49,7 +49,7 @@ HTML 编辑器，您可以输入使用设计模式下的内容，也可以直接
 HTML 编辑器控件位于与其他 AJAX 控件工具包控件工具箱中。 它名为编辑器控件 （请参见图 3）。
 
 
-[![HTML 编辑器控件](how-do-i-use-the-html-editor-control-cs/_static/image3.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image5.png)
+[![T他 HTML 编辑器控件](how-do-i-use-the-html-editor-control-cs/_static/image3.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image5.png)
 
 **图 03**:HTML 编辑器控件 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-cs/_static/image6.png))
 
@@ -63,7 +63,7 @@ HTML 编辑器将拖到页后，你可以在属性表中设置其属性。 例�
 在列表 1 中的页包含的 HTML 编辑器控件、 一个按钮控件和文字控件。 当单击按钮时，内容的 HTML 编辑器中显示文本控件中 （请参阅图 4）。
 
 
-[![提交窗体使用 HTML 编辑器](how-do-i-use-the-html-editor-control-cs/_static/image4.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image7.png)
+[![Submitting 窗体使用 HTML 编辑器](how-do-i-use-the-html-editor-control-cs/_static/image4.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image7.png)
 
 **图 04**:提交窗体使用 HTML 编辑器 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-cs/_static/image8.png))
 
@@ -75,7 +75,7 @@ HTML 编辑器内容属性用于检索输入到 HTML 编辑器中的 HTML 内容
 你可以自定义完全的按钮出现在编辑器中。 例如，可能想要删除 HTML 选项卡以防止用户在 HTML 编辑器切换到 HTML 模式。 或者，可能想要删除字体大小下拉列表，以防止用户在论坛中创建过大文本 post 消息 （请参见图 5）。
 
 
-[![自定义 HTML 编辑器](how-do-i-use-the-html-editor-control-cs/_static/image5.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image9.png)
+[![A 自定义 HTML 编辑器](how-do-i-use-the-html-editor-control-cs/_static/image5.jpg)](how-do-i-use-the-html-editor-control-cs/_static/image9.png)
 
 **图 05**:一个自定义 HTML 编辑器 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-cs/_static/image10.png))
 
@@ -109,4 +109,4 @@ HTML 编辑器内容属性用于检索输入到 HTML 编辑器中的 HTML 内容
 在本教程中，你已提供了 AJAX 控件工具包中包含的 HTML 编辑器控件的简要概述。 您学习了如何使用 HTML 编辑器以接受来自用户的丰富内容并提交到服务器的内容。 我们还讨论了如何自定义工具栏按钮显示的 HTML 编辑器中。 最后，您学习了如何使用 HTML 编辑器接受潜在的恶意输入时，避免出现跨站点脚本攻击。
 
 > [!div class="step-by-step"]
-> [下一页](how-do-i-use-the-html-editor-control-vb.md)
+> [下一步](how-do-i-use-the-html-editor-control-vb.md)
