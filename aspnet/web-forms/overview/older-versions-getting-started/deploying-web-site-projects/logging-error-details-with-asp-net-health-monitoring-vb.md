@@ -8,15 +8,15 @@ ms.date: 06/09/2009
 ms.assetid: 09a6c74e-936a-4c04-8547-5bb313a4e4a3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f9aeeb0b3d21707324d239efad4deffcf0f7fead
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a9dd4268ef20b58b674f8ec8313132398fc5f19d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058684"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413121"
 ---
-<a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>ASP.NET 运行状况监视的日志记录错误详细信息 (VB)
-====================
+# <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>ASP.NET 运行状况监视的日志记录错误详细信息 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_VB.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_vb.pdf)
@@ -28,7 +28,7 @@ ms.locfileid: "57058684"
 
 日志记录是一个有用的工具用于监视部署的应用程序的运行状况和诊断可能会出现任何问题。 特别是，务必记录发生在已部署的应用程序中，以便它们可以纠正的错误。 `Error` ASP.NET 应用程序; 中出现未处理的异常时将引发事件[前面的教程](processing-unhandled-exceptions-vb.md)介绍了如何通知错误的开发人员并通过创建的事件处理程序记录其详细信息`Error`事件。 但是，创建`Error`事件处理程序来记录错误的详细信息并通知开发人员是不必要的因为可以由 ASP 执行此任务。NET 的*运行状况监控系统*。
 
-运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件*运行状况监视事件*或*Web 事件*，并且包括：
+运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件嘿 *运行状况监视事件*或*Web 事件*，并且包括：
 
 - 应用程序生存期事件，例如当应用程序启动或停止
 - 安全事件，其中包括登录尝试失败和失败的 URL 授权请求

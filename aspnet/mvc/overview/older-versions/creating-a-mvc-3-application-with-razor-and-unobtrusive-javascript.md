@@ -8,15 +8,15 @@ ms.date: 11/01/2010
 ms.assetid: 658b149b-d770-46bf-8b4b-4e47cca242f3
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: f60ca3e76fda8a18da1ad83e955e5e4759f5e3af
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 91c96cc413e63ad2fc160ffbb473c4f3e1ada3e4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053164"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401057"
 ---
-<a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>使用 Razor 和非介入性 JavaScript 创建 MVC 3 应用程序
-====================
+# <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>使用 Razor 和非介入性 JavaScript 创建 MVC 3 应用程序
+
 by [Microsoft](https://github.com/microsoft)
 
 > 用户列表示例 web 应用程序演示如何创建使用 Razor 视图引擎的 ASP.NET MVC 3 应用程序是多么简单。 示例应用程序演示如何使用 ASP.NET mvc 版本 3 的新 Razor 视图引擎和 Visual Studio 2010 创建一个虚构的用户列表网站，包括功能，例如创建、 显示、 编辑和删除用户。
@@ -36,7 +36,7 @@ by [Microsoft](https://github.com/microsoft)
 
 若要开始本教程，请打开 Visual Studio 2010 并创建新项目使用*ASP.NET MVC 3 Web 应用程序*模板。 该应用程序命名&quot;Mvc3Razor&quot;。
 
-[![新的 MVC 3 项目](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image3.png)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image2.png)
+[![N新 MVC 3 项目](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image3.png)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image2.png)
 
 在中**新的 ASP.NET MVC 3 项目**对话框中，选择**Internet 应用程序**，选择 Razor 视图引擎，，然后单击**确定**。
 

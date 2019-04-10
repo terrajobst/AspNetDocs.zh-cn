@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 59c01998-9326-4ecb-9392-cb9615962140
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: feebee845a19a7cb462127a893a30ac7e0761965
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 21f37dc1ffbcb7e8e15e4bed261b68ffc0388c21
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388421"
 ---
-<a name="efficiently-paging-through-large-amounts-of-data-c"></a>通过大量数据有效分页 (C#)
-====================
+# <a name="efficiently-paging-through-large-amounts-of-data-c"></a>通过大量数据有效分页 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_25_CS.exe)或[下载 PDF](efficiently-paging-through-large-amounts-of-data-cs/_static/datatutorial25cs1.pdf)
@@ -191,7 +191,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 之后选择这些输入参数值，输出窗口将显示结果。 图 8 显示了两个 10 中传递时的结果`@startRowIndex`和`@maximumRows`参数。
 
 
-[![返回记录，将显示在第二个数据页](efficiently-paging-through-large-amounts-of-data-cs/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image8.png)
+[![T他的记录，将显示在第二个数据页中返回](efficiently-paging-through-large-amounts-of-data-cs/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image8.png)
 
 **图 8**:返回记录，将显示在第二个数据页 ([单击此项可查看原尺寸图像](efficiently-paging-through-large-amounts-of-data-cs/_static/image10.png))
 
@@ -293,7 +293,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 进行这些更改后，请访问此页上的通过浏览器。 应会看到 10 种产品列出，请按字母顺序排序。 请花费片刻时间逐步一次一页数据。 虽然默认的分页和自定义分页之间没有可见差异从最终用户 s 角度来看，自定义分页更有效地页，通过大量的数据因为它仅检索那些需要为某一给定页显示的记录。
 
 
-[![数据、 Ordered 按产品名称，是分页使用自定义分页](efficiently-paging-through-large-amounts-of-data-cs/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image19.png)
+[![T他的数据，按产品名称排序，是分页使用自定义分页](efficiently-paging-through-large-amounts-of-data-cs/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image19.png)
 
 **图 17**:数据、 Ordered 按产品名称，是分页使用自定义分页 ([单击此项可查看原尺寸图像](efficiently-paging-through-large-amounts-of-data-cs/_static/image21.png))
 
@@ -309,7 +309,7 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 我们当前的自定义分页实现要求通过换数据时所依据的顺序指定以静态方式创建时`GetProductsPaged`存储过程。 但是，你可能已记下 GridView s 智能标记包含除了启用分页选项启用排序复选框。 遗憾的是，将排序支持添加到我们当前的自定义分页实现 GridView 仅将排序数据的当前正在查看页上的记录。 例如，如果配置 GridView 也支持分页和查看数据，第一页时按降序排序，产品名称的排序然后，它将在第 1 页上反转产品的顺序。 如图 18 所示，此类显示了墨鱼作为第一个产品时按反向字母顺序，将忽略的 71 其他产品按字母顺序; 晚墨鱼，排序排序操作中被视为第一页上的这些记录。
 
 
-[![仅显示数据当前页上进行排序](efficiently-paging-through-large-amounts-of-data-cs/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image22.png)
+[![O排序当前页上的数据所示的 nly](efficiently-paging-through-large-amounts-of-data-cs/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-cs/_static/image22.png)
 
 **图 18**:仅显示数据当前页上进行排序 ([单击此项可查看原尺寸图像](efficiently-paging-through-large-amounts-of-data-cs/_static/image24.png))
 
@@ -352,12 +352,12 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 我的项目[ASP.NET 2.0 与 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，包含一些性能测试，我运行来表现出这两种分页方法时分页通过与数据库表之间的性能差异50,000 个记录。 在这些测试中，我研究了这两个时间来执行 SQL Server 级别的查询 (使用[SQL Profiler](https://msdn.microsoft.com/library/ms173757.aspx)) 并在 ASP.NET 页使用[ASP.NET 的跟踪功能](https://msdn.microsoft.com/library/y13fw6we.aspx)。 请记住，这些测试是在单个活动用户，我开发机器上运行，并因此是一百和不模拟典型网站的负载模式。 无论如何，结果说明了执行时间的默认实例和自定义分页的相对差异时使用足够大量的数据。
 
 
-|  | **Avg.持续时间 （秒）** | **读取次数** |
+|  | **Avg.持续时间 （秒）** | **读取** |
 | --- | --- | --- |
 | **默认分页 SQL Profiler** | 1.411 | 383 |
 | **自定义分页 SQL Profiler** | 0.002 | 29 |
-| **默认分页 ASP.NET 跟踪** | 2.379 | *N/A* |
-| **自定义分页 ASP.NET 跟踪** | 0.029 | *N/A* |
+| **默认分页 ASP.NET 跟踪** | 2.379 | *不可用* |
+| **自定义分页 ASP.NET 跟踪** | 0.029 | *不可用* |
 
 
 正如您所看到的检索数据的特定页所需数量累计为 354 小于读取的平均和中所花时间完成。 在 ASP.NET 页上，自定义的页面是能够接近于 1/100 中呈现<sup>th</sup>花费的时间使用默认的分页时。 请参阅[我的文章](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)对于这些结果与代码和数据库的详细信息，可以下载重现您自己的环境中的这些测试。

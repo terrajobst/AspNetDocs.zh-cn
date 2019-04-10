@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: a106374a-5e74-4fd0-9ac0-1a32280e5d0d
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 15d4e7d7b6a2662296b8e3647cd60187de580789
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 879a771c3b85c85d35d470f056173f230a36e906
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029174"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388942"
 ---
-<a name="understanding-models-views-and-controllers-vb"></a>了解模型、视图和控制器 (VB)
-====================
+# <a name="understanding-models-views-and-controllers-vb"></a>了解模型、视图和控制器 (VB)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 有关模型、 视图和控制器感到迷惑吗？ 在本教程中，Stephen Walther 向您介绍到的 ASP.NET MVC 应用程序的不同部分。
@@ -33,7 +33,7 @@ ms.locfileid: "57029174"
 使用 MVC 模板中启动 Visual Studio 2008 创建新的 ASP.NET MVC 应用程序并选择文件菜单选项，新建项目 （请参见图 1）。 在新建项目对话框中，选择你喜欢的编程语言下项目类型 （Visual Basic 或 C#），然后选择**ASP.NET MVC Web 应用程序**下模板。 单击确定按钮。
 
 
-[![新建项目对话框](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
+[![N项目对话框中的新增功能](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
 
 **图 01**:新建项目对话框 ([单击此项可查看原尺寸图像](understanding-models-views-and-controllers-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ ms.locfileid: "57029174"
 创建新的 ASP.NET MVC 应用程序时**创建单元测试项目**对话框 （请参见图 2）。 此对话框，可用于测试你的 ASP.NET MVC 应用程序在解决方案中创建一个单独的项目。 选择的选项**否，不创建单元测试项目**然后单击**确定**按钮。
 
 
-[![创建单元测试对话框](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
+[![C创建单元测试对话框](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
 
 **图 02**:创建单元测试对话框 ([单击此项可查看原尺寸图像](understanding-models-views-and-controllers-vb/_static/image4.png))
 
@@ -51,7 +51,7 @@ ms.locfileid: "57029174"
 如果展开 Controllers 文件夹，你应看到一个名为 AccountController.vb 文件和一个名为 HomeController.vb 文件。 如果展开 Views 文件夹，应看到名为帐户，主页和共享的三个子文件夹。 如果展开主文件夹，您将看到两个名为 About.aspx 和 Index.aspx （请参见图 3） 的其他文件。 这些文件构成了默认的 ASP.NET MVC 模板中包含的示例应用程序。
 
 
-[![解决方案资源管理器窗口](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
+[![T他的解决方案资源管理器窗口](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
 
 **图 03**:解决方案资源管理器窗口 ([单击此项可查看原尺寸图像](understanding-models-views-and-controllers-vb/_static/image6.png))
 
@@ -61,7 +61,7 @@ ms.locfileid: "57029174"
 首次运行的 ASP.NET 应用程序时，会出现图 4 中的对话框，建议启用调试模式。 单击确定按钮，将运行该应用程序。
 
 
-[![调试未启用的对话框](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
+[![Debugging 未启用对话框](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
 
 **图 04**:调试未启用对话框 ([单击此项可查看原尺寸图像](understanding-models-views-and-controllers-vb/_static/image8.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "57029174"
 当您运行的 ASP.NET MVC 应用程序时，Visual Studio 将启动 web 浏览器中的应用程序。 示例应用程序只有两个页组成: 索引页和关于页面。 第一次启动应用程序，将显示索引页 （请参见图 5）。 可以通过单击顶部的菜单链接导航到关于页面右侧的应用程序。
 
 
-[![索引页](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
+[![T他索引页](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
 
 **图 05**:索引页 ([单击此项可查看原尺寸图像](understanding-models-views-and-controllers-vb/_static/image10.png))
 
