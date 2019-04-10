@@ -8,22 +8,22 @@ ms.date: 12/20/2007
 ms.assetid: fd3db529-601a-4a6e-b91a-d9cbe1ff7bd4
 msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history
 msc.type: video
-ms.openlocfilehash: f3248d21223eacfede0ffe54e5fea5fdff073af4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 25e3d707d31d238d8a237d9bfefcfea5ea736c44
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042234"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410560"
 ---
-<a name="introduction-to-aspnet-ajax-history"></a><span data-ttu-id="2d537-104">ASP.NET Ajax 历史记录简介</span><span class="sxs-lookup"><span data-stu-id="2d537-104">Introduction to ASP.NET Ajax History</span></span>
-====================
-<span data-ttu-id="2d537-105">通过[Bertrand Le Roy](https://github.com/bleroy)</span><span class="sxs-lookup"><span data-stu-id="2d537-105">by [Bertrand Le Roy](https://github.com/bleroy)</span></span>
+# <a name="introduction-to-aspnet-ajax-history"></a><span data-ttu-id="58499-104">ASP.NET Ajax 历史记录简介</span><span class="sxs-lookup"><span data-stu-id="58499-104">Introduction to ASP.NET Ajax History</span></span>
 
-<span data-ttu-id="2d537-106">了解如何在 ASP.NET 扩展预览允许控制 Ajax 中的浏览器后退按钮。</span><span class="sxs-lookup"><span data-stu-id="2d537-106">Learn how the ASP.NET Extensions Preview allows control over the Browser back button in Ajax.</span></span> <span data-ttu-id="2d537-107">**ASP.NET AJAX Extensions 中有[ASP.NET 3.5 扩展预览](https://www.asp.net/downloads/35-sp1#find)(2007 年 12 月)。**</span><span class="sxs-lookup"><span data-stu-id="2d537-107">**ASP.NET AJAX Extensions are available in the [ASP.NET 3.5 Extensions Preview](https://www.asp.net/downloads/35-sp1#find) (December 2007).**</span></span>
+<span data-ttu-id="58499-105">通过[Bertrand Le Roy](https://github.com/bleroy)</span><span class="sxs-lookup"><span data-stu-id="58499-105">by [Bertrand Le Roy](https://github.com/bleroy)</span></span>
 
-[<span data-ttu-id="2d537-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="2d537-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-ajax-history)
+<span data-ttu-id="58499-106">了解如何在 ASP.NET 扩展预览允许控制 Ajax 中的浏览器后退按钮。</span><span class="sxs-lookup"><span data-stu-id="58499-106">Learn how the ASP.NET Extensions Preview allows control over the Browser back button in Ajax.</span></span> **<span data-ttu-id="58499-107">ASP.NET AJAX Extensions 中有[ASP.NET 3.5 扩展预览](https://www.asp.net/downloads/35-sp1#find)(2007 年 12 月)。</span><span class="sxs-lookup"><span data-stu-id="58499-107">ASP.NET AJAX Extensions are available in the [ASP.NET 3.5 Extensions Preview](https://www.asp.net/downloads/35-sp1#find) (December 2007).</span></span>**
+
+[<span data-ttu-id="58499-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="58499-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-ajax-history)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="2d537-109">[上一页](adonet-data-services-with-aspnet-ajax-support.md)
-> [下一页](using-script-combining-to-improve-ajax-performance.md)</span><span class="sxs-lookup"><span data-stu-id="2d537-109">[Previous](adonet-data-services-with-aspnet-ajax-support.md)
+> <span data-ttu-id="58499-109">[上一页](adonet-data-services-with-aspnet-ajax-support.md)
+> [下一页](using-script-combining-to-improve-ajax-performance.md)</span><span class="sxs-lookup"><span data-stu-id="58499-109">[Previous](adonet-data-services-with-aspnet-ajax-support.md)
 [Next](using-script-combining-to-improve-ajax-performance.md)</span></span>

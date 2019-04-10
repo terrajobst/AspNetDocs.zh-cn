@@ -8,19 +8,19 @@ ms.date: 11/14/2011
 ms.assetid: ccd48877-ed83-43fe-9b3b-ed8855e58833
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow
 msc.type: chapter
-ms.openlocfilehash: be935a4fd87767b83d5692e683db800a4e5d5801
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: af78f3841bf3021c15a5733e01d553b6d336279d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023954"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402422"
 ---
-<a name="dropshadow"></a><span data-ttu-id="bc6a9-103">DropShadow</span><span class="sxs-lookup"><span data-stu-id="bc6a9-103">DropShadow</span></span>
-====================
-> <span data-ttu-id="bc6a9-104">本教程演示如何使用 DropShadow 控件，绘制一个面板背后的投影。</span><span class="sxs-lookup"><span data-stu-id="bc6a9-104">This tutorial shows how to use the DropShadow control, which draws a drop shadow behind a panel.</span></span>
+# <a name="dropshadow"></a><span data-ttu-id="953f1-103">DropShadow</span><span class="sxs-lookup"><span data-stu-id="953f1-103">DropShadow</span></span>
+
+> <span data-ttu-id="953f1-104">本教程演示如何使用 DropShadow 控件，绘制一个面板背后的投影。</span><span class="sxs-lookup"><span data-stu-id="953f1-104">This tutorial shows how to use the DropShadow control, which draws a drop shadow behind a panel.</span></span>
 
 
-- [<span data-ttu-id="bc6a9-105">调整 DropShadow 的 Z-索引 (C#)</span><span class="sxs-lookup"><span data-stu-id="bc6a9-105">Adjusting the Z-Index of a DropShadow (C#)</span></span>](adjusting-the-z-index-of-a-dropshadow-cs.md)
-- [<span data-ttu-id="bc6a9-106">通过客户端代码操作 DropShadow (C#)</span><span class="sxs-lookup"><span data-stu-id="bc6a9-106">Manipulating DropShadow Properties from Client Code (C#)</span></span>](manipulating-dropshadow-properties-from-client-code-cs.md)
-- [<span data-ttu-id="bc6a9-107">调整 DropShadow 的 Z-索引 (VB)</span><span class="sxs-lookup"><span data-stu-id="bc6a9-107">Adjusting the Z-Index of a DropShadow (VB)</span></span>](adjusting-the-z-index-of-a-dropshadow-vb.md)
-- [<span data-ttu-id="bc6a9-108">通过客户端代码操作 DropShadow (VB)</span><span class="sxs-lookup"><span data-stu-id="bc6a9-108">Manipulating DropShadow Properties from Client Code (VB)</span></span>](manipulating-dropshadow-properties-from-client-code-vb.md)
+- [<span data-ttu-id="953f1-105">调整 DropShadow 的 Z-索引 (C#)</span><span class="sxs-lookup"><span data-stu-id="953f1-105">Adjusting the Z-Index of a DropShadow (C#)</span></span>](adjusting-the-z-index-of-a-dropshadow-cs.md)
+- [<span data-ttu-id="953f1-106">通过客户端代码操作 DropShadow 属性 (C#)</span><span class="sxs-lookup"><span data-stu-id="953f1-106">Manipulating DropShadow Properties from Client Code (C#)</span></span>](manipulating-dropshadow-properties-from-client-code-cs.md)
+- [<span data-ttu-id="953f1-107">调整 DropShadow 的 Z-索引 (VB)</span><span class="sxs-lookup"><span data-stu-id="953f1-107">Adjusting the Z-Index of a DropShadow (VB)</span></span>](adjusting-the-z-index-of-a-dropshadow-vb.md)
+- [<span data-ttu-id="953f1-108">通过客户端代码操作 DropShadow 属性 (VB)</span><span class="sxs-lookup"><span data-stu-id="953f1-108">Manipulating DropShadow Properties from Client Code (VB)</span></span>](manipulating-dropshadow-properties-from-client-code-vb.md)

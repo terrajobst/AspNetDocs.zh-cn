@@ -8,22 +8,22 @@ ms.date: 02/25/2011
 ms.assetid: a0eb31aa-068b-4214-8a2b-16576a616aca
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/adding-email-to-your-web-site
 msc.type: video
-ms.openlocfilehash: efd1facf6265e5a3bc900e03cd624f034a523f7d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 72605a131095570390d64fd458ce821ee0f99fbc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386627"
 ---
-<a name="adding-email-to-your-web-site"></a><span data-ttu-id="7dad4-103">向网站添加电子邮件功能</span><span class="sxs-lookup"><span data-stu-id="7dad4-103">Adding Email to Your Web Site</span></span>
-====================
-<span data-ttu-id="7dad4-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="7dad4-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+# <a name="adding-email-to-your-web-site"></a><span data-ttu-id="9c278-103">向网站添加电子邮件功能</span><span class="sxs-lookup"><span data-stu-id="9c278-103">Adding Email to Your Web Site</span></span>
 
-<span data-ttu-id="7dad4-105">将电子邮件添加到你的网站 （第 1 部分）</span><span class="sxs-lookup"><span data-stu-id="7dad4-105">Adding Email to Your Web Site (Part 1)</span></span>
+<span data-ttu-id="9c278-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="9c278-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-[<span data-ttu-id="7dad4-106">&#9654;观看视频 （10 分钟）</span><span class="sxs-lookup"><span data-stu-id="7dad4-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-email-to-your-web-site)
+<span data-ttu-id="9c278-105">将电子邮件添加到你的网站 （第 1 部分）</span><span class="sxs-lookup"><span data-stu-id="9c278-105">Adding Email to Your Web Site (Part 1)</span></span>
+
+[<span data-ttu-id="9c278-106">&#9654;观看视频 （10 分钟）</span><span class="sxs-lookup"><span data-stu-id="9c278-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-email-to-your-web-site)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="7dad4-107">[上一页](working-with-video.md)
-> [下一页](adding-search-to-your-web-site.md)</span><span class="sxs-lookup"><span data-stu-id="7dad4-107">[Previous](working-with-video.md)
+> <span data-ttu-id="9c278-107">[上一页](working-with-video.md)
+> [下一页](adding-search-to-your-web-site.md)</span><span class="sxs-lookup"><span data-stu-id="9c278-107">[Previous](working-with-video.md)
 [Next](adding-search-to-your-web-site.md)</span></span>

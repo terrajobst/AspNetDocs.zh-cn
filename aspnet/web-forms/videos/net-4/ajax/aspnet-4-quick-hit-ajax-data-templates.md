@@ -8,20 +8,20 @@ ms.date: 11/16/2009
 ms.assetid: dfb7d181-f97c-43cc-8a19-8403655382ea
 msc.legacyurl: /web-forms/videos/net-4/ajax/aspnet-4-quick-hit-ajax-data-templates
 msc.type: video
-ms.openlocfilehash: f5ade4912a70b0cfcc1fae8c165142cf8f1a6c64
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 44219c97cfcb1a17acbe22a7413a33eb8b8c52b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042304"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388512"
 ---
-<a name="aspnet-4-quick-hit---ajax-data-templates"></a><span data-ttu-id="56734-103">ASP.NET 4"快速命中"的 AJAX 数据模板</span><span class="sxs-lookup"><span data-stu-id="56734-103">ASP.NET 4 "Quick Hit" - AJAX Data Templates</span></span>
-====================
-<span data-ttu-id="56734-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="56734-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+# <a name="aspnet-4-quick-hit---ajax-data-templates"></a><span data-ttu-id="1febc-103">ASP.NET 4"快速命中"的 AJAX 数据模板</span><span class="sxs-lookup"><span data-stu-id="1febc-103">ASP.NET 4 "Quick Hit" - AJAX Data Templates</span></span>
 
-<span data-ttu-id="56734-105">在本视频中，您将学习如何使用客户端模板以显示通过 DataView 控件的数据库记录。</span><span class="sxs-lookup"><span data-stu-id="56734-105">In this video you will learn how to use client templates to display database records with the DataView control.</span></span> 
+<span data-ttu-id="1febc-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="1febc-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-[<span data-ttu-id="56734-106">&#9654;观看视频 （12 分钟）</span><span class="sxs-lookup"><span data-stu-id="56734-106">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-ajax-data-templates)
+<span data-ttu-id="1febc-105">在本视频中，您将学习如何使用客户端模板以显示通过 DataView 控件的数据库记录。</span><span class="sxs-lookup"><span data-stu-id="1febc-105">In this video you will learn how to use client templates to display database records with the DataView control.</span></span> 
+
+[<span data-ttu-id="1febc-106">&#9654;观看视频 （12 分钟）</span><span class="sxs-lookup"><span data-stu-id="1febc-106">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-ajax-data-templates)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="56734-107">上一篇</span><span class="sxs-lookup"><span data-stu-id="56734-107">Previous</span></span>](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
+> [<span data-ttu-id="1febc-107">上一个</span><span class="sxs-lookup"><span data-stu-id="1febc-107">Previous</span></span>](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)

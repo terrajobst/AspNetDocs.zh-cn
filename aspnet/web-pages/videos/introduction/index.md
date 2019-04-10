@@ -8,28 +8,28 @@ ms.date: 05/18/2012
 ms.assetid: b8a43660-177f-4a00-bb51-be887364c607
 msc.legacyurl: /web-pages/videos/introduction
 msc.type: chapter
-ms.openlocfilehash: f645e05deb334346ed7199b804387a29e9538165
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4e5ef19044a265f48d51586062fb7d2dc024b4c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020344"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413667"
 ---
-<a name="introduction-to-web-pages-videos"></a><span data-ttu-id="1d56d-103">Web Pages 视频简介</span><span class="sxs-lookup"><span data-stu-id="1d56d-103">Introduction to Web Pages Videos</span></span>
-====================
-> <span data-ttu-id="1d56d-104">哪些视频可以查看以了解有关 Web Pages 和 WebMatrix 的基础知识。</span><span class="sxs-lookup"><span data-stu-id="1d56d-104">Which videos you can view to learn the basics about Web Pages and WebMatrix.</span></span>
+# <a name="introduction-to-web-pages-videos"></a><span data-ttu-id="589eb-103">Web Pages 视频简介</span><span class="sxs-lookup"><span data-stu-id="589eb-103">Introduction to Web Pages Videos</span></span>
+
+> <span data-ttu-id="589eb-104">哪些视频可以查看以了解有关 Web Pages 和 WebMatrix 的基础知识。</span><span class="sxs-lookup"><span data-stu-id="589eb-104">Which videos you can view to learn the basics about Web Pages and WebMatrix.</span></span>
 
 > [!NOTE] 
-> <span data-ttu-id="1d56d-105">WebMatrix 是不再建议将其作为一个集成的开发环境为 ASP.NET Web Pages。</span><span class="sxs-lookup"><span data-stu-id="1d56d-105">WebMatrix is no longer recommended as an integrated development environment for ASP.NET Web Pages.</span></span> <span data-ttu-id="1d56d-106">使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或[Visual Studio Code](https://code.visualstudio.com/)。</span><span class="sxs-lookup"><span data-stu-id="1d56d-106">Use [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) or [Visual Studio Code](https://code.visualstudio.com/).</span></span>
+> <span data-ttu-id="589eb-105">WebMatrix 是不再建议将其作为一个集成的开发环境为 ASP.NET Web Pages。</span><span class="sxs-lookup"><span data-stu-id="589eb-105">WebMatrix is no longer recommended as an integrated development environment for ASP.NET Web Pages.</span></span> <span data-ttu-id="589eb-106">使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或[Visual Studio Code](https://code.visualstudio.com/)。</span><span class="sxs-lookup"><span data-stu-id="589eb-106">Use [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) or [Visual Studio Code](https://code.visualstudio.com/).</span></span>
 
 
-- [<span data-ttu-id="1d56d-107">ASP.NET 网页的 5 分钟简介</span><span class="sxs-lookup"><span data-stu-id="1d56d-107">5 Minute Intro to ASP.NET Web Pages</span></span>](5-minute-introduction-to-aspnet-web-pages.md)
-- [<span data-ttu-id="1d56d-108">安装和使用 Microsoft WebMatrix 工具</span><span class="sxs-lookup"><span data-stu-id="1d56d-108">Install and Use the Microsoft WebMatrix Tool</span></span>](install-and-use-the-microsoft-webmatrix-tool.md)
-- [<span data-ttu-id="1d56d-109">使用 WebMatrix 创建网站</span><span class="sxs-lookup"><span data-stu-id="1d56d-109">Create a Website Using WebMatrix</span></span>](create-a-website-using-webmatrix.md)
-- [<span data-ttu-id="1d56d-110">更改网页的视觉样式</span><span class="sxs-lookup"><span data-stu-id="1d56d-110">Change the Visual Style of a Web Page</span></span>](change-the-visual-style-of-a-web-page.md)
-- [<span data-ttu-id="1d56d-111">在 WebMatrix 中使用布局功能</span><span class="sxs-lookup"><span data-stu-id="1d56d-111">Use the Layout Features in WebMatrix</span></span>](use-the-layout-features-in-webmatrix.md)
-- [<span data-ttu-id="1d56d-112">创建数据驱动型动态网页</span><span class="sxs-lookup"><span data-stu-id="1d56d-112">Create a Data-Driven Dynamic Web Page</span></span>](create-a-data-driven-dynamic-web-page.md)
-- [<span data-ttu-id="1d56d-113">在 WebMatrix 中创建 Web 界面</span><span class="sxs-lookup"><span data-stu-id="1d56d-113">Create a Web Interface in WebMatrix</span></span>](create-a-web-interface-in-webmatrix.md)
-- [<span data-ttu-id="1d56d-114">在 WebMatrix 中创建“编辑数据”页</span><span class="sxs-lookup"><span data-stu-id="1d56d-114">Create an Edit Data Page in WebMatrix</span></span>](create-an-edit-data-page-in-webmatrix.md)
-- [<span data-ttu-id="1d56d-115">在 WebMatrix 中创建“删除数据”页</span><span class="sxs-lookup"><span data-stu-id="1d56d-115">Create a Delete Data Page in WebMatrix</span></span>](create-a-delete-data-page-in-webmatrix.md)
-- [<span data-ttu-id="1d56d-116">使用 WebMatrix 将网站发布到 Internet</span><span class="sxs-lookup"><span data-stu-id="1d56d-116">Publish a Website to the Internet Using WebMatrix</span></span>](publish-a-website-to-the-internet-using-webmatrix.md)
+- [<span data-ttu-id="589eb-107">ASP.NET 网页的 5 分钟简介</span><span class="sxs-lookup"><span data-stu-id="589eb-107">5 Minute Intro to ASP.NET Web Pages</span></span>](5-minute-introduction-to-aspnet-web-pages.md)
+- [<span data-ttu-id="589eb-108">安装和使用 Microsoft WebMatrix 工具</span><span class="sxs-lookup"><span data-stu-id="589eb-108">Install and Use the Microsoft WebMatrix Tool</span></span>](install-and-use-the-microsoft-webmatrix-tool.md)
+- [<span data-ttu-id="589eb-109">使用 WebMatrix 创建网站</span><span class="sxs-lookup"><span data-stu-id="589eb-109">Create a Website Using WebMatrix</span></span>](create-a-website-using-webmatrix.md)
+- [<span data-ttu-id="589eb-110">更改网页的视觉样式</span><span class="sxs-lookup"><span data-stu-id="589eb-110">Change the Visual Style of a Web Page</span></span>](change-the-visual-style-of-a-web-page.md)
+- [<span data-ttu-id="589eb-111">在 WebMatrix 中使用布局功能</span><span class="sxs-lookup"><span data-stu-id="589eb-111">Use the Layout Features in WebMatrix</span></span>](use-the-layout-features-in-webmatrix.md)
+- [<span data-ttu-id="589eb-112">创建数据驱动型动态网页</span><span class="sxs-lookup"><span data-stu-id="589eb-112">Create a Data-Driven Dynamic Web Page</span></span>](create-a-data-driven-dynamic-web-page.md)
+- [<span data-ttu-id="589eb-113">在 WebMatrix 中创建 Web 界面</span><span class="sxs-lookup"><span data-stu-id="589eb-113">Create a Web Interface in WebMatrix</span></span>](create-a-web-interface-in-webmatrix.md)
+- [<span data-ttu-id="589eb-114">在 WebMatrix 中创建“编辑数据”页</span><span class="sxs-lookup"><span data-stu-id="589eb-114">Create an Edit Data Page in WebMatrix</span></span>](create-an-edit-data-page-in-webmatrix.md)
+- [<span data-ttu-id="589eb-115">在 WebMatrix 中创建“删除数据”页</span><span class="sxs-lookup"><span data-stu-id="589eb-115">Create a Delete Data Page in WebMatrix</span></span>](create-a-delete-data-page-in-webmatrix.md)
+- [<span data-ttu-id="589eb-116">使用 WebMatrix 将网站发布到 Internet</span><span class="sxs-lookup"><span data-stu-id="589eb-116">Publish a Website to the Internet Using WebMatrix</span></span>](publish-a-website-to-the-internet-using-webmatrix.md)
