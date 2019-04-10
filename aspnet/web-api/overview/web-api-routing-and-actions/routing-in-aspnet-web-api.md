@@ -8,15 +8,15 @@ ms.date: 10/29/2018
 ms.assetid: 0675bdc7-282f-4f47-b7f3-7e02133940ca
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: a7bc998fc23c0453fc9cd6ac1e7b9af7bd516225
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 85862c094cc54365267b1f21e68d235a15519cda
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061344"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419231"
 ---
-<a name="routing-in-aspnet-web-api"></a>ASP.NET Web API 中的路由
-====================
+# <a name="routing-in-aspnet-web-api"></a>ASP.NET Web API 中的路由
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 本指南介绍了 ASP.NET Web API 将 HTTP 请求路由到控制器的方式。
@@ -69,7 +69,7 @@ Web API 框架接收 HTTP 请求时，它尝试匹配根据一个路由表中的
 
 | HTTP Verb | URI 路径 | 操作 | 参数 |
 | --- | --- | --- | --- |
-| GET | api/products | GetAllProducts | *(none)* |
+| GET | api/products | GetAllProducts | *(无)* |
 | GET | api/products/4 | GetProductById | 4 |
 | DELETE | api/products/4 | DeleteProduct | 4 |
 | 发布 | api/products | *（没有匹配项）* |  |

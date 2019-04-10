@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0bf724741ffbc01aa7611d8b075d89827bf83777
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4130b1016d716877bad909d5f7959e519c5d106e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041924"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419985"
 ---
-<a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>使用带有详细信息 DetailView 的可选母版 GridView 来实现母版/详细信息查看 (VB)
-====================
+# <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>使用带有详细信息 DetailView 的可选母版 GridView 来实现母版/详细信息查看 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_10_VB.exe)或[下载 PDF](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/datatutorial10vb1.pdf)
@@ -29,7 +29,7 @@ ms.locfileid: "57041924"
 在中[前一篇教程](master-detail-filtering-across-two-pages-vb.md)我们已了解如何创建使用两个 web 页面的母版/详细信息报表:"主"的 web 页面，从中我们显示供应商提供; 的列表和"详细信息"网页列出所选提供这些产品供应商。 此两个页面报告格式可以压缩到一个页面。 本教程将具有的 GridView 中的行包括名称和选择按钮以及每个产品的价格。 单击某一特定产品选择按钮将导致要在同一页面上的 DetailsView 控件中显示其完整的详细信息。
 
 
-[![单击选择按钮将显示产品的详细信息](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image2.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image1.png)
+[![C单击选择按钮显示产品的详细信息](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image2.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image1.png)
 
 **图 1**:单击选择按钮将显示产品的详细信息 ([单击此项可查看原尺寸图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image3.png))
 
@@ -41,17 +41,17 @@ ms.locfileid: "57041924"
 首先，通过添加到 GridView 控件`DetailsBySelecting.aspx`页中`Filtering`文件夹中，设置其`ID`属性设置为`ProductsGrid`。 接下来，添加名为新 ObjectDataSource `AllProductsDataSource` ，它调用`ProductsBLL`类的`GetProducts()`方法。
 
 
-[![创建名为 AllProductsDataSource ObjectDataSource](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image5.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image4.png)
+[![C创建名为 ObjectDataSource AllProductsDataSource](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image5.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image4.png)
 
 **图 2**:创建 ObjectDataSource 命名`AllProductsDataSource`([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image6.png))
 
 
-[![使用 ProductsBLL 类](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image8.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image7.png)
+[![Use ProductsBLL 类](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image8.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image7.png)
 
 **图 3**:使用`ProductsBLL`类 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image9.png))
 
 
-[![配置 ObjectDataSource 调用 GetProducts() 方法](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image11.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image10.png)
+[![C配置 ObjectDataSource 调用 GetProducts() 方法](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image11.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image10.png)
 
 **图 4**:配置对 Invoke ObjectDataSource`GetProducts()`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image12.png))
 
@@ -59,7 +59,7 @@ ms.locfileid: "57041924"
 编辑删除 GridView 的字段以外的所有`ProductName`和`UnitPrice`BoundFields。 此外，随时根据需要如格式设置自定义这些 BoundFields`UnitPrice`作为一种货币 BoundField 和更改`HeaderText`BoundFields 的属性。 通过单击 GridView 的智能标记中的编辑列链接或通过手动配置的声明性语法，可以以图形方式，完成这些步骤。
 
 
-[![删除除之外的所有产品名称和单价 BoundFields](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image14.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image13.png)
+[![Remove 以外的所有产品名称和单价 BoundFields](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image14.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image13.png)
 
 **图 5**:删除所有但`ProductName`并`UnitPrice`BoundFields ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image15.png))
 
@@ -72,7 +72,7 @@ GridView 的最后一个标记是：
 接下来，我们需要将标记为可选的这样会将选择按钮添加到每个行 GridView。 若要完成此操作，只需检查 GridView 的智能标记中的启用选定内容复选框。
 
 
-[![确保 GridView 行选择](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image17.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image16.png)
+[![M请 GridView 行选择](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image17.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image16.png)
 
 **图 6**:使 GridView 的可选行 ([单击此项可查看原尺寸图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image18.png))
 
@@ -91,7 +91,7 @@ GridView 的最后一个标记是：
 让我们查看一下我们到目前为止通过浏览器的进度。 请注意 GridView 列出的名称和所有选择的 LinkButton 以及产品的价格。 单击选择按钮会导致回发。 在步骤 2 中，我们将了解如何能够对此回发 DetailsView 响应通过显示所选产品的详细信息。
 
 
-[![每个产品行包含选择 LinkButton](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image20.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image19.png)
+[![E支票产品行包含选择 LinkButton](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image20.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image19.png)
 
 **图 7**:每个产品行包含选择 LinkButton ([单击此项可查看原尺寸图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image21.png))
 
@@ -113,7 +113,7 @@ GridView 的最后一个标记是：
 添加此元素后，所选的 GridView 行现在已突出显示黄色背景颜色。
 
 
-[![自定义所选的行的外观，可以使用 GridView 的 SelectedRowStyle 属性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image23.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image22.png)
+[![C自定义所选行的外观，可以使用 GridView 的 SelectedRowStyle 属性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image23.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image22.png)
 
 **图 8**:使用自定义所选行的外观 GridView`SelectedRowStyle`属性 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image24.png))
 
@@ -123,7 +123,7 @@ GridView 的最后一个标记是：
 使用`ProductsGrid`GridView 完成，所有要添加显示有关所选的特定产品的信息 DetailsView 就是。 添加 GridView 上面的 DetailsView 控件并创建名为新 ObjectDataSource `ProductDetailsDataSource`。 因为我们希望此 DetailsView 以显示有关所选产品的特定信息，请配置`ProductDetailsDataSource`若要使用`ProductsBLL`类的`GetProductByProductID(productID)`方法。
 
 
-[![调用 ProductsBLL 类 GetProductByProductID(productID) 方法](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image26.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image25.png)
+[![Invoke ProductsBLL 类 GetProductByProductID(productID) 方法](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image26.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image25.png)
 
 **图 9**:调用`ProductsBLL`类的`GetProductByProductID(productID)`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
@@ -131,7 +131,7 @@ GridView 的最后一个标记是：
 具有*`productID`* 参数的值从 GridView 控件获取`SelectedValue`属性。 如前面所述，GridView 的`SelectedValue`属性返回所选行的第一个数据键值。 因此，它是命令性的 GridView`DataKeyNames`属性设置为`ProductID`，因此，所选的行`ProductID`返回值`SelectedValue`。
 
 
-[![将产品 id 参数设置为 GridView 的 SelectedValue 属性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
+[![Set productID GridView 的 SelectedValue 属性参数](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
 **图 10**:设置*`productID`* GridView 的参数`SelectedValue`属性 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
@@ -139,12 +139,12 @@ GridView 的最后一个标记是：
 一次`productDetailsDataSource`正确配置对象数据源并将其绑定到 DetailsView，本教程中已完成 ！ 当首次访问页面时未选择行，因此 GridView`SelectedValue`属性返回`Nothing`。 由于不没有使用任何产品`NULL``ProductID`值，没有记录返回由`GetProductByProductID(productID)`方法，这意味着 DetailsView 不显示 （请参阅图 11）。 单击某 GridView 一行的选择按钮，才会进行回发和刷新 DetailsView。 这一次 GridView`SelectedValue`属性返回`ProductID`所选行的`GetProductByProductID(productID)`方法将返回`ProductsDataTable`以及有关该特定产品和 DetailsView 信息显示了这些详细信息 （请参阅图 12）。
 
 
-[![第一个访问，仅 GridView 显示时](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image32.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image31.png)
+[![W显示第一个访问，仅 GridView 的 hen](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image32.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image31.png)
 
 **图 11**:首次访问时，将显示仅 GridView ([单击此项可查看原尺寸图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image33.png))
 
 
-[![在选择某一行，显示产品的详细信息](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image35.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image34.png)
+[![U选择某一行的 pon 显示产品的详细信息](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image35.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image34.png)
 
 **图 12**:在选择某一行，显示产品的详细信息 ([单击此项可查看原尺寸图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image36.png))
 
@@ -166,4 +166,4 @@ GridView 的最后一个标记是：
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Hilton Giesenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](master-detail-filtering-across-two-pages-vb.md)
+> [上一个](master-detail-filtering-across-two-pages-vb.md)

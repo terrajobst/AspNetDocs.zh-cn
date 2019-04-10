@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 4f3ba53f-d166-422d-b29c-403348057836
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 284a650d1b63ceed887deb3ddd639fe9fd27019f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a60e09b7cdda7f924a4287aab8cda32fef5a53ac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025434"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419764"
 ---
-<a name="databinding-the-slider-control-vb"></a>数据绑定滑块控件 (VB)
-====================
+# <a name="databinding-the-slider-control-vb"></a>数据绑定滑块控件 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0VB.pdf)
@@ -45,9 +45,9 @@ AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用
 您可以看到在浏览器中，数据绑定的工作在两个方向： 在文本框中输入新值更新滑块的位置。 如果仅读取第二个文本框中，可以这样就更难用户手动更新中有值与文本字段添加较弱的保护。
 
 
-[![滑块和文本框都保持同步](databinding-the-slider-control-vb/_static/image2.png)](databinding-the-slider-control-vb/_static/image1.png)
+[![Slider 和文本框已同步](databinding-the-slider-control-vb/_static/image2.png)](databinding-the-slider-control-vb/_static/image1.png)
 
 滑块和文本框都是同步 ([单击此项可查看原尺寸图像](databinding-the-slider-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](using-the-slider-control-with-auto-postback-vb.md)
+> [上一个](using-the-slider-control-with-auto-postback-vb.md)

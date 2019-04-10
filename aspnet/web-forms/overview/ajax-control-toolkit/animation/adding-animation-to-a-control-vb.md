@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: c120187e-963e-4439-bb85-32771bc7f1f4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c76e488f36690acd1a6c48b87335a8e6f892f2a8
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c55bbeb383b15f4dc9cb95d25905cade1e8c5c29
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421150"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418893"
 ---
-<a name="adding-animation-to-a-control-vb"></a>将动画添加到控件 (VB)
-====================
+# <a name="adding-animation-to-a-control-vb"></a>将动画添加到控件 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation1VB.pdf)
@@ -72,7 +72,7 @@ Framework 附带了动画，每个由其自己的 XML 元素表示一组。 下�
 当运行此脚本时，面板会显示，并在一个半秒内淡出。
 
 
-[![在面板淡出](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
+[![T他面板淡出](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
 
 在面板淡出 ([单击此项可查看原尺寸图像](adding-animation-to-a-control-vb/_static/image3.png))
 

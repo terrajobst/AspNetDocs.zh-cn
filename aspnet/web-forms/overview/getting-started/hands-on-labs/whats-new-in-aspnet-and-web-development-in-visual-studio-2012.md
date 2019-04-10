@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 6d5af6563bdf3872110497f4b142dd7353c8d64c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420206"
 ---
-<a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中 ASP.NET 和 Web 开发的新增功能
-====================
+# <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中 ASP.NET 和 Web 开发的新增功能
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 > Visual Studio 的新版本引入了一些侧重于使用 Web 技术时提高的体验和性能的增强功能。 CSS、 JavaScript 和 HTML 的 visual Studio 编辑器已彻底改观，以包括许多最需代码辅助工具，例如智能感知和自动缩进。 至于性能方面，如内置功能，可轻松地将减少页面加载时间，则现在已集成捆绑和缩小。
@@ -720,7 +720,7 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
 
     *VS Express for Web 磁贴*
 
-* * *
+---
 
 <a id="AppendixB"></a>
 

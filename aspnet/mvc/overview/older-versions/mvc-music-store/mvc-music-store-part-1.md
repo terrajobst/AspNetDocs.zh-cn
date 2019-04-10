@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 0f252fd5c0e5962353720e47ba888d2b6b325a1c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 63d85ec5f1f2fbadd92fd0210e67332df30aab5a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421903"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419595"
 ---
-<a name="part-1-overview-and-file-new-project"></a>第 1 部分：概述和文件->新建项目
-====================
+# <a name="part-1-overview-and-file-new-project"></a>第 1 部分：概述和文件->新建项目
+
 通过[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发分步教程应用程序。  
@@ -112,15 +112,15 @@ MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Web Dev
 
 ASP.NET MVC 使用的一些基本的命名约定的文件夹名称：
 
-| **文件夹** | **目的** |
+| **文件夹** | **用途** |
 | --- | --- |
 | **/ 控制器** | 控制器响应从浏览器输入，决定要处理的问题，并向用户返回响应的内容。 |
 | **/Views** | 视图保存我们的 UI 模板 |
-| **/ 模型** | 模型保存和操作数据 |
-| **/Content** | 此文件夹包含我们的图像、 CSS 和任何其他静态内容 |
-| **/Scripts** | 此文件夹包含我们的 JavaScript 文件 |
+| **/Models** | 模型保存和操作数据 |
+| **/ 内容** | 此文件夹包含我们的图像、 CSS 和任何其他静态内容 |
+| **/ 脚本** | 此文件夹包含我们的 JavaScript 文件 |
 
 这些文件夹包含即使在空的 ASP.NET MVC 应用程序，因为默认情况下的 ASP.NET MVC 框架使用"惯例优先于配置"的方法，并默认做了一些假设基于文件夹命名约定。 例如，控制器视图文件夹中的视图的默认情况下查找而无需显式指定此设置在代码中。 坚持使用的默认约定可以减少需要编写的代码量还可使其便于其他开发人员了解您的项目。 我们将介绍这些约定详细构建我们的应用程序。
 
 > [!div class="step-by-step"]
-> [下一页](mvc-music-store-part-2.md)
+> [下一步](mvc-music-store-part-2.md)

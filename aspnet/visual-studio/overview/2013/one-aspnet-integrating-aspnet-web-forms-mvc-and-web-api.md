@@ -8,15 +8,15 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 85e4369ee458043eec59fb27e317d18466f61f32
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1023d9bef311e58fb5fb0bb24cde80e8320e6bac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422527"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419049"
 ---
-<a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验：One ASP.NET：集 ASP.NET Web 窗体、MVC 和 Web API 于一身
-====================
+# <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验：One ASP.NET：集 ASP.NET Web 窗体、MVC 和 Web API 于一身
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 [下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
@@ -72,7 +72,7 @@ ms.locfileid: "58422527"
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>练习
@@ -103,7 +103,7 @@ ms.locfileid: "58422527"
 
     ![创建新项目](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image1.png)
 
-    *创建新的项目*
+    *创建新项目*
 2. 在中**新的项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡，并确保 **.NET Framework 4.5**处于选中状态。 将项目命名*MyHybridSite*，选择**位置**然后单击**确定**。
 
     ![新的 ASP.NET Web 应用程序项目](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)
@@ -390,7 +390,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 
     ![生成选项卡](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image32.png "生成部分")
 
-    *生成选项卡*
+    *“生成”选项卡*
 5. 下**输出**，选择**XML 文档文件**。 在编辑框中，键入**应用程序\_Data/XmlDocument.xml**。
 
     ![输出中生成选项卡的部分](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image33.png "输出中生成选项卡的部分")
@@ -427,7 +427,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 
     *详细的信息页*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

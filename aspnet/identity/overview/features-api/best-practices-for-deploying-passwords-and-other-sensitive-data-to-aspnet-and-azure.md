@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
-title: 密码和其他敏感数据部署到 ASP.NET 和 Azure 应用服务的最佳做法 |Microsoft Docs
+title: 密码和其他敏感数据部署到 ASP.NET 和 Azure 应用服务-ASP.NET 4.x
 author: Rick-Anderson
 description: 本教程演示如何在代码可以安全地存储和访问安全信息。 最重要的一点是您应该永远不会存储密码或其他服务...
 ms.author: riande
 ms.date: 05/21/2015
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 8b5d6bf9fad72218341e4e0b90144da01abea3aa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2620d9e2eaf3c7719d9a289e42bb91270708ae79
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046884"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419439"
 ---
-<a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>向 ASP.NET 和 Azure 应用服务部署密码和其他敏感数据的最佳做法
-====================
+# <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>向 ASP.NET 和 Azure 应用服务部署密码和其他敏感数据的最佳做法
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程演示如何在代码可以安全地存储和访问安全信息。 最重要的一点是您应永远不会将密码或其他敏感数据存储在源代码中，并且不应在开发和测试模式下使用生产机密。

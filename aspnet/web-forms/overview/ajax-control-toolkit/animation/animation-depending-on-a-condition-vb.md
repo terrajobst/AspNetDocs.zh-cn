@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 1b87d8d6-b3f7-4126-b51c-d41442fbf947
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: be43b68ce77819cdcd09d8e875604db90e8a8d96
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 78140f56184e88fb4dbe29f234aebd5732b69ad9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063194"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418867"
 ---
-<a name="animation-depending-on-a-condition-vb"></a>取决于条件的动画 (VB)
-====================
+# <a name="animation-depending-on-a-condition-vb"></a>取决于条件的动画 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4VB.pdf)
@@ -53,7 +53,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 请注意，为小于号 (`<`) 中`ConditionScript`属性必须为转义 （）。 当您运行此脚本，无动画运行或两个空格，或同时执行操作。
 
 
-[![在面板淡出而无需调整大小时，因此第二个动画运行第一个未](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
+[![T他面板淡出而无需调整其大小，因此第二个动画运行第一个未](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
 
 在面板淡出而无需调整大小时，因此第二个动画运行第一个未 ([单击此项可查看原尺寸图像](animation-depending-on-a-condition-vb/_static/image3.png))
 

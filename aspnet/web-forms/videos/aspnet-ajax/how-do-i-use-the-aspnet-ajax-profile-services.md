@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: 8fc77048-4d1f-42bf-a947-ecc9a02b25c9
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
 msc.type: video
-ms.openlocfilehash: b3cb1bdbd6be4fcdc956b8dc475888b9ab0a440e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 54b82c52f0bd58a0184824a861b5f31754652ace
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050884"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420310"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[如何实现:]使用 ASP.NET AJAX 配置文件服务？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[如何实现:]使用 ASP.NET AJAX 配置文件服务？
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 ASP.NET 2.0 引入[配置文件属性](https://msdn.microsoft.com/library/at64shx3.aspx)与可以存储在 ASP.NET Web 应用程序的每个用户的详细信息。 ASP.NET AJAX 配置文件服务允许客户端的 Web 界面，可从服务器端 Web 应用程序检索用户的配置文件属性。 此视频演示如何示例启用了 AJAX 的旅行网站可以存储用户的旅行请求信息，以便在他或她下次访问此站点时，可以检索详细信息。

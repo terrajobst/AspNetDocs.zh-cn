@@ -8,15 +8,15 @@ ms.date: 09/19/2014
 ms.assetid: 2acff246-c74c-4277-b539-35bc42988c6f
 msc.legacyurl: /signalr/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: 4573a04f115ab5d2fdc363f9746a22bc3939174c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3e720dd895c609d5b35848dbc4d4a6989028ff7d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57018864"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418750"
 ---
-<a name="signalr-getting-started"></a>SignalR 入门
-====================
+# <a name="signalr-getting-started"></a>SignalR 入门
+
 > SignalR 是什么，运行它的平台以及如何开始。
 
 
@@ -25,5 +25,5 @@ ms.locfileid: "57018864"
 - [教程：SignalR 2 入门](tutorial-getting-started-with-signalr.md)
 - [教程：使用 SignalR 2 和 MVC 5 入门](tutorial-getting-started-with-signalr-and-mvc.md)
 - [教程：使用 signalr 2 实现高频率实时功能](tutorial-high-frequency-realtime-with-signalr.md)
-- [教程：使用 signalr 2 实现服务器广播](tutorial-server-broadcast-with-signalr.md)
-- [动手实验：使用 SignalR 实时 Web 应用程序](real-time-web-applications-with-signalr.md)
+- [教程：使用 SignalR 2 实现服务器广播](tutorial-server-broadcast-with-signalr.md)
+- [动手实验：使用 SignalR 实现实时 Web 应用程序](real-time-web-applications-with-signalr.md)

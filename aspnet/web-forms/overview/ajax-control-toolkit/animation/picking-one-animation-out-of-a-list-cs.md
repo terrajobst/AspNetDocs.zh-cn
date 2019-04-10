@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 06a776fe-7c73-4ca7-8e02-5260a86edc03
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9cbbfaefca43a2fb25eec30115bcc4b5112754a9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1cbb60431824ce642625c06cba6b5194aa547b1b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057854"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419699"
 ---
-<a name="picking-one-animation-out-of-a-list-c"></a>选取列表中的一个动画 (C#)
-====================
+# <a name="picking-one-animation-out-of-a-list-c"></a>选取列表中的一个动画 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation5.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation5CS.pdf)
@@ -53,7 +53,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-aspx[Main](picking-one-animation-out-of-a-list-cs/samples/sample5.aspx)]
 
 
-[![其中一种可能的三个动画：在面板获取更宽](picking-one-animation-out-of-a-list-cs/_static/image2.png)](picking-one-animation-out-of-a-list-cs/_static/image1.png)
+[![O内布拉斯加州的可能的三个动画：在面板变宽时](picking-one-animation-out-of-a-list-cs/_static/image2.png)](picking-one-animation-out-of-a-list-cs/_static/image1.png)
 
 其中一种可能的三个动画：在面板获取更广 ([单击此项可查看原尺寸图像](picking-one-animation-out-of-a-list-cs/_static/image3.png))
 

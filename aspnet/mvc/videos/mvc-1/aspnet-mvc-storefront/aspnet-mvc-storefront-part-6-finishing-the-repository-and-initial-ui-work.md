@@ -8,15 +8,15 @@ ms.date: 05/27/2008
 ms.assetid: 40c12998-f699-409f-acdc-59699a0e5514
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work
 msc.type: video
-ms.openlocfilehash: 35a9e6900a6e64e7985bea77e9a670f20f082bd4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ce82365b08f2cecd17fd9f34415987f3aac28a54
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049204"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419712"
 ---
-<a name="aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work"></a>ASP.NET MVC 店面第 6 部分：完成存储库，并初始 UI 工作
-====================
+# <a name="aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work"></a>ASP.NET MVC 店面第 6 部分：完成存储库，并初始 UI 工作
+
 通过[Rob conery 专攻](https://github.com/robconery)
 
 Rob 讨论了与 Jon Galloway CSS 策略，并开始使用应用程序的前端。

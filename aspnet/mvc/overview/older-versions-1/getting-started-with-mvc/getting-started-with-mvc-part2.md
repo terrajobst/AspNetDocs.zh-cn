@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: b593c6225c05c7405c9d8b78abfd29a087d47b04
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 84f9c822f041808184b2c586ce933ba3b24615dc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421254"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419829"
 ---
-<a name="adding-a-controller"></a>添加控制器
-====================
+# <a name="adding-a-controller"></a>添加控制器
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > > [!NOTE]
@@ -40,7 +40,7 @@ MVC 代表模型、 视图、 控制器。 MVC 是一种模式用于开发应用
 
 新控制器"HelloWorldController"命名，并单击添加。
 
-[![添加控制器对话框](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
+[![Add 控制器对话框](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
 
 请注意，在解决方案资源管理器中，已为您调用 HelloWorldController.cs 创建一个新文件并在现在打开该文件在右侧**IDE**。
 
@@ -58,13 +58,13 @@ ASP.NET MVC 调用不同的控制器类 （和其中不同的操作方法），�
 
 URL 的第一个部分确定要执行的控制器类。 因此 /HelloWorld 将映射到 HelloWorldController 类。 URL 的第二部分确定要执行的类上的操作方法。 /HelloWorld/Index 时会导致 HelloWorldController 类执行的 index （） 方法。 请注意，我们只需要访问上述 /HelloWorld 和表示为索引的方法。 这是因为名为"Index"的方法是如果有一个未显式指定调用在控制器的默认方法。
 
-[![这是我的默认操作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
+[![T他是我的默认操作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 
 现在，我们来访问`http://localhost:xx/HelloWorld/Welcome.`现在我们的欢迎使用方法已执行并返回其 HTML 字符串。
 
 同样，/ [Controller] / [ActionName] / [参数]，因此控制器是 HelloWorld，欢迎在这种情况下是该方法。 我们还没有这样的参数。
 
-[![这是 Welcome 操作方法](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
+[![T他是 Welcome 操作方法](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
 
 让我们这样我们可以将中的一些信息从 URL 中传递给我们的控制器，例如如下稍微修改一下我们的示例: / HelloWorld/欢迎？ 名称 = Scott&amp;numtimes = 4。 更改欢迎使用方法，以包括两个参数和与下面类似的更新。 请注意，我们已使用 C# 可选参数功能指示是否它未传入参数 numTimes 应默认为 1。
 

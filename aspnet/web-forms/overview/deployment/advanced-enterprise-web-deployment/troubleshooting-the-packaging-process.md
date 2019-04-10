@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 794bd819-00fc-47e2-876d-fc5d15e0de1c
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
-ms.openlocfilehash: 22be1ccc5a1ec52d143bedffd79264918c1a45e1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 79774c6a1a1d05d5a7bcd82a5d7aa888933cf089
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036884"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420102"
 ---
-<a name="troubleshooting-the-packaging-process"></a>打包过程故障排除
-====================
+# <a name="troubleshooting-the-packaging-process"></a>打包过程故障排除
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -113,4 +113,4 @@ ms.locfileid: "57036884"
 使用自定义 MSBuild 项目文件来控制部署过程的详细信息，请参阅[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)并[了解生成过程](../web-deployment-in-the-enterprise/understanding-the-build-process.md)。 WPP 和它如何管理打包过程的详细信息，请参阅[构建和打包 Web 应用程序项目](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)。 有关如何从 web 部署包中排除特定文件和文件夹的指导，请参阅[不包括文件和文件夹从部署](excluding-files-and-folders-from-deployment.md)。
 
 > [!div class="step-by-step"]
-> [上一篇](running-windows-powershell-scripts-from-msbuild-project-files.md)
+> [上一个](running-windows-powershell-scripts-from-msbuild-project-files.md)

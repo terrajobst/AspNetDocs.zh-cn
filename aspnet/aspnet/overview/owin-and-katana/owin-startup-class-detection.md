@@ -8,15 +8,15 @@ ms.date: 01/28/2019
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 0b34cca8b48383dbb028106651758dff889ed614
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e4d9424d691f92aacf078faed09689daa40a44fd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039774"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418334"
 ---
-<a name="owin-startup-class-detection"></a>OWIN 启动类检测
-====================
+# <a name="owin-startup-class-detection"></a>OWIN 启动类检测
+
 
 > 本教程演示如何配置加载的 OWIN 启动类。 OWIN 的详细信息，请参阅[项目 Katana 概述](an-overview-of-project-katana.md)。 本教程由 Rick Anderson 编写 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
 >
@@ -79,7 +79,8 @@ ms.locfileid: "57039774"
      > [!NOTE]
      > 在上面的代码中我们注释掉`OwinStartup`属性，我们要依赖于正在运行的名为的类的约定`Startup`。-按***F5***运行该应用程序。 命中刷新几次。
 
-    ![](owin-startup-class-detection/_static/image4.png) 注意：在本教程中显示图像中的数字将看到的数字不匹配。 毫秒字符串用于刷新页面时显示新的响应。
+    ![](owin-startup-class-detection/_static/image4.png)
+  注意:在本教程中显示图像中的数字将看到的数字不匹配。 毫秒字符串用于刷新页面时显示新的响应。
   可以看到中的跟踪信息**输出**窗口。
 
     ![](owin-startup-class-detection/_static/image5.png)

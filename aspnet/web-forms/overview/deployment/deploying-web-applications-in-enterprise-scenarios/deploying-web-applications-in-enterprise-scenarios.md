@@ -8,15 +8,15 @@ ms.date: 05/03/2012
 ms.assetid: 48cfe378-d62a-48c6-a4db-6be3cead6898
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: fa06538dcd9e087df52a76588e084a527867bf84
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f8d55cb98e6943ef2a7c7eb05f7f771b5f5e63ef
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420401"
 ---
-<a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>使用 Visual Studio 2010 在企业方案中部署 Web 应用程序
-====================
+# <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>使用 Visual Studio 2010 在企业方案中部署 Web 应用程序
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -78,4 +78,4 @@ Benjamin Curry 是使用的主体技术专家[内容 Master](http://www.contentm
 本系列教程使用示例解决方案使用真实的复杂性，虚构企业部署方案中，以及级别提供的参考实现，并为提供的任务和演练的通用上下文。 下一主题[企业 Web 部署：方案概述](enterprise-web-deployment-scenario-overview.md)，引入了方案和示例解决方案。 从此处，可通过教程和主题的最接近你的需求。
 
 > [!div class="step-by-step"]
-> [下一页](enterprise-web-deployment-scenario-overview.md)
+> [下一步](enterprise-web-deployment-scenario-overview.md)
