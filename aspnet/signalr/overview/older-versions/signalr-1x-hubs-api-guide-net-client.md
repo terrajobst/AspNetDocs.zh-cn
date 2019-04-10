@@ -8,15 +8,15 @@ ms.date: 04/17/2013
 ms.assetid: c334adc3-d6dc-44f3-9f06-f7634475aad3
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: dbf62b2f9851e3612885aa5375cd2c3432570643
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1551b4533e05a6cd7dcc29e4c6bc17e854889ee8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402240"
 ---
-<a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>ASP.NET SignalR 中心 API 指南-.NET 客户端 (SignalR 1.x)
-====================
+# <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>ASP.NET SignalR 中心 API 指南-.NET 客户端 (SignalR 1.x)
+
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -97,8 +97,7 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 
 [!code-css[Main](signalr-1x-hubs-api-guide-net-client/samples/sample3.css?highlight=1)]
 
-
-  `HubConnection` 类是线程安全的。
+`HubConnection` 类是线程安全的。
 
 <a id="slcrossdomain"></a>
 
@@ -317,12 +316,12 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 
 SignalR 提供了以下连接可以处理的生存期事件：
 
-- `Received`：在连接上接收到任何数据时引发。 提供接收到的数据。
-- `ConnectionSlow`：当客户端检测到慢速或频繁删除连接时引发。
-- `Reconnecting`：基础传输开始重新连接时引发。
-- `Reconnected`：当基础传输已重新连接时引发。
-- `StateChanged`：连接状态更改时引发。 提供的旧状态和新的状态。 有关连接状态的值请参阅[ConnectionState 枚举](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)。
-- `Closed`：当连接已断开连接时引发。
+- `Received`:在连接上接收到任何数据时引发。 提供接收到的数据。
+- `ConnectionSlow`:当客户端检测到慢速或频繁删除连接时引发。
+- `Reconnecting`:基础传输开始重新连接时引发。
+- `Reconnected`:当基础传输已重新连接时引发。
+- `StateChanged`:连接状态更改时引发。 提供的旧状态和新的状态。 有关连接状态的值请参阅[ConnectionState 枚举](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)。
+- `Closed`:当连接已断开连接时引发。
 
 例如，如果你想要显示的错误的不严重，但会导致间歇性连接问题的警告消息，如缓慢或频繁删除的连接，处理`ConnectionSlow`事件。
 

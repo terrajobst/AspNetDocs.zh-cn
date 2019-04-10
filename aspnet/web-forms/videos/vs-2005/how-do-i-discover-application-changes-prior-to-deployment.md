@@ -8,15 +8,15 @@ ms.date: 07/25/2007
 ms.assetid: 6945a637-cab3-4a13-a678-f6d2d83c2587
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
 msc.type: video
-ms.openlocfilehash: c6870e33ba7707ca06633876c1f453576811ce7f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2cedf4dd161751802bf197ee6b96731259bc5c2f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402929"
 ---
-<a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[如何实现:]发现之前部署的应用程序更改？
-====================
+# <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[如何实现:]发现之前部署的应用程序更改？
+
 通过[Paul 黑客](https://github.com/pjhacker)
 
 了解如何使用源控件资源管理器从 Visual Studio Team System 来发现对 Web 应用程序，所做的更改，并确保必要的更改会部署到实时网站。 我们还了解免费的实用工具，可用于合并在一起以简化部署的更改。

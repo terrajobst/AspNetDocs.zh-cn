@@ -8,15 +8,15 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 65e2268418501f89a77a0ba20f7960a618c2e9b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034274"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405451"
 ---
-<a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的属性路由
-====================
+# <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的属性路由
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 *路由*是 Web API 如何匹配到某个操作的 URI。 Web API 2 支持一种新类型的路由，称为*的属性路由*。 顾名思义，属性路由使用属性定义的路由。 属性路由可以更好地控制 Uri 在你的 web API。 例如，您可以轻松创建描述层次结构的资源的 Uri。
@@ -228,8 +228,8 @@ Web API 还将选择操作请求 （GET、 POST 等） 的 HTTP 方法。 默认
 
 这是上一示例中，几乎相同，但没有行为的细微的差别在于时应用的默认值。
 
-- 在第一个示例 ("{lcid？}") 中，1033年的默认值是直接分配给方法参数，因此该参数会将此确切值。
-- 在第二个示例 ("{lcid = 1033年}")，"1033"的默认值都通过模型绑定过程。 默认模型联编程序会将数字值 1033年为"1033"。 但是，您可以插入自定义模型联编程序，这可能会执行一些不同。
+- 在第一个示例 ("{lcid:int？}") 中，1033年的默认值是直接分配给方法参数，因此该参数会将此确切值。
+- 在第二个示例 ("{lcid:int = 1033年}")，"1033"的默认值都通过模型绑定过程。 默认模型联编程序会将数字值 1033年为"1033"。 但是，您可以插入自定义模型联编程序，这可能会执行一些不同。
 
 （在大多数情况下，除非你有自定义模型绑定器在管道中的两种形式将等效。）
 

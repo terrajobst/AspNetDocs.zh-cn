@@ -8,15 +8,15 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: f71d8311cbb1131d9c30c0bd9071a1c6c90f9976
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 19cda45ce1b425462ec491bcc86b7a0b76dec162
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045844"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409793"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生产中
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生产中
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
@@ -276,7 +276,7 @@ ms.locfileid: "57045844"
 
     ![文件发布到生产环境的预览](deploying-to-production/_static/image14.png)
 
-    查看将复制的文件的列表。 您会发现其中的所有 *.cs*文件，其中包括 *。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*省略文件。 所有这些代码已编译到*ContosoUniversity.dll*并*ContosUniversity.pdb*您会发现中的文件*bin*文件夹。 因为仅 *.dll*需要向运行该应用程序，以及你前面指定应部署仅运行该应用程序所需的文件，则不 *.cs*文件已复制到目标环境。 *Obj*文件夹并*ContosoUniversity.csproj*并 *。 csproj.user*文件省略出于同样的原因。
+    查看将复制的文件的列表。 您会发现其中的所有 *.cs*文件，其中包括 *。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*省略文件。 所有这些代码已编译到*ContosoUniversity.dll*并*ContosoUniversity.pdb*您会发现中的文件*bin*文件夹。 因为仅 *.dll*需要向运行该应用程序，以及你前面指定应部署仅运行该应用程序所需的文件，则不 *.cs*文件已复制到目标环境。 *Obj*文件夹并*ContosoUniversity.csproj*并 *。 csproj.user*文件省略出于同样的原因。
 
     单击**发布**将部署到生产环境。
 2. 在生产环境，用于过渡的相同过程中进行测试。

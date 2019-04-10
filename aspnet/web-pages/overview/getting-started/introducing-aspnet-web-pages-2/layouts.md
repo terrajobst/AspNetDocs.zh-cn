@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: a6a007678d58547e9987ebda46bd08ae8aea66f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 58f3ec28914a604aa911cc3cb73733f0d58fd49f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046174"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390410"
 ---
-<a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET 网页简介-创建一致布局
-====================
+# <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET 网页简介-创建一致布局
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教程演示如何使用*布局*使用 ASP.NET Web Pages 站点上创建一致的外观的页面。 它假定你已完成通过时序[删除数据库数据在 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251584)。
@@ -146,7 +146,7 @@ ASP.NET 已合并到 Movies.cshtml 页的内容 *\_Layout.cshtml*页面，在右
 
 `Page`对象是可用于所有 *.cshtml*页，一个用于此目的，即页面和其布局之间共享信息。
 
-打开<em>\_Layout.cshtml</em>页。 更改`<title>`元素，使其看起来像此标记：
+打开 *\_Layout.cshtml*页。 更改`<title>`元素，使其看起来像此标记：
 
 [!code-html[Main](layouts/samples/sample9.html)]
 

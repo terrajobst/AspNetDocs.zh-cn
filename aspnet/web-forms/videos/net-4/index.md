@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: bac10aee-6731-4a0f-84d7-9eef5e560ae5
 msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
-ms.openlocfilehash: e8565bc2914570eef982bbcc63a8497c2d38386a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ea11b464329a755d5625797327f5a0a3ccb0f426
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400576"
 ---
-<a name="net-4"></a>.NET 4
-====================
+# <a name="net-4"></a>.NET 4
+
 > 新 ASP.NET 功能和.NET Framework 4 中提供的功能。
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "57019804"
     - [ScriptLoader](ajax/aspnet-4-quick-hit-the-scriptloader.md)
     - [适用于 Microsoft Ajax 的 jQuery 语法](ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
     - [AJAX 数据模板](ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-- [图表](chart/index.md)
+- [Chart](chart/index.md)
 
     - [Chart Control](chart/aspnet-4-quick-hit-chart-control.md)
     - [在 Visual Studio 2010 中引入新的图表控件](chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
@@ -34,14 +34,14 @@ ms.locfileid: "57019804"
 
     - [自动启动](core/aspnet-4-quick-hit-auto-start.md)
     - [清理 Web.Config 文件](core/aspnet-4-quick-hit-clean-webconfig-files.md)
-    - [可预测客户端 ID](core/aspnet-4-quick-hit-predictable-client-ids.md)
+    - [可预测的客户端 ID](core/aspnet-4-quick-hit-predictable-client-ids.md)
     - [HtmlEncoder 实用工具方法](core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-- [Data](data/index.md)
+- [数据](data/index.md)
 
     - [永久性 GridView 行选择](data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
 - [“标记”控件](markup-control/index.md)
 
-    - [复选框列表和单选按钮列表的新呈现方案](markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
+    - [复选框列表和单选按钮列表的新呈现选项](markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
     - [无表的模板化控件](markup-control/aspnet-4-quick-hit-table-free-templated-controls.md)
     - [无表的菜单控件](markup-control/aspnet-4-quick-hit-tableless-menu-control.md)
     - [“隐藏字段”Div](markup-control/aspnet-4-quick-hit-hidden-field-divs.md)
@@ -50,7 +50,7 @@ ms.locfileid: "57019804"
 
     - [选择性的视图状态](performance/aspnet-4-quick-hit-selective-view-state.md)
     - [轻松的状态压缩](performance/aspnet-4-quick-hit-easy-state-compression.md)
-    - [使用 ViewStateMode 属性管理视图状态](performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
+    - [使用 ViewStateMode 属性管理 ViewState](performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
 - [路由](routing/index.md)
 
     - [永久性重定向](routing/aspnet-4-quick-hit-permanent-redirect.md)

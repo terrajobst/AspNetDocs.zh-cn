@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8b2a2d2d72bfcf3ce8b3b345fda0bad5a37818ee
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6baf5447d31d00b89cb7ddf526553456fecbbf6e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409468"
 ---
-<a name="fighting-bots-vb"></a>外部测试机器人 (VB)
-====================
+# <a name="fighting-bots-vb"></a>外部测试机器人 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/NoBot0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/nobot0VB.pdf)
@@ -65,9 +65,9 @@ ms.locfileid: "57026464"
 运行此脚本和停用 JavaScript 或在前两秒内提交窗体或在 30 秒内七次提交窗体时, 将收到一条错误消息。 但是恰当地使用此控件，因为只有大约 90 95%的用户可以使用 JavaScript 激活，因此 5-10%的用户将会失败`NoBot`的测试。
 
 
-[![此错误消息可能被引起的智能机器人应用程序](fighting-bots-vb/_static/image2.png)](fighting-bots-vb/_static/image1.png)
+[![T他的错误消息可能已由导致的智能机器人应用程序](fighting-bots-vb/_static/image2.png)](fighting-bots-vb/_static/image1.png)
 
 此错误消息可能已由智能机器人应用程序 ([单击此项可查看原尺寸图像](fighting-bots-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](fighting-bots-cs.md)
+> [上一个](fighting-bots-cs.md)

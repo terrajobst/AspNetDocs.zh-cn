@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 957facaf2988fedb6615e95701af5155cbcb23d2
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423086"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405373"
 ---
-<a name="dependency-injection-in-signalr"></a>SignalR 中的依赖项注入
-====================
+# <a name="dependency-injection-in-signalr"></a>SignalR 中的依赖项注入
+
 通过[Mike Wasson](https://github.com/MikeWasson)， [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -101,8 +101,8 @@ ms.locfileid: "58423086"
 
 StockTicker 示例定义两个主要类：
 
-- `StockTickerHub`：Hub 类，用于管理客户端连接。
-- `StockTicker`：单一实例，它包含股票价格并定期更新它们。
+- `StockTickerHub`:Hub 类，用于管理客户端连接。
+- `StockTicker`:单一实例，它包含股票价格并定期更新它们。
 
 `StockTickerHub` 保存对的引用`StockTicker`单一实例，而`StockTicker`持有一个指向引用**IHubConnectionContext**为`StockTickerHub`。 它使用此接口与通信`StockTickerHub`实例。 (有关详细信息，请参阅[服务器与 ASP.NET SignalR 广播](../getting-started/tutorial-server-broadcast-with-signalr.md)。)
 

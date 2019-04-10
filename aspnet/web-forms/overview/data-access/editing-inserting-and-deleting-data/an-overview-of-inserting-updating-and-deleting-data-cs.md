@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: b651dc58-93c7-4f83-a74e-3b99f6d60848
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c8a07d7b0819df4deb566644fe36bc504d2a2ca
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 61b3d54b73e33040baf93a8b7705dfb231835b40
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424560"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410443"
 ---
-<a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>插入、 更新和删除数据 (C#) 的概述
-====================
+# <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>插入、 更新和删除数据 (C#) 的概述
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_16_CS.exe)或[下载 PDF](an-overview-of-inserting-updating-and-deleting-data-cs/_static/datatutorial16cs1.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "58424560"
 除了其`Select()`方法，还具有 ObjectDataSource `Insert()`， `Update()`，和`Delete()`方法。 如`Select()`方法，这三种方法可以映射到基础对象中的方法。 当配置为插入、 更新或删除数据，GridView、 DetailsView 和 FormView 控件用于修改基础数据提供用户界面。 此用户界面调用`Insert()`， `Update()`，和`Delete()`方法的 ObjectDataSource，然后调用基础对象的关联的方法 （请参阅图 1）。
 
 
-[![ObjectDataSource 的 insert （）、 update （） 和 delete （） 方法提供为代理到 BLL](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image2.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image1.png)
+[![T他 ObjectDataSource 的 insert （）、 update （），和 delete （） 方法充当代理，BLL](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image2.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image1.png)
 
 **图 1**:ObjectDataSource `Insert()`， `Update()`，并`Delete()`方法充当代理，BLL ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image3.png))
 
@@ -63,7 +63,7 @@ ms.locfileid: "58424560"
 在其他文件夹中，喜欢`Default.aspx`在`EditInsertDelete`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面的设计视图上拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image6.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image5.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image6.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image5.png)
 
 **图 3**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image7.png))
 
@@ -88,7 +88,7 @@ ms.locfileid: "58424560"
 打开`Basics.aspx`页上，从工具箱拖到设计器中，拖动对象数据源并单击其智能标记中的配置数据源链接。 由于`ProductsBLL`是唯一的 BLL 类提供编辑、 插入和删除方法，配置对象数据源以使用此类。
 
 
-[![配置对象数据源以使用 ProductsBLL 类](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image10.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image9.png)
+[![C配置对象数据源以使用 ProductsBLL 类](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image10.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image9.png)
 
 **图 5**:配置为使用 ObjectDataSource`ProductsBLL`类 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image11.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "58424560"
 我们可以在下一屏幕中指定的哪些方法`ProductsBLL`类映射到的 ObjectDataSource `Select()`， `Insert()`， `Update()`，和`Delete()`通过选择相应的选项卡并从下拉列表中选择该方法。 图 6 中，现在应该很熟悉，映射的 ObjectDataSource`Select()`方法`ProductsBLL`类的`GetProducts()`方法。 `Insert()`， `Update()`，和`Delete()`方法可以通过从顶部列表中选择相应的选项卡配置。
 
 
-[![具有对象数据源返回的所有产品](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image13.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image12.png)
+[![H保存对象数据源返回所有产品的](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image13.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image12.png)
 
 **图 6**:具有对象数据源返回所有产品的 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image14.png))
 
@@ -104,22 +104,22 @@ ms.locfileid: "58424560"
 图 7、 8 和 9 显示 ObjectDataSource 的更新、 插入和删除选项卡。 配置这些选项卡，以便`Insert()`， `Update()`，并`Delete()`方法调用`ProductsBLL`类的`UpdateProduct`， `AddProduct`，和`DeleteProduct`方法，分别。
 
 
-[![将 ObjectDataSource 的 update （） 方法映射到 ProductBLL 类的 UpdateProduct 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image16.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image15.png)
+[![M亚太给 ProductBLL 类的 UpdateProduct 方法的 ObjectDataSource 的 update （） 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image16.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image15.png)
 
 **图 7**:映射的 ObjectDataSource`Update()`方法`ProductBLL`类的`UpdateProduct`方法 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image17.png))
 
 
-[![将 ObjectDataSource 的 insert （） 方法映射到 ProductBLL 类的 AddProduct 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image19.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image18.png)
+[![M亚太 ProductBLL 类 AddProduct 方法的 ObjectDataSource 的 insert （） 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image19.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image18.png)
 
 **图 8**:映射的 ObjectDataSource`Insert()`方法`ProductBLL`类的添加`Product`方法 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image20.png))
 
 
-[![将 ObjectDataSource 的 delete （） 方法映射到 ProductBLL 类的 DeleteProduct 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image22.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image21.png)
+[![M亚太 ProductBLL 类 DeleteProduct 方法的 ObjectDataSource 的 delete （） 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image22.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image21.png)
 
 **图 9**:映射的 ObjectDataSource`Delete()`方法`ProductBLL`类的`DeleteProduct`方法 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image23.png))
 
 
-您可能已经注意到更新、 插入和删除选项卡中的下拉列表已选择这些方法。 这得归功于我们利用`DataObjectMethodAttribute`修饰的方法`ProducstBLL`。 例如，DeleteProduct 方法具有以下签名：
+您可能已经注意到更新、 插入和删除选项卡中的下拉列表已选择这些方法。 这得归功于我们利用`DataObjectMethodAttribute`修饰的方法`ProductsBLL`。 例如，DeleteProduct 方法具有以下签名：
 
 
 [!code-csharp[Main](an-overview-of-inserting-updating-and-deleting-data-cs/samples/sample2.cs)]
@@ -202,7 +202,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 现在，无论您相信与否，我们已经完成了将删除支持添加到 GridView ！ 如图 11 所示，当访问此页上通过浏览器删除按钮的列存在。
 
 
-[![CommandField 添加删除按钮的列](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image26.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image25.png)
+[![T他 CommandField 添加列的删除按钮](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image26.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image25.png)
 
 **图 11**:CommandField 添加了列的删除按钮 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image27.png))
 
@@ -216,7 +216,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 如果在尝试删除某个产品时，获取的异常的消息是类似于"*ObjectDataSource ObjectDataSource1 找不到非泛型方法具有参数的 DeleteProduct: 产品 id，原始\_ProductID*，"您可能忘记删除`OldValuesParameterFormatString`ObjectDataSource 中的属性。 与`OldValuesParameterFormatString`属性指定，ObjectDataSource 尝试传递中均`productID`并`original_ProductID`输入参数`DeleteProduct`方法。 `DeleteProduct`但是，仅接受一个输入的参数，因此异常。 删除`OldValuesParameterFormatString`属性 (或将其设置为`{0}`) 指示对象数据源，不尝试将原始的输入参数中。
 
 
-[![确保 OldValuesParameterFormatString 属性已被清除](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image29.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image28.png)
+[![EOldValuesParameterFormatString 属性已被清除出 nsure](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image29.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image28.png)
 
 **图 12**:絋粄`OldValuesParameterFormatString`属性已被清除出 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image30.png))
 
@@ -224,7 +224,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 即使您已经删除`OldValuesParameterFormatString`属性，您仍将收到异常时尝试删除该消息与产品："*DELETE 语句与引用约束冲突 FK\_顺序\_详细信息\_产品的*。"Northwind 数据库包含之间的外键约束`Order Details`并`Products`表，这表示如果存在一个或多个记录中为其产品不能从系统删除`Order Details`表。 由于在 Northwind 数据库中的每个产品具有至少一个记录`Order Details`，我们首先删除该产品关联的订单详细信息记录之前，我们不能删除任何产品。
 
 
-[![外键约束禁止删除产品](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image32.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image31.png)
+[![A 外键约束禁止删除产品](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image32.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image31.png)
 
 **图 13**:外键约束禁止删除的产品 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image33.png))
 
@@ -238,7 +238,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 让我们只需删除所有从记录`Order Details`来绕过的外键约束的表。 转到 Visual Studio 中的服务器资源管理器，右键单击`NORTHWND.MDF`节点，然后选择新查询。 然后，在查询窗口中，运行以下 SQL 语句： `DELETE FROM [Order Details]`
 
 
-[![从订单详细信息表中删除所有记录](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image34.png)
+[![D表示删除订单详细信息表中的所有记录](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image34.png)
 
 **图 14**:删除所有记录`Order Details`表 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image36.png))
 
@@ -283,7 +283,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 这就是一切就是添加基本编辑支持。 编辑界面是相当不成熟 Figure16 所示，每个 BoundField 其`ReadOnly`属性设置为`false`（默认值） 将呈现为一个文本框。 这包括字段，例如`CategoryID`和`SupplierID`，这是与其他表的键。
 
 
-[![单击 Chai s 编辑按钮以编辑模式显示该行](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image39.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image38.png)
+[![C单击 Chai s 编辑按钮显示的行处于编辑模式时](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image39.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image38.png)
 
 **图 16**:单击 Chai s 编辑按钮以编辑模式显示该行 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image40.png))
 
@@ -317,7 +317,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 请注意，对于 DetailsView CommandField 默认情况下，将显示在列集合的末尾。 由于 DetailsView 字段呈现为行，CommandField 显示为行与 Insert、 编辑和删除 DetailsView 底部的按钮。
 
 
-[![配置为支持编辑、 插入和删除 DetailsView](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image43.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image42.png)
+[![C配置为支持编辑、 插入和删除 DetailsView](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image43.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image42.png)
 
 **图 18**:配置为支持编辑、 插入和删除 DetailsView ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image44.png))
 
@@ -329,7 +329,7 @@ CommandField 包含大量`ShowXButton`指示哪些系列按钮显示在 CommandF
 Visual Studio 时将数据源绑定到 DetailsView 通过智能标记，将设置`InsertVisible`属性设置为`false`仅用于自动递增字段。 只读字段，如`CategoryName`并`SupplierName`，除非将"插入模式"用户界面中显示其`InsertVisible`属性显式设置为`false`。 请花费片刻时间设置这两个字段`InsertVisible`属性设置为`false`，通过 DetailsView 的声明性语法或编辑字段中的智能标记的链接。 图 19 显示设置`InsertVisible`属性设置为`false`编辑字段上单击链接。
 
 
-[![Northwind Traders 现在提供 Acme 茶](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image46.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image45.png)
+[![Northwind Traders 现在提供了 Acme 茶](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image46.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image45.png)
 
 **图 19**:Northwind Traders 现在提供了 Acme 茶 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image47.png))
 
@@ -337,7 +337,7 @@ Visual Studio 时将数据源绑定到 DetailsView 通过智能标记，将设�
 设置后`InsertVisible`属性，视图`Basics.aspx`页在浏览器中，单击新建按钮。 图 20 显示了 DetailsView 时添加新的饮料，Acme 茶，到我们的产品线。
 
 
-[![Northwind Traders 现在提供 Acme 茶](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image49.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image48.png)
+[![Northwind Traders 现在提供了 Acme 茶](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image49.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image48.png)
 
 **图 20**:Northwind Traders 现在提供了 Acme 茶 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image50.png))
 
@@ -345,7 +345,7 @@ Visual Studio 时将数据源绑定到 DetailsView 通过智能标记，将设�
 输入为 Acme 茶的详细信息，并单击插入按钮之后，才会回发和新记录添加到`Products`数据库表。 由于此 DetailsView 列出的顺序与它们存在于数据库表中的产品，我们必须页上的最后一个产品才能看到新的产品。
 
 
-[![Acme 茶的详细信息](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image52.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image51.png)
+[![DAcme 茶的 etails](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image52.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image51.png)
 
 **图 21**:Acme 茶的详细信息 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image53.png))
 
@@ -372,7 +372,7 @@ FormView 提供内置支持用于插入、 编辑和删除数据，但因为它�
 图 22 显示了 FormView 的`ItemTemplate`时的浏览器查看。 在底部的新建、 编辑和删除按钮将列出每个产品字段。
 
 
-[![情况下 FormView ItemTemplate 列出了每个产品字段以及新增、 编辑和删除按钮](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image55.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image54.png)
+[![T他的情况下 FormView ItemTemplate 列出了新建、 编辑和删除按钮以及每个产品字段](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image55.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image54.png)
 
 **图 22**:情况下 FormView`ItemTemplate`列出了每个产品字段沿使用新建、 编辑和删除按钮 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image56.png))
 
@@ -396,7 +396,7 @@ TextBox 控件中`EditItemTemplate`具有其`Text`属性绑定到其相应的数
 图 23 在浏览器中显示 FormView 后为 Chai 已单击编辑按钮。 请注意，`SupplierName`并`CategoryName`字段中所示`ItemTemplate`不再存在，因为我们只需删除它们从`EditItemTemplate`。 单击更新按钮时 FormView 将继续通过 GridView 和 DetailsView 控件相同的步骤序列。
 
 
-[![默认情况下 EditItemTemplate 显示为文本框或复选框的每个可编辑产品字段](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image58.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image57.png)
+[![B默认情况下 EditItemTemplate 显示为文本框或复选框的每个可编辑产品字段](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image58.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image57.png)
 
 **图 23**:默认情况下`EditItemTemplate`显示了每个可编辑产品字段为文本框或复选框 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image59.png))
 
@@ -413,12 +413,12 @@ TextBox 控件中`EditItemTemplate`具有其`Text`属性绑定到其相应的数
 图 24 显示 FormView 的浏览器中，添加一个新的产品 Acme 咖啡时。 请注意，`SupplierName`并`CategoryName`字段中所示`ItemTemplate`不再存在，因为我们只需删除它们。 单击插入按钮时，FormView 可继续通过 DetailsView 控件相同的步骤序列，添加新记录到`Products`表。 图 25 中 FormView 显示 Acme 咖啡产品的详细信息后已插入。
 
 
-[![InsertItemTemplate 决定了 FormView 的插入接口](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image61.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image60.png)
+[![T他 InsertItemTemplate 决定了 FormView 的插入接口](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image61.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image60.png)
 
 **图 24**:`InsertItemTemplate`决定了 FormView 的插入接口 ([单击以查看实际尺寸的图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image62.png))
 
 
-[![在 FormView 中显示的新产品，Acme 咖啡，详细信息](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image64.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image63.png)
+[![T在 FormView 中显示的新产品，Acme 咖啡，他详细信息](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image64.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image63.png)
 
 **图 25**:在 FormView 中显示的新产品，Acme 咖啡，详细信息 ([单击此项可查看原尺寸图像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image65.png))
 
@@ -440,4 +440,4 @@ TextBox 控件中`EditItemTemplate`具有其`Text`属性绑定到其相应的数
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 > [!div class="step-by-step"]
-> [下一页](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+> [下一步](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

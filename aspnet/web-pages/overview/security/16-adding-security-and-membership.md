@@ -8,15 +8,15 @@ ms.date: 02/24/2014
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: 1c36adf23f3b53e4fbf3dbdce7ca85664b32c975
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1291417755e3fa4fb030bc6ba3089c38c4719c71
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026934"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389656"
 ---
-<a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全性和成员身份添加到 ASP.NET Web Pages (Razor) 站点
-====================
+# <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全性和成员身份添加到 ASP.NET Web Pages (Razor) 站点
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 此文章介绍了如何保护 ASP.NET Web Pages (Razor) 网站，以便仅供用户登录页面的一些。 （您还可以看到如何创建任何人都可以访问的页面。）
@@ -264,7 +264,7 @@ ASP.NET 成员资格系统设置以支持角色。 但是，与成员身份注�
 - [自定义站点范围内的行为](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [保护 Web 通信：证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [若要实现 ASP.NET Razor 安全性的最基本方法](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240)并[确认功能用于 ASP.NET Web Pages 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267)。 这些是介绍如何实现 ASP.NET 成员资格功能而无需使用的博客文章**入门网站**模板。
-- [在 ASP.NET 网站中启用从外部站点进行登录](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [在 ASP.NET 网页站点中启用从外部站点进行登录](https://go.microsoft.com/fwlink/?LinkId=251969)
 - [WebSecurity 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99))(MSDN)
 - [SimpleRoleProvider 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99))(MSDN)
 - [SimpleMembershipProvider 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99))(MSDN)

@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 2b251c82-77cf-4e36-baa9-b648eddaa394
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f54f8ef593363f9428b663051cc71b8ef4a2e67
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 786d7923d745bfb26ce0759bbe60bc472a63ea5c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390423"
 ---
-<a name="limiting-data-modification-functionality-based-on-the-user-c"></a>限制基于用户的数据修改功能 (C#)
-====================
+# <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>限制基于用户的数据修改功能 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_23_CS.exe)或[下载 PDF](limiting-data-modification-functionality-based-on-the-user-cs/_static/datatutorial23cs1.pdf)
@@ -31,12 +31,12 @@ ms.locfileid: "57032524"
 在本教程中我们将介绍如何动态调整基于来访的用户的数据修改功能。 具体而言，我们将创建一个 GridView，列出的供应商提供的产品以及可编辑 DetailsView 中显示的供应商信息的页面。 如果用户访问的页面是从我们的公司，他们可以： 查看供应商 s 的任何信息;编辑其地址;和编辑任何产品的供应商提供的信息。 如果，但是，用户是从特定的公司，他们可以只查看和编辑他们自己的地址信息和只能编辑不标记为已停止使用其产品。
 
 
-[![我们的公司中的用户可以编辑任何供应商的信息](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
+[![A User from Our Company Can Edit Any Supplier s Information](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
 
 **图 1**:从我们公司可以编辑任何供应商的信息的用户 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image3.png))
 
 
-[![中的特定供应商仅可以查看和编辑其信息的用户](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
+[![A 从特定供应商仅可以查看和编辑其信息的用户](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
 
 **图 2**:从特定供应商可以仅查看和编辑其信息的用户 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image6.png))
 
@@ -56,7 +56,7 @@ ms.locfileid: "57032524"
 然后，在本教程中，我们第一步是创建此 DropDownList 并填充其供应商系统中。 打开`UserLevelAccess.aspx`页中`EditInsertDelete`文件夹中，添加 DropDownList 其`ID`属性设置为`Suppliers`，并将此 DropDownList 绑定到名为新 ObjectDataSource `AllSuppliersDataSource`。
 
 
-[![创建名为 AllSuppliersDataSource 新 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
+[![C创建新对象数据源名为 AllSuppliersDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
 
 **图 3**:创建新对象数据源命名`AllSuppliersDataSource`([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image9.png))
 
@@ -66,7 +66,7 @@ ms.locfileid: "57032524"
 完成 ObjectDataSource 向导后，通过配置完成的步骤`Suppliers`DropDownList，使之显示`CompanyName`数据字段，并使用`SupplierID`为每个值的数据字段`ListItem`。
 
 
-[![配置供应商 DropDownList，若要使用的公司名称和供应商数据字段](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
+[![Configure the Suppliers DropDownList to Use the CompanyName and SupplierID Data Fields](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
 
 **图 4**:配置`Suppliers`使用 DropDownList`CompanyName`并`SupplierID`数据字段 ([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image12.png))
 
@@ -85,7 +85,7 @@ ms.locfileid: "57032524"
 通过浏览器查看时，图 5 显示了我们当前进度的屏幕截图。
 
 
-[![供应商 DropDownList 包含显示所有列表项，以及一个用于每个供应商](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
+[![T他的供应商 DropDownList 包含显示所有 ListItem，加上一个用于每个供应商](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
 
 **图 5**:`Suppliers` DropDownList 包含显示所有`ListItem`，以及一个用于每个供应商 ([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image15.png))
 
@@ -112,7 +112,7 @@ ms.locfileid: "57032524"
 现在可以通过分页 DetailsView 和可更新的所选供应商的地址信息，而不考虑中所做的选择`Suppliers`DropDownList （请参阅图 6）。
 
 
-[![可以查看任何供应商的信息，并更新其地址](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
+[![A可以查看 ny 供应商信息，并更新其地址](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
 
 **图 6**:任何供应商可以查看信息，并更新其地址 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image18.png))
 
@@ -124,7 +124,7 @@ ms.locfileid: "57032524"
 将新对象数据源添加到页上，其命名为`SingleSupplierDataSource`。 从其智能标记上，单击配置数据源链接并让其使用`SuppliersBLL`类的`GetSupplierBySupplierID(supplierID)`方法。 如同`AllSuppliersDataSource`ObjectDataSource，具有`SingleSupplierDataSource`ObjectDataSource s`Update()`方法映射到`SuppliersBLL`类的`UpdateSupplierAddress`方法。
 
 
-[![配置 SingleSupplierDataSource ObjectDataSource 使用 GetSupplierBySupplierID(supplierID) 方法](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
+[![C配置 SingleSupplierDataSource ObjectDataSource 使用 GetSupplierBySupplierID(supplierID) 方法](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
 
 **图 7**:配置`SingleSupplierDataSource`使用 ObjectDataSource`GetSupplierBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image21.png))
 
@@ -132,7 +132,7 @@ ms.locfileid: "57032524"
 接下来，我们重新提示指定的参数源`GetSupplierBySupplierID(supplierID)`s 方法`supplierID`输入的参数。 由于我们想要显示的信息从下拉列表中，使用所选的供应商`Suppliers`DropDownList 的`SelectedValue`作为参数源属性。
 
 
-[![使用供应商 DropDownList 作为供应商 Id 参数源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
+[![Use 供应商 DropDownList 作为供应商 Id 参数源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
 
 **图 8**:使用`Suppliers`作为 DropDownList`supplierID`参数源 ([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image24.png))
 
@@ -147,12 +147,12 @@ ms.locfileid: "57032524"
 使用就地此事件处理程序，DetailsView 控件现在显示所选的供应商，除非选择了"显示/编辑所有供应商"选项，所有供应商可以在这种情况下进行查看通过分页界面。 图 9 显示的页选择了;"显示/编辑所有供应商"选项请注意，分页界面，这样就允许用户访问和更新任何供应商。 图 10 显示与所选佳佳供应商的页。 仅佳佳的信息在此情况下是可查看和编辑。
 
 
-[![您可以查看和编辑所有供应商信息](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
+[![A可以查看和编辑的供应商信息的 ll](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
 
 **图 9**:所有供应商的信息可以查看和编辑 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image27.png))
 
 
-[![仅将所选供应商的信息都可以查看和编辑](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
+[![O查看和编辑，可以是 nly 选择供应商的信息](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
 
 **图 10**:仅选择供应商的信息可以查看和编辑 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image30.png))
 
@@ -171,7 +171,7 @@ ms.locfileid: "57032524"
 使用此我们准备就绪后添加 GridView 控件和其关联的 ObjectDataSource 重载创建， 向页面添加一个新的 GridView、 设置其`ID`属性设置为`ProductsBySupplier`，并将其配置为使用名为新 ObjectDataSource `ProductsBySupplierDataSource`。 因为我们希望此 GridView，其中列出所选的供应商的那些产品，使用`ProductsBLL`类的`GetProductsBySupplierID(supplierID)`方法。 此外将映射`Update()`方法对新`UpdateProduct`我们刚刚创建的重载。
 
 
-[![配置对象数据源以使用刚刚创建的 UpdateProduct 重载](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
+[![C配置使用 UpdateProduct 重载刚创建的 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
 
 **图 11**:配置为使用 ObjectDataSource`UpdateProduct`重载只是创建 ([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image33.png))
 
@@ -179,7 +179,7 @@ ms.locfileid: "57032524"
 我们重新提示你选择的参数源`GetProductsBySupplierID(supplierID)`s 方法`supplierID`输入的参数。 由于我们想要显示的产品的供应商中 DetailsView，使用所选`SuppliersDetails`DetailsView 控件的`SelectedValue`作为参数源属性。
 
 
-[![SuppliersDetails DetailsView 的 SelectedValue 属性用作参数源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
+[![Use SuppliersDetails DetailsView 的 SelectedValue 属性作为参数源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
 
 **图 12**:使用`SuppliersDetails`DetailsView s`SelectedValue`作为参数源属性 ([单击以查看实际尺寸的图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image36.png))
 
@@ -194,7 +194,7 @@ ms.locfileid: "57032524"
 完成此配置后，我们的页面现在列出在 GridView 中选定的供应商提供的产品 （请参阅图 13）。 目前*任何*可以更新产品的名称或每个单位的数量。 但是，我们需要更新我们的页面逻辑，以便对用户与特定供应商相关联的停产的产品禁止的此类功能。 我们将解决此步骤 5 中的最后一个部分。
 
 
-[![显示所选供应商提供的产品](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
+[![T他选择供应商提供的产品显示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
 
 **图 13**:显示所选供应商提供的产品 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image39.png))
 
@@ -217,12 +217,12 @@ ms.locfileid: "57032524"
 与此事件处理程序中的位置，访问此页以用户身份的特定供应商提供已不再使用这些产品是不可编辑，作为编辑按钮是隐藏这些产品。 例如，Chef Anton 的秋葵组合是新奥尔良 Cajun 带来快乐供应商已中止的产品。 当针对此特定供应商访问的页面，此产品的编辑按钮隐藏的建立直通连接，（请参阅图 14）。 但是，当访问使用"显示/编辑所有供应商"，编辑按钮是可用 （请参阅图 15）。
 
 
-[![Chef Anton s 秋葵汤编辑按钮处于隐藏状态的特定于供应商的用户](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
+[![F或特定于供应商的用户的 Chef Anton 的秋葵汤编辑按钮处于隐藏状态](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
 
 **图 14**:Chef Anton s 秋葵汤编辑按钮处于隐藏状态的特定于供应商的用户 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image42.png))
 
 
-[![显示/编辑所有供应商用户，对于 Chef Anton s 秋葵汤编辑按钮会显示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
+[![F或显示/编辑所有供应商用户、 Chef Anton s 秋葵汤编辑按钮将显示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
 
 **图 15**:对于所有供应商用户的显示/编辑、 显示 Chef Anton s 秋葵汤编辑按钮 ([单击此项可查看原尺寸图像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image45.png))
 

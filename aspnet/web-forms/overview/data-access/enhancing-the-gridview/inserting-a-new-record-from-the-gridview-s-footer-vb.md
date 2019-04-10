@@ -8,15 +8,15 @@ ms.date: 03/06/2007
 ms.assetid: 528acc48-f20c-4b4e-aa16-4cc02f068ebb
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6e56c46d1f2574b9f228190e0e0c8205240015ed
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 251cd769672f1610ac7c51772882b0c166184372
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423944"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397430"
 ---
-<a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>从 GridView 页脚插入新记录 (VB)
-====================
+# <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>从 GridView 页脚插入新记录 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_53_VB.exe)或[下载 PDF](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/datatutorial53vb1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "58423944"
 在将插入功能添加到 GridView，我们负责决定将添加新记录、 创建插入接口，以及编写代码来插入新记录。 在本教程中我们将探讨将插入界面添加到 GridView 的页脚行 （请参阅图 1）。 每个列的页脚单元格包含相应的数据集合用户界面元素 （s 产品名称文本框中，DropDownList 供应商，等等）。 我们还需要一列的添加按钮，单击时，将导致回发并插入新记录到`Products`表可使用提供的脚注行中的值。
 
 
-[![脚注行中添加新的产品提供的接口](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.png)
+[![T他脚注行提供用于添加新产品的接口](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.png)
 
 **图 1**:脚注行提供用于添加新产品的接口 ([单击此项可查看原尺寸图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ ms.locfileid: "58423944"
 我们考虑自己创建 GridView 的页脚中插入接口之前，让 s 第一个专注于向列出数据库中的产品页添加 GridView。 首先打开`InsertThroughFooter.aspx`页中`EnhancedGridView`文件夹，然后从工具箱拖到设计器中，设置 GridView 的拖动 GridView`ID`属性设置为`Products`。 接下来，使用 GridView s 智能标记将其绑定到名为新 ObjectDataSource `ProductsDataSource`。
 
 
-[![创建名为 ProductsDataSource 新 ObjectDataSource](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.png)
+[![C创建新对象数据源名为 ProductsDataSource](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.png)
 
 **图 2**:创建新对象数据源命名`ProductsDataSource`([单击以查看实际尺寸的图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.png))
 
@@ -49,12 +49,12 @@ ms.locfileid: "58423944"
 配置要使用 ObjectDataSource`ProductsBLL`类的`GetProducts()`方法以检索产品信息。 对于本教程，让 s 专注于严格添加插入功能和不用再担心如何编辑和删除。 因此，请确保在插入选项卡中的下拉列表设置为`AddProduct()`并更新和删除选项卡中的下拉列表被设置为 （无）。
 
 
-[![AddProduct 方法映射到 ObjectDataSource s insert （） 方法](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.png)
+[![Map ObjectDataSource s insert （） 方法在 AddProduct 方法](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.png)
 
 **图 3**:地图`AddProduct`方法的 ObjectDataSource s`Insert()`方法 ([单击以查看实际尺寸的图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![将该更新设置和删除选项卡的下拉列表中的，以便 （无）](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.png)
+[![S设置为 （无） 更新和删除选项卡下拉列表](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.png)
 
 **图 4**:将更新和删除选项卡下拉列表设置为 （无） ([单击此项可查看原尺寸图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image8.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "58423944"
 [!code-aspx[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample1.aspx)]
 
 
-[![将分页 GridView 中显示所有产品的数据字段](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.png)
+[![All 分页 GridView 中显示产品数据字段](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.png)
 
 **图 5**:将分页 GridView 中显示所有产品的数据字段 ([单击此项可查看原尺寸图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "58423944"
 除了其标头和数据行，GridView 包括脚注行。 页眉和页脚行显示 GridView s 的值决定[ `ShowHeader` ](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.gridview.showheader.aspx)并[ `ShowFooter` ](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.gridview.showfooter.aspx)属性。 若要显示脚注行，只需设置`ShowFooter`属性设置为`True`。 如图 6 所示，设置`ShowFooter`属性设置为`True`将脚注行添加到网格。
 
 
-[![若要显示脚注行，请将 ShowFooter 设置为 True](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.png)
+[![To 显示脚注行中，将设置为 True 的 ShowFooter](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.png)
 
 **图 6**:若要显示脚注行，请设置`ShowFooter`到`True`([单击以查看实际尺寸的图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "58423944"
 设置后`ShowFooter`属性设置为`True`，花点时间在浏览器中查看输出。 当前页脚行不包含任何文本或 Web 控件。 在步骤 3 中我们将修改的页脚 GridView 中的每个字段，以使其包括在适当的插入接口。
 
 
-[![空的脚注行是显示上面分页界面控件](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image13.png)
+[![T他为空的脚注行是显示上面分页界面控件](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image13.png)
 
 **图 7**:空的脚注行是显示上面分页界面控件 ([单击此项可查看原尺寸图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image14.png))
 
@@ -130,7 +130,7 @@ ms.locfileid: "58423944"
 若要创建编辑界面，请从 GridView s 智能标记中选择编辑模板链接。 然后，从下拉列表中，选择相应字段的`FooterTemplate`并将相应控件从工具箱拖到设计器。
 
 
-[![将相应的插入接口添加到每个字段的要](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image15.png)
+[![Add 为每个字段的要适当的插入接口](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image15.png)
 
 **图 9**:将相应的插入接口添加到每个字段 s `FooterTemplate` ([单击以查看实际尺寸的图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image16.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "58423944"
 当通过浏览器中查看，GridView 的脚注行现在将包括已完成插入接口 （请参阅图 10）。 此时，插入的接口不包括一个使用户以指示该她 s 输入数据的新产品并想要将新记录插入到数据库。 此外，我们 ve 有待解决如何输入到页脚中的数据将转换为新记录中`Products`数据库。 我们将介绍如何将包含插入界面添加按钮和如何对执行代码的步骤 4 中回发时它 s 单击。 第 5 步演示如何插入新记录使用在页脚中的数据。
 
 
-[![GridView 页脚提供用于添加新记录的接口](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image17.png)
+[![T他 GridView 页脚提供用于添加新记录的接口](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image17.png)
 
 **图 10**:GridView 页脚提供用于添加新记录的接口 ([单击此项可查看原尺寸图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -178,7 +178,7 @@ ms.locfileid: "58423944"
 从设计器中，单击 GridView s 智能标记中的编辑模板链接，然后选择`ProductID`字段的`FooterTemplate`从下拉列表。 将按钮 Web 控件 （或 LinkButton 或 ImageButton，如果您愿意） 添加到模板，将其 ID 设置为`AddProduct`，将其`CommandName`插入，并将其`Text`属性设置为添加如图 11 中所示。
 
 
-[![置于 ProductID TemplateField 的要添加按钮](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image19.png)
+[![Place ProductID TemplateField 的要在添加按钮](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image19.png)
 
 **图 11**:将放置在添加按钮`ProductID`TemplateField s `FooterTemplate` ([单击以查看实际尺寸的图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image20.png))
 
@@ -186,7 +186,7 @@ ms.locfileid: "58423944"
 一旦您已包括添加按钮，测试浏览器中的页。 请注意，单击添加按钮包含无效的数据插入接口后，简单地说 circuited 回发并且 ValidationSummary 控件表示无效的数据 （请参阅图 12）。 输入适当的数据，单击添加按钮会导致回发。 没有记录添加到数据库，但是。 我们需要编写一些代码来实际执行插入。
 
 
-[![添加按钮 s 回发是短 Circuited 如果插入界面中存在无效数据](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image21.png)
+[![T他添加按钮 s 回发是短 Circuited 如果插入界面中存在无效数据](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image21.png)
 
 **图 12**:添加按钮 s 回发是短 Circuited 如果插入界面中存在无效数据 ([单击此项可查看原尺寸图像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image22.png))
 
@@ -266,4 +266,4 @@ GridView 缺少 DetailsView 和 FormView 中, 找到的内置插入功能，但�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已伯纳黛特 Leigh。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](adding-a-gridview-column-of-checkboxes-vb.md)
+> [上一个](adding-a-gridview-column-of-checkboxes-vb.md)

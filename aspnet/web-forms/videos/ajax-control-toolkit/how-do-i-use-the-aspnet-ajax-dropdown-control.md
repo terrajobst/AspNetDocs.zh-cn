@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
-title: '[如何实现:]使用 ASP.NET AJAX DropDown 控件？ | Microsoft Docs'
+title: '[如何实现:]Use the ASP.NET AJAX DropDown Control? | Microsoft Docs'
 author: JoeStagner
 description: 使用 ASP.NET AJAX 控件工具包中使用下拉列表中控件扩展器，可以向用户显示与触发部分 pa 的选项的下拉列表中...
 ms.author: riande
@@ -8,15 +8,15 @@ ms.date: 03/30/2007
 ms.assetid: a997a9f8-9f71-4b9e-b7ed-f8e3a0daa576
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
 msc.type: video
-ms.openlocfilehash: 8e253f4213af4a1ffe5e5ee133dec931fcf4a46d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4efddfa898514f9f5f8caf1baca250d5b4ac85b5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392698"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[如何实现:]使用 ASP.NET AJAX DropDown 控件？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[如何实现:]Use the ASP.NET AJAX DropDown Control?
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 使用 ASP.NET AJAX 控件工具包中使用下拉列表中控件扩展器，可以向用户显示与触发部分页面更新 Web 页面上的其他位置的选项的下拉列表中。 用户选择的选项传递到服务器，从而允许服务器端代码来处理之前完成部分页面更新所选内容。

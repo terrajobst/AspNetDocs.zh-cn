@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 11be4211-2fb9-4e15-b6d4-2aa623d81f3e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d8b8330174f6f49e96c42a0e15eeaf934bf24f87
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c9b0946568063b9e5cf1454bd7a57c43304c3543
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048364"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390306"
 ---
-<a name="manipulating-dropshadow-properties-from-client-code-vb"></a>通过客户端代码操作 DropShadow 属性 (VB)
-====================
+# <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>通过客户端代码操作 DropShadow 属性 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow2.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow2VB.pdf)
@@ -55,9 +55,9 @@ JavaScript 函数`changeOpacity()`然后必须首先找到`DropShadowExtender`�
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample6.html)]
 
 
-[![在客户端上更改不透明度](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
+[![T在客户端上更改他不透明度](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
 
 在客户端上更改不透明度 ([单击此项可查看原尺寸图像](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [上一个](adjusting-the-z-index-of-a-dropshadow-vb.md)

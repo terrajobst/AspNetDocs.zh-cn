@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: c9bd10a7-eff8-4d8c-bec9-963c2aef2d6e
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 71ae661ade23d18ebd302e2902f1094d61ce968f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f38f217b0a7c7e656cf46d442c98949be5d43b62
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024354"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385556"
 ---
-<a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>检查与插入、更新和删除操作有关的事件 (VB)
-====================
+# <a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>检查与插入、更新和删除操作有关的事件 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_17_VB.exe)或[下载 PDF](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/datatutorial17vb1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57024354"
 图 1 所示更新 GridView 时这一系列的事件和步骤。 图 1 中的事件模式不是唯一的更新与 GridView。 插入、 更新或删除数据从 GridView、 detailsview 和 FormView precipitates 相同的数据 Web 控件和 ObjectDataSource 的前期和后期级别事件序列。
 
 
-[![系列的预和事后事件触发更新的 GridView 中的数据时](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image2.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image1.png)
+[![A 之前的系列和事后事件触发更新的 GridView 中的数据时](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image2.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image1.png)
 
 **图 1**:系列的前和事后事件激发时更新的数据的 GridView 中 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image3.png))
 
@@ -55,12 +55,12 @@ ms.locfileid: "57024354"
 
 [!code-vb[Main](examining-the-events-associated-with-inserting-updating-and-deleting-vb/samples/sample1.vb)]
 
-像原始`UpdateProduct`方法，此重载开始时检查，以查看具有指定数据库中是否存在产品`ProductID`。 如果不是，它返回`False`，指示更新的产品信息的请求失败。 否则它会更新现有产品记录`ProductName`并`UnitPrice`相应地字段并提交更新通过调用 TableAdpater`Update()`方法，传入`ProductsRow`实例。
+像原始`UpdateProduct`方法，此重载开始时检查，以查看具有指定数据库中是否存在产品`ProductID`。 如果不是，它返回`False`，指示更新的产品信息的请求失败。 否则它会更新现有产品记录`ProductName`并`UnitPrice`相应字段，然后通过调用 TableAdapter 的提交更新`Update()`方法，传入`ProductsRow`实例。
 
 通过这一附加到我们`ProductsBLL`类中，我们已准备好创建简化的 GridView 界面。 打开`DataModificationEvents.aspx`在`EditInsertDelete`文件夹和向页添加 GridView。 创建新对象数据源，并将其配置为使用`ProductsBLL`类的其`Select()`方法映射到`GetProducts`并将其`Update()`方法映射到`UpdateProduct`重载仅采用`productName`， `unitPrice`，和`productID`输入参数。 图 2 显示了创建数据源向导时映射 ObjectDataSource`Update()`方法`ProductsBLL`类的新`UpdateProduct`方法重载。
 
 
-[![将 ObjectDataSource 的 update （） 方法映射到新的 UpdateProduct 重载](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image5.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image4.png)
+[![M亚太到新的 UpdateProduct ObjectDataSource 的 update （） 方法重载](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image5.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image4.png)
 
 **图 2**:映射的 ObjectDataSource`Update()`方法新建`UpdateProduct`重载 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image6.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "57024354"
 由于我们的示例将最初只需要编辑数据，但不是能插入或删除记录的功能，请花费片刻时间以显式指示 ObjectDataSource 的`Insert()`并`Delete()`方法不应映射到的任何`ProductsBLL`通过转到插入和删除选项卡并从下拉列表中选择 （无） 的类的方法。
 
 
-[![从插入和删除选项卡的下拉列表中选择 （无）](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image8.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image7.png)
+[![C（无） 从下拉列表中的插入和删除选项卡选择](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image8.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image7.png)
 
 **图 3**:选择 （无） 从下拉列表中的插入和删除选项卡 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image9.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "57024354"
 虽然 ObjectDataSource 只有`UpdateParameters`有关产品的名称、 价格和 ID，Visual Studio 添加了 BoundField 或 CheckBoxField GridView 中每个产品的字段。
 
 
-[![GridView 包含 BoundField 或 CheckBoxField 每个产品的字段](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image11.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image10.png)
+[![T他 GridView 每个产品的字段包含 BoundField 或 CheckBoxField](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image11.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image10.png)
 
 **图 4**:GridView 包含 BoundField 或 CheckBoxField 每个产品的字段 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image12.png))
 
@@ -99,7 +99,7 @@ ms.locfileid: "57024354"
 当最终用户编辑产品并单击其更新按钮时，GridView 枚举不是只读的这些字段。 然后将相应参数的值设置为 ObjectDataSource 的`UpdateParameters`由用户输入的值的集合。 如果没有对应的参数，则将添加 GridView 向该集合。 因此，如果我们 GridView 包含 BoundFields 和 CheckBoxFields 所有产品的字段，ObjectDataSource 将结束调用`UpdateProduct`在所有这些参数，尽管使用重载的 ObjectDataSource 的声明性标记指定只有三个输入的参数 （参见图 5）。 同样，如果没有非只读的某种组合产品字段中都不对应的输入参数的 GridView`UpdateProduct`重载，尝试更新时，将引发异常。
 
 
-[![GridView 会将参数添加到为 ObjectDataSource 的 UpdateParameters 集合](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image14.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image13.png)
+[![T他 GridView 将参数添加到为 ObjectDataSource 的 UpdateParameters 集合](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image14.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image13.png)
 
 **图 5**:GridView 将向添加参数的 ObjectDataSource`UpdateParameters`集合 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image15.png))
 
@@ -114,7 +114,7 @@ ms.locfileid: "57024354"
 我们 GridView，连同`UpdateProduct`重载，允许用户编辑而不会丢失的任何其他产品字段只是名称和产品价格。
 
 
-[![此接口允许编辑只是该产品的名称和价格](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image17.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image16.png)
+[![T他接口允许编辑只是该产品的名称和价格](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image17.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image16.png)
 
 **图 6**:接口允许编辑只是该产品的名称和价格 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image18.png))
 
@@ -128,7 +128,7 @@ ms.locfileid: "57024354"
 尽管图 6 works 中所示的 GridView 示例`UnitPrice`根本不设置格式字段，导致在价格显示模式中缺少任何货币符号并且具有四个小数位。 若要应用的货币格式设置为不可编辑的行，只需设置`UnitPrice`BoundField 的`DataFormatString`属性设置为`{0:c}`并将其`HtmlEncode`属性设置为`False`。
 
 
-[![相应地设置单价的数据和 HtmlEncode 属性](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image20.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image19.png)
+[![Set 单价的数据和 HtmlEncode 属性相应地](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image20.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image19.png)
 
 **图 7**:设置`UnitPrice`的`DataFormatString`并`HtmlEncode`相应属性 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image21.png))
 
@@ -136,7 +136,7 @@ ms.locfileid: "57024354"
 进行此更改后，不可编辑的行设置价格的格式为货币;编辑过的行，但是，仍显示没有货币符号，使用了四个小数位的值。
 
 
-[![非可编辑的行是现进行格式设置为货币值](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image23.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image22.png)
+[![T他非可编辑的行在为货币值是格式进行设置](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image23.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image22.png)
 
 **图 8**:非可编辑的行是现在的格式为货币值 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image24.png))
 
@@ -144,7 +144,7 @@ ms.locfileid: "57024354"
 中指定的格式设置说明`DataFormatString`属性可以通过设置 BoundField 应用于编辑界面`ApplyFormatInEditMode`属性设置为`True`(默认值是`False`)。 请花费片刻时间来将此属性设置为`True`。
 
 
-[![将单价 BoundField ApplyFormatInEditMode 属性设置为 True](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image26.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image25.png)
+[![Set UnitPrice BoundField ApplyFormatInEditMode 属性设为 True](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image26.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image25.png)
 
 **图 9**:设置`UnitPrice`BoundField 的`ApplyFormatInEditMode`属性设置为`True`([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image27.png))
 
@@ -152,7 +152,7 @@ ms.locfileid: "57024354"
 此更改的值与`UnitPrice`显示在编辑行也设置为货币格式。
 
 
-[![编辑行的单价值是格式为货币](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image29.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image28.png)
+[![T他已编辑行单价值是作为一种货币格式进行设置](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image29.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image28.png)
 
 **图 10**:编辑行`UnitPrice`值是现在设置为货币格式 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image30.png))
 
@@ -169,7 +169,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 图 11 显示了这两个问题引起的中的用户提供的货币符号`UnitPrice`，以及如何 GridView 的`RowUpdating`可利用事件处理程序可以正确地分析此类输入。
 
 
-[![编辑行的单价值是格式为货币](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image32.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image31.png)
+[![T他已编辑行单价值是作为一种货币格式进行设置](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image32.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image31.png)
 
 **图 11**:编辑行`UnitPrice`值是现在设置为货币格式 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image33.png))
 
@@ -188,7 +188,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 最后，设置的标签`CssClass`属性设置为`Warning`。 此时设计器应显示的警告消息，以红色、 粗体、 斜体、 特大型字体大小高于 GridView，如图 12 中所示。
 
 
-[![上面 GridView 中添加标签](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image35.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image34.png)
+[![A 标签已添加上面 GridView](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image35.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image34.png)
 
 **图 12**:标签具有已添加上面的 GridView ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image36.png))
 
@@ -206,7 +206,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 如果用户尝试保存产品而无需指定价格，会取消更新并显示有用的消息。 数据库 （和业务逻辑） 时允许`NULL` `UnitPrice` s，此特定的 ASP.NET 页却没有。
 
 
-[![用户不能离开单价为空](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image38.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image37.png)
+[![A 用户不能离开单价留空](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image38.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image37.png)
 
 **图 13**:用户不能离开`UnitPrice`保留为空 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image39.png))
 
@@ -229,12 +229,12 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 将保留`Insert()`方法指向`AddProduct`方法，但重新设置为 （无） 删除选项卡的下拉列表。
 
 
-[![将插入选项卡的下拉列表设置为 AddProduct 方法](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image41.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image40.png)
+[![Set 插入选项卡的下拉列表列出 AddProduct 方法](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image41.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image40.png)
 
 **图 14**:将插入选项卡的下拉列表设置为`AddProduct`方法 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image42.png))
 
 
-[![设置为 （无） 删除选项卡的下拉列表](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image44.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image43.png)
+[![Set 删除选项卡的下拉列表为 （无）](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image44.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image43.png)
 
 **图 15**:设置为 （无） 删除选项卡的下拉列表 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image45.png))
 
@@ -254,7 +254,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 图 16 将显示此页现在通过浏览器查看时。 如您所见，DetailsView 列出的名称和 (Chai) 的第一个产品的价格。 我们希望的但是，是提供一个使用户可以快速向数据库添加新产品插入接口。
 
 
-[![在 DetailsView 是当前在只读模式下呈现](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image47.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image46.png)
+[![T他 DetailsView 是当前在只读模式下呈现](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image47.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image46.png)
 
 **图 16**:在 DetailsView 是当前在只读模式下呈现 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image48.png))
 
@@ -262,7 +262,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 为了在我们需要设置其插入模式下显示 DetailsView`DefaultMode`属性设置为`Inserting`。 这将呈现在插入模式下时首先访问 DetailsView，插入新记录后使其存在。 如图 17 所示，此类 DetailsView 提供快速的接口用于添加新记录。
 
 
-[![在 DetailsView 快速添加一个新的产品提供的接口](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image50.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image49.png)
+[![T他 DetailsView 快速添加一个新的产品提供的接口](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image50.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image49.png)
 
 **图 17**:DetailsView 提供一个接口用于快速添加新产品 ([单击此项可查看原尺寸图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image51.png))
 
@@ -285,7 +285,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 这将列出所有中的记录`Products`表。 如图 19 所示，所有我们新的产品列以外`ProductID`， `ProductName`，并`UnitPrice`具有`NULL`值。
 
 
-[![在 DetailsView 中未提供产品字段是分配 NULL 值](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image54.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image53.png)
+[![T他产品 DetailsView 中未提供字段是分配 NULL 值](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image54.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image53.png)
 
 **图 19**:在 DetailsView 中未提供产品字段分配`NULL`值 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image55.png))
 
@@ -313,7 +313,7 @@ GridView`RowUpdating`事件接受作为其第二个参数类型的对象[GridVie
 此时间添加新产品 （例如 Acme Soda) 时`CategoryID`和`SupplierID`新产品的列将设置为 1 （请参阅图 20）。
 
 
-[![新产品现在将具有其 CategoryID 和供应商 Id 为 1 的值集](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image57.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image56.png)
+[![N新产品现在具有其 CategoryID 和供应商 Id 为 1 的值集](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image57.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image56.png)
 
 **图 20**:新产品现在具有与其`CategoryID`并`SupplierID`的值设置为 1 ([单击以查看实际尺寸的图像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image58.png))
 
