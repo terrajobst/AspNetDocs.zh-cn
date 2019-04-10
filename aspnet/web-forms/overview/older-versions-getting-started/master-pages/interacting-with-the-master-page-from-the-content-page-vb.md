@@ -8,15 +8,15 @@ ms.date: 07/11/2008
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 59a00305cdcaf41ac0b37649382b9c3dc9ce1b0c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1326d5453f205201af850a30c17f509645e15cb9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047644"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422195"
 ---
-<a name="interacting-with-the-master-page-from-the-content-page-vb"></a>从内容页与母版页交互 (VB)
-====================
+# <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>从内容页与母版页交互 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_VB.zip)或[下载 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_VB.pdf)
@@ -61,7 +61,7 @@ ms.locfileid: "57047644"
 打开 Site.master 母版页并添加一个标签和 GridView 控件与`leftContent` `<div>`。 清除的标签`Text`属性，则设置其`EnableViewState`属性设置为`False`，并将其`ID`属性设置为`GridMessage`; 设置 GridView`ID`属性设置为`RecentProducts`。 接下来，从设计器中，展开 GridView 的智能标记，并选择将其绑定到新的数据源。 这将启动数据源配置向导。 因为 Northwind 数据库中`App_Data`文件夹是 Microsoft SQL Server 数据库中，选择通过选择 （见图 1） 创建 SqlDataSource; 名称 SqlDataSource `RecentProductsDataSource`。
 
 
-[![将 GridView 绑定到名为 RecentProductsDataSource SqlDataSource 控件](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
+[![Bind SqlDataSource 控件为 GridView 名为 RecentProductsDataSource](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
 
 **图 01**:将 GridView 绑定到 SqlDataSource 控件命名为`RecentProductsDataSource`([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image3.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "57047644"
 下一步会要求我们指定要连接到内容数据库。 选择`NORTHWIND.MDF`数据库文件从下拉列表中，单击下一步。 由于这是首次我们使用此数据库，该向导将提供用于存储连接字符串中的`Web.config`。 将其存储连接字符串使用名称`NorthwindConnectionString`。
 
 
-[![连接到 Northwind 数据库](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
+[![C对 Northwind 数据库 onnect](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
 
 **图 02**:连接到 Northwind 数据库 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image6.png))
 
@@ -87,7 +87,7 @@ ms.locfileid: "57047644"
 `TOP 5`关键字的查询返回只有前五个记录。 `Products`表的主键`ProductID`，是`IDENTITY`列中，从而确保我们添加到表中每个新产品，将具有更大的值比以前的条目。 因此，对通过结果进行排序`ProductID`以降序返回从开始最新创建的产品。
 
 
-[![返回最近添加的五种产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
+[![Return 五种最最近添加的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
 
 **图 03**:返回五种最最近添加的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image9.png))
 
@@ -102,7 +102,7 @@ ms.locfileid: "57047644"
 与此 GridView 创建和配置，其 SqlDataSource 控件访问网站，通过浏览器。 如图 4 所示，你将看到其中列出了五个最近左下角中的一个网格添加产品。
 
 
-[![GridView 显示五个最近添加的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
+[![T他 GridView 显示五种最最近添加的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
 
 **图 04**:GridView 显示五种最最近添加的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "57047644"
 我们的下一个任务是创建用户可以从其添加到新产品的内容页面`Products`表。 添加到新的内容页`Admin`名为的文件夹`AddProduct.aspx`，确保将将其绑定到`Site.master`母版页。 此页添加到网站后，图 5 显示了在解决方案资源管理器。
 
 
-[![向管理员文件夹添加新的 ASP.NET 页面](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
+[![Add Admin 文件夹到一个新的 ASP.NET 页](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
 
 **图 05**:添加到新的 ASP.NET 页`Admin`文件夹 ([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image15.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "57047644"
 就这么简单！ 让我们来测试此页。 请访问`AddProduct.aspx`通过浏览器中，输入名称和价格 （请参见图 6）。
 
 
-[![向数据库添加一个新的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
+[![Add 新产品到数据库](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
 
 **图 06**:向数据库添加一个新的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image18.png))
 
@@ -237,7 +237,7 @@ ms.locfileid: "57047644"
 图 8 显示了`AddProduct.aspx`立即后一种新产品-Scott 的 Soda 的页已添加到数据库。 请注意，刚添加的产品名称将其记录在母版页的标签和 GridView 刷新以包括产品和它的价格。
 
 
-[![母版页的标签和 GridView 显示刚添加产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
+[![T他母版页的标签和 GridView 显示 Just-Added 产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
 
 **图 08**:母版页的标签和 GridView 显示 Just-Added 产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png))
 
@@ -258,7 +258,7 @@ ms.locfileid: "57047644"
 
 - [访问和更新在 ASP.NET 中的数据](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
 - [ASP.NET 母版页：提示、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
-- [`@MasterType` 在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
+- [`@MasterType` in ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
 - [内容和母版页之间传递信息](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [在 ASP.NET 教程中使用的数据](../../data-access/index.md)
 

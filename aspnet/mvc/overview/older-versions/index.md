@@ -8,15 +8,15 @@ ms.date: 10/09/2014
 ms.assetid: 151cd274-3daa-4f88-ad3b-bffb99a9d545
 msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
-ms.openlocfilehash: 25057283e20e437027f4b89c3c5972bca1312093
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a0aa547ee9c8fa29e9863c540046d2f8dbfdd45f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021944"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417814"
 ---
-<a name="older-versions---mvc-3-and-4"></a>旧版本 - MVC 3 和 MVC 4
-====================
+# <a name="older-versions---mvc-3-and-4"></a>旧版本 - MVC 3 和 MVC 4
+
 > 了解如何使用 ASP.NET MVC 的早期版本的资源的链接。
 
 
@@ -67,7 +67,7 @@ ms.locfileid: "57021944"
         - [检查 Edit 方法和编辑视图 (C#)](getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view.md)
         - [向电影模型和表添加新字段 (C#)](getting-started-with-aspnet-mvc3/cs/adding-a-new-field.md)
         - [向模型添加验证 (C#)](getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model.md)
-        - [改进 Details 和 Delete 方法](getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods.md)
+        - [改进 Details 和 Delete 方法 (C#)](getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods.md)
     - [ASP.NET MVC 3 入门 (VB.NET)](getting-started-with-aspnet-mvc3/vb/index.md)
 
         - [ASP.NET MVC 3 简介 (VB)](getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3.md)
@@ -76,22 +76,22 @@ ms.locfileid: "57021944"
         - [添加模型 (VB)](getting-started-with-aspnet-mvc3/vb/adding-a-model.md)
         - [从控制器访问模型的数据 (VB)](getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller.md)
         - [检查 Edit 方法和编辑视图 (VB)](getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view.md)
-        - [向电影模型和表添加新字段 (VB)](getting-started-with-aspnet-mvc3/vb/adding-a-new-field.md)
+        - [向电影模型和数据库表添加新字段 (VB)](getting-started-with-aspnet-mvc3/vb/adding-a-new-field.md)
         - [向模型添加验证 (VB)](getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model.md)
         - [改进 Details 和 Delete 方法 (VB)](getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods.md)
 - [使用 Razor 和非介入性 JavaScript 创建 MVC 3 应用程序](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript.md)
 - [MVC 3 Music 商店](mvc-music-store/index.md)
 
-    - [第 1 部分：概述和文件-> 新建项目](mvc-music-store/mvc-music-store-part-1.md)
-    - [第 2 部分：控制器](mvc-music-store/mvc-music-store-part-2.md)
-    - [第 3 部分：视图和 Viewmodel](mvc-music-store/mvc-music-store-part-3.md)
+    - [第 1 部分：概述和文件->新建项目](mvc-music-store/mvc-music-store-part-1.md)
+    - [第 2 部分：Controllers](mvc-music-store/mvc-music-store-part-2.md)
+    - [第 3 部分：视图和 ViewModel](mvc-music-store/mvc-music-store-part-3.md)
     - [第 4 部分：模型和数据访问](mvc-music-store/mvc-music-store-part-4.md)
     - [第 5 部分：编辑窗体和模板化](mvc-music-store/mvc-music-store-part-5.md)
-    - [第 6 部分：使用数据批注的模型验证](mvc-music-store/mvc-music-store-part-6.md)
+    - [第 6 部分：使用数据注释进行模型验证](mvc-music-store/mvc-music-store-part-6.md)
     - [第 7 部分：成员身份和授权](mvc-music-store/mvc-music-store-part-7.md)
     - [第 8 部分：购物车与 Ajax 更新](mvc-music-store/mvc-music-store-part-8.md)
     - [第 9 部分：注册和结帐](mvc-music-store/mvc-music-store-part-9.md)
-    - [第 10 部分：导航和站点设计，结束语的最终更新](mvc-music-store/mvc-music-store-part-10.md)
+    - [第 10 部分：导航和站点设计及结束语的最终更新](mvc-music-store/mvc-music-store-part-10.md)
 - [MVC 3 - HTML5 和 jQuery UI Datepicker 快捷日历](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/index.md)
 
     - [通过 ASP.NET MVC 实现 HTML5 和 jQuery UI Datepicker 快捷日历 - 第 1 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)

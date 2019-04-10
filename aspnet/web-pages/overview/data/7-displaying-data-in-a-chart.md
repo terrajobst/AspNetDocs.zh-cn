@@ -8,15 +8,15 @@ ms.date: 05/22/2012
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 00529355476e88c47ab790121ae77202aa5e7b76
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f97f214abeaeb88634dd10aaebacc0d58e91ab84
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061094"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422455"
 ---
-<a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在具有 ASP.NET 网页 (Razor) 的图表中显示数据
-====================
+# <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在具有 ASP.NET 网页 (Razor) 的图表中显示数据
+
 by [Microsoft](https://github.com/microsoft)
 
 > 本文介绍如何使用图表来使用 ASP.NET Web Pages (Razor) 网站中显示数据`Chart`帮助器。
@@ -42,7 +42,7 @@ by [Microsoft](https://github.com/microsoft)
 
 | **面积图**![说明：面积图类型的图片](7-displaying-data-in-a-chart/_static/image1.jpg) | **条形图**![说明：条形图类型的图片](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
-| **柱形图**![说明：柱形图类型的图片](7-displaying-data-in-a-chart/_static/image3.jpg) | **折线图**![说明：线图类型的图片](7-displaying-data-in-a-chart/_static/image4.jpg) |
+| **柱形图**![说明：柱形图类型的图片](7-displaying-data-in-a-chart/_static/image3.jpg) | **折线图**![说明：折线图类型的图片](7-displaying-data-in-a-chart/_static/image4.jpg) |
 | **饼图**![说明：饼图类型的图片](7-displaying-data-in-a-chart/_static/image5.jpg) | **股价图**![说明：股价图类型的图片](7-displaying-data-in-a-chart/_static/image6.jpg) |
 
 ### <a name="chart-elements"></a>图表元素

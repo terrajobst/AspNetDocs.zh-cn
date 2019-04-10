@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 2ddd4407-d143-4a94-877c-21771bfb97a6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 26e40ff9659a4b8552b2a087c7c948c9f1f1554c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c126270304178d178f4b8f9739fa5c51e5dd0551
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424165"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415357"
 ---
-<a name="adding-dynamic-content-to-a-cached-page-c"></a>向缓存页添加动态内容 (C#)
-====================
+# <a name="adding-dynamic-content-to-a-cached-page-c"></a>向缓存页添加动态内容 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何混合在同一页中的动态和缓存内容。 缓存后替换，可显示动态内容，例如横幅广告或中缓存已输出的页的新闻项。
@@ -93,10 +93,6 @@ RenderBannerInternal() 方法为私有方法。 此方法不会公开为一个�
 本教程介绍了如何动态更新缓存的页面中的内容。 您学习了如何使用 HttpResponse.WriteSubstitution() 方法以启用要注入到缓存的页面中的动态内容。 您还学习了如何封装对 HTML 帮助器方法内 WriteSubstitution() 方法的调用。
 
 利用缓存应尽可能 – 它会对 web 应用程序的性能产生重大影响。 在本教程中所述，您可以充分利用缓存甚至当您需要在页面中显示动态内容时。
-
-## 
-
-## 
 
 > [!div class="step-by-step"]
 > [上一页](improving-performance-with-output-caching-cs.md)

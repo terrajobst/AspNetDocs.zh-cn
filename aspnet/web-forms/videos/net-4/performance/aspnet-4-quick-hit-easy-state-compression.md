@@ -8,15 +8,15 @@ ms.date: 11/16/2009
 ms.assetid: 8e2c66c5-1b67-483a-9e74-ed67b3d85051
 msc.legacyurl: /web-forms/videos/net-4/performance/aspnet-4-quick-hit-easy-state-compression
 msc.type: video
-ms.openlocfilehash: 5ae10fe948b9c3ddbd24877a2f11196c3132fd59
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4eb6d08aeebcf963d2230fbc6c802ddc15477a3a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055474"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417931"
 ---
-<a name="aspnet-4-quick-hit--easy-state-compression"></a>ASP.NET 4"快速命中"– 轻松的状态压缩
-====================
+# <a name="aspnet-4-quick-hit--easy-state-compression"></a>ASP.NET 4"快速命中"– 轻松的状态压缩
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中您将学习如何使用 compressionEnabled 配置选项来压缩 （和解压缩） 序列化会话状态。 

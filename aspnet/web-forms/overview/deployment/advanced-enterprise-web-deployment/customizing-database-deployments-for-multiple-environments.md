@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 52fb2539ef388d129f88aa8aa87088e2d4a41ccf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 865e901618b48bc4bfdc6d7a3ca4e8868d4cb46b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055124"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412978"
 ---
-<a name="customizing-database-deployments-for-multiple-environments"></a>自定义多个环境的数据库部署
-====================
+# <a name="customizing-database-deployments-for-multiple-environments"></a>自定义多个环境的数据库部署
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -68,7 +68,7 @@ ms.locfileid: "57055124"
 
 |  | 开发人员/测试 | 过渡/集成 | 生产 |
 | --- | --- | --- | --- |
-| **部署比较排序规则** | 源 | 目标 | 目标 |
+| **部署比较排序规则** | 源 | Target | Target |
 | **部署数据库属性** | True | 仅限首次 | 仅限首次 |
 | **始终重新创建数据库** | True | False | False |
 | **如果可能发生数据丢失则阻止增量部署** | False | 您可能 | True |

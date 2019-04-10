@@ -8,15 +8,15 @@ ms.date: 05/29/2009
 ms.assetid: 7ca8013e-9dfc-4e33-8336-cdccfd5f9414
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 203e49e67d8a9c6eb9dbf605a8d7d860737de073
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 300fc9f7e82fe8201b083de9e740e1620f5d09b9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065734"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411808"
 ---
-<a name="validation-with-the-data-annotation-validators-c"></a>使用数据注释验证程序进行验证 (C#)
-====================
+# <a name="validation-with-the-data-annotation-validators-c"></a>使用数据注释验证程序进行验证 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 充分利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序属性和 Microsoft 实体框架中处理它们。

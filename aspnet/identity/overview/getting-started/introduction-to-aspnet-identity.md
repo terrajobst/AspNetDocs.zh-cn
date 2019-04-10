@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: ASP.NET 标识简介 |Microsoft Docs
+title: 介绍 ASP.NET 标识的 ASP.NET 4.x
 author: jongalloway
 description: ASP.NET 成员资格系统引入了 ASP.NET 2.0 后在 2005 中，并且发生了很多更改的方式的 web 应用程序内，然后...
 ms.author: riande
 ms.date: 01/22/2019
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4a545e52d2d9ea04a10c37c116fd326c60de9f8f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 34a0d62d7afcaffa8fbac0bc774d9266efb6b165
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061374"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413043"
 ---
-<a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 简介
-====================
+# <a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 简介
+
 
 > ASP.NET 成员资格系统引入了 ASP.NET 2.0 后并且在 2005 年，则发生了很多更改 web 应用程序通常处理身份验证和授权的方式。 ASP.NET 标识是在生成适用于 web、 手机或平板电脑的现代应用程序时，成员资格系统应为新的外观。
 
@@ -87,7 +88,7 @@ ms.locfileid: "57061374"
 
     - ASP.NET 身份验证现在基于可在任何基于 OWIN 的主机使用的 OWIN 中间件。 ASP.NET 标识 System.Web 没有任何依赖项。 它是一个完全符合 OWIN 框架，并可在任何托管的 OWIN 应用程序。
     - ASP.NET 标识的日志-在/注销的 web 站点中的用户使用 OWIN 身份验证。 这意味着，而不是使用 FormsAuthentication 生成 cookie，应用程序使用 OWIN CookieAuthentication 来执行该操作。
-- **NuGet 包**
+- **NuGet 程序包**
 
     - ASP.NET 标识是以 ASP.NET MVC、 Web 窗体和 Web API 模板随附于 Visual Studio 2017 中安装 NuGet 包的形式重新分发。 可以从 NuGet 库下载此 NuGet 包。
     - 发布 ASP.NET 标识为 NuGet 程序包使得 ASP.NET 团队来循环访问新功能和 bug 修复和敏捷的方式提供给开发人员更轻松。
