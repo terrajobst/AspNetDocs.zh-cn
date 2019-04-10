@@ -8,15 +8,15 @@ ms.date: 08/30/2013
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 52007eba109de28c6d178505b82b1d5ff2883b47
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 72f70faa151007558ecbb270143ecd5b37c2134d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040734"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392568"
 ---
-<a name="an-overview-of-project-katana"></a>项目 Katana 概述
-====================
+# <a name="an-overview-of-project-katana"></a>项目 Katana 概述
+
 通过[Howard Dierking](https://github.com/howarddierking)
 
 > ASP.NET Framework 已超过十年，并且该平台已启用的无数网站和服务开发。 Web 应用程序开发策略不断演进，如框架已经能够改进与 ASP.NET MVC 和 ASP.NET Web API 之类的技术步骤中。 Web 应用程序开发到云计算领域时其进化的下一步，项目[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)提供基础组件到 ASP.NET 应用程序，使他们能够灵活、 可移植，集轻量的并提供更好的性能 – 将另一种方法，项目[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)云优化您的 ASP.NET 应用程序。

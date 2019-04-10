@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: 97c13898-0741-45f9-b3fa-7540ab1679e6
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 58d4c14e2b888f933457fe421235499943354182
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 844b05f2b046d2c865805150b6ddc5b9c2ebb658
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422918"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414148"
 ---
-<a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>排序 DataList 或 Repeater 控件中的数据 (VB)
-====================
+# <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>排序 DataList 或 Repeater 控件中的数据 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_VB.exe)或[下载 PDF](sorting-data-in-a-datalist-or-repeater-control-vb/_static/datatutorial45vb1.pdf)
@@ -51,12 +51,12 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 我们担心实现任何与排序相关的功能之前，让 s 首先列出 Repeater 控件中的产品。 首先打开`Sorting.aspx`页中`PagingSortingDataListRepeater`文件夹。 将 Repeater 控件添加到 web 页上，设置其`ID`属性设置为`SortableProducts`。 从 Repeater s 智能标记，创建名为新 ObjectDataSource`ProductsDataSource`并将其配置为从`ProductsBLL`类的`GetProducts()`方法。 （无） 从下拉列表中的 INSERT、 UPDATE 和 DELETE 的选项卡中选项的选择。
 
 
-[![创建对象数据源，并将其配置为使用 GetProductsAsPagedDataSource() 方法](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image1.png)
+[![C创建 ObjectDataSource 和将其配置为使用 GetProductsAsPagedDataSource() 方法](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image1.png)
 
 **图 1**:创建对象数据源，并将其配置为使用`GetProductsAsPagedDataSource()`方法 ([单击以查看实际尺寸的图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image3.png))
 
 
-[![设置下拉列表中插入、 更新和删除选项卡添加到 （无）](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image4.png)
+[![S东部时间为 （无） 更新、 插入和删除选项卡中的下拉列表列出了](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image4.png)
 
 **图 2**:设置下拉列表中插入、 更新和删除选项卡添加到 （无） ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image6.png))
 
@@ -71,7 +71,7 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 图 3 显示时的浏览器查看此页。
 
 
-[![显示每个产品的名称、 供应商和类别](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image7.png)
+[![E显示支票产品的名称、 供应商和类别](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image7.png)
 
 **图 3**:显示每个产品名称、 供应商和类别 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image9.png))
 
@@ -90,7 +90,7 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 请继续并尝试一些不同硬编码的值*sortExpression*和浏览器中测试的结果。 如图 4 所示，当使用作为产品名称 DESC *sortExpression*，产品按反向字母顺序在其名称进行排序。
 
 
-[![按其名称按反向字母顺序排序的产品](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image10.png)
+[![T他产品按其名称按反向字母顺序排序](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image10.png)
 
 **图 4**:产品按其名称按反向字母顺序排序 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image12.png))
 
@@ -124,12 +124,12 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 在首次访问页面时此点产品将最初按排序`ProductName`数据字段，因为它 s `SortBy` `ListItem`默认情况下选择 （请参阅图 6）。 选择一个不同的排序选项，如类别和单击刷新将导致回发，并重新对数据进行排序的类别名称，如图 7 所示。
 
 
-[![产品是最初按其名称排序](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image14.png)
+[![T他产品是最初按其名称](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image14.png)
 
 **图 6**:产品是最初按其名称 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image16.png))
 
 
-[![产品是现在按类别排序](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image17.png)
+[![T他产品是现在按类别排序](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image17.png)
 
 **图 7**:产品是现在，按类别进行排序 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image19.png))
 
@@ -151,7 +151,7 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 在中[前面的教程](paging-report-data-in-a-datalist-or-repeater-control-vb.md)介绍了如何实现使用 DataList 默认分页。 让我们来扩展这一示例，包括能够对分页的数据进行排序。 首先打开`SortingWithDefaultPaging.aspx`并`Paging.aspx`中的页面`PagingSortingDataListRepeater`文件夹。 从`Paging.aspx`页上，单击源按钮以查看页面 s 声明性标记。 复制选定的文本 （请参阅图 8） 将其粘贴到的声明性标记`SortingWithDefaultPaging.aspx`之间`<asp:Content>`标记。
 
 
-[![复制中的声明性标记&lt;asp: Content&gt; SortingWithDefaultPaging.aspx 从 Paging.aspx 标记](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image20.png)
+[![Replicate 声明性标记中&lt;asp: Content&gt; Paging.aspx 从标记到 SortingWithDefaultPaging.aspx](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image20.png)
 
 **图 8**:复制中的声明性标记`<asp:Content>`标记从`Paging.aspx`到`SortingWithDefaultPaging.aspx`([单击以查看实际尺寸的图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image22.png))
 
@@ -185,7 +185,7 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 此时，`SortingWithDefaultPaging.aspx`页将按产品名称按字母顺序排序其结果 （请参阅图 9）。 这是因为，默认情况下，值为产品名称作为传入`GetProductsSortedAsPagedDataSource`s 方法*sortExpression*参数。
 
 
-[![默认情况下，对结果进行排序的产品名称](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image23.png)
+[![B默认情况下，对结果进行排序的 ProductName](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image23.png)
 
 **图 9**:默认情况下，结果按排序`ProductName`([单击以查看实际尺寸的图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image25.png))
 
@@ -214,12 +214,12 @@ GridView 控件具有`SortExpression`属性，它将存储`SortExpression`GridVi
 当首次访问的页面，按产品名称按字母顺序进行排序数据 （回头查看图 9）。 单击下一步按钮以转到第二个数据页，然后单击类别按钮的排序。 这将我们返回到按类别名称排序的数据的第一页 （请参阅图 10）。 同样，由供应商按钮单击排序对从数据的第一页开始的供应商数据进行排序。 如将数据分页通过记住排序选项。 图 11 显示后按类别排序，然后然后转到第 13 个数据页的页。
 
 
-[![产品按类别排序](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image26.png)
+[![T他产品按类别排序](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image26.png)
 
 **图 10**:按类别排序的产品 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image28.png))
 
 
-[![排序表达式是记住分页通过数据时](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image29.png)
+[![T他的排序表达式是记住时分页通过数据](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image29.png)
 
 **图 11**:排序表达式是记住分页通过数据时 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image31.png))
 
@@ -237,7 +237,7 @@ DataList 示例检查在步骤中通过使用效率低下默认分页方法及�
 打开`SortingWithCustomPaging.aspx`页中`PagingSortingDataListRepeater`文件夹并将 Repeater 添加到页上，设置其`ID`属性设置为`Products`。 在 Repeater s 智能标记，创建名为新 ObjectDataSource `ProductsDataSource`。 将其配置为选择从其数据`ProductsBLL`类的`GetProductsPaged`方法。
 
 
-[![配置对象数据源使用 ProductsBLL 类的 GetProductsPaged 方法](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image32.png)
+[![C配置对象数据源以使用 ProductsBLL 类的 GetProductsPaged 方法](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image32.png)
 
 **图 12**:配置为使用 ObjectDataSource`ProductsBLL`类 s`GetProductsPaged`方法 ([单击以查看实际尺寸的图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image34.png))
 
@@ -245,7 +245,7 @@ DataList 示例检查在步骤中通过使用效率低下默认分页方法及�
 设置下拉列表中插入、 更新和删除选项卡添加到 （无），然后单击下一步按钮。 配置数据源向导现在会提示对的源`GetProductsPaged`s 方法*startRowIndex*并*值*输入参数。 在现实中，将忽略这些输入的参数。 相反， *startRowIndex*并*值*值将通过传入`Arguments`属性中的 ObjectDataSource 的`Selecting`事件处理程序，就像我们指定的方式*sortExpression*中第一篇教程 s 的演示。 因此，将参数源保留在向导中设置为 None 的下拉列表。
 
 
-[![将参数源设置为 None](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image35.png)
+[![L参数源设置为 None 时保留](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image35.png)
 
 **图 13**:保留参数源设置为无 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image37.png))
 
@@ -267,7 +267,7 @@ DataList 示例检查在步骤中通过使用效率低下默认分页方法及�
 进行此更改后，页上，当浏览器中，通过查看显示前五个产品。
 
 
-[![显示前五个记录](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image38.png)
+[![T他第五个记录显示](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image38.png)
 
 **图 14**:显示前五个记录 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image40.png))
 
@@ -313,17 +313,17 @@ DataList 示例检查在步骤中通过使用效率低下默认分页方法及�
 添加这些后`Click`事件处理程序和代码以启用或禁用分页界面元素基于当前的起始行索引，在浏览器中测试页。 如图 15 所示，当首次访问页面第一个和上一步按钮将处于禁用状态。 单击下一步显示第二个数据页中的，单击上一次显示的最后一页时 （请参阅图 16 和 17）。 查看数据的最后一页时的下一步和最后一个按钮被禁用。
 
 
-[![上一步和最后一个按钮已禁用时查看第一个产品页](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image41.png)
+[![T查看第一个产品页时，他上一步和最后一个按钮已禁用](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image41.png)
 
 **图 15**:查看第一个产品页时，将禁用上一步和最后一个按钮 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image43.png))
 
 
-[![第二个产品页是全都](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image44.png)
+[![T他第二个产品页会显示](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image44.png)
 
-**图 16**:第二个产品页是全都 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image46.png))
+**图 16**:显示第二个产品页 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image46.png))
 
 
-[![单击最后一个显示数据的最后一页](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image47.png)
+[![C单击最后一个显示最后一页的数据](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image47.png)
 
 **图 17**:单击上一次显示的最后一个数据页 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image49.png))
 
@@ -366,7 +366,7 @@ ObjectDataSource 调用之前`GetProductsPagedAndSorted`方法，我们需要设
 该 s 都在这里就简单 ！ 虽然没有一系列步骤，若要获取自定义分页和排序实现，已非常类似于所需的默认分页执行步骤。 图 18 查看数据时按类别排序的最后一页时显示的产品。
 
 
-[![显示数据的最后一页上，按类别中，](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image50.png)
+[![T他显示数据的最后一页上，按类别，](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image50.png)
 
 **图 18**:显示数据的最后一页上，按类别 ([单击此项可查看原尺寸图像](sorting-data-in-a-datalist-or-repeater-control-vb/_static/image52.png))
 
@@ -394,4 +394,4 @@ ObjectDataSource 调用之前`GetProductsPagedAndSorted`方法，我们需要设
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 David Suru。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+> [上一个](paging-report-data-in-a-datalist-or-repeater-control-vb.md)

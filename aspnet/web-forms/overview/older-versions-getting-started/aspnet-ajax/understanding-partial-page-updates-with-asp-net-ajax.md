@@ -8,15 +8,15 @@ ms.date: 03/28/2008
 ms.assetid: 54d9df99-1161-4899-b4e8-2679c85915e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 4883046aa16d5e67b7f0c92e15c897ef1a933b67
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d2d7982a4e0175824ffede965dc8206219485df2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048984"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396468"
 ---
-<a name="understanding-partial-page-updates-with-aspnet-ajax"></a>了解使用 ASP.NET AJAX 的部分页面更新
-====================
+# <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>了解使用 ASP.NET AJAX 的部分页面更新
+
 通过[Scott Cate](https://github.com/scottcate)
 
 [下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial01_Partial_Page_Updates_cs.pdf)
@@ -111,7 +111,7 @@ Visual Studio 2008 似乎未附带了一个支持 ASP.NET AJAX 的 web 站点的
 
 已启用标记的属性：
 
-| **属性名称** | **Type** | **说明** |
+| **属性名** | **类型** | **描述** |
 | --- | --- | --- |
 | AllowCustomErrors-Redirect | Bool | 指定是否使用 web.config 文件的自定义错误部分处理错误。 |
 | AsyncPostBackError-Message | String | 获取或设置发送到客户端，如果引发错误的错误消息。 |
@@ -124,7 +124,7 @@ Visual Studio 2008 似乎未附带了一个支持 ASP.NET AJAX 的 web 站点的
 
 仅限代码的属性：
 
-| **属性名称** | **Type** | **说明** |
+| **属性名** | **类型** | **描述** |
 | --- | --- | --- |
 | AuthenticationService | AuthenticationService-Manager | 获取有关 ASP.NET 身份验证服务代理时，将发送到客户端代理的详细信息。 |
 | IsDebuggingEnabled | Bool | 获取是否脚本并启用了调试代码。 |
@@ -136,13 +136,13 @@ Visual Studio 2008 似乎未附带了一个支持 ASP.NET AJAX 的 web 站点的
 
 公共代码的方法：
 
-| **方法名称** | **Type** | **说明** |
+| **方法名** | **类型** | **描述** |
 | --- | --- | --- |
 | SetFocus(string) | Void | 当请求已完成，客户端的焦点设置到特定控件。 |
 
 标记后代：
 
-| **Tag** | **说明** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;AuthenticationService&gt; | 提供有关 ASP.NET 身份验证服务代理的详细信息。 |
 | &lt;ProfileService&gt; | 对 ASP.NET 分析服务提供有关代理的详细信息。 |
@@ -185,7 +185,7 @@ ScriptManager 控件提供了广泛支持本地化的脚本字符串和用户界
 
 已启用标记的属性：
 
-| **属性名称** | **Type** | **说明** |
+| **属性名** | **类型** | **描述** |
 | --- | --- | --- |
 | ChildrenAsTriggers | bool | 指定子控件是否自动调用在回发时刷新。 |
 | RenderMode | 枚举 （块、 内联） | 指定将直观地显示内容的方式。 |
@@ -193,7 +193,7 @@ ScriptManager 控件提供了广泛支持本地化的脚本字符串和用户界
 
 仅限代码的属性：
 
-| **属性名称** | **Type** | **说明** |
+| **属性名** | **类型** | **描述** |
 | --- | --- | --- |
 | IsInPartialRendering | bool | 获取是否 UpdatePanel 当前请求的支持部分呈现。 |
 | ContentTemplate | ITemplate | 获取更新请求的标记模板。 |
@@ -202,13 +202,13 @@ ScriptManager 控件提供了广泛支持本地化的脚本字符串和用户界
 
 公共代码的方法：
 
-| **方法名称** | **Type** | **说明** |
+| **方法名** | **类型** | **描述** |
 | --- | --- | --- |
 | Update （) | Void | 以编程方式更新指定的 UpdatePanel。 允许服务器请求来触发否则为存 UpdatePanel 部分呈现。 |
 
 标记后代：
 
-| **Tag** | **说明** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;ContentTemplate&gt; | 指定要用来呈现部分呈现结果的标记。 子级&lt;asp: UpdatePanel&gt;。 |
 | &lt;触发器&gt; | 指定的集合*n*关联并将更新此 UpdatePanel 控件。 子级&lt;asp: UpdatePanel&gt;。 |
@@ -280,7 +280,7 @@ Updatepanel 并不是全方位的解决方案。 相反，它们提供快速解�
 
 已启用标记的属性：
 
-| **属性名称** | **Type** | **说明** |
+| **属性名** | **类型** | **描述** |
 | --- | --- | --- |
 | AssociatedUpdate-PanelID | String | 指定此 UpdateProgress 应报告的 UpdatePanel 的 ID。 |
 | DisplayAfter | Int | 异步请求开始后显示此控件之前，以毫秒为单位指定的超时。 |
@@ -288,7 +288,7 @@ Updatepanel 并不是全方位的解决方案。 相反，它们提供快速解�
 
 标记后代：
 
-| **Tag** | **说明** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;ProgressTemplate&gt; | 包含控件模板设置将与此控件显示的内容。 |
 
@@ -315,4 +315,4 @@ UpdateProgress 控件允许用户知道她或他不会被忽略，并且页面�
 Scott Cate 自 1997 年以来一直致力于 Microsoft Web 技术和 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 专门负责编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或他的博客[ScottCate.com](http://ScottCate.com)
 
 > [!div class="step-by-step"]
-> [下一页](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [下一步](understanding-asp-net-ajax-updatepanel-triggers.md)

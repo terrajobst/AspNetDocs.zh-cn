@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c46b6e1ca13228feb764d9c660ad578576956970
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d988b2ed6b7d1760557cbfbb543afa85b320c984
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402435"
 ---
-<a name="preventing-javascript-injection-attacks-vb"></a>阻止 JavaScript 注入攻击 (VB)
-====================
+# <a name="preventing-javascript-injection-attacks-vb"></a>阻止 JavaScript 注入攻击 (VB)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 [下载 PDF](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_06_VB.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "57036324"
 设想您创建了客户反馈网站 （参见图 1）。 客户可以访问的网站，并输入他们使用您的产品的体验反馈。 当客户提交其反馈时，反馈将重新显示反馈页面上。
 
 
-[![客户反馈网站](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
+[![C客户反馈网站](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
 
 **图 01**:客户反馈网站 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-vb/_static/image3.png))
 
@@ -65,7 +65,7 @@ ms.locfileid: "57036324"
 此文本表示显示警告消息框的 JavaScript 脚本。 有人将此脚本提交到反馈后窗体中，消息<em>Boo ！</em>将显示时的任何人访问客户反馈网站将来 （请参见图 2）。
 
 
-[![JavaScript 注入](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
+[![JavaScript Injection](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
 
 **图 02**:JavaScript 注入 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-vb/_static/image6.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "57036324"
 它以 html 格式的平均值对字符串进行编码？ HTML 编码字符串，危险字符如`<`并`>`替换为 HTML 实体引用，如`&lt;`和`&gt;`。 因此，在将字符串`<script>alert("Boo!")</script>`是 HTML 编码，它将转换为`&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 作为 JavaScript 脚本时由浏览器进行解释，不再执行编码的字符串。 相反，图 3 中获得无害的页。
 
 
-[![大大降低的 JavaScript 攻击](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
+[![Defeated JavaScript 攻击](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
 
 **图 03**:犬队击败 JavaScript 攻击 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-vb/_static/image9.png))
 
@@ -119,4 +119,4 @@ ms.locfileid: "57036324"
 本教程的目的是被吓有关 JavaScript 注入攻击的潜在客户。 本教程中讨论过防御针对 JavaScript 注入攻击您的 ASP.NET MVC 应用程序的两种方法： 可以是 HTML 编码用户提交中的视图或你的数据可以 HTML 编码用户提交的控制器中的数据。
 
 > [!div class="step-by-step"]
-> [上一篇](authenticating-users-with-windows-authentication-vb.md)
+> [上一个](authenticating-users-with-windows-authentication-vb.md)

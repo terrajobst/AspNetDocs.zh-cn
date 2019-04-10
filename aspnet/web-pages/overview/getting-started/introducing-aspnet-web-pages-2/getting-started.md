@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: a36d3bdf-ef1b-47a4-b932-3a0cf4cad716
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 79f76410e091b137e2792127b0a42524270761e8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 796e0c5e605d1103a4b9937b4e698c5c9412c013
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062614"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402292"
 ---
-<a name="getting-started"></a>入门
-====================
+# <a name="getting-started"></a>入门
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 [!INCLUDE[](~/includes/rp.md)]
@@ -289,4 +289,4 @@ WebMatrix 启动内置的 web 服务器 (IIS Express)，可用于测试您的计
 [从头开始创建一个 ASP.NET 网站](https://www.microsoft.com/web/post/create-an-aspnet-website-from-scratch)。 这是具体而言，是一个教程使用 WebMatrix (不是 ASP.NET Web Pages)。 它将进入稍有一些我们不会在本教程系列介绍 WebMatrix 的其他功能的更多详细信息。
 
 > [!div class="step-by-step"]
-> [下一页](intro-to-web-pages-programming.md)
+> [下一步](intro-to-web-pages-programming.md)

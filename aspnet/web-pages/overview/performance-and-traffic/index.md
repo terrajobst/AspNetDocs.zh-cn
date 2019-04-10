@@ -8,18 +8,18 @@ ms.date: 09/08/2014
 ms.assetid: ce798572-e7dc-44c1-a7fe-a029820e195e
 msc.legacyurl: /web-pages/overview/performance-and-traffic
 msc.type: chapter
-ms.openlocfilehash: a38142955ffed9197b5e376a3b23fe11f46421df
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 36cfc3435a832eaf8a6aeb24ff91fa03b99f2e39
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021024"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385600"
 ---
-<a name="performance"></a>性能
-====================
+# <a name="performance"></a>性能
+
 > 如何缓存提高性能的内容以及如何衡量站点流量。
 
 
-- [使用缓存提高网站的性能](15-caching-to-improve-the-performance-of-your-website.md)
+- [使用缓存提高网站性能](15-caching-to-improve-the-performance-of-your-website.md)
 - [分析流量](14-analyzing-traffic.md)
-- [在 ASP.NET 网站 (Razor) 中绑定和缩小资产](bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
+- [在 ASP.NET 网页 (Razor) 中绑定和缩小资产](bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)

@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: c5c14ef0-c128-4dc1-8c01-7f0fdb09e411
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: edc2d5e9a6ef5785dacb839a375dfcc660dd3dc9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 63930ebe35e4c37e0cc7c0882582c48348cf201a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417658"
 ---
-<a name="improving-the-details-and-delete-methods-vb"></a>改进 Details 和 Delete 方法 (VB)
-====================
+# <a name="improving-the-details-and-delete-methods-vb"></a>改进 Details 和 Delete 方法 (VB)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装以下列出的先决条件。 可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，可以单独安装系统必备组件，使用以下链接：
@@ -81,4 +81,4 @@ ms.locfileid: "57046624"
 -Scott Hanselman ([ http://hanselman.com ](http://hanselman.com)并[ @shanselman ](http://twitter.com/shanselman) Twitter 上) 和 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [上一篇](adding-validation-to-the-model.md)
+> [上一个](adding-validation-to-the-model.md)

@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 5cb3c59b-1e96-464b-b3a8-c55607201872
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 509f362a15990486cc5fa4f2f666c3d0de2434dc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ebb526a51755df3cb439eedbf567d0d3dbd95a92
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055964"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399445"
 ---
-<a name="examining-the-edit-methods-and-edit-view-vb"></a>检查 Edit 方法和编辑视图 (VB)
-====================
+# <a name="examining-the-edit-methods-and-edit-view-vb"></a>检查 Edit 方法和编辑视图 (VB)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装以下列出的先决条件。 可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，可以单独安装系统必备组件，使用以下链接：

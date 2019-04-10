@@ -8,15 +8,15 @@ ms.date: 10/23/2008
 ms.assetid: cfbfa166-2f92-4f21-889c-95c9bef436cc
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-enable-table-specific-routing-in-dynamic-data-applications
 msc.type: video
-ms.openlocfilehash: 972e7c2812fd300cfd501db1c1adebdedcda0833
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a1b099aedc6fa0824df3281cca55543bcfd4d159
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049714"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386771"
 ---
-<a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a>如何启用表特定的路由中动态数据应用程序
-====================
+# <a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a>如何启用表特定的路由中动态数据应用程序
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中了解如何通过使用路由来启用特定于表的.aspx 文件使用自定义工作流逻辑添加到 ASP.NET 动态数据应用程序。

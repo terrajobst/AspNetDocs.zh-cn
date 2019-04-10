@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 4c7867587ba0610f0f1c23d9a0b9fbdc4040de7c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392347"
 ---
-<a name="adding-validation-to-the-model"></a>向模型添加验证
-====================
+# <a name="adding-validation-to-the-model"></a>向模型添加验证
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
@@ -61,11 +61,11 @@ ms.locfileid: "57027624"
 
 下面是在 IDE 中所示的代码。
 
-[![电影-Microsoft Visual Web Developer 2010 速成版 (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![Movies-Microsoft Visual Web Developer 2010 速成版 (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
 运行应用程序并再次，访问 /Movies/Create 并单击创建而无需输入任何数据。 错误消息会立即显示没有页面闪存，我们将与相关联发送数据的情况下按原路返回到服务器。 这是因为 ASP.NET MVC 现在验证的输入上 （使用 JavaScript） 的客户端和服务器上。
 
-[![创建的 Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![Create - Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
 这看起来不错 ！ 现在让我们添加一个附加列到数据库。
 

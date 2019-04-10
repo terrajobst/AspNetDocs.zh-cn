@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 397522d5-0402-4b94-b810-a2fb564f869d
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutorial
 msc.type: authoredcontent
-ms.openlocfilehash: d5efab525841b5c526aa3b656f27b1c42cc74648
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ebd49295ea165ba4ef1a25398cff7dddcfa54f11
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392191"
 ---
-<a name="introducing-the-nerddinner-tutorial"></a>NerdDinner 教程简介
-====================
+# <a name="introducing-the-nerddinner-tutorial"></a>NerdDinner 教程简介
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -60,18 +60,18 @@ NerdDinner，已注册的用户可以创建、 编辑和删除 dinners。 它在
 
 我们将首先我们 NerdDinner 的应用程序使用的文件-&gt;Visual Studio 中的新项目命令以创建一个全新的 ASP.NET MVC 项目。 然后以增量方式将功能和特性。 在此过程中，我们将介绍：
 
-1. [如何创建新的 ASP.NET MVC 项目](# "创建新的 ASP.NET MVC 项目")
-2. [如何创建数据库](# "创建数据库")
-3. [如何生成具有业务规则验证模型](# "生成具有业务规则验证功能的模型")
-4. [如何使用控制器和视图实现列表/详细信息 UI](# "使用控制器和视图实现列表/详细信息 UI")
-5. [如何提供 CRUD （创建、 读取、 更新、 删除） 数据窗体输入支持](# "提供 CRUD （创建、 读取、 更新、 删除） 数据窗体项支持")
-6. [如何使用 ViewData 和实现 ViewModel 类](# "使用 ViewData 和实现 ViewModel 类")
-7. [如何重新使用 UI 使用母版页和部分](# "重复使用 UI 使用母版页和部分")
-8. [如何实现高效数据分页](# "实现高效数据分页")
-9. [如何保护应用程序使用身份验证和授权](# "安全应用程序使用的身份验证和授权")
-10. [如何使用 AJAX 提供动态更新](# "使用 AJAX 提供动态更新到")
-11. [如何使用 AJAX 实现映射方案](# "使用 AJAX 实现映射方案")
-12. [如何启用自动化的单元测试](# "启用自动单元测试")
+1. [如何创建新的 ASP.NET MVC 项目](create-a-new-aspnet-mvc-project.md)
+2. [如何创建数据库](create-a-database.md)
+3. [如何生成具有业务规则验证功能的模型](build-a-model-with-business-rule-validations.md)
+4. [如何使用控制器和视图实现列表/详细信息 UI](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+5. [如何提供 CRUD （创建、 读取、 更新、 删除） 数据窗体输入支持](provide-crud-create-read-update-delete-data-form-entry-support.md)
+6. [如何使用 ViewData 和实现 ViewModel 类](use-viewdata-and-implement-viewmodel-classes.md)
+7. [如何重新使用 UI 使用母版页和部分](re-use-ui-using-master-pages-and-partials.md)
+8. [如何实现高效数据分页](implement-efficient-data-paging.md)
+9. [如何使用身份验证和授权保护应用程序](secure-applications-using-authentication-and-authorization.md)
+10. [如何使用 AJAX 提供动态更新](use-ajax-to-deliver-dynamic-updates.md)
+11. [如何使用 AJAX 实现映射方案](use-ajax-to-implement-mapping-scenarios.md)
+12. [如何启用自动化的单元测试](enable-automated-unit-testing.md)
 
 您可以构建您自己的 NerdDinner 副本从零开始通过完成每个步骤我们的这一章中的演练。 或者，可以下载下面的源代码的完整的版本：[GitHub 上的 NerdDinner](https://github.com/AspNetMVPSamples/NerdDinner)。 也可以选择性地[下载本教程的免费 PDF 版本](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)如果你想要阅读教程脱机。
 
@@ -86,4 +86,4 @@ NerdDinner，已注册的用户可以创建、 编辑和删除 dinners。 它在
 我们将首先使用文件-&gt;Visual Studio 创建 NerdDinner 应用程序中的新项目。
 
 > [!div class="step-by-step"]
-> [下一页](create-a-new-aspnet-mvc-project.md)
+> [下一步](create-a-new-aspnet-mvc-project.md)

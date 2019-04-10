@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: 4805e75a-7911-46e3-b11b-229a6eed245e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b44aaab45f04f736e4171a43a8b24b71aaedca2f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e031417f2ee22533e7b5a606fc40526d7d911efc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039654"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413329"
 ---
-<a name="iteration-3--add-form-validation-vb"></a>迭代 3 – 添加表单验证 (VB)
-====================
+# <a name="iteration-3--add-form-validation-vb"></a>迭代 3 – 添加表单验证 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-3-add-form-validation-vb/_static/contactmanager_3_vb1.zip)
@@ -51,7 +51,7 @@ by [Microsoft](https://github.com/microsoft)
 在联系人管理器应用程序的此第二个迭代中，我们将添加基本窗体验证。 我们阻止用户提交联系人而无需为所需的窗体字段输入值。 我们还验证电话号码和电子邮件地址 （请参阅图 1）。
 
 
-[![新建项目对话框](iteration-3-add-form-validation-vb/_static/image1.jpg)](iteration-3-add-form-validation-vb/_static/image1.png)
+[![T他新建项目对话框中](iteration-3-add-form-validation-vb/_static/image1.jpg)](iteration-3-add-form-validation-vb/_static/image1.png)
 
 **图 01**:具有验证的窗体 ([单击此项可查看原尺寸图像](iteration-3-add-form-validation-vb/_static/image2.png))
 

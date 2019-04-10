@@ -8,15 +8,15 @@ ms.date: 09/11/2008
 ms.assetid: 9517a342-e414-4c93-b0a6-5b52b391c908
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-project
 msc.type: video
-ms.openlocfilehash: 9649c76496c186b13521f6e4de787a00bca89e02
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9b4266b0909e95424b28415442f1e2ef5ceae382
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058204"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395675"
 ---
-<a name="how-do-i-use-a-visual-studio-2008-web-deployment-project"></a>[如何实现:]使用 Visual Studio 2008 Web 部署项目
-====================
+# <a name="how-do-i-use-a-visual-studio-2008-web-deployment-project"></a>[如何实现:]使用 Visual Studio 2008 Web 部署项目
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在此视频的 Chris Pels 演示如何使用 Visual Studio 2008 Web 部署外接程序创建具有更精确地控制如何编译和部署网站的部署项目。 首先，了解在何处下载并安装用于 Visual Studio 2008 Web 部署项目外接程序。 然后，创建网站项目和一个关联的 web 部署项目。 了解 web 部署项目的可用配置选项。 请参阅 aspnet 简单回顾一下\_编译器和 aspnet\_合并命令行实用程序是 web 部署项目的必要组成部分。 接下来，了解如何创建多个配置 web 部署项目，例如、 调试和发布模式。 然后创建 web 应用程序项目和相应的 web 部署项目。 最后，请参阅如何的选项和 web 应用程序项目的过程是相同的网站项目。

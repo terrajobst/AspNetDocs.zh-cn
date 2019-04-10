@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 5c97464ee50291338a80120a86b1b86b07bc672d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e16415df5bd4203995bec943ffa682f7da82357
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032924"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400199"
 ---
-<a name="caching"></a>缓存
-====================
+# <a name="caching"></a>缓存
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解缓存对于良好的 ASP.NET 应用程序至关重要。 ASP.NET 1.x 提供三个不同选项进行缓存;输出缓存、 片段缓存和缓存 API。
@@ -56,7 +56,7 @@ ASP.NET 1.x 开发人员执行了自定义缓存依赖项。 在 ASP.NET 1.x 中
 
 请注意，充当缓存键的项的键必须与添加到缓存密钥的数组的值相同。
 
-## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>基于轮询的 SQL 缓存依赖项<em>（也称为基于表的依赖项）</em>
+## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>基于轮询的 SQL 缓存 Dependencies(Also called Table-Based Dependencies)
 
 SQL Server 7 和 2000年使用 SQL 缓存依赖项基于轮询的模型。 基于轮询的模型上的数据库表，表中的数据更改时，会触发使用触发器。 触发更新**changeId** ASP.NET 会定期检查通知表中的字段。 如果**changeId**已更新字段，ASP.NET 就会知道数据已更改，并且不使缓存的数据失效。
 
@@ -72,7 +72,7 @@ SQL Server 7 和 2000年使用 SQL 缓存依赖项基于轮询的模型。 基�
 
 下面是上述命令中使用的命令行开关的说明：
 
-| **命令行开关** | **目的** |
+| **命令行开关** | **用途** |
 | --- | --- |
 | -S *server* | 指定服务器名称。 |
 | -ed | 指定数据库，应启用 SQL 缓存依赖项。 |
@@ -211,9 +211,9 @@ ControlCachePolicy 类允许以编程方式控制的缓存使用用户控件的�
 
 没有为缓存配置 ASP.NET 2.0 中的多个更改。 &lt;缓存&gt;元素是 ASP.NET 2.0 中的新增功能，允许您在配置文件中进行缓存的配置更改。 以下属性将可用。
 
-| **元素** | **说明** |
+| **元素** | **描述** |
 | --- | --- |
-| **cache** | 可选元素。 定义全局应用程序缓存设置。 |
+| **缓存** | 可选元素。 定义全局应用程序缓存设置。 |
 | **outputCache** | 可选元素。 指定应用程序范围的输出缓存设置。 |
 | **outputCacheSettings** | 可选元素。 指定可以应用于应用程序中的页的输出缓存设置。 |
 | **sqlCacheDependency** | 可选元素。 为 ASP.NET 应用程序配置 SQL 缓存依赖项。 |
@@ -222,7 +222,7 @@ ControlCachePolicy 类允许以编程方式控制的缓存使用用户控件的�
 
 以下属性位于&lt;缓存&gt;元素：
 
-| **特性** | **说明** |
+| **特性** | **描述** |
 | --- | --- |
 | **disableMemoryCollection** | 可选**布尔**属性。 获取或设置一个值，该值指示是否禁用缓存内存收集的计算机处于内存压力下时，会发生。 |
 | **disableExpiration** | 可选**布尔**属性。 获取或设置一个值，该值指示是否禁用缓存过期时间。 禁用时，缓存的项不会过期并后台清理过期的缓存项不会发生。 |
@@ -235,7 +235,7 @@ ControlCachePolicy 类允许以编程方式控制的缓存使用用户控件的�
 以下属性是可用于&lt;outputCache&gt;元素。
 
 
-|       <strong>特性</strong>        |                                                                                                                                                                                                                                                       <strong>说明</strong>                                                                                                                                                                                                                                                       |
+|       <strong>特性</strong>        |                                                                                                                                                                                                                                                       <strong>描述</strong>                                                                                                                                                                                                                                                       |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   <strong>enableOutputCache</strong>    |                                                                                                                                                          可选<strong>布尔</strong>属性。 启用/禁用页面输出缓存。 如果禁用，不会缓存页而不考虑以编程方式或声明性设置。 默认值是<strong>，则返回 true</strong>。                                                                                                                                                           |
 |  <strong>enableFragmentCache</strong>   |                                                可选<strong>布尔</strong>属性。 启用/禁用应用程序片段缓存。 如果禁用，不会缓存页而不考虑[@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx)指令或缓存使用配置文件。 包含指示，上游代理服务器，以及浏览器客户端不应尝试向缓存页面输出缓存控制标头。 默认值是<strong>false</strong>。                                                 |
@@ -250,7 +250,7 @@ ControlCachePolicy 类允许以编程方式控制的缓存使用用户控件的�
 
 以下属性是可用于&lt;sqlCacheDependency&gt;元素。
 
-| **特性** | **说明** |
+| **特性** | **描述** |
 | --- | --- |
 | **enabled** | 所需**布尔**属性。 指示轮询更改。 |
 | **pollTime** | 可选**Int32**属性。 设置与 SqlCacheDependency 轮询数据库表更改的频率。 此值对应于连续两次轮询之间的毫秒数。 它不能设置为小于 500 毫秒。 默认值为 1 分钟。 |

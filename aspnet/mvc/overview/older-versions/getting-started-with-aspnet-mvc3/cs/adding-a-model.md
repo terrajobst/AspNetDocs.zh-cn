@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 42355b95-5f1f-413e-8d16-14cdfaaefcd8
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: f35e1fec7b3b2a1fc53cf8beb3781a2e2f6c8740
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c9fb4b65605d07421872c051eedcf667101316ef
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396754"
 ---
-<a name="adding-a-model-c"></a>添加模型 (C#)
-====================
+# <a name="adding-a-model-c"></a>添加模型 (C#)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装以下列出的先决条件。 可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，可以单独安装系统必备组件，使用以下链接：
@@ -73,8 +73,6 @@ ms.locfileid: "57033624"
 打开应用程序根目录*Web.config*文件。 (未*Web.config*中的文件*视图*文件夹。)下图显示两者*Web.config*文件; 打开*Web.config*用红线圈出文件。
 
 ![](adding-a-model/_static/image4.png)
-
-### 
 
 添加到以下连接字符串`<connectionStrings>`中的元素*Web.config*文件。
 

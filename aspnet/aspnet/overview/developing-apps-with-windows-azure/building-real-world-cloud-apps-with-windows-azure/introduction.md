@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: c496e93d7517bc187514d5fa2dfa90d29c5f47f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033114"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412406"
 ---
-<a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建实际云应用
-====================
+# <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建实际云应用
+
 通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -100,7 +100,7 @@ ms.locfileid: "57033114"
     - 启用高可用性，并通过松散耦合 web 和辅助角色层来提高可伸缩性。
     - 演示：修复其应用中的 azure 存储队列。
 - [云应用程序模式和指南的详细信息](more-patterns-and-guidance.md)。
-- [附录：解决方法示例应用程序](the-fix-it-sample-application.md)
+- [附录：“Fix It”示例应用程序](the-fix-it-sample-application.md)
 
     - 已知问题
     - 最佳做法
@@ -175,4 +175,4 @@ ms.locfileid: "57033114"
 - [Azure 网站内部结构与 Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
 > [!div class="step-by-step"]
-> [下一页](automate-everything.md)
+> [下一步](automate-everything.md)

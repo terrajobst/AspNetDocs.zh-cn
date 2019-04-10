@@ -8,15 +8,15 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 315e89c81782edf0875c65afd27153102d733050
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424243"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409728"
 ---
-<a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>动手实验：可维护的 Azure 网站：管理更改和缩放
-====================
+# <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>动手实验：可维护的 Azure 网站：管理更改和缩放
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 [下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
@@ -58,7 +58,7 @@ ms.locfileid: "58424243"
 完成本动手实验需要以下：
 
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/)或更高版本
-- [Azure SDK for .NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
+- [Azure SDK for.NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [GIT 版本控制系统](http://git-scm.com/download)
 - Microsoft Azure 订阅
 
@@ -89,7 +89,7 @@ ms.locfileid: "58424243"
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>练习
@@ -198,7 +198,7 @@ ms.locfileid: "58424243"
 
     ![添加迁移](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "添加迁移")
 
-    *Add-Migration*
+    *添加迁移*
 
     > [!NOTE]
     > 迁移文件组成的两种方法**向上**并**向下**。
@@ -549,7 +549,7 @@ ms.locfileid: "58424243"
     *记录的错误*
 8. 找到错误的详细信息部分。 很明显，重构您的上一步骤中提交的代码导致此错误。
 
-    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`。
+    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`.
 9. 不要关闭浏览器。
 10. 在新浏览器实例中，导航到[Azure 管理门户](https://manage.windowsazure.com)并使用与你的订阅关联的 Microsoft 帐户登录。
 11. 选择**网站**单击在练习 2 中创建的 web 应用。
@@ -909,7 +909,7 @@ ms.locfileid: "58424243"
     > - 减少的最大和最小值**目标 CPU**范围中的 web 应用自动缩放配置
     > - 在云中运行负载测试**Azure 测试计划**。 详细信息[此处](/azure/devops/test/load-test/index?view=vsts)
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

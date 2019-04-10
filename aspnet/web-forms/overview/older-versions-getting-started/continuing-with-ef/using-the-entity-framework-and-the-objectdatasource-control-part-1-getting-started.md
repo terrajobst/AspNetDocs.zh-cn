@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 5eaeaa0aa474e1aed86954e6c10dd1703b938944
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c0f11019c7410b756d592066a7fe33b3e26fd383
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065404"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407193"
 ---
-<a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门
-====================
+# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > 本系列教程为基础创建的 Contoso University web 应用程序[开始使用 Entity Framework 4.0](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)系列教程。 如果未完成之前的教程，作为本教程的起始点可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)，您已经创建的。 此外可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)由完整的系列教程。
@@ -322,4 +322,4 @@ ms.locfileid: "57065404"
 这将完成介绍如何使用`ObjectDataSource`控件的基本的 CRUD （创建、 读取、 更新、 删除） 操作使用 Entity Framework。 已生成一个简单的 n 层应用程序，但与数据访问层，这会增加复杂性自动化的单元测试仍紧密耦合的业务逻辑层。 以下教程中，您将了解如何实现存储库模式，以便单元测试。
 
 > [!div class="step-by-step"]
-> [下一页](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+> [下一步](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

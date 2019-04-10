@@ -8,15 +8,15 @@ ms.date: 03/24/2008
 ms.assetid: 113f10b3-a19a-471b-8ff6-db3c79ce8a91
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 41cd8cef2582b730391e5221629e9bb35794c159
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3ee858cba449b0a8c8e693970a10ce0182e8c3da
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028204"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412393"
 ---
-<a name="creating-and-managing-roles-c"></a>创建和管理角色 (C#)
-====================
+# <a name="creating-and-managing-roles-c"></a>创建和管理角色 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/CS.09.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial09_CreatingRoles_cs.pdf)
@@ -48,7 +48,7 @@ ASP.NET 还提供了用于定义角色，并将其与用户帐户关联的角色
 此时您的项目的解决方案资源管理器应类似于屏幕截图中图 1 所示。
 
 
-[![四个新页面已添加到角色文件夹](creating-and-managing-roles-cs/_static/image2.png)](creating-and-managing-roles-cs/_static/image1.png)
+[![F我们新的页面已添加到角色文件夹](creating-and-managing-roles-cs/_static/image2.png)](creating-and-managing-roles-cs/_static/image1.png)
 
 **图 1**:四个新页已添加到`Roles`文件夹 ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image3.png))
 
@@ -68,7 +68,7 @@ ASP.NET 还提供了用于定义角色，并将其与用户帐户关联的角色
 使用更新的站点映射，请访问通过浏览器的站点。 如图 2 所示，在左侧的导航窗格现在为角色教程包括项。
 
 
-[![四个新页面已添加到角色文件夹](creating-and-managing-roles-cs/_static/image5.png)](creating-and-managing-roles-cs/_static/image4.png)
+[![F我们新的页面已添加到角色文件夹](creating-and-managing-roles-cs/_static/image5.png)](creating-and-managing-roles-cs/_static/image4.png)
 
 **图 2**:四个新页已添加到`Roles`文件夹 ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image6.png))
 
@@ -149,7 +149,7 @@ ASP.NET 还提供了用于定义角色，并将其与用户帐户关联的角色
 让我们创建一个名为管理员角色。 请访问`ManageRoles.aspx`通过浏览器页上，在管理员键入到文本框 （请参见图 3），然后单击创建角色按钮。
 
 
-[![创建管理员角色](creating-and-managing-roles-cs/_static/image8.png)](creating-and-managing-roles-cs/_static/image7.png)
+[![C创建管理员角色](creating-and-managing-roles-cs/_static/image8.png)](creating-and-managing-roles-cs/_static/image7.png)
 
 **图 3**:创建管理员角色 ([单击此项可查看原尺寸图像](creating-and-managing-roles-cs/_static/image9.png))
 
@@ -157,7 +157,7 @@ ASP.NET 还提供了用于定义角色，并将其与用户帐户关联的角色
 会发生什么情况？ 产生的回发，但没有任何视觉提示，角色实际上已被添加到系统。 我们将更新以包括可视反馈的步骤 5 中的此页面。 现在，但是，您可以验证是否已通过转到创建角色`SecurityTutorials.mdf`数据库和数据的`aspnet_Roles`表。 如图 4 所示，`aspnet_Roles`表包含一条记录为刚添加管理员角色。
 
 
-[![Aspnet_Roles 表中有一行管理员](creating-and-managing-roles-cs/_static/image11.png)](creating-and-managing-roles-cs/_static/image10.png)
+[![T他 aspnet_Roles 表中有一行管理员](creating-and-managing-roles-cs/_static/image11.png)](creating-and-managing-roles-cs/_static/image10.png)
 
 **图 4**:`aspnet_Roles`表具有一个行管理员 ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image12.png))
 
@@ -175,7 +175,7 @@ ASP.NET 还提供了用于定义角色，并将其与用户帐户关联的角色
 利用此代码，请访问通过浏览器页面。 图 5 所示，你应该看到一个网格，包含单个列标记为项。 网格包含我们在步骤 4 中添加的管理员角色的行。
 
 
-[![GridView 显示单个列中的角色](creating-and-managing-roles-cs/_static/image14.png)](creating-and-managing-roles-cs/_static/image13.png)
+[![T他 GridView 单个列中显示的角色](creating-and-managing-roles-cs/_static/image14.png)](creating-and-managing-roles-cs/_static/image13.png)
 
 **图 5**:GridView 显示单个列中的角色 ([单击此项可查看原尺寸图像](creating-and-managing-roles-cs/_static/image15.png))
 
@@ -203,7 +203,7 @@ GridView 显示单个列标记为项，因为 GridView`AutoGenerateColumns`属�
 现在当用户添加新角色`RoleList`GridView 显示刚添加的角色在回发时，提供视觉反馈已成功创建该角色。 若要说明这一点，请访问`ManageRoles.aspx`通过浏览器页上，添加名为在监督器的角色。 单击创建角色按钮，为在回发将会随之发生和网格将更新以包括管理员以及新角色，在监督器。
 
 
-[![在监督器角色具有已添加](creating-and-managing-roles-cs/_static/image17.png)](creating-and-managing-roles-cs/_static/image16.png)
+[![T他在监督器角色具有已添加](creating-and-managing-roles-cs/_static/image17.png)](creating-and-managing-roles-cs/_static/image16.png)
 
 **图 6**:在监督器角色具有已添加 ([单击此项可查看原尺寸图像](creating-and-managing-roles-cs/_static/image18.png))
 
@@ -220,7 +220,7 @@ GridView 显示单个列标记为项，因为 GridView`AutoGenerateColumns`属�
 让我们来增强 GridView 中的`ManageRoles.aspx`包括一个删除按钮，单击时，将删除所选的角色。 首先通过转到字段对话框并添加一个删除按钮，位于 CommandField 选项下将删除按钮添加到 GridView。 请删除按钮左侧的列，然后设置其`DeleteText`属性设置为删除的角色。
 
 
-[![将删除按钮添加到 RoleList GridView](creating-and-managing-roles-cs/_static/image20.png)](creating-and-managing-roles-cs/_static/image19.png)
+[![Add RoleList GridView 一个删除按钮](creating-and-managing-roles-cs/_static/image20.png)](creating-and-managing-roles-cs/_static/image19.png)
 
 **图 7**:添加到一个删除按钮`RoleList`GridView ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image21.png))
 
@@ -267,4 +267,4 @@ GridView 显示单个列标记为项，因为 GridView`AutoGenerateColumns`属�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者包括 Alicja Maziarz、 Suchi Banerjee 和 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](assigning-roles-to-users-cs.md)
+> [下一步](assigning-roles-to-users-cs.md)

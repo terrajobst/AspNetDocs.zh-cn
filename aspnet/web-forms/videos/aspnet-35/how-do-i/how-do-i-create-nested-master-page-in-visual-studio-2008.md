@@ -8,15 +8,15 @@ ms.date: 02/14/2008
 ms.assetid: 0cab7010-e60e-4a18-9750-61068d3a2da3
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-create-nested-master-page-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: 06db0dc7e60b7b77aeb9b5fa437283238ea6d41b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3ca403be872ec394ee539b36cc7ae3a16aa33a06
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044774"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404216"
 ---
-<a name="how-do-i-create-nested-master-page-in-visual-studio-2008"></a>[如何实现:]在 Visual Studio 2008 中创建嵌套的母版页
-====================
+# <a name="how-do-i-create-nested-master-page-in-visual-studio-2008"></a>[如何实现:]在 Visual Studio 2008 中创建嵌套的母版页
+
 通过 Asli Bilgin
 
 使用 Visual Studio 2008 改进了设计器中，我将演示如何创建嵌套的母版页。 为网站创建模板的层次结构时，嵌套的母版页非常有用。

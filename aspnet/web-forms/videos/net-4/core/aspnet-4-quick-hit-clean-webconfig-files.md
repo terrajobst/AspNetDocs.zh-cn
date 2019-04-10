@@ -8,15 +8,15 @@ ms.date: 11/11/2009
 ms.assetid: 12aa35dd-16f7-408a-9a3b-a70c0aca791f
 msc.legacyurl: /web-forms/videos/net-4/core/aspnet-4-quick-hit-clean-webconfig-files
 msc.type: video
-ms.openlocfilehash: 79cf1960299f25269b16af41ed07018096887d82
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 09c9066ac83b7952ebf629022bea9dd92f5b43f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063514"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403748"
 ---
-<a name="aspnet-4-quick-hit---clean-webconfig-files"></a>ASP.NET 4"快速 Hit"-清理 Web.Config 文件
-====================
+# <a name="aspnet-4-quick-hit---clean-webconfig-files"></a>ASP.NET 4"快速 Hit"-清理 Web.Config 文件
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中，您将看到的主要配置元素如何都已移到 machine.config 文件。 这样，在 ASP.NET 4 应用程序为空或包含最小行数中的 Web.config 文件。

@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 75b5a1e1d6beb00079d754601860d0c25bc8a23e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 985e052abbe1065ba2d6816911f686cb61c85a6d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062744"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416462"
 ---
-<a name="adding-additional-datatable-columns-vb"></a>添加其他 DataTable 列 (VB)
-====================
+# <a name="adding-additional-datatable-columns-vb"></a>添加其他 DataTable 列 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_70_VB.zip)或[下载 PDF](adding-additional-datatable-columns-vb/_static/datatutorial70vb1.pdf)
@@ -49,7 +49,7 @@ ms.locfileid: "57062744"
 打开`NorthwindWithSprocs`数据集，然后右键单击`ProductsDataTable`。 从上下文菜单中选择添加，然后选择列。
 
 
-[![将新列添加到 ProductsDataTable](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
+[![Add ProductsDataTable 到一个新列](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
 
 **图 1**:添加到一个新列`ProductsDataTable`([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image3.png))
 
@@ -57,7 +57,7 @@ ms.locfileid: "57062744"
 这会将新列添加到名为的类型的 Column1 的 DataTable `System.String`。 我们需要更新到 PriceQuartile 和其类型设置为此列的名称`System.Int32`因为它将用于保存介于 1 和 4 之间的数字。 选择中的新添加列`ProductsDataTable`并从属性窗口中，设置`Name`属性设置为 PriceQuartile 和`DataType`属性设置为`System.Int32`。
 
 
-[![设置新 s 列名和数据类型属性](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
+[![S设置新的列的名称和数据类型属性](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
 
 **图 2**:设置新列 s`Name`并`DataType`属性 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image6.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "57062744"
 既然`ProductsDataTable`已更新以包括`PriceQuartile`列中，我们已准备好创建`GetProductsWithPriceQuartile`方法。 启动 TableAdapter 上右键单击并从上下文菜单中选择添加查询。 这将打开 TableAdapter 查询配置向导中，首先让我们是否我们要使用的临时 SQL 语句或新的或现有的存储的过程。 由于我们不尚未有一个存储的过程返回价格四分位数数据，让我们来允许 TableAdapter 来为我们创建此存储的过程。 选择创建新存储的过程选项，然后单击下一步。
 
 
-[![指示 TableAdapter 向导为我们创建的存储的过程](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
+[![Instruct TableAdapter 向导以创建存储过程为我们](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
 
 **图 3**:指示 TableAdapter 向导以创建存储过程为我们 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-vb/_static/image9.png))
 
@@ -77,7 +77,7 @@ ms.locfileid: "57062744"
 在后续屏幕中，图 4 所示向导将询问我们要添加查询的类型。 由于`GetProductsWithPriceQuartile`方法将返回所有列和记录从`Products`表中，选择它将返回行选项，然后单击下一步。
 
 
-[![我们的查询将 SELECT 语句，返回多个行](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
+[![O查询将为 SELECT 语句，返回多个行](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
 
 **图 4**:我们的查询将是`SELECT`语句，返回多个行 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image12.png))
 
@@ -98,7 +98,7 @@ ms.locfileid: "57062744"
 输入后`SELECT`查询并单击下一步，向导将询问我们提供，它将创建该存储过程的名称。 命名新的存储的过程`Products_SelectWithPriceQuartile`单击下一步。
 
 
-[![命名存储的过程 Products_SelectWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
+[![N存储过程 Products_SelectWithPriceQuartile \ 名称](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
 
 **图 5**:命名存储过程`Products_SelectWithPriceQuartile`([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image15.png))
 
@@ -106,7 +106,7 @@ ms.locfileid: "57062744"
 最后，我们会提示命名 TableAdapter 方法。 退出这两种填充 DataTable，并返回 DataTable 复选框选中和名称方法`FillWithPriceQuartile`和`GetProductsWithPriceQuartile`。
 
 
-[![名称的 TableAdapter s 方法，然后单击完成](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
+[![N名 TableAdapter s （） 方法并单击完成](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
 
 **图 6**:命名 TableAdapter 的方法并单击完成 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-vb/_static/image18.png))
 
@@ -121,7 +121,7 @@ ms.locfileid: "57062744"
 **图 7**:验证已向 TableAdapter 添加新方法
 
 
-[![请确保该数据库包含 Products_SelectWithPriceQuartile 存储过程](adding-additional-datatable-columns-vb/_static/image21.png)](adding-additional-datatable-columns-vb/_static/image20.png)
+[![E数据库包含 Products_SelectWithPriceQuartile 存储过程的 nsure](adding-additional-datatable-columns-vb/_static/image21.png)](adding-additional-datatable-columns-vb/_static/image20.png)
 
 **图 8**:确保数据库包含`Products_SelectWithPriceQuartile`存储过程 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image22.png))
 
@@ -150,12 +150,12 @@ ms.locfileid: "57062744"
 BLL 加准备就绪后，若要创建显示每个产品的价格四分位数的 ASP.NET 页完成我们。 打开`AddingColumns.aspx`页中`AdvancedDAL`文件夹，然后拖动 GridView 从工具箱拖到设计器中，设置其`ID`属性设置为`Products`。 从 GridView s 智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置要使用 ObjectDataSource`ProductsBLLWithSprocs`类的`GetProductsWithPriceQuartile`方法。 因为这将是只读的网格，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
 
-[![配置对象数据源以使用 ProductsBLLWithSprocs 类](adding-additional-datatable-columns-vb/_static/image24.png)](adding-additional-datatable-columns-vb/_static/image23.png)
+[![C配置对象数据源以使用 ProductsBLLWithSprocs 类](adding-additional-datatable-columns-vb/_static/image24.png)](adding-additional-datatable-columns-vb/_static/image23.png)
 
 **图 9**:配置为使用 ObjectDataSource`ProductsBLLWithSprocs`类 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image25.png))
 
 
-[![GetProductsWithPriceQuartile 方法中检索产品信息](adding-additional-datatable-columns-vb/_static/image27.png)](adding-additional-datatable-columns-vb/_static/image26.png)
+[![Retrieve GetProductsWithPriceQuartile 方法的产品信息](adding-additional-datatable-columns-vb/_static/image27.png)](adding-additional-datatable-columns-vb/_static/image26.png)
 
 **图 10**:检索产品信息从`GetProductsWithPriceQuartile`方法 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-vb/_static/image28.png))
 
@@ -172,12 +172,12 @@ BLL 加准备就绪后，若要创建显示每个产品的价格四分位数的 
 图 11 显示了当通过浏览器访问此页。 请注意，最初，产品进行排序以降序与分配相应的每个产品及其价格`PriceQuartile`值。 当然此数据可以进行排序的其他条件与价格四分位数列仍专用于反映将与价格相关产品的排名的值 （请参阅图 12）。
 
 
-[![通过其价格订购的产品](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
+[![T他产品及其价格按排序](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
 
 **图 11**:产品及其价格按排序 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-vb/_static/image31.png))
 
 
-[![产品按其名称进行排序](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
+[![T他产品按其名称排序](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
 
 **图 12**:产品按其名称进行排序 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-vb/_static/image34.png))
 

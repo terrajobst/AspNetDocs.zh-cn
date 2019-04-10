@@ -8,15 +8,15 @@ ms.date: 02/20/2014
 ms.assetid: 332fb3da-e2a5-460d-bb90-dd911e1e2c95
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 8f4b7186ae5c7b7b384ebcb23f7c9ad65caeb0bd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 204611513860e268001596b9c7ac9e9c023caa12
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034144"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399848"
 ---
-<a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中显示视频
-====================
+# <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中显示视频
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文介绍如何在 ASP.NET Web Pages (Razor) 网站中使用视频 （媒体） 播放机以使用户可以查看存储在站点的视频。 使用 Razor 语法的 ASP.NET 网页，您可以播放 Flash (*.swf*)，Media Player (*.wmv*)，和 Silverlight (*.xap*) 视频。
@@ -123,9 +123,9 @@ ms.locfileid: "57034144"
 
 您可以更改闪存视频播放特定大小使用`scale`参数，它可以为以下设置：
 
-- `showall`。 这将使整个视频可见同时保持原始纵横比。 但是，您可能会得到每侧的边框。
-- `noorder`。 这会在视频缩放同时保持原始纵横比，但它可能会裁剪。
-- `exactfit`。 这将使整个视频可见而无需保留原始纵横比，但会出现失真。
+- `showall`. 这将使整个视频可见同时保持原始纵横比。 但是，您可能会得到每侧的边框。
+- `noorder`. 这会在视频缩放同时保持原始纵横比，但它可能会裁剪。
+- `exactfit`. 这将使整个视频可见而无需保留原始纵横比，但会出现失真。
 
 如果未指定`scale`参数，将显示整个视频和原始纵横比会保留而无需任何剪切。 下面的示例演示如何使用`scale`参数：
 

@@ -8,15 +8,15 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 18a44c280e6df1603837938d24d7d639d8c87cc2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a58daa96410de734619bf65f84346137c7d3cf44
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055174"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393296"
 ---
-<a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用属性路由在 ASP.NET Web API 2 中创建 REST API
-====================
+# <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>使用属性路由在 ASP.NET Web API 2 中创建 REST API
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 Web API 2 支持一种新类型的路由，称为*的属性路由*。 属性路由的常规概述，请参阅[Web API 2 中的属性路由](attribute-routing-in-web-api-2.md)。 在本教程中，将使用属性路由创建 REST API 的书籍集合。 API 将支持以下操作：

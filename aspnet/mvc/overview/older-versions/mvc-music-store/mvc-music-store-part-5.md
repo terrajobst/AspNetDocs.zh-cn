@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: c1065dcb45b6d28672edba32b95c7fc476c8b944
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e02e15a8955fa42692fac486dadfa426540295f7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041694"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387465"
 ---
-<a name="part-5-edit-forms-and-templating"></a>第 5 部分：编辑窗体和模板化
-====================
+# <a name="part-5-edit-forms-and-templating"></a>第 5 部分：编辑窗体和模板化
+
 通过[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发分步教程应用程序。  

@@ -8,15 +8,15 @@ ms.date: 08/31/2011
 ms.assetid: d916dbe0-1895-491b-8bb6-93f4594ce757
 msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: a2b96388cb7408d3c5fa548d0f43cfb2287661bf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f588af70f3928285274ef6bf14f58697190943ff
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021754"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405815"
 ---
-<a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 入门
-====================
+# <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 入门
+
 > 以下指南介绍了 ASP.NET MVC 是，介绍如何开始。
 
 

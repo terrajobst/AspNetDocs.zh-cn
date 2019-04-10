@@ -8,15 +8,15 @@ ms.date: 04/01/2008
 ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1a8373f62833c3a76d2e7f96193e5ecbe2d9c593
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4e8591f3090de8f931ffd8eb1dd0a1138674842
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410040"
 ---
-<a name="unlocking-and-approving-user-accounts-c"></a>解锁和审批用户帐户 (C#)
-====================
+# <a name="unlocking-and-approving-user-accounts-c"></a>解锁和审批用户帐户 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.14.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial14_UnlockAndApprove_cs.pdf)
@@ -49,7 +49,7 @@ ms.locfileid: "57038484"
 添加后 HyperLinkField 到 GridView，花点时间查看`ManageUsers.aspx`通过浏览器的页。 如图 1 所示，每个 GridView 行现在包括"管理"链接。 Bruce 的"管理"链接指向`UserInformation.aspx?user=Bruce`，而 Dave 的"管理"链接指向`UserInformation.aspx?user=Dave`。
 
 
-[![添加了 HyperLinkField](unlocking-and-approving-user-accounts-cs/_static/image2.png)](unlocking-and-approving-user-accounts-cs/_static/image1.png)
+[![T他添加了 HyperLinkField](unlocking-and-approving-user-accounts-cs/_static/image2.png)](unlocking-and-approving-user-accounts-cs/_static/image1.png)
 
 **图 1**:HyperLinkField 将为每个用户帐户添加的"管理"链接 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-cs/_static/image3.png))
 
@@ -72,7 +72,7 @@ ms.locfileid: "57038484"
 添加这些控件之后, 在 Visual Studio 中的设计视图应类似于屏幕截图图 2 中。
 
 
-[![创建 UserInformation.aspx 的用户界面](unlocking-and-approving-user-accounts-cs/_static/image5.png)](unlocking-and-approving-user-accounts-cs/_static/image4.png)
+[![C创建用户界面为 UserInformation.aspx](unlocking-and-approving-user-accounts-cs/_static/image5.png)](unlocking-and-approving-user-accounts-cs/_static/image4.png)
 
 **图 2**:创建的用户界面`UserInformation.aspx`([单击以查看实际尺寸的图像](unlocking-and-approving-user-accounts-cs/_static/image6.png))
 
@@ -106,7 +106,7 @@ ms.locfileid: "57038484"
 接下来，先注销，然后重试以用户身份登录其帐户时只是未批准。 用户未获批准，因为它们不能登录。 默认情况下，Login 控件显示同一消息，如果用户无法登录，无论是什么原因。 但在<a id="Tutorial6"> </a> [*验证用户凭据对成员身份用户存储*](../membership/validating-user-credentials-against-the-membership-user-store-cs.md)教程探讨了增强登录控件以显示更合适的消息。 如图 4 所示，Chris 是显示一条消息说明，他不能成功登录，因为他的帐户尚未批准。
 
 
-[![Chris 不能登录因为 His 帐户未批准](unlocking-and-approving-user-accounts-cs/_static/image11.png)](unlocking-and-approving-user-accounts-cs/_static/image10.png)
+[![Chris 无法成功登录，因为他的帐户是未批准](unlocking-and-approving-user-accounts-cs/_static/image11.png)](unlocking-and-approving-user-accounts-cs/_static/image10.png)
 
 **图 4**:Chris 不能登录因为 His 帐户是否未批准 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-cs/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "57038484"
 返回到`ManageUsers.aspx`页上，单击管理链接为锁定状态的用户。 图 5 所示，你应该看到中的值`LastLockedOutDateLabel`应启用解锁用户按钮。 单击解除锁定用户按钮以解锁用户帐户。 一旦解锁用户，他们将能够再次登录。
 
 
-[![Dave 锁定系统](unlocking-and-approving-user-accounts-cs/_static/image14.png)](unlocking-and-approving-user-accounts-cs/_static/image13.png)
+[![D保存已锁定系统](unlocking-and-approving-user-accounts-cs/_static/image14.png)](unlocking-and-approving-user-accounts-cs/_static/image13.png)
 
 **图 5**:Dave 具有已锁定的系统 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-cs/_static/image15.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "57038484"
 实际效果是新用户未批准的这意味着它们不能登录到网站。 此外，它们将自动发送包含链接的电子邮件到的验证 URL （请参阅图 6）。
 
 
-[![新用户会收到包含验证 URL 的链接的电子邮件](unlocking-and-approving-user-accounts-cs/_static/image17.png)](unlocking-and-approving-user-accounts-cs/_static/image16.png)
+[![T他的新用户收到包含验证 URL 的链接的电子邮件](unlocking-and-approving-user-accounts-cs/_static/image17.png)](unlocking-and-approving-user-accounts-cs/_static/image16.png)
 
 **图 6**:新用户会收到一封电子邮件，其中包含指向验证 URL ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-cs/_static/image18.png))
 
@@ -188,7 +188,7 @@ ms.locfileid: "57038484"
 图 7 显示了`Verification.aspx`页上通过浏览器访问时。
 
 
-[![新用户的帐户是现在批准](unlocking-and-approving-user-accounts-cs/_static/image20.png)](unlocking-and-approving-user-accounts-cs/_static/image19.png)
+[![T他新用户帐户是现在批准](unlocking-and-approving-user-accounts-cs/_static/image20.png)](unlocking-and-approving-user-accounts-cs/_static/image19.png)
 
 **图 7**:新用户的帐户是现在批准 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-cs/_static/image21.png))
 

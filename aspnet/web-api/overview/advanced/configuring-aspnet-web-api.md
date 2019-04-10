@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/configuring-aspnet-web-api
-title: 配置 ASP.NET Web API 2 |Microsoft Docs
+title: 配置 ASP.NET Web API 2 的 ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: ASP.NET Web API 2 配置为使用 ASP.NET 4.x:配置设置、 ASP.NET 4.x 托管、 OWIN 自托管的全球服务和预控制器配置。
 ms.author: riande
 ms.date: 03/31/2014
+ms.custom: seoapril2019
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 270268b77f398084169843e20b0a2bf9f1c2a011
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 39629ba404e536b29318db00bce8c4443a782497
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423151"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411938"
 ---
-<a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
-====================
+# <a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 本主题介绍如何配置 ASP.NET Web API。
@@ -43,7 +44,7 @@ Web API 配置设置中定义[HttpConfiguration](https://msdn.microsoft.com/libr
 | **ParameterBindingRules** | 规则的控制器操作上的绑定参数集合。 |
 | **属性** | 一个泛型属性包。 |
 | **路由** | 路由的集合。 请参阅[ASP.NET Web API 中路由](../web-api-routing-and-actions/routing-in-aspnet-web-api.md)。 |
-| **服务** | 服务集合。 请参阅[Services](#services)。 |
+| **Services** | 服务集合。 请参阅[Services](#services)。 |
 
 
 ## <a name="prerequisites"></a>系统必备

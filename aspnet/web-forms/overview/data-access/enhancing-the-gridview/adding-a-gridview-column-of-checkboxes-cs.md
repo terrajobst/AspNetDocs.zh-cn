@@ -8,15 +8,15 @@ ms.date: 03/06/2007
 ms.assetid: f63a9443-2db0-4f80-8246-840d3e86c2a3
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b78e87d7bd6a05b790203808a9be52af8e8aad1e
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 7f19965894b899aa429be0ef89ccde121191aeb8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422969"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394024"
 ---
-<a name="adding-a-gridview-column-of-checkboxes-c"></a>添加 GridView 复选框列 (C#)
-====================
+# <a name="adding-a-gridview-column-of-checkboxes-c"></a>添加 GridView 复选框列 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_52_CS.exe)或[下载 PDF](adding-a-gridview-column-of-checkboxes-cs/_static/datatutorial52cs1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "58422969"
 在本教程中，我们将了解如何添加复选框列以及如何确定哪些复选框已选中在回发。 具体而言，我们将构建的示例，精确模拟基于 web 的电子邮件客户端用户界面。 我们的示例中将包括一个列表中的产品的分页的 GridView`Products`数据库表中每个复选框为行 （请参阅图 1）。 删除所选产品按钮，单击时，将删除所选的那些产品。
 
 
-[![每个产品行包含一个复选框](adding-a-gridview-column-of-checkboxes-cs/_static/image1.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image1.png)
+[![E支票产品行包含一个复选框](adding-a-gridview-column-of-checkboxes-cs/_static/image1.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image1.png)
 
 **图 1**:每个产品行包含一个复选框 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-checkboxes-cs/_static/image2.png))
 
@@ -41,17 +41,17 @@ ms.locfileid: "58422969"
 我们担心如何添加复选框列之前，让 s 上列出的产品支持分页的 GridView 中的第一个焦点。 首先打开`CheckBoxField.aspx`页中`EnhancedGridView`文件夹，然后拖动 GridView 从工具箱拖到设计器中，设置其`ID`到`Products`。 接下来，选择要绑定到名为新对象数据源的 GridView `ProductsDataSource`。 配置要使用 ObjectDataSource`ProductsBLL`类，调用`GetProducts()`方法以返回数据。 由于此 GridView 将是只读的设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
 
-[![创建名为 ProductsDataSource 新 ObjectDataSource](adding-a-gridview-column-of-checkboxes-cs/_static/image2.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image3.png)
+[![C创建新对象数据源名为 ProductsDataSource](adding-a-gridview-column-of-checkboxes-cs/_static/image2.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image3.png)
 
 **图 2**:创建新对象数据源命名`ProductsDataSource`([单击以查看实际尺寸的图像](adding-a-gridview-column-of-checkboxes-cs/_static/image4.png))
 
 
-[![配置对象数据源检索数据使用 GetProducts() 方法](adding-a-gridview-column-of-checkboxes-cs/_static/image3.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image5.png)
+[![C配置使用 GetProducts() 方法检索数据 ObjectDataSource](adding-a-gridview-column-of-checkboxes-cs/_static/image3.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image5.png)
 
 **图 3**:配置中检索数据使用 ObjectDataSource`GetProducts()`方法 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-checkboxes-cs/_static/image6.png))
 
 
-[![设置下拉列表中插入、 更新和删除选项卡为 （无）](adding-a-gridview-column-of-checkboxes-cs/_static/image4.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image7.png)
+[![Set 更新、 插入和删除选项卡添加到 （无） 中的下拉列表](adding-a-gridview-column-of-checkboxes-cs/_static/image4.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image7.png)
 
 **图 4**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-checkboxes-cs/_static/image8.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "58422969"
 请花费片刻时间浏览器中查看该页面 （请参见图 5）。 此时应看到名称、 类别和价格的前十个产品。
 
 
-[![列出名称、 类别和第十个产品的价格](adding-a-gridview-column-of-checkboxes-cs/_static/image5.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image9.png)
+[![T列出了他名称、 类别和第十个产品的价格](adding-a-gridview-column-of-checkboxes-cs/_static/image5.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image9.png)
 
 **图 5**:列出名称、 类别和第十个产品的价格 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-checkboxes-cs/_static/image10.png))
 
@@ -80,7 +80,7 @@ ms.locfileid: "58422969"
 相反，我们必须添加 TemplateField 和复选框 Web 控件添加到其`ItemTemplate`。 请继续并添加到 TemplateField `Products` GridView，并使其第一个 （最左侧） 字段。 从 GridView s 智能标记，单击编辑模板链接，并从工具箱拖到将复选框 Web 控件`ItemTemplate`。 设置此复选框 s`ID`属性设置为`ProductSelector`。
 
 
-[![添加名为 TemplateField 的 ItemTemplate 的 ProductSelector 的复选框 Web 控件](adding-a-gridview-column-of-checkboxes-cs/_static/image6.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image11.png)
+[![Add 复选框 Web 控件名为 ProductSelector 为 TemplateField 的 ItemTemplate](adding-a-gridview-column-of-checkboxes-cs/_static/image6.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image11.png)
 
 **图 6**:添加复选框 Web 控件名为`ProductSelector`为 TemplateField s `ItemTemplate` ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-checkboxes-cs/_static/image12.png))
 
@@ -88,7 +88,7 @@ ms.locfileid: "58422969"
 与添加的 TemplateField 和复选框 Web 控件，每个行现在包含一个复选框。 图 7 显示了此页上，添加了 TemplateField 和复选框后，通过浏览器中，查看时。
 
 
-[![每个产品行现在包含一个复选框](adding-a-gridview-column-of-checkboxes-cs/_static/image7.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image13.png)
+[![E支票产品行现在包含一个复选框](adding-a-gridview-column-of-checkboxes-cs/_static/image7.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image13.png)
 
 **图 7**:每个产品行现在包含一个复选框 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-checkboxes-cs/_static/image14.png))
 
@@ -109,7 +109,7 @@ GridView s [ `Rows`属性](https://msdn.microsoft.com/library/system.web.ui.webc
 与此事件处理程序添加后，单击删除所选产品按钮现在显示`ProductID`s 的所选产品。
 
 
-[![单击删除所选产品按钮时列出所选产品 Productid](adding-a-gridview-column-of-checkboxes-cs/_static/image8.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image15.png)
+[![W单击所选产品 Productid hen 删除所选产品按钮列出了](adding-a-gridview-column-of-checkboxes-cs/_static/image8.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image15.png)
 
 **图 8**:删除所选产品按钮单击选择产品时`ProductID`列 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-checkboxes-cs/_static/image16.png))
 
@@ -136,7 +136,7 @@ GridView s [ `Rows`属性](https://msdn.microsoft.com/library/system.web.ui.webc
 使用此代码中，单击查看全部按钮导致回发，并会检查所有 GridView 中的复选框。 同样，单击取消选中所有取消选择所有复选框。 图 9 在选中全部查看按钮后显示的屏幕。
 
 
-[![单击全部按钮的检查会选择所有复选框](adding-a-gridview-column-of-checkboxes-cs/_static/image9.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image17.png)
+[![C单击检查所有按钮选择所有复选框](adding-a-gridview-column-of-checkboxes-cs/_static/image9.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image17.png)
 
 **图 9**:单击检查所有按钮选择所有复选框 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-checkboxes-cs/_static/image18.png))
 

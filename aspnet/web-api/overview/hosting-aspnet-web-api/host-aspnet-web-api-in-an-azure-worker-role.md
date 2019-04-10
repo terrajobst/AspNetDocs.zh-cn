@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
-title: 承载 ASP.NET Web API 2 中的 Azure 辅助角色 |Microsoft Docs
+title: 承载 ASP.NET Web API 2 中的 Azure 辅助角色-ASP.NET 4.x
 author: MikeWasson
-description: 本教程演示如何在托管在 Azure 辅助角色中，ASP.NET Web API 使用 OWIN 自托管 Web API 框架。 开放 Web 接口的.NET (OWIN) de...
+description: 教程：托管在 Azure 辅助角色中，使用 OWIN 自托管 Web API 框架的 ASP.NET Web API。
 ms.author: riande
 ms.date: 04/02/2014
+ms.custom: seoapril2019
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 40cb1a4514beaf81e7ed75bbd3e478f2ba146fe5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bfb23aafb814010e8651965dad91ca20a37fd786
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063914"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404619"
 ---
-<a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>承载 ASP.NET Web API 2 中的 Azure 辅助角色
-====================
+# <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>承载 ASP.NET Web API 2 中的 Azure 辅助角色
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 本教程演示如何在托管在 Azure 辅助角色中，ASP.NET Web API 使用 OWIN 自托管 Web API 框架。
@@ -30,7 +31,7 @@ ms.locfileid: "57063914"
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
-> - [Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
+> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 
 
 ## <a name="create-a-microsoft-azure-project"></a>创建 Microsoft Azure 项目

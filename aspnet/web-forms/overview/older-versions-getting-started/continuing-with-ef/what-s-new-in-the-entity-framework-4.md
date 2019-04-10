@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 393df4a8-b1db-44c4-9db7-2b533ca887d0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 402e7ace1abad899d32ed179d6b68de4e5a129f5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0bc24a59e09728a5ecb6e18378c4cde0c8e046f2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045714"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387446"
 ---
-<a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0 的新增功能
-====================
+# <a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0 的新增功能
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > 本系列教程为基础创建的 Contoso University web 应用程序[开始使用 Entity Framework](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)系列教程。 如果未完成之前的教程，作为本教程的起始点可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)，您已经创建的。 此外可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)由完整的系列教程。 如果你有疑问的教程，您可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)。
@@ -135,7 +135,7 @@ Entity Framework 3.5 版包含导航属性，但它不在数据模型中包括�
 
 [![Image14](what-s-new-in-the-entity-framework-4/_static/image26.png)](what-s-new-in-the-entity-framework-4/_static/image25.png)
 
-在中**连接属性**对话框中选择本地 SQL Server Express 实例，数据库命名为`AlumniAsssociation`。
+在中**连接属性**对话框中选择本地 SQL Server Express 实例，数据库命名为`AlumniAssociation`。
 
 [![Image15](what-s-new-in-the-entity-framework-4/_static/image28.png)](what-s-new-in-the-entity-framework-4/_static/image27.png)
 
@@ -210,4 +210,4 @@ Entity Framework 4 中的 POCO 支持仍需要创建数据模型，并链接到�
 - [宣布发布 Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx)版本 4 中的新增功能有关的实体框架开发团队的博客文章。
 
 > [!div class="step-by-step"]
-> [上一篇](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [上一个](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

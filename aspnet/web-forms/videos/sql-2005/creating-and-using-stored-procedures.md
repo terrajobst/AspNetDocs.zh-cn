@@ -8,15 +8,15 @@ ms.date: 11/14/2006
 ms.assetid: 817bc763-7faa-4ac5-880b-b3f5531e9d07
 msc.legacyurl: /web-forms/videos/sql-2005/creating-and-using-stored-procedures
 msc.type: video
-ms.openlocfilehash: f8397bfa9a6d162cfc6158fbd138dccf90d7e8a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ee6735e406cc28370b9b5a91611c686ad0f39260
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408844"
 ---
-<a name="creating-and-using-stored-procedures"></a>创建和使用存储过程
-====================
+# <a name="creating-and-using-stored-procedures"></a>创建和使用存储过程
+
 by [Microsoft](https://github.com/microsoft)
 
 此视频扩展引入了前几个课程的存储过程的主题。 在此视频中我们介绍的基本语法来创建和更新存储的过程，使用输入和输出参数，返回值，声明变量并将添加到您的其他 T-SQL 编程元素存储过程、 如何执行存储的过程从查询窗口中，并最后利用自己的应用程序中的存储的过程所需的 Visual Basic 和 C# 语法。

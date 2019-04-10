@@ -8,15 +8,15 @@ ms.date: 03/13/2008
 ms.assetid: 55439d0f-e555-4537-97f3-0a7bc0a4bf5b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-add-javascript-to-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: b4a3ab073c410155e0fcdd7e118b6238895eeb48
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 23f1544e500424cbd3437deab15e9b9c1c68b21e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029594"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405334"
 ---
-<a name="how-do-i-add-javascript-to-an-aspnet-page"></a>[如何实现:]将 JavaScript 添加到 ASP.NET 页面
-====================
+# <a name="how-do-i-add-javascript-to-an-aspnet-page"></a>[如何实现:]将 JavaScript 添加到 ASP.NET 页面
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在本视频中 Chris Pels 将显示如何将 JavaScript 包含到客户端页后，可以提供更丰富且功能更强大的用户体验上使用的 ASP.NET 页面。 首先，请参阅如何直接在 ASP.NET 页面中包含 JavaScript 并引用从 HTML 页面元素内的脚本。 接下来，请参阅如何抽象到外部 JavaScript 文件的优点的浏览器缓存并可由多个页面的 JavaScript。 最后，了解如何将 JavaScript 添加到在运行时具有的优点包括针对特定情况的脚本或信息，例如控件 ID 不知道直到运行时动态页。 作为动态脚本的一部分示例请参阅如何添加按钮控件 （按钮、 LinkButton 和 ImageButton） 的 click 事件以及加载页面时可以自动执行的 JavaScript。

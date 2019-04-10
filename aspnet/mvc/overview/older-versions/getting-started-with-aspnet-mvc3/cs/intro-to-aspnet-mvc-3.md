@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 86a80b35-88bd-4b7c-bd58-f6e7997197d4
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: 53306318ab1a782d3605876aac53ec903d053269
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5cdef14ec55e2e66c31219c8ccc95c8e361547d5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396352"
 ---
-<a name="intro-to-aspnet-mvc-3-c"></a>ASP.NET MVC 3 简介 (C#)
-====================
+# <a name="intro-to-aspnet-mvc-3-c"></a>ASP.NET MVC 3 简介 (C#)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
@@ -89,4 +89,4 @@ F5 会导致 Visual Web Developer 才能启动开发 web 服务器和运行 web 
 即时可用的此默认模板提供两个页面访问和基本的登录页。 下一步是更改此应用程序的工作原理和了解有点 ASP.NET MVC 中的过程。 关闭浏览器并让我们更改某些代码。
 
 > [!div class="step-by-step"]
-> [下一页](adding-a-controller.md)
+> [下一步](adding-a-controller.md)

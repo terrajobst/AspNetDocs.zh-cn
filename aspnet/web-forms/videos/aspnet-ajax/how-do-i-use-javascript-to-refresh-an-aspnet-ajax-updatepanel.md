@@ -8,15 +8,15 @@ ms.date: 07/25/2007
 ms.assetid: b4d5b7ce-c322-4313-985d-455df98d619a
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 93a39765abac7affa36c55ff191a1e9a023d80e6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b2a183bb14389b7558697ac684ef2a09e689596b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414070"
 ---
-<a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[如何实现:]使用 JavaScript 刷新 ASP.NET AJAX UpdatePanel？
-====================
+# <a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[如何实现:]使用 JavaScript 刷新 ASP.NET AJAX UpdatePanel？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中，我们将了解两种不同方式的使用 JavaScript 的逻辑来刷新 ASP.NET AJAX UpdatePanel 控件的内容。 第一种方法是将按钮类型服务器控件添加到 UpdatePanel 和使用 JavaScript 来触发异步回发，假设回发而引起 UpdatePanel 中的服务器控件。 第二种方法不需要任何按钮类型的服务器控件添加到 UpdatePanel，但仍可用于使用 JavaScript 逻辑来刷新 UpdatePanel 的内容。 （第二种方法建议的 Dave Ward 和您可以阅读他的博客条目，"轻松地刷新 UpdatePanel 中，使用 JavaScript"的详细信息）。

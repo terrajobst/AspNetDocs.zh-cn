@@ -8,15 +8,15 @@ ms.date: 02/09/2007
 ms.assetid: e262ca69-55e5-4ec2-b278-78ee129b4649
 msc.legacyurl: /web-forms/videos/vs-2005/introduction-to-managing-and-running-tests-with-team-system
 msc.type: video
-ms.openlocfilehash: 1b9ea5277253395ba16b3a4480b61fb522327d75
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: da305fcb2c47279df200d3b1229df927aceec764
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048934"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401928"
 ---
-<a name="introduction-to-managing-and-running-tests-with-team-system"></a>管理和运行与 Team System 测试简介
-====================
+# <a name="introduction-to-managing-and-running-tests-with-team-system"></a>管理和运行与 Team System 测试简介
+
 由 Eric Lee
 
 在本视频中我们将了解如何可以管理所有或您的各种测试用例使用 Visual Studio Team System 的测试管理功能。 我们还将看到如何运行测试并配置。

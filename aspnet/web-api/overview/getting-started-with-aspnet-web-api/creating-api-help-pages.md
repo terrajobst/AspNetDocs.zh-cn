@@ -1,27 +1,28 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: 创建 ASP.NET web API 帮助页 |Microsoft Docs
+title: 帮助页面创建 ASP.NET web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 本教程中的，代码显示了如何创建在 ASP.NET 中的 ASP.NET Web API 帮助页 4.x。
 ms.author: riande
 ms.date: 04/01/2013
+ms.custom: seoapril2019
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: fba368e4017fea65ff96e2540d486662cc6b45f8
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e3f6a9b8a6835b034a075d580cd9a33136969990
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423723"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395006"
 ---
-<a name="creating-help-pages-for-aspnet-web-api"></a>创建 ASP.NET web API 帮助页
-====================
+# <a name="creating-help-pages-for-aspnet-web-api"></a>创建 ASP.NET web API 帮助页
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-在创建 web API 时，很有用来创建一个帮助页面中，以便其他开发人员知道如何调用你的 API。 可以手动创建所有文档，但最好是自动生成尽可能多地。
+本教程中的，代码显示了如何创建在 ASP.NET 中的 ASP.NET Web API 帮助页 4.x。
 
-若要简化此任务，ASP.NET Web API 提供一个库用于自动生成帮助页在运行时。
+在创建 web API 时，很有用来创建一个帮助页面中，以便其他开发人员知道如何调用你的 API。 可以手动创建所有文档，但最好是自动生成尽可能多地。 若要简化此任务，ASP.NET Web API 提供一个库用于自动生成帮助页在运行时。
 
 ![](creating-api-help-pages/_static/image1.png)
 

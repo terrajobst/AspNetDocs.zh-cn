@@ -8,15 +8,15 @@ ms.date: 06/12/2007
 ms.assetid: 83a849da-fe6c-483a-bc26-73e8a135830f
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-integrate-defect-tracking-with-testing
 msc.type: video
-ms.openlocfilehash: 8e712c1224daede630f83f4754d785426fed1389
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f46adbd1ef55061332e4eb3f62578654120c9ebd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027084"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398808"
 ---
-<a name="how-do-i-integrate-defect-tracking-with-testing"></a>[如何实现:]将缺陷跟踪与测试集成？
-====================
+# <a name="how-do-i-integrate-defect-tracking-with-testing"></a>[如何实现:]将缺陷跟踪与测试集成？
+
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
 在本视频中，我们将看看测试框架的 Visual Studio Team System 和工作项跟踪系统之间的集成点。

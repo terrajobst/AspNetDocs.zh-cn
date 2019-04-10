@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/error-handling/web-api-global-error-handling
-title: 全局错误处理 ASP.NET Web API 2 中 |Microsoft Docs
+title: 全局错误处理 ASP.NET web API 2 的 ASP.NET 4.x
 author: davidmatson
-description: ''
+description: 概述全局错误处理 ASP.NET Web API 2 中的 ASP.NET 4.x。
 ms.author: riande
 ms.date: 02/03/2014
+ms.custom: seoapril2019
 ms.assetid: bffd7863-f63b-4b23-a13c-372b5492e9fb
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3e371760d2b34eb2be492e6ebbb33a5f9f7eff10
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7d9f4fb9909671d7c4c8ee2aa9285b0186c4b125
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058974"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414369"
 ---
-<a name="global-error-handling-in-aspnet-web-api-2"></a>全局错误处理 ASP.NET Web API 2 中
-====================
+# <a name="global-error-handling-in-aspnet-web-api-2"></a>全局错误处理 ASP.NET Web API 2 中
+
 通过[David Matson](https://github.com/davidmatson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-立即登录，或全局处理错误的 Web API 中是没有简便的方法。 可以通过处理某些未经处理的异常[异常筛选器](exception-handling.md)，但不能处理异常筛选器的事例数。 例如：
+本主题概述的全局错误处理 ASP.NET Web API 2 中的 ASP.NET 4.x。 立即登录，或全局处理错误的 Web API 中是没有简便的方法。 可以通过处理某些未经处理的异常[异常筛选器](exception-handling.md)，但不能处理异常筛选器的事例数。 例如：
 
 1. 从控制器的构造函数引发的异常。
 2. 从消息处理程序引发的异常。

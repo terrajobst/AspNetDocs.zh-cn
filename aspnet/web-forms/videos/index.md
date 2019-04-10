@@ -8,16 +8,16 @@ ms.date: 08/08/2011
 ms.assetid: f215d6b9-8a84-4bd8-8881-e9527d814950
 msc.legacyurl: /web-forms/videos
 msc.type: book
-ms.openlocfilehash: 15ab12404daf45a6876facd20fad924996b527a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0082330e75a905469c66b04277d70416555c30c3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019044"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397209"
 ---
-<a name="videos"></a>视频
-====================
-- [如何实现](how-do-i/index.md)
+# <a name="videos"></a>视频
+
+- [“如何实现”](how-do-i/index.md)
 
     - [学习专家的提示和技巧](how-do-i/how-do-i-learn-the-tips-and-tricks-of-experts.md)
     - [创建具有本地化内容的多语言站点](how-do-i/how-do-i-create-a-multi-lingual-site-with-localization.md)
@@ -49,10 +49,10 @@ ms.locfileid: "57019044"
     - [在 ASP.NET 中读取、编写和删除 Cookie](how-do-i/read-write-and-delete-cookies-in-aspnet.md)
     - [保存和加载自定义 Web 服务器控件的视图状态信息](how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control.md)
     - [在 ASP.NET 中创建和使用应用程序级别的事件](how-do-i/how-do-i-create-and-use-application-level-events-in-aspnet.md)
-    - [ASP.NET 中的简单文件上传](how-do-i/how-do-i-simple-file-uploads-in-aspnet.md)
-    - [ASP.NET 2 中的多文件上传](how-do-i/how-do-i-multiple-file-uploads-in-aspnet-2.md)
-    - [ASP.NET 1 中的多文件上传](how-do-i/how-do-i-multiple-file-uploads-in-aspnet-1.md)
-    - [使用 AJAX 样式界面的文件上传](how-do-i/how-do-i-file-uploads-with-an-ajax-style-interface.md)
+    - [ASP.NET 中的简单文件上载](how-do-i/how-do-i-simple-file-uploads-in-aspnet.md)
+    - [ASP.NET 2 中的多文件上载](how-do-i/how-do-i-multiple-file-uploads-in-aspnet-2.md)
+    - [ASP.NET 1 中的多文件上载](how-do-i/how-do-i-multiple-file-uploads-in-aspnet-1.md)
+    - [使用 AJAX 样式界面的文件上载](how-do-i/how-do-i-file-uploads-with-an-ajax-style-interface.md)
     - [以声明方式和编程方式处理母版页](how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically.md)
     - [在母版页和内容页中处理事件](how-do-i/how-do-i-handle-events-in-master-and-content-pages.md)
     - [将 ObjectDataSource 用于数据访问类和业务对象](how-do-i/how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object.md)
@@ -60,7 +60,7 @@ ms.locfileid: "57019044"
     - [使用隐藏字段在客户端 JavaScript 和服务器代码之间共享数据](how-do-i/how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field.md)
     - [向 ASP.NET 页面添加 JavaScript](how-do-i/how-do-i-add-javascript-to-an-aspnet-page.md)
     - [向 ASP.NET 服务器控件添加 JavaScript 事件处理程序](how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-server-controls.md)
-    - [在 ASP.NET 中创建和调用简单 Web 服务](how-do-i/how-do-i-create-and-call-a-simple-web-service-in-aspnet.md)
+    - [在 ASP.NET 中创建和调用简单的 Web 服务](how-do-i/how-do-i-create-and-call-a-simple-web-service-in-aspnet.md)
     - [部署网站“复制网站”工具](how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md)
     - [在 ASP.NET 配置文件中创建和使用自定义配置分区](how-do-i/how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file.md)
     - [配置用于某一 .NET Framework 版本的 ASP.NET 网站](how-do-i/how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version.md)
@@ -106,7 +106,7 @@ ms.locfileid: "57019044"
     - [了解和抵御 ASP.NET 中的脚本注入攻击](how-do-i/how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet.md)
     - [ASP.NET 数据访问技术，LINQ 简介](how-do-i/aspnet-data-access-technologies-an-introduction-to-linq.md)
     - [在 JavaScript 中创建和使用类](how-do-i/how-do-i-create-and-use-classes-in-javascript.md)
-    - [创建高效、标准化方法，实现 CSS 样式](how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles.md)
+    - [创建高效的标准化方法，实现 CSS 样式](how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles.md)
     - [ASP.NET 是什么](how-do-i/what-is-asp-net.md)
     - [选择正确的编程模型](how-do-i/choosing-the-right-programming-model.md)
     - [使用 ASP.NET Web 窗体生成首个 ASP.NET 应用程序](how-do-i/build-your-first-asp-net-application-with-asp-net-web-forms.md)
@@ -118,7 +118,7 @@ ms.locfileid: "57019044"
 
     - [Tailspin Spyworks - 创建和使用热门产品控件](tailspin-spyworks/tailspin-spyworks-creating-and-using-the-popular-products-control.md)
     - [Tailspin Spyworks - 实现和使用“同时购买的”控件](tailspin-spyworks/tailspin-spyworks-implementing-and-using-the-also-purchased-control.md)
-    - [Tailspin Spyworks - 引入 UI 和 EDM](tailspin-spyworks/tailspin-spyworks-intro-ui-and-edm.md)
+    - [Tailspin Spyworks - UI 和 EDM 简介](tailspin-spyworks/tailspin-spyworks-intro-ui-and-edm.md)
     - [Tailspin Spyworks - 目录组织](tailspin-spyworks/tailspin-spyworks-directory-organization.md)
     - [Tailspin Spyworks - 类别菜单](tailspin-spyworks/tailspin-spyworks-category-menu.md)
     - [Tailspin Spyworks - 显示产品列表](tailspin-spyworks/tailspin-spyworks-display-the-product-list.md)
@@ -173,7 +173,7 @@ ms.locfileid: "57019044"
 - [SQL 2005](sql-2005/index.md)
 
     - [数据库是什么](sql-2005/what-is-a-database.md)
-    - [理解数据库表和记录](sql-2005/understanding-database-tables-and-records.md)
+    - [了解数据库表和记录](sql-2005/understanding-database-tables-and-records.md)
     - [有关列数据类型和其他属性的详细信息](sql-2005/more-about-column-data-types-and-other-properties.md)
     - [设计关系数据库表](sql-2005/designing-relational-database-tables.md)
     - [操作数据库数据](sql-2005/manipulating-database-data.md)
@@ -195,9 +195,9 @@ ms.locfileid: "57019044"
     - [测量 AJAX 的业务值](vs-2005/measuring-the-business-value-of-ajax.md)
     - [自动测试的代码覆盖率](vs-2005/code-coverage-of-automated-tests.md)
     - [自定义提取规则和编码 Web 测试](vs-2005/custom-extraction-rules-and-coded-web-tests.md)
-    - [缓存的效果](vs-2005/the-effects-of-caching.md)
+    - [缓存效果](vs-2005/the-effects-of-caching.md)
     - [负载测试代理](vs-2005/using-the-load-test-agent.md)
-    - [试图状态的效果](vs-2005/the-effects-of-viewstate.md)
+    - [ViewState 效果](vs-2005/the-effects-of-viewstate.md)
     - [将缺陷跟踪与测试集成](vs-2005/how-do-i-integrate-defect-tracking-with-testing.md)
     - [创建自己的 Bug 工作项](vs-2005/how-do-i-create-my-own-bug-work-item.md)
     - [使用单元测试更快速编写代码](vs-2005/how-do-i-write-code-more-quickly-with-unit-tests.md)
@@ -211,7 +211,7 @@ ms.locfileid: "57019044"
     - [发现部署前的应用程序更改](vs-2005/how-do-i-discover-application-changes-prior-to-deployment.md)
     - [使用 Team Foundation 实现持续集成](vs-2005/how-do-i-implement-continuous-integration-with-team-foundation.md)
     - [使用团队生成自动执行测试](vs-2005/how-do-i-automate-testing-using-team-build.md)
-    - [团队生成过程中部署 Web 应用程序](vs-2005/how-do-i-deploy-a-web-application-during-a-team-build.md)
+    - [在团队生成过程中部署 Web 应用程序](vs-2005/how-do-i-deploy-a-web-application-during-a-team-build.md)
     - [针对已部署数据库运行单元测试](vs-2005/how-do-i-run-unit-tests-against-a-deployed-database.md)
     - [在生产应用程序中实现代码覆盖率和分析](vs-2005/how-do-i-enable-code-coverage-and-profiling-in-production-applications.md)
     - [Web 部署项目](vs-2005/web-deployment-projects.md)
@@ -221,10 +221,10 @@ ms.locfileid: "57019044"
     - [[ASP.NET 2.0 简介：] ASP.NET 2.0 基础知识](migrating/intro-to-aspnet-20-aspnet-20-fundamentals.md)
     - [[ASP.NET 2.0 简介：] 用户界面元素](migrating/intro-to-aspnet-20-user-interface-elements.md)
     - [[迁移对象] 经典 ASP 到 ASP.NET](migrating/migrating-from-classic-asp-to-aspnet.md)
-    - [为 JSP 开发人员的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
-    - [为 JSP 开发人员的 ASP.NET 简介：构建应用程序](migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
-    - [为 ColdFusion 开发人员的 ASP.NET 简介：将 ASP.NET 添加到您的清单](migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-    - [为 ColdFusion 开发人员的 ASP.NET 简介：构建 ASP.NET 应用程序](migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+    - [适用于 JSP 开发人员的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+    - [适用于 JSP 开发人员的 ASP.NET 简介：生成应用程序](migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
+    - [适用于 ColdFusion 开发人员的 ASP.NET 简介：将 ASP.NET 添加到清单中](migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+    - [适用于 ColdFusion 开发人员的 ASP.NET 简介：生成 ASP.NET 应用程序](migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
     - [PHP 和 Windows 平台之间的互操作](migrating/interop-between-php-and-the-windows-platform.md)
 - [生成 2.0 应用程序](building-20-applications/index.md)
 
@@ -265,7 +265,7 @@ ms.locfileid: "57019044"
     - [ASP.NET AJAX 弹出控件扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-popup-control-extender.md)
     - [ASP.NET AJAX ModalPopup 扩展程序控件](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control.md)
     - [ASP.NET AJAX AlwaysVisible 控件扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender.md)
-    - [ASP.NET AJAX 可折叠控件](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-accordion-control.md)
+    - [ASP.NET AJAX Accordion 控件](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-accordion-control.md)
     - [ASP.NET AJAX 可折叠面板扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-collapsable-panel-extender.md)
     - [ASP.NET AJAX 可拖动面板扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-draggable-panel-extender.md)
     - [ASP.NET AJAX DynamicPopulate 扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender.md)
@@ -274,7 +274,7 @@ ms.locfileid: "57019044"
     - [ASP.NET AJAX ToggleButton 扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-togglebutton-extender.md)
     - [ASP.NET AJAX DropShadow 扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropshadow-extender.md)
     - [ASP.NET AJAX PasswordStrength 扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-passwordstrength-extender.md)
-    - [开始使用 ASP.NET AJAX 动画扩展程序控件](ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control.md)
+    - [ASP.NET AJAX 动画扩展程序控件入门](ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control.md)
     - [ASP.NET AJAX ConfirmButton 扩展程序](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-confirmbutton-extender.md)
     - [ASP.NET AJAX 滑块控件](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slider-control.md)
     - [ASP.NET AJAX AutoComplete 控件](ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-autocomplete-control.md)
@@ -298,7 +298,7 @@ ms.locfileid: "57019044"
     - [组合框](ajax-control-toolkit/combo-box.md)
     - [编辑器控件](ajax-control-toolkit/editor-control.md)
     - [编辑器控件自定义](ajax-control-toolkit/editor-control-custom.md)
-    - [创建新的自定义扩展程序](ajax-control-toolkit/create-a-new-custom-extender.md)
+    - [新建自定义扩展程序](ajax-control-toolkit/create-a-new-custom-extender.md)
 - [ASP.NET AJAX](aspnet-ajax/index.md)
 
     - [ASP.NET AJAX 入门](aspnet-ajax/how-do-i-get-started-with-aspnet-ajax.md)
@@ -353,18 +353,18 @@ ms.locfileid: "57019044"
         - [从 ASP 应用程序使用数据集和筛选器](data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
     - [如何使用 LINQ](data-access/how-do-i-with-linq/index.md)
 
-        - [LINQ to SQL:概述](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
-        - [LINQ to SQL:数据模型](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
-        - [LINQ to SQL:查询数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
-        - [LINQ to SQL:更新数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
-        - [LINQ to SQL:LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-        - [LINQ to SQL:Custom LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
-        - [LINQ to SQL:使用存储的过程](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-        - [LINQ to SQL:使用存储过程更新](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-        - [LINQ to SQL:执行任意 SQL](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+        - [LINQ to SQL：概述](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
+        - [LINQ to SQL：数据模型](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
+        - [LINQ to SQL：查询数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
+        - [LINQ to SQL：更新数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
+        - [LINQ to SQL：LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
+        - [LINQ to SQL：自定义 LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+        - [LINQ to SQL：使用存储过程](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
+        - [LINQ to SQL：使用存储过程进行更新](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+        - [LINQ to SQL：执行任意 SQL](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
     - [来自 VB 团队的 LINQ 视频](data-access/linq-videos-from-the-vb-team/index.md)
 
-        - [开始使用 LINQ](data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
+        - [LINQ 入门](data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
         - [执行组和聚合查询](data-access/linq-videos-from-the-vb-team/how-do-i-perform-group-and-aggregate-queries.md)
         - [升级 Visual Basic 项目以启用 LINQ](data-access/linq-videos-from-the-vb-team/how-do-i-upgrade-visual-basic-projects-to-enable-linq.md)
         - [LINQ to XML 入门](data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml.md)
@@ -380,7 +380,7 @@ ms.locfileid: "57019044"
     - [创建自定义页面](aspnet-dynamic-data/how-do-i-make-custom-pages.md)
     - [显示未知数据类型](aspnet-dynamic-data/how-do-i-display-unknown-datatypes.md)
     - [在 ListView 和 DetailsView 控件中使用 DynamicControl](aspnet-dynamic-data/how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
-    - [开始使用动态数据](aspnet-dynamic-data/getting-started-with-dynamic-data.md)
+    - [动态数据入门](aspnet-dynamic-data/getting-started-with-dynamic-data.md)
     - [开始编辑 ASP.NET 动态数据应用程序中的模板](aspnet-dynamic-data/begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
     - [开始使用 URL 路由修改动态数据应用程序](aspnet-dynamic-data/begin-modifying-dynamic-data-applications-with-url-routing.md)
     - [在 ASP.NET 动态数据应用程序中启用行内编辑](aspnet-dynamic-data/enable-in-line-editing-in-aspnet-dynamic-data-applications.md)
@@ -401,7 +401,7 @@ ms.locfileid: "57019044"
         - [向 CSS 文件动态添加元素和创建新的 CSS](aspnet-35/how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly.md)
         - [高级级联样式表功能和管理](aspnet-35/how-do-i/how-do-i-advance-cascading-style-sheet-features-and-management.md)
         - [将 .NET 2.0 Windows 窗体应用程序转换为 .NET 3.5](aspnet-35/how-do-i/how-do-i-converting-a-net-20-windows-forms-application-to-net-35.md)
-        - [开始使用 Entity Framework](aspnet-35/how-do-i/how-do-i-get-started-with-the-entity-framework.md)
+        - [Entity Framework 入门](aspnet-35/how-do-i/how-do-i-get-started-with-the-entity-framework.md)
         - [使用新的实体数据源](aspnet-35/how-do-i/how-do-i-use-the-new-entity-data-source.md)
         - [使用 Entity Framework 序列化图形](aspnet-35/how-do-i/how-do-i-serialize-a-graph-with-the-entity-framework.md)
         - [使用 MSBuild 自动处理 ASP.NET 编译器和合并实用工具](aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities.md)
@@ -410,7 +410,7 @@ ms.locfileid: "57019044"
         - [Visual Studio 2008 对 ASP.NET AJAX 的支持](aspnet-35/aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
         - [将 AJAX 功能添加到现有的 ASP.NET 页面](aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
         - [在网站中创建并使用启用 AJAX 的 Web 服务](aspnet-35/aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-        - [ASP.NET AJAX:ASP.NET AJAX 的演示](aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+        - [ASP.NET AJAX：关于 ASP.NET AJAX 的演示](aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
         - [ADO.NET 数据服务和 ASP.NET AJAX 支持](aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
         - [ASP.NET AJAX 历史记录简介](aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history.md)
         - [使用脚本组合提升 AJAX 性能](aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -441,7 +441,7 @@ ms.locfileid: "57019044"
         - [ScriptLoader](net-4/ajax/aspnet-4-quick-hit-the-scriptloader.md)
         - [适用于 Microsoft Ajax 的 jQuery 语法](net-4/ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
         - [AJAX 数据模板](net-4/ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-    - [图表](net-4/chart/index.md)
+    - [Chart](net-4/chart/index.md)
 
         - [Chart Control](net-4/chart/aspnet-4-quick-hit-chart-control.md)
         - [在 Visual Studio 2010 中引入新的图表控件](net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
@@ -449,14 +449,14 @@ ms.locfileid: "57019044"
 
         - [自动启动](net-4/core/aspnet-4-quick-hit-auto-start.md)
         - [清理 Web.Config 文件](net-4/core/aspnet-4-quick-hit-clean-webconfig-files.md)
-        - [可预测客户端 ID](net-4/core/aspnet-4-quick-hit-predictable-client-ids.md)
+        - [可预测的客户端 ID](net-4/core/aspnet-4-quick-hit-predictable-client-ids.md)
         - [HtmlEncoder 实用工具方法](net-4/core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-    - [Data](net-4/data/index.md)
+    - [数据](net-4/data/index.md)
 
         - [永久性 GridView 行选择](net-4/data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
     - [“标记”控件](net-4/markup-control/index.md)
 
-        - [复选框列表和单选按钮列表的新呈现方案](net-4/markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
+        - [复选框列表和单选按钮列表的新呈现选项](net-4/markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
         - [无表的模板化控件](net-4/markup-control/aspnet-4-quick-hit-table-free-templated-controls.md)
         - [无表的菜单控件](net-4/markup-control/aspnet-4-quick-hit-tableless-menu-control.md)
         - [“隐藏字段”Div](net-4/markup-control/aspnet-4-quick-hit-hidden-field-divs.md)
@@ -465,7 +465,7 @@ ms.locfileid: "57019044"
 
         - [选择性的视图状态](net-4/performance/aspnet-4-quick-hit-selective-view-state.md)
         - [轻松的状态压缩](net-4/performance/aspnet-4-quick-hit-easy-state-compression.md)
-        - [使用 ViewStateMode 属性管理视图状态](net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
+        - [使用 ViewStateMode 属性管理 ViewState](net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
     - [路由](net-4/routing/index.md)
 
         - [永久性重定向](net-4/routing/aspnet-4-quick-hit-permanent-redirect.md)

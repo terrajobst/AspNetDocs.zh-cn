@@ -8,15 +8,15 @@ ms.date: 03/27/2007
 ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 026fce7544f40ff333a5c0a500bc53c7fd434080
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c6c41ba5b5414da689e63ef521f1cf22e0b55701
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422085"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404281"
 ---
-<a name="displaying-binary-data-in-the-data-web-controls-c"></a>显示数据 Web 控件中的二进制数据 (C#)
-====================
+# <a name="displaying-binary-data-in-the-data-web-controls-c"></a>显示数据 Web 控件中的二进制数据 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_55_CS.exe)或[下载 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/datatutorial55cs1.pdf)
@@ -41,7 +41,7 @@ ms.locfileid: "58422085"
 本教程的下载内容中，您会发现中的七个 PDF 小册子文件`~/Brochures`文件夹，一个用于除 Seafood 类别中的每一个。 我有意省略了添加 Seafood 手册，为了说明如何处理方案具有关联并不是所有记录的二进制数据。 若要更新`Categories`使用这些值表中，右键单击`Categories`节点从服务器资源管理器，然后选择显示表数据。 然后，输入具有小册子中，如图 1 所示的每个类别的手册文件虚拟路径。 由于没有任何手册 Seafood 类别，将保留其`BrochurePath`作为列的值`NULL`。
 
 
-[![手动输入类别表的 BrochurePath 列的值](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
+[![Manually 类别表的 BrochurePath 列输入的值](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
 
 **图 1**:手动输入的值`Categories`表 s`BrochurePath`列 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.png))
 
@@ -53,17 +53,17 @@ ms.locfileid: "58422085"
 首先，将从工具箱拖到设计器的 GridView`DisplayOrDownloadData.aspx`页中`BinaryData`文件夹。 设置 GridView s`ID`到`Categories`通过 GridView s 智能标记，选择将其绑定到新的数据源。 具体而言，将其绑定到名为 ObjectDataSource`CategoriesDataSource`检索数据使用的`CategoriesBLL`对象的`GetCategories()`方法。
 
 
-[![创建名为 CategoriesDataSource 新 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
+[![C创建新对象数据源名为 CategoriesDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
 
 **图 2**:创建新对象数据源命名`CategoriesDataSource`([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.png))
 
 
-[![配置对象数据源以使用 CategoriesBLL 类](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
+[![C配置对象数据源以使用 CategoriesBLL 类](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
 
 **图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.png))
 
 
-[![检索使用 GetCategories() 方法的类别列表](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
+[![R列表的类别使用 GetCategories() 方法 etrieve](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
 
 **图 4**:检索列表的类别 Using`GetCategories()`方法 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "58422085"
 查看此页上的通过浏览器 （请参见图 5）。 列出的每个八个类别。 使用七种类别`BrochurePath`值具有`BrochurePath`各自 BoundField 中显示的值。 Seafood，具有`NULL`值为其`BrochurePath`，将显示空单元格。
 
 
-[![列出每个类别的名称、 说明和 BrochurePath 值](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
+[![E列出支票类别的名称、 说明和 BrochurePath 值](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
 
 **图 5**:每个类别的名称、 说明，并`BrochurePath`列出值 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.png))
 
@@ -92,12 +92,12 @@ ms.locfileid: "58422085"
 如图 7 所示，这将添加一列链接到 GridView。 单击视图手册链接将直接在浏览器中显示 PDF 或提示用户下载的文件，具体取决于是否安装了 PDF 阅读器和浏览器的设置。
 
 
-[![可通过单击查看手册链接查看类别的手册](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
+[![A 可通过单击查看手册链接查看类别的手册](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
 
 **图 7**:类别可以查看手册 s，通过单击查看手册链接 ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image12.png))
 
 
-[![显示类别的手册 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
+[![T显示他类别的手册 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
 
 **图 8**:显示类别的手册 PDF ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image14.png))
 
@@ -131,7 +131,7 @@ ms.locfileid: "58422085"
 图 10 应用这些更改后显示的页。 请注意，Seafood 类别的`BrochurePath`字段现在显示无手册可用的文本。
 
 
-[![文本否手册可显示有关这些类别而无需手册](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
+[![T文本无可用手册他为这些类别而无需手册显示](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
 
 **图 10**:文本否手册可显示有关这些类别而无需手册 ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image16.png))
 
@@ -168,7 +168,7 @@ ms.locfileid: "58422085"
 与创建此页，可以通过访问查看特定类别的图片`DisplayCategoryPicture.aspx?CategoryID=categoryID`。 图 11 显示了饮料类别的图中，可以通过查看`DisplayCategoryPicture.aspx?CategoryID=1`。
 
 
-[![显示图片饮料类别 s](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
+[![T他饮料类别的图片显示](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
 
 **图 11**:显示图片的饮料类别 s ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image18.png))
 
@@ -208,7 +208,7 @@ ms.locfileid: "58422085"
 请花费片刻时间来查看此页上的通过浏览器。 请注意如何每条记录现在包含类别的图片。
 
 
-[![为每个行显示类别的图片](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
+[![T他类别的图片将显示每个行](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
 
 **图 13**:为每个行显示类别的图片 ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image20.png))
 

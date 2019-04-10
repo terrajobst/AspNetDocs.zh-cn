@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: ad3cb0ec-26cf-42d7-b81b-184a34ec9f86
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2fda8883a1cd45a7018c639efcce94cf0e59974c
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 5dcb0b302a814f25ab8f0e89fb8859fbc0ca665d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440295"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399497"
 ---
-<a name="nested-data-web-controls-c"></a>嵌套的数据 Web 控件 (C#)
-====================
+# <a name="nested-data-web-controls-c"></a>嵌套的数据 Web 控件 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_32_CS.exe)或[下载 PDF](nested-data-web-controls-cs/_static/datatutorial32cs1.pdf)
@@ -35,7 +35,7 @@ ms.locfileid: "58440295"
 在本教程中我们将探讨如何使用 Repeater 嵌套在另一个 Repeater。 外部 Repeater 将包含在数据库中，每个类别的项显示类别名称和说明。 每个类别项 s 内部 Repeater 将显示属于该类别的每个产品的信息 （请参阅图 1） 中的项目符号列表。 我们的示例将演示了如何以声明方式和以编程方式填充内部 Repeater。
 
 
-[![列出每个类别，以及其产品，](nested-data-web-controls-cs/_static/image2.png)](nested-data-web-controls-cs/_static/image1.png)
+[![E列出支票类别，以及其产品](nested-data-web-controls-cs/_static/image2.png)](nested-data-web-controls-cs/_static/image1.png)
 
 **图 1**:列出其产品，每个类别 ([单击此项可查看原尺寸图像](nested-data-web-controls-cs/_static/image3.png))
 
@@ -47,7 +47,7 @@ ms.locfileid: "58440295"
 首先打开`NestedControls.aspx`页中`DataListRepeaterBasics`文件夹并将 Repeater 控件添加到页上，设置其`ID`属性设置为`CategoryList`。 从 Repeater s 智能标记中，选择创建名为新 ObjectDataSource `CategoriesDataSource`。
 
 
-[![命名新 ObjectDataSource CategoriesDataSource](nested-data-web-controls-cs/_static/image5.png)](nested-data-web-controls-cs/_static/image4.png)
+[![N\ 新 ObjectDataSource CategoriesDataSource 名称](nested-data-web-controls-cs/_static/image5.png)](nested-data-web-controls-cs/_static/image4.png)
 
 **图 2**:命名新 ObjectDataSource `CategoriesDataSource` ([单击以查看实际尺寸的图像](nested-data-web-controls-cs/_static/image6.png))
 
@@ -55,7 +55,7 @@ ms.locfileid: "58440295"
 以便它将从其数据配置 ObjectDataSource`CategoriesBLL`类的`GetCategories`方法。
 
 
-[![配置对象数据源使用 CategoriesBLL 类的 GetCategories 方法](nested-data-web-controls-cs/_static/image8.png)](nested-data-web-controls-cs/_static/image7.png)
+[![C配置对象数据源以使用 CategoriesBLL 类的 GetCategories 方法](nested-data-web-controls-cs/_static/image8.png)](nested-data-web-controls-cs/_static/image7.png)
 
 **图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories`方法 ([单击以查看实际尺寸的图像](nested-data-web-controls-cs/_static/image9.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "58440295"
 图 4 显示了我们的浏览器查看时的进度。
 
 
-[![每个类别名称和描述列出，则分隔水平标尺](nested-data-web-controls-cs/_static/image11.png)](nested-data-web-controls-cs/_static/image10.png)
+[![E支票类别名称和描述列出，则用水平标尺分隔](nested-data-web-controls-cs/_static/image11.png)](nested-data-web-controls-cs/_static/image10.png)
 
 **图 4**:每个类别名称和描述列出，则用水平标尺分隔 ([单击此项可查看原尺寸图像](nested-data-web-controls-cs/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "58440295"
 与此事件处理程序中， `ProductsByCategoryList` Repeater 中每个`RepeaterItem`绑定到这些产品`RepeaterItem`的类别。 图 5 显示生成的输出的屏幕截图。
 
 
-[![外部 Repeater 列出了每个类别;内部的一个为该类别中列出的产品](nested-data-web-controls-cs/_static/image14.png)](nested-data-web-controls-cs/_static/image13.png)
+[![T他 Outer Repeater 列出了每个类别;内部的一个列出该类别的产品](nested-data-web-controls-cs/_static/image14.png)](nested-data-web-controls-cs/_static/image13.png)
 
 **图 5**:外部 Repeater 列出了每个类别;内部一个列出该类别的产品 ([单击此项可查看原尺寸图像](nested-data-web-controls-cs/_static/image15.png))
 

@@ -8,15 +8,15 @@ ms.date: 10/10/2014
 ms.assetid: 1506f70f-6919-45bd-8c75-a17aff77510c
 msc.legacyurl: /mvc/overview/older-versions-1
 msc.type: chapter
-ms.openlocfilehash: 8f06d9d08c381e8c6d704149b29d46196baceae9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5827542a951a4b65d1c9b02b0ad15ed988bf1456
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021164"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399627"
 ---
-<a name="older-versions---mvc-1-and-2"></a>旧版本 - MVC 1 和 MVC 2
-====================
+# <a name="older-versions---mvc-1-and-2"></a>旧版本 - MVC 1 和 MVC 2
+
 > 了解如何进行编程 MVC 1 和 2 的资源。
 
 
@@ -69,13 +69,13 @@ ms.locfileid: "57021164"
     - [ASP.NET MVC 路由概述 (C#)](controllers-and-routing/asp-net-mvc-routing-overview-cs.md)
     - [了解操作筛选器 (C#)](controllers-and-routing/understanding-action-filters-cs.md)
     - [通过输出缓存提升性能 (C#)](controllers-and-routing/improving-performance-with-output-caching-cs.md)
-    - [向缓存页面添加动态内容 (C#)](controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs.md)
+    - [向缓存页添加动态内容 (C#)](controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs.md)
     - [创建控制器 (C#)](controllers-and-routing/creating-a-controller-cs.md)
     - [创建操作 (C#)](controllers-and-routing/creating-an-action-cs.md)
     - [ASP.NET MVC 路由概述 (VB)](controllers-and-routing/asp-net-mvc-routing-overview-vb.md)
     - [了解操作筛选器 (VB)](controllers-and-routing/understanding-action-filters-vb.md)
     - [通过输出缓存提升性能 (VB)](controllers-and-routing/improving-performance-with-output-caching-vb.md)
-    - [向缓存页面添加动态内容 (VB)](controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb.md)
+    - [向缓存页添加动态内容 (VB)](controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb.md)
     - [创建控制器 (VB)](controllers-and-routing/creating-a-controller-vb.md)
     - [创建操作 (VB)](controllers-and-routing/creating-an-action-vb.md)
     - [ASP.NET MVC 控制器概述 (C#)](controllers-and-routing/aspnet-mvc-controllers-overview-cs.md)
@@ -102,10 +102,10 @@ ms.locfileid: "57021164"
 
     - [为 ASP.NET MVC 应用程序创建单元测试 (C#)](unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs.md)
     - [为 ASP.NET MVC 应用程序创建单元测试 (VB)](unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb.md)
-- [Contact Manager](contact-manager/index.md)
+- [联系人管理器](contact-manager/index.md)
 
     - [迭代 1 – 创建应用程序 (C#)](contact-manager/iteration-1-create-the-application-cs.md)
-    - [迭代 2 – 使应用程序外表美观 (C#)](contact-manager/iteration-2-make-the-application-look-nice-cs.md)
+    - [迭代 2 – 使应用程序外表美观的 (C#)](contact-manager/iteration-2-make-the-application-look-nice-cs.md)
     - [迭代 3 – 添加表单验证 (C#)](contact-manager/iteration-3-add-form-validation-cs.md)
     - [迭代 4 – 使应用程序松散耦合 (C#)](contact-manager/iteration-4-make-the-application-loosely-coupled-cs.md)
     - [迭代 5 — 创建单元测试 (C#)](contact-manager/iteration-5-create-unit-tests-cs.md)
@@ -120,14 +120,14 @@ ms.locfileid: "57021164"
     - [迭代 7 – 添加 Ajax 功能 (VB)](contact-manager/iteration-7-add-ajax-functionality-vb.md)
 - [NerdDinner](nerddinner/index.md)
 
-    - [NerdDinner 的简介教程](nerddinner/introducing-the-nerddinner-tutorial.md)
-    - [创建新的 ASP.NET MVC 项目](nerddinner/create-a-new-aspnet-mvc-project.md)
+    - [NerdDinner 教程简介](nerddinner/introducing-the-nerddinner-tutorial.md)
+    - [新建 ASP.NET MVC 项目](nerddinner/create-a-new-aspnet-mvc-project.md)
     - [创建数据库](nerddinner/create-a-database.md)
     - [生成具有业务规则验证功能的模型](nerddinner/build-a-model-with-business-rule-validations.md)
     - [使用控制器和视图实现列表/详细信息 UI](nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-    - [提供来自窗体输入支持的 CRUD（创建、读取、更新和删除）数据](nerddinner/provide-crud-create-read-update-delete-data-form-entry-support.md)
+    - [提供 CRUD（创建、读取、更新和删除）数据窗体输入支持](nerddinner/provide-crud-create-read-update-delete-data-form-entry-support.md)
     - [使用 ViewData 和实现 ViewModel 类](nerddinner/use-viewdata-and-implement-viewmodel-classes.md)
-    - [使用母版页和部分的重用 UI](nerddinner/re-use-ui-using-master-pages-and-partials.md)
+    - [使用母版页和部分重用 UI](nerddinner/re-use-ui-using-master-pages-and-partials.md)
     - [实现高效数据分页](nerddinner/implement-efficient-data-paging.md)
     - [使用身份验证和授权保护应用程序](nerddinner/secure-applications-using-authentication-and-authorization.md)
     - [使用 AJAX 提供动态更新](nerddinner/use-ajax-to-deliver-dynamic-updates.md)

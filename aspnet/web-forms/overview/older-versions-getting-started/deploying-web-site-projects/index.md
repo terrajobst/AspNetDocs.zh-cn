@@ -8,19 +8,19 @@ ms.date: 05/16/2012
 ms.assetid: 6f72bde8-f2f1-4e4a-94e5-494c3c153c14
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects
 msc.type: chapter
-ms.openlocfilehash: 4400195da0ca1167de8556f9339cd2a5f7414131
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 79e09dddb39bd00019584da2ab199c03a42c67f8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412536"
 ---
-<a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a>在 Visual Studio 2008 及更早版本中部署网站项目
-====================
+# <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a>在 Visual Studio 2008 及更早版本中部署网站项目
+
 > ASP.NET web 应用程序通常是设计、 创建，并在本地开发环境和需求后已准备好发布部署到生产环境中测试。 本系列教程详细介绍了部署过程。
 
 
-- [ASP.NET 承载选项 (C#)](asp-net-hosting-options-cs.md)
+- [ASP.NET 托管选项 (C#)](asp-net-hosting-options-cs.md)
 - [确定需要部署哪些文件 (C#)](determining-what-files-need-to-be-deployed-cs.md)
 - [使用 FTP 客户端部署站点 (C#)](deploying-your-site-using-an-ftp-client-cs.md)
 - [使用 Visual Studio 部署站点 (C#)](deploying-your-site-using-visual-studio-cs.md)
@@ -36,7 +36,7 @@ ms.locfileid: "57022464"
 - [ELMAH 的日志记录错误详细信息 (C#)](logging-error-details-with-elmah-cs.md)
 - [预编译网站 (C#)](precompiling-your-website-cs.md)
 - [生产网站的用户和角色 (C#)](users-and-roles-on-the-production-website-cs.md)
-- [ASP.NET 承载选项 (VB)](asp-net-hosting-options-vb.md)
+- [ASP.NET 托管选项 (VB)](asp-net-hosting-options-vb.md)
 - [确定需要部署哪些文件 (VB)](determining-what-files-need-to-be-deployed-vb.md)
 - [使用 FTP 客户端部署站点 (VB)](deploying-your-site-using-an-ftp-client-vb.md)
 - [使用 Visual Studio 部署站点 (VB)](deploying-your-site-using-visual-studio-vb.md)

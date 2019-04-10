@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9402d7e053ef11eeefa92d112b05ec255d5ec6f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405620"
 ---
-<a name="improving-performance-with-output-caching-vb"></a>通过输出缓存提升性能 (VB)
-====================
+# <a name="improving-performance-with-output-caching-vb"></a>通过输出缓存提升性能 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您学习如何你可以显著提升性能的 ASP.NET MVC web 应用程序通过利用的输出缓存。 了解如何缓存，以便相同的内容不需要创建新用户调用该操作的每个时间的控制器操作返回的结果。
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 启用输出缓存通过添加&lt;OutputCache&gt;属性为单独的控制器操作或整个控制器类。 例如，在列表 1 中的控制器将公开名为 index （） 操作。 Index （） 操作的输出缓存 10 秒。
 
-**Listing 1 – Controllers\HomeController.vb**
+**代码清单 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
@@ -85,7 +85,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，清单 3 中的控制器将公开名为 GetName() 返回当前用户名称的操作。 如果 Jack 登录到该网站并调用 GetName() 操作然后操作返回的字符串"Hi Jack"。 如果以后，Jill 要登录到该网站并调用 GetName() 操作然后她还将获取字符串"Hi Jack"。 Jack 最初调用控制器操作后，该字符串缓存的所有用户在 web 服务器上。
 
-**Listing 3 – Controllers\BadUserController.vb**
+**代码清单 3 – Controllers\BadUserController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample3.vb)]
 

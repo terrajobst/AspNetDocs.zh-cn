@@ -1,23 +1,24 @@
 ---
 uid: web-api/overview/older-versions/index
-title: 在旧版本的 Web API 的文档 |Microsoft Docs
+title: 文档在旧版本的 Web API-ASP.NET 4.x
 author: rick-anderson
-description: 有关较旧版本的 Web API 的文档。
+description: 文档上的 Web API 的较旧版本的 ASP.NET 4.x。
 ms.author: riande
 ms.date: 10/23/2014
+ms.custom: seoapril2019
 ms.assetid: f5bc7426-27c6-492c-914f-b9d2eb49753d
 msc.legacyurl: /web-api/overview/older-versions
 msc.type: chapter
-ms.openlocfilehash: ac59f28d61cf2dceb030ee782069679ee7e1fab0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1e5fecca826a74fd8ff60ecd415f39c4f51917a2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57018644"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391350"
 ---
-<a name="documentation-on-older-versions-of-web-api"></a>在旧版本的 Web API 文档
-====================
-> 有关较旧版本的 Web API 的文档。
+# <a name="documentation-on-older-versions-of-web-api"></a>在旧版本的 Web API 文档
+
+> 文档上的 Web API 的较旧版本的 ASP.NET 4.x。
 
 
 - [在 Web API 1 中启用 CRUD 操作](creating-a-web-api-that-supports-crud-operations.md)

@@ -8,15 +8,15 @@ ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: ec1c055d1b3f6ca5c6374a18840c2595bb368e0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034554"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387342"
 ---
-<a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET 网页简介-编程基础知识
-====================
+# <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET 网页简介-编程基础知识
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 此教程提供了一些您简要介绍了使用 Razor 语法的 ASP.NET Web Pages 中程序到。
@@ -162,7 +162,7 @@ ms.locfileid: "57034554"
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-可以使用测试变量值或表达式针对<em>逻辑运算符</em>或<em>比较运算符</em>： 等于 （= =），大于 (&gt;)，小于 (&lt;)，大于或等于 (&gt;=)，并且小于或等于 (&lt;=)。 ！ = 运算符表示不等于-例如，如果 (！ = 0) 意味着<em>如果</em> <em>不等于 0</em>。
+可以使用测试变量值或表达式针对*逻辑运算符*或*比较运算符*： 等于 （= =），大于 (&gt;)，小于 (&lt;)，大于或等于 (&gt;=)，并且小于或等于 (&lt;=)。 ！ = 运算符表示不等于-例如，如果 (！ = 0) 意味着*如果不等于 0*。
 
 > [!NOTE]
 > 请确保您注意到等于 （= =） 比较运算符不是与 = 相同。 = 运算符仅用于将值分配 (var = 2)。 如果混合使用这些运算符，也会发生错误，否则将显示一些奇怪的结果。
@@ -354,7 +354,7 @@ GetHtml 方法还可以通过提供其他参数自定义映像。 下面的代�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 语法进行 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter 帮助程序](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

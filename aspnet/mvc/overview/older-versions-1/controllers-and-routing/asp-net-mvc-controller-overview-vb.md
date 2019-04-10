@@ -8,15 +8,15 @@ ms.date: 02/16/2008
 ms.assetid: 94c3e5d9-a904-445e-a34e-d92fd1ca108a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 604bf4af2a46e56d9445de141fae1a1651acf47f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 33544825403db67fc3b8f0e9eae5d7671b8d2e67
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402179"
 ---
-<a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC 控制器概述 (VB)
-====================
+# <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC 控制器概述 (VB)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教程中，Stephen Walther 向您介绍 ASP.NET MVC 控制器。 了解如何创建新的控制器，并返回不同类型的操作结果。
@@ -111,7 +111,7 @@ ContentResult 操作结果比较特殊。 您可以使用 ContentResult 操作�
 
 如果控制器操作返回的结果是不是一个操作结果-例如，日期或整数-然后将结果包装在 ContentResult 自动。 例如，调用 WorkController 列表 5 中的 index （） 操作时，返回的日期是 ContentResult 为自动。
 
-**Listing 5 - WorkController.vb**
+**列表 5-WorkController.vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample5.vb)]
 

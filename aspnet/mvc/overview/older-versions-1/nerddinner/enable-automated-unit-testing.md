@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: a19ff2ce-3f7e-4358-9a51-a1403da9c63e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 74abf391bb4aab3ff0d5079e0a24ba20287e18fb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049454"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387901"
 ---
-<a name="enable-automated-unit-testing"></a>启用自动单元测试
-====================
+# <a name="enable-automated-unit-testing"></a>启用自动单元测试
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -96,9 +96,9 @@ Visual Studio 2008 Professional （和更高版本） 包括可用于运行 Visu
 
 ![](enable-automated-unit-testing/_static/image5.png)
 
-*注意：默认情况下，VS 测试结果窗口不显示类名称列。可以通过在测试结果窗口内右键单击并使用添加/删除列菜单命令添加此。*
+*注意:默认情况下，VS 测试结果窗口不显示类名称列。 可以通过在测试结果窗口内右键单击并使用添加/删除列菜单命令添加此。*
 
-我们的两个测试中花费了只有一小部分第二个运行，并为您可以在这两种传递，请参阅。 我们现在可以继续并通过它们来创建其他测试，验证特定的规则验证，以及涵盖两个帮助器方法-IsUserHost() 和 IsUserRegisterd() – 我们添加到 Dinner 类扩充。 将所有这些测试放在 Dinner 类的位置将使其更容易且更安全，若要向其在将来添加新的业务规则和验证。 我们可以将我们新的规则逻辑添加到 Dinner，然后秒内验证它没有破坏任何我们以前的逻辑功能。
+我们的两个测试中花费了只有一小部分第二个运行，并为您可以在这两种传递，请参阅。 我们现在可以继续并通过它们来创建其他测试，验证特定的规则验证，以及涵盖两个帮助器方法-IsUserHost() 和 IsUserRegistered() – 我们添加到 Dinner 类扩充。 将所有这些测试放在 Dinner 类的位置将使其更容易且更安全，若要向其在将来添加新的业务规则和验证。 我们可以将我们新的规则逻辑添加到 Dinner，然后秒内验证它没有破坏任何我们以前的逻辑功能。
 
 请注意如何使用描述性的测试名称轻松地快速了解每个测试验证。 我建议使用**工具-&gt;选项**菜单命令，打开的测试工具-&gt;测试执行配置屏幕中，并检查"双击已失败或无结论的单元测试结果显示测试失败的点"复选框。 这样，您可以双击测试结果窗口中的故障，立即跳转到断言失败。
 
@@ -211,7 +211,7 @@ Visual Studio 2008 Professional （和更高版本） 包括可用于运行 Visu
 
 | **端主题：依赖关系注入框架** |
 | --- |
-| 执行手动依赖关系注入 （例如，我们是上面） 可正常使用，但会变成难以维护作为依赖项的数量并提高应用程序中的组件。 为有助于提供更多的依赖关系管理灵活性的.NET 而存在多个依赖关系注入框架。 这些框架，有时也称为"控制反转"(IoC) 容器，提供机制，以使一层额外的配置对指定并将依赖项传递给对象在运行时 （通常使用构造函数注入的支持). 一些更受欢迎的 OSS 依赖关系注入 / IOC 框架在.NET 中的包括：AutoFac、 Ninject、 Spring.NET、 StructureMap 和 Windsor。 ASP.NET MVC 公开扩展性 Api，允许开发人员参与的解决方法和实例化控制器，并可让依赖关系注入 / IoC 框架完全集成此进程中。 使用 DI/IOC 框架还会使我们能够从我们 DinnersController – 将完全删除它和 DinnerRepositorys 之间的耦合删除默认构造函数。 我们不会使用依赖关系注入 / IOC 框架与 NerdDinner 应用程序。 但是，这是一个我们可以考虑在将来，如果 NerdDinner 基本代码和功能的大小增长。 |
+| 执行手动依赖关系注入 （例如，我们是上面） 可正常使用，但会变成难以维护作为依赖项的数量并提高应用程序中的组件。 为有助于提供更多的依赖关系管理灵活性的.NET 而存在多个依赖关系注入框架。 这些框架，有时也称为"控制反转"(IoC) 容器，提供机制，以使一层额外的配置对指定并将依赖项传递给对象在运行时 （通常使用构造函数注入的支持). 一些更受欢迎的 OSS 依赖关系注入 / IOC 框架在.NET 中的包括：AutoFac、 Ninject、 Spring.NET、 StructureMap 和 Windsor。 ASP.NET MVC 公开扩展性 Api，允许开发人员参与的解决方法和实例化控制器，并可让依赖关系注入 / IoC 框架完全集成此进程中。 使用 DI/IOC 框架还会使我们能够从我们 DinnersController – 将完全删除它和 DinnerRepository 之间的耦合删除默认构造函数。 我们不会使用依赖关系注入 / IOC 框架与 NerdDinner 应用程序。 但是，这是一个我们可以考虑在将来，如果 NerdDinner 基本代码和功能的大小增长。 |
 
 ### <a name="creating-edit-action-unit-tests"></a>创建编辑操作单元测试
 

@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: f8d78a88-cc91-40d8-bce3-3d7954f6033b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ad759cefc372f6276ce1b16beea7282d9685ef82
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c17e3afaf4406489a14d0537a33fef384d6c5a19
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029914"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408961"
 ---
-<a name="determining-what-files-need-to-be-deployed-c"></a>确定需要部署哪些文件 (C#)
-====================
+# <a name="determining-what-files-need-to-be-deployed-c"></a>确定需要部署哪些文件 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_02_CS.zip)或[下载 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial02_FilesToDeploy_cs.pdf)
@@ -93,7 +93,7 @@ Microsoft 发布 Visual Studio 2005 Service Pack 1 时恢复 Web 应用程序项
 图 1 显示了书评网站的浏览器查看时的屏幕截图。 此处可以看到页面 ~ /`Tech/TYASP35.aspx`，该评审本书*教您自己 ASP.NET 3.5 24 小时内*。 跨越页和左侧列中的菜单的顶部痕迹导航基于站点地图结构中定义`Web.sitemap`。 在右上角中的图像是一个通讯簿封面图像位于`Images`文件夹。 通过级联样式表规则拼 Styles 文件夹中的 CSS 文件在主页上，定义总体的页面布局时定义网站的外观和感觉`Site.master`。
 
 
-[![通讯簿评审网站提供了具有多种类型的标题上的评论](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
+[![T他通讯簿评审网站提供了具有多种类型的标题上的评论](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
 
 **图 1:** 通讯簿评审网站提供了具有多种类型的标题上的评论 ([单击此项可查看原尺寸图像](determining-what-files-need-to-be-deployed-cs/_static/image3.png))
 
@@ -116,7 +116,7 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 图 2 显示了构成了通讯簿评审 Web 应用程序项目的文件。
 
 
-[![在解决方案资源管理器列出了构成 Web 应用程序项目的文件](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
+[![T他的解决方案资源管理器列出了构成 Web 应用程序项目的文件](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
 
 **图 2**:在解决方案资源管理器列出了构成 Web 应用程序项目的文件
 
@@ -143,7 +143,7 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 图 3 显示了构成了通讯簿评审网站项目的文件。
 
 
- [![在解决方案资源管理器列出了构成网站项目的文件](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
+ [![T他的解决方案资源管理器列出了构成网站项目的文件](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
 
 **图 3**:在解决方案资源管理器列出了构成网站项目的文件
 

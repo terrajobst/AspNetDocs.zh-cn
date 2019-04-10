@@ -8,15 +8,15 @@ ms.date: 06/09/2009
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0783d59fe70ebed9f1f074d35a9f2e063720d27a
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d917982d5bd97bf1fa9d926e761c6fe847bb0574
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424737"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394193"
 ---
-<a name="processing-unhandled-exceptions-vb"></a>处理未经处理的异常 (VB)
-====================
+# <a name="processing-unhandled-exceptions-vb"></a>处理未经处理的异常 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [查看或下载示例代码](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples)（[如何下载](/aspnet/core/tutorials/index#how-to-download-a-sample)）

@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: 35cf5142-e2d0-40de-884b-00039cc7ecb7
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 89fa8c82d47c047c8d14f2e647102546bc67a997
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 21c0a717c299cb72ca7379c9cb128ce5bb80edec
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038504"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409871"
 ---
-<a name="how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax"></a>[如何实现:]使用 ASP.NET AJAX 使用其他 JavaScript 用户界面库？
-====================
+# <a name="how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax"></a>[如何实现:]使用 ASP.NET AJAX 使用其他 JavaScript 用户界面库？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 Microsoft 是组成部分[OpenAjax 联盟](http://www.openajax.org/)和 Microsoft AJAX Library 设计为可无缝使用第三方 JavaScript 用户界面库。 此视频提供了 ASP.NET AJAX、 原型和 script.aculo.us 之间的互操作性的演示。

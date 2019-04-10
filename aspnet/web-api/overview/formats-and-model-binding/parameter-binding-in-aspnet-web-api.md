@@ -1,26 +1,27 @@
 ---
 uid: web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
-title: ASP.NET Web API 中的参数绑定 | Microsoft Docs
+title: 参数绑定中 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 介绍 Web API 如何绑定参数以及如何自定义绑定过程中 ASP.NET 4.x。
 ms.author: riande
 ms.date: 07/11/2013
+ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: a022138c594154109ff0bfba85949099e6b2d2a2
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f121f12ce689a079412bbd5392fde4fea863ff1f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422748"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401967"
 ---
-<a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的参数绑定
-====================
+# <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的参数绑定
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-Web API 在控制器上调用方法时，必须设置参数的值，此过程称为“绑定”。 本文介绍了 Web API 如何绑定参数，以及你如何自定义绑定过程。	
-
+本文介绍了 Web API 如何绑定参数，以及你如何自定义绑定过程。	
+ Web API 在控制器上调用方法时，必须设置参数的值，此过程称为“绑定”。 
 
 默认情况下，Web API 使用以下规则进行参数绑定：
 
@@ -111,7 +112,7 @@ Web API 中的默认值提供程序获取路由数据和查询字符串中的值
 请注意，模型绑定器不限于简单类型转换。 模型绑定器首先在包含已知位置的表中进行查找，如果失败，则会使用类型转换。
 
 
-**设置模型绑定器**
+**设置模型联编程序**
 
 可以通过多种方法来设置模型绑定器。 可以向参数添加 **[ModelBinder]** 特性
 

@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: db0f160b-901c-46d3-865e-7ab6cd4ed68d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8fb2481342fa309941257feae792d9aa3c7bf721
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 5b3883d8a73d50039dfe6f11f757a0f1cb7ece3a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422670"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400966"
 ---
-<a name="iteration-1--create-the-application-c"></a>迭代 1 – 创建应用程序 (C#)
-====================
+# <a name="iteration-1--create-the-application-c"></a>迭代 1 – 创建应用程序 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-1-create-the-application-cs/_static/contactmanager_1_cs1.zip)
@@ -91,7 +91,7 @@ ASP.NET MVC Web 应用程序项目。 启动 Visual Studio 并选择菜单选项
 请确保你具有从顶部的下拉列表中选择的.NET Framework 3.5 角**新的项目**对话框。 否则，不会出现的 ASP.NET MVC Web 应用程序模板。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image1.jpg)](iteration-1-create-the-application-cs/_static/image1.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image1.jpg)](iteration-1-create-the-application-cs/_static/image1.png)
 
 **图 01**:新项目对话框 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image2.png))
 
@@ -103,7 +103,7 @@ ASP.NET MVC 应用程序**创建单元测试项目**此时将显示对话框。 
 > Visual Web Developer 不支持测试项目，因为您无法获得创建单元测试项目对话框中，当使用 Visual Web Developer。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image2.jpg)](iteration-1-create-the-application-cs/_static/image3.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image2.jpg)](iteration-1-create-the-application-cs/_static/image3.png)
 
 **图 02**:创建单元测试项目对话框 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image4.png))
 
@@ -111,7 +111,7 @@ ASP.NET MVC 应用程序**创建单元测试项目**此时将显示对话框。 
 ASP.NET MVC 应用程序将显示在 Visual Studio 解决方案资源管理器窗口 （请参见图 3）。 如果 don t 看到解决方案资源管理器窗口，然后通过选择菜单选项可打开此窗口**视图、 解决方案资源管理器**。 请注意，该解决方案包含两个项目： 在 ASP.NET MVC 项目和测试项目。 ASP.NET MVC 项目命名为 ContactManager 和测试项目命名为 ContactManager.Tests。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image3.jpg)](iteration-1-create-the-application-cs/_static/image5.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image3.jpg)](iteration-1-create-the-application-cs/_static/image5.png)
 
 **图 03**:解决方案资源管理器窗口 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image6.png))
 
@@ -141,7 +141,7 @@ ASP.NET MVC 项目模板包括用于控制器和视图的示例文件。 在创�
 通过右键单击该应用程序创建新的数据库\_在解决方案资源管理器窗口并选择菜单选项中的数据文件夹**添加、 新项**。 在中**添加新项**对话框中，选择**数据**类别并**SQL Server 数据库**模板 （请参阅图 4）。 命名新数据库 ContactManagerDB.mdf，然后单击确定按钮。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image4.jpg)](iteration-1-create-the-application-cs/_static/image7.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image4.jpg)](iteration-1-create-the-application-cs/_static/image7.png)
 
 **图 04**:创建新的 Microsoft SQL Server Express 数据库 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image8.png))
 
@@ -156,7 +156,7 @@ ASP.NET MVC 项目模板包括用于控制器和视图的示例文件。 在创�
 服务器资源管理器窗口可用于创建新的数据库对象，如数据库表、 视图、 触发器和存储的过程。 右键单击表文件夹，然后选择菜单选项**添加新表**。 数据库表设计器将显示 （请参见图 5）。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image5.jpg)](iteration-1-create-the-application-cs/_static/image9.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image5.jpg)](iteration-1-create-the-application-cs/_static/image9.png)
 
 **图 05**:数据库表设计器 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image10.png))
 
@@ -166,7 +166,7 @@ ASP.NET MVC 项目模板包括用于控制器和视图的示例文件。 在创�
 <a id="0.1_table01"></a>
 
 
-| **列名称** | **数据类型** | **允许 null 值** |
+| **列名** | **数据类型** | **允许为 Null** |
 | --- | --- | --- |
 | Id | int | False |
 | FirstName | nvarchar(50) | False |
@@ -203,22 +203,22 @@ ASP.NET MVC 应用程序包含的模型、 视图和控制器。 我们首先创
 5. 在中**选择数据库对象**步骤中，选择标记为的表 （请参阅图 9） 复选框。 数据模型将包括包含 （仅一个联系人表没有） 在数据库中的所有表。 输入的命名空间*模型*。 单击完成按钮以完成向导。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image6.jpg)](iteration-1-create-the-application-cs/_static/image11.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image6.jpg)](iteration-1-create-the-application-cs/_static/image11.png)
 
 **图 06**:添加新项对话框 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image12.png))
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image7.jpg)](iteration-1-create-the-application-cs/_static/image13.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image7.jpg)](iteration-1-create-the-application-cs/_static/image13.png)
 
 **图 07**:选择模型内容 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image14.png))
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image8.jpg)](iteration-1-create-the-application-cs/_static/image15.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image8.jpg)](iteration-1-create-the-application-cs/_static/image15.png)
 
 **图 08**:选择您的数据连接 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image16.png))
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image9.jpg)](iteration-1-create-the-application-cs/_static/image17.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image9.jpg)](iteration-1-create-the-application-cs/_static/image17.png)
 
 **图 09**:选择数据库对象 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image18.png))
 
@@ -228,7 +228,7 @@ ASP.NET MVC 应用程序包含的模型、 视图和控制器。 我们首先创
 实体数据模型向导将生成基于数据库表名称的类名称。 几乎总是需要更改由向导生成的类的名称。 右键单击设计器中的联系人类，然后选择菜单选项**重命名**。 将类的名称从联系人 （复数） 更改为联系人 （单数形式）。 更改类名称后，此类应类似于图 10。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image10.jpg)](iteration-1-create-the-application-cs/_static/image19.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image10.jpg)](iteration-1-create-the-application-cs/_static/image19.png)
 
 **图 10**:Contact 类 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image20.png))
 
@@ -242,7 +242,7 @@ ASP.NET MVC 应用程序包含的模型、 视图和控制器。 我们首先创
 通过右键单击解决方案资源管理器窗口中的 Controllers 文件夹并选择菜单选项创建主页控制器类**添加、 控制器**（请参阅图 11）。 请注意，标记为复选框**添加用于创建、 更新和的详细信息方案的操作方法**。 请确保单击前确认已选中此复选框**添加**按钮。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image11.jpg)](iteration-1-create-the-application-cs/_static/image21.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image11.jpg)](iteration-1-create-the-application-cs/_static/image21.png)
 
 **图 11**:添加主控制器 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image22.png))
 
@@ -272,7 +272,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 右键单击 index （） 方法并选择菜单选项创建索引视图**添加视图**（请参阅图 12）。 选择此菜单选项将打开**添加视图**对话框 （请参阅图 13）。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image12.jpg)](iteration-1-create-the-application-cs/_static/image23.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image12.jpg)](iteration-1-create-the-application-cs/_static/image23.png)
 
 **图 12**:添加索引视图 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image24.png))
 
@@ -280,7 +280,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 在中**添加视图**对话框中，选中复选框标记为**创建强类型化视图**。 选择视图数据类 ContactManager.Models.Contact 和查看内容列表。 选择以下选项将生成一个视图，显示联系人记录的列表。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image13.jpg)](iteration-1-create-the-application-cs/_static/image25.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image13.jpg)](iteration-1-create-the-application-cs/_static/image25.png)
 
 **图 13**:添加视图对话框中 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image26.png))
 
@@ -300,7 +300,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 修改索引视图后，可以运行联系人管理器应用程序。 选择启动调试菜单选项调试，或只需按 F5。 首次运行该应用程序，您会得到对话框图 14 中。 选择的选项**修改 Web.config 文件以启用调试**，然后单击确定按钮。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image14.jpg)](iteration-1-create-the-application-cs/_static/image27.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image14.jpg)](iteration-1-create-the-application-cs/_static/image27.png)
 
 **图 14**:启用调试 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image28.png))
 
@@ -308,7 +308,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 默认情况下返回索引视图。 此视图将列出所有联系人数据库表中的数据 （请参阅图 15）。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image15.jpg)](iteration-1-create-the-application-cs/_static/image29.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image15.jpg)](iteration-1-create-the-application-cs/_static/image29.png)
 
 **图 15**:索引视图 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image30.png))
 
@@ -336,7 +336,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 您可以生成用于创建新的联系人，右键单击任意一种两个 create （） 方法并选择菜单选项的 HTML 窗体**添加视图**（请参阅图 16）。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image16.jpg)](iteration-1-create-the-application-cs/_static/image31.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image16.jpg)](iteration-1-create-the-application-cs/_static/image31.png)
 
 **图 16**:添加 Create 视图 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image32.png))
 
@@ -344,7 +344,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 在中**添加视图**对话框中，选择**ContactManager.Models.Contact**类并**创建**视图内容的选项 （请参阅图 17）。 当您单击**添加**按钮的创建自动生成视图。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image17.jpg)](iteration-1-create-the-application-cs/_static/image33.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image17.jpg)](iteration-1-create-the-application-cs/_static/image33.png)
 
 **图 17**:看到 explode 页面 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image34.png))
 
@@ -358,7 +358,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 修改 create （） 方法并添加创建视图后，可以运行联系人管理器应用程序，并创建新的联系人。 单击**创建新**要导航到创建视图的索引视图中显示链接。 应会看到图 18 中的视图。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image18.jpg)](iteration-1-create-the-application-cs/_static/image35.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image18.jpg)](iteration-1-create-the-application-cs/_static/image35.png)
 
 **图 18**:Create View ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image36.png))
 
@@ -380,7 +380,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 你可以生成包含右键单击 edit （） 方法并选择添加视图菜单选项编辑窗体的视图。 在添加视图对话框中，选择**ContactManager.Models.Contact**类和**编辑**查看内容 （请参阅图 19）。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image19.jpg)](iteration-1-create-the-application-cs/_static/image37.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image19.jpg)](iteration-1-create-the-application-cs/_static/image37.png)
 
 **图 19**:添加一个编辑视图 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image38.png))
 
@@ -409,7 +409,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 第一个 delete （） 方法返回用于从数据库中删除联系人记录的确认窗体 （请参阅 Figure20）。 第二个 delete （） 方法执行实际删除操作针对的数据库。 从数据库中检索原始联系人后，调用的实体框架 DeleteObject() 和 savechanges （） 方法来执行数据库删除。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image20.jpg)](iteration-1-create-the-application-cs/_static/image39.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image20.jpg)](iteration-1-create-the-application-cs/_static/image39.png)
 
 **图 20**:删除确认视图 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image40.png))
 
@@ -419,7 +419,7 @@ Index （） 方法返回表示所有联系人联系人数据库表中的视图�
 Html.ActionLink( { id=item.Id }) %&gt;
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
 
 **图 21**:索引视图与编辑链接 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image42.png))
 
@@ -429,7 +429,7 @@ Html.ActionLink( { id=item.Id }) %&gt;
 与不同的列表、 创建和编辑视图中，在添加视图对话框中不包含创建删除视图的选项。 相反，选择**ContactManager.Models.Contact**数据类和**空**查看内容。 选择空视图内容的选项都需要我们自己创建的视图。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image22.jpg)](iteration-1-create-the-application-cs/_static/image43.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image22.jpg)](iteration-1-create-the-application-cs/_static/image43.png)
 
 **图 22**:添加删除确认视图 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image44.png))
 
@@ -447,12 +447,12 @@ Html.ActionLink( { id=item.Id }) %&gt;
 此问题很容易修复。 首先，我们需要重构的主控制器的名称。 Visual Studio 代码编辑器中打开 HomeController 类中，右键单击类的名称并选择菜单选项**重构重命名**。 选择此菜单选项打开重命名对话框。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image23.jpg)](iteration-1-create-the-application-cs/_static/image45.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image23.jpg)](iteration-1-create-the-application-cs/_static/image45.png)
 
 **图 23**:重构的控制器的名称 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image46.png))
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image24.jpg)](iteration-1-create-the-application-cs/_static/image47.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image24.jpg)](iteration-1-create-the-application-cs/_static/image47.png)
 
 **图 24**:使用重命名对话框 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image48.png))
 
@@ -462,14 +462,14 @@ Html.ActionLink( { id=item.Id }) %&gt;
 进行此更改后，你的应用程序将不再具有主控制器。 运行你的应用程序时，会图 25 中显示错误页。
 
 
-[![新建项目对话框](iteration-1-create-the-application-cs/_static/image25.jpg)](iteration-1-create-the-application-cs/_static/image49.png)
+[![T他新建项目对话框中](iteration-1-create-the-application-cs/_static/image25.jpg)](iteration-1-create-the-application-cs/_static/image49.png)
 
 **图 25**:没有默认控制器 ([单击此项可查看原尺寸图像](iteration-1-create-the-application-cs/_static/image50.png))
 
 
 我们需要更新使用而不是主控制器的联系控制器在 Global.asax 文件中的默认路由。 打开 Global.asax 文件并修改默认控制器使用的默认路由 （请参阅代码清单 10）。
 
-**代码清单 10-Global.asax.cs**
+**Listing 10 - Global.asax.cs**
 
 [!code-csharp[Main](iteration-1-create-the-application-cs/samples/sample10.cs)]
 
@@ -488,4 +488,4 @@ Html.ActionLink( { id=item.Id }) %&gt;
 最后，并最重要的是，联系人管理器应用程序的当前迭代无法轻松地修改或维护。 例如，数据库访问逻辑的控制器操作中已包含右。 这意味着，我们不能修改数据访问代码，而无需修改我们的控制器。 在后续迭代中，我们将探讨我们可以实现以使联系人管理器更具弹性，若要更改的软件设计模式。
 
 > [!div class="step-by-step"]
-> [下一页](iteration-2-make-the-application-look-nice-cs.md)
+> [下一步](iteration-2-make-the-application-look-nice-cs.md)

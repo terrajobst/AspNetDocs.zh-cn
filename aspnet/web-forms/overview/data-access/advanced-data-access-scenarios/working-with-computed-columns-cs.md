@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: 57459065-ed7c-4dfe-ac9c-54c093abc261
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 097d68bdcde7de713ce2e7c829c0611d4c82d64d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b9419b3834b2d592858a510befcd5de460b97044
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424746"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401655"
 ---
-<a name="working-with-computed-columns-c"></a>处理计算列 (C#)
-====================
+# <a name="working-with-computed-columns-c"></a>处理计算列 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_71_CS.zip)或[下载 PDF](working-with-computed-columns-cs/_static/datatutorial71cs1.pdf)
@@ -54,7 +54,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 添加此计算的列后您的屏幕应如下所示屏幕快照中图 1。
 
 
-[![添加一个名为 FullContactName 到供应商表的计算的列](working-with-computed-columns-cs/_static/image2.png)](working-with-computed-columns-cs/_static/image1.png)
+[![A一个计算列命名为 FullContactName 到供应商表 dd](working-with-computed-columns-cs/_static/image2.png)](working-with-computed-columns-cs/_static/image1.png)
 
 **图 1**:添加计算列命名`FullContactName`到`Suppliers`表 ([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image3.png))
 
@@ -79,7 +79,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 结果如图 2 所示，包括`FullContactName`，其中列出`CompanyName`， `ContactName`，和`ContactTitle`使用格式指南中; 列`ContactName`(`ContactTitle`, `CompanyName`) .
 
 
-[![FullContactName 使用格式 ContactName （联系人职务、 公司名称）](working-with-computed-columns-cs/_static/image5.png)](working-with-computed-columns-cs/_static/image4.png)
+[![T他 FullContactName 使用格式 ContactName （联系人职务、 公司名称）](working-with-computed-columns-cs/_static/image5.png)](working-with-computed-columns-cs/_static/image4.png)
 
 **图 2**:`FullContactName`使用格式`ContactName`(`ContactTitle`， `CompanyName`) ([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image6.png))
 
@@ -97,7 +97,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 首先打开`NorthwindWithSprocs`中的数据集`~/App_Code/DAL`文件夹。 在设计器中右键单击并从上下文菜单上，选择要添加新的 TableAdapter。 这将启动 TableAdapter 配置向导。 查询数据从指定的数据库 (`NORTHWNDConnectionString`从`Web.config`) 并单击下一步。 由于我们尚未创建任何存储的过程的查询或修改`Suppliers`表中，选择的创建新的存储的过程选项，因此该向导将为我们创建它们，并单击下一步。
 
 
-[![选择创建新存储的过程选项](working-with-computed-columns-cs/_static/image8.png)](working-with-computed-columns-cs/_static/image7.png)
+[![C选择创建新存储过程选项](working-with-computed-columns-cs/_static/image8.png)](working-with-computed-columns-cs/_static/image7.png)
 
 **图 3**:选择创建新存储的过程选项 ([单击此项可查看原尺寸图像](working-with-computed-columns-cs/_static/image9.png))
 
@@ -110,7 +110,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 输入主查询，并单击下一步之后, 该向导将允许我们命名它将生成的四个存储的过程。 命名这些存储的过程`Suppliers_Select`， `Suppliers_Insert`， `Suppliers_Update`，和`Suppliers_Delete`，如图 4 所示。
 
 
-[![自定义自动生成的存储过程的名称](working-with-computed-columns-cs/_static/image11.png)](working-with-computed-columns-cs/_static/image10.png)
+[![C自定义 Auto-Generated 存储过程的名称](working-with-computed-columns-cs/_static/image11.png)](working-with-computed-columns-cs/_static/image10.png)
 
 **图 4**:自定义 Auto-Generated 存储过程的名称 ([单击此项可查看原尺寸图像](working-with-computed-columns-cs/_static/image12.png))
 
@@ -118,7 +118,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 下一步的向导步骤可用于名称的 TableAdapter 的方法，并指定用于访问和更新数据的模式。 保留所有三个复选框选中状态，但重命名`GetData`方法`GetSuppliers`。 单击完成以完成向导。
 
 
-[![将 GetData 方法重命名为 GetSuppliers](working-with-computed-columns-cs/_static/image14.png)](working-with-computed-columns-cs/_static/image13.png)
+[![Rename GetSuppliers GetData 方法](working-with-computed-columns-cs/_static/image14.png)](working-with-computed-columns-cs/_static/image13.png)
 
 **图 5**:重命名`GetData`方法`GetSuppliers`([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image15.png))
 
@@ -142,7 +142,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 接下来，返回到数据集设计器，右键单击`SuppliersTableAdapter`，然后从上下文菜单中选择配置。 请注意，`Suppliers_Select`列现在包括`FullContactName`其的数据列集合中的列。
 
 
-[![运行 TableAdapter 的配置向导以更新数据表的列](working-with-computed-columns-cs/_static/image17.png)](working-with-computed-columns-cs/_static/image16.png)
+[![R取消 TableAdapter 的配置向导以更新数据表的列](working-with-computed-columns-cs/_static/image17.png)](working-with-computed-columns-cs/_static/image16.png)
 
 **图 6**:运行 TableAdapter 的配置向导以更新 DataTable 的列 ([单击此项可查看原尺寸图像](working-with-computed-columns-cs/_static/image18.png))
 
@@ -150,7 +150,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 单击完成以完成向导。 这将自动添加到相应的列`SuppliersDataTable`。 TableAdapter 向导非常智能，可检测的`FullContactName`列是计算的列，因此它是只读的。 因此，它将设置列 s`ReadOnly`属性设置为`true`。 若要验证这一点，选择从列`SuppliersDataTable`，然后转到属性窗口 （请参阅图 7）。 请注意，`FullContactName`列 s`DataType`和`MaxLength`属性也会相应地设置。
 
 
-[![FullContactName 列被标记为只读的](working-with-computed-columns-cs/_static/image20.png)](working-with-computed-columns-cs/_static/image19.png)
+[![T他 FullContactName 列被标记为只读的](working-with-computed-columns-cs/_static/image20.png)](working-with-computed-columns-cs/_static/image19.png)
 
 **图 7**:`FullContactName`列被标记为只读的 ([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image21.png))
 
@@ -162,7 +162,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 右键单击`SuppliersTableAdapter`数据集设计中，然后从上下文菜单选择添加查询选项。 与我们在步骤 3 中，让向导为我们生成新的存储的过程，通过选择创建新存储的过程选项 （请参阅回图 3 用于此向导步骤的屏幕截图）。 由于此方法将返回具有多个列的记录，则表示我们想要使用 SQL 查询的 select 语句返回的行并单击下一步。
 
 
-[![选择它返回行选项](working-with-computed-columns-cs/_static/image23.png)](working-with-computed-columns-cs/_static/image22.png)
+[![C选择返回行选项选择](working-with-computed-columns-cs/_static/image23.png)](working-with-computed-columns-cs/_static/image22.png)
 
 **图 8**:选择它返回行选项 ([单击此项可查看原尺寸图像](working-with-computed-columns-cs/_static/image24.png))
 
@@ -175,7 +175,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 下一个屏幕询问我们命名将会自动生成的存储的过程。 命名此存储的过程`Suppliers_SelectBySupplierID`单击下一步。
 
 
-[![命名存储的过程 Suppliers_SelectBySupplierID](working-with-computed-columns-cs/_static/image26.png)](working-with-computed-columns-cs/_static/image25.png)
+[![N存储过程 Suppliers_SelectBySupplierID \ 名称](working-with-computed-columns-cs/_static/image26.png)](working-with-computed-columns-cs/_static/image25.png)
 
 **图 9**:命名存储过程`Suppliers_SelectBySupplierID`([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image27.png))
 
@@ -183,7 +183,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 最后，向导提示操作，我们的数据访问模式和方法名称要用于 TableAdapter。 保留选中状态，这两个复选框，但重命名`FillBy`并`GetDataBy`方法添加到`FillBySupplierID`和`GetSupplierBySupplierID`分别。
 
 
-[![名称 TableAdapter 方法 FillBySupplierID 和 GetSupplierBySupplierID](working-with-computed-columns-cs/_static/image29.png)](working-with-computed-columns-cs/_static/image28.png)
+[![N\ 名称 TableAdapter 方法 FillBySupplierID 和 GetSupplierBySupplierID](working-with-computed-columns-cs/_static/image29.png)](working-with-computed-columns-cs/_static/image28.png)
 
 **图 10**:命名 TableAdapter 方法`FillBySupplierID`并`GetSupplierBySupplierID`([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image30.png))
 
@@ -210,7 +210,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 使用计算列添加到`Suppliers`表的 DAL 和 BLL 相应地更新，我们已准备好生成适用于 ASP.NET 页`FullContactName`计算所得的列。 首先打开`ComputedColumns.aspx`页中`AdvancedDAL`文件夹，然后拖动 GridView 从工具箱拖到设计器。 设置 GridView s`ID`属性设置为`Suppliers`并从其智能标记，请将其绑定到名为新 ObjectDataSource `SuppliersDataSource`。 配置要使用 ObjectDataSource`SuppliersBLLWithSprocs`类添加了备份在步骤 6 中，并单击下一步。
 
 
-[![配置对象数据源以使用 SuppliersBLLWithSprocs 类](working-with-computed-columns-cs/_static/image32.png)](working-with-computed-columns-cs/_static/image31.png)
+[![C配置对象数据源以使用 SuppliersBLLWithSprocs 类](working-with-computed-columns-cs/_static/image32.png)](working-with-computed-columns-cs/_static/image31.png)
 
 **图 11**:配置为使用 ObjectDataSource`SuppliersBLLWithSprocs`类 ([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image33.png))
 
@@ -229,7 +229,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 接下来，请访问此页上的通过浏览器。 如图 12 所示，在一个网格，其中包括列出每个供应商`FullContactName`列中，其值是只需其他三个列的串联，格式为`ContactName`(`ContactTitle`， `CompanyName`)。
 
 
-[![在网格中列出每个供应商](working-with-computed-columns-cs/_static/image35.png)](working-with-computed-columns-cs/_static/image34.png)
+[![E在网格中列出供应商的支票](working-with-computed-columns-cs/_static/image35.png)](working-with-computed-columns-cs/_static/image34.png)
 
 **图 12**:在网格中列出每个供应商 ([单击此项可查看原尺寸图像](working-with-computed-columns-cs/_static/image36.png))
 
@@ -237,7 +237,7 @@ Northwind 数据库不具有任何计算的列，因此我们需要添加一个�
 单击编辑按钮，为特定供应商导致回发和中呈现该行其编辑界面 （见图 13）。 在其默认的编辑界面中呈现的前三个列-TextBox 控件`Text`属性设置为数据字段的值。 `FullContactName`列，但是，仍然是以文本形式。 当 BoundFields 已添加到在数据源配置向导，完成 GridView `FullContactName` BoundField s`ReadOnly`属性设置为`true`因为相应`FullContactName`中的列`SuppliersDataTable`具有其`ReadOnly`属性设置为`true`。 步骤 4 中所述`FullContactName`s`ReadOnly`属性设置为`true`因为 TableAdapter 检测到的列是计算所得的列。
 
 
-[![FullContactName 列是不可编辑](working-with-computed-columns-cs/_static/image38.png)](working-with-computed-columns-cs/_static/image37.png)
+[![T他 FullContactName 列是不可编辑](working-with-computed-columns-cs/_static/image38.png)](working-with-computed-columns-cs/_static/image37.png)
 
 **图 13**:`FullContactName`列是不可编辑 ([单击以查看实际尺寸的图像](working-with-computed-columns-cs/_static/image39.png))
 

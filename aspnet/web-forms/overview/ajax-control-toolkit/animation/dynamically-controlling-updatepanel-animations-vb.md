@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: bea66072-59b6-42b4-98fa-211812f5925f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2a4c01ffdee20f2c7970d999b34bf1374088d4c5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 223fad7013a53212c0c822a87bd3e2fcc0a5f17f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408948"
 ---
-<a name="dynamically-controlling-updatepanel-animations-vb"></a>动态控制 UpdatePanel 动画 (VB)
-====================
+# <a name="dynamically-controlling-updatepanel-animations-vb"></a>动态控制 UpdatePanel 动画 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation2.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation2VB.pdf)
@@ -58,9 +58,9 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 在浏览器中运行的文件。 只要单击该按钮时，当前时间显示在面板中，始终为 1 秒的持续时间内淡入。
 
 
-[![淡入淡出的当前时间](dynamically-controlling-updatepanel-animations-vb/_static/image2.png)](dynamically-controlling-updatepanel-animations-vb/_static/image1.png)
+[![T他目前淡入淡出](dynamically-controlling-updatepanel-animations-vb/_static/image2.png)](dynamically-controlling-updatepanel-animations-vb/_static/image1.png)
 
 淡入淡出的当前时间 ([单击此项可查看原尺寸图像](dynamically-controlling-updatepanel-animations-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](animating-an-updatepanel-control-vb.md)
+> [上一个](animating-an-updatepanel-control-vb.md)

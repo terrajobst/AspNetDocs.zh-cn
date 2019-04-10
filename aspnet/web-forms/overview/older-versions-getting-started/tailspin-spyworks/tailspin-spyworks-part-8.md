@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 3b49ee53e82933de9b50960779c28ca6ab7441e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059834"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398678"
 ---
-<a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最终页面、异常处理和结论
-====================
+# <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最终页面、异常处理和结论
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
@@ -28,7 +28,7 @@ ms.locfileid: "57059834"
 
 创建一个名为 ContactUs.aspx 的新页
 
-使用设计器，创建以下形式采用特殊的注释，以包括 ToolkitScriptManager 和从 AjaxdControlToolkit 编辑器控件。 .
+使用设计器，创建以下形式采用特殊的注释，以包括 ToolkitScriptManager 和从 AjaxControlToolkit 编辑器控件。 .
 
 ![](tailspin-spyworks-part-8/_static/image1.jpg)
 
@@ -79,4 +79,4 @@ ms.locfileid: "57059834"
 希望本教程提供若要开始构建你自己的 ASP.NET WebForms 应用程序所需的工具 ！
 
 > [!div class="step-by-step"]
-> [上一篇](tailspin-spyworks-part-7.md)
+> [上一个](tailspin-spyworks-part-7.md)

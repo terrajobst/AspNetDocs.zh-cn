@@ -8,15 +8,15 @@ ms.date: 01/13/2008
 ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 817a823ab5b09ea8bf2620a142779e79f53d957d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8f6fb4348e6ff703d329331b908e41763f24bb1f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026504"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402942"
 ---
-<a name="security-basics-and-aspnet-support-c"></a>安全基础知识和 ASP.NET 支持 (C#)
-====================
+# <a name="security-basics-and-aspnet-support-c"></a>安全基础知识和 ASP.NET 支持 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载 PDF](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial01_Basics_cs.pdf)
@@ -140,7 +140,7 @@ Microsoft.NET Framework 中提供两个成员资格提供程序类：
 本系列教程重点介绍专门 SqlMembershipProvider。
 
 
-[![提供程序模型使不同的实现是无缝地插入到框架&lt;/ s&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
+[![T他提供程序模型使不同的实现是无缝地插入到框架&lt;/ 强&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
 
 **图 03**:提供程序模型使不同的实现是无缝地插入到框架 ([单击此项可查看原尺寸图像](security-basics-and-asp-net-support-cs/_static/image5.png))
 
@@ -192,4 +192,4 @@ ASP.NET 2.0 还引入了角色框架。 成员资格框架，如角色框架构�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是许多有用的审阅者已评审本系列本教程。 本教程中的潜在顾客审阅者包括 Alicja Maziarz、 John Suru 和 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](an-overview-of-forms-authentication-cs.md)
+> [下一步](an-overview-of-forms-authentication-cs.md)

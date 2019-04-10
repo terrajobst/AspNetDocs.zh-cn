@@ -1,33 +1,37 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: 动手实验：生成使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA) |Microsoft Docs
+title: 动手实验：生成单页面应用程序 (SPA) 使用 ASP.NET Web API 和 Angular.js-ASP.NET 4.x
 author: rick-anderson
-description: 在传统 web 应用程序，客户端 （浏览器） 可以启动与服务器之间的通信请求页面。 然后，在服务器处理请求...
+description: 步骤编写的代码：使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA) 构建的 ASP.NET 4.x。
 ms.author: riande
 ms.date: 09/30/2015
+ms.custom: seoapril2019
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 03409e2fda831a07bbc5321ad842633b23ec25e5
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1f093e348216750cbadb6e52f524e5edd4d6c498
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422403"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390267"
 ---
-<a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)
-====================
+# <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 [下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
 
-> 在传统 web 应用程序，客户端 （浏览器） 可以启动与服务器之间的通信请求页面。 然后，在服务器处理请求，并将页面的 HTML 发送到客户端。 在后续页面 （例如用户导航到链接或提交的数据窗体） 交互的新请求发送到服务器，并且流将重新启动： 在服务器处理请求并将新页面发送到浏览器以响应新的操作请求ed 由客户端。
+此动手实验演示如何为 ASP.NET 创建单页应用程序 (SPA) 使用 ASP.NET Web API 和 Angular.js 4.x。
+
+在本动手实验，您将利用这些技术，以实现极客测验，基于 SPA 概念的琐碎内容网站。 首先将实现使用 ASP.NET Web API 公开所需的终结点检索测验问题并将存储答案的服务层。 然后，你将构建丰富且高度可响应用户界面使用 AngularJS 和 CSS3 转换效果。
+
+在传统 web 应用程序，客户端 （浏览器） 可以启动与服务器之间的通信请求页面。 然后，在服务器处理请求，并将页面的 HTML 发送到客户端。 在后续页面 （例如用户导航到链接或提交的数据窗体） 交互的新请求发送到服务器，并且流将重新启动： 在服务器处理请求并将新页面发送到浏览器以响应新的操作请求ed 由客户端。
 > 
 > 在单页面应用程序 (Spa) 中整个页面已加载，在浏览器中后的初始请求，但通过 Ajax 请求发生后续交互。 这意味着浏览器具有更新仅已更改; 的页的一部分没有无需重新加载整个页面。 SPA 方法降低了应用程序以响应用户操作，从而导致更多的流畅体验所花费的时间。
 > 
 > SPA 的体系结构涉及传统 web 应用程序中不存在一些难题。 但是，新兴技术，如 ASP.NET Web API，JavaScript 框架类似 AngularJS 和 CSS3 提供的新样式功能使其十分轻松地设计和构建 Spa。
 > 
-> 在本动手实验，您将利用这些技术，以实现极客测验，基于 SPA 概念的琐碎内容网站。 首先将实现使用 ASP.NET Web API 公开所需的终结点检索测验问题并将存储答案的服务层。 然后，你将构建丰富且高度可响应用户界面使用 AngularJS 和 CSS3 转换效果。
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
@@ -72,7 +76,7 @@ ms.locfileid: "58422403"
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>练习
@@ -104,7 +108,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
     ![创建新的项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image1.png "创建新的项目")
 
-    *创建新的项目*
+    *创建新项目*
 2. 在中**新的项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡。请确保 **.NET Framework 4.5**是所选，其命名*GeekQuiz*，选择**位置**然后单击**确定**。
 
     ![创建新的 ASP.NET Web 应用程序项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image2.png "创建新的 ASP.NET Web 应用程序项目")
@@ -433,7 +437,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
     *检索具有翻转效果下面的问题*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

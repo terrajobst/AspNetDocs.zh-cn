@@ -8,16 +8,17 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: eb1a4632caf00097012bd1757da44016a076630f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026224"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410599"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 创建一个基本的 ASP.NET 4.5 Web 窗体页面
+# 
 
-=== 通过[Erik Reitan](https://github.com/Erikre)
+通过[Erik Reitan](https://github.com/Erikre)
 
 [!INCLUDE[](~/includes/rp.md)]
 
@@ -61,7 +62,7 @@ ms.locfileid: "57026224"
 3. 选择**模板** - &gt; **Visual C#**  - &gt; **Web**在左侧的模板组。
 4. 选择**ASP.NET Web 应用程序**在中心列中的模板。
 5. 将项目命名***BasicWebApp***然后单击**确定**按钮。   
-![新建项目对话框](creating-a-basic-web-forms-page/_static/image2.png)
+![“新建项目”对话框](creating-a-basic-web-forms-page/_static/image2.png)
 6. 接下来，选择**Web 窗体**模板，然后单击**确定**按钮创建项目。  
 ![新建 ASP.NET 项目对话框](creating-a-basic-web-forms-page/_static/image3.png)  
 
@@ -108,7 +109,7 @@ ms.locfileid: "57026224"
 2. 在中**解决方案资源管理器**，右键单击 Web 应用程序名称 (在本教程中的应用程序名称是**BasicWebSite**)，然后单击**添加** - &gt;**新项**。   
 随即出现“添加新项”对话框。
 3. 选择**Visual C#**  - &gt; **Web**在左侧的模板组。 然后，选择**Web 窗体**从中间列表并将其命名*FirstWebPage.aspx*。   
-    ![添加新项对话框](creating-a-basic-web-forms-page/_static/image6.png)
+    ![“添加新项”对话框](creating-a-basic-web-forms-page/_static/image6.png)
 4. 单击**添加**将 web 页面添加到你的项目。  
 Visual Studio 创建新页面，并将其打开。
 

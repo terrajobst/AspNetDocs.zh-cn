@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 6d0d70f4-725e-4258-8ae8-24a6ba1ddbf7
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b229d0155fbab0437c644b41424164e4c655f5e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 91523180501f1d1eb67586bf97649ad6226ec565
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049944"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413225"
 ---
-<a name="creating-a-rating-control-vb"></a>创建分级控件 (VB)
-====================
+# <a name="creating-a-rating-control-vb"></a>创建分级控件 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0VB.pdf)
@@ -66,9 +66,9 @@ ms.locfileid: "57049944"
 保存页面，并将其加载到你的浏览器。 将鼠标悬停 （最初为空） 分级项，当 JavaScript 效果：分级的更改。 单击组星级，保留当前的分级。 最后，当用户提交窗体，服务器端代码将输出的所选的分级。
 
 
-[![创建具有最少的代码的分级系统](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
+[![C具有最少的代码的分级系统](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
 
 创建分级系统具有最少的代码 ([单击此项可查看原尺寸图像](creating-a-rating-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](creating-a-rating-control-cs.md)
+> [上一个](creating-a-rating-control-cs.md)

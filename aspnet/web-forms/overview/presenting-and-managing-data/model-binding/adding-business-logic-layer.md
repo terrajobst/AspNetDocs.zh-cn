@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 7ef664b3-1cc8-4cbf-bb18-9f0f3a3ada2b
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: 4ba1830ce51f257e18880f752b249dbeb77f504e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a229ebd71c913f3fe086892786988d0b3e42ec88
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028684"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411574"
 ---
-<a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>使用模型绑定和 web 窗体的项目添加业务逻辑层
-====================
+# <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>使用模型绑定和 web 窗体的项目添加业务逻辑层
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。 本系列开始介绍性材料，后续教程将移动到更高级的概念。
@@ -96,4 +96,4 @@ ms.locfileid: "57028684"
 在本教程中，你重新结构化应用程序以使用数据访问层和业务逻辑层。 指定数据控件使用不是当前页的数据操作的对象。
 
 > [!div class="step-by-step"]
-> [上一篇](using-query-string-values-to-retrieve-data.md)
+> [上一个](using-query-string-values-to-retrieve-data.md)

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 4d85e9fb-91e6-41f2-9c13-754549b19c27
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4f776d609099c398b4937710487ba51a5efb1876
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a5b858a05470caa244902afbb404adbb2e4761b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033634"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402721"
 ---
-<a name="using-the-slider-control-with-auto-postback-c"></a>滑块控件中使用自动回发 (C#)
-====================
+# <a name="using-the-slider-control-with-auto-postback-c"></a>滑块控件中使用自动回发 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)
@@ -51,14 +51,14 @@ AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample5.aspx)]
 
 
-[![将滑块移动触发回发](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)
+[![M删除滑块触发回发](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)
 
 将滑块移动触发回发 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-cs/_static/image3.png))
 
 
-[![然后，此更改的日期写入标签中](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)
+[![Afterwards，此更改的日期写入的标签中](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)
 
 然后，此更改的日期写入标签中 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-cs/_static/image6.png))
 
 > [!div class="step-by-step"]
-> [下一页](databinding-the-slider-control-cs.md)
+> [下一步](databinding-the-slider-control-cs.md)

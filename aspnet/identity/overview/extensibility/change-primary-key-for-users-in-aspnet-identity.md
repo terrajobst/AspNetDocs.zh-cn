@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: 更改用户在 ASP.NET 标识中的主键 |Microsoft Docs
+title: 更改用户在 ASP.NET 标识的 ASP.NET 中的主键 4.x
 author: Rick-Anderson
 description: 在 Visual Studio 2013 中，默认 web 应用程序使用的用户帐户的密钥的字符串值。 ASP.NET 标识，您可以更改的类型...
 ms.author: riande
 ms.date: 09/30/2014
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: d2856ce1ca61a29e091bfbd16647b673e6fc659b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 212b07494381d13f6ded96a41b846dcdf7e8ff16
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393738"
 ---
-<a name="change-primary-key-for-users-in-aspnet-identity"></a>在 ASP.NET Identity 中更改用户的主键
-====================
+# <a name="change-primary-key-for-users-in-aspnet-identity"></a>在 ASP.NET Identity 中更改用户的主键
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 在 Visual Studio 2013 中，默认 web 应用程序使用的用户帐户的密钥的字符串值。 ASP.NET 标识，可更改以满足您的数据要求的键的类型。 例如，可以更改从字符串的键类型为整数。
@@ -272,7 +273,7 @@ ThrowIfV1Schema 参数不再有效的构造函数中。 更改构造函数，因
 <a id="other"></a>
 ## <a name="other-resources"></a>其他资源
 
-- [ASP.NET 标识的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [将现有网站从 SQL 成员身份迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [ASP.NET Identity 的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [将现有网站从 SQL 成员身份迁移到 ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [成员身份和用户配置文件到 ASP.NET 标识的通用提供程序数据迁移](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
 - [示例应用程序](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt)具有已更改主键

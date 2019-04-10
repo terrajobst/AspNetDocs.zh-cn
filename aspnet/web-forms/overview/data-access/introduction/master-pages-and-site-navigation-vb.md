@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 022801d8-a327-4d0c-8780-6094c9cee00d
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2a814fe8ed4a902061b2c50fd9d63983c4f6b2e8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 38bc21c1a7809c235a85638cbb40183f2d0b422d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061084"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398509"
 ---
-<a name="master-pages-and-site-navigation-vb"></a>母版页和站点导航 (VB)
-====================
+# <a name="master-pages-and-site-navigation-vb"></a>母版页和站点导航 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_3_VB.exe)或[下载 PDF](master-pages-and-site-navigation-vb/_static/datatutorial03vb1.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "57061084"
 若要说明这些概念，并让我们教程的网站更易于使用，让我们花本课程中定义的站点级页面布局、 实现站点地图，并将添加的导航用户界面。 本教程结束时，我们将用于构建我们教程的 web 页面的精美的网站设计。
 
 
-[![本教程的最终结果](master-pages-and-site-navigation-vb/_static/image2.png)](master-pages-and-site-navigation-vb/_static/image1.png)
+[![T他本教程的最终结果](master-pages-and-site-navigation-vb/_static/image2.png)](master-pages-and-site-navigation-vb/_static/image1.png)
 
 **图 1**:最终结果的本教程 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image3.png))
 
@@ -51,7 +51,7 @@ ms.locfileid: "57061084"
 若要创建主页面，请右键单击解决方案资源管理器中的项目名称并选择添加新项。 然后从模板列表中选择母版页类型并将其命名`Site.master`。
 
 
-[![向网站添加新的主页面](master-pages-and-site-navigation-vb/_static/image6.png)](master-pages-and-site-navigation-vb/_static/image5.png)
+[![Add 到网站新母版页](master-pages-and-site-navigation-vb/_static/image6.png)](master-pages-and-site-navigation-vb/_static/image5.png)
 
 **图 3**:将新的主页面添加到网站 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image7.png))
 
@@ -68,7 +68,7 @@ Site.master
 与上面输入的标记，切换到设计视图显示了主页面的布局。 使用此母版页任何 ASP.NET 页面将具有指定的标记的功能具有此统一布局`MainContent`区域。
 
 
-[![Master 页上，通过设计视图查看](master-pages-and-site-navigation-vb/_static/image9.png)](master-pages-and-site-navigation-vb/_static/image8.png)
+[![T他母版页的页面，当查看通过使用设计视图](master-pages-and-site-navigation-vb/_static/image9.png)](master-pages-and-site-navigation-vb/_static/image8.png)
 
 **图 4**:母版页时查看通过使用设计视图 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image10.png))
 
@@ -78,7 +78,7 @@ Site.master
 与定义母版页，我们已经准备好添加网站的 ASP.NET 页。 让我们首先添加`Default.aspx`，我们网站的主页。 右键单击解决方案资源管理器中的项目名称并选择添加新项。 选择从模板列表和名称的 Web 窗体选项文件`Default.aspx`。 此外，选中"选择母版页"复选框。
 
 
-[![添加新的 Web 窗体，检查选择母版页复选框](master-pages-and-site-navigation-vb/_static/image12.png)](master-pages-and-site-navigation-vb/_static/image11.png)
+[![Add 检查选择母版页复选框新 Web 窗体](master-pages-and-site-navigation-vb/_static/image12.png)](master-pages-and-site-navigation-vb/_static/image11.png)
 
 **图 5**:添加新的 Web 窗体，检查选择母版页复选框 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image13.png))
 
@@ -86,7 +86,7 @@ Site.master
 单击确定按钮后，我们会要求选择这个新的 ASP.NET 页面应使用哪个主页面。 虽然可以在项目中有多个母版页，我们只能有一个。
 
 
-[![选择应使用此 ASP.NET 页面的母版页](master-pages-and-site-navigation-vb/_static/image15.png)](master-pages-and-site-navigation-vb/_static/image14.png)
+[![C选择母版页此 ASP.NET 页应使用](master-pages-and-site-navigation-vb/_static/image15.png)](master-pages-and-site-navigation-vb/_static/image14.png)
 
 **图 6**:选择此 ASP.NET 页应使用的母版页 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image16.png))
 
@@ -110,7 +110,7 @@ Default.aspx
 切换到我们可以看到我们的页面在浏览器中查看呈现的设计视图。 请注意，在设计中的内容可编辑区域是可编辑的 ASP.NET 页查看在母版页中定义的非 ContentPlaceHolder 标记灰显。
 
 
-[![在 ASP.NET 页的设计视图显示了这两个可编辑的和非可编辑区域](master-pages-and-site-navigation-vb/_static/image18.png)](master-pages-and-site-navigation-vb/_static/image17.png)
+[![T他的 ASP.NET 页显示了两个可编辑和非可编辑区域的设计视图](master-pages-and-site-navigation-vb/_static/image18.png)](master-pages-and-site-navigation-vb/_static/image17.png)
 
 **图 7**:ASP.NET 页显示了两个可编辑设计视图和非可编辑区域 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image19.png))
 
@@ -142,7 +142,7 @@ ASP.NET 2.0 站点导航系统提供一种开发人员定义站点图，然后�
 对于本教程中，但是，我们使用默认站点映射提供程序提供使用 ASP.NET 2.0。 若要创建的站点映射，只需右键单击解决方案资源管理器中的项目名称，选择添加新项，并选择站点映射选项。 保留的名称作为`Web.sitemap`并单击添加按钮。
 
 
-[![将站点图添加到你的项目](master-pages-and-site-navigation-vb/_static/image22.png)](master-pages-and-site-navigation-vb/_static/image21.png)
+[![Add 站点映射到您的项目](master-pages-and-site-navigation-vb/_static/image22.png)](master-pages-and-site-navigation-vb/_static/image21.png)
 
 **图 9**:将站点图添加到你的项目 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image23.png))
 
@@ -159,7 +159,7 @@ Web.sitemap
 站点图定义网站的导航结构，它是描述该站点的各个部分的层次结构。 每个`<siteMapNode>`中的元素`Web.sitemap`表示站点的导航结构中的节。
 
 
-[![站点图表示的分层导航结构](master-pages-and-site-navigation-vb/_static/image25.png)](master-pages-and-site-navigation-vb/_static/image24.png)
+[![T他站点图表示的分层导航结构](master-pages-and-site-navigation-vb/_static/image25.png)](master-pages-and-site-navigation-vb/_static/image24.png)
 
 **图 10**:站点图表示的分层导航结构 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image26.png))
 
@@ -252,7 +252,7 @@ SiteMapDataSource 控件返回的站点映射层次结构一个级别时，从�
 让我们来显示同样，但这次我们将显示的标题和说明的教程使用 Repeater 的未排序的列表。 由于标记和代码来完成此将需要为每个重复`Default.aspx`页上，我们可以封装在此 UI 逻辑[用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)。 名为的网站中创建一个文件夹`UserControls`并将类型名为 Web 用户控件的新项添加到该`SectionLevelTutorialListing.ascx`，并添加以下标记：
 
 
-[![将新的 Web 用户控件添加到用户控件文件夹](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
+[![Add Usercontrol 文件夹到新的 Web 用户控件](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
 
 **图 13**:添加到新的 Web 用户控件`UserControls`文件夹 ([单击以查看实际尺寸的图像](master-pages-and-site-navigation-vb/_static/image31.png))
 
@@ -272,12 +272,12 @@ SectionLevelTutorialListing.ascx.vb
 一旦创建此 Repeater 后，打开`Default.aspx`页中的每个文件夹，请转到设计视图中，并只需将用户控件拖动到设计图面上的解决方案资源管理器从想要显示的教程列表。
 
 
-[![用户控件具有已添加到 Default.aspx](master-pages-and-site-navigation-vb/_static/image33.png)](master-pages-and-site-navigation-vb/_static/image32.png)
+[![T他用户控件具有已添加到 Default.aspx](master-pages-and-site-navigation-vb/_static/image33.png)](master-pages-and-site-navigation-vb/_static/image32.png)
 
 **图 14**:用户控件具有已添加到`Default.aspx`([单击以查看实际尺寸的图像](master-pages-and-site-navigation-vb/_static/image34.png))
 
 
-[![列出基本 Reporting 教程](master-pages-and-site-navigation-vb/_static/image36.png)](master-pages-and-site-navigation-vb/_static/image35.png)
+[![T列出了他基本报表教程](master-pages-and-site-navigation-vb/_static/image36.png)](master-pages-and-site-navigation-vb/_static/image35.png)
 
 **图 15**:列出了基本的 Reporting 教程 ([单击此项可查看原尺寸图像](master-pages-and-site-navigation-vb/_static/image37.png))
 
@@ -313,4 +313,4 @@ SectionLevelTutorialListing.ascx.vb
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Liz Shulok、 Dennis Patterson 和 Hilton Giesenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](creating-a-business-logic-layer-vb.md)
+> [上一个](creating-a-business-logic-layer-vb.md)

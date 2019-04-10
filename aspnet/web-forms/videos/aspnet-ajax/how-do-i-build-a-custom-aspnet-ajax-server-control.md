@@ -8,15 +8,15 @@ ms.date: 07/25/2007
 ms.assetid: 1165e0b4-2240-4dc2-aa94-ef6664c71a8c
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-build-a-custom-aspnet-ajax-server-control
 msc.type: video
-ms.openlocfilehash: ae685bc2b8a236729f86ead591874421e92a642a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4aec93a42f6766a043a5d672c9e084683b71076c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044424"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416241"
 ---
-<a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a>[如何实现:]生成自定义 ASP.NET AJAX 服务器控件？
-====================
+# <a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a>[如何实现:]生成自定义 ASP.NET AJAX 服务器控件？
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 了解如何使用 Microsoft AJAX Library 中使用 AJAX extensions 的 ASP.NET AJAX 功能创建自定义 Web 服务器控件。 此视频将指导你完成服务器端.NET 代码和客户端 JavaScript 代码，并提供原型概念的说明。 然后可以在类似于任何其他服务器控件的.aspx 页面中使用自定义的 ASP.NET AJAX 控件。

@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: 5e189dd7-f4f9-4f28-9b3a-6cb7d392e9c7
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 45a717f9b68a1465d3446b06358a062f6b640c9e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9c5ac1aeff427c78030f789fcb67736020ce3367
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060224"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391791"
 ---
-<a name="caching-data-in-the-architecture-vb"></a>缓存体系结构中的数据 (VB)
-====================
+# <a name="caching-data-in-the-architecture-vb"></a>缓存体系结构中的数据 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_59_VB.exe)或[下载 PDF](caching-data-in-the-architecture-vb/_static/datatutorial59vb1.pdf)
@@ -159,7 +159,7 @@ Let 的 s 更新`AddCacheItem(key, value)`方法，以便每个项通过此方�
 缓存层的类和方法可用于处理数据使用的技术我们 ve 检查在这些教程。 为了说明如何使用缓存的数据，你将更改保存到`ProductsCL`类，然后打开`FromTheArchitecture.aspx`页中`Caching`文件夹并添加 GridView。 从 GridView s 智能标记，创建新对象数据源。 在向导 s 第一步应会看到`ProductsCL`类作为一个下拉列表中的选项。
 
 
-[![ProductsCL 类包含在业务对象下拉列表](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
+[![T他 ProductsCL 类包括在业务对象下拉列表](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
 
 **图 4**:`ProductsCL`类包含在业务对象下拉列表 ([单击以查看实际尺寸的图像](caching-data-in-the-architecture-vb/_static/image6.png))
 
@@ -167,7 +167,7 @@ Let 的 s 更新`AddCacheItem(key, value)`方法，以便每个项通过此方�
 选择后`ProductsCL`，单击下一步。 下拉列表中选择的选项卡有两个项-`GetProducts()`并`GetProductsByCategoryID(categoryID)`和更新选项卡具有 sole`UpdateProduct`重载。 选择`GetProducts()`从选择选项卡的方法和`UpdateProducts`方法从该更新选项卡并单击完成。
 
 
-[![在下拉列表中列出 ProductsCL 类的方法](caching-data-in-the-architecture-vb/_static/image8.png)](caching-data-in-the-architecture-vb/_static/image7.png)
+[![T他在下拉列表中列出了 ProductsCL 类的方法](caching-data-in-the-architecture-vb/_static/image8.png)](caching-data-in-the-architecture-vb/_static/image7.png)
 
 **图 5**:`ProductsCL`下拉列表中列出了类的方法 ([单击以查看实际尺寸的图像](caching-data-in-the-architecture-vb/_static/image9.png))
 

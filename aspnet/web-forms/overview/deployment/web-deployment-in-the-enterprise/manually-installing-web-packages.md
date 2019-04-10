@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: f11d22a7-5d32-4ad0-8a9b-276460a61c06
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: ca85db5cfb30bc06d6d3b94001a3668088461b87
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033474"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408792"
 ---
-<a name="manually-installing-web-packages"></a>手动安装 Web 程序包
-====================
+# <a name="manually-installing-web-packages"></a>手动安装 Web 程序包
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -131,4 +131,4 @@ ms.locfileid: "57033474"
 有关如何配置 IIS web 服务器以支持手动导入 web 包的指南，请参阅[Web 服务器配置用于 Web 部署发布 （脱机部署）](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)。 有关部署 web 包的更多常规指南，请参阅[演练：部署使用 Web 部署包 （第 1，共 4 部分） 的 Web 应用程序项目](https://msdn.microsoft.com/library/dd483479.aspx)。
 
 > [!div class="step-by-step"]
-> [上一篇](creating-and-running-a-deployment-command-file.md)
+> [上一个](creating-and-running-a-deployment-command-file.md)

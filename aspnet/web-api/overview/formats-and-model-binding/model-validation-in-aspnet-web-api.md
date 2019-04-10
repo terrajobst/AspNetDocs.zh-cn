@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
-title: ASP.NET Web API 中的模型验证 |Microsoft Docs
+title: 模型验证在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 概述 ASP.NET Web API 中的模型验证的 ASP.NET 4.x。
 ms.author: riande
 ms.date: 07/20/2012
+ms.custom: seoapril2019
 ms.assetid: 7d061207-22b8-4883-bafa-e89b1e7749ca
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 611a6466e160387592df678b3b8556625ff8e234
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4e792f8cc2f79c2ab82c5a74fd50f49475fac4f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033404"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404567"
 ---
-<a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API 中的模型验证
-====================
+# <a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API 中的模型验证
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-当客户端将数据发送到 web API 时，通常要执行任何处理之前验证数据。 本文介绍如何对模型进行批注、 使用批注以进行数据验证和处理你的 web API 中的验证错误。
+本文介绍如何对模型进行批注、 使用批注以进行数据验证和处理你的 web API 中的验证错误。 当客户端将数据发送到 web API 时，通常要执行任何处理之前验证数据。 
 
 ## <a name="data-annotations"></a>数据注释
 

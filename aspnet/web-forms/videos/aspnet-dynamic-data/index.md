@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: cd51e6c4-6ff9-419d-8ac8-a39b79d63c78
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
-ms.openlocfilehash: 2b9bf121e9eced28a91616a8d7515e1fb563f304
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 11fca6096a1ada5df95971f2c77c8e72660ad864
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400147"
 ---
-<a name="aspnet-dynamic-data"></a>ASP.NET 动态数据
-====================
+# <a name="aspnet-dynamic-data"></a>ASP.NET 动态数据
+
 > 如何使用 ASP.NET 动态数据创建基架会自动知道如何执行数据访问的应用程序。
 
 
@@ -27,7 +27,7 @@ ms.locfileid: "57021874"
 - [创建自定义页面](how-do-i-make-custom-pages.md)
 - [显示未知数据类型](how-do-i-display-unknown-datatypes.md)
 - [在 ListView 和 DetailsView 控件中使用 DynamicControl](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
-- [开始使用动态数据](getting-started-with-dynamic-data.md)
+- [动态数据入门](getting-started-with-dynamic-data.md)
 - [开始编辑 ASP.NET 动态数据应用程序中的模板](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
 - [开始使用 URL 路由修改动态数据应用程序](begin-modifying-dynamic-data-applications-with-url-routing.md)
 - [在 ASP.NET 动态数据应用程序中启用行内编辑](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)

@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 20f82744582faddaffdc5b4785bf208ecf0955a7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 71ff3c269c5d1ed43a67d19442eda8e9d4728295
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058494"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405698"
 ---
-<a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>在 ASP.NET MVC 应用程序 (共 10 个 9) 中实现存储库和工作单元模式
-====================
+# <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>在 ASP.NET MVC 应用程序 (共 10 个 9) 中实现存储库和工作单元模式
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)

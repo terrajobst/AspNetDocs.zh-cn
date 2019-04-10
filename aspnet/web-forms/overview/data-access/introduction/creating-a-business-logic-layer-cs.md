@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 85554606-47cb-4e4f-9848-eed9da579056
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0db90f1e87bcaac51ca08ef1a8b258c93be8f613
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fd3bf46394f562462c561bf06370d2f372e47d0a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415258"
 ---
-<a name="creating-a-business-logic-layer-c"></a>创建业务逻辑层 (C#)
-====================
+# <a name="creating-a-business-logic-layer-c"></a>创建业务逻辑层 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_2_CS.exe)或[下载 PDF](creating-a-business-logic-layer-cs/_static/datatutorial02cs1.pdf)
@@ -127,7 +127,7 @@ ProductsBLL.cs
 此外可以通过使用对象数据源 （如可能是类型化数据集） 以声明方式访问的 BLL 类。 我们将讨论 ObjectDataSource 中更详细地介绍以下教程中。
 
 
-[![在 GridView 中显示的产品列表](creating-a-business-logic-layer-cs/_static/image4.png)](creating-a-business-logic-layer-cs/_static/image3.png)
+[![T在 GridView 中显示他的产品列表](creating-a-business-logic-layer-cs/_static/image4.png)](creating-a-business-logic-layer-cs/_static/image3.png)
 
 **图 3**:在 GridView 中显示的产品列表 ([单击此项可查看原尺寸图像](creating-a-business-logic-layer-cs/_static/image5.png))
 
@@ -146,7 +146,7 @@ ProductsBLL.cs
 除了强制实施这些规则应用于数据库它们应还在进行强制数据集级别。 事实上，字段长度和一个值是必需还是可选已捕获的 Datacolumn 的每个 DataTable 的组。 若要查看自动提供的现有字段级别验证，请转到数据集设计器、 从 DataTables 之一中选择字段，然后转到属性窗口。 如图 4 所示，`QuantityPerUnit`中的 DataColumn `ProductsDataTable` 20 个字符的最大长度且允许`NULL`值。 如果我们尝试设置`ProductsDataRow`的`QuantityPerUnit`属性的长度超过 20 个字符的字符串值`ArgumentException`将引发。
 
 
-[![DataColumn 提供基本字段级验证](creating-a-business-logic-layer-cs/_static/image7.png)](creating-a-business-logic-layer-cs/_static/image6.png)
+[![T他 DataColumn 提供基本字段级验证](creating-a-business-logic-layer-cs/_static/image7.png)](creating-a-business-logic-layer-cs/_static/image6.png)
 
 **图 4**:DataColumn 提供基本字段级验证 ([单击此项可查看原尺寸图像](creating-a-business-logic-layer-cs/_static/image8.png))
 
@@ -154,7 +154,7 @@ ProductsBLL.cs
 遗憾的是，我们不能指定边界检查，如`UnitPrice`值必须大于或等于零，通过属性窗口。 为了提供此类型的字段级验证我们需要创建的 DataTable 的事件处理程序[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 如中所述[前面的教程](creating-a-data-access-layer-cs.md)，可以通过使用分部类扩展由类型化数据集创建的数据集、 数据表和 DataRow 对象。 使用这种方法，我们可以创建`ColumnChanging`事件处理程序`ProductsDataTable`类。 首先创建中的类`App_Code`文件夹名为`ProductsDataTable.ColumnChanging.cs`。
 
 
-[![将新类添加到 App_Code 文件夹](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
+[![Add 到 App_Code 文件夹中的一个新类](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
 
 **图 5**:添加新类中，以便`App_Code`文件夹 ([单击以查看实际尺寸的图像](creating-a-business-logic-layer-cs/_static/image11.png))
 

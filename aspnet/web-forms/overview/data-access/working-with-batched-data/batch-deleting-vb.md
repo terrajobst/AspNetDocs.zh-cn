@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: 4fb72f75-32ab-4bf7-a764-be20367be726
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ec3560f31f2def1801f9d09b3b583de6cdabc834
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b6a2450dd824396e1540b52395022f48e41aab70
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403046"
 ---
-<a name="batch-deleting-vb"></a>批量删除 (VB)
-====================
+# <a name="batch-deleting-vb"></a>批量删除 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_65_VB.zip)或[下载 PDF](batch-deleting-vb/_static/datatutorial65vb1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "57054484"
 已使用的联机电子邮件客户端的任何人已经非常熟悉最常见的批处理删除接口之一： 一个具有对应删除所有选中的项的网格中的每一行中的复选框按钮 （请参见图 1）。 本教程中非常短因为我们已做的所有硬工作在前面的教程中创建基于 web 的界面和要删除的一系列记录作为单个原子操作的方法。 在中[添加 GridView 复选框列](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb.md)教程中，我们创建的列的复选框并在 GridView[包装事务内的数据库修改](wrapping-database-modifications-within-a-transaction-vb.md)教程中，我们创建中的方法将使用事务来删除 BLL`List<T>`的`ProductID`值。 在本教程中，我们将制作的并合并我们以前的体验，以创建工作批删除示例。
 
 
-[![每个行包含一个复选框](batch-deleting-vb/_static/image1.gif)](batch-deleting-vb/_static/image1.png)
+[![E支票行包含一个复选框](batch-deleting-vb/_static/image1.gif)](batch-deleting-vb/_static/image1.png)
 
 **图 1**:每个行包含一个复选框 ([单击此项可查看原尺寸图像](batch-deleting-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ ms.locfileid: "57054484"
 由于我们已创建删除接口中的批处理[添加 GridView 复选框列](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb.md)教程中，我们可以只需将其复制到`BatchDelete.aspx`而不是从头开始创建它。 首先打开`BatchDelete.aspx`页中`BatchData`文件夹并`CheckBoxField.aspx`页中`EnhancedGridView`文件夹。 从`CheckBoxField.aspx`页上，请转到源视图并复制之间的标记`<asp:Content>`标记如图 2 中所示。
 
 
-[![CheckBoxField.aspx 的声明性标记复制到剪贴板](batch-deleting-vb/_static/image2.gif)](batch-deleting-vb/_static/image3.png)
+[![C将声明性标记的 CheckBoxField.aspx 到剪贴板](batch-deleting-vb/_static/image2.gif)](batch-deleting-vb/_static/image3.png)
 
 **图 2**:将复制的声明性标记`CheckBoxField.aspx`到剪贴板 ([单击以查看实际尺寸的图像](batch-deleting-vb/_static/image4.png))
 
@@ -54,7 +54,7 @@ ms.locfileid: "57054484"
 在复制后通过声明性标记和源代码，请花费片刻时间来测试`BatchDelete.aspx`通过查看通过浏览器。 应会看到 GridView 列出每个行，其中列出 s 产品名称、 类别和价格以及一个复选框的 GridView 中的前十个产品。 应该有三个按钮：检查所有，取消选中所有，并删除所选的产品。 单击查看全部按钮可以选择所有复选框，而取消选中所有清除所有复选框。 单击删除所选产品显示一条消息，其中列出了`ProductID`值的所选的产品，但不实际删除产品。
 
 
-[![从 CheckBoxField.aspx 接口已被移动到 BatchDeleting.aspx](batch-deleting-vb/_static/image3.gif)](batch-deleting-vb/_static/image5.png)
+[![T他从 CheckBoxField.aspx 接口已被移动到 BatchDeleting.aspx](batch-deleting-vb/_static/image3.gif)](batch-deleting-vb/_static/image5.png)
 
 **图 3**:从接口`CheckBoxField.aspx`已移至`BatchDeleting.aspx`([单击以查看实际尺寸的图像](batch-deleting-vb/_static/image6.png))
 
@@ -82,12 +82,12 @@ ms.locfileid: "57054484"
 图 4 显示了 GridView 后的行数已选择要删除。 图 5 显示的屏幕，单击删除所选产品按钮后立即。 请注意，在图 5`ProductID`下面 GridView 的标签中显示的已删除的记录值，这些行不再 GridView。
 
 
-[![将删除所选的产品](batch-deleting-vb/_static/image4.gif)](batch-deleting-vb/_static/image7.png)
+[![T他选定的产品将被删除](batch-deleting-vb/_static/image4.gif)](batch-deleting-vb/_static/image7.png)
 
 **图 4**:选择产品将被删除 ([单击此项可查看原尺寸图像](batch-deleting-vb/_static/image8.png))
 
 
-[![删除产品产品 id 值为所列下方的 GridView](batch-deleting-vb/_static/image5.gif)](batch-deleting-vb/_static/image9.png)
+[![T他删除产品产品 id 值为所列下方的 GridView](batch-deleting-vb/_static/image5.gif)](batch-deleting-vb/_static/image9.png)
 
 **图 5**:删除产品`ProductID`的值为 GridView 下方列出 ([单击以查看实际尺寸的图像](batch-deleting-vb/_static/image10.png))
 

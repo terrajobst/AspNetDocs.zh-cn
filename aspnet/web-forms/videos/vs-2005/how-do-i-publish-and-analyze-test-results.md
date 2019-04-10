@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: 9fb155e0-1379-482c-963d-af7dc0397d76
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-publish-and-analyze-test-results
 msc.type: video
-ms.openlocfilehash: a575dd0af20bb1565606c93e5a189b7a3e35ff3d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 80289680e4d40ec903524d9f4752b71d13db790e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413498"
 ---
-<a name="how-do-i-publish-and-analyze-test-results"></a>[如何实现:]发布和分析测试结果？
-====================
+# <a name="how-do-i-publish-and-analyze-test-results"></a>[如何实现:]发布和分析测试结果？
+
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
 Visual Studio Team System 使你可以在项目的代码质量的图表会发生更改，随着项目进度。 此视频提供了有关如何将测试结果发布到 Team Foundation Server 项目数据库并将结果与生成号关联的说明。 我们看到的结果被发布后我们可以使用报表管理器在我们生成的测试结果中查看更改的图形表示形式。

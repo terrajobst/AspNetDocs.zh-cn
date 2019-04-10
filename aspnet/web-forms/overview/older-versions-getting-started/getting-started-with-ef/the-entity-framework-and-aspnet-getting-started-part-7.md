@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: f8afb245-b705-419c-8790-0b295e90d5e2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 48092838ac0b00137ae0a4e37391c31883afcd09
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b976e8d611596f2cb58661a2e91b7a640ac04b9f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027914"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416072"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体-第 7 部分
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体-第 7 部分
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 有关教程系列的信息，请参阅[系列中的第一个教程](the-entity-framework-and-aspnet-getting-started-part-1.md)

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 426e31bc9804c97b551b9c36679d2b821700b915
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6f8f74b74080104980e1db866d695fe7c6d9d5fc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393348"
 ---
-<a name="using-postbacks-with-reorderlist-c"></a>通过 ReorderList 使用回发 (C#)
-====================
+# <a name="using-postbacks-with-reorderlist-c"></a>通过 ReorderList 使用回发 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList4.cs.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist4CS.pdf)
@@ -36,10 +36,10 @@ ms.locfileid: "57063624"
 
 若要将绑定到此 XML`ReorderList`必须设置控制和启用回发，以下属性：
 
-- `DataSourceID`：数据源的 ID
-- `SortOrderField`：要作为排序依据的属性
-- `AllowReorder`：是否允许用户重新排列列表元素
-- `PostBackOnReorder`：是否创建一个回发时重新排列列表
+- `DataSourceID`:数据源的 ID
+- `SortOrderField`:要作为排序依据的属性
+- `AllowReorder`:是否允许用户重新排列列表元素
+- `PostBackOnReorder`:是否创建一个回发时重新排列列表
 
 下面是控件的相应标记：
 
@@ -62,9 +62,9 @@ ms.locfileid: "57063624"
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 
 
-[![每个重新排序触发回发](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
+[![E支票重新排序触发回发](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
 
 每个重新排序触发回发 ([单击此项可查看原尺寸图像](using-postbacks-with-reorderlist-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一页](drag-and-drop-via-reorderlist-cs.md)
+> [下一步](drag-and-drop-via-reorderlist-cs.md)

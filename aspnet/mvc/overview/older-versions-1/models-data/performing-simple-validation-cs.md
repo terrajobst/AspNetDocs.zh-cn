@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 21383c9d-6aea-4bad-a99b-b5f2c9d6503f
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8ee1d892cd58534c2b64455efed01aa8c2dfdcce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 12fe89ec83a33ece2971c8186783326d165cbf79
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061984"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388499"
 ---
-<a name="performing-simple-validation-c"></a>执行简单验证 (C#)
-====================
+# <a name="performing-simple-validation-c"></a>执行简单验证 (C#)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 引入到模型状态和验证 HTML 帮助程序。
@@ -56,12 +56,12 @@ ASP.NET MVC 框架包括两个验证帮助程序： Html.ValidationMessage() 帮
 请确保生成应用程序之前添加的视图。 否则，类的列表不会显示在**查看数据类**下拉列表中。
 
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
+[![T他新建项目对话框中](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
 **图 01**:添加视图 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image2.png))
 
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
+[![T他新建项目对话框中](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
 **图 02**:创建强类型化视图 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image4.png))
 
@@ -79,7 +79,7 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 图 3 中的页说明了呈现的验证帮助程序，在窗体提交使用缺少的字段和无效值时的错误消息。
 
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
+[![T他新建项目对话框中](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
 **图 03**:提交问题与创建视图 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image6.png))
 
@@ -104,7 +104,7 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 如果提交用于创建一种产品，HTML 窗体和 price 字段和库存量字段没有值输入值无效，则将获得图 4 中显示的验证消息。 这些验证错误消息来自何处？
 
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
+[![T他新建项目对话框中](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
 **图 04**:Prebinding 验证错误 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image8.png))
 

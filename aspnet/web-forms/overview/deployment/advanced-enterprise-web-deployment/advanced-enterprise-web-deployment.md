@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 7dcaba80-f2ec-4db3-ad98-daadc3afdb49
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 34f1bf3bc2c37afc66f458a60a29fe5ce8f6c018
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2f27e9436f246e3da2fbb129bbcd2d80e39b5f28
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385314"
 ---
-<a name="advanced-enterprise-web-deployment"></a>高级企业 Web 部署
-====================
+# <a name="advanced-enterprise-web-deployment"></a>高级企业 Web 部署
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -67,4 +67,4 @@ ms.locfileid: "57026764"
 - [配置用于 Web 部署的 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。 本教程介绍如何配置 TFS 以支持多种部署方案，包括作为 CI 过程的一部分的自动的部署和手动触发部署的特定版本。
 
 > [!div class="step-by-step"]
-> [下一页](performing-a-what-if-deployment.md)
+> [下一步](performing-a-what-if-deployment.md)

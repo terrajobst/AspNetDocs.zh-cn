@@ -8,15 +8,15 @@ ms.date: 02/15/2013
 ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: a227f6564607ed9e909fc4d6297d7370f8fb62b5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0edab77cd973af129e54c7867265f86b47c349a6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057654"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410131"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署：介绍
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署：介绍
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
@@ -200,4 +200,4 @@ Visual Studio 不会不执行任何操作与数据库在部署过程。 当部�
 在此系列中第一个教程中，已下载示例的 Visual Studio 项目并查看影响如何部署应用程序的网站功能。 在以下教程中，您为部署准备通过以下操作来自动处理的一些设置。 您可以手动处理的其他人。
 
 > [!div class="step-by-step"]
-> [下一页](preparing-databases.md)
+> [下一步](preparing-databases.md)

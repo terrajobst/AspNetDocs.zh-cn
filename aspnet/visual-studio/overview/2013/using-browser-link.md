@@ -8,15 +8,15 @@ ms.date: 10/04/2013
 ms.assetid: 46cbfe20-b4dc-449b-9016-80657dd44fbe
 msc.legacyurl: /visual-studio/overview/2013/using-browser-link
 msc.type: authoredcontent
-ms.openlocfilehash: f470aa7e425d16aec3f67d2a0ebb664a3e7eac41
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 723a38de4569b0bb58817c70aabb84fef8e19591
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055034"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395090"
 ---
-<a name="using-browser-link-in-visual-studio-2013"></a>在 Visual Studio 2013 中使用浏览器链接
-====================
+# <a name="using-browser-link-in-visual-studio-2013"></a>在 Visual Studio 2013 中使用浏览器链接
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 浏览器链接是创建开发环境和一个或多个 web 浏览器之间的通信通道的 Visual Studio 2013 中的新功能。 可以使用浏览器链接以刷新 web 应用程序在多个浏览器中的，这对于跨浏览器测试很有用。
@@ -64,7 +64,7 @@ ms.locfileid: "57055034"
 
 ![](using-browser-link/_static/image8.png)
 
-**备注**
+**说明**
 
 - 若要启用浏览器链接，请设置`debug=true`中[&lt;编译&gt;](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx)项目的 Web.config 文件中的元素。
 - 必须在 localhost 上运行应用程序。

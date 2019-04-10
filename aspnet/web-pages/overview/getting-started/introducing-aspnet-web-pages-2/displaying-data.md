@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: b3a006a0-3ea2-4d45-b833-e20e3a3c0a1a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: 9158a1f53268daec6e6fbdf003dd73e1d62cc667
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5415913626eb063a4cb1013ba03857c130487f42
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412172"
 ---
-<a name="introducing-aspnet-web-pages---displaying-data"></a>ASP.NET 网页简介-显示数据
-====================
+# <a name="introducing-aspnet-web-pages---displaying-data"></a>ASP.NET 网页简介-显示数据
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教程演示了如何在 WebMatrix 中创建数据库以及如何使用 ASP.NET Web Pages (Razor) 时，在页面中显示数据库数据。 它假定你已完成通过时序[ASP.NET Web Pages 编程简介](../introducing-razor-syntax-c.md)。
@@ -214,7 +214,7 @@ Tab 键切换至**数据类型**列表，然后选择**int**。此值指定 ID �
 
 > [!TIP] 
 > 
-> **结构化的查询语言 (SQL)**
+> **结构化查询语言 (SQL)**
 > 
 > SQL 是一种语言，用在大多数关系数据库的管理数据库中的数据。 该指南包含的命令，用于检索数据并更新它，并能够让你创建、 修改和管理数据库表中的数据。 SQL 是不同于编程语言 （如 C# 中)。 Sql，您告诉数据库所需的并且数据库的作业，以了解如何获取数据或执行任务。 下面是一些 SQL 命令的示例，以及他们执行的操作：
 > 
@@ -333,7 +333,7 @@ Tab 键切换至**数据类型**列表，然后选择**int**。此值指定 ID �
 
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 语法进行 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 
 > [!div class="step-by-step"]
 > [上一页](intro-to-web-pages-programming.md)

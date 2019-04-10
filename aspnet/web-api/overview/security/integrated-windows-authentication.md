@@ -8,15 +8,15 @@ ms.date: 12/18/2012
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 13dead421abf7ded73cbb2e5f87e54b1a869b5d4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ce845eb6c914321736d77e989f10344eb7596eba
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063704"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416826"
 ---
-<a name="integrated-windows-authentication"></a>集成 Windows 身份验证
-====================
+# <a name="integrated-windows-authentication"></a>集成 Windows 身份验证
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 集成的 Windows 身份验证使用户能够使用其 Windows 凭据，使用 Kerberos 或 NTLM 进行登录。 客户端将 Authorization 标头中发送凭据。 Windows 身份验证是最适合 intranet 环境。 有关详细信息，请参阅 [Windows 身份验证](https://www.iis.net/configreference/system.webserver/security/authentication/windowsauthentication)。

@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 087f30428602137e01f574825f3ebcd4db9285ff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d721bb14b9907ae594d1d5207b6f802e84326c9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063934"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414720"
 ---
-<a name="request-validation---preventing-script-attacks"></a>请求验证 - 阻止脚本攻击
-====================
+# <a name="request-validation---preventing-script-attacks"></a>请求验证 - 阻止脚本攻击
+
 > 本白皮书介绍其中，默认情况下，应用程序会阻止处理提交到服务器的未编码的 HTML 内容的 ASP.NET 请求验证功能。 当应用程序已被设计来安全地处理 HTML 数据时，可以禁用此请求验证功能。
 > 
 > 适用于 ASP.NET 1.1 和 ASP.NET 2.0。

@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17a3a4925766b74446955a8e3a6fddbf9d29a721
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061904"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406764"
 ---
-<a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介
-====================
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文提供了您的编程概述与 ASP.NET Web Pages 使用 Razor 语法和 Visual Basic。 ASP.NET 是 Microsoft 的技术，用于在 web 服务器上运行动态网页。
@@ -179,7 +179,7 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
 
 前面您了解了如何创建 ASP.NET web 页面中，以及如何可以将服务器代码添加到 HTML 标记的基本示例。 本文介绍使用 Visual Basic 来编写使用 Razor 语法的 ASP.NET 服务器代码的基础知识&#8212;，它是编程语言规则。
 
-如果你是经验丰富的编程 （尤其是如果你使用过 C、 c + +、 C#、 Visual Basic 或 JavaScript），您现在阅读的许多并不陌生。 您可能需要仅与如何 WebMatrix 代码添加到标记中了解了相关 *.vbhtml*文件。
+如果您是经验丰富的编程 (尤其是当你使用过 C， C++， C#，Visual Basic 或 JavaScript)，您现在阅读的大部分来说应该很熟悉。 您可能需要仅与如何 WebMatrix 代码添加到标记中了解了相关 *.vbhtml*文件。
 
 ### <a id="BM_CombiningTextMarkupAndCode"></a>  组合文本、 标记和代码块中的代码
 
@@ -284,7 +284,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         <strong>Example</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsInt(), IsInt()`
@@ -296,7 +298,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsBool(), IsBool()`
@@ -308,7 +312,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsFloat(), IsFloat()`
@@ -320,7 +326,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDecimal(), IsDecimal()`
@@ -332,7 +340,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDateTime(), IsDateTime()`
@@ -344,7 +354,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `ToString()`
@@ -374,7 +386,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+ - * /`
@@ -386,7 +400,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `=`
@@ -398,7 +414,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `<>`
@@ -410,7 +428,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `< > <= >=`
@@ -422,7 +442,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `&`
@@ -434,7 +456,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+= -=`
@@ -446,7 +470,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `.`
@@ -458,7 +484,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `()`
@@ -470,7 +498,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `Not`
@@ -482,7 +512,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AndAlso OrElse`
@@ -624,8 +656,8 @@ ASP.NET 服务器代码可以执行任务根据条件和编写代码重复特定
 
 可以使用的属性`Page`对象以获得大量的信息，例如：
 
-- `Request`。 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
-- `Response`。 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。
+- `Request`. 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
+- `Response`. 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。
 
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample51.vbhtml)]
 
@@ -712,5 +744,5 @@ ASP.NET 服务器代码可以执行任务根据条件和编写代码重复特定
 
 ### <a name="reference-documentation"></a>参考文档
 
-- [ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
+- [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 - [Visual Basic 语言](https://msdn.microsoft.com/library/2x7h1hfk.aspx)

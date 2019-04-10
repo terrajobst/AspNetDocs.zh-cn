@@ -8,15 +8,15 @@ ms.date: 01/30/2013
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 60bc8bf95cace722244ffc87ff4c00126a0ed2a0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 20d2d4412345399acdde1535447cc18b6611b572
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412848"
 ---
-<a name="single-page-application-knockoutjs-template"></a>单页应用程序：KnockoutJS 模板
-====================
+# <a name="single-page-application-knockoutjs-template"></a>单页应用程序：KnockoutJS 模板
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > Knockout MVC 模板是 ASP.NET 和 Web Tools 2012.2 的一部分
@@ -128,8 +128,8 @@ SPA 模板使用 EF Code First。 在 Code First 开发中，你定义模型首�
 
 ![](knockoutjs-template/_static/image10.png)
 
-- `TodoController`：处理 HTTP 请求的待办事项
-- `TodoListController`：处理 HTTP 请求的待办事项列表。
+- `TodoController`:处理 HTTP 请求的待办事项
+- `TodoListController`:处理 HTTP 请求的待办事项列表。
 
 这些名称是很重要，因为 Web API 与控制器名称的 URI 路径相匹配。 (若要了解 Web API 将 HTTP 请求路由到控制器的方式，请参阅[ASP.NET Web API 中的路由](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)。)
 

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aac6e97ae5d3d777c3644515628d2669076a88c4
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e4c6bfe1884d3e066c7b27e07e3a069943793bdd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421916"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392282"
 ---
-<a name="adding-animation-to-a-control-c"></a>将动画添加到控件 (C#)
-====================
+# <a name="adding-animation-to-a-control-c"></a>将动画添加到控件 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation1CS.pdf)
@@ -72,9 +72,9 @@ Framework 附带了动画，每个由其自己的 XML 元素表示一组。 下�
 当运行此脚本时，面板会显示，并在一个半秒内淡出。
 
 
-[![在面板淡出](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
+[![T他面板淡出](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
 
 在面板淡出 ([单击此项可查看原尺寸图像](adding-animation-to-a-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一页](executing-several-animations-at-the-same-time-cs.md)
+> [下一步](executing-several-animations-at-the-same-time-cs.md)

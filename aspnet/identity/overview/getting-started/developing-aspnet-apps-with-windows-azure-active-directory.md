@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
-title: 开发 ASP.NET 应用与 Azure Active Directory |Microsoft Docs
+title: 开发 ASP.NET 应用与 Azure Active Directory-ASP.NET 4.x
 author: Rick-Anderson
 description: Microsoft ASP.NET tools for Azure Active Directory 可以轻松地为托管在 Azure 上的 web 应用程序启用身份验证。 可以使用 Azure 身份验证...
 ms.author: riande
 ms.date: 08/14/2014
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 7f0e569458c9a294cc281b86e731c2fda48768be
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6f8b926c78097b68e6a159f2fdd30e7b8a6477a0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027844"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395168"
 ---
-<a name="developing-aspnet-apps-with-azure-active-directory"></a>借助 Azure Active Directory 开发 ASP.NET 应用
-====================
+# <a name="developing-aspnet-apps-with-azure-active-directory"></a>借助 Azure Active Directory 开发 ASP.NET 应用
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 Microsoft ASP.NET 工具为 Azure Active Directory 简化了为托管的 web 应用启用身份验证[Azure](https://www.windowsazure.com/home/features/web-sites/)。 可以使用 Azure 身份验证从您的组织，从你的本地 Active Directory 同步的公司帐户或在自定义 Azure Active Directory 域中创建用户的 Office 365 用户进行身份验证。 启用 Windows Azure 身份验证，可配置你的应用程序使用单个用户进行身份验证[Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户。
@@ -141,7 +142,7 @@ Microsoft ASP.NET 工具为 Azure Active Directory 简化了为托管的 web 应
 
 ## <a name="more-information"></a>详细信息
 
-- [深入了解：Azure 网站和组织使用 Azure AD 的身份验证](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
+- [深入探讨：Azure 网站和组织使用 Azure AD 的身份验证](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
 - [Azure AD Graph API 概述](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 - [Azure AD 中的身份验证方案](https://msdn.microsoft.com/library/azure/dn499820.aspx)
 - [GitHub 上的 azure AD 代码示例](https://github.com/AzureADSamples)

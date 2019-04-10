@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 692b2a13664a9a5153a85a230dd513b022518316
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 7e858fe4c1f8e93f6e6fa30b33f5682945d03c32
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423977"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403072"
 ---
-<a name="caching-data-at-application-startup-c"></a>在应用程序启动时缓存数据 (C#)
-====================
+# <a name="caching-data-at-application-startup-c"></a>在应用程序启动时缓存数据 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载 PDF](caching-data-at-application-startup-cs/_static/datatutorial60cs1.pdf)
@@ -119,7 +119,7 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 > 如果已有`Global.asax`文件在项目中，不会在添加新项对话框中列出项类型在全局应用程序类。
 
 
-[![将在 Global.asax 文件添加到 Web 应用程序的根目录](caching-data-at-application-startup-cs/_static/image4.png)](caching-data-at-application-startup-cs/_static/image3.png)
+[![Add 您 Web 应用程序的根目录到 Global.asax 文件](caching-data-at-application-startup-cs/_static/image4.png)](caching-data-at-application-startup-cs/_static/image3.png)
 
 **图 3**:添加`Global.asax`到您 Web 应用程序的根目录的文件 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-cs/_static/image5.png))
 
@@ -142,7 +142,7 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 就这么简单！ 在应用程序启动时，`LoadStaticCache()`方法将获取从 BLL，供应商信息，并将其存储在静态成员变量 (或任何缓存存储您最终会在中使用`StaticCache`类)。 若要验证此行为中, 设置断点`Application_Start`方法并运行应用程序。 请注意应用程序启动时命中断点。 后续请求中，但是，不会导致`Application_Start`要执行的方法。
 
 
-[![使用验证 Application_Start 事件处理程序正在执行的断点](caching-data-at-application-startup-cs/_static/image7.png)](caching-data-at-application-startup-cs/_static/image6.png)
+[![Use 验证 Application_Start 事件处理程序正在执行的断点](caching-data-at-application-startup-cs/_static/image7.png)](caching-data-at-application-startup-cs/_static/image6.png)
 
 **图 4**:使用验证断点的`Application_Start`事件处理程序是正在执行 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-cs/_static/image8.png))
 
@@ -158,12 +158,12 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 首先打开`AtApplicationStartup.aspx`页中`Caching`文件夹。 将 GridView 从工具箱拖到设计器中，设置其`ID`属性设置为`Suppliers`。 接下来，从 GridView 的智能标记选择以创建名为新 ObjectDataSource `SuppliersCachedDataSource`。 配置要使用 ObjectDataSource`StaticCache`类的`GetSuppliers()`方法。
 
 
-[![配置对象数据源以使用 StaticCache 类](caching-data-at-application-startup-cs/_static/image10.png)](caching-data-at-application-startup-cs/_static/image9.png)
+[![C配置对象数据源以使用 StaticCache 类](caching-data-at-application-startup-cs/_static/image10.png)](caching-data-at-application-startup-cs/_static/image9.png)
 
 **图 5**:配置要使用 ObjectDataSource`StaticCache`类 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-cs/_static/image11.png))
 
 
-[![使用 GetSuppliers() 方法来检索缓存的供应商数据](caching-data-at-application-startup-cs/_static/image13.png)](caching-data-at-application-startup-cs/_static/image12.png)
+[![Use GetSuppliers() 方法来检索缓存供应商数据](caching-data-at-application-startup-cs/_static/image13.png)](caching-data-at-application-startup-cs/_static/image12.png)
 
 **图 6**:使用`GetSuppliers()`方法来检索缓存供应商数据 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-cs/_static/image14.png))
 
@@ -176,7 +176,7 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 图 7 显示时的浏览器查看的页。 输出是相同有我们读取数据从 BLL`SuppliersBLL`类，但是使用`StaticCache`类返回作为缓存在应用程序启动时的供应商数据。 可以在中设置断点`StaticCache`类的`GetSuppliers()`方法以验证此行为。
 
 
-[![在 GridView 中显示缓存供应商数据](caching-data-at-application-startup-cs/_static/image16.png)](caching-data-at-application-startup-cs/_static/image15.png)
+[![T在 GridView 中显示他缓存供应商数据](caching-data-at-application-startup-cs/_static/image16.png)](caching-data-at-application-startup-cs/_static/image15.png)
 
 **图 7**:在 GridView 中显示缓存供应商数据 ([单击此项可查看原尺寸图像](caching-data-at-application-startup-cs/_static/image17.png))
 

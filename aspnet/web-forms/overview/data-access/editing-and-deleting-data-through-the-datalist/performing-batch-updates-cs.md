@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2de7cdbfc37140a4b60c3123524974c4f0ffa42f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 388637d67594d6431a134673cf85b3b18098136e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425868"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402747"
 ---
-<a name="performing-batch-updates-c"></a>执行批量更新 (C#)
-====================
+# <a name="performing-batch-updates-c"></a>执行批量更新 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_37_CS.exe)或[下载 PDF](performing-batch-updates-cs/_static/datatutorial37cs1.pdf)
@@ -29,7 +29,7 @@ ms.locfileid: "58425868"
 在中[前面的教程](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)介绍了如何创建项目级 DataList。 像标准的可编辑 GridView DataList 中的每个项包含编辑按钮，当单击时，会使项可编辑。 虽然这项级别编辑适用于仅偶尔更新的数据，某些用例场景要求用户编辑多个记录。 如果用户需要编辑数十个记录，并强制，单击编辑，使他们的更改，然后单击为每个更新，则单击量可能妨碍她的工作效率。 在这种情况下，更好的选择是要提供完全可编辑的 DataList，其中*所有*已在编辑模式，其值可以通过单击页上的全部更新按钮进行编辑的项 （请参阅图 1）。
 
 
-[![可以修改完全可编辑的 DataList 中的每个项](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
+[![E可以修改支票中完全可编辑的 DataList 项](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
 
 **图 1**:可以修改完全可编辑的 DataList 中的每个项 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 首先打开`BatchUpdate.aspx`页上，添加 DataList 控件，并设置其`ID`属性设置为`Suppliers`。 通过 DataList s 智能标记中，选择要添加一个名为的新 ObjectDataSource 控件`SuppliersDataSource`。
 
 
-[![创建名为 SuppliersDataSource 新 ObjectDataSource](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
+[![C创建新对象数据源名为 SuppliersDataSource](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
 
 **图 2**:创建新对象数据源命名`SuppliersDataSource`([单击以查看实际尺寸的图像](performing-batch-updates-cs/_static/image6.png))
 
@@ -58,12 +58,12 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 配置对象数据源检索数据使用`SuppliersBLL`类的`GetSuppliers()`方法 （请参见图 3）。 与前面的教程中，而不更新通过 ObjectDataSource 的供应商信息，我们将直接与业务逻辑层进行合作。 因此，在更新选项卡中设置为 （无） 下拉列表 （请参阅图 4）。
 
 
-[![检索使用 GetSuppliers() 方法供应商信息](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
+[![Retrieve 供应商信息使用 GetSuppliers() 方法](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
 
 **图 3**:使用供应商信息中检索`GetSuppliers()`方法 ([单击以查看实际尺寸的图像](performing-batch-updates-cs/_static/image9.png))
 
 
-[![在更新选项卡中设置为 （无） 下拉列表](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
+[![S设置为 （无） 中更新选项卡的下拉列表](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
 
 **图 4**:在更新选项卡中设置为 （无） 下拉列表 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image12.png))
 
@@ -87,7 +87,7 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 进行这些更改后，请访问此页上的通过浏览器。 如图 5 所示，每个 DataList 项供应商名称显示为文本，并使用文本框来显示地址、 城市和国家/地区。
 
 
-[![DataList 中的每个供应商是可编辑](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
+[![E支票 DataList 中的供应商是可编辑](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
 
 **图 5**:DataList 中的每个供应商是可编辑 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image15.png))
 
@@ -104,7 +104,7 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 图 6 添加更新所有按钮后显示的页。
 
 
-[![两个更新所有按钮已都添加到页面](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
+[![Two 更新所有按钮已都添加到页](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
 
 **图 6**:两个更新所有按钮已都添加到页 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image18.png))
 

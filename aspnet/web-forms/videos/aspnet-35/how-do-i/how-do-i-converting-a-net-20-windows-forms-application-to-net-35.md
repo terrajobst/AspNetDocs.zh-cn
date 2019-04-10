@@ -8,15 +8,15 @@ ms.date: 02/14/2008
 ms.assetid: 30274ca7-8dc8-41b2-b5b4-40881046079a
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-converting-a-net-20-windows-forms-application-to-net-35
 msc.type: video
-ms.openlocfilehash: 93ddac1e0f905c93ce12ef06a4b22e99ac4bd37c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 673e15d247c50a0ae5dccdee5d962d6af36988a1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388031"
 ---
-<a name="how-do-i-converting-a-net-20-windows-forms-application-to-net-35"></a>[如何实现:]将转换为.NET 3.5 的.NET 2.0 Windows 窗体应用程序
-====================
+# <a name="how-do-i-converting-a-net-20-windows-forms-application-to-net-35"></a>[如何实现:]将转换为.NET 3.5 的.NET 2.0 Windows 窗体应用程序
+
 通过 Asli Bilgin
 
 使用 Visual Studio 2008 的新多目标功能，我将演示将项目从.NET 2.0 升级到.NET 3.5。 在本视频中，我们将采用.NET 2.0 Windows 窗体应用程序并将其升级到.NET 3.5。

@@ -8,15 +8,15 @@ ms.date: 08/29/2011
 ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: e933ca0398d99a41089b4d1e18d21dd657db4b6b
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0f6d58b8bf72c6b9d6909a8a05efe4f61ebd551a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423346"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416735"
 ---
-<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>使用 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 4 部分
-====================
+# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>使用 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 4 部分
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将讲述如何使用编辑器模板、 显示模板和 jQuery UI datepicker 快捷日历中的 ASP.NET MVC Web 应用程序的基础知识。
@@ -176,4 +176,4 @@ NuGet 会将这些调试版本和缩小的版本的 jQuery UI 核心和 jQuery U
 - 有关 ASP.NET MVC 模板的详细信息，请参阅 Brad Wilson 的博客系列上[ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)。 序列针对 ASP.NET MVC 2 编写的尽管材料仍适用于 ASP.NET MVC 的当前版本。
 
 > [!div class="step-by-step"]
-> [上一篇](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [上一个](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

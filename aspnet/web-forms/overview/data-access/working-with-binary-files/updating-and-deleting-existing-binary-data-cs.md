@@ -8,15 +8,15 @@ ms.date: 03/27/2007
 ms.assetid: 35798f21-1606-434b-83f8-30166906ef49
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dd7ab615585da1fb324f0740c1626c70dd7e99df
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fea82090954fb7ace59b9978e9ce7ec857db60b2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052094"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394908"
 ---
-<a name="updating-and-deleting-existing-binary-data-c"></a>上载和删除现有的二进制数据 (C#)
-====================
+# <a name="updating-and-deleting-existing-binary-data-c"></a>上载和删除现有的二进制数据 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_57_CS.exe)或[下载 PDF](updating-and-deleting-existing-binary-data-cs/_static/datatutorial57cs1.pdf)
@@ -34,10 +34,10 @@ ms.locfileid: "57052094"
 
 DAL 具有自动生成`Insert`， `Update`，并`Delete`方法，但这些方法生成的基于`CategoriesTableAdapter`s 主查询，这不包括`Picture`列。 因此，`Insert`和`Update`方法不包括的参数来指定类别的图片的二进制数据。 像执行[前面的教程](including-a-file-upload-option-when-adding-a-new-record-cs.md)，我们需要创建新的 TableAdapter 方法用于更新`Categories`表时指定的二进制数据。
 
-打开类型化数据集，并从设计器中，右键单击`CategoriesTableAdapter`s 标头，然后选择添加查询从上下文菜单到 launche TableAdapter 查询配置向导。 此向导首先会向我们询问 TableAdapter 查询应如何访问数据库。 选择使用 SQL 语句，然后单击下一步。 下一步会提示为查询的类型生成。 由于我们重新创建要添加到新的记录的查询`Categories`表中，选择更新并单击下一步。
+打开类型化数据集，并从设计器中，右键单击`CategoriesTableAdapter`s 标头，然后从上下文菜单以启动 TableAdapter 查询配置向导中选择添加查询。 此向导首先会向我们询问 TableAdapter 查询应如何访问数据库。 选择使用 SQL 语句，然后单击下一步。 下一步会提示为查询的类型生成。 由于我们重新创建要添加到新的记录的查询`Categories`表中，选择更新并单击下一步。
 
 
-[![选择更新选项](updating-and-deleting-existing-binary-data-cs/_static/image1.gif)](updating-and-deleting-existing-binary-data-cs/_static/image1.png)
+[![S选择更新选项](updating-and-deleting-existing-binary-data-cs/_static/image1.gif)](updating-and-deleting-existing-binary-data-cs/_static/image1.png)
 
 **图 1**:选择更新选项 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image2.png))
 
@@ -50,7 +50,7 @@ DAL 具有自动生成`Insert`， `Update`，并`Delete`方法，但这些方法
 在向导的最后一个屏幕询问我们要将新的 TableAdapter 方法。 输入`UpdateWithPicture`并单击完成。
 
 
-[![命名新的 TableAdapter 方法 UpdateWithPicture](updating-and-deleting-existing-binary-data-cs/_static/image2.gif)](updating-and-deleting-existing-binary-data-cs/_static/image3.png)
+[![N新的 TableAdapter 方法 UpdateWithPicture \ 名称](updating-and-deleting-existing-binary-data-cs/_static/image2.gif)](updating-and-deleting-existing-binary-data-cs/_static/image3.png)
 
 **图 2**:新的 TableAdapter 方法命名`UpdateWithPicture`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image4.png))
 
@@ -78,7 +78,7 @@ DAL 具有自动生成`Insert`， `Update`，并`Delete`方法，但这些方法
 首先打开`UploadInDetailsView.aspx`页。 复制的所有声明性语法中`<asp:Content>`元素，如图 3 中所示。 接下来，打开`UpdatingAndDeleting.aspx`并粘贴在此标记其`<asp:Content>`元素。 同样中的代码复制`UploadInDetailsView.aspx`页上为 s 代码隐藏类`UpdatingAndDeleting.aspx`。
 
 
-[![将声明性标记从 UploadInDetailsView.aspx 复制](updating-and-deleting-existing-binary-data-cs/_static/image3.gif)](updating-and-deleting-existing-binary-data-cs/_static/image5.png)
+[![C将声明性标记从 UploadInDetailsView.aspx](updating-and-deleting-existing-binary-data-cs/_static/image3.gif)](updating-and-deleting-existing-binary-data-cs/_static/image5.png)
 
 **图 3**:复制中的声明性标记`UploadInDetailsView.aspx`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image6.png))
 
@@ -94,7 +94,7 @@ DAL 具有自动生成`Insert`， `Update`，并`Delete`方法，但这些方法
 现在，请设置为 （无） 的更新选项卡的下拉列表，但将删除选项卡的下拉列表设置为保持为`DeleteCategory`。 我们将返回到该向导将在步骤 6 中添加更新的支持。
 
 
-[![配置对象数据源使用 DeleteCategory 方法](updating-and-deleting-existing-binary-data-cs/_static/image4.gif)](updating-and-deleting-existing-binary-data-cs/_static/image7.png)
+[![C配置对象数据源使用 DeleteCategory 方法](updating-and-deleting-existing-binary-data-cs/_static/image4.gif)](updating-and-deleting-existing-binary-data-cs/_static/image7.png)
 
 **图 4**:配置为使用 ObjectDataSource`DeleteCategory`方法 ([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image8.png))
 
@@ -113,7 +113,7 @@ ObjectDataSource 现在将包括的值及其`DeleteMethod`属性以及`DeletePar
 配置 ObjectDataSource 之后, 删除通过将功能添加到 GridView 从 GridView s 智能标记的启用删除复选框。 这将添加到 GridView 的 CommandField 其`ShowDeleteButton`属性设置为`true`。
 
 
-[![在 GridView 中删除为启用支持](updating-and-deleting-existing-binary-data-cs/_static/image5.gif)](updating-and-deleting-existing-binary-data-cs/_static/image9.png)
+[![E启用对 GridView 中删除的支持](updating-and-deleting-existing-binary-data-cs/_static/image5.gif)](updating-and-deleting-existing-binary-data-cs/_static/image9.png)
 
 **图 5**:启用对 GridView 中删除的支持 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image10.png))
 
@@ -121,12 +121,12 @@ ObjectDataSource 现在将包括的值及其`DeleteMethod`属性以及`DeletePar
 请花费片刻时间来测试删除功能。 没有间的外键`Products`表 s`CategoryID`并`Categories`表的`CategoryID`，因此如果尝试删除的任何前八个类别，你会收到外键约束冲突异常。 若要测试此功能扩展，添加新类别，提供的手册和图片。 图 6 所示我测试类别包括一个名为测试手册文件`Test.pdf`和测试图片。 图 7 显示了 GridView 后添加测试类别。
 
 
-[![添加带有手册和图像的测试类别](updating-and-deleting-existing-binary-data-cs/_static/image6.gif)](updating-and-deleting-existing-binary-data-cs/_static/image11.png)
+[![A添加一个带有手册和图像的测试类别](updating-and-deleting-existing-binary-data-cs/_static/image6.gif)](updating-and-deleting-existing-binary-data-cs/_static/image11.png)
 
 **图 6**:添加一个带有手册和图像的测试类别 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image12.png))
 
 
-[![插入后测试类别，它会显示在 GridView](updating-and-deleting-existing-binary-data-cs/_static/image7.gif)](updating-and-deleting-existing-binary-data-cs/_static/image13.png)
+[![A页符插入测试类别，它会显示在 GridView](updating-and-deleting-existing-binary-data-cs/_static/image7.gif)](updating-and-deleting-existing-binary-data-cs/_static/image13.png)
 
 **图 7**:插入后测试类别，它会显示在 GridView ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image14.png))
 
@@ -171,7 +171,7 @@ ObjectDataSource 调用 s 基础 delete 命令，GridView s 后`RowDeleted`触�
 单击 ObjectDataSource 的向导中的配置数据源链接并继续执行第二个步骤。 由于`DataObjectMethodAttribute`中使用`CategoriesBLL`，更新下拉列表应自动填充了`UpdateCategory`接受四个输入参数的重载 (所有列，但`Picture`)。 此更改，以便它使用带有五个参数的重载。
 
 
-[![配置对象数据源使用 UpdateCategory 包含的方法的参数的图片](updating-and-deleting-existing-binary-data-cs/_static/image9.gif)](updating-and-deleting-existing-binary-data-cs/_static/image15.png)
+[![C配置对象数据源以使用包含图片的参数的 UpdateCategory 方法](updating-and-deleting-existing-binary-data-cs/_static/image9.gif)](updating-and-deleting-existing-binary-data-cs/_static/image15.png)
 
 **图 9**:配置为使用 ObjectDataSource`UpdateCategory`包括的参数的方法`Picture`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image16.png))
 
@@ -186,7 +186,7 @@ ObjectDataSource 现在将包括的值及其`UpdateMethod`属性以及对应`Upd
 若要打开 GridView s 内置编辑功能，请从 GridView s 智能标记启用编辑选项。 这会设置 CommandField s`ShowEditButton`属性设置为`true`，从而导致添加了编辑按钮 （和所编辑的行的更新和取消按钮）。
 
 
-[![配置为支持编辑 GridView](updating-and-deleting-existing-binary-data-cs/_static/image10.gif)](updating-and-deleting-existing-binary-data-cs/_static/image17.png)
+[![C配置为支持编辑 GridView](updating-and-deleting-existing-binary-data-cs/_static/image10.gif)](updating-and-deleting-existing-binary-data-cs/_static/image17.png)
 
 **图 10**:配置为支持编辑 GridView ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image18.png))
 
@@ -194,7 +194,7 @@ ObjectDataSource 现在将包括的值及其`UpdateMethod`属性以及对应`Upd
 访问通过浏览器页面并单击其中一个行的编辑按钮。 `CategoryName`和`Description`BoundFields 呈现为文本框。 `BrochurePath` TemplateField 缺少`EditItemTemplate`，因此它将继续显示其`ItemTemplate`小册子中的链接。 `Picture` ImageField 呈现为文本框的`Text`属性分配值为 ImageField s`DataImageUrlField`值，在这种情况下`CategoryID`。
 
 
-[![GridView 缺少 BrochurePath 编辑界面](updating-and-deleting-existing-binary-data-cs/_static/image11.gif)](updating-and-deleting-existing-binary-data-cs/_static/image19.png)
+[![T他 GridView 缺少 BrochurePath 编辑接口](updating-and-deleting-existing-binary-data-cs/_static/image11.gif)](updating-and-deleting-existing-binary-data-cs/_static/image19.png)
 
 **图 11**:GridView 缺少的编辑界面`BrochurePath`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image20.png))
 
@@ -226,7 +226,7 @@ ObjectDataSource 现在将包括的值及其`UpdateMethod`属性以及对应`Upd
 在 RadioButtonList，下面添加一个名为 FileUpload 控件`BrochureUpload`。 设置其`Visible`属性设置为`false`。
 
 
-[![将 RadioButtonList 和 FileUpload 控件添加到 EditItemTemplate](updating-and-deleting-existing-binary-data-cs/_static/image13.gif)](updating-and-deleting-existing-binary-data-cs/_static/image21.png)
+[![Add RadioButtonList 和 EditItemTemplate FileUpload 控件](updating-and-deleting-existing-binary-data-cs/_static/image13.gif)](updating-and-deleting-existing-binary-data-cs/_static/image21.png)
 
 **图 13**:添加 FileUpload 控件和 RadioButtonList `EditItemTemplate` ([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image22.png))
 
@@ -241,12 +241,12 @@ ObjectDataSource 现在将包括的值及其`UpdateMethod`属性以及对应`Upd
 利用此代码，请花费片刻时间来测试编辑界面。 单击编辑按钮的行。 最初，应选择当前使用的手册选项。 更改所选的索引会导致回发。 如果选择第三个选项，则显示 FileUpload 控件，否则其处于隐藏状态。 图 14 显示了编辑界面，首先单击编辑按钮; 时图 15 显示了界面后选择上传新手册选项。
 
 
-[![最初，使用当前小册子中选择选项](updating-and-deleting-existing-binary-data-cs/_static/image14.gif)](updating-and-deleting-existing-binary-data-cs/_static/image23.png)
+[![Initially，使用当前小册子中选择选项](updating-and-deleting-existing-binary-data-cs/_static/image14.gif)](updating-and-deleting-existing-binary-data-cs/_static/image23.png)
 
 **图 14**:最初，使用当前小册子中选择选项 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image24.png))
 
 
-[![选择此选项可以显示在上传新小册子 FileUpload 控件](updating-and-deleting-existing-binary-data-cs/_static/image15.gif)](updating-and-deleting-existing-binary-data-cs/_static/image25.png)
+[![C本章上传新的手册选项显示 FileUpload 控件](updating-and-deleting-existing-binary-data-cs/_static/image15.gif)](updating-and-deleting-existing-binary-data-cs/_static/image25.png)
 
 **图 15**:选择此选项可以显示在上传新小册子 FileUpload 控件 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image26.png))
 
@@ -302,7 +302,7 @@ ImageField 转换为 TemplateField 以这种方式生成 TemplateField 与两个
 我们需要更新`EditItemTemplate`使用 FileUpload 控件。 从 GridView s 智能标记单击编辑模板链接，然后选择`Picture`TemplateField 的`EditItemTemplate`从下拉列表。 在模板中应看到此项中删除一个文本框。 接下来，将 FileUpload 控件从工具箱拖到该模板后，设置其`ID`到`PictureUpload`。 此外添加文本以更改类别的图片，请指定新图片。 若要保留相同类别的图片，字段留空模板。
 
 
-[![向 EditItemTemplate 添加 FileUpload 控件](updating-and-deleting-existing-binary-data-cs/_static/image17.gif)](updating-and-deleting-existing-binary-data-cs/_static/image27.png)
+[![Add FileUpload 控件与 EditItemTemplate](updating-and-deleting-existing-binary-data-cs/_static/image17.gif)](updating-and-deleting-existing-binary-data-cs/_static/image27.png)
 
 **图 17**:添加 FileUpload 控件与`EditItemTemplate`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-cs/_static/image28.png))
 
@@ -310,7 +310,7 @@ ImageField 转换为 TemplateField 以这种方式生成 TemplateField 与两个
 自定义后编辑界面，在浏览器中查看进度。 查看时行在只读模式下，类别的图像显示之前，但单击编辑按钮将图片列呈现为与 FileUpload 控件的文本。
 
 
-[![编辑界面包括 FileUpload 控件](updating-and-deleting-existing-binary-data-cs/_static/image18.gif)](updating-and-deleting-existing-binary-data-cs/_static/image29.png)
+[![T他的编辑界面包括 FileUpload 控件](updating-and-deleting-existing-binary-data-cs/_static/image18.gif)](updating-and-deleting-existing-binary-data-cs/_static/image29.png)
 
 **图 18**:编辑界面包括 FileUpload 控件 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-cs/_static/image30.png))
 

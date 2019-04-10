@@ -8,15 +8,15 @@ ms.date: 12/12/2012
 ms.assetid: 9f06c1f2-ffaa-4831-94a0-2e4a3befdf07
 msc.legacyurl: /web-api/overview/security/forms-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 35d62a83382553085ed8a728dcdcdae0e93090b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 147bfab76e48497f35a72b28cd935f40ec4193bf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410067"
 ---
-<a name="forms-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的窗体身份验证
-====================
+# <a name="forms-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的窗体身份验证
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 窗体身份验证使用 HTML 窗体向服务器发送用户的凭据。 它不是一种 Internet 标准。 窗体身份验证是仅适用于 web 的 web 应用，从调用的 Api，以便用户可以与 HTML 窗体进行交互。

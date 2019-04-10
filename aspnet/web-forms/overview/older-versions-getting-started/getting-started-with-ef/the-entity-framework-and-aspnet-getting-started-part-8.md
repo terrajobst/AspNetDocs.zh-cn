@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: aaadd9bb-5508-448c-ad57-5497dff90e13
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 249677c9e0eca248710bf730e57a7aeca5a9b5ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fd943eba4c6d80bba5ca6c4d69cbd3a8927513d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027904"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391502"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体的第 8 部分
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体的第 8 部分
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 有关教程系列的信息，请参阅[系列中的第一个教程](the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -120,7 +120,7 @@ ms.locfileid: "57027904"
 
 本系列如何开始使用实体框架的教程到此结束。 对于可帮助你了解如何使用实体框架的更多资源，请继续[下一步的实体框架教程系列中的第一个教程](../continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)或访问以下站点：
 
-- [实体框架常见问题](http://www.ef-faq.org/introduction.html)
+- [Entity Framework FAQ（实体框架常见问题）](http://www.ef-faq.org/introduction.html)
 - [实体框架团队博客](https://blogs.msdn.com/b/adonet/)
 - [MSDN 库中的实体框架](https://msdn.microsoft.com/library/bb399572.aspx)
 - [MSDN 数据开发人员中心中的实体框架](https://msdn.microsoft.com/data/ef.aspx)
@@ -130,4 +130,4 @@ ms.locfileid: "57027904"
 - [Julie Lerman 的博客](http://thedatafarm.com/blog/)
 
 > [!div class="step-by-step"]
-> [上一篇](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [上一个](the-entity-framework-and-aspnet-getting-started-part-7.md)

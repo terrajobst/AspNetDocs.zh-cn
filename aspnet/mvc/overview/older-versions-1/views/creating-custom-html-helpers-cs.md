@@ -8,15 +8,15 @@ ms.date: 10/07/2008
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a6a684e01b67c2ea139a50b568098d2dcf594272
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 23741d7974713102e6ccb46ced5d62ec202505e8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031994"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400849"
 ---
-<a name="creating-custom-html-helpers-c"></a>创建自定义 HTML 帮助程序 (C#)
-====================
+# <a name="creating-custom-html-helpers-c"></a>创建自定义 HTML 帮助程序 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_CS.pdf)
@@ -49,7 +49,7 @@ ASP.NET MVC 框架包括以下一组标准的 HTML 帮助程序 （这不是完�
 例如，考虑列表 1 中的窗体。 呈现此窗体所使用的两个标准 HTML 帮助程序 （请参阅图 1） 的帮助。 使用此窗体`Html.BeginForm()`和`Html.TextBox()`帮助器方法来呈现一个简单的 HTML 窗体。
 
 
-[![与 HTML 帮助器呈现页](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
+[![P使用 HTML 帮助器呈现的 age](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
 
 **图 01**:与 HTML 帮助器呈现的页 ([单击此项可查看原尺寸图像](creating-custom-html-helpers-cs/_static/image3.png))
 
@@ -104,7 +104,7 @@ ASP.NET MVC 框架包含一小组帮助程序。 很可能需要扩展 MVC 框�
 创建一个扩展方法，并已成功生成应用程序后，扩展方法将出现在 Visual Studio Intellisense 等所有其他方法的类 （请参见图 2）。 唯一的区别是该扩展方法显示一个特殊符号旁边 （向下箭头的图标）。
 
 
-[![使用 Html.Label() 扩展方法](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
+[![U发挥最大功效 Html.Label() 扩展方法](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
 
 **图 02**:使用 Html.Label() 扩展方法 ([单击此项可查看原尺寸图像](creating-custom-html-helpers-cs/_static/image6.png))
 

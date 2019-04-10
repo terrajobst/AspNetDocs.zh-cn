@@ -8,15 +8,15 @@ ms.date: 03/13/2008
 ms.assetid: c844da8a-10e6-45c9-a9e2-331a3b8d3e03
 msc.legacyurl: /web-forms/videos/aspnet-ajax/two-simple-techniques-for-triggering-updates-to-update-panels
 msc.type: video
-ms.openlocfilehash: 8f6b4a2120f9b1a68f3ebdef929d78c480172302
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2374b70d1359c3a070d2b07c84e37c0a504e118c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400017"
 ---
-<a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>触发“更新面板”更新的两个简单方法
-====================
+# <a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a>触发“更新面板”更新的两个简单方法
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在本视频中，我将演示两种简单的更新方法。 首先，使用所选的索引更改事件的下拉列表控件列表中为事件触发器更新更新面板。 和两个，动态 AJAX 更新面板内所包含控件与更改关联的样式表类。

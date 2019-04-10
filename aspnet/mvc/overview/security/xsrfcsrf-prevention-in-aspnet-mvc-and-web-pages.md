@@ -8,15 +8,15 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 5db661cccc58d1101f95091b069ab5cbfe78a378
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: de0e9cc168b9f18fd2bd83329106df45d7551b1a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063944"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386549"
 ---
-<a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和网页中的 XSRF/CSRF 防护
-====================
+# <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和网页中的 XSRF/CSRF 防护
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 跨站点请求伪造 （也称为 XSRF 或 CSRF） 是针对恶意网站凭此可以影响客户端浏览器和该浏览器的受信任的网站之间的交互的 web 托管的应用程序的攻击。 这些攻击的原因可能 web 浏览器会将自动随每个请求的身份验证令牌发送到 web 站点。 典型示例是身份验证 cookie，如 ASP。NET 的窗体身份验证票证。 然而，使用任何持久身份验证机制 （如 Windows 身份验证、 Basic 等） 的网站可能受攻击目标。
@@ -74,9 +74,9 @@ XSRF 请求验证*会话令牌*HTTP cookie 作为存储和当前包含其有效�
 
 ANTI-XSRF 令牌的有效负载进行加密和签名，以便使用工具来检查令牌时，不能查看的用户名。 当 web 应用程序面向 ASP.NET 4.0 时，由提供加密服务[MachineKey.Encode](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx)例程。 当 web 应用程序面向 ASP.NET 4.5 或更高版本、 加密服务提供的[MachineKey.Protect](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110))例程，它提供了更好的性能、 可扩展性和安全性。 请参阅以下博客文章的更多详细信息：
 
-- [在 ASP.NET 4.5 中的加密改进、 pt。1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
-- [在 ASP.NET 4.5 中的加密改进、 pt。2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
-- [在 ASP.NET 4.5 中的加密改进、 pt。3](https://blogs.msdn.com/b/webdev/archive/2012/10/24/cryptographic-improvements-in-asp-net-4-5-pt-3.aspx)
+- [在 ASP.NET 4.5 中的加密改进、 pt。 1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
+- [在 ASP.NET 4.5 中的加密改进、 pt。 2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
+- [在 ASP.NET 4.5 中的加密改进、 pt。 3](https://blogs.msdn.com/b/webdev/archive/2012/10/24/cryptographic-improvements-in-asp-net-4-5-pt-3.aspx)
 
 ## <a name="generating-the-tokens"></a>生成令牌
 
@@ -160,7 +160,7 @@ ANTI-XSRF 系统包含为匿名用户，其中"匿名"定义为用户的特殊�
 
 开发人员可以配置应用程序中的 ANTI-XSRF 系统\_开始。 以编程方式配置。 属性的静态*AntiForgeryConfig*类型如下所述。 使用声明的大多数用户将希望将 UniqueClaimTypeIdentifier 属性设置。
 
-| **Property** | **说明** |
+| **属性** | **描述** |
 | --- | --- |
 | **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) ，在令牌的生成过程中提供额外的数据和在令牌验证期间会占用更多数据。 默认值是*null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
 | **CookieName** | 提供用于存储的 ANTI-XSRF 会话令牌的 HTTP cookie 的名称的字符串。 如果未设置此值，将自动生成名称基于应用程序的已部署的虚拟路径。 默认值是*null*。 |

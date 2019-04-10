@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: f55e558dd056e86bdd2310894959aef02a9d8de2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3eff3aceea302c51e6970bb13fbee3a8bf98a71d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411977"
 ---
-<a name="adding-a-view"></a>添加视图
-====================
+# <a name="adding-a-view"></a>添加视图
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
@@ -38,7 +38,7 @@ ms.locfileid: "57046874"
 
 这将显示"添加视图"对话框，这为我们提供了一些我们想要创建可由我们 Index 方法的视图模板的选项。 现在，不更改任何内容，并只需单击添加按钮。
 
-[![添加视图对话框](getting-started-with-mvc-part3/_static/image3.png)](getting-started-with-mvc-part3/_static/image2.png)
+[![Add 视图对话框](getting-started-with-mvc-part3/_static/image3.png)](getting-started-with-mvc-part3/_static/image2.png)
 
 单击添加后，新的文件夹和一个新文件将显示在解决方案文件夹中，如下所示。 我现在有在该文件夹的视图和 Index.aspx 文件下的 HelloWorld 文件夹。
 
@@ -80,7 +80,7 @@ ms.locfileid: "57046874"
 
 运行你的应用并访问 /Movies。 请注意，浏览器标题、 主标题和辅助标题已更改。 很容易地对视图使用较小的更改在应用程序进行重大更改。
 
-[![电影列表-Windows Internet Explorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
+[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
 
 我们这一点点"数据"（在此情况下的"Hello World"！ 消息） 是硬编码不过。 我们有 V （视图），我们有 C （控制器），但尚无的 M （模型）。 我们稍后将演示如何创建数据库并从它检索模型数据。
 
@@ -113,7 +113,7 @@ ms.locfileid: "57046874"
 
 运行应用程序并访问`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`试。 现在，我们将数据从该 URL，它自动传递到我们的控制器、 控制器打包到 ViewModel 数据并将传递到视图上的该对象。 不是以 HTML 的形式向用户显示数据视图。
 
-[![欢迎-Windows Internet Explorer](getting-started-with-mvc-part3/_static/image14.png)](getting-started-with-mvc-part3/_static/image13.png)
+[![Welcome - Windows Internet Explorer](getting-started-with-mvc-part3/_static/image14.png)](getting-started-with-mvc-part3/_static/image13.png)
 
 当然，这是一种类型的"M"的模型，但不是数据库类。 我们来看，我们已了解并创建一个电影数据库。
 

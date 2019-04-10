@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: 5fee879b-8bde-42a9-a434-60ba6b1cf747
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e04a9b274b735af05a8e08dc7d8f34f0d83605be
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 863fe772a1d79201b83da8498bf7e981acf7fd0e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038044"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401070"
 ---
-<a name="passing-data-to-view-master-pages-c"></a>向视图母版页传递数据 (C#)
-====================
+# <a name="passing-data-to-view-master-pages-c"></a>向视图母版页传递数据 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_CS.pdf)
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 假设您要构建电影数据库应用程序，并且你想要在应用程序中每一页上显示电影类别列表 （见图 1）。 此外，假设电影类别的列表存储在数据库表中。 在这种情况下，最好从数据库检索类别和呈现的视图母版页中的电影类别列表。
 
 
-[![在视图母版页中显示电影类别](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
+[![D视图母版页中的 isplaying 电影类别](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
 
 **图 01**:在视图母版页中显示电影类别 ([单击此项可查看原尺寸图像](passing-data-to-view-master-pages-cs/_static/image3.png))
 
@@ -59,7 +59,7 @@ MVC 应用程序中传递给视图 （包括视图母版页） 的所有数据�
 Details() 操作还将添加名为类别和电影的两个密钥。 类别键中，再次重申，表示电影类别视图主页所显示的列表。 电影键表示电影的详细信息视图页所显示的特定类别的列表 （请参见图 2）。
 
 
-[![详细信息视图](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
+[![T他的详细信息视图](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
 
 **图 02**:详细信息视图 ([单击此项可查看原尺寸图像](passing-data-to-view-master-pages-cs/_static/image6.png))
 

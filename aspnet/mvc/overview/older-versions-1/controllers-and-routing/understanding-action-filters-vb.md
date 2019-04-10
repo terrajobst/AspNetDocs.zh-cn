@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0116306afdf21cb24a374013bb54ada54e5699ea
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bbedc11b9b1225b1047350c1c84a116ecef0c380
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036294"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407401"
 ---
-<a name="understanding-action-filters-vb"></a>了解操作筛选器 (VB)
-====================
+# <a name="understanding-action-filters-vb"></a>了解操作筛选器 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
@@ -49,7 +49,7 @@ by [Microsoft](https://github.com/microsoft)
 如果重复调用`Index()`操作通过你的浏览器的地址栏中输入 URL/数据/索引并点击刷新按钮多次，则会出现在同一时间为 10 秒。 输出`Index()`操作缓存 （见图 1） 的 10 秒。
 
 
-[![缓存的时间](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
+[![C响应时间](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
 
 **图 01**:缓存时间 ([单击此项可查看原尺寸图像](understanding-action-filters-vb/_static/image3.png))
 
@@ -107,7 +107,7 @@ ASP.NET MVC 框架支持四种不同类型的筛选器：
 列表 2 中`OnActionExecuting()`， `OnActionExecuted()`， `OnResultExecuting()`，和`OnResultExecuted()`方法都调用`Log()`方法。 方法和当前的路由数据的名称传递给`Log()`方法。 `Log()`方法将一条消息写入到 Visual Studio 输出窗口 （请参见图 2）。
 
 
-[![写入到 Visual Studio 输出窗口](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
+[![Writing 到 Visual Studio 输出窗口](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
 
 **图 02**:写入到 Visual Studio 输出窗口 ([单击此项可查看原尺寸图像](understanding-action-filters-vb/_static/image6.png))
 

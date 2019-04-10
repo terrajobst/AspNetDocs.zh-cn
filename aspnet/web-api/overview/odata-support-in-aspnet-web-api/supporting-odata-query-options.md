@@ -1,23 +1,26 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
-title: 支持 ASP.NET Web API 2 中的 OData 查询选项 |Microsoft Docs
+title: 支持 OData 查询选项中 ASP.NET Web API 2 的 ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 概述与代码示例显示了支持 OData 查询选项中 ASP.NET Web API 2 ASP.NET 4.x。
 ms.author: riande
 ms.date: 02/04/2013
+ms.custom: seoapril2019
 ms.assetid: 50e6e62b-e72e-4a29-8293-4b67377bd21f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
 msc.type: authoredcontent
-ms.openlocfilehash: 8745183125c9dd1dcc7cb0e146367a893bdb0170
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 428e4942e42436585049c1e84cd7b07a4a79c0d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411561"
 ---
-<a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中支持 OData 查询选项
-====================
+# <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中支持 OData 查询选项
+
 通过[Mike Wasson](https://github.com/MikeWasson)
+
+本概述的代码示例演示 ASP.NET Web API 2 中支持的 OData 查询选项的 ASP.NET 4.x。 
 
 OData 定义可用于修改的 OData 查询参数。 客户端的请求 URI 查询字符串中发送这些参数。 例如，若要对结果进行排序，客户端使用 $orderby 参数：
 
@@ -29,7 +32,7 @@ OData 定义可用于修改的 OData 查询参数。 客户端的请求 URI 查�
 
 - [启用 OData 查询选项](#enable)
 - [示例查询](#examples)
-- [Server-Driven Paging](#server-paging)
+- [服务器驱动的分页](#server-paging)
 - [限制查询选项](#limiting_query_options)
 - [直接调用查询选项](#ODataQueryOptions)
 - [查询验证](#query-validation)
@@ -66,7 +69,7 @@ Web API 支持以下 OData 查询选项：
 
 有关 $展开和 $select，请参阅[使用 $select，$expand、 和 ASP.NET Web API OData 中的 $value](using-select-expand-and-value.md)。
 
-**Client-Driven Paging**
+**客户端驱动的分页**
 
 大型实体集的客户端可能会想要限制结果数。 例如，客户端可能会一次，其中包含用于获取下一页结果的"下一步"链接显示 10 个条目。 若要执行此操作，客户端使用的 $top 和 $skip 选项。
 

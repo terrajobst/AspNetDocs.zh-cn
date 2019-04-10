@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 4823a186-caaf-4116-a318-c7ff4d955ddc
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f40c2632e98dd8c64c985e44478a9739df473ca
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ca1bf281130bf2c726b6147f90733c8a83754563
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423126"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399576"
 ---
-<a name="sorting-custom-paged-data-vb"></a>排序自定义分页数据 (VB)
-====================
+# <a name="sorting-custom-paged-data-vb"></a>排序自定义分页数据 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_VB.exe)或[下载 PDF](sorting-custom-paged-data-vb/_static/datatutorial26vb1.pdf)
@@ -71,7 +71,7 @@ ms.locfileid: "58423126"
 **图 1**:对于存储的过程 s 三个输入参数尝试不同的值
 
 
-[![存储过程的结果显示在输出窗口](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
+[![T他的存储过程 s 结果显示在输出窗口](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
 
 **图 2**:存储过程的结果显示在输出窗口中 ([单击此项可查看原尺寸图像](sorting-custom-paged-data-vb/_static/image4.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "58423126"
 图 7 显示了结果排序时的第一页`UnitPrice`按升序排序。
 
 
-[![对结果进行排序单价](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
+[![T他结果进行排序单价](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
 
 **图 7**:对结果进行排序单价 ([单击此项可查看原尺寸图像](sorting-custom-paged-data-vb/_static/image11.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "58423126"
 **图 9**:将供应商名称 BoundField 的 SortExpression 更改为公司名称
 
 
-[![现在可以按供应商排序结果](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
+[![T他现在可以按供应商排序结果](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
 
 **图 10**:可以现在按结果进行排序供应商 ([单击此项可查看原尺寸图像](sorting-custom-paged-data-vb/_static/image16.png))
 

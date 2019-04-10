@@ -9,17 +9,13 @@ ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 50fdcc1959b8f3a02ec5bbe0eb7417ffb8a260a3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d90a327da40ffd6d7956c5fbe019cf9de30c706d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425896"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407505"
 ---
-<a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>使用实体框架在 ASP.NET MVC 应用程序中更新相关的数据
-====================
-
-
 # <a name="tutorial-update-related-data-with-ef-in-an-aspnet-mvc-app"></a>教程：在 ASP.NET MVC 应用中使用 EF 更新相关的数据
 
 上一教程中显示相关的数据。 在本教程中将更新相关的数据。 对于大多数关系，这可以通过更新外键字段或导航属性。 对于多对多关系，实体框架不会联接表直接公开，因此添加和删除实体与相应的导航属性。
@@ -93,7 +89,7 @@ ms.locfileid: "58425896"
 
 运行**创建**页面 (显示课程索引页，然后单击**创建新**) 并输入新课程的数据：
 
-| 值 | 设置 |
+| “值” | 设置 |
 | ----- | ------- |
 | 数字 | 输入*1000年*。 |
 | 标题 | 输入*代数*。 |

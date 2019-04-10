@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 8996b59e-042c-4395-b28a-f1ab95ac16af
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: d92c21dc854f849cea22ae3e4feb5559cb50270e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 59c0a820e30f302ac56dd000837f40f7c13fe183
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019824"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401122"
 ---
-<a name="paging-and-sorting-with-the-datalist-and-repeater"></a>使用 DataList 和 Repeater 分页和排序
-====================
+# <a name="paging-and-sorting-with-the-datalist-and-repeater"></a>使用 DataList 和 Repeater 分页和排序
+
 > 这些教程介绍如何将分页支持添加到要创建的分页和排序非常灵活的 UI 的 DataList 或 Repeater 控件。
 
 

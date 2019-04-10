@@ -8,15 +8,15 @@ ms.date: 12/01/2014
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 3d96d796d22c3511fedc45c024274300143b119b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a62c821159cd097507019d5efb29e01958ec9fba
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034774"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398093"
 ---
-<a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中创建 ASP.NET Web 项目
-====================
+# <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中创建 ASP.NET Web 项目
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > 本主题介绍在 Visual Studio 2013 Update 3 中创建 ASP.NET web 项目的选项
@@ -81,7 +81,7 @@ Visual Studio 具有使其易于使用，用于托管 web 应用程序的 Azure 
 - 创建和管理 web 应用或通过 Internet 提供应用程序的虚拟机。
 - 查看在云中运行应用程序创建的日志。
 - 在调试模式下远程运行应用程序在云中运行时。
-- Viiew 和管理 SQL 数据库等其他 Azure 服务。
+- 查看和管理 SQL 数据库等其他 Azure 服务。
 
 你可以[创建 Azure 帐户](https://www.windowsazure.com/pricing/free-trial/)，包括基本服务，如 web 应用免费，以及如果您是 MSDN 订阅者可以[激活权益](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/)，可提供更多 azure 每月信用额度服务。 
 

@@ -1,25 +1,30 @@
 ---
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
-title: 生成使用 ASP.NET Web API 的 RESTful Api |Microsoft Docs
+title: 生成 RESTful Api 与 ASP.NET Web API-ASP.NET 4.x
 author: rick-anderson
-description: 近年来，它已成为清除 HTTP 不再仅仅用于提供 HTML 页面。 它也是一个强大的平台，用于构建 Web Api，使用一些 o...
+description: 动手实验：在 ASP.NET 中使用 Web API 4.x 生成一个简单的 REST API 为联系人管理器应用程序。
 ms.author: riande
 ms.date: 02/18/2013
+ms.custom: seoapril2019
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f1f5ebbf5170f205be331b6402951fb429196046
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3ba7f2d186e6f0837a32f69f964cec19fe625953
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423710"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391476"
 ---
-<a name="build-restful-apis-with-aspnet-web-api"></a>生成使用 ASP.NET Web API 的 RESTful Api
-====================
+# <a name="build-restful-apis-with-aspnet-web-api"></a>生成使用 ASP.NET Web API 的 RESTful Api
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
-> 近年来，它已成为清除 HTTP 不再仅仅用于提供 HTML 页面。 它也是一个强大的平台，用于构建 Web Api，使用少数几个动词 （GET、 POST 等） 以及几个简单的概念类似于*Uri*并*标头*。 ASP.NET Web API 是一组简化 HTTP 编程的组件。 因为它基于 ASP.NET MVC 运行时，Web API 将自动处理 HTTP 的低级别传输详细信息。 同时，Web API 自然会公开 HTTP 编程模型。 实际上，Web API 的一个目标是向*不*抽象出 HTTP 的现实。 因此，Web API 是灵活且易于扩展。 在本动手实验中，将使用 Web API 来构建一个简单的 REST API 为联系人管理器应用程序。 您还将生成客户端以使用 API。 REST 体系结构风格已被证明是利用 HTTP-的有效方法，尽管它并不是 HTTP 的唯一有效方法。 联系人管理器将公开用于列出、 添加和删除联系人，以及其他基于 Rest。 本实验需要基本了解 HTTP，其余部分，并假定你已基本了解 HTML、 JavaScript 和 jQuery。
+> 动手实验：在 ASP.NET 中使用 Web API 4.x 生成一个简单的 REST API 为联系人管理器应用程序。 您还将生成客户端以使用 API。
+
+近年来，它已成为清除 HTTP 不再仅仅用于提供 HTML 页面。 它也是一个强大的平台，用于构建 Web Api，使用少数几个动词 （GET、 POST 等） 以及几个简单的概念类似于*Uri*并*标头*。 ASP.NET Web API 是一组简化 HTTP 编程的组件。 因为它基于 ASP.NET MVC 运行时，Web API 将自动处理 HTTP 的低级别传输详细信息。 同时，Web API 自然会公开 HTTP 编程模型。 实际上，Web API 的一个目标是向*不*抽象出 HTTP 的现实。 因此，Web API 是灵活且易于扩展。  REST 体系结构风格已被证明是利用 HTTP-的有效方法，尽管它并不是 HTTP 的唯一有效方法。 联系人管理器将公开用于列出、 添加和删除联系人，以及其他基于 Rest。 
+
+本实验需要基本了解 HTTP，其余部分，并假定你已基本了解 HTML、 JavaScript 和 jQuery。
 > 
 > > [!NOTE]
 > > ASP.NET 网站上有一个专用于在 ASP.NET Web API 框架的区域[ https://asp.net/web-api ](https://asp.net/web-api)。 此站点将继续提供最新信息、 示例和新闻与 Web API，因此它请经常查看如果你想要深入了解创建可用于几乎任何设备或开发框架自定义 Web Api 的画面。
@@ -417,7 +422,7 @@ ms.locfileid: "58423710"
 > 此外，可以部署此应用程序对 Azure 以下[附录 c:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixC)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

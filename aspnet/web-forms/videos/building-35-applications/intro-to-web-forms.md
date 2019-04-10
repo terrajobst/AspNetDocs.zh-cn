@@ -8,15 +8,15 @@ ms.date: 04/09/2009
 ms.assetid: bde8ff36-4e52-4687-8de4-5ee2d367dc92
 msc.legacyurl: /web-forms/videos/building-35-applications/intro-to-web-forms
 msc.type: video
-ms.openlocfilehash: 91d5b87531b122739275249a5c4da95e3b5cb695
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 074f1467d93c707ecf5d42a1142c5d91d0807f33
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051574"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412068"
 ---
-<a name="intro-to-web-forms"></a>Web 窗体简介
-====================
+# <a name="intro-to-web-forms"></a>Web 窗体简介
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 ASP.NET Web 窗体是用于 ASP.NET 应用程序的默认用户界面机制... 此视频将演示基本的 Web 窗体使用进行开发。

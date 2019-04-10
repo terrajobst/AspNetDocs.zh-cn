@@ -8,15 +8,15 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: f127f6a7d8a1f949432cc8f6f784dd7ee85ec207
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2b5d2a355a27bfe9a3aa8b2fa4a2de79c7f74314
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422988"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387121"
 ---
-<a name="adding-validation"></a>添加验证
-====================
+# <a name="adding-validation"></a>添加验证
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
@@ -69,7 +69,7 @@ ASP.NET MVC 的核心设计原则之一是[DRY](http://en.wikipedia.org/wiki/Don
 
 上面的代码将引发以下异常：
 
-*对一个或多个实体的验证失败。请参阅 EntityValidationErrors 属性的更多详细信息。*
+*对一个或多个实体的验证失败。 请参阅 EntityValidationErrors 属性的更多详细信息。*
 
 具有自动强制执行由.NET Framework 的验证规则有助于使您的应用程序更可靠。 同时它能确保你无法忘记验证某些内容，并防止你无意中将错误数据导入数据库。
 
@@ -131,7 +131,7 @@ ASP.NET MVC 的核心设计原则之一是[DRY](http://en.wikipedia.org/wiki/Don
 
 [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性仅提供提示帮助视图引擎设置数据的格式 (并提供特性，如`<a>`url 和`<a href="mailto:EmailAddress.com">`电子邮件。 可以使用[正则表达式](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx)特性验证数据的格式。 [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性用于指定比数据库内部类型更具体的数据类型，它们是***不***验证特性。 在此示例中，我们只想跟踪日期，而不是日期和时间。 [DataType 枚举](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)提供了多种数据类型，如*日期、 时间、 电话号码、 货币、 电子邮件地址*和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，`mailto:`可以为创建链接[DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)，和日期选择器可提供用于[DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)中支持的浏览器[HTML5](http://html5.org/). [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性发出 HTML 5 [data-](http://ejohn.org/blog/html-5-data-attributes/) (读作*数据 dash*) 特性供 HTML 5 浏览器理解。 [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性不提供任何验证。
 
-`DataType.Date` 不指定显示日期的格式。 默认情况下，显示该数据字段根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
+`DataType.Date` 未指定的日期的显示格式。 默认情况下，显示该数据字段根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 

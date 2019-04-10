@@ -8,15 +8,15 @@ ms.date: 10/13/2010
 ms.assetid: c8511ebe-68bc-4240-87c3-d5ced84a3f37
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 44205f0ef59e00ad9fb1c45fdc0ba8934b5804cc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f5431d60506f5b0a0f4bbcd8e86b316c728a1191
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060424"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415916"
 ---
-<a name="part-7-membership-and-authorization"></a>第 7 部分：成员身份和授权
-====================
+# <a name="part-7-membership-and-authorization"></a>第 7 部分：成员身份和授权
+
 通过[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发分步教程应用程序。  
@@ -40,7 +40,7 @@ Store Manager 控制器是当前访问我们的站点的任何人都可访问。
 
 更改控制器和模型类的命名空间，以便它们开头 MvcMusicStore。 AccountController 类应使用 MvcMusicStore.Controllers 命名空间，并且 AccountModels 类应使用 MvcMusicStore.Models 命名空间。
 
-*注意：这些文件也是从中我们复制站点设计文件在本教程开始 MvcMusicStore Assets.zip 下载中提供的。成员资格文件位于代码目录中。*
+*注意:这些文件也是从中我们复制站点设计文件在本教程开始 MvcMusicStore Assets.zip 下载中提供的。 成员资格文件位于代码目录中。*
 
 更新后的解决方案应如以下所示：
 
@@ -72,16 +72,16 @@ Store Manager 控制器是当前访问我们的站点的任何人都可访问。
 
 填写用户信息字段在左侧使用以下信息：
 
-| **字段** | **值** |
+| **字段** | **“值”** |
 | --- | --- |
 | **用户名** | 管理员 |
-| **密码** | password123 ！ |
+| **Password** | password123 ！ |
 | **确认密码** | password123 ！ |
 | **电子邮件** | （也适用任何电子邮件地址） |
 | **安全提示问题** | （任意） |
 | **安全提示问题的答案** | （任意） |
 
-*注意：当然可以使用您希望的任何密码。默认密码安全设置需要 7 个字符长，并且包含一个非字母数字字符的密码。*
+*注意:当然可以使用您希望的任何密码。 默认密码安全设置需要 7 个字符长，并且包含一个非字母数字字符的密码。*
 
 选择此用户的管理员角色，然后单击创建用户按钮。
 
@@ -99,7 +99,7 @@ Store Manager 控制器是当前访问我们的站点的任何人都可访问。
 
 [!code-csharp[Main](mvc-music-store-part-7/samples/sample1.cs)]
 
-*注意：可以放置 [Authorize] 特性，以及在控制器类级别上的特定操作方法。*
+*注意:可以放置 [Authorize] 特性，以及在控制器类级别上的特定操作方法。*
 
 现在浏览到 /StoreManager 会出现一个登录对话框：
 

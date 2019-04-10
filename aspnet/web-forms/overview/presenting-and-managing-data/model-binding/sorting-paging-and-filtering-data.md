@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 624f98cea6030e0b7b022f86c4c1aa37f1db9726
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1159d75ec5b2f7e5ac94da0a15acf24b5400798b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065774"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387461"
 ---
-<a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分页和筛选数据与模型绑定和 web 窗体
-====================
+# <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分页和筛选数据与模型绑定和 web 窗体
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。 本系列开始介绍性材料，后续教程将移动到更高级的概念。

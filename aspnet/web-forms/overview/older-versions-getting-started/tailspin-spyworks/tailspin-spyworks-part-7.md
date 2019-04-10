@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 50223ee9-11b9-4cf3-bca2-e2f10bf471f3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: cada8d9aee649e4f2a5afc1ca2b46863ea458207
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 646aeb4ad99ba9b0ee114c6be4aa528e62ef4775
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056514"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389942"
 ---
-<a name="part-7-adding-features"></a>第 7 部分：添加功能
-====================
+# <a name="part-7-adding-features"></a>第 7 部分：添加功能
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
@@ -41,11 +41,11 @@ ms.locfileid: "57056514"
 
 在"帐户"文件夹中创建一个名为的 OrderList.aspx 和其他命名的 OrderDetails.aspx 的两个.aspx 页
 
-OrderList.aspx 一样使用以前，我们将利用 GridView 和 EntityDataSoure 控件。
+OrderList.aspx 一样使用以前，我们将利用 GridView 和 EntityDataSource 控件。
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample1.aspx)]
 
-EntityDataSoure 用户名已筛选的 Orders 表中选择记录 （请参阅 WhereParameter） 的用户日志时，我们设置会话变量中。
+EntityDataSource 用户名已筛选的 Orders 表中选择记录 （请参阅 WhereParameter） 的用户日志时，我们设置会话变量中。
 
 另请注意这些参数中的 GridView HyperlinkField:
 
@@ -143,7 +143,7 @@ EntityDataSoure 用户名已筛选的 Orders 表中选择记录 （请参阅 Whe
 
 由于最受欢迎的项不会更改按分钟，因此我们可以添加 aching 的指令以提高我们的应用程序的性能。 此指令将导致该控件的缓存的输出过期时才可执行的控件代码。 否则，将使用的控件的输出缓存的版本。
 
-现在我们所要做的就是在我们 Default.aspc 页中包含我们新的控件。
+现在我们所要做的就是我们新控件包含在我们的 Default.aspx 页面中。
 
 使用拖放打开列的默认窗体中放置控件的实例。
 

@@ -8,15 +8,15 @@ ms.date: 04/22/2010
 ms.assetid: d27fbb54-353f-4d79-b465-403ff8e0538b
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2
 msc.type: video
-ms.openlocfilehash: d7b7843e28a0da340fca45f75c41e9b445916d2e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 17a144dfe2fb9f34ceb15644b44828ec6aeaf577
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053284"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399666"
 ---
-<a name="aspnet-mvc-for-the-rest-of-us-part-2"></a>适用于我们其余所有人的 ASP.NET MVC：第 2 部分
-====================
+# <a name="aspnet-mvc-for-the-rest-of-us-part-2"></a>适用于我们其余所有人的 ASP.NET MVC：第 2 部分
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在此视频 Microsoft Joe Stagner 构建 ASP.NET MVC 应用程序的"联系我们"功能，通过将视图、 控制器逻辑和自定义模型添加到默认的 ASP.NET 应用程序。 你将看到一些使用 ASP.NET MVC 与 ASP.NET Web 窗体之间的基本区别。

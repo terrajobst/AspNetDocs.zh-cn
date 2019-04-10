@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 719d50d4-2305-454c-98b4-bae64937c48f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6fe880775a5d477aefcf0fe6cedb3e719760ed90
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c92d7cdeb7b2d31d5eca810628e9f563840f7494
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036484"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400596"
 ---
-<a name="creating-a-controller-c"></a>创建控制器 (C#)
-====================
+# <a name="creating-a-controller-c"></a>创建控制器 (C#)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教程中，Stephen Walther 演示了如何将控制器添加到 ASP.NET MVC 应用程序。
@@ -29,12 +29,12 @@ ms.locfileid: "57036484"
 若要创建新的控制器的最简单方法是右键单击 Visual Studio 解决方案资源管理器窗口中的 Controllers 文件夹并选择**添加、 控制器**菜单选项 （请参阅图 1）。 选择此菜单选项将打开**添加控制器**对话框 （请参见图 2）。
 
 
-[![新建项目对话框](creating-a-controller-cs/_static/image1.jpg)](creating-a-controller-cs/_static/image1.png)
+[![T他新建项目对话框中](creating-a-controller-cs/_static/image1.jpg)](creating-a-controller-cs/_static/image1.png)
 
 **图 01**:添加新的控制器 ([单击此项可查看原尺寸图像](creating-a-controller-cs/_static/image2.png))
 
 
-[![新建项目对话框](creating-a-controller-cs/_static/image2.jpg)](creating-a-controller-cs/_static/image3.png)
+[![T他新建项目对话框中](creating-a-controller-cs/_static/image2.jpg)](creating-a-controller-cs/_static/image3.png)
 
 **图 02**:添加控制器对话框 ([单击此项可查看原尺寸图像](creating-a-controller-cs/_static/image4.png))
 
@@ -56,7 +56,7 @@ ms.locfileid: "57036484"
 当你创建一个控制器时，您可以选择自动生成创建、 更新和的详细信息的操作方法 （请参见图 3）。 如果选择此选项，则会生成代码清单 2 中的控制器类。
 
 
-[![自动创建的操作方法](creating-a-controller-cs/_static/image3.jpg)](creating-a-controller-cs/_static/image5.png)
+[![C操作方法自动](creating-a-controller-cs/_static/image3.jpg)](creating-a-controller-cs/_static/image5.png)
 
 **图 03**:自动创建的操作方法 ([单击此项可查看原尺寸图像](creating-a-controller-cs/_static/image6.png))
 
@@ -76,7 +76,7 @@ ASP.NET MVC 控制器是只是一个类。 如果您愿意，可以忽略方便 
 3. 修改生成的类文件，使类继承自基 system.web.mvc.controller 中衍生类 （请参阅代码清单 3）。
 
 
-[![创建一个新类](creating-a-controller-cs/_static/image4.jpg)](creating-a-controller-cs/_static/image7.png)
+[![C新类](creating-a-controller-cs/_static/image4.jpg)](creating-a-controller-cs/_static/image7.png)
 
 **图 04**:创建一个新类 ([单击此项可查看原尺寸图像](creating-a-controller-cs/_static/image8.png))
 

@@ -8,15 +8,15 @@ ms.date: 03/13/2007
 ms.assetid: 28d5bb59-9aad-4cdd-8088-1e9d3d230ac5
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-incremental-page-display-pattern-using-http-get-and-post
 msc.type: video
-ms.openlocfilehash: c36b6d59dfa8d66f23542be466a1c614dfb263f2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e4766f6d20c17cf99c11fc634cf15743ef839716
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056204"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413706"
 ---
-<a name="how-do-i-implement-the-incremental-page-display-pattern-using-http-get-and-post"></a>[如何实现:]实现增量页面显示模式使用 HTTP GET 和 POST？
-====================
+# <a name="how-do-i-implement-the-incremental-page-display-pattern-using-http-get-and-post"></a>[如何实现:]实现增量页面显示模式使用 HTTP GET 和 POST？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 本视频将使再看一下 AJAX 增量页面显示模式在其中检索并以增量方式显示网页。 在本视频中使用 HTTP GET 和 POST 请求，而不是使用 Web 服务调用的早期演示从服务器检索的数据。

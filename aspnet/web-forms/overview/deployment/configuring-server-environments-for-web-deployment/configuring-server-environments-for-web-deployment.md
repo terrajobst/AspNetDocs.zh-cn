@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 0bf0959b-4ca8-45de-bd13-b15347543b5a
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 4f6433f0b8a9ad3b3634c9bcd8d95015eebaa865
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 86ea4a2e17ec44a3716e1570e51a224144f1369c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386965"
 ---
-<a name="configuring-server-environments-for-web-deployment"></a>配置用于 Web 部署的服务器环境
-====================
+# <a name="configuring-server-environments-for-web-deployment"></a>配置用于 Web 部署的服务器环境
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -31,9 +31,9 @@ ms.locfileid: "57043524"
 本教程包括以下主题：
 
 - [选择 Web 部署的适当方法](choosing-the-right-approach-to-web-deployment.md)
-- [场景：配置用于 Web 部署测试环境](scenario-configuring-a-test-environment-for-web-deployment.md)
-- [场景：配置用于 Web 部署的过渡环境](scenario-configuring-a-staging-environment-for-web-deployment.md)
-- [场景：配置用于 Web 部署的生产环境](scenario-configuring-a-production-environment-for-web-deployment.md)
+- [方案：配置用于 Web 部署的测试环境](scenario-configuring-a-test-environment-for-web-deployment.md)
+- [方案：配置用于 Web 部署的过渡环境](scenario-configuring-a-staging-environment-for-web-deployment.md)
+- [方案：配置用于 Web 部署的生产环境](scenario-configuring-a-production-environment-for-web-deployment.md)
 - [配置用于 Web 部署发布的 Web 服务器（远程代理）](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
 - [配置用于 Web 部署发布的 Web 服务器（Web 部署处理程序）](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
 - [配置用于 Web 部署发布的 Web 服务器（离线部署）](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
@@ -66,4 +66,4 @@ ms.locfileid: "57043524"
 - [高级企业 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境中，从部署中排除文件和文件夹和在部署过程中将 web 应用程序脱机.
 
 > [!div class="step-by-step"]
-> [下一页](choosing-the-right-approach-to-web-deployment.md)
+> [下一步](choosing-the-right-approach-to-web-deployment.md)

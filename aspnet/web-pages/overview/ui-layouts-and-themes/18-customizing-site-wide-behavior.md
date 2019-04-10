@@ -8,15 +8,15 @@ ms.date: 02/17/2014
 ms.assetid: e158bed7-226f-4275-b02e-7553bd58c669
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
 msc.type: authoredcontent
-ms.openlocfilehash: ca7c241d6e4d1e4baa581faf2bda4ed275b4e785
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2763cae0f8124cfcaccfd737622cb17b6dd947e1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030944"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413290"
 ---
-<a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 站点的自定义网站的行为
-====================
+# <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 站点的自定义网站的行为
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文介绍如何在 ASP.NET Web Pages (Razor) 网站中进行站点端设置的页面。

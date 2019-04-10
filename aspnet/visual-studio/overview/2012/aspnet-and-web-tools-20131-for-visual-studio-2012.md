@@ -8,15 +8,15 @@ ms.date: 11/13/2013
 ms.assetid: ca26e5bb-630e-41d2-8512-2a9386c431cb
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 008891b72e1fb72458aee00bbf83839d0fbed263
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 17315dbbbdc08412e4e928256783c221a8a2cb20
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423541"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406803"
 ---
-<a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>适用于 Visual Studio 2012 的 ASP.NET 和 Web 工具 2013.1 发行说明
-====================
+# <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>适用于 Visual Studio 2012 的 ASP.NET 和 Web 工具 2013.1 发行说明
+
 by [Microsoft](https://github.com/microsoft)
 
 > 本文档介绍 ASP.NET 和 Web 工具 2013.1 for Visual Studio 2012 的版本。

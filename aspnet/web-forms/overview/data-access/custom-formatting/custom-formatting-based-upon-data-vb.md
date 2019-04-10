@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: df5a1525-386f-4632-972c-57b199870bc3
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d902fd6d042783c036bb42a11b7e469f6dd2b5b6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a408134b4e26e8ad1f7c22c9d2005a7c551b00c6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038564"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392854"
 ---
-<a name="custom-formatting-based-upon-data-vb"></a>基于数据的自定义格式设置 (VB)
-====================
+# <a name="custom-formatting-based-upon-data-vb"></a>基于数据的自定义格式设置 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_11_VB.exe)或[下载 PDF](custom-formatting-based-upon-data-vb/_static/datatutorial11vb1.pdf)
@@ -49,7 +49,7 @@ ms.locfileid: "57038564"
 一旦您已绑定到 DetailsView 的 ObjectDataSource，花点时间来修改字段列表。 我选择要删除`ProductID`， `SupplierID`， `CategoryID`， `UnitsInStock`， `UnitsOnOrder`， `ReorderLevel`，和`Discontinued`BoundFields 和重命名和重新格式化剩余 BoundFields。 我也被清除`Width`和`Height`设置。 由于 DetailsView 显示单个记录，我们需要启用分页，才能允许最终用户可以查看所有产品。 通过检查 DetailsView 的智能标记中的启用分页复选框来实现。
 
 
-[![图 1:检查 DetailsView 的智能标记中的启用分页复选框](custom-formatting-based-upon-data-vb/_static/image2.png)](custom-formatting-based-upon-data-vb/_static/image1.png)
+[![Figure 1:检查 DetailsView 的智能标记中的启用分页复选框](custom-formatting-based-upon-data-vb/_static/image2.png)](custom-formatting-based-upon-data-vb/_static/image1.png)
 
 **图 1**:图 1：检查启用分页中的复选框 DetailsView 的智能标记 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image3.png))
 
@@ -62,7 +62,7 @@ ms.locfileid: "57038564"
 请花费片刻时间来查看此页在浏览器中测试。
 
 
-[![在 DetailsView 控件一次显示一种产品](custom-formatting-based-upon-data-vb/_static/image5.png)](custom-formatting-based-upon-data-vb/_static/image4.png)
+[![T他一次一个 DetailsView 控件显示的产品](custom-formatting-based-upon-data-vb/_static/image5.png)](custom-formatting-based-upon-data-vb/_static/image4.png)
 
 **图 2**:DetailsView 控件显示一个产品一次 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image6.png))
 
@@ -124,12 +124,12 @@ ms.locfileid: "57038564"
 时查看 Chai，小于 75.00 美元的费用，价格显示为正常字体 （请参阅图 4）。 但是，当查看 Mishi Kobe Niku，具有 97.00 美元的价格，价格会显示在加粗、 倾斜字体 （请参见图 5）。
 
 
-[![价格小于 $75.00 将显示在普通字体](custom-formatting-based-upon-data-vb/_static/image9.png)](custom-formatting-based-upon-data-vb/_static/image8.png)
+[![P小于 $75.00 将显示在普通字体格](custom-formatting-based-upon-data-vb/_static/image9.png)](custom-formatting-based-upon-data-vb/_static/image8.png)
 
 **图 4**:价格小于 $75.00 将显示在普通字体 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image10.png))
 
 
-[![粗体、 斜体字体显示昂贵产品的价格](custom-formatting-based-upon-data-vb/_static/image12.png)](custom-formatting-based-upon-data-vb/_static/image11.png)
+[![Expensive 产品的价格中加粗、 倾斜字体显示](custom-formatting-based-upon-data-vb/_static/image12.png)](custom-formatting-based-upon-data-vb/_static/image11.png)
 
 **图 5**:粗体、 斜体字体显示昂贵产品的价格 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image13.png))
 
@@ -196,12 +196,12 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 图 7 显示了 FormView 查看产品时其`UnitsInStock`值大于 10，而图 8 中的产品具有其值小于 10。
 
 
-[![对于产品具有足够大 Units In Stock，无自定义格式设置将应用](custom-formatting-based-upon-data-vb/_static/image16.png)](custom-formatting-based-upon-data-vb/_static/image15.png)
+[![F应用产品具有足够大 Units In Stock、 无自定义格式设置或者](custom-formatting-based-upon-data-vb/_static/image16.png)](custom-formatting-based-upon-data-vb/_static/image15.png)
 
 **图 7**:对于产品具有足够大 Units In Stock，无自定义格式设置将应用 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image17.png))
 
 
-[![在库存数量的单位以红色显示的那些产品使用的值小于或等于 10](custom-formatting-based-upon-data-vb/_static/image19.png)](custom-formatting-based-upon-data-vb/_static/image18.png)
+[![T他在库存数量的单位以红色显示的那些产品使用的值小于或等于 10](custom-formatting-based-upon-data-vb/_static/image19.png)](custom-formatting-based-upon-data-vb/_static/image18.png)
 
 **图 8**:在库存数量的单位以红色显示的那些产品使用的值小于或等于 10 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image20.png))
 
@@ -247,7 +247,7 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 图 9 显示了我们到目前为止的浏览器查看时的进度。
 
 
-[![GridView 列出名称、 类别和每个产品的价格](custom-formatting-based-upon-data-vb/_static/image22.png)](custom-formatting-based-upon-data-vb/_static/image21.png)
+[![T他 GridView 列表名称、 类别和每个产品的价格](custom-formatting-based-upon-data-vb/_static/image22.png)](custom-formatting-based-upon-data-vb/_static/image21.png)
 
 **图 9**:GridView 列出名称、 类别和每个产品的价格 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image23.png))
 
@@ -303,7 +303,7 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample18.vb)]
 
 
-[![最经济的产品是黄色突出显示](custom-formatting-based-upon-data-vb/_static/image26.png)](custom-formatting-based-upon-data-vb/_static/image25.png)
+[![T他最经济实惠的产品的黄色突出显示](custom-formatting-based-upon-data-vb/_static/image26.png)](custom-formatting-based-upon-data-vb/_static/image25.png)
 
 **图 11**:最经济的产品都突出显示黄色 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-vb/_static/image27.png))
 

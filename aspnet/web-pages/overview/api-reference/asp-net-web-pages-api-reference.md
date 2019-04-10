@@ -8,15 +8,15 @@ ms.date: 02/10/2014
 ms.assetid: 4001cb9b-3bfd-4ace-8a89-1561d8421e2c
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 656987f8a725f81dbca7a72594d7d03bc542fabe
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 547b1932c4f8d3684c668561e3fe568a0f272925
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063854"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416501"
 ---
-<a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 网页 (Razor) API 快速参考
-====================
+# <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 网页 (Razor) API 快速参考
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 此页列出了最常用的对象、 属性和方法的 ASP.NET Web Pages 编程使用 Razor 语法的简短示例。
@@ -37,8 +37,8 @@ ms.locfileid: "57063854"
 此页包含有关以下参考信息：
 
 - [类](#Classes)
-- [Data](#Data)
-- [帮助程序](#Helpers)
+- [数据](#Data)
+- [Helpers](#Helpers)
 - [验证](#Validation)
 
 <a id="Classes"></a>
@@ -689,7 +689,7 @@ ms.locfileid: "57063854"
 
 ### `WebMail.SmtpServer`
 
-设置 SMTP 服务器名称。 在中设置此属性通常<em>\_AppStart</em>页。
+设置 SMTP 服务器名称。 在中设置此属性通常 *\_AppStart*页。
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample105.html)]
 

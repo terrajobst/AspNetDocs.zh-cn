@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 2bfbc5cc-f942-44b7-a62d-a29520f1da9a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 253377ef6019a672680c6e819349357627ef111b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8bdee58aa04e1c8217c2a727b96aa8b239fe1aca
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395597"
 ---
-<a name="changing-an-animation-using-client-side-code-c"></a>使用客户端代码更改动画 (C#)
-====================
+# <a name="changing-an-animation-using-client-side-code-c"></a>使用客户端代码更改动画 (C#)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11CS.pdf)
@@ -71,7 +71,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-html[Main](changing-an-animation-using-client-side-code-cs/samples/sample7.html)]
 
 
-[![动画立即运行而无需单击鼠标 （和使用很少标记）](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
+[![T没有鼠标单击 （且很少标记），他动画立即运行](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
 
 动画立即运行不带鼠标单击 （和使用很少标记） ([单击此项可查看原尺寸图像](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 

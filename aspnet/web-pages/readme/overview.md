@@ -8,15 +8,15 @@ ms.date: 01/06/2011
 ms.assetid: 36c5beeb-45a7-48a0-9c30-f82cdf5c5f5f
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: aa852e7bbd93622154d59e0d0a13ffa680812df2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7374b1afafa9ca63309f3c0369c5efd808f7f28a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050714"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401980"
 ---
-<a name="webmatrix-readme"></a>WebMatrix 自述文件
-====================
+# <a name="webmatrix-readme"></a>WebMatrix 自述文件
+
 2011 年 1 月 13日
 
 ## <a name="contents"></a>内容
@@ -120,7 +120,7 @@ ms.locfileid: "57050714"
 文档的本节介绍新功能、 更改和 1.0 版本的 ASP.NET Web Pages 使用 Razor 语法的已知的问题。
 
 - [新增功能](#NewFeatures)
-- [更改](#Changes)
+- [Changes](#Changes)
 - [问题](#Issues)
 
 #### <a id="NewFeatures"></a>  新增功能
@@ -254,10 +254,10 @@ ms.locfileid: "57050714"
 > 
 > 1. 将复制到的数据库引擎程序集*Bin*目标计算机上的应用程序文件夹 （和子文件夹）：  
 > 
->    - 复制*C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->        **to** *\Bin*
->    - 复制<em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>到</em></strong>\Bin\x86*
->    - 复制<em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>到</strong><em>\Bin\amd64</em>
+>    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>      **to** *\Bin*
+>    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*  **到** *\Bin\x86*
+>    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
 > 
 > 2. 在该网站的根文件夹中创建或打开*web.config*文件。 (此文件类型是在 WebMatrix 1.0 中，单击**所有**中**选择文件类型**对话框。)
 > 3. 将以下元素添加为的子`<configuration>`元素 (而不是在`<system.web>`元素):
@@ -558,7 +558,7 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 有关 WebMatrix 1.0 的详细信息，请参阅以下网站：
 
 - [IIS.net](http://iis.net/)
-- [ASP.NET 2.0](https://asp.net/webmatrix)
+- [ASP.NET](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
 © 2011 Microsoft Corporation. 保留所有权利。 [使用条款](https://msdn.microsoft.cos/cc300389.aspx)。

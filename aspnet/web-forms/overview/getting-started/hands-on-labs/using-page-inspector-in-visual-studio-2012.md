@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 73232292-a5fe-4720-82a1-8f6553effd1f
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: ce654eb5abd54613987f2375cc973febc9dc2ad5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d85fab0aeec86013761fc07ada1789b7719b24d9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041954"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396550"
 ---
-<a name="using-page-inspector-in-visual-studio-2012"></a>在 Visual Studio 2012 中使用 Page Inspector
-====================
+# <a name="using-page-inspector-in-visual-studio-2012"></a>在 Visual Studio 2012 中使用 Page Inspector
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 > 在本动手实验中，你会发现新的工具来查找和修复 Visual Studio-Page Inspector 中的 web 页的问题。
@@ -59,7 +59,7 @@ ms.locfileid: "57041954"
 - [Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web)或更高 (读取[附录 A](#AppendixA)有关如何安装它的说明)。
 - Internet Explorer 9 或更高版本
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -106,7 +106,7 @@ ms.locfileid: "57041954"
     *选择要预览在 Page Inspector 中的文件*
 3. Page Inspector 窗口将显示 */Home/Index* URL 映射到所选的视图的源。
 
-    ![ThefirstcontactwithPageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
+    ![使用 PageInspector 第一次联系](using-page-inspector-in-visual-studio-2012/_static/image2.png)
 
     *使用 Page Inspector 第一次联系*
 
@@ -130,7 +130,7 @@ ms.locfileid: "57041954"
     *切换检查模式按钮*
 6. 在 Page Inspector 浏览器中，将鼠标指针移动页面元素。 将鼠标指针移过所呈现页中的任何部分，而显示的元素类型和 Visual Studio 编辑器中突出显示相应的源标记或代码。
 
-    ![Inspectionmodeinaction](using-page-inspector-in-visual-studio-2012/_static/image5.png)
+    ![在操作中检查模式](using-page-inspector-in-visual-studio-2012/_static/image5.png)
 
     *在操作中检查模式*
 
@@ -139,7 +139,7 @@ ms.locfileid: "57041954"
 
     如果您注意到**Index.cshtml**文件中，你会注意到，突出显示的源代码的生成所选的元素的部分。 此功能便于编辑长源代码文件，提供指导支持和快速的方法来访问代码。
 
-    ![Inspectingelements](using-page-inspector-in-visual-studio-2012/_static/image6.png)
+    ![检查元素](using-page-inspector-in-visual-studio-2012/_static/image6.png)
 
     *检查元素*
 7. 单击**切换检查模式下**按钮 (![选择 HTML 选项卡以显示在 Page Inspector 浏览器中呈现的 HTML 代码。](using-page-inspector-in-visual-studio-2012/_static/image7.png "选择 HTML 选项卡以显示在 Page Inspector 浏览器中呈现的 HTML 代码。") ) 若要禁用光标。
@@ -156,7 +156,7 @@ ms.locfileid: "57041954"
     > [!NOTE]
     > 因为标头是站点布局的一部分，Page Inspector 将打开\_Layout.cshtml 文件并突出显示的代码段会受到影响。
 
-    ![Discoveringstyles](using-page-inspector-in-visual-studio-2012/_static/image9.png)
+    ![发现样式](using-page-inspector-in-visual-studio-2012/_static/image9.png)
 
     *发现所选元素的样式和源文件*
 11. 启用切换检查指针，移动鼠标指针下面特色的蓝色条形，再单击一半的圆圈。
@@ -180,7 +180,7 @@ ms.locfileid: "57041954"
     *更改在 Page Inspector 中的 CSS 值*
 15. 单击**跟踪样式**选项卡上，Page Inspector 的右窗格中。 这是一种方法来查看应用于所选内容，按属性名称排序的所有样式。
 
-    ![CSSstylestracing](using-page-inspector-in-visual-studio-2012/_static/image13.png)
+    ![跟踪的 CSS 样式](using-page-inspector-in-visual-studio-2012/_static/image13.png)
 
     *所选元素的 CSS 样式跟踪*
 16. Page Inspector 的另一个功能是布局窗格。 使用检查模式下，选择导航栏，然后单击**布局**右窗格上的选项卡。 你将看到所选元素的确切大小以及其偏移量、 边距、 填充和边框的大小。 请注意，您还可以修改此视图中的值。
@@ -218,7 +218,7 @@ ms.locfileid: "57041954"
 2. 选择切换检查模式下，单击要关闭，但不是在注册链接以打开其代码。
 
     请注意，链接的源代码位于 **\_LoginPartial.cshtml**文件，不 Index.cshtml 和\_Layout.cshtml，是您可以在第一个位置中查找的位置。 你具有已直接放在正确的源文件。
-3. 在中**样式**选项卡上，找到并单击**<section> #login</section>** 项，它是下面的链接的 HTML 容器。
+3. 在中**样式**选项卡上，找到并单击**\<部分 > #login**项，它是下面的链接的 HTML 容器。
 
     请注意， **#login**样式会自动位于**Site.css**单击后。 此外，代码现在已突出显示。
 
@@ -261,12 +261,12 @@ ms.locfileid: "57041954"
 
     *分配新的标题*
 
-    ![PhotoGallerypage](using-page-inspector-in-visual-studio-2012/_static/image23.png)
+    ![照片库页](using-page-inspector-in-visual-studio-2012/_static/image23.png)
 
     *更新照片库页*
 11. 最后，选择**PhotoGallery**项目，然后按**F5**运行应用程序。 请查看所做的更改按预期方式工作。
 
-* * *
+---
 
 <a id="Exercise2"></a>
 
@@ -347,7 +347,7 @@ ms.locfileid: "57041954"
     > [!NOTE]
     > 因为标头是站点布局的一部分，Page Inspector 还将打开 Site.Master 文件并突出显示的受影响的代码段。
 
-    ![DiscoveringstylesWebForms](using-page-inspector-in-visual-studio-2012/_static/image32.png "发现样式和所选元素的源文件")
+    ![发现样式 WebForms](using-page-inspector-in-visual-studio-2012/_static/image32.png "发现样式和所选元素的源文件")
 
     *发现所选元素的样式和源文件*
 11. 启用切换检查指针，将鼠标指针菜单栏下方移动，再单击空白一半的圆圈。
@@ -421,7 +421,7 @@ ms.locfileid: "57041954"
     Page Inspector 可以识别的所有不同文件构成当前页上，以及它可以检测这些文件的任何更改时。 它向你发出警报时在浏览器中的当前页面不是与源文件同步。
 5. 在 Page Inspector 浏览器中，单击位于地址栏以保存所做的更改并重新加载页面下方的栏。
 
-    ![Reloadingthepage](using-page-inspector-in-visual-studio-2012/_static/image40.png)
+    ![重新加载页面](using-page-inspector-in-visual-studio-2012/_static/image40.png)
 
     *重新加载页面*
 
@@ -457,7 +457,7 @@ ms.locfileid: "57041954"
     *更新照片库页*
 11. 最后，按**F5**运行应用的签出所有所做的更改按预期方式工作。
 
-* * *
+---
 
 <a id="Summary"></a>
 

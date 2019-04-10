@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: 878f6c31-972d-45f4-8849-5c633b511409
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 88f2ebcc98adcb48da36a7ad85df603b550fe4b1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3eef7934fac8c16dc7517ca16cab67c0ae55907f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030444"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398015"
 ---
-<a name="adding-validation-to-the-model-vb"></a>向模型添加验证 (VB)
-====================
+# <a name="adding-validation-to-the-model-vb"></a>向模型添加验证 (VB)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装以下列出的先决条件。 可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，可以单独安装系统必备组件，使用以下链接：

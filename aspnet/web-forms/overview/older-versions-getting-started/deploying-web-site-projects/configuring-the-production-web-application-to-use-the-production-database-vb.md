@@ -8,15 +8,15 @@ ms.date: 04/23/2009
 ms.assetid: a64a7aa0-6608-449e-83bf-1ef8cceee504
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3d6e25de44a7c84ef0919d1cfd8ab4c6b368e0ea
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 66b6df78a8ffed3ea7c586a995b8df8563d908bb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407206"
 ---
-<a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>配置生产 Web 应用程序以使用生产数据库 (VB)
-====================
+# <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>配置生产 Web 应用程序以使用生产数据库 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_08_VB.zip)或[下载 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial08_DBConfig_vb.pdf)
@@ -53,7 +53,7 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 打开 Visual Studio，然后导航到服务器资源管理器窗口 （在 Visual Web Developer 中，此窗口被称为数据库资源管理器）。 右键单击数据连接选项，然后从上下文菜单中选择添加连接选项。 此时将显示在图 1 中所示的向导。 选择适当的数据源并单击继续。
 
 
-[![选择将新的数据库添加到服务器资源管理器](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image1.jpg) 
+[![C选择要将新数据库添加到服务器资源管理器](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image1.jpg) 
 
 **图 1**:选择将新的数据库添加到服务器资源管理器 ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image3.jpg))
 
@@ -61,14 +61,14 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 接下来，指定的各种数据库连接信息 （请参见图 2）。 当您使用您的 web 托管公司注册它们应如何连接到数据库的数据库服务器名称、 数据库名称、 用户名和密码用于连接到数据库，依次类推提供了信息。 输入此信息后，单击确定以完成此向导并将数据库添加到服务器资源管理器。
 
 
-[![指定的数据库连接信息](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image4.jpg) 
+[![S指定数据库连接信息](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image4.jpg) 
 
 **图 2**:指定数据库连接信息 ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image6.jpg))
 
 
 生产环境数据库现在应在服务器资源管理器中列出。 从服务器资源管理器中选择数据库并转到属性窗口。 可以在其中找到一个名为使用数据库 s 的连接字符串的连接字符串属性。 假设在生产和 SqlClient 提供程序上使用的 Microsoft SQL Server 数据库连接字符串应类似于下面：
 
-<strong>Data Source=<em>serverName</em>; Initial Catalog=<em>databaseName</em>; Persist Security Info=True; User ID=<em>username</em>; Password=*password</strong>*
+<strong>数据源 =<em>serverName</em>;初始目录 =<em>databaseName</em>;持久性安全信息 = True;用户 ID =<em>用户名</em>;密码 =*密码</strong>*
 
 其中*serverName*， *databaseName*，*用户名*，以及*密码*都替换为数据库服务器名称，该数据库的值名称，以及用户名和密码提供给你的 web 主机公司。
 
@@ -91,7 +91,7 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 在站点部署到生产环境后，请访问生产站点，通过浏览器。 应查看，并在本地运行数据驱动的应用程序时享受相同的用户体验。 当然生产上访问该网站时该站点由提供支持，生产数据库服务器上，而在开发过程中访问网站开发环境中的使用的数据库。 图 3 显示了*教您自己 ASP.NET 3.5 24 小时内*查看页上从生产环境 （请注意浏览器的地址栏中的 URL） 中的网站。
 
 
-[![数据驱动应用程序已在现在可在生产环境 ！](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image7.jpg) 
+[![T他数据驱动应用程序是现在可在生产] ！(configuring-the-production-web-application-to-use-the-production-database-vb/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image7.jpg) 
 
 **图 3**:数据驱动应用程序已在现在可在生产环境 ！ ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image9.jpg))
 

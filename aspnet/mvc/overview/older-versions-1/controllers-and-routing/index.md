@@ -8,28 +8,28 @@ ms.date: 09/28/2011
 ms.assetid: 124df537-428c-4861-b6c2-4830c094fe0c
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing
 msc.type: chapter
-ms.openlocfilehash: 5da0db768aaf39dc67bb2344e645c491c78a03a1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1a994b37faefe0e20c99a6991768898185e51b43
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021114"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417216"
 ---
-<a name="controllers-and-routing"></a>控制器和路由
-====================
+# <a name="controllers-and-routing"></a>控制器和路由
+
 > 本教程系列介绍有关 ASP.NET 路由，这将浏览器请求映射到 ASP.NET MVC 控制器操作。
 
 
 - [ASP.NET MVC 路由概述 (C#)](asp-net-mvc-routing-overview-cs.md)
 - [了解操作筛选器 (C#)](understanding-action-filters-cs.md)
 - [通过输出缓存提升性能 (C#)](improving-performance-with-output-caching-cs.md)
-- [向缓存页面添加动态内容 (C#)](adding-dynamic-content-to-a-cached-page-cs.md)
+- [向缓存页添加动态内容 (C#)](adding-dynamic-content-to-a-cached-page-cs.md)
 - [创建控制器 (C#)](creating-a-controller-cs.md)
 - [创建操作 (C#)](creating-an-action-cs.md)
 - [ASP.NET MVC 路由概述 (VB)](asp-net-mvc-routing-overview-vb.md)
 - [了解操作筛选器 (VB)](understanding-action-filters-vb.md)
 - [通过输出缓存提升性能 (VB)](improving-performance-with-output-caching-vb.md)
-- [向缓存页面添加动态内容 (VB)](adding-dynamic-content-to-a-cached-page-vb.md)
+- [向缓存页添加动态内容 (VB)](adding-dynamic-content-to-a-cached-page-vb.md)
 - [创建控制器 (VB)](creating-a-controller-vb.md)
 - [创建操作 (VB)](creating-an-action-vb.md)
 - [ASP.NET MVC 控制器概述 (C#)](aspnet-mvc-controllers-overview-cs.md)

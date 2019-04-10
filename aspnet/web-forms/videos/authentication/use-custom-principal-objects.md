@@ -8,15 +8,15 @@ ms.date: 07/16/2008
 ms.assetid: 368733eb-0822-4b97-8e5a-127be6c88a61
 msc.legacyurl: /web-forms/videos/authentication/use-custom-principal-objects
 msc.type: video
-ms.openlocfilehash: 5cc5e0e492f5de324e094ecd58ee3cbded873dea
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3995ff1dd5a670b39c90c86cf68c85b19b6db0ce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062264"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397170"
 ---
-<a name="use-custom-principal-objects"></a>使用自定义主体对象
-====================
+# <a name="use-custom-principal-objects"></a>使用自定义主体对象
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner 演示如何实现自定义标识在主体对象以存储用户身份验证数据。 对于此演示的详细信息，本教程是位于[此处。](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md)

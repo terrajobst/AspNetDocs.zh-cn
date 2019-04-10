@@ -1,23 +1,24 @@
 ---
 uid: web-api/index
-title: ASP.NET Web API | Microsoft Docs
+title: ASP.NET Web API - ASP.NET 4.x
 author: rick-anderson
 description: 下载 ASP.NET MVC 4，并生成可连接大量客户端的 HTTP 服务。
 ms.author: riande
 ms.date: 01/17/2012
+ms.custom: seoapril2019
 ms.assetid: f571ca7a-c06b-400d-8051-f62f9f0bcc9b
 msc.legacyurl: /web-api
 msc.type: categoryindex
-ms.openlocfilehash: 3246478c9d159afce7e265af0a471d639ce202bf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c04719e06c6c0900c8f8268b73f833b525ea3dd6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022364"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410833"
 ---
-<a name="aspnet-web-api"></a>ASP.NET Web API
-====================
-- [指南](overview/index.md)
+# <a name="aspnet-web-api"></a>ASP.NET Web API
+
+- [指导](overview/index.md)
 
     - [入门](overview/getting-started-with-aspnet-web-api/index.md)
 
@@ -25,7 +26,7 @@ ms.locfileid: "57022364"
         - [Web API 2 的操作结果](overview/getting-started-with-aspnet-web-api/action-results.md)
         - [向 ASP.NET Web 窗体使用 Web API](overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
         - [创建 Web API 帮助页](overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-        - [动手实验：生成使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA)](overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+        - [动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)](overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
     - [路由](overview/web-api-routing-and-actions/index.md)
 
         - [Web API 中的路由](overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)
@@ -95,7 +96,7 @@ ms.locfileid: "57022364"
         - [Web API 中的身份验证和授权](overview/security/authentication-and-authorization-in-aspnet-web-api.md)
         - [在 Web API 2.2 中使用单独的帐户保护 Web API](overview/security/individual-accounts-in-web-api.md)
         - [使用 Web API 的外部身份验证服务 (C#)](overview/security/external-authentication-services.md)
-        - [在 Web API 中抵御跨站点请求伪造攻击 (CSRF)](overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)
+        - [在 Web API 中抵御跨站点请求伪造 (CSRF) 攻击](overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)
         - [在 Web API 2 中启用跨域请求](overview/security/enabling-cross-origin-requests-in-web-api.md)
         - [Web API 2 中的身份验证筛选器](overview/security/authentication-filters.md)
         - [Web API 中的基本身份验证](overview/security/basic-authentication.md)
@@ -113,8 +114,8 @@ ms.locfileid: "57022364"
         - [从 .NET 客户端调用 Web API (C#)](overview/advanced/calling-a-web-api-from-a-net-client.md)
         - [Web API 中的 HTTP 消息处理程序](overview/advanced/http-message-handlers.md)
         - [Web API 中的 HTTPClient 消息处理程序](overview/advanced/httpclient-message-handlers.md)
-        - [Web API 中发送 HTML 窗体数据：窗体 url 编码的数据](overview/advanced/sending-html-form-data-part-1.md)
-        - [Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](overview/advanced/sending-html-form-data-part-2.md)
+        - [在 Web API 中发送 HTML 窗体数据：窗体 URL 编码的数据](overview/advanced/sending-html-form-data-part-1.md)
+        - [在 Web API 中发送 HTML 窗体数据：文件上载和多部分 MIME](overview/advanced/sending-html-form-data-part-2.md)
         - [ASP.NET Web API 中的 HTTP Cookie](overview/advanced/http-cookies.md)
     - [发布](overview/releases/index.md)
 
@@ -140,10 +141,10 @@ ms.locfileid: "57022364"
     - [概述和入门](videos/getting-started/index.md)
 
         - [ASP.NET Web API](videos/getting-started/aspnet-web-api.md)
-        - [ASP.NET Web API，第 1 部分：第一个 Web API](videos/getting-started/your-first-web-api.md)
+        - [ASP.NET Web API，第 1 部分：首个 Web API](videos/getting-started/your-first-web-api.md)
         - [ASP.NET Web API，第 2 部分：获取数据](videos/getting-started/getting-data.md)
-        - [ASP.NET Web API，第 3 部分：Delete 和 Update](videos/getting-started/delete-and-update.md)
+        - [ASP.NET Web API，第 3 部分：删除和更新](videos/getting-started/delete-and-update.md)
         - [ASP.NET Web API，第 4 部分：分页和查询](videos/getting-started/paging-and-querying.md)
         - [ASP.NET Web API，第 5 部分：自定义验证](videos/getting-started/custom-validation.md)
-        - [ASP.NET Web API，第 6 部分：Authorization](videos/getting-started/authorization.md)
+        - [ASP.NET Web API，第 6 部分：授权](videos/getting-started/authorization.md)
 - [Web API 示例列表](samples-list.md)

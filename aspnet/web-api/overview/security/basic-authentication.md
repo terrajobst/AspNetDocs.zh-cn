@@ -8,15 +8,15 @@ ms.date: 10/02/2014
 ms.assetid: 41423767-0021-47c3-9e53-0021b457c39f
 msc.legacyurl: /web-api/overview/security/basic-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 7afafb6b7851f0d955d1f4292318f64d2a068a45
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1470bd4b5abd5199b9a5105973b053812d643351
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052374"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412549"
 ---
-<a name="basic-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的基本身份验证
-====================
+# <a name="basic-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的基本身份验证
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 基本身份验证定义中[RFC 2617、 HTTP 身份验证：基本和摘要式身份验证访问](http://www.ietf.org/rfc/rfc2617.txt)。

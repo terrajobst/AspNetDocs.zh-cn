@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: 9410a23c-9697-4f07-bd71-e62b0ceac655
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b1c7834e67f7682f82ecd0b2b5140260d104aecc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4bea4e70dd0c06fbcb0374d1c6a869c06d7e68b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035784"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387940"
 ---
-<a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>编辑和删除 DataList (VB) 中的数据的概述
-====================
+# <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>编辑和删除 DataList (VB) 中的数据的概述
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_36_VB.exe)或[下载 PDF](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/datatutorial36vb1.pdf)
@@ -59,7 +59,7 @@ ms.locfileid: "57035784"
 在其他文件夹中，喜欢`Default.aspx`在`EditDeleteDataList`文件夹在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image2.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image2.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image4.png))
 
@@ -107,12 +107,12 @@ ms.locfileid: "57035784"
 首先打开`Basics.aspx`页中`EditDeleteDataList`文件夹和设计视图中，从向页面添加 DataList。 接下来，从 DataList s 智能标记，创建新对象数据源。 由于我们正在与产品数据，将其配置为使用`ProductsBLL`类。 若要检索*所有*产品，选择`GetProducts()`选择选项卡中的方法。
 
 
-[![配置对象数据源以使用 ProductsBLL 类](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image6.png)
+[![C配置对象数据源以使用 ProductsBLL 类](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image6.png)
 
 **图 4**:配置为使用 ObjectDataSource`ProductsBLL`类 ([单击以查看实际尺寸的图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image8.png))
 
 
-[![返回使用 GetProducts() 方法的产品信息](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image9.png)
+[![Return 使用 GetProducts() 方法的产品信息](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image9.png)
 
 **图 5**:返回使用产品信息`GetProducts()`方法 ([单击以查看实际尺寸的图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image11.png))
 
@@ -120,7 +120,7 @@ ms.locfileid: "57035784"
 DataList，如 GridView，不用于插入新数据;因此，请选择 (None) 选项从插入选项卡中的下拉列表。此外选择 （无） 为 UPDATE 和 DELETE 选项卡由于将通过 BLL 以编程方式执行更新和删除操作。
 
 
-[![确认下拉列表中的 ObjectDataSource s 插入、 更新和删除选项卡设置为 （无）](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image12.png)
+[![C确认在 ObjectDataSource s 中的下拉列表列出了插入、 更新和删除选项卡设置为 （无）](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image12.png)
 
 **图 6**:确认在 ObjectDataSource 的插入、 更新和删除选项卡中的下拉列表列出了已设置为 （无） ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image14.png))
 
@@ -139,7 +139,7 @@ DataList，如 GridView，不用于插入新数据;因此，请选择 (None) 选
 花点时间查看我们通过浏览器的进度。 如图 7 所示，DataList 两列中显示每个产品的产品名称和单位价格。
 
 
-[![在两个列 DataList 中显示的产品名称和价格](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image15.png)
+[![T他的产品名称和价格显示在两个列 DataList](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image15.png)
 
 **图 7**:在两个列 DataList 中显示的产品名称和价格 ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image17.png))
 
@@ -147,7 +147,7 @@ DataList，如 GridView，不用于插入新数据;因此，请选择 (None) 选
 > [!NOTE]
 > DataList 具有多个属性所需的更新和删除过程中，并且这些值存储在视图状态。 因此，如果构建 DataList 支持编辑或删除数据，很重要，启用 DataList 的视图状态。  
 >   
->  敏锐的读者可能还记得我们能够创建可编辑的 Gridview、 DetailsViews 和 FormViews 时禁用视图状态。 这是因为 ASP.NET 2.0 Web 控件可以包括*控制状态*，这类似于视图状态，但认为重要的回发之间保留状态。
+> 敏锐的读者可能还记得我们能够创建可编辑的 Gridview、 DetailsViews 和 FormViews 时禁用视图状态。 这是因为 ASP.NET 2.0 Web 控件可以包括*控制状态*，这类似于视图状态，但认为重要的回发之间保留状态。
 
 
 禁用视图状态 GridView 中的只是省略了简单的状态信息，但维护控件状态 （其中包括用于编辑和删除所需的状态）。 DataList，在 ASP.NET 1.x 的时间范围内，创建不使用控件状态，因此必须将启用视图状态。 请参阅[控件状态 vs。视图状态](https://msdn.microsoft.com/library/1whwt1k7.aspx)有关的控件状态，如果从视图状态的不同用途的详细信息。
@@ -161,7 +161,7 @@ DataList，另一方面，呈现其使用模板的项。 使用呈现只读项`I
 `EditItemTemplate`可以 （通过选择编辑模板选项从 DataList s 智能标记） 以声明方式或通过设计器创建。 要使用编辑模板选项，请首先单击智能标记中的编辑模板链接，然后选择`EditItemTemplate`从下拉列表中的项。
 
 
-[![使用 DataList 的 EditItemTemplate，从而选择启用](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image18.png)
+[![O使用 DataList 的 EditItemTemplate pt](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image18.png)
 
 **图 8**:使用 DataList s，从而选择启用`EditItemTemplate`([单击以查看实际尺寸的图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image20.png))
 
@@ -169,7 +169,7 @@ DataList，另一方面，呈现其使用模板的项。 使用呈现只读项`I
 接下来，键入产品名称中: 和价格:，然后将两个 TextBox 控件从工具箱到`EditItemTemplate`设计器上的接口。 设置文本框`ID`属性设置为`ProductName`和`UnitPrice`。
 
 
-[![将 TextBox 添加的产品名称和价格](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image21.png)
+[![Add 的产品名称和价格文本框](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image21.png)
 
 **图 9**:添加文本框中的产品名称和价格 ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image23.png))
 
@@ -198,7 +198,7 @@ DataList，另一方面，呈现其使用模板的项。 使用呈现只读项`I
 将添加到`EditItemTemplate`两个按钮 Web 控件、 一个其`CommandName`设置为更新和其他设置为取消。 以后将添加这两个按钮 Web 控件在设计器看起来应类似于下面：
 
 
-[![添加更新和取消按钮 EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image25.png)
+[![Add 更新和取消按钮添加到 EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image25.png)
 
 **图 11**:添加更新和取消按钮添加到`EditItemTemplate`([单击以查看实际尺寸的图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image27.png))
 
@@ -215,7 +215,7 @@ DataList，另一方面，呈现其使用模板的项。 使用呈现只读项`I
 已添加此编辑按钮后，需要一段时间来查看通过浏览器页面。 添加此元素后，每个产品列表应包括一个编辑按钮。
 
 
-[![添加更新和取消按钮 EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image28.png)
+[![Add 更新和取消按钮添加到 EditItemTemplate](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image28.png)
 
 **图 12**:添加更新和取消按钮添加到`EditItemTemplate`([单击以查看实际尺寸的图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image30.png))
 
@@ -235,7 +235,7 @@ DataList，另一方面，呈现其使用模板的项。 使用呈现只读项`I
 添加此事件处理程序后, 重新访问浏览器中的页。 单击编辑按钮现在可以被单击的产品可编辑 （请参阅图 13）。
 
 
-[![单击可编辑产品建立的编辑按钮](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image31.png)
+[![C单击编辑按钮使产品可编辑](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image31.png)
 
 **图 13**:单击编辑按钮使产品可编辑 ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image33.png))
 
@@ -283,17 +283,17 @@ DataList，另一方面，呈现其使用模板的项。 使用呈现只读项`I
 与`EditCommand`， `CancelCommand`，和`UpdateCommand`事件处理程序完成，访问者可以编辑名称和产品价格。 图 14-16 显示运行中的此编辑工作流。
 
 
-[![第一个访问的页面，所有的产品时处于只读模式](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image34.png)
+[![W第一个访问的页面，所有产品的 hen 处于只读模式](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image34.png)
 
 **图 14**:当首次访问的页面，所有产品都都在只读模式下 ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image36.png))
 
 
-[![若要更新的产品名称的价格，请单击编辑按钮](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image37.png)
+[![To 更新产品的名称或价格，请单击编辑按钮](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image37.png)
 
 **图 15**:若要更新的产品名称或价格，请单击编辑按钮 ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image39.png))
 
 
-[![在更改值后，请单击更新返回到只读模式](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image40.png)
+[![A更改此值，单击更新返回到只读模式下的页符](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image40.png)
 
 **图 16**:之后更改此值，单击更新返回到只读模式 ([单击此项可查看原尺寸图像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image42.png))
 

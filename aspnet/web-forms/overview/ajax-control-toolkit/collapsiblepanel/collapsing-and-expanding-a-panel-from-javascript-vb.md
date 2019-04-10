@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 298789b4-2964-49f5-a0a8-d4dbeb9ff2c2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f80a6979966a887db0557b4f1b98570e10b1ab7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b41423cb1e587df121828b1e57045cabfede7cb5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390826"
 ---
-<a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>通过 JavaScript 折叠和展开面板 (VB)
-====================
+# <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>通过 JavaScript 折叠和展开面板 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/8/a/a/8aab3c3e-de6f-463f-805c-5fda567eef6e/CollapsiblePanel1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/collapsiblepanel1VB.pdf)
@@ -65,9 +65,9 @@ CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并�
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-vb/samples/sample8.js)]
 
 
-[![第三个按钮更改面板的状态： 从折叠到扩展和后端](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image1.png)
+[![T他的第三个按钮更改面板的状态： 从折叠到扩展和后端](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image1.png)
 
 第三个按钮更改面板的状态： 从折叠到扩展和后端 ([单击此项可查看原尺寸图像](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](collapsing-and-expanding-a-panel-from-javascript-cs.md)
+> [上一个](collapsing-and-expanding-a-panel-from-javascript-cs.md)

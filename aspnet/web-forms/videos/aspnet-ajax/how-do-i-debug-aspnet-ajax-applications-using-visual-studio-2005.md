@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: 0c766dac-5366-47e4-baa4-3a9fd71e4b80
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005
 msc.type: video
-ms.openlocfilehash: 15dc6d0f9e6f77d387b1fd1df97bf1515e39737a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 12b0826408679461f58106a393dd2e0408c2f8c9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024674"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408220"
 ---
-<a name="how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005"></a>[如何实现:]调试 ASP.NET AJAX 应用程序使用 Visual Studio 2005？
-====================
+# <a name="how-do-i-debug-aspnet-ajax-applications-using-visual-studio-2005"></a>[如何实现:]调试 ASP.NET AJAX 应用程序使用 Visual Studio 2005？
+
 通过[中，Scott Golightly](https://github.com/scottgolightly)
 
 在本视频中，我们将了解如何使用 Visual Studio 2005 调试 ASP.NET AJAX 应用程序。 我们显示如何使用 ScriptManager 来访问 JavaScript 创建的 ASP.NET AJAX 服务器控件，并且我们还将了解如何使用 Sys.Debug 类要插入的跟踪消息和一个断点。

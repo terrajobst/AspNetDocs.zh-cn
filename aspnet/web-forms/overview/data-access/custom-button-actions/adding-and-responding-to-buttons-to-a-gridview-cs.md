@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: 128fdb5f-4c5e-42b5-b485-f3aee90a8e38
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a081b1633e7762560aea68500f5bd614e4fb5a6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a8cc1d98c0574145b0b74b64d53772bd50517067
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035874"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404190"
 ---
-<a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>添加和响应 GridView 的按钮 (C#)
-====================
+# <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>添加和响应 GridView 的按钮 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_28_CS.exe)或[下载 PDF](adding-and-responding-to-buttons-to-a-gridview-cs/_static/datatutorial28cs1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "57035874"
 除了编辑和删除按钮、 GridView、 DetailsView 和 FormView 控件还可以包括按钮、 Linkbutton 或 ImageButtons，单击时，执行一些自定义服务器端逻辑。 在本教程中我们将介绍如何将自定义按钮，添加到模板和 GridView 或 DetailsView 控件的字段。 具体而言，我们将构建具有允许用户翻页查看供应商 FormView 的接口。 对于给定的供应商，FormView 将显示一个按钮 Web 控件，如停止使用，如果单击，将标记所有其关联的产品以及供应商有关的信息。 此外，GridView 列出的所选的供应商，提供与每个行包含增加价格和折扣价格的按钮，如果单击，引发或降低该产品的那些产品`UnitPrice`（参见图 1） 的 10%。
 
 
-[![FormView 和 GridView 包含执行自定义操作的按钮](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image2.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image1.png)
+[![B其他 FormView 和 GridView 包含按钮，执行自定义操作](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image2.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image1.png)
 
 **图 1**:FormView 和 GridView 包含按钮，执行自定义操作 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image3.png))
 
@@ -52,7 +52,7 @@ ms.locfileid: "57035874"
 在其他文件夹中，喜欢`Default.aspx`在`CustomButtons`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面的设计视图上拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image6.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image5.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image6.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image5.png)
 
 **图 3**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image7.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "57035874"
 首先打开`CustomButtons.aspx`页中`CustomButtons`文件夹。 通过从工具箱拖到设计器和组拖动到页面添加 FormView 及其`ID`属性设置为`Suppliers`。 从 FormView 的智能标记上，选择创建名为新 ObjectDataSource `SuppliersDataSource`。
 
 
-[![创建名为 SuppliersDataSource 新 ObjectDataSource](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image10.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image9.png)
+[![C创建新对象数据源名为 SuppliersDataSource](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image10.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image9.png)
 
 **图 5**:创建新对象数据源命名`SuppliersDataSource`([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image11.png))
 
@@ -84,7 +84,7 @@ ms.locfileid: "57035874"
 配置此新对象数据源，以便它将查询从`SuppliersBLL`类的`GetSuppliers()`方法 （请参阅图 6）。 由于此 FormView 不用于更新供应商信息，请选择更新选项卡中的下拉列表从 (None) 选项提供一个接口。
 
 
-[![配置数据源以使用 SuppliersBLL 类的 GetSuppliers() 方法](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image13.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image12.png)
+[![C配置数据源以使用 SuppliersBLL 类的 GetSuppliers() 方法](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image13.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image12.png)
 
 **图 6**:配置要使用的数据源`SuppliersBLL`类的`GetSuppliers()`方法 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image14.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "57035874"
 图 7 显示了 CustomButtons.aspx 页时的浏览器查看。
 
 
-[![FormView 列出了公司名称和从当前所选的供应商的电话号码字段](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image16.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image15.png)
+[![T他 FormView 列出 CompanyName 和当前所选供应商的电话号码字段](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image16.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image15.png)
 
 **图 7**:FormView 列出`CompanyName`并`Phone`字段从当前所选供应商 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image17.png))
 
@@ -106,7 +106,7 @@ ms.locfileid: "57035874"
 我们将停止所有产品按钮都添加到 FormView 的模板之前，让我们先都添加下方列出的所选的供应商提供的产品 FormView GridView。 若要实现此目的，向页面添加一个 GridView，设置其`ID`属性设置为`SuppliersProducts`，并添加名为新 ObjectDataSource `SuppliersProductsDataSource`。
 
 
-[![创建名为 SuppliersProductsDataSource 新 ObjectDataSource](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image19.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image18.png)
+[![C创建新对象数据源名为 SuppliersProductsDataSource](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image19.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image18.png)
 
 **图 8**:创建新对象数据源命名`SuppliersProductsDataSource`([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image20.png))
 
@@ -114,7 +114,7 @@ ms.locfileid: "57035874"
 配置为使用 ProductsBLL 类的此 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法 （请参阅图 9）。 虽然产品的价格调整将允许此 GridView，它不会使用内置编辑或删除从 GridView 的功能。 因此，我们可以设置为 （无） 下拉列表，用于存储对象数据源的插入、 更新和删除选项卡。
 
 
-[![配置数据源以使用 ProductsBLL 类的 GetProductsBySupplierID(supplierID) 方法](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image22.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image21.png)
+[![C配置数据源以使用 ProductsBLL 类的 GetProductsBySupplierID(supplierID) 方法](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image22.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image21.png)
 
 **图 9**:配置要使用的数据源`ProductsBLL`类的`GetProductsBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image23.png))
 
@@ -122,7 +122,7 @@ ms.locfileid: "57035874"
 由于`GetProductsBySupplierID(supplierID)`方法接受一个输入的参数、 ObjectDataSource 向导提示我们输入此参数值的源。 要传入`SupplierID`FormView 从值时，请将参数源下拉列表设置为控制和 ControlID 下拉列表到`Suppliers`（在步骤 2 中创建的 FormView ID）。
 
 
-[![指示，供应商 Id 参数应来自于供应商 FormView 控件](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image24.png)
+[![I供应商 Id 参数应来自供应商 FormView 控件指示](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image24.png)
 
 **图 10**:指示*`supplierID`* 参数应该来自于`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
 
@@ -134,7 +134,7 @@ ms.locfileid: "57035874"
 此时将在本教程中显示母版/详细信息报表，这样就允许用户从顶部 FormView 选取一个供应商并查看底部 GridView 通过该供应商提供的产品。 图 11 从 FormView 选择为全供应商时显示此页的屏幕截图。
 
 
-[![GridView 中显示所选供应商的产品](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image28.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image27.png)
+[![T他在 GridView 中显示的产品的所选供应商 s](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image28.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image27.png)
 
 **图 11**:在 GridView 中显示所选供应商的产品 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image29.png))
 
@@ -146,7 +146,7 @@ ms.locfileid: "57035874"
 因为我们已经在我们前面的教程，我们将使用一种自下而上的方法，开始创建 DAL 方法，然后 BLL 方法，并最后在 ASP.NET 页面中实现的功能。 打开`Northwind.xsd`类型中的数据集`App_Code/DAL`文件夹并添加到新方法`ProductsTableAdapter`(右键单击`ProductsTableAdapter`，然后选择添加查询)。 执行此操作将打开 TableAdapter 查询配置向导中，我们介绍了添加新方法的过程。 首先，该值指示我们 DAL 方法将使用的临时 SQL 语句。
 
 
-[![创建 DAL 方法使用的临时 SQL 语句](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image31.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image30.png)
+[![C创建 DAL 的方法使用临时 SQL 语句](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image31.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image30.png)
 
 **图 12**:创建 DAL 的方法使用一个临时 SQL 语句 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image32.png))
 
@@ -154,7 +154,7 @@ ms.locfileid: "57035874"
 接下来，向导会提示我们关于哪些类型的查询来创建。 由于`DiscontinueAllProductsForSupplier(supplierID)`方法将需要更新`Products`设置的数据库表`Discontinued`为 1 的所有产品提供的指定字段*`supplierID`*，我们需要创建更新数据的查询。
 
 
-[![选择更新查询类型](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image33.png)
+[![C选择更新查询类型](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image33.png)
 
 **图 13**:选择更新查询类型 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image35.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "57035874"
 输入此查询，并单击下一步之后, 会要求的新方法的名称，请使用的最后一个向导屏幕`DiscontinueAllProductsForSupplier`。 单击完成按钮完成该向导。 返回到数据集设计器时，您应看到中的新方法`ProductsTableAdapter`名为`DiscontinueAllProductsForSupplier(@SupplierID)`。
 
 
-[![命名新的 DAL 方法 DiscontinueAllProductsForSupplier](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image37.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image36.png)
+[![N\ 新 DAL 方法 DiscontinueAllProductsForSupplier 名称](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image37.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image36.png)
 
 **图 14**:新的 DAL 方法命名`DiscontinueAllProductsForSupplier`([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image38.png))
 
@@ -186,7 +186,7 @@ ms.locfileid: "57035874"
 与`DiscontinueAllProductsForSupplier(supplierID)`方法中的 BLL 和 DAL 完整，添加所选的供应商停止所有产品的功能的最后一步是将一个按钮 Web 控件添加到 FormView 的`ItemTemplate`。 让我们来添加此类按钮下面的按钮文本，停止所有产品的供应商的电话号码和一个`ID`属性值为`DiscontinueAllProductsForSupplier`。 您可以通过单击 FormView 的智能标记中的编辑模板链接添加设计器通过此按钮 Web 控件 （请参阅图 15），或直接通过声明性语法。
 
 
-[![添加停止所有产品按钮 Web 控件到 FormView 的 ItemTemplate](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image40.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image39.png)
+[![Add 的停止所有产品按钮 Web 控件与 s 的 FormView ItemTemplate](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image40.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image39.png)
 
 **图 15**:将停止所有产品按钮 Web 控件都添加到 FormView `ItemTemplate` ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image41.png))
 
@@ -222,7 +222,7 @@ ms.locfileid: "57035874"
 如果禁用了 GridView 的视图状态，GridView 正在重新绑定到基础数据存储在每个回发时，，因此将立即更新以反映，这两种产品已现在不再使用 （请参阅图 17）。 如果，但是，不禁用了 GridView 中的视图状态，你将需要手动进行此更改后重新绑定到 GridView 数据。 若要完成此操作，只需进行到 GridView 的调用`DataBind()`方法后立即调用`DiscontinueAllProductsForSupplier(supplierID)`方法。
 
 
-[![单击停止所有的产品按钮后，供应商的产品更新相应地受到了](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image46.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image45.png)
+[![A单击停止所有产品按钮，页符供应商的产品的相应地更新](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image46.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image45.png)
 
 **图 17**:单击停止所有的产品按钮后，供应商的产品更新相应地受到了 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image47.png))
 
@@ -276,19 +276,19 @@ GridView （和 DetailsView） 都由组成的字段的集合。 除了 BoundFie
 图 20 显示的页时查看奶奶 Kelly 家居提供的产品。 图 21 显示结果后的价格 + 10%按钮点击两次以奶奶的梅分布和价格-10%按钮一次为 Cranberry 胡椒粉。
 
 
-[![GridView 包括价格 + 10%和价格-10%按钮](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image51.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image50.png)
+[![T他 GridView 包括价格 + 10%和价格-10%按钮](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image51.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image50.png)
 
 **图 20**:GridView 包括价格 + 10%和价格-10%按钮 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image52.png))
 
 
-[![第一个和第三个产品的价格已更新通过价格 + 10%和价格-10%按钮](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image54.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image53.png)
+[![T他价格的第一个和第三个产品已更新通过价格 + 10%和价格-10%按钮](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image54.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image53.png)
 
 **图 21**:第一个和第三个产品已更新通过价格 + 10 的价格 %和价格-10%按钮 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image55.png))
 
 
 > [!NOTE]
 > 按钮、 Linkbutton 或添加到其 Templatefield ImageButtons 还可以具有的 GridView 和 DetailsView）。 如使用 BoundField 这些按钮，单击时，将引发一个回发，引发 GridView 的`RowCommand`事件。 当添加按钮 TemplateField，但是，该按钮的`CommandArgument`不自动设置为的行的索引按原样使用 ButtonFields 时。 如果您需要确定在被单击的按钮的行索引`RowCommand`事件处理程序，你将需要手动设置按钮的`CommandArgument`TemplateField，使用类似的代码中其声明性语法中的属性：  
-> `<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`。
+> `<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`.
 
 
 ## <a name="summary"></a>总结
@@ -304,4 +304,4 @@ GridView （和 DetailsView） 都由组成的字段的集合。 除了 BoundFie
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 > [!div class="step-by-step"]
-> [下一页](adding-and-responding-to-buttons-to-a-gridview-vb.md)
+> [下一步](adding-and-responding-to-buttons-to-a-gridview-vb.md)

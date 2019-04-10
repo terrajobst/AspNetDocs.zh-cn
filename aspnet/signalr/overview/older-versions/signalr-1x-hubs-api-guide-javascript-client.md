@@ -8,15 +8,15 @@ ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: eb40648ca06adcceaa613ba86abfcf7459369c7e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a28b6043ac183ceb66e3ef2ad322436901aa50bc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035114"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412835"
 ---
-<a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 中心 API 指南 - JavaScript 客户端
-====================
+# <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 中心 API 指南 - JavaScript 客户端
+
 通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -445,13 +445,13 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 
 SignalR 提供了以下连接可以处理的生存期事件：
 
-- `starting`：通过连接发送任何数据之前引发。
-- `received`：在连接上接收到任何数据时引发。 提供接收到的数据。
-- `connectionSlow`：当客户端检测到慢速或频繁删除连接时引发。
-- `reconnecting`：基础传输开始重新连接时引发。
-- `reconnected`：当基础传输已重新连接时引发。
-- `stateChanged`：连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
-- `disconnected`：当连接已断开连接时引发。
+- `starting`:通过连接发送任何数据之前引发。
+- `received`:在连接上接收到任何数据时引发。 提供接收到的数据。
+- `connectionSlow`:当客户端检测到慢速或频繁删除连接时引发。
+- `reconnecting`:基础传输开始重新连接时引发。
+- `reconnected`:当基础传输已重新连接时引发。
+- `stateChanged`:连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
+- `disconnected`:当连接已断开连接时引发。
 
 例如，如果你想要有可能会导致明显延迟的连接问题时显示警告消息，处理`connectionSlow`事件。
 

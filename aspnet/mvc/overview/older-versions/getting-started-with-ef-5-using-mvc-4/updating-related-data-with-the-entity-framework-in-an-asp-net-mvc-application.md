@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: ceb311f16575f7aedf0fd789a28e7313daeeaceb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5dc49d7467db01e62db147c7083ed62379d23940
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394154"
 ---
-<a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>使用实体框架在 ASP.NET MVC 应用程序 (共 10 个 6) 更新相关的数据
-====================
+# <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>使用实体框架在 ASP.NET MVC 应用程序 (共 10 个 6) 更新相关的数据
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)

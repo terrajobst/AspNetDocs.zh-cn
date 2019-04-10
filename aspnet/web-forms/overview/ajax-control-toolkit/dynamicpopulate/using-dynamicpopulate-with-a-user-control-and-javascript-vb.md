@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 778b9009-76f2-4665-940e-afc0e35bc917
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b863cb0045fcec202931148bff5befa7ed62db4d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6aee7a07402e407b4c7b0bcd7a5e926955bf96b1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424139"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410729"
 ---
-<a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>通过用户控件和 JavaScript 使用 DynamicPopulate (VB)
-====================
+# <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>通过用户控件和 JavaScript 使用 DynamicPopulate (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate2.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate2VB.pdf)
@@ -67,9 +67,9 @@ ms.locfileid: "58424139"
 就是这么简单！ 页面的行为都按预期方式：用户单击其中一个单选按钮，该工具包中的控件调用 web 服务，并以所需的格式显示当前日期。
 
 
-[![单选按钮位于用户控件](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image1.png)
+[![T他单选按钮位于用户控件](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image1.png)
 
 单选按钮位于用户控件 ([单击此项可查看原尺寸图像](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一篇](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [上一个](dynamically-populating-a-control-using-javascript-code-vb.md)

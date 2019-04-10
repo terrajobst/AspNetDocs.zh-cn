@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: e8e0809b-25c4-4c3b-8d12-9a17048148ae
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd66affc6ceab864ca753287f484a37c7671f20f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 4657d1ffbcae90a9a0bc283c0d6f604891e29d13
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423047"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414460"
 ---
-<a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>分页 DataList 或 Repeater 控件中的报表数据 (C#)
-====================
+# <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>分页 DataList 或 Repeater 控件中的报表数据 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_44_CS.exe)或[下载 PDF](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial44cs1.pdf)
@@ -53,7 +53,7 @@ ms.locfileid: "58423047"
 接下来，打开`Default.aspx`页上，并将其拖`SectionLevelTutorialListing.ascx`从用户控制`UserControls`文件夹拖到设计图面。 此用户控件，我们在中创建[母版页和站点导航](../introduction/master-pages-and-site-navigation-cs.md)教程中，枚举站点图，并在项目符号列表中的当前部分中显示这些教程。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image3.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image3.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image4.png))
 
@@ -110,7 +110,7 @@ ms.locfileid: "58423047"
 与`GetProductsAsPagedDataSource`方法添加到`ProductsBLL`类中，我们现在可以创建 DataList 或 Repeater 提供默认的分页。 首先打开`Paging.aspx`页中`PagingSortingDataListRepeater`文件夹，然后从工具箱拖到设计器中，设置 DataList 的拖动 DataList`ID`属性设置为`ProductsDefaultPaging`。 从 DataList s 智能标记，创建名为新 ObjectDataSource`ProductsDefaultPagingDataSource`并将其配置，以便它检索的数据使用`GetProductsAsPagedDataSource`方法。
 
 
-[![创建对象数据源，并将其配置为使用 GetProductsAsPagedDataSource （） 方法](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
+[![C创建 ObjectDataSource 和将其配置为使用 GetProductsAsPagedDataSource （） 方法](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
 
 **图 5**:创建对象数据源，并将其配置为使用`GetProductsAsPagedDataSource``()`方法 ([单击以查看实际尺寸的图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image9.png))
 
@@ -118,7 +118,7 @@ ms.locfileid: "58423047"
 设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
 
-[![设置下拉列表中插入、 更新和删除选项卡添加到 （无）](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
+[![S东部时间为 （无） 更新、 插入和删除选项卡中的下拉列表列出了](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
 
 **图 6**:设置下拉列表中插入、 更新和删除选项卡添加到 （无） ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image12.png))
 
@@ -130,7 +130,7 @@ ms.locfileid: "58423047"
 具体而言，使用的查询字符串字段 pageIndex 和的 pageSize`pageIndex`和`pageSize`参数，分别 （请参阅图 7）。 因为查询字符串值不会出现在用户首次访问此页时，请花费片刻时间来设置这些参数的默认值。 有关`pageIndex`，默认值设置为 0 （这将显示数据的第一页） 和`pageSize`的默认值为 4。
 
 
-[![使用查询字符串作为源的 pageIndex 和 pageSize 参数](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
+[![Use pageIndex 和 pageSize 参数源作为查询字符串](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
 
 **图 7**:在查询字符串用作源`pageIndex`并`pageSize`参数 ([单击以查看实际尺寸的图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image15.png))
 
@@ -149,7 +149,7 @@ ms.locfileid: "58423047"
 最初都不访问浏览器中，通过此页时`pageIndex`也不`pageSize`提供查询字符串参数。 因此，使用默认值为 0 和 4。 如图 8 所示，这会导致显示的前四个产品 DataList。
 
 
-[![列出了第四个产品](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image16.png)
+[![T列出了他第四个产品](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image16.png)
 
 **图 8**:列出了第四个产品 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image18.png))
 
@@ -157,7 +157,7 @@ ms.locfileid: "58423047"
 没有分页界面，那里 s 当前不简单意味着用户可以导航到第二个数据页。 我们将在步骤 4 中创建分页界面。 现在，不过，分页仅可通过直接在查询字符串中指定的分页条件。 例如，若要查看的第二页，更改从浏览器的地址栏中的 URL`Paging.aspx`到`Paging.aspx?pageIndex=2`并按 Enter。 这会导致数据要显示的第二页 （请参阅图 9）。
 
 
-[![显示第二个数据页](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image19.png)
+[![T他第二个数据页显示](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image19.png)
 
 **图 9**:显示第二个数据页 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image21.png))
 
@@ -238,12 +238,12 @@ ms.locfileid: "58423047"
 图 10 显示了`Paging.aspx`首次访问时。 由于在查询字符串为空，DataList 默认显示前四个产品;第一个和上一步按钮已禁用。 单击下一步显示 （请参阅图 11） 的四个记录;第一个和上一步按钮现已启用。
 
 
-[![显示第一个数据页](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image22.png)
+[![T他的第一个数据页显示](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image22.png)
 
 **图 10**:显示第一个数据页 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image24.png))
 
 
-[![显示第二个数据页](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image25.png)
+[![T他第二个数据页显示](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image25.png)
 
 **图 11**:显示第二个数据页 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image27.png))
 
@@ -279,4 +279,4 @@ DataList 逐页浏览使用效率低下默认分页方法及其数据。 时分�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Liz Shulok、 Ken Pespisa 和伯纳黛特 Leigh。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+> [下一步](sorting-data-in-a-datalist-or-repeater-control-cs.md)

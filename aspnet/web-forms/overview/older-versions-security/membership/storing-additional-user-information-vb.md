@@ -8,15 +8,15 @@ ms.date: 01/18/2008
 ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 33e686cc3b977c6c740dfaf1057e1e399d5a298b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7dad99f2ae7e71cb697426bc97414fd4e4873aa5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052974"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400485"
 ---
-<a name="storing-additional-user-information-vb"></a>存储其他用户信息 (VB)
-====================
+# <a name="storing-additional-user-information-vb"></a>存储其他用户信息 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_08_VB.zip)或[下载 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial08_ExtraUserInfo_vb.pdf)
@@ -24,7 +24,7 @@ ms.locfileid: "57052974"
 > 在本教程中我们将通过构建一个非常基本的访客留言簿应用程序来回答此问题。 这样，我们将看看不同的选项来建模在数据库中，用户信息，然后了解如何将此数据与成员资格框架创建的用户帐户相关联。
 
 
-## <a name="introduction"></a>简介
+## <a name="introduction"></a>介绍
 
 ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成员资格 API 包括用于验证凭据、 检索有关当前已登录用户的信息、 创建新的用户帐户，和删除用户帐户，以及其他方法。 在成员资格框架中的每个用户帐户包含仅用于验证凭据和执行基本的用户帐户相关的任务所需的属性。 这众多的方法和属性[`MembershipUser`类](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)，该模型成员资格框架中的用户帐户。 此类具有属性，如[ `UserName` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.username.aspx)， [ `Email` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.email.aspx)，以及[ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx)，并等方法[ `GetPassword` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.getpassword.aspx)并[ `UnlockUser` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)。
 
@@ -45,7 +45,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 若要将此表添加到我们的数据库，请转到 Visual Studio 中的数据库资源管理器和向下钻取到`SecurityTutorials`数据库。 右键单击表文件夹并选择添加新表。 此时会打开一个接口，可用于定义新的表的列。
 
 
-[![将新表添加到 SecurityTutorials 数据库](storing-additional-user-information-vb/_static/image2.png)](storing-additional-user-information-vb/_static/image1.png)
+[![Add SecurityTutorials 数据库到新表](storing-additional-user-information-vb/_static/image2.png)](storing-additional-user-information-vb/_static/image1.png)
 
 **图 1**:添加一个新表格`SecurityTutorials`数据库 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image3.png))
 
@@ -53,7 +53,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 接下来，定义`GuestbookComments`的列。 首先，通过添加一个名为列`CommentId`类型的`uniqueidentifier`。 此列将唯一地标识访客留言簿中的每个注释，因此不允许`NULL`s 并将其标记为表的主键。 而不是提供值`CommentId`每个字段`INSERT`，我们可以指示新`uniqueidentifier`值应为自动生成此字段上`INSERT`列的默认值设置为`NEWID()`。 添加此第一个字段，将其标记为主键，并设置为其默认值后, 你的屏幕应类似于屏幕截图中图 2 所示。
 
 
-[![添加一个名为 CommentId 的主列](storing-additional-user-information-vb/_static/image5.png)](storing-additional-user-information-vb/_static/image4.png)
+[![Add 主列命名为 CommentId](storing-additional-user-information-vb/_static/image5.png)](storing-additional-user-information-vb/_static/image4.png)
 
 **图 2**:添加主列命名为`CommentId`([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image6.png))
 
@@ -73,7 +73,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 单击外键关系对话框左下角中的添加按钮。 尽管我们仍需要在关系中定义参与的表，这将添加新的外键约束。
 
 
-[![使用外键关系对话框中管理表的外键约束](storing-additional-user-information-vb/_static/image8.png)](storing-additional-user-information-vb/_static/image7.png)
+[![Use 外键关系对话框中管理表的 Foreign Key Constraints](storing-additional-user-information-vb/_static/image8.png)](storing-additional-user-information-vb/_static/image7.png)
 
 **图 3**:使用外键关系对话框中管理表的外键约束 ([单击此项可查看原尺寸图像](storing-additional-user-information-vb/_static/image9.png))
 
@@ -81,7 +81,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 接下来，单击右侧的"表和列规范"行中的省略号图标。 这将启动表和列对话框，从中我们可以指定主键表和列和外的键列从`GuestbookComments`表。 具体而言，选择`aspnet_Users`并`UserId`作为主键表和列，并`UserId`从`GuestbookComments`表作为外键列 （请参阅图 4）。 在定义的主键和外键表和列之后, 单击确定以返回到外键关系对话框中。
 
 
-[![建立外键约束之间 aspnet_Users 和 GuesbookComments 表](storing-additional-user-information-vb/_static/image11.png)](storing-additional-user-information-vb/_static/image10.png)
+[![Establish 外键约束之间 aspnet_Users 和 GuesbookComments 表](storing-additional-user-information-vb/_static/image11.png)](storing-additional-user-information-vb/_static/image10.png)
 
 **图 4**:外键约束之间建立`aspnet_Users`并`GuesbookComments`表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image12.png))
 
@@ -91,7 +91,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 外键约束可以配置为删除父记录时自动删除关联的子记录。 换而言之，我们可以设置该外键约束，以便删除其用户帐户时，会自动删除用户的留言簿条目。 若要实现此目的，展开"INSERT 和 UPDATE 规范"部分，并将"删除规则"属性设置为 Cascade。
 
 
-[![配置为级联删除的外键约束](storing-additional-user-information-vb/_static/image14.png)](storing-additional-user-information-vb/_static/image13.png)
+[![C配置外键约束为级联删除](storing-additional-user-information-vb/_static/image14.png)](storing-additional-user-information-vb/_static/image13.png)
 
 **图 5**:配置为级联删除外键约束 ([单击此项可查看原尺寸图像](storing-additional-user-information-vb/_static/image15.png))
 
@@ -115,7 +115,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 我们将创建一个名为的新表`UserProfiles`以保存家庭城镇、 主页，并为每个用户的签名。 右键单击数据库资源管理器窗口中的表文件夹并选择创建新表。 命名的第一列`UserId`并将其类型设置为`uniqueidentifier`。 不允许`NULL`值，并将标记为主键列。 接下来，添加名为的列：`HomeTown`类型的`nvarchar(50)`;`HomepageUrl`类型的`nvarchar(100)`; 和类型的签名`nvarchar(500)`。 这三列的每个可接受`NULL`值。
 
 
-[![创建在 UserProfiles 表](storing-additional-user-information-vb/_static/image17.png)](storing-additional-user-information-vb/_static/image16.png)
+[![Create UserProfiles 表](storing-additional-user-information-vb/_static/image17.png)](storing-additional-user-information-vb/_static/image16.png)
 
 **图 6**:创建`UserProfiles`表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image18.png))
 
@@ -133,7 +133,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 打开`AdditionalUserInfo.aspx`页中`Membership`文件夹并将的 DetailsView 控件添加到页上，其 ID 属性设置为`UserProfile`并清除其`Width`和`Height`属性。 展开 DetailsView 的智能标记，并选择将其绑定到新的数据源控件。 这将启动数据源配置向导 （请参阅图 7）。 第一步会要求您指定的数据源类型。 由于我们要直接连接到`SecurityTutorials`数据库，则选择数据库图标，指定`ID`作为`UserProfileDataSource`。
 
 
-[![添加名为 UserProfileDataSource 新 SqlDataSource 控件](storing-additional-user-information-vb/_static/image20.png)](storing-additional-user-information-vb/_static/image19.png)
+[![Add 新 SqlDataSource 控件名为 UserProfileDataSource](storing-additional-user-information-vb/_static/image20.png)](storing-additional-user-information-vb/_static/image19.png)
 
 **图 7**:添加新 SqlDataSource 控件命名`UserProfileDataSource`([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image21.png))
 
@@ -141,7 +141,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 下一个屏幕会提示输入要使用的数据库。 我们已定义中的连接字符串`Web.config`为`SecurityTutorials`数据库。 此连接字符串名称 – `SecurityTutorialsConnectionString` – 应出现在下拉列表中。 选择此选项，然后单击下一步。
 
 
-[![从下拉列表中选择 SecurityTutorialsConnectionString](storing-additional-user-information-vb/_static/image23.png)](storing-additional-user-information-vb/_static/image22.png)
+[![C选择下拉列表从 SecurityTutorialsConnectionString](storing-additional-user-information-vb/_static/image23.png)](storing-additional-user-information-vb/_static/image22.png)
 
 **图 8**:选择`SecurityTutorialsConnectionString`从下拉列表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image24.png))
 
@@ -149,7 +149,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 后续屏幕要求我们指定的表和查询的列。 选择`UserProfiles`表从下拉列表，并检查的所有列。
 
 
-[![自带的所有列将从在 UserProfiles 表](storing-additional-user-information-vb/_static/image26.png)](storing-additional-user-information-vb/_static/image25.png)
+[![B环的 UserProfiles 表中的列返回所有](storing-additional-user-information-vb/_static/image26.png)](storing-additional-user-information-vb/_static/image25.png)
 
 **图 9**:自带的中的列返回所有`UserProfiles`表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image27.png))
 
@@ -159,7 +159,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 遗憾的是没有任何内置参数源将返回当前登录的用户的`UserId`值。 我们将需要以编程方式获取此值。 因此，设置为"None、 单击添加按钮以添加参数，然后单击确定的源下拉列表。
 
 
-[![上 UserId 列添加筛选器参数](storing-additional-user-information-vb/_static/image29.png)](storing-additional-user-information-vb/_static/image28.png)
+[![Add 上 UserId 列的筛选器参数](storing-additional-user-information-vb/_static/image29.png)](storing-additional-user-information-vb/_static/image28.png)
 
 **图 10**:添加筛选器参数上`UserId`列 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image30.png))
 
@@ -187,7 +187,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 导航到 Visual Studio 中的数据库资源管理器并展开表文件夹。 右键单击`aspnet_Users`表并选择"显示表数据"以查看表中的记录; 执行相同的操作`UserProfiles`表。 图 11 显示了这些结果时垂直平铺。 在我的数据库中当前有`aspnet_Users`Bruce、 Fred，和 Tito，记录但中的没有记录`UserProfiles`表。
 
 
-[![显示 aspnet_Users 的内容和 UserProfiles 表](storing-additional-user-information-vb/_static/image32.png)](storing-additional-user-information-vb/_static/image31.png)
+[![T显示的 aspnet_Users 他内容和 UserProfiles 表](storing-additional-user-information-vb/_static/image32.png)](storing-additional-user-information-vb/_static/image31.png)
 
 **图 11**:内容`aspnet_Users`并`UserProfiles`将显示表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image33.png))
 
@@ -195,7 +195,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 添加到新的记录`UserProfiles`通过手动输入的值中的表`HomeTown`， `HomepageUrl`，和`Signature`字段。 获取一个有效的最简单办法`UserId`中的新值`UserProfiles`记录是选择`UserId`字段中的特定用户帐户从`aspnet_Users`表，复制并将其粘贴到`UserId`字段中`UserProfiles`。 图 12 显示了`UserProfiles`表后为 Bruce 添加一条新记录。
 
 
-[![记录有关 Bruce 已添加到 UserProfiles](storing-additional-user-information-vb/_static/image35.png)](storing-additional-user-information-vb/_static/image34.png)
+[![A 记录有关 Bruce 添加到 UserProfiles](storing-additional-user-information-vb/_static/image35.png)](storing-additional-user-information-vb/_static/image34.png)
 
 **图 12**:一条记录添加到`UserProfiles`Bruce 的 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image36.png))
 
@@ -203,7 +203,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 返回到`AdditionalUserInfo.aspx page`、 Bruce 作为登录。 如图 13 所示，会显示 Bruce 的设置。
 
 
-[![当前访问用户是所示。 他设置](storing-additional-user-information-vb/_static/image38.png)](storing-additional-user-information-vb/_static/image37.png)
+[![T他当前访问的用户是所示。 他设置](storing-additional-user-information-vb/_static/image38.png)](storing-additional-user-information-vb/_static/image37.png)
 
 **图 13**:当前访问用户是所示。 他设置 ([单击此项可查看原尺寸图像](storing-additional-user-information-vb/_static/image39.png))
 
@@ -223,7 +223,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 接下来，单击"刷新参数"按钮，将创建 SqlDataSource 控件中的参数`UpdateParameters`集合中的参数的每个`UPDATE`语句。 保留所有参数集的源为无，然后单击确定按钮以完成对话框。
 
 
-[![指定 SqlDataSource UpdateCommand 和 UpdateParameters](storing-additional-user-information-vb/_static/image41.png)](storing-additional-user-information-vb/_static/image40.png)
+[![S指定 SqlDataSource UpdateCommand 和 UpdateParameters](storing-additional-user-information-vb/_static/image41.png)](storing-additional-user-information-vb/_static/image40.png)
 
 **图 14**:指定 SqlDataSource`UpdateCommand`并`UpdateParameters`([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image42.png))
 
@@ -239,7 +239,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 继续操作并测试通过浏览器的此页。 使用具有相应的记录中的用户访问时`UserProfiles`，可编辑界面中显示的用户的设置。
 
 
-[![在 DetailsView 呈现一个可编辑接口](storing-additional-user-information-vb/_static/image44.png)](storing-additional-user-information-vb/_static/image43.png)
+[![T他 DetailsView 呈现一个可编辑接口](storing-additional-user-information-vb/_static/image44.png)](storing-additional-user-information-vb/_static/image43.png)
 
 **图 15**:在 DetailsView 呈现一个可编辑的接口 ([单击此项可查看原尺寸图像](storing-additional-user-information-vb/_static/image45.png))
 
@@ -257,7 +257,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 返回到`AdditionalUserInfo.aspx`逐页浏览器查看和更新数据。 这次，将显示有用的状态消息。
 
 
-[![一条短消息是更新显示时设置](storing-additional-user-information-vb/_static/image47.png)](storing-additional-user-information-vb/_static/image46.png)
+[![A 短消息是更新显示时设置](storing-additional-user-information-vb/_static/image47.png)](storing-additional-user-information-vb/_static/image46.png)
 
 **图 16**:更新的设置时显示一条短消息 ([单击此项可查看原尺寸图像](storing-additional-user-information-vb/_static/image48.png))
 
@@ -309,7 +309,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 图 17 显示了的内容`GuestbookComments`表后都没有这两个注释。
 
 
-[![可以看到 GuestbookComments 表中的访客留言簿注释](storing-additional-user-information-vb/_static/image50.png)](storing-additional-user-information-vb/_static/image49.png)
+[![You 可以看到 GuestbookComments 表中的访客留言簿注释](storing-additional-user-information-vb/_static/image50.png)](storing-additional-user-information-vb/_static/image49.png)
 
 **图 17**:可以看到访客留言簿中的注释`GuestbookComments`表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image51.png))
 
@@ -335,7 +335,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 剩下的就是以指定要返回的列。 从`GuestbookComments`表选择`Subject`， `Body`，和`CommentDate`列; 返回`HomeTown`， `HomepageUrl`，以及`Signature`中的列`UserProfiles`表;，然后返回`UserName`从`aspnet_Users`. 此外，添加"`ORDER BY CommentDate DESC`"到末尾`SELECT`查询，以便首先返回最新文章。 做出这些选择后，查询生成器界面应类似于屏幕快照中图 18。
 
 
-[![将构造的查询联接 GuestbookComments、 UserProfiles 和 aspnet_Users 表](storing-additional-user-information-vb/_static/image53.png)](storing-additional-user-information-vb/_static/image52.png)
+[![T他构造查询联接 GuestbookComments、 UserProfiles 和 aspnet_Users 表](storing-additional-user-information-vb/_static/image53.png)](storing-additional-user-information-vb/_static/image52.png)
 
 **图 18**:构造查询`JOIN`s `GuestbookComments`， `UserProfiles`，和`aspnet_Users`表 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image54.png))
 
@@ -402,7 +402,7 @@ CreateUserWizard 控件在其工作流期间引发事件的数。 访问者提�
 请访问`EnhancedCreateUserWizard.aspx`通过浏览器页并创建新的用户帐户。 之后执行此操作，返回到 Visual Studio 和检查的内容`aspnet_Users`和`UserProfiles`表 （例如，我们回到在图 12 中所做的那样）。 应会看到在新的用户帐户`aspnet_Users`和相应`UserProfiles`行 (与`NULL`值为`HomeTown`， `HomepageUrl`，并`Signature`)。
 
 
-[![添加了新的用户帐户和 UserProfiles 记录](storing-additional-user-information-vb/_static/image59.png)](storing-additional-user-information-vb/_static/image58.png)
+[![A 已添加新用户帐户和 UserProfiles 记录](storing-additional-user-information-vb/_static/image59.png)](storing-additional-user-information-vb/_static/image58.png)
 
 **图 20**:新的用户帐户和`UserProfiles`已添加记录 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image60.png))
 
@@ -438,7 +438,7 @@ CreateUserWizard 控件的默认标记定义了两个`WizardSteps`:`CreateUserWi
 图 21 显示了工作流时，添加`WizardStep`位于`CreateUserWizardStep`。 由于其他用户信息收集时`CreatedUser`事件触发时，我们只需是更新`CreatedUser`事件处理程序以检索这些输入并将其用于`INSERT`语句的参数值 （而非`DBNull.Value`).
 
 
-[![当其他 WizardStep 之前 CreateUserWizardStep 时 CreateUserWizard 工作流](storing-additional-user-information-vb/_static/image62.png)](storing-additional-user-information-vb/_static/image61.png)
+[![T他 CreateUserWizard 工作流时其他 WizardStep 之前 CreateUserWizardStep](storing-additional-user-information-vb/_static/image62.png)](storing-additional-user-information-vb/_static/image61.png)
 
 **图 21**:CreateUserWizard 工作流时附加`WizardStep`Precedes `CreateUserWizardStep` ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image63.png))
 
@@ -446,7 +446,7 @@ CreateUserWizard 控件的默认标记定义了两个`WizardSteps`:`CreateUserWi
 如果自定义`WizardStep`放置*后* `CreateUserWizardStep`，但是，创建用户帐户过程发生在用户有机会进入她的家庭城镇、 主页或签名之前。 在这种情况下，需要如图 22 所示插入到数据库后创建的用户帐户，此附加信息。
 
 
-[![CreateUserWizard 工作流时在 CreateUserWizardStep 后出现其他 WizardStep](storing-additional-user-information-vb/_static/image65.png)](storing-additional-user-information-vb/_static/image64.png)
+[![T他 CreateUserWizard 工作流时其他 WizardStep 出现后 CreateUserWizardStep](storing-additional-user-information-vb/_static/image65.png)](storing-additional-user-information-vb/_static/image64.png)
 
 **图 22**:CreateUserWizard 工作流时附加`WizardStep`出现后`CreateUserWizardStep`([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image66.png))
 
@@ -458,7 +458,7 @@ CreateUserWizard 控件的默认标记定义了两个`WizardSteps`:`CreateUserWi
 从 CreateUserWizard 控件的智能标记，选择"添加/删除`WizardStep`s"，这会打开`WizardStep`集合编辑器对话框。 添加一个新`WizardStep`，并设置其`ID`到`UserSettings`，将其`Title`到"设置"并将其`StepType`到`Step`。 然后确定其位置，以便之后涉及`CreateUserWizardStep`（"注册新帐户的"） 和之前`CompleteWizardStep`（"已完成"），如图 23 中所示。
 
 
-[![将新 WizardStep 添加到 CreateUserWizard 控件](storing-additional-user-information-vb/_static/image68.png)](storing-additional-user-information-vb/_static/image67.png)
+[![Add CreateUserWizard 控件到新 WizardStep](storing-additional-user-information-vb/_static/image68.png)](storing-additional-user-information-vb/_static/image67.png)
 
 **图 23**:添加新`WizardStep`到 CreateUserWizard 控件 ([单击以查看实际尺寸的图像](storing-additional-user-information-vb/_static/image69.png))
 
@@ -531,4 +531,4 @@ CreateUserWizard 控件的默认标记定义了两个`WizardSteps`:`CreateUserWi
 很多有用的审阅者已评审本系列教程。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
 > [!div class="step-by-step"]
-> [上一篇](user-based-authorization-vb.md)
+> [上一个](user-based-authorization-vb.md)

@@ -8,15 +8,15 @@ ms.date: 02/01/2007
 ms.assetid: 4acc8d48-845f-4451-8a83-0d6d935c4564
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-passwordstrength-extender
 msc.type: video
-ms.openlocfilehash: 588a7b4c11e74c794d81e203cf4c252dc11f3370
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a9990f27f8f5c17371b6b1738a0ee4fad0b77588
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039974"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391645"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[如何实现:]使用 ASP.NET AJAX PasswordStrength 扩展程序吗？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[如何实现:]使用 ASP.NET AJAX PasswordStrength 扩展程序吗？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 了解如何 PasswordStrength 扩展程序控件到有关他们所选的密码的强度的用户提供即时和动态的反馈。 反馈可以是一个文本通知、 图形栏指示符，或这两者的组合。

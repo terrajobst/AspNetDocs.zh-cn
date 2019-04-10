@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b2e96c996905bc73698d1c0b11df97d1dd366172
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 68080859e205283f56d8f543bfa06b76bb22a39d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422163"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408857"
 ---
-<a name="iteration-5--create-unit-tests-c"></a>迭代 5 — 创建单元测试 (C#)
-====================
+# <a name="iteration-5--create-unit-tests-c"></a>迭代 5 — 创建单元测试 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-5-create-unit-tests-cs/_static/contactmanager_5_cs1.zip)
@@ -117,12 +117,12 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 5. 完成这些步骤后，在引用文件夹应如图 2 所示。
 
 
-[![取消阻塞 Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
+[![Unblocking Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
 
 **图 01**:取消阻塞 Moq ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-cs/_static/image2.png))
 
 
-[![添加 Moq 后引用](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
+[![R添加 Moq 后 eferences](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
 
 **图 02**:添加 Moq 后的引用 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-cs/_static/image4.png))
 
@@ -185,7 +185,7 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 可以通过选择菜单选项在列表 1 中运行单元测试**测试，运行，解决方案 （CTRL + R、 A） 中的所有测试**。 在测试结果窗口中显示测试结果 （请参阅图 4）。
 
 
-[![测试结果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
+[![T测试结果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
 
 **图 04**:测试结果 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-cs/_static/image8.png))
 

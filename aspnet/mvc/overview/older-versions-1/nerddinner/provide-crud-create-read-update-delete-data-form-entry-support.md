@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: bbb976e5-6150-4283-a374-c22fbafe29f5
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 45d74249a34fc7e37e9776a398615d2f613a7582
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031734"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410859"
 ---
-<a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD（创建、读取、更新和删除）数据窗体输入支持
-====================
+# <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD（创建、读取、更新和删除）数据窗体输入支持
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -36,22 +36,22 @@ by [Microsoft](https://github.com/microsoft)
 
 我们之前添加操作方法向 DinnersController 实现对两个 Url 的支持： */Dinners*并 */Dinners/详细信息 / [id]*。
 
-| **URL** | **VERB** | **目的** |
+| **URL** | **VERB** | **用途** |
 | --- | --- | --- |
 | */Dinners/* | GET | 显示即将到来的 dinners 的 HTML 列表。 |
-| */Dinners/Details/[id]* | GET | 显示有关特定 dinner 的详细信息。 |
+| */Dinners/详细信息 / [id]* | GET | 显示有关特定 dinner 的详细信息。 |
 
-我们现在将操作方法来实现三个其他 Url: <em>/Dinners/编辑 / [id]、 / Dinners/创建、</em>并<em>/Dinners/Delete / [id]</em>。 这些 Url 将启用对编辑现有 Dinners，创建新 Dinners 和删除 Dinners 的支持。
+我们现在将操作方法来实现三个其他 Url: */Dinners/编辑 / [id]*， */Dinners/创建*，并 */Dinners/Delete / [id]*。 这些 Url 将启用对编辑现有 Dinners，创建新 Dinners 和删除 Dinners 的支持。
 
 我们将支持与这些新的 Url 的 HTTP GET 和 HTTP POST 谓词交互。 HTTP GET 请求到以下 Url 将显示数据 （使用在"编辑"的情况下的 Dinner 数据填充窗体，在"创建"的情况下的空白窗体和在"删除"的情况下删除确认屏幕） 的初始 HTML 视图。 这些 url 的 HTTP POST 请求将保存/更新/删除 Dinner 数据中我们 DinnerRepository （和从数据库到）。
 
-| **URL** | **VERB** | **目的** |
+| **URL** | **VERB** | **用途** |
 | --- | --- | --- |
-| */Dinners/Edit/[id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据填充。 |
+| */Dinners/编辑 / [id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据填充。 |
 | 发布 | 保存到数据库的晚餐窗体更改。 |
-| */Dinners/Create* | GET | 显示一个空的 HTML 窗体，用户可定义新 Dinners。 |
+| */ 创建 dinners /* | GET | 显示一个空的 HTML 窗体，用户可定义新 Dinners。 |
 | 发布 | 创建新的 Dinner 并将其保存在数据库中。 |
-| */Dinners/Delete/[id]* | GET | 显示删除确认屏幕。 |
+| */Dinners/delete / [id]* | GET | 显示删除确认屏幕。 |
 | 发布 | 从数据库中删除指定的 dinner。 |
 
 ### <a name="edit-support"></a>编辑支持
@@ -138,7 +138,7 @@ Html.TextBox() 的第三个参数 （可选） 用于输出其他 HTML 特性。
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-当 [AcceptVerbs] 特性应用于重载的操作方法时，ASP.NET MVC 将自动处理将请求调度到相应的操作方法，具体取决于传入的 HTTP 谓词。 HTTP POST 请求到<em>/Dinners/编辑 / [id]</em> Url 将转到上面的编辑方法，同时对所有其他 HTTP 谓词请求<em>/Dinners/编辑 / [id]</em>Url 将转到第一个编辑方法我们实现 （它未不具有 [AcceptVerbs] 特性）。
+当 [AcceptVerbs] 特性应用于重载的操作方法时，ASP.NET MVC 将自动处理将请求调度到相应的操作方法，具体取决于传入的 HTTP 谓词。 HTTP POST 请求到 */Dinners/编辑 / [id]* Url 将转到上面的编辑方法，同时对所有其他 HTTP 谓词请求 */Dinners/编辑 / [id]* Url 将转到第一个编辑方法我们实现 （它未不具有`[AcceptVerbs]`属性)。
 
 | **端主题：为什么通过 HTTP 谓词区分？** |
 | --- |
@@ -228,7 +228,7 @@ Html.ValidationMessage() 帮助器方法还支持允许开发人员重写为显�
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-上述代码输出：  <em>&lt;/><span class ="字段的验证错误"&gt;\*&lt;/s p a n&gt;</em>而不是时出现错误时，将提供的默认错误文本EventDate 属性。
+上述代码输出： *&lt;/><span class ="字段的验证错误"&gt;\*&lt;/s p a n&gt;* 而不是时出现错误时，将提供的默认错误文本EventDate 属性。
 
 ##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() 帮助器方法
 

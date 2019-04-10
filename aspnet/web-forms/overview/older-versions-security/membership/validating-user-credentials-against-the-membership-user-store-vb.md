@@ -8,15 +8,15 @@ ms.date: 01/18/2008
 ms.assetid: 17772912-b47b-4557-9ce9-80f22df642f7
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5f1121bacdf287e346419d70ac155f47bc826ac
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 98869574adb8ac85a2b6dad8db2a583e013150fe
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064734"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393166"
 ---
-<a name="validating-user-credentials-against-the-membership-user-store-vb"></a>针对成员身份用户存储验证用户凭据 (VB)
-====================
+# <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>针对成员身份用户存储验证用户凭据 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_06_VB.zip)或[下载 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial06_LoggingIn_vb.pdf)
@@ -43,7 +43,7 @@ ms.locfileid: "57064734"
 让我们更新我们的登录页面 (~ /`Login.aspx`)，以便验证成员资格框架用户存储区对提供的凭据。 我们创建了此登录页回到<a id="Tutorial02"> </a> [*概述的窗体身份验证*](../introduction/an-overview-of-forms-authentication-vb.md)教程中，使用两个文本框输入用户名和密码，创建一个接口记住我复选框，并登录按钮 （请参阅图 1）。 代码验证输入的凭据与硬编码的用户名和密码对 （Scott/密码、 Jisun/密码和 Sam/密码） 的列表。 在中<a id="Tutorial03"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)教程，我们更新了登录页面的代码以在窗体中存储的其他信息身份验证票证`UserData`属性。
 
 
-[![登录页面的接口包含两个文本框、 CheckBoxList 和一个按钮](validating-user-credentials-against-the-membership-user-store-vb/_static/image2.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image1.png)
+[![T他登录页面的接口包括两个文本框、 CheckBoxList 和一个按钮](validating-user-credentials-against-the-membership-user-store-vb/_static/image2.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image1.png)
 
 **图 1**:登录页面的接口包括两个文本框、 CheckBoxList 和一个按钮 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image3.png))
 
@@ -86,7 +86,7 @@ ms.locfileid: "57064734"
 让我们更新`Login.aspx`、 替换手动创建的接口和与登录控件编写代码。 首先删除现有标记和代码中`Login.aspx`。 可能会删除彻底，或只需注释掉。注释掉声明性标记，可以使用与其周围`<%--`和`--%>`分隔符。 可以手动输入这些分隔符，或如图 2 所示，可以选择要添加注释，然后单击工具栏中的选定的行图标注释的文本。 同样，可以使用注释掉的选定的行图标注释掉的代码隐藏类中的所选代码。
 
 
-[![注释掉的现有声明性标记和 login.aspx 的情况中的源代码](validating-user-credentials-against-the-membership-user-store-vb/_static/image5.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image4.png)
+[![Comment 出现有声明性标记和 login.aspx 的情况中的源代码](validating-user-credentials-against-the-membership-user-store-vb/_static/image5.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image4.png)
 
 **图 2**:注释掉现有声明性标记和 login.aspx 的情况中的源代码 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image6.png))
 
@@ -98,7 +98,7 @@ ms.locfileid: "57064734"
 接下来，从工具箱拖到页上将登录控件，然后设置其`ID`属性设置为`myLogin`。 此时您的屏幕应类似于图 3。 请注意，登录名控件的默认接口包括用于用户名和密码，下次记住我复选框，和一个日志中按钮的文本框控件。 此外，还有`RequiredFieldValidator`的两个文本框控件。
 
 
-[![将登录控件添加到页面](validating-user-credentials-against-the-membership-user-store-vb/_static/image8.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image7.png)
+[![Add 将登录控件与页](validating-user-credentials-against-the-membership-user-store-vb/_static/image8.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image7.png)
 
 **图 3**:将登录控件添加到页 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image9.png))
 
@@ -115,7 +115,7 @@ Login 控件使用四个因素来确定合适的页面重定向到用户成功�
 图 4 展示了如何登录控件使用以下四个参数以获得其相应的页决策。
 
 
-[![将登录控件添加到页面](validating-user-credentials-against-the-membership-user-store-vb/_static/image11.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image10.png)
+[![Add 将登录控件与页](validating-user-credentials-against-the-membership-user-store-vb/_static/image11.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image10.png)
 
 **图 4**:将登录控件添加到页 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image12.png))
 
@@ -145,7 +145,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 这些属性更改后，请登录控件的声明性标记和外观应类似于图 5 中所示。
 
 
-[![登录名控件的属性值指示其外观](validating-user-credentials-against-the-membership-user-store-vb/_static/image14.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image13.png)
+[![T他登录控件的属性值指示其外观](validating-user-credentials-against-the-membership-user-store-vb/_static/image14.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image13.png)
 
 **图 5**:登录名控件的属性值指示其外观 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image15.png))
 
@@ -164,7 +164,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 让我们更新登录控件，使其提示用户输入其用户名、 密码和电子邮件地址，并仅验证用户身份如果提供的电子邮件地址与在文件上的其电子邮件地址相匹配。 我们首先需要将登录名控件的界面转换为模板。 从登录名控件的智能标记，选择转换为模板选项。
 
 
-[![将登录控件转换为模板](validating-user-credentials-against-the-membership-user-store-vb/_static/image17.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image16.png)
+[![Convert Login 控件为模板](validating-user-credentials-against-the-membership-user-store-vb/_static/image17.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image16.png)
 
 **图 6**:将登录控件转换为模板 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image18.png))
 
@@ -176,7 +176,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 将登录控件转换为模板将添加`LayoutTemplate`到控件的声明性标记的 HTML 元素和定义用户界面的 Web 控件。 如图 7 所示，将控件转换为模板中删除多个属性从属性窗口中，如`TitleText`， `CreateUserUrl`，依此类推，因为使用模板时，将忽略这些属性值。
 
 
-[![更少的属性都是可用的时登录控件转换为模板](validating-user-credentials-against-the-membership-user-store-vb/_static/image20.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image19.png)
+[![Fewer 属性都是可用的时登录控件转换为模板](validating-user-credentials-against-the-membership-user-store-vb/_static/image20.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image19.png)
 
 **图 7**:更少的属性都是可用的时登录控件转换为模板 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image21.png))
 
@@ -190,7 +190,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 添加后`Email`文本框中，请访问通过浏览器页面。 如图 8 所示，登录名控件的用户界面现在包括第三个文本框。
 
 
-[![Login 控件现在包括用户的电子邮件地址的文本框](validating-user-credentials-against-the-membership-user-store-vb/_static/image23.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image22.png)
+[![T他登录控件现在包括用户的电子邮件地址文本框中](validating-user-credentials-against-the-membership-user-store-vb/_static/image23.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image22.png)
 
 **图 8**:Login 控件现在包括用户的电子邮件地址的文本框中 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image24.png))
 
@@ -208,7 +208,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 图 9 提供身份验证工作流流程图。
 
 
-[![登录名控件的身份验证工作流](validating-user-credentials-against-the-membership-user-store-vb/_static/image26.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image25.png)
+[![T他登录控件的身份验证工作流](validating-user-credentials-against-the-membership-user-store-vb/_static/image26.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image25.png)
 
 **图 9**:登录名控件的身份验证工作流 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image27.png))
 
@@ -247,7 +247,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 利用此代码，尝试以输入正确的用户名、 密码和电子邮件地址的有效用户身份登录。 重试，但这次特意使用不正确的电子邮件地址 （请参阅图 10）。 最后，它尝试使用不存在用户名的第三个时间。 在第一种情况下您应已成功登录到站点，但在最后两个情况下应会看到登录控件的凭据无效消息。
 
 
-[![提供不正确的电子邮件地址时，Tito 无法登录。](validating-user-credentials-against-the-membership-user-store-vb/_static/image29.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image28.png)
+[![T提供不正确的电子邮件地址时，不能登录 ito](validating-user-credentials-against-the-membership-user-store-vb/_static/image29.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image28.png)
 
 **图 10**:Tito 无法日志中时提供不正确的电子邮件地址 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image30.png))
 
@@ -280,7 +280,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 若要测试此代码，有意尝试记录作为现有用户，但使用了错误的密码。 在 10 分钟时间范围内的行中执行操作这五次，该帐户将被锁定。如图 11 所示，后续登录尝试将始终失败 （即使使用正确的密码），但现在将显示更具描述性的显示你的帐户已锁定由于无效的登录尝试次数太多。 请与管理员联系以具有您的帐户解锁的消息。
 
 
-[![Tito 执行无效的登录尝试次数太多，并且已被锁定](validating-user-credentials-against-the-membership-user-store-vb/_static/image32.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image31.png)
+[![Tito 执行太多个无效登录尝试，并具有已锁定](validating-user-credentials-against-the-membership-user-store-vb/_static/image32.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image31.png)
 
 **图 11**:Tito 执行太多个无效登录尝试，并具有已锁定 ([单击此项可查看原尺寸图像](validating-user-credentials-against-the-membership-user-store-vb/_static/image33.png))
 

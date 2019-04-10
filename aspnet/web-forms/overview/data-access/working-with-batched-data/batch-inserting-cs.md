@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: afcfc92b4e0db8092f83b67c6c227af91bdc0cbb
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 49bdb8e6429449417f2a5ecb2a00101928e3c82e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426039"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401018"
 ---
-<a name="batch-inserting-c"></a>批量插入 (C#)
-====================
+# <a name="batch-inserting-c"></a>批量插入 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_66_CS.zip)或[下载 PDF](batch-inserting-cs/_static/datatutorial66cs1.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "58426039"
 只要下一点功夫，我们可以创建一批插入接口，使用户能够选择供应商和类别一次，输入一系列的产品名称和单位价格，然后单击按钮以向数据库添加新的产品 （参见图 1）。 添加每个产品，其`ProductName`并`UnitPrice`数据字段分配了的文本框中输入的值时其`CategoryID`和`SupplierID`值从顶部 fo 窗体在 Dropdownlist 分配的值。 `Discontinued`并`UnitsOnOrder`值设置为硬编码值`false`和 0，分别。
 
 
-[![批插入接口](batch-inserting-cs/_static/image2.png)](batch-inserting-cs/_static/image1.png)
+[![T他批处理插入接口](batch-inserting-cs/_static/image2.png)](batch-inserting-cs/_static/image1.png)
 
 **图 1**:批插入接口 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ ms.locfileid: "58426039"
 首先打开`BatchInsert.aspx`页中`BatchData`文件夹，然后拖动一个面板从工具箱拖到设计器 （请参见图 2）。 设置面板 s`ID`属性设置为`DisplayInterface`。 在将面板添加到设计器中，其`Height`和`Width`属性分别设置为 50px 和 125px。 清除这些属性值从属性窗口。
 
 
-[![将面板拖到设计器工具箱中](batch-inserting-cs/_static/image5.png)](batch-inserting-cs/_static/image4.png)
+[![Drag 面板从工具箱拖到设计器](batch-inserting-cs/_static/image5.png)](batch-inserting-cs/_static/image4.png)
 
 **图 2**:将面板拖到设计器工具箱中 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image6.png))
 
@@ -57,12 +57,12 @@ ms.locfileid: "58426039"
 接下来，将按钮和 GridView 控件拖到面板。 设置按钮 s`ID`属性设置为`ProcessShipment`并将其`Text`与进程产品发货的属性。 设置 GridView s`ID`属性设置为`ProductsGrid`并从其智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置对象数据源以提取其数据从`ProductsBLL`类的`GetProducts`方法。 由于此 GridView 仅用于显示数据，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。 单击完成以完成配置数据源向导。
 
 
-[![显示从 ProductsBLL 类的 GetProducts 方法返回的数据](batch-inserting-cs/_static/image8.png)](batch-inserting-cs/_static/image7.png)
+[![D此处，显示从 ProductsBLL 类的 GetProducts 方法返回的数据](batch-inserting-cs/_static/image8.png)](batch-inserting-cs/_static/image7.png)
 
 **图 3**:显示从返回的数据`ProductsBLL`类 s`GetProducts`方法 ([单击以查看实际尺寸的图像](batch-inserting-cs/_static/image9.png))
 
 
-[![设置下拉列表中插入、 更新和删除选项卡为 （无）](batch-inserting-cs/_static/image11.png)](batch-inserting-cs/_static/image10.png)
+[![Set 更新、 插入和删除选项卡添加到 （无） 中的下拉列表](batch-inserting-cs/_static/image11.png)](batch-inserting-cs/_static/image10.png)
 
 **图 4**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image12.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "58426039"
 花点时间查看我们通过浏览器的进度。 图 5 所示，你应该看到一个 GridView，一次列出产品十个以上的进程，产品交付按钮。
 
 
-[![GridView 列出的产品并提供排序和分页功能](batch-inserting-cs/_static/image14.png)](batch-inserting-cs/_static/image13.png)
+[![T他 GridView 列出的产品并提供了排序和分页功能](batch-inserting-cs/_static/image14.png)](batch-inserting-cs/_static/image13.png)
 
 **图 5**:GridView 列出的产品并提供了排序和分页功能 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image15.png))
 
@@ -109,7 +109,7 @@ ms.locfileid: "58426039"
 与此输入的标记返回到设计视图。 这`<table>`应显示为设计器中的四列、 七行的表，如图 6 所示。
 
 
-[![插入接口组成的四列七行的表](batch-inserting-cs/_static/image17.png)](batch-inserting-cs/_static/image16.png)
+[![T他插入接口由四个列七行的表的](batch-inserting-cs/_static/image17.png)](batch-inserting-cs/_static/image16.png)
 
 **图 6**:插入接口由四个列七行的表的 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image18.png))
 
@@ -119,7 +119,7 @@ ms.locfileid: "58426039"
 设置供应商 DropDownList s`ID`属性设置为`Suppliers`并将其绑定到名为新 ObjectDataSource `SuppliersDataSource`。 配置要检索其数据的新 ObjectDataSource`SuppliersBLL`类的`GetSuppliers`方法，设置更新选项卡上为 （无） s 下拉列表。 单击完成以完成向导。
 
 
-[![配置对象数据源使用 SuppliersBLL 类的 GetSuppliers 方法](batch-inserting-cs/_static/image20.png)](batch-inserting-cs/_static/image19.png)
+[![C配置对象数据源以使用 SuppliersBLL 类的 GetSuppliers 方法](batch-inserting-cs/_static/image20.png)](batch-inserting-cs/_static/image19.png)
 
 **图 7**:配置为使用 ObjectDataSource`SuppliersBLL`类 s`GetSuppliers`方法 ([单击以查看实际尺寸的图像](batch-inserting-cs/_static/image21.png))
 
@@ -127,7 +127,7 @@ ms.locfileid: "58426039"
 具有`Suppliers`DropDownList 显示`CompanyName`数据字段并使用`SupplierID`数据字段作为其`ListItem`的值。
 
 
-[![显示公司名称数据字段，并作为值使用供应商 Id](batch-inserting-cs/_static/image23.png)](batch-inserting-cs/_static/image22.png)
+[![D此处，显示公司名称数据字段和使用供应商 Id 作为值](batch-inserting-cs/_static/image23.png)](batch-inserting-cs/_static/image22.png)
 
 **图 8**:显示`CompanyName`数据字段并使用`SupplierID`作为值 ([单击以查看实际尺寸的图像](batch-inserting-cs/_static/image24.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "58426039"
 已添加这些两个 Dropdownlist 并将其绑定到适当的已配置 Objectdatasource 后，屏幕应类似于图 9。
 
 
-[![标头行现在包含供应商和类别 Dropdownlist](batch-inserting-cs/_static/image26.png)](batch-inserting-cs/_static/image25.png)
+[![T他标头行现在包含供应商和类别 Dropdownlist](batch-inserting-cs/_static/image26.png)](batch-inserting-cs/_static/image25.png)
 
 **图 9**:标头行现在包含`Suppliers`并`Categories`Dropdownlist ([单击以查看实际尺寸的图像](batch-inserting-cs/_static/image27.png))
 
@@ -157,7 +157,7 @@ ms.locfileid: "58426039"
 此时，你的屏幕应类似于图 10。
 
 
-[![插入的接口现在包含文本框的产品名称和价格](batch-inserting-cs/_static/image29.png)](batch-inserting-cs/_static/image28.png)
+[![T他插入接口现在包含文本框的产品名称和价格](batch-inserting-cs/_static/image29.png)](batch-inserting-cs/_static/image28.png)
 
 **图 10**:在插入接口现在包含文本框的产品名称和价格 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image30.png))
 
@@ -171,7 +171,7 @@ ms.locfileid: "58426039"
 添加标签并将其配置之后，图 11 显示了 Visual Studio 设计器。
 
 
-[![将两个面板控件上方的 statuslabel 设置控件](batch-inserting-cs/_static/image32.png)](batch-inserting-cs/_static/image31.png)
+[![P花色 statuslabel 设置控制上面两个面板控件](batch-inserting-cs/_static/image32.png)](batch-inserting-cs/_static/image31.png)
 
 **图 11**:位置`StatusLabel`控制上面两个面板控件 ([单击以查看实际尺寸的图像](batch-inserting-cs/_static/image33.png))
 
@@ -208,7 +208,7 @@ ms.locfileid: "58426039"
 > 在查看插入的接口，请花费片刻时间的单位价格文本框上 CompareValidators 测试。 应会看到一个警告，单击发货按钮具有无效的货币值或值小于零的价格中的添加产品的客户端的 messagebox。
 
 
-[![单击处理产品发货按钮后显示的插入界面](batch-inserting-cs/_static/image35.png)](batch-inserting-cs/_static/image34.png)
+[![T单击处理产品发货按钮后显示他插入接口](batch-inserting-cs/_static/image35.png)](batch-inserting-cs/_static/image34.png)
 
 **图 12**:单击处理产品发货按钮后显示的插入界面 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image36.png))
 
@@ -237,17 +237,17 @@ ms.locfileid: "58426039"
 图的 13、 14 和 15 显示插入，在操作中显示接口。 在图 13 中，用户输入的单位价格值没有相应的产品名称。 图 14 显示了显示界面后三个新产品已成功添加，虽然图 15 显示了两个新添加的产品 GridView （第三个是前一页） 中。
 
 
-[![产品名称是所需时输入的单位价格](batch-inserting-cs/_static/image38.png)](batch-inserting-cs/_static/image37.png)
+[![A 产品名称是所需时输入的单位价格](batch-inserting-cs/_static/image38.png)](batch-inserting-cs/_static/image37.png)
 
 **图 13**:产品名称是所需时输入的单位价格 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image39.png))
 
 
-[![供应商添加了三个新 Veggies Mayumi s](batch-inserting-cs/_static/image41.png)](batch-inserting-cs/_static/image40.png)
+[![T可用新 Veggies 已添加的供应商 Mayumi s](batch-inserting-cs/_static/image41.png)](batch-inserting-cs/_static/image40.png)
 
 **图 14**:三个新 Veggies 中添加了供应商 Mayumi s ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image42.png))
 
 
-[![可以在 GridView 的最后一页中找到的新产品](batch-inserting-cs/_static/image44.png)](batch-inserting-cs/_static/image43.png)
+[![T他的新产品可在 GridView 的最后一个页面中找到](batch-inserting-cs/_static/image44.png)](batch-inserting-cs/_static/image43.png)
 
 **图 15**:新产品可在 GridView 的最后一页 ([单击此项可查看原尺寸图像](batch-inserting-cs/_static/image45.png))
 

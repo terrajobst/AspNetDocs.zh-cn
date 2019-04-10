@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: ff8322c9-12f3-4e24-aba6-a38046b9bb0d
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c1f64f57d4c23fe225a8268042104254e17dc456
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b3c6726c2d08e2e6ac37501f2ab455e427df82bb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414045"
 ---
-<a name="creating-model-classes-with-the-entity-framework-vb"></a>使用 Entity Framework 创建模型类 (VB)
-====================
+# <a name="creating-model-classes-with-the-entity-framework-vb"></a>使用 Entity Framework 创建模型类 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 了解如何使用实体向导创建一个 ADO.NET 实体数据模型。 在本教程的过程中，我们构建的 web 应用程序演示了如何选择、 插入、 更新和删除数据库数据使用实体框架。
@@ -116,7 +116,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 让我们开始构建我们的电影数据库应用程序通过创建页，显示电影记录的列表。 列表 1 中的主页控制器公开名为 index （） 操作。 Index （） 操作返回的所有电影记录从电影数据库表通过利用 Entity Framework。
 
-**Listing 1 – Controllers\HomeController.vb**
+**代码清单 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample1.vb)]
 
@@ -202,7 +202,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 最终的数据库操作，我们需要解决本教程中，正在删除数据库记录。 可以在列表 6 中使用的控制器操作以删除特定数据库记录。
 
-**Listing 6 -- \Controllers\HomeController.vb (Delete action)**
+**代码清单 6-\Controllers\HomeController.vb （删除操作）**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample9.vb)]
 

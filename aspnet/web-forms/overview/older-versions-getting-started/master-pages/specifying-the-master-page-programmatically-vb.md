@@ -8,15 +8,15 @@ ms.date: 07/28/2008
 ms.assetid: 0edcd653-f24a-41aa-aef4-75f868fe5ac2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a89964749ce8e127207ada6944a3d2ba513d3547
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 96f6ebb47af38c77cba11a92c883700730324226
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036304"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389227"
 ---
-<a name="specifying-the-master-page-programmatically-vb"></a>以编程方式指定母版页 (VB)
-====================
+# <a name="specifying-the-master-page-programmatically-vb"></a>以编程方式指定母版页 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_09_VB.zip)或[下载 PDF](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_09_VB.pdf)
@@ -42,7 +42,7 @@ ms.locfileid: "57036304"
 图 1 显示了此合成。 步骤 1 中图 1 显示的初始内容和主页面控件层次结构。 末端的 PreInit 阶段内容页中的控件添加到相应 Contentplaceholder 母版页 (步骤 2) 中。 之后此合成母版页用作浮点混合的控件层次结构的根。 这融合在控件层次结构随后将添加到页后，可以生成已完成的控件层次结构 (第 3 步)。 最终结果是页面的控件层次结构，包括浮点混合的控件层次结构。
 
 
-[![母版页和内容页面的控件层次结构是融合在一起的 PreInit 阶段](specifying-the-master-page-programmatically-vb/_static/image2.png)](specifying-the-master-page-programmatically-vb/_static/image1.png)
+[![T他母版页和内容页面的控件层次结构的 PreInit 阶段融合在一起是](specifying-the-master-page-programmatically-vb/_static/image2.png)](specifying-the-master-page-programmatically-vb/_static/image1.png)
 
 **图 01**:母版页和内容页面的控件层次结构是融合在一起的 PreInit 阶段 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image3.png))
 
@@ -97,7 +97,7 @@ ms.locfileid: "57036304"
 在名为的根文件夹中创建新的主页面`Alternate.master`。 此外将新的样式表添加到名为网站`AlternateStyles.css`。
 
 
-[![添加另一个母版页和 CSS 文件到网站](specifying-the-master-page-programmatically-vb/_static/image8.png)](specifying-the-master-page-programmatically-vb/_static/image7.png)
+[![Add 另一个母版页和 CSS 文件到网站](specifying-the-master-page-programmatically-vb/_static/image8.png)](specifying-the-master-page-programmatically-vb/_static/image7.png)
 
 **图 03**:将另一个母版页和 CSS 文件添加到网站 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image9.png))
 
@@ -108,7 +108,7 @@ ms.locfileid: "57036304"
 > ASP.NET 包括能够定义*主题*。 主题是图像、 CSS 文件和与样式有关的 Web 控件属性设置可以应用于在运行时的页面的集合。 主题是如果您的站点布局各不相同，这是仅在显示的图像中和通过其 CSS 规则的方式。 如果布局如使用不同的 Web 控件更大不相同，或具有截然不同布局，然后你将需要使用单独的主页面。 有关详细信息主题本教程结束时查阅更多参考资料部分。
 
 
-[![内容页面现在可以使用新的外观和感觉](specifying-the-master-page-programmatically-vb/_static/image11.png)](specifying-the-master-page-programmatically-vb/_static/image10.png)
+[![O您的内容页现在可以使用新的外观和感觉](specifying-the-master-page-programmatically-vb/_static/image11.png)](specifying-the-master-page-programmatically-vb/_static/image10.png)
 
 **图 04**:内容页面现在可以使用新的外观 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image12.png))
 
@@ -206,7 +206,7 @@ ms.locfileid: "57036304"
 > 因为`Site.master`和`Alternate.master`具有一组相同的 ContentPlaceHolder 控件并不重要选择创建新的内容页面时哪些母版页。 为了保持一致，我会建议使用`Site.master`。
 
 
-[![向网站添加新的内容页面](specifying-the-master-page-programmatically-vb/_static/image14.png)](specifying-the-master-page-programmatically-vb/_static/image13.png)
+[![Add 到网站新内容页](specifying-the-master-page-programmatically-vb/_static/image14.png)](specifying-the-master-page-programmatically-vb/_static/image13.png)
 
 **图 05**:将新的内容页面添加到网站 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image15.png))
 
@@ -251,12 +251,12 @@ ms.locfileid: "57036304"
 利用此代码，请访问`ChooseMasterPage.aspx`页。 最初，`Site.master`母版页是所选 （见图 6），但用户可以选择不同的主页面，从下拉列表。
 
 
-[![显示使用 Site.master 母版页内容页](specifying-the-master-page-programmatically-vb/_static/image17.png)](specifying-the-master-page-programmatically-vb/_static/image16.png)
+[![C使用 Site.master 母版页会显示 ontent 页](specifying-the-master-page-programmatically-vb/_static/image17.png)](specifying-the-master-page-programmatically-vb/_static/image16.png)
 
 **图 06**:内容页会显示使用`Site.master`母版页 ([单击以查看实际尺寸的图像](specifying-the-master-page-programmatically-vb/_static/image18.png))
 
 
-[![内容页现在显示使用 Alternate.master 母版页](specifying-the-master-page-programmatically-vb/_static/image20.png)](specifying-the-master-page-programmatically-vb/_static/image19.png)
+[![C现在，使用 Alternate.master 母版页显示 ontent 页](specifying-the-master-page-programmatically-vb/_static/image20.png)](specifying-the-master-page-programmatically-vb/_static/image19.png)
 
 **图 07**:内容页现在显示使用`Alternate.master`母版页 ([单击以查看实际尺寸的图像](specifying-the-master-page-programmatically-vb/_static/image21.png))
 

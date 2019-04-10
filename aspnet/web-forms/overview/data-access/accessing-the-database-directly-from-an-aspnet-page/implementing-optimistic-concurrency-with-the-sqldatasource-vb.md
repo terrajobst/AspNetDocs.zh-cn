@@ -8,15 +8,15 @@ ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 879f0f491461ec49c4eef9dc8add747ac2b22f90
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: da0df163d7c3b68246a84ff490471e64c142a8f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422098"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416514"
 ---
-<a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource 实现乐观并发 (VB)
-====================
+# <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource 实现乐观并发 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_50_VB.exe)或[下载 PDF](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/datatutorial50vb1.pdf)
@@ -47,7 +47,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 图 2 说明了这种交互。
 
 
-[![两个用户同时更新记录时那里一个用户 s 可能更改覆盖其他 s](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
+[![When 两个用户同时更新的记录那里 s 可能有一个用户 s 将更改为覆盖其他 s](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
 
 **图 2**:当两个用户同时更新的记录那里 s 可能覆盖对其他更改的一个用户 s ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png))
 
@@ -61,7 +61,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 乐观并发控制的工作原理是确保要更新或删除的记录具有相同的值，像以前那样也随之更新或删除进程启动时。 例如，单击编辑按钮可编辑的 GridView 中后，记录的值将从数据库读取并显示在文本框和其他 Web 控件。 GridView 情况保存这些原始值。 更高版本之后用户使她的更改，并单击更新按钮，,`UPDATE`使用语句必须考虑原始值加上的新值并仅更新底层数据库记录，如果原始值的用户已开始编辑是仍在数据库中的值相同的。 图 3 描绘了这一序列的事件。
 
 
-[![若要成功执行 Update 或 Delete，对于原始值必须等于当前的数据库值](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
+[![F或者若要成功执行 Update 或 Delete，原始值必须等于当前的数据库值](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
 
 **图 3**:适用于更新或删除直至成功，原始值必须为等于当前的数据库值 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png))
 
@@ -78,7 +78,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 首先打开`OptimisticConcurrency.aspx`页上从`SqlDataSource`文件夹。 将一个 SqlDataSource 控件从工具箱拖到设计器中，设置其`ID`属性设置为`ProductsDataSourceWithOptimisticConcurrency`。 接下来，单击控件 s 智能标记中的配置数据源链接。 从向导中的第一个屏幕，选择要使用`NORTHWINDConnectionString`单击下一步。
 
 
-[![选择以使用 NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
+[![C选择以使用 NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
 
 **图 4**:选择与工作`NORTHWINDConnectionString`([单击以查看实际尺寸的图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.png))
 
@@ -86,7 +86,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 此示例中我们将添加一个 GridView，使用户能够编辑`Products`表。 因此，从配置 Select 语句屏幕中，选择`Products`表从下拉列表，然后选择`ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`列，如图 5 中所示。
 
 
-[![在产品表中，返回 ProductID、 ProductName、 UnitPrice 和已停止使用的列](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
+[![From Products 表，返回 ProductID、 ProductName、 UnitPrice 和已停止使用的列](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
 
 **图 5**:从`Products`表中，返回`ProductID`， `ProductName`， `UnitPrice`，并`Discontinued`列 ([单击以查看实际尺寸的图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.png))
 
@@ -152,7 +152,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 使用 SqlDataSource 配置为支持乐观并发，所有的就是将数据 Web 控件添加到页面，它利用此并发控制。 对于本教程，让我们来添加一个 GridView，提供了这两个编辑和删除的功能。 若要完成此操作，将 GridView 从工具箱拖到设计器和组及其`ID`到`Products`。 从 GridView s 智能标记，将其绑定到`ProductsDataSourceWithOptimisticConcurrency`SqlDataSource 控件添加在步骤 1 中。 最后，检查从智能标记的启用编辑和启用删除选项。
 
 
-[![将 GridView 绑定到 SqlDataSource 和支持编辑和删除](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
+[![Bind SqlDataSource 和启用编辑和删除 GridView](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
 
 **图 6**:将 GridView 绑定到 SqlDataSource 和启用编辑和删除 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image10.png))
 
@@ -173,7 +173,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 在第二个浏览器窗口中，更改 （但保留其原始值形式的产品名称） 的价格，并单击更新。 在回发时，网格将返回到其预先编辑模式，但对价格的更改不会记录。 第二个浏览器中显示相同的值的第一个新的产品名称与旧的价格。 在第二个浏览器窗口中所做的更改已丢失。 此外，所做的更改已丢失而安静模式，因为没有任何异常或消息，指示只发生了并发冲突。
 
 
-[![第二个浏览器窗口中的更改是以无提示方式丢失](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
+[![T他将更改在第二个浏览器窗口已以无提示方式丢失](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
 
 **图 7**:在第二个浏览器窗口已以无提示方式丢失的更改 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image12.png))
 
@@ -196,7 +196,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 由于并发冲突，拒绝了一个具有所做的更改就好了并发冲突发生时向用户发出警报。 向用户发出警报，让的标签 Web 控件添加到名为页面顶部`ConcurrencyViolationMessage`其`Text`属性将显示以下消息：已尝试更新或删除已由另一个用户同时更新的记录。 请查看其他用户更改然后重做你的更新或删除。 设置标签控件 s`CssClass`属性设置为警告，这是一个 CSS 类中定义`Styles.css`以红色、 斜体、 粗体和大字体显示文本。 最后，设置标签 s`Visible`并`EnableViewState`属性设置为`False`。 这将隐藏除仅位置显式设置这些回发的标签及其`Visible`属性设置为`True`。
 
 
-[![将标签控件添加到页后，可以显示该警告](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
+[![Add 将标签控件与页后，可以显示该警告](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
 
 **图 8**:将标签控件添加到显示该警告的页 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image14.png))
 
@@ -213,7 +213,7 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 如图 9 所示，使用这些两个事件处理程序中，每次发生并发冲突时显示非常明显的消息。
 
 
-[![在遇到并发冲突时显示一条消息](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
+[![A 在遇到并发冲突时显示消息](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
 
 **图 9**:在遇到并发冲突时显示一条消息 ([单击此项可查看原尺寸图像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image16.png))
 
@@ -231,4 +231,4 @@ Web 应用程序允许多个用户同时使用，以编辑或删除相同的数�
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 > [!div class="step-by-step"]
-> [上一篇](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [上一个](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

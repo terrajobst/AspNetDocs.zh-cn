@@ -8,15 +8,15 @@ ms.date: 08/04/2008
 ms.assetid: b3edd71d-b43e-4ccb-93e5-b89bb723312c
 msc.legacyurl: /web-forms/videos/authentication/configuring-sql-to-work-with-membership-schemas
 msc.type: video
-ms.openlocfilehash: 1748f40aea66022e928b8f2b0584efab48047fd3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1144f6de63ebff3c92efc148ec619ec1d5cc0aa1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039844"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409923"
 ---
-<a name="configuring-sql-to-work-with-membership-schemas"></a>配置 SQL 以使用成员身份架构
-====================
+# <a name="configuring-sql-to-work-with-membership-schemas"></a>配置 SQL 以使用成员身份架构
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 在此视频的 Joe Stagner 演示了如何将 SQL 实例配置为使用特定 ASP 服务成员身份的配置文件;以及配置应用程序专门 machine.cgf 文件中使用此 SQL 实例并不默认设置。 与本视频有关的其他信息，请阅读[SQL Server 中创建成员身份架构](../../overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md)安全教程。

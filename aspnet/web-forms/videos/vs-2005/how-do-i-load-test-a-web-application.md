@@ -8,15 +8,15 @@ ms.date: 07/01/2007
 ms.assetid: 2b0649d3-d072-446a-9918-b2648de26472
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
 msc.type: video
-ms.openlocfilehash: 9171b4aeb806b20d9e5a8464d503551761d3b2b6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6b086fd9c8c92d5dafa8aba9f1a8928c6bcb0c07
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064684"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413771"
 ---
-<a name="how-do-i-load-test-a-web-application"></a>[如何实现:]负载测试的 Web 应用程序？
-====================
+# <a name="how-do-i-load-test-a-web-application"></a>[如何实现:]负载测试的 Web 应用程序？
+
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
 此视频将引导您完成录制 Web 测试，然后重播它为负载测试模拟多个用户的过程。 我们可以看到 Visual Studio Team System 如何允许您设置的服务器资源利用率，定义 Web 应用程序是通过还是失败的负载测试的警告和严重阈值。

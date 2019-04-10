@@ -8,15 +8,15 @@ ms.date: 09/09/2011
 ms.assetid: 666407bb-81de-4319-89ba-0302c382a208
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: f1d949ec716ea8cb677c54fe5b07431161c58fbc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b7722d5c282f07b35dd18d08911fa562dae6afc2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387927"
 ---
-<a name="aspnet-mvc-4"></a>ASP.NET MVC 4
-====================
+# <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
+
 > 本文档介绍 ASP.NET MVC 4 Beta for Visual Studio 2010 的版本。
 > 
 > > [!NOTE]
@@ -300,7 +300,7 @@ ASP.NET MVC 4 Beta 支持 Windows Azure SDK 1.5 2011 年 9 月的发布。
 - **运行默认的 Web API 项目中显示了将用户添加使用 RegisterApis 方法，不存在的路由不正确定向的说明。** 应使用 ASP.NET 路由表的 RegisterRoutes 方法中添加的路由。
 - **安装 ASP.NET MVC 4 Beta 中断 ASP.NET MVC 3 RTM 应用程序。** 已创建的 ASP.NET MVC 3 应用程序与 RTM 版本 （不使用 ASP.NET MVC 3 Tools Update 发行版） 需要执行以下更改才能使用 ASP.NET MVC 4 Beta 并行。 生成项目而无需进行这些更新结果中的编译错误。 
 
-    **所需的更新**
+    **所需更新**
 
   1. 在根 Web.config 文件中，添加一个新*&lt;appSettings&gt;* 具有键的项*webPages:Version*和值*1.0.0.0*。
 

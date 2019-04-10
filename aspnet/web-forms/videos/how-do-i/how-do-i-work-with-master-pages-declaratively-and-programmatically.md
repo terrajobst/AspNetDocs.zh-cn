@@ -8,15 +8,15 @@ ms.date: 02/21/2008
 ms.assetid: 4f5f7805-373f-4dc3-b7f6-219edf7e66a3
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
 msc.type: video
-ms.openlocfilehash: 961a616480db6bd1f632996c27856798c9e92a43
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 821ad2015d6cc040e219aec59d96792e715e2d7b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041994"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392217"
 ---
-<a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[如何实现:]以声明方式和以编程方式处理母版页
-====================
+# <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[如何实现:]以声明方式和以编程方式处理母版页
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在此视频的 Chris Pels 将介绍几个方面的定义和使用 ASP.NET web 站点中的主页面。 首先，请参阅如何创建使用 ASP.NET 母版页模型以声明方式的主页面，了解哪些信息是最适合于与单个内容页面的母版页。 接下来，请参阅如何以编程方式指定母版页上动态在各个内容页中。 此外了解如何创建一个基本页类，可将以编程方式为从基类继承的所有页面的母版页。 此外，请参阅如何在 web.config 文件中设置主页面。 最后，请参阅如何从包括一些最佳做法来构建对主页面元素的访问各个内容页访问母版页中的元素。

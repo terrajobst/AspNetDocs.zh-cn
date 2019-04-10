@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 114dd21002ef41627f3a101c0197a85fd5208887
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d774a8e13e108d1be4c39e1e909d3d9683968a0d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053964"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404918"
 ---
-<a name="understanding-the-project-file"></a>了解项目文件
-====================
+# <a name="understanding-the-project-file"></a>了解项目文件
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -90,7 +90,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-若要检索的属性值，则使用格式<strong>$(</strong><em>PropertyName</em><strong>)</strong><em>。</em>例如，若要检索的值<strong>ServerName</strong>属性，你需要键入：
+若要检索的属性值，则使用格式 **$(***PropertyName***) * * *。* 例如，若要检索的值**ServerName**属性，你需要键入：
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
@@ -192,8 +192,8 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 通常情况下，当您创建有用的任务和目标，将需要对属性和已在项目文件中其他位置定义的项，请参阅：
 
-- 若要使用的属性值，请键入<strong>$(</strong><em>PropertyName</em><strong>)</strong>，其中<em>PropertyName</em>的名称<strong>属性</strong>元素或参数的名称。
-- 若要使用的项，请键入<strong>@(</strong><em>ItemName</em><strong>)</strong>，其中<em>ItemName</em>的名称<strong>项</strong>元素。
+- 若要使用的属性值，请键入 **$(***PropertyName***)**，其中*PropertyName*的名称**属性**元素或的名称参数。
+- 若要使用的项，请键入 **@(***ItemName***)**，其中*ItemName*的名称**项**元素。
 
 > [!NOTE]
 > 请记住，是否具有相同名称创建多个项，你正在生成列表。 与此相反，如果具有相同名称创建多个属性，您提供的最后一个属性值将覆盖任何以前的属性具有相同名称&#x2014;属性可以仅包含单个值。

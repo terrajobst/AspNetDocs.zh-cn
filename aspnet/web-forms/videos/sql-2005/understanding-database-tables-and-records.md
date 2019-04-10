@@ -8,15 +8,15 @@ ms.date: 03/29/2006
 ms.assetid: 9ebe8ebc-eae6-41c1-83a6-38410b610331
 msc.legacyurl: /web-forms/videos/sql-2005/understanding-database-tables-and-records
 msc.type: video
-ms.openlocfilehash: 348c9976b4fe3dac3fc3854707834aaf54e0f5cd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f88c1725b990ba67cf4b9d3356f3aaa49459be01
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058184"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396273"
 ---
-<a name="understanding-database-tables-and-records"></a>了解数据库表和记录
-====================
+# <a name="understanding-database-tables-and-records"></a>了解数据库表和记录
+
 by [Microsoft](https://github.com/microsoft)
 
 SQL Server 初学者将了解有关表和数据类型、 属性、 键、 等等。 在此第二个视频的定义。 找出表行、 列和字段的相互关联，并且是否列可以为空。

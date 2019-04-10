@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 93ee29ae125e9442ee755998768a8105dfb485c0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424295"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409715"
 ---
-<a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
-====================
+# <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
+
 > 本文档概述了有关 ASP.NET 中的.net Framework 4 和 Visual Studio 2010 中包含的许多新功能。
 > 
 > [下载此白皮书](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_and_Visual_Studio_2010_Web_Development_Overview.pdf)
@@ -66,7 +66,7 @@ ms.locfileid: "58424295"
 [数据注释属性验证支持](#0.2__Toc253429276 "_Toc253429276")  
 [模板化帮助器](#0.2__Toc253429277 "_Toc253429277")
 
-**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
+**[动态数据](#0.2__Toc253429278 "_Toc253429278")**  
 [对于现有项目中启用动态数据](#0.2__Toc253429279 "_Toc253429279")  
 [DynamicDataManager 控件声明性语法](#0.2__Toc253429280 "_Toc253429280")  
 [实体模板](#0.2__Toc253429281 "_Toc253429281")  
@@ -202,7 +202,7 @@ ASP.NET 4 还可配置的 URL 字符检查使用的字符。 在 ASP.NET 中 URL
 
 [!code-xml[Main](overview/samples/sample11.xml)]
 
-默认情况下<em>requestPathInvalidChars</em>属性定义为无效的八个字符。 (分配给在字符串中<em>requestPathInvalidChars</em>默认情况下<em>，</em>小于 (&lt;)、 大于 (&gt;)，和 and 符 (&amp;) 字符编码的因为`Web.config`文件是一个 XML 文件。)根据需要可以自定义无效字符的组。
+默认情况下*requestPathInvalidChars*属性定义为无效的八个字符。 (分配给在字符串中*requestPathInvalidChars*默认情况下，小于 (&lt;)、 大于 (&gt;)，和 and 符 (&amp;) 字符进行编码，因为`Web.config`文件是一个 XML 文件。）根据需要可以自定义无效字符的组。
 
 > [!NOTE]
 > 请注意，ASP.NET 4 始终拒绝包含 0x00 到 0x1F 的 ASCII 范围中的字符的 URL 路径，因为这些无效的 URL 字符中的 IETF RFC 2396 定义 ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt))。 在 Windows Server 版本上运行 IIS 6 或更高版本，http.sys 协议设备驱动程序自动拒绝 Url 有了这些字符。
@@ -413,13 +413,13 @@ ASP.NET 4 添加到两个属性*页上*类， *MetaKeywords*并*MetaDescription*
 
 已禁用 `: [DynamicValue]`
 
-已启用：`[DynamicValue]`
+已启用:`[DynamicValue]`
 
 在回发后但是，将显示以下输出：
 
 已禁用 `: [DeclaredValue]`
 
-已启用：`[DynamicValue]`
+已启用:`[DynamicValue]`
 
 Label1 控件 (其*ViewStateMode*值设置为*禁用*) 具有不会保留在代码中设置为它的值。 但是，label2 控制 (其*ViewStateMode*值设置为*已启用*) 已保留其状态。
 
@@ -628,7 +628,7 @@ ASP.NET 会自动制定正确的路由 （即，它生成正确的 URL） 根据
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-在这种情况下，路由参数 searchterm 的值将用于@companyname中的参数<em>选择</em>语句。
+在这种情况下，路由参数 searchterm 的值将用于@companyname中的参数*选择*语句。
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
@@ -982,7 +982,7 @@ ASP.NET 2.0 和更高版本的呈现特定于系统的隐藏的字段 (如*隐�
 默认情况下，以下 ASP.NET Web 服务器控件支持的模板的自动包装在用于将应用内联样式的外部表中：
 
 - *FormView*
-- *Login*
+- *登录*
 - *PasswordRecovery*
 - *ChangePassword*
 - *向导*

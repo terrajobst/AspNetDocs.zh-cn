@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: b0cf4a34-2c1d-4717-bb54-ff029e722990
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aa7d00c0f54212d495f48929ed2a453942a1ed7d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0ca34f670202a35c627a514d3394fa430f5d8f26
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396338"
 ---
-<a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>通过不同版本的 IIS 使用 ASP.NET MVC (C#)
-====================
+# <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>通过不同版本的 IIS 使用 ASP.NET MVC (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何使用 ASP.NET MVC 中，并且 URL 路由，使用不同版本的 Internet Information Services。 了解 ASP.NET MVC 中使用的 IIS 7.0 （经典模式）、 IIS 6.0 和 IIS 的早期版本不同的策略。
@@ -53,7 +53,7 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 
 默认情况下，IIS 配置为支持两个应用程序池：**DefaultAppPool**并**经典版.NET AppPool**。 如果选择了 DefaultAppPool，然后在集成的请求处理模式下运行你的应用程序。 如果选择了经典的.NET 应用程序池，你的应用程序在经典的请求处理模式下运行。
 
-[![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.png)
+[![T他新建项目对话框中](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.png)
 
 **图 1**:检测的请求处理模式 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.png))
 
@@ -92,7 +92,7 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 
 遗憾的是，较旧版本的 IIS 不会将这些请求传递给 ASP.NET 框架。 因此，不会将这些请求路由到控制器。 例如，如果浏览器请求进行 URL /Home/索引然后将图 2 中显示错误页。
 
-[![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.png)
+[![T他新建项目对话框中](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.png)
 
 **图 2**:收到 404 找不到错误 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.png))
 
@@ -162,7 +162,7 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 6. 输入名称 MVC
 7. 单击**确定**按钮
 
-[![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.png)
+[![T他新建项目对话框中](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.png)
 
 **图 3**:使用 IIS 7.0 创建通配符脚本映射 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image6.png))
 
@@ -177,13 +177,13 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 7. 取消选中复选框标记为**验证该文件是否存在**
 8. 单击**确定**按钮
 
-[![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image7.png)
+[![T他新建项目对话框中](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image7.png)
 
 **图 4**:使用 IIS 6.0 创建通配符脚本映射 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image8.png))
 
 启用通配符脚本映射后，您需要修改 Global.asax 文件中的路由表，以使其包括根路由。 否则，您将收到错误页图 5 中，为你的应用程序的根页面请求时。 可以使用列表 4 中修改后的 Global.asax 文件。
 
-[![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image9.png)
+[![T他新建项目对话框中](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image9.png)
 
 **图 5**:缺少根路由错误 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image10.png))
 
@@ -210,4 +210,4 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 第二个选项是创建通配符脚本映射。 此第二个选项的优点是不需要修改你的 Url。 此第二个选项的缺点是它可以对 ASP.NET MVC 应用程序的性能影响。
 
 > [!div class="step-by-step"]
-> [下一页](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [下一步](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

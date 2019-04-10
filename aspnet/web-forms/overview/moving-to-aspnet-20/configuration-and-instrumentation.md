@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 21ebbaee-7ed8-45ae-b6c1-c27c88342e48
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: ba116140faa0667d504e0ff101c274db9f46079e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b06f105b16087f97788e0ab360af41f538d2c1ac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026344"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400797"
 ---
-<a name="configuration-and-instrumentation"></a>配置和检测
-====================
+# <a name="configuration-and-instrumentation"></a>配置和检测
+
 by [Microsoft](https://github.com/microsoft)
 
 > 有配置中的重大更改和 ASP.NET 2.0 中的检测。 新的 ASP.NET 配置 API 允许以编程方式进行配置更改。 此外，许多新的配置设置存在允许对新的配置和检测。
@@ -73,7 +73,7 @@ ASP.NET 配置 API 包含一组可用于以编程方式配置网站和应用程�
 
 许多配置类和方法彼此相似。 下表介绍最常用的配置类和命名空间。
 
-| **配置类或命名空间** | **说明** |
+| **配置类或命名空间** | **描述** |
 | --- | --- |
 | [System.Configuration](https://msdn.microsoft.com/library/system.configuration.aspx)命名空间 | 包含所有.NET Framework 应用程序的主要配置类。 部分处理程序类用于从方法，例如 GetSection 和 GetSectionGroup 获取节的配置数据。 这两种方法是非静态。 |
 | System.Configuration.Configuration 类 | 表示一组计算机、 应用程序、 Web 目录或其他资源的配置数据。 此类包含有用的方法，如 GetSection 和 GetSectionGroup，更新配置设置和获取对节和节组的引用。 此类用作获取设计时配置数据，如 WebConfigurationManager 和 ConfigurationManager 类的方法的方法的返回类型。 |
@@ -145,11 +145,11 @@ ASP.NET 2.0 使用事件日志提供程序--现成的日志事件基于应用程
 
 &lt;HealthMonitoring&gt;全局的 Web.config 文件部分包含以下各项：
 
-| **providers** | 包含有关事件查看器、 WMI 和 SQL Server 设置的提供程序。 |
+| **提供程序** | 包含有关事件查看器、 WMI 和 SQL Server 设置的提供程序。 |
 | --- | --- |
 | **eventMappings** | 包含用于各种 WebBase 类映射。 如果生成您自己事件的类，您可以扩展此列表。 生成你自己的事件类为您提供更细的粒度对发送到的信息的提供程序。 例如，可以配置未经处理的异常时将自定义事件发送到电子邮件发送到 SQL Server。 |
-| **rules** | 链接到提供程序 eventMappings。 |
-| **buffering** | 与 SQL Server 和电子邮件提供程序一起使用，以确定通常将事件刷新到该提供程序的方式。 |
+| **规则** | 链接到提供程序 eventMappings。 |
+| **缓冲** | 与 SQL Server 和电子邮件提供程序一起使用，以确定通常将事件刷新到该提供程序的方式。 |
 
 下面是全局的 Web.config 文件中的一个代码示例。
 
@@ -241,7 +241,7 @@ ASP.NET 2.0 允许以编程方式访问通过的所有跟踪消息**TraceContext
 
 以下命令行工具有：
 
-| **工具** | **使用** |
+| **Tool** | **使用** |
 | --- | --- |
 | **aspnet\_regiis.exe** | 允许使用 ASP.NET 和 IIS 注册。 有两个版本的此工具附带 ASP.NET 2.0，（在框架文件夹中） 的 32 位系统和 64 位系统 （在 Framework64 文件夹中。）未将 32 位操作系统上安装 64 位版本。 |
 | **aspnet\_regsql.exe** | ASP.NET SQL Server 注册工具用于在 ASP.NET 中，创建由 SQL Server 提供程序使用 Microsoft SQL Server 数据库，或用于添加或从现有数据库中删除选项。 Aspnet\_regsql.exe 文件位于 [drive:]\WINDOWS\Microsoft.NET\Framework\versionNumber Web 服务器上的文件夹。 |
@@ -288,7 +288,7 @@ ASP.NET 输出缓存的一项高级的功能是 SQL 缓存依赖项。 SQL 缓�
 
 以下是可选项时运行 aspnet\_regbrowser.exe:
 
-| **选项** | **说明** |
+| **选项** | **描述** |
 | --- | --- |
 | **-?** | 显示 Aspnet\_regbbrowsers.exe 命令窗口中的帮助文本。 |
 | **-i** | 创建运行时浏览器功能的程序集并将其安装在全局程序集缓存。 |
@@ -298,7 +298,7 @@ ASP.NET 输出缓存的一项高级的功能是 SQL 缓存依赖项。 SQL 缓�
 
 ASP.NET 编译工具可在两种常规方法： 进行就地编译和部署，其中指定目标输出目录的编译。
 
-### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[编译中的位置的应用程序](https://msdn.microsoft.com/library/ms229863.aspx)
+### [<a name="compiling-an-application-in-place"></a>编译中的位置的应用程序](https://msdn.microsoft.com/library/ms229863.aspx)
 
 ASP.NET 编译工具可以编译的应用程序中的位置，也就是说，它会模拟应用程序，从而导致正则编译对进行多个请求的行为。 预编译站点的用户不会通过编译的页上第一个请求而导致的延迟。
 
@@ -314,7 +314,7 @@ ASP.NET 编译工具可以编译的应用程序中的位置，也就是说，它
 > 包含嵌套的应用程序的应用程序的编译不编译嵌套的应用程序。 嵌套的应用程序必须单独编译。
 
 
-### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[编译为部署的应用程序](https://msdn.microsoft.com/library/ms229863.aspx)
+### [<a name="compiling-an-application-for-deployment"></a>编译为部署的应用程序](https://msdn.microsoft.com/library/ms229863.aspx)
 
 通过指定 targetDir 参数编译的应用程序部署 （编译到目标位置）。 TargetDir 可以是 Web 应用程序的最后一个位置，也可以进一步部署已编译的应用程序。 使用 **-u**选项编译的方式，你可以无需重新编译它，编译的应用程序中的某些文件进行更改的应用程序。 Aspnet\_compiler.exe 对进行了区分静态和动态的文件类型，并创建生成的应用程序时以不同方式处理它们。
 
@@ -351,11 +351,11 @@ ASP.NET 编译工具可以编译的应用程序中的位置，也就是说，它
 | 在应用中的.skin 文件\_主题子目录 | 主题将编译到程序集并放置在 Bin 目录中。 存根 （stub） 文件将为.skin 文件创建并放置在相应的输出目录中。 静态文件 （例如.css) 复制到输出目录。 |
 | .browser Web.config 静态文件类型的 Bin 目录中已存在的程序集 | 这些文件原封不动地复制到输出目录。 |
 
-### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[固定的程序集名称](https://msdn.microsoft.com/library/ms229863.aspx##)
+### [<a name="fixed-assembly-names"></a>固定的程序集名称](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 某些情况下，例如部署 Web 应用程序使用 MSI Windows 安装程序，需要使用一致的文件名称和内容，以及一致的目录结构，以标识程序集或更新的配置设置。 在这些情况下，你可以使用 **-fixednames**选项以指定 ASP.NET 编译工具应编译为程序集的每个源代码文件而不是使用 where 多个页面被编译到程序集。 这可能会导致大量的程序集，因此如果您担心与可伸缩性应谨慎使用此选项。
 
-### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[强名称编译](https://msdn.microsoft.com/library/ms229863.aspx##)
+### [<a name="strong-name-compilation"></a>强名称编译](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 **Aptca**， **-delaysign**， **-keycontainer**并 **-keyfile**选项可用，以便可以使用 Aspnet\_compiler.exe 能够生成强名称程序集，而无需使用[强名称工具 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx)单独。 这些选项，分别对应到**AllowPartiallyTrustedCallersAttribute**， **AssemblyDelaySignAttribute**， **AssemblyKeyNameAttribute**，并且**AssemblyKeyFileAttribute**。
 

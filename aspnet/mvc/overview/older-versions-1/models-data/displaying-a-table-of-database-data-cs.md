@@ -8,15 +8,15 @@ ms.date: 10/07/2008
 ms.assetid: d6e758b6-6571-484d-a132-34ee6c47747a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d0d3f6a574a4b923d5da73ccb2ab3bfbd6f305ef
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 99b18de33e266adb626f4ab53ff20b1f52102900
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054824"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417580"
 ---
-<a name="displaying-a-table-of-database-data-c"></a>显示数据库数据表 (C#)
-====================
+# <a name="displaying-a-table-of-database-data-c"></a>显示数据库数据表 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_11_CS.pdf)
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 <a id="0.3_table01"></a>
 
 
-| **列名称** | **数据类型** | **允许 null 值** |
+| **列名** | **数据类型** | **允许为 Null** |
 | --- | --- | --- |
 | Id | Int | False |
 | 标题 | Nvarchar(200) | False |
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 3. 在中**选择数据库对象**步骤中，展开表节点中，选择电影表。 输入的命名空间*模型*然后单击**完成**按钮。
 
 
-[![创建 LINQ to SQL 类](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
+[![CLINQ to SQL 类](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
 
 **图 01**:创建 LINQ to SQL 类 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image2.png))
 
@@ -69,7 +69,7 @@ by [Microsoft](https://github.com/microsoft)
 完成实体数据模型向导后，会打开实体数据模型设计器。 在设计器应显示电影实体 （请参见图 2）。
 
 
-[![实体数据模型设计器](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
+[![T他实体数据模型设计器](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
 
 **图 02**:实体数据模型设计器 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image4.png))
 
@@ -83,7 +83,7 @@ by [Microsoft](https://github.com/microsoft)
 现在，我们已有一种方法来表示我们的数据库记录，我们可以创建一个控制器，返回的电影集合。 在 Visual Studio 解决方案资源管理器窗口中，右键单击 Controllers 文件夹，然后选择菜单选项**添加、 控制器**（参见图 3）。
 
 
-[![添加控制器菜单](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
+[![T他添加控制器菜单](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
 
 **图 03**:添加控制器菜单 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image6.png))
 
@@ -91,7 +91,7 @@ by [Microsoft](https://github.com/microsoft)
 当**添加控制器**对话框出现时，输入控制器名称 MovieController （请参阅图 4）。 单击**添加**按钮以添加新控制器。
 
 
-[![添加控制器对话框](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
+[![T他添加控制器对话框](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
 
 **图 04**:添加控制器对话框 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image8.png))
 
@@ -117,7 +117,7 @@ using MvcApplication1.Models;
 右键单击 index （） 操作，然后选择菜单选项**添加视图**（请参见图 5）。
 
 
-[![添加视图](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
+[![Adding 视图](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
 
 **图 05**:添加视图 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image10.png))
 
@@ -125,7 +125,7 @@ using MvcApplication1.Models;
 在中**添加视图**对话框中，选中复选框标记为**创建强类型化视图**。 选择作为 Movie 类**查看数据类**。 选择*列表*作为**查看内容**（请参阅图 6）。 选择这些选项将生成一个强类型化视图，显示电影列表。
 
 
-[![添加视图对话框](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
+[![T他添加视图对话框](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
 
 **图 06**:添加视图对话框中 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image12.png))
 
@@ -139,7 +139,7 @@ using MvcApplication1.Models;
 可以通过选择菜单选项来运行应用程序**调试、 启动调试**（或按 F5 键）。 运行应用程序将启动 Internet Explorer。 如果导航到 /Movie URL，那么您将看到图 7 中的页。
 
 
-[![电影表](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
+[![A 电影表](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
 
 **图 07**:电影的表 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-cs/_static/image14.png))
 

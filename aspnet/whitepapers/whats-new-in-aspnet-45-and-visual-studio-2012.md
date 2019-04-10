@@ -8,15 +8,15 @@ ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 6bbfb4aa7f29e4c189da4dfdca6f2113c7550b68
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045044"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410586"
 ---
-<a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 和 Visual Studio 2012 的新增功能
-====================
+# <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 和 Visual Studio 2012 的新增功能
+
 > 本文档介绍新功能和增强功能 ASP.NET 4.5 中引入的。 它还介绍了 Visual Studio 2012 中针对 web 开发正在进行的改进。 本文档最初在 2012 年 2 月 29 日发布。
 
 
@@ -88,7 +88,7 @@ ms.locfileid: "57045044"
         - [供应商特定的架构 (-moz-，-易于使用的功能)](#_Toc318097419)
         - [注释和取消注释支持](#_Toc318097420)
         - [颜色选取器](#_Toc318097421)
-        - [片段](#_Toc318097422)
+        - [代码段](#_Toc318097422)
         - [自定义区域](#_Toc318097423)
     - [Page Inspector](#_Toc318097424)
     - [发布](#_Toc318097425)

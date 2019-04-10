@@ -8,15 +8,15 @@ ms.date: 10/05/2010
 ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 82d18865815568c5df9768fd9dd403f11ebd1714
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 42c28bb7082781ffdf8f2f0fb46f14387e614043
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045424"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389526"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
-====================
+# <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+
 > *(包括 2011 年 4 月工具更新)*
 > 
 > ASP.NET MVC 3 是一个框架，用于构建可缩放的基于标准的 web 应用程序使用成熟设计模式和 ASP.NET 和.NET Framework 的强大功能。
@@ -133,11 +133,11 @@ ASP.NET MVC 3 附带的新视图引擎名为 Razor 提供了以下好处：
 
 Razor 还包括新的 HTML 帮助器，如下所示：
 
-- `Chart`。 呈现的图表，产品/服务与 ASP.NET 4 中的图表控件相同的功能。
-- `WebGrid`。 呈现数据网格中，完成，但分页和排序功能。
-- `Crypto`。 使用哈希算法来创建正确加盐，哈希处理密码。
-- `WebImage`。 呈现图像。
-- `WebMail`。 发送电子邮件。
+- `Chart`. 呈现的图表，产品/服务与 ASP.NET 4 中的图表控件相同的功能。
+- `WebGrid`. 呈现数据网格中，完成，但分页和排序功能。
+- `Crypto`. 使用哈希算法来创建正确加盐，哈希处理密码。
+- `WebImage`. 呈现图像。
+- `WebMail`. 发送电子邮件。
 
 有关 Razor 的详细信息，请参阅以下资源：
 

@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 78cb6dec71e6b4974fdea4f205d1a36ebdfc3104
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424439"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401733"
 ---
-<a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 中 Web 窗体的新增功能
-====================
+# <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 中 Web 窗体的新增功能
+
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 > ASP.NET Web 窗体的新版本引入了大量专注于处理数据时改善用户体验的改进。
@@ -396,11 +396,11 @@ ASP.NET 4.5 引入了 Web 窗体的数据批注验证。 而不是让每个输�
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample23.cs)]
 
     > [!NOTE]
-    > .NET framework 4.5 已扩展现有的数据批注集合。 以下是一些可以使用的数据批注: [CreditCard]，[Phone] [EmailAddress] [区域] [比较] [Url]，[FileExtensions]，[Required]、[Key]，[正则表达式]。
+    > .NET framework 4.5 已扩展现有的数据批注集合。 以下是一些可以使用的数据批注: [CreditCard]，[Phone] [EmailAddress] [区域] [比较] [Url]，[FileExtensions]，[Required]、[密钥]，[正则表达式]。
     > 
     > 一些用法示例：
     > 
-    > [Key]: Specifies that an attribute is the unique identifier
+    > [键]: Specifies that an attribute is the unique identifier
     > 
     > [Range(0.4, 0.5, ErrorMessage=&quot;{Write an error message}&quot;]: Double range
     > 
@@ -612,7 +612,7 @@ Web 应用程序中的异步方法可用于优化 ASP.NET 线程池的使用的�
 > 此外，可以部署此应用程序对 Azure 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

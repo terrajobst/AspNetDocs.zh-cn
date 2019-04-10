@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 848e6bcf-4c3f-4d14-974d-e45b9444ab79
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 12c5aa60aa6bb71c99e267a1a71b40ed718df8cf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1b955c43a0fc95bda87843fc4a5c9e56aef3dfc6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400992"
 ---
-<a name="drag-and-drop-via-reorderlist-vb"></a>通过 ReorderList 进行拖放 (VB)
-====================
+# <a name="drag-and-drop-via-reorderlist-vb"></a>通过 ReorderList 进行拖放 (VB)
+
 通过[Christian Wenz](https://github.com/wenz)
 
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList5.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist5VB.pdf)
@@ -44,7 +44,7 @@ ms.locfileid: "57041324"
 - `position` (int，NULL)
 
 
-[![AJAX 表的布局](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
+[![T他的 AJAX 表的布局](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
 
 AJAX 表的布局 ([单击此项可查看原尺寸图像](drag-and-drop-via-reorderlist-vb/_static/image3.png))
 
@@ -52,7 +52,7 @@ AJAX 表的布局 ([单击此项可查看原尺寸图像](drag-and-drop-via-reor
 接下来，几个值填充该表。 请注意，`position`列包含的元素的排序顺序。
 
 
-[![AJAX 表中的初始数据](drag-and-drop-via-reorderlist-vb/_static/image5.png)](drag-and-drop-via-reorderlist-vb/_static/image4.png)
+[![T他 AJAX 表中的初始数据](drag-and-drop-via-reorderlist-vb/_static/image5.png)](drag-and-drop-via-reorderlist-vb/_static/image4.png)
 
 AJAX 表中的初始数据 ([单击此项可查看原尺寸图像](drag-and-drop-via-reorderlist-vb/_static/image6.png))
 
@@ -63,10 +63,10 @@ AJAX 表中的初始数据 ([单击此项可查看原尺寸图像](drag-and-drop
 
 `ReorderList`控件需要设置以下属性：
 
-- `AllowReorder`：列表项是否可能会重新排列
-- `DataSourceID`：数据源的 ID
-- `DataKeyField`：数据源中的主键列的名称
-- `SortOrderField`：提供的列表项的排序顺序的数据源列
+- `AllowReorder`:列表项是否可能会重新排列
+- `DataSourceID`:数据源的 ID
+- `DataKeyField`:数据源中的主键列的名称
+- `SortOrderField`:提供的列表项的排序顺序的数据源列
 
 在中`<DragHandleTemplate>`和`<ItemTemplate>`的部分中，列表的布局可以细微调整。 此外，数据绑定是可能使用`Eval()`方法，如下所示：
 
@@ -83,9 +83,9 @@ AJAX 表中的初始数据 ([单击此项可查看原尺寸图像](drag-and-drop
 运行此示例中，浏览器和有点重新排列的列表项。 然后，重新加载页面和/或我们来看一下数据库。 更改后的位置维护和中的值也会反映`position`中的数据库列不需任何代码，只需通过使用标记。
 
 
-[![中的新列表项顺序根据数据库更改的数据](drag-and-drop-via-reorderlist-vb/_static/image8.png)](drag-and-drop-via-reorderlist-vb/_static/image7.png)
+[![T他的新列表项顺序根据数据库更改的数据](drag-and-drop-via-reorderlist-vb/_static/image8.png)](drag-and-drop-via-reorderlist-vb/_static/image7.png)
 
 根据新列表的数据库更改数据项顺序 ([单击此项可查看原尺寸图像](drag-and-drop-via-reorderlist-vb/_static/image9.png))
 
 > [!div class="step-by-step"]
-> [上一篇](using-postbacks-with-reorderlist-vb.md)
+> [上一个](using-postbacks-with-reorderlist-vb.md)

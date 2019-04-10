@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 82324ef0-3b75-4f63-a217-76ef4036ec93
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8afa2c9dfbe03a9874513f7d083adf7608f4218f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6d90538ace07402b655b8cd1d9c6e4d5c6dff424
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411197"
 ---
-<a name="enabling-windows-authentication-in-katana"></a>在 Katana 中启用 Windows 身份验证
-====================
+# <a name="enabling-windows-authentication-in-katana"></a>在 Katana 中启用 Windows 身份验证
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 本文介绍如何启用 Windows 身份验证在 Katana 中。 它涵盖两种方案：使用 IIS 托管 Katana，并使用 HttpListener 自托管 Katana 中自定义进程。 感谢您对 Barry Dorrans、 David Matson 和 Chris Ross 对本文的审阅。
@@ -24,7 +24,7 @@ ms.locfileid: "57041104"
 
 Katana 是 Microsoft 的实现[OWIN](http://owin.org/)，Open Web Interface for.NET。 可以阅读简介 OWIN 和 Katana[此处](an-overview-of-project-katana.md)。 OWIN 体系结构具有多个层：
 
-- 主机:管理运行 OWIN 管道的过程。
+- 主持人:管理运行 OWIN 管道的过程。
 - 服务器：打开网络套接字并侦听请求。
 - 中间件：处理 HTTP 请求和响应。
 

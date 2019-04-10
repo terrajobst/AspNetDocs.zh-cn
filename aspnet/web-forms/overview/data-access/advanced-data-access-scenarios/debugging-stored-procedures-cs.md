@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: c655c324-2ffa-4c21-8265-a254d79a693d
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4558a309248c89483d198f47f731eee2a266695f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9ac206edee58542ced24ce89adc3393d7a3c1c37
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421461"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392165"
 ---
-<a name="debugging-stored-procedures-c"></a>调试存储过程 (C#)
-====================
+# <a name="debugging-stored-procedures-c"></a>调试存储过程 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_74_CS.zip)或[下载 PDF](debugging-stored-procedures-cs/_static/datatutorial74cs1.pdf)
@@ -67,7 +67,7 @@ Visual Studio 就可轻松进行直接调试数据库对象。 让我们来看�
 提供的值后`@CategoryID`参数，该存储过程执行。 不过，而不是运行完成，调试器暂停执行第一个语句。 请注意，该值指示当前存储过程中的位置边距的黄色箭头。 您可以查看和编辑参数值通过监视窗口或悬停在该存储过程中的参数名称。
 
 
-[![调试器已停止的存储过程的第一个语句](debugging-stored-procedures-cs/_static/image3.png)](debugging-stored-procedures-cs/_static/image2.png)
+[![T他调试器已停止的存储过程的第一个语句](debugging-stored-procedures-cs/_static/image3.png)](debugging-stored-procedures-cs/_static/image2.png)
 
 **图 2**:调试器已停止的存储过程的第一个语句 ([单击此项可查看原尺寸图像](debugging-stored-procedures-cs/_static/image4.png))
 
@@ -85,7 +85,7 @@ Visual Studio 就可轻松进行直接调试数据库对象。 让我们来看�
 我们可以开始调试应用程序中调用存储的过程之前，我们需要指示 ASP.NET web 应用程序将与 SQL Server 调试器进行集成。 通过右键单击解决方案资源管理器中的网站名称启动 (`ASPNET_Data_Tutorial_74_CS`)。 从上下文菜单中选择属性页选项，选择在左侧的启动选项项并检查调试器部分中的 SQL Server 复选框 （请参见图 3）。
 
 
-[![检查应用程序的属性页中的 SQL Server 复选框](debugging-stored-procedures-cs/_static/image6.png)](debugging-stored-procedures-cs/_static/image5.png)
+[![C为了增加点乐趣 s 属性页的应用程序中的 SQL Server 复选框](debugging-stored-procedures-cs/_static/image6.png)](debugging-stored-procedures-cs/_static/image5.png)
 
 **图 3**:检查应用程序的属性页中的 SQL Server 复选框 ([单击此项可查看原尺寸图像](debugging-stored-procedures-cs/_static/image7.png))
 
@@ -108,7 +108,7 @@ Visual Studio 就可轻松进行直接调试数据库对象。 让我们来看�
 打开`Products_SelectByCategoryID`存储过程，并在开头设置断点`SELECT`语句通过在适当的位置的边距中单击或将光标放在开头`SELECT`语句并按 F9。 如图 4 所示，该断点显示为距中的红色圆圈。
 
 
-[![Products_SelectByCategoryID 中设置断点存储过程](debugging-stored-procedures-cs/_static/image9.png)](debugging-stored-procedures-cs/_static/image8.png)
+[![Set Products_SelectByCategoryID 中的断点的存储过程](debugging-stored-procedures-cs/_static/image9.png)](debugging-stored-procedures-cs/_static/image8.png)
 
 **图 4**:中设置断点`Products_SelectByCategoryID`存储过程 ([单击以查看实际尺寸的图像](debugging-stored-procedures-cs/_static/image10.png))
 
@@ -126,12 +126,12 @@ Visual Studio 就可轻松进行直接调试数据库对象。 让我们来看�
 `Products_SelectByCategoryID`中创建存储的过程[使用现有存储过程的类型化数据集 s Tableadapter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)教程。 其相应的 web 页面 (`~/AdvancedDAL/ExistingSprocs.aspx`) 包含一个 GridView，显示此存储过程返回的结果。 访问本页可通过浏览器。 一旦达到页上，在断点`Products_SelectByCategoryID`将达到存储的过程，并且控制返回到 Visual Studio。 就像在步骤 1 中，您可以单步执行该存储的过程的语句并查看和修改参数值。
 
 
-[![ExistingSprocs.aspx 页最初显示饮料](debugging-stored-procedures-cs/_static/image13.png)](debugging-stored-procedures-cs/_static/image12.png)
+[![T他 ExistingSprocs.aspx 页最初显示饮料](debugging-stored-procedures-cs/_static/image13.png)](debugging-stored-procedures-cs/_static/image12.png)
 
 **图 6**:`ExistingSprocs.aspx`页上最初显示饮料 ([单击以查看实际尺寸的图像](debugging-stored-procedures-cs/_static/image14.png))
 
 
-[![存储过程 s 已到达断点](debugging-stored-procedures-cs/_static/image16.png)](debugging-stored-procedures-cs/_static/image15.png)
+[![T已达到他存储过程的断点](debugging-stored-procedures-cs/_static/image16.png)](debugging-stored-procedures-cs/_static/image15.png)
 
 **图 7**:到达断点的存储过程 s ([单击此项可查看原尺寸图像](debugging-stored-procedures-cs/_static/image17.png))
 
@@ -139,12 +139,12 @@ Visual Studio 就可轻松进行直接调试数据库对象。 让我们来看�
 图 7 所示的值中的监视窗口为`@CategoryID`参数为 1。 这是因为`ExistingSprocs.aspx`页上最初显示产品的饮料类别中，具有`CategoryID`值为 1。 从下拉列表中选择一个不同的类别。 执行此操作导致回发和重新执行`Products_SelectByCategoryID`存储过程。 同样，但这次命中断点`@CategoryID`参数的值反映了所选的下拉列表项的`CategoryID`。
 
 
-[![从下拉列表中选择一个不同的类别](debugging-stored-procedures-cs/_static/image19.png)](debugging-stored-procedures-cs/_static/image18.png)
+[![C选择不同的类别，从下拉列表](debugging-stored-procedures-cs/_static/image19.png)](debugging-stored-procedures-cs/_static/image18.png)
 
 **图 8**:从下拉列表中选择一个不同的类别 ([单击此项可查看原尺寸图像](debugging-stored-procedures-cs/_static/image20.png))
 
 
-[![@CategoryID参数反映了在 Web 页上选择的类别](debugging-stored-procedures-cs/_static/image22.png)](debugging-stored-procedures-cs/_static/image21.png)
+[![T他@CategoryID参数反映了在 Web 页中选择类别](debugging-stored-procedures-cs/_static/image22.png)](debugging-stored-procedures-cs/_static/image21.png)
 
 **图 9**:`@CategoryID`参数反映了在 Web 页中选择类别 ([单击以查看实际尺寸的图像](debugging-stored-procedures-cs/_static/image23.png))
 

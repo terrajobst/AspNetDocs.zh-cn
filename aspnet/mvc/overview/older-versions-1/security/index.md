@@ -8,15 +8,15 @@ ms.date: 09/28/2011
 ms.assetid: 346c6b44-0ff4-49af-ac94-6e74d952b4eb
 msc.legacyurl: /mvc/overview/older-versions-1/security
 msc.type: chapter
-ms.openlocfilehash: d2579a917e9f83fbc16a649d37bcf23d4324e3dd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e70ff8af352c4d9ae76147741f3ce6dce2a32deb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021104"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415435"
 ---
-<a name="security"></a>安全性
-====================
+# <a name="security"></a>安全性
+
 > 本教程将介绍如何使用密码保护 ASP.NET MVC 应用程序以及如何创建和管理用户和角色中的某些页。
 
 

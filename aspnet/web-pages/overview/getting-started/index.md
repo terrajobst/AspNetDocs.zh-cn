@@ -8,19 +8,19 @@ ms.date: 05/18/2012
 ms.assetid: 99253c4e-a125-4c21-85e7-a6dd74d93892
 msc.legacyurl: /web-pages/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: d46c4100bf169caa5dfd0f265e16d00d519ac847
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3e5b9d1a3bac0cf1ab042f473f8fd508069000a5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022234"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408571"
 ---
-<a name="getting-started-with-aspnet-web-pages"></a>开始使用 ASP.NET Web Pages
-====================
+# <a name="getting-started-with-aspnet-web-pages"></a>开始使用 ASP.NET Web Pages
+
 > 哪些 Web Pages 和 WebMatrix 是，以及如何安装的所有内容、 开始，以及部署的网站。
 
 
-- [在 Visual Studio 中对 ASP.NET 网页进程编程](program-asp-net-web-pages-in-visual-studio.md)
+- [在 Visual Studio 中对 ASP.NET 网页进行编程](program-asp-net-web-pages-in-visual-studio.md)
 - [ASP.NET Web 编程 Razor 语法简介](introducing-razor-syntax-c.md)
 - [ASP.NET 网页 (Visual Basic)](introducing-razor-syntax-vb.md)
 - [ASP.NET 网页 (Razor) 常见问题解答](aspnet-web-pages-razor-faq.md)

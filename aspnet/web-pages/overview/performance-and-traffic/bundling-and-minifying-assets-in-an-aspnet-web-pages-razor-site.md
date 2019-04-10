@@ -8,15 +8,15 @@ ms.date: 06/21/2012
 ms.assetid: 8906f1e9-4b66-4a03-8e8a-9e9debf8ed91
 msc.legacyurl: /web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site
 msc.type: authoredcontent
-ms.openlocfilehash: 7d2cb2fe311b8aff20bfb378b329286701ed5b7d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e42111ad71ec65581e56c73822e23ecd5fcbd58
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059914"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400446"
 ---
-<a name="bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网页 (Razor) 中绑定和缩小资产
-====================
+# <a name="bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网页 (Razor) 中绑定和缩小资产
+
 by [Microsoft](https://github.com/microsoft)
 
 > 捆绑和缩小种方法来更快地使您的网站。 绑定可让你组合多个 JavaScript (*.js*) 文件或多个级联样式表 (*.css*) 文件，以便它们可以作为一个单元，而不是一次一个地下载。 缩小加大出空白并执行其他类型的压缩，以使可能发生的已下载的文件尽可能小。

@@ -8,15 +8,15 @@ ms.date: 02/20/2014
 ms.assetid: fc49bcb9-f1a9-4048-8c3f-b60951853200
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: f388ac1a97bde39cffe6b592b436d7af0d419a5f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0263f736b96f8e8572536f3783d86c261d7c0512
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411223"
 ---
-<a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>从 ASP.NET Web Pages (Razor) 站点发送电子邮件
-====================
+# <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>从 ASP.NET Web Pages (Razor) 站点发送电子邮件
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 此文章介绍了如何使用 ASP.NET Web Pages (Razor) 时，从网站发送电子邮件。

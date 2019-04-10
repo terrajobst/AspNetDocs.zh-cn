@@ -8,15 +8,15 @@ ms.date: 01/28/2011
 ms.assetid: 51b447d5-eaa1-4df1-917c-f4f2746ed62d
 msc.legacyurl: /mobile/tested-devices
 msc.type: content
-ms.openlocfilehash: 4576e176f3b5d6e3a1fbec16f098c64ec3f0d54d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ecf8b7d90358fa0410ded9bd33c711016b4cd1d4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034374"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411054"
 ---
-<a name="aspnet-mobile-controls-tested-devices"></a>经 ASP.NET 移动控件测试的设备
-====================
+# <a name="aspnet-mobile-controls-tested-devices"></a>经 ASP.NET 移动控件测试的设备
+
 > 以下设备和浏览器经过了 Microsoft Mobile Internet Toolkit 1.0 版和 ASP.NET 移动控件。
 > 
 > - Microsoft Mobile Internet Toolkit [MMIT 1.0]:*(1 月 15，2002年)*
@@ -68,9 +68,9 @@ ms.locfileid: "57034374"
 |        Palm         |                      m505                       |              Blazer               |                    2.0                    |  DU 1.0  |
 |        Palm         |                      VIIx                       |              AvantGo              |                    4.0                    |  DU 1.0  |
 |        Palm         |                       Vx                        |             GoAmerica             |                Go.Web 6.0                 |  DU 1.0  |
-|      Panasonic      |                      GD95                       | 原始设备制造商 |                  版本                  |  DU 1.0  |
-|      Panasonic      |                      P503i                      | 原始设备制造商 |                  版本                  |  DU 1.0  |
-|      Panasonic      |                     P503is                      | 原始设备制造商 |                  版本                  |  DU 1.0  |
+|      Panasonic      |                      GD95                       | 原始设备制造商 |                  Version                  |  DU 1.0  |
+|      Panasonic      |                      P503i                      | 原始设备制造商 |                  Version                  |  DU 1.0  |
+|      Panasonic      |                     P503is                      | 原始设备制造商 |                  Version                  |  DU 1.0  |
 |      Panasonic      |                      P821i                      |              访问权限               |           Compact NetFront 2.0            |  DU 1.0  |
 |       Samsung       |                    SGH-A300                     |             Openwave              |            最高。浏览器 4.1.19k             |  DU 1.0  |
 |       Samsung       |                    SGH-A400                     |             Openwave              |            最高。浏览器 4.1.19k             |  DU 1.0  |
@@ -263,8 +263,8 @@ ms.locfileid: "57034374"
 |        Palm         |                       Vx                        |            AU-Systems             |                 2.12181.1                 | MIT 1.0  |
 |        Palm         |                       Vx                        |             GoAmerica             |               Go.Web 3.0.6                | MIT 1.0  |
 |        Palm         |                       Vx                        |              Omnisky              |                  2.0.0.4                  | MIT 1.0  |
-|      Panasonic      |                      P210i                      | 原始设备制造商 |                  版本                  | MIT 1.0  |
-|      Panasonic      |                   P502i Phone                   | 原始设备制造商 |                  版本                  | MIT 1.0  |
+|      Panasonic      |                      P210i                      | 原始设备制造商 |                  Version                  | MIT 1.0  |
+|      Panasonic      |                   P502i Phone                   | 原始设备制造商 |                  Version                  | MIT 1.0  |
 |      个人       |                    计算机                     |             Microsoft             |           Internet Explorer 5.5           | MIT 1.0  |
 |      个人       |                    计算机                     |             Microsoft             |           Internet Explorer 6.0           | MIT 1.0  |
 |         RIM         |                 Blackberry 857                  |             GoAmerica             |           Go.Web 1.8.004 (HTML)           | MIT 1.0  |

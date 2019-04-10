@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 4eabc535-b8a1-43f5-bb99-cfeb86db0fca
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69ff78949589017d12a791231e38b400b49f2917
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9b2a7e00b3c50a946ad0f2518880892f103a5c1b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051834"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387108"
 ---
-<a name="validating-with-a-service-layer-c"></a>使用服务层进行验证 (C#)
-====================
+# <a name="validating-with-a-service-layer-c"></a>使用服务层进行验证 (C#)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何通过隔离您从控制器层的服务层维护清晰分离关注点。
@@ -30,7 +30,7 @@ ms.locfileid: "57051834"
 
 例如，列表 1 中包含名为化 ProductRepository 简单的存储库。 产品存储库包含所有应用程序的数据访问代码。 该列表还包括产品存储库实现的 IProductRepository 接口。
 
-**代码清单 1-Models\ProductRepository.cs**
+**Listing 1 -- Models\ProductRepository.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample1.cs)]
 

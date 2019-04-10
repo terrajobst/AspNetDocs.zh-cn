@@ -8,26 +8,26 @@ ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: c53c27f4852eab9813bd917315111e7cd3b04953
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056594"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398470"
 ---
-<a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>检索和使用模型绑定和 web 窗体显示数据
-====================
+# <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>检索和使用模型绑定和 web 窗体显示数据
+
 
 > 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。 本系列开始介绍性材料，后续教程将移动到更高级的概念。
 > 
->  模型绑定模式适用于任何数据访问技术。 在本教程中，将使用实体框架中，但您可以使用最熟悉的数据访问技术。 从数据绑定服务器控件，如 GridView、 ListView、 detailsview 和 FormView 控件，指定要用于选择、 更新、 删除和创建数据的方法的名称。 在本教程中，将 SelectMethod 为指定值。 
+> 模型绑定模式适用于任何数据访问技术。 在本教程中，将使用实体框架中，但您可以使用最熟悉的数据访问技术。 从数据绑定服务器控件，如 GridView、 ListView、 detailsview 和 FormView 控件，指定要用于选择、 更新、 删除和创建数据的方法的名称。 在本教程中，将 SelectMethod 为指定值。 
 > 
 > 在该方法中，您提供用于检索数据的逻辑。 在下一步的教程中，将为 UpdateMethod、 DeleteMethod 和 InsertMethod 设置值。
 >
 > 你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)中的完整项目C#或 Visual Basic。 可下载代码适用于 Visual Studio 2012 和更高版本。 它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2017 模板稍有不同。
 > 
 > 在本教程在 Visual Studio 中运行应用程序。 此外可以部署到宿主提供程序应用程序，并使其可通过 internet。 Microsoft 提供了免费的 web 宿主中的最多 10 个网站  
->  [Azure 免费试用帐户](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。 有关如何将 Visual Studio web 项目部署到 Azure 应用服务 Web 应用的信息，请参阅[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)系列。 该教程还演示如何使用 Entity Framework Code First 迁移将 SQL Server 数据库部署到 Azure SQL 数据库。
+> [Azure 免费试用帐户](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。 有关如何将 Visual Studio web 项目部署到 Azure 应用服务 Web 应用的信息，请参阅[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)系列。 该教程还演示如何使用 Entity Framework Code First 迁移将 SQL Server 数据库部署到 Azure SQL 数据库。
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
@@ -217,4 +217,4 @@ Visual Studio 不仅具有正确签名的代码隐藏中创建一个方法，而
 在接下来[教程](updating-deleting-and-creating-data.md)在此系列中，则将启用更新、 删除和创建数据。
 
 > [!div class="step-by-step"]
-> [下一页](updating-deleting-and-creating-data.md)
+> [下一步](updating-deleting-and-creating-data.md)

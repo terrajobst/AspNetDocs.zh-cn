@@ -8,15 +8,15 @@ ms.date: 05/18/2012
 ms.assetid: ffad842d-548c-40c6-84c5-10858133e972
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages
 msc.type: chapter
-ms.openlocfilehash: e0c0c719ef628a4e5050e908d45421d5bfd6d983
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3224039c29bfda085e74095f7089dcbfc68ce1cc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023024"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401096"
 ---
-<a name="aspnet-web-pages"></a>ASP.NET 网页
-=================
+# <a name="aspnet-web-pages"></a>ASP.NET 网页
+
 > 哪些视频可以查看向下钻取到 Web Pages 和 WebMatrix。
 
 

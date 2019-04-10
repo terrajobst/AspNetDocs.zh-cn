@@ -8,15 +8,15 @@ ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: ec8cdda5c5b298736a650f82cd6b52d73b6dfe3d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061294"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389201"
 ---
-<a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 疑难解答指南
-====================
+# <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 疑难解答指南
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文介绍使用 ASP.NET Web Pages (Razor) 和一些建议的解决方案时可能遇到的问题。
@@ -141,7 +141,7 @@ ms.locfileid: "57061294"
     *连接尝试失败，因为被连接的方未正确响应时间或建立的连接失败，因为连接的主机未能响应一段时间后*
 
     此错误通常意味着应用程序无法连接到 SMTP 服务器。 请检查服务器名和端口号。
-- <em>邮箱不可用。服务器响应为：5.1.0 &lt; someuser@invaliddomain &gt;发件人已拒绝： 无效的发件人域</em>
+- *邮箱不可用。 服务器响应为：5.1.0 &lt; someuser@invaliddomain &gt;发件人已拒绝： 无效的发件人域*
 
     此消息可能指示`From`地址不正确或缺少。
 - *指定的字符串不是窗体所需的电子邮件地址。*

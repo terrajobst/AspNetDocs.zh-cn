@@ -8,15 +8,15 @@ ms.date: 10/30/2010
 ms.assetid: 68b8c023-92fa-4df6-9563-1764e16e4b04
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6d4f38201eaa25097dcba589f35506204d3f73a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4fbb165f8ce80d560589a43c60920a6e68893d46
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390501"
 ---
-<a name="masterdetail-filtering-across-two-pages-c"></a>跨两个页面的母版/详细信息筛选 (C#)
-====================
+# <a name="masterdetail-filtering-across-two-pages-c"></a>跨两个页面的母版/详细信息筛选 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_34_CS.exe)或[下载 PDF](master-detail-filtering-acess-two-pages-datalist-cs/_static/datatutorial34cs1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57031724"
 创建任何母版/详细信息报表的第一步是首先显示的"主"的记录。 因此，我们的第一个任务是在"主"页中显示的类别。 打开`CategoryListMaster.aspx`页中`DataListRepeaterFiltering`文件夹中，添加一个 Repeater 控件，，和从智能标记中，选择要添加新对象数据源。 配置新对象数据源，以便访问其数据从`CategoriesBLL`类的`GetCategories`方法 （请参阅图 1）。
 
 
-[![配置对象数据源使用 CategoriesBLL 类 GetCategories 方法](master-detail-filtering-acess-two-pages-datalist-cs/_static/image2.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image1.png)
+[![C配置对象数据源使用 CategoriesBLL 类 GetCategories 方法](master-detail-filtering-acess-two-pages-datalist-cs/_static/image2.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image1.png)
 
 **图 1**:配置为使用 ObjectDataSource`CategoriesBLL`类的`GetCategories`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ ms.locfileid: "57031724"
 使用此完整的标记，花点时间查看我们通过浏览器的进度。 如图 2 所示，Repeater 将呈现为一个项目符号列表，显示每个类别的名称和说明。
 
 
-[![每个类别显示为项目符号列表项](master-detail-filtering-acess-two-pages-datalist-cs/_static/image5.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image4.png)
+[![E类别显示为项目符号列表项的支票](master-detail-filtering-acess-two-pages-datalist-cs/_static/image5.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image4.png)
 
 **图 2**:每个类别显示为项目符号列表项 ([单击此项可查看原尺寸图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image6.png))
 
@@ -73,7 +73,7 @@ ms.locfileid: "57031724"
 如果您按照此过程，随意在页面中使用的定位点元素或超链接控件的实现方式。 而不考虑的方法，查看通过浏览器的每个类别名称应呈现为链接到网页时`ProductsForCategoryDetails.aspx`，并传入适用`CategoryID`值 （请参见图 3）。
 
 
-[![类别名称现在链接到 ProductsForCategoryDetails.aspx](master-detail-filtering-acess-two-pages-datalist-cs/_static/image8.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image7.png)
+[![T他类别名称现在指向 ProductsForCategoryDetails.aspx](master-detail-filtering-acess-two-pages-datalist-cs/_static/image8.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image7.png)
 
 **图 3**:类别名称现在链接到`ProductsForCategoryDetails.aspx`([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image9.png))
 
@@ -83,7 +83,7 @@ ms.locfileid: "57031724"
 与`CategoryListMaster.aspx`页上完成，我们已准备好将实现"详细信息"页中，我们重点处理`ProductsForCategoryDetails.aspx`。 打开此页，将从工具箱拖到设计器中，拖动 DataList 并设置其`ID`属性设置为`ProductsInCategory`。 接下来，从 DataList 的智能标记选择将新对象数据源添加到页上，其命名为`ProductsInCategoryDataSource`。 将其配置，以便它将调用`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法; 将设置为 （无） INSERT、 UPDATE 和 DELETE 选项卡中列出的下拉列表。
 
 
-[![配置对象数据源使用 ProductsBLL 类 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-acess-two-pages-datalist-cs/_static/image11.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image10.png)
+[![C配置对象数据源使用 ProductsBLL 类 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-acess-two-pages-datalist-cs/_static/image11.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image10.png)
 
 **图 4**:配置为使用 ObjectDataSource`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "57031724"
 由于`GetProductsByCategoryID(categoryID)`方法接受一个输入的参数 (*`categoryID`*)，选择数据源向导为我们提供了可以指定参数的源。 设置参数源为查询字符串使用 QueryStringField `CategoryID`。
 
 
-[![使用查询字符串字段 CategoryID 作为参数的源](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
+[![Use 查询字符串字段 CategoryID 作为参数的源](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
 
 **图 5**:使用查询字符串字段`CategoryID`作为参数的源 ([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image15.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "57031724"
 若要在操作中查看此页，从启动`CategoryListMaster.aspx`页; 接下来，单击类别项目符号列表中的链接。 执行此操作会转到`ProductsForCategoryDetails.aspx`，并传递沿`CategoryID`通过在查询字符串。 `ProductsInCategoryDataSource`中的 ObjectDataSource`ProductsForCategoryDetails.aspx`然后将获取指定类别的产品并将其显示 DataList，呈现每个行的两个产品中。 图 6 所示的屏幕截图`ProductsForCategoryDetails.aspx`查看饮料时。
 
 
-[![显示饮料，每行的两个](master-detail-filtering-acess-two-pages-datalist-cs/_static/image17.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image16.png)
+[![T他显示饮料，每行的两个](master-detail-filtering-acess-two-pages-datalist-cs/_static/image17.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image16.png)
 
 **图 6**:显示饮料，每行的两个 ([单击此项可查看原尺寸图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image18.png))
 
@@ -115,7 +115,7 @@ ms.locfileid: "57031724"
 若要实现此目的，将添加在 Repeater 控件的上方 FormView `ProductsForCategoryDetails.aspx`。 接下来，从名为的 FormView 的智能标记向页面添加新 ObjectDataSource`CategoryDataSource`并将其配置为使用`CategoriesBLL`类的`GetCategoryByCategoryID(categoryID)`方法。
 
 
-[![有关通过 CategoriesBLL 类 GetCategoryByCategoryID(categoryID) 方法类别的访问信息](master-detail-filtering-acess-two-pages-datalist-cs/_static/image20.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image19.png)
+[![A访问有关通过 CategoriesBLL 类 GetCategoryByCategoryID(categoryID) 方法类别的信息](master-detail-filtering-acess-two-pages-datalist-cs/_static/image20.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image19.png)
 
 **图 7**:访问有关通过类别的信息`CategoriesBLL`类的`GetCategoryByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image21.png))
 
@@ -132,7 +132,7 @@ ms.locfileid: "57031724"
 > 除了 FormView，我还添加了超链接控件上面，将引导用户返回到列表类别 FormView (`CategoryListMaster.aspx`)。 任意其他位置放置此链接或者完全忽略它。
 
 
-[![类别信息是现在显示在页面的顶部](master-detail-filtering-acess-two-pages-datalist-cs/_static/image23.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image22.png)
+[![Category 信息是现在显示在页面顶部](master-detail-filtering-acess-two-pages-datalist-cs/_static/image23.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image22.png)
 
 **图 8**:类别信息是现在显示在页面的顶部 ([单击此项可查看原尺寸图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image24.png))
 
@@ -158,7 +158,7 @@ Northwind 数据库中的类别的所有对一个或多个产品相关联。 若
 相应地更新数据库之后, 返回到`CategoryListMaster.aspx`页上，单击生成链接。 由于不再有任何属于生成类别的产品，您应看到"没有所选的类别的产品"消息，如图 9 中所示。
 
 
-[![如果有任何产品属于所选分类，显示一条消息](master-detail-filtering-acess-two-pages-datalist-cs/_static/image26.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image25.png)
+[![A 如果有无产品属于所选分类将显示消息](master-detail-filtering-acess-two-pages-datalist-cs/_static/image26.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image25.png)
 
 **图 9**:如果有任何产品属于所选分类显示一条消息 ([单击此项可查看原尺寸图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image27.png))
 

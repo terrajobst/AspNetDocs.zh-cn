@@ -8,15 +8,15 @@ ms.date: 04/04/2007
 ms.assetid: 808a89d3-4a98-4abe-83b5-0aa01f749048
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender
 msc.type: video
-ms.openlocfilehash: 8d2c31b8466ba37ad8ed8a2c4d06b1eb2a6fe629
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d99bfee63a2747f9f414fa950698d1c57b215658
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042214"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400355"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender"></a>[如何实现:]使用 ASP.NET AJAX MutuallyExclusive 复选框扩展程序吗？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender"></a>[如何实现:]使用 ASP.NET AJAX MutuallyExclusive 复选框扩展程序吗？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 从 ASP.NET AJAX 控件工具包 MutuallyExclusive 控件启用开发人员若要配置多个复选框为互斥的这可确保用户仅可以查看的单个选项。 虽然单选按钮列表提供了类似的行为，因此需要一个复选框以在用户单击使 MutuallyExclusive 控制更适合收到来自用户，如接受或不接受使用条款的确认。

@@ -8,15 +8,15 @@ ms.date: 11/17/2011
 ms.assetid: a2d7f33b-8c4a-4b48-9fb1-9139cf9b9878
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 9dacafaacdab12b8005cb6073647ae526cefcfb4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ae53e23dda3ac63e26590edab692188bb44e9f65
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029674"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413199"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序：简介-12 1
-====================
+# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>部署具有 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 应用程序：简介-12 1
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载初学者项目](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
@@ -83,7 +83,7 @@ Contoso University 是 Visual Studio web 应用程序项目。 大多数部署�
 在开始之前，请确保你有 Windows 7 或更高版本，并且您的计算机上安装以下产品之一：
 
 - [Visual Studio 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
-- [Visual Web Developer Express 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VWD2010SP1Pack)
+- [Visual Web Developer 速成版 2010 SP1](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VWD2010SP1Pack)
 - [Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web](https://go.microsoft.com/fwlink/?LinkId=240162)
 
 如果你有 Visual Studio 2010 SP1 或 Visual Web Developer 速成版 2010 SP1，也安装以下产品：
@@ -140,4 +140,4 @@ Contoso University 是 Visual Studio web 应用程序项目。 大多数部署�
 在此系列中第一个教程中，已下载示例的 Visual Studio 项目并查看影响如何部署应用程序的网站功能。 在以下教程中，您为部署准备通过以下操作来自动处理的一些设置。 您可以手动处理的其他人。
 
 > [!div class="step-by-step"]
-> [下一页](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [下一步](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

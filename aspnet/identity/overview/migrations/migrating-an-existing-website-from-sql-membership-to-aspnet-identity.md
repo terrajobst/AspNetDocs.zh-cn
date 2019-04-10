@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: 从 SQL 成员身份的现有网站迁移到 ASP.NET 标识 |Microsoft Docs
+title: 从 SQL 成员身份的现有网站迁移到 ASP.NET 标识的 ASP.NET 4.x
 author: Rick-Anderson
 description: 本教程说明了步骤来迁移现有 web 应用程序具有用户和创建使用新的 ASP.NET 标识的 SQL 成员资格的角色数据...
 ms.author: riande
 ms.date: 12/19/2014
+ms.custom: seoapril2019
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b80f2f5cc4702c3e406d8989905c56508711e788
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f205dfd8692bc946ca2124655bf8bcefbdbd1779
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426076"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394519"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>将现有网站从 SQL 成员身份迁移到 ASP.NET Identity
 
@@ -82,7 +83,7 @@ ms.locfileid: "58426076"
 
 若要运行的现有用户数据使用现成的 ASP.NET 标识类，我们需要将数据库架构迁移到所需的 ASP.NET 标识。 我们可以通过添加新表并将现有的信息复制到这些表来执行此操作。 默认情况下 ASP.NET 标识使用 EntityFramework 标识模型类映射回数据库来存储/检索的信息。 这些模型类实现核心标识接口定义用户和角色对象。 表和数据库中的列基于这些模型的类。 EntityFramework 模型中的类标识 v2.1.0 和它们的属性是定义如下
 
-| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | **类型** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | string | Id | RoleId | ProviderKey | Id |
 | 用户名 | string | 名称 | UserId | UserId | ClaimType |
@@ -98,7 +99,7 @@ ms.locfileid: "58426076"
 
 我们需要为每个这些模型的表具有与属性相对应的列。 在中定义的类与表之间的映射`OnModelCreating`方法的`IdentityDBContext`。 这称为配置的 fluent API 方法，可找到更多信息[此处](https://msdn.microsoft.com/data/jj591617.aspx)。 类的配置是如下所示
 
-| **类** | **Table** | **主键** | **外键** |
+| **类** | **表** | **主键** | **外键** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |

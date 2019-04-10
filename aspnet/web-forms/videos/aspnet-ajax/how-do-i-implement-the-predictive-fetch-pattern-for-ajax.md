@@ -8,15 +8,15 @@ ms.date: 02/13/2007
 ms.assetid: 4ecca278-0cd6-4198-8382-802359b30120
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-predictive-fetch-pattern-for-ajax
 msc.type: video
-ms.openlocfilehash: 9403f2ca18660f257d7d624301cd66a7234ba7a2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d9bb8452b18130fa70c7922a92559db0ae007758
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029254"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406998"
 ---
-<a name="how-do-i-implement-the-predictive-fetch-pattern-for-ajax"></a>[如何实现:]实现 AJAX 的预取模式？
-====================
+# <a name="how-do-i-implement-the-predictive-fetch-pattern-for-ajax"></a>[如何实现:]实现 AJAX 的预取模式？
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 演示如何实现其中 AJAX 引擎使用的当前状态的用户的交互来预测接下来将需要哪些组的内容，AJAX 的预测性提取模式，然后从该服务器事先提取该数据。 这提供了响应更及时的用户体验。

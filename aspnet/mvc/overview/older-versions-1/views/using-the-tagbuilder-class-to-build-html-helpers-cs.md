@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 3975a52f-bd15-4edd-8f3d-1df93672515b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9759ea9b05ba5eba268901d3d2d1a15b2afe6202
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3227560c1d0c48f7738e26c87a0dbb140c410eee
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055924"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410092"
 ---
-<a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>使用 TagBuilder 类用于生成 HTML 帮助程序 (C#)
-====================
+# <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>使用 TagBuilder 类用于生成 HTML 帮助程序 (C#)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 向您介绍 TagBuilder 类命名为 ASP.NET MVC 框架中的一个有用的实用工具类。 TagBuilder 类可用于轻松生成 HTML 标记。
@@ -65,7 +65,7 @@ TagBuilder 类具有四个重要属性：
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample2.aspx)]
 
 
-[![新建项目对话框](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
+[![T他新建项目对话框中](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
 
 **图 01**:使用图像帮助程序 ([单击此项可查看原尺寸图像](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image2.png))
 

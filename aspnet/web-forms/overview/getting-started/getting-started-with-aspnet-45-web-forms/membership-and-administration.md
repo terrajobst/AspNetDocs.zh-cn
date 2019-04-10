@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: 23d08d5a05a8321fbc794e2c9b54cc39c9b5baf6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7263a7d7ee791be8a1369934aac4d091736a658b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031054"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417476"
 ---
-<a name="membership-and-administration"></a>成员身份和管理
-====================
+# <a name="membership-and-administration"></a>成员身份和管理
+
 通过[Erik Reitan](https://github.com/Erikre)
 
 [下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -66,12 +66,12 @@ ASP.NET Web 窗体提供了成员资格功能。 通过使用默认模板，您�
    将带有下划线字母"A"突出显示方法的开头。
 7. 悬停在字母"A"，然后单击用户界面，使你可以生成方法存根`AddUserAndRole`方法。 
 
-    ![成员资格和 Advministration-生成方法存根 （stub）](membership-and-administration/_static/image1.png)
+    ![成员身份和管理-生成方法存根 （stub）](membership-and-administration/_static/image1.png)
 8. 单击标题为的选项：  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
 9. 打开*RoleActions.cs*文件从*逻辑*文件夹。  
    `AddUserAndRole`方法已添加到类文件。
-10. 修改*RoleActions.cs*通过删除文件`NotImplementedeException`并添加以黄色突出显示的代码，以使其显示，如下所示：  
+10. 修改*RoleActions.cs*通过删除文件`NotImplementedException`并添加以黄色突出显示的代码，以使其显示，如下所示：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
 
@@ -274,7 +274,7 @@ Wingtip Toys 示例应用程序允许匿名用户和登录的用户可以查看�
 ## <a name="additional-resources"></a>其他资源
 
 [Web.config 的 authorization 元素](https://msdn.microsoft.com/library/8d82143t(v=vs.100).aspx)  
-[ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)  
+[ASP.NET 标识](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)  
 [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET Web 窗体应用部署到 Azure 网站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure-免费试用版](https://azure.microsoft.com/pricing/free-trial/)
 

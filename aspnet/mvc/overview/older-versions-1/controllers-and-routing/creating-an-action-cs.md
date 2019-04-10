@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: cb33b28c-3025-4bd1-a1fa-eaa3af7bb56f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 243248ee30c6a2db7f102f7743d0393d4a6a9d24
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c66e066bd3e241e667924dacc114f57151df822a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056124"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389552"
 ---
-<a name="creating-an-action-c"></a>创建操作 (C#)
-====================
+# <a name="creating-an-action-c"></a>创建操作 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被操作的要求。
@@ -57,7 +57,7 @@ by [Microsoft](https://github.com/microsoft)
 如果你尝试通过在浏览器地址栏中键入 /Work/CompanySecrets 调用 CompanySecrets() 控制器操作然后将图 1 中收到错误消息。
 
 
-[![调用 NonAction 方法](creating-an-action-cs/_static/image1.jpg)](creating-an-action-cs/_static/image1.png)
+[![Invoking NonAction 方法](creating-an-action-cs/_static/image1.jpg)](creating-an-action-cs/_static/image1.png)
 
 **图 01**:调用 NonAction 方法 ([单击此项可查看原尺寸图像](creating-an-action-cs/_static/image2.png))
 

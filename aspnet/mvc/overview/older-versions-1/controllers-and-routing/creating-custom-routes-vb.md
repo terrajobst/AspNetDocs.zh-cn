@@ -8,15 +8,15 @@ ms.date: 02/16/2009
 ms.assetid: 6ac5758b-6199-42af-adcb-21954b864951
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cd7ad46161b3f44d915bc4b2fa201606b00d194a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a7b8b85ba1cf5c18e605eb8114a305272baf41a6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035274"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404866"
 ---
-<a name="creating-custom-routes-vb"></a>创建自定义路由 (VB)
-====================
+# <a name="creating-custom-routes-vb"></a>创建自定义路由 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何将自定义路由添加到 ASP.NET MVC 应用程序。 在本教程中，您将学习如何修改 Global.asax 文件中的默认路由表。
@@ -52,7 +52,7 @@ by [Microsoft](https://github.com/microsoft)
 
 可以使用在代码清单 2 中的控制器使用博客自定义路由。
 
-**Listing 2 - ArchiveController.vb**
+**代码清单 2-ArchiveController.vb**
 
 [!code-vb[Main](creating-custom-routes-vb/samples/sample2.vb)]
 
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 **图 1-通过转换参数错误**
 
 
-[![新建项目对话框](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
+[![T他新建项目对话框中](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
 
 **图 01**:通过转换参数的错误 ([单击此项可查看原尺寸图像](creating-custom-routes-vb/_static/image2.png))
 

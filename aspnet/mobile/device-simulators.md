@@ -1,19 +1,20 @@
 ---
 uid: mobile/device-simulators
-title: 模拟常用移动设备进行测试 |Microsoft Docs
+title: 模拟常用移动设备使用 ASP.NET 进行测试 |Microsoft Docs
 author: rick-anderson
-description: 你可以通过访问以下链接下载受欢迎的移动设备和浏览器的仿真的程序
+description: 下载受欢迎的移动设备和浏览器的模拟器，以使用 ASP.NET 应用程序进行测试。 包括 iPhone、 Android、 BrowserStack 和的详细信息。
 ms.author: riande
 ms.date: 10/11/2018
+ms.custom: seoapril2019
 ms.assetid: bfb5612e-c3ec-4f28-b43b-63d781aa2272
 msc.legacyurl: /mobile/device-simulators
 msc.type: content
-ms.openlocfilehash: 8299295154d23f8fc430676b2c8ad8efc98ad185
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: aec442e05a7db69dfaea4b0cca53bbf41792500c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033744"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412146"
 ---
 # <a name="simulate-popular-mobile-devices-for-testing"></a>模拟常用移动设备进行测试
 

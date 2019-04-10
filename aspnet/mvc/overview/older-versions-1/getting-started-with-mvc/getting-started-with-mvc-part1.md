@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: bf4a1c19-0a94-4208-b268-a96ddcf26946
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: 2d9c1dd0dd3c9f892b42b0f29ac3361a7f2b638c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dcc2e703829cfa0b77575870feff451fd0738f56
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037254"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416488"
 ---
-<a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 简介
-====================
+# <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 简介
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > > [!NOTE]
@@ -32,11 +32,11 @@ ms.locfileid: "57037254"
 
 以下是你将生成的应用程序的两个屏幕截图。 必须将影片的各个列的一个简单的表。
 
-[![电影列表-Windows Internet Explorer (12)](getting-started-with-mvc-part1/_static/image2.png)](getting-started-with-mvc-part1/_static/image1.png)
+[![Movie List - Windows Internet Explorer (12)](getting-started-with-mvc-part1/_static/image2.png)](getting-started-with-mvc-part1/_static/image1.png)
 
 您将得到创建窗体，因此我们可以向列表添加电影。
 
-[![创建电影的 Windows Internet Explorer (2)](getting-started-with-mvc-part1/_static/image4.png)](getting-started-with-mvc-part1/_static/image3.png)
+[![C创建电影的 Windows Internet Explorer (2)](getting-started-with-mvc-part1/_static/image4.png)](getting-started-with-mvc-part1/_static/image3.png)
 
 ## <a name="skills-youll-learn"></a>你将学习的技能
 
@@ -61,7 +61,7 @@ Visual Web Developer 是一个 IDE 或集成开发环境。 就像使用 Microso
 
 您可以创建使用 Visual Basic 或 Visual C# 应用程序。 现在，选择 Visual C# 在左侧，然后选择"ASP.NET MVC 2 Web 应用程序"。 将项目命名为"Movies"并单击确定。
 
-[![新项目](getting-started-with-mvc-part1/_static/image8.png)](getting-started-with-mvc-part1/_static/image7.png)
+[![N项目的新增功能](getting-started-with-mvc-part1/_static/image8.png)](getting-started-with-mvc-part1/_static/image7.png)
 
 在右侧是解决方案资源管理器在应用程序中显示所有文件和文件夹。 在中间的大窗口是编辑你的代码和花费大部分时间的位置。 Visual Studio 刚刚创建的 ASP.NET MVC 项目使用默认模板，因此您的工作应用程序现在具有而无需执行任何操作 ！ 这是简单的"Hello World ！ 项目中，也是如此开始我们的应用程序的好时机。
 
@@ -77,9 +77,9 @@ Visual Web Developer 是一个 IDE 或集成开发环境。 就像使用 Microso
 
 这会导致 Visual Web Developer 启动开发 web 服务器并运行 （没有任何配置或启用此功能所需的手动步骤） 的 web 应用程序。 然后，它将启动浏览器并将其配置为浏览应用程序的主页。 请注意，下面的浏览器地址栏显示"localhost"而不是像 example.com。 这是因为 localhost 始终指向你自己的本地计算机-在这种情况下运行的是我们刚刚构建了应用程序。
 
-[![主页](getting-started-with-mvc-part1/_static/image13.png)](getting-started-with-mvc-part1/_static/image12.png)
+[![Home 页](getting-started-with-mvc-part1/_static/image13.png)](getting-started-with-mvc-part1/_static/image12.png)
 
 在初始状态下此默认模板提供了在两个页面访问和基本的登录页。 让我们更改此应用程序的工作原理，并了解有点 ASP.NET MVC 中的过程。 关闭浏览器并允许更改一些代码。
 
 > [!div class="step-by-step"]
-> [下一页](getting-started-with-mvc-part2.md)
+> [下一步](getting-started-with-mvc-part2.md)

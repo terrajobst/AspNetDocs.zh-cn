@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ecce8e4f0a901ce8c185d2b085f4d706bd57fa1f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fc819494ef58824d485144396e3a995d906c8b42
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029134"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398704"
 ---
-<a name="validating-with-a-service-layer-vb"></a>使用服务层进行验证 (VB)
-====================
+# <a name="validating-with-a-service-layer-vb"></a>使用服务层进行验证 (VB)
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何通过隔离您从控制器层的服务层维护清晰分离关注点。
@@ -68,7 +68,7 @@ ms.locfileid: "57029134"
 
 在清单 5 的服务层进行了更新，以使其不再使用的模型状态。 相反，它使用的任何类都实现 IValidationDictionary 接口。
 
-**Listing 5 - Models\ProductService.vb (decoupled)**
+**列表 5-Models\ProductService.vb （分离式）**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 

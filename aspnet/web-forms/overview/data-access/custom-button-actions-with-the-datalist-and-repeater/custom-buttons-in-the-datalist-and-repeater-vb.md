@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: 1afdb14d-6e49-4e1f-aead-2934730d472e
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c88c3c01dc641d5076ac99f4e1cf2b2fb1681ffd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1e1b6407dfff4513416869404a9565ed225b5e14
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027224"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392243"
 ---
-<a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>DataList 和 Repeater 中的自定义按钮 (VB)
-====================
+# <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>DataList 和 Repeater 中的自定义按钮 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_46_VB.exe)或[下载 PDF](custom-buttons-in-the-datalist-and-repeater-vb/_static/datatutorial46vb1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "57027224"
 除了编辑和删除按钮，DataList 和 Repeater 控件还可以包含按钮、 Linkbutton 或 ImageButtons，单击时，执行一些自定义服务器端逻辑。 在本教程中我们将构建一个使用 Repeater 来列出系统中的类别的接口。 对于每个类别，Repeater 将包括按钮以显示使用 BulletedList 控件的关联产品的类别 （请参阅图 1）。
 
 
-[![单击显示的产品链接显示的项目符号列表中的类别 s 产品](custom-buttons-in-the-datalist-and-repeater-vb/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image1.png)
+[![C单击显示的产品链接显示在项目符号列表中的 s 产品类别](custom-buttons-in-the-datalist-and-repeater-vb/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image1.png)
 
 **图 1**:单击显示的产品链接显示在项目符号列表中的 s 产品类别 ([单击此项可查看原尺寸图像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image3.png))
 
@@ -52,7 +52,7 @@ ms.locfileid: "57027224"
 在其他文件夹中，喜欢`Default.aspx`在`CustomButtonsDataListRepeater`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 添加到此用户控件`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](custom-buttons-in-the-datalist-and-repeater-vb/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image5.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](custom-buttons-in-the-datalist-and-repeater-vb/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image5.png)
 
 **图 3**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image7.png))
 
@@ -75,7 +75,7 @@ ms.locfileid: "57027224"
 我们需要创建列出所有类别以及显示产品 LinkButton Repeater 本教程中，单击时，将显示关联的类别的产品项目符号列表中。 让我们来首先创建简单的 Repeater 的系统中列出的类别。 首先打开`CustomButtons.aspx`页中`CustomButtonsDataListRepeater`文件夹。 将从工具箱拖到设计器和组的 Repeater 及其`ID`属性设置为`Categories`。 接下来，从 Repeater s 智能标记创建新的数据源控件。 具体而言，创建一个名为的新对象数据源控件`CategoriesDataSource`，选择从其数据`CategoriesBLL`类的`GetCategories()`方法。
 
 
-[![配置对象数据源使用 CategoriesBLL 类的 GetCategories() 方法](custom-buttons-in-the-datalist-and-repeater-vb/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image9.png)
+[![C配置对象数据源以使用 CategoriesBLL 类的 GetCategories() 方法](custom-buttons-in-the-datalist-and-repeater-vb/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image9.png)
 
 **图 5**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories()`方法 ([单击以查看实际尺寸的图像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image11.png))
 
@@ -90,7 +90,7 @@ ms.locfileid: "57027224"
 图 6 显示时的浏览器查看的页。 列出每个类别名称和说明。 显示产品按钮，单击，导致回发，但不会执行任何操作。
 
 
-[![每个类别名称和说明会显示，以及显示产品 LinkButton](custom-buttons-in-the-datalist-and-repeater-vb/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image12.png)
+[![E支票类别名称和说明会显示，以及显示产品 LinkButton](custom-buttons-in-the-datalist-and-repeater-vb/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image12.png)
 
 **图 6**:每个类别名称和说明会显示，以及显示产品 LinkButton ([单击此项可查看原尺寸图像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image14.png))
 
@@ -146,7 +146,7 @@ DataList 或 Repeater 中单击一个按钮时，通常我们需要传递 （在
 > 如果你想要修改此报表的行为，以便只有一个类别的产品列出一次，只需设置 BulletedList 控件 s`EnableViewState`属性设置为`False`。
 
 
-[![BulletedList 用于显示所选分类的产品](custom-buttons-in-the-datalist-and-repeater-vb/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image15.png)
+[![A BulletedList 用于显示所选分类的产品](custom-buttons-in-the-datalist-and-repeater-vb/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image15.png)
 
 **图 7**:BulletedList 用于显示所选分类的产品 ([单击此项可查看原尺寸图像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image17.png))
 
@@ -166,4 +166,4 @@ DataList 和 Repeater 控件可以包含在其模板中任意数量的按钮、 
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Dennis Patterson。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](custom-buttons-in-the-datalist-and-repeater-cs.md)
+> [上一个](custom-buttons-in-the-datalist-and-repeater-cs.md)

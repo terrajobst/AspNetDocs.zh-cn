@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: 930b9be35ef2e0dd85cee8f6584b9e90c80933b9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1b9c7bacb37cc4487fb3af392a6048021679718d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029224"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396728"
 ---
-<a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 开发最佳做法 （使用 Azure 构建实际云应用）
-====================
+# <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 开发最佳做法 （使用 Azure 构建实际云应用）
+
 通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)

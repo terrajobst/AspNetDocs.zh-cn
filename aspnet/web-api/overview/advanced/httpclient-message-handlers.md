@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/httpclient-message-handlers
-title: ASP.NET Web API 中的 HttpClient 消息处理程序 |Microsoft Docs
+title: HttpClient 消息处理程序在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 为在 ASP.NET 中的 ASP.NET Web API 创建自定义消息处理程序 4.x
 ms.author: riande
 ms.date: 10/01/2012
+ms.custom: seoapril2019
 ms.assetid: 5a4b6c80-b2e9-4710-8969-d5076f7f82b8
 msc.legacyurl: /web-api/overview/advanced/httpclient-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: 764244d1299d8cfcb59c3f15d63b42ebff4f6ac0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd52396064cd7007ee17705ba86b02aaf27cb4f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029094"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401720"
 ---
-<a name="httpclient-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HttpClient 消息处理程序
-====================
+# <a name="httpclient-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HttpClient 消息处理程序
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 一个*消息处理程序*是收到 HTTP 请求并返回 HTTP 响应的类。

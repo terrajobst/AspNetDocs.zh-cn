@@ -8,21 +8,21 @@ ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: 1693838a74f0564e38e11a2827cceb3d6474677b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038854"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415981"
 ---
-<a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：向 ASP.NET Web 窗体 / MVC 应用程序添加移动页面
-====================
+# <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：向 ASP.NET Web 窗体 / MVC 应用程序添加移动页面
+
 > **适用于**
 > 
 > - ASP.NET Web 窗体版本 4.0
 > - ASP.NET MVC 版本 3.0
 > 
-> **摘要**
+> **总结**
 > 
 > 此方法向介绍了各种方法提供针对 ASP.NET Web 窗体中的移动设备优化的页面 / MVC 应用程序，并建议体系结构和设计要考虑面向范围广泛的设备时的问题。 本文档还介绍了为什么 ASP.NET 移动控件从 ASP.NET 2.0 到 3.5 现已过时，并讨论某些现代的替代方法。
 
@@ -240,7 +240,7 @@ ASP.NET Web 窗体和 MVC 开发人员可以立即发现正在访问的浏览器
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-现在，该错误会随手可得，，URL http://<em>yoursite</em>/ 桌面主页和 http:// 将到达<em>yoursite</em>/mobile/ 将到达移动的主页。
+现在，该错误会随手可得，，URL http:\/\/*yoursite*/ 桌面主页和 http 将到达：\/\/*yoursite*/mobile/ 将访问移动的主页。
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>重定向到您移动的区域的移动访问者
 

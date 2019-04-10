@@ -8,15 +8,15 @@ ms.date: 05/08/2008
 ms.assetid: 816175a2-47b1-49ba-b346-cfb1ee33096a
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls
 msc.type: video
-ms.openlocfilehash: ce587fd1cb73178c75d291a6cb7a7e3f24d29390
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4916885afff0900d85f7ef58b84abc50144aa29e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040214"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406322"
 ---
-<a name="how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls"></a>如何使用 DynamicControl ListView 和 DetailsView 控件中？
-====================
+# <a name="how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls"></a>如何使用 DynamicControl ListView 和 DetailsView 控件中？
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 此视频将编写两次，一次使用动态数据，而无需一次的相同应用程序进行比较。 在此过程中，您将添加**DynamicControl**对象添加到**ListView**并**DetailsView**控件。

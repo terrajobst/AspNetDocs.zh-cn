@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: a5a4a9ba-d18d-489a-a6b0-a3c26d6b0274
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bc640564cfb67f0c1512bc7f4fae9ea7e6bc981f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1d8387f782ace50f16d44ba8df4df8014d563674
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059814"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396455"
 ---
-<a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>新建适用于类型化数据集的 TableAdapter 的存储过程 (VB)
-====================
+# <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>新建适用于类型化数据集的 TableAdapter 的存储过程 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_67_VB.zip)或[下载 PDF](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/datatutorial67vb1.pdf)
@@ -86,7 +86,7 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 在其他文件夹中，喜欢`Default.aspx`在`AdvancedDAL`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image3.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image2.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image3.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image2.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image4.png))
 
@@ -111,7 +111,7 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 向项目添加新的数据集，通过右键单击`DAL`文件夹中，选择添加新项，然后选择数据集模板，如图 4 中所示。
 
 
-[![将新的类型化数据集添加到名为 NorthwindWithSprocs.xsd 的项目](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image7.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image6.png)
+[![Add 新类型化数据集，以便项目名为 NorthwindWithSprocs.xsd](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image7.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image6.png)
 
 **图 4**:将新的类型化数据集添加到项目名为`NorthwindWithSprocs.xsd`([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image8.png))
 
@@ -121,9 +121,9 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 此下一屏幕中，我们可以选择 TableAdapter 应如何访问数据库。 在前面的教程中，我们选择了第一个选项，使用 SQL 语句。 对于本教程，选择第二个选项、 创建新的存储的过程，并单击下一步。
 
 
-[![指示 TableAdpater 若要创建新的存储的过程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image10.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image9.png)
+[![Instruct 到创建新存储过程的 TableAdapter](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image10.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image9.png)
 
-**图 5**:指示 TableAdpater 到创建新存储过程 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image11.png))
+**图 5**:指示 TableAdapter 创建新存储过程 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image11.png))
 
 
 就像使用临时 SQL 语句，在下一步我们会要求提供`SELECT`TableAdapter s 主查询的语句。 但而不是使用`SELECT`在此处输入直接执行即席查询的语句，TableAdapter 的向导将创建包含此存储的过程`SELECT`查询。
@@ -134,7 +134,7 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample4.sql)]
 
 
-[![输入 SELECT 查询](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image13.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image12.png)
+[![Enter SELECT 查询](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image13.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image12.png)
 
 **图 6**:输入`SELECT`查询 ([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image14.png))
 
@@ -160,7 +160,7 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 输入后`SELECT`查询并确认，生成 Insert、 Update 和 Delete 语句选项处于选中状态，单击下一步。 此图 8 所示的下一个屏幕会提示选择、 插入、 更新和删除数据的向导将创建的存储过程的名称。 更改这些存储过程名称传递给`Products_Select`， `Products_Insert`， `Products_Update`，和`Products_Delete`。
 
 
-[![重命名存储的过程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image17.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image16.png)
+[![Rename 存储过程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image17.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image16.png)
 
 **图 8**:重命名存储过程 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image18.png))
 
@@ -176,7 +176,7 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 命名存储的过程之后, 单击旁边名为 TableAdapter s 对应的方法。 就像时使用的临时 SQL 语句，我们可以创建填充现有数据表或返回一个新的方法。 我们还可以指定是否 TableAdapter 应包括插入、 更新和删除记录的 DB 直接模式。 保留选中状态，所有三个复选框，但重命名返回的 DataTable 方法`GetProducts`（如图 10 中所示）。
 
 
-[![命名方法填充和 GetProducts](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image21.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image20.png)
+[![N名 （） 方法填充和 GetProducts](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image21.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image20.png)
 
 **图 10**:命名方法`Fill`并`GetProducts`([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image22.png))
 
@@ -184,7 +184,7 @@ Tableadapter 所执行的 SQL 命令可以是任一临时 SQL 语句，如`SELEC
 单击下一步以查看向导将执行的步骤的摘要。 单击完成按钮完成该向导。 在向导完成时，您将返回到设计器，现在应包含的数据集 s `ProductsDataTable`。
 
 
-[![数据集 s 设计器会显示新添加的 ProductsDataTable](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image24.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image23.png)
+[![T他 s 数据集设计器会显示新添加 ProductsDataTable](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image24.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image23.png)
 
 **图 11**:S 的数据集设计器显示新添加`ProductsDataTable`([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image25.png))
 
@@ -206,7 +206,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 若要查看或修改存储的过程，请双击其名称在服务器资源管理器或，或者，右键单击存储过程，并选择打开。 图 13 显示了`Products_Delete`打开时的存储过程。
 
 
-[![可以打开和修改从 Visual Studio 中的存储的过程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image28.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image27.png)
+[![Stored 过程可以打开和修改从在 Visual Studio](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image28.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image27.png)
 
 **图 13**:存储过程可以打开和修改从在 Visual Studio ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image29.png))
 
@@ -250,7 +250,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 或者，可以刷新设计器中的 TableAdapter 上右键单击并选择配置用于所有方法的参数。 此时会弹出 TableAdapter 配置向导列出存储的过程用于选择、 插入、 更新和删除，以及参数的存储的过程，预计可以收到。 如果在更新下拉列表中单击您所见`Products_Update`存储的过程预期的输入的参数，现在不再包括`@Original_ProductID`（请参阅图 15）。 只需单击完成以自动更新使用 TableAdapter 的参数集合。
 
 
-[![或者可以使用 TableAdapter 的配置向导以刷新其方法的参数集合](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
+[![You 可以使用配置向导来刷新其方法的参数集合中的 TableAdapter s](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
 
 **图 15**:也可以选择使用 TableAdapter s 配置向导来刷新其方法的参数集合 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image33.png))
 
@@ -270,7 +270,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 这将启动 TableAdapter 查询配置向导中，首先会提示输入 TableAdapter 应如何访问数据库。 若要创建的新存储的过程，选择创建新的存储的过程选项，然后单击下一步。
 
 
-[![选择创建新的存储的过程选项](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image36.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image35.png)
+[![C选择创建新的存储过程选项](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image36.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image35.png)
 
 **图 17**:选择创建新的存储的过程选项 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image37.png))
 
@@ -278,7 +278,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 下一个屏幕询问我们能够标识执行，它将返回一组行或单个标量值，或执行查询的类型`UPDATE`， `INSERT`，或`DELETE`语句。 由于`GetProductByProductID(productID)`方法将返回一行，将返回行选项选择并按下一步选择。
 
 
-[![选择它将返回行选项](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image39.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image38.png)
+[![C选择返回一行选项选择](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image39.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image38.png)
 
 **图 18**:选择它将返回行选项 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image40.png))
 
@@ -289,7 +289,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/samples/sample9.sql)]
 
 
-[![存储的过程的名称替换为 SELECT 查询](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image42.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image41.png)
+[![R替换存储过程名称与一个 SELECT 查询](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image42.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image41.png)
 
 **图 19**:替换存储过程名称`SELECT`查询 ([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image43.png))
 
@@ -297,7 +297,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 后续屏幕要求您将创建的存储的过程的名称。 输入名称`Products_SelectByProductID`单击下一步。
 
 
-[![命名新的存储的过程 Products_SelectByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image45.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image44.png)
+[![N新的存储过程 Products_SelectByProductID \ 名称](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image45.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image44.png)
 
 **图 20**:命名新的存储过程`Products_SelectByProductID`([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image46.png))
 
@@ -305,7 +305,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 在向导的最后一步，我们可以更改的方法名称生成以及指示是否使用填充 DataTable 模式，则返回的 DataTable 模式，或两者。 此方法中，将保留选中状态，这两个选项，但重命名的方法`FillByProductID`和`GetProductByProductID`。 单击下一步以查看该向导将执行，并单击完成以完成向导步骤的摘要。
 
 
-[![将 TableAdapter 的方法重命名为 FillByProductID 和 GetProductByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image48.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image47.png)
+[![Rename FillByProductID 和 GetProductByProductID TableAdapter 的方法](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image48.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image47.png)
 
 **图 21**:重命名的 TableAdapter 的方法`FillByProductID`并`GetProductByProductID`([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image49.png))
 
@@ -335,7 +335,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 打开`NewSprocs.aspx`页中`AdvancedDAL`文件夹，然后从工具箱拖到设计器中，其命名为拖动的 GridView `Products`。 从 GridView s 智能标记选择将其绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置要使用 ObjectDataSource`ProductsBLLWithSprocs`类，如图 22 所示。
 
 
-[![配置对象数据源以使用 ProductsBLLWithSprocs 类](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image51.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image50.png)
+[![C配置对象数据源以使用 ProductsBLLWithSprocs 类](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image51.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image50.png)
 
 **图 22**:配置为使用 ObjectDataSource`ProductsBLLWithSprocs`类 ([单击以查看实际尺寸的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image52.png))
 
@@ -345,7 +345,7 @@ TableAdapter 向导会自动使用在步骤 2 中创建用于选择、 插入、
 ObjectDataSource 向导运行完毕后，Visual Studio 将添加 BoundFields 和 CheckBoxField 到 GridView 的产品数据字段上。 通过选中启用编辑和智能标记中存在的启用删除选项启用的 GridView s 内置编辑和删除功能。
 
 
-[![页包含一个 GridView 的编辑和删除启用支持](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image54.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image53.png)
+[![T他页包含一个 GridView 编辑和删除启用支持](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image54.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image53.png)
 
 **图 23**:页包含一个 GridView 编辑和删除启用支持 ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image55.png))
 
@@ -362,7 +362,7 @@ ObjectDataSource 向导运行完毕后，Visual Studio 将添加 BoundFields 和
 无论是否增强 GridView 或不，测试在浏览器中的页面 + s 核心功能。 如图 24 所示，页将列出提供每个行编辑和删除功能的 GridView 中的产品。
 
 
-[![产品可以查看、 编辑和删除从 GridView](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image57.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image56.png)
+[![T他产品可以查看、 编辑和 GridView 从已删除](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image57.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image56.png)
 
 **图 24**:可以查看产品、 编辑，和已删除从 GridView ([单击此项可查看原尺寸图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image58.png))
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 0c4b7b2641c91cbb63ec46fa707c004f7273a303
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b9da2522cfaed324a23f43265d4e234ebb4950bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422683"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411119"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新增功能
 
@@ -173,14 +173,14 @@ ASP.NET MVC 4 是一个框架，用于构建可缩放的基于标准的 web 应�
 
    *ASP.NET MVC 4 Internet 应用程序项目模板*
 
-   - **HTML 5 标记**
+    - **HTML 5 标记**
 
        浏览模板视图若要了解新的主题标记。
 
        ![使用 Razor 和 HTML5 标记 About.cshtml 新模板.](whats-new-in-aspnet-mvc-4/_static/image10.png "使用 Razor 和 HTML5 标记 About.cshtml 的新模板。")
 
        *新模板，使用 Razor 和 HTML5 标记 (About.cshtml)。*
-   - **更新的 JavaScript 库**
+    - **更新的 JavaScript 库**
 
        ASP.NET MVC 4 默认模板现在包括 KnockoutJS、 允许您创建丰富的 JavaScript MVVM 框架和高响应 web 应用程序使用 JavaScript 和 HTML。 如在 MVC3，jQuery 和 jQuery UI 库都还包含在 ASP.NET MVC 4。
 
@@ -250,11 +250,11 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 > 媒体查询的基本格式为：@media \[作用域： 所有 |手持 |打印 |投影 |屏幕\]([属性： 值]，然后...[属性： 值]）
 
 
-媒体查询的示例： &gt;  <strong>@media所有和 (最大宽度：1000 像素） 和 (最小宽度：700px) {}:</strong>针对 700px 和 1000 像素之间的所有分辨率。
+媒体查询的示例： &gt;  **@media所有和 (最大宽度：1000 像素） 和 (最小宽度：700px) {}:** 针对 700px 和 1000 像素之间的所有分辨率。
 
-> <strong>@media 屏幕和 (最小宽度：400px) 和 (最大宽度：700px) {...}:</strong>仅对于屏幕。 解决方法必须介于 400 和 700px 之间。
+> **@media 屏幕和 (最小宽度：400px) 和 (最大宽度：700px) {...}:** 仅对于屏幕。 解决方法必须介于 400 和 700px 之间。
 > 
-> <strong>@media 手持和 (最小宽度：20em)，屏幕和 (最小宽度：20em) {...}:</strong>手持设备 （移动设备和设备） 和屏幕。 最小宽度必须大于 20em。
+> **@media 手持和 (最小宽度：20em)，屏幕和 (最小宽度：20em) {...}:** 手持设备 （移动设备和设备） 和屏幕。 最小宽度必须大于 20em。
 > 
 > 有关更多相关信息[W3C 站点](http://www.w3.org/TR/css3-mediaqueries/)。
 
@@ -263,7 +263,7 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 
 1. 打开**PhotoGallery.sln**解决方案已在任务 1 中创建并选择**PhotoGallery**项目。 按**F5**运行该解决方案。
 2. 调整浏览器的宽度，设置 windows 到一半或小于其原始大小的四分之一。 请注意，在标头中的项会出现什么情况：某些元素不会出现在标头的可见区域。
-3. 打开<strong>Site.css</strong>文件从 Visual Studio 解决方案资源管理器，位于<strong>内容</strong>项目文件夹。 按<strong>CTRL + F</strong>若要打开 Visual Studio 集成的搜索，并写入<strong>@media</strong>查找<strong>CSS 媒体查询</strong>。
+3. 打开**Site.css**文件从 Visual Studio 解决方案资源管理器，位于**内容**项目文件夹。 按**CTRL + F**若要打开 Visual Studio 集成的搜索，并写入**@media**查找**CSS 媒体查询**。
 
     此模板中定义的媒体查询条件的工作原理以这种方式：浏览器的窗口大小低于**850 px**，应用的 CSS 规则是在此媒体块内定义的。
 
@@ -274,13 +274,13 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 
     ![在左侧，应用页@media省略样式，请在右侧，样式](whats-new-in-aspnet-mvc-4/_static/image17.png "左侧，在应用页@media省略样式，请在右侧，样式")
 
-    <em>在左侧，应用页@media省略样式，请在右侧，样式</em>
+    *在左侧，应用页@media省略样式，请在右侧，样式*
 
     现在，我们来看下在移动设备上会发生什么情况：
 
     ![在左侧，应用页@media省略样式，请在右侧，样式](whats-new-in-aspnet-mvc-4/_static/image18.png "左侧，在应用页@media省略样式，请在右侧，样式")
 
-    <em>在左侧，应用页@media省略样式，请在右侧，样式</em>
+    *在左侧，应用页@media省略样式，请在右侧，样式*
 
     尽管您会注意到，在 Web 浏览器中呈现页时不更改非常重要，使用移动设备时的差异变得更明显。 在左侧和右侧的图像，我们可以看到的自定义样式提高了可读性。
 
@@ -543,11 +543,11 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
     ![查看切换器在桌面视图中呈现](whats-new-in-aspnet-mvc-4/_static/image32.png "桌面视图中呈现的视图切换器")
 
     *在桌面视图中呈现的视图切换器*
-7. 再次切换到移动视图，然后浏览到<strong>有关</strong>页 (http://localhost[端口] / Home/有关)。 请注意，即使尚未创建 About.Mobile.cshtml 视图，关于页面将显示使用移动布局 (\_Layout.Mobile.cshtml)。
+7. 再次切换到移动视图，然后浏览到**有关**页 (http://localhost[端口] / Home/有关)。 请注意，即使尚未创建 About.Mobile.cshtml 视图，关于页面将显示使用移动布局 (\_Layout.Mobile.cshtml)。
 
     ![有关页面](whats-new-in-aspnet-mvc-4/_static/image33.png "有关页面")
 
-    *有关页*
+    *“关于”页面*
 8. 最后，桌面 Web 浏览器中打开的网站。 请注意，没有任何以前的更新具有影响桌面视图。
 
     ![图片库桌面视图](whats-new-in-aspnet-mvc-4/_static/image34.png "PhotoGallery 桌面视图")
@@ -764,7 +764,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
 
 你可以安装**Microsoft Visual Studio Express 2012 for Web**或另一个&quot;Express&quot;使用版本 **[Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)** . 以下说明将指导您完成安装所需的步骤*Visual studio Express 2012 for Web*使用*Microsoft Web 平台安装程序*。
 
-1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; <em>Visual Studio Express 2012 for Web 与 Windows Azure SDK</em>&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; *Visual Studio Express 2012 for Web 与 Windows Azure SDK*&quot;。
 2. 单击**立即安装**。 如果还没有**Web 平台安装程序**将重定向以下载并安装。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -805,7 +805,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
 <a id="Task_1_-_Installing_WebMatrix_2"></a>
 #### <a name="task-1---installing-webmatrix-2"></a>任务 1-安装 WebMatrix 2
 
-1. 转到[ [ https://go.microsoft.com/?linkid=9809776 ](https://go.microsoft.com/?linkid=9809776) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; <em>WebMatrix 2</em>&quot;。
+1. 转到[ [ https://go.microsoft.com/?linkid=9809776 ](https://go.microsoft.com/?linkid=9809776) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果你已安装 Web 平台安装程序，则可以打开它，并搜索产品&quot; *WebMatrix 2*&quot;。
 2. 单击**立即安装**。 如果还没有**Web 平台安装程序**将重定向以下载并安装。
 3. 一次**Web 平台安装程序**处于打开状态，单击**安装**以启动安装程序。
 
@@ -875,7 +875,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
 3. 在中&quot;浏览方式&quot;对话框中，单击**添加**。
 4. 在中&quot;添加程序&quot;对话框中，使用以下值：
 
-   - <strong>程序</strong>:C:\Users\*{CurrentUser}<em>\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe * （相应地更新路径）</em>
+   - **程序**:C:\Users\*{CurrentUser}*\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe *（相应地更新路径）*
    - **参数**:&quot;1&quot;
    - **友好名称**: iPhone 模拟器
 

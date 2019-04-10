@@ -8,15 +8,15 @@ ms.date: 06/25/2013
 ms.assetid: 646edfc7-dc62-4fa0-84c2-926996c92aeb
 msc.legacyurl: /visual-studio/overview/2013
 msc.type: chapter
-ms.openlocfilehash: 74793becba663d163a31cb1b02654b7b6cb021af
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c7c0de7ade31e43e3b43495cb6755608872d506d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412744"
 ---
-<a name="aspnet-and-visual-studio-2013"></a>ASP.NET 和 Visual Studio 2013
-====================
+# <a name="aspnet-and-visual-studio-2013"></a>ASP.NET 和 Visual Studio 2013
+
 > 开发与 Visual Studio 2013 的 ASP.NET web 应用
 
 
@@ -33,4 +33,4 @@ ms.locfileid: "57022324"
 - [适用于 Visual Studio 2013 的 ASP.NET 和 Web 工具发行说明](release-notes.md)
 - [ASP.NET 和 Web 工具 2013.2 for Visual Studio 2013 发行说明](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes.md)
 - [动手实验：Visual Studio 2013 Web 工具](visual-studio-2013-web-tools.md)
-- [动手实验：One ASP.NET：集成 ASP.NET Web 窗体、 MVC 和 Web API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)
+- [动手实验：One ASP.NET：集 ASP.NET Web 窗体、MVC 和 Web API 于一身](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)

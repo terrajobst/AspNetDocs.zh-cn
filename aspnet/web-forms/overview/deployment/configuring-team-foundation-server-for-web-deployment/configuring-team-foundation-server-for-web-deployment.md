@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: ff55233a-e795-4007-a4fc-861fe1bb590b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 2b668f2e9bdf73632b8b076416c9ccc5cf34a7ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 188ab63dd84be5559d5a3646eb95caa77ab01bd1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058824"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391996"
 ---
-<a name="configuring-team-foundation-server-for-web-deployment"></a>配置用于 Web 部署的 Team Foundation Server
-====================
+# <a name="configuring-team-foundation-server-for-web-deployment"></a>配置用于 Web 部署的 Team Foundation Server
+
 通过[Jason Lee](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -75,4 +75,4 @@ ms.locfileid: "57058824"
 - [高级企业 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境中，从部署中排除文件和文件夹和在部署过程中将 web 应用程序脱机.
 
 > [!div class="step-by-step"]
-> [下一页](creating-a-team-project-in-tfs.md)
+> [下一步](creating-a-team-project-in-tfs.md)

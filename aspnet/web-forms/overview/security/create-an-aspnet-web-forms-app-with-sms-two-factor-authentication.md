@@ -8,15 +8,15 @@ ms.date: 10/09/2014
 ms.assetid: 716264ae-ab72-45de-bfc5-53a6237089cf
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 7ad3b7a453a40f2708902ae5b9e5cb75b931d54d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028714"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411353"
 ---
-<a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>创建具有 SMS 双因素身份验证功能的 ASP.NET Web 窗体应用 (C#)
-====================
+# <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>创建具有 SMS 双因素身份验证功能的 ASP.NET Web 窗体应用 (C#)
+
 通过[Erik Reitan](https://github.com/Erikre)
 
 [下载电子邮件和 SMS 双因素身份验证的 ASP.NET Web 窗体应用](https://code.msdn.microsoft.com/ASPNET-Web-Forms-App-with-5a0ff94e)
@@ -108,7 +108,7 @@ ms.locfileid: "57028714"
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 SMS 和 ASP.NET 标识的双因素身份验证](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [使用 SMS 和 ASP.NET Identity 的双因素身份验证](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 - [ASP.NET 标识的链接的推荐资源](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用部署到 Azure 网站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [ASP.NET Web 窗体的教程系列-添加 OAuth 2.0 提供程序](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)

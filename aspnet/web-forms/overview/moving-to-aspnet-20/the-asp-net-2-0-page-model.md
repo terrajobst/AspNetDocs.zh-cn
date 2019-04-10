@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: af4575a3-0ae3-4638-ba4d-218fad7a1642
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: 4452169a01276cbc60f2a2057e6b560022ccd7c0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 09f8389a04c5600ca9ee8365a9dc5a0d607c0a4d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057254"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403917"
 ---
-<a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 页面模型
-====================
+# <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 页面模型
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在 ASP.NET 1.x 中，开发人员必须使用内联代码模型和代码隐藏代码模型之间进行选择。 可以使用 Src 属性或代码隐藏文件属性的实现代码隐藏@Page指令。 在 ASP.NET 2.0 中，开发人员仍然可以内联代码和代码隐藏之间进行选择，但有了显著改进代码隐藏模型。
@@ -34,7 +34,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ## <a name="the-code-behind-model-in-aspnet-20"></a>ASP.NET 2.0 中的代码隐藏模型
 
-ASP.NET 2.0 可大大提高了此模型。 在 ASP.NET 2.0 中，代码隐藏实现使用新*分部类*ASP.NET 2.0 中提供。 ASP.NET 2.0 中的代码隐藏类是定义为分部类，这意味着它包含仅的类定义的一部分。 类定义的剩余部分是动态生成的 ASP.NET 2.0 在运行时或在预编译网站时使用的 ASPX 页。 使用 @ Page 指令仍建立的代码隐藏文件和 ASPX 页面之间的链接。 但是，而不是代码隐藏文件或 Src 属性中，ASP.NET 2.0 现在使用 CodeFile 属性。 Inherits 特性也用于指定页面的类名称。
+ASP.NET 2.0 可大大提高了此模型。 在 ASP.NET 2.0 中，代码隐藏实现使用新*分部类*ASP.NET 2.0 中提供。 ASP.NET 2.0 中的代码隐藏类定义为分部类，这意味着它包含仅的类定义的一部分。 类定义的剩余部分是动态生成的 ASP.NET 2.0 在运行时或在预编译网站时使用的 ASPX 页。 使用 @ Page 指令仍建立的代码隐藏文件和 ASPX 页面之间的链接。 但是，而不是代码隐藏文件或 Src 属性中，ASP.NET 2.0 现在使用 CodeFile 属性。 Inherits 特性也用于指定页面的类名称。
 
 典型的 @ Page 指令可能如下所示：
 
@@ -265,7 +265,7 @@ ASP.NET 2.0 中的 @ Page 指令的另一新功能是能够设置基类的公共
 
 ## <a name="uniquefilepathsuffix"></a>UniqueFilePathSuffix
 
-此属性返回唯一 suffic 追加到用于缓存浏览器的文件路径。 默认值是\_ \_ufps = 和一个 6 位数字。
+此属性返回的唯一后缀追加到用于缓存浏览器的文件路径。 默认值是\_ \_ufps = 和一个 6 位数字。
 
 ## <a name="new-public-methods-for-the-page-class"></a>用于 Page 类的新公共方法
 
@@ -508,7 +508,7 @@ Web 开发人员一直查找有关如何防止闪烁与回调相关联。 在 AS
 
 ## <a name="step-4--register-the-client-side-script"></a>步骤 4:注册客户端脚本
 
-回想一下，对 GetCallbackEventReference 调用指定客户端脚本调用**ShowCompanyName**服务器端的回调成功时将执行。 该脚本需要添加到使用 ClientScriptManager 实例的页面。 （ClientScriptManager 类将是更高版本在此模块中的讨论。）因此执行操作，类似于：
+回想一下，对 GetCallbackEventReference 调用指定客户端脚本调用**ShowCompanyName**服务器端的回调成功时将执行。 该脚本需要添加到使用 ClientScriptManager 实例的页面。 （ClientScriptManager 类将讨论此模块中更高版本。）因此执行操作，类似于：
 
 [!code-javascript[Main](the-asp-net-2-0-page-model/samples/sample16.js)]
 

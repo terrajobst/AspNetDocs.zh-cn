@@ -8,21 +8,21 @@ ms.date: 05/16/2012
 ms.assetid: b71d1611-5f26-40dd-8315-b65b9d69b198
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: chapter
-ms.openlocfilehash: 3b86454aed230ee5dcb65454c92842bf83f3cff0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3226039ad399fb43c82c98331be41450f6f679bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023694"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405197"
 ---
-<a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 - 企业部署系列 3 配置 TFS
-====================
+# <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 - 企业部署系列 3 配置 TFS
+
 > 本教程将演示如何配置 Team Foundation Server (TFS) 2010年构建解决方案并将 web 内容部署到各种目标环境。
 
 
 - [配置用于 Web 部署的 Team Foundation Server](configuring-team-foundation-server-for-web-deployment.md)
 - [在 TFS 中创建团队项目](creating-a-team-project-in-tfs.md)
-- [向源控件添加内容](adding-content-to-source-control.md)
+- [向源代码管理添加内容](adding-content-to-source-control.md)
 - [配置用于 Web 部署的 TFS 生成服务器](configuring-a-tfs-build-server-for-web-deployment.md)
 - [创建支持部署的生成定义](creating-a-build-definition-that-supports-deployment.md)
 - [部署特定生成](deploying-a-specific-build.md)

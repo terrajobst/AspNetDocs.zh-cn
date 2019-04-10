@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-title: 添加 ASP.NET 标识设置为空的或现有 Web 窗体项目 |Microsoft Docs
+title: 添加 ASP.NET 标识设置为空的或现有 Web 窗体项目的 ASP.NET 4.x
 author: raquelsa
-description: 本教程演示如何将 ASP.NET 标识 （ASP.NET 的新成员资格系统） 添加到 ASP.NET 应用程序。 当您创建新的 Web 窗体或 MVC...
+description: 本教程演示如何将 ASP.NET 标识 （ASP.NET 成员资格系统） 添加到 ASP.NET 应用程序。 当您创建新的 Web 窗体或 MVC...
 ms.author: riande
 ms.date: 01/22/2019
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: cd28cc68db96b52eb205b8764aa2af014ffad9c3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8f66cdb46e4cd02509092ea3bdcb7af9c292eb8f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038274"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394310"
 ---
 # <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>向空的或现有的 Web 窗体项目添加 ASP.NET Identity
 
@@ -145,7 +146,7 @@ ms.locfileid: "57038274"
     > [!NOTE] 
     > 
     > - `Page_Load`现在检查当前用户的状态并采取操作基于其`Context.User.Identity.IsAuthenticated`状态。
-    >     **显示已登录用户名**:Microsoft ASP.NET 标识框架上添加了扩展方法[System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) ，可用于获取`UserName`和`UserId`中用户已登录。 这些扩展方法定义中`Microsoft.AspNet.Identity.Core`程序集。 这些扩展方法是将用于[HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 。
+    >   **显示已登录用户名**:Microsoft ASP.NET 标识框架上添加了扩展方法[System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) ，可用于获取`UserName`和`UserId`中用户已登录。 这些扩展方法定义中`Microsoft.AspNet.Identity.Core`程序集。 这些扩展方法是将用于[HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 。
     > - 登录方法：`This`方法将替换以前`CreateUser_Click`中此示例和现在中成功创建用户后用户登录方法。   
     >   Microsoft OWIN 框架上添加了扩展方法`System.Web.HttpContext`，可用于获取对引用`IOwinContext`。 这些扩展方法定义中`Microsoft.Owin.Host.SystemWeb`程序集。 `OwinContext`类公开`IAuthenticationManager`属性表示可在当前请求上的身份验证中间件功能。 可以通过使用来在用户登录`AuthenticationManager`从 OWIN 和调用`SignIn`并传入`ClaimsIdentity`如上所示。 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统，因为框架需要应用程序以生成`ClaimsIdentity`用户。 `ClaimsIdentity`具有信息的用户，如用户所属的角色的所有声明。 此外可以在此阶段，此代码将在用户登录，并生成一个 cookie 也添加更多的用户声明。 此调用是类似于[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx)由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。
     > - `SignOut` 方法：获取对`AuthenticationManager`从 OWIN 和调用`SignOut`。 这是类似于[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)方法，由[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模块。

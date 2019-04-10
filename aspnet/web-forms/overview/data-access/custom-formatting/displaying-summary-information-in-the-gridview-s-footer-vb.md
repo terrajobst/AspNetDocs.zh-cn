@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 41c818b7-603a-402b-8847-890a63547b6f
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dfb78ee1e5da2774254cbe685b8dfd3dc7d46af9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 69548e637a35c4fd5d0f3356e279f1f0370fad39
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062444"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409442"
 ---
-<a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>在 GridView 的页脚中显示摘要信息 (VB)
-====================
+# <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>在 GridView 的页脚中显示摘要信息 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_15_VB.exe)或[下载 PDF](displaying-summary-information-in-the-gridview-s-footer-vb/_static/datatutorial15vb1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57062444"
 在本教程中我们将了解如何解决这些难题。 具体而言，我们将创建列出的 GridView 中显示所选的类别产品的下拉列表中的类别的页面。 GridView 将包括显示平均价格和总单位数的库存数量和该类别中的产品的订购的页脚行。
 
 
-[![在 GridView 的页脚行中显示摘要信息](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
+[![S在 GridView 的页脚行中显示信息的 ummary](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
 
 **图 1**:在 GridView 的页脚行中显示摘要信息 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image3.png))
 
@@ -51,12 +51,12 @@ ms.locfileid: "57062444"
 首先打开`SummaryDataInFooter.aspx`页中`CustomFormatting`文件夹。 添加 DropDownList 控件并设置其`ID`到`Categories`。 接下来，单击从 DropDownList 的智能标记的选择数据源链接并选择要添加名为新 ObjectDataSource `CategoriesDataSource` ，它调用`CategoriesBLL`类的`GetCategories()`方法。
 
 
-[![添加名为 CategoriesDataSource 新 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
+[![Add 新对象数据源名为 CategoriesDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
 
 **图 2**:添加新对象数据源名为`CategoriesDataSource`([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![具有 ObjectDataSource 调用 CategoriesBLL 类 GetCategories() 方法](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
+[![Have ObjectDataSource 调用 CategoriesBLL 类 GetCategories() 方法](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
 
 **图 3**:具有 ObjectDataSource 调用`CategoriesBLL`类的`GetCategories()`方法 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image9.png))
 
@@ -64,7 +64,7 @@ ms.locfileid: "57062444"
 配置 ObjectDataSource 之后, 该向导将返回我们 DropDownList 的数据源配置向导，我们需要指定哪些数据字段值应显示和哪一种应与对应的值的下拉列表的`ListItem` s。 具有`CategoryName`显示的字段并使用`CategoryID`作为值。
 
 
-[![为文本，Listitem，值分别使用类别名称和类别 id 字段](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
+[![Use CategoryName 和 CategoryID 为文本，Listitem，值分别字段](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
 
 **图 4**:使用`CategoryName`并`CategoryID`字段为`Text`并`Value`有关`ListItem`s，分别 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image12.png))
 
@@ -72,7 +72,7 @@ ms.locfileid: "57062444"
 现在我们有 DropDownList (`Categories`) 的系统中列出的类别。 现在，我们需要添加一个 GridView，列出了这些属于所选类别的产品。 这样做了，不过之前, 请花费片刻时间来检查 DropDownList 的智能标记中的启用自动回发复选框。 如中所述*母版/详细信息筛选与 DropDownList*教程中，通过设置 DropDownList`AutoPostBack`属性设置为`True`将回发每次更改 DropDownList 值时页。 这将导致 GridView 来刷新，显示这些产品的新选择的类别。 如果`AutoPostBack`属性设置为`False`（默认值），更改类别不会导致回发，因此不会更新列出的产品。
 
 
-[![检查在 DropDownList 的智能标记启用自动回发复选框](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
+[![C为了增加点乐趣启用自动回发中的复选框 DropDownList 的智能标记](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
 
 **图 5**:复选框启用自动回发中 DropDownList 的智能标记 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image15.png))
 
@@ -80,7 +80,7 @@ ms.locfileid: "57062444"
 若要显示所选类别产品向页添加 GridView 控件。 设置 GridView`ID`到`ProductsInCategory`并将其绑定到名为新 ObjectDataSource `ProductsInCategoryDataSource`。
 
 
-[![添加名为 ProductsInCategoryDataSource 新 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
+[![Add 新对象数据源名为 ProductsInCategoryDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
 
 **图 6**:添加新对象数据源名为`ProductsInCategoryDataSource`([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -88,7 +88,7 @@ ms.locfileid: "57062444"
 配置对象数据源，以便它将调用`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。
 
 
-[![具有 ObjectDataSource 调用 GetProductsByCategoryID(categoryID) 方法](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
+[![Have ObjectDataSource Invoke GetProductsByCategoryID(categoryID) 方法](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
 
 **图 7**:具有 ObjectDataSource 调用`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image21.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "57062444"
 由于`GetProductsByCategoryID(categoryID)`方法采用一个输入参数，我们可以在向导的最后一步中指定参数值的源。 为了显示从所选类别产品，必须从提取的参数`Categories`DropDownList。
 
 
-[![从所选类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
+[![Get categoryID 参数值从所选类别 DropDownList](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
 
 **图 8**:获取*`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
 
@@ -109,7 +109,7 @@ ms.locfileid: "57062444"
 现在我们有完全正常运行的母版/详细信息报表的显示名称、 单价、 存货单位和单位上对这些属于所选类别的产品的顺序。
 
 
-[![从所选类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
+[![Get categoryID 参数值从所选类别 DropDownList](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
 
 **图 9**:获取*`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
 
@@ -119,7 +119,7 @@ ms.locfileid: "57062444"
 GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`ShowHeader`和`ShowFooter`属性，分别与`ShowHeader`默认值为`True`并`ShowFooter`到`False`。 若要只需包含在 GridView 的页脚设置其`ShowFooter`属性设置为`True`。
 
 
-[![GridView 的 ShowFooter 属性设置为 True](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
+[![Set GridView 的 ShowFooter 属性设为 True](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
 
 **图 10**:设置 GridView`ShowFooter`属性设置为`True`([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image30.png))
 
@@ -127,7 +127,7 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 脚注行 GridView; 中定义的字段的每个都有一个单元格但是，这些单元格是默认情况下为空。 请花费片刻时间浏览器中查看我们的进度。 与`ShowFooter`属性现在将设置为`True`，GridView 包括一个空的页脚行。
 
 
-[![GridView 现在包括脚注行](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
+[![T他 GridView 现在包含脚注行](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
 
 **图 11**:GridView 现在包括脚注行 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image33.png))
 
@@ -149,7 +149,7 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 如屏幕截图所示，这一变化使得页脚清晰地突显出来的详细信息。
 
 
-[![GridView 的页脚行现在具有红色背景色](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
+[![T他 GridView 的页脚行现在具有红色背景色](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
 
 **图 12**:GridView 的页脚行现在具有红色背景色 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image36.png))
 
@@ -203,7 +203,7 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 图 13 显示了报表后添加此代码。 请注意如何`ToString("c")`会像一种货币格式将平均价格摘要信息。
 
 
-[![GridView 的页脚行现在具有红色背景色](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
+[![T他 GridView 的页脚行现在具有红色背景色](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
 
 **图 13**:GridView 的页脚行现在具有红色背景色 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png))
 
@@ -221,4 +221,4 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
 
 > [!div class="step-by-step"]
-> [上一篇](using-the-formview-s-templates-vb.md)
+> [上一个](using-the-formview-s-templates-vb.md)

@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: a73fac6107be45455465b506a019bcc9a41b1deb
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d3a965ccf7ca001d3178819f88836b59f2893bb0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425517"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406413"
 ---
-<a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录：修复它示例应用程序 （构建使用 Azure 的真实世界云应用程序）
-====================
+# <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录：修复它示例应用程序 （构建使用 Azure 的真实世界云应用程序）
+
 通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载该项目的修补程序](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
@@ -25,8 +25,8 @@ ms.locfileid: "58425517"
 
 本附录的构建真实世界云应用与 Azure 的电子书包含以下各节提供有关 Fix It 示例应用程序，您可以下载的其他信息：
 
-- [已知的问题](#knownissues)
-- [最佳做法](#bestpractices)
+- [已知问题](#knownissues)
+- [最佳实践](#bestpractices)
 - [如何从 Visual Studio 在本地计算机上运行该应用程序](#run-in-vs)
 - [如何将基本应用程序部署到 Azure 应用服务 Web 应用，通过使用 Windows PowerShell 脚本](#deploybase)
 - [Windows PowerShell 脚本故障排除](#troubleshooting)
@@ -395,4 +395,4 @@ Fix It 应用原始只返回了 null 在日志中记录的 SQL 查询产生异�
 现在已准备好部署云服务。 在解决方案资源管理器，右键单击 MyFixItCloudService 项目并选择**发布**。 有关详细信息，请参阅"[部署到 Azure 应用程序](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)"，这是中的第 2 部分[本教程](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)。
 
 > [!div class="step-by-step"]
-> [上一篇](more-patterns-and-guidance.md)
+> [上一个](more-patterns-and-guidance.md)

@@ -8,15 +8,15 @@ ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: a78606a74b2149e68e3b01f4fe204f4a13edf4b5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5dc4471039938a429a85c891594c3a6651c6ef9d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039094"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388525"
 ---
-<a name="authentication-and-authorization-in-aspnet-web-api"></a>身份验证和 ASP.NET Web API 中的授权
-====================
+# <a name="authentication-and-authorization-in-aspnet-web-api"></a>身份验证和 ASP.NET Web API 中的授权
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 您已经创建的 web API，但现在你想要控制对它的访问。 在本系列的文章，我们将介绍一些选项用于保护 web API 从未经授权的用户。 本系列教程将介绍身份验证和授权。

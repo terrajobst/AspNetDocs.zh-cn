@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: d4fab68555eeb27420e60a28aca2f2c0fb9a73e3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421513"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408181"
 ---
-<a name="membership"></a>成员身份
-====================
+# <a name="membership"></a>成员身份
+
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 成员身份基于窗体身份验证模型是否成功从 ASP.NET 1.x。 ASP.NET 窗体身份验证提供了方便地将一个登录窗体合并到 ASP.NET 应用程序和对针对数据库或其他数据存储区的用户进行验证。
@@ -74,7 +74,7 @@ ASP.NET SQL Server 安装向导在向导中指定的实例中创建该网站。 
 
 这将启动 ASP.NET 网站管理工具如下所示。 ASP.NET 网站管理是一个四个选项卡界面，它可以更轻松地管理应用程序设置。 提供了以下选项卡：
 
-- **主文件夹**
+- **主页**
 - **安全**配置用户、 角色和访问权限。
 - **应用程序**配置应用程序设置。
 - **提供程序**配置和测试应用程序成员资格提供程序。

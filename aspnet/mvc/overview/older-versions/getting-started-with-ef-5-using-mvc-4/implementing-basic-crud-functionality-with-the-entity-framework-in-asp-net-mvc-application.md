@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: f7bace3f-b85a-47ff-b5fe-49e81441cdf9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 58406e4d15d28e9ce41959ecfa34246007838475
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: be1fcf2c7a0eec5473b2e3a10f51d7e22656b671
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425933"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402201"
 ---
-<a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 应用程序 (共 2 个 10) 中实现基本的 CRUD 功能与实体框架
-====================
+# <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 应用程序 (共 2 个 10) 中实现基本的 CRUD 功能与实体框架
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -134,11 +134,11 @@ ms.locfileid: "58425933"
 
 实体可能之一[遵循状态](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
 
-- `Added`。 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
-- `Unchanged`。 不需要通过 `SaveChanges` 方法对此实体执行操作。 从数据库读取实体时，实体将从此状态开始。
-- `Modified`。 已修改实体的部分或全部属性值。 `SaveChanges`方法必须发出`UPDATE`语句。
-- `Deleted`。 已标记该实体进行删除。 `SaveChanges`方法必须发出`DELETE`语句。
-- `Detached`。 数据库上下文未跟踪该实体。
+- `Added`. 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
+- `Unchanged`. 不需要通过 `SaveChanges` 方法对此实体执行操作。 从数据库读取实体时，实体将从此状态开始。
+- `Modified`. 已修改实体的部分或全部属性值。 `SaveChanges`方法必须发出`UPDATE`语句。
+- `Deleted`. 已标记该实体进行删除。 `SaveChanges`方法必须发出`DELETE`语句。
+- `Detached`. 数据库上下文未跟踪该实体。
 
 在桌面应用程序中，通常会自动设置状态更改。 在桌面应用程序的类型中，读取一个实体并对它的一些属性值进行更改。 这将使其实体状态自动更改为 `Modified`。 然后调用`SaveChanges`，Entity Framework 生成 SQL`UPDATE`更新仅更改了的实际属性的语句。
 

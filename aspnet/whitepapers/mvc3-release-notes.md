@@ -8,15 +8,15 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 7342b5f4a7e2327f3f3850941510a6e46ec30842
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 36bc314c6709c34863d86158419257be99f4084f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063864"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407102"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
-====================
+# <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+
 - [概述](#overview)
 - [安装说明](#installation-notes)
 - [软件要求](#software-requirements)
@@ -60,7 +60,7 @@ ms.locfileid: "57063864"
 - [ASP.NET MVC 3 候选发布 (2010 年 11 月 9 日)](#TOC_ASP_NET_3_RC)
 
     - [ASP.NET MVC 3 RC 中的新增功能](#_Toc276711785)
-    - [NuGet Package Manager](#_Toc276711786)
+    - [NuGet 程序包管理器](#_Toc276711786)
     - [改进了"新建项目"对话框](#_Toc276711787)
     - [无会话控制器](#_Toc276711788)
     - [新的验证特性](#_Toc276711789)
@@ -435,7 +435,7 @@ ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 验证、 jQu
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>固定@model声明，以将空格添加到文档
 
-在早期版本中， <em>@model</em>视图顶部的声明添加到呈现的 HTML 输出一个空行。 此问题已修复，以便声明不会引入的空格。
+在早期版本中， *@model*视图顶部的声明添加到呈现的 HTML 输出一个空行。 此问题已修复，以便声明不会引入的空格。
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>添加了"FileExtensions"属性设置为视图引擎，以支持特定于引擎的文件的名称
@@ -462,7 +462,7 @@ ASP.NET MVC 3 的项目模板现在包括最新版本的 jQuery、 验证、 jQu
 - 在以前版本的 ASP.NET MVC 中，每个请求除在少数情况下创建操作筛选器。 此行为永远不会有保证的行为，但只是实现详细信息，筛选器的约定是将其视为无状态。 在 ASP.NET MVC 3 中，将更主动的方式缓存筛选器。 因此，实例状态不正确存储任何自定义操作筛选器可能已损坏。
 - 异常筛选器的执行顺序已更改的异常筛选器具有相同*顺序*值。 在 ASP.NET MVC 2 及更早版本，异常筛选器具有相同的控制器上*顺序*值上的操作方法的异常筛选器之前执行这些操作方法上。 异常筛选器应用时，这通常会发生此情况没有指定*顺序*值。 在 ASP.NET MVC 3 中，此顺序已反转，以便最具体的异常处理程序最先执行。 在早期版本中，如果*顺序*显式指定属性、 筛选器运行指定的顺序。
 - 名为的新属性*FileExtensions*已添加到*VirtualPathProviderViewEngine*基类。 当 ASP.NET 视图按路径 （不按名称查找） 时，被视为唯一视图与此新属性指定的列表中包含的文件扩展名。 若要启用 Web 窗体视图的自定义文件扩展注册自定义生成提供程序和提供程序使用完整路径而不是一个名称来引用这些视图，这是在应用程序中的重大更改。 解决方法是修改的值*FileExtensions*属性以包含自定义的文件扩展名。
-- 直接实现的自定义控制器工厂实现<em>IControllerFactory</em>接口必须提供的新实现<em>GetControllerSessionBehavior</em> <em>已添加到此版本中的接口方法</em>。 一般情况下，建议您不要直接实现此接口和改为从类派生<em>借助于 DefaultControllerFactory</em>。
+- 直接实现的自定义控制器工厂实现*IControllerFactory*接口必须提供的新实现*GetControllerSessionBehavior*方法添加到此版本中的接口。 一般情况下，建议您不要直接实现此接口和改为从类派生*借助于 DefaultControllerFactory*。
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>已知问题
@@ -666,7 +666,7 @@ Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格
 
 新的 ASP.NET Web Pages 技术包括一组可用于将常用的功能添加到视图和控制器的帮助器方法。 ASP.NET MVC 3 支持使用控制器和视图中的这些帮助器方法 （如果适用）。 这些方法包含在 System.Web.Helpers 程序集。 下表列出了几个 ASP.NET Web Pages 帮助器方法。
 
-| **Helper** | **说明** |
+| **帮助程序** | **描述** |
 | --- | --- |
 | Chart | 呈现的图表视图中。 包含如 Chart.ToWebImage、 Chart.Save 和 Chart.Write 方法。 |
 | 加密 | 使用哈希算法来创建正确加盐，哈希处理密码。 |

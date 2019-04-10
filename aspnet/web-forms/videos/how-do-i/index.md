@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 27591afa-3c14-47e6-8323-573f8f7aa862
 msc.legacyurl: /web-forms/videos/how-do-i
 msc.type: chapter
-ms.openlocfilehash: d53304d60888de55ad474f5be8c0cfe6f8b122bb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7d300a1f29c7712408d17c6629da6cefb67b3cdb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410313"
 ---
-<a name="how-do-i"></a>“如何实现”
-====================
+# <a name="how-do-i"></a>“如何实现”
+
 > 如何执行各种常见任务。
 
 
@@ -50,10 +50,10 @@ ms.locfileid: "57020244"
 - [在 ASP.NET 中读取、编写和删除 Cookie](read-write-and-delete-cookies-in-aspnet.md)
 - [保存和加载自定义 Web 服务器控件的视图状态信息](how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control.md)
 - [在 ASP.NET 中创建和使用应用程序级别的事件](how-do-i-create-and-use-application-level-events-in-aspnet.md)
-- [ASP.NET 中的简单文件上传](how-do-i-simple-file-uploads-in-aspnet.md)
-- [ASP.NET 2 中的多文件上传](how-do-i-multiple-file-uploads-in-aspnet-2.md)
-- [ASP.NET 1 中的多文件上传](how-do-i-multiple-file-uploads-in-aspnet-1.md)
-- [使用 AJAX 样式界面的文件上传](how-do-i-file-uploads-with-an-ajax-style-interface.md)
+- [ASP.NET 中的简单文件上载](how-do-i-simple-file-uploads-in-aspnet.md)
+- [ASP.NET 2 中的多文件上载](how-do-i-multiple-file-uploads-in-aspnet-2.md)
+- [ASP.NET 1 中的多文件上载](how-do-i-multiple-file-uploads-in-aspnet-1.md)
+- [使用 AJAX 样式界面的文件上载](how-do-i-file-uploads-with-an-ajax-style-interface.md)
 - [以声明方式和编程方式处理母版页](how-do-i-work-with-master-pages-declaratively-and-programmatically.md)
 - [在母版页和内容页中处理事件](how-do-i-handle-events-in-master-and-content-pages.md)
 - [将 ObjectDataSource 用于数据访问类和业务对象](how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object.md)
@@ -61,7 +61,7 @@ ms.locfileid: "57020244"
 - [使用隐藏字段在客户端 JavaScript 和服务器代码之间共享数据](how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field.md)
 - [向 ASP.NET 页面添加 JavaScript](how-do-i-add-javascript-to-an-aspnet-page.md)
 - [向 ASP.NET 服务器控件添加 JavaScript 事件处理程序](how-do-i-add-javascript-event-handlers-to-aspnet-server-controls.md)
-- [在 ASP.NET 中创建和调用简单 Web 服务](how-do-i-create-and-call-a-simple-web-service-in-aspnet.md)
+- [在 ASP.NET 中创建和调用简单的 Web 服务](how-do-i-create-and-call-a-simple-web-service-in-aspnet.md)
 - [部署网站“复制网站”工具](how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md)
 - [在 ASP.NET 配置文件中创建和使用自定义配置分区](how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file.md)
 - [配置用于某一 .NET Framework 版本的 ASP.NET 网站](how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version.md)
@@ -107,7 +107,7 @@ ms.locfileid: "57020244"
 - [了解和抵御 ASP.NET 中的脚本注入攻击](how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet.md)
 - [ASP.NET 数据访问技术，LINQ 简介](aspnet-data-access-technologies-an-introduction-to-linq.md)
 - [在 JavaScript 中创建和使用类](how-do-i-create-and-use-classes-in-javascript.md)
-- [创建高效、标准化方法，实现 CSS 样式](how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles.md)
+- [创建高效的标准化方法，实现 CSS 样式](how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles.md)
 - [ASP.NET 是什么](what-is-asp-net.md)
 - [选择正确的编程模型](choosing-the-right-programming-model.md)
 - [使用 ASP.NET Web 窗体生成首个 ASP.NET 应用程序](build-your-first-asp-net-application-with-asp-net-web-forms.md)

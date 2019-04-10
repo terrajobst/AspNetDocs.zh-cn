@@ -8,15 +8,15 @@ ms.date: 04/12/2011
 ms.assetid: a0529495-422f-4008-94b5-5fa913ac2e70
 msc.legacyurl: /web-pages/videos/introduction/create-a-web-interface-in-webmatrix
 msc.type: video
-ms.openlocfilehash: 0059c0ab06d83ef5992fa9a9e692cec00592d089
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e324e99178ff69ecd71b2071747a718c13b7115e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035904"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386692"
 ---
-<a name="create-a-web-interface-in-webmatrix"></a>在 WebMatrix 中创建 Web 界面
-====================
+# <a name="create-a-web-interface-in-webmatrix"></a>在 WebMatrix 中创建 Web 界面
+
 通过[Advaiya](https://twitter.com/Advaiyasolns)
 
 第 6 部分演示如何生成可让用户将数据添加到您的数据库，以便站点可以呈现的页面。

@@ -8,15 +8,15 @@ ms.date: 01/12/2011
 ms.assetid: cad00de1-3c68-4ff4-a436-54236d449459
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 47d6e611ea79cf8c217f1f793d342b065233081f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 289dd429081fde12699db678e619a9fd5ed98942
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041644"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403280"
 ---
-<a name="accessing-your-models-data-from-a-controller-vb"></a>从控制器访问模型的数据 (VB)
-====================
+# <a name="accessing-your-models-data-from-a-controller-vb"></a>从控制器访问模型的数据 (VB)
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装以下列出的先决条件。 可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，可以单独安装系统必备组件，使用以下链接：

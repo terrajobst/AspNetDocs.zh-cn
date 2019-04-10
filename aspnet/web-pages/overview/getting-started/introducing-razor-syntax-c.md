@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: b5eb98dfdf3fc013920f45080d4a20e1fa507725
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407349"
 ---
-<a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
-====================
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文提供了您的编程概述与 ASP.NET Web Pages 使用 Razor 语法。 ASP.NET 是 Microsoft 的技术，用于在 web 服务器上运行动态网页。 此文章重点介绍使用 C# 编程语言。
@@ -223,7 +223,7 @@ Razor 语法提供 ASP.NET，但使用的简化的语法来更轻松地了解你
 
 前面您了解了如何创建 ASP.NET Web Pages 页，以及如何可以将服务器代码添加到 HTML 标记的一个基本示例。 本文介绍使用 Razor 语法的 ASP.NET 服务器代码的基础知识&#8212;，它是编程语言规则。
 
-如果你是经验丰富的编程 （尤其是如果你使用过 C、 c + +、 C#、 Visual Basic 或 JavaScript），您现在阅读的许多并不陌生。 您可能需要仅与如何将服务器代码添加到标记中了解了相关 *.cshtml*文件。
+如果您是经验丰富的编程 (尤其是当你使用过 C， C++， C#，Visual Basic 或 JavaScript)，您现在阅读的大部分来说应该很熟悉。 您可能需要仅与如何将服务器代码添加到标记中了解了相关 *.cshtml*文件。
 
 <a id="BM_CombiningTextMarkupAndCode"></a>
 ### <a name="combining-text-markup-and-code-in-code-blocks"></a>组合文本、 标记和代码块中的代码
@@ -345,13 +345,15 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
     <strong>方法</strong>
     :::column-end:::
     :::column:::
-    <strong>说明</strong>
+    <strong>描述</strong>
     :::column-end:::
     :::column:::
     <strong>示例</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsInt(), IsInt()`
@@ -363,7 +365,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsBool(), IsBool()`
@@ -375,7 +379,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsFloat(), IsFloat()`
@@ -387,7 +393,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDecimal(), IsDecimal()`
@@ -399,7 +407,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDateTime(), IsDateTime()`
@@ -411,7 +421,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `ToString()`
@@ -431,16 +443,18 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
 
 :::row:::
     :::column:::
-    <strong>Operator</strong>
+    <strong>运算符</strong>
     :::column-end:::
     :::column:::
-    <strong>说明</strong>
+    <strong>描述</strong>
     :::column-end:::
     :::column:::
     <strong>示例</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+` `-` `*` `/`
@@ -452,7 +466,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `=`
@@ -464,7 +480,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `==`
@@ -476,7 +494,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `!=`
@@ -488,7 +508,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `< > <= >=`
@@ -500,7 +522,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+`
@@ -512,7 +536,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+=` `-=`
@@ -524,7 +550,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `.`
@@ -536,7 +564,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `()`
@@ -548,7 +578,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `[]`
@@ -560,7 +592,9 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `!`
@@ -572,10 +606,12 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
-        `&&` <code>&#124;&#124;</code>
+        `&&` `||`
     :::column-end:::
     :::column:::
     逻辑 AND 和 OR，用于链接在一起条件。
@@ -715,8 +751,8 @@ ASP.NET 服务器代码可以执行基于条件的任务，并编写特定次数
 
 可以使用的属性`Page`对象以获得大量的信息，例如：
 
-- `Request`。 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
-- `Response`。 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。 
+- `Request`. 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
+- `Response`. 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
@@ -814,6 +850,6 @@ Razor 语法可以用于将参数传递给方法的两个选项：*位置参数*
 **参考文档**
 
 
-[ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
+[ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
 [C# 语言](https://msdn.microsoft.com/library/kx37x362.aspx)

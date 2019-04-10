@@ -8,15 +8,15 @@ ms.date: 09/09/2011
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: a4f78061850ef5ad8c3381daafdb5ea6bca4cb2f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f9b4e2ba0514df4c017a192f3c2136a7eec60c7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054284"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413251"
 ---
-<a name="aspnet-mvc-4"></a>ASP.NET MVC 4
-====================
+# <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
+
 > 本文档介绍 ASP.NET MVC 4 的发布。
 
 
@@ -270,7 +270,7 @@ ASP.NET MVC 4 Release Candidate 的发行说明可在此处找到：
 - **如果已卸载系统必备组件卸载 ASP.NET MVC 4 将失败。** 若要完全卸载 ASP.NET MVC 4you 必须在卸载 Visual Studio 之前卸载 ASP.NET MVC 4。
 - **安装 ASP.NET MVC 4 分页符 ASP.NET MVC 3 RTM 应用程序。** ASP.NET MVC 3 创建的应用程序与 RTM 版本 (不能与[ASP.NET MVC 3 Tools Update](https://www.microsoft.com/download/details.aspx?id=1491)发布) 需要执行以下更改才能使用 ASP.NET MVC 4 并行。 生成项目而无需进行这些更新结果中的编译错误。 
 
-    **所需的更新**
+    **所需更新**
 
   1. 在根 Web.config 文件中，添加一个新*&lt;appSettings&gt;* 具有键的项*webPages:Version*和值*1.0.0.0*。 
 

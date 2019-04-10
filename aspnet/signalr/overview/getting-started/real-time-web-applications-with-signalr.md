@@ -8,21 +8,21 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 3db54a134e8f842cab1d3471c69f5a8e2039d83d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9904582450d4386ef8b8656078f6d40dbd1e10be
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423606"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412003"
 ---
-<a name="hands-on-lab-real-time-web-applications-with-signalr"></a>动手实验：使用 SignalR 实现实时 Web 应用程序
-====================
+# <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>动手实验：使用 SignalR 实现实时 Web 应用程序
+
 
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-[下载 Web 训练营培训工具包](https://aka.ms/webcamps-training-kit)
+[下载 Web 训练营培训工具包，2015 年 10 月版本](https://github.com/Microsoft-Web/WebCampTrainingKit/releases/tag/v2015.10.13b)
 
 > 实时 Web 应用程序功能推送服务器端的情况下，实时连接的客户端到内容的功能。 面向 ASP.NET 开发人员**ASP.NET SignalR**是一个库，以将实时 web 功能添加到其应用程序。 它利用多个传输协议，会自动选择给定客户端和服务器的最佳可用的传输最佳的可用传输。 它利用**WebSocket**，一个 HTML5 API，使浏览器和服务器之间的双向通信。
 > 
@@ -34,8 +34,7 @@ ms.locfileid: "58423606"
 > 
 > ![SignalR 体系结构](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
-
+> 将包含所有示例代码和代码段 Web 训练营培训工具包，2015 年 10 月版本中，可在[ https://github.com/Microsoft-Web/WebCampTrainingKit/releases/tag/v2015.10.13b ](https://github.com/Microsoft-Web/WebCampTrainingKit/releases/tag/v2015.10.13b)。  请注意，该页面上的安装程序链接不再有效;改为使用在资产部分下的某个链接。
 
 <a id="Overview"></a>
 ## <a name="overview"></a>概述
@@ -77,7 +76,7 @@ ms.locfileid: "58423606"
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>练习
@@ -394,7 +393,7 @@ Web 应用程序时，您通常可以之间*纵向*并*向外扩展*选项。 *�
 
     *底板消息表*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

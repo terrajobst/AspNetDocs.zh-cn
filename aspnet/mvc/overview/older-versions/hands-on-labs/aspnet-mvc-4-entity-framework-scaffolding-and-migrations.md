@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 649f83d54bfdb3367d9cea056a53a614f982adec
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ca47f6fe6d55153354d38fcf1ba5e844215279b2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422956"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389032"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 基架和迁移
 
@@ -58,7 +58,7 @@ ms.locfileid: "58422956"
 
 如果您不熟悉 Visual Studio 代码段，并想要了解如何使用它们，您可以从本文档引用的附录&quot;[附录 b:使用代码片段](#AppendixB)&quot;。
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -260,7 +260,7 @@ ASP.NET MVC 基架提供了一种标准化方法，创建必要的逻辑，可�
 
     ![中间名 edition](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image21.png "中间名版本")
 
-* * *
+---
 
 <a id="Summary"></a>
 

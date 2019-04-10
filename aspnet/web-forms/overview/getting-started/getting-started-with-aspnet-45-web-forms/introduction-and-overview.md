@@ -8,15 +8,15 @@ ms.date: 01/09/2019
 ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: b51ffda9aa10dd8b1fe98c4b56f70994eb016cec
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3a39e8d1979a743101d728eb3430e9aa0efb1252
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425712"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415630"
 ---
-<a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>开始使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2017
-====================
+# <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>开始使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2017
+
 
 [下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -182,7 +182,7 @@ PayPal 确认你的帐户、 订单和付款信息。
 
 完成后的系列教程，请测试您的知识并加强关键概念小测验。 每个问题提供的说明和链接的其他指导。
 
- * [ASP.NET Web 窗体测验](https://blogs.msdn.microsoft.com/erikreitan/2016/01/08/asp-net-web-forms-quiz/) 
+* [ASP.NET Web 窗体测验](https://blogs.msdn.microsoft.com/erikreitan/2016/01/08/asp-net-web-forms-quiz/) 
 
 ## <a name="tutorial-support-and-comments"></a>教程支持和提出的意见
 
@@ -193,4 +193,4 @@ PayPal 确认你的帐户、 订单和付款信息。
 如果发生错误，相应的错误消息可能是令人困惑，与不合理的解释如何修复此错误。 如需帮助，可以查看[ASP.NET 论坛](https://forums.asp.net/)。 另一个很好来源是中的问题与解答部分[开始使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 示例页面。 
 
 > [!div class="step-by-step"]
-> [下一页](create-the-project.md)
+> [下一步](create-the-project.md)

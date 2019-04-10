@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: e129b2c2-8587-4ff1-b455-7f14cb28bcf9
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-use-generic-tests
 msc.type: video
-ms.openlocfilehash: fabeff4743a28015b55c98071e8df40015710dd1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 32d970a5eba2eb7a5344c43e65e40c0ff6670632
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411678"
 ---
-<a name="how-do-i-use-generic-tests"></a>[如何实现:]使用一般测试？
-====================
+# <a name="how-do-i-use-generic-tests"></a>[如何实现:]使用一般测试？
+
 通过[Chris Menegay](https://twitter.com/CMenegay)
 
 一般测试是现有的程序，可以是包装，并可作为测试在 Visual Studio Team System。 在本视频中，我们看到已包装的 shell 程序接受输入的值从我们的测试环境的方式以及如何使用该程序的输出值来确定是否在测试通过或失败的演示。

@@ -9,15 +9,15 @@ ms.date: 03/12/2010
 ms.technology: aspnet
 msc.legacyurl: /entity-framework
 msc.type: content
-ms.openlocfilehash: 4f18afb9df3d486845d33735d045ee26f59b3f97
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bcbd98f88b1e7e292961326061404ce91d157b32
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045324"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414551"
 ---
-<a name="entity-framework"></a>Entity Framework
-====================
+# <a name="entity-framework"></a>Entity Framework
+
 实体框架 (EF) 是一种对象关系映射程序支持.NET 开发人员可以使用关系数据使用特定于域的对象。 它不要求提供开发人员通常需要编写的大部分数据访问代码。
 
 

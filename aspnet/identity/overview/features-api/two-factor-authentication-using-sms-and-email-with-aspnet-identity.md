@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: 使用 SMS 和电子邮件与 ASP.NET 标识的双因素身份验证 |Microsoft Docs
+title: 双因素身份验证使用 SMS 和电子邮件与 ASP.NET 标识的 ASP.NET 4.x
 author: HaoK
 description: 本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。 由 Rick Anderson 撰写本文时 ( @RickAndMSFT )、 Pr....
 ms.author: riande
 ms.date: 09/15/2015
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4b253923696e35e59c196578a232f53c11671d16
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c41fc06ad98665f7d48efde030c1341b06e49dd0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043164"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395285"
 ---
-<a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和电子邮件与 ASP.NET 标识的双因素身份验证
-====================
+# <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和电子邮件与 ASP.NET 标识的双因素身份验证
+
 通过[Hao 永远](https://github.com/HaoK)， [Pranav rastogi 撰写](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。
@@ -52,8 +53,8 @@ ms.locfileid: "57043164"
    在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件并[Twilio](https://www.twilio.com/)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)的 sms 短。 `Identity.Samples`包将安装我们将使用的代码。
 3. 设置[项目，以使用 SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 4. *可选*：按照中的说明我[电子邮件确认教程](account-confirmation-and-password-recovery-with-aspnet-identity.md)挂接 SendGrid 然后运行应用并注册的电子邮件帐户。
-5. * 可选: * 删除中的示例演示电子邮件链接确认代码 (`ViewBag.Link`帐户控制器中的代码。 请参阅`DisplayEmail`和`ForgotPasswordConfirmation`操作方法和 razor 视图)。
-6. <em>可选: * 中删除`ViewBag.Status`代码从管理和帐户控制器和 *Views\Account\VerifyCode.cshtml</em>并<em>Views\Manage\VerifyPhoneNumber.cshtml</em> razor 视图。 或者，可以保留`ViewBag.Status`显示效果以测试此应用本地而无需挂钩和发送电子邮件和短信的工作方式。
+5. *可选：* 删除示例中演示电子邮件链接确认代码 (`ViewBag.Link`帐户控制器中的代码。 请参阅`DisplayEmail`和`ForgotPasswordConfirmation`操作方法和 razor 视图)。
+6. *可选：* 删除`ViewBag.Status`中的代码的管理和帐户控制器以及从*Views\Account\VerifyCode.cshtml*并*Views\Manage\VerifyPhoneNumber.cshtml* razor 视图。 或者，可以保留`ViewBag.Status`显示效果以测试此应用本地而无需挂钩和发送电子邮件和短信的工作方式。
 
 > [!NOTE]
 > 警告：如果在此示例中的安全设置的任何更改，生产应用程序将需要进行显式调用所做的更改的安全审核。
@@ -281,6 +282,6 @@ Cookie 中间件将检查每个请求的 cookie。 `SecurityStampValidator`中�
 - [MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)还演示如何将配置文件信息添加到用户表。
 - [ASP.NET MVC 和标识 2.0:了解基础知识](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx)通过 John 输入。
 - [帐户确认和密码恢复与 ASP.NET 标识](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [ASP.NET 标识简介](../getting-started/introduction-to-aspnet-identity.md)
+- [ASP.NET Identity 简介](../getting-started/introduction-to-aspnet-identity.md)
 - [宣布推出 RTM 的 ASP.NET 标识 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) Pranav rastogi 撰写。
 - [ASP.NET 标识 2.0:设置帐户验证和授权的双重](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx)通过 John 输入。

@@ -8,15 +8,15 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 59bce8c511167e8ba8a8db6f1842e352c90f3039
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a01acb649556d06ab9828ceab0fcbdf363bbc0d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424893"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405893"
 ---
-<a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
-====================
+# <a name="tracing-in-aspnet-web-api-2"></a>在 ASP.NET Web API 2 中进行跟踪
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 后想要调试的基于 web 的应用程序，有了一整套很好的跟踪日志别无选择。 本教程演示如何在 ASP.NET Web API 中启用跟踪。 此功能可用于跟踪之前和之后它将调用你的控制器 Web API 框架的用途。 此外可以使用它来跟踪自己的代码。

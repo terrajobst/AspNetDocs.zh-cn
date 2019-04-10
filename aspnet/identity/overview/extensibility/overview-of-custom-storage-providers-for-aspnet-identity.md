@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
-title: 自定义存储提供程序的 ASP.NET 标识概述 |Microsoft Docs
+title: 概述的自定义存储提供程序的 ASP.NET 标识的 ASP.NET 4.x
 author: Rick-Anderson
 description: ASP.NET 标识是一个可扩展的系统，这样就可以创建自己的存储提供程序并将其插入到你的应用程序而无需重新处理应用...
 ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: d819fabf4f367c8f6d0ce857bc248a2b812c2b21
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 71201e9d91080855350349b966fe7916ce21a909
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422202"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411262"
 ---
-<a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自定义存储提供程序概述
-====================
+# <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自定义存储提供程序概述
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > ASP.NET 标识是一个可扩展的系统，这样就可以创建自己的存储提供程序并将其插入到你的应用程序而无需重新使用该应用程序。 本主题介绍如何创建 ASP.NET 标识的自定义的存储提供程序。 它介绍了用于创建自己的存储提供程序的重要概念，但并不实现自定义存储提供程序的分步演练。
@@ -89,7 +90,7 @@ ASP.NET 标识包含的类称为管理器和存储。 管理器是用于执行�
 | 类 | 描述 | 示例 |
 | --- | --- | --- |
 | 上下文 | 若要连接到持久性机制并执行查询的信息进行封装。 此类是您的数据访问层的中心。 其他数据类将需要此类来执行其操作的实例。 此外将初始化您的存储类使用此类的实例。 | [MySQLDatabase](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
-| 用户存储 | 存储和检索用户信息 （如用户名称和密码哈希）。 | [UserTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserTable.cs) |
+| 用户存储 | 存储和检索用户信息 （如用户名称和密码哈希）。 | [数据库 (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserTable.cs) |
 | 角色存储 | 存储和检索角色信息 （例如角色名称）。 | [RoleTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/RoleTable.cs) |
 | UserClaims 存储 | 存储和检索用户声明信息 （如的声明类型和值）。 | [UserClaimsTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserClaimsTable.cs) |
 | UserLogins 存储 | 存储和检索用户登录信息 （例如外部身份验证提供程序）。 | [UserLoginsTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserLoginsTable.cs) |

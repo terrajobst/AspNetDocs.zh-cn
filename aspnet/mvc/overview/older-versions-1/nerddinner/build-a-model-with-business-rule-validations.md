@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: f5829aab8cb266a65674d052ab77ab8e10c60670
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 078614c6e7ba18ac09bbd5e23b90b08c97aee658
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422842"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387290"
 ---
-<a name="build-a-model-with-business-rule-validations"></a>生成具有业务规则验证功能的模型
-====================
+# <a name="build-a-model-with-business-rule-validations"></a>生成具有业务规则验证功能的模型
+
 by [Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -116,7 +116,7 @@ NerdDinner 应用程序中，我们将定义 DinnerRepository 类具有以下签
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample2.cs)]
 
-*注意：本章稍后我们将从此类提取 IDinnerRepository 接口并启用我们控制器上使用它的依赖关系注入。开始时，不过，我们将简单的开始和只需直接使用 DinnerRepository 类。*
+*注意:本章稍后我们将从此类提取 IDinnerRepository 接口并启用我们控制器上使用它的依赖关系注入。 开始时，不过，我们将简单的开始和只需直接使用 DinnerRepository 类。*
 
 若要实现此类，我们将在我们"Models"文件夹上右键单击并选择**Add-&gt;新项**菜单命令。 在"添加新项"对话框中，我们将选择"类"模板，并将文件命名"DinnerRepository.cs":
 

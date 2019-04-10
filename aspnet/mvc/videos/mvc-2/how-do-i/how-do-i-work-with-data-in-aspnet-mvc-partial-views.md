@@ -8,15 +8,15 @@ ms.date: 12/11/2009
 ms.assetid: 2f0d41d2-2860-4113-8f5e-0efdd29abf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views
 msc.type: video
-ms.openlocfilehash: f9f12579e2e0d0eb9edcc9d310e8244675e03270
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b407f802dd4afd1de03a485709d87b886e8444e9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044004"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401317"
 ---
-<a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>如何实现:使用 ASP.NET MVC 分部视图中的数据？
-====================
+# <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>如何实现:使用 ASP.NET MVC 分部视图中的数据？
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在此视频的 Chris Pels 中显示了如何组织和将数据传递到分部视图的 MVC 应用程序中。 示例 MVC 应用程序创建包含多个业务实体的域模型和视图模型的包实例的类。 强类型化和使所有这些然后多个分部视图以及创建演示视图使用的视图模型类。 分部视图随后将添加到演示视图和视图模型的实例用于轻松地传递到分部视图的相应数据。 最后，在更广泛的 MVC 应用程序中的示例中实现的概念的使用将讨论。

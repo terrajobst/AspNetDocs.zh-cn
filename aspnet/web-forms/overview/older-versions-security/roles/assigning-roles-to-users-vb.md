@@ -8,15 +8,15 @@ ms.date: 03/24/2008
 ms.assetid: fd208ee9-69cc-4467-9783-b4e039bdd1d3
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 334440f514e94927e428aef8fdba53f0b99e4460
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6bedfd2b6ff0b50b3b863d26dccaacf687ed5907
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056744"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403267"
 ---
-<a name="assigning-roles-to-users-vb"></a>向用户分配角色 (VB)
-====================
+# <a name="assigning-roles-to-users-vb"></a>向用户分配角色 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/VB.10.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial10_AssigningRoles_vb.pdf)
@@ -57,7 +57,7 @@ ms.locfileid: "57056744"
 此 CSS 定义会指示浏览器显示使用的大型的红色字体的标签。 图 1 显示了 Visual Studio 设计器通过这种效果。
 
 
-[![标签的 CssClass 属性会导致大型，红色字体](assigning-roles-to-users-vb/_static/image2.png)](assigning-roles-to-users-vb/_static/image1.png)
+[![T他标签 CssClass 属性结果在大型，红色字体](assigning-roles-to-users-vb/_static/image2.png)](assigning-roles-to-users-vb/_static/image1.png)
 
 **图 1**:标签`CssClass`属性会导致大型，红色字体 ([单击以查看实际尺寸的图像](assigning-roles-to-users-vb/_static/image3.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "57056744"
 利用此代码，请花费片刻时间访问通过浏览器; 页面屏幕应类似于图 2。 所有用户帐户被填充下拉列表中，，在其中，每个角色显示为一个复选框。 因为我们设置`AutoPostBack`属性的 DropDownList 和复选框为 True，则更改所选的用户或选中或取消选中角色导致回发。 但是，因为我们尚未编写代码来处理这些操作，不执行任何操作。 例如，我们将介绍以下两个部分中的这些任务。
 
 
-[![页面显示的用户和角色](assigning-roles-to-users-vb/_static/image5.png)](assigning-roles-to-users-vb/_static/image4.png)
+[![T他页显示的用户和角色](assigning-roles-to-users-vb/_static/image5.png)](assigning-roles-to-users-vb/_static/image4.png)
 
 **图 2**:页面显示的用户和角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image6.png))
 
@@ -135,7 +135,7 @@ ms.locfileid: "57056744"
 请花费片刻时间来查看此页，通过浏览器测试。 选择用户 Tito，然后将 Tito 添加到管理员和在监督器角色。
 
 
-[![Tito 已添加到管理员和在监督器角色](assigning-roles-to-users-vb/_static/image8.png)](assigning-roles-to-users-vb/_static/image7.png)
+[![Tito 已添加到管理员和主管角色](assigning-roles-to-users-vb/_static/image8.png)](assigning-roles-to-users-vb/_static/image7.png)
 
 **图 3**:已添加到管理员和主管角色 Tito ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image9.png))
 
@@ -143,7 +143,7 @@ ms.locfileid: "57056744"
 接下来，从下拉列表中选择用户 Bruce。 没有为在回发和 Repeater 的复选框会更新通过`CheckRolesForSelectedUser`。 由于 Bruce 尚不属于任何角色，两个复选框的未选中状态。 接下来，将 Bruce 添加到在监督器角色。
 
 
-[![Bruce 已添加到在监督器角色](assigning-roles-to-users-vb/_static/image11.png)](assigning-roles-to-users-vb/_static/image10.png)
+[![Bruce 已添加到主管角色](assigning-roles-to-users-vb/_static/image11.png)](assigning-roles-to-users-vb/_static/image10.png)
 
 **图 4**:Bruce 已添加到主管角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image12.png))
 
@@ -167,7 +167,7 @@ ms.locfileid: "57056744"
 中的最后两行`BindRolesToList`方法已添加要绑定到的角色集`RoleList`DropDownList 控件。 图 5 显示了最终结果时的浏览器 – 使用系统的角色填充下拉列表查看。
 
 
-[![角色显示在 RoleList DropDownList](assigning-roles-to-users-vb/_static/image14.png)](assigning-roles-to-users-vb/_static/image13.png)
+[![T他角色显示在 RoleList DropDownList](assigning-roles-to-users-vb/_static/image14.png)](assigning-roles-to-users-vb/_static/image13.png)
 
 **图 5**:角色显示在`RoleList`DropDownList ([单击以查看实际尺寸的图像](assigning-roles-to-users-vb/_static/image15.png))
 
@@ -187,7 +187,7 @@ ms.locfileid: "57056744"
 利用此代码， `RolesUserList` GridView 应显示那些属于所选角色的用户。 如图 6 所示，在监督器角色都包含两个成员：Bruce 和 Tito。
 
 
-[![GridView 列出了这些属于所选角色的用户](assigning-roles-to-users-vb/_static/image17.png)](assigning-roles-to-users-vb/_static/image16.png)
+[![T他 GridView 列出了这些属于所选角色的用户](assigning-roles-to-users-vb/_static/image17.png)](assigning-roles-to-users-vb/_static/image16.png)
 
 **图 6**:GridView 列出了这些用户的属于所选角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image18.png))
 
@@ -199,7 +199,7 @@ ms.locfileid: "57056744"
 首先删除按钮字段添加到 GridView。 将此字段显示为字段最左侧，并更改其`DeleteText`属性从"删除"（默认值） 为"删除"。
 
 
-[![添加](assigning-roles-to-users-vb/_static/image20.png)](assigning-roles-to-users-vb/_static/image19.png)
+[![Add](assigning-roles-to-users-vb/_static/image20.png)](assigning-roles-to-users-vb/_static/image19.png)
 
 **图 7**:将"删除"按钮添加到 GridView ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image21.png))
 
@@ -217,7 +217,7 @@ ms.locfileid: "57056744"
 图 8 在监督器组中删除用户 Tito 后显示的页。
 
 
-[![唉，Tito 不再负责管理](assigning-roles-to-users-vb/_static/image23.png)](assigning-roles-to-users-vb/_static/image22.png)
+[![A拉斯维加斯，Tito 不再负责管理](assigning-roles-to-users-vb/_static/image23.png)](assigning-roles-to-users-vb/_static/image22.png)
 
 **图 8**:唉，Tito 不再负责管理 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image24.png))
 
@@ -245,7 +245,7 @@ ms.locfileid: "57056744"
 访问通过浏览器页面，然后选择从主管角色`RoleList`DropDownList。 请尝试输入无效的用户名 – 你应看到一条消息说明用户不存在系统中。
 
 
-[![不能将不存在的用户添加到角色](assigning-roles-to-users-vb/_static/image26.png)](assigning-roles-to-users-vb/_static/image25.png)
+[![You 不能向角色添加不存在用户](assigning-roles-to-users-vb/_static/image26.png)](assigning-roles-to-users-vb/_static/image25.png)
 
 **图 9**:不能将非存在的用户添加到角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image27.png))
 
@@ -253,7 +253,7 @@ ms.locfileid: "57056744"
 现在，尝试添加的有效用户。 继续操作并将 Tito 重新添加到在监督器角色。
 
 
-[![Tito 是再一次监督程序 ！](assigning-roles-to-users-vb/_static/image29.png)](assigning-roles-to-users-vb/_static/image28.png)
+[![Tito 是再一次主管 ！](assigning-roles-to-users-vb/_static/image29.png)](assigning-roles-to-users-vb/_static/image28.png)
 
 **图 10**:Tito 是再一次监督程序 ！  ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image30.png))
 
@@ -290,7 +290,7 @@ ms.locfileid: "57056744"
 接下来，选择"添加/删除`WizardSteps`..."选项从 CreateUserWizard 的智能标记，然后添加一个新`WizardStep`，并设置其`ID`到`SpecifyRolesStep`。 移动`SpecifyRolesStep WizardStep`，以便它出现在"符号注册新帐户"步骤中，但在"完成"步骤之前。 设置`WizardStep`的`Title`属性设置为"指定的角色"其`StepType`属性设置为`Step`，并将其`AllowReturn`属性设置为 False。
 
 
-[![添加](assigning-roles-to-users-vb/_static/image32.png)](assigning-roles-to-users-vb/_static/image31.png)
+[![Add](assigning-roles-to-users-vb/_static/image32.png)](assigning-roles-to-users-vb/_static/image31.png)
 
 **图 11**:添加"指定角色"`WizardStep`到 CreateUserWizard ([单击以查看实际尺寸的图像](assigning-roles-to-users-vb/_static/image33.png))
 
@@ -318,7 +318,7 @@ ms.locfileid: "57056744"
 访问本页可通过浏览器。 CreateUserWizard 的第一步是标准的"符号注册新帐户"步骤，该对话框提示输入新用户的用户名、 密码、 电子邮件和其他重要信息。 输入要创建一个名为 Wanda 的新用户的信息。
 
 
-[![创建名为 Wanda 的新用户](assigning-roles-to-users-vb/_static/image35.png)](assigning-roles-to-users-vb/_static/image34.png)
+[![C创建新的用户名为 Wanda](assigning-roles-to-users-vb/_static/image35.png)](assigning-roles-to-users-vb/_static/image34.png)
 
 **图 12**:创建新的用户名为 Wanda ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image36.png))
 
@@ -326,7 +326,7 @@ ms.locfileid: "57056744"
 单击"创建用户"按钮。 在内部调用 CreateUserWizard`Membership.CreateUser`方法，创建新用户帐户，然后将前进到下一步"指定角色。" 此处列出的系统角色。 检查在监督器复选框，然后单击下一步。
 
 
-[![使 Wanda 在监督器角色的成员](assigning-roles-to-users-vb/_static/image38.png)](assigning-roles-to-users-vb/_static/image37.png)
+[![M请在监督器角色的成员 Wanda](assigning-roles-to-users-vb/_static/image38.png)](assigning-roles-to-users-vb/_static/image37.png)
 
 **图 13**:使 Wanda 在监督器角色的成员 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image39.png))
 
@@ -334,7 +334,7 @@ ms.locfileid: "57056744"
 单击下一步会导致回发和更新`ActiveStep`到"已完成"步骤。 在`ActiveStepChanged`事件处理程序的最近创建的用户帐户分配给在监督器角色。 若要验证这一点，返回到`UsersAndRoles.aspx`页上，选择在监督器从`RoleList`DropDownList。 如图 14 所示，在监督器现在由组成的三个用户：Bruce、 Tito 和 Wanda。
 
 
-[![Bruce、 Tito 和 Wanda 是所有主管](assigning-roles-to-users-vb/_static/image41.png)](assigning-roles-to-users-vb/_static/image40.png)
+[![Bruce、 Tito 和 Wanda 是所有监督器](assigning-roles-to-users-vb/_static/image41.png)](assigning-roles-to-users-vb/_static/image40.png)
 
 **图 14**:Bruce、 Tito 和 Wanda 是所有监督器 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image42.png))
 
