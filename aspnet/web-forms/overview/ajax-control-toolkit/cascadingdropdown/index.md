@@ -8,23 +8,23 @@ ms.date: 11/14/2011
 ms.assetid: 5cc304e2-0013-4c26-8fe6-e897a533809f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown
 msc.type: chapter
-ms.openlocfilehash: 1bda628940da180288875c43ade92aad45101596
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4e8dfe9deaf8ee4196d327d94d9b99f568bd11d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022474"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405763"
 ---
-<a name="cascadingdropdown"></a><span data-ttu-id="bbfd5-103">CascadingDropdown</span><span class="sxs-lookup"><span data-stu-id="bbfd5-103">CascadingDropdown</span></span>
-====================
-> <span data-ttu-id="bbfd5-104">本教程演示如何使用 CascadingDropDown 控件创建相关更新时的用户进行选择的下拉列表。</span><span class="sxs-lookup"><span data-stu-id="bbfd5-104">This tutorial shows how to use the CascadingDropDown control to create related drop-down lists that update when users make a selection.</span></span>
+# <a name="cascadingdropdown"></a><span data-ttu-id="fe706-103">CascadingDropdown</span><span class="sxs-lookup"><span data-stu-id="fe706-103">CascadingDropdown</span></span>
+
+> <span data-ttu-id="fe706-104">本教程演示如何使用 CascadingDropDown 控件创建相关更新时的用户进行选择的下拉列表。</span><span class="sxs-lookup"><span data-stu-id="fe706-104">This tutorial shows how to use the CascadingDropDown control to create related drop-down lists that update when users make a selection.</span></span>
 
 
-- [<span data-ttu-id="bbfd5-105">使用 CascadingDropDown 填充列表 (C#)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-105">Filling a List Using CascadingDropDown (C#)</span></span>](filling-a-list-using-cascadingdropdown-cs.md)
-- [<span data-ttu-id="bbfd5-106">通过数据库使用 CascadingDropDown (C#)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-106">Using CascadingDropDown with a Database (C#)</span></span>](using-cascadingdropdown-with-a-database-cs.md)
-- [<span data-ttu-id="bbfd5-107">使用 CascadingDropDown 预设置列表条目 (C#)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-107">Presetting List Entries with CascadingDropDown (C#)</span></span>](presetting-list-entries-with-cascadingdropdown-cs.md)
-- [<span data-ttu-id="bbfd5-108">通过 CascadingDropDown 使用自动回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-108">Using Auto-Postback with CascadingDropDown (C#)</span></span>](using-auto-postback-with-cascadingdropdown-cs.md)
-- [<span data-ttu-id="bbfd5-109">使用 CascadingDropDown 填充列表 (VB)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-109">Filling a List Using CascadingDropDown (VB)</span></span>](filling-a-list-using-cascadingdropdown-vb.md)
-- [<span data-ttu-id="bbfd5-110">通过数据库使用 CascadingDropDown (VB)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-110">Using CascadingDropDown with a Database (VB)</span></span>](using-cascadingdropdown-with-a-database-vb.md)
-- [<span data-ttu-id="bbfd5-111">使用 CascadingDropDown 预设置列表条目 (VB)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-111">Presetting List Entries with CascadingDropDown (VB)</span></span>](presetting-list-entries-with-cascadingdropdown-vb.md)
-- [<span data-ttu-id="bbfd5-112">通过 CascadingDropDown 使用自动回发 (VB)</span><span class="sxs-lookup"><span data-stu-id="bbfd5-112">Using Auto-Postback with CascadingDropDown (VB)</span></span>](using-auto-postback-with-cascadingdropdown-vb.md)
+- [<span data-ttu-id="fe706-105">使用 CascadingDropDown 填充列表 (C#)</span><span class="sxs-lookup"><span data-stu-id="fe706-105">Filling a List Using CascadingDropDown (C#)</span></span>](filling-a-list-using-cascadingdropdown-cs.md)
+- [<span data-ttu-id="fe706-106">通过数据库使用 CascadingDropDown (C#)</span><span class="sxs-lookup"><span data-stu-id="fe706-106">Using CascadingDropDown with a Database (C#)</span></span>](using-cascadingdropdown-with-a-database-cs.md)
+- [<span data-ttu-id="fe706-107">使用 CascadingDropDown 预设置列表条目 (C#)</span><span class="sxs-lookup"><span data-stu-id="fe706-107">Presetting List Entries with CascadingDropDown (C#)</span></span>](presetting-list-entries-with-cascadingdropdown-cs.md)
+- [<span data-ttu-id="fe706-108">通过 CascadingDropDown 使用自动回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="fe706-108">Using Auto-Postback with CascadingDropDown (C#)</span></span>](using-auto-postback-with-cascadingdropdown-cs.md)
+- [<span data-ttu-id="fe706-109">使用 CascadingDropDown 填充列表 (VB)</span><span class="sxs-lookup"><span data-stu-id="fe706-109">Filling a List Using CascadingDropDown (VB)</span></span>](filling-a-list-using-cascadingdropdown-vb.md)
+- [<span data-ttu-id="fe706-110">通过数据库使用 CascadingDropDown (VB)</span><span class="sxs-lookup"><span data-stu-id="fe706-110">Using CascadingDropDown with a Database (VB)</span></span>](using-cascadingdropdown-with-a-database-vb.md)
+- [<span data-ttu-id="fe706-111">使用 CascadingDropDown 预设置列表条目 (VB)</span><span class="sxs-lookup"><span data-stu-id="fe706-111">Presetting List Entries with CascadingDropDown (VB)</span></span>](presetting-list-entries-with-cascadingdropdown-vb.md)
+- [<span data-ttu-id="fe706-112">通过 CascadingDropDown 使用自动回发 (VB)</span><span class="sxs-lookup"><span data-stu-id="fe706-112">Using Auto-Postback with CascadingDropDown (VB)</span></span>](using-auto-postback-with-cascadingdropdown-vb.md)
