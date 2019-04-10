@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 6f7b1c74-cc73-42f9-8ef0-8b3d058dabfa
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit
 msc.type: chapter
-ms.openlocfilehash: 389a7563ca2c95563cd57326122a4a801e9e91e6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 938d7f696e12496fc4ae79c51e9446d71a898e3e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019004"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382883"
 ---
-<a name="ajax-control-toolkit"></a>Ajax 控件工具包
-====================
+# <a name="ajax-control-toolkit"></a>Ajax 控件工具包
+
 > 如何创建响应迅速的 ASP.NET Web 页面使用 Ajax 控件工具包。
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "57019004"
 - [ASP.NET AJAX 弹出控件扩展程序](how-do-i-use-the-aspnet-ajax-popup-control-extender.md)
 - [ASP.NET AJAX ModalPopup 扩展程序控件](how-do-i-use-the-aspnet-ajax-modalpopup-extender-control.md)
 - [ASP.NET AJAX AlwaysVisible 控件扩展程序](how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender.md)
-- [ASP.NET AJAX 可折叠控件](how-do-i-use-the-aspnet-ajax-accordion-control.md)
+- [ASP.NET AJAX Accordion 控件](how-do-i-use-the-aspnet-ajax-accordion-control.md)
 - [ASP.NET AJAX 可折叠面板扩展程序](how-do-i-use-the-aspnet-ajax-collapsable-panel-extender.md)
 - [ASP.NET AJAX 可拖动面板扩展程序](how-do-i-use-the-aspnet-ajax-draggable-panel-extender.md)
 - [ASP.NET AJAX DynamicPopulate 扩展程序](how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender.md)
@@ -35,7 +35,7 @@ ms.locfileid: "57019004"
 - [ASP.NET AJAX ToggleButton 扩展程序](how-do-i-use-the-aspnet-ajax-togglebutton-extender.md)
 - [ASP.NET AJAX DropShadow 扩展程序](how-do-i-use-the-aspnet-ajax-dropshadow-extender.md)
 - [ASP.NET AJAX PasswordStrength 扩展程序](how-do-i-use-the-aspnet-ajax-passwordstrength-extender.md)
-- [开始使用 ASP.NET AJAX 动画扩展程序控件](how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control.md)
+- [ASP.NET AJAX 动画扩展程序控件入门](how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control.md)
 - [ASP.NET AJAX ConfirmButton 扩展程序](how-do-i-use-the-aspnet-ajax-confirmbutton-extender.md)
 - [ASP.NET AJAX 滑块控件](how-do-i-use-the-aspnet-ajax-slider-control.md)
 - [ASP.NET AJAX AutoComplete 控件](how-do-i-use-the-aspnet-ajax-autocomplete-control.md)
@@ -59,4 +59,4 @@ ms.locfileid: "57019004"
 - [组合框](combo-box.md)
 - [编辑器控件](editor-control.md)
 - [编辑器控件自定义](editor-control-custom.md)
-- [创建新的自定义扩展程序](create-a-new-custom-extender.md)
+- [新建自定义扩展程序](create-a-new-custom-extender.md)

@@ -8,15 +8,15 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: a688761c87376aa93463c13eaa07858d3acb9dc2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fc828e39cfcce22d4cc226954cf7d1731b04e42
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064584"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379776"
 ---
-<a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web 中的数据库简介页 (Razor) 站点
-====================
+# <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web 中的数据库简介页 (Razor) 站点
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文介绍如何使用 Microsoft WebMatrix 工具来创建一个数据库中的 ASP.NET Web Pages (Razor) 网站，以及如何创建网页，让你显示、 添加、 编辑和删除数据。
@@ -32,8 +32,7 @@ ms.locfileid: "57064584"
 > 
 > - 使用 Microsoft SQL Server Compact Edition 数据库。
 > - 使用 SQL 查询。
-> - 
-  `Database` 类。
+> - `Database` 类。
 >   
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
@@ -52,7 +51,7 @@ ms.locfileid: "57064584"
 
 为此类的图片数据的典型方式是为包含行和列的表。 在数据库术语中，每个行是通常称为一条记录。 每个列 （有时称为字段） 包含每种类型的数据的值： 名字、 最后一个名称和等等。
 
-| **ID** | **FirstName** | **LastName** | **地址** | **电子邮件** | **Phone** |
+| **Id** | **FirstName** | **LastName** | **Address** | **电子邮件** | **电话** |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Jim | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
 | 2 | Terry | Adams | 1234 Main St. Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
@@ -108,7 +107,7 @@ ms.locfileid: "57064584"
 2. 右键单击 Product 表，然后单击**数据**。
 3. 在编辑窗格中，输入以下记录：
 
-    | **名称** | **说明** | **价格** |
+    | **名称** | **描述** | **价格** |
     | --- | --- | --- |
     | 面包 | 生成的全新每一天。 | 2.99 |
     | 草莓 Shortcake | 使用自然 strawberries 进行从我们园。 | 9.99 |
@@ -152,7 +151,7 @@ ms.locfileid: "57064584"
 
 > [!TIP] 
 > 
-> **结构化的查询语言 (SQL)**
+> **结构化查询语言 (SQL)**
 > 
 > SQL 是一种语言，用在大多数关系数据库的管理数据库中的数据。 该指南包含的命令，用于检索数据并更新它，并能够让你创建、 修改和管理数据库表。 SQL 是不同于编程语言 （如在 WebMatrix 中使用的一个） 因为 sql，思路是，您告诉数据库所需的并且它数据库的作业，以了解如何获取数据或执行任务。 下面是一些 SQL 命令的示例，以及他们执行的操作：
 > 
@@ -391,4 +390,4 @@ ms.locfileid: "57064584"
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/2008/en/us/compact.aspx)
 - [连接到 SQL Server 或在 WebMatrix 中的 MySQL 数据库](https://go.microsoft.com/fwlink/?LinkId=208661)
-- [在 ASP.NET 网站中验证用户输入](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [在 ASP.NET 网页站点中验证用户输入](https://go.microsoft.com/fwlink/?LinkId=253002)

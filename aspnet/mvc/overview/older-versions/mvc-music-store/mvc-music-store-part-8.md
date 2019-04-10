@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: 26b2f55e-ed42-4277-89b0-c941eb754145
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: cab338e56505c453532a26d794eb7bf4e94555a9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064404"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379477"
 ---
-<a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：购物车与 Ajax 更新
-====================
+# <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：购物车与 Ajax 更新
+
 通过[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发分步教程应用程序。  
@@ -54,7 +54,7 @@ ms.locfileid: "57064404"
 
 因为我们不希望要求用户注册一个帐户，只是为了向其购物车添加项，我们会将用户分配一个临时的唯一标识符 （使用 GUID 或全局唯一标识符） 时，他们访问购物车。 我们将存储此使用 ASP.NET 会话类的 ID。
 
-*注意：ASP.NET 会话是很方便地存储特定于用户的信息将离开站点后到期。虽然不恰当使用会话状态的可能较大的站点上会影响性能，我们轻度使用将适用于演示目的。*
+*注意:ASP.NET 会话是很方便地存储特定于用户的信息将离开站点后到期。 虽然不恰当使用会话状态的可能较大的站点上会影响性能，我们轻度使用将适用于演示目的。*
 
 购物车类提供了以下方法：
 

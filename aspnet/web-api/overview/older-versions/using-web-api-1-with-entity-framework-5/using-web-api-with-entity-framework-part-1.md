@@ -8,15 +8,15 @@ ms.date: 07/03/2012
 ms.assetid: 94421d86-68c4-4471-bf5f-82d654a17252
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 0e4021402e8deccd2395f23b6b512679b5e9d281
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5a72dbfe1530e457ec16df5c7d50b03b5f63502
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050524"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384209"
 ---
-<a name="part-1-overview-and-creating-the-project"></a>第 1 部分：概述和创建项目
-====================
+# <a name="part-1-overview-and-creating-the-project"></a>第 1 部分：概述和创建项目
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
@@ -92,4 +92,4 @@ Entity Framework 是一个对象/关系映射框架。 它将在代码中的域�
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 
 > [!div class="step-by-step"]
-> [下一页](using-web-api-with-entity-framework-part-2.md)
+> [下一步](using-web-api-with-entity-framework-part-2.md)

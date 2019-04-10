@@ -8,15 +8,15 @@ ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 472770477e83fc0bbe24995e5558d0e8624082ae
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b8ec246c2f35f3d7fa5bcf67aa6f157195028176
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425998"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379516"
 ---
-<a name="configuring-a-website-that-uses-application-services-vb"></a>配置使用应用程序服务的网站 (VB)
-====================
+# <a name="configuring-a-website-that-uses-application-services-vb"></a>配置使用应用程序服务的网站 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_09_VB.zip)或[下载 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial09_AppServicesConfig_vb.pdf)
@@ -106,7 +106,7 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 该工具首先会显示初始屏幕，说明其用途。 单击旁边转到"选择安装程序选项"屏幕中，图 1 所示。 从此处可以选择要添加的应用程序服务数据库对象或从数据库中删除它们。 因为我们想要将这些对象添加到生产数据库，选择"配置应用程序服务的 SQL Server"选项，并单击下一步。
 
 
-[![选择 SQL Server 配置为应用程序服务](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
+[![C选择为应用程序服务配置 SQL server](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
 
 **图 1**:配置 SQL server 选择的应用程序服务 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image3.jpg))
 
@@ -117,7 +117,7 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 > 输入您的数据库服务器和凭据后可能会遇到错误，展开数据库下拉列表时。 `aspnet_regsql.exe`工具查询`sysdatabases`系统表检索的数据库服务器，但一些 web 托管公司锁定其数据库服务器，以便此信息不是公用的列表。 如果收到此错误可以直接在下拉列表中键入数据库名称。
 
 
-[![提供你的数据库的连接信息的工具](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
+[![Supply s 连接信息的工具与您的数据库](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
 
 **图 2**:提供的工具与您的数据库 s 连接信息 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image6.jpg))
 
@@ -125,7 +125,7 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 随后出现的屏幕总结了要执行的位置，即操作将应用程序服务数据库对象添加到指定的数据库。 单击旁边完成此操作。 几分钟后的最后一个屏幕将显示，注意数据库对象已添加了 （参见图 3）。
 
 
-[![成功 ！应用程序服务数据库对象已添加到生产数据库](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
+[![Success ！ 应用程序服务数据库对象已添加到生产数据库](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
 
 **图 3**:成功！ 应用程序服务数据库对象已添加到生产数据库 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image9.jpg))
 
@@ -133,7 +133,7 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 若要验证应用程序服务数据库对象已成功添加到生产数据库，请打开 SQL Server Management Studio 并连接到您的生产数据库。 如图 4 所示，你应看到应用程序服务数据库表在数据库中， `aspnet_Applications`， `aspnet_Membership`， `aspnet_Users`，依次类推。
 
 
-[![确认数据库对象已添加到生产数据库](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
+[![C确认数据库对象已添加到生产数据库](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
 
 **图 4**:确认数据库对象已添加到生产数据库 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image12.jpg))
 
@@ -172,7 +172,7 @@ ASP.NET 网站管理工具 (WSAT) 轻松创建和管理用户帐户、 定义和
 > 有关与登录相关的 ASP.NET Web 控件一起使用的成员身份和角色 Api 的详细信息请阅读我[*网站安全教程*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。 有关自定义 CreateUserWizard 控件的详细信息，请参阅[*创建用户帐户*](../../older-versions-security/membership/creating-user-accounts-vb.md)并[*存储的其他用户信息*](../../older-versions-security/membership/storing-additional-user-information-vb.md)教程中或查看[ *Erich Peterson* ](http://www.erichpeterson.com/) s 文章[*自定义 CreateUserWizard 控件*](http://aspnet.4guysfromrolla.com/articles/070506-1.aspx).
 
 
-[![管理员可以创建新的用户帐户](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
+[![A管理员可以创建新用户的帐户](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
 
 **图 5**:管理员可以创建新的用户帐户 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image15.jpg))
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a243c78c7d552f1c82a88c6083871fcd16538618
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: aa8c0be6e4a758da34fc6eed902e31049d0a9a9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065754"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379724"
 ---
 # <a name="tutorial-server-broadcast-with-signalr-2"></a>教程：使用 SignalR 2 广播的服务器
 
@@ -43,7 +43,7 @@ ms.locfileid: "57065754"
 
 ## <a name="prerequisites"></a>系统必备
 
- * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)与**ASP.NET 和 web 开发**工作负荷。
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)与**ASP.NET 和 web 开发**工作负荷。
 
 ## <a name="create-the-project"></a>创建项目
 
@@ -75,7 +75,7 @@ ms.locfileid: "57065754"
 
 ### <a name="create-the-stocktickerhub-and-stockticker-classes"></a>创建的 StockTickerHub 和 StockTicker 类
 
-SignalR 中心 API 将用于处理服务器到客户端交互。 一个`StockTickerHub`派生的类`SignalRHub`类将处理来自客户端接收连接和方法调用。 您还需要维护股票数据并运行`Timer`对象。 `Timer`对象将定期触发价格更新独立于客户端连接。 无法将这些函数放入`Hub`类，因为中心是暂时的。 应用创建`Hub`集线器，例如连接和从客户端对服务器的调用上每个任务的类实例。 因此，可保护库存数据，更新价格，并会广播价格更新机制必须运行在单独的类。 将类命名`StockTicker`。
+SignalR 中心 API 将用于处理服务器到客户端交互。 一个`StockTickerHub`类派生自 SignalR`Hub`类将处理来自客户端接收连接和方法调用。 您还需要维护股票数据并运行`Timer`对象。 `Timer`对象将定期触发价格更新独立于客户端连接。 无法将这些函数放入`Hub`类，因为中心是暂时的。 应用创建`Hub`集线器，例如连接和从客户端对服务器的调用上每个任务的类实例。 因此，可保护库存数据，更新价格，并会广播价格更新机制必须运行在单独的类。 将类命名`StockTicker`。
 
 ![从 StockTicker 的广播](tutorial-server-broadcast-with-signalr/_static/image3.png)
 

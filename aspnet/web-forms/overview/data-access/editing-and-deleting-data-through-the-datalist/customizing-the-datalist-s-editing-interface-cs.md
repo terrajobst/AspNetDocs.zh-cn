@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: a5d13067-ddfb-4c36-8209-0f69fd40e45c
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7f7723895dd50b1923de49ca4a3a7055bbad5fe4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0bbb6dd95196e46b00c35b269eacfc1b53e75c86
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57078545"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379646"
 ---
-<a name="customizing-the-datalists-editing-interface-c"></a>自定义 DataList 的编辑界面 (C#)
-====================
+# <a name="customizing-the-datalists-editing-interface-c"></a>自定义 DataList 的编辑界面 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_40_CS.exe)或[下载 PDF](customizing-the-datalist-s-editing-interface-cs/_static/datatutorial40cs1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57078545"
 在本教程中我们将创建更丰富的编辑界面 DataList，包括 Dropdownlist 和一个复选框。 具体而言，我们将创建 DataList，列出产品信息并允许 s 产品名称、 供应商、 类别和已停止使用的状态要更新 （请参阅图 1）。
 
 
-[![编辑接口包含一个文本框中，两个 Dropdownlist 和一个复选框](customizing-the-datalist-s-editing-interface-cs/_static/image2.png)](customizing-the-datalist-s-editing-interface-cs/_static/image1.png)
+[![T他编辑接口包含一个文本框中，两个 Dropdownlist 和一个复选框](customizing-the-datalist-s-editing-interface-cs/_static/image2.png)](customizing-the-datalist-s-editing-interface-cs/_static/image1.png)
 
 **图 1**:编辑接口包含一个文本框中，两个 Dropdownlist 和一个复选框 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image3.png))
 
@@ -47,7 +47,7 @@ ms.locfileid: "57078545"
 我们可以创建 DataList s 可编辑接口之前，我们首先需要生成只读接口。 首先打开`CustomizedUI.aspx`页上，从`EditDeleteDataList`文件夹并从设计器中，将 DataList 添加到页上，设置其`ID`属性设置为`Products`。 从 DataList s 智能标记，创建新对象数据源。 命名此新 ObjectDataSource`ProductsDataSource`并将其配置为从`ProductsBLL`类的`GetProducts`方法。 作为上一个可编辑 DataList 教程中，我们将更新已编辑的产品的信息直接转到业务逻辑层。 相应地，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
 
-[![设置为 （无） 的更新、 插入和删除选项卡下拉列表](customizing-the-datalist-s-editing-interface-cs/_static/image5.png)](customizing-the-datalist-s-editing-interface-cs/_static/image4.png)
+[![S设置为 （无） 的更新、 插入和删除选项卡下拉列表](customizing-the-datalist-s-editing-interface-cs/_static/image5.png)](customizing-the-datalist-s-editing-interface-cs/_static/image4.png)
 
 **图 2**:设置更新、 插入和删除选项卡下拉列表列出了为 （无） ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image6.png))
 
@@ -60,7 +60,7 @@ ms.locfileid: "57078545"
 上述标记使用产品信息的布局&lt;h4&gt;产品的名称和四个列标题`<table>`其余字段。 `ProductPropertyLabel`并`ProductPropertyValue`中定义的 CSS 类`Styles.css`，在前面的教程讨论了。 图 3 显示了我们的浏览器查看时的进度。
 
 
-[![显示名称、 供应商、 类别、 停用状态和每个产品的价格](customizing-the-datalist-s-editing-interface-cs/_static/image8.png)](customizing-the-datalist-s-editing-interface-cs/_static/image7.png)
+[![T他名称、 供应商、 类别、 停用状态，以及每个产品的价格被显示](customizing-the-datalist-s-editing-interface-cs/_static/image8.png)](customizing-the-datalist-s-editing-interface-cs/_static/image7.png)
 
 **图 3**:显示名称、 供应商、 类别、 停用状态和每个产品的价格 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image9.png))
 
@@ -72,7 +72,7 @@ ms.locfileid: "57078545"
 若要自定义编辑界面，请单击 DataList s 智能标记中的编辑模板链接并选择`EditItemTemplate`从下拉列表选项。 添加到 DropDownList`EditItemTemplate`并设置其`ID`到`Categories`。
 
 
-[![将 DropDownList 添加类别](customizing-the-datalist-s-editing-interface-cs/_static/image11.png)](customizing-the-datalist-s-editing-interface-cs/_static/image10.png)
+[![Add 类别的 DropDownList](customizing-the-datalist-s-editing-interface-cs/_static/image11.png)](customizing-the-datalist-s-editing-interface-cs/_static/image10.png)
 
 **图 4**:将 DropDownList 添加类别 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image12.png))
 
@@ -80,12 +80,12 @@ ms.locfileid: "57078545"
 接下来，从 DropDownList s 智能标记，选择选择数据源选项并创建名为新 ObjectDataSource `CategoriesDataSource`。 配置要使用此 ObjectDataSource`CategoriesBLL`类的`GetCategories()`方法 （请参见图 5）。 接下来，DropDownList 的数据源配置向导提示输入要用于每个数据字段`ListItem`s`Text`和`Value`属性。 使 DropDownList 显示`CategoryName`数据字段并使用`CategoryID`作为值，如图 6 中所示。
 
 
-[![创建名为 CategoriesDataSource 新 ObjectDataSource](customizing-the-datalist-s-editing-interface-cs/_static/image14.png)](customizing-the-datalist-s-editing-interface-cs/_static/image13.png)
+[![C创建新对象数据源名为 CategoriesDataSource](customizing-the-datalist-s-editing-interface-cs/_static/image14.png)](customizing-the-datalist-s-editing-interface-cs/_static/image13.png)
 
 **图 5**:创建新对象数据源命名`CategoriesDataSource`([单击以查看实际尺寸的图像](customizing-the-datalist-s-editing-interface-cs/_static/image15.png))
 
 
-[![配置 DropDownList 的显示和数值字段](customizing-the-datalist-s-editing-interface-cs/_static/image17.png)](customizing-the-datalist-s-editing-interface-cs/_static/image16.png)
+[![C配置 DropDownList 的显示和值字段](customizing-the-datalist-s-editing-interface-cs/_static/image17.png)](customizing-the-datalist-s-editing-interface-cs/_static/image16.png)
 
 **图 6**:配置 DropDownList 的显示和值字段 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image18.png))
 
@@ -102,7 +102,7 @@ ms.locfileid: "57078545"
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample2.aspx)]
 
 
-[![编辑界面将列出输出如只读接口](customizing-the-datalist-s-editing-interface-cs/_static/image20.png)](customizing-the-datalist-s-editing-interface-cs/_static/image19.png)
+[![T他的编辑界面是列出出像只读接口一样](customizing-the-datalist-s-editing-interface-cs/_static/image20.png)](customizing-the-datalist-s-editing-interface-cs/_static/image19.png)
 
 **图 7**:编辑界面将列出输出如只读接口 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image21.png))
 
@@ -119,7 +119,7 @@ ms.locfileid: "57078545"
 使用这些两个事件处理程序中的位置，单击编辑按钮显示的编辑界面，并单击取消按钮返回到其只读模式下编辑的项。 图 8 显示了 DataList 后 Chef Anton s 秋葵组合已单击编辑按钮。 由于我们 ve 目前进行的编辑界面，添加任何数据绑定语法`ProductName`文本框中为空白，`Discontinued`从中选择复选框未选中和第一个项`Categories`和`Suppliers`Dropdownlist。
 
 
-[![单击编辑按钮显示的编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image23.png)](customizing-the-datalist-s-editing-interface-cs/_static/image22.png)
+[![C单击编辑按钮显示编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image23.png)](customizing-the-datalist-s-editing-interface-cs/_static/image22.png)
 
 **图 8**:单击编辑按钮将显示编辑界面 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image24.png))
 
@@ -131,7 +131,7 @@ ms.locfileid: "57078545"
 分配`ProductName`数据字段值`ProductName`文本框 s`Text`属性，`CategoryID`并`SupplierID`数据字段值与`Categories`和`Suppliers`Dropdownlist`SelectedValue`属性，并`Discontinued`数据字段值`Discontinued`复选框的`Checked`属性。 进行这些更改，通过在设计器或直接通过声明性标记之后, 重新访问通过浏览器页并单击 Chef Anton s 秋葵汤编辑按钮。 如图 9 所示，数据绑定语法已添加到 TextBox、 Dropdownlist 和复选框中的当前值。
 
 
-[![单击编辑按钮显示的编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image26.png)](customizing-the-datalist-s-editing-interface-cs/_static/image25.png)
+[![C单击编辑按钮显示编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image26.png)](customizing-the-datalist-s-editing-interface-cs/_static/image25.png)
 
 **图 9**:单击编辑按钮将显示编辑界面 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image27.png))
 
@@ -167,7 +167,7 @@ Northwind 数据库中允许`NULL`值为`Products`表 s`CategoryID`和`SupplierI
 花点时间查看我们通过浏览器的进度。 在编辑某个产品时，请注意，`Categories`和`Suppliers`Dropdownlist 这两个具有 （无） 开始处的 DropDownList 的选项。
 
 
-[![类别和供应商 Dropdownlist 包括 （无） 选项](customizing-the-datalist-s-editing-interface-cs/_static/image29.png)](customizing-the-datalist-s-editing-interface-cs/_static/image28.png)
+[![T他类别和供应商 Dropdownlist 包括 （无） 选项](customizing-the-datalist-s-editing-interface-cs/_static/image29.png)](customizing-the-datalist-s-editing-interface-cs/_static/image28.png)
 
 **图 10**:`Categories`并`Suppliers`Dropdownlist 包括 （无） 选项 ([单击以查看实际尺寸的图像](customizing-the-datalist-s-editing-interface-cs/_static/image30.png))
 

@@ -8,15 +8,15 @@ ms.date: 05/21/2008
 ms.assetid: ea8196f5-039d-43ec-8447-8997ad4d3900
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1b28e6df0e0ab25e8292b6523c9ad7482301a511
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6e86626c2949543c0a36a210d52ee8297156a017
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047254"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382159"
 ---
-<a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>指定母版页中的标题、元标记和其他 HTML 标头 (VB)
-====================
+# <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>指定母版页中的标题、元标记和其他 HTML 标头 (VB)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_03_VB.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_03_VB.pdf)
@@ -169,7 +169,7 @@ ASP.NET 页可以指定其标题中的以下方法之一：
 图 5 显示了`MultipleContentPlaceHolders.aspx`页面的浏览器查看时。 请注意，标题是精确的页的文件名 （不太扩展名），"MultipleContentPlaceHolders"。
 
 
-[![如果未显式指定一个标题，该页面的文件名是自动使用](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image5.png)
+[![If 标题为未显式指定，该页面的文件名是自动使用](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image5.png)
 
 **图 05**:如果未显式指定一个标题，该页面的文件名是自动使用 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image7.png))
 
@@ -191,7 +191,7 @@ ASP.NET 还提供了一个强大的网站映射框架，允许页面开发人员
 首先，创建名为的网站的根文件夹中的站点地图文件`Web.sitemap`。 若要完成此操作，右键单击解决方案资源管理器中的网站名称，选择添加新项，然后选择站点图模板。 请确保该文件命名`Web.sitemap`并单击添加。
 
 
-[![添加一个名为网站的根文件夹的 Web.sitemap 文件](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image8.png)
+[![Add 文件命名为 Web.sitemap 到网站的根文件夹](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image8.png)
 
 **图 06**:添加名为文件`Web.sitemap`网站的根文件夹 ([单击以查看实际尺寸的图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image10.png))
 
@@ -224,7 +224,7 @@ ASP.NET 还提供了一个强大的网站映射框架，允许页面开发人员
 从数据源配置向导选择要绑定到名为的新 SiteMapDataSource 控件的 ListView `LessonsDataSource`。 SiteMapDataSource 控件从站点映射系统返回层次结构。
 
 
-[![SiteMapDataSource 控件绑定到 LessonsList ListView 控件](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image12.png)
+[![Bind SiteMapDataSource 控件与 LessonsList ListView 控件](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image12.png)
 
 **图 08**:SiteMapDataSource 控件绑定到 LessonsList ListView 控件 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image14.png))
 
@@ -239,7 +239,7 @@ ASP.NET 还提供了一个强大的网站映射框架，允许页面开发人员
 在配置后 ListView 的模板，请访问网站。 如图 9 所示，课程部分包含单个项目符号项，主页。 关于和使用多个 ContentPlaceHolder 控件课程在哪里？ SiteMapDataSource 旨在返回一组分层数据，但 ListView 控件可以仅显示单个层次结构的级别。 因此，将显示仅返回 SiteMapDataSource 的站点地图节点的第一个级别。
 
 
-[![课程部分包含的单个列表项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image15.png)
+[![T他的课程部分包含一个列表项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image15.png)
 
 **图 09**:课程部分包含单个列表项 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image17.png))
 
@@ -254,7 +254,7 @@ ASP.NET 还提供了一个强大的网站映射框架，允许页面开发人员
 通过配置 SiteMapDataSource 以忽略此参数起始节点和显式添加主页项目符号项，课程部分现在显示预期的输出。
 
 
-[![课程部分主页和每个子节点包含项目符号项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image18.png)
+[![T他的课程部分包含一个项目符号项适用于家庭和每个子节点](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image18.png)
 
 **图 10**:课程部分主页和每个子节点包含项目符号项 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image20.png))
 

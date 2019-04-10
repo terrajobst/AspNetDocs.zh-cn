@@ -8,15 +8,15 @@ ms.date: 01/02/2019
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: d7985fcd48e1282437cc3a7d3c1b528af2e44ae0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a47d428830fa6c43bcb9ce797d65b73891b44618
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425777"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381882"
 ---
-<a name="using-asynchronous-methods-in-aspnet-45"></a>在 ASP.NET 4.5 中使用异步方法
-====================
+# <a name="using-asynchronous-methods-in-aspnet-45"></a>在 ASP.NET 4.5 中使用异步方法
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将教您构建异步 ASP.NET Web 窗体应用程序中使用的基础知识[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11)，这是 Microsoft Visual Studio 的免费版本。 此外可以使用[Visual Studio 2012](https://www.microsoft.com/visualstudio/11)。 在本教程中包含以下各节。
@@ -31,7 +31,7 @@ ms.locfileid: "58425777"
 > - [针对高并发/高延迟 Web 服务调用的服务器配置](#ServerConfig)
 > 
 > 为在本教程提供的完整示例  
->  [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) 上[GitHub](https://github.com/)站点。
+> [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) 上[GitHub](https://github.com/)站点。
 
 
 结合使用的 ASP.NET 4.5 Web Pages [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx)使你能够注册返回类型的对象的异步方法[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 .NET Framework 4 引入了异步编程概念，称为[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)和 ASP.NET 4.5 支持[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 任务由**任务**类型和中的相关的类型[System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx)命名空间。 与此异步支持生成.NET Framework 4.5 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)和[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)使用的关键字[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)比以前少得多复杂的对象异步方法。 [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)关键字是速记语法用于指示在某些其他代码段以异步方式等待一段代码。 [异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字都表示一个提示，可用于将方法标记为基于任务的异步方法。 组合**await**，**异步**，并**任务**对象可大大简化了.NET 4.5 中编写异步代码。 调用异步方法的新模型*基于任务的异步模式*(**点击**)。 本教程假定你已具备一定的使用异步编程[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)并[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字并[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空间。
@@ -192,7 +192,7 @@ Async void 事件的缺点是，开发人员不再包含对事件时执行的完
 
     - 打开 IIS 管理器并导航到应用程序池窗格中。
     - 在目标应用程序池上右键单击并选择**高级设置**。  
-        ![advanced](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
+        ![高级](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
     - 在中**高级设置**对话框中，更改*队列长度*从 1,000 到 5,000。  
         ![队列长度](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   

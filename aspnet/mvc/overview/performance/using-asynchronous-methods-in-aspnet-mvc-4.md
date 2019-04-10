@@ -8,20 +8,20 @@ ms.date: 06/06/2012
 ms.assetid: a56572ba-81c3-47af-826d-941e9c4775ec
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 20f8d6f459cefc6c1a2e7d5f64c6df4199f8ad24
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8292fd43ffa2bc66b4daa8f0fc09569226d90bff
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379555"
 ---
-<a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>在 ASP.NET MVC 4 中使用异步方法
-====================
+# <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>在 ASP.NET MVC 4 中使用异步方法
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程将教您构建异步 ASP.NET MVC Web 应用程序中使用的基础知识[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11)，这是 Microsoft Visual Studio 的免费版本。 此外可以使用[Visual Studio 2012](https://www.microsoft.com/visualstudio/11)。
 > 
-> 本教程中在 github 上提供的完整示例  [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/)
+> 本教程中在 github 上提供的完整示例 [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/)
 
 
 ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller(VS.108).aspx)结合使用的类[.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx)使你能够编写的异步操作方法的返回类型的对象[任务&lt;ActionResult&gt;](https://msdn.microsoft.com/library/dd321424(VS.110).aspx). .NET Framework 4 引入了异步编程概念，称为[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)和 ASP.NET MVC 4 支持[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 任务由**任务**类型和中的相关的类型[System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx)命名空间。 与此异步支持生成.NET Framework 4.5 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)和[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)使用的关键字[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)比以前少得多复杂的对象异步方法。 [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)关键字是速记语法用于指示在某些其他代码段以异步方式等待一段代码。 [异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字都表示一个提示，可用于将方法标记为基于任务的异步方法。 组合**await**，**异步**，并**任务**对象可大大简化了.NET 4.5 中编写异步代码。 调用异步方法的新模型*基于任务的异步模式*(**点击**)。 本教程假定你已具备一定的使用异步编程[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)并[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字并[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空间。
@@ -166,7 +166,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
     - 打开 IIS 管理器并导航到应用程序池窗格中。
     - 在目标应用程序池上右键单击并选择**高级设置**。  
-        ![advanced](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
+        ![高级](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
     - 在中**高级设置**对话框中，更改*队列长度*从 1,000 到 5,000。  
         ![队列长度](using-asynchronous-methods-in-aspnet-mvc-4/_static/image5.png)  
   

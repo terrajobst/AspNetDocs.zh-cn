@@ -8,15 +8,15 @@ ms.date: 08/20/2008
 ms.assetid: 490a8588-aa5a-418e-a9b9-6215f694055a
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/creating-unit-tests-for-aspnet-mvc-applications
 msc.type: video
-ms.openlocfilehash: 6eb4140693e52a384f3fcce10fe95013d85e7887
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a2bed27888c6cadc023321c764e4254f4b142572
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060514"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384781"
 ---
-<a name="creating-unit-tests-for-aspnet-mvc-applications"></a>为 ASP.NET MVC 应用程序创建单元测试
-====================
+# <a name="creating-unit-tests-for-aspnet-mvc-applications"></a>为 ASP.NET MVC 应用程序创建单元测试
+
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 了解如何创建单元测试控制器操作。 在本教程中，Stephen Walther 演示了如何测试是否控制器操作返回的特定视图，返回一组特定的数据，或返回不同类型的操作结果。 与本视频有关的其他信息，请参阅"创建单元测试的 ASP.NET MVC 应用程序"教程 ([C#](../../../overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs.md)， [VB](../../../overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb.md))。

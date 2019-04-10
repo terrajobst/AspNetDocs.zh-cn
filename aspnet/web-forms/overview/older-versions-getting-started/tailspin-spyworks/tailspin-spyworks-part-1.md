@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 15d4652b-d5aa-4172-b186-2c7f96ba316d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d2e4b36c9029e86eea9b09974839e96e9aa39ced
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 70d2efb789d694a0aaecc046615c7b3622079dc1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385353"
 ---
-<a name="part-1-file--new-project"></a>第 1 部分：“文件”->“新建项目”
-====================
+# <a name="part-1-file--new-project"></a>第 1 部分：“文件”->“新建项目”
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
@@ -103,4 +103,4 @@ ms.locfileid: "57033394"
 这样我们将需要更改母版页后所有.aspx 文件中的引用生成默认情况下 ASP.NET WebForms 页。
 
 > [!div class="step-by-step"]
-> [下一页](tailspin-spyworks-part-2.md)
+> [下一步](tailspin-spyworks-part-2.md)

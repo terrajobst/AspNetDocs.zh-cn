@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: f81f3d80-3674-4d8e-a9b1-87feed1a93c9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: cfb01742c3921c24c71fd3fa4a14a9f71fac1ac1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 15bdaa588792c3cf4a8e6eee651e0675f959f942
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063674"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382224"
 ---
-<a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>创建用于 ASP.NET MVC 应用程序 (4 个 10) 的更复杂的数据模型
-====================
+# <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>创建用于 ASP.NET MVC 应用程序 (4 个 10) 的更复杂的数据模型
+
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -48,7 +48,7 @@ ms.locfileid: "57063674"
 
 [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性用于指定比数据库内部类型更具体的数据类型。 在此示例中，我们只想跟踪日期，而不是日期和时间。 [DataType 枚举](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)提供了多种数据类型，如*日期、 时间、 电话号码、 货币、 电子邮件地址*和的详细信息。 应用程序还可通过 `DataType` 特性自动提供类型特定的功能。 例如，`mailto:`可以为创建链接[DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)，和日期选择器可提供用于[DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)中支持的浏览器[HTML5](http://html5.org/). [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性发出 HTML 5 [data-](http://ejohn.org/blog/html-5-data-attributes/) (读作*数据 dash*) 特性供 HTML 5 浏览器理解。 [数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx)特性不提供任何验证。
 
-`DataType.Date` 不指定显示日期的格式。 默认情况下，显示该数据字段根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
+`DataType.Date` 未指定的日期的显示格式。 默认情况下，显示该数据字段根据基于服务器的默认格式[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)。
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
@@ -84,7 +84,7 @@ ms.locfileid: "57063674"
 
 运行应用程序，然后单击**学生**选项卡。你收到以下错误：
 
-*创建数据库后，支持 SchoolContext 上下文的模型已更改。请考虑使用 Code First 迁移来更新数据库 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。*
+*创建数据库后，支持 SchoolContext 上下文的模型已更改。 请考虑使用 Code First 迁移来更新数据库 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。*
 
 数据库模型已更改需要在数据库架构中，更改的方式，实体框架检测到的。 将使用迁移来更新架构，而不会丢失任何数据，使用 UI 添加到数据库。 如果更改由创建的数据`Seed`方法，将更改回其原始状态由于[AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)方法中使用`Seed`方法。 ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)等效于"upsert"操作从数据库术语中。)
 
@@ -152,7 +152,7 @@ ms.locfileid: "57063674"
 
 ### <a name="the-fullname-calculated-property"></a>FullName 计算属性
 
-`FullName` 是计算属性，可返回通过串联两个其他属性创建的值。 因此只有`get`访问器，但没有`FullName`将在数据库中生成列。
+`FullName` 是返回一个值，通过连接两个其他属性来创建一个计算的属性。 因此只有`get`访问器，但没有`FullName`将在数据库中生成列。
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
@@ -358,7 +358,7 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 如果尝试在此时更新数据库，您将收到以下错误：
 
-*ALTER TABLE 语句与 FOREIGN KEY 约束冲突"FK\_dbo。课程\_dbo。部门\_DepartmentID"。冲突发生于数据库"ContosoUniversity"表"dbo。部门"，列 DepartmentID。*
+*ALTER TABLE 语句与 FOREIGN KEY 约束冲突"FK\_dbo。课程\_dbo。部门\_DepartmentID"。 冲突发生位置：数据库“ContosoUniversity”、表“dbo.Department”和列“DepartmentID”。*
 
 编辑&lt;*时间戳&gt;\_Chap4.cs*文件，并更改以下代码 (将添加一条 SQL 语句和修改`AddColumn`语句):
 
@@ -377,7 +377,7 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 > 
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample35.xml?highlight=1-2)]
 > 
->  使用新数据库没有数据迁移，和`update-database`命令是更有望完成且未出错。 有关如何删除数据库的说明，请参阅[如何从 Visual Studio 2012 中删除数据库](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。
+> 使用新数据库没有数据迁移，和`update-database`命令是更有望完成且未出错。 有关如何删除数据库的说明，请参阅[如何从 Visual Studio 2012 中删除数据库](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。
 
 
 打开中的数据库**服务器资源管理器**像前面，并展开**表**节点以查看是否已创建的所有表。 (如果仍有**服务器资源管理器**从较早的时间打开，请单击**刷新**按钮。)

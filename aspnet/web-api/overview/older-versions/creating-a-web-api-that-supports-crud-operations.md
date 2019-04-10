@@ -1,27 +1,28 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: 启用 ASP.NET Web API 1 中的 CRUD 操作 |Microsoft Docs
+title: 启用 CRUD 操作在 ASP.NET Web API 1-ASP.NET 4.x
 author: MikeWasson
-description: 本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持的 CRUD 操作。 在教程的 Visual Studio 2012 Web AP 中使用的软件版本...
+description: 本教程演示如何在 asp.net 中使用 ASP.NET Web API 的 HTTP 服务支持 CRUD 操作 4.x。
 ms.author: riande
 ms.date: 01/28/2012
+ms.custom: seoapril2019
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: f3cb0004075ef7687ca1096bd407c342b4d0b7be
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 855c3fa35d82173c87d13adb51e10fd13698ade5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423736"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381349"
 ---
-<a name="enabling-crud-operations-in-aspnet-web-api-1"></a>启用 ASP.NET Web API 1 中的 CRUD 操作
-====================
+# <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>启用 ASP.NET Web API 1 中的 CRUD 操作
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 [下载已完成的项目](http://code.msdn.microsoft.com/ASP-NET-Web-API-Tutorial-c4761894)
 
-> 本教程演示如何使用 ASP.NET Web API 的 HTTP 服务中支持的 CRUD 操作。
+> 本教程演示如何在 asp.net 中使用 ASP.NET Web API 的 HTTP 服务支持 CRUD 操作 4.x。
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
 > 
@@ -85,7 +86,7 @@ API 的产品定义为两种资源类型的 Uri:
 
 对于 ProductStore API 中，我们的数据中包含产品，因此我们将创建一个名为的新类`Product`。
 
-如果解决方案资源管理器尚不可见，请单击**视图**菜单，然后选择**解决方案资源管理器**。 在解决方案资源管理器中右键单击**模型**文件夹。 从上下文排队中，选择**外**，然后选择**类**。 将类命名&quot;产品&quot;。
+如果解决方案资源管理器尚不可见，请单击**视图**菜单，然后选择**解决方案资源管理器**。 在解决方案资源管理器中右键单击**模型**文件夹。 从上下文菜单中，选择**外**，然后选择**类**。 将类命名&quot;产品&quot;。
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image3.png)
 

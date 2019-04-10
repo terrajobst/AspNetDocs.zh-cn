@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: bd6611a03ee4940f5d4176ce23464f313b9ec884
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029754"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382091"
 ---
-<a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET 网页简介-通过使用 WebMatrix 发布站点
-====================
+# <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET 网页简介-通过使用 WebMatrix 发布站点
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教程是在引入了 ASP.NET Web Pages 和 Microsoft WebMatrix 的教程系列中最后一期。 它讨论了如何将您的网站发布到 Internet，以便其他人可以使用它。 它假定你已完成通过时序[为 ASP.NET Web Pages 站点创建一致的查看](https://go.microsoft.com/fwlink/?LinkId=251585)。
@@ -217,4 +217,4 @@ WebMatrix 显示文件和将发布到网站的数据库。 由于这是要将站
 - [ASP.NET WebMatrix ASP.NET Web Pages 论坛](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages)，一个很好的发布问题和获取答案。
 
 > [!div class="step-by-step"]
-> [上一篇](layouts.md)
+> [上一个](layouts.md)

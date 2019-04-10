@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 10c2f6379f6d3139dd3bcf1027ff456e074298c3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 53ca3bc4e550f488f3ae4c41f02a636e747107cb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425088"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384885"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 
@@ -74,7 +74,7 @@ ms.locfileid: "58425088"
 
 如果您不熟悉 Visual Studio 代码段，并想要了解如何使用它们，您可以从本文档引用的附录&quot;[附录 c:使用代码片段](#AppendixC)&quot;。
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -514,7 +514,7 @@ ms.locfileid: "58425088"
 > [!NOTE]
 > 此外，可以部署此应用程序到 Windows Azure Web Sites 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
 
-* * *
+---
 
 <a id="Summary"></a>
 

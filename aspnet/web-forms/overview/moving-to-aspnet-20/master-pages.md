@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 644beb37bf893a590be03dd0929c5870af6fbe87
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 348e28778e0e7d96230534df1d61386ed39f8f11
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381141"
 ---
-<a name="master-pages"></a>母版页
-====================
+# <a name="master-pages"></a>母版页
+
 by [Microsoft](https://github.com/microsoft)
 
 > 成功的网站的关键组件之一是一致的外观。 在 ASP.NET 1.x 中，开发人员使用用户控件在 Web 应用程序之间复制常见页面元素。 虽然这的确是一个可行的解决方案，则使用用户控件也有一些缺点。 例如，用户控件的位置的更改在站点之间要求对多个页面的更改。 用户控件也不会呈现在页面上插入后的设计视图中。
@@ -71,7 +71,7 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 **图 2**:创建一个新的主页面
 
 
-请注意，文件扩展名为母版页<em>.master</em>。 这是主页面与普通页不同的方法之一。 其他主要区别是替代@Page指令，母版页包含@Master指令。 切换到源视图的主页面，刚刚创建并查看代码。
+请注意，文件扩展名为母版页 *.master*。 这是主页面与普通页不同的方法之一。 其他主要区别是替代@Page指令，母版页包含@Master指令。 切换到源视图的主页面，刚刚创建并查看代码。
 
 默认情况下，新的主页面将具有一个 ContentPlaceHolder 控件。 在大多数情况下，它更有意义可以首先创建常见的页面元素然后插入 ContentPlaceHolder 控件在需要自定义内容的情况。 在这些情况下，开发人员将想要删除默认 ContentPlaceHolder 控件并插入新的开发页。 ContentPlaceHolder 控件不能调整大小，它们显示调整大小控点的情况。 自动根据它包含有一个例外; 的内容的 ContentPlaceHolder 控件大小如果如表格单元格将 ContentPlaceHolder 控件在是块元素内部，它将根据元素的大小调整大小。
 
@@ -154,7 +154,7 @@ MasterPageFile 属性轻松应用于特定的 ASP.NET 页面的母版页。 它�
 
 ## <a name="using-the-ltpagesgt-element"></a>使用&lt;页面&gt;元素
 
-通过将 masterPageFile 属性设置配置页面母版页&lt;页面&gt;web.config 文件的元素。 使用此方法时，请注意应用程序结构中较低级别的 web.config 文件来覆盖此设置。 在中设置任何 MasterPageFile 属性@Page指令还会覆盖此设置。 使用&lt;pages&gt;元素，可以轻松地创建<em>master</em>可重写如有必要在特定文件夹或文件中的母版页。
+通过将 masterPageFile 属性设置配置页面母版页&lt;页面&gt;web.config 文件的元素。 使用此方法时，请注意应用程序结构中较低级别的 web.config 文件来覆盖此设置。 在中设置任何 MasterPageFile 属性@Page指令还会覆盖此设置。 使用&lt;pages&gt;元素，可以轻松地创建*master*可重写如有必要在特定文件夹或文件中的母版页。
 
 ## <a name="properties-in-master-pages"></a>母版页中的属性
 

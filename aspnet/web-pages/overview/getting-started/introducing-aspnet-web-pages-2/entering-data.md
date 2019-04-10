@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: e40d2962ccac56eaaf4812819aa42168e69295bc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d76f607f1d5e779d43ee15d8f2d697e7b0f147ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029794"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380114"
 ---
-<a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Introducing ASP.NET 网页-通过使用窗体输入数据库数据
-====================
+# <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Introducing ASP.NET 网页-通过使用窗体输入数据库数据
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教程演示如何创建输入窗体，然后输入你从获取窗体到数据库表时使用 ASP.NET Web Pages (Razor) 的数据。 它假定你已完成通过时序[基础知识的 HTML 窗体在 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581)。
@@ -98,7 +98,7 @@ ms.locfileid: "57029794"
 
 在命令中将已列出中的插入的列 — `(Title, Genre, Year)`。 有趣的部分是如何从到文本框中获取值`VALUES`命令的一部分。 而不是实际值，请参阅`@0`， `@1`，和`@2`，这当然是占位符。 运行命令时 (在`db.Execute`行)，传递从文本框中获取的值。
 
-**重要提示！** 请记住，您应包含输入的 SQL 语句中的用户的联机数据的唯一方法是使用占位符，如下所示 (`VALUES(@0, @1, @2)`)。 如果连接到 SQL 语句中的用户输入，则打开自己容易受到 SQL 注入攻击，如中所述[窗体基础知识在 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) （上一个教程）。
+**重要 ！** 请记住，您应包含输入的 SQL 语句中的用户的联机数据的唯一方法是使用占位符，如下所示 (`VALUES(@0, @1, @2)`)。 如果连接到 SQL 语句中的用户输入，则打开自己容易受到 SQL 注入攻击，如中所述[窗体基础知识在 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251581) （上一个教程）。
 
 仍内`if`块中，添加以下行后的`db.Execute`行：
 
@@ -253,7 +253,7 @@ ASP.NET Web 页面包括一个帮助程序&mdash;`Validation`帮助器&mdash;可
 
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 语法进行 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [INTO 语句中插入的 SQL](http://www.w3schools.com/sql/sql_insert.asp) W3Schools 站点上
 - [验证用户输入在 ASP.NET Web Pages 站点](https://go.microsoft.com/fwlink/?LinkId=253002)。 详细了解如何使用`Validation`帮助器。
 

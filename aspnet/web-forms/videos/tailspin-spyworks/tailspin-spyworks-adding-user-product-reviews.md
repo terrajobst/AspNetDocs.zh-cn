@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: b2e8c3af-7dcf-432b-b01b-4740bcb00897
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-adding-user-product-reviews
 msc.type: video
-ms.openlocfilehash: 9bae0c07a5030085d783c6196a84f0ab4fd6443f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 79ab3ef3d8fa0ba7eac2ff18092fd360e7296f85
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029804"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381310"
 ---
-<a name="tailspin-spyworks---adding-user-product-reviews"></a>Tailspin Spyworks - 添加用户的产品评论
-====================
+# <a name="tailspin-spyworks---adding-user-product-reviews"></a>Tailspin Spyworks - 添加用户的产品评论
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner 将从客户评论添加到 Tailspin Spyworks 示例 Web 窗体应用程序中的产品详细信息页。

@@ -8,15 +8,15 @@ ms.date: 03/27/2007
 ms.assetid: b381b1da-feb3-4776-bc1b-75db53eb90ab
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8849f8f279dde883a71fb3ba1678a589f2e321eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 02fbd3ca162309aefbefdba9a453af6e55b3900b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038844"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382740"
 ---
-<a name="uploading-files-c"></a>上载文件 (C#)
-====================
+# <a name="uploading-files-c"></a>上载文件 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_54_CS.exe)或[下载 PDF](uploading-files-cs/_static/datatutorial54cs1.pdf)
@@ -53,7 +53,7 @@ ms.locfileid: "57038844"
 在其他文件夹中，喜欢`Default.aspx`在`BinaryData`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](uploading-files-cs/_static/image2.gif)](uploading-files-cs/_static/image1.png)
+[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](uploading-files-cs/_static/image2.gif)](uploading-files-cs/_static/image1.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](uploading-files-cs/_static/image2.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "57038844"
 与应用程序的数据模型关联的二进制数据可以存储在两个位置之一： 具有对该数据库; 中存储的文件的引用的 web 服务器的文件系统上或直接在数据库本身中 （请参阅图 4）。 每种方法有其自己的优点和缺点集，并需要更多详细的讨论。
 
 
-[![可以存储二进制数据，在文件系统或直接在数据库中](uploading-files-cs/_static/image4.gif)](uploading-files-cs/_static/image3.png)
+[![B数据可以存储在文件系统上或在数据库中直接 inary](uploading-files-cs/_static/image4.gif)](uploading-files-cs/_static/image3.png)
 
 **图 4**:可以存储二进制数据，在文件系统或直接在数据库中 ([单击此项可查看原尺寸图像](uploading-files-cs/_static/image4.png))
 
@@ -110,7 +110,7 @@ ms.locfileid: "57038844"
 添加一个新`varchar(200)`列添加到`Categories`名为表`BrochurePath`，并允许`NULL`s 并单击保存图标 （或按 Ctrl + S）。
 
 
-[![将 BrochurePath 列添加到类别表](uploading-files-cs/_static/image5.gif)](uploading-files-cs/_static/image5.png)
+[![Add BrochurePath 列到 Categories 表](uploading-files-cs/_static/image5.gif)](uploading-files-cs/_static/image5.png)
 
 **图 5**:添加`BrochurePath`列添加到`Categories`表 ([单击以查看实际尺寸的图像](uploading-files-cs/_static/image6.png))
 
@@ -132,7 +132,7 @@ ms.locfileid: "57038844"
 首先，通过添加到这两个列`CategoriesDataTable`。 右键单击`CategoriesDataTable`s 标头，从上下文菜单中选择添加，然后选择列选项。 这将创建一个新`DataColumn`中名为的 DataTable `Column1`。 为此列重命名`Picture`。 从属性窗口中，设置`DataColumn`s`DataType`属性设置为`System.Byte[]`（这不是下拉列表中的一个选项; 你需要键入中）。
 
 
-[![创建 DataColumn 名为图片数据类型与 System.Byte](uploading-files-cs/_static/image6.gif)](uploading-files-cs/_static/image7.png)
+[![C创建 DataColumn 名为图片数据类型与 System.Byte []](uploading-files-cs/_static/image6.gif)](uploading-files-cs/_static/image7.png)
 
 **图 6**:创建`DataColumn`Named`Picture`其`DataType`是`System.Byte[]`([单击以查看实际尺寸的图像](uploading-files-cs/_static/image8.png))
 
@@ -146,7 +146,7 @@ ms.locfileid: "57038844"
 若要更新主 TableAdapter 查询，请右键单击`CategoriesTableAdapter`s 标头，然后从上下文菜单中选择配置选项。 这将显示表的适配器配置向导的我们 ve 许多过去的教程中所示。 更新查询，以使重新`BrochurePath`并单击完成。
 
 
-[![更新也会返回 BrochurePath 的 SELECT 语句中的列列表](uploading-files-cs/_static/image7.gif)](uploading-files-cs/_static/image9.png)
+[![Update 到还返回 BrochurePath SELECT 语句中的列列表](uploading-files-cs/_static/image7.gif)](uploading-files-cs/_static/image9.png)
 
 **图 7**:更新中的列列表`SELECT`语句也会返回`BrochurePath`([单击以查看实际尺寸的图像](uploading-files-cs/_static/image10.png))
 
@@ -159,12 +159,12 @@ ms.locfileid: "57038844"
 接下来，创建新的 TableAdapter 方法返回特定类别的`Picture`列的值。 右键单击`CategoriesTableAdapter`s 标头，并选择添加查询选项以启动 TableAdapter 查询配置向导。 此向导的第一步会要求我们是否我们要使用的临时 SQL 语句查询数据，一个新存储过程或一个现有。 选择使用 SQL 语句，然后单击下一步。 由于我们将返回行，选择选择第二个步骤中返回的行选项。
 
 
-[![选择使用 SQL 语句选项](uploading-files-cs/_static/image8.gif)](uploading-files-cs/_static/image11.png)
+[![S选择使用 SQL 语句选项](uploading-files-cs/_static/image8.gif)](uploading-files-cs/_static/image11.png)
 
 **图 8**:选择使用 SQL 语句选项 ([单击此项可查看原尺寸图像](uploading-files-cs/_static/image12.png))
 
 
-[![由于从类别表，则查询将返回一条记录，选择选择其返回的行](uploading-files-cs/_static/image9.gif)](uploading-files-cs/_static/image13.png)
+[![Since 查询将从类别表中，选择选择返回的行返回一条记录](uploading-files-cs/_static/image9.gif)](uploading-files-cs/_static/image13.png)
 
 **图 9**:因为查询会从类别表中，选择选择返回的行返回一条记录 ([单击此项可查看原尺寸图像](uploading-files-cs/_static/image14.png))
 
@@ -177,7 +177,7 @@ ms.locfileid: "57038844"
 最后一步是选择新的方法的名称。 使用`FillCategoryWithBinaryDataByCategoryID`和`GetCategoryWithBinaryDataByCategoryID`填充 DataTable 并返回数据表模式，分别。 单击完成以完成向导。
 
 
-[![选择 TableAdapter 的方法的名称](uploading-files-cs/_static/image10.gif)](uploading-files-cs/_static/image15.png)
+[![C选择 TableAdapter 的方法的名称](uploading-files-cs/_static/image10.gif)](uploading-files-cs/_static/image15.png)
 
 **图 10**:选择 TableAdapter 的方法的名称 ([单击此项可查看原尺寸图像](uploading-files-cs/_static/image16.png))
 
@@ -212,7 +212,7 @@ ASP.NET 2.0 新 s [FileUpload Web 控件](https://msdn.microsoft.com/library/ms2
 若要演示上传文件，打开`FileUpload.aspx`页中`BinaryData`文件夹中，将一个 FileUpload 控件从工具箱拖到设计器中，并设置控制 s`ID`属性设置为`UploadTest`。 接下来，添加一个按钮 Web 控件，设置其`ID`并`Text`属性设置为`UploadButton`并分别将所选文件上传。 最后，将在按钮下方的标签 Web 控件放清除其`Text`属性并设置其`ID`属性设置为`UploadDetails`。
 
 
-[![向 ASP.NET 页面添加 FileUpload 控件](uploading-files-cs/_static/image12.gif)](uploading-files-cs/_static/image17.png)
+[![Add FileUpload 控件与 ASP.NET 页](uploading-files-cs/_static/image12.gif)](uploading-files-cs/_static/image17.png)
 
 **图 12**:将 FileUpload 控件添加到 ASP.NET 页 ([单击此项可查看原尺寸图像](uploading-files-cs/_static/image18.png))
 
@@ -220,7 +220,7 @@ ASP.NET 2.0 新 s [FileUpload Web 控件](https://msdn.microsoft.com/library/ms2
 图 13 显示了此页时的浏览器查看。 请注意，单击浏览按钮将显示文件选择对话框中，这样就允许用户选择其计算机中的文件。 一旦选择了一个文件，单击上传所选文件按钮会将所选的文件 s 二进制内容发送到 web 服务器的回发。
 
 
-[![用户可以选择要从其计算机上传到服务器的文件](uploading-files-cs/_static/image13.gif)](uploading-files-cs/_static/image19.png)
+[![T他的用户可以从服务器到其计算机上传到选择一个文件](uploading-files-cs/_static/image13.gif)](uploading-files-cs/_static/image19.png)
 
 **图 13**:用户可以从服务器到其计算机上传到选择一个文件 ([单击此项可查看原尺寸图像](uploading-files-cs/_static/image20.png))
 
@@ -241,7 +241,7 @@ FileUpload s`SaveAs(filePath)`上传的文件保存到指定*filePath*。 *fileP
 完成后`Click`事件处理程序，请花费片刻时间来测试浏览器中的页。 单击浏览按钮并从您的硬盘中选择文件，然后单击上传所选文件按钮。 在回发会将所选文件的内容发送到 web 服务器，然后将显示有关文件的信息，然后将它保存到`~/Brochures`文件夹。 上传文件后, 返回到 Visual Studio 并单击解决方案资源管理器中的刷新按钮。 你应看到您只需上传 ~/Brochures 文件夹中的文件 ！
 
 
-[![文件 EvolutionValley.jpg 已上载到 Web 服务器](uploading-files-cs/_static/image14.gif)](uploading-files-cs/_static/image21.png)
+[![T他 EvolutionValley.jpg 已上载到 Web 服务器文件](uploading-files-cs/_static/image14.gif)](uploading-files-cs/_static/image21.png)
 
 **图 14**:该文件`EvolutionValley.jpg`已上传到 Web 服务器 ([单击以查看实际尺寸的图像](uploading-files-cs/_static/image22.png))
 
@@ -291,4 +291,4 @@ FileUpload 控件不适用于大型文件上传。 文件的内容正在发布�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Teresa Murphy 和伯纳黛特 Leigh。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](displaying-binary-data-in-the-data-web-controls-cs.md)
+> [下一步](displaying-binary-data-in-the-data-web-controls-cs.md)

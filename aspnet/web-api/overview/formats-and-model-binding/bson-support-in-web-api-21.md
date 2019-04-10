@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/bson-support-in-web-api-21
-title: 在 ASP.NET Web API 2.1 对 BSON 的支持 |Microsoft Docs
+title: BSON 的支持 ASP.NET Web API 2.1-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 演示如何为 ASP.NET Web API 控制器 （服务器端） 和.NET 客户端应用中使用 BSON 4.x。
 ms.author: riande
 ms.date: 01/20/2014
+ms.custom: seoapril2019
 ms.assetid: ce11b017-0ca6-4376-aa9d-a7f3288101de
 msc.legacyurl: /web-api/overview/formats-and-model-binding/bson-support-in-web-api-21
 msc.type: authoredcontent
-ms.openlocfilehash: 709fb0266c0725176358a1bd0d08b3e07fa6e2a6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 911e2abcfd277075b3cba71e624ec6390b99a15e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061754"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382221"
 ---
-<a name="bson-support-in-aspnet-web-api-21"></a>在 ASP.NET Web API 2.1 对 BSON 的支持
-====================
+# <a name="bson-support-in-aspnet-web-api-21"></a>在 ASP.NET Web API 2.1 对 BSON 的支持
+
 通过[Mike Wasson](https://github.com/MikeWasson)
 
-Web API 2.1 引入了对 BSON 的支持。 本主题演示如何在 Web API 控制器 （服务器端） 和.NET 客户端应用中使用 BSON。
+本主题演示如何在 Web API 控制器 （服务器端） 和.NET 客户端应用中使用 BSON。 Web API 2.1 引入了对 BSON 的支持。 
 
 ## <a name="what-is-bson"></a>BSON 是什么？
 

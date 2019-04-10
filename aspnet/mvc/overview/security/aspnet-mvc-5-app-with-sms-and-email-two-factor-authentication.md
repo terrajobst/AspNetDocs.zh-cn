@@ -8,15 +8,15 @@ ms.date: 08/20/2015
 ms.assetid: f50a5cdb-c06a-46ed-aa14-fc5b049dc8dc
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: a422988f681273b153725d32bb8337deb25b12f1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 25d21efaf2f01ee1c162408a3caf699ac818aaa7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027764"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384950"
 ---
-<a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>具有 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用
-====================
+# <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>具有 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本教程演示如何生成使用双因素身份验证的 ASP.NET MVC 5 web 应用。 应完成[安全的 ASP.NET MVC 5 web 应用程序创建具有登录、 电子邮件确认及密码重置](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)继续操作之前。 你可以下载已完成的应用程序[此处](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952)。 下载内容包含调试帮助程序，使你可以测试电子邮件确认和短信，而无需设置电子邮件或 SMS 提供程序。

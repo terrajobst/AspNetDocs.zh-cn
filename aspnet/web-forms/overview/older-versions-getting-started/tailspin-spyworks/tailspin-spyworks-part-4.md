@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 4fab47d5-a6ec-4fdc-91f0-651a093a24b9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: ca7eccd684473d9a1ec4a8adfd8690b291fe702f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 63afd25e2ccf22d3c7ae5c5048c80a8cf060d4cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043264"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382818"
 ---
-<a name="part-4-listing-products"></a>第 4 部分：列出产品
-====================
+# <a name="part-4-listing-products"></a>第 4 部分：列出产品
+
 通过[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
@@ -50,7 +50,7 @@ ms.locfileid: "57043264"
 
 若要完成此我们将告诉 EntityDataSource 到自动生成 WHERE 子句，并且我们将指定 WhereParameter。
 
-您会记得，我们在我们"产品类别菜单"中创建菜单项时我们动态生成链接通过将 CatagoryID 添加到每个链接在查询字符串。 我们将告诉实体数据源为位置参数派生的查询字符串参数。
+您会记得，我们在我们"产品类别菜单"中创建菜单项时我们动态生成链接通过将类别 Id 添加到每个链接在查询字符串。 我们将告诉实体数据源为位置参数派生的查询字符串参数。
 
 [!code-aspx[Main](tailspin-spyworks-part-4/samples/sample1.aspx)]
 
@@ -79,7 +79,7 @@ ms.locfileid: "57043264"
 
 ![](tailspin-spyworks-part-4/_static/image6.jpg)
 
-现在，我们需要实现 ProductDetials.apsx 页和 AddToCart 功能。
+现在，我们需要实现 ProductDetails.aspx 页和 AddToCart 功能。
 
 使用文件-&gt;新建以创建页名称 ProductDetails.aspx 我们像以前一样使用站点的母版页。
 
@@ -93,7 +93,7 @@ ms.locfileid: "57043264"
 
 请注意，我们不会选择 ShoppingCart.aspx 的名称。
 
-我们的数据库包含名为"ShoppingCart"的表。 我们生成实体数据模型时为数据库中每个表已创建的类。 因此，实体数据模型生成一个名为"ShoppingCart"的实体类。 我们无法编辑该模型，以便我们可以使用我们的购物车实现该名称或将其扩展为我们的需求，但我们将避免发生冲突的名称只需选择在前面为改为选择。
+我们的数据库包含名为"ShoppingCart"的表。 我们生成实体数据模型时为数据库中每个表已创建的类。 因此，实体数据模型生成一个名为"ShoppingCart"的实体类。 我们无法编辑该模型，以便我们可以使用我们的购物车实现该名称或将其扩展为我们的需求，但我们将选择改为只需选择将避免发生冲突的名称。
 
 它也是值得注意的，我们将创建简单购物车和购物车显示嵌入的购物车逻辑。 我们还可以选择在完全独立的业务层中实现我们的购物车。
 

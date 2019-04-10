@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: 7ae696b9-348f-4993-8ebb-a838acbe0c28
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: a014690078f113e5090f4867c2f384751f16b9f6
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 029234cf9a28a80c487504e4e0980c214e45f53a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425348"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381960"
 ---
-<a name="adding-a-column-to-the-model"></a>向模型添加列
-====================
+# <a name="adding-a-column-to-the-model"></a>向模型添加列
+
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
@@ -28,11 +28,11 @@ ms.locfileid: "58425348"
 
 添加"Rating"列，如下所示。 我们现在没有任何分级，因为此列可以允许 null 值。 单击保存。
 
-[![编辑电影表](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
+[![E编辑电影表](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
 
 接下来，返回到解决方案资源管理器并打开 Movies.edmx 文件 （这是 \Models 文件夹中）。 右键单击设计图面 （白色区域） 上，然后选择从数据库更新模型。
 
-[![电影-Microsoft Visual Web Developer 2010 速成版 (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
+[![Movies-Microsoft Visual Web Developer 2010 速成版 (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
 
 这将启动"更新向导"。 单击刷新选项卡中的，单击完成。 然后将新列更新我们的 Movie 模型类。
 
@@ -40,7 +40,7 @@ ms.locfileid: "58425348"
 
 单击完成后, 可以看到新的评级列已添加到我们的模型中的电影实体。
 
-[![电影实体](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
+[![Movie 实体](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
 
 我们已在数据库模型中，添加一个列，但视图不知道它。
 
@@ -66,11 +66,11 @@ ms.locfileid: "58425348"
 
 运行您的应用程序，现在你已生成的数据库的已添加到创建页中的新字段。 添加新电影-这次使用一个级别的并单击创建。
 
-[![创建电影的 Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
+[![C创建电影的 Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
 
 单击创建后，你将被转到索引页在你新电影列出与数据库中新的评级列
 
-[![电影列表-Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
+[![Movie List - Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
 
 这一基本教程能满足你的启动使控制器，将它们与视图相关联并传递硬编码数据。 然后，创建和设计数据库并将一些数据中。 我们从数据库中检索数据并显示在 HTML 表。 然后，我们添加了允许用户将数据添加到数据库本身从 Web 应用程序中创建窗体。 我们添加验证，然后进行客户端上使用 JavaScript 的验证。 最后，我们更改了数据库，以包括新列的数据，然后更新我们的两个页，以创建并显示此新数据。
 
@@ -81,4 +81,4 @@ ms.locfileid: "58425348"
 - Scott Hanselman- [ http://hanselman.com ](http://hanselman.com)并[ @shanselman ](http://twitter.com/shanselman) Twitter 上。
 
 > [!div class="step-by-step"]
-> [上一篇](getting-started-with-mvc-part7.md)
+> [上一个](getting-started-with-mvc-part7.md)

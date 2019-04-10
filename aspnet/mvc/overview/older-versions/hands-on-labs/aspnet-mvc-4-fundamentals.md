@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: d3bc39a37cace003c3fda6691f0dd7f893128b07
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 38aea3b3480dde6ec6182a45c4f61f44eea8e05e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425244"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380218"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
 
@@ -869,7 +869,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 <a id="Ex7Task1"></a>
 
 <a id="Task_1_Exploring_the_ASPNET_MVC_4_Internet_Application_Template"></a>
-#### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>任务 1:探究 ASP.NET MVC 4 Internet 应用程序模板
+#### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>任务 1：探究 ASP.NET MVC 4 Internet 应用程序模板
 
 1. 如果尚未打开，启动**VS Express for Web**
 2. 选择**文件 |新 |项目**菜单命令。 在中**新的项目**对话框中，选择**Visual C# |Web**在左窗格中的模板树，然后选择**ASP.NET MVC 4 Web 应用程序**。 **名称**项目*MusicStore* ，并更新**解决方案名称**到*开始*，然后选择一个位置 （或保留默认值），单击**确定**.
@@ -947,7 +947,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 > 此外，可以部署此应用程序到 Windows Azure Web Sites 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 

@@ -8,15 +8,15 @@ ms.date: 03/27/2007
 ms.assetid: 362ade25-3965-4fb2-88d2-835c4786244f
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b7f839f16150b93645a9fe868642fa5f36248a9
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9ec09bfcadaa56401a08a389028766ee04f1daad
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424971"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379873"
 ---
-<a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>添加新纪录时增加文件上载选项 (C#)
-====================
+# <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>添加新纪录时增加文件上载选项 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_56_CS.exe)或[下载 PDF](including-a-file-upload-option-when-adding-a-new-record-cs/_static/datatutorial56cs1.pdf)
@@ -47,7 +47,7 @@ ms.locfileid: "58424971"
 打开类型化数据集，并从设计器中，右键单击`CategoriesTableAdapter`s 标头，然后从上下文菜单中选择添加查询。 这将启动 TableAdapter 查询配置向导的说明进行操作，它首先会询问我们 TableAdapter 查询应如何访问数据库。 选择使用 SQL 语句，然后单击下一步。 下一步会提示为查询的类型生成。 由于我们重新创建要添加到新的记录的查询`Categories`表中，选择 INSERT 并单击下一步。
 
 
-[![选择插入选项](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.png)
+[![S选择插入选项](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.png)
 
 **图 1**:选择插入选项 ([单击此项可查看原尺寸图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.png))
 
@@ -60,7 +60,7 @@ ms.locfileid: "58424971"
 在向导的最后一个屏幕询问我们要将新的 TableAdapter 方法。 输入`InsertWithPicture`并单击完成。
 
 
-[![命名新的 TableAdapter 方法 InsertWithPicture](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.png)
+[![N新的 TableAdapter 方法 InsertWithPicture \ 名称](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.png)
 
 **图 2**:新的 TableAdapter 方法命名`InsertWithPicture`([单击以查看实际尺寸的图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.png))
 
@@ -83,7 +83,7 @@ ms.locfileid: "58424971"
 首先打开`DisplayOrDownload.aspx`页上从`BinaryData`文件夹。 请转到源视图并将复制的 GridView 和 ObjectDataSource s 声明性语法，将其中粘贴`<asp:Content>`中的元素`UploadInDetailsView.aspx`。 此外，不要忘了将复制`GenerateBrochureLink`中的代码隐藏类方法`DisplayOrDownload.aspx`到`UploadInDetailsView.aspx`。
 
 
-[![复制并粘贴到 UploadInDetailsView.aspx 从 DisplayOrDownload.aspx 的声明性语法](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.png)
+[![C复制并粘贴到 UploadInDetailsView.aspx DisplayOrDownload.aspx 从声明性语法](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.png)
 
 **图 3**:复制并粘贴从声明性语法`DisplayOrDownload.aspx`到`UploadInDetailsView.aspx`([单击以查看实际尺寸的图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "58424971"
 复制的声明性语法后并`GenerateBrochureLink`方法转移到`UploadInDetailsView.aspx`页上，查看该网页通过浏览器以确保所有内容已通过正确复制。 应会看到列出的八个类别一个 GridView，包括用于下载手册，以及类别的图片的链接。
 
 
-[![现在应看到每个类别以及其二进制数据](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image7.png)
+[![You 现在应看到每个类别以及其二进制数据](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image7.png)
 
 **图 4**:现在应看到其二进制数据以及每个类别 ([单击此项可查看原尺寸图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "58424971"
 通过单击 ObjectDataSource s 智能标记中的配置数据源链接启动。 第一个屏幕显示数据源配置为使用，该对象`CategoriesBLL`。 保留此设置为-转到定义数据方法屏幕旁边单击。 将移动到插入选项卡并选择`InsertWithPicture`从下拉列表的方法。 单击完成以完成向导。
 
 
-[![配置对象数据源使用 InsertWithPicture 方法](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.png)
+[![C配置对象数据源使用 InsertWithPicture 方法](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.png)
 
 **图 5**:配置要使用 ObjectDataSource`InsertWithPicture`方法 ([单击以查看实际尺寸的图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.png))
 
@@ -124,7 +124,7 @@ ms.locfileid: "58424971"
 通过从工具箱拖到上面 GridView 中，设置设计器中拖动 DetailsView 开始其`ID`属性设置为`NewCategory`和清除`Height`和`Width`属性值。 从 DetailsView s 智能标记，请将其绑定到现有`CategoriesDataSource`，然后选中启用插入复选框。
 
 
-[![将 DetailsView 绑定到 CategoriesDataSource 并启用插入](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.png)
+[![Bind CategoriesDataSource 和启用插入 DetailsView](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.png)
 
 **图 6**:将绑定到 DetailsView`CategoriesDataSource`和启用插入 ([单击以查看实际尺寸的图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image12.png))
 
@@ -153,7 +153,7 @@ ms.locfileid: "58424971"
 从 DetailsView s 智能标记，选择编辑模板选项，然后选择`BrochurePath`TemplateField 的`InsertItemTemplate`从下拉列表。 删除文本框，然后将 FileUpload 控件从工具箱拖到模板。 设置 FileUpload 控件 s`ID`到`BrochureUpload`。 同样，添加到 FileUpload 控件`Picture`TemplateField 的`InsertItemTemplate`。 设置此 FileUpload 控件 s`ID`到`PictureUpload`。
 
 
-[![向 InsertItemTemplate 添加 FileUpload 控件](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image13.png)
+[![Add FileUpload 控件与 InsertItemTemplate](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image13.png)
 
 **图 8**:添加 FileUpload 控件与`InsertItemTemplate`([单击以查看实际尺寸的图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image14.png))
 
@@ -226,7 +226,7 @@ ms.locfileid: "58424971"
 允许 s 请花费片刻时间来测试出插入接口和`ItemInserting`在最近几个步骤创建的事件处理程序。 请访问`UploadInDetailsView.aspx`页上通过浏览器并尝试添加一个类别，但要忽略该图片，或者指定非 JPG 图片或非 PDF 小册子。 在任何这些情况下，将显示一条错误消息，插入工作流被取消。
 
 
-[![一条警告消息是显示如果上传文件类型无效](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image15.png)
+[![A 警告消息是显示如果上传无效的文件类型](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image15.png)
 
 **图 9**:一条警告消息是显示如果上传无效的文件类型 ([单击此项可查看原尺寸图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image16.png))
 
@@ -234,7 +234,7 @@ ms.locfileid: "58424971"
 一次您已验证，该网页要求上传并不会接受非 PDF 或非 JPG 文件，添加新类别与有效的 JPG 图片，图片将手册字段留空。 单击插入按钮后，页面将回发，一条新记录将添加到`Categories`表直接在数据库中存储的已上载的图像 s 二进制内容。 GridView 更新，并显示新添加的类别中，对应的行，但如图 10 所示，新类别的图片未正确呈现。
 
 
-[![新的类别不显示图片的 s](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image17.png)
+[![T他的新类别 s 图片不会显示](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image17.png)
 
 **图 10**:不显示图片的新类别 s ([单击此项可查看原尺寸图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image18.png))
 
@@ -249,7 +249,7 @@ ms.locfileid: "58424971"
 进行此更改后，JPG 图像现在能够正确 GridView 中显示。
 
 
-[![新的类别的 JPG 图像是正确呈现](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image19.png)
+[![T他的新类别的 JPG 图像会正确呈现](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image19.png)
 
 **图 11**:新的类别的 JPG 图像是正确呈现 ([单击此项可查看原尺寸图像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image20.png))
 

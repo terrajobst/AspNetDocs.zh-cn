@@ -8,15 +8,15 @@ ms.date: 01/10/2008
 ms.assetid: b1abfcaa-3b7d-42b9-be11-38904910ece0
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures
 msc.type: video
-ms.openlocfilehash: d5acda503cbdaa6f4e05fddc374745f26a9fb5a6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cbfa28aa6814df404337a8a5d739e2b3c15d31a5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051624"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385002"
 ---
-<a name="how-do-i-linq-to-sql-using-stored-procedures"></a>[如何实现:]LINQ to SQL:使用存储过程
-====================
+# <a name="how-do-i-linq-to-sql-using-stored-procedures"></a>[如何实现:]LINQ to SQL:使用存储过程
+
 通过[Scott Stanfield](https://github.com/scottstanfield)
 
 使用现有存储的过程和函数很容易与 linq 结合使用。 我们只需将存储的过程拖动到 O/R 映射图面上，并从生成的数据上下文对象调用它们。

@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 60259ceb99de536410aa5f53db64fb2dca68bf66
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a580b678a943695969b7f3acd2f7a033bd0b6ee3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037354"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379763"
 ---
-<a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005 中的改进
-====================
+# <a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005 中的改进
+
 by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 提供了众多改进和增强功能的 Web 项目的 Web 应用程序开发人员。
@@ -438,7 +438,7 @@ Visual Studio 2005 中删除，依赖于 mdm.exe 和 vs7jit.exe 进程。 相反
 
 ## <a name="aspnet-development-server"></a>ASP.NET Development Server
 
-如我们前面已经讨论过，Visual Studio 2005 附带了名为 ASP.NET 开发服务器的 Web 服务器。 （ASP.NET 开发服务器有时称为 Cassini。）此 Web 服务器是一种便利的方法来浏览和调试 Web 应用程序在文件系统上运行。
+因为我们已经讨论过，Visual Studio 2005 附带了名为 ASP.NET 开发服务器的 Web 服务器。 （ASP.NET 开发服务器有时称为 Cassini。）此 Web 服务器是一种便利的方法来浏览和调试 Web 应用程序在文件系统上运行。
 
 ASP.NET Development Server 是受限制的 Web 服务器。 不允许远程连接，它不会启动 Web 服务器的用户以外的任何用户从允许的任何请求。 它还没有为 ASP 页面提供服务的功能。 仅 ASP.NET 资源和 HTML 资源 （包括图像、 CSS 文件等） 会提供服务。
 

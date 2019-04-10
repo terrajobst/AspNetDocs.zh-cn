@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 521c9117-81cd-4d8d-9d96-0256dc7bf50f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 516c370941b8f7e5f3528953491057973679586d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5dd5b96d0365c55cbbfa2dfe0856beda41f915e1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049344"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384755"
 ---
-<a name="improving-performance-with-output-caching-c"></a>通过输出缓存提升性能 (C#)
-====================
+# <a name="improving-performance-with-output-caching-c"></a>通过输出缓存提升性能 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您学习如何你可以显著提升性能的 ASP.NET MVC web 应用程序通过利用的输出缓存。 了解如何缓存，以便相同的内容不需要创建新用户调用该操作的每个时间的控制器操作返回的结果。
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 启用输出缓存通过将 [OutputCache] 特性添加到一个单独的控制器操作或整个控制器类。 例如，在列表 1 中的控制器将公开名为 index （） 操作。 Index （） 操作的输出缓存 10 秒。
 
-**Listing 1 – Controllers\HomeController.cs**
+**代码清单 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 

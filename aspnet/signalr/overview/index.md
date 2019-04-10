@@ -8,15 +8,15 @@ ms.date: 10/24/2012
 ms.assetid: e57da75a-1d98-4e3c-8787-f1d7e1eb2d86
 msc.legacyurl: /signalr/overview
 msc.type: book
-ms.openlocfilehash: 2ab5094e863c5762c0c4c70a15f4da1088bc52e7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8bef8a53f6d47a9274a984e0650125fb538c23f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380062"
 ---
-<a name="signalr-guidance"></a>SignalR 指南
-====================
+# <a name="signalr-guidance"></a>SignalR 指南
+
 - [入门](getting-started/index.md)
 
     - [SignalR 简介](getting-started/introduction-to-signalr.md)
@@ -24,8 +24,8 @@ ms.locfileid: "57022664"
     - [教程：SignalR 2 入门](getting-started/tutorial-getting-started-with-signalr.md)
     - [教程：使用 SignalR 2 和 MVC 5 入门](getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
     - [教程：使用 signalr 2 实现高频率实时功能](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
-    - [教程：使用 signalr 2 实现服务器广播](getting-started/tutorial-server-broadcast-with-signalr.md)
-    - [动手实验：使用 SignalR 实时 Web 应用程序](getting-started/real-time-web-applications-with-signalr.md)
+    - [教程：使用 SignalR 2 实现服务器广播](getting-started/tutorial-server-broadcast-with-signalr.md)
+    - [动手实验：使用 SignalR 实现实时 Web 应用程序](getting-started/real-time-web-applications-with-signalr.md)
 - [API 指南](guide-to-the-api/index.md)
 
     - [中心 API 指南 - 服务器 (C#)](guide-to-the-api/hubs-api-guide-server.md)
@@ -55,7 +55,7 @@ ms.locfileid: "57022664"
     - [在 Azure Web 角色中使用 SignalR 性能计数器](performance/using-signalr-performance-counters-in-an-azure-web-role.md)
 - [部署和承载](deployment/index.md)
 
-    - [教程：自承载 SignalR](deployment/tutorial-signalr-self-host.md)
+    - [教程：SignalR 自承载](deployment/tutorial-signalr-self-host.md)
     - [在 Azure 应用服务中通过 Web 应用使用 SignalR](deployment/using-signalr-with-azure-web-sites.md)
 - [高级](advanced/index.md)
 
@@ -65,10 +65,10 @@ ms.locfileid: "57022664"
     - [升级 SignalR 1.x 项目到 SignalR 2](releases/upgrading-signalr-1x-projects-to-20.md)
 - [旧版本](older-versions/index.md)
 
-    - [教程：开始使用 SignalR 1.x](older-versions/tutorial-getting-started-with-signalr.md)
-    - [教程：开始使用 SignalR 1.x 和 MVC 4](older-versions/tutorial-getting-started-with-signalr-and-mvc-4.md)
+    - [教程：SignalR 1.x 入门](older-versions/tutorial-getting-started-with-signalr.md)
+    - [教程：SignalR 1.x 和 MVC 4 入门](older-versions/tutorial-getting-started-with-signalr-and-mvc-4.md)
     - [使用 SignalR 1.x 实现高频率实时功能](older-versions/tutorial-high-frequency-realtime-with-signalr.md)
-    - [教程：服务器广播使用 ASP.NET SignalR 1.x](older-versions/tutorial-server-broadcast-with-aspnet-signalr.md)
+    - [教程：使用 ASP.NET SignalR 1.x 实现服务器广播](older-versions/tutorial-server-broadcast-with-aspnet-signalr.md)
     - [中心 API 指南 - 服务器](older-versions/signalr-1x-hubs-api-guide-server.md)
     - [SignalR 1.x 中心 API 指南 - JavaScript 客户端](older-versions/signalr-1x-hubs-api-guide-javascript-client.md)
     - [中心 API 指南 - .NET 客户端](older-versions/signalr-1x-hubs-api-guide-net-client.md)

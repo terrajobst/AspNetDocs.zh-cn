@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: d0a89089-eed8-4f61-a478-c5ffa30186f5
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 6b5d10ba9e878908953e999bd1fd44970acf4ca5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e90eebaba3645802f318dbf449c3ec734265a092
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065564"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381939"
 ---
-<a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>生成章节下载 EF 5 mvc 4 个教程
-====================
+# <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>生成章节下载 EF 5 mvc 4 个教程
+
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -47,7 +47,7 @@ ms.locfileid: "57065564"
     > [!NOTE]
     > 如果收到以下错误：  
     >   
-    >  *术语更新数据库未识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。检查名称的拼写或如果已包含路径，验证路径正确，然后重试。*  
+    >  *术语更新数据库未识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。 检查名称的拼写或如果已包含路径，验证路径正确，然后重试。*  
     > 退出并重新启动 Visual Studio。
 
     每个迁移将运行，则将运行 seed 方法。 你现在可以运行该应用程序。
@@ -55,4 +55,4 @@ ms.locfileid: "57065564"
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image5.png)
 
 > [!div class="step-by-step"]
-> [上一篇](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [上一个](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

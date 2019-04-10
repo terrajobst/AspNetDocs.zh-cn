@@ -8,20 +8,20 @@ ms.date: 08/15/2012
 ms.assetid: 2ece0bf4-aae5-4ff4-8f62-28e0819d4f86
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: d2c377f8466f8f324b75ce60860aa00c11bc0ffe
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c39e1cf42fde382a9e74d7f865f0dac1aa62ddc8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058474"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384228"
 ---
-<a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>在 ASP.NET Web 窗体中使用适用于 Visual Studio 2012 的 Page Inspector
-====================
+# <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>在 ASP.NET Web 窗体中使用适用于 Visual Studio 2012 的 Page Inspector
+
 由 Tim Ammann
 
 > 适用于 Visual Studio 2012 的 Page Inspector 是一个 web 开发工具，使用集成浏览器。 在集成浏览器中选择任何元素和 Page Inspector 立即突出显示元素的源和 CSS。 可以在应用程序中浏览任何页面、 快速查找呈现的标记的源和使用 Visual Studio 环境中的浏览器工具。
 > 
-> 此教程 shwos 如何启用检查模式下，然后快速查找和编辑 CSS 规则和你的 web 项目中的文本。 本教程使用 Web 窗体应用程序项目中，但您也可以使用 Page Inspector 对于网站项目并[MVC](https://go.microsoft.com/?linkid=9802002)应用程序。
+> 本教程演示如何启用检查模式下，然后快速查找和编辑 CSS 规则和你的 web 项目中的文本。 本教程使用 Web 窗体应用程序项目中，但您也可以使用 Page Inspector 对于网站项目并[MVC](https://go.microsoft.com/?linkid=9802002)应用程序。
 > 
 > 本教程包含以下部分：
 > 
