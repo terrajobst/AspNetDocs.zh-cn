@@ -2,21 +2,21 @@
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 title: 将验证控件添加到 DataList 的编辑界面 (C#) |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将了解如何轻松将验证控件添加到 DataList 的 EditItemTemplate，以提供更能做到万无一失编辑用户 int...
+description: 在本教程中我们将了解如何轻松将验证控件添加到 DataList 的 EditItemTemplate，以提供更能做到万无一失编辑用户 int。...
 ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: 3ecc21c5-da0e-40ab-abb4-fac1e47398ad
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c552dd54830152afbe100ed03fb6764ddfb590dd
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 5dc2421f6c3fa88a9373e7ac1b7ad51be6e65b82
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422657"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422208"
 ---
-<a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>向 DataList 的编辑界面添加验证控件 (C#)
-====================
+# <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>向 DataList 的编辑界面添加验证控件 (C#)
+
 通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_39_CS.exe)或[下载 PDF](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/datatutorial39cs1.pdf)
@@ -45,7 +45,7 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 3. 复制中的文本`<asp:Content>`和`</asp:Content>`标记 （行 3 到 32），作为图 1 所示。
 
 
-[![复制文本内&lt;asp: Content&gt;控件](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image1.png)
+[![C复制文本内&lt;asp: Content&gt;控件](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image1.png)
 
 **图 1**:复制文本内`<asp:Content>`控件 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image3.png))
 
@@ -59,7 +59,7 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 移动的内容和从代码转移后`ErrorHandling.aspx`到`UIValidation.aspx`，花点时间来测试在浏览器中的页。 你应看到相同的输出和体验每个 （请参见图 2） 这些两个页中相同的功能。
 
 
-[![UIValidation.aspx 页模仿 ErrorHandling.aspx 中的功能](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image4.png)
+[![T他 UIValidation.aspx 页模仿 ErrorHandling.aspx 中的功能](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image4.png)
 
 **图 2**:`UIValidation.aspx`页上模拟中的功能`ErrorHandling.aspx`([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image6.png))
 
@@ -85,7 +85,7 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 让我们来首先将必要的验证控件添加到 DataList 的`EditItemTemplate`。 通过单击编辑模板链接通过 DataList s 智能标记，在设计器或通过声明性语法，可以执行此任务。 允许 s 步骤通过使用设计视图中的编辑模板选项的过程。 在选择要编辑 DataList s 之后`EditItemTemplate`，通过从工具箱拖动到模板编辑界面中，添加一个 RequiredFieldValidator 将其之后放置`ProductName`文本框中。
 
 
-[![在产品名称文本框之后向 EditItemTemplate 添加一个 RequiredFieldValidator](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image7.png)
+[![Add EditItemTemplate 后产品名称文本框中为 RequiredFieldValidator](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image7.png)
 
 **图 3**:添加到一个 RequiredFieldValidator `EditItemTemplate After` `ProductName`文本框中 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image9.png))
 
@@ -95,7 +95,7 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 以后设置 RequiredFieldValidator 这三个属性，您的屏幕看起来应类似于图 4。
 
 
-[![设置 RequiredFieldValidator 的 ControlToValidate、 错误消息和文本属性](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image10.png)
+[![Set RequiredFieldValidator 的 ControlToValidate、 错误消息，和文本属性](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image10.png)
 
 **图 4**:设置 RequiredFieldValidator s `ControlToValidate`， `ErrorMessage`，并`Text`属性 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image12.png))
 
@@ -112,7 +112,7 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 进行这些更改后，在浏览器中打开的网页。 如果尝试省略名称或编辑产品时输入无效的价格值文本框旁边将出现一个星号。 如图 5 所示，包含货币符号，例如 19.95 美元的价格值将被视为无效。 CompareValidator s `Currency` `Type`允许数字分隔符 （如逗号或句点，具体取决于的区域性设置） 和前导加号或减号，但不*不*允许货币符号。 此行为可能 perplex 用户编辑界面当前呈现`UnitPrice`使用货币格式。
 
 
-[![使用无效的输入文本框旁边会显示一个星号](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image13.png)
+[![A使用无效的输入文本框旁边会显示星号的 n](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image13.png)
 
 **图 5**:星号显示下一步使用无效的输入文本框 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image15.png))
 
@@ -169,7 +169,7 @@ ASP.NET 包括五个验证控件中，除了[ValidationSummary 控件](https://m
 若要实现此目的，请从工具箱拖到设计器拖动 ValidationSummary 控件。 ValidationSummary 控件不是 t 的位置非常重要，因为我们重新将它配置为仅显示为一个消息框的摘要。 添加控件之后, 设置其[`ShowSummary`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)到`False`并将其[`ShowMessageBox`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 添加此元素后，任何验证错误汇总客户端的 messagebox 中 （请参阅图 6）。
 
 
-[![客户端的 Messagebox 中总结了验证错误](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)
+[![T客户端的 Messagebox 中总结了他验证错误](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)
 
 **图 6**:客户端的 Messagebox 中总结了验证错误 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image18.png))
 
