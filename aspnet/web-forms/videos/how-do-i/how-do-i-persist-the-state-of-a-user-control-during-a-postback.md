@@ -8,15 +8,15 @@ ms.date: 04/02/2009
 ms.assetid: d1bca4c6-838c-40f7-87ec-80bb67e483e5
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-persist-the-state-of-a-user-control-during-a-postback
 msc.type: video
-ms.openlocfilehash: b15eef0af3e88f8ca333d9661c5d42a1dbc90151
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c87bd6c5c993a1bde8f8a84f6d53b431e54541d9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024394"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414772"
 ---
-<a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a>[如何]:回发过程中保存用户控件的状态
-====================
+# <a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a>[如何]:回发过程中保存用户控件的状态
+
 通过[Chris Pels](https://twitter.com/chrispels)
 
 在此视频的 Chris Pels 中显示了如何持久保存在用户控件中的一个或多个对象的状态。 首先，用户控件创建表示用户指定的搜索筛选器条件的能力。 此外，创建一个辅助性筛选器类用于存储的筛选器信息。 多个用户界面元素添加到筛选器控件和一些方法和属性筛选器类实例中存储的当前筛选器信息。 接下来，使用 RegisterRequiresControlState 方法和关联的保存/还原方法实现用户控件持久性。 这些方法在页回发期间存储筛选器类和其数据的实例。 最后，还有讨论了如何将多个对象存储在控件状态实现。
