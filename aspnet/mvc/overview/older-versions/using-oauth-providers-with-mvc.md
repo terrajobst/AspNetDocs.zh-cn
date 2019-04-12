@@ -8,15 +8,15 @@ ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: d0203b62c911056fc56ed103c1c42f67816cbbf0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396975"
 ---
-<a name="using-oauth-providers-with-mvc-4"></a>通过 MVC 4 使用 OAuth 提供程序
-====================
+# <a name="using-oauth-providers-with-mvc-4"></a>通过 MVC 4 使用 OAuth 提供程序
+
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教程演示如何构建 ASP.NET MVC 4 web 应用程序，使用户能够从外部提供程序，如 Facebook、 Twitter、 Microsoft 或 Google 凭据登录，然后将集成到这些提供程序的功能的一些应用web 应用程序。 为简单起见，本教程重点介绍使用来自 Facebook 的凭据。
@@ -83,7 +83,7 @@ AuthConfig 文件包含注册外部身份验证提供程序的客户端的代码
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-如果向 Facebook 注册你的网站，则可以提供&quot;localhost&quot;站点域和`&quot; http://localhost/&quot;`对于 URL，如下图中所示。 使用 localhost 适用于大多数提供程序，但当前不使用 Microsoft 提供程序。 对于 Microsoft 提供程序，必须包含有效的网站 URL。
+如果向 Facebook 注册你的网站，则可以提供&quot;localhost&quot;站点域和`&quot;http://localhost/&quot;`对于 URL，如下图中所示。 使用 localhost 适用于大多数提供程序，但当前不使用 Microsoft 提供程序。 对于 Microsoft 提供程序，必须包含有效的网站 URL。
 
 ![注册站点](using-oauth-providers-with-mvc/_static/image4.png)
 
