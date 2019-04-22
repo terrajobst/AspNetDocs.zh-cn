@@ -12,7 +12,7 @@ ms.openlocfilehash: 25d9cc02ef9b0e8f068c9e84469d9661b06f0b28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381102"
 ---
 # <a name="visual-studio-2005"></a>Visual Studio 2005
@@ -28,9 +28,9 @@ ms.locfileid: "59381102"
 - [测量 AJAX 的业务值](measuring-the-business-value-of-ajax.md)
 - [自动测试的代码覆盖率](code-coverage-of-automated-tests.md)
 - [自定义提取规则和编码 Web 测试](custom-extraction-rules-and-coded-web-tests.md)
-- [缓存效果](the-effects-of-caching.md)
+- [缓存的效果](the-effects-of-caching.md)
 - [负载测试代理](using-the-load-test-agent.md)
-- [ViewState 效果](the-effects-of-viewstate.md)
+- [试图状态的效果](the-effects-of-viewstate.md)
 - [将缺陷跟踪与测试集成](how-do-i-integrate-defect-tracking-with-testing.md)
 - [创建自己的 Bug 工作项](how-do-i-create-my-own-bug-work-item.md)
 - [使用单元测试更快速编写代码](how-do-i-write-code-more-quickly-with-unit-tests.md)
@@ -44,7 +44,7 @@ ms.locfileid: "59381102"
 - [发现部署前的应用程序更改](how-do-i-discover-application-changes-prior-to-deployment.md)
 - [使用 Team Foundation 实现持续集成](how-do-i-implement-continuous-integration-with-team-foundation.md)
 - [使用团队生成自动执行测试](how-do-i-automate-testing-using-team-build.md)
-- [在团队生成过程中部署 Web 应用程序](how-do-i-deploy-a-web-application-during-a-team-build.md)
+- [团队生成过程中部署 Web 应用程序](how-do-i-deploy-a-web-application-during-a-team-build.md)
 - [针对已部署数据库运行单元测试](how-do-i-run-unit-tests-against-a-deployed-database.md)
 - [在生产应用程序中实现代码覆盖率和分析](how-do-i-enable-code-coverage-and-profiling-in-production-applications.md)
 - [Web 部署项目](web-deployment-projects.md)

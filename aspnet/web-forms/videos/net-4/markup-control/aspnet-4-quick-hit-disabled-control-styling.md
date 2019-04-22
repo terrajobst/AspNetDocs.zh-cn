@@ -12,7 +12,7 @@ ms.openlocfilehash: af8a8e22df83f64de570dda966f9a831be957c0d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381431"
 ---
 # <a name="aspnet-4-quick-hit---disabled-control-styling"></a>ASP.NET 4"快速 Hit"-禁用控件的样式设置
@@ -24,4 +24,4 @@ ms.locfileid: "59381431"
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-disabled-control-styling)
 
 > [!div class="step-by-step"]
-> [上一个](aspnet-4-quick-hit-hidden-field-divs.md)
+> [上一篇](aspnet-4-quick-hit-hidden-field-divs.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5db5e30cac21bad0591f4476a1b1156b50117536
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382259"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用一个 DropDownList 实现母版/详细信息筛选 (VB)
@@ -35,7 +35,7 @@ ms.locfileid: "59382259"
 我们的母版/详细信息报表将列出与所选的列表项的产品显示在下拉列表中，类别在 GridView 的页中进一步向下。 然后，领先于我们的第一个任务是已在 DropDownList 中显示的类别。 打开`FilterByDropDownList.aspx`页中`Filtering`文件夹中，从工具箱拖到页面的设计器中，将在 DropDownList 上并设置其`ID`属性设置为`Categories`。 接下来，单击选择数据源链接从 DropDownList 的智能标记。 这将显示数据源配置向导。
 
 
-[![S指定 DropDownList 的数据源](master-detail-filtering-with-a-dropdownlist-vb/_static/image2.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image1.png)
+[![指定 DropDownList 的数据源](master-detail-filtering-with-a-dropdownlist-vb/_static/image2.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image1.png)
 
 **图 1**:指定 DropDownList 的数据源 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image3.png))
 
@@ -43,17 +43,17 @@ ms.locfileid: "59382259"
 选择将添加名为新 ObjectDataSource `CategoriesDataSource` ，它调用`CategoriesBLL`类的`GetCategories()`方法。
 
 
-[![Add 新对象数据源名为 CategoriesDataSource](master-detail-filtering-with-a-dropdownlist-vb/_static/image5.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image4.png)
+[![添加名为 CategoriesDataSource 新 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-vb/_static/image5.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image4.png)
 
 **图 2**:添加新对象数据源名为`CategoriesDataSource`([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image6.png))
 
 
-[![C选择要使用 CategoriesBLL 类](master-detail-filtering-with-a-dropdownlist-vb/_static/image8.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image7.png)
+[![选择使用 CategoriesBLL 类](master-detail-filtering-with-a-dropdownlist-vb/_static/image8.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image7.png)
 
 **图 3**:选择使用`CategoriesBLL`类 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image9.png))
 
 
-[![C配置对象数据源使用 GetCategories() 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image11.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image10.png)
+[![配置对象数据源使用 GetCategories() 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image11.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image10.png)
 
 **图 4**:配置为使用 ObjectDataSource`GetCategories()`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image12.png))
 
@@ -61,7 +61,7 @@ ms.locfileid: "59382259"
 配置的 ObjectDataSource 我们仍然需要指定应在 DropDownList 中显示哪些数据源字段和后一个应为列表项的值相关联。 具有`CategoryName`字段与显示和`CategoryID`为每个列表项的值。
 
 
-[![Have DropDownList 的值显示的类别名称字段和使用 CategoryID](master-detail-filtering-with-a-dropdownlist-vb/_static/image14.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image13.png)
+[![作为值的类别名称字段和使用 CategoryID 使 DropDownList 显示](master-detail-filtering-with-a-dropdownlist-vb/_static/image14.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image13.png)
 
 **图 5**:使 DropDownList 显示`CategoryName`字段并使用`CategoryID`作为值 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image15.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "59382259"
 现在我们有从记录将填充 DropDownList 控件`Categories`表 （全部在大约六秒钟内完成）。 图 6 显示了我们到目前为止的浏览器查看时。
 
 
-[![A 下拉列表列出了当前类别](master-detail-filtering-with-a-dropdownlist-vb/_static/image17.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image16.png)
+[![下拉列表列出了当前类别](master-detail-filtering-with-a-dropdownlist-vb/_static/image17.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image16.png)
 
 **图 6**:下拉列表列出了当前类别 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image18.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "59382259"
 我们的母版/详细信息报表的最后一步是列出与所选类别关联的产品。 若要完成此操作，向页添加 GridView 并创建名为新 ObjectDataSource `productsDataSource`。 具有`productsDataSource`控件中搜集从其数据`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。
 
 
-[![S选择 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image20.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image19.png)
+[![选择 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-vb/_static/image20.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image19.png)
 
 **图 7**:选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
@@ -87,7 +87,7 @@ ms.locfileid: "59382259"
 选择此方法之后, 该 ObjectDataSource 向导会提示我们的方法的值*`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
 
 
-[![Set categoryID 参数到 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
+[![将类别 id 参数设置为 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
 **图 8**:设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
@@ -100,12 +100,12 @@ ms.locfileid: "59382259"
 图 9 和 10 说明了操作中的母版/详细信息报表。
 
 
-[![W显示的页、 饮料产品的第一个访问 hen](master-detail-filtering-with-a-dropdownlist-vb/_static/image26.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image25.png)
+[![当首次访问的页面，显示饮料产品](master-detail-filtering-with-a-dropdownlist-vb/_static/image26.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image25.png)
 
 **图 9**:当首次访问的页面，显示饮料产品 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image27.png))
 
 
-[![S选择新产品 （生成） 会自动导致回发时，更新 GridView](master-detail-filtering-with-a-dropdownlist-vb/_static/image29.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image28.png)
+[![选择一种新产品 （生成） 将自动导致回发，更新 GridView](master-detail-filtering-with-a-dropdownlist-vb/_static/image29.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image28.png)
 
 **图 10**:选择一种新产品 （生成） 将自动导致回发，更新 GridView ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image30.png))
 
@@ -117,7 +117,7 @@ ms.locfileid: "59382259"
 若要向 DropDownList 添加新列表项，请转到属性窗口，然后单击中的椭圆`Items`属性。 添加的新列表项`Text`"--选择一个类别-"和`Value` `-1`。
 
 
-[![Add--选择列表项的 Category-](master-detail-filtering-with-a-dropdownlist-vb/_static/image32.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image31.png)
+[![添加--选择列表项的 Category-](master-detail-filtering-with-a-dropdownlist-vb/_static/image32.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image31.png)
 
 **图 11**:添加--列表项中选择一个类别-([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image33.png))
 
@@ -138,7 +138,7 @@ ms.locfileid: "59382259"
 之后这些更改，首次访问的页面选择"--选择一个类别-"选项并不显示任何产品时。
 
 
-[![On 初始页面负载否产品显示](master-detail-filtering-with-a-dropdownlist-vb/_static/image36.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image35.png)
+[![无产品都会显示在加载初始页](master-detail-filtering-with-a-dropdownlist-vb/_static/image36.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image35.png)
 
 **图 13**:显示的初始页面负载否产品上 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
@@ -153,7 +153,7 @@ ms.locfileid: "59382259"
 图 14 显示了的屏幕截图`FilterByDropDownList.aspx`如果选择"--选择一个类别-"选项。 在这里，默认情况下显示的所有产品，用户可以通过选择特定类别，缩小显示。
 
 
-[![A产品的 ll 是现在列出默认情况下](master-detail-filtering-with-a-dropdownlist-vb/_static/image39.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image38.png)
+[![所有产品都现在列出默认情况下](master-detail-filtering-with-a-dropdownlist-vb/_static/image39.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image38.png)
 
 **图 14**:所有产品都现在列出默认情况下 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image40.png))
 

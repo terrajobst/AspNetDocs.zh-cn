@@ -12,7 +12,7 @@ ms.openlocfilehash: 206b0537b0c4355f919694bc05b3f7d6922f8272
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378381"
 ---
 # <a name="editing-inserting-and-deleting-data"></a>编辑、插入和删除数据
@@ -22,7 +22,7 @@ ms.locfileid: "59378381"
 
 - [插入、更新和删除数据概述 (C#)](an-overview-of-inserting-updating-and-deleting-data-cs.md)
 - [检查与插入、更新和删除操作有关的事件 (C#)](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
-- [在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (C#)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)
+- [在 ASP.NET 页中处理 BLL- 和 DAL 级别的异常 (C#)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)
 - [向编辑和插入界面添加验证控件 (C#)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)
 - [自定义数据修改界面 (C#)](customizing-the-data-modification-interface-cs.md)
 - [实现乐观并发 (C#)](implementing-optimistic-concurrency-cs.md)
@@ -30,7 +30,7 @@ ms.locfileid: "59378381"
 - [限制基于用户的数据修改功能 (C#)](limiting-data-modification-functionality-based-on-the-user-cs.md)
 - [插入、更新和删除数据概述 (VB)](an-overview-of-inserting-updating-and-deleting-data-vb.md)
 - [检查与插入、更新和删除操作有关的事件 (VB)](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
-- [在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (VB)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
+- [在 ASP.NET 页中处理 BLL- 和 DAL 级别的异常 (VB)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
 - [向编辑和插入界面添加验证控件 (VB)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
 - [自定义数据修改界面 (VB)](customizing-the-data-modification-interface-vb.md)
 - [实现乐观并发 (VB)](implementing-optimistic-concurrency-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 4a4daf851f3b8f69a70409d00ef7cd624437f57a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383850"
 ---
 # <a name="the-listview-control"></a>ListView 控件
@@ -24,4 +24,4 @@ ms.locfileid: "59383850"
 [&#9654;观看视频 （10 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-listview-control)
 
 > [!div class="step-by-step"]
-> [下一步](the-datapager-control.md)
+> [下一页](the-datapager-control.md)

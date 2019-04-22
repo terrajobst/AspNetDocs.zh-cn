@@ -12,7 +12,7 @@ ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380660"
 ---
 # <a name="iteration-5--create-unit-tests-vb"></a>迭代 5 — 创建单元测试 (VB)
@@ -116,12 +116,12 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 4. 通过选择菜单选项将 Moq 程序集的引用添加到你的测试项目**项目中，添加引用**以打开**添加引用**对话框。 在浏览选项卡，浏览到你在其中解压缩 Moq 文件夹并选择 Moq.dll 程序集。 单击**确定**按钮 （请参见图 2）。
 
 
-[![Unblocking Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
+[![取消阻塞 Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **图 01**:取消阻塞 Moq ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image2.png))
 
 
-[![R添加 Moq 后 eferences](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+[![添加 Moq 后引用](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **图 02**:添加 Moq 后的引用 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image4.png))
 
@@ -184,7 +184,7 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 可以通过选择菜单选项在列表 1 中运行单元测试**测试，运行，解决方案 （CTRL + R、 A） 中的所有测试**。 在测试结果窗口中显示测试结果 （请参阅图 4）。
 
 
-[![T测试结果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
+[![测试结果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **图 04**:测试结果 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image8.png))
 

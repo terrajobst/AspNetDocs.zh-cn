@@ -12,7 +12,7 @@ ms.openlocfilehash: a861fbbf2813a659f5301e43bd851345cac34e9f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380023"
 ---
 # <a name="displaying-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 显示数据 (C#)
@@ -39,7 +39,7 @@ ASP.NET 2.0 附带有五个内置数据源控件[SqlDataSource](https://msdn.mic
 ObjectDataSource 用于处理与其他某些对象充当代理。 若要配置 ObjectDataSource 我们指定此基础对象和其方法如何映射到的 ObjectDataSource `Select`， `Insert`， `Update`，和`Delete`方法。 后指定了此基础对象，其方法映射到 ObjectDataSource 的我们然后可以将对象数据源绑定到数据 Web 控件。 ASP.NET 附带了很多数据 Web 控件，包括 GridView、 DetailsView、 RadioButtonList 和下拉列表中，等等。 在页生命周期中，Web 控件的数据可能需要访问的数据绑定，它将通过调用其 ObjectDataSource 完成`Select`方法; 如果数据 Web 控件支持插入、 更新或删除，调用可能会对其ObjectDataSource 的`Insert`， `Update`，或`Delete`方法。 这些调用被路由到适当的基础对象的方法的 ObjectDataSource 通过如以下关系图所示。
 
 
-[![T他 ObjectDataSource 充当代理](displaying-data-with-the-objectdatasource-cs/_static/image3.png)](displaying-data-with-the-objectdatasource-cs/_static/image2.png)
+[![ObjectDataSource 充当代理](displaying-data-with-the-objectdatasource-cs/_static/image3.png)](displaying-data-with-the-objectdatasource-cs/_static/image2.png)
 
 **图 2**:ObjectDataSource 充当代理 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image4.png))
 
@@ -57,7 +57,7 @@ ObjectDataSource 用于处理与其他某些对象充当代理。 若要配置 O
 若要指定 ObjectDataSource 的基础对象和该对象的方法如何映射到 ObjectDataSource 的请单击 ObjectDataSource 的智能标记中的配置数据源链接。
 
 
-[![C单击智能标记中的配置数据源链接](displaying-data-with-the-objectdatasource-cs/_static/image6.png)](displaying-data-with-the-objectdatasource-cs/_static/image5.png)
+[![单击配置从智能标记的数据源链接](displaying-data-with-the-objectdatasource-cs/_static/image6.png)](displaying-data-with-the-objectdatasource-cs/_static/image5.png)
 
 **图 3**:单击智能标记中的配置数据源链接 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image7.png))
 
@@ -67,7 +67,7 @@ ObjectDataSource 用于处理与其他某些对象充当代理。 若要配置 O
 从第一个屏幕中选择`ProductsBLL`类从下拉列表，并单击下一步。
 
 
-[![S指定使用 ObjectDataSource 控件，该对象](displaying-data-with-the-objectdatasource-cs/_static/image9.png)](displaying-data-with-the-objectdatasource-cs/_static/image8.png)
+[![使用 ObjectDataSource 控件指定使用的对象](displaying-data-with-the-objectdatasource-cs/_static/image9.png)](displaying-data-with-the-objectdatasource-cs/_static/image8.png)
 
 **图 4**:使用 ObjectDataSource 控件指定使用的对象 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image10.png))
 
@@ -75,7 +75,7 @@ ObjectDataSource 用于处理与其他某些对象充当代理。 若要配置 O
 在向导的下一个屏幕会提示您选择 ObjectDataSource 应调用什么方法。 下拉列表列出了从上一屏幕中选择的对象中返回数据的这些方法。 这里我们可以看到`GetProductByProductID`， `GetProducts`， `GetProductsByCategoryID`，和`GetProductsBySupplierID`。 选择`GetProducts`方法从该下拉列表并单击完成 (如果您添加`DataObjectMethodAttribute`到`ProductBLL`的方法，如前面的教程，此选项中所示将选择默认情况下)。
 
 
-[![C选择选择选项卡中返回数据的方法](displaying-data-with-the-objectdatasource-cs/_static/image12.png)](displaying-data-with-the-objectdatasource-cs/_static/image11.png)
+[![选择从选择选项卡，返回数据的方法](displaying-data-with-the-objectdatasource-cs/_static/image12.png)](displaying-data-with-the-objectdatasource-cs/_static/image11.png)
 
 **图 5**:从选择选项卡中选择返回数据的方法 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image13.png))
 
@@ -98,7 +98,7 @@ ObjectDataSource 具有已添加到页并配置后，我们就可以将数据 We
 添加 GridView 控件从工具箱拖到`SimpleDisplay.aspx`的设计图面。 从 GridView 的智能标记上，选择我们在步骤 1 中添加的 ObjectDataSource 控件。 这会自动将每个属性返回的数据从 ObjectDataSource 的 GridView 中创建 BoundField`Select`方法 （即，由产品数据表中定义的属性）。
 
 
-[![A GridView 已添加到页面并将其绑定到 ObjectDataSource](displaying-data-with-the-objectdatasource-cs/_static/image15.png)](displaying-data-with-the-objectdatasource-cs/_static/image14.png)
+[![GridView 已添加到页面并将其绑定到对象数据源](displaying-data-with-the-objectdatasource-cs/_static/image15.png)](displaying-data-with-the-objectdatasource-cs/_static/image14.png)
 
 **图 6**:GridView 已添加到页上，然后绑定到对象数据源 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image16.png))
 
@@ -106,7 +106,7 @@ ObjectDataSource 具有已添加到页并配置后，我们就可以将数据 We
 然后可以自定义、 重新排列，或单击智能标记中的编辑列选项删除 GridView 的 BoundFields。
 
 
-[![M管理 GridView BoundFields 通过编辑列对话框](displaying-data-with-the-objectdatasource-cs/_static/image18.png)](displaying-data-with-the-objectdatasource-cs/_static/image17.png)
+[![管理 GridView 的 BoundFields 通过编辑列对话框](displaying-data-with-the-objectdatasource-cs/_static/image18.png)](displaying-data-with-the-objectdatasource-cs/_static/image17.png)
 
 **图 7**:GridView 的 BoundFields 通过编辑列管理对话框 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image19.png))
 
@@ -117,7 +117,7 @@ ObjectDataSource 具有已添加到页并配置后，我们就可以将数据 We
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-cs/samples/sample2.aspx)]
 
 
-[![T他 GridView BoundFields 已自定义](displaying-data-with-the-objectdatasource-cs/_static/image21.png)](displaying-data-with-the-objectdatasource-cs/_static/image20.png)
+[![已自定义 GridView 的 BoundFields](displaying-data-with-the-objectdatasource-cs/_static/image21.png)](displaying-data-with-the-objectdatasource-cs/_static/image20.png)
 
 **图 8**:GridView 的 BoundFields 已自定义 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image22.png))
 
@@ -133,7 +133,7 @@ ObjectDataSource 具有已添加到页并配置后，我们就可以将数据 We
 通过将新的外观文件添加到名为的项目启动`GridView.skin`通过右键单击解决方案资源管理器中的项目名称并选择添加新项。
 
 
-[![Add 外观文件命名为 GridView.skin](displaying-data-with-the-objectdatasource-cs/_static/image24.png)](displaying-data-with-the-objectdatasource-cs/_static/image23.png)
+[![添加名为 GridView.skin 的外观文件](displaying-data-with-the-objectdatasource-cs/_static/image24.png)](displaying-data-with-the-objectdatasource-cs/_static/image23.png)
 
 **图 9**:添加外观文件命名为`GridView.skin`([单击以查看实际尺寸的图像](displaying-data-with-the-objectdatasource-cs/_static/image25.png))
 
@@ -141,7 +141,7 @@ ObjectDataSource 具有已添加到页并配置后，我们就可以将数据 We
 外观文件需要放在一个主题，其中位于`App_Themes`文件夹。 由于我们还没有这样的文件夹，将请先将其提供 Visual Studio 创建一个对我们添加我们的第一个外观时。 单击是以创建`App_Theme`文件夹和放置新`GridView.skin`文件存在。
 
 
-[![L设置 Visual Studio 创建 App_Theme 文件夹](displaying-data-with-the-objectdatasource-cs/_static/image27.png)](displaying-data-with-the-objectdatasource-cs/_static/image26.png)
+[![让 Visual Studio 创建 App_Theme 文件夹](displaying-data-with-the-objectdatasource-cs/_static/image27.png)](displaying-data-with-the-objectdatasource-cs/_static/image26.png)
 
 **图 10**:让 Visual Studio 创建`App_Theme`文件夹 ([单击以查看实际尺寸的图像](displaying-data-with-the-objectdatasource-cs/_static/image28.png))
 
@@ -172,7 +172,7 @@ ObjectDataSource 具有已添加到页并配置后，我们就可以将数据 We
 就这么简单！ `styleSheetTheme`主题中指定的属性应设置指示*不*重写在控件级别指定的属性。 若要指定主题设置应该也能带来控制设置，请使用`theme`属性来代替`styleSheetTheme`; 遗憾的是，通过指定的主题设置`theme`属性不会出现在 Visual Studio 设计视图中。 请参阅[ASP.NET 主题和外观概述](https://msdn.microsoft.com/library/ykzx33wh.aspx)并[服务器端样式使用主题](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)有关详细信息的主题和外观; 请参阅[How To:应用 ASP.NET 主题](https://msdn.microsoft.com/library/0yy5hxdk(VS.80).aspx)配置页后，可以使用主题的详细信息。
 
 
-[![T他 GridView 显示产品的名称、 类别、 供应商、 价格和停用信息](displaying-data-with-the-objectdatasource-cs/_static/image31.png)](displaying-data-with-the-objectdatasource-cs/_static/image30.png)
+[![GridView 显示产品的名称、 类别、 供应商、 价格和已停止使用的信息](displaying-data-with-the-objectdatasource-cs/_static/image31.png)](displaying-data-with-the-objectdatasource-cs/_static/image30.png)
 
 **图 12**:GridView 显示产品的名称、 类别、 供应商、 价格和停用信息 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image32.png))
 
@@ -184,7 +184,7 @@ GridView 显示个返回的数据源控件绑定到每个记录都占一行。 �
 首先，通过添加的 DetailsView 控件*上面*GridView 中的`SimpleDisplay.aspx`。 接下来，将其绑定到相同的 ObjectDataSource 控件为 GridView。 正如 gridview，BoundField 将添加到对象数据源返回的对象中每个属性 DetailsView`Select`方法。 唯一的区别是水平方向而不是垂直 DetailsView BoundFields 的布局方式。
 
 
-[![Add DetailsView 到页面并将其绑定到 ObjectDataSource](displaying-data-with-the-objectdatasource-cs/_static/image34.png)](displaying-data-with-the-objectdatasource-cs/_static/image33.png)
+[![添加到页面的 DetailsView 并将其绑定到对象数据源](displaying-data-with-the-objectdatasource-cs/_static/image34.png)](displaying-data-with-the-objectdatasource-cs/_static/image33.png)
 
 **图 13**:添加到页面的 DetailsView 并将其绑定到对象数据源 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image35.png))
 
@@ -192,7 +192,7 @@ GridView 显示个返回的数据源控件绑定到每个记录都占一行。 �
 如 GridView、 DetailsView BoundFields，就可以调整以提供更多自定义的视图的对象数据源返回的数据。 图 14 显示后其 BoundFields DetailsView 和`CssClass`已配置属性，使其外观类似于 GridView 示例。
 
 
-[![T他 DetailsView 会显示一条记录](displaying-data-with-the-objectdatasource-cs/_static/image37.png)](displaying-data-with-the-objectdatasource-cs/_static/image36.png)
+[![在 DetailsView 显示一条记录](displaying-data-with-the-objectdatasource-cs/_static/image37.png)](displaying-data-with-the-objectdatasource-cs/_static/image36.png)
 
 **图 14**:在 DetailsView 显示一条记录 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image38.png))
 
@@ -200,12 +200,12 @@ GridView 显示个返回的数据源控件绑定到每个记录都占一行。 �
 请注意，DetailsView 仅显示其数据源返回的第一个记录。 若要允许用户以单步执行的所有记录，一次一个地我们必须启用 DetailsView 的分页。 为此，请返回到 Visual Studio，并检查 DetailsView 的智能标记中的启用分页复选框。
 
 
-[![E启用分页，DetailsView 控件中](displaying-data-with-the-objectdatasource-cs/_static/image40.png)](displaying-data-with-the-objectdatasource-cs/_static/image39.png)
+[![在 DetailsView 控件中启用分页](displaying-data-with-the-objectdatasource-cs/_static/image40.png)](displaying-data-with-the-objectdatasource-cs/_static/image39.png)
 
 **图 15**:在 DetailsView 控件中启用分页 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image41.png))
 
 
-[![W第 i 个分页启用 DetailsView 允许用户查看的任何产品](displaying-data-with-the-objectdatasource-cs/_static/image43.png)](displaying-data-with-the-objectdatasource-cs/_static/image42.png)
+[![使用启用了分页，DetailsView 允许用户查看的任何产品](displaying-data-with-the-objectdatasource-cs/_static/image43.png)](displaying-data-with-the-objectdatasource-cs/_static/image42.png)
 
 **图 16**:使用启用了分页，DetailsView 允许用户查看的任何产品 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image44.png))
 
@@ -221,7 +221,7 @@ GridView 显示个返回的数据源控件绑定到每个记录都占一行。 �
 添加到 FormView 控件`SimpleDisplay.aspx`页面的设计图面。 最初 FormView 显示为灰色块，告知我们，我们需要提供，最小值，该控件的`ItemTemplate`。
 
 
-[![T他 FormView 必须包括 ItemTemplate](displaying-data-with-the-objectdatasource-cs/_static/image46.png)](displaying-data-with-the-objectdatasource-cs/_static/image45.png)
+[![FormView 必须包括 ItemTemplate](displaying-data-with-the-objectdatasource-cs/_static/image46.png)](displaying-data-with-the-objectdatasource-cs/_static/image45.png)
 
 **图 17**:FormView 必须包括`ItemTemplate`([单击以查看实际尺寸的图像](displaying-data-with-the-objectdatasource-cs/_static/image47.png))
 
@@ -232,7 +232,7 @@ GridView 显示个返回的数据源控件绑定到每个记录都占一行。 �
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-cs/samples/sample6.aspx)]
 
 
-[![T自定义格式显示他的第一个产品 (Chai)](displaying-data-with-the-objectdatasource-cs/_static/image49.png)](displaying-data-with-the-objectdatasource-cs/_static/image48.png)
+[![第一个产品 (Chai) 显示在自定义格式](displaying-data-with-the-objectdatasource-cs/_static/image49.png)](displaying-data-with-the-objectdatasource-cs/_static/image48.png)
 
 **图 18**:第一个产品 (Chai) 显示在自定义格式 ([单击此项可查看原尺寸图像](displaying-data-with-the-objectdatasource-cs/_static/image50.png))
 
@@ -269,4 +269,4 @@ DetailsView，如 FormView 仅显示从 ObjectDataSource 返回的第一个记�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Hilton Giesenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](declarative-parameters-cs.md)
+> [下一页](declarative-parameters-cs.md)

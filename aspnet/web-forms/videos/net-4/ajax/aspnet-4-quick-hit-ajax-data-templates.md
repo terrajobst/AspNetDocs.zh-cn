@@ -12,7 +12,7 @@ ms.openlocfilehash: 44219c97cfcb1a17acbe22a7413a33eb8b8c52b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388512"
 ---
 # <a name="aspnet-4-quick-hit---ajax-data-templates"></a>ASP.NET 4"快速命中"的 AJAX 数据模板
@@ -24,4 +24,4 @@ ms.locfileid: "59388512"
 [&#9654;观看视频 （12 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-ajax-data-templates)
 
 > [!div class="step-by-step"]
-> [上一个](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
+> [上一篇](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)

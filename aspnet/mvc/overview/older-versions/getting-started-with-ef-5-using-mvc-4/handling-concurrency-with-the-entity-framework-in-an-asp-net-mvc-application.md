@@ -12,7 +12,7 @@ ms.openlocfilehash: a79cca143df9a10b4255796a6d034688713e4e52
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379750"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>处理并发使用实体框架在 ASP.NET MVC 应用程序 (第 7 个 10)

@@ -12,7 +12,7 @@ ms.openlocfilehash: c992c782ce52066452b42bc09052ec1985e13200
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417086"
 ---
 # <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>Forms 身份验证配置和高级主题 (VB)
@@ -39,7 +39,7 @@ ms.locfileid: "59417086"
 表 1 总结了可以通过自定义的属性&lt;窗体&gt;元素。 Web.config 是一个 XML 文件，因为左侧列中的属性名称是区分大小写。
 
 
-| <strong>特性</strong> |                                                                                                                                                                                                                                     <strong>描述</strong>                                                                                                                                                                                                                                      |
+| <strong>特性</strong> |                                                                                                                                                                                                                                     <strong>说明</strong>                                                                                                                                                                                                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         cookieless         |                                                                                                                此属性指定在什么条件下的身份验证票证存储在与要在 URL 中嵌入的 cookie。 允许的值为：UseCookies;UseUri;自动检测;和 UseDeviceProfile （默认值）。 步骤 2 检查更多详细信息中的此设置。                                                                                                                |
 |         defaultUrl         |                                                                                                                                                         指示用户将重定向到登录后从登录页如果不存在 RedirectUrl 值在查询字符串中指定的 URL。 默认值为 default.aspx。                                                                                                                                                         |
@@ -84,7 +84,7 @@ ms.locfileid: "59417086"
 图 1 说明了在工作流时 slidingExpiration 设置为 false，超时设置为 30。 请注意，在登录时生成的身份验证票证包含到期日期，并在后续请求中未更新此值。 如果 FormsAuthenticationModule 找到此票证已到期，它将其丢弃，并将请求视为匿名。
 
 
-[![A 窗体身份验证票证到期时 slidingExpiration 的图形表示形式为 false](forms-authentication-configuration-and-advanced-topics-vb/_static/image2.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image1.png)
+[![以图形形式的窗体身份验证票证到期时 slidingExpiration 为 false](forms-authentication-configuration-and-advanced-topics-vb/_static/image2.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image1.png)
 
 **图 01**:以图形形式的窗体身份验证票证到期时 slidingExpiration 为 false ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image3.png))
 
@@ -92,7 +92,7 @@ ms.locfileid: "59417086"
 图 2 显示了工作流时 slidingExpiration 设置为 true，并且超时设置为 30。 时 （使用非过期票证） 收到的已经过身份验证的请求其到期将更新为在将来分钟的超时数。
 
 
-[![A 窗体身份验证票证的图形表示形式 slidingExpiration 条件为 true 时](forms-authentication-configuration-and-advanced-topics-vb/_static/image5.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image4.png)
+[![以图形形式的窗体身份验证票证 slidingExpiration 条件为 true 时](forms-authentication-configuration-and-advanced-topics-vb/_static/image5.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image4.png)
 
 **图 02**:以图形形式的窗体身份验证票证 slidingExpiration 条件为 true 时 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image6.png))
 
@@ -181,7 +181,7 @@ Cookie 是一个自然媒体是默认窗体身份验证设置使用 cookie，如
 创建 （或修改） 时的票证，窗体身份验证系统创建 MAC，并将其附加到的票证数据。 当后续请求到达时，窗体身份验证系统进行比较来验证票证数据的真实性的 MAC 和票证数据。 图 3 以图形方式显示此工作流。
 
 
-[![T通过在 MAC 确保他票证的真实性](forms-authentication-configuration-and-advanced-topics-vb/_static/image8.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image7.png)
+[![票证的真实性确保通过 MAC](forms-authentication-configuration-and-advanced-topics-vb/_static/image8.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image7.png)
 
 **图 03**:通过在 MAC 确保票证的真实性 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image9.png))
 
@@ -199,7 +199,7 @@ Microsoft 强烈建议使用的所有设置。
 
 加密和哈希算法由窗体身份验证系统中用于加密和验证身份验证票证是通过可自定义[ &lt;machineKey&gt;元素](https://msdn.microsoft.com/library/w8h3skw9.aspx)在 Web.config 中。表 2 轮廓&lt;machineKey&gt;元素的特性和其可能的值。
 
-| **特性** | **描述** |
+| **特性** | **说明** |
 | --- | --- |
 | 解密 | 指示用于加密的算法。 此属性可以具有以下四个值之一:-自动-默认设置;确定基于 decryptionKey 属性的长度的算法。 使用 AES-[高级加密标准 (AES)](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard)算法。 DES-使用[数据加密标准 (DES)](http://en.wikipedia.org/wiki/Data_Encryption_Standard)此算法被视为计算弱，因此不应。 -3DES-使用[三重 DES](http://en.wikipedia.org/wiki/Triple_DES)算法工作方式是应用三次的 DES 算法。 |
 | decryptionKey | 使用的加密算法密钥。 此值必须是适当的长度 （基于中解密值）、 自动生成或附加，其中任何一个值的十六进制字符串 IsolateApps。 添加 IsolateApps 指示 ASP.NET 为每个应用程序使用的唯一值。 默认值为 AutoGenerate，IsolateApps。 |
@@ -238,7 +238,7 @@ Microsoft 强烈建议使用的所有设置。
 我们需要访问存储在票证中的数据，只要我们能做到获取当前请求的 FormsAuthenticationTicket 和反序列化的 UserData 属性。 出生和雇主名称示例的日期，在我们会将 UserData 字符串拆分为两个基于分隔符 (|) 的子字符串。
 
 
-[![A用户信息可以存储在身份验证票证的 dditional](forms-authentication-configuration-and-advanced-topics-vb/_static/image11.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image10.png)
+[![其他用户信息可以存储在身份验证票证](forms-authentication-configuration-and-advanced-topics-vb/_static/image11.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image10.png)
 
 **图 04**:其他用户的信息可以存储在身份验证票证 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image12.png))
 
@@ -302,7 +302,7 @@ authCookie.Value = FormsAuthentication.Encrypt(newTicket)
 图 5 显示了操作中的此显示的屏幕截图。 日志记录为 Scott 显示包含 Scott 的公司和标题的欢迎使用后的消息。
 
 
-[![T显示他当前登录的用户的公司和标题](forms-authentication-configuration-and-advanced-topics-vb/_static/image14.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image13.png)
+[![会显示当前登录的用户的公司和标题](forms-authentication-configuration-and-advanced-topics-vb/_static/image14.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image13.png)
 
 **图 05**:会显示当前登录的用户的公司和标题 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image15.png))
 
@@ -338,7 +338,7 @@ GenericPrincipal 类能满足大多数窗体基于的身份验证方案不使用
 接下来，将两个新类文件添加到应用\_代码文件夹，一个命名的 CustomIdentity.vb，另一个名为 CustomPrincipal.vb。
 
 
-[![Add CustomIdentity 和 CustomPrincipal 类到您的项目](forms-authentication-configuration-and-advanced-topics-vb/_static/image17.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image16.png)
+[![将 CustomIdentity 和 CustomPrincipal 类添加到你的项目](forms-authentication-configuration-and-advanced-topics-vb/_static/image17.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image16.png)
 
 **图 06**:将 CustomIdentity 和 CustomPrincipal 类添加到你的项目 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image18.png))
 
@@ -362,7 +362,7 @@ CustomIdentity 类负责实现 IIdentity 接口，定义 AuthenticationType、 I
 AuthenticateRequest 事件之后，ASP.NET 管道引发[PostAuthenticateRequest 事件](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx)，这是我们可以替换为创建的实例与 FormsAuthenticationModule 的 GenericPrincipal 对象我们CustomPrincipal 对象。 图 7 显示了此工作流。
 
 
-[![T他 GenericPrincipal 将替换为在 PostAuthenticationRequest 事件 CustomPrincipal](forms-authentication-configuration-and-advanced-topics-vb/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image19.png)
+[![GenericPrincipal CustomPrincipal PostAuthenticationRequest 事件中被替换为](forms-authentication-configuration-and-advanced-topics-vb/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image19.png)
 
 **图 07**:GenericPrincipal CustomPrincipal PostAuthenticationRequest 事件中被替换为 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image21.png))
 
@@ -370,7 +370,7 @@ AuthenticateRequest 事件之后，ASP.NET 管道引发[PostAuthenticateRequest 
 若要执行的代码以响应 ASP.NET 管道事件，我们可以在 Global.asax 中创建相应的事件处理程序，或创建我们自己的 HTTP 模块。 对于本教程让我们在 Global.asax 中创建的事件处理程序。 首先将 Global.asax 添加到你的网站。 右键单击解决方案资源管理器中的项目名称并添加名为 Global.asax 的全局应用程序类类型的项。
 
 
-[![Add 到您的网站的 Global.asax 文件](forms-authentication-configuration-and-advanced-topics-vb/_static/image23.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image22.png)
+[![Global.asax 文件添加到你的网站](forms-authentication-configuration-and-advanced-topics-vb/_static/image23.png)](forms-authentication-configuration-and-advanced-topics-vb/_static/image22.png)
 
 **图 08**:Global.asax 文件添加到您的网站 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-vb/_static/image24.png))
 
@@ -437,4 +437,4 @@ ASP.NET 运行时自动同步为我们的这些属性值。 但是，Authenticat
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Alicja Maziarz。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com)。
 
 > [!div class="step-by-step"]
-> [上一个](an-overview-of-forms-authentication-vb.md)
+> [上一篇](an-overview-of-forms-authentication-vb.md)

@@ -13,7 +13,7 @@ ms.openlocfilehash: 6f8b926c78097b68e6a159f2fdd30e7b8a6477a0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395168"
 ---
 # <a name="developing-aspnet-apps-with-azure-active-directory"></a>借助 Azure Active Directory 开发 ASP.NET 应用
@@ -142,7 +142,7 @@ Microsoft ASP.NET 工具为 Azure Active Directory 简化了为托管的 web 应
 
 ## <a name="more-information"></a>详细信息
 
-- [深入探讨：Azure 网站和组织使用 Azure AD 的身份验证](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
+- [深入了解：Azure 网站和组织使用 Azure AD 的身份验证](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
 - [Azure AD Graph API 概述](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 - [Azure AD 中的身份验证方案](https://msdn.microsoft.com/library/azure/dn499820.aspx)
 - [GitHub 上的 azure AD 代码示例](https://github.com/AzureADSamples)

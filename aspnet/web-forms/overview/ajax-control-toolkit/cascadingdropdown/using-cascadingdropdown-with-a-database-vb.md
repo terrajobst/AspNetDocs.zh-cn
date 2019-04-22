@@ -12,7 +12,7 @@ ms.openlocfilehash: d0b6f8651e327cf9ad2a3051edd323efba4f64fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418724"
 ---
 # <a name="using-cascadingdropdown-with-a-database-vb"></a>通过数据库使用 CascadingDropDown (VB)
@@ -44,11 +44,11 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 
 然后，必须将两个 CascadingDropDown 扩展器添加到页面。 一个填充第一个 （供应商） 列表，并将另一个填充第二个 （联系人） 列表。 必须设置以下属性：
 
-- `ServicePath`:Web 服务，可提供的列表项的 URL
-- `ServiceMethod`:提供的列表项的 web 方法
-- `TargetControlID`:下拉列表的 ID
-- `Category`:提交到 web 方法调用时的类别信息
-- `PromptText`:以异步方式从服务器加载列表数据时显示的文本
+- `ServicePath`：Web 服务，可提供的列表项的 URL
+- `ServiceMethod`：提供的列表项的 web 方法
+- `TargetControlID`：下拉列表的 ID
+- `Category`：提交到 web 方法调用时的类别信息
+- `PromptText`：以异步方式从服务器加载列表数据时显示的文本
 - `ParentControlID`: (可选) 父下拉列表中列出的当前列表，触发器加载
 
 具体取决于使用的编程语言，有问题的 web 服务的名称更改，但所有其他属性值是相同的。 下面是第一个下拉列表中的 CascadingDropDown 元素：
@@ -86,12 +86,12 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 加载 ASP.NET 页上，并且之后不久, 供应商列表填充包含 25 个条目。 选择一个条目，并请注意如何使用数据填充第二个下拉列表中。
 
 
-[![T他的第一个列表是自动填充](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
+[![自动填充第一个列表](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
 
 自动填充第一个列表 ([单击此项可查看原尺寸图像](using-cascadingdropdown-with-a-database-vb/_static/image3.png))
 
 
-[![T根据第一个列表中选择填充他第二个列表](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
+[![第二个列表填充根据第一个列表中选择](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
 
 第二个列表填充根据第一个列表中选择 ([单击此项可查看原尺寸图像](using-cascadingdropdown-with-a-database-vb/_static/image6.png))
 

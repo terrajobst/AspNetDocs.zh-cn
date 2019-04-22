@@ -12,7 +12,7 @@ ms.openlocfilehash: 0fb0a331a2a6e2af5c5097db8b57942525d24ffc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384300"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付 （使用 Azure 构建实际云应用）
@@ -34,7 +34,7 @@ ms.locfileid: "59384300"
 
 下图出自[Microsoft 模式和实践电子书有关持续交付](https://aka.ms/ReleasePipeline)说明了典型的工作流。 单击此图像可查看它在其原始上下文中的完整大小。
 
-[![C周期传送工作流](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
+[![持续交付工作流](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
 ## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>如何在云中通过经济高效的 CI 和 CD
 

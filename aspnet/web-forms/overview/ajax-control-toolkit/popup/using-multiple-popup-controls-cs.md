@@ -12,7 +12,7 @@ ms.openlocfilehash: 2d13fbfdb8d2fe66c5ff036060b9289017f79d14
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421532"
 ---
 # <a name="using-multiple-popup-controls-c"></a>使用多个弹出控件 (C#)
@@ -49,9 +49,9 @@ AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激�
 现在只要您在文本字段内单击，日历显示字段的下方，您可以选择一个日期。 （所选的日期取回到文本框中将介绍在不同的教程。）
 
 
-[![T当用户单击文本框时显示他日历](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
+[![当用户单击文本框中，将显示日历](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
 
 当用户单击文本框中，将显示日历 ([单击此项可查看原尺寸图像](using-multiple-popup-controls-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
+> [下一页](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)

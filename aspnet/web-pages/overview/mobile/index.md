@@ -12,7 +12,7 @@ ms.openlocfilehash: 552d047286adbc53e4161b412432cbf0b3bfb4c9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380296"
 ---
 # <a name="mobile"></a>移动电话
@@ -20,4 +20,4 @@ ms.locfileid: "59380296"
 > 如何使用 ASP.NET Web Pages 应用程序中的移动设备。
 
 
-- [为移动设备呈现 ASP.NET 网页站点](rendering-aspnet-web-pages-sites-for-mobile-devices.md)
+- [为移动设备呈现 ASP.NET 网站](rendering-aspnet-web-pages-sites-for-mobile-devices.md)

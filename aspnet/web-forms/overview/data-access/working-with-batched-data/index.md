@@ -12,7 +12,7 @@ ms.openlocfilehash: aeb462d639e1af99b22b13a8f102de0835afc832
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417944"
 ---
 # <a name="working-with-batched-data"></a>处理批量数据

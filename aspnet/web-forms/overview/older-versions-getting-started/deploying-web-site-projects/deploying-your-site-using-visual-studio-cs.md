@@ -12,7 +12,7 @@ ms.openlocfilehash: 9512685672e42091e7be11c5710a2434ca8b0488
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392412"
 ---
 # <a name="deploying-your-site-using-visual-studio-c"></a>使用 Visual Studio 部署站点 (C#)
@@ -45,7 +45,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 通过单击解决方案资源管理器 （图 1 中有此图标圆圈）; 复制网站图标启动复制网站工具项目或者，您可以从网站菜单上选择复制网站选项。 这两种方法启动图 1; 中所示的复制网站用户界面图 1 中的，左窗格中仅被填充，因为我们尚未连接到远程服务器。
 
 
-[![T他复制网站工具用户界面是划分到两个窗格](deploying-your-site-using-visual-studio-cs/_static/image2.png)](deploying-your-site-using-visual-studio-cs/_static/image1.png)
+[![复制网站工具的用户界面是划分到两个窗格](deploying-your-site-using-visual-studio-cs/_static/image2.png)](deploying-your-site-using-visual-studio-cs/_static/image1.png)
 
 **图 1**:复制网站工具的用户界面是划分到两个窗格 ([单击此项可查看原尺寸图像](deploying-your-site-using-visual-studio-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 大多数 web 宿主提供程序支持 FTP，但更少提供 FrontPage 服务器扩展插件的支持。 为此，我已选择了 FTP 站点的选项，然后输入连接信息，如图 2 中所示。
 
 
-[![S指定目标网站](deploying-your-site-using-visual-studio-cs/_static/image5.png)](deploying-your-site-using-visual-studio-cs/_static/image4.png)
+[![指定目标网站](deploying-your-site-using-visual-studio-cs/_static/image5.png)](deploying-your-site-using-visual-studio-cs/_static/image4.png)
 
 **图 2**:指定目标网站 ([单击此项可查看原尺寸图像](deploying-your-site-using-visual-studio-cs/_static/image6.png))
 
@@ -72,7 +72,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 让我们添加一个新页到 BookReviewsWSP 项目，然后将其部署，以便我们可以看到操作中的复制网站工具。 Visual Studio 中名为的根目录中创建一个新的 ASP.NET 页面`Privacy.aspx`。 已使用的母版页的页`Site.master`并将站点的隐私策略添加到此页。 创建此页后，图 3 显示了 Visual Studio。
 
 
-[![A新的页名为 dd&lt;代码&gt;Privacy.aspx&lt;o&gt;到网站的根文件夹](deploying-your-site-using-visual-studio-cs/_static/image8.png)](deploying-your-site-using-visual-studio-cs/_static/image7.png)
+[![添加新的页名为&lt;代码&gt;Privacy.aspx&lt;o&gt;到网站的根文件夹](deploying-your-site-using-visual-studio-cs/_static/image8.png)](deploying-your-site-using-visual-studio-cs/_static/image7.png)
 
 **图 3**:添加新的页名为`Privacy.aspx`网站的根文件夹 ([单击以查看实际尺寸的图像](deploying-your-site-using-visual-studio-cs/_static/image9.png))
 
@@ -80,7 +80,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 接下来，返回到复制网站用户界面。 如图 4 所示，左窗格中现在包括新的文件-`Policy.aspx`和`Policy.aspx.cs`。 更重要的是，这些文件用箭头图标和状态的新，指示它们存在本地站点上但不是在远程站点进行标记。
 
 
-[![T他复制网站工具包括新建&lt;代码&gt;Privacy.aspx&lt;o&gt;在其左侧窗格中的页](deploying-your-site-using-visual-studio-cs/_static/image11.png)](deploying-your-site-using-visual-studio-cs/_static/image10.png)
+[![复制网站工具包括新建&lt;代码&gt;Privacy.aspx&lt;o&gt;其左侧窗格中的页面](deploying-your-site-using-visual-studio-cs/_static/image11.png)](deploying-your-site-using-visual-studio-cs/_static/image10.png)
 
 **图 4**:复制网站工具包括新建`Privacy.aspx`在其左侧窗格中的页 ([单击以查看实际尺寸的图像](deploying-your-site-using-visual-studio-cs/_static/image12.png))
 
@@ -90,7 +90,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 列出新的文件，以及复制网站工具突出显示了不同本地和远程站点之间的任何文件。 若要了解此操作，请返回到`Privacy.aspx`页上，并将几个更多的单词添加到的隐私策略。 保存页面，然后返回到复制网站工具。 如图 5 所示，`Privacy.aspx`左侧窗格中的状态为已更改，指示它已与远程站点不同步。
 
 
-[![T他复制网站工具指示&lt;代码&gt;Privacy.aspx&lt;o&gt;页已更改](deploying-your-site-using-visual-studio-cs/_static/image14.png)](deploying-your-site-using-visual-studio-cs/_static/image13.png)
+[![复制网站工具指示&lt;代码&gt;Privacy.aspx&lt;o&gt;页已更改](deploying-your-site-using-visual-studio-cs/_static/image14.png)](deploying-your-site-using-visual-studio-cs/_static/image13.png)
 
 **图 5**:复制网站工具指示`Privacy.aspx`页已更改 ([单击以查看实际尺寸的图像](deploying-your-site-using-visual-studio-cs/_static/image15.png))
 
@@ -117,7 +117,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 此外，还有一个上载的内容选项`App_Data`文件夹。
 
 
-[![S指定目标网站](deploying-your-site-using-visual-studio-cs/_static/image17.png)](deploying-your-site-using-visual-studio-cs/_static/image16.png)
+[![指定目标网站](deploying-your-site-using-visual-studio-cs/_static/image17.png)](deploying-your-site-using-visual-studio-cs/_static/image16.png)
 
 **图 6**:指定目标网站 ([单击此项可查看原尺寸图像](deploying-your-site-using-visual-studio-cs/_static/image18.png))
 
@@ -127,7 +127,7 @@ Visual Studio 的复制网站工具是在功能上类似于独立 FTP 客户端�
 发布操作完成后，图 7 显示了 FTP 站点上的文件。 请注意，只有标记页和需要服务器端和客户端的支持文件已上传。
 
 
-[![O所需的文件发布到生产环境的 nly](deploying-your-site-using-visual-studio-cs/_static/image20.png)](deploying-your-site-using-visual-studio-cs/_static/image19.png)
+[![仅将所需的文件发布到生产环境](deploying-your-site-using-visual-studio-cs/_static/image20.png)](deploying-your-site-using-visual-studio-cs/_static/image19.png)
 
 **图 7**:仅需要文件发布到生产环境 ([单击此项可查看原尺寸图像](deploying-your-site-using-visual-studio-cs/_static/image21.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: da63b39fcad58580dd1f9c86b811b1a2dcc1cf7e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416644"
 ---
 # <a name="deploying-a-database-c"></a>部署数据库 (C#)
@@ -47,7 +47,7 @@ ms.locfileid: "59416644"
 图 1 显示了以下四个表的 ER 关系图。
 
 
-[![T他通讯簿评审 Web 应用程序的数据库是包含的四个表](deploying-a-database-cs/_static/image2.jpg)](deploying-a-database-cs/_static/image1.jpg) 
+[![通讯簿评审 Web 应用程序的数据库是包含的四个表](deploying-a-database-cs/_static/image2.jpg)](deploying-a-database-cs/_static/image1.jpg) 
 
 **图 1**:通讯簿评审 Web 应用程序的数据库是包含的四个表 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image3.jpg))
 
@@ -57,12 +57,12 @@ ms.locfileid: "59416644"
 图 2 和 3 个 show`Genre.aspx`和`Review.aspx`操作中的页。 请注意每个页面在地址栏中的 URL。 在图 2 it s Genre.aspx？ ID = 85d164ba 1123年 4 c 的 47-82a0-c8ec75de7e0e。 因为 85d164ba-1123-4c47-82a0-c8ec75de7e0e`GenreId`技术 genre、"技术回顾"页的标题读取和项目符号列表的值枚举属于此类型在站点上的这些评论。
 
 
-[![T他技术流派页](deploying-a-database-cs/_static/image5.jpg)](deploying-a-database-cs/_static/image4.jpg) 
+[![技术流派页](deploying-a-database-cs/_static/image5.jpg)](deploying-a-database-cs/_static/image4.jpg) 
 
 **图 2**:技术流派页 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image6.jpg))
 
 
-[![T在 24 小时内的教授自己 ASP.NET 3.5 查看他](deploying-a-database-cs/_static/image8.jpg)](deploying-a-database-cs/_static/image7.jpg) 
+[![有关查看自学 ASP.NET 3.5 中 24 小时](deploying-a-database-cs/_static/image8.jpg)](deploying-a-database-cs/_static/image7.jpg) 
 
 **图 3**:审阅*教您自己 ASP.NET 3.5 24 小时内*([单击以查看实际尺寸的图像](deploying-a-database-cs/_static/image9.jpg))
 
@@ -96,7 +96,7 @@ ms.locfileid: "59416644"
 打开 Visual Studio 并导航到`Reviews.mdf`数据库。 如果使用 Visual Web Developer 中，转到数据库资源管理器;如果使用的 Visual Studio，，使用服务器资源管理器。 图 4 显示了`Reviews.mdf`Visual Web Developer 中的数据库资源管理器中的数据库。 如图 4 所示，`Reviews.mdf`数据库组成的四个表、 三个存储的过程和用户定义函数。
 
 
-[![Locate 数据库资源管理器或服务器资源管理器中的数据库](deploying-a-database-cs/_static/image11.jpg)](deploying-a-database-cs/_static/image10.jpg) 
+[![在数据库资源管理器或服务器资源管理器中找到数据库](deploying-a-database-cs/_static/image11.jpg)](deploying-a-database-cs/_static/image10.jpg) 
 
 **图 4**:在数据库资源管理器或服务器资源管理器中找到数据库 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image12.jpg))
 
@@ -104,7 +104,7 @@ ms.locfileid: "59416644"
 右键单击数据库名称，然后从上下文菜单中选择"发布到提供程序"选项。 这将启动数据库发布向导 （请参见图 5）。 单击旁边提前过去的初始屏幕。
 
 
-[![T他数据库发布向导的初始屏幕](deploying-a-database-cs/_static/image14.jpg)](deploying-a-database-cs/_static/image13.jpg) 
+[![数据库发布向导的初始屏幕](deploying-a-database-cs/_static/image14.jpg)](deploying-a-database-cs/_static/image13.jpg) 
 
 **图 5**:数据库发布向导的初始屏幕 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image15.jpg))
 
@@ -115,7 +115,7 @@ ms.locfileid: "59416644"
 > 如果收到错误"在数据库中有任何对象*databaseName*的此向导可编写脚本的类型"时在图 6 中所示的屏幕中单击下一步，请确保您的数据库文件的路径不是很长。 已发现，是否数据库文件的路径太长，可能会出现此错误。
 
 
-[![T他数据库发布向导的初始屏幕](deploying-a-database-cs/_static/image17.jpg)](deploying-a-database-cs/_static/image16.jpg) 
+[![数据库发布向导的初始屏幕](deploying-a-database-cs/_static/image17.jpg)](deploying-a-database-cs/_static/image16.jpg) 
 
 **图 6**:数据库发布向导的初始屏幕 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image18.jpg))
 
@@ -123,7 +123,7 @@ ms.locfileid: "59416644"
 从下一个屏幕可以生成的脚本文件或者，如果你的 web 主机支持此功能，数据库将直接发布到 web 宿主提供程序的数据库服务器。 如图 7 所示，我遇到脚本写入到文件`C:\REVIEWS.MDF.sql`。
 
 
-[![Script 数据库添加到一个文件或将其发布到你的 Web 宿主提供程序直接](deploying-a-database-cs/_static/image20.jpg)](deploying-a-database-cs/_static/image19.jpg) 
+[![编写脚本的数据库的文件或将其发布到你的 Web 宿主提供程序直接](deploying-a-database-cs/_static/image20.jpg)](deploying-a-database-cs/_static/image19.jpg) 
 
 **图 7**:编写脚本的数据库的文件或将其发布到你的 Web 宿主提供程序直接 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image21.jpg))
 
@@ -133,7 +133,7 @@ ms.locfileid: "59416644"
 如图 8 所示，我遇到配置为删除现有数据库对象，该向导生成脚本的 SQL Server 2008 数据库，并将发布架构和数据。
 
 
-[![S指定发布选项](deploying-a-database-cs/_static/image23.jpg)](deploying-a-database-cs/_static/image22.jpg) 
+[![指定发布选项](deploying-a-database-cs/_static/image23.jpg)](deploying-a-database-cs/_static/image22.jpg) 
 
 **图 8**:指定发布选项 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image24.jpg))
 
@@ -149,7 +149,7 @@ ms.locfileid: "59416644"
 启动 SSMS 并连接到使用 web 主机提供商提供的信息在 web 主机的数据库服务器。
 
 
-[![C为你的 Web 主机提供商 s 数据库服务器 onnect](deploying-a-database-cs/_static/image26.jpg)](deploying-a-database-cs/_static/image25.jpg) 
+[![连接到 Web 宿主提供程序的数据库服务器](deploying-a-database-cs/_static/image26.jpg)](deploying-a-database-cs/_static/image25.jpg) 
 
 **图 9**:连接到你的 Web 主机提供商 s 数据库服务器 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image27.jpg))
 
@@ -157,7 +157,7 @@ ms.locfileid: "59416644"
 展开数据库选项卡并找到你的数据库。 单击工具栏左上角中的新建查询按钮，将粘贴数据库发布向导中，创建的脚本文件中的 SQL 命令中，单击执行按钮以在生产数据库服务器上运行这些命令。 尤其是大型脚本文件时可能需要几分钟才能执行命令。
 
 
-[![C为你的 Web 主机提供商 s 数据库服务器 onnect](deploying-a-database-cs/_static/image29.jpg)](deploying-a-database-cs/_static/image28.jpg) 
+[![连接到 Web 宿主提供程序的数据库服务器](deploying-a-database-cs/_static/image29.jpg)](deploying-a-database-cs/_static/image28.jpg) 
 
 **图 10**:连接到你的 Web 主机提供商 s 数据库服务器 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image30.jpg))
 
@@ -165,12 +165,12 @@ ms.locfileid: "59416644"
 该 s 都在这里就简单 ！ 现在，重复开发数据库到生产环境。 如果刷新该数据库在 SSMS 中的应看到新的数据库对象。 图 11 显示了生产数据库的表、 存储的过程和用户定义的函数，镜像上开发数据库。 和生产数据库的表我们指示数据库发布向导来将数据发布，因为具有在该向导已执行的时间与开发数据库的表相同的数据。 图 12 显示了中的数据`Books`生产数据库上的表。
 
 
-[![T他对象具有重复生产数据库上数据库](deploying-a-database-cs/_static/image32.jpg)](deploying-a-database-cs/_static/image31.jpg) 
+[![在生产数据库上复制了数据库对象](deploying-a-database-cs/_static/image32.jpg)](deploying-a-database-cs/_static/image31.jpg) 
 
 **图 11**:数据库对象已复制了生产数据库上 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image33.jpg))
 
 
-[![T他生产数据库上开发数据库包含相同的数据](deploying-a-database-cs/_static/image35.jpg)](deploying-a-database-cs/_static/image34.jpg) 
+[![生产数据库包含与在开发数据库相同的数据](deploying-a-database-cs/_static/image35.jpg)](deploying-a-database-cs/_static/image34.jpg) 
 
 **图 12**:生产数据库上开发数据库包含相同的数据 ([单击此项可查看原尺寸图像](deploying-a-database-cs/_static/image36.jpg))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: d6a787206862b88f915859d4a8fc4dd3c3166293
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389591"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>配置数据访问层的连接和命令级别的设置 (C#)
@@ -51,7 +51,7 @@ Microsoft.NET Framework 包含大量专门用于处理数据的类。 这些类�
 每个 TableAdapter 类具有`Connection`属性，用于指定数据库连接信息。 此属性的数据类型和`ConnectionString`值由 TableAdapter 配置向导中所做的选择。 回想一下，我们首先将 TableAdapter 添加到类型化数据集时此向导将询问我们数据库源 （请参阅图 1）。 此第一步中的下拉列表包括这些配置文件，以及在服务器资源管理器的数据连接中的任何其他数据库中指定的数据库。 如果下拉列表中，我们想要使用的数据库不存在，则可以通过单击新建连接按钮并提供所需的连接信息指定新的数据库连接。
 
 
-[![T他的 TableAdapter 配置向导的第一步](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
+[![TableAdapter 配置向导第一步](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
 **图 1**:TableAdapter 配置向导的第一个步骤 ([单击此项可查看原尺寸图像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
 
@@ -109,7 +109,7 @@ TableAdapter 类实例化时，成员变量`_connection`等同于`null`。 当`C
 打开`Northwind`数据集，单击`ProductsTableAdapter`在设计器并导航到属性窗口。 您会看见`ConnectionModifier`设置为其默认值， `Assembly`。 若要使`Connection`属性的类型化数据集 s 程序集，更改外部可用`ConnectionModifier`属性设置为`Public`。
 
 
-[![T他可访问性级别可通过 ConnectionModifier 属性配置的连接属性 s](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
+[![可通过 ConnectionModifier 属性配置连接属性 s 可访问性级别](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
 **图 4**:`Connection`通过属性可访问性级别可配置的 s`ConnectionModifier`属性 ([单击以查看实际尺寸的图像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
 

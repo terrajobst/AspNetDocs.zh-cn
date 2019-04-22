@@ -12,7 +12,7 @@ ms.openlocfilehash: 5dd5b96d0365c55cbbfa2dfe0856beda41f915e1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384755"
 ---
 # <a name="improving-performance-with-output-caching-c"></a>通过输出缓存提升性能 (C#)
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 启用输出缓存通过将 [OutputCache] 特性添加到一个单独的控制器操作或整个控制器类。 例如，在列表 1 中的控制器将公开名为 index （） 操作。 Index （） 操作的输出缓存 10 秒。
 
-**代码清单 1 – Controllers\HomeController.cs**
+**Listing 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 

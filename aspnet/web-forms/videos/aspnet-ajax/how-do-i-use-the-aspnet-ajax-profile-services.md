@@ -12,7 +12,7 @@ ms.openlocfilehash: 54b82c52f0bd58a0184824a861b5f31754652ace
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420310"
 ---
 # <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[如何实现:]使用 ASP.NET AJAX 配置文件服务？

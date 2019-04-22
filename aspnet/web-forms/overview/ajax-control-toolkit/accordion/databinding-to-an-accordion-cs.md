@@ -12,7 +12,7 @@ ms.openlocfilehash: 28e001059cb1853d21175da2a2b1af2c75364485
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380354"
 ---
 # <a name="databinding-to-an-accordion-c"></a>数据绑定到 Accordion (C#)
@@ -59,9 +59,9 @@ AJAX 控件工具包中的可折叠面板控件提供了多个窗格，并允许
 [!code-css[Main](databinding-to-an-accordion-cs/samples/sample6.css)]
 
 
-[![T他可折叠面板中的数据直接来自数据源](databinding-to-an-accordion-cs/_static/image2.png)](databinding-to-an-accordion-cs/_static/image1.png)
+[![可折叠面板中的数据直接来自数据源](databinding-to-an-accordion-cs/_static/image2.png)](databinding-to-an-accordion-cs/_static/image1.png)
 
 可折叠面板中的数据直接来自数据源 ([单击此项可查看原尺寸图像](databinding-to-an-accordion-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](dynamically-adding-an-accordion-pane-cs.md)
+> [下一页](dynamically-adding-an-accordion-pane-cs.md)

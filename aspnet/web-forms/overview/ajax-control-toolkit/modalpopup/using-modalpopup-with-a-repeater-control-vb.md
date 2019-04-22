@@ -12,7 +12,7 @@ ms.openlocfilehash: f1875ae95d79ec2a6762a547aabfbd03e0930b2c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386497"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-vb"></a>通过 Repeater 控件使用 ModalPopup (VB)
@@ -49,7 +49,7 @@ ms.locfileid: "59386497"
 然后，数据源中的每个项将显示触发模式弹出框旁边的按钮。
 
 
-[![T他模式弹出框可以为每个数据源输入触发](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
+[![可以为每个数据源输入触发模式弹出框](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
 
 可以为每个数据源输入触发模式弹出框 ([单击此项可查看原尺寸图像](using-modalpopup-with-a-repeater-control-vb/_static/image3.png))
 

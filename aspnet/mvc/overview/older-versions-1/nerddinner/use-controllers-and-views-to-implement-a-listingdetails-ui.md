@@ -12,7 +12,7 @@ ms.openlocfilehash: abff97e5cc2663465fdf61f41ff69d17104fe8b6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379464"
 ---
 # <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>使用控制器和视图实现列表/详细信息 UI
@@ -56,10 +56,10 @@ by [Microsoft](https://github.com/microsoft)
 
 我们想要启用访问者使用我们的应用程序以浏览即将发布 dinners 的列表，使他们可以单击列表中的任何 Dinner，若要查看其特定详细信息。 我们将发布我们的应用程序从以下 Url 来执行此操作：
 
-| **URL** | **用途** |
+| **URL** | **目的** |
 | --- | --- |
 | */Dinners/* | 显示即将到来的 dinners 的 HTML 列表 |
-| */Dinners/详细信息 / [id]* | 显示有关特定 dinner 嵌入到 URL – 将匹配的数据库中 dinner DinnerID 中"id"参数指示的详细信息。 例如： /Dinners/Details/2 将显示有关 Dinner DinnerID 值为 2 的详细信息的 HTML 页。 |
+| */Dinners/Details/[id]* | 显示有关特定 dinner 嵌入到 URL – 将匹配的数据库中 dinner DinnerID 中"id"参数指示的详细信息。 例如： /Dinners/Details/2 将显示有关 Dinner DinnerID 值为 2 的详细信息的 HTML 页。 |
 
 通过将两个公共"操作方法"添加到我们 DinnersController 类，如下面，我们将发布这些 Url 的初始实现：
 
@@ -94,11 +94,11 @@ ASP.NET MVC 包括一个功能强大的 URL 路由引擎，提供大量灵活地
 | **URL** | **控制器类** | **操作方法** | **传递的参数** |
 | --- | --- | --- | --- |
 | */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
-| */ Dinners/编辑/5* | DinnersController | Edit(id) | id=5 |
-| */ 创建 dinners /* | DinnersController | Create （) | 不可用 |
-| */ Dinners* | DinnersController | Index() | 不可用 |
-| */Home* | HomeController | Index() | 不可用 |
-| */* | HomeController | Index() | 不可用 |
+| */Dinners/Edit/5* | DinnersController | Edit(id) | id=5 |
+| */Dinners/Create* | DinnersController | Create （) | 不适用 |
+| */ Dinners* | DinnersController | Index() | 不适用 |
+| */ 主页* | HomeController | Index() | 不适用 |
+| */* | HomeController | Index() | 不适用 |
 
 最后三行显示的默认值 (控制器 = 主页，操作 = 索引，Id ="") 正在使用。 因为如果未指定，"Index"方法注册为默认操作名称"/ Dinners"和"/home"Url 原因 index （） 操作方法及其控制器类上调用。 因为如果未指定，"Home"控制器已注册为默认控制器，"/"URL 使 HomeController 要创建和 index （） 操作方法来调用它。
 

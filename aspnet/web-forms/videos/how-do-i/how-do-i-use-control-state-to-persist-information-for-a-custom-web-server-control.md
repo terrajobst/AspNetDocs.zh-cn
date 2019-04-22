@@ -12,7 +12,7 @@ ms.openlocfilehash: 5411f6d15b6ae4d4ee7557c4fff0158d97574330
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385197"
 ---
 # <a name="how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control"></a>[如何实现:]使用控件状态保存自定义 Web 服务器控件的信息

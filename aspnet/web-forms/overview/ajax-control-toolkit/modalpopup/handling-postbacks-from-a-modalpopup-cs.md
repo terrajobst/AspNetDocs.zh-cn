@@ -12,7 +12,7 @@ ms.openlocfilehash: 54dd3bae21e661e0b17cab6a71f0df33b6712bcd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388551"
 ---
 # <a name="handling-postbacks-from-a-modalpopup-c"></a>通过 ModalPopup 处理回发 (C#)
@@ -55,7 +55,7 @@ ms.locfileid: "59388551"
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample6.cs)]
 
 
-[![T他模式弹出框会导致回发](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
+[![模式弹出框会导致回发](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
 
 模式弹出框会导致回发 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))
 

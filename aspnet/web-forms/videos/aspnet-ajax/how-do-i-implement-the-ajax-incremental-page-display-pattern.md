@@ -12,7 +12,7 @@ ms.openlocfilehash: f4678ca375c55c7bd3b02fb9707059418adb1bb7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395181"
 ---
 # <a name="how-do-i-implement-the-ajax-incremental-page-display-pattern"></a>[如何实现:]实现 AJAX 增量页面显示模式？

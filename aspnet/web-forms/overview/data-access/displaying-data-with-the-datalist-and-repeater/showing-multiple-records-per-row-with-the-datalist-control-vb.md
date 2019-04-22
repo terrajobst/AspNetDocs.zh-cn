@@ -12,7 +12,7 @@ ms.openlocfilehash: 632db5152c84eb463ddc7bd5f5734a9fb3ae135c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382975"
 ---
 # <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>使用 DataList 控件每行显示多条记录 (VB)
@@ -31,7 +31,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 我们可以自定义 DataList 的布局通过其`RepeatColumns`和`RepeatDirection`属性，分别指示呈现的列数和是否这些项的布局垂直或水平。 图 1 中，例如，显示了具有三个列的表中显示产品信息 DataList。
 
 
-[![T他 DataList 显示了三种产品每行](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image1.png)
+[![DataList 显示每行的三个产品](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image1.png)
 
 **图 1**:DataList 显示了三种产品每行 ([单击此项可查看原尺寸图像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image3.png))
 
@@ -57,7 +57,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 请花费片刻时间访问你的浏览器中的页面。 如图 2 所示，DataList 将呈现为一个产品中的单列、 多行的表。
 
 
-[![B默认情况下，DataList 将呈现为单个列中，多行表](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image4.png)
+[![默认情况下，DataList 将呈现为单个列中，多行表](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image4.png)
 
 **图 2**:默认情况下，DataList 将呈现为单列表，多行表 ([单击此项可查看原尺寸图像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image6.png))
 
@@ -69,7 +69,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 通过更改`RepeatDirection`属性从`Vertical`到`Horizontal`，DataList 呈现其记录在单个行中，创建每个数据源项的一列。 为了说明这种效果，DataList 在设计器上单击，然后，从属性窗口中更改`RepeatDirection`属性从`Vertical`到`Horizontal`。 立即时，在设计器调整 DataList 的布局中，创建一个单行、 多列的界面 （参见图 3）。
 
 
-[![T他 RepeatDirection 属性决定了如何方向 DataList 的项的布局推出](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)
+[![RepeatDirection 属性决定了如何方向 DataList 的项的布局推出](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)
 
 **图 3**:`RepeatDirection`属性决定了如何列出出将方向 DataList 的项目 ([单击以查看实际尺寸的图像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image9.png))
 
@@ -77,7 +77,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 显示较少的数据，单个行时多列的表可能是最大化屏幕空间的理想方法。 但是，对于更大的数据的卷的单个行将需要大量的列，这些项的屏幕上放置关闭状态的向右-无法推送。 图 4 显示了在单行 DataList 中呈现时的产品。 由于有许多产品 (超过 80)，用户必须滚动到右侧以查看有关每个产品的信息远远。
 
 
-[![F或足够大的数据源，单个列 DataList 将需要水平滚动](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image10.png)
+[![对于足够大的数据源，单个列 DataList 需要水平滚动](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image10.png)
 
 **图 4**:对于足够大的数据源，单个列 DataList 将需要水平滚动 ([单击此项可查看原尺寸图像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image12.png))
 
@@ -89,7 +89,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 对于我们的示例，让我们来显示每个行的三种产品。 因此，设置`RepeatColumns`属性设置为 3。 此更改后，请花费片刻时间浏览器中查看结果。 如图 5 所示，现在是三列中，多行表中列出的产品。
 
 
-[![T可用产品都会显示每个行](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image13.png)
+[![每行显示三种产品](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image13.png)
 
 **图 5**:每行显示三种产品 ([单击此项可查看原尺寸图像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image15.png))
 
@@ -97,7 +97,7 @@ DataList 示例我们已在过去的两个教程中看到为单列 HTML 中的�
 `RepeatDirection`属性会影响 DataList 中的项的布局方式。图 5 所示的结果`RepeatDirection`属性设置为`Horizontal`。 请注意，从左到右，从上到下布局 Chai、 Chang 和茴香糖浆的前三个产品。 接下来三个产品 （从开始使用 Chef Anton 的 Cajun Seasoning） 出现在下方的前三个行。 更改`RepeatDirection`属性改回`Vertical`，但是，从上到下，这些产品的布局，从左到右，如图 6 所示。
 
 
-[![Here，产品列出出垂直的](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image16.png)
+[![在这里，这些产品均列出出垂直](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image16.png)
 
 **图 6**:在这里，这些产品均列出出垂直 ([单击此项可查看原尺寸图像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image18.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 723a38de4569b0bb58817c70aabb84fef8e19591
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395090"
 ---
 # <a name="using-browser-link-in-visual-studio-2013"></a>在 Visual Studio 2013 中使用浏览器链接
@@ -64,7 +64,7 @@ ms.locfileid: "59395090"
 
 ![](using-browser-link/_static/image8.png)
 
-**说明**
+**备注**
 
 - 若要启用浏览器链接，请设置`debug=true`中[&lt;编译&gt;](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx)项目的 Web.config 文件中的元素。
 - 必须在 localhost 上运行应用程序。

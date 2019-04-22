@@ -12,7 +12,7 @@ ms.openlocfilehash: c55bbeb383b15f4dc9cb95d25905cade1e8c5c29
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418893"
 ---
 # <a name="adding-animation-to-a-control-vb"></a>将动画添加到控件 (VB)
@@ -72,7 +72,7 @@ Framework 附带了动画，每个由其自己的 XML 元素表示一组。 下�
 当运行此脚本时，面板会显示，并在一个半秒内淡出。
 
 
-[![T他面板淡出](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
+[![在面板淡出](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
 
 在面板淡出 ([单击此项可查看原尺寸图像](adding-animation-to-a-control-vb/_static/image3.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 36cfc3435a832eaf8a6aeb24ff91fa03b99f2e39
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385600"
 ---
 # <a name="performance"></a>性能
@@ -20,6 +20,6 @@ ms.locfileid: "59385600"
 > 如何缓存提高性能的内容以及如何衡量站点流量。
 
 
-- [使用缓存提高网站性能](15-caching-to-improve-the-performance-of-your-website.md)
+- [使用缓存提高网站的性能](15-caching-to-improve-the-performance-of-your-website.md)
 - [分析流量](14-analyzing-traffic.md)
-- [在 ASP.NET 网页 (Razor) 中绑定和缩小资产](bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
+- [在 ASP.NET 网站 (Razor) 中绑定和缩小资产](bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)

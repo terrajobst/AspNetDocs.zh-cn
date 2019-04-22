@@ -12,7 +12,7 @@ ms.openlocfilehash: 8e4fa3f87f09d8872dd4ccc1797c05c229768224
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388278"
 ---
 # <a name="security-authentication-and-authorization-in-aspnet-web-api"></a>安全性、 身份验证和 ASP.NET Web API 中的授权
@@ -23,7 +23,7 @@ ms.locfileid: "59388278"
 - [Web API 中的身份验证和授权](authentication-and-authorization-in-aspnet-web-api.md)
 - [在 Web API 2.2 中使用单独的帐户保护 Web API](individual-accounts-in-web-api.md)
 - [使用 Web API 的外部身份验证服务 (C#)](external-authentication-services.md)
-- [在 Web API 中抵御跨站点请求伪造 (CSRF) 攻击](preventing-cross-site-request-forgery-csrf-attacks.md)
+- [在 Web API 中抵御跨站点请求伪造攻击 (CSRF)](preventing-cross-site-request-forgery-csrf-attacks.md)
 - [在 Web API 2 中启用跨域请求](enabling-cross-origin-requests-in-web-api.md)
 - [Web API 2 中的身份验证筛选器](authentication-filters.md)
 - [Web API 中的基本身份验证](basic-authentication.md)

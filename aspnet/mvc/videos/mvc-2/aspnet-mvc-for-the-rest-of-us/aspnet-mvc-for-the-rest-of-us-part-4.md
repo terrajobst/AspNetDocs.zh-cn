@@ -12,7 +12,7 @@ ms.openlocfilehash: 919a28e221ed87aef6cc05d95ab95264026180e6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421441"
 ---
 # <a name="aspnet-mvc-for-the-rest-of-us-part-4"></a>适用于我们其余所有人的 ASP.NET MVC：第 4 部分
@@ -24,4 +24,4 @@ ms.locfileid: "59421441"
 [&#9654;观看视频 （5 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-for-the-rest-of-us-part-4)
 
 > [!div class="step-by-step"]
-> [上一个](aspnet-mvc-for-the-rest-of-us-part-3.md)
+> [上一篇](aspnet-mvc-for-the-rest-of-us-part-3.md)

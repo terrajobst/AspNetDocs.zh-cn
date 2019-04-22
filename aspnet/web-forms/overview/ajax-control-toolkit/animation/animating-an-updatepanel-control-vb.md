@@ -12,7 +12,7 @@ ms.openlocfilehash: a7c40ebe359e21602d9f1de8205e1a7c808acc85
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384248"
 ---
 # <a name="animating-an-updatepanel-control-vb"></a>对 UpdatePanel 控件执行动画处理 (VB)
@@ -50,7 +50,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 现在每次回发的 UpdatePanel 中发生时，新的面板内容淡入顺利。
 
 
-[![T接下来的向导步骤淡入淡出](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
+[![淡入淡出下一步的向导步骤](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
 
 淡入淡出下一步的向导步骤 ([单击此项可查看原尺寸图像](animating-an-updatepanel-control-vb/_static/image3.png))
 

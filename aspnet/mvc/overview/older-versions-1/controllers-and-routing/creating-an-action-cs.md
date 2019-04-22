@@ -12,7 +12,7 @@ ms.openlocfilehash: c66e066bd3e241e667924dacc114f57151df822a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389552"
 ---
 # <a name="creating-an-action-c"></a>创建操作 (C#)
@@ -57,7 +57,7 @@ by [Microsoft](https://github.com/microsoft)
 如果你尝试通过在浏览器地址栏中键入 /Work/CompanySecrets 调用 CompanySecrets() 控制器操作然后将图 1 中收到错误消息。
 
 
-[![Invoking NonAction 方法](creating-an-action-cs/_static/image1.jpg)](creating-an-action-cs/_static/image1.png)
+[![调用 NonAction 方法](creating-an-action-cs/_static/image1.jpg)](creating-an-action-cs/_static/image1.png)
 
 **图 01**:调用 NonAction 方法 ([单击此项可查看原尺寸图像](creating-an-action-cs/_static/image2.png))
 

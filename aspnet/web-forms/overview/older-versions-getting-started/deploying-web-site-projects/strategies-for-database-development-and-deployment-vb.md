@@ -12,7 +12,7 @@ ms.openlocfilehash: afd287836337d0f9411daac805c3e9bcbb2dbadb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385067"
 ---
 # <a name="strategies-for-database-development-and-deployment-vb"></a>数据库开发和部署策略 (VB)
@@ -99,7 +99,7 @@ SQL 语法包括多个用于创建和修改各种数据库对象的语句。 例
 SQL Compare 启动时将打开比较项目对话框中，显示已保存的 SQL Compare 项目。 创建新项目。 这将启动项目配置向导中，提示输入的数据库的相关信息进行比较 （请参阅图 1）。 输入的信息，开发和生产环境数据库。
 
 
-[![Compare 开发和生产数据库](strategies-for-database-development-and-deployment-vb/_static/image2.jpg)](strategies-for-database-development-and-deployment-vb/_static/image1.jpg)
+[![开发和生产数据库进行比较](strategies-for-database-development-and-deployment-vb/_static/image2.jpg)](strategies-for-database-development-and-deployment-vb/_static/image1.jpg)
 
 **图 1**:比较开发和生产数据库 ([单击此项可查看原尺寸图像](strategies-for-database-development-and-deployment-vb/_static/image3.jpg))
 
@@ -128,7 +128,7 @@ SQL Compare 分解成组的数据库对象、 快速显示哪些对象存在于�
 后查看差异，并选择你想要同步的对象下, 一步是生成更新生产数据库的架构所需的 SQL 命令以匹配开发数据库。 通过同步向导完成此操作。 同步向导确认哪些对象同步，并总结了该操作计划 （参见图 3）。 您可以立即同步数据库或生成具有可以在方便的时候运行的 SQL 命令的脚本。
 
 
-[![Use 同步数据库架构同步向导](strategies-for-database-development-and-deployment-vb/_static/image8.jpg)](strategies-for-database-development-and-deployment-vb/_static/image7.jpg)
+[![使用同步向导以同步数据库架构](strategies-for-database-development-and-deployment-vb/_static/image8.jpg)](strategies-for-database-development-and-deployment-vb/_static/image7.jpg)
 
 **图 3**:使用同步向导来同步数据库架构 ([单击此项可查看原尺寸图像](strategies-for-database-development-and-deployment-vb/_static/image9.jpg))
 

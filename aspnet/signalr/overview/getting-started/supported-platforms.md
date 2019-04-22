@@ -12,7 +12,7 @@ ms.openlocfilehash: 89730e591bb94022d16fe1a78a4350b38e0bf7a4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420882"
 ---
 # <a name="supported-platforms"></a>支持的平台
@@ -87,9 +87,9 @@ SignalR 可在各种 web 浏览器，但通常情况下，支持的最新两个�
 
 | 传输 | Internet Explorer | Chrome （Windows 或 iOS） | Firefox | Safari （OSX 或 iOS） | Android |
 | --- | --- | --- | --- | --- | --- |
-| WebSockets | 10+ | 当前值-1 | 当前值-1 | 当前值-1 | 不可用 |
-| 服务器发送事件 | 不可用 | 当前值-1 | 当前值-1 | 当前值-1 | 不可用 |
-| ForeverFrame | 8+ | 不可用 | 不可用 | 不可用 | 4.1 |
+| WebSockets | 10+ | 当前值-1 | 当前值-1 | 当前值-1 | 不适用 |
+| 服务器发送事件 | 不适用 | 当前值-1 | 当前值-1 | 当前值-1 | 不适用 |
+| ForeverFrame | 8+ | 不适用 | 不适用 | 不适用 | 4.1 |
 | 长轮询 | 8+ | 当前值-1 | 当前值-1 | 当前值-1 | 4.1 |
 
 \*：6 + 所需的全部功能。
@@ -111,8 +111,8 @@ SignalR 可在各种 web 浏览器，但通常情况下，支持的最新两个�
 
 | 传输 | .NET 应用程序 | Silverlight |
 | --- | --- | --- |
-| Web 套接字 | Windows 8 + 和.NET 4.5 + | 不可用 |
-| 永久帧 | 不可用 | 不可用 |
+| Web 套接字 | Windows 8 + 和.NET 4.5 + | 不适用 |
+| 永久帧 | 不适用 | 不适用 |
 | 服务器发送事件 | .NET 4+ | 5+ |
 | 长轮询 | .NET 4+ | 5+ |
 
@@ -126,9 +126,9 @@ SignalR 可在各种 web 浏览器，但通常情况下，支持的最新两个�
 
 | 传输 | Windows 应用商店 /.NET | Windows 应用商店 / JavaScript | Windows Phone/ IE | Windows Phone/ .NET |
 | --- | --- | --- | --- | --- |
-| WebSockets | 不可用 | Win8+ | 8+ | 不可用 |
-| 永久帧 | 不可用 | Win8+ | 7.5+ | 不可用 |
-| 服务器发送事件 | Win8+ | 不可用 | 不可用 | 8+ |
+| WebSockets | 不适用 | Win8+ | 8+ | 不适用 |
+| 永久帧 | 不适用 | Win8+ | 7.5+ | 不适用 |
+| 服务器发送事件 | Win8+ | 不适用 | 不适用 | 8+ |
 | 长轮询 | Win8+ | Win8+ | 7.5+ | 8+ |
 
 <a id="updates"></a>

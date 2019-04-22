@@ -12,7 +12,7 @@ ms.openlocfilehash: afd786a25c8dc23eba1bbf6ed3f6512c64f2e72d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378570"
 ---
 # <a name="older-versions---security"></a>旧版本 - 安全
@@ -53,6 +53,6 @@ ms.locfileid: "59378570"
     - [生成用于从多个用户帐户中选择一个帐户的界面 (C#)](admin/building-an-interface-to-select-one-user-account-from-many-cs.md)
     - [恢复和更改密码 (C#)](admin/recovering-and-changing-passwords-cs.md)
     - [解锁和审批用户帐户 (C#)](admin/unlocking-and-approving-user-accounts-cs.md)
-    - [生成用于从多个用户帐户中选择一个帐户的界面 (VB)](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
+    - [生成用于从多个用户帐户中选择一个帐户的接口 (VB)](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
     - [恢复和更改密码 (VB)](admin/recovering-and-changing-passwords-vb.md)
     - [解锁和审批用户帐户 (VB)](admin/unlocking-and-approving-user-accounts-vb.md)

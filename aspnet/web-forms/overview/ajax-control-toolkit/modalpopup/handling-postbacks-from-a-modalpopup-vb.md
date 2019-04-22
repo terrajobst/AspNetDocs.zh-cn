@@ -12,7 +12,7 @@ ms.openlocfilehash: add305855d876b5033bbd7921ad24b5e840b9acc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386393"
 ---
 # <a name="handling-postbacks-from-a-modalpopup-vb"></a>通过 ModalPopup 处理回发 (VB)
@@ -55,7 +55,7 @@ ms.locfileid: "59386393"
 [!code-vb[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample6.vb)]
 
 
-[![T他模式弹出框会导致回发](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)
+[![模式弹出框会导致回发](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)
 
 模式弹出框会导致回发 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))
 

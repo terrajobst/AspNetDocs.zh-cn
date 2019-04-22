@@ -12,7 +12,7 @@ ms.openlocfilehash: 1a994b37faefe0e20c99a6991768898185e51b43
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417216"
 ---
 # <a name="controllers-and-routing"></a>控制器和路由
@@ -23,13 +23,13 @@ ms.locfileid: "59417216"
 - [ASP.NET MVC 路由概述 (C#)](asp-net-mvc-routing-overview-cs.md)
 - [了解操作筛选器 (C#)](understanding-action-filters-cs.md)
 - [通过输出缓存提升性能 (C#)](improving-performance-with-output-caching-cs.md)
-- [向缓存页添加动态内容 (C#)](adding-dynamic-content-to-a-cached-page-cs.md)
+- [向缓存页面添加动态内容 (C#)](adding-dynamic-content-to-a-cached-page-cs.md)
 - [创建控制器 (C#)](creating-a-controller-cs.md)
 - [创建操作 (C#)](creating-an-action-cs.md)
 - [ASP.NET MVC 路由概述 (VB)](asp-net-mvc-routing-overview-vb.md)
 - [了解操作筛选器 (VB)](understanding-action-filters-vb.md)
 - [通过输出缓存提升性能 (VB)](improving-performance-with-output-caching-vb.md)
-- [向缓存页添加动态内容 (VB)](adding-dynamic-content-to-a-cached-page-vb.md)
+- [向缓存页面添加动态内容 (VB)](adding-dynamic-content-to-a-cached-page-vb.md)
 - [创建控制器 (VB)](creating-a-controller-vb.md)
 - [创建操作 (VB)](creating-an-action-vb.md)
 - [ASP.NET MVC 控制器概述 (C#)](aspnet-mvc-controllers-overview-cs.md)

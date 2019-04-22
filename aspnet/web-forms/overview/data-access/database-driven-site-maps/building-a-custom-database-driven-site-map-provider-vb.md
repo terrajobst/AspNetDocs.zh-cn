@@ -12,7 +12,7 @@ ms.openlocfilehash: ed54ba79635877faa3da774214057e7804432f65
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391879"
 ---
 # <a name="building-a-custom-database-driven-site-map-provider-vb"></a>生成自定义数据库驱动站点地图提供程序 (VB)
@@ -31,7 +31,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 默认的基于 XML 的站点映射提供程序还适用于站点地图的结构是相当静态的如为这些教程。 在许多情况下，但是，更具动态站点地图需要。 请考虑在图 1 中，每个类别和产品出现的位置为网站的结构中的一段所示的站点映射。 与此站点图中，访问与根节点相对应的 web 页面中可能会列出所有类别，而访问特定类别 s web 页面将列出该类别的产品和查看特定产品 s web 页面将显示该产品 s 详细信息。
 
 
-[![T他类别和产品构成站点地图的结构](building-a-custom-database-driven-site-map-provider-vb/_static/image1.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image1.png)
+[![类别和产品构成站点地图的结构](building-a-custom-database-driven-site-map-provider-vb/_static/image1.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image1.png)
 
 **图 1**:类别和产品构成站点地图的结构 ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image2.png))
 
@@ -84,12 +84,12 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 打开`Default.aspx`页中`SiteMapProvider`文件夹，然后拖动 GridView 从工具箱拖到设计器中，设置其`ID`到`Categories`。 从 GridView s 智能标记，请将其绑定到名为新 ObjectDataSource`CategoriesDataSource`并将其配置，以便它将检索其数据使用`CategoriesBLL`类的`GetCategories`方法。 由于此 GridView 只显示类别，并且不提供数据修改功能，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
 
-[![C配置到返回类别使用 GetCategories 方法 ObjectDataSource](building-a-custom-database-driven-site-map-provider-vb/_static/image4.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image3.png)
+[![配置对象数据源返回类别使用 GetCategories 方法](building-a-custom-database-driven-site-map-provider-vb/_static/image4.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image3.png)
 
 **图 4**:配置到返回类别使用 ObjectDataSource`GetCategories`方法 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image4.png))
 
 
-[![Set 更新、 插入和删除选项卡添加到 （无） 中的下拉列表](building-a-custom-database-driven-site-map-provider-vb/_static/image5.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image5.png)
+[![设置下拉列表中插入、 更新和删除选项卡为 （无）](building-a-custom-database-driven-site-map-provider-vb/_static/image5.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image5.png)
 
 **图 5**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image6.png))
 
@@ -112,7 +112,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 图 7 显示了`Default.aspx`时的浏览器查看。 单击类别的查看产品链接将你带到`ProductsByCategory.aspx?CategoryID=categoryID`，其在步骤 3 中，我们将生成。
 
 
-[![E支票类别是列出沿与视图产品链接](building-a-custom-database-driven-site-map-provider-vb/_static/image7.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image7.png)
+[![每个类别是列出沿与视图产品链接](building-a-custom-database-driven-site-map-provider-vb/_static/image7.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image7.png)
 
 **图 7**:每个类别是列出沿与视图产品链接 ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image8.png))
 
@@ -122,7 +122,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 打开`ProductsByCategory.aspx`页上，添加一个 GridView，其命名为`ProductsByCategory`。 从其智能标记将 GridView 绑定到名为新 ObjectDataSource `ProductsByCategoryDataSource`。 配置要使用 ObjectDataSource`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，设置下拉列表中的更新、 插入和删除选项卡为 （无） 列表。
 
 
-[![Use ProductsBLL 类的 GetProductsByCategoryID(categoryID) 方法](building-a-custom-database-driven-site-map-provider-vb/_static/image8.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image9.png)
+[![使用 ProductsBLL 类的 GetProductsByCategoryID(categoryID) 方法](building-a-custom-database-driven-site-map-provider-vb/_static/image8.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image9.png)
 
 **图 8**:使用`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image10.png))
 
@@ -130,7 +130,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 配置数据源向导的最后一步会提示输入参数源*categoryID*。 因为此信息将通过查询字符串字段`CategoryID`、 从下拉列表中选择查询字符串和 QueryStringField 文本框中输入类别 id，如图 9 中所示。 单击完成以完成向导。
 
 
-[![Use categoryID 参数 CategoryID 查询字符串字段](building-a-custom-database-driven-site-map-provider-vb/_static/image9.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image11.png)
+[![使用 CategoryID 查询字符串字段的 categoryID 参数](building-a-custom-database-driven-site-map-provider-vb/_static/image9.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image11.png)
 
 **图 9**:使用`CategoryID`查询字符串字段*categoryID*参数 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image12.png))
 
@@ -153,7 +153,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 返回到查看`Default.aspx`通过浏览器和查看产品上的单击链接饮料对应的。 这会转到`ProductsByCategory.aspx?CategoryID=1`，Northwind 数据库属于饮料类别中显示名称、 价格和产品的供应商 （请参阅图 11）。 可随意进一步增强此页以包含将其返回到类别列表页的用户的链接 (`Default.aspx`) 和 detailsview FormView 控件显示所选的类别的名称和说明。
 
 
-[![T显示他饮料名称、 价格和供应商](building-a-custom-database-driven-site-map-provider-vb/_static/image11.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image13.png)
+[![显示饮料名称、 价格和供应商](building-a-custom-database-driven-site-map-provider-vb/_static/image11.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image13.png)
 
 **图 11**:显示饮料名称、 价格和供应商 ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image14.png))
 
@@ -163,7 +163,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 最后一页， `ProductDetails.aspx`，显示所选的产品的详细信息。 打开`ProductDetails.aspx`并从工具箱拖动到设计器中拖动 DetailsView。 设置 DetailsView s`ID`属性设置为`ProductInfo`并将清除其`Height`和`Width`属性值。 从其智能标记将 DetailsView 绑定到名为新 ObjectDataSource `ProductDataSource`，配置将从其数据 ObjectDataSource`ProductsBLL`类的`GetProductByProductID(productID)`方法。 如步骤 2 和 3 中创建的上一个网页，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
 
-[![C配置对象数据源使用 GetProductByProductID(productID) 方法](building-a-custom-database-driven-site-map-provider-vb/_static/image12.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image15.png)
+[![配置对象数据源使用 GetProductByProductID(productID) 方法](building-a-custom-database-driven-site-map-provider-vb/_static/image12.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image15.png)
 
 **图 12**:配置为使用 ObjectDataSource`GetProductByProductID(productID)`方法 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image16.png))
 
@@ -171,7 +171,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 配置数据源向导的最后一步会提示输入的源*productID*参数。 因为这些数据包括通过查询字符串字段`ProductID`，将下拉列表设置为查询字符串和到 ProductID QueryStringField 文本框。 最后，单击完成按钮以完成向导。
 
 
-[![C配置产品 id 参数，以从产品 id 查询字符串字段中提取其值](building-a-custom-database-driven-site-map-provider-vb/_static/image13.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image17.png)
+[![配置产品 id 参数，以从产品 id 查询字符串字段中提取其值](building-a-custom-database-driven-site-map-provider-vb/_static/image13.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image17.png)
 
 **图 13**:配置*productID*参数来提取其值从`ProductID`查询字符串字段 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image18.png))
 
@@ -184,7 +184,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 若要测试此页，请返回到`Default.aspx`然后单击查看产品的饮料类别。 从饮料产品列表中，单击 Chai 茶的查看详细信息链接。 这会转到`ProductDetails.aspx?ProductID=1`，其中显示 Chai 茶 s （请参阅图 14） 的详细信息。
 
 
-[![C显示 hai 茶 s 供应商、 类别、 价格和其他信息](building-a-custom-database-driven-site-map-provider-vb/_static/image14.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image19.png)
+[![显示 Chai 茶 s 供应商、 类别、 价格和其他信息](building-a-custom-database-driven-site-map-provider-vb/_static/image14.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image19.png)
 
 **图 14**:显示 Chai 茶 s 供应商、 类别、 价格和其他信息 ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image20.png))
 
@@ -196,7 +196,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 图 15 显示了常规的站点地图结构，来自图 1 中，但具有更精细地草绘的实现详细信息。
 
 
-[![E支票 SiteMapNode 具有属性如标题、 Url、 密钥和等等](building-a-custom-database-driven-site-map-provider-vb/_static/image16.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image15.gif)
+[![每个 SiteMapNode 具有属性如标题、 Url、 密钥等等](building-a-custom-database-driven-site-map-provider-vb/_static/image16.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image15.gif)
 
 **图 15**:每个`SiteMapNode`都有一些属性例如`Title`， `Url`， `Key`，依次类推 ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image17.gif))
 
@@ -205,7 +205,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 
 当`SiteMap`的类属性进行访问，它必须序列从一些持久介质站点地图结构化到内存中。 但是，站点映射的序列化逻辑不是硬编码到`SiteMap`类。 相反，在运行时`SiteMap`类确定哪些站点图*提供程序*用于序列化。 默认情况下[`XmlSiteMapProvider`类](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx)使用时，这从格式正确的 XML 文件中读取站点地图的结构。 但是，很少的工作与我们可以创建我们自己自定义站点地图提供程序。
 
-所有站点地图提供程序必须都派生自[`SiteMapProvider`类](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx)，其中包括基本的方法和属性所需的站点映射提供程序，但省略的许多实现细节。 第二个类的[ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx)，扩展了`SiteMapProvider`类，其中包含所需的功能的更可靠的实现。 在内部，`StaticSiteMapProvider`存储`SiteMapNode`实例的站点中的映射`Hashtable`，并提供等方法`AddNode(child, parent)`，`RemoveNode(siteMapNode),`和`Clear()`的添加和删除`SiteMapNode`到内部 s `Hashtable`。 `XmlSiteMapProvider` 派生自`StaticSiteMapProvider`。
+所有站点地图提供程序必须都派生自[`SiteMapProvider`类](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx)，其中包括基本的方法和属性所需的站点映射提供程序，但省略的许多实现细节。 第二个类的[ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx)，扩展了`SiteMapProvider`类，其中包含所需的功能的更可靠的实现。 在内部，`StaticSiteMapProvider`存储`SiteMapNode`实例的站点中的映射`Hashtable`，并提供等方法`AddNode(child, parent)`，`RemoveNode(siteMapNode),`和`Clear()`的添加和删除`SiteMapNode`到内部 s `Hashtable`。 `XmlSiteMapProvider` 派生自 `StaticSiteMapProvider`。
 
 当创建自定义的站点地图提供程序扩展了`StaticSiteMapProvider`，必须重写的两种抽象方法： [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx)并[ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx)。 `BuildSiteMap`正如其名，负责从持久性存储区加载站点地图结构和构造内存中。 `GetRootNodeCore` 在站点地图中返回的根节点。
 
@@ -280,7 +280,7 @@ ASP.NET 2.0 的站点地图功能使页面开发人员的 XML 文件中，如定
 使用自定义站点映射提供程序创建并注册中`Web.config`，我们已准备好添加到导航控件重新`Default.aspx`， `ProductsByCategory.aspx`，和`ProductDetails.aspx`中的页面`SiteMapProvider`文件夹。 首先打开`Default.aspx`页上，并将其拖`SiteMapPath`从工具箱拖到设计器。 SiteMapPath 控件位于工具箱的导航部分。
 
 
-[![Add 为 Default.aspx SiteMapPath](building-a-custom-database-driven-site-map-provider-vb/_static/image19.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image18.gif)
+[![将 SiteMapPath 添加到 Default.aspx](building-a-custom-database-driven-site-map-provider-vb/_static/image19.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image18.gif)
 
 **图 16**:添加到 SiteMapPath `Default.aspx` ([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image20.gif))
 
@@ -290,7 +290,7 @@ SiteMapPath 控件显示痕迹导航，，该值指示站点地图中的当前�
 请花费片刻时间来查看此页上的通过浏览器。 在图 16 中添加 SiteMapPath 使用的默认站点地图提供程序，将从其数据提取`Web.sitemap`。 因此，则痕迹导航主页显示&gt;自定义站点地图，就像在右上角痕迹导航。
 
 
-[![T他痕迹导航使用默认站点映射提供程序](building-a-custom-database-driven-site-map-provider-vb/_static/image22.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image21.gif)
+[![痕迹导航中使用的默认站点地图提供程序](building-a-custom-database-driven-site-map-provider-vb/_static/image22.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image21.gif)
 
 **图 17**:痕迹导航使用默认站点映射提供程序 ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image23.gif))
 
@@ -298,7 +298,7 @@ SiteMapPath 控件显示痕迹导航，，该值指示站点地图中的当前�
 如果希望使用我们在步骤 6 中创建的自定义站点地图提供 SiteMapPath 图 16 中添加，请设置其[`SiteMapProvider`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemappath.sitemapprovider.aspx)到 Northwind，我们分配给的名称`NorthwindSiteMapProvider`中`Web.config`。 遗憾的是，在设计器仍会继续使用的默认站点地图提供程序，但如果通过浏览器页面访问此属性更改后您将看到痕迹导航现在使用的自定义站点地图提供程序。
 
 
-[![T现在，他痕迹导航使用自定义站点映射提供程序 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-vb/_static/image25.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image24.gif)
+[![痕迹导航现在使用自定义站点映射提供程序 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-vb/_static/image25.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image24.gif)
 
 **图 18**:痕迹导航现在使用自定义站点地图提供程序`NorthwindSiteMapProvider`([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image26.gif))
 
@@ -306,7 +306,7 @@ SiteMapPath 控件显示痕迹导航，，该值指示站点地图中的当前�
 SiteMapPath 控件显示中的功能更强的用户界面`ProductsByCategory.aspx`和`ProductDetails.aspx`页。 将 SiteMapPath 添加到这些页面，设置`SiteMapProvider`向 Northwind 中的属性。 从`Default.aspx`单击饮料，查看产品链接，然后单击 Chai 茶的查看详细信息链接。 如图 19 所示，则痕迹导航包括当前的站点映射节 （Chai 茶） 和其祖先：Beverages 和所有类别。
 
 
-[![T现在，他痕迹导航使用自定义站点映射提供程序 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-vb/_static/image27.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image21.png)
+[![痕迹导航现在使用自定义站点映射提供程序 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-vb/_static/image27.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image21.png)
 
 **图 19**:痕迹导航现在使用自定义站点地图提供程序`NorthwindSiteMapProvider`([单击以查看实际尺寸的图像](building-a-custom-database-driven-site-map-provider-vb/_static/image22.png))
 
@@ -314,7 +314,7 @@ SiteMapPath 控件显示中的功能更强的用户界面`ProductsByCategory.asp
 除了 SiteMapPath，如菜单和 TreeView 控件，可以使用其他导航用户界面元素。 `Default.aspx`， `ProductsByCategory.aspx`，和`ProductDetails.aspx`页面中的下载本教程中，例如，所有包括菜单控件 （请参阅图 20）。 请参阅[检查 ASP.NET 2.0 的站点导航功能](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)并[使用站点导航控件](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/navigation/sitenavcontrols.aspx)部分[ASP.NET 2.0 快速入门](https://quickstarts.asp.net/QuickStartv20/aspnet/)，更深入了解导航控件和 ASP.NET 2.0 中的站点映射系统。
 
 
-[![T他菜单控件列出每个类别和产品](building-a-custom-database-driven-site-map-provider-vb/_static/image29.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image28.gif)
+[![菜单控件列出每个类别和产品](building-a-custom-database-driven-site-map-provider-vb/_static/image29.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image28.gif)
 
 **图 20**:菜单控件列出了每个类别和产品 ([单击此项可查看原尺寸图像](building-a-custom-database-driven-site-map-provider-vb/_static/image30.gif))
 
@@ -366,4 +366,4 @@ ASP.NET 2.0 的站点映射功能包括`SiteMap`类，大量的内置导航 Web 
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Dave Gardner、 Zack Jones、 Teresa Murphy 和伯纳黛特 Leigh。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一个](building-a-custom-database-driven-site-map-provider-cs.md)
+> [上一篇](building-a-custom-database-driven-site-map-provider-cs.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 7ea11f436d8f0455621d22c4d5a5b4d6b6ece68f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386419"
 ---
 # <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>基于数据设置 DataList 和 Repeater 的格式 (C#)
@@ -74,7 +74,7 @@ DataList 控件格式设置更改为可以使用实现整个项`DataListItem`s �
 一旦已复制的 DataList 和 ObjectDataSource 的功能，从`Basics.aspx`到`Formatting.aspx`，请花费片刻时间更改 DataList s`ID`属性从`DataList1`到更具描述性`ItemDataBoundFormattingExample`。 接下来，在浏览器中查看 DataList。 如图 1 所示，每个产品之间的唯一格式设置区别是，交替的背景色。
 
 
-[![TDataList 控件中列出了他产品](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image1.png)
+[![DataList 控件中列出的产品](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image1.png)
 
 **图 1**:DataList 控件中列出的产品 ([单击此项可查看原尺寸图像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image3.png))
 
@@ -117,7 +117,7 @@ DataList 控件格式设置更改为可以使用实现整个项`DataListItem`s �
 与`ItemDataBound`事件处理程序完成后，重新访问`Formatting.aspx`页在浏览器中。 如图 2 所示，在下，20.00 美元的价格与这些产品具有其名称和突出显示的价格。
 
 
-[![T不是突出显示 20.00 美元，软管产品不太](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image4.png)
+[![这些产品小于 20.00 美元突出显示](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image4.png)
 
 **图 2**:这些产品小于 20.00 美元突出显示 ([单击此项可查看原尺寸图像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image6.png))
 
@@ -129,7 +129,7 @@ DataList 控件格式设置更改为可以使用实现整个项`DataListItem`s �
 `RepeaterItem`构成了 Repeater 控件中，但是，don t s 提供此类样式级别的属性。 图 2 中一样，应用自定义格式设置为 Repeater 需要因此，应用到 Repeater 的模板中的 Web 控件的样式属性。
 
 
-[![T他整个产品项将突出显示的产品下 20.00 美元](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image7.png)
+[![整个产品项突出显示的产品下 20.00 美元](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image7.png)
 
 **图 3**:整个产品项突出显示的产品下 20.00 美元 ([单击此项可查看原尺寸图像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image9.png))
 
@@ -141,7 +141,7 @@ DataList 控件格式设置更改为可以使用实现整个项`DataListItem`s �
 若要演示格式设置函数，让 s 具有产品信息包括产品的名称旁边的文本 [DISCONTINUED]，如果它停止使用的 s。 此外，let s 具有价格突出显示黄色如果它 s 小于 20.00 美元 (正如我们做`ItemDataBound`事件处理程序示例); 如果价格为 $20.00 或更高版本，可让 s 不会显示实际的价格，但文本，请改为调用针对一个价格的报价。 图 4 显示了应用这些格式设置规则与列出的产品的屏幕截图。
 
 
-[![F或 Expensive Products，价格将被替换的文本，请调用价格 quote](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image10.png)
+[![对于昂贵的产品，价格将被替换为文本，请调用的报价单](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image10.png)
 
 **图 4**:成本高昂的产品价格替换的文本，请调用价格引用 ([单击此项可查看原尺寸图像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image12.png))
 
@@ -182,7 +182,7 @@ DataList 控件格式设置更改为可以使用实现整个项`DataListItem`s �
 使用就地格式设置函数的调用，请花费片刻时间浏览器中查看我们的进度。 屏幕应类似于图 5 中，已停止使用的产品包括文本 [DISCONTINUED]，这些产品成本超过 $20.00 具有其价格替换文本请的报价单的调用。
 
 
-[![F或 Expensive Products，价格将被替换的文本，请调用价格 quote](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image13.png)
+[![对于昂贵的产品，价格将被替换为文本，请调用的报价单](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image13.png)
 
 **图 5**:成本高昂的产品价格替换的文本，请调用价格引用 ([单击此项可查看原尺寸图像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image15.png))
 

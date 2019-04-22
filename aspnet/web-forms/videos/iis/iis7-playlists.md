@@ -12,7 +12,7 @@ ms.openlocfilehash: 41b7c5daa3638eaab25379cdb9bd13fa807823ca
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398418"
 ---
 # <a name="iis7-playlists"></a>IIS7 播放列表
@@ -24,4 +24,4 @@ ms.locfileid: "59398418"
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/iis7-playlists)
 
 > [!div class="step-by-step"]
-> [上一个](bit-rate-throttling.md)
+> [上一篇](bit-rate-throttling.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 1ab1ea8b277b48b3b72edb9dd45aa4cc2937ffa8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418048"
 ---
 # <a name="adding-a-view"></a>添加视图
@@ -75,7 +75,7 @@ ms.locfileid: "59418048"
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-布局模板可用于在一个位置指定您的网站的 HTML 容器布局，然后将其应用于你的站点中多个页面。 查找 `@RenderBody()` 行。 `RenderBody` 是其中所有视图特定于都页面的占位符显示创建，&quot;包装&quot;在布局页面中。 例如，如果选择关于链接*Views\Home\About.cshtml*内呈现视图`RenderBody`方法。
+布局模板可用于在一个位置指定您的网站的 HTML 容器布局，然后将其应用于你的站点中多个页面。 查找 `@RenderBody()` 行。 `RenderBody` 是显示创建的所有特定于视图的页面的占位符，已包装在布局页面中&quot;&quot;。 例如，如果选择关于链接*Views\Home\About.cshtml*内呈现视图`RenderBody`方法。
 
 更改从布局模板中的站点标题标头&quot;你在此处显示徽标&quot;到&quot;MVC 电影&quot;。
 

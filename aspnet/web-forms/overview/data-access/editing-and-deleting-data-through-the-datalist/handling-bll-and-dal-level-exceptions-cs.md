@@ -12,7 +12,7 @@ ms.openlocfilehash: 5714b118a5894731820d8e9775c8f5c8a375856c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390124"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-c"></a>处理 BLL 和 DAL 级别的异常 (C#)
@@ -41,7 +41,7 @@ ms.locfileid: "59390124"
 我们担心如何处理在更新工作流期间发生的异常之前，让我们来首先创建可编辑的 DataList。 打开`ErrorHandling.aspx`页中`EditDeleteDataList`文件夹中，将 DataList 添加到设计器中，设置其`ID`属性设置为`Products`，并添加名为新 ObjectDataSource `ProductsDataSource`。 配置要使用 ObjectDataSource`ProductsBLL`类的`GetProducts()`方法用于选择记录; 在 INSERT、 UPDATE、 设置下拉列表，删除选项卡添加到 （无）。
 
 
-[![Return 使用 GetProducts() 方法的产品信息](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
+[![返回使用 GetProducts() 方法的产品信息](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
 
 **图 1**:返回使用产品信息`GetProducts()`方法 ([单击以查看实际尺寸的图像](handling-bll-and-dal-level-exceptions-cs/_static/image3.png))
 
@@ -60,7 +60,7 @@ ms.locfileid: "59390124"
 花点时间查看我们通过浏览器的进度 （见图 2）。
 
 
-[![E支票产品包括一个编辑按钮](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
+[![每个产品包括一个编辑按钮](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
 
 **图 2**:每个产品包含一个编辑按钮 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-cs/_static/image6.png))
 
@@ -115,12 +115,12 @@ ms.locfileid: "59390124"
 使用`Try ... Catch`就地块中，用户信息更丰富的错误消息，显示为数字 4 和 5 的显示。 请注意，在遇到异常 DataList 时将保留在编辑模式。 这是因为一旦发生异常时，控制流将立即重定向到`Catch`块，从而绕过 DataList 返回其预先编辑状态代码。
 
 
-[![A如果用户省略了必需的字段，显示 n 个错误消息](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
+[![如果用户省略了必需的字段，显示一条错误消息](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
 
 **图 4**:如果用户省略了必需的字段显示一条错误消息 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-cs/_static/image10.png))
 
 
-[![An 错误消息是显示时输入负价格](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
+[![一条错误消息是显示时输入负价格](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
 
 **图 5**:一条错误消息是显示时输入负价格 ([单击此项可查看原尺寸图像](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
 
@@ -139,7 +139,7 @@ GridView 和对象数据源提供了后续级别事件处理程序，包括任�
 
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [异常设计准则](https://msdn.microsoft.com/library/ms298399.aspx)
+- [异常的设计准则](https://msdn.microsoft.com/library/ms298399.aspx)
 - [错误日志记录模块和处理程序 (ELMAH)](http://workspaces.gotdotnet.com/elmah) （用于记录错误的开放源代码库）
 - [Enterprise Library 的.NET Framework 2.0](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) （包括异常管理应用程序块）
 

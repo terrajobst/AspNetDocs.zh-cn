@@ -12,7 +12,7 @@ ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387901"
 ---
 # <a name="enable-automated-unit-testing"></a>启用自动单元测试
@@ -96,7 +96,7 @@ Visual Studio 2008 Professional （和更高版本） 包括可用于运行 Visu
 
 ![](enable-automated-unit-testing/_static/image5.png)
 
-*注意:默认情况下，VS 测试结果窗口不显示类名称列。 可以通过在测试结果窗口内右键单击并使用添加/删除列菜单命令添加此。*
+*注意：默认情况下，VS 测试结果窗口不显示类名称列。可以通过在测试结果窗口内右键单击并使用添加/删除列菜单命令添加此。*
 
 我们的两个测试中花费了只有一小部分第二个运行，并为您可以在这两种传递，请参阅。 我们现在可以继续并通过它们来创建其他测试，验证特定的规则验证，以及涵盖两个帮助器方法-IsUserHost() 和 IsUserRegistered() – 我们添加到 Dinner 类扩充。 将所有这些测试放在 Dinner 类的位置将使其更容易且更安全，若要向其在将来添加新的业务规则和验证。 我们可以将我们新的规则逻辑添加到 Dinner，然后秒内验证它没有破坏任何我们以前的逻辑功能。
 

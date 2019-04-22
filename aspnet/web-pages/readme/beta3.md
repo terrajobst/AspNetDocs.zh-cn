@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f0c5ff599235157bd11f5f86a26b8882e0f29dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381804"
 ---
 # <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET 网页 (Razor) Beta 3 版本自述文件
@@ -117,7 +117,7 @@ ms.locfileid: "59381804"
 文档的本节介绍新功能、 更改和使用 Razor 语法的 Beta 3 版本的 ASP.NET Web Pages 的已知的问题。
 
 - [新增功能](#NewFeatures)
-- [Changes](#Changes)
+- [更改](#Changes)
 - [问题](#Issues)
 
 <a id="NewFeatures"></a>
@@ -454,7 +454,7 @@ ms.locfileid: "59381804"
 
 > 浏览到 WCF 应用程序会导致类似于以下错误：
 > 
-> *无法加载文件或程序集 Microsoft.Web.Administration，版本 = 7.0.0.0，区域性 = 中性，PublicKeyToken = 31bf3856ad364e35 或其某个依赖项。 系统找不到指定的文件。*
+> *无法加载文件或程序集 Microsoft.Web.Administration，版本 = 7.0.0.0，区域性 = 中性，PublicKeyToken = 31bf3856ad364e35 或其某个依赖项。系统找不到指定的文件。*
 > 
 > 发生这种情况是因为默认情况下，IIS Express 的 Beta 版本不支持 WCF。
 > 
@@ -545,7 +545,7 @@ ms.locfileid: "59381804"
 有关 WebMatrix Beta 3 的详细信息，请参阅以下网站：
 
 - [IIS.net](http://iis.net/)
-- [ASP.NET](https://asp.net/webmatrix)
+- [ASP.NET 2.0](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
 ---

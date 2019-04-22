@@ -13,7 +13,7 @@ ms.openlocfilehash: 8e476f8a4172ebbe55819cda1ceb5458426243bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381895"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建议的资源
@@ -24,7 +24,7 @@ ms.locfileid: "59381895"
 >
 > 如果您知道很好的博客文章[堆栈溢出](http://stackoverflow.com)线程或都非常有用，任何其他链接[向我们发送一封电子邮件](mailto:aspnetue@microsoft.com?subject=Identity recommended resources)与链接或只是将保留在此页底部的消息。
 
-- [ASP.NET Identity 入门](#gettingstarted)
+- [ASP.NET 标识入门](#gettingstarted)
 - [新特色必须读取文章](#feat)
 - [中间的 ASP.NET 标识](#adv)
 - [视频](#video)
@@ -40,7 +40,7 @@ ms.locfileid: "59381895"
 
 - [MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)本教程演示如何编写 ASP.NET MVC 5 应用程序使用 Facebook 和 Google OAuth 2 授权。 它还演示如何将其他数据添加到标识数据库。
 - [将包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 应用部署到 Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 本教程将添加 Azure 部署中，如何保护使用角色，对应用程序如何使用成员资格 API 来添加用户和角色，以及其他安全功能。
-- [ASP.NET Identity 简介](introduction-to-aspnet-identity.md)
+- [ASP.NET 标识简介](introduction-to-aspnet-identity.md)
 - [创建具有登录、 电子邮件确认及密码重置的安全 ASP.NET MVC 5 web 应用程序](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
 - [具有 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
@@ -59,9 +59,9 @@ ms.locfileid: "59381895"
 ## <a name="intermediate-aspnet-identity"></a>中间的 ASP.NET 标识
 
 - [帐户确认和密码恢复与 ASP.NET 标识](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [使用 SMS 和 ASP.NET Identity 的双因素身份验证](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [将现有网站从 SQL 成员身份迁移到 ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [向空的或现有的 Web 窗体项目添加 ASP.NET Identity](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
+- [使用 SMS 和 ASP.NET 标识的双因素身份验证](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [将现有网站从 SQL 成员身份迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [向空的或现有的 Web 窗体项目添加 ASP.NET 标识](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 - MSDN 杂志 》[外部身份验证与 ASP.NET 标识](https://msdn.microsoft.com/magazine/dn745860.aspx)由 Dino Esposito
 - MSDN 杂志 》[ASP.NET 标识初探](https://msdn.microsoft.com/magazine/dn605872.aspx)由 Dino Esposito
 - [ASP.NET 标识 – 用户锁定](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
@@ -107,7 +107,7 @@ ms.locfileid: "59381895"
 
     - [OWIN/Katana 身份验证中间件的外部登录提供程序 （社交登录名） 入门](http://brockallen.com/2014/01/09/a-primer-on-external-login-providers-social-logins-with-owinkatana-authentication-middleware/)
     - [引入 IdentityReboot](http://brockallen.com/2014/02/11/introducing-identityreboot/)： 一组扩展到 ASP.NET 标识实现我已对此抱怨有关的主要缺失功能。
-- [Pranav rastogi 撰写](https://twitter.com/rustd)
+- [Pranav Rastogi](https://twitter.com/rustd)
 
     - [获取从社交提供程序的详细信息](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
 - [@beabigrockstar](https://twitter.com/beabigrockstar) (Jerrie Pelser)

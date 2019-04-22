@@ -13,7 +13,7 @@ ms.openlocfilehash: f205dfd8692bc946ca2124655bf8bcefbdbd1779
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394519"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>将现有网站从 SQL 成员身份迁移到 ASP.NET Identity
@@ -83,7 +83,7 @@ ms.locfileid: "59394519"
 
 若要运行的现有用户数据使用现成的 ASP.NET 标识类，我们需要将数据库架构迁移到所需的 ASP.NET 标识。 我们可以通过添加新表并将现有的信息复制到这些表来执行此操作。 默认情况下 ASP.NET 标识使用 EntityFramework 标识模型类映射回数据库来存储/检索的信息。 这些模型类实现核心标识接口定义用户和角色对象。 表和数据库中的列基于这些模型的类。 EntityFramework 模型中的类标识 v2.1.0 和它们的属性是定义如下
 
-| **IdentityUser** | **类型** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | string | Id | RoleId | ProviderKey | Id |
 | 用户名 | string | 名称 | UserId | UserId | ClaimType |
@@ -99,7 +99,7 @@ ms.locfileid: "59394519"
 
 我们需要为每个这些模型的表具有与属性相对应的列。 在中定义的类与表之间的映射`OnModelCreating`方法的`IdentityDBContext`。 这称为配置的 fluent API 方法，可找到更多信息[此处](https://msdn.microsoft.com/data/jj591617.aspx)。 类的配置是如下所示
 
-| **类** | **表** | **主键** | **外键** |
+| **类** | **Table** | **主键** | **外键** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |

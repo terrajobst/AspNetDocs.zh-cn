@@ -12,7 +12,7 @@ ms.openlocfilehash: 1cce2b05f125902ab05d493bebe753b2060b4d95
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384274"
 ---
 # <a name="disabling-actions-during-animation-c"></a>动画过程中禁用操作 (C#)
@@ -55,7 +55,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 但是在给定方案这将是没有用自按钮淡出，并且不在动画结束时可见。
 
 
-[![T他按钮处于禁用状态，在动画运行时](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)
+[![动画运行时，将禁用的按钮](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)
 
 动画运行时，将禁用的按钮 ([单击此项可查看原尺寸图像](disabling-actions-during-animation-cs/_static/image3.png))
 

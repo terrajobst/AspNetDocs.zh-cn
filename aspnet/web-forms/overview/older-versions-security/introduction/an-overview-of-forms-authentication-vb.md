@@ -12,7 +12,7 @@ ms.openlocfilehash: 84b1c4c562603eddc5b82500700957bc78f236f4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386445"
 ---
 # <a name="an-overview-of-forms-authentication-vb"></a>窗体身份验证 (VB) 的概述
@@ -48,7 +48,7 @@ FormsAuthenticationModule 尝试进行身份验证之前执行的 UrlAuthorizati
 登录页的职责是确定是否在用户的凭据是否有效，如果是这样，若要创建窗体身份验证票证，并将用户重定向回页它们正在尝试的访问。 对网站，FormsAuthenticationModule 用于标识用户的页面上的后续请求中包含身份验证票证。
 
 
-[![T他窗体身份验证工作流](an-overview-of-forms-authentication-vb/_static/image2.png)](an-overview-of-forms-authentication-vb/_static/image1.png)
+[![窗体身份验证工作流](an-overview-of-forms-authentication-vb/_static/image2.png)](an-overview-of-forms-authentication-vb/_static/image1.png)
 
 **图 01**:窗体身份验证工作流 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image3.png))
 
@@ -85,7 +85,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 > Visual Studio 支持项目管理的两种的模式：网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟项目体系结构在 Visual Studio.NET 2002/2003年-它们包含项目文件并将项目的源代码编译到单个程序集，该值将被放在 /bin 文件夹中。 Visual Studio 2005 最初唯一受支持的 Web 站点项目，尽管 Web 应用程序项目模型已重新引入 Service Pack 1;Visual Studio 2008 提供了这两种项目模型。 Visual Web Developer 2005 和 2008年版本，但是，仅支持网站项目。 我将使用网站项目模型。 如果你使用的是非速成版，并想要使用[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)相反，随时执行此操作，但请注意您所见的屏幕，而不是必须执行的步骤之间可能存在某些差异屏幕截图所示，在这些教程中提供的说明。
 
 
-[![Create New File System-Based 网站](an-overview-of-forms-authentication-vb/_static/image5.png)](an-overview-of-forms-authentication-vb/_static/image4.png)
+[![创建新的文件基于系统的 Web 站点](an-overview-of-forms-authentication-vb/_static/image5.png)](an-overview-of-forms-authentication-vb/_static/image4.png)
 
 **图 02**:创建 New File System-Based 网站 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image6.png))
 
@@ -95,7 +95,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 接下来，将新的主页面添加到名为 Site.master 的根目录中的站点。 [母版页](https://msdn.microsoft.com/library/wtxbf3hh.aspx)启用页面开发人员定义可以应用于 ASP.NET 页的整个站点模板。 为母版页的主要优势是，站点的整体外观可以定义在一个位置，从而使它可以轻松地更新或调整站点的布局。
 
 
-[![Add 到网站 Master 页名为 Site.master](an-overview-of-forms-authentication-vb/_static/image8.png)](an-overview-of-forms-authentication-vb/_static/image7.png)
+[![添加母版页名为 Site.master 到网站](an-overview-of-forms-authentication-vb/_static/image8.png)](an-overview-of-forms-authentication-vb/_static/image7.png)
 
 **图 03**:将主页面名为 Site.master 添加到网站 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image9.png))
 
@@ -109,7 +109,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 与上面输入的标记，切换到设计视图显示了主页面的布局。 使用此母版页任何 ASP.NET 页面将具有该统一布局中，使用指定的标记的主要内容区域的功能。
 
 
-[![T他母版页的页面，当查看通过使用设计视图](an-overview-of-forms-authentication-vb/_static/image11.png)](an-overview-of-forms-authentication-vb/_static/image10.png)
+[![Master 页上，通过设计视图查看](an-overview-of-forms-authentication-vb/_static/image11.png)](an-overview-of-forms-authentication-vb/_static/image10.png)
 
 **图 04**： 在母版页，当查看通过设计视图 ([单击以查看实际尺寸的图像](an-overview-of-forms-authentication-vb/_static/image12.png))
 
@@ -121,12 +121,12 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 接下来，右键单击解决方案资源管理器中的项目名称并选择要添加新 Web 窗体命名为 Default.aspx。 这一次，检查选择母版页复选框，并从列表中选择 Site.master 母版页。
 
 
-[![A新 Default.aspx 页选择要选择一个母版页 dd](an-overview-of-forms-authentication-vb/_static/image14.png)](an-overview-of-forms-authentication-vb/_static/image13.png)
+[![添加一个新的 Default.aspx 页面，选择选择主机页](an-overview-of-forms-authentication-vb/_static/image14.png)](an-overview-of-forms-authentication-vb/_static/image13.png)
 
 **图 05**:添加新 Default.aspx 页上选择选择主机页 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image15.png))
 
 
-[![Use Site.master 母版页](an-overview-of-forms-authentication-vb/_static/image17.png)](an-overview-of-forms-authentication-vb/_static/image16.png)
+[![使用 Site.master 母版页](an-overview-of-forms-authentication-vb/_static/image17.png)](an-overview-of-forms-authentication-vb/_static/image16.png)
 
 **图 06**:使用 Site.master 母版页 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image18.png))
 
@@ -159,7 +159,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 如果你的项目尚未包含 Web.config 文件，添加一个现在通过右键单击解决方案资源管理器中的项目名称，选择添加新项，然后添加 Web 配置文件。
 
 
-[![If 你的项目尚未包含 Web.config 文件中，将其添加现在](an-overview-of-forms-authentication-vb/_static/image20.png)](an-overview-of-forms-authentication-vb/_static/image19.png)
+[![如果你的项目尚未包含 Web.config，将其添加到](an-overview-of-forms-authentication-vb/_static/image20.png)](an-overview-of-forms-authentication-vb/_static/image19.png)
 
 **图 07**:如果你项目不会不尚未包括 Web.config，现在添加 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image21.png))
 
@@ -191,7 +191,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 让我们开始使用第一个任务。 将一个新的 ASP.NET 页面添加到站点的根目录下名为 login.aspx 的情况并将其与 Site.master 母版页相关联。
 
 
-[![Add 新 ASP.NET 页名为 Login.aspx](an-overview-of-forms-authentication-vb/_static/image23.png)](an-overview-of-forms-authentication-vb/_static/image22.png)
+[![添加新的 ASP.NET 页名为 login.aspx 的情况](an-overview-of-forms-authentication-vb/_static/image23.png)](an-overview-of-forms-authentication-vb/_static/image22.png)
 
 **图 08**:添加新 ASP.NET 页名为 login.aspx 的情况 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image24.png))
 
@@ -205,7 +205,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample4.aspx)]
 
 
-[![T他登录页包含两个文本框、 复选框、 按钮和标签](an-overview-of-forms-authentication-vb/_static/image26.png)](an-overview-of-forms-authentication-vb/_static/image25.png)
+[![登录页包含两个文本框、 复选框、 按钮和标签](an-overview-of-forms-authentication-vb/_static/image26.png)](an-overview-of-forms-authentication-vb/_static/image25.png)
 
 **图 09**:在登录页包含两个文本框、 复选框、 按钮和标签 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image27.png))
 
@@ -251,7 +251,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 若要测试登录页，请在浏览器中访问它。 首先输入凭据无效，如 Nope 的用户名和密码的问题。 单击登录按钮时将发生一个回发和 InvalidCredentialsMessage 标签将显示。
 
 
-[![T他 InvalidCredentialsMessage 标签是显示时输入无效凭据](an-overview-of-forms-authentication-vb/_static/image29.png)](an-overview-of-forms-authentication-vb/_static/image28.png)
+[![InvalidCredentialsMessage 标签是显示时输入无效凭据](an-overview-of-forms-authentication-vb/_static/image29.png)](an-overview-of-forms-authentication-vb/_static/image28.png)
 
 **图 10**:InvalidCredentialsMessage 标签是显示时输入无效凭据 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image30.png))
 
@@ -287,12 +287,12 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 利用此代码，通过浏览器中访问 Default.aspx。 假设你尚未登录，你将看到一个链接到登录页 （请参阅图 11）。 单击此链接，登录到站点。 正如我们看到在步骤 3 中，输入你的凭据后，将返回到 Default.aspx，但这次该页面会显示欢迎使用后 ！ 消息 （请参阅图 12）。
 
 
-[![W显示 hen 匿名访问，日志中链接](an-overview-of-forms-authentication-vb/_static/image32.png)](an-overview-of-forms-authentication-vb/_static/image31.png)
+[![匿名访问，日志中链接显示时](an-overview-of-forms-authentication-vb/_static/image32.png)](an-overview-of-forms-authentication-vb/_static/image31.png)
 
 **图 11**:当来访时以匿名方式，显示日志中链接 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image33.png))
 
 
-[![A身份验证的用户显示欢迎回来 ！ 消息](an-overview-of-forms-authentication-vb/_static/image35.png)](an-overview-of-forms-authentication-vb/_static/image34.png)
+[![身份验证的用户显示欢迎回来 ！消息](an-overview-of-forms-authentication-vb/_static/image35.png)](an-overview-of-forms-authentication-vb/_static/image34.png)
 
 **图 12**:身份验证的用户显示欢迎回来 ！ 消息 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image36.png))
 
@@ -325,7 +325,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 图 13 显示了此修改的影响 （当用户 Scott 登录）。
 
 
-[![T欢迎使用消息包含他当前记录中用户的名称](an-overview-of-forms-authentication-vb/_static/image38.png)](an-overview-of-forms-authentication-vb/_static/image37.png)
+[![欢迎使用消息包含当前已登录用户的名称中](an-overview-of-forms-authentication-vb/_static/image38.png)](an-overview-of-forms-authentication-vb/_static/image37.png)
 
 **图 13**:欢迎使用消息包括当前记录中用户的名称 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image39.png))
 
@@ -354,7 +354,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 登录视图和其他与登录相关的控件位于工具箱的登录选项卡中。
 
 
-[![T他在工具箱中的 LoginView 控件](an-overview-of-forms-authentication-vb/_static/image41.png)](an-overview-of-forms-authentication-vb/_static/image40.png)
+[![在工具箱 LoginView 控件](an-overview-of-forms-authentication-vb/_static/image41.png)](an-overview-of-forms-authentication-vb/_static/image40.png)
 
 **图 14**:在工具箱 LoginView 控件 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image42.png))
 
@@ -374,7 +374,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 通过这一附加到 Site.master 母版页，我们的网站中每个页面将显示不同的消息，具体取决于是否对用户进行身份验证。 图 15 显示了用户 Jisun 通过浏览器访问时的 Default.aspx 页。 欢迎回来，Jisun 消息重复两次： 一次 （通过我们刚添加的 LoginView 控件） 左侧的主页面的导航部分中，一次是在 Default.aspx 的内容 （通过面板控件和编程逻辑） 的区域。
 
 
-[![T他 LoginView 控件显示欢迎使用后，Jisun。](an-overview-of-forms-authentication-vb/_static/image44.png)](an-overview-of-forms-authentication-vb/_static/image43.png)
+[![LoginView 控件显示欢迎使用后，Jisun。](an-overview-of-forms-authentication-vb/_static/image44.png)](an-overview-of-forms-authentication-vb/_static/image43.png)
 
 **图 15**:LoginView 控件显示欢迎使用后，Jisun。 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image45.png))
 
@@ -382,7 +382,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 因为我们登录视图添加到母版页时，它可以出现在我们的网站上的每一页。 但是，可能有网页我们不想要显示此消息。 此类的一页是登录页上，由于链接到登录页有点站不住脚存在。 由于我们在母版页中 ContentPlaceHolder 中放置 LoginView 控件，我们可以在我们的内容页面中重写此默认标记。 打开 login.aspx 的情况，并转到设计器。 由于我们没有显式定义的某个内容控件在母版页中 LoginContent ContentPlaceHolder 为 login.aspx 的情况，登录页将为此 ContentPlaceHolder 显示主页面的默认标记。 您可以看到这通过设计器-LoginContent ContentPlaceHolder 显示默认标记 （LoginView 控件）。
 
 
-[![T他登录页会显示的默认内容的母版页的 LoginContent ContentPlaceHolder](an-overview-of-forms-authentication-vb/_static/image47.png)](an-overview-of-forms-authentication-vb/_static/image46.png)
+[![登录页显示的默认内容的母版页的 LoginContent ContentPlaceHolder](an-overview-of-forms-authentication-vb/_static/image47.png)](an-overview-of-forms-authentication-vb/_static/image46.png)
 
 **图 16**:登录页会显示默认内容的母版页的 LoginContent ContentPlaceHolder ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image48.png))
 
@@ -396,7 +396,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 图 17 显示了 Login.aspx 页面时进行此更改后从浏览器访问。 请注意，没有任何 Hello stranger 或欢迎使用后，*用户名*左侧的导航窗格中的消息&lt;div&gt;因为没有访问 Default.aspx 时。
 
 
-[![T隐藏默认 LoginContent ContentPlaceHolder 的标记他登录页](an-overview-of-forms-authentication-vb/_static/image50.png)](an-overview-of-forms-authentication-vb/_static/image49.png)
+[![登录页上隐藏默认 LoginContent ContentPlaceHolder 标记](an-overview-of-forms-authentication-vb/_static/image50.png)](an-overview-of-forms-authentication-vb/_static/image49.png)
 
 **图 17**:登录页上隐藏默认 LoginContent ContentPlaceHolder 的标记 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image51.png))
 
@@ -432,7 +432,7 @@ ASP.NET 提供注销链接此类的常见功能包括专门用于注销用户的
 **图 18**:Default.aspx 显示欢迎使用后退、 Jisun 沿与注销 LinkButton ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image54.png))
 
 
-[![L显示欢迎使用，以及登录名 LinkButton stranger ogout.aspx](an-overview-of-forms-authentication-vb/_static/image56.png)](an-overview-of-forms-authentication-vb/_static/image55.png)
+[![Logout.aspx 显示欢迎使用，以及登录名 LinkButton stranger](an-overview-of-forms-authentication-vb/_static/image56.png)](an-overview-of-forms-authentication-vb/_static/image55.png)
 
 **图 19**:Logout.aspx 显示欢迎使用，以及登录名 LinkButton stranger ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image57.png))
 

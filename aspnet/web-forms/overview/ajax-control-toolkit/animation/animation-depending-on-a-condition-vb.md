@@ -12,7 +12,7 @@ ms.openlocfilehash: 78140f56184e88fb4dbe29f234aebd5732b69ad9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418867"
 ---
 # <a name="animation-depending-on-a-condition-vb"></a>取决于条件的动画 (VB)
@@ -53,7 +53,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 请注意，为小于号 (`<`) 中`ConditionScript`属性必须为转义 （）。 当您运行此脚本，无动画运行或两个空格，或同时执行操作。
 
 
-[![T他面板淡出而无需调整其大小，因此第二个动画运行第一个未](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
+[![在面板淡出而无需调整大小时，因此第二个动画运行第一个未](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
 
 在面板淡出而无需调整大小时，因此第二个动画运行第一个未 ([单击此项可查看原尺寸图像](animation-depending-on-a-condition-vb/_static/image3.png))
 

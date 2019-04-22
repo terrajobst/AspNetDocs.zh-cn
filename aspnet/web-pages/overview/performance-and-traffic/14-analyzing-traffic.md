@@ -12,7 +12,7 @@ ms.openlocfilehash: a99ed5cc8875ef9f39234e3f394b46b5782d0bc1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390215"
 ---
 # <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>跟踪 ASP.NET Web Pages (Razor) 站点的访问者信息 （分析）
@@ -86,5 +86,5 @@ ASP.NET 网页包括多个分析帮助程序 (`Analytics.GetGoogleHtml`， `Anal
 ## <a name="additional-resources"></a>其他资源
 
 - [Google Analytics 站点](https://www.google.com/analytics/)
-- [Yahoo! Web Analytics 站点](http://help.yahoo.com/l/us/yahoo/ywa/)
+- [Yahoo!Web Analytics 站点](http://help.yahoo.com/l/us/yahoo/ywa/)
 - [StatCounter 站点](http://statcounter.com/)

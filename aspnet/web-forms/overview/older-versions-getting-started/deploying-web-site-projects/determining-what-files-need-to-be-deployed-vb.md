@@ -12,7 +12,7 @@ ms.openlocfilehash: fe19910d693a784b8dc207462591c9f4d51cec14
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382142"
 ---
 # <a name="determining-what-files-need-to-be-deployed-vb"></a>确定需要部署哪些文件 (VB)
@@ -93,7 +93,7 @@ Microsoft 发布 Visual Studio 2005 Service Pack 1 时恢复 Web 应用程序项
 图 1 显示了书评网站的浏览器查看时的屏幕截图。 此处可以看到页面 ~ / Tech/TYASP35.aspx，该评审本书*教您自己 ASP.NET 3.5 24 小时内*。 跨越页和左侧列中的菜单的顶部痕迹导航基于站点地图结构中定义`Web.sitemap`。 在右上角中的图像是一个通讯簿封面图像位于`Images`文件夹。 网站的外观和感觉定义通过级联样式表规则的 CSS 文件中拼`Styles`文件夹，而在母版页中定义总体的页面布局`Site.master`。
 
 
-[![T他通讯簿评审网站提供了具有多种类型的标题上的评论](determining-what-files-need-to-be-deployed-vb/_static/image2.png)](determining-what-files-need-to-be-deployed-vb/_static/image1.png)
+[![通讯簿评审网站提供了具有多种类型的标题上的评论](determining-what-files-need-to-be-deployed-vb/_static/image2.png)](determining-what-files-need-to-be-deployed-vb/_static/image1.png)
 
 **图 1**:通讯簿评审网站提供了具有多种类型的标题上的评论 ([单击此项可查看原尺寸图像](determining-what-files-need-to-be-deployed-vb/_static/image3.png))
 
@@ -116,7 +116,7 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 图 2 显示了构成了通讯簿评审 Web 应用程序项目的文件。
 
 
-[![T他的解决方案资源管理器列出了构成 Web 应用程序项目的文件。](determining-what-files-need-to-be-deployed-vb/_static/image5.png)](determining-what-files-need-to-be-deployed-vb/_static/image4.png)
+[![在解决方案资源管理器列出了构成 Web 应用程序项目的文件。](determining-what-files-need-to-be-deployed-vb/_static/image5.png)](determining-what-files-need-to-be-deployed-vb/_static/image4.png)
 
 **图 2**:在解决方案资源管理器列出了构成 Web 应用程序项目的文件
 
@@ -147,7 +147,7 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 图 3 显示了构成了通讯簿评审网站项目的文件。
 
 
-[![T他的解决方案资源管理器列出了构成网站项目的文件。](determining-what-files-need-to-be-deployed-vb/_static/image7.png)](determining-what-files-need-to-be-deployed-vb/_static/image6.png)
+[![在解决方案资源管理器列出了构成网站项目的文件。](determining-what-files-need-to-be-deployed-vb/_static/image7.png)](determining-what-files-need-to-be-deployed-vb/_static/image6.png)
 
 **图 3**:在解决方案资源管理器列出了构成网站项目的文件
 

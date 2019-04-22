@@ -12,7 +12,7 @@ ms.openlocfilehash: 74fc0f4cb7d3ed7d1ef091cdb8fa829091af5a7a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388681"
 ---
 # <a name="configuring-deployment-properties-for-a-target-environment"></a>配置目标环境的部署属性
@@ -116,4 +116,4 @@ ms.locfileid: "59388681"
 - 有关如何从 Team Build 执行自定义项目文件的信息，请参阅[创建该支持部署的生成定义](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。
 
 > [!div class="step-by-step"]
-> [上一个](creating-a-server-farm-with-the-web-farm-framework.md)
+> [上一篇](creating-a-server-farm-with-the-web-farm-framework.md)

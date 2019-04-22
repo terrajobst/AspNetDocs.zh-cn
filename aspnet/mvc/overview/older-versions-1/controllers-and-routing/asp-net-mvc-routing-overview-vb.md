@@ -12,7 +12,7 @@ ms.openlocfilehash: c135bacd7f9f87fac87a3c8cf41bad359bb3c0a2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379178"
 ---
 # <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 路由概述 (VB)
@@ -95,7 +95,7 @@ URL /Home 也匹配 HomeController 类列表 4 中的 index （） 方法。
 [!code-vb[Main](asp-net-mvc-routing-overview-vb/samples/sample5.vb)]
 
 
-[![Invoking 需要参数值的控制器操作](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
+[![调用控制器操作所需的参数值](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
 
 **图 01**:调用控制器操作所需的参数值 ([单击此项可查看原尺寸图像](asp-net-mvc-routing-overview-vb/_static/image2.png))
 

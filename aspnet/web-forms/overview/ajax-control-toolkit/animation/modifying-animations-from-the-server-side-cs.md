@@ -12,7 +12,7 @@ ms.openlocfilehash: 2d4c786ca10e77353ac8b4746138cb1e314585ae
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383780"
 ---
 # <a name="modifying-animations-from-the-server-side-c"></a>修改动画从服务器端 (C#)
@@ -55,7 +55,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-html[Main](modifying-animations-from-the-server-side-cs/samples/sample6.html)]
 
 
-[![T使用服务器端创建他动画C#/VB 代码](modifying-animations-from-the-server-side-cs/_static/image2.png)](modifying-animations-from-the-server-side-cs/_static/image1.png)
+[![使用服务器端 C# /VB 代码创建动画](modifying-animations-from-the-server-side-cs/_static/image2.png)](modifying-animations-from-the-server-side-cs/_static/image1.png)
 
 使用服务器端 C# /VB 代码创建动画 ([单击此项可查看原尺寸图像](modifying-animations-from-the-server-side-cs/_static/image3.png))
 

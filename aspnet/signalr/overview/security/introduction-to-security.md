@@ -12,7 +12,7 @@ ms.openlocfilehash: 6e96c9a086241b6f3fff40d4a5fb0a3636bfa4b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387317"
 ---
 # <a name="introduction-to-signalr-security"></a>SignalR 安全性简介
@@ -58,7 +58,7 @@ ms.locfileid: "59387317"
     - [安全地处理来自客户端的输入](#input)
     - [协调与活动连接的用户状态中的更改](#reconcile)
     - [自动生成的 JavaScript 代理文件](#autogen)
-    - [Exceptions](#exceptions)
+    - [异常](#exceptions)
 
 <a id="concepts"></a>
 

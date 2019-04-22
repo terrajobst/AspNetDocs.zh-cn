@@ -12,7 +12,7 @@ ms.openlocfilehash: 0bc24a59e09728a5ecb6e18378c4cde0c8e046f2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387446"
 ---
 # <a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0 的新增功能
@@ -210,4 +210,4 @@ Entity Framework 4 中的 POCO 支持仍需要创建数据模型，并链接到�
 - [宣布发布 Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx)版本 4 中的新增功能有关的实体框架开发团队的博客文章。
 
 > [!div class="step-by-step"]
-> [上一个](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [上一篇](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
