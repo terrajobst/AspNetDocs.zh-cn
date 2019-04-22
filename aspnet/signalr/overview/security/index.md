@@ -12,14 +12,14 @@ ms.openlocfilehash: 36589215f7676b34c8372afeb7ad11ab5736861c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389955"
 ---
-# <a name="signalr-security"></a><span data-ttu-id="8febf-103">SignalR 安全性</span><span class="sxs-lookup"><span data-stu-id="8febf-103">SignalR Security</span></span>
+# <a name="signalr-security"></a><span data-ttu-id="30d9d-103">SignalR 安全性</span><span class="sxs-lookup"><span data-stu-id="30d9d-103">SignalR Security</span></span>
 
-> <span data-ttu-id="8febf-104">了解和处理 SignalR 应用程序中的安全问题。</span><span class="sxs-lookup"><span data-stu-id="8febf-104">Understanding and handling security issues in SignalR applications.</span></span>
+> <span data-ttu-id="30d9d-104">了解和处理 SignalR 应用程序中的安全问题。</span><span class="sxs-lookup"><span data-stu-id="30d9d-104">Understanding and handling security issues in SignalR applications.</span></span>
 
 
-- [<span data-ttu-id="8febf-105">SignalR 安全性简介</span><span class="sxs-lookup"><span data-stu-id="8febf-105">Introduction to SignalR Security</span></span>](introduction-to-security.md)
-- [<span data-ttu-id="8febf-106">SignalR 中心身份验证和授权</span><span class="sxs-lookup"><span data-stu-id="8febf-106">Authentication and Authorization for SignalR Hubs</span></span>](hub-authorization.md)
-- [<span data-ttu-id="8febf-107">SignalR 永久性连接身份验证和授权</span><span class="sxs-lookup"><span data-stu-id="8febf-107">Authentication and Authorization for SignalR Persistent Connections</span></span>](persistent-connection-authorization.md)
+- [<span data-ttu-id="30d9d-105">SignalR 安全性简介</span><span class="sxs-lookup"><span data-stu-id="30d9d-105">Introduction to SignalR Security</span></span>](introduction-to-security.md)
+- [<span data-ttu-id="30d9d-106">SignalR 中心身份验证和授权</span><span class="sxs-lookup"><span data-stu-id="30d9d-106">Authentication and Authorization for SignalR Hubs</span></span>](hub-authorization.md)
+- [<span data-ttu-id="30d9d-107">SignalR 永久性连接身份验证和授权</span><span class="sxs-lookup"><span data-stu-id="30d9d-107">Authentication and Authorization for SignalR Persistent Connections</span></span>](persistent-connection-authorization.md)

@@ -12,18 +12,18 @@ ms.openlocfilehash: 8ebbd7a8e8fa4adb9835cea9560797beee2b86fa
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383855"
 ---
-# <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a><span data-ttu-id="bb7a9-103">ColdFusion 开发人员介绍 ASP.NET 的:生成 ASP.NET 应用程序</span><span class="sxs-lookup"><span data-stu-id="bb7a9-103">Introduction to ASP.NET for ColdFusion Developers: Building an ASP.NET Application</span></span>
+# <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a><span data-ttu-id="a96ec-103">ColdFusion 开发人员介绍 ASP.NET 的:生成 ASP.NET 应用程序</span><span class="sxs-lookup"><span data-stu-id="a96ec-103">Introduction to ASP.NET for ColdFusion Developers: Building an ASP.NET Application</span></span>
 
-<span data-ttu-id="bb7a9-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="bb7a9-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="a96ec-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="a96ec-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="bb7a9-105">此网络广播演示如何生成 ASP.NET 应用程序从空白表单开始为经验丰富的 ColdFusion 开发人员提供清楚地完全所涉及的内容。</span><span class="sxs-lookup"><span data-stu-id="bb7a9-105">This webcast shows how to build an ASP.NET application starting from a blank form, to give the experienced ColdFusion developer a clear idea of exactly what is involved.</span></span>
+<span data-ttu-id="a96ec-105">此网络广播演示如何生成 ASP.NET 应用程序从空白表单开始为经验丰富的 ColdFusion 开发人员提供清楚地完全所涉及的内容。</span><span class="sxs-lookup"><span data-stu-id="a96ec-105">This webcast shows how to build an ASP.NET application starting from a blank form, to give the experienced ColdFusion developer a clear idea of exactly what is involved.</span></span>
 
-[<span data-ttu-id="bb7a9-106">&#9654;观看视频 （77 分钟）</span><span class="sxs-lookup"><span data-stu-id="bb7a9-106">&#9654; Watch video (77 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application)
+[<span data-ttu-id="a96ec-106">&#9654;观看视频 （77 分钟）</span><span class="sxs-lookup"><span data-stu-id="a96ec-106">&#9654; Watch video (77 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="bb7a9-107">[上一页](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-> [下一页](interop-between-php-and-the-windows-platform.md)</span><span class="sxs-lookup"><span data-stu-id="bb7a9-107">[Previous](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+> <span data-ttu-id="a96ec-107">[上一页](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+> [下一页](interop-between-php-and-the-windows-platform.md)</span><span class="sxs-lookup"><span data-stu-id="a96ec-107">[Previous](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
 [Next](interop-between-php-and-the-windows-platform.md)</span></span>

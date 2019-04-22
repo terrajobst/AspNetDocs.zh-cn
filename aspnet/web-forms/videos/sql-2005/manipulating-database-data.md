@@ -12,18 +12,18 @@ ms.openlocfilehash: 10f9379a27f96ac4acb77af1a6062a42aaecc14f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391671"
 ---
-# <a name="manipulating-database-data"></a><span data-ttu-id="7be6f-104">操作数据库数据</span><span class="sxs-lookup"><span data-stu-id="7be6f-104">Manipulating Database Data</span></span>
+# <a name="manipulating-database-data"></a><span data-ttu-id="5938b-104">操作数据库数据</span><span class="sxs-lookup"><span data-stu-id="5938b-104">Manipulating Database Data</span></span>
 
-<span data-ttu-id="7be6f-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="7be6f-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="5938b-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="5938b-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="7be6f-106">SQL Server 初学者将了解有关 ADO.NET 对象和从 ADO.NET 的 SQL 语句的执行。</span><span class="sxs-lookup"><span data-stu-id="7be6f-106">SQL Server beginners will learn about ADO.NET objects and execution of SQL statement from ADO.NET.</span></span> <span data-ttu-id="7be6f-107">浏览 SQL 和了解有关 insert、 update 和 delete 语句。</span><span class="sxs-lookup"><span data-stu-id="7be6f-107">Explore SQL and learn about insert, update, and delete statements.</span></span>
+<span data-ttu-id="5938b-106">SQL Server 初学者将了解有关 ADO.NET 对象和从 ADO.NET 的 SQL 语句的执行。</span><span class="sxs-lookup"><span data-stu-id="5938b-106">SQL Server beginners will learn about ADO.NET objects and execution of SQL statement from ADO.NET.</span></span> <span data-ttu-id="5938b-107">浏览 SQL 和了解有关 insert、 update 和 delete 语句。</span><span class="sxs-lookup"><span data-stu-id="5938b-107">Explore SQL and learn about insert, update, and delete statements.</span></span>
 
-[<span data-ttu-id="7be6f-108">&#9654;观看视频 （40 分钟）</span><span class="sxs-lookup"><span data-stu-id="7be6f-108">&#9654; Watch video (40 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/manipulating-database-data)
+[<span data-ttu-id="5938b-108">&#9654;观看视频 （40 分钟）</span><span class="sxs-lookup"><span data-stu-id="5938b-108">&#9654; Watch video (40 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/manipulating-database-data)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="7be6f-109">[上一页](designing-relational-database-tables.md)
-> [下一页](more-structured-query-language.md)</span><span class="sxs-lookup"><span data-stu-id="7be6f-109">[Previous](designing-relational-database-tables.md)
+> <span data-ttu-id="5938b-109">[上一页](designing-relational-database-tables.md)
+> [下一页](more-structured-query-language.md)</span><span class="sxs-lookup"><span data-stu-id="5938b-109">[Previous](designing-relational-database-tables.md)
 [Next](more-structured-query-language.md)</span></span>

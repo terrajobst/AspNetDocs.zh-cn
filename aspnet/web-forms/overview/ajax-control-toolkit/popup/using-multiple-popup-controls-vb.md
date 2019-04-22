@@ -12,48 +12,48 @@ ms.openlocfilehash: ee66e166d24bb80008671c84f6512d5c54707fcf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389806"
 ---
-# <a name="using-multiple-popup-controls-vb"></a><span data-ttu-id="09954-104">使用多个弹出控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="09954-104">Using Multiple Popup Controls (VB)</span></span>
+# <a name="using-multiple-popup-controls-vb"></a><span data-ttu-id="051cc-104">使用多个弹出控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="051cc-104">Using Multiple Popup Controls (VB)</span></span>
 
-<span data-ttu-id="09954-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="09954-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="051cc-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="051cc-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="09954-106">[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="09954-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)</span></span>
+<span data-ttu-id="051cc-106">[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="051cc-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)</span></span>
 
-> <span data-ttu-id="09954-107">AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="09954-107">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="09954-108">还有可能要使用在同一页上的多个弹出控件。</span><span class="sxs-lookup"><span data-stu-id="09954-108">It is also possible to use more than one popup control on one page.</span></span>
+> <span data-ttu-id="051cc-107">AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="051cc-107">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="051cc-108">还有可能要使用在同一页上的多个弹出控件。</span><span class="sxs-lookup"><span data-stu-id="051cc-108">It is also possible to use more than one popup control on one page.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="09954-109">概述</span><span class="sxs-lookup"><span data-stu-id="09954-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="051cc-109">概述</span><span class="sxs-lookup"><span data-stu-id="051cc-109">Overview</span></span>
 
-<span data-ttu-id="09954-110">AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="09954-110">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="09954-111">还有可能要使用在同一页上的多个弹出控件。</span><span class="sxs-lookup"><span data-stu-id="09954-111">It is also possible to use more than one popup control on one page.</span></span>
+<span data-ttu-id="051cc-110">AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="051cc-110">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="051cc-111">还有可能要使用在同一页上的多个弹出控件。</span><span class="sxs-lookup"><span data-stu-id="051cc-111">It is also possible to use more than one popup control on one page.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="09954-112">步骤</span><span class="sxs-lookup"><span data-stu-id="09954-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="051cc-112">步骤</span><span class="sxs-lookup"><span data-stu-id="051cc-112">Steps</span></span>
 
-<span data-ttu-id="09954-113">若要激活 ASP.NET AJAX 控件工具包的功能`ScriptManager`控件必须添加到任何位置的页上 (但在`<form>`元素):</span><span class="sxs-lookup"><span data-stu-id="09954-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
+<span data-ttu-id="051cc-113">若要激活 ASP.NET AJAX 控件工具包的功能`ScriptManager`控件必须添加到任何位置的页上 (但在`<form>`元素):</span><span class="sxs-lookup"><span data-stu-id="051cc-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="09954-114">接下来，添加一个面板作为弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="09954-114">Next, add a panel which serves as the popup.</span></span> <span data-ttu-id="09954-115">在当前的方案中，面板包含`Calendar`控件。</span><span class="sxs-lookup"><span data-stu-id="09954-115">In the current scenario, the panel contains a `Calendar` control.</span></span> <span data-ttu-id="09954-116">为了避免引起的日历的回发页面刷新，面板都会放到`UpdatePanel`控件：</span><span class="sxs-lookup"><span data-stu-id="09954-116">In order to avoid the page refreshes caused by the Calendar's postbacks, the panel is put within an `UpdatePanel` control:</span></span>
+<span data-ttu-id="051cc-114">接下来，添加一个面板作为弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="051cc-114">Next, add a panel which serves as the popup.</span></span> <span data-ttu-id="051cc-115">在当前的方案中，面板包含`Calendar`控件。</span><span class="sxs-lookup"><span data-stu-id="051cc-115">In the current scenario, the panel contains a `Calendar` control.</span></span> <span data-ttu-id="051cc-116">为了避免引起的日历的回发页面刷新，面板都会放到`UpdatePanel`控件：</span><span class="sxs-lookup"><span data-stu-id="051cc-116">In order to avoid the page refreshes caused by the Calendar's postbacks, the panel is put within an `UpdatePanel` control:</span></span>
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="09954-117">该页还包含两个文本框。</span><span class="sxs-lookup"><span data-stu-id="09954-117">The page also contains two text boxes.</span></span> <span data-ttu-id="09954-118">对于每个文本框，文本框中激活后，应显示日历弹出框。</span><span class="sxs-lookup"><span data-stu-id="09954-118">For each text box, the calendar popup shall appear once the text box is activated.</span></span>
+<span data-ttu-id="051cc-117">该页还包含两个文本框。</span><span class="sxs-lookup"><span data-stu-id="051cc-117">The page also contains two text boxes.</span></span> <span data-ttu-id="051cc-118">对于每个文本框，文本框中激活后，应显示日历弹出框。</span><span class="sxs-lookup"><span data-stu-id="051cc-118">For each text box, the calendar popup shall appear once the text box is activated.</span></span>
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="09954-119">现在扩展使用的两个文本框的每个`PopupControlExtender`。</span><span class="sxs-lookup"><span data-stu-id="09954-119">Now extend each of the two text boxes with a `PopupControlExtender`.</span></span> <span data-ttu-id="09954-120">`TargetControlID`属性提供绑定到扩展器控件的 ID。</span><span class="sxs-lookup"><span data-stu-id="09954-120">The `TargetControlID` attribute provides the ID of the control tied to the extender.</span></span> <span data-ttu-id="09954-121">`PopupControlID`属性包含的弹出面板的 ID。</span><span class="sxs-lookup"><span data-stu-id="09954-121">The `PopupControlID` attribute contains the ID of the popup panel.</span></span> <span data-ttu-id="09954-122">在这种情况下，这两个扩展程序显示相同的面板中，但也是可能的不同的面板。</span><span class="sxs-lookup"><span data-stu-id="09954-122">In this case, both extenders show the same panel, but different panels are possible, as well.</span></span>
+<span data-ttu-id="051cc-119">现在扩展使用的两个文本框的每个`PopupControlExtender`。</span><span class="sxs-lookup"><span data-stu-id="051cc-119">Now extend each of the two text boxes with a `PopupControlExtender`.</span></span> <span data-ttu-id="051cc-120">`TargetControlID`属性提供绑定到扩展器控件的 ID。</span><span class="sxs-lookup"><span data-stu-id="051cc-120">The `TargetControlID` attribute provides the ID of the control tied to the extender.</span></span> <span data-ttu-id="051cc-121">`PopupControlID`属性包含的弹出面板的 ID。</span><span class="sxs-lookup"><span data-stu-id="051cc-121">The `PopupControlID` attribute contains the ID of the popup panel.</span></span> <span data-ttu-id="051cc-122">在这种情况下，这两个扩展程序显示相同的面板中，但也是可能的不同的面板。</span><span class="sxs-lookup"><span data-stu-id="051cc-122">In this case, both extenders show the same panel, but different panels are possible, as well.</span></span>
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="09954-123">现在只要您在文本字段内单击，日历显示字段的下方，您可以选择一个日期。</span><span class="sxs-lookup"><span data-stu-id="09954-123">Now whenever you click within a text field, a calendar appears below the field, allowing you to select a date.</span></span> <span data-ttu-id="09954-124">（所选的日期取回到文本框中将介绍在不同的教程。）</span><span class="sxs-lookup"><span data-stu-id="09954-124">(Getting the selected date back into the text boxes will be covered in a different tutorial.)</span></span>
+<span data-ttu-id="051cc-123">现在只要您在文本字段内单击，日历显示字段的下方，您可以选择一个日期。</span><span class="sxs-lookup"><span data-stu-id="051cc-123">Now whenever you click within a text field, a calendar appears below the field, allowing you to select a date.</span></span> <span data-ttu-id="051cc-124">（所选的日期取回到文本框中将介绍在不同的教程。）</span><span class="sxs-lookup"><span data-stu-id="051cc-124">(Getting the selected date back into the text boxes will be covered in a different tutorial.)</span></span>
 
 
-[![T<span data-ttu-id="09954-125">当用户单击文本框时显示他日历]</span><span class="sxs-lookup"><span data-stu-id="09954-125">he Calendar appears when the user clicks into the textbox]</span></span>(using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
+<span data-ttu-id="051cc-125">[![当用户单击文本框中，将显示日历](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="051cc-125">[![The Calendar appears when the user clicks into the textbox](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="09954-126">当用户单击文本框中，将显示日历 ([单击此项可查看原尺寸图像](using-multiple-popup-controls-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="09954-126">The Calendar appears when the user clicks into the textbox ([Click to view full-size image](using-multiple-popup-controls-vb/_static/image3.png))</span></span>
+<span data-ttu-id="051cc-126">当用户单击文本框中，将显示日历 ([单击此项可查看原尺寸图像](using-multiple-popup-controls-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="051cc-126">The Calendar appears when the user clicks into the textbox ([Click to view full-size image](using-multiple-popup-controls-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="09954-127">[上一页](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)
-> [下一页](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)</span><span class="sxs-lookup"><span data-stu-id="09954-127">[Previous](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)
+> <span data-ttu-id="051cc-127">[上一页](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)
+> [下一页](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)</span><span class="sxs-lookup"><span data-stu-id="051cc-127">[Previous](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)
 [Next](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)</span></span>

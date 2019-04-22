@@ -12,13 +12,13 @@ ms.openlocfilehash: e499292c6dedcec0718d0823e7c324a7da9e00b8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396377"
 ---
-# <a name="an-introduction-to-soap-based-web-services-with-visual-web-developer-2008"></a><span data-ttu-id="0bf9a-103">大致了解 SOAP 基于 Visual Web developer 2008 的 Web 服务</span><span class="sxs-lookup"><span data-stu-id="0bf9a-103">An Introduction to SOAP Based Web Services with Visual Web Developer 2008</span></span>
+# <a name="an-introduction-to-soap-based-web-services-with-visual-web-developer-2008"></a><span data-ttu-id="7859b-103">大致了解 SOAP 基于 Visual Web developer 2008 的 Web 服务</span><span class="sxs-lookup"><span data-stu-id="7859b-103">An Introduction to SOAP Based Web Services with Visual Web Developer 2008</span></span>
 
-<span data-ttu-id="0bf9a-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="0bf9a-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="7859b-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="7859b-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="0bf9a-105">此视频演示了如何快速并轻松可能会开始开发基于 SOAP 的分布式应用程序 / XML web 服务。</span><span class="sxs-lookup"><span data-stu-id="0bf9a-105">This video shows you how quick and easy it can be to start developing distributed applications based on SOAP / XML web services.</span></span>
+<span data-ttu-id="7859b-105">此视频演示了如何快速并轻松可能会开始开发基于 SOAP 的分布式应用程序 / XML web 服务。</span><span class="sxs-lookup"><span data-stu-id="7859b-105">This video shows you how quick and easy it can be to start developing distributed applications based on SOAP / XML web services.</span></span>
 
-[<span data-ttu-id="0bf9a-106">&#9654;观看视频 （26 分钟）</span><span class="sxs-lookup"><span data-stu-id="0bf9a-106">&#9654; Watch video (26 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/an-introduction-to-soap-based-web-services-with-visual-web-developer-2008)
+[<span data-ttu-id="7859b-106">&#9654;观看视频 （26 分钟）</span><span class="sxs-lookup"><span data-stu-id="7859b-106">&#9654; Watch video (26 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/an-introduction-to-soap-based-web-services-with-visual-web-developer-2008)

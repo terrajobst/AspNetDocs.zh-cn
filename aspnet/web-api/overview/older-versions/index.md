@@ -13,23 +13,23 @@ ms.openlocfilehash: 1e5fecca826a74fd8ff60ecd415f39c4f51917a2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391350"
 ---
-# <a name="documentation-on-older-versions-of-web-api"></a><span data-ttu-id="2f35a-103">在旧版本的 Web API 文档</span><span class="sxs-lookup"><span data-stu-id="2f35a-103">Documentation on Older Versions of Web API</span></span>
+# <a name="documentation-on-older-versions-of-web-api"></a><span data-ttu-id="f2e74-103">在旧版本的 Web API 文档</span><span class="sxs-lookup"><span data-stu-id="f2e74-103">Documentation on Older Versions of Web API</span></span>
 
-> <span data-ttu-id="2f35a-104">文档上的 Web API 的较旧版本的 ASP.NET 4.x。</span><span class="sxs-lookup"><span data-stu-id="2f35a-104">Documentation on older versions of Web API for ASP.NET 4.x.</span></span>
+> <span data-ttu-id="f2e74-104">文档上的 Web API 的较旧版本的 ASP.NET 4.x。</span><span class="sxs-lookup"><span data-stu-id="f2e74-104">Documentation on older versions of Web API for ASP.NET 4.x.</span></span>
 
 
-- [<span data-ttu-id="2f35a-105">在 Web API 1 中启用 CRUD 操作</span><span class="sxs-lookup"><span data-stu-id="2f35a-105">Enabling CRUD Operations in Web API 1</span></span>](creating-a-web-api-that-supports-crud-operations.md)
-- [<span data-ttu-id="2f35a-106">通过 Entity Framework 5 使用 ASP.NET Web API 1</span><span class="sxs-lookup"><span data-stu-id="2f35a-106">Using ASP.NET Web API 1 with Entity Framework 5</span></span>](using-web-api-1-with-entity-framework-5/index.md)
+- [<span data-ttu-id="f2e74-105">在 Web API 1 中启用 CRUD 操作</span><span class="sxs-lookup"><span data-stu-id="f2e74-105">Enabling CRUD Operations in Web API 1</span></span>](creating-a-web-api-that-supports-crud-operations.md)
+- [<span data-ttu-id="f2e74-106">通过 Entity Framework 5 使用 ASP.NET Web API 1</span><span class="sxs-lookup"><span data-stu-id="f2e74-106">Using ASP.NET Web API 1 with Entity Framework 5</span></span>](using-web-api-1-with-entity-framework-5/index.md)
 
-    - [<span data-ttu-id="2f35a-107">概述和创建项目</span><span class="sxs-lookup"><span data-stu-id="2f35a-107">Overview and Creating the Project</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1.md)
-    - [<span data-ttu-id="2f35a-108">创建域模型</span><span class="sxs-lookup"><span data-stu-id="2f35a-108">Creating the Domain Models</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
-    - [<span data-ttu-id="2f35a-109">创建管理员控制器</span><span class="sxs-lookup"><span data-stu-id="2f35a-109">Creating an Admin Controller</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
-    - [<span data-ttu-id="2f35a-110">添加管理员视图</span><span class="sxs-lookup"><span data-stu-id="2f35a-110">Adding an Admin View</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
-    - [<span data-ttu-id="2f35a-111">使用 Knockout.js 创建动态 UI</span><span class="sxs-lookup"><span data-stu-id="2f35a-111">Creating a Dynamic UI with Knockout.js</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5.md)
-    - [<span data-ttu-id="2f35a-112">创建产品和订单控制器</span><span class="sxs-lookup"><span data-stu-id="2f35a-112">Creating Product and Order Controllers</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6.md)
-    - [<span data-ttu-id="2f35a-113">创建主页面</span><span class="sxs-lookup"><span data-stu-id="2f35a-113">Creating the Main Page</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7.md)
-- [<span data-ttu-id="2f35a-114">自承载 Web API 1 (C#)</span><span class="sxs-lookup"><span data-stu-id="2f35a-114">Self-Host Web API 1 (C#)</span></span>](self-host-a-web-api.md)
-- [<span data-ttu-id="2f35a-115">使用 ASP.NET Web API 生成 RESTful API</span><span class="sxs-lookup"><span data-stu-id="2f35a-115">Build RESTful API's with ASP.NET Web API</span></span>](build-restful-apis-with-aspnet-web-api.md)
+    - [<span data-ttu-id="f2e74-107">概述和创建项目</span><span class="sxs-lookup"><span data-stu-id="f2e74-107">Overview and Creating the Project</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1.md)
+    - [<span data-ttu-id="f2e74-108">创建域模型</span><span class="sxs-lookup"><span data-stu-id="f2e74-108">Creating the Domain Models</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
+    - [<span data-ttu-id="f2e74-109">创建管理员控制器</span><span class="sxs-lookup"><span data-stu-id="f2e74-109">Creating an Admin Controller</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
+    - [<span data-ttu-id="f2e74-110">添加管理员视图</span><span class="sxs-lookup"><span data-stu-id="f2e74-110">Adding an Admin View</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
+    - [<span data-ttu-id="f2e74-111">使用 Knockout.js 创建动态 UI</span><span class="sxs-lookup"><span data-stu-id="f2e74-111">Creating a Dynamic UI with Knockout.js</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5.md)
+    - [<span data-ttu-id="f2e74-112">创建产品和订单控制器</span><span class="sxs-lookup"><span data-stu-id="f2e74-112">Creating Product and Order Controllers</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6.md)
+    - [<span data-ttu-id="f2e74-113">创建主页面</span><span class="sxs-lookup"><span data-stu-id="f2e74-113">Creating the Main Page</span></span>](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7.md)
+- [<span data-ttu-id="f2e74-114">自承载 Web API 1 (C#)</span><span class="sxs-lookup"><span data-stu-id="f2e74-114">Self-Host Web API 1 (C#)</span></span>](self-host-a-web-api.md)
+- [<span data-ttu-id="f2e74-115">使用 ASP.NET Web API 生成 RESTful API</span><span class="sxs-lookup"><span data-stu-id="f2e74-115">Build RESTful API's with ASP.NET Web API</span></span>](build-restful-apis-with-aspnet-web-api.md)

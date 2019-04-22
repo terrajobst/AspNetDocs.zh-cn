@@ -12,13 +12,13 @@ ms.openlocfilehash: 42179cdecabed2954fcfe22cb2b968d566a386f5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388343"
 ---
-# <a name="collapsiblepanel"></a><span data-ttu-id="3e394-103">CollapsiblePanel</span><span class="sxs-lookup"><span data-stu-id="3e394-103">CollapsiblePanel</span></span>
+# <a name="collapsiblepanel"></a><span data-ttu-id="95183-103">CollapsiblePanel</span><span class="sxs-lookup"><span data-stu-id="95183-103">CollapsiblePanel</span></span>
 
-> <span data-ttu-id="3e394-104">本教程演示如何使用 CollapsiblePanel 控件以使用户可以展开和折叠区域在页上。</span><span class="sxs-lookup"><span data-stu-id="3e394-104">This tutorial shows how to use the CollapsiblePanel control to let users expand and collapse areas on the page.</span></span>
+> <span data-ttu-id="95183-104">本教程演示如何使用 CollapsiblePanel 控件以使用户可以展开和折叠区域在页上。</span><span class="sxs-lookup"><span data-stu-id="95183-104">This tutorial shows how to use the CollapsiblePanel control to let users expand and collapse areas on the page.</span></span>
 
 
-- [<span data-ttu-id="3e394-105">通过 JavaScript 折叠和展开面板 (C#)</span><span class="sxs-lookup"><span data-stu-id="3e394-105">Collapsing and Expanding a Panel from JavaScript (C#)</span></span>](collapsing-and-expanding-a-panel-from-javascript-cs.md)
-- [<span data-ttu-id="3e394-106">通过 JavaScript 折叠和展开面板 (VB)</span><span class="sxs-lookup"><span data-stu-id="3e394-106">Collapsing and Expanding a Panel from JavaScript (VB)</span></span>](collapsing-and-expanding-a-panel-from-javascript-vb.md)
+- [<span data-ttu-id="95183-105">通过 JavaScript 折叠和展开面板 (C#)</span><span class="sxs-lookup"><span data-stu-id="95183-105">Collapsing and Expanding a Panel from JavaScript (C#)</span></span>](collapsing-and-expanding-a-panel-from-javascript-cs.md)
+- [<span data-ttu-id="95183-106">通过 JavaScript 折叠和展开面板 (VB)</span><span class="sxs-lookup"><span data-stu-id="95183-106">Collapsing and Expanding a Panel from JavaScript (VB)</span></span>](collapsing-and-expanding-a-panel-from-javascript-vb.md)

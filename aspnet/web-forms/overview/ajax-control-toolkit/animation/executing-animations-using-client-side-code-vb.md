@@ -12,62 +12,62 @@ ms.openlocfilehash: ff143aa102973279c53fe4ba052c4766f099c77d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382207"
 ---
-# <a name="executing-animations-using-client-side-code-vb"></a><span data-ttu-id="32df7-104">使用客户端代码执行动画 (VB)</span><span class="sxs-lookup"><span data-stu-id="32df7-104">Executing Animations Using Client-Side Code (VB)</span></span>
+# <a name="executing-animations-using-client-side-code-vb"></a><span data-ttu-id="0d7c8-104">使用客户端代码执行动画 (VB)</span><span class="sxs-lookup"><span data-stu-id="0d7c8-104">Executing Animations Using Client-Side Code (VB)</span></span>
 
-<span data-ttu-id="32df7-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="32df7-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="0d7c8-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="0d7c8-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="32df7-106">[下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="32df7-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.vb.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10VB.pdf)</span></span>
+<span data-ttu-id="0d7c8-106">[下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="0d7c8-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.vb.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10VB.pdf)</span></span>
 
-> <span data-ttu-id="32df7-107">ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。</span><span class="sxs-lookup"><span data-stu-id="32df7-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="32df7-108">此外可能使用自定义客户端的 JavaScript 代码会触发动画执行。</span><span class="sxs-lookup"><span data-stu-id="32df7-108">The animation execution may also be triggered using custom client-side JavaScript code.</span></span>
+> <span data-ttu-id="0d7c8-107">ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="0d7c8-108">此外可能使用自定义客户端的 JavaScript 代码会触发动画执行。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-108">The animation execution may also be triggered using custom client-side JavaScript code.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="32df7-109">概述</span><span class="sxs-lookup"><span data-stu-id="32df7-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="0d7c8-109">概述</span><span class="sxs-lookup"><span data-stu-id="0d7c8-109">Overview</span></span>
 
-<span data-ttu-id="32df7-110">ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。</span><span class="sxs-lookup"><span data-stu-id="32df7-110">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="32df7-111">此外可能使用自定义客户端的 JavaScript 代码会触发动画执行。</span><span class="sxs-lookup"><span data-stu-id="32df7-111">The animation execution may also be triggered using custom client-side JavaScript code.</span></span>
+<span data-ttu-id="0d7c8-110">ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-110">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="0d7c8-111">此外可能使用自定义客户端的 JavaScript 代码会触发动画执行。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-111">The animation execution may also be triggered using custom client-side JavaScript code.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="32df7-112">步骤</span><span class="sxs-lookup"><span data-stu-id="32df7-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="0d7c8-112">步骤</span><span class="sxs-lookup"><span data-stu-id="0d7c8-112">Steps</span></span>
 
-<span data-ttu-id="32df7-113">首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载时，使其可以使用控件工具包：</span><span class="sxs-lookup"><span data-stu-id="32df7-113">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="0d7c8-113">首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载时，使其可以使用控件工具包：</span><span class="sxs-lookup"><span data-stu-id="0d7c8-113">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](executing-animations-using-client-side-code-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="32df7-114">动画将应用于文本的外观如下所示的面板：</span><span class="sxs-lookup"><span data-stu-id="32df7-114">The animation will be applied to a panel of text which looks like this:</span></span>
+<span data-ttu-id="0d7c8-114">动画将应用于文本的外观如下所示的面板：</span><span class="sxs-lookup"><span data-stu-id="0d7c8-114">The animation will be applied to a panel of text which looks like this:</span></span>
 
 [!code-aspx[Main](executing-animations-using-client-side-code-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="32df7-115">在面板关联的 CSS 类，定义一种很好的背景色和还设置面板的固定的宽度：</span><span class="sxs-lookup"><span data-stu-id="32df7-115">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
+<span data-ttu-id="0d7c8-115">在面板关联的 CSS 类，定义一种很好的背景色和还设置面板的固定的宽度：</span><span class="sxs-lookup"><span data-stu-id="0d7c8-115">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
 
 [!code-css[Main](executing-animations-using-client-side-code-vb/samples/sample3.css)]
 
-<span data-ttu-id="32df7-116">然后，添加`AnimationExtender`到页上，提供`ID`，则`TargetControlID`属性和强制性`runat="server"`:</span><span class="sxs-lookup"><span data-stu-id="32df7-116">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`:</span></span>
+<span data-ttu-id="0d7c8-116">然后，添加`AnimationExtender`到页上，提供`ID`，则`TargetControlID`属性和强制性`runat="server"`:</span><span class="sxs-lookup"><span data-stu-id="0d7c8-116">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`:</span></span>
 
 [!code-aspx[Main](executing-animations-using-client-side-code-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="32df7-117">内`<Animations>`节点，请使用`<OnClick>`运行动画一次用户单击的面板。</span><span class="sxs-lookup"><span data-stu-id="32df7-117">Within the `<Animations>` node, use `<OnClick>` to run the animations once the user clicks on the panel.</span></span> <span data-ttu-id="32df7-118">添加两个动画来并行执行：</span><span class="sxs-lookup"><span data-stu-id="32df7-118">Add two animations to be executed in parallel:</span></span>
+<span data-ttu-id="0d7c8-117">内`<Animations>`节点，请使用`<OnClick>`运行动画一次用户单击的面板。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-117">Within the `<Animations>` node, use `<OnClick>` to run the animations once the user clicks on the panel.</span></span> <span data-ttu-id="0d7c8-118">添加两个动画来并行执行：</span><span class="sxs-lookup"><span data-stu-id="0d7c8-118">Add two animations to be executed in parallel:</span></span>
 
 [!code-xml[Main](executing-animations-using-client-side-code-vb/samples/sample5.xml)]
 
-<span data-ttu-id="32df7-119">为了演示目的，此动画 （和使用控件工具包创建的任何其他动画） 执行该页面运行后，使用 JavaScript 代码。</span><span class="sxs-lookup"><span data-stu-id="32df7-119">For the sake of demonstration, this animation (and any other animation created using the Control Toolkit) is executed using JavaScript code, once the page runs.</span></span> <span data-ttu-id="32df7-120">我们首先需要访问`AnimationExtender`控件。</span><span class="sxs-lookup"><span data-stu-id="32df7-120">First of all we need access to the `AnimationExtender` control.</span></span> <span data-ttu-id="32df7-121">ASP.NET AJAX 库提供了`$find()`此任务的函数：</span><span class="sxs-lookup"><span data-stu-id="32df7-121">The ASP.NET AJAX library provides the `$find()` function for this task:</span></span>
+<span data-ttu-id="0d7c8-119">为了演示目的，此动画 （和使用控件工具包创建的任何其他动画） 执行该页面运行后，使用 JavaScript 代码。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-119">For the sake of demonstration, this animation (and any other animation created using the Control Toolkit) is executed using JavaScript code, once the page runs.</span></span> <span data-ttu-id="0d7c8-120">我们首先需要访问`AnimationExtender`控件。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-120">First of all we need access to the `AnimationExtender` control.</span></span> <span data-ttu-id="0d7c8-121">ASP.NET AJAX 库提供了`$find()`此任务的函数：</span><span class="sxs-lookup"><span data-stu-id="0d7c8-121">The ASP.NET AJAX library provides the `$find()` function for this task:</span></span>
 
 [!code-csharp[Main](executing-animations-using-client-side-code-vb/samples/sample6.cs)]
 
-<span data-ttu-id="32df7-122">`AnimationExtender`控件公开一个丰富的 API，包括名称与在 XML 标记中使用的事件处理程序方法： `OnClick()`， `OnLoad()`，依次类推。</span><span class="sxs-lookup"><span data-stu-id="32df7-122">The `AnimationExtender` control exposes a rich API, including methods with names identical to the event handlers used in the XML markup: `OnClick()`, `OnLoad()`, and so on.</span></span> <span data-ttu-id="32df7-123">例如，调用`OnClick()`方法将执行内的动画`<OnClick>`元素的`AnimationExtender`控件：</span><span class="sxs-lookup"><span data-stu-id="32df7-123">For instance, a call of the `OnClick()` method executes the animation within the `<OnClick>` element of the `AnimationExtender` control:</span></span>
+<span data-ttu-id="0d7c8-122">`AnimationExtender`控件公开一个丰富的 API，包括名称与在 XML 标记中使用的事件处理程序方法： `OnClick()`， `OnLoad()`，依次类推。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-122">The `AnimationExtender` control exposes a rich API, including methods with names identical to the event handlers used in the XML markup: `OnClick()`, `OnLoad()`, and so on.</span></span> <span data-ttu-id="0d7c8-123">例如，调用`OnClick()`方法将执行内的动画`<OnClick>`元素的`AnimationExtender`控件：</span><span class="sxs-lookup"><span data-stu-id="0d7c8-123">For instance, a call of the `OnClick()` method executes the animation within the `<OnClick>` element of the `AnimationExtender` control:</span></span>
 
 [!code-javascript[Main](executing-animations-using-client-side-code-vb/samples/sample7.js)]
 
-<span data-ttu-id="32df7-124">下面是模拟的面板中单击了页面完全加载后的完整客户端的 JavaScript 代码，请注意，`pageLoad()`都包括的 JavaScript 库一直和函数名称使用它在由调用 ASP.NET AJAX 一次页面加载。</span><span class="sxs-lookup"><span data-stu-id="32df7-124">Here is the complete client-side JavaScript code that emulates the click on the panel once the page has been fully loaded note that the `pageLoad()` function name is used which is called by ASP.NET AJAX once the page and all included JavaScript libraries have been loaded.</span></span>
+<span data-ttu-id="0d7c8-124">下面是模拟的面板中单击了页面完全加载后的完整客户端的 JavaScript 代码，请注意，`pageLoad()`都包括的 JavaScript 库一直和函数名称使用它在由调用 ASP.NET AJAX 一次页面加载。</span><span class="sxs-lookup"><span data-stu-id="0d7c8-124">Here is the complete client-side JavaScript code that emulates the click on the panel once the page has been fully loaded note that the `pageLoad()` function name is used which is called by ASP.NET AJAX once the page and all included JavaScript libraries have been loaded.</span></span>
 
 [!code-html[Main](executing-animations-using-client-side-code-vb/samples/sample8.html)]
 
 
-[![T<span data-ttu-id="32df7-125">他动画运行时立即，鼠标单击不]</span><span class="sxs-lookup"><span data-stu-id="32df7-125">he animation runs immediately, without a mouse click]</span></span>(executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)
+<span data-ttu-id="0d7c8-125">[![动画立即运行而无需单击鼠标](executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="0d7c8-125">[![The animation runs immediately, without a mouse click](executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="32df7-126">动画立即运行不带鼠标单击 ([单击此项可查看原尺寸图像](executing-animations-using-client-side-code-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="32df7-126">The animation runs immediately, without a mouse click ([Click to view full-size image](executing-animations-using-client-side-code-vb/_static/image3.png))</span></span>
+<span data-ttu-id="0d7c8-126">动画立即运行不带鼠标单击 ([单击此项可查看原尺寸图像](executing-animations-using-client-side-code-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="0d7c8-126">The animation runs immediately, without a mouse click ([Click to view full-size image](executing-animations-using-client-side-code-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="32df7-127">[上一页](modifying-animations-from-the-server-side-vb.md)
-> [下一页](changing-an-animation-using-client-side-code-vb.md)</span><span class="sxs-lookup"><span data-stu-id="32df7-127">[Previous](modifying-animations-from-the-server-side-vb.md)
+> <span data-ttu-id="0d7c8-127">[上一页](modifying-animations-from-the-server-side-vb.md)
+> [下一页](changing-an-animation-using-client-side-code-vb.md)</span><span class="sxs-lookup"><span data-stu-id="0d7c8-127">[Previous](modifying-animations-from-the-server-side-vb.md)
 [Next](changing-an-animation-using-client-side-code-vb.md)</span></span>

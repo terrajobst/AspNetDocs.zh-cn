@@ -12,18 +12,18 @@ ms.openlocfilehash: eafe8f6dccb1114aaaa806e2fe6be2ca4e646a75
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392646"
 ---
-# <a name="connecting-your-web-application-to-sql-server-2005-express-edition"></a><span data-ttu-id="bddd2-103">将 Web 应用程序连接到 SQL Server 2005 Express Edition</span><span class="sxs-lookup"><span data-stu-id="bddd2-103">Connecting your Web Application to SQL Server 2005 Express Edition</span></span>
+# <a name="connecting-your-web-application-to-sql-server-2005-express-edition"></a><span data-ttu-id="43ac5-103">将 Web 应用程序连接到 SQL Server 2005 Express Edition</span><span class="sxs-lookup"><span data-stu-id="43ac5-103">Connecting your Web Application to SQL Server 2005 Express Edition</span></span>
 
-<span data-ttu-id="bddd2-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="bddd2-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="43ac5-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="43ac5-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="bddd2-105">SQL Server 初学者将演练创建数据库驱动的 Web 应用程序的整个工作流，并使用可视化工具来快速创建一个管理应用程序。</span><span class="sxs-lookup"><span data-stu-id="bddd2-105">SQL Server beginners will walkthrough the entire workflow of creating a database driven Web application and use visual tools to quickly create an administration application.</span></span>
+<span data-ttu-id="43ac5-105">SQL Server 初学者将演练创建数据库驱动的 Web 应用程序的整个工作流，并使用可视化工具来快速创建一个管理应用程序。</span><span class="sxs-lookup"><span data-stu-id="43ac5-105">SQL Server beginners will walkthrough the entire workflow of creating a database driven Web application and use visual tools to quickly create an administration application.</span></span>
 
-[<span data-ttu-id="bddd2-106">&#9654;观看视频 （65 分钟）</span><span class="sxs-lookup"><span data-stu-id="bddd2-106">&#9654; Watch video (65 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/connecting-your-web-application-to-sql-server-2005-express-edition)
+[<span data-ttu-id="43ac5-106">&#9654;观看视频 （65 分钟）</span><span class="sxs-lookup"><span data-stu-id="43ac5-106">&#9654; Watch video (65 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/connecting-your-web-application-to-sql-server-2005-express-edition)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="bddd2-107">[上一页](understanding-security-and-network-connectivity.md)
-> [下一页](using-sql-server-management-studio.md)</span><span class="sxs-lookup"><span data-stu-id="bddd2-107">[Previous](understanding-security-and-network-connectivity.md)
+> <span data-ttu-id="43ac5-107">[上一页](understanding-security-and-network-connectivity.md)
+> [下一页](using-sql-server-management-studio.md)</span><span class="sxs-lookup"><span data-stu-id="43ac5-107">[Previous](understanding-security-and-network-connectivity.md)
 [Next](using-sql-server-management-studio.md)</span></span>

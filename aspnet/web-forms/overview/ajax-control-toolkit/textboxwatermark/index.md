@@ -12,15 +12,15 @@ ms.openlocfilehash: 958861f2a7df0beacf80cf9f2aa78a7c67db1532
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395428"
 ---
-# <a name="textboxwatermark"></a><span data-ttu-id="42ef4-103">TextBoxWatermark</span><span class="sxs-lookup"><span data-stu-id="42ef4-103">TextBoxWatermark</span></span>
+# <a name="textboxwatermark"></a><span data-ttu-id="5e09e-103">TextBoxWatermark</span><span class="sxs-lookup"><span data-stu-id="5e09e-103">TextBoxWatermark</span></span>
 
-> <span data-ttu-id="42ef4-104">本教程演示如何使用 TextBoxWatermark 控件来显示一个文本框以及一条消息，用户开始在其中键入内容时，会消失。</span><span class="sxs-lookup"><span data-stu-id="42ef4-104">This tutorial shows how to use the TextBoxWatermark control to display a text box with a message that disappears when users start typing in it.</span></span>
+> <span data-ttu-id="5e09e-104">本教程演示如何使用 TextBoxWatermark 控件来显示一个文本框以及一条消息，用户开始在其中键入内容时，会消失。</span><span class="sxs-lookup"><span data-stu-id="5e09e-104">This tutorial shows how to use the TextBoxWatermark control to display a text box with a message that disappears when users start typing in it.</span></span>
 
 
-- [<span data-ttu-id="42ef4-105">在 FormView 中使用 TextBoxWatermark (C#)</span><span class="sxs-lookup"><span data-stu-id="42ef4-105">Using TextBoxWatermark in a FormView (C#)</span></span>](using-textboxwatermark-in-a-formview-cs.md)
-- [<span data-ttu-id="42ef4-106">通过验证控件使用 TextBoxWatermark (C#)</span><span class="sxs-lookup"><span data-stu-id="42ef4-106">Using TextBoxWatermark With Validation Controls (C#)</span></span>](using-textboxwatermark-with-validation-controls-cs.md)
-- [<span data-ttu-id="42ef4-107">在 FormView 中使用 TextBoxWatermark (VB)</span><span class="sxs-lookup"><span data-stu-id="42ef4-107">Using TextBoxWatermark in a FormView (VB)</span></span>](using-textboxwatermark-in-a-formview-vb.md)
-- [<span data-ttu-id="42ef4-108">通过验证控件使用 TextBoxWatermark (VB)</span><span class="sxs-lookup"><span data-stu-id="42ef4-108">Using TextBoxWatermark With Validation Controls (VB)</span></span>](using-textboxwatermark-with-validation-controls-vb.md)
+- [<span data-ttu-id="5e09e-105">在 FormView 中使用 TextBoxWatermark (C#)</span><span class="sxs-lookup"><span data-stu-id="5e09e-105">Using TextBoxWatermark in a FormView (C#)</span></span>](using-textboxwatermark-in-a-formview-cs.md)
+- [<span data-ttu-id="5e09e-106">通过验证控件使用 TextBoxWatermark (C#)</span><span class="sxs-lookup"><span data-stu-id="5e09e-106">Using TextBoxWatermark With Validation Controls (C#)</span></span>](using-textboxwatermark-with-validation-controls-cs.md)
+- [<span data-ttu-id="5e09e-107">在 FormView 中使用 TextBoxWatermark (VB)</span><span class="sxs-lookup"><span data-stu-id="5e09e-107">Using TextBoxWatermark in a FormView (VB)</span></span>](using-textboxwatermark-in-a-formview-vb.md)
+- [<span data-ttu-id="5e09e-108">通过验证控件使用 TextBoxWatermark (VB)</span><span class="sxs-lookup"><span data-stu-id="5e09e-108">Using TextBoxWatermark With Validation Controls (VB)</span></span>](using-textboxwatermark-with-validation-controls-vb.md)

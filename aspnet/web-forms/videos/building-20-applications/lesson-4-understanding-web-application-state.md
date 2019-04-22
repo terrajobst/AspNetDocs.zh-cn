@@ -12,18 +12,18 @@ ms.openlocfilehash: 4508d77b7288a08ba1d9e72a683a0c102503ebcc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393881"
 ---
-# <a name="lesson-4-understanding-web-application-state"></a><span data-ttu-id="6eef0-103">[第 4 课：] 了解 Web 应用程序状态</span><span class="sxs-lookup"><span data-stu-id="6eef0-103">[Lesson 4:] Understanding Web Application State</span></span>
+# <a name="lesson-4-understanding-web-application-state"></a><span data-ttu-id="9dc56-103">[第 4 课：] 了解 Web 应用程序状态</span><span class="sxs-lookup"><span data-stu-id="9dc56-103">[Lesson 4:] Understanding Web Application State</span></span>
 
-<span data-ttu-id="6eef0-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="6eef0-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="9dc56-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="9dc56-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="6eef0-105">在本课程中，将看到如何维护在 ASP.NET 中，包括可用来存储 ASP.NET 2.0 应用程序的信息的各种对象的状态。</span><span class="sxs-lookup"><span data-stu-id="6eef0-105">In this lesson, you will see how to maintain state in ASP.NET, including the various objects you can use to store information for your ASP.NET 2.0 applications.</span></span>
+<span data-ttu-id="9dc56-105">在本课程中，将看到如何维护在 ASP.NET 中，包括可用来存储 ASP.NET 2.0 应用程序的信息的各种对象的状态。</span><span class="sxs-lookup"><span data-stu-id="9dc56-105">In this lesson, you will see how to maintain state in ASP.NET, including the various objects you can use to store information for your ASP.NET 2.0 applications.</span></span>
 
-[<span data-ttu-id="6eef0-106">&#9654;观看视频 （40 分钟）</span><span class="sxs-lookup"><span data-stu-id="6eef0-106">&#9654; Watch video (40 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-4-understanding-web-application-state)
+[<span data-ttu-id="9dc56-106">&#9654;观看视频 （40 分钟）</span><span class="sxs-lookup"><span data-stu-id="9dc56-106">&#9654; Watch video (40 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-4-understanding-web-application-state)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="6eef0-107">[上一页](lesson-3-understanding-more-about-events-and-postback.md)
-> [下一页](lesson-5-debugging-and-tracing-your-website.md)</span><span class="sxs-lookup"><span data-stu-id="6eef0-107">[Previous](lesson-3-understanding-more-about-events-and-postback.md)
+> <span data-ttu-id="9dc56-107">[上一页](lesson-3-understanding-more-about-events-and-postback.md)
+> [下一页](lesson-5-debugging-and-tracing-your-website.md)</span><span class="sxs-lookup"><span data-stu-id="9dc56-107">[Previous](lesson-3-understanding-more-about-events-and-postback.md)
 [Next](lesson-5-debugging-and-tracing-your-website.md)</span></span>

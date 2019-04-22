@@ -12,16 +12,16 @@ ms.openlocfilehash: e677707018375debd0f1542037a43e525498b247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389305"
 ---
-# <a name="your-first-scaffold-and-what-is-dynamic-data"></a><span data-ttu-id="59620-104">你的第一个基架和是动态的数据？</span><span class="sxs-lookup"><span data-stu-id="59620-104">Your First Scaffold and What is Dynamic Data?</span></span>
+# <a name="your-first-scaffold-and-what-is-dynamic-data"></a><span data-ttu-id="2f43e-104">你的第一个基架和是动态的数据？</span><span class="sxs-lookup"><span data-stu-id="2f43e-104">Your First Scaffold and What is Dynamic Data?</span></span>
 
-<span data-ttu-id="59620-105">通过[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="59620-105">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="2f43e-105">通过[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="2f43e-105">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="59620-106">在此简短介绍创建完整动态数据应用程序，以分钟为单位使用基架，并在过程中了解有关动态数据。</span><span class="sxs-lookup"><span data-stu-id="59620-106">In this short introduction, you create a complete Dynamic Data application in minutes using scaffolding, and in the process learn about Dynamic Data.</span></span>
+<span data-ttu-id="2f43e-106">在此简短介绍创建完整动态数据应用程序，以分钟为单位使用基架，并在过程中了解有关动态数据。</span><span class="sxs-lookup"><span data-stu-id="2f43e-106">In this short introduction, you create a complete Dynamic Data application in minutes using scaffolding, and in the process learn about Dynamic Data.</span></span>
 
-[<span data-ttu-id="59620-107">&#9654;观看视频 （6 分钟）</span><span class="sxs-lookup"><span data-stu-id="59620-107">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/your-first-scaffold-and-what-is-dynamic-data)
+[<span data-ttu-id="2f43e-107">&#9654;观看视频 （6 分钟）</span><span class="sxs-lookup"><span data-stu-id="2f43e-107">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/your-first-scaffold-and-what-is-dynamic-data)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="59620-108">下一步</span><span class="sxs-lookup"><span data-stu-id="59620-108">Next</span></span>](how-do-i-enable-inline-gridview-editing.md)
+> [<span data-ttu-id="2f43e-108">下一页</span><span class="sxs-lookup"><span data-stu-id="2f43e-108">Next</span></span>](how-do-i-enable-inline-gridview-editing.md)

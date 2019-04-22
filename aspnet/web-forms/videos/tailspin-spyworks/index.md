@@ -12,25 +12,25 @@ ms.openlocfilehash: d30dc8906a72a35d87db40701070fe8c8f71c174
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394115"
 ---
-# <a name="tailspin-spyworks"></a><span data-ttu-id="c31d2-103">Tailspin Spyworks</span><span class="sxs-lookup"><span data-stu-id="c31d2-103">Tailspin Spyworks</span></span>
+# <a name="tailspin-spyworks"></a><span data-ttu-id="e1fc3-103">Tailspin Spyworks</span><span class="sxs-lookup"><span data-stu-id="e1fc3-103">Tailspin Spyworks</span></span>
 
-> <span data-ttu-id="c31d2-104">如何在 ASP.NET 4 中使用新功能构建在线商店，包括购物、 签出和管理。</span><span class="sxs-lookup"><span data-stu-id="c31d2-104">How to use new features in ASP.NET 4 to build an online store, including shopping, checkout, and administration.</span></span>
+> <span data-ttu-id="e1fc3-104">如何在 ASP.NET 4 中使用新功能构建在线商店，包括购物、 签出和管理。</span><span class="sxs-lookup"><span data-stu-id="e1fc3-104">How to use new features in ASP.NET 4 to build an online store, including shopping, checkout, and administration.</span></span>
 
 
-- [<span data-ttu-id="c31d2-105">Tailspin Spyworks - 创建和使用热门产品控件</span><span class="sxs-lookup"><span data-stu-id="c31d2-105">Tailspin Spyworks - Creating and Popular Products Control</span></span>](tailspin-spyworks-creating-and-using-the-popular-products-control.md)
-- [<span data-ttu-id="c31d2-106">Tailspin Spyworks - 实现和使用“同时购买的”控件</span><span class="sxs-lookup"><span data-stu-id="c31d2-106">Tailspin Spyworks - Implementing and Also Purchased Control</span></span>](tailspin-spyworks-implementing-and-using-the-also-purchased-control.md)
-- [<span data-ttu-id="c31d2-107">Tailspin Spyworks - UI 和 EDM 简介</span><span class="sxs-lookup"><span data-stu-id="c31d2-107">Tailspin Spyworks - Intro UI and EDM</span></span>](tailspin-spyworks-intro-ui-and-edm.md)
-- [<span data-ttu-id="c31d2-108">Tailspin Spyworks - 目录组织</span><span class="sxs-lookup"><span data-stu-id="c31d2-108">Tailspin Spyworks - Directory Organization</span></span>](tailspin-spyworks-directory-organization.md)
-- [<span data-ttu-id="c31d2-109">Tailspin Spyworks - 类别菜单</span><span class="sxs-lookup"><span data-stu-id="c31d2-109">Tailspin Spyworks - Category Menu</span></span>](tailspin-spyworks-category-menu.md)
-- [<span data-ttu-id="c31d2-110">Tailspin Spyworks - 显示产品列表</span><span class="sxs-lookup"><span data-stu-id="c31d2-110">Tailspin Spyworks - Display the Product List</span></span>](tailspin-spyworks-display-the-product-list.md)
-- [<span data-ttu-id="c31d2-111">Tailspin Spyworks - 显示每个产品的详细信息</span><span class="sxs-lookup"><span data-stu-id="c31d2-111">Tailspin Spyworks - Display Per Product Details</span></span>](tailspin-spyworks-display-per-product-details.md)
-- [<span data-ttu-id="c31d2-112">Tailspin Spyworks - 向购物车添加商品</span><span class="sxs-lookup"><span data-stu-id="c31d2-112">Tailspin Spyworks - Adding Items to the Shopping Cart</span></span>](tailspin-spyworks-adding-items-to-the-shopping-cart.md)
-- [<span data-ttu-id="c31d2-113">Tailspin Spyworks - 显示购物车</span><span class="sxs-lookup"><span data-stu-id="c31d2-113">Tailspin Spyworks - Display Shopping Cart</span></span>](tailspin-spyworks-display-shopping-cart.md)
-- [<span data-ttu-id="c31d2-114">Tailspin Spyworks - 更新购物车</span><span class="sxs-lookup"><span data-stu-id="c31d2-114">Tailspin Spyworks - Update the Shopping Cart</span></span>](tailspin-spyworks-update-the-shopping-cart.md)
-- [<span data-ttu-id="c31d2-115">Tailspin Spyworks - 迁移购物车</span><span class="sxs-lookup"><span data-stu-id="c31d2-115">Tailspin Spyworks - Migrate the Shopping Cart</span></span>](tailspin-spyworks-migrate-the-shopping-cart.md)
-- [<span data-ttu-id="c31d2-116">Tailspin Spyworks - 最后结帐</span><span class="sxs-lookup"><span data-stu-id="c31d2-116">Tailspin Spyworks - Final Check Out</span></span>](tailspin-spyworks-final-check-out.md)
-- [<span data-ttu-id="c31d2-117">Tailspin Spyworks - 添加用户的产品评论</span><span class="sxs-lookup"><span data-stu-id="c31d2-117">Tailspin Spyworks - Adding User Product Reviews</span></span>](tailspin-spyworks-adding-user-product-reviews.md)
-- [<span data-ttu-id="c31d2-118">Tailspin Spyworks - 显示用户评论</span><span class="sxs-lookup"><span data-stu-id="c31d2-118">Tailspin Spyworks - Displaying User Reviews</span></span>](tailspin-spyworks-displaying-user-reviews.md)
+- [<span data-ttu-id="e1fc3-105">Tailspin Spyworks - 创建和使用热门产品控件</span><span class="sxs-lookup"><span data-stu-id="e1fc3-105">Tailspin Spyworks - Creating and Popular Products Control</span></span>](tailspin-spyworks-creating-and-using-the-popular-products-control.md)
+- [<span data-ttu-id="e1fc3-106">Tailspin Spyworks - 实现和使用“同时购买的”控件</span><span class="sxs-lookup"><span data-stu-id="e1fc3-106">Tailspin Spyworks - Implementing and Also Purchased Control</span></span>](tailspin-spyworks-implementing-and-using-the-also-purchased-control.md)
+- [<span data-ttu-id="e1fc3-107">Tailspin Spyworks - 引入 UI 和 EDM</span><span class="sxs-lookup"><span data-stu-id="e1fc3-107">Tailspin Spyworks - Intro UI and EDM</span></span>](tailspin-spyworks-intro-ui-and-edm.md)
+- [<span data-ttu-id="e1fc3-108">Tailspin Spyworks - 目录组织</span><span class="sxs-lookup"><span data-stu-id="e1fc3-108">Tailspin Spyworks - Directory Organization</span></span>](tailspin-spyworks-directory-organization.md)
+- [<span data-ttu-id="e1fc3-109">Tailspin Spyworks - 类别菜单</span><span class="sxs-lookup"><span data-stu-id="e1fc3-109">Tailspin Spyworks - Category Menu</span></span>](tailspin-spyworks-category-menu.md)
+- [<span data-ttu-id="e1fc3-110">Tailspin Spyworks - 显示产品列表</span><span class="sxs-lookup"><span data-stu-id="e1fc3-110">Tailspin Spyworks - Display the Product List</span></span>](tailspin-spyworks-display-the-product-list.md)
+- [<span data-ttu-id="e1fc3-111">Tailspin Spyworks - 显示每个产品的详细信息</span><span class="sxs-lookup"><span data-stu-id="e1fc3-111">Tailspin Spyworks - Display Per Product Details</span></span>](tailspin-spyworks-display-per-product-details.md)
+- [<span data-ttu-id="e1fc3-112">Tailspin Spyworks - 向购物车添加商品</span><span class="sxs-lookup"><span data-stu-id="e1fc3-112">Tailspin Spyworks - Adding Items to the Shopping Cart</span></span>](tailspin-spyworks-adding-items-to-the-shopping-cart.md)
+- [<span data-ttu-id="e1fc3-113">Tailspin Spyworks - 显示购物车</span><span class="sxs-lookup"><span data-stu-id="e1fc3-113">Tailspin Spyworks - Display Shopping Cart</span></span>](tailspin-spyworks-display-shopping-cart.md)
+- [<span data-ttu-id="e1fc3-114">Tailspin Spyworks - 更新购物车</span><span class="sxs-lookup"><span data-stu-id="e1fc3-114">Tailspin Spyworks - Update the Shopping Cart</span></span>](tailspin-spyworks-update-the-shopping-cart.md)
+- [<span data-ttu-id="e1fc3-115">Tailspin Spyworks - 迁移购物车</span><span class="sxs-lookup"><span data-stu-id="e1fc3-115">Tailspin Spyworks - Migrate the Shopping Cart</span></span>](tailspin-spyworks-migrate-the-shopping-cart.md)
+- [<span data-ttu-id="e1fc3-116">Tailspin Spyworks - 最后结帐</span><span class="sxs-lookup"><span data-stu-id="e1fc3-116">Tailspin Spyworks - Final Check Out</span></span>](tailspin-spyworks-final-check-out.md)
+- [<span data-ttu-id="e1fc3-117">Tailspin Spyworks - 添加用户的产品评论</span><span class="sxs-lookup"><span data-stu-id="e1fc3-117">Tailspin Spyworks - Adding User Product Reviews</span></span>](tailspin-spyworks-adding-user-product-reviews.md)
+- [<span data-ttu-id="e1fc3-118">Tailspin Spyworks - 显示用户评论</span><span class="sxs-lookup"><span data-stu-id="e1fc3-118">Tailspin Spyworks - Displaying User Reviews</span></span>](tailspin-spyworks-displaying-user-reviews.md)

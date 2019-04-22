@@ -12,18 +12,18 @@ ms.openlocfilehash: f1761948f9bf5eb55e396b4334eca33cf34b899e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382584"
 ---
-# <a name="creating-custom-html-helpers"></a><span data-ttu-id="cd199-104">创建自定义 HTML 帮助程序</span><span class="sxs-lookup"><span data-stu-id="cd199-104">Creating Custom HTML Helpers</span></span>
+# <a name="creating-custom-html-helpers"></a><span data-ttu-id="baf66-104">创建自定义 HTML 帮助程序</span><span class="sxs-lookup"><span data-stu-id="baf66-104">Creating Custom HTML Helpers</span></span>
 
-<span data-ttu-id="cd199-105">通过[Stephen Walther](https://github.com/StephenWalther)</span><span class="sxs-lookup"><span data-stu-id="cd199-105">by [Stephen Walther](https://github.com/StephenWalther)</span></span>
+<span data-ttu-id="baf66-105">通过[Stephen Walther](https://github.com/StephenWalther)</span><span class="sxs-lookup"><span data-stu-id="baf66-105">by [Stephen Walther](https://github.com/StephenWalther)</span></span>
 
-<span data-ttu-id="cd199-106">创建新的 HTML 帮助器以使其更轻松地生成视图的内容。</span><span class="sxs-lookup"><span data-stu-id="cd199-106">Create new HTML Helpers to make it easier to generate view content.</span></span> <span data-ttu-id="cd199-107">Stephen Walther 演示如何创建新的 HTML 帮助器的两个简单的方法。</span><span class="sxs-lookup"><span data-stu-id="cd199-107">Stephen Walther demonstrates two simple methods of creating new HTML Helpers.</span></span>
+<span data-ttu-id="baf66-106">创建新的 HTML 帮助器以使其更轻松地生成视图的内容。</span><span class="sxs-lookup"><span data-stu-id="baf66-106">Create new HTML Helpers to make it easier to generate view content.</span></span> <span data-ttu-id="baf66-107">Stephen Walther 演示如何创建新的 HTML 帮助器的两个简单的方法。</span><span class="sxs-lookup"><span data-stu-id="baf66-107">Stephen Walther demonstrates two simple methods of creating new HTML Helpers.</span></span>
 
-[<span data-ttu-id="cd199-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="cd199-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-custom-html-helpers)
+[<span data-ttu-id="baf66-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="baf66-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-custom-html-helpers)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="cd199-109">[上一页](creating-unit-tests-for-aspnet-mvc-applications.md)
-> [下一页](creating-model-classes-with-linq-to-sql.md)</span><span class="sxs-lookup"><span data-stu-id="cd199-109">[Previous](creating-unit-tests-for-aspnet-mvc-applications.md)
+> <span data-ttu-id="baf66-109">[上一页](creating-unit-tests-for-aspnet-mvc-applications.md)
+> [下一页](creating-model-classes-with-linq-to-sql.md)</span><span class="sxs-lookup"><span data-stu-id="baf66-109">[Previous](creating-unit-tests-for-aspnet-mvc-applications.md)
 [Next](creating-model-classes-with-linq-to-sql.md)</span></span>
