@@ -12,7 +12,7 @@ ms.openlocfilehash: fcab9f2ff0be9c43d2aae1825ef2666ad011c9e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399458"
 ---
 # <a name="getting-started-with-ef-5-using-mvc-4"></a>通过 MVC 4 开始使用 EF 5

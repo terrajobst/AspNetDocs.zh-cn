@@ -12,7 +12,7 @@ ms.openlocfilehash: 8caa88d928517e1c71210cbe55e3961d4baf461a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381271"
 ---
 # <a name="iteration-4--make-the-application-loosely-coupled-c"></a>迭代 4 – 使应用程序松散耦合 (C#)
@@ -79,7 +79,7 @@ by [Microsoft](https://github.com/microsoft)
 
 首先，我们需要创建一个描述所有我们需要执行的数据访问方法的接口。 IContactManagerRepository 接口包含在列表 1 中。 此接口描述了五种方法：CreateContact()、 DeleteContact()、 EditContact()、 GetContact 和 ListContacts()。
 
-**Listing 1 - Models\IContactManagerRepository.cs**
+**代码清单 1-Models\IContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample1.cs)]
 

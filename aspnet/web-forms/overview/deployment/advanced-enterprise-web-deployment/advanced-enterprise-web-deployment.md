@@ -12,7 +12,7 @@ ms.openlocfilehash: 2f27e9436f246e3da2fbb129bbcd2d80e39b5f28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385314"
 ---
 # <a name="advanced-enterprise-web-deployment"></a>高级企业 Web 部署
@@ -67,4 +67,4 @@ ms.locfileid: "59385314"
 - [配置用于 Web 部署的 Team Foundation Server](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)。 本教程介绍如何配置 TFS 以支持多种部署方案，包括作为 CI 过程的一部分的自动的部署和手动触发部署的特定版本。
 
 > [!div class="step-by-step"]
-> [下一步](performing-a-what-if-deployment.md)
+> [下一页](performing-a-what-if-deployment.md)

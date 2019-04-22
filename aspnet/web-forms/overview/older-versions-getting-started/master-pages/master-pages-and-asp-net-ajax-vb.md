@@ -12,7 +12,7 @@ ms.openlocfilehash: 5a968bbbe5bdb6f8daad2c11c18c2b704c3bed8b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385496"
 ---
 # <a name="master-pages-and-aspnet-ajax-vb"></a>母版页和 ASP.NET AJAX (VB)
@@ -71,7 +71,7 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 向页面添加 ScriptManager 后, 更改其`ID`从`ScriptManager1`到`MyManager`。
 
 
-[![Add 到母版页 ScriptManager](master-pages-and-asp-net-ajax-vb/_static/image2.png)](master-pages-and-asp-net-ajax-vb/_static/image1.png)
+[![将 ScriptManager 添加到母版页](master-pages-and-asp-net-ajax-vb/_static/image2.png)](master-pages-and-asp-net-ajax-vb/_static/image1.png)
 
 **图 01**:将 ScriptManager 添加到母版页 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image3.png))
 
@@ -83,7 +83,7 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 首先，在名为的根目录中创建一个新页面`ShowRandomProduct.aspx`。 别忘了将绑定到此新页`Site.master`母版页。
 
 
-[![A添加一个新的 ASP.NET 页面到网站](master-pages-and-asp-net-ajax-vb/_static/image5.png)](master-pages-and-asp-net-ajax-vb/_static/image4.png)
+[![向网站添加新的 ASP.NET 页面](master-pages-and-asp-net-ajax-vb/_static/image5.png)](master-pages-and-asp-net-ajax-vb/_static/image4.png)
 
 **图 02**:将一个新的 ASP.NET 页面添加到网站 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image6.png))
 
@@ -104,7 +104,7 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 我们的第一个任务是显示在 UpdatePanel 中随机选择产品的信息。 通过将 DetailsView 控件拖动到 UpdatePanel 启动。 设置 DetailsView 控件`ID`属性设置为`ProductInfo`并将清除其`Height`和`Width`属性。 展开 DetailsView 的智能标记，然后从选择数据源下拉列表，选择要绑定到名为的新 SqlDataSource 控件的 DetailsView `RandomProductDataSource`。
 
 
-[![Bind 到新的 SqlDataSource 控件 DetailsView](master-pages-and-asp-net-ajax-vb/_static/image8.png)](master-pages-and-asp-net-ajax-vb/_static/image7.png)
+[![绑定到新的 SqlDataSource 控件的 DetailsView](master-pages-and-asp-net-ajax-vb/_static/image8.png)](master-pages-and-asp-net-ajax-vb/_static/image7.png)
 
 **图 03**:绑定到新的 SqlDataSource 控件的 DetailsView ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image9.png))
 
@@ -117,7 +117,7 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 `TOP 1`中的关键字`SELECT`子句将返回仅由查询返回的第一个记录。 `NEWID()`函数将生成一个新的全局唯一标识符值 (GUID) 并可在`ORDER BY`子句按随机顺序返回表的记录。
 
 
-[![C配置 SqlDataSource 以返回一个随机选择记录](master-pages-and-asp-net-ajax-vb/_static/image11.png)](master-pages-and-asp-net-ajax-vb/_static/image10.png)
+[![配置 SqlDataSource 返回单一的随机选择记录](master-pages-and-asp-net-ajax-vb/_static/image11.png)](master-pages-and-asp-net-ajax-vb/_static/image10.png)
 
 **图 04**:配置 SqlDataSource 以返回一个随机选择记录 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image12.png))
 
@@ -130,7 +130,7 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 图 5 显示了`ShowRandomProduct.aspx`页面的浏览器查看时。 单击浏览器的刷新按钮以重新加载页面;应会看到`ProductName`和`UnitPrice`提供新的随机选择记录的值。
 
 
-[![A 显示随机产品的名称和价格](master-pages-and-asp-net-ajax-vb/_static/image14.png)](master-pages-and-asp-net-ajax-vb/_static/image13.png)
+[![显示随机产品的名称和价格](master-pages-and-asp-net-ajax-vb/_static/image14.png)](master-pages-and-asp-net-ajax-vb/_static/image13.png)
 
 **图 05**:显示随机产品的名称和价格 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image15.png))
 
@@ -159,12 +159,12 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 完成此更改后，使用此页包含已加载当前显示的产品的时间。 图 6 显示了页面在首次访问时。 图 7 显示的页更高版本 15 秒后计时器控件具有"勾选了"和 UpdatePanel 刷新以显示有关新产品的信息。
 
 
-[![A 随机选择产品显示在页面加载上](master-pages-and-asp-net-ajax-vb/_static/image17.png)](master-pages-and-asp-net-ajax-vb/_static/image16.png)
+[![随机选择的产品显示在页面加载](master-pages-and-asp-net-ajax-vb/_static/image17.png)](master-pages-and-asp-net-ajax-vb/_static/image16.png)
 
 **图 06**:随机选择的产品显示在加载页 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image18.png))
 
 
-[![E显示新随机选择产品非常 15 秒](master-pages-and-asp-net-ajax-vb/_static/image20.png)](master-pages-and-asp-net-ajax-vb/_static/image19.png)
+[![一个新随机选择的产品，系统会每隔 15 秒](master-pages-and-asp-net-ajax-vb/_static/image20.png)](master-pages-and-asp-net-ajax-vb/_static/image19.png)
 
 **图 07**:一个新随机选择的产品，系统会每隔 15 秒 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image21.png))
 
@@ -190,12 +190,12 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 首先创建一个新的文件夹中名为的网站`Scripts`。 接下来，将新文件添加到名为脚本文件夹`TimerScript.js`的 JScript 文件类型。
 
 
-[![A添加新的 JavaScript 文件与脚本文件夹](master-pages-and-asp-net-ajax-vb/_static/image23.png)](master-pages-and-asp-net-ajax-vb/_static/image22.png)
+[![将新的 JavaScript 文件添加到脚本文件夹](master-pages-and-asp-net-ajax-vb/_static/image23.png)](master-pages-and-asp-net-ajax-vb/_static/image22.png)
 
 **图 08**:添加到新的 JavaScript 文件`Scripts`文件夹 ([单击以查看实际尺寸的图像](master-pages-and-asp-net-ajax-vb/_static/image24.png))
 
 
-[![A 新的 JavaScript 文件已添加到该网站](master-pages-and-asp-net-ajax-vb/_static/image26.png)](master-pages-and-asp-net-ajax-vb/_static/image25.png)
+[![新的 JavaScript 文件已添加到网站](master-pages-and-asp-net-ajax-vb/_static/image26.png)](master-pages-and-asp-net-ajax-vb/_static/image25.png)
 
 **图 09**:新的 JavaScript 文件已添加到网站 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image27.png))
 
@@ -208,7 +208,7 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 现在，我们需要注册此自定义 JavaScript 文件`ShowRandomProduct.aspx`。 返回到`ShowRandomProduct.aspx`和 ScriptManagerProxy 控件添加到页面; 设置其`ID`到`MyManagerProxy`。 若要注册自定义 JavaScript 文件在设计器中选择 ScriptManagerProxy 控件，然后转到属性窗口。 其中一个属性的标题为脚本。 选择此属性将显示在图 10 所示的 ScriptReference 集合编辑器。 单击添加按钮以包括新的脚本引用，然后输入路径属性中的脚本文件路径： `~/Scripts/TimerScript.js`。
 
 
-[![Add ScriptManagerProxy 控件的脚本引用](master-pages-and-asp-net-ajax-vb/_static/image29.png)](master-pages-and-asp-net-ajax-vb/_static/image28.png)
+[![添加对 ScriptManagerProxy 控件的脚本引用](master-pages-and-asp-net-ajax-vb/_static/image29.png)](master-pages-and-asp-net-ajax-vb/_static/image28.png)
 
 **图 10**:添加对 ScriptManagerProxy 控件的脚本引用 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image30.png))
 
@@ -230,12 +230,12 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 图 11 显示了当首次通过浏览器访问此页。 计时器当前正在运行，并更新显示的产品信息每隔 15 秒。 图 12 显示了屏幕后单击暂停按钮。 单击暂停按钮停止计时器并更新到"恢复"按钮的文本。 产品信息将刷新 （并继续每隔 15 秒刷新一次） 后在用户单击恢复。
 
 
-[![C单击暂停按钮来停止计时器控件](master-pages-and-asp-net-ajax-vb/_static/image32.png)](master-pages-and-asp-net-ajax-vb/_static/image31.png)
+[![单击暂停按钮来停止计时器控件](master-pages-and-asp-net-ajax-vb/_static/image32.png)](master-pages-and-asp-net-ajax-vb/_static/image31.png)
 
 **图 11**:单击暂停按钮来停止计时器控件 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image33.png))
 
 
-[![C单击恢复按钮以重新启动计时器](master-pages-and-asp-net-ajax-vb/_static/image35.png)](master-pages-and-asp-net-ajax-vb/_static/image34.png)
+[![单击恢复按钮以重新启动计时器](master-pages-and-asp-net-ajax-vb/_static/image35.png)](master-pages-and-asp-net-ajax-vb/_static/image34.png)
 
 **图 12**:单击恢复按钮以重新启动计时器 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-vb/_static/image36.png))
 

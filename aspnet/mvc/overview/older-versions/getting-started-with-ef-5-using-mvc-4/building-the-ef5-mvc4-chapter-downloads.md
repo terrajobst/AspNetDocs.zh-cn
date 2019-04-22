@@ -12,7 +12,7 @@ ms.openlocfilehash: e90eebaba3645802f318dbf449c3ec734265a092
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381939"
 ---
 # <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>生成章节下载 EF 5 mvc 4 个教程
@@ -47,7 +47,7 @@ ms.locfileid: "59381939"
     > [!NOTE]
     > 如果收到以下错误：  
     >   
-    >  *术语更新数据库未识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。 检查名称的拼写或如果已包含路径，验证路径正确，然后重试。*  
+    >  *术语更新数据库未识别为 cmdlet、 函数、 脚本文件或可操作程序的名称。检查名称的拼写或如果已包含路径，验证路径正确，然后重试。*  
     > 退出并重新启动 Visual Studio。
 
     每个迁移将运行，则将运行 seed 方法。 你现在可以运行该应用程序。
@@ -55,4 +55,4 @@ ms.locfileid: "59381939"
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image5.png)
 
 > [!div class="step-by-step"]
-> [上一个](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [上一篇](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

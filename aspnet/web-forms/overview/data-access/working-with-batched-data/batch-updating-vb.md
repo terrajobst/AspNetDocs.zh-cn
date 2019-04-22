@@ -12,7 +12,7 @@ ms.openlocfilehash: d1809c869253ecb454e427a5092015a69009da5c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386939"
 ---
 # <a name="batch-updating-vb"></a>批量更新 (VB)
@@ -31,7 +31,7 @@ ms.locfileid: "59386939"
 在本教程中我们将构建一个 GridView，其中每个行是可编辑 （请参阅图 1）。 由于无需进行编辑的列，每行均呈现在其编辑界面中，那里 s，更新和取消按钮。 相反，有两个更新的产品按钮的页上，单击时，枚举 GridView 行并更新数据库。
 
 
-[![E支票中 GridView 行是可编辑](batch-updating-vb/_static/image1.gif)](batch-updating-vb/_static/image1.png)
+[![在 GridView 中的每一行都是可编辑](batch-updating-vb/_static/image1.gif)](batch-updating-vb/_static/image1.png)
 
 **图 1**:在 GridView 中的每一行都是可编辑 ([单击此项可查看原尺寸图像](batch-updating-vb/_static/image2.png))
 
@@ -57,12 +57,12 @@ ms.locfileid: "59386939"
 我们担心如何创建 GridView 之前所在的行都是可编辑，让我们来首先只需显示产品信息。 打开`BatchUpdate.aspx`页中`BatchData`文件夹，然后拖动 GridView 从工具箱拖到设计器。 设置 GridView s`ID`到`ProductsGrid`，并从其智能标记，选择要绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置要检索其数据从 ObjectDataSource`ProductsBLL`类的`GetProducts`方法。
 
 
-[![C配置对象数据源以使用 ProductsBLL 类](batch-updating-vb/_static/image2.gif)](batch-updating-vb/_static/image3.png)
+[![配置对象数据源以使用 ProductsBLL 类](batch-updating-vb/_static/image2.gif)](batch-updating-vb/_static/image3.png)
 
 **图 2**:配置为使用 ObjectDataSource`ProductsBLL`类 ([单击以查看实际尺寸的图像](batch-updating-vb/_static/image4.png))
 
 
-[![Retrieve 使用 GetProducts 方法的产品数据](batch-updating-vb/_static/image3.gif)](batch-updating-vb/_static/image5.png)
+[![检索产品数据使用 GetProducts 方法](batch-updating-vb/_static/image3.gif)](batch-updating-vb/_static/image5.png)
 
 **图 3**:检索产品数据使用`GetProducts`方法 ([单击以查看实际尺寸的图像](batch-updating-vb/_static/image6.png))
 
@@ -70,7 +70,7 @@ ms.locfileid: "59386939"
 如 GridView，ObjectDataSource 的修改功能旨在针对每个行而工作的。 若要更新的一组记录，我们将需要进行批处理数据，并将其传递给 BLL 的 ASP.NET 页面 + s 代码隐藏类中编写一些代码。 因此，设置下拉列表中的 ObjectDataSource 的更新、 插入和删除选项卡添加到 （无）。 单击完成以完成向导。
 
 
-[![Set 更新、 插入和删除选项卡添加到 （无） 中的下拉列表](batch-updating-vb/_static/image4.gif)](batch-updating-vb/_static/image7.png)
+[![设置下拉列表中插入、 更新和删除选项卡为 （无）](batch-updating-vb/_static/image4.gif)](batch-updating-vb/_static/image7.png)
 
 **图 4**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](batch-updating-vb/_static/image8.png))
 
@@ -107,7 +107,7 @@ ms.locfileid: "59386939"
 接下来，添加到一个 RequiredFieldValidator`ItemTemplate`以确保用户为每个产品的名称提供一个值。 设置`ControlToValidate`属性设置为产品名称`ErrorMessage`属性设置为你必须提供产品的名称。 并`Text`属性设置为\*。 建立到这些新增功能后`ItemTemplate`，屏幕应类似于图 6。
 
 
-[![T他 ProductName TemplateField 现在包含一个文本框和一个 RequiredFieldValidator](batch-updating-vb/_static/image6.gif)](batch-updating-vb/_static/image9.png)
+[![ProductName TemplateField 现在包含一个文本框和一个 RequiredFieldValidator](batch-updating-vb/_static/image6.gif)](batch-updating-vb/_static/image9.png)
 
 **图 6**:`ProductName` TemplateField 现在包含一个文本框和一个 RequiredFieldValidator ([单击以查看实际尺寸的图像](batch-updating-vb/_static/image10.png))
 
@@ -117,7 +117,7 @@ ms.locfileid: "59386939"
 此外将添加到 CompareValidator `UnitPrice` s`ItemTemplate`以确保用户输入的值是有效的货币值大于或等于为 0.00 美元。 设置验证程序 s`ControlToValidate`属性设置为单价，其`ErrorMessage`属性设置为您必须输入有效的货币值。 请省略任何货币符号。，其`Text`属性设置为\*，将其`Type`属性设置为`Currency`，将其`Operator`属性设置为`GreaterThanEqual`，并将其`ValueToCompare`属性设为 0。
 
 
-[![Add CompareValidator，确保价格输入为非负货币值](batch-updating-vb/_static/image7.gif)](batch-updating-vb/_static/image11.png)
+[![添加 CompareValidator，确保价格输入是一个非负货币值](batch-updating-vb/_static/image7.gif)](batch-updating-vb/_static/image11.png)
 
 **图 7**:添加 CompareValidator，确保价格输入是一个非负货币值 ([单击此项可查看原尺寸图像](batch-updating-vb/_static/image12.png))
 
@@ -135,12 +135,12 @@ ms.locfileid: "59386939"
 从工具箱拖到拖 DropDownList `CategoryName` TemplateField s `ItemTemplate`，并设置其`ID`到`Categories`。 此时我们将通常定义 Dropdownlist 的数据源通过其智能标记，创建新对象数据源。 但是，这将添加在 ObjectDataSource `ItemTemplate`，这将导致为每个 GridView 行创建 ObjectDataSource 实例。 相反，允许创建外部 GridView 的 Templatefield ObjectDataSource 的 s。 结束模板编辑，并将从工具箱拖到设计器下方的 ObjectDataSource`ProductsDataSource`对象数据源。 命名新 ObjectDataSource`CategoriesDataSource`并将其配置为使用`CategoriesBLL`类的`GetCategories`方法。
 
 
-[![C配置对象数据源以使用 CategoriesBLL 类](batch-updating-vb/_static/image8.gif)](batch-updating-vb/_static/image13.png)
+[![配置对象数据源以使用 CategoriesBLL 类](batch-updating-vb/_static/image8.gif)](batch-updating-vb/_static/image13.png)
 
 **图 8**:配置为使用 ObjectDataSource`CategoriesBLL`类 ([单击以查看实际尺寸的图像](batch-updating-vb/_static/image14.png))
 
 
-[![Retrieve 使用 GetCategories 方法类别数据](batch-updating-vb/_static/image9.gif)](batch-updating-vb/_static/image15.png)
+[![检索类别数据使用 GetCategories 方法](batch-updating-vb/_static/image9.gif)](batch-updating-vb/_static/image15.png)
 
 **图 9**:检索类别数据使用`GetCategories`方法 ([单击以查看实际尺寸的图像](batch-updating-vb/_static/image16.png))
 
@@ -148,7 +148,7 @@ ms.locfileid: "59386939"
 由于此 ObjectDataSource 只是用于检索数据，设置为 （无） 更新和删除选项卡中的下拉列表。 单击完成以完成向导。
 
 
-[![Set 更新和删除选项卡添加到 （无） 中的下拉列表](batch-updating-vb/_static/image10.gif)](batch-updating-vb/_static/image17.png)
+[![集更新和删除选项卡添加到 （无） 中的下拉列表](batch-updating-vb/_static/image10.gif)](batch-updating-vb/_static/image17.png)
 
 **图 10**:设置下拉列表列出了更新和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](batch-updating-vb/_static/image18.png))
 
@@ -161,7 +161,7 @@ ms.locfileid: "59386939"
 与`CategoriesDataSource`创建并配置，返回到`CategoryName`TemplateField 的`ItemTemplate`，再从 DropDownList s 智能标记，单击选择数据源链接。 在数据源配置向导中，选择`CategoriesDataSource`选项从第一个下拉列表，然后选择能够`CategoryName`用于显示和`CategoryID`作为值。
 
 
-[![Bind 到 CategoriesDataSource DropDownList](batch-updating-vb/_static/image11.gif)](batch-updating-vb/_static/image19.png)
+[![绑定 DropDownList 到 CategoriesDataSource](batch-updating-vb/_static/image11.gif)](batch-updating-vb/_static/image19.png)
 
 **图 11**:将绑定到 DropDownList `CategoriesDataSource` ([单击以查看实际尺寸的图像](batch-updating-vb/_static/image20.png))
 
@@ -190,7 +190,7 @@ ms.locfileid: "59386939"
 我们已对所做的大量更改 GridView 的模板而不暂停以查看我们的进度。 花点时间查看我们通过浏览器的进度。 如图 13 所示，每行均呈现使用其`ItemTemplate`，其中包含的单元格 s 编辑界面。
 
 
-[![E支票 GridView 行是可编辑](batch-updating-vb/_static/image13.gif)](batch-updating-vb/_static/image21.png)
+[![每个 GridView 行是可编辑](batch-updating-vb/_static/image13.gif)](batch-updating-vb/_static/image21.png)
 
 **图 13**:每个 GridView 行是可编辑 ([单击此项可查看原尺寸图像](batch-updating-vb/_static/image22.png))
 
@@ -223,7 +223,7 @@ ms.locfileid: "59386939"
 图 16 显示此页上，当后已添加按钮 Web 控件的浏览器查看和格式设置所做的更改。
 
 
-[![T他页现在包含两个更新的产品按钮](batch-updating-vb/_static/image16.gif)](batch-updating-vb/_static/image23.png)
+[![页现在包含两个更新的产品按钮](batch-updating-vb/_static/image16.gif)](batch-updating-vb/_static/image23.png)
 
 **图 16**:页现在包含两个更新的产品按钮 ([单击此项可查看原尺寸图像](batch-updating-vb/_static/image24.png))
 

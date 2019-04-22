@@ -12,7 +12,7 @@ ms.openlocfilehash: ce866a169e69c0d85fe18ddeccf271f1f235d440
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381115"
 ---
 # <a name="part-3-views-and-viewmodels"></a>第 3 部分：视图和 ViewModel
@@ -122,7 +122,7 @@ Visual Web Developer 中创建并打开"Index.cshtml"视图模板之后我们单
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample7.cs)]
 
-*注意:如果您想知道，{get; 设置;} 表示法正在使用的C#的自动实现属性功能。 这为我们提供一个属性的优点而无需我们声明支持字段。*
+*注意：如果您想知道，{get; 设置;} 表示法正在使用的C#的自动实现属性功能。这为我们提供一个属性的优点而无需我们声明支持字段。*
 
 接下来，请按照相同的步骤来创建一个具有标题和流派属性的唱片集类 （名为 Album.cs）：
 
@@ -144,7 +144,7 @@ Visual Web Developer 中创建并打开"Index.cshtml"视图模板之后我们单
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample11.cs)]
 
-*注意:如果您熟悉C#，你可能会假定使用 var 意味着我们唱片集的变量是后期绑定。 不正确-C# 编译器所使用类型推理基于什么我们要分配给该变量来确定该唱片集属于类型唱片集和编译本地唱片集变量作为唱片集类型，因此我们获得编译时检查的 Visual Studio 代码编辑器支持。*
+*注意：如果您熟悉C#，你可能会假定使用 var 意味着我们唱片集的变量是后期绑定。不正确-C# 编译器所使用类型推理基于什么我们要分配给该变量来确定该唱片集属于类型唱片集和编译本地唱片集变量作为唱片集类型，因此我们获得编译时检查的 Visual Studio 代码编辑器支持。*
 
 让我们现在创建一个使用我们的唱片集来生成 HTML 响应的视图模板。 在此之前，我们需要生成项目，以便添加视图对话框知道我们新创建的唱片集类。 可以生成项目通过选择 Debug⇨Build MvcMusicStore 菜单项 （for 额外信用额度，你可以使用 Ctrl-Shift-B 快捷方式以生成项目）。
 
@@ -238,7 +238,7 @@ Html.ActionLink() 有多个不同的重载，以允许指定尽可能为你的�
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample20.cshtml)]
 
-*注意:在这种情况下，我们不需要指定控制器名称，因为我们只链接到同一呈现当前视图的控制器内的另一个动作。*
+*注意：在这种情况下，我们不需要指定控制器名称，因为我们只链接到同一呈现当前视图的控制器内的另一个动作。*
 
 我们浏览页面的链接需要传递一个参数，不过，因此我们将使用另一个重载采用三个参数的 Html.ActionLink 方法：
 

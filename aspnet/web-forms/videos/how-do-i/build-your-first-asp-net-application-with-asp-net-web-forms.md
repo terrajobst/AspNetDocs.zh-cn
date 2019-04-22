@@ -12,7 +12,7 @@ ms.openlocfilehash: 06a388991d23ced8c7cd6d22e63a6ce6288e0b3f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382636"
 ---
 # <a name="build-your-first-aspnet-application-with-aspnet-web-forms"></a>使用 ASP.NET Web 窗体生成首个 ASP.NET 应用程序

@@ -12,7 +12,7 @@ ms.openlocfilehash: c0f11019c7410b756d592066a7fe33b3e26fd383
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407193"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门
@@ -322,4 +322,4 @@ ms.locfileid: "59407193"
 这将完成介绍如何使用`ObjectDataSource`控件的基本的 CRUD （创建、 读取、 更新、 删除） 操作使用 Entity Framework。 已生成一个简单的 n 层应用程序，但与数据访问层，这会增加复杂性自动化的单元测试仍紧密耦合的业务逻辑层。 以下教程中，您将了解如何实现存储库模式，以便单元测试。
 
 > [!div class="step-by-step"]
-> [下一步](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+> [下一页](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

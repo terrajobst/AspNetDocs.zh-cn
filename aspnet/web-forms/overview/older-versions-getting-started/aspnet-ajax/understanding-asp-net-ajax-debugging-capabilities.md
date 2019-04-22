@@ -12,7 +12,7 @@ ms.openlocfilehash: 1203825a1fb6b2034d9180fcf416aba7d0012fb7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383208"
 ---
 # <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 调试功能
@@ -48,7 +48,7 @@ Dan Wahlin
 已针对调试正确配置后，应查看图 1 显示了哪些 Internet Explorer 高级对话框。
 
 
-[![Configuring Internet 资源管理器进行调试。](understanding-asp-net-ajax-debugging-capabilities/_static/image2.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image1.png)
+[![为调试配置 Internet Explorer。](understanding-asp-net-ajax-debugging-capabilities/_static/image2.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image1.png)
 
 **图 1**:为调试配置 Internet Explorer。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image3.png))
 
@@ -79,7 +79,7 @@ Visual Studio 2008 调试器将 JavaScript 嵌入在页不同于外部 JavaScrip
 
 使用的示例`debugger`关键字在列表 1 中所示。 此示例将强制使调试器中断正确进行对 update 函数的调用之前。
 
-**代码清单 1。 使用调试器关键字来强制 Visual Studio.NET 调试器中断。**
+**代码清单 1。使用调试器关键字来强制 Visual Studio.NET 调试器中断。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample2.js)]
@@ -91,7 +91,7 @@ Visual Studio 2008 调试器将 JavaScript 嵌入在页不同于外部 JavaScrip
 一旦启动调试会话并开始通过使用默认 F11 键代码的每个步骤，可能会遇到中显示的错误对话框请参见图 2，除非所有页中使用的脚本文件都是开放和可用于调试。
 
 
-[![E时出错对话框，可用于调试没有源代码时显示。](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
+[![可用于调试没有源代码时显示错误对话框。](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
 
 **图 2**:可用于调试没有源代码时显示错误对话框。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image6.png))
 
@@ -104,7 +104,7 @@ Visual Studio 2008 调试器将 JavaScript 嵌入在页不同于外部 JavaScrip
 脚本资源管理器可以用于查看在页面中使用的所有脚本和在代码编辑器中打开它们。 脚本资源管理器打开后，双击当前正在调试在代码编辑器窗口中打开它的.aspx 页。 为所有其他脚本资源管理器中所示的脚本执行相同操作。 一旦所有脚本都是将其打开，可以在代码窗口中按 F11 （和使用其他调试热键） 来单步执行代码。 图 3 显示了脚本资源管理器的示例。 它列出正在调试的当前文件 (Demo.aspx) 以及两个自定义脚本和动态注入由 ASP.NET AJAX ScriptManager 的页面的两个脚本。
 
 
-[![T他的脚本资源管理器可轻松访问页面中使用的脚本]。(understanding-asp-net-ajax-debugging-capabilities/_static/image8.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image7.png)
+[![脚本资源管理器可轻松访问页面中使用的脚本。](understanding-asp-net-ajax-debugging-capabilities/_static/image8.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image7.png)
 
 **图 3**。 脚本资源管理器可轻松访问页面中使用的脚本。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image9.png))
 
@@ -135,14 +135,14 @@ Web 开发帮助程序不会使用此工具来逐句通过代码与使用 Visual
 
 即时窗口可以用于执行脚本命令或甚至加载或保存脚本，用于在页面中测试不同的函数。 命令窗口显示通过查看的页的形式写出的跟踪或调试消息。 列表 2 显示了如何编写使用 Internet Explorer 的 Debug.writeln 函数的跟踪消息。
 
-**代码清单 2。 写出使用 Debug 类的客户端的跟踪消息。**
+**代码清单 2。写出使用 Debug 类的客户端的跟踪消息。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample3.js)]
 
 如果姓氏属性包含值为 Doe，Web Development Helper 将显示消息"人员姓名：Doe"在脚本控制台的命令窗口 （假设已启用调试）。 Web Development Helper 还将顶级 debugService 对象添加到可用于写出跟踪信息或查看其内容的 JSON 对象的页。 列表 3 显示了使用 debugService 类跟踪函数的示例。
 
-**代码清单 3。 使用 Web Development Helper debugService 类编写跟踪消息。**
+**代码清单 3。使用 Web Development Helper debugService 类编写跟踪消息。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample4.js)]
@@ -151,7 +151,7 @@ DebugService 类的一个不错的功能是，使之能够即使未启用调试�
 
 DebugService 类还允许使用 Web Development Helper 检查器窗口来查看 JSON 对象数据。 列表 4 创建包含个人数据的简单 JSON 对象。 在创建对象后调用到 debugService 类的检查函数，以允许要直观检查的 JSON 对象。
 
-**列表 4。 DebugService.inspect 函数用于查看 JSON 对象数据。**
+**列表 4。DebugService.inspect 函数用于查看 JSON 对象数据。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample5.js)]
@@ -163,7 +163,7 @@ DebugService 类还允许使用 Web Development Helper 检查器窗口来查看 
 除了允许跟踪数据和要显示的 JSON 对象，Web 开发帮助程序也有助于在调试页面中的错误。 如果遇到错误，系统会提示继续到下一行代码，或调试脚本 （请参阅图 6）。 该脚本错误对话框窗口会显示完整的调用堆栈以及行号，以便可以轻松确定在脚本中的问题所在。
 
 
-[![U发挥最大功效的对象检查器窗口以查看 JSON 对象。](understanding-asp-net-ajax-debugging-capabilities/_static/image14.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image13.png)
+[![对象检查器窗口用于查看 JSON 对象。](understanding-asp-net-ajax-debugging-capabilities/_static/image14.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image13.png)
 
 **图 5**:对象检查器窗口用于查看 JSON 对象。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image15.png))
 
@@ -185,7 +185,7 @@ DebugService 类还允许使用 Web Development Helper 检查器窗口来查看 
 尽管查看每个请求/响应消息中发送的原始文本是当然还是很有用 （和 Web Development Helper 中的某个选项），它通常是更轻松地以更图形格式查看消息数据。 一旦启用 HTTP 日志记录，且消息已记录，可以通过双击该消息在 HTTP 日志查看器中查看消息数据。 执行此操作将允许您查看与一条消息，以及实际的消息关联的所有标题内容。 图 7 显示了请求消息和响应消息在 HTTP 日志查看器窗口中查看的一个示例。
 
 
-[![U发挥最大功效 HTTP 日志查看器来查看请求和响应消息数据。](understanding-asp-net-ajax-debugging-capabilities/_static/image20.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image19.png)
+[![使用 HTTP 日志查看器来查看请求和响应消息数据。](understanding-asp-net-ajax-debugging-capabilities/_static/image20.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image19.png)
 
 **图 7**:使用 HTTP 日志查看器来查看请求和响应消息数据。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image21.png))
 
@@ -193,7 +193,7 @@ DebugService 类还允许使用 Web Development Helper 检查器窗口来查看 
 HTTP 日志查看器会自动分析 JSON 对象，并显示它们使用树视图，使其快速、 轻松地查看对象的属性数据。 当 UpdatePanel ASP.NET AJAX 页面中使用时，在查看器会细分到各个部分的消息的每个部分如图 8 中所示。 这是一项强大功能，便于更轻松地查看和了解相比查看原始消息数据消息中的功能。
 
 
-[![An 个 UpdatePanel 响应消息使用 HTTP 日志查看器查看。](understanding-asp-net-ajax-debugging-capabilities/_static/image23.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image22.png)
+[![使用 HTTP 日志查看器查看一个 UpdatePanel 响应消息。](understanding-asp-net-ajax-debugging-capabilities/_static/image23.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image22.png)
 
 **图 8**:使用 HTTP 日志查看器查看一个 UpdatePanel 响应消息。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
 
@@ -211,7 +211,7 @@ Firebug 开始运行后，可以设置断点上的 JavaScript 文件的任意行
 在 Firebug 中设置断点后可以执行如单击按钮或刷新浏览器触发 onLoad 事件调试所需脚本执行所需的操作。 包含断点的行上，将自动停止执行。 图 9 在 Firebug 中显示已触发断点的示例。
 
 
-[![H参见断点在 Firebug 中。](understanding-asp-net-ajax-debugging-capabilities/_static/image26.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image25.png)
+[![处理在 Firebug 中的断点。](understanding-asp-net-ajax-debugging-capabilities/_static/image26.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image25.png)
 
 **图 9**:处理在 Firebug 中的断点。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image27.png))
 
@@ -223,7 +223,7 @@ Firebug 还包括可用于测试不同的脚本语句、 计算变量并查看�
 图 10 显示了使用 DOM 检查器来查找名为 txtCountry 页中的文本框的示例。 Firebug 检查器还可以用于查看在一个页面，以及如跟踪鼠标移动、 按钮单击，还需要更多发生的事件中使用的 CSS 样式。
 
 
-[![U发挥最大功效 Firebug 的 DOM 检查器。](understanding-asp-net-ajax-debugging-capabilities/_static/image29.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image28.png)
+[![使用 Firebug 的 DOM 检查器。](understanding-asp-net-ajax-debugging-capabilities/_static/image29.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image28.png)
 
 **图 10**:使用 Firebug 的 DOM 检查器。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image30.png))
 
@@ -240,9 +240,9 @@ Sys.Debug 类 （位于 Sys 命名空间中的 JavaScript 类） 可以用于执
 
 Sys.Debug 该类会公开多个不同的函数可用于处理跟踪、 代码断言或故障，如表 1 中所示。
 
-**表 1. Sys.Debug 类函数。**
+**表 1。Sys.Debug 类函数。**
 
-| **函数名** | **描述** |
+| **函数名** | **说明** |
 | --- | --- |
 | assert(condition, message, displayCaller) | 断言的条件参数为 true。 如果被测条件为 false，则将使用一个消息框显示的消息参数值。 如果 displayCaller 参数为 true，该方法还显示有关调用方信息。 |
 | clearTrace() | 清除跟踪操作的语句输出。 |
@@ -252,7 +252,7 @@ Sys.Debug 该类会公开多个不同的函数可用于处理跟踪、 代码断
 
 客户端跟踪可以使用方法的 ASP.NET 提供的跟踪功能与大致相同。 它允许不同的消息来轻松地看到而不会中断应用程序的流。 列表 5 显示了使用 Sys.Debug.trace 函数来写入跟踪日志的示例。 此函数只获取应作为参数写出的消息。
 
-**列表 5。 使用 Sys.Debug.trace 函数。**
+**列表 5。使用 Sys.Debug.trace 函数。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample6.js)]
@@ -266,7 +266,7 @@ Sys.Debug 该类会公开多个不同的函数可用于处理跟踪、 代码断
 
 在想要查看 JSON 对象中包含的数据的情况下可以使用 Sys.Debug 类 traceDump 函数。 此函数采用两个参数，包括应转储到跟踪控制台的对象以及可用于标识跟踪输出中的对象的名称。 列表 6 显示了使用 traceDump 函数的示例。
 
-**代码清单 6。 使用 Sys.Debug.traceDump 函数。**
+**代码清单 6。使用 Sys.Debug.traceDump 函数。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample8.js)]
@@ -278,12 +278,12 @@ Sys.Debug 该类会公开多个不同的函数可用于处理跟踪、 代码断
 列表 7 显示了使用 Sys.Debug.assert 函数对条件进行测试的示例。 该代码会测试更新 Person 对象之前地址对象为 null。
 
 
-[![O分行符 Sys.Debug.traceDump 函数。](understanding-asp-net-ajax-debugging-capabilities/_static/image32.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image31.png)
+[![Sys.Debug.traceDump 函数的输出。](understanding-asp-net-ajax-debugging-capabilities/_static/image32.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image31.png)
 
 **图 11**:Sys.Debug.traceDump 函数的输出。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image33.png))
 
 
-**列表 7。 使用 debug.assert 函数。**
+**列表 7。使用 debug.assert 函数。**
 
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample9.js)]
@@ -296,7 +296,7 @@ Sys.Debug 该类会公开多个不同的函数可用于处理跟踪、 代码断
 [!code-css[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample10.css)]
 
 
-[![A Sys.Debug.assert 失败消息。](understanding-asp-net-ajax-debugging-capabilities/_static/image35.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image34.png)
+[![Sys.Debug.assert 失败消息。](understanding-asp-net-ajax-debugging-capabilities/_static/image35.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image34.png)
 
 **图 12**:Sys.Debug.assert 失败消息。  ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-debugging-capabilities/_static/image36.png))
 
@@ -318,7 +318,7 @@ ScriptMode 默认为自动，这意味着，ScriptManager 将检查 web.config �
 
 此外可以通过列表 9 中所示使用 ScriptManager 的脚本属性以及 ScriptReference 组件加载不同版本 （调试或发布） 的自定义脚本。
 
-**列表 9。 使用 ScriptManager 加载自定义脚本。**
+**列表 9。使用 ScriptManager 加载自定义脚本。**
 
 
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample12.aspx)]
@@ -333,7 +333,7 @@ ScriptMode 默认为自动，这意味着，ScriptManager 将检查 web.config �
 
 在要调试或发行版本的自定义脚本加载基于 ScriptManager 控件上设置的 ScriptMode 属性的值的情况下，您可以将 ScriptReference 控件的 ScriptMode 属性设置为继承。 这会导致要加载的自定义脚本的适当版本基于 ScriptManager 的 ScriptMode 属性列表 10 中所示。 因为 ScriptManager 控件的 ScriptMode 属性设置为调试，将加载 Person.debug.js 脚本，并将其在页中。
 
-**代码清单 10。 继承自定义脚本的 ScriptManager 的 ScriptMode。**
+**代码清单 10。继承自定义脚本的 ScriptManager 的 ScriptMode。**
 
 
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample14.aspx)]
@@ -353,4 +353,4 @@ Dan Wahlin （Microsoft 最有价值专业人员的 ASP.NET 和 XML Web 服务�
 Scott Cate 自 1997 年以来一直致力于 Microsoft Web 技术和 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 专门负责编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或他的博客[ScottCate.com](http://ScottCate.com)
 
 > [!div class="step-by-step"]
-> [上一个](understanding-asp-net-ajax-web-services.md)
+> [上一篇](understanding-asp-net-ajax-web-services.md)

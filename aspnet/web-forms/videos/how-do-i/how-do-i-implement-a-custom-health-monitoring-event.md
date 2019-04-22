@@ -12,7 +12,7 @@ ms.openlocfilehash: 48e0449d09ff0dfee4820820fefc89113ff98e84
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383091"
 ---
 # <a name="how-do-i-implement-a-custom-health-monitoring-event"></a>[如何实现:]实现自定义运行状况监视事件

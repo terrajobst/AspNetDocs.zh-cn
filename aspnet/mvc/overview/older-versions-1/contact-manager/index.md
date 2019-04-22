@@ -12,7 +12,7 @@ ms.openlocfilehash: 4faccca531b330cc52c338bae98fab484de753f9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378996"
 ---
 # <a name="contact-manager"></a>联系人管理器
@@ -21,7 +21,7 @@ ms.locfileid: "59378996"
 
 
 - [迭代 1 – 创建应用程序 (C#)](iteration-1-create-the-application-cs.md)
-- [迭代 2 – 使应用程序外表美观的 (C#)](iteration-2-make-the-application-look-nice-cs.md)
+- [迭代 2 – 使应用程序外表美观 (C#)](iteration-2-make-the-application-look-nice-cs.md)
 - [迭代 3 – 添加表单验证 (C#)](iteration-3-add-form-validation-cs.md)
 - [迭代 4 – 使应用程序松散耦合 (C#)](iteration-4-make-the-application-loosely-coupled-cs.md)
 - [迭代 5 — 创建单元测试 (C#)](iteration-5-create-unit-tests-cs.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 8292fd43ffa2bc66b4daa8f0fc09569226d90bff
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379555"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>在 ASP.NET MVC 4 中使用异步方法
@@ -166,7 +166,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
     - 打开 IIS 管理器并导航到应用程序池窗格中。
     - 在目标应用程序池上右键单击并选择**高级设置**。  
-        ![高级](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
+        ![advanced](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
     - 在中**高级设置**对话框中，更改*队列长度*从 1,000 到 5,000。  
         ![队列长度](using-asynchronous-methods-in-aspnet-mvc-4/_static/image5.png)  
   

@@ -12,7 +12,7 @@ ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382091"
 ---
 # <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET 网页简介-通过使用 WebMatrix 发布站点
@@ -217,4 +217,4 @@ WebMatrix 显示文件和将发布到网站的数据库。 由于这是要将站
 - [ASP.NET WebMatrix ASP.NET Web Pages 论坛](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages)，一个很好的发布问题和获取答案。
 
 > [!div class="step-by-step"]
-> [上一个](layouts.md)
+> [上一篇](layouts.md)

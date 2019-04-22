@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f64e90eb2f8f87e2f382cb7897793e7071d305d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384495"
 ---
 # <a name="using-hovermenu-with-a-repeater-control-c"></a>通过 Repeater 控件使用 HoverMenu (C#)
@@ -53,9 +53,9 @@ ms.locfileid: "59384495"
 现在，数据源中的每个项显示一个弹出窗口，向右 (`PopupPosition`属性) 的 50 毫秒的延迟后 (`PopDelay`属性)。
 
 
-[![T在 repeater 中每个项的旁边显示他悬停菜单](using-hovermenu-with-a-repeater-control-cs/_static/image2.png)](using-hovermenu-with-a-repeater-control-cs/_static/image1.png)
+[![在 repeater 中每个项的旁边显示的悬停菜单](using-hovermenu-with-a-repeater-control-cs/_static/image2.png)](using-hovermenu-with-a-repeater-control-cs/_static/image1.png)
 
 在 repeater 中每个项的旁边显示的悬停菜单 ([单击此项可查看原尺寸图像](using-hovermenu-with-a-repeater-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](using-hovermenu-with-a-repeater-control-vb.md)
+> [下一页](using-hovermenu-with-a-repeater-control-vb.md)

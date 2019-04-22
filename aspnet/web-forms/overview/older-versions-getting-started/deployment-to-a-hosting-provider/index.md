@@ -12,7 +12,7 @@ ms.openlocfilehash: 87de6c92375594ab6ee726f1b66a94a0db793fd2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417047"
 ---
 # <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - 通过使用 Visual Studio 的 SQL Server Compact 进行 Web 部署
@@ -27,8 +27,8 @@ ms.locfileid: "59417047"
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 作为测试环境部署到 IIS](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 设置文件夹权限](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署到生产环境](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
-- [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署仅代码更新](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
-- [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署数据库更新](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
+- [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署到仅代码更新](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+- [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署到数据库更新](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 迁移到 SQL Server](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署 SQL Server 数据库更新](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 疑难解答](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)

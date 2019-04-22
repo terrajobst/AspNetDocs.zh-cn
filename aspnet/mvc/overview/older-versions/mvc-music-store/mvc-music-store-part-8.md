@@ -12,7 +12,7 @@ ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379477"
 ---
 # <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：购物车与 Ajax 更新
@@ -54,7 +54,7 @@ ms.locfileid: "59379477"
 
 因为我们不希望要求用户注册一个帐户，只是为了向其购物车添加项，我们会将用户分配一个临时的唯一标识符 （使用 GUID 或全局唯一标识符） 时，他们访问购物车。 我们将存储此使用 ASP.NET 会话类的 ID。
 
-*注意:ASP.NET 会话是很方便地存储特定于用户的信息将离开站点后到期。 虽然不恰当使用会话状态的可能较大的站点上会影响性能，我们轻度使用将适用于演示目的。*
+*注意：ASP.NET 会话是很方便地存储特定于用户的信息将离开站点后到期。虽然不恰当使用会话状态的可能较大的站点上会影响性能，我们轻度使用将适用于演示目的。*
 
 购物车类提供了以下方法：
 
