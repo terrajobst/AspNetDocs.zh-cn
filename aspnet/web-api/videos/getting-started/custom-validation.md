@@ -12,14 +12,14 @@ ms.openlocfilehash: 1e941830f741c4d21b9320561a4b10b0fa729c1d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390046"
 ---
-# <a name="aspnet-web-api-part-5-custom-validation"></a><span data-ttu-id="b0a20-103">ASP.NET Web API，第 5 部分：自定义验证</span><span class="sxs-lookup"><span data-stu-id="b0a20-103">ASP.NET Web API, Part 5: Custom Validation</span></span>
+# <a name="aspnet-web-api-part-5-custom-validation"></a><span data-ttu-id="d50ac-103">ASP.NET Web API，第 5 部分：自定义验证</span><span class="sxs-lookup"><span data-stu-id="d50ac-103">ASP.NET Web API, Part 5: Custom Validation</span></span>
 
-<span data-ttu-id="b0a20-104">通过[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="b0a20-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
+<span data-ttu-id="d50ac-104">通过[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="d50ac-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b0a20-105">此视频中包含从预发行版本的 ASP.NET Web API 的信息。</span><span class="sxs-lookup"><span data-stu-id="b0a20-105">This video contains information from a pre-release version of ASP.NET Web API.</span></span> <span data-ttu-id="b0a20-106">有关更改的内容的信息，请参阅处的已更新的示例代码 [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span><span class="sxs-lookup"><span data-stu-id="b0a20-106">For information on what changed, see the updated sample code at [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span></span>
+> <span data-ttu-id="d50ac-105">此视频中包含从预发行版本的 ASP.NET Web API 的信息。</span><span class="sxs-lookup"><span data-stu-id="d50ac-105">This video contains information from a pre-release version of ASP.NET Web API.</span></span> <span data-ttu-id="d50ac-106">有关更改的内容的信息，请参阅处的已更新的示例代码 [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span><span class="sxs-lookup"><span data-stu-id="d50ac-106">For information on what changed, see the updated sample code at [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span></span>
 
-[<span data-ttu-id="b0a20-107">&#9654;观看视频 （3 分钟）</span><span class="sxs-lookup"><span data-stu-id="b0a20-107">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/custom-validation)
+[<span data-ttu-id="d50ac-107">&#9654;观看视频 （3 分钟）</span><span class="sxs-lookup"><span data-stu-id="d50ac-107">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/custom-validation)

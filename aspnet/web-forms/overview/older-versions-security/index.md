@@ -12,47 +12,47 @@ ms.openlocfilehash: afd786a25c8dc23eba1bbf6ed3f6512c64f2e72d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378570"
 ---
-# <a name="older-versions---security"></a><span data-ttu-id="0297c-103">旧版本 - 安全</span><span class="sxs-lookup"><span data-stu-id="0297c-103">Older Versions - Security</span></span>
+# <a name="older-versions---security"></a><span data-ttu-id="01f8d-103">旧版本 - 安全</span><span class="sxs-lookup"><span data-stu-id="01f8d-103">Older Versions - Security</span></span>
 
-> <span data-ttu-id="0297c-104">为 ASP.NET 4 和更早的 Web 窗体应用程序的安全性、 身份验证和授权主题。</span><span class="sxs-lookup"><span data-stu-id="0297c-104">Security, authentication, and authorization topics for ASP.NET 4 and earlier Web Forms applications.</span></span>
+> <span data-ttu-id="01f8d-104">为 ASP.NET 4 和更早的 Web 窗体应用程序的安全性、 身份验证和授权主题。</span><span class="sxs-lookup"><span data-stu-id="01f8d-104">Security, authentication, and authorization topics for ASP.NET 4 and earlier Web Forms applications.</span></span>
 
 
-- [<span data-ttu-id="0297c-105">ASP.NET 3.5 - 安全简介</span><span class="sxs-lookup"><span data-stu-id="0297c-105">ASP.NET 3.5 - Introduction to Security</span></span>](introduction/index.md)
+- [<span data-ttu-id="01f8d-105">ASP.NET 3.5 - 安全简介</span><span class="sxs-lookup"><span data-stu-id="01f8d-105">ASP.NET 3.5 - Introduction to Security</span></span>](introduction/index.md)
 
-    - [<span data-ttu-id="0297c-106">安全基础知识和 ASP.NET 支持 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-106">Security Basics and ASP.NET Support (C#)</span></span>](introduction/security-basics-and-asp-net-support-cs.md)
-    - [<span data-ttu-id="0297c-107">Forms 身份验证概述 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-107">Overview of Forms Authentication (C#)</span></span>](introduction/an-overview-of-forms-authentication-cs.md)
-    - [<span data-ttu-id="0297c-108">Forms 身份验证配置和高级主题 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-108">Forms Authentication Configuration and Advanced Topics (C#)</span></span>](introduction/forms-authentication-configuration-and-advanced-topics-cs.md)
-    - [<span data-ttu-id="0297c-109">安全基础知识和 ASP.NET 支持 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-109">Security Basics and ASP.NET Support (VB)</span></span>](introduction/security-basics-and-asp-net-support-vb.md)
-    - [<span data-ttu-id="0297c-110">Forms 身份验证概述 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-110">Overview of Forms Authentication (VB)</span></span>](introduction/an-overview-of-forms-authentication-vb.md)
-    - [<span data-ttu-id="0297c-111">Forms 身份验证配置和高级主题 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-111">Forms Authentication Configuration and Advanced Topics (VB)</span></span>](introduction/forms-authentication-configuration-and-advanced-topics-vb.md)
-- [<span data-ttu-id="0297c-112">ASP.NET 3.5 - 成员身份</span><span class="sxs-lookup"><span data-stu-id="0297c-112">ASP.NET 3.5 - Membership</span></span>](membership/index.md)
+    - [<span data-ttu-id="01f8d-106">安全基础知识和 ASP.NET 支持 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-106">Security Basics and ASP.NET Support (C#)</span></span>](introduction/security-basics-and-asp-net-support-cs.md)
+    - [<span data-ttu-id="01f8d-107">Forms 身份验证概述 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-107">Overview of Forms Authentication (C#)</span></span>](introduction/an-overview-of-forms-authentication-cs.md)
+    - [<span data-ttu-id="01f8d-108">Forms 身份验证配置和高级主题 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-108">Forms Authentication Configuration and Advanced Topics (C#)</span></span>](introduction/forms-authentication-configuration-and-advanced-topics-cs.md)
+    - [<span data-ttu-id="01f8d-109">安全基础知识和 ASP.NET 支持 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-109">Security Basics and ASP.NET Support (VB)</span></span>](introduction/security-basics-and-asp-net-support-vb.md)
+    - [<span data-ttu-id="01f8d-110">Forms 身份验证概述 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-110">Overview of Forms Authentication (VB)</span></span>](introduction/an-overview-of-forms-authentication-vb.md)
+    - [<span data-ttu-id="01f8d-111">Forms 身份验证配置和高级主题 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-111">Forms Authentication Configuration and Advanced Topics (VB)</span></span>](introduction/forms-authentication-configuration-and-advanced-topics-vb.md)
+- [<span data-ttu-id="01f8d-112">ASP.NET 3.5 - 成员身份</span><span class="sxs-lookup"><span data-stu-id="01f8d-112">ASP.NET 3.5 - Membership</span></span>](membership/index.md)
 
-    - [<span data-ttu-id="0297c-113">在 SQL Server 中创建成员身份架构 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-113">Creating the Membership Schema in SQL Server (C#)</span></span>](membership/creating-the-membership-schema-in-sql-server-cs.md)
-    - [<span data-ttu-id="0297c-114">创建用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-114">Creating User Accounts (C#)</span></span>](membership/creating-user-accounts-cs.md)
-    - [<span data-ttu-id="0297c-115">针对成员身份用户存储验证用户凭据 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-115">Validating User Credentials Against the Membership User Store (C#)</span></span>](membership/validating-user-credentials-against-the-membership-user-store-cs.md)
-    - [<span data-ttu-id="0297c-116">基于用户的身份验证 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-116">User-Based Authorization (C#)</span></span>](membership/user-based-authorization-cs.md)
-    - [<span data-ttu-id="0297c-117">存储其他用户信息 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-117">Storing Additional User Information (C#)</span></span>](membership/storing-additional-user-information-cs.md)
-    - [<span data-ttu-id="0297c-118">在 SQL Server 中创建成员身份架构 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-118">Creating the Membership Schema in SQL Server (VB)</span></span>](membership/creating-the-membership-schema-in-sql-server-vb.md)
-    - [<span data-ttu-id="0297c-119">创建用户帐户 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-119">Creating User Accounts (VB)</span></span>](membership/creating-user-accounts-vb.md)
-    - [<span data-ttu-id="0297c-120">针对成员身份用户存储验证用户凭据 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-120">Validating User Credentials Against the Membership User Store (VB)</span></span>](membership/validating-user-credentials-against-the-membership-user-store-vb.md)
-    - [<span data-ttu-id="0297c-121">基于用户的身份验证 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-121">User-Based Authorization (VB)</span></span>](membership/user-based-authorization-vb.md)
-    - [<span data-ttu-id="0297c-122">存储其他用户信息 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-122">Storing Additional User Information (VB)</span></span>](membership/storing-additional-user-information-vb.md)
-- [<span data-ttu-id="0297c-123">ASP.NET 3.5 - 角色</span><span class="sxs-lookup"><span data-stu-id="0297c-123">ASP.NET 3.5 - Roles</span></span>](roles/index.md)
+    - [<span data-ttu-id="01f8d-113">在 SQL Server 中创建成员身份架构 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-113">Creating the Membership Schema in SQL Server (C#)</span></span>](membership/creating-the-membership-schema-in-sql-server-cs.md)
+    - [<span data-ttu-id="01f8d-114">创建用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-114">Creating User Accounts (C#)</span></span>](membership/creating-user-accounts-cs.md)
+    - [<span data-ttu-id="01f8d-115">针对成员身份用户存储验证用户凭据 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-115">Validating User Credentials Against the Membership User Store (C#)</span></span>](membership/validating-user-credentials-against-the-membership-user-store-cs.md)
+    - [<span data-ttu-id="01f8d-116">基于用户的身份验证 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-116">User-Based Authorization (C#)</span></span>](membership/user-based-authorization-cs.md)
+    - [<span data-ttu-id="01f8d-117">存储其他用户信息 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-117">Storing Additional User Information (C#)</span></span>](membership/storing-additional-user-information-cs.md)
+    - [<span data-ttu-id="01f8d-118">在 SQL Server 中创建成员身份架构 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-118">Creating the Membership Schema in SQL Server (VB)</span></span>](membership/creating-the-membership-schema-in-sql-server-vb.md)
+    - [<span data-ttu-id="01f8d-119">创建用户帐户 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-119">Creating User Accounts (VB)</span></span>](membership/creating-user-accounts-vb.md)
+    - [<span data-ttu-id="01f8d-120">针对成员身份用户存储验证用户凭据 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-120">Validating User Credentials Against the Membership User Store (VB)</span></span>](membership/validating-user-credentials-against-the-membership-user-store-vb.md)
+    - [<span data-ttu-id="01f8d-121">基于用户的身份验证 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-121">User-Based Authorization (VB)</span></span>](membership/user-based-authorization-vb.md)
+    - [<span data-ttu-id="01f8d-122">存储其他用户信息 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-122">Storing Additional User Information (VB)</span></span>](membership/storing-additional-user-information-vb.md)
+- [<span data-ttu-id="01f8d-123">ASP.NET 3.5 - 角色</span><span class="sxs-lookup"><span data-stu-id="01f8d-123">ASP.NET 3.5 - Roles</span></span>](roles/index.md)
 
-    - [<span data-ttu-id="0297c-124">创建和管理角色 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-124">Creating and Managing Roles (C#)</span></span>](roles/creating-and-managing-roles-cs.md)
-    - [<span data-ttu-id="0297c-125">向用户分配角色 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-125">Assigning Roles to Users (C#)</span></span>](roles/assigning-roles-to-users-cs.md)
-    - [<span data-ttu-id="0297c-126">基于角色的授权 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-126">Role-Based Authorization (C#)</span></span>](roles/role-based-authorization-cs.md)
-    - [<span data-ttu-id="0297c-127">创建和管理角色 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-127">Creating and Managing Roles (VB)</span></span>](roles/creating-and-managing-roles-vb.md)
-    - [<span data-ttu-id="0297c-128">向用户分配角色 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-128">Assigning Roles to Users (VB)</span></span>](roles/assigning-roles-to-users-vb.md)
-    - [<span data-ttu-id="0297c-129">基于角色的授权 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-129">Role-Based Authorization (VB)</span></span>](roles/role-based-authorization-vb.md)
-- [<span data-ttu-id="0297c-130">ASP.NET 3.5 - 安全管理</span><span class="sxs-lookup"><span data-stu-id="0297c-130">ASP.NET 3.5 - Security Administration</span></span>](admin/index.md)
+    - [<span data-ttu-id="01f8d-124">创建和管理角色 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-124">Creating and Managing Roles (C#)</span></span>](roles/creating-and-managing-roles-cs.md)
+    - [<span data-ttu-id="01f8d-125">向用户分配角色 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-125">Assigning Roles to Users (C#)</span></span>](roles/assigning-roles-to-users-cs.md)
+    - [<span data-ttu-id="01f8d-126">基于角色的授权 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-126">Role-Based Authorization (C#)</span></span>](roles/role-based-authorization-cs.md)
+    - [<span data-ttu-id="01f8d-127">创建和管理角色 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-127">Creating and Managing Roles (VB)</span></span>](roles/creating-and-managing-roles-vb.md)
+    - [<span data-ttu-id="01f8d-128">向用户分配角色 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-128">Assigning Roles to Users (VB)</span></span>](roles/assigning-roles-to-users-vb.md)
+    - [<span data-ttu-id="01f8d-129">基于角色的授权 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-129">Role-Based Authorization (VB)</span></span>](roles/role-based-authorization-vb.md)
+- [<span data-ttu-id="01f8d-130">ASP.NET 3.5 - 安全管理</span><span class="sxs-lookup"><span data-stu-id="01f8d-130">ASP.NET 3.5 - Security Administration</span></span>](admin/index.md)
 
-    - [<span data-ttu-id="0297c-131">生成用于从多个用户帐户中选择一个帐户的界面 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-131">Building an Interface to Select One User Account from Many (C#)</span></span>](admin/building-an-interface-to-select-one-user-account-from-many-cs.md)
-    - [<span data-ttu-id="0297c-132">恢复和更改密码 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-132">Recovering and Changing Passwords (C#)</span></span>](admin/recovering-and-changing-passwords-cs.md)
-    - [<span data-ttu-id="0297c-133">解锁和审批用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="0297c-133">Unlocking and Approving User Accounts (C#)</span></span>](admin/unlocking-and-approving-user-accounts-cs.md)
-    - [<span data-ttu-id="0297c-134">生成用于从多个用户帐户中选择一个帐户的界面 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-134">Building an Interface to Select One User Account from Many (VB)</span></span>](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
-    - [<span data-ttu-id="0297c-135">恢复和更改密码 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-135">Recovering and Changing Passwords (VB)</span></span>](admin/recovering-and-changing-passwords-vb.md)
-    - [<span data-ttu-id="0297c-136">解锁和审批用户帐户 (VB)</span><span class="sxs-lookup"><span data-stu-id="0297c-136">Unlocking and Approving User Accounts (VB)</span></span>](admin/unlocking-and-approving-user-accounts-vb.md)
+    - [<span data-ttu-id="01f8d-131">生成用于从多个用户帐户中选择一个帐户的界面 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-131">Building an Interface to Select One User Account from Many (C#)</span></span>](admin/building-an-interface-to-select-one-user-account-from-many-cs.md)
+    - [<span data-ttu-id="01f8d-132">恢复和更改密码 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-132">Recovering and Changing Passwords (C#)</span></span>](admin/recovering-and-changing-passwords-cs.md)
+    - [<span data-ttu-id="01f8d-133">解锁和审批用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="01f8d-133">Unlocking and Approving User Accounts (C#)</span></span>](admin/unlocking-and-approving-user-accounts-cs.md)
+    - [<span data-ttu-id="01f8d-134">生成用于从多个用户帐户中选择一个帐户的接口 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-134">Building an Interface to Select One User Account from Many (VB)</span></span>](admin/building-an-interface-to-select-one-user-account-from-many-vb.md)
+    - [<span data-ttu-id="01f8d-135">恢复和更改密码 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-135">Recovering and Changing Passwords (VB)</span></span>](admin/recovering-and-changing-passwords-vb.md)
+    - [<span data-ttu-id="01f8d-136">解锁和审批用户帐户 (VB)</span><span class="sxs-lookup"><span data-stu-id="01f8d-136">Unlocking and Approving User Accounts (VB)</span></span>](admin/unlocking-and-approving-user-accounts-vb.md)

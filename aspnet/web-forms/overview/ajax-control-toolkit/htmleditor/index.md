@@ -12,13 +12,13 @@ ms.openlocfilehash: cb86b45368f827f456fb7dc3f8190e90105c926e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378853"
 ---
-# <a name="htmleditor"></a><span data-ttu-id="3f441-103">HTMLEditor</span><span class="sxs-lookup"><span data-stu-id="3f441-103">HTMLEditor</span></span>
+# <a name="htmleditor"></a><span data-ttu-id="bff66-103">HTMLEditor</span><span class="sxs-lookup"><span data-stu-id="bff66-103">HTMLEditor</span></span>
 
-> <span data-ttu-id="3f441-104">本教程演示如何使用 HTMLEditor 控件，它提供丰富的编辑器和所见即所得或源编辑的 HTML 内容。</span><span class="sxs-lookup"><span data-stu-id="3f441-104">This tutorial shows how to use the HTMLEditor control, which provides a rich editor and WYSIWYG or source editing of HTML content.</span></span>
+> <span data-ttu-id="bff66-104">本教程演示如何使用 HTMLEditor 控件，它提供丰富的编辑器和所见即所得或源编辑的 HTML 内容。</span><span class="sxs-lookup"><span data-stu-id="bff66-104">This tutorial shows how to use the HTMLEditor control, which provides a rich editor and WYSIWYG or source editing of HTML content.</span></span>
 
 
-- [<span data-ttu-id="3f441-105">HTML 编辑器控件 (C#)</span><span class="sxs-lookup"><span data-stu-id="3f441-105">HTML Editor Control (C#)</span></span>](how-do-i-use-the-html-editor-control-cs.md)
-- [<span data-ttu-id="3f441-106">HTML 编辑器控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="3f441-106">HTML Editor Control (VB)</span></span>](how-do-i-use-the-html-editor-control-vb.md)
+- [<span data-ttu-id="bff66-105">HTML 编辑器控件 (C#)</span><span class="sxs-lookup"><span data-stu-id="bff66-105">HTML Editor Control (C#)</span></span>](how-do-i-use-the-html-editor-control-cs.md)
+- [<span data-ttu-id="bff66-106">HTML 编辑器控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="bff66-106">HTML Editor Control (VB)</span></span>](how-do-i-use-the-html-editor-control-vb.md)

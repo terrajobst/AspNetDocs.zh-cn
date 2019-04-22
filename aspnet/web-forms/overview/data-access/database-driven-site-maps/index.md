@@ -12,13 +12,13 @@ ms.openlocfilehash: ba159c2306a50f24576623b8c2cafb79a138e91f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380543"
 ---
-# <a name="database-driven-site-maps"></a><span data-ttu-id="40abe-103">数据库驱动站点地图</span><span class="sxs-lookup"><span data-stu-id="40abe-103">Database-Driven Site Maps</span></span>
+# <a name="database-driven-site-maps"></a><span data-ttu-id="f3150-103">数据库驱动站点地图</span><span class="sxs-lookup"><span data-stu-id="f3150-103">Database-Driven Site Maps</span></span>
 
-> <span data-ttu-id="40abe-104">本教程介绍如何生成基于数据库中的信息动态站点地图。</span><span class="sxs-lookup"><span data-stu-id="40abe-104">This tutorial explains how to build a site map dynamically based on information in the database.</span></span>
+> <span data-ttu-id="f3150-104">本教程介绍如何生成基于数据库中的信息动态站点地图。</span><span class="sxs-lookup"><span data-stu-id="f3150-104">This tutorial explains how to build a site map dynamically based on information in the database.</span></span>
 
 
-- [<span data-ttu-id="40abe-105">生成自定义数据库驱动站点地图提供程序 (C#)</span><span class="sxs-lookup"><span data-stu-id="40abe-105">Building a Custom Database-Driven Site Map Provider (C#)</span></span>](building-a-custom-database-driven-site-map-provider-cs.md)
-- [<span data-ttu-id="40abe-106">生成自定义数据库驱动站点地图提供程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="40abe-106">Building a Custom Database-Driven Site Map Provider (VB)</span></span>](building-a-custom-database-driven-site-map-provider-vb.md)
+- [<span data-ttu-id="f3150-105">生成自定义数据库驱动站点地图提供程序 (C#)</span><span class="sxs-lookup"><span data-stu-id="f3150-105">Building a Custom Database-Driven Site Map Provider (C#)</span></span>](building-a-custom-database-driven-site-map-provider-cs.md)
+- [<span data-ttu-id="f3150-106">生成自定义数据库驱动站点地图提供程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="f3150-106">Building a Custom Database-Driven Site Map Provider (VB)</span></span>](building-a-custom-database-driven-site-map-provider-vb.md)

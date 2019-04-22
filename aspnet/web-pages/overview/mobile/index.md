@@ -12,12 +12,12 @@ ms.openlocfilehash: 552d047286adbc53e4161b412432cbf0b3bfb4c9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380296"
 ---
-# <a name="mobile"></a><span data-ttu-id="3e1cd-103">移动电话</span><span class="sxs-lookup"><span data-stu-id="3e1cd-103">Mobile</span></span>
+# <a name="mobile"></a><span data-ttu-id="00af4-103">移动电话</span><span class="sxs-lookup"><span data-stu-id="00af4-103">Mobile</span></span>
 
-> <span data-ttu-id="3e1cd-104">如何使用 ASP.NET Web Pages 应用程序中的移动设备。</span><span class="sxs-lookup"><span data-stu-id="3e1cd-104">How to work with Mobile devices in ASP.NET Web Pages applications.</span></span>
+> <span data-ttu-id="00af4-104">如何使用 ASP.NET Web Pages 应用程序中的移动设备。</span><span class="sxs-lookup"><span data-stu-id="00af4-104">How to work with Mobile devices in ASP.NET Web Pages applications.</span></span>
 
 
-- [<span data-ttu-id="3e1cd-105">为移动设备呈现 ASP.NET 网页站点</span><span class="sxs-lookup"><span data-stu-id="3e1cd-105">Rendering ASP.NET Web Pages Sites for Mobile Devices</span></span>](rendering-aspnet-web-pages-sites-for-mobile-devices.md)
+- [<span data-ttu-id="00af4-105">为移动设备呈现 ASP.NET 网站</span><span class="sxs-lookup"><span data-stu-id="00af4-105">Rendering ASP.NET Web Pages Sites for Mobile Devices</span></span>](rendering-aspnet-web-pages-sites-for-mobile-devices.md)

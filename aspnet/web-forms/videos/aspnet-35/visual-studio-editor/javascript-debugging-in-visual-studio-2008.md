@@ -12,18 +12,18 @@ ms.openlocfilehash: 8059aef7d977e0a12957f05fab38fc2e831a345f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387830"
 ---
-# <a name="javascript-debugging-in-visual-studio-2008"></a><span data-ttu-id="03c51-103">Visual Studio 2008 中的 JavaScript 调试</span><span class="sxs-lookup"><span data-stu-id="03c51-103">JavaScript Debugging in Visual Studio 2008</span></span>
+# <a name="javascript-debugging-in-visual-studio-2008"></a><span data-ttu-id="05d2d-103">Visual Studio 2008 中的 JavaScript 调试</span><span class="sxs-lookup"><span data-stu-id="05d2d-103">JavaScript Debugging in Visual Studio 2008</span></span>
 
-<span data-ttu-id="03c51-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="03c51-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="05d2d-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="05d2d-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="03c51-105">使用现有的 web 应用程序，我将介绍您如何使用 Visual Studio 2008 中进行调试 JavaScript web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="03c51-105">Using an existing web application, I will show you how to use Visual Studio 2008 to debug JavaScript in a web application.</span></span>
+<span data-ttu-id="05d2d-105">使用现有的 web 应用程序，我将介绍您如何使用 Visual Studio 2008 中进行调试 JavaScript web 应用程序。</span><span class="sxs-lookup"><span data-stu-id="05d2d-105">Using an existing web application, I will show you how to use Visual Studio 2008 to debug JavaScript in a web application.</span></span>
 
-[<span data-ttu-id="03c51-106">&#9654;观看视频 （9 分钟）</span><span class="sxs-lookup"><span data-stu-id="03c51-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/javascript-debugging-in-visual-studio-2008)
+[<span data-ttu-id="05d2d-106">&#9654;观看视频 （9 分钟）</span><span class="sxs-lookup"><span data-stu-id="05d2d-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/javascript-debugging-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="03c51-107">[上一页](javascript-intellisense-support-in-visual-studio-2008.md)
-> [下一页](multi-targeting-support-in-visual-studio-2008.md)</span><span class="sxs-lookup"><span data-stu-id="03c51-107">[Previous](javascript-intellisense-support-in-visual-studio-2008.md)
+> <span data-ttu-id="05d2d-107">[上一页](javascript-intellisense-support-in-visual-studio-2008.md)
+> [下一页](multi-targeting-support-in-visual-studio-2008.md)</span><span class="sxs-lookup"><span data-stu-id="05d2d-107">[Previous](javascript-intellisense-support-in-visual-studio-2008.md)
 [Next](multi-targeting-support-in-visual-studio-2008.md)</span></span>

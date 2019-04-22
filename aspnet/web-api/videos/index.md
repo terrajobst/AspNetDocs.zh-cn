@@ -12,17 +12,17 @@ ms.openlocfilehash: ef5447b3aa2abfca4df1580756a38a3807b6893f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395051"
 ---
-# <a name="aspnet-web-api-videos"></a><span data-ttu-id="c19f9-102">ASP.NET Web API 视频</span><span class="sxs-lookup"><span data-stu-id="c19f9-102">ASP.NET Web API Videos</span></span>
+# <a name="aspnet-web-api-videos"></a><span data-ttu-id="0b3b4-102">ASP.NET Web API 视频</span><span class="sxs-lookup"><span data-stu-id="0b3b4-102">ASP.NET Web API Videos</span></span>
 
-- [<span data-ttu-id="c19f9-103">概述和入门</span><span class="sxs-lookup"><span data-stu-id="c19f9-103">Overview and Getting Started</span></span>](getting-started/index.md)
+- [<span data-ttu-id="0b3b4-103">概述和入门</span><span class="sxs-lookup"><span data-stu-id="0b3b4-103">Overview and Getting Started</span></span>](getting-started/index.md)
 
-    - [<span data-ttu-id="c19f9-104">ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="c19f9-104">ASP.NET Web API</span></span>](getting-started/aspnet-web-api.md)
-    - [<span data-ttu-id="c19f9-105">ASP.NET Web API，第 1 部分：首个 Web API</span><span class="sxs-lookup"><span data-stu-id="c19f9-105">ASP.NET Web API, Part 1: Your First Web API</span></span>](getting-started/your-first-web-api.md)
-    - [<span data-ttu-id="c19f9-106">ASP.NET Web API，第 2 部分：获取数据</span><span class="sxs-lookup"><span data-stu-id="c19f9-106">ASP.NET Web API, Part 2: Getting Data</span></span>](getting-started/getting-data.md)
-    - [<span data-ttu-id="c19f9-107">ASP.NET Web API，第 3 部分：删除和更新</span><span class="sxs-lookup"><span data-stu-id="c19f9-107">ASP.NET Web API, Part 3: Delete and Update</span></span>](getting-started/delete-and-update.md)
-    - [<span data-ttu-id="c19f9-108">ASP.NET Web API，第 4 部分：分页和查询</span><span class="sxs-lookup"><span data-stu-id="c19f9-108">ASP.NET Web API, Part 4: Paging and Querying</span></span>](getting-started/paging-and-querying.md)
-    - [<span data-ttu-id="c19f9-109">ASP.NET Web API，第 5 部分：自定义验证</span><span class="sxs-lookup"><span data-stu-id="c19f9-109">ASP.NET Web API, Part 5: Custom Validation</span></span>](getting-started/custom-validation.md)
-    - [<span data-ttu-id="c19f9-110">ASP.NET Web API，第 6 部分：授权</span><span class="sxs-lookup"><span data-stu-id="c19f9-110">ASP.NET Web API, Part 6: Authorization</span></span>](getting-started/authorization.md)
+    - [<span data-ttu-id="0b3b4-104">ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="0b3b4-104">ASP.NET Web API</span></span>](getting-started/aspnet-web-api.md)
+    - [<span data-ttu-id="0b3b4-105">ASP.NET Web API，第 1 部分：第一个 Web API</span><span class="sxs-lookup"><span data-stu-id="0b3b4-105">ASP.NET Web API, Part 1: Your First Web API</span></span>](getting-started/your-first-web-api.md)
+    - [<span data-ttu-id="0b3b4-106">ASP.NET Web API，第 2 部分：获取数据</span><span class="sxs-lookup"><span data-stu-id="0b3b4-106">ASP.NET Web API, Part 2: Getting Data</span></span>](getting-started/getting-data.md)
+    - [<span data-ttu-id="0b3b4-107">ASP.NET Web API，第 3 部分：Delete 和 Update</span><span class="sxs-lookup"><span data-stu-id="0b3b4-107">ASP.NET Web API, Part 3: Delete and Update</span></span>](getting-started/delete-and-update.md)
+    - [<span data-ttu-id="0b3b4-108">ASP.NET Web API，第 4 部分：分页和查询</span><span class="sxs-lookup"><span data-stu-id="0b3b4-108">ASP.NET Web API, Part 4: Paging and Querying</span></span>](getting-started/paging-and-querying.md)
+    - [<span data-ttu-id="0b3b4-109">ASP.NET Web API，第 5 部分：自定义验证</span><span class="sxs-lookup"><span data-stu-id="0b3b4-109">ASP.NET Web API, Part 5: Custom Validation</span></span>](getting-started/custom-validation.md)
+    - [<span data-ttu-id="0b3b4-110">ASP.NET Web API，第 6 部分：Authorization</span><span class="sxs-lookup"><span data-stu-id="0b3b4-110">ASP.NET Web API, Part 6: Authorization</span></span>](getting-started/authorization.md)
