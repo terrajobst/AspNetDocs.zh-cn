@@ -12,17 +12,17 @@ ms.openlocfilehash: b991227a452bf07505207a7d8d079210488c407f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407843"
 ---
-# <a name="aspnet-35---ajax"></a><span data-ttu-id="c7b92-103">ASP.NET 3.5 - AJAX</span><span class="sxs-lookup"><span data-stu-id="c7b92-103">ASP.NET 3.5 - AJAX</span></span>
+# <a name="aspnet-35---ajax"></a><span data-ttu-id="41c65-103">ASP.NET 3.5 - AJAX</span><span class="sxs-lookup"><span data-stu-id="41c65-103">ASP.NET 3.5 - AJAX</span></span>
 
-> <span data-ttu-id="c7b92-104">有关 ASP.NET AJAX 库中，包括 Updatepanel 和部分页面更新、 身份验证、 本地化和调试。</span><span class="sxs-lookup"><span data-stu-id="c7b92-104">About the ASP.NET AJAX library, including UpdatePanels and partial page updates, authentication, localization, and debugging.</span></span>
+> <span data-ttu-id="41c65-104">有关 ASP.NET AJAX 库中，包括 Updatepanel 和部分页面更新、 身份验证、 本地化和调试。</span><span class="sxs-lookup"><span data-stu-id="41c65-104">About the ASP.NET AJAX library, including UpdatePanels and partial page updates, authentication, localization, and debugging.</span></span>
 
 
-- [<span data-ttu-id="c7b92-105">了解使用 ASP.NET AJAX 的部分页面更新</span><span class="sxs-lookup"><span data-stu-id="c7b92-105">Understanding Partial Page Updates with ASP.NET AJAX</span></span>](understanding-partial-page-updates-with-asp-net-ajax.md)
-- [<span data-ttu-id="c7b92-106">了解 ASP.NET AJAX UpdatePanel 触发器</span><span class="sxs-lookup"><span data-stu-id="c7b92-106">Understanding ASP.NET AJAX UpdatePanel Triggers</span></span>](understanding-asp-net-ajax-updatepanel-triggers.md)
-- [<span data-ttu-id="c7b92-107">了解 ASP.NET AJAX 身份验证和配置文件应用程序服务</span><span class="sxs-lookup"><span data-stu-id="c7b92-107">Understanding ASP.NET AJAX Authentication and Profile Application Services</span></span>](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
-- [<span data-ttu-id="c7b92-108">了解 ASP.NET AJAX 本地化</span><span class="sxs-lookup"><span data-stu-id="c7b92-108">Understanding ASP.NET AJAX Localization</span></span>](understanding-asp-net-ajax-localization.md)
-- [<span data-ttu-id="c7b92-109">了解 ASP.NET AJAX Web 服务</span><span class="sxs-lookup"><span data-stu-id="c7b92-109">Understanding ASP.NET AJAX Web Services</span></span>](understanding-asp-net-ajax-web-services.md)
-- [<span data-ttu-id="c7b92-110">了解 ASP.NET AJAX 调试功能</span><span class="sxs-lookup"><span data-stu-id="c7b92-110">Understanding ASP.NET AJAX Debugging Capabilities</span></span>](understanding-asp-net-ajax-debugging-capabilities.md)
+- [<span data-ttu-id="41c65-105">了解使用 ASP.NET AJAX 的部分页面更新</span><span class="sxs-lookup"><span data-stu-id="41c65-105">Understanding Partial Page Updates with ASP.NET AJAX</span></span>](understanding-partial-page-updates-with-asp-net-ajax.md)
+- [<span data-ttu-id="41c65-106">了解 ASP.NET AJAX UpdatePanel 触发器</span><span class="sxs-lookup"><span data-stu-id="41c65-106">Understanding ASP.NET AJAX UpdatePanel Triggers</span></span>](understanding-asp-net-ajax-updatepanel-triggers.md)
+- [<span data-ttu-id="41c65-107">了解 ASP.NET AJAX 身份验证和配置文件应用程序服务</span><span class="sxs-lookup"><span data-stu-id="41c65-107">Understanding ASP.NET AJAX Authentication and Profile Application Services</span></span>](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+- [<span data-ttu-id="41c65-108">了解 ASP.NET AJAX 本地化</span><span class="sxs-lookup"><span data-stu-id="41c65-108">Understanding ASP.NET AJAX Localization</span></span>](understanding-asp-net-ajax-localization.md)
+- [<span data-ttu-id="41c65-109">了解 ASP.NET AJAX Web 服务</span><span class="sxs-lookup"><span data-stu-id="41c65-109">Understanding ASP.NET AJAX Web Services</span></span>](understanding-asp-net-ajax-web-services.md)
+- [<span data-ttu-id="41c65-110">了解 ASP.NET AJAX 调试功能</span><span class="sxs-lookup"><span data-stu-id="41c65-110">Understanding ASP.NET AJAX Debugging Capabilities</span></span>](understanding-asp-net-ajax-debugging-capabilities.md)

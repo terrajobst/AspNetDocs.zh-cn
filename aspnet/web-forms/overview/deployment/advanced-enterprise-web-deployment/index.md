@@ -12,20 +12,20 @@ ms.openlocfilehash: 0d3a356aafcce499f50d3a5d3b98f44ca5643ede
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417970"
 ---
-# <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a><span data-ttu-id="e0909-103">ASP.NET 4 - 企业部署系列 4 高级主题</span><span class="sxs-lookup"><span data-stu-id="e0909-103">ASP.NET 4 - Enterprise Deployment Series 4 Advanced Topics</span></span>
+# <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a><span data-ttu-id="d32a7-103">ASP.NET 4 - 企业部署系列 4 高级主题</span><span class="sxs-lookup"><span data-stu-id="d32a7-103">ASP.NET 4 - Enterprise Deployment Series 4 Advanced Topics</span></span>
 
-> <span data-ttu-id="e0909-104">本教程将演示如何执行各种必需或在很多企业部署方案所需的任务。</span><span class="sxs-lookup"><span data-stu-id="e0909-104">This tutorial will show you how to perform various tasks that are required or desirable in a lot of enterprise deployment scenarios.</span></span>
+> <span data-ttu-id="d32a7-104">本教程将演示如何执行各种必需或在很多企业部署方案所需的任务。</span><span class="sxs-lookup"><span data-stu-id="d32a7-104">This tutorial will show you how to perform various tasks that are required or desirable in a lot of enterprise deployment scenarios.</span></span>
 
 
-- [<span data-ttu-id="e0909-105">高级企业 Web 部署</span><span class="sxs-lookup"><span data-stu-id="e0909-105">Advanced Enterprise Web Deployment</span></span>](advanced-enterprise-web-deployment.md)
-- [<span data-ttu-id="e0909-106">执行“What If”部署</span><span class="sxs-lookup"><span data-stu-id="e0909-106">Performing a "What If" Deployment</span></span>](performing-a-what-if-deployment.md)
-- [<span data-ttu-id="e0909-107">自定义多个环境的数据库部署</span><span class="sxs-lookup"><span data-stu-id="e0909-107">Customizing Database Deployments for Multiple Environments</span></span>](customizing-database-deployments-for-multiple-environments.md)
-- [<span data-ttu-id="e0909-108">将数据库角色成员身份部署到测试环境</span><span class="sxs-lookup"><span data-stu-id="e0909-108">Deploying Database Role Memberships to Test Environments</span></span>](deploying-database-role-memberships-to-test-environments.md)
-- [<span data-ttu-id="e0909-109">将成员身份数据库部署到企业环境</span><span class="sxs-lookup"><span data-stu-id="e0909-109">Deploying Membership Databases to Enterprise Environments</span></span>](deploying-membership-databases-to-enterprise-environments.md)
-- [<span data-ttu-id="e0909-110">从部署中排除文件和文件夹</span><span class="sxs-lookup"><span data-stu-id="e0909-110">Excluding Files and Folders from Deployment</span></span>](excluding-files-and-folders-from-deployment.md)
-- [<span data-ttu-id="e0909-111">使用 Web 部署使 Web 应用程序脱机</span><span class="sxs-lookup"><span data-stu-id="e0909-111">Taking Web Applications Offline with Web Deploy</span></span>](taking-web-applications-offline-with-web-deploy.md)
-- [<span data-ttu-id="e0909-112">从 MSBuild 项目文件中运行 Windows PowerShell 脚本</span><span class="sxs-lookup"><span data-stu-id="e0909-112">Running Windows PowerShell Scripts from MSBuild Project Files</span></span>](running-windows-powershell-scripts-from-msbuild-project-files.md)
-- [<span data-ttu-id="e0909-113">打包过程故障排除</span><span class="sxs-lookup"><span data-stu-id="e0909-113">Troubleshooting the Packaging Process</span></span>](troubleshooting-the-packaging-process.md)
+- [<span data-ttu-id="d32a7-105">高级企业 Web 部署</span><span class="sxs-lookup"><span data-stu-id="d32a7-105">Advanced Enterprise Web Deployment</span></span>](advanced-enterprise-web-deployment.md)
+- [<span data-ttu-id="d32a7-106">执行“What If”部署</span><span class="sxs-lookup"><span data-stu-id="d32a7-106">Performing a "What If" Deployment</span></span>](performing-a-what-if-deployment.md)
+- [<span data-ttu-id="d32a7-107">自定义多个环境的数据库部署</span><span class="sxs-lookup"><span data-stu-id="d32a7-107">Customizing Database Deployments for Multiple Environments</span></span>](customizing-database-deployments-for-multiple-environments.md)
+- [<span data-ttu-id="d32a7-108">将数据库角色成员身份部署到测试环境</span><span class="sxs-lookup"><span data-stu-id="d32a7-108">Deploying Database Role Memberships to Test Environments</span></span>](deploying-database-role-memberships-to-test-environments.md)
+- [<span data-ttu-id="d32a7-109">将成员身份数据库部署到企业环境</span><span class="sxs-lookup"><span data-stu-id="d32a7-109">Deploying Membership Databases to Enterprise Environments</span></span>](deploying-membership-databases-to-enterprise-environments.md)
+- [<span data-ttu-id="d32a7-110">从部署中排除文件和文件夹</span><span class="sxs-lookup"><span data-stu-id="d32a7-110">Excluding Files and Folders from Deployment</span></span>](excluding-files-and-folders-from-deployment.md)
+- [<span data-ttu-id="d32a7-111">使用 Web 部署使 Web 应用程序脱机</span><span class="sxs-lookup"><span data-stu-id="d32a7-111">Taking Web Applications Offline with Web Deploy</span></span>](taking-web-applications-offline-with-web-deploy.md)
+- [<span data-ttu-id="d32a7-112">从 MSBuild 项目文件中运行 Windows PowerShell 脚本</span><span class="sxs-lookup"><span data-stu-id="d32a7-112">Running Windows PowerShell Scripts from MSBuild Project Files</span></span>](running-windows-powershell-scripts-from-msbuild-project-files.md)
+- [<span data-ttu-id="d32a7-113">打包过程故障排除</span><span class="sxs-lookup"><span data-stu-id="d32a7-113">Troubleshooting the Packaging Process</span></span>](troubleshooting-the-packaging-process.md)

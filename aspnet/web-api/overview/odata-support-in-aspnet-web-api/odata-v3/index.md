@@ -12,15 +12,15 @@ ms.openlocfilehash: fe82cbd43cf374439675ad811586282a1a79f488
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409481"
 ---
-# <a name="supporting-odata-v3-in-aspnet-web-api"></a><span data-ttu-id="a2a5f-103">ASP.NET Web API 中支持 OData v3</span><span class="sxs-lookup"><span data-stu-id="a2a5f-103">Supporting OData v3 in ASP.NET Web API</span></span>
+# <a name="supporting-odata-v3-in-aspnet-web-api"></a><span data-ttu-id="e992f-103">ASP.NET Web API 中支持 OData v3</span><span class="sxs-lookup"><span data-stu-id="e992f-103">Supporting OData v3 in ASP.NET Web API</span></span>
 
-> <span data-ttu-id="a2a5f-104">使用 ASP.NET Web API 来创建支持 OData 版本 3 的终结点。</span><span class="sxs-lookup"><span data-stu-id="a2a5f-104">Use ASP.NET Web API to create endpoints that support OData Version 3.</span></span>
+> <span data-ttu-id="e992f-104">使用 ASP.NET Web API 来创建支持 OData 版本 3 的终结点。</span><span class="sxs-lookup"><span data-stu-id="e992f-104">Use ASP.NET Web API to create endpoints that support OData Version 3.</span></span>
 
 
-- [<span data-ttu-id="a2a5f-105">创建 OData v3 终结点</span><span class="sxs-lookup"><span data-stu-id="a2a5f-105">Creating an OData v3 Endpoint</span></span>](creating-an-odata-endpoint.md)
-- [<span data-ttu-id="a2a5f-106">OData v3 对实体关系的支持</span><span class="sxs-lookup"><span data-stu-id="a2a5f-106">Supporting Entity Relations in OData v3</span></span>](working-with-entity-relations.md)
-- [<span data-ttu-id="a2a5f-107">Web API 2 中的 OData 操作</span><span class="sxs-lookup"><span data-stu-id="a2a5f-107">OData Actions in Web API 2</span></span>](odata-actions.md)
-- [<span data-ttu-id="a2a5f-108">从 .NET 客户端调用 OData 服务 (C#)</span><span class="sxs-lookup"><span data-stu-id="a2a5f-108">Calling an OData Service From a .NET Client (C#)</span></span>](calling-an-odata-service-from-a-net-client.md)
+- [<span data-ttu-id="e992f-105">创建 OData v3 终结点</span><span class="sxs-lookup"><span data-stu-id="e992f-105">Creating an OData v3 Endpoint</span></span>](creating-an-odata-endpoint.md)
+- [<span data-ttu-id="e992f-106">OData v3 对实体关系的支持</span><span class="sxs-lookup"><span data-stu-id="e992f-106">Supporting Entity Relations in OData v3</span></span>](working-with-entity-relations.md)
+- [<span data-ttu-id="e992f-107">Web API 2 中的 OData 操作</span><span class="sxs-lookup"><span data-stu-id="e992f-107">OData Actions in Web API 2</span></span>](odata-actions.md)
+- [<span data-ttu-id="e992f-108">从 .NET 客户端调用 OData 服务 (C#)</span><span class="sxs-lookup"><span data-stu-id="e992f-108">Calling an OData Service From a .NET Client (C#)</span></span>](calling-an-odata-service-from-a-net-client.md)

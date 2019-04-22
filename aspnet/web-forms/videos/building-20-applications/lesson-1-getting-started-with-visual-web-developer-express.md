@@ -12,16 +12,16 @@ ms.openlocfilehash: 6f325af39ea977a0a565f4546a3d8a74bcdbbd02
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382545"
 ---
-# <a name="lesson-1-getting-started-with-visual-web-developer-express"></a><span data-ttu-id="b60eb-103">[第 1 课：] Visual Web Developer 速成版入门</span><span class="sxs-lookup"><span data-stu-id="b60eb-103">[Lesson 1:] Getting Started with Visual Web Developer Express</span></span>
+# <a name="lesson-1-getting-started-with-visual-web-developer-express"></a><span data-ttu-id="601bc-103">[第 1 课：] Visual Web Developer 速成版入门</span><span class="sxs-lookup"><span data-stu-id="601bc-103">[Lesson 1:] Getting Started with Visual Web Developer Express</span></span>
 
-<span data-ttu-id="b60eb-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="b60eb-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="601bc-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="601bc-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="b60eb-105">在本课中，您将开始熟悉 Visual Web Developer 速成版，并了解在使用该程序为构建动态 ASP.NET 网站所涉及的工作流程。</span><span class="sxs-lookup"><span data-stu-id="b60eb-105">In this lesson, you will begin to get familiar with Visual Web Developer Express Edition, and look at the workflow involved in using the program to build dynamic ASP.NET Web sites.</span></span>
+<span data-ttu-id="601bc-105">在本课中，您将开始熟悉 Visual Web Developer 速成版，并了解在使用该程序为构建动态 ASP.NET 网站所涉及的工作流程。</span><span class="sxs-lookup"><span data-stu-id="601bc-105">In this lesson, you will begin to get familiar with Visual Web Developer Express Edition, and look at the workflow involved in using the program to build dynamic ASP.NET Web sites.</span></span>
 
-[<span data-ttu-id="b60eb-106">&#9654;观看视频 （28 分钟）</span><span class="sxs-lookup"><span data-stu-id="b60eb-106">&#9654; Watch video (28 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-1-getting-started-with-visual-web-developer-express)
+[<span data-ttu-id="601bc-106">&#9654;观看视频 （28 分钟）</span><span class="sxs-lookup"><span data-stu-id="601bc-106">&#9654; Watch video (28 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-1-getting-started-with-visual-web-developer-express)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="b60eb-107">下一步</span><span class="sxs-lookup"><span data-stu-id="b60eb-107">Next</span></span>](lesson-2-creating-a-web-forms-user-interface.md)
+> [<span data-ttu-id="601bc-107">下一页</span><span class="sxs-lookup"><span data-stu-id="601bc-107">Next</span></span>](lesson-2-creating-a-web-forms-user-interface.md)
