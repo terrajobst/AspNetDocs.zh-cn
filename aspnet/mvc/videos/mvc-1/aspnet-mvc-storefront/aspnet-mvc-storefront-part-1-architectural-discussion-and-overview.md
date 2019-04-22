@@ -12,7 +12,7 @@ ms.openlocfilehash: a3df375425c4c79f1274f466a6669997a1e3676f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390599"
 ---
 # <a name="aspnet-mvc-storefront-part-1-architectural-discussion-and-overview"></a>ASP.NET MVC 店面第 1 部分：体系结构讨论和概述
@@ -24,4 +24,4 @@ Rob conery 专攻介绍第 1 部分中，其中使用 Ayende Rahien 和 Steve �
 [&#9654;观看视频 （10 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-1-architectural-discussion-and-overview)
 
 > [!div class="step-by-step"]
-> [下一步](aspnet-mvc-storefront-part-2-the-repository-pattern.md)
+> [下一页](aspnet-mvc-storefront-part-2-the-repository-pattern.md)

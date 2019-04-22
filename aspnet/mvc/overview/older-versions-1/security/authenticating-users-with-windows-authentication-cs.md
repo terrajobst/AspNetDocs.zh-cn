@@ -12,7 +12,7 @@ ms.openlocfilehash: 3c12f2a3d253df1ed9d8b25001edf13a04da26f5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394882"
 ---
 # <a name="authenticating-users-with-windows-authentication-c"></a>使用 Windows 身份验证对用户进行身份验证 (C#)
@@ -69,7 +69,7 @@ ASP.NET Development Web Server 还支持 NTLM 身份验证。 可以通过右键
 
 例如，在列表 1 中的 Home 控制器将公开名为 index （）、 CompanySecrets() 和 StephenSecrets() 的三个操作。 任何人都可以调用 index （） 操作。 但是，只有 Windows 本地管理员组的成员可以调用 CompanySecrets() 操作。 最后，只有名为 Stephen （在雷德蒙德域中） 的 Windows 域用户可以调用 StephenSecrets() 操作。
 
-**代码清单 1 – Controllers\HomeController.cs**
+**Listing 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](authenticating-users-with-windows-authentication-cs/samples/sample2.cs)]
 

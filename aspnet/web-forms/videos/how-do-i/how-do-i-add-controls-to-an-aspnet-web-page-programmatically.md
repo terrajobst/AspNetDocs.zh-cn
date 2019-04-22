@@ -12,7 +12,7 @@ ms.openlocfilehash: 44c4659a9e4de81943d1804421942b2d00a94654
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395519"
 ---
 # <a name="how-do-i-add-controls-to-an-aspnet-web-page-programmatically"></a>[如何实现:]以编程方式向 ASP.NET 网页添加控件

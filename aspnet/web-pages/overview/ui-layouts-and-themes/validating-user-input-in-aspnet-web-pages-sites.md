@@ -12,7 +12,7 @@ ms.openlocfilehash: fd3ba36891aa66f78c28c538a4d3ba0da6736765
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392984"
 ---
 # <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 站点中验证用户输入
@@ -141,12 +141,12 @@ ms.locfileid: "59392984"
 
 您可以控制定义 CSS 类具有以下保留的名称的显示验证错误：
 
-- `field-validation-error`. 定义的输出`Html.ValidationMessage`方法时显示错误。
-- `field-validation-valid`. 定义的输出`Html.ValidationMessage`方法时没有错误。
-- `input-validation-error`. 定义如何`<input>`元素呈现时出错。 (例如，可以使用此类设置的背景色&lt;输入&gt;为不同的颜色，如果其值为无效的元素。)仅在客户端验证 （在 ASP.NET Web Pages 2) 中使用此 CSS 类。
-- `input-validation-valid`. 定义的外观`<input>`元素时没有错误。
-- `validation-summary-errors`. 定义的输出`Html.ValidationSummary`方法，它显示错误的列表。
-- `validation-summary-valid`. 定义的输出`Html.ValidationSummary`方法时没有错误。
+- `field-validation-error`。 定义的输出`Html.ValidationMessage`方法时显示错误。
+- `field-validation-valid`。 定义的输出`Html.ValidationMessage`方法时没有错误。
+- `input-validation-error`。 定义如何`<input>`元素呈现时出错。 (例如，可以使用此类设置的背景色&lt;输入&gt;为不同的颜色，如果其值为无效的元素。)仅在客户端验证 （在 ASP.NET Web Pages 2) 中使用此 CSS 类。
+- `input-validation-valid`。 定义的外观`<input>`元素时没有错误。
+- `validation-summary-errors`。 定义的输出`Html.ValidationSummary`方法，它显示错误的列表。
+- `validation-summary-valid`。 定义的输出`Html.ValidationSummary`方法时没有错误。
 
 以下`<style>`块显示了错误条件的规则。
 

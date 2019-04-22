@@ -12,7 +12,7 @@ ms.openlocfilehash: aa713d30ad09152155e0834d40d5d757b1fecf78
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386016"
 ---
 # <a name="aspnet-mvc-2"></a>ASP.NET MVC 2
@@ -20,7 +20,7 @@ ms.locfileid: "59386016"
 > ASP.NET MVC 2
 
 
-- [如何](how-do-i/index.md)
+- [我如何](how-do-i/index.md)
 
     - [使用 ASP.NET MVC 创建 Tasklist 应用程序](how-do-i/creating-a-tasklist-application-with-aspnet-mvc.md)
     - [使用 ASP.NET MVC 在 15 分钟内创建电影数据库应用程序](how-do-i/creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
@@ -34,9 +34,9 @@ ms.locfileid: "59386016"
     - [创建自定义 HTML 帮助程序](how-do-i/creating-custom-html-helpers.md)
     - [使用 LINQ to SQL 创建模型类](how-do-i/creating-model-classes-with-linq-to-sql.md)
     - [显示数据库数据表](how-do-i/displaying-a-table-of-database-data.md)
-    - [适用于开发人员生成 NerdDinner 的 ASP.NET MVC 80 分钟技术视频](how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
+    - [适用于开发者、生成 NerdDinner 的 ASP.NET MVC 80 分钟技术视频](how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
     - [为什么选择 ASP.NET MVC？决策者的 3 分钟概述视频](how-do-i/why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-    - [ASP.NET MVC：怎么做？适用于开发人员的 10 分钟技术视频](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+    - [ASP.NET MVC:面向开发人员如何 10 分钟技术视频](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
     - [在 ASP.NET MVC Web 应用程序中针对 AJAX 调用返回 JSON 格式的数据](how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
     - [在 ASP.NET MVC 部分视图中使用数据](how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
     - [实现视图模型，用于管理数据的 ASP.NET MVC 视图](how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
@@ -50,15 +50,15 @@ ms.locfileid: "59386016"
     - [ASP.NET MVC 2 - 区域](how-do-i/aspnet-mvc-2-areas.md)
     - [ASP.NET MVC 2 - 呈现操作](how-do-i/aspnet-mvc-2-render-action.md)
     - [ASP.NET MVC 5 分钟简介](how-do-i/5-minute-introduction-to-aspnet-mvc.md)
-    - [充分了解 ASP.NET MVC](how-do-i/how-to-best-learn-asp-net-mvc.md)
+    - [最佳了解 ASP.NET MVC](how-do-i/how-to-best-learn-asp-net-mvc.md)
 - [适用于我们其余所有人的 ASP.NET MVC](aspnet-mvc-for-the-rest-of-us/index.md)
 
-    - [适用于我们其余所有人的 ASP.NET MVC：第 1 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
-    - [适用于我们其余所有人的 ASP.NET MVC：第 2 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
-    - [适用于我们其余所有人的 ASP.NET MVC：第 3 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
-    - [适用于我们其余所有人的 ASP.NET MVC：第 4 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
+    - [其他人的 ASP.NET MVC:第 1 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
+    - [其他人的 ASP.NET MVC:第 2 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
+    - [其他人的 ASP.NET MVC:第 3 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
+    - [其他人的 ASP.NET MVC:第 4 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
 - [Music 商店](music-store/index.md)
 
-    - [MVC Music 商店第 1 部分：简介、工具和项目结构](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
-    - [MVC Music 商店第 2 部分：Controllers](music-store/mvc-music-store-part-2-controllers.md)
-    - [MVC Music 商店第 3 部分：视图和 ViewModel](music-store/mvc-music-store-part-3-views-and-viewmodels.md)
+    - [MVC Music 商店第 1 部分：简介、 工具和项目结构](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
+    - [MVC Music 商店第 2 部分：控制器](music-store/mvc-music-store-part-2-controllers.md)
+    - [MVC Music 商店第 3 部分：视图和 Viewmodel](music-store/mvc-music-store-part-3-views-and-viewmodels.md)

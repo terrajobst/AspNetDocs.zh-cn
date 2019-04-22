@@ -12,7 +12,7 @@ ms.openlocfilehash: d5a72dbfe1530e457ec16df5c7d50b03b5f63502
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384209"
 ---
 # <a name="part-1-overview-and-creating-the-project"></a>第 1 部分：概述和创建项目
@@ -92,4 +92,4 @@ Entity Framework 是一个对象/关系映射框架。 它将在代码中的域�
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 
 > [!div class="step-by-step"]
-> [下一步](using-web-api-with-entity-framework-part-2.md)
+> [下一页](using-web-api-with-entity-framework-part-2.md)

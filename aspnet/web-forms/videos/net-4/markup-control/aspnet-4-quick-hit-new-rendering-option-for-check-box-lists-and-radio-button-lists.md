@@ -12,7 +12,7 @@ ms.openlocfilehash: 079a43a72e24460c37a185764f82625068116757
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390839"
 ---
 # <a name="aspnet-4-quick-hit--new-rendering-option-for-check-box-lists-and-radio-button-lists"></a>ASP.NET 4"快速 Hit"– 新呈现复选框列表和单选按钮列表的方案
@@ -24,4 +24,4 @@ ms.locfileid: "59390839"
 [&#9654;观看视频 （4 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists)
 
 > [!div class="step-by-step"]
-> [下一步](aspnet-4-quick-hit-table-free-templated-controls.md)
+> [下一页](aspnet-4-quick-hit-table-free-templated-controls.md)

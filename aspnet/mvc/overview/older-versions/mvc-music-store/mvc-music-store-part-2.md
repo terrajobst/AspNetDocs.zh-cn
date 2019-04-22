@@ -12,7 +12,7 @@ ms.openlocfilehash: b452c59f16107be6d356f86e6c313ba3229dbce6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392750"
 ---
 # <a name="part-2-controllers"></a>第 2 部分：Controllers
@@ -73,7 +73,7 @@ Visual Web Developer 会自动打开浏览器窗口中的 URL 指向我们的 we
 
 嗯，这是很快捷 – 我们创建一个新网站，添加三个行函数，并且我们在浏览器中有文本。 不特别复杂，但它是一个开始。
 
-*注意:Visual Web Developer 包含 ASP.NET 开发服务器，这将在一个随机免费"端口"号上运行你的网站。 在上面的屏幕截图中的网站运行在`http://localhost:26641/`，因此它正在使用端口 26641。 端口号将不同。 当我们谈及 URL 的 like /Store/Browse 本教程中时，，将投入的端口号。 假设 26641 端口号，浏览到/Store/浏览将意味着浏览到`http://localhost:26641/Store/Browse`。*
+*注意：Visual Web Developer 包含 ASP.NET 开发服务器，这将在一个随机免费"端口"号上运行你的网站。在上面的屏幕截图中的网站运行在`http://localhost:26641/`，因此它正在使用端口 26641。端口号将不同。当我们谈及 URL 的 like /Store/Browse 本教程中时，，将投入的端口号。假设 26641 端口号，浏览到/Store/浏览将意味着浏览到`http://localhost:26641/Store/Browse`。*
 
 ## <a name="adding-a-storecontroller"></a>添加 StoreController
 
@@ -113,7 +113,7 @@ Visual Web Developer 会自动打开浏览器窗口中的 URL 指向我们的 we
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*注意:我们使用 HttpUtility.HtmlEncode 实用程序方法来清理用户输入。 这可以防止用户与 /Store/Browse 形式的链接将 Javascript 注入到视图？Genre =&lt;脚本&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
+*注意：我们使用 HttpUtility.HtmlEncode 实用程序方法来清理用户输入。这可以防止用户与 /Store/Browse 形式的链接将 Javascript 注入到视图？Genre =&lt;脚本&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
 
 现在让我们浏览到/Store/浏览？Genre = Disco
 

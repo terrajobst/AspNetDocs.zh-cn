@@ -12,7 +12,7 @@ ms.openlocfilehash: c9b0946568063b9e5cf1454bd7a57c43304c3543
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390306"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>通过客户端代码操作 DropShadow 属性 (VB)
@@ -55,9 +55,9 @@ JavaScript 函数`changeOpacity()`然后必须首先找到`DropShadowExtender`�
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-vb/samples/sample6.html)]
 
 
-[![T在客户端上更改他不透明度](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
+[![在客户端上更改不透明度](manipulating-dropshadow-properties-from-client-code-vb/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-vb/_static/image1.png)
 
 在客户端上更改不透明度 ([单击此项可查看原尺寸图像](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [上一篇](adjusting-the-z-index-of-a-dropshadow-vb.md)

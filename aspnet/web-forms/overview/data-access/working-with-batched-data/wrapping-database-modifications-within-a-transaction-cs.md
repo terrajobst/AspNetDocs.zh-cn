@@ -12,7 +12,7 @@ ms.openlocfilehash: bbc54a39ba6ca3771acd7c4da37795a23e8ee2df
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383377"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-c"></a>包装事务内的数据库修改 (C#)
@@ -83,7 +83,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 与其他文件夹，一样`Default.aspx`将使用`SectionLevelTutorialListing.ascx`用户控件，若要列出其部分中的教程。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![Add SectionLevelTutorialListing.ascx 用户控件到 Default.aspx](wrapping-database-modifications-within-a-transaction-cs/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image1.png)
+[![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](wrapping-database-modifications-within-a-transaction-cs/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image1.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-cs/_static/image2.png))
 
@@ -168,12 +168,12 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 首先打开`Transactions.aspx`页中`BatchData`文件夹，然后拖动 GridView 从工具箱拖到设计器。 设置其`ID`到`Products`并从其智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置对象数据源以提取其数据从`ProductsBLL`类的`GetProducts`方法。 这将是只读的 GridView，因此设置下拉列表中插入、 更新和删除 （无） 选项卡并单击完成。
 
 
-[![Figure 5:配置为使用 ProductsBLL 类的 GetProducts 方法的 ObjectDataSource](wrapping-database-modifications-within-a-transaction-cs/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image3.png)
+[![图 5:配置对象数据源使用 ProductsBLL 类的 GetProducts 方法](wrapping-database-modifications-within-a-transaction-cs/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image3.png)
 
 **图 5**:图 5：配置为使用 ObjectDataSource`ProductsBLL`类 s`GetProducts`方法 ([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-cs/_static/image4.png))
 
 
-[![Set 更新、 插入和删除选项卡添加到 （无） 中的下拉列表](wrapping-database-modifications-within-a-transaction-cs/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image5.png)
+[![设置下拉列表中插入、 更新和删除选项卡为 （无）](wrapping-database-modifications-within-a-transaction-cs/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image5.png)
 
 **图 6**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image6.png))
 
@@ -191,7 +191,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 此时 Visual Studio 中的设计视图应类似于屏幕截图中图 7 所示。
 
 
-[![T他页包含一个 GridView 和三个按钮 Web 控件](wrapping-database-modifications-within-a-transaction-cs/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image7.png)
+[![页包含一个 GridView 和三个按钮 Web 控件](wrapping-database-modifications-within-a-transaction-cs/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image7.png)
 
 **图 7**:页包含 GridView 和三个按钮 Web 控件 ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image8.png))
 
@@ -210,12 +210,12 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 若要演示此行为，请访问此页上的通过浏览器。 最初应看到数据的第一页，如图 8 中所示。 接下来，单击修改类别 （与事务） 按钮。 这将导致回发并尝试更新的所有产品`CategoryID`值，但会导致违反外键约束 （请参阅图 9）。
 
 
-[![T他产品中可分页 GridView 显示](wrapping-database-modifications-within-a-transaction-cs/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image9.png)
+[![产品显示在可分页的 GridView](wrapping-database-modifications-within-a-transaction-cs/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image9.png)
 
 **图 8**:可分页的 GridView 中显示的产品 ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image10.png))
 
 
-[![Reassigning 违反了外键约束中的类别结果](wrapping-database-modifications-within-a-transaction-cs/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image11.png)
+[![重新分配类别导致违反外键约束](wrapping-database-modifications-within-a-transaction-cs/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image11.png)
 
 **图 9**:重新分配类别导致违反了外键约束 ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image12.png))
 
@@ -225,7 +225,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 现在，尝试单击修改类别 （而无需事务） 按钮。 这会导致相同的外键约束冲突错误 （请参阅图 9），这一次的那些产品，但其`CategoryID`值已更改为合法值将不会回滚。 按浏览器 s 后退按钮，然后刷新网格按钮。 如图 10 所示，`CategoryID`的前八个产品已被重新分配。 例如，在图 8 中，更改针对必须`CategoryID`为 1，但在图 10 it s 中被重新分配到 2。
 
 
-[![Some 产品类别 Id 值未更新时其他人已](wrapping-database-modifications-within-a-transaction-cs/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image13.png)
+[![某些产品类别 Id 值更新时其他人已不是](wrapping-database-modifications-within-a-transaction-cs/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image13.png)
 
 **图 10**:某些产品`CategoryID`值更新时其他人已不是 ([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-cs/_static/image14.png))
 
@@ -257,4 +257,4 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Dave Gardner、 Hilton Giesenow 和 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](batch-updating-cs.md)
+> [下一页](batch-updating-cs.md)

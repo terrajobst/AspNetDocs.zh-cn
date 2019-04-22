@@ -12,7 +12,7 @@ ms.openlocfilehash: 8a6239f716aa0f63caaae84e34807ee007005f16
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395391"
 ---
 # <a name="using-templatefields-in-the-detailsview-control-c"></a>在 DetailsView 控件中使用 TemplateField (C#)
@@ -35,7 +35,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 使用 GridView 提供的相同 Templatefield 功能，还提供与 DetailsView 控件。 在本教程中我们将使用包含两个 Templatefield DetailsView 一次显示一个产品。 将合并第一个 TemplateField `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`到 DetailsView 一行的数据字段。 值将显示第二个 TemplateField`Discontinued`字段，但将使用的格式设置方法以显示"是"如果`Discontinued`是`true`，否则"NO"。
 
 
-[![Two Templatefield 用于自定义显示](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
+[![两个 Templatefield 用于自定义显示内容](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
 
 **图 1**:两个 Templatefield 用于自定义显示 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 打开`DetailsViewTemplateField.aspx`页上，将从工具箱拖到设计器的 DetailsView。 在 DetailsView 的智能标记选择添加新的 ObjectDataSource 控件，调用`ProductsBLL`类的`GetProducts()`方法。
 
 
-[![Add 新 ObjectDataSource 控件，它调用 GetProducts() 方法](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
+[![添加新的 ObjectDataSource 控件，它调用 GetProducts() 方法](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
 
 **图 2**:添加新的 ObjectDataSource 控件的 Invoke`GetProducts()`方法 ([单击以查看实际尺寸的图像](using-templatefields-in-the-detailsview-control-cs/_static/image6.png))
 
@@ -64,7 +64,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 花点时间查看通过浏览器页面。 此时应看到显示产品的名称、 类别、 供应商、 价格、 库存数量、 顺序上的单位和其已停止使用的状态行的一个产品列出 (Chai)。
 
 
-[![T使用序列的 BoundFields 显示他产品的详细信息](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
+[![使用一系列 BoundFields 显示产品的详细信息](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
 
 **图 3**:使用序列的 BoundFields 显示产品的详细信息 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image9.png))
 
@@ -76,7 +76,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 通过单击 DetailsView 的智能标记，以打开字段对话框中的编辑字段链接启动。 接下来，添加新 TemplateField 并设置其`HeaderText`属性设置为"价格和清单"并移动新 TemplateField 以便它位于上面`UnitPrice`BoundField。
 
 
-[![Add DetailsView 控件到新 TemplateField](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
+[![将新 TemplateField 添加到 DetailsView 控件](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
 
 **图 4**:将新 TemplateField 添加到 DetailsView 控件 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image12.png))
 
@@ -88,7 +88,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 对于本教程中，首先将标签控件添加到的价格和库存 TemplateField `ItemTemplate`。 接下来，单击编辑 DataBindings 链接从标签 Web 控件的智能标记并将绑定`Text`属性设置为`UnitPrice`字段。
 
 
-[![Bind 单价数据标签的 Text 属性字段](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
+[![将标签的 Text 属性绑定到单价数据字段](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
 
 **图 5**:绑定的标签`Text`属性设置为`UnitPrice`数据字段 ([单击以查看实际尺寸的图像](using-templatefields-in-the-detailsview-control-cs/_static/image15.png))
 
@@ -98,7 +98,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 添加此元素后，标签 Web 控件价格和库存 TemplateField 现在会显示仅所选产品的价格。 图 6 显示了我们的进度的屏幕截图为止时的浏览器查看。
 
 
-[![T他价格和库存 TemplateField 显示的价格](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
+[![价格和库存 templatefield 进一步显示的价格](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
 
 **图 6**:价格和库存 templatefield 进一步显示的价格 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image18.png))
 
@@ -110,7 +110,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 有关`UnitPrice`字段的使用货币格式指定通过选择相应的下拉列表值或通过键入`{0:C}`手动。
 
 
-[![Format 作为一种货币的价格](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
+[![设置价格的格式为货币](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
 
 **图 7**:设置格式作为一种货币的价格 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image21.png))
 
@@ -137,7 +137,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 使用这些更改，我们已经合并到单个 DetailsView 行的价格和库存信息。
 
 
-[![T他价格和库存信息会显示在单个行](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
+[![在单行中显示的价格和清单信息](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
 
 **图 8**:价格和库存信息会显示在单个行 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image24.png))
 
@@ -149,7 +149,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 而不是显示 CheckBoxField 我们可能想要改为显示文本，该值指示已停止使用该产品。 若要实现此目的我们无法从 DetailsView 删除 CheckBoxField，然后添加 BoundField 其`DataField`属性设置为`Discontinued`。 请花费片刻时间来执行此操作。 此更改后 DetailsView 显示的文本"True"停产的产品和"False"仍处于活动状态的产品。
 
 
-[![T他的字符串，则返回 True 和 False 用于显示 Discontinued 状态](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
+[![字符串 True 和 False 用于显示已停止使用的状态](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
 
 **图 9**:字符串，则返回 True 和 False 来显示已中断状态 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image27.png))
 
@@ -175,7 +175,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 这将导致`DisplayDiscontinuedAsYESorNO`呈现 DetailsView 时要调用方法并传入`ProductRow`实例的`Discontinued`值。 由于`Eval`方法返回类型的值`object`，但`DisplayDiscontinuedAsYESorNO`方法需要输入的参数的类型`bool`，我们将强制转换`Eval`方法返回值为`bool`。 `DisplayDiscontinuedAsYESorNO`方法会返回"YES"或"否"根据值接收。 返回的值是此 DetailsView 中显示的内容行 （请参阅图 10）。
 
 
-[![YES 或无值就是现在所示 Discontinued 行](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
+[![是或否的值为现在 Discontinued 行中所示](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
 
 **图 10**:是或否的值为现在 Discontinued 行中所示 ([单击此项可查看原尺寸图像](using-templatefields-in-the-detailsview-control-cs/_static/image30.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5dc49d7467db01e62db147c7083ed62379d23940
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394154"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>使用实体框架在 ASP.NET MVC 应用程序 (共 10 个 6) 更新相关的数据

@@ -12,7 +12,7 @@ ms.openlocfilehash: a398494df0ed2bf749620b717350b21669a1ae5c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395642"
 ---
 # <a name="control-id-naming-in-content-pages-c"></a>内容页中的控件 ID 命名 (C#)
@@ -83,7 +83,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 图 3 显示了通过 Visual Studio 设计器进行查看时页。
 
 
-[![T他页包含三个 Web 控件： 文本框、 按钮和标签](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
+[![此页包含三个 Web 控件： 文本框、 按钮和标签](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
 
 **图 03**:页包含三个 Web 控件： 文本框、 按钮和标签 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-cs/_static/image5.png))
 
@@ -133,7 +133,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 后输入此代码，请访问`IDIssues.aspx`通过浏览器页上，输入你的年龄，然后单击"提交"按钮。 单击"提交"按钮时`NullReferenceException`引发 （请参见图 5）。
 
 
-[![A 引发 NullReferenceException](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
+[![引发 NullReferenceException](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
 
 **图 05**:一个`NullReferenceException`引发 ([单击以查看实际尺寸的图像](control-id-naming-in-content-pages-cs/_static/image9.png))
 
@@ -173,7 +173,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 这一次，访问该网页通过浏览器中，输入你的年龄，然后单击"提交"按钮显示在消息`Results`标签、 按预期方式。
 
 
-[![T他用户年龄是标签中显示的](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
+[![标签中显示用户的年龄](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
 
 **图 06**:标签中显示用户的年龄 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-cs/_static/image12.png))
 
@@ -200,7 +200,7 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 利用此代码，返回到`IDIssues.aspx`页面的代码隐藏类并注释掉当前`FindControl`方法调用。 将它们替换为对调用`Page.FindControlRecursive("controlID")`。 什么是关于扩展方法是，它们显示直接在 IntelliSense 下拉列表中。 如图 7 所示，当你键入页，然后点击期间， `FindControlRecursive` IntelliSense 以及其他下拉列表中包含方法`Control`类方法。
 
 
-[![E扩展名方法均包含在 IntelliSense 下拉列表](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
+[![扩展方法均包含在 IntelliSense 下拉列表](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
 
 **图 07**:扩展方法均包含在 IntelliSense 下拉列表 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-cs/_static/image15.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 7e3c8b2adbe8d5248bed7299fb5e784a753f3851
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382156"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署：故障排除 (12 个 12)
@@ -318,4 +318,4 @@ ASP.NET 4 未安装在 IIS 中。 如果要部署到的服务器是在开发计�
 项目**属性**windows 包含目标框架下拉列表，但您不能解决此问题，只需更改，从 **.NET Framework 4.5**到 **.NET Framework 4**. 如果目标框架更改为较早的 framework 版本，此项目仍将对更高版本的 framework 版本的程序集的引用，并将不会运行。 您必须手动更改这些引用或创建新的项目面向.NET Framework 4 或更早版本。 有关详细信息，请参阅[网站的.NET Framework 目标](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx)。
 
 > [!div class="step-by-step"]
-> [上一个](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [上一篇](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

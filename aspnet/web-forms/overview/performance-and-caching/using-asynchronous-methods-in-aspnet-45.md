@@ -12,7 +12,7 @@ ms.openlocfilehash: a47d428830fa6c43bcb9ce797d65b73891b44618
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381882"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-45"></a>在 ASP.NET 4.5 中使用异步方法
@@ -192,7 +192,7 @@ Async void 事件的缺点是，开发人员不再包含对事件时执行的完
 
     - 打开 IIS 管理器并导航到应用程序池窗格中。
     - 在目标应用程序池上右键单击并选择**高级设置**。  
-        ![高级](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
+        ![advanced](using-asynchronous-methods-in-aspnet-45/_static/image4.png)
     - 在中**高级设置**对话框中，更改*队列长度*从 1,000 到 5,000。  
         ![队列长度](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   

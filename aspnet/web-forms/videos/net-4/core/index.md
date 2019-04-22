@@ -12,7 +12,7 @@ ms.openlocfilehash: 51ce42b2335dc3bd1ee4928b94efed77498fdfe1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388603"
 ---
 # <a name="core"></a>核心
@@ -22,5 +22,5 @@ ms.locfileid: "59388603"
 
 - [自动启动](aspnet-4-quick-hit-auto-start.md)
 - [清理 Web.Config 文件](aspnet-4-quick-hit-clean-webconfig-files.md)
-- [可预测的客户端 ID](aspnet-4-quick-hit-predictable-client-ids.md)
+- [可预测客户端 ID](aspnet-4-quick-hit-predictable-client-ids.md)
 - [HtmlEncoder 实用工具方法](aspnet-4-quick-hit-the-htmlencoder-utility-method.md)

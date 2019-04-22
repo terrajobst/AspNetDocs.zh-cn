@@ -12,7 +12,7 @@ ms.openlocfilehash: eeed594e785b99146140dcd2833a95bf6e467823
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390436"
 ---
 # <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>为 ASP.NET MVC 应用程序 (1 / 10) 创建的实体框架数据模型
@@ -349,4 +349,4 @@ Grade 属性是[枚举](https://msdn.microsoft.com/data/hh859576.aspx)。 问号
 其他实体框架资源的链接可在[ASP.NET 数据访问内容映射](../../../../whitepapers/aspnet-data-access-content-map.md)。
 
 > [!div class="step-by-step"]
-> [下一步](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+> [下一页](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

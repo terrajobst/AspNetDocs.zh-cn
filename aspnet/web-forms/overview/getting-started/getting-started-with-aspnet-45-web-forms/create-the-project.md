@@ -12,7 +12,7 @@ ms.openlocfilehash: 9e2cd1beca03b81140b9d58c5e43dbf7c6b8808b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393049"
 ---
 # <a name="create-the-project"></a>创建项目
@@ -93,7 +93,7 @@ ms.locfileid: "59393049"
 
 Visual Studio 创建一些初始文件夹和文件为你的项目。 您将使用在本教程后面的第一个文件如下所示：
 
-| **文件** | **用途** |
+| **文件** | **目的** |
 | --- | --- |
 | *Default.aspx* | 通常第一页的浏览器中运行应用程序时显示。 |
 | *Site.Master* | 允许你在应用程序中创建一致布局并使用标准的行为的页面的页面。 |
@@ -190,8 +190,8 @@ Visual Studio 中的主窗口包括**解决方案资源管理器**，则**服务
 
 ## <a name="additional-resources"></a>其他资源
 
-[选择正确的编程模型](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
-[Web 应用程序项目与网站项目](https://msdn.microsoft.com/library/dd547590.aspx)   
+[选择适当的编程模型](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
+[与网站项目的 web 应用程序项目](https://msdn.microsoft.com/library/dd547590.aspx)   
 [ASP.NET Web 窗体页概述](https://msdn.microsoft.com/library/428509ah.aspx)
 
 > [!div class="step-by-step"]

@@ -12,7 +12,7 @@ ms.openlocfilehash: d83fb53ddb40a31013bc724909fa149ce2e4c713
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387360"
 ---
 # <a name="using-textboxwatermark-with-validation-controls-vb"></a>通过验证控件使用 TextBoxWatermark (VB)
@@ -49,9 +49,9 @@ ms.locfileid: "59387360"
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample4.aspx)]
 
 
-[![T他验证程序错误报告的字段中没有的文本](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
+[![验证程序错误报告的字段中没有的文本](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
 
 验证程序错误报告的字段中没有的文本 ([单击此项可查看原尺寸图像](using-textboxwatermark-with-validation-controls-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](using-textboxwatermark-in-a-formview-vb.md)
+> [上一篇](using-textboxwatermark-in-a-formview-vb.md)

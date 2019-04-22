@@ -12,7 +12,7 @@ ms.openlocfilehash: ecc0733c2850bc157c7ee5b251787152393481fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385241"
 ---
 # <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 简介
@@ -86,4 +86,4 @@ F5 导致 Visual Studio 启动 IIS Express 和运行 web 应用程序。 然后�
 即时可用的此默认模板也提供家庭、 联系人以及有关页面。 它还提供支持，以注册和登录，并链接到 Facebook 和 Twitter。 下一步是要更改此应用程序的工作方式有点了解 ASP.NET MVC。 关闭浏览器并让我们更改某些代码。
 
 > [!div class="step-by-step"]
-> [下一步](adding-a-controller.md)
+> [下一页](adding-a-controller.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 428cf123e2063f265c21e70e439428c702fc2276
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396845"
 ---
 # <a name="new-designer-support-in-visual-studio-2008"></a>Visual Studio 2008 中新增的设计器支持
@@ -24,4 +24,4 @@ ms.locfileid: "59396845"
 [&#9654;观看视频 （14 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/new-designer-support-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
-> [下一步](javascript-intellisense-support-in-visual-studio-2008.md)
+> [下一页](javascript-intellisense-support-in-visual-studio-2008.md)

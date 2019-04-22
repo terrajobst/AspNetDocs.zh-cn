@@ -12,7 +12,7 @@ ms.openlocfilehash: 70d2efb789d694a0aaecc046615c7b3622079dc1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385353"
 ---
 # <a name="part-1-file--new-project"></a>第 1 部分：“文件”->“新建项目”
@@ -103,4 +103,4 @@ ms.locfileid: "59385353"
 这样我们将需要更改母版页后所有.aspx 文件中的引用生成默认情况下 ASP.NET WebForms 页。
 
 > [!div class="step-by-step"]
-> [下一步](tailspin-spyworks-part-2.md)
+> [下一页](tailspin-spyworks-part-2.md)

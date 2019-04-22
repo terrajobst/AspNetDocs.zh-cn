@@ -12,7 +12,7 @@ ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389201"
 ---
 # <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 网页 (Razor) 疑难解答指南
@@ -141,7 +141,7 @@ ms.locfileid: "59389201"
     *连接尝试失败，因为被连接的方未正确响应时间或建立的连接失败，因为连接的主机未能响应一段时间后*
 
     此错误通常意味着应用程序无法连接到 SMTP 服务器。 请检查服务器名和端口号。
-- *邮箱不可用。 服务器响应为：5.1.0 &lt; someuser@invaliddomain &gt;发件人已拒绝： 无效的发件人域*
+- *邮箱不可用。服务器响应为：5.1.0 &lt; someuser@invaliddomain &gt;发件人已拒绝： 无效的发件人域*
 
     此消息可能指示`From`地址不正确或缺少。
 - *指定的字符串不是窗体所需的电子邮件地址。*

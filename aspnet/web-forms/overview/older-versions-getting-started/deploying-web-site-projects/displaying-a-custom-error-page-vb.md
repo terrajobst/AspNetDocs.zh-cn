@@ -12,7 +12,7 @@ ms.openlocfilehash: dc3ff989b6861fe62cce0199a62adef6107206d5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384183"
 ---
 # <a name="displaying-a-custom-error-page-vb"></a>显示自定义错误页 (VB)
@@ -164,7 +164,7 @@ ms.locfileid: "59384183"
 在本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [错误页，一次](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)
-- [异常设计准则](https://msdn.microsoft.com/library/ms229014.aspx)
+- [异常的设计准则](https://msdn.microsoft.com/library/ms229014.aspx)
 - [用户友好错误页](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
 - [处理和引发异常](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [在 ASP.NET 中正确使用自定义错误页](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)

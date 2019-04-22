@@ -12,7 +12,7 @@ ms.openlocfilehash: 1f2dc0fea9eeca64b9389881470353c5cca473e0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396312"
 ---
 # <a name="web-deployment-in-the-enterprise"></a>企业中的 Web 部署
@@ -102,4 +102,4 @@ ms.locfileid: "59396312"
 - [高级企业 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境中，从部署中排除文件和文件夹和在部署过程中将 web 应用程序脱机.
 
 > [!div class="step-by-step"]
-> [下一步](the-contact-manager-solution.md)
+> [下一页](the-contact-manager-solution.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 67ca6b1dc68dc2dde4e24d4d6c6ddae04fc4bb6d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383468"
 ---
 # <a name="signalr-older-versions"></a>SignalR 较早版本
@@ -20,10 +20,10 @@ ms.locfileid: "59383468"
 > 与 SignalR 的早期版本的文档。
 
 
-- [教程：SignalR 1.x 入门](tutorial-getting-started-with-signalr.md)
-- [教程：SignalR 1.x 和 MVC 4 入门](tutorial-getting-started-with-signalr-and-mvc-4.md)
+- [教程：开始使用 SignalR 1.x](tutorial-getting-started-with-signalr.md)
+- [教程：开始使用 SignalR 1.x 和 MVC 4](tutorial-getting-started-with-signalr-and-mvc-4.md)
 - [使用 SignalR 1.x 实现高频率实时功能](tutorial-high-frequency-realtime-with-signalr.md)
-- [教程：使用 ASP.NET SignalR 1.x 实现服务器广播](tutorial-server-broadcast-with-aspnet-signalr.md)
+- [教程：服务器广播使用 ASP.NET SignalR 1.x](tutorial-server-broadcast-with-aspnet-signalr.md)
 - [中心 API 指南 - 服务器](signalr-1x-hubs-api-guide-server.md)
 - [SignalR 1.x 中心 API 指南 - JavaScript 客户端](signalr-1x-hubs-api-guide-javascript-client.md)
 - [中心 API 指南 - .NET 客户端](signalr-1x-hubs-api-guide-net-client.md)

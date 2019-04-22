@@ -12,7 +12,7 @@ ms.openlocfilehash: 3bf4b8fe85780135c821fbb7fcceefd326dce656
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381336"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-c"></a>通过客户端代码操作 DropShadow 属性 (C#)
@@ -55,7 +55,7 @@ JavaScript 函数`changeOpacity()`然后必须首先找到`DropShadowExtender`�
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample6.html)]
 
 
-[![T在客户端上更改他不透明度](manipulating-dropshadow-properties-from-client-code-cs/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-cs/_static/image1.png)
+[![在客户端上更改不透明度](manipulating-dropshadow-properties-from-client-code-cs/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-cs/_static/image1.png)
 
 在客户端上更改不透明度 ([单击此项可查看原尺寸图像](manipulating-dropshadow-properties-from-client-code-cs/_static/image3.png))
 

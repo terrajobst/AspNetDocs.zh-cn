@@ -12,7 +12,7 @@ ms.openlocfilehash: 3e8fa3fe62ee2f58cd5cfbd32d17a3613cf80c12
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382488"
 ---
 # <a name="caching-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 缓存数据 (C#)
@@ -66,7 +66,7 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 在其他文件夹中，喜欢`Default.aspx`在`Caching`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
 
 
-[![Figure 2:将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](caching-data-with-the-objectdatasource-cs/_static/image3.png)](caching-data-with-the-objectdatasource-cs/_static/image2.png)
+[![图 2:将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](caching-data-with-the-objectdatasource-cs/_static/image3.png)](caching-data-with-the-objectdatasource-cs/_static/image2.png)
 
 **图 2**:图 2：添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](caching-data-with-the-objectdatasource-cs/_static/image4.png))
 
@@ -91,7 +91,7 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 首先打开`ObjectDataSource.aspx`页中`Caching`文件夹。 从工具箱拖到设计器中拖动一个 GridView，设置其`ID`属性设置为`Products`，并从其智能标记上，选择要绑定到名为的新 ObjectDataSource 控件`ProductsDataSource`。 配置对象数据源以使用`ProductsBLL`类。
 
 
-[![C配置对象数据源以使用 ProductsBLL 类](caching-data-with-the-objectdatasource-cs/_static/image7.png)](caching-data-with-the-objectdatasource-cs/_static/image6.png)
+[![配置对象数据源以使用 ProductsBLL 类](caching-data-with-the-objectdatasource-cs/_static/image7.png)](caching-data-with-the-objectdatasource-cs/_static/image6.png)
 
 **图 4**:配置为使用 ObjectDataSource`ProductsBLL`类 ([单击以查看实际尺寸的图像](caching-data-with-the-objectdatasource-cs/_static/image8.png))
 
@@ -99,7 +99,7 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 有关此页上，让我们来创建可编辑的 GridView，以便我们可以检查在 ObjectDataSource 中缓存数据修改通过 GridView 的接口时，会发生什么情况。 将下拉列表保留在设置为其默认情况下，选择选项卡`GetProducts()`，但更改到更新选项卡中的选定的项`UpdateProduct`重载接受`productName`， `unitPrice`，和`productID`作为其输入参数。
 
 
-[![S设置为适当的 UpdateProduct 重载更新选项卡的下拉列表](caching-data-with-the-objectdatasource-cs/_static/image10.png)](caching-data-with-the-objectdatasource-cs/_static/image9.png)
+[![将更新选项卡的下拉列表设置为适当的 UpdateProduct 重载](caching-data-with-the-objectdatasource-cs/_static/image10.png)](caching-data-with-the-objectdatasource-cs/_static/image9.png)
 
 **图 5**:将更新选项卡的下拉列表设置为适用`UpdateProduct`重载 ([单击以查看实际尺寸的图像](caching-data-with-the-objectdatasource-cs/_static/image11.png))
 
@@ -114,7 +114,7 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 > 需要如何自定义 GridView s 编辑界面的评审？ 如果是这样，回头[自定义数据修改界面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md)教程。
 
 
-[![E启用编辑，排序和分页的 GridView 支持](caching-data-with-the-objectdatasource-cs/_static/image13.png)](caching-data-with-the-objectdatasource-cs/_static/image12.png)
+[![用于编辑、 排序和分页启用 GridView 支持](caching-data-with-the-objectdatasource-cs/_static/image13.png)](caching-data-with-the-objectdatasource-cs/_static/image12.png)
 
 **图 6**:启用编辑，排序和分页的 GridView 支持 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-cs/_static/image14.png))
 
@@ -127,7 +127,7 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 如图 7 所示，可编辑的 GridView 列出名称、 类别和每个数据库中产品的价格。 请花费片刻时间测试页的功能排序结果页，查看和编辑记录。
 
 
-[![E支票产品名称、 类别和价格被列入可排序、 Pageable、 可编辑的 GridView](caching-data-with-the-objectdatasource-cs/_static/image16.png)](caching-data-with-the-objectdatasource-cs/_static/image15.png)
+[![可排序、 Pageable、 可编辑的 GridView 中列出每个产品名称、 类别和价格](caching-data-with-the-objectdatasource-cs/_static/image16.png)](caching-data-with-the-objectdatasource-cs/_static/image15.png)
 
 **图 7**:可排序、 Pageable、 可编辑的 GridView 中列出每个产品名称、 类别和价格 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-cs/_static/image17.png))
 
@@ -141,7 +141,7 @@ GridView 需要绑定到其基础数据的每个时出现以下事件序列。 �
 若要完全认识与从数据库检索的数据的频率，让我们来显示一条消息，指示重新检索数据时。 添加名为 GridView 上方的一个标签 Web 控件`ODSEvents`。 清除其`Text`属性并设置其`EnableViewState`属性设置为`false`。 下方是标签，添加一个按钮 Web 控件，并设置其`Text`属性设置为回发。
 
 
-[![Add 标签和按钮的 GridView 页面上方](caching-data-with-the-objectdatasource-cs/_static/image19.png)](caching-data-with-the-objectdatasource-cs/_static/image18.png)
+[![将一个标签和按钮添加到页面上方 GridView](caching-data-with-the-objectdatasource-cs/_static/image19.png)](caching-data-with-the-objectdatasource-cs/_static/image18.png)
 
 **图 8**:将一个标签和按钮添加到的 GridView 页面上方 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-cs/_static/image20.png))
 
@@ -156,12 +156,12 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 请访问此页在浏览器中。 当首次访问页面时，会显示文本选择事件触发。 单击回发的按钮并记下该文本将消失 (假设 GridView s`EnableViewState`属性设置为`true`，默认值)。 这是因为，在回发时，从其视图状态重建 GridView 并不因此求助于其数据的对象数据源。 排序、 分页，或编辑数据，但是，导致 GridView 重新绑定到其数据源，并因此触发文本随即再次显示选择事件。
 
 
-[![W显示的 henever GridView 重新绑定到其数据源，选择触发事件](caching-data-with-the-objectdatasource-cs/_static/image22.png)](caching-data-with-the-objectdatasource-cs/_static/image21.png)
+[![每当 GridView 重新绑定到其数据源，显示触发选择事件](caching-data-with-the-objectdatasource-cs/_static/image22.png)](caching-data-with-the-objectdatasource-cs/_static/image21.png)
 
 **图 9**:每当 GridView 重新绑定到其数据源，显示选择事件触发 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-cs/_static/image23.png))
 
 
-[![C单击回发按钮会导致 GridView，若要从其视图状态重新构造](caching-data-with-the-objectdatasource-cs/_static/image25.png)](caching-data-with-the-objectdatasource-cs/_static/image24.png)
+[![单击回发按钮会导致要从其视图状态重新构造 GridView](caching-data-with-the-objectdatasource-cs/_static/image25.png)](caching-data-with-the-objectdatasource-cs/_static/image24.png)
 
 **图 10**:单击该回发的按钮使 GridView，若要从其视图状态重新构造 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-cs/_static/image26.png))
 
@@ -180,7 +180,7 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 让我们来配置`ProductsDataSource`ObjectDataSource 30 秒内对绝对刻度缓存其数据。 设置 ObjectDataSource s`EnableCaching`属性设置为`true`并将其`CacheDuration`属性设置为 30。 将保留`CacheExpirationPolicy`属性设置为其默认值， `Absolute`。
 
 
-[![C配置对象数据源在 30 秒内缓存其数据](caching-data-with-the-objectdatasource-cs/_static/image28.png)](caching-data-with-the-objectdatasource-cs/_static/image27.png)
+[![配置对象数据源在 30 秒内缓存其数据](caching-data-with-the-objectdatasource-cs/_static/image28.png)](caching-data-with-the-objectdatasource-cs/_static/image27.png)
 
 **图 11**:配置对象数据源在 30 秒内缓存其数据 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-cs/_static/image29.png))
 
@@ -240,4 +240,4 @@ ObjectDataSource 自动逐出缓存时的任何一个从其项及其`Insert`， 
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](caching-data-in-the-architecture-cs.md)
+> [下一页](caching-data-in-the-architecture-cs.md)

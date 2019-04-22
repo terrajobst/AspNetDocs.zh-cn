@@ -12,7 +12,7 @@ ms.openlocfilehash: d8ac50874d0325ed9583a16e1b4e19b3becabb99
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391508"
 ---
 # <a name="testing-the-strength-of-a-password-c"></a>测试密码强度 (C#)
@@ -44,9 +44,9 @@ ms.locfileid: "59391508"
 运行页面，然后立即键入：仅输入小写字母、 大写字母、 数字和符号后，密码会被确认为不可换行。
 
 
-[![Now 密码适合 （非常）](testing-the-strength-of-a-password-cs/_static/image2.png)](testing-the-strength-of-a-password-cs/_static/image1.png)
+[![现在，密码是 （很） 高](testing-the-strength-of-a-password-cs/_static/image2.png)](testing-the-strength-of-a-password-cs/_static/image1.png)
 
 现在，密码是 （非常） 很好 ([单击此项可查看原尺寸图像](testing-the-strength-of-a-password-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](testing-the-strength-of-a-password-vb.md)
+> [下一页](testing-the-strength-of-a-password-vb.md)

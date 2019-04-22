@@ -12,7 +12,7 @@ ms.openlocfilehash: 737c15b4657ce8a67224c116bcad196020c45710
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388239"
 ---
 # <a name="aspnet-mvc-ui-layouts-and-themes"></a>ASP.NET MVC UI、 布局和主题
@@ -21,4 +21,4 @@ ms.locfileid: "59388239"
 
 
 - [在 ASP.NET MVC 中使用 Page Inspector](using-page-inspector-in-aspnet-mvc.md)
-- [动态类型化视图与 强类型化视图](dynamic-v-strongly-typed-views.md)
+- [动态类型化视图与强类型化视图](dynamic-v-strongly-typed-views.md)

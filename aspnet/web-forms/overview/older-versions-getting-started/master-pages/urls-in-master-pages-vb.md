@@ -12,7 +12,7 @@ ms.openlocfilehash: 35fcf02c20e3d20f9cb75f6a25aeb1ddac016b4e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393764"
 ---
 # <a name="urls-in-master-pages-vb"></a>母版页中的 URL (VB)
@@ -75,7 +75,7 @@ ms.locfileid: "59393764"
 因为`<img>`元素的`src`属性是相对 URL，浏览器会尝试查找`Images`web 页面的文件夹位置相对应的文件夹。 换而言之，在浏览器正在寻找的图像文件`Admin/Images/PoweredByASPNET.gif`。
 
 
-[![T他 PoweredByASPNET.gif 映像无法找到文件](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
+[![找不到 PoweredByASPNET.gif 图像文件](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
 
 **图 02**:`PoweredByASPNET.gif`图像找不到文件 ([单击以查看实际尺寸的图像](urls-in-master-pages-vb/_static/image4.png))
 
@@ -92,7 +92,7 @@ ms.locfileid: "59393764"
 请花费片刻时间来更新`<img>`元素的`src`属性使用一个如上所示的窗体的绝对 url，然后访问`~/Admin/Default.aspx`通过浏览器的页。 这一次在浏览器将正确地查找并显示`PoweredByASPNET.gif`图像文件 （请参见图 3）。
 
 
-[![T他 PoweredByASPNET.gif 映像是现在显示](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
+[![PoweredByASPNET.gif 映像是现在显示](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
 
 **图 03**:`PoweredByASPNET.gif`映像是现在显示 ([单击以查看实际尺寸的图像](urls-in-master-pages-vb/_static/image7.png))
 

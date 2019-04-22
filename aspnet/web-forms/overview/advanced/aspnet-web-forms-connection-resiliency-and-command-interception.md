@@ -12,7 +12,7 @@ ms.openlocfilehash: 2b8cae61347f00712aba18fe6a2e91bc207cb9f3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380036"
 ---
 # <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web 窗体连接复原和命令截获

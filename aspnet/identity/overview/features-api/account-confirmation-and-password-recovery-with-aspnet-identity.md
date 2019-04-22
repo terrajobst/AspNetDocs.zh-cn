@@ -13,7 +13,7 @@ ms.openlocfilehash: 2e4cd21d66e69590fb1642d7974e4b7f82cba0cb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396416"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帐户确认和密码恢复与 ASP.NET 标识 (C#)
@@ -230,8 +230,8 @@ OWIN`AuthenticationManager.SignIn`方法将传递在`ClaimsIdentity`并在用户
 
 ## <a name="additional-resources"></a>其他资源
 
-- [ASP.NET Identity 的自定义存储提供程序概述](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [ASP.NET 标识的自定义存储提供程序概述](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)还演示如何将配置文件信息添加到用户表。
 - [ASP.NET MVC 和标识 2.0:了解基础知识](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx)通过 John 输入。
-- [ASP.NET Identity 简介](../getting-started/introduction-to-aspnet-identity.md)
+- [ASP.NET 标识简介](../getting-started/introduction-to-aspnet-identity.md)
 - [宣布推出 RTM 的 ASP.NET 标识 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) Pranav rastogi 撰写。

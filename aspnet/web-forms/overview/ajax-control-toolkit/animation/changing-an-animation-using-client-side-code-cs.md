@@ -12,7 +12,7 @@ ms.openlocfilehash: 8bdee58aa04e1c8217c2a727b96aa8b239fe1aca
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395597"
 ---
 # <a name="changing-an-animation-using-client-side-code-c"></a>使用客户端代码更改动画 (C#)
@@ -71,7 +71,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-html[Main](changing-an-animation-using-client-side-code-cs/samples/sample7.html)]
 
 
-[![T没有鼠标单击 （且很少标记），他动画立即运行](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
+[![动画立即运行而无需单击鼠标 （和使用很少标记）](changing-an-animation-using-client-side-code-cs/_static/image2.png)](changing-an-animation-using-client-side-code-cs/_static/image1.png)
 
 动画立即运行不带鼠标单击 （和使用很少标记） ([单击此项可查看原尺寸图像](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 

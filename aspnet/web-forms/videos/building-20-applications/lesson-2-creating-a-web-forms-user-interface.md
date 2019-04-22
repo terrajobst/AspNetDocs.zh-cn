@@ -12,7 +12,7 @@ ms.openlocfilehash: bc4a4aeb6311c67e465068f507492bffd22c2b37
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386773"
 ---
 # <a name="lesson-2-creating-a-web-forms-user-interface"></a>[第 2 课：] 创建 Web 窗体用户界面

@@ -12,7 +12,7 @@ ms.openlocfilehash: 433756839532393b36935df8f237e93706b4f18c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383147"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>通过 CascadingDropDown 使用自动回发 (VB)
@@ -57,9 +57,9 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 这样一来，在列表中存在实际元素，并且用户选择一个条目时，回发才执行。
 
 
-[![S选择一个列表元素导致回发](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
+[![选择一个列表元素导致回发](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 
 选择一个列表元素导致回发 ([单击此项可查看原尺寸图像](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [上一篇](presetting-list-entries-with-cascadingdropdown-vb.md)

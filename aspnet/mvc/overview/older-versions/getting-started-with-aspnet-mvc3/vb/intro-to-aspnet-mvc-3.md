@@ -12,7 +12,7 @@ ms.openlocfilehash: 47c9d69b9fee4a9e126ef2e889c91fe0bdd479f6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385925"
 ---
 # <a name="intro-to-aspnet-mvc-3-vb"></a>ASP.NET MVC 3 简介 (VB)
@@ -95,4 +95,4 @@ F5 会导致 Visual Web Developer 才能启动开发 web 服务器和运行 web 
 在初始状态下此默认模板提供了在两个页面访问和基本的登录页。 让我们更改此应用程序的工作原理，并了解有点 ASP.NET MVC 中的过程。 关闭浏览器并让我们更改某些代码。
 
 > [!div class="step-by-step"]
-> [下一步](adding-a-controller.md)
+> [下一页](adding-a-controller.md)

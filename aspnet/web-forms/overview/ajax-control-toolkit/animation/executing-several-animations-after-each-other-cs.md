@@ -12,7 +12,7 @@ ms.openlocfilehash: 644af2485c1a51f2de209e968ba1b3475350fa47
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394063"
 ---
 # <a name="executing-several-animations-after-each-other-c"></a>逐一执行多个动画 (C#)
@@ -51,12 +51,12 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 当您运行此脚本，面板第一次获得更宽且然后较小。
 
 
-[![F增加宽度 irst](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
+[![第一次增加宽度](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
 
 第一次增加宽度 ([单击此项可查看原尺寸图像](executing-several-animations-after-each-other-cs/_static/image3.png))
 
 
-[![T减少高度的 hen](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
+[![再减少高度](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
 
 然后减小高度 ([单击此项可查看原尺寸图像](executing-several-animations-after-each-other-cs/_static/image6.png))
 

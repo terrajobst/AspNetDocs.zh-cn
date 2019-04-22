@@ -12,7 +12,7 @@ ms.openlocfilehash: 0f188f5bc869aabfb66cd7d99f21a46ca233954e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390696"
 ---
 # <a name="creating-a-consistent-look-part-2"></a>创建一致外观（第 2 部分）

@@ -12,7 +12,7 @@ ms.openlocfilehash: 8d9079d75f20bc85a5b4babfb45dfdfcff696a50
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380491"
 ---
 # <a name="how-do-i-use-aspnet-ajax-client-templates"></a>如何实现:使用 ASP.NET AJAX 客户端模板
@@ -24,4 +24,4 @@ ms.locfileid: "59380491"
 [&#9654;观看视频 （33 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-aspnet-ajax-client-templates)
 
 > [!div class="step-by-step"]
-> [上一个](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)
+> [上一篇](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)

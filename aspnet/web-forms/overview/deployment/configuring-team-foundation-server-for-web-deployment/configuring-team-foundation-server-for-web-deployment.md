@@ -12,7 +12,7 @@ ms.openlocfilehash: 188ab63dd84be5559d5a3646eb95caa77ab01bd1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391996"
 ---
 # <a name="configuring-team-foundation-server-for-web-deployment"></a>配置用于 Web 部署的 Team Foundation Server
@@ -75,4 +75,4 @@ ms.locfileid: "59391996"
 - [高级企业 Web 部署](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)。 本教程介绍如何完成各种更高级的部署任务，如自定义数据库部署为多个环境中，从部署中排除文件和文件夹和在部署过程中将 web 应用程序脱机.
 
 > [!div class="step-by-step"]
-> [下一步](creating-a-team-project-in-tfs.md)
+> [下一页](creating-a-team-project-in-tfs.md)

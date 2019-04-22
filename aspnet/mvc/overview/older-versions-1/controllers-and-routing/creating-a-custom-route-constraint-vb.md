@@ -12,7 +12,7 @@ ms.openlocfilehash: febba98be86f0151724af6d6c00fb14760ce1b91
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378944"
 ---
 # <a name="creating-a-custom-route-constraint-vb"></a>创建自定义路由约束 (VB)
@@ -51,4 +51,4 @@ ms.locfileid: "59378944"
 请注意，默认路由已被注释掉从代码清单 2 中的 Global.asax 文件。 如果包含默认路由，默认路由将匹配的管理控制器的请求。 在这种情况下，远程用户仍可以调用的管理控制器的操作，即使它们的请求不匹配的管理路由。
 
 > [!div class="step-by-step"]
-> [上一个](creating-a-route-constraint-vb.md)
+> [上一篇](creating-a-route-constraint-vb.md)

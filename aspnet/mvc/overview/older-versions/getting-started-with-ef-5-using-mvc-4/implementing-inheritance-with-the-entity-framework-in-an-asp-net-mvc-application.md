@@ -12,7 +12,7 @@ ms.openlocfilehash: fe2bc91c1bb37282389a45f662a34f8865dee301
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381063"
 ---
 # <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>在 ASP.NET MVC 应用程序 (8 为 10) 中实现继承，使用实体框架
@@ -128,7 +128,7 @@ TPH 继承模式通常比 TPT 继承模式，实体框架中提供更好的性�
 
 运行`Update-Database`PMC 命令。 该命令将在这里失败，因为我们已将迁移并不知道如何处理的现有数据。 你收到以下错误：
 
-*ALTER TABLE 语句与 FOREIGN KEY 约束冲突"FK\_dbo。部门\_dbo。人员\_PersonID"。 冲突发生于数据库"ContosoUniversity"表"dbo。Person"，列 PersonID。*
+*ALTER TABLE 语句与 FOREIGN KEY 约束冲突"FK\_dbo。部门\_dbo。人员\_PersonID"。冲突发生于数据库"ContosoUniversity"表"dbo。Person"，列 PersonID。*
 
 打开*迁移\&l t; 时间戳&gt;\_Inheritance.cs* ，并将为`Up`方法使用以下代码：
 

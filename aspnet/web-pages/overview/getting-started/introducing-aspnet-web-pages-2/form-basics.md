@@ -12,7 +12,7 @@ ms.openlocfilehash: f88f7a31551abda029bee0ec16aa35ce2ef5d2f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385951"
 ---
 # <a name="introducing-aspnet-web-pages---html-form-basics"></a>介绍 ASP.NET 网页的 HTML 窗体基础知识
@@ -69,8 +69,8 @@ ms.locfileid: "59385951"
 > 
 > HTTP，浏览器和服务器交换信息，而使用的协议是在其基本操作非常简单。 浏览器中使用只有几个谓词向服务器发出请求。 在编写 web 的代码，是有助于您了解这些谓词和如何在浏览器和服务器使用它们。 无疑最常使用的谓词是：
 > 
-> - `GET`. 浏览器使用此谓词以从服务器提取的内容。 例如，当浏览器中键入 URL，浏览器执行`GET`操作来请求所需的页面。 如果页中包含图形，浏览器执行其他`GET`操作来获取映像。 如果`GET`操作必须将信息发送到服务器，作为查询字符串中的 URL 的一部分传递的信息。
-> - `POST`. 浏览器发送`POST`请求，以便将数据要添加或更改服务器上提交。 例如，`POST`谓词用于在数据库中创建记录或更改现有的。 大多数情况下，如果窗体中填写，单击提交按钮，浏览器执行`POST`操作。 在`POST`操作中，传递给服务器的数据是在页的正文中。
+> - `GET`。 浏览器使用此谓词以从服务器提取的内容。 例如，当浏览器中键入 URL，浏览器执行`GET`操作来请求所需的页面。 如果页中包含图形，浏览器执行其他`GET`操作来获取映像。 如果`GET`操作必须将信息发送到服务器，作为查询字符串中的 URL 的一部分传递的信息。
+> - `POST`。 浏览器发送`POST`请求，以便将数据要添加或更改服务器上提交。 例如，`POST`谓词用于在数据库中创建记录或更改现有的。 大多数情况下，如果窗体中填写，单击提交按钮，浏览器执行`POST`操作。 在`POST`操作中，传递给服务器的数据是在页的正文中。
 > 
 > 这些动词之间的重要区别在于`GET`操作不应在服务器上进行任何更改，或将其放在更抽象的方式，`GET`操作不会导致在服务器上的状态的更改。 你可以执行`GET`无数次，您喜欢，也不会更改这些资源的同一资源上的操作。 (A`GET`为"安全，"或使用技术术语，常说操作是*幂等*。)与之相反，当然，`POST`请求更改了某些内容在服务器上每次执行该操作。
 > 
@@ -215,7 +215,7 @@ ms.locfileid: "59385951"
 
 > [!NOTE] 
 > 
-> **重要 ！** 使用占位符 (如`@0`) 将值传递给 SQL 命令是*极其重要*的安全。 可以看到它，带有占位符变量数据的方法是应构造 SQL 命令的唯一方法。
+> **重要提示！** 使用占位符 (如`@0`) 将值传递给 SQL 命令是*极其重要*的安全。 可以看到它，带有占位符变量数据的方法是应构造 SQL 命令的唯一方法。
 > 
 > 永远不会通过将组合在一起 （连接） 的文字文本和从用户获取的值来构造 SQL 语句。 连接到 SQL 语句中的用户输入将打开到站点*SQL 注入攻击*，恶意用户提交 hack 数据库页的值。 (您可以阅读更多文章中[SQL 注入](https://msdn.microsoft.com/library/ms161953.aspx)MSDN 网站。)
 
@@ -356,7 +356,7 @@ ms.locfileid: "59385951"
 
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 Razor 语法进行 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL WHERE 子句](http://www.w3schools.com/sql/sql_where.asp)W3Schools 站点上
 - [方法定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)W3C 网站上的文章
 

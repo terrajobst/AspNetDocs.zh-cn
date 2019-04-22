@@ -12,7 +12,7 @@ ms.openlocfilehash: f648e0cb53dd410105adc22401f19a5a15f9e8c1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380803"
 ---
 # <a name="adding-a-create-method-and-create-view"></a>添加 Create 方法和创建视图
@@ -38,7 +38,7 @@ ms.locfileid: "59380803"
 
 我们将选择，我们要为其视图数据类，通过查看模板"电影"，并指出我们希望"搭建基架的"的"创建"模板。
 
-[![A添加视图](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
+[![添加视图](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
 
 单击添加按钮后，将为您创建 \Movies\Create.aspx 视图模板。 由于我们从"视图内容"下拉列表中选择"创建"，添加视图对话框中自动"基架"一些默认内容为我们。 基架创建对应的 HTML&lt;窗体&gt;、 使验证错误消息，随时随地和基架了解的有关电影，因为它创建标签和字段我们的类的每个属性。
 
@@ -48,7 +48,7 @@ ms.locfileid: "59380803"
 
 现在让我们来创建新电影并将其添加到数据库。 我们将运行一次应用程序执行此操作，请访问"/ 电影"URL，然后单击"创建"链接以添加新电影。
 
-[![Create - Windows Internet Explorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
+[![创建的 Windows Internet Explorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
 
 当我们单击创建按钮时，我们将进行回 （通过 HTTP POST) 的数据发布到我们刚刚创建的 /Movies/Create 方法此窗体上。 就像在系统自动执行在 url 的"numTimes"和"name"参数，并映射到在前面的方法的参数，系统将自动从帖子采取窗体字段，并将它们映射到一个对象。 在这种情况下，从"ReleaseDate"和"Title"等的 HTML 中的字段的值都将自动放入电影的新实例的正确属性。
 
@@ -58,7 +58,7 @@ ms.locfileid: "59380803"
 
 然后此电影对象传递给我们创建的操作方法，[HttpPost] 版本和我们在数据库中保存和重定向回到 index （） 操作方法，它将在已保存的结果显示电影列表中的用户：
 
-[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
+[![电影列表-Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
 
 我们不会检查是否我们的电影是正确的不过，并且数据库不会使我们能够将电影保存与没有标题。 如果我们可以告诉用户的数据库之前引发了错误，它很好。 我们通过将验证支持添加到我们的应用程序执行此下一步。
 

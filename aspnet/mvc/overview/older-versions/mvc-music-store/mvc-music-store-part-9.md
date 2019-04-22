@@ -12,7 +12,7 @@ ms.openlocfilehash: c7151351b087439f17457b254cd9e373af21cae3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380894"
 ---
 # <a name="part-9-registration-and-checkout"></a>第 9 部分：注册和结帐
@@ -78,7 +78,7 @@ ms.locfileid: "59380894"
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample4.cs)]
 
-*注意:这是类似于我们先前对 StoreManagerController，所做的更改，但在这种情况下 Authorize 属性所需的用户是管理员角色中。 在签出控制器中，我们要求用户登录，但不需要它们管理员。*
+*注意：这是类似于我们先前对 StoreManagerController，所做的更改，但在这种情况下 Authorize 属性所需的用户是管理员角色中。在签出控制器中，我们要求用户登录，但不需要它们管理员。*
 
 为简单起见，我们不会处理在本教程中的付款信息。 相反，我们允许用户签出使用促销代码。 我们将存储此促销代码中使用一个名为 PromoCode 常量。
 
@@ -108,7 +108,7 @@ CheckoutController 将具有以下控制器操作：
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample8.cs)]
 
-*注意:错误视图已自动为我们创建 /Views/Shared 文件夹中我们开始项目时。*
+*注意：错误视图已自动为我们创建 /Views/Shared 文件夹中我们开始项目时。*
 
 完整的 CheckoutController 代码如下所示：
 

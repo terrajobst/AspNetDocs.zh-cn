@@ -13,7 +13,7 @@ ms.openlocfilehash: 212b07494381d13f6ded96a41b846dcdf7e8ff16
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393738"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>在 ASP.NET Identity 中更改用户的主键
@@ -273,7 +273,7 @@ ThrowIfV1Schema 参数不再有效的构造函数中。 更改构造函数，因
 <a id="other"></a>
 ## <a name="other-resources"></a>其他资源
 
-- [ASP.NET Identity 的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [将现有网站从 SQL 成员身份迁移到 ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [ASP.NET 标识的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [将现有网站从 SQL 成员身份迁移到 ASP.NET 标识](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [成员身份和用户配置文件到 ASP.NET 标识的通用提供程序数据迁移](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
 - [示例应用程序](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt)具有已更改主键

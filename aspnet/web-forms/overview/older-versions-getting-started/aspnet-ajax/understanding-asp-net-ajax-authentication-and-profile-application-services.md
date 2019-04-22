@@ -12,7 +12,7 @@ ms.openlocfilehash: 18056c917b32680678c536229e8e26d5cc7db161
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395129"
 ---
 # <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 身份验证和配置文件应用程序服务
@@ -32,7 +32,7 @@ ms.locfileid: "59395129"
 
 此白皮书基于 Visual Studio 2008 Beta 2 版本和.NET Framework 3.5。 本白皮书还假定你将使用 Visual Studio 2008 Beta 2，不 Visual Web Developer 速成版，并且将提供根据 Visual Studio 的用户界面的演练。 一些代码示例可使用项目模板在 Visual Web Developer 速成版中不可用。
 
-## *<a name="profiles-and-authentication"></a>配置文件和身份验证*
+## <a name="profiles-and-authentication"></a>*配置文件和身份验证*
 
 Microsoft ASP.NET 配置文件和身份验证服务提供的 ASP.NET 窗体身份验证系统，和是标准的 ASP.NET 组件。 ASP.NET AJAX Extensions 提供脚本访问这些服务通过脚本代理，通过 Sys.Services 命名空间下的客户端 AJAX 库的非常简单的模型。
 
@@ -42,7 +42,7 @@ Microsoft ASP.NET 配置文件和身份验证服务提供的 ASP.NET 窗体身�
 
 将 ASP.NET 身份验证和分析服务本身合并到应用程序不在此白皮书的范围。 本主题的详细信息，请参阅 MSDN 库参考文章在使用成员资格管理用户[ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx)。 ASP.NET 还包括一个实用工具来自动设置使用 SQL Server，这是 ASP.NET 成员资格的默认身份验证服务提供程序的成员身份。 有关详细信息，请参阅文章 ASP.NET SQL Server 注册工具 (Aspnet\_regsql.exe) 处[ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)。
 
-## *<a name="using-the-aspnet-ajax-authentication-service"></a>使用 ASP.NET AJAX 身份验证服务*
+## <a name="using-the-aspnet-ajax-authentication-service"></a>*使用 ASP.NET AJAX 身份验证服务*
 
 必须在 web.config 文件中启用 ASP.NET AJAX 身份验证服务：
 
@@ -192,7 +192,7 @@ Logout （） 方法将移除凭据 cookie，并从 web 应用程序的当前用
 
 AJAX 分析服务配置后，它将可以立即在页面; 例如：但是，它必须在使用前一次加载。
 
-*Sys.Services.ProfileService members*
+*Sys.Services.ProfileService 成员*
 
 *属性字段：*
 
@@ -304,7 +304,7 @@ Save （） 方法将指定的属性列表 （或所有属性） 保存到用户
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample12.js)]
 
-## *<a name="using-a-custom-authentication-service-provider"></a>使用自定义身份验证服务提供程序*
+## <a name="using-a-custom-authentication-service-provider"></a>*使用自定义身份验证服务提供程序*
 
 ASP.NET AJAX Extensions，可以创建自定义脚本身份验证服务提供程序公开您通过自定义 web 服务的功能。 若要使用你的 web 服务必须公开两种方法`Login`和`Logout`; 并且必须具有为默认 ASP.NET AJAX 身份验证 web 服务相同的方法签名指定这些方法。
 
@@ -338,7 +338,7 @@ ASP.NET 服务-特别是分析、 成员资格和身份验证服务-轻松地向
 
 此外，通过使用等效方法签名中创建简化的 web 服务实现，开发人员可以创建自定义脚本的这些内部函数的 ASP.NET 服务的提供程序。 对这些技术的支持简化了开发丰富的客户端应用程序，同时为开发人员提供范围广泛的灵活性来满足特定需求。
 
-## *<a name="bio"></a>个人简介*
+## <a name="bio"></a>*Bio*
 
 Scott Cate 自 1997 年以来一直致力于 Microsoft Web 技术和 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 专门负责编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或他的博客[ScottCate.com](http://ScottCate.com)
 

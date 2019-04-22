@@ -12,7 +12,7 @@ ms.openlocfilehash: 1291417755e3fa4fb030bc6ba3089c38c4719c71
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389656"
 ---
 # <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全性和成员身份添加到 ASP.NET Web Pages (Razor) 站点
@@ -264,7 +264,7 @@ ASP.NET 成员资格系统设置以支持角色。 但是，与成员身份注�
 - [自定义站点范围内的行为](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [保护 Web 通信：证书、 SSL 和 https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [若要实现 ASP.NET Razor 安全性的最基本方法](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240)并[确认功能用于 ASP.NET Web Pages 安全](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267)。 这些是介绍如何实现 ASP.NET 成员资格功能而无需使用的博客文章**入门网站**模板。
-- [在 ASP.NET 网页站点中启用从外部站点进行登录](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [在 ASP.NET 网站中启用从外部站点进行登录](https://go.microsoft.com/fwlink/?LinkId=251969)
 - [WebSecurity 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99))(MSDN)
 - [SimpleRoleProvider 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99))(MSDN)
 - [SimpleMembershipProvider 类 API 参考](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99))(MSDN)

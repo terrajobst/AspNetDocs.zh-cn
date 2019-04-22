@@ -12,7 +12,7 @@ ms.openlocfilehash: 668815d58f2dc9a67cce441dfa267fa043a35091
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387193"
 ---
 # <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>使用 JavaScript 代码动态填充控件 (VB)
@@ -55,7 +55,7 @@ ms.locfileid: "59387193"
 请注意，单选按钮，JavaScript 表达式的上下文中`this.value`当前按钮，它恰巧是完全相同的信息的值是指`getDate()`方法可以使用。
 
 
-[![A 单击的按钮中指定的格式的服务器中检索日期](dynamically-populating-a-control-using-javascript-code-vb/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-vb/_static/image1.png)
+[![单击的按钮中指定的格式的服务器中检索日期](dynamically-populating-a-control-using-javascript-code-vb/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-vb/_static/image1.png)
 
 单击的按钮中指定的格式的服务器中检索日期 ([单击此项可查看原尺寸图像](dynamically-populating-a-control-using-javascript-code-vb/_static/image3.png))
 

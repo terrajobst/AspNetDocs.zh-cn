@@ -12,7 +12,7 @@ ms.openlocfilehash: 0884e561d4ff49f62503e662243f13ad52717c24
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390566"
 ---
 # <a name="how-to-work-with-datasets-and-filters-from-an-asp-application"></a>如何使用数据集和筛选器从 ASP 应用程序
@@ -24,4 +24,4 @@ ms.locfileid: "59390566"
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-work-with-datasets-and-filters-from-an-asp-application)
 
 > [!div class="step-by-step"]
-> [上一个](how-to-manually-bind-a-dataset-to-a-datagrid.md)
+> [上一篇](how-to-manually-bind-a-dataset-to-a-datagrid.md)

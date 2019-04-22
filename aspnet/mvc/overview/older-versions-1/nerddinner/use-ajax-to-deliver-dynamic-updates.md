@@ -12,7 +12,7 @@ ms.openlocfilehash: 56ebc40aa500b62811bac0a5041fa9aa4f91f4ae
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391047"
 ---
 # <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 提供动态更新
@@ -112,7 +112,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-html[Main](use-ajax-to-deliver-dynamic-updates/samples/sample9.html)]
 
-*提示： 请确保已安装 VS 2008 SP1，使更加丰富的 JavaScript 文件 （包括 jQuery） 的 intellisense 支持的 JavaScript intellisense 修补程序。 您可以下载它从： http://tinyurl.com/vs2008javascripthotfix*
+*提示： 请确保已安装 VS 2008 SP1，使更加丰富的 JavaScript 文件 （包括 jQuery） 的 intellisense 支持的 JavaScript intellisense 修补程序。您可以下载它从： http://tinyurl.com/vs2008javascripthotfix*
 
 通常使用 JQuery 编写的代码使用全局"$ （）"检索使用 CSS 选择器的一个或多个 HTML 元素的 JavaScript 方法。 例如， *$("#rsvpmsg")* 选择 id 为 rsvpmsg，任何 HTML 元素时 *$(".something")* 会选择所有元素与"内容"CSS 类名称。 您还可以编写更高级的查询像"返回所有选中的单选按钮"使用下面的选择器查询： *$("输入 [@type= 单选] [@checked]")*。
 

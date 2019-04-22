@@ -12,7 +12,7 @@ ms.openlocfilehash: 50bba1b798ddfaf69dd23098e31d446a7e7b9a1f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394609"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-c"></a>通过 CascadingDropDown 使用自动回发 (C#)
@@ -57,7 +57,7 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 这样一来，在列表中存在实际元素，并且用户选择一个条目时，回发才执行。
 
 
-[![S选择一个列表元素导致回发](using-auto-postback-with-cascadingdropdown-cs/_static/image2.png)](using-auto-postback-with-cascadingdropdown-cs/_static/image1.png)
+[![选择一个列表元素导致回发](using-auto-postback-with-cascadingdropdown-cs/_static/image2.png)](using-auto-postback-with-cascadingdropdown-cs/_static/image1.png)
 
 选择一个列表元素导致回发 ([单击此项可查看原尺寸图像](using-auto-postback-with-cascadingdropdown-cs/_static/image3.png))
 

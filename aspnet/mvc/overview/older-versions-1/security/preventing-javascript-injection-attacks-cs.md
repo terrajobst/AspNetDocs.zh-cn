@@ -12,7 +12,7 @@ ms.openlocfilehash: 2d954cbc001a62f021f942f1ff44522a2769f516
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389571"
 ---
 # <a name="preventing-javascript-injection-attacks-c"></a>阻止 JavaScript 注入攻击 (C#)
@@ -33,7 +33,7 @@ ms.locfileid: "59389571"
 设想您创建了客户反馈网站 （参见图 1）。 客户可以访问的网站，并输入他们使用您的产品的体验反馈。 当客户提交其反馈时，反馈将重新显示反馈页面上。
 
 
-[![C客户反馈网站](preventing-javascript-injection-attacks-cs/_static/image2.png)](preventing-javascript-injection-attacks-cs/_static/image1.png)
+[![客户反馈网站](preventing-javascript-injection-attacks-cs/_static/image2.png)](preventing-javascript-injection-attacks-cs/_static/image1.png)
 
 **图 01**:客户反馈网站 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-cs/_static/image3.png))
 
@@ -65,7 +65,7 @@ ms.locfileid: "59389571"
 此文本表示显示警告消息框的 JavaScript 脚本。 有人将此脚本提交到反馈后窗体中，消息<em>Boo ！</em>将显示时的任何人访问客户反馈网站将来 （请参见图 2）。
 
 
-[![JavaScript Injection](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
+[![JavaScript 注入](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
 
 **图 02**:JavaScript 注入 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-cs/_static/image6.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "59389571"
 它以 html 格式的平均值对字符串进行编码？ HTML 编码字符串，危险字符如`<`并`>`替换为 HTML 实体引用，如`&lt;`和`&gt;`。 因此，在将字符串`<script>alert("Boo!")</script>`是 HTML 编码，它将转换为`&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 作为 JavaScript 脚本时由浏览器进行解释，不再执行编码的字符串。 相反，图 3 中获得无害的页。
 
 
-[![Defeated JavaScript 攻击](preventing-javascript-injection-attacks-cs/_static/image8.png)](preventing-javascript-injection-attacks-cs/_static/image7.png)
+[![大大降低的 JavaScript 攻击](preventing-javascript-injection-attacks-cs/_static/image8.png)](preventing-javascript-injection-attacks-cs/_static/image7.png)
 
 **图 03**:犬队击败 JavaScript 攻击 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-cs/_static/image9.png))
 

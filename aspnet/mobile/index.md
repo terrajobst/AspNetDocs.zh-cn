@@ -12,11 +12,11 @@ ms.openlocfilehash: 5f803209562d6d50bee4aa35306c8b01394237de
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387084"
 ---
 # <a name="mobile-apps--sites-with-aspnet"></a>移动应用和 asp.net 的站点
 
-- [移动电话](overview.md)
+- [移动](overview.md)
 - [经 ASP.NET 移动控件测试的设备](tested-devices.md)
 - [模拟常用移动设备进行测试](device-simulators.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 4850493e7a16aa9364396d1bbd3fe3e0db0f47db
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388096"
 ---
 # <a name="using-a-confirmbutton-in-a-repeater-vb"></a>在 Repeater 中使用 ConfirmButton (VB)
@@ -47,9 +47,9 @@ AJAX 控件工具包中的 ConfirmButton 扩展器创建答： 是/没有弹出�
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-vb/samples/sample3.aspx)]
 
 
-[![T他确认数据源的每个条目旁边的按钮显示](using-a-confirmbutton-in-a-repeater-vb/_static/image2.png)](using-a-confirmbutton-in-a-repeater-vb/_static/image1.png)
+[![数据源的每个项旁边显示确认按钮](using-a-confirmbutton-in-a-repeater-vb/_static/image2.png)](using-a-confirmbutton-in-a-repeater-vb/_static/image1.png)
 
 数据源的每个项旁边显示确认按钮 ([单击此项可查看原尺寸图像](using-a-confirmbutton-in-a-repeater-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](using-a-confirmbutton-in-a-repeater-cs.md)
+> [上一篇](using-a-confirmbutton-in-a-repeater-cs.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392347"
 ---
 # <a name="adding-validation-to-the-model"></a>向模型添加验证
@@ -61,11 +61,11 @@ ms.locfileid: "59392347"
 
 下面是在 IDE 中所示的代码。
 
-[![Movies-Microsoft Visual Web Developer 2010 速成版 (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![电影-Microsoft Visual Web Developer 2010 速成版 (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
 运行应用程序并再次，访问 /Movies/Create 并单击创建而无需输入任何数据。 错误消息会立即显示没有页面闪存，我们将与相关联发送数据的情况下按原路返回到服务器。 这是因为 ASP.NET MVC 现在验证的输入上 （使用 JavaScript） 的客户端和服务器上。
 
-[![Create - Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![创建的 Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
 这看起来不错 ！ 现在让我们添加一个附加列到数据库。
 

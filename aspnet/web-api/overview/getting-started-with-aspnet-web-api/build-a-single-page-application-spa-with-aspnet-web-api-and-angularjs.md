@@ -13,7 +13,7 @@ ms.openlocfilehash: 1f093e348216750cbadb6e52f524e5edd4d6c498
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390267"
 ---
 # <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)
@@ -108,7 +108,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
     ![创建新的项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image1.png "创建新的项目")
 
-    *创建新项目*
+    *创建新的项目*
 2. 在中**新的项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡。请确保 **.NET Framework 4.5**是所选，其命名*GeekQuiz*，选择**位置**然后单击**确定**。
 
     ![创建新的 ASP.NET Web 应用程序项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image2.png "创建新的 ASP.NET Web 应用程序项目")

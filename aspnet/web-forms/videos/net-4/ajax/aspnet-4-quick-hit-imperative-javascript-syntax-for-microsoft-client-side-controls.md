@@ -12,7 +12,7 @@ ms.openlocfilehash: 8e2aa1d2bbef02ddf26f252150121897383f1772
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391281"
 ---
 # <a name="aspnet-4-quick-hit---imperative-javascript-syntax-for-microsoft-client-side-controls"></a>ASP.NET 4"快速命中"的 Microsoft 客户端的命令性 JavaScript 语法控制
@@ -24,4 +24,4 @@ ms.locfileid: "59391281"
 [&#9654;观看视频 （10 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls)
 
 > [!div class="step-by-step"]
-> [下一步](aspnet-4-quick-hit-the-scriptloader.md)
+> [下一页](aspnet-4-quick-hit-the-scriptloader.md)

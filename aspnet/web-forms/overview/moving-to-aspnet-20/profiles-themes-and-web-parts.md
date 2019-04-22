@@ -12,7 +12,7 @@ ms.openlocfilehash: 0f3b376cee8d391eb087664a51cc25e3b58d16b9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390033"
 ---
 # <a name="profiles-themes-and-web-parts"></a>配置文件、主题和 Web 部件
@@ -93,13 +93,13 @@ ASP.NET 配置文件使用的提供程序模型。 默认提供程序将信息�
 
 ### <a name="providerbase-members"></a>ProviderBase 成员
 
-| **成员** | **描述** |
+| **成员** | **说明** |
 | --- | --- |
 | Initialize 方法 | 接受的输入提供程序实例的名称和配置设置的 NameValueCollection。 用于设置选项和提供程序实例，其中包括特定于实现的值和选项的计算机配置或 Web.config 文件中指定的属性值。 |
 
 ### <a name="settingsprovider-members"></a>SettingsProvider 成员
 
-| **成员** | **描述** |
+| **成员** | **说明** |
 | --- | --- |
 | 应用程序名称属性 | 与每个配置文件存储在应用程序名称。 配置文件提供程序使用的应用程序名称来存储单独的每个应用程序配置文件信息。 这使多个 ASP.NET 应用程序使用相同的数据源不发生冲突，如果在不同的应用程序中创建相同的用户名。 或者，多个 ASP.NET 应用程序可以共享配置文件数据源指定相同的应用程序名称。 |
 | GetPropertyValues 方法 | 将作为输入一 SettingsContext 和 SettingsPropertyCollection 对象。 **SettingsContext**提供了有关用户的信息。 可以使用作为主键的信息来检索用户的配置文件属性信息。 使用**SettingsContext**要获取的用户名以及用户是否已经过身份验证或匿名对象。 **SettingsPropertyCollection**包含 SettingsProperty 对象的集合。 每个**SettingsProperty**对象提供的名称和类型的属性以及其他信息，例如属性和属性是只读的默认值。 **GetPropertyValues**方法使用的基于 SettingsPropertyValue 对象填充 SettingsPropertyValueCollection **SettingsProperty**对象作为输入提供。 指定用户数据源中的值分配给 PropertyValue 属性为每个**SettingsPropertyValue**返回对象和整个集合。 调用该方法还 LastActivityDate 值更新指定的用户配置文件为当前日期和时间。 |
@@ -107,7 +107,7 @@ ASP.NET 配置文件使用的提供程序模型。 默认提供程序将信息�
 
 ### <a name="profileprovider-members"></a>ProfileProvider 成员
 
-| **成员** | **描述** |
+| **成员** | **说明** |
 | --- | --- |
 | DeleteProfiles 方法 | 将作为输入的用户的字符串数组名称，并从数据源的指定名称的所有配置文件信息和属性值中删除应用程序名称与匹配之处**ApplicationName**属性值。 如果您的数据源支持事务，建议在事务中包括所有删除操作和回滚事务，如果任何删除操作失败引发异常。 |
 | DeleteProfiles 方法 | 将作为输入的 ProfileInfo 集合对象，并从数据源中删除每个配置文件的所有配置文件信息和属性值的应用程序名称与匹配之处**ApplicationName**属性值。 如果您的数据源支持事务，建议的事务中包含所有删除操作和回滚事务并引发异常，如果任何删除操作失败。 |
@@ -305,7 +305,7 @@ Web 部件用户界面控件，所有这些派生**一部分**类中，包含 We
 
 Web 部件控件集很广泛，但某些控件至关重要，因为它们所需的 Web 部件正常工作，或因为它们是最常用的 Web 部件页上的控件。 在开始使用 Web 部件，并创建基本的 Web 部件页，最好先熟悉以下表中所述的基本 Web 部件控件。
 
-| **Web 部件控件** | **描述** |
+| **Web 部件控件** | **说明** |
 | --- | --- |
 | WebPartManager | 管理页面上的所有 Web 部件控件。 一个 （且只有一个） **WebPartManager**控件是所必需的每个 Web 部件页。 |
 | CatalogZone | 包含 CatalogPart 控件。 此区域用于创建用户可以从中选择要添加到页面的控件的 Web 部件控件目录。 |

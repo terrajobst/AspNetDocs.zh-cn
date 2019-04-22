@@ -12,7 +12,7 @@ ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387342"
 ---
 # <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET 网页简介-编程基础知识
@@ -354,7 +354,7 @@ GetHtml 方法还可以通过提供其他参数自定义映像。 下面的代�
 
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 Razor 语法进行 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 语法的 ASP.NET Web 编程简介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter 帮助程序](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

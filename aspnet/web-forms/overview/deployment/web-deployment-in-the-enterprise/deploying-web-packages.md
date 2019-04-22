@@ -12,7 +12,7 @@ ms.openlocfilehash: c42fa327c324ac2b721268c56782a24755ec7225
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391060"
 ---
 # <a name="deploying-web-packages"></a>部署 Web 程序包

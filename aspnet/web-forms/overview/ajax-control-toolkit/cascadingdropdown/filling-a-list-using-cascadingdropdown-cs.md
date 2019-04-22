@@ -12,7 +12,7 @@ ms.openlocfilehash: a9a3bf12b721c8f5eec21f3090142e40e74b0b9c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395636"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填充列表 (C#)
@@ -40,11 +40,11 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 
 对于此列表中，添加一个 CascadingDropDown 扩展程序。 它将发送的异步请求到 web 服务，这将返回的条目显示在列表中的列表。 为实现此目的，需要设置以下 CascadingDropDown 属性：
 
-- `ServicePath`:Web 服务，可提供的列表项的 URL
-- `ServiceMethod`:提供的列表项的 web 方法
-- `TargetControlID`:下拉列表的 ID
-- `Category`:提交到 web 方法调用时的类别信息
-- `PromptText`:以异步方式从服务器加载列表数据时显示的文本
+- `ServicePath`：Web 服务，可提供的列表项的 URL
+- `ServiceMethod`：提供的列表项的 web 方法
+- `TargetControlID`：下拉列表的 ID
+- `Category`：提交到 web 方法调用时的类别信息
+- `PromptText`：以异步方式从服务器加载列表数据时显示的文本
 
 下面是针对标记`CascadingDropDown`元素。 C# 和 VB 的唯一区别是关联的 web 服务的名称：
 
@@ -61,9 +61,9 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 正在加载页在浏览器中的将触发要填充与三个供应商的列表。
 
 
-[![T他列表自动填充](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
+[![列表已自动填充](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
 自动填充列表 ([单击此项可查看原尺寸图像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](using-cascadingdropdown-with-a-database-cs.md)
+> [下一页](using-cascadingdropdown-with-a-database-cs.md)

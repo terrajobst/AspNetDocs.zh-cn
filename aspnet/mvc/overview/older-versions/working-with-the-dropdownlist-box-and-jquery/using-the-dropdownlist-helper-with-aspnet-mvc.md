@@ -12,7 +12,7 @@ ms.openlocfilehash: 2a4d991205351531129480bee221651021483967
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396247"
 ---
 # <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>通过 ASP.NET MVC 使用 DropDownList 帮助程序
@@ -190,7 +190,7 @@ Starter 和已完成的示例项目附带本教程中包含所选择的插件。
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-在上面的代码中，我们要添加的 HTML 特性和特性值`class = "chzn-select"`。 \@字符前面的类具有与 Razor 视图引擎没有任何关系。 `class` 是[C#关键字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 C# 关键字不能用作标识符，除非它们包含\@作为前缀。 在上述示例中，`@class`是有效的标识符，但**类**不是因为**类**是一个关键字。
+在上面的代码中，我们要添加的 HTML 特性和特性值`class = "chzn-select"`。 \@字符前面的类具有与 Razor 视图引擎没有任何关系。 `class` 是[C# 关键字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 C# 关键字不能用作标识符，除非它们包含\@作为前缀。 在上述示例中，`@class`是有效的标识符，但**类**不是因为**类**是一个关键字。
 
 将引用添加到*Chosen/chosen.jquery.js*并*Chosen/chosen.css*文件。 *Chosen/chosen.jquery.js*并实现所选择的插件的功能上。 *Chosen/chosen.css*文件提供了样式。 这些将引用添加到底部*Views\Home\MultiSelectCountry.cshtml*文件。 下面的代码演示如何引用所选择的插件。
 
@@ -215,4 +215,4 @@ Starter 和已完成的示例项目附带本教程中包含所选择的插件。
 下一节中您将看到与 ASP.NET MVC 基架机制工作原理**DropDownList**帮助器。
 
 > [!div class="step-by-step"]
-> [下一步](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [下一页](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

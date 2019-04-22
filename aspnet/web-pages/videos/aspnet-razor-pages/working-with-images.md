@@ -12,7 +12,7 @@ ms.openlocfilehash: 09da6e57c524f4a1e9b9a97193dc83e7a2b5f61a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390787"
 ---
 # <a name="working-with-images"></a>使用图像

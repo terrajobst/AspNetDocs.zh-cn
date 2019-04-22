@@ -12,7 +12,7 @@ ms.openlocfilehash: 7c3d70c0d91478e0f62fa9e009733485f9d5ad7e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393999"
 ---
 # <a name="how-do-i-make-html-elements-accessible-from-server-side-code"></a>[如何实现:]使 HTML 元素可以从服务器端代码访问

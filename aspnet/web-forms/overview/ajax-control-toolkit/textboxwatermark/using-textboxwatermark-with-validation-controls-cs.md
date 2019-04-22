@@ -12,7 +12,7 @@ ms.openlocfilehash: f833868d9dbf51a9714b9bbe6730a24badc169d0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391008"
 ---
 # <a name="using-textboxwatermark-with-validation-controls-c"></a>通过验证控件使用 TextBoxWatermark (C#)
@@ -49,7 +49,7 @@ ms.locfileid: "59391008"
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-cs/samples/sample4.aspx)]
 
 
-[![T他验证程序错误报告的字段中没有的文本](using-textboxwatermark-with-validation-controls-cs/_static/image2.png)](using-textboxwatermark-with-validation-controls-cs/_static/image1.png)
+[![验证程序错误报告的字段中没有的文本](using-textboxwatermark-with-validation-controls-cs/_static/image2.png)](using-textboxwatermark-with-validation-controls-cs/_static/image1.png)
 
 验证程序错误报告的字段中没有的文本 ([单击此项可查看原尺寸图像](using-textboxwatermark-with-validation-controls-cs/_static/image3.png))
 

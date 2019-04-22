@@ -12,7 +12,7 @@ ms.openlocfilehash: 46c56eb012f08900ba8f3d10ce92868d0d4d02e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390254"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater"></a>使用 DataList 和 Repeater 显示数据

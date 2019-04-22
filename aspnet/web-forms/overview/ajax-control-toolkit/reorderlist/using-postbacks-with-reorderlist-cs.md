@@ -12,7 +12,7 @@ ms.openlocfilehash: 6f8f74b74080104980e1db866d695fe7c6d9d5fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393348"
 ---
 # <a name="using-postbacks-with-reorderlist-c"></a>通过 ReorderList 使用回发 (C#)
@@ -36,10 +36,10 @@ ms.locfileid: "59393348"
 
 若要将绑定到此 XML`ReorderList`必须设置控制和启用回发，以下属性：
 
-- `DataSourceID`:数据源的 ID
-- `SortOrderField`:要作为排序依据的属性
-- `AllowReorder`:是否允许用户重新排列列表元素
-- `PostBackOnReorder`:是否创建一个回发时重新排列列表
+- `DataSourceID`：数据源的 ID
+- `SortOrderField`：要作为排序依据的属性
+- `AllowReorder`：是否允许用户重新排列列表元素
+- `PostBackOnReorder`：是否创建一个回发时重新排列列表
 
 下面是控件的相应标记：
 
@@ -62,9 +62,9 @@ ms.locfileid: "59393348"
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 
 
-[![E支票重新排序触发回发](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
+[![每个重新排序触发回发](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
 
 每个重新排序触发回发 ([单击此项可查看原尺寸图像](using-postbacks-with-reorderlist-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](drag-and-drop-via-reorderlist-cs.md)
+> [下一页](drag-and-drop-via-reorderlist-cs.md)

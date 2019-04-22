@@ -12,7 +12,7 @@ ms.openlocfilehash: ebd49295ea165ba4ef1a25398cff7dddcfa54f11
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392191"
 ---
 # <a name="introducing-the-nerddinner-tutorial"></a>NerdDinner 教程简介
@@ -86,4 +86,4 @@ NerdDinner，已注册的用户可以创建、 编辑和删除 dinners。 它在
 我们将首先使用文件-&gt;Visual Studio 创建 NerdDinner 应用程序中的新项目。
 
 > [!div class="step-by-step"]
-> [下一步](create-a-new-aspnet-mvc-project.md)
+> [下一页](create-a-new-aspnet-mvc-project.md)

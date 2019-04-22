@@ -12,7 +12,7 @@ ms.openlocfilehash: 94c995ee1e636f1250efb3a90887d8d73badeca7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393634"
 ---
 # <a name="older-versions---web-forms-getting-started"></a>较旧版本的 Web 窗体入门
@@ -21,29 +21,29 @@ ms.locfileid: "59393634"
 
 - [ASP.NET 4 - Tailspin Spyworks](tailspin-spyworks/index.md)
 
-    - [第 1 部分：“文件”->“新建项目”](tailspin-spyworks/tailspin-spyworks-part-1.md)
+    - [第 1 部分：文件-> 新建项目](tailspin-spyworks/tailspin-spyworks-part-1.md)
     - [第 2 部分：数据访问层](tailspin-spyworks/tailspin-spyworks-part-2.md)
     - [第 3 部分：布局和类别菜单](tailspin-spyworks/tailspin-spyworks-part-3.md)
-    - [第 4 部分：列出产品](tailspin-spyworks/tailspin-spyworks-part-4.md)
+    - [第 4 部分：列出了所有产品](tailspin-spyworks/tailspin-spyworks-part-4.md)
     - [第 5 部分：业务逻辑](tailspin-spyworks/tailspin-spyworks-part-5.md)
-    - [第 6 部分：ASP.NET 成员身份](tailspin-spyworks/tailspin-spyworks-part-6.md)
+    - [第 6 部分：ASP.NET 成员资格](tailspin-spyworks/tailspin-spyworks-part-6.md)
     - [第 7 部分：添加功能](tailspin-spyworks/tailspin-spyworks-part-7.md)
-    - [第 8 部分：最终页面、异常处理和结论](tailspin-spyworks/tailspin-spyworks-part-8.md)
+    - [第 8 部分：最终页面、 异常处理和结论](tailspin-spyworks/tailspin-spyworks-part-8.md)
 - [ASP.NET 4 - Entity Framework 4 和 Web 窗体入门](getting-started-with-ef/index.md)
 
-    - [Entity Framework 4.0 Database First 入门](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 2 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 3 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 4 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 5 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 6 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 7 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7.md)
-    - [Entity Framework 4.0 Database First 入门 - 第 8 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
+    - [Entity Framework 4.0 数据库入门](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
+    - [Entity Framework 4.0 数据库入门 - 第 2 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md)
+    - [Entity Framework 4.0 数据库入门 - 第 3 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-3.md)
+    - [Entity Framework 4.0 数据库入门 - 第 4 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-4.md)
+    - [Entity Framework 4.0 数据库入门 - 第 5 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5.md)
+    - [Entity Framework 4.0 数据库入门 - 第 6 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6.md)
+    - [Entity Framework 4.0 数据库入门 - 第 7 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7.md)
+    - [Entity Framework 4.0 数据库入门 - 第 8 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
 - [ASP.NET 4 - 继续使用 Entity Framework 4 和 Web 窗体](continuing-with-ef/index.md)
 
-    - [Entity Framework 4.0 和 ObjectDataSource 控件，第 1 部分：入门](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-    - [Entity Framework 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-    - [Entity Framework 4.0 和 ObjectDataSource 控件，第 3 部分：排序与筛选](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+    - [实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+    - [实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+    - [实体框架 4.0 和 ObjectDataSource 控件，第 3 部分：排序和筛选](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
     - [在 ASP.NET 4 中使用 Entity Framework 4.0 处理并发](continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [在 ASP.NET 4 中使用 Entity Framework 4.0 实现性能最大化](continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [Entity Framework 4.0 的新增功能](continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -56,8 +56,8 @@ ms.locfileid: "59393634"
     - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 作为测试环境部署到 IIS](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)
     - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 设置文件夹权限](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
     - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署到生产环境](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
-    - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署仅代码更新](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
-    - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署数据库更新](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
+    - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署到仅代码更新](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+    - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署到数据库更新](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
     - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 迁移到 SQL Server](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md)
     - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署 SQL Server 数据库更新](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
     - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 疑难解答](deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)
@@ -93,7 +93,7 @@ ms.locfileid: "59393634"
     - [嵌套的母版页 (VB)](master-pages/nested-master-pages-vb.md)
 - [在 Visual Studio 2008 及更早版本中部署网站项目](deploying-web-site-projects/index.md)
 
-    - [ASP.NET 托管选项 (C#)](deploying-web-site-projects/asp-net-hosting-options-cs.md)
+    - [ASP.NET 承载选项 (C#)](deploying-web-site-projects/asp-net-hosting-options-cs.md)
     - [确定需要部署哪些文件 (C#)](deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs.md)
     - [使用 FTP 客户端部署站点 (C#)](deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs.md)
     - [使用 Visual Studio 部署站点 (C#)](deploying-web-site-projects/deploying-your-site-using-visual-studio-cs.md)
@@ -109,7 +109,7 @@ ms.locfileid: "59393634"
     - [ELMAH 的日志记录错误详细信息 (C#)](deploying-web-site-projects/logging-error-details-with-elmah-cs.md)
     - [预编译网站 (C#)](deploying-web-site-projects/precompiling-your-website-cs.md)
     - [生产网站的用户和角色 (C#)](deploying-web-site-projects/users-and-roles-on-the-production-website-cs.md)
-    - [ASP.NET 托管选项 (VB)](deploying-web-site-projects/asp-net-hosting-options-vb.md)
+    - [ASP.NET 承载选项 (VB)](deploying-web-site-projects/asp-net-hosting-options-vb.md)
     - [确定需要部署哪些文件 (VB)](deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb.md)
     - [使用 FTP 客户端部署站点 (VB)](deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb.md)
     - [使用 Visual Studio 部署站点 (VB)](deploying-web-site-projects/deploying-your-site-using-visual-studio-vb.md)

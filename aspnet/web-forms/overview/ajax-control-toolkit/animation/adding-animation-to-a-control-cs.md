@@ -12,7 +12,7 @@ ms.openlocfilehash: e4c6bfe1884d3e066c7b27e07e3a069943793bdd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392282"
 ---
 # <a name="adding-animation-to-a-control-c"></a>将动画添加到控件 (C#)
@@ -72,9 +72,9 @@ Framework 附带了动画，每个由其自己的 XML 元素表示一组。 下�
 当运行此脚本时，面板会显示，并在一个半秒内淡出。
 
 
-[![T他面板淡出](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
+[![在面板淡出](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
 
 在面板淡出 ([单击此项可查看原尺寸图像](adding-animation-to-a-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](executing-several-animations-at-the-same-time-cs.md)
+> [下一页](executing-several-animations-at-the-same-time-cs.md)

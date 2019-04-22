@@ -12,7 +12,7 @@ ms.openlocfilehash: 11e70493478d6810d63ba6b3ac813e32f03052eb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381323"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>了解 ASP.NET AJAX 本地化
@@ -32,13 +32,13 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 
 此白皮书基于在 Microsoft Visual Studio 2008 Beta 2 版本上。 本白皮书还假定你将使用 Visual Studio 2008 中，不 Visual Web Developer 速成版，并且将提供根据 Visual Studio 的用户界面的演练。 一些代码示例将使用可能是在 Visual Web Developer 速成版中不可用的项目模板。
 
-## *<a name="the-need-for-localization"></a>需要本地化*
+## <a name="the-need-for-localization"></a>*需要本地化*
 
 特别是对于企业应用程序开发人员和组件开发人员，创建可以随时了解区域性和语言之间的差异的工具的功能已成为越来越有必要。 设计组件能够适应客户端的区域设置提高了开发人员工作效率并减少组件的自适应的全局函数所需的工作量。
 
 本地化是设计并将对特定语言和区域性的支持集成到应用程序或应用程序组件的过程。 Microsoft ASP.NET 平台通过集成标准.NET 本地化模型; 为标准 ASP.NET 应用程序的本地化提供广泛支持Microsoft AJAX 框架利用集成的模型，以支持可在其中执行本地化的各种方案。 正在部署到附属程序集中，或使用静态文件系统结构，也可以使用 Microsoft AJAX 框架，本地化脚本。
 
-## *<a name="embedding-scripts-with-satellite-assemblies"></a>将脚本嵌入附属程序集*
+## <a name="embedding-scripts-with-satellite-assemblies"></a>*将脚本嵌入附属程序集*
 
 与标准.NET Framework 本地化策略保持一致，资源可以包含在附属程序集。 附属程序集提供几项优势通过传统的资源包含在二进制文件的任何给定的本地化可以更新而不更新可查看大图像，可以只需通过安装附属程序集到部署其他本地化信息项目文件夹和附属程序集可以部署而不会导致主项目程序集的重新加载。 特别是在 ASP.NET 项目中，此功能非常有用，它可以显著减少增量更新所使用的系统资源的数量和最小日志会中断生产网站使用情况。
 
@@ -118,7 +118,7 @@ Microsoft AJAX Framework 脚本管理支持在部署和测试的脚本中使用�
 
 请注意，在本演练中的多个变体。 例如，脚本不能注册使用 ScriptManager 控件以编程方式在页面加载过程。
 
-## *<a name="including-a-static-script-file-structure"></a>包括静态脚本文件结构*
+## <a name="including-a-static-script-file-structure"></a>*包括静态脚本文件结构*
 
 当使用静态脚本文件进行部署，您会失去一些使用固有的.NET 本地化方案的好处。 主要可见，则是你将失去包括脚本资源文件; 从生成的自动类型在上面的演练，例如，资源已公开由称为消息从 ScriptManager 控件自动生成类型。
 
@@ -128,7 +128,7 @@ Microsoft 建议避免通过自动在项目编译期间生成的脚本资源的�
 
 由于不是以声明方式包含的资源，应包含文件的静态脚本引用通过添加`<asp:ScriptElement>`元素作为子级`<Scripts>`标记的 ScriptManager 控件，或以编程方式添加`ScriptReference`对象向`Scripts`属性的`ScriptManager`在运行时页面上的控件。
 
-## *<a name="the-scriptmanager-and-its-role-in-localization"></a>ScriptManager 和本地化中的其角色*
+## <a name="the-scriptmanager-and-its-role-in-localization"></a>*ScriptManager 和本地化中的其角色*
 
 ScriptManager 使本地化的应用程序的多个自动行为：
 
@@ -146,7 +146,7 @@ ScriptManager 使本地化的应用程序的多个自动行为：
 
 .NET Framework 本质上支持的丰富本地化框架，利用附属程序集和 XML 资源 (.resx) 文件以提供统一的方法来查找资源字符串和图像。 ASP.NET AJAX 扩展，其中包括 Microsoft AJAX Framework 和 Microsoft AJAX 脚本库中，为提供支持这一编程模型到客户端代码中，启用简单的资源字符串查找。 只要文件名遵循给定的命名方案，附属程序集支持自动包含通过 ScriptResource.axd 脚本资源 （实际的.js 文件）。 利用此支持，ASP.NET AJAX Extensions 简化脚本的本地化和全球化应用程序。
 
-## *<a name="bio"></a>个人简介*
+## <a name="bio"></a>*Bio*
 
 Scott Cate 自 1997 年以来一直致力于 Microsoft Web 技术和 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 专门负责编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或他的博客[ScottCate.com](http://ScottCate.com)
 

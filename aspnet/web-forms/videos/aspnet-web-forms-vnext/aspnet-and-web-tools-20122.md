@@ -12,7 +12,7 @@ ms.openlocfilehash: 689606291575ef0a324ab64f4f34758fff0fde5a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388486"
 ---
 # <a name="aspnet-and-web-tools-20122"></a>ASP.NET 和 Web 工具 2012.2
@@ -24,4 +24,4 @@ ms.locfileid: "59388486"
 [&#9654;观看视频 （26 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-and-web-tools-20122)
 
 > [!div class="step-by-step"]
-> [上一个](getting-started-with-the-next-version-of-aspnet.md)
+> [上一篇](getting-started-with-the-next-version-of-aspnet.md)

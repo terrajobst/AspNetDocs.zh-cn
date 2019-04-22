@@ -12,7 +12,7 @@ ms.openlocfilehash: 0442b5e22e44e0767825026b26ad3da55777b962
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384261"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>使用 Web 服务后端创建数字增大/减小控件 (VB)
@@ -54,9 +54,9 @@ ASP.NET AJAX 控件工具包包含`NumericUpDown`扩展程序，其会自动添�
 如果运行该页面，请注意如何在文本框中的值始终加倍时单击上部的按钮，并单击低按钮时，减少了一半。
 
 
-[![Only 2 的幂的数字显示](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image1.png)
+[![出现是 2 的幂的数字](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image1.png)
 
 出现是 2 的幂的数字 ([单击此项可查看原尺寸图像](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)
+> [上一篇](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)

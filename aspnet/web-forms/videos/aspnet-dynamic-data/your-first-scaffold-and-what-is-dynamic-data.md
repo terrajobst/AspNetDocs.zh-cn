@@ -12,7 +12,7 @@ ms.openlocfilehash: e677707018375debd0f1542037a43e525498b247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389305"
 ---
 # <a name="your-first-scaffold-and-what-is-dynamic-data"></a>你的第一个基架和是动态的数据？
@@ -24,4 +24,4 @@ ms.locfileid: "59389305"
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/your-first-scaffold-and-what-is-dynamic-data)
 
 > [!div class="step-by-step"]
-> [下一步](how-do-i-enable-inline-gridview-editing.md)
+> [下一页](how-do-i-enable-inline-gridview-editing.md)

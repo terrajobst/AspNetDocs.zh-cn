@@ -12,7 +12,7 @@ ms.openlocfilehash: 05b014538891e6c058c4d4bd4125de434f59d9fe
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389682"
 ---
 # <a name="role-based-authorization-vb"></a>基于角色的授权 (VB)
@@ -47,7 +47,7 @@ ms.locfileid: "59389682"
 如果匿名用户访问该网站，既不`FormsAuthenticationModule`也不`RoleManagerModule`创建主体对象。
 
 
-[![T他通过身份验证用户时使用窗体身份验证和角色框架的 ASP.NET 管道事件](role-based-authorization-vb/_static/image2.png)](role-based-authorization-vb/_static/image1.png)
+[![身份验证的用户使用 Forms 身份验证和角色框架时 ASP.NET 管道事件](role-based-authorization-vb/_static/image2.png)](role-based-authorization-vb/_static/image1.png)
 
 **图 1**:ASP.NET 管道事件进行经过身份验证用户时使用窗体身份验证和角色框架 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image3.png))
 
@@ -59,7 +59,7 @@ ms.locfileid: "59389682"
 如果配置角色框架来缓存在 cookie 中，用户的角色`RoleManagerModule`在 ASP.NET 管道的过程中创建 cookie [ `EndRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.endrequest.aspx)。 中的后续请求中使用此 cookie `PostAuthenticateRequest`，这是当`RolePrincipal`创建对象。 如果 cookie 有效，并且未过期，cookie 中的数据分析和使用以填充用户的角色，这样可节省`RolePrincipal`无需调用`Roles`类来确定用户的角色。 图 2 描绘了此工作流。
 
 
-[![T他用户的角色信息可以存储在 Cookie 中提高性能](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
+[![用户的角色信息可以存储在 Cookie 来提高性能](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
 
 **图 2**:用户的角色的信息可以存储在 Cookie 中提高性能 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image6.png))
 
@@ -70,7 +70,7 @@ ms.locfileid: "59389682"
 > 表 1 中列出的配置设置指定生成的角色缓存 cookie 的属性。 对 cookie、 工作原理和它们的各种属性的详细信息，请阅读[此 Cookie 教程](http://www.quirksmode.org/js/cookies.html)。
 
 
-| <strong>属性</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>描述</strong>                                                                                                                                                                                                                                                                                                                                                          |
+| <strong>Property</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>说明</strong>                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   `cacheRolesInCookie`    |                                                                                                                                                                                                                                                                                                                              一个布尔值，该值指示是否使用 cookie 缓存。 默认为 `false`。                                                                                                                                                                                                                                                                                                                              |
 |       `cookieName`        |                                                                                                                                                                                                                                                                                                                                     角色缓存 cookie 的名称。 默认值是"。ASPXROLES"。                                                                                                                                                                                                                                                                                                                                     |
@@ -115,7 +115,7 @@ ms.locfileid: "59389682"
 若要完成此操作，首先添加`Web.config`文件为`Roles`文件夹。
 
 
-[![Add 角色目录的 Web.config 文件](role-based-authorization-vb/_static/image8.png)](role-based-authorization-vb/_static/image7.png)
+[![将 Web.config 文件添加到角色目录](role-based-authorization-vb/_static/image8.png)](role-based-authorization-vb/_static/image7.png)
 
 **图 3**:添加`Web.config`的文件`Roles`目录 ([单击以查看实际尺寸的图像](role-based-authorization-vb/_static/image9.png))
 
@@ -129,7 +129,7 @@ ms.locfileid: "59389682"
 保存到所做的更改后`Web.config`、 以不在管理员角色的用户身份登录，然后尝试访问其中一个受保护的页面。 `UrlAuthorizationModule`将检测到没有权限访问所请求的资源; 因此，`FormsAuthenticationModule`将重定向到登录页。 登录页将然后重定向到`UnauthorizedAccess.aspx`页面 （请参阅图 4）。 从登录页面到此最终重定向`UnauthorizedAccess.aspx`错误是由于我们添加到在步骤 2 中的登录页的代码导致<a id="_msoanchor_7"> </a> [*基于用户的授权*](../membership/user-based-authorization-vb.md)教程。 具体而言，登录页自动重定向到任何身份验证的用户`UnauthorizedAccess.aspx`如果在查询字符串包含`ReturnUrl`参数，作为此参数指示，用户转到登录页面后尝试查看他不是的页面查看权限。
 
 
-[![Only 管理员角色中的用户可以查看受保护的页](role-based-authorization-vb/_static/image11.png)](role-based-authorization-vb/_static/image10.png)
+[![只有管理员角色中的用户可以查看受保护的页面](role-based-authorization-vb/_static/image11.png)](role-based-authorization-vb/_static/image10.png)
 
 **图 4**:只有管理员角色中的用户可以查看受保护的页 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image12.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "59389682"
 注销，然后以管理员角色中的用户身份登录。 现在，应能够查看三个受保护的页面。
 
 
-[![T可以访问的 ito UsersAndRoles.aspx 页因为他是管理员角色中](role-based-authorization-vb/_static/image14.png)](role-based-authorization-vb/_static/image13.png)
+[![可以通过访问 Tito UsersAndRoles.aspx 页因为他是管理员角色中](role-based-authorization-vb/_static/image14.png)](role-based-authorization-vb/_static/image13.png)
 
 **图 5**:可以通过访问 Tito`UsersAndRoles.aspx`页因为他属于管理员角色 ([单击以查看实际尺寸的图像](role-based-authorization-vb/_static/image15.png))
 
@@ -167,7 +167,7 @@ ms.locfileid: "59389682"
 设置`HeaderText`"电子邮件"和"注释"两个 Templatefield 的属性。
 
 
-[![T他 GridView 字段可以是配置通过字段对话框](role-based-authorization-vb/_static/image17.png)](role-based-authorization-vb/_static/image16.png)
+[![可通过字段对话框配置 GridView 的字段](role-based-authorization-vb/_static/image17.png)](role-based-authorization-vb/_static/image16.png)
 
 **图 6**:GridView 的字段可以是配置通过字段对话框 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image18.png))
 
@@ -193,7 +193,7 @@ ms.locfileid: "59389682"
 利用此代码，请访问通过浏览器页面。 如图 7 所示，应会看到 GridView 列出系统中的每个用户帐户的相关信息。
 
 
-[![T他 UserGrid GridView 列出信息有关每个用户在系统中](role-based-authorization-vb/_static/image20.png)](role-based-authorization-vb/_static/image19.png)
+[![UserGrid GridView 列出系统中的每个用户的信息](role-based-authorization-vb/_static/image20.png)](role-based-authorization-vb/_static/image19.png)
 
 **图 7**:`UserGrid` GridView 列出信息有关每个系统中的用户 ([单击以查看实际尺寸的图像](role-based-authorization-vb/_static/image21.png))
 
@@ -239,7 +239,7 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 若要管理 RoleGroups，单击要打开 RoleGroup 集合编辑器的控件的智能标记中的"编辑 RoleGroups"链接。 添加两个新 RoleGroups。 设置第一个 RoleGroup`Roles`属性设置为"管理员"和"监督"到秒。
 
 
-[![M管理登录视图特定于角色的模板通过 RoleGroup 集合编辑器](role-based-authorization-vb/_static/image23.png)](role-based-authorization-vb/_static/image22.png)
+[![管理登录视图的特定于角色的模板通过 RoleGroup 集合编辑器](role-based-authorization-vb/_static/image23.png)](role-based-authorization-vb/_static/image22.png)
 
 **图 8**:管理登录视图的特定于角色的模板通过 RoleGroup 集合编辑器 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image24.png))
 
@@ -255,12 +255,12 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 接下来，以在监督器角色的成员的用户登录。 此时应会看到在监督器特定于角色的消息 （请参阅图 9）。 如果您以中应会看到特定于角色的管理员角色消息 （请参阅图 10） 的管理员的用户身份登录。
 
 
-[![Bruce 是显示在监督器特定于角色的消息](role-based-authorization-vb/_static/image26.png)](role-based-authorization-vb/_static/image25.png)
+[![Bruce 显示在监督器特定于角色的消息](role-based-authorization-vb/_static/image26.png)](role-based-authorization-vb/_static/image25.png)
 
 **图 9**:Bruce 显示在监督器特定于角色的消息 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image27.png))
 
 
-[![Tito 是显示管理员特定于角色的消息](role-based-authorization-vb/_static/image29.png)](role-based-authorization-vb/_static/image28.png)
+[![Tito 显示管理员特定于角色的消息](role-based-authorization-vb/_static/image29.png)](role-based-authorization-vb/_static/image28.png)
 
 **图 10**:Tito 显示管理员特定于角色的消息 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image30.png))
 
@@ -270,7 +270,7 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 图 11 说明了由 LoginView 控件用来确定哪些模板来呈现的工作流。 请注意，如果有多个 RoleGroup 指定，LoginView 模板用于呈现*第一个*RoleGroup 相匹配。 换而言之，如果我们必须放置在监督器 RoleGroup 作为第一个 RoleGroup 和第二个管理员，然后 Tito 访问此页时他会看到在监督器消息。
 
 
-[![T他 LoginView 控件的工作流，确定哪些模板呈现器](role-based-authorization-vb/_static/image32.png)](role-based-authorization-vb/_static/image31.png)
+[![用于确定哪个模板呈现 LoginView 控件的工作流](role-based-authorization-vb/_static/image32.png)](role-based-authorization-vb/_static/image31.png)
 
 **图 11**:LoginView 控件的工作流，确定哪些模板呈现器 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image33.png))
 
@@ -282,7 +282,7 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 若要以编程方式引用 CommandField 中的控件的最简单方法是首先将其转换为模板。 若要实现此目的，单击 GridView 的智能标记中的"编辑列"链接，从当前字段的列表中选择 CommandField 并单击"将此字段转换为 TemplateField"链接。 这将转换为 TemplateField CommandField`ItemTemplate`和`EditItemTemplate`。 `ItemTemplate`包含编辑和删除时的 Linkbutton`EditItemTemplate`存储更新和取消 Linkbutton。
 
 
-[![Convert TemplateField CommandField 到](role-based-authorization-vb/_static/image35.png)](role-based-authorization-vb/_static/image34.png)
+[![CommandField 转换为 TemplateField](role-based-authorization-vb/_static/image35.png)](role-based-authorization-vb/_static/image34.png)
 
 **图 12**:转换 TemplateField CommandField 到 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image36.png))
 
@@ -313,7 +313,7 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 > 可以隐藏 CommandField 完全时的非监督程序和非管理员为访问的页面。 我将此当作练习留给读者。
 
 
-[![T他编辑和删除按钮是隐藏非监督和非管理员](role-based-authorization-vb/_static/image38.png)](role-based-authorization-vb/_static/image37.png)
+[![编辑和删除按钮处于隐藏状态为非监督和非管理员](role-based-authorization-vb/_static/image38.png)](role-based-authorization-vb/_static/image37.png)
 
 **图 13**:编辑和删除按钮处于隐藏状态为非监督和非管理员 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image39.png))
 
@@ -321,7 +321,7 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 如果属于主管角色 （而不是属于管理员角色） 的用户访问，他会看到只有编辑按钮。
 
 
-[![W编辑按钮时是可用于在监督器中，删除按钮处于隐藏状态](role-based-authorization-vb/_static/image41.png)](role-based-authorization-vb/_static/image40.png)
+[![适用于在监督器编辑按钮时，删除按钮处于隐藏状态](role-based-authorization-vb/_static/image41.png)](role-based-authorization-vb/_static/image40.png)
 
 **图 14**:适用于在监督器编辑按钮时，删除按钮处于隐藏状态 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image42.png))
 
@@ -329,7 +329,7 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 如果管理员访问时，她有权编辑和删除按钮。
 
 
-[![T他编辑和删除按钮才可用管理员](role-based-authorization-vb/_static/image44.png)](role-based-authorization-vb/_static/image43.png)
+[![编辑和删除按钮才可用的管理员](role-based-authorization-vb/_static/image44.png)](role-based-authorization-vb/_static/image43.png)
 
 **图 15**:编辑和删除按钮才可用的管理员 ([单击此项可查看原尺寸图像](role-based-authorization-vb/_static/image45.png))
 
@@ -356,7 +356,7 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 如果由于某种原因，非管理员尝试执行`RowDeleting`事件处理程序或如果要执行非监督程序或非管理员尝试`RowUpdating`事件处理程序，.NET 运行时将引发`SecurityException`。
 
 
-[![If 未授权的安全上下文来执行此方法，则将引发 SecurityException](role-based-authorization-vb/_static/image47.png)](role-based-authorization-vb/_static/image46.png)
+[![如果未经授权的安全上下文来执行此方法，则将引发 SecurityException](role-based-authorization-vb/_static/image47.png)](role-based-authorization-vb/_static/image46.png)
 
 **图 16**:如果未经授权的安全上下文来执行此方法，`SecurityException`引发 ([单击以查看实际尺寸的图像](role-based-authorization-vb/_static/image48.png))
 
@@ -391,4 +391,4 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者包括 Suchi Banerjee 和 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一个](assigning-roles-to-users-vb.md)
+> [上一篇](assigning-roles-to-users-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f846e807309f3123db52b3053b9aa8d6aca81e6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394830"
 ---
 # <a name="whats-new-in-aspnet-mvc-2"></a>ASP.NET MVC 2 的新增功能
@@ -20,7 +20,7 @@ ms.locfileid: "59394830"
 > 本文档介绍新功能和改进在 ASP.NET MVC 2 中引入的。 本文档也是可用于[下载](https://download.microsoft.com/download/F/1/6/F16F9AF9-8EF4-4845-BC97-639791D5699C/WhatIsNewInMVC_2.pdf)
 
 
-[介绍](#_TOC1)   
+[简介](#_TOC1)   
 [将 ASP.NET MVC 1.0 项目升级到 ASP.NET MVC 2](#_TOC2)   
 [新增功能](#_TOC3)   
 [模板化帮助器](#_TOC3_1)   

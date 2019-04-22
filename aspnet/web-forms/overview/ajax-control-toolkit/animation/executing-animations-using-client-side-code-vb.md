@@ -12,7 +12,7 @@ ms.openlocfilehash: ff143aa102973279c53fe4ba052c4766f099c77d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382207"
 ---
 # <a name="executing-animations-using-client-side-code-vb"></a>使用客户端代码执行动画 (VB)
@@ -63,7 +63,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-html[Main](executing-animations-using-client-side-code-vb/samples/sample8.html)]
 
 
-[![T他动画运行时立即，鼠标单击不](executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)
+[![动画立即运行而无需单击鼠标](executing-animations-using-client-side-code-vb/_static/image2.png)](executing-animations-using-client-side-code-vb/_static/image1.png)
 
 动画立即运行不带鼠标单击 ([单击此项可查看原尺寸图像](executing-animations-using-client-side-code-vb/_static/image3.png))
 

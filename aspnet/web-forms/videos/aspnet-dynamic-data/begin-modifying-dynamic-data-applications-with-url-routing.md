@@ -12,7 +12,7 @@ ms.openlocfilehash: c3437e7f5200ece9766ec89d22a5c051cb17f13f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379230"
 ---
 # <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a>开始使用 URL 路由修改动态数据应用程序

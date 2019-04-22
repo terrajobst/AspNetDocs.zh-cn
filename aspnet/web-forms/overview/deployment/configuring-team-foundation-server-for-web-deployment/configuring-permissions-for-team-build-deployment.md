@@ -12,7 +12,7 @@ ms.openlocfilehash: 62e5c5622743447e1119141469c894dc905e6b43
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381050"
 ---
 # <a name="configuring-permissions-for-team-build-deployment"></a>配置团队生成部署权限
@@ -91,4 +91,4 @@ ms.locfileid: "59381050"
 有关配置 Windows server 环境，以支持远程部署的详细信息，请参阅[用于 Web 部署配置服务器环境](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)。
 
 > [!div class="step-by-step"]
-> [上一个](deploying-a-specific-build.md)
+> [上一篇](deploying-a-specific-build.md)

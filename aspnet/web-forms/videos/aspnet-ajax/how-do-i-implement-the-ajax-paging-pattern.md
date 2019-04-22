@@ -12,7 +12,7 @@ ms.openlocfilehash: a332d8114e26fc23797176daa31940fa840a30fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386237"
 ---
 # <a name="how-do-i-implement-the-ajax-paging-pattern"></a>[如何实现:]实现 AJAX 分页模式？

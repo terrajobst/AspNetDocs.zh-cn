@@ -12,7 +12,7 @@ ms.openlocfilehash: b75057f3128662a9bbdd641dc0a7c1ba09fbbe87
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388187"
 ---
 # <a name="creating-a-database"></a>创建数据库
@@ -32,11 +32,11 @@ ms.locfileid: "59388187"
 
 在添加连接对话框中，输入"。 \SQLEXPRESS"服务器名称，并输入"电影"作为新数据库的名称。
 
-[![Add 连接对话框](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
+[![添加连接对话框](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
 
 单击确定，并将你想要创建该数据库要求你。 选择是。
 
-[![C创建电影？](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
+[![创建电影？](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
 
 现在你已在服务器资源管理器中生成一个空数据库。
 
@@ -44,7 +44,7 @@ ms.locfileid: "59388187"
 
 右键单击表，然后单击添加表。 表设计器将显示。 添加 Id、 标题、 ReleaseDate、 Genre 和价格列。 右键单击 ID 列，然后单击设置 Primary Key。 下面是哪些我设计方面的问题如下所示。
 
-[![D数据库表编辑器](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
+[![数据库表编辑器](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
 
 此外，选择 Id 列，并在下面的列属性下更改"标识规范"为"是"。
 
@@ -52,11 +52,11 @@ ms.locfileid: "59388187"
 
 获得其完成后，单击工具栏中的保存图标，或选择文件 |从菜单中，保存并命名为您的表"**电影**"（单数）。 我们有一个数据库和表 ！
 
-[![C选择名称](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
+[![选择名称](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
 
 返回到服务器资源管理器和右键单击的 Movie 表，然后选择"显示表数据"。 输入几个电影，以便我们的数据库有一些数据。
 
-[![D编辑表的数据库](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
+[![数据库表格编辑](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
 
 ## <a name="creating-a-model"></a>创建模型
 
@@ -72,11 +72,11 @@ ms.locfileid: "59388187"
 
 在新弹出的对话框，从数据库中选择生成。 由于我们进行了数据库，我们只需要告诉我们新的数据库和其表的实体框架。 单击保存在我们的 web 应用程序的配置数据库连接下一步。 现在，检查表和电影复选框，并单击完成。
 
-[![E实体数据模型向导](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
+[![实体数据模型向导](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
 
 现在，我们可以看到我们新的 Movie 表中实体框架设计器，并从代码访问它。
 
-[![Movies-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
+[![电影-Microsoft Visual Web Developer 2010 速成版](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
 
 在设计图面上可以看到"Movie"类。 此类映射到在数据库中，"电影"表并在其中每个属性将映射到具有表的列。 "电影"类的每个实例将对应于"Movie"表中的行。
 
