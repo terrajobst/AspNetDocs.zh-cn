@@ -12,7 +12,7 @@ ms.openlocfilehash: c2dc613713747cef5ada2e44e2077fc36e7a2086
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399776"
 ---
 # <a name="performance"></a>性能
@@ -22,4 +22,4 @@ ms.locfileid: "59399776"
 
 - [选择性的视图状态](aspnet-4-quick-hit-selective-view-state.md)
 - [轻松的状态压缩](aspnet-4-quick-hit-easy-state-compression.md)
-- [使用 ViewStateMode 属性管理 ViewState](how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
+- [使用 ViewStateMode 属性管理视图状态](how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)

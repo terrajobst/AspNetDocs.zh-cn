@@ -12,7 +12,7 @@ ms.openlocfilehash: 1dadbdb6fa1dc58b855402f1d6f18e8af861f756
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399354"
 ---
 # <a name="enabling-signalr-tracing"></a>启用 SignalR 跟踪
@@ -64,7 +64,7 @@ ms.locfileid: "59399354"
 
 Server 事件类别包括以下类型的消息：
 
-| 源 | 消息 |
+| Source | 消息 |
 | --- | --- |
 | SignalR.SqlMessageBus | SQL 消息总线的扩展提供程序安装程序、 数据库操作、 错误和超时事件 |
 | SignalR.ServiceBusMessageBus | 服务总线的扩展提供程序主题创建和订阅、 错误和消息传送事件 |

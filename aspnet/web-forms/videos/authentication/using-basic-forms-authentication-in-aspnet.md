@@ -12,7 +12,7 @@ ms.openlocfilehash: aae53f1b9ab5676e41a4b7cfac45144b60ae56a4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397118"
 ---
 # <a name="using-basic-forms-authentication-in-aspnet"></a>在 ASP.NET 中使用基本 Forms 身份验证
@@ -24,4 +24,4 @@ Joe Stagner 演练利用基本窗体的过程基于以编程方式使用 ASP.NET
 [&#9654;观看视频 （23 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-basic-forms-authentication-in-aspnet)
 
 > [!div class="step-by-step"]
-> [下一步](how-to-change-the-forms-authentication-properties.md)
+> [下一页](how-to-change-the-forms-authentication-properties.md)

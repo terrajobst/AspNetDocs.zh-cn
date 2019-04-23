@@ -12,7 +12,7 @@ ms.openlocfilehash: 204611513860e268001596b9c7ac9e9c023caa12
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399848"
 ---
 # <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中显示视频
@@ -123,9 +123,9 @@ ms.locfileid: "59399848"
 
 您可以更改闪存视频播放特定大小使用`scale`参数，它可以为以下设置：
 
-- `showall`. 这将使整个视频可见同时保持原始纵横比。 但是，您可能会得到每侧的边框。
-- `noorder`. 这会在视频缩放同时保持原始纵横比，但它可能会裁剪。
-- `exactfit`. 这将使整个视频可见而无需保留原始纵横比，但会出现失真。
+- `showall`。 这将使整个视频可见同时保持原始纵横比。 但是，您可能会得到每侧的边框。
+- `noorder`。 这会在视频缩放同时保持原始纵横比，但它可能会裁剪。
+- `exactfit`。 这将使整个视频可见而无需保留原始纵横比，但会出现失真。
 
 如果未指定`scale`参数，将显示整个视频和原始纵横比会保留而无需任何剪切。 下面的示例演示如何使用`scale`参数：
 

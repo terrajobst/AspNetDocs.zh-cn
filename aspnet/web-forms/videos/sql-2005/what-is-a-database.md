@@ -12,7 +12,7 @@ ms.openlocfilehash: 019383897daeb7d8885ea4b9c3609e7f8ef9f827
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396663"
 ---
 # <a name="what-is-a-database"></a>数据库是什么？
@@ -24,4 +24,4 @@ by [Microsoft](https://github.com/microsoft)
 [&#9654;观看视频 （28 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-a-database)
 
 > [!div class="step-by-step"]
-> [下一步](understanding-database-tables-and-records.md)
+> [下一页](understanding-database-tables-and-records.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 90285eac8e45d542c4ccca3e3db00493546aac57
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398444"
 ---
 # <a name="aspnet-hosting-options-c"></a>ASP.NET 托管选项 (C#)
@@ -93,4 +93,4 @@ ASP.NET web 应用程序通常是设计、 创建，并在本地开发环境中�
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
 
 > [!div class="step-by-step"]
-> [下一步](determining-what-files-need-to-be-deployed-cs.md)
+> [下一页](determining-what-files-need-to-be-deployed-cs.md)

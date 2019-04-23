@@ -12,7 +12,7 @@ ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398678"
 ---
 # <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最终页面、异常处理和结论
@@ -79,4 +79,4 @@ ms.locfileid: "59398678"
 希望本教程提供若要开始构建你自己的 ASP.NET WebForms 应用程序所需的工具 ！
 
 > [!div class="step-by-step"]
-> [上一个](tailspin-spyworks-part-7.md)
+> [上一篇](tailspin-spyworks-part-7.md)

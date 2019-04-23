@@ -12,7 +12,7 @@ ms.openlocfilehash: 20de66ab773a9172fd8ae8ea713c361c289b944c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398535"
 ---
 # <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>检查 ASP.NET MVC 如何支持 DropDownList 帮助程序
@@ -99,7 +99,7 @@ HTML`<select>`元素 (由 HTML [DropDownList](https://msdn.microsoft.com/library
 
 可以使用[fiddler 工具](http://www.fiddler2.com/fiddler2/)若要检查的已发布的表单值的 ASP.NET MVC 模型绑定使用来创建唱片集对象。
 
-![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png).
+![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)。
 
 ### <a name="refactoring-the-viewbag-selectlist-creation"></a>重构 ViewBag SelectList 创建
 

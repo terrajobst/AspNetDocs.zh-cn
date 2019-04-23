@@ -12,7 +12,7 @@ ms.openlocfilehash: bb9ae940ba90620a6a4c2d373117635f80e14588
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397443"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 生成实际云应用
@@ -35,4 +35,4 @@ ms.locfileid: "59397443"
 - [分布式缓存](distributed-caching.md)
 - [以队列为中心的工作模式](queue-centric-work-pattern.md)
 - [更多模式和相关指南](more-patterns-and-guidance.md)
-- [附录：“Fix It”示例应用程序](the-fix-it-sample-application.md)
+- [附录：解决方法示例应用程序](the-fix-it-sample-application.md)

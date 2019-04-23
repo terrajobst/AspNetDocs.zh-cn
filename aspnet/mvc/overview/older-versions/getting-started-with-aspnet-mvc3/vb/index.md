@@ -12,7 +12,7 @@ ms.openlocfilehash: 9dbaf1cbf7eb89a47c1e7e388c4dc35b9900b97d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399107"
 ---
 # <a name="getting-started-with-aspnet-mvc-3-vbnet"></a>ASP.NET MVC 3 入门 (VB.NET)
@@ -26,6 +26,6 @@ ms.locfileid: "59399107"
 - [添加模型 (VB)](adding-a-model.md)
 - [从控制器访问模型的数据 (VB)](accessing-your-models-data-from-a-controller.md)
 - [检查 Edit 方法和编辑视图 (VB)](examining-the-edit-methods-and-edit-view.md)
-- [向电影模型和数据库表添加新字段 (VB)](adding-a-new-field.md)
+- [向电影模型和表添加新字段 (VB)](adding-a-new-field.md)
 - [向模型添加验证 (VB)](adding-validation-to-the-model.md)
 - [改进 Details 和 Delete 方法 (VB)](improving-the-details-and-delete-methods.md)

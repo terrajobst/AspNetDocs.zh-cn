@@ -12,7 +12,7 @@ ms.openlocfilehash: 51e3010f6e01434c495201af4af3bbdcde993da7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398431"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体
@@ -212,4 +212,4 @@ ms.locfileid: "59398431"
 你现在已创建网站、 数据库和数据模型。 在下一个演练中将开始处理数据使用的数据模型和 ASP.NET`EntityDataSource`控件。
 
 > [!div class="step-by-step"]
-> [下一步](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [下一页](the-entity-framework-and-aspnet-getting-started-part-2.md)

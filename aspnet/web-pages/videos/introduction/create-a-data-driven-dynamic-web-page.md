@@ -12,7 +12,7 @@ ms.openlocfilehash: 656a1d51629284fcea8a49d7d8914e4a8be63deb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398914"
 ---
 # <a name="create-a-data-driven-dynamic-web-page"></a>创建数据驱动型动态网页

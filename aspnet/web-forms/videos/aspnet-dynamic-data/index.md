@@ -12,7 +12,7 @@ ms.openlocfilehash: 11fca6096a1ada5df95971f2c77c8e72660ad864
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400147"
 ---
 # <a name="aspnet-dynamic-data"></a>ASP.NET 动态数据
@@ -27,7 +27,7 @@ ms.locfileid: "59400147"
 - [创建自定义页面](how-do-i-make-custom-pages.md)
 - [显示未知数据类型](how-do-i-display-unknown-datatypes.md)
 - [在 ListView 和 DetailsView 控件中使用 DynamicControl](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
-- [动态数据入门](getting-started-with-dynamic-data.md)
+- [开始使用动态数据](getting-started-with-dynamic-data.md)
 - [开始编辑 ASP.NET 动态数据应用程序中的模板](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
 - [开始使用 URL 路由修改动态数据应用程序](begin-modifying-dynamic-data-applications-with-url-routing.md)
 - [在 ASP.NET 动态数据应用程序中启用行内编辑](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)

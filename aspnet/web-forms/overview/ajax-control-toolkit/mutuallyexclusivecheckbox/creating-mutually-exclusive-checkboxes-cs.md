@@ -12,7 +12,7 @@ ms.openlocfilehash: 01d6d2988278d3d371d93b23bbdf089d83900405
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397846"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-c"></a>创建互斥复选框 (C#)
@@ -47,9 +47,9 @@ ASP.NET AJAX 控件工具包包含 MutuallyExclusiveCheckBox 扩展器。 这使
 保存并运行该页面：您可以选中和取消选中这两个复选框，但是在任何时间可以两个复选框进行检查。
 
 
-[![O可以一次选中 nly 一个复选框](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
+[![可以一次选中一个复选框](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
 
 可以一次选中一个复选框 ([单击此项可查看原尺寸图像](creating-mutually-exclusive-checkboxes-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](creating-mutually-exclusive-checkboxes-vb.md)
+> [下一页](creating-mutually-exclusive-checkboxes-vb.md)

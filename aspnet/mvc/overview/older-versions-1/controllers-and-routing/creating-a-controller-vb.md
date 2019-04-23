@@ -12,7 +12,7 @@ ms.openlocfilehash: 180b34e45ae97c64c82906c93aa647c4924d8539
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398099"
 ---
 # <a name="creating-a-controller-vb"></a>创建控制器 (VB)
@@ -29,12 +29,12 @@ ms.locfileid: "59398099"
 若要创建新的控制器的最简单方法是右键单击 Visual Studio 解决方案资源管理器窗口中的 Controllers 文件夹并选择**添加、 控制器**菜单选项 （请参阅图 1）。 选择此菜单选项将打开**添加控制器**对话框 （请参见图 2）。
 
 
-[![T他新建项目对话框中](creating-a-controller-vb/_static/image1.jpg)](creating-a-controller-vb/_static/image1.png)
+[![新建项目对话框](creating-a-controller-vb/_static/image1.jpg)](creating-a-controller-vb/_static/image1.png)
 
 **图 01**:添加新的控制器 ([单击此项可查看原尺寸图像](creating-a-controller-vb/_static/image2.png))
 
 
-[![T他新建项目对话框中](creating-a-controller-vb/_static/image2.jpg)](creating-a-controller-vb/_static/image3.png)
+[![新建项目对话框](creating-a-controller-vb/_static/image2.jpg)](creating-a-controller-vb/_static/image3.png)
 
 **图 02**:添加控制器对话框 ([单击此项可查看原尺寸图像](creating-a-controller-vb/_static/image4.png))
 
@@ -56,12 +56,12 @@ ms.locfileid: "59398099"
 当你创建一个控制器时，您可以选择自动生成创建、 更新和的详细信息的操作方法 （请参见图 3）。 如果选择此选项，则会生成代码清单 2 中的控制器类。
 
 
-[![C操作方法自动](creating-a-controller-vb/_static/image3.jpg)](creating-a-controller-vb/_static/image5.png)
+[![自动创建的操作方法](creating-a-controller-vb/_static/image3.jpg)](creating-a-controller-vb/_static/image5.png)
 
 **图 03**:自动创建的操作方法 ([单击此项可查看原尺寸图像](creating-a-controller-vb/_static/image6.png))
 
 
-**代码清单 2-Controllers\CustomerController.vb**
+**Listing 2 - Controllers\CustomerController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample2.vb)]
 
@@ -76,7 +76,7 @@ ASP.NET MVC 控制器是只是一个类。 如果您愿意，可以忽略方便 
 3. 修改生成的类文件，使类继承自基 system.web.mvc.controller 中衍生类 （请参阅代码清单 3）。
 
 
-[![C新类](creating-a-controller-vb/_static/image4.jpg)](creating-a-controller-vb/_static/image7.png)
+[![创建一个新类](creating-a-controller-vb/_static/image4.jpg)](creating-a-controller-vb/_static/image7.png)
 
 **图 04**:创建一个新类 ([单击此项可查看原尺寸图像](creating-a-controller-vb/_static/image8.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: fc819494ef58824d485144396e3a995d906c8b42
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398704"
 ---
 # <a name="validating-with-a-service-layer-vb"></a>使用服务层进行验证 (VB)
@@ -68,7 +68,7 @@ ms.locfileid: "59398704"
 
 在清单 5 的服务层进行了更新，以使其不再使用的模型状态。 相反，它使用的任何类都实现 IValidationDictionary 接口。
 
-**列表 5-Models\ProductService.vb （分离式）**
+**Listing 5 - Models\ProductService.vb (decoupled)**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 

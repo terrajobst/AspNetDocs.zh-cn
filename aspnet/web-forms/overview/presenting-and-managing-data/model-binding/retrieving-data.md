@@ -12,7 +12,7 @@ ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398470"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>检索和使用模型绑定和 web 窗体显示数据
@@ -217,4 +217,4 @@ Visual Studio 不仅具有正确签名的代码隐藏中创建一个方法，而
 在接下来[教程](updating-deleting-and-creating-data.md)在此系列中，则将启用更新、 删除和创建数据。
 
 > [!div class="step-by-step"]
-> [下一步](updating-deleting-and-creating-data.md)
+> [下一页](updating-deleting-and-creating-data.md)

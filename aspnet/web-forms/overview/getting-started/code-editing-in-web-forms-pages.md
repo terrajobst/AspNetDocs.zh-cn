@@ -12,7 +12,7 @@ ms.openlocfilehash: 328dc6fb61ac562131b11b36b40f574ca5a53866
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397365"
 ---
 # <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>在 Visual Studio 2013 中编辑 ASP.NET Web 窗体的代码
@@ -59,7 +59,7 @@ ms.locfileid: "59397365"
 3. 选择**模板** - &gt; **Visual C#**  - &gt; **Web**在左侧的模板组。
 4. 选择**ASP.NET Web 应用程序**在中心列中的模板。
 5. 将项目命名***BasicWebApp***然后单击**确定**按钮。   
-![“新建项目”对话框](code-editing-in-web-forms-pages/_static/image2.png)
+![新建项目对话框](code-editing-in-web-forms-pages/_static/image2.png)
 6. 接下来，选择**Web 窗体**模板，然后单击**确定**按钮创建项目。  
 ![新建 ASP.NET 项目对话框](code-editing-in-web-forms-pages/_static/image3.png)  
 
@@ -77,7 +77,7 @@ ms.locfileid: "59397365"
 1. 在中**解决方案资源管理器**，右键单击 Web 应用程序名称 (在本教程中的应用程序名称是**BasicWebSite**)，然后单击**添加** - &gt;**新项**。   
 随即出现“添加新项”对话框。
 2. 选择**Visual C#**  - &gt; **Web**在左侧的模板组。 然后，选择**Web 窗体**从中间列表并将其命名*FirstWebPage.aspx*。   
-    ![“添加新项”对话框](code-editing-in-web-forms-pages/_static/image4.png)
+    ![添加新项对话框](code-editing-in-web-forms-pages/_static/image4.png)
 3. 单击**添加**将 Web 窗体页添加到你的项目。  
  Visual Studio 创建新页面，并将其打开。
 4. 接下来，将此新的页设置为默认启动页。 在中**解决方案资源管理器**，右键单击名为的新页*FirstWebPage.aspx* ，然后选择**设为起始页**。 在下次运行此应用程序以测试我们的进度，将会自动看到此新页在浏览器中。
