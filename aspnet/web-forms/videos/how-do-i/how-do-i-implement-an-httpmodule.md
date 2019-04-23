@@ -12,13 +12,13 @@ ms.openlocfilehash: 3b1543812fc246f4641434732ebd7c35f5d08ede
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410469"
 ---
-# <a name="how-do-i-implement-an-httpmodule"></a><span data-ttu-id="c45bf-104">[如何实现:]实现 HttpModule？</span><span class="sxs-lookup"><span data-stu-id="c45bf-104">[How Do I:] Implement an HttpModule?</span></span>
+# <a name="how-do-i-implement-an-httpmodule"></a><span data-ttu-id="45005-104">[如何实现:]实现 HttpModule？</span><span class="sxs-lookup"><span data-stu-id="45005-104">[How Do I:] Implement an HttpModule?</span></span>
 
-<span data-ttu-id="c45bf-105">通过[中，Scott Golightly](https://github.com/scottgolightly)</span><span class="sxs-lookup"><span data-stu-id="c45bf-105">by [Scott Golightly](https://github.com/scottgolightly)</span></span>
+<span data-ttu-id="45005-105">通过[中，Scott Golightly](https://github.com/scottgolightly)</span><span class="sxs-lookup"><span data-stu-id="45005-105">by [Scott Golightly](https://github.com/scottgolightly)</span></span>
 
-<span data-ttu-id="c45bf-106">在此视频，Scott Golightly 说明如何实现简单的 http 模块的 BeginRequest 和 EndRequest 事件用于存储有关请求某些数据和更高版本向用户显示该数据。</span><span class="sxs-lookup"><span data-stu-id="c45bf-106">In this video Scott Golightly shows how to implement a simple HttpModule that uses the BeginRequest and EndRequest events to store some data about the request and later display that data to the user.</span></span> <span data-ttu-id="c45bf-107">Scott 还介绍如何在 Web.config 文件中注册该模块。</span><span class="sxs-lookup"><span data-stu-id="c45bf-107">Scott also shows how to register the module in the Web.config file.</span></span>
+<span data-ttu-id="45005-106">在此视频，Scott Golightly 说明如何实现简单的 http 模块的 BeginRequest 和 EndRequest 事件用于存储有关请求某些数据和更高版本向用户显示该数据。</span><span class="sxs-lookup"><span data-stu-id="45005-106">In this video Scott Golightly shows how to implement a simple HttpModule that uses the BeginRequest and EndRequest events to store some data about the request and later display that data to the user.</span></span> <span data-ttu-id="45005-107">Scott 还介绍如何在 Web.config 文件中注册该模块。</span><span class="sxs-lookup"><span data-stu-id="45005-107">Scott also shows how to register the module in the Web.config file.</span></span>
 
-[<span data-ttu-id="c45bf-108">&#9654;观看视频 （13 分钟）</span><span class="sxs-lookup"><span data-stu-id="c45bf-108">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-an-httpmodule)
+[<span data-ttu-id="45005-108">&#9654;观看视频 （13 分钟）</span><span class="sxs-lookup"><span data-stu-id="45005-108">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-an-httpmodule)

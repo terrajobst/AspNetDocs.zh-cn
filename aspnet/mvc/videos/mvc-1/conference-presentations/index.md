@@ -12,14 +12,14 @@ ms.openlocfilehash: 2e79c238f4cfa3d2bcf01105fdc1e3d6e55821b8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416709"
 ---
-# <a name="talks"></a><span data-ttu-id="15b1e-103">谈话</span><span class="sxs-lookup"><span data-stu-id="15b1e-103">Talks</span></span>
+# <a name="talks"></a><span data-ttu-id="faa57-103">谈话</span><span class="sxs-lookup"><span data-stu-id="faa57-103">Talks</span></span>
 
-> <span data-ttu-id="15b1e-104">ASP.NET MVC 1 访谈</span><span class="sxs-lookup"><span data-stu-id="15b1e-104">ASP.NET MVC 1 Talks</span></span>
+> <span data-ttu-id="faa57-104">ASP.NET MVC 1 访谈</span><span class="sxs-lookup"><span data-stu-id="faa57-104">ASP.NET MVC 1 Talks</span></span>
 
 
-- [<span data-ttu-id="15b1e-105">使用 Microsoft ASP.NET 模型视图控制器 (MVC) 创建 NerdDinner.com</span><span class="sxs-lookup"><span data-stu-id="15b1e-105">Creating NerdDinner.com with Microsoft ASP.NET Model View Controller (MVC)</span></span>](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
-- [<span data-ttu-id="15b1e-106">美国达人秀视图控制器框架</span><span class="sxs-lookup"><span data-stu-id="15b1e-106">America's Next Top Model View Controller Framework</span></span>](americas-next-top-model-view-controller-framework.md)
-- [<span data-ttu-id="15b1e-107">愤怒的忍者黑带技巧</span><span class="sxs-lookup"><span data-stu-id="15b1e-107">Ninja on Fire Black Belt Tips</span></span>](ninja-on-fire-black-belt-tips.md)
+- [<span data-ttu-id="faa57-105">使用 Microsoft ASP.NET 模型视图控制器创建 NerdDinner.com (MVC)</span><span class="sxs-lookup"><span data-stu-id="faa57-105">Creating NerdDinner.com with Microsoft ASP.NET Model View Controller (MVC)</span></span>](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
+- [<span data-ttu-id="faa57-106">美国达人秀视图控制器框架</span><span class="sxs-lookup"><span data-stu-id="faa57-106">America's Next Top Model View Controller Framework</span></span>](americas-next-top-model-view-controller-framework.md)
+- [<span data-ttu-id="faa57-107">愤怒的忍者黑带技巧</span><span class="sxs-lookup"><span data-stu-id="faa57-107">Ninja on Fire Black Belt Tips</span></span>](ninja-on-fire-black-belt-tips.md)

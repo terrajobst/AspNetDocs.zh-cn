@@ -12,13 +12,13 @@ ms.openlocfilehash: 04cea82af810f08e1d425fcbf3d3c2639fbc3775
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412042"
 ---
-# <a name="css"></a><span data-ttu-id="05bfc-103">CSS</span><span class="sxs-lookup"><span data-stu-id="05bfc-103">CSS</span></span>
+# <a name="css"></a><span data-ttu-id="53f0d-103">CSS</span><span class="sxs-lookup"><span data-stu-id="53f0d-103">CSS</span></span>
 
-<span data-ttu-id="05bfc-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="05bfc-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="53f0d-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="53f0d-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="05bfc-105">级联样式表是最新的 web 开发的必要组成部分，Visual Web Developer 2008 包含一系列功能强大的 CSS 构建工具，以帮助。</span><span class="sxs-lookup"><span data-stu-id="05bfc-105">Cascading Style Sheets are integral to modern web development and Visual Web Developer 2008 includes a collection of powerful CSS building facilities to help.</span></span> <span data-ttu-id="05bfc-106">在本视频中了解有关 VWD 的 CSS 编辑器、 生成器、 Manager 和 IntelliSense。</span><span class="sxs-lookup"><span data-stu-id="05bfc-106">In this video learn about VWD's CSS Editor, Builder, Manager, and IntelliSense.</span></span>
+<span data-ttu-id="53f0d-105">级联样式表是最新的 web 开发的必要组成部分，Visual Web Developer 2008 包含一系列功能强大的 CSS 构建工具，以帮助。</span><span class="sxs-lookup"><span data-stu-id="53f0d-105">Cascading Style Sheets are integral to modern web development and Visual Web Developer 2008 includes a collection of powerful CSS building facilities to help.</span></span> <span data-ttu-id="53f0d-106">在本视频中了解有关 VWD 的 CSS 编辑器、 生成器、 Manager 和 IntelliSense。</span><span class="sxs-lookup"><span data-stu-id="53f0d-106">In this video learn about VWD's CSS Editor, Builder, Manager, and IntelliSense.</span></span>
 
-[<span data-ttu-id="05bfc-107">&#9654;观看视频 （24 分钟）</span><span class="sxs-lookup"><span data-stu-id="05bfc-107">&#9654; Watch video (24 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/css)
+[<span data-ttu-id="53f0d-107">&#9654;观看视频 （24 分钟）</span><span class="sxs-lookup"><span data-stu-id="53f0d-107">&#9654; Watch video (24 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/css)

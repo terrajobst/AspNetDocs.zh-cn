@@ -12,18 +12,18 @@ ms.openlocfilehash: b0459517fdabef1c5abd6d50fb76ad145dcdfd8c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409429"
 ---
-# <a name="mvc2---template-customization"></a><span data-ttu-id="afc19-104">MVC2 - 模板自定义</span><span class="sxs-lookup"><span data-stu-id="afc19-104">MVC2 - Template Customization</span></span>
+# <a name="mvc2---template-customization"></a><span data-ttu-id="fcc16-104">MVC2 - 模板自定义</span><span class="sxs-lookup"><span data-stu-id="fcc16-104">MVC2 - Template Customization</span></span>
 
-<span data-ttu-id="afc19-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="afc19-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="fcc16-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="fcc16-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="afc19-106">在本视频中，您将了解 ASP.NET MVC 2 中的模板自定义功能。</span><span class="sxs-lookup"><span data-stu-id="afc19-106">In this video you will learn about the template customization features in ASP.NET MVC 2.</span></span> <span data-ttu-id="afc19-107">我们来看看 Html.EditorForModel，Html.DisplayForModel，模型模板自定义和自定义数据类型。</span><span class="sxs-lookup"><span data-stu-id="afc19-107">We'll look at Html.EditorForModel, Html.DisplayForModel, Model Template customization, and DataType customization.</span></span>
+<span data-ttu-id="fcc16-106">在本视频中，您将了解 ASP.NET MVC 2 中的模板自定义功能。</span><span class="sxs-lookup"><span data-stu-id="fcc16-106">In this video you will learn about the template customization features in ASP.NET MVC 2.</span></span> <span data-ttu-id="fcc16-107">我们来看看 Html.EditorForModel，Html.DisplayForModel，模型模板自定义和自定义数据类型。</span><span class="sxs-lookup"><span data-stu-id="fcc16-107">We'll look at Html.EditorForModel, Html.DisplayForModel, Model Template customization, and DataType customization.</span></span>
 
-[<span data-ttu-id="afc19-108">&#9654;观看视频 （3 分钟）</span><span class="sxs-lookup"><span data-stu-id="afc19-108">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc2-template-customization)
+[<span data-ttu-id="fcc16-108">&#9654;观看视频 （3 分钟）</span><span class="sxs-lookup"><span data-stu-id="fcc16-108">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc2-template-customization)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="afc19-109">[上一页](mvc2-model-validation.md)
-> [下一页](aspnet-mvc-2-areas.md)</span><span class="sxs-lookup"><span data-stu-id="afc19-109">[Previous](mvc2-model-validation.md)
+> <span data-ttu-id="fcc16-109">[上一页](mvc2-model-validation.md)
+> [下一页](aspnet-mvc-2-areas.md)</span><span class="sxs-lookup"><span data-stu-id="fcc16-109">[Previous](mvc2-model-validation.md)
 [Next](aspnet-mvc-2-areas.md)</span></span>

@@ -12,18 +12,18 @@ ms.openlocfilehash: 3eaf2a59188c041fbe801f30f81e691aba2060a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413511"
 ---
-# <a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a><span data-ttu-id="0b198-104">Visual Studio 2008 集成开发环境快速教程</span><span class="sxs-lookup"><span data-stu-id="0b198-104">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>
+# <a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a><span data-ttu-id="3606e-104">Visual Studio 2008 集成开发环境快速教程</span><span class="sxs-lookup"><span data-stu-id="3606e-104">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>
 
-<span data-ttu-id="0b198-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="0b198-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="3606e-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="3606e-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="0b198-106">转到在 Visual Studio 2008 IDE 新功能和更改的教程。</span><span class="sxs-lookup"><span data-stu-id="0b198-106">Take a tour of the new features and changes to the IDE in Visual Studio 2008.</span></span> <span data-ttu-id="0b198-107">请参阅更新的网页编辑器、 WPF 窗体设计器、 CSS 编辑器中，和的详细信息。</span><span class="sxs-lookup"><span data-stu-id="0b198-107">See the updated web page editor, WPF form designer, CSS editor, and more.</span></span>
+<span data-ttu-id="3606e-106">转到在 Visual Studio 2008 IDE 新功能和更改的教程。</span><span class="sxs-lookup"><span data-stu-id="3606e-106">Take a tour of the new features and changes to the IDE in Visual Studio 2008.</span></span> <span data-ttu-id="3606e-107">请参阅更新的网页编辑器、 WPF 窗体设计器、 CSS 编辑器中，和的详细信息。</span><span class="sxs-lookup"><span data-stu-id="3606e-107">See the updated web page editor, WPF form designer, CSS editor, and more.</span></span>
 
-[<span data-ttu-id="0b198-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="0b198-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/quick-tour-of-the-visual-studio-2008-integrated-development-environment)
+[<span data-ttu-id="3606e-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="3606e-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/quick-tour-of-the-visual-studio-2008-integrated-development-environment)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="0b198-109">[上一页](intellisense-for-jscript-and-aspnet-ajax.md)
-> [下一页](creating-and-modifying-a-css-file.md)</span><span class="sxs-lookup"><span data-stu-id="0b198-109">[Previous](intellisense-for-jscript-and-aspnet-ajax.md)
+> <span data-ttu-id="3606e-109">[上一页](intellisense-for-jscript-and-aspnet-ajax.md)
+> [下一页](creating-and-modifying-a-css-file.md)</span><span class="sxs-lookup"><span data-stu-id="3606e-109">[Previous](intellisense-for-jscript-and-aspnet-ajax.md)
 [Next](creating-and-modifying-a-css-file.md)</span></span>

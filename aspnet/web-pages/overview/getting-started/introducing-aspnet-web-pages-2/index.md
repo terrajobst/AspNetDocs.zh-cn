@@ -12,20 +12,20 @@ ms.openlocfilehash: 324a9d7b8666cbd387ff6ea17e9d341fe2f38423
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409618"
 ---
-# <a name="introducing-aspnet-web-pages"></a><span data-ttu-id="a20dd-103">ASP.NET 网页简介</span><span class="sxs-lookup"><span data-stu-id="a20dd-103">Introducing ASP.NET Web Pages</span></span>
+# <a name="introducing-aspnet-web-pages"></a><span data-ttu-id="aef71-103">ASP.NET 网页简介</span><span class="sxs-lookup"><span data-stu-id="aef71-103">Introducing ASP.NET Web Pages</span></span>
 
-> <span data-ttu-id="a20dd-104">ASP.NET Web Pages 2 简介</span><span class="sxs-lookup"><span data-stu-id="a20dd-104">Introducing ASP.NET Web Pages 2</span></span>
+> <span data-ttu-id="aef71-104">ASP.NET Web Pages 2 简介</span><span class="sxs-lookup"><span data-stu-id="aef71-104">Introducing ASP.NET Web Pages 2</span></span>
 
 
-- [<span data-ttu-id="a20dd-105">入门</span><span class="sxs-lookup"><span data-stu-id="a20dd-105">Getting Started</span></span>](getting-started.md)
-- [<span data-ttu-id="a20dd-106">编程基础知识</span><span class="sxs-lookup"><span data-stu-id="a20dd-106">Programming Basics</span></span>](intro-to-web-pages-programming.md)
-- [<span data-ttu-id="a20dd-107">显示数据</span><span class="sxs-lookup"><span data-stu-id="a20dd-107">Displaying Data</span></span>](displaying-data.md)
-- [<span data-ttu-id="a20dd-108">HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="a20dd-108">HTML Form Basics</span></span>](form-basics.md)
-- [<span data-ttu-id="a20dd-109">使用窗体输入数据库数据</span><span class="sxs-lookup"><span data-stu-id="a20dd-109">Entering Database Data by Using Forms</span></span>](entering-data.md)
-- [<span data-ttu-id="a20dd-110">更新数据库数据</span><span class="sxs-lookup"><span data-stu-id="a20dd-110">Updating Database Data</span></span>](updating-data.md)
-- [<span data-ttu-id="a20dd-111">删除数据库数据</span><span class="sxs-lookup"><span data-stu-id="a20dd-111">Deleting Database Data</span></span>](deleting-data.md)
-- [<span data-ttu-id="a20dd-112">创建一致布局</span><span class="sxs-lookup"><span data-stu-id="a20dd-112">Creating a Consistent Layout</span></span>](layouts.md)
-- [<span data-ttu-id="a20dd-113">使用 WebMatrix 发布站点</span><span class="sxs-lookup"><span data-stu-id="a20dd-113">Publishing a Site by Using WebMatrix</span></span>](publishing.md)
+- [<span data-ttu-id="aef71-105">入门</span><span class="sxs-lookup"><span data-stu-id="aef71-105">Getting Started</span></span>](getting-started.md)
+- [<span data-ttu-id="aef71-106">编程基础知识</span><span class="sxs-lookup"><span data-stu-id="aef71-106">Programming Basics</span></span>](intro-to-web-pages-programming.md)
+- [<span data-ttu-id="aef71-107">显示数据</span><span class="sxs-lookup"><span data-stu-id="aef71-107">Displaying Data</span></span>](displaying-data.md)
+- [<span data-ttu-id="aef71-108">HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="aef71-108">HTML Form Basics</span></span>](form-basics.md)
+- [<span data-ttu-id="aef71-109">使用窗体输入数据库数据</span><span class="sxs-lookup"><span data-stu-id="aef71-109">Entering Database Data by Using Forms</span></span>](entering-data.md)
+- [<span data-ttu-id="aef71-110">更新数据库数据</span><span class="sxs-lookup"><span data-stu-id="aef71-110">Updating Database Data</span></span>](updating-data.md)
+- [<span data-ttu-id="aef71-111">删除数据库数据</span><span class="sxs-lookup"><span data-stu-id="aef71-111">Deleting Database Data</span></span>](deleting-data.md)
+- [<span data-ttu-id="aef71-112">创建一致布局</span><span class="sxs-lookup"><span data-stu-id="aef71-112">Creating a Consistent Layout</span></span>](layouts.md)
+- [<span data-ttu-id="aef71-113">使用 WebMatrix 发布站点</span><span class="sxs-lookup"><span data-stu-id="aef71-113">Publishing a Site by Using WebMatrix</span></span>](publishing.md)

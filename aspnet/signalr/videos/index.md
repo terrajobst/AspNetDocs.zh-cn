@@ -12,11 +12,11 @@ ms.openlocfilehash: fa8fbdd7ed83f2953bf2dd1b8799fed51587d338
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418711"
 ---
-# <a name="aspnet-signalr-videos"></a><span data-ttu-id="63177-102">ASP.NET SignalR 视频</span><span class="sxs-lookup"><span data-stu-id="63177-102">ASP.NET SignalR Videos</span></span>
+# <a name="aspnet-signalr-videos"></a><span data-ttu-id="cb99c-102">ASP.NET SignalR 视频</span><span class="sxs-lookup"><span data-stu-id="cb99c-102">ASP.NET SignalR Videos</span></span>
 
-- [<span data-ttu-id="63177-103">ASP.NET SignalR 视频</span><span class="sxs-lookup"><span data-stu-id="63177-103">ASP.NET SignalR Videos</span></span>](getting-started/index.md)
+- [<span data-ttu-id="cb99c-103">ASP.NET SignalR 视频</span><span class="sxs-lookup"><span data-stu-id="cb99c-103">ASP.NET SignalR Videos</span></span>](getting-started/index.md)
 
-    - [<span data-ttu-id="63177-104">SignalR 和 Web 套接字</span><span class="sxs-lookup"><span data-stu-id="63177-104">SignalR and Web Sockets</span></span>](getting-started/signalr-and-web-sockets.md)
+    - [<span data-ttu-id="cb99c-104">SignalR 和 Web 套接字</span><span class="sxs-lookup"><span data-stu-id="cb99c-104">SignalR and Web Sockets</span></span>](getting-started/signalr-and-web-sockets.md)

@@ -12,13 +12,13 @@ ms.openlocfilehash: 496c520163e75ca6a0e017e2459daa025f33f481
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412614"
 ---
-# <a name="how-do-i-set-up-the-sql-membership-provider"></a><span data-ttu-id="2fa14-104">[如何实现:]设置 SQL 成员资格提供程序</span><span class="sxs-lookup"><span data-stu-id="2fa14-104">[How Do I:] Set Up the SQL Membership Provider</span></span>
+# <a name="how-do-i-set-up-the-sql-membership-provider"></a><span data-ttu-id="d66d3-104">[如何实现:]设置 SQL 成员资格提供程序</span><span class="sxs-lookup"><span data-stu-id="d66d3-104">[How Do I:] Set Up the SQL Membership Provider</span></span>
 
-<span data-ttu-id="2fa14-105">通过[Patrick Hynds](https://twitter.com/patrickhynds)</span><span class="sxs-lookup"><span data-stu-id="2fa14-105">by [Patrick Hynds](https://twitter.com/patrickhynds)</span></span>
+<span data-ttu-id="d66d3-105">通过[Patrick Hynds](https://twitter.com/patrickhynds)</span><span class="sxs-lookup"><span data-stu-id="d66d3-105">by [Patrick Hynds](https://twitter.com/patrickhynds)</span></span>
 
-<span data-ttu-id="2fa14-106">加入 Patrick Hynds 他演示了如何设置 SQL 成员资格提供程序以将窗体身份验证添加到 ASP.NET 2.0 Web 站点。</span><span class="sxs-lookup"><span data-stu-id="2fa14-106">Join Patrick Hynds as he demonstrates how to set up the SQL Membership Provider to add Forms authentication to your ASP.NET 2.0 Web site.</span></span> <span data-ttu-id="2fa14-107">有几个提示和技巧相关，例如，使用 aspnet\_regsql.exe 实用程序，该视频中介绍。</span><span class="sxs-lookup"><span data-stu-id="2fa14-107">There are a few tips and tricks involved, such as using the aspnet\_regsql.exe utility, which are covered in the video.</span></span>
+<span data-ttu-id="d66d3-106">加入 Patrick Hynds 他演示了如何设置 SQL 成员资格提供程序以将窗体身份验证添加到 ASP.NET 2.0 Web 站点。</span><span class="sxs-lookup"><span data-stu-id="d66d3-106">Join Patrick Hynds as he demonstrates how to set up the SQL Membership Provider to add Forms authentication to your ASP.NET 2.0 Web site.</span></span> <span data-ttu-id="d66d3-107">有几个提示和技巧相关，例如，使用 aspnet\_regsql.exe 实用程序，该视频中介绍。</span><span class="sxs-lookup"><span data-stu-id="d66d3-107">There are a few tips and tricks involved, such as using the aspnet\_regsql.exe utility, which are covered in the video.</span></span>
 
-[<span data-ttu-id="2fa14-108">&#9654;观看视频 （9 分钟）</span><span class="sxs-lookup"><span data-stu-id="2fa14-108">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-set-up-the-sql-membership-provider)
+[<span data-ttu-id="d66d3-108">&#9654;观看视频 （9 分钟）</span><span class="sxs-lookup"><span data-stu-id="d66d3-108">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-set-up-the-sql-membership-provider)

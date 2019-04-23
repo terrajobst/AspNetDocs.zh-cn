@@ -12,18 +12,18 @@ ms.openlocfilehash: be4edd63e7f4a19a1101ad5cabd9bf810df47e5e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417905"
 ---
-# <a name="aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design"></a><span data-ttu-id="21820-104">ASP.NET MVC 店面第 23 部分：域驱动设计入门</span><span class="sxs-lookup"><span data-stu-id="21820-104">ASP.NET MVC Storefront Part 23: Getting Started With Domain-Driven Design</span></span>
+# <a name="aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design"></a><span data-ttu-id="c8801-104">ASP.NET MVC 店面第 23 部分：域驱动设计入门</span><span class="sxs-lookup"><span data-stu-id="c8801-104">ASP.NET MVC Storefront Part 23: Getting Started With Domain-Driven Design</span></span>
 
-<span data-ttu-id="21820-105">通过[Rob conery 专攻](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="21820-105">by [Rob Conery](https://github.com/robconery)</span></span>
+<span data-ttu-id="c8801-105">通过[Rob conery 专攻](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="c8801-105">by [Rob Conery](https://github.com/robconery)</span></span>
 
-<span data-ttu-id="21820-106">我不喜欢到我的应用程序变得稍微有些复杂。</span><span class="sxs-lookup"><span data-stu-id="21820-106">I don't like the complexity that's crept into my application.</span></span> <span data-ttu-id="21820-107">不确定有其他方法为-但需要使我在本集中解决上使用域驱动设计 (DDD) 此复杂性 head 有点动摇体系结构。</span><span class="sxs-lookup"><span data-stu-id="21820-107">Not sure how else to put it - but the architecture needs to be shaken a bit so in this episode I tackle this complexity head on using Domain-Driven Design (DDD).</span></span>
+<span data-ttu-id="c8801-106">我不喜欢到我的应用程序变得稍微有些复杂。</span><span class="sxs-lookup"><span data-stu-id="c8801-106">I don't like the complexity that's crept into my application.</span></span> <span data-ttu-id="c8801-107">不确定有其他方法为-但需要使我在本集中解决上使用域驱动设计 (DDD) 此复杂性 head 有点动摇体系结构。</span><span class="sxs-lookup"><span data-stu-id="c8801-107">Not sure how else to put it - but the architecture needs to be shaken a bit so in this episode I tackle this complexity head on using Domain-Driven Design (DDD).</span></span>
 
-[<span data-ttu-id="21820-108">&#9654;观看视频 （46 分钟）</span><span class="sxs-lookup"><span data-stu-id="21820-108">&#9654; Watch video (46 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design)
+[<span data-ttu-id="c8801-108">&#9654;观看视频 （46 分钟）</span><span class="sxs-lookup"><span data-stu-id="c8801-108">&#9654; Watch video (46 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="21820-109">[上一页](aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
-> [下一页](aspnet-mvc-storefront-part-24-finis.md)</span><span class="sxs-lookup"><span data-stu-id="21820-109">[Previous](aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
+> <span data-ttu-id="c8801-109">[上一页](aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
+> [下一页](aspnet-mvc-storefront-part-24-finis.md)</span><span class="sxs-lookup"><span data-stu-id="c8801-109">[Previous](aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
 [Next](aspnet-mvc-storefront-part-24-finis.md)</span></span>
