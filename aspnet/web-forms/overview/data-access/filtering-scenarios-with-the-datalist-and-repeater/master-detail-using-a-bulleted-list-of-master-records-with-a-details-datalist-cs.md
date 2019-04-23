@@ -12,7 +12,7 @@ ms.openlocfilehash: d5c881592140bdf73f25fa620d58213cc283153d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412029"
 ---
 # <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a>通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (C#)
@@ -31,7 +31,7 @@ ms.locfileid: "59412029"
 在本教程中我们将压缩两页教程到单个页面，每个类别名称作为 LinkButton 呈现在屏幕的左侧显示类别名称的项目符号列表。 单击其中一个类别名称 Linkbutton 引发回发，并将所选的类别的产品绑定到屏幕的右侧两列 DataList。 除了显示每个类别的名称，在左侧 Repeater 显示有多少总产品是给定的类别 （请参阅图 1）。
 
 
-[![T在左侧显示他类别的名称和产品的总计数](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image2.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image1.png)
+[![在左侧显示的类别名称和产品的总计数](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image2.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image1.png)
 
 **图 1**:在左侧显示的类别名称和产品的总数量 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ ms.locfileid: "59412029"
 添加 CSS 类和配置中的标记后`CategoriesAndProducts.aspx`页上，转到设计器。 应会看到 Repeater 浮点到左侧的 DataList （尽管右现在这两项只是出现如以来我们 ve 尚未若要配置其数据源或模板灰色框）。
 
 
-[![T向 DataList 左浮动他 Repeater](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image5.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image4.png)
+[![向 DataList 左浮动 Repeater](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image5.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image4.png)
 
 **图 2**:向 DataList 左浮动 Repeater ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image6.png))
 
@@ -81,7 +81,7 @@ Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将�
 确定对于 Repeater s 中的每个类别的产品数量`ItemDataBound`事件处理程序不需要对现有数据访问层进行任何修改。 可以直接在进行所有修改`CategoriesAndProducts.aspx`页。 首先，通过添加名为新 ObjectDataSource`CategoriesDataSource`通过 Repeater s 智能标记。 接下来，配置`CategoriesDataSource`以便其检索从其数据的 ObjectDataSource`CategoriesBLL`类的`GetCategories()`方法。
 
 
-[![C配置对象数据源以使用 CategoriesBLL 类的 GetCategories() 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image8.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image7.png)
+[![配置对象数据源以使用 CategoriesBLL 类的 GetCategories() 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image8.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image7.png)
 
 **图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories()`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image9.png))
 
@@ -122,7 +122,7 @@ Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将�
 添加后此事件处理程序，请花费片刻时间来测试通过浏览器页面。 请注意如何在项目符号列表中，显示类别的名称和与类别关联的产品数列出每个类别 （请参阅图 4）。
 
 
-[![E显示支票类别名称和产品数](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image11.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image10.png)
+[![显示每个类别名称和数量的产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image11.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image10.png)
 
 **图 4**:显示每个类别名称和数量的产品 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image12.png))
 
@@ -132,7 +132,7 @@ Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将�
 而不是确定的每个类别的产品数 s 绑定到 Repeater 中，我们可以简化此过程通过调整`CategoriesDataTable`和`CategoriesTableAdapter`中数据访问层为本机包含此信息。 若要实现此目的，我们必须添加到一个新列`CategoriesDataTable`来保存关联的产品数量。 若要将新列添加到数据表中，打开类型化数据集 (`App_Code\DAL\Northwind.xsd`)，右键单击 DataTable，若要修改，然后选择添加 / 列。 添加到一个新列`CategoriesDataTable`（请参见图 5）。
 
 
-[![Add CategoriesDataSource 到一个新列](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image14.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image13.png)
+[![将新列添加到 CategoriesDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image14.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image13.png)
 
 **图 5**:添加到一个新列`CategoriesDataSource`([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image15.png))
 
@@ -150,12 +150,12 @@ Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将�
 若要添加此新`GetCategoriesAndNumberOfProducts()`方法中，右键单击`CategoriesTableAdapter`，然后选择新查询。 此时将显示最多 TableAdapter 查询配置向导中，哪些我们已在前面的教程中多次使用。 此方法，该值指示该查询使用返回的行的临时 SQL 语句启动向导。
 
 
-[![Create 方法使用临时 SQL 语句](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image18.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image17.png)
+[![创建使用的临时 SQL 语句的方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image18.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image17.png)
 
 **图 7**:创建方法使用一个临时 SQL 语句 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image19.png))
 
 
-[![T他 SQL 语句返回行](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image21.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image20.png)
+[![SQL 语句返回的行](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image21.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image20.png)
 
 **图 8**:SQL 语句返回行 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image22.png))
 
@@ -166,7 +166,7 @@ Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将�
 [!code-sql[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample7.sql)]
 
 
-[![S指定将查询与使用](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image24.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image23.png)
+[![指定要使用的查询](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image24.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image23.png)
 
 **图 9**:指定要使用的查询 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image25.png))
 
@@ -176,7 +176,7 @@ Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将�
 输入此查询后, 的最后一步是选择新的方法的名称。 使用`FillWithNumberOfProducts`和`GetCategoriesAndNumberOfProducts`填充 DataTable 并返回数据表模式，分别。
 
 
-[![N\ 名称的新的 TableAdapter s 方法 FillWithNumberOfProducts 和 GetCategoriesAndNumberOfProducts](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image27.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image26.png)
+[![新的 TableAdapter 的方法 FillWithNumberOfProducts 名称和 GetCategoriesAndNumberOfProducts](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image27.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image26.png)
 
 **图 10**:命名新的 TableAdapter s 方法`FillWithNumberOfProducts`并`GetCategoriesAndNumberOfProducts`([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image28.png))
 
@@ -191,7 +191,7 @@ DAL 和 BLL 完成后，我们重新准备要绑定到此数据`Categories`Repea
 返回在其原始状态 Repeater，添加名为新 ObjectDataSource`CategoriesDataSource`通过 Repeater s 智能标记。 配置要使用 ObjectDataSource`CategoriesBLL`类，而不是让它使用，但`GetCategories()`方法中，具有其使用`GetCategoriesAndNumberOfProducts()`改为 （请参阅图 11）。
 
 
-[![C配置对象数据源使用 GetCategoriesAndNumberOfProducts 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image30.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image29.png)
+[![配置对象数据源使用 GetCategoriesAndNumberOfProducts 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image30.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image29.png)
 
 **图 11**:配置为使用 ObjectDataSource`GetCategoriesAndNumberOfProducts`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image31.png))
 
@@ -218,7 +218,7 @@ DAL 和 BLL 完成后，我们重新准备要绑定到此数据`Categories`Repea
 通过 DataList s 智能标记，选择要添加名为新 ObjectDataSource`CategoryProductsDataSource`并将其配置为使用`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 在本教程中 DataList 提供了一个只读的接口，因为随意设置下拉列表中插入、 更新、 以及删除选项卡添加到 （无）。
 
 
-[![C配置为使用 ProductsBLL 类的 GetProductsByCategoryID(categoryID) 方法 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image33.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image32.png)
+[![配置对象数据源使用 ProductsBLL 类的 GetProductsByCategoryID(categoryID) 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image33.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image32.png)
 
 **图 12**:配置为使用 ObjectDataSource`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image34.png))
 
@@ -228,7 +228,7 @@ DAL 和 BLL 完成后，我们重新准备要绑定到此数据`Categories`Repea
 现在，为无设置参数源下拉列表。 我们将得到以编程方式指定此参数值时中继器中单击 LinkButton 的类别。
 
 
-[![Do 不指定参数源的 categoryID 参数](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
+[![执行不指定参数的 categoryID 参数源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
 
 **图 13**:为未指定参数源*`categoryID`* 参数 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
 
@@ -263,12 +263,12 @@ DAL 和 BLL 完成后，我们重新准备要绑定到此数据`Categories`Repea
 使用这些新功能，在本教程中已完成 ！ 请花费片刻时间进行测试的浏览器中。 图 14 显示了在屏幕首次访问页面时。 由于类别具有尚未被选中，将不显示任何产品。 单击一个类别，如生成，显示这些产品的产品类别中的两个列视图 （请参阅图 15）。
 
 
-[![No 产品的显示时首次访问页面](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image39.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image38.png)
+[![无产品的显示时第一个访问的页面](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image39.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image38.png)
 
 **图 14**:无产品的显示时第一个访问的页面 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image40.png))
 
 
-[![C单击的生成类别列表右侧的匹配产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image42.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image41.png)
+[![单击生成类别列表右侧的匹配产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image42.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image41.png)
 
 **图 15**:单击生成类别列出右侧的匹配产品 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image43.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: dde3d60f82bb5f32fdd8b6b5cf8a0e1accebd1a7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408922"
 ---
 # <a name="databinding-to-an-accordion-vb"></a>数据绑定到 Accordion (VB)
@@ -59,7 +59,7 @@ AJAX 控件工具包中的可折叠面板控件提供了多个窗格，并允许
 [!code-css[Main](databinding-to-an-accordion-vb/samples/sample6.css)]
 
 
-[![T他可折叠面板中的数据直接来自数据源](databinding-to-an-accordion-vb/_static/image2.png)](databinding-to-an-accordion-vb/_static/image1.png)
+[![可折叠面板中的数据直接来自数据源](databinding-to-an-accordion-vb/_static/image2.png)](databinding-to-an-accordion-vb/_static/image1.png)
 
 可折叠面板中的数据直接来自数据源 ([单击此项可查看原尺寸图像](databinding-to-an-accordion-vb/_static/image3.png))
 

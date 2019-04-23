@@ -12,7 +12,7 @@ ms.openlocfilehash: 1e727e8124e1f045f8ef25ab7a3d4efbafd4290a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411210"
 ---
 # <a name="creating-a-team-project-in-tfs"></a>在 TFS 中创建团队项目
@@ -106,8 +106,7 @@ ms.locfileid: "59411210"
 
    > [!NOTE]
    > 您可能会收到<strong>HTTP 404 未找到</strong>由于双 HTTP 编码 bug 的错误。 如果发生这种情况，请与此替换 URL:   
-   > `[site_collection_URL]/_layouts/permsetup.aspx`
-   > 例如：  
+   > `[site_collection_URL]/_layouts/permsetup.aspx` 例如：  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. 上**为此站点设置用户组**页上，添加将创建到团队项目的用户**所有者**组，然后依次**确定**。
 

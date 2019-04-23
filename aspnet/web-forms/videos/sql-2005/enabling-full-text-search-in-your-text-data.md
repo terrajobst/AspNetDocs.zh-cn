@@ -12,7 +12,7 @@ ms.openlocfilehash: e4e96810cd1dabb0cf2ab1d49ca1f6a3b019a45f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417450"
 ---
 # <a name="enabling-full-text-search-in-your-text-data"></a>在文本数据中实现全文搜索
@@ -24,4 +24,4 @@ by [Microsoft](https://github.com/microsoft)
 [&#9654;观看视频 （38 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/enabling-full-text-search-in-your-text-data)
 
 > [!div class="step-by-step"]
-> [上一个](creating-and-using-stored-procedures.md)
+> [上一篇](creating-and-using-stored-procedures.md)

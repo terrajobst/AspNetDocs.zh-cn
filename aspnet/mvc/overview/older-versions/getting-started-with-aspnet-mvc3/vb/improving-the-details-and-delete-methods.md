@@ -12,7 +12,7 @@ ms.openlocfilehash: 63930ebe35e4c37e0cc7c0882582c48348cf201a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417658"
 ---
 # <a name="improving-the-details-and-delete-methods-vb"></a>改进 Details 和 Delete 方法 (VB)
@@ -81,4 +81,4 @@ ms.locfileid: "59417658"
 -Scott Hanselman ([ http://hanselman.com ](http://hanselman.com)并[ @shanselman ](http://twitter.com/shanselman) Twitter 上) 和 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [上一个](adding-validation-to-the-model.md)
+> [上一篇](adding-validation-to-the-model.md)

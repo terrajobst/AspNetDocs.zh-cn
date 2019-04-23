@@ -12,7 +12,7 @@ ms.openlocfilehash: 7d8807962e5cf668358e03821d5fd3bf755a0e7d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418880"
 ---
 # <a name="picking-one-animation-out-of-a-list-vb"></a>选取列表中的一个动画 (VB)
@@ -53,7 +53,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample5.aspx)]
 
 
-[![O内布拉斯加州的可能的三个动画：在面板变宽时](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
+[![其中一种可能的三个动画：在面板获取更宽](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
 
 其中一种可能的三个动画：在面板获取更广 ([单击此项可查看原尺寸图像](picking-one-animation-out-of-a-list-vb/_static/image3.png))
 

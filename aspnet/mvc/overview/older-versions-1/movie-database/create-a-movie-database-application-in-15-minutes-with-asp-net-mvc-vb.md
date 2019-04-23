@@ -12,7 +12,7 @@ ms.openlocfilehash: 51e5c6f5c1b4007e0e7f927a4d758f3784cdf22b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412718"
 ---
 # <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>使用 ASP.NET MVC 在 15 分钟内创建电影数据库应用程序 (VB)
@@ -78,7 +78,7 @@ ms.locfileid: "59412718"
 让我们首先在 Visual Studio 2008 中创建新的 ASP.NET MVC Web 应用程序项目。 选择菜单选项**文件，新的项目**，你将看到在图 1 中的新项目对话框。 选择作为编程语言的 Visual Basic，并选择 ASP.NET MVC Web 应用程序项目模板。 为项目名称 MovieApp，然后单击确定按钮。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image1.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image1.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image1.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image1.png)
 
 **图 01**:新建项目对话框中 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image2.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "59412718"
 > Visual Web Developer 不支持测试项目。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image2.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image3.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image2.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image3.png)
 
 **图 02**:创建单元测试项目对话框 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image4.png))
 
@@ -120,7 +120,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 > 服务器资源管理器窗口是名为在 Visual Web Developer 的情况下的数据库资源管理器窗口。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image3.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image5.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image3.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image5.png)
 
 **图 03**:创建 Microsoft SQL Server 数据库 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image6.png))
 
@@ -130,7 +130,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 <a id="0.2_table01"></a>
 
 
-| **列名** | **数据类型** | **允许为 Null** |
+| **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
 | 标题 | Nvarchar(100) | False |
@@ -141,7 +141,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 第一列，Id 列中，有两个特殊属性。 首先，需要将 Id 列作为主键列标记。 选择 Id 列之后，单击**设置主键**（它是看起来像一个键的图标） 按钮。 其次，您需要将标记为标识列的 Id 列。 在列属性窗口中向下滚动到标识规范部分并展开它。 更改**是标识**属性设置为值**是**。 完成后，表应如图 4 所示。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image4.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image7.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image4.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image7.png)
 
 **图 04**:电影数据库表 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image8.png))
 
@@ -151,7 +151,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 完成创建表后，向表中添加某些电影记录。 右键单击服务器资源管理器窗口中的电影表，然后选择菜单选项**显示表数据**。 输入你最喜爱的电影 （请参见图 5） 的列表。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image5.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image9.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image5.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image9.png)
 
 **图 05**:输入电影记录 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image10.png))
 
@@ -178,7 +178,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 3. 在中**选择数据库对象**步骤中，展开表节点中，选择电影表。 输入的命名空间*MovieApp.Models*然后单击**完成**按钮。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image6.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image11.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image6.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image11.png)
 
 **图 06**:生成数据库模型使用实体数据模型向导 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image12.png))
 
@@ -186,7 +186,7 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 完成实体数据模型向导后，会打开实体数据模型设计器。 在设计器应显示电影数据库表 （请参阅图 7）。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image7.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image13.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image7.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image13.png)
 
 **图 07**:实体数据模型设计器 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image14.png))
 
@@ -208,12 +208,12 @@ ASP.NET MVC 应用程序具有一组标准的文件夹： 模型、 视图和控
 完成这些步骤后，将创建在列表 1 中的控制器。 请注意，它包含名为 Index，详细信息，创建、 方法和编辑。 在以下部分中，我们将添加必要的代码来获取这些方法才能起作用。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image8.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image15.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image8.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image15.png)
 
 **图 08**:添加新的 ASP.NET MVC 控制器 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image16.png))
 
 
-**代码清单 1 – Controllers\HomeController.vb**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/samples/sample1.vb)]
 
@@ -248,12 +248,12 @@ Index （） 方法返回名为 Index 的视图。 我们需要创建此视图�
 完成这些步骤后，名为 Index.aspx 的新视图添加到 views/home 文件夹中。 索引视图的内容包含在列表 3 中。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image9.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image17.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image9.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image17.png)
 
 **图 09**:添加视图的控制器操作 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image18.png))
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image10.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image19.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image10.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image19.png)
 
 **图 10**:使用添加视图对话框中创建新视图 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image20.png))
 
@@ -263,7 +263,7 @@ Index （） 方法返回名为 Index 的视图。 我们需要创建此视图�
 索引视图显示的所有电影记录从 HTML 表内的电影数据库表。 该视图包含一个 For Each 循环，循环访问由 ViewData.Model 属性表示每个电影。 如果按 F5 键运行应用程序，您将看到在图 11 网页。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image11.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image21.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image11.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image21.png)
 
 **图 11**:索引视图 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image22.png))
 
@@ -296,7 +296,7 @@ Visual Studio，可以轻松地创建用于创建新的电影数据库窗体记�
 5. 单击**添加**按钮以创建新视图。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image12.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image23.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image12.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image23.png)
 
 **图 12**:添加 Create 视图 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image24.png))
 
@@ -317,7 +317,7 @@ Visual Studio 查看在列表 5 中会自动生成。 此视图包含 HTML 窗�
 请注意，自动获取窗体验证。 如果没有输入一个 movie，发布日期，或者输入无效的发布日期，然后重新显示该窗体，并突出显示发布日期字段。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image13.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image25.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image13.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image25.png)
 
 **图 13**:创建新的电影数据库记录 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image26.png))
 
@@ -337,7 +337,7 @@ Visual Studio 查看在列表 5 中会自动生成。 此视图包含 HTML 窗�
 完成这些步骤将添加到 views/home 文件夹中名为 Edit.aspx 的新视图。 此视图包含 HTML 窗体以编辑电影记录。
 
 
-[![T他新建项目对话框中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image14.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image27.png)
+[![新建项目对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image14.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image27.png)
 
 **图 14**:添加编辑视图 ([单击此项可查看原尺寸图像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image28.png))
 
@@ -364,4 +364,4 @@ Visual Studio 查看在列表 5 中会自动生成。 此视图包含 HTML 窗�
 在本教程中，我们检查只 ASP.NET MVC 框架的最基本功能。 在将来的教程中，我们深入控制器、 控制器操作、 视图、 视图数据，以及 HTML 帮助程序等主题。
 
 > [!div class="step-by-step"]
-> [上一个](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)
+> [上一篇](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)

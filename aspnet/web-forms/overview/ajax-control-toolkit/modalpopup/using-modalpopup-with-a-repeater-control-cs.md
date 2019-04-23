@@ -12,7 +12,7 @@ ms.openlocfilehash: 91758b7c329b78bcb3a3ab301650d6da6164d1a3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411184"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-c"></a>通过 Repeater 控件使用 ModalPopup (C#)
@@ -49,7 +49,7 @@ ms.locfileid: "59411184"
 然后，数据源中的每个项将显示触发模式弹出框旁边的按钮。
 
 
-[![T他模式弹出框可以为每个数据源输入触发](using-modalpopup-with-a-repeater-control-cs/_static/image2.png)](using-modalpopup-with-a-repeater-control-cs/_static/image1.png)
+[![可以为每个数据源输入触发模式弹出框](using-modalpopup-with-a-repeater-control-cs/_static/image2.png)](using-modalpopup-with-a-repeater-control-cs/_static/image1.png)
 
 可以为每个数据源输入触发模式弹出框 ([单击此项可查看原尺寸图像](using-modalpopup-with-a-repeater-control-cs/_static/image3.png))
 

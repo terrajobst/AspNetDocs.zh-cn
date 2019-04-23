@@ -12,7 +12,7 @@ ms.openlocfilehash: 3db35464b448727ef3477a90149459a46e0f76d7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412159"
 ---
 # <a name="linq-videos-from-the-vb-team"></a>来自 VB 团队的 LINQ 视频
@@ -20,7 +20,7 @@ ms.locfileid: "59412159"
 > 这些视频提供通过一小时，另一半的内容侧重于 Visual Basic 9.0 包括在 Visual Studio 2008 的新 LINQ 语言功能。
 
 
-- [LINQ 入门](how-do-i-get-started-with-linq.md)
+- [开始使用 LINQ](how-do-i-get-started-with-linq.md)
 - [执行组和聚合查询](how-do-i-perform-group-and-aggregate-queries.md)
 - [升级 Visual Basic 项目以启用 LINQ](how-do-i-upgrade-visual-basic-projects-to-enable-linq.md)
 - [LINQ to XML 入门](how-do-i-get-started-with-linq-to-xml.md)

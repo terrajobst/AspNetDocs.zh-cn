@@ -12,7 +12,7 @@ ms.openlocfilehash: ea526ce8abdf6f7013e8dd832824c21448878e0b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416839"
 ---
 # <a name="dynamically-adding-an-accordion-pane-c"></a>动态添加 Accordion 窗格 (C#)
@@ -55,7 +55,7 @@ AJAX 控件工具包中的可折叠面板控件提供了多个窗格，并允许
 [!code-css[Main](dynamically-adding-an-accordion-pane-cs/samples/sample6.css)]
 
 
-[![T他可折叠面板中的数据动态添加服务器端代码](dynamically-adding-an-accordion-pane-cs/_static/image2.png)](dynamically-adding-an-accordion-pane-cs/_static/image1.png)
+[![服务器端代码动态添加 accordion 中的数据](dynamically-adding-an-accordion-pane-cs/_static/image2.png)](dynamically-adding-an-accordion-pane-cs/_static/image1.png)
 
 服务器端代码动态添加 accordion 中的数据 ([单击此项可查看原尺寸图像](dynamically-adding-an-accordion-pane-cs/_static/image3.png))
 

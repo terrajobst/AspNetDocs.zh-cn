@@ -12,7 +12,7 @@ ms.openlocfilehash: eb886aac6c0a5d9e65719a0dc359acbad3b85659
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408779"
 ---
 # <a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[如何实现:]启用代码覆盖率和在生产应用程序中进行分析？

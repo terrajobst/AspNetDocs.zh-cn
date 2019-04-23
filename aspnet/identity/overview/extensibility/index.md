@@ -13,7 +13,7 @@ ms.openlocfilehash: d8340509484ab3f5ad241534bd0756545c5be84c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419322"
 ---
 # <a name="aspnet-identity-extensibility"></a>ASP.NET 标识可扩展性
@@ -21,6 +21,6 @@ ms.locfileid: "59419322"
 > 扩展性
 
 
-- [ASP.NET Identity 的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [实现自定义 MySQL ASP.NET Identity 存储提供程序](implementing-a-custom-mysql-aspnet-identity-storage-provider.md)
-- [在 ASP.NET Identity 中更改用户的主键](change-primary-key-for-users-in-aspnet-identity.md)
+- [ASP.NET 标识的自定义存储提供程序概述](overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [实现自定义 MySQL ASP.NET 标识存储提供程序](implementing-a-custom-mysql-aspnet-identity-storage-provider.md)
+- [在 ASP.NET 标识中更改用户的主键](change-primary-key-for-users-in-aspnet-identity.md)

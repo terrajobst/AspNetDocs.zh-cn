@@ -12,7 +12,7 @@ ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415981"
 ---
 # <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：向 ASP.NET Web 窗体 / MVC 应用程序添加移动页面
@@ -22,7 +22,7 @@ ms.locfileid: "59415981"
 > - ASP.NET Web 窗体版本 4.0
 > - ASP.NET MVC 版本 3.0
 > 
-> **总结**
+> **摘要**
 > 
 > 此方法向介绍了各种方法提供针对 ASP.NET Web 窗体中的移动设备优化的页面 / MVC 应用程序，并建议体系结构和设计要考虑面向范围广泛的设备时的问题。 本文档还介绍了为什么 ASP.NET 移动控件从 ASP.NET 2.0 到 3.5 现已过时，并讨论某些现代的替代方法。
 

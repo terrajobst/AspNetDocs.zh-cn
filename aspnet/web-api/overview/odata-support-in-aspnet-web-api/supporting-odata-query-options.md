@@ -13,7 +13,7 @@ ms.openlocfilehash: 428e4942e42436585049c1e84cd7b07a4a79c0d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411561"
 ---
 # <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中支持 OData 查询选项
@@ -32,7 +32,7 @@ OData 定义可用于修改的 OData 查询参数。 客户端的请求 URI 查�
 
 - [启用 OData 查询选项](#enable)
 - [示例查询](#examples)
-- [服务器驱动的分页](#server-paging)
+- [Server-Driven Paging](#server-paging)
 - [限制查询选项](#limiting_query_options)
 - [直接调用查询选项](#ODataQueryOptions)
 - [查询验证](#query-validation)
@@ -69,7 +69,7 @@ Web API 支持以下 OData 查询选项：
 
 有关 $展开和 $select，请参阅[使用 $select，$expand、 和 ASP.NET Web API OData 中的 $value](using-select-expand-and-value.md)。
 
-**客户端驱动的分页**
+**Client-Driven Paging**
 
 大型实体集的客户端可能会想要限制结果数。 例如，客户端可能会一次，其中包含用于获取下一页结果的"下一步"链接显示 10 个条目。 若要执行此操作，客户端使用的 $top 和 $skip 选项。
 

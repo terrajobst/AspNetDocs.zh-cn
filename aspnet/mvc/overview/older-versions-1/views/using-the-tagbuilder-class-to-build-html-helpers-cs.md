@@ -12,7 +12,7 @@ ms.openlocfilehash: 3227560c1d0c48f7738e26c87a0dbb140c410eee
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410092"
 ---
 # <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>使用 TagBuilder 类用于生成 HTML 帮助程序 (C#)
@@ -65,7 +65,7 @@ TagBuilder 类具有四个重要属性：
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample2.aspx)]
 
 
-[![T他新建项目对话框中](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
+[![新建项目对话框](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
 
 **图 01**:使用图像帮助程序 ([单击此项可查看原尺寸图像](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image2.png))
 

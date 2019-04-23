@@ -12,7 +12,7 @@ ms.openlocfilehash: 4557a4442d59ec6314dcd2039c8c89b8b5b3d821
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414330"
 ---
 # <a name="videos"></a>视频
@@ -27,7 +27,7 @@ ms.locfileid: "59414330"
     - [MVC 3 - Razor 帮助程序](mvc-3/mvc-3-razor-helpers.md)
 - [ASP.NET MVC 2](mvc-2/index.md)
 
-    - [如何](mvc-2/how-do-i/index.md)
+    - [我如何](mvc-2/how-do-i/index.md)
 
         - [使用 ASP.NET MVC 创建 Tasklist 应用程序](mvc-2/how-do-i/creating-a-tasklist-application-with-aspnet-mvc.md)
         - [使用 ASP.NET MVC 在 15 分钟内创建电影数据库应用程序](mvc-2/how-do-i/creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
@@ -41,9 +41,9 @@ ms.locfileid: "59414330"
         - [创建自定义 HTML 帮助程序](mvc-2/how-do-i/creating-custom-html-helpers.md)
         - [使用 LINQ to SQL 创建模型类](mvc-2/how-do-i/creating-model-classes-with-linq-to-sql.md)
         - [显示数据库数据表](mvc-2/how-do-i/displaying-a-table-of-database-data.md)
-        - [适用于开发人员生成 NerdDinner 的 ASP.NET MVC 80 分钟技术视频](mvc-2/how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
+        - [适用于开发者、生成 NerdDinner 的 ASP.NET MVC 80 分钟技术视频](mvc-2/how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
         - [为什么选择 ASP.NET MVC？决策者的 3 分钟概述视频](mvc-2/how-do-i/why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-        - [ASP.NET MVC：怎么做？适用于开发人员的 10 分钟技术视频](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+        - [ASP.NET MVC:面向开发人员如何 10 分钟技术视频](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
         - [在 ASP.NET MVC Web 应用程序中针对 AJAX 调用返回 JSON 格式的数据](mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
         - [在 ASP.NET MVC 部分视图中使用数据](mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
         - [实现视图模型，用于管理数据的 ASP.NET MVC 视图](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
@@ -57,18 +57,18 @@ ms.locfileid: "59414330"
         - [ASP.NET MVC 2 - 区域](mvc-2/how-do-i/aspnet-mvc-2-areas.md)
         - [ASP.NET MVC 2 - 呈现操作](mvc-2/how-do-i/aspnet-mvc-2-render-action.md)
         - [ASP.NET MVC 5 分钟简介](mvc-2/how-do-i/5-minute-introduction-to-aspnet-mvc.md)
-        - [充分了解 ASP.NET MVC](mvc-2/how-do-i/how-to-best-learn-asp-net-mvc.md)
+        - [最佳了解 ASP.NET MVC](mvc-2/how-do-i/how-to-best-learn-asp-net-mvc.md)
     - [适用于我们其余所有人的 ASP.NET MVC](mvc-2/aspnet-mvc-for-the-rest-of-us/index.md)
 
-        - [适用于我们其余所有人的 ASP.NET MVC：第 1 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
-        - [适用于我们其余所有人的 ASP.NET MVC：第 2 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
-        - [适用于我们其余所有人的 ASP.NET MVC：第 3 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
-        - [适用于我们其余所有人的 ASP.NET MVC：第 4 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
+        - [其他人的 ASP.NET MVC:第 1 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
+        - [其他人的 ASP.NET MVC:第 2 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
+        - [其他人的 ASP.NET MVC:第 3 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
+        - [其他人的 ASP.NET MVC:第 4 部分](mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
     - [Music 商店](mvc-2/music-store/index.md)
 
-        - [MVC Music 商店第 1 部分：简介、工具和项目结构](mvc-2/music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
-        - [MVC Music 商店第 2 部分：Controllers](mvc-2/music-store/mvc-music-store-part-2-controllers.md)
-        - [MVC Music 商店第 3 部分：视图和 ViewModel](mvc-2/music-store/mvc-music-store-part-3-views-and-viewmodels.md)
+        - [MVC Music 商店第 1 部分：简介、 工具和项目结构](mvc-2/music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
+        - [MVC Music 商店第 2 部分：控制器](mvc-2/music-store/mvc-music-store-part-2-controllers.md)
+        - [MVC Music 商店第 3 部分：视图和 Viewmodel](mvc-2/music-store/mvc-music-store-part-3-views-and-viewmodels.md)
 - [ASP.NET MVC 1](mvc-1/index.md)
 
     - [ASP.NET MVC 店面](mvc-1/aspnet-mvc-storefront/index.md)
@@ -78,28 +78,28 @@ ms.locfileid: "59414330"
         - [ASP.NET MVC 店面第 3 部分：管道和筛选器](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-3-pipes-and-filters.md)
         - [ASP.NET MVC 店面第 4 部分：Linq To Sql 图文场](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-4-linq-to-sql-spike.md)
         - [ASP.NET MVC 店面第 5 部分：全球化](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globalization.md)
-        - [ASP.NET MVC 店面第 6 部分：完成存储库和初始 UI 工作](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work.md)
+        - [ASP.NET MVC 店面第 6 部分：完成存储库，并初始 UI 工作](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work.md)
         - [ASP.NET MVC 店面第 7 部分：路由和 UI 工作](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work.md)
-        - [ASP.NET MVC 店面第 8 部分：测试控制器，迭代 1 完成](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)
+        - [ASP.NET MVC 店面第 8 部分：测试控制器、 迭代 1 完成](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-8-testing-controllers-iteration-1-complete.md)
         - [ASP.NET MVC 店面第 9 部分：购物车](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-9-the-shopping-cart.md)
         - [ASP.NET MVC 店面第 10 部分：购物车重构和授权](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization.md)
-        - [ASP.NET MVC 店面第 11 部分：挂接购物车并使用组件](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components.md)
+        - [ASP.NET MVC 店面第 11:挂接购物车和使用组件](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components.md)
         - [ASP.NET MVC 店面第 12 部分：模拟](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking.md)
         - [ASP.NET MVC 店面第 13 部分：依赖关系注入](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-dependency-injection.md)
-        - [ASP.NET MVC 店面第 14 部分：富客户端交互](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-14-rich-client-interaction.md)
+        - [ASP.NET MVC 店面第 14:富客户端交互](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-14-rich-client-interaction.md)
         - [ASP.NET MVC 店面第 15 部分：公共代码评审](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public-code-review.md)
-        - [ASP.NET MVC 店面第 16 部分：使用 OpenID 的成员身份恢复](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
-        - [ASP.NET MVC 店面第 17 部分：与 Jeff Atwood 结算](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
+        - [ASP.NET MVC 店面第 16 部分：使用 OpenID 的成员身份重做](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
+        - [ASP.NET MVC 店面第 17:向 Jeff Atwood 结帐](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
         - [ASP.NET MVC 店面第 18 部分：创建体验](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
         - [ASP.NET MVC 店面第 19 部分：使用 Windows 工作流处理订单](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
         - [ASP.NET MVC 店面第 19a 部分：Windows 工作流跟踪](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
         - [ASP.NET MVC 店面第 20 部分：日志记录](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
-        - [ASP.NET MVC 店面第 21 部分：订单管理器和个性化设置](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
-        - [ASP.NET MVC 店面第 22 部分：重构、重新路由和 PayPal](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
-        - [ASP.NET MVC 店面第 23 部分：域驱动设计入门](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design.md)
-        - [ASP.NET MVC 店面第 24 部分：结束](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-24-finis.md)
+        - [ASP.NET MVC 店面第 21 部分：订单管理器和个性化](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
+        - [ASP.NET MVC 店面第 22:重构、 重新路由和 PayPal](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-22-restructuring-rerouting-and-paypal.md)
+        - [ASP.NET MVC 店面第 23:域驱动设计入门](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design.md)
+        - [ASP.NET MVC 店面第 24:结束](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-24-finis.md)
     - [谈话](mvc-1/conference-presentations/index.md)
 
-        - [使用 Microsoft ASP.NET 模型视图控制器 (MVC) 创建 NerdDinner.com](mvc-1/conference-presentations/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
+        - [使用 Microsoft ASP.NET 模型视图控制器创建 NerdDinner.com (MVC)](mvc-1/conference-presentations/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
         - [美国达人秀视图控制器框架](mvc-1/conference-presentations/americas-next-top-model-view-controller-framework.md)
         - [愤怒的忍者黑带技巧](mvc-1/conference-presentations/ninja-on-fire-black-belt-tips.md)

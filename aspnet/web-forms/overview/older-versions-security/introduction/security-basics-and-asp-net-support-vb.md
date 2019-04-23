@@ -12,7 +12,7 @@ ms.openlocfilehash: 1b6675a933f04b3eb7f5111b2ccd16c44baab7ba
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414343"
 ---
 # <a name="security-basics-and-aspnet-support-vb"></a>安全基础知识和 ASP.NET 支持 (VB)
@@ -139,7 +139,7 @@ Microsoft.NET Framework 中提供两个成员资格提供程序类：
 本系列教程重点介绍专门 SqlMembershipProvider。
 
 
-[![T他提供程序模型使不同的实现是无缝地插入到框架](security-basics-and-asp-net-support-vb/_static/image4.png)](security-basics-and-asp-net-support-vb/_static/image3.png)
+[![提供程序模型使不同的实现是无缝地插入到框架](security-basics-and-asp-net-support-vb/_static/image4.png)](security-basics-and-asp-net-support-vb/_static/image3.png)
 
 **图 03**:提供程序模型使不同的实现是无缝地插入到框架 ([单击此项可查看原尺寸图像](security-basics-and-asp-net-support-vb/_static/image5.png))
 

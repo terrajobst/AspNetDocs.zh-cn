@@ -13,7 +13,7 @@ ms.openlocfilehash: 71201e9d91080855350349b966fe7916ce21a909
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411262"
 ---
 # <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自定义存储提供程序概述
@@ -90,7 +90,7 @@ ASP.NET 标识包含的类称为管理器和存储。 管理器是用于执行�
 | 类 | 描述 | 示例 |
 | --- | --- | --- |
 | 上下文 | 若要连接到持久性机制并执行查询的信息进行封装。 此类是您的数据访问层的中心。 其他数据类将需要此类来执行其操作的实例。 此外将初始化您的存储类使用此类的实例。 | [MySQLDatabase](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
-| 用户存储 | 存储和检索用户信息 （如用户名称和密码哈希）。 | [数据库 (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserTable.cs) |
+| 用户存储 | 存储和检索用户信息 （如用户名称和密码哈希）。 | [UserTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserTable.cs) |
 | 角色存储 | 存储和检索角色信息 （例如角色名称）。 | [RoleTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/RoleTable.cs) |
 | UserClaims 存储 | 存储和检索用户声明信息 （如的声明类型和值）。 | [UserClaimsTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserClaimsTable.cs) |
 | UserLogins 存储 | 存储和检索用户登录信息 （例如外部身份验证提供程序）。 | [UserLoginsTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserLoginsTable.cs) |

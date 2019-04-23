@@ -12,7 +12,7 @@ ms.openlocfilehash: 586508039b9a3d78492aa02a77a1f29c64668b5e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409689"
 ---
 # <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>方案：配置用于 Web 部署的生产环境

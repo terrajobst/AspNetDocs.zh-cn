@@ -12,7 +12,7 @@ ms.openlocfilehash: 5e3c5682ced82ad42aaa0b28a7f5a6b67e43338f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416553"
 ---
 # <a name="watch-aspnet-development-in-action"></a>在操作中监视 ASP.NET 开发
@@ -24,4 +24,4 @@ ms.locfileid: "59416553"
 [&#9654;观看视频 （20 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/watch-aspnet-development-in-action)
 
 > [!div class="step-by-step"]
-> [上一个](lesson-8-working-with-the-gridview-and-formview.md)
+> [上一篇](lesson-8-working-with-the-gridview-and-formview.md)

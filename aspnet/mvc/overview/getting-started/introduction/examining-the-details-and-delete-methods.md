@@ -12,7 +12,7 @@ ms.openlocfilehash: e14df35818ac996186e22b72bc57bd5aada2afec
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408467"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>检查 Details 和 Delete 方法
@@ -69,4 +69,4 @@ ms.locfileid: "59408467"
 — [Scott Hanselman](http://www.hanselman.com/blog/) twitter: [@shanselman](https://twitter.com/shanselman)
 
 > [!div class="step-by-step"]
-> [上一个](adding-validation.md)
+> [上一篇](adding-validation.md)

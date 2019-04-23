@@ -12,7 +12,7 @@ ms.openlocfilehash: 3a39e8d1979a743101d728eb3430e9aa0efb1252
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415630"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>开始使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2017
@@ -193,4 +193,4 @@ PayPal 确认你的帐户、 订单和付款信息。
 如果发生错误，相应的错误消息可能是令人困惑，与不合理的解释如何修复此错误。 如需帮助，可以查看[ASP.NET 论坛](https://forums.asp.net/)。 另一个很好来源是中的问题与解答部分[开始使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 示例页面。 
 
 > [!div class="step-by-step"]
-> [下一步](create-the-project.md)
+> [下一页](create-the-project.md)

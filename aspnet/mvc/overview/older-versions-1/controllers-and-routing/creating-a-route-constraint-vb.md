@@ -12,7 +12,7 @@ ms.openlocfilehash: 8c7b2274ff396f222382488ed877599e86ae5b99
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412679"
 ---
 # <a name="creating-a-route-constraint-vb"></a>创建路由约束 (VB)
@@ -51,7 +51,7 @@ ms.locfileid: "59412679"
 因为 Details() 操作需要的一个整数参数，则发出请求，其中包含一个整数值以外的内容会导致错误。 例如，如果你的浏览器中键入 URL /Product/apple 然后将图 1 中显示错误页。
 
 
-[![T他新建项目对话框中](creating-a-route-constraint-vb/_static/image1.jpg)](creating-a-route-constraint-vb/_static/image1.png)
+[![新建项目对话框](creating-a-route-constraint-vb/_static/image1.jpg)](creating-a-route-constraint-vb/_static/image1.png)
 
 **图 01**:看到 explode 页面 ([单击此项可查看原尺寸图像](creating-a-route-constraint-vb/_static/image2.png))
 

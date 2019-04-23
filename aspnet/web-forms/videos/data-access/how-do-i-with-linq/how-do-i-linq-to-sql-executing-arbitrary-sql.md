@@ -12,7 +12,7 @@ ms.openlocfilehash: 3162db9b0b3e8c057201d96e08133a086c384fe6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416982"
 ---
 # <a name="how-do-i-linq-to-sql-executing-arbitrary-sql"></a>如何实现:LINQ to SQL：执行任意 SQL
@@ -24,4 +24,4 @@ ms.locfileid: "59416982"
 [&#9654;观看视频 （4 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-executing-arbitrary-sql)
 
 > [!div class="step-by-step"]
-> [上一个](how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+> [上一篇](how-do-i-linq-to-sql-updating-with-stored-procedures.md)

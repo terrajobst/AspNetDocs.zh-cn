@@ -12,7 +12,7 @@ ms.openlocfilehash: d7a6f29dc660cff2bfa9db8f9790d73e51a2cc1c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420128"
 ---
 # <a name="adding-client-side-confirmation-when-deleting-c"></a>删除时添加客户端确认 (C#)
@@ -65,7 +65,7 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 这些更改，我们有一个完全正常运行的 web 页面，允许用户一次通过产品一个切换能够只需单击删除按钮删除产品。 图 2 显示了我们的进度的屏幕截图为止时的浏览器查看。
 
 
-[![T他 FormView 显示信息有关单个产品](adding-client-side-confirmation-when-deleting-cs/_static/image3.png)](adding-client-side-confirmation-when-deleting-cs/_static/image2.png)
+[![FormView 显示单个产品的信息](adding-client-side-confirmation-when-deleting-cs/_static/image3.png)](adding-client-side-confirmation-when-deleting-cs/_static/image2.png)
 
 **图 2**:FormView 显示信息有关单个产品 ([单击此项可查看原尺寸图像](adding-client-side-confirmation-when-deleting-cs/_static/image4.png))
 
@@ -85,7 +85,7 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 > 将字符串传递到`confirm(string)`用撇号 （而不是引号） 分隔的 JavaScript 函数。 在 JavaScript 中，可以使用任一字符分隔的字符串。 这样的分隔符的字符串传递到此处使用撇号`confirm(string)`不会产生歧义引入使用用于分隔符`OnClientClick`属性值。
 
 
-[![A 确认信息是现在显示时单击删除按钮](adding-client-side-confirmation-when-deleting-cs/_static/image6.png)](adding-client-side-confirmation-when-deleting-cs/_static/image5.png)
+[![一条确认信息是现在显示时单击删除按钮](adding-client-side-confirmation-when-deleting-cs/_static/image6.png)](adding-client-side-confirmation-when-deleting-cs/_static/image5.png)
 
 **图 3**:一条确认信息是现在显示时单击删除按钮 ([单击此项可查看原尺寸图像](adding-client-side-confirmation-when-deleting-cs/_static/image7.png))
 
@@ -127,7 +127,7 @@ CommandField 包含单个删除 LinkButton 实例可以以编程方式访问从 
 > 此外可以使用此方法以编程方式访问在 DetailsView 中 CommandField 删除按钮。 对于 DetailsView，但是，d 你创建的事件处理程序`DataBound`事件，因为 DetailsView 没有`RowDataBound`事件。
 
 
-[![C自定义的确认对话框中单击删除按钮显示的 GridView s](adding-client-side-confirmation-when-deleting-cs/_static/image9.png)](adding-client-side-confirmation-when-deleting-cs/_static/image8.png)
+[![单击 GridView s 删除按钮将显示一个自定义的确认对话框](adding-client-side-confirmation-when-deleting-cs/_static/image9.png)](adding-client-side-confirmation-when-deleting-cs/_static/image8.png)
 
 **图 4**:单击删除按钮的 GridView s 显示自定义的确认对话框中 ([单击此项可查看原尺寸图像](adding-client-side-confirmation-when-deleting-cs/_static/image10.png))
 

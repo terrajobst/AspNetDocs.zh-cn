@@ -12,7 +12,7 @@ ms.openlocfilehash: b01913b3ad3291d90bdf9455c3d35bb7b36b3f28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415240"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>调整 DropShadow 的 Z-索引 (VB)
@@ -56,12 +56,12 @@ AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 但�
 然后，`DropShadowExtender`控件不与菜单控件不再冲突。
 
 
-[![B之前：菜单项不可见](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)
+[![之前：菜单项不可见](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)
 
 在此之前:菜单项不可见 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))
 
 
-[![A页符：菜单项会显示](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)
+[![之后：菜单项显示](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)
 
 之后：将显示菜单项 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: 34a0d62d7afcaffa8fbac0bc774d9266efb6b165
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413043"
 ---
 # <a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 简介
@@ -88,7 +88,7 @@ ms.locfileid: "59413043"
 
     - ASP.NET 身份验证现在基于可在任何基于 OWIN 的主机使用的 OWIN 中间件。 ASP.NET 标识 System.Web 没有任何依赖项。 它是一个完全符合 OWIN 框架，并可在任何托管的 OWIN 应用程序。
     - ASP.NET 标识的日志-在/注销的 web 站点中的用户使用 OWIN 身份验证。 这意味着，而不是使用 FormsAuthentication 生成 cookie，应用程序使用 OWIN CookieAuthentication 来执行该操作。
-- **NuGet 程序包**
+- **NuGet 包**
 
     - ASP.NET 标识是以 ASP.NET MVC、 Web 窗体和 Web API 模板随附于 Visual Studio 2017 中安装 NuGet 包的形式重新分发。 可以从 NuGet 库下载此 NuGet 包。
     - 发布 ASP.NET 标识为 NuGet 程序包使得 ASP.NET 团队来循环访问新功能和 bug 修复和敏捷的方式提供给开发人员更轻松。

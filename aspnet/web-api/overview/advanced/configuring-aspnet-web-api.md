@@ -13,7 +13,7 @@ ms.openlocfilehash: 39629ba404e536b29318db00bce8c4443a782497
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411938"
 ---
 # <a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
@@ -44,7 +44,7 @@ Web API 配置设置中定义[HttpConfiguration](https://msdn.microsoft.com/libr
 | **ParameterBindingRules** | 规则的控制器操作上的绑定参数集合。 |
 | **属性** | 一个泛型属性包。 |
 | **路由** | 路由的集合。 请参阅[ASP.NET Web API 中路由](../web-api-routing-and-actions/routing-in-aspnet-web-api.md)。 |
-| **Services** | 服务集合。 请参阅[Services](#services)。 |
+| **服务** | 服务集合。 请参阅[Services](#services)。 |
 
 
 ## <a name="prerequisites"></a>系统必备

@@ -12,7 +12,7 @@ ms.openlocfilehash: 6478ad3c8ef599dcf17c998cb0ce3c71a0039223
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418789"
 ---
 # <a name="aspnet-mvc-storefront-part-24-finis"></a>ASP.NET MVC 店面第 24 部分：结束
@@ -24,4 +24,4 @@ ms.locfileid: "59418789"
 [&#9654;观看视频 （27 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-24-finis)
 
 > [!div class="step-by-step"]
-> [上一个](aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design.md)
+> [上一篇](aspnet-mvc-storefront-part-23-getting-started-with-domain-driven-design.md)

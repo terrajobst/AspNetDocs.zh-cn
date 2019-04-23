@@ -12,7 +12,7 @@ ms.openlocfilehash: b9da2522cfaed324a23f43265d4e234ebb4950bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411119"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新增功能
@@ -547,7 +547,7 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
 
     ![有关页面](whats-new-in-aspnet-mvc-4/_static/image33.png "有关页面")
 
-    *“关于”页面*
+    *有关页*
 8. 最后，桌面 Web 浏览器中打开的网站。 请注意，没有任何以前的更新具有影响桌面视图。
 
     ![图片库桌面视图](whats-new-in-aspnet-mvc-4/_static/image34.png "PhotoGallery 桌面视图")
@@ -876,7 +876,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
 4. 在中&quot;添加程序&quot;对话框中，使用以下值：
 
    - **程序**:C:\Users\*{CurrentUser}*\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe *（相应地更新路径）*
-   - **参数**:&quot;1&quot;
+   - **参数**：&quot;1&quot;
    - **友好名称**: iPhone 模拟器
 
      ![添加程序](whats-new-in-aspnet-mvc-4/_static/image59.png "添加程序")

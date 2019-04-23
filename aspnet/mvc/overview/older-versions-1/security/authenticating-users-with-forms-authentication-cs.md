@@ -12,7 +12,7 @@ ms.openlocfilehash: b52abab12503918603419c9ccfabefcffdfd7e06
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418269"
 ---
 # <a name="authenticating-users-with-forms-authentication-c"></a>使用 Forms 身份验证对用户进行身份验证 (C#)
@@ -58,7 +58,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，在列表 1 中的控制器将公开名为 CompanySecrets() 的操作。 因为此操作使用 [Authorize] 特性修饰的除非用户进行身份验证，否则不能调用此操作。
 
-**代码清单 1 – Controllers\HomeController.cs**
+**Listing 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](authenticating-users-with-forms-authentication-cs/samples/sample1.cs)]
 
@@ -150,4 +150,4 @@ ASP.NET SQL Server 安装向导，可选择你的网络上的 SQL Server 数据�
 在本教程中，您学习了如何构建 ASP.NET MVC 应用程序时使用窗体身份验证。 首先，您学习了如何通过利用网站管理工具创建新用户和角色。 接下来，您学习了如何使用 [Authorize] 属性以防止未经授权的用户调用控制器操作。 最后，您学习了如何配置您的 MVC 应用程序在生产数据库中存储用户和角色信息。
 
 > [!div class="step-by-step"]
-> [下一步](authenticating-users-with-windows-authentication-cs.md)
+> [下一页](authenticating-users-with-windows-authentication-cs.md)

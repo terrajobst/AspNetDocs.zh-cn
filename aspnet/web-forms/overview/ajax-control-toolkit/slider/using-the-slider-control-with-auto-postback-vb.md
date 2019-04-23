@@ -12,7 +12,7 @@ ms.openlocfilehash: 702cdd898e261f6a5793fa04069b69398745d576
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415578"
 ---
 # <a name="using-the-slider-control-with-auto-postback-vb"></a>滑块控件中使用自动回发 (VB)
@@ -51,12 +51,12 @@ AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-vb/samples/sample5.aspx)]
 
 
-[![M删除滑块触发回发](using-the-slider-control-with-auto-postback-vb/_static/image2.png)](using-the-slider-control-with-auto-postback-vb/_static/image1.png)
+[![将滑块移动触发回发](using-the-slider-control-with-auto-postback-vb/_static/image2.png)](using-the-slider-control-with-auto-postback-vb/_static/image1.png)
 
 将滑块移动触发回发 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-vb/_static/image3.png))
 
 
-[![Afterwards，此更改的日期写入的标签中](using-the-slider-control-with-auto-postback-vb/_static/image5.png)](using-the-slider-control-with-auto-postback-vb/_static/image4.png)
+[![然后，此更改的日期写入标签中](using-the-slider-control-with-auto-postback-vb/_static/image5.png)](using-the-slider-control-with-auto-postback-vb/_static/image4.png)
 
 然后，此更改的日期写入标签中 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-vb/_static/image6.png))
 

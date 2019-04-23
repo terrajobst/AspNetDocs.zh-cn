@@ -12,7 +12,7 @@ ms.openlocfilehash: 7b7324c9e0518697c0978b96b0123cb44133722b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418932"
 ---
 # <a name="creating-custom-routes-c"></a>创建自定义路由 (C#)
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 **图 1-通过转换参数错误**
 
 
-[![T他新建项目对话框中](creating-custom-routes-cs/_static/image1.jpg)](creating-custom-routes-cs/_static/image1.png)
+[![新建项目对话框](creating-custom-routes-cs/_static/image1.jpg)](creating-custom-routes-cs/_static/image1.png)
 
 **图 01**:通过转换参数的错误 ([单击此项可查看原尺寸图像](creating-custom-routes-cs/_static/image2.png))
 

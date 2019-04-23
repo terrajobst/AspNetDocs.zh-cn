@@ -12,7 +12,7 @@ ms.openlocfilehash: 547b1932c4f8d3684c668561e3fe568a0f272925
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416501"
 ---
 # <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 网页 (Razor) API 快速参考
@@ -37,8 +37,8 @@ ms.locfileid: "59416501"
 此页包含有关以下参考信息：
 
 - [类](#Classes)
-- [数据](#Data)
-- [Helpers](#Helpers)
+- [Data](#Data)
+- [帮助程序](#Helpers)
 - [验证](#Validation)
 
 <a id="Classes"></a>

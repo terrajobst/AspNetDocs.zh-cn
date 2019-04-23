@@ -12,7 +12,7 @@ ms.openlocfilehash: c0e2888207e4fa0363fc3b357ae00108ffe817f5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415214"
 ---
 # <a name="animating-in-response-to-user-interaction-c"></a>响应用户交互的动画 (C#)
@@ -59,7 +59,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-aspx[Main](animating-in-response-to-user-interaction-cs/samples/sample5.aspx)]
 
 
-[![A 鼠标单击启动动画](animating-in-response-to-user-interaction-cs/_static/image2.png)](animating-in-response-to-user-interaction-cs/_static/image1.png)
+[![鼠标单击启动动画](animating-in-response-to-user-interaction-cs/_static/image2.png)](animating-in-response-to-user-interaction-cs/_static/image1.png)
 
 鼠标单击启动动画 ([单击此项可查看原尺寸图像](animating-in-response-to-user-interaction-cs/_static/image3.png))
 

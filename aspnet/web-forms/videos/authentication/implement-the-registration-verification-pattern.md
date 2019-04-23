@@ -12,7 +12,7 @@ ms.openlocfilehash: 7b50c7944a3e0b01c81fb80f8665ba7a7fe4a6f5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420323"
 ---
 # <a name="implement-the-registration-verification-pattern"></a>实现注册验证模式

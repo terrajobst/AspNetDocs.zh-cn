@@ -12,7 +12,7 @@ ms.openlocfilehash: 4fa306d25868ace7d713f968efe083438655f8bf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416150"
 ---
 # <a name="intro-to-aspnet-20-aspnet-20-fundamentals"></a>[ASP.NET 2.0 简介：] ASP.NET 2.0 基础知识
@@ -24,4 +24,4 @@ by [Microsoft](https://github.com/microsoft)
 [&#9654;观看视频 （70 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/intro-to-aspnet-20-aspnet-20-fundamentals)
 
 > [!div class="step-by-step"]
-> [下一步](intro-to-aspnet-20-user-interface-elements.md)
+> [下一页](intro-to-aspnet-20-user-interface-elements.md)

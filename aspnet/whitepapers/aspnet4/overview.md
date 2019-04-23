@@ -12,7 +12,7 @@ ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409715"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
@@ -66,7 +66,7 @@ ms.locfileid: "59409715"
 [数据注释属性验证支持](#0.2__Toc253429276 "_Toc253429276")  
 [模板化帮助器](#0.2__Toc253429277 "_Toc253429277")
 
-**[动态数据](#0.2__Toc253429278 "_Toc253429278")**  
+**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
 [对于现有项目中启用动态数据](#0.2__Toc253429279 "_Toc253429279")  
 [DynamicDataManager 控件声明性语法](#0.2__Toc253429280 "_Toc253429280")  
 [实体模板](#0.2__Toc253429281 "_Toc253429281")  
@@ -413,13 +413,13 @@ ASP.NET 4 添加到两个属性*页上*类， *MetaKeywords*并*MetaDescription*
 
 已禁用 `: [DynamicValue]`
 
-已启用:`[DynamicValue]`
+已启用：`[DynamicValue]`
 
 在回发后但是，将显示以下输出：
 
 已禁用 `: [DeclaredValue]`
 
-已启用:`[DynamicValue]`
+已启用：`[DynamicValue]`
 
 Label1 控件 (其*ViewStateMode*值设置为*禁用*) 具有不会保留在代码中设置为它的值。 但是，label2 控制 (其*ViewStateMode*值设置为*已启用*) 已保留其状态。
 
@@ -982,7 +982,7 @@ ASP.NET 2.0 和更高版本的呈现特定于系统的隐藏的字段 (如*隐�
 默认情况下，以下 ASP.NET Web 服务器控件支持的模板的自动包装在用于将应用内联样式的外部表中：
 
 - *FormView*
-- *登录*
+- *Login*
 - *PasswordRecovery*
 - *ChangePassword*
 - *向导*

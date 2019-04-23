@@ -12,7 +12,7 @@ ms.openlocfilehash: 016dfa2a5a5fb9aaed0e1c60194e53ac9ccb8b36
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419582"
 ---
 # <a name="data-bound-controls"></a>数据绑定控件
@@ -86,7 +86,7 @@ Ad 以像素为单位的宽度。
 
 如果您选择要作为数据源的数据库表用于 AdRotator 控件，您首先需要设置使用以下架构的数据库：
 
-| **列名称** | **数据类型** | **描述** |
+| **列名称** | **数据类型** | **说明** |
 | --- | --- | --- |
 | Id | int | 主键。 此列可以具有任何名称。 |
 | ImageUrl | nvarchar(*length*) | 相对或绝对 URL 的图像的显示广告。 |
@@ -109,7 +109,7 @@ Ad 以像素为单位的宽度。
 
 数据绑定列表控件，将数据源控件添加到页。 指定数据源控件的选择命令，然后将列表控件的 DataSourceID 属性设置为数据源控件的 ID。 使用**DataTextField**并**DataValueField**属性以定义的显示文本和控件的值。 此外，还可以使用**DataTextFormatString**属性来控制显示文本的外观，如下所示：
 
-| **表达式** | **描述** |
+| **表达式** | **说明** |
 | --- | --- |
 | 价格： {0:C} | 对于数字/小数数据。 显示文本"价格:"跟以货币格式的数字。 货币格式取决于在 culture 特性中指定的区域性设置**页**指令或 Web.config 文件中。 |
 | {0:D4} | 对于整数数据。 不能和小数一起使用。 为四个字符宽的零填充的字段中显示整数。 |
@@ -139,7 +139,7 @@ GridView 控件允许表格数据显示和编辑使用声明性方法，是 Data
 
 下表列出了可以使用不同的列字段类型。
 
-| **列字段类型** | **描述** |
+| **列字段类型** | **说明** |
 | --- | --- |
 | BoundField | 数据源中显示的字段的值。 这是 GridView 控件的默认列类型。 |
 | ButtonField | 在 GridView 控件中显示的每个项的命令按钮。 这样，您可以创建自定义按钮控件，如添加或删除按钮的列。 |
@@ -182,7 +182,7 @@ GridView 控件提供了许多内置功能，允许用户排序、 更新、 删
 
 通过设置控件的不同部分的样式属性，可以自定义 GridView 控件的外观。 下表列出了不同的样式属性。
 
-| **样式属性** | **描述** |
+| **样式属性** | **说明** |
 | --- | --- |
 | AlternatingRowStyle | 在 GridView 控件中的交替数据行的样式设置。 数据行时设置此属性，RowStyle 设置之间交替显示和**AlternatingRowStyle**设置。 |
 | EditRowStyle | 在 GridView 控件中正在编辑的行的样式设置。 |
@@ -195,7 +195,7 @@ GridView 控件提供了许多内置功能，允许用户排序、 更新、 删
 
 您还可以显示或隐藏控件的不同部分。 下表列出了用于控制哪些部分是显示还是隐藏的属性。
 
-| **属性** | **描述** |
+| **Property** | **说明** |
 | --- | --- |
 | ShowFooter | 显示或隐藏的脚注部分的 GridView 控件。 |
 | ShowHeader | 显示或隐藏 GridView 控件的页眉节。 |
@@ -204,7 +204,7 @@ GridView 控件提供了许多内置功能，允许用户排序、 更新、 删
 
 GridView 控件提供了几个事件，可以对其进行编程。 这样，您可以运行自定义的例程，每当发生的事件。 下表列出了 GridView 控件支持的事件。
 
-| **Event** | **描述** |
+| **Event** | **说明** |
 | --- | --- |
 | PageIndexChanged | 在单击某一页导航按钮时，但在 GridView 控件处理分页操作。 当您需要执行的任务后用户导航到该控件中的其他页时，通常使用此事件。 |
 | PageIndexChanging | 当单击某一页导航按钮时，但之前 GridView 控件处理分页操作时发生。 此事件通常用于取消分页操作。 |
@@ -237,7 +237,7 @@ FormView 控件用于显示来自数据源的单个记录。 它相当于 Detail
 
 FormView 控件来显示内容，您需要创建该控件的不同部分的模板。 大多数模板是可选的;但是，必须创建一个模板，用于在其中配置该控件的模式。 例如，支持插入记录的 FormView 控件必须具有定义的插入项模板。 下表列出了可以创建不同的模板。
 
-| **模板类型** | **描述** |
+| **模板类型** | **说明** |
 | --- | --- |
 | EditItemTemplate | FormView 控件处于编辑模式时定义的数据行的内容。 此模板通常包含输入的控件和与该用户可以编辑现有记录的命令按钮。 |
 | EmptyDataTemplate | 定义当 FormView 控件绑定到不包含任何记录的数据源时，显示的空数据行的内容。 此模板通常包含内容来提醒用户数据源不包含任何记录。 |
@@ -262,7 +262,7 @@ FormView 控件提供了许多内置功能，以允许用户更新、 删除、 
 
 FormView 控件使用模板，因为它不提供用于自动生成命令按钮以执行更新、 删除或插入操作的方法。 您必须手动将这些命令按钮包括在适当的模板。 FormView 控件可识别具有某些按钮及其**CommandName**属性设置为特定值。 下表列出了 FormView 控件可识别的命令按钮。
 
-| **Button** | **Commandname 值** | **描述** |
+| **Button** | **Commandname 值** | **说明** |
 | --- | --- | --- |
 | 取消 | "取消" | 用于更新或插入操作中取消操作并放弃由用户输入的值。 FormView 控件然后返回到 DefaultMode 属性指定的模式。 |
 | 删除 | “Delete” | 在删除操作中用于从数据源中删除所显示的记录。 引发的 ItemDeleting 和 ItemDeleted 事件。 |
@@ -282,7 +282,7 @@ FormView 控件提供分页功能，这样用户就可以导航到数据源中�
 
 通过设置控件的不同部分的样式属性，可以自定义 FormView 控件的外观。 下表列出了不同的样式属性。
 
-| **样式属性** | **描述** |
+| **样式属性** | **说明** |
 | --- | --- |
 | EditRowStyle | 在 FormView 控件时的数据行的样式设置编辑模式。 |
 | EmptyDataRowStyle | 数据源不包含任何记录时 FormView 控件中显示的空数据行的样式设置。 |
@@ -296,7 +296,7 @@ FormView 控件提供分页功能，这样用户就可以导航到数据源中�
 
 FormView 控件提供了几个事件，可以对其进行编程。 这样，您可以运行自定义的例程，每当发生的事件。 下表列出了支持 FormView 控件的事件。
 
-| **Event** | **描述** |
+| **Event** | **说明** |
 | --- | --- |
 | ItemCommand | 在 FormView 控件内单击时发生。 此事件通常用于在控件中单击的按钮时执行的任务。 |
 | ItemCreated | 在 FormView 控件中创建所有 FormViewRow 对象之后发生。 此事件通常用于显示之前修改的记录的值。 |
@@ -326,7 +326,7 @@ DetailsView 控件用于在表中，显示来自数据源的单个记录的记�
 
 在 DetailsView 控件中的每个数据行创建的声明字段控件。 不同的行字段类型确定在控件中的行的行为。 字段控件派生自 DataControlField。 下表列出了可以使用不同的行字段类型。
 
-| **列字段类型** | **描述** |
+| **列字段类型** | **说明** |
 | --- | --- |
 | BoundField | 数据源中字段的值显示为文本。 |
 | ButtonField | 在 DetailsView 控件中显示命令按钮。 这样，您可以显示具有自定义按钮控件，例如添加或删除按钮的行。 |
@@ -371,7 +371,7 @@ DetailsView 控件可自动添加**CommandField**带有编辑、 删除或新建
 
 通过设置控件的不同部分的样式属性，可以自定义 DetailsView 控件的外观。 下表列出了不同的样式属性。
 
-| **样式属性** | **描述** |
+| **样式属性** | **说明** |
 | --- | --- |
 | AlternatingRowStyle | 在 DetailsView 控件中的交替数据行的样式设置。 数据行时设置此属性，RowStyle 设置之间交替显示和**AlternatingRowStyle**设置。 |
 | CommandRowStyle | 包含 DetailsView 控件中的内置命令按钮的行的样式设置。 |
@@ -388,7 +388,7 @@ DetailsView 控件可自动添加**CommandField**带有编辑、 删除或新建
 
 DetailsView 控件提供了几个事件，可以对其进行编程。 这样，您可以运行自定义的例程，每当发生的事件。 下表列出了支持 DetailsView 控件的事件。 DetailsView 控件也继承其基类添加这些事件：数据绑定、 数据绑定，释放，Init、 负载、 PreRender 和呈现。
 
-| **Event** | **描述** |
+| **Event** | **说明** |
 | --- | --- |
 | ItemCommand | 在 DetailsView 控件中单击的按钮时发生。 |
 | ItemCreated | 在 DetailsView 控件中创建所有 DetailsViewRow 对象之后发生。 此事件通常用于显示之前修改的记录的值。 |
@@ -554,7 +554,7 @@ TreeView 控件具有唯一的以下事件：
 
 TreeView 控件提供许多属性用于控制使用样式控件的外观。 提供了以下属性。
 
-| **属性名** | **Controls** |
+| **属性名称** | **控件** |
 | --- | --- |
 | HoverNodeStyle | 当鼠标悬停在其将控制节点的样式。 |
 | LeafNodeStyle | 控制叶节点的样式。 |
@@ -587,7 +587,7 @@ SiteMapPath 控件为 ASP.NET 开发人员提供面包痕迹导航导航控件�
 
 控制操作的 SiteMapPath 控件的属性如下所示：
 
-| **属性** | **属性的说明** |
+| **Property** | **属性的说明** |
 | --- | --- |
 | ParentLevelsDisplayed | 控制显示多少个父节点。 默认值为-1 显示的父节点的数目没有限制。 |
 | PathDirection | 控制 SiteMapPath 的方向。 有效值为 RootToCurrent （默认值） 和 CurrentToRoot。 |
@@ -615,7 +615,7 @@ SiteMapPath 控件具有两个事件，不派生自控件类中;**ItemCreated**�
 
 以下样式都适用于 SiteMapPath 控件的格式设置。
 
-| **属性名** | **Controls** |
+| **属性名称** | **控件** |
 | --- | --- |
 | CurrentNodeStyle | 控制对当前节点文本的样式。 |
 | RootNodeStyle | 控制的根节点的文本的样式。 |

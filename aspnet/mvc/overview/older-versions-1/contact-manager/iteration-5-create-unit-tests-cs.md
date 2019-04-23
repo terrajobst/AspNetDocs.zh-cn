@@ -12,7 +12,7 @@ ms.openlocfilehash: 68080859e205283f56d8f543bfa06b76bb22a39d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408857"
 ---
 # <a name="iteration-5--create-unit-tests-c"></a>迭代 5 — 创建单元测试 (C#)
@@ -117,12 +117,12 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 5. 完成这些步骤后，在引用文件夹应如图 2 所示。
 
 
-[![Unblocking Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
+[![取消阻塞 Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
 
 **图 01**:取消阻塞 Moq ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-cs/_static/image2.png))
 
 
-[![R添加 Moq 后 eferences](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
+[![添加 Moq 后引用](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
 
 **图 02**:添加 Moq 后的引用 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-cs/_static/image4.png))
 
@@ -185,7 +185,7 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 可以通过选择菜单选项在列表 1 中运行单元测试**测试，运行，解决方案 （CTRL + R、 A） 中的所有测试**。 在测试结果窗口中显示测试结果 （请参阅图 4）。
 
 
-[![T测试结果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
+[![测试结果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
 
 **图 04**:测试结果 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-cs/_static/image8.png))
 

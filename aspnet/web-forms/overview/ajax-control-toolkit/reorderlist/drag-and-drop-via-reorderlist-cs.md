@@ -12,7 +12,7 @@ ms.openlocfilehash: 988aa9252cfd93067888734006e6003347f1fb5e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414746"
 ---
 # <a name="drag-and-drop-via-reorderlist-c"></a>通过 ReorderList 进行拖放 (C#)
@@ -44,7 +44,7 @@ ms.locfileid: "59414746"
 - `position` (int，NULL)
 
 
-[![T他的 AJAX 表的布局](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
+[![AJAX 表的布局](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
 
 AJAX 表的布局 ([单击此项可查看原尺寸图像](drag-and-drop-via-reorderlist-cs/_static/image3.png))
 
@@ -52,7 +52,7 @@ AJAX 表的布局 ([单击此项可查看原尺寸图像](drag-and-drop-via-reor
 接下来，几个值填充该表。 请注意，`position`列包含的元素的排序顺序。
 
 
-[![T他 AJAX 表中的初始数据](drag-and-drop-via-reorderlist-cs/_static/image5.png)](drag-and-drop-via-reorderlist-cs/_static/image4.png)
+[![AJAX 表中的初始数据](drag-and-drop-via-reorderlist-cs/_static/image5.png)](drag-and-drop-via-reorderlist-cs/_static/image4.png)
 
 AJAX 表中的初始数据 ([单击此项可查看原尺寸图像](drag-and-drop-via-reorderlist-cs/_static/image6.png))
 
@@ -63,10 +63,10 @@ AJAX 表中的初始数据 ([单击此项可查看原尺寸图像](drag-and-drop
 
 `ReorderList`控件需要设置以下属性：
 
-- `AllowReorder`:列表项是否可能会重新排列
-- `DataSourceID`:数据源的 ID
-- `DataKeyField`:数据源中的主键列的名称
-- `SortOrderField`:提供的列表项的排序顺序的数据源列
+- `AllowReorder`：列表项是否可能会重新排列
+- `DataSourceID`：数据源的 ID
+- `DataKeyField`：数据源中的主键列的名称
+- `SortOrderField`：提供的列表项的排序顺序的数据源列
 
 在中`<DragHandleTemplate>`和`<ItemTemplate>`的部分中，列表的布局可以细微调整。 此外，数据绑定是可能使用`Eval()`方法，如下所示：
 
@@ -83,7 +83,7 @@ AJAX 表中的初始数据 ([单击此项可查看原尺寸图像](drag-and-drop
 运行此示例中，浏览器和有点重新排列的列表项。 然后，重新加载页面和/或我们来看一下数据库。 更改后的位置维护和中的值也会反映`position`中的数据库列不需任何代码，只需通过使用标记。
 
 
-[![T他的新列表项顺序根据数据库更改的数据](drag-and-drop-via-reorderlist-cs/_static/image8.png)](drag-and-drop-via-reorderlist-cs/_static/image7.png)
+[![中的新列表项顺序根据数据库更改的数据](drag-and-drop-via-reorderlist-cs/_static/image8.png)](drag-and-drop-via-reorderlist-cs/_static/image7.png)
 
 根据新列表的数据库更改数据项顺序 ([单击此项可查看原尺寸图像](drag-and-drop-via-reorderlist-cs/_static/image9.png))
 

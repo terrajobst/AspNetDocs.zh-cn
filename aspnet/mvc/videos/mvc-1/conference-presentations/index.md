@@ -12,7 +12,7 @@ ms.openlocfilehash: 2e79c238f4cfa3d2bcf01105fdc1e3d6e55821b8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416709"
 ---
 # <a name="talks"></a>谈话
@@ -20,6 +20,6 @@ ms.locfileid: "59416709"
 > ASP.NET MVC 1 访谈
 
 
-- [使用 Microsoft ASP.NET 模型视图控制器 (MVC) 创建 NerdDinner.com](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
+- [使用 Microsoft ASP.NET 模型视图控制器创建 NerdDinner.com (MVC)](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
 - [美国达人秀视图控制器框架](americas-next-top-model-view-controller-framework.md)
 - [愤怒的忍者黑带技巧](ninja-on-fire-black-belt-tips.md)

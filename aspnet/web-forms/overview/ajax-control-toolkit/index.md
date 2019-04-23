@@ -12,7 +12,7 @@ ms.openlocfilehash: 795283c33d63272b29b91fd7037c3463bc71abad
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410742"
 ---
 # <a name="older-versions---ajax-control-toolkit"></a>旧版本 - Ajax 控件工具包
@@ -25,12 +25,12 @@ ms.locfileid: "59410742"
 
 - [入门](getting-started/index.md)
 
-    - [AJAX 控件工具包入门 (C#)](getting-started/get-started-with-the-ajax-control-toolkit-cs.md)
-    - [使用 AJAX 控件工具包控件和控件扩展程序 (C#)](getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
-    - [创建自定义 AJAX 控件工具包控件扩展程序 (C#)](getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
-    - [AJAX 控件工具包入门 (VB)](getting-started/get-started-with-the-ajax-control-toolkit-vb.md)
-    - [使用 AJAX 控件工具包控件和控件扩展程序 (VB)](getting-started/using-ajax-control-toolkit-controls-and-control-extenders-vb.md)
-    - [创建自定义 AJAX 控件工具包控件扩展程序 (VB)](getting-started/creating-a-custom-ajax-control-toolkit-control-extender-vb.md)
+    - [开始使用 AJAX 控件工具包 (C#)](getting-started/get-started-with-the-ajax-control-toolkit-cs.md)
+    - [使用 AJAX 控件工具包控件和扩展程序控件 (C#)](getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+    - [创建自定义 AJAX 控件工具包扩展程序控件 (C#)](getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
+    - [开始使用 AJAX 控件工具包 (VB)](getting-started/get-started-with-the-ajax-control-toolkit-vb.md)
+    - [使用 AJAX 控件工具包控件和扩展程序控件 (VB)](getting-started/using-ajax-control-toolkit-controls-and-control-extenders-vb.md)
+    - [创建自定义 AJAX 控件工具包扩展程序控件 (VB)](getting-started/creating-a-custom-ajax-control-toolkit-control-extender-vb.md)
 - [Accordion](accordion/index.md)
 
     - [数据绑定到 Accordion (C#)](accordion/databinding-to-an-accordion-cs.md)
@@ -43,20 +43,20 @@ ms.locfileid: "59410742"
     - [同时执行多个动画 (C#)](animation/executing-several-animations-at-the-same-time-cs.md)
     - [逐一执行多个动画 (C#)](animation/executing-several-animations-after-each-other-cs.md)
     - [取决于条件的动画 (C#)](animation/animation-depending-on-a-condition-cs.md)
-    - [选取列表中的一个动画 (C#)](animation/picking-one-animation-out-of-a-list-cs.md)
+    - [选取列表中的动画 (C#)](animation/picking-one-animation-out-of-a-list-cs.md)
     - [响应用户交互的动画 (C#)](animation/animating-in-response-to-user-interaction-cs.md)
     - [动画过程中禁用操作 (C#)](animation/disabling-actions-during-animation-cs.md)
     - [触发另一控件的动画 (C#)](animation/triggering-an-animation-in-another-control-cs.md)
     - [从服务器端修改动画 (C#)](animation/modifying-animations-from-the-server-side-cs.md)
     - [使用客户端代码执行动画 (C#)](animation/executing-animations-using-client-side-code-cs.md)
     - [使用客户端代码更改动画 (C#)](animation/changing-an-animation-using-client-side-code-cs.md)
-    - [对 UpdatePanel 控件执行动画处理 (C#)](animation/animating-an-updatepanel-control-cs.md)
+    - [对 UpdatePanel 控件 执行动画处理 (C#)](animation/animating-an-updatepanel-control-cs.md)
     - [动态控制 UpdatePanel 动画 (C#)](animation/dynamically-controlling-updatepanel-animations-cs.md)
     - [将动画添加到控件 (VB)](animation/adding-animation-to-a-control-vb.md)
     - [同时执行多个动画 (VB)](animation/executing-several-animations-at-the-same-time-vb.md)
     - [逐一执行多个动画 (VB)](animation/executing-several-animations-after-each-other-vb.md)
     - [取决于条件的动画 (VB)](animation/animation-depending-on-a-condition-vb.md)
-    - [选取列表中的一个动画 (VB)](animation/picking-one-animation-out-of-a-list-vb.md)
+    - [选取列表中的动画 (VB)](animation/picking-one-animation-out-of-a-list-vb.md)
     - [响应用户交互的动画 (VB)](animation/animating-in-response-to-user-interaction-vb.md)
     - [动画过程中禁用操作 (VB)](animation/disabling-actions-during-animation-vb.md)
     - [触发另一控件的动画 (VB)](animation/triggering-an-animation-in-another-control-vb.md)
@@ -94,9 +94,9 @@ ms.locfileid: "59410742"
 - [DropShadow](dropshadow/index.md)
 
     - [调整 DropShadow 的 Z-索引 (C#)](dropshadow/adjusting-the-z-index-of-a-dropshadow-cs.md)
-    - [通过客户端代码操作 DropShadow 属性 (C#)](dropshadow/manipulating-dropshadow-properties-from-client-code-cs.md)
+    - [通过客户端代码操作 DropShadow (C#)](dropshadow/manipulating-dropshadow-properties-from-client-code-cs.md)
     - [调整 DropShadow 的 Z-索引 (VB)](dropshadow/adjusting-the-z-index-of-a-dropshadow-vb.md)
-    - [通过客户端代码操作 DropShadow 属性 (VB)](dropshadow/manipulating-dropshadow-properties-from-client-code-vb.md)
+    - [通过客户端代码操作 DropShadow (VB)](dropshadow/manipulating-dropshadow-properties-from-client-code-vb.md)
 - [DynamicPopulate](dynamicpopulate/index.md)
 
     - [动态填充控件 (C#)](dynamicpopulate/dynamically-populating-a-control-cs.md)
@@ -151,7 +151,7 @@ ms.locfileid: "59410742"
     - [使用多个弹出控件 (VB)](popup/using-multiple-popup-controls-vb.md)
     - [使用带 UpdatePanel 的弹出控件处理回发 (VB)](popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
     - [使用没有 UpdatePanel 的弹出控件处理回发 (VB)](popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
-- [评级](rating/index.md)
+- [分级](rating/index.md)
 
     - [创建分级控件 (C#)](rating/creating-a-rating-control-cs.md)
     - [创建分级控件 (VB)](rating/creating-a-rating-control-vb.md)

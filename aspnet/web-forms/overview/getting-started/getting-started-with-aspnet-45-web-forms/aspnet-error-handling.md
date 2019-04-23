@@ -12,7 +12,7 @@ ms.openlocfilehash: e4b8f059974dec33d6305e7b84919550713bf4e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409877"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET 错误处理
@@ -344,10 +344,10 @@ ELMAH 现已准备好存储出现的任何未处理的错误。
 - [Michael 音号，USA](http://www.930solutions.com/) (twitter: [ @mrsharps ](http://twitter.com/mrsharps))
 - Mike 教皇
 - [Mitchel 卖家，USA](http://www.mitchelsellers.com/) (twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
-- [Paul Cociuba, Microsoft](http://linqto.me/Links/pcociuba)
+- [Paul Cociuba Microsoft](http://linqto.me/Links/pcociuba)
 - [Paulo Morgado 葡萄牙](http://paulomorgado.net/)
 - [Pranav rastogi 撰写 Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
-- [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
+- [Tim Ammann Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom Dykstra Microsoft](https://blogs.msdn.com/aspnetue)
 
 ## <a name="community-contributions"></a>社区贡献
@@ -360,4 +360,4 @@ ELMAH 现已准备好存储出现的任何未处理的错误。
   Visual Studio 2012 转换：[Iniciando com ASP.NET Web 窗体的 4.5-Parte 1-Introdução e Visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
 > [!div class="step-by-step"]
-> [上一个](url-routing.md)
+> [上一篇](url-routing.md)

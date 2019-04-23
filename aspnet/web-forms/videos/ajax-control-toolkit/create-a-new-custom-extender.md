@@ -12,7 +12,7 @@ ms.openlocfilehash: 1daffa462700c0c1603c67b853d1afecfc5a2001
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420180"
 ---
 # <a name="create-a-new-custom-extender"></a>新建自定义扩展程序
@@ -24,4 +24,4 @@ ms.locfileid: "59420180"
 [&#9654;观看视频 （26 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-new-custom-extender)
 
 > [!div class="step-by-step"]
-> [上一个](editor-control-custom.md)
+> [上一篇](editor-control-custom.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5214a748633bb3a5e7e38bcaed6015a607b8d63b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414096"
 ---
 # <a name="how-do-i-make-custom-pages"></a>如何创建自定义页面？

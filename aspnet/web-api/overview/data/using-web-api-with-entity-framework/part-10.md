@@ -12,7 +12,7 @@ ms.openlocfilehash: a9a7b74a07c71b47253c0af304c7a26ffa4eaae5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417359"
 ---
 # <a name="publish-the-app-to-azure-azure-app-service"></a>将应用发布到 Azure 的 Azure 应用服务
@@ -55,4 +55,4 @@ ms.locfileid: "59417359"
 单击**设置**选项卡并选中&quot;执行 Code First 迁移&quot;。 然后单击**发布**。
 
 > [!div class="step-by-step"]
-> [上一个](part-9.md)
+> [上一篇](part-9.md)

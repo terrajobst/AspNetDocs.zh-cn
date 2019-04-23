@@ -12,7 +12,7 @@ ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409728"
 ---
 # <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>动手实验：可维护的 Azure 网站：管理更改和缩放
@@ -58,7 +58,7 @@ ms.locfileid: "59409728"
 完成本动手实验需要以下：
 
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/)或更高版本
-- [Azure SDK for.NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
+- [Azure SDK for .NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [GIT 版本控制系统](http://git-scm.com/download)
 - Microsoft Azure 订阅
 
@@ -198,7 +198,7 @@ ms.locfileid: "59409728"
 
     ![添加迁移](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "添加迁移")
 
-    *添加迁移*
+    *Add-Migration*
 
     > [!NOTE]
     > 迁移文件组成的两种方法**向上**并**向下**。
@@ -549,7 +549,7 @@ ms.locfileid: "59409728"
     *记录的错误*
 8. 找到错误的详细信息部分。 很明显，重构您的上一步骤中提交的代码导致此错误。
 
-    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`.
+    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`。
 9. 不要关闭浏览器。
 10. 在新浏览器实例中，导航到[Azure 管理门户](https://manage.windowsazure.com)并使用与你的订阅关联的 Microsoft 帐户登录。
 11. 选择**网站**单击在练习 2 中创建的 web 应用。

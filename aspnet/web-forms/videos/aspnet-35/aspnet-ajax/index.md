@@ -12,7 +12,7 @@ ms.openlocfilehash: c9915bf881342b02124893d5272781f4b6bbb074
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411912"
 ---
 # <a name="aspnet-ajax"></a>ASP.NET Ajax
@@ -23,7 +23,7 @@ ms.locfileid: "59411912"
 - [Visual Studio 2008 对 ASP.NET AJAX 的支持](aspnet-ajax-support-in-visual-studio-2008.md)
 - [将 AJAX 功能添加到现有的 ASP.NET 页面](adding-ajax-functionality-to-an-existing-aspnet-page.md)
 - [在网站中创建并使用启用 AJAX 的 Web 服务](creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-- [ASP.NET AJAX：关于 ASP.NET AJAX 的演示](aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+- [ASP.NET AJAX:ASP.NET AJAX 的演示](aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
 - [ADO.NET 数据服务和 ASP.NET AJAX 支持](adonet-data-services-with-aspnet-ajax-support.md)
 - [ASP.NET AJAX 历史记录简介](introduction-to-aspnet-ajax-history.md)
 - [使用脚本组合提升 AJAX 性能](using-script-combining-to-improve-ajax-performance.md)

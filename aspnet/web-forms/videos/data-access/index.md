@@ -12,7 +12,7 @@ ms.openlocfilehash: b41843143dfbd957ef242c67e67101af79d9efba
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419400"
 ---
 # <a name="data-access"></a>数据访问
@@ -27,18 +27,18 @@ ms.locfileid: "59419400"
     - [从 ASP 应用程序使用数据集和筛选器](adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 - [如何使用 LINQ](how-do-i-with-linq/index.md)
 
-    - [LINQ to SQL：概述](how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
-    - [LINQ to SQL：数据模型](how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
-    - [LINQ to SQL：查询数据库](how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
-    - [LINQ to SQL：更新数据库](how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
-    - [LINQ to SQL：LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-    - [LINQ to SQL：自定义 LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
-    - [LINQ to SQL：使用存储过程](how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-    - [LINQ to SQL：使用存储过程进行更新](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-    - [LINQ to SQL：执行任意 SQL](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+    - [LINQ to SQL:概述](how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
+    - [LINQ to SQL:数据模型](how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
+    - [LINQ to SQL:查询数据库](how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
+    - [LINQ to SQL:更新数据库](how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
+    - [LINQ to SQL:LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
+    - [LINQ to SQL:Custom LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+    - [LINQ to SQL:使用存储的过程](how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
+    - [LINQ to SQL:使用存储过程更新](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+    - [LINQ to SQL:执行任意 SQL](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
 - [来自 VB 团队的 LINQ 视频](linq-videos-from-the-vb-team/index.md)
 
-    - [LINQ 入门](linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
+    - [开始使用 LINQ](linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
     - [执行组和聚合查询](linq-videos-from-the-vb-team/how-do-i-perform-group-and-aggregate-queries.md)
     - [升级 Visual Basic 项目以启用 LINQ](linq-videos-from-the-vb-team/how-do-i-upgrade-visual-basic-projects-to-enable-linq.md)
     - [LINQ to XML 入门](linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml.md)

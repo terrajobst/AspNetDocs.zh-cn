@@ -12,7 +12,7 @@ ms.openlocfilehash: 3562e9c4ec994f04b312476c1357d810f4b5e28a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420154"
 ---
 # <a name="how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose"></a>[如何实现:]扩展并为特定目的自定义 ASP.NET 服务器控件

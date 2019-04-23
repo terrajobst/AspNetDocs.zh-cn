@@ -12,7 +12,7 @@ ms.openlocfilehash: e031417f2ee22533e7b5a606fc40526d7d911efc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413329"
 ---
 # <a name="iteration-3--add-form-validation-vb"></a>迭代 3 – 添加表单验证 (VB)
@@ -51,7 +51,7 @@ by [Microsoft](https://github.com/microsoft)
 在联系人管理器应用程序的此第二个迭代中，我们将添加基本窗体验证。 我们阻止用户提交联系人而无需为所需的窗体字段输入值。 我们还验证电话号码和电子邮件地址 （请参阅图 1）。
 
 
-[![T他新建项目对话框中](iteration-3-add-form-validation-vb/_static/image1.jpg)](iteration-3-add-form-validation-vb/_static/image1.png)
+[![新建项目对话框](iteration-3-add-form-validation-vb/_static/image1.jpg)](iteration-3-add-form-validation-vb/_static/image1.png)
 
 **图 01**:具有验证的窗体 ([单击此项可查看原尺寸图像](iteration-3-add-form-validation-vb/_static/image2.png))
 

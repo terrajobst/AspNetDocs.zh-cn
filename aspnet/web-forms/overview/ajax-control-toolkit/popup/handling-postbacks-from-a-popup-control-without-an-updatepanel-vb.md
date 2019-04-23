@@ -12,7 +12,7 @@ ms.openlocfilehash: c46f00c42f9b06d0224bcae03f51be8a73099974
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409338"
 ---
 # <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-vb"></a>使用没有 UpdatePanel 的弹出控件处理回发 (VB)
@@ -49,14 +49,14 @@ AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激�
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 
 
-[![T当用户单击文本框时显示他日历](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image2.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image1.png)
+[![当用户单击文本框中，将显示日历](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image2.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image1.png)
 
 当用户单击文本框中，将显示日历 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image3.png))
 
 
-[![C单击某个日期上会将其放在文本框中](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image5.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image4.png)
+[![单击某个日期将其放入文本框](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image5.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image4.png)
 
 单击某个日期将其放在文本框中 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image6.png))
 
 > [!div class="step-by-step"]
-> [上一个](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
+> [上一篇](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: d1895b03a2aa877bfd279995dc5647c5efefade6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414200"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-c"></a>使用 LINQ to SQL 创建模型类 (C#)
@@ -43,7 +43,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 在此教程--为了说明如何构建模型类-我们构建一个简单的电影数据库应用程序。 第一步是创建新的数据库。 右键单击该应用\_在解决方案资源管理器窗口中，选择菜单选项的数据文件夹**添加、 新项**。 选择**SQL Server 数据库**模板，为其提供名称 MoviesDB.mdf，然后单击**添加**按钮 （请参见图 1）。
 
 
-[![Adding 新的 SQL Server 数据库](creating-model-classes-with-linq-to-sql-cs/_static/image2.png)](creating-model-classes-with-linq-to-sql-cs/_static/image1.png)
+[![添加新的 SQL Server 数据库](creating-model-classes-with-linq-to-sql-cs/_static/image2.png)](creating-model-classes-with-linq-to-sql-cs/_static/image1.png)
 
 **图 01**:添加新的 SQL Server 数据库 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image3.png))
 
@@ -53,7 +53,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 使用 Visual Web Developer 时，服务器资源管理器窗口称为数据库资源管理器窗口。
 
 
-[![U发挥最大功效服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-cs/_static/image5.png)](creating-model-classes-with-linq-to-sql-cs/_static/image4.png)
+[![使用服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-cs/_static/image5.png)](creating-model-classes-with-linq-to-sql-cs/_static/image4.png)
 
 **图 02**:使用服务器资源管理器窗口 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image6.png))
 
@@ -61,14 +61,14 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 我们需要将表添加到我们代表我们的电影的数据库。 右键单击表文件夹，然后选择菜单选项**添加新表**。 选择此菜单选项打开表设计器 （请参见图 3）。
 
 
-[![U发挥最大功效服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-cs/_static/image8.png)](creating-model-classes-with-linq-to-sql-cs/_static/image7.png)
+[![使用服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-cs/_static/image8.png)](creating-model-classes-with-linq-to-sql-cs/_static/image7.png)
 
 **图 03**:表设计器 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image9.png))
 
 
 我们需要向数据库表添加以下列：
 
-| **列名** | **数据类型** | **允许为 Null** |
+| **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
 | 标题 | Nvarchar(200) | False |
@@ -83,7 +83,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 我们的 MVC 模型将包含 LINQ to SQL 类表示 tblMovie 数据库表。 若要创建这些 LINQ to SQL 类的最简单方法是右键单击 Models 文件夹中，选择**添加、 新建项**，选择的 LINQ to SQL 类模板，为指定类名称 Movie.dbml，然后单击**添加**按钮 （请参见图 4）。
 
 
-[![CLINQ to SQL 类](creating-model-classes-with-linq-to-sql-cs/_static/image11.png)](creating-model-classes-with-linq-to-sql-cs/_static/image10.png)
+[![创建 LINQ to SQL 类](creating-model-classes-with-linq-to-sql-cs/_static/image11.png)](creating-model-classes-with-linq-to-sql-cs/_static/image10.png)
 
 **图 04**:创建 LINQ to SQL 类 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 立即创建电影 LINQ to SQL 类后，将显示对象关系设计器。 可以将数据库表拖到对象关系设计器创建 LINQ to SQL 类表示特定的数据库表上服务器资源管理器窗口中。 我们需要添加到对象关系设计器上的 tblMovie 数据库表 （请参见图 5）。
 
 
-[![U发挥最大功效对象关系设计器](creating-model-classes-with-linq-to-sql-cs/_static/image14.png)](creating-model-classes-with-linq-to-sql-cs/_static/image13.png)
+[![使用对象关系设计器](creating-model-classes-with-linq-to-sql-cs/_static/image14.png)](creating-model-classes-with-linq-to-sql-cs/_static/image13.png)
 
 **图 05**:使用对象关系设计器 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image15.png))
 
@@ -131,7 +131,7 @@ LINQ 查询执行针对 DataContext 检索所有从电影`tblMovies`数据库表
 若要添加到记录`tblMovies`数据库表中，右键单击`tblMovies`数据库在服务器资源管理器窗口 （在 Visual Web Developer 中的数据库资源管理器窗口） 中的表并选择菜单选项显示表数据。 可以插入`movie`记录通过使用显示 （见图 6） 的网格。
 
 
-[![Inserting 电影](creating-model-classes-with-linq-to-sql-cs/_static/image17.png)](creating-model-classes-with-linq-to-sql-cs/_static/image16.png)
+[![插入电影](creating-model-classes-with-linq-to-sql-cs/_static/image17.png)](creating-model-classes-with-linq-to-sql-cs/_static/image16.png)
 
 **图 06**:插入电影 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image18.png))
 
@@ -139,7 +139,7 @@ LINQ 查询执行针对 DataContext 检索所有从电影`tblMovies`数据库表
 添加到某些数据库记录后`tblMovies`表，并且运行该应用程序，您会看到图 7 中的页。 项目符号列表中将显示所有电影数据库记录。
 
 
-[![D与索引视图的 isplaying 电影](creating-model-classes-with-linq-to-sql-cs/_static/image20.png)](creating-model-classes-with-linq-to-sql-cs/_static/image19.png)
+[![显示与索引视图的电影](creating-model-classes-with-linq-to-sql-cs/_static/image20.png)](creating-model-classes-with-linq-to-sql-cs/_static/image19.png)
 
 **图 07**:显示与索引视图的电影 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image21.png))
 

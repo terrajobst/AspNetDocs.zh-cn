@@ -12,7 +12,7 @@ ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410859"
 ---
 # <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD（创建、读取、更新和删除）数据窗体输入支持
@@ -36,22 +36,22 @@ by [Microsoft](https://github.com/microsoft)
 
 我们之前添加操作方法向 DinnersController 实现对两个 Url 的支持： */Dinners*并 */Dinners/详细信息 / [id]*。
 
-| **URL** | **VERB** | **用途** |
+| **URL** | **VERB** | **目的** |
 | --- | --- | --- |
 | */Dinners/* | GET | 显示即将到来的 dinners 的 HTML 列表。 |
-| */Dinners/详细信息 / [id]* | GET | 显示有关特定 dinner 的详细信息。 |
+| */Dinners/Details/[id]* | GET | 显示有关特定 dinner 的详细信息。 |
 
 我们现在将操作方法来实现三个其他 Url: */Dinners/编辑 / [id]*， */Dinners/创建*，并 */Dinners/Delete / [id]*。 这些 Url 将启用对编辑现有 Dinners，创建新 Dinners 和删除 Dinners 的支持。
 
 我们将支持与这些新的 Url 的 HTTP GET 和 HTTP POST 谓词交互。 HTTP GET 请求到以下 Url 将显示数据 （使用在"编辑"的情况下的 Dinner 数据填充窗体，在"创建"的情况下的空白窗体和在"删除"的情况下删除确认屏幕） 的初始 HTML 视图。 这些 url 的 HTTP POST 请求将保存/更新/删除 Dinner 数据中我们 DinnerRepository （和从数据库到）。
 
-| **URL** | **VERB** | **用途** |
+| **URL** | **VERB** | **目的** |
 | --- | --- | --- |
-| */Dinners/编辑 / [id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据填充。 |
+| */Dinners/Edit/[id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据填充。 |
 | 发布 | 保存到数据库的晚餐窗体更改。 |
-| */ 创建 dinners /* | GET | 显示一个空的 HTML 窗体，用户可定义新 Dinners。 |
+| */Dinners/Create* | GET | 显示一个空的 HTML 窗体，用户可定义新 Dinners。 |
 | 发布 | 创建新的 Dinner 并将其保存在数据库中。 |
-| */Dinners/delete / [id]* | GET | 显示删除确认屏幕。 |
+| */Dinners/Delete/[id]* | GET | 显示删除确认屏幕。 |
 | 发布 | 从数据库中删除指定的 dinner。 |
 
 ### <a name="edit-support"></a>编辑支持

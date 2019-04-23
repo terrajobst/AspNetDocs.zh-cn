@@ -12,7 +12,7 @@ ms.openlocfilehash: c2a5b3ae768012156b0f46eda8caeb43451af258
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413745"
 ---
 # <a name="migrating"></a>迁移
@@ -23,8 +23,8 @@ ms.locfileid: "59413745"
 - [[ASP.NET 2.0 简介：] ASP.NET 2.0 基础知识](intro-to-aspnet-20-aspnet-20-fundamentals.md)
 - [[ASP.NET 2.0 简介：] 用户界面元素](intro-to-aspnet-20-user-interface-elements.md)
 - [[迁移对象] 经典 ASP 到 ASP.NET](migrating-from-classic-asp-to-aspnet.md)
-- [适用于 JSP 开发人员的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
-- [适用于 JSP 开发人员的 ASP.NET 简介：生成应用程序](intro-to-aspnet-for-jsp-developers-building-applications.md)
-- [适用于 ColdFusion 开发人员的 ASP.NET 简介：将 ASP.NET 添加到清单中](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-- [适用于 ColdFusion 开发人员的 ASP.NET 简介：生成 ASP.NET 应用程序](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+- [为 JSP 开发人员的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+- [为 JSP 开发人员的 ASP.NET 简介：构建应用程序](intro-to-aspnet-for-jsp-developers-building-applications.md)
+- [为 ColdFusion 开发人员的 ASP.NET 简介：将 ASP.NET 添加到您的清单](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+- [为 ColdFusion 开发人员的 ASP.NET 简介：构建 ASP.NET 应用程序](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
 - [PHP 和 Windows 平台之间的互操作](interop-between-php-and-the-windows-platform.md)

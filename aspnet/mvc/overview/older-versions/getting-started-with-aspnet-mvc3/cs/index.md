@@ -12,7 +12,7 @@ ms.openlocfilehash: b476e9010e47043f12ce00c222382786c66f5c4e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414304"
 ---
 # <a name="getting-started-with-aspnet-mvc-3-c"></a>ASP.NET MVC 3 入门 (C#)
@@ -28,4 +28,4 @@ ms.locfileid: "59414304"
 - [检查 Edit 方法和编辑视图 (C#)](examining-the-edit-methods-and-edit-view.md)
 - [向电影模型和表添加新字段 (C#)](adding-a-new-field.md)
 - [向模型添加验证 (C#)](adding-validation-to-the-model.md)
-- [改进 Details 和 Delete 方法 (C#)](improving-the-details-and-delete-methods.md)
+- [改进 Details 和 Delete 方法](improving-the-details-and-delete-methods.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 028631f8855e4d94bebb0e965de75c4025e22859
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409260"
 ---
 # <a name="part-7-creating-the-main-page"></a>第 7 部分：创建主页面
@@ -83,7 +83,7 @@ ms.locfileid: "59409260"
 
 "添加到 Order"按钮调用`addItemToCart`上`ProductViewModel`产品的实例。 此示例演示 Knockout.js 的一个不错的功能：当视图模型中包含其他视图模型时，您可对内部模型应用绑定。 在此示例中，在绑定`foreach`应用于每个`ProductViewModel`实例。 这种方法是功能的将所有放到一个视图模型更加清晰。
 
-**购物车**
+**Cart**
 
 下面是在购物车的绑定：
 
@@ -91,7 +91,7 @@ ms.locfileid: "59409260"
 
 此循环车数组并显示名称、 价格和数量。 请注意，"删除"链接和"创建订单"按钮绑定到视图模型的函数。
 
-**Orders**
+**订单**
 
 下面是有关订单列表的绑定：
 
@@ -99,7 +99,7 @@ ms.locfileid: "59409260"
 
 此循环访问订单和显示订单 id。 链接的 click 事件绑定到`getDetails`函数。
 
-**Order Details**
+**订单详细信息**
 
 下面是订单详细信息的绑定：
 
@@ -117,4 +117,4 @@ ms.locfileid: "59409260"
 - [实体框架开发人员中心](https://msdn.microsoft.com/data/ef)
 
 > [!div class="step-by-step"]
-> [上一个](using-web-api-with-entity-framework-part-6.md)
+> [上一篇](using-web-api-with-entity-framework-part-6.md)

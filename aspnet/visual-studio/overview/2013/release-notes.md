@@ -12,7 +12,7 @@ ms.openlocfilehash: 8234bd1b7eb74d9b03e507f00d9ad937314288be
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411275"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>适用于 Visual Studio 2013 的 ASP.NET 和 Web 工具发行说明
@@ -42,7 +42,7 @@ by [Microsoft](https://github.com/microsoft)
 - [ASP.NET MVC 5](#TOC10)
 - [ASP.NET Web API 2](#TOC11)
 - [ASP.NET SignalR](#TOC13)
-- [ASP.NET 标识](#TOC8)
+- [ASP.NET Identity](#TOC8)
 - [Microsoft OWIN 组件](#TOC7)
 - [Entity Framework 6](#ef6)
 - [ASP.NET Razor 3](#TOC14)
@@ -135,7 +135,7 @@ Visual Studio 2013 还就使用这两个 CoffeeScript 和更低的编辑器中�
 有关更多信息，请参见以下资源：
 
 - [在 Azure 应用服务中创建 ASP.NET web 应用](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
-- [使用 Visual Studio 的 Azure 应用服务中 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Web 发布增强功能
@@ -408,7 +408,7 @@ ASP.NET Web API 现在完全支持 OWIN，并可以在任何 OWIN 支持主机�
 
 ### <a name="backward-compatible-server-support"></a>向后兼容服务器支持
 
-在以前版本的 SignalR，SignalR 包在客户端中使用和需要完全相同的服务器的版本。 为了支持胖客户端应用程序将会很难更新，SignalR 2.0 现在支持使用旧版客户端的较新的服务器版本。 **注意:SignalR 2.0 不支持使用较旧版本与更高版本的客户端生成的服务器。**
+在以前版本的 SignalR，SignalR 包在客户端中使用和需要完全相同的服务器的版本。 为了支持胖客户端应用程序将会很难更新，SignalR 2.0 现在支持使用旧版客户端的较新的服务器版本。 **注意：SignalR 2.0 不支持使用较旧版本与更高版本的客户端生成的服务器。**
 
 <a id="remove40"></a>
 
@@ -520,9 +520,9 @@ Microsoft OWIN 组件 （也称为 Katana 项目） 中引入的更改包括新�
 
 有关 OWIN 和 Katana 的详细信息，请参阅[什么是新的 OWIN 和 Katana](../../../aspnet/overview/owin-and-katana/index.md)。
 
-**注意:[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)应用程序不能在 IIS 经典模式下运行; 它们必须在集成模式下运行。**
+**注意：[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)应用程序不能在 IIS 经典模式下运行; 它们必须在集成模式下运行。**
 
-**注意:[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)必须以完全信任运行的应用程序。**
+**注意：[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)必须以完全信任运行的应用程序。**
 
 ### <a name="new-servers-and-hosts"></a>新的服务器和主机
 
@@ -629,7 +629,7 @@ ASP.NET 应用程序挂起是从根本上更改的用户体验和承载的 ASP.N
 
     *'/' 应用程序中的服务器错误。*
 
-    <em>一个声明的类型<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>或<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>不存在上提供的 ClaimsIdentity 的。 若要启用基于声明的身份验证的防伪令牌支持，请验证已配置的声明提供程序提供这两个生成的 ClaimsIdentity 实例上这些声明。 如果已配置的声明提供程序改为使用不同的声明类型作为唯一标识符，这可以通过设置静态属性 AntiForgeryConfig.UniqueClaimTypeIdentifier 配置。</em>
+    <em>一个声明的类型<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>或<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>不存在上提供的 ClaimsIdentity 的。若要启用基于声明的身份验证的防伪令牌支持，请验证已配置的声明提供程序提供这两个生成的 ClaimsIdentity 实例上这些声明。如果已配置的声明提供程序改为使用不同的声明类型作为唯一标识符，这可以通过设置静态属性 AntiForgeryConfig.UniqueClaimTypeIdentifier 配置。</em>
 
     **解决方法**：
 

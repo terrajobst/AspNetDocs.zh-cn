@@ -12,7 +12,7 @@ ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412406"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建实际云应用
@@ -100,7 +100,7 @@ ms.locfileid: "59412406"
     - 启用高可用性，并通过松散耦合 web 和辅助角色层来提高可伸缩性。
     - 演示：修复其应用中的 azure 存储队列。
 - [云应用程序模式和指南的详细信息](more-patterns-and-guidance.md)。
-- [附录：“Fix It”示例应用程序](the-fix-it-sample-application.md)
+- [附录：解决方法示例应用程序](the-fix-it-sample-application.md)
 
     - 已知问题
     - 最佳做法
@@ -175,4 +175,4 @@ ms.locfileid: "59412406"
 - [Azure 网站内部结构与 Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
 > [!div class="step-by-step"]
-> [下一步](automate-everything.md)
+> [下一页](automate-everything.md)

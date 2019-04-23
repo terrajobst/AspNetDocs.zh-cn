@@ -12,7 +12,7 @@ ms.openlocfilehash: 0dae280dfa3028df5fda95c4366132c99a0dc3b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409195"
 ---
 # <a name="adding-dynamic-content-to-a-cached-page-vb"></a>向缓存页添加动态内容 (VB)
@@ -52,7 +52,7 @@ RenderNews 方法传递给 WriteSubstitution() 方法。 请注意，不会调�
 
 缓存索引视图。 该视图返回的清单 3 中的控制器。 请注意，index （） 操作用修饰&lt;OutputCache&gt;导致要缓存 60 秒的索引视图的属性。
 
-**代码清单 3 – Controllers\HomeController.vb**
+**Listing 3 – Controllers\HomeController.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample3.vb)]
 
@@ -66,7 +66,7 @@ RenderNews 方法传递给 WriteSubstitution() 方法。 请注意，不会调�
 
 充分利用缓存后替换的更简单方法是封装对自定义帮助程序方法内 WriteSubstitution() 方法的调用。 列表 4 中的帮助器方法进行了说明这种方法。
 
-**列表 4 – Helpers\AdHelper.vb**
+**Listing 4 – Helpers\AdHelper.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample4.vb)]
 

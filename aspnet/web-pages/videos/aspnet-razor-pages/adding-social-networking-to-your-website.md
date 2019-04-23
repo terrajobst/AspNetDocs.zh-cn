@@ -12,7 +12,7 @@ ms.openlocfilehash: 2b70b49e6af449222cb67e64ed9026091646e6a4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408870"
 ---
 # <a name="adding-social-networking-to-your-website"></a>向网站添加社交网络功能
@@ -24,4 +24,4 @@ ms.locfileid: "59408870"
 [&#9654;观看视频 （8 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-social-networking-to-your-website)
 
 > [!div class="step-by-step"]
-> [上一个](adding-search-to-your-web-site.md)
+> [上一篇](adding-search-to-your-web-site.md)

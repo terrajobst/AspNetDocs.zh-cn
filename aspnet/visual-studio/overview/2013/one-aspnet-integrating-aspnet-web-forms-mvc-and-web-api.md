@@ -12,7 +12,7 @@ ms.openlocfilehash: 1023d9bef311e58fb5fb0bb24cde80e8320e6bac
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419049"
 ---
 # <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>动手实验：One ASP.NET：集 ASP.NET Web 窗体、MVC 和 Web API 于一身
@@ -103,7 +103,7 @@ ms.locfileid: "59419049"
 
     ![创建新项目](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image1.png)
 
-    *创建新项目*
+    *创建新的项目*
 2. 在中**新的项目**对话框中，选择**ASP.NET Web 应用程序**下**Visual C# |Web**选项卡，并确保 **.NET Framework 4.5**处于选中状态。 将项目命名*MyHybridSite*，选择**位置**然后单击**确定**。
 
     ![新的 ASP.NET Web 应用程序项目](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)
@@ -390,7 +390,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 
     ![生成选项卡](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image32.png "生成部分")
 
-    *“生成”选项卡*
+    *生成选项卡*
 5. 下**输出**，选择**XML 文档文件**。 在编辑框中，键入**应用程序\_Data/XmlDocument.xml**。
 
     ![输出中生成选项卡的部分](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image33.png "输出中生成选项卡的部分")

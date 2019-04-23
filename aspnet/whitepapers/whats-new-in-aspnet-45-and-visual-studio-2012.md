@@ -12,7 +12,7 @@ ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410586"
 ---
 # <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 和 Visual Studio 2012 的新增功能
@@ -88,7 +88,7 @@ ms.locfileid: "59410586"
         - [供应商特定的架构 (-moz-，-易于使用的功能)](#_Toc318097419)
         - [注释和取消注释支持](#_Toc318097420)
         - [颜色选取器](#_Toc318097421)
-        - [代码段](#_Toc318097422)
+        - [片段](#_Toc318097422)
         - [自定义区域](#_Toc318097423)
     - [Page Inspector](#_Toc318097424)
     - [发布](#_Toc318097425)

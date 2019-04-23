@@ -12,7 +12,7 @@ ms.openlocfilehash: fb185c4147d516ab28d632b3e874b6f1d46f6576
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408415"
 ---
 # <a name="testing-the-strength-of-a-password-vb"></a>测试密码强度 (VB)
@@ -44,9 +44,9 @@ ms.locfileid: "59408415"
 运行页面，然后立即键入：仅输入小写字母、 大写字母、 数字和符号后，密码会被确认为不可换行。
 
 
-[![Now 密码适合 （非常）](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
+[![现在，密码是 （很） 高](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
 
 现在，密码是 （非常） 很好 ([单击此项可查看原尺寸图像](testing-the-strength-of-a-password-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](testing-the-strength-of-a-password-cs.md)
+> [上一篇](testing-the-strength-of-a-password-cs.md)

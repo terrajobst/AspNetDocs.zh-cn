@@ -12,7 +12,7 @@ ms.openlocfilehash: 1bcad8a023500f4738edf09f4ef0635588cd5323
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412705"
 ---
 # <a name="mvc-music-store-part-1-intro-tools-and-project-structure"></a>MVC Music 商店第 1 部分：简介、工具和项目结构
@@ -24,4 +24,4 @@ Jon Galloway 开始 MVC Music 商店本教程使用简介、 概述应用程序�
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc-music-store-part-1-intro-tools-and-project-structure)
 
 > [!div class="step-by-step"]
-> [下一步](mvc-music-store-part-2-controllers.md)
+> [下一页](mvc-music-store-part-2-controllers.md)

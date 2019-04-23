@@ -13,7 +13,7 @@ ms.openlocfilehash: fb0309af11910125943737ebb721b356b7bd08bc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418295"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>ASP.NET Web API 中发送 HTML 窗体数据：窗体 URL 编码的数据
@@ -134,4 +134,4 @@ JQuery**提交**函数将窗体操作替换的新函数。 这会替代提交按
 
 ## <a name="additional-resources"></a>其他资源
 
-[第 2 部分：文件上载和多部分 MIME](sending-html-form-data-part-2.md)
+[第 2 部分：文件上传和多部分 MIME](sending-html-form-data-part-2.md)

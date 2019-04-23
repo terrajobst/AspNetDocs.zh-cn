@@ -12,7 +12,7 @@ ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411353"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>创建具有 SMS 双因素身份验证功能的 ASP.NET Web 窗体应用 (C#)
@@ -108,7 +108,7 @@ ms.locfileid: "59411353"
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>其他资源
 
-- [使用 SMS 和 ASP.NET Identity 的双因素身份验证](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [使用 SMS 和 ASP.NET 标识的双因素身份验证](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 - [ASP.NET 标识的链接的推荐资源](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [包含成员资格、 OAuth 和 SQL 数据库的安全的 ASP.NET Web 窗体应用部署到 Azure 网站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [ASP.NET Web 窗体的教程系列-添加 OAuth 2.0 提供程序](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)

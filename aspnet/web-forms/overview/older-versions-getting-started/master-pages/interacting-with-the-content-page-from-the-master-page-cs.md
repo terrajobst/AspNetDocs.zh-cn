@@ -12,7 +12,7 @@ ms.openlocfilehash: a2b6d3a5ceb66c14a78b02182f49d76c72becbd4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413641"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-c"></a>从母版页与内容页交互 (C#)
@@ -51,7 +51,7 @@ ms.locfileid: "59413641"
 我们首要任务是创建内容页，其中列出了 Northwind 数据库中的产品。 (我们 Northwind 数据库到项目中添加前面的教程[*与母版页从内容页交互*](interacting-with-the-master-page-from-the-content-page-cs.md)。)首先，通过添加新的 ASP.NET 页面到`~/Admin`名为的文件夹`Products.aspx`，确保将将其绑定到`Site.master`母版页。 图 1 显示此页添加到网站后的解决方案资源管理器。
 
 
-[![Add Admin 文件夹到一个新的 ASP.NET 页](interacting-with-the-content-page-from-the-master-page-cs/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image1.png)
+[![向管理员文件夹添加新的 ASP.NET 页面](interacting-with-the-content-page-from-the-master-page-cs/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image1.png)
 
 **图 01**:添加到新的 ASP.NET 页`Admin`文件夹 ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image3.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "59413641"
 返回到`Products.aspx`。 中的内容控件`MainContent`中，添加 GridView 控件并将其命名`ProductsGrid`。 将 GridView 绑定到名为的新 SqlDataSource 控件`ProductsDataSource`。
 
 
-[![Bind 新 SqlDataSource 控件为 GridView](interacting-with-the-content-page-from-the-master-page-cs/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image4.png)
+[![将 GridView 绑定到新的 SqlDataSource 控件](interacting-with-the-content-page-from-the-master-page-cs/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image4.png)
 
 **图 02**:将 GridView 绑定到新的 SqlDataSource 控件 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image6.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "59413641"
 将向导配置，使其使用 Northwind 数据库。 如果您已完成上一教程中，则应该已拥有一个名为的连接字符串`NorthwindConnectionString`在`Web.config`。 从下拉列表中，选择此连接字符串，如图 3 中所示。
 
 
-[![C配置 SqlDataSource 使用 Northwind 数据库](interacting-with-the-content-page-from-the-master-page-cs/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image7.png)
+[![配置 SqlDataSource 使用 Northwind 数据库](interacting-with-the-content-page-from-the-master-page-cs/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image7.png)
 
 **图 03**:配置 SqlDataSource 使用 Northwind 数据库 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image9.png))
 
@@ -84,7 +84,7 @@ ms.locfileid: "59413641"
 接下来，指定数据源控件`SELECT`通过从下拉列表中选择产品表并返回语句`ProductName`和`UnitPrice`（请参阅图 4） 的列。 单击下一步并在完成以完成配置数据源向导。
 
 
-[![Return 产品名称和产品表中的单价字段](interacting-with-the-content-page-from-the-master-page-cs/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image10.png)
+[![返回产品表中的产品名称和单价字段](interacting-with-the-content-page-from-the-master-page-cs/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image10.png)
 
 **图 04**:返回`ProductName`并`UnitPrice`字段从`Products`表 ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image12.png))
 
@@ -95,7 +95,7 @@ ms.locfileid: "59413641"
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample2.aspx)]
 
 
-[![E支票产品和它的价格是 GridView 中列出的](interacting-with-the-content-page-from-the-master-page-cs/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image13.png)
+[![GridView 中列出每个产品和它的价格](interacting-with-the-content-page-from-the-master-page-cs/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image13.png)
 
 **图 05**:GridView 中列出每个产品和它的价格 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image15.png))
 
@@ -111,7 +111,7 @@ ms.locfileid: "59413641"
 接下来，将使用 SqlDataSource 控件添加到主页上，其命名为`DoublePricesDataSource`。 此 SqlDataSource 将用于执行`UPDATE`语句翻倍，所有价格。 具体而言，我们需要设置其`ConnectionString`并`UpdateCommand`属性设置为适当的连接字符串和`UPDATE`语句。 然后我们需要调用此 SqlDataSource 控件`Update`方法时`DoublePrice`单击按钮。 若要设置`ConnectionString`和`UpdateCommand`属性中，选择 SqlDataSource 控件，然后转到属性窗口。 `ConnectionString`属性列出了已存储在这些连接字符串`Web.config`在下拉列表中; 选择`NorthwindConnectionString`选项如图 6 中所示。
 
 
-[![C配置 SqlDataSource 使用 NorthwindConnectionString](interacting-with-the-content-page-from-the-master-page-cs/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image16.png)
+[![配置为使用 NorthwindConnectionString SqlDataSource](interacting-with-the-content-page-from-the-master-page-cs/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image16.png)
 
 **图 06**:配置为使用 SqlDataSource `NorthwindConnectionString` ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image18.png))
 
@@ -124,7 +124,7 @@ ms.locfileid: "59413641"
 此语句中，执行时，将会翻倍`UnitPrice`值中的每条`Products`表。
 
 
-[![Set SqlDataSource 的 UpdateCommand 属性](interacting-with-the-content-page-from-the-master-page-cs/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image19.png)
+[![设置 SqlDataSource 的 UpdateCommand 属性](interacting-with-the-content-page-from-the-master-page-cs/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image19.png)
 
 **图 07**:设置的 SqlDataSource`UpdateCommand`属性 ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image21.png))
 
@@ -225,12 +225,12 @@ ms.locfileid: "59413641"
 图 8 和 9 说明了此行为。 图 8 显示了页面在首次访问时。 请注意，在这种价格值`RecentProducts`（在主页面的左侧列） 的 GridView 和`ProductsGrid`GridView （在内容页）。 图 9 显示了相同屏幕后立即`DoublePrice`单击按钮。 正如您所看到的新价格会立即反映在这两个 Gridview。
 
 
-[![T他初始价格值](interacting-with-the-content-page-from-the-master-page-cs/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image22.png)
+[![初始的价格值](interacting-with-the-content-page-from-the-master-page-cs/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image22.png)
 
 **图 08**:初始的价格值 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image24.png))
 
 
-[![T在 Gridview 中显示他 Just-Doubled 价格](interacting-with-the-content-page-from-the-master-page-cs/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image25.png)
+[![在 Gridview 中显示 Just-Doubled 价格](interacting-with-the-content-page-from-the-master-page-cs/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image25.png)
 
 **图 09**:在 Gridview 中显示 Just-Doubled 价格 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-cs/_static/image27.png))
 

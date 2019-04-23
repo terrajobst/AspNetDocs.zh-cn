@@ -12,7 +12,7 @@ ms.openlocfilehash: 91523180501f1d1eb67586bf97649ad6226ec565
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413225"
 ---
 # <a name="creating-a-rating-control-vb"></a>创建分级控件 (VB)
@@ -66,9 +66,9 @@ ms.locfileid: "59413225"
 保存页面，并将其加载到你的浏览器。 将鼠标悬停 （最初为空） 分级项，当 JavaScript 效果：分级的更改。 单击组星级，保留当前的分级。 最后，当用户提交窗体，服务器端代码将输出的所选的分级。
 
 
-[![C具有最少的代码的分级系统](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
+[![创建具有最少的代码的分级系统](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)
 
 创建分级系统具有最少的代码 ([单击此项可查看原尺寸图像](creating-a-rating-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](creating-a-rating-control-cs.md)
+> [上一篇](creating-a-rating-control-cs.md)

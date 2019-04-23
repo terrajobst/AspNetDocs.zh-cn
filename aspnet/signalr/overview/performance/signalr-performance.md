@@ -12,7 +12,7 @@ ms.openlocfilehash: b0da3032e22123f415bf9865e264832739c29f61
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409013"
 ---
 # <a name="signalr-performance"></a>SignalR 性能
@@ -200,11 +200,11 @@ SignalR 性能和缩放上的最新演示文稿，请参阅[缩放使用 ASP.NET
 以下指标测量生成的 SignalR 消息通信错误。 **集线器解析**中心或中心方法无法解析时出现错误。 **集线器调用**错误是调用集线器方法时引发的异常。 **传输**错误是在 HTTP 请求或响应过程中引发的连接错误。
 
 - **错误：所有总数**
-- **错误：所有/秒**
+- **错误：All/Sec**
 - **错误：中心解决方法总数**
 - **错误：每秒集线器解析**
 - **错误：集线器调用总数**
-- **错误：每秒集线器调用**
+- **错误：Hub Invocation/Sec**
 - **错误：传输总数**
 - **错误：传输/秒**
 
@@ -248,7 +248,7 @@ SignalR 性能和缩放上的最新演示文稿，请参阅[缩放使用 ASP.NET
 
 - .NET CLR Memory\\所有堆 （对于 w3wp) 中的字节数
 
-**ASP.NET**
+**ASP.NET 2.0**
 
 - Asp.net\requests Current
 - ASP.NET\Queued
@@ -268,7 +268,7 @@ SignalR 性能和缩放上的最新演示文稿，请参阅[缩放使用 ASP.NET
 - Web 服务 \ 当前连接
 - Web Service\Maximum Connections
 
-**线程**
+**线程处理**
 
 - .NET CLR 锁定和线程\\当前逻辑线程数目
 - .NET CLR 锁定和线程\\当前物理线程数目

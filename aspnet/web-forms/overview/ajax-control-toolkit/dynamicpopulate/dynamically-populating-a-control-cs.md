@@ -12,7 +12,7 @@ ms.openlocfilehash: 42c1cd684196c026f1435cba289fc2535187087c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417294"
 ---
 # <a name="dynamically-populating-a-control-c"></a>动态填充控件 (C#)
@@ -66,9 +66,9 @@ Web 服务然后另存为`DynamicPopulate.cs.asmx`。 或者，可以实现`getD
 在浏览器中运行 ASP.NET 页并单击按钮;你将收到月-日-年格式的当前日期。
 
 
-[![A 单击此按钮从服务器中检索日期](dynamically-populating-a-control-cs/_static/image2.png)](dynamically-populating-a-control-cs/_static/image1.png)
+[![单击此按钮从服务器中检索日期](dynamically-populating-a-control-cs/_static/image2.png)](dynamically-populating-a-control-cs/_static/image1.png)
 
 单击此按钮从服务器中检索日期 ([单击此项可查看原尺寸图像](dynamically-populating-a-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [下一页](dynamically-populating-a-control-using-javascript-code-cs.md)

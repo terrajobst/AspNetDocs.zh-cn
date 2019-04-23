@@ -12,7 +12,7 @@ ms.openlocfilehash: 6aee7a07402e407b4c7b0bcd7a5e926955bf96b1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410729"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>通过用户控件和 JavaScript 使用 DynamicPopulate (VB)
@@ -67,9 +67,9 @@ ms.locfileid: "59410729"
 就是这么简单！ 页面的行为都按预期方式：用户单击其中一个单选按钮，该工具包中的控件调用 web 服务，并以所需的格式显示当前日期。
 
 
-[![T他单选按钮位于用户控件](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image1.png)
+[![单选按钮位于用户控件](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image1.png)
 
 单选按钮位于用户控件 ([单击此项可查看原尺寸图像](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [上一篇](dynamically-populating-a-control-using-javascript-code-vb.md)

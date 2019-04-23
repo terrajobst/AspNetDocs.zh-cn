@@ -12,7 +12,7 @@ ms.openlocfilehash: 865e901618b48bc4bfdc6d7a3ca4e8868d4cb46b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412978"
 ---
 # <a name="customizing-database-deployments-for-multiple-environments"></a>自定义多个环境的数据库部署
@@ -68,7 +68,7 @@ ms.locfileid: "59412978"
 
 |  | 开发人员/测试 | 过渡/集成 | 生产 |
 | --- | --- | --- | --- |
-| **部署比较排序规则** | 源 | Target | Target |
+| **部署比较排序规则** | Source | Target | Target |
 | **部署数据库属性** | True | 仅限首次 | 仅限首次 |
 | **始终重新创建数据库** | True | False | False |
 | **如果可能发生数据丢失则阻止增量部署** | False | 您可能 | True |

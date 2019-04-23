@@ -9,9 +9,9 @@ ms.technology: aspnet
 msc.type: content
 ms.openlocfilehash: 443b33b5c3b964f731999834db580a6abbf6617b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420414"
 ---
 # <a name="configuration-builders-for-aspnet"></a>ASP.NET 的配置生成器
@@ -145,11 +145,11 @@ ms.locfileid: "59420414"
 
 ### <a name="tokenpattern"></a>tokenPattern
 
-`tokenPattern`:String，默认值为 `@"\$\{(\w+)\}"`
+`tokenPattern`：String，默认值为 `@"\$\{(\w+)\}"`
 
 `Expand`行为的生成器搜索令牌如下所示的原始 XML `${token}`。 搜索通过默认正则表达式`@"\$\{(\w+)\}"`。 匹配字符的字符集`\w`比 XML 和许多配置源允许更为严格。 使用`tokenPattern`的详细信息时比字符`@"\$\{(\w+)\}"`所需的标记名称中。
 
-`tokenPattern`:字符串：
+`tokenPattern`：字符串：
 
 * 允许开发人员可以更改用于令牌匹配正则表达式。
 * 会不执行任何验证，以确保它是格式良好、 非危险的正则表达式。
@@ -252,7 +252,7 @@ ms.locfileid: "59420414"
 
 属性的详细信息：
 
-* `directoryPath` 必需。 指定的路径查找的值。 适用于 Windows 机密存储中的 docker *C:\ProgramData\Docker\secrets*目录默认情况下。
+* `directoryPath` - 必需。 指定的路径查找的值。 适用于 Windows 机密存储中的 docker *C:\ProgramData\Docker\secrets*目录默认情况下。
 * `ignorePrefix` 的排除文件，以此前缀开头。 默认值为"ignore。"。
 * `keyDelimiter` 默认值是`null`。 如果指定，配置生成器将遍历多个级别的目录中，建立使用该分隔符的键名。 如果此值为`null`，配置生成器仅查找目录的最高级别。
 * `optional` 默认值是`false`。 指定是否源目录不存在配置生成器是否应导致错误。
@@ -276,9 +276,9 @@ ms.locfileid: "59420414"
 
 属性的详细信息：
 
-* `jsonFile` 必需。 指定要读取从 JSON 文件。 `~`可以在开始使用字符引用应用程序根。
+* `jsonFile` - 必需。 指定要读取从 JSON 文件。 `~`可以在开始使用字符引用应用程序根。
 * `optional` -布尔值，默认值是`true`。 可防止引发异常，如果找不到 JSON 文件。
-* `jsonMode` - `[Flat|Sectional]`. `Flat` 默认值。 当`jsonMode`是`Flat`，JSON 文件是一个平面键/值源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是一个平面键/值源。 当`SimpleJsonConfigBuilder`中配置`Sectional`模式：
+* `jsonMode` - `[Flat|Sectional]`。 `Flat` 默认值。 当`jsonMode`是`Flat`，JSON 文件是一个平面键/值源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是一个平面键/值源。 当`SimpleJsonConfigBuilder`中配置`Sectional`模式：
 
   * 从概念上讲，为多个字典只是在最高级别对 JSON 文件被划分。
   * 每个字典仅应用于附加到它们的顶级属性名称匹配的配置节。 例如：

@@ -12,7 +12,7 @@ ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408181"
 ---
 # <a name="membership"></a>成员身份
@@ -74,7 +74,7 @@ ASP.NET SQL Server 安装向导在向导中指定的实例中创建该网站。 
 
 这将启动 ASP.NET 网站管理工具如下所示。 ASP.NET 网站管理是一个四个选项卡界面，它可以更轻松地管理应用程序设置。 提供了以下选项卡：
 
-- **主页**
+- **主文件夹**
 - **安全**配置用户、 角色和访问权限。
 - **应用程序**配置应用程序设置。
 - **提供程序**配置和测试应用程序成员资格提供程序。

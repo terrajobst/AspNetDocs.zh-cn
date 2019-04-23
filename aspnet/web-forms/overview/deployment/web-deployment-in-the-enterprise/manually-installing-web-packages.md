@@ -12,7 +12,7 @@ ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408792"
 ---
 # <a name="manually-installing-web-packages"></a>手动安装 Web 程序包
@@ -131,4 +131,4 @@ ms.locfileid: "59408792"
 有关如何配置 IIS web 服务器以支持手动导入 web 包的指南，请参阅[Web 服务器配置用于 Web 部署发布 （脱机部署）](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)。 有关部署 web 包的更多常规指南，请参阅[演练：部署使用 Web 部署包 （第 1，共 4 部分） 的 Web 应用程序项目](https://msdn.microsoft.com/library/dd483479.aspx)。
 
 > [!div class="step-by-step"]
-> [上一个](creating-and-running-a-deployment-command-file.md)
+> [上一篇](creating-and-running-a-deployment-command-file.md)

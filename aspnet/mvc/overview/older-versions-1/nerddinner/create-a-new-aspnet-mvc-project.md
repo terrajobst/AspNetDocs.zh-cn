@@ -12,7 +12,7 @@ ms.openlocfilehash: c85db4289698988ead44afd452da17054bab9f07
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417203"
 ---
 # <a name="create-a-new-aspnet-mvc-project"></a>新建 ASP.NET MVC 项目
@@ -36,7 +36,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ![](create-a-new-aspnet-mvc-project/_static/image1.png)
 
-*重要提示：请确保您已下载并安装 ASP.NET MVC-否则为它不会显示在新建项目对话框。 可以使用的 V2 [Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)如果您尚未安装程序 (ASP.NET MVC 是中提供"Web 平台的&gt;框架和运行时"部分)。*
+*重要事项：请确保您已下载并安装 ASP.NET MVC-否则为它不会显示在新建项目对话框。可以使用的 V2 [Microsoft Web 平台安装程序](https://www.microsoft.com/web/downloads/platform.aspx)如果您尚未安装程序 (ASP.NET MVC 是中提供"Web 平台的&gt;框架和运行时"部分)。*
 
 我们将的项目命名为新我们要创建"NerdDinner"，然后单击"确定"按钮以创建它。
 
@@ -46,7 +46,7 @@ by [Microsoft](https://github.com/microsoft)
 
 上面的对话框中的"测试框架"下拉列表会填充所有可用 ASP.NET MVC 单元测试项目模板在计算机上安装。 可以为 NUnit、 MBUnit 和 XUnit 下载版本。 也支持内置的 Visual Studio 单元测试框架。
 
-*注意:Visual Studio 单元测试框架是仅适用于 Visual Studio 2008 Professional 和更高版本。 如果你使用 VS 2008 Standard Edition 或 Visual Web Developer 2008 Express 需要先下载并安装 NUnit、 MBUnit 或 XUnit 扩展为 ASP.NET MVC 中要显示此对话框的顺序。 如果没有安装任何测试框架，不会显示该对话框。*
+*注意：Visual Studio 单元测试框架是仅适用于 Visual Studio 2008 Professional 和更高版本。如果你使用 VS 2008 Standard Edition 或 Visual Web Developer 2008 Express 需要先下载并安装 NUnit、 MBUnit 或 XUnit 扩展为 ASP.NET MVC 中要显示此对话框的顺序。如果没有安装任何测试框架，不会显示该对话框。*
 
 我们将使用我们创建的测试项目的默认"NerdDinner.Tests"名称，并使用"Visual Studio 单元测试"框架选项。 当我们单击 Visual Studio 的"确定"按钮将具有两个项目中的一个 web 应用程序，以进行单元测试的另一个为我们创建一个解决方案：
 
@@ -60,13 +60,13 @@ by [Microsoft](https://github.com/microsoft)
 
 默认情况下的 ASP.NET MVC 项目具有六个顶级目录：
 
-| **目录** | **用途** |
+| **目录** | **目的** |
 | --- | --- |
 | **/ 控制器** | 处理 URL 请求的控制器类的放置位置 |
-| **/Models** | 类表示和操作数据的放置位置 |
+| **/ 模型** | 类表示和操作数据的放置位置 |
 | **/Views** | 负责呈现输出的 UI 模板文件的放置位置 |
-| **/ 脚本** | JavaScript 库文件和脚本 (.js) 的放置位置 |
-| **/ 内容** | CSS 和图像文件和其他非动态/非-JavaScript 内容的放置位置 |
+| **/Scripts** | JavaScript 库文件和脚本 (.js) 的放置位置 |
+| **/Content** | CSS 和图像文件和其他非动态/非-JavaScript 内容的放置位置 |
 | **/App\_Data** | 存储数据文件在你想要读/写。 |
 
 ASP.NET MVC 不需要此结构。 事实上，在大型应用程序上工作的开发人员将通常对应用程序分区注册跨多个项目，以使其更易于管理 (例如： 数据通常模型类可以在一个单独的类库项目中从 web 应用程序)。 默认项目结构，但是，提供可用于保留我们的应用程序主要关注干净的很好的默认目录约定。
