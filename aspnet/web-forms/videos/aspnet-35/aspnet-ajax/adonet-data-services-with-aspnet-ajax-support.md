@@ -12,18 +12,18 @@ ms.openlocfilehash: 5a81668c2c01fa12f7dbec506f914a388e09a9ff
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397456"
 ---
-# <a name="adonet-data-services-with-aspnet-ajax-support"></a><span data-ttu-id="eaa10-104">ADO.NET 数据服务和 ASP.NET AJAX 支持</span><span class="sxs-lookup"><span data-stu-id="eaa10-104">ADO.NET Data Services with ASP.NET AJAX Support</span></span>
+# <a name="adonet-data-services-with-aspnet-ajax-support"></a><span data-ttu-id="9ed37-104">ADO.NET 数据服务和 ASP.NET AJAX 支持</span><span class="sxs-lookup"><span data-stu-id="9ed37-104">ADO.NET Data Services with ASP.NET AJAX Support</span></span>
 
-<span data-ttu-id="eaa10-105">通过[Levi Broderick](https://github.com/GrabYourPitchforks)</span><span class="sxs-lookup"><span data-stu-id="eaa10-105">by [Levi Broderick](https://github.com/GrabYourPitchforks)</span></span>
+<span data-ttu-id="9ed37-105">通过[Levi Broderick](https://github.com/GrabYourPitchforks)</span><span class="sxs-lookup"><span data-stu-id="9ed37-105">by [Levi Broderick](https://github.com/GrabYourPitchforks)</span></span>
 
-<span data-ttu-id="eaa10-106">了解如何 ADO.NET 数据服务可以与 ASP.NET AJAX 支持无缝集成。</span><span class="sxs-lookup"><span data-stu-id="eaa10-106">Find out how ADO.NET Data Services can be integrated with ASP.NET AJAX support seamlessly.</span></span> **<span data-ttu-id="eaa10-107">ADP.NET 数据服务技术现已推出[ASP.NET 3.5 扩展预览](https://www.asp.net/downloads/35-sp1#find)(2007 年 12 月)。</span><span class="sxs-lookup"><span data-stu-id="eaa10-107">ADP.NET Data Services technology is available in the [ASP.NET 3.5 Extensions Preview](https://www.asp.net/downloads/35-sp1#find) (December 2007).</span></span>**
+<span data-ttu-id="9ed37-106">了解如何 ADO.NET 数据服务可以与 ASP.NET AJAX 支持无缝集成。</span><span class="sxs-lookup"><span data-stu-id="9ed37-106">Find out how ADO.NET Data Services can be integrated with ASP.NET AJAX support seamlessly.</span></span> <span data-ttu-id="9ed37-107">**ADP.NET 数据服务技术现已推出[ASP.NET 3.5 扩展预览](https://www.asp.net/downloads/35-sp1#find)(2007 年 12 月)。**</span><span class="sxs-lookup"><span data-stu-id="9ed37-107">**ADP.NET Data Services technology is available in the [ASP.NET 3.5 Extensions Preview](https://www.asp.net/downloads/35-sp1#find) (December 2007).**</span></span>
 
-[<span data-ttu-id="eaa10-108">&#9654;观看视频 （12 分钟）</span><span class="sxs-lookup"><span data-stu-id="eaa10-108">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adonet-data-services-with-aspnet-ajax-support)
+[<span data-ttu-id="9ed37-108">&#9654;观看视频 （12 分钟）</span><span class="sxs-lookup"><span data-stu-id="9ed37-108">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adonet-data-services-with-aspnet-ajax-support)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="eaa10-109">[上一页](aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
-> [下一页](introduction-to-aspnet-ajax-history.md)</span><span class="sxs-lookup"><span data-stu-id="eaa10-109">[Previous](aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+> <span data-ttu-id="9ed37-109">[上一页](aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+> [下一页](introduction-to-aspnet-ajax-history.md)</span><span class="sxs-lookup"><span data-stu-id="9ed37-109">[Previous](aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
 [Next](introduction-to-aspnet-ajax-history.md)</span></span>

@@ -12,18 +12,18 @@ ms.openlocfilehash: bd23eee8fd5def1ce4b55d01b548df004c6e5d81
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399276"
 ---
-# <a name="aspnet-mvc-2---areas"></a><span data-ttu-id="a2cb7-103">ASP.NET MVC 2 - 区域</span><span class="sxs-lookup"><span data-stu-id="a2cb7-103">ASP.NET MVC 2 - Areas</span></span>
+# <a name="aspnet-mvc-2---areas"></a><span data-ttu-id="98798-103">ASP.NET MVC 2 - 区域</span><span class="sxs-lookup"><span data-stu-id="98798-103">ASP.NET MVC 2 - Areas</span></span>
 
-<span data-ttu-id="a2cb7-104">通过[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="a2cb7-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
+<span data-ttu-id="98798-104">通过[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="98798-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
 
-<span data-ttu-id="a2cb7-105">在本视频中，您将学习如何使用 Areas 功能更加轻松地通过分解为不同功能区域来组织更大的 ASP.NET MVC 应用程序。</span><span class="sxs-lookup"><span data-stu-id="a2cb7-105">In this video you will learn how to use the Areas feature to make it easier to organize larger ASP.NET MVC applications by breaking them into different functional areas.</span></span>
+<span data-ttu-id="98798-105">在本视频中，您将学习如何使用 Areas 功能更加轻松地通过分解为不同功能区域来组织更大的 ASP.NET MVC 应用程序。</span><span class="sxs-lookup"><span data-stu-id="98798-105">In this video you will learn how to use the Areas feature to make it easier to organize larger ASP.NET MVC applications by breaking them into different functional areas.</span></span>
 
-[<span data-ttu-id="a2cb7-106">&#9654;观看视频 （3 分钟）</span><span class="sxs-lookup"><span data-stu-id="a2cb7-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-2-areas)
+[<span data-ttu-id="98798-106">&#9654;观看视频 （3 分钟）</span><span class="sxs-lookup"><span data-stu-id="98798-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-2-areas)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="a2cb7-107">[上一页](mvc2-template-customization.md)
-> [下一页](aspnet-mvc-2-render-action.md)</span><span class="sxs-lookup"><span data-stu-id="a2cb7-107">[Previous](mvc2-template-customization.md)
+> <span data-ttu-id="98798-107">[上一页](mvc2-template-customization.md)
+> [下一页](aspnet-mvc-2-render-action.md)</span><span class="sxs-lookup"><span data-stu-id="98798-107">[Previous](mvc2-template-customization.md)
 [Next](aspnet-mvc-2-render-action.md)</span></span>

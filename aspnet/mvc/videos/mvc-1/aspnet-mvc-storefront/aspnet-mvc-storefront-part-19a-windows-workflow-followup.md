@@ -12,18 +12,18 @@ ms.openlocfilehash: ca8af502d6e38d45de5b9a13694c8fa4c507487d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398380"
 ---
-# <a name="aspnet-mvc-storefront-part-19a-windows-workflow-followup"></a><span data-ttu-id="d72c8-103">ASP.NET MVC 店面第 19a 部分：Windows 工作流跟踪</span><span class="sxs-lookup"><span data-stu-id="d72c8-103">ASP.NET MVC Storefront Part 19a: Windows Workflow Followup</span></span>
+# <a name="aspnet-mvc-storefront-part-19a-windows-workflow-followup"></a><span data-ttu-id="b2a0f-103">ASP.NET MVC 店面第 19a 部分：Windows 工作流跟踪</span><span class="sxs-lookup"><span data-stu-id="b2a0f-103">ASP.NET MVC Storefront Part 19a: Windows Workflow Followup</span></span>
 
-<span data-ttu-id="d72c8-104">通过[Rob conery 专攻](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="d72c8-104">by [Rob Conery](https://github.com/robconery)</span></span>
+<span data-ttu-id="b2a0f-104">通过[Rob conery 专攻](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="b2a0f-104">by [Rob Conery](https://github.com/robconery)</span></span>
 
-<span data-ttu-id="d72c8-105">在本集中我详细介绍了如何使用 Windows 工作流的后续和我介绍一些我剧集 19 收到的反馈。</span><span class="sxs-lookup"><span data-stu-id="d72c8-105">In this episode I followup with more information about using Windows Workflow, and I touch on some of the feedback I received with episode 19.</span></span>
+<span data-ttu-id="b2a0f-105">在本集中我详细介绍了如何使用 Windows 工作流的后续和我介绍一些我剧集 19 收到的反馈。</span><span class="sxs-lookup"><span data-stu-id="b2a0f-105">In this episode I followup with more information about using Windows Workflow, and I touch on some of the feedback I received with episode 19.</span></span>
 
-[<span data-ttu-id="d72c8-106">&#9654;观看视频 （13 分钟）</span><span class="sxs-lookup"><span data-stu-id="d72c8-106">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-19a-windows-workflow-followup)
+[<span data-ttu-id="b2a0f-106">&#9654;观看视频 （13 分钟）</span><span class="sxs-lookup"><span data-stu-id="b2a0f-106">&#9654; Watch video (13 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-19a-windows-workflow-followup)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d72c8-107">[上一页](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
-> [下一页](aspnet-mvc-storefront-part-20-logging.md)</span><span class="sxs-lookup"><span data-stu-id="d72c8-107">[Previous](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+> <span data-ttu-id="b2a0f-107">[上一页](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+> [下一页](aspnet-mvc-storefront-part-20-logging.md)</span><span class="sxs-lookup"><span data-stu-id="b2a0f-107">[Previous](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 [Next](aspnet-mvc-storefront-part-20-logging.md)</span></span>

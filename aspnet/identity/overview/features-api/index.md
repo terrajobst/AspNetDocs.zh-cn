@@ -13,14 +13,14 @@ ms.openlocfilehash: 5634a5d766cdceffc509962d80b0aaa8880d2f8b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397092"
 ---
-# <a name="aspnet-4x-identity-features--api"></a><span data-ttu-id="9fb46-103">ASP.NET 4.x 标识功能和 API</span><span class="sxs-lookup"><span data-stu-id="9fb46-103">ASP.NET 4.x Identity Features & API</span></span>
+# <a name="aspnet-4x-identity-features--api"></a><span data-ttu-id="3b638-103">ASP.NET 4.x 标识功能和 API</span><span class="sxs-lookup"><span data-stu-id="3b638-103">ASP.NET 4.x Identity Features & API</span></span>
 
-> <span data-ttu-id="9fb46-104">功能和 API</span><span class="sxs-lookup"><span data-stu-id="9fb46-104">Features & API</span></span>
+> <span data-ttu-id="3b638-104">功能和 API</span><span class="sxs-lookup"><span data-stu-id="3b638-104">Features & API</span></span>
 
 
-- [<span data-ttu-id="9fb46-105">向 ASP.NET 和 Azure 应用服务部署密码和其他敏感数据的最佳做法</span><span class="sxs-lookup"><span data-stu-id="9fb46-105">Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service</span></span>](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
-- [<span data-ttu-id="9fb46-106">ASP.NET Identity 中的帐户确认和密码恢复 (C#)</span><span class="sxs-lookup"><span data-stu-id="9fb46-106">Account Confirmation and Password Recovery with ASP.NET Identity (C#)</span></span>](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [<span data-ttu-id="9fb46-107">使用 SMS 和 ASP.NET Identity 的双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="9fb46-107">Two-factor authentication using SMS and email with ASP.NET Identity</span></span>](two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [<span data-ttu-id="3b638-105">向 ASP.NET 和 Azure App Service 部署密码和其他敏感数据的最佳做法</span><span class="sxs-lookup"><span data-stu-id="3b638-105">Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service</span></span>](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
+- [<span data-ttu-id="3b638-106">ASP.NET 标识中的帐户确认和密码恢复 (C#)</span><span class="sxs-lookup"><span data-stu-id="3b638-106">Account Confirmation and Password Recovery with ASP.NET Identity (C#)</span></span>](account-confirmation-and-password-recovery-with-aspnet-identity.md)
+- [<span data-ttu-id="3b638-107">使用 SMS 和 ASP.NET 标识的双因素身份验证</span><span class="sxs-lookup"><span data-stu-id="3b638-107">Two-factor authentication using SMS and email with ASP.NET Identity</span></span>](two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
