@@ -12,7 +12,7 @@ ms.openlocfilehash: 52b1aec577634dfb9fec7753e4f9b8bf46d159f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416254"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 运行状况监视的日志记录错误详细信息 (C#)
@@ -28,7 +28,7 @@ ms.locfileid: "59416254"
 
 日志记录是一个有用的工具用于监视部署的应用程序的运行状况和诊断可能会出现任何问题。 特别是，务必记录发生在已部署的应用程序中，以便它们可以纠正的错误。 `Error` ASP.NET 应用程序; 中出现未处理的异常时将引发事件[前面的教程](processing-unhandled-exceptions-cs.md)介绍了如何通知错误的开发人员并通过创建的事件处理程序记录其详细信息`Error`事件。 但是，创建`Error`事件处理程序来记录错误的详细信息并通知开发人员是不必要的因为可以由 ASP 执行此任务。NET 的*运行状况监控系统*。
 
-运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件嘿 *运行状况监视事件*或*Web 事件*，并且包括：
+运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件嘿*运行状况监视事件*或*Web 事件*，并且包括：
 
 - 应用程序生存期事件，例如当应用程序启动或停止
 - 安全事件，其中包括登录尝试失败和失败的 URL 授权请求
