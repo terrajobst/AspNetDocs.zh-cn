@@ -12,7 +12,7 @@ ms.openlocfilehash: 6903c8c0649f9e4d56962bd36e03448852cfb81a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395350"
 ---
 # <a name="masterdetail-filtering-across-two-pages-vb"></a>跨两个页面的母版/详细信息筛选 (VB)
@@ -56,12 +56,12 @@ ms.locfileid: "59395350"
 与`SupplierListMaster.aspx`并`ProductsForSupplierDetails.aspx`创建的页面下, 一步是创建中的供应商提供的 GridView `SupplierListMaster.aspx`。 向页添加 GridView 并将其绑定到新对象数据源。 应使用此 ObjectDataSource`SuppliersBLL`类的`GetSuppliers()`方法以返回所有供应商。
 
 
-[![S选择 SuppliersBLL 类](master-detail-filtering-across-two-pages-vb/_static/image3.png)](master-detail-filtering-across-two-pages-vb/_static/image2.png)
+[![选择 SuppliersBLL 类](master-detail-filtering-across-two-pages-vb/_static/image3.png)](master-detail-filtering-across-two-pages-vb/_static/image2.png)
 
 **图 2**:选择`SuppliersBLL`类 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image4.png))
 
 
-[![C配置对象数据源使用 GetSuppliers() 方法](master-detail-filtering-across-two-pages-vb/_static/image6.png)](master-detail-filtering-across-two-pages-vb/_static/image5.png)
+[![配置对象数据源使用 GetSuppliers() 方法](master-detail-filtering-across-two-pages-vb/_static/image6.png)](master-detail-filtering-across-two-pages-vb/_static/image5.png)
 
 **图 3**:配置为使用 ObjectDataSource`GetSuppliers()`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image7.png))
 
@@ -71,7 +71,7 @@ ms.locfileid: "59395350"
 若要完成此操作，添加[HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx)到 GridView，从而将超链接添加到每个 GridView 行。 通过单击 GridView 的智能标记中的编辑列链接启动。 接下来，从左上角中的列表中选择 HyperLinkField 并单击添加包括 HyperLinkField GridView 的字段列表中。
 
 
-[![Add 到 GridView HyperLinkField](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
+[![添加到 GridView HyperLinkField](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
 
 **图 4**:添加到 GridView HyperLinkField ([单击此项可查看原尺寸图像](master-detail-filtering-across-two-pages-vb/_static/image10.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "59395350"
 HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView 行的链接，也可以将这些值基于绑定到每个特定行的数据值。 若要指定静态值所有行使用 HyperLinkField`Text`或`NavigateUrl`属性。 由于我们想要的所有行是相同的链接文本，设置 HyperLinkField`Text`查看产品的属性。
 
 
-[![Set HyperLinkField 的文本属性设置为查看产品](master-detail-filtering-across-two-pages-vb/_static/image12.png)](master-detail-filtering-across-two-pages-vb/_static/image11.png)
+[![将 HyperLinkField 的文本属性设置为查看产品](master-detail-filtering-across-two-pages-vb/_static/image12.png)](master-detail-filtering-across-two-pages-vb/_static/image11.png)
 
 **图 5**:设置 HyperLinkField`Text`属性设置为查看产品 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image13.png))
 
@@ -91,7 +91,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 我们将此应用到我们的教程，需要设置`DataNavigateUrlFields`属性设置为`SupplierID`，因为它是我们需要在每个行模式中，自定义其值的数据字段和`DataNavigateUrlFormatString`属性设置为`ProductsForSupplierDetails.aspx?SupplierID={0}`。
 
 
-[![C配置包含正确链接 URL 基于后 SupplierID HyperLinkField](master-detail-filtering-across-two-pages-vb/_static/image15.png)](master-detail-filtering-across-two-pages-vb/_static/image14.png)
+[![配置 HyperLinkField 包括基于供应商 Id 的正确链接 URL](master-detail-filtering-across-two-pages-vb/_static/image15.png)](master-detail-filtering-across-two-pages-vb/_static/image14.png)
 
 **图 6**:配置 HyperLinkField 包括正确链接 URL 基于后`SupplierID`([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image16.png))
 
@@ -104,7 +104,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 花点时间查看`SupplierListMaster.aspx`通过浏览器的页。 如图 7 所示，页当前列出所有供应商包括查看产品链接。 单击查看产品链接将转到`ProductsForSupplierDetails.aspx`，并传递供应商的沿`SupplierID`在查询字符串中。
 
 
-[![E支票供应商行包含视图的产品链接](master-detail-filtering-across-two-pages-vb/_static/image18.png)](master-detail-filtering-across-two-pages-vb/_static/image17.png)
+[![每个供应商行包含视图的产品链接](master-detail-filtering-across-two-pages-vb/_static/image18.png)](master-detail-filtering-across-two-pages-vb/_static/image17.png)
 
 **图 7**:每个供应商行包含视图的产品链接 ([单击此项可查看原尺寸图像](master-detail-filtering-across-two-pages-vb/_static/image19.png))
 
@@ -114,17 +114,17 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 此时`SupplierListMaster.aspx`页发送到用户`ProductsForSupplierDetails.aspx`，并传递所选供应商的`SupplierID`在查询字符串中。 本教程的最后一步是在 GridView 中显示的产品`ProductsForSupplierDetails.aspx`其`SupplierID`等于`SupplierID`通过在查询字符串中传递。 若要完成本教程通过添加到 GridView`ProductsForSupplierDetails.aspx`页上，使用名为的新对象数据源控件`ProductsBySupplierDataSource`，它调用`GetProductsBySupplierID(supplierID)`方法从`ProductsBLL`类。
 
 
-[![Add 新对象数据源名为 ProductsBySupplierDataSource](master-detail-filtering-across-two-pages-vb/_static/image21.png)](master-detail-filtering-across-two-pages-vb/_static/image20.png)
+[![添加名为 ProductsBySupplierDataSource 新 ObjectDataSource](master-detail-filtering-across-two-pages-vb/_static/image21.png)](master-detail-filtering-across-two-pages-vb/_static/image20.png)
 
 **图 8**:添加新对象数据源名为`ProductsBySupplierDataSource`([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image22.png))
 
 
-[![S选择 ProductsBLL 类](master-detail-filtering-across-two-pages-vb/_static/image24.png)](master-detail-filtering-across-two-pages-vb/_static/image23.png)
+[![选择 ProductsBLL 类](master-detail-filtering-across-two-pages-vb/_static/image24.png)](master-detail-filtering-across-two-pages-vb/_static/image23.png)
 
 **图 9**:选择`ProductsBLL`类 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image25.png))
 
 
-[![Have ObjectDataSource Invoke GetProductsBySupplierID(supplierID) 方法](master-detail-filtering-across-two-pages-vb/_static/image27.png)](master-detail-filtering-across-two-pages-vb/_static/image26.png)
+[![具有 ObjectDataSource 调用 GetProductsBySupplierID(supplierID) 方法](master-detail-filtering-across-two-pages-vb/_static/image27.png)](master-detail-filtering-across-two-pages-vb/_static/image26.png)
 
 **图 10**:具有 ObjectDataSource 调用`GetProductsBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image28.png))
 
@@ -132,7 +132,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 配置数据源向导的最后一步会要求我们提供的源`GetProductsBySupplierID(supplierID)`方法的 *`supplierID`* 参数。 若要使用的查询字符串值，设置参数源为查询字符串，并输入要在 QueryStringField 文本框中使用的查询字符串值的名称 (`SupplierID`)。
 
 
-[![Populate supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
+[![填充 supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
 
 **图 11**:填充*`supplierID`* 参数值从`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image31.png))
 
@@ -140,7 +140,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 就这么简单！ 图 12 显示了`ProductsForSupplierDetails.aspx`页上通过单击为全链接进行访问时`SupplierListMaster.aspx`。
 
 
-[![T他为全由提供的产品显示](master-detail-filtering-across-two-pages-vb/_static/image33.png)](master-detail-filtering-across-two-pages-vb/_static/image32.png)
+[![通过为全产品提供显示](master-detail-filtering-across-two-pages-vb/_static/image33.png)](master-detail-filtering-across-two-pages-vb/_static/image32.png)
 
 **图 12**:通过为全产品提供显示 ([单击此项可查看原尺寸图像](master-detail-filtering-across-two-pages-vb/_static/image34.png))
 
@@ -152,12 +152,12 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 首先，通过添加上面的产品 GridView FormView。 创建一个名为的新对象数据源控件`SuppliersDataSource`，它调用`SuppliersBLL`类的`GetSupplierBySupplierID(supplierID)`方法。
 
 
-[![S选择 SuppliersBLL 类](master-detail-filtering-across-two-pages-vb/_static/image36.png)](master-detail-filtering-across-two-pages-vb/_static/image35.png)
+[![选择 SuppliersBLL 类](master-detail-filtering-across-two-pages-vb/_static/image36.png)](master-detail-filtering-across-two-pages-vb/_static/image35.png)
 
 **图 13**:选择`SuppliersBLL`类 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image37.png))
 
 
-[![Have ObjectDataSource Invoke GetSupplierBySupplierID(supplierID) 方法](master-detail-filtering-across-two-pages-vb/_static/image39.png)](master-detail-filtering-across-two-pages-vb/_static/image38.png)
+[![具有 ObjectDataSource 调用 GetSupplierBySupplierID(supplierID) 方法](master-detail-filtering-across-two-pages-vb/_static/image39.png)](master-detail-filtering-across-two-pages-vb/_static/image38.png)
 
 **图 14**:具有 ObjectDataSource 调用`GetSupplierBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image40.png))
 
@@ -165,7 +165,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 如同`ProductsBySupplierDataSource`，具有 *`supplierID`* 参数分配的值`SupplierID`查询字符串值。
 
 
-[![Populate supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
+[![填充 supplierID SupplierID 查询字符串值的参数值](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
 
 **图 15**:填充*`supplierID`* 参数值从`SupplierID`查询字符串值 ([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image43.png))
 
@@ -180,7 +180,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 图 16 所示的屏幕截图`ProductsForSupplierDetails.aspx`页后包含了上面详细说明的供应商信息。
 
 
-[![T他的产品列表包含摘要有关供应商](master-detail-filtering-across-two-pages-vb/_static/image45.png)](master-detail-filtering-across-two-pages-vb/_static/image44.png)
+[![产品的列表包括供应商有关的摘要](master-detail-filtering-across-two-pages-vb/_static/image45.png)](master-detail-filtering-across-two-pages-vb/_static/image44.png)
 
 **图 16**:产品的列表包括摘要有关供应商 ([单击此项可查看原尺寸图像](master-detail-filtering-across-two-pages-vb/_static/image46.png))
 
@@ -190,7 +190,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 以提高用户体验有此报表是添加一些内容，因此应该对进行`ProductsForSupplierDetails.aspx`页。 当前用户可以转化的唯一方法`ProductsForSupplierDetails.aspx`页回发至供应商提供的列表是单击其浏览器的后退按钮。 让我们添加到超链接控件`ProductsForSupplierDetails.aspx`链接回页`SupplierListMaster.aspx`，提供另一种方法为用户返回到主列表。
 
 
-[![Add 超链接控件以使用户返回到 SupplierListMaster.aspx](master-detail-filtering-across-two-pages-vb/_static/image48.png)](master-detail-filtering-across-two-pages-vb/_static/image47.png)
+[![添加超链接控件以使用户返回到 SupplierListMaster.aspx](master-detail-filtering-across-two-pages-vb/_static/image48.png)](master-detail-filtering-across-two-pages-vb/_static/image47.png)
 
 **图 17**:添加超链接控件以将用户返回到`SupplierListMaster.aspx`([单击以查看实际尺寸的图像](master-detail-filtering-across-two-pages-vb/_static/image49.png))
 
@@ -200,7 +200,7 @@ HyperLinkField 可以配置为使用相同的文本或 URL 值中每个 GridView
 默认情况下，罗斯文数据库中的所有供应商提供至少一个产品。 但是，本教程中我手动修改`Products`表，以便供应商 Escargots Nouveaux 不再与任何产品相关联。 图 18 显示了详细信息页 Escargots Nouveaux 在后进行此更改。
 
 
-[![U供应商不提供任何产品通知 ser](master-detail-filtering-across-two-pages-vb/_static/image51.png)](master-detail-filtering-across-two-pages-vb/_static/image50.png)
+[![供应商不提供任何产品通知用户](master-detail-filtering-across-two-pages-vb/_static/image51.png)](master-detail-filtering-across-two-pages-vb/_static/image50.png)
 
 **图 18**:供应商不提供任何产品通知用户 ([单击此项可查看原尺寸图像](master-detail-filtering-across-two-pages-vb/_static/image52.png))
 

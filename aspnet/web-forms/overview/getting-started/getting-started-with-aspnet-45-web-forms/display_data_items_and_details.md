@@ -12,7 +12,7 @@ ms.openlocfilehash: 54896da5565c9383f13fc352da26bbdc3cb63a76
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405360"
 ---
 # <a name="display-data-items-and-details"></a>显示数据项和详细信息
@@ -104,7 +104,7 @@ ms.locfileid: "59405360"
 
 如果没有查询字符串时，包含显示所有产品*ProductList.aspx*调用页面。
 
-这些方法的值的源嘿 *值提供程序*(如*查询字符串*)，指示要使用的值提供程序的参数属性称为*值提供程序属性*(如`id`)。 ASP.NET 包括值提供程序和所有典型的资源，用户输入的对应属性中的 Web 窗体应用程序，例如查询字符串、 cookie、 窗体值、 控件、 视图状态，会话状态和配置文件属性。 此外可以编写自定义值提供程序。
+这些方法的值的源嘿*值提供程序*(如*查询字符串*)，指示要使用的值提供程序的参数属性称为*值提供程序属性*(如`id`)。 ASP.NET 包括值提供程序和所有典型的资源，用户输入的对应属性中的 Web 窗体应用程序，例如查询字符串、 cookie、 窗体值、 控件、 视图状态，会话状态和配置文件属性。 此外可以编写自定义值提供程序。
 
 ### <a name="run-the-application"></a>运行此应用程序
 

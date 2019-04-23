@@ -12,7 +12,7 @@ ms.openlocfilehash: e70a21e2752c7c8fc8be332a98e1cf7e40b01412
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417684"
 ---
 # <a name="using-sql-cache-dependencies-c"></a>使用 SQL 缓存依赖项 (C#)
@@ -87,7 +87,7 @@ ASP.NET 运行时跟踪当前`changeId`表时缓存数据使用`SqlCacheDependen
 Management Studio 连接到服务器后，会显示服务器并可能对数据库、 安全性和等的子文件夹。 右键单击数据库文件夹并选择附加选项。 这将显示附加数据库对话框 （请参见图 2）。 单击添加按钮，然后选择`NORTHWND.MDF`database 文件夹中您的 web 应用程序 s`App_Data`文件夹。
 
 
-[![Attach northwnd 不。MDF App_Data 文件夹中的数据库](using-sql-cache-dependencies-cs/_static/image2.gif)](using-sql-cache-dependencies-cs/_static/image1.png)
+[![将附加 northwnd 不。MDF App_Data 文件夹中的数据库](using-sql-cache-dependencies-cs/_static/image2.gif)](using-sql-cache-dependencies-cs/_static/image1.png)
 
 **图 2**:附加`NORTHWND.MDF`数据库从`App_Data`文件夹 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-cs/_static/image2.png))
 
@@ -143,7 +143,7 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 若要演示如何以声明方式使用 SQL 缓存依赖项，打开`SqlCacheDependencies.aspx`页中`Caching`文件夹，然后拖动 GridView 从工具箱拖到设计器。 设置 GridView s`ID`到`ProductsDeclarative`，并从其智能标记，选择要绑定到名为新 ObjectDataSource `ProductsDataSourceDeclarative`。
 
 
-[![C创建新对象数据源名为 ProductsDataSourceDeclarative](using-sql-cache-dependencies-cs/_static/image5.gif)](using-sql-cache-dependencies-cs/_static/image3.png)
+[![创建名为 ProductsDataSourceDeclarative 新 ObjectDataSource](using-sql-cache-dependencies-cs/_static/image5.gif)](using-sql-cache-dependencies-cs/_static/image3.png)
 
 **图 5**:创建新对象数据源命名`ProductsDataSourceDeclarative`([单击以查看实际尺寸的图像](using-sql-cache-dependencies-cs/_static/image4.png))
 
@@ -151,12 +151,12 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 配置要使用 ObjectDataSource`ProductsBLL`类，然后在选择选项卡中设置下拉列表`GetProducts()`。 在更新选项卡，选择`UpdateProduct`带有三个输入参数的重载`productName`， `unitPrice`，和`productID`。 在 INSERT 和 DELETE 选项卡中设置为 （无） 下拉列表。
 
 
-[![U带有三个输入参数 UpdateProduct 重载 se](using-sql-cache-dependencies-cs/_static/image6.gif)](using-sql-cache-dependencies-cs/_static/image5.png)
+[![带有三个输入参数，请使用 UpdateProduct 重载](using-sql-cache-dependencies-cs/_static/image6.gif)](using-sql-cache-dependencies-cs/_static/image5.png)
 
 **图 6**:使用三个输入参数使用 UpdateProduct 重载 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-cs/_static/image6.png))
 
 
-[![S设置为 （无） 插入和删除选项卡的下拉列表](using-sql-cache-dependencies-cs/_static/image7.gif)](using-sql-cache-dependencies-cs/_static/image7.png)
+[![设置为 （无） 用于插入和删除选项卡的下拉列表](using-sql-cache-dependencies-cs/_static/image7.gif)](using-sql-cache-dependencies-cs/_static/image7.png)
 
 **图 7**:用于插入和删除选项卡或设置为 （无） 的下拉列表 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-cs/_static/image8.png))
 
@@ -178,7 +178,7 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 现在，请访问此页上的通过浏览器。 自我们 ve 尚未来实现任何缓存，每个页上，对此进行排序，或编辑的网格页的时间，应显示的文本、 选择事件触发，如图 8 所示。
 
 
-[![T他 ObjectDataSource 的选择事件触发的每个时间分页 GridView 编辑或按](using-sql-cache-dependencies-cs/_static/image8.gif)](using-sql-cache-dependencies-cs/_static/image9.png)
+[![每个时间分页 GridView 编辑，或者按，就会触发 ObjectDataSource 的选择事件](using-sql-cache-dependencies-cs/_static/image8.gif)](using-sql-cache-dependencies-cs/_static/image9.png)
 
 **图 8**:ObjectDataSource s`Selecting`事件将触发每个时间分页 GridView、 编辑或按 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-cs/_static/image10.png))
 
@@ -197,7 +197,7 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 在 GridView`SqlCacheDependencies.aspx`显示来自两个表的数据`Products`并`Categories`(产品 s`CategoryName`通过检索字段`JOIN`上`Categories`)。 因此，我们想要指定两个 SQL 缓存依赖项：NorthwindDB:Products;NorthwindDB:Categories。
 
 
-[![C配置为支持缓存使用 SQL 缓存依赖项上的产品和类别 ObjectDataSource](using-sql-cache-dependencies-cs/_static/image9.gif)](using-sql-cache-dependencies-cs/_static/image11.png)
+[![配置对象数据源来支持缓存产品和类别上使用 SQL 缓存依赖项](using-sql-cache-dependencies-cs/_static/image9.gif)](using-sql-cache-dependencies-cs/_static/image11.png)
 
 **图 9**:在配置为支持缓存使用 SQL 缓存依赖项 ObjectDataSource`Products`并`Categories`([单击以查看实际尺寸的图像](using-sql-cache-dependencies-cs/_static/image12.png))
 
@@ -207,7 +207,7 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 通过网格分页并记下缺少选择事件触发后的文本，打开一个新的浏览器窗口并导航到编辑、 插入和删除部分中的基础知识教程 (`~/EditInsertDelete/Basics.aspx`)。 更新的名称或产品的价格。 然后，从第一个浏览器窗口中，查看不同的数据页、 排序网格中，或单击行的编辑按钮。 这一次，选择事件触发应重新出现，因为基础数据库的数据已被修改 （请参阅图 10）。 如果未显示的文本，不会等待一段时间，然后重试。 请记住，轮询服务正在检查的更改`Products`表每个`pollTime`毫秒，以便更新基础数据时和时逐出缓存的数据之间存在延迟。
 
 
-[![Modifying 产品表逐出缓存产品数据](using-sql-cache-dependencies-cs/_static/image10.gif)](using-sql-cache-dependencies-cs/_static/image13.png)
+[![修改 Products 表逐出缓存的产品数据](using-sql-cache-dependencies-cs/_static/image10.gif)](using-sql-cache-dependencies-cs/_static/image13.png)
 
 **图 10**:修改 Products 表逐出缓存产品数据 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-cs/_static/image14.png))
 
@@ -241,17 +241,17 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 若要测试此功能，向下的现有页添加 GridView `ProductsDeclarative` GridView。 设置此新 GridView s`ID`到`ProductsProgrammatic`并通过其智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSourceProgrammatic`。 配置要使用 ObjectDataSource`ProductsCL`类，设置下拉列表中选择和更新选项卡添加到`GetProducts`和`UpdateProduct`分别。
 
 
-[![C配置对象数据源以使用 ProductsCL 类](using-sql-cache-dependencies-cs/_static/image11.gif)](using-sql-cache-dependencies-cs/_static/image15.png)
+[![配置对象数据源以使用 ProductsCL 类](using-sql-cache-dependencies-cs/_static/image11.gif)](using-sql-cache-dependencies-cs/_static/image15.png)
 
 **图 11**:配置为使用 ObjectDataSource`ProductsCL`类 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-cs/_static/image16.png))
 
 
-[![S从选择的选项卡 s 下拉列表中选择 GetProducts 方法](using-sql-cache-dependencies-cs/_static/image12.gif)](using-sql-cache-dependencies-cs/_static/image17.png)
+[![从选择的选项卡的下拉列表中选择 GetProducts 方法](using-sql-cache-dependencies-cs/_static/image12.gif)](using-sql-cache-dependencies-cs/_static/image17.png)
 
 **图 12**:选择`GetProducts`从下拉列表中的选择选项卡 s 方法 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-cs/_static/image18.png))
 
 
-[![C选择 UpdateProduct 方法中，从下拉列表中的更新选项卡 s](using-sql-cache-dependencies-cs/_static/image13.gif)](using-sql-cache-dependencies-cs/_static/image19.png)
+[![从更新选项卡的下拉列表中选择 UpdateProduct 方法](using-sql-cache-dependencies-cs/_static/image13.gif)](using-sql-cache-dependencies-cs/_static/image19.png)
 
 **图 13**:从更新选项卡的下拉列表中选择 UpdateProduct 方法 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-cs/_static/image20.png))
 

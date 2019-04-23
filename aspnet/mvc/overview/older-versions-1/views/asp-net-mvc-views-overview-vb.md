@@ -12,7 +12,7 @@ ms.openlocfilehash: 84af745d338e38ece438fa58d51d0929c7b92967
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408454"
 ---
 # <a name="aspnet-mvc-views-overview-vb"></a>ASP.NET MVC 视图概述 (VB)
@@ -104,7 +104,7 @@ View()
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
 
-[![T他新建项目对话框中](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
+[![新建项目对话框](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
 
 **图 01**:一个标准的登录窗体 ([单击此项可查看原尺寸图像](asp-net-mvc-views-overview-vb/_static/image2.png))
 

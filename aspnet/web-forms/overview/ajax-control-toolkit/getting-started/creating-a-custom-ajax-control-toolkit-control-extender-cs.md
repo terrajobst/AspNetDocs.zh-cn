@@ -12,7 +12,7 @@ ms.openlocfilehash: 4428ef0a6cec4c348bc48d069b990798508c21d4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391658"
 ---
 # <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>创建自定义 AJAX 控件工具包控件扩展程序 (C#)
@@ -79,7 +79,7 @@ by [Microsoft](https://github.com/microsoft)
 完成这些步骤后，在解决方案资源管理器窗口应如图 1 所示。
 
 
-[![S与网站和类的类库项目的解决方案](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image7.png)
+[![与网站和类的类库项目的解决方案](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image7.png)
 
 **图 01**:与网站和类的类库项目的解决方案 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image9.png))
 
@@ -100,7 +100,7 @@ by [Microsoft](https://github.com/microsoft)
 完成这些步骤后，将类库项目的引用文件夹应如图 2 所示。
 
 
-[![R具有所需的引用 eferences 文件夹](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image10.png)
+[![使用所需的引用引用文件夹](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image10.png)
 
 **图 02**:使用所需的引用引用文件夹 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image12.png))
 
@@ -155,7 +155,7 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 请记住，必须编译 JavaScript 文件作为嵌入资源清单 3 中。 选择解决方案资源管理器窗口中的文件，打开属性页中，并将该值赋*嵌入的资源*到**生成操作**属性 （请参见图 3）。 此选项是在 Visual Studio 和 Visual Web Developer 中可用。
 
 
-[![Adding 作为嵌入资源的 JavaScript 文件](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image13.png)
+[![添加一个 JavaScript 文件作为嵌入资源](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image13.png)
 
 **图 03**:添加一个 JavaScript 文件作为嵌入资源 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image15.png))
 
@@ -184,7 +184,7 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 完成这些步骤后，DisabledButton 控件扩展程序应显示在工具箱中 （请参阅图 4）。
 
 
-[![D在工具箱 isabledButton](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image16.png)
+[![在工具箱 DisabledButton](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image16.png)
 
 **图 04**:在工具箱 DisabledButton ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image18.png))
 
@@ -206,7 +206,7 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 2. 选择 DisabledButton 扩展器，然后单击**确定**按钮。
 
 
-[![T他扩展器向导对话框](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image19.png)
+[![扩展程序向导对话框](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image19.png)
 
 **图 05**:扩展程序向导对话框 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image21.png))
 
@@ -218,7 +218,7 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 3. 将该值赋*保存*DisabledText 属性以及值*btnSave* TargetButtonID 属性。
 
 
-[![Setting 扩展程序属性](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image22.png)
+[![设置扩展程序属性](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image22.png)
 
 **图 06**:设置扩展程序属性 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image24.png))
 
@@ -226,7 +226,7 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 （按 F5） 运行页面时，按钮控件最初处于禁用状态。 一旦您开始在文本框中输入文本，则控件被启用的按钮 （请参阅图 7）。
 
 
-[![T在操作中他 DisabledButton 扩展器](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image25.png)
+[![在操作中 DisabledButton 扩展器](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image25.png)
 
 **图 07**:DisabledButton 扩展器操作 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image27.png))
 
