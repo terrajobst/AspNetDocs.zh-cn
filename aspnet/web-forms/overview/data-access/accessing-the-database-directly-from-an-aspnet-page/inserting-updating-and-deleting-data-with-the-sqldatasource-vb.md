@@ -12,7 +12,7 @@ ms.openlocfilehash: 5be1fd787c1ee001ce46384162eaebc89ec5c0a8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404775"
 ---
 # <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-vb"></a>使用 SqlDataSource 插入、更新和删除数据 (VB)
@@ -50,7 +50,7 @@ ms.locfileid: "59404775"
 首先打开`InsertUpdateDelete.aspx`并`Querying.aspx`从页`SqlDataSource`文件夹。 在设计器从`Querying.aspx`页上，从第一个示例中选择 SqlDataSource 和 GridView (`ProductsDataSource`和`GridView1`控件)。 选择两个控件后, 转到编辑菜单并选择复制 （或只需按 Ctrl + C）。 接下来，转到设计器中的`InsertUpdateDelete.aspx`并粘贴在控件中。 向移动两个控件后`InsertUpdateDelete.aspx`，测试浏览器中的页。 你应该会看到的值`ProductID`， `ProductName`，并`UnitPrice`列中的记录的所有`Products`数据库表。
 
 
-[![A列出产品的 ll，请按 ProductID](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.png)
+[![所有产品都列出，请按 ProductID 排序](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image1.png)
 
 **图 1**:所有产品都列，按排序`ProductID`([单击以查看实际尺寸的图像](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image2.png))
 
@@ -87,7 +87,7 @@ ms.locfileid: "59404775"
 接下来，单击刷新参数按钮以添加`@ProductID`到下面的参数列表的参数。
 
 
-[![S从属性窗口中选择 DeleteQuery 属性](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.png)
+[![从属性窗口中选择 DeleteQuery 属性](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image3.png)
 
 **图 3**:从属性窗口中选择 DeleteQuery 属性 ([单击此项可查看原尺寸图像](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.png))
 
@@ -111,7 +111,7 @@ ms.locfileid: "59404775"
 使用`DeleteCommand`添加属性，GridView s 智能标记现在包含启用删除选项。 请继续并选中此复选框。 如中所述[概述的插入、 更新和删除](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)，这将导致 GridView 添加与 CommandField 其`ShowDeleteButton`属性设置为`True`。 如图 4 所示，通过浏览器访问页面时是包含一个删除按钮。 通过删除某些产品测试出此页。
 
 
-[![E支票 GridView 行现在包括一个删除按钮](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image5.png)
+[![每个 GridView 行现在包括一个删除按钮](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image5.png)
 
 **图 4**:每个 GridView 行现在包括一个删除按钮 ([单击此项可查看原尺寸图像](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "59404775"
 让我们来了解此自动生成选项。 向设计器中添加 DetailsView`InsertUpdateDelete.aspx`并设置其`ID`属性设置为`ManageProducts`。 接下来，从 DetailsView s 智能标记，选择创建新的数据源并创建名为 SqlDataSource `ManageProductsDataSource`。
 
 
-[![C创建新的 SqlDataSource 名为 ManageProductsDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.png)
+[![创建名为 ManageProductsDataSource 新 SqlDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.png)
 
 **图 6**:创建新 SqlDataSource 命名`ManageProductsDataSource`([单击以查看实际尺寸的图像](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image8.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "59404775"
 从配置数据源向导中，选择使用`NORTHWINDConnectionString`连接字符串，并单击下一步。 从配置 Select 语句屏幕中，将指定的列从表或视图的单选按钮处于选中状态并选取`Products`从下拉列表中的表。 选择`ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`复选框列表中的列。
 
 
-[![U发挥最大功效产品表，则返回 ProductID、 ProductName、 UnitPrice 和停止使用的列](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.png)
+[![使用产品表，返回 ProductID、 ProductName、 UnitPrice 和已停止使用的列](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.png)
 
 **图 7**:使用`Products`表中，返回`ProductID`， `ProductName`， `UnitPrice`，并`Discontinued`列 ([单击以查看实际尺寸的图像](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image10.png))
 
@@ -173,7 +173,7 @@ ms.locfileid: "59404775"
 访问在浏览器页面，并记下编辑、 删除和 DetailsView 中包含的新按钮。 单击编辑按钮将变为编辑模式，其中显示了每个 BoundField DetailsView 其`ReadOnly`属性设置为`False`（默认值） 作为文本框中，并为一个复选框 CheckBoxField。
 
 
-[![T他 DetailsView s 默认编辑界面](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image11.png)
+[![在 DetailsView s 默认编辑界面](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image11.png)
 
 **图 9**:在 DetailsView s 默认编辑界面 ([单击此项可查看原尺寸图像](inserting-updating-and-deleting-data-with-the-sqldatasource-vb/_static/image12.png))
 

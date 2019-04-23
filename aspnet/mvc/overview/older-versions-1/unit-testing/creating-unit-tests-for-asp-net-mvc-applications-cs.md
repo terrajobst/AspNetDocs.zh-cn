@@ -12,7 +12,7 @@ ms.openlocfilehash: 1193d7dc6fc29dfdac5637c9391a82f9f3566073
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407726"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>为 ASP.NET MVC 应用程序创建单元测试 (C#)
@@ -59,12 +59,12 @@ ms.locfileid: "59407726"
 可以在代码清单 2 中运行单元测试，通过输入键盘组合**Ctrl-R、 A**或单击**运行解决方案中的所有测试**按钮 （请参见图 1）。 如果测试通过，您将看到图 2 中的测试结果窗口。
 
 
-[![R取消解决方案中所有测试](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
+[![在解决方案中运行所有测试](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
 
 **图 01**:在解决方案中运行所有测试 ([单击此项可查看原尺寸图像](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image3.png))
 
 
-[![Success ！](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
+[![成功 ！](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
 
 **图 02**:成功！ ([单击此项可查看原尺寸图像](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image6.png))
 
@@ -116,4 +116,4 @@ ms.locfileid: "59407726"
 最后，我们讨论了如何测试是否从控制器操作返回不同类型的操作结果。 您学习了如何测试控制器将返回是否`ViewResult`或`RedirectToRouteResult`。
 
 > [!div class="step-by-step"]
-> [下一步](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
+> [下一页](creating-unit-tests-for-asp-net-mvc-applications-vb.md)

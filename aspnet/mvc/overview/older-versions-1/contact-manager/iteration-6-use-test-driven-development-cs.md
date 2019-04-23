@@ -12,7 +12,7 @@ ms.openlocfilehash: 94885984ebad90523369dcf5771d0f77a753008f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405659"
 ---
 # <a name="iteration-6--use-test-driven-development-c"></a>迭代 6 – 使用测试驱动开发 (C#)
@@ -113,7 +113,7 @@ by [Microsoft](https://github.com/microsoft)
 创建新的单元测试，请右键单击 Controllers 文件夹在 ContactManager.Tests 项目中，选择**添加、 新测试**，并选择**单元测试**模板 （参见图 1）。 名称在新的单元测试 GroupControllerTest.cs，然后单击**确定**按钮。
 
 
-[![Adding GroupControllerTest 单元测试](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
+[![添加 GroupControllerTest 单元测试](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
 
 **图 01**:添加 GroupControllerTest 单元测试 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image2.png))
 
@@ -141,7 +141,7 @@ by [Microsoft](https://github.com/microsoft)
 我们将在 GroupController 和组类添加到我们的项目后，我们的第一个单元测试成功完成 （请参见图 2）。 我们已经通过该测试所需的最小工作。 为了庆祝就。
 
 
-[![Success ！](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
+[![成功 ！](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
 **图 02**:成功 ！([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image4.png))
 
@@ -243,7 +243,7 @@ by [Microsoft](https://github.com/microsoft)
 <a id="0.11_table01"></a>
 
 
-| **列名** | **数据类型** | **允许为 Null** |
+| **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | int | False |
 | 名称 | nvarchar(50) | False |
@@ -267,12 +267,12 @@ by [Microsoft](https://github.com/microsoft)
 9. 单击保存按钮以将所做的更改保存到 Contacts 表。
 
 
-[![C数据库表关系](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
+[![创建数据库表关系](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
 **图 03**:创建数据库表关系 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
 
-[![Specifying 表关系](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
+[![指定表关系](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
 **图 04**:指定表关系 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image8.png))
 
@@ -288,7 +288,7 @@ by [Microsoft](https://github.com/microsoft)
 5. 右键单击联系人实体的底部将显示的组导航属性。 更改的名称*组*导航属性设置为*组*（单数）。
 
 
-[![Updating 从数据库的实体框架模型](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
+[![更新数据库中的实体框架模型](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
 **图 05**:更新数据库中的实体框架模型 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image10.png))
 
@@ -296,7 +296,7 @@ by [Microsoft](https://github.com/microsoft)
 完成这些步骤后，你的数据模型将表示的联系人和组的表。 在实体设计器应显示这两个实体 （请参阅图 6）。
 
 
-[![E实体设计器显示组和联系人](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
+[![实体设计器显示组和联系人](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
 
 **图 06**:显示组和联系人实体设计器 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image12.png))
 
@@ -329,7 +329,7 @@ ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don 
 - Views\Group\Delete.aspx-用于删除联系人组显示确认窗体
 
 
-[![T他组索引视图](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
+[![组索引视图](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
 
 **图 07**:组索引视图 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image14.png))
 
@@ -343,7 +343,7 @@ ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don 
 通过查看此教程中随附的 Visual Studio 应用程序，可以看到修改后的视图。 例如，图 8 显示了联系人索引视图。
 
 
-[![T他与索引视图](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
+[![请联系索引视图](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
 **图 08**:请联系索引视图 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image16.png))
 

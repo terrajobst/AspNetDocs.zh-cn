@@ -12,7 +12,7 @@ ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406764"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介
@@ -656,8 +656,8 @@ ASP.NET 服务器代码可以执行任务根据条件和编写代码重复特定
 
 可以使用的属性`Page`对象以获得大量的信息，例如：
 
-- `Request`. 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
-- `Response`. 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。
+- `Request`。 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
+- `Response`。 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。
 
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample51.vbhtml)]
 
@@ -744,5 +744,5 @@ ASP.NET 服务器代码可以执行任务根据条件和编写代码重复特定
 
 ### <a name="reference-documentation"></a>参考文档
 
-- [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
+- [ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
 - [Visual Basic 语言](https://msdn.microsoft.com/library/2x7h1hfk.aspx)

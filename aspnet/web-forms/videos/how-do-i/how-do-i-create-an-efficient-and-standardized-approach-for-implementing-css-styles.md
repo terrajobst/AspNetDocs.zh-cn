@@ -12,7 +12,7 @@ ms.openlocfilehash: 34d5d109785f5c8fb1daec65293f9b77e947c338
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403865"
 ---
 # <a name="how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles"></a>如何实现:创建高效、 标准化方法，实现 CSS 样式？

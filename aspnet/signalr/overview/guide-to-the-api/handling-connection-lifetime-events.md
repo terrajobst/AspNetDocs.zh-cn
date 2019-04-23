@@ -12,7 +12,7 @@ ms.openlocfilehash: 9e6b0b3b86839efa393659531d8b74770226f383
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401460"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解和处理 SignalR 中的连接生存期事件
@@ -254,7 +254,7 @@ SignalR 2 版本不具有用于客户端断开连接的内置服务器 API。 �
 
 SignalR 2.1 将重载添加到服务器`OnDisconnect`指示是否客户端有意断开连接的事件而不会超时。`StopCalled`参数为 true，如果客户端显式关闭了连接。 在 JavaScript 中，如果一个服务器错误导致客户端断开连接，错误信息将被传递到客户端作为`$.connection.hub.lastError`。
 
-**C#服务器代码：`stopCalled`参数**
+**C# 服务器代码：`stopCalled`参数**
 
 [!code-csharp[Main](handling-connection-lifetime-events/samples/sample7.cs?highlight=1,3)]
 

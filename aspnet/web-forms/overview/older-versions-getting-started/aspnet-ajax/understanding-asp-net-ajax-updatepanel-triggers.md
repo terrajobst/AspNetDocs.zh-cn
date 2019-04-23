@@ -12,7 +12,7 @@ ms.openlocfilehash: e3821eee8c7bf2c2f9b45ea75ade2bd5b3b8ef19
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406257"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 触发器
@@ -32,7 +32,7 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 
 此白皮书基于 Beta 2 版本的.NET Framework 3.5 和 Visual Studio 2008。 ASP.NET AJAX Extensions，以前针对 ASP.NET 2.0 中，外接程序程序集现已集成到.NET Framework 基类库。 本白皮书还假定你将使用 Visual Studio 2008 中，不 Visual Web Developer 速成版，并将提供根据 Visual Studio 的用户界面的演练 （尽管将完全兼容而不考虑代码列表开发环境）。
 
-## *<a name="triggers"></a>Triggers*
+## <a name="triggers"></a>*触发器*
 
 对于给定的 UpdatePanel，默认情况下，触发器会自动包括调用的回发，包括 （例如） 文本框控件，具有任何子控件及其`AutoPostBack`属性设置为**true**。 但是，触发器也可以包含以声明方式使用标记;这是在`<triggers>`UpdatePanel 控件声明的部分。 尽管可以通过访问触发器`Triggers`集合属性，则建议 （例如，如果控件在设计时不可用） 注册在运行时的任何部分呈现触发器使用`RegisterAsyncPostBackControl(Control)`方法ScriptManager 对象为您的页面，在`Page_Load`事件。 请记住，页是无状态，因此你应重新注册这些控件每次创建它们。
 
@@ -40,7 +40,7 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 
 请注意，当 UpdatePanel 控件嵌套时，如果 UpdateMode 设置为**条件**，如果触发 UpdatePanel 的子级，但父无效，则仅将刷新 UpdatePanel 的子级。 但是，如果父 UpdatePanel 刷新，然后子 UpdatePanel 也会刷新。
 
-## *<a name="the-lttriggersgt-element"></a>&lt;触发器&gt;元素*
+## <a name="the-lttriggersgt-element"></a>*&lt;触发器&gt;元素*
 
 Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从智能感知） 有两个子元素的`UpdatePanel`控件。 最常见的元素是`<ContentTemplate>`元素，它实质上是封装将持有的更新面板的内容 （我们要为其启用部分呈现的内容）。 其他元素是`<Triggers>`元素，它指定页 （或用户控件，如果您正在使用它） 上的控件，将触发 UpdatePanel 控件在其中的部分呈现&lt;触发器&gt;元素驻留。
 
@@ -50,16 +50,16 @@ Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从�
 
 同样，`<asp:PostBackTrigger>`元素可用于的触发器部分页面呈现，但需要完整往返服务器。 此触发器元素还可用于控制将否则通常会触发部分页面呈现时强制执行整页呈现器 (例如，当`Button`控件中存在`<ContentTemplate>`UpdatePanel 控件元素)。 同样，PostBackTrigger 元素可以指定是在当前的单元中封装任何 UpdatePanel 控件的子级的任何控件。
 
-## *<a name="lttriggersgt-element-reference"></a>&lt;触发器&gt;元素引用*
+## <a name="lttriggersgt-element-reference"></a>*&lt;触发器&gt;元素引用*
 
 *标记后代：*
 
-| **标记** | **描述** |
+| **Tag** | **说明** |
 | --- | --- |
 | &lt;asp:AsyncPostBackTrigger&gt; | 指定控件并将导致部分页面更新的 UpdatePanel，其中包含此触发器引用的事件。 |
 | &lt;asp:PostBackTrigger&gt; | 指定的控件和事件将导致整页更新 （整页刷新）。 此标记可用于强制完全刷新时控件否则会触发部分呈现。 |
 
-## *<a name="walkthrough-cross-updatepanel-triggers"></a>演练：跨 UpdatePanel 触发器*
+## <a name="walkthrough-cross-updatepanel-triggers"></a>*演练：跨 UpdatePanel 触发器*
 
 1. 使用设置为启用部分呈现 ScriptManager 对象创建一个新的 ASP.NET 页面。 将两个 Updatepanel 添加到此页-在第一个，包括 Label 控件 (Label1) 和两个按钮控件 （Button1 和 Button2）。 应该在 Button1 单击此项可同时更新和 Button2 应显示单击此项可更新，或类似。 在第二个 UpdatePanel，包括仅标签控件 (Label2)，但其 ForeColor 属性设置为默认值对其进行区分以外。
 2. 这两个 UpdatePanel 标记的 UpdateMode 属性设置**条件**。
@@ -82,7 +82,7 @@ Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从�
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
 
 
-## *<a name="under-the-hood"></a>揭秘*
+## <a name="under-the-hood"></a>*揭秘*
 
 利用我们刚构建的示例，我们可以看看 ASP.NET AJAX 的作用以及我们 UpdatePanel 跨面板触发器的工作原理。 若要执行此操作，我们将使用生成的页源 HTML，以及使用它，调用 FireBug-Mozilla Firefox 扩展我们可以轻松地检查 AJAX 回发。 我们将使用由 Lutz Roeder 的.NET Reflector 工具。 这两种工具是免费提供联机，并可使用 internet 搜索找到。
 

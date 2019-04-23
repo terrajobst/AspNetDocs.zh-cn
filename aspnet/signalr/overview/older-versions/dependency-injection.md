@@ -12,7 +12,7 @@ ms.openlocfilehash: 615120684d032562ba2570e22b2dcdeaeaae340e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404086"
 ---
 # <a name="dependency-injection-in-signalr-1x"></a>SignalR 1.x 中的依赖项注入
@@ -83,8 +83,8 @@ ms.locfileid: "59404086"
 
 StockTicker 示例定义两个主要类：
 
-- `StockTickerHub`:Hub 类，用于管理客户端连接。
-- `StockTicker`:单一实例，它包含股票价格并定期更新它们。
+- `StockTickerHub`：Hub 类，用于管理客户端连接。
+- `StockTicker`：单一实例，它包含股票价格并定期更新它们。
 
 `StockTickerHub` 保存对的引用`StockTicker`单一实例，而`StockTicker`持有一个指向引用**IHubConnectionContext**为`StockTickerHub`。 它使用此接口与通信`StockTickerHub`实例。 (有关详细信息，请参阅[服务器与 ASP.NET SignalR 广播](index.md)。)
 

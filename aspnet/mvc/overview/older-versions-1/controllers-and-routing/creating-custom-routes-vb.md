@@ -12,7 +12,7 @@ ms.openlocfilehash: a7b8b85ba1cf5c18e605eb8114a305272baf41a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404866"
 ---
 # <a name="creating-custom-routes-vb"></a>创建自定义路由 (VB)
@@ -52,7 +52,7 @@ by [Microsoft](https://github.com/microsoft)
 
 可以使用在代码清单 2 中的控制器使用博客自定义路由。
 
-**代码清单 2-ArchiveController.vb**
+**Listing 2 - ArchiveController.vb**
 
 [!code-vb[Main](creating-custom-routes-vb/samples/sample2.vb)]
 
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 **图 1-通过转换参数错误**
 
 
-[![T他新建项目对话框中](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
+[![新建项目对话框](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
 
 **图 01**:通过转换参数的错误 ([单击此项可查看原尺寸图像](creating-custom-routes-vb/_static/image2.png))
 

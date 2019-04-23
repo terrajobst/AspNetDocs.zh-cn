@@ -12,7 +12,7 @@ ms.openlocfilehash: 3226039ad399fb43c82c98331be41450f6f679bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405197"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 - 企业部署系列 3 配置 TFS
@@ -22,7 +22,7 @@ ms.locfileid: "59405197"
 
 - [配置用于 Web 部署的 Team Foundation Server](configuring-team-foundation-server-for-web-deployment.md)
 - [在 TFS 中创建团队项目](creating-a-team-project-in-tfs.md)
-- [向源代码管理添加内容](adding-content-to-source-control.md)
+- [向源控件添加内容](adding-content-to-source-control.md)
 - [配置用于 Web 部署的 TFS 生成服务器](configuring-a-tfs-build-server-for-web-deployment.md)
 - [创建支持部署的生成定义](creating-a-build-definition-that-supports-deployment.md)
 - [部署特定生成](deploying-a-specific-build.md)

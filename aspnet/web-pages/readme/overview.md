@@ -12,7 +12,7 @@ ms.openlocfilehash: 7374b1afafa9ca63309f3c0369c5efd808f7f28a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401980"
 ---
 # <a name="webmatrix-readme"></a>WebMatrix 自述文件
@@ -120,7 +120,7 @@ ms.locfileid: "59401980"
 文档的本节介绍新功能、 更改和 1.0 版本的 ASP.NET Web Pages 使用 Razor 语法的已知的问题。
 
 - [新增功能](#NewFeatures)
-- [Changes](#Changes)
+- [更改](#Changes)
 - [问题](#Issues)
 
 #### <a id="NewFeatures"></a>  新增功能
@@ -254,7 +254,7 @@ ms.locfileid: "59401980"
 > 
 > 1. 将复制到的数据库引擎程序集*Bin*目标计算机上的应用程序文件夹 （和子文件夹）：  
 > 
->    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>    - 复制*C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
 >      **to** *\Bin*
 >    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*  **到** *\Bin\x86*
 >    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
@@ -558,7 +558,7 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 有关 WebMatrix 1.0 的详细信息，请参阅以下网站：
 
 - [IIS.net](http://iis.net/)
-- [ASP.NET](https://asp.net/webmatrix)
+- [ASP.NET 2.0](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
 © 2011 Microsoft Corporation. 保留所有权利。 [使用条款](https://msdn.microsoft.cos/cc300389.aspx)。

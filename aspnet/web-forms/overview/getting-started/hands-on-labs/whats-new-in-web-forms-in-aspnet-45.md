@@ -12,7 +12,7 @@ ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401733"
 ---
 # <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 中 Web 窗体的新增功能
@@ -396,11 +396,11 @@ ASP.NET 4.5 引入了 Web 窗体的数据批注验证。 而不是让每个输�
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample23.cs)]
 
     > [!NOTE]
-    > .NET framework 4.5 已扩展现有的数据批注集合。 以下是一些可以使用的数据批注: [CreditCard]，[Phone] [EmailAddress] [区域] [比较] [Url]，[FileExtensions]，[Required]、[密钥]，[正则表达式]。
+    > .NET framework 4.5 已扩展现有的数据批注集合。 以下是一些可以使用的数据批注: [CreditCard]，[Phone] [EmailAddress] [区域] [比较] [Url]，[FileExtensions]，[Required]、[Key]，[正则表达式]。
     > 
     > 一些用法示例：
     > 
-    > [键]: Specifies that an attribute is the unique identifier
+    > [Key]: Specifies that an attribute is the unique identifier
     > 
     > [Range(0.4, 0.5, ErrorMessage=&quot;{Write an error message}&quot;]: Double range
     > 

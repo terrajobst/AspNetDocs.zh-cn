@@ -12,7 +12,7 @@ ms.openlocfilehash: 8148974eacd1db05947ba54fe40776df69f92290
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404112"
 ---
 # <a name="backbone-template"></a>Backbone 模板
@@ -72,7 +72,7 @@ Backbone.js SPA 模板旨在帮助你开始快速构建交互式客户端的 web
 
 在 Backbone.js，路由器提供路由客户端的页面并将其连接到操作和事件的方法。 该模板定义中 router.ts 单一路由器。 路由器创建 activable 视图，并切换视图时维护状态。 （下一节描述了 activable 视图）。最初，该项目包含两个虚拟视图，家庭和有关。 它还具有找不到视图，如果不知道路由，则显示。
 
-**Views**
+**视图**
 
 ~/Scripts/application/视图中定义这些视图。 有两种类型的视图、 activable 视图和模式对话框视图。 由路由器调用 activable 视图。 Activable 视图显示时，所有其他 activable 视图变为非活动状态。 若要创建 activable 视图，扩展视图提供`Activable`对象：
 
@@ -88,7 +88,7 @@ Backbone.js SPA 模板旨在帮助你开始快速构建交互式客户端的 web
 
 [!code-csharp[Main](backbonejs-template/samples/sample4.cs)]
 
-**Models**
+**模型**
 
 模型 ~/Scripts/application/模型中进行定义。 所有模型都具有三个基本操作： 默认属性、 验证规则和服务器端的终结点。 下面是一个典型示例：
 
@@ -110,7 +110,7 @@ Backbone.js SPA 模板旨在帮助你开始快速构建交互式客户端的 web
 
 现在让我们看一下在服务器端。
 
-**Controllers**
+**控制器**
 
 在单页面应用程序中，服务器播放用户界面中只有很小的作用。 通常情况下，服务器将呈现的初始页面，然后发送和接收 JSON 数据。
 

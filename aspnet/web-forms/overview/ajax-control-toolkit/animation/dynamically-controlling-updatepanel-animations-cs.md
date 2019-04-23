@@ -12,7 +12,7 @@ ms.openlocfilehash: 0767b66a035069629c15e658c1e75ea78a7bd07b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407648"
 ---
 # <a name="dynamically-controlling-updatepanel-animations-c"></a>动态控制 UpdatePanel 动画 (C#)
@@ -58,7 +58,7 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 在浏览器中运行的文件。 只要单击该按钮时，当前时间显示在面板中，始终为 1 秒的持续时间内淡入。
 
 
-[![T他目前淡入淡出](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
+[![淡入淡出的当前时间](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
 
 淡入淡出的当前时间 ([单击此项可查看原尺寸图像](dynamically-controlling-updatepanel-animations-cs/_static/image3.png))
 

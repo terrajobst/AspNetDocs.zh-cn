@@ -12,7 +12,7 @@ ms.openlocfilehash: 188f98d013707178e50858f8ea26d8cf2af06bea
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406010"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-c"></a>使用 CascadingDropDown 预设置列表条目 (C#)
@@ -53,7 +53,7 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 加载页面在浏览器中的将填充下拉列表中的与三个供应商，第二个被预先选定状态。
 
 
-[![T他列表是填充的预先选择了自动](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
+[![填充和预先自动选择列表](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
 
 填充和预先自动选择列表 ([单击此项可查看原尺寸图像](presetting-list-entries-with-cascadingdropdown-cs/_static/image3.png))
 

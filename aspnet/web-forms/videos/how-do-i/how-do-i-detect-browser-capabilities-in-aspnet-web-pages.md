@@ -12,7 +12,7 @@ ms.openlocfilehash: 1232d4b08b8709adafa7c3ed524125fffc2982df
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406907"
 ---
 # <a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[如何实现:]在 ASP.NET Web Pages 检测浏览器功能

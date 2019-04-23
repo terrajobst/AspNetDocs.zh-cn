@@ -12,7 +12,7 @@ ms.openlocfilehash: 1a3515af80de0c9d71678a9edaea13a04e0ed80b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407245"
 ---
 # <a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a>[如何实现:]使用嵌套的母版页创建标准的内容布局

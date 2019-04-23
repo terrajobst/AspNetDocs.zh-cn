@@ -12,7 +12,7 @@ ms.openlocfilehash: 960cd6f82909919d07e976a90691c4a7d7fb3686
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406426"
 ---
 # <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[如何实现:]使用 ASP.NET AJAX SlideShow 扩展程序吗？

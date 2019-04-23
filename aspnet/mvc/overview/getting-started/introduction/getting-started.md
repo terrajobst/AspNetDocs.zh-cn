@@ -11,7 +11,7 @@ ms.openlocfilehash: c2f7ca2e7fb8d7831f21e3ba2f4713211657e1b3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402227"
 ---
 # <a name="getting-started-with-aspnet-mvc-5"></a>ASP.NET MVC 5 入门
@@ -75,4 +75,4 @@ Visual Studio 刚刚创建的 ASP.NET MVC 项目使用默认模板，因此您�
 - [激活 Visual Studio 订户权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers)-Visual Studio 订阅提供的信用额度可以用于付费版 Azure 服务的每个月。
 
 > [!div class="step-by-step"]
-> [下一步](adding-a-controller.md)
+> [下一页](adding-a-controller.md)

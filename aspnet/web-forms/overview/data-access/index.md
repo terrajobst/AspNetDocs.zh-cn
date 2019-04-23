@@ -12,7 +12,7 @@ ms.openlocfilehash: d2f9d48618a102df7ea24a6d2a80b5c3026c7752
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405399"
 ---
 # <a name="older-versions---data-access"></a>旧版本 - 数据访问
@@ -62,7 +62,7 @@ ms.locfileid: "59405399"
 
     - [插入、更新和删除数据概述 (C#)](editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)
     - [检查与插入、更新和删除操作有关的事件 (C#)](editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
-    - [在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (C#)](editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)
+    - [在 ASP.NET 页中处理 BLL- 和 DAL 级别的异常 (C#)](editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)
     - [向编辑和插入界面添加验证控件 (C#)](editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)
     - [自定义数据修改界面 (C#)](editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md)
     - [实现乐观并发 (C#)](editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md)
@@ -70,7 +70,7 @@ ms.locfileid: "59405399"
     - [限制基于用户的数据修改功能 (C#)](editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs.md)
     - [插入、更新和删除数据概述 (VB)](editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)
     - [检查与插入、更新和删除操作有关的事件 (VB)](editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
-    - [在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (VB)](editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
+    - [在 ASP.NET 页中处理 BLL- 和 DAL 级别的异常 (VB)](editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
     - [向编辑和插入界面添加验证控件 (VB)](editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
     - [自定义数据修改界面 (VB)](editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)
     - [实现乐观并发 (VB)](editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)
@@ -150,14 +150,14 @@ ms.locfileid: "59405399"
     - [从 GridView 页脚插入新记录 (VB)](enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb.md)
 - [处理二进制文件](working-with-binary-files/index.md)
 
-    - [上载文件 (C#)](working-with-binary-files/uploading-files-cs.md)
+    - [上传文件 (C#)](working-with-binary-files/uploading-files-cs.md)
     - [显示数据 Web 控件中的二进制数据 (C#)](working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs.md)
-    - [添加新纪录时增加文件上载选项 (C#)](working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs.md)
-    - [上载和删除现有的二进制数据 (C#)](working-with-binary-files/updating-and-deleting-existing-binary-data-cs.md)
-    - [上载文件 (VB)](working-with-binary-files/uploading-files-vb.md)
+    - [添加新纪录时增加文件上传选项 (C#)](working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs.md)
+    - [上传和删除现有的二进制数据 (C#)](working-with-binary-files/updating-and-deleting-existing-binary-data-cs.md)
+    - [上传文件 (VB)](working-with-binary-files/uploading-files-vb.md)
     - [显示数据 Web 控件中的二进制数据 (VB)](working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb.md)
-    - [添加新纪录时增加文件上载选项 (VB)](working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb.md)
-    - [上载和删除现有的二进制数据 (VB)](working-with-binary-files/updating-and-deleting-existing-binary-data-vb.md)
+    - [添加新纪录时增加文件上传选项 (VB)](working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb.md)
+    - [上传和删除现有的二进制数据 (VB)](working-with-binary-files/updating-and-deleting-existing-binary-data-vb.md)
 - [缓存数据](caching-data/index.md)
 
     - [使用 ObjectDataSource 缓存数据 (C#)](caching-data/caching-data-with-the-objectdatasource-cs.md)

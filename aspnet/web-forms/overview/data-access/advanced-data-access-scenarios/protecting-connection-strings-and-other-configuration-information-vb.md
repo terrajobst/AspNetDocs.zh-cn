@@ -12,7 +12,7 @@ ms.openlocfilehash: cc5f283a6f97a83fdb157f54e5b3b020254f5203
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404840"
 ---
 # <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>保护连接字符串和其他配置信息 (VB)
@@ -31,7 +31,7 @@ ASP.NET 应用程序的配置信息通常存储在名为一个 XML 文件`Web.co
 由于`Web.config`可能包含连接字符串等敏感数据非常重要的内容`Web.config`保持安全和隐藏从未经授权的查看器。 默认情况下，任何 HTTP 请求到的文件`.config`由 ASP.NET 引擎，它将返回处理扩展插件*不提供此类型的页*图 1 所示的消息。 这意味着，访问者不能查看你`Web.config`只需输入文件 s 内容 http://www.YourServer.com/Web.config 到其 s 浏览器地址栏。
 
 
-[![Visiting Web.config 通过浏览器返回此页的类型不被提供消息](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
+[![访问 Web.config 通过浏览器返回此类型的页未处理消息](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
 
 **图 1**:访问`Web.config`通过浏览器返回此类型的页未处理消息 ([单击以查看实际尺寸的图像](protecting-connection-strings-and-other-configuration-information-vb/_static/image3.png))
 
@@ -83,7 +83,7 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 此时您的屏幕应类似于图 2。
 
 
-[![Add 文本框和两个按钮 Web 控件到页](protecting-connection-strings-and-other-configuration-information-vb/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image4.png)
+[![向页面添加一个文本框和两个按钮 Web 控件](protecting-connection-strings-and-other-configuration-information-vb/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image4.png)
 
 **图 2**:向页面添加一个文本框和两个按钮 Web 控件 ([单击此项可查看原尺寸图像](protecting-connection-strings-and-other-configuration-information-vb/_static/image6.png))
 
@@ -111,7 +111,7 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 输入上面的代码后, 对其进行测试，请访问`EncryptingConfigSections.aspx`通过浏览器的页。 您最初应看到列出的内容的页面`Web.config`与`<connectionStrings>`以纯文本形式显示的部分 （参见图 3）。
 
 
-[![Add 文本框和两个按钮 Web 控件到页](protecting-connection-strings-and-other-configuration-information-vb/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image7.png)
+[![向页面添加一个文本框和两个按钮 Web 控件](protecting-connection-strings-and-other-configuration-information-vb/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image7.png)
 
 **图 3**:向页面添加一个文本框和两个按钮 Web 控件 ([单击此项可查看原尺寸图像](protecting-connection-strings-and-other-configuration-information-vb/_static/image9.png))
 
@@ -126,7 +126,7 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 禁用之后的页请求验证，请尝试再次单击加密连接字符串按钮。 将回发时，访问该配置文件并将其`<connectionStrings>`加密使用 DPAPI 提供程序的部分。 然后，更新文本框以显示新`Web.config`内容。 如图 4 所示，`<connectionStrings>`信息都会进行加密。
 
 
-[![C单击加密连接字符串按钮加密&lt;connectionString&gt;部分](protecting-connection-strings-and-other-configuration-information-vb/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image10.png)
+[![单击加密连接字符串按钮加密&lt;connectionString&gt;部分](protecting-connection-strings-and-other-configuration-information-vb/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image10.png)
 
 **图 4**:单击加密连接字符串按钮加密`<connectionString>`部分 ([单击以查看实际尺寸的图像](protecting-connection-strings-and-other-configuration-information-vb/_static/image12.png))
 
@@ -143,7 +143,7 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 当从访问连接字符串信息时`Web.config`，无论是由我们编写的从 SqlDataSource 控件或从我们的类型化数据集在 Tableadapter 的自动生成的代码-会自动解密。 简单地说，我们不需要添加任何额外的代码或逻辑来解密加密`<connectionString>`部分。 若要演示此操作，请访问之前的教程之一在此时，如基本报告部分的简单显示教程 (`~/BasicReporting/SimpleDisplay.aspx`)。 如图 5 所示，教程适用于完全按照我们期望的那样，指示加密的连接字符串信息由 ASP.NET 页时被自动解密。
 
 
-[![T他数据访问层自动解密连接字符串信息](protecting-connection-strings-and-other-configuration-information-vb/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image13.png)
+[![数据访问层自动解密的连接字符串信息](protecting-connection-strings-and-other-configuration-information-vb/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image13.png)
 
 **图 5**:数据访问层自动解密连接字符串信息 ([单击此项可查看原尺寸图像](protecting-connection-strings-and-other-configuration-information-vb/_static/image15.png))
 

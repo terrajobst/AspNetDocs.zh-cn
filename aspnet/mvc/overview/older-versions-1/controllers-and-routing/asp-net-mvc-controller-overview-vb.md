@@ -12,7 +12,7 @@ ms.openlocfilehash: 33544825403db67fc3b8f0e9eae5d7671b8d2e67
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402179"
 ---
 # <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC 控制器概述 (VB)
@@ -111,7 +111,7 @@ ContentResult 操作结果比较特殊。 您可以使用 ContentResult 操作�
 
 如果控制器操作返回的结果是不是一个操作结果-例如，日期或整数-然后将结果包装在 ContentResult 自动。 例如，调用 WorkController 列表 5 中的 index （） 操作时，返回的日期是 ContentResult 为自动。
 
-**列表 5-WorkController.vb**
+**Listing 5 - WorkController.vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample5.vb)]
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: b3bdb44a0e3dc274c056bcadae3dcf90ab3c5507
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401434"
 ---
 # <a name="declarative-parameters-c"></a>声明性参数 (C#)
@@ -37,7 +37,7 @@ ms.locfileid: "59401434"
 第一个示例中，首先，通过添加到的 DetailsView 控件`DeclarativeParams.aspx`页中`BasicReporting`文件夹。 从 DetailsView 的智能标记上，选择&lt;新数据源&gt;从下拉列表，然后选择要添加对象数据源。
 
 
-[![Add ObjectDataSource 到页](declarative-parameters-cs/_static/image2.png)](declarative-parameters-cs/_static/image1.png)
+[![将对象数据源添加到页面](declarative-parameters-cs/_static/image2.png)](declarative-parameters-cs/_static/image1.png)
 
 **图 1**:将对象数据源添加到页 ([单击此项可查看原尺寸图像](declarative-parameters-cs/_static/image3.png))
 
@@ -45,7 +45,7 @@ ms.locfileid: "59401434"
 这将自动启动 ObjectDataSource 控件选择数据源向导。 选择`ProductsBLL`向导的第一个屏幕中的类。
 
 
-[![S选择 ProductsBLL 类](declarative-parameters-cs/_static/image5.png)](declarative-parameters-cs/_static/image4.png)
+[![选择 ProductsBLL 类](declarative-parameters-cs/_static/image5.png)](declarative-parameters-cs/_static/image4.png)
 
 **图 2**:选择`ProductsBLL`类 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image6.png))
 
@@ -53,7 +53,7 @@ ms.locfileid: "59401434"
 由于我们想要显示有关特定产品的信息，因此我们想要使用`GetProductByProductID(productID)`方法。
 
 
-[![C选择 GetProductByProductID(productID) 方法](declarative-parameters-cs/_static/image8.png)](declarative-parameters-cs/_static/image7.png)
+[![选择 GetProductByProductID(productID) 方法](declarative-parameters-cs/_static/image8.png)](declarative-parameters-cs/_static/image7.png)
 
 **图 3**:选择`GetProductByProductID(productID)`方法 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image9.png))
 
@@ -61,7 +61,7 @@ ms.locfileid: "59401434"
 由于我们选择的方法包括参数，没有一个向导，其中我们需要定义要用于参数的值的多个屏幕。 在左侧的列表显示所有所选方法的参数。 有关`GetProductByProductID(productID)`只有一个`productID`。 在右侧，我们可以指定所选的参数的值。 参数源下拉列表枚举为参数值的各种可能来源。 由于我们想要指定硬编码值为 5`productID`参数保留为无参数源和默认值文本框中输入 5。
 
 
-[![A 硬编码参数值的 5 将用于产品 id 参数](declarative-parameters-cs/_static/image11.png)](declarative-parameters-cs/_static/image10.png)
+[![Hard-Coded 参数值的 5 将用于产品 id 参数](declarative-parameters-cs/_static/image11.png)](declarative-parameters-cs/_static/image10.png)
 
 **图 4**:Hard-Coded 参数值的 5 将用于`productID`参数 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image12.png))
 
@@ -77,7 +77,7 @@ ms.locfileid: "59401434"
 Web 控件的数据时访问此页，将调用 ObjectDataSource`Select`方法，将调用`ProductsBLL`类的`GetProductByProductID(productID)`方法使用硬编码值为 5`productID`输入的参数。 该方法将返回一个强类型`ProductDataTable`对象，其中包含一个行，以了解 Chef 秋葵汤 (与产品`ProductID`5)。
 
 
-[![I显示表示有关 Chef 秋葵汤](declarative-parameters-cs/_static/image14.png)](declarative-parameters-cs/_static/image13.png)
+[![显示信息有关 Chef 秋葵汤](declarative-parameters-cs/_static/image14.png)](declarative-parameters-cs/_static/image13.png)
 
 **图 5**:显示信息有关 Chef 秋葵汤 ([单击此项可查看原尺寸图像](declarative-parameters-cs/_static/image15.png))
 
@@ -87,7 +87,7 @@ Web 控件的数据时访问此页，将调用 ObjectDataSource`Select`方法，
 ObjectDataSource 的参数值也可以设置基于页上的 Web 控件的值。 若要说明这一点，让我们具有一个 GridView，列出所有用户指定的国家/地区中的供应商。 若要完成本教程通过将文本框添加到用户可以在其中输入国家/地区名称页。 设置此文本框控件`ID`属性设置为`CountryName`。 此外添加一个按钮 Web 控件。
 
 
-[![Add 到包含 ID 国家/地区名称的页文本框](declarative-parameters-cs/_static/image17.png)](declarative-parameters-cs/_static/image16.png)
+[![将文本框添加到具有 ID 国家/地区名称的页面](declarative-parameters-cs/_static/image17.png)](declarative-parameters-cs/_static/image16.png)
 
 **图 6**:将 TextBox 添加到包含的页`ID` `CountryName` ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image18.png))
 
@@ -95,7 +95,7 @@ ObjectDataSource 的参数值也可以设置基于页上的 Web 控件的值。 
 接下来，添加一个 GridView，页上，并从智能标记中，选择添加新对象数据源。 由于我们想要显示供应商信息选择`SuppliersBLL`从向导的第一个屏幕的类。 从第二个屏幕上，选择`GetSuppliersByCountry(country)`方法。
 
 
-[![C选择 GetSuppliersByCountry(country) 方法](declarative-parameters-cs/_static/image20.png)](declarative-parameters-cs/_static/image19.png)
+[![选择 GetSuppliersByCountry(country) 方法](declarative-parameters-cs/_static/image20.png)](declarative-parameters-cs/_static/image19.png)
 
 **图 7**:选择`GetSuppliersByCountry(country)`方法 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image21.png))
 
@@ -103,7 +103,7 @@ ObjectDataSource 的参数值也可以设置基于页上的 Web 控件的值。 
 由于`GetSuppliersByCountry(country)`方法具有一个输入的参数，该向导再一次包括选择参数值的最后一个屏幕。 这一次，设置参数源为控件。 这将填充 ControlID 下拉列表的页面; 上的控件名称选择`CountryName`从列表中的控件。 首次访问页面时`CountryName`文本框将为空白，因此不返回任何结果并不显示任何内容。 如果你想要显示一些结果，默认情况下，请相应地设置默认值文本框中。
 
 
-[![S设置为国家/地区名称控件值的参数值](declarative-parameters-cs/_static/image23.png)](declarative-parameters-cs/_static/image22.png)
+[![将参数值设置为国家/地区名称控件值](declarative-parameters-cs/_static/image23.png)](declarative-parameters-cs/_static/image22.png)
 
 **图 8**:将参数值设置为`CountryName`控制值 ([单击以查看实际尺寸的图像](declarative-parameters-cs/_static/image24.png))
 
@@ -117,7 +117,7 @@ ObjectDataSource 的声明性标记稍有不同我们第一个示例中，使用
 访问者在国家/地区，但是，输入，并单击显示供应商按钮会导致回发中，ObjectDataSource 的后`Select`方法重新查询，在 TextBox 控件中传递`Text`值作为`country`参数。
 
 
-[![T显示来自加拿大的供应商软管](declarative-parameters-cs/_static/image26.png)](declarative-parameters-cs/_static/image25.png)
+[![显示来自加拿大这些供应商](declarative-parameters-cs/_static/image26.png)](declarative-parameters-cs/_static/image25.png)
 
 **图 9**:显示来自加拿大这些供应商 ([单击此项可查看原尺寸图像](declarative-parameters-cs/_static/image27.png))
 
@@ -139,7 +139,7 @@ ObjectDataSource 的声明性标记稍有不同我们第一个示例中，使用
 进行此更改后`DeclarativeParams.aspx`页面将显示所有供应商提供第一次访问时的 (或每当`CountryName`文本框为空)。
 
 
-[![All 供应商是现在默认情况下显示](declarative-parameters-cs/_static/image29.png)](declarative-parameters-cs/_static/image28.png)
+[![所有供应商是现在默认情况下显示](declarative-parameters-cs/_static/image29.png)](declarative-parameters-cs/_static/image28.png)
 
 **图 10**:所有供应商是现在默认情况下显示 ([单击此项可查看原尺寸图像](declarative-parameters-cs/_static/image30.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: e0b540c030bf600def9b9efad4c73f055a343851
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402825"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问模型的数据
@@ -26,7 +26,7 @@ ms.locfileid: "59402825"
 
 右键单击 Controllers 文件夹，并使新 MoviesController。
 
-[![Add 控制器](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
+[![添加控制器](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
 
 这将创建我们的项目中我们 \Controllers 文件夹下的新"MoviesController.cs"文件。 让我们更新 MovieController 从我们的新填充数据库中检索的影片列表。
 
@@ -42,11 +42,11 @@ ms.locfileid: "59402825"
 
 单击添加，系统将自动生成的代码用于视图为我们显示我们的电影列表。 这是更改的好时机&lt;h2&gt;标题为"My Movie List"类似，我们之前使用 Hello World 视图。
 
-[![Movies-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
+[![电影-Microsoft Visual Web Developer 2010 速成版](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
 
 运行应用程序并在地址栏中访问 /Movies。 现在我们使用基本控制器中的查询从数据库检索数据并将数据返回到了解的有关电影的视图。 该视图然后旋转的电影列表，并会为我们创建包含数据的表。
 
-[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
+[![电影列表-Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
 
 因此我们无需为我们创建了基架模板的默认链接，我们不会将实现与此应用程序的编辑、 详细信息和删除功能。 打开 /Movies/Index.aspx 文件并将其删除。
 
@@ -56,7 +56,7 @@ ms.locfileid: "59402825"
 
 它创建我们不需要的链接，因此对于此示例将删除它们。 但是，因为这是下一步，我们将保留我们新创建的链接 ！ 下面是我们的应用程序中删除的列的外观。
 
-[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
+[![电影列表-Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
 
 我们现在有了我们的电影数据的简单列表。 但是，如果我们单击"新建"链接时，我们将会出错，因为它不挂起 ！ 让我们实现创建操作方法，并使用户能够在我们的数据库输入新影片。
 

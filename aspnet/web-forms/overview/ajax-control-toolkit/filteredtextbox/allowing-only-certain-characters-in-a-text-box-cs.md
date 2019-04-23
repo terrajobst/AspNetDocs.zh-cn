@@ -12,7 +12,7 @@ ms.openlocfilehash: 020f7bbe797a2c04f1ff97ea2056345028f700fb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407609"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-c"></a>仅允许在文本框中使用特定字符 (C#)
@@ -56,9 +56,9 @@ ASP.NET AJAX 控件工具包包含`FilteredTextBox`控件扩展了文本框。 �
 运行页面，然后重试输入一个字母，如果启用 JavaScript，它不起作用;但是，数字显示在页上。 但是请注意，保护`FilteredTextBox`提供不是高防护：如果启用 JavaScript，则任何可能输入数据在文本框中，因此您必须使用其他验证方法，即 ASP。NET 的验证控件。
 
 
-[![O可能输入 nly 数字](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
+[![可能输入仅数字](allowing-only-certain-characters-in-a-text-box-cs/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-cs/_static/image1.png)
 
 可能输入仅数字 ([单击此项可查看原尺寸图像](allowing-only-certain-characters-in-a-text-box-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](allowing-only-certain-characters-in-a-text-box-vb.md)
+> [下一页](allowing-only-certain-characters-in-a-text-box-vb.md)

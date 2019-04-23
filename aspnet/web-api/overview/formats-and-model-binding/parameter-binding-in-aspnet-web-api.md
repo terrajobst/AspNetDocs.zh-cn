@@ -13,7 +13,7 @@ ms.openlocfilehash: f121f12ce689a079412bbd5392fde4fea863ff1f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401967"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的参数绑定
@@ -112,7 +112,7 @@ Web API 中的默认值提供程序获取路由数据和查询字符串中的值
 请注意，模型绑定器不限于简单类型转换。 模型绑定器首先在包含已知位置的表中进行查找，如果失败，则会使用类型转换。
 
 
-**设置模型联编程序**
+**设置模型绑定器**
 
 可以通过多种方法来设置模型绑定器。 可以向参数添加 **[ModelBinder]** 特性
 

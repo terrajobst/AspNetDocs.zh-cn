@@ -12,7 +12,7 @@ ms.openlocfilehash: c681415920bb0bfb4bc1c012e42fb5a528db93ca
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406829"
 ---
 # <a name="using-web-api-2-with-entity-framework-6"></a>通过 Entity Framework 6 使用 Web API 2
@@ -101,4 +101,4 @@ AJAX 并不新鲜，但如今有更加轻松地构建和维护大型复杂的 SP
 
 
 > [!div class="step-by-step"]
-> [下一步](part-2.md)
+> [下一页](part-2.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407349"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
@@ -345,7 +345,7 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
     <strong>方法</strong>
     :::column-end:::
     :::column:::
-    <strong>描述</strong>
+    <strong>说明</strong>
     :::column-end:::
     :::column:::
     <strong>示例</strong>
@@ -443,10 +443,10 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
 
 :::row:::
     :::column:::
-    <strong>运算符</strong>
+    <strong>Operator</strong>
     :::column-end:::
     :::column:::
-    <strong>描述</strong>
+    <strong>说明</strong>
     :::column-end:::
     :::column:::
     <strong>示例</strong>
@@ -751,8 +751,8 @@ ASP.NET 服务器代码可以执行基于条件的任务，并编写特定次数
 
 可以使用的属性`Page`对象以获得大量的信息，例如：
 
-- `Request`. 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
-- `Response`. 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。 
+- `Request`。 如您所见，这是信息的一系列有关当前请求，包括哪种类型的浏览器发出了请求、 页面、 用户标识，等等的 URL。
+- `Response`。 这是信息的有关在服务器代码完成运行时将发送到浏览器的响应 （页） 集合。 例如，此属性可用于将信息写入到响应。 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
@@ -850,6 +850,6 @@ Razor 语法可以用于将参数传递给方法的两个选项：*位置参数*
 **参考文档**
 
 
-[ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
+[ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
 
 [C# 语言](https://msdn.microsoft.com/library/kx37x362.aspx)

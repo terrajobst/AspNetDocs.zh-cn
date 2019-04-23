@@ -12,7 +12,7 @@ ms.openlocfilehash: 36bc314c6709c34863d86158419257be99f4084f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407102"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
@@ -60,7 +60,7 @@ ms.locfileid: "59407102"
 - [ASP.NET MVC 3 候选发布 (2010 年 11 月 9 日)](#TOC_ASP_NET_3_RC)
 
     - [ASP.NET MVC 3 RC 中的新增功能](#_Toc276711785)
-    - [NuGet 程序包管理器](#_Toc276711786)
+    - [NuGet Package Manager](#_Toc276711786)
     - [改进了"新建项目"对话框](#_Toc276711787)
     - [无会话控制器](#_Toc276711788)
     - [新的验证特性](#_Toc276711789)
@@ -507,7 +507,7 @@ ASP.NET MVC 3 包含 NuGet 包管理器 （以前称为 NuPack），这是将库
 
 默认模板如下所示：
 
-为空。 包含一组最小的 ASP.NET MVC 项目中，其中包括默认目录结构对于 ASP.NET MVC 项目，包含的默认 ASP.NET MVC 样式，并包含默认的 JavaScript 文件的脚本目录的 Site.css 文件的文件。
+空。 包含一组最小的 ASP.NET MVC 项目中，其中包括默认目录结构对于 ASP.NET MVC 项目，包含的默认 ASP.NET MVC 样式，并包含默认的 JavaScript 文件的脚本目录的 Site.css 文件的文件。
 
 Internet 应用程序。 包含演示如何使用 ASP.NET MVC 使用成员资格提供程序的示例功能。
 
@@ -648,7 +648,7 @@ ASP.NET MVC 3 包含 NuGet 包管理器，这是添加的库的集成的包管�
 
 默认模板如下所示：
 
-为空。 包含一组最小的 ASP.NET MVC 项目中，其中包括默认目录结构对于 ASP.NET MVC 项目，包含的默认 ASP.NET MVC 样式，并包含默认的 JavaScript 文件的脚本目录的小 Site.css 文件的文件。
+空。 包含一组最小的 ASP.NET MVC 项目中，其中包括默认目录结构对于 ASP.NET MVC 项目，包含的默认 ASP.NET MVC 样式，并包含默认的 JavaScript 文件的脚本目录的小 Site.css 文件的文件。
 
 Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格提供程序的示例功能。
 
@@ -666,7 +666,7 @@ Internet 应用程序。 包含演示如何使用 ASP.NET MVC 中的成员资格
 
 新的 ASP.NET Web Pages 技术包括一组可用于将常用的功能添加到视图和控制器的帮助器方法。 ASP.NET MVC 3 支持使用控制器和视图中的这些帮助器方法 （如果适用）。 这些方法包含在 System.Web.Helpers 程序集。 下表列出了几个 ASP.NET Web Pages 帮助器方法。
 
-| **帮助程序** | **描述** |
+| **Helper** | **说明** |
 | --- | --- |
 | Chart | 呈现的图表视图中。 包含如 Chart.ToWebImage、 Chart.Save 和 Chart.Write 方法。 |
 | 加密 | 使用哈希算法来创建正确加盐，哈希处理密码。 |

@@ -12,7 +12,7 @@ ms.openlocfilehash: e156b15356b02c25ad3dbb082096fc41ee35e465
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403696"
 ---
 # <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>IIS 和 ASP.NET 开发服务器之间的核心差异 (VB)
@@ -50,7 +50,7 @@ ASP.NET Development Server 将传入请求与当前登录用户的安全上下�
 接下来，请访问*教您自己 ASP.NET 3.5 24 小时内*使用 ASP.NET 开发服务器在开发环境中的通讯簿查看页。 假设你登录到您的计算机使用的帐户有足够的权限来创建和修改的文本文件中 web 应用程序的根目录书评出现与之前相同，但该页是每次访问日期和时间以及用户的 IP 地址存储在`LastTYASP35Access.txt`文件。 在浏览器指向此文件;应看到类似于图 1 中所示的消息。
 
 
-[![T他文本文件包含的最后一个日期和时间书籍评论过&lt;](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image1.png)
+[![文本文件包含的最后一个日期和时间访问过书籍评论&lt;](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image1.png)
 
 **图 1**:文本文件包含的最后一个日期和时间访问过书籍评论 ([单击此项可查看原尺寸图像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image3.png))
 
@@ -58,7 +58,7 @@ ASP.NET Development Server 将传入请求与当前登录用户的安全上下�
 部署到生产 web 应用程序，然后访问承载*教您自己 ASP.NET 3.5 24 小时内*书籍查看页。 此时你应为 normal 或图 2 所示的错误消息显示书籍查看页。 某些 web 宿主提供程序授予对匿名的 ASP.NET 计算机帐户，在其中用例页面无错误的写入权限。 如果，但是，web 主机提供商禁止匿名帐户的写访问权限，然后[`UnauthorizedAccessException`异常](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx)时，将引发`TYASP35.aspx`的页面尝试编写的当前日期和时间`LastTYASP35Access.txt`文件。
 
 
-[![T默认计算机帐户由 IIS 他没有对写入到文件系统权限](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image4.png)
+[![使用 IIS 的默认计算机帐户没有写入到文件系统权限](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image4.png)
 
 **图 2**:默认计算机帐户由 IIS 不会不有权写入到文件系统 ([单击此项可查看原尺寸图像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image6.png))
 
@@ -96,7 +96,7 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 在地址栏中输入此 URL 会导致浏览器将请求发送到 ASP.NET 开发服务器的文件。 ASP.NET Development Server 移交给 ASP.NET 运行时进行处理的请求。 因为我们尚未登录，并且`Web.config`中`PrivateDocs`文件夹配置为拒绝匿名访问，ASP.NET 运行时自动重我们定向到登录页上， `Login.aspx` （参见图 3）。 当将用户重定向到登录页，ASP.NET 包括`ReturnUrl`查询字符串参数，用于指示页面用户正在尝试查看。 在用户成功登录后可以返回到此页。
 
 
-[![Unauthorized 用户会自动重定向到登录页](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image7.png)
+[![未经授权的用户会自动重定向到登录页](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image7.png)
 
 **图 3**:未经授权的用户会自动重定向到登录页 ([单击此项可查看原尺寸图像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image9.png))
 
@@ -104,7 +104,7 @@ ASP.NET 运行时执行若干步骤来生成请求的内容，包括 （标识�
 现在让我们了解此生产上的行为方式。 部署应用程序和直接 URL 输入到一个在 Pdf`PrivateDocs`在生产环境中的文件夹。 这会提示你的浏览器发送请求的 IIS 的文件。 因为请求静态文件时，IIS 检索并返回该文件而无需调用 ASP.NET 运行时。 因此，执行; 没有 URL 授权检查据推测专用 PDF 内容都可以了解到的文件的直接 URL 的任何人访问。
 
 
-[![A匿名用户可以下载专用 PDF 文件的输入直接 URL 文件](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image10.png)
+[![匿名用户可以通过直接 URL 输入到文件下载私有 PDF 文件](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image10.png)
 
 **图 4**:匿名用户可以下载专用 PDF 文件的输入直接 URL 到文件 ([单击此项可查看原尺寸图像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image12.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5ccc057cfd2567e4b89fc8dcb1697a533b5df19e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407414"
 ---
 # <a name="how-to-best-learn-aspnet-mvc"></a>如何最好地了解 ASP.NET MVC
@@ -24,4 +24,4 @@ Microsoft 的 Scott Hanselman 介绍需要了解如何使用 ASP.NET MVC 开发 
 [&#9654;观看视频 （3 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-best-learn-asp-net-mvc)
 
 > [!div class="step-by-step"]
-> [上一个](5-minute-introduction-to-aspnet-mvc.md)
+> [上一篇](5-minute-introduction-to-aspnet-mvc.md)

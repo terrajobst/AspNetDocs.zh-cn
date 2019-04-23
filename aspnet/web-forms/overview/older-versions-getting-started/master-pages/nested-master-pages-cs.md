@@ -12,7 +12,7 @@ ms.openlocfilehash: c25945fab554114478c6b2e080335a664251639b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405347"
 ---
 # <a name="nested-master-pages-c"></a>嵌套的母版页 (C#)
@@ -84,7 +84,7 @@ ms.locfileid: "59405347"
 此标记中深蓝色背景上的大型白色字体的页面顶部显示标题为"嵌套母版页 （简单）"的链接。 下面的`MainContent`ContentPlaceHolder。 图 1 显示了`Simple.master`母版页时在 Visual Studio 设计器中加载。
 
 
-[![T他嵌套 Master 定义内容特定于页面到管理部分中的页](nested-master-pages-cs/_static/image2.png)](nested-master-pages-cs/_static/image1.png)
+[![嵌套的母版页定义特定于内容到管理部分中的页](nested-master-pages-cs/_static/image2.png)](nested-master-pages-cs/_static/image1.png)
 
 **图 01**:嵌套 Master 页定义内容特定于管理部分中的页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image3.png))
 
@@ -101,12 +101,12 @@ ms.locfileid: "59405347"
 > 如果您创建了在 ASP.NET 网站中使用 Web 应用程序项目模型而不网站项目模型则不会在图 2 中所示的添加新项对话框中的"选择母版页"复选框。 若要创建嵌套的母版页使用 Web 应用程序项目模型时必须选择嵌套的母版页模板 （而不是母版页模板中）。 选择嵌套的母版页模板并单击添加后, 相同选择图 3 所示的对话框将出现一个母版页。
 
 
-[![C为了增加点乐趣&quot;选择母版页&quot;复选框，添加嵌套母版页](nested-master-pages-cs/_static/image5.png)](nested-master-pages-cs/_static/image4.png)
+[![检查&quot;选择母版页&quot;复选框，添加嵌套母版页](nested-master-pages-cs/_static/image5.png)](nested-master-pages-cs/_static/image4.png)
 
 **图 02**:选中"选择母版页"复选框可添加嵌套的母版页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image6.png))
 
 
-[![Bind 到 Simple.master 母版页嵌套母版页](nested-master-pages-cs/_static/image8.png)](nested-master-pages-cs/_static/image7.png)
+[![将嵌套的母版页绑定到 Simple.master 母版页](nested-master-pages-cs/_static/image8.png)](nested-master-pages-cs/_static/image7.png)
 
 **图 03**:将绑定到嵌套母版页`Simple.master`母版页 ([单击以查看实际尺寸的图像](nested-master-pages-cs/_static/image9.png))
 
@@ -126,7 +126,7 @@ ms.locfileid: "59405347"
 进行此添加后, 保存嵌套的母版页，然后添加到新的内容页`NestedMasterPages`名为的文件夹`Default.aspx`，并将其绑定到`SimpleNested.master`母版页。 添加此页面时可能会惊讶地发现它包含任何内容控件 （请参阅图 4） ！ 内容页只能访问其*父*主页面的 Contentplaceholder。 `SimpleNested.master` 不包含任何 ContentPlaceHolder 控件;因此，任何绑定到此母版页的内容页不能包含任何内容控件。
 
 
-[![T他新内容页包含无内容控件](nested-master-pages-cs/_static/image11.png)](nested-master-pages-cs/_static/image10.png)
+[![新的内容页面不包含任何内容控件](nested-master-pages-cs/_static/image11.png)](nested-master-pages-cs/_static/image10.png)
 
 **图 04**:新内容页包含无内容控件 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image12.png))
 
@@ -149,7 +149,7 @@ ms.locfileid: "59405347"
 图 5 显示了所涉及的三个实体`Simple.master`， `SimpleNested.master`，和`Default.aspx`-和它们之间的相互。 如图所示，嵌套的母版页上为其父级的 ContentPlaceHolder 实施内容控件。 如果需要可供内容页访问这些区域，嵌套的母版页必须将其自身 Contentplaceholder 添加到内容控件。
 
 
-[![T他顶层和嵌套的母版页规定内容页面的布局](nested-master-pages-cs/_static/image14.png)](nested-master-pages-cs/_static/image13.png)
+[![顶层和嵌套的母版页规定内容页面的布局](nested-master-pages-cs/_static/image14.png)](nested-master-pages-cs/_static/image13.png)
 
 **图 05**:顶层和嵌套的母版页规定内容页面的布局 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image15.png))
 
@@ -157,7 +157,7 @@ ms.locfileid: "59405347"
 此行为说明了如何内容页或母版页是仅了解其父级母版页。 Visual Studio 设计器也可指示此行为。 图 6 显示的设计器`Default.aspx`。 同时，哪些区域是从内容页可编辑，部分不，清楚地显示了在设计器，它不会消除歧义不可编辑的区域是从嵌套的母版页和区域是从顶级的母版页。
 
 
-[![T他内容页现在包含内容控件的嵌套母版页的 Contentplaceholder](nested-master-pages-cs/_static/image17.png)](nested-master-pages-cs/_static/image16.png)
+[![内容页现在包含嵌套的母版页的 Contentplaceholder 内容控件](nested-master-pages-cs/_static/image17.png)](nested-master-pages-cs/_static/image16.png)
 
 **图 06**:内容页现在包含内容控件的嵌套母版页的 Contentplaceholder ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image18.png))
 
@@ -189,7 +189,7 @@ ms.locfileid: "59405347"
 这会向绑定到每个页的顶部添加两个链接`Simple.master`， `SimpleNested.master`，或`SimpleNestedAlternate.master`; 这些更改将立即应用于所有嵌套的母版页和其内容的页面。 图 8 显示了`Alternate.aspx`时的浏览器查看。 请注意添加的顶部 （图 7 相比） 的页的链接。
 
 
-[![C到顶层母版页取消会立即反映在其嵌套母版页和内容页面及其](nested-master-pages-cs/_static/image23.png)](nested-master-pages-cs/_static/image22.png)
+[![更改为顶级母版页会立即反映在其嵌套母版页和及其内容页面](nested-master-pages-cs/_static/image23.png)](nested-master-pages-cs/_static/image22.png)
 
 **图 08**:更改为顶级母版页会立即反映在其嵌套母版页和及其内容页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image24.png))
 
@@ -219,7 +219,7 @@ ms.locfileid: "59405347"
 让我们使用第二个选项。 创建单个嵌套母版页文件中的`~/Admin`文件夹名为`AdminNested.master`。 因为这两`Site.master`并`Alternate.master`具有相同的 ContentPlaceHolder 控件集，并不重要主页面，将其绑定到，尽管我建议您将其绑定到`Site.master`一致性的起见。
 
 
-[![A添加一个嵌套的母版页的到 ~/Admin 文件夹。](nested-master-pages-cs/_static/image26.png)](nested-master-pages-cs/_static/image25.png)
+[![向 ~/Admin 文件夹中添加嵌套的母版页。](nested-master-pages-cs/_static/image26.png)](nested-master-pages-cs/_static/image25.png)
 
 **图 09**:添加到嵌套的母版页`~/Admin`文件夹。 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image27.png))
 
@@ -246,7 +246,7 @@ ms.locfileid: "59405347"
 图 10 显示了`AdminNested.master`嵌套的母版页时通过 Visual Studio 设计器中查看。 可以看到在顶部的黄色框中的说明`MainContent`内容控件。
 
 
-[![T他嵌套母版页扩展顶层母版页包含说明管理员。](nested-master-pages-cs/_static/image29.png)](nested-master-pages-cs/_static/image28.png)
+[![嵌套的母版页扩展顶层的主页面，以包括有关管理员的说明。](nested-master-pages-cs/_static/image29.png)](nested-master-pages-cs/_static/image28.png)
 
 **图 10**:嵌套的母版页扩展顶层的主页面，以包括有关管理员的说明。 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image30.png))
 
@@ -275,7 +275,7 @@ ms.locfileid: "59405347"
 图 11 显示了如何顶层母版页 (`Site.master`或`Alternate.master`)，嵌套的母版页 (`AdminNested.master`)，并与另一个相关联的管理部分内容页面。
 
 
-[![T他嵌套 Master 定义内容特定于页面到管理部分中的页](nested-master-pages-cs/_static/image32.png)](nested-master-pages-cs/_static/image31.png)
+[![嵌套的母版页定义特定于内容到管理部分中的页](nested-master-pages-cs/_static/image32.png)](nested-master-pages-cs/_static/image31.png)
 
 **图 11**:嵌套 Master 页定义内容特定于管理部分中的页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image33.png))
 
@@ -313,7 +313,7 @@ ms.locfileid: "59405347"
 利用此代码，您应能够访问并使用管理部分中的内容页。 图 12 显示了`~/Admin/Products.aspx`页面的浏览器查看时。 正如您所看到的此页包含管理说明框中，嵌套的母版页中定义。
 
 
-[![T他在每个页面顶部的管理部分包含说明中的内容页](nested-master-pages-cs/_static/image35.png)](nested-master-pages-cs/_static/image34.png)
+[![在管理部分中的内容页包括在每个页面顶部的说明](nested-master-pages-cs/_static/image35.png)](nested-master-pages-cs/_static/image34.png)
 
 **图 12**:在每个页面顶部的管理部分包含说明中的内容页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image36.png))
 
@@ -334,7 +334,7 @@ ms.locfileid: "59405347"
 与此更改后，用户的主页面选择内容将被传递到管理部分。 图 13 显示了在同一页，图 12，但之后，用户已更改到其主页面选择`Alternate.master`。
 
 
-[![T他嵌套管理页使用顶级 Master 页中选择用户](nested-master-pages-cs/_static/image38.png)](nested-master-pages-cs/_static/image37.png)
+[![嵌套的管理页使用用户选定的顶层母版页](nested-master-pages-cs/_static/image38.png)](nested-master-pages-cs/_static/image37.png)
 
 **图 13**:嵌套管理页使用顶级 Master 页中选择用户 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image39.png))
 

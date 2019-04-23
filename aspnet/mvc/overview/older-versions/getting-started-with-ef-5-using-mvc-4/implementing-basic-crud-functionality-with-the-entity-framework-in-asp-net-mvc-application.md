@@ -12,7 +12,7 @@ ms.openlocfilehash: be1fcf2c7a0eec5473b2e3a10f51d7e22656b671
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402201"
 ---
 # <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 应用程序 (共 2 个 10) 中实现基本的 CRUD 功能与实体框架
@@ -134,11 +134,11 @@ ms.locfileid: "59402201"
 
 实体可能之一[遵循状态](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
 
-- `Added`. 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
-- `Unchanged`. 不需要通过 `SaveChanges` 方法对此实体执行操作。 从数据库读取实体时，实体将从此状态开始。
-- `Modified`. 已修改实体的部分或全部属性值。 `SaveChanges`方法必须发出`UPDATE`语句。
-- `Deleted`. 已标记该实体进行删除。 `SaveChanges`方法必须发出`DELETE`语句。
-- `Detached`. 数据库上下文未跟踪该实体。
+- `Added`。 实体在数据库中尚不存在。 `SaveChanges`方法必须发出`INSERT`语句。
+- `Unchanged`。 不需要通过 `SaveChanges` 方法对此实体执行操作。 从数据库读取实体时，实体将从此状态开始。
+- `Modified`。 已修改实体的部分或全部属性值。 `SaveChanges`方法必须发出`UPDATE`语句。
+- `Deleted`。 已标记该实体进行删除。 `SaveChanges`方法必须发出`DELETE`语句。
+- `Detached`。 数据库上下文未跟踪该实体。
 
 在桌面应用程序中，通常会自动设置状态更改。 在桌面应用程序的类型中，读取一个实体并对它的一些属性值进行更改。 这将使其实体状态自动更改为 `Modified`。 然后调用`SaveChanges`，Entity Framework 生成 SQL`UPDATE`更新仅更改了的实际属性的语句。
 

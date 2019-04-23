@@ -12,7 +12,7 @@ ms.openlocfilehash: b4c6d850062e1b65eacd97ffc4f34c80fedea503
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404307"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 中心 API 指南-JavaScript 客户端
@@ -462,13 +462,13 @@ JSONP 需要在客户端 （以支持旧版浏览器中的跨域请求） 上，
 
 SignalR 提供了以下连接可以处理的生存期事件：
 
-- `starting`:通过连接发送任何数据之前引发。
-- `received`:在连接上接收到任何数据时引发。 提供接收到的数据。
-- `connectionSlow`:当客户端检测到慢速或频繁删除连接时引发。
-- `reconnecting`:基础传输开始重新连接时引发。
-- `reconnected`:当基础传输已重新连接时引发。
-- `stateChanged`:连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
-- `disconnected`:当连接已断开连接时引发。
+- `starting`：通过连接发送任何数据之前引发。
+- `received`：在连接上接收到任何数据时引发。 提供接收到的数据。
+- `connectionSlow`：当客户端检测到慢速或频繁删除连接时引发。
+- `reconnecting`：基础传输开始重新连接时引发。
+- `reconnected`：当基础传输已重新连接时引发。
+- `stateChanged`：连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
+- `disconnected`：当连接已断开连接时引发。
 
 例如，如果你想要有可能会导致明显延迟的连接问题时显示警告消息，处理`connectionSlow`事件。
 

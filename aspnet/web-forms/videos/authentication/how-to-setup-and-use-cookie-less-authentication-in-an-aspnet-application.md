@@ -12,7 +12,7 @@ ms.openlocfilehash: ff6e21dad7598146a681615913dcbd37f72001ee
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404385"
 ---
 # <a name="how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application"></a>如何在 ASP.NET 应用程序中的设置和使用无 Cookie 身份验证

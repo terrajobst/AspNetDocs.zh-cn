@@ -12,7 +12,7 @@ ms.openlocfilehash: 56dda72b8cadcef4449f3ff6e8e8e4e3315d0687
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402877"
 ---
 # <a name="how-do-i-linq-to-sql-overview"></a>[如何实现:]LINQ to SQL:概述
@@ -24,4 +24,4 @@ C# 和 VB 的新语言功能而无需编写 SQL 支持直接从代码中，数�
 [&#9654;观看视频 （9 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-overview)
 
 > [!div class="step-by-step"]
-> [下一步](how-do-i-linq-to-sql-data-model.md)
+> [下一页](how-do-i-linq-to-sql-data-model.md)

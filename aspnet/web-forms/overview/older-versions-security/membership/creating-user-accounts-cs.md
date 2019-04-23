@@ -12,7 +12,7 @@ ms.openlocfilehash: cce8770eb0f60c4306d4560e9a4e72fa1a59f618
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406504"
 ---
 # <a name="creating-user-accounts-c"></a>创建用户帐户 (C#)
@@ -57,7 +57,7 @@ ms.locfileid: "59406504"
 此时您的项目的解决方案资源管理器应类似于屏幕截图中图 1 所示。
 
 
-[![F新页面已添加到成员资格文件夹 ive](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
+[![新的 5 个页面已添加到成员资格文件夹](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
 
 **图 1**:五个新页已添加到`Membership`文件夹 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image3.png))
 
@@ -81,7 +81,7 @@ ms.locfileid: "59406504"
 默认站点地图提供程序需要一个格式正确的 XML 文件，名为`Web.sitemap`存在的根目录。 因为我们要使用此默认提供程序，我们需要添加此类文件，并在相应的 XML 格式中定义的站点映射的结构。 若要添加文件时，右键单击解决方案资源管理器中的项目名称并选择添加新项。 从对话框中，选择要添加的类型名为的站点地图文件`Web.sitemap`。
 
 
-[![A添加到项目的根目录文件命名为 Web.sitemap](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
+[![添加一个名为项目的根目录下的 Web.sitemap 文件](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
 
 **图 2**:添加名为文件`Web.sitemap`到项目的根目录 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image6.png))
 
@@ -95,7 +95,7 @@ XML 映射文件定义作为层次结构的网站的结构。 此层次结构的
 更高版本的站点映射标记定义层次结构中图 3 所示。
 
 
-[![T他站点图表示的分层导航结构](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
+[![站点图表示的分层导航结构](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
 
 **图 3**:站点图表示的分层导航结构 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image9.png))
 
@@ -117,7 +117,7 @@ ASP.NET 包括大量的与导航相关 Web 控件，用于设计用户界面。 
 图 4 显示了上述标记的呈现的输出与我们在步骤 2 中创建站点地图结构。 Repeater 呈现普通的未排序的列表的标记;在中定义的级联样式表规则`Styles.css`负责的审美情趣的布局。 有关上述标记的工作原理的更详细说明，请参阅[母版页和站点导航](https://asp.net/learn/data-access/tutorial-03-cs.aspx)教程。
 
 
-[![T他导航用户界面是呈现使用嵌套的未排序列表](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
+[![导航用户界面是呈现使用嵌套的未排序列表](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
 
 **图 4**:导航用户界面是呈现使用嵌套的未排序列表 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image12.png))
 
@@ -133,7 +133,7 @@ ASP.NET 包括大量的与导航相关 Web 控件，用于设计用户界面。 
 图 5 显示了输出 SiteMapPath 访问时`~/Membership/CreatingUserAccounts.aspx`。
 
 
-[![T他痕迹导航中站点图将显示当前页和其祖先](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
+[![痕迹导航显示当前页，并将其站点中的上级映射](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
 
 **图 5**:痕迹导航中显示当前页和其祖先站点地图中 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image15.png))
 
@@ -174,7 +174,7 @@ ASP.NET 包括大量的与导航相关 Web 控件，用于设计用户界面。 
 此时您的屏幕应类似于屏幕截图中图 6 所示。
 
 
-[![Add 各种 Web 控件到 CreatingUserAccounts.aspx 页](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
+[![将各种 Web 控件添加到 CreatingUserAccounts.aspx 页](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
 
 **图 6**:添加到各种 Web 控件`CreatingUserAccounts.aspx`页 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image18.png))
 
@@ -194,17 +194,17 @@ ASP.NET 包括大量的与导航相关 Web 控件，用于设计用户界面。 
 在调用`CreateUser`，并传入`createStatus`即`switch`语句用于输出取决于值分配给相应的消息`createStatus`。 图 7 显示的输出时已成功创建一个新用户。 图 8 和 9 显示输出时不创建用户帐户。 在图 8 中，访问者输入了不符合密码强度要求拼成员资格提供程序的配置设置中的五个字母密码。 在图 9 中，访问者正在尝试使用现有的用户名 （图 7 中创建一个） 创建用户帐户。
 
 
-[![A 新的用户帐户是已成功创建](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
+[![新的用户帐户是已成功创建](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
 
 **图 7**:已成功创建新的用户帐户是 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image21.png))
 
 
-[![T他的用户帐户不是创建的因为提供的密码强度太弱](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
+[![因为提供的密码强度太弱，不创建用户帐户](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
 
 **图 8**:因为提供的密码强度太弱，不创建用户帐户 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image24.png))
 
 
-[![T他的用户帐户不被创建，因为用户名已在使用](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
+[![用户帐户是不创建是因为用户名是已在使用中](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
 
 **图 9**:用户帐户是不创建是因为用户名是已在使用中的 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image27.png))
 
@@ -216,7 +216,7 @@ ASP.NET 包括大量的与导航相关 Web 控件，用于设计用户界面。 
 在创建后的几个用户帐户，验证是否已通过列出的内容来创建帐户`aspnet_Users`并`aspnet_Membership`中的表`SecurityTutorials.mdf`数据库。 如图 10 所示，我已添加了两个用户通过`CreatingUserAccounts.aspx`页：Tito 和 Bruce。
 
 
-[![T在成员资格用户存储区中，以下是两个用户：Tito 和 Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
+[![在成员资格用户存储区中有两个用户：Tito 和 Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
 
 **图 10**:在成员资格用户存储区中有两个用户：Tito 和 Bruce ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image30.png))
 
@@ -246,7 +246,7 @@ ASP.NET 附带了大量登录 Web 控件。 这些控件可帮助许多常见用
 返回到`CreatingUserAccounts.aspx`页中`Membership`文件夹中，切换到设计或拆分模式中，并将 CreateUserWizard 控件添加到页面顶部。 在工具箱的登录名控件部分下归档 CreateUserWizard 控件。 添加控件之后, 设置其`ID`属性设置为`RegisterUser`。 在图 11 所示的屏幕截图，如 CreateUserWizard 呈现文本框的新用户的用户名、 密码、 电子邮件地址和安全问题和答案的接口。
 
 
-[![T他 CreateUserWizard 控件呈现泛型的创建用户界面](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
+[![CreateUserWizard 控件呈现泛型创建用户界面](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
 
 **图 11**:CreateUserWizard 控件呈现泛型的创建用户界面 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image33.png))
 
@@ -267,7 +267,7 @@ CreateUserWizard 控件，正如其名，派生自[向导控件](https://msdn.mi
 我们来看 CreateUserWizard 控件在操作中。 请访问`CreatingUserAccounts.aspx`通过浏览器的页。 首先 CreateUserWizard 的界面中输入无效值。 请尝试输入密码不符合密码强度要求或保留"用户名"文本框中为空。 CreateUserWizard 将显示相应的错误消息。 图 12 显示时尝试创建具有无法强密码的用户的输出。
 
 
-[![T他 CreateUserWizard 自动注入验证控件](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
+[![CreateUserWizard 自动注入验证控件](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
 
 **图 12**:CreateUserWizard 自动注入验证控件 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image36.png))
 
@@ -275,7 +275,7 @@ CreateUserWizard 控件，正如其名，派生自[向导控件](https://msdn.mi
 接下来，向 CreateUserWizard 中输入相应值，然后单击"创建用户"按钮。 假设已输入必填的字段，并且密码的强度就足够了，CreateUserWizard 将创建新的用户帐户通过成员资格框架，并随后显示`CompleteWizardStep`的接口 （请参阅图 13）。 在后台，CreateUserWizard 调用`Membership.CreateUser`方法，只需像在步骤 5 中执行。
 
 
-[![A 新的用户帐户已成功创建](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
+[![新的用户帐户已成功创建](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
 
 **图 13**:新的用户帐户已成功创建 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image39.png))
 
@@ -299,7 +299,7 @@ CreateUserWizard 控件，正如其名，派生自[向导控件](https://msdn.mi
 让我们更新`RegisterUser`CreateUserWizard 控件以显示取消按钮，并将发送到访问者`Default.aspx`时单击取消或继续按钮。 若要完成此操作，设置`DisplayCancelButton`属性设置为 True 且两`CancelDestinationPageUrl`和`ContinueDestinationPageUrl`属性设置为"~ / Default.aspx"。 图 14 显示了更新的 CreateUserWizard 时的浏览器查看。
 
 
-[![T他 CreateUserWizardStep 包含取消按钮](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
+[![CreateUserWizardStep 包括一个取消按钮](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
 
 **图 14**:`CreateUserWizardStep`包括取消按钮 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image42.png))
 
@@ -337,7 +337,7 @@ CreateUserWizard 控件在其工作流期间引发事件的数。 例如，访�
 图 15 所示的屏幕截图`CreatingUserAccounts.aspx`当用户输入的用户名与前导空格。
 
 
-[![U不允许使用前导或尾随空格的 sernames](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
+[![不允许使用前导或尾随空格的用户名](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
 
 **图 15**:不允许使用前导或尾随空格的用户名 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image45.png))
 

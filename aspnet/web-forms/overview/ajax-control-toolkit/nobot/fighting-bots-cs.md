@@ -12,7 +12,7 @@ ms.openlocfilehash: 178d839f67d70670b3b5acf470acb7ae8cf1c33f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405802"
 ---
 # <a name="fighting-bots-c"></a>外部测试机器人 (C#)
@@ -65,9 +65,9 @@ ms.locfileid: "59405802"
 运行此脚本和停用 JavaScript 或在前两秒内提交窗体或在 30 秒内七次提交窗体时, 将收到一条错误消息。 但是恰当地使用此控件，因为只有大约 90 95%的用户可以使用 JavaScript 激活，因此 5-10%的用户将会失败`NoBot`的测试。
 
 
-[![T他的错误消息可能已由导致的智能机器人应用程序](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
+[![此错误消息可能被引起的智能机器人应用程序](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
 
 此错误消息可能已由智能机器人应用程序 ([单击此项可查看原尺寸图像](fighting-bots-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](fighting-bots-vb.md)
+> [下一页](fighting-bots-vb.md)

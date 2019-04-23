@@ -12,7 +12,7 @@ ms.openlocfilehash: 48a66eea839f7f48899040ad20bbfee95b9a1902
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403904"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>监视和遥测 （使用 Azure 构建实际云应用）
@@ -72,7 +72,7 @@ ms.locfileid: "59403904"
 
 然后回到**New Relic**页面**外接程序**选项卡上的门户并单击**管理**。 在门户向你发送到 New Relic 管理门户中，使用单一登录进行身份验证，因此无需再次输入你的凭据。 概述页提供了各种性能统计信息。 （单击图像可查看完整的概述页的大小。）
 
-[![N新增功能 Relic 监视选项卡](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
+[![新 Relic 监视选项卡](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
 
 下面是一些您所见的统计信息：
 

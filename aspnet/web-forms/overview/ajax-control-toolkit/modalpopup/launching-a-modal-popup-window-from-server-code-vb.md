@@ -12,7 +12,7 @@ ms.openlocfilehash: 55ee67150d1567a0334988a06ff0fcca8a89bbd4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404047"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-vb"></a>通过服务器代码启动模式弹出窗口 (VB)
@@ -65,7 +65,7 @@ ms.locfileid: "59404047"
 `$find()`函数查找的页面上命名元素，并需要服务器端的 ID 作为参数。 因此，`$find("mpe")`返回的客户端表示形式 ModalPopup 控件; 它`show()`方法，可以显示的弹出窗口。
 
 
-[![T他模式弹出框时出现的任一按钮单击](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
+[![模式弹出框时出现的任一按钮单击](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
 
 模式弹出框时出现的任一按钮单击 ([单击此项可查看原尺寸图像](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))
 

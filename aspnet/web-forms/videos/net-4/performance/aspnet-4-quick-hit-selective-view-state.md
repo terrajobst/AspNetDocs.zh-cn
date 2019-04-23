@@ -12,7 +12,7 @@ ms.openlocfilehash: f0d01cb1eb48e0befa1a051ccceac4b103e1437c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407284"
 ---
 # <a name="aspnet-4-quick-hit---selective-view-state"></a>ASP.NET 4"快速命中"的选择性的视图状态
@@ -24,4 +24,4 @@ ms.locfileid: "59407284"
 [&#9654;观看视频 （6 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-selective-view-state)
 
 > [!div class="step-by-step"]
-> [下一步](aspnet-4-quick-hit-easy-state-compression.md)
+> [下一页](aspnet-4-quick-hit-easy-state-compression.md)
