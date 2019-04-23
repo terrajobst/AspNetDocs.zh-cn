@@ -12,7 +12,7 @@ ms.openlocfilehash: 1f36bffeda49c1777e964dc5330cbb473b01c1a9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421558"
 ---
 # <a name="creating-custom-html-helpers-vb"></a>创建自定义 HTML 帮助程序 (VB)
@@ -49,7 +49,7 @@ ASP.NET MVC 框架包括以下一组标准的 HTML 帮助程序 （这不是完�
 例如，考虑列表 1 中的窗体。 呈现此窗体所使用的两个标准 HTML 帮助程序 （请参阅图 1） 的帮助。 使用此窗体`Html.BeginForm()`和`Html.TextBox()`帮助器方法。
 
 
-[![P使用 HTML 帮助器呈现的 age](creating-custom-html-helpers-vb/_static/image2.png)](creating-custom-html-helpers-vb/_static/image1.png)
+[![与 HTML 帮助器呈现页](creating-custom-html-helpers-vb/_static/image2.png)](creating-custom-html-helpers-vb/_static/image1.png)
 
 **图 01**:与 HTML 帮助器呈现的页 ([单击此项可查看原尺寸图像](creating-custom-html-helpers-vb/_static/image3.png))
 
@@ -104,7 +104,7 @@ ASP.NET MVC 框架包含一小组帮助程序。 很可能需要扩展 MVC 框�
 创建一个扩展方法，并已成功生成应用程序后，扩展方法将出现在 Visual Studio Intellisense 等所有其他方法的类 （请参见图 2）。 唯一的区别是该扩展方法显示一个特殊符号旁边 （向下箭头的图标）。
 
 
-[![U发挥最大功效 Html.Label() 扩展方法](creating-custom-html-helpers-vb/_static/image5.png)](creating-custom-html-helpers-vb/_static/image4.png)
+[![使用 Html.Label() 扩展方法](creating-custom-html-helpers-vb/_static/image5.png)](creating-custom-html-helpers-vb/_static/image4.png)
 
 **图 02**:使用 Html.Label() 扩展方法 ([单击此项可查看原尺寸图像](creating-custom-html-helpers-vb/_static/image6.png))
 

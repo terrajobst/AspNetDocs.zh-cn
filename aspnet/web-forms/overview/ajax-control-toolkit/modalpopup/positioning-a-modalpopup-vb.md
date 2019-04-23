@@ -12,7 +12,7 @@ ms.openlocfilehash: e37d2f4450c697f963d954c2fbb58e3ed20a1566
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421142"
 ---
 # <a name="positioning-a-modalpopup-vb"></a>定位 ModalPopup (VB)
@@ -55,9 +55,9 @@ ms.locfileid: "59421142"
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample6.aspx)]
 
 
-[![T他模式弹出框显示在指定的位置](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
+[![模式弹出框显示在指定的位置](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
 
 模式弹出框显示在指定的位置 ([单击此项可查看原尺寸图像](positioning-a-modalpopup-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [上一个](handling-postbacks-from-a-modalpopup-vb.md)
+> [上一篇](handling-postbacks-from-a-modalpopup-vb.md)

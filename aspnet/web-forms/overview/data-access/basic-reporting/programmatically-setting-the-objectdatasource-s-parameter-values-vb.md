@@ -12,7 +12,7 @@ ms.openlocfilehash: 0f5c5d4530092cced02834161ae91d840f42de1b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420726"
 ---
 # <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>以编程方式设置 ObjectDataSource 的参数值 (VB)
@@ -33,7 +33,7 @@ ms.locfileid: "59420726"
 每当 ObjectDataSource`Select`方法调用 ObjectDataSource 首先引发其[选择事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)。 然后调用 ObjectDataSource 的基础对象的方法。 该操作完成 ObjectDataSource 的后[选定事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx)激发 （图 1 展示了这一序列的事件）。 传递到 ObjectDataSource 的基础对象的方法的参数值可设置或自定义的事件处理程序中`Selecting`事件。
 
 
-[![T他 ObjectDataSource 选中和选择事件触发之前和之后及其基础对象的方法被调用](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
+[![ObjectDataSource 的选中和选择事件触发之前和之后及其基础对象的方法被调用](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
 
 **图 1**:ObjectDataSource`Selected`并`Selecting`调用事件触发之前和之后及其基础对象的方法 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image3.png))
 
@@ -47,7 +47,7 @@ ms.locfileid: "59420726"
 对于我们的第一个示例中我们需要添加一种方法来检索这些员工其`HireDate`发生在指定月份中。 若要提供此功能根据我们需要首先创建中的方法的体系结构`EmployeesTableAdapter`，它映射到正确的 SQL 语句。 若要完成此操作，先打开 Northwind 类型化数据集。 右键单击`EmployeesTableAdapter`标签，然后选择添加查询。
 
 
-[![Add EmployeesTableAdapter 到一个新查询](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image5.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image4.png)
+[![将一个新查询添加到 EmployeesTableAdapter](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image5.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image4.png)
 
 **图 2**:添加到新的查询`EmployeesTableAdapter`([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png))
 
@@ -55,7 +55,7 @@ ms.locfileid: "59420726"
 选择要添加将返回行的 SQL 语句。 在访问指定`SELECT`语句屏幕上的默认值`SELECT`语句`EmployeesTableAdapter`将加载。 只需在中添加`WHERE`子句： `WHERE DATEPART(m, HireDate) = @Month`。 [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx)是返回特定日期的一部分的 T-SQL 函数`datetime`类型; 我们使用这种情况下`DATEPART`返回的月份`HireDate`列。
 
 
-[![Return 仅这些行位置的 HireDate 列是否小于或等于@HiredBeforeDate参数](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)
+[![返回仅这些行位置的 HireDate 列是否小于或等于@HiredBeforeDate参数](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)
 
 **图 3**:仅这些行，返回`HireDate`列是否小于或等于`@HiredBeforeDate`参数 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image9.png))
 
@@ -63,7 +63,7 @@ ms.locfileid: "59420726"
 最后，更改`FillBy`并`GetDataBy`方法的名称到`FillByHiredDateMonth`和`GetEmployeesByHiredDateMonth`分别。
 
 
-[![C选择更适当方法的名称比 FillBy 和 GetDataBy](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image11.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image10.png)
+[![选择比 FillBy 和 GetDataBy 更合适的方法名称](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image11.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image10.png)
 
 **图 4**:选择更适当方法的名称比`FillBy`并`GetDataBy`([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image12.png))
 
@@ -71,7 +71,7 @@ ms.locfileid: "59420726"
 单击完成以完成向导并返回到数据集的设计图面上。 `EmployeesTableAdapter`现在应包含一组新的用于访问在指定月份中雇用的员工的方法。
 
 
-[![T他在数据集的设计图面上显示新方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image14.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image13.png)
+[![在数据集的设计图面上显示的新方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image14.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image13.png)
 
 **图 5**:在数据集的设计图面上显示新方法 ([单击此项可查看原尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image15.png))
 
@@ -90,12 +90,12 @@ ms.locfileid: "59420726"
 此示例中我们最后一步是要显示其招聘周年日是这个月的员工。 首先，通过添加到 GridView`ProgrammaticParams.aspx`页中`BasicReporting`文件夹并将新对象数据源添加为其数据源。 配置要使用 ObjectDataSource`EmployeesBLL`类的`SelectMethod`设置为`GetEmployeesByHiredDateMonth(month)`。
 
 
-[![Use EmployeesBLL 类](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image17.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image16.png)
+[![使用 EmployeesBLL 类](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image17.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image16.png)
 
 **图 6**:使用`EmployeesBLL`类 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image18.png))
 
 
-[![S选择从 GetEmployeesByHiredDateMonth(month) 方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image20.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image19.png)
+[![选择从 GetEmployeesByHiredDateMonth(month) 方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image20.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image19.png)
 
 **图 7**:Select From`GetEmployeesByHiredDateMonth(month)`方法 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image21.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "59420726"
 最后一个屏幕询问我们提供`month`参数值的源。 由于我们将以编程方式设置此值，将保留参数源设置为默认值 None 选项，然后单击完成。
 
 
-[![L参数源设置为 None 时保留](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image23.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image22.png)
+[![将参数源设置为 None](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image23.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image22.png)
 
 **图 8**:将保留为无设置参数源 ([单击此项可查看原尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image24.png))
 
@@ -129,7 +129,7 @@ ms.locfileid: "59420726"
 访问此页上的通过浏览器时，我们可以看到该只有一个雇员雇佣的这个月 （年 3 月） Laura Callahan，已在公司自 1994 年。
 
 
-[![T这些员工其周年纪念日此月显示](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image27.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image26.png)
+[![这个月显示其周年纪念日这些员工](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image27.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image26.png)
 
 **图 10**:这些员工其周年纪念日此月显示 ([单击此项可查看原尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image28.png))
 
@@ -151,4 +151,4 @@ ms.locfileid: "59420726"
 很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Hilton Giesenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一个](declarative-parameters-vb.md)
+> [上一篇](declarative-parameters-vb.md)

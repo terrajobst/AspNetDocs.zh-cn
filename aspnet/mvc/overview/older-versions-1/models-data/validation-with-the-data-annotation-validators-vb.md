@@ -12,7 +12,7 @@ ms.openlocfilehash: 6893d1f2445452b1d802b89027b09d8294bdc5b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422832"
 ---
 # <a name="validation-with-the-data-annotation-validators-vb"></a>使用数据注释验证程序进行验证 (VB)
@@ -151,4 +151,4 @@ Product 类说明了如何使用一个附加属性： DisplayName 属性。 Disp
 在本教程中，您学习了如何利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 您学习了如何使用不同类型的验证程序属性，例如，Required 和 StringLength 属性。 您还学习了如何使用 Microsoft 实体框架时使用这些属性。
 
 > [!div class="step-by-step"]
-> [上一个](validating-with-a-service-layer-vb.md)
+> [上一篇](validating-with-a-service-layer-vb.md)

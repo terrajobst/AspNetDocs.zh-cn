@@ -9,12 +9,12 @@ ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: b1e8b6b1b300665f6cd2466766e9adcff52733da
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ecc235454d4b95ce660a4373387f44720826b076
+ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59422910"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59905639"
 ---
 # <a name="tutorial-real-time-chat-with-signalr-2"></a>教程：通过 SignalR 2 进行实时聊天
 
@@ -60,6 +60,10 @@ ms.locfileid: "59422910"
 1. 在中**添加新项-SignalRChat**选择**已安装** > **Visual C#**   >  **Web** ，然后选择**OWIN 启动类**。
 
 1. 将类命名*启动*并将其添加到项目。
+
+1. 中的默认代码替换*启动*类使用以下代码：
+
+    [!code-csharp[Main](tutorial-getting-started-with-signalr/samples/sample2.cs)]
 
 1. 在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **HTML 页**。
 

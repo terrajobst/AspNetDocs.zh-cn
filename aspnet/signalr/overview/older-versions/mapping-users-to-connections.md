@@ -12,7 +12,7 @@ ms.openlocfilehash: 75c8d2f4a102bef541195280a01d75271331dec4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422507"
 ---
 # <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>在 SignalR 1.x 中将 SignalR 用户映射到连接

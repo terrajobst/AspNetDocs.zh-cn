@@ -12,7 +12,7 @@ ms.openlocfilehash: 6bf91d546341eefc401149d47d6fa70b2c8522d4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421519"
 ---
 # <a name="enable-in-line-editing-in-aspnet-dynamic-data-applications"></a>在 ASP.NET 动态数据应用程序中启用行内编辑

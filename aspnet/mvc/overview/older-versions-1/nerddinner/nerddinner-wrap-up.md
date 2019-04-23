@@ -12,7 +12,7 @@ ms.openlocfilehash: 49c5f762fdd6d99f1af8a10d057852299a266e50
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421038"
 ---
 # <a name="nerddinner-wrap-up"></a>NerdDinner 总结
@@ -47,4 +47,4 @@ NerdDinner 应用程序现在已完成并准备好部署在 web 上。
 Scott
 
 > [!div class="step-by-step"]
-> [上一个](enable-automated-unit-testing.md)
+> [上一篇](enable-automated-unit-testing.md)

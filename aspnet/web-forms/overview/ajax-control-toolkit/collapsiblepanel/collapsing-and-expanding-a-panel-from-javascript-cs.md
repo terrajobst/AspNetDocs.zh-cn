@@ -12,7 +12,7 @@ ms.openlocfilehash: 157a486af3d11dfbd7431680b6c9fe4f0e262892
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422390"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>通过 JavaScript 折叠和展开面板 (C#)
@@ -65,9 +65,9 @@ CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并�
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample8.js)]
 
 
-[![T他的第三个按钮更改面板的状态： 从折叠到扩展和后端](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image1.png)
+[![第三个按钮更改面板的状态： 从折叠到扩展和后端](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image1.png)
 
 第三个按钮更改面板的状态： 从折叠到扩展和后端 ([单击此项可查看原尺寸图像](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
-> [下一步](collapsing-and-expanding-a-panel-from-javascript-vb.md)
+> [下一页](collapsing-and-expanding-a-panel-from-javascript-vb.md)

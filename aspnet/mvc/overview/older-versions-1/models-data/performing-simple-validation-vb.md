@@ -12,7 +12,7 @@ ms.openlocfilehash: c7a1b9e82defaae71f0a911e5e4321f6e15ad8bf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422611"
 ---
 # <a name="performing-simple-validation-vb"></a>执行简单验证 (VB)
@@ -56,12 +56,12 @@ ASP.NET MVC 框架包括两个验证帮助程序： Html.ValidationMessage() 帮
 请确保生成应用程序之前添加的视图。 否则，类的列表不会显示在**查看数据类**下拉列表中。
 
 
-[![T他新建项目对话框中](performing-simple-validation-vb/_static/image1.jpg)](performing-simple-validation-vb/_static/image1.png)
+[![新建项目对话框](performing-simple-validation-vb/_static/image1.jpg)](performing-simple-validation-vb/_static/image1.png)
 
 **图 01**:添加视图 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image2.png))
 
 
-[![T他新建项目对话框中](performing-simple-validation-vb/_static/image2.jpg)](performing-simple-validation-vb/_static/image3.png)
+[![新建项目对话框](performing-simple-validation-vb/_static/image2.jpg)](performing-simple-validation-vb/_static/image3.png)
 
 **图 02**:创建强类型化视图 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image4.png))
 
@@ -79,7 +79,7 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 图 3 中的页说明了呈现的验证帮助程序，在窗体提交使用缺少的字段和无效值时的错误消息。
 
 
-[![T他新建项目对话框中](performing-simple-validation-vb/_static/image3.jpg)](performing-simple-validation-vb/_static/image5.png)
+[![新建项目对话框](performing-simple-validation-vb/_static/image3.jpg)](performing-simple-validation-vb/_static/image5.png)
 
 **图 03**:提交问题与创建视图 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image6.png))
 
@@ -104,7 +104,7 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 如果提交用于创建一种产品，HTML 窗体和 price 字段和库存量字段没有值输入值无效，则将获得图 4 中显示的验证消息。 这些验证错误消息来自何处？
 
 
-[![T他新建项目对话框中](performing-simple-validation-vb/_static/image4.jpg)](performing-simple-validation-vb/_static/image7.png)
+[![新建项目对话框](performing-simple-validation-vb/_static/image4.jpg)](performing-simple-validation-vb/_static/image7.png)
 
 **图 04**:Prebinding 验证错误 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image8.png))
 

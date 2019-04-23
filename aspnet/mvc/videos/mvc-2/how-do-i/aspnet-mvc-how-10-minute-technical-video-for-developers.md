@@ -12,7 +12,7 @@ ms.openlocfilehash: 8c7d9c57007da3b75ba7d71fe88528ad45b7c6e6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421870"
 ---
 # <a name="aspnet-mvc-how-10-minute-technical-video-for-developers"></a>ASP.NET MVC：如何操作？ 面向开发人员的 10 分钟技术视频

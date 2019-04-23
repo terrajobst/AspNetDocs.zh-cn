@@ -12,7 +12,7 @@ ms.openlocfilehash: 0a4e8dc3ce5764c6b2ec59c7e3f507064f8a8cb5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422156"
 ---
 # <a name="authenticating-users-with-forms-authentication-vb"></a>使用 Forms 身份验证对用户进行身份验证 (VB)
@@ -58,7 +58,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，在列表 1 中的控制器将公开名为 CompanySecrets() 的操作。 因为此操作使用 [Authorize] 特性修饰的除非用户进行身份验证，否则不能调用此操作。
 
-**代码清单 1 – Controllers\HomeController.vb**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](authenticating-users-with-forms-authentication-vb/samples/sample1.vb)]
 

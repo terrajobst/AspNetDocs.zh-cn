@@ -12,7 +12,7 @@ ms.openlocfilehash: f97f214abeaeb88634dd10aaebacc0d58e91ab84
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422455"
 ---
 # <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在具有 ASP.NET 网页 (Razor) 的图表中显示数据
@@ -42,7 +42,7 @@ by [Microsoft](https://github.com/microsoft)
 
 | **面积图**![说明：面积图类型的图片](7-displaying-data-in-a-chart/_static/image1.jpg) | **条形图**![说明：条形图类型的图片](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
-| **柱形图**![说明：柱形图类型的图片](7-displaying-data-in-a-chart/_static/image3.jpg) | **折线图**![说明：折线图类型的图片](7-displaying-data-in-a-chart/_static/image4.jpg) |
+| **柱形图**![说明：柱形图类型的图片](7-displaying-data-in-a-chart/_static/image3.jpg) | **折线图**![说明：线图类型的图片](7-displaying-data-in-a-chart/_static/image4.jpg) |
 | **饼图**![说明：饼图类型的图片](7-displaying-data-in-a-chart/_static/image5.jpg) | **股价图**![说明：股价图类型的图片](7-displaying-data-in-a-chart/_static/image6.jpg) |
 
 ### <a name="chart-elements"></a>图表元素

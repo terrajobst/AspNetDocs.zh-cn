@@ -12,7 +12,7 @@ ms.openlocfilehash: 175e78d7ccc669c29c63dcb53af7aad1608c7d15
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422351"
 ---
 # <a name="creating-page-layouts-with-view-master-pages-vb"></a>使用视图母版页创建页面布局 (VB)
@@ -37,7 +37,7 @@ by [Microsoft](https://github.com/microsoft)
 让我们首先创建定义了两列布局视图母版页。 您将添加新视图母版页到 MVC 项目，请右键单击 views/shared 文件夹中，选择菜单选项**添加、 新项**，并选择 MVC 视图母版页模板 （参见图 1）。
 
 
-[![Adding 视图母版页](creating-page-layouts-with-view-master-pages-vb/_static/image2.png)](creating-page-layouts-with-view-master-pages-vb/_static/image1.png)
+[![添加视图母版页](creating-page-layouts-with-view-master-pages-vb/_static/image2.png)](creating-page-layouts-with-view-master-pages-vb/_static/image1.png)
 
 **图 01**:添加视图母版页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-vb/_static/image3.png))
 
@@ -55,7 +55,7 @@ by [Microsoft](https://github.com/microsoft)
 在列表 1 中的主页面包含两个视图的正文`<div>`对应于两个列的标记。 级联样式表的列类应用于这两`<div>`标记。 此类定义中声明顶部的主页面的样式表。 您可以预览视图母版页通过切换到设计视图中的呈现方式。 单击左下角的源代码编辑器的设计选项卡 （请参见图 2）。
 
 
-[![P查看设计器中的主页面](creating-page-layouts-with-view-master-pages-vb/_static/image5.png)](creating-page-layouts-with-view-master-pages-vb/_static/image4.png)
+[![预览设计器中的母版页](creating-page-layouts-with-view-master-pages-vb/_static/image5.png)](creating-page-layouts-with-view-master-pages-vb/_static/image4.png)
 
 **图 02**:预览设计器中的母版页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-vb/_static/image6.png))
 
@@ -65,7 +65,7 @@ by [Microsoft](https://github.com/microsoft)
 创建视图母版页后，您可以创建一个或多个视图基于视图母版页的内容页面。 例如，可以通过右键单击 views/home 文件夹中，创建主控制器的索引视图内容页选择**添加、 新建项**，选择**MVC 视图内容页**模板中，输入名称 Index.aspx，并单击添加按钮 （请参见图 3）。
 
 
-[![Adding 视图内容页](creating-page-layouts-with-view-master-pages-vb/_static/image8.png)](creating-page-layouts-with-view-master-pages-vb/_static/image7.png)
+[![添加视图内容页](creating-page-layouts-with-view-master-pages-vb/_static/image8.png)](creating-page-layouts-with-view-master-pages-vb/_static/image7.png)
 
 **图 03**:添加视图内容页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-vb/_static/image9.png))
 
@@ -73,7 +73,7 @@ by [Microsoft](https://github.com/microsoft)
 单击添加按钮后，新会出现一个对话框，可用于选择要将视图内容页与相关联的视图主页面 （请参阅图 4）。 您可以导航到 Site.master 视图母版页，我们在上一节中创建。
 
 
-[![S选择母版页](creating-page-layouts-with-view-master-pages-vb/_static/image11.png)](creating-page-layouts-with-view-master-pages-vb/_static/image10.png)
+[![选择母版页](creating-page-layouts-with-view-master-pages-vb/_static/image11.png)](creating-page-layouts-with-view-master-pages-vb/_static/image10.png)
 
 **图 04**:选择母版页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-vb/_static/image12.png))
 
@@ -101,7 +101,7 @@ by [Microsoft](https://github.com/microsoft)
 当请求清单 3 中的视图时，它将呈现在图 5 中的页。 请注意视图呈现的页面包含两个列。 此外，请注意，从视图内容页的内容将与来自视图母版页的内容合并。
 
 
-[![T他索引视图内容页](creating-page-layouts-with-view-master-pages-vb/_static/image14.png)](creating-page-layouts-with-view-master-pages-vb/_static/image13.png)
+[![索引视图内容页](creating-page-layouts-with-view-master-pages-vb/_static/image14.png)](creating-page-layouts-with-view-master-pages-vb/_static/image13.png)
 
 **图 05**:索引视图内容页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-vb/_static/image15.png))
 
@@ -117,7 +117,7 @@ by [Microsoft](https://github.com/microsoft)
 索引视图呈现给浏览器，浏览器标题栏中会显示所需的标题：
 
 
-[![Browser 标题栏](creating-page-layouts-with-view-master-pages-vb/_static/image17.png)](creating-page-layouts-with-view-master-pages-vb/_static/image16.png)
+[![浏览器标题栏](creating-page-layouts-with-view-master-pages-vb/_static/image17.png)](creating-page-layouts-with-view-master-pages-vb/_static/image16.png)
 
 
 没有母版视图页中的 title 属性，若要运行的顺序必须满足的一个重要要求。 必须包含视图母版页`<head runat="server">`而不是普通的标记`<head>`其标头标记。 如果`<head>`标记不包含 runat ="server"特性，则不会显示标题。 母版页包含所需的默认视图`<head runat="server">`标记。
