@@ -12,13 +12,13 @@ ms.openlocfilehash: 5620710239c282b126fadd2e0ca09e71bac8786f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407388"
 ---
-# <a name="colorpicker"></a><span data-ttu-id="db9bb-103">ColorPicker</span><span class="sxs-lookup"><span data-stu-id="db9bb-103">ColorPicker</span></span>
+# <a name="colorpicker"></a><span data-ttu-id="485de-103">ColorPicker</span><span class="sxs-lookup"><span data-stu-id="485de-103">ColorPicker</span></span>
 
-> <span data-ttu-id="db9bb-104">本教程演示如何使用颜色选取器控件，使用户可以从弹出窗口选择一种颜色。</span><span class="sxs-lookup"><span data-stu-id="db9bb-104">This tutorial shows how to use the ColorPicker control, which lets users select a color from a popup window.</span></span>
+> <span data-ttu-id="485de-104">本教程演示如何使用颜色选取器控件，使用户可以从弹出窗口选择一种颜色。</span><span class="sxs-lookup"><span data-stu-id="485de-104">This tutorial shows how to use the ColorPicker control, which lets users select a color from a popup window.</span></span>
 
 
-- [<span data-ttu-id="db9bb-105">ColorPicker 控件扩展程序 (C#)</span><span class="sxs-lookup"><span data-stu-id="db9bb-105">ColorPicker Control Extender (C#)</span></span>](using-the-colorpicker-control-extender-cs.md)
-- [<span data-ttu-id="db9bb-106">ColorPicker 控件扩展程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="db9bb-106">ColorPicker Control Extender (VB)</span></span>](using-the-colorpicker-control-extender-vb.md)
+- [<span data-ttu-id="485de-105">ColorPicker 控件扩展程序 (C#)</span><span class="sxs-lookup"><span data-stu-id="485de-105">ColorPicker Control Extender (C#)</span></span>](using-the-colorpicker-control-extender-cs.md)
+- [<span data-ttu-id="485de-106">ColorPicker 控件扩展程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="485de-106">ColorPicker Control Extender (VB)</span></span>](using-the-colorpicker-control-extender-vb.md)

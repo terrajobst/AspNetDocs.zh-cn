@@ -12,33 +12,33 @@ ms.openlocfilehash: 20fdfd00826d1b033c2d5dd9500915cb784896e5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406452"
 ---
-# <a name="getting-started-with-aspnet-mvc3"></a><span data-ttu-id="c9246-103">ASP.NET MVC 3 入门</span><span class="sxs-lookup"><span data-stu-id="c9246-103">Getting Started with ASP.NET MVC3</span></span>
+# <a name="getting-started-with-aspnet-mvc3"></a><span data-ttu-id="70773-103">ASP.NET MVC 3 入门</span><span class="sxs-lookup"><span data-stu-id="70773-103">Getting Started with ASP.NET MVC3</span></span>
 
-> <span data-ttu-id="c9246-104">构建使用 Microsoft Visual Web Developer 2010 Express 的 ASP.NET MVC Web 应用程序的基础知识。</span><span class="sxs-lookup"><span data-stu-id="c9246-104">The basics of building an ASP.NET MVC Web application using Microsoft Visual Web Developer 2010 Express.</span></span>
+> <span data-ttu-id="70773-104">构建使用 Microsoft Visual Web Developer 2010 Express 的 ASP.NET MVC Web 应用程序的基础知识。</span><span class="sxs-lookup"><span data-stu-id="70773-104">The basics of building an ASP.NET MVC Web application using Microsoft Visual Web Developer 2010 Express.</span></span>
 
 
-- [<span data-ttu-id="c9246-105">ASP.NET MVC 3 入门 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-105">Getting Started with ASP.NET MVC 3 (C#)</span></span>](cs/index.md)
+- [<span data-ttu-id="70773-105">ASP.NET MVC 3 入门 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-105">Getting Started with ASP.NET MVC 3 (C#)</span></span>](cs/index.md)
 
-    - [<span data-ttu-id="c9246-106">ASP.NET MVC 3 简介 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-106">Intro to ASP.NET MVC 3 (C#)</span></span>](cs/intro-to-aspnet-mvc-3.md)
-    - [<span data-ttu-id="c9246-107">添加控制器 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-107">Adding a Controller (C#)</span></span>](cs/adding-a-controller.md)
-    - [<span data-ttu-id="c9246-108">添加视图 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-108">Adding a View (C#)</span></span>](cs/adding-a-view.md)
-    - [<span data-ttu-id="c9246-109">添加模型 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-109">Adding a Model (C#)</span></span>](cs/adding-a-model.md)
-    - [<span data-ttu-id="c9246-110">从控制器访问模型的数据 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-110">Accessing your Model's Data from a Controller (C#)</span></span>](cs/accessing-your-models-data-from-a-controller.md)
-    - [<span data-ttu-id="c9246-111">检查 Edit 方法和编辑视图 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-111">Examining the Edit Methods and Edit View (C#)</span></span>](cs/examining-the-edit-methods-and-edit-view.md)
-    - [<span data-ttu-id="c9246-112">向电影模型和表添加新字段 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-112">Adding a New Field to the Movie Model and Table (C#)</span></span>](cs/adding-a-new-field.md)
-    - [<span data-ttu-id="c9246-113">向模型添加验证 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-113">Adding Validation to the Model (C#)</span></span>](cs/adding-validation-to-the-model.md)
-    - [<span data-ttu-id="c9246-114">改进 Details 和 Delete 方法 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9246-114">Improving the Details and Delete Methods (C#)</span></span>](cs/improving-the-details-and-delete-methods.md)
-- [<span data-ttu-id="c9246-115">ASP.NET MVC 3 入门 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="c9246-115">Getting Started with ASP.NET MVC 3 (VB.NET)</span></span>](vb/index.md)
+    - [<span data-ttu-id="70773-106">ASP.NET MVC 3 简介 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-106">Intro to ASP.NET MVC 3 (C#)</span></span>](cs/intro-to-aspnet-mvc-3.md)
+    - [<span data-ttu-id="70773-107">添加控制器 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-107">Adding a Controller (C#)</span></span>](cs/adding-a-controller.md)
+    - [<span data-ttu-id="70773-108">添加视图 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-108">Adding a View (C#)</span></span>](cs/adding-a-view.md)
+    - [<span data-ttu-id="70773-109">添加模型 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-109">Adding a Model (C#)</span></span>](cs/adding-a-model.md)
+    - [<span data-ttu-id="70773-110">从控制器访问模型的数据 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-110">Accessing your Model's Data from a Controller (C#)</span></span>](cs/accessing-your-models-data-from-a-controller.md)
+    - [<span data-ttu-id="70773-111">检查 Edit 方法和编辑视图 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-111">Examining the Edit Methods and Edit View (C#)</span></span>](cs/examining-the-edit-methods-and-edit-view.md)
+    - [<span data-ttu-id="70773-112">向电影模型和表添加新字段 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-112">Adding a New Field to the Movie Model and Table (C#)</span></span>](cs/adding-a-new-field.md)
+    - [<span data-ttu-id="70773-113">向模型添加验证 (C#)</span><span class="sxs-lookup"><span data-stu-id="70773-113">Adding Validation to the Model (C#)</span></span>](cs/adding-validation-to-the-model.md)
+    - [<span data-ttu-id="70773-114">改进 Details 和 Delete 方法</span><span class="sxs-lookup"><span data-stu-id="70773-114">Improving the Details and Delete Methods (C#)</span></span>](cs/improving-the-details-and-delete-methods.md)
+- [<span data-ttu-id="70773-115">ASP.NET MVC 3 入门 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="70773-115">Getting Started with ASP.NET MVC 3 (VB.NET)</span></span>](vb/index.md)
 
-    - [<span data-ttu-id="c9246-116">ASP.NET MVC 3 简介 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-116">Intro to ASP.NET MVC 3 (VB)</span></span>](vb/intro-to-aspnet-mvc-3.md)
-    - [<span data-ttu-id="c9246-117">添加控制器 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-117">Adding a Controller (VB)</span></span>](vb/adding-a-controller.md)
-    - [<span data-ttu-id="c9246-118">添加视图 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-118">Adding a View (VB)</span></span>](vb/adding-a-view.md)
-    - [<span data-ttu-id="c9246-119">添加模型 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-119">Adding a Model (VB)</span></span>](vb/adding-a-model.md)
-    - [<span data-ttu-id="c9246-120">从控制器访问模型的数据 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-120">Accessing your Model's Data from a Controller (VB)</span></span>](vb/accessing-your-models-data-from-a-controller.md)
-    - [<span data-ttu-id="c9246-121">检查 Edit 方法和编辑视图 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-121">Examining the Edit Methods and Edit View (VB)</span></span>](vb/examining-the-edit-methods-and-edit-view.md)
-    - [<span data-ttu-id="c9246-122">向电影模型和数据库表添加新字段 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-122">Adding a New Field to the Movie Model and Database Table (VB)</span></span>](vb/adding-a-new-field.md)
-    - [<span data-ttu-id="c9246-123">向模型添加验证 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-123">Adding Validation to the Model (VB)</span></span>](vb/adding-validation-to-the-model.md)
-    - [<span data-ttu-id="c9246-124">改进 Details 和 Delete 方法 (VB)</span><span class="sxs-lookup"><span data-stu-id="c9246-124">Improving the Details and Delete Methods (VB)</span></span>](vb/improving-the-details-and-delete-methods.md)
+    - [<span data-ttu-id="70773-116">ASP.NET MVC 3 简介 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-116">Intro to ASP.NET MVC 3 (VB)</span></span>](vb/intro-to-aspnet-mvc-3.md)
+    - [<span data-ttu-id="70773-117">添加控制器 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-117">Adding a Controller (VB)</span></span>](vb/adding-a-controller.md)
+    - [<span data-ttu-id="70773-118">添加视图 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-118">Adding a View (VB)</span></span>](vb/adding-a-view.md)
+    - [<span data-ttu-id="70773-119">添加模型 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-119">Adding a Model (VB)</span></span>](vb/adding-a-model.md)
+    - [<span data-ttu-id="70773-120">从控制器访问模型的数据 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-120">Accessing your Model's Data from a Controller (VB)</span></span>](vb/accessing-your-models-data-from-a-controller.md)
+    - [<span data-ttu-id="70773-121">检查 Edit 方法和编辑视图 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-121">Examining the Edit Methods and Edit View (VB)</span></span>](vb/examining-the-edit-methods-and-edit-view.md)
+    - [<span data-ttu-id="70773-122">向电影模型和表添加新字段 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-122">Adding a New Field to the Movie Model and Database Table (VB)</span></span>](vb/adding-a-new-field.md)
+    - [<span data-ttu-id="70773-123">向模型添加验证 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-123">Adding Validation to the Model (VB)</span></span>](vb/adding-validation-to-the-model.md)
+    - [<span data-ttu-id="70773-124">改进 Details 和 Delete 方法 (VB)</span><span class="sxs-lookup"><span data-stu-id="70773-124">Improving the Details and Delete Methods (VB)</span></span>](vb/improving-the-details-and-delete-methods.md)

@@ -12,53 +12,53 @@ ms.openlocfilehash: a5b858a05470caa244902afbb404adbb2e4761b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402721"
 ---
-# <a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="9e680-104">滑块控件中使用自动回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="9e680-104">Using the Slider Control With Auto-Postback (C#)</span></span>
+# <a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="5db46-104">滑块控件中使用自动回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="5db46-104">Using the Slider Control With Auto-Postback (C#)</span></span>
 
-<span data-ttu-id="9e680-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="9e680-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="5db46-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="5db46-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="9e680-106">[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="9e680-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span></span>
+<span data-ttu-id="5db46-106">[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="5db46-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span></span>
 
-> <span data-ttu-id="9e680-107">AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用鼠标进行控制。</span><span class="sxs-lookup"><span data-stu-id="9e680-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="9e680-108">它是可以进行一次其值更改滑块自动回发。</span><span class="sxs-lookup"><span data-stu-id="9e680-108">It is possible to make the slider autopostback once its value changes.</span></span>
+> <span data-ttu-id="5db46-107">AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用鼠标进行控制。</span><span class="sxs-lookup"><span data-stu-id="5db46-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="5db46-108">它是可以进行一次其值更改滑块自动回发。</span><span class="sxs-lookup"><span data-stu-id="5db46-108">It is possible to make the slider autopostback once its value changes.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="9e680-109">概述</span><span class="sxs-lookup"><span data-stu-id="9e680-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="5db46-109">概述</span><span class="sxs-lookup"><span data-stu-id="5db46-109">Overview</span></span>
 
-<span data-ttu-id="9e680-110">AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用鼠标进行控制。</span><span class="sxs-lookup"><span data-stu-id="9e680-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="9e680-111">它是可以进行一次其值更改滑块自动回发。</span><span class="sxs-lookup"><span data-stu-id="9e680-111">It is possible to make the slider autopostback once its value changes.</span></span>
+<span data-ttu-id="5db46-110">AJAX 控件工具包中的滑块控件提供了一个图形滑块，可以使用鼠标进行控制。</span><span class="sxs-lookup"><span data-stu-id="5db46-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="5db46-111">它是可以进行一次其值更改滑块自动回发。</span><span class="sxs-lookup"><span data-stu-id="5db46-111">It is possible to make the slider autopostback once its value changes.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="9e680-112">步骤</span><span class="sxs-lookup"><span data-stu-id="9e680-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="5db46-112">步骤</span><span class="sxs-lookup"><span data-stu-id="5db46-112">Steps</span></span>
 
-<span data-ttu-id="9e680-113">为了进行更改时自动回发的滑块，这两个文本框特性，因此需要`AutoPostBack="true"`:文本框中，在将成为滑块本身，并包含滑块的位置的文本框。</span><span class="sxs-lookup"><span data-stu-id="9e680-113">In order to make the slider automatically postback upon a change, both text boxes need the attribute `AutoPostBack="true"`: The text box that will become the slider itself, and the text box that holds the slider's position.</span></span> <span data-ttu-id="9e680-114">下面是为此，所需的标记：</span><span class="sxs-lookup"><span data-stu-id="9e680-114">Here is the required markup for that:</span></span>
+<span data-ttu-id="5db46-113">为了进行更改时自动回发的滑块，这两个文本框特性，因此需要`AutoPostBack="true"`:文本框中，在将成为滑块本身，并包含滑块的位置的文本框。</span><span class="sxs-lookup"><span data-stu-id="5db46-113">In order to make the slider automatically postback upon a change, both text boxes need the attribute `AutoPostBack="true"`: The text box that will become the slider itself, and the text box that holds the slider's position.</span></span> <span data-ttu-id="5db46-114">下面是为此，所需的标记：</span><span class="sxs-lookup"><span data-stu-id="5db46-114">Here is the required markup for that:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="9e680-115">`SliderExtender`从 ASP.NET AJAX 控件工具包控件将滑块功能分配给两个文本框：</span><span class="sxs-lookup"><span data-stu-id="9e680-115">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit assigns the slider functionality to the two text boxes:</span></span>
+<span data-ttu-id="5db46-115">`SliderExtender`从 ASP.NET AJAX 控件工具包控件将滑块功能分配给两个文本框：</span><span class="sxs-lookup"><span data-stu-id="5db46-115">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit assigns the slider functionality to the two text boxes:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="9e680-116">更高版本将使用其他标签元素回发的用户通知：</span><span class="sxs-lookup"><span data-stu-id="9e680-116">An additional label element will later be used to inform the user of a postback:</span></span>
+<span data-ttu-id="5db46-116">更高版本将使用其他标签元素回发的用户通知：</span><span class="sxs-lookup"><span data-stu-id="5db46-116">An additional label element will later be used to inform the user of a postback:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample3.aspx)]
 
-<span data-ttu-id="9e680-117">最后， `ScriptManager` ASP.NET ajax 控件将加载所需的 JavaScript 控件工具包，若要运行的：</span><span class="sxs-lookup"><span data-stu-id="9e680-117">Finally, the `ScriptManager` control of ASP.NET AJAX loads the required JavaScript for the Control Toolkit to work:</span></span>
+<span data-ttu-id="5db46-117">最后， `ScriptManager` ASP.NET ajax 控件将加载所需的 JavaScript 控件工具包，若要运行的：</span><span class="sxs-lookup"><span data-stu-id="5db46-117">Finally, the `ScriptManager` control of ASP.NET AJAX loads the required JavaScript for the Control Toolkit to work:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="9e680-118">现在，滑块回发;在服务器端，可能会捕获和处理此事件：</span><span class="sxs-lookup"><span data-stu-id="9e680-118">Now the slider is posting back; on the server-side, this event may be caught and acted upon:</span></span>
+<span data-ttu-id="5db46-118">现在，滑块回发;在服务器端，可能会捕获和处理此事件：</span><span class="sxs-lookup"><span data-stu-id="5db46-118">Now the slider is posting back; on the server-side, this event may be caught and acted upon:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample5.aspx)]
 
 
-[![M<span data-ttu-id="9e680-119">删除滑块触发回发]</span><span class="sxs-lookup"><span data-stu-id="9e680-119">oving the slider triggers a postback]</span></span>(using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)
+<span data-ttu-id="5db46-119">[![将滑块移动触发回发](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="5db46-119">[![Moving the slider triggers a postback](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="9e680-120">将滑块移动触发回发 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="9e680-120">Moving the slider triggers a postback ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span></span>
+<span data-ttu-id="5db46-120">将滑块移动触发回发 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="5db46-120">Moving the slider triggers a postback ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span></span>
 
 
-[![A<span data-ttu-id="9e680-121">fterwards，此更改的日期写入的标签中]</span><span class="sxs-lookup"><span data-stu-id="9e680-121">fterwards, the date of this change is written in the label]</span></span>(using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)
+<span data-ttu-id="5db46-121">[![然后，此更改的日期写入标签中](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="5db46-121">[![Afterwards, the date of this change is written in the label](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span></span>
 
-<span data-ttu-id="9e680-122">然后，此更改的日期写入标签中 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="9e680-122">Afterwards, the date of this change is written in the label ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span></span>
+<span data-ttu-id="5db46-122">然后，此更改的日期写入标签中 ([单击此项可查看原尺寸图像](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="5db46-122">Afterwards, the date of this change is written in the label ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span></span>
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="9e680-123">下一步</span><span class="sxs-lookup"><span data-stu-id="9e680-123">Next</span></span>](databinding-the-slider-control-cs.md)
+> [<span data-ttu-id="5db46-123">下一页</span><span class="sxs-lookup"><span data-stu-id="5db46-123">Next</span></span>](databinding-the-slider-control-cs.md)

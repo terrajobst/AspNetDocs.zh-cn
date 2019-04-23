@@ -12,17 +12,17 @@ ms.openlocfilehash: 94c467aabb53298299584b80626f9b2234dbebfe
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404060"
 ---
-# <a name="filtering-scenarios-with-the-datalist-and-repeater"></a><span data-ttu-id="a16dc-103">使用 DataList 和 Repeater 的筛选方案</span><span class="sxs-lookup"><span data-stu-id="a16dc-103">Filtering Scenarios with the DataList and Repeater</span></span>
+# <a name="filtering-scenarios-with-the-datalist-and-repeater"></a><span data-ttu-id="51297-103">使用 DataList 和 Repeater 的筛选方案</span><span class="sxs-lookup"><span data-stu-id="51297-103">Filtering Scenarios with the DataList and Repeater</span></span>
 
-> <span data-ttu-id="a16dc-104">在这些教程中，请参阅如何显示母版/详细信息报表的主记录和详细信息 DataList 控件使用下拉列表。</span><span class="sxs-lookup"><span data-stu-id="a16dc-104">In these tutorials you see how to display master/detail reports using drop-down lists for the master records and a DataList control for the details.</span></span>
+> <span data-ttu-id="51297-104">在这些教程中，请参阅如何显示母版/详细信息报表的主记录和详细信息 DataList 控件使用下拉列表。</span><span class="sxs-lookup"><span data-stu-id="51297-104">In these tutorials you see how to display master/detail reports using drop-down lists for the master records and a DataList control for the details.</span></span>
 
 
-- [<span data-ttu-id="a16dc-105">使用一个 DropDownList 实现母版/详细信息筛选 (C#)</span><span class="sxs-lookup"><span data-stu-id="a16dc-105">Master/Detail Filtering With a DropDownList (C#)</span></span>](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
-- [<span data-ttu-id="a16dc-106">跨两个页面的母版/详细信息筛选 (C#)</span><span class="sxs-lookup"><span data-stu-id="a16dc-106">Master/Detail Filtering Across Two Pages (C#)</span></span>](master-detail-filtering-acess-two-pages-datalist-cs.md)
-- [<span data-ttu-id="a16dc-107">通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (C#)</span><span class="sxs-lookup"><span data-stu-id="a16dc-107">Master/Detail Using a Bulleted List of Master Records with a Details DataList (C#)</span></span>](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)
-- [<span data-ttu-id="a16dc-108">使用一个 DropDownList 实现母版/详细信息筛选 (VB)</span><span class="sxs-lookup"><span data-stu-id="a16dc-108">Master/Detail Filtering With a DropDownList (VB)</span></span>](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
-- [<span data-ttu-id="a16dc-109">跨两个页面的母版/详细信息筛选 (VB)</span><span class="sxs-lookup"><span data-stu-id="a16dc-109">Master/Detail Filtering Across Two Pages (VB)</span></span>](master-detail-filtering-acess-two-pages-datalist-vb.md)
-- [<span data-ttu-id="a16dc-110">通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (VB)</span><span class="sxs-lookup"><span data-stu-id="a16dc-110">Master/Detail Using a Bulleted List of Master Records with a Details DataList (VB)</span></span>](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)
+- [<span data-ttu-id="51297-105">使用一个 DropDownList 实现母版/详细信息筛选 (C#)</span><span class="sxs-lookup"><span data-stu-id="51297-105">Master/Detail Filtering With a DropDownList (C#)</span></span>](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
+- [<span data-ttu-id="51297-106">跨两个页面的母版/详细信息筛选 (C#)</span><span class="sxs-lookup"><span data-stu-id="51297-106">Master/Detail Filtering Across Two Pages (C#)</span></span>](master-detail-filtering-acess-two-pages-datalist-cs.md)
+- [<span data-ttu-id="51297-107">通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (C#)</span><span class="sxs-lookup"><span data-stu-id="51297-107">Master/Detail Using a Bulleted List of Master Records with a Details DataList (C#)</span></span>](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)
+- [<span data-ttu-id="51297-108">使用一个 DropDownList 实现母版/详细信息筛选 (VB)</span><span class="sxs-lookup"><span data-stu-id="51297-108">Master/Detail Filtering With a DropDownList (VB)</span></span>](master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
+- [<span data-ttu-id="51297-109">跨两个页面的母版/详细信息筛选 (VB)</span><span class="sxs-lookup"><span data-stu-id="51297-109">Master/Detail Filtering Across Two Pages (VB)</span></span>](master-detail-filtering-acess-two-pages-datalist-vb.md)
+- [<span data-ttu-id="51297-110">通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (VB)</span><span class="sxs-lookup"><span data-stu-id="51297-110">Master/Detail Using a Bulleted List of Master Records with a Details DataList (VB)</span></span>](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)

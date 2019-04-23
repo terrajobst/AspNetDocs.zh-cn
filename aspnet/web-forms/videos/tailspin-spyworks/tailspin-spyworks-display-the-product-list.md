@@ -12,18 +12,18 @@ ms.openlocfilehash: d6fe8324ef580c2ad811e5db5cf62e514e170aa3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401941"
 ---
-# <a name="tailspin-spyworks---display-the-product-list"></a><span data-ttu-id="d1adb-103">Tailspin Spyworks - 显示产品列表</span><span class="sxs-lookup"><span data-stu-id="d1adb-103">Tailspin Spyworks - Display the Product List</span></span>
+# <a name="tailspin-spyworks---display-the-product-list"></a><span data-ttu-id="2fc1a-103">Tailspin Spyworks - 显示产品列表</span><span class="sxs-lookup"><span data-stu-id="2fc1a-103">Tailspin Spyworks - Display the Product List</span></span>
 
-<span data-ttu-id="d1adb-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="d1adb-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="2fc1a-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="2fc1a-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="d1adb-105">Joe Stagner 演示如何在 Tailspin Spyworks 示例 Web 窗体应用程序中显示产品列表。</span><span class="sxs-lookup"><span data-stu-id="d1adb-105">Joe Stagner shows how to display the product list in the Tailspin Spyworks sample Web Forms application.</span></span>
+<span data-ttu-id="2fc1a-105">Joe Stagner 演示如何在 Tailspin Spyworks 示例 Web 窗体应用程序中显示产品列表。</span><span class="sxs-lookup"><span data-stu-id="2fc1a-105">Joe Stagner shows how to display the product list in the Tailspin Spyworks sample Web Forms application.</span></span>
 
-[<span data-ttu-id="d1adb-106">&#9654;观看视频 （9 分钟）</span><span class="sxs-lookup"><span data-stu-id="d1adb-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-display-the-product-list)
+[<span data-ttu-id="2fc1a-106">&#9654;观看视频 （9 分钟）</span><span class="sxs-lookup"><span data-stu-id="2fc1a-106">&#9654; Watch video (9 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-display-the-product-list)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d1adb-107">[上一页](tailspin-spyworks-category-menu.md)
-> [下一页](tailspin-spyworks-display-per-product-details.md)</span><span class="sxs-lookup"><span data-stu-id="d1adb-107">[Previous](tailspin-spyworks-category-menu.md)
+> <span data-ttu-id="2fc1a-107">[上一页](tailspin-spyworks-category-menu.md)
+> [下一页](tailspin-spyworks-display-per-product-details.md)</span><span class="sxs-lookup"><span data-stu-id="2fc1a-107">[Previous](tailspin-spyworks-category-menu.md)
 [Next](tailspin-spyworks-display-per-product-details.md)</span></span>

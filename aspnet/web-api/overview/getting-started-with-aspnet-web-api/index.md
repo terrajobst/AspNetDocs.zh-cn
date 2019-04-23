@@ -13,16 +13,16 @@ ms.openlocfilehash: f5b7c080cdd6331e41751e8a4741f724153ec360
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403007"
 ---
-# <a name="getting-started-with-aspnet-web-api"></a><span data-ttu-id="ee36f-103">ASP.NET Web API 入门</span><span class="sxs-lookup"><span data-stu-id="ee36f-103">Getting Started with ASP.NET Web API</span></span>
+# <a name="getting-started-with-aspnet-web-api"></a><span data-ttu-id="c58d3-103">ASP.NET Web API 入门</span><span class="sxs-lookup"><span data-stu-id="c58d3-103">Getting Started with ASP.NET Web API</span></span>
 
-> <span data-ttu-id="ee36f-104">生成使用 ASP.NET Web API 的 HTTP 服务的基础知识</span><span class="sxs-lookup"><span data-stu-id="ee36f-104">The basics of building an HTTP service using ASP.NET Web API</span></span>
+> <span data-ttu-id="c58d3-104">生成使用 ASP.NET Web API 的 HTTP 服务的基础知识</span><span class="sxs-lookup"><span data-stu-id="c58d3-104">The basics of building an HTTP service using ASP.NET Web API</span></span>
 
 
-- [<span data-ttu-id="ee36f-105">Web API 2 入门 (C#)</span><span class="sxs-lookup"><span data-stu-id="ee36f-105">Getting Started with Web API 2 (C#)</span></span>](tutorial-your-first-web-api.md)
-- [<span data-ttu-id="ee36f-106">Web API 2 的操作结果</span><span class="sxs-lookup"><span data-stu-id="ee36f-106">Action Results in Web API 2</span></span>](action-results.md)
-- [<span data-ttu-id="ee36f-107">向 ASP.NET Web 窗体使用 Web API</span><span class="sxs-lookup"><span data-stu-id="ee36f-107">Using Web API with ASP.NET Web Forms</span></span>](using-web-api-with-aspnet-web-forms.md)
-- [<span data-ttu-id="ee36f-108">创建 Web API 帮助页</span><span class="sxs-lookup"><span data-stu-id="ee36f-108">Creating Web API Help Pages</span></span>](creating-api-help-pages.md)
-- [<span data-ttu-id="ee36f-109">动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)</span><span class="sxs-lookup"><span data-stu-id="ee36f-109">Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js</span></span>](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+- [<span data-ttu-id="c58d3-105">Web API 2 入门 (C#)</span><span class="sxs-lookup"><span data-stu-id="c58d3-105">Getting Started with Web API 2 (C#)</span></span>](tutorial-your-first-web-api.md)
+- [<span data-ttu-id="c58d3-106">Web API 2 的操作结果</span><span class="sxs-lookup"><span data-stu-id="c58d3-106">Action Results in Web API 2</span></span>](action-results.md)
+- [<span data-ttu-id="c58d3-107">向 ASP.NET Web 窗体使用 Web API</span><span class="sxs-lookup"><span data-stu-id="c58d3-107">Using Web API with ASP.NET Web Forms</span></span>](using-web-api-with-aspnet-web-forms.md)
+- [<span data-ttu-id="c58d3-108">创建 Web API 帮助页</span><span class="sxs-lookup"><span data-stu-id="c58d3-108">Creating Web API Help Pages</span></span>](creating-api-help-pages.md)
+- [<span data-ttu-id="c58d3-109">动手实验：生成使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA)</span><span class="sxs-lookup"><span data-stu-id="c58d3-109">Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js</span></span>](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)

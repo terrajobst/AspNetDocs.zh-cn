@@ -12,9 +12,9 @@ ms.openlocfilehash: a0747f2d9c43cfc62a540c0296cf690d54477bf6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404983"
 ---
-# <a name="jquery-templates"></a><span data-ttu-id="04d4c-102">jQuery 模板</span><span class="sxs-lookup"><span data-stu-id="04d4c-102">jQuery Templates</span></span>
+# <a name="jquery-templates"></a><span data-ttu-id="43658-102">jQuery 模板</span><span class="sxs-lookup"><span data-stu-id="43658-102">jQuery Templates</span></span>
 
-- [<span data-ttu-id="04d4c-103">jQuery 模板 Beta 1</span><span class="sxs-lookup"><span data-stu-id="04d4c-103">jQuery Templates Beta 1</span></span>](cdnjquerytemplatesbeta1.md)
+- [<span data-ttu-id="43658-103">jQuery 模板 Beta 1</span><span class="sxs-lookup"><span data-stu-id="43658-103">jQuery Templates Beta 1</span></span>](cdnjquerytemplatesbeta1.md)

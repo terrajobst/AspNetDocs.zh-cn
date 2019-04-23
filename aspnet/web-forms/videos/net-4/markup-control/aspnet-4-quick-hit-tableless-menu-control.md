@@ -12,18 +12,18 @@ ms.openlocfilehash: 39e566a431d0e6382954c2cc2773451d20bc382b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402773"
 ---
-# <a name="aspnet-4-quick-hit--tableless-menu-control"></a><span data-ttu-id="c4afd-103">ASP.NET 4"快速命中"– 无表的菜单控件</span><span class="sxs-lookup"><span data-stu-id="c4afd-103">ASP.NET 4 "Quick Hit" – Tableless Menu Control</span></span>
+# <a name="aspnet-4-quick-hit--tableless-menu-control"></a><span data-ttu-id="a5551-103">ASP.NET 4"快速命中"– 无表的菜单控件</span><span class="sxs-lookup"><span data-stu-id="a5551-103">ASP.NET 4 "Quick Hit" – Tableless Menu Control</span></span>
 
-<span data-ttu-id="c4afd-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="c4afd-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="a5551-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="a5551-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="c4afd-105">将在本视频中看到了 ASP.NET 菜单控件的呈现效果使用的未排序的列表和列表元素组成的语义标记的 HTML</span><span class="sxs-lookup"><span data-stu-id="c4afd-105">In this video you will see how the ASP.NET Menu control renders HTML using semantic markup consisting of an unordered list and list elements</span></span> 
+<span data-ttu-id="a5551-105">将在本视频中看到了 ASP.NET 菜单控件的呈现效果使用的未排序的列表和列表元素组成的语义标记的 HTML</span><span class="sxs-lookup"><span data-stu-id="a5551-105">In this video you will see how the ASP.NET Menu control renders HTML using semantic markup consisting of an unordered list and list elements</span></span> 
 
-[<span data-ttu-id="c4afd-106">&#9654;观看视频 （5 分钟）</span><span class="sxs-lookup"><span data-stu-id="c4afd-106">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-tableless-menu-control)
+[<span data-ttu-id="a5551-106">&#9654;观看视频 （5 分钟）</span><span class="sxs-lookup"><span data-stu-id="a5551-106">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-tableless-menu-control)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="c4afd-107">[上一页](aspnet-4-quick-hit-table-free-templated-controls.md)
-> [下一页](aspnet-4-quick-hit-hidden-field-divs.md)</span><span class="sxs-lookup"><span data-stu-id="c4afd-107">[Previous](aspnet-4-quick-hit-table-free-templated-controls.md)
+> <span data-ttu-id="a5551-107">[上一页](aspnet-4-quick-hit-table-free-templated-controls.md)
+> [下一页](aspnet-4-quick-hit-hidden-field-divs.md)</span><span class="sxs-lookup"><span data-stu-id="a5551-107">[Previous](aspnet-4-quick-hit-table-free-templated-controls.md)
 [Next](aspnet-4-quick-hit-hidden-field-divs.md)</span></span>
