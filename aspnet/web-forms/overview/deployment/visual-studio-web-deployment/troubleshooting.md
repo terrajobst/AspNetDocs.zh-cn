@@ -12,7 +12,7 @@ ms.openlocfilehash: b59cd34036c733579e678eab78097d3393f3e671
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421077"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署：疑难解答
@@ -28,7 +28,7 @@ ms.locfileid: "59421077"
 
 所示的方案适用于 Azure 和第三方主机托管提供商。 有关 Azure 应用服务中的 web 应用进行故障排除的详细信息，请参阅以下资源：
 
-- [使用 Visual Studio 的 Azure 应用服务中 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 - [在 Azure 应用服务中监视 Web 应用](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
 - [宣布推出 Windows Azure SDK 2.0 for.NET 的版本](http://https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net) （ScottGu 的博客，演示了如何在 Visual Studio 中获取诊断日志）
 
@@ -375,4 +375,4 @@ HTTP 错误 404.17-找不到
 可能未在计算机上安装 ASP.NET 4.5。 本系列中说明了如何安装 ASP.NET 4.5 在测试环境教程，请参阅中部署到 IIS 的步骤。
 
 > [!div class="step-by-step"]
-> [上一个](deploying-extra-files.md)
+> [上一篇](deploying-extra-files.md)
