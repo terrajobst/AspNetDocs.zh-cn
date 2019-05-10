@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: 3bb8eb15-b518-44f5-a67d-a27e051aedc6
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: de9b64e6c582059ec66ab352f60773f50af7b1ff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b2571552a3f8040ff42bfa0a9fa48981f71a1e4b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064914"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133574"
 ---
 # <a name="external-authentication-services-with-aspnet-web-api-c"></a>使用 ASP.NET Web API 的外部身份验证服务 (C#)
 
@@ -72,7 +72,6 @@ Visual Studio 2017 和 ASP.NET 4.7.2 与外部身份验证服务的集成更轻�
 
 > [!NOTE]
 > 如有必要，您可能需要将你的 FQDN 添加到外部身份验证服务的设置。 此要求基于安全约束，某些外部身份验证服务，这需要你的应用程序设置中的 FQDN，以匹配你的客户端使用的 FQDN。 （此步骤将大不相同的每个外部身份验证服务; 你将需要参考的文档以查看这是否是必须每个外部身份验证服务以及如何配置这些设置。）如果你需要配置 IIS Express 以用于测试此环境中使用 FQDN，请参阅[配置 IIS Express 以使用完全限定的域名](#FQDN)本演练后面的部分。
-
 
 <a id="SAMPLE"></a>
 ## <a name="create-a-sample-web-application"></a>创建示例 Web 应用程序
@@ -139,7 +138,6 @@ Visual Studio 2017 和 ASP.NET 4.7.2 与外部身份验证服务的集成更轻�
 ## <a name="enabling-google-authentication"></a>启用 Google 身份验证
 
 使用 Google 身份验证要求你创建一个 Google 开发人员帐户，并且你的项目将需要应用程序 ID 和机密密钥来自 Google 的函数。 有关创建 Google 开发人员帐户和获取应用程序 ID 和机密密钥的信息，请参阅[ https://developers.google.com ](https://developers.google.com)。
-
 
 若要启用 web 应用程序的 Google 身份验证，请使用以下步骤：
 

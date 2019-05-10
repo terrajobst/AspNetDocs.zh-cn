@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: d1608db3-660d-4079-8c15-f452ff01f1db
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
 msc.type: authoredcontent
-ms.openlocfilehash: 4a47f51b08b66dfe9636b3992786df19d0ad72ad
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 28940947253e0af43886cf1231f8aaf4615526cc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414925"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125471"
 ---
 # <a name="understanding-the-aspnet-mvc-execution-process"></a>了解 ASP.NET MVC 的执行流程
 
@@ -21,14 +21,12 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解 ASP.NET MVC framework 如何处理分步的浏览器请求。
 
-
 对基于 ASP.NET MVC 的 Web 应用程序请求首先穿过**UrlRoutingModule**对象，它是一个 HTTP 模块。 此模块将分析请求并执行路由选择。 **UrlRoutingModule**对象将选择与当前请求匹配的第一个路由对象。 (路由对象是实现的类**RouteBase**，并且通常是实例**路由**类。)如果任何路由都不匹配， **UrlRoutingModule**对象不执行任何操作，并允许请求回退到常规的 ASP.NET 或 IIS 请求处理。
 
 从所选**路由**对象， **UrlRoutingModule**对象获取**IRouteHandler**与关联的对象**路由**对象。 通常情况下，在 MVC 应用程序，这将的实例**MvcRouteHandler**。 **IRouteHandler**实例创建**IHttpHandler**对象，并将其传递**IHttpContext**对象。 默认情况下**IHttpHandler**实例为 MVC **MvcHandler**对象。 **MvcHandler**对象然后选择将最终处理该请求的控制器。
 
 > [!NOTE]
 > 在 IIS 7.0 中运行的 ASP.NET MVC Web 应用程序，没有文件扩展名时，对于 MVC 项目所需。 但是，在 IIS 6.0 中，处理程序要求将.mvc 文件扩展名映射到 ASP.NET ISAPI DLL。
-
 
 模块和处理程序是 ASP.NET MVC 框架的入口点。 它们执行以下操作：
 

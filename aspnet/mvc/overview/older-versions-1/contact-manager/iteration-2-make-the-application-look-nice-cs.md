@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f1173feb-11ee-4017-8f3f-86599ea6ae13
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6d3286a0ec2b03f6efdc56fd9816029482a879a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 246cb4b4668339cc4b7e4e03ea005102c6a2a5c3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415422"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126818"
 ---
 # <a name="iteration-2--make-the-application-look-nice-c"></a>迭代 2 – 使应用程序外表美观的 (C#)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > 在此迭代中，我们通过修改默认 ASP.NET MVC 视图母版页和级联样式表提高应用程序的外观。
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>生成联系人管理 ASP.NET MVC 应用程序 (C#)
-  
 
 在本系列教程，我们构建整个联系人管理应用程序从头到尾完成。 联系人管理器应用程序，可存储联系人信息的名称，电话号码和电子邮件地址的人的列表。
 
@@ -49,11 +47,9 @@ by [Microsoft](https://github.com/microsoft)
 
 此迭代的目标是提高联系人管理器应用程序的外观。 目前，联系人管理器使用默认 ASP.NET MVC 视图母版页和级联样式表 （请参见图 1）。 这些不要看上去有错误，但我不想要看起来正像 ASP.NET MVC 的其他每个网站的联系人管理器。 我想要自定义文件中替换这些文件。
 
-
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image1.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image1.png)
 
 **图 01**:ASP.NET MVC 应用程序的默认外观 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image2.png))
-
 
 在此迭代中，我将介绍两种方法可以改进我们的应用程序的可视设计。 首先，我介绍您如何充分利用 ASP.NET MVC 设计库下载免费的 ASP.NET MVC 设计模板。 ASP.NET MVC 设计库，可创建专业的 web 应用程序不执行任何操作。
 
@@ -67,11 +63,9 @@ ASP.NET MVC 设计库是由 Microsoft 提供的免费资源。 ASP.NET MVC 库�
 
 ASP.NET MVC 设计库托管的免费网站设计专门为使用 ASP.NET MVC 项目中创建的集合。 设计会上传由社区的成员。 库的访问者可以对他们最喜爱的设计进行投票 （请参见图 2）。
 
-
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image2.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image3.png)
 
 **图 02**:ASP.NET MVC 设计库 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image4.png))
-
 
 在我撰写本教程中，在库中最受欢迎的设计是由 David Hauser 命名年 10 月的设计。 可以通过完成以下步骤来为 ASP.NET MVC 项目中使用这种设计：
 
@@ -82,29 +76,23 @@ ASP.NET MVC 设计库托管的免费网站设计专门为使用 ASP.NET MVC 项�
 5. 右键单击 Visual Studio 解决方案资源管理器窗口中的 ContactManager 项目节点，然后选择菜单选项**粘贴**（请参阅图 4）。
 6. 选择 Visual Studio 的菜单选项**编辑、 查找和替换，快速替换**和替换 *[MyProjectName]* 与*ContactManager* （请参见图 5）。
 
-
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)
 
 **图 03**:取消阻止文件从 web 下载 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image6.png))
-
 
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image4.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image7.png)
 
 **图 04**:覆盖文件在解决方案资源管理器 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image8.png))
 
-
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image5.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image9.png)
 
 **图 05**:[ProjectName] 替换为 ContactManager ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image10.png))
 
-
 完成这些步骤后，web 应用程序将使用新的设计。 图 6 中的页说明了与年 10 月设计 Contact Manager 应用程序的外观。
-
 
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image6.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image11.png)
 
 **图 06**:ContactManager 年 10 月模板 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image12.png))
-
 
 ## <a name="creating-a-custom-aspnet-mvc-design"></a>创建自定义 ASP.NET MVC 设计
 
@@ -114,11 +102,9 @@ ASP.NET MVC 设计库具有不同的设计样式的不错的选择。 库提供�
 
 我压缩了联系人管理器从迭代 #1 并发送到设计公司的项目。 没有 Visual Studio （感到难为情它们 ！），但是，未出现问题。 他们就能够从免费下载 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)网站，然后打开 Visual Web Developer 中的联系人管理器应用程序。 在几天，它们必须生成图 7 中的设计。
 
-
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
 
 **图 07**:ASP.NET MVC 联系人管理器中设计 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image14.png))
-
 
 新的设计包括两个主要文件： 新的级联样式表文件和新视图母版页文件。 视图母版页包含布局和共享的内容的 ASP.NET MVC 应用程序中的视图。 例如，视图母版页包括标头、 导航选项卡和页脚显示在图 7。 我使用从设计公司中，新的 Site.Master 文件覆盖现有 Site.Master 视图母版页中的 Views\Shared 文件夹
 
@@ -138,11 +124,9 @@ Html.ActionLink() 方法将呈现整个 HTML 超链接。 Url.Action() 方法，
 
 此外，请注意，新的设计包括选定和未选定的选项卡。 例如，在图 8**创建新的联系人**选择选项卡和**我的联系人**不选择选项卡。
 
-
 [![新建项目对话框](iteration-2-make-the-application-look-nice-cs/_static/image8.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image15.png)
 
 **图 08**:选中和取消选中选项卡 ([单击此项可查看原尺寸图像](iteration-2-make-the-application-look-nice-cs/_static/image16.png))
-
 
 若要支持呈现选定和未选定的选项卡，我创建了名为 MenuItemHelper 的自定义 HTML 帮助程序。 此帮助器方法将呈现任一&lt;li&gt;标记或&lt;l i 类 ="所选"&gt;具体取决于当前的控制器和操作是否对应于传递给帮助者的控制器和操作名称的标记。 MenuItemHelper 的代码包含在列表 1 中。
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 32587c7b0fd3075cd46678922b40bda2019f3a26
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: eaeb32180f79fabf557cbc38ff067eb26b47fea7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381128"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129753"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自定义操作筛选器
 
@@ -76,11 +76,10 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Logging_Actions"></a>
-### <a name="exercise-1-logging-actions"></a>练习 1:日志记录操作
+### <a name="exercise-1-logging-actions"></a>练习 1：日志记录操作
 
 在此练习中，您将学习如何使用 ASP.NET MVC 4 筛选器提供程序创建自定义操作日志筛选器。 为此您将应用于 MusicStore 站点，以将所选的控制器中记录所有活动日志记录筛选器。
 
@@ -95,7 +94,6 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 > - **异常**筛选器，如果没有在操作方法中，使用授权筛选器开始和结束与结果执行的某个位置引发未处理的异常，则执行。 异常筛选器可用于任务，例如日志记录或显示错误页。
 > 
 > 有关筛选器提供程序的详细信息，请访问此 MSDN 链接: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx))。
-
 
 <a id="AboutLoggingFeature"></a>
 
@@ -132,7 +130,6 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 > - **OnResultExecuted**(ResultExecutedContext filterContext):后 （在呈现视图时） 后执行的结果。
 > 
 > 通过到派生类中替代任何一种方法，可以执行筛选的代码。
-
 
 1. 打开 **开始** 解决方案位于 **\Source\Ex01-LoggingActions\Begin** 文件夹。
 
@@ -219,7 +216,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Managing_Multiple_Action_Filters"></a>
-### <a name="exercise-2-managing-multiple-action-filters"></a>练习 2:管理多个操作筛选器
+### <a name="exercise-2-managing-multiple-action-filters"></a>练习 2：管理多个操作筛选器
 
 在此练习中将将第二个自定义操作筛选器添加到 StoreController 类并定义将在其中执行两个筛选器的特定顺序。 然后将更新代码以注册全局筛选器。
 
@@ -352,7 +349,6 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 
 > [!NOTE]
 > 此外，可以部署此应用程序到 Windows Azure Web Sites 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
-
 
 ---
 

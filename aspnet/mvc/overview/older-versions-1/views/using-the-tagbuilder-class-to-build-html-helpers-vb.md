@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: ec26f264-d0ea-4031-9943-825505a3ac4b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4fe34858aadb705ffb59e06ba805493d89aa4028
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3b0aa9816209cc326d3dea4b8dfb1b13cf697fcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403202"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130365"
 ---
 # <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 类用于生成 HTML 帮助程序 (VB)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 向您介绍 TagBuilder 类命名为 ASP.NET MVC 框架中的一个有用的实用工具类。 TagBuilder 类可用于轻松生成 HTML 标记。
-
 
 ASP.NET MVC 框架包括名为可以使用时生成的 HTML 帮助程序的 TagBuilder 类的有用的实用工具类。 TagBuilder 类，如所示的类的名称，使您可以轻松地生成 HTML 标记。 在本简短教程随附的 TagBuilder 类概述并了解如何构建简单的 HTML 帮助器呈现 HTML 时使用此类&lt;i m g&gt;标记。
 
@@ -33,7 +32,6 @@ TagBuilder 类都包含在 System.Web.Mvc 命名空间。 它具有五种方法�
 - MergeAttribute() – 可以将属性添加到一个标记。 有多个重载的此方法。
 - SetInnerText() – 可以设置标记的内部文本。 内部文本是自动 HTML 编码。
 - Tostring （） – 使您能够呈现标记。 您可以指定是否想要创建一个正常的标记、 开始标记、 结束标记或自结束标记。
-  
 
 TagBuilder 类具有四个重要属性：
 
@@ -64,11 +62,9 @@ TagBuilder 类具有四个重要属性：
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 
-
 [![新建项目对话框](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
 
 **图 01**:使用图像帮助程序 ([单击此项可查看原尺寸图像](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png))
-
 
 请注意，必须导入 Index.aspx 视图顶部的图像帮助程序关联的命名空间。 使用以下指令导入帮助程序：
 

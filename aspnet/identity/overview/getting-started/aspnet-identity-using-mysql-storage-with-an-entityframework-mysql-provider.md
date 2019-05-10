@@ -9,19 +9,18 @@ ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 6a73efb7d577cc70ca5ebaa69e8fdd03f3735ae4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e89ed139657c5ce9ddcc56879946c62038919483
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59379659"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121446"
 ---
 # <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET Identity：通过 EntityFramework MySQL 提供程序使用 MySQL 存储 (C#)
 
 通过[Maurycy Markowski](https://github.com/maumar)， [Raquel Soares De Almeida](https://github.com/raquelsa)， [Robert McMurray](https://github.com/rmcmurray)
 
 > 本教程演示如何替换的默认数据存储机制[ **ASP.NET 标识**](introduction-to-aspnet-identity.md) EntityFramework （SQL 客户端提供程序） 使用 MySQL 提供程序使用。
-
 
 本教程中，将涵盖以下主题：
 
@@ -90,7 +89,6 @@ ms.locfileid: "59379659"
 > [!NOTE]
 > 这是预发行版本的程序集，并且这种情况下它可能包含 bug。 不应在生产环境中使用预发行版本的提供程序。
 
-
 [单击下图以将其展开。]
 
 [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image22.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image21.png)
@@ -101,7 +99,6 @@ ms.locfileid: "59379659"
 
 > [!NOTE]
 > 下面的示例包含 MySql.Data.dll 特定程序集版本。 如果程序集版本更改，需要修改使用正确版本的合适配置设置。
-
 
 1. 在 Visual Studio 2013 中打开你的项目的 Web.config 文件。
 2. 找到用于实体框架定义的默认数据库提供程序和工厂的以下配置设置：
@@ -131,7 +128,6 @@ ms.locfileid: "59379659"
 
 > [!NOTE]
 > 如果要连接到 Azure 或如果您使用的是在本地托管的数据库上的 SQL Server 实例，则不需要此步骤。
-
 
 若要创建用于 MySQL 的自定义实体框架初始值设定项，请使用以下步骤：
 

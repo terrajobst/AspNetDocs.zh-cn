@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b1660c0d20b76d97ee00acf1080c3eca1f596be2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: be88d4928091cbe3010d6ef7e343de3517bf8211
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412666"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132187"
 ---
 # <a name="using-sql-cache-dependencies-vb"></a>使用 SQL 缓存依赖项 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59412666"
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_61_VB.zip)或[下载 PDF](using-sql-cache-dependencies-vb/_static/datatutorial61vb1.pdf)
 
 > 最简单的缓存策略是时间的允许缓存的数据在指定段后过期。 但此简单的方法意味着，则缓存的数据会保留对其基础的数据源，从而导致保存太长的陈旧数据或太即将过期的最新数据没有关联。 更好的方法是使用 SqlCacheDependency 类，以便数据保持缓存，直到其基础数据已修改的 SQL 数据库中。 本教程演示如何。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -48,25 +47,20 @@ ASP.NET 运行时跟踪当前`changeId`表时缓存数据使用`SqlCacheDependen
 
 使用轮询方法时，数据库必须安装程序以包含上面所述的基础结构： 预定义的表 (`AspNet_SqlCacheTablesForChangeNotification`)，少量的存储的过程和触发器在每个可在 web 中的 SQL 缓存依赖项表应用程序。 可以通过命令行程序创建这些表、 存储的过程和触发器`aspnet_regsql.exe`，它出现在`$WINDOWS$\Microsoft.NET\Framework\version`文件夹。 若要创建`AspNet_SqlCacheTablesForChangeNotification`表和关联的存储的过程，从命令行运行以下命令：
 
-
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample1.cmd)]
 
 > [!NOTE]
 > 若要执行的指定的数据库登录名必须在这些命令[ `db_securityadmin` ](https://msdn.microsoft.com/library/ms188685.aspx)并[ `db_ddladmin` ](https://msdn.microsoft.com/library/ms190667.aspx)角色。 若要检查发送到的数据库 T-SQL`aspnet_regsql.exe`命令行程序，请参阅[此博客文章](http://scottonwriting.net/sowblog/posts/10709.aspx)。
 
-
 例如，若要将轮询的基础结构添加到 Microsoft SQL Server 数据库名为`pubs`名为数据库服务器上`ScottsServer`使用 Windows 身份验证，导航到相应的目录并，请从命令行中，输入：
-
 
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample2.cmd)]
 
 添加数据库级别基础结构后，我们需要将触发器添加到将 SQL 缓存依赖项中使用这些表。 使用`aspnet_regsql.exe`命令行程序，但指定表名称使用`-t`切换，而不是使用`-ed`切换使用`-et`，如下所示：
 
-
 [!code-html[Main](using-sql-cache-dependencies-vb/samples/sample3.html)]
 
 若要添加到触发器`authors`并`titles`表上`pubs`上的数据库`ScottsServer`，使用：
-
 
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample4.cmd)]
 
@@ -78,32 +72,25 @@ ASP.NET 运行时跟踪当前`changeId`表时缓存数据使用`SqlCacheDependen
 
 首先关闭 Visual Studio。 接下来，打开 SQL Server Management Studio，然后选择要连接到`localhost\SQLExpress`使用 Windows 身份验证服务器。
 
-
 ![将附加到 localhost\SQLExpress 服务器](using-sql-cache-dependencies-vb/_static/image1.gif)
 
 **图 1**:将附加到`localhost\SQLExpress`服务器
 
-
 Management Studio 连接到服务器后，会显示服务器并可能对数据库、 安全性和等的子文件夹。 右键单击数据库文件夹并选择附加选项。 这将显示附加数据库对话框 （请参见图 2）。 单击添加按钮，然后选择`NORTHWND.MDF`database 文件夹中您的 web 应用程序 s`App_Data`文件夹。
-
 
 [![将附加 northwnd 不。MDF App_Data 文件夹中的数据库](using-sql-cache-dependencies-vb/_static/image2.gif)](using-sql-cache-dependencies-vb/_static/image1.png)
 
 **图 2**:附加`NORTHWND.MDF`数据库从`App_Data`文件夹 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image2.png))
 
-
 这会将数据库添加到数据库文件夹中。 数据库名称可能是数据库文件的完整路径或完整路径前面带有[GUID](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)。 若要避免无需使用 aspnet 时此长时间的数据库名称键入\_regsql.exe 命令行工具，附加到更加用户友好名称只是在数据库上右键单击该数据库重命名并选择重命名。 我已重命名为 DataTutorials 的我的数据库。
-
 
 ![附加的数据库重命名为更多的用户友好名称](using-sql-cache-dependencies-vb/_static/image3.gif)
 
 **图 3**:附加的数据库重命名为更多的用户友好名称
 
-
 ## <a name="step-3-adding-the-polling-infrastructure-to-the-northwind-database"></a>步骤 3：将轮询基础结构添加到 Northwind 数据库
 
 现在，我们已附加`NORTHWND.MDF`数据库从`App_Data`文件夹中，我们准备就绪后，若要添加的轮询基础结构。 假设你已重命名为 DataTutorials 的数据库，运行以下四个命令：
-
 
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample5.cmd)]
 
@@ -111,16 +98,13 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 
 一旦已重新打开 Visual Studio，深入了解通过服务器资源管理器数据库。 请注意新表 (`AspNet_SqlCacheTablesForChangeNotification`)，新存储过程和触发器上`Products`， `Categories`，和`Suppliers`表。
 
-
 ![Database 现在包括必要的轮询基础结构](using-sql-cache-dependencies-vb/_static/image4.gif)
 
 **图 4**:Database 现在包括必要的轮询基础结构
 
-
 ## <a name="step-4-configuring-the-polling-service"></a>步骤 4：配置轮询服务
 
 在创建后所需的表、 触发器和存储的过程在数据库中，最后一步是配置轮询服务，通过完成`Web.config`通过指定以毫秒为单位的轮询频率和使用数据库。 以下标记将每隔一秒一次轮询 Northwind 数据库。
-
 
 [!code-xml[Main](using-sql-cache-dependencies-vb/samples/sample6.xml)]
 
@@ -133,7 +117,6 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 > [!NOTE]
 > 上面的示例中提供了单个`pollTime`中的值`<sqlCacheDependency>`元素，但是您可以选择指定`pollTime`中的值`<add>`元素。 如果你有多个指定的数据库，并想要自定义每个数据库的轮询频率，这非常有用。
 
-
 ## <a name="step-5-declaratively-working-with-sql-cache-dependencies"></a>步骤 5：以声明方式使用 SQL 缓存依赖项
 
 在步骤 1 到 4 中我们介绍了如何设置必要的数据库基础结构和配置轮询系统。 使用此基础结构，我们现在可以添加项目数据缓存有关联 SQL 缓存依赖项的使用以编程方式或声明性技术。 在此步骤中，我们将介绍如何以声明方式使用 SQL 缓存依赖项。 在步骤 6 中，我们将介绍编程方法。
@@ -142,34 +125,27 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 
 若要演示如何以声明方式使用 SQL 缓存依赖项，打开`SqlCacheDependencies.aspx`页中`Caching`文件夹，然后拖动 GridView 从工具箱拖到设计器。 设置 GridView s`ID`到`ProductsDeclarative`，并从其智能标记，选择要绑定到名为新 ObjectDataSource `ProductsDataSourceDeclarative`。
 
-
 [![创建名为 ProductsDataSourceDeclarative 新 ObjectDataSource](using-sql-cache-dependencies-vb/_static/image5.gif)](using-sql-cache-dependencies-vb/_static/image3.png)
 
 **图 5**:创建新对象数据源命名`ProductsDataSourceDeclarative`([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image4.png))
 
-
 配置要使用 ObjectDataSource`ProductsBLL`类，然后在选择选项卡中设置下拉列表`GetProducts()`。 在更新选项卡，选择`UpdateProduct`带有三个输入参数的重载`productName`， `unitPrice`，和`productID`。 在 INSERT 和 DELETE 选项卡中设置为 （无） 下拉列表。
-
 
 [![带有三个输入参数，请使用 UpdateProduct 重载](using-sql-cache-dependencies-vb/_static/image6.gif)](using-sql-cache-dependencies-vb/_static/image5.png)
 
 **图 6**:使用三个输入参数使用 UpdateProduct 重载 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-vb/_static/image6.png))
 
-
 [![设置为 （无） 用于插入和删除选项卡的下拉列表](using-sql-cache-dependencies-vb/_static/image7.gif)](using-sql-cache-dependencies-vb/_static/image7.png)
 
 **图 7**:用于插入和删除选项卡或设置为 （无） 的下拉列表 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-vb/_static/image8.png))
-
 
 完成配置数据源向导后，Visual Studio 将创建 BoundFields 和 CheckBoxFields 在 GridView 中每个数据字段。 删除所有字段，但`ProductName`， `CategoryName`，和`UnitPrice`，并根据需要设置这些字段的格式。 从 GridView s 智能标记，选中启用分页、 启用排序和启用编辑复选框。 Visual Studio 将设置 ObjectDataSource s`OldValuesParameterFormatString`属性设置为`original_{0}`。 为了使 GridView 的编辑功能才能正常工作，或者此属性完全从声明性语法或删除的设置回其默认值， `{0}`。
 
 最后，添加一个标签 Web 控件上方的 GridView 并设置其`ID`属性设置为`ODSEvents`并将其`EnableViewState`属性设置为`False`。 进行这些更改后，在页面 s 声明性标记应类似于以下。 请注意，我已进行了大量不需要为了演示 SQL 缓存依赖项功能的 GridView 字段的美观自定义设置。
 
-
 [!code-aspx[Main](using-sql-cache-dependencies-vb/samples/sample7.aspx)]
 
 接下来，创建事件处理程序的 ObjectDataSource s`Selecting`事件并在其添加以下代码：
-
 
 [!code-vb[Main](using-sql-cache-dependencies-vb/samples/sample8.vb)]
 
@@ -177,14 +153,11 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 
 现在，请访问此页上的通过浏览器。 自我们 ve 尚未来实现任何缓存，每个页上，对此进行排序，或编辑的网格页的时间，应显示的文本、 选择事件触发，如图 8 所示。
 
-
 [![每个时间分页 GridView 编辑，或者按，就会触发 ObjectDataSource 的选择事件](using-sql-cache-dependencies-vb/_static/image8.gif)](using-sql-cache-dependencies-vb/_static/image9.png)
 
 **图 8**:ObjectDataSource s`Selecting`事件将触发每个时间分页 GridView、 编辑或按 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image10.png))
 
-
 中可以看到[使用 ObjectDataSource 缓存数据](caching-data-with-the-objectdatasource-vb.md)教程中，设置`EnableCaching`属性设置为`True`ObjectDataSource 来缓存其数据以便通过指定的持续时间将导致其`CacheDuration`属性。 ObjectDataSource 还有[`SqlCacheDependency`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx)，从而将一个或多个 SQL 缓存依赖项添加到缓存的数据使用模式：
-
 
 [!code-css[Main](using-sql-cache-dependencies-vb/samples/sample9.css)]
 
@@ -193,24 +166,19 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 > [!NOTE]
 > 可以使用 SQL 缓存依赖项*并*通过设置基于时间的到期`EnableCaching`到`True`，`CacheDuration`为时间间隔，和`SqlCacheDependency`到数据库和表名称。 ObjectDataSource 会逐出其数据到达的基于时间的过期时间时或当轮询系统就会注意，基础数据库数据已更改，以先发生者为准。
 
-
 在 GridView`SqlCacheDependencies.aspx`显示来自两个表的数据`Products`并`Categories`(产品 s`CategoryName`通过检索字段`JOIN`上`Categories`)。 因此，我们想要指定两个 SQL 缓存依赖项：NorthwindDB:Products;NorthwindDB:Categories。
-
 
 [![配置对象数据源来支持缓存产品和类别上使用 SQL 缓存依赖项](using-sql-cache-dependencies-vb/_static/image9.gif)](using-sql-cache-dependencies-vb/_static/image11.png)
 
 **图 9**:在配置为支持缓存使用 SQL 缓存依赖项 ObjectDataSource`Products`并`Categories`([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image12.png))
 
-
 配置对象数据源来支持缓存之后, 重新访问通过浏览器页面。 同样，激发的文本选择事件应显示在第一次的页面访问，但应消失时分页、 排序，或单击编辑或取消按钮。 这是因为数据加载到 ObjectDataSource 的缓存后，它会一直保留直到`Products`或`Categories`表有修改或通过 GridView 数据进行了更新。
 
 通过网格分页并记下缺少选择事件触发后的文本，打开一个新的浏览器窗口并导航到编辑、 插入和删除部分中的基础知识教程 (`~/EditInsertDelete/Basics.aspx`)。 更新的名称或产品的价格。 然后，从第一个浏览器窗口中，查看不同的数据页、 排序网格中，或单击行的编辑按钮。 这一次，选择事件触发应重新出现，因为基础数据库的数据已被修改 （请参阅图 10）。 如果未显示的文本，不会等待一段时间，然后重试。 请记住，轮询服务正在检查的更改`Products`表每个`pollTime`毫秒，以便更新基础数据时和时逐出缓存的数据之间存在延迟。
 
-
 [![修改 Products 表逐出缓存的产品数据](using-sql-cache-dependencies-vb/_static/image10.gif)](using-sql-cache-dependencies-vb/_static/image13.png)
 
 **图 10**:修改 Products 表逐出缓存产品数据 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-vb/_static/image14.png))
-
 
 ## <a name="step-6-programmatically-working-with-thesqlcachedependencyclass"></a>步骤 6：以编程方式使用`SqlCacheDependency`类
 
@@ -218,48 +186,39 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 
 使用轮询系统`SqlCacheDependency`对象必须与一个特定的数据库和表对相关联。 下面的代码，例如，创建`SqlCacheDependency`对象，基于 Northwind 数据库的`Products`表：
 
-
 [!code-vb[Main](using-sql-cache-dependencies-vb/samples/sample10.vb)]
 
 两个输入参数`SqlCacheDependency`s 构造函数分别是数据库和表名称。 使用 ObjectDataSource s 喜欢`SqlCacheDependency`属性，使用的数据库名称是在中指定的值相同`name`的属性`<add>`中的元素`Web.config`。 表名是数据库表的实际名称。
 
 若要将相关联`SqlCacheDependency`添加到数据缓存的项，请使用其中一个`Insert`接受依赖关系的方法重载。 下面的代码添加*值*到无限期的持续时间的数据缓存，但将其与`SqlCacheDependency`上`Products`表。 简单地说，*值*将保留在缓存中，直到被逐出，否则由于内存约束或轮询系统已检测到因为`Products`表已更改自缓存。
 
-
 [!code-vb[Main](using-sql-cache-dependencies-vb/samples/sample11.vb)]
 
 缓存层 s`ProductsCL`类当前缓存中的数据`Products`表可使用 60 秒的基于时间的到期。 让我们来更新此类，以便它改为使用 SQL 缓存依赖项。 `ProductsCL`类的`AddCacheItem`方法，它负责将数据添加到缓存，当前包含以下代码：
-
 
 [!code-vb[Main](using-sql-cache-dependencies-vb/samples/sample12.vb)]
 
 更新此代码以使用`SqlCacheDependency`对象而不是`MasterCacheKeyArray`缓存依赖项：
 
-
 [!code-vb[Main](using-sql-cache-dependencies-vb/samples/sample13.vb)]
 
 若要测试此功能，向下的现有页添加 GridView `ProductsDeclarative` GridView。 设置此新 GridView s`ID`到`ProductsProgrammatic`并通过其智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSourceProgrammatic`。 配置要使用 ObjectDataSource`ProductsCL`类，设置下拉列表中选择和更新选项卡添加到`GetProducts`和`UpdateProduct`分别。
-
 
 [![配置对象数据源以使用 ProductsCL 类](using-sql-cache-dependencies-vb/_static/image11.gif)](using-sql-cache-dependencies-vb/_static/image15.png)
 
 **图 11**:配置为使用 ObjectDataSource`ProductsCL`类 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image16.png))
 
-
 [![从选择的选项卡的下拉列表中选择 GetProducts 方法](using-sql-cache-dependencies-vb/_static/image12.gif)](using-sql-cache-dependencies-vb/_static/image17.png)
 
 **图 12**:选择`GetProducts`从下拉列表中的选择选项卡 s 方法 ([单击以查看实际尺寸的图像](using-sql-cache-dependencies-vb/_static/image18.png))
-
 
 [![从更新选项卡的下拉列表中选择 UpdateProduct 方法](using-sql-cache-dependencies-vb/_static/image13.gif)](using-sql-cache-dependencies-vb/_static/image19.png)
 
 **图 13**:从更新选项卡的下拉列表中选择 UpdateProduct 方法 ([单击此项可查看原尺寸图像](using-sql-cache-dependencies-vb/_static/image20.png))
 
-
 完成配置数据源向导后，Visual Studio 将创建 BoundFields 和 CheckBoxFields 在 GridView 中每个数据字段。 像使用第一个 GridView 添加到此页中，删除所有字段，但`ProductName`， `CategoryName`，和`UnitPrice`，并根据需要设置这些字段的格式。 从 GridView s 智能标记，选中启用分页、 启用排序和启用编辑复选框。 如同`ProductsDataSourceDeclarative`ObjectDataSource、 Visual Studio 将设置`ProductsDataSourceProgrammatic`ObjectDataSource s`OldValuesParameterFormatString`属性设置为`original_{0}`。 为了使 GridView 的编辑功能，若要正常工作，请将此属性设置回`{0}`（或从声明性语法中完全删除属性赋值）。
 
 完成这些任务后, 所得的 GridView 和 ObjectDataSource 声明性标记应如下所示：
-
 
 [!code-aspx[Main](using-sql-cache-dependencies-vb/samples/sample14.aspx)]
 
@@ -272,7 +231,6 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 > [!NOTE]
 > 这种延迟是更有可能在编辑通过 GridView 中的产品之一时显示`SqlCacheDependencies.aspx`。 在中[体系结构中缓存数据](caching-data-in-the-architecture-vb.md)教程中我们添加了`MasterCacheKeyArray`缓存依赖关系，以确保通过正在编辑的数据`ProductsCL`类的`UpdateProduct`方法已从缓存逐出。 但是，我们替换为此缓存依赖项修改时`AddCacheItem`方法之前在此步骤中的，因此`ProductsCL`类将继续显示缓存的数据，直到轮询系统就会注意到更改`Products`表。 我们将了解如何重新引入`MasterCacheKeyArray`缓存在步骤 7 中的依赖关系。
 
-
 ## <a name="step-7-associating-multiple-dependencies-with-a-cached-item"></a>步骤 7：将多个依赖项与缓存的项相关联
 
 请记住，`MasterCacheKeyArray`缓存依赖项用于确保*所有*更新中其关联的任何单个项时，与产品相关的数据从缓存中逐出。 例如，`GetProductsByCategoryID(categoryID)`方法缓存`ProductsDataTables`实例为每个唯一*categoryID*值。 如果其中某个对象被逐出，`MasterCacheKeyArray`缓存依赖项可确保其他人也会删除。 不缓存此依赖项，修改缓存的数据的可能性是存在的其他缓存的产品数据可能会过期。 因此，它非常重要，我们维护`MasterCacheKeyArray`缓存依赖项时使用 SQL 缓存依赖项。 但是，数据缓存 s`Insert`方法只允许单个依赖关系对象。
@@ -283,14 +241,12 @@ Management Studio 连接到服务器后，会显示服务器并可能对数据�
 
 下面显示了有关更新的代码`ProductsCL`类的`AddCacheItem`方法。 该方法将创建`MasterCacheKeyArray`缓存依赖项一起`SqlCacheDependency`对象的`Products`， `Categories`，和`Suppliers`表。 这些所有合并成一个`AggregateCacheDependency`名为对象`aggregateDependencies`，后者再传递到`Insert`方法。
 
-
 [!code-vb[Main](using-sql-cache-dependencies-vb/samples/sample15.vb)]
 
 测试出此新代码。现在将变为`Products`， `Categories`，或`Suppliers`表会导致被逐出缓存的数据。 此外，`ProductsCL`类 s`UpdateProduct`方法，称为编辑通过 GridView 产品时，逐出`MasterCacheKeyArray`缓存依赖项，这会导致缓存`ProductsDataTable`逐出和下一步重新检索的数据请求。
 
 > [!NOTE]
 > SQL 缓存依赖项也可以用于[输出缓存](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)。 有关此功能的演示，请参阅：[使用 ASP.NET 输出缓存随 SQL Server](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx)。
-
 
 ## <a name="summary"></a>总结
 

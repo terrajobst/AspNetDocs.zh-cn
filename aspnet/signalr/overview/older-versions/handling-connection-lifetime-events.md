@@ -8,12 +8,12 @@ ms.date: 06/05/2013
 ms.assetid: e608e263-264d-448b-b0eb-6eeb77713b22
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: a8121a2d7c4ed14e296dc72c72ca7c25939a2b50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fb671e730a1d41c07b350bf1d64ac1d0b1be55c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414005"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128792"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>了解和处理 SignalR 中的连接生存期事件 1.x
 
@@ -28,7 +28,6 @@ ms.locfileid: "59414005"
 > - [如何处理中心类中的连接生存期事件](index.md)
 > - [如何处理在 JavaScript 客户端的连接生存期事件](index.md)
 > - [如何处理在.NET 客户端的连接生存期事件](index.md)
-
 
 ## <a name="overview"></a>概述
 
@@ -132,7 +131,6 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 > 
 > [!IMPORTANT]
 > 此处所述的事件的顺序不能保证。 SignalR 使每次尝试此方案中，根据不可预测的方式引发连接生存期事件，但有许多不同的网络事件以及基础通信框架，如传输 Api 处理它们的各种方法。 例如，`Reconnected`可能无法引发事件，当客户端重新连接，或`OnConnected`当尝试建立的连接不成功时，可能会运行在服务器上的处理程序。 本主题介绍的通常会生成某些典型的情况下的影响。
-
 
 <a id="clientdisconnect"></a>
 

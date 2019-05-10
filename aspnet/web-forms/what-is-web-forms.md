@@ -8,12 +8,12 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: cb7a4ff9dbf746c0729129445042e53e506df5d2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 19be419c499759713971a6c77674c924867d1bbc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385730"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133228"
 ---
 # <a name="what-is-web-forms"></a>什么是 Web 窗体
 
@@ -26,7 +26,6 @@ Web 窗体是用户请求使用其浏览器的页面。 可以编写这些页面
 > [!NOTE] 
 > 
 > ASP.NET 和 Visual Studio 文档跨越多个版本。 突出显示从以前版本功能的主题可能可用于你的当前任务和使用最新版本的方案。
-
 
 **ASP.NET Web 窗体是：** 
 

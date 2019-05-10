@@ -8,12 +8,12 @@ ms.date: 03/02/2009
 ms.assetid: df6cf4b7-0bb3-4c4e-b17a-bd78a759a6bc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c7a1b9e82defaae71f0a911e5e4321f6e15ad8bf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 46925f22b7dfc23f2bb89b8d2fff0cbd8ae49062
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422611"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122492"
 ---
 # <a name="performing-simple-validation-vb"></a>执行简单验证 (VB)
 
@@ -21,16 +21,13 @@ ms.locfileid: "59422611"
 
 > 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 引入到模型状态和验证 HTML 帮助程序。
 
-
 本教程的目的是说明如何执行验证的 ASP.NET MVC 应用程序中。 例如，您将了解如何防止有人提交窗体不包含必填字段的值。 了解如何使用模型状态和验证 HTML 帮助程序。
 
 ## <a name="understanding-model-state"></a>了解模型状态
 
 使用模型状态-或模型状态字典的更准确地说，来表示验证错误。 例如，在列表 1 中的 create （） 操作将产品类添加到数据库之前会验证产品类的属性。
 
-
 我这里不建议将你验证或数据库的逻辑添加到控制器。 控制器应包含仅与应用程序流控制相关的逻辑。 我们正采取一种快捷方式为简单起见。
-
 
 **Listing 1 - Controllers\ProductController.vb**
 
@@ -52,19 +49,15 @@ ASP.NET MVC 框架包括两个验证帮助程序： Html.ValidationMessage() 帮
 4. 从**查看内容**下拉列表中，选择创建。
 5. 单击“添加”按钮。
 
-
 请确保生成应用程序之前添加的视图。 否则，类的列表不会显示在**查看数据类**下拉列表中。
-
 
 [![新建项目对话框](performing-simple-validation-vb/_static/image1.jpg)](performing-simple-validation-vb/_static/image1.png)
 
 **图 01**:添加视图 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image2.png))
 
-
 [![新建项目对话框](performing-simple-validation-vb/_static/image2.jpg)](performing-simple-validation-vb/_static/image3.png)
 
 **图 02**:创建强类型化视图 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image4.png))
-
 
 完成这些步骤后，在代码清单 2 中获取创建视图。
 
@@ -78,11 +71,9 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 
 图 3 中的页说明了呈现的验证帮助程序，在窗体提交使用缺少的字段和无效值时的错误消息。
 
-
 [![新建项目对话框](performing-simple-validation-vb/_static/image3.jpg)](performing-simple-validation-vb/_static/image5.png)
 
 **图 03**:提交问题与创建视图 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image6.png))
-
 
 请注意，HTML 的外观输入验证错误时，还会修改字段。 Html.TextBox() 帮助器呈现*类 ="输入验证错误"* 属性验证错误时由 Html.TextBox() 帮助器呈现的属性与相关联。
 
@@ -98,16 +89,13 @@ Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 
 > 
 > HtmlHelper 类包括只读的静态属性，检索验证的名称与相关的 CSS 类。 ValidationInputCssClassName、 ValidationFieldCssClassName 和 ValidationSummaryCssClassName 命名这些静态属性。
 
-
 ## <a name="prebinding-validation-and-postbinding-validation"></a>Prebinding 验证和 Postbinding 验证
 
 如果提交用于创建一种产品，HTML 窗体和 price 字段和库存量字段没有值输入值无效，则将获得图 4 中显示的验证消息。 这些验证错误消息来自何处？
 
-
 [![新建项目对话框](performing-simple-validation-vb/_static/image4.jpg)](performing-simple-validation-vb/_static/image7.png)
 
 **图 04**:Prebinding 验证错误 ([单击此项可查看原尺寸图像](performing-simple-validation-vb/_static/image8.png))
-
 
 有两种类型实际验证错误消息的那些之前 HTML 窗体字段绑定到一个类，这些生成的窗体字段绑定到类后生成。 换而言之，有 prebinding 验证错误和 postbinding 验证错误。
 

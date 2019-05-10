@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: ac6916d0-a5ab-4218-9760-7ba9e72d258c
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: da913e08cd007a89b659f87ef30ea15160692c09
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9ee8834cdcf9f8ec5bbdd5188113ea28aa2a9ec7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416943"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134468"
 ---
 # <a name="batch-deleting-c"></a>批量删除 (C#)
 
@@ -23,48 +23,39 @@ ms.locfileid: "59416943"
 
 > 了解如何删除单个操作中的多个数据库记录。 在用户界面层我们制作的增强 GridView 中前面的教程中创建。 数据访问层中，我们将以确保所有删除操作成功，或者所有删除操作都将回滚的事务中的多个删除操作。
 
-
 ## <a name="introduction"></a>介绍
 
 [前面的教程](batch-updating-cs.md)探讨了如何创建批处理编辑界面使用完全可编辑的 GridView。 编辑界面一批将在其中用户通常编辑多个记录在一次的情况下，需要回发和键盘鼠标上下文操作远远少于开关，从而提高最终用户的效率。 此技术是同样适用于其中很常见的用户删除一次性许多记录的页面。
 
 已使用的联机电子邮件客户端的任何人已经非常熟悉最常见的批处理删除接口之一： 一个具有对应删除所有选中的项的网格中的每一行中的复选框按钮 （请参见图 1）。 本教程中非常短因为我们已做的所有硬工作在前面的教程中创建基于 web 的界面和要删除的一系列记录作为单个原子操作的方法。 在中[添加 GridView 复选框列](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md)教程中，我们创建的列的复选框并在 GridView[包装事务内的数据库修改](wrapping-database-modifications-within-a-transaction-cs.md)教程中，我们创建中的方法将使用事务来删除 BLL`List<T>`的`ProductID`值。 在本教程中，我们将制作的并合并我们以前的体验，以创建工作批删除示例。
 
-
 [![每个行包含一个复选框](batch-deleting-cs/_static/image1.gif)](batch-deleting-cs/_static/image1.png)
 
 **图 1**:每个行包含一个复选框 ([单击此项可查看原尺寸图像](batch-deleting-cs/_static/image2.png))
-
 
 ## <a name="step-1-creating-the-batch-deleting-interface"></a>步骤 1：创建批处理正在删除接口
 
 由于我们已创建删除接口中的批处理[添加 GridView 复选框列](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md)教程中，我们可以只需将其复制到`BatchDelete.aspx`而不是从头开始创建它。 首先打开`BatchDelete.aspx`页中`BatchData`文件夹并`CheckBoxField.aspx`页中`EnhancedGridView`文件夹。 从`CheckBoxField.aspx`页上，请转到源视图并复制之间的标记`<asp:Content>`标记如图 2 中所示。
 
-
 [![CheckBoxField.aspx 的声明性标记复制到剪贴板](batch-deleting-cs/_static/image2.gif)](batch-deleting-cs/_static/image3.png)
 
 **图 2**:将复制的声明性标记`CheckBoxField.aspx`到剪贴板 ([单击以查看实际尺寸的图像](batch-deleting-cs/_static/image4.png))
 
-
 接下来，请转到中的源视图`BatchDelete.aspx`并粘贴剪贴板中的内容`<asp:Content>`标记。 再复制和粘贴的代码中的代码隐藏类中`CheckBoxField.aspx.cs`到中的代码隐藏类内`BatchDelete.aspx.cs`(`DeleteSelectedProducts`按钮 s`Click`事件处理程序`ToggleCheckState`方法，和`Click`事件处理程序有关`CheckAll`和`UncheckAll`按钮)。 通过此内容，请在复制后`BatchDelete.aspx`页面 + s 代码隐藏类应包含以下代码：
-
 
 [!code-csharp[Main](batch-deleting-cs/samples/sample1.cs)]
 
 在复制后通过声明性标记和源代码，请花费片刻时间来测试`BatchDelete.aspx`通过查看通过浏览器。 应会看到 GridView 列出每个行，其中列出 s 产品名称、 类别和价格以及一个复选框的 GridView 中的前十个产品。 应该有三个按钮：检查所有，取消选中所有，并删除所选的产品。 单击查看全部按钮可以选择所有复选框，而取消选中所有清除所有复选框。 单击删除所选产品显示一条消息，其中列出了`ProductID`值的所选的产品，但不实际删除产品。
 
-
 [![从 CheckBoxField.aspx 接口已被移动到 BatchDeleting.aspx](batch-deleting-cs/_static/image3.gif)](batch-deleting-cs/_static/image5.png)
 
 **图 3**:从接口`CheckBoxField.aspx`已移至`BatchDeleting.aspx`([单击以查看实际尺寸的图像](batch-deleting-cs/_static/image6.png))
-
 
 ## <a name="step-2-deleting-the-checked-products-using-transactions"></a>步骤 2：删除选中的产品使用事务
 
 与正在删除已成功复制到的接口的批处理`BatchDeleting.aspx`，则所有剩下是更新代码，以便删除所选产品按钮删除使用的检查的产品`DeleteProductsWithTransaction`中的方法`ProductsBLL`类。 此方法中添加[包装事务内的数据库修改](wrapping-database-modifications-within-a-transaction-cs.md)教程中，接受作为其输入`List<T>`的`ProductID`值，并删除每个相应`ProductID`的作用域内事务。
 
 `DeleteSelectedProducts`按钮 s`Click`事件处理程序当前使用以下`foreach`循环来循环访问每个 GridView 行：
-
 
 [!code-csharp[Main](batch-deleting-cs/samples/sample2.cs)]
 
@@ -74,27 +65,22 @@ ms.locfileid: "59416943"
 
 为了确保原子性，我们需要改为使用`ProductsBLL`类的`DeleteProductsWithTransaction`方法。 因为此方法接受一系列`ProductID`我们需要首先编译此列表从网格，然后将其作为参数传递值。 我们首先创建的实例`List<T>`类型的`int`。 内`foreach`我们需要添加所选的产品的循环`ProductID`值与此`List<T>`。 循环之后这`List<T>`必须将传递给`ProductsBLL`类的`DeleteProductsWithTransaction`方法。 更新`DeleteSelectedProducts`按钮的`Click`事件处理程序使用以下代码：
 
-
 [!code-csharp[Main](batch-deleting-cs/samples/sample3.cs)]
 
 更新的代码创建`List<T>`类型的`int`(`productIDsToDelete`)，并填充其与`ProductID`要删除的值。 之后`foreach`循环，如果没有选择，至少一个产品`ProductsBLL`类的`DeleteProductsWithTransaction`方法调用并传递此列表。 `DeleteResults`还显示标签和数据重新绑定到 GridView，（以使新已删除的记录不会再显示为网格中的行）。
 
 图 4 显示了 GridView 后的行数已选择要删除。 图 5 显示的屏幕，单击删除所选产品按钮后立即。 请注意，在图 5`ProductID`下面 GridView 的标签中显示的已删除的记录值，这些行不再 GridView。
 
-
 [![将删除所选的产品](batch-deleting-cs/_static/image4.gif)](batch-deleting-cs/_static/image7.png)
 
 **图 4**:选择产品将被删除 ([单击此项可查看原尺寸图像](batch-deleting-cs/_static/image8.png))
-
 
 [![删除产品产品 id 值为所列下方的 GridView](batch-deleting-cs/_static/image5.gif)](batch-deleting-cs/_static/image9.png)
 
 **图 5**:删除产品`ProductID`的值为 GridView 下方列出 ([单击以查看实际尺寸的图像](batch-deleting-cs/_static/image10.png))
 
-
 > [!NOTE]
 > 若要测试`DeleteProductsWithTransaction`s 方法原子性，手动添加的产品条目`Order Details`表，然后尝试删除该产品 （以及其他）。 尝试删除与某关联订单的产品，但请注意如何其他所选的产品删除操作都将回滚时，你将收到外键约束冲突。
-
 
 ## <a name="summary"></a>总结
 

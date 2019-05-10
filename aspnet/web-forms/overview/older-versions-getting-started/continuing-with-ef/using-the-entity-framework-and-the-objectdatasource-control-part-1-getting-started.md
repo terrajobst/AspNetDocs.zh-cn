@@ -8,12 +8,12 @@ ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: c0f11019c7410b756d592066a7fe33b3e26fd383
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2f14707eb058d438495dd2bc4c17b976c471fc97
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407193"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131344"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门
 
@@ -45,7 +45,6 @@ ms.locfileid: "59407193"
 > ## <a name="questions"></a>问题
 > 
 > 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)，则[实体框架和 LINQ to 实体论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
-
 
 `EntityDataSource`控件可以非常快速地创建应用程序，但它通常要求您保留大量的业务逻辑和中的数据访问逻辑应用 *.aspx*页。 如果希望应用程序复杂性增长而增加，并要求不间断的维护，您可以为了创建预先投入更多的开发时间*n 层*或*分层*应用程序结构这就是更易于维护。 若要实现此体系结构，请从业务逻辑层 (BLL) 和数据访问层 (DAL) 分隔的表示层。 若要实现此结构的一种方法是使用`ObjectDataSource`而不是控制`EntityDataSource`控件。 当你使用`ObjectDataSource`控件，实现你自己的数据访问代码，然后调用其 *.aspx*页使用具有许多相同的控件功能的其他数据源控件。 这允许您将 n 层方法的优点与使用 Web 窗体控件进行数据访问的优势相结合。
 
@@ -102,7 +101,6 @@ ms.locfileid: "59407193"
 > 
 > 保存更改后，你将不能删除中的行将`Person`表如果该人是部门管理员。 在生产应用程序中，会提供特定错误消息，当数据库约束会阻止删除，或将指定的级联删除。 有关如何指定级联删除的示例，请参阅[实体框架和 ASP.NET – 获取启动第 2 部分](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md)。
 
-
 ### <a name="adding-a-view-to-the-database"></a>将视图添加到数据库
 
 在新*Departments.aspx*你将需要创建的页上，你想要提供名称采用"姓氏，名字"格式的讲师，下拉列表，以便用户可以选择部门管理员。 若要更加轻松地执行此操作，将在数据库中创建一个视图。 该视图将包括只需通过下拉列表所需的数据: （正确格式） 的完整名称和记录密钥。
@@ -136,7 +134,6 @@ ms.locfileid: "59407193"
 > [!NOTE]
 > 在中**输出**并**错误列表**windows 可能会看到一条警告消息，通知您该工具自动创建主数据库密钥的新`vInstructorName`视图。 这是预期行为。
 
-
 到新引用时`vInstructorName`在代码中的实体，你不想要使用的前缀为其小写字母"v"的数据库约定。 因此，您将重命名的实体和实体集在模型中。
 
 打开**模型浏览器**。 您看到`vInstructorName`列为实体类型和视图。
@@ -159,7 +156,6 @@ ms.locfileid: "59407193"
 
 > [!NOTE]
 > 一种常见做法是创建每个实体类型的存储库类。 在本教程中，使用多个实体类型的一个存储库类。 有关存储库模式的详细信息，请参阅中的帖子[实体框架团队的博客](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx)并[Julie Lerman 的博客](http://thedatafarm.com/blog/data-access/agile-ef4-repository-part-3-fine-tuning-the-repository/)。
-
 
 `GetDepartments`方法将返回`IEnumerable`对象而非`IQueryable`为了确保即使存储库对象本身被释放后返回的集合的可用对象。 `IQueryable`每当访问，但可能会尝试呈现数据的数据绑定控件时释放存储库对象，对象可能会导致数据库访问权限。 您可以返回另一个集合类型，如`IList`对象而不是`IEnumerable`对象。 但是，返回`IEnumerable`对象，可以确保你可以如执行典型的只读列表处理任务`foreach`循环和 LINQ 查询，但您不能添加或删除项在集合中，这可能意味着，此类更改会保存到数据库。
 
@@ -309,7 +305,6 @@ ms.locfileid: "59407193"
 
 > [!NOTE]
 > 你将无法再编辑未添加的行 (即，已在数据库中)，由于数据库; 中的无效数据创建与数据库的行的管理员是学生。 如果你尝试编辑其中之一，则会报告类似的错误的错误页 `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
-
 
 [![Image10](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image36.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image35.png)
 

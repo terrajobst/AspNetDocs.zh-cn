@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f2cd9c752968f11efe74cce1c620d0b7cf6a467
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b35359de44b974566ed90e3c19afa46ab29975e8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408584"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131135"
 ---
 # <a name="paging-and-sorting-report-data-vb"></a>分页和排序报表数据 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408584"
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_24_VB.exe)或[下载 PDF](paging-and-sorting-report-data-vb/_static/datatutorial24vb1.pdf)
 
 > 分页和排序是两个非常常见的功能，在一个在线应用程序中显示数据时。 在本教程中，我们将首先看一下添加排序和分页至我们的报表，然后，我们将生成后在将来的教程。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -40,71 +39,55 @@ ms.locfileid: "59408584"
 - `SortParameter.aspx`
 - `CustomSortingUI.aspx`
 
-
 ![创建 PagingAndSorting 文件夹并添加教程 ASP.NET 页面](paging-and-sorting-report-data-vb/_static/image1.png)
 
 **图 1**:创建 PagingAndSorting 文件夹并添加教程 ASP.NET 页面
 
-
 接下来，打开`Default.aspx`页上，并将其拖`SectionLevelTutorialListing.ascx`从用户控制`UserControls`文件夹拖到设计图面。 此用户控件，我们在中创建[母版页和站点导航](../introduction/master-pages-and-site-navigation-vb.md)教程中，枚举站点图，并在项目符号列表中的当前部分中显示这些教程。
-
 
 ![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](paging-and-sorting-report-data-vb/_static/image2.png)
 
 **图 2**:将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx
 
-
 为了使显示分页和排序的教程中我们将创建的项目符号列表，我们需要将它们添加到的站点映射。 打开`Web.sitemap`文件，并编辑、 插入、 和删除站点映射节点标记后添加以下标记：
 
-
 [!code-xml[Main](paging-and-sorting-report-data-vb/samples/sample1.xml)]
-
 
 ![更新包括新的 ASP.NET 页面的站点图](paging-and-sorting-report-data-vb/_static/image3.png)
 
 **图 3**:更新包括新的 ASP.NET 页面的站点图
 
-
 ## <a name="step-2-displaying-product-information-in-a-gridview"></a>步骤 2：在 GridView 中显示的产品信息
 
 我们实际上实现分页和排序功能之前，让我们来首先创建一个标准的非可排序、 不可分页 GridView，列出了产品信息。 这是一项任务我们已多次在此之前完成本教程系列因此以下步骤应该比较熟悉。 首先打开`SimplePagingSorting.aspx`页上，并将 GridView 控件从工具箱拖到设计器中，设置其`ID`属性设置为`Products`。 接下来，创建新对象数据源使用 ProductsBLL 类的`GetProducts()`方法以返回所有产品信息。
-
 
 ![检索有关所有使用 GetProducts() 方法的产品信息](paging-and-sorting-report-data-vb/_static/image4.png)
 
 **图 4**:检索有关所有使用 GetProducts() 方法的产品信息
 
-
 由于此报表不是只读的报告，在该处 s 需要映射的 ObjectDataSource s `Insert()`， `Update()`，或`Delete()`方法添加到相应`ProductsBLL`方法; 因此，（无） 从列表中选择下拉列表的 INSERT、 UPDATE和删除选项卡。
-
 
 ![选择 （无） 选项的下拉列表中插入、 更新和删除选项卡](paging-and-sorting-report-data-vb/_static/image5.png)
 
 **图 5**:选择 （无） 选项的下拉列表中插入、 更新和删除选项卡
 
-
 接下来，让 s 自定义 GridView 的字段，以便显示仅产品名称、 供应商、 类别、 价格和已停止使用的状态。 此外，随意进行任何字段级格式设置发生更改，例如调整`HeaderText`属性或格式设置为货币的价格。 以后这些更改，您的 GridView s 声明性标记看起来应类似于下面：
-
 
 [!code-aspx[Main](paging-and-sorting-report-data-vb/samples/sample2.aspx)]
 
 图 6 显示了我们到目前为止的浏览器查看时。 请注意页面列出所有在一个屏幕中，显示每个产品的名称、 类别、 供应商、 价格、 产品和停用状态。
 
-
 [![列出了每个产品](paging-and-sorting-report-data-vb/_static/image7.png)](paging-and-sorting-report-data-vb/_static/image6.png)
 
 **图 6**:列出了每个产品 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image8.png))
-
 
 ## <a name="step-3-adding-paging-support"></a>步骤 3：添加分页支持
 
 列出*所有*的一个屏幕上的产品可能会导致用户仔细阅读数据的信息过载。 若要帮助使结果更易于管理，我们可以分解成较小的数据页的数据，并允许用户一次遍历一页数据。 若要完成这只需检查从 GridView s 智能标记启用分页复选框 (这将设置 GridView s [ `AllowPaging`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx)到`true`)。
 
-
 [![检查启用分页复选框来添加分页支持](paging-and-sorting-report-data-vb/_static/image10.png)](paging-and-sorting-report-data-vb/_static/image9.png)
 
 **图 7**:选中启用分页复选框添加分页支持到 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image11.png))
-
 
 启用分页限制每个页面所显示的记录数和添加*分页界面*到 GridView。 图 7 中所示的默认分页界面是页码，这样就允许用户从一页数据快速导航到另一系列。 此分页接口应该很熟悉，因为我们已在过去的教程中将分页支持添加到 DetailsView 和 FormView 控件时看到它。
 
@@ -124,11 +107,9 @@ ms.locfileid: "59408584"
 
 允许 s 请花费片刻时间来提高我们 GridView 的分页接口的默认外观。 具体而言，让 s 具有浅灰色背景与右对齐的分页界面。 而不是设置这些属性直接通过 GridView s`PagerStyle`属性，让 s 创建中的 CSS 类`Styles.css`名为`PagerRowStyle`，然后将分配`PagerStyle`s`CssClass`通过我们的主题的属性。 首先打开`Styles.css`并添加以下 CSS 类定义：
 
-
 [!code-css[Main](paging-and-sorting-report-data-vb/samples/sample3.css)]
 
 接下来，打开`GridView.skin`文件中`DataWebControls`文件夹内的`App_Themes`文件夹。 如中所述*母版页和站点导航*教程，外观文件可用于指定 Web 控件的默认属性值。 因此，增加现有设置，以包含设置`PagerStyle`s`CssClass`属性设置为`PagerRowStyle`。 此外，let s 配置要显示最多五个数字页按钮使用的分页界面`NumericFirstLast`分页界面。
-
 
 [!code-aspx[Main](paging-and-sorting-report-data-vb/samples/sample4.aspx)]
 
@@ -136,19 +117,15 @@ ms.locfileid: "59408584"
 
 图 8 显示了 web 页上选中的 GridView s 启用分页复选框后，通过浏览器访问时，`PagerStyle`并`PagerSettings`通过进行了配置`GridView.skin`文件。 请注意如何唯一十个记录将显示，并且分页界面指示我们正在查看数据的第一页。
 
-
 [![使用启用了分页，每次显示仅记录的子集](paging-and-sorting-report-data-vb/_static/image13.png)](paging-and-sorting-report-data-vb/_static/image12.png)
 
 **图 8**:使用启用了分页，仅记录的子集显示一次 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image14.png))
 
-
 当用户单击其中一个分页界面中的页码时，回发时，才会和页面重新加载请求的页面 + s 记录显示。 图 9 显示的结果，如果选择查看数据的最后一页。 请注意，最后一页仅包含一条记录;这是因为总数，从而导致与单独记录每个页面以及一页的 10 条记录的 8 个页面中有 81 记录。
-
 
 [![单击页码导致回发，并显示相应记录的子集](paging-and-sorting-report-data-vb/_static/image16.png)](paging-and-sorting-report-data-vb/_static/image15.png)
 
 **图 9**:单击页码导致回发并显示相应记录子集 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image17.png))
-
 
 ## <a name="paging-s-server-side-workflow"></a>分页的服务器端工作流
 
@@ -165,7 +142,6 @@ ms.locfileid: "59408584"
 > [!NOTE]
 > 虽然许多用户同时使用分页通过足够大的结果集或的站点时，默认的分页不适合，意识到，自定义分页需要更多的更改和精力来实现，并且不是像选中一个复选框 （如是默认设置一样简单分页）。 因此，默认的分页可能是小型、 低流量的网站或相对较小的结果进行分页的设置时，因为它的最佳选择 s 更轻松、 更快速地实现。
 
-
 例如，如果我们知道我们将在我们的数据库中永远不会有超过 100 个产品，通过它实现所需的工作量可能偏移享受的自定义分页的最小的性能提升。 如果，但是，我们可能会一天有数千甚至上万个产品*不*实现自定义分页会极大地妨碍我们的应用程序的可伸缩性。
 
 ## <a name="step-4-customizing-the-paging-experience"></a>步骤 4：自定义分页体验
@@ -174,23 +150,19 @@ ms.locfileid: "59408584"
 
 首先，将标签 Web 控件添加到您的页面，设置其`ID`属性设置为`PagingInformation`，并将清除其`Text`属性。 接下来，创建事件处理程序的 GridView s`DataBound`事件，并添加以下代码：
 
-
 [!code-vb[Main](paging-and-sorting-report-data-vb/samples/sample5.vb)]
 
 此事件处理程序将分配`PagingInformation`标签 s`Text`属性设置为消息通知用户页面当前访问`Products.PageIndex + 1`出多少总页数`Products.PageCount`(我们将添加到 1`Products.PageIndex`属性因为`PageIndex`编制索引的索引从 0 开始)。 我选择将此标签 s`Text`中的属性`DataBound`事件处理程序，而不是`PageIndexChanged`事件处理程序由于`DataBound`事件将激发每次数据绑定到 GridView 而`PageIndexChanged`事件处理程序页索引更改时激发。 当 GridView 最初是绑定到的第一页上的数据访问时，`PageIndexChanging`事件不是 t 火灾 (而`DataBound`事件的作用)。
 
 添加此元素后，用户现已显示一条消息指出正在访问哪些页面和有多少总页的数据。
 
-
 [![显示当前页码和总页数](paging-and-sorting-report-data-vb/_static/image19.png)](paging-and-sorting-report-data-vb/_static/image18.png)
 
 **图 10**:显示当前页码和总页数 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image20.png))
 
-
 除了标签控件，让我们来还添加 DropDownList 控件，其中列出与当前正在查看的页面选择了 GridView 中的页码。 这里的思路是，用户可快速跳转从当前页到另一个只需从下拉列表中选择新的页索引。 首先将 DropDownList 添加到设计器中，设置其`ID`属性设置为`PageList`，从其智能标记启用自动回发选项。
 
 接下来，返回到`DataBound`事件处理程序并添加以下代码：
-
 
 [!code-vb[Main](paging-and-sorting-report-data-vb/samples/sample6.vb)]
 
@@ -200,16 +172,13 @@ ms.locfileid: "59408584"
 
 最后，我们需要创建的事件处理程序的 DropDownList s`SelectedIndexChanged`触发的事件，每当用户选择从列表中的另一个项。 若要创建此事件处理程序，只需双击在设计器，DropDownList，然后添加以下代码：
 
-
 [!code-vb[Main](paging-and-sorting-report-data-vb/samples/sample7.vb)]
 
 如图 11 所示，只更改 GridView 的`PageIndex`属性会导致数据重新绑定到 GridView。 在 GridView`DataBound`事件处理程序，相应的 DropDownList`ListItem`处于选中状态。
 
-
 [![用户将自动转到第六个页时选择页面 6 下拉列表项](paging-and-sorting-report-data-vb/_static/image22.png)](paging-and-sorting-report-data-vb/_static/image21.png)
 
 **图 11**:用户将自动转到第六个页时选择页面 6 下拉列表项 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image23.png))
-
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>步骤 5：添加排序的双向支持
 
@@ -218,11 +187,9 @@ ms.locfileid: "59408584"
 > [!NOTE]
 > 如果使用自定义的数据访问层而不是类型化数据集，您可能没有启用排序的选项中的 GridView s 智能标记。 仅绑定到数据源以本机方式支持排序的 Gridview 有可用此复选框。 类型化数据集提供了开箱排序支持，因为 ADO.NET DataTable 提供`Sort`方法，调用时，对使用指定的条件的 Datarow 的 DataTable s 进行排序。
 
-
 如果将 DAL 不返回由 DAL 的本机支持排序将需要配置 ObjectDataSource 要传递给业务逻辑层，以对数据进行排序或具有数据的排序信息排序的对象。 我们将探讨如何对数据的业务逻辑和数据访问层在将来的教程中进行排序。
 
 排序 Linkbutton 呈现为 HTML 超链接，其当前的颜色 （蓝色表示未访问的链接和已访问链接深红色） 冲突与标题行的背景色。 相反，let s 具有所有标头行链接中显示为空白，而不管是否它们 ve 已或未访问过。 这可以通过添加以下`Styles.css`类：
-
 
 [!code-css[Main](paging-and-sorting-report-data-vb/samples/sample8.css)]
 
@@ -230,11 +197,9 @@ ms.locfileid: "59408584"
 
 之后此 CSS 元素后，访问通过浏览器页面时在屏幕上将看到类似于图 12。 具体而言，图 12 显示结果后单击价格字段 s 标头链接。
 
-
 [![结果已按升序排序单价](paging-and-sorting-report-data-vb/_static/image25.png)](paging-and-sorting-report-data-vb/_static/image24.png)
 
 **图 12**:结果具有已按升序顺序单价 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image26.png))
-
 
 ## <a name="examining-the-sorting-workflow"></a>检查排序的工作流
 
@@ -250,24 +215,19 @@ ms.locfileid: "59408584"
 
 每个 GridView 字段绑定到 GridView s 智能标记中的下拉列表通过 GridView ObjectDataSource 时, 自动有其`SortExpression`属性分配给中的数据字段的名称`ProductsRow`类。 例如， `ProductName` BoundField s`SortExpression`设置为`ProductName`，如下面的声明性标记中所示：
 
-
 [!code-aspx[Main](paging-and-sorting-report-data-vb/samples/sample9.aspx)]
 
 可以配置一个字段，以便它 s 不可排序通过清除其`SortExpression`属性 （将其分配给一个空字符串）。 为了说明这一点，假设我们也不想让客户对我们的产品价格进行排序。 `UnitPrice` BoundField 的`SortExpression`从声明性标记或通过字段对话框中 （这是通过单击 GridView s 智能标记中的编辑列链接的访问），可以删除属性。
-
 
 ![结果已按升序排序单价](paging-and-sorting-report-data-vb/_static/image27.png)
 
 **图 13**:结果已按升序排序单价
 
-
 一次`SortExpression`属性已被移除。 `UnitPrice` BoundField 标头将呈现为文本而不是作为链接，从而防止用户对数据进行排序的价格。
-
 
 [![通过删除 SortExpression 属性，用户不再可以进行排序的产品价格](paging-and-sorting-report-data-vb/_static/image29.png)](paging-and-sorting-report-data-vb/_static/image28.png)
 
 **图 14**:通过删除 SortExpression 属性，用户可以不再对产品的价格 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image30.png))
-
 
 ## <a name="programmatically-sorting-the-gridview"></a>以编程方式排序 GridView
 
@@ -277,16 +237,13 @@ ms.locfileid: "59408584"
 
 若要完成这将按钮 Web 控件添加到页上，设置其`ID`属性设置为`SortPriceDescending`，并将其`Text`价格按排序的属性。 接下来，为 s 按钮创建一个事件处理程序`Click`通过双击设计器中的按钮控件的事件。 将以下代码添加到此事件处理程序：
 
-
 [!code-vb[Main](paging-and-sorting-report-data-vb/samples/sample10.vb)]
 
 单击此按钮使用户返回到第一页与按定价从最代价高昂的开销最少 （请参阅图 15） 排序的产品。
 
-
 [![单击按钮进行排序的产品从成本最高到最低](paging-and-sorting-report-data-vb/_static/image32.png)](paging-and-sorting-report-data-vb/_static/image31.png)
 
 **图 15**:单击按钮进行排序的产品从最高到最少 ([单击此项可查看原尺寸图像](paging-and-sorting-report-data-vb/_static/image33.png))
-
 
 ## <a name="summary"></a>总结
 

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 1cd7525d-de5e-4ab6-94f0-51480d3255d1
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: a9e7ed63a55c146976e0221214e722f3a2292fee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00fa07f00eabf7e6c883c5e9ceaf9a38a8f49605
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408272"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126169"
 ---
 # <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
 
@@ -221,7 +221,6 @@ XML 格式提供**XmlMediaTypeFormatter**类。 默认情况下**XmlMediaTypeFor
 
 > [!NOTE]
 > 对象引用不是标准 json 格式。 使用此功能之前，请考虑你的客户端是否将能够分析结果。 它可能是更好，只是为了从关系图删除周期。 例如，在此示例中不真正需要返回到部门员工的链接。
-
 
 若要保留在 XML 中的对象引用，您具有两个选项。 更简单的做法是将添加`[DataContract(IsReference=true)]`到模型类。 *IsReference*参数支持对象的引用。 请记住， **DataContract**参加，使序列化，因此您还需要添加**DataMember**属性的属性：
 

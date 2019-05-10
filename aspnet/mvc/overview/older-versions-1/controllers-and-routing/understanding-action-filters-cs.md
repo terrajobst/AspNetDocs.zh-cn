@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: a94e4e81-40c1-47b7-8613-126a1a6cc93d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8264b48388ee4a6b51515aa2b897ece3b2f3972a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dba27b48e5869c43d1082fc948bbc28bcee17f1c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380868"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123238"
 ---
 # <a name="understanding-action-filters-c"></a>了解操作筛选器 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_CS.pdf)
 
 > 本教程的目的是说明操作筛选器。 操作筛选器是可应用于控制器操作-或整个 controller--修改在其中执行此操作的方式的属性。
-
 
 ## <a name="understanding-action-filters"></a>了解操作筛选器
 
@@ -48,11 +47,9 @@ by [Microsoft](https://github.com/microsoft)
 
 如果重复调用`Index()`操作通过你的浏览器的地址栏中输入 URL/数据/索引并点击刷新按钮多次，则会出现在同一时间为 10 秒。 输出`Index()`操作缓存 （见图 1） 的 10 秒。
 
-
 [![缓存的时间](understanding-action-filters-cs/_static/image2.png)](understanding-action-filters-cs/_static/image1.png)
 
 **图 01**:缓存时间 ([单击此项可查看原尺寸图像](understanding-action-filters-cs/_static/image3.png))
-
 
 在列表 1 中，单个操作筛选器 –`OutputCache`操作筛选器 – 应用于`Index()`方法。 如果需要可以将多个操作筛选器应用到相同的操作。 例如，你可能想要应用同时`OutputCache`和`HandleError`对同一操作的操作筛选器。
 
@@ -106,11 +103,9 @@ ASP.NET MVC 框架支持四种不同类型的筛选器：
 
 列表 2 中`OnActionExecuting()`， `OnActionExecuted()`， `OnResultExecuting()`，和`OnResultExecuted()`方法都调用`Log()`方法。 方法和当前的路由数据的名称传递给`Log()`方法。 `Log()`方法将一条消息写入到 Visual Studio 输出窗口 （请参见图 2）。
 
-
 [![写入到 Visual Studio 输出窗口](understanding-action-filters-cs/_static/image5.png)](understanding-action-filters-cs/_static/image4.png)
 
 **图 02**:写入到 Visual Studio 输出窗口 ([单击此项可查看原尺寸图像](understanding-action-filters-cs/_static/image6.png))
-
 
 主控制器中清单 3 说明了如何将日志操作筛选器应用于整个控制器类。 只要任何 Home 控制器公开的操作调用 – 要么`Index()`方法或`About()`方法 – 处理操作记录到 Visual Studio 输出窗口的阶段。
 

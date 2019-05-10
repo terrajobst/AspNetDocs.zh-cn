@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: fe47a018-f6d0-4979-80e7-5b1fa75a5865
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 97a60274d9306ea0ee332fcc1ab9e487355dbedb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e11c91a824446572aaf0b3bc6954b9b8ffb4eaff
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384930"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133961"
 ---
 # <a name="creating-a-build-definition-that-supports-deployment"></a>创建支持部署的生成定义
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384930"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 如果你想要执行任何种类的生成在 Team Foundation Server (TFS) 2010年，您需要创建你的团队项目中的生成定义。 本主题介绍如何在 TFS 中创建新的生成定义以及如何控制 web 部署作为 Team Build 中的生成过程的一部分。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -40,7 +39,6 @@ ms.locfileid: "59384930"
 
 > [!NOTE]
 > 生成定义的详细信息，请参阅[定义在生成过程](https://msdn.microsoft.com/library/ms181715.aspx)。
-
 
 本主题将演示如何创建使用 CI，生成定义，以便开发人员签入新的内容时触发生成。 如果生成成功，生成服务在运行要将解决方案部署到测试环境的自定义项目文件。
 
@@ -60,7 +58,6 @@ ms.locfileid: "59384930"
 
 > [!NOTE]
 > 此过程&#x2014;中一个自动执行过程会生成、 测试，并将解决方案部署&#x2014;很可能是最适合部署以供测试环境。 为过渡和生产环境，您更可能想要将内容从以前生成的已验证并验证在测试环境中部署。 这种方法下一主题中所述[部署特定生成](deploying-a-specific-build.md)。
-
 
 ### <a name="who-performs-this-procedure"></a>此过程的执行者是谁？
 
@@ -142,7 +139,6 @@ ms.locfileid: "59384930"
 
 > [!NOTE]
 > 执行部署逻辑生成很可能失败，直到已授予生成服务器中的目标环境所需的任何权限。 有关详细信息，请参阅[团队生成部署配置的权限](configuring-permissions-for-team-build-deployment.md)。
-
 
 ## <a name="monitor-the-build-process"></a>监视生成过程
 

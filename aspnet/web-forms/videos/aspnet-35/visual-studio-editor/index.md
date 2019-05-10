@@ -8,17 +8,16 @@ ms.date: 11/14/2011
 ms.assetid: 8d424d7b-5206-4790-a068-36d01c05ceb0
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor
 msc.type: chapter
-ms.openlocfilehash: fda6eaf86f3822bce0ca0dd834cd187897bce69d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7ee31f7c7800c01701baad4e134433164bb48f66
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392841"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133763"
 ---
 # <a name="visual-studio-editor"></a>Visual Studio 编辑器
 
 > 此视频系列介绍了 Visual Studio 2008 编辑器，其中包括增强了对 JavaScript 和 CSS 支持的新功能。
-
 
 - [Visual Studio 2008 中新增的设计器支持](new-designer-support-in-visual-studio-2008.md)
 - [Visual Studio 2008 中的 JavaScript IntelliSense](javascript-intellisense-support-in-visual-studio-2008.md)

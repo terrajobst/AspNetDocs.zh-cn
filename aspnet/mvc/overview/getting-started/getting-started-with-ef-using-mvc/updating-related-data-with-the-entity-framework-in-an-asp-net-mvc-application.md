@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: d90a327da40ffd6d7956c5fbe019cf9de30c706d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4d5f6447fdccefdcdf9497a9e94f23243302a0e1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407505"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120895"
 ---
 # <a name="tutorial-update-related-data-with-ef-in-an-aspnet-mvc-app"></a>教程：在 ASP.NET MVC 应用中使用 EF 更新相关的数据
 
@@ -89,7 +89,7 @@ ms.locfileid: "59407505"
 
 运行**创建**页面 (显示课程索引页，然后单击**创建新**) 并输入新课程的数据：
 
-| “值” | 设置 |
+| 值 | 设置 |
 | ----- | ------- |
 | 数字 | 输入*1000年*。 |
 | 标题 | 输入*代数*。 |
@@ -125,7 +125,6 @@ ms.locfileid: "59407505"
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
 对引用`RetryLimitExceededException`需要`using`语句; 若要将其添加-将鼠标悬停`RetryLimitExceededException`。 将显示以下消息：![ 重试异常消息](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
-
 
 选择**显示潜在修复**，然后**使用 System.Data.Entity.Infrastructure**
 
@@ -234,7 +233,6 @@ ms.locfileid: "59407505"
 ## <a name="add-office-location-and-courses-to-the-create-page"></a>向创建页添加办公室位置和课程
 
 在中*InstructorController.cs*，删除`HttpGet`并`HttpPost``Create`方法，然后在其位置添加以下代码：
-
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample25.cs)]
 

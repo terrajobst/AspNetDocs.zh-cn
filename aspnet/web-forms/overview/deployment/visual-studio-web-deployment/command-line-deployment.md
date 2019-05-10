@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c9aadec642837953dde4cf3e89ec9a7d484b380e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e6fc995ca812a461247989204caff580d06e2343
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401330"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134271"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署：命令行部署
 
@@ -22,7 +22,6 @@ ms.locfileid: "59401330"
 [下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用 Visual Studio 2012 或 Visual Studio 2010。 有关序列的信息，请参阅[系列中的第一个教程](introduction.md)。
-
 
 ## <a name="overview"></a>概述
 

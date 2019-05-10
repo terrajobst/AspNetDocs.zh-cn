@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 20ea33efbd1db657a03b20a665a041ecf3a6d248
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dd1fd089bc4faa18fb2e8112b2820788c1f25ceb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399549"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130963"
 ---
 # <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>通过大量数据有效分页 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59399549"
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_25_VB.exe)或[下载 PDF](efficiently-paging-through-large-amounts-of-data-vb/_static/datatutorial25vb1.pdf)
 
 > 默认分页选项的数据呈现控件是不合适时使用的大量数据，当其基础数据源控件中检索所有记录，即使显示数据的子集。 在这种情况下，我们必须将与自定义分页。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -37,7 +36,6 @@ ms.locfileid: "59399549"
 
 > [!NOTE]
 > 由自定义分页表现出的确切的性能提升取决于正在通过用寻呼发送的记录和数据库服务器施加的负载的总数。 在本教程末尾我们将介绍某些展示通过自定义分页而获得的性能优势的粗略度量值。
-
 
 ## <a name="step-1-understanding-the-custom-paging-process"></a>步骤 1：了解自定义分页过程
 
@@ -62,47 +60,37 @@ ms.locfileid: "59399549"
 
 我们说明如何检索精确子集的记录所显示的页面之前，让 s 首先看一下如何返回正在通过用寻呼发送的记录总数。 为了正确配置的分页用户界面时需要此信息。 可以通过使用获取特定的 SQL 查询返回的记录总数[`COUNT`聚合函数](https://msdn.microsoft.com/library/ms175997.aspx)。 例如，若要确定中的记录总数`Products`表中，我们可以使用以下查询：
 
-
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample1.sql)]
 
 让我们来添加方法以返回此信息我们 DAL。 具体而言，我们将创建一个名为 DAL 方法`TotalNumberOfProducts()`，可执行`SELECT`如上所示的语句。
 
 首先打开`Northwind.xsd`中的类型化数据集文件`App_Code/DAL`文件夹。 接下来，右键单击`ProductsTableAdapter`在设计器中，然后选择添加查询。 正如我们已看到在上一教程中，这将使我们能够将新方法添加到 DAL，调用时，将执行特定 SQL 语句或存储的过程。 与我们在前面的教程的 TableAdapter 方法，在此选择使用临时 SQL 语句。
 
-
 ![使用临时 SQL 语句](efficiently-paging-through-large-amounts-of-data-vb/_static/image1.png)
 
 **图 1**:使用临时 SQL 语句
 
-
 在下一个屏幕中，我们可以指定哪些类型的查询来创建。 由于此查询将返回单个标量值中的记录总数`Products`表选择`SELECT`表示返回单个值选项。
-
 
 ![配置要使用返回单个值的 SELECT 语句的查询](efficiently-paging-through-large-amounts-of-data-vb/_static/image2.png)
 
 **图 2**:配置要使用返回单个值的 SELECT 语句的查询
 
-
 指示要使用的查询类型之后, 我们接下来必须指定的查询。
-
 
 ![使用从产品查询选择 COUNT(*)](efficiently-paging-through-large-amounts-of-data-vb/_static/image3.png)
 
 **图 3**:使用选择的计数 (\*) FROM 产品查询
 
-
 最后，指定该方法的名称。 使用前面提到，可让 s `TotalNumberOfProducts`。
-
 
 ![命名为 DAL 方法 TotalNumberOfProducts](efficiently-paging-through-large-amounts-of-data-vb/_static/image4.png)
 
 **图 4**:命名为 DAL 方法 TotalNumberOfProducts
 
-
 单击完成之后, 该向导将添加`TotalNumberOfProducts`对 DAL 的方法。 DAL 中的标量返回方法返回 null 的类型，如果 SQL 查询的结果是`NULL`。 我们`COUNT`查询，但是，将始终返回非`NULL`值; 无论如何，DAL 方法将返回一个可以为 null 的整数。
 
 除了 DAL 方法中，我们还需要在 BLL 中的方法。 打开`ProductsBLL`类文件，并添加`TotalNumberOfProducts`方法，只需向下调用 DAL s`TotalNumberOfProducts`方法：
-
 
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample2.vb)]
 
@@ -127,41 +115,33 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 `ROW_NUMBER()`关键字与上一特定的排序方式使用以下语法返回每个记录相关联排名：
 
-
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample3.sql)]
 
 `ROW_NUMBER()` 返回一个数字值，指定每个记录方面指示排序的排名。 例如，若要查看每个产品，按照从最顺序排列的排名代价高昂的最少，我们可以使用以下查询：
-
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample4.sql)]
 
 图 5 显示了此查询的结果通过 Visual Studio 中的查询窗口运行时。 请注意，订购价格，以及每个行的价格排位的产品。
 
-
 ![价格排名所包含的每个返回的记录](efficiently-paging-through-large-amounts-of-data-vb/_static/image5.png)
 
 **图 5**:价格排名所包含的每个返回的记录
 
-
 > [!NOTE]
 > `ROW_NUMBER()` 只有一种新的多个排名函数是在 SQL Server 2005 中可用。 有关更全面的讨论`ROW_NUMBER()`，以及其他排名函数，读取[Microsoft SQL Server 2005 返回排名结果](http://www.4guysfromrolla.com/webtech/010406-1.shtml)。
-
 
 当由指定排名结果`ORDER BY`中的列`OVER`子句 (`UnitPrice`，在上面的示例)，SQL Server 必须对结果进行排序。 这是一种快捷操作，如果有聚集的索引的列的结果排序，通过，或者如果没有覆盖索引，但可以否则成本更高。 若要帮助我们改进足够大的查询的性能，请考虑添加按对结果排序所依据的列的非聚集索引。 请参阅[排名函数和 SQL Server 2005 中的性能](http://www.sql-server-performance.com/ak_ranking_functions.asp)有关性能注意事项的更详细信息。
 
 返回的排名信息`ROW_NUMBER()`不能直接用于`WHERE`子句。 但是，派生的表可以用于返回`ROW_NUMBER()`结果，然后可以出现在`WHERE`子句。 例如，以下查询使用派生的表与返回产品名称和单价列中，`ROW_NUMBER()`结果，然后使用`WHERE`子句仅返回其价格排名的那些产品将 11 到 20 之间：
 
-
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample5.sql)]
 
 扩展此概念有点延伸远，我们可以利用这种方法来检索给定的所需的起始行索引和最大行值的数据的特定页面：
-
 
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample6.html)]
 
 > [!NOTE]
 > 正如在本教程中，我们将看到的更高版本上 *`StartRowIndex`* 提供的对象数据源编制索引的索引从零，开始而`ROW_NUMBER()`返回 SQL Server 2005 值编制索引的索引从 1 开始。 因此，`WHERE`子句将返回这些记录其中`PriceRank`严格大于 *`StartRowIndex`* 且小于或等于 *`StartRowIndex`*  + *`MaximumRows`*.
-
 
 现在，我们已讨论过如何`ROW_NUMBER()`可以是用于检索给定的起始行索引和最大行数的值的数据的特定页，我们现在需要实现此逻辑作为 DAL 和 BLL 中的方法。
 
@@ -169,67 +149,51 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 在上一部分中我们创建 DAL 方法作为临时 SQL 语句。 遗憾的是，使用 TableAdapter 向导不等的 Visual Studio 中的 T-SQL 分析器`OVER`使用语法`ROW_NUMBER()`函数。 因此，我们必须为存储过程来创建此 DAL 方法。 从视图菜单 （或命中的 Ctrl + Alt + S） 中选择服务器资源管理器并展开`NORTHWND.MDF`节点。 若要添加新的存储的过程，右键单击存储过程节点并选择添加新的存储过程 （请参阅图 6）。
 
-
 ![添加新的存储的过程通过产品的分页](efficiently-paging-through-large-amounts-of-data-vb/_static/image6.png)
 
 **图 6**:添加新的存储的过程通过产品的分页
 
-
 此存储的过程应接受两个整数输入的参数的`@startRowIndex`并`@maximumRows`，并使用`ROW_NUMBER()`函数按排序`ProductName`字段中，返回大于指定的那些行`@startRowIndex`和小于或等于`@startRowIndex`  +  `@maximumRow` s。 到新的存储过程中输入以下脚本，然后单击保存图标以将存储的过程添加到数据库。
-
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample7.sql)]
 
 在创建后的存储的过程，请花费片刻时间对它进行测试。右键单击`GetProductsPaged`存储的过程中在服务器资源管理器的名称并选择执行选项。 Visual Studio 随后会提示您为输入参数`@startRowIndex`和`@maximumRow`s （请参阅图 7）。 请尝试不同的值，并检查结果。
 
-
 ![输入一个值@startRowIndex和@maximumRows参数](efficiently-paging-through-large-amounts-of-data-vb/_static/image7.png)
 
 <strong>图 7</strong>:输入一个值@startRowIndex和@maximumRows参数
 
-
 之后选择这些输入参数值，输出窗口将显示结果。 图 8 显示了两个 10 中传递时的结果`@startRowIndex`和`@maximumRows`参数。
-
 
 [![返回记录，将显示在第二个数据页](efficiently-paging-through-large-amounts-of-data-vb/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image8.png)
 
 **图 8**:返回记录，将显示在第二个数据页 ([单击此项可查看原尺寸图像](efficiently-paging-through-large-amounts-of-data-vb/_static/image10.png))
 
-
 与此存储过程创建的我们已准备好创建 re`ProductsTableAdapter`方法。 打开`Northwind.xsd`类型化数据集，在中单击右键`ProductsTableAdapter`，然后选择添加查询选项。 而不是创建使用的临时 SQL 语句的查询，创建使用现有的存储的过程。
-
 
 ![创建使用现有的存储的过程的 DAL 方法](efficiently-paging-through-large-amounts-of-data-vb/_static/image11.png)
 
 **图 9**:创建使用现有的存储的过程的 DAL 方法
 
-
 接下来，我们会提示选择要调用的存储的过程。 选取`GetProductsPaged`存储过程从下拉列表。
-
 
 ![选择 GetProductsPaged 存储过程从下拉列表](efficiently-paging-through-large-amounts-of-data-vb/_static/image12.png)
 
 **图 10**:选择 GetProductsPaged 存储过程从下拉列表
 
-
 下一屏幕中，将要求您的数据类型返回的存储过程： 表格数据、 单个值或没有值。 由于`GetProductsPaged`存储的过程可以返回多个记录，指示它返回表格格式数据。
-
 
 ![指示存储的过程返回表格格式数据](efficiently-paging-through-large-amounts-of-data-vb/_static/image13.png)
 
 **图 11**:指示存储的过程返回表格格式数据
 
-
 最后，指示你想要创建的方法的名称。 与我们前面的教程中，请继续并创建方法使用这两种填充 DataTable 返回 DataTable。 第一个方法命名`FillPaged`，第二个`GetProductsPaged`。
-
 
 ![名称方法 FillPaged 和 GetProductsPaged](efficiently-paging-through-large-amounts-of-data-vb/_static/image14.png)
 
 **图 12**:名称方法 FillPaged 和 GetProductsPaged
 
-
 除了创建 DAL 方法返回的产品特定页，我们还需要提供 BLL 中的此类功能。 DAL 与方法一样，BLL 的 GetProductsPaged 方法必须接受用于指定起始行索引和最大行数的两个整数输入，并且必须返回只在指定范围内的记录。 只是调用向下的到 DAL 的 GetProductsPaged 方法，就像这样在 ProductsBLL 类中创建此类的 BLL 方法：
-
 
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample8.vb)]
 
@@ -239,34 +203,27 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 使用用于访问完整的记录的特定子集的 BLL 和 DAL 方法，我们准备就绪后，若要创建 GridView 控制其使用自定义分页的基础记录通过该页面。 首先打开`EfficientPaging.aspx`页中`PagingAndSorting`文件夹中，将 GridView 添加到页上，并将其配置为使用新的 ObjectDataSource 控件。 在我们过去的教程，我们通常必须配置为使用 ObjectDataSource`ProductsBLL`类的`GetProducts`方法。 这一次，但是，我们想要使用`GetProductsPaged`方法相反，因为`GetProducts`方法将返回*所有*数据库中的产品而`GetProductsPaged`返回只记录的特定子集。
 
-
 ![配置对象数据源使用 ProductsBLL 类的 GetProductsPaged 方法](efficiently-paging-through-large-amounts-of-data-vb/_static/image15.png)
 
 **图 13**:配置对象数据源使用 ProductsBLL 类的 GetProductsPaged 方法
-
 
 由于我们重新创建只读的 GridView，花一点时间设置方法下拉列表中的 INSERT、 UPDATE，并删除选项卡添加到 （无）。
 
 接下来，ObjectDataSource 向导提示我们输入的源`GetProductsPaged`s 方法`startRowIndex`和`maximumRows`输入参数值。 这些输入的参数实际上将会通过 GridView 自动，因此只需将源设置为 None 并单击完成。
 
-
 ![将保留为无输入的参数源](efficiently-paging-through-large-amounts-of-data-vb/_static/image16.png)
 
 **图 14**:将保留为无输入的参数源
 
-
 完成 ObjectDataSource 向导后，命令将 BoundField 或 CheckBoxField 每个产品的数据字段包含 GridView。 随时根据需要定制 GridView 的外观。 我已选择仅显示`ProductName`， `CategoryName`， `SupplierName`， `QuantityPerUnit`，和`UnitPrice`BoundFields。 此外，配置 GridView 支持分页，通过检查其智能标记中的启用分页复选框。 更改后，GridView 和 ObjectDataSource 声明性标记应类似于下面：
-
 
 [!code-aspx[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample9.aspx)]
 
 如果在访问通过浏览器页面，但是，这个 GridView 已经没有任何地方进行查找。
 
-
 ![这个 GridView 已经不显示](efficiently-paging-through-large-amounts-of-data-vb/_static/image17.png)
 
 **图 15**:这个 GridView 已经不显示
-
 
 这个 GridView 已经丢失，因为 ObjectDataSource 当前使用 0 作为值的两个`GetProductsPaged``startRowIndex`和`maximumRows`输入参数。 因此，生成的 SQL 查询返回任何记录，并因此不显示 GridView。
 
@@ -279,28 +236,22 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 进行这些更改后，ObjectDataSource s 声明性语法应如以下所示：
 
-
 [!code-aspx[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample10.aspx)]
 
 请注意，`EnablePaging`并`SelectCountMethod`已设置属性和`<asp:Parameter>`元素已被删除。 进行这些更改之后，图 16 所示属性窗口的屏幕的截图。
-
 
 ![若要使用自定义分页，配置 ObjectDataSource 控件](efficiently-paging-through-large-amounts-of-data-vb/_static/image18.png)
 
 **图 16**:若要使用自定义分页，配置 ObjectDataSource 控件
 
-
 进行这些更改后，请访问此页上的通过浏览器。 应会看到 10 种产品列出，请按字母顺序排序。 请花费片刻时间逐步一次一页数据。 虽然默认的分页和自定义分页之间没有可见差异从最终用户 s 角度来看，自定义分页更有效地页，通过大量的数据因为它仅检索那些需要为某一给定页显示的记录。
-
 
 [![数据、 Ordered 按产品名称，是分页使用自定义分页](efficiently-paging-through-large-amounts-of-data-vb/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image19.png)
 
 **图 17**:数据、 Ordered 按产品名称，是分页使用自定义分页 ([单击此项可查看原尺寸图像](efficiently-paging-through-large-amounts-of-data-vb/_static/image21.png))
 
-
 > [!NOTE]
 > 使用自定义分页，页计数值返回的 ObjectDataSource 的`SelectCountMethod`GridView 的视图状态中存储。 其他 GridView 变量`PageIndex`， `EditIndex`， `SelectedIndex`，`DataKeys`集合中，依次类推存储在*控制状态*，其中保留而不考虑 GridView 的值`EnableViewState`属性。 由于`PageCount`值被存储在回发期间使用的分页界面中包括用于将您带到最后一页的链接时使用视图状态，则必须启用 GridView 的视图状态。 （如果分页界面不包含的直接链接到最后一页上，然后你可以禁用视图状态。）
-
 
 单击最后一页链接导致回发，并指示 GridView 来更新其`PageIndex`属性。 如果单击最后一页链接，GridView 会分配其`PageIndex`属性的值之一不会早于其`PageCount`属性。 使用视图状态已禁用，`PageCount`值会丢失在经过回发和`PageIndex`改为分配的最大整数值。 接下来，尝试确定的起始行索引乘以 GridView`PageSize`和`PageCount`属性。 这会导致`OverflowException`由于产品超出了允许的最大整数大小。
 
@@ -308,11 +259,9 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 我们当前的自定义分页实现要求通过换数据时所依据的顺序指定以静态方式创建时`GetProductsPaged`存储过程。 但是，你可能已记下 GridView s 智能标记包含除了启用分页选项启用排序复选框。 遗憾的是，将排序支持添加到我们当前的自定义分页实现 GridView 仅将排序数据的当前正在查看页上的记录。 例如，如果配置 GridView 也支持分页和查看数据，第一页时按降序排序，产品名称的排序然后，它将在第 1 页上反转产品的顺序。 如图 18 所示，此类显示了墨鱼作为第一个产品时按反向字母顺序，将忽略的 71 其他产品按字母顺序; 晚墨鱼，排序排序操作中被视为第一页上的这些记录。
 
-
 [![仅显示数据当前页上进行排序](efficiently-paging-through-large-amounts-of-data-vb/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image22.png)
 
 **图 18**:仅显示数据当前页上进行排序 ([单击此项可查看原尺寸图像](efficiently-paging-through-large-amounts-of-data-vb/_static/image24.png))
-
 
 排序仅适用于数据的当前页后已从 BLL s 检索的数据的排序发生因为`GetProductsPaged`方法，而此方法仅返回的特定页中的记录。 若要实现正确排序，我们需要传递到排序表达式`GetProductsPaged`方法，以便返回数据的特定页之前适当排名数据。 我们将了解如何实现此目的在我们下一步的教程。
 
@@ -333,11 +282,9 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 这种方法有效，因为它会更新`PageIndex`步骤 1 之后但在步骤 2 之前。 因此，在步骤 2 中，相应的记录集将返回。 若要实现此目的，使用以下代码：
 
-
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample11.vb)]
 
 备用解决方法是创建事件处理程序的 ObjectDataSource s`RowDeleted`事件，以及设置`AffectedRows`属性的值为 1。 删除在步骤 1 中 （但之前重新检索在步骤 2 中的数据） 的记录后, GridView 更新其`PageIndex`属性，如果一个或多个行受影响的操作。 但是， `AffectedRows` ObjectDataSource 通过不设置属性，因此忽略此步骤。 具有执行此步骤的一种方法是手动设置`AffectedRows`属性如果删除操作成功完成。 可以使用如下所示的代码完成此：
-
 
 [!code-vb[Main](efficiently-paging-through-large-amounts-of-data-vb/samples/sample12.vb)]
 
@@ -351,14 +298,12 @@ DAL s`TotalNumberOfProducts`方法返回一个可以为 null 的整数; 但是�
 
 我的项目[ASP.NET 2.0 与 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，包含一些性能测试，我运行来表现出这两种分页方法时分页通过与数据库表之间的性能差异50,000 个记录。 在这些测试中，我研究了这两个时间来执行 SQL Server 级别的查询 (使用[SQL Profiler](https://msdn.microsoft.com/library/ms173757.aspx)) 并在 ASP.NET 页使用[ASP.NET 的跟踪功能](https://msdn.microsoft.com/library/y13fw6we.aspx)。 请记住，这些测试是在单个活动用户，我开发机器上运行，并因此是一百和不模拟典型网站的负载模式。 无论如何，结果说明了执行时间的默认实例和自定义分页的相对差异时使用足够大量的数据。
 
-
 |  | **Avg.持续时间 （秒）** | **读取次数** |
 | --- | --- | --- |
 | **默认分页 SQL Profiler** | 1.411 | 383 |
 | **自定义分页 SQL Profiler** | 0.002 | 29 |
 | **默认分页 ASP.NET 跟踪** | 2.379 | *N/A* |
 | **自定义分页 ASP.NET 跟踪** | 0.029 | *N/A* |
-
 
 正如您所看到的检索数据的特定页所需数量累计为 354 小于读取的平均和中所花时间完成。 在 ASP.NET 页上，自定义的页面是能够接近于 1/100 中呈现<sup>th</sup>花费的时间使用默认的分页时。 请参阅[我的文章](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)对于这些结果与代码和数据库的详细信息，可以下载重现您自己的环境中的这些测试。
 

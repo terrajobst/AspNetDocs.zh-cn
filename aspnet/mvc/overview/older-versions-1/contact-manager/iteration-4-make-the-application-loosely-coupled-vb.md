@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 92c70297-4430-4e4e-919a-9c2333a8d09a
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 256536150a585a4bb0304f23c3524b18d0f552f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 422c75406d9c08279d0c2224ee4b6db3a71eb1b3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392373"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117734"
 ---
 # <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>迭代 4 – 使应用程序松散耦合 (VB)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下载代码](iteration-4-make-the-application-loosely-coupled-vb/_static/contactmanager_4_vb1.zip)
 
 > 在此第四个迭代中，我们将充分利用多个软件设计模式，以使其更轻松地监视和修改联系人管理器应用程序。 例如，我们将重构应用程序以使用存储库模式和依赖关系注入模式。
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>构建联系人管理 ASP.NET MVC 应用程序 (VB)
 
@@ -54,7 +53,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > (SRP)，一个类应永远不会有多个理由更改。 混合使用控制器、 验证和数据库的逻辑是大规模违反了单一责任原则。
 
-
 有可能需要修改你的应用程序的多个原因。 可能需要将一项新功能添加到你的应用程序，可能需要修复你的应用程序中的 bug 或可能需要修改你的应用程序的一项功能的实现方式。 应用程序是很少静态的。 他们往往增长且随着时间的推移发生变化。
 
 例如，假设你决定如何实现数据访问层更改。 右现在，联系人管理器应用程序使用 Microsoft Entity Framework 访问数据库。 但是，您可能决定将迁移到新的或可选的数据访问技术，如 ADO.NET 数据服务或 NHibernate。 但是，由于数据访问代码不是独立于验证和控制器代码，将无法修改你的应用程序中的数据访问代码而无需修改其他与数据访问不直接相关的代码。
@@ -66,7 +64,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > 重构是重写的方式不丢失任何现有功能的应用程序的过程。
-
 
 ## <a name="using-the-repository-software-design-pattern"></a>使用存储库软件设计模式
 
@@ -105,7 +102,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 通过选择菜单选项重构，提取接口，可以快速从 Visual Studio 中的具体类创建接口。 例如，您可以首先创建 EntityContactManagerRepository 类，然后使用提取接口来自动生成 IContactManagerRepository 接口。
 
-
 ## <a name="using-the-dependency-injection-software-design-pattern"></a>使用依赖关系注入软件设计模式
 
 现在，我们已迁移到一个单独的存储库类的数据访问代码，我们需要修改联系人控制器使用此类。 我们将利用称为依赖关系注入在控制器中使用的存储库类的软件设计模式。
@@ -127,7 +123,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > 如果你想要完全分离 Contact 控制器类从 IContactManagerRepository 接口的特定实现然后你可以利用一个框架，支持如 StructureMap 或 Microsoft 依赖关系注入实体框架 (MEF)。 通过利用依赖关系注入框架，永远不需要引用在代码中的具体类。
-
 
 ## <a name="creating-a-service-layer"></a>创建服务层
 

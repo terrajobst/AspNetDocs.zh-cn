@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: ecc0733c2850bc157c7ee5b251787152393481fc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9762ac77f7460cc123e67b9eb57a17f4b83ed54c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385241"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129877"
 ---
 # <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 简介
 
@@ -36,12 +36,10 @@ ms.locfileid: "59385241"
 >
 > 本教程由 Rick Anderson 编写 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )。
 
-
 ## <a name="what-youll-build"></a>你将生成
 
 > [!NOTE]
 > 如果本教程中可用的更新的版本[这里](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)。 新教程使用 ASP.NET MVC 5，通过本教程提供了许多改进。
-
 
 将实现一个简单的电影列表应用程序支持创建、 编辑、 搜索和列出数据库中的电影。 以下是你将生成的应用程序的两个屏幕快照。 它包括显示的数据库中的电影列表的页面：
 

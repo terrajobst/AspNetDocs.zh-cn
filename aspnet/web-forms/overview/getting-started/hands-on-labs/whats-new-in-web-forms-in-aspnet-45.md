@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 301af8ed877b58624e419c04f605c41f27dbdd0c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401733"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132075"
 ---
 # <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 中 Web 窗体的新增功能
 
@@ -40,7 +40,6 @@ ms.locfileid: "59401733"
 > 官方 ASP.NET 门户中您可以在 ASP.NET WebForms 4.5 中找到的新功能的更多示例：[ASP.NET 4.5 和 Visual Studio 2012 的新增功能](../../../../whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012.md#_Toc318097385)
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>目标
@@ -83,13 +82,12 @@ ms.locfileid: "59401733"
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**60 分钟**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Model_Binding_in_ASPNET_Web_Forms"></a>
-### <a name="exercise-1-model-binding-in-aspnet-web-forms"></a>练习 1:ASP.NET Web 窗体中的模型绑定
+### <a name="exercise-1-model-binding-in-aspnet-web-forms"></a>练习 1：ASP.NET Web 窗体中的模型绑定
 
 ASP.NET Web 窗体的新版本引入了一些侧重于改进体验，使用数据时的增强功能。 在本练习中，将了解强类型化数据控件和模型绑定。
 
@@ -325,7 +323,7 @@ ASP.NET Web 窗体的新版本引入了一些侧重于改进体验，使用数�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Data_Validation"></a>
-### <a name="exercise-2-data-validation"></a>练习 2:数据验证
+### <a name="exercise-2-data-validation"></a>练习 2：数据验证
 
 在此练习中，您将学习在 ASP.NET 4.5 中的新数据验证功能。 将签出 Web 窗体中的新非介入式验证功能。 将应用程序模型类中使用数据注释，用户输入验证，并最后，您将学习如何打开或关闭请求验证为在页面中的单个控件。
 
@@ -610,7 +608,6 @@ Web 应用程序中的异步方法可用于优化 ASP.NET 线程池的使用的�
 
 > [!NOTE]
 > 此外，可以部署此应用程序对 Azure 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
-
 
 ---
 

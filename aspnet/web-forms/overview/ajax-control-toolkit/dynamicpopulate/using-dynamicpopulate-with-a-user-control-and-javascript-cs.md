@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 38ac8250-8854-444c-b9ab-8998faa41c5a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0462d8357d83115e751a818d3c9feb4b4274e212
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 387cad748428249273cf9708b794dd8864cf982f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402539"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125054"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>通过用户控件和 JavaScript 使用 DynamicPopulate (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59402539"
 [下载代码](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate2.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate2CS.pdf)
 
 > ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页面方法），并将生成的值填充到目标控件在页上，而无需刷新页面。 还有可能触发使用自定义客户端的 JavaScript 代码的填充。 但是特别留意具有扩展器驻留在用户控件时要执行。
-
 
 ## <a name="overview"></a>概述
 
@@ -65,7 +64,6 @@ ms.locfileid: "59402539"
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample8.aspx)]
 
 就是这么简单！ 页面的行为都按预期方式：用户单击其中一个单选按钮，该工具包中的控件调用 web 服务，并以所需的格式显示当前日期。
-
 
 [![单选按钮位于用户控件](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)
 

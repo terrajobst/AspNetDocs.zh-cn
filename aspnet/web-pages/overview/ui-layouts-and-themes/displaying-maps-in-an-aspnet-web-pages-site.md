@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: b5c268dd-ca6a-4562-b94c-a220fcf01f58
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 6e5c01c3602bd313ebca467b65563b7abfd7ffe2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 36f3b753cf312504892872ff54bef49854588990
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400095"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124182"
 ---
 # <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>ASP.NET Web Pages (Razor) 站点中显示地图
 
@@ -40,7 +40,6 @@ ms.locfileid: "59400095"
 >   
 > 
 > 本教程还适用于 WebMatrix 3。
-
 
 在 Web 页中，您可以映射在页面上显示通过使用`Maps`帮助器。 你可以生成基于一个地址或一组的经度和纬度坐标的地图。 `Maps`类，可以包括必应、 Google、 MapQuest 和 Yahoo 的常用映射引擎调用。
 
@@ -109,6 +108,5 @@ ms.locfileid: "59400095"
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
-
 
 [Microsoft.Maps API 参考](https://msdn.microsoft.com/library/gg427611.aspx)

@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a6ae18529afc4df799d95d8b7a98f9bc5add9485
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 65b13065ae5324ce64ec1b87b2127e5277542fb8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385535"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125678"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 重大更改
 
 > 本文档介绍了针对.NET Framework 版本可能会影响使用早期版本中，其中包括 ASP.NET 4 Beta 1 和 Beta 2 版本创建的应用程序的月 4 日版本的更改。
 > 
 > [下载此白皮书](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_Breaking_Changes.pdf)
-
 
 <a id="0.1__Toc256768952"></a><a id="0.1__Toc256770056"></a>
 
@@ -112,7 +111,6 @@ ASP.NET 页的页分析器 (`.aspx`文件) 和用户控件 (`.ascx`文件) 是�
 > [!NOTE]
 > **HttpBrowserCapabilities**对象 (这由页面的公开**Request.Browser**属性) 由浏览器定义文件驱动。 因此，通过访问该对象在 ASP.NET 4 中的属性返回的信息可能不同于 ASP.NET 的早期版本中返回的信息。
 
-
 您可以通过从以下文件夹复制浏览器定义文件还原到旧的浏览器定义文件：
 
 [!code-console[Main](breaking-changes/samples/sample5.cmd)]
@@ -195,7 +193,6 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 中的应用程序`childwebapp`文件夹将无法启动在 IIS 7 或 IIS 7.5 上并将报表配置错误。 错误文本将包含一条类似于以下消息：
 
 - `The requested page cannot be accessed because the related configuration data for the page is invalid.`
-  
 
 - `The configuration section 'configSections' cannot be read because it is missing a section declaration.`
 
@@ -227,7 +224,6 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 
 > [!NOTE]
 > 在以下示例中，以提高可读性已换行。
-
 
 [!code-xml[Main](breaking-changes/samples/sample8.xml)]
 
@@ -283,7 +279,7 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 
 ## <a name="aspnet-20-applications-might-generate-httpexception-errors-that-reference-eurlaxd"></a>ASP.NET 2.0 应用程序可能会生成引用 eurl.axd 的 HttpException 错误
 
-ASP.NET 4 启用 IIS 6 上之后，（在 Windows Server 2003 或 Windows Server 2003 R2） 的 IIS 6 运行的 ASP.NET 2.0 应用程序可能会产生如下所示的错误：
+在 IIS 6 上启用 ASP.NET 4 后，IIS 6 上运行的 ASP.NET 2.0 应用（在 Windows Server 2003 或 Windows Server 2003 R2 中）可能会生成错误，如下所示：
 
 `System.Web.HttpException: Path '/[yourApplicationRoot]/eurl.axd/[Value]' was not found.`
 
@@ -314,7 +310,6 @@ ASP.NET 4 启用 IIS 6 上之后，（在 Windows Server 2003 或 Windows Server
 
 > [!NOTE]
 > 设置**EnableExtensionlessUrls**为 1 可启用无扩展名 URL 行为。 这是默认设置，如果未不指定任何值。
-
 
 <a id="0.1__Toc252995494"></a><a id="0.1__Toc255587643"></a><a id="0.1__Toc256770154"></a><a id="0.1__Toc245724862"></a>
 
@@ -372,7 +367,6 @@ ASP.NET 2.0 中，并通过扩展在 3.5 中，已添加的 ASP.NET 功能使用
 > [!NOTE]
 > **HtmlEncode**并**HtmlDecode**的功能**System.Web.HttpUtility**类已移至新的.NET Framework 4 **System.Net.WebUtility**类。 如果这是唯一使用的 ASP.NET 功能，应用程序的代码修改为使用新**WebUtility**类。
 
-
 下面是对 ASP.NET 4 中的默认 CAS 实现的更改的高级摘要：
 
 - ASP.NET 应用程序域现在是同构应用程序域。 应用程序域中提供了仅部分信任和完全信任的授予集。
@@ -399,7 +393,6 @@ ASP.NET 2.0 中，并通过扩展在 3.5 中，已添加的 ASP.NET 功能使用
 但是，使用特定的成员身份类型和已从早期版本的 ASP.NET 中升级的类库将无法进行编译时在 ASP.NET 4 项目中使用。 例如，一个类库项目可能无法编译并报告错误如下所示：
 
 - `The type 'System.Web.Security.MembershipUser' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.`
-  
 
 - `The type name 'MembershipUser' could not be found. This type has been forwarded to assembly 'System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. Consider adding a reference to that assembly.`
 

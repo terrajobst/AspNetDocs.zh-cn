@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 9969a68a3e1aa043845fb5affd6d3b73dec4136d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8656f4a4211c2e97d71d76dd2f799412539896ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425387"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118851"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项 （使用 Azure 构建实际云应用）
 
@@ -22,7 +22,6 @@ ms.locfileid: "58425387"
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
-
 
 大多数人习惯于关系数据库，并忽略其他数据存储选项，当它们设计云应用程序时，他们往往。 结果可以为性能不佳，高开支，甚至更糟糕，因为[NoSQL](http://en.wikipedia.org/wiki/NoSQL) （非关系） 的数据库可以比关系数据库更有效地处理某些任务。 如果客户向我们寻求帮助解决关键数据存储问题，通常是因为它们具有关系数据库，NoSQL 选项之一会起作用更好地。 在这些情况下客户会做得更好关闭如果这些应用部署到生产环境之前实现了 NoSQL 解决方案。
 

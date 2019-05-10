@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 388637d67594d6431a134673cf85b3b18098136e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 01234dfab50cf608c934cb72ed06d0ad0ee58438
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402747"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133627"
 ---
 # <a name="performing-batch-updates-c"></a>执行批量更新 (C#)
 
@@ -23,16 +23,13 @@ ms.locfileid: "59402747"
 
 > 了解如何创建完全编辑 DataList 的所有项处于编辑模式，可以通过单击页上的"全部更新"按钮保存其值。
 
-
 ## <a name="introduction"></a>介绍
 
 在中[前面的教程](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)介绍了如何创建项目级 DataList。 像标准的可编辑 GridView DataList 中的每个项包含编辑按钮，当单击时，会使项可编辑。 虽然这项级别编辑适用于仅偶尔更新的数据，某些用例场景要求用户编辑多个记录。 如果用户需要编辑数十个记录，并强制，单击编辑，使他们的更改，然后单击为每个更新，则单击量可能妨碍她的工作效率。 在这种情况下，更好的选择是要提供完全可编辑的 DataList，其中*所有*已在编辑模式，其值可以通过单击页上的全部更新按钮进行编辑的项 （请参阅图 1）。
 
-
 [![可以修改完全可编辑的 DataList 中的每个项](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
 
 **图 1**:可以修改完全可编辑的 DataList 中的每个项 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image3.png))
-
 
 在本教程中我们将介绍如何使用户能够更新供应商的地址信息完全可编辑的 DataList。
 
@@ -49,48 +46,38 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 
 首先打开`BatchUpdate.aspx`页上，添加 DataList 控件，并设置其`ID`属性设置为`Suppliers`。 通过 DataList s 智能标记中，选择要添加一个名为的新 ObjectDataSource 控件`SuppliersDataSource`。
 
-
 [![创建名为 SuppliersDataSource 新 ObjectDataSource](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
 
 **图 2**:创建新对象数据源命名`SuppliersDataSource`([单击以查看实际尺寸的图像](performing-batch-updates-cs/_static/image6.png))
 
-
 配置对象数据源检索数据使用`SuppliersBLL`类的`GetSuppliers()`方法 （请参见图 3）。 与前面的教程中，而不更新通过 ObjectDataSource 的供应商信息，我们将直接与业务逻辑层进行合作。 因此，在更新选项卡中设置为 （无） 下拉列表 （请参阅图 4）。
-
 
 [![检索使用 GetSuppliers() 方法供应商信息](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
 
 **图 3**:使用供应商信息中检索`GetSuppliers()`方法 ([单击以查看实际尺寸的图像](performing-batch-updates-cs/_static/image9.png))
 
-
 [![在更新选项卡中设置为 （无） 下拉列表](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
 
 **图 4**:在更新选项卡中设置为 （无） 下拉列表 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image12.png))
 
-
 完成向导后，Visual Studio 会自动生成 DataList 的`ItemTemplate`显示标签 Web 控件中的数据源返回的每个数据字段。 我们需要修改此模板，可改为提供的编辑界面。 `ItemTemplate`可以通过使用 DataList s 智能标记中的编辑模板选项的设计器或直接通过声明性语法的自定义。
 
 请花费片刻时间来创建用于编辑界面显示供应商的名为文本，但包括供应商的地址、 城市和国家/地区值的文本框。 进行这些更改后，在页 s 声明性语法应看起来类似于下面：
-
 
 [!code-aspx[Main](performing-batch-updates-cs/samples/sample1.aspx)]
 
 > [!NOTE]
 > 与前面的教程中，在本教程中 DataList 必须具有启用了其视图状态。
 
-
 中`ItemTemplate`我使用两个新的 CSS 类，m`SupplierPropertyLabel`并`SupplierPropertyValue`，其中已添加到`Styles.css`类，并配置为使用相同的样式设置`ProductPropertyLabel`和`ProductPropertyValue`CSS 类。
-
 
 [!code-css[Main](performing-batch-updates-cs/samples/sample2.css)]
 
 进行这些更改后，请访问此页上的通过浏览器。 如图 5 所示，每个 DataList 项供应商名称显示为文本，并使用文本框来显示地址、 城市和国家/地区。
 
-
 [![DataList 中的每个供应商是可编辑](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
 
 **图 5**:DataList 中的每个供应商是可编辑 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image15.png))
-
 
 ## <a name="step-2-adding-an-update-all-button"></a>步骤 2：添加所有按钮的更新
 
@@ -98,16 +85,13 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 
 首先添加一个按钮 Web 控件上面的 DataList 并设置其`ID`属性设置为`UpdateAll1`。 接下来，添加第二个按钮 Web 控件下方 DataList，设置其`ID`到`UpdateAll2`。 设置`Text`到更新所有的两个按钮的属性。 最后，为这两个按钮创建事件处理程序`Click`事件。 而不会复制每个事件处理程序中的更新逻辑，let s 重构到第三种方法，该逻辑`UpdateAllSupplierAddresses`，具有事件处理程序只需调用此第三个方法。
 
-
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample3.cs)]
 
 图 6 添加更新所有按钮后显示的页。
 
-
 [![两个更新所有按钮已都添加到页面](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
 
 **图 6**:两个更新所有按钮已都添加到页 ([单击此项可查看原尺寸图像](performing-batch-updates-cs/_static/image18.png))
-
 
 ## <a name="step-3-updating-all-of-the-suppliers-address-information"></a>步骤 3：更新所有供应商地址信息
 
@@ -115,14 +99,12 @@ DataList s`EditItemIndex`属性决定了什么`DataListItem`（如果有） 使�
 
 集合`DataListItem`实例可以通过 DataList s 访问 DataList 该构成[`Items`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx)。 对引用`DataListItem`，我们可以获取相应`SupplierID`从`DataKeys`集合和以编程方式引用文本框 Web 控件内`ItemTemplate`如以下代码所示：
 
-
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample4.cs)]
 
 当用户单击全部更新按钮，之一`UpdateAllSupplierAddresses`方法循环访问每个`DataListItem`中`Suppliers`DataList 和调用`SuppliersBLL`类的`UpdateSupplierAddress`方法，传入相应的值。 地址、 城市或国家/地区传递的非输入值是值为`Nothing`到`UpdateSupplierAddress`（而不是空字符串），这会导致数据库`NULL`基础记录 s 字段。
 
 > [!NOTE]
 > 是增强，您可能想要将状态标签 Web 控件添加到提供一些确认消息，执行批处理更新后的页面。
-
 
 ## <a name="updating-only-those-addresses-that-have-been-modified"></a>更新已修改这些地址
 
@@ -132,7 +114,6 @@ ADO.NET DataTable 和 DataAdapter 类旨在支持批量更新，其中仅修改�
 
 在中`SuppliersBLL`我们通过一个供应商记录到中的第一个读取更新指定供应商的地址信息的类`SuppliersDataTable`，然后设置`Address`， `City`，和`Country`列的值使用以下代码：
 
-
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample5.cs)]
 
 传入的地址、 城市和国家/地区值，此代码段将分配`SuppliersRow`在`SuppliersDataTable`而不考虑值没有变化。 这些修改会导致`SuppliersRow`s`RowState`属性被标记为已修改。 当数据访问层 s`Update`方法调用时，它发现`SupplierRow`已被修改，因此发送`UPDATE`命令到数据库。
@@ -140,7 +121,6 @@ ADO.NET DataTable 和 DataAdapter 类旨在支持批量更新，其中仅修改�
 假设，我们将代码添加到此方法以仅分配传入的地址、 城市和国家/地区值，如果它们与不同`SuppliersRow`s 现有值。 其中的地址、 城市和国家/地区将与现有的数据相同的情况下，在进行任何更改并`SupplierRow`s`RowState`将保留标记为不变。 最终结果是，当 DAL s`Update`调用方法，将对任何数据库调用，因为`SuppliersRow`尚未修改。
 
 若要执行此更改，将为传入的地址、 城市和国家/地区值使用以下代码会盲目地将分配的语句：
-
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample6.cs)]
 
@@ -150,7 +130,6 @@ ADO.NET DataTable 和 DataAdapter 类旨在支持批量更新，其中仅修改�
 
 > [!NOTE]
 > 每次`UpdateSupplierAddress`调用方法、 调用数据库以检索有关已更新记录的信息。 然后，如果数据中有任何更改，另一个到数据库进行调用以更新表行。 可以通过创建优化此工作流`UpdateSupplierAddress`方法重载，接受`EmployeesDataTable`具有实例*所有*中的更改的`BatchUpdate.aspx`页。 然后，它可以进行一次调用到数据库，若要获取所有从记录`Suppliers`表。 然后可以枚举两个结果集，无法更新只有那些已发生更改的记录。
-
 
 ## <a name="summary"></a>总结
 

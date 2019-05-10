@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: b7cce113-c82c-45bf-b97b-357e5d9f7f56
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8c7b2274ff396f222382488ed877599e86ae5b99
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 205742dd8f866c8828008c8aac7ab3f98b173ceb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412679"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123421"
 ---
 # <a name="creating-a-route-constraint-vb"></a>创建路由约束 (VB)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教程中，Stephen Walther 演示了如何控制如何浏览器请求的匹配路由通过使用正则表达式中创建路由约束。
-
 
 使用路由约束来限制相匹配的特定路由的浏览器请求。 可以使用正则表达式来指定路由约束。
 
@@ -50,11 +49,9 @@ ms.locfileid: "59412679"
 
 因为 Details() 操作需要的一个整数参数，则发出请求，其中包含一个整数值以外的内容会导致错误。 例如，如果你的浏览器中键入 URL /Product/apple 然后将图 1 中显示错误页。
 
-
 [![新建项目对话框](creating-a-route-constraint-vb/_static/image1.jpg)](creating-a-route-constraint-vb/_static/image1.png)
 
 **图 01**:看到 explode 页面 ([单击此项可查看原尺寸图像](creating-a-route-constraint-vb/_static/image2.png))
-
 
 您真正想要做什么是仅匹配包含正确的整数 productId 的 Url。 您可以使用约束定义路由时以限制与路由匹配的 Url。 列表 3 中的已修改的产品路由包含仅与整数相匹配的正则表达式约束。
 

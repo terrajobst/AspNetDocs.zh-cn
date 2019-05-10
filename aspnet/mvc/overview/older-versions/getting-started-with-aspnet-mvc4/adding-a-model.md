@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 53db72da-e0b9-44d9-b60b-6e6988c00b28
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 2d0f3813c0c8df0fa7d13ca601f172bc370efe78
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5b26b79de99763bd41d0c3471a666cd6bb4d2d75
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59379945"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129910"
 ---
 # <a name="adding-a-model"></a>添加模型
 
@@ -21,7 +21,6 @@ ms.locfileid: "59379945"
 
 > > [!NOTE]
 > > 本教程中的更新的版本是可用[此处](../../getting-started/introduction/getting-started.md)，它使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示更多的功能。
-
 
 在本部分中将添加用于管理数据库中的电影的一些类。 这些类将是&quot;模型&quot;ASP.NET MVC 应用程序的一部分。
 

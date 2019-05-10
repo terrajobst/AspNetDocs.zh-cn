@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 44a22ac7-1fc7-4174-b946-c6129fb6a19b
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 7ea8c74a6621200e3a0d52a7c37fed6b5eeff4e5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d580e550f2461837f0e8a4e477273348b49cb53e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391619"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132394"
 ---
 # <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>方案：配置用于 Web 部署的测试环境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59391619"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍典型的 web 部署方案中为开发人员或测试环境并说明完成若要设置类似的环境所需的任务。
-
 
 当开发人员的 web 应用程序时，它们通常是到它们可用于在现实设置中测试对其应用程序的更改的服务器环境中授予访问权限。 这种类型的开发或测试环境通常具有以下特征：
 
@@ -47,7 +46,6 @@ ms.locfileid: "59391619"
 
 > [!NOTE]
 > 您还可以使用[按需部署的 Web](https://technet.microsoft.com/library/ee517345(WS.10).aspx) （"临时代理"）。 这是类似于要求和约束方面的远程代理方法。
-
 
 在这种情况下，开发人员在目标服务器上具有管理员权限，测试环境无需遵守严格的安全约束，因此，逻辑的选择是将测试 web 服务器配置为支持使用远程代理的部署。 这是不太复杂，需要比 Web 部署处理程序方法不太初始配置。 此外需要配置你的数据库服务器以支持远程访问和部署。
 

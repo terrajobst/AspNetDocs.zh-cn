@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: c8d93e11-ef78-4a30-afbc-f30419000a60
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f8eeeaa9bd77c0259f680198e57ade8d49cd06b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b1b53bea899deecef203551b23c087944e3990ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382611"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123452"
 ---
 # <a name="creating-an-action-vb"></a>创建操作 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被操作的要求。
-
 
 本教程的目的是说明如何创建新的控制器操作。 了解有关操作方法的要求。 你还了解如何避免方法公开为一个操作。
 
@@ -55,7 +54,6 @@ by [Microsoft](https://github.com/microsoft)
 [!code-vb[Main](creating-an-action-vb/samples/sample2.vb)]
 
 如果你尝试通过在浏览器地址栏中键入 /Work/CompanySecrets 调用 CompanySecrets() 控制器操作然后将图 1 中收到错误消息。
-
 
 [![调用 NonAction 方法](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
 

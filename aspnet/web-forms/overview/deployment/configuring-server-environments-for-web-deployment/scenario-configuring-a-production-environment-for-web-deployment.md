@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 2e861511-450e-4752-a61e-4a01933f9b6e
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 586508039b9a3d78492aa02a77a1f29c64668b5e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2d76e715cdbf6ec484fa0ff98b3b3d1d8dfd3961
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409689"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125835"
 ---
 # <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>方案：配置用于 Web 部署的生产环境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59409689"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍适用于生产环境的典型的 web 部署方案，并说明完成若要设置类似的环境所需的任务。
-
 
 在生产环境是 web 应用程序或网站的最终目标。 此时，你的应用程序将已通过测试，已部署到过渡环境，并已准备好"go live。" 生产环境中的特征可能会因广泛的性质和用途的 web 内容、 组织、 目标受众和很多其他因素的大小。 在企业级方案中，在生产环境可能具有以下特征：
 
@@ -33,7 +32,6 @@ ms.locfileid: "59409689"
 
 > [!NOTE]
 > 跨多个服务器横向扩展数据库部署不在本教程的范围。 此区域的详细信息，请查阅[SQL Server 联机丛书](https://technet.microsoft.com/library/ms130214.aspx)。
-
 
 例如，在我们[教程的情况下](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)，Team Build 服务器包括让用户构建 Contact Manager 解决方案，并将其部署到过渡环境中单个步骤的生成定义。 准备好部署到生产环境中，由于施加的安全要求和网络基础结构，限制应用程序时必须手动复制到生产 web 服务器上的 web 包并导入生产环境管理员它通过 Internet 信息服务 (IIS) 管理器。
 

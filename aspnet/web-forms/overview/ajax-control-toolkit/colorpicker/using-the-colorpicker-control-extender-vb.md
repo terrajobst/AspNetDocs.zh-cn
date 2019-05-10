@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 577ae07b-a872-4818-a804-bca489b40ad0
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 311cd61ae971dd6b902411eca87f75f87f5868ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 77e2e3bc61a5e1498570959ca40acff83dc3fc82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384054"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126037"
 ---
 # <a name="using-the-colorpicker-control-extender-vb"></a>使用 ColorPicker 控件扩展程序 (VB)
 
@@ -21,18 +21,15 @@ by [Microsoft](https://github.com/microsoft)
 
 > 颜色选取器是客户端的颜色选择功能提供用户界面中的弹出控件的 ASP.NET AJAX 扩展程序。 可以将它附加到任何 ASP.NET TextBox 控件。 它。
 
-
 本教程的目的是说明如何使用 AJAX 控件工具包 ColorPicker 控件扩展程序。 ColorPicker 控件扩展程序显示弹出对话框中，可用于选择一种颜色。 只要您想要提供一个直观的用户界面，供用户选择一种颜色，颜色选取器非常有用。
 
 ## <a name="extending-a-textbox-control-with-the-colorpicker-control-extender"></a>扩展具有 ColorPicker 控件扩展程序的文本框控件
 
 例如，假设你想要创建可使访问者可以创建自定义的业务卡的网站。 访问者可以为业务卡中输入的文本并选取的颜色。 列表 1 中的 ASP.NET 页包含两个名为 txtCardText 和 txtCardColor 的 TextBox 控件。 当用户提交窗体时，显示所选的值 （请参阅图 1）。
 
-
 [![用于创建名片的简单窗体](using-the-colorpicker-control-extender-vb/_static/image1.jpg)](using-the-colorpicker-control-extender-vb/_static/image1.png)
 
 **图 01**:用于创建名片的简单窗体 ([单击此项可查看原尺寸图像](using-the-colorpicker-control-extender-vb/_static/image2.png))
-
 
 **代码清单 1-CreateCard.aspx**
 
@@ -42,11 +39,9 @@ by [Microsoft](https://github.com/microsoft)
 
 ColorPicker 控件扩展程序可用于创建更好的用户体验。 颜色选取器时将焦点移到 TextBox 控件显示颜色对话框 （请参见图 2）。
 
-
 [![ColorPicker 控件扩展程序](using-the-colorpicker-control-extender-vb/_static/image2.jpg)](using-the-colorpicker-control-extender-vb/_static/image3.png)
 
 **图 02**:ColorPicker 控件扩展程序 ([单击此项可查看原尺寸图像](using-the-colorpicker-control-extender-vb/_static/image4.png))
-
 
 需要完成 ColorPicker 控件扩展程序中使用的窗体列表 1 中的两个步骤：
 
@@ -59,16 +54,13 @@ ColorPicker 控件扩展程序可用于创建更好的用户体验。 颜色选�
 
 ColorPicker 控件扩展程序添加到页面的最简单方法是在设计视图中。 如果将鼠标悬停 txtCardColor 文本框中，智能任务选项会显示，用于启用你添加扩展器 （请参见图 3）。 如果选择此选项，则将显示扩展器向导 （请参阅图 4）。
 
-
 [![添加扩展器](using-the-colorpicker-control-extender-vb/_static/image3.jpg)](using-the-colorpicker-control-extender-vb/_static/image5.png)
 
 **图 03**:添加扩展器 ([单击此项可查看原尺寸图像](using-the-colorpicker-control-extender-vb/_static/image6.png))
 
-
 [![选择扩展程序控件扩展程序向导](using-the-colorpicker-control-extender-vb/_static/image4.jpg)](using-the-colorpicker-control-extender-vb/_static/image7.png)
 
 **图 04**:选择使用扩展器向导扩展程序控件 ([单击此项可查看原尺寸图像](using-the-colorpicker-control-extender-vb/_static/image8.png))
-
 
 可以选择要扩展 txtCardColor 文本框使用颜色选取器扩展器的颜色选取器扩展程序。 单击确定以关闭该对话框。
 
@@ -101,11 +93,9 @@ ColorPicker PopupButtonID 属性用于将选择颜色按钮与颜色选取器扩
 
 SampleControlID 属性用于将显示颜色选取器与所选的颜色的控件相关联。 颜色选取器将此控件的背景色更改为当前选定的颜色。
 
-
 [![显示具有一个按钮的颜色选取器对话框](using-the-colorpicker-control-extender-vb/_static/image5.jpg)](using-the-colorpicker-control-extender-vb/_static/image9.png)
 
 **图 05**:显示颜色选取器对话框使用一个按钮 ([单击此项可查看原尺寸图像](using-the-colorpicker-control-extender-vb/_static/image10.png))
-
 
 ## <a name="summary"></a>总结
 

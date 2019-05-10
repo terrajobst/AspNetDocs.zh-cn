@@ -8,19 +8,18 @@ ms.date: 12/03/2010
 ms.assetid: fb63a326-a4ae-4b0c-a4f5-412327197216
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: f436044b0887d6b092ab18a6128019aa87747566
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bd6a2e29e6f0df04e39be29160e2e08cc99c4706
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422299"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126854"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体-第 2 部分
 
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 有关教程系列的信息，请参阅[系列中的第一个教程](the-entity-framework-and-aspnet-getting-started-part-1.md)
-
 
 ## <a name="the-entitydatasource-control"></a>EntityDataSource 控件
 

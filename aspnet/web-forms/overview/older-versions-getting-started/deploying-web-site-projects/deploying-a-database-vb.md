@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 96ac3e69-04c7-4917-ad06-5f8968c3fbf1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f7731570a3c96f579c4717a0ab2b5e0d742457f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: add2ca4709ea16b10efb11491f6d3fcddb0efb2e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403501"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125730"
 ---
 # <a name="deploying-a-database-vb"></a>部署数据库 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59403501"
 [下载代码](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_07_VB.zip)或[下载 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial07_DeployDB_vb.pdf)
 
 > 部署 ASP.NET web 应用程序需要从开发环境中获取的必要的文件和资源到生产环境。 对于数据驱动的 web 应用程序中，这包括数据库架构和数据。 本教程中探讨了成功部署到生产环境中开发环境的数据库所需的步骤一系列的第一个。
-
 
 ### <a name="introduction"></a>介绍
 
@@ -42,30 +41,24 @@ ms.locfileid: "59403501"
 - `Books` -包括每个评审，如列的记录`Title`， `GenreId`， `ReviewDate`，和`Review`，等等。
 - `Authors` -包含有关已审阅书籍做出了贡献每位作者的信息。
 - `BooksAuthors` -指定哪些作者已编写哪些丛书的多对多联接表。
-  
 
 图 1 显示了以下四个表的 ER 关系图。
-
 
 [![通讯簿评审 Web 应用程序的数据库是包含的四个表](deploying-a-database-vb/_static/image2.jpg)](deploying-a-database-vb/_static/image1.jpg) 
 
 **图 1**:通讯簿评审 Web 应用程序的数据库是包含的四个表 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image3.jpg))
 
-
 以前版本的书评网站必须单独每本书的 ASP.NET 页面。 例如，有了一个名为页`~/Tech/TYASP35.aspx`包含的审阅*教您自己 ASP.NET 3.5 24 小时内*。 该网站的此新数据驱动版本具有存储在数据库和单个 ASP.NET 页面，Review.aspx?ID= 评论*bookId*，后者将显示指定的书籍的审阅。 同样，没有 Genre.aspx?ID=*genreId*页面列出了指定的类型中的已审阅的书籍。
 
 图 2 和 3 个 show`Genre.aspx`和`Review.aspx`操作中的页。 请注意每个页面在地址栏中的 URL。 在图 2 it s Genre.aspx？ ID = 85d164ba 1123年 4 c 的 47-82a0-c8ec75de7e0e。 因为 85d164ba-1123-4c47-82a0-c8ec75de7e0e`GenreId`技术 genre、"技术回顾"页的标题读取和项目符号列表的值枚举属于此类型在站点上的这些评论。
-
 
 [![技术流派页](deploying-a-database-vb/_static/image5.jpg)](deploying-a-database-vb/_static/image4.jpg) 
 
 **图 2**:技术流派页 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image6.jpg))
 
-
 [![有关查看自学 ASP.NET 3.5 中 24 小时](deploying-a-database-vb/_static/image8.jpg)](deploying-a-database-vb/_static/image7.jpg) 
 
 **图 3**:审阅*教您自己 ASP.NET 3.5 24 小时内*([单击以查看实际尺寸的图像](deploying-a-database-vb/_static/image9.jpg))
-
 
 通讯簿评审 web 应用程序还包括管理部分，管理员可以添加、 编辑和删除流派，评审，和作者信息。 目前，任何访问者可以访问管理部分。 在将来的教程中我们将添加对用户帐户的支持，并仅允许经过授权的用户到管理页。
 
@@ -95,48 +88,38 @@ ms.locfileid: "59403501"
 
 打开 Visual Studio 并导航到`Reviews.mdf`数据库。 如果使用 Visual Web Developer 中，转到数据库资源管理器;如果使用的 Visual Studio，，使用服务器资源管理器。 图 4 显示了`Reviews.mdf`Visual Web Developer 中的数据库资源管理器中的数据库。 如图 4 所示，`Reviews.mdf`数据库组成的四个表、 三个存储的过程和用户定义函数。
 
-
 [![在数据库资源管理器或服务器资源管理器中找到数据库](deploying-a-database-vb/_static/image11.jpg)](deploying-a-database-vb/_static/image10.jpg) 
 
 **图 4**:在数据库资源管理器或服务器资源管理器中找到数据库 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image12.jpg))
 
-
 右键单击数据库名称，然后从上下文菜单中选择"发布到提供程序"选项。 这将启动数据库发布向导 （请参见图 5）。 单击旁边提前过去的初始屏幕。
-
 
 [![数据库发布向导的初始屏幕](deploying-a-database-vb/_static/image14.jpg)](deploying-a-database-vb/_static/image13.jpg) 
 
 **图 5**:数据库发布向导的初始屏幕 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image15.jpg))
-
 
 在向导中的第二个屏幕列出了数据库发布向导可以访问数据库，并允许您选择是否要在所选数据库中的所有对象编写都脚本或选择编写都脚本的对象。 选择相应的数据库并将"对象所选数据库中的所有脚本"选项处于选中状态。
 
 > [!NOTE]
 > 如果收到错误"在数据库中有任何对象*databaseName*的此向导可编写脚本的类型"时在图 6 中所示的屏幕中单击下一步，请确保您的数据库文件的路径不是很长。 如中所述[这项讨论](http://www.codeplex.com/sqlhost/Thread/View.aspx?ThreadId=11014)在数据库发布向导项目页上，可能出现此错误，如果数据库文件的路径太长。
 
-
 [![数据库发布向导的初始屏幕](deploying-a-database-vb/_static/image17.jpg)](deploying-a-database-vb/_static/image16.jpg) 
 
 **图 6**:数据库发布向导的初始屏幕 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image18.jpg))
 
-
 从下一个屏幕可以生成的脚本文件或者，如果你的 web 主机支持此功能，数据库将直接发布到 web 宿主提供程序的数据库服务器。 如图 7 所示，我遇到脚本写入到文件`C:\REVIEWS.MDF.sql`。
-
 
 [![编写脚本的数据库的文件或将其发布到你的 Web 宿主提供程序直接](deploying-a-database-vb/_static/image20.jpg)](deploying-a-database-vb/_static/image19.jpg) 
 
 **图 7**:编写脚本的数据库的文件或将其发布到你的 Web 宿主提供程序直接 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image21.jpg))
 
-
 后续屏幕将提示您输入的各种脚本编写选项。 您可以指定脚本是否应包含 drop 语句删除这些现有对象。 此值默认为 True，这样很好的第一次部署数据库时。 此外可以指定目标数据库是 SQL Server 2000、 SQL Server 2005 或 SQL Server 2008。 最后，指示是否编写脚本的架构和数据，只需的数据或只为架构。 架构是数据库对象、 表、 存储的过程、 视图和等等的集合。 数据是驻留在表中的信息。
 
 如图 8 所示，我遇到配置为删除现有数据库对象，该向导生成脚本的 SQL Server 2008 数据库，并将发布架构和数据。
 
-
 [![指定发布选项](deploying-a-database-vb/_static/image23.jpg)](deploying-a-database-vb/_static/image22.jpg) 
 
 **图 8**:指定发布选项 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image24.jpg))
-
 
 在最后两个屏幕总结了要执行，并显示的脚本状态的操作。 运行向导的最终结果是我们有一个包含生产上创建数据库并使用相同的数据填充它与在开发上所需的 SQL 命令的脚本文件。
 
@@ -148,32 +131,25 @@ ms.locfileid: "59403501"
 
 启动 SSMS 并连接到使用 web 主机提供商提供的信息在 web 主机的数据库服务器。
 
-
 [![连接到 Web 宿主提供程序的数据库服务器](deploying-a-database-vb/_static/image26.jpg)](deploying-a-database-vb/_static/image25.jpg) 
 
 **图 9**:连接到你的 Web 主机提供商 s 数据库服务器 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image27.jpg))
 
-
 展开数据库选项卡并找到你的数据库。 单击工具栏左上角中的新建查询按钮，将粘贴数据库发布向导中，创建的脚本文件中的 SQL 命令中，单击执行按钮以在生产数据库服务器上运行这些命令。 尤其是大型脚本文件时可能需要几分钟才能执行命令。
-
 
 [![连接到 Web 宿主提供程序的数据库服务器](deploying-a-database-vb/_static/image29.jpg)](deploying-a-database-vb/_static/image28.jpg) 
 
 **图 10**:连接到你的 Web 主机提供商 s 数据库服务器 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image30.jpg))
 
-
 该 s 都在这里就简单 ！ 现在，重复开发数据库到生产环境。 如果刷新该数据库在 SSMS 中的应看到新的数据库对象。 图 11 显示了生产数据库的表、 存储的过程和用户定义的函数，镜像上开发数据库。 和生产数据库的表我们指示数据库发布向导来将数据发布，因为具有在该向导已执行的时间与开发数据库的表相同的数据。 图 12 显示了中的数据`Books`生产数据库上的表。
-
 
 [![在生产数据库上复制了数据库对象](deploying-a-database-vb/_static/image32.jpg)](deploying-a-database-vb/_static/image31.jpg) 
 
 **图 11**:数据库对象已复制了生产数据库上 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image33.jpg))
 
-
 [![生产数据库包含与在开发数据库相同的数据](deploying-a-database-vb/_static/image35.jpg)](deploying-a-database-vb/_static/image34.jpg) 
 
 **图 12**:生产数据库上开发数据库包含相同的数据 ([单击此项可查看原尺寸图像](deploying-a-database-vb/_static/image36.jpg))
-
 
 此时我们仅具有到生产环境部署开发数据库。 尚不支持已介绍了部署 web 应用程序本身或检查所需配置更改，让应用程序在生产使用生产数据库。 在下一教程中，我们将介绍这些问题 ！
 

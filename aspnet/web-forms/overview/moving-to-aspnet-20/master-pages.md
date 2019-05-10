@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 348e28778e0e7d96230534df1d61386ed39f8f11
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 36f2caf7c2c9bcafd22c8f6681c1d6b19fe5078a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381141"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131061"
 ---
 # <a name="master-pages"></a>母版页
 
 by [Microsoft](https://github.com/microsoft)
 
 > 成功的网站的关键组件之一是一致的外观。 在 ASP.NET 1.x 中，开发人员使用用户控件在 Web 应用程序之间复制常见页面元素。 虽然这的确是一个可行的解决方案，则使用用户控件也有一些缺点。 例如，用户控件的位置的更改在站点之间要求对多个页面的更改。 用户控件也不会呈现在页面上插入后的设计视图中。
-
 
 成功的网站的关键组件之一是一致的外观。 在 ASP.NET 1.x 中，开发人员使用用户控件在 Web 应用程序之间复制常见页面元素。 虽然这的确是一个可行的解决方案，则使用用户控件也有一些缺点。 例如，用户控件的位置的更改在站点之间要求对多个页面的更改。 用户控件也不会呈现在页面上插入后的设计视图中。
 
@@ -47,14 +46,11 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 > [!NOTE]
 > 您将经常听人们描述为基类的其他页面的母版页。 这是实际不适用。 母版页和内容页之间的关系不是继承。
 
-
 **图 1**显示主控页和关联的内容页中 Visual Studio 2005 的显示方式。 可以看到在母版页和相应的 ContentPlaceHolder 控件内容的内容页中的控件。 请注意，外部 ContentPlaceHolder 的主页面内容可见，但在内容页中灰显。 仅将 ContentPlaceHolder 内的内容可以通过内容页所取代。 所有其他来自母版页的内容是不可变。
-
 
 ![母版页和其关联的内容页](master-pages/_static/image1.jpg)
 
 **图 1**:母版页和其关联的内容页
-
 
 ## <a name="creating-a-master-page"></a>创建主页面
 
@@ -65,11 +61,9 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 3. 从添加新项对话框中选择主文件，如中所示**图 2**。
 4. 单击添加。
 
-
 ![创建一个新的主页面](master-pages/_static/image2.jpg)
 
 **图 2**:创建一个新的主页面
-
 
 请注意，文件扩展名为母版页 *.master*。 这是主页面与普通页不同的方法之一。 其他主要区别是替代@Page指令，母版页包含@Master指令。 切换到源视图的主页面，刚刚创建并查看代码。
 
@@ -86,29 +80,23 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
     3. 通过单击该控件的阴影上边框选择 ContentPlaceHolder 控件，然后按你键盘上的 DEL 键中删除它。
     4. 插入新表使用*标头和端*图 3 中所示的模板。 将宽度和高度更改为 90%，以使整个表设计器中可见。
 
-
 ![](master-pages/_static/image3.jpg)
 
 **图 3**
-
 
 1. 将光标置于表的每个单元格并设置*valign*属性设置为*顶部*。
 2. 从工具箱中的表 （的标头单元格。） 的顶部单元插入 ContentPlaceHolder 控件
 3. 当插入此 ContentPlaceHolder 控件时，您会注意到行的高度将几乎整个页面占用，如图 4 中所示。 不必担心，在这里。
 
-
 ![作为 ContentPlaceHolder 相同单元中是空的空间](master-pages/_static/image1.gif)
 
 **图 4**:作为 ContentPlaceHolder 相同单元中是空的空间
 
-
 1. 将 ContentPlaceHolder 控件放在其他两个单元格。 一旦已插入其他 ContentPlaceHolder 控件，表格单元格的大小应为按预期的方式。 页面现在应如下所示中显示的页面**图 5**。
-
 
 ![与所有 ContentPlaceHolder 控件 Master。 请注意，标头单元格的单元格高度现在它应该是什么](master-pages/_static/image2.gif)
 
 **图 5**:与所有 ContentPlaceHolder 控件 Master。 请注意，标头单元格的单元格高度现在它应该是什么
-
 
 1. 每三个 ContentPlaceHolder 控件中输入所选的某些文本。
 2. 将为 exercise1.master 母版页。
@@ -117,11 +105,9 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 5. 选择**Web 窗体**在添加新项对话框。
 6. 请确保选中选择母版页复选框，如图 6 中所示。
 
-
 ![添加一个新的内容页](master-pages/_static/image3.gif)
 
 **图 6**:添加一个新的内容页
-
 
 1. 单击添加。
 2. 选择 exercise1.master 在中，选择一个母版页对话框图 7 中所示。
@@ -129,11 +115,9 @@ ASP.NET 2.0 引入了 Master 页作为维护一致的外观和感觉，一种方
 
 新的内容页出现在 Visual Studio 为每个 ContentPlaceHolder 控件在母版页上的其中一个内容控件。 默认情况下，内容控件是空的以便可以添加自己的内容。 如果你想要为它们使用 ContentPlaceHolder 控件在母版页上的内容，只需单击智能标记符号 （在右上角的控件的小黑色箭头），然后选择*默认为母版内容*从智能标记，如中所示**图 8**。 执行此操作时，菜单项将变为*创建自定义内容*。 此时，单击从母版页允许您定义该特定的内容控件的自定义内容中删除内容。
 
-
 ![设置默认为母版页的页面内容的内容控件](master-pages/_static/image4.gif)
 
 **图 7**:设置默认为母版页的页面内容的内容控件
-
 
 ## <a name="connecting-master-page-and-content-pages"></a>连接母版页和内容页面
 
@@ -183,15 +167,11 @@ MasterPageFile 属性轻松应用于特定的 ASP.NET 页面的母版页。 它�
 > [!NOTE]
 > 设计器支持不可用于嵌套的母版页。 当你要开发使用嵌套的母版时，需要使用源视图。
 
-
 此视频演示了如何使用嵌套的母版页。
-
 
 ![](master-pages/_static/image1.png)
 
-
 [打开的全屏视频](master-pages/_static/nested1.wmv)
-
 
 ![选择母版页](master-pages/_static/image4.jpg)
 

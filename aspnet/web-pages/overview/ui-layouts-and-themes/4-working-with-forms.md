@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: 680739cbcf54bc9ca7a3bd8167d043ff537eaad5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ec5ad784978b2d5191d59398fc4b5ed25ae516fb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417528"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128408"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web Pages (Razor) 站点中的 HTML 窗体
 
@@ -42,7 +42,6 @@ ms.locfileid: "59417528"
 >   
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
-
 
 ## <a name="creating-a-simple-html-form"></a>创建一个简单的 HTML 窗体
 
@@ -89,7 +88,6 @@ ms.locfileid: "59417528"
 > 它是一个不错的主意，若要使用 HTML 编码的随时显示字符串 （输入） 所获取的用户。 如果不这样做，用户可以尝试获取网页以运行恶意脚本或执行其他操作这影响了您站点的安全或只是不想。 (这一点特别重要的如果需要用户输入，将其存储位置，然后将其显示更高版本&#8212;例如，如博客评论、 用户审阅或像这样的功能。)
 > 
 > 若要帮助防止这些问题，ASP.NET Web Pages 自动进行 HTML 编码的任何文本内容的输出在代码中。 例如，当显示的变量或表达式中使用的代码如内容`@MyVar`，ASP.NET Web Pages 自动对输出进行编码。
-
 
 ## <a name="validating-user-input"></a>验证用户输入
 

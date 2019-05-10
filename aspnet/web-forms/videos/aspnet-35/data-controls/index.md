@@ -8,17 +8,16 @@ ms.date: 11/14/2011
 ms.assetid: 62fc223f-9c29-4af9-bdb7-902103d5cff1
 msc.legacyurl: /web-forms/videos/aspnet-35/data-controls
 msc.type: chapter
-ms.openlocfilehash: 17ec29cb24d0cd6943a821190d5cbabee69a58d2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da13a1a7a8e26223e3e0c4852a3d858281b6a358
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397378"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132019"
 ---
 # <a name="data-controls"></a>数据控件
 
 > 此系列视频介绍了如何使用 ASP.NET 3.5 的新数据控件功能
-
 
 - [ListView 控件](the-listview-control.md)
 - [DataPager 控件](the-datapager-control.md)

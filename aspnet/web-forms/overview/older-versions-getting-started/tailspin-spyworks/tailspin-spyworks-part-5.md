@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: eaef475a-ca91-47ea-a4a7-d074005ed80c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: cf2cee3888228069e59e9e44ffc2bc56fbba10e3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c60eece9223c47304786d7b0d0ca4b11ac0572e9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415656"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131002"
 ---
 # <a name="part-5-business-logic"></a>第 5 部分：业务逻辑
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415656"
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 5 部分将添加一些业务逻辑。
-
 
 ## <a id="_Toc260221671"></a>  添加一些业务逻辑
 

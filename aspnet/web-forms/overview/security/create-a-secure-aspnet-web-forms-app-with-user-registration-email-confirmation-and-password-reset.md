@@ -8,19 +8,18 @@ ms.date: 10/02/2014
 ms.assetid: 0a8d6044-5fab-4213-82d6-5618d5601358
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 3df728891103de9c8e461ab9507237c9b14e8251
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: af3653bc164810126bc3bf8f1b1794d75642d807
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390683"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133804"
 ---
 # <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>创建具有用户注册、电子邮件确认和密码重置功能的安全 ASP.NET Web 窗体应用 (C#)
 
 通过[Erik Reitan](https://github.com/Erikre)
 
 > 本教程演示如何构建包含用户注册、 电子邮件确认和密码重置使用 ASP.NET 标识成员资格系统的 ASP.NET Web 窗体应用。 本教程基于 Rick Anderson [MVC 教程](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -43,7 +42,6 @@ ms.locfileid: "59390683"
 
 > [!NOTE]
 > 警告：必须安装[Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更高版本，若要完成本教程。
-
 
 1. 创建新的项目 (**文件** - &gt; **新项目**)，然后选择**ASP.NET Web 应用程序**模板和最新的.NET Framework从版本**新的项目**对话框。
 2. 从**新建 ASP.NET 项目**对话框中，选择**Web 窗体**模板。 将保留为默认的身份验证**单个用户帐户**。 如果你想要托管该应用程序在 Azure 中的，将保留**在云中托管**选中的复选框。   
@@ -95,7 +93,6 @@ ms.locfileid: "59390683"
 ### <a name="enable-email-confirmation"></a>启用电子邮件确认
 
  若要启用电子邮件确认，您将修改的注册代码，使用以下步骤。  
- 
 
 1. 在中*帐户*文件夹中，打开*Register.aspx.cs*的代码隐藏和更新`CreateUser_Click`方法，以使以下突出显示的更改： 
 

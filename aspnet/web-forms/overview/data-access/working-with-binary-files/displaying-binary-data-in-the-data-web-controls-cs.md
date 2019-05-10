@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c6c41ba5b5414da689e63ef521f1cf22e0b55701
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4c5c2befd31299b0d9dedf0a3cdb9c8a65d692ec
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404281"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127157"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-c"></a>显示数据 Web 控件中的二进制数据 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59404281"
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_55_CS.exe)或[下载 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/datatutorial55cs1.pdf)
 
 > 在本教程中我们查看一下在 Web 页上，包括显示的图像文件和 PDF 文件预配的下载链接上显示二进制数据的选项。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -40,11 +39,9 @@ ms.locfileid: "59404281"
 
 本教程的下载内容中，您会发现中的七个 PDF 小册子文件`~/Brochures`文件夹，一个用于除 Seafood 类别中的每一个。 我有意省略了添加 Seafood 手册，为了说明如何处理方案具有关联并不是所有记录的二进制数据。 若要更新`Categories`使用这些值表中，右键单击`Categories`节点从服务器资源管理器，然后选择显示表数据。 然后，输入具有小册子中，如图 1 所示的每个类别的手册文件虚拟路径。 由于没有任何手册 Seafood 类别，将保留其`BrochurePath`作为列的值`NULL`。
 
-
 [![手动输入类别表的 BrochurePath 列的值](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
 
 **图 1**:手动输入的值`Categories`表 s`BrochurePath`列 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.png))
-
 
 ## <a name="step-2-providing-a-download-link-for-the-brochures-in-a-gridview"></a>步骤 2：在 GridView 中小册子为提供的下载链接
 
@@ -52,55 +49,43 @@ ms.locfileid: "59404281"
 
 首先，将从工具箱拖到设计器的 GridView`DisplayOrDownloadData.aspx`页中`BinaryData`文件夹。 设置 GridView s`ID`到`Categories`通过 GridView s 智能标记，选择将其绑定到新的数据源。 具体而言，将其绑定到名为 ObjectDataSource`CategoriesDataSource`检索数据使用的`CategoriesBLL`对象的`GetCategories()`方法。
 
-
 [![创建名为 CategoriesDataSource 新 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
 
 **图 2**:创建新对象数据源命名`CategoriesDataSource`([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.png))
-
 
 [![配置对象数据源以使用 CategoriesBLL 类](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
 
 **图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.png))
 
-
 [![检索使用 GetCategories() 方法的类别列表](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
 
 **图 4**:检索列表的类别 Using`GetCategories()`方法 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.png))
 
-
 完成配置数据源向导后，Visual Studio 将自动添加到 BoundField `Categories` GridView `CategoryID`， `CategoryName`， `Description`， `NumberOfProducts`，并且`BrochurePath` `DataColumn` s。 继续操作并删除`NumberOfProducts`以来 BoundField`GetCategories()`的方法查询不会检索此信息。 此外删除`CategoryID`BoundField 和重命名`CategoryName`并`BrochurePath`BoundFields`HeaderText`为类别和手册，属性分别。 进行这些更改后，您的 GridView 和 ObjectDataSource s 的声明性标记应如下所示：
-
 
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample1.aspx)]
 
 查看此页上的通过浏览器 （请参见图 5）。 列出的每个八个类别。 使用七种类别`BrochurePath`值具有`BrochurePath`各自 BoundField 中显示的值。 Seafood，具有`NULL`值为其`BrochurePath`，将显示空单元格。
 
-
 [![列出每个类别的名称、 说明和 BrochurePath 值](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
 
 **图 5**:每个类别的名称、 说明，并`BrochurePath`列出值 ([单击以查看实际尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.png))
 
-
 而不是显示的文本`BrochurePath`列中，我们想要创建指向小册子中的链接。 若要完成此操作，删除`BrochurePath`BoundField 和将其替换为 HyperLinkField。 设置新 HyperLinkField s`HeaderText`属性设置为手册，其`Text`属性设置为视图小册子中，并将其`DataNavigateUrlFields`属性设置为`BrochurePath`。
-
 
 ![为 BrochurePath 添加 HyperLinkField](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.gif)
 
 **图 6**:添加为 HyperLinkField `BrochurePath`
 
-
 如图 7 所示，这将添加一列链接到 GridView。 单击视图手册链接将直接在浏览器中显示 PDF 或提示用户下载的文件，具体取决于是否安装了 PDF 阅读器和浏览器的设置。
-
 
 [![可通过单击查看手册链接查看类别的手册](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
 
 **图 7**:类别可以查看手册 s，通过单击查看手册链接 ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image12.png))
 
-
 [![显示类别的手册 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
 
 **图 8**:显示类别的手册 PDF ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image14.png))
-
 
 ## <a name="hiding-the-view-brochure-text-for-categories-without-a-brochure"></a>而无需手册的类别的隐藏视图手册文本
 
@@ -110,19 +95,15 @@ ms.locfileid: "59404281"
 
 选择将转换为 TemplateField HyperLinkField `BrochurePath` HyperLinkField，然后单击转换此字段转换为 TemplateField 链接在编辑列对话框中。
 
-
 ![HyperLinkField 转换为 TemplateField](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.gif)
 
 **图 9**:HyperLinkField 转换为 TemplateField
 
-
 这将创建使用 TemplateField `ItemTemplate` ，其中包含超链接 Web 控件`NavigateUrl`属性绑定到`BrochurePath`值。 将此标记对方法的调用替换为`GenerateBrochureLink`中的值传入`BrochurePath`:
-
 
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample2.aspx)]
 
 接下来，创建`protected`方法在 ASP.NET 页上名为 s 代码隐藏类`GenerateBrochureLink`，它返回`string`并接受`object`作为输入参数。
-
 
 [!code-csharp[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample3.cs)]
 
@@ -130,18 +111,15 @@ ms.locfileid: "59404281"
 
 图 10 应用这些更改后显示的页。 请注意，Seafood 类别的`BrochurePath`字段现在显示无手册可用的文本。
 
-
 [![文本否手册可显示有关这些类别而无需手册](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
 
 **图 10**:文本否手册可显示有关这些类别而无需手册 ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image16.png))
-
 
 ## <a name="step-3-adding-a-web-page-to-display-a-category-s-picture"></a>步骤 3：添加 Web 页以显示类别的图片
 
 当用户访问 ASP.NET 页面时，他们将收到 ASP.NET 页的 HTML。 收到的 HTML 只是文本，并且不包含任何二进制数据。 任何其他的二进制数据，如图像、 声音文件、 Macromedia Flash 应用程序、 嵌入 Windows Media Player 视频等，作为单独的 web 服务器上的资源存在。 HTML 包含对这些文件的引用，但不包括文件的实际内容。
 
 例如，在 HTML`<img>`元素用于引用一张图片，与`src`指向图像文件的属性如下所示：
-
 
 [!code-html[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample4.html)]
 
@@ -151,13 +129,11 @@ ms.locfileid: "59404281"
 
 添加到新的 ASP.NET 页`BinaryData`文件夹名为`DisplayCategoryPicture.aspx`。 这样做时，选择母版页复选框保持未选中状态。 此页需要`CategoryID`在查询字符串并返回该类别 s 的二进制数据值`Picture`列。 由于此页返回二进制数据和其他任何内容，因此它不需要的 HTML 部分中任何标记。 因此，单击左下角的源选项卡并删除所有页面的标记除外`<%@ Page %>`指令。 也就是说， `DisplayCategoryPicture.aspx` s 声明性标记应包含单个行：
 
-
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample5.aspx)]
 
 如果您看到`MasterPageFile`属性中`<%@ Page %>`指令，将其删除。
 
 在页面 + s 代码隐藏类中，以下代码添加到`Page_Load`事件处理程序：
-
 
 [!code-csharp[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample6.cs)]
 
@@ -167,14 +143,11 @@ ms.locfileid: "59404281"
 
 与创建此页，可以通过访问查看特定类别的图片`DisplayCategoryPicture.aspx?CategoryID=categoryID`。 图 11 显示了饮料类别的图中，可以通过查看`DisplayCategoryPicture.aspx?CategoryID=1`。
 
-
 [![显示图片饮料类别 s](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
 
 **图 11**:显示图片的饮料类别 s ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image18.png))
 
-
 如果在访问`DisplayCategoryPicture.aspx?CategoryID=categoryID`，收到异常，并显示无法为类型的对象强制转换为 System.DBNull type 'System.Byte []，这可能导致两件事情。 首先，`Categories`表 s`Picture`允许列`NULL`值。 `DisplayCategoryPicture.aspx`页上，但是，假定有一个非`NULL`值存在。 `Picture`的属性`CategoriesDataTable`如果有不能直接访问`NULL`值。 如果确实想要允许`NULL`值为`Picture`列中，d 你想要包括以下条件：
-
 
 [!code-csharp[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample7.cs)]
 
@@ -185,7 +158,6 @@ ms.locfileid: "59404281"
 > [!NOTE]
 > 每次`DisplayCategoryPicture.aspx`是访问时，对数据库进行访问，并返回指定的类别的图片数据。 如果自用户上次查看它尚未更改类别的图片，不过，这就是做很多无用功。 幸运的是，HTTP 允许*条件获取*。 条件性 GET 发出 HTTP 请求的客户端中将发送沿[ `If-Modified-Since` HTTP 标头](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)，它提供的日期和时间在客户端上次从 web 服务器中检索此资源。 如果内容未更改由于这指定日期，因此，web 服务器可能会响应[不会修改状态代码 (304)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)和放弃发回请求的资源的内容。 简单地说，此技术使无需发送资源的内容，如果它未被修改自客户端上次访问以来的 web 服务器。
 
-
 若要实现此行为，但是，要求您添加`PictureLastModified`列添加到`Categories`表，以捕获时`Picture`检查代码以及上次更新列`If-Modified-Since`标头。 有关详细信息`If-Modified-Since`标头和条件 GET 工作流，请参阅[HTTP 条件 GET RSS 黑客](http://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers)并[更深入地看看 ASP.NET 页中执行 HTTP 请求](http://aspnet.4guysfromrolla.com/articles/122204-1.aspx)。
 
 ## <a name="step-4-displaying-the-category-pictures-in-a-gridview"></a>步骤 4：在 GridView 中显示的类别图片
@@ -194,24 +166,19 @@ ms.locfileid: "59404281"
 
 让我们来扩充`Categories`中的 GridView`DisplayOrDownloadData.aspx`通过添加 ImageField 以显示每个类别的图片。 只需添加 ImageField 并设置其`DataImageUrlField`并`DataImageUrlFormatString`属性设置为`CategoryID`和`DisplayCategoryPicture.aspx?CategoryID={0}`分别。 这将创建 GridView 列呈现`<img>`元素的`src`属性引用`DisplayCategoryPicture.aspx?CategoryID={0}`，其中{0}替换为 GridView 行的`CategoryID`值。
 
-
 ![添加到 GridView ImageField](displaying-binary-data-in-the-data-web-controls-cs/_static/image12.gif)
 
 **图 12**:添加到 GridView ImageField
 
-
 以后将添加 ImageField，GridView s 声明性语法看起来应像 soothe 以下：
-
 
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-cs/samples/sample8.aspx)]
 
 请花费片刻时间来查看此页上的通过浏览器。 请注意如何每条记录现在包含类别的图片。
 
-
 [![为每个行显示类别的图片](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
 
 **图 13**:为每个行显示类别的图片 ([单击此项可查看原尺寸图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image20.png))
-
 
 ## <a name="summary"></a>总结
 

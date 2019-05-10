@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 94ea1a70-a9bc-4241-8f36-08366d64bab9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: badae58d5b43fb2674f4918f54f999ff48d0b5b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a223b97fd362ecf73ecde431e141021c1dcc6a6d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59418009"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131034"
 ---
 # <a name="part-3-layout-and-category-menu"></a>第 3 部分：布局和类别菜单
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418009"
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 3 部分介绍如何添加布局和类别菜单。
-
 
 ## <a id="_Toc260221669"></a>  添加一些布局和类别菜单
 

@@ -8,12 +8,12 @@ ms.date: 04/01/2008
 ms.assetid: 19c4d042-4e34-4b44-9f1d-6bf2253ba366
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e3e097663568b21ee3f84c7006a0bd89718ac6c2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f5eab787d9eadbb2e19389c73db8319ba33c24af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380270"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130555"
 ---
 # <a name="recovering-and-changing-passwords-c"></a>恢复和更改密码 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59380270"
 [下载代码](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.13.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial13_ChangingPasswords_cs.pdf)
 
 > ASP.NET 包括用于帮助恢复和更改密码的两个 Web 控件。 PasswordRecovery 控件，以恢复丢失的密码的访问者。 ChangePassword 控件允许用户更新其密码。 与其他与登录相关 Web 控件类似情况下，我们已了解在本系列教程的 PasswordRecovery 整个和 ChangePassword 控件使用成员资格框架在后台重置或修改用户的密码。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -38,7 +37,6 @@ ASP.NET 包括用于帮助恢复和更改密码的两个 Web 控件。 PasswordR
 
 > [!NOTE]
 > 由于电子邮件消息传输通过网络传输纯文本有安全风险所涉及的发送电子邮件的用户的密码。
-
 
 PasswordRecovery 控件包含三个视图：
 
@@ -59,18 +57,14 @@ PasswordRecovery 控件包含三个视图：
 > [!NOTE]
 > 请记住，`SqlMembershipProvider`将用户的密码存储在三种格式之一：清除、 哈希 （默认值） 或加密。 使用的存储机制取决于成员身份配置设置;演示应用程序使用 Hashed 密码格式。 使用 Hashed 密码格式时`EnablePasswordRetrieval`选项必须设置为 False，因为系统将无法确定从数据库中存储的哈希版本的用户的实际密码。
 
-
 图 1 说明 PasswordRecovery 的接口和行为的成员身份配置影响。
-
 
 [![RequiresQuestionAndAnswer、 EnablePasswordRetrieval 和 EnablePasswordReset 影响 PasswordRecovery 控件的外观和行为](recovering-and-changing-passwords-cs/_static/image2.png)](recovering-and-changing-passwords-cs/_static/image1.png)
 
 **图 1**:`RequiresQuestionAndAnswer`， `EnablePasswordRetrieval`，并`EnablePasswordReset`影响 PasswordRecovery 控件的外观和行为 ([单击以查看实际尺寸的图像](recovering-and-changing-passwords-cs/_static/image3.png))
 
-
 > [!NOTE]
 > 在中<a id="_msoanchor_2"> </a> [ *SQL Server 中创建成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-cs.md)我们通过设置来配置成员资格提供程序的教程`RequiresQuestionAndAnswer`为 True，`EnablePasswordRetrieval`到为 false，和`EnablePasswordReset`为 True。
-
 
 ### <a name="using-the-passwordrecovery-control"></a>使用 PasswordRecovery 控件
 
@@ -85,34 +79,27 @@ PasswordRecovery 控件包含三个视图：
 > [!NOTE]
 > `<system.net>` 是根的子元素`<configuration>`元素和的同级`<system.web>`。 因此，不要将放`<system.net>`元素内的`<system.web>`元素; 而是将其放在同一级别上。
 
-
 [!code-xml[Main](recovering-and-changing-passwords-cs/samples/sample1.xml)]
 
 除了在网络上使用的 SMTP 服务器，或者可以指定其中应存放要发送的电子邮件的拾取目录。
 
 一旦已配置的 SMTP 设置，请访问`RecoverPassword.aspx`通过浏览器的页。 首先，请尝试输入的用户名的用户存储中不存在。 如图 2 所示，PasswordRecovery 控件将显示一条消息指出无法访问用户信息。 可以通过控件的自定义消息的文本[`UserNameFailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)。
 
-
 [![如果输入无效的用户名，显示一条错误消息](recovering-and-changing-passwords-cs/_static/image5.png)](recovering-and-changing-passwords-cs/_static/image4.png)
 
 **图 2**:如果输入无效的用户名显示一条错误消息 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image6.png))
 
-
 现在，输入用户名。 使用知道的电子邮件地址可以访问和回答其安全系统中的帐户的用户名。 输入用户名并单击提交后, PasswordRecovery 控件显示其问题的视图。 作为使用用户名视图中，如果输入不正确回答 PasswordRecovery 控件显示错误消息 （请参见图 3）。 使用[`QuestionFailureText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx)自定义此错误消息。
-
 
 [![如果用户输入无效的安全提示问题答案，显示一条错误消息](recovering-and-changing-passwords-cs/_static/image8.png)](recovering-and-changing-passwords-cs/_static/image7.png)
 
 **图 3**:如果用户输入无效的安全提示问题答案显示一条错误消息 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image9.png))
 
-
 最后，输入正确的安全答案，并单击提交。 在后台，PasswordRecovery 控制将生成随机密码，将其分配给用户帐户，将发送一封电子邮件，通知其新密码的用户 （请参阅图 4），然后显示成功视图。
-
 
 [![向用户发送一封电子邮件使用 His 的新密码](recovering-and-changing-passwords-cs/_static/image11.png)](recovering-and-changing-passwords-cs/_static/image10.png)
 
 **图 4**:向用户发送一封电子邮件使用 His 的新密码 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image12.png))
-
 
 ### <a name="customizing-the-email"></a>自定义电子邮件
 
@@ -144,11 +131,9 @@ PasswordRecovery 控件包含三个视图：
 
 执行这些更改重新访问后`RecoverPassword.aspx`页，并输入用户名和安全答案。 你收到应如图 5 中所示的电子邮件。 请注意，`webmaster@example.com`已经将抄送和，已更新的主题和正文。
 
-
 [![已更新主题、 正文和抄送列表](recovering-and-changing-passwords-cs/_static/image14.png)](recovering-and-changing-passwords-cs/_static/image13.png)
 
 **图 5**:主题、 正文和抄送已更新列表 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image15.png))
-
 
 若要发送 HTML 格式的电子邮件设置[ `IsBodyHtml` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx)为 True （默认值为 False），并且更新电子邮件模板包含 HTML。
 
@@ -156,7 +141,6 @@ PasswordRecovery 控件包含三个视图：
 
 > [!NOTE]
 > 当前没有任何链接在左侧导航栏中达到`RecoverPassword.aspx`页。 用户仅有兴趣在如果她已成功登录到该站点无法访问此页。 因此，更新`Login.aspx`页以包含一个指向`RecoverPassword.aspx`页。
-
 
 ### <a name="programmatically-resetting-a-users-password"></a>以编程方式重置用户的密码
 
@@ -183,7 +167,6 @@ PasswordRecovery 控件包含三个视图：
 > [!NOTE]
 > `SqlMembershipProvider`类始终生成随机密码至少为 14 个字符，因此，如果`MinRequiredPasswordLength`小于 14 就会忽略其值。
 
-
 ## <a name="step-2-changing-passwords"></a>步骤 2：更改密码
 
 随机生成密码很难记住。 图 4 所示的密码，请考虑： `WWGUZv(f2yM:Bd`。 请尝试提交的内存 ！ 不用说，向用户发送此类随机生成的密码后，她需要的密码更改为更容易记住的内容。
@@ -193,14 +176,11 @@ PasswordRecovery 控件包含三个视图：
 > [!NOTE]
 > ChangePassword 控件通过调用修改用户的密码`MembershipUser`对象的[`ChangePassword`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.changepassword.aspx)。 ChangePassword 方法接受两个`string`输入参数的*oldPassword*并*newPassword*的和更新用户的帐户与*newPassword*，假定提供*oldPassword*正确无误。
 
-
 打开`ChangePassword.aspx`页上，并将 ChangePassword 控件添加到页上，其命名为`ChangePwd`。 此时，设计视图应显示更改密码查看 （请参阅图 6）。 如 PasswordRecovery 控件后，你可以在视图之间切换通过控件的智能标记。 此外，这些视图的外观是通过各种类型的样式属性或将它们转换为模板，可自定义。
-
 
 [![ChangePassword 控件添加到页面](recovering-and-changing-passwords-cs/_static/image17.png)](recovering-and-changing-passwords-cs/_static/image16.png)
 
 **图 6**:ChangePassword 控件添加到页 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image18.png))
-
 
 ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个，指定用户的密码。 如图 6 所示，默认更改密码视图呈现只是三个文本框控件： 一个用于旧密码，两个新密码。 此默认接口用于更新当前已登录的用户的密码。
 
@@ -211,14 +191,11 @@ ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个
 > [!NOTE]
 > 它可能看起来的`DisplayUserName`属性可用于允许管理员更改其他用户的密码。 但是，即使`DisplayUserName`设置为 True 必须知道并输入正确的旧密码。 我们将讨论从而使管理员可以更改在步骤 3 中的用户的密码的方法。
 
-
 请访问`ChangePassword.aspx`通过浏览器页并更改你的密码。 请注意，是否输入不能满足密码长度和成员身份配置中指定的非字母数字字符要求的新密码将显示一条错误消息 （请参阅图 7）。
-
 
 [![ChangePassword 控件添加到页面](recovering-and-changing-passwords-cs/_static/image20.png)](recovering-and-changing-passwords-cs/_static/image19.png)
 
 **图 7**:ChangePassword 控件添加到页 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image21.png))
-
 
 在输入正确的旧密码和有效新密码，已登录用户的密码已更改，显示成功视图。
 
@@ -234,11 +211,9 @@ ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个
 
 进行这些更改之后, 重新访问该页并再次更改密码。 这一次，ChangePassword 控件将发送到用户的电子邮件地址上文件的自定义的 HTML 格式的电子邮件 （请参阅图 8）。
 
-
 [![电子邮件消息会通知用户，他们的密码已更改](recovering-and-changing-passwords-cs/_static/image23.png)](recovering-and-changing-passwords-cs/_static/image22.png)
 
 **图 8**:电子邮件消息通知用户，他们的密码已更改 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image24.png))
-
 
 ## <a name="step-3-allowing-administrators-to-change-users-passwords"></a>步骤 3：从而使管理员可以更改用户的密码
 
@@ -267,20 +242,16 @@ ChangePassword 控件可以更新当前已登录的用户的密码*或*另一个
 > [!NOTE]
 > 通过直接使用数据库，提供的成员资格框架的封装已被破坏。 此决定会绑定到我们`SqlMembershipProvider`，从而使我们更少可移植的代码。 此外，此代码可能无法按预期在将来版本的 ASP.NET 中，如果成员身份架构发生更改。 这种方法是一种解决方法，并像大多数解决方法，不是最佳做法的示例。
 
-
 代码具有一些不严重的位，非常长。 因此，我不想使本教程中使用它的深入探讨变得混乱。 如果您有兴趣学习的详细信息，下载的代码对于此教程，请访问`~/Administration/ManageUsers.aspx`页。 此页上，我们在中创建<a id="_msoanchor_5"> </a>[前面的教程](building-an-interface-to-select-one-user-account-from-many-cs.md)，列出了每个用户。 我更新了 GridView，其中包含一个指向`UserInformation.aspx`页上，将传递查询字符串通过所选的用户的用户名。 `UserInformation.aspx`页显示有关所选的用户和文本框的信息用于更改其密码 （请参阅图 9）。
 
 输入新密码，在第二个文本框中，确认，并单击更新用户按钮后，才会回发和`aspnet_Membership_SetPassword`调用存储的过程时，更新用户的密码。 建议对此功能感兴趣的这些读取器进一步熟悉代码，然后重扩展的功能，包括将一封电子邮件发送到已更改其密码的用户。
-
 
 [![管理员可能会更改用户的密码](recovering-and-changing-passwords-cs/_static/image26.png)](recovering-and-changing-passwords-cs/_static/image25.png)
 
 **图 9**:管理员可能会更改用户的密码 ([单击此项可查看原尺寸图像](recovering-and-changing-passwords-cs/_static/image27.png))
 
-
 > [!NOTE]
 > `UserInformation.aspx`网页当前仅适用，如果成员资格框架配置为以清除或哈希格式存储密码。 尽管你受邀添加此功能，它缺少代码的新密码进行加密。 我建议将添加所需的代码的方法是使用如反编译程序[Reflector](http://www.aisto.com/roeder/dotnet/)来检查.NET Framework; 中的方法的源代码先检查`SqlMembershipProvider`类的`ChangePassword`方法。 这是密码的我用来编写用于创建哈希代码的技术。
-
 
 ## <a name="summary"></a>总结
 

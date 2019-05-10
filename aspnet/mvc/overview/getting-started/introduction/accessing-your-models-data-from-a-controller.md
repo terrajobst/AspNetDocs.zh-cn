@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: caa1ba4a-f9f0-4181-ba21-042e3997861d
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 91948b1b997b083606a53e6e02bc00d2c58cb791
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 17a176b8bf3b1de8a0ff9145ab6f5f26cf210503
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59418139"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120865"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问模型的数据
 
@@ -57,12 +57,10 @@ ms.locfileid: "59418139"
 
 选择“新建”链接。 输入有关电影的一些详细信息，然后单击**创建**按钮。
 
-
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
 > 您不能在价格字段中输入小数点或逗号。 若要支持 jQuery 验证的非英语区域设置，请使用逗号 (&quot;，&quot;) 必须包含小数点，和非美国英语日期格式， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 我将介绍如何执行此操作在下一步的教程。 目前只能输入整数，例如 10。
-
 
 单击**创建**按钮后，窗体会发布到服务器，其中电影信息保存到数据库中。 然后，将重定向到 */Movies* URL，其中显示在列表中新创建的电影。
 

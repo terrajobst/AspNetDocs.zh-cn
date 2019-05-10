@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 7f07c112-cd4f-4427-9699-57cfab2791fd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 963850e1048d4fde573f28244fd32d0c4232fda4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fa9b11ea064bd8181381f8374cc96b8eea6aa72b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399185"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127088"
 ---
 # <a name="using-hovermenu-with-a-repeater-control-vb"></a>通过 Repeater 控件使用 HoverMenu (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59399185"
 [下载代码](http://download.microsoft.com/download/b/0/6/b06fe835-5b8f-4c00-aef8-062c19d75b95/HoverMenu1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/hovermenu1VB.pdf)
 
 > AJAX 控件工具包中的 HoverMenu 控件提供了一个简单的弹出窗口效果：当鼠标指针悬停在元素上时，在指定位置处显示弹出窗口。 还有可能要使用 repeater 中的此控件。
-
 
 ## <a name="overview"></a>概述
 
@@ -51,7 +50,6 @@ ms.locfileid: "59399185"
 [!code-aspx[Main](using-hovermenu-with-a-repeater-control-vb/samples/sample4.aspx)]
 
 现在，数据源中的每个项显示一个弹出窗口，向右 (`PopupPosition`属性) 的 50 毫秒的延迟后 (`PopDelay`属性)。
-
 
 [![在 repeater 中每个项的旁边显示的悬停菜单](using-hovermenu-with-a-repeater-control-vb/_static/image2.png)](using-hovermenu-with-a-repeater-control-vb/_static/image1.png)
 

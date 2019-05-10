@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 707dc9d87ae324a7897c971a451e40bc54c96cb3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398678"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130593"
 ---
 # <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最终页面、异常处理和结论
 
@@ -22,7 +22,6 @@ ms.locfileid: "59398678"
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 8 部分将添加联系人的页上，有关页和异常处理。 这是系列教程的结论。
-
 
 ## <a id="_Toc260221680"></a>  请联系页 （从 ASP.NET 发送电子邮件）
 

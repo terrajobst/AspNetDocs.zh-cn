@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 86c14aab-c2dd-4f73-b40c-c6d52fa44950
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a609b761543e4994aa4a7f86636bd16e9cd74683
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 16073dd2fb0ea1cc4ddbc94c843181933dc174c1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396715"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131548"
 ---
 # <a name="adding-content-to-source-control"></a>向源代码管理添加内容
 
@@ -22,7 +22,6 @@ ms.locfileid: "59396715"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题说明如何将内容添加到源代码管理在 Team Foundation Server (TFS) 2010年。 它介绍了如何将解决方案和项目添加到团队项目在 TFS 中，并介绍如何将等框架或程序集的外部依赖项添加到源代码管理。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -116,7 +115,6 @@ ms.locfileid: "59396715"
 
 > [!NOTE]
 > 包含的包文件夹是典型的实体框架或类似资源添加到你的解决方案使用适用于 Visual Studio 2010 NuGet 扩展时，会发生什么情况。
-
 
 **若要将非项目内容添加到源代码管理**
 

@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: 892edb27-1cc2-4eaf-8314-dbc2efc6228a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: febba98be86f0151724af6d6c00fb14760ce1b91
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2330708cf4a28180ce8a05f4696bf7a7a32092d6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378944"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123408"
 ---
 # <a name="creating-a-custom-route-constraint-vb"></a>创建自定义路由约束 (VB)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 演示了如何创建自定义路由约束。 我们实现简单的自定义约束，以防止浏览器请求进行从远程计算机时要匹配的路由。
-
 
 本教程的目的是演示如何创建自定义路由约束。 自定义路由约束，可防止路由除非匹配某些自定义的条件匹配。
 

@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 81ed82bf-b940-44f1-b94a-555d0cb7cc98
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: f88f7a31551abda029bee0ec16aa35ce2ef5d2f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f57661077ec3bb13f3d4ec41b130bda4d2fb9070
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385951"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132951"
 ---
 # <a name="introducing-aspnet-web-pages---html-form-basics"></a>介绍 ASP.NET 网页的 HTML 窗体基础知识
 
@@ -33,7 +33,6 @@ ms.locfileid: "59385951"
 > 
 > - `Request` 对象。
 > - SQL`Where`子句。
-
 
 ## <a name="what-youll-build"></a>你将生成
 
@@ -82,7 +81,6 @@ ms.locfileid: "59385951"
 > 
 > (若要了解有关 HTTP 谓词的详细信息，请参阅[方法定义](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)W3C 网站上的文章。)
 
-
 大多数用户输入的元素以 HTML 为`<input>`元素。 它们看起来像`<input type="type" name="name">,`其中*类型*指示所需的用户输入控件的类型。 这些元素是常见的：
 
 - 文本框中： `<input type="text">`
@@ -104,7 +102,6 @@ ms.locfileid: "59385951"
 > 您可能知道，HTML 处于过渡状态，最新版本 (HTML5) 包括对更直观的方式将用户输入信息的支持。 例如，html5，您 （页面开发人员） 可以告诉页面所需用户输入日期。 然后可以自动显示在浏览器，日历，而不是要求用户手动输入日期。 但是，HTML5 新，尚不支持在所有浏览器中。
 > 
 > ASP.NET Web Pages 支持 HTML5 输入的范围内用户的浏览器 does。 新特性的了解`<input>`元素中 HTML5，请参阅[HTML&lt;输入&gt;键入属性](http://www.w3schools.com/html/html_form_input_types.asp)W3Schools 站点上。
-
 
 ## <a name="creating-the-form"></a>创建窗体
 
@@ -176,7 +173,6 @@ ms.locfileid: "59385951"
 > 
 > 很好的做法是特定的使用的子集`Request`感兴趣，如`Request.Form`或`Request.QueryString`。 对于要在本教程中创建的简单页面，它可能不会真正带来任何差异。 但是，当您创建更复杂的页，使用显式版本`Request.Form`或`Request.QueryString`可以帮助您避免出现问题时的页面包含一个窗体 （或多个窗体），可能出现的 cookie、 查询字符串值等。
 
-
 ## <a name="creating-a-query-by-using-a-search-term"></a>使用搜索词创建查询
 
 既然您知道如何获取用户输入的搜索词，可以创建使用它的查询。 请记住，为获取在数据库之外的所有电影项目，你使用类似于此语句的 SQL 查询：
@@ -218,7 +214,6 @@ ms.locfileid: "59385951"
 > **重要提示！** 使用占位符 (如`@0`) 将值传递给 SQL 命令是*极其重要*的安全。 可以看到它，带有占位符变量数据的方法是应构造 SQL 命令的唯一方法。
 > 
 > 永远不会通过将组合在一起 （连接） 的文字文本和从用户获取的值来构造 SQL 语句。 连接到 SQL 语句中的用户输入将打开到站点*SQL 注入攻击*，恶意用户提交 hack 数据库页的值。 (您可以阅读更多文章中[SQL 注入](https://msdn.microsoft.com/library/ms161953.aspx)MSDN 网站。)
-
 
 ## <a name="updating-the-movies-page-with-search-code"></a>使用搜索代码更新电影页面
 
@@ -280,7 +275,6 @@ ms.locfileid: "59385951"
 
 > [!NOTE]
 > 您不能"记住"用于密码的文本框中的值。 它会让人以填充密码字段中使用代码安全漏洞。
-
 
 再次运行此页，输入一种流派，然后单击**搜索流派**。 这一次不只执行你看到的搜索结果，但会记住文本框中，输入上一次：
 

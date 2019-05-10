@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: 7263a7d7ee791be8a1369934aac4d091736a658b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 59f859ea30572fbe66184f29555ac2c5c2f22f82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417476"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132148"
 ---
 # <a name="membership-and-administration"></a>成员身份和管理
 
@@ -22,7 +22,6 @@ ms.locfileid: "59417476"
 [下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 此教程系列将介绍构建 ASP.NET Web 窗体应用程序使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的基础知识。 Visual Studio 2013[包含 C# 源代码项目](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)可随附于本系列教程。
-
 
 本教程演示如何更新 Wingtip Toys 示例应用程序来添加自定义角色并使用 ASP.NET 标识。 它还演示如何实现具有自定义角色的用户可以从中添加和从网站中删除产品的管理页。
 
@@ -81,7 +80,6 @@ ASP.NET Web 窗体提供了成员资格功能。 通过使用默认模板，您�
 > 
 > 如果你希望存储成员资格数据以及产品的数据，可以考虑使用的相同**DbContext**用于将产品数据存储在上面的代码。
 
-
  *内部*关键字是类型 （如类） 和类型成员 （如方法或属性） 的访问修饰符。 内部类型或成员是只能在同一程序集中包含的文件中访问 *(.dll*文件)。 当生成应用程序，程序集文件 *(.dll*) 创建，其中包含运行应用程序时执行的代码。 
 
 一个`RoleStore`对象，它提供角色管理，将根据创建的数据库上下文。
@@ -89,7 +87,6 @@ ASP.NET Web 窗体提供了成员资格功能。 通过使用默认模板，您�
 > [!NOTE] 
 > 
 > 请注意，当`RoleStore`创建对象时使用泛型`IdentityRole`类型。 这意味着`RoleStore`仅允许包含`IdentityRole`对象。 此外通过使用泛型，在内存中的资源的更好地处理。
-
 
 下一步，`RoleManager`对象，会根据创建`RoleStore`刚创建的对象。 `RoleManager`对象公开与角色相关 API 可用于自动将更改保存到`RoleStore`。 `RoleManager`仅允许包含`IdentityRole`对象，因为该代码使用`<IdentityRole>`泛型类型。
 
@@ -102,7 +99,6 @@ ASP.NET Web 窗体提供了成员资格功能。 通过使用默认模板，您�
 > [!NOTE] 
 > 
 > 稍后在本系列教程中，"ASP.NET 错误处理"本教程中，将更新错误处理。
-
 
 下次启动应用程序，将作为名为应用程序的"canEdit"角色添加名为"canEditUser"的用户。 更高版本在本教程中，你将登录为"canEditUser"用户以显示将在本教程过程中添加的其他功能。 有关 ASP.NET 标识的 API 详细信息，请参阅[Microsoft.AspNet.Identity Namespace](https://msdn.microsoft.com/library/microsoft.aspnet.identity(v=vs.111).aspx)。 有关初始化 ASP.NET 标识系统的其他详细信息，请参阅[AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample/blob/master/AspnetIdentitySample/App_Start/IdentityConfig.cs)。
 

@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: c76dbc35-a914-4ee3-919c-4f4d1fa05104
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 6e66c03a4521f339f0ee9c7c0e7b8129f241113c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 36d1575808925de38b909d6816e46bb6cb69cf72
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379400"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134255"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署代码更新
 
@@ -22,7 +22,6 @@ ms.locfileid: "59379400"
 [下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用 Visual Studio 2012 或 Visual Studio 2010。 有关序列的信息，请参阅[系列中的第一个教程](introduction.md)。
-
 
 ## <a name="overview"></a>概述
 

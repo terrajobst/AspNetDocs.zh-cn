@@ -8,12 +8,12 @@ ms.date: 03/24/2008
 ms.assetid: 4d9b63fa-c3d4-4e85-82b1-26ae3ba3ca1c
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9c6dbfee1a1a05af7bdd82ad96b0ca52774274b1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d0c58bcbcc294fa6fc7d194864a3e7b67356cf2c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383130"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133829"
 ---
 # <a name="role-based-authorization-c"></a>基于角色的授权 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383130"
 [下载代码](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/CS.11.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial11_RoleAuth_cs.pdf)
 
 > 本教程首先介绍在角色框架如何将用户的角色相关联与他的安全上下文。 然后，它会检查如何应用基于角色的 URL 授权规则。 之后，我们将介绍如何使用声明性和编程性手段更改显示的数据和由 ASP.NET 页面提供的功能。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -46,11 +45,9 @@ ms.locfileid: "59383130"
 
 如果匿名用户访问该网站，既不`FormsAuthenticationModule`也不`RoleManagerModule`创建主体对象。
 
-
 [![身份验证的用户使用 Forms 身份验证和角色框架时 ASP.NET 管道事件](role-based-authorization-cs/_static/image2.png)](role-based-authorization-cs/_static/image1.png)
 
 **图 1**:ASP.NET 管道事件进行经过身份验证用户时使用窗体身份验证和角色框架 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image3.png))
-
 
 ### <a name="caching-role-information-in-a-cookie"></a>缓存在 Cookie 中的角色信息
 
@@ -58,17 +55,14 @@ ms.locfileid: "59383130"
 
 如果配置角色框架来缓存在 cookie 中，用户的角色`RoleManagerModule`在 ASP.NET 管道的过程中创建 cookie [ `EndRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.endrequest.aspx)。 中的后续请求中使用此 cookie `PostAuthenticateRequest`，这是当`RolePrincipal`创建对象。 如果 cookie 有效，并且未过期，cookie 中的数据分析和使用以填充用户的角色，这样可节省`RolePrincipal`无需调用`Roles`类来确定用户的角色。 图 2 描绘了此工作流。
 
-
 [![用户的角色信息可以存储在 Cookie 来提高性能](role-based-authorization-cs/_static/image5.png)](role-based-authorization-cs/_static/image4.png)
 
 **图 2**:用户的角色的信息可以存储在 Cookie 中提高性能 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image6.png))
-
 
 默认情况下，禁用角色缓存 cookie 机制。 可以通过启用`<roleManager>`中的配置标记`Web.config`。 我们讨论了使用[`<roleManager>`元素](https://msdn.microsoft.com/library/ms164660.aspx)来指定角色中的提供程序<a id="_msoanchor_4"> </a> [*创建和管理角色*](creating-and-managing-roles-cs.md)教程中，因此您应该已经在应用程序的此元素`Web.config`文件。 为属性的指定角色缓存 cookie 设置`<roleManager>`元素，并汇总了表 1。
 
 > [!NOTE]
 > 表 1 中列出的配置设置指定生成的角色缓存 cookie 的属性。 对 cookie、 工作原理和它们的各种属性的详细信息，请阅读[此 Cookie 教程](http://www.quirksmode.org/js/cookies.html)。
-
 
 | <strong>Property</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>说明</strong>                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -96,7 +90,6 @@ ms.locfileid: "59383130"
 > [!NOTE]
 > Microsoft 的模式&amp;实践组不鼓励使用持久性角色缓存 cookie。 如果黑客可以以某种方式访问有效用户的 cookie，因为角色缓存 cookie 拥有不足以证明角色成员身份，他可以模拟该用户。 发生这种情况的可能性会增加用户的浏览器上保存 cookie。 有关此安全建议，以及其他安全问题的详细信息，请参阅[ASP.NET 2.0 的安全问题列表](https://msdn.microsoft.com/library/ms998375.aspx)。
 
-
 ## <a name="step-1-defining-role-based-url-authorization-rules"></a>步骤 1：定义基于角色的 URL 授权规则
 
 如中所述<a id="_msoanchor_6"> </a> [*基于用户的授权*](../membership/user-based-authorization-cs.md)教程中，URL 授权提供了一种方法来限制对一组页上的用户的用户或角色的角色的访问基数。 URL 授权规则中将逐一`Web.config`使用[`<authorization>`元素](https://msdn.microsoft.com/library/8d82143t.aspx)与`<allow>`和`<deny>`子元素。 除了前面的教程中所述的与用户相关的授权规则每个`<allow>`和`<deny>`还可以包含子元素：
@@ -114,11 +107,9 @@ ms.locfileid: "59383130"
 
 若要完成此操作，首先添加`Web.config`文件为`Roles`文件夹。
 
-
 [![将 Web.config 文件添加到角色目录](role-based-authorization-cs/_static/image8.png)](role-based-authorization-cs/_static/image7.png)
 
 **图 3**:添加`Web.config`的文件`Roles`目录 ([单击以查看实际尺寸的图像](role-based-authorization-cs/_static/image9.png))
-
 
 接下来，添加以下配置标记到`Web.config`:
 
@@ -128,23 +119,18 @@ ms.locfileid: "59383130"
 
 保存到所做的更改后`Web.config`、 以不在管理员角色的用户身份登录，然后尝试访问其中一个受保护的页面。 `UrlAuthorizationModule`将检测到没有权限访问所请求的资源; 因此，`FormsAuthenticationModule`将重定向到登录页。 登录页将然后重定向到`UnauthorizedAccess.aspx`页面 （请参阅图 4）。 从登录页面到此最终重定向`UnauthorizedAccess.aspx`错误是由于我们添加到在步骤 2 中的登录页的代码导致<a id="_msoanchor_7"> </a> [*基于用户的授权*](../membership/user-based-authorization-cs.md)教程。 具体而言，登录页自动重定向到任何身份验证的用户`UnauthorizedAccess.aspx`如果在查询字符串包含`ReturnUrl`参数，作为此参数指示，用户转到登录页面后尝试查看他不是的页面查看权限。
 
-
 [![只有管理员角色中的用户可以查看受保护的页面](role-based-authorization-cs/_static/image11.png)](role-based-authorization-cs/_static/image10.png)
 
 **图 4**:只有管理员角色中的用户可以查看受保护的页 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image12.png))
 
-
 注销，然后以管理员角色中的用户身份登录。 现在，应能够查看三个受保护的页面。
-
 
 [![可以通过访问 Tito UsersAndRoles.aspx 页因为他是管理员角色中](role-based-authorization-cs/_static/image14.png)](role-based-authorization-cs/_static/image13.png)
 
 **图 5**:可以通过访问 Tito`UsersAndRoles.aspx`页因为他属于管理员角色 ([单击以查看实际尺寸的图像](role-based-authorization-cs/_static/image15.png))
 
-
 > [!NOTE]
 > 指定 URL 授权规则 – 角色或用户 – 时务必要记住的规则包括已分析了一次，从顶部向下。 一旦找到匹配项，授予或拒绝访问用户，具体取决于在找到匹配项`<allow>`或`<deny>`元素。 **如果不找到任何匹配项，则该用户被授予访问权限。** 因此，如果你想要限制对一个或多个用户帐户的访问，则必须使用`<deny>`URL 授权配置中的最后一个元素的元素。 **如果不包括您的 URL 授权规则**`<deny>`**元素中，所有用户将被都授予访问权限。** 有关如何分析 URL 授权规则的更全面讨论，请返回到"How`UrlAuthorizationModule`使用授权规则来允许或拒绝访问"部分<a id="_msoanchor_8"> </a> [ *基于用户的授权*](../membership/user-based-authorization-cs.md)教程。
-
 
 ## <a name="step-2-limiting-functionality-based-on-the-currently-logged-in-users-roles"></a>步骤 2：限制基于当前登录用户的角色功能
 
@@ -157,7 +143,6 @@ ms.locfileid: "59383130"
 > [!NOTE]
 > 我们将要构建的 ASP.NET 页使用 GridView 控件来显示用户帐户。 本教程系列重点介绍窗体身份验证、 授权、 用户帐户和角色，因为我不想花费太多时间来讨论 GridView 控件的内部工作机制。 虽然本教程提供了特定设置此页的分步说明，它不会不研究一下为什么未进行某些选择，或影响特定属性对呈现的输出的详细信息。 有关对 GridView 控件的全面检查，请参阅我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
 
-
 首先打开`RoleBasedAuthorization.aspx`页中`Roles`文件夹。 从拖到设计器和组页将 GridView 及其`ID`到`UserGrid`。 稍后我们将编写代码，调用`Membership.GetAllUsers`方法，并将绑定生成`MembershipUserCollection`对象到 GridView。 `MembershipUserCollection`包含`MembershipUser`中系统; 每个用户帐户的对象`MembershipUser`对象具有属性，如`UserName`， `Email`， `LastLoginDate`，依次类推。
 
 我们编写的代码，将用户帐户绑定到网格之前，让我们首先定义 GridView 的字段。 从 GridView 的智能标记上，单击"编辑列"链接以启动字段对话框 （请参见图 6）。 在这里，取消选中左下角中的"自动生成字段"复选框。 由于我们希望此 GridView 编辑和删除功能，包括添加 CommandField 并设置其`ShowEditButton`和`ShowDeleteButton`属性为 True。 接下来，添加用于显示四个字段`UserName`， `Email`， `LastLoginDate`，和`Comment`属性。 BoundField 用于两个只读属性 (`UserName`并`LastLoginDate`) 和两个可编辑字段的 Templatefield (`Email`和`Comment`)。
@@ -166,11 +151,9 @@ ms.locfileid: "59383130"
 
 设置`HeaderText`"电子邮件"和"注释"两个 Templatefield 的属性。
 
-
 [![可通过字段对话框配置 GridView 的字段](role-based-authorization-cs/_static/image17.png)](role-based-authorization-cs/_static/image16.png)
 
 **图 6**:GridView 的字段可以是配置通过字段对话框 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image18.png))
-
 
 现在，我们需要定义`ItemTemplate`和`EditItemTemplate`"Email"和"注释"Templatefield。 将标签 Web 控件添加到每个`ItemTemplate`s 和绑定其`Text`属性设置为`Email`和`Comment`属性，分别。
 
@@ -192,15 +175,12 @@ ms.locfileid: "59383130"
 
 利用此代码，请访问通过浏览器页面。 如图 7 所示，应会看到 GridView 列出系统中的每个用户帐户的相关信息。
 
-
 [![UserGrid GridView 列出系统中的每个用户的信息](role-based-authorization-cs/_static/image20.png)](role-based-authorization-cs/_static/image19.png)
 
 **图 7**:`UserGrid` GridView 列出信息有关每个系统中的用户 ([单击以查看实际尺寸的图像](role-based-authorization-cs/_static/image21.png))
 
-
 > [!NOTE]
 > `UserGrid` GridView 列出所有的非分页界面中的用户。 此简单网格接口并不适用于方案有多个几十个或多个用户。 一种选择是配置 GridView，若要启用分页。 `Membership.GetAllUsers`方法有两个重载： 一个可接受任何输入的参数并返回的所有用户，另一个使用的页索引和页大小的整数值并都返回仅指定用户的子集。 第二个重载可用于对更高效地通过用户的页面，因为它返回的用户帐户只是精确的子集而非*所有*它们。 如果有成千上万的用户帐户，你可能需要考虑基于筛选器的接口，仅显示其用户名所选字符开头，例如这些用户。 [ `Membership.FindUsersByName method` ](https://msdn.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)非常适合生成基于筛选器的用户界面。 我们将介绍在将来的教程中构建此类接口。
-
 
 GridView 控件提供了内置的编辑和删除支持时该控件绑定到正确配置的数据源控件，例如 SqlDataSource 或对象数据源。 `UserGrid` GridView，但是，具有其数据以编程方式绑定; 因此，我们必须编写代码来执行这两项任务。 具体而言，我们将需要创建的事件处理程序 GridView `RowEditing`， `RowCancelingEdit`， `RowUpdating`，和`RowDeleting`事件，当在访问者单击 GridView 的触发编辑，取消，更新，或删除按钮。
 
@@ -221,7 +201,6 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 > [!NOTE]
 > 删除按钮不需要任何种类的来自用户之前删除的用户帐户的确认。 建议您添加某种形式的用户确认要降低出现意外删除的帐户的可能性。 若要确认某项操作的最简单方法之一是通过客户端的确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-cs.aspx)。
 
-
 验证此页可以按照预期方式。 您应能够编辑任何用户的电子邮件地址和注释，以及删除任何用户帐户。 由于`RoleBasedAuthorization.aspx`页是所有用户访问，任何用户 – 甚至匿名访问者 – 可以访问此页面并编辑和删除用户帐户 ！ 让我们更新此页，以便只有监督员和管理员角色中的用户可以编辑用户的电子邮件地址和注释，并且只有管理员才可以删除用户帐户。
 
 "使用 LoginView 控件"部分介绍使用 LoginView 控件来显示说明特定于用户的角色。 如果管理员角色中的用户访问此页时，我们将演示说明如何编辑和删除用户。 如果在监督器角色的用户达到此页，我们将编辑用户显示的说明。 并且如果访问者是匿名的或不在的主管或管理员角色，我们将显示一条消息说明不能编辑或删除用户帐户信息。 在"以编程方式限制功能"部分中，我们将编写代码以编程方式显示或隐藏基于用户的角色的编辑和删除按钮。
@@ -238,11 +217,9 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 
 若要管理 RoleGroups，单击要打开 RoleGroup 集合编辑器的控件的智能标记中的"编辑 RoleGroups"链接。 添加两个新 RoleGroups。 设置第一个 RoleGroup`Roles`属性设置为"管理员"和"监督"到秒。
 
-
 [![管理登录视图的特定于角色的模板通过 RoleGroup 集合编辑器](role-based-authorization-cs/_static/image23.png)](role-based-authorization-cs/_static/image22.png)
 
 **图 8**:管理登录视图的特定于角色的模板通过 RoleGroup 集合编辑器 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image24.png))
-
 
 单击确定关闭 RoleGroup 集合编辑器;这会更新登录视图的声明性标记，以包括`<RoleGroups>`节替换`<asp:RoleGroup>`RoleGroup 集合编辑器中的每个 RoleGroup 的子元素定义。 此外，"视图"下拉列表中 LoginView 的智能标记的最初列出，只需`AnonymousTemplate`和`LoggedInTemplate`– 现在包括还添加了的 RoleGroups。
 
@@ -254,26 +231,21 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 
 接下来，以在监督器角色的成员的用户登录。 此时应会看到在监督器特定于角色的消息 （请参阅图 9）。 如果您以中应会看到特定于角色的管理员角色消息 （请参阅图 10） 的管理员的用户身份登录。
 
-
 [![Bruce 显示在监督器特定于角色的消息](role-based-authorization-cs/_static/image26.png)](role-based-authorization-cs/_static/image25.png)
 
 **图 9**:Bruce 显示在监督器特定于角色的消息 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image27.png))
-
 
 [![Tito 显示管理员特定于角色的消息](role-based-authorization-cs/_static/image29.png)](role-based-authorization-cs/_static/image28.png)
 
 **图 10**:Tito 显示管理员特定于角色的消息 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image30.png))
 
-
 图 9 中的屏幕截图和 10 个显示，LoginView 仅呈现一个模板，即使多个模板应用。 Bruce 和 Tito 都记录在用户，但登录视图呈现仅匹配 RoleGroup 和 not `LoggedInTemplate`。 此外，Tito 属于管理员和在监督器角色，但 LoginView 控件呈现管理员特定于角色的模板而不是在监督器之一。
 
 图 11 说明了由 LoginView 控件用来确定哪些模板来呈现的工作流。 请注意，如果有多个 RoleGroup 指定，LoginView 模板用于呈现*第一个*RoleGroup 相匹配。 换而言之，如果我们必须放置在监督器 RoleGroup 作为第一个 RoleGroup 和第二个管理员，然后 Tito 访问此页时他会看到在监督器消息。
 
-
 [![用于确定哪个模板呈现 LoginView 控件的工作流](role-based-authorization-cs/_static/image32.png)](role-based-authorization-cs/_static/image31.png)
 
 **图 11**:LoginView 控件的工作流，确定哪些模板呈现器 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image33.png))
-
 
 ### <a name="programmatically-limiting-functionality"></a>以编程方式限制功能
 
@@ -281,11 +253,9 @@ GridView 控件提供了内置的编辑和删除支持时该控件绑定到正�
 
 若要以编程方式引用 CommandField 中的控件的最简单方法是首先将其转换为模板。 若要实现此目的，单击 GridView 的智能标记中的"编辑列"链接，从当前字段的列表中选择 CommandField 并单击"将此字段转换为 TemplateField"链接。 这将转换为 TemplateField CommandField`ItemTemplate`和`EditItemTemplate`。 `ItemTemplate`包含编辑和删除时的 Linkbutton`EditItemTemplate`存储更新和取消 Linkbutton。
 
-
 [![CommandField 转换为 TemplateField](role-based-authorization-cs/_static/image35.png)](role-based-authorization-cs/_static/image34.png)
 
 **图 12**:转换 TemplateField CommandField 到 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image36.png))
-
 
 更新编辑和删除中的 Linkbutton `ItemTemplate`，并设置其`ID`的值的属性`EditButton`和`DeleteButton`分别。
 
@@ -304,7 +274,6 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 > [!NOTE]
 > 我们也可以使用角色类直接，替换为调用`User.IsInRole(roleName)`通过调用[`Roles.IsUserInRole(roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)。 我决定使用主体对象的`IsInRole(roleName)`方法在此示例中因为它是比直接使用角色 API 更高效。 在本教程前面我们配置要缓存在 cookie 中的用户的角色的角色管理器。 此缓存的 cookie 数据时仅使用主体的`IsInRole(roleName)`调用方法; 对角色 API 的直接调用总是涉及到对角色存储行程。 即使角色不缓存在 cookie 中，调用的主体对象`IsInRole(roleName)`方法通常更高效，是因为对于其缓存结果的第一次在请求的调用时。 角色 API，但是，不执行任何缓存。 因为`RowCreated`事件触发一次的每一行在 GridView 中，使用`User.IsInRole(roleName)`涉及对角色存储只是检索一次，而`Roles.IsUserInRole(roleName)`需要*N*行程，其中*N*是在网格中显示的用户帐户数。
 
-
 编辑按钮`Visible`属性设置为`true`如果用户访问此页为管理员或主管角色; 否则它设置为`false`。 删除按钮`Visible`属性设置为`true`仅当用户是管理员角色中。
 
 通过浏览器的此页进行测试。 作为匿名访问者或既主管，也没有管理员的用户访问页面，CommandField 为空;它仍然存在，但作为瘦薄片而无需编辑或删除按钮。
@@ -312,27 +281,21 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 > [!NOTE]
 > 可以隐藏 CommandField 完全时的非监督程序和非管理员为访问的页面。 我将此当作练习留给读者。
 
-
 [![编辑和删除按钮处于隐藏状态为非监督和非管理员](role-based-authorization-cs/_static/image38.png)](role-based-authorization-cs/_static/image37.png)
 
 **图 13**:编辑和删除按钮处于隐藏状态为非监督和非管理员 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image39.png))
 
-
 如果属于主管角色 （而不是属于管理员角色） 的用户访问，他会看到只有编辑按钮。
-
 
 [![适用于在监督器编辑按钮时，删除按钮处于隐藏状态](role-based-authorization-cs/_static/image41.png)](role-based-authorization-cs/_static/image40.png)
 
 **图 14**:适用于在监督器编辑按钮时，删除按钮处于隐藏状态 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image42.png))
 
-
 如果管理员访问时，她有权编辑和删除按钮。
-
 
 [![编辑和删除按钮才可用的管理员](role-based-authorization-cs/_static/image44.png)](role-based-authorization-cs/_static/image43.png)
 
 **图 15**:编辑和删除按钮才可用的管理员 ([单击此项可查看原尺寸图像](role-based-authorization-cs/_static/image45.png))
-
 
 ## <a name="step-3-applying-role-based-authorization-rules-to-classes-and-methods"></a>步骤 3：将基于角色的授权规则应用于类和方法
 
@@ -348,18 +311,14 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 
 属性`RowUpdating`决定了事件处理程序，只有管理员或主管角色中的用户可以在为属性执行事件处理程序，`RowDeleting`中管理员的用户执行的事件处理程序限制角色。
 
-
 > [!NOTE]
 > `PrincipalPermission`属性表示为中的一个类`System.Security.Permissions`命名空间。 请务必添加`using System.Security.Permissions`顶部的代码隐藏类文件，以导入此命名空间的语句。
 
-
 如果由于某种原因，非管理员尝试执行`RowDeleting`事件处理程序或如果要执行非监督程序或非管理员尝试`RowUpdating`事件处理程序，.NET 运行时将引发`SecurityException`。
-
 
 [![如果未经授权的安全上下文来执行此方法，则将引发 SecurityException](role-based-authorization-cs/_static/image47.png)](role-based-authorization-cs/_static/image46.png)
 
 **图 16**:如果未经授权的安全上下文来执行此方法，`SecurityException`引发 ([单击以查看实际尺寸的图像](role-based-authorization-cs/_static/image48.png))
-
 
 除了 ASP.NET 页中，许多应用程序还具有包含各层，如业务逻辑和数据访问层的体系结构。 这些层通常作为类库实现，提供类和方法来执行业务逻辑和数据相关的功能。 `PrincipalPermission`属性是将授权规则应用到这些层也很有用。
 

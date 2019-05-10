@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: 1f42e332-78dc-438b-9e35-0c97aa0ad929
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5819dc3d62161fc4f31cf30c6c739654a64d86b3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ad3af89c34df4a71b6e658ba205aa4f645b4dedd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400407"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134023"
 ---
 # <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>DataList 和 Repeater 中的自定义按钮 (C#)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59400407"
 
 > 在本教程中我们将构建一个接口，使用 Repeater 要列出在系统中，每个类别都提供了一个按钮以显示其相关联的产品使用 BulletedList 控件的各个类别。
 
-
 ## <a name="introduction"></a>介绍
 
 在过去 17 个 DataList 和 Repeater 的教程，我们制作了只读的示例和编辑和删除示例。 为了便于编辑和删除 DataList 中的功能，我们添加按钮到 DataList s `ItemTemplate` ，单击，导致回发并引发对应的按钮 s DataList 事件`CommandName`属性。 例如，添加到按钮`ItemTemplate`与`CommandName`编辑的属性值会导致 DataList s`EditCommand`触发回发，则在另一个使用`CommandName`删除引发`DeleteCommand`。
 
 除了编辑和删除按钮，DataList 和 Repeater 控件还可以包含按钮、 Linkbutton 或 ImageButtons，单击时，执行一些自定义服务器端逻辑。 在本教程中我们将构建一个使用 Repeater 来列出系统中的类别的接口。 对于每个类别，Repeater 将包括按钮以显示使用 BulletedList 控件的关联产品的类别 （请参阅图 1）。
 
-
 [![单击显示的产品链接显示的项目符号列表中的类别 s 产品](custom-buttons-in-the-datalist-and-repeater-cs/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image1.png)
 
 **图 1**:单击显示的产品链接显示在项目符号列表中的 s 产品类别 ([单击此项可查看原尺寸图像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image3.png))
-
 
 ## <a name="step-1-adding-the-custom-button-tutorial-web-pages"></a>步骤 1：添加自定义按钮教程 Web 页
 
@@ -43,57 +40,45 @@ ms.locfileid: "59400407"
 - `Default.aspx`
 - `CustomButtons.aspx`
 
-
 ![将 ASP.NET 页面添加自定义与按钮相关的教程](custom-buttons-in-the-datalist-and-repeater-cs/_static/image4.png)
 
 **图 2**:将 ASP.NET 页面添加自定义与按钮相关的教程
 
-
 在其他文件夹中，喜欢`Default.aspx`在`CustomButtonsDataListRepeater`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 添加到此用户控件`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
-
 
 [![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](custom-buttons-in-the-datalist-and-repeater-cs/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image5.png)
 
 **图 3**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image7.png))
 
-
 最后，将页面添加到条目为`Web.sitemap`文件。 具体而言，使用 DataList 和 Repeater 分页和排序后添加以下标记`<siteMapNode>`:
-
 
 [!code-xml[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample1.xml)]
 
 更新后`Web.sitemap`，花点时间查看通过浏览器网站的教程。 在左侧菜单现在包含用于编辑、 插入和删除教程的项。
 
-
 ![站点图现在包括自定义按钮教程的条目](custom-buttons-in-the-datalist-and-repeater-cs/_static/image8.png)
 
 **图 4**:站点图现在包括自定义按钮教程的条目
-
 
 ## <a name="step-2-adding-the-list-of-categories"></a>步骤 2：添加类别的列表
 
 我们需要创建列出所有类别以及显示产品 LinkButton Repeater 本教程中，单击时，将显示关联的类别的产品项目符号列表中。 让我们来首先创建简单的 Repeater 的系统中列出的类别。 首先打开`CustomButtons.aspx`页中`CustomButtonsDataListRepeater`文件夹。 将从工具箱拖到设计器和组的 Repeater 及其`ID`属性设置为`Categories`。 接下来，从 Repeater s 智能标记创建新的数据源控件。 具体而言，创建一个名为的新对象数据源控件`CategoriesDataSource`，选择从其数据`CategoriesBLL`类的`GetCategories()`方法。
 
-
 [![配置对象数据源使用 CategoriesBLL 类的 GetCategories() 方法](custom-buttons-in-the-datalist-and-repeater-cs/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image9.png)
 
 **图 5**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories()`方法 ([单击以查看实际尺寸的图像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image11.png))
-
 
 与 Visual Studio 将为其创建默认值的 DataList 控件不同`ItemTemplate`基于数据源，Repeater 的模板必须手动定义。 此外，必须创建和编辑以声明方式 Repeater 的模板 （即，有 s 没有编辑的模板选项中 Repeater s 智能标记）。
 
 单击左下角的源选项卡上，并添加`ItemTemplate`，它显示在类别的名称`<h3>`元素和其说明中一个段落标记，包括`SeparatorTemplate`显示水平标尺 (`<hr />`) 每个之间类别。 此外将添加使用 LinkButton 其`Text`属性设置为显示产品。 完成这些步骤后，在页面 s 声明性标记应如下所示：
 
-
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample2.aspx)]
 
 图 6 显示时的浏览器查看的页。 列出每个类别名称和说明。 显示产品按钮，单击，导致回发，但不会执行任何操作。
 
-
 [![每个类别名称和说明会显示，以及显示产品 LinkButton](custom-buttons-in-the-datalist-and-repeater-cs/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image12.png)
 
 **图 6**:每个类别名称和说明会显示，以及显示产品 LinkButton ([单击此项可查看原尺寸图像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image14.png))
-
 
 ## <a name="step-3-executing-server-side-logic-when-the-show-products-linkbutton-is-clicked"></a>步骤 3：单击时执行服务器端逻辑时显示产品 LinkButton
 
@@ -105,7 +90,6 @@ DataList 或 Repeater 中单击一个按钮时，通常我们需要传递 （在
 - `CommandArgument` 通常用来保存某些数据字段，如主键值的值
 
 对于此示例中，将设置 LinkButton s`CommandName`属性设置为 ShowProducts 和绑定的当前记录 s 主键值`CategoryID`到`CommandArgument`属性使用的数据绑定语法`CategoryArgument='<%# Eval("CategoryID") %>'`。 以后指定这两个属性，LinkButton s 声明性语法看起来应如下所示：
-
 
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample3.aspx)]
 
@@ -123,16 +107,13 @@ DataList 或 Repeater 中单击一个按钮时，通常我们需要传递 （在
 > [!NOTE]
 > DataList s`ItemCommand`事件处理程序传递类型的对象[ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)，它提供了四个属性与相同`RepeaterCommandEventArgs`类。
 
-
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>步骤 4：在项目符号列表中显示所选的类别的产品
 
 所选的类别的产品可能显示在 Repeater 的`ItemTemplate`使用任意数量的控件。 我们可以添加另一个嵌套 Repeater、 DataList、 DropDownList、 GridView，等等。 由于我们想要作为项目符号列表中显示的产品，不过，我们将使用 BulletedList 控件。 返回到`CustomButtons.aspx`页上 s 声明性标记，添加到控件 BulletedList`ItemTemplate`后显示产品 LinkButton。 设置 BulletedLists s`ID`到`ProductsInCategory`。 BulletedList 显示通过指定的数据字段的值`DataTextField`属性; 因为此控件将具有产品信息绑定到它，设置`DataTextField`属性设置为`ProductName`。
 
-
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample4.aspx)]
 
 在中`ItemCommand`事件处理程序引用此控件使用`e.Item.FindControl("ProductsInCategory")`并将其绑定到与所选类别关联的产品集。
-
 
 [!code-csharp[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample5.cs)]
 
@@ -145,11 +126,9 @@ DataList 或 Repeater 中单击一个按钮时，通常我们需要传递 （在
 > [!NOTE]
 > 如果你想要修改此报表的行为，以便只有一个类别的产品列出一次，只需设置 BulletedList 控件 s`EnableViewState`属性设置为`False`。
 
-
 [![BulletedList 用于显示所选分类的产品](custom-buttons-in-the-datalist-and-repeater-cs/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image15.png)
 
 **图 7**:BulletedList 用于显示所选分类的产品 ([单击此项可查看原尺寸图像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image17.png))
-
 
 ## <a name="summary"></a>总结
 

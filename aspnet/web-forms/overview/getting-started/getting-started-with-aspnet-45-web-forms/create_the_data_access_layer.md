@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 0bbf7a6e-d7eb-4091-91e4-fff892777f32
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: bc91eba17938de15f03ecc1e745aac57c7eac7a1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 61a9dae22efed9cb7e8957a8c131396cbdeea3c9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419491"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131358"
 ---
 # <a name="create-the-data-access-layer"></a>创建数据访问层
 
@@ -22,7 +22,6 @@ ms.locfileid: "59419491"
 [下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 此教程系列将介绍构建 ASP.NET Web 窗体应用程序使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的基础知识。 Visual Studio 2013[包含 C# 源代码项目](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)可随附于本系列教程。
-
 
 本教程介绍如何创建、 访问和查看使用 ASP.NET Web 窗体和 Entity Framework Code First 数据库中的数据。 本教程基于上一教程"创建项目"，而是 Wingtip Toy 存储教程系列的一部分。 完成本教程后，您便会生成一组中的数据访问类*模型*项目文件夹中的。
 
@@ -119,7 +118,6 @@ ms.locfileid: "59419491"
 > 
 > 如果你想要每次都重新创建的数据库运行该应用程序，可以使用`DropCreateDatabaseAlways`类而不是`DropCreateDatabaseIfModelChanges`类。 但是对于此教程系列中，使用`DropCreateDatabaseIfModelChanges`类。
 
-
 此时在本教程中，将拥有*模型*具有四个新类和一个默认类文件夹：
 
 ![创建 Models 文件夹中的数据访问层-](create_the_data_access_layer/_static/image3.png)
@@ -136,7 +134,6 @@ ms.locfileid: "59419491"
 > 
 > 在解决方案资源管理器，您可以选择*Global.asax*文件或*Global.asax.cs*要编辑文件*Global.asax.cs*文件。
 
-
 1. 添加以下代码以到黄色突出显示`Application_Start`中的方法*Global.asax.cs*文件。   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample5.cs?highlight=9-10,22-23)]
@@ -144,7 +141,6 @@ ms.locfileid: "59419491"
 > [!NOTE] 
 > 
 > 在浏览器必须支持 HTML5，若要查看在浏览器中查看本系列教程时以黄色突出显示的代码。
-
 
 上述代码中所示，应用程序启动时，应用程序指定访问第一个期间数据将运行初始值设定项。 两个其他命名空间所需的访问权限`Database`对象和`ProductDatabaseInitializer`对象。
 

@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 3eff3aceea302c51e6970bb13fbee3a8bf98a71d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 462b1210c45da67058899193afcea973f3daf122
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411977"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123040"
 ---
 # <a name="adding-a-view"></a>添加视图
 
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
-
 
 在本部分中我们要看看如何可以让我们使用视图模板文件来完全封装生成 HTML 响应返回给客户端的 HelloWorldController 类。
 
@@ -99,7 +98,6 @@ ms.locfileid: "59411977"
 现在，我们需要 Welcome 视图模板 ！ 在欢迎使用方法中右键单击并选择添加视图。 这一次，我们将检查"创建强类型视图"，并从下拉列表中选择我们 WelcomeViewModel 类。 此新视图将只知道 WelcomeViewModels 和任何其他类型的对象。
 
 > *注意：你将需要将已编译的添加为你 WelcomeViewModel 才会显示在下拉列表中后，一次。*
-
 
 下面是添加视图对话框应如下所示。 单击添加按钮。 ![添加视图标有圆圈](getting-started-with-mvc-part3/_static/image10.png)
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 36ca81d7-906d-4db2-952b-add18a4ff421
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 55ee67150d1567a0334988a06ff0fcca8a89bbd4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b98546952174bfcf08736195c87d515eda150319
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404047"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132605"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-vb"></a>通过服务器代码启动模式弹出窗口 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59404047"
 [下载代码](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)
 
 > 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 但是某些情况下需要打开模式弹出框在服务器端上触发。
-
 
 ## <a name="overview"></a>概述
 
@@ -63,7 +62,6 @@ ms.locfileid: "59404047"
 [!code-javascript[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample8.js)]
 
 `$find()`函数查找的页面上命名元素，并需要服务器端的 ID 作为参数。 因此，`$find("mpe")`返回的客户端表示形式 ModalPopup 控件; 它`show()`方法，可以显示的弹出窗口。
-
 
 [![模式弹出框时出现的任一按钮单击](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
 

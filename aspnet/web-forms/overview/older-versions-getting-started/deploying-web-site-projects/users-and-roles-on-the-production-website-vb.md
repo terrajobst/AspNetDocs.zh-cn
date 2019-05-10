@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 491ed5ae-9be1-4191-87be-65e4e1c57690
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e97b66aed789cf6f2b2b503ae86e773ac03d74e0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: df863fc6740847101c9900750a3f257c19ced9fd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392932"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134205"
 ---
 # <a name="users-and-roles-on-the-production-website-vb"></a>用户和角色生产网站 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59392932"
 [下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial16_CustomAWAT_vb.pdf)
 
 > ASP.NET 网站管理工具 (WSAT) 提供基于 web 的用户界面，用于配置成员身份和角色设置和用于创建、 编辑和删除用户和角色。 遗憾的是，WSAT 只适用于从本地主机，这意味着你无法通过浏览器访问生产网站的管理工具。 好消息是有解决方法，使得可以管理用户和生产上的角色。 本教程介绍以下解决方法和其他人。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -80,7 +79,6 @@ WSAT 分为三个部分：
 
 > [!NOTE]
 > 不要忘记更改中的连接字符串`databaseConnectionStrings.config`完成后，返回到开发数据库文件的连接字符串使用的 WSAT 否则为测试开发站点时将使用与生产数据环境。 另请注意，虽然我们刚刚讨论的技术使我们能够使用 WSAT 来远程管理用户和角色，对任何其他 WSAT 配置选项 （访问规则、 SMTP 设置、 调试和跟踪设置和等等） 的更改修改`Web.config`文件。 因此，任何对设置所做的更改适用于开发环境而不适用于生产环境。
-
 
 ## <a name="creating-custom-user-and-role-management-web-pages"></a>创建自定义用户和角色管理网页
 

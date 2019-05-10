@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0c8e74f1-b3ba-4ca9-a1c5-f5c4831a359a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f1875ae95d79ec2a6762a547aabfbd03e0930b2c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4da3a08feae4c5fd43e9176f34e929b450c76674
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386497"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132620"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-vb"></a>通过 Repeater 控件使用 ModalPopup (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59386497"
 [下载代码](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup2.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup2VB.pdf)
 
 > 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 还有可能要使用 repeater 中的此控件。
-
 
 ## <a name="overview"></a>概述
 
@@ -47,7 +46,6 @@ ms.locfileid: "59386497"
 [!code-aspx[Main](using-modalpopup-with-a-repeater-control-vb/samples/sample4.aspx)]
 
 然后，数据源中的每个项将显示触发模式弹出框旁边的按钮。
-
 
 [![可以为每个数据源输入触发模式弹出框](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
 

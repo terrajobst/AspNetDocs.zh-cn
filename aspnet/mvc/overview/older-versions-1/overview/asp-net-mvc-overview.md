@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 2dcb44a4-5cbf-4d62-b363-718104082d86
 msc.legacyurl: /mvc/overview/older-versions-1/overview/asp-net-mvc-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 149312e2ddf0a5023a4a12f5b05852f7da6b18f8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73965c71f37de13e3813df089a253fde528ea7ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418165"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128214"
 ---
 # <a name="aspnet-mvc-overview"></a>ASP.NET MVC 概述
 
@@ -21,18 +21,15 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解有关 ASP.NET MVC 应用程序和 ASP.NET Web 窗体应用程序之间的差异。 了解如何决定何时生成的 ASP.NET MVC 应用程序。
 
-
 模型-视图-控制器 (MVC) 体系结构模式将应用程序分成三个主要组件： 模型、 视图和控制器。 ASP.NET MVC 框架提供用于创建基于 MVC 的 Web 应用程序的 ASP.NET Web 窗体模式的替代方法。 ASP.NET MVC 框架是一个轻型、 高度可测试的演示框架，（如基于 Web 窗体的应用程序） 与现有的 ASP.NET 功能，如母版页和基于成员身份的身份验证集成。 MVC 框架中定义**System.Web.Mvc**命名空间和是基本的、 受支持的一部分**System.Web**命名空间。   
   
 MVC 是许多开发人员都熟悉的标准设计模式。 某些类型的 Web 应用程序将受益于 MVC 框架。 其他人将继续使用基于 Web 窗体和回发的传统 ASP.NET 应用程序模式。 其他类型的 Web 应用程序将合并这两种方法;两种方法彼此互不。   
   
 MVC 框架包括以下组件：
 
-
 [![调用控制器操作所需的参数值](asp-net-mvc-overview/_static/image1.jpg)](asp-net-mvc-overview/_static/image1.png)
 
 **图 01**:调用控制器操作所需的参数值 ([单击此项可查看原尺寸图像](asp-net-mvc-overview/_static/image2.png))
-
 
 - **模型**。 模型对象是实现应用程序的数据域逻辑的应用程序部件。 通常情况下，模型对象检索，并将模型状态存储在数据库中。 例如，Product 对象可能会从数据库中检索信息、 操作它，然后更新将信息写回到 SQL Server 中的 Products 表。
 

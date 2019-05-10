@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80254135d2d363ea151e2ea70aeca988b33b0d4d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410599"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134665"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 创建一个基本的 ASP.NET 4.5 Web 窗体页面
 # 
@@ -45,7 +45,6 @@ ms.locfileid: "59410599"
     >   
     > 如果使用的 Visual Studio，本演练假定你所选**Web 开发**的设置集合，首次启动 Visual Studio。 有关详细信息，请参阅[如何：选择 Web 开发环境设置](https://msdn.microsoft.com/library/ff521558.aspx)。
 
-
 ## <a name="creating-a-web-application-project-and-a-page"></a>创建 Web 应用程序项目和页面
 
 <a id="sectionToggle0"></a>
@@ -69,16 +68,13 @@ ms.locfileid: "59410599"
     Visual Studio 创建新的项目，包括基于 Web 窗体模板的预生成的功能。 它不仅提供了与您*Home.aspx*页上， *About.aspx*页上， *Contact.aspx*页上，但还包括注册用户，并将保存的成员资格功能其凭据，以便他们可以登录到你的网站。 创建一个新页面时，默认情况下 Visual Studio 将显示在页面**源**视图中，可以看到此页的 HTML 元素的位置。 下图显示了您在中会看到**源**查看如果你创建一个名为的新 Web 页*BasicWebApp.aspx*。  
     ![源视图](creating-a-basic-web-forms-page/_static/image4.png)
 
-
 ### <a name="a-tour-of-the-visual-studio-web-development-environment"></a>Visual Studio Web 开发环境教程
-
 
 通过修改页面继续操作之前，最好您熟悉 Visual Studio 开发环境。 下图显示了 windows 和 Visual Studio 和 Visual Studio Express for Web 中提供的工具。
 
 > [!NOTE] 
 > 
 > 下图显示的默认窗口和窗口位置。 **视图**菜单允许您以显示其他窗口，并重新排列和调整大小以适合您的首选项。 如果已为窗口排列方式进行更改，您看到的内容将与该图不匹配。
-
 
  在 Visual Studio 环境
 
@@ -96,14 +92,11 @@ ms.locfileid: "59410599"
 - **工具箱**。 提供控件和 HTML 元素，您可以拖放到您的页面。 **工具箱**元素进行分组的公共函数。
 - S**服务器资源管理器**。 显示数据库连接。 如果服务器资源管理器不可见，请在视图菜单上单击服务器资源管理器。
 
-
 ### <a name="creating-a-new-aspnet-web-forms-page"></a>创建新的 ASP.NET Web 窗体页
-
 
 当您创建新的 Web 窗体应用程序使用**ASP.NET Web 应用程序**项目模板，Visual Studio 将添加名为的 ASP.NET 页 （Web 窗体页） *Default.aspx*，以及其他多个文件和文件夹。 可以使用*Default.aspx*为 Web 应用程序主页的页。 但是，对于本演练中，将创建和使用新的页面。
 
 ### <a name="to-add-a-page-to-the-web-application"></a>若要添加到 Web 应用程序页
-
 
 1. 关闭*Default.aspx*页。 若要执行此操作，单击显示文件名称的选项卡，然后单击关闭选项。
 2. 在中**解决方案资源管理器**，右键单击 Web 应用程序名称 (在本教程中的应用程序名称是**BasicWebSite**)，然后单击**添加** - &gt;**新项**。   
@@ -113,14 +106,11 @@ ms.locfileid: "59410599"
 4. 单击**添加**将 web 页面添加到你的项目。  
 Visual Studio 创建新页面，并将其打开。
 
-
 ### <a name="adding-html-to-the-page"></a>将 HTML 添加到页面
-
 
 在本演练的此部分中，将向页面添加一些静态文本。
 
 ### <a name="to-add-text-to-the-page"></a>若要将文本添加到页面
-
 
 1. 在文档窗口的底部，单击**设计**选项卡以切换到**设计**视图。
 
@@ -136,14 +126,11 @@ Visual Studio 创建新页面，并将其打开。
     您可以看到在 HTML**源**中键入时创建的视图**设计**视图。  
     ![包含静态文本的网页](creating-a-basic-web-forms-page/_static/image8.png)
 
-
 ### <a name="running-the-page"></a>运行页面
-
 
 通过将控件添加到页面继续操作之前，您可以首先运行它。
 
 ### <a name="to-run-the-page"></a>若要运行页
-
 
 1. 在中**解决方案资源管理器**，右键单击*FirstWebPage.aspx* ，然后选择**设为起始页**。
 2. 按**CTRL + F5**以运行该页。
@@ -153,9 +140,7 @@ Visual Studio 创建新页面，并将其打开。
     要在浏览器中显示的页面也可以右键单击中的页**解决方案资源管理器**，然后选择**用浏览器查看**。
 3. 关闭浏览器来停止 Web 应用程序。
 
-
 ## <a name="adding-and-programming-controls"></a>添加和控件进行编程
-
 
 <a id="sectionToggle1"></a>
 
@@ -164,7 +149,6 @@ Visual Studio 创建新页面，并将其打开。
 您将添加[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件，[文本框](https://msdn.microsoft.com/library/system.web.ui.webcontrols.textbox.aspx)控件，和一个[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)到页面控件，并编写代码来处理[单击](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件。
 
 ### <a name="to-add-controls-to-the-page"></a>若要将控件添加到页面
-
 
 1. 单击**设计**选项卡以切换到**设计**视图。
 2. 将插入点放在末尾**欢迎使用 Visual Web Developer**文本，然后按**ENTER**五次或多次以留出一些空间中的**div**元素。
@@ -179,14 +163,11 @@ Visual Studio 创建新页面，并将其打开。
 
     ![在设计视图中的三个控件](creating-a-basic-web-forms-page/_static/image9.png "在设计视图中的三个控件")
 
-
 ### <a name="setting-control-properties"></a>设置控件属性
-
 
 Visual Studio 提供了各种方法来设置页上的控件的属性。 在本演练的此部分中，您将在这种设置属性**设计**视图和**源**视图。
 
 ### <a name="to-set-control-properties"></a>若要设置控件属性
-
 
 1. 首先，显示**属性**窗口中的，选择从**视图**菜单&gt;**其他 Windows**  - &gt; **属性窗口**。 或者，您可以选择**F4**以显示**属性**窗口。
 2. 选择[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件，然后在**属性**窗口中，设置的值**文本**到**显示名称**。 下图中所示，在设计器中，按钮上显示您输入的文本。
@@ -217,14 +198,11 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 
     **ForeColor**属性已完成，但已选择，包括右引号后面的颜色。
 
-
 ### <a name="programming-the-button-control"></a>编程的按钮控件
-
 
 对于本演练，你将编写代码，用于读取用户在文本框中输入并随后显示中的名称的名称[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。
 
 ### <a name="add-a-default-button-event-handler"></a>添加默认按钮事件处理程序
-
 
 1. 切换到**设计**视图。
 2. 双击[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件。
@@ -252,14 +230,11 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 
     事件处理程序方法可以具有任何名称;显示的名称是由 Visual Studio 创建的默认名称。 重要的一点是，该名称将用于**OnClick** HTML 中的属性必须匹配在代码隐藏中定义的方法的名称。
 
-
 ### <a name="running-the-page"></a>运行页面
-
 
 现在可以测试页上的服务器控件。
 
 ### <a name="to-run-the-page"></a>若要运行页
-
 
 1. 按**CTRL + F5**以在浏览器中运行该页。 如果发生错误，重新检查上述步骤。
 2. 在文本框中输入一个名称，然后单击**显示名称**按钮。
@@ -270,7 +245,6 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
     在页的源代码，可以看到 HTML 而无需任何服务器代码。 具体而言，未看到**&lt;asp:&gt;** 你正在使用中的元素**源**视图。 页运行时，ASP.NET 会处理服务器控件，并呈现到页的 HTML 元素，可执行表示控件的功能。 例如， **&lt;: Button&gt;** 控件呈现为 HTML **&lt;输入类型 =&quot;提交&quot;&gt;** 元素。
 4. 关闭浏览器。
 
-
 ## <a name="working-with-additional-controls"></a>中的其他控件
 
 <a id="sectionToggle2"></a>
@@ -280,7 +254,6 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 在本部分中，您将添加[System.Web.UI.WebControls.Calendar](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制对页面并设置其格式。
 
 ### <a name="to-add-a-calendar-control"></a>若要添加一个日历控件
-
 
 1. 在 Visual Studio 中，切换到**设计**视图。
 2. 从**标准**一部分**工具箱**，拖动[日历](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)拖放到页面上控制**div**元素，包含其他控件。
@@ -300,14 +273,11 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 
     ![月历控件在源视图](creating-a-basic-web-forms-page/_static/image15.png "月历控件在源视图中")
 
-
 ### <a name="programming-the-calendar-control"></a>日历控件编程
-
 
 在本部分中，将编程[日历](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控件来显示当前选定的日期。
 
 ### <a name="to-program-the-calendar-control"></a>日历控件编程
-
 
 1. 在中**设计**视图中，双击[日历](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控件。
 
@@ -316,19 +286,15 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 
     [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
-
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
 
     上面的代码中设置为所选日期的日历控件的标签控件的文本。
 
-
 ### <a name="running-the-page"></a>运行页面
-
 
 现在可以测试日历。
 
 ### <a name="to-run-the-page"></a>若要运行页
-
 
 1. 按**CTRL + F5**以在浏览器中运行该页。
 2. 单击日历中的日期。
@@ -339,9 +305,7 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
     请注意，[日历](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制呈现给页面**表**，为每个日期**td**元素。
 4. 关闭浏览器。
 
-
 ## <a name="next-steps"></a>后续步骤
-
 
 <a id="nextStepsToggle"></a>
 

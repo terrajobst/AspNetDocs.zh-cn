@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e57f8c7c-3940-4bc0-9468-3a0ca69158ea
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 36d1166e1bd2b4c97b3cf3dd0bc3a7e8010a9443
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c403cddd1e3eb5b66f795a2e4032fae63fdb26ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393686"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130747"
 ---
 # <a name="animating-an-updatepanel-control-c"></a>对 UpdatePanel 控件执行动画处理 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393686"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1CS.pdf)
 
 > ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 对于在 UpdatePanel 的内容，一个特殊的扩展程序存在严重依赖于此动画框架：UpdatePanelAnimation。 本教程演示如何为 UpdatePanel 设置此类动画。
-
 
 ## <a name="overview"></a>概述
 
@@ -48,7 +47,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-aspx[Main](animating-an-updatepanel-control-cs/samples/sample3.aspx)]
 
 现在每次回发的 UpdatePanel 中发生时，新的面板内容淡入顺利。
-
 
 [![淡入淡出下一步的向导步骤](animating-an-updatepanel-control-cs/_static/image2.png)](animating-an-updatepanel-control-cs/_static/image1.png)
 

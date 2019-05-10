@@ -8,12 +8,12 @@ ms.date: 01/29/2017
 ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: cf18a8860d34daa23f61e3dde13c2c79c6c0d4a5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 51a8fdf44199b5a4735e0e00657639b191f51255
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048114"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125984"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>配置用于 Web 部署发布的 Web 服务器（Web 部署处理程序）
 
@@ -28,7 +28,6 @@ ms.locfileid: "57048114"
 > - 使用*离线部署*。 这种方法需要 web 服务器的最低配置，但服务器管理员必须手动复制到服务器上的 web 包并将其导入通过 IIS 管理器。
 > 
 > 主要功能、 优势和一种方法的缺点的详细信息，请参阅[选择右方法对 Web 部署](choosing-the-right-approach-to-web-deployment.md)。
-
 
 是，如果你想要允许非管理员用户将内容部署到特定的 IIS 网站。 这种方法通常是这些类型的方案中所需的：
 
@@ -64,7 +63,6 @@ ms.locfileid: "57048114"
 > [!NOTE]
 > 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
 
-
 ## <a name="install-products-and-components"></a>安装的产品和组件
 
 本部分将指导您完成在 web 服务器上安装所需的产品和组件。 在开始之前，一个好的做法是运行 Windows 更新，以确保你的服务器是完全保持最新。
@@ -80,7 +78,6 @@ ms.locfileid: "57048114"
 
 > [!NOTE]
 > 本演练介绍如何使用 Web 平台安装程序来安装和配置各种组件。 尽管不一定要使用 Web 平台安装程序，它通过简化了安装过程会自动检测的依赖关系以及确保始终获得最新的产品版本。 有关详细信息，请参阅[Microsoft Web 平台安装程序](https://go.microsoft.com/?linkid=9805118)。
-
 
 **若要安装必需的产品和组件**
 
@@ -239,7 +236,6 @@ ms.locfileid: "57048114"
 > [!NOTE]
 > 在 IIS 7.5 的应用程序池标识的详细信息，请参阅[应用程序池标识](https://go.microsoft.com/?linkid=9805123)。
 
-
 **若要配置 IIS 网站的文件夹权限**
 
 1. 在 Windows 资源管理器，浏览到本地文件夹的位置。
@@ -281,7 +277,6 @@ ms.locfileid: "57048114"
 | --- | --- | --- | --- |
 | 入站 | 任意 | 8172 | TCP |
 | 出站 | 8172 | 任意 | TCP |
-  
 
 在 Windows 防火墙中配置规则的详细信息，请参阅[配置防火墙规则](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 对于第三方防火墙，请参阅产品文档。
 

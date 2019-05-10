@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: bbd6b7f7-b98a-48b4-93f3-341d6a4f53c0
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 69a6843783dad3d8fcd8a5b93c9d8a31f9bb8ec0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f51c720290e59e0f79d105bc9412c19db1870278
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383234"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133974"
 ---
 # <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>分页 DataList 或 Repeater 控件中的报表数据 (VB)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59383234"
 
 > 虽然 DataList 和 Repeater 都不提供自动分页或排序的支持，本教程演示如何将分页支持添加到 DataList 或 Repeater，允许更灵活的分页和数据显示接口。
 
-
 ## <a name="introduction"></a>介绍
 
 分页和排序是两个非常常见的功能，在一个在线应用程序中显示数据时。 例如，搜索的一家网上书店在 ASP.NET 书籍时，可能有数百个此类书籍，但搜索结果中列出该报表列出每页的十个匹配项。 此外，可以按标题、 价格、 页数、 作者姓名等对结果进行排序。 如中所述[分页和排序报表数据](../paging-and-sorting/paging-and-sorting-report-data-vb.md)教程，所有都提供内置的分页支持，还可以启用一个复选框的刻度线在 GridView、 DetailsView 和 FormView 控件。 GridView 还包括排序支持。
@@ -32,7 +31,6 @@ ms.locfileid: "59383234"
 
 > [!NOTE]
 > 本教程以独占方式重点分页。 在下一教程中我们要将注意力转移到添加排序功能。
-
 
 ## <a name="step-1-adding-the-paging-and-sorting-tutorial-web-pages"></a>步骤 1：添加分页和排序教程网页
 
@@ -44,30 +42,23 @@ ms.locfileid: "59383234"
 - `SortingWithDefaultPaging.aspx`
 - `SortingWithCustomPaging.aspx`
 
-
 ![创建 PagingSortingDataListRepeater 文件夹并添加教程 ASP.NET 页面](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image1.png)
 
 **图 1**:创建`PagingSortingDataListRepeater`文件夹并添加教程 ASP.NET 页面
 
-
 接下来，打开`Default.aspx`页上，并将其拖`SectionLevelTutorialListing.ascx`从用户控制`UserControls`文件夹拖到设计图面。 此用户控件，我们在中创建[母版页和站点导航](../introduction/master-pages-and-site-navigation-vb.md)教程中，枚举站点图，并在项目符号列表中的当前部分中显示这些教程。
-
 
 [![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image3.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image2.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image4.png))
 
-
 为了使显示分页和排序的教程中我们将创建的项目符号列表，我们需要将它们添加到的站点映射。 打开`Web.sitemap`文件，并使用 DataList 站点映射节点标记在编辑和删除之后添加以下标记：
 
-
 [!code-xml[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample1.xml)]
-
 
 ![更新包括新的 ASP.NET 页面的站点图](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image5.png)
 
 **图 3**:更新包括新的 ASP.NET 页面的站点图
-
 
 ## <a name="a-review-of-paging"></a>评审的分页
 
@@ -79,11 +70,9 @@ ms.locfileid: "59383234"
 
 若要实现默认的分页 DataList 或 Repeater 控件中，我们可以使用[`PagedDataSource`类](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.aspx)周围的包装器作为`ProductsDataTable`其内容将被分页。 `PagedDataSource`类具有`DataSource`可以分配给任何可枚举对象的属性和[ `PageSize` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx)并[ `CurrentPageIndex` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx)属性用来指示到的记录数显示每个页面和当前的页索引。 设置这些属性后`PagedDataSource`可以用作数据源的任何数据 Web 控件。 `PagedDataSource`，当枚举时，将只返回其内部的记录的相应子集`DataSource`基于`PageSize`和`CurrentPageIndex`属性。 图 4 演示的功能`PagedDataSource`类。
 
-
 ![PagedDataSource 包装具有可分页接口的可枚举对象](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image6.png)
 
 **图 4**:`PagedDataSource`包装具有可分页接口的可枚举对象
-
 
 `PagedDataSource`对象可以是创建和配置直接从业务逻辑层和绑定到 DataList 或 Repeater 通过对象数据源，或可以创建并配置直接在 ASP.NET 页面 + s 代码隐藏类中。 如果使用后一种方法，我们必须放弃使用 ObjectDataSource 并改为绑定到 DataList 或 Repeater 分页的数据，以编程方式。
 
@@ -102,26 +91,21 @@ ms.locfileid: "59383234"
 
 `GetProductsAsPagedDataSource` 首先检索*所有*的记录从`GetProducts()`。 然后，创建`PagedDataSource`对象，并设置其`CurrentPageIndex`并`PageSize`的传入的值的属性`pageIndex`和`pageSize`参数。 该方法最后返回此配置`PagedDataSource`:
 
-
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample2.vb)]
 
 ## <a name="step-3-displaying-product-information-in-a-datalist-using-default-paging"></a>步骤 3：在使用默认的分页 DataList 中显示的产品信息
 
 与`GetProductsAsPagedDataSource`方法添加到`ProductsBLL`类中，我们现在可以创建 DataList 或 Repeater 提供默认的分页。 首先打开`Paging.aspx`页中`PagingSortingDataListRepeater`文件夹，然后从工具箱拖到设计器中，设置 DataList 的拖动 DataList`ID`属性设置为`ProductsDefaultPaging`。 从 DataList s 智能标记，创建名为新 ObjectDataSource`ProductsDefaultPagingDataSource`并将其配置，以便它检索的数据使用`GetProductsAsPagedDataSource`方法。
 
-
 [![创建对象数据源，并将其配置为使用 GetProductsAsPagedDataSource （） 方法](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image8.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image7.png)
 
 **图 5**:创建对象数据源，并将其配置为使用`GetProductsAsPagedDataSource``()`方法 ([单击以查看实际尺寸的图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image9.png))
 
-
 设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
-
 
 [![设置下拉列表中插入、 更新和删除选项卡添加到 （无）](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image11.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image10.png)
 
 **图 6**:设置下拉列表中插入、 更新和删除选项卡添加到 （无） ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image12.png))
-
 
 由于`GetProductsAsPagedDataSource`方法需要两个输入的参数，该向导将提示我们为这些参数值的源。
 
@@ -129,38 +113,30 @@ ms.locfileid: "59383234"
 
 具体而言，使用的查询字符串字段 pageIndex 和的 pageSize`pageIndex`和`pageSize`参数，分别 （请参阅图 7）。 因为查询字符串值不会出现在用户首次访问此页时，请花费片刻时间来设置这些参数的默认值。 有关`pageIndex`，默认值设置为 0 （这将显示数据的第一页） 和`pageSize`的默认值为 4。
 
-
 [![使用查询字符串作为源的 pageIndex 和 pageSize 参数](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image13.png)
 
 **图 7**:在查询字符串用作源`pageIndex`并`pageSize`参数 ([单击以查看实际尺寸的图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image15.png))
 
-
 在配置后 ObjectDataSource，Visual Studio 会自动创建`ItemTemplate`的 DataList。 自定义`ItemTemplate`以便显示产品的名称、 类别和供应商。 此外设置 DataList s`RepeatColumns`属性设置为 2，其`Width`为 100%，并将其`ItemStyle`s`Width`为 50%。 这些宽度设置将提供两个列的间距相等。
 
 以后进行这些更改，DataList 和 ObjectDataSource 的标记看起来应类似于下面：
-
 
 [!code-aspx[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample3.aspx)]
 
 > [!NOTE]
 > 因为我们不执行任何更新或删除在本教程中的功能，你可以禁用 DataList 的视图状态，以减少呈现的页面大小。
 
-
 最初都不访问浏览器中，通过此页时`pageIndex`也不`pageSize`提供查询字符串参数。 因此，使用默认值为 0 和 4。 如图 8 所示，这会导致显示的前四个产品 DataList。
-
 
 [![列出了第四个产品](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image17.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image16.png)
 
 **图 8**:列出了第四个产品 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image18.png))
 
-
 没有分页界面，那里 s 当前不简单意味着用户可以导航到第二个数据页。 我们将在步骤 4 中创建分页界面。 现在，不过，分页仅可通过直接在查询字符串中指定的分页条件。 例如，若要查看的第二页，更改从浏览器的地址栏中的 URL`Paging.aspx`到`Paging.aspx?pageIndex=2`并按 Enter。 这会导致数据要显示的第二页 （请参阅图 9）。
-
 
 [![显示第二个数据页](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image20.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image19.png)
 
 **图 9**:显示第二个数据页 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image21.png))
-
 
 ## <a name="step-4-creating-the-paging-interface"></a>步骤 4：创建分页界面
 
@@ -174,7 +150,6 @@ ms.locfileid: "59383234"
 对于 DataList 和 Repeater 中，我们需负责决定时分页接口以及实现该功能。 这涉及到创建所需的 Web 控件在页和单击特定的分页界面按钮时显示请求的页面。 此外，可能需要禁用某些分页界面控件。 例如，查看时数据使用下一步的第一页上, 一步，首先，最后一个接口，第一个和上一步按钮，将禁用。
 
 对于本教程，让的使用下一步上, 一步，首先上, 一次的接口。 向页面添加四个按钮 Web 控件并设置其`ID`向`FirstPage`， `PrevPage`， `NextPage`，和`LastPage`。 设置`Text`属性设置为&lt;&lt;第一， &lt; Prev、 下一步&gt;，和最后一个&gt; &gt; 。
-
 
 [!code-aspx[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample4.aspx)]
 
@@ -191,11 +166,9 @@ ms.locfileid: "59383234"
 
 如果分页界面包括最后一个按钮，它是命令性，以便单击最后一个按钮时我们可以确定最后一页索引，在回发之间记住正在通过用寻呼发送的记录总数。 若要实现此目的，创建`TotalRowCount`中仍然存在其值以查看状态的 ASP.NET 页面 + s 代码隐藏类的属性：
 
-
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample5.vb)]
 
 除了`TotalRowCount`、 花点时间创建只读的页级属性，用于轻松访问的页索引、 页大小和页计数：
-
 
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample6.vb)]
 
@@ -205,7 +178,6 @@ ms.locfileid: "59383234"
 
 若要实现此目的，创建事件处理程序的 ObjectDataSource s`Selected`事件。 在中`Selected`事件处理程序有权访问的返回值的 ObjectDataSource s`Select()`方法在此情况下， `PagedDataSource`。
 
-
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample7.vb)]
 
 ## <a name="displaying-the-requested-page-of-data"></a>显示请求的数据页
@@ -213,7 +185,6 @@ ms.locfileid: "59383234"
 当用户单击分页界面中的按钮之一时，我们需要显示请求的数据页。 由于分页参数指定通过在查询字符串，若要显示的数据，则使用请求的页面`Response.Redirect(url)`具有 s 用户浏览器重新请求`Paging.aspx`页使用适当的分页参数。 例如，若要显示的数据的第二页，我们会将用户重定向到`Paging.aspx?pageIndex=1`。
 
 若要实现此目的，创建`RedirectUser(sendUserToPageIndex)`方法将重定向到用户`Paging.aspx?pageIndex=sendUserToPageIndex`。 然后，从四个按钮调用此方法`Click`事件处理程序。 中`FirstPage``Click`事件处理程序，请调用`RedirectUser(0)`，以将其发送到的第一页; 在`PrevPage``Click`事件处理程序，使用`PageIndex - 1`的页索引; 为，依此类推。
-
 
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample8.vb)]
 
@@ -225,32 +196,26 @@ ms.locfileid: "59383234"
 
 将以下代码添加到 ObjectDataSource 的`Selected`事件处理程序：
 
-
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample9.vb)]
 
 添加此元素后，查看最后一页时，将禁用下一步和最后一个按钮时查看的第一页时，将禁用第一个和上一步按钮。
 
 允许 s 完成分页界面通过告知用户分页的它们重新当前正在查看和存在多少总页数。 向页面添加标签 Web 控件并设置其`ID`属性设置为`CurrentPageNumber`。 设置其`Text`ObjectDataSource s 所选事件处理程序中此类的属性，它包含当前正在查看的页 (`PageIndex + 1`) 和总页数 (`PageCount`)。
 
-
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample10.vb)]
 
 图 10 显示了`Paging.aspx`首次访问时。 由于在查询字符串为空，DataList 默认显示前四个产品;第一个和上一步按钮已禁用。 单击下一步显示 （请参阅图 11） 的四个记录;第一个和上一步按钮现已启用。
-
 
 [![显示第一个数据页](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image23.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image22.png)
 
 **图 10**:显示第一个数据页 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image24.png))
 
-
 [![显示第二个数据页](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image26.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image25.png)
 
 **图 11**:显示第二个数据页 ([单击此项可查看原尺寸图像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image27.png))
 
-
 > [!NOTE]
 > 分页界面，可以进一步增强通过允许用户指定多少页以查看每个页面。 例如，将 DropDownList 添加列表等 5、 10、 25、 50 和所有的页面大小选项。 选择页面大小，用户将需要重定向回`Paging.aspx?pageIndex=0&pageSize=selectedPageSize`。 我将保留留给读者作为练习实现此增强功能。
-
 
 ## <a name="using-custom-paging"></a>使用自定义分页
 

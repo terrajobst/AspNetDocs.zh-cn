@@ -8,19 +8,18 @@ ms.date: 12/03/2010
 ms.assetid: 994a5496-c648-4830-b03c-55bb43f325d2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 1e974d7ff259952d7dba0e968d43180f32a83d23
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8bfbe74f90eb03ea9aab7610842ef2578e80d113
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387979"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133285"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体-第 6 部分
 
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 有关教程系列的信息，请参阅[系列中的第一个教程](the-entity-framework-and-aspnet-getting-started-part-1.md)
-
 
 ## <a name="implementing-table-per-hierarchy-inheritance"></a>实现“每个层次结构一个表”继承
 

@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 4fab47d5-a6ec-4fdc-91f0-651a093a24b9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 63afd25e2ccf22d3c7ae5c5048c80a8cf060d4cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7af1b8afa2ecc8df9846f2edd2091b26b93a811c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59382818"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131021"
 ---
 # <a name="part-4-listing-products"></a>第 4 部分：列出产品
 
@@ -22,7 +22,6 @@ ms.locfileid: "59382818"
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 4 部分介绍如何列出产品使用 GridView 控件。
-
 
 ## <a id="_Toc260221670"></a>  列出了所有产品使用 GridView 控件
 

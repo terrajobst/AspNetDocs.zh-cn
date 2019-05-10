@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: c83ca3e6-c0bf-4158-a166-40c1ab0f33da
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3bf4b8fe85780135c821fbb7fcceefd326dce656
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2c71b859fb50eaf6c66a4103fb878104ce10eba3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381336"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134325"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-c"></a>通过客户端代码操作 DropShadow 属性 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381336"
 [下载代码](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow2.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow2CS.pdf)
 
 > AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 此外可以使用客户端 JavaScript 代码更改此扩展器的属性。
-
 
 ## <a name="overview"></a>概述
 
@@ -53,7 +52,6 @@ AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 此�
 JavaScript 函数`changeOpacity()`然后必须首先找到`DropShadowExtender`页上的控件。 ASP.NET AJAX 定义`$find()`完全该任务的方法。 然后，将`get_Opacity()`方法检索当前不透明度，`set_Opacity()`方法将其设置。 JavaScript 代码然后将当前的不透明度值放入`<label>`元素：
 
 [!code-html[Main](manipulating-dropshadow-properties-from-client-code-cs/samples/sample6.html)]
-
 
 [![在客户端上更改不透明度](manipulating-dropshadow-properties-from-client-code-cs/_static/image2.png)](manipulating-dropshadow-properties-from-client-code-cs/_static/image1.png)
 

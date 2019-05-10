@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: 09279194-bcf9-4b59-a09d-c68e5926a758
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 70640ac12b52d50c92d1d7f65c1116b2ec36d883
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3cfba5648dd7b9cacdc439de132bea48ee7447b1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381765"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127146"
 ---
 # <a name="deploying-your-site-using-an-ftp-client-vb"></a>使用 FTP 客户端部署站点 (VB)
 
@@ -23,17 +23,14 @@ ms.locfileid: "59381765"
 
 > 部署 ASP.NET 应用程序的最简单方法是手动将从开发环境所需的文件复制到生产环境。 本教程演示如何使用 FTP 客户端到 web 主机提供商从桌面上获取文件。
 
-
 ## <a name="introduction"></a>介绍
 
 上一个教程介绍了组成少量的 ASP.NET 页、 母版页、 自定义库一个简单书籍查看 ASP.NET web 应用`Page`类，许多映像，并且三个 CSS 样式表。 我们现已准备好部署到 web 主机提供商，此时，该应用程序将连接到 Internet，与任何人都可访问此应用程序 ！
-
 
 从我们中的讨论[*确定哪些文件需要将部署到*](determining-what-files-need-to-be-deployed-vb.md)教程，我们知道需要复制到 web 宿主提供程序的文件。 （回想一下，哪些文件复制取决于是否在编译应用程序显式或自动。）但是，我们如何才能让文件从开发环境 （我们的桌面） 到生产环境 （由 web 主机提供商托管的 web 服务器）？ [ **F** ile **T** ransfer **P**协议 (FTP)](http://en.wikipedia.org/wiki/File_Transfer_Protocol)是常用的协议将文件从一台计算机复制到另一个，通过网络。 另一个选项是 FrontPage 服务器扩展 (FPSE)。 本教程重点介绍使用独立 FTP 客户端软件部署到生产环境的必要文件从开发环境。
 
 > [!NOTE]
 > Visual Studio 包含用于通过 FTP; 发布网站工具下一教程中介绍了这些工具，以及看使用 FPSE 的工具。
-
 
 若要使用的 FTP，我们需要复制文件*FTP 客户端*开发环境。 FTP 客户端是用于将文件从安装到正在运行的计算机的计算机复制的应用程序*FTP 服务器*。 （如果大多数一样，web 宿主提供程序支持通过 FTP，文件传输，则在其 web 服务器上运行的 FTP 服务器。）有大量的 FTP 客户端应用程序。 在 web 浏览器可以为 FTP 客户端甚至两倍。 我最喜欢的 FTP 客户端，我将用于本教程中，一个是[FileZilla](http://filezilla-project.org/)，免费的开源 FTP 客户端适用于 Windows、 Linux 和 Mac。 但是，任何 FTP 客户端将工作，请使用在最熟悉的任何客户端。
 
@@ -68,11 +65,9 @@ ms.locfileid: "59381765"
 > [!NOTE]
 > 具有源代码文件在生产服务器上，没有什么坏处它们将被忽略。 ASP.NET，以便即使生产服务器上存在的源代码文件将无法访问它们对你的网站的访客，默认情况下禁止对源代码文件的 HTTP 请求。 (即，如果用户尝试访问`http://www.yoursite.com/Default.aspx.vb`他们将得到一个错误页面，介绍的这些类型的文件-`.vb`文件-被禁止。)
 
-
 [![使用 FTP 客户端将从您的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器。](deploying-your-site-using-an-ftp-client-vb/_static/image2.png)](deploying-your-site-using-an-ftp-client-vb/_static/image1.png)
 
 **图 1**:使用 FTP 客户端将从你的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器 ([单击此项可查看原尺寸图像](deploying-your-site-using-an-ftp-client-vb/_static/image3.png))
-
 
 在部署你的站点后请花费片刻时间以测试网站。 如果你只购买一个域名并配置 DNS 设置正确，可以通过输入你的域名访问你的站点。 或者，您的 web 主机提供商应提供你指向你的站点的 url 这看起来好像*accountname*。*webhostprovider*.com 或*webhostprovider*.com /*accountname*。 例如，我在折扣 ASP.NET 上的帐户的 URL 是： `http://httpruntime.web703.discountasp.net`。
 
@@ -81,11 +76,9 @@ ms.locfileid: "59381765"
 > [!NOTE]
 > 如果遇到错误时查看你的应用程序需要一段时间来确保您部署正确的文件集。 接下来，检查错误消息，请参阅是否它将显示有关该问题有什么解决办法。 接下来，转到 web 主机公司的支持人员或将问题发布到相应论坛[ASP.NET 论坛](https://forums.asp.net/)。
 
-
 [![通讯簿评审站点是在具有 Internet 连接的任何人都现在可访问。](deploying-your-site-using-an-ftp-client-vb/_static/image5.png)](deploying-your-site-using-an-ftp-client-vb/_static/image4.png)
 
 **图 2**:通讯簿评审站点是现在可以访问在具有 Internet 连接的任何人 ([单击此项可查看原尺寸图像](deploying-your-site-using-an-ftp-client-vb/_static/image6.png))
-
 
 ## <a name="deploying-the-book-review-web-site-project"></a>部署书籍检查网站项目
 
@@ -97,7 +90,6 @@ ms.locfileid: "59381765"
 
 > [!NOTE]
 > 如果已部署项目但仍想要尝试部署 BookReviewsWSP 项目的 BookReviewsWAP，首先删除所有部署 BookReviewsWAP 时已上传 web 服务器上的文件，然后为 BookReviewsWSP 部署文件。
-
 
 - `~/Default.aspx`
 - `~/Default.aspx.vb`
@@ -123,11 +115,9 @@ ms.locfileid: "59381765"
 
 图 3 显示了所需的文件复制后 FileZilla。 正如您所看到的 ASP.NET 源代码文件，如`About.aspx.vb`，因为需要时使用自动部署代码文件均存在于本地计算机 （开发环境） 和 web 宿主提供程序 （在生产环境）编译。
 
-
 [![使用 FTP 客户端将从您的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器](deploying-your-site-using-an-ftp-client-vb/_static/image8.png)](deploying-your-site-using-an-ftp-client-vb/_static/image7.png)
 
 **图 3**:使用 FTP 客户端将从你的桌面的所需的文件复制到 Web 主机提供商的 Web 服务器 ([单击此项可查看原尺寸图像](deploying-your-site-using-an-ftp-client-vb/_static/image9.png))
-
 
 应用程序的编译模式不影响用户体验。 相同的 ASP.NET 页面访问，它们的外观和是否已创建网站，使用 Web 应用程序项目模型或网站项目模型的行为相同。
 
@@ -139,7 +129,6 @@ Web 应用程序开发和部署不是一次性的过程。 例如，创建书籍
 
 > [!NOTE]
 > 使用显式编译是无论何时向项目添加新的 ASP.NET 页面或进行任何与代码相关的更改，您需要重新生成项目，这会更新中的程序集时，需要注意的一点`Bin`文件夹。 因此，您将需要更新生产 （以及其他新的和更新内容） 上的 web 应用程序时，将此更新的程序集复制到生产环境。
-
 
 此外了解到的任何更改`Web.config`中的文件或`Bin`目录停止并重新启动该网站的应用程序池。 如果使用存储会话状态`InProc`模式 （默认值），然后你网站的访问者将会丢失其会话状态时修改这些密钥文件。 若要避免这种问题，请考虑将存储会话使用`StateServer`或`SQLServer`模式。 有关本主题的详细信息请阅读[会话状态模式](https://msdn.microsoft.com/library/ms178586.aspx)。
 

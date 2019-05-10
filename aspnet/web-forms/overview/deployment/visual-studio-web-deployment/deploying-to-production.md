@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 19cda45ce1b425462ec491bcc86b7a0b76dec162
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9c4a4d035c78b4f4c53942219ccfa3048c7a82b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409793"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133808"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生产中
 
@@ -22,7 +22,6 @@ ms.locfileid: "59409793"
 [下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用 Visual Studio 2012 或 Visual Studio 2010。 有关序列的信息，请参阅[系列中的第一个教程](introduction.md)。
-
 
 ## <a name="overview"></a>概述
 
@@ -41,7 +40,6 @@ ms.locfileid: "59409793"
 > [!NOTE]
 > 由于在撰写本教程时，Azure 应用服务将添加用于自动执行多个用于创建过渡和生产环境的进程的新功能。 请参阅[设置过渡环境中 Azure 应用服务 web 应用的](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/)。
 
-
 中所述[部署到测试环境教程](deploying-to-iis.md)、 最可靠的测试环境是在只需像生产网站上的托管提供商的网站。 在许多主机托管提供商，您将不得不权衡与大量其他成本的优势，但在 Azure 中，您可以创建其他免费的 web 应用作为过渡应用。 您还需要一个数据库，并为此，通过创建生产数据库的费用的额外费用将为无或最小。 所使用的数据库存储量，而不是为每个数据库，在 Azure 中需要付费，你将在过渡环境中使用的额外存储量将是最小。
 
 中所述[部署到测试环境教程](deploying-to-iis.md)、 过渡和生产环境并打算将两个数据库部署到一个数据库中。 如果你想要将它们分开，过程将相同只不过将创建用于每个环境的其他数据库，并且在创建发布配置文件时，将选择每个数据库的正确的目标字符串。
@@ -50,7 +48,6 @@ ms.locfileid: "59409793"
 
 > [!NOTE]
 > 以下步骤说明如何使用 Azure 管理门户在 Azure 应用服务中创建 web 应用。 在 Azure SDK 的最新版本，您还可以执行这无需离开 Visual Studio 中，通过使用服务器资源管理器。 在 Visual Studio 2013 中，还可以直接从发布对话框中创建 web 应用。 有关详细信息，请参阅[在 Azure 应用服务中创建 ASP.NET web 应用。](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)
-
 
 1. 在中[Azure 管理门户](https://manage.windowsazure.com/)，单击**网站**，然后单击**新建**。
 2. 单击**网站**，然后单击**自定义创建**。
@@ -97,7 +94,6 @@ ms.locfileid: "59409793"
 
 > [!NOTE]
 > 这些说明介绍了如何通过下载来创建发布配置文件 *.publishsettings*文件，它仅适用于不 Azure 还为第三方主机托管提供商。 最新 Azure SDK 还可直接连接到 Azure 从 Visual Studio 中，并从你有在 Azure 帐户中的 web 应用的列表中选择。 在 Visual Studio 2013 中，你可以登录到 Azure 从**Web 发布**对话框中或从**服务器资源管理器**窗口。 有关详细信息，请参阅[在 Azure 应用服务中创建 ASP.NET web 应用](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。
-
 
 ### <a name="download-the-publishsettings-file"></a>下载.publishsettings 文件
 
@@ -165,7 +161,6 @@ ms.locfileid: "59409793"
 
 > [!NOTE]
 > 本部分演示如何设置 Web.config 转换为环境的指示符。 因为指示器位于`<appSettings>`元素，必须在部署到 Azure 应用服务时指定该转换的另一种方法。 有关详细信息，请参阅[在 Azure 中的指定 Web.config 设置](web-config-transformations.md#watransforms)。
-
 
 1. 在中**解决方案资源管理器**，展开**属性**，然后展开**PublishProfiles**。
 2. 右键单击*Staging.pubxml*，然后单击**添加配置转换**。

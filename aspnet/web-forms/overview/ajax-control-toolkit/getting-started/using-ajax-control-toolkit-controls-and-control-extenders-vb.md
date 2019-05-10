@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 763650a9-ffde-46a9-b779-7a9145dd5d88
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f3371165a30018c8096da8b6b9de567ed6fe6365
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 90a6003ff50ba6e85196c25cf175e057810f0f84
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382614"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127181"
 ---
 # <a name="using-ajax-control-toolkit-controls-and-control-extenders-vb"></a>使用 AJAX 控件工具包控件和控件扩展程序 (VB)
 
@@ -21,13 +21,11 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解如何将 AJAX 控件工具包控件和扩展程序添加到 ASP.NET 页面。
 
-
 AJAX 控件工具包包含一组控件和控件扩展程序。 在本简短教程中，您将学习如何将控件和控件扩展程序添加到 ASP.NET 页面。
 
 > [!NOTE] 
 > 
 > 有关安装 AJAX 控件工具包并将 AJAX 控件工具包添加到 Visual Studio/Visual Web Developer 工具箱中的说明，请参阅本教程[开始使用 AJAX 控件工具包](get-started-with-the-ajax-control-toolkit-vb.md)。
-
 
 ## <a name="using-ajax-control-toolkit-controls"></a>使用 AJAX 控件工具包控件
 
@@ -43,21 +41,17 @@ AJAX 控件工具包控件的工作方式与普通的 ASP.NET 控件。 可以�
 4. 通过选择菜单选项来运行网站**调试、 启动调试**或按 F5 键。
 5. 应看到图 3 中的页。
 
-
 [![选择 HTML 编辑器控件](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image1.png)
 
 **图 01**:选择 HTML 编辑器控件 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image2.png))
-
 
 [![使用 ScriptManager 和编辑控件的 visual Studio 设计器](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image3.png)
 
 **图 02**:使用 ScriptManager 和编辑控件的 visual Studio 设计器 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image4.png))
 
-
 [![DisplayEditor.aspx 页](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image5.png)
 
 **图 03**:DisplayEditor.aspx 页 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image6.png))
-
 
 ## <a name="using-ajax-control-toolkit-control-extenders"></a>使用 AJAX 控件工具包控件扩展器
 
@@ -75,29 +69,23 @@ AJAX 控件工具包还包含控件扩展程序。 顾名思义，扩展程序�
 6. 在设计器中选择按钮控件和扩展的扩展程序，Button1\_ConfirmButtonExtender 节点在属性窗口中的 （请参阅图 6）。 将该值赋*真正？* ConfirmText 属性。
 7. 通过选择菜单选项运行页**调试、 启动调试**或按 F5 键。
 
-
 [![添加扩展器任务选项](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image7.png)
 
 **图 04**:添加扩展器任务选项 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image8.png))
-
 
 [![选择 ConfirmButton 控件扩展程序](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image9.png)
 
 **图 05**:选择 ConfirmButton 控件扩展程序 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image10.png))
 
-
 [![设置 ConfirmButton 属性](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image11.png)
 
 **图 06**:设置 ConfirmButton 属性 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image12.png))
 
-
 当页面打开时，会看到一个按钮。 单击按钮时，可以在图 7 中获取确认对话框。
-
 
 [![显示确认对话框](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image13.png)
 
 **图 07**:显示确认对话框中 ([单击此项可查看原尺寸图像](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image14.png))
-
 
 请注意，您通常执行不将扩展程序控件拖到页。 相反，使用**添加扩展程序**任务选项可将扩展器添加到已添加到页面的控件。 此外，请注意，设置控件扩展程序属性通过打开要扩展的控件的属性表。
 

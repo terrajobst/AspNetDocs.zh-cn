@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: de5500be-75e5-461a-8064-b70ae52ea6a4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 157a486af3d11dfbd7431680b6c9fe4f0e262892
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1509d25583b7e4826a4581d373bed417dacaccdf
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422390"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132891"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>通过 JavaScript 折叠和展开面板 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59422390"
 [下载代码](http://download.microsoft.com/download/8/a/a/8aab3c3e-de6f-463f-805c-5fda567eef6e/CollapsiblePanel1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/collapsiblepanel1CS.pdf)
 
 > CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并为其提供的功能折叠其内容，并再次将其展开。 也可以从自定义 JavaScript 代码触发这两个操作。
-
 
 ## <a name="overview"></a>概述
 
@@ -63,7 +62,6 @@ CollapsiblePanel 控件在 ASP.NET AJAX 控件工具包扩展一个面板，并�
 第三个按钮切换面板的状态： 从折叠到已展开，反之亦然。 `CollapsiblePanelExtender`公开`toggle()`做到这一点的方法： 反转面板的状态。 但是还有另一种方法 (这由在内部使用`toggle()`方法):`get_Collapsed()`方法的`CollapsiblePanelExtender()`告诉我们是否折叠面板。 根据此函数的返回值，面板，则可以展开 (`_doOpen()`方法) 或折叠 (`_doClose()`) 方法：
 
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample8.js)]
-
 
 [![第三个按钮更改面板的状态： 从折叠到扩展和后端](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image1.png)
 

@@ -8,19 +8,18 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 79d6b38c6464a749db9cd6d35e1f277b0adf2a02
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383832"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129424"
 ---
 # <a name="bundling-and-minification"></a>捆绑和缩小
 
 通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 捆绑和缩小是两种方法在 ASP.NET 4.5 中用于提高请求加载时间。 捆绑和缩小的请求数减少到服务器并减少请求的资产 （如 CSS 和 JavaScript。） 的大小，从而提高加载时间
-
 
 当前的主流浏览器的大多数限制的数量[同时连接](http://www.browserscope.org/?category=network)每六个到每个主机名。 这意味着，所处理的六个请求，同时在主机上的资产的其他请求将排队等候，由浏览器。 下图中的 IE F12 开发人员工具网络选项卡显示了示例应用程序的关于视图所需的资产的计时。
 
@@ -96,7 +95,6 @@ ms.locfileid: "59383832"
 
 > [!NOTE]
 > 除非`EnableOptimizations`是`true`或中的调试属性[compilation 元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件设置为`false`，文件将不捆绑或缩小。 此外，将不使用.min 版本文件，将选择完整的调试版本。 `EnableOptimizations` 重写中的调试属性[compilation 元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*文件
-
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>使用绑定和缩减与 ASP.NET Web 窗体和 Web Pages
 

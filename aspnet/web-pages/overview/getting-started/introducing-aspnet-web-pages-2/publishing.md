@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 49a841dbda183bf1d59153b83f694c9f517e0b94
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382091"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127749"
 ---
 # <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET 网页简介-通过使用 WebMatrix 发布站点
 
@@ -26,7 +26,6 @@ ms.locfileid: "59382091"
 > - Microsoft Azure
 > - Web 托管公司
 
-
 ## <a name="about-publishing-your-site"></a>有关发布站点
 
 到目前为止，已完成您的本地计算机上，包括测试您的页面的所有工作。 若要运行你<em>.cshtml</em>页中，你已使用内置到 WebMatrix 中，即 IIS Express web 服务器。 但当然没有人可以看到已创建除您的站点。 若要让其他人使用你的站点，必须将其发布到 Internet。
@@ -35,7 +34,6 @@ ms.locfileid: "59382091"
 
 > [!NOTE]
 > 可能有权通过 internet 服务提供商 (ISP) 用来获取在家里 internet 服务的公共 web 服务器。 但是，托管提供商必须支持 ASP.NET Web Pages。 很多 Isp 不这样做，但最好始终检查。
-
 
 在本教程中，我们将提供如何将发布的概述。 因为过程稍微不同的每个宿主提供程序，它并不可行的所有内容，提供有关确切详细信息。 但您仍然可以清楚地了解该过程的工作原理。
 
@@ -142,7 +140,6 @@ WebMatrix 显示文件和将发布到网站的数据库。 由于这是要将站
 > [!NOTE]
 > 我们选择的本教程中的托管提供程序不应通过任何其他解释为代表该公司的认可。 但我们需要选择其中一个是为了进行说明，和 DiscountASP.NET 是许多支持 ASP.NET Web Pages 和 Web Deploy 协议用于发布的公司之一。
 
-
 通常情况下，您已经使用宿主提供程序注册后，公司向你发送一封电子邮件，其中包含用户名和密码，web 服务器和等等的 URL。 如果托管的公司支持 Web Deploy 协议，它们可能会发送包含的文件发布设置，也可以让您下载一个。 发布设置文件为您简化过程。
 
 已注册且已准备好发布，请单击**发布**WebMatrix 功能区中的按钮。 **发布设置**显示对话框。
@@ -196,7 +193,6 @@ WebMatrix 显示文件和将发布到网站的数据库。 由于这是要将站
 > 
 > 默认情况下，WebMatrix 发布你的数据库 (*.sdf*文件) 仅在发布站点的第一次。 一旦发布你的站点，并与网站交互的人员，实时站点上的数据库通常具有站点的真实数据。 一定要非常小心，不要覆盖实时数据库与 *.sdf*是您通常只包含测试数据的计算机的文件。 这就是为什么您会看到警告**发布将覆盖任何远程数据库**，以及为什么的复选框*WebPagesMovies.sdf*默认情况下清除。
 
-
 单击 **“继续”**。 WebMatrix 发布已更改的文件，并显示一条成功消息，像第一次发布。
 
 转到实时网站 （如果仍显示可单击成功消息中的链接），并验证所做的更改已发布。
@@ -210,7 +206,6 @@ WebMatrix 显示文件和将发布到网站的数据库。 由于这是要将站
 > 远程编辑是轻松地对实时站点进行更改。 但是，进行这种方式的更改不会与你的本地站点中的文件同步。 若要同步的本地文件与远程站点，可以下载远程文件。 此过程工作方式非常类似发布，除非按相反的顺序。
 > 
 > 我们不会详细介绍的远程编辑和远程下载功能的 WebMatrix 此处。 它们非常有用，如果多个用户必须在不同的计算机上的同一站点上处理。 有关详细信息，请参阅[发布和编辑远程站点与 WebMatrix 2 Beta](https://go.microsoft.com/fwlink/?LinkId=251591)。
-
 
 ## <a name="additional-resources"></a>其他资源
 

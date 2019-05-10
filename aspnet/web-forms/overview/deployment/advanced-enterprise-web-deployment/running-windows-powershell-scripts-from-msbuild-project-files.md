@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 55f1ae45-fcb5-43a9-8415-fa5b935fc9c9
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 198f8c907cf866bd0fd1ae67cf7169a63dda4bc9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7b09c07b8b7c2a61ca534f7a66a929593f3d04ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384678"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131560"
 ---
 # <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>从 MSBuild 项目文件中运行 Windows PowerShell 脚本
 
@@ -35,7 +35,6 @@ ms.locfileid: "59384678"
 > 
 > 本主题将演示如何从 Microsoft Build Engine (MSBuild) 项目文件中的自定义目标本地和远程运行 Windows PowerShell 脚本。
 
-
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
 这些教程的核心部署方法取决于拆分项目文件方法中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在生成过程由控制这两个项目文件&#x2014;一个包含构建适用于每个目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成时，特定于环境的项目文件合并到不限环境的项目文件，以形成一组完整的生成说明。
@@ -55,15 +54,11 @@ ms.locfileid: "59384678"
 
 本主题中的任务使用名为 Windows PowerShell 脚本示例**LogDeploy.ps1**是为了说明如何从 MSBuild 运行脚本。 **LogDeploy.ps1**脚本包含单个行项写入日志文件的简单函数：
 
-
 [!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.ps1)]
-
 
 **LogDeploy.ps1**脚本接受两个参数。 第一个参数表示你想要添加一个条目的日志文件的完整路径和第二个参数表示你想要在日志文件中记录的部署目标。 当您运行该脚本时，它将行添加到此格式中的日志文件：
 
-
 [!code-html[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample2.html)]
-
 
 若要使**LogDeploy.ps1**可用到 MSBuild 的脚本，你需要：
 
@@ -82,21 +77,15 @@ ms.locfileid: "59384678"
 
 根据语法，从一个 MSBuild 项目文件运行 Windows PowerShell 脚本是相同的常规的命令提示符下运行的 Windows PowerShell 脚本。 需要调用 powershell.exe 可执行文件并使用 **– 命令**交换机以提供你想要运行的 Windows PowerShell 的命令。 (在 Windows PowerShell v2，可以使用 **– 文件**切换)。 该命令应采取以下格式：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample3.cmd)]
-
 
 例如：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample4.cmd)]
-
 
 如果您的脚本的路径包含空格，需要将文件路径括在单引号前面加 &。 不能使用双引号引起来，因为你已使用过它们括起命令：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample5.cmd)]
-
 
 在调用此命令从 MSBuild 时，有一些额外的注意事项。 首先，应包括 **– NonInteractive**标志来确保安静地执行脚本。 接下来，应包括 **– ExecutionPolicy**具有相应的自变量值的标志。 这将指定 Windows PowerShell 将应用于您的脚本，并允许你重写默认执行策略，这可能会阻止脚本执行的执行策略。 你可以从这些自变量值中进行选择：
 
@@ -114,15 +103,11 @@ ms.locfileid: "59384678"
 
 - 当您进行这些更改时，您的命令将与此类似：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample6.cmd)]
-
 
 在自定义 MSBuild 项目文件中，您可以创建新的目标并使用**Exec**任务才能运行此命令：
 
-
 [!code-xml[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample7.xml)]
-
 
 在此示例中，请注意:
 
@@ -139,34 +124,24 @@ Windows PowerShell 是能够通过远程计算机上运行脚本[Windows 远程�
 > [!NOTE]
 > 在使用之前**Invoke-command** cmdlet 来执行 Windows PowerShell 脚本在远程计算机上，您需要配置 WinRM 侦听器以接受远程消息。 您可以执行此操作通过运行命令**winrm quickconfig**远程计算机上。 有关详细信息，请参阅[安装和配置适用于 Windows 远程管理的](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx)。
 
-
 从 Windows PowerShell 窗口中，将使用此语法来运行**LogDeploy.ps1**远程计算机上的脚本：
 
-
 [!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample8.ps1)]
-
 
 > [!NOTE]
 > 使用的各种其他方式**Invoke-command**运行脚本文件，但这种方法是最简单需要提供参数值和管理包含空格的路径。
 
-
 当从命令提示符中运行它时，需要调用 Windows PowerShell 可执行文件并使用 **– 命令**参数来提供您的说明：
-
 
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample9.cmd)]
 
-
 根据之前，需要提供一些其他开关，并对任何保留的 XML 字符进行转义 MSBuild 中运行命令时：
-
 
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample10.cmd)]
 
-
 最后，与之前一样，您可以使用**Exec**内用于执行命令的自定义 MSBuild 目标的任务：
 
-
 [!code-xml[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample11.xml)]
-
 
 在此目标执行生成过程的一部分时，Windows PowerShell 将在指定的计算机上运行脚本 **– computername**参数。
 

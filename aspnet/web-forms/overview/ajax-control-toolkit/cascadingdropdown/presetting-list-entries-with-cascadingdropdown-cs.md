@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 04c79748-0f21-4a3b-aba5-e1ce3161c32e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 188f98d013707178e50858f8ea26d8cf2af06bea
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 51bbf0d3b15e9107c4388bf12193b488491c8b32
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406010"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132206"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-c"></a>使用 CascadingDropDown 预设置列表条目 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59406010"
 [下载代码](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.cs.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingDropDown2CS.pdf)
 
 > AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中另一个 DropDownList 的值。 借助极少量的代码就可以动态加载数据后，预先选择一个列表元素。
-
 
 ## <a name="overview"></a>概述
 
@@ -51,7 +50,6 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample5.aspx)]
 
 加载页面在浏览器中的将填充下拉列表中的与三个供应商，第二个被预先选定状态。
-
 
 [![填充和预先自动选择列表](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
 

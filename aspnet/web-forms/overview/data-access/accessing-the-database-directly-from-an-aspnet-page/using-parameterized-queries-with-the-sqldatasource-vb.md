@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: e322f34c-83b7-41ea-ab65-ab1e0bdcc609
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4814edc35c27ba3d17f9bd7de75f97a7e1ad071f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 70da58fce30dfbb174b502e104190c5940b10c97
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422078"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124304"
 ---
 # <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>通过 SqlDataSource 使用参数化查询 (VB)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59422078"
 
 > 在本教程中，我们继续我们看 SqlDataSource 控件，并了解如何定义参数化的查询。 参数声明的方式和以编程方式，可以指定，可以从多个位置，如在查询字符串、 会话状态，其他控件等拉入。
 
-
 ## <a name="introduction"></a>介绍
 
 在上一教程中，我们已了解如何使用 SqlDataSource 控件直接从数据库检索数据。 使用配置数据源向导，我们可以选择数据库，然后将其： 选取要从表或视图; 返回的列输入自定义 SQL 语句;或使用存储的过程。 从表或视图中选择列或输入自定义 SQL 语句，SqlDataSource 控件是否 s`SelectCommand`属性分配生成的临时 SQL`SELECT`语句也是如此这`SELECT`语句时执行SqlDataSource 的`Select()`方法调用 (以编程方式或自动从数据 Web 控件)。
 
 SQL`SELECT`语句中不具备的上一个教程的演示使用`WHERE`子句。 在中`SELECT`语句，`WHERE`子句可用于限制返回的结果。 例如，若要显示的多个 50.00 美元的成本计算的产品的名称，我们可以使用以下查询：
 
-
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample1.sql)]
 
 通常情况下中, 使用的值`WHERE`子句确定由某些外部源，例如查询字符串值、 会话变量中或从 Web 控件的页上的用户输入。 理想情况下，使用指定此类输入*参数*。 使用 Microsoft SQL Server 参数表示使用`@parameterName`，如下所示：
-
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample2.sql)]
 
@@ -42,7 +39,6 @@ SqlDataSource 支持参数化的查询，同时`SELECT`语句和`INSERT`， `UPD
 
 > [!NOTE]
 > 上一教程中，比较 ObjectDataSource 我们所选的工具已通过使用 SqlDataSource，注意其概念相似之处是首先 46 的教程。 这些相似之处还扩展到参数。 ObjectDataSource 的参数映射到的输入参数的业务逻辑层中的方法。 使用 SqlDataSource，直接在 SQL 查询中定义参数。 这两个控件具有的参数集合及其`Select()`， `Insert()`， `Update()`，和`Delete()`方法，并且两个可以从预定义源 （查询字符串值、 会话变量等填充这些参数值) 或以编程方式分配。
-
 
 ## <a name="creating-a-parameterized-query"></a>创建参数化查询
 
@@ -60,43 +56,34 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 选择要从 SqlDataSource 控件与数据库中返回的数据，当配置数据源向导允许我们只需选择要从现有表中返回或查看 （请参阅图 1） 的列。 因此自动执行生成 sql`SELECT`语句，就是发送到数据库时 SqlDataSource 的`Select()`调用方法。 与我们在上一教程中，从下拉列表中选择产品表，并检查`ProductID`， `ProductName`，和`UnitPrice`列。
 
-
 [![选择要从表或视图中返回的列](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.png)
 
 **图 1**:从表或视图返回结果中选择列 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.png))
-
 
 若要包括`WHERE`中的子句`SELECT`语句中，单击`WHERE`按钮，此时会出现添加`WHERE`子句对话框 （请参见图 2）。 若要添加参数以限制返回的结果`SELECT`查询中，首先选择要筛选的数据的列。 接下来，选择要用于筛选的运算符 (=、 &lt;， &lt;=、 &gt;，依此类推)。 最后，如选择从查询字符串或会话状态参数的值的源。 配置参数后, 单击添加按钮以将其包含在`SELECT`查询。
 
 对于此示例中，let s 只返回这些结果其中`UnitPrice`值是否小于或等于 $25.00。 因此，选取`UnitPrice`从列下拉列表和&lt;= 运算符下拉列表中。 使用硬编码参数值 （如 $25.00) 时或参数值将以编程方式指定，则选择无从源下拉列表。 接下来，25.00 中的值文本框中输入的硬编码参数值，并单击添加按钮完成该过程。
 
-
 [![限制返回的结果添加 WHERE 子句对话框的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.png)
 
 **图 2**:限制返回结果中添加`WHERE`子句对话框的 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.png))
 
-
 添加参数后, 单击确定以返回到配置数据源向导。 `SELECT`现在应包含在向导底部语句`WHERE`与名为的参数的子句`@UnitPrice`:
-
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample3.sql)]
 
 > [!NOTE]
 > 如果指定多个条件中的`WHERE`子句中添加`WHERE`子句对话框的向导将它们联接起来与`AND`运算符。 如果您需要包括`OR`中`WHERE`子句 (如`WHERE UnitPrice <= @UnitPrice OR Discontinued = 1`)，然后您需要生成`SELECT`通过自定义 SQL 语句屏幕的语句。
 
-
 完成配置的 SqlDataSource （单击下一步，然后完成)，然后检查 SqlDataSource s 声明性标记。 标记现在包括`<SelectParameters>`集合，其中明确指出中参数的源`SelectCommand`。
-
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample4.aspx)]
 
 当 SqlDataSource s`Select()`调用方法时，`UnitPrice`参数值 (25.00) 应用于`@UnitPrice`中的参数`SelectCommand`之前发送到数据库。 最终结果是，只有小于或等于 $25.00 返回从这些产品`Products`表。 若要确认此操作，请向页面添加一个 GridView，将其绑定到此数据源，然后查看通过浏览器页面。 您应该只会看到列出的产品小于或等于 $25.00，如图 3 确认。
 
-
 [![显示只有那些产品小于或等于 $25.00](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.png)
 
 **图 3**:显示只有那些产品小于或等于 $25.00 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.png))
-
 
 ## <a name="step-2-adding-parameters-to-a-custom-sql-statement"></a>步骤 2：将参数添加到自定义 SQL 语句
 
@@ -104,27 +91,21 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 接下来，将 GridView 拖到绘图页上，并从其智能标记选择创建名为新 SqlDataSource `ProductsFilteredByPriceDataSource`。 从配置数据源向导中，转到指定的自定义 SQL 语句或存储的过程屏幕 （请参阅图 4），并输入以下查询：
 
-
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample5.sql)]
 
 输入后查询 （手动或通过查询生成器），单击下一步。
-
 
 [![只返回那些产品小于或等于参数值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.png)
 
 **图 4**:返回仅这些产品小于或等于参数值 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.png))
 
-
 由于查询包含参数，该向导的下一个屏幕提示我们输入的参数值的源。 从参数源下拉列表中选择控件并`MaxPrice`(TextBox 控件的`ID`值) 从 ControlID 下拉列表。 您还可以输入要在其中用户未输入任何文本的情况下使用的可选的默认值`MaxPrice`文本框中。 目前，不要输入默认值。
-
 
 [![MaxPrice 文本框的文本属性用作参数源](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.png)
 
 **图 5**:`MaxPrice`文本框中 s`Text`属性用作参数源 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.png))
 
-
 通过单击下一步，完成配置数据源向导，然后完成。 对于 GridView、 文本框、 按钮和 SqlDataSource 的声明性标记如下所示：
-
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample6.aspx)]
 
@@ -132,21 +113,17 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 花点时间查看通过浏览器的此页。 当首次访问页面时或者每当`MaxPrice`文本框中缺少任何记录显示 GridView 中的一个值。
 
-
 [![没有记录将显示当 MaxPrice 文本框为空](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.png)
 
 **图 6**:没有记录时会显示`MaxPrice`文本框中为空 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.png))
-
 
 不显示任何产品的原因是因为，默认情况下，参数值为空字符串转换为数据库`NULL`值。 由于比较`[UnitPrice] <= NULL`计算结果始终为 False，则不返回任何结果。
 
 文本框中输入一个值，如 5.00，然后单击显示匹配的产品按钮。 在回发时，SqlDataSource 通知 GridView 参数源的一个已更改。 因此，GridView 重新绑定到 SqlDataSource，显示这些产品小于或等于到花 5.00 美元。
 
-
 [![显示产品小于或等于花 5.00 美元](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.png)
 
 **图 7**:显示产品小于或等于花 5.00 美元 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.png))
-
 
 ## <a name="initially-displaying-all-products"></a>最初显示所有产品
 
@@ -156,16 +133,13 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 遗憾的是，我们跳过该体系结构使用 SqlDataSource 时。 相反，我们需要自定义 SQL 语句以智能方式获取的所有记录，如果`@MaximumPrice`参数是`NULL`或某个保留的值。 对于此练习，let s 使其因此，如果`@MaximumPrice`参数等于`-1.0`，然后*所有*记录的是要返回 (`-1.0`充当保留值，因为没有任何产品可以具有负`UnitPrice`值)。 若要实现此目的，我们可以使用以下 SQL 语句：
 
-
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample7.sql)]
 
 这`WHERE`子句将返回*所有*记录如果`@MaximumPrice`参数等于`-1.0`。 如果参数值不是`-1.0`，这些产品仅其`UnitPrice`小于或等于`@MaximumPrice`返回参数值。 通过设置的默认值`@MaximumPrice`参数`-1.0`，在第一个页面加载 (或每当`MaxPrice`文本框中为空)，`@MaximumPrice`将具有值为`-1.0`和所有产品都将都显示。
 
-
 [![现在，所有产品都都显示时 MaxPrice 文本框为空](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.png)
 
 **图 8**:现在显示时，所有产品都都`MaxPrice`文本框中为空 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image16.png))
-
 
 有几点需要注意的这种方法。 首先，请注意，由它推断的参数的数据类型 SQL 查询中的 s 使用情况。 如果您更改`WHERE`从子句`@MaximumPrice = -1.0`到`@MaximumPrice = -1`，运行时将参数视为一个整数。 如果你尝试分配`MaxPrice`的十进制值 （如 5.00) 文本框中，发生错误，会因为它不能将 5.00 转换为整数。 若要解决此问题，请确保你使用`@MaximumPrice = -1.0`中`WHERE`子句或更好，设置`ControlParameter`对象的`Type`属性为十进制数。
 
@@ -179,45 +153,35 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 从`NORTHWND.MDF`数据库、 右键单击存储过程文件夹，选择添加新存储过程，并输入以下语法：
 
-
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample8.sql)]
 
 单击保存图标 （或 Ctrl + S) 保存存储的过程。 可以通过从存储过程文件夹，右键单击该和选择执行测试存储的过程。 这将提示你输入的存储的过程的参数 (`@CategoryID`，在这种情况) 之后该结果将显示在输出窗口中。
-
 
 [![GetProductsByCategory 存储过程使用执行时@CategoryID为 1](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image17.png)
 
 **图 9**:`GetProductsByCategory`存储过程使用执行时`@CategoryID`为 1 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image18.png))
 
-
 让我们来使用此存储的过程中的 GridView 中的饮料类别显示所有产品。 向页面添加一个新的 GridView 并将其绑定到名为新 SqlDataSource `BeverageProductsDataSource`。 继续到指定的自定义 SQL 语句或存储的过程的屏幕，选择存储过程单选按钮，并选择`GetProductsByCategory`存储过程从下拉列表。
-
 
 [![选择 GetProductsByCategory 存储过程从下拉列表](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image19.png)
 
 **图 10**:选择`GetProductsByCategory`从下拉列表中的存储过程 ([单击以查看实际尺寸的图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image20.png))
 
-
 由于存储的过程接受一个输入的参数 (`@CategoryID`)，单击下一步会提示我们指定此参数的值的源。 饮料`CategoryID`为 1，因此将保留为无参数源下拉列表和默认值文本框中输入 1。
-
 
 [![使用硬编码值为 1 以返回饮料类别中的产品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image21.png)
 
 **图 11**:使用 Hard-Coded 值为 1 以返回饮料类别中的产品 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image22.png))
 
-
 如以下声明性标记所示，当使用存储的过程，SqlDataSource s`SelectCommand`属性设置为存储过程的名称和[`SelectCommandType`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx)设置为`StoredProcedure`，以指示`SelectCommand`是存储的过程而不是临时 SQL 语句的名称。
-
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample9.aspx)]
 
 测试浏览器中的页。 尽管显示属于饮料类别的产品*所有*以来的产品显示字段`GetProductsByCategory`存储的过程返回的所有列从`Products`表。 当然，我们可以限制或自定义 GridView 的编辑列对话框中 GridView 中显示的字段。
 
-
 [![将显示所有饮料](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image23.png)
 
 **图 12**:将显示所有饮料 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image24.png))
-
 
 ## <a name="step-4-programmatically-invoking-a-sqldatasource-sselectstatement"></a>步骤 4：以编程方式调用 SqlDataSource 的`Select()`语句
 
@@ -229,7 +193,6 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 首先，通过添加到 SqlDataSource`ParameterizedQueries.aspx`并设置其`ID`到`RandomCategoryDataSource`。 因此，它使用以下 SQL 查询来配置它：
 
-
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample10.sql)]
 
 `ORDER BY NEWID()` 返回按随机顺序进行排序的记录 (请参阅[Using`NEWID()`随机排序记录](http://www.sqlteam.com/item.asp?ItemID=8747))。 `SELECT TOP 1` 从结果集中返回的第一个记录。 总而言之，此查询将返回`CategoryID`和`CategoryName`列从单一的随机选择的类别的值。
@@ -240,20 +203,16 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 
 下面的代码演示如何从记录中检索`RandomCategoryDataSource`SqlDataSource 作为数据视图以及如何读取`CategoryName`列从第一个 DataView 行的值：
 
-
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample11.vb)]
 
 `randomCategoryView(0)` 返回第一个`DataRowView`数据视图中。 `randomCategoryView(0)("CategoryName")` 返回的值`CategoryName`此第一行中的列。 请注意，数据视图是松散类型化。 若要引用特定列的值需要传递列的名称作为字符串 （类别名称，在此情况下)。 图 13 显示了中显示的消息`CategoryNameLabel`查看网页时。 当然，显示的实际类别名称随机选择的`RandomCategoryDataSource`SqlDataSource 上每个访问 （包括回发） 此页。
-
 
 [![S 的显示名称的随机选择的类别](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
 
 **图 13**:显示名称的随机选择的类别 s ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image26.png))
 
-
 > [!NOTE]
 > 如果 SqlDataSource 控制 s`DataSourceMode`属性设置为`DataReader`，从返回的值`Select()`方法将需要强制转换为`IDataReader`。 若要读取`CategoryName`列的值从第一行中，d 我们使用以下代码：
-
 
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample12.vb)]
 
@@ -262,36 +221,29 @@ SqlDataSource 控件 s 配置数据源向导提供了用于定义要检索数据
 > [!NOTE]
 > 而不是使用标签 Web 控件以显示类别的名称，我们可能添加 FormView 或 DetailsView 到页上，将其绑定到 SqlDataSource。 使用标签，但是，允许我们，了解如何以编程方式调用 SqlDataSource 的`Select()`语句并使用在代码中其生成的数据。
 
-
 ## <a name="step-5-assigning-parameter-values-programmatically"></a>步骤 5：以编程方式分配参数值
 
 所有示例中我们已在本教程中到目前为止看到已使用硬编码参数值或从预定义的参数源 （查询字符串值，Web 控件在页上，依次类推） 之一执行。 但是，SqlDataSource 控件的参数还可以设置以编程方式。 若要完成我们当前的示例中，我们需要 SqlDataSource 返回所有属于指定类别的产品。 将具有此 SqlDataSource`CategoryID`参数需要设置其值基于`CategoryID`返回的列的值`RandomCategoryDataSource`SqlDataSource 中的`Page_Load`事件处理程序。
 
 向页添加 GridView 并将其绑定到名为新 SqlDataSource `ProductsByCategoryDataSource`。 像我们在步骤 3 中，以便它将调用配置 SqlDataSource`GetProductsByCategory`存储过程。 将参数源下拉列表设置为 None，但不要输入默认值，因为我们将以编程方式设置此默认值。
 
-
 [![未指定参数源或默认值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image27.png)
 
 **图 14**:执行不指定参数源或默认值 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image28.png))
 
-
 完成 SqlDataSource 向导后，生成的声明性标记应类似于下面：
-
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample13.aspx)]
 
 我们可以将分配`DefaultValue`的`CategoryID`参数中以编程方式`Page_Load`事件处理程序：
 
-
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample14.vb)]
 
 添加此元素后，此页包含一个 GridView，显示与随机选择的类别相关联的产品。
 
-
 [![未指定参数源或默认值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image29.png)
 
 **图 15**:执行不指定参数源或默认值 ([单击此项可查看原尺寸图像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png))
-
 
 ## <a name="summary"></a>总结
 

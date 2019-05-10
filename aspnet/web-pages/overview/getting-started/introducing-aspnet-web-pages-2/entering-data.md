@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: d76f607f1d5e779d43ee15d8f2d697e7b0f147ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9354a7b97a7df9020a681f709e16a92650cfcf0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380114"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132970"
 ---
 # <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>Introducing ASP.NET 网页-通过使用窗体输入数据库数据
 
@@ -36,7 +36,6 @@ ms.locfileid: "59380114"
 > - SQL`Insert Into`语句
 > - `Validation`帮助器。
 > - `Response.Redirect` 方法。
-
 
 ## <a name="what-youll-build"></a>你将生成
 
@@ -155,7 +154,6 @@ ms.locfileid: "59380114"
 > 现在，然后务必了解完全值为 null 时，只是空字符串时。 中的代码*AddMovie*页中，您通过使用获取的值的文本框`Request.Form["title"]`，依此类推。 当页面第一次运行 （在您单击的按钮） 之前，值`Request.Form["title"]`为 null。 当您提交窗体，但是`Request.Form["title"]`获取的值`title`文本框。 它不是显而易见的但一个空文本框不为 null;它只是在其中具有空字符串。 因此在代码运行以响应该按钮时单击，`Request.Form["title"]`中有一个空字符串。
 > 
 > 为什么这一区别很重要？ 在创建时*电影*表中，你显式所说的任何字段可以为 null。 在此有新电影的输入窗体，但要将字段留空。 合理地预期要抱怨尝试保存新影片，但没有流派或年份的值时的数据库。 但关键在于&mdash;即使将这些文本框留空，值不为 null; 它们是空字符串。 因此，您可以将新电影保存到具有这些列空数据库&mdash;但不是为 null ！ &mdash; 值。 因此，您必须确保用户不提交空字符串，可以通过验证用户的输入来执行此操作。
-
 
 ### <a name="the-validation-helper"></a>验证帮助程序
 

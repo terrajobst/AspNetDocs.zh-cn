@@ -8,12 +8,12 @@ ms.date: 02/28/2014
 ms.assetid: 9c1e3a75-b644-4480-8326-11300b1ec4b3
 msc.legacyurl: /mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 msc.type: authoredcontent
-ms.openlocfilehash: 952d13fec206bdb8d398cead70d10335731f583d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f4a9b3fb61552b070db11fba617b5627fcd71cd5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402214"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124087"
 ---
 # <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 应用程序的生命周期
 
@@ -31,7 +31,6 @@ ms.locfileid: "59402214"
 - 定位以及所有可重写方法的目的[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx)请求处理管道中的对象。 您可能会或可能需要重写任何一种方法，但很重要，以便了解在应用程序生命周期中的角色，使您可以在适当的生命周期阶段的预期的效果编写代码。
 - 解决问题向上关系图显示每个筛选器类型 （身份验证、 授权、 操作和结果） 的调用方式。
 - 从每个点的详细信息视图中的相关链接到帮助性文章或博客。
-
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 84c7baca-1c54-4c44-8f52-4282122d6acb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 86781a1f46ce0c01a5d70b1f0cf8a81f3f96a032
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 15c9d4dcb9e2c6b9f6adf54d65d15737b32cca3b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405919"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129744"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 依赖项注入
 
@@ -57,7 +57,6 @@ ms.locfileid: "59405919"
 > [!NOTE]
 > 依赖关系注入有时与抽象工厂设计模式，但这两种方法之间的细微差异。 DI 具有背后努力解决依赖项通过调用工厂和注册的服务的框架。
 
-
 现在，你已了解依赖关系注入模式，您将学习在此实验室中如何将其应用在 ASP.NET MVC 4 中。 首先，将使用中的依赖关系注入**控制器**包含数据库访问服务。 接下来，将应用到的依赖关系注入**视图**若要使用的服务，并显示信息。 最后，您将为 ASP.NET MVC 4 筛选器，将注入解决方案中的自定义操作筛选器扩展 DI。
 
 在本动手实验中，你将了解如何：
@@ -69,7 +68,6 @@ ms.locfileid: "59405919"
 
 > [!NOTE]
 > 此实验室使用 Unity.Mvc3 NuGet 包依赖关系解析，但可以调整为使用 ASP.NET MVC 4 的任何依赖关系注入框架。
-
 
 <a id="Prerequisites"></a>
 
@@ -107,13 +105,12 @@ ms.locfileid: "59405919"
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**30 分钟**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Injecting_a_Controller"></a>
-### <a name="exercise-1-injecting-a-controller"></a>练习 1:插入控制器
+### <a name="exercise-1-injecting-a-controller"></a>练习 1：插入控制器
 
 在此练习中，您将学习如何在 ASP.NET MVC 控制器中使用依赖关系注入，通过集成 Unity 使用 NuGet 包。 出于此原因，将单独从数据访问的逻辑将 MvcMusicStore 控制器到包括服务。 服务将在控制器构造函数，它将使用依赖关系注入的帮助解决中创建新的依赖项**Unity**。
 
@@ -137,12 +134,10 @@ MVC Music 商店现在提供开始解决方案中包括用于管理名为的存�
 > 
 > 若要解决依赖关系，控制器必须创建的一个抽象工厂 （返回指定任何的类型对象的类）。
 
-
 [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample2.cs)]
 
 > [!NOTE]
 > 此类尝试创建 StoreController 而无需发送服务对象，如声明没有无参数构造函数时，将出现错误。
-
 
 <a id="Ex1Task1"></a>
 
@@ -181,7 +176,6 @@ MVC Music 商店现在提供开始解决方案中包括用于管理名为的存�
 > Unity.Mvc3 包专为 ASP.NET MVC 3，但与 ASP.NET MVC 4 完全兼容。
 > 
 > Unity 是轻量级的可扩展依赖关系注入容器并且还可以支持实例和类型拦截。 它是在任何类型的.NET 应用程序中使用的通用容器。 它提供了在依赖项注入机制包括中找到的所有常见功能： 创建对象，通过指定依赖项在运行时和大的灵活性，通过推迟到容器的组件配置要求的抽象。
-
 
 1. 安装**Unity.Mvc3**中的 NuGet 包**MvcMusicStore**项目。 若要执行此操作，打开**程序包管理器控制台**从**视图** | **其他 Windows**。
 2. 运行以下命令。
@@ -247,7 +241,7 @@ MVC Music 商店现在提供开始解决方案中包括用于管理名为的存�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Injecting_a_View"></a>
-### <a name="exercise-2-injecting-a-view"></a>练习 2:注入视图
+### <a name="exercise-2-injecting-a-view"></a>练习 2：注入视图
 
 在此练习中，您将学习如何使用依赖关系注入在 ASP.NET MVC 4 的新功能视图中为 Unity 集成。 为此，您将调用自定义服务应用商店浏览视图后，它将显示一条消息，如下图中。
 
@@ -310,7 +304,6 @@ MVC Music 商店现在提供开始解决方案中包括用于管理名为的存�
 > 
 > 
 > [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample11.cs)]
-
 
 1. 创建 /**工厂**项目的根文件夹中的文件夹。
 2. 包括**CustomViewPageActivator.cs**到你的解决方案从 **/源/资产/** 到**工厂**文件夹。 为此，请右键单击 **/Factories**文件夹，选择**添加 |现有项**，然后选择**CustomViewPageActivator.cs**。 此类实现**IViewPageActivator**接口来保存 Unity 容器。

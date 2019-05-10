@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0ccb1a737fdfc3cf2ffdcc22131650e1b79cd2cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f56241a6a3d1d54f917d366b08edb4a1a43bbce8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407219"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134450"
 ---
 # <a name="displaying-a-custom-error-page-c"></a>显示自定义错误页 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59407219"
 [下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_11_CS.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial11_CustomErrors_cs.pdf)
 
 > Does 用户看到的内容时将 ASP.NET web 应用程序中发生运行时错误？ 答案取决于如何将网站的&lt;customErrors&gt;配置。 默认情况下，将显示用户的不雅观的黄色屏幕宣布出现运行时错误。 本教程演示如何自定义这些设置应用于匹配你网站的外观和感觉的审美情趣的显示自定义错误页。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -47,7 +46,6 @@ ms.locfileid: "59407219"
 > [!NOTE]
 > 若要重现的演示 web 应用程序中出现此错误可供下载您可以访问`Genre.aspx?ID=foo`直接单击中的"生成运行时错误"链接或`Default.aspx`。
 
-
 请注意中提供的异常信息**图 1**。 异常消息，"转换失败时将字符串转换为 uniqueidentifier"会出现在页面顶部。 异常的类型`System.Data.SqlClient.SqlException`，已列出，以及。 此外，还有的堆栈跟踪。
 
 [![](displaying-a-custom-error-page-cs/_static/image2.png)](displaying-a-custom-error-page-cs/_static/image1.png)
@@ -61,7 +59,6 @@ ms.locfileid: "59407219"
 
 > [!NOTE]
 > 如果遵循此过程，并使用 DiscountASP.NET 作为 web 主机，您可能会注意到运行时错误 YSOD 不会显示访问实时网站时。 这是因为 DiscountASP.NET 已配置为显示异常详细信息 YSOD 默认情况下其服务器。 值得高兴的是，可以通过添加覆盖此默认行为`<customErrors>`部分为你`Web.config`文件。 "配置错误页显示"部分将检查`<customErrors>`中详细信息部分。
-
 
 [![](displaying-a-custom-error-page-cs/_static/image5.png)](displaying-a-custom-error-page-cs/_static/image4.png)
 
@@ -140,7 +137,6 @@ ms.locfileid: "59407219"
 > [!NOTE]
 > 请查看[404 错误页面，一个需要更多时间](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)有关创建有效的 404 错误页的指南。
 
-
 [![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**图 7**:自定义 404 错误页显示比更有针对性的消息 `Oops.aspx`  
  ([单击此项可查看原尺寸图像](displaying-a-custom-error-page-cs/_static/image20.png)) 
 
@@ -148,7 +144,6 @@ ms.locfileid: "59407219"
 
 > [!NOTE]
 > 当请求由 ASP.NET 引擎处理的资源，仅显示自定义错误页。 如中所述[核心 IIS 之间的差异和 ASP.NET Development Server](core-differences-between-iis-and-the-asp-net-development-server-cs.md)教程中，web 服务器可能会处理某些请求本身。 默认情况下，IIS web 服务器进程请求的静态内容，如图像和 HTML 文件，而无需调用 ASP.NET 引擎。 因此，在用户请求不存在图像文件时用户将会得到 IIS 的默认 404 错误消息而不是 ASP。NET 的配置错误页。
-
 
 ## <a name="summary"></a>总结
 

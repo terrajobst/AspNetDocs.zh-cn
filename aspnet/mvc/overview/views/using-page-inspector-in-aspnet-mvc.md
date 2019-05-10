@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: ef0ae42e1c6114849a311164eac242db6dab2b1d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5da3e142c52a770f59222c21d9f9a53cbbdbf498
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385789"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126342"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
 
@@ -38,7 +38,6 @@ ms.locfileid: "59385789"
 > - [使用 CSS 颜色选取器](#css_color_picker)
 > - [动态页元素映射到 JavaScript](#map_dynamic_elements)
 
-
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
 ## <a name="prerequisites"></a>系统必备
@@ -47,7 +46,6 @@ ms.locfileid: "59385789"
 
 > [!NOTE]
 > 若要获取 Page Inspector 的最新版本，请使用[Web 平台安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)要安装 Windows Azure SDK for.NET 2.0。
-
 
 Page Inspector 与 Microsoft Web 开发人员工具捆绑在一起。 最新版本是 1.3。 若要检查的版本，运行 Visual Studio 并选择**关于 Microsoft Visual Studio**从**帮助**菜单。
 
@@ -179,7 +177,6 @@ Page Inspector 允许您查找其位置可能不太明显的标记。 然后可�
 > [!NOTE]
 > 此功能需要 Page Inspector 的 1.3 版。
 
-
 CSS 自动同步功能，可直接编辑 CSS 文件并查看立即在 Page Inspector 浏览器中的更改。
 
 单击**检查**将 Page Inspector 置于检查模式。
@@ -238,7 +235,6 @@ Page Inspector 立即检测到更改*Site.css*文件，并显示更新条中的�
 
 > [!NOTE]
 > SPA 模板需要[ASP.NET 和 Web Tools 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)更新。
-
 
 在 Visual Studio 中，选择**文件** &gt; **新项目**。 在左侧，展开**Visual C#**，选择**Web**，然后选择**ASP.NET MVC4 Web 应用程序**。 单击 **“确定”**。
 

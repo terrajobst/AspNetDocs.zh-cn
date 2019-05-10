@@ -8,12 +8,12 @@ ms.date: 12/14/2018
 ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 238efd312a73e2452ca5f679f2b8f5ed1336c4dc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 62114e56fb29e80c93b82dcb78ce2bc2a123a83b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385873"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133659"
 ---
 # <a name="routing-and-action-selection-in-aspnet-web-api"></a>路由和 ASP.NET Web API 中的操作选择
 
@@ -23,7 +23,6 @@ ms.locfileid: "59385873"
 
 > [!NOTE]
 > 有关路由的高级别概述，请参阅[ASP.NET Web API 中的路由](routing-in-aspnet-web-api.md)。
-
 
 本文探讨路由过程的详细信息。 如果你创建 Web API 项目，别让我打开某些请求的查找路由按你期望的方式，希望这篇文章将帮助。
 
@@ -135,7 +134,6 @@ URI 路径的"api/产品"中，将包含路由字典：
 
 > [!NOTE]
 > 它是可以重写默认绑定规则。 请参阅[WebAPI 参数绑定实质上](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx)。
-
 
 这种背景，下面是操作选择算法。
 

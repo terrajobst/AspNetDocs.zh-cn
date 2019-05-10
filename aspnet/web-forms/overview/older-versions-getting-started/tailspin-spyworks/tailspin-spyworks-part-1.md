@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 15d4652b-d5aa-4172-b186-2c7f96ba316d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 70d2efb789d694a0aaecc046615c7b3622079dc1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 05a3ace3d8fef9c1f3593f7948e42b4725d70134
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385353"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130592"
 ---
 # <a name="part-1-file--new-project"></a>第 1 部分：“文件”->“新建项目”
 
@@ -23,7 +23,6 @@ ms.locfileid: "59385353"
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 1 部分介绍了概述和文件/新项目。
 
-
 ## <a id="_Toc260221666"></a>  概述
 
 本教程是 ASP.NET WebForms 的简介。 我们将启动速度慢，因此初学者级别 web 开发体验也没关系。
@@ -31,7 +30,6 @@ ms.locfileid: "59385353"
 我们将构建的应用程序是简单的在线商店。
 
 ![](tailspin-spyworks-part-1/_static/image1.jpg)
-
 
 访问者可以浏览产品按类别：
 
@@ -54,7 +52,6 @@ ms.locfileid: "59385353"
 排序后，他们将看到简单确认屏幕：
 
 ![](tailspin-spyworks-part-1/_static/image7.jpg)
-
 
 我们将首先在 Visual Studio 2010 中，创建新的 ASP.NET WebForms 项目和我们将以增量方式添加功能，可创建一个完整的正常运行应用程序。 此过程中，我们将介绍数据库访问权限、 列表和网格视图、 数据更新页、 数据验证、 使用母版页提供一致的页面布局、 AJAX、 验证、 用户成员身份和的详细信息。
 

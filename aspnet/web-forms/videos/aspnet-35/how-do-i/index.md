@@ -8,17 +8,16 @@ ms.date: 11/14/2011
 ms.assetid: 6a25069b-c80f-45f3-a901-4548442c37b6
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i
 msc.type: chapter
-ms.openlocfilehash: 8a7251971410ef2539e3957039de33af6e74371c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73e3191b168b7d7ea92d1ee7d6509d283a9d5b39
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415448"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133789"
 ---
 # <a name="how-do-i"></a>如何
 
 > 此多个部分组成的系列视频演示了如何充分利用 ASP.NET 3.5 和 Visual Studio 2008 中的新增功能。
-
 
 - [在 Visual Studio 2008 中创建母版页](how-do-i-create-a-master-page-in-visual-studio-2008.md)
 - [在 Visual Studio 2008 中创建嵌套的母版页](how-do-i-create-nested-master-page-in-visual-studio-2008.md)

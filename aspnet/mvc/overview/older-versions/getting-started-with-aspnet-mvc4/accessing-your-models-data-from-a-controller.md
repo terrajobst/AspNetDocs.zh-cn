@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 61e0206d-7f32-4018-992d-0a51b48b37dc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 45683fc2b40f58a6344ec8670e6a93df89b587fe
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b40bb8b06ae7c89a33ae2aead9578cf507503531
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59402903"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129953"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问模型的数据
 
@@ -21,7 +21,6 @@ ms.locfileid: "59402903"
 
 > > [!NOTE]
 > > 本教程中的更新的版本是可用[此处](../../getting-started/introduction/getting-started.md)，它使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示更多的功能。
-
 
 在本部分中，将创建一个新`MoviesController`类，并编写代码来检索电影数据并将其显示在浏览器中使用视图模板。
 
@@ -120,7 +119,6 @@ ASP.NET MVC 还提供了能够传递强类型化数据或视图模板的对象�
 > [!NOTE]
 > 如果未出现数据库资源管理器，从**工具**菜单中，选择**连接到数据库**，然后取消**选择数据源**对话框。 这将强制打开数据库资源管理器。
 
-
 > [!NOTE]
 > 如果您正在使用 VWD 或 Visual Studio 2010 并遇到错误类似于以下的以下任何：
 > 
@@ -128,7 +126,6 @@ ASP.NET MVC 还提供了能够传递强类型化数据或视图模板的对象�
 > - &quot;用户代码未处理 InvalidOperation 异常&quot;提供的 SqlConnection 未指定初始目录。
 > 
 > 你需要安装[SQL Server Data Tools](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)并[LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)。 验证`MovieDBContext`前一页上指定的连接字符串。
-
 
 右键单击`Movies`表，然后选择**显示表数据**若要查看你创建的数据。
 

@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 0edab77cd973af129e54c7867265f86b47c349a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ed7414c0b27fc41360e259bfb0a4c82e88a4e15
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410131"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128678"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署：介绍
 
@@ -30,7 +30,6 @@ ms.locfileid: "59410131"
 > 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 部署论坛](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment)或[StackOverflow](http://stackoverflow.com)。
 > 
 > 此内容也是可作为免费电子书[TechNet 电子书库](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#ASPNETWebDeploymentusingVisualStudio)。
-
 
 ## <a name="overview"></a>概述
 
@@ -133,7 +132,6 @@ Visual Studio 不会不执行任何操作与数据库在部署过程。 当部�
 
 > [!NOTE]
 > 本教程已用的 Azure sdk 版本 1.8.1 写入。 从那时起已经发布具有附加功能的较新版本。 已更新教程提及这些功能和对资源具有相关的详细信息的链接。
-
 
 说明和屏幕截图都基于 Windows 8 中，但这些教程介绍适用于 Windows 7 的差异。
 

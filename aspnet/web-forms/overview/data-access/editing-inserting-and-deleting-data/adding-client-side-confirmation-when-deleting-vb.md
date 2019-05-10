@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 6331e02e-c465-4cdf-bd3f-f07680c289d6
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fc5c99ce6c5da7d004b95462a3338aefbed31b36
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 94c84a6d40b594bbab16ca1778c545389b40f595
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388702"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126101"
 ---
 # <a name="adding-client-side-confirmation-when-deleting-vb"></a>删除时添加客户端确认 (VB)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59388702"
 
 > 在我们到目前为止已创建的接口，用户可以数据意外删除时它们应单击编辑按钮，单击删除按钮。 在本教程中我们将添加一个客户端的确认对话框，单击删除按钮时出现的。
 
-
 ## <a name="introduction"></a>介绍
 
 在过去的几个教程通过我们已看到了如何使用我们的应用程序体系结构、 对象、 数据源和数据 Web 控件配合使用来提供插入、 编辑和删除功能。 删除接口我们 ve 检查到目前为止已组成一个删除按钮，单击、 导致回发和调用 ObjectDataSource 的`Delete()`方法。 `Delete()`方法调用的业务逻辑层，将传播到数据访问层，发出的实际调用的配置的方法`DELETE`到数据库的语句。
@@ -32,11 +31,9 @@ ms.locfileid: "59388702"
 
 JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式对话框，配备了两个按钮的确定和取消 （参见图 1） 内的文本。 `confirm(string)`函数将返回一个布尔值，具体取决于单击哪个按钮 (`true`，如果用户单击确定，并`false`如果他们单击取消)。
 
-
 ![JavaScript confirm(string) 方法显示在安装结束时，客户端的消息框](adding-client-side-confirmation-when-deleting-vb/_static/image1.png)
 
 **图 1**:JavaScript`confirm(string)`方法显示一个模式，客户端的消息框
-
 
 在窗体提交，如果值为`false`返回，则从客户端事件处理程序已取消提交窗体。 使用此功能，我们可以让删除按钮的客户端`onclick`事件处理程序返回的值对的调用`confirm("Are you sure you want to delete this product?")`。 如果用户单击取消，`confirm(string)`将返回 false，从而导致取消提交窗体。 无回发时，不会删除其删除按钮被单击的产品。 如果，但是，用户单击确定确认对话框中的，回发将继续减弱，将删除该产品。 请查阅[使用 JavaScript s`confirm()`方法控制窗体提交到](http://www.webreference.com/programming/javascript/confirm/)有关此技术的详细信息。
 
@@ -45,13 +42,11 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 > [!NOTE]
 > 使用客户端确认技术，所讨论在本教程中，假定您的用户正在使用支持 JavaScript 的浏览器访问，并且必须启用 JavaScript。 如果这些假设任一特定用户，则返回 true，单击删除按钮将立即导致回发 （不显示确认消息框）。
 
-
 ## <a name="step-1-creating-a-formview-that-supports-deletion"></a>步骤 1：创建 FormView 支持删除
 
 首先，通过添加到 FormView`ConfirmationOnDelete.aspx`页中`EditInsertDelete`文件夹中，将其绑定到通过产品信息会提取新 ObjectDataSource`ProductsBLL`类的`GetProducts()`方法。 此外配置对象数据源，以便`ProductsBLL`类 s`DeleteProduct(productID)`方法映射到 ObjectDataSource 的`Delete()`方法; 确保下拉列表设置为 （无） INSERT 和 UPDATE 选项卡。 最后，检查 FormView s 智能标记中的启用分页复选框。
 
 这些步骤之后，新 ObjectDataSource s 声明性标记将如下所示：
-
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample1.aspx)]
 
@@ -59,23 +54,19 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 
 因为它已绑定到 ObjectDataSource 控件，仅支持删除 FormView 的`ItemTemplate`提供仅删除按钮，缺少的新建和更新按钮。 FormView s 声明性标记，但是，包含多余`EditItemTemplate`和`InsertItemTemplate`，可以删除的。 请花费片刻时间自定义`ItemTemplate`就是显示数据字段的产品的一个子集。 我已配置我的显示中的产品的名称`<h3>`标题上方 （以及删除按钮） 其供应商和类别名称。
 
-
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample2.aspx)]
 
 这些更改，我们有一个完全正常运行的 web 页面，允许用户一次通过产品一个切换能够只需单击删除按钮删除产品。 图 2 显示了我们的进度的屏幕截图为止时的浏览器查看。
 
-
 [![FormView 显示单个产品的信息](adding-client-side-confirmation-when-deleting-vb/_static/image3.png)](adding-client-side-confirmation-when-deleting-vb/_static/image2.png)
 
 **图 2**:FormView 显示信息有关单个产品 ([单击此项可查看原尺寸图像](adding-client-side-confirmation-when-deleting-vb/_static/image4.png))
-
 
 ## <a name="step-2-calling-the-confirmstring-function-from-the-delete-buttons-client-side-onclick-event"></a>步骤 2：从删除按钮的客户端 onclick 事件中调用 confirm(string) 函数
 
 使用 FormView 创建，最后一步是配置此类删除按钮，当它访问者，JavaScript 单击 s`confirm(string)`调用函数。 将客户端侧脚本添加到按钮、 LinkButton 或 ImageButton 的客户端`onclick`事件，可以使用`OnClientClick property`，这是 ASP.NET 2.0 中新增。 由于我们想要具有的值`confirm(string)`函数返回，只需将此属性设置为： `return confirm('Are you certain that you want to delete this product?');`
 
 此更改后删除 LinkButton s 声明性语法应如下所示：
-
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample3.aspx)]
 
@@ -84,11 +75,9 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 > [!NOTE]
 > 将字符串传递到`confirm(string)`用撇号 （而不是引号） 分隔的 JavaScript 函数。 在 JavaScript 中，可以使用任一字符分隔的字符串。 这样的分隔符的字符串传递到此处使用撇号`confirm(string)`不会产生歧义引入使用用于分隔符`OnClientClick`属性值。
 
-
 [![一条确认信息是现在显示时单击删除按钮](adding-client-side-confirmation-when-deleting-vb/_static/image6.png)](adding-client-side-confirmation-when-deleting-vb/_static/image5.png)
 
 **图 3**:一条确认信息是现在显示时单击删除按钮 ([单击此项可查看原尺寸图像](adding-client-side-confirmation-when-deleting-vb/_static/image7.png))
-
 
 ## <a name="step-3-configuring-the-onclientclick-property-for-the-delete-button-in-a-commandfield"></a>步骤 3：CommandField 中配置的删除按钮的 OnClientClick 属性
 
@@ -97,21 +86,17 @@ JavaScript`confirm(string)`函数将其字符串输入的参数显示为模式�
 > [!NOTE]
 > 设置删除按钮 s 时`OnClientClick`中的相应属性`DataBound`事件处理程序，我们有权访问数据被绑定到当前记录。 这意味着我们可以扩展的确认消息包括有关的特定记录的详细信息如下所述，"确实要删除的 Chai 产品？" 此类自定义，也可以在模板中使用数据绑定语法。
 
-
 做法是设置到`OnClientClick`CommandField，let s 中删除按钮的属性向页添加 GridView。 配置为使用相同的 ObjectDataSource 控件 FormView 使用此 GridView。 此外限制 GridView 的 BoundFields 将只包括产品的名称、 类别和供应商。 最后，检查从 GridView s 智能标记启用删除复选框。 这将为 GridView s 添加 CommandField`Columns`集合，其`ShowDeleteButton`属性设置为`true`。
 
 进行这些更改后，您的 GridView s 声明性标记应如下所示：
-
 
 [!code-aspx[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample4.aspx)]
 
 CommandField 包含单个删除 LinkButton 实例可以以编程方式访问从 GridView 的`RowDataBound`事件处理程序。 一旦引用，我们可以设置其`OnClientClick`属性相应地。 创建事件处理程序`RowDataBound`事件使用以下代码：
 
-
 [!code-vb[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample5.vb)]
 
 此事件处理程序适用于数据行 （那些将具有删除按钮），并开始通过以编程方式引用删除按钮。 在常规使用以下模式：
-
 
 [!code-vb[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample6.vb)]
 
@@ -126,18 +111,15 @@ CommandField 包含单个删除 LinkButton 实例可以以编程方式访问从 
 > [!NOTE]
 > 此外可以使用此方法以编程方式访问在 DetailsView 中 CommandField 删除按钮。 对于 DetailsView，但是，d 你创建的事件处理程序`DataBound`事件，因为 DetailsView 没有`RowDataBound`事件。
 
-
 [![单击 GridView s 删除按钮将显示一个自定义的确认对话框](adding-client-side-confirmation-when-deleting-vb/_static/image9.png)](adding-client-side-confirmation-when-deleting-vb/_static/image8.png)
 
 **图 4**:单击删除按钮的 GridView s 显示自定义的确认对话框中 ([单击此项可查看原尺寸图像](adding-client-side-confirmation-when-deleting-vb/_static/image10.png))
-
 
 ## <a name="using-templatefields"></a>使用 Templatefield
 
 CommandField 的缺点之一是其按钮必须通过索引来访问和生成的对象，必须强制转换为相应的按钮类型 （按钮、 LinkButton 或 ImageButton）。 使用"幻数"和硬编码类型邀请直到运行时将不能发现的问题。 例如，如果你或其他开发人员将新的按钮添加到在某个时间点以后 （例如编辑按钮） 或更改 CommandField`ButtonType`属性，现有的代码仍将编译没有错误，但访问的页面可能会引发异常或意外的行为，具体取决于如何编写您的代码和所做的更改。
 
 另一种方法是将 GridView 和 DetailsView 的命令转换为 Templatefield。 这将生成与 TemplateField `ItemTemplate` CommandField 中每个按钮具有 LinkButton （或按钮或 ImageButton）。 这些按钮`OnClientClick`属性可以以声明方式分配，如我们看到的 FormView，或可以以编程方式访问在相应`DataBound`事件处理程序使用以下模式：
-
 
 [!code-vb[Main](adding-client-side-confirmation-when-deleting-vb/samples/sample7.vb)]
 

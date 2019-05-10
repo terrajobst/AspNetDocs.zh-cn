@@ -8,19 +8,18 @@ ms.date: 02/16/2008
 ms.assetid: b985c49a-3668-455c-a366-f85f6bc64b12
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 21891a022885f7a4fae6d7fe3276587abf59986d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1a287b37742400a17c2ed53cfd00bfb053b4f3d2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414291"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123609"
 ---
 # <a name="aspnet-mvc-controller-overview-c"></a>ASP.NET MVC 控制器概述 (C#)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教程中，Stephen Walther 向您介绍 ASP.NET MVC 控制器。 了解如何创建新的控制器，并返回不同类型的操作结果。
-
 
 本教程探讨了 ASP.NET MVC 控制器、 控制器操作和操作结果的主题。 完成本教程后，你将了解如何使用控制器控制与 ASP.NET MVC 网站访问者进行交互的方式。
 

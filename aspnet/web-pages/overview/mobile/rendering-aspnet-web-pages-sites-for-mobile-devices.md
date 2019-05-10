@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: dbcd25331387f8606343e551302bc3ed1f9b2c25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c012348d65e48a275cb0e4808fef2a7f31e5fb33
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379503"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133519"
 ---
 # <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>为移动设备呈现 ASP.NET Web Pages (Razor) 站点
 
@@ -33,7 +33,6 @@ ms.locfileid: "59379503"
 >   
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
-
 
 ASP.NET Web Pages 中，可以移动或其他设备上创建自定义呈现内容的显示。
 
@@ -55,9 +54,7 @@ ASP.NET Web Pages 中，可以移动或其他设备上创建自定义呈现内�
 > [!NOTE]
 > 若要测试移动页面，可以使用在桌面计算机运行的移动设备模拟器。 此工具允许您测试网页，如他们的移动设备上的外观 （即，通常使用小得多显示区域）。 模拟器的一个示例是[用户代理切换器外接程序](http://addons.mozilla.org/firefox/addon/user-agent-switcher/)Mozilla firefox，它可以模拟各种移动浏览器，从桌面版本的 Firefox。
 
-
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
-
 
 [Windows Phone 仿真程序](https://msdn.microsoft.com/library/ff402563(v=VS.92).aspx)

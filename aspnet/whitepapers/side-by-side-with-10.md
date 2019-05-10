@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
-ms.openlocfilehash: c4a371958d8de72628c037b3568551aaa91e0153
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d03919e8465c28cf00bf057193452396523cb1af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380699"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125616"
 ---
 # <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>.NET Framework 1.0 和 .NET Framework 1.1 的 ASP.NET 并行执行
 
 > 本白皮书介绍了如何允许任一版本的 framework 上运行的 ASP.NET Web 应用程序在计算机上安装.NET 1.0 和.NET 1.1。
 > 
 > 适用于 ASP.NET 1.0 和 ASP.NET 1.1。
-
 
 在 ASP.NET 中，应用程序被称为时它们安装在同一台计算机上，但使用不同版本的.NET Framework 并行运行。 以下主题介绍如何配置 ASP.NET 应用程序通过并行执行，并提供详细的步骤：
 

@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d917982d5bd97bf1fa9d926e761c6fe847bb0574
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c28f520f710f77689548158e88d87d1051235d8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394193"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124229"
 ---
 # <a name="processing-unhandled-exceptions-vb"></a>处理未经处理的异常 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59394193"
 [查看或下载示例代码](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples)（[如何下载](/aspnet/core/tutorials/index#how-to-download-a-sample)）
 
 > 出现运行时错误，则在生产环境中的 web 应用程序时，通知开发人员以及记录错误，以便它可以诊断在以后的时间很重要。 本教程概述 ASP.NET 如何处理运行时错误时，并探讨一种方法的自定义代码执行时由 ASP.NET 运行时未处理的异常气泡。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -34,7 +33,6 @@ ms.locfileid: "59394193"
 
 > [!NOTE]
 > 在本教程中检查的信息是最有用，如果您需要某种唯一或自定义的方式处理未处理的异常。 在其中你只需记录异常并通知开发人员的情况下，使用错误日志记录库是转的方法。 接下来两个教程提供了两个这样的库的概述。
-
 
 ## <a name="executing-code-when-theerrorevent-is-raised"></a>执行代码时`Error`引发事件
 
@@ -56,7 +54,6 @@ ms.locfileid: "59394193"
 > [!NOTE]
 > 部署 ASP.NET 应用程序时需要将复制`Global.asax`到生产环境的文件。 `Global.asax.vb`文件，在 WAP 中创建的是，不需要将复制到生产环境，因为此代码编译到项目的程序集。
 
-
 Visual Studio 的应用程序的全局类模板创建的事件处理程序并不详尽。 可以将事件处理程序添加的任何`HttpApplication`通过命名事件处理程序的事件`Application_EventName`。 例如，可以添加以下代码`Global.asax`文件以创建的事件处理程序[`AuthorizeRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
 [!code-vb[Main](processing-unhandled-exceptions-vb/samples/sample1.vb)]
@@ -65,7 +62,6 @@ Visual Studio 的应用程序的全局类模板创建的事件处理程序并不
 
 > [!NOTE]
 > *HTTP 模块*提供了另一种方法来定义事件处理程序`HttpApplication`事件。 HTTP 模块创建为类文件中，可以直接在 web 应用程序项目中放置或者被分隔到单独的类库。 因为它们可以分离到一个类库，HTTP 模块提供用于创建更灵活且可重复使用模型`HttpApplication`事件处理程序。 而`Global.asax`文件是特定于它所在的 web 应用，HTTP 模块可以编译到程序集，此时将 HTTP 模块添加到网站非常简单，只将该程序集放入适当`Bin`文件夹和注册中的模块`Web.config`。 本教程不会查找在创建和使用的 HTTP 模块，但在以下两个教程中使用的两个错误日志记录库作为 HTTP 模块实现的。 有关更多背景 HTTP 模块的优势，请参阅[使用 HTTP 模块和处理程序创建可插入 ASP.NET 组件](https://msdn.microsoft.com/library/aa479332.aspx)。
-
 
 ## <a name="retrieving-information-about-the-unhandled-exception"></a>检索未处理的异常有关的信息
 
@@ -92,7 +88,6 @@ Visual Studio 的应用程序的全局类模板创建的事件处理程序并不
 > [!NOTE]
 > `<system.net>`元素包含使用的 SMTP 服务器设置`SmtpClient`类时发送一封电子邮件。 您的 web 托管公司可能具有可用于从您的应用程序发送电子邮件的 SMTP 服务器。 有关应在 web 应用程序中使用的 SMTP 服务器设置的信息，请参阅 web 主机的支持部分。
 
-
 将以下代码添加到`Application_Error`事件处理程序发送的一名开发人员电子邮件时出现错误：
 
 [!code-vb[Main](processing-unhandled-exceptions-vb/samples/sample4.vb)]
@@ -105,7 +100,6 @@ Visual Studio 的应用程序的全局类模板创建的事件处理程序并不
 
 > [!NOTE]
 > 在 web 应用程序中使用此代码之前你将想要更改中的值`ToAddress`并`FromAddress`常量从support@example.com对任何电子邮件地址错误通知电子邮件应发送到和来自。 您还需要指定在 SMTP 服务器设置`<system.net>`主题中`Web.config`。 请咨询你的 web 主机提供商，以确定要使用的 SMTP 服务器设置。
-
 
 利用此代码存在由错误的任何时间开发人员是发送汇总了错误并且包括 YSOD 的电子邮件。 前面的教程演示运行时错误通过访问 Genre.aspx 并传入无效`ID`通过在查询字符串，如值`Genre.aspx?ID=foo`。 访问与页面`Global.asax`文件后的生成相同的用户体验与在前面的教程-在开发环境中你将继续查看异常详细信息黄色屏幕死机，而在生产环境中，你就请参阅自定义错误页。 除了此现有行为，开发人员会发送一封电子邮件。
 

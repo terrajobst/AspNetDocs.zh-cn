@@ -8,15 +8,14 @@ ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 08cb65f9ef8f5c36070454e011f41554d81f333f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398470"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131529"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>检索和使用模型绑定和 web 窗体显示数据
-
 
 > 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。 本系列开始介绍性材料，后续教程将移动到更高级的概念。
 > 
@@ -34,7 +33,6 @@ ms.locfileid: "59398470"
 > - Microsoft Visual Studio 2017 或 Microsoft Visual Studio Community 2017
 >   
 > 本教程还适用于 Visual Studio 2012 和 Visual Studio 2013 中，但有一些用户界面和项目模板中的差异。
-
 
 ## <a name="what-youll-build"></a>你将生成
 
@@ -96,7 +94,6 @@ ms.locfileid: "59398470"
    4. 对于 web 窗体的主页上，选择**Site.Master**。
    
    5. 选择 **确定**。
-   
 
 ## <a name="add-the-data-model"></a>添加数据模型
 

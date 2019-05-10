@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 07b8905d-78ac-4252-97fb-8675b3fb0bbf
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: afd287836337d0f9411daac805c3e9bcbb2dbadb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 27a5ceda5f9b5227e26036c5405612dcbc15b48e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385067"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130251"
 ---
 # <a name="strategies-for-database-development-and-deployment-vb"></a>数据库开发和部署策略 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59385067"
 [下载 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial10_DBDevel_vb.pdf)
 
 > 部署第一次的数据驱动的应用程序时可以会盲目地将数据库复制到生产环境的开发环境中。 但执行直接在后续部署中的副本将覆盖输入到生产数据库中的任何数据。 相反，将数据库部署涉及将应用到生产数据库上上次部署以来对开发数据库所做的更改。 本教程中检查这些挑战，并提供各种策略来帮助进行 chronicling 并将其应用自上次部署以来对数据库所做的更改。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -54,13 +53,11 @@ ms.locfileid: "59385067"
 
 <a id="0.8_table01"></a>
 
-
 | **更改日期** | **更改的详细信息** |
 | --- | --- |
 | 2009-02-03: | 添加的列`DepartmentID`(`int`，不为 NULL) 到`Employees`表。 添加从外的键约束`Departments.DepartmentID`到`Employees.DepartmentID`。 |
 | 2009-02-05: | 已删除的列`TotalWeight`从`Orders`表。 中已捕获的数据关联`OrderDetails`记录。 |
 | 2009-02-12: | 创建`ProductCategories`表。 有以下三列： `ProductCategoryID` (`int`， `IDENTITY`， `NOT NULL`)， `CategoryName` (`nvarchar(50)`， `NOT NULL`)，并且`Active`(`bit`， `NOT NULL`)。 添加到主键约束`ProductCategoryID`，默认值为 1 到`Active`。 |
-
 
 有很多这种方法的缺点。 对于初学者而言，没有任何希望实现自动化。 随时需要这些更改应用于数据库-如时部署应用程序-开发人员必须手动实现每个更改，请一次一个。 此外，如果您需要重新构造从基线使用的更改日志数据库的特定版本，这样做因此需要越来越多的时间根据日志的大小增长情况。 此方法的另一个缺点是详细的清晰，每个更改日志条目级别保留记录更改的人员。 在多个开发人员团队中一些可能会使比其他更详细、 更具可读性，或更精确的条目。 此外，错误报告中也可能包含拼写错误和其他与用户相关的数据输入错误。
 
@@ -70,7 +67,6 @@ ms.locfileid: "59385067"
 
 > [!NOTE]
 > 虽然更改日志中的信息，从技术上讲，直到部署时，才需要我建议保持更改的历史记录。 但是，而不是维护一个不断增长更改日志文件，请考虑让每个数据库版本不同的更改日志文件。 通常您将希望到版本数据库每次部署它。 通过维护的更改日志的日志可以从该基线，开始重新创建任何数据库版本通过执行更改日志脚本从版本 1 开始，并继续执行直到达到版本需要重新创建。
-
 
 ## <a name="recording-the-sql-change-statements"></a>记录 SQL 更改语句
 
@@ -95,18 +91,14 @@ SQL 语法包括多个用于创建和修改各种数据库对象的语句。 例
 > [!NOTE]
 > 在撰写本文时 SQL Compare 的当前版本是版本 7.1 中，具有 Standard Edition 395 美元的成本计算。 通过下载免费的 14 天试用版，您可以照着操作。
 
-
 SQL Compare 启动时将打开比较项目对话框中，显示已保存的 SQL Compare 项目。 创建新项目。 这将启动项目配置向导中，提示输入的数据库的相关信息进行比较 （请参阅图 1）。 输入的信息，开发和生产环境数据库。
-
 
 [![开发和生产数据库进行比较](strategies-for-database-development-and-deployment-vb/_static/image2.jpg)](strategies-for-database-development-and-deployment-vb/_static/image1.jpg)
 
 **图 1**:比较开发和生产数据库 ([单击此项可查看原尺寸图像](strategies-for-database-development-and-deployment-vb/_static/image3.jpg))
 
-
 > [!NOTE]
 > 如果开发环境数据库是 SQL Express Edition 数据库文件中的`App_Data`你将需要在 SQL Server Express 数据库服务器中注册该数据库，以便从图 1 中所示的对话框中选择它的网站的文件夹。 若要实现此目的的最简单方法是打开 SQL Server Management Studio (SSMS)，连接到 SQL Server Express 数据库服务器，并附加该数据库。 如果你没有在计算机上安装的 SSMS 可以下载并安装免费[ *SQL Server 2008 Management Studio Basic 版本*](https://www.microsoft.com/downloads/details.aspx?FamilyId=7522A683-4CB2-454E-B908-E805E9BD4E28&amp;displaylang=en)。
-
 
 除了选择要比较的数据库，还可以指定各种比较设置从选项选项卡。你可能想要启用的一种选择是"忽略约束和索引名称。" 前面曾提到，在前面的教程，我们添加应用程序服务到开发和生产数据库的数据库对象。 如果您使用`aspnet_regsql.exe`生产数据库上创建这些对象，那么你将找到 primary key 和 unique 约束名称，在开发和生产数据库之间不同的工具。 因此，SQL Compare 将标记为不同的应用程序服务表的所有。 您可以将"忽略约束和索引名称"未选中状态和同步的约束名称，或指示 SQL Compare 要忽略这些差异。
 
@@ -115,11 +107,9 @@ SQL Compare 启动时将打开比较项目对话框中，显示已保存的 SQL 
 > [!NOTE]
 > 在本教程中所做的数据模型更改是为了演示如何使用数据库比较工具。 不会在将来的教程中在数据库中查找这些更改。
 
-
 [![SQL 比较列出了开发和生产数据库之间的差异](strategies-for-database-development-and-deployment-vb/_static/image5.jpg)](strategies-for-database-development-and-deployment-vb/_static/image4.jpg)
 
 **图 2**:SQL 比较列出了开发之间的差异和生产数据库 ([单击此项可查看原尺寸图像](strategies-for-database-development-and-deployment-vb/_static/image6.jpg))
-
 
 SQL Compare 分解成组的数据库对象、 快速显示哪些对象存在于这两个数据库中但不同，该对象存在于一个数据库，但不是另一个，和的对象相同。 正如您所看到的有两个数据库中存在但不同的两个对象：`Authors`表，该表具有添加的列，和`Books`表，该表包含一个删除。 只能在开发数据库，即新创建中存在的一个对象`Ratings`表。 并且有两个数据库中完全相同的 117 对象。
 
@@ -127,17 +117,14 @@ SQL Compare 分解成组的数据库对象、 快速显示哪些对象存在于�
 
 后查看差异，并选择你想要同步的对象下, 一步是生成更新生产数据库的架构所需的 SQL 命令以匹配开发数据库。 通过同步向导完成此操作。 同步向导确认哪些对象同步，并总结了该操作计划 （参见图 3）。 您可以立即同步数据库或生成具有可以在方便的时候运行的 SQL 命令的脚本。
 
-
 [![使用同步向导以同步数据库架构](strategies-for-database-development-and-deployment-vb/_static/image8.jpg)](strategies-for-database-development-and-deployment-vb/_static/image7.jpg)
 
 **图 3**:使用同步向导来同步数据库架构 ([单击此项可查看原尺寸图像](strategies-for-database-development-and-deployment-vb/_static/image9.jpg))
-
 
 数据库比较工具，如 Red Gate Software 的 SQL Compare 请将所做的更改应用到开发数据库架构与生产数据库指向和单击一样简单。
 
 > [!NOTE]
 > SQL 比较进行比较和同步两个数据库*架构*。 遗憾的是，它不进行比较和同步两个数据库表中的数据。 Red Gate Software 提供的名为产品[ *SQL 数据比较*](http://www.red-gate.com/products/SQL_Data_Compare/)的比较和两个数据库之间同步数据，但它是从 SQL Compare 一个单独的产品，另一个 395 美元的费用。
-
 
 ## <a name="taking-the-application-offline-during-deployment"></a>使应用程序脱机部署过程
 

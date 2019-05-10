@@ -8,12 +8,12 @@ ms.date: 01/14/2008
 ms.assetid: de2d65b9-aadc-42ba-abe1-4e87e66521a0
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bb3cf45e50e480d81a441280842c1eec58f4877
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0dd7c88bb001d326bf415dc3d3e8df0d4e5c77ed
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406868"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133252"
 ---
 # <a name="an-overview-of-forms-authentication-c"></a>窗体身份验证 (C#) 的概述
 
@@ -24,7 +24,6 @@ ms.locfileid: "59406868"
 > 在本教程中我们将只讨论到的新实现。具体而言，我们将介绍在实现窗体身份验证。 我们开始构造在本教程中的 web 应用程序将继续在基础上构建在后续教程中，随着我们从简单的窗体身份验证到成员资格和角色。
 > 
 > 请有关本主题，参阅此视频，详细信息：[在 ASP.NET 中使用基本窗体身份验证](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -47,11 +46,9 @@ ms.locfileid: "59406868"
 
 登录页的职责是确定是否在用户的凭据是否有效，如果是这样，若要创建窗体身份验证票证，并将用户重定向回页它们正在尝试的访问。 对网站的页面上的后续请求中包含身份验证票证的`FormsAuthenticationModule`用于标识用户。
 
-
 ![窗体身份验证工作流](an-overview-of-forms-authentication-cs/_static/image1.png)
 
 **图 1**:窗体身份验证工作流
-
 
 ### <a name="remembering-the-authentication-ticket-across-page-visits"></a>记住跨页面访问的身份验证票证
 
@@ -61,7 +58,6 @@ Cookie 的一个方面是其过期，这是日期和时间在浏览器将放弃�
 
 > [!NOTE]
 > 就可以用来登录到网站的用户代理可能不支持 cookie。 在这种情况下，ASP.NET 可以使用无 cookie forms 身份验证票证。 在此模式下，身份验证票证被编码为 URL。 我们将在何时使用无 cookie 身份验证票证和它们的创建和管理在下一步的教程。
-
 
 ### <a name="the-scope-of-forms-authentication"></a>窗体身份验证的范围
 
@@ -78,27 +74,22 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 > [!NOTE]
 > 每个教程中使用的演示 web 应用程序是可通过下载获得。 此可下载的应用程序是通过面向.NET Framework 3.5 版的 Visual Web Developer 2008 中创建的。 由于.NET 3.5 为目标应用程序，其 Web.config 文件包含特定于 3.5 的其他配置元素。 长话短说，如果你尚未然后可下载的 web 应用程序在计算机上安装.NET 3.5 不会无需第一个从 Web.config 移除特定于 3.5 的标记。
 
-
 我们可以配置窗体身份验证之前，我们首先需要将 ASP.NET 网站。 首先创建一个新文件系统基于 ASP.NET 网站。 若要完成此操作，启动 Visual Web Developer 然后转到文件菜单并选择新网站，显示新建网站对话框。 选择 ASP.NET 网站模板、 将位置下拉列表设置为文件系统、 选择一个文件夹以将该 web 站点，并将语言设置为 C#。 这将创建新的 web 站点的 Default.aspx ASP.NET 页面，应用\_数据文件夹和 Web.config 文件。
 
 > [!NOTE]
 > Visual Studio 支持项目管理的两种的模式：网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟项目体系结构在 Visual Studio.NET 2002/2003年 – 它们包括项目文件并放在 /bin 文件夹中的单个程序集编译项目的源代码。 Visual Studio 2005 最初唯一受支持的 Web 站点项目，尽管 Web 应用程序项目模型已重新引入 Service Pack 1;Visual Studio 2008 提供了这两种项目模型。 Visual Web Developer 2005 和 2008年版本，但是，仅支持网站项目。 我将使用网站项目模型。 如果你使用的是非速成版，并想要使用[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880%28vs.80%29.aspx)相反，随时执行此操作，但请注意您所见的屏幕，而不是必须执行的步骤之间可能存在某些差异屏幕截图所示，在这些教程中提供的说明。
 
-
 [![创建新的文件基于系统的 Web 站点](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
 
 **图 2**:创建 New File System-Based 网站 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image4.png))
-
 
 ### <a name="adding-a-master-page"></a>添加母版页
 
 接下来，将新的主页面添加到名为 Site.master 的根目录中的站点。 [母版页](https://msdn.microsoft.com/library/wtxbf3hh.aspx)启用页面开发人员定义可以应用于 ASP.NET 页的整个站点模板。 为母版页的主要优势是，站点的整体外观可以定义在一个位置，从而使它可以轻松地更新或调整站点的布局。
 
-
 [![添加母版页名为 Site.master 到网站](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
 
 **图 3**:将主页面名为 Site.master 添加到网站 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image7.png))
-
 
 在母版页中定义站点级页面布局。 可以使用设计视图并添加所需的任何布局或 Web 控件也可以手动在源视图中手动添加标记。 我构建我的母版页的布局来模拟布局中使用我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* （请参阅图 4） 的系列教程。 使用母版页[级联样式表](http://www.w3schools.com/css/default.asp)定位和使用 CSS 设置文件 （其中包含在本教程中的关联的下载中） 的 Style.css 中定义的样式。 但您不能从标记如下所示，定义的 CSS 规则，以便导航&lt;div&gt;的内容绝对定位，以便它显示在左侧，并且具有固定的宽度为 200 像素。
 
@@ -108,11 +99,9 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 与上面输入的标记，切换到设计视图显示了主页面的布局。 使用此母版页任何 ASP.NET 页面将具有指定的标记的功能具有此统一布局`MainContent`区域。
 
-
 [![Master 页上，通过设计视图查看](an-overview-of-forms-authentication-cs/_static/image9.png)](an-overview-of-forms-authentication-cs/_static/image8.png)
 
 **图 4**:母版页时查看通过使用设计视图 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image10.png))
-
 
 ### <a name="creating-content-pages"></a>创建内容页面
 
@@ -120,20 +109,16 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 接下来，右键单击解决方案资源管理器中的项目名称并选择要添加新 Web 窗体命名为 Default.aspx。 这一次，选中"选择母版页"复选框，并从列表中选择 Site.master 母版页。
 
-
 [![添加一个新的 Default.aspx 页面，选择选择主机页](an-overview-of-forms-authentication-cs/_static/image12.png)](an-overview-of-forms-authentication-cs/_static/image11.png)
 
 **图 5**:添加新 Default.aspx 页上选择选择主机页 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image13.png))
-
 
 ![使用 Site.master 母版页](an-overview-of-forms-authentication-cs/_static/image14.png)
 
 **图 6**:使用 Site.master 母版页
 
-
 > [!NOTE]
 > 如果您正在使用 Web 应用程序项目模型添加新项对话框中不包括"选择母版页"复选框。 相反，您需要添加的项类型"Web 内容窗体。" 选择"Web 内容窗体"选项并单击添加之后, Visual Studio 将显示相同的选择主图 6 所示的对话框。
-
 
 新 Default.aspx 页面的声明性标记只包括@Page指令指定的主路径的母版页的主要内容 ContentPlaceHolder 页面文件和内容控件。
 
@@ -157,11 +142,9 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 如果你的项目尚未包含 Web.config 文件，添加一个现在通过右键单击解决方案资源管理器中的项目名称，选择添加新项，然后添加 Web 配置文件。
 
-
 [![如果你的项目尚未包含 Web.config，将其添加到](an-overview-of-forms-authentication-cs/_static/image16.png)](an-overview-of-forms-authentication-cs/_static/image15.png)
 
 **图 7**:如果你项目不会不尚未包括 Web.config，现在添加 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image17.png))
-
 
 接下来，找到`<authentication>`元素，并更新为使用 forms 身份验证。 以后此更改后，Web.config 文件的标记看起来应类似于下面：
 
@@ -169,7 +152,6 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 > [!NOTE]
 > 由于 Web.config 是一个 XML 文件，大小写很重要。 请确保以大写"F"将模式属性设置为窗体。 如果使用不同的大小写，例如"窗体"，将收到配置错误，访问通过浏览器网站时。
-
 
 `<authentication>`元素可以根据需要包含`<forms>`子元素，其中包含窗体身份验证特定的设置。 现在，让我们只需使用默认窗体身份验证设置。 我们将探讨`<forms>`在下一教程中的更多详细信息中的子元素。
 
@@ -189,11 +171,9 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 让我们开始使用第一个任务。 将一个新的 ASP.NET 页面添加到站点的根目录下名为 login.aspx 的情况并将其与 Site.master 母版页相关联。
 
-
 [![添加新的 ASP.NET 页名为 login.aspx 的情况](an-overview-of-forms-authentication-cs/_static/image19.png)](an-overview-of-forms-authentication-cs/_static/image18.png)
 
 **图 8**:添加新 ASP.NET 页名为 login.aspx 的情况 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image20.png))
-
 
 典型的登录页面接口包含两个文本框 – 一个用于用户的名称，另一个用于其密码 – 和一个用于提交窗体按钮。 网站通常包括一个"记住我"复选框，如果选中，能在浏览器重新启动后保存生成的身份验证票证。
 
@@ -203,11 +183,9 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample4.aspx)]
 
-
 [![登录页包含两个文本框、 复选框、 按钮和标签](an-overview-of-forms-authentication-cs/_static/image22.png)](an-overview-of-forms-authentication-cs/_static/image21.png)
 
 **图 9**:在登录页包含两个文本框、 复选框、 按钮和标签 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image23.png))
-
 
 最后，创建一个事件处理程序，为 LoginButton 的 Click 事件。 从设计器中，只需双击按钮控件，以创建此事件处理程序。
 
@@ -249,11 +227,9 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 若要测试登录页，请在浏览器中访问它。 首先输入凭据无效，如用户名为"Nope"和"错误"的密码。 单击登录按钮时将发生一个回发和 InvalidCredentialsMessage 标签将显示。
 
-
 [![InvalidCredentialsMessage 标签是显示时输入无效凭据](an-overview-of-forms-authentication-cs/_static/image25.png)](an-overview-of-forms-authentication-cs/_static/image24.png)
 
 **图 10**:InvalidCredentialsMessage 标签是显示时输入无效凭据 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image26.png))
-
 
 接下来，输入有效的凭据，然后单击登录按钮。 创建这一次回发发生窗体身份验证票证时，你会自动重定向回 Default.aspx。 此时您已登录到网站，尽管没有视觉提示，用于指示当前登录。 在步骤 4 中我们将了解如何以编程方式确定用户是否已经登录还是不以及如何确定用户访问的页面。
 
@@ -267,7 +243,6 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 > [!NOTE]
 > 很多财务和医疗网站配置为在上使用 SSL*所有*页可以访问身份验证的用户。 如果你正在构建网站可以配置窗体身份验证系统，以便窗体身份验证票证只传输通过安全连接。 我们将探讨在下一教程中的各种窗体身份验证配置选项*[窗体身份验证配置和高级主题](forms-authentication-configuration-and-advanced-topics-cs.md)*。
-
 
 ## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步骤 4：检测已经过身份验证的访问者和确定其标识
 
@@ -285,16 +260,13 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 利用此代码，通过浏览器中访问 Default.aspx。 假设你尚未登录，你将看到一个链接到登录页 （请参阅图 11）。 单击此链接，登录到站点。 正如我们看到在步骤 3 中，输入你的凭据后，将返回到 Default.aspx，但这次该页面会显示"欢迎回到 ！" 消息 （请参阅图 12）。
 
-
 ![匿名访问，日志中链接显示时](an-overview-of-forms-authentication-cs/_static/image27.png)
 
 **图 11**:匿名访问，日志中链接显示时
 
-
 ![将显示已经过身份验证的用户](an-overview-of-forms-authentication-cs/_static/image28.png)
 
 **图 12**:将显示"欢迎回来 ！"已经过身份验证的用户 消息
-
 
 我们可以确定通过当前登录的用户的标识[HttpContext 对象](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)的[用户属性](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)。 HttpContext 对象表示有关当前请求的信息，以及其他是为响应、 请求和会话中，此类公共 ASP.NET 对象的主服务器。 用户属性表示当前 HTTP 请求和实现的安全上下文[IPrincipal 接口](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx)。
 
@@ -321,11 +293,9 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 
 图 13 显示了此修改的影响 （当用户 Scott 登录）。
 
-
 ![欢迎使用消息包含当前已登录用户的名称中](an-overview-of-forms-authentication-cs/_static/image29.png)
 
 **图 13**:欢迎使用消息包含当前已登录用户的名称中
-
 
 ### <a name="using-the-loginview-and-loginname-controls"></a>使用 LoginView 和 LoginName 控件
 
@@ -341,7 +311,6 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 > [!NOTE]
 > 除了 AnonymousTemplate 和 LoggedInTemplate，LoginView 控件可以包含特定于角色的模板。 特定于角色的模板仅向这些用户属于指定角色显示标记。 在将来的教程中，我们将检查 LoginView 控件的基于角色的功能。
 
-
 首先，通过添加母版页中导航到名为 LoginContent ContentPlaceHolder &lt;div&gt;元素。 只需将 ContentPlaceHolder 控件从工具箱拖到源视图中，将所得的标记的正上方"待办事项：菜单将转到此处..."文本。
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample9.aspx)]
@@ -350,11 +319,9 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 
 登录视图和其他与登录相关的控件位于工具箱的登录选项卡中。
 
-
 ![在工具箱 LoginView 控件](an-overview-of-forms-authentication-cs/_static/image30.png)
 
 **图 14**:在工具箱 LoginView 控件
-
 
 接下来，添加两个&lt;b /&gt;元素紧 LoginView 控件，但仍在 ContentPlaceHolder 内。 在此情况下，导航&lt;div&gt;元素的标记应如下所示：
 
@@ -370,33 +337,26 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 
 通过这一附加到 Site.master 母版页，我们的网站中每个页面将显示不同的消息，具体取决于是否对用户进行身份验证。 图 15 显示了用户 Jisun 通过浏览器访问时的 Default.aspx 页。 "欢迎回来，Jisun"消息会重复两次： 一次 （通过我们刚添加的 LoginView 控件） 左侧的主页面的导航部分中，一次是在 Default.aspx 的内容 （通过面板控件和编程逻辑） 的区域。
 
-
 ![LoginView 控件显示](an-overview-of-forms-authentication-cs/_static/image31.png)
 
 **图 15**:LoginView 控件显示"欢迎回来，Jisun。"
 
-
 因为我们登录视图添加到母版页时，它可以出现在我们的网站上的每一页。 但是，可能有网页我们不想要显示此消息。 此类的一页是登录页上，由于链接到登录页有点站不住脚存在。 由于我们在母版页中 ContentPlaceHolder 中放置 LoginView 控件，我们可以在我们的内容页面中重写此默认标记。 打开 login.aspx 的情况，并转到设计器。 由于我们没有显式定义的某个内容控件在母版页中 LoginContent ContentPlaceHolder 为 login.aspx 的情况，登录页将为此 ContentPlaceHolder 显示主页面的默认标记。 您可以看到这通过设计器 – LoginContent ContentPlaceHolder 显示默认标记 （LoginView 控件）。
-
 
 [![登录页显示的默认内容的母版页的 LoginContent ContentPlaceHolder](an-overview-of-forms-authentication-cs/_static/image33.png)](an-overview-of-forms-authentication-cs/_static/image32.png)
 
 **图 16**:登录页会显示默认内容的母版页的 LoginContent ContentPlaceHolder ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image34.png))
-
 
 要为 LoginContent ContentPlaceHolder 重写默认标记，只需右键单击设计器中的区域，并从上下文菜单中选择创建自定义内容选项。 (选中时，如果使用 Visual Studio 2008 ContentPlaceHolder 包含智能标记，提供了相同的选项。)这会添加新的内容控件到页面的标记，从而允许我们定义的此页的自定义内容。 您可以添加自定义消息，如"请的日志..."，但是让我们只需将其留空。
 
 > [!NOTE]
 > 在 Visual Studio 2005 中，创建自定义内容创建一个空内容 ASP.NET 页中的控件。 在 Visual Studio 2008 中，但是，创建自定义内容的母版页默认将内容复制到新创建的内容控件。 如果使用 Visual Studio 2008，然后，创建新的内容控件后请务必清除复制从主页面的内容。
 
-
 图 17 显示了 Login.aspx 页面时进行此更改后从浏览器访问。 请注意，没有任何"Hello，stranger"或"欢迎回来，*用户名*"左侧的导航窗格中的消息&lt;div&gt;因为没有访问 Default.aspx 时。
-
 
 [![登录页上隐藏默认 LoginContent ContentPlaceHolder 标记](an-overview-of-forms-authentication-cs/_static/image36.png)](an-overview-of-forms-authentication-cs/_static/image35.png)
 
 **图 17**:登录页上隐藏默认 LoginContent ContentPlaceHolder 的标记 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image37.png))
-
 
 ## <a name="step-5-logging-out"></a>步骤 5：注销
 
@@ -423,20 +383,16 @@ ASP.NET 提供注销链接此类的常见功能包括专门用于注销用户的
 
 图 18 显示了 Default.aspx，当 Jisun 访问。 请注意左侧的列显示该消息，"欢迎回来，Jisun"以及将其注销的链接。单击 LinkButton 注销导致回发、 从系统中注销 Jisun，然后将她重定向到 Logout.aspx。 如图 19 所示，通过 Jisun 达到的 Logout.aspx 她已注销，并因此是匿名的时间。 因此，左列显示文本"stranger 欢迎"和登录页面的链接。
 
-
 [![Default.aspx 显示](an-overview-of-forms-authentication-cs/_static/image39.png)](an-overview-of-forms-authentication-cs/_static/image38.png)
 
 **图 18**:Default.aspx 显示"欢迎回来，Jisun"以及"注销"LinkButton ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image40.png))
-
 
 [![Logout.aspx Shows](an-overview-of-forms-authentication-cs/_static/image42.png)](an-overview-of-forms-authentication-cs/_static/image41.png)
 
 **图 19**:Logout.aspx 显示"欢迎，stranger"以及"登录"LinkButton ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-cs/_static/image43.png))
 
-
 > [!NOTE]
 > 我鼓励您自定义 Logout.aspx 页后，可以隐藏主页面 LoginContent ContentPlaceHolder （例如，我们为 Login.aspx 在步骤 4 中所做的那样）。 "登录"LinkButton 呈现的登录状态控件的原因是 (下的一个"Hello，stranger") 将用户发送到 ReturnUrl 查询字符串参数中传递的当前 URL 的登录页。 简单地说，如果已注销的用户单击此 LoginStatus"登录"LinkButton，然后日志中的，他们将被重定向回 Logout.aspx，可以轻松地让用户迷惑。
-
 
 ## <a name="summary"></a>总结
 

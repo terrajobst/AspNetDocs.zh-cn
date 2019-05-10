@@ -8,12 +8,12 @@ ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5e3c049ba4349301c3c2d173d4311b3d0883bf68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401739"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125229"
 ---
 # <a name="get-started-with-aspnet-web-api-2-c"></a>开始使用 ASP.NET Web API 2 (C#)
 
@@ -52,7 +52,6 @@ ASP.NET Web API 是一个框架，用于.NET Framework 之上构建 web Api。
 
 > [!NOTE]
 > 此外可以创建 Web API 项目中使用&quot;Web API&quot;模板。 Web API 模板使用 ASP.NET MVC 提供 API 帮助页。 因为我想要显示而无需 MVC Web API，我正在本教程中使用空模板。 一般情况下，不需要知道要使用 Web API 的 ASP.NET MVC。
-
 
 ## <a name="adding-a-model"></a>添加模型
 
@@ -93,7 +92,6 @@ ASP.NET Web API 是一个框架，用于.NET Framework 之上构建 web Api。
 
 > [!NOTE]
 > 无需将你的控制器放入名为控制器的文件夹。 文件夹名称为只是组织的源文件的简便方法。
-
 
 如果没有打开此文件，则双击文件将其打开。 此文件中的代码替换为以下：
 

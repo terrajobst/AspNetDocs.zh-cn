@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: d915cb5d7d40bb2cc355a5e45befe124a7b60dc4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3293a9b6a35a162d4e27f061dfd3bfd28e0eda5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398483"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125993"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>配置用于 Web 部署发布的 Web 服务器（远程代理）
 
@@ -30,7 +30,6 @@ ms.locfileid: "59398483"
 > - 使用*离线部署*。 这种方法需要 web 服务器的最低配置，但服务器管理员必须手动复制到服务器上的 web 包并将其导入通过 IIS 管理器。
 > 
 > 主要功能、 优势和一种方法的缺点的详细信息，请参阅[选择右方法对 Web 部署](choosing-the-right-approach-to-web-deployment.md)。
-
 
 ## <a name="is-the-web-deploy-remote-agent-the-right-approach-for-you"></a>是为您的 Web 部署远程代理的正确方法？
 
@@ -64,7 +63,6 @@ ms.locfileid: "59398483"
 > [!NOTE]
 > 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。 远程代理服务支持的 IIS 6 及更高版本，并且不需要您加入到域。 但是，在本教程中的步骤已开发且在 IIS 7.5 上进行测试，对于其他版本的过程可能会有所不同。
 
-
 ## <a name="install-products-and-components"></a>安装的产品和组件
 
 本部分将指导您完成在 web 服务器上安装所需的产品和组件。 在开始之前，一个好的做法是运行 Windows 更新，以确保你的服务器是完全保持最新。
@@ -78,7 +76,6 @@ ms.locfileid: "59398483"
 
 > [!NOTE]
 > 本演练介绍如何使用 Web 平台安装程序来安装和配置所需的组件。 尽管不一定要使用 Web 平台安装程序，它通过简化了安装过程会自动检测的依赖关系以及确保始终获得最新的产品版本。 有关详细信息，请参阅[Microsoft Web 平台安装程序 3.0](https://go.microsoft.com/?linkid=9805118)。
-
 
 **若要安装必需的产品和组件**
 
@@ -184,7 +181,6 @@ ms.locfileid: "59398483"
 
 > [!NOTE]
 > 在 IIS 7.5 的应用程序池标识的详细信息，请参阅[应用程序池标识](https://go.microsoft.com/?linkid=9805123)。
-
 
 **若要配置 IIS 网站的文件夹权限**
 

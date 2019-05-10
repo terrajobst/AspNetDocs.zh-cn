@@ -8,12 +8,12 @@ ms.date: 01/18/2008
 ms.assetid: 112a674d-716f-41a6-99b8-4074d65a54c0
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17fbc85ab1be16e2b4a5c179db3c24645a6a0a64
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8e4feb864d8586024ded0f71eb854f15e7c233e1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404164"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131327"
 ---
 # <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server 中创建成员身份架构 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59404164"
 [下载代码](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_04_VB.zip)或[下载 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial04_MembershipSetup_vb.pdf)
 
 > 本教程首先会检查才能使用 SqlMembershipProvider 向数据库添加必要的架构的方法。 接下来，我们将检查在架构中键的表，并讨论其用途和重要性。 本教程结尾介绍了如何告诉成员资格框架应使用哪个提供程序的 ASP.NET 应用程序。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -56,19 +55,15 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表。 在实�
 
 从解决方案资源管理器，右键单击`App_Data`文件夹，然后选择添加新项。 (如果没有看到`App_Data`文件夹在项目中，右键单击解决方案资源管理器中的项目，选择添加 ASP.NET 文件夹，然后选取`App_Data`。)从添加新项对话框中，选择要添加新的 SQL 数据库名为`SecurityTutorials.mdf`。 在本教程中我们将添加`SqlMembershipProvider`架构到此数据库; 在后续教程中我们将创建其他要捕获应用程序数据的表。
 
-
 [![添加名为 SecurityTutorials.mdf 数据库添加到 App_Data 文件夹的新 SQL 数据库](creating-the-membership-schema-in-sql-server-vb/_static/image2.png)](creating-the-membership-schema-in-sql-server-vb/_static/image1.png)
 
 **图 1**:添加新的 SQL 数据库 Named`SecurityTutorials.mdf`数据库复制到`App_Data`文件夹 ([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-vb/_static/image3.png))
 
-
 添加到数据库`App_Data`文件夹自动包括在数据库资源管理器视图。 （在非-Express Edition 版本的 Visual Studio 中，数据库资源管理器被称为服务器资源管理器。）转到数据库资源管理器并展开刚添加`SecurityTutorials`数据库。 如果你没有在屏幕上看到数据库资源管理器，转到视图菜单，选择数据库资源管理器，或按 Ctrl + Alt + S。 如图 2 所示，`SecurityTutorials`数据库为空-它包含任何表、 没有视图和存储的过程。
-
 
 [![SecurityTutorials 数据库是当前为空](creating-the-membership-schema-in-sql-server-vb/_static/image5.png)](creating-the-membership-schema-in-sql-server-vb/_static/image4.png)
 
 **图 2**:`SecurityTutorials`数据库是当前为空 ([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-vb/_static/image6.png))
-
 
 ## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>步骤 2：添加`SqlMembershipProvider`到数据库的架构
 
@@ -99,34 +94,27 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表。 在实�
 
 首先关闭 Visual Studio，以确保数据库文件上的 Visual Studio 所规定的任何锁都会关闭。 接下来，启动 SQL Server Management Studio 并连接到`localhost\InstanceName`SQL Server 2005 Express edition 数据库。 如前文所述，您很可能是实例名称`SQLExpress`。 对于身份验证选项中，选择 Windows 身份验证。
 
-
 [![连接到 SQL Server 2005 Express Edition 实例](creating-the-membership-schema-in-sql-server-vb/_static/image8.png)](creating-the-membership-schema-in-sql-server-vb/_static/image7.png)
 
 **图 3**:连接到 SQL Server 2005 Express Edition 实例 ([单击此项可查看原尺寸图像](creating-the-membership-schema-in-sql-server-vb/_static/image9.png))
-
 
 连接到 SQL Server 2005 Express Edition 实例后，Management Studio 的数据库、 安全设置、 服务器对象和等等的显示文件夹。 如果展开数据库选项卡将会看到`SecurityTutorials.mdf`数据库是*不*我们需要先附加该数据库中的数据库实例的注册。
 
 右键单击数据库文件夹并从上下文菜单中选择附加。 这将显示附加数据库对话框。 从此处，单击添加按钮，浏览到`SecurityTutorials.mdf`数据库，然后单击确定。 图 4 显示了后的附加数据库对话框`SecurityTutorials.mdf`选择数据库。 图 5 显示 Management Studio 对象资源管理器后已成功附加该数据库。
 
-
 [![附加 SecurityTutorials.mdf 数据库](creating-the-membership-schema-in-sql-server-vb/_static/image11.png)](creating-the-membership-schema-in-sql-server-vb/_static/image10.png)
 
 **图 4**:附加`SecurityTutorials.mdf`数据库 ([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-vb/_static/image12.png))
-
 
 [![SecurityTutorials.mdf 数据库显示在数据库文件夹中](creating-the-membership-schema-in-sql-server-vb/_static/image14.png)](creating-the-membership-schema-in-sql-server-vb/_static/image13.png)
 
 **图 5**:`SecurityTutorials.mdf`数据库显示在数据库文件夹中 ([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-vb/_static/image15.png))
 
-
 如图 5 所示，`SecurityTutorials.mdf`数据库都有一个相当 abstruse 名称。 让我们将其更改为更容易记住 （和更方便地键入） 名称。 右键单击数据库，从上下文菜单中，选择重命名并将其重命名`SecurityTutorialsDatabase`。 这不会更改文件名，只是数据库名称来标识自身到 SQL Server 将使用。
-
 
 [![数据库重命名为 SecurityTutorialsDatabase](creating-the-membership-schema-in-sql-server-vb/_static/image17.png)](creating-the-membership-schema-in-sql-server-vb/_static/image16.png)
 
 **图 6**:重命名的数据库`SecurityTutorialsDatabase`([单击以查看实际尺寸的图像](creating-the-membership-schema-in-sql-server-vb/_static/image18.png))
-
 
 现在我们知道的名称服务器和数据库名称`SecurityTutorials.mdf`数据库文件：`localhost\InstanceName`和`SecurityTutorialsDatabase`分别。 我们现已准备好安装应用程序服务通过`aspnet_regsql.exe`工具。
 
@@ -136,19 +124,15 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表。 在实�
 
 运行`aspnet_regsql.exe`工具而无需任何命令行参数启动 ASP.NET SQL Server 安装向导的图形用户界面。 该向导可以轻松地添加或删除指定数据库上的 ASP.NET 应用程序服务。 图 7 中所示向导的第一个屏幕描述了该工具的用途。
 
-
 [![使用 ASP.NET SQL Server 安装程序向导简化添加的成员身份架构](creating-the-membership-schema-in-sql-server-vb/_static/image20.png)](creating-the-membership-schema-in-sql-server-vb/_static/image19.png)
 
 **图 7**:使用 ASP.NET SQL Server 安装程序向导生成要添加的成员身份架构 ([单击此项可查看原尺寸图像](creating-the-membership-schema-in-sql-server-vb/_static/image21.png))
 
-
 在向导的第二步询问我们是否要添加的应用程序服务或将其删除。 由于我们想要添加表、 视图和存储的过程所需`SqlMembershipProvider`，选择为应用程序服务选项配置 SQL Server。 更高版本，如果你想要从数据库中删除此架构，重新运行此向导中，但改为选择从现有的数据库选项的删除应用程序服务信息。
-
 
 [![选择配置 SQL Server 的应用程序服务选项](creating-the-membership-schema-in-sql-server-vb/_static/image23.png)](creating-the-membership-schema-in-sql-server-vb/_static/image22.png)
 
 **图 8**:为应用程序服务选项中选择配置 SQL Server ([单击此项可查看原尺寸图像](creating-the-membership-schema-in-sql-server-vb/_static/image24.png))
-
 
 第三个步骤将提示输入数据库信息： 服务器名称、 身份验证信息和数据库名称。 如果你已根据本教程中，并添加了`SecurityTutorials.mdf`数据库复制到`App_Data`，附加到`localhost\InstanceName`，和它重命名为`SecurityTutorialsDatabase`，然后使用以下值：
 
@@ -156,11 +140,9 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表。 在实�
 - Windows 身份验证
 - 数据库： `SecurityTutorialsDatabase`
 
-
 [![输入数据库信息](creating-the-membership-schema-in-sql-server-vb/_static/image26.png)](creating-the-membership-schema-in-sql-server-vb/_static/image25.png)
 
 **图 9**:输入数据库信息 ([单击此项可查看原尺寸图像](creating-the-membership-schema-in-sql-server-vb/_static/image27.png))
-
 
 输入数据库信息后，单击下一步。 最后一个步骤总结了将采取的步骤。 单击下一步以安装应用程序服务并在完成以完成向导。
 
@@ -169,11 +151,9 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表。 在实�
 
 在向导完成，返回到 Visual Studio 并导航到数据库资源管理器。 展开表文件夹。 您应看到其名称以前缀开头的表的一系列`aspnet_`。 同样，可以在视图和存储过程文件夹下找到各种视图和存储的过程。 这些数据库对象组成的应用程序服务架构。 我们将检查在步骤 3 中的成员身份和角色特定数据库对象。
 
-
 [![各种表、 视图和存储的过程已添加到数据库](creating-the-membership-schema-in-sql-server-vb/_static/image29.png)](creating-the-membership-schema-in-sql-server-vb/_static/image28.png)
 
 **图 10**:不同的表、 视图和存储过程已添加到数据库 ([单击此项可查看原尺寸图像](creating-the-membership-schema-in-sql-server-vb/_static/image30.png))
-
 
 > [!NOTE]
 > `aspnet_regsql.exe`工具的图形用户界面安装整个应用程序服务架构。 但在执行时`aspnet_regsql.exe`可以从命令行中指定特定的应用程序服务组件安装 （或删除）。 因此，如果你想要添加只是表，视图，并存储所需的过程`SqlMembershipProvider`并`SqlRoleProvider`提供程序，运行`aspnet_regsql.exe`从命令行。 或者，你可以手动运行相应的 T-SQL 的子集创建由脚本`aspnet_regsql.exe`。 这些脚本位于`WINDIR%\Microsoft.Net\Framework\v2.0.50727\`具有类似名称的文件夹`InstallCommon.sql`， `InstallMembership.sql`， `InstallRoles.sql`， `InstallProfile.sql`， `InstallSqlState.sql`，依次类推。
@@ -190,11 +170,9 @@ ASP.NET 应用程序的数据通常存储在多个数据库中的表。 在实�
 
 成员资格和角色框架经过专门设计，以便可以在许多不同的应用程序之间共享单个用户和角色应用商店。 使用成员资格或角色框架的 ASP.NET 应用程序必须指定要使用哪些应用程序分区。 简单地说，多个 web 应用程序可以使用相同的用户和角色存储区。 图 11 显示了被分区为三个应用程序的用户和角色存储：HRSite、 CustomerSite 和 SalesSite。 以下三个 web 应用程序每个具有其自己的唯一用户和角色，但它们都以物理方式将他们的用户帐户和角色信息存储在同一个数据库表中。
 
-
 [![用户帐户可能跨多个应用程序分区](creating-the-membership-schema-in-sql-server-vb/_static/image32.png)](creating-the-membership-schema-in-sql-server-vb/_static/image31.png)
 
 **图 11**:用户帐户可能会将分区跨多个应用程序 ([单击此项可查看原尺寸图像](creating-the-membership-schema-in-sql-server-vb/_static/image33.png))
-
 
 `aspnet_Applications`表是定义这些分区的内容。 此表中的行表示每个应用程序使用数据库来存储用户帐户信息。 `aspnet_Applications`表具有四列： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。`ApplicationId` 类型[ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx)是表的主键;`ApplicationName`提供每个应用程序的唯一用户友好名称。
 

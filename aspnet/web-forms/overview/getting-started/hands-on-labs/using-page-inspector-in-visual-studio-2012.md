@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 73232292-a5fe-4720-82a1-8f6553effd1f
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: d85fab0aeec86013761fc07ada1789b7719b24d9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f42b1be2697ba7d1145b3e334fe8f4ebf019cd12
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396550"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133557"
 ---
 # <a name="using-page-inspector-in-visual-studio-2012"></a>在 Visual Studio 2012 中使用 Page Inspector
 
@@ -36,7 +36,6 @@ ms.locfileid: "59396550"
 > 此实验室将引导你通过前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用的新功能和增强功能。
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 
@@ -74,13 +73,12 @@ ms.locfileid: "59396550"
 > [!NOTE]
 > 每个练习均附带位于该练习，可用于完成独立于其他每个练习的 Begin 文件夹中的起始解决方案。 在练习的源代码，还会发现一个 End 文件夹，其中包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
 
-
 估计的时间才能完成此实验：**30 分钟**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_Page_Inspector_in_ASPNET_MVC_Projects"></a>
-### <a name="exercise-1-using-page-inspector-in-aspnet-mvc-projects"></a>练习 1:在 ASP.NET MVC 项目中使用 Page Inspector
+### <a name="exercise-1-using-page-inspector-in-aspnet-mvc-projects"></a>练习 1：在 ASP.NET MVC 项目中使用 Page Inspector
 
 在此练习中，您将学习如何预览和调试**ASP.NET MVC 4**解决方案： 使用**Page Inspector**。 首先，您将执行简要了解该工具来了解促进 Web 调试进程的功能。 然后，您可以在包含样式设置问题的网页中。 您将学习如何使用 Page Inspector 找到生成问题的源代码和修复此错误。
 
@@ -271,7 +269,7 @@ ms.locfileid: "59396550"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Using_Page_Inspector_in_WebForms_Projects"></a>
-### <a name="exercise-2-using-page-inspector-in-webforms-projects"></a>练习 2:在 WebForms 项目中使用 Page Inspector
+### <a name="exercise-2-using-page-inspector-in-webforms-projects"></a>练习 2：在 WebForms 项目中使用 Page Inspector
 
 在此练习中，您将学习如何预览和调试使用 Page Inspector 的 WebForms 解决方案。 首先会执行简要了解该工具来了解促进 Web 调试进程的 Page Inspector 功能。 然后，您可以在包含样式设置问题的网页中。 您将学习如何使用 Page Inspector 找到生成问题的源代码和修复此错误。
 

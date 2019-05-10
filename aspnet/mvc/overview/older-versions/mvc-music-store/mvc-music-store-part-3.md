@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: ce866a169e69c0d85fe18ddeccf271f1f235d440
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3fcfc816cde22c697a78bab2c9ea7ace1bf68501
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381115"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129682"
 ---
 # <a name="part-3-views-and-viewmodels"></a>第 3 部分：视图和 ViewModel
 
@@ -24,7 +24,6 @@ ms.locfileid: "59381115"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 3 部分介绍 Views 和 ViewModels。
-
 
 到目前为止我们已经就已返回字符串的控制器操作。 这是一个好方法大致的控制器的工作方式，但不是将如何生成实际的 web 应用程序。 我们要想更好的方法来生成 HTML 返回到浏览器访问我们的站点 — 一个在其中我们可以使用模板文件更轻松地自定义 HTML 内容发送回。 这正是视图执行的操作。
 
@@ -257,7 +256,6 @@ Html.ActionLink() 有多个不同的重载，以允许指定尽可能为你的�
 流派列表的 HTML 如下所示：
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample22.html)]
-
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-2.md)

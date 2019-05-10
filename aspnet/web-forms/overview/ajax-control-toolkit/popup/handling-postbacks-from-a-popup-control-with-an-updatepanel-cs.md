@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dff813f0f3e4da26a32fd6305e476d24484e0e7c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6b43822825de37903d6a15c3000ed896faae4d64
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415084"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132511"
 ---
 # <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>使用带 UpdatePanel 的弹出控件处理回发 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415084"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.cs.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2CS.pdf)
 
 > AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。 特别留意具有此类弹出窗口中产生的回发时要执行。
-
 
 ## <a name="overview"></a>概述
 
@@ -48,11 +47,9 @@ AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激�
 
 现在每当您单击日历日期后，所选的日期将显示在关联的文本框中，创建日期选取器控件的当前可在许多网站上。
 
-
 [![当用户单击文本框中，将显示日历](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)
 
 当用户单击文本框中，将显示日历 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image3.png))
-
 
 [![单击某个日期将其放入文本框](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)
 

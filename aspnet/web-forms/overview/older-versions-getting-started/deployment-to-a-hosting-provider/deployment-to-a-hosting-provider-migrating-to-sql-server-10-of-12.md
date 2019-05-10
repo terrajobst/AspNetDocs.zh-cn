@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: a89d6f32-b71b-4036-8ff7-5f8ac2a6eca8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 98e521f348cdf1c2bd563f96badbaea6b23f4bcf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc4db5b1fcedca675a18f1b78e28f65e51b6cf09
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398951"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132757"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署：迁移到 SQL Server-10 12
 
@@ -24,7 +24,6 @@ ms.locfileid: "59398951"
 > 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的情况下使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web 包含 SQL Server Compact 数据库。 如果在安装 Web 发布更新，还可以使用 Visual Studio 2010。 该系列的简介，请参阅[系列中的第一个教程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 > 
 > 显示了 Visual Studio 2012 RC 版后引入的部署功能，演示如何部署 SQL Server Compact 以外的 SQL Server 版本并显示了如何将部署到 Azure 应用服务 Web 应用的教程，请参阅[ASP.NET Web 部署使用 Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md)。
-
 
 ## <a name="overview"></a>概述
 
@@ -89,11 +88,9 @@ Visual Studio 2010 中，默认情况下会自动安装 SQL Server Express，但
 > [!NOTE]
 > 此脚本用于处理与 SQL Server 2008 和 Windows 7 中的 IIS 设置，如在本教程中指定了。 如果使用不同版本的 SQL Server 或 Windows，或您设置 IIS 计算机上以不同的方式，可能需要对此脚本的更改。 有关 SQL Server 脚本详细信息，请参阅[SQL Server 联机丛书](https://go.microsoft.com/fwlink/?LinkId=132511)。
 
-
 > [!NOTE] 
 > 
 > **安全说明**此脚本将向提供 db\_所有者在运行时，这是您在生产环境中必须访问数据库的用户的权限。 在某些情况下您可能想要指定具有完整的数据库架构更新部署中，权限和指定的运行时具有的权限仅读取和写入数据的不同用户的用户。 有关详细信息，请参阅**评审 Code First 迁移自动 Web.config 更改**中[作为测试环境部署到 IIS](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)。
-
 
 ## <a name="configuring-database-deployment-for-the-test-environment"></a>配置测试环境的数据库部署
 

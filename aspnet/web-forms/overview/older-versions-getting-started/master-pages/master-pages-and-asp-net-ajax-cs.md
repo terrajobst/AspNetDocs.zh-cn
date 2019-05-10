@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: 0c55eb66-ba44-4d49-98e8-5c87fd9b1111
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b8bc435e4b2b1eeedaab424695715e5ec51e116d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0880b2d6666ec3ae618573aa3a884ca4865c317c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381856"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132812"
 ---
 # <a name="master-pages-and-aspnet-ajax-c"></a>母版页和 ASP.NET AJAX (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381856"
 [下载代码](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_08_CS.zip)或[下载 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_08_CS.pdf)
 
 > 讨论使用 ASP.NET AJAX 和母版页的选项。 查看使用 ScriptManagerProxy 类;讨论各种 JS 文件的加载方式具体取决于是否在 Master 中使用 ScriptManager 页面或内容页面。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -35,11 +34,9 @@ ms.locfileid: "59381856"
 > [!NOTE]
 > 本教程不会探讨设计或构建启用 AJAX 的 web 应用程序，ASP.NET AJAX 框架。 使用 AJAX 的详细信息请查阅[ASP.NET AJAX 视频](../../../videos/aspnet-ajax/index.md)并[教程](../aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)，同时作为在本教程末尾的更多参考资料部分中列出这些资源。
 
-
 ## <a name="examining-the-markup-emitted-by-the-scriptmanager-control"></a>检查发出 ScriptManager 控件的标记
 
 ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏览器下载 JavaScript 文件的标记。 它还添加到初始化此库的页面的内联 JavaScript 的位。 以下标记显示了添加到包括 ScriptManager 控件的页面的呈现的输出的内容：
-
 
 [!code-html[Main](master-pages-and-asp-net-ajax-cs/samples/sample1.html)]
 
@@ -49,7 +46,6 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 
 > [!NOTE]
 > 如果你计划包括到母版页的用户界面中的 AJAX 功能，然后在这个问题别无选择-必须包括 ScriptManager 母版页中。
-
 
 将 ScriptManager 添加到母版页的一个缺点是上述脚本将在发出*每个*页上，而不考虑是否需要。 这显然会导致浪费带宽的这些页面的 ScriptManager 包含 （通过母版页） 而不使用 ASP.NET AJAX 框架的任何功能。 但是，带宽被浪费只是多少？
 
@@ -61,7 +57,6 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 > [!NOTE]
 > 如果您仍然觉得不舒服置于主页面的 ScriptManager 控件，请考虑 Web 窗体 (`<form runat="server">`母版页中的标记)。 每个 ASP.NET 页，使用回发模型必须包含准确地说是一个 Web 窗体。 添加 Web 窗体添加更多的内容： 一个隐藏的窗体字段的数字`<form>`标记本身，并且如有必要，JavaScript 函数适用于启动来自脚本的回发。 此标记是不必要的不回发的页面。 从母版页删除 Web 窗体并手动将其添加到此需求的每个内容页面可以消除此无关的标记。 但是，Web 窗体母版页中的好处大于让它添加到某些内容页面中不必要地缺点。
 
-
 ## <a name="step-1-adding-a-scriptmanager-control-to-the-master-page"></a>步骤 1：将一个 ScriptManager 控件添加到母版页
 
 每个网页使用 ASP.NET AJAX 框架必须包含准确地说一个 ScriptManager 控件。 鉴于此要求，通常最好将单个 ScriptManager 控件在母版页上，以便所有内容页面包含自动包含在 ScriptManager 控件。 此外，ScriptManager 必须在任何 ASP.NET AJAX 服务器控件，如 UpdatePanel 和 UpdateProgress 控件之前。 因此，最好将放在 Web 窗体中任何 ContentPlaceHolder 控件之前 ScriptManager。
@@ -70,11 +65,9 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 
 向页面添加 ScriptManager 后, 更改其`ID`从`ScriptManager1`到`MyManager`。
 
-
 [![将 ScriptManager 添加到母版页](master-pages-and-asp-net-ajax-cs/_static/image2.png)](master-pages-and-asp-net-ajax-cs/_static/image1.png)
 
 **图 01**:将 ScriptManager 添加到母版页 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image3.png))
-
 
 ## <a name="step-2-using-the-aspnet-ajax-framework-from-a-content-page"></a>步骤 2：使用 ASP.NET AJAX 框架从内容页
 
@@ -82,16 +75,13 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 
 首先，在名为的根目录中创建一个新页面`ShowRandomProduct.aspx`。 别忘了将绑定到此新页`Site.master`母版页。
 
-
 [![向网站添加新的 ASP.NET 页面](master-pages-and-asp-net-ajax-cs/_static/image5.png)](master-pages-and-asp-net-ajax-cs/_static/image4.png)
 
 **图 02**:将一个新的 ASP.NET 页面添加到网站 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image6.png))
 
-
 回想一下，在[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教程中，我们创建一个名为的自定义基本页类`BasePage`如果它已生成了页面的标题未显式设置。 转到`ShowRandomProduct.aspx`页面的代码隐藏类，并将其派生`BasePage`(而不是从`System.Web.UI.Page`)。
 
 最后，更新`Web.sitemap`文件以便包括本课程中的一个条目。 添加以下标记下方`<siteMapNode>`到内容页交互课主机：
-
 
 [!code-xml[Main](master-pages-and-asp-net-ajax-cs/samples/sample2.xml)]
 
@@ -103,37 +93,29 @@ ScriptManager 控件都会发出该构成 ASP.NET AJAX 客户端库会指示浏�
 
 我们的第一个任务是显示在 UpdatePanel 中随机选择产品的信息。 通过将 DetailsView 控件拖动到 UpdatePanel 启动。 设置 DetailsView 控件`ID`属性设置为`ProductInfo`并将清除其`Height`和`Width`属性。 展开 DetailsView 的智能标记，然后从选择数据源下拉列表，选择要绑定到名为的新 SqlDataSource 控件的 DetailsView `RandomProductDataSource`。
 
-
 [![绑定到新的 SqlDataSource 控件的 DetailsView](master-pages-and-asp-net-ajax-cs/_static/image8.png)](master-pages-and-asp-net-ajax-cs/_static/image7.png)
 
 **图 03**:绑定到新的 SqlDataSource 控件的 DetailsView ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image9.png))
 
-
 配置要通过连接到 Northwind 数据库的 SqlDataSource 控件`NorthwindConnectionString`(我们在中创建的[*与母版页从内容页交互*](interacting-with-the-content-page-from-the-master-page-cs.md)教程)。 当配置 select 语句选择指定一个自定义 SQL 语句，然后输入以下查询：
-
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
 `TOP 1`中的关键字`SELECT`子句将返回仅由查询返回的第一个记录。 [ `NEWID()`函数](https://msdn.microsoft.com/library/ms190348.aspx)生成一个新[全局唯一标识符 (GUID) 值](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)并可以使用`ORDER BY`子句按随机顺序返回表的记录。
 
-
 [![配置 SqlDataSource 返回单一的随机选择记录](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)
 
 **图 04**:配置 SqlDataSource 以返回一个随机选择记录 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image12.png))
 
-
 完成向导后，Visual Studio 创建上述查询返回的两个列的 BoundField。 此时页面的声明性标记应类似于下面：
-
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample4.aspx)]
 
 图 5 显示了`ShowRandomProduct.aspx`页面的浏览器查看时。 单击浏览器的刷新按钮以重新加载页面;应会看到`ProductName`和`UnitPrice`提供新的随机选择记录的值。
 
-
 [![显示随机产品的名称和价格](master-pages-and-asp-net-ajax-cs/_static/image14.png)](master-pages-and-asp-net-ajax-cs/_static/image13.png)
 
 **图 05**:显示随机产品的名称和价格 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image15.png))
-
 
 ### <a name="automatically-displaying-a-new-product-every-15-seconds"></a>自动显示的新产品，每隔 15 秒
 
@@ -141,11 +123,9 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 
 若要实现此目的，计时器从工具箱拖放到 UpdatePanel。 更改计时器`ID`从`Timer1`到`ProductTimer`并将其`Interval`从 60000 到 15000 之间的属性。 `Interval`属性指示回发之间的毫秒数; 将其设置为 15000 导致计时器来触发每隔 15 秒的部分页面回发。 此时计时器的声明性标记应类似于下面：
 
-
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample5.aspx)]
 
 创建计时器的事件处理程序`Tick`事件。 在此事件处理程序需要通过调用 DetailsView 的重新绑定数据到 DetailsView`DataBind`方法。 执行此操作会指示 DetailsView 重新检索其数据源控件中的数据以选择并显示一个新的随机选择记录 （就像时重新加载该页面，通过单击浏览器的刷新按钮）。
-
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample6.cs)]
 
@@ -153,21 +133,17 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 
 若要更好地查看这里会发生什么，让我们将添加到显示的时间显示上次更新的 UpdatePanel 的标签控件。 添加 UpdatePanel 内的标签 Web 控件，将其`ID`到`LastUpdateTime`，并清除其`Text`属性。 接下来，为 UpdatePanel 的创建事件处理程序`Load`事件和显示的标签中的当前时间。 (UpdatePanel 的`Load`上每个完整或部分页面回发触发事件。)
 
-
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample7.cs)]
 
 完成此更改后，使用此页包含已加载当前显示的产品的时间。 图 6 显示了页面在首次访问时。 图 7 显示的页更高版本 15 秒后计时器控件具有"勾选了"和 UpdatePanel 刷新以显示有关新产品的信息。
-
 
 [![随机选择的产品显示在页面加载](master-pages-and-asp-net-ajax-cs/_static/image17.png)](master-pages-and-asp-net-ajax-cs/_static/image16.png)
 
 **图 06**:随机选择的产品显示在加载页 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image18.png))
 
-
 [![一个新随机选择的产品，系统会每隔 15 秒](master-pages-and-asp-net-ajax-cs/_static/image20.png)](master-pages-and-asp-net-ajax-cs/_static/image19.png)
 
 **图 07**:一个新随机选择的产品，系统会每隔 15 秒 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image21.png))
-
 
 ## <a name="step-3-using-the-scriptmanagerproxy-control"></a>步骤 3：使用 ScriptManagerProxy 控件
 
@@ -177,7 +153,6 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 
 > [!NOTE]
 > ASP.NET 页只能存在一个 ScriptManager 控件。 因此，不能将 ScriptManager 控件添加到内容页中，如果 ScriptManager 控件已在母版页中定义。 ScriptManagerProxy 的唯一目的是提供一种方法，开发人员能够在母版页中定义 ScriptManager，但仍具有按页基础上添加 ScriptManager 自定义项的功能。
-
 
 若要查看操作中的 ScriptManagerProxy 控件，让我们来增强在 UpdatePanel`ShowRandomProduct.aspx`包括使用客户端脚本来暂停或继续计时器控件的按钮。 计时器控件有三个我们可以使用来实现此所需的功能的客户端的方法：
 
@@ -189,32 +164,25 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 
 首先创建一个新的文件夹中名为的网站`Scripts`。 接下来，将新文件添加到名为脚本文件夹`TimerScript.js`的 JScript 文件类型。
 
-
 [![将新的 JavaScript 文件添加到脚本文件夹](master-pages-and-asp-net-ajax-cs/_static/image23.png)](master-pages-and-asp-net-ajax-cs/_static/image22.png)
 
 **图 08**:添加到新的 JavaScript 文件`Scripts`文件夹 ([单击以查看实际尺寸的图像](master-pages-and-asp-net-ajax-cs/_static/image24.png))
-
 
 [![新的 JavaScript 文件已添加到网站](master-pages-and-asp-net-ajax-cs/_static/image26.png)](master-pages-and-asp-net-ajax-cs/_static/image25.png)
 
 **图 09**:新的 JavaScript 文件已添加到网站 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image27.png))
 
-
 接下来，将以下脚本添加到 TimerScript.js 文件：
-
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample8.cs)]
 
 现在，我们需要注册此自定义 JavaScript 文件`ShowRandomProduct.aspx`。 返回到`ShowRandomProduct.aspx`和 ScriptManagerProxy 控件添加到页面; 设置其`ID`到`MyManagerProxy`。 若要注册自定义 JavaScript 文件在设计器中选择 ScriptManagerProxy 控件，然后转到属性窗口。 其中一个属性的标题为脚本。 选择此属性将显示在图 10 所示的 ScriptReference 集合编辑器。 单击添加按钮以包括新的脚本引用，然后输入路径属性中的脚本文件路径： `~/Scripts/TimerScript.js`。
 
-
 [![添加对 ScriptManagerProxy 控件的脚本引用](master-pages-and-asp-net-ajax-cs/_static/image29.png)](master-pages-and-asp-net-ajax-cs/_static/image28.png)
 
 **图 10**:添加对 ScriptManagerProxy 控件的脚本引用 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image30.png))
 
-
 添加脚本引用 ScriptManagerProxy 控件的声明性后更新标记，包括`<Scripts>`与单个集合`ScriptReference`条目，为以下代码片段的标记演示：
-
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample9.aspx)]
 
@@ -222,23 +190,19 @@ ASP.NET AJAX 框架包括在指定的时间; 执行回发的计时器控件在�
 
 现在，我们可以调用`ToggleTimer`中定义的函数`TimerScript.js`中的客户端脚本从`ShowRandomProduct.aspx`页。 添加 UpdatePanel 内的以下 HTML:
 
-
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample10.aspx)]
 
 这将显示一个具有文本"暂停"按钮。 每当它单击时，JavaScript 函数`ToggleTimer`称为对按钮和计时器控件的 id 值的引用传递 (`ProductTimer`)。 请注意语法以获取`id`计时器控件的值。 `<%=ProductTimer.ClientID%>` 发出的值`ProductTimer`计时器控件`ClientID`属性。 在中[*内容页中的控件 ID 命名*](control-id-naming-in-content-pages-cs.md)教程，我们讨论了服务器端之间的差异`ID`值和生成的客户端`id`值，以及如何`ClientID`返回客户端`id`。
 
 图 11 显示了当首次通过浏览器访问此页。 计时器当前正在运行，并更新显示的产品信息每隔 15 秒。 图 12 显示了屏幕后单击暂停按钮。 单击暂停按钮停止计时器并更新到"恢复"按钮的文本。 产品信息将刷新 （并继续每隔 15 秒刷新一次） 后在用户单击恢复。
 
-
 [![单击暂停按钮来停止计时器控件](master-pages-and-asp-net-ajax-cs/_static/image32.png)](master-pages-and-asp-net-ajax-cs/_static/image31.png)
 
 **图 11**:单击暂停按钮来停止计时器控件 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image33.png))
 
-
 [![单击恢复按钮以重新启动计时器](master-pages-and-asp-net-ajax-cs/_static/image35.png)](master-pages-and-asp-net-ajax-cs/_static/image34.png)
 
 **图 12**:单击恢复按钮以重新启动计时器 ([单击此项可查看原尺寸图像](master-pages-and-asp-net-ajax-cs/_static/image36.png))
-
 
 ## <a name="summary"></a>总结
 

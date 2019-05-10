@@ -8,12 +8,12 @@ ms.date: 02/27/2014
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 7ba95f24085c403c669bc5d6df4dee7c87fbd90a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 143ddcb40b576a3129e659b90bfc8321c061a547
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414239"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130239"
 ---
 # <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>模型绑定和 web 窗体中使用查询字符串值以筛选数据
 
@@ -26,7 +26,6 @@ ms.locfileid: "59414239"
 > 本教程中创建的项目为基础[早期](retrieving-data.md)在本系列的部分。
 > 
 > 你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。 可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。
-
 
 ## <a name="what-youll-build"></a>你将生成
 

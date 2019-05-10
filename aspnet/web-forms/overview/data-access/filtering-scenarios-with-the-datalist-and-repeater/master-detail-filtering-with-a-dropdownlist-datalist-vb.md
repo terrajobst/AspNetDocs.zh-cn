@@ -8,12 +8,12 @@ ms.date: 07/18/2007
 ms.assetid: ad0f1014-1eff-465f-bdc6-93058de00e44
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1218cf3463c78e4b3bd3c7ca1c65d21590358f8a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e969768aff8b5760c55e4aa697f4ff54916a4e88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395545"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134433"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用一个 DropDownList 实现母版/详细信息筛选 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395545"
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_33_VB.exe)或[下载 PDF](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/datatutorial33vb1.pdf)
 
 > 在本教程中我们将了解如何使用 Dropdownlist 以显示"主"的记录和显示的"详细信息"DataList 单个网页中显示母版/详细信息报表。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -40,73 +39,57 @@ ms.locfileid: "59395545"
 - `ProductsForCategoryDetails.aspx`
 - `CategoriesAndProducts.aspx`
 
-
 ![创建 DataListRepeaterFiltering 文件夹并添加教程 ASP.NET 页面](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image1.png)
 
 **图 1**:创建`DataListRepeaterFiltering`文件夹并添加教程 ASP.NET 页面
 
-
 接下来，打开`Default.aspx`页上，并将其拖`SectionLevelTutorialListing.ascx`从用户控制`UserControls`文件夹拖到设计图面。 此用户控件，我们在中创建[母版页和站点导航](../introduction/master-pages-and-site-navigation-vb.md)教程中，枚举站点图，并从项目符号列表中的当前部分显示这些教程。
-
 
 [![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image2.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image4.png))
 
-
 为了使项目符号列表显示母版/详细信息教程，我们将创建，我们需要将它们添加到站点地图。 打开`Web.sitemap`文件，并在"显示数据使用 DataList 和 Repeater"站点映射节点标记之后添加以下标记：
 
 [!code-xml[Main](master-detail-filtering-with-a-dropdownlist-datalist-vb/samples/sample1.xml)]
-
 
 ![更新包括新的 ASP.NET 页面的站点图](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image5.png)
 
 **图 3**:更新包括新的 ASP.NET 页面的站点图
 
-
 ## <a name="step-2-displaying-the-categories-in-a-dropdownlist"></a>步骤 2：在 DropDownList 中显示类别
 
 我们的母版/详细信息报表将列出与所选的列表项的产品显示在下拉列表中，类别后面 DataList 中的页。 然后，领先于我们的第一个任务是已在 DropDownList 中显示的类别。 首先打开`FilterByDropDownList.aspx`页中`DataListRepeaterFiltering`文件夹，然后从工具箱拖动到页面的设计器将 DropDownList。 接下来，设置 DropDownList`ID`属性设置为`Categories`。 单击选择数据源链接从 DropDownList 的智能标记并创建名为新 ObjectDataSource `CategoriesDataSource`。
-
 
 [![添加名为 CategoriesDataSource 新 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image6.png)
 
 **图 4**:添加新对象数据源名为`CategoriesDataSource`([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image8.png))
 
-
 配置新对象数据源，以便它将调用`CategoriesBLL`类的`GetCategories()`方法。 配置的 ObjectDataSource 我们仍然需要指定应在 DropDownList 中显示哪些数据源字段和后一个应为每个列表项的值相关联。 具有`CategoryName`字段与显示和`CategoryID`为每个列表项的值。
-
 
 [![作为值的类别名称字段和使用 CategoryID 使 DropDownList 显示](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image9.png)
 
 **图 5**:使 DropDownList 显示`CategoryName`字段并使用`CategoryID`作为值 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image11.png))
 
-
 现在我们有从记录将填充 DropDownList 控件`Categories`表 （全部在大约六秒钟内完成）。 图 6 显示了我们到目前为止的浏览器查看时。
-
 
 [![下拉列表列出了当前类别](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image12.png)
 
 **图 6**:下拉列表列出了当前类别 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image14.png))
 
-
 ## <a name="step-2-adding-the-products-datalist"></a>步骤 2：添加产品 DataList
 
 我们的母版/详细信息报表的最后一步是列出与所选类别关联的产品。 若要实现此目的，向页面添加 DataList 并创建名为新 ObjectDataSource `ProductsByCategoryDataSource`。 具有`ProductsByCategoryDataSource`控件检索其数据从`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 由于此母版/详细信息报表是只读的选择 (None) 选项中的 INSERT、 UPDATE 和 DELETE 的选项卡。
-
 
 [![选择 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image15.png)
 
 **图 7**:选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image17.png))
 
-
 单击下一步后, ObjectDataSource 向导提示我们输入的值的源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
-
 
 [![将类别 id 参数设置为 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image18.png)
 
 **图 8**:设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image20.png))
-
 
 Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`的显示名称和值的每个数据字段的 DataList。 让我们来改进要改为使用 DataList `ItemTemplate` ，它显示只需产品的名称、 类别、 供应商，每个单元和价格和数量`SeparatorTemplate`的注入`<hr>`每个项之间的元素。 我将使用`ItemTemplate`从示例，请参见[使用 DataList 和 Repeater 控件显示数据](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb.md)教程中，但可随时使用查找最引人注目的任何模板标记。
 
@@ -118,16 +101,13 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 
 图 9 和 10 说明了操作中的母版/详细信息报表。
 
-
 [![当首次访问的页面，显示饮料产品](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image21.png)
 
 **图 9**:当首次访问的页面，显示饮料产品 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image23.png))
 
-
 [![选择一种新产品 （生成） 将自动导致回发，更新 DataList](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image24.png)
 
 **图 10**:选择一种新产品 （生成） 将自动导致回发，更新 DataList ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image26.png))
-
 
 ## <a name="adding-a----choose-a-category----list-item"></a>添加"--选择一个类别-"列表项
 
@@ -135,11 +115,9 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 
 若要向 DropDownList 添加新列表项，请转到属性窗口，然后单击中的椭圆`Items`属性。 添加的新列表项`Text`"--选择一个类别-"和`Value` `0`。
 
-
 ![添加](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image27.png)
 
 **图 11**:添加"--选择一个类别-"列表项
-
 
 或者，可以通过将以下标记添加到下拉列表添加列表项：
 
@@ -147,19 +125,15 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 
 此外，我们需要设置 DropDownList 控件`AppendDataBoundItems`到`true`由于如果设置为`false`（默认值），将类别从 ObjectDataSource 绑定到 DropDownList 时这些更改会覆盖任何手动添加列表项。
 
-
 ![AppendDataBoundItems 属性设置为 True](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image28.png)
 
 **图 12**:设置`AppendDataBoundItems`属性设为 True
 
-
 因此我们选择了值`0`对于"--选择一个类别-"列表项都是因为值为系统中不有任何类别`0`，因此任何产品记录时，将返回选定了"--选择一个类别-"的列表项。 若要确认这一点，请花费片刻时间访问通过浏览器页面。 如图 13 所示，当最初查看页上选定了"--选择一个类别-"的列表项并不显示任何产品。
-
 
 [![时](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image29.png)
 
 **图 13**:无产品时选择"--选择一个类别-"列表项时，会显示 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image31.png))
-
 
 如果您而是会显示*所有*的产品时选择"--选择一个类别-"选项，则使用值为`-1`相反。 敏锐的读者都记得中的该重新*母版/详细信息筛选与 DropDownList*教程中，我们更新`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果*`categoryID`* 值`-1`返回记录的所有产品中传递。
 

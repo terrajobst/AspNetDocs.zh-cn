@@ -8,12 +8,12 @@ ms.date: 03/10/2014
 ms.assetid: d7bd001b-6db2-4422-9b78-f3d08b743b00
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
 msc.type: authoredcontent
-ms.openlocfilehash: 7ed2f5da62f4521b42db737100230fac5ea71d67
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7d580b3812c4a09d6bc8d34c46dc82339ba40ee8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385964"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133377"
 ---
 # <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>在 ASP.NET Web Pages (Razor) 站点中创建一致布局
 
@@ -42,7 +42,6 @@ ms.locfileid: "59385964"
 >   
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
-
 
 ## <a name="about-layout-pages"></a>有关布局页
 
@@ -218,6 +217,5 @@ ms.locfileid: "59385964"
 6. 单击**显示列表**按钮和列表会再次显示。
 
 ## <a name="additional-resources"></a>其他资源
-
 
 [为 ASP.NET 网页自定义站点范围的行为](https://go.microsoft.com/fwlink/?LinkId=202906)

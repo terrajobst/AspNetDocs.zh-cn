@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4220327388703b773011921bb206976b04b07e34
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9510eb8094a55346bec2e0dab2a15ee79d211c88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397898"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126516"
 ---
 # <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>排序、 筛选和分页与 ASP.NET MVC 应用程序 (10 的 3) 中的实体框架
 
@@ -26,7 +26,6 @@ ms.locfileid: "59397898"
 > > [!NOTE] 
 > > 
 > > 如果遇到无法解决的问题[下载已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)并尝试重现你的问题。 通过比较您的代码与已完成的代码，通常可以找到问题的解决方案。 一些常见错误以及如何解决这些问题，请参阅[错误和解决方法。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 上一教程中实现一组基本的 CRUD 操作执行的 web 页面`Student`实体。 在本教程将添加排序、 筛选和分页功能**学生**索引页。 同时，还将创建一个执行简单分组的页面。
 
@@ -93,7 +92,6 @@ ms.locfileid: "59397898"
 
 > [!NOTE]
 > 在许多情况下可以对实体框架实体集或作为内存中集合上的扩展方法调用相同的方法。 结果通常都是相同，但在某些情况下可能会不同。 例如，.NET Framework 实现`Contains`方法将空字符串传递给它，而 SQL Server Compact 4.0 的实体框架提供程序返回空字符串零行，则返回所有行。 因此该示例中的代码 (将放`Where`内的语句`if`语句) 可确保对于所有版本的 SQL Server 获得相同的结果。 此外，.NET Framework 实现`Contains`方法默认情况下，执行区分大小写比较，但实体框架 SQL Server 提供程序默认情况下执行不区分大小写的比较。 因此，调用`ToUpper`使测试显式不区分大小写的方法可确保结果不更改时更改代码更高版本以使用存储库，它将返回`IEnumerable`而不是集合`IQueryable`对象。 （在 `IEnumerable` 集合上调用 `Contains` 方法时，将获得 .NET Framework 实现；当在 `IQueryable` 对象上调用它时，将获得数据库提供程序实现。）
-
 
 ### <a name="add-a-search-box-to-the-student-index-view"></a>向“学生索引”视图添加搜索框
 
@@ -378,7 +376,6 @@ Windows Azure SQL 数据库是基于 SQL Server 技术构建的基于云的关�
 
 > [!NOTE]
 > Web 应用不会实现安全性，以便找到 URL 的任何人可以更改的数据。 有关如何保护网站上的说明，请参阅[包含成员资格、 OAuth 和 SQL 数据库的安全 ASP.NET MVC 应用部署到 Windows Azure 网站](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 可以阻止其他人使用该站点，通过 Windows Azure 管理门户或**服务器资源管理器**Visual Studio 可停止站点中。
-
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image35.png)
 

@@ -8,12 +8,12 @@ ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5dfd1305376a62f4987caea242ca0f6aac1018e9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396975"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129637"
 ---
 # <a name="using-oauth-providers-with-mvc-4"></a>通过 MVC 4 使用 OAuth 提供程序
 
@@ -24,7 +24,6 @@ ms.locfileid: "59396975"
 > 若要在 ASP.NET MVC 5 web 应用程序中使用外部凭据，请参阅[创建 ASP.NET MVC 5 应用程序使用 Facebook 和 Google OAuth2 和 OpenID 登录](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 > 
 > 启用这些凭据在您的网站中提供一个明显的优势，因为数以百万计的用户已获得与这些外部提供商的帐户。 这些用户可能更倾向于注册为您的网站，如果它们不需要创建和记住一组新的凭据。 此外，通过这些提供程序之一的用户已登录后，您可以将从提供程序的社交操作整合。
-
 
 ## <a name="what-youll-build"></a>你将生成
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: aa8c0be6e4a758da34fc6eed902e31049d0a9a9c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 14924109fff8db3e537e6bc08b6dc868792ee660
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379724"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119932"
 ---
 # <a name="tutorial-server-broadcast-with-signalr-2"></a>教程：使用 SignalR 2 广播的服务器
 
@@ -39,7 +39,6 @@ ms.locfileid: "59379724"
 
 > [!IMPORTANT]
 > 如果不想要逐步完成构建应用程序的步骤，你可以在新的空的 ASP.NET Web 应用程序项目中安装 SignalR.Sample 包。 如果不执行本教程中的步骤安装 NuGet 包，必须按照中的说明*readme.txt*文件。 若要运行包需要添加 OWIN 启动类的调用`ConfigureSignalR`中已安装的程序包的方法。 如果不添加 OWIN 启动类，将收到错误。 请参阅[安装 StockTicker 示例](#install-the-stockticker-sample)本文的部分。
-
 
 ## <a name="prerequisites"></a>系统必备
 

@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1326d5453f205201af850a30c17f509645e15cb9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 04642dbcd62fe24d4e0fa379b90cbf4122c57066
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422195"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134081"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>从内容页与母版页交互 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59422195"
 [下载代码](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_VB.zip)或[下载 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_VB.pdf)
 
 > 探讨如何调用方法，从内容页中的代码中设置属性的母版页等。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -45,7 +44,6 @@ ms.locfileid: "59422195"
 > [!NOTE]
 > 即使禁用 GridView 的视图状态到在每个回发时其基础数据源重新绑定，它仍不会显示刚添加的记录因为数据绑定到 GridView 前面的页面生命周期比新记录添加到数据库时ase。
 
-
 若要解决此问题，以便刚添加的记录显示在母版页中的 GridView 在回发时我们需要指示 GridView 重新绑定到其数据源*后*新记录已添加到数据库。 这需要的内容和主页面之间的交互，因为用于添加新记录 （和其事件处理程序） 都在内容页，但需要刷新 GridView 接口是在母版页中。
 
 由于刷新从内容页中的事件处理程序的主页面的显示是一个对内容和母版页交互最常见的需求，我们来探讨本主题中更多详细信息。 本教程中下载内容还包括名为的 Microsoft SQL Server 2005 Express Edition 数据库`NORTHWIND.MDF`在网站的`App_Data`文件夹。 Northwind 数据库存储产品、 员工和针对虚构公司，Northwind Traders 的销售信息。
@@ -55,24 +53,19 @@ ms.locfileid: "59422195"
 > [!NOTE]
 > 本教程不会不深入探讨在 ASP.NET 中使用数据的具体情况。 设置主页面以显示数据和插入数据的内容页的步骤是完整的尚未轻松。 显示和插入数据以及使用 SqlDataSource 和 GridView 控件的更深入信息，请在本教程末尾查阅中进一步读数部分资源。
 
-
 ## <a name="step-1-displaying-the-five-most-recently-added-products-in-the-master-page"></a>步骤 1：最近显示的五个母版页中添加产品
 
 打开 Site.master 母版页并添加一个标签和 GridView 控件与`leftContent` `<div>`。 清除的标签`Text`属性，则设置其`EnableViewState`属性设置为`False`，并将其`ID`属性设置为`GridMessage`; 设置 GridView`ID`属性设置为`RecentProducts`。 接下来，从设计器中，展开 GridView 的智能标记，并选择将其绑定到新的数据源。 这将启动数据源配置向导。 因为 Northwind 数据库中`App_Data`文件夹是 Microsoft SQL Server 数据库中，选择通过选择 （见图 1） 创建 SqlDataSource; 名称 SqlDataSource `RecentProductsDataSource`。
-
 
 [![将 GridView 绑定到名为 RecentProductsDataSource SqlDataSource 控件](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
 
 **图 01**:将 GridView 绑定到 SqlDataSource 控件命名为`RecentProductsDataSource`([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image3.png))
 
-
 下一步会要求我们指定要连接到内容数据库。 选择`NORTHWIND.MDF`数据库文件从下拉列表中，单击下一步。 由于这是首次我们使用此数据库，该向导将提供用于存储连接字符串中的`Web.config`。 将其存储连接字符串使用名称`NorthwindConnectionString`。
-
 
 [![连接到 Northwind 数据库](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
 
 **图 02**:连接到 Northwind 数据库 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image6.png))
-
 
 配置数据源向导提供了通过其中我们可以指定用于检索数据的查询的两个方法：
 
@@ -81,19 +74,15 @@ ms.locfileid: "59422195"
 
 因为我们想要返回 5 个最新添加的产品，我们需要指定自定义 SQL 语句。 使用以下`SELECT`查询：
 
-
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample1.sql)]
 
 `TOP 5`关键字的查询返回只有前五个记录。 `Products`表的主键`ProductID`，是`IDENTITY`列中，从而确保我们添加到表中每个新产品，将具有更大的值比以前的条目。 因此，对通过结果进行排序`ProductID`以降序返回从开始最新创建的产品。
-
 
 [![返回最近添加的五种产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
 
 **图 03**:返回五种最最近添加的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image9.png))
 
-
 完成向导后，Visual Studio 将生成的 GridView，其中显示两个 BoundFields`ProductName`和`UnitPrice`从数据库返回的字段。 此时主页面的声明性标记应包括标记类似于以下内容：
-
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample2.aspx)]
 
@@ -101,30 +90,24 @@ ms.locfileid: "59422195"
 
 与此 GridView 创建和配置，其 SqlDataSource 控件访问网站，通过浏览器。 如图 4 所示，你将看到其中列出了五个最近左下角中的一个网格添加产品。
 
-
 [![GridView 显示五个最近添加的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
 
 **图 04**:GridView 显示五种最最近添加的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image12.png))
 
-
 > [!NOTE]
 > 随意清理的 GridView 的外观。 某些建议包括格式设置在显示`UnitPrice`值作为货币和使用背景颜色和字体以改善该网格的外观。
-
 
 ## <a name="step-2-creating-a-content-page-to-add-new-products"></a>步骤 2：创建要添加的新产品的内容页面
 
 我们的下一个任务是创建用户可以从其添加到新产品的内容页面`Products`表。 添加到新的内容页`Admin`名为的文件夹`AddProduct.aspx`，确保将将其绑定到`Site.master`母版页。 此页添加到网站后，图 5 显示了在解决方案资源管理器。
 
-
 [![向管理员文件夹添加新的 ASP.NET 页面](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
 
 **图 05**:添加到新的 ASP.NET 页`Admin`文件夹 ([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image15.png))
 
-
 回想一下，在[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教程中，我们创建一个名为的自定义基本页类`BasePage`如果它已生成了页面的标题未显式设置。 转到`AddProduct.aspx`页面的代码隐藏类，并将其派生`BasePage`(而不是从`System.Web.UI.Page`)。
 
 最后，更新`Web.sitemap`文件以便包括本课程中的一个条目。 添加以下标记下方`<siteMapNode>`控件 ID 命名问题课程：
-
 
 [!code-xml[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample3.xml)]
 
@@ -132,11 +115,9 @@ ms.locfileid: "59422195"
 
 返回到`AddProduct.aspx`。 中的内容控件`MainContent`ContentPlaceHolder，添加的 DetailsView 控件并将其命名`NewProduct`。 绑定到名为的新 SqlDataSource 控件的 DetailsView `NewProductDataSource`。 例如，使其使用 Northwind 数据库，则使用在步骤 1 中 SqlDataSource，配置向导和选择来指定自定义 SQL 语句。 由于 DetailsView 将用于将项添加到数据库，我们需要同时指定`SELECT`语句和一个`INSERT`语句。 使用以下`SELECT`查询：
 
-
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample4.sql)]
 
 然后，从插入选项卡，添加以下`INSERT`语句：
-
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample5.sql)]
 
@@ -144,17 +125,14 @@ ms.locfileid: "59422195"
 
 就这么简单！ 让我们来测试此页。 请访问`AddProduct.aspx`通过浏览器中，输入名称和价格 （请参见图 6）。
 
-
 [![向数据库添加一个新的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
 
 **图 06**:向数据库添加一个新的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image18.png))
-
 
 键入后的名称和新产品的价格中，单击插入按钮。 这会导致窗体回发。 在回发时，SqlDataSource 控件的`INSERT`执行语句; 其两个参数都填入 DetailsView 的两个 TextBox 控件中的用户输入值。 遗憾的是，没有插入发生任何可视反馈。 很高兴有消息显示，确认已添加新记录。 我将此当作练习留给读者。 此外，从 DetailsView 添加一条新记录后在母版页中的 GridView 仍显示相同的五个记录作为之前;它不包括刚添加的记录。 我们将介绍如何解决此问题在即将发布的步骤。
 
 > [!NOTE]
 > 除了添加某种形式的可视反馈，已成功插入，我建议您也更新 DetailsView 插入接口，以包括验证。 目前，没有任何验证。 如果用户输入的值无效`UnitPrice`字段，如"过高，"时，系统尝试将该字符串转换成十进制数字，将在回发时引发异常。 有关自定义插入的详细信息的接口，请参阅[*自定义数据修改界面*教程](https://asp.net/learn/data-access/tutorial-20-vb.aspx)从我[使用数据教程系列](../../data-access/index.md).
-
 
 ## <a name="step-3-creating-public-properties-and-methods-in-the-master-page"></a>步骤 3：在母版页中创建的公共属性和方法
 
@@ -162,11 +140,9 @@ ms.locfileid: "59422195"
 
 因为它不能直接从内容页访问的母版页中的受保护的成员变量作为实现标签控件。 我们需要在公开 Web 控件或充当其属性之一可以进行的代理的主页面中创建的公共属性才能使用母版页从内容页 （或，就此而言，母版页中的任何 Web 控件） 中的标签 访问。 将以下语法添加到主页面的代码隐藏类公开的标签`Text`属性：
 
-
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample6.vb)]
 
 当一条新记录添加到`Products`从内容页表`RecentProducts`母版页中的 GridView 需要重新绑定到其基础数据源。 若要重新绑定的 GridView 调用其`DataBind`方法。 由于在母版页中的 GridView 不是以编程方式访问内容的页面，我们需要创建一个公共方法，主页面中，调用时，重新绑定到 GridView 数据。 将以下方法添加到主页面的代码隐藏类：
-
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample7.vb)]
 
@@ -174,7 +150,6 @@ ms.locfileid: "59422195"
 
 > [!NOTE]
 > 别忘了将母版页的属性和方法作为标记`Public`。 如果您不显式表示这些属性和方法作为`Public`，它们将无法从内容页访问。
-
 
 ## <a name="step-4-calling-the-master-pages-public-members-from-a-content-page"></a>步骤 4：从内容页调用母版页的公共成员
 
@@ -193,20 +168,16 @@ ms.locfileid: "59422195"
 
 `Master`属性返回类型的对象[ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (也位于`System.Web.UI`命名空间) 这是所有的主页面中从其派生的基类型。 因此，若要使用公共属性或方法定义在我们网站的主页面，我们必须强制转换`MasterPage`返回对象`Master`为适当的类型的属性。 由于我们命名我们主控页文件，因此`Site.master`，代码隐藏类名为`Site`。 因此，下面的代码的强制转换`Page.Master`指向的实例的属性`Site`类。
 
-
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample8.vb)]
 
 现在，我们已强制转换后的松散类型`Page.Master`属性，我们可以为站点类型引用的属性和特定于站点的方法。 如图 7 所示，公共属性`GridMessageText`IntelliSense 下拉列表中显示。
-
 
 [![IntelliSense 显示了我们的主页面的公共属性和方法](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
 
 **图 07**:IntelliSense 显示了我们的主页面的公共属性和方法 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image21.png))
 
-
 > [!NOTE]
 > 如果您在主页面文件命名为`MasterPage.master`母版页的代码隐藏类名为`MasterPage`。 这可能导致不明确的代码时的类型强制转换`System.Web.UI.MasterPage`到你`MasterPage`类。 简单地说，您需要完全限定的类型转换为，使用网站项目模型时，可以有点棘手。 我的建议是要确保，创建主页面时将其命名名称不是`MasterPage.master`或甚至更好地创建主页面的强类型引用。
-
 
 ### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>创建具有强类型化引用`@MasterType`指令
 
@@ -216,7 +187,6 @@ ms.locfileid: "59422195"
 
 使用[`@MasterType`指令](https://msdn.microsoft.com/library/ms228274.aspx)以通知 ASP.NET 引擎的内容页面的母版页类型。 `@MasterType`指令可以接受的母版页的类型名称或其文件路径。 若要指定的`AddProduct.aspx`页上使用`Site.master`作为其主页面的顶部添加以下指令`AddProduct.aspx`:
 
-
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample9.aspx)]
 
 此指令指示要添加到名为的属性通过母版页的强类型化引用的 ASP.NET 引擎`Master`。 与`@MasterType`指令中的位置，我们可以调用`Site.master`主页面的公共属性和方法直接通过`Master`而无需任何强制转换的属性。
@@ -224,11 +194,9 @@ ms.locfileid: "59422195"
 > [!NOTE]
 > 如果省略`@MasterType`指令，语法`Page.Master`和`Master`返回相同的操作： 将松散类型化对象传递给页面的母版页。 如果包括`@MasterType`指令然后`Master`返回对指定的母版页的强类型引用。 `Page.Master`但是，仍然会返回一个松散类型化的引用。 如原因更全面地了解这种情况以及如何`Master`构造属性时`@MasterType`指令是包含，请参阅[K.Scott Allen](http://odetocode.com/blogs/scott/default.aspx)的博客文章[`@MasterType`在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
 
-
 ### <a name="updating-the-master-page-after-adding-a-new-product"></a>添加一个新的产品后更新母版页
 
 既然我们知道如何调用主页面的公共属性和内容页面中的方法，我们就准备好更新`AddProduct.aspx`页，以便添加一个新的产品后刷新主页面。 我们的第 4 步开始处创建 DetailsView 控件的事件处理程序`ItemInserting`事件，新产品添加到数据库后立即执行。 将以下代码添加到该事件处理程序：
-
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample10.vb)]
 
@@ -236,11 +204,9 @@ ms.locfileid: "59422195"
 
 图 8 显示了`AddProduct.aspx`立即后一种新产品-Scott 的 Soda 的页已添加到数据库。 请注意，刚添加的产品名称将其记录在母版页的标签和 GridView 刷新以包括产品和它的价格。
 
-
 [![母版页的标签和 GridView 显示刚添加产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
 
 **图 08**:母版页的标签和 GridView 显示 Just-Added 产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png))
-
 
 ## <a name="summary"></a>总结
 

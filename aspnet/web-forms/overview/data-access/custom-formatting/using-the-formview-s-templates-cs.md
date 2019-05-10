@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: d3f062af-88cf-426d-af44-e41f32c41672
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d275e3b154ca3397294d6cd0924cb6a50bbcef9a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 59687ffb4d3319b55cc980b72af1084ca0288793
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395532"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133918"
 ---
 # <a name="using-the-formviews-templates-c"></a>使用 FormView 的模板 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395532"
 [下载示例应用程序](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_14_CS.exe)或[下载 PDF](using-the-formview-s-templates-cs/_static/datatutorial14cs1.pdf)
 
 > 与不同的 DetailsView，不由字段组成 FormView。 相反，使用模板呈现 FormView。 在本教程中我们将介绍使用 FormView 控件向呈现以显示不太严格的数据。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -39,21 +38,17 @@ ms.locfileid: "59395532"
 
 在本教程中我们将介绍使用 FormView 控件向呈现以显示不太严格的产品。 而不是字段的名称、 类别、 供应商和 so on，FormView`ItemTemplate`将显示使用的标头元素组合这些值和一个`<table>`（参见图 1）。
 
-
 [![在 DetailsView 中看到类似于网格的布局的细分的 FormView](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
 
 **图 1**:在 DetailsView 中带 Grid-Like 布局看到中断 FormView ([单击此项可查看原尺寸图像](using-the-formview-s-templates-cs/_static/image3.png))
-
 
 ## <a name="step-1-binding-the-data-to-the-formview"></a>步骤 1：将数据绑定到 FormView
 
 打开`FormView.aspx`页上，将从工具箱拖到设计器的 FormView。 当首次添加 FormView 它将显示为灰色的框，指示我们的`ItemTemplate`需要。
 
-
 [![不能在设计器中呈现 FormView，直到提供 ItemTemplate](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
 
 **图 2**:FormView 无法在设计器直到呈现`ItemTemplate`提供 ([单击以查看实际尺寸的图像](using-the-formview-s-templates-cs/_static/image6.png))
-
 
 `ItemTemplate`可以 （通过声明性语法） 手动创建也可以是自动创建通过将 FormView 绑定到数据源控件通过设计器。 此自动创建`ItemTemplate`包含的列表的名称的每个字段和一个标签控件的 HTML`Text`属性绑定到字段的值。 此方法还自动-创建`InsertItemTemplate`和`EditItemTemplate`，这两种都填入输入控件为每个返回的数据源控件的数据字段。
 
@@ -62,7 +57,6 @@ ms.locfileid: "59395532"
 如果您而是将生成`ItemTemplate`手动，可以添加并配置 ObjectDataSource 通过从工具箱拖到设计器拖动。 但是，不设置 FormView 的数据源从设计器。 相反，请转到源视图，并手动设置 FormView`DataSourceID`属性设置为`ID`ObjectDataSource 的值。 接下来，手动添加`ItemTemplate`。
 
 无论使用哪种方法，您决定要充分，此时 FormView 的声明性标记应看起来：
-
 
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample1.aspx)]
 
@@ -76,7 +70,6 @@ ms.locfileid: "59395532"
 
 以下标记显示 FormView 声明性标记后的`ItemTemplate`的结构已完成：
 
-
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample2.aspx)]
 
 请注意，数据绑定语法中- `<%# Eval("ProductName") %>`，对于示例可以直接注入到模板的输出。 也就是说，它需要将分配给标签控件的`Text`属性。 例如，我们有`ProductName`中显示值`<h3>`元素使用`<h3><%# Eval("ProductName") %></h3>`，这对于产品 Chai 将呈现为`<h3>Chai</h3>`。
@@ -87,16 +80,13 @@ ms.locfileid: "59395532"
 
 使用`ItemTemplate`完成后，产品信息是更为流畅的方式显示。 与 FormView (图 4) 在本教程中生成的输出进行比较的最后一个教程 (图 3) 的 DetailsView 输出。
 
-
 [![刚性 DetailsView 输出](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
 
 **图 3**:刚性 DetailsView 输出 ([单击此项可查看原尺寸图像](using-the-formview-s-templates-cs/_static/image9.png))
 
-
 [![流畅的 FormView 输出](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
 
 **图 4**:流体 FormView 输出 ([单击此项可查看原尺寸图像](using-the-formview-s-templates-cs/_static/image12.png))
-
 
 ## <a name="summary"></a>总结
 

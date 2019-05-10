@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 33af23f1-4016-4740-8fb2-37d1773452cd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 455d62d97808862f70692c46ae223f47270266f9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6e0f13140fcafd666a89c27acb829e4e762eff29
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387615"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127447"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>仅允许在文本框中使用特定字符 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59387615"
 [下载代码](http://download.microsoft.com/download/4/c/2/4c2def7a-0d23-4055-91f9-1f18504167d7/FilteredTextBox0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/filteredtextbox0VB.pdf)
 
 > ASP.NET 验证控件可以确保用户输入中允许的仅某些字符。 但是这仍然不会阻止用户键入无效的字符，并尝试提交窗体。
-
 
 ## <a name="overview"></a>概述
 
@@ -54,7 +53,6 @@ ASP.NET AJAX 控件工具包包含`FilteredTextBox`控件扩展了文本框。 �
 [!code-aspx[Main](allowing-only-certain-characters-in-a-text-box-vb/samples/sample3.aspx)]
 
 运行页面，然后重试输入一个字母，如果启用 JavaScript，它不起作用;但是，数字显示在页上。 但是请注意，保护`FilteredTextBox`提供不是高防护：如果启用 JavaScript，则任何可能输入数据在文本框中，因此您必须使用其他验证方法，即 ASP。NET 的验证控件。
-
 
 [![可能输入仅数字](allowing-only-certain-characters-in-a-text-box-vb/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-vb/_static/image1.png)
 

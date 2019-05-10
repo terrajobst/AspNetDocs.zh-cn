@@ -8,12 +8,12 @@ ms.date: 06/10/2008
 ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a218dffb3d23ca95e9864fb7b272bc6a004386c4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2679429a6c32e53705905cc234ec92314c7de124
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421194"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132041"
 ---
 # <a name="urls-in-master-pages-c"></a>母版页中的 URL (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421194"
 [下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_CS.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_CS.pdf)
 
 > 解决了主页面中的 Url 可能会由于是在不同的相对目录比内容页的主控页文件中中断。 查看基类重定位通过 Url ~ 的声明性语法和以编程方式使用 ResolveUrl 和 ResolveClientUrl 中。 （还请查看
-
 
 ## <a name="introduction"></a>介绍
 
@@ -36,13 +35,11 @@ ms.locfileid: "59421194"
 
 例如，我们的网站具有`~/Images/`单个图像文件，具有文件夹`PoweredByASPNET.gif`。 主控页文件`Site.master`已`<img>`中的元素`footerContent`区域使用以下标记：
 
-
 [!code-html[Main](urls-in-master-pages-cs/samples/sample1.html)]
 
 `src`属性中的值`<img>`元素是相对 URL，因为它不会启动与`/`或`http://`。 简单地说，`src`属性值会告诉浏览器中看起来都`Images`为名为的文件的子文件夹`PoweredByASPNET.gif`。
 
 当来访的内容页面，上面的标记是直接发送到浏览器。 请花费片刻时间访问`About.aspx`和查看发送到浏览器的 HTML 源代码。 您会发现在母版页中完全相同的标记已发送到浏览器。
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample2.html)]
 
@@ -51,17 +48,13 @@ ms.locfileid: "59421194"
 > [!NOTE]
 > 在中[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教程中，我们创建一个名为的自定义基本页类`BasePage`的自动设置内容页面的标题 (如果它没有显式分配）。 别忘了具有新创建的页面的代码隐藏类派生自`BasePage`，以便它可以利用此功能。
 
-
 创建此内容页后，在解决方案资源管理器应类似于图 1。
-
 
 ![一个新文件夹和 ASP.NET 网页添加到项目](urls-in-master-pages-cs/_static/image1.png)
 
 **图 01**:一个新文件夹和 ASP.NET 网页添加到项目
 
-
 接下来，更新`Web.sitemap`文件以包括新`<siteMapNode>`本课程中的条目。 下面的 XML 演示的完整`Web.sitemap`标记，其中现在包括添加第三个`<siteMapNode>`元素。
-
 
 [!code-xml[Main](urls-in-master-pages-cs/samples/sample3.xml)]
 
@@ -69,16 +62,13 @@ ms.locfileid: "59421194"
 
 `~/Admin/Default.aspx`相同的 HTML 发送内容页`footerContent`区域，如已`About.aspx`页：
 
-
 [!code-html[Main](urls-in-master-pages-cs/samples/sample4.html)]
 
 因为`<img>`元素的`src`属性是相对 URL，浏览器会尝试查找`Images`web 页面的文件夹位置相对应的文件夹。 换而言之，在浏览器正在寻找的图像文件`Admin/Images/PoweredByASPNET.gif`。
 
-
 [![找不到 PoweredByASPNET.gif 图像文件](urls-in-master-pages-cs/_static/image3.png)](urls-in-master-pages-cs/_static/image2.png)
 
 **图 02**:`PoweredByASPNET.gif`图像找不到文件 ([单击以查看实际尺寸的图像](urls-in-master-pages-cs/_static/image4.png))
-
 
 ### <a name="replacing-relative-urls-with-absolute-urls"></a>相对 Url 替换为绝对 Url
 
@@ -91,11 +81,9 @@ ms.locfileid: "59421194"
 
 请花费片刻时间来更新`<img>`元素的`src`属性使用一个如上所示的窗体的绝对 url，然后访问`~/Admin/Default.aspx`通过浏览器的页。 这一次在浏览器将正确地查找并显示`PoweredByASPNET.gif`图像文件 （请参见图 3）。
 
-
 [![PoweredByASPNET.gif 映像是现在显示](urls-in-master-pages-cs/_static/image6.png)](urls-in-master-pages-cs/_static/image5.png)
 
 **图 03**:`PoweredByASPNET.gif`映像是现在显示 ([单击以查看实际尺寸的图像](urls-in-master-pages-cs/_static/image7.png))
-
 
 中的绝对 URL 进行硬编码的工作原理，尽管它紧密到网站的服务器和文件夹位置，这可能会更改将在 HTML。 使用窗体的绝对 URL`http://localhost:3908/...`脆弱因为前面的端口号`localhost`则会自动选择每次启动 Visual Studio 的内置 ASP.NET Development Web Server。 同样，`http://localhost`一部分在本地测试时才有效。 后的代码部署到生产服务器中，URL 基将更改为其他事情，请如`http://www.yourserver.com`。 在窗体中的绝对 URL`/ASPNET_MasterPages_Tutorial_04_CS/...`还受到相同受到攻击，因为此应用程序路径通常与开发和生产服务器之间有差别。
 
@@ -110,7 +98,6 @@ ms.locfileid: "59421194"
 > [!NOTE]
 > 因为所有 ASP.NET 服务器控件都派生自`Control`类，所有服务器控件都有权访问`ResolveClientUrl`方法。 甚至`Page`类派生自`Control`类，这意味着您可以使用此方法直接从 ASP.NET 页的代码隐藏类。
 
-
 ### <a name="usingin-the-declarative-markup"></a>使用`~`声明性标记中
 
 多个 ASP.NET Web 控件包含与 URL 相关的属性： 超链接控件已`NavigateUrl`属性; 图像控件具有`ImageUrl`属性; 依此类推。 这些控件呈现时，传递到其 URL 相关的属性值`ResolveClientUrl`。 因此，如果这些属性包含`~`若要指示 web 应用程序的根目录，URL 将修改为有效的相对 URL。
@@ -119,29 +106,24 @@ ms.locfileid: "59421194"
 
 若要修复中的图像标记`Site.master`，替换现有`<img>`与 ASP.NET 图像 Web 控件的元素。 设置图像 Web 控件的`ID`到`PoweredByImage`，将其`ImageUrl`属性设置为`~/Images/PoweredByASPNET.gif`，并将其`AlternateText`属性设置为"提供支持的 asp.net ！"
 
-
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample5.aspx)]
 
 对母版页进行此更改之后, 重新访问`~/Admin/Default.aspx`页。 这一次`PoweredByASPNET.gif`在页中看到的图像文件 （请参见图 3）。 当映像 Web 控件是呈现它使用`ResolveClientUrl`方法来解析其`ImageUrl`属性值。 在中`~/Admin/Default.aspx``ImageUrl`作为 HTML 源显示的以下代码片段转换为适当的相对 URL:
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample6.html)]
 
 > [!NOTE]
 > 正在使用中基于 URL 的 Web 控件的属性，除了`~`调用时还可以使用`Response.Redirect`和`Server.MapPath`方法，等等。 此外，`ResolveClientUrl`如果需要可以直接从 ASP.NET 或母版页的声明性标记，调用方法; 请参阅[Fritz Onion](https://www.pluralsight.com/blogs/fritz/)的博客文章[Using`ResolveClientUrl`标记中](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx)。
 
-
 ## <a name="fixing-the-master-pages-remaining-relative-urls"></a>修复主页面的剩余的相对 Url
 
 除了`<img>`中的元素`footerContent`我们只需修复，母版页包含需要我们关注的一个更相对 URL。 `topContent`区域包括链接"主页面教程，"用于指向`Default.aspx`。
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample7.html)]
 
 因为此 URL 是相对路径，它将发送到用户`Default.aspx`他们访问的内容页的文件夹中的页。 能够始终指向此链接`Default.aspx`需要替换的根文件夹中`<a>`元素与超链接 Web 控件，以便我们可以使用`~`表示法。
 
 删除`<a>`元素标记，并在其原位置添加超链接控件。 设置超链接的`ID`到`lnkHome`，将其`NavigateUrl`属性设置为`~/Default.aspx`，并将其`Text`属性设置为"主页面教程"。
-
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample8.aspx)]
 
@@ -151,13 +133,11 @@ ms.locfileid: "59421194"
 
 在中[*创建站点范围内布局使用 Master Pages* ](creating-a-site-wide-layout-using-master-pages-cs.md)教程，我们添加了`<link>`到`Styles.css`文件中`<head>`区域：
 
-
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample9.aspx)]
 
 虽然`<link>`元素的`href`属性是相对的它将自动转换为在运行时的相应路径。 如中所述[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教程中，`<head>`区域是实际服务器端控件，从而使其能够修改呈现时其内部控件的内容。
 
 若要验证这一点，重新访问`~/Admin/Default.aspx`页面，查看发送到浏览器的 HTML 源代码。 如下面的代码段所示，`<link>`元素的`href`属性自动修改为适当的相对 URL， `../Styles.css`。
-
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample10.html)]
 

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 3ba7f2d186e6f0837a32f69f964cec19fe625953
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 35b115d6b4f84084e78e429bbb4842670e57bba4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391476"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132262"
 ---
 # <a name="build-restful-apis-with-aspnet-web-api"></a>生成使用 ASP.NET Web API 的 RESTful Api
 
@@ -33,7 +33,6 @@ ms.locfileid: "59391476"
 > 
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>目标
@@ -71,13 +70,12 @@ ms.locfileid: "59391476"
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**60 分钟**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Create_a_Read-Only_Web_API"></a>
-### <a name="exercise-1-create-a-read-only-web-api"></a>练习 1:创建只读的 Web API
+### <a name="exercise-1-create-a-read-only-web-api"></a>练习 1：创建只读的 Web API
 
 在此练习中，将为联系人管理器实现只读的 GET 方法。
 
@@ -272,7 +270,7 @@ ms.locfileid: "59391476"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Create_a_ReadWrite_Web_API"></a>
-### <a name="exercise-2-create-a-readwrite-web-api"></a>练习 2:创建读/写 Web API
+### <a name="exercise-2-create-a-readwrite-web-api"></a>练习 2：创建读/写 Web API
 
 在此练习中，将实现 POST 和 PUT 方法的联系人管理器中，若要启用与数据编辑功能。
 
@@ -420,7 +418,6 @@ ms.locfileid: "59391476"
 
 > [!NOTE]
 > 此外，可以部署此应用程序对 Azure 以下[附录 c:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixC)。
-
 
 ---
 

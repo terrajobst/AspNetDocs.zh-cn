@@ -8,15 +8,14 @@ ms.date: 01/15/2019
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 9e6b0b3b86839efa393659531d8b74770226f383
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5bdf20549fccab5d644e35fdf4ce351540c8620d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401460"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119885"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解和处理 SignalR 中的连接生存期事件
-
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -148,7 +147,6 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 >
 > **重要说明**：此处所述的事件的顺序不能保证。 SignalR 使每次尝试此方案中，根据不可预测的方式引发连接生存期事件，但有许多不同的网络事件以及基础通信框架，如传输 Api 处理它们的各种方法。 例如，`Reconnected`可能无法引发事件，当客户端重新连接，或`OnConnected`当尝试建立的连接不成功时，可能会运行在服务器上的处理程序。 本主题介绍的通常会生成某些典型的情况下的影响。
 
-
 <a id="clientdisconnect"></a>
 
 ### <a name="client-disconnection-scenarios"></a>客户端断开连接方案
@@ -247,7 +245,6 @@ SignalR 2 版本不具有用于客户端断开连接的内置服务器 API。 �
 
 > [!WARNING]
 > 安全性-既不此方法对于客户端断开连接，也不建议内置 API 将会解决受到攻击的客户端运行的恶意代码，因为客户端无法重新连接或受到攻击的代码可能会删除该方案`stopClient`方法或更改它的作用。 实现有状态的拒绝服务 (DOS) 保护的合适位置并不在框架或服务器层，而是中前端基础结构。
-
 
 <a id="detectingreasonfordisconnection"></a>
 ## <a name="detecting-the-reason-for-a-disconnection"></a>检测断开连接的原因

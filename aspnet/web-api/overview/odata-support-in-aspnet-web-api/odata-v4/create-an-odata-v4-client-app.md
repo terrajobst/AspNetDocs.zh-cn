@@ -8,12 +8,12 @@ ms.date: 06/26/2014
 ms.assetid: 47202362-3808-4add-9a69-c9d1f91d5e4e
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: 14d4b01a2ea8a4582294053416b626e7f1801b50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a0016cf2cc7bffe6268664395ccb38e140090310
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59411509"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126124"
 ---
 # <a name="create-an-odata-v4-client-app-c"></a>创建 OData v4 客户端应用 (C#)
 
@@ -27,7 +27,6 @@ ms.locfileid: "59411509"
 
 > [!NOTE]
 > 您还可以向包含 OData 服务的同一 Visual Studio 解决方案添加控制台应用程序。
-
 
 ## <a name="install-the-odata-client-code-generator"></a>安装的 OData 客户端代码生成器
 
@@ -43,7 +42,6 @@ ms.locfileid: "59411509"
 
 > [!NOTE]
 > 如果将这两个项目放置在同一解决方案中，请确保运行 ProductService 项目而不进行调试。 在下一步中，将需要使该服务运行时修改控制台应用程序项目。
-
 
 ## <a name="generate-the-service-proxy"></a>生成服务代理
 

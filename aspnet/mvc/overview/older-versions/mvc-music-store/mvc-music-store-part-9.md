@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: c7151351b087439f17457b254cd9e373af21cae3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 040bc0ccef889fb9a7c3d9b5ce88c75b7b754248
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380894"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129628"
 ---
 # <a name="part-9-registration-and-checkout"></a>第 9 部分：注册和结帐
 
@@ -24,7 +24,6 @@ ms.locfileid: "59380894"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 9 部分介绍如何注册和签出。
-
 
 在本部分中，我们将创建 CheckoutController 会收集购物者的地址和付款信息。 我们将要求用户注册我们的站点之前签出，因此，此控制器将需要授权。
 
@@ -158,7 +157,6 @@ CheckoutController 将具有以下控制器操作：
 由于这是一般性错误页，内容是非常简单。 我们将包括一条消息和链接以导航到历史记录中前一页，如果用户想要重试这些文件的操作。
 
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample13.cshtml)]
-
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-8.md)

@@ -8,12 +8,12 @@ ms.date: 06/10/2008
 ms.assetid: 1c7d0916-0988-4b4f-9a03-935e4b5af6af
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a398494df0ed2bf749620b717350b21669a1ae5c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6096e7b8b11f1c014d93fc9a1f857cd02c8958b0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395642"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134638"
 ---
 # <a name="control-id-naming-in-content-pages-c"></a>内容页中的控件 ID 命名 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395642"
 [下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_05_CS.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_05_CS.pdf)
 
 > 说明了如何 ContentPlaceHolder 控件作为命名容器的因此可以以编程方式使用困难 （通过 FindControl) 控件。 探讨此问题和解决方法。 此外介绍了如何以编程方式访问生成的 ClientID 值。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -33,7 +32,6 @@ ms.locfileid: "59395642"
 > [!NOTE]
 > [ `INamingContainer`接口](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx)用于指示特定的 ASP.NET 服务器控件应充当命名容器。 `INamingContainer`接口不会不拼写出任何服务器控件必须实现的方法; 而是使用作为的标记。 在生成呈现的标记，如果某个控件实现此接口然后 ASP.NET 引擎自动添加前缀及其`ID`其子的值呈现`id`属性值。 在步骤 2 中的更详细地介绍此过程。
 
-
 命名容器不只更改呈现`id`属性值，但也会影响如何控件可能以编程方式从引用 ASP.NET 页面的代码隐藏类。 `FindControl("controlID")`方法通常用于以编程方式引用的 Web 控件。 但是，`FindControl`不入侵通过命名容器。 因此，不能直接使用`Page.FindControl`方法来引用 GridView 或其他命名容器中的控件。
 
 你可能已猜测到的如母版页和 Contentplaceholder 同时实现为容器命名。 在本教程中我们介绍如何 master pages 影响 HTML 元素`id`值和方法来以编程方式引用 Web 控件中内容页使用`FindControl`。
@@ -42,34 +40,27 @@ ms.locfileid: "59395642"
 
 为了演示在本教程中讨论的概念，让我们将一个新的 ASP.NET 页面添加到我们的网站。 创建一个名为的新内容页`IDIssues.aspx`在根文件夹中，将其绑定到`Site.master`母版页。
 
-
 ![将内容页 IDIssues.aspx 添加到根文件夹](control-id-naming-in-content-pages-cs/_static/image1.png)
 
 **图 01**:添加内容页`IDIssues.aspx`的根文件夹
 
-
 Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容控件。 如中所述[*多个 Contentplaceholder 和默认内容*](multiple-contentplaceholders-and-default-content-cs.md)教程中，如果内容控件不存在主页面的默认 ContentPlaceHolder 内容，将改为发出。 因为`QuickLoginUI`并`LeftColumnContent`Contentplaceholder 包含此页的合适的默认标记、 继续和删除其相应的内容控件从`IDIssues.aspx`。 此时，内容页的声明性标记应如下所示：
-
 
 [!code-aspx[Main](control-id-naming-in-content-pages-cs/samples/sample1.aspx)]
 
 在中[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教程中，我们创建一个自定义基本页类 (`BasePage`)，它是否会自动配置页面的标题未显式设置。 有关`IDIssues.aspx`页上使用此功能，该页面的代码隐藏类必须派生自`BasePage`类 (而不是`System.Web.UI.Page`)。 修改代码隐藏类的定义，使它看起来如下所示：
 
-
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample2.cs)]
 
 最后，更新`Web.sitemap`文件以便包括本课程中新建一个条目。 添加`<siteMapNode>`元素，并设置其`title`并`url`属性为"控件 ID 命名问题"和`~/IDIssues.aspx`分别。 进行此添加后你`Web.sitemap`文件的标记应如下所示：
-
 
 [!code-xml[Main](control-id-naming-in-content-pages-cs/samples/sample3.xml)]
 
 如图 2 所示，在新的站点映射条目`Web.sitemap`立即反映在左侧列中的课程部分。
 
-
 ![课程部分现在包括一个指向&quot;控件 ID 命名问题&quot;](control-id-naming-in-content-pages-cs/_static/image2.png)
 
 **图 02**:课程部分现在包含"控件 ID 命名问题"的链接
-
 
 ## <a name="step-2-examining-the-renderedidchanges"></a>步骤 2：检查呈现`ID`更改
 
@@ -77,19 +68,15 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 
 此时内容控件的声明性标记应类似于下面：
 
-
 [!code-aspx[Main](control-id-naming-in-content-pages-cs/samples/sample4.aspx)]
 
 图 3 显示了通过 Visual Studio 设计器进行查看时页。
-
 
 [![此页包含三个 Web 控件： 文本框、 按钮和标签](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
 
 **图 03**:页包含三个 Web 控件： 文本框、 按钮和标签 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-cs/_static/image5.png))
 
-
 访问通过浏览器页面，然后查看 HTML 源。 以下标记显示，作为`id`文本框、 按钮和标签 Web 控件的 HTML 元素的值的多种`ID`Web 控件的值和`ID`页中的命名容器的值。
-
 
 [!code-html[Main](control-id-naming-in-content-pages-cs/samples/sample5.html)]
 
@@ -97,18 +84,14 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 
 图 4 说明了此行为。 若要确定呈现`id`的`Age`文本框中，使用启动`ID`值的文本框控件， `Age`。 接下来，努力完善控件层次结构。 在每个命名容器 （桃色颜色与这些节点），前缀呈现当前`id`使用的命名容器`id`。
 
-
 ![Rendered id 属性是基于上 ID 值的命名容器](control-id-naming-in-content-pages-cs/_static/image6.png)
 
 **图 04**:Rendered`id`属性是基于上`ID`命名容器的值
 
-
 > [!NOTE]
 > 如我们所述，`ctl00`部分呈现`id`属性构成`ID`值的主页上，但你可能想知道如何将此`ID`值的灵感。 我们未指定其任意位置在我们的主数据库或内容页面中。 ASP.NET 页面中的大多数服务器控件通过页面的声明性标记显式添加。 `MainContent`的标记中显式指定 ContentPlaceHolder 控件`Site.master`;`Age`文本框中已定义`IDIssues.aspx`的标记。 我们可以指定`ID`这些控件通过属性窗口或从声明性语法类型的值。 声明性标记中未定义其他控件，主页面本身，所示。 因此，其`ID`值必须为我们自动生成。 ASP.NET 引擎集`ID`在运行时对其 Id 未显式设置这些控件的值。 它使用的命名模式`ctlXX`，其中*XX*是按顺序递增的整数值。
 
-
 主页面本身中提供的命名容器，因为在母版页中定义的 Web 控件也已更改呈现`id`属性值。 例如，`DisplayDate`标签，我们添加到中的母版页[*使用母版页创建站点范围内布局*](creating-a-site-wide-layout-using-master-pages-cs.md)教程具有以下呈现标记：
-
 
 [!code-html[Main](control-id-naming-in-content-pages-cs/samples/sample6.html)]
 
@@ -125,18 +108,15 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 > [!NOTE]
 > 当然，我们无需使用`FindControl`以引用此示例中的标签和文本框控件。 我们可以引用它们直接通过其`ID`属性值。 我使用`FindControl`这里要说明使用时，会发生什么情况`FindControl`从内容页。
 
-
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample7.cs)]
 
 尽管用来调用的语法`FindControl`方法会稍有不同的前两行`SubmitButton_Click`，它们在语义上等效。 回想一下，所有 ASP.NET 服务器控件都包括`FindControl`方法。 这包括`Page`从所有 ASP.NET 代码隐藏类必须派生自的类。 因此，调用`FindControl("controlID")`等效于调用`Page.FindControl("controlID")`，假定尚未重写`FindControl`方法中代码隐藏类或自定义基类中。
 
 后输入此代码，请访问`IDIssues.aspx`通过浏览器页上，输入你的年龄，然后单击"提交"按钮。 单击"提交"按钮时`NullReferenceException`引发 （请参见图 5）。
 
-
 [![引发 NullReferenceException](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
 
 **图 05**:一个`NullReferenceException`引发 ([单击以查看实际尺寸的图像](control-id-naming-in-content-pages-cs/_static/image9.png))
-
 
 如果在中设置断点`SubmitButton_Click`事件处理程序会同时调用`FindControl`返回`null`值。 `NullReferenceException`我们尝试访问时，将引发`Age`文本框的`Text`属性。
 
@@ -148,11 +128,9 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 
 若要使用`FindControl`引用`Results`标签或`Age`文本框中，我们需要调用`FindControl`从相同的命名容器中的一个祖先控件。 图 4 显示了，如`MainContent`ContentPlaceHolder 控件是唯一的祖先`Results`或`Age`的是同一个命名容器中。 换而言之，调用`FindControl`方法从`MainContent`控件，如下面的代码段中所示将正确返回对引用`Results`或`Age`控件。
 
-
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample8.cs)]
 
 但是，我们不能使用`MainContent`ContentPlaceHolder 从使用上面的语法，因为在母版页中定义 ContentPlaceHolder 我们内容页面的代码隐藏类。 相反，我们必须使用`FindControl`来获取对引用`MainContent`。 中的代码替换为`SubmitButton_Click`事件处理程序并进行以下修改：
-
 
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample9.cs)]
 
@@ -160,23 +138,19 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 
 我们可以使用之前`FindControl`来获取对引用`MainContent`，我们首先需要对主页面控件的引用。 母版页引用后我们可以获取对的引用`MainContent`通过 ContentPlaceHolder`FindControl`并从那里，引用`Results`标签和`Age`文本框中 (同样，通过使用`FindControl`)。 但是，我们如何获取对母版页的引用？ 通过检查`id`呈现的标记中的属性是显而易见的主页面`ID`值是`ctl00`。 因此，我们可以使用`Page.FindControl("ctl00")`若要获取对母版页的引用，然后使用该对象获取对引用`MainContent`，依次类推。 以下代码片段说明了此逻辑：
 
-
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample10.cs)]
 
 尽管此代码也肯定可以生效，它假定主页面的自动生成`ID`始终为`ctl00`。 它永远不会是一个好办法使有关自动生成值的假设。
 
 幸运的是，对母版页的引用是可通过访问`Page`类的`Master`属性。 因此，而无需使用`FindControl("ctl00")`若要获取母版页的引用，以便访问`MainContent`ContentPlaceHolder，我们可以改为使用`Page.Master.FindControl("MainContent")`。 更新`SubmitButton_Click`事件处理程序使用以下代码：
 
-
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample11.cs)]
 
 这一次，访问该网页通过浏览器中，输入你的年龄，然后单击"提交"按钮显示在消息`Results`标签、 按预期方式。
 
-
 [![标签中显示用户的年龄](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
 
 **图 06**:标签中显示用户的年龄 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-cs/_static/image12.png))
-
 
 ### <a name="recursively-searching-through-naming-containers"></a>以递归方式搜索容器命名
 
@@ -189,35 +163,28 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 > [!NOTE]
 > 扩展方法是 C# 3.0 和 Visual Basic 9 随附的.NET Framework 版本 3.5 和 Visual Studio 2008 的语言的新功能。 简单地说，扩展方法允许开发人员创建特殊的语法通过现有的类类型的新方法。 有关此有用的功能的详细信息，请参阅我的文章[使用扩展方法扩展基类型的功能](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)。
 
-
 若要创建扩展方法，将添加到新的文件`App_Code`文件夹名为`PageExtensionMethods.cs`。 添加名为的扩展方法`FindControlRecursive`作为输入，采用`string`参数名为`controlID`。 扩展方法才能正常工作，非常重要的类本身和它的扩展方法来标记`static`。 此外，所有扩展方法必须都接受其第一个参数的扩展方法应用于类型的对象和此输入的参数必须带有关键字`this`。
 
 将以下代码添加到`PageExtensionMethods.cs`类文件，以定义此类和`FindControlRecursive`扩展方法：
-
 
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample12.cs)]
 
 利用此代码，返回到`IDIssues.aspx`页面的代码隐藏类并注释掉当前`FindControl`方法调用。 将它们替换为对调用`Page.FindControlRecursive("controlID")`。 什么是关于扩展方法是，它们显示直接在 IntelliSense 下拉列表中。 如图 7 所示，当你键入页，然后点击期间， `FindControlRecursive` IntelliSense 以及其他下拉列表中包含方法`Control`类方法。
 
-
 [![扩展方法均包含在 IntelliSense 下拉列表](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
 
 **图 07**:扩展方法均包含在 IntelliSense 下拉列表 ([单击此项可查看原尺寸图像](control-id-naming-in-content-pages-cs/_static/image15.png))
 
-
 输入以下代码到`SubmitButton_Click`事件处理程序，然后对其进行测试方法访问的页面，输入你的年龄，然后单击"提交"按钮。 返回中图 6 所示，生成的输出将为消息，"您是年龄岁 ！"
-
 
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample13.cs)]
 
 > [!NOTE]
 > 因为扩展方法不熟悉 C# 3.0 和 Visual Basic 9 中，如果您使用的 Visual Studio 2005 不能使用扩展方法。 相反，您需要实现`FindControlRecursive`中的帮助器类的方法。 [Rick Strahl](http://www.west-wind.com/WebLog/default.aspx)在他的博客文章中具有此类示例[微波激射器的 ASP.NET 网页和`FindControl` ](http://www.west-wind.com/WebLog/posts/5127.aspx)。
 
-
 ## <a name="step-4-using-the-correctidattribute-value-in-client-side-script"></a>步骤 4：使用正确`id`属性在客户端脚本中的值
 
 在本教程中的简介中所述，Web 控件的呈现`id`属性通常用于在客户端脚本中以编程方式引用特定的 HTML 元素。 例如，以下 JavaScript 引用 HTML 元素由其`id`然后在一个模式消息框中显示其值：
-
 
 [!code-csharp[Main](control-id-naming-in-content-pages-cs/samples/sample14.cs)]
 
@@ -227,11 +194,9 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 
 值得高兴的是`id`呈现的属性值是在服务器端代码中通过 Web 控件的可访问[`ClientID`属性](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx)。 应使用此属性来确定`id`属性在客户端脚本中使用的值。 例如，若要向页面添加 JavaScript 函数，调用时，显示的值`Age`文本框中模式消息框中，将以下代码添加到`Page_Load`事件处理程序：
 
-
 [!code-javascript[Main](control-id-naming-in-content-pages-cs/samples/sample15.js)]
 
 上面的代码中插入的值`Age`JavaScript 调用到文本框的 ClientID 属性`getElementById`。 如果您访问此页上的通过浏览器并查看 HTML 源，您会发现以下 JavaScript 代码：
-
 
 [!code-html[Main](control-id-naming-in-content-pages-cs/samples/sample16.html)]
 
@@ -239,7 +204,6 @@ Visual Studio 自动为每个母版页的四个 Contentplaceholder 创建内容�
 
 > [!NOTE]
 > 此 JavaScript 示例只是演示如何将添加正确引用由服务器控件呈现的 HTML 元素的 JavaScript 函数。 若要使用此函数将需要编写额外的 JavaScript 调用该函数，或当文档加载时某些特定的用户操作怎样。 有关这些详细信息和相关的主题，阅读[使用客户端侧脚本](https://msdn.microsoft.com/library/aa479302.aspx)。
-
 
 ## <a name="summary"></a>总结
 

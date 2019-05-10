@@ -8,12 +8,12 @@ ms.date: 03/14/2014
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: 3f36f0c504678e1e8b40aef99db81ab99101568b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 96873c8f2b0ad2415f371aceb651400c801a3338
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383883"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125659"
 ---
 # <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET Web 部署 - 推荐的资源
 
@@ -24,7 +24,6 @@ ms.locfileid: "59383883"
 > > [!NOTE] 
 > > 
 > > 许多这些资源介绍了部署功能仅当你安装最新版本的可用[Visual Studio Web 发布更新](https://go.microsoft.com/fwlink/?LinkID=208120)。 仅在 Visual Studio 2012 或 Visual Studio 2013 中可用的一些功能。
-
 
 本主题包含以下各节：
 
@@ -48,9 +47,7 @@ ms.locfileid: "59383883"
 - [获取有关特定部署问题的帮助](#gettinghelp)
 - [其他资源](#additional)
 
-
 <a id="understanding"></a>
-
 
 ## <a name="understanding-deployment-options-for-web-projects"></a>了解用于 web 项目的部署选项
 
@@ -59,17 +56,13 @@ ms.locfileid: "59383883"
 - [Visual Studio 2012 Web 发布改进](../visual-studio/overview/2012/visual-studio-2012-web-publishing-improvements.md)（Scott hanselman 撰写的视频）。
 - [VS 2010 中的 Web 部署的概述文章](http://vishaljoshi.blogspot.com/2009/09/overview-post-for-web-deployment-in-vs.html)（Vishal Joshi 博客）。 较旧的博客文章，但某些 Visual Studio 2010 资源链接到它有仍适用于 Visual Studio 2012 的信息。
 
-
 <a id="findinghosting"></a>
-
 
 ## <a name="finding-hosting-providers-for-an-aspnet-application"></a>查找托管提供商为 ASP.NET 应用程序
 
 - [ASP.NET 托管](https://asp.net/hosting)
 
-
 <a id="fromvs"></a>
-
 
 ## <a name="deploying-a-web-application-from-visual-studio"></a>从 Visual Studio web 应用程序部署
 
@@ -78,7 +71,6 @@ ms.locfileid: "59383883"
 - [如何：部署 Web 项目使用一键式发布 Visual Studio 中](https://msdn.microsoft.com/library/dd465337.aspx)（引用为 Visual Studio Web 发布向导的信息。）
 - [使用 SQL Server Compact 使用 Visual Studio 将 ASP.NET Web 应用程序部署](../web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)。 这是早期版本的**使用 Visual Studio 的 ASP.NET Web 部署**本部分中的顶部列出。 有关如何部署 SQL Server Compact 数据库以及如何从 SQL Server Compact 将迁移到 SQL Server 的完整版本信息的主要用于现在。
 - [.NET 多层应用程序使用存储表、 队列和 Blob](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36) （Microsoft Azure 网站）。 5-构成的系列教程，演示如何创建 MVC 项目并将其部署到 Windows Azure 云服务。
-
 
 <a id="package"></a>
 ## <a name="deploying-a-web-application-by-creating-and-installing-a-web-deployment-package"></a>Web 应用程序部署通过创建和安装 web 部署包
@@ -91,9 +83,7 @@ ms.locfileid: "59383883"
 
 另请参阅以下部分。
 
-
 <a id="ci"></a>
-
 
 ## <a name="deploying-a-web-application-using-a-continuous-integration-ci-process"></a>部署 web 应用程序使用持续集成 (CI) 过程
 
@@ -107,9 +97,7 @@ ms.locfileid: "59383883"
 
 另请参阅[在部署期间确保应用程序是脱机](aspnet-web-deployment-content-map.md#appoffline)更高版本在此页中。
 
-
 <a id="transforms"></a>
-
 
 ## <a name="using-webconfig-transformations-to-change-settings-in-the-destination-webconfig-file-or-appconfig-file-during-deployment"></a>使用 Web.config 转换来在部署过程中更改目标 Web.config 文件或 app.config 文件中的设置
 
@@ -121,9 +109,7 @@ ms.locfileid: "59383883"
 - [XDT （XML 文档转换） 在 codeplex.com 中发布，](https://blogs.msdn.com/b/webdev/archive/2013/04/23/xdt-xml-document-transform-released-on-codeplex-com.aspx) （.NET Web 开发和工具博客）。 宣布推出的 Web.config 文件转换引擎的源代码，并列出了一些工具可使用它。
 - [Windows Azure 网站：如何应用程序字符串和连接字符串的工作](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)（Microsoft Azure 博客）。 如果你的目标环境是 Windows Azure 网站，并且你想要转换，将转换 Web.config 的替代方法`appSettings`或`connectionStrings`。
 
-
 <a id="webdeployparms"></a>
-
 
 ## <a name="using-web-deploy-parameters-to-change-settings-in-the-destination-web-application-during-deployment"></a>使用 Web 部署参数来更改目标 web 应用程序在部署过程中的设置
 
@@ -134,9 +120,7 @@ ms.locfileid: "59383883"
 - [Web 部署参数化 vs。Web.config 转换](http://vishaljoshi.blogspot.com/2010/06/parameterization-vs-webconfig.html)（Vishal Joshi 博客）。
 - [Windows Azure 网站：如何应用程序字符串和连接字符串的工作](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)（Microsoft Azure 博客）。 Web 的替代方法部署参数，如果您的目标环境是 Windows Azure 网站，并且您希望参数化`appSettings`或`connectionStrings`。
 
-
 <a id="appoffline"></a>
-
 
 ## <a name="making-sure-an-application-is-off-line-during-deployment"></a>在部署期间确保应用程序是脱机
 
@@ -146,9 +130,7 @@ ms.locfileid: "59383883"
 - [Web 发布更新的脱机应用和 usechecksum](https://blogs.msdn.com/b/webdev/archive/2013/10/30/web-publishing-updates-for-app-offline-and-usechecksum.aspx) （Microsoft Web 开发博客）。 另一个选项用于自动执行的应用程序使用\_offline.htm 文件。
 - [Web 部署 3.5 RTW](https://blogs.iis.net/msdeploy/archive/2013/07/09/webdeploy-3-5-rtw.aspx) （IIS.net 站点）。 Web 部署 3.5 中的新功能，可自定义应用\_offline.htm 文件。
 
-
 <a id="databasewithweb"></a>
-
 
 ## <a name="deploying-a-database-or-changes-to-a-database-as-part-of-web-application-deployment"></a>将数据库或更改部署到作为 web 应用程序部署的一部分的数据库
 
@@ -160,9 +142,7 @@ ms.locfileid: "59383883"
 
 请参见通过创建和安装 web 部署包和部署之前在此页中使用持续集成 (CI) 过程的 web 应用程序部署的 web 应用程序。
 
-
 <a id="databaseseparate"></a>
-
 
 ## <a name="deploying-a-database-separately-from-web-application-deployment"></a>部署独立于 web 应用程序部署数据库
 
@@ -174,9 +154,7 @@ ms.locfileid: "59383883"
 - [以数据为中心应用程序迁移到 Windows Azure](https://msdn.microsoft.com/library/jj156154.aspx) (MSDN)。
 - [将 SQL Server 数据库迁移到 Windows Azure SQL 数据库](https://msdn.microsoft.com/library/windowsazure/jj156160.aspx)(MSDN)。
 
-
 <a id="aspnetmembership"></a>
-
 
 ## <a name="deploying-a-web-application-that-uses-aspnet-application-services-such-as-membership-and-profiling"></a>部署使用 ASP.NET 应用程序的 web 应用程序服务 （如成员身份和分析）
 
@@ -186,9 +164,7 @@ ms.locfileid: "59383883"
 - [配置使用应用程序服务的网站](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs.md)。 对于网站项目但也是适用于 web 应用程序项目。
 - [用户和生产网站上的角色](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs.md)。 对于网站项目但也是适用于 web 应用程序项目。
 
-
 <a id="precompiling"></a>
-
 
 ## <a name="precompiling-for-deployment"></a>部署预编译
 
@@ -196,18 +172,14 @@ ms.locfileid: "59383883"
 - [打包/发布 Web 选项卡中，项目属性](https://msdn.microsoft.com/library/dd410108.aspx)(MSDN)。
 - [高级预编译设置对话框](https://msdn.microsoft.com/library/hh475319.aspx)(MSDN)。
 
-
 <a id="intranet"></a>
-
 
 ## <a name="deploying-an-intranet-web-application"></a>Intranet web 应用程序部署
 
 - [在本地组织的身份验证选项 (ADFS) 中使用 Visual Studio 2013 中 ASP.NET](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/) （Vittorio bertocci 撰写的博客。）。
 - [如何创建使用 ASP.NET MVC Intranet 站点](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)(MSDN)。 对于 Visual Studio 2010，较旧的演练写入不反映在 Visual Studio 2013 中引入的 intranet 项目模板中的重大更改。
 
-
 <a id="automating"></a>
-
 
 ## <a name="automating-common-deployment-tasks-that-are-not-automated-out-of-the-box"></a>自动执行常见系统不会自动在初始状态下的部署任务
 
@@ -220,26 +192,20 @@ ms.locfileid: "59383883"
 - [包的.NET 程序集如何](https://blogs.msdn.com/webdevtools/archive/2010/02/19/how-to-package-com-component.aspx)（Web 开发工具博客）。 如何将程序集部署到 gac 中。
 - [编写的所有内容-初始化 Your Windows Azure VM，为您的 Web 服务器与 IIS、 Web 部署和其他内容的脚本](http://www.tugberkugurlu.com/archive/script-out-everything-initialize-your-windows-azure-vm-for-your-web-server-with-iis-web-deploy-and-other-stuff)（Tugberk Ugurlu 博客）。
 
-
 <a id="configuringservers"></a>
-
 
 ## <a name="configuring-web-servers-so-that-developers-can-deploy-web-applications-to-them-using-web-deploy"></a>配置 web 服务器，使开发人员可以部署到它们使用 Web 部署的 web 应用程序
 
 - [管理员和非管理员部署的安装和配置 Web 部署](https://www.iis.net/learn/install/installing-publishing-technologies/installing-and-configuring-web-deploy)（IIS.net 站点）。
 
-
 <a id="hostingprovider"></a>
-
 
 ## <a name="configuring-servers-for-a-hosting-provider"></a>宿主提供程序中配置服务器
 
 - [Microsoft ASP.NET 4 托管部署指南](https://go.microsoft.com/fwlink/?LinkId=191365)（Microsoft 下载中心）。
 - [生成配置文件 XML 文件](https://www.iis.net/learn/web-hosting/joining-the-web-hosting-gallery/generate-a-profile-xml-file)（IIS.net 站点）。
 
-
 <a id="troubleshooting"></a>
-
 
 ## <a name="troubleshooting-deployment-problems"></a>故障排除部署问题
 
@@ -252,18 +218,14 @@ ms.locfileid: "59383883"
 - [开发和生产环境之间的常见配置差异](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs.md)。
 - [承载 ASP.NET 应用程序在中等信任](http://www.4guysfromrolla.com/articles/100307-1.aspx)（4 个专家来自 Rolla 站点）。
 
-
 <a id="gettinghelp"></a>
-
 
 ## <a name="getting-help-with-a-specific-deployment-question"></a>获取有关特定部署问题的帮助
 
 - [ASP.NET 配置和部署论坛](https://forums.asp.net/26.aspx/1?Configuration and Deployment)。
 - [StackOverflow.com](http://www.StackOverflow.com)。
 
-
 <a id="additional"></a>
-
 
 ## <a name="additional-resources"></a>其他资源
 

@@ -8,12 +8,12 @@ ms.date: 01/06/2011
 ms.assetid: 36c5beeb-45a7-48a0-9c30-f82cdf5c5f5f
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 7374b1afafa9ca63309f3c0369c5efd808f7f28a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fac53e935860a90d8f2aa96699d56d66ade3a40f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401980"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133194"
 ---
 # <a name="webmatrix-readme"></a>WebMatrix 自述文件
 
@@ -23,7 +23,6 @@ ms.locfileid: "59401980"
 
 > [!NOTE]
 > 本自述文件适用于 WebMatrix 1.0 版。
-
 
 - [概述](#Overview)
 - [安装](#Installation_Notes)
@@ -45,7 +44,6 @@ ms.locfileid: "59401980"
 
 > Microsoft WebMatrix 1.0 是在几分钟内将安装免费的 web 开发堆栈。 它与数据库和编程框架用于创建单一的集成体验集成的 web 服务器。 你可以使用 WebMatrix 简化编码、 测试和发布自己的 ASP.NET 或 PHP 网站的方式或使用 WebMatrix 来启动新的网站使用 DotNetNuke、 Umbraco、 WordPress 或 Joomla 等受欢迎的开源应用。 WebMatrix 使用同一个功能强大的 web 服务器、 数据库引擎和框架环境，将在 internet 上，这使从开发过渡到生产顺畅、 无缝运行你的网站。
 
-
 <a id="Installation_Notes"></a>
 
 ## <a name="installation"></a>安装
@@ -54,12 +52,10 @@ ms.locfileid: "59401980"
 > 
 > 如果在安装过程中遇到问题，请参阅[问题的 Microsoft Web 平台安装程序疑难解答](https://go.microsoft.com/fwlink/?LinkId=196212)。
 
-
 <a id="InstructionsForPublishingApplications"></a>
 ## <a name="how-to-publish-applications"></a>如何发布应用程序
 
 > 请参阅[发布应用程序的分步说明](https://go.microsoft.com/fwlink/?LinkID=196149)
-
 
 <a id="ChangesAndIssues"></a>
 
@@ -83,12 +79,10 @@ ms.locfileid: "59401980"
 > - Windows XP SP3
 > - Windows Server 2003 SP2
 
-
 #### <a name="issue-cannot-install-webmatrix-10-if-microsoft-visual-studio-2008-is-installed-without-microsoft-visual-studio-2008-sp1"></a>问题：如果没有 Microsoft Visual Studio 2008 SP1 的情况下安装 Microsoft Visual Studio 2008，则不能安装 WebMatrix 1.0
 
 > **解决方法**  
 > 安装[Microsoft Visual Studio 2008 SP1](https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;displaylang=en)从 Microsoft 下载中心获得。
-
 
 #### <a name="issue-some-assemblies-for-sql-server-compact-40-are-not-installed-in-the-gac"></a>问题：SQL Server Compact 4.0 某些程序集未安装在 GAC 中
 
@@ -104,14 +98,12 @@ ms.locfileid: "59401980"
 >   
 > 然后重新安装 SQL Server Compact 4.0。
 
-
 #### <a name="issue-cannot-uninstall-sql-server-compact-using-the-command-line"></a>问题：无法卸载 SQL Server Compact 使用命令行
 
 > 卸载 SQL Server Compact 使用命令行选项不适用于此版本。
 > 
 > **解决方法**  
 > 使用*程序和功能*Windows 控制面板卸载 Microsoft SQL Server Compact 4.0 中。
-
 
 <a id="Known_Issues_ASPNET"></a>
 
@@ -131,13 +123,11 @@ ms.locfileid: "59401980"
 > 
 > [!code-xml[Main](overview/samples/sample1.xml)]
 
-
 #### <a id="Changes"></a>  更改
 
 #### <a name="change-webpagesadminfoldervirtualpath-key-renamed-to-aspadminfoldervirtualpath"></a>重命名为"asp: AdminFolderVirtualPath"的更改:"webPages:AdminFolderVirtualPath"密钥
 
 > `webPages:AdminFolderVirtualPath`可以添加到的密钥*web.config*文件，以指定包管理器的位置已重命名为使用`asp:`命名空间而不是`webPages`命名空间。 如果已使用此元素，必须在配置文件中时将其重命名。
-
 
 #### <a id="Issues"></a>  已知的问题
 
@@ -146,7 +136,6 @@ ms.locfileid: "59401980"
 > 用于创建和存储成员资格 （登录名） 密码的算法已更改为更安全。 因此，将不识别存储成员 （用户） 的 ASP.NET Razor 的 Beta 版本中创建的密码。 
 > 
 > **解决方法**站点尚未放到生产环境，如果从成员资格数据库中删除用户记录。 如果数据库是实时功能，以编程方式重新生成成员资格数据库中的现有密码。
-
 
 #### <a name="issue-unexpected-behavior-when-using-a-custom-user-table-for-membership"></a>问题：使用自定义用户表的成员身份时出现意外的行为
 
@@ -157,13 +146,11 @@ ms.locfileid: "59401980"
 > **解决方法**  
 > 请确保名称传入`InitializeDatabaseConnection`方法匹配项的用户配置文件表中的成员资格数据库，或请确保`autoCreateTables`参数设置为 false。
 
-
 #### <a name="issue-error-message-the-admin-module-requires-access-to-appdata"></a>问题：错误消息"管理员模块需要访问 ~/App\_数据"
 
 > 在某些情况下，尝试创建用户，或以其他方式处理 ASP.NET 成员资格系统可能会导致页后，可以显示错误*管理员模块需要访问 ~/App\_数据*。 发生这种情况是如果 IIS 或 IIS Express 下运行的帐户不具有创建和写入权限*应用程序\_数据*网站根下的文件夹。 
 > 
 > **解决方法**手动创建*应用程序\_数据*的网站的文件夹。 请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户具有读/写权限的应用程序的根文件夹和子文件夹，例如应用\_数据。 知识库文章中提供了更多详细的信息[SQL Server Express 用户实例化和 ASP.net Web 应用程序项目的问题](https://support.microsoft.com/kb/2002980)。
-
 
 #### <a name="issue-failed-to-generate-a-user-instance-of-sql-server-error"></a>问题："无法生成 SQL Server 的用户实例"错误
 
@@ -171,13 +158,11 @@ ms.locfileid: "59401980"
 > 
 > **解决方法**请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户，包含读/写权限的应用程序的根文件夹和子文件夹，例如*应用\_数据*. 知识库文章中提供了更多详细的信息[SQL Server Express 用户实例化和 ASP.net Web 应用程序项目的问题](https://support.microsoft.com/kb/2002980)。
 
-
 #### <a name="issue-files-that-contains-package-manager-resources-or-package-manager-passwords-are-servable-under-iis-60-and-earlier"></a>问题：包含包管理器资源或程序包管理器密码的文件是可用在 IIS 6.0 及更早版本
 
 > 如果部署使用 RC2 版本构建的 ASP.NET Web Pages (Razor) 应用程序和应用程序包含*password.txt*或*packagesources.txt*文件下 */App\_数据/admin*，IIS 6.0 将提供文件如果请求，可能要公开为包管理器实例的密码。 
 > 
 > **解决方法**重命名*password.txt*或*packagesources.txt*文件为*password.config*或*packagesources.config*.默认情况下，IIS 6.0 不会处理的文件 *.config*扩展。 (在 IIS 7 中中, 没有文件*应用程序\_数据*文件夹提供服务，因此不需要重命名文件。)
-
 
 #### <a name="issue-uninstalling-packages-installed-using-the-beta-3-release-does-not-completely-remove-package-components"></a>问题：卸载使用 Beta 3 版本安装的包不会完全删除包组件
 
@@ -187,7 +172,6 @@ ms.locfileid: "59401980"
 > 执行以下步骤：  
 > 1. 删除*应用程序\_Data\packages*文件夹。 这将删除所有包。   
 > 2. 删除*packages.config*在网站的根目录中的文件。
-
 
 #### <a name="issue-in-visual-studio-invoking-the-web-based-package-manager-takes-the-application-offline"></a>问题：在 Visual Studio 中，调用的基于 web 的程序包管理器使应用程序脱机
 
@@ -199,13 +183,11 @@ ms.locfileid: "59401980"
 > **解决方法**   
 > 若要使用 Visual Studio 中的包，而不是基于 web 的程序包管理器使用的 NuGet 扩展。 有关信息，请参阅[NuGet 文档](https://docs.microsoft.com/nuget/)。 如果你正在使用中的其他文件*应用程序\_数据*文件夹，请考虑使文件保持在其他位置来避免此问题。 如果不可行，请删除*应用程序\_offline.htm*手动文件，或者等待，直到站点自动 （默认情况下，在 30 秒后） 重新联机。
 
-
 #### <a name="issue-visual-studio-intellisense-and-project-templates-available-only-in-aspnet-mvc-version-3"></a>问题：Visual Studio IntelliSense 模板和项目模板仅在 ASP.NET MVC 版本 3 中可用
 
 > 安装 ASP.NET Web Pages 不同时安装工具用于 Visual Studio 的 ASP.NET Web Pages 应用程序的智能感知和项目模板等。
 > 
 > **解决方法**若要使用 Visual Studio 中的 ASP.NET Web Pages 应用程序的智能感知和项目模板，ASP.NET MVC 3 RC 通过 Web 平台安装程序的安装或[独立安装程序](https://go.microsoft.com/fwlink/?LinkID=191797)。
-
 
 #### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>问题：读取源或其他外部数据通过代理服务器
 
@@ -217,7 +199,6 @@ ms.locfileid: "59401980"
 > 
 > 有关配置代理服务器的详细信息，请参阅[&lt;代理&gt;元素 （网络设置）](https://msdn.microsoft.com/library/sa91de1e.aspx) MSDN 网站上。
 
-
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>问题：卸载.NET Framework 版本 4 禁用使用 Razor 语法的 ASP.NET Web Pages
 
 > 如果卸载.NET Framework 版本 4，然后重新安装它，则禁用使用 Razor 语法的 ASP.NET Web Pages。 与页 *.cshtml*扩展不能正确运行。 ASP.NET 网页机根目录中注册程序集*web.config*文件，并删除.NET Framework 中删除该文件。 重新安装.NET Framework 安装的配置文件的新版本，但不会将引用添加 ASP.NET Web Pages 的程序集。
@@ -228,7 +209,6 @@ ms.locfileid: "59401980"
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
 > [!code-xml[Main](overview/samples/sample3.xml)]
-
 
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>问题：无扩展名 Url 找不到在 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件
 
@@ -244,7 +224,6 @@ ms.locfileid: "59401980"
 > - 如果您没有对服务器计算机的控制 （例如，要部署到托管的网站），将以下代码添加到该网站*web.config*文件： 
 > 
 >     [!code-xml[Main](overview/samples/sample4.xml)]
-
 
 #### <a name="issue-deploying-an-application-to-a-computer-that-does-not-have-sql-server-compact-installed"></a>问题：应用程序部署到不具有 SQL Server Compact 安装的计算机
 
@@ -264,7 +243,6 @@ ms.locfileid: "59401980"
 > 
 >     [!code-xml[Main](overview/samples/sample5.xml)]
 
-
 #### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>问题："数据库"和"WebGrid"帮助程序在中等信任在 Visual Basic 中不起作用
 
 > 如果使用的 Visual Basic (创建 *.vbhtml*文件)，则`Database`和`WebGrid`如果应用程序设置为使用中等信任级别，帮助程序将无法工作。
@@ -273,7 +251,6 @@ ms.locfileid: "59401980"
 > 如果使用 Visual Studio 2010，您可以通过安装 Service Pack 1 版本来解决此问题。 可用的 SP1 版本的最终版本之前，您可以下载从 SP1 的 Beta 版[Microsoft Visual Studio 2010 Service Pack 1 Beta](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=11ea69cb-cf12-4842-a3d7-b32a1e5642e2&amp;displaylang=en) Microsoft 下载中心页。   
 >   
 > 如果这不可行，或如果不使用 Visual Studio 2010，则可以暂时设置要使用完全信任的应用程序。
-
 
 #### <a name="issue-applicationpart-resources-are-externally-accessible"></a>问题："ApplicationPart"资源是从外部访问
 
@@ -286,14 +263,12 @@ ms.locfileid: "59401980"
 > **解决方法**   
 > 如果您创建**ApplicationPart**对象，请确保与相关联的嵌入的资源**ApplicationPart**对象的程序集不包含敏感信息。
 
-
 <a id="Known_Issues_WebMatrix"></a>
 
 ### <a name="webmatrix"></a>WebMatrix
 
 > [!NOTE]
 > WebMatrix 安装问题的信息，请参阅[WebMatrix 安装问题](#Known_Issues_Installation)本文档前面。
-
 
 文档本部分介绍 WebMatrix 开发环境的已知的问题。
 
@@ -308,7 +283,6 @@ ms.locfileid: "59401980"
 > 5. 保存*web.config*文件。
 > 6. 单击**数据库**和刷新。
 
-
 #### <a name="issue-folders-created-by-webmatrix-cannot-be-deleted"></a>问题：无法删除由 WebMatrix 所创建文件夹
 
 > 如果使用提升的权限运行 WebMatrix (也就是说，您如何使用 WebMatrix**以管理员身份运行**Windows 中的选项)，不能使用 Windows 资源管理器删除创建的 WebMatrix 的文件夹。
@@ -319,7 +293,6 @@ ms.locfileid: "59401980"
 > 1. 在 Windows 中，单击**启动**。
 > 2. 输入"Windows 资源管理器"，然后右键单击的项**Windows 资源管理器**。
 > 3. 单击**以管理员身份运行**。 然后，可以删除的文件夹。
-
 
 #### <a name="issue-webmatrix-10-is-unable-to-perform-certain-tasks-that-require-elevation"></a>问题：WebMatrix 1.0 是无法执行某些任务需要提升
 
@@ -334,14 +307,12 @@ ms.locfileid: "59401980"
 > - 在 Windows Vista 或 Windows 7，启用 UAC。
 > - 在 Windows XP 中，将用户添加到管理员安全组。
 
-
 #### <a name="issue-site-from-web-gallery-is-disabled"></a>问题："从 Web 库创建网站"已禁用
 
 > **站点从 Web 库**如果未安装 Web 平台安装程序 3.0 选项被禁用。
 > 
 > **解决方法**  
 > 安装[Microsoft Web 平台安装程序 3.0](https://go.microsoft.com/fwlink/?LinkID=194638)。
-
 
 #### <a name="issue-google-chrome-is-not-available-as-a-run-option"></a>问题：Google Chrome 不可用作运行选项
 
@@ -350,14 +321,12 @@ ms.locfileid: "59401980"
 > **解决方法**  
 > 某些版本的 Google Chrome 并不能注册正确地与 Windows 中的默认程序功能。 解决此问题，启动 Google Chrome 中，单击*自定义和控制 Google Chrome*菜单上，单击*选项*，然后单击*使 Google Chrome 我的默认浏览器*。
 
-
 #### <a name="issue-the-foreign-key-dialog-box-doesnt-allow-entering-a-primary-key"></a>问题："外键"对话框中不允许输入主键
 
 > **外键**对话框不允许您输入从主键表的主键名称。
 > 
 > **解决方法**  
 > 这是有意为之。 不需要输入主键表的主键的名称。
-
 
 #### <a name="issue-intellisense-is-not-available-in-webmatrix-for-razor-syntax-c-or-visual-basic"></a>问题：IntelliSense 不能在 WebMatrix 中的 Razor 语法C#，或 Visual Basic
 
@@ -366,7 +335,6 @@ ms.locfileid: "59401980"
 > **解决方法**   
 > 无。
 
-
 #### <a name="issue-intellisense-for-html-and-css-suggests-elements-that-are-not-contextually-appropriate"></a>问题：适用于 HTML 和 CSS IntelliSense 建议不是上下文相关的元素
 
 > 在 WebMatrix 中的标记的 IntelliSense 支持使用 HTML [XHTML 1.0 Transitional 架构](http://www.w3.org/TR/2002/NOTE-xhtml1-schema-20020902/#xhtml1-transitional)并使用 CSS [CSS 2.1 架构](http://www.w3.org/TR/CSS2/)。 IntelliSense 根据这些特定的架构，因为某些标记、 属性可能不适合当前页或样式定义的建议。 为 HTML，它可能还会导致意外建议可能会被解释为格式不正确 （例如，当未关闭标记） 的 XHTML 内容中。 此问题可能是更明显，如果插入点位于不完整的标记;在这种情况下，IntelliSense 可能建议新开始标记或提供其他不正确的建议。 
@@ -374,14 +342,12 @@ ms.locfileid: "59401980"
 > **解决方法**   
 > 对于 HTML，请确保在格式正确的、 完整的 HTML 页。 对于 CSS，没有任何解决方法。
 
-
 #### <a name="issue-intellisense-is-not-invoked-while-you-type"></a>问题：在键入时不会调用 IntelliSense
 
 > 有时，IntelliSense 可能不会调用为 HTML 或 CSS 正在输入后在编辑器中。 具体而言，这可能会发生时插入点，则直接旁边的另一个元素或在文件末尾。 
 > 
 > **解决方法**   
 > 请确保没有插入点周围的空格并且插入点不是在文件末尾。 此外可以通过按 Ctrl + 空格键手动调用 IntelliSense。
-
 
 #### <a name="issue-no-ui-is-available-for-disabling-intellisense"></a>问题：没有用户界面是可用于禁用 IntelliSense
 
@@ -391,7 +357,6 @@ ms.locfileid: "59401980"
 > 启动 WebMatrix 使用以下命令，其中包括禁用 IntelliSense 的交换机：  
 >   
 > `WebMatrix.exe #ExecuteCommand# EditorIntelliSense off`
-
 
 <a id="Known_Issues_IISExpress"></a>
 ### <a name="iis-express"></a>IIS Express
@@ -417,7 +382,6 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > **解决方法**  
 > 无。 应用程序可能需要一段时间才能安装，但将正确安装。
 
-
 ### <a id="Known_Issues_Publishing_Applications"></a>  发布应用程序
 
 #### <a name="issue-required-permissions-cannot-be-acquired-error-when-publishing-a-sql-compact-database"></a>问题：发布 SQL Compact 数据库时的"要求不能获取权限"的错误
@@ -437,7 +401,6 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > 
 >     [!code-html[Main](overview/samples/sample8.html)]
 
-
 #### <a name="issue-gallery-and-phpbb-web-applications-display-a-service-is-unavailable-error-after-publishing"></a>问题：库和 PhpBB web 应用程序发布后显示"服务不可用"错误
 
 > 在某些情况下，发布应用程序会导致"服务不可用"错误。
@@ -445,14 +408,12 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > **解决方法**  
 > 在 WebMatrix 中，添加一个反斜杠 (\)到中的服务器名称的末尾**发布设置**窗口，然后将发布一次应用程序。
 
-
 #### <a name="issue-moodle-website-layout-and-links-are-broken-after-publishing"></a>问题：发布后的 Moodle 网站布局和链接已断开
 
 > 发布的 Moodle 应用程序后，应用程序不会无法正常工作。
 > 
 > **解决方法**  
 > 在 WebMatrix 中，将反斜杠 （/） 添加到末尾**站点名称**字段中**发布设置**窗口，然后将发布一次应用程序。
-
 
 #### <a name="issue-publishing-nopcommerce-fails-with-a-database-error"></a>问题：发布 nopCommerce 失败，出现数据库错误
 
@@ -467,12 +428,10 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > 5. 单击**清除日志**按钮。
 > 6. 重新发布 nopCommerce。
 
-
 #### <a name="issue-silverstripe-cms-displays-a-http-500-php-fcgi-error-when-you-download-a-published-site"></a>问题：Silverstripe CMS 下载已发布的站点时将显示"HTTP 500 PHP FCGI 错误"
 
 > **解决方法**  
 > 单击后**下载已发布的站点**，跳过`silverstripe-cache/manifest_main`中**发布预览**。 此文件用于缓存和特定于每台计算机。
-
 
 #### <a name="issue-subtext-displays-server-error-in--application-when-you-download-a-published-site"></a>问题：Subtext 显示"服务器错误 '/' 应用程序中"时下载已发布的站点
 
@@ -486,7 +445,6 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > 3. 单击**数据库** &gt; *[localSubtextDatabase]* &gt; **安全** &gt; **用户**&gt; *[localSubtextUser*] (默认值是`subtextuser`]，右键单击，然后单击**属性**。
 > 4. 选择**db\_所有者**角色成员身份部分中。
 
-
 #### <a name="issue-site-might-not-work-after-publishing-if-the-destination-url-field-is-not-prefixed-with-http-or-https"></a>问题：如果将"目标 URL"字段不 http:// 或 https:// 开头的前缀发布后，站点可能无法工作
 
 > 在中**发布设置**对话框中，如果目标 URL 不以开头`http://`或`https://`，部署后，该站点可能无法工作。
@@ -494,14 +452,12 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > **解决方法**  
 > 请确保在发布的站点中的目标 URL 前**发布设置**对话框的开头`http://`或`https://`。
 
-
 #### <a name="issue-publishing-a-mysql-database-fails-with-the-error-failed-to-publish-the-database-this-can-happen-if-the-remote-database-cannot-run-the-script"></a>问题：发布的 MySQL 数据库将失败并出现错误"无法将数据库发布。 这可以是远程数据库不能运行脚本。"
 
 > 多种原因可能出现此错误。 可以看到此错误的原因之一是，如果数据库脚本中包含单引号字符 （'），并且目标 MySQL 数据库的默认字符集为 utf-8。
 > 
 > **解决方法**  
 > 设置为远程的 MySQL 数据库设置为 utf-8 的默认字符。
-
 
 #### <a name="issue-some-links-are-not-visible-in-dotnetnuke-after-publishing-or-downloading-the-site"></a>问题：发布或下载站点后的某些链接不在 DotNetNuke 中可见
 
@@ -515,12 +471,10 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > 4. 单击**清除缓存**页的链接。
 > 5. 转到页面底部并重新启动该应用程序。
 
-
 #### <a name="issue-some-links-in-atomsite-are-broken-after-you-download-a-published-site"></a>问题：下载已发布的站点之后，AtomSite 中的某些链接已断开
 
 > **解决方法**  
 > 在*service.config*文件中， *users.config*文件，以及所有 *.xml*文件，将为 URL 字符串 (例如， `http://myhost.com/atomsite`) 与本地 (例如， `http://localhost:1239`).
-
 
 #### <a name="issue-mysql-based-applications-like-wordpress-fail-to-publish-and-report-a-database-error"></a>问题：WordPress 等基于 MySQL 的应用程序无法将发布和报告数据库错误
 
@@ -532,14 +486,12 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > 2. 重新安装该应用程序。
 > 3. 重新发布应用程序。
 
-
 #### <a name="issue-download-published-site-fails-for-applications-that-have-browser-based-setup"></a>问题："下载已发布的站点"失败的应用程序的基于浏览器的设置
 
 > 某些应用程序 (例如，订购 Kentico CMS) 要求你在浏览器中启动它们才能执行安装后设置，如创建数据库。 如果发布这样的应用程序，而无需完成基于浏览器的设置，请尝试从远程服务器下载同一站点将失败。
 > 
 > **解决方法**  
 > 将站点发布之前完成基于浏览器的设置。
-
 
 #### <a name="issue-download-published-site-fails-with-a-database-error-for-dotnetnuke-and-kooboo-cms"></a>问题："下载已发布的站点"失败，出现数据库错误 DotNetNuke 和 Kooboo CMS
 
@@ -549,7 +501,6 @@ SQL Server Compact 具有其自己的自述文件，可在以下 URL:
 > 
 > **解决方法**  
 > 如果可行，重新发布该网站 （或将其发布） 的数据库使用非管理员凭据。
-
 
 <a id="More_Info"></a>
 

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 5c6371c0-a944-4adf-a28e-5afbdd011ca8
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
-ms.openlocfilehash: 49c5f762fdd6d99f1af8a10d057852299a266e50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4e25a4a3a953e97c9a292506a9511f28874925ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421038"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128363"
 ---
 # <a name="nerddinner-wrap-up"></a>NerdDinner 总结
 
@@ -24,7 +24,6 @@ by [Microsoft](https://github.com/microsoft)
 > 这是 NerdDinner 教程结束后，若要了解详细信息了解如何为您提供。
 > 
 > 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
-
 
 NerdDinner 应用程序现在已完成并准备好部署在 web 上。
 

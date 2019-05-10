@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: cc764f3b-6921-486a-8f44-c6ccd1249acd
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: ad5f32a08270ce318c03e1b29acd74d12bbb3d3b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da914986ff020879dfe634967b39b32250cbf43b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394050"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120852"
 ---
 # <a name="adding-a-controller"></a>添加控制器
 
@@ -34,13 +34,11 @@ MVC 代表*模型-视图-控制器*。 MVC 是一种模式用于开发应用程�
 
 让我们首先创建一个控制器类。 在中**解决方案资源管理器**，右键单击*控制器*文件夹，然后单击**添加**，然后**控制器**。
 
-
 ![](adding-a-controller/_static/image1.png)
 
 在中**添加基架**对话框中，单击**MVC 5 控制器-空**，然后单击**添加**。
 
 ![](adding-a-controller/_static/image2.png)  
- 
 
 新控制器命名为"HelloWorldController"，然后单击**添加**。
 
@@ -80,7 +78,6 @@ URL 的第一个部分确定要执行的控制器类。 因此 */HelloWorld*映�
 
 > [!NOTE]
 > 安全说明:使用上面的代码[HttpUtility.HtmlEncode](https://msdn.microsoft.com/library/ee360286(v=vs.110).aspx)以防止恶意输入 (即 JavaScript) 的应用程序。 有关详细信息，请参阅[操作说明：防止通过应用 HTML 编码为字符串的 Web 应用程序中的脚本攻击](https://msdn.microsoft.com/library/a2a4yykt(v=vs.100).aspx)。
-
 
  运行应用程序并浏览到示例 URL (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4`)。 可在 URL 中对 `name` 和 `numtimes` 使用其他值。 [ASP.NET MVC 模型绑定系统](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx)会自动将映射到方法中的参数将命名的参数从地址栏中的查询字符串。
 

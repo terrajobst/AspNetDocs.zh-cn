@@ -8,12 +8,12 @@ ms.date: 01/23/2019
 ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: ce5b617cc1032d190cc2450aa554b462ea6f6156
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 336df47dd4bda813839913676f12a51b899c0cf9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025324"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121983"
 ---
 # <a name="troubleshooting-http-405-errors-after-publishing-web-api-applications"></a>在发布 Web API 应用程序后排除 HTTP 405 错误
 
@@ -24,7 +24,6 @@ ms.locfileid: "57025324"
 > 
 > - [Internet 信息服务 (IIS)](https://www.iis.net/) （7 或更高版本）
 > - [Web API](../../index.md) 
-
 
 Web API 应用程序通常使用多个常见的 HTTP 谓词：GET、 POST、 PUT、 DELETE，有时修补程序。 话虽如此，开发人员可能会遇到这些动词由另一个在其生产服务器上，这将导致在 Visual Studio 或开发服务器上正常工作的 Web API 控制器将返回其中的情况下的 IIS 模块的情况下HTTP 405 错误时部署到生产服务器。 幸运的是此问题得到轻松解决，但解决方法需要发生问题的原因的说明。
 
@@ -58,18 +57,13 @@ Web API 应用程序通常使用多个常见的 HTTP 谓词：GET、 POST、 PUT
 
 以下示例 HTTP 请求和响应说明了其中的 HTTP 客户端尝试将值放到 web 服务器上的 Web API 应用程序和服务器将返回 HTTP 错误状态的 PUT 方法不是允许的情况：
 
-
 HTTP 请求：
-
 
 [!code-console[Main](troubleshooting-http-405-errors-after-publishing-web-api-applications/samples/sample1.cmd)]
 
-
 HTTP 响应：
 
-
 [!code-console[Main](troubleshooting-http-405-errors-after-publishing-web-api-applications/samples/sample2.cmd)]
-
 
 在此示例中，HTTP 客户端将有效的 JSON 请求发送到 web 服务器上的 Web API 应用程序的 URL，但服务器返回 HTTP 405 错误消息指示该 PUT 方法不允许的 url。 与此相反，如果在请求 URI 与 Web API 应用程序的路由不匹配，服务器将返回 HTTP 404***找不到***错误。
 

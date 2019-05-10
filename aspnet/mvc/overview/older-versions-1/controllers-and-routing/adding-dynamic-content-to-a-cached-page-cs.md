@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 2ddd4407-d143-4a94-877c-21771bfb97a6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c126270304178d178f4b8f9739fa5c51e5dd0551
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: be43712d3dd5235117558e991d9dd71aa30ec470
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415357"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123738"
 ---
 # <a name="adding-dynamic-content-to-a-cached-page-c"></a>向缓存页添加动态内容 (C#)
 
@@ -21,16 +21,13 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解如何混合在同一页中的动态和缓存内容。 缓存后替换，可显示动态内容，例如横幅广告或中缓存已输出的页的新闻项。
 
-
 通过利用输出缓存，可以极大地提高 ASP.NET MVC 应用程序的性能。 而不是重新生成页面每次请求页面时，可以生成一次并在多个用户的内存中缓存的页面。
 
 但存在一个问题。 如果你需要在页中显示动态内容？ 例如，假设你想要在页中显示横幅广告。 您不希望被缓存，以便每个用户将看到完全相同的播发，横幅广告。 通过这种方式不会进行任何费用 ！
 
 幸运的是，没有简单的解决方案。 您可以充分利用 ASP.NET 框架调用的一项功能*缓存后替换*。 缓存后替换可以替换已缓存在内存中的页中的动态内容。
 
-
 通常情况下，当缓存页面输出使用 [OutputCache] 属性时，进行了缓存服务器和客户端 （web 浏览器） 上。 当使用缓存后替换时，仅在服务器上缓存页。
-
 
 #### <a name="using-post-cache-substitution"></a>使用缓存后替换
 

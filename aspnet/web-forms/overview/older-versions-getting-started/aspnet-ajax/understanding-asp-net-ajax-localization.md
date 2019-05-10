@@ -8,12 +8,12 @@ ms.date: 03/14/2008
 ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 11e70493478d6810d63ba6b3ac813e32f03052eb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ef4ee57496337fb13b4d1c09c058e89e04eb3138
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381323"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114594"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>了解 ASP.NET AJAX 本地化
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381323"
 [下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
 
 > 本地化是设计并将对特定语言和区域性的支持集成到应用程序或应用程序组件的过程。 Microsoft ASP.NET 平台通过集成标准.NET 本地化模型; 为标准 ASP.NET 应用程序的本地化提供广泛支持Microsoft AJAX 框架利用集成的模型，以支持可在其中执行本地化的各种方案。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -105,16 +104,13 @@ Microsoft AJAX Framework 脚本管理支持在部署和测试的脚本中使用�
 1. 按 F5。 如果系统提示，请启用调试。 加载页面时，按删除按钮。 请注意，您会提示您在英语中 （除非默认情况下，您的计算机设置为首选西班牙语语言资源） 进行确认。
 2. 关闭浏览器窗口并返回到 default.aspx。 在@Page标头指令，使用 ES-ES 区域性和 UICulture 替换为自动。 按 F5 再次启动 web 浏览器中一次应用程序。 这一次，请注意，系统会提示删除在西班牙语中的文件：
 
-
 [![](understanding-asp-net-ajax-localization/_static/image2.png)](understanding-asp-net-ajax-localization/_static/image1.png)
 
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-localization/_static/image3.png))
 
-
 [![](understanding-asp-net-ajax-localization/_static/image5.png)](understanding-asp-net-ajax-localization/_static/image4.png)
 
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-localization/_static/image6.png))
-
 
 请注意，在本演练中的多个变体。 例如，脚本不能注册使用 ScriptManager 控件以编程方式在页面加载过程。
 

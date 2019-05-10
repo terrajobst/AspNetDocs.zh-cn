@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 0267d31c-892f-49a1-9e7a-3ae8cc12b2ca
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: d1cd01e924dc8e13b22b736ada490a3507e730f5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aacfd1e057d694568f1a15dd2554c1104718b168
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59405828"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129933"
 ---
 # <a name="adding-a-controller"></a>添加控制器
 
@@ -21,7 +21,6 @@ ms.locfileid: "59405828"
 
 > > [!NOTE]
 > > 本教程中的更新的版本是可用[此处](../../getting-started/introduction/getting-started.md)，它使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示更多的功能。
-
 
 MVC 代表*模型-视图-控制器*。 MVC 是一种模式用于开发应用程序也设计、 可测试且易于维护。 基于 MVC 的应用程序包含：
 

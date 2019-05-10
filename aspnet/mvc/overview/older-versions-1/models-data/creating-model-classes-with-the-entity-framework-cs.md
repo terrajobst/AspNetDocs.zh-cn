@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 29f7dded2f6fc2e8ce588dab2949b59ddb6f1fc4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2e0e365c287fc455015d237ea466301335805d14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388902"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122452"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-c"></a>使用 Entity Framework 创建模型类 (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 了解如何使用实体向导创建一个 ADO.NET 实体数据模型。 在本教程的过程中，我们构建的 web 应用程序演示了如何选择、 插入、 更新和删除数据库数据使用实体框架。
-
 
 本教程的目的是说明如何创建生成的 ASP.NET MVC 应用程序时使用 Microsoft Entity Framework 数据访问类。 本教程之前不了解 Microsoft Entity Framework。 本教程结束时，您将了解如何使用实体框架来选择、 插入、 更新和删除数据库记录。
 
@@ -32,11 +31,9 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 > [https://www.asp.net/downloads/](https://www.asp.net/downloads)
 
-
 > [!NOTE] 
 > 
 > 没有基本 ASP.NET MVC 和 Microsoft 实体框架之间的连接。 有多种替代方法可用于 ASP.NET MVC 的 Entity Framework。 例如，可以构建使用 Microsoft LINQ to SQL、 NHibernate 或 SubSonic 等其他 O/RM 工具在 MVC 模型类。
-
 
 ## <a name="creating-the-movie-sample-database"></a>创建电影示例数据库
 
@@ -108,9 +105,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 请记住保存通过单击保存按钮 （软盘图标） 进行了修改后的实体数据模型。 在后台，实体设计器生成一的组 C# 类。 可以通过从解决方案资源管理器窗口中打开 MoviesDBModel.Designer.cs 文件来查看这些类。
 
-
 由于所做的更改将被覆盖的下次使用实体设计器不会修改 Designer.cs 文件中的代码。 如果你想要扩展的 Designer.cs 文件中定义的实体类的功能，则可以创建*分部类*在单独的文件。
-
 
 #### <a name="selecting-database-records-with-the-entity-framework"></a>选择使用实体框架的数据库记录
 
@@ -122,9 +117,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 请注意，在列表 1 中的控制器包含一个构造函数。 构造函数初始化名为的类级字段\_db。 \_Db 字段表示 Microsoft 实体框架所生成的数据库实体。 \_Db 字段是由实体设计器生成 MoviesDBEntities 类的实例。
 
-
 为了在主控制器中使用 theMoviesDBEntities 类，您必须导入 MovieEntityApp.Models 命名空间 (*MVCProjectName*。模型）。
-
 
 \_Db 字段使用 index （） 操作中，若要从电影数据库表中检索的记录。 表达式\_db。MovieSet 表示的所有记录电影数据库表中。 Tolist （） 方法用于将电影该集转换到 Movie 对象的泛型集合 (列表&lt;电影&gt;)。
 
@@ -162,9 +155,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 第二个 add （） 操作的 ASP.NET MVC TryUpdateModel() 方法帮助创建实体框架 Movie 类的新实例。 TryUpdateModel() 方法采用传递给 add （） 方法 FormCollection 中的字段，并将这些 HTML 窗体字段的值分配给 Movie 类。
 
-
 使用实体框架时，使用 TryUpdateModel 或 UpdateModel 方法来更新实体类的属性时，必须提供"允许列表"的属性。
-
 
 接下来，add （） 操作执行一些简单的窗体的验证。 操作可验证的标题和主管属性具有值。 如果没有验证错误，则会将一条验证错误消息添加到 ModelState。
 

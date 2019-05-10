@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 360bc6e1-84c5-4b8e-a84c-ea48ab807aa4
 msc.legacyurl: /web-pages/overview/performance-and-traffic/14-analyzing-traffic
 msc.type: authoredcontent
-ms.openlocfilehash: a99ed5cc8875ef9f39234e3f394b46b5782d0bc1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 095a5572c755446e0661c052ca9de82d636429fd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390215"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134601"
 ---
 # <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>跟踪 ASP.NET Web Pages (Razor) 站点的访问者信息 （分析）
 
@@ -35,7 +35,6 @@ ms.locfileid: "59390215"
 > 
 > - ASP.NET 网页 (Razor) 2
 > - ASP.NET Web Helpers Library （NuGet 包）
-
 
 Analytics 是技术，用于测量你的网站上的流量，以便您可以了解人们如何使用该站点的常规术语。 许多分析服务都可用，包括 Google、 Yahoo、 StatCounter，及其他公司的服务。
 
@@ -60,7 +59,6 @@ ASP.NET 网页包括多个分析帮助程序 (`Analytics.GetGoogleHtml`， `Anal
 
 > [!NOTE]
 > 创建 analytics 帐户时，你将注册你想要跟踪的站点的 URL。 如果您要测试的所有内容在本地计算机上，不会跟踪实际流量 （流量只能是您），因此你无法再记录和查看站点统计信息。 但此过程演示如何将分析帮助程序添加到一个页面。 在发布你的站点时，实时站点会将信息发送到分析提供程序。
-
 
 1. 将 ASP.NET Web Helpers Library 添加到你的网站，如中所述[ASP.NET Web Pages 站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未添加它。
 2. 使用 Google Analytics 中创建帐户并记录帐户名称。

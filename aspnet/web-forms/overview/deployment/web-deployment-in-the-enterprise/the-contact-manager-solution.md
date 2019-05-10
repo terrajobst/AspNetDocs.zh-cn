@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 4d8c8d19-055b-4b70-9ee1-f748f0db3a01
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: 7998b5bb2983410479123514661a4ddb67afc8c6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 12ed7827f7392e559e04121386f7cd045de8462b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398366"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130920"
 ---
 # <a name="the-contact-manager-solution"></a>Contact Manager 解决方案
 
@@ -24,7 +24,6 @@ ms.locfileid: "59398366"
 > 这[系列教程](web-deployment-in-the-enterprise.md)将使用的示例解决方案&#x2014;Contact Manager 解决方案&#x2014;来表示真实程度的企业级应用程序。 本主题介绍 Contact Manager 解决方案，介绍了该解决方案的关键组件，并标识部署此类企业环境中的各种目标平台的应用程序所面临的挑战。
 > 
 > 在这些教程中处理整个主题，可以将 Contact Manager 解决方案用作演示了如何可以满足企业部署方案的特定需求的参考实现。 下一主题[设置 Contact Manager 解决方案](setting-up-the-contact-manager-solution.md)，介绍如何下载并在开发人员工作站上运行该解决方案。
-
 
 ## <a name="solution-overview"></a>解决方案概述
 
@@ -45,7 +44,6 @@ Contact Manager 解决方案包含四个单独项目：
 
 > [!NOTE]
 > ASP.NET MVC 3 web 应用程序使用 ASP.NET 成员资格提供程序，而 web 应用程序内的所有页面将都允许匿名访问。 这显然不是实际配置。 但是，该解决方案是设置以这种方式，以使你更轻松地部署和测试解决方案，而不配置用户帐户和角色。
-
 
 ## <a name="deployment-challenges"></a>部署难题
 

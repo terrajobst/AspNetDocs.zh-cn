@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 792f4513-a508-4d14-a0dd-1a2fe282c7bb
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 54b3afac9b19962b02336a35909b208c4e3f7504
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e045b17434d46fa1b6e7942db95ecad67c34a46
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400550"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134749"
 ---
 # <a name="part-4-adding-an-admin-view"></a>第 4 部分：添加管理员视图
 
@@ -52,7 +52,6 @@ ms.locfileid: "59400550"
 > [!NOTE]
 > 在示例项目中，我进行了几个其他修饰性更改，如替换字符串"Your logo here"。 这些不会影响应用程序的功能。 可以下载该项目，并比较文件。
 
-
 运行应用程序并单击显示在主页页面顶部的"管理员"链接。 管理员页应如下所示：
 
 ![](using-web-api-with-entity-framework-part-4/_static/image3.png)
@@ -79,7 +78,6 @@ ms.locfileid: "59400550"
 
 > [!NOTE]
 > MVC 和 Web API 都定义**Authorize**的属性，在不同的命名空间。 MVC 将使用**System.Web.Mvc.AuthorizeAttribute**，而 Web API 使用**System.Web.Http.AuthorizeAttribute**。
-
 
 现在只有管理员可以查看管理页。 此外，如果您向管理员控制器发送 HTTP 请求，请求必须包含的身份验证 cookie。 否则，服务器发送 HTTP 401 （未经授权） 响应。 可以通过发送 GET 请求到看到这在 Fiddler 中`http://localhost:*port*/api/admin`。
 

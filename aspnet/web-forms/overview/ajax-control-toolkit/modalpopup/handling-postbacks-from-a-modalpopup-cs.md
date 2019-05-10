@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 7963890b-4ea3-4a1c-b65d-6098a3d56f62
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 54dd3bae21e661e0b17cab6a71f0df33b6712bcd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1216b1cbc3ac0e3fd4850ab1e924ae4299207137
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388551"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132670"
 ---
 # <a name="handling-postbacks-from-a-modalpopup-c"></a>通过 ModalPopup 处理回发 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59388551"
 [下载代码](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)
 
 > 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 从弹出窗口中创建一个回发时，必须格外小心。
-
 
 ## <a name="overview"></a>概述
 
@@ -53,7 +52,6 @@ ms.locfileid: "59388551"
 此外，应使用当前名称和电子邮件填充模式弹出框中的文本框控件。 但是这是仅有必要不回发发生时。 如果回发，ASP.NET 视图状态功能便会自动填充的文本框使用适当的值。
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample6.cs)]
-
 
 [![模式弹出框会导致回发](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
 

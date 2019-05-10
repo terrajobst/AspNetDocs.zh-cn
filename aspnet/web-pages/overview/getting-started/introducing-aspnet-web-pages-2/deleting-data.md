@@ -8,12 +8,12 @@ ms.date: 01/02/2018
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: e9ffe0ea3e2bf817675a4a771d3471ec6eb91133
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c8620fc1abc61d514bdc039c66f7a84e67e89abe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406738"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133501"
 ---
 # <a name="introducing-aspnet-web-pages---deleting-database-data"></a>ASP.NET 网页简介-正在删除数据库数据
 
@@ -33,7 +33,6 @@ ms.locfileid: "59406738"
 > - `WebGrid`帮助器。
 > - SQL`Delete`命令。
 > - `Database.Execute`方法来运行 SQL`Delete`命令。
-
 
 ## <a name="what-youll-build"></a>你将生成
 
@@ -86,7 +85,6 @@ ms.locfileid: "59406738"
 > 当你的应用让他人更改记录时，必须编辑仍要向用户显示该记录。 但您可能想要跳过此步骤中的删除一条记录。 不但是跳过该步骤。 （该技术还有助于用户可以看到记录，并确认他们要删除它们的记录。）
 > 
 > 在后续教程集中，您将了解如何添加登录功能，因此用户需要登录，然后再删除记录。
-
 
 创建一个名为页*DeleteMovie.cshtml*和替换为以下标记文件中：
 

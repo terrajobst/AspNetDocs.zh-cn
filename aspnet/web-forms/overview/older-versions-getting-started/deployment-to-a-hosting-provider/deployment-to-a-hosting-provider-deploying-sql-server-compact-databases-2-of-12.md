@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: cc8568847e050e868a3e7563b5fc1fc6fbf25d86
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b265d210ff3b1eeb8697a973cc245f6c97b3eb07
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405477"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134181"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署：部署 SQL Server Compact 数据库-2 的 12
 
@@ -24,7 +24,6 @@ ms.locfileid: "59405477"
 > 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的情况下使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web 包含 SQL Server Compact 数据库。 如果在安装 Web 发布更新，还可以使用 Visual Studio 2010。 该系列的简介，请参阅[系列中的第一个教程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 > 
 > 显示了 Visual Studio 2012 RC 版后引入的部署功能，演示如何部署 SQL Server Compact 以外的 SQL Server 版本并显示了如何将部署到 Azure 应用服务 Web 应用的教程，请参阅[ASP.NET Web 部署使用 Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md)。
-
 
 ## <a name="overview"></a>概述
 
@@ -144,7 +143,6 @@ NuGet 包安装通常负责将部署应用程序使用此软件所需的所有�
 > 
 > 此示例中所示为本教程使用`AddOrUpdate`中的方法`Seed`方法的 Code First 迁移`Configuration`类。 代码优先迁移调用`Seed`方法后每个迁移，且此方法将更新具有已插入，或将其插入，如果它们尚不存在的行。 `AddOrUpdate`方法可能不是你的方案的最佳选择。 有关详细信息，请参阅[负责与 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)Julie Lerman 的博客上。
 
-
 按 CTRL-SHIFT-B 以生成项目。
 
 下一步是创建`DbMigration`类适用于初始迁移。 您希望此迁移，以创建新的数据库，因此您必须删除已存在的数据库。 SQL Server Compact 数据库中包含 *.sdf*中的文件*应用\_数据*文件夹。 在中**解决方案资源管理器**，展开*应用\_数据*ContosoUniversity 项目，以查看两个 SQL Server Compact 数据库，在其中由 *.sdf*文件。
@@ -187,7 +185,6 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证
 
 > [!NOTE]
 > 成员资格数据库将存储帐户密码的哈希值。 若要部署从一台计算机到另一个帐户，必须确保哈希例程不生成目标服务器上的不同哈希值不是它们在源计算机上执行。 它们会生成相同的哈希时使用了 ASP.NET 通用提供程序，只要不更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**的属性 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 文件中的元素。
-
 
 成员资格数据库不由 Code First 迁移，维护并且没有使用测试帐户数据库种子 （因为没有为 School 数据库） 没有自动初始值设定项。 因此，要保持可用的测试数据将使测试数据库的副本之前创建一个新。
 

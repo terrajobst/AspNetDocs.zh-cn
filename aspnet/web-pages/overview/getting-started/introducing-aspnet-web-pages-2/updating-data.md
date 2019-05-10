@@ -8,12 +8,12 @@ ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 4542ad3ac3e321629bb4de3cd4df12c22ff6cb20
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f8bcfb7d9d2416a2699776cadbdaae8e12415ba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414616"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131792"
 ---
 # <a name="introducing-aspnet-web-pages---updating-database-data"></a>ASP.NET 网页简介-更新数据库数据
 
@@ -37,7 +37,6 @@ ms.locfileid: "59414616"
 > - SQL`Update`命令。
 > - `Database.Execute` 方法。
 > - 隐藏字段 (`<input type="hidden">`)。
-
 
 ## <a name="what-youll-build"></a>你将生成
 
@@ -129,7 +128,6 @@ ms.locfileid: "59414616"
 > 
 > 显然，若要使用命名的参数，您需要知道的参数的名称。 WebMatrix IntelliSense 可以*显示*您的名称，但它不能当前它们为你填充。
 
-
 ## <a name="creating-the-edit-page"></a>创建编辑页
 
 现在，你可以创建*EditMovie*页。 当用户单击**编辑**链接，它们就会在此页上。
@@ -206,7 +204,6 @@ ms.locfileid: "59414616"
 > 
 > **重要**`Where`子句具有 ID 是非常重要，因为这是数据库如何知道哪个数据库记录你想要更新。 如果您离开`Where`子句中，数据库将更新*每个*记录在数据库中。 在大多数情况下，会是一场灾难。
 
-
 在代码中，要更新的值传递到 SQL 语句使用占位符。 若要重复我们曾经说过： 出于安全原因*仅*占位符用于将值传递给 SQL 语句。
 
 该代码使用后`db.Execute`运行`Update`语句，它将重定向回列表页，其中可以看到所做的更改。
@@ -222,7 +219,6 @@ ms.locfileid: "59414616"
 > 当然，`Query`方法可能返回只有一个数据库行。 但是，ASP.NET 始终处理的结果`Query`作为集合的方法。 即使该方法返回一个行，您必须从集合中提取这一行。 因此，在情况下，你*知道*您就会得到只包含一行，它就会更方便地使用`QuerySingle`。
 > 
 > 有几个其他执行特定类型的数据库操作的方法。 您可以查找数据库中的方法的列表[ASP.NET Web Pages API 快速参考](../../api-reference/asp-net-web-pages-api-reference.md#Data)。
-
 
 ## <a name="making-validation-for-the-id-more-robust"></a>使稳健，验证 ID 详细信息
 

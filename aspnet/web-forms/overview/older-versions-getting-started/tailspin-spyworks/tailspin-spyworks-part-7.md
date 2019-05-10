@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 50223ee9-11b9-4cf3-bca2-e2f10bf471f3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 646aeb4ad99ba9b0ee114c6be4aa528e62ef4775
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ffd2b862c727db9572c272b7b21bcc33c822fffa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59389942"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126874"
 ---
 # <a name="part-7-adding-features"></a>第 7 部分：添加功能
 
@@ -22,7 +22,6 @@ ms.locfileid: "59389942"
 > Tailspin Spyworks 演示如何创建适用于.NET 平台的功能强大、 可扩展应用程序是如何非常简单。 它展示如何在 ASP.NET 4 中使用强大的新功能来构建在线商店，包括购物、 签出和管理。
 > 
 > 本系列教程详细介绍所有生成 Tailspin Spyworks 示例应用程序所采取的步骤。 第 7 部分添加了其他功能，如帐户查看、 产品评论和"常用项"和"还已购买"用户控件。
-
 
 ## <a id="_Toc260221673"></a>  添加功能
 

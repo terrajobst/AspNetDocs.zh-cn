@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 0177dabd-d888-449f-91b2-24190cf5e842
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa05645db9d43a836cc75b399153dd2e2c288f7c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1e93a5314129b2a05ede603ae9c01cd57b574f88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388752"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127059"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>配置生产 Web 应用程序以使用生产数据库 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59388752"
 [下载代码](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_08_CS.zip)或[下载 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial08_DBConfig_cs.pdf)
 
 > 如之前教程中所述，它不是常见的配置信息以在开发和生产环境之间存在差异。 因为数据库连接字符串的开发和生产环境之间存在差异，这是对于数据驱动的 web 应用程序，尤其如此。 本教程探讨了如何配置在生产环境中更多详细信息包括适当的连接字符串。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -44,7 +43,6 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 - `AttachDbFilename` -指定数据库文件的位置。 值包含占位符`|DataDirectory|`，这是解析为 s 的应用程序的完整路径`App_Data`在运行时文件夹。
 - `Integrated Security` -一个布尔值，该值指示是否使用指定的用户名/密码连接到数据库 (false) 或当前的 Windows 帐户凭据 (true) 时。
 - `User Instance` -特定于 SQL Server Express 版本，该值指示是否允许在本地计算机上的非管理用户附加并连接到 SQL Server Express Edition 数据库的配置选项。 请参阅[SQL Server Express 用户实例](https://msdn.microsoft.com/library/ms254504.aspx)有关此设置的详细信息。
-  
 
 允许的连接字符串选项取决于要连接到的数据库和正在使用的 ADO.NET 数据库提供程序。 例如，用于连接到 Microsoft SQL Server 数据库具有不同的用来连接到 Oracle 数据库连接字符串。 同样，连接到使用 SqlClient 提供程序的 Microsoft SQL Server 数据库使用不同的连接字符串比时使用的 OLE DB 访问接口。
 
@@ -52,19 +50,15 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 
 打开 Visual Studio，然后导航到服务器资源管理器窗口 （在 Visual Web Developer 中，此窗口被称为数据库资源管理器）。 右键单击数据连接选项，然后从上下文菜单中选择添加连接选项。 此时将显示在图 1 中所示的向导。 选择适当的数据源并单击继续。
 
-
 [![选择将新的数据库添加到服务器资源管理器](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image1.jpg) 
 
 **图 1**:选择将新的数据库添加到服务器资源管理器 ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image3.jpg))
 
-
 接下来，指定的各种数据库连接信息 （请参见图 2）。 当您使用您的 web 托管公司注册它们应如何连接到数据库的数据库服务器名称、 数据库名称、 用户名和密码用于连接到数据库，依次类推提供了信息。 输入此信息后，单击确定以完成此向导并将数据库添加到服务器资源管理器。
-
 
 [![指定的数据库连接信息](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image4.jpg) 
 
 **图 2**:指定数据库连接信息 ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image6.jpg))
-
 
 生产环境数据库现在应在服务器资源管理器中列出。 从服务器资源管理器中选择数据库并转到属性窗口。 可以在其中找到一个名为使用数据库 s 的连接字符串的连接字符串属性。 假设在生产和 SqlClient 提供程序上使用的 Microsoft SQL Server 数据库连接字符串应类似于下面：
 
@@ -87,14 +81,11 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 > [!NOTE]
 > 如果意外地部署`Web.config`包含开发数据库连接字符串，则当对生产应用程序尝试连接到数据库将处于错误的文件。 此错误表现为`SqlException`reporting 服务器找不到或无法访问的消息。
 
-
 在站点部署到生产环境后，请访问生产站点，通过浏览器。 应查看，并在本地运行数据驱动的应用程序时享受相同的用户体验。 当然生产上访问该网站时该站点由提供支持，生产数据库服务器上，而在开发过程中访问网站开发环境中的使用的数据库。 图 3 显示了*教您自己 ASP.NET 3.5 24 小时内*查看页上从生产环境 （请注意浏览器的地址栏中的 URL） 中的网站。
-
 
 [![数据驱动应用程序已在现在可在生产环境 ！](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image7.jpg) 
 
 **图 3**:数据驱动应用程序已在现在可在生产环境 ！ ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image9.jpg))
-
 
 ### <a name="storing-connection-strings-in-a-separate-configuration-file"></a>将连接字符串存储在单独的配置文件
 
@@ -113,14 +104,11 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 > [!NOTE]
 > 您可以将配置文件名称以外的 databaseConnectionStrings.config，如 d，如`connectionStrings.config`或`dbInfo.config`。 但是，请确保使用该文件命名`.config`扩展插件作为`.config`文件，默认情况下，不是由 ASP.NET 引擎。 如果其他名称为该文件命名，例如`connectionStrings.txt`，用户无法对其浏览器指向[www.yoursite.com/ConfigSettings/connectionStrings.txt](http://www.yoursite.com/ConfigSettings/connectionStrings.txt)并查看该文件的内容 ！
 
-
 此时`ConfigSections`文件夹应包含三个文件 （请参阅图 4）。 DatabaseConnectionStrings.dev.config 和 databaseConnectionStrings.production.config 文件分别包含开发和生产环境中，连接字符串。 DatabaseConnectionStrings.config 文件包含将由 web 应用程序在运行时的连接字符串信息。 因此，databaseConnectionStrings.config 文件应为与在开发环境中，databaseConnectionStrings.dev.config 文件相同而 databaseConnectionStrings.config 文件应在生产上的相同databaseConnectionStrings.production.config。
-
 
 [![ConfigSections](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image11.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image10.jpg) 
 
 **图 4**:ConfigSections ([单击此项可查看原尺寸图像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image12.jpg))
-
 
 现在，我们需要指示`Web.config`要 databaseConnectionStrings.config 文件用于其连接字符串存储区。 打开 `Web.config` 并将现有 `<connectionStrings>` 元素替换为以下内容：
 
@@ -132,7 +120,6 @@ Web 应用程序使用中的信息*连接字符串*建立与数据库的连接�
 
 > [!NOTE]
 > 可以指定的任何信息`Web.config`在单独的文件，并使用元素`configSource`属性中引用该文件`Web.config`。
-
 
 ## <a name="summary"></a>总结
 

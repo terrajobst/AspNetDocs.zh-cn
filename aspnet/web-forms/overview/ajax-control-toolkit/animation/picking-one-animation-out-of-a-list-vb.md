@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 81ba9116-d485-40c0-8ff6-7e9ae23e0a0c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7d8807962e5cf668358e03821d5fd3bf755a0e7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1df265f8eaaf32d42342d39594dbba940cab0793
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418880"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128131"
 ---
 # <a name="picking-one-animation-out-of-a-list-vb"></a>选取列表中的一个动画 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418880"
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation5.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation5VB.pdf)
 
 > ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 该框架还允许程序员选取一个列表中的动画的动画，具体取决于一些 JavaScript 代码的计算。
-
 
 ## <a name="overview"></a>概述
 
@@ -51,7 +50,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 以下标记定义了三个子动画：调整大小的宽度调整大小的高度和淡出。JavaScript 代码 (`Math.floor(3 * Math.random())`)，以便三个动画的之一运行，然后选择介于 0 到 2 之间的数字：
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample5.aspx)]
-
 
 [![其中一种可能的三个动画：在面板获取更宽](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
 

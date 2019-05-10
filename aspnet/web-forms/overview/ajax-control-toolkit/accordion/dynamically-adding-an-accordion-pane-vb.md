@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 27823e6b65dda80391d494af6f8d8da539bc3334
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e3f99cbe31707f535809da0ad12f67832040b0d2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393205"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131237"
 ---
 # <a name="dynamically-adding-an-accordion-pane-vb"></a>动态添加 Accordion 窗格 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393205"
 [下载代码](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2VB.pdf)
 
 > AJAX 控件工具包中的可折叠面板控件提供了多个窗格，并允许用户一次显示其中一个。 面板通常声明内页面本身，但可以使用服务器端代码来实现相同的结果。
-
 
 ## <a name="overview"></a>概述
 
@@ -53,7 +52,6 @@ AJAX 控件工具包中的可折叠面板控件提供了多个窗格，并允许
 若要完成该示例，两个可折叠面板控件中引用的 CSS 类提供浏览器的样式信息：
 
 [!code-css[Main](dynamically-adding-an-accordion-pane-vb/samples/sample6.css)]
-
 
 [![服务器端代码动态添加 accordion 中的数据](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: 2ece0bf4-aae5-4ff4-8f62-28e0819d4f86
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: c39e1cf42fde382a9e74d7f865f0dac1aa62ddc8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c165bbea505b4cb8eae1312cdd587f4ed36541a0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384228"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127952"
 ---
 # <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>在 ASP.NET Web 窗体中使用适用于 Visual Studio 2012 的 Page Inspector
 
@@ -43,7 +43,6 @@ ms.locfileid: "59384228"
 > 
 > [使用 CSS 颜色选取器](#css_color_picker)
 
-
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
 ## <a name="prerequisites"></a>系统必备
@@ -52,7 +51,6 @@ ms.locfileid: "59384228"
 
 > [!NOTE]
 > 若要获取 Page Inspector 的最新版本，请使用[Web 平台安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)要安装 Azure SDK for.NET 2.0。
-
 
 Page Inspector 与 Microsoft Web 开发人员工具捆绑在一起。 最新版本是 1.3。 若要检查的版本，运行 Visual Studio 并选择**关于 Microsoft Visual Studio**从**帮助**菜单。
 
@@ -190,7 +188,6 @@ Page Inspector 置于检查模式。
 
 > [!NOTE]
 > 此功能需要 Page Inspector 的 1.3 版。
-
 
 CSS 自动同步功能，可直接编辑 CSS 文件并查看立即在 Page Inspector 浏览器中的更改。
 

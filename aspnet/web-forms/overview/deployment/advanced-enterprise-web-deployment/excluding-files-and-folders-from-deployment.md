@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f4cc2d40-6a78-429b-b06f-07d000d4caad
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 4da291af4042e6e09c6917703b160ca717eecd15
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a262ce43d7199fb1015d54d0b7c213857c360946
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407986"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133898"
 ---
 # <a name="excluding-files-and-folders-from-deployment"></a>从部署中排除文件和文件夹
 
@@ -22,7 +22,6 @@ ms.locfileid: "59407986"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何您可以排除文件和文件夹从 web 部署包时生成并打包 web 应用程序项目。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -48,7 +47,6 @@ ms.locfileid: "59407986"
 > [!NOTE]
 > 确定要包括的文件的逻辑包含在此文件：   
 > *%PROGRAMFILES%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
-
 
 ## <a name="excluding-specific-files-and-folders"></a>排除特定文件和文件夹
 
@@ -77,9 +75,7 @@ ms.locfileid: "59407986"
 
 这是基本的结构 *。 wpp.targets*文件：
 
-
 [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample1.xml)]
-
 
 请注意，每个项包含名为的项元数据元素**FromTarget**。 这是一个可选值，不会影响生成过程中;它只是用于指示特定文件或文件夹已省略为什么如果有人查看生成日志。
 

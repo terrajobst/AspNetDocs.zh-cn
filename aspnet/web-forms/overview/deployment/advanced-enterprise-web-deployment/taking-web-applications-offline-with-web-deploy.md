@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 3e9f6e7d-8967-4586-94d5-d3a122f12529
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: 017eceb8567859fdbe28bb87af844eee20dfa525
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ba54454bcb6f5e4ceb269b128a6b72a4b75f64be
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415474"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131400"
 ---
 # <a name="taking-web-applications-offline-with-web-deploy"></a>使用 Web 部署使 Web 应用程序脱机
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415474"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何获取 web 应用程序脱机使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 的自动部署持续时间。 浏览到 web 应用程序的用户将重定向到*应用程序\_offline.htm*文件之前部署已完成。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -70,18 +69,13 @@ ms.locfileid: "59415474"
 > [!NOTE]
 > 下一步的过程假定，您使用自定义的 MSBuild 项目文件来控制您的部署过程中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 如果你正在部署直接从 Visual Studio，你将需要使用不同的方法。 Sayed Ibrahim Hashimi 描述中的一种方法[如何采用您 Web 应用脱机期间发布](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx)。
 
-
 若要部署*应用程序\_脱机*文件到目标的 IIS 网站，您需要调用 MSDeploy.exe 使用[Web 部署**contentPath**提供程序](https://technet.microsoft.com/library/dd569034(WS.10).aspx)。 **ContentPath**提供程序支持物理目录路径和 IIS 网站或应用程序路径，这使得同步 Visual Studio 项目文件夹和 IIS web 应用程序之间的文件的理想选择。 若要部署该文件，MSDeploy 命令应类似如下：
-
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
 
-
 若要从目标站点，在部署过程结束时删除该文件，MSDeploy 命令应类似如下：
 
-
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample2.cmd)]
-
 
 若要生成和部署过程的一部分自动运行这些命令，需要将其集成到自定义 MSBuild 项目文件。 下一步的过程描述如何执行此操作。
 
@@ -129,9 +123,7 @@ Web 发布管道 (WPP) 使用名为项列表**FilesForPackagingFromProject**来�
 
 *。 Wpp.targets*文件应类似于下面：
 
-
 [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample8.xml)]
-
 
 这些是在此示例中需要注意的要点：
 
@@ -160,7 +152,6 @@ Web 发布管道 (WPP) 使用名为项列表**FilesForPackagingFromProject**来�
 
 > [!NOTE]
 > 如果你的部署失败，*应用程序\_offline.htm*文件将保持不变，并且你的应用程序将保持脱机状态。 这通常是所需的行为。 若要恢复应用程序的重新联机，您可以删除*应用程序\_offline.htm*文件从你的 web 服务器。 或者，如果更正任何错误，运行成功的部署，则*应用程序\_offline.htm*文件将被删除。
-
 
 ## <a name="conclusion"></a>结束语
 

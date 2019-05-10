@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: b9775f41-352a-4f82-baa6-23e95b342e20
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: a5c7804c2336e91dc171b5da52819436472e81cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c5da14a6856f551343b6fb14f0aedc659e792f6b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59412445"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122085"
 ---
 # <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>从 Windows Phone 8 应用程序调用 Web API (C#)
 
@@ -38,8 +38,7 @@ ms.locfileid: "59412445"
 - 有关其他要求的列表，请参阅*系统要求*部分[Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471)下载页。
 
 > [!NOTE]
-> 如果要测试 Web API 和本地系统上的 Windows Phone 8 项目之间的连接，你将需要按照中的说明*[连接到本地的 Web API 应用程序的 Windows Phone 8 仿真程序计算机](https://go.microsoft.com/fwlink/?LinkId=324014)* 一文，设置测试环境。
-
+> 如果要测试 Web API 和本地系统上的 Windows Phone 8 项目之间的连接，你将需要按照中的说明 *[连接到本地的 Web API 应用程序的 Windows Phone 8 仿真程序计算机](https://go.microsoft.com/fwlink/?LinkId=324014)* 一文，设置测试环境。
 
 <a id="STEP1"></a>
 ### <a name="step-1-creating-the-web-api-bookstore-project"></a>步骤 1：创建 Web API 书店项目
@@ -50,20 +49,16 @@ ms.locfileid: "59412445"
 2. 单击**文件**，然后**新**，然后**项目**。
 3. 当**新的项目**对话框中，展开**已安装**，然后**模板**，然后**Visual C#**，，然后**Web**。
 
-
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
    |-----------------------------------------------------------------------------------------------------------------------------------------------------|
    |                                                                单击以展开的图像                                                                |
 
-
 4. 突出显示**ASP.NET Web 应用程序**，输入**书店**以及该项目名称，然后单击**确定**。
 5. 当**新建 ASP.NET 项目**对话框中，选择**Web API**模板，，然后单击**确定**。
-
 
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image4.png)](calling-web-api-from-a-windows-phone-8-application/_static/image3.png) |
    |-----------------------------------------------------------------------------------------------------------------------------------------------------|
    |                                                                单击以展开的图像                                                                |
-
 
 6. Web API 项目打开后，从项目中删除示例控制器：
 
@@ -195,8 +190,6 @@ ms.locfileid: "59412445"
 
 如果点击错误消息时，将显示有关错误的任何其他详细信息：
 
-
 | [![](calling-web-api-from-a-windows-phone-8-application/_static/image16.png)](calling-web-api-from-a-windows-phone-8-application/_static/image15.png) |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                 单击以展开的图像                                                                 |
-

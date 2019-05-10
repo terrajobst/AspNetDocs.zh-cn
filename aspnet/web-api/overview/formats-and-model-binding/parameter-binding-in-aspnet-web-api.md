@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f121f12ce689a079412bbd5392fde4fea863ff1f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da0b9e12fcbe5cd2bfb5478162b7453d34931edf
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401967"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127513"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的参数绑定
 
@@ -178,7 +178,6 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 
 > [!NOTE]
 > 如果你**ExecuteBindingAsync**方法读取请求消息的正文，请重写**WillReadBody**属性返回 true。 请求正文可能只能读取一次，因此 Web API 实施规则，最多一个绑定未缓冲的数据流可以读取消息正文。
-
 
 要应用自定义**HttpParameterBinding**，可以定义从派生的特性**ParameterBindingAttribute**。 有关`ETagParameterBinding`，我们将定义两个属性，一个用于`if-match`标头和一个用于`if-none-match`标头。 都派生自抽象基类的类。
 

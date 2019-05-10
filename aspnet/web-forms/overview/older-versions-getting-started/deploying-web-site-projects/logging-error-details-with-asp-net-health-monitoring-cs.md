@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 52b1aec577634dfb9fec7753e4f9b8bf46d159f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6b444de67f3bce3d09dd8c3c172895cf07f58df8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416254"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134415"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 运行状况监视的日志记录错误详细信息 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59416254"
 [下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
 > Microsoft 的运行状况监控系统提供了简单且可自定义的方式记录各种 web 事件，包括未经处理的异常。 本教程将指导完成未经处理的异常记录到数据库并通知通过电子邮件的开发人员设置运行状况监控系统。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -67,7 +66,6 @@ ms.locfileid: "59416254"
 > [!NOTE]
 > `aspnet_regsql.exe`工具已返回中所述[*配置网站，使用应用程序服务*教程](configuring-a-website-that-uses-application-services-cs.md)时，我们添加了对 ASP 支持。NET 的应用程序服务。 因此，书评网站的数据库已包含`aspnet_WebEvent_LogEvent`存储过程，将存储到名为的表的事件信息`aspnet_WebEvent_Events`。
 
-
 必需执行的存储的过程和表添加到你的数据库后，所有的就是以指示运行状况监视到数据库中记录所有未经处理的异常。 完成此操作通过将以下标记添加到你的网站`Web.config`文件：
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample2.xml)]
@@ -82,7 +80,6 @@ ms.locfileid: "59416254"
 
 > [!NOTE]
 > `WebBaseErrorEvent`服务器错误只引发事件; 它不会引发 HTTP 错误，例如找不到的 ASP.NET 资源的请求。 这不同于的行为`HttpApplication`类的`Error`事件，该服务器和 HTTP 错误引发事件。
-
 
 若要查看运行状况监视系统中操作，请访问网站和生成运行时错误，请访问`Genre.aspx?ID=foo`。 您会看到相应的错误页的异常详细信息黄色屏幕死机 （当访问本地） 或自定义错误页上 （当访问在生产环境中的站点）。 在后台运行状况监控系统记录到数据库中的错误信息。 应在一条记录`aspnet_WebEvent_Events`表 (请参阅**图 1**); 此记录包含有关刚刚发生运行时错误的信息。
 
@@ -99,7 +96,6 @@ ms.locfileid: "59416254"
 
 > [!NOTE]
 > 后续教程探讨了名为 ELMAH 备用错误日志记录和通知系统。 Elmah 却包含内置的机制来查看错误日志从这两个网页和 RSS 源的形式。
-
 
 ## <a name="logging-events-to-email"></a>日志事件记录到电子邮件
 

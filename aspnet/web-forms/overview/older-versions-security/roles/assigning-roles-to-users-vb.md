@@ -8,12 +8,12 @@ ms.date: 03/24/2008
 ms.assetid: fd208ee9-69cc-4467-9783-b4e039bdd1d3
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6bedfd2b6ff0b50b3b863d26dccaacf687ed5907
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9efe20a1e8a5982d7494914a0ed865db0ab0f52e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403267"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130200"
 ---
 # <a name="assigning-roles-to-users-vb"></a>向用户分配角色 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59403267"
 [下载代码](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/VB.10.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial10_AssigningRoles_vb.pdf)
 
 > 在本教程中，我们将生成两个 ASP.NET 页，以帮助管理哪些用户属于哪些角色。 第一页将包括相应的工具来查看哪些用户属于给定角色特定的用户属于哪些角色和分配或从特定角色中删除特定用户的能力。 在第二页中我们将补充 CreateUserWizard 控件，以便它包含一个步骤来指定新创建的用户属于哪些角色。 这是在管理员能够创建新的用户帐户的情况下很有用。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -43,7 +42,6 @@ ms.locfileid: "59403267"
 > [!NOTE]
 > 使用下拉列表添加到列表的用户帐户不是网站的理想之选其中可能有数百个用户帐户。 下拉列表设计以允许用户选择一项相对较短的列表中的选项。 它很快会变得难以处理随着列表项的数量增加。 如果您正在生成将具有可能较大数量的用户帐户的网站，可能想要考虑使用一个备用用户界面，如可分页 GridView 或可筛选的接口，其中列出提示选择号的访问者，然后仅显示了其用户名以所选的字母开头的用户。
 
-
 ## <a name="step-1-building-the-by-user-user-interface"></a>步骤 1：生成"按用户"用户界面
 
 打开`UsersAndRoles.aspx`页。 在页面顶部，添加名为的标签 Web 控件`ActionStatus`并将清除其`Text`属性。 我们将使用此标签显示与此类似，所执行的操作上提供反馈，"用户 Tito 已添加到管理员角色中，"或者"用户 Jisun 已从主管角色。" 若要使这些消息凸显出来，设置标签的`CssClass`属性设置为"Important"。
@@ -56,11 +54,9 @@ ms.locfileid: "59403267"
 
 此 CSS 定义会指示浏览器显示使用的大型的红色字体的标签。 图 1 显示了 Visual Studio 设计器通过这种效果。
 
-
 [![标签的 CssClass 属性会导致大型，红色字体](assigning-roles-to-users-vb/_static/image2.png)](assigning-roles-to-users-vb/_static/image1.png)
 
 **图 1**:标签`CssClass`属性会导致大型，红色字体 ([单击以查看实际尺寸的图像](assigning-roles-to-users-vb/_static/image3.png))
-
 
 接下来，将 DropDownList 添加到页上，设置其`ID`属性设置为`UserList`，并设置其`AutoPostBack`属性设为 True。 我们将使用此 DropDownList 系统中列出的所有用户。 此 DropDownList 将绑定到的 MembershipUser 对象的集合。 因为我们希望 DropDownList 以显示 MembershipUser 对象的用户名属性 （并将其用作列表项的值），设置 DropDownList`DataTextField`和`DataValueField`为"UserName"的属性。
 
@@ -83,7 +79,6 @@ ms.locfileid: "59403267"
 > [!NOTE]
 > `Membership.GetAllUsers`方法有两个重载： 一个接受任何输入的参数并返回的所有用户，另一个使用的页索引和页大小的整数值并返回仅指定用户的子集。 当存在大量的用户帐户的可分页用户界面元素中显示时，第二个重载可以使用更高效地通过用户的页面中，因为它返回的用户帐户，而不是所有这些只是精确的子集。
 
-
 `BindRolesToList`方法通过调用来启动`Roles`类的[`GetAllRoles`方法](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx)，这会返回系统中包含的角色的字符串数组。 此字符串数组，则绑定到 Repeater 中。
 
 最后，我们需要调用这两种方法，首次加载页面时。 将以下代码添加到 `Page_Load` 事件处理程序中：
@@ -92,11 +87,9 @@ ms.locfileid: "59403267"
 
 利用此代码，请花费片刻时间访问通过浏览器; 页面屏幕应类似于图 2。 所有用户帐户被填充下拉列表中，，在其中，每个角色显示为一个复选框。 因为我们设置`AutoPostBack`属性的 DropDownList 和复选框为 True，则更改所选的用户或选中或取消选中角色导致回发。 但是，因为我们尚未编写代码来处理这些操作，不执行任何操作。 例如，我们将介绍以下两个部分中的这些任务。
 
-
 [![页面显示的用户和角色](assigning-roles-to-users-vb/_static/image5.png)](assigning-roles-to-users-vb/_static/image4.png)
 
 **图 2**:页面显示的用户和角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image6.png))
-
 
 ### <a name="checking-the-roles-the-selected-user-belongs-to"></a>检查这些角色所选的用户归属的
 
@@ -108,7 +101,6 @@ ms.locfileid: "59403267"
 
 > [!NOTE]
 > `Linq.Enumerable.Contains(Of String)(...)`语法将无法编译，如果您使用的 ASP.NET 2.0 版。 `Contains(Of String)`方法属于[LINQ 库](http://en.wikipedia.org/wiki/Language_Integrated_Query)，这是 ASP.NET 3.5 中新增。 如果您仍在使用 ASP.NET 2.0 版中，使用[`Array.IndexOf(Of String)`方法](https://msdn.microsoft.com/library/eha9t187.aspx)相反。
-
 
 `CheckRolesForSelectedUser`方法需要两种情况下调用： 首次加载页面时，只要`UserList`DropDownList 的所选的索引更改。 因此，调用此方法从`Page_Load`事件处理程序 (调用后`BindUsersToUserList`和`BindRolesToList`)。 此外，为 DropDownList 的创建事件处理程序`SelectedIndexChanged`事件，并从中调用此方法。
 
@@ -134,19 +126,15 @@ ms.locfileid: "59403267"
 
 请花费片刻时间来查看此页，通过浏览器测试。 选择用户 Tito，然后将 Tito 添加到管理员和在监督器角色。
 
-
 [![Tito 已添加到管理员和在监督器角色](assigning-roles-to-users-vb/_static/image8.png)](assigning-roles-to-users-vb/_static/image7.png)
 
 **图 3**:已添加到管理员和主管角色 Tito ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image9.png))
 
-
 接下来，从下拉列表中选择用户 Bruce。 没有为在回发和 Repeater 的复选框会更新通过`CheckRolesForSelectedUser`。 由于 Bruce 尚不属于任何角色，两个复选框的未选中状态。 接下来，将 Bruce 添加到在监督器角色。
-
 
 [![Bruce 已添加到在监督器角色](assigning-roles-to-users-vb/_static/image11.png)](assigning-roles-to-users-vb/_static/image10.png)
 
 **图 4**:Bruce 已添加到主管角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image12.png))
-
 
 若要进一步验证的功能`CheckRolesForSelectedUser`方法中，选择一个 Tito 或 Bruce 以外的用户。 请注意如何复选框的未自动选中，表示它们确实不属于任何角色。 返回到 Tito。 应检查管理员和在监督器复选框。
 
@@ -166,11 +154,9 @@ ms.locfileid: "59403267"
 
 中的最后两行`BindRolesToList`方法已添加要绑定到的角色集`RoleList`DropDownList 控件。 图 5 显示了最终结果时的浏览器 – 使用系统的角色填充下拉列表查看。
 
-
 [![角色显示在 RoleList DropDownList](assigning-roles-to-users-vb/_static/image14.png)](assigning-roles-to-users-vb/_static/image13.png)
 
 **图 5**:角色显示在`RoleList`DropDownList ([单击以查看实际尺寸的图像](assigning-roles-to-users-vb/_static/image15.png))
-
 
 ### <a name="displaying-the-users-that-belong-to-the-selected-role"></a>显示属于所选角色的用户
 
@@ -186,11 +172,9 @@ ms.locfileid: "59403267"
 
 利用此代码， `RolesUserList` GridView 应显示那些属于所选角色的用户。 如图 6 所示，在监督器角色都包含两个成员：Bruce 和 Tito。
 
-
 [![GridView 列出了这些属于所选角色的用户](assigning-roles-to-users-vb/_static/image17.png)](assigning-roles-to-users-vb/_static/image16.png)
 
 **图 6**:GridView 列出了这些用户的属于所选角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image18.png))
-
 
 ### <a name="removing-users-from-the-selected-role"></a>从所选角色中删除用户
 
@@ -198,11 +182,9 @@ ms.locfileid: "59403267"
 
 首先删除按钮字段添加到 GridView。 将此字段显示为字段最左侧，并更改其`DeleteText`属性从"删除"（默认值） 为"删除"。
 
-
 [![添加](assigning-roles-to-users-vb/_static/image20.png)](assigning-roles-to-users-vb/_static/image19.png)
 
 **图 7**:将"删除"按钮添加到 GridView ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image21.png))
-
 
 单击"删除"按钮时，才会回发和 GridView`RowDeleting`引发事件。 我们需要创建此事件的事件处理程序和编写代码，从所选角色中删除用户。 创建事件处理程序，并添加以下代码：
 
@@ -213,14 +195,11 @@ ms.locfileid: "59403267"
 > [!NOTE]
 > "删除"按钮不需要任何种类的来自用户的确认之前从角色中删除用户。 我邀请您添加某一级别的用户进行确认。 若要确认某项操作的最简单方法之一是通过客户端的确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
 
-
 图 8 在监督器组中删除用户 Tito 后显示的页。
-
 
 [![唉，Tito 不再负责管理](assigning-roles-to-users-vb/_static/image23.png)](assigning-roles-to-users-vb/_static/image22.png)
 
 **图 8**:唉，Tito 不再负责管理 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image24.png))
-
 
 ### <a name="adding-new-users-to-the-selected-role"></a>将新用户添加到所选角色
 
@@ -241,22 +220,17 @@ ms.locfileid: "59403267"
 > [!NOTE]
 > 若要确保不已属于所选角色指定的用户，我们使用[`Roles.IsUserInRole(userName, roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)，它返回一个布尔值，该值指示是否*用户名*属于*roleName*。 我们将使用此方法在再次<a id="_msoanchor_2"> </a>[下一教程](role-based-authorization-vb.md)当我们查看基于角色的授权。
 
-
 访问通过浏览器页面，然后选择从主管角色`RoleList`DropDownList。 请尝试输入无效的用户名 – 你应看到一条消息说明用户不存在系统中。
-
 
 [![不能将不存在的用户添加到角色](assigning-roles-to-users-vb/_static/image26.png)](assigning-roles-to-users-vb/_static/image25.png)
 
 **图 9**:不能将非存在的用户添加到角色 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image27.png))
 
-
 现在，尝试添加的有效用户。 继续操作并将 Tito 重新添加到在监督器角色。
-
 
 [![Tito 是再一次监督程序 ！](assigning-roles-to-users-vb/_static/image29.png)](assigning-roles-to-users-vb/_static/image28.png)
 
 **图 10**:Tito 是再一次监督程序 ！  ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image30.png))
-
 
 ## <a name="step-3-cross-updating-the-by-user-and-by-role-interfaces"></a>步骤 3：跨更新"用户"和"的角色"接口
 
@@ -289,11 +263,9 @@ ms.locfileid: "59403267"
 
 接下来，选择"添加/删除`WizardSteps`..."选项从 CreateUserWizard 的智能标记，然后添加一个新`WizardStep`，并设置其`ID`到`SpecifyRolesStep`。 移动`SpecifyRolesStep WizardStep`，以便它出现在"符号注册新帐户"步骤中，但在"完成"步骤之前。 设置`WizardStep`的`Title`属性设置为"指定的角色"其`StepType`属性设置为`Step`，并将其`AllowReturn`属性设置为 False。
 
-
 [![添加](assigning-roles-to-users-vb/_static/image32.png)](assigning-roles-to-users-vb/_static/image31.png)
 
 **图 11**:添加"指定角色"`WizardStep`到 CreateUserWizard ([单击以查看实际尺寸的图像](assigning-roles-to-users-vb/_static/image33.png))
-
 
 此更改后 CreateUserWizard 的声明性标记应如下所示：
 
@@ -317,27 +289,21 @@ ms.locfileid: "59403267"
 
 访问本页可通过浏览器。 CreateUserWizard 的第一步是标准的"符号注册新帐户"步骤，该对话框提示输入新用户的用户名、 密码、 电子邮件和其他重要信息。 输入要创建一个名为 Wanda 的新用户的信息。
 
-
 [![创建名为 Wanda 的新用户](assigning-roles-to-users-vb/_static/image35.png)](assigning-roles-to-users-vb/_static/image34.png)
 
 **图 12**:创建新的用户名为 Wanda ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image36.png))
 
-
 单击"创建用户"按钮。 在内部调用 CreateUserWizard`Membership.CreateUser`方法，创建新用户帐户，然后将前进到下一步"指定角色。" 此处列出的系统角色。 检查在监督器复选框，然后单击下一步。
-
 
 [![使 Wanda 在监督器角色的成员](assigning-roles-to-users-vb/_static/image38.png)](assigning-roles-to-users-vb/_static/image37.png)
 
 **图 13**:使 Wanda 在监督器角色的成员 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image39.png))
 
-
 单击下一步会导致回发和更新`ActiveStep`到"已完成"步骤。 在`ActiveStepChanged`事件处理程序的最近创建的用户帐户分配给在监督器角色。 若要验证这一点，返回到`UsersAndRoles.aspx`页上，选择在监督器从`RoleList`DropDownList。 如图 14 所示，在监督器现在由组成的三个用户：Bruce、 Tito 和 Wanda。
-
 
 [![Bruce、 Tito 和 Wanda 是所有主管](assigning-roles-to-users-vb/_static/image41.png)](assigning-roles-to-users-vb/_static/image40.png)
 
 **图 14**:Bruce、 Tito 和 Wanda 是所有监督器 ([单击此项可查看原尺寸图像](assigning-roles-to-users-vb/_static/image42.png))
-
 
 ## <a name="summary"></a>总结
 

@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: 789bf26df82d275c45e633de50c3cce1d82838b6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a3a53aa88abbe1bcaaea7d691406800c8f9b988b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59406621"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134557"
 ---
 # <a name="aspnet-denied-access-to-iis-directories"></a>ASP.NET 拒绝了对 IIS 目录的访问
 
 > 本白皮书介绍了对 ASP.NET 应用程序的请求将返回错误，如果您必须做什么"拒绝访问权限*DirectoryName*目录。 无法开始监视目录更改。"
 > 
 > 适用于 ASP.NET 1.0 和 ASP.NET 1.1。
-
 
 ASP.NET V1 RTM 现在运行在使用无特权 windows 帐户的注册为本地计算机上的"ASPNET"帐户。
 

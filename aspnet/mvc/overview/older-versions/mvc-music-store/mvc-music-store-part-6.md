@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b1e7bd0b16190b00e0e78a01ef71475e1c8d048a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59394817"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129657"
 ---
 # <a name="part-6-using-data-annotations-for-model-validation"></a>第 6 部分：使用数据注释进行模型验证
 
@@ -24,7 +24,6 @@ ms.locfileid: "59394817"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 6 部分介绍如何为模型验证中使用数据注释。
-
 
 我们使用我们创建和编辑窗体具有一个主要问题： 未做任何验证。 我们可以执行某些操作，如在价格字段中，保留空白的必填的字段或键入字母，我们将看到的第一个错误来自数据库。
 
@@ -76,7 +75,6 @@ ms.locfileid: "59394817"
 在标题字段中键入单个字母满足验证要求，以便验证消息将立即删除。
 
 ![](mvc-music-store-part-6/_static/image3.png)
-
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-5.md)

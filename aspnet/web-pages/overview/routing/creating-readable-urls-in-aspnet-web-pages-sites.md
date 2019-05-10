@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: a8aac1ac-89de-4415-afe0-97a41c6423d2
 msc.legacyurl: /web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: bfce6120b76d68a3f212639eafa6aa091d7e345d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 832db8e144cab730f16c78f67c12feb9b7c92c7c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59381778"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131773"
 ---
 # <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>在 ASP.NET Web Pages (Razor) 站点中创建可读 Url
 
@@ -33,7 +33,6 @@ ms.locfileid: "59381778"
 >   
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
-
 
 ## <a name="about-routing"></a>有关路由
 
@@ -77,7 +76,6 @@ ASP.NET Web Pages 中，您可以创建类似于上面的示例中的更友好 U
 > [!NOTE]
 > 为了清楚起见，特定页的请求 (即，请求： 其包括 *.cshtml*文件扩展名) 起作用就像你所期望的一样。 所示的请求`http://www.contoso.com/a/b.cshtml`将运行页面*b.cshtml*得很好。
 
-
 在页上，就可以通过页面的路径信息`UrlData`属性，它是一个字典。 假设您有一个名为文件*ViewCustomers.cshtml*和你的站点获取此请求：
 
 `http://mysite.com/myWebSite/ViewCustomers/1000`
@@ -88,7 +86,6 @@ ASP.NET Web Pages 中，您可以创建类似于上面的示例中的更友好 U
 
 > [!NOTE]
 > 由于路由不会涉及完整的文件名称，可能存在二义性如果页面具有相同名称但具有不同文件扩展名 (例如， *MyPage.cshtml*并*MyPage.html*). 为了避免出现路由问题，最好是确保没有页面的名称仅在其扩展插件中不同的站点中。
-
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源

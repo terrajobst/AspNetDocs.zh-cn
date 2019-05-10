@@ -8,12 +8,12 @@ ms.date: 01/10/2011
 ms.assetid: ffa3d5c9-91e5-4da3-b409-560b0c7fbbf0
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 7f0c5ff599235157bd11f5f86a26b8882e0f29dc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dc1d9237c04a7fcdbf4db6ccc8c36d255f6de003
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381804"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124117"
 ---
 # <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 和 ASP.NET 网页 (Razor) Beta 3 版本自述文件
 
@@ -41,7 +41,6 @@ ms.locfileid: "59381804"
 
 > Microsoft WebMatrix Beta 是在几分钟内将安装免费的 web 开发堆栈。 它与数据库和编程框架用于创建单一的集成体验集成的 web 服务器。 你可以使用 WebMatrix Beta 来简化代码、 测试和发布自己的 ASP.NET 或 PHP 网站的方式或使用 WebMatrix Beta 启动新的网站使用 DotNetNuke、 Umbraco、 WordPress 或 Joomla 等受欢迎的开源应用。 WebMatrix beta 版使用相同的功能强大的 web 服务器、 数据库引擎和框架环境，将在 internet 上，这使从开发过渡到生产顺畅、 无缝运行你的网站。
 
-
 <a id="Installation_Notes"></a>
 
 ## <a name="installation"></a>安装
@@ -50,13 +49,11 @@ ms.locfileid: "59381804"
 > 
 > 如果在安装过程中遇到问题，请参阅[问题的 Microsoft Web 平台安装程序疑难解答](https://go.microsoft.com/fwlink/?LinkId=196212)。
 
-
 <a id="Installation_Notes0"></a>
 
 ## <a name="instructions-for-publishing-applications"></a>有关发布应用程序的说明
 
 > 请参阅[发布应用程序的分步说明](https://go.microsoft.com/fwlink/?LinkID=196149)
-
 
 <a id="Known_Issues"></a>
 
@@ -80,12 +77,10 @@ ms.locfileid: "59381804"
 > - Windows XP SP3
 > - Windows Server 2003 SP2
 
-
 #### <a name="issue-cannot-install-webmatrix-beta-3-if-microsoft-visual-studio-2008-is-installed-without-microsoft-visual-studio-2008-sp1"></a>问题：如果没有 Microsoft Visual Studio 2008 SP1 的情况下安装 Microsoft Visual Studio 2008 不能安装 WebMatrix Beta 3
 
 > **解决方法**  
 > 安装[Microsoft Visual Studio 2008 SP1](https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;displaylang=en)从 Microsoft 下载中心获得。
-
 
 #### <a name="issue-some-assemblies-for-sql-server-compact-40-are-not-installed-in-the-gac"></a>问题：SQL Server Compact 4.0 某些程序集未安装在 GAC 中
 
@@ -101,14 +96,12 @@ ms.locfileid: "59381804"
 >   
 > 然后重新安装 SQL Server Compact 4.0。
 
-
 #### <a name="issue-cannot-uninstall-sql-server-compact-using-the-command-line"></a>问题：无法卸载 SQL Server Compact 使用命令行
 
 > 卸载 SQL Server Compact 使用命令行选项不适用于此版本。
 > 
 > **解决方法**  
 > 使用*程序和功能*Windows 控制面板卸载 Microsoft SQL Server Compact 4.0 中。
-
 
 <a id="Known_Issues_ASPNET"></a>
 
@@ -134,7 +127,6 @@ ms.locfileid: "59381804"
 > 
 > [!code-cshtml[Main](beta3/samples/sample1.cshtml)]
 
-
 <a id="Changes"></a>
 
 #### <a name="changes-in-beta-3-for-aspnet-web-pages-with-razor-syntax"></a>在 Beta 3 中 ASP.NET Web pages with Razor Syntax 的更改
@@ -142,7 +134,6 @@ ms.locfileid: "59381804"
 #### <a name="change-hrefattribute-method-removed"></a>更改："HrefAttribute"方法已移除
 
 > `HrefAttribute`方法的`WebPage`类已删除。 此帮助器用于对 Url 中的不安全字符进行编码。 它是不再需要，因为 ASP.NET Razor 自动对字符串进行编码。 (使用新`Html.Raw`方法以呈现未编码的字符串。)
-
 
 #### <a name="change-syntax-for-declarative-helper-helpers-changed"></a>更改：语法声明性"@helper"更改帮助程序
 
@@ -158,16 +149,13 @@ ms.locfileid: "59381804"
 > 
 > 请注意，`@{ }`不再使用的帮助程序中的初始代码周围的字符。 这是因为帮助程序的内容被视为默认情况下一个代码块。 帮助器将呈现标记，开始在打开`<a>`标记。 如果帮助者必须呈现的纯文本或标记，其中不包含结束标记 (例如，`<meta>`标记)，要呈现的内容必须在`<text></text>`标记。
 
-
 #### <a name="change-webpagecontexthttpcontext-removed"></a>更改："WebPageContext.HttpContext"中删除
 
 > `WebPageContext.HttpContext`删除属性。 请改用 `HttpContext.Current`。 (`WebPageContext.HttpContext`属性只是包装这。)
 
-
 #### <a name="change-facebook-helper-moved-to-new-package"></a>更改："Facebook"帮助程序移动到新的包
 
 > `Facebook`帮助器已移至*Facebook.Helper*库，其中包括`Facebook`帮助器和其他功能。 您必须安装此库作为单独的包，在"安装帮助程序使用程序包管理器"中所述在本教程[开始使用 ASP.NET 页面](https://go.microsoft.com/fwlink/?LinkId=202889)。
-
 
 #### <a name="change-membership-role-and-security-types-moves-to-new-assembly"></a>更改：成员资格、 角色和安全类型移动到新的程序集
 
@@ -178,13 +166,11 @@ ms.locfileid: "59381804"
 > - `SimpleRoleProvider`
 > - `WebSecurity`
 
-
 #### <a name="change-tagbuilder-class-moved-to-systemwebwebpagesdll-assembly"></a>更改：移动到 System.Web.WebPages.dll 程序集的"TagBuilder"类
 
 > `TagBuilde` R 类已被移动到 System.Web.WebPages.dll 程序集。 以前，这是 ASP.NET MVC 的一部分的程序集中。 此更改意味着，不需要安装 ASP.NET MVC，以便使用`TagBuilder`类。
 > 
 > 但是，此类是仍在`System.Web.Mvc`命名空间。 若要使用`TagBuilder`类 （例如，在一个自定义 ASP.NET Razor 帮助器），必须引用的命名空间 (例如，通过添加`@using System.Web.Mvc`到你的代码)。
-
 
 #### <a name="change-request-validation-syntax-changed-validation-class-removed"></a>更改：请求验证语法已发生更改;"验证"类中删除
 
@@ -197,7 +183,6 @@ ms.locfileid: "59381804"
 > 若要禁用自动请求验证，请调用`Request.Unvalidated`方法，并向其传递该字段或你要绕过请求验证的其他文章对象的名称。 可以使用此方法以跳过验证对于中的任何项`Form`， `QueryString`， `Cookies`，和`ServerVariables`集合。 下面的示例演示如何使用`Unvalidated`方法：
 > 
 > [!code-csharp[Main](beta3/samples/sample4.cs)]
-
 
 <a id="Issues"></a>
 
@@ -212,13 +197,11 @@ ms.locfileid: "59381804"
 > **解决方法**  
 > 请确保名称传入`InitializeDatabaseConnection`方法匹配项的用户配置文件表中的成员资格数据库，或请确保`autoCreateTables`参数设置为 false。
 
-
 #### <a name="issue-failed-to-generate-a-user-instance-of-sql-server-error"></a>问题："无法生成 SQL Server 的用户实例"错误
 
 > 如果 WebMatrix Web 应用程序使用 SQL Server Express，并且在 Windows 7 或 Windows Server 2008 R2 上运行 IIS 7.5，你可能会看到一个错误，指示 SQL Server 不能在运行时检索用户的本地应用程序路径。
 > 
 > **解决方法**请确保应用程序 (通常为 NETWORK SERVICE) 下运行的 Windows 帐户，包含读/写权限的应用程序的根文件夹和子文件夹，例如*应用\_数据*. 知识库文章中提供了更多详细的信息[SQL Server Express 用户实例化和 ASP.net Web 应用程序项目的问题](https://support.microsoft.com/kb/2002980)。
-
 
 #### <a name="issue-in-visual-studio-namespaces-for-custom-assemblies-dlls-are-not-imported-automatically"></a>问题：在 Visual Studio 中，自定义程序集 (Dll) 的命名空间不自动导入
 
@@ -227,13 +210,11 @@ ms.locfileid: "59381804"
 > **解决方法**  
 > 包括`using`语句 (`imports`在 Visual Basic 中)，它引用在设计时无法识别的实体。
 
-
 #### <a name="issue-visual-studio-intellisense-and-project-templates-available-only-in-aspnet-mvc-version-3"></a>问题：Visual Studio IntelliSense 模板和项目模板仅在 ASP.NET MVC 版本 3 中可用
 
 > 安装 ASP.NET Web Pages 不同时安装工具用于 Visual Studio 的 ASP.NET Web Pages 应用程序的智能感知和项目模板等。
 > 
 > **解决方法**若要使用 Visual Studio 中的 ASP.NET Web Pages 应用程序的智能感知和项目模板，ASP.NET MVC 3 RC 通过 Web 平台安装程序的安装或[独立安装程序](https://go.microsoft.com/fwlink/?LinkID=191797)。
-
 
 #### <a name="issue-lthelpergt-class-cannot-be-found-error"></a>问题:"&lt;帮助器&gt;找不到类"错误
 
@@ -241,7 +222,6 @@ ms.locfileid: "59381804"
 > 
 > **解决方法**  
 > 注释掉对运行的站点中任何帮助程序调用 *\_管理员* 页，并安装包或包含你想要使用的帮助器的包。 安装此包后，可以取消注释引用帮助程序的行。
-
 
 #### <a name="issue-deploying-beta-3-aspnet-razor-assemblies-to-the-bin-folder-might-not-work-on-hosting-sites"></a>问题：Beta 3 ASP.NET Razor 程序集部署到 Bin 文件夹可能不适用于托管站点
 
@@ -253,7 +233,6 @@ ms.locfileid: "59381804"
 > 
 > **解决方法**联系托管提供商，以确认你看到的错误是由于提供程序的版本之间发生冲突的程序集和你们的。 如果是这样，请求托管提供商更新服务器的 GAC 中的程序集。
 
-
 #### <a name="issue-reading-feeds-or-other-external-data-via-a-proxy-server"></a>问题：读取源或其他外部数据通过代理服务器
 
 > 如果运行该站点的服务器位于代理服务器后面，可能需要配置中的代理信息*Web.config*以便能够读取来自你的站点之外的信息的文件。 例如，如果您使用`ReCaptcha`帮助器，帮助者与 reCAPTCHA 服务通信，但可能无法通过代理服务器。 同样，使用 ASP.NET Web Pages 中，如包管理器，使用源的馈送可能需要代理服务器配置。
@@ -264,7 +243,6 @@ ms.locfileid: "59381804"
 > 
 > 有关配置代理服务器的详细信息，请参阅[&lt;代理&gt;元素 （网络设置）](https://msdn.microsoft.com/library/sa91de1e.aspx) MSDN 网站上。
 
-
 #### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>问题："无法加载 Microsoft.Web.Infrastructure.dll"错误
 
 > 如果您以前安装的 Beta 1 版本的 ASP.NET Web Pages 使用 Razor 语法，然后再安装 Beta 3 版本，所有适当的程序集安装在 gac 中除*Microsoft.Web.Infrastructure.dll*。 因此，在运行 ASP.NET Razor 页时，您看到错误，指示*Microsoft.Web.Infrastructure.dll*无法加载。
@@ -273,7 +251,6 @@ ms.locfileid: "59381804"
 > 
 > **解决方法**  
 > 在控制面板中，卸载 ASP.NET Web Pages。 然后重新安装 Beta 3 版本。
-
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>问题：卸载.NET Framework 版本 4 禁用使用 Razor 语法的 ASP.NET Web Pages
 
@@ -287,14 +264,12 @@ ms.locfileid: "59381804"
 > 
 > [!code-xml[Main](beta3/samples/sample6.xml)]
 
-
 #### <a name="issue-applications-previously-deployed-with-aspnet-assemblies-in-the-bin-folder-experience-errors"></a>问题：使用 ASP.NET 的 Bin 文件夹中的程序集之前部署的应用程序遇到错误
 
 > 在部署期间，ASP.NET Web Pages 程序集的副本 (例如， *Microsoft.WebPages.dll*) 到*Bin*的服务器上的网站的文件夹。 (可能在部署期间自动发生这或者是因为开发人员显式复制程序集。)但是，当安装 Beta 3 版本，则错误时，如找不到某些类型的错误。 这是因为多个 ASP.NET Web Pages 类型移动到不同的命名空间对于 Beta 3 版本。
 > 
 > **解决方法**   
 > 清除*Bin*文件夹部署的应用程序的新程序集复制到的文件夹 （或重新部署应用程序），然后重新启动该应用程序。
-
 
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>问题：无扩展名 Url 找不到在 IIS 7 或 IIS 7.5 上的.cshtml/.vbhtml 文件
 
@@ -312,7 +287,6 @@ ms.locfileid: "59381804"
 > 
 > [!code-xml[Main](beta3/samples/sample7.xml)]
 
-
 #### <a name="issue-using-web-application-project-or-aspnet-mvc-and-aspnet-web-pages-in-the-same-application"></a>问题：在同一个应用程序中使用 Web 应用程序项目或 ASP.NET MVC 和 ASP.NET 网页
 
 > 如果在 Web 应用程序项目或 ASP.NET MVC 应用程序中使用的 ASP.NET Web Pages，可能会看到错误， *WebPageHttpApplication*找不到。
@@ -327,7 +301,6 @@ ms.locfileid: "59381804"
 > [!code-csharp[Main](beta3/samples/sample9.cs)]
 > 
 > 这实际上会反转更改引入了使用 Razor 语法的 Beta 1 版本的 ASP.NET Web Pages。
-
 
 #### <a name="issue-deploying-an-application-to-a-computer-that-does-not-have-sql-server-compact-installed"></a>问题：应用程序部署到不具有 SQL Server Compact 安装的计算机
 
@@ -345,7 +318,6 @@ ms.locfileid: "59381804"
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
-
 
 #### <a name="issue-database-and-webgrid-helpers-do-not-work-in-medium-trust-in-visual-basic"></a>问题：数据库和 WebGrid 帮助器在中等信任在 Visual Basic 中不起作用
 
@@ -380,7 +352,6 @@ ms.locfileid: "59381804"
 > 
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
-
 #### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>问题：Microsoft Visual C++ 2008年运行时库是必需的
 
 > 本机 Dll 的 SQL Server Compact 4.0 需要 Microsoft Visual C++ 2008年运行时库 （x86、 IA64 和 x64）、 Service Pack 1。
@@ -392,7 +363,6 @@ ms.locfileid: "59381804"
 > 
 > [!NOTE]
 > 请注意，安装.NET Framework 2.0，3.0，或 4*不*安装视觉对象C++2008 运行时库 SP1。
-
 
 #### <a name="issue-if-sql-server-compact-is-installed-prior-to-installing-net-framework-on-the-computer-its-provider-invariant-name-is-not-registered-in-the-net-framework-machineconfig-file"></a>问题：如果 SQL Server Compact 安装的计算机上安装.NET Framework 之前，其提供程序固定名称未注册.NET Framework machine.config 文件中
 
@@ -408,7 +378,6 @@ ms.locfileid: "59381804"
 > 
 > 然后重新安装[SQL Server Compact 4.0 CTP1](https://www.microsoft.com/downloads/details.aspx?FamilyID=0d2357ea-324f-46fd-88fc-7364c80e4fdb&amp;displaylang=en)。
 
-
 <a id="Known_Issues_Installing_Applications"></a>
 
 ### <a name="installing-applications"></a>安装应用程序
@@ -417,7 +386,6 @@ ms.locfileid: "59381804"
 
 > **解决方法**  
 > 无。 应用程序可能需要一段时间才能安装，但将正确安装。
-
 
 <a id="Known_Issues_Publishing_Applications"></a>
 
@@ -430,14 +398,12 @@ ms.locfileid: "59381804"
 > **解决方法**  
 > 请确保在发布的站点中的目标 URL 前**发布设置**对话框的开头`http://`或`https://`。
 
-
 #### <a name="issue-publishing-a-mysql-database-fails-with-the-error-failed-to-publish-the-database-this-can-happen-if-the-remote-database-cannot-run-the-script"></a>问题：发布的 MySQL 数据库将失败并出现错误"无法将数据库发布。 这可以是远程数据库不能运行脚本。"
 
 > 多种原因可能出现此错误。 可以看到此错误的原因之一是，如果数据库脚本中包含单引号字符 （'），并且目标 MySQL 数据库的默认字符集为 utf-8。
 > 
 > **解决方法**  
 > 设置为远程的 MySQL 数据库设置为 utf-8 的默认字符。
-
 
 <a id="Known_Issues_Other_Issues"></a>
 
@@ -448,7 +414,6 @@ ms.locfileid: "59381804"
 > 当运行网站的报告，如果输入中的文本*按 URL 筛选*框，然后单击*搜索*，没有任何反应。 这是因为此控件不起作用时*Group By*报表的状态设置为*问题类型*，这是默认设置。
 > 
 > **解决方法**中*分组依据*选项卡的功能区中，单击*URL*进行分组的项按其源 URL。 文本框和按钮，用于筛选条目都能运行时处于此状态。
-
 
 #### <a name="issue-wcf-applications-fail-to-run-with-iis-express"></a>问题：WCF 应用程序无法使用 IIS Express 运行
 
@@ -469,7 +434,6 @@ ms.locfileid: "59381804"
 > 
 >     [!code-console[Main](beta3/samples/sample19.cmd)]
 
-
 #### <a name="issue-webmatrix-beta-3-is-unable-to-perform-certain-tasks-that-require-elevation"></a>问题：WebMatrix Beta 3 不能执行某些任务需要提升
 
 > WebMatrix Beta 3 不能执行某些任务需要提升，例如，在以下情况下安装其他组件：
@@ -483,14 +447,12 @@ ms.locfileid: "59381804"
 > - 在 Windows Vista 或 Windows 7，启用 UAC。
 > - 在 Windows XP 中，将用户添加到管理员安全组。
 
-
 #### <a name="issue-site-from-web-gallery-is-disabled"></a>问题："从 Web 库创建网站"已禁用
 
 > **站点从 Web 库**如果未安装 Web 平台安装程序 3.0 选项被禁用。
 > 
 > **解决方法**  
 > 安装[Microsoft Web 平台安装程序 3.0](https://go.microsoft.com/fwlink/?LinkID=194638)。
-
 
 #### <a name="issue-on-windows-server-2003-iis-express-does-not-start-for-a-non-administrative-user"></a>问题：在 Windows Server 2003、 IIS Express 不会启动非管理用户
 
@@ -501,14 +463,12 @@ ms.locfileid: "59381804"
 >   
 > [由非管理用户启动的应用程序无法侦听到 Windows Vista、 Windows Server 2003 或 Windows XP 中运行应用程序的计算机的 HTTP 流量。](https://support.microsoft.com/kb/939786)
 
-
 #### <a name="issue-google-chrome-is-not-available-as-a-run-option"></a>问题：Google Chrome 不可用作运行选项
 
 > 在浏览器的列表中不显示 Google Chrome**运行**上**主页**选项卡。
 > 
 > **解决方法**  
 > 某些版本的 Google Chrome 并不能注册正确地与 Windows 中的默认程序功能。 解决此问题，启动 Google Chrome 中，单击*自定义和控制 Google Chrome*菜单上，单击*选项*，然后单击*使 Google Chrome 我的默认浏览器*。
-
 
 #### <a name="issue-the-foreign-key-dialog-box-doesnt-allow-entering-a-primary-key"></a>问题："外键"对话框中不允许输入主键
 
@@ -517,14 +477,12 @@ ms.locfileid: "59381804"
 > **解决方法**  
 > 这是有意为之。 不需要输入主键表的主键的名称。
 
-
 #### <a name="issue-the-relationships-button-is-disabled"></a>问题："关系"按钮处于禁用状态
 
 > **关系**按钮下**表**选项卡中**数据库**禁用 SQL Server Compact 数据库的工作区。
 > 
 > **解决方法**  
 > 无。 SQL Server Compact 不支持表之间的关系。
-
 
 #### <a name="issue-parameterized-sql-queries-throw-exceptions"></a>问题：参数化的 SQL 查询引发异常
 
@@ -536,7 +494,6 @@ ms.locfileid: "59381804"
 > [!code-sql[Main](beta3/samples/sample20.sql)]
 > 
 > [!code-vb[Main](beta3/samples/sample21.vb)]
-
 
 <a id="More_Info"></a>
 

@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 307719f30c9efc8001f63f3ab068e50f82e1c5c0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b0a66cf62c34a59ca5c89c2f380093165e765100
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59399614"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129891"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table"></a>向电影模型和表添加新字段
 
@@ -21,7 +21,6 @@ ms.locfileid: "59399614"
 
 > > [!NOTE]
 > > 本教程中的更新的版本是可用[此处](../../getting-started/introduction/getting-started.md)，它使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示更多的功能。
-
 
 在本部分中将使用 Entity Framework Code First 迁移来迁移到模型类的一些更改，因此更改被应用到数据库。
 
@@ -69,7 +68,6 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 > 
 > 代码优先迁移调用`Seed`每个迁移后的方法 (即，调用**更新数据库**程序包管理器控制台)，，此方法更新行，具有已插入，或将其插入，如果它们尚不存在。
 
-
 **按 CTRL-SHIFT-B 以生成项目。**(以下步骤将失败，如果你不在此时生成。)
 
 下一步是创建`DbMigration`类适用于初始迁移。 为此迁移过程将创建一个新的数据库，这就是为什么你删除*movie.mdf*上一步中的文件。
@@ -102,7 +100,7 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 生成应用程序中使用**构建** &gt;**构建电影**菜单命令或通过按 CTRL-B SHIFT。
 
-现在，已更新`Model`类，您还需要更新*\Views\Movies\Index.cshtml*并*\Views\Movies\Create.cshtml*查看模板以显示新`Rating`浏览器视图中的属性。
+现在，已更新`Model`类，您还需要更新 *\Views\Movies\Index.cshtml* 并 *\Views\Movies\Create.cshtml* 查看模板以显示新`Rating`浏览器视图中的属性。
 
 打开<em>\Views\Movies\Index.cshtml</em>文件，并添加`<th>Rating</th>`列标题之后<strong>价格</strong>列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新 <em>Index.cshtml</em> 视图模板如下所示：
 
@@ -122,13 +120,11 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 之所以看到此错误，因为已更新`Movie`应用程序中的 model 类现在与不同的架构`Movie`现有数据库表。 （数据库表中没有 `Rating` 列。）
 
-
 可通过几种方法解决此错误：
 
 1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 这种方法就是很方便时测试数据库; 上进行开发它可以一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您 *不* 需要生产数据库上使用此方法 ！ 使用初始值设定项以自动设定种子使用测试数据的数据库通常是开发的应用程序的有效方式。 有关实体框架数据库初始值设定项的详细信息，请参阅 Tom Dykstra [ASP.NET MVC/实体框架教程](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 2. 对现有数据库架构进行显式修改，使它与模型类相匹配。 此方法的优点是可以保留数据。 可以手动或通过创建数据库更改脚本进行此更改。
 3. 使用 Code First 迁移更新数据库架构。
-
 
 本教程使用 Code First 迁移。
 

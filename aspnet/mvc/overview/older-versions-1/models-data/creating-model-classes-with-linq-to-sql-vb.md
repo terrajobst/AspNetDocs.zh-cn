@@ -8,12 +8,12 @@ ms.date: 10/07/2008
 ms.assetid: a4a25a75-d71f-4509-98b4-df72e748985a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 212287ea384cf54f9eda477e6f706637d10dd54a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5e2f6af6ef425625cfc11570a73d2eea3516c996
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419894"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122528"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-vb"></a>使用 LINQ to SQL 创建模型类 (VB)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_VB.pdf)
 
 > 本教程的目的是说明创建 ASP.NET MVC 应用程序的模型类的一种方法。 在本教程中，您将学习如何生成模型的类和执行通过利用 Microsoft LINQ 到 SQL 数据库访问权限。
-
 
 本教程的目的是说明创建 ASP.NET MVC 应用程序的模型类的一种方法。 在本教程中，您将学习如何生成模型的类和执行通过利用 Microsoft LINQ 到 SQL 数据库访问权限。
 
@@ -42,14 +41,11 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 在此教程--为了说明如何构建模型类-我们构建一个简单的电影数据库应用程序。 第一步是创建新的数据库。 右键单击该应用\_在解决方案资源管理器窗口中，选择菜单选项的数据文件夹**添加、 新项**。 选择 SQL Server 数据库的模板，为其提供名称 MoviesDB.mdf，然后单击**添加**按钮 （请参见图 1）。
 
-
 [![添加新的 SQL Server 数据库](creating-model-classes-with-linq-to-sql-vb/_static/image2.png)](creating-model-classes-with-linq-to-sql-vb/_static/image1.png)
 
 **图 01**:添加新的 SQL Server 数据库 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image3.png))
 
-
 创建新的数据库后，可以通过双击 MoviesDB.mdf 文件在应用中的打开数据库\_数据文件夹。 双击 MoviesDB.mdf 文件会打开服务器资源管理器窗口 （请参见图 2）。
-
 
 |   | 使用 Visual Web Developer 时，服务器资源管理器窗口称为数据库资源管理器窗口。 |
 |---|----------------------------------------------------------------------------------------------------|
@@ -59,14 +55,11 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 **图 02**:使用服务器资源管理器窗口 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image6.png))
 
-
 我们需要将表添加到我们代表我们的电影的数据库。 右键单击表文件夹，然后选择菜单选项**添加新表**。 选择此菜单选项打开表设计器 （请参见图 3）。
-
 
 [![使用服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-vb/_static/image8.png)](creating-model-classes-with-linq-to-sql-vb/_static/image7.png)
 
 **图 03**:表设计器 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image9.png))
-
 
 我们需要向数据库表添加以下列：
 
@@ -86,19 +79,15 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 我们的 MVC 模型将包含 LINQ to SQL 类表示 tblMovie 数据库表。 若要创建这些 LINQ to SQL 类的最简单方法是右键单击 Models 文件夹中，选择**添加、 新建项**，选择的 LINQ to SQL 类模板，为指定类名称 Movie.dbml，然后单击**添加**按钮 （请参见图 4）。
 
-
 [![创建 LINQ to SQL 类](creating-model-classes-with-linq-to-sql-vb/_static/image11.png)](creating-model-classes-with-linq-to-sql-vb/_static/image10.png)
 
 **图 04**:创建 LINQ to SQL 类 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image12.png))
 
-
 立即创建电影 LINQ to SQL 类后，将显示对象关系设计器。 可以将数据库表拖到对象关系设计器创建 LINQ to SQL 类表示特定的数据库表上服务器资源管理器窗口中。 我们需要添加到对象关系设计器上的 tblMovie 数据库表 （请参阅图 4）。
-
 
 [![使用对象关系设计器](creating-model-classes-with-linq-to-sql-vb/_static/image14.png)](creating-model-classes-with-linq-to-sql-vb/_static/image13.png)
 
 **图 05**:使用对象关系设计器 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image15.png))
-
 
 默认情况下，对象关系设计器创建一个类具有与数据库表拖到设计器上完全相同的名称。 但是，我们不想要调用我们类 tblMovie。 因此，单击设计器中的类的名称，并将类的名称更改为电影。
 
@@ -134,19 +123,15 @@ MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序
 
 若要将记录添加到 tblMovies 数据库表中，右键单击服务器资源管理器窗口 （在 Visual Web Developer 中的数据库资源管理器窗口） 中的 tblMovies 数据库表并选择菜单选项**显示表数据**。 使用的网格中显示 （见图 5），可以将电影记录。
 
-
 [![插入电影](creating-model-classes-with-linq-to-sql-vb/_static/image17.png)](creating-model-classes-with-linq-to-sql-vb/_static/image16.png)
 
 **图 06**:插入电影 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image18.png))
 
-
 将某些数据库记录添加到 tblMovies 表，并运行应用程序后，您将看到在图 7 中的页。 项目符号列表中将显示所有电影数据库记录。
-
 
 [![显示与索引视图的电影](creating-model-classes-with-linq-to-sql-vb/_static/image20.png)](creating-model-classes-with-linq-to-sql-vb/_static/image19.png)
 
 **图 07**:显示与索引视图的电影 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-vb/_static/image21.png))
-
 
 ## <a name="using-the-repository-pattern"></a>使用存储库模式
 

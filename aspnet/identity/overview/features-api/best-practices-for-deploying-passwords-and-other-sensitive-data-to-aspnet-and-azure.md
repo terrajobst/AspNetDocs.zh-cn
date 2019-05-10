@@ -9,12 +9,12 @@ ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 2620d9e2eaf3c7719d9a289e42bb91270708ae79
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e02df967df8acf346b9fcd1c75dbe304cc5407b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419439"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121533"
 ---
 # <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>向 ASP.NET 和 Azure 应用服务部署密码和其他敏感数据的最佳做法
 
@@ -25,7 +25,6 @@ ms.locfileid: "59419439"
 > 示例代码是一个简单的 web 作业控制台应用和需要访问数据库连接字符串密码，Twilio，Google 和 SendGrid 安全密钥的 ASP.NET MVC 应用程序。
 > 
 > 在本地设置和 PHP 还将提到。
-
 
 - [使用开发环境中的密码](#pwd)
 - [处理在开发环境中的连接字符串](#con)
@@ -54,7 +53,6 @@ ASP.NET 运行时将外部文件中的标记的内容合并&lt;appSettings&gt;�
 > [!WARNING]
 > 安全性-不添加你*机密.config*文件添加到你的项目或将其签入源代码管理。 默认情况下，Visual Studio 将设置`Build Action`到`Content`，这意味着该文件部署。 有关详细信息请参阅[不为什么部署所有我的项目文件夹中的文件？](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 尽管可以使用任何适用于扩展*机密.config*文件，它是让它 *.config*，如配置文件不是由 IIS。 另请注意*AppSettingsSecrets.config*文件是从两个目录级别向上*web.config*文件，因此它完全不受解决方案目录。 将解决方案目录中，从文件移&quot;git 添加\*&quot;不会将其添加到你的存储库。
 
-
 <a id="con"></a>
 ## <a name="working-with-connection-strings-in-the-development-environment"></a>处理在开发环境中的连接字符串
 
@@ -67,14 +65,11 @@ Visual Studio 将创建使用新 ASP.NET 项目[LocalDB](https://blogs.msdn.com/
 > [!NOTE]
 > 如果使用`configSource`属性如上所示将您的连接字符串移动到外部文件，并让 Visual Studio 创建新的 web 站点，它将无法检测到您使用的是数据库，并不会获得配置数据库的选项时您 publish 到 Azure，从 Visual Studio。 如果使用的`configSource`属性，可以使用 PowerShell 创建和部署你的网站和数据库，也可以创建 web 站点和数据库在门户中发布之前。 [新建 AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3)脚本将创建一个新的 web 站点和数据库。
 
-
 > [!WARNING]
 > 安全性-与不同*AppSettingsSecrets.config*文件中，外部连接字符串文件必须在相同的目录作为根*web.config*文件，因此您必须采取预防措施以确保你不将其签入源代码存储库。
 
-
 > [!NOTE]
 > **机密文件上的安全警告：** 一种最佳做法是不使用测试和开发中的生产机密。 使用生产环境中测试或开发的密码泄漏这些机密。
-
 
 <a id="wj"></a>
 ## <a name="webjobs-console-apps"></a>Web 作业的控制台应用
@@ -105,7 +100,6 @@ Visual Studio 将创建使用新 ASP.NET 项目[LocalDB](https://blogs.msdn.com/
 > [!WARNING]
 > 安全性-不包含密码或其他机密在 PowerShell 脚本中，执行这样的失败操作使用的 PowerShell 脚本以将敏感数据部署的目的。 [Get-credential](https://technet.microsoft.com/library/hh849815.aspx) cmdlet 提供了一种安全机制来获取密码。 使用 UI 提示可以防止泄露密码。
 
-
 ### <a name="deploying-db-connection-strings"></a>部署数据库连接字符串
 
 DB 连接字符串为应用设置的相似方式进行处理。 如果部署 web 应用从 Visual Studio 时，将为你配置的连接字符串。 可以在门户中对此进行验证。 设置连接字符串的建议的方法是使用 PowerShell。 有关 PowerShell 脚本的示例创建网站和数据库，并设置连接字符串在网站中，下载[新建 AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3)从[Azure 脚本库](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&amp;f%5B0%5D.Value=WindowsAzure)。
@@ -125,6 +119,5 @@ DB 连接字符串为应用设置的相似方式进行处理。 如果部署 web
 有关 PowerShell 的示例脚本可创建 web 应用 + 数据库中，设置连接字符串 + 应用程序设置、 下载[新建 AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3)从[Azure 脚本库](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&amp;f%5B0%5D.Value=WindowsAzure)。 
 
 请参阅 Stefan Schackow [Windows Azure 网站：应用程序字符串和连接字符串的工作原理](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)
-
 
 特别感谢 Barry Dorrans ( [ @blowdart ](https://twitter.com/blowdart) ) 和 Carlos Farre 对进行了审阅。

@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: a580b678a943695969b7f3acd2f7a033bd0b6ee3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 64215d556ded0850537a13856fe69b094116ebca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379763"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130330"
 ---
 # <a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005 中的改进
 
 by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 提供了众多改进和增强功能的 Web 项目的 Web 应用程序开发人员。
-
 
 Visual Studio 2005 提供了众多改进和增强功能的 Web 项目的 Web 应用程序开发人员。 具有强大的功能 Visual Studio.NET 2002年和 2003年是，许多投诉中包括的 Web 项目已处理的方式。 Visual Studio 2005 为了解决这些抱怨添加大量新功能。 有关这些适用于喜欢 Visual Studio.NET 2003年处理的 Web 应用程序编译的方式，请参阅[Web 应用程序项目](https://go.microsoft.com/fwlink/?LinkId=57870)。
 
@@ -36,7 +35,6 @@ Visual Studio 2005 中删除而言，对于本地项目依赖于 FrontPage 服�
 
 > [!NOTE]
 > 仍需要远程项目创建、 打开等 FrontPage 服务器扩展。
-
 
 ## <a name="aspnet-development-server"></a>ASP.NET Development Server
 
@@ -64,12 +62,9 @@ Web 开发人员在 Visual Studio 2005 中有许多新的选项可用于创建�
 
 若要查看在 Visual Studio 2005 中创建 Web 项目的视频演练，请单击此处。
 
-
 ![](improvements-in-visual-studio-2005/_static/image1.png)
 
-
 [打开的全屏视频](improvements-in-visual-studio-2005/_static/creating_projects1.wmv)
-
 
 ### <a name="file-system-projects"></a>文件系统项目
 
@@ -77,7 +72,6 @@ Web 开发人员在 Visual Studio 2005 中有许多新的选项可用于创建�
 
 > [!NOTE]
 > ASP.NET 开发服务器可能会导致一些混淆的客户。 如果 IISs 目录结构 (即 c: / inetpub/wwwroot) 中的文件系统上创建 Web 项目，则将仍可通过从 Visual Studio 2005 中启动的 ASP.NET 开发服务器浏览 Web 站点。 因此，任何 IIS 配置 （即身份验证方法） 不适用。
-
 
 大量还会删除默认的 web 项目的开销通过仅包含 Default.aspx 页面、 default.cs 文件和应用/数据 （_d） 文件夹。 根据他们需要添加 web.config 和特殊文件夹 (即应用/_code)。 你的 web 项目仅包括的文件和所需的文件夹。
 
@@ -90,22 +84,17 @@ HTTP 项目可以是本地 IIS Web 站点上或远程网站上创建的项目。
 > [!NOTE]
 > Vs###/_tmp.htm 文件和 get/_aspx/_ver.aspx 不再用于确定版本信息。
 
-
 默认 HTTP 选项是本地 IIS。 此选项读取 IIS 元数据库，若要确定哪些站点可用，并在其中创建内容的位置。 在树视图中选择它，可以选择不同的文件夹或虚拟目录。 您可以还创建一个新的虚拟目录、 将标记为应用程序的文件夹，以及从该对话框中删除现有的虚拟目录。
-
 
 ![选择位置对话框](improvements-in-visual-studio-2005/_static/image1.gif)
 
 **图 1**:选择位置对话框
 
-
 不同于在早期版本的 Visual Studio 中，如果您检查**使用安全套接字层**复选框和 SSL 证书与您正浏览的 URL 不匹配，则将显示一个安全警报对话框，询问您是否像要继续操作。 使用 Visual Studio.NET 2003 中，如果证书不是一匹配，将无法创建项目。
-
 
 ![安全警报的有关 SSL 证书](improvements-in-visual-studio-2005/_static/image2.gif)
 
 **图 2**:安全警报的有关 SSL 证书
-
 
 ### <a name="note-on-host-headers"></a>请注意，在主机标头
 
@@ -113,19 +102,15 @@ HTTP 项目可以是本地 IIS Web 站点上或远程网站上创建的项目。
 
 如果选择远程站点选项，该对话框更改为允许你输入新的 Web 站点的目标 URL。 此 URL 必须已启用 FrontPage 服务器扩展的服务器上。 如果你想要使用本地 Web 服务器使用 FrontPage 服务器扩展，可以使用远程站点选项并指定本地 URL。
 
-
 ![在远程服务器上创建网站](improvements-in-visual-studio-2005/_static/image1.jpg)
 
 **图 3**:在远程服务器上创建网站
 
-
 通过 SSL，远程站点上创建应用程序，如果 SSL 证书不匹配，确认对话框时，对话框中显示时使用本地 IIS 选项略有不同。
-
 
 ![远程站点安全警报](improvements-in-visual-studio-2005/_static/image3.gif)
 
 **图 4**:远程站点安全警报
-
 
 <a id="_Toc116100243"></a>
 
@@ -136,14 +121,11 @@ Visual Studio 2005 引入了用于创建通过 FTP 的网站的选项。 时使�
 > [!NOTE]
 > 临时文件夹位置是 c: / 文档和设置 /&lt;用户&gt;/本地设置/Temp/VWDWebCache/&lt;服务器&gt;/_&lt;应用程序名称&gt;
 
-
 使用 FTP 选项时，您将看到一个对话框，选择位置。 在此对话框，如下所示输入所需的 FTP 连接信息。
-
 
 ![选择 ftp 位置对话框](improvements-in-visual-studio-2005/_static/image2.jpg)
 
 **图 5**:选择 ftp 位置对话框
-
 
 ## <a name="lab-setup-ftp-site-and-create-a-project"></a>实验室：设置 FTP 站点并创建一个项目
 
@@ -199,7 +181,6 @@ Visual Studio 2005 引入了用于创建通过 FTP 的网站的选项。 时使�
 > [!NOTE]
 > 如果你收到错误，表示无法加载类型 /_Default，请确保你的网站并不是早期版本上运行 ASP.NET 2.0。 您可以从在 Internet 信息服务中的 ASP.NET 选项卡来实现。
 
-
 ## <a name="opening-web-projects"></a>打开 Web 项目
 
 打开 Web 项目是类似于创建项目。 调用区域，以保持关注的 IDE 内工作时以下各节。 它还介绍如何使用 HTTP 和 FTP 的 Web 项目使用。
@@ -212,11 +193,9 @@ Visual Studio 2005 引入了用于创建通过 FTP 的网站的选项。 时使�
 
 如之前在此模块中所示，Visual Studio 将无法再使用项目文件。 因此，如果您选择从文件系统打开网站，您实际上可以选择你想，任何文件夹，即使您选择的文件夹不作为最初在 Visual Studio 中的 Web 项目创建。 例如，可以选择要打开我的文档文件夹作为网站和 Visual Studio 将值得庆幸的是将其打开并显示你的文件，如下所示。
 
-
 ![我作为网站打开的文档](improvements-in-visual-studio-2005/_static/image3.jpg)
 
 **图 6**:*我的文档*作为网站打开
-
 
 由于 Visual Studio 仅创建其他文件和文件夹在必要时，任何其他文件或文件夹添加到打开的位置。 此体系结构的副作用是，它会阻止您嵌套在文件系统上的网站。 例如，考虑以下目录结构。
 
@@ -234,11 +213,9 @@ C: / MyWebSite/嵌套在另一个 web 项目
 
 即使 Visual Studio 将显示嵌套在 IDE 中当前打开的应用程序下面的应用程序的图标，它将允许您以展开其查看其内容。 但是，可以双击它们来打开它们。 执行操作时，您会看到一个对话框，提示您需要打开 web 应用程序 （并替换当前打开的解决方案），或添加到当前解决方案的 Web 应用程序。
 
-
 ![双击一个嵌套的应用程序图标将显示此对话框](improvements-in-visual-studio-2005/_static/image4.jpg)
 
 **图 7**:双击一个嵌套的应用程序图标将显示此对话框
-
 
 <a id="_Toc116100247"></a>
 
@@ -250,11 +227,9 @@ C: / 文档和设置 /&lt;用户&gt;/本地设置/Temp/VWDWebCache/&lt;服务器
 
 使用 FTP 时，Visual Studio 将需要指定你的项目的基 URL，以便您可以浏览它，如下所示。 如果不指定基 URL，Visual Studio 会要求您为其第一次尝试浏览 Web 站点中的页。
 
-
 ![指定的 FTP 站点的基 URL](improvements-in-visual-studio-2005/_static/image5.jpg)
 
 **图 8**:指定的 FTP 站点的基 URL
-
 
 ## <a name="improvements-in-compilation"></a>在编译中的改进
 
@@ -265,27 +240,21 @@ C: / 文档和设置 /&lt;用户&gt;/本地设置/Temp/VWDWebCache/&lt;服务器
 > [!NOTE]
 > MSBuild 命令行实用程序还可以用于生成 ASP.NET Web 应用程序。 该工具将模块 9 中所覆盖。
 
-
 另一个编译增强功能是生成菜单上的新生成页选项。 此功能允许开发人员可以重新生成仅在当前页 （连同、 课程和依赖项），这样可以更快地编译更改。 C# 不提供用于更新 IntelliSense 等的后台编译，因为它们将极大地从此功能受益因为这可以使 intellisense 只需重新生成单个页面快速更新。
 
 项目生成的属性，可配置的启动页面执行之前发生的生成的类型。 开发人员可以选择仅生成当前页，以便 Visual Studio 可以开始在代码更改后更快地调试应用程序。
-
 
 ![生成页开始操作](improvements-in-visual-studio-2005/_static/image6.jpg)
 
 **图 9**:生成页开始操作
 
-
 Visual Studio 和 ASP.NET 体系结构到另一个很好的增强功能是在区域中的编辑并继续。 在 Visual Studio 2005 中，开发人员可以开始调试项目和项目进行代码更改，而分离调试器。 事实上，您可以按原义开始调试项目、 添加新类，将代码添加到该类、 将代码添加到您创建该类的新实例的页面和执行方法的类，所有操作都无分离调试器。 执行新的代码是作为刷新浏览器按字面意思一样简单 ！
 
 单击此处可查看视频演练的编辑并继续在 Visual Studio 2005 中的功能。
 
-
 ![](improvements-in-visual-studio-2005/_static/image2.png)
 
-
 [打开的全屏视频](improvements-in-visual-studio-2005/_static/editcontinue1.wmv)
-
 
 稳定可靠的编辑并继续在 ASP.NET 2.0 中的功能和 Visual Studio 2005 是由于对于 ASP.NET 应用程序的体系结构更改。 在 ASP.NET 1.x 中，创建 Visual Studio 2002/2003 中的应用程序已编译到 /bin 文件夹中存储的主要程序集。 所有类，页面，等的应用程序已编译到一个 DLL。 然后在运行时，ASP.NET 会将所有控件、 标记和 ASP.NET 页内的代码编译并将这些 Dll 复制到 ASP.NET 临时文件夹。
 
@@ -293,28 +262,21 @@ Visual Studio 和 ASP.NET 体系结构到另一个很好的增强功能是在区
 
 若要查看对用户控件的设计器支持的视频演练，请单击此处。
 
-
 ![](improvements-in-visual-studio-2005/_static/image3.png)
 
-
 [打开的全屏视频](improvements-in-visual-studio-2005/_static/usercontrols1.wmv)
-
 
 > [!NOTE]
 > 从页上，删除的用户控件时@Register指令保持在标记中，应手动删除以避免分析器错误，如果从 Web 站点中删除的用户控件。
 
-
 Visual Studio 编译模型中的另一个改进是发布网站功能。 发布功能预编译 Web 站点，因为开发人员可以享受无需编译任何内容按需添加了的的性能。 它还预编译应用程序/_Code 文件夹中的所有源代码到 DLL，以便没有源代码必须进行部署。
-
 
 ![发布网站对话框](improvements-in-visual-studio-2005/_static/image7.jpg)
 
 **图 10**:发布网站对话框
 
-
 > [!NOTE]
 > Aspnet/_compile.exe 实用工具还可以用于预编译的 ASP.NET Web 应用程序。 该工具将模块 9 中所覆盖。
-
 
 当您发布网站，预编译的文件存储在 Temporary ASP.NET Files 文件夹，如下所示。 文件的工具 *.compiled*文件扩展名是定义特定 Dll 的依赖项的 XML 文件。 任何 web 窗体或用户控件被编译为开头的随机 Dll*应用程序 /_Web /_*。
 
@@ -327,15 +289,12 @@ Visual Studio 编译模型中的另一个改进是发布网站功能。 发布�
 > [!NOTE]
 > 在 ASP.NET 1.x 中，强名称程序集必须安装到全局程序集缓存 (GAC) 中。 在 ASP.NET 2.0 中，您都不需要强名称的程序集安装到 gac。
 
-
 ![ASP.NET 应用程序预编译的文件](improvements-in-visual-studio-2005/_static/image8.jpg)
 
 **图 11**:ASP.NET 应用程序预编译的文件
 
-
 > [!NOTE]
 > 在上述应用程序，没有 web.config 文件。 如果已经存在，它会调用了*PrecompiledApp.config*后发布 Web 站点过程。
-
 
 ## <a name="improvements-in-deployment"></a>部署中的改进
 
@@ -348,15 +307,11 @@ Visual Studio 编译模型中的另一个改进是发布网站功能。 发布�
 > [!NOTE]
 > 如果尝试在本地 IIS 实例上创建新的 Web 站点和安装 FrontPage 2002 Server Extensions，你将获取错误消息，告诉你创建网站的 SharePoint 服务器上不支持的。 在这种情况下，您可以选择安装 FrontPage 2000 服务器扩展或删除 FrontPage 服务器扩展。
 
-
 复制网站功能的视频演练，请单击此处。
-
 
 ![](improvements-in-visual-studio-2005/_static/image4.png)
 
-
 [打开的全屏视频](improvements-in-visual-studio-2005/_static/copysite1.wmv)
-
 
 ## <a name="improvements-in-debugging"></a>在调试改进
 
@@ -389,19 +344,15 @@ Visual Studio 2005 中删除，依赖于 mdm.exe 和 vs7jit.exe 进程。 相反
 
 当您运行 msvsmon.exe 时，很可能会抱怨有关端口被阻止进行远程调试的信息。 幸运的是，您可以轻松地取消阻止直接在警告对话框中的端口，如下所示。
 
-
 ![通知 Windows 防火墙阻止远程调试](improvements-in-visual-studio-2005/_static/image9.jpg)
 
 **图 12**:通知 Windows 防火墙阻止远程调试
 
-
 你已取消阻止后调试所需的端口，您将看到远程调试监视器，如下所示。 从该界面可以监视连接并更改轻松调试的权限。
-
 
 ![远程调试监视器](improvements-in-visual-studio-2005/_static/image10.jpg)
 
 **图 13**:远程调试监视器
-
 
 还有可能要通过 FTP 打开一个 Web 应用程序进行远程调试。 步骤将与以前涵盖的那些相同。 但是，需要指定用于浏览 FTP 项目之前在此模块中所述的基 URL。
 
@@ -413,12 +364,9 @@ Visual Studio 2005 中删除，依赖于 mdm.exe 和 vs7jit.exe 进程。 相反
 
 有关此实验室的视频演练，请单击此处。
 
-
 ![](improvements-in-visual-studio-2005/_static/image5.png)
 
-
 [打开的全屏视频](improvements-in-visual-studio-2005/_static/remdebug1.wmv)
-
 
 此体验要求具备你拥有两台计算机，一个正在运行的 Visual Studio 2005 和其他正在运行 IIS 5 或更高版本。
 
@@ -426,7 +374,6 @@ Visual Studio 2005 中删除，依赖于 mdm.exe 和 vs7jit.exe 进程。 相反
 
 > [!NOTE]
 > 在远程 IIS 实例上或通过 FTP，可以创建网站。
-
 
 1. 从远程 Web 服务器，使用 UNC 路径在开发计算机上找到 msvsmon.exe 并执行它。  
  Msvsmon.exe 的默认位置是 //server/c$/Program 文件/Microsoft Visual Studio 8/Common7/IDE/远程调试器/x86。
@@ -444,11 +391,9 @@ ASP.NET Development Server 是受限制的 Web 服务器。 不允许远程连�
 
 ASP.NET 开发服务器可以通过命令行启动运行 WebDev.WebServer.exe 文件位于 c:/Windows/Microsoft.NET/Framework/v2.0./*/* /  */*/*. 以下对话框显示可用的参数。
 
-
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)
 
 **图 14**
-
 
 > [!NOTE]
 > ASP.NET Development Server 不支持通过命令行显式启动时。

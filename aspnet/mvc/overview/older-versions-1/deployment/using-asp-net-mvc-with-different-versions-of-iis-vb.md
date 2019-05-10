@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: 1c1283b2-6956-4937-b568-d30de432ce23
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0446a125845134d2fad869094a540c960f6b0a25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b754175c853c20eec6be3521376b62d62f33106d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406465"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123215"
 ---
 # <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>通过不同版本的 IIS 使用 ASP.NET MVC (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何使用 ASP.NET MVC 中，并且 URL 路由，使用不同版本的 Internet Information Services。 了解 ASP.NET MVC 中使用的 IIS 7.0 （经典模式）、 IIS 6.0 和 IIS 的早期版本不同的策略。
-
 
 ASP.NET MVC 框架会在 ASP.NET 路由取决于浏览器请求路由到控制器操作。 为了充分利用 ASP.NET 路由，您可能需要在 web 服务器上执行其他配置步骤。 这完全取决于 Internet 信息服务 (IIS) 和请求处理你的应用程序的模式下的版本。
 
@@ -53,18 +52,15 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 
 默认情况下，IIS 配置为支持两个应用程序池：**DefaultAppPool**并**经典版.NET AppPool**。 如果选择了 DefaultAppPool，然后在集成的请求处理模式下运行你的应用程序。 如果选择了经典的.NET 应用程序池，你的应用程序在经典的请求处理模式下运行。
 
-
 [![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.png)
 
 **图 1**:检测的请求处理模式 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.png))
-
 
 请注意，您可以修改在编辑应用程序对话框中的请求处理模式。 单击选择按钮，并将更改应用程序与关联的应用程序池。 认识到从经典部署模型的 ASP.NET 应用程序更改为集成模式下时有兼容性问题。 有关详细信息，请参阅以下文章：
 
 - 升级到 Windows Vista 和 Windows Server 2008--上的 IIS 7.0 的 ASP.NET 1.1 [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
 
 - 使用 IIS 7.0 的 ASP.NET 集成 [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
-
 
 如果 ASP.NET 应用程序使用 DefaultAppPool，您不需要执行任何其他步骤以获得 ASP.NET 路由 （以及因此 ASP.NET MVC） 工作。 但是，如果 ASP.NET 应用程序配置为使用 Classic.NET AppPool 然后往下读，则必须多工作要做。
 
@@ -96,11 +92,9 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 
 遗憾的是，较旧版本的 IIS 不会将这些请求传递给 ASP.NET 框架。 因此，不会将这些请求路由到控制器。 例如，如果浏览器请求进行 URL /Home/索引然后将图 2 中显示错误页。
 
-
 [![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.png)
 
 **图 2**:收到 404 找不到错误 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.png))
-
 
 较旧版本的 IIS 只能映射到 ASP.NET 框架的某些请求。 对于带有正确的文件扩展名的 URL 必须为该请求。 例如，对于 /SomePage.aspx 请求获取映射到 ASP.NET 框架。 但是，对于 /SomePage.htm 请求却没有。
 
@@ -116,9 +110,7 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 
 [!code-vb[Main](using-asp-net-mvc-with-different-versions-of-iis-vb/samples/sample2.vb)]
 
-
 重要提示： 请记住要更改的 Global.asax 文件后，再次构建 ASP.NET MVC 应用程序。
-
 
 有两个代码清单 2 中的 Global.asax 文件的重要更改。 现在有两个路由在 Global.asax 中定义。 现在，默认路由，第一个路由的 URL 模式如下所示：
 
@@ -138,9 +130,7 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 
 路由表对这些修改后，将需要确保所有应用程序中的链接是使用这些新的 URL 模式兼容。 换而言之，请确保您的所有链接包含.mvc 扩展。 如果您使用 Html.ActionLink() 帮助器方法生成你的链接，然后不应需要进行任何更改。
 
-
 而不是使用 registermvc.wcf 脚本，可以将一个新的扩展添加到手动映射到 ASP.NET 框架的 IIS。 在自行添加一个新的扩展，请确保相应的复选框标记为**验证该文件是否存在**未选中。
-
 
 ## <a name="hosted-server"></a>托管的服务器
 
@@ -172,11 +162,9 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 6. 输入名称 MVC
 7. 单击**确定**按钮
 
-
 [![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.png)
 
 **图 3**:使用 IIS 7.0 创建通配符脚本映射 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image6.png))
-
 
 请按照以下步骤来使用 IIS 6.0 创建通配符脚本映射操作：
 
@@ -189,19 +177,15 @@ IIS 7.0 可以处理请求使用两种不同的请求处理模式： 集成和�
 7. 取消选中复选框标记为**验证该文件是否存在**
 8. 单击**确定**按钮
 
-
 [![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image7.png)
 
 **图 4**:使用 IIS 6.0 创建通配符脚本映射 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image8.png))
 
-
 启用通配符脚本映射后，您需要修改 Global.asax 文件中的路由表，以使其包括根路由。 否则，您将收到错误页图 5 中，为你的应用程序的根页面请求时。 可以使用列表 4 中修改后的 Global.asax 文件。
-
 
 [![新建项目对话框](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image9.png)
 
 **图 5**:缺少根路由错误 ([单击此项可查看原尺寸图像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image10.png))
-
 
 **列表 4-Global.asax （修改根路由的情况）**
 

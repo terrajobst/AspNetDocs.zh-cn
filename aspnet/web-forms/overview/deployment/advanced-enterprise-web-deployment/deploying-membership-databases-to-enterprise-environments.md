@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 3cf765df-d311-4f68-a295-c9685ceea830
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: eea0761ac85693553808e581a8712c822d19c226
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 50f49af502b75aa5ad52756a76a5e7340aca53f7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390475"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131950"
 ---
 # <a name="deploying-membership-databases-to-enterprise-environments"></a>将成员身份数据库部署到企业环境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59390475"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍的重要注意事项和挑战都需要克服设置 ASP.NET 应用程序的服务进行测试、 过渡或生产环境中 （通常称为成员身份数据库） 的数据库时。 它还介绍了可用来应对这些挑战的方法。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 

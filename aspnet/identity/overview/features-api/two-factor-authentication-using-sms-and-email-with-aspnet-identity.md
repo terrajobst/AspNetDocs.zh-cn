@@ -9,12 +9,12 @@ ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: c41fc06ad98665f7d48efde030c1341b06e49dd0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ca9c141b0b48acf2c775a083398d3fb66b51cc2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395285"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121425"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和电子邮件与 ASP.NET 标识的双因素身份验证
 
@@ -23,7 +23,6 @@ ms.locfileid: "59395285"
 > 本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。
 > 
 > 由 Rick Anderson 撰写本文时 ([@RickAndMSFT](https://twitter.com/#!/RickAndMSFT))，Pranav rastogi 撰写 ([@rustd](https://twitter.com/rustd))，Hao 永远和 Suhas Joshi。 NuGet 示例主要由 Hao 永远编写。
-
 
 本主题涵盖以下产品：
 
@@ -43,7 +42,6 @@ ms.locfileid: "59395285"
 > [!NOTE]
 > 警告：必须安装 Visual Studio [2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521)要完成本教程。
 
-
 1. 创建一个新***空***ASP.NET Web 项目。
 2. 在包管理器控制台中，输入以下内容的以下命令：  
   
@@ -58,7 +56,6 @@ ms.locfileid: "59395285"
 
 > [!NOTE]
 > 警告：如果在此示例中的安全设置的任何更改，生产应用程序将需要进行显式调用所做的更改的安全审核。
-
 
 <a id="SMS"></a>
 
@@ -212,7 +209,6 @@ Cookie 中间件将检查每个请求的 cookie。 `SecurityStampValidator`中�
 
 > [!NOTE]
 > 使用生成 2FA 代码[基于时间的一次性密码算法](http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)和代码的有效期为 6 分钟。 如果需要多个六分钟，输入代码时，你将收到无效的代码错误消息。
-
 
 <a id="combine"></a>
 

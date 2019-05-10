@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 71ff3c269c5d1ed43a67d19442eda8e9d4728295
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d0d6c9dd5234c8085b5c1dea5552854486314010
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405698"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129774"
 ---
 # <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>在 ASP.NET MVC 应用程序 (共 10 个 9) 中实现存储库和工作单元模式
 
@@ -26,7 +26,6 @@ ms.locfileid: "59405698"
 > > [!NOTE] 
 > > 
 > > 如果遇到无法解决的问题[下载已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)并尝试重现你的问题。 通过比较您的代码与已完成的代码，通常可以找到问题的解决方案。 一些常见错误以及如何解决这些问题，请参阅[错误和解决方法。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 在上一教程中使用继承来减少冗余代码中的`Student`和`Instructor`实体类。 在本教程中，您将看到的 CRUD 操作使用的存储库和工作单元模式的一些方法。 如前面的教程中所示在此将更改你的代码适用于页你已创建而不是创建新的页的方式。
 
@@ -51,7 +50,6 @@ ms.locfileid: "59405698"
 
 > [!NOTE]
 > 有许多方法来实现存储库和工作单元模式。 使用或不工作类的一个单元，可以使用存储库类。 您可以实现所有实体类型，或另一个用于每种类型的单个存储库。 如果你实现一个用于每种类型，可以使用单独的类、 泛型基类和派生的类中，或一个抽象基类和派生的类。 可以在存储库中包括的业务逻辑，也可以限制对数据访问逻辑。 您可以生成一个抽象层到您的数据库上下文类使用[IDbSet](https://msdn.microsoft.com/library/gg679233(v=vs.103).aspx)而不是那里接口[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx)的实体集的类型。 实现一个抽象层，在本教程中所示的方法是为您要考虑，不推荐用于所有方案和环境的一个选项。
-
 
 ## <a name="creating-the-student-repository-class"></a>创建 Student 存储库类
 
@@ -142,7 +140,6 @@ ms.locfileid: "59405698"
 > [!code-sql[Main](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application/samples/sample16.sql)]
 > 
 > （以下教程介绍如何检查查询发送到 SQL Server。）
-
 
 以下部分介绍如何实现存储库方法，您可以指定应由数据库完成此工作。
 

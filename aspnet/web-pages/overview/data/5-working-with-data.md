@@ -8,12 +8,12 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 0fc828e39cfcce22d4cc226954cf7d1731b04e42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ed2a2a1ee3cff7a50e67b6571b85f74d01efab7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379776"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133218"
 ---
 # <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web 中的数据库简介页 (Razor) 站点
 
@@ -44,7 +44,6 @@ ms.locfileid: "59379776"
 > 
 > 本教程还适用于 WebMatrix 3。 可以使用 ASP.NET Web Pages 3 和 Visual Studio 2013 （或 Visual Studio Express 2013 for Web）;但是，用户界面将会不同。
 
-
 ## <a name="introduction-to-databases"></a>数据库简介
 
 想象一下典型的通讯簿。 通讯簿中的每个项 (即，每个用户) 包含一些相关的信息，例如名字、 姓氏、 地址、 电子邮件地址和电话号码。
@@ -67,7 +66,6 @@ ms.locfileid: "59379776"
 > 可以在很多方面，包括文本文件和电子表格来存储数据。 对于大多数业务应用中，不过，数据存储在关系数据库中。
 > 
 > 本文不深入进入数据库。 但是，你可能会发现它可以了解一些有关它们。 在关系数据库中，信息在逻辑上划分成不同的表。 例如，一所学校的数据库可能包含不同的表，面向学生和类产品/服务。 软件 （如 SQL Server) 支持功能强大的数据库命令，允许动态建立表之间的关系。 例如，关系数据库可用于建立以创建计划的学生和类之间的逻辑关系。 在单独的表中存储数据缩短表结构的复杂性并减少冗余数据保留在表的需求。
-
 
 ## <a name="creating-a-database"></a>创建数据库
 
@@ -173,7 +171,6 @@ ms.locfileid: "59379776"
 > 
 > 有许多 SQL 命令，但它们都遵循类似的模式。 SQL 命令可用于创建数据库表、 计算的表中的记录数、 计算价格，和执行很多更多操作。
 
-
 ## <a name="inserting-data-in-a-database"></a>在数据库中插入数据
 
 本部分演示如何创建一个允许用户添加到新的产品页面*产品*数据库表。 插入新的产品记录后，页面将显示更新的表使用*ListProducts.cshtml*在上一节中创建的页。
@@ -238,7 +235,6 @@ ms.locfileid: "59379776"
 > [!NOTE] 
 > 
 > **重要**在生产网站，您通常限制谁有权对数据进行更改。 有关如何设置成员资格以及方法可用来授予用户在站点上执行任务的信息，请参阅[添加安全性和 ASP.NET Web Pages 站点的成员身份](https://go.microsoft.com/fwlink/?LinkId=202904)。
-
 
 1. 在网站中，创建一个名为的新的 CSHTML 文件*EditProducts.cshtml*。
 2. 使用以下内容替换该文件中的现有标记：
@@ -321,7 +317,6 @@ ms.locfileid: "59379776"
 > 
 > **重要**在生产网站，您通常限制谁有权对数据进行更改。 有关如何设置成员资格以及方法可用来授予用户在站点上执行任务的信息，请参阅[添加安全性和 ASP.NET Web Pages 站点的成员身份](https://go.microsoft.com/fwlink/?LinkId=202904)。
 
-
 1. 在网站中，创建一个名为的新的 CSHTML 文件*ListProductsForDelete.cshtml*。
 2. 使用以下内容替换现有标记：
 
@@ -384,7 +379,6 @@ ms.locfileid: "59379776"
 > 如前所述，`Database.Open`方法允许您传递的数据库名称或连接字符串，并将找出要使用。 在部署时，这是非常有用 （发布） 你的网站。 可以使用 *.sdf*中的文件*应用\_数据*文件夹时在开发和测试你的站点。 然后，当将站点迁移到生产服务器时，可以使用中的连接字符串*Web.config*具有相同的名称的文件您 *.sdf*文件，但指向托管提供商的数据库&#8212;所有而无需更改代码。
 > 
 > 最后，如果你想要直接使用连接字符串，则可以调用`Database.OpenConnectionString`方法并传递它的实际连接字符串而不只需一个中的名称*Web.config*文件。 这可能很有用的情况下，由于某种原因不能访问的连接字符串 (或值，例如 *.sdf*文件名称) 之前的页面正在。 但是，大多数情况下，您可以使用`Database.Open`这篇文章中所述。
-
 
 ## <a name="additional-resources"></a>其他资源
 

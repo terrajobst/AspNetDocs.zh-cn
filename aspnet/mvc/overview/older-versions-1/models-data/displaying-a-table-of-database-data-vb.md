@@ -8,12 +8,12 @@ ms.date: 10/07/2008
 ms.assetid: 5bb4587f-5bcd-44f5-b368-3c1709162b35
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c33812ab9d758c3155a2f75f59bfb63c55487dc7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9bb26e4364d1e32a428b34bd03918303206d21c9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396403"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122416"
 ---
 # <a name="displaying-a-table-of-database-data-vb"></a>显示数据库数据表 (VB)
 
@@ -23,7 +23,6 @@ by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，我将演示两种方法显示的一组数据库记录。 我将介绍两种方法的格式设置的一组 HTML 表中的数据库记录。 首先，我介绍如何设置格式直接在视图中的数据库记录。 接下来，我演示了如何可以充分利用分区，设置格式的数据库记录时。
 
-
 本教程的目的是说明如何在 ASP.NET MVC 应用程序中显示一个 HTML 表的数据库数据。 首先，您将学习如何使用 Visual Studio 中包含的基架工具生成一个视图，它会自动显示的一组记录。 接下来，您将学习如何设置格式的数据库记录时将用作模板的部分。
 
 ## <a name="create-the-model-classes"></a>创建模型类
@@ -32,7 +31,6 @@ by [Microsoft](https://github.com/microsoft)
 
 <a id="0.4_table01"></a>
 
-
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
@@ -40,13 +38,11 @@ by [Microsoft](https://github.com/microsoft)
 | 主管 | NVarchar(50) | False |
 | DateReleased | DateTime | False |
 
-
 若要表示电影表在 ASP.NET MVC 应用程序中，我们需要创建一个模型的类。 在本教程中，我们可以使用 Microsoft Entity Framework 创建我们模型类。
 
 > [!NOTE] 
 > 
 > 在本教程中，我们使用 Microsoft Entity Framework。 但是，务必了解你可以使用各种不同的技术与 ASP.NET MVC 应用程序包括 LINQ to SQL、 NHibernate 或 ADO.NET 从数据库进行交互。
-
 
 请按照下列步骤以启动实体数据模型向导：
 
@@ -60,19 +56,15 @@ by [Microsoft](https://github.com/microsoft)
 2. 在中**选择数据连接**步骤中，使用*MoviesDB.mdf*数据连接和名称*MoviesDBEntities*的连接设置。 单击**下一步**按钮。
 3. 在中**选择数据库对象**步骤中，展开表节点中，选择电影表。 输入的命名空间*模型*然后单击**完成**按钮。
 
-
 [![创建 LINQ to SQL 类](displaying-a-table-of-database-data-vb/_static/image1.jpg)](displaying-a-table-of-database-data-vb/_static/image1.png)
 
 **图 01**:创建 LINQ to SQL 类 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image2.png))
 
-
 完成实体数据模型向导后，会打开实体数据模型设计器。 在设计器应显示电影实体 （请参见图 2）。
-
 
 [![实体数据模型设计器](displaying-a-table-of-database-data-vb/_static/image2.jpg)](displaying-a-table-of-database-data-vb/_static/image3.png)
 
 **图 02**:实体数据模型设计器 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image4.png))
-
 
 我们需要做出一项更改，然后我们继续。 实体数据向导生成一个名为的模型类*电影*表示电影数据库表。 由于我们将使用电影类来表示特定电影，我们需要修改这个类为名称*电影*而不是*电影*（单数而非复数形式）。
 
@@ -82,19 +74,15 @@ by [Microsoft](https://github.com/microsoft)
 
 现在，我们已有一种方法来表示我们的数据库记录，我们可以创建一个控制器，返回的电影集合。 在 Visual Studio 解决方案资源管理器窗口中，右键单击 Controllers 文件夹，然后选择菜单选项**添加、 控制器**（参见图 3）。
 
-
 [![添加控制器菜单](displaying-a-table-of-database-data-vb/_static/image3.jpg)](displaying-a-table-of-database-data-vb/_static/image5.png)
 
 **图 03**:添加控制器菜单 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image6.png))
 
-
 当**添加控制器**对话框出现时，输入控制器名称 MovieController （请参阅图 4）。 单击**添加**按钮以添加新控制器。
-
 
 [![添加控制器对话框](displaying-a-table-of-database-data-vb/_static/image4.jpg)](displaying-a-table-of-database-data-vb/_static/image7.png)
 
 **图 04**:添加控制器对话框 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image8.png))
-
 
 我们需要进行修改，以便其返回的数据库记录集公开的电影控制器的 index （） 操作。 修改控制器，使它看起来像列表 1 中的控制器。
 
@@ -112,19 +100,15 @@ by [Microsoft](https://github.com/microsoft)
 
 右键单击 index （） 操作，然后选择菜单选项**添加视图**（请参见图 5）。
 
-
 [![添加视图](displaying-a-table-of-database-data-vb/_static/image5.jpg)](displaying-a-table-of-database-data-vb/_static/image9.png)
 
 **图 05**:添加视图 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image10.png))
 
-
 在中**添加视图**对话框中，选中复选框标记为**创建强类型化视图**。 选择作为 Movie 类**查看数据类**。 选择*列表*作为**查看内容**（请参阅图 6）。 选择这些选项将生成一个强类型化视图，显示电影列表。
-
 
 [![添加视图对话框](displaying-a-table-of-database-data-vb/_static/image6.jpg)](displaying-a-table-of-database-data-vb/_static/image11.png)
 
 **图 06**:添加视图对话框中 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image12.png))
-
 
 单击后**添加**自动生成的按钮，代码清单 2 中的视图。 此视图包含循环的电影集合并显示每个电影属性所需的代码。
 
@@ -134,11 +118,9 @@ by [Microsoft](https://github.com/microsoft)
 
 可以通过选择菜单选项来运行应用程序**调试、 启动调试**（或按 F5 键）。 运行应用程序将启动 Internet Explorer。 如果导航到 /Movie URL，那么您将看到图 7 中的页。
 
-
 [![电影表](displaying-a-table-of-database-data-vb/_static/image7.jpg)](displaying-a-table-of-database-data-vb/_static/image13.png)
 
 **图 07**:电影的表 ([单击此项可查看原尺寸图像](displaying-a-table-of-database-data-vb/_static/image14.png))
-
 
 如果您不喜欢在图 7 中的数据库记录的网格的外观有关的任何信息则可以只需修改索引视图。 例如，可以更改*DateReleased*标头*发布日期*通过修改索引视图。
 
@@ -174,9 +156,7 @@ by [Microsoft](https://github.com/microsoft)
 
 已修改的索引视图呈现数据库记录完全相同的 HTML 的表。 但是，已极大地简化视图。
 
-
 RenderPartial() 方法是不同于大多数其他帮助器方法，因为它不会返回一个字符串。 因此，您必须调用 RenderPartial() 方法使用&lt;%html.renderpartial()%&gt;而不是&lt;%= Html.RenderPartial() %&gt;。
-
 
 ## <a name="summary"></a>总结
 

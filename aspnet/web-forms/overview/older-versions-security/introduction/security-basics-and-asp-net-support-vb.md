@@ -8,12 +8,12 @@ ms.date: 01/13/2008
 ms.assetid: ab68a92b-fc81-40a4-a7dc-406625d2c5d4
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1b6675a933f04b3eb7f5111b2ccd16c44baab7ba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 731c007fd162e541af5ba1f559ae5caedf80c948
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414343"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126799"
 ---
 # <a name="security-basics-and-aspnet-support-vb"></a>安全基础知识和 ASP.NET 支持 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59414343"
 [下载 PDF](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial01_Basics_vb.pdf)
 
 > 这是一系列教程，其中会介绍用于通过 web 窗体的访问者进行身份验证、 授予对特定页面和功能，访问权限和管理 ASP.NET 应用程序中的用户帐户的技术中的第一个教程。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -45,7 +44,6 @@ ms.locfileid: "59414343"
 
 > [!NOTE]
 > 安全是跨物理、 技术，任何应用程序的一个重要方面和策略决策和需要高度的规划和领域知识。 本系列教程不用于开发安全的 web 应用程序应作为指南。 相反，它重点介绍专门窗体身份验证、 授权、 用户帐户和角色。 本系列教程将介绍解决这些问题绕转某些安全概念，而其他人会保留未探索。
-
 
 ## <a name="authentication-authorization-user-accounts-and-roles"></a>身份验证、 授权、 用户帐户和角色
 
@@ -75,11 +73,9 @@ Windows 身份验证工作流使用以下身份验证方法之一：
 
 所有这三种技术的工作方式大致相同： 时未经授权匿名请求到达时，web 服务器会返回 HTTP 响应，指示该授权才能继续。 在浏览器然后显示一个模式对话框，提示用户输入其用户名和密码 （请参见图 1）。 然后，此信息将发送回 web 服务器通过 HTTP 标头。
 
-
 ![模式对话框提示用户提供其凭据](security-basics-and-asp-net-support-vb/_static/image1.png)
 
 **图 1**:模式对话框提示用户提供其凭据
-
 
 提供的凭据是根据 web 服务器的 Windows 用户存储验证。 这意味着，在 web 应用程序中每个经过身份验证的用户的 Windows 帐户必须在组织中。 这是在 intranet 方案中的日益普及。 事实上，当 intranet 设置中使用 Windows 集成身份验证，在浏览器自动为 web 服务器提供用于登录到网络，从而取消显示在图 1 中所示的对话框上的凭据。 适用于 intranet 应用程序 Windows 身份验证时，它通常不可行的 Internet 应用程序是因为您不想要创建您的站点上注册的每个用户的 Windows 帐户。
 
@@ -93,11 +89,9 @@ Windows 身份验证工作流使用以下身份验证方法之一：
 
 用户已成功登录后，后续 HTTP 请求包括窗体身份验证票证。 窗体身份验证系统只是标识用户-它是确定用户是否可以访问所请求的资源的授权系统。
 
-
 ![窗体身份验证工作流](security-basics-and-asp-net-support-vb/_static/image2.png)
 
 **图 2**:窗体身份验证工作流
-
 
 我们将深入探讨在接下来两个教程中，窗体变得更详细的身份验证[概述的窗体身份验证](an-overview-of-forms-authentication-vb.md)并[窗体身份验证配置和高级主题](forms-authentication-configuration-and-advanced-topics-vb.md)。 ASP 的详细信息。NET 的身份验证选项，请参阅[ASP.NET 身份验证](https://msdn.microsoft.com/library/eeyk640h.aspx)。
 
@@ -138,11 +132,9 @@ Microsoft.NET Framework 中提供两个成员资格提供程序类：
 
 本系列教程重点介绍专门 SqlMembershipProvider。
 
-
 [![提供程序模型使不同的实现是无缝地插入到框架](security-basics-and-asp-net-support-vb/_static/image4.png)](security-basics-and-asp-net-support-vb/_static/image3.png)
 
 **图 03**:提供程序模型使不同的实现是无缝地插入到框架 ([单击此项可查看原尺寸图像](security-basics-and-asp-net-support-vb/_static/image5.png))
-
 
 提供程序模型的好处是可以由 Microsoft、 第三方供应商或单独的开发人员开发并无缝地插入到成员资格框架替代实现。 例如，Microsoft 已发布[针对 Microsoft Access 数据库的成员资格提供程序](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi)。 有关成员资格提供程序的详细信息，请参阅[提供程序工具包](https://msdn.microsoft.com/asp.net/aa336558.aspx)，其中包括的成员资格提供程序、 示例自定义提供程序、 100 多个页上提供程序模型中，文档的演练和针对内置成员资格提供程序 （即，ActiveDirectoryMembershipProvider 和 SqlMembershipProvider） 完成的源代码。
 

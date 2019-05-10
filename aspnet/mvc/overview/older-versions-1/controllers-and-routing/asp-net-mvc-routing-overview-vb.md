@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: 4bc8d19a-80f1-44b4-adbf-95ed22d691ca
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c135bacd7f9f87fac87a3c8cf41bad359bb3c0a2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ed043d76b89ce31945cf3423b0c5afca9383cc21
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379178"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123648"
 ---
 # <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 路由概述 (VB)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教程中，Stephen Walther 显示 ASP.NET MVC 框架将浏览器请求映射到控制器操作的方式。
-
 
 在本教程中，为您介绍了名为每个 ASP.NET MVC 应用程序的一个重要特性*ASP.NET 路由*。 ASP.NET 路由模块负责将传入的浏览器请求映射到特定的 MVC 控制器操作。 本教程结束时，你将了解如何在标准的路由表将请求映射到控制器操作。
 
@@ -94,11 +93,9 @@ URL /Home 也匹配 HomeController 类列表 4 中的 index （） 方法。
 
 [!code-vb[Main](asp-net-mvc-routing-overview-vb/samples/sample5.vb)]
 
-
 [![调用控制器操作所需的参数值](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
 
 **图 01**:调用控制器操作所需的参数值 ([单击此项可查看原尺寸图像](asp-net-mvc-routing-overview-vb/_static/image2.png))
-
 
 URL /Home/索引/3 另一方面，与列表 5 中的索引控制器操作就可以正常工作。 请求 /Home/Index/3 会导致使用 Id 参数具有值 3 调用 index （） 方法。
 

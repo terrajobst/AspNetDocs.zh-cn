@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 52978b10b6c131ac8eff4535216cc60b43fdf3de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405373"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120108"
 ---
 # <a name="dependency-injection-in-signalr"></a>SignalR 中的依赖项注入
 
@@ -37,7 +37,6 @@ ms.locfileid: "59405373"
 > ## <a name="questions-and-comments"></a>问题和提出的意见
 >
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
-
 
 依赖关系注入是一种方法来删除硬编码对象，使其更易替换对象的依赖项，无论是用于测试 （使用 mock 对象） 或运行时行为的更改之间的依赖项。 本教程演示如何执行 SignalR 集线器上的依赖关系注入。 它还演示如何使用 SignalR 使用 IoC 容器。 IoC 容器是依赖关系注入一个通用框架。
 
@@ -93,7 +92,6 @@ ms.locfileid: "59405373"
 
 > [!NOTE]
 > "IoC"代表"控制反转"，这是一个框架，其中调用到应用程序代码中的一般模式。 IoC 容器构造您的对象，其中"反转"常用控制流。
-
 
 ## <a name="using-ioc-containers-in-signalr"></a>在 SignalR 中使用 IoC 容器
 

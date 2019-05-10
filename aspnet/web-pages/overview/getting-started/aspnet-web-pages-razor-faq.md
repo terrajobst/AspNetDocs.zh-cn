@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: b137bd04-25e1-47cb-9d96-ef2e179ecf1f
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: b0e51b2fb73370164af1a38af5e5e15e24608843
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6fa1b668e915af856a693e79eafb7180ed504dc2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418646"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133197"
 ---
 # <a name="aspnet-web-pages-razor-faq"></a>ASP.NET 网页 (Razor) 常见问题解答
 
@@ -33,7 +33,6 @@ ms.locfileid: "59418646"
 >   
 > 
 > 本教程也适用于 ASP.NET Web Pages 2、 WebMatrix 2 和 Visual Studio 2012。
-
 
 - [ASP.NET 网页、 ASP.NET Web 窗体和 ASP.NET MVC 之间的区别是什么？](#Whats_the_difference_between_ASP.NET_Web_Pages,_ASP.NET_Web_Forms,_and_ASP.NET_MVC)
 - [是否要使用 Web 页需要 WebMatrix？](#Do_I_need_WebMatrix_in_order_to_work_with_Web_Pages)
@@ -130,7 +129,6 @@ ASP.NET Web Pages 特别旨在简化人员已经知道要将服务器处理添�
 
 <a id="AdditionalResources"></a>
 ## <a name="additional-resources"></a>其他资源
-
 
 [ASP.NET 网页 (Razor) 疑难解答指南](https://go.microsoft.com/fwlink/?LinkId=253001)
 

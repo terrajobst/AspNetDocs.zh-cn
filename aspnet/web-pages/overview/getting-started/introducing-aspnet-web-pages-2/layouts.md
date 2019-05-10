@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 58f3ec28914a604aa911cc3cb73733f0d58fd49f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 678eb7089e95e3d221d6b2d82034a62aefa75757
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390410"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131834"
 ---
 # <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET 网页简介-创建一致布局
 
@@ -26,7 +26,6 @@ ms.locfileid: "59390410"
 > - 布局页。
 > - 如何结合使用动态内容的布局页。
 > - 如何将值传递给布局页。
-
 
 ## <a name="about-layouts"></a>关于布局
 
@@ -167,7 +166,6 @@ ASP.NET 已合并到 Movies.cshtml 页的内容 *\_Layout.cshtml*页面，在右
 > 可以将任意数量的值传递使用`Page`对象。 如果你想要将电影信息传递给布局页，可以通过使用类似于传递值`Page.MovieTitle`并`Page.Genre`和`Page.MovieYear`。 （或者是您发明来存储的信息的任何其他名称。）唯一的要求，这是可能明显 — 是，您必须使用内容页和布局页中的相同名称。
 > 
 > 使用传递的信息`Page`对象并不局限于只是要布局页上显示的文本。 可以将值传递给布局页中，并在布局页面中的代码然后使用的值来确定是否要显示的页上，部分什么 *.css*文件以使用，等等。 在传递的值`Page`对象是像任何其他值的代码中使用。 它只是源自在内容页中的值，并传递到布局页。
-
 
 打开*AddMovie.cshtml*页上，并将行添加到代码提供的标题的顶部*AddMovie.cshtml*页：
 

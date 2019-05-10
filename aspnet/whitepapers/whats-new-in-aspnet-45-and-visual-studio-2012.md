@@ -8,17 +8,16 @@ ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 32fbf7c25b00f3f0796c4c3fdd38ca2a86c89199
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410586"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133680"
 ---
 # <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 和 Visual Studio 2012 的新增功能
 
 > 本文档介绍新功能和增强功能 ASP.NET 4.5 中引入的。 它还介绍了 Visual Studio 2012 中针对 web 开发正在进行的改进。 本文档最初在 2012 年 2 月 29 日发布。
-
 
 - [ASP.NET Core 运行时和 Framework](#_Toc318097372)
 
@@ -190,10 +189,8 @@ ASP.NET 4.5 引入了两项功能，可以轻松可以有选择地使用未经�
 
 [!code-csharp[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample6.cs)]
 
-
 > [!WARNING]
 > 安全性-*谨慎使用未经验证的请求数据 ！* 添加 ASP.NET 4.5 中的未经验证的请求属性和集合以使你更轻松地访问非常具体未经验证的请求数据。 但是，仍必须在原始请求数据，以确保不向用户呈现危险的文本上执行自定义验证。
-
 
 <a id="_Toc318097382"></a>
 ### <a name="antixss-library"></a>AntiXSS 库
@@ -383,11 +380,9 @@ Windows 具有几个版本包含一种技术称为[取](http://en.wikipedia.org/
 
 若要解决此问题，ASP.NET 4.5，请添加了声明将控件绑定到的数据的数据类型的功能。 执行此操作使用新*ItemType*属性。 当设置此属性时，两个新的类型化的变量中提供了数据绑定表达式的作用域：*项*并*BindItem*。 由于强类型化变量，可以获得完整的 Visual Studio 开发体验。
 
-
 对于双向数据绑定表达式，使用*BindItem*变量：
 
 [!code-aspx[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample21.aspx)]
-
 
 支持数据绑定的 ASP.NET Web 窗体框架中的大多数控件已更新，以支持*ItemType*属性。
 

@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fc819494ef58824d485144396e3a995d906c8b42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 704657ffe6f50eaf3eb0d91d0d334567003ab7f4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398704"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122348"
 ---
 # <a name="validating-with-a-service-layer-vb"></a>使用服务层进行验证 (VB)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何将移动应用验证逻辑从控制器操作和到单独的服务层。 在本教程中，Stephen Walther 解释了如何通过隔离您从控制器层的服务层维护清晰分离关注点。
-
 
 本教程的目的是介绍 ASP.NET MVC 应用程序中执行验证的一种方法。 在本教程中，您将学习如何移动你的验证逻辑超出你的控制器和到单独的服务层。
 

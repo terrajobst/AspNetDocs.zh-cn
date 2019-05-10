@@ -8,12 +8,12 @@ ms.date: 05/21/2008
 ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 488988bbf540cc809579a5ad5f80cb772ed6b1bf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 02d94c340f79299beae77531e87f5c0d65902720
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408363"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126893"
 ---
 # <a name="multiple-contentplaceholders-and-default-content-vb"></a>多个 ContentPlaceHolder 和默认内容 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408363"
 [下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_02_VB.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_02_VB.pdf)
 
 > 介绍如何将多个内容占位符添加到主页面，以及如何在内容的占位符中指定默认的内容。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -36,19 +35,15 @@ ms.locfileid: "59408363"
 
 图 1 显示了`Default.aspx`时的浏览器查看。 用红线圈出的区域是与对应的特定于页面的标记`MainContent`。
 
-
 [![带圆圈的区域显示的区域目前可自定义基于按页](multiple-contentplaceholders-and-default-content-vb/_static/image2.png)](multiple-contentplaceholders-and-default-content-vb/_static/image1.png)
 
 **图 01**:有圆形区域显示区域目前可自定义基于页的页 ([单击此项可查看原尺寸图像](multiple-contentplaceholders-and-default-content-vb/_static/image3.png))
 
-
 假设，除了图 1 所示的区域，我们还需要将特定于页面的项添加到左侧列下方的课程和新闻部分。 若要实现此目的，我们将另一个 ContentPlaceHolder 控件添加到母版页。 若要跟着介绍一起操作，请打开`Site.master`母版页 Visual Web Developer 中，然后将 ContentPlaceHolder 控件从工具箱拖到设计器后的新闻部分。 设置 ContentPlaceHolder`ID`到`LeftColumnContent`。
-
 
 [![将 ContentPlaceHolder 控件添加到母版页左侧的列](multiple-contentplaceholders-and-default-content-vb/_static/image5.png)](multiple-contentplaceholders-and-default-content-vb/_static/image4.png)
 
 **图 02**:将 ContentPlaceHolder 控件添加到母版页的左侧列 ([单击此项可查看原尺寸图像](multiple-contentplaceholders-and-default-content-vb/_static/image6.png))
-
 
 通过添加`LeftColumnContent`母版页 ContentPlaceHolder，我们可以将此区域的内容按页地定义通过包含内容控件在页`ContentPlaceHolderID`设置为`LeftColumnContent`。 我们将介绍此过程的步骤 2。
 
@@ -66,11 +61,9 @@ Visual Web Developer 时将新的内容页面添加到该网站，会自动创�
 
 添加此标记后, 访问通过浏览器页面。 如图 3 所示，标记放入`Content3`（用红线圈出） 的新闻部分下的左侧列中显示内容控件。 标记放入`Content2`（蓝色圆圈） 页的右侧部分中显示。
 
-
 [![左侧的列现在包含新闻部分下的特定于页面的内容](multiple-contentplaceholders-and-default-content-vb/_static/image8.png)](multiple-contentplaceholders-and-default-content-vb/_static/image7.png)
 
 **图 03**:左侧列现在包含特定于页面的内容下方新闻部分 ([单击此项可查看原尺寸图像](multiple-contentplaceholders-and-default-content-vb/_static/image9.png))
-
 
 ### <a name="defining-content-in-existing-content-pages"></a>在现有内容页面中定义的内容
 
@@ -80,11 +73,9 @@ Visual Web Developer 时将新的内容页面添加到该网站，会自动创�
 
 若要添加的内容控件`LeftColumnContent`ContentPlaceHolder 到`About.aspx`、 展开 ContentPlaceHolder 的智能标记，然后单击创建自定义内容链接。
 
-
 [![About.aspx 的设计视图显示了 LeftColumnContent ContentPlaceHolder](multiple-contentplaceholders-and-default-content-vb/_static/image11.png)](multiple-contentplaceholders-and-default-content-vb/_static/image10.png)
 
 **图 04**:为设计视图`About.aspx`显示了`LeftColumnContent`ContentPlaceHolder ([单击以查看实际尺寸的图像](multiple-contentplaceholders-and-default-content-vb/_static/image12.png))
-
 
 单击创建自定义内容链接生成所需的内容控件中的页和集及其`ContentPlaceHolderID`属性设置为 ContentPlaceHolder `ID`。 例如，单击用于创建自定义内容的链接`LeftColumnContent`区域中的`About.aspx`向页面添加以下声明性标记：
 
@@ -96,11 +87,9 @@ ASP.NET 不需要所有内容页面的母版页中定义的每个 ContentPlaceHo
 
 目前，`Default.aspx`包含两个内容控件`head`并`MainContent`Contentplaceholder; 它不具有的内容控件`LeftColumnContent`。 因此，当`Default.aspx`呈现`LeftColumnContent`使用 ContentPlaceHolder 的默认内容。 因为我们尚未为此 ContentPlaceHolder 定义默认的任何内容的净效果是，没有标记，将发出此区域。 若要验证此行为，请访问`Default.aspx`通过浏览器。 如图 5 所示，没有标记，将发出新闻部分下的左侧列中。
 
-
 [![为 LeftColumnContent ContentPlaceHolder 不呈现任何内容](multiple-contentplaceholders-and-default-content-vb/_static/image14.png)](multiple-contentplaceholders-and-default-content-vb/_static/image13.png)
 
 **图 05**:为呈现任何内容`LeftColumnContent`ContentPlaceHolder ([单击以查看实际尺寸的图像](multiple-contentplaceholders-and-default-content-vb/_static/image15.png))
-
 
 ## <a name="step-3-specifying-default-content-in-the-master-page"></a>步骤 3：指定母版页中的默认内容
 
@@ -113,7 +102,6 @@ ASP.NET 不需要所有内容页面的母版页中定义的每个 ContentPlaceHo
 > [!NOTE]
 > 本教程的其余部分更新我们的网站的所有页面，但登录页的左侧列中包括的登录界面。 但是，本教程不检查如何配置网站，以支持用户帐户。 有关本主题的详细信息，请参阅我[窗体身份验证、 授权、 用户帐户和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)教程。
 
-
 ### <a name="adding-a-contentplaceholder-and-specifying-its-default-content"></a>添加 ContentPlaceHolder 并指定自己的默认内容
 
 打开`Site.master`母版页并将以下标记添加到左侧的列之间`DateDisplay`标签和课程部分：
@@ -122,11 +110,9 @@ ASP.NET 不需要所有内容页面的母版页中定义的每个 ContentPlaceHo
 
 以后将此标记添加到母版页的设计视图中看起来应类似于图 6。
 
-
 [![母版页包含登录控件](multiple-contentplaceholders-and-default-content-vb/_static/image17.png)](multiple-contentplaceholders-and-default-content-vb/_static/image16.png)
 
 **图 06**:母版页包含登录控件 ([单击此项可查看原尺寸图像](multiple-contentplaceholders-and-default-content-vb/_static/image18.png))
-
 
 此 ContentPlaceHolder `QuickLoginUI`，具有一个登录 Web 控件作为其默认内容。 Login 控件显示提示用户输入其用户名和密码登录按钮以及一个用户界面。 单击登录按钮，登录控件在内部验证针对成员身份 API 的用户的凭据。 若要使用此登录名控件在实践中，然后，需要配置站点，以使用成员身份。 本主题不在本教程; 的范围内请参阅我[窗体身份验证、 授权、 用户帐户和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)教程构建的 web 应用程序支持用户帐户的详细信息。
 
@@ -144,11 +130,9 @@ ASP.NET 不需要所有内容页面的母版页中定义的每个 ContentPlaceHo
 
 图 7 显示时的浏览器查看此页。 因为此页上指定的内容控件`QuickLoginUI`ContentPlaceHolder，它将替代指定母版页中的默认内容。 实际效果是登录控件显示在母版页的设计视图 （请参阅图 6） 将不呈现在此页。
 
-
 [![登录页 Represses QuickLoginUI ContentPlaceHolder 默认内容](multiple-contentplaceholders-and-default-content-vb/_static/image20.png)](multiple-contentplaceholders-and-default-content-vb/_static/image19.png)
 
 **图 07**:登录页 Represses `QuickLoginUI` ContentPlaceHolder 的默认内容 ([单击以查看实际尺寸的图像](multiple-contentplaceholders-and-default-content-vb/_static/image21.png))
-
 
 ### <a name="using-the-default-content-in-new-pages"></a>在新页中使用的默认内容
 
@@ -160,11 +144,9 @@ ASP.NET 不需要所有内容页面的母版页中定义的每个 ContentPlaceHo
 
 图 8 显示了`Default.aspx`时的浏览器查看。 请记住，`Default.aspx`仅有两个内容控件在其声明性标记中的另一个用于指定`head`，另一个用于`MainContent`。 因此，默认值的内容`LeftColumnContent`和`QuickLoginUI`Contentplaceholder 会显示。
 
-
 [![显示内容默认 LeftColumnContent 和 QuickLoginUI Contentplaceholder](multiple-contentplaceholders-and-default-content-vb/_static/image23.png)](multiple-contentplaceholders-and-default-content-vb/_static/image22.png)
 
 **图 08**:默认的内容`LeftColumnContent`并`QuickLoginUI`Contentplaceholder 显示 ([单击以查看实际尺寸的图像](multiple-contentplaceholders-and-default-content-vb/_static/image24.png))
-
 
 ## <a name="summary"></a>总结
 

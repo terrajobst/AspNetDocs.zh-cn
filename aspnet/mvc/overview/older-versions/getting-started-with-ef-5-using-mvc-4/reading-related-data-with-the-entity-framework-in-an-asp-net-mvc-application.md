@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 0d6fb83b-71f7-425d-8dec-981197d7ec42
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f86212c1cb559c164342997fb0e4208339b5e3cc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc629f84bbf8c271780a8e7deba3d04d23d5fbb1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421116"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129822"
 ---
 # <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>读取相关数据使用实体框架在 ASP.NET MVC 应用程序 (5 10 个)
 
@@ -26,7 +26,6 @@ ms.locfileid: "59421116"
 > > [!NOTE] 
 > > 
 > > 如果遇到无法解决的问题[下载已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)并尝试重现你的问题。 通过比较您的代码与已完成的代码，通常可以找到问题的解决方案。 一些常见错误以及如何解决这些问题，请参阅[错误和解决方法。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 在上一教程中，您将完成学校数据模型。 在本教程将读取并显示相关的数据-即 Entity Framework 加载到导航属性的数据。
 
@@ -176,7 +175,6 @@ ms.locfileid: "59421116"
 > 
 > [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cshtml)]
 
-
 代码先创建一个视图模型实例，并在其中放入讲师列表。 该代码指定预先加载`Instructor.OfficeAssignment`和`Instructor.Courses`导航属性。
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs?highlight=3-4)]
@@ -237,7 +235,6 @@ ms.locfileid: "59421116"
 
 > [!NOTE]
 > *.Css*由浏览器缓存文件。 如果看不到所做的更改，在运行该应用程序时，请执行硬刷新 (单击时按住 CTRL 键**刷新**按钮或按 CTRL + F5)。
-
 
 运行该页并选择讲师。 此时会出现一个网格，其中显示有分配给所选讲师的课程，且还显示有每个课程的分配系的名称。
 

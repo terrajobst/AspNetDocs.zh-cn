@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 1b87d8d6-b3f7-4126-b51c-d41442fbf947
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 78140f56184e88fb4dbe29f234aebd5732b69ad9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cfac2d5ac7ea652648db3c11a8357d95c8f78ffe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418867"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132253"
 ---
 # <a name="animation-depending-on-a-condition-vb"></a>取决于条件的动画 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418867"
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4VB.pdf)
 
 > ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 动画运行还取决于窗体的某些 JavaScript 代码中的条件。
-
 
 ## <a name="overview"></a>概述
 
@@ -51,7 +50,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample5.aspx)]
 
 请注意，为小于号 (`<`) 中`ConditionScript`属性必须为转义 （）。 当您运行此脚本，无动画运行或两个空格，或同时执行操作。
-
 
 [![在面板淡出而无需调整大小时，因此第二个动画运行第一个未](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
 

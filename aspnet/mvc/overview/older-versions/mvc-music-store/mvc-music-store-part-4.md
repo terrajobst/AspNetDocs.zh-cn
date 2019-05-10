@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: ab55ca81-ab9b-44a0-8700-dc6da2599335
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 40fec3a2ef4ee8d5e4abe4be4dfa144720a88a41
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 402be340f1ea3344675e7b859cea8c5130cfc8ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59391177"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129652"
 ---
 # <a name="part-4-models-and-data-access"></a>第 4 部分：模型和数据访问
 
@@ -24,7 +24,6 @@ ms.locfileid: "59391177"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。
 > 
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 4 部分介绍了模型和数据访问。
-
 
 到目前为止，我们已只已传递"虚拟数据"从我们控制器到我们的视图模板。 现在我们已准备好挂接的实际数据库。 在本教程中我们将讨论如何使用 SQL Server Compact Edition （通常称为 SQL CE） 作为我们的数据库引擎。 SQL CE 是基于的免费、 嵌入式、 文件的数据库，不需要任何安装或配置，使其真正方便本地开发。
 

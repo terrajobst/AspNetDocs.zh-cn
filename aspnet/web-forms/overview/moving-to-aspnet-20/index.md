@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: d4287e40-272a-412f-b0e9-59a5d97421bd
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20
 msc.type: chapter
-ms.openlocfilehash: 651ac82196b29d0f90c5dff41c9ce42b4bdcf627
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 32e44cae8d9dd9a2ef10bdc9ca8b6ac7c70167f0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395493"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131078"
 ---
 # <a name="older-versions---aspnet-20"></a>旧版本 - ASP.NET 2.0
 
 > 如何迁移到 ASP.NET 2.0 的 ASP.NET 1.x 应用程序。
-
 
 - [Visual Studio 2005 中的改进](improvements-in-visual-studio-2005.md)
 - [ASP.NET 2.0 页面模型](the-asp-net-2-0-page-model.md)

@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: dc1234a3-114f-4c9a-8d25-50ca03cc8e8e
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: be792b0511e91b65cf3dd56458630b4e8ec3b5af
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2830b6070320e27a8ea367db229bfa9fe411b34c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384222"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132437"
 ---
 # <a name="declarative-parameters-vb"></a>声明性参数 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384222"
 [下载示例应用程序](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_5_VB.exe)或[下载 PDF](declarative-parameters-vb/_static/datatutorial05vb1.pdf)
 
 > 在本教程中我们将演示了如何将参数设置为硬编码值用于选择要显示的 DetailsView 控件中的数据。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -36,35 +35,27 @@ ms.locfileid: "59384222"
 
 第一个示例中，首先，通过添加到的 DetailsView 控件`DeclarativeParams.aspx`页中`BasicReporting`文件夹。 从 DetailsView 的智能标记上，选择&lt;新数据源&gt;从下拉列表，然后选择要添加对象数据源。
 
-
 [![将对象数据源添加到页面](declarative-parameters-vb/_static/image2.png)](declarative-parameters-vb/_static/image1.png)
 
 **图 1**:将对象数据源添加到页 ([单击此项可查看原尺寸图像](declarative-parameters-vb/_static/image3.png))
 
-
 这将自动启动 ObjectDataSource 控件选择数据源向导。 选择`ProductsBLL`向导的第一个屏幕中的类。
-
 
 [![选择 ProductsBLL 类](declarative-parameters-vb/_static/image5.png)](declarative-parameters-vb/_static/image4.png)
 
 **图 2**:选择`ProductsBLL`类 ([单击以查看实际尺寸的图像](declarative-parameters-vb/_static/image6.png))
 
-
 由于我们想要显示有关特定产品的信息，因此我们想要使用`GetProductByProductID(productID)`方法。
-
 
 [![选择 GetProductByProductID(productID) 方法](declarative-parameters-vb/_static/image8.png)](declarative-parameters-vb/_static/image7.png)
 
 **图 3**:选择`GetProductByProductID(productID)`方法 ([单击以查看实际尺寸的图像](declarative-parameters-vb/_static/image9.png))
 
-
 由于我们选择的方法包括参数，没有一个向导，其中我们需要定义要用于参数的值的多个屏幕。 在左侧的列表显示所有所选方法的参数。 有关`GetProductByProductID(productID)`只有一个`productID`。 在右侧，我们可以指定所选的参数的值。 参数源下拉列表枚举为参数值的各种可能来源。 由于我们想要指定硬编码值为 5`productID`参数保留为无参数源和默认值文本框中输入 5。
-
 
 [![Hard-Coded 参数值的 5 将用于产品 id 参数](declarative-parameters-vb/_static/image11.png)](declarative-parameters-vb/_static/image10.png)
 
 **图 4**:Hard-Coded 参数值的 5 将用于`productID`参数 ([单击以查看实际尺寸的图像](declarative-parameters-vb/_static/image12.png))
-
 
 完成配置数据源向导后，ObjectDataSource 控件声明性标记包含`Parameter`中的对象`SelectParameters`集合中定义的方法所需的输入参数的每个`SelectMethod`属性。 由于我们在此示例中使用的方法应只的单个输入的参数， `parameterID`，这里只有一个条目。 `SelectParameters`集合可以包含任何类都派生自`Parameter`类中`System.Web.UI.WebControls`命名空间。 硬编码参数值基`Parameter`类，但源选项的其他参数派生`Parameter`类; 您也可以创建你自己[自定义参数类型](http://www.leftslipper.com/ShowFaq.aspx?FaqId=11)，如果需要。
 
@@ -73,40 +64,31 @@ ms.locfileid: "59384222"
 > [!NOTE]
 > 如果您要按照你自己的计算机上声明性标记你此时看到可能包括值`InsertMethod`， `UpdateMethod`，并`DeleteMethod`属性，以及`DeleteParameters`。 ObjectDataSource 的选择数据源向导自动指定的方法从`ProductBLL`要用于插入、 更新和删除，因此除非你显式清除了这些情况，则它们将包含在上面的标记。
 
-
 Web 控件的数据时访问此页，将调用 ObjectDataSource`Select`方法，将调用`ProductsBLL`类的`GetProductByProductID(productID)`方法使用硬编码值为 5`productID`输入的参数。 该方法将返回一个强类型`ProductDataTable`对象，其中包含一个行，以了解 Chef 秋葵汤 (与产品`ProductID`5)。
-
 
 [![显示信息有关 Chef 秋葵汤](declarative-parameters-vb/_static/image14.png)](declarative-parameters-vb/_static/image13.png)
 
 **图 5**:显示信息有关 Chef 秋葵汤 ([单击此项可查看原尺寸图像](declarative-parameters-vb/_static/image15.png))
 
-
 ## <a name="setting-the-parameter-value-to-the-property-value-of-a-web-control"></a>将参数值设置为 Web 控件的属性值
 
 ObjectDataSource 的参数值也可以设置基于页上的 Web 控件的值。 若要说明这一点，让我们具有一个 GridView，列出所有用户指定的国家/地区中的供应商。 若要完成本教程通过将文本框添加到用户可以在其中输入国家/地区名称页。 设置此文本框控件`ID`属性设置为`CountryName`。 此外添加一个按钮 Web 控件。
-
 
 [![将文本框添加到具有 ID 国家/地区名称的页面](declarative-parameters-vb/_static/image17.png)](declarative-parameters-vb/_static/image16.png)
 
 **图 6**:将 TextBox 添加到包含的页`ID` `CountryName` ([单击以查看实际尺寸的图像](declarative-parameters-vb/_static/image18.png))
 
-
 接下来，添加一个 GridView，页上，并从智能标记中，选择添加新对象数据源。 由于我们想要显示供应商信息选择`SuppliersBLL`从向导的第一个屏幕的类。 从第二个屏幕上，选择`GetSuppliersByCountry(country)`方法。
-
 
 [![选择 GetSuppliersByCountry(country) 方法](declarative-parameters-vb/_static/image20.png)](declarative-parameters-vb/_static/image19.png)
 
 **图 7**:选择`GetSuppliersByCountry(country)`方法 ([单击以查看实际尺寸的图像](declarative-parameters-vb/_static/image21.png))
 
-
 由于`GetSuppliersByCountry(country)`方法具有一个输入的参数，该向导再一次包括选择参数值的最后一个屏幕。 这一次，设置参数源为控件。 这将填充 ControlID 下拉列表的页面; 上的控件名称选择`CountryName`从列表中的控件。 首次访问页面时`CountryName`文本框将为空白，因此不返回任何结果并不显示任何内容。 如果你想要显示一些结果，默认情况下，请相应地设置默认值文本框中。
-
 
 [![将参数值设置为国家/地区名称控件值](declarative-parameters-vb/_static/image23.png)](declarative-parameters-vb/_static/image22.png)
 
 **图 8**:将参数值设置为`CountryName`控制值 ([单击以查看实际尺寸的图像](declarative-parameters-vb/_static/image24.png))
-
 
 ObjectDataSource 的声明性标记稍有不同我们第一个示例中，使用[ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx)而不是标准`Parameter`对象。 一个`ControlParameter`具有其他属性来指定`ID`的 Web 控件和要使用的参数的属性值 (`PropertyName`)。 配置数据源向导很智能，可以确定，文本框中，我们可能想要使用`Text`参数值的属性。 如果你想要使用不同的属性值从 Web 控件的但是，可以更改`PropertyName`值此处或通过单击向导中的"显示高级属性"链接。
 
@@ -116,11 +98,9 @@ ObjectDataSource 的声明性标记稍有不同我们第一个示例中，使用
 
 访问者在国家/地区，但是，输入，并单击显示供应商按钮会导致回发中，ObjectDataSource 的后`Select`方法重新查询，在 TextBox 控件中传递`Text`值作为`country`参数。
 
-
 [![显示来自加拿大这些供应商](declarative-parameters-vb/_static/image26.png)](declarative-parameters-vb/_static/image25.png)
 
 **图 9**:显示来自加拿大这些供应商 ([单击此项可查看原尺寸图像](declarative-parameters-vb/_static/image27.png))
-
 
 ## <a name="showing-all-suppliers-by-default"></a>显示默认情况下的所有供应商
 
@@ -138,11 +118,9 @@ ObjectDataSource 的声明性标记稍有不同我们第一个示例中，使用
 
 进行此更改后`DeclarativeParams.aspx`页面将显示所有供应商提供第一次访问时的 (或每当`CountryName`文本框为空)。
 
-
 [![所有供应商是现在默认情况下显示](declarative-parameters-vb/_static/image29.png)](declarative-parameters-vb/_static/image28.png)
 
 **图 10**:所有供应商是现在默认情况下显示 ([单击此项可查看原尺寸图像](declarative-parameters-vb/_static/image30.png))
-
 
 ## <a name="summary"></a>总结
 

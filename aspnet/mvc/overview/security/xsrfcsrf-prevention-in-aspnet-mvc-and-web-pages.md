@@ -8,12 +8,12 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: de0e9cc168b9f18fd2bd83329106df45d7551b1a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a6e10c52d83dc3c29ab2f9f6bb0c05cfbbf6aad1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386549"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126365"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和网页中的 XSRF/CSRF 防护
 
@@ -24,7 +24,6 @@ ms.locfileid: "59386549"
 > XSRF 攻击与钓鱼攻击不同。 网络钓鱼攻击需要与受害者进行交互。 在网络钓鱼攻击中，恶意网站将模拟目标网站，并在受害者受骗向攻击者提供敏感信息。 在 XSRF 攻击中，没有通常无需交互与受害者。 相反，攻击者依靠浏览器自动向目标网站发送所有相关 cookie。
 > 
 > 有关详细信息，请参阅[打开 Web 应用程序安全项目](https://www.owasp.org/index.php/Main_Page)(OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
-
 
 ## <a name="anatomy-of-an-attack"></a>一种攻击的剖析
 

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 200b973c-776b-4a9b-9e82-39fda6120a52
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: d0a7c29a590fcde504e5f5227806df62454f6add
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d9774ee01cb0515d7e733b24baa661f2648bd7c4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410482"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131046"
 ---
 # <a name="setting-up-the-contact-manager-solution"></a>设置 Contact Manager 解决方案
 
@@ -22,7 +22,6 @@ ms.locfileid: "59410482"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何下载和配置 Contact Manager 解决方案开发人员工作站上本地运行。
-
 
 ## <a name="system-requirements"></a>系统要求
 
@@ -70,7 +69,6 @@ ms.locfileid: "59410482"
 > [!NOTE]
 > 有关详细信息 aspnet\_regsql 实用程序，请参阅[ASP.NET SQL Server 注册工具 (Aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)。
 
-
 下一步是确保 Contact Manager 解决方案中的连接字符串指向 SQL Server Express 的本地实例。
 
 **若要更新连接字符串**
@@ -97,7 +95,6 @@ ms.locfileid: "59410482"
 
 > [!NOTE]
 > 如果按照这些步骤操作无需首先创建应用程序服务数据库，ASP.NET 将尝试创建一个用户首次创建数据库。 但是，手动创建数据库用户可更多地掌控你想要支持的应用程序服务功能集。
-
 
 **若要运行 Contact Manager 解决方案**
 

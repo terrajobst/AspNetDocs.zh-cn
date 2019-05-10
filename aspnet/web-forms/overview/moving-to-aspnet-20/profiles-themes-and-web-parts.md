@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 0f3b376cee8d391eb087664a51cc25e3b58d16b9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cf5c45781be6d003d28c6aa27efa08032579a6dd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390033"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132784"
 ---
 # <a name="profiles-themes-and-web-parts"></a>配置文件、主题和 Web 部件
 
 by [Microsoft](https://github.com/microsoft)
 
 > 有配置中的重大更改和 ASP.NET 2.0 中的检测。 新的 ASP.NET 配置 API 允许以编程方式进行配置更改。 此外，许多新的配置设置存在允许对新的配置和检测。
-
 
 ASP.NET 2.0 表示实质性改善的区域中的个性化的网站。 除了我们提到过的成员资格功能，ASP.NET 配置文件、 主题和 Web 部件显著提高在网站中的个性化设置。
 
@@ -155,16 +154,13 @@ Web 应用程序的最重要方面之一在站点之间是一致的外观。 ASP
 
 **图 1**下显示了一个小的 ASP.NET 页面浏览而无需应用主题。 **图 2**并应用主题中显示的同一文件。 通过 CSS 文件配置的背景色和文本颜色。 使用上面所列的外观文件配置按钮和文本框的外观。
 
-
 ![无主题](profiles-themes-and-web-parts/_static/image1.gif)
 
 **图 1**:无主题
 
-
 ![应用主题](profiles-themes-and-web-parts/_static/image2.gif)
 
 **图 2**:应用主题
-
 
 上面列出的外观文件定义所有文本框控件和按钮控件的默认的外观。 这意味着，每个 TextBox 控件和在网页中插入的按钮控件将采用此外观。 您还可以定义可应用于使用这些控件的特定实例的外观**SkinID**控件的属性。
 
@@ -329,7 +325,6 @@ Web 部件控件集很广泛，但某些控件至关重要，因为它们所需�
 > [!NOTE]
 > 不需要执行任何操作即可启用 Web 部件个性化设置;对于 Web 部件控件集默认情况下启用它。 当你首次运行站点上的 Web 部件页时，ASP.NET 会设置默认个性化设置提供程序来存储用户的个性化设置。 个性化设置的详细信息，请参阅 Web 部件个性化设置概述。
 
-
 ### <a name="to-create-a-page-for-containing-web-parts-controls"></a>若要创建包含 Web 部件控件的页
 
 1. 关闭默认页，将新页面添加到名为 WebPartsDemo.aspx 的站点。
@@ -402,11 +397,9 @@ Web 部件控件集很广泛，但某些控件至关重要，因为它们所需�
 
 **具有两个区域的 web 部件演示页**
 
-
 ![Web 部件 VS 演练 1 屏幕截图](profiles-themes-and-web-parts/_static/image3.gif)
 
 **图 3**:Web 部件 VS 演练 1 屏幕截图
-
 
 标题栏中的每个控件都提供了对可以在控件执行的可用操作的谓词菜单访问的向下箭头。 单击其中一个控件的谓词菜单，然后单击**最小化**谓词，会发现，最小化控件。 从谓词菜单中，单击**还原**，并控制返回到其正常大小。
 
@@ -449,11 +442,9 @@ Web 部件提供了用户可以将它们从一个区域拖到另一个更改 Web
 
 ### <a name="web-parts-demo-page-with-my-links-control-moved"></a>与我的链接控件移动的 web 部件演示页
 
-
 ![Web 部件 VS 演练 2 屏幕截图](profiles-themes-and-web-parts/_static/image4.gif)
 
 **图 4**:Web 部件 VS 演练 2 屏幕截图
-
 
 1. 单击**显示模式**下拉列表菜单，然后选择**浏览**。 刷新页面，区域名称消失，并且**我的链接**控制的保持您放置的位置。
 2. 若要演示的个性化设置正常工作，关闭浏览器，然后重新加载页面。 对于将来的浏览器会话保存所做的更改。
@@ -467,22 +458,18 @@ Web 部件提供了用户可以将它们从一个区域拖到另一个更改 Web
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>在编辑模式下的 web 部件演示页
 
-
 ![Web 部件 VS 演练 3 屏幕截图](profiles-themes-and-web-parts/_static/image5.gif)
 
 **图 5**:Web 部件 VS 演练 3 屏幕截图
-
 
 1. 单击**显示模式**菜单，然后选择**浏览**以返回到浏览模式。
 2. 该控件现在具有更新后的标题和没有边框，如以下屏幕截图中所示。
 
 ### <a name="edited-web-parts-demo-page"></a>编辑的 Web 部件演示页
 
-
 ![Web 部件 VS 演练 4 屏幕截图](profiles-themes-and-web-parts/_static/image6.gif)
 
 **图 4**:Web 部件 VS 演练 4 屏幕截图
-
 
 ### <a name="adding-web-parts-at-run-time"></a>在运行时添加 Web 部件
 
