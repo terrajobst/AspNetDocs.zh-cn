@@ -8,129 +8,128 @@ ms.date: 02/27/2014
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 0ac1982a9476ea324f2faea0bf06f9406f9af1cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 11dc52ec79ca91119b37ea60e08164eb1b1d0e2b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59389318"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130307"
 ---
-# <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a><span data-ttu-id="7ba8e-104">更新、 删除和创建数据与模型绑定和 web 窗体</span><span class="sxs-lookup"><span data-stu-id="7ba8e-104">Updating, deleting, and creating data with model binding and web forms</span></span>
+# <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a><span data-ttu-id="ddcf7-104">更新、 删除和创建数据与模型绑定和 web 窗体</span><span class="sxs-lookup"><span data-stu-id="ddcf7-104">Updating, deleting, and creating data with model binding and web forms</span></span>
 
-<span data-ttu-id="7ba8e-105">通过[Tom FitzMacken](https://github.com/tfitzmac)</span><span class="sxs-lookup"><span data-stu-id="7ba8e-105">by [Tom FitzMacken](https://github.com/tfitzmac)</span></span>
+<span data-ttu-id="ddcf7-105">通过[Tom FitzMacken](https://github.com/tfitzmac)</span><span class="sxs-lookup"><span data-stu-id="ddcf7-105">by [Tom FitzMacken](https://github.com/tfitzmac)</span></span>
 
-> <span data-ttu-id="7ba8e-106">本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-106">This tutorial series demonstrates basic aspects of using model binding with an ASP.NET Web Forms project.</span></span> <span data-ttu-id="7ba8e-107">模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-107">Model binding makes data interaction more straight-forward than dealing with data source objects (such as ObjectDataSource or SqlDataSource).</span></span> <span data-ttu-id="7ba8e-108">本系列开始介绍性材料，后续教程将移动到更高级的概念。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-108">This series starts with introductory material and moves to more advanced concepts in later tutorials.</span></span>
+> <span data-ttu-id="ddcf7-106">本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-106">This tutorial series demonstrates basic aspects of using model binding with an ASP.NET Web Forms project.</span></span> <span data-ttu-id="ddcf7-107">模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-107">Model binding makes data interaction more straight-forward than dealing with data source objects (such as ObjectDataSource or SqlDataSource).</span></span> <span data-ttu-id="ddcf7-108">本系列开始介绍性材料，后续教程将移动到更高级的概念。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-108">This series starts with introductory material and moves to more advanced concepts in later tutorials.</span></span>
 > 
-> <span data-ttu-id="7ba8e-109">本教程演示如何创建、 更新和删除与模型绑定的数据。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-109">This tutorial shows how to create, update, and delete data with model binding.</span></span> <span data-ttu-id="7ba8e-110">您将设置以下属性：</span><span class="sxs-lookup"><span data-stu-id="7ba8e-110">You will set the following properties:</span></span>
+> <span data-ttu-id="ddcf7-109">本教程演示如何创建、 更新和删除与模型绑定的数据。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-109">This tutorial shows how to create, update, and delete data with model binding.</span></span> <span data-ttu-id="ddcf7-110">您将设置以下属性：</span><span class="sxs-lookup"><span data-stu-id="ddcf7-110">You will set the following properties:</span></span>
 > 
-> - <span data-ttu-id="7ba8e-111">DeleteMethod</span><span class="sxs-lookup"><span data-stu-id="7ba8e-111">DeleteMethod</span></span>
-> - <span data-ttu-id="7ba8e-112">InsertMethod</span><span class="sxs-lookup"><span data-stu-id="7ba8e-112">InsertMethod</span></span>
-> - <span data-ttu-id="7ba8e-113">UpdateMethod</span><span class="sxs-lookup"><span data-stu-id="7ba8e-113">UpdateMethod</span></span>
+> - <span data-ttu-id="ddcf7-111">DeleteMethod</span><span class="sxs-lookup"><span data-stu-id="ddcf7-111">DeleteMethod</span></span>
+> - <span data-ttu-id="ddcf7-112">InsertMethod</span><span class="sxs-lookup"><span data-stu-id="ddcf7-112">InsertMethod</span></span>
+> - <span data-ttu-id="ddcf7-113">UpdateMethod</span><span class="sxs-lookup"><span data-stu-id="ddcf7-113">UpdateMethod</span></span>
 > 
-> <span data-ttu-id="7ba8e-114">这些属性接收处理相应的操作的方法的名称。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-114">These properties receive the name of the method that handles the corresponding operation.</span></span> <span data-ttu-id="7ba8e-115">在该方法中，你提供的逻辑与数据进行交互。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-115">Within that method, you provide the logic for interacting with the data.</span></span>
+> <span data-ttu-id="ddcf7-114">这些属性接收处理相应的操作的方法的名称。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-114">These properties receive the name of the method that handles the corresponding operation.</span></span> <span data-ttu-id="ddcf7-115">在该方法中，你提供的逻辑与数据进行交互。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-115">Within that method, you provide the logic for interacting with the data.</span></span>
 > 
-> <span data-ttu-id="7ba8e-116">本教程基于第一个中创建的项目[一部分](retrieving-data.md)在本系列。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-116">This tutorial builds on the project created in the first [part](retrieving-data.md) of the series.</span></span>
+> <span data-ttu-id="ddcf7-116">本教程基于第一个中创建的项目[一部分](retrieving-data.md)在本系列。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-116">This tutorial builds on the project created in the first [part](retrieving-data.md) of the series.</span></span>
 > 
-> <span data-ttu-id="7ba8e-117">你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-117">You can [download](https://go.microsoft.com/fwlink/?LinkId=286116) the complete project in C# or VB.</span></span> <span data-ttu-id="7ba8e-118">可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-118">The downloadable code works with either Visual Studio 2012 or Visual Studio 2013.</span></span> <span data-ttu-id="7ba8e-119">它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-119">It uses the Visual Studio 2012 template, which is slightly different than the Visual Studio 2013 template shown in this tutorial.</span></span>
+> <span data-ttu-id="ddcf7-117">你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-117">You can [download](https://go.microsoft.com/fwlink/?LinkId=286116) the complete project in C# or VB.</span></span> <span data-ttu-id="ddcf7-118">可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-118">The downloadable code works with either Visual Studio 2012 or Visual Studio 2013.</span></span> <span data-ttu-id="ddcf7-119">它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-119">It uses the Visual Studio 2012 template, which is slightly different than the Visual Studio 2013 template shown in this tutorial.</span></span>
 
+## <a name="what-youll-build"></a><span data-ttu-id="ddcf7-120">你将生成</span><span class="sxs-lookup"><span data-stu-id="ddcf7-120">What you'll build</span></span>
 
-## <a name="what-youll-build"></a><span data-ttu-id="7ba8e-120">你将生成</span><span class="sxs-lookup"><span data-stu-id="7ba8e-120">What you'll build</span></span>
+<span data-ttu-id="ddcf7-121">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="ddcf7-121">In this tutorial, you'll:</span></span>
 
-<span data-ttu-id="7ba8e-121">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="7ba8e-121">In this tutorial, you'll:</span></span>
+1. <span data-ttu-id="ddcf7-122">添加动态数据模板</span><span class="sxs-lookup"><span data-stu-id="ddcf7-122">Add dynamic data templates</span></span>
+2. <span data-ttu-id="ddcf7-123">通过模型绑定方法启用更新和删除数据</span><span class="sxs-lookup"><span data-stu-id="ddcf7-123">Enable updating and deleting data through model binding methods</span></span>
+3. <span data-ttu-id="ddcf7-124">将数据验证规则应用-启用在数据库中创建一个新的记录</span><span class="sxs-lookup"><span data-stu-id="ddcf7-124">Apply data validation rules - Enable creating a new record in the database</span></span>
 
-1. <span data-ttu-id="7ba8e-122">添加动态数据模板</span><span class="sxs-lookup"><span data-stu-id="7ba8e-122">Add dynamic data templates</span></span>
-2. <span data-ttu-id="7ba8e-123">通过模型绑定方法启用更新和删除数据</span><span class="sxs-lookup"><span data-stu-id="7ba8e-123">Enable updating and deleting data through model binding methods</span></span>
-3. <span data-ttu-id="7ba8e-124">将数据验证规则应用-启用在数据库中创建一个新的记录</span><span class="sxs-lookup"><span data-stu-id="7ba8e-124">Apply data validation rules - Enable creating a new record in the database</span></span>
+## <a name="add-dynamic-data-templates"></a><span data-ttu-id="ddcf7-125">添加动态数据模板</span><span class="sxs-lookup"><span data-stu-id="ddcf7-125">Add dynamic data templates</span></span>
 
-## <a name="add-dynamic-data-templates"></a><span data-ttu-id="7ba8e-125">添加动态数据模板</span><span class="sxs-lookup"><span data-stu-id="7ba8e-125">Add dynamic data templates</span></span>
+<span data-ttu-id="ddcf7-126">若要提供最佳用户体验和最大程度减少代码重复，将使用动态数据模板。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-126">To provide the best user experience and minimize code repetition, you will use dynamic data templates.</span></span> <span data-ttu-id="ddcf7-127">通过安装 NuGet 包可以轻松地将预建的动态数据模板集成到您的现有网站。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-127">You can easily integrate pre-built dynamic data templates into your existing site by installing a NuGet package.</span></span>
 
-<span data-ttu-id="7ba8e-126">若要提供最佳用户体验和最大程度减少代码重复，将使用动态数据模板。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-126">To provide the best user experience and minimize code repetition, you will use dynamic data templates.</span></span> <span data-ttu-id="7ba8e-127">通过安装 NuGet 包可以轻松地将预建的动态数据模板集成到您的现有网站。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-127">You can easily integrate pre-built dynamic data templates into your existing site by installing a NuGet package.</span></span>
-
-<span data-ttu-id="7ba8e-128">从**管理 NuGet 包**，安装**DynamicDataTemplatesCS**。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-128">From the **Manage NuGet Packages**, install the **DynamicDataTemplatesCS**.</span></span>
+<span data-ttu-id="ddcf7-128">从**管理 NuGet 包**，安装**DynamicDataTemplatesCS**。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-128">From the **Manage NuGet Packages**, install the **DynamicDataTemplatesCS**.</span></span>
 
 ![动态数据模板](updating-deleting-and-creating-data/_static/image1.png)
 
-<span data-ttu-id="7ba8e-130">请注意，你的项目现在包含一个名为文件夹**DynamicData**。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-130">Notice that your project now includes a folder named **DynamicData**.</span></span> <span data-ttu-id="7ba8e-131">在该文件夹中，您将找到自动应用于 web 窗体中的动态控件的模板。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-131">In that folder, you will find the templates that are automatically applied to dynamic controls in your web forms.</span></span>
+<span data-ttu-id="ddcf7-130">请注意，你的项目现在包含一个名为文件夹**DynamicData**。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-130">Notice that your project now includes a folder named **DynamicData**.</span></span> <span data-ttu-id="ddcf7-131">在该文件夹中，您将找到自动应用于 web 窗体中的动态控件的模板。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-131">In that folder, you will find the templates that are automatically applied to dynamic controls in your web forms.</span></span>
 
 ![动态数据文件夹](updating-deleting-and-creating-data/_static/image2.png)
 
-## <a name="enable-updating-and-deleting"></a><span data-ttu-id="7ba8e-133">启用更新和删除</span><span class="sxs-lookup"><span data-stu-id="7ba8e-133">Enable updating and deleting</span></span>
+## <a name="enable-updating-and-deleting"></a><span data-ttu-id="ddcf7-133">启用更新和删除</span><span class="sxs-lookup"><span data-stu-id="ddcf7-133">Enable updating and deleting</span></span>
 
-<span data-ttu-id="7ba8e-134">使用户能够更新和删除数据库中的记录是检索数据的过程非常相似。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-134">Enabling users to update and delete records in the database is very similar to the process for retrieving data.</span></span> <span data-ttu-id="7ba8e-135">在中**UpdateMethod**并**DeleteMethod**属性，指定执行这些操作，方法的名称。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-135">In the **UpdateMethod** and **DeleteMethod** properties, you specify the names of the methods that perform those operations.</span></span> <span data-ttu-id="7ba8e-136">GridView 控件后，您还可以指定自动生成的编辑和删除按钮。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-136">With a GridView control, you can also specify the automatic generation of edit and delete buttons.</span></span> <span data-ttu-id="7ba8e-137">以下突出显示的代码显示了对 GridView 代码新增的内容。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-137">The following highlighted code shows the additions to the GridView code.</span></span>
+<span data-ttu-id="ddcf7-134">使用户能够更新和删除数据库中的记录是检索数据的过程非常相似。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-134">Enabling users to update and delete records in the database is very similar to the process for retrieving data.</span></span> <span data-ttu-id="ddcf7-135">在中**UpdateMethod**并**DeleteMethod**属性，指定执行这些操作，方法的名称。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-135">In the **UpdateMethod** and **DeleteMethod** properties, you specify the names of the methods that perform those operations.</span></span> <span data-ttu-id="ddcf7-136">GridView 控件后，您还可以指定自动生成的编辑和删除按钮。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-136">With a GridView control, you can also specify the automatic generation of edit and delete buttons.</span></span> <span data-ttu-id="ddcf7-137">以下突出显示的代码显示了对 GridView 代码新增的内容。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-137">The following highlighted code shows the additions to the GridView code.</span></span>
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample1.aspx?highlight=4-5)]
 
-<span data-ttu-id="7ba8e-138">在代码隐藏文件中，添加 using 语句**System.Data.Entity.Infrastructure**。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-138">In the code-behind file, add a using statement for **System.Data.Entity.Infrastructure**.</span></span>
+<span data-ttu-id="ddcf7-138">在代码隐藏文件中，添加 using 语句**System.Data.Entity.Infrastructure**。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-138">In the code-behind file, add a using statement for **System.Data.Entity.Infrastructure**.</span></span>
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample2.cs)]
 
-<span data-ttu-id="7ba8e-139">然后，添加以下更新和删除方法。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-139">Then, add the following update and delete methods.</span></span>
+<span data-ttu-id="ddcf7-139">然后，添加以下更新和删除方法。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-139">Then, add the following update and delete methods.</span></span>
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample3.cs)]
 
-<span data-ttu-id="7ba8e-140">**TryUpdateModel**方法将 web 窗体中匹配的数据绑定值应用于数据项。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-140">The **TryUpdateModel** method applies the matching data-bound values from the web form to the data item.</span></span> <span data-ttu-id="7ba8e-141">根据 id 参数的值检索数据项目。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-141">The data item is retrieved based on the value of the id parameter.</span></span>
+<span data-ttu-id="ddcf7-140">**TryUpdateModel**方法将 web 窗体中匹配的数据绑定值应用于数据项。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-140">The **TryUpdateModel** method applies the matching data-bound values from the web form to the data item.</span></span> <span data-ttu-id="ddcf7-141">根据 id 参数的值检索数据项目。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-141">The data item is retrieved based on the value of the id parameter.</span></span>
 
-## <a name="enforce-validation-requirements"></a><span data-ttu-id="7ba8e-142">强制实施验证要求</span><span class="sxs-lookup"><span data-stu-id="7ba8e-142">Enforce validation requirements</span></span>
+## <a name="enforce-validation-requirements"></a><span data-ttu-id="ddcf7-142">强制实施验证要求</span><span class="sxs-lookup"><span data-stu-id="ddcf7-142">Enforce validation requirements</span></span>
 
-<span data-ttu-id="7ba8e-143">将数据更新时，会自动强制执行应用于 Student 类中的 FirstName、 LastName 和 Year 属性的验证特性。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-143">The validation attributes that you applied to the FirstName, LastName, and Year properties in the Student class are automatically enforced when updating the data.</span></span> <span data-ttu-id="7ba8e-144">DynamicField 控件添加验证特性所基于的客户端和服务器验证程序。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-144">The DynamicField controls add client and server validators based on the validation attributes.</span></span> <span data-ttu-id="7ba8e-145">FirstName 和 LastName 属性都是必需。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-145">The FirstName and LastName properties are both required.</span></span> <span data-ttu-id="7ba8e-146">名字不能超过 20 个字符的长度，并且姓氏不能超过 40 个字符。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-146">FirstName cannot exceed 20 characters in length, and LastName cannot exceed 40 characters.</span></span> <span data-ttu-id="7ba8e-147">年份必须是有效的 AcademicYear 枚举值。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-147">Year must be a valid value for the AcademicYear enumeration.</span></span>
+<span data-ttu-id="ddcf7-143">将数据更新时，会自动强制执行应用于 Student 类中的 FirstName、 LastName 和 Year 属性的验证特性。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-143">The validation attributes that you applied to the FirstName, LastName, and Year properties in the Student class are automatically enforced when updating the data.</span></span> <span data-ttu-id="ddcf7-144">DynamicField 控件添加验证特性所基于的客户端和服务器验证程序。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-144">The DynamicField controls add client and server validators based on the validation attributes.</span></span> <span data-ttu-id="ddcf7-145">FirstName 和 LastName 属性都是必需。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-145">The FirstName and LastName properties are both required.</span></span> <span data-ttu-id="ddcf7-146">名字不能超过 20 个字符的长度，并且姓氏不能超过 40 个字符。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-146">FirstName cannot exceed 20 characters in length, and LastName cannot exceed 40 characters.</span></span> <span data-ttu-id="ddcf7-147">年份必须是有效的 AcademicYear 枚举值。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-147">Year must be a valid value for the AcademicYear enumeration.</span></span>
 
-<span data-ttu-id="7ba8e-148">如果用户不符合验证要求之一，将不会继续更新。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-148">If the user violates one of the validation requirements, the update does not proceed.</span></span> <span data-ttu-id="7ba8e-149">若要查看错误消息，请添加 GridView 上方的一个 ValidationSummary 控件。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-149">To see the error message, add a ValidationSummary control above the GridView.</span></span> <span data-ttu-id="7ba8e-150">若要显示从模型绑定验证错误，请设置**ShowModelStateErrors**属性设置为**true**。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-150">To display the validation errors from model binding, set the **ShowModelStateErrors** property set to **true**.</span></span> 
+<span data-ttu-id="ddcf7-148">如果用户不符合验证要求之一，将不会继续更新。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-148">If the user violates one of the validation requirements, the update does not proceed.</span></span> <span data-ttu-id="ddcf7-149">若要查看错误消息，请添加 GridView 上方的一个 ValidationSummary 控件。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-149">To see the error message, add a ValidationSummary control above the GridView.</span></span> <span data-ttu-id="ddcf7-150">若要显示从模型绑定验证错误，请设置**ShowModelStateErrors**属性设置为**true**。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-150">To display the validation errors from model binding, set the **ShowModelStateErrors** property set to **true**.</span></span> 
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample4.aspx)]
 
-<span data-ttu-id="7ba8e-151">运行 web 应用程序，并更新和删除的任何记录。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-151">Run the web application, and update and delete any of the records.</span></span>
+<span data-ttu-id="ddcf7-151">运行 web 应用程序，并更新和删除的任何记录。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-151">Run the web application, and update and delete any of the records.</span></span>
 
 ![更新数据](updating-deleting-and-creating-data/_static/image3.png)
 
-<span data-ttu-id="7ba8e-153">请注意，如果在编辑模式下年属性的值自动呈现为一个下拉列表。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-153">Notice that when in the edit mode the value for the Year property is automatically rendered as a drop down list.</span></span> <span data-ttu-id="7ba8e-154">Year 属性是枚举值，并枚举值的动态数据模板指定一个下拉列表以进行编辑。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-154">The Year property is an enumeration value, and the dynamic data template for an enumeration value specifies a drop down list for editing.</span></span> <span data-ttu-id="7ba8e-155">您可以找到该模板通过打开**枚举\_Edit.ascx**中的文件**DynamicData**/**FieldTemplates**文件夹。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-155">You can find that template by opening the **Enumeration\_Edit.ascx** file in the **DynamicData**/**FieldTemplates** folder.</span></span>
+<span data-ttu-id="ddcf7-153">请注意，如果在编辑模式下年属性的值自动呈现为一个下拉列表。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-153">Notice that when in the edit mode the value for the Year property is automatically rendered as a drop down list.</span></span> <span data-ttu-id="ddcf7-154">Year 属性是枚举值，并枚举值的动态数据模板指定一个下拉列表以进行编辑。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-154">The Year property is an enumeration value, and the dynamic data template for an enumeration value specifies a drop down list for editing.</span></span> <span data-ttu-id="ddcf7-155">您可以找到该模板通过打开**枚举\_Edit.ascx**中的文件**DynamicData**/**FieldTemplates**文件夹。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-155">You can find that template by opening the **Enumeration\_Edit.ascx** file in the **DynamicData**/**FieldTemplates** folder.</span></span>
 
-<span data-ttu-id="7ba8e-156">如果你提供有效的值，在更新成功完成。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-156">If you provide valid values, the update completes successfully.</span></span> <span data-ttu-id="7ba8e-157">如果您违反验证要求之一，更新将不会继续并中网格之上显示一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-157">If you violate one of the validation requirements, the update does not proceed and an error message is displayed above the grid.</span></span>
+<span data-ttu-id="ddcf7-156">如果你提供有效的值，在更新成功完成。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-156">If you provide valid values, the update completes successfully.</span></span> <span data-ttu-id="ddcf7-157">如果您违反验证要求之一，更新将不会继续并中网格之上显示一条错误消息。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-157">If you violate one of the validation requirements, the update does not proceed and an error message is displayed above the grid.</span></span>
 
 ![错误消息](updating-deleting-and-creating-data/_static/image4.png)
 
-## <a name="add-new-records"></a><span data-ttu-id="7ba8e-159">添加新记录</span><span class="sxs-lookup"><span data-stu-id="7ba8e-159">Add new records</span></span>
+## <a name="add-new-records"></a><span data-ttu-id="ddcf7-159">添加新记录</span><span class="sxs-lookup"><span data-stu-id="ddcf7-159">Add new records</span></span>
 
-<span data-ttu-id="7ba8e-160">GridView 控件不包括**InsertMethod**属性，因此不能使用与模型绑定添加一个新的记录。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-160">The GridView control does not include the **InsertMethod** property and therefore cannot be used for adding a new record with model binding.</span></span> <span data-ttu-id="7ba8e-161">您可以找到在 InsertMethod 属性**FormView**， **DetailsView**，或**ListView**控件。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-161">You can find the InsertMethod property in the **FormView**, **DetailsView**, or **ListView** controls.</span></span> <span data-ttu-id="7ba8e-162">在本教程中，您将使用 FormView 控件添加新记录。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-162">In this tutorial, you will use a FormView control to add a new record.</span></span>
+<span data-ttu-id="ddcf7-160">GridView 控件不包括**InsertMethod**属性，因此不能使用与模型绑定添加一个新的记录。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-160">The GridView control does not include the **InsertMethod** property and therefore cannot be used for adding a new record with model binding.</span></span> <span data-ttu-id="ddcf7-161">您可以找到在 InsertMethod 属性**FormView**， **DetailsView**，或**ListView**控件。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-161">You can find the InsertMethod property in the **FormView**, **DetailsView**, or **ListView** controls.</span></span> <span data-ttu-id="ddcf7-162">在本教程中，您将使用 FormView 控件添加新记录。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-162">In this tutorial, you will use a FormView control to add a new record.</span></span>
 
-<span data-ttu-id="7ba8e-163">首先，将链接添加到新页面将创建用于添加新记录。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-163">First, add a link to the new page you will create for adding a new record.</span></span> <span data-ttu-id="7ba8e-164">ValidationSummary 上方添加：</span><span class="sxs-lookup"><span data-stu-id="7ba8e-164">Above the ValidationSummary, add:</span></span>
+<span data-ttu-id="ddcf7-163">首先，将链接添加到新页面将创建用于添加新记录。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-163">First, add a link to the new page you will create for adding a new record.</span></span> <span data-ttu-id="ddcf7-164">ValidationSummary 上方添加：</span><span class="sxs-lookup"><span data-stu-id="ddcf7-164">Above the ValidationSummary, add:</span></span>
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample5.aspx)]
 
-<span data-ttu-id="7ba8e-165">在学生页上的内容的顶部将显示新的链接。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-165">The new link will appear at the top of the content for the Students page.</span></span>
+<span data-ttu-id="ddcf7-165">在学生页上的内容的顶部将显示新的链接。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-165">The new link will appear at the top of the content for the Students page.</span></span>
 
 ![新链接](updating-deleting-and-creating-data/_static/image5.png)
 
-<span data-ttu-id="7ba8e-167">然后，添加新 web 窗体使用母版页，并将其命名**AddStudent**。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-167">Then, add a new web form using a master page, and name it **AddStudent**.</span></span> <span data-ttu-id="7ba8e-168">选择 Site.Master 作为主页面。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-168">Select Site.Master as the master page.</span></span>
+<span data-ttu-id="ddcf7-167">然后，添加新 web 窗体使用母版页，并将其命名**AddStudent**。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-167">Then, add a new web form using a master page, and name it **AddStudent**.</span></span> <span data-ttu-id="ddcf7-168">选择 Site.Master 作为主页面。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-168">Select Site.Master as the master page.</span></span>
 
-<span data-ttu-id="7ba8e-169">将呈现用于添加新的学生使用的字段**DynamicEntity**控件。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-169">You will render the fields for adding a new student by using a **DynamicEntity** control.</span></span> <span data-ttu-id="7ba8e-170">DynamicEntity 控件呈现 ItemType 属性中指定的类中的可编辑的属性。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-170">The DynamicEntity control renders that editable properties in the class specified in the ItemType property.</span></span> <span data-ttu-id="7ba8e-171">StudentID 属性标记有 **[scaffoldcolumn （false)]** 属性以便不呈现。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-171">The StudentID property was marked with the **[ScaffoldColumn(false)]** attribute so it is not rendered.</span></span> <span data-ttu-id="7ba8e-172">在 AddStudent 页上的主要内容占位符，添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-172">In the MainContent placeholder of the AddStudent page, add the following code.</span></span>
+<span data-ttu-id="ddcf7-169">将呈现用于添加新的学生使用的字段**DynamicEntity**控件。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-169">You will render the fields for adding a new student by using a **DynamicEntity** control.</span></span> <span data-ttu-id="ddcf7-170">DynamicEntity 控件呈现 ItemType 属性中指定的类中的可编辑的属性。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-170">The DynamicEntity control renders that editable properties in the class specified in the ItemType property.</span></span> <span data-ttu-id="ddcf7-171">StudentID 属性标记有 **[scaffoldcolumn （false)]** 属性以便不呈现。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-171">The StudentID property was marked with the **[ScaffoldColumn(false)]** attribute so it is not rendered.</span></span> <span data-ttu-id="ddcf7-172">在 AddStudent 页上的主要内容占位符，添加以下代码。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-172">In the MainContent placeholder of the AddStudent page, add the following code.</span></span>
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample6.aspx)]
 
-<span data-ttu-id="7ba8e-173">在代码隐藏文件 (AddStudent.aspx.cs) 中，添加**使用**语句**ContosoUniversityModelBinding.Models**命名空间。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-173">In the code-behind file (AddStudent.aspx.cs), add a **using** statement for the **ContosoUniversityModelBinding.Models** namespace.</span></span>
+<span data-ttu-id="ddcf7-173">在代码隐藏文件 (AddStudent.aspx.cs) 中，添加**使用**语句**ContosoUniversityModelBinding.Models**命名空间。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-173">In the code-behind file (AddStudent.aspx.cs), add a **using** statement for the **ContosoUniversityModelBinding.Models** namespace.</span></span>
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample7.cs)]
 
-<span data-ttu-id="7ba8e-174">然后，添加以下方法来指定如何插入一条新记录和取消按钮的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-174">Then, add the following methods to specify how to insert a new record and an event handler for the cancel button.</span></span>
+<span data-ttu-id="ddcf7-174">然后，添加以下方法来指定如何插入一条新记录和取消按钮的事件处理程序。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-174">Then, add the following methods to specify how to insert a new record and an event handler for the cancel button.</span></span>
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample8.cs)]
 
-<span data-ttu-id="7ba8e-175">保存的所有更改。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-175">Save all of the changes.</span></span>
+<span data-ttu-id="ddcf7-175">保存的所有更改。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-175">Save all of the changes.</span></span>
 
-<span data-ttu-id="7ba8e-176">运行 web 应用程序并创建新的学生。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-176">Run the web application and create a new student.</span></span>
+<span data-ttu-id="ddcf7-176">运行 web 应用程序并创建新的学生。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-176">Run the web application and create a new student.</span></span>
 
 ![添加新学生](updating-deleting-and-creating-data/_static/image6.png)
 
-<span data-ttu-id="7ba8e-178">单击**插入**并注意已创建的新学生。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-178">Click **Insert** and notice the new student has been created.</span></span>
+<span data-ttu-id="ddcf7-178">单击**插入**并注意已创建的新学生。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-178">Click **Insert** and notice the new student has been created.</span></span>
 
 ![显示新学生](updating-deleting-and-creating-data/_static/image7.png)
 
-## <a name="conclusion"></a><span data-ttu-id="7ba8e-180">结束语</span><span class="sxs-lookup"><span data-stu-id="7ba8e-180">Conclusion</span></span>
+## <a name="conclusion"></a><span data-ttu-id="ddcf7-180">结束语</span><span class="sxs-lookup"><span data-stu-id="ddcf7-180">Conclusion</span></span>
 
-<span data-ttu-id="7ba8e-181">在本教程中，您可以启用更新、 删除和创建数据。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-181">In this tutorial, you enabled updating, deleting, and creating data.</span></span> <span data-ttu-id="7ba8e-182">确保验证规则将应用与数据交互时。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-182">You ensured validation rules are applied when interacting with the data.</span></span>
+<span data-ttu-id="ddcf7-181">在本教程中，您可以启用更新、 删除和创建数据。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-181">In this tutorial, you enabled updating, deleting, and creating data.</span></span> <span data-ttu-id="ddcf7-182">确保验证规则将应用与数据交互时。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-182">You ensured validation rules are applied when interacting with the data.</span></span>
 
-<span data-ttu-id="7ba8e-183">在接下来[教程](sorting-paging-and-filtering-data.md)在本系列中，将启用排序、 分页和筛选数据。</span><span class="sxs-lookup"><span data-stu-id="7ba8e-183">In the next [tutorial](sorting-paging-and-filtering-data.md) in this series, you will enable sorting, paging, and filtering data.</span></span>
+<span data-ttu-id="ddcf7-183">在接下来[教程](sorting-paging-and-filtering-data.md)在本系列中，将启用排序、 分页和筛选数据。</span><span class="sxs-lookup"><span data-stu-id="ddcf7-183">In the next [tutorial](sorting-paging-and-filtering-data.md) in this series, you will enable sorting, paging, and filtering data.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="7ba8e-184">[上一页](retrieving-data.md)
-> [下一页](sorting-paging-and-filtering-data.md)</span><span class="sxs-lookup"><span data-stu-id="7ba8e-184">[Previous](retrieving-data.md)
+> <span data-ttu-id="ddcf7-184">[上一页](retrieving-data.md)
+> [下一页](sorting-paging-and-filtering-data.md)</span><span class="sxs-lookup"><span data-stu-id="ddcf7-184">[Previous](retrieving-data.md)
 [Next](sorting-paging-and-filtering-data.md)</span></span>
