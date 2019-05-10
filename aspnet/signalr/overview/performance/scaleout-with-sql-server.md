@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 98358b6e-9139-4239-ba3a-2d7dd74dd664
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: c0c214ea32ad13b3a63be9ef84bcb4b8bc7311aa
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 709a9ebf8f3396842bee0d87e621c00ae1418ec1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393569"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113604"
 ---
 # <a name="signalr-scaleout-with-sql-server"></a>使用 SQL Server 的 SignalR 横向扩展
 
@@ -37,7 +37,6 @@ ms.locfileid: "59393569"
 > ## <a name="questions-and-comments"></a>问题和提出的意见
 >
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
-
 
 在本教程中，将使用 SQL Server 将消息分布到两个单独的 IIS 实例中部署的 SignalR 应用程序。 此外可以在单个测试计算机上，运行本教程中，但若要获取完整的效果，您需要 SignalR 应用程序部署到两个或多个服务器。 其中一台服务器，或单独的专用服务器上，还必须安装 SQL Server。 另一种方法是运行本教程使用 Azure 上的 Vm。
 
@@ -87,7 +86,6 @@ Microsoft SQL Server 2005 或更高版本。 底板支持桌面和服务器版�
 
 > [!NOTE]
 > 如果此查询出现死锁，请确保没有应用程序连接到数据库。
-
 
 如果已启用跟踪，跟踪还会显示是否启用 Service Broker。
 

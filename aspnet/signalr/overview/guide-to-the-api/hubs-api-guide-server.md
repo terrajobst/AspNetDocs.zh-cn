@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: b19913e5-cd8a-4e4b-a872-5ac7a858a934
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: adfd540562ec54938860740ab280c770e24f492e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c681b104b15bfc4a04587c7abf685dcf20def2ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411405"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112791"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR 中心 API 指南-服务器 (C#)
 
@@ -562,7 +562,6 @@ SignalR 跟踪的连接，而不是用户，因此，如果您希望用户为同
 
 > [!NOTE]
 > 状态持久化此机制不适用于大量数据，因为所有内容将放入`state`或`Clients.Caller`属性是往返与每个方法调用。 它可用于较小的项，如用户名称或计数器。
-
 
 在 VB.NET 或强类型化的中心，不能通过访问调用方状态对象`Clients.Caller`; 相反，使用`Clients.CallerState`（SignalR 2.1 中引入）：
 

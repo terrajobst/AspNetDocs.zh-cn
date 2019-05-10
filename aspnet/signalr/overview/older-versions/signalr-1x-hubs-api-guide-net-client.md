@@ -8,12 +8,12 @@ ms.date: 04/17/2013
 ms.assetid: c334adc3-d6dc-44f3-9f06-f7634475aad3
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 1551b4533e05a6cd7dcc29e4c6bc17e854889ee8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2b22b53c405a865f91b04e677f60b82dd46dbf9b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402240"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120124"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>ASP.NET SignalR 中心 API 指南-.NET 客户端 (SignalR 1.x)
 
@@ -26,7 +26,6 @@ ms.locfileid: "59402240"
 > SignalR 中心 API，可从连接的客户端到服务器和客户端到服务器进行远程过程调用 (Rpc)。 在服务器代码中，定义可由客户端，调用的方法和调用客户端运行的方法。 在客户端代码中，定义在服务器上，可以调用的方法，并调用在服务器运行的方法。 SignalR 将负责所有为你的客户端-服务器探测功能。
 > 
 > SignalR 还提供了一个称为持久连接的较低级别 API。 简介 SignalR、 集线器和持久性连接，或者显示了如何构建一个完整的 SignalR 应用程序的教程，请参阅[SignalR-Getting Started](../getting-started/index.md)。
-
 
 ## <a name="overview"></a>概述
 
@@ -87,7 +86,6 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 
 > [!NOTE]
 > 对于 JavaScript 客户端，需要注册至少一个事件处理程序，然后才能调用`Start`方法以建立连接。 这不是必需的.NET 客户端。 对于 JavaScript 客户端，生成的代理代码会自动创建用于所有存在的集线器代理的服务器上，并注册一个处理程序是如何指示哪个中心为客户端想要使用。 但对于.NET 客户端中心代理手动创建，因此 SignalR 假定，将使用创建的代理的任何中心。
-
 
 示例代码使用默认值"/ signalr"连接到 SignalR 服务的 URL。 有关如何指定不同的基 URL 的信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-/signalr URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl)。
 

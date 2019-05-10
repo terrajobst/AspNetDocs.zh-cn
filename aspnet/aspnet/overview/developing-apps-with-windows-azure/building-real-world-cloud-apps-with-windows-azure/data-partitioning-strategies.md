@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 1050018794526e12aad43cd473665de5ff575d7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3aecd64bc59ffa961aa97dd30b037f9aeb2acdd8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59403553"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118900"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>数据分区策略 （使用 Azure 构建实际云应用）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59403553"
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关序列的信息，请参阅[的第一章](introduction.md)。
-
 
 前面我们看到，若要通过添加和删除 web 服务器扩展的云应用程序，web 层是多么容易。 但是，如果它们已全部达到相同的数据存储，应用程序的瓶颈将移动从前端到后端和数据层，最难进行缩放。 在这一章中我们介绍如何，将数据分区为多个关系数据库，或将与其他数据存储选项结合使用关系数据库存储，可以使数据层可缩放。
 

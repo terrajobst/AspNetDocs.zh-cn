@@ -8,12 +8,12 @@ ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 63c555358d06a9506bb5c8c993800c3307108192
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415981"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114434"
 ---
 # <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：向 ASP.NET Web 窗体 / MVC 应用程序添加移动页面
 
@@ -25,7 +25,6 @@ ms.locfileid: "59415981"
 > **摘要**
 > 
 > 此方法向介绍了各种方法提供针对 ASP.NET Web 窗体中的移动设备优化的页面 / MVC 应用程序，并建议体系结构和设计要考虑面向范围广泛的设备时的问题。 本文档还介绍了为什么 ASP.NET 移动控件从 ASP.NET 2.0 到 3.5 现已过时，并讨论某些现代的替代方法。
-
 
 ## <a name="contents"></a>内容
 
@@ -158,7 +157,6 @@ ASP.NET Web 窗体和 MVC 开发人员可以立即发现正在访问的浏览器
 
 > [!NOTE]
 > 由于这种方法通常涉及一些重复代码 （移动页面有可能与桌面页面共享一些相似之处），务必分离出任何常见业务逻辑或数据访问代码到共享的基础层或服务。 否则，你将双精度的创建和维护你的应用程序的工作量。
-
 
 #### <a name="redirecting-mobile-visitors-to-your-mobile-pages"></a>重定向移动的访客移动页面
 
@@ -310,7 +308,6 @@ ASP.NET Web 窗体和 MVC 开发人员可以立即发现正在访问的浏览器
 
 > [!NOTE]
 > 您*可以*使用 51Degrees.mobi Foundation 重定向功能在 ASP.NET MVC 应用程序，但您将需要定义您在普通的 Url，不是作为路由参数或通过将置于 MVC 筛选器方面的重定向配置上的操作。 这是因为 （在撰写本文时） 51Degrees.mobi Foundation 不能识别筛选器或路由。
-
 
 ### <a name="disabling-transcoders-and-proxy-servers"></a>禁用转码器和代理服务器
 

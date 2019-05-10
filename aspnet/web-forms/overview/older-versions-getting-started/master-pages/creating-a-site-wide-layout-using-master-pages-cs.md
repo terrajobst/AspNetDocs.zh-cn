@@ -8,12 +8,12 @@ ms.date: 05/21/2008
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 866aea01488cee26a7419fe12b7ffa7a0655e9ce
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ef4cc44a5d1adb936beea421a295ae84052d3c4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385041"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116611"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-c"></a>使用母版页创建站点范围内布局 (C#)
 
@@ -23,16 +23,13 @@ ms.locfileid: "59385041"
 
 > 本教程会演示母版页基础知识。 也就是说，什么是主页面，其中一个会如何创建主页面，什么是内容的占位符，如何 does 之一创建的 ASP.NET 页使用母版页，如何修改母版页自动反映在其关联的内容页面，等等。
 
-
 ## <a name="introduction"></a>介绍
 
 设计良好的一个属性是网站的一致的站点级页面布局。 以 www.asp.net 网站中，为例。 在撰写本文时，每个页都有相同的内容的顶部和页面的底部。 如图 1 所示，每个页面的顶部将显示包含一系列 Microsoft 社区的灰色栏。 下面是站点徽标，其中该站点已翻译，语言和核心部分的列表：主页，获取已启动，学习、 下载等。 同样，页面底部包括有关广告 www.asp.net 、 版权声明和指向隐私声明的链接上的信息。
 
-
 [![Www.asp.net 网站跨所有页面采用一致的外观](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
 <strong>图 01</strong>:Www.asp.net 网站采用一致的外观和感觉跨所有页面 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
-
 
 设计良好的另一个属性是站点的可用于更改站点的外观的易用性。 图 1 显示了自 2008 年 3 月起 www.asp.net 主页，但现在，本教程中的发布，可能已更改外观和感觉。 可能是沿着顶部的菜单项将展开以包括新的节的 MVC 框架。 也可能是揭秘是全新图案中带有不同的颜色、 字体和布局。 将此类更改应用于整个站点应快速而简单的过程不需要修改构成该站点的 web 页面的数千个。
 
@@ -64,28 +61,22 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > ASP.NET 2.0 版以来未更改的核心概念和功能的主页面。 但是，Visual Studio 2008 提供设计时支持嵌套的母版页，缺少对 Visual Studio 2005 中的功能。 我们将介绍如何在以后的教程中使用嵌套的母版页。
 
-
 图 2 显示了为 www.asp.net 母版页可能如下所示。 请注意，主页面以及中间的左侧，每个单独的 web 页面的独特内容所在的位置中 ContentPlaceHolder 定义常见网站的布局的顶部、 底部，和每个页面的右侧的标记的。
-
 
 ![母版页内容页面的内容页基于定义站点范围内布局和可编辑区域](creating-a-site-wide-layout-using-master-pages-cs/_static/image4.png)
 
 **图 02**:母版页内容页面的内容页基于定义站点范围内布局和可编辑区域
 
-
 定义一个母版页后它可以绑定到新的 ASP.NET 页面，通过一个复选框的刻度线。 这些 ASP.NET 页面-称为内容页面的每个母版页的 ContentPlaceHolder 控件包括内容控件。 通过浏览器访问内容页时 ASP.NET 引擎创建主页面的控件层次结构和内容页面的控件层次结构注入到相应的位置。 呈现此组合的控件层次结构和生成的 HTML 返回到最终用户的浏览器。 因此，内容页会发出其母版页之外 ContentPlaceHolder 控件中定义的常见标记和其自己的内容控件中定义的特定于页面的标记。 图 3 说明了这一概念。
-
 
 [![请求的页面的标记融合到母版页](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
 
 **图 03**:请求的页面的标记融合到母版页 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image7.png))
 
-
 现在，我们已讨论了如何母版页的工作原理，让我们看一看创建主页面和使用 Visual Web Developer 的关联内容页。
 
 > [!NOTE]
 > 若要访问尽可能多的受众，我们在整个教程系列中生成 ASP.NET 网站将创建与 Microsoft 的免费版本的 Visual Studio 2008 中，使用 ASP.NET 3.5 [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)。 如果你尚未升级到 ASP.NET 3.5 中，别担心-在这些教程工作中讨论的概念同样有效的 ASP.NET 2.0 和 Visual Studio 2005。 但是，一些演示应用程序可以使用.NET framework 3.5; 版新增功能当使用特定于 3.5 的功能时，我会包含一条说明，介绍了如何在版本 2.0 中实现类似的功能。 执行操作请记住，可用于演示应用程序从每个教程的目标.NET Framework 3.5 版中，这会导致下载`Web.config`文件，其中包含特定于 3.5 的配置元素和对中的特定于 3.5 的命名空间的引用`using` ASP.NET 页的代码隐藏类中的语句。 长话短说，如果你尚未然后可下载的 web 应用程序在计算机上安装.NET 3.5 未事先删除中的特定于 3.5 的标记将无法工作`Web.config`。 请参阅[仔细分析 ASP.NET 3.5 版的`Web.config`文件](http://www.4guysfromrolla.com/articles/121207-1.aspx)有关本主题的详细信息。 您还需要删除`using`引用特定于 3.5 的命名空间的语句。
-
 
 ## <a name="step-1-creating-a-master-page"></a>步骤 1：创建主页面
 
@@ -94,19 +85,15 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > Visual Studio 支持项目管理的两种的模式：网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟项目体系结构在 Visual Studio.NET 2002/2003年-它们包括项目文件并将项目的源代码编译到单个程序集，该值将被放`/bin`文件夹。 Visual Studio 2005 最初仅支持的网站项目，尽管[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)已重新引入 Service Pack 1;Visual Studio 2008 提供了这两种项目模型。 Visual Web Developer 2005 和 2008年版本，但是，仅支持网站项目。 我使用我在本系列教程中演示的网站项目模型。 如果您使用的是非速成版，并且想要改为使用 Web 应用程序项目模型，随时执行此操作，但请注意您所见的屏幕和必须与所示的屏幕快照和 instructio 采取的步骤之间可能存在某些差异这些教程中提供的 ns。
 
-
 [![创建新的文件基于系统的 Web 站点](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
 
 **图 04**:创建 New File System-Based 网站 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image10.png))
 
-
 接下来，添加一个母版页到站点的根目录中右键单击项目名称，选择添加新项，然后选择母版页模板。 请注意母版页的扩展名结尾`.master`。 命名此新的主页面`Site.master`并单击添加。
-
 
 [![添加母版页名为 Site.master 到网站](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
 
 **图 05**:添加主页面命名`Site.master`到网站 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image13.png))
-
 
 添加 Visual Web Developer 中通过新的主页面文件使用以下声明性标记创建主页面：
 
@@ -126,16 +113,13 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > 当设计母版页请确保包含 Web 窗体母版页和至少一个 ContentPlaceHolder 控件将显示在该 Web 窗体。
 
-
 ### <a name="creating-a-simple-site-layout"></a>创建简单的站点布局
 
 让我们展开`Site.master`的默认声明性标记来创建站点布局，其中所有页面都共享： 常见标头; 的导航、 新闻和其他站点范围的内容; 和页脚显示"提供支持的 Microsoft ASP.NET"图标左侧的列。 图 6 显示了母版页的最终结果时的浏览器查看其内容的页面之一。 图 6 中的红色圆圈的区域是特定于正在访问过的网页 (`Default.aspx`); 其他内容跨所有内容页面的母版页中定义和因此一致性。
 
-
 [![母版页的顶部、 左侧和底部部分定义标记](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
 
 **图 06**:主页面定义的顶部、 左侧和底部部分的标记 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image16.png))
-
 
 若要实现站点布局图 6 所示，通过更新开始`Site.master`母版页，使其包含以下声明性标记：
 
@@ -152,7 +136,6 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > CSS 和网页格式的讨论已超出本文的讨论范围。 有关 CSS 的详细信息，请参阅[CSS 教程](http://www.w3schools.com/css/default.asp)处[W3Schools.com](http://www.w3schools.com/)。 我还建议您下载本教程随附的代码并试用可以使用中的 CSS 设置`Styles.css`若要查看不同的格式设置规则的效果。
 
-
 ### <a name="creating-a-master-page-using-an-existing-design-template"></a>创建使用现有的设计模板的主页面
 
 多年来我构建了大量的小型到中型公司的 ASP.NET web 应用程序。 我的客户端的某些公司使用了他们想要使用; 某个现有站点布局其他人雇用功能完善的图形设计器。 几个委托我设计网站布局。 图 6 中可以看到，任务调度程序员设计网站的布局通常为明智的做法是为具有执行 open-heart surgery，而您的医生却你的税额你会计。
@@ -161,7 +144,6 @@ ms.locfileid: "59385041"
 
 > [!NOTE]
 > Microsoft 还提供了多种[免费 ASP.NET 设计启动工具包模板](https://msdn.microsoft.com/asp.net/aa336613.aspx)，将集成到 Visual Studio 中的新建网站对话框。
-
 
 ## <a name="step-2-creating-associated-content-pages"></a>步骤 2：创建关联的内容页
 
@@ -172,16 +154,13 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > 如果您创建了在 ASP.NET 网站中使用 Web 应用程序项目模型而不网站项目模型则不会在图 7 中所示的添加新项对话框中的"选择母版页"复选框。 若要创建内容页面时使用的 Web 应用程序项目模型，必须选择而不是 Web 窗体模板的 Web 内容窗体模板。 选择 Web 内容窗体模板并单击添加后, 相同选择图 8 所示的对话框将出现一个母版页。
 
-
 [![添加新的内容页面](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
 
 **图 07**:添加新的内容页 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image19.png))
 
-
 [![选择 Site.master 母版页](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
 
 **图 08**:选择`Site.master`母版页 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image22.png))
-
 
 如下面的声明性标记所示，新的内容页包含`@Page`指令，指回其主页面和内容控件的每个母版页的 ContentPlaceHolder 控件。
 
@@ -190,28 +169,23 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > 在步骤 1 中的"创建简单站点布局"部分我重命名`ContentPlaceHolder1`到`MainContent`。 如果没有重命名此 ContentPlaceHolder 控件`ID`中相同的方式，内容页面的声明性标记会略有不同，根据上面所示的标记。 也就是说，第二个内容控件的`ContentPlaceHolderID`将反映`ID`相应 ContentPlaceHolder 控件在母版页中。
 
-
 当呈现内容页、 ASP.NET 引擎必须 fuse 页面的内容与其母版页 ContentPlaceHolder 控件的控件。 ASP.NET 引擎确定从内容页面的母版页`@Page`指令的`MasterPageFile`属性。 如上面的标记所示，此内容页面绑定到`~/Site.master`。
 
 因为主页有两个 ContentPlaceHolder 控件-`head`和`MainContent`-Visual Web Developer 中生成两个内容控件。 每个内容控件引用通过特定 ContentPlaceHolder 其`ContentPlaceHolderID`属性。
 
 其中一种站点范围模板技术通过母版页闪光是其设计时支持。 图 9 显示了`About.aspx`时通过 Visual Web Developer 设计视图中查看的内容页。 请注意，主页面内容可见时，它将灰显并且不能修改。 与母版页的 Contentplaceholder 相对应的内容控件，但是，一些可编辑。 就像使用任何其他 ASP.NET 页上，可以创建内容页面的接口通过添加 Web 控件通过源或设计视图。
 
-
 [![内容页面的设计视图中显示这两个特定于页面的和主页面内容](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
 
 **图 09**:内容页面的设计视图显示的两个特定于页面的和主页面内容 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image25.png))
-
 
 ### <a name="adding-markup-and-web-controls-to-the-content-page"></a>将标记和 Web 控件添加到内容页
 
 请花费片刻时间创建的某些内容`About.aspx`页。 如您所见图 10 中，我输入"有关作者"标题和几个段落的文本，但您太添加 Web 控件。 在创建后此接口，请访问`About.aspx`通过浏览器的页。
 
-
 [![请访问 About.aspx 页通过浏览器](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
 
 **图 10**:请访问`About.aspx`通过浏览器页面 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image28.png))
-
 
 请务必了解请求的内容页面和其关联的母版页是融合，作为一个整体的 web 服务器上完全呈现。 最终用户的浏览器然后发送生成、 浮点混合 HTML。 若要验证这一点，查看由浏览器转到视图菜单并选择数据源收到的 HTML。 请注意，有没有帧或用于单个窗口中显示两个不同的网页的其他任何专用的方法。
 
@@ -232,7 +206,6 @@ ms.locfileid: "59385041"
 > [!NOTE]
 > 当创建新的 ASP.NET 应用程序，Visual Web Developer 将添加`Default.aspx`没有绑定到母版页的页面。 如果想要将现有的 ASP.NET 页面转换成内容页的做法，请继续并执行此操作与`Default.aspx`。 或者，可以删除`Default.aspx`并随后重新添加它，但这次，选中"选择母版页"复选框。
 
-
 ## <a name="step-3-updating-the-master-pages-markup"></a>步骤 3：更新主页面的标记
 
 主页面的主要优点之一是使用单个母版页，可用于在站点上定义的许多页面的整体布局。 因此，更新站点的外观和感觉需要更新单个文件的主页面。
@@ -247,15 +220,12 @@ ms.locfileid: "59385041"
 
 上面的代码中设置的标签`Text`属性设置为当前日期和时间格式为日期是星期几、 月和两位数日期的名称 （请参阅图 11）。 进行此更改后，重新访问您的内容页。 如图 11 所示，所得的标记是立即更新以包括对母版页的更改。
 
-
 [![母版页的更改会反映时查看的内容页](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
 
 **图 11**:母版页的更改会反映时查看的内容页 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image31.png))
 
-
 > [!NOTE]
 > 如本示例所示，主页面可能包含服务器端 Web 控件、 代码和事件处理程序。
-
 
 ## <a name="summary"></a>总结
 

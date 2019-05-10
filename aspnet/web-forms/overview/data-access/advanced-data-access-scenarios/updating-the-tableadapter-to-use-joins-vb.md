@@ -8,12 +8,12 @@ ms.date: 07/18/2007
 ms.assetid: e624a3e0-061b-4efc-8b0e-5877f9ff6714
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 943b8a67e77e4ed449e0b2c887b3cae7cc10f305
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b50b2ea8ca64fc47808752aec9d0a4ecab6fbdc5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383429"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108198"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-vb"></a>更新 TableAdapter 以使用 JOIN (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383429"
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_69_VB.zip)或[下载 PDF](updating-the-tableadapter-to-use-joins-vb/_static/datatutorial69vb1.pdf)
 
 > 使用数据库时，共有分布在多个表的请求数据。 若要从两个不同表中检索数据我们可以使用相关子查询或联接操作。 在本教程中我们比较相关子查询和联接语法之前看一下如何创建包含在其主查询中联接的 TableAdapter。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -38,13 +37,11 @@ ms.locfileid: "59383429"
 
 请记住，`ProductsTableAdapter`中的第一个教程中创建`Northwind`数据集使用相关子查询将返回每个产品 s 相应类别和供应商名称。 `ProductsTableAdapter` S 主查询如下所示。
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample1.sql)]
 
 这两个相关子查询-`(SELECT CategoryName FROM Categories WHERE Categories.CategoryID = Products.CategoryID)`并`(SELECT CompanyName FROM Suppliers WHERE Suppliers.SupplierID = Products.SupplierID)`-是`SELECT`作为中的外部的其他列返回每个产品的单个值的查询`SELECT`语句的列列表。
 
 或者，`JOIN`可以用于返回每个产品 s 供应商和类别名称。 以下查询返回与上述相同的输出，但使用`JOIN`s 取代子查询：
-
 
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample2.sql)]
 
@@ -53,45 +50,35 @@ ms.locfileid: "59383429"
 > [!NOTE]
 > `JOIN` 查询关系数据库中的数据时，通常使用 s。 如果您不熟悉`JOIN`语法或需复习有点其使用情况，我建议[SQL Join 教程](http://www.w3schools.com/sql/sql_join.asp)处[W3 学校](http://www.w3schools.com/)。 此外值得一读都[`JOIN`基础知识](https://msdn.microsoft.com/library/ms191517.aspx)并[子查询基础知识](https://msdn.microsoft.com/library/ms189575.aspx)的部分[SQL 联机丛书](https://msdn.microsoft.com/library/ms130214.aspx)。
 
-
 由于`JOIN`s 和相关子查询可同时用于从其他表中检索相关的数据，许多开发人员保持着头说到，并想知道要使用的方法。 所有 SQL 专家我已讨论了都说大致相同的操作，它不真正重要性能方面为 SQL Server 将生成的大致相同的执行计划。 然后，他们的建议，是使用您和您的团队有最熟悉的技术。 它值得注意的，为某物赋与这一建议后这些专家立即会 express 其首选项的`JOIN`随着相关子查询。
 
 在生成时使用类型化数据集的数据访问层，这些工具更好地工作，使用子查询时。 特别是，TableAdapter 的向导将不自动生成对应`INSERT`， `UPDATE`，并`DELETE`语句，如果主查询包含任何`JOIN`s，但将自动生成这些语句时相关子查询使用。
 
 若要了解这种缺陷，创建临时类型中的数据集`~/App_Code/DAL`文件夹。 在 TableAdapter 配置向导过程中选择要使用的临时 SQL 语句，然后输入以下`SELECT`查询 （参见图 1）：
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample3.sql)]
-
 
 [![输入包含联接的主查询](updating-the-tableadapter-to-use-joins-vb/_static/image2.png)](updating-the-tableadapter-to-use-joins-vb/_static/image1.png)
 
 **图 1**:输入包含的主查询`JOIN`s ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image3.png))
 
-
 默认情况下，将自动创建 TableAdapter `INSERT`， `UPDATE`，和`DELETE`语句基于主查询。 如果单击高级按钮可以看到，启用此功能。 尽管此设置，将无法再创建 TableAdapter `INSERT`， `UPDATE`，并`DELETE`语句因为主查询中包含`JOIN`。
-
 
 ![输入包含联接的主查询](updating-the-tableadapter-to-use-joins-vb/_static/image4.png)
 
 **图 2**:输入包含的主要查询`JOIN`s
 
-
 单击完成以完成向导。 此时在数据集设计器将包括到单个 TableAdapter 的 DataTable 与列中返回的字段的每个`SELECT`查询的列列表。 这包括`CategoryName`和`SupplierName`，如图 3 所示。
-
 
 ![DataTable 包含一个列对于每个字段中的列列表返回](updating-the-tableadapter-to-use-joins-vb/_static/image5.png)
 
 **图 3**:DataTable 包含一个列对于每个字段中的列列表返回
 
-
 TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`， `UpdateCommand`，和`DeleteCommand`属性。 若要确认这一点，单击设计器中对 tableadapter，然后转到属性窗口。 那里，你将看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`属性设置为 （无）。
-
 
 [![InsertCommand、 UpdateCommand 和 DeleteCommand 属性设置为 （无）](updating-the-tableadapter-to-use-joins-vb/_static/image7.png)](updating-the-tableadapter-to-use-joins-vb/_static/image6.png)
 
 **图 4**:`InsertCommand`， `UpdateCommand`，并`DeleteCommand`属性设置为 （无） ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image8.png))
-
 
 若要解决这种缺陷，我们可以手动提供的 SQL 语句和参数`InsertCommand`， `UpdateCommand`，和`DeleteCommand`通过属性窗口的属性。 或者，我们可以通过配置 TableAdapter s 主查询到启动*不*包括任何`JOIN`s。 这将允许`INSERT`， `UPDATE`，和`DELETE`要为我们自动生成语句。 完成向导后，我们无法再手动更新 TableAdapter s`SelectCommand`从属性窗口使其包含`JOIN`语法。
 
@@ -107,14 +94,11 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 
 首先打开`NorthwindWithSprocs`中的数据集`~/App_Code/DAL`文件夹。 右键单击设计器上，从上下文菜单中，选择添加选项并选取 TableAdapter 菜单项。 这将启动 TableAdapter 配置向导。 如图 5 所示，让向导创建新的存储的过程，并单击下一步。 有关创建新刷新器存储过程从 TableAdapter 的向导，请查阅[创建新存储过程的类型化数据集 s Tableadapter](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)教程。
 
-
 [![选择创建新存储的过程选项](updating-the-tableadapter-to-use-joins-vb/_static/image10.png)](updating-the-tableadapter-to-use-joins-vb/_static/image9.png)
 
 **图 5**:选择创建新存储过程选项 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-vb/_static/image11.png))
 
-
 使用以下`SELECT`TableAdapter s 主查询的语句：
-
 
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample4.sql)]
 
@@ -122,27 +106,21 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 
 以下步骤可用于命名的 TableAdapter 的存储过程。 使用名称`Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`，如图 6 中所示。
 
-
 [![名称的 TableAdapter 的存储过程](updating-the-tableadapter-to-use-joins-vb/_static/image13.png)](updating-the-tableadapter-to-use-joins-vb/_static/image12.png)
 
 **图 6**:命名 TableAdapter s 存储过程 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-vb/_static/image14.png))
 
-
 最后一步会提示我们命名为 TableAdapter 的方法。 使用`Fill`和`GetEmployees`为方法名称。 此外请务必保留创建方法以更新将直接发送到数据库 (GenerateDBDirectMethods) 复选框已选中。
-
 
 [![名称的 TableAdapter 的方法填充和 GetEmployees](updating-the-tableadapter-to-use-joins-vb/_static/image16.png)](updating-the-tableadapter-to-use-joins-vb/_static/image15.png)
 
 **图 7**:命名的 TableAdapter s 方法`Fill`并`GetEmployees`([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image17.png))
 
-
 完成向导后，请花费片刻时间来检查数据库中的存储的过程。 应会看到四个新的： `Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`。 接下来，检查`EmployeesDataTable`和`EmployeesTableAdapter`刚刚创建。 数据表中的主查询所返回的每个字段的列。 单击 TableAdapter，然后转到属性窗口。 那里，你将看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`属性正确配置为调用相应的存储的过程。
-
 
 [![TableAdapter 包括插入、 更新和删除功能](updating-the-tableadapter-to-use-joins-vb/_static/image19.png)](updating-the-tableadapter-to-use-joins-vb/_static/image18.png)
 
 **图 8**:TableAdapter 包括插入、 更新和删除功能 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-vb/_static/image20.png))
-
 
 使用插入、 更新和删除自动创建的存储的过程和`InsertCommand`， `UpdateCommand`，并`DeleteCommand`正确配置的属性，我们已准备好自定义`SelectCommand`s 存储过程返回其他每个员工 s manager 有关的信息。 具体而言，我们需要更新`Employees_Select`存储过程来使用`JOIN`，并返回 manager s`FirstName`和`LastName`值。 更新存储的过程后，我们将需要更新 DataTable，使其包括这些额外的列。 我们将解决这两项任务中的步骤 2 和 3。
 
@@ -150,16 +128,13 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 
 首先转到服务器资源管理器，向下钻取到 Northwind 数据库 s 存储过程文件夹，并打开`Employees_Select`存储过程。 如果看不到此存储的过程，在存储过程文件夹上右键单击并选择刷新。 更新存储的过程，以便它使用`LEFT JOIN`首先返回 manager s 和姓氏：
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample5.sql)]
 
 更新后`SELECT`语句，通过转到文件菜单并选择保存的更改保存`Employees_Select`。 或者，可以单击工具栏中的保存图标或按 Ctrl + S。 保存后所做的更改，请右键单击`Employees_Select`在服务器资源管理器存储过程，并选择执行。 这将运行存储的过程并在输出窗口中显示其结果 （请参阅图 9）。
 
-
 [![在输出窗口中显示存储过程结果](updating-the-tableadapter-to-use-joins-vb/_static/image22.png)](updating-the-tableadapter-to-use-joins-vb/_static/image21.png)
 
 **图 9**:在输出窗口中显示存储过程结果 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-vb/_static/image23.png))
-
 
 ## <a name="step-3-updating-the-datatable-s-columns"></a>步骤 3：更新数据表的列
 
@@ -172,26 +147,21 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 
 通过右键单击启动`EmployeesTableAdapter`并从上下文菜单中选择配置。 这将打开 TableAdapter 配置向导，其中列出了用于选择、 插入、 更新和删除，以及它们的返回值和参数 （如果有） 的存储的过程。 图 10 显示了此向导。 这里我们可以看到`Employees_Select`存储过程现在返回`ManagerFirstName`和`ManagerLastName`字段。
 
-
 [![该向导显示 Employees_Select 的更新的列列表存储过程](updating-the-tableadapter-to-use-joins-vb/_static/image25.png)](updating-the-tableadapter-to-use-joins-vb/_static/image24.png)
 
 **图 10**:向导将显示为更新列列表`Employees_Select`存储过程 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image26.png))
 
-
 单击完成完成向导。 在数据集设计器中，返回时`EmployeesDataTable`包含两个附加列：`ManagerFirstName`和`ManagerLastName`。
-
 
 [![EmployeesDataTable 包含两个新列](updating-the-tableadapter-to-use-joins-vb/_static/image28.png)](updating-the-tableadapter-to-use-joins-vb/_static/image27.png)
 
 **图 11**:`EmployeesDataTable`包含两个新列 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image29.png))
-
 
 为了说明这一点已更新`Employees_Select`实际上是存储的过程和插入、 更新和删除的 TableAdapter 的功能仍然正常工作，让我们来创建允许用户查看和删除员工的网页。 在创建此类页面之前，但是，我们需要首先创建一个新类，用于处理从员工的业务逻辑层`NorthwindWithSprocs`数据集。 在步骤 4 中，我们将创建`EmployeesBLLWithSprocs`类。 在步骤 5 中，我们将使用此类的 ASP.NET 页中。
 
 ## <a name="step-4-implementing-the-business-logic-layer"></a>步骤 4：实现业务逻辑层
 
 创建新的类文件中`~/App_Code/BLL`文件夹名为`EmployeesBLLWithSprocs.vb`。 此类模拟现有的语义`EmployeesBLL`类，仅这一新其中一个提供较少的方法，并使用`NorthwindWithSprocs`数据集 (而不是`Northwind`数据集)。 向 `EmployeesBLLWithSprocs` 类添加下面的代码。
-
 
 [!code-vb[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample6.vb)]
 
@@ -203,39 +173,31 @@ TableAdapter 而 DataTable 有相应的列，缺少的值及其`InsertCommand`�
 
 配置要使用 ObjectDataSource`EmployeesBLLWithSprocs`类，并从选择和删除选项卡，确保`GetEmployees`和`DeleteEmployee`方法从下拉列表中选择。 单击完成以完成 ObjectDataSource 的配置。
 
-
 [![配置对象数据源以使用 EmployeesBLLWithSprocs 类](updating-the-tableadapter-to-use-joins-vb/_static/image31.png)](updating-the-tableadapter-to-use-joins-vb/_static/image30.png)
 
 **图 12**:配置为使用 ObjectDataSource`EmployeesBLLWithSprocs`类 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image32.png))
-
 
 [![具有 ObjectDataSource 使用 GetEmployees 和 DeleteEmployee 方法](updating-the-tableadapter-to-use-joins-vb/_static/image34.png)](updating-the-tableadapter-to-use-joins-vb/_static/image33.png)
 
 **图 13**:拥有 ObjectDataSource`GetEmployees`并`DeleteEmployee`方法 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image35.png))
 
-
 Visual Studio 将为每个到 GridView 添加 BoundField`EmployeesDataTable`的列。 删除所有这些 BoundFields 除外`Title`， `LastName`， `FirstName`， `ManagerFirstName`，并`ManagerLastName`重命名和`HeaderText`姓氏、 名字、 Manager s 的第一个名称，最后四个 BoundFields 属性和管理器 s 姓氏，分别。
 
 若要允许用户从此页删除员工，我们需要做两件事。 首先，指示 GridView，通过检查其智能标记中的启用删除选项提供删除功能。 其次，更改 ObjectDataSource s`OldValuesParameterFormatString`属性的值设置的对象数据源向导 (`original_{0}`) 为其默认值 (`{0}`)。 进行这些更改后，您 GridView 和 ObjectDataSource s 的声明性标记应类似于以下：
-
 
 [!code-aspx[Main](updating-the-tableadapter-to-use-joins-vb/samples/sample7.aspx)]
 
 通过浏览器访问测试页。 如图 14 所示，此页将列出每个雇员和他或她 manager s 名称 （假定他们具有一个）。
 
-
 [![在 Employees_Select 联接存储过程返回的管理器的名称](updating-the-tableadapter-to-use-joins-vb/_static/image37.png)](updating-the-tableadapter-to-use-joins-vb/_static/image36.png)
 
 **图 14**:`JOIN`中`Employees_Select`存储过程返回的管理器名称 ([单击以查看实际尺寸的图像](updating-the-tableadapter-to-use-joins-vb/_static/image38.png))
 
-
 单击删除按钮启动删除工作流，最终会执行`Employees_Delete`存储过程。 但是，尝试`DELETE`存储过程中的语句将因外键约束冲突而失败 （请参阅图 15）。 具体而言，每个雇员中具有一个或多个记录`Orders`表，导致删除失败。
-
 
 [![删除外键约束冲突中具有相应的订单结果的员工](updating-the-tableadapter-to-use-joins-vb/_static/image40.png)](updating-the-tableadapter-to-use-joins-vb/_static/image39.png)
 
 **图 15**:删除外键约束冲突中具有相应的订单结果的员工 ([单击此项可查看原尺寸图像](updating-the-tableadapter-to-use-joins-vb/_static/image41.png))
-
 
 若要允许员工要删除你可以：
 

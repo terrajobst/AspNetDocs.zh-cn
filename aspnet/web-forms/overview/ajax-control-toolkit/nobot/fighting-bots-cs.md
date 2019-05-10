@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0a1917e0-884a-4576-8e93-9ed660faae51
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 178d839f67d70670b3b5acf470acb7ae8cf1c33f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e45fa613e985b797eef4348d26492af88a688fd8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405802"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115526"
 ---
 # <a name="fighting-bots-c"></a>外部测试机器人 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59405802"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/NoBot0.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/nobot0CS.pdf)
 
 > 自动化的智能机器人塑料效果网络日志和其他网站垃圾邮件，提交注释窗体而无需任何用户交互。 ASP.NET AJAX 控件工具包中的 NoBot 控件可帮助抵御这些机器人。
-
 
 ## <a name="overview"></a>概述
 
@@ -63,7 +62,6 @@ ms.locfileid: "59405802"
 [!code-aspx[Main](fighting-bots-cs/samples/sample4.aspx)]
 
 运行此脚本和停用 JavaScript 或在前两秒内提交窗体或在 30 秒内七次提交窗体时, 将收到一条错误消息。 但是恰当地使用此控件，因为只有大约 90 95%的用户可以使用 JavaScript 激活，因此 5-10%的用户将会失败`NoBot`的测试。
-
 
 [![此错误消息可能被引起的智能机器人应用程序](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
 

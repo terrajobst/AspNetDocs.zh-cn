@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e02e15a8955fa42692fac486dadfa426540295f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 20b99cbe57b5dfa623205838a5929733a6c2d70d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59387465"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112989"
 ---
 # <a name="part-5-edit-forms-and-templating"></a>第 5 部分：编辑窗体和模板化
 
@@ -24,7 +24,6 @@ ms.locfileid: "59387465"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。
 > 
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 5 部分介绍如何编辑窗体和模板化。
-
 
 在过去的章中，我们已从数据库加载数据并显示它。 在本章中，我们还将启用编辑数据。
 
@@ -260,7 +259,6 @@ Razor 的@helper语法变得很容易在视图中创建您自己使用的帮助�
 ![](mvc-music-store-part-5/_static/image18.png)
 
 注意:这将显示创建和使用一个帮助程序在一个视图中的简单情况。 若要了解有关创建可在整个站点的帮助程序的详细信息，请参阅我的博客文章： [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
-
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-4.md)

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 94e92f80-a7e3-4d18-9375-ff8be5d666ac
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 82134b8da7ab5ca49fef8e769128db9010fd231f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1d0ee0264ce6461d7b0159f1a44de4de31e2d079
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396325"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114678"
 ---
 # <a name="building-and-packaging-web-application-projects"></a>生成和打包 Web 应用程序项目
 
@@ -27,7 +27,6 @@ ms.locfileid: "59396325"
 > - 如何 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 将 web 应用程序到部署包。
 > - 如何生成和打包进程的工作原理和创建的文件的。
 
-
 在 Visual Studio 2010 中，WPP 支持 web 应用程序项目的生成和部署过程。 WPP 提供一的组 Microsoft Build Engine (MSBuild) 目标，可以扩展 MSBuild 的功能并使其能够将 Web 部署与集成。 Visual Studio 中，可以在属性页上看到此扩展的功能，为 web 应用程序项目。 **打包/发布 Web**页上，一起**打包/发布 SQL**页上，使你能够配置生成过程完成后，为部署打包你的 web 应用程序项目是如何。
 
 ![](building-and-packaging-web-application-projects/_static/image1.png)
@@ -36,17 +35,13 @@ ms.locfileid: "59396325"
 
 如果您看一下项目文件的 C#-基于的 web 应用程序项目，您可以看到它将两个.targets 文件导入。
 
-
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample1.xml)]
-
 
 第一个**导入**语句是普遍适用于所有 Visual C# 项目。 此文件中， *Microsoft.CSharp.targets*，包含目标和任务特定的 Visual C#。 例如，C# 编译器 (**Csc**) 此处调用任务。 *Microsoft.CSharp.targets*反过来文件导入*Microsoft.Common.targets*文件。 这将定义目标所共有的所有项目，如**构建**，**重新生成**，**运行**，**编译**，和**清理**. 第二个**导入**语句是特定于 web 应用程序项目。 *Microsoft.WebApplication.targets*反过来文件导入*Microsoft.Web.Publishing.targets*文件。 *Microsoft.Web.Publishing.targets*实质上是文件*是*WPP。 它定义了目标，如**包**并**MSDeployPublish**，调用 Web 部署来完成不同的部署任务。
 
 若要了解如何使用这些其他目标，在联系人管理器示例解决方案中，打开*Publish.proj*文件，并看一看**BuildProjects**目标。
 
-
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample2.xml)]
-
 
 此目标使用**MSBuild**任务可以生成各种项目。 请注意**DeployOnBuild**并**DeployTarget**属性：
 
@@ -58,7 +53,6 @@ ms.locfileid: "59396325"
 > [!NOTE]
 > 若要查看项目文件 (例如， <em>ContactManager.Mvc.csproj</em>) 在 Visual Studio 2010 中，首先需要卸载从你的解决方案项目。 在中<strong>解决方案资源管理器</strong>窗口中，右键单击项目节点，然后依次<strong>卸载项目</strong>。 再次右键单击项目节点，然后依次<strong>编辑</strong><em>[项目文件]</em>)。 项目文件将在其原始的 XML 格式打开。 请记住，完成后重新加载项目。  
 > 有关详细信息 MSBuild 目标，任务，并<strong>导入</strong>语句，请参阅[了解项目文件](understanding-the-project-file.md)。 项目文件和 WPP 的更深入介绍，请参阅[内部 Microsoft 生成引擎：使用 MSBuild 和 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 和 William Bartholomew，ISBN:978-0-7356-4524-0.
-
 
 ## <a name="what-is-a-web-deployment-package"></a>Web 部署包是什么？
 
@@ -87,7 +81,6 @@ Web 部署包，以及生成过程会生成可帮助你使用的包的两个文�
 
 > [!NOTE]
 > 在 Visual Studio 2010 中，WPP 不支持预编译之前打包的 web 应用程序中的页。 Visual Studio 和 WPP 的下一版本将包括预编译 web 应用程序作为一个打包选项的功能。
-
 
 ## <a name="conclusion"></a>结束语
 

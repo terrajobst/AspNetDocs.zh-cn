@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 28cb3af081f68c20dd9cd9e0b2578f5656d2d652
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1f5109324ff3ce919e88fe976587a179eeaa5a5d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389435"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116036"
 ---
 # <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>创建和使用 ASP.NET 网页 (Razor) 站点中的一个帮助程序
 
@@ -37,7 +37,6 @@ ms.locfileid: "59389435"
 >   
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
-
 
 ## <a name="overview-of-helpers"></a>帮助程序的概述
 
@@ -75,7 +74,6 @@ ms.locfileid: "59389435"
     ![在浏览器以及如何帮助程序生成标记放入指定的文本周围的框中显示的页面的屏幕截图。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.jpg)
 
 ## <a name="additional-resources"></a>其他资源
-
 
 [为 Razor 帮助器的水平菜单](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2341)。 由 Mike 教皇此博客文章显示了如何创建使用标记、 CSS 和代码的帮助程序作为一个水平菜单。
 

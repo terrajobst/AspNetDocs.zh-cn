@@ -8,12 +8,12 @@ ms.date: 01/18/2008
 ms.assetid: bc937e9d-5c14-4fc4-aec7-440da924dd18
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1aba8e068e80d2c2533c8aa68e75518f92b71a93
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 965e1ff59866ce2946f6965cb31a751f20c1bcfc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420648"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114639"
 ---
 # <a name="user-based-authorization-vb"></a>基于用户的身份验证 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59420648"
 [下载代码](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_07_VB.zip)或[下载 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial07_UserAuth_vb.pdf)
 
 > 在本教程中我们将查看限制对页的访问并限制在页面级别功能通过各种技术。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -44,11 +43,9 @@ ASP.NET 简化了定义基于用户的授权规则。 通过一些中标记`Web.
 
 图 1 所示的 ASP.NET 管道中，工作流`FormsAuthenticationModule`，和`UrlAuthorizationModule`未授权的请求到达时。 具体而言，图 1 显示了用于匿名访问者的请求`ProtectedPage.aspx`，这是一个页面，拒绝匿名用户访问。 访问者是匿名的因为`UrlAuthorizationModule`中止请求并返回 HTTP 401 未授权状态。 `FormsAuthenticationModule`然后转换为 401 状态 302 重定向到登录页。 用户进行身份验证通过登录页面后，他将重定向到`ProtectedPage.aspx`。 这一次`FormsAuthenticationModule`标识基于其身份验证票证的用户。 现在，访问者进行身份验证，`UrlAuthorizationModule`允许对页的访问。
 
-
 [![窗体身份验证和 URL 授权工作流](user-based-authorization-vb/_static/image2.png)](user-based-authorization-vb/_static/image1.png)
 
 **图 1**:窗体身份验证和 URL 授权工作流 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image3.png))
-
 
 图 1 所示的匿名访问者尝试访问不是提供给匿名用户的资源时出现的交互。 在这种情况下，匿名访问者重定向到登录页与她尝试访问在查询字符串中指定的页。 用户已成功登录后，系统会自动将她重定向回最初她正在尝试查看的资源。
 
@@ -58,17 +55,14 @@ ASP.NET 简化了定义基于用户的授权规则。 通过一些中标记`Web.
 
 图 2 描绘了此令人困惑的工作流。
 
-
 [![默认工作流可能会导致令人困惑的周期](user-based-authorization-vb/_static/image5.png)](user-based-authorization-vb/_static/image4.png)
 
 **图 2**:默认工作流可能会导致混淆周期 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image6.png))
-
 
 图 2 所示的工作流可以快速 befuddle 甚至大多数计算机技术精湛访问者。 我们将考察方法为防止这种混淆在步骤 2 中的周期。
 
 > [!NOTE]
 > ASP.NET 使用两种机制来确定当前用户是否可以访问特定的网页：URL 授权和文件授权。 由实现文件授权[ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx)，用于确定颁发机构咨询服务的请求的文件的 Acl。 使用 Windows 身份验证最常使用文件授权，因为使用 Acl 是适用于 Windows 帐户的权限。 时使用的窗体身份验证，所有操作系统和文件系统级别请求都执行通过相同的 Windows 帐户，而不考虑用户访问网站。 由于本系列教程着重于窗体身份验证，我们将不会讨论文件授权。
-
 
 ### <a name="the-scope-of-url-authorization"></a>URL 授权作用域
 
@@ -80,7 +74,6 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 > [!NOTE]
 > 有一些细微但却很重要的差异，如何在 ASP。NET 的`UrlAuthorizationModule`和 IIS 7 的 URL 授权功能处理授权规则。 本教程不检查 IIS 7 的 URL 授权功能或如何分析相比的授权规则的差异`UrlAuthorizationModule`。 有关这些主题的详细信息，请参阅 MSDN 上或在 IIS 7 文档[www.iis.net](https://www.iis.net/)。
-
 
 ## <a name="step-1-defining-url-authorization-rules-inwebconfig"></a>步骤 1：定义中的 URL 授权规则`Web.config`
 
@@ -100,7 +93,6 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 > [!NOTE]
 > `<allow>`和`<deny>`元素还可以指定角色的授权规则。 我们将检查在将来的教程中基于角色的授权。
 
-
 以下设置对 Sam （包括匿名访问者） 以外的任何人授予访问权限：
 
 [!code-xml[Main](user-based-authorization-vb/samples/sample2.xml)]
@@ -115,19 +107,15 @@ ASP.NET 简化了在站点中定义不同的文件和文件夹的不同的授权
 
 让我们更新我们的网站，以便只有经过身份验证的用户可以访问中的 ASP.NET 页`Membership`文件夹。 若要完成此我们需要添加`Web.config`文件为`Membership`文件夹并设置其授权的设置以拒绝匿名用户。 右键单击`Membership`文件夹在解决方案资源管理器，从上下文菜单中，选择添加新项菜单上，并添加名为新的 Web 配置文件`Web.config`。
 
-
 [![将 Web.config 文件添加到成员资格文件夹](user-based-authorization-vb/_static/image8.png)](user-based-authorization-vb/_static/image7.png)
 
 **图 3**:添加`Web.config`的文件`Membership`文件夹 ([单击以查看实际尺寸的图像](user-based-authorization-vb/_static/image9.png))
 
-
 此时你的项目应包含两个`Web.config`文件： 一个在根目录下，一个在`Membership`文件夹。
-
 
 [![你的应用程序现在应包含两个 Web.config 文件](user-based-authorization-vb/_static/image11.png)](user-based-authorization-vb/_static/image10.png)
 
 **图 4**:在应用程序应现在包含两个`Web.config`文件 ([单击以查看实际尺寸的图像](user-based-authorization-vb/_static/image12.png))
-
 
 更新配置文件中的`Membership`文件夹，以便它不允许匿名用户访问权限。
 
@@ -139,11 +127,9 @@ ASP.NET 简化了在站点中定义不同的文件和文件夹的不同的授权
 
 单击创建用户帐户链接的左侧列中找到。 这会转到`~/Membership/CreatingUserAccounts.aspx`。 由于`Web.config`文件中`Membership`文件夹定义的授权规则，以禁止匿名访问，`UrlAuthorizationModule`中止请求并返回 HTTP 401 未授权状态。 `FormsAuthenticationModule`此到 302 重定向状态中，向我们发送到登录页进行了修改。 请注意，页面我们已尝试访问 (`CreatingUserAccounts.aspx`) 传递到登录页通过`ReturnUrl`查询字符串参数。
 
-
 [![自 URL 授权规则禁止匿名访问，我们将重定向到登录页](user-based-authorization-vb/_static/image14.png)](user-based-authorization-vb/_static/image13.png)
 
 **图 5**:自 URL 授权规则禁止匿名访问，我们将重定向到登录页 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image15.png))
-
 
 在成功登录后, 我们将重定向到`CreatingUserAccounts.aspx`页。 这一次`UrlAuthorizationModule`允许对页的访问，因为我们无法再匿名。
 
@@ -161,7 +147,6 @@ ASP.NET 简化了在站点中定义不同的文件和文件夹的不同的授权
 
 > [!NOTE]
 > `<location>`元素必须出现在配置的之外`<system.web>`元素。 您需要使用一个单独`<location>`你想要重写其授权设置的每个资源的元素。
-
 
 ### <a name="a-look-at-how-theurlauthorizationmoduleuses-the-authorization-rules-to-grant-or-deny-access"></a>如何查看`UrlAuthorizationModule`使用授权规则来允许或拒绝访问
 
@@ -195,11 +180,9 @@ ASP.NET 简化了在站点中定义不同的文件和文件夹的不同的授权
 
 此时，我们已匿名，因此`Request.IsAuthenticated`将返回`False`我们将不会重定向到`UnauthorizedAccess.aspx`。 相反，将显示登录页。 Tito，如 Bruce 以外的用户登录。 输入相应凭据之后, 的登录页将重定向我们回到`~/Membership/CreatingUserAccounts.aspx`。 但是，此页才可以访问 Tito，因为我们无权查看它，并立即返回到登录页。 但是，这次`Request.IsAuthenticated`返回`True`(和`ReturnUrl`存在查询字符串参数)，因此我们将重定向到`UnauthorizedAccess.aspx`页。
 
-
 [![经过身份验证，未经授权的用户将会重定向到 UnauthorizedAccess.aspx](user-based-authorization-vb/_static/image17.png)](user-based-authorization-vb/_static/image16.png)
 
 **图 6**:经过身份验证，未经授权的用户将会重定向到`UnauthorizedAccess.aspx`([单击以查看实际尺寸的图像](user-based-authorization-vb/_static/image18.png))
-
 
 此自定义工作流短路循环如下图 2 展示更合理、 简单的用户体验。
 
@@ -216,7 +199,6 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 > [!NOTE]
 > 我们将要构建的 ASP.NET 页使用 GridView 控件来显示文件的列表。 本教程系列重点介绍窗体身份验证、 授权、 用户帐户和角色，因为我不想花费太多时间来讨论 GridView 控件的内部工作机制。 虽然本教程提供了特定设置此页的分步说明，它不会不研究一下为什么未进行某些选择，或影响特定属性对呈现的输出的详细信息。 GridView 控件的全面介绍，请查阅我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
 
-
 首先打开`UserBasedAuthorization.aspx`文件中`Membership`文件夹，然后将 GridView 控件添加到名为页`FilesGrid`。 从 GridView 的智能标记上，单击编辑列链接以启动字段对话框。 在这里，取消选中自动生成字段中的复选框左下角。 接下来，添加选择按钮、 删除按钮和两个 BoundFields 从左上角 （选择和删除按钮可以 CommandField 类型下找到）。 设置选择按钮`SelectText`属性设置为视图和第一个 BoundField`HeaderText`和`DataField`名称的属性。 设置第二个 BoundField`HeaderText`属性设置为大小 （字节），其`DataField`属性设置为长度，其`DataFormatString`属性设置为{0:N0}并将其`HtmlEncode`属性设置为 False。
 
 配置后 GridView 的列，单击确定关闭字段对话框。 从属性窗口中，设置 GridView`DataKeyNames`属性设置为`FullName`。 此时 GridView 的声明性标记应如下所示：
@@ -232,14 +214,11 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 > [!NOTE]
 > `DirectoryInfo`并`FileInfo`中找到类[`System.IO`命名空间](https://msdn.microsoft.com/library/system.io.aspx)。 因此，您需要为其命名空间名称与这些类名称的前面加上或具有到类文件导入的命名空间 (通过`Imports System.IO`)。
 
-
 请花费片刻时间来访问此页，通过浏览器。 它会显示驻留在应用程序的根目录中的文件的列表。 单击任何视图或删除 Linkbutton 将引起回发，但不发生任何操作，因为我们尚未为创建必要的事件处理程序。
-
 
 [![GridView 列出了 Web 应用程序的根目录中的文件](user-based-authorization-vb/_static/image20.png)](user-based-authorization-vb/_static/image19.png)
 
 **图 7**:GridView 列出了 Web 应用程序的根目录中的文件 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image21.png))
-
 
 我们需要一种方法来显示所选文件的内容。 返回到 Visual Studio 并添加名为文本框`FileContents`上面 GridView。 设置其`TextMode`属性设置为`MultiLine`并将其`Columns`和`Rows`为 95%和 10，属性分别。
 
@@ -251,15 +230,12 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 
 此代码使用 GridView 的`SelectedValue`属性来确定所选文件的完整文件名。 在内部，`DataKeys`以获取引用集合`SelectedValue`，因此必须设置 GridView 的`DataKeyNames`为名称，如之前在此步骤中所述的属性。 [ `File`类](https://msdn.microsoft.com/library/system.io.file.aspx)用于所选的文件的内容读入一个字符串，然后分配给`FileContents`文本框的`Text`属性，从而显示页面上所选文件的内容。
 
-
 [![在文本框中显示所选文件的内容](user-based-authorization-vb/_static/image23.png)](user-based-authorization-vb/_static/image22.png)
 
 **图 8**:在文本框中显示所选文件的内容 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image24.png))
 
-
 > [!NOTE]
 > 如果您查看包含 HTML 标记的文件的内容，然后尝试查看或删除的文件，则会收到`HttpRequestValidationException`错误。 这是因为在回发时将文本框的内容发送回 web 服务器。 默认情况下，ASP.NET 将引发`HttpRequestValidationException`错误，每当检测到潜在的危险回发的内容，例如 HTML 标记。 若要禁用的发生此错误，关闭请求验证页通过添加`ValidateRequest="false"`到`@Page`指令。 有关优点的详细信息，以及哪些预防措施应执行时的请求验证的禁用它，阅读[请求验证-阻止脚本攻击](https://asp.net/learn/whitepapers/request-validation/)。
-
 
 最后，将事件处理程序使用以下代码添加为 GridView [ `RowDeleting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx):
 
@@ -267,11 +243,9 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 
 该代码只是显示要删除中的文件的全名`FileContents`文本框*而无需*实际删除该文件。
 
-
 [![单击删除按钮不会实际删除该文件](user-based-authorization-vb/_static/image26.png)](user-based-authorization-vb/_static/image25.png)
 
 **图 9**:单击删除按钮不会实际删除的文件 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image27.png))
-
 
 我们在步骤 1 中配置 URL 授权规则，以禁止匿名用户查看中的页`Membership`文件夹。 为了更好地表现出细粒度身份验证，让我们允许匿名用户访问`UserBasedAuthorization.aspx`页上，但使用有限的功能。 若要打开此页以的所有用户访问，添加以下`<location>`元素`Web.config`文件中`Membership`文件夹：
 
@@ -297,11 +271,9 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 
 之后将文本框移动到 LoginView`LoggedInTemplate`和页面的代码更新为引用文本框使用`FindControl("controlId")`模式，请访问作为匿名用户页。 如图 10 所示，`FileContents`不显示文本框。 但是，仍显示视图 LinkButton。
 
-
 [![LoginView 控件只呈现 FileContents 文本框中的身份验证的用户](user-based-authorization-vb/_static/image29.png)](user-based-authorization-vb/_static/image28.png)
 
 **图 10**:LoginView 控件只呈现`FileContents`文本框中的身份验证的用户 ([单击以查看实际尺寸的图像](user-based-authorization-vb/_static/image30.png))
-
 
 若要隐藏的匿名用户视图按钮的一种方法是 GridView 字段转换为 TemplateField。 这将生成的视图 LinkButton 包含声明性标记的模板。 我们然后可以将 LoginView 控件添加到 TemplateField 并将放置内 LoginView 的 LinkButton `LoggedInTemplate`，从而隐藏从匿名访问者视图按钮。 若要完成此操作，单击 GridView 的智能标记以启动字段对话框中的编辑列链接。 接下来，从列表中较低的左上角选择选择按钮，然后单击转换为 TemplateField 链接此字段。 执行此操作将修改该字段的声明性标记中：
 
@@ -317,11 +289,9 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 
 如图 11 所示，最终结果是不，非常作为视图列仍显示即使视图 Linkbutton 列中处于隐藏状态。 我们将在下一部分探讨如何隐藏整个 GridView 列 （和不只是 LinkButton）。
 
-
 [![LoginView 控件隐藏视图 Linkbutton 的匿名访问者](user-based-authorization-vb/_static/image32.png)](user-based-authorization-vb/_static/image31.png)
 
 **图 11**:LoginView 控件对于匿名访问者隐藏视图 Linkbutton ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image33.png))
-
 
 ### <a name="programmatically-limiting-functionality"></a>以编程方式限制功能
 
@@ -340,16 +310,13 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 
 如中所述[*概述的窗体身份验证*](../introduction/an-overview-of-forms-authentication-vb.md)教程中，`User.Identity.Name`返回标识的名称。 这对应于登录名控件中输入的用户名。 如果它是访问的页面，GridView 的第二列的 Tito`Visible`属性设置为`True`; 否则为设置为`False`。 最终结果是，当 Tito 以外的其他人访问页上，另一个身份验证的用户或匿名用户，删除列不呈现 （见图 12）;但是，当 Tito 访问该页面，删除列是存在 （请参阅图 13）。
 
-
 [![删除列是不呈现时访问过的人以外的其他 Tito （如 Bruce)](user-based-authorization-vb/_static/image35.png)](user-based-authorization-vb/_static/image34.png)
 
 **图 12**:删除列是不呈现时访问过的人以外的其他 Tito （如 Bruce) ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image36.png))
 
-
 [![删除列呈现为 Tito](user-based-authorization-vb/_static/image38.png)](user-based-authorization-vb/_static/image37.png)
 
 **图 13**:为 Tito 呈现删除列 ([单击此项可查看原尺寸图像](user-based-authorization-vb/_static/image39.png))
-
 
 ## <a name="step-4-applying-authorization-rules-to-classes-and-methods"></a>步骤 4：将授权规则应用于类和方法
 
@@ -366,18 +333,14 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 > [!NOTE]
 > 特性可以应用于类、 方法、 属性或事件。 在添加属性时，它必须是类、 方法、 属性或事件声明语句的一部分。 由于 Visual Basic 使用换行符作为语句分隔符，属性必须与声明或其使用行继续符 （下划线） 上的同一行上显示。 在上面的代码段中，行继续符用于将属性放在一个行并在另一台在方法声明。
 
-
 如果由于某种原因，Tito 以外的用户尝试执行`RowDeleting`事件处理程序或未经身份验证的用户尝试执行`SelectedIndexChanged`事件处理程序，.NET 运行时将引发`SecurityException`。
-
 
 [![如果未经授权的安全上下文来执行此方法，则将引发 SecurityException](user-based-authorization-vb/_static/image41.png)](user-based-authorization-vb/_static/image40.png)
 
 **图 14**:如果未经授权的安全上下文来执行此方法，`SecurityException`引发 ([单击以查看实际尺寸的图像](user-based-authorization-vb/_static/image42.png))
 
-
 > [!NOTE]
 > 若要允许多个安全上下文来访问类或方法，修饰的类或方法使用`PrincipalPermission`为每个安全上下文的属性。 也就是说，以允许 Tito 和 Bruce 执行`RowDeleting`事件处理程序中，添加*两个*`PrincipalPermission`属性：
-
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample23.vb)]
 

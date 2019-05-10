@@ -8,12 +8,12 @@ ms.date: 08/19/2008
 ms.assetid: eb35710d-1d99-44ac-b61f-e50af8cb328a
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 47d42b8017837f15e0d56dfb3565257164c97bbe
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c97d202c702253f2ff79a70c1d6e43b11999ea14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421025"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117264"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>为 ASP.NET MVC 应用程序创建单元测试 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421025"
 [下载 PDF](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_07_VB.pdf)
 
 > 了解如何创建单元测试控制器操作。 在本教程中，Stephen Walther 演示了如何测试是否控制器操作返回的特定视图，返回一组特定的数据，或返回不同类型的操作结果。
-
 
 本教程的目的是演示如何编写单元测试的控制器在 ASP.NET MVC 应用程序。 我们讨论如何构建三种不同类型的单元测试。 介绍如何测试控制器操作返回的视图、 如何测试控制器操作，返回的视图数据以及如何测试一个控制器操作可以重定向到第二个控制器操作。
 
@@ -58,16 +57,13 @@ ms.locfileid: "59421025"
 
 可以在代码清单 2 中运行单元测试，通过输入键盘组合**Ctrl-R、 A**或单击**运行解决方案中的所有测试**按钮 （请参见图 1）。 如果测试通过，您将看到图 2 中的测试结果窗口。
 
-
 [![在解决方案中运行所有测试](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image1.png)
 
 **图 01**:在解决方案中运行所有测试 ([单击此项可查看原尺寸图像](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image3.png))
 
-
 [![成功 ！](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image4.png)
 
 **图 02**:成功！ ([单击此项可查看原尺寸图像](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image6.png))
-
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>测试视图数据返回的控制器
 

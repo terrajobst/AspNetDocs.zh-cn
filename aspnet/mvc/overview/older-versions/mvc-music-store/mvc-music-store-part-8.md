@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 26b2f55e-ed42-4277-89b0-c941eb754145
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 89897ad41b217764cbd17317d4bf5d6a5c5d488f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379477"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112911"
 ---
 # <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：购物车与 Ajax 更新
 
@@ -24,7 +24,6 @@ ms.locfileid: "59379477"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 8 部分介绍了购物车与 Ajax 更新。
-
 
 我们将允许用户在其购物车中将唱片集，而无需注册，但它们将需要注册作为完整签出的来宾。 购物和签出进程将分为两个控制器： 允许以匿名方式将项添加到购物车，购物车控制器和签出控制器用于处理在结帐过程。 我们将开始在此部分中，购物车，然后生成下一节中的签出过程。
 
@@ -156,7 +155,6 @@ ms.locfileid: "59379477"
 ![](mvc-music-store-part-8/_static/image8.png)
 
 我们已构建了一个有效的购物车，它允许未注册的用户将项添加到购物车。 在以下部分中，我们将允许他们注册并完成结帐过程。
-
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-7.md)

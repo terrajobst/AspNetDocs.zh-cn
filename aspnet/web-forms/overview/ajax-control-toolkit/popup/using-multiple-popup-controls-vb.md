@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 4da43d77-f6c4-43a8-9124-f1e8e1c8f0a2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ee66e166d24bb80008671c84f6512d5c54707fcf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6f8097ed64f81d8ad9de27e19195d9a4572a0ae7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389806"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115101"
 ---
 # <a name="using-multiple-popup-controls-vb"></a>使用多个弹出控件 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59389806"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)
 
 > AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。 还有可能要使用在同一页上的多个弹出控件。
-
 
 ## <a name="overview"></a>概述
 
@@ -47,7 +46,6 @@ AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激�
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample4.aspx)]
 
 现在只要您在文本字段内单击，日历显示字段的下方，您可以选择一个日期。 （所选的日期取回到文本框中将介绍在不同的教程。）
-
 
 [![当用户单击文本框中，将显示日历](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
 

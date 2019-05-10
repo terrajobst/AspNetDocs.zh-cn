@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 5a4b6c80-b2e9-4710-8969-d5076f7f82b8
 msc.legacyurl: /web-api/overview/advanced/httpclient-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: bd52396064cd7007ee17705ba86b02aaf27cb4f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 265bd9b2f48ed7d1e955f3c4947d10fd589b3e17
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59401720"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115443"
 ---
 # <a name="httpclient-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HttpClient 消息处理程序
 
@@ -32,7 +32,6 @@ ms.locfileid: "59401720"
 
 > [!NOTE]
 > ASP.NET Web API 在服务器端还使用消息处理程序。 有关详细信息，请参阅[HTTP 消息处理程序](http-message-handlers.md)。
-
 
 ## <a name="custom-message-handlers"></a>自定义消息处理程序
 

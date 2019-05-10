@@ -6,12 +6,12 @@ description: 用于开发 ASP.NET 应用程序的分步指南的列表。
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
-ms.openlocfilehash: 240260a496ee797556ca5dbd2c8faec79d23ac64
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: 106b4b88d2e7de90900b7a73570ecd6140e2db66
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905665"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113194"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 教程
 
@@ -81,7 +81,6 @@ ms.locfileid: "59905665"
 * [Web API 中发送 HTML 窗体数据：窗体 url 编码的数据](web-api/overview/advanced/sending-html-form-data-part-1.md)
 * [Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](web-api/overview/advanced/sending-html-form-data-part-2.md)
 
-
 ## <a name="web-pages"></a>网页
 
 * [在 Visual Studio 中对 ASP.NET 网页进程编程](web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio.md)
@@ -111,7 +110,6 @@ ms.locfileid: "59905665"
 * [分析流量](web-pages/overview/performance-and-traffic/14-analyzing-traffic.md)
 * [在 ASP.NET 网站 (Razor) 中绑定和缩小资产](web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
 
-
 ## <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 * [教程：SignalR 2 入门](signalr/overview/getting-started/tutorial-getting-started-with-signalr.md)
@@ -129,7 +127,6 @@ ms.locfileid: "59905665"
 * [教程：自承载 SignalR](signalr/overview/deployment/tutorial-signalr-self-host.md)
 * [在 Azure 应用服务中通过 Web 应用使用 SignalR](signalr/overview/deployment/using-signalr-with-azure-web-sites.md)
 
-
 ## <a name="aspnet-identity"></a>ASP.NET 标识
 
 * [向空的或现有的 Web 窗体项目添加 ASP.NET 标识](identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
@@ -141,7 +138,6 @@ ms.locfileid: "59905665"
 * [在 ASP.NET 标识中更改用户的主键](identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity.md)
 * [将现有网站从 SQL 成员身份迁移到 ASP.NET 标识](identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 * [将成员身份和用户配置文件的通用提供程序数据迁移到 ASP.NET 标识 (C#)](identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
-
 
 ## <a name="owin-and-katana"></a>OWIN 和 Katana
 

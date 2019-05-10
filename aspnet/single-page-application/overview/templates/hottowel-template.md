@@ -8,12 +8,12 @@ ms.date: 02/09/2013
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: 017f550e2caffe1b20823e9b1880cbb4e968005a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f3457840d1597d06c1a1b1ec2a865dd70726446c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379932"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113332"
 ---
 # <a name="hot-towel-template"></a>Hot Towel 模板
 
@@ -30,13 +30,11 @@ ms.locfileid: "59379932"
 > 
 > 热总是随身携带毛巾：因为您不希望转到没有 SPA ！
 
-
 想要生成 SPA，但不能确定从何处着手？ 使用热总是随身携带毛巾，以秒为单位，您将得到一个 SPA 和其上构建所需的所有工具 ！
 
 热总是随身携带毛巾创建用于构建单页应用程序 (SPA) 使用 ASP.NET 的良好起点。 现成的它提供模块化结构为代码、 查看导航、 数据绑定、 丰富的数据管理和简单但简洁的样式设置。 热总是随身携带毛巾提供构建 SPA，因此你可以专注于应用，不的基本功能所需的所有内容。
 
 > 深入了解如何构建从 SPA [John Papa 视频、 教程和 Pluralsight 课程](http://johnpapa.net/spa?vsix)。
-
 
 ## <a name="application-structure"></a>应用程序结构
 

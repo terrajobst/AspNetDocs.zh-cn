@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 63d85ec5f1f2fbadd92fd0210e67332df30aab5a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 48428ff4ab5888253ed93ac41e79006eec823ad2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419595"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112933"
 ---
 # <a name="part-1-overview-and-file-new-project"></a>第 1 部分：概述和文件->新建项目
 
@@ -24,7 +24,6 @@ ms.locfileid: "59419595"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 1 部分介绍了概述和文件-&gt;新项目。
-
 
 ## <a name="overview"></a>概述
 
@@ -74,11 +73,9 @@ MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Web Dev
 
 可以使用 Visual Studio 2010 SP1 或 Visual Web Developer 2010 速成版 SP1 （Visual Studio 2010 的免费版本） 生成应用程序。 我们将使用 SQL Server Compact （同样免费） 来承载数据库。 在开始之前，请确保已安装以下列出的先决条件。
 
-
 - [Visual Studio Web Developer Express SP1 系统必备组件]
 - [ASP.NET MVC 3 工具更新]
 - [SQL Server Compact 4.0]-包括运行时和工具支持
-
 
 ### <a name="creating-a-new-aspnet-mvc-3-project"></a>创建新的 ASP.NET MVC 3 项目
 

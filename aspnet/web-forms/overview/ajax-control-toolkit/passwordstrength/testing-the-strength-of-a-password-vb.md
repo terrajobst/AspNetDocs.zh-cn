@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 9215a37f-3133-4887-8ed2-3689f3a53551
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fb185c4147d516ab28d632b3e874b6f1d46f6576
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e64b79b1ce477fca439dd0db519371ed11446c52
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408415"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115254"
 ---
 # <a name="testing-the-strength-of-a-password-vb"></a>测试密码强度 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408415"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0VB.pdf)
 
 > 密码是必需几乎任意位置，以便延迟用户倾向于选择简单密码，这容易被破解。 ASP.NET AJAX 控件工具包中的 PasswordStrength 控件可以检查得再好密码。
-
 
 ## <a name="overview"></a>概述
 
@@ -42,7 +41,6 @@ ms.locfileid: "59408415"
 [!code-aspx[Main](testing-the-strength-of-a-password-vb/samples/sample1.aspx)]
 
 运行页面，然后立即键入：仅输入小写字母、 大写字母、 数字和符号后，密码会被确认为不可换行。
-
 
 [![现在，密码是 （很） 高](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
 

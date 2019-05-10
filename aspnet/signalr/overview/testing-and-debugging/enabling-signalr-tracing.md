@@ -8,12 +8,12 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 1dadbdb6fa1dc58b855402f1d6f18e8af861f756
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 34fe2cdb10c4b41a6e8cac7fb1741d53c02dfc80
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399354"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114406"
 ---
 # <a name="enabling-signalr-tracing"></a>启用 SignalR 跟踪
 
@@ -37,7 +37,6 @@ ms.locfileid: "59399354"
 > ## <a name="questions-and-comments"></a>问题和提出的意见
 >
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
-
 
 启用跟踪，SignalR 应用程序创建事件日志的条目。 可以从客户端和服务器来记录事件。 跟踪对服务器日志连接、 横向扩展提供程序和消息总线的事件。 跟踪对客户端日志连接事件。 SignalR 2.1 及更高版本，在客户端上的跟踪记录集线器调用消息的完整的内容。
 

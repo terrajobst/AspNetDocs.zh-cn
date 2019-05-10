@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 4341f5b1-6fe5-44c5-8b8a-18fa84f80177
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0a4e8dc3ce5764c6b2ec59c7e3f507064f8a8cb5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a2c2140631d59a7f8b21aa73613a92ea5c7a91d0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422156"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122090"
 ---
 # <a name="authenticating-users-with-forms-authentication-vb"></a>使用 Forms 身份验证对用户进行身份验证 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何使用 [Authorize] 特性用密码保护在 MVC 应用程序中的特定页。 了解如何使用网站管理工具来创建和管理用户和角色。 你还了解如何配置用户帐户和角色信息的存储位置。
-
 
 本教程的目的是说明如何使用窗体对密码进行身份验证保护 ASP.NET MVC 应用程序中的视图。 了解如何使用网站管理工具来创建用户和角色。 你还了解如何阻止未经授权的用户调用控制器操作。 最后，您将了解如何配置存储的用户名和密码。
 
@@ -117,7 +116,6 @@ ASP.NET SQL Server 安装向导，可选择你的网络上的 SQL Server 数据�
 > 
 > 
 > C:\Windows\Microsoft.NET\Framework\v2.0.50727
-
 
 创建必要的数据库对象后，您需要修改在 MVC 应用程序使用的数据库连接。 修改 web 配置 (web.config) 文件中的 ApplicationServices 连接字符串，使其指向生产数据库。 例如，清单 3 中的已修改的连接指向名为的 MyProductionDB （原始 ApplicationServices 连接字符串已被注释掉） 的数据库。
 

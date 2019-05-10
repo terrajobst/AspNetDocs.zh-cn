@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: 855c3fa35d82173c87d13adb51e10fd13698ade5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3c2a41482b7f9b60a8864b853df23ab5991b6da7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381349"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108752"
 ---
 # <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>启用 ASP.NET Web API 1 中的 CRUD 操作
 
@@ -29,7 +29,6 @@ ms.locfileid: "59381349"
 > 
 > - Visual Studio 2012
 > - Web API 1 （也适用于 Web API 2）
-
 
 代表 CRUD&quot;创建、 读取、 更新和删除，&quot;这是四个基本数据库操作。 许多 HTTP 服务还能模拟通过 REST 或类似于 REST 的 Api 的 CRUD 操作。
 
@@ -136,7 +135,6 @@ API 的产品定义为两种资源类型的 Uri:
 > [!NOTE]
 > 不需要将你的控制器放入名为控制器的文件夹。 文件夹名称并不重要;它是只是组织的源文件的简便方法。
 
-
 **添加控制器**向导将创建名为 ProductsController.cs 控制器文件夹中的文件。 如果没有打开此文件，则双击文件将其打开。 添加以下**使用**语句：
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample4.cs)]
@@ -147,7 +145,6 @@ API 的产品定义为两种资源类型的 Uri:
 
 > [!NOTE]
 > 调用`new ProductRepository()`控制器中不是最佳设计，因为它绑定到的特定实现控制器`IProductRepository`。 更好的方法，请参阅[使用 Web API 依赖关系解析程序](../advanced/dependency-injection.md)。
-
 
 ## <a name="getting-a-resource"></a>获取资源
 
@@ -205,7 +202,6 @@ ASP.NET Web API，使易于操作的 HTTP 响应消息。 以下是改进了的�
 
 > [!NOTE]
 > 此示例不会验证`Product`。 有关模型验证的信息，请参阅[ASP.NET Web API 中的模型验证](../formats-and-model-binding/model-validation-in-aspnet-web-api.md)。
-
 
 ## <a name="updating-a-resource"></a>更新资源
 

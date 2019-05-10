@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2be57655b8c9b76b94e1d9a7ae5fbee27545a0a9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406764"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113091"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 语法 (Visual Basic 中) 的 ASP.NET Web 编程简介
 
@@ -36,12 +36,10 @@ ms.locfileid: "59406764"
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
 
-
 使用 ASP.NET Web Pages with Razor syntax 的大多数示例使用 C#。 但 Razor 语法还支持 Visual Basic。 进行编程 ASP.NET 网页在 Visual Basic 中，创建与网页 *.vbhtml*文件扩展名，以及如何将 Visual Basic 代码。 本文提供使用 Visual Basic 语言和用于创建 ASP.NET 网页语法的概述。
 
 > [!NOTE]
 > Microsoft WebMatrix 的默认网站模板 (**面包店**，**照片库**，并**入门网站**等) 在 C# 和 Visual Basic 版本中可用。 可以安装 Visual Basic 的模板作为 NuGet 包。 名为的文件夹中的站点的根文件夹中安装网站模板*Microsoft 模板*。
-
 
 ## <a name="the-top-8-programming-tips"></a>最重要的 8 编程提示
 
@@ -66,7 +64,6 @@ ms.locfileid: "59406764"
 > 如果你的目标是输出以标记形式呈现标记的 HTML 标记 (例如`<p></p>`段落或`<em></em>`来强调文本)，请参阅部分[组合文本、 标记和代码块中的代码](#BM_CombiningTextMarkupAndCode)这篇文章中更高版本。
 > 
 > 你可以阅读更多有关中的 HTML 编码[使用 ASP.NET Web Pages 站点中的 HTML 窗体](https://go.microsoft.com/fwlink/?LinkId=202892)。
-
 
 ### <a name="2-you-enclose-code-blocks-with-codeend-code"></a>2.将代码的代码块...结束代码
 
@@ -151,7 +148,6 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
 > 用于网页 (HTTP) 的协议支持的方法非常有限的数量 (&quot;谓词&quot;)，用于向服务器发出请求。 两个最常见的是 GET、 用于读取某页和用于将网页提交的文章。 一般情况下，用户请求页面时，第一次请求页面时使用 GET。 如果用户在填写窗体，并单击**提交**，浏览器向服务器发出的 POST 请求。
 > 
 > 在 web 编程中，它通常是有助于了解是否请求页面时正在作为 GET 或 POST，以便您知道如何处理页面。 ASP.NET Web Pages 中，可以使用`IsPost`属性以确定请求是否为 GET 或 POST。 如果请求为 POST，`IsPost`属性将返回 true，然后你可以执行诸如读取窗体上的文本框的值。 你将看到许多示例演示如何处理以不同的方式具体取决于值页面`IsPost`。
-
 
 ## <a name="a-simple-code-example"></a>简单的代码示例
 
@@ -272,7 +268,6 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
 
 下表列出了一些常见的转换和测试方法的变量。
 
-
 :::row:::
     :::column:::
         <strong>Method</strong>
@@ -369,11 +364,9 @@ Visual Basic 语言不区分大小写。 编程关键字 (如`Dim`， `If`，并
     :::column-end:::
 :::row-end:::
 
-
 ## <a name="operators"></a>运算符
 
 运算符是命令的关键字或告诉 ASP.NET 什么样来执行在表达式中的字符。 Visual Basic 支持许多运算符，但只需识别了一些以开始开发 ASP.NET 网页。 下表总结了最常见的运算符。
-
 
 :::row:::
     :::column:::
@@ -732,7 +725,6 @@ ASP.NET 服务器代码可以执行任务根据条件和编写代码重复特定
 
 > [!NOTE]
 > 我们建议您不要使用`Response.Redirect`中的方法`Try/Catch`语句，因为它可以在页面中导致异常。
-
 
 下面的示例显示了创建第一个请求上的文本文件，然后显示一个按钮，使用户可以打开文件的页面。 该示例故意使用错误的文件名称，以便它将导致异常。 该代码包括`Catch`两个可能的异常的语句： `FileNotFoundException`，就会出现此错误，文件名称是否和`DirectoryNotFoundException`，如果 ASP.NET 甚至找不到该文件夹将出现此情况。 （您可以取消注释该示例中的语句才能看到它时一切运行正常的运行。）
 

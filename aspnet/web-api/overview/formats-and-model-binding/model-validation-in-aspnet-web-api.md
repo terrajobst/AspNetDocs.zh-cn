@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 7d061207-22b8-4883-bafa-e89b1e7749ca
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: d4e792f8cc2f79c2ab82c5a74fd50f49475fac4f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 531a66b7ab642bd012663517640f2766f1917f25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59404567"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112833"
 ---
 # <a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API 中的模型验证
 
@@ -66,7 +66,6 @@ ms.locfileid: "59404567"
 
 > [!NOTE]
 > Brad Wilson 的博客文章"[输入验证 vs。ASP.NET MVC 中的模型验证](http://bradwilson.typepad.com/blog/2010/01/input-validation-vs-model-validation-in-aspnet-mvc.html)"具有未得到充分的发布和过度提交了适当探讨。 虽然文章是有关 ASP.NET MVC 2，但是是仍然与 Web API 相关的问题。
-
 
 ## <a name="handling-validation-errors"></a>处理验证错误
 

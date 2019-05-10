@@ -8,12 +8,12 @@ ms.date: 01/02/2019
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: a47d428830fa6c43bcb9ce797d65b73891b44618
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ef5402da1e97d2c5e5d98ff2d04dadca1180453b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381882"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112340"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-45"></a>在 ASP.NET 4.5 中使用异步方法
 
@@ -32,7 +32,6 @@ ms.locfileid: "59381882"
 > 
 > 为在本教程提供的完整示例  
 > [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) 上[GitHub](https://github.com/)站点。
-
 
 结合使用的 ASP.NET 4.5 Web Pages [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx)使你能够注册返回类型的对象的异步方法[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 .NET Framework 4 引入了异步编程概念，称为[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)和 ASP.NET 4.5 支持[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 任务由**任务**类型和中的相关的类型[System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx)命名空间。 与此异步支持生成.NET Framework 4.5 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)和[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)使用的关键字[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)比以前少得多复杂的对象异步方法。 [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)关键字是速记语法用于指示在某些其他代码段以异步方式等待一段代码。 [异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字都表示一个提示，可用于将方法标记为基于任务的异步方法。 组合**await**，**异步**，并**任务**对象可大大简化了.NET 4.5 中编写异步代码。 调用异步方法的新模型*基于任务的异步模式*(**点击**)。 本教程假定你已具备一定的使用异步编程[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)并[异步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)关键字并[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空间。
 

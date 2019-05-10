@@ -8,12 +8,12 @@ ms.date: 03/12/2008
 ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: e3821eee8c7bf2c2f9b45ea75ade2bd5b3b8ef19
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c61d10c28ba3975cb6fbadc6eda1f7a3c9406dfc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406257"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114615"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 触发器
 
@@ -22,7 +22,6 @@ ms.locfileid: "59406257"
 [下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial02_Triggers_cs.pdf)
 
 > Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从智能感知） 有两个 UpdatePanel 控件的子元素。 其中之一是触发器元素，它指定页 （或用户控件，如果您正在使用它） 上的控件，将触发该元素所在的 UpdatePanel 控件部分呈现。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -76,11 +75,9 @@ Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从�
 
 1. 按 F5 生成并运行项目。 请注意，当您单击更新同时面板，这两个标签将更改属性。但是，当您单击更新此面板，仅 Label1 更新。
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image2.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image1.png)
 
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
-
 
 ## <a name="under-the-hood"></a>*揭秘*
 
@@ -90,11 +87,9 @@ Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从�
 
 单击更新此面板按钮，并注意顶部 UpdatePanel 将与当前服务器时间一起更新。 在 FireBug 中，选择控制台选项卡，以便你可以检查请求。 首先检查 POST 请求参数：
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image5.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image4.png)
 
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-updatepanel-triggers/_static/image6.png))
-
 
 请注意，UpdatePanel 已指明服务器端 AJAX 代码到精确的控件树已触发通过 ScriptManager1 参数：`Button1`的`UpdatePanel1`控件。 现在，单击更新两个面板按钮。 然后，检查响应，可看到竖线分隔的一系列变量在一个字符串; 中设置具体而言，我们看到顶部 UpdatePanel， `UpdatePanel1`，具有整个其发送到浏览器的 HTML。 AJAX 客户端脚本库替换 UpdatePanel 的原始 HTML 内容使用新的内容通过`.innerHTML`属性，因此，服务器将从为 HTML 的服务器发送更改的内容。
 
@@ -104,11 +99,9 @@ Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从�
 
 例如，考虑一个复选框控件;检查在.NET Reflector 类反汇编。 为此，请确保在 System.Web 程序集已打开，并导航到`System.Web.UI.WebControls.CheckBox`类中，打开`RenderInputTag`方法。 检查的条件查找`AutoPostBack`属性：
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image8.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image7.png)
 
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-updatepanel-triggers/_static/image9.png))
-
 
 当在上启用自动回发`CheckBox`控制 （通过将 AutoPostBack 属性是否均为 true），所产生的`<input>`标记的因此呈现使用 ASP.NET 事件处理脚本在其`onclick`属性。 窗体的提交，然后，利用拦截，ASP.NET AJAX 注入到页 nonintrusively，帮助避免所有潜在的重大更改，可能出现的使用可能不精确的字符串替换。 此外，这使得*任何*自定义 ASP.NET 控件，以利用功能的 ASP.NET AJAX 无需任何其他代码以支持其使用 UpdatePanel 容器中的。
 
@@ -128,11 +121,9 @@ Visual Studio 中的标记编辑器中工作时，你可能会注意到 （从�
 
 此页背后的理念是，下拉列表中选择一个三种颜色以显示第二个标签、 复选框确定它是否以粗体显示，和标签显示日期，以及时间。 复选框并不会导致 AJAX 更新，但应下拉列表，即使它不位于 UpdatePanel 中也是如此。
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image11.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image10.png)
 
 ([单击此项可查看原尺寸图像](understanding-asp-net-ajax-updatepanel-triggers/_static/image12.png))
-
 
 很明显在上面的屏幕截图，最新的按钮被单击时右侧的按钮更新此面板中，更新此订阅顶部时间独立于的底部时间。 日期也关闭了之间次单击，如日期是在底部标签中可见。 最后感兴趣的是底部标签的颜色： 它比标签的文本，演示，控件状态很重要，最近已更新，用户希望它将保留通过 AJAX 回发。 *但是*，不更新的时间。 时间已自动重新填充在的暂留\_\_时在服务器上重新呈现该控件时，ASP.NET 运行时所解释的页的视图状态字段。 ASP.NET AJAX 服务器代码中不能识别控件的方法在其中更改状态;它只需重新填充从视图状态，然后运行相应的事件。
 

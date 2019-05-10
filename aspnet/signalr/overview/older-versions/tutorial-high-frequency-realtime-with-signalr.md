@@ -8,12 +8,12 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 179f6dd3a60f8c49770ee34af93d54defad0adc4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e37e63a410952ec170cbbaadeeb54eae7e82b3b5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379401"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113705"
 ---
 # <a name="high-frequency-realtime-with-signalr-1x"></a>使用 SignalR 1.x 实现高频率实时功能
 
@@ -28,7 +28,6 @@ ms.locfileid: "59379401"
 > 本教程中介绍的概念有实时游戏中的应用程序和其他模拟应用程序。
 > 
 > 在本教程的注释是欢迎使用。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com)。
-
 
 ## <a name="overview"></a>概述
 

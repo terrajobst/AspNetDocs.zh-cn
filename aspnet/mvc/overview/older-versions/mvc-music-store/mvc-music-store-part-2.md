@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 998ce4e1-9d72-435b-8f1c-399a10ae4360
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: b452c59f16107be6d356f86e6c313ba3229dbce6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9dc2226f4951d4bed122df37d35bbb94730a00ad
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392750"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112414"
 ---
 # <a name="part-2-controllers"></a>第 2 部分：Controllers
 
@@ -24,7 +24,6 @@ ms.locfileid: "59392750"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 2 部分介绍了控制器。
-
 
 与传统的 web 框架，传入的 Url 通常映射到磁盘上的文件中。 例如： 所示的请求 url"/ Products.aspx"或"/ Products.php"可能会处理由"Products.aspx"或"Products.php"文件。
 
@@ -136,7 +135,6 @@ ASP.NET MVC 可以让我们轻松执行此操作而无需进行任何配置。 A
 - 我们已了解如何运行我们的网站使用 ASP.NET 开发服务器
 - 我们已经创建了两个控制器类： 一个 HomeController 和 StoreController
 - 我们为我们控制器的响应 URL 请求并返回到浏览器的文本添加了操作方法
-
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-1.md)

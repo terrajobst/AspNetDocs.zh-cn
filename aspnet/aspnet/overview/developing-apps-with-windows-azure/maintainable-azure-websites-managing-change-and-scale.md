@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c88bae40a8aa092037c0b359ee391acaf161cf10
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409728"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118302"
 ---
 # <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>动手实验：可维护的 Azure 网站：管理更改和缩放
 
@@ -34,7 +34,6 @@ ms.locfileid: "59409728"
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 >
 > 本主题的更多深入介绍，请参阅[构建实际云应用程序与 Azure 的电子书](building-real-world-cloud-apps-with-windows-azure/introduction.md)。
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>概述
@@ -79,7 +78,6 @@ ms.locfileid: "59409728"
 > [!NOTE]
 > 请确保您运行安装程序之前已为此实验室的所有依赖项。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用代码片段
 
@@ -87,7 +85,6 @@ ms.locfileid: "59409728"
 
 > [!NOTE]
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
-
 
 ---
 
@@ -107,9 +104,8 @@ ms.locfileid: "59409728"
 > [!NOTE]
 > 在首次启动 Visual Studio，您必须选择一个预定义的设置集合。 每个预定义的集合旨在符合特定的开发风格，并确定窗口布局、 编辑器行为、 IntelliSense 代码段和对话框选项。 此实验中的过程描述了完成给定的任务在 Visual Studio 中使用时所需的操作**常规开发设置**集合。 如果您为您的开发环境选择不同的设置集合，可能会中应考虑到的步骤有所不同。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-using-entity-framework-migrations"></a>练习 1:使用 Entity Framework 迁移
+### <a name="exercise-1-using-entity-framework-migrations"></a>练习 1：使用 Entity Framework 迁移
 
 当正在开发的应用时，你的数据模型可能随时间变化。 （如果要创建新的版本），这些更改可能会影响你的数据库中的现有模型，必须使数据库保持最新的以防止出现错误。
 
@@ -241,7 +237,7 @@ ms.locfileid: "59409728"
     *显示新约束*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-deploying-a-web-app-to-staging"></a>练习 2:Web 应用部署到过渡环境
+### <a name="exercise-2-deploying-a-web-app-to-staging"></a>练习 2：Web 应用部署到过渡环境
 
 **Azure 应用服务中的 web 应用**使您可以执行分阶段的发布。 过渡的发布创建的每个默认生产站点过渡站点槽，便于你以交换这些槽，但无需停机时间。 这是非常适用于向公众发布之前验证更改，以增量方式集成站点内容，并回滚任何更改都不会按预期工作。
 
@@ -249,7 +245,6 @@ ms.locfileid: "59409728"
 
 > [!NOTE]
 > 若要启用暂存的发布，web 应用必须处于**标准模式**。 请注意是否你的 web 应用更改为标准模式将产生额外的费用。 有关定价的详细信息，请参阅[应用服务定价](https://azure.microsoft.com/pricing/details/app-service/)。
-
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-web-app-in-azure-app-service"></a>任务 1 – 在 Azure 应用服务中创建 Web 应用
@@ -576,7 +571,7 @@ ms.locfileid: "59409728"
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample16.cmd)]
 
 <a id="Exercise4"></a>
-### <a name="exercise-4-scaling-using-azure-storage"></a>练习 4:使用 Azure 存储进行缩放
+### <a name="exercise-4-scaling-using-azure-storage"></a>练习 4：使用 Azure 存储进行缩放
 
 **Blob**是最简单的方式来存储大量非结构化的文本或二进制数据，例如视频、 音频和图像。 移动应用程序以存储静态内容，可通过直接向浏览器提供图像或文档中缩放应用程序。
 
@@ -726,11 +721,10 @@ ms.locfileid: "59409728"
     *验证 URL 重定向*
 
 <a id="Exercise5"></a>
-### <a name="exercise-5-using-autoscale-for-web-apps"></a>练习 5:使用适用于 Web 应用自动缩放
+### <a name="exercise-5-using-autoscale-for-web-apps"></a>练习 5：使用适用于 Web 应用自动缩放
 
 > [!NOTE]
 > 本练习中是可选的因为它需要支持的 Web 负载&amp;性能测试，仅可用于**Visual Studio 2013 Ultimate Edition**。 有关特定 Visual Studio 2013 功能的详细信息，比较版本[此处](https://www.microsoft.com/visualstudio/eng/products/compare)。
-
 
 **Azure 应用服务 Web 应用**提供的自动缩放功能的 web 应用中运行**标准模式**。 自动缩放可以让 Azure 自动缩放根据负载 web 应用的实例计数。 启用自动缩放后，Azure 一次每 5 分钟检查 web 应用的 CPU，并根据需要在某个时间点添加实例。 如果 CPU 使用率较低，Azure 将删除实例一次每隔两小时以确保你的 web 应用的性能不会降低。
 

@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa19ef52c4538f0db427eaa9a79b074c85001ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 20f8a2f8148bc658370ba1a939ebf1b62d376bc0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415864"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115475"
 ---
 # <a name="how-do-i-use-the-html-editor-control-vb"></a>如何使用 HTML 编辑器控件？ (VB)
 
@@ -21,22 +21,17 @@ by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor 是 ASP.NET AJAX 控件，您可以轻松地创建和编辑通过按钮在工具栏中的 HTML 内容。
 
-
 本教程的目的是为你提供了 AJAX 控件工具包中包含的 HTML 编辑器控件的概述。 HTML 编辑器包含可用于更改字体大小、 选择一种字体、 更改背景色、 修改的前景色，选项添加链接，添加图像，更改文本对齐方式，并执行剪切、 复制和粘贴 （见图 1） 的操作。
-
 
 [![HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
 **图 01**:HTML 编辑器 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
-
 HTML 编辑器，您可以输入使用设计模式下的内容，也可以直接输入 HTML。 你还提供用于预览 HTML 内容的选项 （请参见图 2）。
-
 
 [![设计、 HTML 和预览按钮](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
 
 **图 02**:设计、 HTML 和预览按钮 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
-
 
 在本教程中，您将学习如何显示 HTML 编辑器、 如何自定义工具栏按钮显示在 HTML 编辑器中，以及如何避免跨站点脚本攻击。
 
@@ -48,11 +43,9 @@ HTML 编辑器，您可以输入使用设计模式下的内容，也可以直接
 
 HTML 编辑器控件位于与其他 AJAX 控件工具包控件工具箱中。 它名为编辑器控件 （请参见图 3）。
 
-
 [![HTML 编辑器控件](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
 
 **图 03**:HTML 编辑器控件 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
-
 
 HTML 编辑器将拖到页后，你可以在属性表中设置其属性。 例如，你通常想要设置宽度和高度属性。 代码清单 1 包含一个包含 HTML 编辑器的 ASP.NET 页面的源。
 
@@ -62,11 +55,9 @@ HTML 编辑器将拖到页后，你可以在属性表中设置其属性。 例�
 
 在列表 1 中的页包含的 HTML 编辑器控件、 一个按钮控件和文字控件。 当单击按钮时，内容的 HTML 编辑器中显示文本控件中 （请参阅图 4）。
 
-
 [![提交窗体使用 HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
 
 **图 04**:提交窗体使用 HTML 编辑器 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
-
 
 HTML 编辑器内容属性用于检索输入到 HTML 编辑器中的 HTML 内容。 请注意，此 HTML 内容可以包含 JavaScript。 在下一部分中，我们讨论了如何阻止 JavaScript 注入攻击。
 
@@ -74,11 +65,9 @@ HTML 编辑器内容属性用于检索输入到 HTML 编辑器中的 HTML 内容
 
 你可以自定义完全的按钮出现在编辑器中。 例如，可能想要删除 HTML 选项卡以防止用户在 HTML 编辑器切换到 HTML 模式。 或者，可能想要删除字体大小下拉列表，以防止用户在论坛中创建过大文本 post 消息 （请参见图 5）。
 
-
 [![自定义 HTML 编辑器](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
 **图 05**:一个自定义 HTML 编辑器 ([单击此项可查看原尺寸图像](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
-
 
 您通过从编辑器的基类中派生新的 HTML 编辑器自定义工具栏按钮。 例如，代码清单 2 中的自定义编辑器仅包含粗体和斜体的工具栏按钮。 已删除所有其他工具栏按钮。 此外，HTML 选项卡已删除从编辑器的底部 （但在设计和预览选项卡仍有）。
 

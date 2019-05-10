@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 9002018b-3aa3-4358-bb1c-fbb5bc751d01
 msc.legacyurl: /web-api/overview/advanced/http-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: 308d2e3dd21917e7656f7ffe889dc965d9275d74
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a8e6f1da8df4802e1acf7779a2fc75bfe8ab876f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59392100"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115551"
 ---
 # <a name="http-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP 消息处理程序
 
@@ -47,7 +47,6 @@ ms.locfileid: "59392100"
 > [!NOTE]
 > 在客户端，HttpClient 还使用消息处理程序。 有关详细信息，请参阅[HttpClient 消息处理程序](httpclient-message-handlers.md)。
 
-
 ## <a name="custom-message-handlers"></a>自定义消息处理程序
 
 若要编写自定义消息处理程序，从派生**System.Net.Http.DelegatingHandler**并重写**SendAsync**方法。 此方法具有以下签名：
@@ -67,7 +66,6 @@ ms.locfileid: "59392100"
 
 > [!NOTE]
 > 对调用`base.SendAsync`是异步的。 如果此调用后，该处理程序执行任何工作，使用**await**关键字，如所示。
-
 
 一个委派处理程序可以跳过内部处理程序，并直接创建响应：
 
@@ -131,7 +129,6 @@ X HTTP 的方法重写为非标准 HTTP 标头。 它专为不能发送特定 HT
 
 > [!NOTE]
 > 如果 API 密钥仅适用于特定控制器操作，请考虑使用操作筛选器而不消息处理程序。 操作筛选器运行 URI 路由执行后。
-
 
 ## <a name="per-route-message-handlers"></a>每个路由的消息处理程序
 

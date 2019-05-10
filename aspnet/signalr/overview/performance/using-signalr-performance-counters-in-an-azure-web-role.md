@@ -9,12 +9,12 @@ ms.date: 10/03/2018
 ms.assetid: 2a127d3b-21ed-4cc9-bec0-cdab4e742a25
 msc.legacyurl: /signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
 msc.type: authoredcontent
-ms.openlocfilehash: 8e17e945bc144731dd149bd7ddfc9e29160eaf0b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 969a2ce43a7cb8d649555daf282f900401c0c914
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049194"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113595"
 ---
 # <a name="using-signalr-performance-counters-in-an-azure-web-role"></a>在 Azure Web 角色中使用 SignalR 性能计数器
 
@@ -88,7 +88,6 @@ SignalR 性能计数器用于监视 Azure Web 角色中的应用程序的性能�
     ![设置复制到输出目录将始终复制](using-signalr-performance-counters-in-an-azure-web-role/_static/image8.png)
 
 15. 重复上一步*SignalRPerfCounterInstall.cmd*文件。
-
 
 16. 右键单击*SignalRPerfCounterInstall.cmd*文件，然后选择**打开**。 在出现的对话框，选择**二进制编辑器**，然后选择**确定**。
 

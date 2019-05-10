@@ -8,12 +8,12 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a63bca69f137a4d4765db6a4925ff027c9d8bf7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 68908be34f6b010e512677fe5f5e31bfdefab592
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403579"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116070"
 ---
 # <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>教程：使用 ASP.NET SignalR 1.x 实现服务器广播
 
@@ -26,7 +26,6 @@ ms.locfileid: "59403579"
 > 你将在本教程中创建的应用程序模拟股票行情服务器广播功能的典型方案。
 > 
 > 在本教程的注释是欢迎使用。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com)。
-
 
 ## <a name="overview"></a>概述
 
@@ -54,7 +53,6 @@ ms.locfileid: "59403579"
 
 > [!NOTE]
 > 如果不想要逐步完成构建应用程序的步骤，则可以在新安装 SignalR.Sample 包**空的 ASP.NET Web 应用程序**项目，并通读以下步骤获取代码的说明。 本教程的第一个部分涵盖子集 SignalR.Sample 代码，并且第二部分介绍 SignalR.Sample 包中的其他功能的主要功能。
-
 
 <a id="prerequisites"></a>
 

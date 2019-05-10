@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 38aea3b3480dde6ec6182a45c4f61f44eea8e05e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 95e9b9f55b2080c0ed01dc34e3a32f9f1c905644
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380218"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117254"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基础知识
 
@@ -108,13 +108,12 @@ MVC 模式有助于创建单独的应用程序 （输入的逻辑、 业务逻�
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**60 分钟**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Creating_MusicStore_ASPNET_MVC_Web_Application_Project"></a>
-### <a name="exercise-1-creating-musicstore-aspnet-mvc-web-application-project"></a>练习 1:创建 MusicStore ASP.NET MVC Web 应用程序项目
+### <a name="exercise-1-creating-musicstore-aspnet-mvc-web-application-project"></a>练习 1：创建 MusicStore ASP.NET MVC Web 应用程序项目
 
 在此练习中，您将学习如何为 Web，以及其主文件夹组织在 Visual Studio 2012 Express 中创建 ASP.NET MVC 应用程序。 此外，您将学习如何添加新的控制器并使其在应用程序的主页中显示一个简单的字符串。
 
@@ -210,7 +209,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Controller"></a>
-### <a name="exercise-2-creating-a-controller"></a>练习 2:创建控制器
+### <a name="exercise-2-creating-a-controller"></a>练习 2：创建控制器
 
 在此练习中，您将了解如何更新控制器以实现简单音乐应用商店应用程序的功能。 该控制器将定义要处理的每个以下的特定请求的操作方法：
 
@@ -359,7 +358,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Creating_a_View"></a>
-### <a name="exercise-4-creating-a-view"></a>练习 4:创建视图
+### <a name="exercise-4-creating-a-view"></a>练习 4：创建视图
 
 到目前为止您具有的控制器操作返回的字符串。 虽然这是了解控制器的工作方式的有效方法，但并不如何实际的 Web 应用程序构建。 视图是提供更好的方法以返回到浏览器，使用模板文件中生成 HTML 的组件。
 
@@ -471,7 +470,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 <a id="Exercise5"></a>
 
 <a id="Exercise_5_Creating_a_View_Model"></a>
-### <a name="exercise-5-creating-a-view-model"></a>练习 5:创建视图模型
+### <a name="exercise-5-creating-a-view-model"></a>练习 5：创建视图模型
 
 到目前为止，进行硬编码 HTML，显示你的视图，但若要创建动态 web 应用程序，视图模板应从控制器接收的信息。 一个要用于此目的的常用技术是**ViewModel**模式，允许控制器打包生成相应的 HTML 响应所需的所有信息。
 
@@ -945,7 +944,6 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 
 > [!NOTE]
 > 此外，可以部署此应用程序到 Windows Azure Web Sites 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
-
 
 ---
 

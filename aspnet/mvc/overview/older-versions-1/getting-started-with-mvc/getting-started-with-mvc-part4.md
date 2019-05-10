@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: 742df67f-484d-4ef3-af6b-8c791e556b43
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
 msc.type: authoredcontent
-ms.openlocfilehash: b75057f3128662a9bbdd641dc0a7c1ba09fbbe87
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 995db714ce6365415d06dc458aee84a31c7c8fd6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388187"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117676"
 ---
 # <a name="creating-a-database"></a>创建数据库
 
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
-
 
 在本部分中我们要创建新 SQL Express 数据库，我们将使用它来存储和检索电影数据。 从 Visual Web 开发人员 IDE 中，选择视图 |服务器资源管理器。 右键单击数据连接，然后单击添加连接...
 

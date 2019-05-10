@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 288f5017acde5a103460ace688933609fba0b02c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 87a90b47ae30bee43e0b0c1e078597db54b8e67d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391021"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113872"
 ---
 # <a name="tutorial-getting-started-with-signalr-1x"></a>教程：SignalR 1.x 入门
 
@@ -22,7 +22,6 @@ ms.locfileid: "59391021"
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 本教程介绍如何使用 SignalR 创建实时聊天应用程序。 将 SignalR 添加到空的 ASP.NET web 应用程序，并创建 HTML 页以发送和显示的消息。
-
 
 ## <a name="overview"></a>概述
 
@@ -148,7 +147,6 @@ HTML 页中的代码示例演示如何使用 SignalR jQuery 库与 SignalR 中�
 > [!NOTE]
 > 在 jQuery 中于服务器类及其成员的引用位于混合大小写。 代码示例将引用 C# **ChatHub**类中作为 jQuery **chatHub**。
 
-
 下面的代码是如何在脚本中创建一个回调函数。 在服务器上的中心类会调用此函数可将内容更新推送到每个客户端。 HTML 显示前先编码内容的两行都是可选的并显示简单的方法来阻止脚本注入。
 
 [!code-html[Main](tutorial-getting-started-with-signalr/samples/sample7.html)]
@@ -157,7 +155,6 @@ HTML 页中的代码示例演示如何使用 SignalR jQuery 库与 SignalR 中�
 
 > [!NOTE]
 > 此方法确保了事件处理程序在执行之前建立的连接。
-
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr/samples/sample8.js)]
 

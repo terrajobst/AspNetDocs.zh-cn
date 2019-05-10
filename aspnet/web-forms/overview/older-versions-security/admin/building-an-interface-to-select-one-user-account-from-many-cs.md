@@ -8,12 +8,12 @@ ms.date: 04/01/2008
 ms.assetid: 9e4e687c-b4ec-434f-a4ef-edb0b8f365e4
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ed255b4d5938457e82c1fca4d759b6a5691c3f6c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ede2bf737464fde47e304e23255349599c1ea663
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401759"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116289"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>生成用于从多个用户帐户中选择一个帐户的界面 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59401759"
 [下载代码](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.12.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial12_SelectUser_cs.pdf)
 
 > 在本教程中我们将生成具有分页、 筛选网格的用户界面。 具体而言，我们的用户界面将包含的一系列的 Linkbutton 筛选基于用户名和 GridView 控件以显示匹配的用户的起始字母对结果。 我们将开始通过列出所有 GridView 中的用户帐户。 然后，在步骤 3 中，我们将添加筛选器 Linkbutton。 步骤 4 来看待分页筛选的结果。 构造在步骤 2 到 4 的接口将在后续教程中，用于为特定用户帐户执行管理任务。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -55,11 +54,9 @@ ASP.NET 页`Administration`文件夹仅供管理用户。 我们添加到中的�
 
 此时您的项目的解决方案资源管理器应类似于屏幕截图中图 1 所示。
 
-
 [![四个新的网页和 Web.config 文件已添加到网站](building-an-interface-to-select-one-user-account-from-many-cs/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image1.png)
 
 **图 1**:四个新页面和一个`Web.config`文件已添加到网站 ([单击以查看实际尺寸的图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image3.png))
-
 
 最后，更新站点图 (`Web.sitemap`) 包含在进入`ManageUsers.aspx`页。 添加以下 XML 之后`<siteMapNode>`我们添加了有关角色的教程。
 
@@ -67,11 +64,9 @@ ASP.NET 页`Administration`文件夹仅供管理用户。 我们添加到中的�
 
 使用更新的站点映射，请访问通过浏览器的站点。 如图 2 所示，在左侧的导航窗格现在为管理教程包括项。
 
-
 [![站点图包括一个标题为用户管理的节点](building-an-interface-to-select-one-user-account-from-many-cs/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image4.png)
 
 **图 2**:站点图包括节点标题为的用户管理 ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image6.png))
-
 
 ## <a name="step-2-listing-all-user-accounts-in-a-gridview"></a>步骤 2：列出在 GridView 中的所有用户帐户
 
@@ -81,11 +76,9 @@ ASP.NET 页`Administration`文件夹仅供管理用户。 我们添加到中的�
 
 为了 GridView 中显示所需的用户帐户信息，请设置 GridView`AutoGenerateColumns`属性设置为 False，并添加有关 BoundFields `UserName`， `Email`，和`Comment`属性和为 CheckBoxFields `IsApproved`，`IsLockedOut`，和`IsOnline`属性。 通过该控件声明性标记或字段对话框中，可以应用此配置。 图 3 显示的屏幕截图的字段对话框的自动生成字段复选框已取消选中并添加并配置 BoundFields 和 CheckBoxFields 后。
 
-
 [![将三个 BoundFields 和三个 CheckBoxFields 添加到 GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image7.png)
 
 **图 3**:将三个 BoundFields 和三个 CheckBoxFields 添加到 GridView ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image9.png))
-
 
 在配置后你 GridView，请确保其声明性标记类似于以下：
 
@@ -97,11 +90,9 @@ ASP.NET 页`Administration`文件夹仅供管理用户。 我们添加到中的�
 
 请花费片刻时间来测试通过浏览器页面。 如图 4 所示， `UserAccounts` GridView 用户名、 电子邮件地址和所有用户的其他相关帐户信息列出了系统中。
 
-
 [![用户帐户已列出 GridView 中](building-an-interface-to-select-one-user-account-from-many-cs/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image10.png)
 
 **图 4**:用户帐户已列出 GridView 中 ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image12.png))
-
 
 ## <a name="step-3-filtering-the-results-by-the-first-letter-of-the-username"></a>步骤 3：筛选结果的第一个字母的用户名
 
@@ -121,15 +112,12 @@ ASP.NET 页`Administration`文件夹仅供管理用户。 我们添加到中的�
 
 图 5 显示了`ManageUsers.aspx`页面的浏览器查看时。
 
-
 [![Repeater 列出了 27 筛选 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image13.png)
 
 **图 5**:Repeater 列出了 27 筛选 Linkbutton ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image15.png))
 
-
 > [!NOTE]
 > 用户名可能开始任何字符，包括数字和标点符号。 若要查看这些帐户，管理员将需要使用所有 LinkButton 选项。 或者，可以添加 LinkButton 返回以数字开头的所有用户帐户。 我将此当作练习留给读者。
-
 
 单击任意筛选 Linkbutton 导致回发并引发 Repeater 的`ItemCommand`事件，但有在网格中的任何更改，因为我们尚未为编写任何代码来筛选结果。 `Membership`类包括[`FindUsersByName`方法](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)返回其用户名与指定的搜索模式匹配这些用户帐户。 我们可以使用此方法以检索其用户名与指定的字母开头的那些用户帐户`CommandName`筛选 LinkButton 被单击。
 
@@ -151,11 +139,9 @@ ASP.NET 页`Administration`文件夹仅供管理用户。 我们添加到中的�
 
 利用此代码，测试筛选功能。 当首次访问页面时，显示所有用户帐户 （回头查看图 5）。 单击 LinkButton 导致回发，并筛选结果，显示以 A 开头这些用户帐户。
 
-
 [![使用筛选的 Linkbutton 来显示其用户名以某些字母开头的用户](building-an-interface-to-select-one-user-account-from-many-cs/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image16.png)
 
 **图 6**:使用筛选 Linkbutton 来显示这些用户其用户名以特定字母开头 ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image18.png))
-
 
 ## <a name="step-4-updating-the-gridview-to-use-paging"></a>步骤 4：正在更新 GridView，其中使用的分页
 
@@ -171,7 +157,6 @@ GridView 控件提供了两种类型的分页：
 > [!NOTE]
 > 有关默认和自定义分页，以及实现自定义分页所面临的挑战之间的区别的更深入讨论，请参阅[有效地分页通过大容量数据的](https://asp.net/learn/data-access/tutorial-25-cs.aspx)。 默认和自定义分页的性能差异一些分析，请参阅[结合使用 ASP.NET 和 SQL Server 2005 中的自定义分页](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)。
 
-
 若要实现自定义分页我们首先需要某些机制，通过其检索 GridView 显示的记录的精确的子集。 值得高兴的是`Membership`类的`FindUsersByName`方法具有重载方法，可用于指定的页索引和页大小，并返回在记录该范围内这些用户帐户。
 
 具体而言，此重载具有以下签名： [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx)。
@@ -180,7 +165,6 @@ GridView 控件提供了两种类型的分页：
 
 > [!NOTE]
 > 返回的数据`FindUsersByName`按 username; 不能自定义排序条件。
-
 
 GridView 可以配置为使用自定义分页，但仅当绑定到对象数据源控件。 要实现自定义分页的 ObjectDataSource 控件，它需要两个方法： 一个传递给起始行索引和记录，若要显示，最大数目，并返回该范围内; 内的记录的精确子集和通过分页所返回的记录总数的方法。 `FindUsersByName`重载接受的页索引和页面大小，并返回通过记录总数`out`参数。 因此，此处接口不匹配。
 
@@ -196,11 +180,9 @@ GridView 可以配置为使用自定义分页，但仅当绑定到对象数据�
 
 图 7 显示了四个 Linkbutton 时通过 Visual Web Developer 设计视图查看。
 
-
 [![接下来，添加第一个、 上一个、 和最后一个 Linkbutton 下 GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image19.png)
 
 **图 7**:首先，添加上一步、 下一步，和最后一个 Linkbutton 下方的 GridView ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image21.png))
-
 
 ### <a name="keeping-track-of-the-current-page-index"></a>跟踪的当前页索引
 
@@ -228,16 +210,13 @@ GridView 可以配置为使用自定义分页，但仅当绑定到对象数据�
 
 图 8 和 9 在操作中展示的自定义分页界面。 图 8 显示了`ManageUsers.aspx`页上查看所有用户帐户的数据的第一页时。 请注意，仅有 10 的 13 帐户会显示。 单击下一步或最后一个链接会导致回发时，更新`PageIndex`为 1，第二页的用户帐户添加到网格中的绑定 （请参阅图 9）。
 
-
 [![显示第一个 10 用户帐户](building-an-interface-to-select-one-user-account-from-many-cs/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image22.png)
 
 **图 8**:显示第一个 10 用户帐户 ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image24.png))
 
-
 [![单击下一步链接显示用户帐户的第二的页](building-an-interface-to-select-one-user-account-from-many-cs/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image25.png)
 
 **图 9**:单击下一步链接显示的第二个页面的用户帐户 ([单击此项可查看原尺寸图像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png))
-
 
 ## <a name="summary"></a>总结
 

@@ -8,12 +8,12 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f78100178d5cdc25a10603907e77fe81386877a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8432a7610ac7be79ad03651a5fac21a62b0ca1f0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59386454"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112958"
 ---
 # <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用，实现 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录 (C#)
 
@@ -27,7 +27,6 @@ ms.locfileid: "59386454"
 > 
 > 本教程还介绍如何添加配置文件数据的用户，以及如何使用成员资格 API 添加角色。 本教程由编写[Rick Anderson](https://blogs.msdn.com/rickAndy) (请在 Twitter 上关注我： [ @RickAndMSFT ](https://twitter.com/RickAndMSFT) )。
 
-
 <a id="start"></a>
 ## <a name="getting-started"></a>入门
 
@@ -36,11 +35,9 @@ ms.locfileid: "59386454"
 > [!NOTE]
 > 必须安装 Visual Studio [2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390521)或更高版本使用 Google OAuth 2 和本地调试而无需 SSL 警告。
 
-
 单击**新的项目**从**启动**页上，或者可以使用菜单并选择**文件**，然后**新项目**。
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image1.png)  
- 
 
 <a id="1st"></a>
 ## <a name="creating-your-first-application"></a>创建第一个应用程序
@@ -56,7 +53,6 @@ ms.locfileid: "59386454"
 如果所选**在云中托管**，完成配置对话框中。
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image4.png)
-
 
 ### <a name="use-nuget-to-update-to-the-latest-owin-middleware"></a>使用 NuGet 更新到最新的 OWIN 中间件
 
@@ -161,7 +157,6 @@ ms.locfileid: "59386454"
 
 > [!WARNING]
 > 当前 Facebook OAuth2 身份验证说明，请参阅[配置 Facebook 身份验证](/aspnet/core/security/authentication/social/facebook-logins)
-
 
 <a id="mdb"></a>
 ## <a name="examine-the-membership-data"></a>检查成员身份数据

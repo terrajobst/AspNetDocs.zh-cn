@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ce1c6224a7e9203ff62f136f4f3a43e4561a904
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380660"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123822"
 ---
 # <a name="iteration-5--create-unit-tests-vb"></a>迭代 5 — 创建单元测试 (VB)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下载代码](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
 
 > 在第五个迭代中，我们使我们的应用程序更轻松地监视和修改通过添加单元测试。 我们模拟我们数据模型类，并生成为控制器和验证逻辑单元测试。
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>构建联系人管理 ASP.NET MVC 应用程序 (VB)
 
@@ -43,7 +42,6 @@ by [Microsoft](https://github.com/microsoft)
 - 迭代 6-使用测试驱动的开发。 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试并针对单元测试编写的代码。 在此迭代中，我们将添加联系人组。
 
 - 迭代 7-添加 Ajax 功能。 在第七个迭代中，我们通过添加对 Ajax 支持提高响应能力和我们的应用程序的性能。
-
 
 ## <a name="this-iteration"></a>此迭代
 
@@ -69,7 +67,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 多种测试框架，包括 NUnit 和 xUnit.net，MbUnit 的单元。 在本教程中，我们使用的单元测试框架与 Visual Studio 附带。 但是，您可以轻松地使用其中一种替代框架。
 
-
 ## <a name="what-gets-tested"></a>获取测试内容
 
 在理想情况下，所有代码将包含一些单元测试。 在理想情况下，您必须完美的网络安全。 您可以修改应用程序中代码的任何行，并就可马上知道，通过执行单元测试，是否更改中断了现有功能。
@@ -88,11 +85,9 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 虽然编写测试的数据访问逻辑或视图逻辑不是一个不错的主意，编写单元测试时，这些测试可能会非常有价值，构建功能或集成测试时。
 
-
 > [!NOTE] 
 > 
 > ASP.NET MVC 是 Web 窗体视图引擎。 Web 窗体视图引擎依赖于 web 服务器时，可能不是其他视图引擎。
-
 
 ## <a name="using-a-mock-object-framework"></a>使用模拟对象框架
 
@@ -115,16 +110,13 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 3. 解压缩下载。
 4. 通过选择菜单选项将 Moq 程序集的引用添加到你的测试项目**项目中，添加引用**以打开**添加引用**对话框。 在浏览选项卡，浏览到你在其中解压缩 Moq 文件夹并选择 Moq.dll 程序集。 单击**确定**按钮 （请参见图 2）。
 
-
 [![取消阻塞 Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **图 01**:取消阻塞 Moq ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image2.png))
 
-
 [![添加 Moq 后引用](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **图 02**:添加 Moq 后的引用 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image4.png))
-
 
 ## <a name="creating-unit-tests-for-the-service-layer"></a>为服务层创建单元测试
 
@@ -136,11 +128,9 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 > 
 > 一般情况下，所需测试项目以匹配你的 ASP.NET MVC 项目的文件夹结构的文件夹的结构。 例如，您将测试控制器放置在控制器文件夹中，在模型文件夹中，模型测试等。
 
-
 [![Models\ContactManagerServiceTest.cs](iteration-5-create-unit-tests-vb/_static/image3.jpg)](iteration-5-create-unit-tests-vb/_static/image5.png)
 
 **图 03**:Models\ContactManagerServiceTest.cs([Click to view full-size image](iteration-5-create-unit-tests-vb/_static/image6.png))
-
 
 最初，我们想要测试由 ContactManagerService 类公开的 CreateContact() 方法。 我们将创建以下五个测试：
 
@@ -158,9 +148,7 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample1.vb)]
 
-
 由于我们在列表 1 中使用 Contact 类，我们需要将对 Microsoft 实体框架的引用添加到我们的测试项目。 添加对 system.data.entity 的引用程序集的引用。
-
 
 代码清单 1 包含一个名为使用 [TestInitialize] 特性修饰的 initialize （） 方法。 每个单元测试运行之前自动调用此方法 （它每个单元测试前调用 5 次）。 使用以下代码行，initialize （） 方法创建 mock 存储库：
 
@@ -172,7 +160,6 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 > 
 > 使用 Moq 框架时，会区分\_mockRepository 和\_mockRepository.Object。 前者是指包含用于指定模拟存储库的行为方式的方法的模拟 (的 IContactManagerRepository) 类。 后者是指实际的 mock 存储库，实现 IContactManagerRepository 接口。
 
-
 创建 ContactManagerService 类的实例时，将在 initialize （） 方法中使用模拟的存储库。 所有的各个单元测试使用 ContactManagerService 类的此实例。
 
 代码清单 1 包含五个方法对应于每个单元测试。 每种方法是使用 [TestMethod] 特性修饰。 当您运行单元测试时，被调用具有此属性的任何方法。 换而言之，任何使用 [TestMethod] 特性修饰的方法是单元测试。
@@ -183,11 +170,9 @@ Visual Studio 不会包含模拟对象框架。 但是，有可用于.NET framew
 
 可以通过选择菜单选项在列表 1 中运行单元测试**测试，运行，解决方案 （CTRL + R、 A） 中的所有测试**。 在测试结果窗口中显示测试结果 （请参阅图 4）。
 
-
 [![测试结果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **图 04**:测试结果 ([单击此项可查看原尺寸图像](iteration-5-create-unit-tests-vb/_static/image8.png))
-
 
 ## <a name="creating-unit-tests-for-controllers"></a>为控制器创建单元测试
 
@@ -211,7 +196,6 @@ ASP.NET MVC 应用程序控制流的用户交互。 当测试控制器时，你�
 
 如果 create （） 方法的行为我们预期它应在服务层，则返回值 false 时返回创建视图。 这样一来，控制器可以显示验证错误消息，在创建视图和用户有机会更正该无效联系人属性。
 
-
 如果您计划生成你的控制器的单元测试然后您需要的控制器操作返回显式视图名称。 例如，不返回此类的视图：
 
 返回 View()
@@ -221,7 +205,6 @@ ASP.NET MVC 应用程序控制流的用户交互。 当测试控制器时，你�
 返回 View("Create")
 
 如果不能显式返回视图时 ViewResult.ViewName 属性将返回空字符串。
-
 
 **Listing 2 - Controllers\ContactControllerTest.vb**
 

@@ -8,12 +8,12 @@ ms.date: 12/16/2011
 ms.assetid: c71bb9b2-7136-4ce6-a40a-cc4d9978cfb7
 msc.legacyurl: /web-forms/pluralsight
 msc.type: content
-ms.openlocfilehash: ae41660d96260991defc23c75d2dda5b9183585e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 57885b3b05b3107bbd678791d38e7166a727e5de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400277"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113095"
 ---
 # <a name="web-forms-video-training-from-pluralsight"></a>Pluralsight 提供的 Web 窗体视频培训
 
@@ -29,11 +29,9 @@ ms.locfileid: "59400277"
 - [使用 ASP.NET 动态数据](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-08&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [Web 部署](https://pluralsight.com/training/Player?author=fritz-onion&name=webforms-09&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 
-
 “本课程由 Dan Wahlin 为 Pluralsight 录制，是对 ASP.NET Web 窗体的简介。 他对相关内容进行了全面介绍，一开始是 .NET Framework 简介，接着介绍如何安装和使用 Visual Studio，同时介绍了如何生成应用程序（包括服务器控件、数据访问和 Ajax），最后讲述部署技术。 Dan 是一位真正的 ASP.NET 专家，也是优秀的讲师，因此千万不要错过这个免费的课程！”
 
 Scott Hanselman、 首席项目经理、 Web 平台和 Azure 工具，Microsoft
-
 
 ![pluralsight logo playbutton](pluralsight/_static/image1.png)
 

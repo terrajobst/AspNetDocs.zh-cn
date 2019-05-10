@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: a4f4bf4e-abcc-4650-8f43-527e48b52fe6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5d8a40b03a1997904a2736a339dbf6b4003ae7bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 98d5839e3d2623665770ccc5689c28f9eb29c8f6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410638"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123471"
 ---
 # <a name="creating-a-custom-route-constraint-c"></a>创建自定义路由约束 (C#)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 演示了如何创建自定义路由约束。 我们实现简单的自定义约束，以防止浏览器请求进行从远程计算机时要匹配的路由。
-
 
 本教程的目的是演示如何创建自定义路由约束。 自定义路由约束，可防止路由除非匹配某些自定义的条件匹配。
 

@@ -8,12 +8,12 @@ ms.date: 11/24/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 113600ca1e77ae9667465464da505478fc948c9b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ca3b9424f30f48c7b8c71b850ffeca64244b123b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421103"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112847"
 ---
 # <a name="call-a-web-api-from-a-net-client-c"></a>从.NET 客户端 (C#) 中调用 Web API
 
@@ -165,7 +165,7 @@ resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 
 若要测试客户端应用：
 
-1. [下载](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 验证服务器应用程序正常工作。 例如，`http://localhost:64195/api/products`应返回的产品的列表。
+1. [下载](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](/aspnet/core/#how-to-download-a-sample)。 验证服务器应用程序正常工作。 例如，`http://localhost:64195/api/products`应返回的产品的列表。
 2. 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用程序中使用的端口。
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

@@ -8,12 +8,12 @@ ms.date: 12/01/2014
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: a62c821159cd097507019d5efb29e01958ec9fba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3a446be8e2dff2ac66e2432c51b2d9f43bcb817d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398093"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113174"
 ---
 # <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中创建 ASP.NET Web 项目
 
@@ -29,7 +29,6 @@ ms.locfileid: "59398093"
 > - 用于仅为 MVC 中，如提供的 Web 窗体的新功能[自动创建测试项目](#testproj)和一个[Intranet 站点模板](#winauth)。
 > 
 > 有关如何为 Azure 云服务或 Azure 移动服务中创建 web 项目的信息，请参阅[Azure 云服务和 ASP.NET 入门](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/)和[使用 Azure 移动服务.NET 创建排行榜应用程序后端](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
-
 
 <a id="prerequisites"></a>
 ## <a name="prerequisites"></a>系统必备
@@ -350,7 +349,6 @@ Visual Studio 2013 中这些功能是相同的与 Visual Studio 2012，但已重
 > 如果您选择一个 Azure AD 选项，你的项目需要数据库，您必须为你的 Azure AD 租户全局管理员帐户登录。 输入组织帐户的名称和密码 (例如， admin@contoso.onmicrosoft.com) 已在 Azure AD 租户的管理权限。
 > 
 > **不要输入 Microsoft 帐户凭据 (例如， contoso@hotmail.com) 在登录对话框。**
-
 
 <a id="orgauthsingle"></a>
 ### <a name="cloud---single-organization-authentication"></a>云-单个组织身份验证

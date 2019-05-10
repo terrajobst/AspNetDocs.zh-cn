@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3e1399d17840a2f5301349cb91deb07b0cc34363
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 938b180da02b1963acffd021d18621d75d1d0447
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421974"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117559"
 ---
 # <a name="validating-with-the-idataerrorinfo-interface-c"></a>使用 IDataErrorInfo 接口进行验证 (C#)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 演示了如何通过在 model 类中实现 IDataErrorInfo 接口显示自定义验证错误消息。
-
 
 本教程的目的是说明一种方法在 ASP.NET MVC 应用程序中执行验证。 了解如何防止有人将 HTML 窗体提交而无需为所需的窗体字段提供值。 在本教程中，您将学习如何使用 IErrorDataInfo 接口来执行验证。
 
@@ -30,7 +29,6 @@ ms.locfileid: "59421974"
 
 <a id="0.5_table01"></a>
 
-
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | Int | False |
@@ -38,19 +36,15 @@ ms.locfileid: "59421974"
 | 主管 | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
-
 在本教程中，我可以使用 Microsoft 实体框架来生成我的数据库模型类。 实体框架生成的 Movie 类显示在图 1 中。
-
 
 [![电影实体](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
 
 **图 01**:电影实体 ([单击此项可查看原尺寸图像](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
 
-
 > [!NOTE] 
 > 
 > 若要了解有关使用实体框架生成您的数据库模型类的详细信息，请参阅我的教程，标题为使用 Entity Framework 创建模型类。
-
 
 ## <a name="the-controller-class"></a>控制器类
 
@@ -72,11 +66,9 @@ ms.locfileid: "59421974"
 
 由实体框架生成的 Movie 类。 展开解决方案资源管理器窗口中的 MoviesDBModel.edmx 文件并在代码编辑器中打开 MoviesDBModel.Designer.cs 文件访问时，可以看到 Movie 类的代码 （请参见图 2）。
 
-
 [![电影实体的代码](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
 
 **图 02**:电影实体的代码 ([单击此项可查看原尺寸图像](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
-
 
 Movie 类是分部类。 这意味着，我们可以添加具有相同名称的扩展的 Movie 类功能的另一个分部类。 我们将向新的分部类添加我们的验证逻辑。
 
@@ -110,7 +102,6 @@ Movie 类是分部类。 这意味着，我们可以添加具有相同名称的�
 > [!NOTE] 
 > 
 > 分部方法是不需要实现的类中定义的方法。 如果未实现分部方法，编译器会删除方法签名，并因此方法的所有调用都是没有与分部方法关联的运行时成本。 在 Visual Studio 代码编辑器中，您可以通过键入关键字添加的分部方法*分部*跟一个空格，若要查看的部分实现列表。
-
 
 **代码清单 3-Models\Movie.cs**
 
@@ -146,11 +137,9 @@ DefaultModelBinder 还会检查 IDataErrorInfo.Error 属性。 此属性用于�
 
 不需要修改主控制器，以任何方式使用修改后的 Movie 类。 图 3 中显示的页说明了当标题或总监窗体字段中不输入任何值时，会发生什么情况。
 
-
 [![自动创建的操作方法](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
 
 **图 03**:具有缺失值的窗体 ([单击此项可查看原尺寸图像](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
-
 
 请注意 DateReleased 值自动进行验证。 因为 DateReleased 属性不接受 NULL 值，DefaultModelBinder 验证错误，此属性会自动生成时它不具有值。 如果你想要修改的错误消息的 DateReleased 属性，则需要创建自定义模型联编程序。
 

@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 2e31b60b-8723-4f14-b7ee-37859454dc3b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8d531a6ac9afc3ece4a60774124855ab0c16cd77
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 34292df7ab49505e6312c98a4005a8230f7bf27f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396897"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114643"
 ---
 # <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>添加 GridView 单选按钮列 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59396897"
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_51_VB.exe)或[下载 PDF](adding-a-gridview-column-of-radio-buttons-vb/_static/datatutorial51vb1.pdf)
 
 > 本教程介绍如何将单选按钮的列添加到 GridView 控件，以便为用户提供选择的 GridView 的单个行的更直观的方式。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -43,32 +42,25 @@ GridView 控件提供了大量的内置功能。 它包括多个用于显示文�
 - `CheckBoxField.aspx`
 - `InsertThroughFooter.aspx`
 
-
 ![将 ASP.NET 页面添加与 SqlDataSource 相关的教程](adding-a-gridview-column-of-radio-buttons-vb/_static/image1.gif)
 
 **图 1**:将 ASP.NET 页面添加与 SqlDataSource 相关的教程
 
-
 在其他文件夹中，喜欢`Default.aspx`在`EnhancedGridView`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
-
 
 [![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](adding-a-gridview-column-of-radio-buttons-vb/_static/image2.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image1.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image2.png))
 
-
 最后，将这四个页面添加到条目为`Web.sitemap`文件。 具体而言，在使用后添加以下标记 SqlDataSource 控件`<siteMapNode>`:
-
 
 [!code-xml[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample1.xml)]
 
 更新后`Web.sitemap`，花点时间查看通过浏览器网站的教程。 在左侧菜单现在包含用于编辑、 插入和删除教程的项。
 
-
 ![站点图现在包括用于增强 GridView 教程项](adding-a-gridview-column-of-radio-buttons-vb/_static/image3.gif)
 
 **图 3**:站点图现在包括用于增强 GridView 教程项
-
 
 ## <a name="step-2-displaying-the-suppliers-in-a-gridview"></a>步骤 2：在 GridView 中显示供应商
 
@@ -76,43 +68,33 @@ GridView 控件提供了大量的内置功能。 它包括多个用于显示文�
 
 首先打开`RadioButtonField.aspx`页中`EnhancedGridView`通过将 GridView 从工具箱拖到设计器的文件夹。 设置 GridView s`ID`到`Suppliers`和从其智能标记上，选择创建新的数据源。 具体而言，创建名为 ObjectDataSource`SuppliersDataSource`提取其数据从`SuppliersBLL`对象。
 
-
 [![创建名为 SuppliersDataSource 新 ObjectDataSource](adding-a-gridview-column-of-radio-buttons-vb/_static/image4.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image3.png)
 
 **图 4**:创建新对象数据源命名`SuppliersDataSource`([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image4.png))
-
 
 [![配置对象数据源以使用 SuppliersBLL 类](adding-a-gridview-column-of-radio-buttons-vb/_static/image5.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image5.png)
 
 **图 5**:配置为使用 ObjectDataSource`SuppliersBLL`类 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image6.png))
 
-
 由于我们只想要列出这些供应商在 USA 中的，选择`GetSuppliersByCountry(country)`从下拉列表中选择的选项卡的方法。
-
 
 [![配置对象数据源以使用 SuppliersBLL 类](adding-a-gridview-column-of-radio-buttons-vb/_static/image6.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image7.png)
 
 **图 6**:配置为使用 ObjectDataSource`SuppliersBLL`类 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image8.png))
 
-
 从更新选项卡，选择 （无） 选项，并单击下一步。
-
 
 [![配置对象数据源以使用 SuppliersBLL 类](adding-a-gridview-column-of-radio-buttons-vb/_static/image7.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image9.png)
 
 **图 7**:配置为使用 ObjectDataSource`SuppliersBLL`类 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image10.png))
 
-
 由于`GetSuppliersByCountry(country)`方法接受参数、 配置数据源向导提示我们输入该参数的源。 若要指定硬编码的值 （美国，在此示例中），将源下拉列表设置为 None，在文本框中输入的默认值的参数。 单击完成以完成向导。
-
 
 [![使用默认值作为美国国家/地区参数](adding-a-gridview-column-of-radio-buttons-vb/_static/image8.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image11.png)
 
 **图 8**:作为默认值为使用美国`country`参数 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image12.png))
 
-
 完成向导后，GridView 将每个供应商数据字段包含 BoundField。 删除以外的所有`CompanyName`， `City`，并`Country`BoundFields，并将重命名`CompanyName`BoundFields`HeaderText`向供应商的属性。 这样做之后，应类似于以下的 GridView 和 ObjectDataSource 的声明性语法。
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample2.aspx)]
 
@@ -120,11 +102,9 @@ GridView 控件提供了大量的内置功能。 它包括多个用于显示文�
 
 图 9 显示了`Suppliers`GridView 和两个按钮 Web 控件的浏览器查看时。
 
-
 [![从美国这些供应商有其名称、 城市和国家/地区信息列出](adding-a-gridview-column-of-radio-buttons-vb/_static/image9.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image13.png)
 
 **图 9**:从 USA 具有及其名称、 城市和国家/地区信息列出这些供应商 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image14.png))
-
 
 ## <a name="step-3-adding-a-column-of-radio-buttons"></a>步骤 3：添加单选按钮的列
 
@@ -134,14 +114,11 @@ GridView 控件提供了大量的内置功能。 它包括多个用于显示文�
 
 即使使用 TemplateField RadioButton Web 控件不提供我们所需的功能，让 s 实现这种方法，因为它 s 物有所值来检查生成的单选按钮未分组的原因。 首先，通过添加 TemplateField 到供应商 GridView，使其最左边的字段。 接下来，从 GridView s 智能标记，单击编辑模板链接并将 RadioButton Web 控件从工具箱拖到 TemplateField 的`ItemTemplate`（请参阅图 10）。 设置 RadioButton s`ID`属性设置为`RowSelector`并`GroupName`属性设置为`SuppliersGroup`。
 
-
 [![将单选按钮 Web 控件添加到 ItemTemplate](adding-a-gridview-column-of-radio-buttons-vb/_static/image10.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image15.png)
 
 **图 10**:添加到 RadioButton Web 控件`ItemTemplate`([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image16.png))
 
-
 以后进行通过设计器的这些新增功能，您的 GridView 的标记看起来应类似于以下：
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample3.aspx)]
 
@@ -149,14 +126,11 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 与 RadioButton Web 控件添加到`ItemTemplate`，请访问此页上的通过浏览器，然后单击网格的行中的单选按钮。 请注意，如何未分组的单选按钮，从而可以选择的所有行，作为图 11 显示了。
 
-
 [![GridView 的单选按钮是不分组在一起](adding-a-gridview-column-of-radio-buttons-vb/_static/image11.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image17.png)
 
 **图 11**:GridView 的单选按钮是不分组在一起 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image18.png))
 
-
 未分组的单选按钮的原因在于其呈现`name`属性是不同的尽管具有相同`GroupName`属性设置。 若要查看这些差异，请通过浏览器的执行视图/源代码并检查单选按钮标记：
-
 
 [!code-html[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample4.html)]
 
@@ -169,13 +143,11 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 > [!NOTE]
 > 像 RadioButton Web 控件，单选按钮 HTML 控件时添加到模板，将包括的唯一`name`属性，在未分组的网格中进行的单选按钮。 如果您不熟悉 HTML 控件，随时将忽略此请注意，HTML 控件都很少使用，尤其是在 ASP.NET 2.0。 但如果您有兴趣学习的详细信息，请参阅[K.Scott Allen](http://odetocode.com/blogs/scott/default.aspx)的博客条目[Web 控件和 HTML 控件](http://www.odetocode.com/Articles/348.aspx)。
 
-
 ## <a name="using-a-literal-control-to-inject-radio-button-markup"></a>使用文本控件将单选按钮标记
 
 为了正确地将所有内 GridView 单选按钮的组合，我们需要手动插入到的单选按钮标记`ItemTemplate`。 每个单选按钮需要相同`name`属性，但应具有一个唯一`id`属性 （如果我们想要访问通过客户端脚本的单选按钮）。 在浏览器用户选择的单选按钮和回发的页面后，将发送回的选定的单选按钮的值`value`属性。 因此，每个单选按钮将需要一个唯一`value`属性。 最后，在回发时我们需要确保添加`checked`属性到后选中了，否则用户进行的选项并返回文章的一个单选按钮、 单选按钮将返回到其默认状态 （所有未选定）。
 
 有两种方法，可以采取措施将低级别标记注入到模板。 一个是执行多个标记和调用格式设置方法的代码隐藏类中定义。 此方法首先中所述[GridView 控件中使用 Templatefield](../custom-formatting/using-templatefields-in-the-gridview-control-vb.md)教程。 在本例中它可能如下所示：
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample5.aspx)]
 
@@ -185,16 +157,13 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 首先删除单选按钮从 TemplateField 的`ItemTemplate`，替换文字控件。 设置文本控件 s`ID`到`RadioButtonMarkup`。
 
-
 [![将文本控件添加到 ItemTemplate](adding-a-gridview-column-of-radio-buttons-vb/_static/image12.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image19.png)
 
 **图 12**:添加到文字控件`ItemTemplate`([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image20.png))
 
-
 接下来，创建事件处理程序的 GridView s`RowCreated`事件。 `RowCreated`事件触发后对于每个添加的行，该值指示是否数据正在重新绑定到 GridView。 这意味着，即使在回发时从视图状态重新加载数据`RowCreated`仍会触发事件，这是我们将使用它而不是原因`RowDataBound`（这会触发仅当数据显式绑定到数据 Web 控件）。
 
 在此事件处理程序中，我们只想如果能继续进行我们重新处理数据行。 我们想要以编程方式引用每个数据行`RadioButtonMarkup`文本控件并设置其`Text`属性设置为用于发出的标记。 发出的标记如以下代码所示，创建单选按钮的`name`属性设置为`SuppliersGroup`，其`id`属性设置为`RowSelectorX`，其中*X*是 GridView 行的索引并且其`value`属性设置为 GridView 行的索引。
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample6.vb)]
 
@@ -206,11 +175,9 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 因为我们将需要确定选定的单选按钮索引不能仅在`RowCreated`事件处理程序，但在`Click`按钮 Web 控件的事件处理程序，让 s 添加`SuppliersSelectedIndex`属性设置为返回的代码隐藏类`-1`如果已选择不单选按钮和所选的索引，如果选择了一个单选按钮。
 
-
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample7.vb)]
 
 通过添加此属性，我们知道要添加`checked="checked"`中的标记`RowCreated`事件处理程序时`SuppliersSelectedIndex`等于`e.Row.RowIndex`。 更新要将此逻辑包含的事件处理程序：
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample8.vb)]
 
@@ -220,7 +187,6 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 > [!NOTE]
 > 而不是使用 TemplateField （此耗时较长的步骤 3 的焦点），我们可以创建自定义`DataControlField`呈现相应的用户界面和功能的类。 [ `DataControlField`类](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.aspx)BoundField、 CheckBoxField、 TemplateField 和其他内置的 GridView 和 DetailsView 字段派生的类的基类。 创建自定义`DataControlField`类将表示在单选按钮列可能只需使用声明性语法中，添加并还会使复制其他网页和其他更加便捷的 web 应用程序的功能。
-
 
 如果已创建自定义，编译 ASP.NET 中的控件，但是，您知道这样做，因此需要大量的琐碎工作，并且具有以来的微妙之处和必须谨慎处理的边缘情况的主机。 因此，我们将会放弃实现为自定义的单选按钮的列`DataControlField`类目前并坚持使用 templatefield 进一步选项。 也许我们将有机会来了解创建、 使用和部署自定义`DataControlField`以后的教程中的类 ！
 
@@ -232,36 +198,29 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 若要提供此功能，创建的事件处理程序`SendToProducts`按钮的`Click`事件。 在步骤 3 中我们添加了`SuppliersSelectedIndex`选择属性，它将返回的行的索引的单选按钮。 在相应`SupplierID`可以检索从 GridView s`DataKeys`集合和用户然后可以发送到`~/Filtering/ProductsForSupplierDetails.aspx?SupplierID=SupplierID`使用`Response.Redirect("url")`。
 
-
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample9.vb)]
 
 此代码将运行非常好，只要从 GridView 中选择一个单选按钮。 如果最初，GridView 不具有所选，任何单选按钮，并且用户单击`SendToProducts`按钮，`SuppliersSelectedIndex`将为`-1`，这将导致异常引发自`-1`的索引范围超出`DataKeys`集合。 这是一个问题，但是，如果您决定更新`RowCreated`以便具有最初选择 GridView 中的第一个单选按钮的步骤 3 中所述的事件处理程序。
 
 若要容纳`SuppliersSelectedIndex`的值`-1`，将标签 Web 控件添加到页面上方 GridView。 设置其`ID`属性设置为`ChooseSupplierMsg`，将其`CssClass`属性设置为`Warning`，将其`EnableViewState`并`Visible`属性设置为`False`，并将其`Text`到请属性网格中选择一个供应商。 CSS 类`Warning`中定义，以红色、 斜体、 粗体、 大字体显示文本`Styles.css`。 通过设置`EnableViewState`并`Visible`属性设置为`False`，标签不呈现除外，对于只有回发的位置控制 s`Visible`属性以编程方式设置为`True`。
 
-
 [![添加 GridView 上方的一个标签 Web 控件](adding-a-gridview-column-of-radio-buttons-vb/_static/image13.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image21.png)
 
 **图 13**:添加标签 Web 控件上方的 GridView ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image22.png))
 
-
 接下来，扩充`Click`事件处理程序以显示`ChooseSupplierMsg`标签如果`SuppliersSelectedIndex`是小于零，且用户重定向到`~/Filtering/ProductsForSupplierDetails.aspx?SupplierID=SupplierID`否则为。
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample10.vb)]
 
 访问在浏览器，并单击页面`SendToProducts`按钮，再从 GridView 中选择一个供应商。 如图 14 所示，这将显示`ChooseSupplierMsg`标签。 接下来，选择一个供应商，并单击`SendToProducts`按钮。 这将列出所选的供应商提供的产品的页面到 whisk 您。 图 15 显示了`ProductsForSupplierDetails.aspx`页面时选择了野人绑架了 Breweries 供应商。
 
-
 [![如果选择无供应商，则显示 ChooseSupplierMsg 标签](adding-a-gridview-column-of-radio-buttons-vb/_static/image14.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image23.png)
 
 **图 14**:`ChooseSupplierMsg`如果选择无供应商显示标签 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image24.png))
 
-
 [![选择供应商的产品显示在 ProductsForSupplierDetails.aspx](adding-a-gridview-column-of-radio-buttons-vb/_static/image15.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image25.png)
 
 **图 15**:选择供应商的产品显示在`ProductsForSupplierDetails.aspx`([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image26.png))
-
 
 ## <a name="step-5-displaying-the-selected-supplier-s-products-on-the-same-page"></a>步骤 5：在同一页上显示所选供应商的产品
 
@@ -269,24 +228,19 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 因为我们仅希望此 GridView 的产品以显示选择供应商后，添加面板 Web 控件下方`Suppliers`GridView 中后，设置其`ID`到`ProductsBySupplierPanel`并将其`Visible`属性设置为`False`。 在面板内所选供应商，添加文本的产品后, 跟名为 GridView `ProductsBySupplier`。 从 GridView s 智能标记，选择要绑定到名为新 ObjectDataSource `ProductsBySupplierDataSource`。
 
-
 [![将 ProductsBySupplier GridView 绑定到新对象数据源](adding-a-gridview-column-of-radio-buttons-vb/_static/image16.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image27.png)
 
 **图 16**:将绑定`ProductsBySupplier`GridView 到新的 ObjectDataSource ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image28.png))
 
-
 接下来，配置要使用 ObjectDataSource`ProductsBLL`类。 由于我们只想要检索的所选的供应商提供的那些产品，指定应调用 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法来检索其数据。 选择 （无） 从下拉列表中插入、 更新和删除选项卡。
-
 
 [![配置对象数据源使用 GetProductsBySupplierID(supplierID) 方法](adding-a-gridview-column-of-radio-buttons-vb/_static/image17.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image29.png)
 
 **图 17**:配置为使用 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法 ([单击以查看实际尺寸的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image30.png))
 
-
 [![设置为 （无） 下拉列表中插入、 更新和删除选项卡](adding-a-gridview-column-of-radio-buttons-vb/_static/image18.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image31.png)
 
 **图 18**:在更新、 插入和删除选项卡中设置为 （无） 的下拉列表列出了 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image32.png))
-
 
 配置选择之后, 更新、 插入和删除选项卡，单击下一步。 由于`GetProductsBySupplierID(supplierID)`方法需要一个输入的参数，创建数据源向导会提示我们指定的源参数的值。
 
@@ -294,19 +248,15 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 或者，可以使用 ControlParameter 并指`Suppliers`GridView s [ `SelectedValue`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue.aspx)（请参阅图 19）。 GridView s`SelectedValue`属性返回`DataKey`值，对应于[`SelectedIndex`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex.aspx)。 为了使此选项才能工作，我们需要以编程方式设置 GridView s`SelectedIndex`属性设置为所选行时`ListProducts`单击按钮。 作为一项额外权益，通过设置`SelectedIndex`，将对其执行所选的记录`SelectedRowStyle`中定义`DataWebControls`主题 （黄色背景）。
 
-
 [![使用 ControlParameter 指定为参数源的 GridView 的 SelectedValue](adding-a-gridview-column-of-radio-buttons-vb/_static/image19.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image33.png)
 
 **图 19**:使用 ControlParameter 指定为参数源的 GridView 的 SelectedValue ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image34.png))
 
-
 完成该向导，时 Visual Studio 将自动添加产品的数据字段的字段。 删除以外的所有`ProductName`， `CategoryName`，并`UnitPrice`BoundFields，并将更改`HeaderText`产品、 类别和价格的属性。 配置`UnitPrice`BoundField 以便其值设置为货币的格式。 进行这些更改后，在面板、 GridView 和 ObjectDataSource s 声明性标记应如下所示：
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample11.aspx)]
 
 若要完成此练习中，我们需要设置 GridView s`SelectedIndex`属性设置为`SelectedSuppliersIndex`并`ProductsBySupplierPanel`面板 s`Visible`属性设置为`True`时`ListProducts`单击按钮。 若要实现此目的，创建的事件处理程序`ListProducts`Button Web 控件的`Click`事件，并添加以下代码：
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample12.vb)]
 
@@ -314,11 +264,9 @@ RadioButton s [ `GroupName`属性](https://msdn.microsoft.com/library/system.web
 
 图 20 显示结果后野人绑架了 Breweries 供应商已选择并单击页面按钮上的显示产品。
 
-
 [![由野人绑架了 Breweries 产品提供相同的页面上列出](adding-a-gridview-column-of-radio-buttons-vb/_static/image20.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image35.png)
 
 **图 20**:在同一页上列出了由野人绑架了 Breweries 产品提供 ([单击此项可查看原尺寸图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image36.png))
-
 
 ## <a name="summary"></a>总结
 

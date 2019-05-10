@@ -8,19 +8,18 @@ ms.date: 05/12/2009
 ms.assetid: 18b29834-c991-4e0c-b533-44d358fbfc9c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8336fecf60296c44ebcf6cbd6010f9d5daed2923
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0849fa6c13679e0cd01bb20a4067a097acbce298
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415955"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112942"
 ---
 # <a name="creating-a-custom-ajax-control-toolkit-control-extender-vb"></a>创建自定义 AJAX 控件工具包控件扩展程序 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 自定义扩展程序，可以自定义和扩展的 ASP.NET 控件的功能而无需创建新的类。
-
 
 在本教程中，您将学习如何创建自定义 AJAX 控件工具包控件扩展程序。 我们创建一个简单，但更改按钮的状态从禁用启用时文本框中键入文本的有用、 新的扩展程序。 阅读本教程之后, 你将能够扩展 ASP.NET AJAX 工具包使用您自己控件扩展器。
 
@@ -36,19 +35,15 @@ by [Microsoft](https://github.com/microsoft)
 
 可以将挂接到文本框和按钮控件 DisabledButton 扩展器。 键入的任何文本之前，将禁用的按钮和文本框和按钮如下所示：
 
-
 [![](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image2.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image1.png)
 
 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image3.png))
 
-
 开始键入文本后，启用该按钮和文本框和按钮如下所示：
-
 
 [![](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image5.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image4.png)
 
 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image6.png))
-
 
 若要创建我们控件扩展程序，我们需要创建以下三个文件：
 
@@ -78,11 +73,9 @@ by [Microsoft](https://github.com/microsoft)
 
 完成这些步骤后，在解决方案资源管理器窗口应如图 1 所示。
 
-
 [![与网站和类的类库项目的解决方案](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image7.png)
 
 **图 01**:与网站和类的类库项目的解决方案 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image9.png))
-
 
 接下来，您需要添加所有必要的程序集引用对类库项目：
 
@@ -99,11 +92,9 @@ by [Microsoft](https://github.com/microsoft)
 
 你可以验证，你已添加所有正确引用通过右键单击项目，选择属性，然后单击引用选项卡 （请参见图 2）。
 
-
 [![使用所需的引用引用文件夹](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image10.png)
 
 **图 02**:使用所需的引用引用文件夹 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image12.png))
-
 
 ## <a name="creating-the-custom-control-extender"></a>创建自定义控件扩展程序
 
@@ -122,9 +113,7 @@ by [Microsoft](https://github.com/microsoft)
 
 WebResource 属性用于编译自定义扩展器时，将 MyControlBehavior.js JavaScript 文件嵌入到程序集。 ClientScriptResource 属性用于在网页中使用自定义扩展器时，从该程序集检索 MyControlBehavior.js 脚本。
 
-
 为了使 WebResource 和 ClientScriptResource 属性，若要运行，必须作为嵌入资源编译 JavaScript 文件。 选择解决方案资源管理器窗口中的文件，打开属性页中，并将该值赋*嵌入的资源*到**生成操作**属性。
-
 
 请注意，控件扩展程序还包含 TargetControlType 属性。 此属性用于指定由扩展程序控件扩展的控件的类型。 列表 1 中，对于控件扩展程序用于扩展一个文本框。
 
@@ -154,11 +143,9 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 
 请记住，必须编译 JavaScript 文件作为嵌入资源清单 3 中。 选择解决方案资源管理器窗口中的文件，打开属性页中，并将该值赋*嵌入的资源*到**生成操作**属性 （请参见图 3）。 此选项是在 Visual Studio 和 Visual Web Developer 中可用。
 
-
 [![添加一个 JavaScript 文件作为嵌入资源](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image13.png)
 
 **图 03**:添加一个 JavaScript 文件作为嵌入资源 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image15.png))
-
 
 ## <a name="creating-the-custom-extender-designer"></a>创建自定义扩展程序设计器
 
@@ -183,11 +170,9 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 
 完成这些步骤后，DisabledButton 控件扩展程序应显示在工具箱中 （请参阅图 4）。
 
-
 [![在工具箱 DisabledButton](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image16.png)
 
 **图 04**:在工具箱 DisabledButton ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image18.png))
-
 
 接下来，我们需要创建一个新的 ASP.NET 页面。 请执行以下步骤：
 
@@ -196,7 +181,6 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 3. 将 TextBox 控件拖到绘图页上。
 4. 将按钮控件拖到绘图页上。
 5. 在属性窗口中，将按钮 ID 属性更改为值<em>btnSave</em>的值的 Text 属性*保存\**。
-  
 
 我们使用标准 ASP.NET 文本框和按钮控件创建一个页面。
 
@@ -205,11 +189,9 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 1. 选择**添加扩展程序**任务选项以打开扩展程序向导对话框 （请参见图 5）。 请注意，该对话框包含我们自定义 DisabledButton 扩展程序。
 2. 选择 DisabledButton 扩展器，然后单击**确定**按钮。
 
-
 [![扩展程序向导对话框](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image19.png)
 
 **图 05**:扩展程序向导对话框 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image21.png))
-
 
 最后，我们可以设置 DisabledButton 扩展程序的属性。 可以通过修改的 TextBox 控件的属性来修改 DisabledButton 扩展程序属性：
 
@@ -217,19 +199,15 @@ Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理�
 2. 在属性窗口中，展开的扩展程序节点 （请参阅图 6）。
 3. 将该值赋*保存*DisabledText 属性以及值*btnSave* TargetButtonID 属性。
 
-
 [![设置扩展程序属性](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image22.png)
 
 **图 06**:设置扩展程序属性 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image24.png))
 
-
 （按 F5） 运行页面时，按钮控件最初处于禁用状态。 一旦您开始在文本框中输入文本，则控件被启用的按钮 （请参阅图 7）。
-
 
 [![在操作中 DisabledButton 扩展器](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image25.png)
 
 **图 07**:DisabledButton 扩展器操作 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image27.png))
-
 
 ## <a name="summary"></a>总结
 

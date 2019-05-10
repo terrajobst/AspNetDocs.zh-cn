@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 116c557ad0d6c158f983da75668e634c9eb9747c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5630200a1ad1d30f6d89b38e15179f15b699fa9f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379582"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108584"
 ---
 # <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>最大化 Entity Framework 4.0 中的 ASP.NET 4 Web 应用程序的性能
 
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > 本系列教程为基础创建的 Contoso University web 应用程序[开始使用 Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)系列教程。 如果未完成之前的教程，作为本教程的起始点可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)，您已经创建的。 此外可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)由完整的系列教程。 如果你有疑问的教程，您可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)。
-
 
 在前面的教程，您已了解如何处理并发冲突。 本教程介绍可用于提高使用实体框架的 ASP.NET web 应用程序的性能选项。 你将了解几种方法最大化性能或诊断性能问题。
 
@@ -43,7 +42,6 @@ ms.locfileid: "59379582"
 > Web 应用程序性能受许多因素，其中包括诸如请求和响应数据的大小，数据库查询、 多少个请求服务器可以排入队列和速度它可以提供服务，以及甚至任何效率的速度你可能正在使用的客户端脚本库。 如果是在应用程序中关键的性能或测试或体验显示了应用程序性能并不令人满意，应遵循正常协议以进行性能优化。 度量值以确定性能瓶颈的发生位置，然后再解决会对应用程序的总体性能产生重大影响的区域。
 > 
 > 本主题主要侧重于在其中也许可以提高性能的 ASP.NET 中的实体框架的方式。 此处的建议是确定数据访问是一个在应用程序中的性能瓶颈时很有用。 但如前所述，此处所述的方法不应被视为&quot;最佳做法&quot;一般情况下，其中许多是适合仅在发生异常情况或地址非常特定的一种性能瓶颈。
-
 
 若要开始本教程，启动 Visual Studio 并打开在您使用在上一教程中的 Contoso University web 应用程序。
 
@@ -179,7 +177,6 @@ ms.locfileid: "59379582"
 > [!NOTE]
 > 仅当你具有 Visual Studio Ultimate，您可以执行以下过程。
 
-
 还原中的原始代码`GetDepartmentsByName`方法，并运行*Departments.aspx*在调试器中的页。
 
 在 Visual Studio 中，选择**调试**菜单，然后**IntelliTrace**，然后**IntelliTrace 事件**。
@@ -219,14 +216,12 @@ ms.locfileid: "59379582"
 > [!NOTE]
 > 如果将延迟加载已启用，在这里，使用同一查询重复很多时候，看到的模式可能会导致从延迟加载。 你通常想要避免一模式是主表中的每一行的延迟加载相关的数据。 除非你已验证的单一联接查询太过复杂，来有效地，您通常可以通过更改主查询以使用预先加载来提高性能，在这种情况下。
 
-
 ## <a name="pre-generating-views"></a>预生成视图
 
 当`ObjectContext`对象首次创建新的应用程序域中，实体框架将生成一组类，它用来访问数据库。 这些类称为*视图*，和如果您有一个非常大的数据模型，生成这些视图可以延迟到页的第一个请求的 web 站点的响应后初始化新的应用程序域。 通过在编译时，而不在运行时创建视图，可以减少此第一个请求延迟。
 
 > [!NOTE]
 > 如果你的应用程序没有任何一个极大的数据模型，或者如果它具有较大的数据模型，但无需考虑性能问题影响仅第一次页面请求回收 IIS 后，可以跳过此部分。 每次实例化的操作不会创建视图`ObjectContext`对象，因为视图是否已缓存在应用程序域。 因此，除非频繁正在回收 IIS 应用程序，很少的页请求将受益预生成的视图。
-
 
 您可以预生成视图使用*EdmGen.exe*命令行工具或通过使用*文本模板转换工具包*(T4) 模板。 在本教程将使用 T4 模板。
 
