@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 3005174a-ba3d-4937-8b3e-b913ee4172ac
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: 46c56eb012f08900ba8f3d10ce92868d0d4d02e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fc166515eea28a4ee3e9f3ec20f80ebd1976120a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390254"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115038"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater"></a>使用 DataList 和 Repeater 显示数据
 
 > 这些教程介绍使用 DataList 和 Repeater 控件显示数据的替代方法。
-
 
 - [使用 DataList 和 Repeater 控件显示数据 (C#)](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
 - [基于数据设置 DataList 和 Repeater 的格式 (C#)](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: adea836d-dbc2-4005-94ea-53aef09e9e34
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 msc.type: authoredcontent
-ms.openlocfilehash: ff12bc43ad68fdc4bbcd478624f47ea0d2774c2d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2d9a0dba381b71755ac626f76d52bc5bcb434447
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399302"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125644"
 ---
 # <a name="implement-efficient-data-paging"></a>实现高效数据分页
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步骤 8 显示了如何将分页支持添加到我们 /Dinners URL，以便而不是显示数千次 dinners，我们将仅显示一次-10 即将推出 dinners 并允许最终用户返回页和向前浏览整个列表以 SEO 友好的方式。
 > 
 > 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
-
 
 ## <a name="nerddinner-step-8-paging-support"></a>NerdDinner 步骤 8:分页支持
 

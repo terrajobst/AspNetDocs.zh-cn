@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c02a633013f061c09141d4f98871848c011a799e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420752"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116716"
 ---
 # <a name="server-controls"></a>服务器控件
 
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 增强了服务器控件在许多方面。 在此模块中，我们将介绍一些 ASP.NET 2.0 的方式对体系结构更改，Visual Studio 2005 处理服务器控件。
-
 
 ASP.NET 2.0 增强了服务器控件在许多方面。 在此模块中，我们将介绍一些 ASP.NET 2.0 的方式对体系结构更改，Visual Studio 2005 处理服务器控件。
 
@@ -59,15 +58,11 @@ ASP.NET 2.0 增强了服务器控件在许多方面。 在此模块中，我们�
 > [!NOTE]
 > 控件状态保存视图状态以及\_ \_VIEWSTATE 的隐藏窗体字段。
 
-
 本视频是演练的视图状态和控件状态。
-
 
 ![](server-controls/_static/image1.png)
 
-
 [打开的全屏视频](server-controls/_static/state1.wmv)
-
 
 在读取和写入来控制状态的服务器控件的顺序，您必须执行三个步骤。
 
@@ -114,7 +109,6 @@ ASP.NET 1.1 中的文档类型定义如下所示：
 > [!NOTE]
 > ControlAdapter 类是一个抽象类。
 
-
 更喜欢&lt;browserCaps&gt;部分 1.x 中，浏览器定义文件中的使用正则表达式来分析用户代理字符串以确定请求浏览器。 它它们定义为该用户代理的特定功能。 ControlAdapter 呈现控件通过呈现方法。 因此，如果重写的 Render 方法，您不应在基础类上调用呈现。 执行此操作可能会导致呈现发生两次，一次针对适配器，一次控件本身。
 
 ## <a name="developing-a-custom-adapter"></a>开发自定义适配器
@@ -157,21 +151,17 @@ ASP.NET 2.0 使用 Webresource.axd 处理程序 （前面讨论过） 来呈现�
 
 ImageMap 控件，可通过添加热点可以启动回发或导航到的 URL 的图像。 有三种类型的热点;CircleHotSpot、 RectangleHotSpot 和 PolygonHotSpot。 在 Visual Studio 中或以编程方式在代码中的集合编辑器通过添加热点。 可用于在图像上绘制热点是没有用户界面。 必须以声明方式指定坐标和大小或 radius 的热点。 此外，还有在设计器中的一个热点没有可视化表示形式。 热点配置为导航到的 URL，如果是通过热点的 NavigateUrl 属性指定的 URL。 对于 post 回热点，PostBackValue 属性可用于在服务器端代码中传递回发中可检索的字符串。
 
-
 ![在 Visual Studio 中的作用点集合编辑器](server-controls/_static/image1.jpg)
 
 **图 1**:在 Visual Studio 中的作用点集合编辑器
-
 
 ## <a name="bulletedlist-control"></a>BulletedList 控件
 
 BulletedList 控件是可以轻松地进行数据绑定的项目符号列表。 可排序列表 （编号） 或未通过 BulletStyle 属性排序。 列表中的每个项由 ListItem 对象表示。
 
-
 ![Visual Studio 中的 BulletedList 控件](server-controls/_static/image1.gif)
 
 **图 2**:Visual Studio 中的 BulletedList 控件
-
 
 ## <a name="hiddenfield-control"></a>HiddenField 控件
 
@@ -204,15 +194,11 @@ PostedFile 属性仍可用于访问 HttpPostedFile 对象，但一些 HttpPosted
 > [!NOTE]
 > 跟踪其状态使用 ASP.NET 控件状态的向导控件。 因此，EnableViewState 属性可以设置为 false，而无需任何从而不利。
 
-
 此视频是向导控件的演练。
-
 
 ![](server-controls/_static/image2.png)
 
-
 [打开的全屏视频](server-controls/_static/wizard1.wmv)
-
 
 ## <a name="localize-control"></a>本地化控件
 

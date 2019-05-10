@@ -8,12 +8,12 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 165343fd20b92becee1956c7a19870219323e073
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ebdae3f4d1261407feecd50ec81b3f329b2a3c0c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409390"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117134"
 ---
 # <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>创建具有登录、电子邮件确认和密码重置功能的安全 ASP.NET MVC 5 Web 应用 (C#)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59409390"
 > 
 > 本教程由编写[Rick Anderson](https://blogs.msdn.com/rickAndy) (Twitter: [ @RickAndMSFT ](https://twitter.com/RickAndMSFT) )。
 
-
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>创建 ASP.NET MVC 应用
 
@@ -31,7 +30,6 @@ ms.locfileid: "59409390"
 
 > [!NOTE]
 > 警告：必须安装[Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更高版本，若要完成本教程。
-
 
 1. 创建新的 ASP.NET Web 项目并选择 MVC 模板。 Web 窗体还支持 ASP.NET 标识，因此无法执行类似的步骤，在 web 窗体应用中。  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
@@ -78,7 +76,6 @@ ms.locfileid: "59409390"
 
 > [!WARNING]
 > 安全性-永远不会存储在源代码中敏感数据。 AppSetting 中存储的帐户和凭据。 在 Azure 上，您可以安全地存储这些值在 **[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 请参阅[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
-
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a>启用帐户控制器中的电子邮件确认
 

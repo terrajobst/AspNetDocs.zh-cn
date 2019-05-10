@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7daf08a88c614288170d676e665403cda244218a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412406"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118670"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 构建实际云应用
 
@@ -24,7 +24,6 @@ ms.locfileid: "59412406"
 > 这本电子书将指导你通过基于模式的方法构建实际云解决方案。 这些模式适用于开发流程以及体系结构和编码实践。
 > 
 > 其内容基于演示文稿由 Scott Guthrie 开发并通过他的挪威开发人员大会 (NDC) 中传递的 2013 年 6 月 ([第 1 部分](http://vimeo.com/68215538)，[第 2 部分](http://vimeo.com/68215602))，而是在 Microsoft Tech Ed 澳大利亚中2013 年 9 月，([第 1 部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)，[第 2 部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325))。 [许多其他](more-patterns-and-guidance.md#acknowledgments)更新和增加内容时从视频转换为书面形式。
-
 
 ## <a name="intended-audience"></a>目标的受众
 

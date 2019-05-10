@@ -8,12 +8,12 @@ ms.date: 01/28/2011
 ms.assetid: 51b447d5-eaa1-4df1-917c-f4f2746ed62d
 msc.legacyurl: /mobile/tested-devices
 msc.type: content
-ms.openlocfilehash: ecf8b7d90358fa0410ded9bd33c711016b4cd1d4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a4ba973dc67244aa8e2ebf04714c3867de36da2d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59411054"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121350"
 ---
 # <a name="aspnet-mobile-controls-tested-devices"></a>经 ASP.NET 移动控件测试的设备
 
@@ -24,7 +24,6 @@ ms.locfileid: "59411054"
 > - 设备 Update 2 [DU 2.0]:*(年 10 月 28，2002年)*
 > - 设备更新 3 [DU 3.0]:*(8 月 5，2003年)*
 > - 设备更新 4 [DU 4.0]:*(12 月 18，2003年)*
-
 
 |    制造商     |                      模型                      |       浏览器制造商        |               浏览器模型               | Released（已释放） |
 |---------------------|-------------------------------------------------|-----------------------------------|-------------------------------------------|----------|

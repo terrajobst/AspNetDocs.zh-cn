@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 4805e75a-7911-46e3-b11b-229a6eed245e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e031417f2ee22533e7b5a606fc40526d7d911efc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73b307f53875abe84b592c75b1ff614ffd9d8b82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413329"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123985"
 ---
 # <a name="iteration-3--add-form-validation-vb"></a>迭代 3 – 添加表单验证 (VB)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > 在第三个迭代中，我们将添加基本窗体验证。 我们阻止用户提交窗体而无法完成所需的窗体字段。 我们还验证电子邮件地址和电话号码。
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>构建联系人管理 ASP.NET MVC 应用程序 (VB)
-  
 
 在本系列教程，我们构建整个联系人管理应用程序从头到尾完成。 联系人管理器应用程序，可存储联系人信息的名称，电话号码和电子邮件地址的人的列表。
 
@@ -45,16 +43,13 @@ by [Microsoft](https://github.com/microsoft)
 
 - 迭代 7-添加 Ajax 功能。 在第七个迭代中，我们通过添加对 Ajax 支持提高响应能力和我们的应用程序的性能。
 
-
 ## <a name="this-iteration"></a>此迭代
 
 在联系人管理器应用程序的此第二个迭代中，我们将添加基本窗体验证。 我们阻止用户提交联系人而无需为所需的窗体字段输入值。 我们还验证电话号码和电子邮件地址 （请参阅图 1）。
 
-
 [![新建项目对话框](iteration-3-add-form-validation-vb/_static/image1.jpg)](iteration-3-add-form-validation-vb/_static/image1.png)
 
 **图 01**:具有验证的窗体 ([单击此项可查看原尺寸图像](iteration-3-add-form-validation-vb/_static/image2.png))
-
 
 在此迭代中，我们直接向控制器操作添加验证逻辑。 一般情况下，这不是将验证添加到 ASP.NET MVC 应用程序的建议的方法。 更好的方法是将应用程序的验证逻辑放在单独[服务层](http://martinfowler.com/eaaCatalog/serviceLayer.html)。 在下一个迭代中，我们将重构要使应用程序更易于维护的联系人管理器应用程序。
 
@@ -76,7 +71,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 您可以修改自定义验证错误消息的外观此部分中所述的样式表类。
 
-
 ## <a name="adding-validation-logic-to-the-create-action"></a>添加到的验证逻辑创建操作
 
 现在，创建视图永远不会显示验证错误消息，因为我们不编写逻辑来生成的任何消息。 为了显示验证错误消息，您需要错误消息添加到 ModelState。
@@ -84,7 +78,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > UpdateModel() 方法将错误消息添加到 ModelState 自动错误窗体字段的值分配到属性时。 例如，如果尝试将字符串"apple"分配给接受的日期时间值的 BirthDate 属性，然后 UpdateModel() 方法向错误 ModelState。
-
 
 代码清单 2 中的已修改 create （） 方法包含新的联系人插入到数据库之前会验证 Contact 类的属性的新部分。
 
@@ -106,7 +99,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > 我收到了用于验证的正则表达式存储库中的电话号码和电子邮件地址的正则表达式 [*http://regexlib.com*](http://regexlib.com)
-
 
 ## <a name="adding-validation-logic-to-the-edit-action"></a>将验证逻辑添加到编辑操作
 

@@ -8,12 +8,12 @@ ms.date: 08/19/2008
 ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d988b2ed6b7d1760557cbfbb543afa85b320c984
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 844d7209d3efbe0acf92fbc25e9b06c25c4d269a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402435"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125430"
 ---
 # <a name="preventing-javascript-injection-attacks-vb"></a>阻止 JavaScript 注入攻击 (VB)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59402435"
 
 > 阻止 JavaScript 注入攻击和跨站点脚本攻击发生给你。 在本教程中，Stephen Walther 解释了如何轻松地抵御这些类型的 html 编码内容的攻击。
 
-
 本教程的目的是说明如何在 ASP.NET MVC 应用程序中防止 JavaScript 注入攻击。 本教程讨论了两种方法可以保护你的网站对 JavaScript 注入攻击。 了解如何防止 JavaScript 注入攻击进行编码，显示的数据。 你还了解如何进行编码的数据，即表示你接受阻止 JavaScript 注入攻击。
 
 ## <a name="what-is-a-javascript-injection-attack"></a>什么是 JavaScript 注入攻击？
@@ -32,11 +31,9 @@ ms.locfileid: "59402435"
 
 设想您创建了客户反馈网站 （参见图 1）。 客户可以访问的网站，并输入他们使用您的产品的体验反馈。 当客户提交其反馈时，反馈将重新显示反馈页面上。
 
-
 [![客户反馈网站](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
 
 **图 01**:客户反馈网站 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-vb/_static/image3.png))
-
 
 客户反馈网站使用`controller`列表 1 中。 这`controller`包含名为两个操作`Index()`和`Create()`。
 
@@ -64,11 +61,9 @@ ms.locfileid: "59402435"
 
 此文本表示显示警告消息框的 JavaScript 脚本。 有人将此脚本提交到反馈后窗体中，消息<em>Boo ！</em>将显示时的任何人访问客户反馈网站将来 （请参见图 2）。
 
-
 [![JavaScript 注入](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
 
 **图 02**:JavaScript 注入 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-vb/_static/image6.png))
-
 
 现在，对 JavaScript 注入攻击的初始响应可能才自傲。 您可能认为 JavaScript 注入攻击是只是一种*篡改*攻击。 你可能会认为，没有人可以任何操作真正邪恶通过提交 JavaScript 注入攻击。
 
@@ -92,11 +87,9 @@ ms.locfileid: "59402435"
 
 它以 html 格式的平均值对字符串进行编码？ HTML 编码字符串，危险字符如`<`并`>`替换为 HTML 实体引用，如`&lt;`和`&gt;`。 因此，在将字符串`<script>alert("Boo!")</script>`是 HTML 编码，它将转换为`&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 作为 JavaScript 脚本时由浏览器进行解释，不再执行编码的字符串。 相反，图 3 中获得无害的页。
 
-
 [![大大降低的 JavaScript 攻击](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
 
 **图 03**:犬队击败 JavaScript 攻击 ([单击此项可查看原尺寸图像](preventing-javascript-injection-attacks-vb/_static/image9.png))
-
 
 请注意，在`Index`查看清单 3 中的值`feedback.Message`进行编码。 值`feedback.EntryDate`不进行编码。 只需对用户输入的数据进行编码。 因为 EntryDate 的值在控制器中生成时，你不需要为 HTML 编码此值。
 

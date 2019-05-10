@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: a3a90963-0286-4fa0-9b3d-c230cc18b0a3
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
 msc.type: authoredcontent
-ms.openlocfilehash: f648e0cb53dd410105adc22401f19a5a15f9e8c1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 05a281720f76b107fe8d902ef60d5d2e72af3ef5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380803"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122903"
 ---
 # <a name="adding-a-create-method-and-create-view"></a>添加 Create 方法和创建视图
 
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
-
 
 在本部分中我们要实现使用户能够在我们的数据库中创建新电影所需的支持。 我们将通过实现电影/创建 URL 操作来执行此操作。
 

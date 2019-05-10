@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: ff8322c9-12f3-4e24-aba6-a38046b9bb0d
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b3c6726c2d08e2e6ac37501f2ab455e427df82bb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f6c896c6f5f6d898ac6f99d5998fb29cb73bcb10
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414045"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117601"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-vb"></a>使用 Entity Framework 创建模型类 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您将学习如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 了解如何使用实体向导创建一个 ADO.NET 实体数据模型。 在本教程的过程中，我们构建的 web 应用程序演示了如何选择、 插入、 更新和删除数据库数据使用实体框架。
-
 
 本教程的目的是说明如何创建生成的 ASP.NET MVC 应用程序时使用 Microsoft Entity Framework 数据访问类。 本教程之前不了解 Microsoft Entity Framework。 本教程结束时，您将了解如何使用实体框架来选择、 插入、 更新和删除数据库记录。
 
@@ -30,13 +29,11 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 > 
 > 没有基本 ASP.NET MVC 和 Microsoft 实体框架之间的连接。 有多种替代方法可用于 ASP.NET MVC 的 Entity Framework。 例如，可以构建使用 Microsoft LINQ to SQL、 NHibernate 或 SubSonic 等其他 O/RM 工具在 MVC 模型类。
 
-
 为了说明如何使用 ASP.NET MVC 使用 Microsoft Entity Framework，我们将构建一个简单的示例应用程序。 我们将创建一个电影数据库应用程序，可用于显示和编辑电影数据库记录。
 
 本教程假定你有 Visual Studio 2008 或 Visual Web Developer 2008 Service Pack 1。 若要使用实体框架需要 Service Pack 1。 可以从以下地址下载 Visual Studio 2008 Service Pack 1 或 Service Pack 1 的 Visual Web Developer:
 
 > [https://www.asp.net/downloads/](https://www.asp.net/downloads)
-
 
 ## <a name="creating-the-movie-sample-database"></a>创建电影示例数据库
 
@@ -108,9 +105,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 请记住保存通过单击保存按钮 （软盘图标） 进行了修改后的实体数据模型。 在后台，实体设计器生成一的组 Visual Basic.NET 类。 可以通过从解决方案资源管理器窗口中打开 MoviesDBModel.Designer.vb 文件来查看这些类。
 
-
 由于所做的更改将被覆盖的下次使用实体设计器不会修改.vb 文件中的代码。 如果你想要扩展的.vb 文件中定义的实体类的功能，则可以创建*分部类*在单独的文件。
-
 
 #### <a name="selecting-database-records-with-the-entity-framework"></a>选择使用实体框架的数据库记录
 
@@ -158,9 +153,7 @@ Microsoft Entity Framework 是一种对象关系映射 (O/RM) 工具，可用于
 
 第二个 add （） 操作的 ASP.NET MVC TryUpdateModel() 方法帮助创建实体框架 Movie 类的新实例。 TryUpdateModel() 方法采用传递给 add （） 方法 FormCollection 中的字段，并将这些 HTML 窗体字段的值分配给 Movie 类。
 
-
 使用实体框架时，使用 TryUpdateModel 或 UpdateModel 方法来更新实体类的属性时，必须提供"允许列表"的属性。
-
 
 接下来，add （） 操作执行一些简单的窗体的验证。 操作可验证的标题和主管属性具有值。 如果没有验证错误，则会将一条验证错误消息添加到 ModelState。
 

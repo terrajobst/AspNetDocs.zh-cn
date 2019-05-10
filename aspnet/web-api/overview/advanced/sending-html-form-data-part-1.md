@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 585351c4-809a-4bf5-bcbe-35d624f565fe
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: fb0309af11910125943737ebb721b356b7bd08bc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7243069dbd8051b1374ed6e0112c273b8fe26f61
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418295"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115473"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>ASP.NET Web API 中发送 HTML 窗体数据：窗体 URL 编码的数据
 
@@ -31,7 +31,6 @@ ms.locfileid: "59418295"
 
 > [!NOTE]
 > [下载已完成的项目](https://code.msdn.microsoft.com/ASPNET-Web-API-Sending-a6f9d007)。
-
 
 <a id="overview_of_html_forms"></a>
 ## <a name="overview-of-html-forms"></a>HTML 窗体概述
@@ -62,7 +61,6 @@ HTML 窗体使用是 GET 或 POST 将数据发送到服务器。 **方法**的�
 
 > [!NOTE]
 > 使用此控制器[基于操作的路由](../web-api-routing-and-actions/routing-in-aspnet-web-api.md#routing_by_action_name)，因此路由模板是&quot;api / {controller} / {action} / {id}&quot;。 客户端将发布到数据&quot;/api/updates/complex&quot;。
-
 
 现在让我们来编写用户提交状态更新的 HTML 窗体。
 
@@ -101,7 +99,6 @@ JQuery**提交**函数将窗体操作替换的新函数。 这会替代提交按
 > [!NOTE]
 > 在发送前一种简单类型，请考虑将值改为包装在复杂类型。 这使您在服务器端的模型验证的优点，并轻松地根据需要扩展您的模型。
 
-
 若要发送的简单类型的基本步骤都相同，但两个略有不同。 首先，在控制器中，必须修饰参数名称后的加**FromBody**属性。
 
 [!code-csharp[Main](sending-html-form-data-part-1/samples/sample7.cs?highlight=3)]
@@ -110,7 +107,6 @@ JQuery**提交**函数将窗体操作替换的新函数。 这会替代提交按
 
 > [!NOTE]
 > Web API 响应正文读取最多一次，因此，只有一个参数的操作可以来自请求正文。 如果需要从请求正文中获取多个值，定义复杂类型。
-
 
 其次，客户端需要发送具有以下格式的值：
 

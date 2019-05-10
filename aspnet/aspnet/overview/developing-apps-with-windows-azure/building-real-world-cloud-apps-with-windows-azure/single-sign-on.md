@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: da1136e085776c63886b6ac25533521fa1479d4f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f6c23eb71ea323b6ab06943097f927f717a8099
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59406283"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118748"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>单一登录 （使用 Azure 构建实际云应用）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59406283"
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
-
 
 有很多安全问题，需考虑当正在开发云应用程序，但这一系列的情况下，我们将着眼于只是一个： 单一登录。 人们经常问的问题是："我要主要构建应用我的公司; 员工如何托管这些应用在云中，同时让他们能够使用相同的安全模型，我的员工了解它们的运行应用时使用的本地环境中托管的防火墙内？" 我们启用此方案的方法之一是名为 Azure Active Directory (Azure AD)。 Azure AD，可使企业业务线 (LOB) 应用程序可通过 Internet，并且它使您能够将这些应用提供给业务合作伙伴。
 

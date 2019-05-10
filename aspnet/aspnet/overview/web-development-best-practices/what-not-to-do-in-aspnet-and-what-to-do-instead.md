@@ -8,17 +8,16 @@ ms.date: 01/28/2019
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: a09169327d8eed45a83b232354af74a14aa89817
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 980d3544df70643043391e6573803ce21b3a824f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425036"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118170"
 ---
 # <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>不得在 ASP.NET 中执行的操作和转而应执行的操作
 
 > 本主题介绍几个常见的错误的人也会在 ASP.NET web 项目中。 它提供了有关应执行哪些操作来避免这些常见的错误的建议。 它基于[presentation](http://vimeo.com/68390507)通过**Damian Edwards**挪威开发者大会。
-
 
 ## <a name="disclaimer"></a>免责声明
 

@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f1b0809e-8909-444e-b6bb-a5cd1dea3f72
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 34fce0bef5163ba0423ea00cf4b7507947c45c68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7c8eb3d3688674dd2c220b4bd1b5982f2610d0eb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398067"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123841"
 ---
 # <a name="iteration-7--add-ajax-functionality-c"></a>迭代 7 – 添加 Ajax 功能 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下载代码](iteration-7-add-ajax-functionality-cs/_static/contactmanager_7_cs1.zip)
 
 > 在第七个迭代中，我们通过添加对 Ajax 支持提高响应能力和我们的应用程序的性能。
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>生成联系人管理 ASP.NET MVC 应用程序 (C#)
 
@@ -92,11 +91,9 @@ by [Microsoft](https://github.com/microsoft)
 
 让我们来首先修改索引视图，以便显示联系人的视图的区域，仅单击联系人组更新。 图 1 中的红色框包含我们想要更新的区域。
 
-
 [![更新仅联系人](iteration-7-add-ajax-functionality-cs/_static/image1.jpg)](iteration-7-add-ajax-functionality-cs/_static/image1.png)
 
 **图 01**:更新仅联系人 ([单击此项可查看原尺寸图像](iteration-7-add-ajax-functionality-cs/_static/image2.png))
-
 
 第一步是视图的将我们想要以异步方式更新到单独的部分 （视图用户控件） 的一部分。 显示的联系人的索引视图的一部分已被移动到在列表 1 中部分。
 
@@ -132,9 +129,7 @@ by [Microsoft](https://github.com/microsoft)
 
 我们已修改的索引视图在上级和下层浏览器的情况下适用。 如果单击联系人组，并在浏览器支持 JavaScript，然后更新只有包含的联系人列表的视图的区域。 如果，但是，你的浏览器不支持 JavaScript，然后更新整个视图。
 
-
 我们已更新的索引视图都有一个问题。 当单击联系人组时，不突出显示所选的组。 由于在 Ajax 请求期间更新的区域之外显示的组的列表，不会不获取突出显示正确的组。 我们将在下一节中修复此问题。
-
 
 ## <a name="adding-jquery-animation-effects"></a>添加 jQuery 动画效果
 
@@ -192,11 +187,9 @@ ASP.NET AJAX 浏览器历史记录，您需要做三件事：
 
 目前，若要删除联系人，您需要单击删除链接上，然后单击删除确认页中显示删除按钮 （请参见图 2）。 这看起来好像很多的页请求来执行简单删除的数据库记录。
 
-
 [![删除确认页](iteration-7-add-ajax-functionality-cs/_static/image2.jpg)](iteration-7-add-ajax-functionality-cs/_static/image3.png)
 
 **图 02**:删除确认页 ([单击此项可查看原尺寸图像](iteration-7-add-ajax-functionality-cs/_static/image4.png))
-
 
 很容易就跳过删除确认页面并直接从索引视图中删除联系人。 由于采用这种方法打开到安全漏洞的应用程序，应避免心。 一般情况下，don t 想要调用的 web 应用程序状态修改操作时执行的 HTTP GET 操作。 在执行 delete 时，你想要执行 HTTP POST，或者更确切地说，HTTP DELETE 操作。
 
@@ -213,7 +206,6 @@ ASP.NET AJAX 浏览器历史记录，您需要做三件事：
 > [!NOTE] 
 > 
 > Ajax.ImageActionLink() 不是 ASP.NET MVC 框架的标准组成部分。 Ajax.ImageActionLink() 是 Contact Manager 项目中包含自定义帮助器方法。
-
 
 AjaxOptions 参数具有两个属性。 首先，确认属性用于显示一个弹出窗口 JavaScript 确认对话框。 其次，HttpMethod 属性用于执行 HTTP DELETE 操作。
 

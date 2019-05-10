@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 7a56c0f9197a99427bcde6103ebc69d245e8ce63
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e71e13e22d8a72e1699cfc70d4d93af603edba5b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025754"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121231"
 ---
 # <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>教程：使用 ASP.NET MVC 应用程序的 EF Database First 生成的视图
 
@@ -51,7 +51,6 @@ ms.locfileid: "57025754"
 如果收到错误，则可能是因为未生成上一节中的项目。 如果是这样，请尝试生成项目，，然后再次添加基架的项。
 
 代码生成过程完成后，你将在项目中看到新的控制器和视图**控制器**并**视图** > **学生**文件夹.
-
 
 同样，执行相同的步骤，但添加的基本框架**注册**类。 完成后，您拥有**EnrollmentsController.cs**文件和文件夹下的**视图**名为**注册**与创建、 删除、 详细信息、 编辑和索引视图。
 

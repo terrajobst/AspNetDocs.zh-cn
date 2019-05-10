@@ -8,19 +8,18 @@ ms.date: 08/30/2013
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 72f70faa151007558ecbb270143ecd5b37c2134d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1f28db822930cdfd2ebf4cf9bb27d173f4aa4201
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392568"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118285"
 ---
 # <a name="an-overview-of-project-katana"></a>项目 Katana 概述
 
 通过[Howard Dierking](https://github.com/howarddierking)
 
 > ASP.NET Framework 已超过十年，并且该平台已启用的无数网站和服务开发。 Web 应用程序开发策略不断演进，如框架已经能够改进与 ASP.NET MVC 和 ASP.NET Web API 之类的技术步骤中。 Web 应用程序开发到云计算领域时其进化的下一步，项目[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)提供基础组件到 ASP.NET 应用程序，使他们能够灵活、 可移植，集轻量的并提供更好的性能 – 将另一种方法，项目[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)云优化您的 ASP.NET 应用程序。
-
 
 ## <a name="why-katana--why-now"></a>为什么 Katana-为什么要现在实施？
 
@@ -214,7 +213,6 @@ Katana 2.0 的托管基础结构包括 SystemWeb 和基于 HttpListener 的服�
 ## <a name="conclusion"></a>结束语
 
  从其开始 Katana 项目的目标不是创建并从而强制开发人员若要了解另一种 Web 框架。 相反，目标已创建一个抽象层，若要为.NET Web 应用程序开发人员提供比以前曾出现可能的更多选择。 分解成一组可更换的元件的典型 Web 应用程序堆栈的逻辑层，通过 Katana 项目能够在整个堆栈以提高在任何速率适合这些组件的组件。 通过构建简单的 OWIN 抽象周围的所有组件，Katana 支持框架和基于这些构建的应用程序能够在各种不同的服务器和主机之间移植。 通过开发人员置于堆栈的控件，Katana 可以确保开发人员进行有关如何轻量的最终选择，或者她 Web 堆栈是如何功能丰富。  
-  
 
 ## <a name="for-more-information-about-katana"></a>有关 Katana 的详细信息
 

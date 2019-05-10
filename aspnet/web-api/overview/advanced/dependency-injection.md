@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 0ad0b3c63741803e05274df4da3fcbe5481d32a4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 138ccb5800e801d382c11e3989ec3e3c074a79fe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391920"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115707"
 ---
 # <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的依赖关系注入
 
@@ -30,7 +30,6 @@ ms.locfileid: "59391920"
 > - Web API 2
 > - [Unity 应用程序块](https://www.nuget.org/packages/Unity/)
 > - Entity Framework 6 （也有效，版本 5）
-
 
 ## <a name="what-is-dependency-injection"></a>什么是依赖关系注入？
 
@@ -88,7 +87,6 @@ IoC 容器是一个软件组件，负责管理依赖项。 您向容器注册类
 > [!NOTE]
 > "IoC"代表"控制反转"，这是一个框架，其中调用到应用程序代码中的一般模式。 IoC 容器构造您的对象，其中"反转"常用控制流。
 
-
 对于本教程中，我们将使用[Unity](https://msdn.microsoft.com/library/ff647202.aspx)从 Microsoft 模式&amp;实践。 (其他常用库包括[Castle Windsor](http://www.castleproject.org/)， [Spring.Net](http://www.springframework.net/)， [Autofac](https://code.google.com/p/autofac/)， [Ninject](http://www.ninject.org/)，和[StructureMap](http://structuremap.github.io/documentation/).)可以使用 NuGet 包管理器安装 Unity。 从**工具**在 Visual Studio 中，选择菜单**NuGet 包管理器**，然后选择**程序包管理器控制台**。 在包管理器控制台窗口中，键入以下命令：
 
 [!code-console[Main](dependency-injection/samples/sample7.cmd)]
@@ -99,7 +97,6 @@ IoC 容器是一个软件组件，负责管理依赖项。 您向容器注册类
 
 > [!NOTE]
 > 如果**GetService**方法无法解析类型，它应返回**null**。 如果**getservices 进行提取**方法不能将类型解析，则它应返回一个空集合对象。 不会引发异常的未知类型。
-
 
 ## <a name="configuring-the-dependency-resolver"></a>配置依赖关系解析程序
 

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: a19ff2ce-3f7e-4358-9a51-a1403da9c63e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 09a7aa186605a6cce48ee94028425ded957c00d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387901"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117358"
 ---
 # <a name="enable-automated-unit-testing"></a>启用自动单元测试
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步骤 12 显示了如何开发一套自动化的单元测试用于验证我们 NerdDinner 的功能，而且这将向我们提供的置信度进行更改和对应用程序在将来的改进。
 > 
 > 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
-
 
 ## <a name="nerddinner-step-12-unit-testing"></a>NerdDinner 步骤 12:单元测试
 
@@ -264,7 +263,6 @@ Visual Studio 2008 Professional （和更高版本） 包括可用于运行 Visu
 下面是演示，我们可以如何提供窗体发布 UpdateModel() 帮助器方法，若要使用的值的两个测试。 我们将通过创建和填充 FormCollection 对象执行此操作，然后将其分配给在控制器上的"ValueProvider"属性。
 
 第一个测试验证，成功保存将浏览器重定向到详细信息的操作。 第二个测试将验证发送无效的输入时该操作显示编辑视图再次使用一条错误消息。
-
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample17.cs)]
 

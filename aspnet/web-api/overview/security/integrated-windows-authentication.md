@@ -8,12 +8,12 @@ ms.date: 12/18/2012
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: ce845eb6c914321736d77e989f10344eb7596eba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e4f31f191f3c0fabff308ea5dadb0f1d9ce7d448
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59416826"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125205"
 ---
 # <a name="integrated-windows-authentication"></a>集成 Windows 身份验证
 
@@ -27,7 +27,6 @@ ms.locfileid: "59416826"
 
 > [!NOTE]
 > 如果你的应用程序托管在 Azure 上，并且必须在本地 Active Directory 域，请考虑你的本地 AD 与 Azure Active Directory 联合。 这样一来，用户可以登录其本地凭据，但由 Azure AD 执行身份验证。 有关详细信息，请参阅[Azure 身份验证](../../../visual-studio/overview/2012/windows-azure-authentication.md)。
-
 
 若要创建使用集成 Windows 身份验证的应用程序，请在 MVC 4 项目向导中选择"Intranet 应用程序"模板。 此项目模板放入 Web.config 文件中的以下设置：
 

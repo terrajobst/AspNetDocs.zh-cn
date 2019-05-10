@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: a5de73d93d0af21a3b59d6c21014810184292adb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 55e635c967e07e193dda0358b020638af46c688e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379347"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120840"
 ---
 # <a name="adding-a-new-field"></a>添加新字段
 
@@ -79,7 +79,6 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 > 
 > 有关详细信息[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，请参阅[负责使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
-
 **按 CTRL-SHIFT-B 以生成项目。**（以下步骤将失败，如果此时不生成。）
 
 下一步是创建`DbMigration`类适用于初始迁移。 此迁移过程将创建一个新的数据库，这就是为什么你删除*movie.mdf*上一步中的文件。
@@ -138,13 +137,11 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 之所以看到此错误，因为已更新`Movie`应用程序中的 model 类现在与不同的架构`Movie`现有数据库表。 （数据库表中没有 `Rating` 列。）
 
-
 可通过几种方法解决此错误：
 
 1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 在测试数据库上进行开发时，此方法在开发周期早期很方便；通过它可以一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您 *不* 需要生产数据库上使用此方法 ！ 使用初始值设定项，以使用测试数据自动设定数据库种子，这通常是开发应用程序的有效方式。 有关实体框架数据库初始值设定项的详细信息，请参阅[ASP.NET MVC/实体框架教程](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 2. 对现有数据库架构进行显式修改，使它与模型类相匹配。 此方法的优点是可以保留数据。 可以手动或通过创建数据库更改脚本进行此更改。
 3. 使用 Code First 迁移更新数据库架构。
-
 
 本教程使用 Code First 迁移。
 

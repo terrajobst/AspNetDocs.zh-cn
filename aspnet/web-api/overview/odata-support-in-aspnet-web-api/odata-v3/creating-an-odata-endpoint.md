@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: fa0573738fee8f1decc13c9797f644002931e09d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e31bf3215155b4b45bcf2eb90dd6947caf99b7f8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381487"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125268"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>创建具有 Web API 2 OData v3 终结点
 
@@ -35,7 +35,6 @@ ms.locfileid: "59381487"
 > - [Fiddler Web 调试代理 （可选）](http://www.fiddler2.com)
 >
 > 中增加了 web API OData 支持[ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=282650)。 但是，本教程使用 Visual Studio 2013 中已添加的基架。
-
 
 在本教程中，将创建一个简单的 OData 终结点的客户端可以查询。 您还将创建终结点的 C# 客户端。 完成本教程后下, 一步的系列教程介绍如何添加更多的功能，包括实体关系操作，并展开的 $/ $选择。
 
@@ -77,7 +76,6 @@ ms.locfileid: "59381487"
 
 > [!NOTE]
 > 按照约定，模型类位于 Models 文件夹中。 无需遵循此约定在您自己的项目，但我们将在本教程中使用它。
-
 
 在 Product.cs 文件中，添加以下类定义：
 

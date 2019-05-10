@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9403be574324c34edf93bef1e0e4fd7ba68a3a9d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392347"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122776"
 ---
 # <a name="adding-validation-to-the-model"></a>向模型添加验证
 
 通过[Scott Hanselman](https://github.com/shanselman)
 
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
-
 
 在本部分中我们要实现启用我们的应用程序中的输入的验证所需的支持。 我们将确保我们的数据库内容始终是正确的并且它们尝试并输入电影数据无效时向最终用户提供有用的错误消息。 我们将开始将少量验证逻辑添加到电影类。
 

@@ -8,12 +8,12 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 48a66eea839f7f48899040ad20bbfee95b9a1902
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fc8f6cdefe1e940f3e3eafc2b9acc9144690284
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403904"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118735"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>监视和遥测 （使用 Azure 构建实际云应用）
 
@@ -23,14 +23,12 @@ ms.locfileid: "59403904"
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
 
-
 很多人依赖于客户能够让他们知道其应用程序出现故障时。 它实际上不是最佳做法是任意位置，尤其是并不在云中。 快速通知时，不能保证和时执行操作获得通知，你通常可以获取有关发生了什么情况的最小或令人误解数据。 具有良好的遥测和日志记录系统，你可以在使用您的应用程序，并在内容了解所发生事件的确实出现时立即查明原因并能有所帮助的故障排除信息，才能使用。
 
 ## <a name="buy-or-rent-a-telemetry-solution"></a>购买或租用遥测解决方案
 
 > [!NOTE]
 > 撰写本文时前[Application Insights](/azure/application-insights/app-insights-overview)发布。 Application Insights 遥测解决方案在 Azure 上的首选的方法。 请参阅[为 ASP.NET 网站设置 Application Insights](/azure/application-insights/app-insights-asp-net)有关详细信息。
-
 
 有关云环境很好的事情之一是，它是非常容易购买或租用胜利之路。 遥测是一个示例。 而无需花大力气就可以真正良好的遥测系统最多和正在运行，非常经济高效的方式。 有一系列强大的合作伙伴的与 Azure 集成，并且其中一些具有免费层-以便可以获取基本遥测数据执行任何操作。 下面是一些与当前可在 Azure 上：
 

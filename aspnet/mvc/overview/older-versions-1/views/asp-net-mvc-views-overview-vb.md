@@ -8,19 +8,18 @@ ms.date: 02/16/2008
 ms.assetid: c28ba88d-3a93-47f5-a306-049bd766714d
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 84af745d338e38ece438fa58d51d0929c7b92967
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f02728ed248f29b09d654e509977ed43889cbb83
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408454"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117425"
 ---
 # <a name="aspnet-mvc-views-overview-vb"></a>ASP.NET MVC 视图概述 (VB)
 
 通过[Stephen Walther](https://github.com/StephenWalther)
 
 > 什么是 ASP.NET MVC 视图，它与有何 HTML 页面？ 在本教程中，Stephen Walther 向您介绍视图，并演示如何，您可以充分利用查看数据和视图中的 HTML 帮助程序。
-
 
 本教程的目的是为你提供简要介绍 ASP.NET MVC 视图、 视图数据和 HTML 帮助程序。 本教程结束时，应了解如何创建新的视图、 将数据从控制器传递到视图，以及使用 HTML 帮助程序生成的内容视图中。
 
@@ -68,7 +67,6 @@ View()
 > 
 > 如果你打算为 ASP.NET MVC 应用程序创建单元测试它是一个好办法明确视图名称。 这样一来，可以创建单元测试以验证控制器操作返回预期的视图。
 
-
 ## <a name="adding-content-to-a-view"></a>将内容添加到视图
 
 视图是 (X) HTML 文档可以包含脚本的标准。 使用脚本来向视图添加动态内容。
@@ -103,11 +101,9 @@ View()
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
-
 [![新建项目对话框](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
 
 **图 01**:一个标准的登录窗体 ([单击此项可查看原尺寸图像](asp-net-mvc-views-overview-vb/_static/image2.png))
-
 
 所有 HTML 帮助器方法被调用视图的 Html 属性。 例如，通过调用 Html.TextBox() 方法呈现一个文本框。
 

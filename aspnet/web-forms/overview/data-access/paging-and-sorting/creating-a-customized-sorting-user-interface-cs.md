@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: 6f81b633-9d01-4e52-ae4a-2ea6bc109475
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 34a182278cfa57369643ab151492532bc92bd623
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: af4f91ffed7b8884a7441b5ccf4f390aba867fed
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393491"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121901"
 ---
 # <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义的排序用户界面 (C#)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59393491"
 
 > 显示一长串的已排序数据，它可以是非常有帮助通过引入分隔符行组相关的数据。 在本教程中我们将了解如何创建此类的排序用户界面。
 
-
 ## <a name="introduction"></a>介绍
 
 当显示一长串的已排序数据有少量的已排序的列中的不同值，最终用户可能会发现很难识别，确实如此，区别边界发生。 例如，有在数据库中，但仅有九个不同的类别选项 81 产品 (八个唯一类别以及`NULL`选项)。 请考虑有兴趣查看属于 Seafood 类别的产品的用户的情况。 从列出的页面*所有*单一 GridView 中的产品，用户可能会决定其最好的方法就是对结果进行排序的类别，将组合在一起的所有 Seafood 产品组合在一起。 按类别进行排序后, 用户然后需要 hunt 整个列表，寻找 Seafood 分组产品开始和结束的位置。 由于对结果进行按字母顺序排序的查找 Seafood 产品类别名称并不困难，但它仍需要仔细扫描中网格项的列表。
 
 为了突出显示已排序组之间的边界，很多网站，请使用一个用户界面，将添加此类组之间的分隔符。 图 1 所示类似的分隔符使用户能够更快地查找特定组和标识其边界，以及确定在数据中存在哪些不同的组。
 
-
 [![每个类别组是明确标识](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
 
 **图 1**:每个类别组是明确标识 ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image3.png))
-
 
 在本教程中我们将了解如何创建此类的排序用户界面。
 
@@ -44,16 +41,13 @@ ms.locfileid: "59393491"
 
 接下来，以便它仅包含配置 GridView `ProductName`， `CategoryName`， `SupplierName`，和`UnitPrice`BoundFields 和停用 CheckBoxField。 最后，配置 GridView 支持排序 GridView s 智能标记中的启用排序复选框 (或通过设置其`AllowSorting`属性设置为`true`)。 建立到这些新增功能后`CustomSortingUI.aspx`页上，在声明性标记应如下所示：
 
-
 [!code-aspx[Main](creating-a-customized-sorting-user-interface-cs/samples/sample1.aspx)]
 
 请花费片刻时间为止的浏览器中查看我们的进度。 图 2 显示了可排序的 GridView，其数据按类别按字母顺序进行排序时。
 
-
 [![可排序的 GridView s 数据按类别排序](creating-a-customized-sorting-user-interface-cs/_static/image5.png)](creating-a-customized-sorting-user-interface-cs/_static/image4.png)
 
 **图 2**:按类别排序数据的可排序的 GridView s ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image6.png))
-
 
 ## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>步骤 2：探索用于添加分隔符行的技术
 
@@ -73,11 +67,9 @@ ms.locfileid: "59393491"
 
 在 GridView 绑定到数据源，它会创建`GridViewRow`为数据源返回每个记录。 因此，我们可以通过添加分隔符记录到数据源绑定到 GridView 之前插入所需的分隔符行。 图 3 说明了这一概念。
 
-
 ![一种方法涉及将分隔符行添加到数据源](creating-a-customized-sorting-user-interface-cs/_static/image7.png)
 
 **图 3**:一种方法涉及将分隔符行添加到数据源
-
 
 我在引号中使用术语分隔符记录，因为没有特殊的分隔符记录;相反，我们必须以某种方式的标记中的数据源的特定记录用作分隔符，而不是普通的数据行。 有关我们的示例，我们重新绑定`ProductsDataTable`实例与 GridView，由组成`ProductRows`。 我们可能会通过设置一条记录标记为一个分隔符行及其`CategoryID`属性设置为`-1`（因为此类值无法正常情况下存在）。
 
@@ -99,22 +91,18 @@ ms.locfileid: "59393491"
 
 若要添加每个排序组之间的分隔符行，我们可以直接操作此控件层次结构后已创建。 我们可以确信 GridView 的控件层次结构已创建最后一次通过呈现页面时的时间。 因此，这种方法都会重写`Page`类的`Render`方法，此时 GridView s 最终的控件层次结构更新以包含所需的分隔符的行。 图 4 说明了此过程。
 
-
 [![一种替代方式操作 GridView 的控件层次结构](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
 
 **图 4**:一种替代方式操作 GridView 的控件层次结构 ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image10.png))
-
 
 对于本教程，我们将使用此后一种方法自定义排序的用户体验。
 
 > [!NOTE]
 > 代码我在本教程中的 m 呈现基于中提供的示例[Teemu Keiski](http://aspadvice.com/blogs/joteke/default.aspx)的博客条目[播放与 GridView 排序分组位](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx)。
 
-
 ## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>步骤 3：将分隔符行添加到 GridView 的控件层次结构
 
 由于我们只想要将分隔符行添加到 GridView 的控件层次结构，被创建并在该页面，请访问最后一次创建其控件层次结构后，我们希望执行结束时此添加的页面生命周期，但在实际的 GridView c 之前管理下层次结构已呈现为 HTML。 此时我们可以实现此目的的最新可能点是`Page`类的`Render`事件，我们可以在我们使用以下方法签名的代码隐藏类中重写：
-
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample2.cs)]
 
@@ -125,16 +113,13 @@ ms.locfileid: "59393491"
 > [!NOTE]
 > 如果你想 GridView，其中首次加载页面时按特定列进行排序，调用 GridView 的`Sort`方法上第一次的页面访问 （但不是在后续回发）。 若要完成此操作，添加此调用中的`Page_Load`事件处理程序内的`if (!Page.IsPostBack)`条件。 回头[分页和排序报表数据](paging-and-sorting-report-data-cs.md)有关的详细信息的教程信息`Sort`方法。
 
-
 假设数据已排序，我们的下一个任务是确定哪些列的数据已按排序，然后扫描查找差异 s，该列中的行值。 下面的代码可确保数据已排序和查找数据已排序所依据的列：
-
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample3.cs)]
 
 如果这个 GridView 有尚未为排序，GridView 的`SortExpression`属性将不设置。 因此，我们只想添加分隔符行，如果此属性具有某个值。 如果是这样，我们接下来需要确定的数据已排序所依据的列的索引。 这通过循环遍历 GridView s 实现`Columns`集合，它的搜索列`SortExpression`属性等于 GridView 的`SortExpression`属性。 除了列的索引中，我们还获取`HeaderText`显示分隔符行时使用的属性。
 
 对数据进行排序所依据的索引，最后一步是列的要枚举的 GridView 行。 每个行，我们需要确定是否已排序的列的值与以前的行排序的 s 列的值不同。 因此，我们需要将一个新如果`GridViewRow`在控件层次结构的实例。 这是使用以下代码来实现：
-
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample4.cs)]
 
@@ -143,33 +128,27 @@ ms.locfileid: "59393491"
 > [!NOTE]
 > 若要确定特定行排序的 s 列的值，我使用的单元格的`Text`属性。 这非常适合 BoundFields，但将不按预期方式工作的 Templatefield，CheckBoxFields，等等。 我们将介绍如何立即考虑备用 GridView 字段。
 
-
 `currentValue`和`lastValue`变量然后进行比较。 如果它们不同，我们需要将一个新的分隔符行添加到的控件层次结构。 这通过确定的索引来实现`GridViewRow`中`Table`对象 s`Rows`集合中，创建新`GridViewRow`并`TableCell`实例，并添加`TableCell`和`GridViewRow`到控件层次结构。
 
 注意分隔符行 s 单独`TableCell`的格式设置该视图所跨越整个宽度的 GridView 中，使用格式化`SortHeaderRowStyle`CSS 类，并具有其`Text`属性等，其中显示这两个组的排序名称 （如类别） 和组 s 的值 （如饮料）。 最后，`lastValue`将更新的值为`currentValue`。
 
 用于设置格式的排序的组头行的 CSS 类`SortHeaderRowStyle`需要在指定`Styles.css`文件。 可随意使用任何样式设置有吸引力;我使用了以下程序：
 
-
 [!code-css[Main](creating-a-customized-sorting-user-interface-cs/samples/sample5.css)]
 
 当前代码的排序接口添加排序组标头，通过任何 BoundField 进行排序时 （请参阅图 5 中，其中显示了屏幕截图，供应商进行排序时）。 但是，按任何其他字段类型 （如 CheckBoxField 或 TemplateField） 进行排序，排序组标头时，却找不到 （见图 6）。
-
 
 [![排序接口通过 BoundFields 进行排序时包含对组排序标头](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
 
 **图 5**:排序接口包括排序组标头时排序 BoundFields ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image13.png))
 
-
 [![排序组标头是缺少时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
 
 **图 6**:排序组标头是缺少时排序 CheckBoxField ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image16.png))
 
-
 通过 CheckBoxField 进行排序时，排序组标头会缺失的原因在于，代码当前只需使用`TableCell`s`Text`属性来确定已排序的列的每一行的值。 CheckBoxFields，对于`TableCell`s`Text`属性为空字符串; 相反，值是可通过位于内的复选框 Web 控件`TableCell`s`Controls`集合。
 
 若要处理 BoundFields 以外的字段类型，我们需要扩充代码位置`currentValue`变量赋值来检查是否存在中的复选框`TableCell`s`Controls`集合。 而不是使用`currentValue = gvr.Cells[sortColumnIndex].Text`，此代码替换为以下代码：
-
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample6.cs)]
 
@@ -177,15 +156,12 @@ ms.locfileid: "59393491"
 
 上面的代码添加，现通过停止使用 CheckBoxField 进行排序时存在排序组标头 （请参阅图 7）。
 
-
 [![排序组标头是现在存在时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
 
 **图 7**:排序组标头是现在存在时排序 CheckBoxField ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image19.png))
 
-
 > [!NOTE]
 > 如果使用的产品`NULL`数据库的值`CategoryID`， `SupplierID`，或`UnitPrice`字段，这些值将显示为 GridView 中的空字符串默认情况下，这分隔符行的文本意味着与这些产品`NULL`值将读取为类似类别: (即，有 s 类别之后没有名称： 喜欢个类别：饮料）。 如果你想在此处显示的值可以设置 BoundFields [ `NullDisplayText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)于文本要显示或分配时，可以在 Render 方法中添加一个条件语句`currentValue`为分隔符行的`Text`属性。
-
 
 ## <a name="summary"></a>总结
 

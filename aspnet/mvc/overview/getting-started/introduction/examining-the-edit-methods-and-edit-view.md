@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4a4627bdce8b8f2085150aa08cdc4c1271e09e09
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c42ec77b5d5107f3ef70e13b779fc1bebef70a14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422000"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120700"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>检查 Edit 方法和编辑视图
 
@@ -98,7 +98,6 @@ ms.locfileid: "59422000"
 ## <a name="jquery-validation-for-non-english-locales"></a>非英语区域设置的 jQuery 验证
 
 如果使用的美国英语计算机，可以跳过此部分并转到下一步的教程。 您可以下载本教程的 Globalize 版本[此处](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475)。 关于国际化的精彩两个部分教程，请参阅[Nadeem 的 ASP.NET MVC 5 国际化](http://afana.me/post/aspnet-mvc-internationalization.aspx)。
-
 
 > [!NOTE]
 > 若要支持 jQuery 验证的非英语区域设置，请使用逗号 (&quot;，&quot;) 必须包含小数点，和非美国英语日期格式， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 你可以从 NuGet 获取 jQuery 非英语验证。 （请勿安装 Globalize 如果您使用的英语区域设置。）

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: fbe618acfc70711933996f97657a4326d389b3dd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 54bfa40a7d853e29c42512ba375271587fb6f565
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59411236"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118830"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计来克服的故障 （使用 Azure 构建实际云应用）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59411236"
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
-
 
 您不必考虑任何类型的应用程序，但尤其是将其中很多人将使用它，在云中运行的生成时的项目之一是如何设计应用程序，以便它可以适当地处理故障并继续提供的价值高达可能。 只要有足够的时间，操作将会在任何环境或任何软件系统中出错。 您的应用程序如何处理这些情况下确定你的客户将获得如何不安和多长时间需要花费分析和解决问题。
 

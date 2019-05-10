@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: 2b0df3d9-450b-4ea6-b315-4c9650722cad
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 2b289099f7f9a928b2d63a09ac5ccd685d9d4386
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ed442e2bd3140264facc7644d89589dbbe8840e7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406519"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119371"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署：Web.Config 文件转换的 3 部分，共 12
 
@@ -24,7 +24,6 @@ ms.locfileid: "59406519"
 > 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的情况下使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web 包含 SQL Server Compact 数据库。 如果在安装 Web 发布更新，还可以使用 Visual Studio 2010。 该系列的简介，请参阅[系列中的第一个教程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 > 
 > 显示了 Visual Studio 2012 RC 版后引入的部署功能，演示如何部署 SQL Server Compact 以外的 SQL Server 版本并显示了如何将部署到 Azure 应用服务 Web 应用的教程，请参阅[ASP.NET Web 部署使用 Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md)。
-
 
 ## <a name="overview"></a>概述
 
@@ -95,7 +94,6 @@ Web 部署参数可用于指定必须在部署期间，包括设置中找到的�
 > [!NOTE] 
 > 
 > **安全说明**永远不会显示错误详细信息公开在生产应用程序中，或将该信息存储在公共位置。 攻击者可以使用错误的信息来发现站点中的漏洞。 如果在自己的应用程序中使用 ELMAH，务必调查中可以配置 ELMAH 以尽量降低安全风险的方式。 在本教程中的 ELMAH 示例不应视为是建议的配置。 它是为了说明如何处理应用程序必须能够创建中的文件的文件夹选择了一个示例。
-
 
 ## <a name="setting-an-environment-indicator"></a>设置环境指示器
 

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0fb0a331a2a6e2af5c5097db8b57942525d24ffc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 25767303e3a8a3bfd9fc6c7c10cda32d73e9994d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384300"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118861"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付 （使用 Azure 构建实际云应用）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384300"
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
-
 
 前两个建议的开发流程模式已[使一切自动化](automate-everything.md)并[源代码管理](source-control.md)，第三个流程模式将它们合并。 持续集成 (CI) 是指开发人员签入到源代码存储库的代码，只要自动触发生成。 持续交付 (CD) 进一步执行此步骤： 生成和自动化的单元测试是成功后，自动部署到环境可以执行更多深入测试应用程序。
 
@@ -50,7 +49,6 @@ Azure DevOps 服务提供了大量功能可帮助您进行从规划到部署的�
 - 它支持自动的负载测试。 负载测试对云应用程序至关重要，但往往会忽视直到已经太迟。 负载测试模拟由数以千计的用户，这样可以找出瓶颈并提高吞吐量的应用程序的大量使用，在发布到生产应用之前。
 - 它支持团队聊天室协作，该工具可帮助实时通信和适用于小型敏捷团队的协作。
 - 它支持敏捷项目管理。
-
 
 持续集成和交付 Azure DevOps 服务功能的详细信息，请参阅[Azure DevOps 文档](/azure/devops/index)。
 

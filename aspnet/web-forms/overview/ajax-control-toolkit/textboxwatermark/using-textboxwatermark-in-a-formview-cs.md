@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e6ee90bf-32a5-4987-a384-15cc7dd30c8a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 10c877e072d5caf23e78f49ebc71387fde20393d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80d5dcec7f211f92cd9fbf2386bb7219d13ffe19
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393608"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124595"
 ---
 # <a name="using-textboxwatermark-in-a-formview-c"></a>在 FormView 中使用 TextBoxWatermark (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393608"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark1CS.pdf)
 
 > AJAX 控件工具包中的 TextBoxWatermark 控件扩展的文本框中，使得在框中显示文本。 当用户单击到框中时，它将被清空。 如果用户离开而无需输入文本的框中，将重新出现已预先的文本。 这也是可能在 FormView 控件内。
-
 
 ## <a name="overview"></a>概述
 
@@ -47,7 +46,6 @@ ms.locfileid: "59393608"
 [!code-aspx[Main](using-textboxwatermark-in-a-formview-cs/samples/sample3.aspx)]
 
 现在用户更改到的插入模式`FormView`控制，请在文本字段的新供应商预先填充感谢到`TextBoxWatermarkExtender`控件。 在文本框内的单击一下填充符文本消失。
-
 
 [![该字段中的水印来自扩展程序](using-textboxwatermark-in-a-formview-cs/_static/image2.png)](using-textboxwatermark-in-a-formview-cs/_static/image1.png)
 

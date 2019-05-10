@@ -9,12 +9,12 @@ ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 224fa56a455affcbbdf76eceee5422850415037e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 227a48d76f099f948d89f38219e25ced026d7dcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420765"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118103"
 ---
 # <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>实现自定义 MySQL ASP.NET Identity 存储提供程序
 
@@ -31,7 +31,6 @@ ms.locfileid: "59420765"
 > - 显示如何使用我们在 MVC 应用程序项目的自定义实现替换默认 ASP.NET 标识存储实现。
 > 
 > 本教程中原本编写 Raquel Soares De Almeida 和 Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )。 示例项目已针对标识 2.0 更新通过 Suhas Joshi。 Tom FitzMacken 标识 2.0 更新主题。
-
 
 ## <a name="download-completed-project"></a>下载已完成项目
 

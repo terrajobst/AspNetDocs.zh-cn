@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
-ms.openlocfilehash: 482119a97f30e24472231897e8db31685c451a0f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5bb9ee8f758a25afa6baf3ccbaf7d5864754c7df
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400784"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113360"
 ---
 # <a name="breezeknockout-template"></a>Breeze/Knockout 模板
 
@@ -22,7 +22,6 @@ ms.locfileid: "59400784"
 > Breeze/Knockout MVC 模板是编写的 Ward Bell
 > 
 > [下载 Breeze/Knockout MVC 模板](https://go.microsoft.com/fwlink/?LinkId=282649)
-
 
 您听说过"单页面应用程序"(SPA) 并想知道它是什么。 虽然无法了解它，而不是与它自己。 但谁还有时间来下载示例？ 如果您有 Visual Studio，将包含最多的示例 SPA 和 ASP.NET mvc 4"Breeze/Knockout 单页面应用程序"模板运行在不会早于 60 秒。
 

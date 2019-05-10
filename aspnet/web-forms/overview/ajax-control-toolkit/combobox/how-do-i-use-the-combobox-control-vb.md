@@ -8,19 +8,18 @@ ms.date: 05/12/2009
 ms.assetid: e887e7b2-a6e7-4a28-a134-ba334494badb
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2e33c7cfae7eed3c0b38b66dad779ce7dcd77b54
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 468063a72253cce55a02bfaef1219bff03d06418
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399679"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119770"
 ---
 # <a name="how-do-i-use-the-combobox-control-vb"></a>如何使用组合框控件？ (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 组合框是 ASP.NET AJAX 控件，将文本框的灵活性与用户可以从中选择的选项的列表相结合。
-
 
 本教程的目的是说明 AJAX 控件工具包组合框控件。 组合框类似于标准的 ASP.NET DropDownList 控件和文本框控件之间的组合。 您可以从预先存在的项列表中选择或输入新的项目。
 
@@ -36,27 +35,21 @@ by [Microsoft](https://github.com/microsoft)
 
 接下来，将组合框控件拖到绘图页上。 在工具箱中与其他 AJAX 控件工具包控件和控件扩展程序 （请参阅图 1），可以查找组合框控件。
 
-
 [![用于创建名片的简单窗体](how-do-i-use-the-combobox-control-vb/_static/image1.jpg)](how-do-i-use-the-combobox-control-vb/_static/image1.png)
 
 **图 01**:从工具箱中选择组合框控件 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image2.png))
 
-
 我们将使用组合框控件以显示选择的静态列表。 用户可以从三个选项的列表中选择其食物的 spiciness 一个特殊级别：之后，中等，并处于热状态 （参见图 2）。
-
 
 [![从项的静态列表中选择](how-do-i-use-the-combobox-control-vb/_static/image2.jpg)](how-do-i-use-the-combobox-control-vb/_static/image3.png)
 
 **图 02**:从项的静态列表中选择 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image4.png))
 
-
 有两种方法可以将这些选项添加到组合框控件。 首先，将鼠标悬停在设计视图中的控件时选择任务编辑选项选项并打开项编辑器中 （请参见图 3）。
-
 
 [![编辑组合框项](how-do-i-use-the-combobox-control-vb/_static/image3.jpg)](how-do-i-use-the-combobox-control-vb/_static/image5.png)
 
 **图 03**:编辑组合框项 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image6.png))
-
 
 第二个选项是添加列表项之间的开始和结束&lt;asp： 组合框&gt;源视图中的标记。 在列表 1 中的页面包含更新组合框具有项的列表。
 
@@ -70,11 +63,9 @@ by [Microsoft](https://github.com/microsoft)
 
 无论是否选择预先存在的项，或输入自定义项，在提交窗体中，所选标签控件中显示时。 当您提交窗体 btnSubmit\_单击处理程序执行并更新标签 （请参阅图 4）。
 
-
 [![显示选定的项](how-do-i-use-the-combobox-control-vb/_static/image4.jpg)](how-do-i-use-the-combobox-control-vb/_static/image7.png)
 
 **图 04**:显示所选的项 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image8.png))
-
 
 组合框用于提交窗体后检索所选的项支持与 DropDownList 控件相同的属性：
 
@@ -103,16 +94,13 @@ by [Microsoft](https://github.com/microsoft)
 11. 回到**选择数据源**步骤中，选择要显示的字段的标题列和 Id 列的数据字段 （见图）。
 12. 单击确定按钮以关闭向导。
 
-
 [![选择数据源](how-do-i-use-the-combobox-control-vb/_static/image5.jpg)](how-do-i-use-the-combobox-control-vb/_static/image9.png)
 
 **图 05**:选择数据源 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image10.png))
 
-
 [![选择数据的文本和值字段](how-do-i-use-the-combobox-control-vb/_static/image6.jpg)](how-do-i-use-the-combobox-control-vb/_static/image11.png)
 
 **图 06**:选择数据的文本和值字段 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image12.png))
-
 
 完成上述步骤后，组合框绑定到表示电影的电影数据库表从 SqlDataSource 控件。 页面的源如下所示 （我清除格式设置有点） 的代码清单 2。
 
@@ -122,11 +110,9 @@ by [Microsoft](https://github.com/microsoft)
 
 请注意，ComboBox 控件包含指向 SqlDataSource 控件的 DataSourceID 属性。 当在浏览器中打开页时，请显示电影从数据库列表 （请参阅图 7）。 可以是提取电影从列表中或通过在组合框中键入电影输入新电影。
 
-
 [![显示电影列表](how-do-i-use-the-combobox-control-vb/_static/image7.jpg)](how-do-i-use-the-combobox-control-vb/_static/image13.png)
 
 **图 07**:显示电影列表 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image14.png))
-
 
 ## <a name="setting-the-dropdownstyle"></a>设置 DropDownStyle
 
@@ -149,21 +135,17 @@ DropDownList 值会导致要使用标准的 DropDownList 控件一样的组合�
 - 追加-组合框不会显示列表并将追加到键入内容 （请参阅图 9） 上的列表中的匹配项。
 - SuggestAppend 的组合框同时显示的列表，并追加到键入内容 （请参阅图 10） 上的列表中的匹配项。
 
-
 [![组合框使建议](how-do-i-use-the-combobox-control-vb/_static/image8.jpg)](how-do-i-use-the-combobox-control-vb/_static/image15.png)
 
 **图 08**:组合框使建议 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image16.png))
-
 
 [![组合框将匹配的文本追加](how-do-i-use-the-combobox-control-vb/_static/image9.jpg)](how-do-i-use-the-combobox-control-vb/_static/image17.png)
 
 **图 09**:组合框将匹配的文本追加 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image18.png))
 
-
 [![组合框会建议，并追加](how-do-i-use-the-combobox-control-vb/_static/image10.jpg)](how-do-i-use-the-combobox-control-vb/_static/image19.png)
 
 **图 10**:组合框会建议，并追加 ([单击此项可查看原尺寸图像](how-do-i-use-the-combobox-control-vb/_static/image20.png))
-
 
 ## <a name="summary"></a>总结
 

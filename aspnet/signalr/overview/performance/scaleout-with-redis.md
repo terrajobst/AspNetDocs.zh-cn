@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 78efe409ab59df17ae71c26d4e280cc9971a64d2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 58a7affa1769523955adc76455a1c33be6f49751
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393244"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114311"
 ---
 # <a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 横向扩展
 
@@ -38,7 +38,6 @@ ms.locfileid: "59393244"
 >
 > 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
-
 在本教程中，您将使用[Redis](http://redis.io/)若要部署在两个单独的 IIS 实例的 SignalR 应用程序间分发消息。
 
 Redis 是内存中键 / 值存储。 它还支持发布/订阅模型的消息传送系统。 Redis 的 SignalR 基架使用发布/订阅功能以将消息转发到其他服务器。
@@ -57,7 +56,6 @@ Redis 是内存中键 / 值存储。 它还支持发布/订阅模型的消息传
 > [!NOTE]
 >
 > 使用 Redis 的 SignalR 横向扩展不支持 Redis 群集。
-
 
 ## <a name="overview"></a>概述
 

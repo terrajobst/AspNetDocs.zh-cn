@@ -8,17 +8,16 @@ ms.date: 08/08/2011
 ms.assetid: caeb0bcb-b2e3-4c37-a1d5-420bb4e917ac
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks
 msc.type: chapter
-ms.openlocfilehash: cdd26f05aef75d1511482ae357f62258fbffce25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ccb083a3ccb3228b8efe27a34d599e118ad84dff
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422312"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121954"
 ---
 # <a name="aspnet-4---tailspin-spyworks"></a>ASP.NET 4 - Tailspin Spyworks
 
 > 如何在 ASP.NET 4 中使用新功能构建在线商店，包括购物、 签出和管理。
-
 
 - [第 1 部分：文件-> 新建项目](tailspin-spyworks-part-1.md)
 - [第 2 部分：数据访问层](tailspin-spyworks-part-2.md)

@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: dff54fcb-68b1-4488-89a2-ca97532d6a4c
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d09a38c2bea9e8beb91e322ed7e4a9d337fa0843
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 45349dd3c3063c1c6d0b5c78297df46b42fcf725
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412627"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126582"
 ---
 # <a name="creating-page-layouts-with-view-master-pages-c"></a>使用视图母版页创建页面布局 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下载 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_12_CS.pdf)
 
 > 在本教程中，您将学习如何通过利用视图母版页创建应用程序中的多个页面的常规页面布局。 可用于视图的主页面，例如，定义两列的页面布局和两列布局用于所有 web 应用程序中的页。
-
 
 ## <a name="creating-page-layouts-with-view-master-pages"></a>使用视图母版页创建页面布局
 
@@ -36,11 +35,9 @@ by [Microsoft](https://github.com/microsoft)
 
 让我们首先创建定义了两列布局视图母版页。 您将添加新视图母版页到 MVC 项目，请右键单击 views/shared 文件夹中，选择菜单选项**添加、 新建项**，然后选择**MVC 视图母版页**模板 （参见图 1）。
 
-
 [![添加视图母版页](creating-page-layouts-with-view-master-pages-cs/_static/image2.png)](creating-page-layouts-with-view-master-pages-cs/_static/image1.png)
 
 **图 01**:添加视图母版页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-cs/_static/image3.png))
-
 
 应用程序中，可以创建多个视图母版页。 每个视图母版页可以定义不同的页面布局。 例如，您可能希望某些页具有两列布局和其他页面具有三列布局。
 
@@ -54,29 +51,23 @@ by [Microsoft](https://github.com/microsoft)
 
 在列表 1 中的主页面包含两个视图的正文`<div>`对应于两个列的标记。 级联样式表的列类应用于这两`<div>`标记。 此类定义中声明顶部的主页面的样式表。 您可以预览视图母版页通过切换到设计视图中的呈现方式。 单击左下角的源代码编辑器的设计选项卡 （请参见图 2）。
 
-
 [![预览设计器中的母版页](creating-page-layouts-with-view-master-pages-cs/_static/image5.png)](creating-page-layouts-with-view-master-pages-cs/_static/image4.png)
 
 **图 02**:预览设计器中的母版页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-cs/_static/image6.png))
-
 
 ### <a name="creating-a-view-content-page"></a>创建视图内容页
 
 创建视图母版页后，您可以创建一个或多个视图基于视图母版页的内容页面。 例如，可以通过右键单击 views/home 文件夹中，创建主控制器的索引视图内容页选择**添加、 新建项**，选择**MVC 视图内容页**模板中，输入名称 Index.aspx，并单击**添加**按钮 （请参见图 3）。
 
-
 [![添加视图内容页](creating-page-layouts-with-view-master-pages-cs/_static/image8.png)](creating-page-layouts-with-view-master-pages-cs/_static/image7.png)
 
 **图 03**:添加视图内容页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-cs/_static/image9.png))
 
-
 单击添加按钮后，新会出现一个对话框，可用于选择要将视图内容页与相关联的视图主页面 （请参阅图 4）。 您可以导航到 Site.master 视图母版页，我们在上一节中创建。
-
 
 [![选择母版页](creating-page-layouts-with-view-master-pages-cs/_static/image11.png)](creating-page-layouts-with-view-master-pages-cs/_static/image10.png)
 
 **图 04**:选择母版页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-cs/_static/image12.png))
-
 
 创建新视图内容页基于 Site.master 母版页后，获取代码清单 2 中的文件。
 
@@ -100,11 +91,9 @@ by [Microsoft](https://github.com/microsoft)
 
 当请求清单 3 中的视图时，它将呈现在图 5 中的页。 请注意视图呈现的页面包含两个列。 此外，请注意，从视图内容页的内容将与来自视图母版页的内容合并
 
-
 [![索引视图内容页](creating-page-layouts-with-view-master-pages-cs/_static/image14.png)](creating-page-layouts-with-view-master-pages-cs/_static/image13.png)
 
 **图 05**:索引视图内容页 ([单击此项可查看原尺寸图像](creating-page-layouts-with-view-master-pages-cs/_static/image15.png))
-
 
 ### <a name="modifying-view-master-page-content"></a>修改查看主页面内容
 
@@ -116,9 +105,7 @@ by [Microsoft](https://github.com/microsoft)
 
 索引视图呈现给浏览器，浏览器标题栏中会显示所需的标题：
 
-
 [![浏览器标题栏](creating-page-layouts-with-view-master-pages-cs/_static/image17.png)](creating-page-layouts-with-view-master-pages-cs/_static/image16.png)
-
 
 没有母版视图页中的 title 属性，若要运行的顺序必须满足的一个重要要求。 必须包含视图母版页`<head runat="server">`而不是普通的标记`<head>`其标头标记。 如果`<head>`标记不包含 runat ="server"特性，则不会显示标题。 母版页包含所需的默认视图`<head runat="server">`标记。
 

@@ -8,15 +8,14 @@ ms.date: 01/15/2019
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: b4c6d850062e1b65eacd97ffc4f34c80fedea503
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8befe133c3627dac1f7d011959c68e2054d345da
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404307"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119657"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 中心 API 指南-JavaScript 客户端
-
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -124,7 +123,6 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 > [!NOTE]
 > 对于 Windows 8 （Windows 应用商店） JavaScript 客户端，而不是动态生成一个使用物理代理文件。 有关详细信息，请参阅[How to create for SignalR 的物理文件生成代理](#manualproxy)本主题中更高版本。
 
-
 在 ASP.NET MVC 4 或 5 Razor 视图中，使用波形符来指代将代理文件引用中的应用程序根目录：
 
 [!code-html[Main](hubs-api-guide-javascript-client/samples/sample5.html)]
@@ -193,7 +191,6 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 > [!NOTE]
 > 通常情况下注册事件处理程序之前调用`start`方法以建立连接。 如果你想要建立连接后注册一些事件处理程序，您可以这样做，但您必须注册之前，调用在事件处理程序中至少一个`start`方法。 原因之一就是在应用程序，可以有多个中心，但您可能不希望触发`OnConnected`如果仅要使用到其中的每个中心上的事件。 建立连接后，在中心的代理服务器上的客户端方法的存在是告知 SignalR 来触发`OnConnected`事件。 如果你未注册任何事件处理程序之前调用`start`方法中，你将能够在中心，但集线器上调用方法`OnConnected`不会调用方法并没有客户端的方法将调用从服务器。
 
-
 <a id="connequivalence"></a>
 
 ### <a name="connectionhub-is-the-same-object-that-hubconnection-creates"></a>$。 connection.hub 是相同对象的 $.hubConnection() 创建
@@ -251,7 +248,6 @@ JSONP 需要在客户端 （以支持旧版浏览器中的跨域请求） 上，
 > - 使用的 Internet Explorer 9 的跨域连接的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work)。
 > - 有关与 Chrome 使用跨域连接的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/15467373/signalr-1-0-1-cross-domain-request-cors-with-chrome)。
 > - 示例代码使用默认值"/ signalr"连接到 SignalR 服务的 URL。 有关如何指定不同的基 URL 的信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-/signalr URL](hubs-api-guide-server.md#signalrurl)。
-
 
 <a id="configureconnection"></a>
 

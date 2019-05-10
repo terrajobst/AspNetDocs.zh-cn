@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: bf4a1c19-0a94-4208-b268-a96ddcf26946
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: dcc2e703829cfa0b77575870feff451fd0738f56
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f8f0014776ba1313119e8c39c63a216b0fc864e7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416488"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123124"
 ---
 # <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 简介
 
@@ -24,7 +24,6 @@ ms.locfileid: "59416488"
 >
 >
 > 这是介绍 ASP.NET MVC 的基础知识初学者教程。 将创建一个简单的 web 应用程序读取和写入数据库中。 请访问[ASP.NET MVC 学习中心](../../../index.md)来查找其他 ASP.NET MVC 教程和示例。
-
 
 让我们第一个 ASP.NET MVC Web 应用程序使用[Visual Web Developer 2010 Express](https://www.microsoft.com/express/Web/)。 我们将使一些电影列表应用程序，让我们将创建并列出电影。
 

@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 2b5d2a355a27bfe9a3aa8b2fa4a2de79c7f74314
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6894d01af7cd142a5579f73ae5209ca13756ca52
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387121"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120740"
 ---
 # <a name="adding-validation"></a>添加验证
 
@@ -84,7 +84,6 @@ ASP.NET MVC 的核心设计原则之一是[DRY](http://en.wikipedia.org/wiki/Don
 > [!NOTE]
 > 若要支持 jQuery 验证的非英语区域设置，请使用逗号 （"，"） 小数点，必须包含 NuGet 全球化如前面在本教程中所述。
 
-
 请注意如何在窗体具有自动使用红色边框颜色突出显示的文本框包含无效的数据和已发出每个适当的验证错误消息。 客户端（使用 JavaScript 和 jQuery）和服务器端（若用户禁用 JavaScript）都必定会遇到这些错误。
 
 一个实际优点是不需要更改任何一行中的代码`MoviesController`类中或在*Create.cshtml*来启用此验证 UI 的视图。 在本教程前面创建的控制器和视图会自动选取验证规则，这些规则是通过在 `Movie` 模型类的属性上使用验证特性所指定的。 使用 `Edit` 操作方法测试验证后，即已应用相同的验证。
@@ -135,9 +134,7 @@ ASP.NET MVC 的核心设计原则之一是[DRY](http://en.wikipedia.org/wiki/Don
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
-
 [!code-csharp[Main](adding-validation/samples/sample8.cs)]
-
 
 `ApplyFormatInEditMode`设置指定，指定的格式设置也应该应用时的值显示在文本框中以进行编辑。 (您可能不想为某些字段 — 例如，对于货币值，您可能不希望在文本框中的货币符号以进行编辑。)
 
@@ -155,7 +152,6 @@ ASP.NET MVC 的核心设计原则之一是[DRY](http://en.wikipedia.org/wiki/Don
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
 > 将需要禁用 jQuery 日期验证才能使用[范围](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx)特性[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)。 它通常不是编译在模型中，因此，使用固定日期的好办法[范围](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx)属性和[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)不建议这样做。
-
 
 以下代码显示组合在一行上的特性：
 

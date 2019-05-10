@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 418bb07e-f369-4119-b4b0-08f890f7abb2
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c12f2a3d253df1ed9d8b25001edf13a04da26f5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bb3909bff2791c15a8737fc12cac69f79b55733f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394882"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125445"
 ---
 # <a name="authenticating-users-with-windows-authentication-c"></a>使用 Windows 身份验证对用户进行身份验证 (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何在 MVC 应用程序的上下文中使用 Windows 身份验证。 将了解如何启用应用程序的 web 配置文件中的 Windows 身份验证以及如何使用 IIS 配置身份验证。 最后，您将了解如何使用 [Authorize] 特性来限制对特定 Windows 用户或组的控制器操作的访问。
-
 
 本教程的目的是说明如何可以充分利用的安全功能内置于 Internet 信息服务为密码保护您的 MVC 应用程序中的视图。 了解如何允许控制器操作只能由特定 Windows 用户或用户特定的 Windows 组成员的调用。
 
@@ -50,7 +49,6 @@ ASP.NET Development Web Server 还支持 NTLM 身份验证。 可以通过右键
 > 
 > 有关这些不同类型的身份验证的更详细概述，请参阅[ https://msdn.microsoft.com/library/aa292114(VS.71).aspx ](https://msdn.microsoft.com/library/aa292114(VS.71).aspx)。
 
-
 可以使用 Internet 信息服务管理器以启用特定类型的身份验证。 请注意，所有类型的身份验证都并不在每个操作系统的情况下可用。 此外，如果使用 Windows Vista 使用 IIS 7.0，您需要启用不同类型的 Windows 身份验证，才会显示在 Internet 信息服务管理器中。 打开**控制面板、 程序、 程序和功能，启用 Windows 功能打开或关闭**，展开 Internet 信息服务节点 （请参见图 2）。
 
 **图 2 – 启用 Windows IIS 功能**
@@ -76,7 +74,6 @@ ASP.NET Development Web Server 还支持 NTLM 身份验证。 可以通过右键
 > [!NOTE] 
 > 
 > 由于 Windows 用户帐户控制 (UAC)，在使用 Windows Vista 或 Windows Server 2008 时，本地 Administrators 组将行为不同于其他组。 [Authorize] 属性不会正确识别本地 Administrators 组的成员，除非您修改您的计算机的 UAC 设置。
-
 
 完全时会发生什么情况尝试调用控制器操作不是正确的权限取决于启用了身份验证的类型。 默认情况下，使用 ASP.NET 开发服务器时，你只收到一个空白页。 使用提供页面**401 未授权**HTTP 响应状态。
 

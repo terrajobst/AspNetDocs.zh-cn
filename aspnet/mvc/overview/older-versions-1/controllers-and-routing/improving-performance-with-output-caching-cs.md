@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 521c9117-81cd-4d8d-9d96-0256dc7bf50f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5dd5b96d0365c55cbbfa2dfe0856beda41f915e1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 548c5bea2e9cf26e0574e72d2c0ea204dbd90f9c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384755"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123387"
 ---
 # <a name="improving-performance-with-output-caching-c"></a>通过输出缓存提升性能 (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您学习如何你可以显著提升性能的 ASP.NET MVC web 应用程序通过利用的输出缓存。 了解如何缓存，以便相同的内容不需要创建新用户调用该操作的每个时间的控制器操作返回的结果。
-
 
 本教程的目的是说明如何可以极大地改善性能 ASP.NET MVC 应用程序通过利用输出缓存。 输出缓存可以缓存由控制器操作返回的内容。 这样一来，相同的内容不需要为其生成每个调用相同的控制器操作的时间。
 
@@ -78,7 +77,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > · ServerAndClient
 
-
 默认情况下，位置属性具有值 Any。 但是，有些情况下在其中可能要缓存仅在浏览器上或只能在服务器上。 例如，如果缓存的每个用户进行个性化设置的信息然后不应缓存在服务器上的信息。 如果您要为不同的用户显示不同的信息，则应缓存仅在客户端上的信息。
 
 例如，清单 3 中的控制器将公开名为 GetName() 返回当前用户名称的操作。 如果 Jack 登录到该网站并调用 GetName() 操作然后操作返回的字符串"Hi Jack"。 如果以后，Jill 要登录到该网站并调用 GetName() 操作然后她还将获取字符串"Hi Jack"。 Jack 最初调用控制器操作后，该字符串缓存的所有用户在 web 服务器上。
@@ -134,7 +132,6 @@ Details() 操作包括具有值"Id"的 VaryByParam 属性。 如果不同的 Id 
 > none = 从不创建不同的缓存的版本
 > 
 > 以分号的参数列表 = 创建不同的缓存的版本，只要任何窗体或查询字符串参数列表中各不相同
-
 
 ## <a name="creating-a-cache-profile"></a>创建缓存配置文件
 

@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: 6ac5758b-6199-42af-adcb-21954b864951
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a7b8b85ba1cf5c18e605eb8114a305272baf41a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 22b44e9e575c9d404881a23ee735bb0c8b7109e1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404866"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123342"
 ---
 # <a name="creating-custom-routes-vb"></a>创建自定义路由 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何将自定义路由添加到 ASP.NET MVC 应用程序。 在本教程中，您将学习如何修改 Global.asax 文件中的默认路由表。
-
 
 在本教程中，您将学习如何将自定义的路由添加到 ASP.NET MVC 应用程序。 了解如何修改自定义的路由在 Global.asax 文件中的默认路由表。
 
@@ -60,11 +59,9 @@ by [Microsoft](https://github.com/microsoft)
 
 **图 1-通过转换参数错误**
 
-
 [![新建项目对话框](creating-custom-routes-vb/_static/image1.jpg)](creating-custom-routes-vb/_static/image1.png)
 
 **图 01**:通过转换参数的错误 ([单击此项可查看原尺寸图像](creating-custom-routes-vb/_static/image2.png))
-
 
 ## <a name="summary"></a>总结
 

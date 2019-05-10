@@ -9,18 +9,16 @@ ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 34a0d62d7afcaffa8fbac0bc774d9266efb6b165
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0268dfc16cd2cfb1e79ee14997a4c5eb247af950
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413043"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121565"
 ---
 # <a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 简介
 
-
 > ASP.NET 成员资格系统引入了 ASP.NET 2.0 后并且在 2005 年，则发生了很多更改 web 应用程序通常处理身份验证和授权的方式。 ASP.NET 标识是在生成适用于 web、 手机或平板电脑的现代应用程序时，成员资格系统应为新的外观。
-
 
 ## <a name="background-membership-in-aspnet"></a>背景：在 ASP.NET 中的成员身份
 
@@ -122,7 +120,6 @@ ASP.NET 标识是使用以下过程来实现的。 本文的目的是为您提�
    如果已成功创建用户，她由签名`SignInAsync`方法。  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample6.cs?highlight=12)]
-
 
    `SignInManager.SignInAsync`方法将生成[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 由于 ASP.NET 标识和 OWIN Cookie 身份验证是基于声明的系统，该框架要求应用以生成用户的 ClaimsIdentity。 ClaimsIdentity 具有的用户，如用户所属的角色的所有声明的信息。   
  

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: b8283698-7b82-42a8-8d83-3aeb18ca7fcc
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 1f2dc0fea9eeca64b9389881470353c5cca473e0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bc7bb676a71af4ec3451aa3adf3c03ce3b5200d5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396312"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114771"
 ---
 # <a name="web-deployment-in-the-enterprise"></a>企业中的 Web 部署
 
@@ -24,7 +24,6 @@ ms.locfileid: "59396312"
 > 本教程介绍如何满足大量管理企业级 web 应用程序部署到开发、 测试、 过渡和生产环境时，将会遇到的挑战。 本教程包括一个引用解决方案，以及各种概念和面向任务的内容，以获得指导您完成各种常见任务和过程。
 > 
 > 这些教程意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
-
 
 ## <a name="enterprise-deployment-challenges"></a>企业部署难题
 

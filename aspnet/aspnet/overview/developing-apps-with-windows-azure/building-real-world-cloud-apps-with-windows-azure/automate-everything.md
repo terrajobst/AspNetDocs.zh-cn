@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d27c8c1910a79cea8ccdf4231d3bc2b80a20dc68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fd78385e563b7204b29beb4180b7bc932266bdec
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418360"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119022"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有内容 （构建使用 Azure 的真实世界云应用程序）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418360"
 [下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 电子书的简介，请参阅[的第一章](introduction.md)。
-
 
 我们将介绍的前三个模式实际上适用于任何软件开发项目中，但特别是用于云项目。 此模式是有关自动执行开发任务。 它是一个重要的主题，因为手动流程速度慢而且容易出错;尽可能多的设置的快速、 可靠且灵活的工作流可能有助于以自动执行。 它是唯一重要的云开发的因为可以轻松地自动执行各种难以或无法在本地环境中自动执行的许多任务。 例如，可以设置整个测试环境包括新的 web 服务器和后端 Vm，数据库、 blob 存储 （文件存储）、 队列等。
 
@@ -58,10 +57,8 @@ ms.locfileid: "59418360"
 
 ### <a name="run-the-script"></a>运行脚本
 
-
 > [!NOTE]
 > 一章的此部分显示了脚本和输入才能运行这些命令的示例。 此演示，并不提供所有需要知道，才能运行脚本。 说明-将执行操作的 it 的分步说明，请参阅[附录：解决方法示例应用程序](the-fix-it-sample-application.md#deploybase)。
-
 
 若要运行 PowerShell 脚本，用于管理 Azure 服务，必须安装 Azure PowerShell 控制台并将其配置为使用你的 Azure 订阅。 您正在设置后，你可以使用类似此命令的命令运行的 Fix It 环境创建脚本：
 

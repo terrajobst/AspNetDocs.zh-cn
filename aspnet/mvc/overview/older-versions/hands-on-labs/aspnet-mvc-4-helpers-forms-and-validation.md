@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 187ee9cd-bc70-479b-bfed-f568b8da96eb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 639a8e0e5fd9557221c95aee1bef0294df047ae8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e2605a4188eaf814f6ab0ebfeaabed4457bcfa3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406309"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112508"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 帮助程序、窗体和验证
 
@@ -90,13 +90,12 @@ ms.locfileid: "59406309"
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**60 分钟**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Creating_the_Store_Manager_controller_and_its_Index_view"></a>
-### <a name="exercise-1-creating-the-store-manager-controller-and-its-index-view"></a>练习 1:创建存储管理器控制器和其索引视图
+### <a name="exercise-1-creating-the-store-manager-controller-and-its-index-view"></a>练习 1：创建存储管理器控制器和其索引视图
 
 在此练习中，您将学习如何创建新的控制器，以支持 CRUD 操作，自定义其 Index 操作方法，以从数据库和最后生成利用 ASP.NET MVC 基架的索引视图模板返回的唱片集列表若要显示 HTML 表中的唱片集的属性的功能。
 
@@ -177,7 +176,6 @@ ms.locfileid: "59406309"
 > [!NOTE]
 > **基架**支持在 ASP.NET MVC 中的生成一个简单的视图模板，其中列出了唱片集模型中的所有字段。 **基架**，可以快速开始对强类型化视图： 而不是无需手动编写视图模板，快速基架生成的默认模板，然后，可以修改生成的代码。
 
-
 1. 查看创建的代码。 生成的字段列表将属于以下 HTML 表**基架**使用用于显示表格数据。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
@@ -205,7 +203,7 @@ ms.locfileid: "59406309"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Adding_an_HTML_Helper"></a>
-### <a name="exercise-2-adding-an-html-helper"></a>练习 2:添加 HTML 帮助器
+### <a name="exercise-2-adding-an-html-helper"></a>练习 2：添加 HTML 帮助器
 
 StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属性都可以是足够长，以引发关闭表格的格式。 在此练习中将了解如何添加自定义的 HTML 帮助器来截断该文本。
 
@@ -224,7 +222,6 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
 
 > [!NOTE]
 > 若要详细了解**扩展方法**，请访问此 msdn 文章。 [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx)。
-
 
 1. 打开**开始**解决方案位于**源/Ex2-AddingAnHTMLHelper/开始/** 文件夹。 否则，可能会继续使用 **最终** 解决方案通过完成上一练习中获取。
 
@@ -404,7 +401,7 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Adding_a_Create_View"></a>
-### <a name="exercise-4-adding-a-create-view"></a>练习 4:添加创建视图
+### <a name="exercise-4-adding-a-create-view"></a>练习 4：添加创建视图
 
 既然**StoreManagerController**支持**编辑**功能，在此练习中将了解如何添加创建视图模板，以便存储管理器将新的唱片集添加到应用程序。
 
@@ -505,7 +502,7 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
 <a id="Exercise5"></a>
 
 <a id="Exercise_5_Handling_Deletion"></a>
-### <a name="exercise-5-handling-deletion"></a>练习 5:处理删除
+### <a name="exercise-5-handling-deletion"></a>练习 5：处理删除
 
 若要删除唱片集的功能尚未实现。 这是本练习中将对。 像之前那样将实现使用两个不同方法中的删除方案**StoreManagerController**类：
 
@@ -665,7 +662,6 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
 
 > [!NOTE]
 > 非介入式 jQuery 使用数据 ajax 前缀 JavaScript 来调用操作方法在服务器而不是干扰的方式发出的内联客户端脚本。
-
 
 <a id="Ex7Task1"></a>
 

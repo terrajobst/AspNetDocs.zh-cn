@@ -9,12 +9,12 @@ ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 2e4cd21d66e69590fb1642d7974e4b7f82cba0cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ded3a9d931cc4cd4b99c1cb5012469fe66209f76
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396416"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118028"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帐户确认和密码恢复与 ASP.NET 标识 (C#)
 
@@ -66,7 +66,6 @@ ms.locfileid: "59396416"
 ## <a name="create-an-aspnet-web-app"></a>创建 ASP.NET Web 应用
 
 首先，安装并运行[Visual Studio 2017](https://visualstudio.microsoft.com/)。
-
 
 1. 创建新的 ASP.NET Web 项目并选择 MVC 模板。 Web 窗体还支持 ASP.NET 标识，因此无法执行类似的步骤，在 web 窗体应用中。
 2. 更改到身份验证**单个用户帐户**。
@@ -153,7 +152,6 @@ OWIN`AuthenticationManager.SignIn`方法将传递在`ClaimsIdentity`并在用户
 > [!WARNING]
 > 如果在此示例中的安全设置的任何更改，生产应用程序将需要进行显式调用所做的更改的安全审核。
 
-
 ## <a name="examine-the-code-in-appstartidentityconfigcs"></a>检查应用中的代码\_Start\IdentityConfig.cs
 
 此示例演示如何创建帐户并将其添加到*管理员*角色。 你将使用管理员帐户的电子邮件中应替换示例中的电子邮件。 现在创建管理员帐户的最简单方法是以编程方式在`Seed`方法。 我们希望可以在将来将允许你创建和管理用户和角色的工具。 示例代码允许您创建和管理用户和角色，但你必须首先运行的角色和用户管理页面的管理员帐户。 在此示例中，将植入数据库时创建的管理员帐户。
@@ -184,14 +182,12 @@ OWIN`AuthenticationManager.SignIn`方法将传递在`ClaimsIdentity`并在用户
 > [!NOTE]
 > 电子邮件客户端通常只接受文本消息 (HTML)。 应提供文本和 HTML 中的消息。 在上述 SendGrid 示例中，这通过`myMessage.Text`和`myMessage.Html`如上所示的代码。
 
-
 下面的代码演示如何使用电子邮件发送[MailMessage](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx)类`message.Body`返回的链接。
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
 > [!WARNING]
 > 安全性-永远不会存储在源代码中敏感数据。 AppSetting 中存储的帐户和凭据。 在 Azure 上，您可以安全地存储这些值在 **[配置](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 门户中的选项卡。 请参阅[的密码和其他敏感数据部署到 ASP.NET 和 Azure 最佳做法](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
-
 
 输入你的 SendGrid 凭据，运行该应用，注册到的电子邮件别名可以选择确认的链接在你的电子邮件中。 若要了解如何执行此操作与你[Outlook.com](http://outlook.com)电子邮件帐户，请参阅 John 输入[ C# Outlook.Com SMTP 主机的 SMTP 配置](http://typecastexception.com/post/2013/12/20/C-SMTP-Configuration-for-OutlookCom-SMTP-Host.aspx)，并且其[ASP.NET 标识 2.0:设置帐户验证和授权的双重](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx)文章。
 

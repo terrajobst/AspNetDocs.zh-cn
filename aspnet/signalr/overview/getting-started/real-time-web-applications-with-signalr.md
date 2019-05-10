@@ -8,15 +8,14 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 9904582450d4386ef8b8656078f6d40dbd1e10be
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e39fd3f2fc9d4e791002450085215096c222fcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412003"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120005"
 ---
 # <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>动手实验：使用 SignalR 实现实时 Web 应用程序
-
 
 通过[Web 训练营团队](https://twitter.com/webcamps)
 
@@ -66,7 +65,6 @@ ms.locfileid: "59412003"
 > [!NOTE]
 > 请确保您运行安装程序之前已为此实验室的所有依赖项。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用代码片段
 
@@ -74,7 +72,6 @@ ms.locfileid: "59412003"
 
 > [!NOTE]
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
-
 
 ---
 
@@ -91,9 +88,8 @@ ms.locfileid: "59412003"
 > [!NOTE]
 > 在首次启动 Visual Studio，您必须选择一个预定义的设置集合。 每个预定义的集合旨在符合特定的开发风格，并确定窗口布局、 编辑器行为、 IntelliSense 代码段和对话框选项。 此实验中的过程描述了完成给定的任务在 Visual Studio 中使用时所需的操作**常规开发设置**集合。 如果您为您的开发环境选择不同的设置集合，可能会中应考虑到的步骤有所不同。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-real-time-data-using-signalr"></a>练习 1:使用 SignalR 的实时数据处理
+### <a name="exercise-1-working-with-real-time-data-using-signalr"></a>练习 1：使用 SignalR 的实时数据处理
 
 尽管聊天通常用作示例，您可以为一个整体很多更多的实时 Web 功能。 每当用户刷新网页可看到新数据或页面实现 Ajax 长轮询以检索新数据，可以使用 SignalR。
 
@@ -250,7 +246,7 @@ SignalR 支持**服务器推送**或**广播**功能; 它会自动处理的连�
     *刷新后答案的统计信息页*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-scaling-out-using-sql-server"></a>练习 2:向外扩展使用的 SQL Server
+### <a name="exercise-2-scaling-out-using-sql-server"></a>练习 2：向外扩展使用的 SQL Server
 
 Web 应用程序时，您通常可以之间*纵向*并*向外扩展*选项。 *纵向扩展*意味着使用更大的服务器，具有更多的资源 （CPU、 RAM、 等） 时*横向扩展*意味着添加更多服务器来处理负载。 后者的问题是，可以获取客户端路由到不同的服务器。 连接到一个服务器的客户端不会收到从另一台服务器发送的消息。
 
@@ -274,7 +270,6 @@ Web 应用程序时，您通常可以之间*纵向*并*向外扩展*选项。 *�
 > - [服务器广播](tutorial-server-broadcast-with-signalr.md)（例如，股票行情）：背板适合此方案中，因为服务器控制发送消息的速率。
 > - [客户端到客户端](tutorial-getting-started-with-signalr.md)（如聊天）：在此方案中，基架可能如果成为瓶颈的消息数会随着客户端; 的数量也就是说，如果消息的速率增长按比例更多客户端加入。
 > - [高频率实时功能](tutorial-high-frequency-realtime-with-signalr.md)（例如，实时游戏）：基架不建议用于此方案。
-
 
 在此练习中，您将使用**SQL Server**分发跨消息**极客测验**应用程序。 若要了解如何设置配置，但是，为了获取完整的效果单一测试计算机上运行这些任务，将需要 SignalR 应用程序部署到两个或多个服务器。 其中一台服务器，或单独的专用服务器上，还必须安装 SQL Server。
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 095abad4-3bfe-4f06-b092-ae6a735b7e49
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: d99fdb5382037038d4428ff1946f39aee380fb75
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a760767839a834a9c7e9fe358a3fd806a833261f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055904"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121176"
 ---
 # <a name="tutorial-get-started-with-ef-database-first-using-mvc-5"></a>教程：开始使用 EF Database First 通过 MVC 5
 
@@ -35,14 +35,11 @@ ms.locfileid: "57055904"
 
 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 
-
 ## <a name="set-up-the-database"></a>将数据库设置
 
 以模拟拥有现有的数据库的环境，你将首先使用一些预填充的数据，创建一个数据库，然后创建 web 应用程序连接到数据库。
 
-
 本教程是使用 Visual Studio 2017 使用 LocalDB 开发的。 您可以使用现有的数据库服务器，而不是 LocalDB，但具体取决于版本的 Visual Studio 和您的数据库的类型，所有 Visual Studio 中的数据工具可能不受支持。 如果这些工具不可用于你的数据库，您可能需要执行某些管理套件中的特定于数据库的步骤为你的数据库。
-
 
 如果你的 Visual Studio 版本中有数据库工具的问题，请确保已安装的数据库工具的最新版本。 有关更新或安装数据库工具的信息，请参阅[Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/hh297027)。
 

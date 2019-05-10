@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c61560e9-9f6c-4985-834a-08a3eabf9c3c
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: cbad35c9ef83b41e9d3f9a48ff37672d22338e7e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f1477ff423e4898385066a35b42503f3c70dcc68
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395220"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119464"
 ---
 # <a name="creating-and-running-a-deployment-command-file"></a>创建并运行部署命令文件
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395220"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何生成将允许您运行作为一个单步执行、 可重复的过程中使用 Microsoft Build Engine (MSBuild) 项目文件的部署的命令文件。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014;[联系人管理器](the-contact-manager-solution.md)解决方案&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -41,9 +40,7 @@ ms.locfileid: "59395220"
 
 *Publish.proj*文件使用**导入**元素导入特定于环境的项目文件。
 
-
 [!code-xml[Main](creating-and-running-a-deployment-command-file/samples/sample1.xml)]
-
 
 在这种情况下，当您使用 MSBuild.exe 生成和部署 Contact Manager 解决方案，您需要：
 
@@ -52,19 +49,14 @@ ms.locfileid: "59395220"
 
 若要执行此操作，MSBuild 命令应类似如下：
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample2.cmd)]
-
 
 在这里，它是一个简单的步骤，以将移至可重复、 单步执行部署。 您需要做是将您的 MSBuild 命令添加到.cmd 文件。 Contact Manager 解决方案，在 Publish 文件夹包含名为的文件*发布 Dev.cmd* ，正好可以实现此。
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample3.cmd)]
-
 
 > [!NOTE]
 > **/Fl**开关指示 MSBuild 创建名为的日志文件*msbuild.log*调用 MSBuild.exe 时的工作目录中。
-
 
 若要部署或重新部署 Contact Manager 解决方案，只需运行*发布 Dev.cmd*文件。 当您运行该文件时，则 MSBuild 将：
 
@@ -99,19 +91,14 @@ ms.locfileid: "59395220"
 
 创建命令文件包含 MSBuild 说明为您提供构建和部署到特定的目标环境的多项目解决方案的便捷方法。 如果需要反复将你的解决方案部署到多个目标环境，可以创建多个命令文件。 在每个命令文件中，MSBuild 命令将生成相同的通用项目文件中，但它将指定不同的特定于环境的项目文件。 例如，若要将发布到开发人员或测试环境的命令文件可能包含此 MSBuild 命令：
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample4.cmd)]
-
 
 要将发布到过渡环境的命令文件可能包含此 MSBuild 命令：
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample5.cmd)]
-
 
 > [!NOTE]
 > 有关如何自定义服务器环境的特定于环境的项目文件的指南，请参阅[为目标环境配置部署属性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
-
 
 你还可以通过重写属性或在 MSBuild 命令中设置各种其他开关来定义每个环境的生成过程。 有关详细信息，请参阅[MSBuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 

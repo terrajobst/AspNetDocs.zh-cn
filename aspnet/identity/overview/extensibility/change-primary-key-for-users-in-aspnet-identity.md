@@ -9,12 +9,12 @@ ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 212b07494381d13f6ded96a41b846dcdf7e8ff16
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 540a355819ac2b2e58d7c73284899f6ca2f684d1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393738"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118099"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>在 ASP.NET Identity 中更改用户的主键
 
@@ -29,7 +29,6 @@ ms.locfileid: "59393738"
 > 
 > - Visual Studio 2013 Update 2 （或更高版本）
 > - ASP.NET 标识 2.1 或更高版本
-
 
 若要在本教程中执行的步骤，必须具有 Visual Studio 2013 Update 2 （或更高版本），并从 ASP.NET Web 应用程序模板创建的 web 应用程序。 在 Update 3 中发生更改的模板。 本主题演示如何更改在 Update 2 和 Update 3 中的模板。
 

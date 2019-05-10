@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: ea918f62-c9d6-4a7f-9bc6-e054d3764b2c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fe19910d693a784b8dc207462591c9f4d51cec14
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00d820ff2fb0925d299bb17713435f8612e4b25a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382142"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130638"
 ---
 # <a name="determining-what-files-need-to-be-deployed-vb"></a>确定需要部署哪些文件 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59382142"
 [下载代码](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_02_VB.zip)或[下载 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial02_FilesToDeploy_vb.pdf)
 
 > 需要从开发环境部署到生产环境的文件部分取决于是否使用网站模型或 Web 应用程序模型生成 ASP.NET 应用程序。 了解有关这两个项目模型以及项目模型如何影响部署的详细信息。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -92,20 +91,16 @@ Microsoft 发布 Visual Studio 2005 Service Pack 1 时恢复 Web 应用程序项
 
 图 1 显示了书评网站的浏览器查看时的屏幕截图。 此处可以看到页面 ~ / Tech/TYASP35.aspx，该评审本书*教您自己 ASP.NET 3.5 24 小时内*。 跨越页和左侧列中的菜单的顶部痕迹导航基于站点地图结构中定义`Web.sitemap`。 在右上角中的图像是一个通讯簿封面图像位于`Images`文件夹。 网站的外观和感觉定义通过级联样式表规则的 CSS 文件中拼`Styles`文件夹，而在母版页中定义总体的页面布局`Site.master`。
 
-
 [![通讯簿评审网站提供了具有多种类型的标题上的评论](determining-what-files-need-to-be-deployed-vb/_static/image2.png)](determining-what-files-need-to-be-deployed-vb/_static/image1.png)
 
 **图 1**:通讯簿评审网站提供了具有多种类型的标题上的评论 ([单击此项可查看原尺寸图像](determining-what-files-need-to-be-deployed-vb/_static/image3.png))
-
 
 此应用程序不使用站点数据库。每个评审为单独的 web 页面在应用程序中实现。 本教程 （和下一步的多个教程） 演练部署不具有数据库的 web 应用程序。 但是，在将来的教程中我们将增强存储评审、 读者评论和其他信息在数据库中，此应用程序并将了解需要执行正确部署数据驱动的 web 应用程序的步骤。
 
 > [!NOTE]
 > 这些教程重点介绍承载 ASP.NET 应用程序与 web 宿主提供程序并不浏览等 ASP 辅助主题。NET 的站点映射系统或使用页的基类。 有关这些技术的详细信息和在本教程涉及的其他主题的更多背景，请参阅更多参考资料部分末尾的每个教程。
 
-
 本教程中的下载包含 web 应用程序的两个副本，每个实现为不同的 Visual Studio 项目类型：BookReviewsWAP、 Web 应用程序项目和 BookReviewsWSP，网站项目。 这两个项目使用 Visual Web Developer 2008 SP1 创建的并使用 ASP.NET 3.5 SP1。 若要使用这些项目，启动通过解压缩到您的桌面的内容。 若要打开 Web 应用程序项目 (BookReviewsWAP)，请导航到`BookReviewsWAP`文件夹，然后双击解决方案文件， `BookReviewsWAP.sln`。 若要打开的网站项目 (BookReviewsWSP)，启动 Visual Studio，然后，从文件菜单中，选择打开网站选项，浏览到`BookReviewsWSP`文件夹在桌面上，单击确定。
-
 
 在此教程查看哪些文件中的其余两个部分将需要部署该应用程序时将复制到生产环境。 接下来两个教程- [*部署您的站点使用 FTP* ](deploying-your-site-using-an-ftp-client-vb.md)并[*部署您站点使用的 Visual Studio* ](deploying-your-site-using-visual-studio-vb.md) -显示不同的方式将这些文件复制到 web 宿主提供程序。
 
@@ -115,15 +110,12 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 
 图 2 显示了构成了通讯簿评审 Web 应用程序项目的文件。
 
-
 [![在解决方案资源管理器列出了构成 Web 应用程序项目的文件。](determining-what-files-need-to-be-deployed-vb/_static/image5.png)](determining-what-files-need-to-be-deployed-vb/_static/image4.png)
 
 **图 2**:在解决方案资源管理器列出了构成 Web 应用程序项目的文件
 
-
 > [!NOTE]
 > 如图 2 所示，ASP.NET 页的代码隐藏文件不显示在解决方案资源管理器中为 Visual Basic Web 应用程序项目。 若要查看的页面的代码隐藏类，用鼠标右键单击解决方案资源管理器中的页上，并选择查看代码。
-
 
 若要部署 ASP.NET 应用程序使用开发 Web 应用程序项目模型开始通过构建应用程序，以便显式编译为程序集的最新的源代码。 接下来，将以下文件复制到生产环境：
 
@@ -135,7 +127,6 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 > [!NOTE]
 > 如图 2 所示，`BasePage`类实现为类文件在项目中，在名为的文件夹中放置`HelperClasses`。 当编译项目中的代码`BasePage.vb`文件以及 ASP.NET 页的代码隐藏类编译到单个程序集， `BookReviewsWAP.dll`。 ASP.NET 具有一个名为的特殊文件夹`App_Code`，专门用于存储网站项目的类文件。 中的代码`App_Code`文件夹自动编译并因此不应使用与 Web 应用程序项目。 相反，应将应用程序的类文件放在名为的普通文件夹`HelperClasses`，或`Classes`，或类似。 或者，可以将类文件放在单独的类库项目。
 
-
 除了复制与 ASP.NET 相关的标记文件和中的程序集`Bin`文件夹中，您还需要将客户端的支持文件的图像和 CSS 文件的复制的其他服务器端的支持文件，以及`Web.config`和`Web.sitemap`。 这些客户端和服务器端需要支持文件复制到生产环境，而不管您使用显式或自动编译。
 
 ## <a name="determining-the-files-to-deploy-for-the-web-site-project-files"></a>确定要部署的 Web 站点项目文件的文件
@@ -146,11 +137,9 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 
 图 3 显示了构成了通讯簿评审网站项目的文件。
 
-
 [![在解决方案资源管理器列出了构成网站项目的文件。](determining-what-files-need-to-be-deployed-vb/_static/image7.png)](determining-what-files-need-to-be-deployed-vb/_static/image6.png)
 
 **图 3**:在解决方案资源管理器列出了构成网站项目的文件
-
 
 部署网站项目涉及将所有与 ASP.NET 相关的文件复制到生产环境-包含 ASP.NET 页、 母版页和用户控件的标记页及其代码文件。 此外需要将复制任何类文件，例如`BasePage.vb`。 请注意，`BasePage.vb`文件位于`App_Code`文件夹中，这是一个类文件在网站项目中使用的特殊 ASP.NET 文件夹。 特殊文件夹需要在生产环境，以及创建中的类文件作为`App_Code`开发环境上的文件夹必须复制到`App_Code`生产上的文件夹。
 
@@ -158,7 +147,6 @@ Web 应用程序项目模型使用显式编译-项目的源代码编译到单个
 
 > [!NOTE]
 > 网站项目还可以使用显式编译。 以后的教程将探讨如何显式编译的网站项目。
-
 
 ## <a name="summary"></a>总结
 

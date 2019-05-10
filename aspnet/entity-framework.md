@@ -8,23 +8,21 @@ ms.author: riande
 ms.date: 03/12/2010
 msc.legacyurl: /entity-framework
 msc.type: content
-ms.openlocfilehash: 26862565b23f60baf3698c0c6d63c7daa147abe0
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: c6fe7605a7386621bd4a962b3c3b011fb80b11c8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905652"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118253"
 ---
 # <a name="entity-framework"></a>Entity Framework
 
 实体框架 (EF) 是一种对象关系映射程序支持.NET 开发人员可以使用关系数据使用特定于域的对象。 它不要求提供开发人员通常需要编写的大部分数据访问代码。
 
-
 - [明白了吧：](https://msdn.com/data/ee712906)添加到你的项目并开始充分利用此强大 O/rm。
 - [开始使用：](https://msdn.com/data/ee712907)请访问视频和教程，可帮助您充分利用你的数据的指南。
 - [获取帮助：](https://msdn.com/data/hh913619)了解如何获取专家的帮助和 Stack Overflow 上的数据社区参与。
 - [参与：](https://github.com/aspnet/EntityFramework6)了解如何有助于使实体框架中，一个开放式开发模型，甚至更好地通过访问 GitHub 站点。
-
 
 使用实体框架和 ASP.NET
 

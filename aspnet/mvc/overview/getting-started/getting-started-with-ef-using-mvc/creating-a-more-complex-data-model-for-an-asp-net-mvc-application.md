@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5deab7da776c3c43e3e2cdf42b04922678f956c7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5c27f6fe07856db2b2961abc8fa797343d361d97
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041854"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120939"
 ---
 # <a name="tutorial-create-a-more-complex-data-model-for-an-aspnet-mvc-app"></a>教程：创建 ASP.NET MVC 应用的更复杂数据模型
 
@@ -61,9 +61,7 @@ ms.locfileid: "57041854"
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
-
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample2.cs)]
-
 
 `ApplyFormatInEditMode`设置指定，指定的格式设置也应该应用时的值显示在文本框中以进行编辑。 (您可能不想为某些字段 — 例如，对于货币值，您可能不希望在文本框中的货币符号以进行编辑。)
 
@@ -105,7 +103,7 @@ ms.locfileid: "57041854"
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample4.cmd)]
 
-`add-migration`命令创建名为的文件*&lt;时间戳&gt;\_MaxLengthOnNames.cs*。 此文件包含 `Up` 方法中的代码，该代码将更新数据库以匹配当前数据模型。 `update-database` 命令运行该代码。
+`add-migration`命令创建名为的文件 *&lt;时间戳&gt;\_MaxLengthOnNames.cs* 。 此文件包含 `Up` 方法中的代码，该代码将更新数据库以匹配当前数据模型。 `update-database` 命令运行该代码。
 
 Entity Framework 使用迁移文件名前面预置的时间戳进行排序的迁移。 您可以创建多个迁移，然后再运行`update-database`命令和所有迁移都应用中已创建的顺序。
 

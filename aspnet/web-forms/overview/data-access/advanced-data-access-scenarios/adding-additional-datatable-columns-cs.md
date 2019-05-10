@@ -8,12 +8,12 @@ ms.date: 07/18/2007
 ms.assetid: 615f3361-f21f-4338-8bc1-fce8ae071de9
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1e1751c6969f1a278ee438c3bee6171644aacdbf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 931a918d51c1accec1757a9370c8e611a9a038ec
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406179"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124437"
 ---
 # <a name="adding-additional-datatable-columns-c"></a>添加其他 DataTable 列 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59406179"
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_70_CS.zip)或[下载 PDF](adding-additional-datatable-columns-cs/_static/datatutorial70cs1.pdf)
 
 > 使用 TableAdapter 向导时创建的类型化数据集，相应的数据表中的主数据库查询返回的列。 但有时 DataTable 需要包含额外的列。 在本教程中我们了解为什么存储的过程时，建议使用我们需要其他 DataTable 列。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -48,19 +47,15 @@ ms.locfileid: "59406179"
 
 打开`NorthwindWithSprocs`数据集，然后右键单击`ProductsDataTable`。 从上下文菜单中选择添加，然后选择列。
 
-
 [![将新列添加到 ProductsDataTable](adding-additional-datatable-columns-cs/_static/image2.png)](adding-additional-datatable-columns-cs/_static/image1.png)
 
 **图 1**:添加到一个新列`ProductsDataTable`([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image3.png))
 
-
 这会将新列添加到名为的类型的 Column1 的 DataTable `System.String`。 我们需要更新到 PriceQuartile 和其类型设置为此列的名称`System.Int32`因为它将用于保存介于 1 和 4 之间的数字。 选择中的新添加列`ProductsDataTable`并从属性窗口中，设置`Name`属性设置为 PriceQuartile 和`DataType`属性设置为`System.Int32`。
-
 
 [![设置新 s 列名和数据类型属性](adding-additional-datatable-columns-cs/_static/image5.png)](adding-additional-datatable-columns-cs/_static/image4.png)
 
 **图 2**:设置新列 s`Name`并`DataType`属性 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image6.png))
-
 
 如图 2 所示，提供了可以设置，例如是否列中的值必须是唯一的如果列是自动递增列的其他属性，该值指示是否确保数据库`NULL`值允许，依次类推。 将这些值设置为其默认值。
 
@@ -68,22 +63,17 @@ ms.locfileid: "59406179"
 
 既然`ProductsDataTable`已更新以包括`PriceQuartile`列中，我们已准备好创建`GetProductsWithPriceQuartile`方法。 启动 TableAdapter 上右键单击并从上下文菜单中选择添加查询。 这将打开 TableAdapter 查询配置向导中，首先让我们是否我们要使用的临时 SQL 语句或新的或现有的存储的过程。 由于我们不尚未有一个存储的过程返回价格四分位数数据，让我们来允许 TableAdapter 来为我们创建此存储的过程。 选择创建新存储的过程选项，然后单击下一步。
 
-
 [![指示 TableAdapter 向导为我们创建的存储的过程](adding-additional-datatable-columns-cs/_static/image8.png)](adding-additional-datatable-columns-cs/_static/image7.png)
 
 **图 3**:指示 TableAdapter 向导以创建存储过程为我们 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-cs/_static/image9.png))
 
-
 在后续屏幕中，图 4 所示向导将询问我们要添加查询的类型。 由于`GetProductsWithPriceQuartile`方法将返回所有列和记录从`Products`表中，选择它将返回行选项，然后单击下一步。
-
 
 [![我们的查询将 SELECT 语句，返回多个行](adding-additional-datatable-columns-cs/_static/image11.png)](adding-additional-datatable-columns-cs/_static/image10.png)
 
 **图 4**:我们的查询将是`SELECT`语句，返回多个行 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image12.png))
 
-
 接下来我们将提示您输入`SELECT`查询。 向导中输入以下查询：
-
 
 [!code-sql[Main](adding-additional-datatable-columns-cs/samples/sample1.sql)]
 
@@ -94,41 +84,32 @@ ms.locfileid: "59406179"
 > [!NOTE]
 > 有关详细信息 NTILE 和 SQL Server 2005 s 其他排名函数，请参阅[返回包含 Microsoft SQL Server 2005 的排名结果](http://www.4guysfromrolla.com/webtech/010406-1.shtml)并[排名函数部分](https://msdn.microsoft.com/library/ms189798.aspx)从[SQLServer 2005 联机丛书](https://msdn.microsoft.com/library/ms189798.aspx)。
 
-
 输入后`SELECT`查询并单击下一步，向导将询问我们提供，它将创建该存储过程的名称。 命名新的存储的过程`Products_SelectWithPriceQuartile`单击下一步。
-
 
 [![命名存储的过程 Products_SelectWithPriceQuartile](adding-additional-datatable-columns-cs/_static/image14.png)](adding-additional-datatable-columns-cs/_static/image13.png)
 
 **图 5**:命名存储过程`Products_SelectWithPriceQuartile`([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image15.png))
 
-
 最后，我们会提示命名 TableAdapter 方法。 退出这两种填充 DataTable，并返回 DataTable 复选框选中和名称方法`FillWithPriceQuartile`和`GetProductsWithPriceQuartile`。
-
 
 [![名称的 TableAdapter s 方法，然后单击完成](adding-additional-datatable-columns-cs/_static/image17.png)](adding-additional-datatable-columns-cs/_static/image16.png)
 
 **图 6**:命名 TableAdapter 的方法并单击完成 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-cs/_static/image18.png))
 
-
 使用`SELECT`指定查询和存储的过程和 TableAdapter 方法命名，单击完成以完成向导。 此时可能会收到一条警告，或指示该向导中的两个`OVER`不支持 SQL 构造或语句。 可以忽略这些警告。
 
 完成向导后，应包括 TableAdapter`FillWithPriceQuartile`并`GetProductsWithPriceQuartile`方法和数据库应包含一个名为的存储的过程`Products_SelectWithPriceQuartile`。 请花费片刻时间来验证 TableAdapter，确实包含这一新方法和存储的过程已正常添加到数据库。 当检查数据库，如果您看不到存储的过程尝试右键单击存储过程文件夹并选择刷新。
-
 
 ![验证已向 TableAdapter 添加新方法](adding-additional-datatable-columns-cs/_static/image19.png)
 
 **图 7**:验证已向 TableAdapter 添加新方法
 
-
 [![请确保该数据库包含 Products_SelectWithPriceQuartile 存储过程](adding-additional-datatable-columns-cs/_static/image21.png)](adding-additional-datatable-columns-cs/_static/image20.png)
 
 **图 8**:确保数据库包含`Products_SelectWithPriceQuartile`存储过程 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image22.png))
 
-
 > [!NOTE]
 > 而不临时 SQL 语句中使用存储的过程的好处之一是，重新运行 TableAdapter 配置向导将不会修改存储的过程列列表。 通过右键单击 TableAdapter 上，从上下文菜单以启动向导，选择配置选项，然后单击完成以完成它对此进行验证。 接下来，请转到该数据库并查看`Products_SelectWithPriceQuartile`存储过程。 请注意尚未修改为其列列表。 以前我们一直在使用临时 SQL 语句，重新运行 TableAdapter 配置向导将恢复此查询的列列表，以与主查询列列表，从而删除 NTILE 语句中使用的查询匹配`GetProductsWithPriceQuartile`方法。
-
 
 当数据访问层 s`GetProductsWithPriceQuartile`调用方法，将执行 TableAdapter`Products_SelectWithPriceQuartile`存储过程，并将行添加到`ProductsDataTable`为每个返回的记录。 存储过程返回的数据字段映射到`ProductsDataTable`的列。 由于没有`PriceQuartile`数据字段从存储过程，返回其值分配给`ProductsDataTable`s`PriceQuartile`列。
 
@@ -140,7 +121,6 @@ ms.locfileid: "59406179"
 
 我们使用新之前`GetProductsWithPriceQuartile`方法从表示层中，我们首先应添加相应的方法向 BLL。 打开`ProductsBLLWithSprocs`类文件，并添加以下代码：
 
-
 [!code-csharp[Main](adding-additional-datatable-columns-cs/samples/sample2.cs)]
 
 与中的其他数据检索方法类似`ProductsBLLWithSprocs`，则`GetProductsWithPriceQuartile`方法只是调用 DAL s 对应`GetProductsWithPriceQuartile`方法，并返回其结果。
@@ -149,16 +129,13 @@ ms.locfileid: "59406179"
 
 BLL 加准备就绪后，若要创建显示每个产品的价格四分位数的 ASP.NET 页完成我们。 打开`AddingColumns.aspx`页中`AdvancedDAL`文件夹，然后拖动 GridView 从工具箱拖到设计器中，设置其`ID`属性设置为`Products`。 从 GridView s 智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置要使用 ObjectDataSource`ProductsBLLWithSprocs`类的`GetProductsWithPriceQuartile`方法。 因为这将是只读的网格，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
 
-
 [![配置对象数据源以使用 ProductsBLLWithSprocs 类](adding-additional-datatable-columns-cs/_static/image24.png)](adding-additional-datatable-columns-cs/_static/image23.png)
 
 **图 9**:配置为使用 ObjectDataSource`ProductsBLLWithSprocs`类 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image25.png))
 
-
 [![GetProductsWithPriceQuartile 方法中检索产品信息](adding-additional-datatable-columns-cs/_static/image27.png)](adding-additional-datatable-columns-cs/_static/image26.png)
 
 **图 10**:检索产品信息从`GetProductsWithPriceQuartile`方法 ([单击以查看实际尺寸的图像](adding-additional-datatable-columns-cs/_static/image28.png))
-
 
 完成配置数据源向导后，Visual Studio 将自动添加 BoundField 或 CheckBoxField 到 GridView 为每个方法返回的数据字段。 其中一个数据字段是`PriceQuartile`，这是我们添加到列`ProductsDataTable`在步骤 1 中。
 
@@ -166,25 +143,20 @@ BLL 加准备就绪后，若要创建显示每个产品的价格四分位数的 
 
 这些修改后的 GridView 和 ObjectDataSource s 声明性标记应如下所示：
 
-
 [!code-aspx[Main](adding-additional-datatable-columns-cs/samples/sample3.aspx)]
 
 图 11 显示了当通过浏览器访问此页。 请注意，最初，产品进行排序以降序与分配相应的每个产品及其价格`PriceQuartile`值。 当然此数据可以进行排序的其他条件与价格四分位数列仍专用于反映将与价格相关产品的排名的值 （请参阅图 12）。
-
 
 [![通过其价格订购的产品](adding-additional-datatable-columns-cs/_static/image30.png)](adding-additional-datatable-columns-cs/_static/image29.png)
 
 **图 11**:产品及其价格按排序 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-cs/_static/image31.png))
 
-
 [![产品按其名称进行排序](adding-additional-datatable-columns-cs/_static/image33.png)](adding-additional-datatable-columns-cs/_static/image32.png)
 
 **图 12**:产品按其名称进行排序 ([单击此项可查看原尺寸图像](adding-additional-datatable-columns-cs/_static/image34.png))
 
-
 > [!NOTE]
 > 少量的代码行我们无法提供了 GridView，以便着色产品列基于其`PriceQuartile`值。 我们可能会在第一个四分位数浅绿色，第二个四分位数淡黄色中的这些产品的颜色等。 建议您花点时间来添加此功能。 如果您需要在格式设置 GridView 刷新程序，请查阅[自定义格式设置基于数据的](../custom-formatting/custom-formatting-based-upon-data-cs.md)教程。
-
 
 ## <a name="an-alternative-approach---creating-another-tableadapter"></a>一种替代方法-创建另一个 TableAdapter
 

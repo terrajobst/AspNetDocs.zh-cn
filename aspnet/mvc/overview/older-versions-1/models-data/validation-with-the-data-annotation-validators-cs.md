@@ -8,12 +8,12 @@ ms.date: 05/29/2009
 ms.assetid: 7ca8013e-9dfc-4e33-8336-cdccfd5f9414
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 300fc9f7e82fe8201b083de9e740e1620f5d09b9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e154384c08adf0c14920afff85e983a67b41707c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411808"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122290"
 ---
 # <a name="validation-with-the-data-annotation-validators-c"></a>使用数据注释验证程序进行验证 (C#)
 
@@ -21,14 +21,11 @@ by [Microsoft](https://github.com/microsoft)
 
 > 充分利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序属性和 Microsoft 实体框架中处理它们。
 
-
 在本教程中，您将学习如何使用数据批注验证程序在 ASP.NET MVC 应用程序中执行验证。 使用数据批注验证程序的优点是它们使您能够执行验证，只需通过添加一个或多个属性 – 例如，Required 或 StringLength 属性 – 目标设定为类属性。
 
 可以使用数据批注验证程序之前，必须下载数据批注模型联编程序。 可以通过单击从 CodePlex 网站下载数据批注模型绑定器示例[此处](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24471)。
 
-
 请务必了解数据批注模型联编程序不是 Microsoft ASP.NET MVC 框架的正式组成部分。 尽管数据批注模型联编程序由 Microsoft ASP.NET MVC 团队创建的但 Microsoft 不提供对数据批注模型联编程序的官方产品支持所述和本教程中使用。
-
 
 ## <a name="using-the-data-annotation-model-binder"></a>使用数据批注模型联编程序
 
@@ -40,9 +37,7 @@ by [Microsoft](https://github.com/microsoft)
 
 选择 Microsoft.Web.Mvc.DataAnnotations.dll 程序集和 System.ComponentModel.DataAnnotations.dll 程序集，然后单击**确定**按钮。
 
-
 不能使用与数据批注模型联编程序的.NET Framework Service Pack 1 中包含的 System.ComponentModel.DataAnnotations.dll 程序集。 您必须使用数据批注模型绑定器示例下载中包含的 System.ComponentModel.DataAnnotations.dll 程序集的版本。
-
 
 最后，您需要在 Global.asax 文件中注册 DataAnnotations 模型联编程序。 将以下代码行添加到应用程序\_start （） 事件处理程序，以便应用程序\_start （） 方法如下所示：
 
@@ -64,7 +59,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 如果验证需求不满足任何标准的验证程序然后始终必须通过从基本的验证特性继承新的验证程序属性创建自定义验证程序属性的选项。
 
-
 中的产品类**清单 1**演示了如何使用这些验证程序属性。 名称、 说明和 UnitPrice 属性标记所需的方式。 名称属性必须是少于 10 个字符的字符串长度。 最后，UnitPrice 属性必须与表示货币金额的正则表达式模式匹配。
 
 [!code-csharp[Main](validation-with-the-data-annotation-validators-cs/samples/sample2.cs)]
@@ -76,7 +70,6 @@ Product 类说明了如何使用一个附加属性： DisplayName 属性。 Disp
 > [!NOTE] 
 > 
 > 如果你想要完全自定义验证程序显示的错误消息然后可以将此类验证程序的 ErrorMessage 属性分配自定义错误消息： `<Required(ErrorMessage:="This field needs a value!")>`
-
 
 可以使用中的产品类**清单 1** create （） 控制器操作中使用**代码清单 2**。 模型状态包含的任何错误时，此控制器操作重新显示创建视图。
 
@@ -97,7 +90,6 @@ Product 类说明了如何使用一个附加属性： DisplayName 属性。 Disp
 > [!NOTE] 
 > 
 > 从生成的创建表单中删除 Id 字段**添加视图**菜单选项。 Id 字段对应于一个标识列，因为您不想允许用户输入此字段的值。
-
 
 如果提交的窗体创建产品，并且不执行操作的必填字段，输入值则中的验证错误消息**图 3**显示。
 
@@ -138,7 +130,6 @@ Product 类说明了如何使用一个附加属性： DisplayName 属性。 Disp
 > [!NOTE] 
 > 
 > 请注意，不需要 MovieMetaData 类中的代理属性来表示相同的 Movie 类中的相应属性类型。 例如，主管属性是 Movie 类中的字符串属性和 MovieMetaData 类中的对象属性。
-
 
 中的页**图 6**说明了电影属性的输入无效值时返回的错误消息。
 

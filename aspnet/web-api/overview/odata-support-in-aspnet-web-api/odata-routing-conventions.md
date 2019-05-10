@@ -9,19 +9,18 @@ ms.custom: seoapril2019
 ms.assetid: adbc175a-14eb-4ab2-a441-d056ffa8266f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
-ms.openlocfilehash: 8916f8b7a024636be1be055457081487f46a7936
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 63df4a82cd8df92631485b2544117844cfd0ca56
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421623"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130473"
 ---
 # <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由约定 Odata
 
 通过[Mike Wasson](https://github.com/MikeWasson)
 
 > 本文介绍的路由约定中的 OData 终结点的 ASP.NET 4.x 使用该 Web API 2。
-
 
 当 Web API 获取 OData 请求时，但它会将请求映射到控制器名称和操作名称。 映射为基础的 HTTP 方法和 URI。 例如，`GET /odata/Products(1)`映射到`ProductsController.GetProduct`。
 
@@ -53,7 +52,6 @@ ms.locfileid: "59421623"
 
 > [!NOTE]
 > OData 路径段不始终对应于 URI 段。 例如，"1"被视为一个路径段。
-
 
 **控制器名称。** 控制器名称始终被派生自的实体集的资源路径根目录。 例如，如果资源路径是`/Products(1)/Supplier`，Web API 将查找名为的控制器`ProductsController`。
 

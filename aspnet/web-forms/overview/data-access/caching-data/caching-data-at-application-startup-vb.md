@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 84afe4ac-cc53-4f2e-a867-27eaf692c2df
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 58c4654691084b9574283c03c77398cb43f6751a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6c07b565329ab17496d2436f4c35bc4507694ed8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393465"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119661"
 ---
 # <a name="caching-data-at-application-startup-vb"></a>在应用程序启动时缓存数据 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393465"
 [下载 PDF](caching-data-at-application-startup-vb/_static/datatutorial60vb1.pdf)
 
 > 在任何 Web 应用程序中的某些数据将频繁使用，将不常使用的某些数据。 我们可以通过预先加载常用数据，称为的技术改进我们的 ASP.NET 应用程序的性能。 本教程演示了主动加载，这是将数据加载到应用程序启动时缓存的一种方法。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -35,18 +34,15 @@ ms.locfileid: "59393465"
 > [!NOTE]
 > 有关主动和被动加载的优点、 缺点和实现的建议列表之间的差异的深入信息，请参阅[管理缓存的内容](https://msdn.microsoft.com/library/ms978503.aspx)一部分[缓存的.NET Framework 应用程序的体系结构指南](https://msdn.microsoft.com/library/ms978498.aspx)。
 
-
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>步骤 1：确定在应用程序启动时缓存数据
 
 使用被动加载缓存示例中，我们探讨在以前的两个教程工作良好的数据可能会定期更改，而不使用 exorbitantly 长生成。 但是，如果缓存的数据永远不会更改，过期日期由反应加载多余。 同样，如果要缓存的数据采用非常长的时间才能生成，则检索这些用户的请求查找必须经受基础数据时耗时较长等待缓存为空。 请考虑缓存静态数据和所用的特别长时间来在应用程序启动时生成的数据。
 
 当数据库都有很多动态时，频繁地更改值，但大多数还有大量的静态数据。 例如，几乎所有数据模型都具有包含特定值从一组固定的选项的一个或多个列。 一个`Patients`数据库表可能具有`PrimaryLanguage`列，其组的值可能是英语、 西班牙语、 法语、 俄语、 日语和等等。 通常，使用实现这些类型的列*查找表*。 而不是存储英语或法语中的字符串`Patients`表中，第二个表将创建一个常见的是，带有两个列中的唯一标识符和字符串说明-与每个可能值的记录。 `PrimaryLanguage`中的列`Patients`表查找表中存储的相应的唯一标识符。 在图 1 中，患者 John Doe s 主要语言是英语，而 Ed Johnson s 是俄语。
 
-
 ![语言表是通过患者表使用查找表](caching-data-at-application-startup-vb/_static/image1.png)
 
 **图 1**:`Languages`表是通过使用查找表`Patients`表
-
 
 编辑或创建新的患者的用户界面将包括允许语言中的记录所填充的下拉列表`Languages`表。 不使用缓存功能，此接口是每次访问系统必须查询`Languages`表。 如果这是浪费和不必要由于查找表值极少更改过。
 
@@ -60,13 +56,11 @@ ms.locfileid: "59393465"
 
 在使用一个类，通常类必须首先实例化之前可以访问其成员。 例如，为了调用一种方法从我们的业务逻辑层中的类之一，我们必须首先创建类的实例：
 
-
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample1.vb)]
 
 我们可以调用之前*SomeMethod*或使用*SomeProperty*，我们必须先创建的类实例`New`关键字。 *SomeMethod*并*SomeProperty*与特定实例相关联。 这些成员的生存期取决于其关联的对象的生存期。 *静态成员*，但是，将变量、 属性和方法之间共享*所有*类的实例，因此，具有长达类的生存期。 静态成员表示由关键字`Shared`。
 
 除了静态成员，可以使用应用程序状态缓存数据。 每个 ASP.NET 应用程序维护名称/值集合的所有用户和应用程序的页面之间共享该 s。 可以使用访问此集合[`HttpContext`类](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)s [ `Application`属性](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx)，并从一种 ASP.NET 页的代码隐藏类如下所示：
-
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample2.vb)]
 
@@ -78,14 +72,11 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 若要开始，创建一个名为的新类`StaticCache.cs`在`CL`文件夹。
 
-
 ![CL 文件夹中创建 StaticCache.vb 类](caching-data-at-application-startup-vb/_static/image2.png)
 
 **图 2**:创建`StaticCache.vb`类中`CL`文件夹
 
-
 我们需要添加一个方法，在启动时将数据加载到合适的缓存存储区，以及从此缓存中返回数据的方法。
-
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample3.vb)]
 
@@ -93,13 +84,11 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 而不是作为缓存存储区中使用的静态成员变量，我们也可以或者使用应用程序状态或数据缓存。 下面的代码显示了进行重组以使用应用程序状态的类：
 
-
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample4.vb)]
 
 在中`LoadStaticCache()`，供应商信息存储到程序变量*密钥*。 它返回为相应的类型 (`Northwind.SuppliersDataTable`) 从`GetSuppliers()`。 虽然可以使用的 ASP.NET 页的代码隐藏类中访问应用程序状态`Application("key")`，在我们必须使用的体系结构`HttpContext.Current.Application("key")`以获取当前`HttpContext`。
 
 同样，数据缓存可以用作缓存存储区中，如以下代码所示：
-
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample5.vb)]
 
@@ -107,7 +96,6 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 > [!NOTE]
 > 此教程的下载实现`StaticCache`类使用静态成员变量方法。 应用程序状态和数据缓存技术的代码位于类文件中的注释。
-
 
 ## <a name="step-4-executing-code-at-application-startup"></a>步骤 4：在应用程序启动时执行代码
 
@@ -118,11 +106,9 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 > [!NOTE]
 > 如果已有`Global.asax`文件在项目中，不会在添加新项对话框中列出项类型在全局应用程序类。
 
-
 [![Global.asax 文件添加到 Web 应用程序的根目录](caching-data-at-application-startup-vb/_static/image4.png)](caching-data-at-application-startup-vb/_static/image3.png)
 
 **图 3**:添加`Global.asax`s 的 Web 应用程序根目录的文件 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-vb/_static/image5.png))
-
 
 默认值`Global.asax`文件模板包括在服务器端中的五种方法`<script>`标记：
 
@@ -136,20 +122,16 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 这些教程中我们只需将代码添加到`Application_Start`方法，因此，可随时删除。 在中`Application_Start`，只需调用`StaticCache`类的`LoadStaticCache()`方法，它将加载并缓存供应商信息：
 
-
 [!code-aspx[Main](caching-data-at-application-startup-vb/samples/sample6.aspx)]
 
 该 s 都在这里就简单 ！ 在应用程序启动时，`LoadStaticCache()`方法将获取从 BLL，供应商信息，并将其存储在静态成员变量 (或任何缓存存储您最终会在中使用`StaticCache`类)。 若要验证此行为中, 设置断点`Application_Start`方法并运行应用程序。 请注意应用程序启动时命中断点。 后续请求中，但是，不会导致`Application_Start`要执行的方法。
-
 
 [![使用验证 Application_Start 事件处理程序正在执行的断点](caching-data-at-application-startup-vb/_static/image7.png)](caching-data-at-application-startup-vb/_static/image6.png)
 
 **图 4**:使用验证断点的`Application_Start`事件处理程序是正在执行 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-vb/_static/image8.png))
 
-
 > [!NOTE]
 > 如果未达到`Application_Start`断点在首次开始调试时，这是因为你的应用程序已启动。 强制应用程序通过修改重启你`Global.asax`或`Web.config`文件，然后重试。 您可以只需添加 （或删除） 末尾的这些文件，以便快速重新启动该应用程序的一个空白行。
-
 
 ## <a name="step-5-displaying-the-cached-data"></a>步骤 5：显示缓存的数据
 
@@ -157,29 +139,23 @@ Northwind 数据库表我们已实施方法与日期不包括任何传统的查�
 
 首先打开`AtApplicationStartup.aspx`页中`Caching`文件夹。 将 GridView 从工具箱拖到设计器中，设置其`ID`属性设置为`Suppliers`。 接下来，从 GridView s 智能标记选择创建名为新 ObjectDataSource `SuppliersCachedDataSource`。 配置要使用 ObjectDataSource`StaticCache`类的`GetSuppliers()`方法。
 
-
 [![配置对象数据源以使用 StaticCache 类](caching-data-at-application-startup-vb/_static/image10.png)](caching-data-at-application-startup-vb/_static/image9.png)
 
 **图 5**:配置要使用 ObjectDataSource`StaticCache`类 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-vb/_static/image11.png))
-
 
 [![使用 GetSuppliers() 方法来检索缓存的供应商数据](caching-data-at-application-startup-vb/_static/image13.png)](caching-data-at-application-startup-vb/_static/image12.png)
 
 **图 6**:使用`GetSuppliers()`方法来检索缓存供应商数据 ([单击以查看实际尺寸的图像](caching-data-at-application-startup-vb/_static/image14.png))
 
-
 完成向导后，Visual Studio 将自动添加 BoundFields 中的数据字段的每个`SuppliersDataTable`。 在 GridView 和 ObjectDataSource s 声明性标记应类似于下面所示：
-
 
 [!code-aspx[Main](caching-data-at-application-startup-vb/samples/sample7.aspx)]
 
 图 7 显示时的浏览器查看的页。 输出是相同我们必须读取从 BLL 的数据`SuppliersBLL`类，但是使用`StaticCache`类返回作为缓存在应用程序启动时的供应商数据。 可以在中设置断点`StaticCache`类的`GetSuppliers()`方法以验证此行为。
 
-
 [![在 GridView 中显示缓存供应商数据](caching-data-at-application-startup-vb/_static/image16.png)](caching-data-at-application-startup-vb/_static/image15.png)
 
 **图 7**:在 GridView 中显示缓存供应商数据 ([单击此项可查看原尺寸图像](caching-data-at-application-startup-vb/_static/image17.png))
-
 
 ## <a name="summary"></a>总结
 
