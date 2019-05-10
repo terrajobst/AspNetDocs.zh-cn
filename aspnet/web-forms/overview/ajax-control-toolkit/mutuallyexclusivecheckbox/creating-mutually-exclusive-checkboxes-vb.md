@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e9dd1d5a-a1db-4114-981d-6a91acb1d709
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 45ea3c3dbcf7816f67081a61230c4b055a90fcf5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5bf96cf287f2fe5f394449587c70d9fc6fb33af9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393621"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132553"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-vb"></a>创建互斥复选框 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393621"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)
 
 > 可以选择仅一组选项之一，通常用于单选按钮。 还有一个缺点，但所示：选择一个单选按钮组中的后，不能取消选中所有单选按钮。 复选框可以在任何时候是未选中状态，但是不是互相排斥。 本教程提供了最佳的这两种方法： 是互斥的复选框。
-
 
 ## <a name="overview"></a>概述
 
@@ -45,7 +44,6 @@ ASP.NET AJAX 控件工具包包含 MutuallyExclusiveCheckBox 扩展器。 这使
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample3.aspx)]
 
 保存并运行该页面：您可以选中和取消选中这两个复选框，但是在任何时间可以两个复选框进行检查。
-
 
 [![可以一次选中一个复选框](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)
 

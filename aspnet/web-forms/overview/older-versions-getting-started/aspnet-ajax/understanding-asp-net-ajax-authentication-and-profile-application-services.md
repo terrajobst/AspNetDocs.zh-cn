@@ -8,12 +8,12 @@ ms.date: 03/14/2008
 ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 18056c917b32680678c536229e8e26d5cc7db161
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1087d9120411e51fd61d073169a88cac6cdaf15b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395129"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109496"
 ---
 # <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 身份验证和配置文件应用程序服务
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395129"
 [下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial03_MSAjax_ASP.NET_Services_cs.pdf)
 
 > 身份验证服务允许用户提供凭据才能接收身份验证 cookie，并由 ASP.NET 提供网关服务才能允许自定义用户配置文件。 ASP.NET AJAX 身份验证服务的使用是标准的 ASP.NET 窗体身份验证与兼容，因此当前使用窗体身份验证的应用程序 （如使用的登录名控制） 将不会断开通过升级到 AJAX 身份验证服务。
-
 
 ## <a name="introduction"></a>介绍
 

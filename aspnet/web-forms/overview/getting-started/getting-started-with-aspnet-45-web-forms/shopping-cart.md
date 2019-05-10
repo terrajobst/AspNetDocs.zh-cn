@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: e079318b37563b1b7afe0f842f5b463541de0a81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c54449e778eac96133cccdc90d86cbbaf05a70f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405425"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132109"
 ---
 # <a name="shopping-cart"></a>购物车
 
@@ -22,7 +22,6 @@ ms.locfileid: "59405425"
 [下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 此教程系列将介绍构建 ASP.NET Web 窗体应用程序使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的基础知识。 Visual Studio 2013[包含 C# 源代码项目](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)可随附于本系列教程。
-
 
 本教程介绍将购物车添加到 Wingtip Toys 示例 ASP.NET Web 窗体应用程序所需的业务逻辑。 本教程基于上一教程"显示数据的项和详细信息"，而是 Wingtip Toy 存储教程系列的一部分。 完成本教程后，对示例应用的用户将能够添加、 删除和修改在其购物车中的产品。
 
@@ -49,7 +48,6 @@ ms.locfileid: "59405425"
 > [!NOTE] 
 > 
 > ASP.NET 会话状态是很方便地存储在用户离开站点将到期的特定于用户的信息。 虽然不恰当使用会话状态的可能较大的站点上会影响性能，打造出色会话状态适用于演示目的的使用。 Wingtip Toys 示例项目演示如何使用会话状态而无需外部提供程序，其中会话状态是存储的进程内托管站点的 web 服务器上。 提供应用程序的多个实例的大型站点或不同服务器运行的应用程序的多个实例的站点，请考虑使用**Windows Azure 缓存服务**。 此缓存服务提供的分布式缓存服务的外部 web 站点且解决了使用进程内会话状态的问题。 有关详细信息，请参阅[如何将 ASP.NET 会话状态与 Windows Azure Web Sites](https://docs.microsoft.com/azure/redis-cache/cache-aspnet-session-state-provider)。
-
 
 ### <a name="add-cartitem-as-a-model-class"></a>将 CartItem 添加为 Model 类
 
@@ -128,7 +126,6 @@ ms.locfileid: "59405425"
 > [!NOTE] 
 > 
 > 您将修改代码隐藏 (*AddToCart.aspx.cs*) 的此页上，不是在页面 UI (*AddToCart.aspx*)。
-
 
 #### <a name="to-create-the-add-to-cart-functionality"></a>若要创建添加车功能：
 
@@ -215,7 +212,6 @@ ms.locfileid: "59405425"
 > [!NOTE] 
 > 
 > 上面的代码中使用可以为 null 的类型"`int?`"。 可以为 null 的类型可以表示为基础类型的也以 null 值的所有值。 有关详细信息，请参阅[使用可以为 Null 的类型](https://msdn.microsoft.com/library/2cf62fcy(v=vs.110).aspx)。
-
 
 ### <a name="modify-the-shopping-cart-display"></a>修改购物车显示
 

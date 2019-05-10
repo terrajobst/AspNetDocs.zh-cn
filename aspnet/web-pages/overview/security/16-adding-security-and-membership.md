@@ -8,12 +8,12 @@ ms.date: 02/24/2014
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: 1291417755e3fa4fb030bc6ba3089c38c4719c71
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0be3e767a42939a3c343f6d4a730eb1d9a6b367c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389656"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112373"
 ---
 # <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>将安全性和成员身份添加到 ASP.NET Web Pages (Razor) 站点
 
@@ -42,7 +42,6 @@ ms.locfileid: "59389656"
 > - ASP.NET 网页 (Razor) 2
 > - WebMatrix 3
 > - ASP.NET Web Helpers Library
-
 
 您可以设置你的网站，以便用户可以登录到该&#8212;，即，以便站点支持*成员身份*。 这很有用的原因有很多。 例如，你的站点可能有应仅供成员使用的页。 在某些情况下，可能会要求用户进行登录以向你发送反馈或发表评论。
 

@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b8ec246c2f35f3d7fa5bcf67aa6f157195028176
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 43c6dbdc2155f50e2302b7c8929f378065e2f509
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379516"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106922"
 ---
 # <a name="configuring-a-website-that-uses-application-services-vb"></a>配置使用应用程序服务的网站 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59379516"
 [下载代码](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_09_VB.zip)或[下载 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial09_AppServicesConfig_vb.pdf)
 
 > ASP.NET 2.0 版引入了一系列的应用程序服务，这是.NET Framework 的一部分，作为一套可用于将丰富的功能添加到 web 应用程序的构建基块服务。 本教程探讨了如何在要使用应用程序服务的生产环境中配置一个网站，并解决了管理用户帐户和角色在生产环境的常见问题。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -34,7 +33,6 @@ ASP.NET 2.0 版引入了一系列*应用程序服务*，这是.NET Framework 的
 - **站点地图**-用于在层次结构，则可以通过导航控件，如菜单和痕迹导航栏显示的窗体中定义站点 s 逻辑结构的 API。
 - **个性化**-用于维护自定义项首选项，通常与一起使用的 API [ *web 部件*](https://msdn.microsoft.com/library/e0s9t4ck.aspx)。
 - **运行状况监视**-用于监视性能、 安全性、 错误和运行的 web 应用程序其他系统运行状况指标的 API。
-  
 
 应用程序服务 Api 不受限于特定的实现。 相反，指示要使用特定的应用程序服务*提供程序*，并且该提供程序实现使用特定技术的服务。 在 web 托管公司托管的基于 Internet 的 web 应用程序最常使用的提供商将使用 SQL Server 数据库实现这些提供程序。 例如，`SqlMembershipProvider`是将用户帐户信息存储在 Microsoft SQL Server 数据库中的成员身份 API 的提供程序。
 
@@ -42,7 +40,6 @@ ASP.NET 2.0 版引入了一系列*应用程序服务*，这是.NET Framework 的
 
 > [!NOTE]
 > Api 设计使用的应用程序服务[*提供程序模型*](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，允许 API s 的实现详细信息，以在运行时提供的设计模式。 .NET Framework 提供了很多的应用程序服务提供程序可以使用，如`SqlMembershipProvider`和`SqlRoleProvider`、 哪些是提供程序的成员身份和角色 Api，使用 SQL Server 数据库实现。 此外可以创建插件和自定义提供程序。 事实上，书评 web 应用程序已包含站点映射 API 的自定义提供程序 (`ReviewSiteMapProvider`)，该构造中的数据从站点地图`Genres`和`Books`数据库中的表。
-
 
 本教程开始，看我如何扩展书评 web 应用程序以使用成员资格和角色 Api。 它然后演示如何部署应用程序服务使用 SQL Server 数据库实现，并通过解决常见的问题管理用户帐户和角色在生产环境以结束的 web 应用程序。
 
@@ -53,7 +50,6 @@ ASP.NET 2.0 版引入了一系列*应用程序服务*，这是.NET Framework 的
 > [!NOTE]
 > 我 ve 书评 web 应用程序中创建三个用户帐户：Scott、 Jisun 和 Alice。 所有三个用户具有相同的密码：**密码 ！** Scott 和 Jisun 是管理员角色中，Alice 不是。 仍可供匿名用户访问站点 s 非管理页面。 也就是说，不需要登录以访问站点，除非你想要管理它，这种情况下您必须登录为管理员角色中的用户。
 
-
 书评应用程序的母版页进行已更新，包括已经过身份验证和匿名用户的不同的用户界面。 如果匿名用户访问该网站她会看到右上角的登录链接。 身份验证的用户将看到此消息，"欢迎回来，*用户名*！" 并将其注销的链接。此处 s 还登录页 (`~/Login.aspx`)，其中包含提供用户界面和逻辑，用于对访问者进行身份验证的登录名 Web 控件。 只有管理员才能创建新帐户。 (用于创建和管理中的用户帐户的页面`~/Admin`文件夹。)
 
 ### <a name="configuring-the-membership-and-roles-apis"></a>配置成员资格和角色 Api
@@ -62,7 +58,6 @@ ASP.NET 2.0 版引入了一系列*应用程序服务*，这是.NET Framework 的
 
 > [!NOTE]
 > 本教程不是要在 web 应用程序配置为支持的成员身份和角色 Api 进行详尽。 有关这些 Api，需要配置网站以使用它们所采取的步骤的全面信息，请阅读我[*网站安全教程*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
-
 
 若要使用 SQL Server 数据库使用的应用程序服务必须首先添加使用这些提供程序到数据库用户帐户所需的数据库对象和存储角色信息。 这些必要的数据库对象包括各种表、 视图和存储的过程。 除非另有指定，`SqlMembershipProvider`并`SqlRoleProvider`提供程序类使用名为的 SQL Server Express Edition 数据库`ASPNETDB`位于应用程序的`App_Data`文件夹; 如果此类数据库不存在，它将自动创建通过在运行时这些提供程序的必要的数据库对象。
 
@@ -73,7 +68,6 @@ ASP.NET 2.0 版引入了一系列*应用程序服务*，这是.NET Framework 的
 [!code-xml[Main](configuring-a-website-that-uses-application-services-vb/samples/sample1.xml)]
 
 `Web.config`文件的`<authentication>`元素同时已配置为支持基于窗体的身份验证。
-  
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-vb/samples/sample2.xml)]
 
@@ -100,43 +94,34 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 > [!NOTE]
 > `aspnet_regsql.exe`工具指定数据库上创建数据库对象。 但不会对生产数据库从开发数据库迁移这些数据库对象中的数据。 如果你是想将开发数据库中的用户帐户和角色信息复制到生产数据库使用中介绍的技术*部署数据库*教程。
 
-
 让我们来看看如何将数据库对象添加到生产数据库使用`aspnet_regsql.exe`工具。 首先，打开 Windows 资源管理器并导航到 %WINDIR%\ 您的计算机上的.NET Framework 2.0 版目录Microsoft.NET\Framework\v2.0.50727。 会显示`aspnet_regsql.exe`工具。 可以使用此工具从命令行中，但它还包括图形用户界面;双击`aspnet_regsql.exe`文件以启动其图形组件。
 
 该工具首先会显示初始屏幕，说明其用途。 单击旁边转到"选择安装程序选项"屏幕中，图 1 所示。 从此处可以选择要添加的应用程序服务数据库对象或从数据库中删除它们。 因为我们想要将这些对象添加到生产数据库，选择"配置应用程序服务的 SQL Server"选项，并单击下一步。
 
-
 [![选择 SQL Server 配置为应用程序服务](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
 
 **图 1**:配置 SQL server 选择的应用程序服务 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image3.jpg))
-
 
 在"选择服务器和数据库"屏幕提示输入信息以连接到数据库。 输入数据库服务器、 安全凭据，并为您提供您的 web 托管公司的数据库名称，然后单击下一步。
 
 > [!NOTE]
 > 输入您的数据库服务器和凭据后可能会遇到错误，展开数据库下拉列表时。 `aspnet_regsql.exe`工具查询`sysdatabases`系统表检索的数据库服务器，但一些 web 托管公司锁定其数据库服务器，以便此信息不是公用的列表。 如果收到此错误可以直接在下拉列表中键入数据库名称。
 
-
 [![提供你的数据库的连接信息的工具](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
 
 **图 2**:提供的工具与您的数据库 s 连接信息 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image6.jpg))
 
-
 随后出现的屏幕总结了要执行的位置，即操作将应用程序服务数据库对象添加到指定的数据库。 单击旁边完成此操作。 几分钟后的最后一个屏幕将显示，注意数据库对象已添加了 （参见图 3）。
-
 
 [![成功 ！应用程序服务数据库对象已添加到生产数据库](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
 
 **图 3**:成功！ 应用程序服务数据库对象已添加到生产数据库 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image9.jpg))
 
-
 若要验证应用程序服务数据库对象已成功添加到生产数据库，请打开 SQL Server Management Studio 并连接到您的生产数据库。 如图 4 所示，你应看到应用程序服务数据库表在数据库中， `aspnet_Applications`， `aspnet_Membership`， `aspnet_Users`，依次类推。
-
 
 [![确认数据库对象已添加到生产数据库](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
 
 **图 4**:确认数据库对象已添加到生产数据库 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image12.jpg))
-
 
 您只需要使用`aspnet_regsql.exe`工具时部署 web 应用程序第一次或首次使用应用程序服务启动后。 一旦这些数据库对象而无需重新添加或修改在生产数据库上。
 
@@ -152,7 +137,6 @@ ASP.NET 附带有效果很好[*网站管理工具 (WSAT)* ](https://msdn.microso
 
 > [!NOTE]
 > 如果您发现自己处于这种情况下-使用用户帐户复制到生产环境且不匹配`ApplicationId`值-可以编写查询以更新这些不正确`ApplicationId`值到`ApplicationId`用于生产。 更新后，请在开发环境中创建的帐户的用户现在将能够登录到生产上的 web 应用程序。
-
 
 好消息是可用于确保两个环境使用相同的简单步骤`ApplicationId`-显式设置`applicationName`属性中`Web.config`所有应用程序服务提供程序。 我显式设置`applicationName`属性为"BookReviews"中`<membership>`并`<roleManager>`元素中此代码片段作为`Web.config`显示。
 
@@ -171,11 +155,9 @@ ASP.NET 网站管理工具 (WSAT) 轻松创建和管理用户帐户、 定义和
 > [!NOTE]
 > 有关与登录相关的 ASP.NET Web 控件一起使用的成员身份和角色 Api 的详细信息请阅读我[*网站安全教程*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。 有关自定义 CreateUserWizard 控件的详细信息，请参阅[*创建用户帐户*](../../older-versions-security/membership/creating-user-accounts-vb.md)并[*存储的其他用户信息*](../../older-versions-security/membership/storing-additional-user-information-vb.md)教程中或查看[ *Erich Peterson* ](http://www.erichpeterson.com/) s 文章[*自定义 CreateUserWizard 控件*](http://aspnet.4guysfromrolla.com/articles/070506-1.aspx).
 
-
 [![管理员可以创建新的用户帐户](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
 
 **图 5**:管理员可以创建新的用户帐户 ([单击此项可查看原尺寸图像](configuring-a-website-that-uses-application-services-vb/_static/image15.jpg))
-
 
 如果您需要的全部功能的 WSAT 签出[*滚动你自己网站管理工具*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)，在作者 Dan Clem 逐步构建自定义 WSAT 类似的工具的过程。 Dan 共享应用程序的源代码 （在 C# 中)，并提供有关将其添加到托管网站的分步说明。
 

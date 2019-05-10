@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 142e5181-29ce-4bb9-907b-2a0becf7928b
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 63efa46410e821947c6b0ee4ecd0c790fbf793e3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e11d9d758d6bae5b657a8be51e7ee223923abc84
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380088"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108239"
 ---
 # <a name="creating-a-business-logic-layer-vb"></a>创建业务逻辑层 (VB)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59380088"
 
 > 在本教程中，我们将了解如何集中用作表示层 DAL 之间交换数据的中介业务逻辑层 (BLL) 到您的业务规则。
 
-
 ## <a name="introduction"></a>介绍
 
 数据访问层 (DAL) 中创建[第一篇教程](creating-a-data-access-layer-vb.md)完全分隔数据访问逻辑与表示逻辑。 但是，尽管 DAL 从表示层清楚地划分数据访问详细信息，它不会强制任何可能适用的业务规则。 例如，我们的应用程序我们可能希望禁止`CategoryID`或`SupplierID`的字段`Products`表，以修改`Discontinued`字段设置为 1，或者我们可能想要强制实施资历规则，禁止情况下，员工的人在其之后雇佣的管理。 另一个常见方案是属于特定角色的授权可能只有用户可以删除产品，或者可以更改`UnitPrice`值。
 
 在本教程中，我们将了解如何集中用作表示层 DAL 之间交换数据的中介业务逻辑层 (BLL) 到这些业务规则。 在实际应用程序中，BLL 应实现作为一个单独的类库项目;但是，对于这些教程，我们将实现 BLL 作为一系列中的类我们`App_Code`文件夹，以便简化项目结构。 图 1 说明在表示层、 BLL 和 DAL 的体系结构关系。
 
-
 ![BLL 将表示层与数据访问层隔离和实施业务规则](creating-a-business-logic-layer-vb/_static/image1.png)
 
 **图 1**:BLL 将表示层与数据访问层隔离和实施业务规则
-
 
 而不是创建单独的类来实现我们[业务逻辑](http://en.wikipedia.org/wiki/Business_logic)，我们也可以直接在类型化数据集使用部分类中将此逻辑。 有关创建和扩展类型数据集的示例，请参阅返回第一个教程。
 
@@ -46,17 +43,14 @@ ms.locfileid: "59380088"
 
 接下来，创建四个 BLL 类文件中的`BLL`子文件夹。 若要完成此操作，右键单击`BLL`子文件夹中，选择添加新项，然后选择类模板。 命名的四个类`ProductsBLL`， `CategoriesBLL`， `SuppliersBLL`，和`EmployeesBLL`。
 
-
 ![将四个新类添加到 App_Code 文件夹](creating-a-business-logic-layer-vb/_static/image2.png)
 
 **图 2**:添加到四个新类`App_Code`文件夹
-
 
 接下来，让我们将方法添加到每个类仅封装定义为从第一个教程 Tableadapter 的方法。 现在，这些方法将只需直接调用到 DAL;我们将返回更高版本中添加任何所需的业务逻辑。
 
 > [!NOTE]
 > 如果使用 Visual Studio Standard Edition 或更高版本 (即，正在*不*使用 Visual Web Developer)，您可以根据需要设计您直观地使用的类[类设计器](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp)。 请参阅[类设计器博客](https://blogs.msdn.com/classdesigner/default.aspx)的 Visual Studio 中的此新功能的详细信息。
-
 
 有关`ProductsBLL`我们需要添加总共七种方法的类：
 
@@ -69,7 +63,6 @@ ms.locfileid: "59380088"
 - `DeleteProduct(productID)` 从数据库中删除指定的产品
 
 ProductsBLL.vb
-
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample1.vb)]
 
@@ -109,7 +102,6 @@ ProductsBLL.vb
 
 值得注意的一个方法是`SuppliersBLL`类的`UpdateSupplierAddress`方法。 此方法用于更新只是供应商的地址信息提供的接口。 此方法在内部，在读取`SupplierDataRow`的指定对象的`supplierID`(使用`GetSupplierBySupplierID`)，设置其与地址相关的属性，然后调入`SupplierDataTable`的`Update`方法。 `UpdateSupplierAddress`方法如下所示：
 
-
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample2.vb)]
 
 请参阅本文的下载完整的 BLL 类实现的。
@@ -118,21 +110,17 @@ ProductsBLL.vb
 
 第一个教程中我们已了解示例直接使用的类型化数据集以编程方式，但添加了我们 BLL 类，与表示层应针对工作 BLL 相反。 在中`AllProducts.aspx`从第一个教程中，示例`ProductsTableAdapter`用于将产品列表绑定到 GridView 中后，如下面的代码中所示：
 
-
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample3.vb)]
 
 若要使用新的 BLL 类，所有需要的更改是第一行代码来代替`ProductsTableAdapter`对象与`ProductBLL`对象：
-
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample4.vb)]
 
 此外可以通过使用对象数据源 （如可能是类型化数据集） 以声明方式访问的 BLL 类。 我们将讨论 ObjectDataSource 中更详细地介绍以下教程中。
 
-
 [![在 GridView 中显示的产品列表](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
 
 **图 3**:在 GridView 中显示的产品列表 ([单击此项可查看原尺寸图像](creating-a-business-logic-layer-vb/_static/image5.png))
-
 
 ## <a name="step-3-adding-field-level-validation-to-the-datarow-classes"></a>步骤 3：将字段级验证添加到 DataRow 类
 
@@ -147,24 +135,19 @@ ProductsBLL.vb
 
 除了强制实施这些规则应用于数据库它们应还在进行强制数据集级别。 事实上，字段长度和一个值是必需还是可选已捕获的 Datacolumn 的每个 DataTable 的组。 若要查看自动提供的现有字段级别验证，请转到数据集设计器、 从 DataTables 之一中选择字段，然后转到属性窗口。 如图 4 所示，`QuantityPerUnit`中的 DataColumn `ProductsDataTable` 20 个字符的最大长度且允许`NULL`值。 如果我们尝试设置`ProductsDataRow`的`QuantityPerUnit`属性的长度超过 20 个字符的字符串值`ArgumentException`将引发。
 
-
 [![DataColumn 提供基本字段级验证](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
 
 **图 4**:DataColumn 提供基本字段级验证 ([单击此项可查看原尺寸图像](creating-a-business-logic-layer-vb/_static/image8.png))
 
-
 遗憾的是，我们不能指定边界检查，如`UnitPrice`值必须大于或等于零，通过属性窗口。 为了提供此类型的字段级验证我们需要创建的 DataTable 的事件处理程序[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 如中所述[前面的教程](creating-a-data-access-layer-vb.md)，可以通过使用分部类扩展由类型化数据集创建的数据集、 数据表和 DataRow 对象。 使用这种方法，我们可以创建`ColumnChanging`事件处理程序`ProductsDataTable`类。 首先创建中的类`App_Code`文件夹名为`ProductsDataTable.ColumnChanging.vb`。
-
 
 [![将新类添加到 App_Code 文件夹](creating-a-business-logic-layer-vb/_static/image10.png)](creating-a-business-logic-layer-vb/_static/image9.png)
 
 **图 5**:添加新类中，以便`App_Code`文件夹 ([单击以查看实际尺寸的图像](creating-a-business-logic-layer-vb/_static/image11.png))
 
-
 接下来，创建的事件处理程序`ColumnChanging`事件可确保`UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，并`ReorderLevel`列的值 (如果不是`NULL`) 是大于或等于零。 如果任何此类列不在范围内，则引发`ArgumentException`。
 
 ProductsDataTable.ColumnChanging.vb
-
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample5.vb)]
 
@@ -182,13 +165,11 @@ BLL 类应包含检查，以确保对应用程序的业务规则的遵从性。 
 
 若要执行此业务规则中的`UpdateProducts`方法，我们将首先检查是否`Discontinued`已设置为`True`，因此，我们将调用`GetProductsBySupplierID`来确定多少产品我们从购买此产品的供应商。 如果只有一个产品购买此供应商，我们引发`ApplicationException`。
 
-
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample6.vb)]
 
 ## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>响应的表示层中的验证错误
 
 从表示层调用 BLL 时我们可以决定是否尝试处理可能会引发或让他们归因于 ASP.NET 的任何异常 (这将引发`HttpApplication`的`Error`事件)。 若要处理的异常时以编程方式使用 BLL，我们可以使用[尝试...捕获](https://msdn.microsoft.com/library/fk6t46tz%28VS.80%29.aspx)块，如以下示例所示：
-
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample7.vb)]
 

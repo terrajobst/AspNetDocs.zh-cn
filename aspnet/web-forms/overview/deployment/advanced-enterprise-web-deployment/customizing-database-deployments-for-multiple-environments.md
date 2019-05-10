@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 865e901618b48bc4bfdc6d7a3ca4e8868d4cb46b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ae8cb1a322afb95c5d2e8d5e73c7825c7b2fe5a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412978"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108311"
 ---
 # <a name="customizing-database-deployments-for-multiple-environments"></a>自定义多个环境的数据库部署
 
@@ -30,7 +30,6 @@ ms.locfileid: "59412978"
 > 在数据库项目部署到多个目标时，通常需要自定义每个目标环境的数据库部署属性。 例如，在测试环境中你将通常重新创建数据库上每个部署，而在过渡或生产环境中，您可能是一种更有可能进行增量更新，以保留您的数据。
 > 
 > 在 Visual Studio 2010 数据库项目中，部署设置包含在部署配置 (.sqldeployment) 文件。 本主题将演示如何创建特定于环境的部署配置文件，并指定你想要用作 VSDBCMD 参数的一个。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -76,11 +75,9 @@ ms.locfileid: "59412978"
 | **部署前备份数据库** | False | 您可能 | True |
 | **生成目标数据库中但不在数据库项目中的对象的 DROP 语句** | False | True | True |
 | **不使用 ALTER ASSEMBLY 语句更新 CLR 类型** | False | False | False |
-  
 
 > [!NOTE]
 > 有关数据库部署属性和环境注意事项的详细信息，请参阅[数据库项目设置概述](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)，[如何：配置部署详细信息的属性](https://msdn.microsoft.com/library/dd172125.aspx)，[生成并将数据库部署到独立的开发环境](https://msdn.microsoft.com/library/dd193409.aspx)，和[生成并将数据库部署到过渡或生产环境](https://msdn.microsoft.com/library/dd193413.aspx).
-
 
 若要支持到多个目标数据库项目的部署，应创建每个目标环境的部署配置文件。
 
@@ -104,13 +101,10 @@ ms.locfileid: "59412978"
 
 若要在你 VSDBCMD 指定部署配置文件，请使用**p: / DeploymentConfigurationFile**开关并提供你的文件的完整路径。 这将重写的部署清单标识的部署配置文件。 例如，可以使用此 VSDBCMD 命令来部署**ContactManager**数据库添加到测试环境：
 
-
 [!code-console[Main](customizing-database-deployments-for-multiple-environments/samples/sample1.cmd)]
-
 
 > [!NOTE]
 > 请注意，生成过程可能会重命名.sqldeployment 文件时将文件复制到输出目录。
-
 
 如果在您预先部署或后期部署的 SQL 脚本中使用的 SQL 命令变量，可以使用类似的方法来将特定于环境的.sqlcmdvars 文件与你的部署相关联。 在这种情况下，使用**p: / SqlCommandVariablesFile**开关来标识.sqlcmdvars 文件。
 
@@ -118,9 +112,7 @@ ms.locfileid: "59412978"
 
 您可以通过使用调用 MSBuild 项目文件中的 VSDBCMD 命令**Exec** MSBuild 目标内的任务。 最简单形式，它将类似如下：
 
-
 [!code-xml[Main](customizing-database-deployments-for-multiple-environments/samples/sample2.xml)]
-
 
 - 在实践中，以使你的项目文件更易于阅读和重复使用，你将想要创建用于存储的各种命令行参数的属性。 这使得更容易为用户提供特定于环境的项目文件中的属性值，或重写 MSBuild 命令行中的默认值。 如果使用拆分项目文件方法中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，应相应地将您的生成说明和两个文件之间的属性：
 - 特定于环境的设置，例如部署配置文件名、 数据库连接字符串和目标数据库名称，应该在特定于环境的项目文件中。

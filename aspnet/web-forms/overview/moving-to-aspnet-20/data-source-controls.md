@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 78fd0e92-f9c6-4e96-a5e9-0375b307a828
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 3ba9fdaaf655f6510d3ebf6ce0930fbf4000add3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a2e2cfbec3e5aebf42a2de30bab7d45b4b610298
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59388863"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109572"
 ---
 # <a name="data-source-controls"></a>数据源控件
 
 by [Microsoft](https://github.com/microsoft)
 
 > DataGrid 控件在 ASP.NET 1.x 标记为在 Web 应用程序中的数据访问中一项重大改进。 但是，它不是因为它可能是用户友好的。 它仍然需要相当长的代码可以从中获得更有用的功能。 在 1.x 中的所有数据访问工作中的模型就是这样。
-
 
 DataGrid 控件在 ASP.NET 1.x 标记为在 Web 应用程序中的数据访问中一项重大改进。 但是，它不是因为它可能是用户友好的。 它仍然需要相当长的代码可以从中获得更有用的功能。 在 1.x 中的所有数据访问工作中的模型就是这样。
 
@@ -30,7 +29,6 @@ ASP.NET 2.0 解决此问题与部分与数据源控件。 数据源控件在 ASP
 
 > [!NOTE]
 > 正如您将看到更高版本，存在还缓存通过使用数据源控件获得的权益。
-
 
 ## <a name="storing-connection-strings"></a>存储连接字符串
 
@@ -42,7 +40,6 @@ ASP.NET 2.0 解决此问题与部分与数据源控件。 数据源控件在 ASP
 
 > [!NOTE]
 > 正如使用&lt;appSettings&gt;部分中， &lt;connectionStrings&gt;之外的部分会出现&lt;system.web&gt;配置文件中的部分。
-
 
 若要使用此连接字符串，可以使用以下语法设置服务器控件的 ConnectionString 属性时。
 
@@ -81,7 +78,6 @@ SqlDataSource 控件允许开发人员为访问存储在任何支持 ADO.NET 的
 > [!NOTE]
 > 因为 DataSourceControl 类会自动关闭的连接，它应减少生成的数据库连接泄漏的客户调用数。
 
-
 以下代码段将 DropDownList 控件绑定到使用如上所示的配置文件中存储的连接字符串使用 SqlDataSource 控件。
 
 [!code-aspx[Main](data-source-controls/samples/sample3.aspx)]
@@ -90,7 +86,6 @@ SqlDataSource 控件允许开发人员为访问存储在任何支持 ADO.NET 的
 
 > [!NOTE]
 > 当缓存 SqlDataSource 或 AccessDataSource，DataSourceMode 属性必须设置为数据集。 如果启用了使用 DataSourceMode DataReader 缓存，会发生异常。
-
 
 ## <a name="sqldatasource-properties"></a>SqlDataSource 属性
 
@@ -162,7 +157,6 @@ AccessDataSource 将始终设置为 System.Data.OleDb 的基 SqlDataSource Provi
 
 > [!NOTE]
 > 应将存储在 Web 站点内访问数据库放在应用\_数据目录。 ASP.NET 不允许要浏览此目录中的文件。 将需要授予对应用的读取和写入权限的进程帐户\_数据目录时使用 Access 数据库。
-
 
 ## <a name="the-xmldatasource-control"></a>XmlDataSource 控件
 

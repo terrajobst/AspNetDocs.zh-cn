@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 6b073fc6-524d-453d-be7c-0c30986de391
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e91ba6a0c4d2f9cad6d88119e7f33931b7ba5772
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cbf0c5f15399e49673f7c77006211ccff953346d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412796"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108796"
 ---
 # <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>向 DataList 的编辑界面添加验证控件 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59412796"
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_39_VB.exe)或[下载 PDF](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/datatutorial39vb1.pdf)
 
 > 在本教程中我们将看到将验证控件添加到 DataList 的 EditItemTemplate，以提供更能做到万无一失编辑的用户界面是多么容易。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -44,11 +43,9 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 2. 请转到页面 s 声明性标记 （在页面底部的源按钮单击）
 3. 复制中的文本`<asp:Content>`和`</asp:Content>`标记 （行 3 到 32），作为图 1 所示。
 
-
 [![复制文本内&lt;asp: Content&gt;控件](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image1.png)
 
 **图 2**:复制文本内`<asp:Content>`控件 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image3.png))
-
 
 1. 打开`UIValidation.aspx`页
 2. 请转到页面 s 声明性标记
@@ -58,11 +55,9 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 
 移动的内容和从代码转移后`ErrorHandling.aspx`到`UIValidation.aspx`，花点时间来测试在浏览器中的页。 你应看到相同的输出和体验每个 （请参见图 2） 这些两个页中相同的功能。
 
-
 [![UIValidation.aspx 页模仿 ErrorHandling.aspx 中的功能](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image4.png)
 
 **图 2**:`UIValidation.aspx`页上模拟中的功能`ErrorHandling.aspx`([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image6.png))
-
 
 ## <a name="step-2-adding-the-validation-controls-to-the-datalist-s-edititemtemplate"></a>步骤 2：向 DataList 的 EditItemTemplate 添加验证控件
 
@@ -81,24 +76,19 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 > [!NOTE]
 > 尽管 ASP.NET 1.x 有这些相同的五个验证控件、 ASP.NET 2.0 增添了大量改进，两人是客户端脚本包括 Internet Explorer 的浏览器和分区到页面上的验证控件的功能支持的主要验证组。 有关 2.0 中新的验证控件功能的详细信息，请参阅[仔细分析 ASP.NET 2.0 中的验证控件](http://aspnet.4guysfromrolla.com/articles/112305-1.aspx)。
 
-
 让我们来首先将必要的验证控件添加到 DataList 的`EditItemTemplate`。 通过单击编辑模板链接通过 DataList s 智能标记，在设计器或通过声明性语法，可以执行此任务。 允许 s 步骤通过使用设计视图中的编辑模板选项的过程。 在选择要编辑 DataList s 之后`EditItemTemplate`，通过从工具箱拖动到模板编辑界面中，添加一个 RequiredFieldValidator 将其之后放置`ProductName`文本框中。
-
 
 [![在产品名称文本框之后向 EditItemTemplate 添加一个 RequiredFieldValidator](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image7.png)
 
 **图 3**:添加到一个 RequiredFieldValidator `EditItemTemplate After` `ProductName`文本框中 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image9.png))
 
-
 通过验证单个 ASP.NET Web 控件的输入处理的所有验证控件。 因此，我们需要指示应验证我们刚添加的 RequiredFieldValidator`ProductName`文本框中; 这是通过设置验证控件 s [ `ControlToValidate`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx)到`ID`的相应的 Web 控件 (`ProductName`，在这种情况)。 接下来，设置[`ErrorMessage`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx)必须为提供的产品的名称并[`Text`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx)到\*。 `Text`属性值，如果提供，则如果验证失败的验证控件显示的文本。 `ErrorMessage`属性值，该值是必需的由 ValidationSummary 控件; 如果`Text`省略属性值，则`ErrorMessage`属性值显示由验证控件在输入无效。
 
 以后设置 RequiredFieldValidator 这三个属性，您的屏幕看起来应类似于图 4。
 
-
 [![设置 RequiredFieldValidator 的 ControlToValidate、 错误消息和文本属性](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image10.png)
 
 **图 4**:设置 RequiredFieldValidator s `ControlToValidate`， `ErrorMessage`，并`Text`属性 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image12.png))
-
 
 使用添加到 RequiredFieldValidator `EditItemTemplate`，则所有剩下是有必要为添加验证产品的价格文本框中。 由于`UnitPrice`取决于您在编辑记录时，我们不需要添加一个 RequiredFieldValidator。 我们执行操作，但是，需要添加 CompareValidator，确保`UnitPrice`，如果提供，作为一种货币格式正确，大于或等于 0。
 
@@ -106,16 +96,13 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 
 之后添加以下两个验证控件，DataList 的`EditItemTemplate`s 声明性语法应看起来如下所示：
 
-
 [!code-aspx[Main](adding-validation-controls-to-the-datalist-s-editing-interface-vb/samples/sample1.aspx)]
 
 进行这些更改后，在浏览器中打开的网页。 如果尝试省略名称或编辑产品时输入无效的价格值文本框旁边将出现一个星号。 如图 5 所示，包含货币符号，例如 19.95 美元的价格值将被视为无效。 CompareValidator s `Currency` `Type`允许数字分隔符 （如逗号或句点，具体取决于的区域性设置） 和前导加号或减号，但不*不*允许货币符号。 此行为可能 perplex 用户编辑界面当前呈现`UnitPrice`使用货币格式。
 
-
 [![使用无效的输入文本框旁边会显示一个星号](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image13.png)
 
 **图 5**:星号显示下一步使用无效的输入文本框 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image15.png))
-
 
 尽管验证可充当的是，用户必须手动编辑一个记录，这不是可接受时删除的货币符号。 此外，如果有无效输入中的编辑的接口都不更新，也不取消按钮，当单击时，将调用回发。 理想情况下，取消按钮将为其预编辑而不考虑用户的输入数据的有效性状态返回 DataList。 此外，我们需要确保更新 DataList s 中的产品信息之前，s 的页面数据是有效`UpdateCommand`事件处理程序，作为其浏览器不支持 JavaScript 或具有的用户可以跳过客户端逻辑的验证控件禁用其支持。
 
@@ -133,7 +120,6 @@ DataList 编辑教程到目前为止，在编辑接口 DataLists 具有不包含
 
 > [!NOTE]
 > 删除时的货币格式从可编辑的接口，我发现有助于将作为外部文本框的文本放在货币符号。 这将作为对它们不需要提供的货币符号的用户的提示。
-
 
 ## <a name="fixing-the-cancel-button"></a>修复取消按钮
 
@@ -153,7 +139,6 @@ ASP.NET 验证控件的所有重复他们立即在回发时的验证逻辑并报
 
 将以下代码添加到开头`UpdateCommand`事件处理程序之前`Try`块：
 
-
 [!code-vb[Main](adding-validation-controls-to-the-datalist-s-editing-interface-vb/samples/sample2.vb)]
 
 添加此元素，该产品将尝试提交的数据是有效时才进行更新。 大多数用户不能将数据回发无效数据，因为验证控件客户端脚本，但用户的浏览器不支持 JavaScript 或的已禁用 JavaScript 支持，可以跳过客户端检查和提交无效数据。
@@ -161,18 +146,15 @@ ASP.NET 验证控件的所有重复他们立即在回发时的验证逻辑并报
 > [!NOTE]
 > 敏锐的读者都记得，当使用 GridView 中更新数据，我们不需要显式检查`Page.IsValid`我们页的代码隐藏类中的属性。 这是因为 GridView 咨询`Page.IsValid`我们和仅继续进行更新，仅当返回的值的属性`True`。
 
-
 ## <a name="step-3-summarizing-data-entry-problems"></a>步骤 3：汇总数据输入问题
 
 ASP.NET 包括五个验证控件中，除了[ValidationSummary 控件](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx)，其中显示`ErrorMessage`s 检测到无效数据这些验证控件。 此摘要数据可以显示为文本在网页上或通过模式、 客户端的消息框。 让我们来增强此教程，包括汇总的任何验证问题的客户端的 messagebox。
 
 若要实现此目的，请从工具箱拖到设计器拖动 ValidationSummary 控件。 ValidationSummary 控件不是 t 的位置非常重要，因为我们重新将它配置为仅显示为一个消息框的摘要。 添加控件之后, 设置其[`ShowSummary`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)到`False`并将其[`ShowMessageBox`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 添加此元素后，任何验证错误汇总客户端的 messagebox 中 （请参阅图 6）。
 
-
 [![客户端的 Messagebox 中总结了验证错误](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image16.png)
 
 **图 6**:客户端的 Messagebox 中总结了验证错误 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image18.png))
-
 
 ## <a name="summary"></a>总结
 

@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: efb0e677-10b8-48dc-93d3-9ba3902dd807
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 4d436b0e5d605027cfcf5243f615f9ac167c5888
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 24344cc33d7c26d7c408db26c0530ef2c708a7d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388044"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133455"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试
 
 通过[Tom Dykstra](https://github.com/tdykstra)
 
 > 本系列教程为基础创建的 Contoso University web 应用程序[开始使用 Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)系列教程。 如果未完成之前的教程，作为本教程的起始点可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)，您已经创建的。 此外可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)由完整的系列教程。 如果你有疑问的教程，您可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)。
-
 
 在上一教程中创建使用实体框架的 n 层 web 应用程序和`ObjectDataSource`控件。 本教程演示如何添加业务逻辑，同时保持业务逻辑层 (BLL) 和数据访问层 (DAL) 是独立的以及如何为 BLL 创建自动化的单元测试。
 
@@ -72,7 +71,6 @@ ms.locfileid: "59388044"
 
 > [!NOTE]
 > 从技术上讲，实体对象是仍不持久性未知，因为它们从实体框架的继承的类实例化`EntityObject`类。 可以使用完整的持久性无感知*普通旧 CLR 对象*，或*Poco*，来替代继承的对象`EntityObject`类。 使用 Poco 不在本教程的范围。 有关详细信息，请参阅[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) MSDN 网站上。)
-
 
 现在可以连接`ObjectDataSource`控件添加到业务逻辑类而不是到存储库并验证一切正常就像以前一样。
 

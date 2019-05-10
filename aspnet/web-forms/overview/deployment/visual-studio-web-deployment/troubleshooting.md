@@ -8,12 +8,12 @@ ms.date: 06/01/2015
 ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: b59cd34036c733579e678eab78097d3393f3e671
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 652ed86826616dec5a4d1900dd57d7e6fd43a4e7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421077"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108882"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署：疑难解答
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421077"
 [下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用 Visual Studio 2012 或 Visual Studio 2010。 有关序列的信息，请参阅[系列中的第一个教程](introduction.md)。
-
 
 此页介绍了使用 Visual Studio 部署 ASP.NET web 应用程序时可能出现的一些常见问题。 为每个提供了一个或多个可能的原因和相应的解决方案。
 

@@ -8,12 +8,12 @@ ms.date: 02/27/2014
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 1159d75ec5b2f7e5ac94da0a15acf24b5400798b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f8e64392af6110f36c6af98c4e4e9481c94a0d82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59387461"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106929"
 ---
 # <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分页和筛选数据与模型绑定和 web 窗体
 
@@ -26,7 +26,6 @@ ms.locfileid: "59387461"
 > 本教程基于第一个中创建的项目[一部分](retrieving-data.md)在本系列。
 > 
 > 你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。 可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。
-
 
 ## <a name="what-youll-build"></a>你将生成
 

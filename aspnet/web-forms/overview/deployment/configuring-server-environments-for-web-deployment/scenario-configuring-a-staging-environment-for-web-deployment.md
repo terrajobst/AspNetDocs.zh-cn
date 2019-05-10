@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 5a8e49b7-5317-4125-b107-7e2466b47bb3
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 7e66c6cd8c7296b889dfe6cc1ebd1eb62cda10ea
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: eaa61ca850817f8dd98955b59e94be93389bf256
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384319"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106835"
 ---
 # <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>方案：配置用于 Web 部署的过渡环境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384319"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍过渡环境的典型的 web 部署方案，并说明所需设置类似的环境才能完成的任务。
-
 
 许多组织使用过渡环境来预览对 web 应用程序或网站的更新。 这使组织内的人有机会浏览和之前的站点"会运行，"，或换句话说部署到生产环境，请查看新功能或内容。 在过渡环境旨在尽可能真实地复制生产环境，以便提供真实的预览。 这种过渡环境通常具有以下特征：
 
@@ -33,7 +32,6 @@ ms.locfileid: "59384319"
 
 > [!NOTE]
 > 跨多个服务器横向扩展数据库部署不在本教程的范围。 此区域的详细信息，请查阅[SQL Server 联机丛书](https://technet.microsoft.com/library/ms130214.aspx)。
-
 
 例如，在我们[教程的情况下](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)，Team Foundation Server (TFS) 管理 Contact Manager 解决方案。 TFS 管理员，Rob Walters 创建了使开发人员能够触发部署到过渡环境所需的生成定义。
 

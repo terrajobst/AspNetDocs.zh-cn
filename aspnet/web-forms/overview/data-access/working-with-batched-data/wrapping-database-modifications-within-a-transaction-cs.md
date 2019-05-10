@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: b45fede3-c53a-4ea1-824b-20200808dbae
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bbc54a39ba6ca3771acd7c4da37795a23e8ee2df
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c174b824595f2d85eef97f467ff99082cfeb6d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383377"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108297"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-c"></a>包装事务内的数据库修改 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383377"
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_63_CS.zip)或[下载 PDF](wrapping-database-modifications-within-a-transaction-cs/_static/datatutorial63cs1.pdf)
 
 > 本教程是四个查看更新、 删除和插入数据的批处理的第一个。 在本教程中我们了解如何数据库事务允许批处理的修改来执行作为一个原子操作，以确保所有步骤都成功或失败的所有步骤。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -38,7 +37,6 @@ ms.locfileid: "59383377"
 
 > [!NOTE]
 > 当修改批事务中的数据时，原子性并不总是需要。 在某些情况下，这可能是可以接受的一些成功的数据修改，在同一个批处理中的其他人失败，例如当从基于 web 的电子邮件客户端中删除一组电子邮件。 如果有 s 数据库错误会中途删除处理，它可能可接受的没有错误处理这些记录将保留已删除的 s。 在这种情况下，不需要进行修改，以支持数据库事务 DAL。 还有其他批处理操作方案，但是，原子性至关重要。 当客户将她资金从一个银行帐户移到另一个时，必须执行两项操作： 将资金必须要从第一个帐户并添加到第二个。 虽然银行可能不介意具有成功的第一步，但第二个步骤失败，其客户将可以理解的是感到不安。 我鼓励您在学习本教程并实现与 DAL 来支持数据库事务，即使您不打算将其用在批插入、 更新和删除我们将生成以下三个教程中的接口的增强功能。
-
 
 ## <a name="an-overview-of-transactions"></a>事务的概述
 
@@ -56,9 +54,7 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 > [!NOTE]
 > [ `TransactionScope`类](https://msdn.microsoft.com/library/system.transactions.transactionscope.aspx)中`System.Transactions`命名空间使开发人员能够以编程方式将一系列语句包装在事务范围内，并且包括对涉及多个复杂事务的支持两个不同的数据库或甚至不同类型的数据存储，如 Microsoft SQL Server 数据库、 Oracle 数据库和 Web 服务等源。 我已决定而不是在本教程使用 ADO.NET 事务`TransactionScope`类，因为 ADO.NET 是更具体的数据库事务，并在许多情况下，是要少得多占用大量资源。 此外，在某些情况下`TransactionScope`类使用 Microsoft 分布式事务处理协调器 (MSDTC)。 配置、 实现和性能问题周围 MSDTC 使它而不是专用的和高级主题和这些教程的范围之外。
 
-
 在使用 SqlClient 提供程序在 ADO.NET 中，通过调用启动的事务[`SqlConnection`类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx)s [ `BeginTransaction`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.begintransaction.aspx)，它将返回[ `SqlTransaction`对象](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.aspx)。 中放入了构成事务的数据修改语句`try...catch`块。 如果在语句中出现错误`try`阻止执行传输到`catch`块，可以回滚事务通过`SqlTransaction`对象 s [ `Rollback`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.rollback.aspx)。 如果所有的语句会成功完成，调用`SqlTransaction`对象 s [ `Commit`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.commit.aspx)末尾`try`块提交事务。 以下代码片段演示此模式。 请参阅[维护与事务的数据库一致性](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)有关 ADO.NET 中使用事务的附加语法和示例。
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample1.cs)]
 
@@ -74,32 +70,25 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 - `BatchDelete.aspx`
 - `BatchInsert.aspx`
 
-
 ![将 ASP.NET 页面添加与 SqlDataSource 相关的教程](wrapping-database-modifications-within-a-transaction-cs/_static/image1.gif)
 
 **图 1**:将 ASP.NET 页面添加与 SqlDataSource 相关的教程
 
-
 与其他文件夹，一样`Default.aspx`将使用`SectionLevelTutorialListing.ascx`用户控件，若要列出其部分中的教程。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
-
 
 [![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](wrapping-database-modifications-within-a-transaction-cs/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image1.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-cs/_static/image2.png))
 
-
 最后，将这四个页面添加到条目为`Web.sitemap`文件。 具体而言，自定义后添加以下标记站点图`<siteMapNode>`:
-
 
 [!code-xml[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample2.xml)]
 
 更新后`Web.sitemap`，花点时间查看通过浏览器网站的教程。 在左侧的菜单现在包含批处理的数据教程使用的项。
 
-
 ![站点图现在包括批处理的数据教程使用的条目](wrapping-database-modifications-within-a-transaction-cs/_static/image3.gif)
 
 **图 3**:站点图现在包括批处理的数据教程使用的条目
-
 
 ## <a name="step-2-updating-the-data-access-layer-to-support-database-transactions"></a>步骤 2：更新数据访问层，以便支持数据库事务
 
@@ -111,14 +100,11 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 类型化数据集`Northwind.xsd`位于`App_Code`文件夹的`DAL`子文件夹。 创建子文件夹中的`DAL`名为的文件夹`TransactionSupport`并添加名为的新类文件`ProductsTableAdapter.TransactionSupport.cs`（请参阅图 4）。 此文件将保存的部分实现`ProductsTableAdapter`，包括用于执行数据修改使用事务的方法。
 
-
 ![添加一个名为 TransactionSupport 文件夹和名为 ProductsTableAdapter.TransactionSupport.cs 的类文件](wrapping-database-modifications-within-a-transaction-cs/_static/image4.gif)
 
 **图 4**:添加名为的文件夹`TransactionSupport`和名为的类文件 `ProductsTableAdapter.TransactionSupport.cs`
 
-
 输入以下代码到`ProductsTableAdapter.TransactionSupport.cs`文件：
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample3.cs)]
 
@@ -130,13 +116,11 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 完成这些方法中，我们重新准备好将方法添加到`ProductsDataTable`或执行一系列命令之下的事务的 BLL。 以下方法使用批更新模式来更新`ProductsDataTable`实例使用的事务。 它通过调用来启动一个事务`BeginTransaction`方法，然后使用`try...catch`块以发出数据修改语句。 如果在调用`Adapter`对象 s`Update`方法会引发异常，则执行会传输到`catch`块，将回滚事务并重新引发的异常。 请记住，`Update`方法通过枚举所提供的行来实现批处理更新模式`ProductsDataTable`并执行必要`InsertCommand`， `UpdateCommand`，和`DeleteCommand`s。 如果任何一个的这些命令将导致错误，事务已回滚，撤消上一事务 s 生命周期内进行的修改。 应`Update`语句完成不会出错，整个提交事务。
 
-
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample4.cs)]
 
 添加`UpdateWithTransaction`方法`ProductsTableAdapter`类中的分部类通过`ProductsTableAdapter.TransactionSupport.cs`。 或者，此方法无法添加到的业务逻辑层 s`ProductsBLL`类的一些小的语法更改。 即关键字考虑到这`this.BeginTransaction()`， `this.CommitTransaction()`，并`this.RollbackTransaction()`需要替换`Adapter`(回想一下，`Adapter`中的属性的名称`ProductsBLL`类型的`ProductsTableAdapter`)。
 
 `UpdateWithTransaction`方法使用批更新模式中，但也在事务中，如下所示的方法的范围内使用一系列数据库直接调用。 `DeleteProductsWithTransaction`方法接受作为输入`List<T>`类型的`int`，这是`ProductID`s 可删除。 方法启动的事务通过调用`BeginTransaction`，然后在`try`块中，循环访问提供列表调用 DB 直接模式`Delete`方法为每个`ProductID`值。 如果对调用任一`Delete`失败，控制权转至`catch`块，则回滚事务并重新引发的异常。 如果所有调用`Delete`成功，则将提交事务。 将以下方法添加到`ProductsBLL`类。
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample5.cs)]
 
@@ -154,12 +138,10 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 打开`ProductsBLL`类文件，并添加一个名为`UpdateWithTransaction`到相应的 DAL 方法只需调用。 现在应在两个新方法`ProductsBLL`: `UpdateWithTransaction`，只需添加和`DeleteProductsWithTransaction`，它被添加在步骤 3 中。
 
-
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample6.cs)]
 
 > [!NOTE]
 > 这些方法不包括`DataObjectMethodAttribute`分配给中的大多数其他方法特性`ProductsBLL`类，因为我们将调用这些方法直接从 ASP.NET 页代码隐藏类。 请记住，`DataObjectMethodAttribute`用于标记哪些方法应出现在 ObjectDataSource 的配置数据源向导和 （选择、 更新、 插入或删除） 哪些选项卡下。 因为 GridView 中没有任何对批处理编辑或删除的内置支持，我们需要以编程方式调用这些方法，而不是使用无代码的声明性方法。
-
 
 ## <a name="step-5-atomically-updating-database-data-from-the-presentation-layer"></a>步骤 5：以原子方式更新数据库数据的表示层
 
@@ -167,37 +149,29 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 首先打开`Transactions.aspx`页中`BatchData`文件夹，然后拖动 GridView 从工具箱拖到设计器。 设置其`ID`到`Products`并从其智能标记，请将其绑定到名为新 ObjectDataSource `ProductsDataSource`。 配置对象数据源以提取其数据从`ProductsBLL`类的`GetProducts`方法。 这将是只读的 GridView，因此设置下拉列表中插入、 更新和删除 （无） 选项卡并单击完成。
 
-
 [![图 5:配置对象数据源使用 ProductsBLL 类的 GetProducts 方法](wrapping-database-modifications-within-a-transaction-cs/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image3.png)
 
 **图 5**:图 5：配置为使用 ObjectDataSource`ProductsBLL`类 s`GetProducts`方法 ([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-cs/_static/image4.png))
-
 
 [![设置下拉列表中插入、 更新和删除选项卡为 （无）](wrapping-database-modifications-within-a-transaction-cs/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image5.png)
 
 **图 6**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image6.png))
 
-
 完成配置数据源向导后，Visual Studio 将创建 BoundFields 和产品数据字段 CheckBoxField。 删除所有这些字段除外`ProductID`， `ProductName`， `CategoryID`，和`CategoryName`并重命名`ProductName`并`CategoryName`BoundFields`HeaderText`为产品和类别中，属性分别。 从智能标记中，选中启用分页选项。 以后进行这些修改，GridView 和 ObjectDataSource s 声明性标记看起来应如下所示：
-
 
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample7.aspx)]
 
 接下来，添加 GridView 上面的三个按钮 Web 控件。 设置为刷新网格、 对修改类别 （与事务），第二个 s 和到修改类别 （而无需事务） 的第三个 s s 文本属性的第一个按钮。
 
-
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample8.aspx)]
 
 此时 Visual Studio 中的设计视图应类似于屏幕截图中图 7 所示。
-
 
 [![页包含一个 GridView 和三个按钮 Web 控件](wrapping-database-modifications-within-a-transaction-cs/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image7.png)
 
 **图 7**:页包含 GridView 和三个按钮 Web 控件 ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image8.png))
 
-
 创建事件处理程序为每个三个按钮的`Click`事件并使用以下代码：
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample9.cs)]
 
@@ -209,26 +183,21 @@ SQL 语句用于创建、 提交和回滚事务时，可以输入手动编写 SQ
 
 若要演示此行为，请访问此页上的通过浏览器。 最初应看到数据的第一页，如图 8 中所示。 接下来，单击修改类别 （与事务） 按钮。 这将导致回发并尝试更新的所有产品`CategoryID`值，但会导致违反外键约束 （请参阅图 9）。
 
-
 [![产品显示在可分页的 GridView](wrapping-database-modifications-within-a-transaction-cs/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image9.png)
 
 **图 8**:可分页的 GridView 中显示的产品 ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image10.png))
-
 
 [![重新分配类别导致违反外键约束](wrapping-database-modifications-within-a-transaction-cs/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image11.png)
 
 **图 9**:重新分配类别导致违反了外键约束 ([单击此项可查看原尺寸图像](wrapping-database-modifications-within-a-transaction-cs/_static/image12.png))
 
-
 现在，单击浏览器 s 后退按钮，然后单击刷新网格按钮。 刷新数据后你应看到完全相同的输出，如图 8 中所示。 也就是说，甚至是虽然某些产品`CategoryID`s 的已更改为合法值和在数据库中更新，它们时回滚发生外键约束冲突。
 
 现在，尝试单击修改类别 （而无需事务） 按钮。 这会导致相同的外键约束冲突错误 （请参阅图 9），这一次的那些产品，但其`CategoryID`值已更改为合法值将不会回滚。 按浏览器 s 后退按钮，然后刷新网格按钮。 如图 10 所示，`CategoryID`的前八个产品已被重新分配。 例如，在图 8 中，更改针对必须`CategoryID`为 1，但在图 10 it s 中被重新分配到 2。
 
-
 [![某些产品类别 Id 值更新时其他人已不是](wrapping-database-modifications-within-a-transaction-cs/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image13.png)
 
 **图 10**:某些产品`CategoryID`值更新时其他人已不是 ([单击以查看实际尺寸的图像](wrapping-database-modifications-within-a-transaction-cs/_static/image14.png))
-
 
 ## <a name="summary"></a>总结
 

@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 9f8fa166-49a2-402c-b236-20caef0c658f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b00fd5dc12c21183ef61d7ebb23211a1aa4719e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ff614308555b31710b11f408e12e9a6fadbf98d0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418958"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112812"
 ---
 # <a name="get-started-with-the-ajax-control-toolkit-vb"></a>AJAX 控件工具包入门 (VB)
 
@@ -21,26 +21,21 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解所有需要了解开始使用 AJAX 控件工具包。
 
-
 AJAX 控件工具包包含 30 多个可用控件，可以在 ASP.NET 应用程序中使用。 在本教程中，您将学习如何下载 AJAX 控件工具包和工具包控件添加到 Visual Studio/Visual Web Developer 速成版工具箱。
 
 ## <a name="downloading-the-ajax-control-toolkit"></a>下载 AJAX 控件工具包
 
 [AJAX 控件工具包](http://devexpress.com/act)由 ASP.NET 社区和 ASP.NET 团队的成员一个开放源代码项目开发。
 
-
 [![下载 AJAX 控件工具包](get-started-with-the-ajax-control-toolkit-vb/_static/image1.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image1.png)
 
 **图 01**:下载 AJAX 控件工具包 ([单击此项可查看原尺寸图像](get-started-with-the-ajax-control-toolkit-vb/_static/image2.png))
 
-
 下载文件后，你需要取消阻止文件。 右键单击该文件，选择属性，然后单击**解除阻止**按钮 （请参见图 2）。
-
 
 [![取消阻止 AJAX 控件工具包 ZIP 文件](get-started-with-the-ajax-control-toolkit-vb/_static/image2.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image3.png)
 
 **图 02**:取消阻止 AJAX 控件工具包 ZIP 文件 ([单击此项可查看原尺寸图像](get-started-with-the-ajax-control-toolkit-vb/_static/image4.png))
-
 
 取消阻止文件后，你可以解压缩该文件：右键单击该文件，然后选择**全部提取**菜单选项。 现在，我们已准备好工具包添加至 Visual Studio/Visual Web Developer 工具箱。
 
@@ -48,11 +43,9 @@ AJAX 控件工具包包含 30 多个可用控件，可以在 ASP.NET 应用程�
 
 使用 AJAX 控件工具包的最简单方法是工具包添加至您的 Visual Studio/Visual Web Developer 工具箱 （参见图 3）。 这样一来，您可以只需将工具包控件拖到页面时想要使用它。
 
-
 [![AJAX 控件工具包将出现在工具箱](get-started-with-the-ajax-control-toolkit-vb/_static/image3.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image5.png)
 
 **图 03**:AJAX 控件工具包将出现在工具箱 ([单击此项可查看原尺寸图像](get-started-with-the-ajax-control-toolkit-vb/_static/image6.png))
-
 
 首先，需要将 AJAX 控件工具包选项卡添加到工具箱。 请按照下列步骤。
 
@@ -60,22 +53,18 @@ AJAX 控件工具包包含 30 多个可用控件，可以在 ASP.NET 应用程�
 2. 右键单击常规选项卡下的工具箱，然后选择菜单选项**添加选项卡**（请参阅图 4）。
 3. 输入名为 AJAX 控件工具包的新选项卡。
 
-
 [![添加一个新选项卡](get-started-with-the-ajax-control-toolkit-vb/_static/image4.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image7.png)
 
 **图 04**:添加一个新选项卡 ([单击此项可查看原尺寸图像](get-started-with-the-ajax-control-toolkit-vb/_static/image8.png))
-
 
 接下来，您需要将 AJAX 控件工具包控件添加到新的选项卡。请执行以下步骤：
 
 - AJAX 控件工具包选项卡下方右键单击，然后选择菜单选项**选择项 （请参见图 5）**。
 - 浏览到解压缩 AJAX 控件工具包和选择 AjaxControlToolkit.dll 程序集的位置。
 
-
 [![选择要添加到工具箱项](get-started-with-the-ajax-control-toolkit-vb/_static/image5.jpg)](get-started-with-the-ajax-control-toolkit-vb/_static/image9.png)
 
 **图 05**:选择要添加到工具箱项 ([单击此项可查看原尺寸图像](get-started-with-the-ajax-control-toolkit-vb/_static/image10.png))
-
 
 完成这些步骤后，所有工具包控件都将出现在工具箱中。
 

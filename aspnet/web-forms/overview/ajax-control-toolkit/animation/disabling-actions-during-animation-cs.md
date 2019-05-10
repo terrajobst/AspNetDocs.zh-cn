@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 918026b4-2f63-421d-8546-df12856960a8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1cce2b05f125902ab05d493bebe753b2060b4d95
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dd69317c4a9b5a98302683766e6bc699d3b6396d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384274"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108655"
 ---
 # <a name="disabling-actions-during-animation-c"></a>动画过程中禁用操作 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384274"
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7CS.pdf)
 
 > ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它还支持的操作，例如鼠标点击操作。 但是时鼠标单击启动动画，最好在动画期间禁用鼠标单击。
-
 
 ## <a name="overview"></a>概述
 
@@ -53,7 +52,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 [!code-xml[Main](disabling-actions-during-animation-cs/samples/sample5.xml)]
 
 但是在给定方案这将是没有用自按钮淡出，并且不在动画结束时可见。
-
 
 [![动画运行时，将禁用的按钮](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)
 

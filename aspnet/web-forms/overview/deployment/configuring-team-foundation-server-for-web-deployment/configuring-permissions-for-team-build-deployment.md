@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 2488a91e-b0a8-465a-b874-3233f724b56b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62e5c5622743447e1119141469c894dc905e6b43
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5699f72af6b8d7f18d1a2c631dfdedd63c66e1e6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381050"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133857"
 ---
 # <a name="configuring-permissions-for-team-build-deployment"></a>配置团队生成部署权限
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381050"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何配置权限，以使您的生成服务器将自动的生成过程的一部分内容部署到 web 服务器和数据库服务器。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -36,7 +35,6 @@ ms.locfileid: "59381050"
 
 > [!NOTE]
 > 网络服务帐户使用计算机帐户对其他计算机进行身份验证。 计算机帐户需要在窗体 * [域名]\[计算机名称] ***$**&#x2014;等**FABRIKAM\TFSBUILD$**。 在这种情况下，如果生成服务运行时使用网络服务标识，则应授予计算机帐户标识为任何所需的权限为您的生成服务器。
-
 
 ## <a name="configuring-web-server-permissions"></a>配置 Web 服务器权限
 

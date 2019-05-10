@@ -8,12 +8,12 @@ ms.date: 01/23/2019
 ms.assetid: 1e1927c0-ded1-4752-80fd-a146628d2f09
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: c6a4aa4eb563fd77d5afd9248175d5f5b7984d19
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 81d134cbd3231b9a0d5537ccbd1bbfe6419254af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042594"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108715"
 ---
 # <a name="create-an-odata-v4-endpoint-using-aspnet-web-api"></a>创建 OData v4 终结点使用 ASP.NET Web API 
 
@@ -45,8 +45,6 @@ ms.locfileid: "57042594"
 
 选择 **确定**。
 
-
-
 [![](create-an-odata-v4-endpoint/_static/image8.png)](create-an-odata-v4-endpoint/_static/image8.png)
 
 选择**空**模板。 下**添加文件夹和核心引用：**，选择**Web API**。 选择 **确定**。
@@ -70,7 +68,6 @@ ms.locfileid: "57042594"
 > [!NOTE]
 > 按照约定，模型类都位于 Models 文件夹中，但无需遵循此约定在您自己的项目中。
 
-
 将此类命名为 `Product`。 在 Product.cs 文件中，将替换以下为样板代码：
 
 [!code-csharp[Main](create-an-odata-v4-endpoint/samples/sample2.cs)]
@@ -83,7 +80,6 @@ ms.locfileid: "57042594"
 
 > [!NOTE]
 > Web API OData 不需要 EF。 使用可以转换为模型的数据库实体的任何数据访问层。
-
 
 首先，安装 EF 的 NuGet 包。 从“工具”菜单中，选择“NuGet 程序包管理器”&gt;“包管理器控制台”。 在包管理器控制台窗口中，键入：
 
@@ -130,7 +126,6 @@ EDM 是抽象的数据模型。 EDM 用于创建服务元数据文档。 **OData
 
 > [!NOTE]
 > 本教程，了解 OData v3 使用新版**添加控制器**基架。 目前，OData v4 没有基架。
-
 
 ProductsController.cs 中的样板代码替换为以下。
 

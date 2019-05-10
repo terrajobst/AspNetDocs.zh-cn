@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 37947d79-ab1e-4ba9-9017-52e7a2757414
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f738d1c0b3cd99bb6df5f8b24dca907fa0b31f4d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f04ace98d81a33053b10cab7e40dbd75a6c0992c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413095"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108727"
 ---
 # <a name="configuring-parameters-for-web-package-deployment"></a>为 Web 程序包部署配置参数
 
@@ -23,7 +23,6 @@ ms.locfileid: "59413095"
 
 > 本主题介绍如何将 web 包部署到远程 IIS web 服务器时设置参数值，如 Internet 信息服务 (IIS) web 应用程序名称、 连接字符串和服务终结点。
 
-
 生成 web 应用程序项目、 生成和打包过程时生成三个密钥文件：
 
 - 一个 *[项目名称].zip*文件。 这是你的 web 应用程序项目的 web 部署包。 此包包含所有程序集、 文件、 数据库脚本和重新创建远程 IIS web 服务器上的 web 应用程序所需的资源。
@@ -32,7 +31,6 @@ ms.locfileid: "59413095"
 
 > [!NOTE]
 > 有关生成和打包过程的详细信息，请参阅[构建和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)。
-
 
 *SetParameters.xml*文件动态生成 web 应用程序项目文件和你的项目中的任何配置文件。 当生成并打包项目中，Web 发布管道 (WPP) 会自动检测大量可能的部署环境，如目标 IIS web 应用程序和任何数据库连接字符串之间发生更改的变量。 这些值是自动参数化 web 部署包中，添加到*SetParameters.xml*文件。 例如，如果您添加的连接字符串*web.config*文件在 web 应用程序项目中，生成过程将检测此更改，并将添加到一个条目*SetParameters.xml*文件相应地。
 
@@ -48,9 +46,7 @@ ms.locfileid: "59413095"
 
 例如，如果要生成并打包[联系人管理器](the-contact-manager-solution.md)而无需涉及以任何方式 WPP 参数化过程的示例解决方案将生成此*ContactManager.Mvc.SetParameters.xml*文件：
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample1.xml)]
-
 
 这种情况下：
 
@@ -73,15 +69,11 @@ WPP 还对其生成部署包中的这些属性进行参数化。 在安装部署
 
 如果您打开此文件，将看到它包含单个**参数**条目。 该条目使用的 XML 路径语言 (XPath) 查询来查找并参数化中的 ContactService Windows Communication Foundation (WCF) 服务的终结点 URL *web.config*文件。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample2.xml)]
-
 
 除了参数化的部署包中的终结点 URL，WPP 还将添加到对应的条目*SetParameters.xml*获取与部署包一起生成的文件。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample3.xml)]
-
 
 如果手动安装部署包，IIS 管理器将提示您一起自动参数化的属性的服务终结点地址。 如果运行安装部署包 *。 deploy.cmd*文件中，您可以编辑*SetParameters.xml*文件服务终结点地址的值一起提供的值自动参数化的属性。
 
@@ -96,22 +88,16 @@ WPP 还对其生成部署包中的这些属性进行参数化。 在安装部署
 > [!NOTE]
 > 示例解决方案中与常规中的自定义项目文件的简介中的项目文件模型的更广泛概述，请参阅[了解项目文件](understanding-the-project-file.md)并[了解生成过程](understanding-the-build-process.md)。
 
-
 首先，将感兴趣的参数值定义为特定于环境的项目文件中的属性 (例如， *Env Dev.proj*)。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample4.xml)]
-
 
 > [!NOTE]
 > 有关如何自定义服务器环境的特定于环境的项目文件的指南，请参阅[为目标环境配置部署属性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
 
-
 下一步， *Publish.proj*文件导入这些属性。 因为每个*SetParameters.xml*与文件关联 *。 deploy.cmd*文件，和我们最终希望调用每个项目文件 *。 deploy.cmd*文件，项目文件将创建 MSBuild*项*每个 *。 deploy.cmd*文件，并定义为感兴趣的属性*项元数据*。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample5.xml)]
-
 
 这种情况下：
 
@@ -122,9 +108,7 @@ WPP 还对其生成部署包中的这些属性进行参数化。 在安装部署
 
 最后，在*Publish.proj*文件中， **PublishWebPackages**目标使用**XmlPoke**任务中修改这些值*SetParameters.xml*文件。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample6.xml)]
-
 
 可以看到，每个**XmlPoke**任务指定四个属性值：
 

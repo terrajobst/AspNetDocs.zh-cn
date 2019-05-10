@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f11d22a7-5d32-4ad0-8a9b-276460a61c06
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f778549d3e26989a2e71ef21171adec521842729
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408792"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132143"
 ---
 # <a name="manually-installing-web-packages"></a>手动安装 Web 程序包
 
@@ -29,7 +29,6 @@ ms.locfileid: "59408792"
 > 
 > 在这些情况下，唯一的选项可能是端口到目标服务器上的 web 包，并手动将其导入 IIS。 尽管这种方法可以阻止自动的部署，但它仍是一种 web 应用程序发布的高效方法&#x2014;只需将单个 zip 文件复制到你的 web 服务器并使用向导来引导您完成导入过程。
 
-
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
 ## <a name="task-overview"></a>任务概述
@@ -44,7 +43,6 @@ ms.locfileid: "59408792"
 
 > [!NOTE]
 > 本主题最适合使用结合[Web 服务器配置用于 Web 部署发布 （脱机部署）](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)，其中解释了如何安装所需的组件，并为程序包导入准备的 IIS 网站。
-
 
 ## <a name="create-a-web-deployment-package"></a>创建 Web 部署包
 
@@ -68,9 +66,7 @@ ms.locfileid: "59408792"
 
 可以从命令行创建 web 部署包，通过调用**包**上 web 应用程序项目使用 MSBuild 目标。 该命令应类似如下：
 
-
 [!code-console[Main](manually-installing-web-packages/samples/sample1.cmd)]
-
 
 无论何种方法使用，最终结果相同。 WPP 为 zip 文件，以及各种支持资源，你的 web 应用程序项目的输出文件夹中创建 web 部署包。
 

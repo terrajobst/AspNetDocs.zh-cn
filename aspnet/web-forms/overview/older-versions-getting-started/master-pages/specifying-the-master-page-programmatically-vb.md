@@ -8,12 +8,12 @@ ms.date: 07/28/2008
 ms.assetid: 0edcd653-f24a-41aa-aef4-75f868fe5ac2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 96f6ebb47af38c77cba11a92c883700730324226
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d075d0b66da8a0f4e2f0155c08b09a02a4ca71fb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389227"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106947"
 ---
 # <a name="specifying-the-master-page-programmatically-vb"></a>以编程方式指定母版页 (VB)
 
@@ -23,11 +23,9 @@ ms.locfileid: "59389227"
 
 > 设置内容页面的母版页 PreInit 事件处理程序通过以编程方式来看待。
 
-
 ## <a name="introduction"></a>介绍
 
 由于中的开篇示例[*创建站点范围内布局使用 Master Pages*](creating-a-site-wide-layout-using-master-pages-vb.md)，则所有内容页面已引用以声明方式通过其主页面`MasterPageFile`中属性`@Page`指令。 例如，以下`@Page`指令将内容页面链接到母版页`Site.master`:
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample1.aspx)]
 
@@ -41,11 +39,9 @@ ms.locfileid: "59389227"
 
 图 1 显示了此合成。 步骤 1 中图 1 显示的初始内容和主页面控件层次结构。 末端的 PreInit 阶段内容页中的控件添加到相应 Contentplaceholder 母版页 (步骤 2) 中。 之后此合成母版页用作浮点混合的控件层次结构的根。 这融合在控件层次结构随后将添加到页后，可以生成已完成的控件层次结构 (第 3 步)。 最终结果是页面的控件层次结构，包括浮点混合的控件层次结构。
 
-
 [![母版页和内容页面的控件层次结构是融合在一起的 PreInit 阶段](specifying-the-master-page-programmatically-vb/_static/image2.png)](specifying-the-master-page-programmatically-vb/_static/image1.png)
 
 **图 01**:母版页和内容页面的控件层次结构是融合在一起的 PreInit 阶段 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image3.png))
-
 
 ## <a name="step-2-setting-themasterpagefileproperty-from-code"></a>步骤 2：设置`MasterPageFile`代码中的属性
 
@@ -55,18 +51,15 @@ ms.locfileid: "59389227"
 
 首先打开`Default.aspx.vb`，我们的站点的主页的代码隐藏类文件。 添加事件处理程序的页面的`PreInit`通过键入下面的代码中的事件：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample2.vb)]
 
 从此处，我们可以设置`MasterPageFile`属性。 更新代码，以便它将的值"~ / Site.master"到`MasterPageFile`属性。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample3.vb)]
 
 如果设置了断点并开始调试你会看到，每当`Default.aspx`访问页面时，或者每当没有回发到此页上，`Page_PreInit`事件处理程序执行和`MasterPageFile`属性分配给"~ / Site.master"。
 
 或者，您可以重写`Page`类的`OnPreInit`方法，设置`MasterPageFile`那里属性。 对于此示例中，让我们不设置母版页的特定页上，而从`BasePage`。 回想一下，我们创建一个自定义基本页类 (`BasePage`) 返回[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教程。 目前`BasePage`重写`Page`类的`OnLoadComplete`方法，它在其中设置页面的`Title`属性基于站点地图数据。 让我们更新`BasePage`还重写`OnPreInit`方法以编程方式指定母版页。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample4.vb)]
 
@@ -82,11 +75,9 @@ ms.locfileid: "59389227"
 
 简单地说，您需要离开`MasterPageFile`属性中`@Page`指令以享受 Visual Studio 中丰富的设计时体验。
 
-
 [![Visual Studio 使用@Page指令的 MasterPageFile 属性来呈现设计视图](specifying-the-master-page-programmatically-vb/_static/image5.png)](specifying-the-master-page-programmatically-vb/_static/image4.png)
 
 **图 02**:Visual Studio 将使用`@Page`指令的`MasterPageFile`特性呈现到设计视图 ([单击以查看实际尺寸的图像](specifying-the-master-page-programmatically-vb/_static/image6.png))
-
 
 ## <a name="step-3-creating-an-alternative-master-page"></a>步骤 3：创建一个替代方法的母版页
 
@@ -96,22 +87,18 @@ ms.locfileid: "59389227"
 
 在名为的根文件夹中创建新的主页面`Alternate.master`。 此外将新的样式表添加到名为网站`AlternateStyles.css`。
 
-
 [![添加另一个母版页和 CSS 文件到网站](specifying-the-master-page-programmatically-vb/_static/image8.png)](specifying-the-master-page-programmatically-vb/_static/image7.png)
 
 **图 03**:将另一个母版页和 CSS 文件添加到网站 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image9.png))
-
 
 我已经设计`Alternate.master`主页面顶部的中心页和深蓝色背景上显示的标题都有。 我已分配的左侧的列，已将该内容下方移动`MainContent`ContentPlaceHolder 控件，它现在跨越整个页面的宽度。 此外，我 nixed 无序的课程列表，并替换上面水平列表`MainContent`。 我还将更新的字体和颜色以及使用的母版页 （，扩展，其内容的页面）。 图 4 所示`Default.aspx`时使用`Alternate.master`母版页。
 
 > [!NOTE]
 > ASP.NET 包括能够定义*主题*。 主题是图像、 CSS 文件和与样式有关的 Web 控件属性设置可以应用于在运行时的页面的集合。 主题是如果您的站点布局各不相同，这是仅在显示的图像中和通过其 CSS 规则的方式。 如果布局如使用不同的 Web 控件更大不相同，或具有截然不同布局，然后你将需要使用单独的主页面。 有关详细信息主题本教程结束时查阅更多参考资料部分。
 
-
 [![内容页面现在可以使用新的外观和感觉](specifying-the-master-page-programmatically-vb/_static/image11.png)](specifying-the-master-page-programmatically-vb/_static/image10.png)
 
 **图 04**:内容页面现在可以使用新的外观 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image12.png))
-
 
 当融合在 master 和内容页的标记时，`MasterPage`类检查，以确保每个内容控件在内容页中的引用 ContentPlaceHolder 母版页中的。 如果找到了引用不存在 ContentPlaceHolder 内容控件，将引发异常。 换而言之，它是命令性母版页分配给内容页，为每个具有 ContentPlaceHolder 内容在内容页中的控件。
 
@@ -126,11 +113,9 @@ ms.locfileid: "59389227"
 
 若要获取你`Alternate.master`母版页中以看起来类似于我的 （请参阅图 4），首先定义中的主页面的样式`AlternateStyles.css`样式表。 添加到以下规则`AlternateStyles.css`:
 
-
 [!code-css[Main](specifying-the-master-page-programmatically-vb/samples/sample5.css)]
 
 接下来，添加以下声明性标记到`Alternate.master`。 正如您所看到的`Alternate.master`包含具有相同的四个 ContentPlaceHolder 控件`ID`值中的 ContentPlaceHolder 控件作为`Site.master`。 此外，它包括一个 ScriptManager 控件，它是我们的网站使用 ASP.NET AJAX 框架的这些页面的必要条件。
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample6.aspx)]
 
@@ -139,7 +124,6 @@ ms.locfileid: "59389227"
 若要测试此新的主页面更新`BasePage`类的`OnPreInit`方法，以便`MasterPageFile`属性的值赋给`"~/Alternate.maser"`，然后访问该网站。 每个页面应函数而无需除两个错误：`~/Admin/AddProduct.aspx`和`~/Admin/Products.aspx`。 将产品添加到在 DetailsView`~/Admin/AddProduct.aspx`会导致`NullReferenceException`从尝试设置主页面的代码行`GridMessageText`属性。 当来访`~/Admin/Products.aspx``InvalidCastException`并显示消息的页面加载上引发："找不到类型的对象强制转换 ASP.alternate\_主键入 ASP.site\_master。"
 
 之所以发生这些错误`Site.master`代码隐藏类包括公共事件、 属性和方法中未定义`Alternate.master`。 这两页的标记部分有`@MasterType`指令，它引用`Site.master`母版页。
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample7.aspx)]
 
@@ -157,18 +141,15 @@ ms.locfileid: "59389227"
 
 更新你`BaseMasterPage`类，使其包含以下代码：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample8.vb)]
 
 接下来，请转到`Site.master`代码隐藏类，并将其从派生`BaseMasterPage`。 因为`BaseMasterPage`包含标记的成员`MustOverride`我们需要重写中的这些成员`Site.master`。 添加`Overrides`方法和属性定义的关键字。 此外更新代码，将引发`PricesDoubled`中的事件`DoublePrice`按钮的`Click`事件处理程序通过调用基类的`OnPricesDoubled`方法。
 
 这些修改后`Site.master`代码隐藏类应包含以下代码：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample9.vb)]
 
 我们还需要更新`Alternate.master`的代码隐藏类派生自`BaseMasterPage`并重写两个`MustOverride`成员。 但是，由于`Alternate.master`不包含一个 GridView，最新的产品，也不新产品后显示一条消息的标签添加到数据库的列表，这些方法不需要执行任何操作。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample10.vb)]
 
@@ -176,11 +157,9 @@ ms.locfileid: "59389227"
 
 现在，我们已完成`BaseMasterPage`类并已将其扩展我们两个主页面中，我们最后一步是更新`~/Admin/AddProduct.aspx`和`~/Admin/Products.aspx`页来指代该公共类型。 首先更改`@MasterType`指令从这两个页中：
 
-
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample11.aspx)]
 
 到:
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample12.aspx)]
 
@@ -188,11 +167,9 @@ ms.locfileid: "59389227"
 
 不需要进行中的一个小更改`~/Admin/AddProduct.aspx`。 在 DetailsView 控件`ItemInserted`事件处理程序使用这两个强类型化`Master`属性和松散类型`Page.Master`属性。 我们修复的强类型化引用时，我们更新`@MasterType`指令，但我们仍需要更新松散类型化引用。 替换为以下代码行：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample13.vb)]
 
 使用以下命令，这将强制转换`Page.Master`为基类型：
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample14.vb)]
 
@@ -205,14 +182,11 @@ ms.locfileid: "59389227"
 > [!NOTE]
 > 因为`Site.master`和`Alternate.master`具有一组相同的 ContentPlaceHolder 控件并不重要选择创建新的内容页面时哪些母版页。 为了保持一致，我会建议使用`Site.master`。
 
-
 [![向网站添加新的内容页面](specifying-the-master-page-programmatically-vb/_static/image14.png)](specifying-the-master-page-programmatically-vb/_static/image13.png)
 
 **图 05**:将新的内容页面添加到网站 ([单击此项可查看原尺寸图像](specifying-the-master-page-programmatically-vb/_static/image15.png))
 
-
 更新`Web.sitemap`文件以便包括本课程中的一个条目。 添加以下标记下方`<siteMapNode>`母版页和 ASP.NET AJAX 课程：
-
 
 [!code-xml[Main](specifying-the-master-page-programmatically-vb/samples/sample15.xml)]
 
@@ -220,11 +194,9 @@ ms.locfileid: "59389227"
 
 向页面添加一个按钮 Web 控件并设置其`ID`并`Text`属性设置为`SaveLayout`和"保存的布局选择"，分别。 此时页面的声明性标记应类似于下面：
 
-
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample16.aspx)]
 
 当首次访问页面时我们需要显示用户的当前选定的主页面选择。 创建`Page_Load`事件处理程序并添加以下代码：
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample17.vb)]
 
@@ -232,34 +204,27 @@ ms.locfileid: "59389227"
 
 我们还需要将保存到的用户的选择的代码`MyMasterPage`会话变量。 创建事件处理程序`SaveLayout`按钮的`Click`事件，并添加以下代码：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample18.vb)]
 
 > [!NOTE]
 > 按时间`Click`在回发时执行事件处理程序时，已选择主页面。 因此，用户的下拉列表中选择不会生效直到下一个页面访问。 `Response.Redirect`强制浏览器以重新请求`ChooseMasterPage.aspx`。
 
-
 与`ChooseMasterPage.aspx`页上完成，最后一项任务是让`BasePage`分配`MasterPageFile`属性值的基础`MyMasterPage`会话变量。 如果未设置会话变量有`BasePage`默认为`Site.master`。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample19.vb)]
 
 > [!NOTE]
 > 我将分配的代码移`Page`对象的`MasterPageFile`共属性`OnPreInit`事件处理程序并为两个单独的方法。 此第一种方法， `SetMasterPageFile`，将分配`MasterPageFile`属性设置为第二种方法，返回的值`GetMasterPageFileFromSession`。 我标记`SetMasterPageFile`方法`Overridable`，以便将来类扩展`BasePage`可以根据需要以使其实现自定义逻辑，根据需要重写。 我们会举例说明重写`BasePage`的`SetMasterPageFile`下一教程中的属性。
 
-
 利用此代码，请访问`ChooseMasterPage.aspx`页。 最初，`Site.master`母版页是所选 （见图 6），但用户可以选择不同的主页面，从下拉列表。
-
 
 [![显示使用 Site.master 母版页内容页](specifying-the-master-page-programmatically-vb/_static/image17.png)](specifying-the-master-page-programmatically-vb/_static/image16.png)
 
 **图 06**:内容页会显示使用`Site.master`母版页 ([单击以查看实际尺寸的图像](specifying-the-master-page-programmatically-vb/_static/image18.png))
 
-
 [![内容页现在显示使用 Alternate.master 母版页](specifying-the-master-page-programmatically-vb/_static/image20.png)](specifying-the-master-page-programmatically-vb/_static/image19.png)
 
 **图 07**:内容页现在显示使用`Alternate.master`母版页 ([单击以查看实际尺寸的图像](specifying-the-master-page-programmatically-vb/_static/image21.png))
-
 
 ## <a name="summary"></a>总结
 

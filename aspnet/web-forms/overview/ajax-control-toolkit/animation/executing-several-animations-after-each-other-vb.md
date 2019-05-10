@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 21ece509-79cc-4d9d-892d-7b6e9c4d3502
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 53984f03cf01caab859f44fdc018b1598ed62def
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e0c9aa2c9ce8b55824c24ef43881e35a0788d28
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383039"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108343"
 ---
 # <a name="executing-several-animations-after-each-other-vb"></a>逐一执行多个动画 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383039"
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3VB.pdf)
 
 > ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 它允许在它们运行多个动画一个。
-
 
 ## <a name="overview"></a>概述
 
@@ -52,11 +51,9 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 
 当您运行此脚本，面板第一次获得更宽且然后较小。
 
-
 [![第一次增加宽度](executing-several-animations-after-each-other-vb/_static/image2.png)](executing-several-animations-after-each-other-vb/_static/image1.png)
 
 第一次增加宽度 ([单击此项可查看原尺寸图像](executing-several-animations-after-each-other-vb/_static/image3.png))
-
 
 [![再减少高度](executing-several-animations-after-each-other-vb/_static/image5.png)](executing-several-animations-after-each-other-vb/_static/image4.png)
 

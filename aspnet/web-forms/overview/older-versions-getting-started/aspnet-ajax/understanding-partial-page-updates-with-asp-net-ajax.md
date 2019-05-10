@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 54d9df99-1161-4899-b4e8-2679c85915e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: d2d7982a4e0175824ffede965dc8206219485df2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aa842aeb228abc763540d8ca8dafdfdca0b8b395
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396468"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109014"
 ---
 # <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>了解使用 ASP.NET AJAX 的部分页面更新
 
@@ -22,7 +22,6 @@ ms.locfileid: "59396468"
 [下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial01_Partial_Page_Updates_cs.pdf)
 
 > 可能是最明显的 ASP.NET AJAX Extensions 特色是能够执行部分或增量页更新操作而无需执行完全回发到服务器，使用无代码更改和最小标记更改。 优点是广泛 – 你多媒体内容 （例如 Adobe Flash 或 Windows Media） 的状态保持不变、 降低带宽成本，和客户端不会遇到通常与回发相关联的闪烁。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -48,7 +47,6 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 
 ## <a name="walkthrough-integrating-partial-rendering-into-an-existing-project"></a>演练：将部分呈现集成到现有项目
 
-
 1. 在 Microsoft Visual Studio 2008 中，通过转到创建新的 ASP.NET 网站项目<em>文件</em> <em>- &gt;新建</em> <em>- &gt;网站</em>并从对话框中选择 ASP.NET Web 站点。 您可以命名它您希望的任何内容，您可以将它安装到文件系统或到 Internet 信息服务 (IIS)。
 2. 将显示与使用基本的 ASP.NET 标记的空默认页 (服务器端窗体和`@Page`指令)。 删除名为标签`Label1`和一个按钮调用`Button1`拖到窗体元素在页面。 可以设置它们的 text 属性为希望的任何内容。
 3. 在设计视图中，双击`Button1`以生成代码隐藏事件处理程序。 在此事件处理程序中，设置`Label1.Text`到单击了按钮 ！ .
@@ -64,11 +62,9 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 1. 按 F5 以启动您的网站。 Visual Studio 会提示您添加一个 web.config 文件以启用调试;执行此操作。 当单击按钮时，请注意，刷新该页面可以更改的标签中的文本，并且没有简要闪烁如页面重绘。
 2. 关闭浏览器窗口后，返回到 Visual Studio 和标记页上。 在 Visual Studio 工具箱中，向下滚动并找到标记为 AJAX 扩展选项卡。 （如果你还没有此选项卡上由于使用的较旧版本的 AJAX 或 Atlas 扩展，以便稍后在本白皮书中，注册 AJAX Extensions 工具箱项演练，请参阅或可下载 Windows 安装程序安装最新版本从网站）。
 
-
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image2.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image1.png)
 
 ([单击此项可查看原尺寸图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image3.png))
-
 
 1. <em>已知问题：</em>如果到已随 ASP.NET 2.0 AJAX Extensions 一起安装的 Visual Studio 2005 的计算机上安装 Visual Studio 2008，Visual Studio 2008 将导入的 AJAX 扩展工具箱项。 您可以确定是否是这种通过检查组件、 工具提示它们应显示版本 3.5.0.0。 如果他们说 2.0.0.0 版，然后导入在旧的工具箱项，并将需要手动使用 Visual Studio 中的选择工具箱项对话框中将其导入。 你将不能添加版本 2 通过设计器的控件。
 
@@ -76,11 +72,9 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 3. 拖动结束`</asp:UpdatePanel>`标记末尾的按钮元素，以便使用包装的标签和按钮控件的元素是格式正确。
 4. 打开之后`<asp:UpdatePanel>`标记中，开始打开一个新的标记。 请注意，IntelliSense 会提示你使用两个选项。 在这种情况下，创建`<ContentTemplate>`标记。 务必将此标记标签和按钮，以便标记的格式正确。
 
-
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image5.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image4.png)
 
 ([单击此项可查看原尺寸图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image6.png))
-
 
 1. 中的任意位置`<form>`元素中，通过双击包括 ScriptManager 控件`ScriptManager`工具箱中的项。
 2. 编辑`<asp:ScriptManager>`标记，以便它包含属性`EnablePartialRendering= true`。
@@ -93,11 +87,9 @@ Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型�
 
 1. 什么是 Visual Studio 2008 中的新增功能：提供与 ASP.NET 网站项目模板自动包括对 ASP.NET AJAX Extensions 中，所有必需的引用，包括 web.config 的注释可以取消注释，若要启用额外的配置信息的部分功能。 Visual Studio 2005 在已安装 ASP.NET 2.0 AJAX Extensions 有类似的模板。 但是，在 Visual Studio 2008 中，AJAX Extensions 将选择退出默认情况下 （即，它们引用的默认值，但可以删除作为引用）。
 
-
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image8.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image7.png)
 
 ([单击此项可查看原尺寸图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image9.png))
-
 
 1. 按 F5 启动你的网站。 请注意如何无需更改源代码所需支持部分呈现-仅标记已更改。
 
@@ -233,16 +225,13 @@ UpdatePanel 用作内容黑箱包装 JavaScript XMLHttpRequest 的上下文中�
 
 请考虑具有的窗体，除此之外，邮政编码文本框中，这应填充窗体或控件上的城市和州字段。 此窗体最终收集成员身份信息，包括用户的名称、 地址和联系信息。 有很多设计注意事项，以考虑在内，根据特定项目的要求。
 
-
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image11.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image10.png)
 
 ([单击此项可查看原尺寸图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image12.png))
 
-
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image14.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image13.png)
 
 ([单击此项可查看原尺寸图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image15.png))
-
 
 在此应用程序的原始迭代，控件已生成合并整个用户注册数据，包括邮政编码、 城市和状态。 整个控件已换行 UpdatePanel 和拖放到 Web 窗体上。 当用户输入的邮政编码时，UpdatePanel 检测到事件 （后端中，通过指定触发器或通过使用 ChildrenAsTriggers 属性设置为 true 的相应 TextChanged 事件）。 AJAX 发布所有 UpdatePanel 中的字段由 FireBug 捕获 （请参阅右侧的关系图）。
 
@@ -252,11 +241,9 @@ UpdatePanel 用作内容黑箱包装 JavaScript XMLHttpRequest 的上下文中�
 
 DOM 的重新生成会触发一系列其他问题：
 
-
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image17.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image16.png)
 
 ([单击此项可查看原尺寸图像](understanding-partial-page-updates-with-asp-net-ajax/_static/image18.png))
-
 
 - 如果 UpdatePanel 内具有焦点的 HTML 元素，则它将失去焦点。 因此，对于用户按下 Tab 键以退出邮政编码文本框中，其下一步目标就已市/县文本框。 但是，UpdatePanel 刷新显示后, 在窗体将不再具有焦点，并按 Tab 应开始突出显示的焦点元素 （如链接）。
 - 如果在使用为任何类型的自定义客户端脚本访问 DOM 元素，引用保存的函数可能会变得不起作用后部分回发。

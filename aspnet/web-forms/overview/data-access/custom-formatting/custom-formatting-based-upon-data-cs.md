@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 871a4574-f89c-4214-b786-79253ed3653b
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd5433b724dcafe8e816254523cb4b38c3be1104
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 96003d3e93fc92aaaf39f39f1bb6512d687dc451
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403163"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108278"
 ---
 # <a name="custom-formatting-based-upon-data-c"></a>基于数据的自定义格式设置 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59403163"
 [下载示例应用程序](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_11_CS.exe)或[下载 PDF](custom-formatting-based-upon-data-cs/_static/datatutorial11cs1.pdf)
 
 > 可以通过多种方式来调整的 GridView、 detailsview 和 FormView 取决于绑定到它的数据格式。 在本教程中我们将介绍如何完成数据绑定通过使用 DataBound 和 RowDataBound 事件处理程序格式设置。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -48,37 +47,29 @@ ms.locfileid: "59403163"
 
 一旦您已绑定到 DetailsView 的 ObjectDataSource，花点时间来修改字段列表。 我选择要删除`ProductID`， `SupplierID`， `CategoryID`， `UnitsInStock`， `UnitsOnOrder`， `ReorderLevel`，和`Discontinued`BoundFields 和重命名和重新格式化剩余 BoundFields。 我也被清除`Width`和`Height`设置。 由于 DetailsView 显示单个记录，我们需要启用分页，才能允许最终用户可以查看所有产品。 通过检查 DetailsView 的智能标记中的启用分页复选框来实现。
 
-
 [![检查 DetailsView 的智能标记中的启用分页复选框](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
 
 **图 1**:检查启用分页中的复选框 DetailsView 的智能标记 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image3.png))
 
-
 更改后，将为 DetailsView 标记：
-
 
 [!code-aspx[Main](custom-formatting-based-upon-data-cs/samples/sample1.aspx)]
 
 请花费片刻时间来查看此页在浏览器中测试。
 
-
 [![在 DetailsView 控件一次显示一种产品](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
 
 **图 2**:DetailsView 控件显示一个产品一次 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image6.png))
-
 
 ## <a name="step-2-programmatically-determining-the-value-of-the-data-in-the-databound-event-handler"></a>步骤 2：以编程方式确定数据绑定事件处理程序中的数据的值
 
 若要对这些产品加粗、 倾斜字体显示价格其`UnitPrice`值超过 $75.00，我们需要首先能以编程方式确定`UnitPrice`值。 对于 DetailsView，这可以完成`DataBound`事件处理程序。 若要创建事件处理程序在设计器中 DetailsView 单击，然后导航到属性窗口。 按 F4 以显示它，如果不可见，或转到视图菜单并选择属性窗口的菜单选项。 在属性窗口中，单击闪电形图标以列出 DetailsView 的事件。 接下来，双击`DataBound`事件或键入你想要创建的事件处理程序的名称。
 
-
 ![为数据绑定事件创建事件处理程序](custom-formatting-based-upon-data-cs/_static/image7.png)
 
 **图 3**:创建事件处理程序`DataBound`事件
 
-
 执行此操作将自动创建事件处理程序，并将您带到的代码部分添加的位置。 此时会看到：
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample2.cs)]
 
@@ -86,12 +77,10 @@ ms.locfileid: "59403163"
 
 下面的代码演示如何确定是否`UnitPrice`绑定到 DetailsView 控件的值是否大于 $75.00:
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample3.cs)]
 
 > [!NOTE]
 > 由于`UnitPrice`可以有`NULL`数据库中的值，我们首先检查以确保，我们并没有解决`NULL`值，然后才能访问`ProductsRow`的`UnitPrice`属性。 此检查非常重要因为如果我们尝试访问`UnitPrice`属性时它具有`NULL`值`ProductsRow`对象将引发[StrongTypingException 异常](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx)。
-
 
 ## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>步骤 3：在 DetailsView 中的单价值格式设置
 
@@ -99,36 +88,29 @@ ms.locfileid: "59403163"
 
 访问行以编程方式要求你知道的行的索引，从 0 开始。 `UnitPrice`行是 DetailsView，向其提供的 4 索引并使其以编程方式访问中的第五个行使用`ExpensiveProductsPriceInBoldItalic.Rows[4]`。 现在我们可以使用以下代码显示加粗、 倾斜字体中的整个行的内容：
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample4.cs)]
 
 但是，这将使*同时*标签 （价格） 和粗体和斜体的值。 如果我们想要使只是值粗体和斜体我们需要将此应用到的第二个单元格的行，可以使用以下格式：
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample5.cs)]
 
 由于我们的教程到目前为止已使用样式表来维护与样式有关的信息呈现的标记之间完全分离，而不是设置特定的样式属性，如上所示让我们改为使用 CSS 类。 打开`Styles.css`样式表并添加一个名为的新 CSS 类`ExpensivePriceEmphasis`以下定义：
 
-
 [!code-css[Main](custom-formatting-based-upon-data-cs/samples/sample6.css)]
 
 然后，在`DataBound`事件处理程序设置的单元格`CssClass`属性设置为`ExpensivePriceEmphasis`。 下面的代码演示`DataBound`完整的事件处理程序：
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample7.cs)]
 
 时查看 Chai，小于 75.00 美元的费用，价格显示为正常字体 （请参阅图 4）。 但是，当查看 Mishi Kobe Niku，具有 97.00 美元的价格，价格会显示在加粗、 倾斜字体 （请参见图 5）。
 
-
 [![价格小于 $75.00 将显示在普通字体](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
 
 **图 4**:价格小于 $75.00 将显示在普通字体 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image10.png))
 
-
 [![粗体、 斜体字体显示昂贵产品的价格](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
 
 **图 5**:粗体、 斜体字体显示昂贵产品的价格 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image13.png))
-
 
 ## <a name="using-the-formview-controlsdataboundevent-handler"></a>使用 FormView 控件`DataBound`事件处理程序
 
@@ -144,7 +126,6 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 以后这些编辑 FormView 的标记看起来应类似于下面：
 
-
 [!code-aspx[Main](custom-formatting-based-upon-data-cs/samples/sample8.aspx)]
 
 请注意，`ItemTemplate`包含：
@@ -157,14 +138,11 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 使用 FormView 的标记完成下, 一步是以编程方式确定如果`UnitsInStock`值是否小于或等于 10。 完成此操作完全相同的方式与 FormView 中使用 DetailsView 一样。 首先，创建一个事件处理程序的 FormView 的`DataBound`事件。
 
-
 ![创建数据绑定事件处理程序](custom-formatting-based-upon-data-cs/_static/image14.png)
 
 **图 6**:创建`DataBound`事件处理程序
 
-
 在事件处理程序转换 FormView`DataItem`属性设置为`ProductsRow`实例，并确定是否`UnitsInPrice`值是这样，我们需要以红色字体显示。
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample9.cs)]
 
@@ -172,35 +150,28 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 最后一步是设置的格式显示`UnitsInStock`以红色字体值，如果值为 10 或更少。 若要完成此我们需要以编程方式访问`UnitsInStockLabel`控件中`ItemTemplate`并设置其样式属性，以便显示其文本为红色。 若要访问的 Web 控件模板中，使用`FindControl("controlID")`方法如下：
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample10.cs)]
 
 对于我们的示例中我们想要访问标签控件`ID`值是`UnitsInStockLabel`，因此，我们将使用：
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample11.cs)]
 
 对 Web 控件的编程引用后，我们可以根据需要修改其与样式有关的属性。 如前面的示例中，我创建了中的 CSS 类`Styles.css`名为`LowUnitsInStockEmphasis`。 若要将此样式应用于标签 Web 控件，设置其`CssClass`属性相应地。
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample12.cs)]
 
 > [!NOTE]
 > 格式设置以编程方式访问使用在 Web 控件模板的语法`FindControl("controlID")`，然后设置其样式相关的属性还可用使用时[Templatefield](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) DetailsView 或 GridView 中控件。 我们将在下一教程中我们介绍 Templatefield。
 
-
 图 7 显示了 FormView 查看产品时其`UnitsInStock`值大于 10，而图 8 中的产品具有其值小于 10。
-
 
 [![对于产品具有足够大 Units In Stock，无自定义格式设置将应用](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
 
 **图 7**:对于产品具有足够大 Units In Stock，无自定义格式设置将应用 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image17.png))
 
-
 [![在库存数量的单位以红色显示的那些产品使用的值小于或等于 10](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
 
 **图 8**:在库存数量的单位以红色显示的那些产品使用的值小于或等于 10 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image20.png))
-
 
 ## <a name="formatting-with-the-gridviewsrowdataboundevent"></a>使用 GridView 的格式设置`RowDataBound`事件
 
@@ -237,16 +208,13 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 上一示例中添加下 FormView GridView，并设置其`ID`属性设置为`HighlightCheapProducts`。 因为我们已经有 ObjectDataSource，返回所有产品页上，将 GridView 绑定到的。 最后，编辑 GridView 的 BoundFields 包括只需产品的名称、 类别和价格。 在这些编辑后 GridView 的标记应如下所示：
 
-
 [!code-aspx[Main](custom-formatting-based-upon-data-cs/samples/sample13.aspx)]
 
 图 9 显示了我们到目前为止的浏览器查看时的进度。
 
-
 [![GridView 列出名称、 类别和每个产品的价格](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
 
 **图 9**:GridView 列出名称、 类别和每个产品的价格 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image23.png))
-
 
 ## <a name="step-8-programmatically-determining-the-value-of-the-data-in-the-rowdatabound-event-handler"></a>步骤 8：以编程方式确定 RowDataBound 事件处理程序中的数据的值
 
@@ -254,19 +222,15 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 可以使用 FormView 和 DetailsView 中使用相同的一系列步骤作为创建此事件处理程序。
 
-
 ![GridView 的 RowDataBound 事件创建事件处理程序](custom-formatting-based-upon-data-cs/_static/image24.png)
 
 **图 10**:创建事件处理程序的 GridView 的`RowDataBound`事件
 
-
 以这种方式创建的事件处理程序将导致自动添加到 ASP.NET 页面的代码部分的以下代码：
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample14.cs)]
 
 当`RowDataBound`事件触发时，事件处理程序作为其第二个参数传递类型的对象`GridViewRowEventArgs`，其中有一个名为`Row`。 此属性返回的引用`GridViewRow`那只是数据绑定。 访问`ProductsRow`实例绑定到`GridViewRow`我们使用`DataItem`属性如下所示：
-
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample15.cs)]
 
@@ -281,7 +245,6 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 由于`EmptyDataRow`， `Header`， `Footer`，和`Pager`行不与关联`DataSource`记录，它们将始终具有`null`值及其`DataItem`属性。 出于此原因，然后再尝试使用当前`GridViewRow`的`DataItem`属性，我们首先必须确保我们正在处理与`DataRow`。 这可以通过检查来实现`GridViewRow`的`RowType`属性如下所示：
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample16.cs)]
 
 ## <a name="step-9-highlighting-the-row-yellow-when-the-unitprice-value-is-less-than-1000"></a>步骤 9：突出显示行黄色时单价值是小于 10.00 美元
@@ -290,19 +253,15 @@ FormView 不包含任何 BoundFields 并因此缺少`Rows`集合。 相反，For
 
 而不是`GridViewID.Rows[index]`，我们可以引用当前`GridViewRow`实例中`RowDataBound`事件处理程序使用`e.Row`。 也就是说，为了突出显示当前`GridViewRow`实例与`RowDataBound`事件处理程序，我们将使用：
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample17.cs)]
 
 而不是设置`GridViewRow`的`BackColor`属性直接，让我们坚持使用 CSS 类。 我创建了一个名为的 CSS 类`AffordablePriceEmphasis`，将背景色设置为黄色。 已完成`RowDataBound`事件处理程序遵循：
 
-
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample18.cs)]
-
 
 [![最经济的产品是黄色突出显示](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
 
 **图 11**:最经济的产品都突出显示黄色 ([单击此项可查看原尺寸图像](custom-formatting-based-upon-data-cs/_static/image27.png))
-
 
 ## <a name="summary"></a>总结
 

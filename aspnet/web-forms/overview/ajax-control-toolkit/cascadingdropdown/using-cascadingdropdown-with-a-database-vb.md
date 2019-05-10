@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 97a3d33c-c856-43f3-8acb-f1ccbc48221a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d0b6f8651e327cf9ad2a3051edd323efba4f64fc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e3f842faea2ec04225d779c1b8d71c62d4c1f35
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418724"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108181"
 ---
 # <a name="using-cascadingdropdown-with-a-database-vb"></a>通过数据库使用 CascadingDropDown (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418724"
 [下载代码](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1VB.pdf)
 
 > AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，使得一个 DropDownList 负载中的更改关联中另一个 DropDownList 的值。 为了使此功能，必须创建一个特殊 web 服务。
-
 
 ## <a name="overview"></a>概述
 
@@ -85,11 +84,9 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展 DropDownList 控件，
 
 加载 ASP.NET 页上，并且之后不久, 供应商列表填充包含 25 个条目。 选择一个条目，并请注意如何使用数据填充第二个下拉列表中。
 
-
 [![自动填充第一个列表](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
 
 自动填充第一个列表 ([单击此项可查看原尺寸图像](using-cascadingdropdown-with-a-database-vb/_static/image3.png))
-
 
 [![第二个列表填充根据第一个列表中选择](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
 

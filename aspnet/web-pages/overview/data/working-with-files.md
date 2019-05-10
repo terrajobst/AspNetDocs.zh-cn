@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 4a62cce3af57b507882744f948ce208becdb03ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3ff852232212ddda4930597731911be60c092667
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382298"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108949"
 ---
 # <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中使用文件
 
@@ -48,7 +48,6 @@ ms.locfileid: "59382298"
 >   
 > 
 > 本教程还适用于 WebMatrix 3。
-
 
 <a id="Creating_a_Text_File"></a>
 ## <a name="creating-a-text-file-and-writing-data-to-it"></a>创建一个文本文件并向其中写入数据
@@ -145,7 +144,6 @@ ms.locfileid: "59382298"
 > 
 > 您可以使用 Microsoft Excel 保存为逗号分隔的文件的电子表格中包含的数据 (*.csv*文件)。 执行操作时，该文件保存在纯文本，不以 Excel 格式。 由逗号分隔每个数据项，并且该电子表格中的每一行分隔文本文件，在一个分行符。 在前面的示例所示的代码可用于读取 Excel 以逗号分隔文件，只需通过更改在代码中的数据文件的名称。
 
-
 <a id="Deleting_Files"></a>
 ## <a name="deleting-files"></a>正在删除文件
 
@@ -154,7 +152,6 @@ ms.locfileid: "59382298"
 > [!NOTE] 
 > 
 > **重要**在生产网站，您通常限制谁有权对数据进行更改。 有关如何设置成员资格以及方法可用来授予用户在站点上执行任务的信息，请参阅[添加安全性和 ASP.NET Web Pages 站点的成员身份](https://go.microsoft.com/fwlink/?LinkId=202904)。
-
 
 1. 在网站中，创建名为的子*映像*。
 2. 复制一个或多个 *.jpg*文件到*映像*文件夹。
@@ -255,7 +252,6 @@ ms.locfileid: "59382298"
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
-
 
 [使用 ASP.NET Web Pages 站点中的图像](https://go.microsoft.com/fwlink/?LinkId=202897)
 

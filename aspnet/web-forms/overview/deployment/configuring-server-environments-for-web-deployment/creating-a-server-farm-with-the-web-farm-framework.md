@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 656dd06d-806c-467c-863d-9fc45e5ba3ab
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: 19c061e83257e118aee74c9373a627b8c56defe3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 204996514bed336e60ab77f184a923f04e7e2bba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421233"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106904"
 ---
 # <a name="creating-a-server-farm-with-the-web-farm-framework"></a>使用 Web Farm Framework 创建服务器场
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421233"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何使用 Web Farm Framework (WFF) 2.0 创建和配置 web 服务器场中服务器的集合。
-
 
 WFF，可以跨多个负载平衡的 web 服务器同步 web 平台产品和组件、 web 应用程序、 网站和配置设置。 在方案中需要多个 web 服务器，例如过渡和生产环境，这可以极大地简化部署和配置过程。 可以部署到一台服务器的 web 应用程序&#x2014;*主服务器*&#x2014;和 WFF 都将自动复制在服务器场中的所有其他 web 服务器上该 web 应用程序。
 
@@ -63,7 +62,6 @@ WFF 2.0 可用于预配、 管理和将内容部署到一组 web 服务器。 WF
 
 > [!NOTE]
 > 有关将计算机加入到域的详细信息，请参阅[将计算机加入到域并登录](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 有关配置静态 IP 地址的详细信息，请参阅[配置静态 IP 地址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
-
 
 ## <a name="create-the-wff-controller-server"></a>创建 WFF 控制器服务器
 
@@ -185,7 +183,6 @@ WFF 旨在与 IIS arr。 紧密集成 若要充分利用此集成，需要在 WF
 
 > [!NOTE]
 > 无需使用 WFF; 使用 ARR你可以配置 WFF 使用第三方负载平衡解决方案。 有关详细信息，请参阅[概述适用于 IIS 7 Web Farm Framework 2.0](https://go.microsoft.com/?linkid=9805126)。
-
 
 使用 ARR 负载平衡是一个复杂的主题，最的超出了本教程的范围。 但是，可以使用下一个过程中安装 ARR 模块并开始使用负载平衡。
 

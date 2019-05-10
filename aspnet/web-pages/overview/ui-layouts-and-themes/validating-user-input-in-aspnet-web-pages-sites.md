@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 4eb060cc-cf14-41ae-bab1-14a2c15332d0
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: fd3ba36891aa66f78c28c538a4d3ba0da6736765
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e6f8e1051d09d11f1756bfada44a73ba7c2a1db2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392984"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108597"
 ---
 # <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 站点中验证用户输入
 
@@ -42,7 +42,6 @@ ms.locfileid: "59392984"
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
 
-
 本文包含以下各节：
 
 - [用户输入验证的概述](#Overview_of_User_Input_Validation)
@@ -65,7 +64,6 @@ ms.locfileid: "59392984"
 > [!NOTE] 
 > 
 > **重要**验证用户输入也很重要的安全。 如果你限制用户可以在窗体中输入的值，则可以减少人可以输入一个值，可能损害您的网站的安全性的机会。
-
 
 <a id="Validating_User_Input"></a>
 ## <a name="validating-user-input"></a>验证用户输入
@@ -114,7 +112,6 @@ ms.locfileid: "59392984"
 > [!NOTE]
 > 即使使用客户端验证时，始终还在服务器代码中执行验证。 在服务器代码中执行验证是一种安全措施，以防用户绕过基于客户端验证。
 
-
 1. 在页面中注册以下 JavaScript 库：  
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
@@ -159,7 +156,6 @@ ms.locfileid: "59392984"
 > [!NOTE]
 > 如果您在 ASP.NET Web Pages 2 中不使用客户端验证的 CSS 类的`<input>`元素 (`input-validation-error`和`input-validation-valid`不产生任何影响。
 
-
 ### <a name="static-and-dynamic-error-display"></a>静态和动态错误显示
 
 CSS 规则成对出现，如`validation-summary-errors`和`validation-summary-valid`。 这些对允许你定义的两个条件规则： 一个错误条件和"正常"（非错误） 条件。 请务必了解，始终呈现错误显示的标记时，即使没有任何错误。 例如，如果页面具有`Html.ValidationSummary`标记中的方法，即使在第一次请求页面时，页面源文件将包含以下标记：
@@ -182,7 +178,6 @@ CSS 规则成对出现，如`validation-summary-errors`和`validation-summary-va
 > [!NOTE] 
 > 
 > **重要**始终验证从获取的值*任何*源，包括窗体字段值、 查询字符串值和 cookie 值。 它是其他人能够更改这些值 （也许是出于恶意目的） 轻松。 因此您必须检查这些值才能保护你的应用程序。
-
 
 下面的示例演示如何可能会验证查询字符串中传递一个值。 该代码会测试的值不为空，它是一个整数。
 

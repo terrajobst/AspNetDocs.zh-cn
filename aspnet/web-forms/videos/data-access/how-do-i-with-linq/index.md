@@ -8,17 +8,16 @@ ms.date: 02/24/2012
 ms.assetid: 11b3547a-7c4f-4849-8e27-3cfbe255034e
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq
 msc.type: chapter
-ms.openlocfilehash: 2ab3cbb14cf3e7398db995458090bf532fc643d1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2139f8f9a09512fe4267003d4027887102f03335
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412094"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106763"
 ---
 # <a name="how-do-i-with-linq"></a>如何使用 LINQ
 
 > 此视频系列将指导你通过了解掌握使用 LINQ 作为 web 开发人员所需的一切。
-
 
 - [LINQ to SQL:概述](how-do-i-linq-to-sql-overview.md)
 - [LINQ to SQL:数据模型](how-do-i-linq-to-sql-data-model.md)

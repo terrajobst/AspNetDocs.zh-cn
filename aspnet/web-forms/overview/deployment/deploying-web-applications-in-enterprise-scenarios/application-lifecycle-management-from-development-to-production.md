@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 3b7f154936222c85bd7897ea10cbb5ae9d1aa670
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 230cf4393db0ee19cfc42ed54359d61e7926a49d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408935"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109283"
 ---
 # <a name="application-lifecycle-management-from-development-to-production"></a>应用程序生命周期管理：从开发到生产
 
@@ -27,7 +27,6 @@ ms.locfileid: "59408935"
 > 
 > > [!NOTE]
 > > 为简单起见，本主题不讨论部署过程的一部分的更新数据库。 但是，对数据库功能进行增量更新，是许多企业部署方案的要求和有关如何实现这一点稍后在本教程系列中的指南。 有关详细信息，请参阅[部署数据库项目](../web-deployment-in-the-enterprise/deploying-database-projects.md)。
-
 
 ## <a name="overview"></a>概述
 
@@ -94,7 +93,6 @@ Matt 婷创建各种自定义 MSBuild 项目文件，其中使用拆分项目文
 > 这些自定义项目文件的工作的方式是机制的独立于用于调用 MSBuild。 例如，您可以使用 MSBuild 命令行直接，如中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 你可以从命令文件，运行项目文件，如中所述[创建并运行部署命令文件](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md)。 或者，从生成定义在 TFS 中，运行项目文件，如中所述[创建该支持部署的生成定义](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。  
 > 在每种情况下，最终结果是相同&#x2014;MSBuild 执行合并的项目文件并将你的解决方案部署到目标环境。 这可带来大量的如何触发发布过程的灵活性。
 
-
 后他创建了自定义项目文件，Matt 将它们添加到解决方案文件夹，并将其签入源代码管理。
 
 ### <a name="create-build-definitions"></a>创建生成定义
@@ -125,15 +123,12 @@ Matt 婷创建各种自定义 MSBuild 项目文件，其中使用拆分项目文
 
 **DeployToTest**生成定义提供给 MSBuild 的这些参数：
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample1.cmd)]
-
 
 **DeployOnBuild = true**并**DeployTarget = 包**Team Build 生成解决方案中的项目时使用属性。 在项目是 web 应用程序项目，这些属性将指示 MSBuild 创建 web 部署包的项目。 **TargetEnvPropsFile**属性会告知*Publish.proj*文件在哪里可以找到要导入的特定于环境的项目文件。
 
 > [!NOTE]
 > 有关如何创建此类的生成定义的详细演练，请参阅[创建该支持部署的生成定义](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。
-
 
 *Publish.proj*文件包含生成解决方案中的每个项目的目标。 但是，它还包括条件逻辑，跳过这些生成的目标是在 Team Build 中执行该文件。 这样可以充分利用 Team Build 提供，例如，若要运行单元测试的其他生成功能。 如果解决方案生成或单元测试失败， *Publish.proj*将不会执行文件和应用程序将不会部署。
 
@@ -164,9 +159,7 @@ Matt 婷创建各种自定义 MSBuild 项目文件，其中使用拆分项目文
 
 **DeployToStaging**生成定义提供给 MSBuild 的这些参数：
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample2.cmd)]
-
 
 **TargetEnvPropsFile**属性会告知*Publish.proj*文件在哪里可以找到要导入的特定于环境的项目文件。 **OutputRoot**属性重写内置值，指示包含你想要部署的资源的生成文件夹的位置。 当 Rob 队列生成时，他使用**参数**选项卡上提供的更新的值**OutputRoot**属性。
 
@@ -175,24 +168,19 @@ Matt 婷创建各种自定义 MSBuild 项目文件，其中使用拆分项目文
 > [!NOTE]
 > 有关如何创建此类的生成定义的详细信息，请参阅[部署特定生成](../configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build.md)。
 
-
 **DeployToStaging-WhatIf**生成定义包含与相同的部署逻辑**DeployToStaging**生成定义。 但是，它包含其他参数**WhatIf = true**:
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample3.cmd)]
-
 
 内*Publish.proj*文件中， **WhatIf**属性指示是否应在"假设"模式下发布部署的所有资源。 换而言之，像这样，已经过部署，但实际上，未更改目标环境中，会生成日志文件。 这样就可以评估建议的部署的影响&#x2014;在特定、 获取添加的内容、 获取更新内容，和内容会被删除&#x2014;实际进行任何更改之前。
 
 > [!NOTE]
 > 有关如何配置"假设"部署的详细信息，请参阅[执行"假设"部署](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md)。
 
-
 部署到过渡环境中的主 web 服务器应用程序后，WFF 会自动在服务器场中的所有服务器之间同步应用程序。
 
 > [!NOTE]
 > 有关配置 WFF 同步 web 服务器的详细信息，请参阅[使用 Web Farm Framework 创建服务器场](../configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework.md)。
-
 
 ## <a name="deployment-to-production"></a>部署到生产环境
 

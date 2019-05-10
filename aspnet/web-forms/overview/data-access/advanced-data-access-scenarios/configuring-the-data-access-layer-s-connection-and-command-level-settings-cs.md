@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d6a787206862b88f915859d4a8fc4dd3c3166293
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 21b98ef4126c16054829d7183f59207de3e945f3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389591"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133359"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>配置数据访问层的连接和命令级别的设置 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59389591"
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip)或[下载 PDF](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
 
 > 类型化数据集内的 Tableadapter 自动负责连接到数据库中，发出的命令，并填充 DataTable 的结果。 但是，如果我们想要处理的这些详细信息，并在本教程中我们将了解如何访问 TableAdapter 中的数据库连接和命令级别设置有情况。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -50,24 +49,19 @@ Microsoft.NET Framework 包含大量专门用于处理数据的类。 这些类�
 
 每个 TableAdapter 类具有`Connection`属性，用于指定数据库连接信息。 此属性的数据类型和`ConnectionString`值由 TableAdapter 配置向导中所做的选择。 回想一下，我们首先将 TableAdapter 添加到类型化数据集时此向导将询问我们数据库源 （请参阅图 1）。 此第一步中的下拉列表包括这些配置文件，以及在服务器资源管理器的数据连接中的任何其他数据库中指定的数据库。 如果下拉列表中，我们想要使用的数据库不存在，则可以通过单击新建连接按钮并提供所需的连接信息指定新的数据库连接。
 
-
 [![TableAdapter 配置向导第一步](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
 **图 1**:TableAdapter 配置向导的第一个步骤 ([单击此项可查看原尺寸图像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
-
 
 允许 s 花点时间检查 TableAdapter s 代码`Connection`属性。 如中所述[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中，我们可以转到类视图窗口中，向下合适的类，钻取，然后双击成员名称查看自动生成的 TableAdapter 代码。
 
 通过转到视图菜单并选择类视图 （或通过键入 Ctrl + Shift + C），请导航到类视图窗口。 从类视图窗口的上半部分，向下钻取`NorthwindTableAdapters`命名空间，然后选择`ProductsTableAdapter`类。 这将显示`ProductsTableAdapter`的成员在类视图，如图 2 中所示的下半部分。 双击`Connection`属性以查看其代码。
 
-
 ![双击要查看其自动生成的代码的类视图中的连接属性](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image4.png)
 
 **图 2**:双击要查看其自动生成的代码的类视图中的连接属性
 
-
 TableAdapter 的`Connection`属性和其他与连接相关的代码如下所示：
-
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample1.cs)]
 
@@ -84,17 +78,13 @@ TableAdapter 类实例化时，成员变量`_connection`等同于`null`。 当`C
 > [!NOTE]
 > 一个*连接字符串*是一个字符串，指定数据库连接信息，如要使用的数据库、 身份验证凭据和其他与数据库相关的设置的位置的提供程序。 使用的各种数据存储和提供程序的连接字符串模式的列表，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
 
-
 如中所述[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中，可以通过使用分部类扩展类型数据集的自动生成的类。 首先，创建新的子文件夹中名为的项目`ConnectionAndCommandSettings`下方`~/App_Code/DAL`文件夹。
-
 
 ![添加一个名为 ConnectionAndCommandSettings 子](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image5.png)
 
 **图 3**:添加名为的子文件夹 `ConnectionAndCommandSettings`
 
-
 添加名为的新类文件`ProductsTableAdapter.ConnectionAndCommandSettings.cs`并输入以下代码：
-
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample2.cs)]
 
@@ -108,11 +98,9 @@ TableAdapter 类实例化时，成员变量`_connection`等同于`null`。 当`C
 
 打开`Northwind`数据集，单击`ProductsTableAdapter`在设计器并导航到属性窗口。 您会看见`ConnectionModifier`设置为其默认值， `Assembly`。 若要使`Connection`属性的类型化数据集 s 程序集，更改外部可用`ConnectionModifier`属性设置为`Public`。
 
-
 [![可通过 ConnectionModifier 属性配置连接属性 s 可访问性级别](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
 **图 4**:`Connection`通过属性可访问性级别可配置的 s`ConnectionModifier`属性 ([单击以查看实际尺寸的图像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
-
 
 保存的数据集，然后返回到`ProductsBLL`类。 如之前，请转到现有的方法之一，然后键入`Adapter`然后按句点键来打开智能感知。 此列表应包括`Connection`属性; 也就是说，现在可以以编程方式读取或从 BLL 分配任何连接级别的设置。
 
@@ -132,7 +120,6 @@ TableAdapter s`Adapter`属性具有三个属性的类型`SqlCommand`，它使用
 
 允许 s 花点时间查看生成的代码`ProductsTableAdapter`在`Northwind`这两个属性及其支持的成员变量和帮助器方法的数据集：
 
-
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample3.cs)]
 
 代码`Adapter`并`CommandCollection`属性精确模拟的`Connection`属性。 有保存的属性使用的对象的成员变量。 属性`get`访问器首先检查是否有相应的成员变量`null`。 如果是这样，它创建成员变量的实例并将核心分配与命令相关的属性调用初始化方法。
@@ -147,14 +134,12 @@ TableAdapter s`Adapter`属性具有三个属性的类型`SqlCommand`，它使用
 
 若要允许`CommandTimeout`属性来进行调整的 BLL，添加以下`public`方法`ProductsDataTable`步骤 2 中使用分部类文件创建 (`ProductsTableAdapter.ConnectionAndCommandSettings.cs`):
 
-
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample4.cs)]
 
 无法从设置命令的所有问题的命令超时的 BLL 或表示层调用此方法，通过该 TableAdapter 实例。
 
 > [!NOTE]
 > `Adapter`并`CommandCollection`属性标记为`private`，这意味着它们只能访问从 TableAdapter 中的代码。 与不同`Connection`属性，这些访问修饰符不能配置。 因此，如果您需要公开其他层体系结构中的命令级别属性必须使用以提供上文所述的分部类方法`public`方法或属性，可读取或写入`private`命令对象。
-
 
 ## <a name="summary"></a>总结
 

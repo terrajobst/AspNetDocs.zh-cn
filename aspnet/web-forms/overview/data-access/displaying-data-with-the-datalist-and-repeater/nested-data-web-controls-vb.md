@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: 8b7fcf7b-722b-498d-a4e4-7c93701e0c95
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0d0aa2c52df284bae48907d0c0c1e5d4587c1b9e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b4eb90aec60767e80e90f4cb315440da27e208db
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421415"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108329"
 ---
 # <a name="nested-data-web-controls-vb"></a>嵌套的数据 Web 控件 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421415"
 [下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_32_VB.exe)或[下载 PDF](nested-data-web-controls-vb/_static/datatutorial32vb1.pdf)
 
 > 在本教程中我们将探讨如何使用 Repeater 嵌套在另一个 Repeater。 这些示例将演示了如何以声明方式和以编程方式填充内部 Repeater。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -34,11 +33,9 @@ ms.locfileid: "59421415"
 
 在本教程中我们将探讨如何使用 Repeater 嵌套在另一个 Repeater。 外部 Repeater 将包含在数据库中，每个类别的项显示类别名称和说明。 每个类别项 s 内部 Repeater 将显示属于该类别的每个产品的信息 （请参阅图 1） 中的项目符号列表。 我们的示例将演示了如何以声明方式和以编程方式填充内部 Repeater。
 
-
 [![列出每个类别，以及其产品，](nested-data-web-controls-vb/_static/image2.png)](nested-data-web-controls-vb/_static/image1.png)
 
 **图 1**:列出其产品，每个类别 ([单击此项可查看原尺寸图像](nested-data-web-controls-vb/_static/image3.png))
-
 
 ## <a name="step-1-creating-the-category-listing"></a>步骤 1：创建类别列表
 
@@ -46,39 +43,31 @@ ms.locfileid: "59421415"
 
 首先打开`NestedControls.aspx`页中`DataListRepeaterBasics`文件夹并将 Repeater 控件添加到页上，设置其`ID`属性设置为`CategoryList`。 从 Repeater s 智能标记中，选择创建名为新 ObjectDataSource `CategoriesDataSource`。
 
-
 [![命名新 ObjectDataSource CategoriesDataSource](nested-data-web-controls-vb/_static/image5.png)](nested-data-web-controls-vb/_static/image4.png)
 
 **图 2**:命名新 ObjectDataSource `CategoriesDataSource` ([单击以查看实际尺寸的图像](nested-data-web-controls-vb/_static/image6.png))
 
-
 以便它将从其数据配置 ObjectDataSource`CategoriesBLL`类的`GetCategories`方法。
-
 
 [![配置对象数据源使用 CategoriesBLL 类的 GetCategories 方法](nested-data-web-controls-vb/_static/image8.png)](nested-data-web-controls-vb/_static/image7.png)
 
 **图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories`方法 ([单击以查看实际尺寸的图像](nested-data-web-controls-vb/_static/image9.png))
 
-
 若要指定 Repeater 的模板内容需要转到源视图并手动输入的声明性语法。 添加`ItemTemplate`，它显示在类别的名称`<h4>`元素和一个段落元素中的类别的说明 (`<p>`)。 此外，let s 用水平标尺分隔每个类别 (`<hr>`)。 进行这些更改后您的页面应包含用于 Repeater 和类似于以下的 ObjectDataSource 声明性语法：
-
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample1.aspx)]
 
 图 4 显示了我们的浏览器查看时的进度。
 
-
 [![每个类别名称和描述列出，则分隔水平标尺](nested-data-web-controls-vb/_static/image11.png)](nested-data-web-controls-vb/_static/image10.png)
 
 **图 4**:每个类别名称和描述列出，则用水平标尺分隔 ([单击此项可查看原尺寸图像](nested-data-web-controls-vb/_static/image12.png))
-
 
 ## <a name="step-2-adding-the-nested-product-repeater"></a>步骤 2：添加嵌套的产品 Repeater
 
 列出完整的类别，与我们的下一个任务是将添加到 Repeater `CategoryList` s`ItemTemplate`显示有关这些产品属于相应的类别的信息。 有多种方式，我们可以为此内部 Repeater，其中两个我们很快就会检索数据。 现在，让 s 只需创建产品 Repeater 中`CategoryList`Repeater 的`ItemTemplate`。 具体而言，让我们来安装产品 Repeater 显示项目符号列表中的每个产品与每个列表项包括产品的名称和价格。
 
 若要创建我们需要手动输入的内部 Repeater s 声明性语法和模板到此 Repeater `CategoryList` s `ItemTemplate`。 添加以下标记内的`CategoryList`Repeater 的`ItemTemplate`:
-
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample2.aspx)]
 
@@ -94,11 +83,9 @@ ms.locfileid: "59421415"
 
 遗憾的是，Repeater 不允许其模板无法通过设计视图编辑，因此我们需要手动添加此 ObjectDataSource 控件声明性语法。 下面的语法演示`CategoryList`Repeater s`ItemTemplate`后添加此新对象数据源 (`ProductsByCategoryDataSource`):
 
-
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample3.aspx)]
 
 使用 ObjectDataSource 方法时，我们需要设置`ProductsByCategoryList`Repeater s`DataSourceID`属性设置为`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 另请注意，我们 ObjectDataSource 已`<asp:Parameter>`指定的元素*`categoryID`* 值将传递到`GetProductsByCategoryID(categoryID)`方法。 但如何指定此值呢？ 理想情况下，我们 d 能够只需将设置`DefaultValue`属性的`<asp:Parameter>`元素使用数据绑定语法如下所示：
-
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample4.aspx)]
 
@@ -108,30 +95,25 @@ ms.locfileid: "59421415"
 
 创建事件处理程序`CategoryList`Repeater 的`ItemDataBound`事件使用以下代码：
 
-
 [!code-vb[Main](nested-data-web-controls-vb/samples/sample5.vb)]
 
 此事件处理程序首先会确保我们重新处理数据项而不是标头、 页脚或分隔符项。 接下来，我们引用的实际`CategoriesRow`只需绑定到当前实例`RepeaterItem`。 最后，我们引用在 ObjectDataSource `ItemTemplate` ，并分配其`CategoryID`参数值为`CategoryID`的当前`RepeaterItem`。
 
 与此事件处理程序中， `ProductsByCategoryList` Repeater 中每个`RepeaterItem`绑定到这些产品`RepeaterItem`的类别。 图 5 显示生成的输出的屏幕截图。
 
-
 [![外部 Repeater 列出了每个类别;内部的一个为该类别中列出的产品](nested-data-web-controls-vb/_static/image14.png)](nested-data-web-controls-vb/_static/image13.png)
 
 **图 5**:外部 Repeater 列出了每个类别;内部一个列出该类别的产品 ([单击此项可查看原尺寸图像](nested-data-web-controls-vb/_static/image15.png))
 
-
 ## <a name="accessing-the-products-by-category-data-programmatically"></a>以编程方式访问的产品类别数据
 
 而不是使用 ObjectDataSource 来检索当前类别的产品，我们可以在我们的 ASP.NET 页面 + s 代码隐藏类中创建一种方法 (或在`App_Code`文件夹或在单独的类库项目) 返回相应的一组产品中传递时`CategoryID`。 假设我们有这样的方法，在我们的 ASP.NET 页面 + s 代码隐藏类中被命名为`GetProductsInCategory(categoryID)`。 使用此方法准备就绪后我们无法绑定到使用下面的声明性语法内部 Repeater 当前类别的产品：
-
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample6.aspx)]
 
 Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自于`GetProductsInCategory(categoryID)`方法。 由于`Eval("CategoryID")`返回类型的值`Object`，我们将对象转换为`Integer`然后再将其传递`GetProductsInCategory(categoryID)`方法。 请注意，`CategoryID`访问下面的语法是通过数据绑定`CategoryID`中*外部*Repeater (`CategoryList`)，即该 s 绑定到的记录`Categories`表。 因此，我们知道`CategoryID`不能为数据库`NULL`值，该值就是我们可以隐式强制转换的原因`Eval`方法，而如果检查我们重新处理`DBNull`。
 
 使用此方法时，我们需要创建`GetProductsInCategory(categoryID)`方法，并将其检索相应的一组给定所提供的产品*`categoryID`*。 可以为此，我们只需返回`ProductsDataTable`返回的`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 让我们来创建`GetProductsInCategory(categoryID)`中的代码隐藏类的方法我们`NestedControls.aspx`页。 完成此操作使用以下代码：
-
 
 [!code-vb[Main](nested-data-web-controls-vb/samples/sample7.vb)]
 
@@ -141,7 +123,6 @@ Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自�
 
 > [!NOTE]
 > 它可能看起来通话创建`GetProductsInCategory(categoryID)`ASP.NET 页面 + s 代码隐藏类中的方法。 毕竟，此方法只需创建的实例`ProductsBLL`类，并返回的结果及其`GetProductsByCategoryID(categoryID)`方法。 为什么不只是调用此方法直接从内部中继器中的数据绑定语法如： `DataSource='<%# ProductsBLL.GetProductsByCategoryID(CType(Eval("CategoryID"), Integer)) %>'`？ 尽管此语法不起作用的我们当前的实现`ProductsBLL`类 (由于`GetProductsByCategoryID(categoryID)`方法是实例方法)，您可以修改`ProductsBLL`包括静态`GetProductsByCategoryID(categoryID)`方法或具有包括静态类`Instance()`方法返回的新实例`ProductsBLL`类。
-
 
 虽然此类修改将不再需要`GetProductsInCategory(categoryID)`ASP.NET 页面 + s 代码隐藏类中的方法，代码隐藏类方法使我们更灵活地使用检索的数据，我们稍后将看到。
 
@@ -153,7 +134,6 @@ Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自�
 
 若要提供此功能，我们只需稍做修改到`GetProductsInCategory(categoryID)`中我们的 ASP.NET 页面 + s 代码隐藏类的方法。 而不是盲目地返回的结果`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法中，我们可以改为第一次访问*所有*的产品 （如果它们尚未已访问），然后返回的只是筛选的视图产品基于传入的`CategoryID`。
 
-
 [!code-vb[Main](nested-data-web-controls-vb/samples/sample8.vb)]
 
 请注意页面级变量添加`allProducts`。 此保存有关的所有产品的信息，会填充第一次`GetProductsInCategory(categoryID)`调用方法。 之后，确保`allProducts`，创建对象并将其填充方法筛选器 DataTable 的结果，以便它的行只`CategoryID`匹配指定`CategoryID`可访问。 这种方法可以减少从访问数据库的次数*N* + 两到 1。
@@ -162,7 +142,6 @@ Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自�
 
 > [!NOTE]
 > 一个直观的方式可能原因减少数据库访问的数量也会肯定提高性能。 但是，这可能不是这种情况。 如果有大量的产品的`CategoryID`是`NULL`，有关示例，然后调用`GetProducts`方法返回的永远不会显示的产品数目。 此外，返回的所有产品会都很浪费如果您重新仅显示子集的类别，可能会都出现这种情况，如果已实现分页。
-
 
 如往常一样，当涉及到分析两种技术的性能，仅欢心的度量值是运行适合你应用程序 s 的常见案例方案的受控的测试。
 

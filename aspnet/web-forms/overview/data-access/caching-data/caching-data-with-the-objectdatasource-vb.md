@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 2e56a733-5512-48a6-9276-70a65bbe4d5d
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6bde070dae3b295c8d7a04098b874d41fab54830
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bdec60c1d031cb8b6516f03801b5306a1c9fbe09
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380205"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108200"
 ---
 # <a name="caching-data-with-the-objectdatasource-vb"></a>使用 ObjectDataSource 缓存数据 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59380205"
 [下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_58_VB.exe)或[下载 PDF](caching-data-with-the-objectdatasource-vb/_static/datatutorial58vb1.pdf)
 
 > 缓存可能意味着速度较慢和快速的 Web 应用程序之间的差异。 本教程的是第一四个需要在 ASP.NET 中缓存的详细的信息。 了解缓存的关键概念以及如何将应用到通过 ObjectDataSource 控件表示层缓存。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -57,32 +56,25 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 - `AtApplicationStartup.aspx`
 - `SqlCacheDependencies.aspx`
 
-
 ![将 ASP.NET 页面添加与缓存相关的教程](caching-data-with-the-objectdatasource-vb/_static/image1.png)
 
 **图 1**:将 ASP.NET 页面添加与缓存相关的教程
 
-
 在其他文件夹中，喜欢`Default.aspx`在`Caching`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
-
 
 [![图 2:将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](caching-data-with-the-objectdatasource-vb/_static/image3.png)](caching-data-with-the-objectdatasource-vb/_static/image2.png)
 
 **图 2**:图 2：添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](caching-data-with-the-objectdatasource-vb/_static/image4.png))
 
-
 最后，将这些页面添加到条目为`Web.sitemap`文件。 具体而言，在处理二进制数据后添加以下标记`<siteMapNode>`:
-
 
 [!code-xml[Main](caching-data-with-the-objectdatasource-vb/samples/sample1.xml)]
 
 更新后`Web.sitemap`，花点时间查看通过浏览器网站的教程。 在左侧菜单现在为缓存教程包括的项。
 
-
 ![站点图现在包括项的缓存的教程](caching-data-with-the-objectdatasource-vb/_static/image5.png)
 
 **图 3**:站点图现在包括项的缓存的教程
-
 
 ## <a name="step-2-displaying-a-list-of-products-in-a-web-page"></a>步骤 2：在网页中显示产品的列表
 
@@ -90,19 +82,15 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 
 首先打开`ObjectDataSource.aspx`页中`Caching`文件夹。 从工具箱拖到设计器中拖动一个 GridView，设置其`ID`属性设置为`Products`，并从其智能标记上，选择要绑定到名为的新 ObjectDataSource 控件`ProductsDataSource`。 配置对象数据源以使用`ProductsBLL`类。
 
-
 [![配置对象数据源以使用 ProductsBLL 类](caching-data-with-the-objectdatasource-vb/_static/image7.png)](caching-data-with-the-objectdatasource-vb/_static/image6.png)
 
 **图 4**:配置为使用 ObjectDataSource`ProductsBLL`类 ([单击以查看实际尺寸的图像](caching-data-with-the-objectdatasource-vb/_static/image8.png))
 
-
 有关此页上，让我们来创建可编辑的 GridView，以便我们可以检查在 ObjectDataSource 中缓存数据修改通过 GridView 的接口时，会发生什么情况。 将下拉列表保留在设置为其默认情况下，选择选项卡`GetProducts()`，但更改到更新选项卡中的选定的项`UpdateProduct`重载接受`productName`， `unitPrice`，和`productID`作为其输入参数。
-
 
 [![将更新选项卡的下拉列表设置为适当的 UpdateProduct 重载](caching-data-with-the-objectdatasource-vb/_static/image10.png)](caching-data-with-the-objectdatasource-vb/_static/image9.png)
 
 **图 5**:将更新选项卡的下拉列表设置为适用`UpdateProduct`重载 ([单击以查看实际尺寸的图像](caching-data-with-the-objectdatasource-vb/_static/image11.png))
-
 
 最后，将下拉列表设置为 （无） 插入和删除选项卡中，单击完成。 Visual Studio 将在完成配置数据源向导，请设置 ObjectDataSource s`OldValuesParameterFormatString`属性设置为`original_{0}`。 如中所述[概述的插入、 更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教程中，此属性需要从声明性语法中删除或重新设置其默认值为`{0}`，以便为我们更新工作流无错误继续执行。
 
@@ -113,24 +101,19 @@ ASP.NET 2.0 提供了各种各样的缓存选项。 可以通过缓存的整个 
 > [!NOTE]
 > 需要如何自定义 GridView s 编辑界面的评审？ 如果是这样，回头[自定义数据修改界面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教程。
 
-
 [![用于编辑、 排序和分页启用 GridView 支持](caching-data-with-the-objectdatasource-vb/_static/image13.png)](caching-data-with-the-objectdatasource-vb/_static/image12.png)
 
 **图 6**:启用编辑，排序和分页的 GridView 支持 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-vb/_static/image14.png))
 
-
 以后进行这些 GridView 修改，GridView 和 ObjectDataSource s 声明性标记看起来应类似于下面：
-
 
 [!code-aspx[Main](caching-data-with-the-objectdatasource-vb/samples/sample2.aspx)]
 
 如图 7 所示，可编辑的 GridView 列出名称、 类别和每个数据库中产品的价格。 请花费片刻时间测试页的功能排序结果页，查看和编辑记录。
 
-
 [![可排序、 Pageable、 可编辑的 GridView 中列出每个产品名称、 类别和价格](caching-data-with-the-objectdatasource-vb/_static/image16.png)](caching-data-with-the-objectdatasource-vb/_static/image15.png)
 
 **图 7**:可排序、 Pageable、 可编辑的 GridView 中列出每个产品名称、 类别和价格 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-vb/_static/image17.png))
-
 
 ## <a name="step-3-examining-when-the-objectdatasource-is-requesting-data"></a>步骤 3：检查时 ObjectDataSource 是请求数据
 
@@ -140,14 +123,11 @@ GridView 需要绑定到其基础数据的每个时出现以下事件序列。 �
 
 若要完全认识与从数据库检索的数据的频率，让我们来显示一条消息，指示重新检索数据时。 添加名为 GridView 上方的一个标签 Web 控件`ODSEvents`。 清除其`Text`属性并设置其`EnableViewState`属性设置为`False`。 下方是标签，添加一个按钮 Web 控件，并设置其`Text`属性设置为回发。
 
-
 [![将一个标签和按钮添加到页面上方 GridView](caching-data-with-the-objectdatasource-vb/_static/image19.png)](caching-data-with-the-objectdatasource-vb/_static/image18.png)
 
 **图 8**:将一个标签和按钮添加到的 GridView 页面上方 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-vb/_static/image20.png))
 
-
 在数据访问工作流使用 ObjectDataSource 的`Selecting`之前创建的基础对象的事件触发和调用其配置的方法。 创建此事件的事件处理程序并添加以下代码：
-
 
 [!code-vb[Main](caching-data-with-the-objectdatasource-vb/samples/sample3.vb)]
 
@@ -155,16 +135,13 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 
 请访问此页在浏览器中。 当首次访问页面时，会显示文本选择事件触发。 单击回发的按钮并记下该文本将消失 (假设 GridView s`EnableViewState`属性设置为`True`，默认值)。 这是因为，在回发时，从其视图状态重建 GridView 并不因此求助于其数据的对象数据源。 排序、 分页，或编辑数据，但是，导致 GridView 重新绑定到其数据源，并因此触发文本随即再次显示选择事件。
 
-
 [![每当 GridView 重新绑定到其数据源，显示触发选择事件](caching-data-with-the-objectdatasource-vb/_static/image22.png)](caching-data-with-the-objectdatasource-vb/_static/image21.png)
 
 **图 9**:每当 GridView 重新绑定到其数据源，显示选择事件触发 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-vb/_static/image23.png))
 
-
 [![单击回发按钮会导致要从其视图状态重新构造 GridView](caching-data-with-the-objectdatasource-vb/_static/image25.png)](caching-data-with-the-objectdatasource-vb/_static/image24.png)
 
 **图 10**:单击该回发的按钮使 GridView，若要从其视图状态重新构造 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-vb/_static/image26.png))
-
 
 这可能看起来比较浪费，每次通过分页或排序的数据检索的数据库数据。 毕竟，我们重新使用默认的分页，因为 ObjectDataSource 已检索的所有记录时显示的第一页。 即使 GridView 不提供排序和分页支持，首次访问页面时的任何用户 （以及每次回发，如果禁用视图状态） 每次必须检索的数据从数据库。 但如果 GridView 显示相同的数据对所有用户，这些额外的数据库请求是多余的。 为什么不缓存从返回的结果`GetProducts()`方法和绑定到 GridView 缓存结果？
 
@@ -179,11 +156,9 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 
 让我们来配置`ProductsDataSource`ObjectDataSource 30 秒内对绝对刻度缓存其数据。 设置 ObjectDataSource s`EnableCaching`属性设置为`True`并将其`CacheDuration`属性设置为 30。 将保留`CacheExpirationPolicy`属性设置为其默认值， `Absolute`。
 
-
 [![配置对象数据源在 30 秒内缓存其数据](caching-data-with-the-objectdatasource-vb/_static/image28.png)](caching-data-with-the-objectdatasource-vb/_static/image27.png)
 
 **图 11**:配置对象数据源在 30 秒内缓存其数据 ([单击此项可查看原尺寸图像](caching-data-with-the-objectdatasource-vb/_static/image29.png))
-
 
 保存所做的更改并重新访问此页在浏览器中。 选择触发事件文本将显示当您首次访问页上，为最初的数据不在缓存中。 而是指后续回发触发单击回发的按钮，排序、 分页，或单击编辑或取消按钮*不*起选择事件触发的文本。 这是因为`Selecting`ObjectDataSource 从其基础对象; 获取其数据时，仅会触发事件`Selecting`事件不会引发，如果从数据缓存中提取数据。
 
@@ -192,14 +167,11 @@ ObjectDataSource 发出请求时，数据体系结构每次该标签将显示文
 > [!NOTE]
 > 如果你经常看到选择触发事件文本，即使预期对象数据源以使用缓存的数据，可能会由于内存限制。 如果没有足够的可用内存，可能会清理通过对象数据源添加到缓存的数据。 如果对象数据源不是 t 似乎正确缓存的数据或仅缓存数据将个别情况下，关闭一些应用程序以释放内存，然后重试。
 
-
 图 12 显示了缓存的工作流使用 ObjectDataSource s。 选择事件激发时文本显示在屏幕上，这是因为数据不是在缓存中而不得不从基础对象中检索。 如果缺少此文本，但是，它 s 由于从缓存数据可用。 当从缓存返回的数据那里 s 对基础对象的任何调用，因此，没有数据库查询执行。
-
 
 ![对象数据源存储和检索其数据从数据缓存](caching-data-with-the-objectdatasource-vb/_static/image30.png)
 
 **图 12**:对象数据源存储和检索其数据从数据缓存
-
 
 每个 ASP.NET 应用程序具有其自己的数据缓存实例在所有页和访问者之间共享该 s。 这意味着访问页面的所有用户同样共享数据缓存中存储的对象数据源的数据。 若要验证这一点，请打开`ObjectDataSource.aspx`页在浏览器中。 当首次访问的页面，选择触发事件文本将显示 （假定由以前的测试添加到缓存的数据，到目前为止，已被逐出）。 打开第二个浏览器实例并复制并粘贴到第二个中的第一个浏览器实例的 URL。 在第二个浏览器实例中，选择触发事件文本没有显示，因为它使用相同的缓存数据与第一个。
 

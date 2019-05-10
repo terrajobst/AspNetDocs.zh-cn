@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: b5b86e03-b8ed-46e6-90fa-e1da88ef34e9
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment
 msc.type: authoredcontent
-ms.openlocfilehash: 74fc0f4cb7d3ed7d1ef091cdb8fa829091af5a7a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9742be7d718384c1b108d5f2c0c43e8e8d4fe8a9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388681"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108677"
 ---
 # <a name="configuring-deployment-properties-for-a-target-environment"></a>配置目标环境的部署属性
 
@@ -22,7 +22,6 @@ ms.locfileid: "59388681"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何配置特定于环境的属性，以便将示例 Contact Manager 解决方案部署到特定的目标环境。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014;[联系人管理器](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)解决方案&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -64,7 +63,6 @@ ms.locfileid: "59388681"
 
 此表描述了在示例特定于环境的项目文件中，每个属性的用途*Env Dev.proj*，并应提供的值提供一些指导。
 
-
 |                                                        属性名                                                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        详细信息                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |              <strong>MSDeployComputerName</strong>目标 web 服务器或服务终结点的名称。               |                                                                                                                                                                                                                                              如果你正在部署到目标 web 服务器上的远程代理服务，则可以指定目标计算机名称 (例如， <strong>TESTWEB1</strong>或<strong>TESTWEB1.fabrikam.net</strong>)，也可以指定远程代理终结点 (例如， `http://TESTWEB1/MSDEPLOYAGENTSERVICE`)。 部署中每个用例的工作方式相同。 如果你正在部署到 Web 部署处理程序在目标 web 服务器上，你应指定服务终结点，并且包括作为查询字符串参数的 IIS 网站的名称 (例如， `https://STAGEWEB1:8172/MSDeploy.axd?site=DemoSite`)。                                                                                                                                                                                                                                              |
@@ -87,9 +85,7 @@ ms.locfileid: "59388681"
 - 则会指示 Web 部署可以使用 NTLM 身份验证。 Web 部署将使用用于调用 Microsoft Build Engine (MSBuild) 的凭据运行。
 - 使用集成身份验证来部署**ContactManager** TESTDB1 到数据库。 数据库会使用用于调用 MSBuild 的凭据进行部署。
 
-
 [!code-xml[Main](configuring-deployment-properties-for-a-target-environment/samples/sample1.xml)]
-
 
 ### <a name="example-2x2014deployment-to-the-web-deploy-handler-endpoint"></a>示例 2&#x2014;部署到 Web 部署处理程序终结点
 
@@ -100,9 +96,7 @@ ms.locfileid: "59388681"
 - 指定 Web 部署应模拟的 FABRIKAM\stagingdeployer 帐户在远程计算机上。
 - 使用 SQL Server 身份验证来部署**ContactManager** STAGEDB1 到数据库。
 
-
 [!code-xml[Main](configuring-deployment-properties-for-a-target-environment/samples/sample2.xml)]
-
 
 ## <a name="conclusion"></a>结束语
 

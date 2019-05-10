@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: d50edc31-9286-4c6a-8635-be09e72752a4
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0bc3127974341a65fb5f38ac0a974782099fffce
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 685917250247e6a36952de29404146d85af3c46d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385912"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114991"
 ---
 # <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>在 GridView 的页脚中显示摘要信息 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59385912"
 [下载示例应用程序](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_15_CS.exe)或[下载 PDF](displaying-summary-information-in-the-gridview-s-footer-cs/_static/datatutorial15cs1.pdf)
 
 > 通常在汇总行中的报表的底部显示摘要信息。 GridView 控件可以包含到其单元格中我们可以以编程方式插入聚合数据的页脚行。 在本教程中我们将了解如何在此脚注行中显示聚合数据。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -36,11 +35,9 @@ ms.locfileid: "59385912"
 
 在本教程中我们将了解如何解决这些难题。 具体而言，我们将创建列出的 GridView 中显示所选的类别产品的下拉列表中的类别的页面。 GridView 将包括显示平均价格和总单位数的库存数量和该类别中的产品的订购的页脚行。
 
-
 [![在 GridView 的页脚行中显示摘要信息](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image1.png)
 
 **图 1**:在 GridView 的页脚行中显示摘要信息 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image3.png))
-
 
 本教程中，对产品的母版/详细信息接口，其类别是基于在早期版本中介绍的概念[母版/详细信息筛选与 DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)教程。 如果你尚未使用过通过前面的教程，请先完成才能继续上进行此。
 
@@ -50,92 +47,71 @@ ms.locfileid: "59385912"
 
 首先打开`SummaryDataInFooter.aspx`页中`CustomFormatting`文件夹。 添加 DropDownList 控件并设置其`ID`到`Categories`。 接下来，单击从 DropDownList 的智能标记的选择数据源链接并选择要添加名为新 ObjectDataSource `CategoriesDataSource` ，它调用`CategoriesBLL`类的`GetCategories()`方法。
 
-
 [![添加名为 CategoriesDataSource 新 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image4.png)
 
 **图 2**:添加新对象数据源名为`CategoriesDataSource`([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image6.png))
-
 
 [![具有 ObjectDataSource 调用 CategoriesBLL 类 GetCategories() 方法](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image7.png)
 
 **图 3**:具有 ObjectDataSource 调用`CategoriesBLL`类的`GetCategories()`方法 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image9.png))
 
-
 配置 ObjectDataSource 之后, 该向导将返回我们 DropDownList 的数据源配置向导，我们需要指定哪些数据字段值应显示和哪一种应与对应的值的下拉列表的`ListItem` s。 具有`CategoryName`显示的字段并使用`CategoryID`作为值。
-
 
 [![为文本，Listitem，值分别使用类别名称和类别 id 字段](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image10.png)
 
 **图 4**:使用`CategoryName`并`CategoryID`字段为`Text`并`Value`有关`ListItem`s，分别 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image12.png))
 
-
 现在我们有 DropDownList (`Categories`) 的系统中列出的类别。 现在，我们需要添加一个 GridView，列出了这些属于所选类别的产品。 这样做了，不过之前, 请花费片刻时间来检查 DropDownList 的智能标记中的启用自动回发复选框。 如中所述*母版/详细信息筛选与 DropDownList*教程中，通过设置 DropDownList`AutoPostBack`属性设置为`true`将回发每次更改 DropDownList 值时页。 这将导致 GridView 来刷新，显示这些产品的新选择的类别。 如果`AutoPostBack`属性设置为`false`（默认值），更改类别不会导致回发，因此不会更新列出的产品。
-
 
 [![检查在 DropDownList 的智能标记启用自动回发复选框](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image13.png)
 
 **图 5**:复选框启用自动回发中 DropDownList 的智能标记 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image15.png))
 
-
 若要显示所选类别产品向页添加 GridView 控件。 设置 GridView`ID`到`ProductsInCategory`并将其绑定到名为新 ObjectDataSource `ProductsInCategoryDataSource`。
-
 
 [![添加名为 ProductsInCategoryDataSource 新 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image16.png)
 
 **图 6**:添加新对象数据源名为`ProductsInCategoryDataSource`([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image18.png))
 
-
 配置对象数据源，以便它将调用`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。
-
 
 [![具有 ObjectDataSource 调用 GetProductsByCategoryID(categoryID) 方法](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image19.png)
 
 **图 7**:具有 ObjectDataSource 调用`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image21.png))
 
-
 由于`GetProductsByCategoryID(categoryID)`方法采用一个输入参数，我们可以在向导的最后一步中指定参数值的源。 为了显示从所选类别产品，必须从提取的参数`Categories`DropDownList。
-
 
 [![从所选类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
 **图 8**:获取*`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
-
 完成向导后 GridView 将为每个产品属性具有 BoundField。 让我们来清理这些 BoundFields 以便仅`ProductName`， `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields 会显示。 可随意将任何字段级别设置添加到剩余 BoundFields (例如格式设置`UnitPrice`作为一种货币)。 进行这些更改后，GridView 的声明性标记应类似于下面：
-
 
 [!code-aspx[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample1.aspx)]
 
 现在我们有完全正常运行的母版/详细信息报表的显示名称、 单价、 存货单位和单位上对这些属于所选类别的产品的顺序。
 
-
 [![从所选类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
 **图 9**:获取*`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
-
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>步骤 2：在 GridView 中显示页脚
 
 GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`ShowHeader`和`ShowFooter`属性，分别与`ShowHeader`默认值为`true`并`ShowFooter`到`false`。 若要只需包含在 GridView 的页脚设置其`ShowFooter`属性设置为`true`。
 
-
 [![GridView 的 ShowFooter 属性设置为 true](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image28.png)
 
 **图 10**:设置 GridView`ShowFooter`属性设置为`true`([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image30.png))
 
-
 脚注行 GridView; 中定义的字段的每个都有一个单元格但是，这些单元格是默认情况下为空。 请花费片刻时间浏览器中查看我们的进度。 与`ShowFooter`属性现在将设置为`true`，GridView 包括一个空的页脚行。
-
 
 [![GridView 现在包括脚注行](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image31.png)
 
 **图 11**:GridView 现在包括脚注行 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image33.png))
 
-
 图 11 中的脚注行不会凸显出来，因为它具有白色背景。 让我们来创建`FooterStyle`CSS 类中`Styles.css`，指定深红色背景，然后配置`GridView.skin`外观文件中的`DataWebControls`主题要将此 CSS 类分配到 GridView`FooterStyle`的`CssClass`属性。 如果需要温习外观和主题，回头[显示数据使用 ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md)教程。
 
 首先，通过添加以下 CSS 类`Styles.css`:
-
 
 [!code-css[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample2.css)]
 
@@ -143,16 +119,13 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 
 接下来，要将此 CSS 类关联与每个 GridView 的页脚中，打开`GridView.skin`文件中`DataWebControls`主题和集`FooterStyle`的`CssClass`属性。 在此添加后文件的标记应如下所示：
 
-
 [!code-aspx[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample3.aspx)]
 
 如屏幕截图所示，这一变化使得页脚清晰地突显出来的详细信息。
 
-
 [![GridView 的页脚行现在具有红色背景色](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image34.png)
 
 **图 12**:GridView 的页脚行现在具有红色背景色 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image36.png))
-
 
 ## <a name="step-3-computing-the-summary-data"></a>步骤 3：计算的汇总数据
 
@@ -169,7 +142,6 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 
 创建`RowDataBound`事件处理程序通过在设计器中选择 GridView，单击属性窗口中的闪电形图标，双击 GridView`RowDataBound`事件。 这将创建名为新的事件处理程序`ProductsInCategory_RowDataBound`在`SummaryDataInFooter.aspx`页面的代码隐藏类。
 
-
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample5.cs)]
 
 为了维护运行总和，我们需要定义事件处理程序的范围之外的变量。 创建以下四个页面级别的变量：
@@ -181,7 +153,6 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 
 接下来，编写代码以递增这三个变量，为每个数据行中遇到`RowDataBound`事件处理程序。
 
-
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample6.cs)]
 
 `RowDataBound`事件处理程序首先确保我们正在处理数据行。 一旦已建立的`Northwind.ProductsRow`只需绑定到的实例`GridViewRow`对象中`e.Row`变量中存储`product`。 接下来，正在运行的总变量就会递增当前产品的相应值 1 (假设它们不包含数据库`NULL`值)。 我们跟踪的两个运行`UnitPrice`总计和的非数字`NULL``UnitPrice`记录的平均价格是这两个数字的商。
@@ -190,23 +161,19 @@ GridView 控件可以显示页眉和页脚行。 这些行显示的值决定`Sho
 
 计算总计的摘要数据，最后一步是在 GridView 的页脚行中显示。 此任务中，也可以以编程方式通过`RowDataBound`事件处理程序。 请记住，`RowDataBound`事件处理程序触发*每个*绑定到 GridView，其中包括脚注行的行。 因此，我们可以提供了我们的事件处理程序，以显示中使用下面的代码的脚注行的数据：
 
-
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample7.cs)]
 
 由于添加的所有数据行之后的脚注行添加到 GridView，我们可以确信，时我们已准备好将已完成的累加总计计算的脚注中显示摘要数据。 然后，最后一步是在表尾的单元格中设置这些值。
 
 若要在特定的页脚单元格中显示文本，请使用`e.Row.Cells[index].Text = value`，其中`Cells`索引从 0 处开始。 以下代码计算平均价格 （除以的产品数量的总价格），并显示它的单位总数以及在股价图和相应的页脚单元格中的 GridView 订货量。
 
-
 [!code-csharp[Main](displaying-summary-information-in-the-gridview-s-footer-cs/samples/sample8.cs)]
 
 图 13 显示了报表后添加此代码。 请注意如何`ToString("c")`会像一种货币格式将平均价格摘要信息。
 
-
 [![GridView 的页脚行现在具有红色背景色](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image37.png)
 
 **图 13**:GridView 的页脚行现在具有红色背景色 ([单击此项可查看原尺寸图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image39.png))
-
 
 ## <a name="summary"></a>总结
 

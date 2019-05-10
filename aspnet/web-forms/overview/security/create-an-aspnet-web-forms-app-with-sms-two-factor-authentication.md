@@ -8,12 +8,12 @@ ms.date: 10/09/2014
 ms.assetid: 716264ae-ab72-45de-bfc5-53a6237089cf
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 02c511f0e99e306daaf595da5bc618fe738e806c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411353"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106792"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>创建具有 SMS 双因素身份验证功能的 ASP.NET Web 窗体应用 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59411353"
 [下载电子邮件和 SMS 双因素身份验证的 ASP.NET Web 窗体应用](https://code.msdn.microsoft.com/ASPNET-Web-Forms-App-with-5a0ff94e)
 
 > 本教程演示如何生成带有双因素身份验证的 ASP.NET Web 窗体应用程序。 本教程旨在补充标题为本教程[创建安全的 ASP.NET Web 窗体应用程序具有用户注册、 电子邮件确认及密码重置](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)。 此外，本教程基于 Rick Anderson [MVC 教程](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -42,7 +41,6 @@ ms.locfileid: "59411353"
 
 > [!NOTE]
 > 重要提示：必须安装[Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更高版本，若要完成本教程。
-
 
 1. 创建新的项目 (**文件** - &gt; **新项目**)，然后选择**ASP.NET Web 应用程序**模板以及.NET Framework从版本 4.5.2**新的项目**对话框。
 2. 从**新建 ASP.NET 项目**对话框中，选择**Web 窗体**模板。 将保留为默认的身份验证**单个用户帐户**。 然后，单击**确定**创建新项目。  

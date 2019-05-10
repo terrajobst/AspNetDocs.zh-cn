@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: a973ed3e-400c-4925-ace2-0b086b479301
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1ab979f220c06d22f51931c7c00fc4d273731f85
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 783562bb1a8790e1254dab5bff92da480a6fd56d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413940"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109154"
 ---
 # <a name="using-a-confirmbutton-in-a-repeater-c"></a>在 Repeater 中使用 ConfirmButton (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59413940"
 [下载代码](http://download.microsoft.com/download/8/6/d/86dea6c6-bb92-4fa6-aa14-f8c0f82100f5/ConfirmButton1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/confirmbutton1CS.pdf)
 
 > AJAX 控件工具包中的 ConfirmButton 扩展器创建答： 是/没有弹出菜单，用户单击按钮时 （包括 LinkButton 控件）。 仅当单击是，则执行是按钮的操作，否则取消。 这也是可以在 repeater 中。
-
 
 ## <a name="overview"></a>概述
 
@@ -45,7 +44,6 @@ AJAX 控件工具包中的 ConfirmButton 扩展器创建答： 是/没有弹出�
 然后可以在 repeater 中使用此数据源。 像往常一样，`DataBinder.Eval()`方法从数据源检索数据。 `ConfirmButtonExtender`然后必须将控件放在`<ItemTemplate>`中继器使其显示为数据源中的每个条目的部分。
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample3.aspx)]
-
 
 [![数据源的每个项旁边显示确认按钮](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
 

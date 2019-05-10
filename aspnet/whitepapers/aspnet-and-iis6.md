@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: 5a5537bf-2aaa-49e7-839f-9e6522b829d8
 msc.legacyurl: /whitepapers/aspnet-and-iis6
 msc.type: content
-ms.openlocfilehash: dbdf6d2815a05465b0ffb7bb322c9f80af13a251
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2e7812f34481afe9a71927c0d9ba2a9abc9632e4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59405152"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106797"
 ---
 # <a name="running-aspnet-11-with-iis-60"></a>通过 IIS 6.0 运行 ASP.NET 1.1
 
 > Windows Server 2003 包括 IIS 6.0 和 ASP.NET 1.1，默认情况下禁用这些组件。 本白皮书介绍如何启用 IIS 6.0 和 ASP.NET 1.1 中，并推荐几项配置设置以从 IIS 和 ASP.NET 中获得最佳性能。
 > 
 > 适用于 ASP.NET 1.1 和 IIS 6.0。
-
 
 ASP.NET 1.1 附带有 Windows Server 2003，还包括最新版本的 Internet 信息服务器 (IIS) 6.0 版。 IIS 6.0 和 ASP.NET 1.1 旨在无缝集成，且 ASP.NET 现在默认为新的 IIS 6.0 工作进程模型。
 

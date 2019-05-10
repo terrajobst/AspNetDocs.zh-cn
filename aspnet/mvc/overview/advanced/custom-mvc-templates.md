@@ -76,7 +76,7 @@ MVC 3 Tools Update for Visual Studio 2010 的版本引入了用于 MVC 项目的
 
 ![打开对话框](custom-mvc-templates/_static/image7.jpg)
 
-创建**&lt;资产&gt;** 元素，并添加**&lt;资产&gt;** 元素必须包括在 VSIX 中的每个文件。 **类型**属性的每个**&lt;资产&gt;** 元素必须设置为**Microsoft.VisualStudio.Mvc.Template**。 这是 MVC 的项目向导能够理解的自定义命名空间。 请参阅有关其他信息的结构和清单文件的布局 VSIX 2.0 架构文档。
+创建 **&lt;资产&gt;** 元素，并添加 **&lt;资产&gt;** 元素必须包括在 VSIX 中的每个文件。 **类型**属性的每个 **&lt;资产&gt;** 元素必须设置为**Microsoft.VisualStudio.Mvc.Template**。 这是 MVC 的项目向导能够理解的自定义命名空间。 请参阅有关其他信息的结构和清单文件的布局 VSIX 2.0 架构文档。
 
 只需将文件添加到 VSIX 不足以使用 MVC 向导注册模板。 您需要向 MVC 向导提供模板名称、 说明、 受支持的视图引擎和编程语言等信息。 此信息与相关联的自定义属性中携带**&lt;资产&gt;** 每个元素**vstemplate**文件。
 
@@ -111,7 +111,7 @@ Version=&quot;4.0&quot;/&gt;
 - **标题**指定显示在 MVC 向导下每个项目模板的简短描述。
 - **说明**指定模板的更详细说明。
 
-所有文件都添加到清单并保存它，您将注意到，之后**资产**设计器中的选项卡将显示所有文件，但未自定义属性都添加到**&lt;资产&gt;** 个元素**vstemplate**文件。
+所有文件都添加到清单并保存它，您将注意到，之后**资产**设计器中的选项卡将显示所有文件，但未自定义属性都添加到 **&lt;资产&gt;** 个元素**vstemplate**文件。
 
 ![项目设计器资产](custom-mvc-templates/_static/image8.jpg)
 

@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: f7c00fbd-652c-433d-8ed3-0e5168a4d4df
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7f342a7749ac175c3335f260324d69a0cce30202
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 03c64f839d11249f912b534476d02607d0c2b7d5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399744"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133846"
 ---
 # <a name="uploading-files-vb"></a>上载文件 (VB)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59399744"
 
 > 了解如何允许用户上传二进制文件 （如 Word 或 PDF 文档），其中它们可能会在服务器的文件系统或数据库中存储您的网站。
 
-
 ## <a name="introduction"></a>介绍
 
 所有这些教程我们 ve 检查到目前为止已以独占方式使用文本数据。 但是，许多应用程序必须捕获文本和二进制数据的数据模型。 联机的约会站点可能会允许用户上传图片将其配置文件相关联。 招聘网站可能会让用户将其恢复为 Microsoft Word 或 PDF 文档上传。
@@ -32,7 +31,6 @@ ms.locfileid: "59399744"
 
 > [!NOTE]
 > 是应用程序的数据模型的一部分的二进制数据有时称为[BLOB](http://en.wikipedia.org/wiki/Binary_large_object)，二进制大型对象的首字母缩写。 在这些教程中我已选择要使用的术语的二进制数据，虽然此术语 BLOB 为同义词。
-
 
 ## <a name="step-1-creating-the-working-with-binary-data-web-pages"></a>步骤 1：使用二进制数据 Web 页创建工作
 
@@ -44,42 +42,33 @@ ms.locfileid: "59399744"
 - `UploadInDetailsView.aspx`
 - `UpdatingAndDeleting.aspx`
 
-
 ![将 ASP.NET 页面添加二进制与数据相关的教程](uploading-files-vb/_static/image1.gif)
 
 **图 1**:将 ASP.NET 页面添加二进制与数据相关的教程
 
-
 在其他文件夹中，喜欢`Default.aspx`在`BinaryData`文件夹将在其部分中列出的教程。 请记住，`SectionLevelTutorialListing.ascx`用户控件提供了此功能。 因此，此用户控件添加到`Default.aspx`通过从解决方案资源管理器中拖到页面上的设计视图中拖动。
-
 
 [![将 SectionLevelTutorialListing.ascx 用户控件添加到 Default.aspx](uploading-files-vb/_static/image2.gif)](uploading-files-vb/_static/image1.png)
 
 **图 2**:添加`SectionLevelTutorialListing.ascx`到用户控件`Default.aspx`([单击以查看实际尺寸的图像](uploading-files-vb/_static/image2.png))
 
-
 最后，将这些页面添加到条目为`Web.sitemap`文件。 具体而言，在提高后添加以下标记 GridView `<siteMapNode>`:
-
 
 [!code-xml[Main](uploading-files-vb/samples/sample1.xml)]
 
 更新后`Web.sitemap`，花点时间查看通过浏览器网站的教程。 在左侧菜单现在包含二进制数据教程使用的项。
 
-
 ![站点图现在包括二进制数据教程使用的条目](uploading-files-vb/_static/image3.gif)
 
 **图 3**:站点图现在包括二进制数据教程使用的条目
-
 
 ## <a name="step-2-deciding-where-to-store-the-binary-data"></a>步骤 2：确定在何处存储二进制数据
 
 与应用程序的数据模型关联的二进制数据可以存储在两个位置之一： 具有对该数据库; 中存储的文件的引用的 web 服务器的文件系统上或直接在数据库本身中 （请参阅图 4）。 每种方法有其自己的优点和缺点集，并需要更多详细的讨论。
 
-
 [![可以存储二进制数据，在文件系统或直接在数据库中](uploading-files-vb/_static/image4.gif)](uploading-files-vb/_static/image3.png)
 
 **图 4**:可以存储二进制数据，在文件系统或直接在数据库中 ([单击此项可查看原尺寸图像](uploading-files-vb/_static/image4.png))
-
 
 假设我们想要扩展 Northwind 数据库，以将图片与每个产品相关联。 是一种方法存储这些 web 服务器的文件系统上的图像文件，并记录中的路径`Products`表。 使用此方法时，我们 d 添加`ImagePath`列添加到`Products`类型的表`varchar(200)`，可能是。 当用户上传牛奶的图片时，可能会在 web 服务器的文件系统上存储该图片`~/Images/Tea.jpg`，其中`~`表示应用程序的物理路径。 也就是说，如果网站已取得 root 权限的物理路径处`C:\Websites\Northwind\`，`~/Images/Tea.jpg`等同于`C:\Websites\Northwind\Images\Tea.jpg`。 上传的图像文件以后, 我们 d 更新中的 Chai 记录`Products`表，以便其`ImagePath`引用列的新图像的路径。 我们可以使用`~/Images/Tea.jpg`或仅`Tea.jpg`如果产品的所有映像，将都放置在应用程序，我们决定`Images`文件夹。
 
@@ -98,7 +87,6 @@ ms.locfileid: "59399744"
 > [!NOTE]
 > 在 Microsoft SQL Server 2000 和早期版本中，`varbinary`数据类型有最大限制为 8000 个字节。 用于存储二进制数据的最多为 2 GB [ `image`数据类型](https://msdn.microsoft.com/library/ms187993.aspx)需要改为使用。 通过添加`MAX`在 SQL Server 2005，但是，`image`推荐使用的数据类型。 它 s 仍支持向后兼容性，但 Microsoft 宣布`image`将 SQL Server 的未来版本中删除数据类型。
 
-
 如果你正在使用较旧的数据模型可能会看到`image`数据类型。 Northwind 数据库 s`Categories`表具有`Picture`可以用于存储二进制数据的类别的图像文件的列。 Northwind 数据库起源于 Microsoft Access 和 SQL Server 的早期版本，因为此列的类型是`image`。
 
 对于本教程的下一步的三个，我们将使用这两种方法。 `Categories`表中已包含`Picture`列用于存储二进制内容的类别的图像。 我们将添加一个额外的列`BrochurePath`，以 pdf 格式的路径存储在 web 服务器的文件系统，可用于打印质量、 可媲美的类别概述。
@@ -109,11 +97,9 @@ ms.locfileid: "59399744"
 
 添加一个新`varchar(200)`列添加到`Categories`名为表`BrochurePath`，并允许`NULL`s 并单击保存图标 （或按 Ctrl + S）。
 
-
 [![将 BrochurePath 列添加到类别表](uploading-files-vb/_static/image5.gif)](uploading-files-vb/_static/image5.png)
 
 **图 5**:添加`BrochurePath`列添加到`Categories`表 ([单击以查看实际尺寸的图像](uploading-files-vb/_static/image6.png))
-
 
 ## <a name="step-4-updating-the-architecture-to-use-thepictureandbrochurepathcolumns"></a>步骤 4：更新以使用体系结构`Picture`和`BrochurePath`列
 
@@ -131,11 +117,9 @@ ms.locfileid: "59399744"
 
 首先，通过添加到这两个列`CategoriesDataTable`。 右键单击`CategoriesDataTable`s 标头，从上下文菜单中选择添加，然后选择列选项。 这将创建一个新`DataColumn`中名为的 DataTable `Column1`。 为此列重命名`Picture`。 从属性窗口中，设置`DataColumn`s`DataType`属性设置为`System.Byte[]`（这不是下拉列表中的一个选项; 你需要键入中）。
 
-
 [![创建 DataColumn 名为图片数据类型与 System.Byte](uploading-files-vb/_static/image6.gif)](uploading-files-vb/_static/image7.png)
 
 **图 6**:创建`DataColumn`Named`Picture`其`DataType`是`System.Byte[]`([单击以查看实际尺寸的图像](uploading-files-vb/_static/image8.png))
-
 
 添加另一个`DataColumn`到 DataTable，其命名为`BrochurePath`使用默认`DataType`值 (`System.String`)。
 
@@ -145,61 +129,48 @@ ms.locfileid: "59399744"
 
 若要更新主 TableAdapter 查询，请右键单击`CategoriesTableAdapter`s 标头，然后从上下文菜单中选择配置选项。 这将显示表的适配器配置向导的我们 ve 许多过去的教程中所示。 更新查询，以使重新`BrochurePath`并单击完成。
 
-
 [![更新也会返回 BrochurePath 的 SELECT 语句中的列列表](uploading-files-vb/_static/image7.gif)](uploading-files-vb/_static/image9.png)
 
 **图 7**:更新中的列列表`SELECT`语句也会返回`BrochurePath`([单击以查看实际尺寸的图像](uploading-files-vb/_static/image10.png))
 
-
 当使用 TableAdapter 临时 SQL 语句，更新主查询中的列列表的所有更新列列表`SELECT`查询 TableAdapter 中的方法。 这意味着`GetCategoryByCategoryID(categoryID)`方法已更新，以返回`BrochurePath`列中，这可能是我们的预期。 但是，它还更新中的列列表`GetCategoriesAndNumberOfProducts()`方法，删除子查询返回的每个类别的产品数量 ！ 因此，我们需要更新此方法，s`SELECT`查询。 右键单击`GetCategoriesAndNumberOfProducts()`方法中，选择配置，并还原`SELECT`回其原始值的查询：
-
 
 [!code-sql[Main](uploading-files-vb/samples/sample2.sql)]
 
 接下来，创建新的 TableAdapter 方法返回特定类别的`Picture`列的值。 右键单击`CategoriesTableAdapter`s 标头，并选择添加查询选项以启动 TableAdapter 查询配置向导。 此向导的第一步会要求我们是否我们要使用的临时 SQL 语句查询数据，一个新存储过程或一个现有。 选择使用 SQL 语句，然后单击下一步。 由于我们将返回行，选择选择第二个步骤中返回的行选项。
 
-
 [![选择使用 SQL 语句选项](uploading-files-vb/_static/image8.gif)](uploading-files-vb/_static/image11.png)
 
 **图 8**:选择使用 SQL 语句选项 ([单击此项可查看原尺寸图像](uploading-files-vb/_static/image12.png))
-
 
 [![由于从类别表，则查询将返回一条记录，选择选择其返回的行](uploading-files-vb/_static/image9.gif)](uploading-files-vb/_static/image13.png)
 
 **图 9**:因为查询会从类别表中，选择选择返回的行返回一条记录 ([单击此项可查看原尺寸图像](uploading-files-vb/_static/image14.png))
 
-
 在第三个步骤中，输入以下 SQL 查询，然后单击下一步:
-
 
 [!code-sql[Main](uploading-files-vb/samples/sample3.sql)]
 
 最后一步是选择新的方法的名称。 使用`FillCategoryWithBinaryDataByCategoryID`和`GetCategoryWithBinaryDataByCategoryID`填充 DataTable 并返回数据表模式，分别。 单击完成以完成向导。
 
-
 [![选择 TableAdapter 的方法的名称](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
 
 **图 10**:选择 TableAdapter 的方法的名称 ([单击此项可查看原尺寸图像](uploading-files-vb/_static/image16.png))
 
-
 > [!NOTE]
 > 表适配器查询配置向导完成后可能会看到一个对话框，通知您，新的命令文本返回具有架构的数据不同于主查询的架构。 简单地说，该向导注意的是，TableAdapter s 主查询`GetCategories()`返回比我们刚刚创建的一个不同的架构。 但这是我们希望的因此可以忽略此消息。
-
 
 此外，请记住，如果使用临时 SQL 语句并且使用向导更改 TableAdapter s 有时更高版本的主查询中时，它将修改`GetCategoryWithBinaryDataByCategoryID`s 方法`SELECT`语句的列列表，以包括从仅对这些列主查询 (即，它将删除`Picture`查询中的列)。 您将必须手动更新要返回的列列表`Picture`列中，类似于我们所做的与`GetCategoriesAndNumberOfProducts()`之前在此步骤中的方法。
 
 添加两个后`DataColumn`向`CategoriesDataTable`并`GetCategoryWithBinaryDataByCategoryID`方法`CategoriesTableAdapter`，类型化数据集设计器中的这些类应如图 11 所示的屏幕截图所示。
 
-
 ![数据集设计器包括新的列和方法](uploading-files-vb/_static/image11.gif)
 
 **图 11**:数据集设计器包括新的列和方法
 
-
 ## <a name="updating-the-business-logic-layer-bll"></a>正在更新业务逻辑层 (BLL)
 
 与更新 DAL，剩下的就是来加强业务逻辑层 (BLL) 以囊括新方法`CategoriesTableAdapter`方法。 添加以下方法`CategoriesBLL`类：
-
 
 [!code-vb[Main](uploading-files-vb/samples/sample4.vb)]
 
@@ -211,22 +182,17 @@ ASP.NET 2.0 新 s [FileUpload Web 控件](https://msdn.microsoft.com/library/ms2
 
 若要演示上传文件，打开`FileUpload.aspx`页中`BinaryData`文件夹中，将一个 FileUpload 控件从工具箱拖到设计器中，并设置控制 s`ID`属性设置为`UploadTest`。 接下来，添加一个按钮 Web 控件，设置其`ID`并`Text`属性设置为`UploadButton`并分别将所选文件上传。 最后，将在按钮下方的标签 Web 控件放清除其`Text`属性并设置其`ID`属性设置为`UploadDetails`。
 
-
 [![向 ASP.NET 页面添加 FileUpload 控件](uploading-files-vb/_static/image12.gif)](uploading-files-vb/_static/image17.png)
 
 **图 12**:将 FileUpload 控件添加到 ASP.NET 页 ([单击此项可查看原尺寸图像](uploading-files-vb/_static/image18.png))
 
-
 图 13 显示了此页时的浏览器查看。 请注意，单击浏览按钮将显示文件选择对话框中，这样就允许用户选择其计算机中的文件。 一旦选择了一个文件，单击上传所选文件按钮会将所选的文件 s 二进制内容发送到 web 服务器的回发。
-
 
 [![用户可以选择要从其计算机上传到服务器的文件](uploading-files-vb/_static/image13.gif)](uploading-files-vb/_static/image19.png)
 
 **图 13**:用户可以从服务器到其计算机上传到选择一个文件 ([单击此项可查看原尺寸图像](uploading-files-vb/_static/image20.png))
 
-
 在回发时上, 传的文件可以保存到文件系统或其二进制数据可以直接通过 Stream 得到使用。 对于此示例，让我们来创建`~/Brochures`文件夹和保存那里上传的文件。 首先，通过添加`Brochures`到站点作为子文件夹的根目录的文件夹。 接下来，创建的事件处理程序`UploadButton`s`Click`事件，并添加以下代码：
-
 
 [!code-vb[Main](uploading-files-vb/samples/sample5.vb)]
 
@@ -235,21 +201,17 @@ FileUpload 控件提供了各种用于处理上传的数据的属性。 例如�
 > [!NOTE]
 > 若要确保用户将可以检查文件上传`HasFile`属性，并显示一条警告，如果它 s `False`，或者也可以使用[RequiredFieldValidator 控件](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/validation/default.aspx)改为。
 
-
 FileUpload s`SaveAs(filePath)`上传的文件保存到指定*filePath*。 *filePath*必须是*物理路径*(`C:\Websites\Brochures\SomeFile.pdf`) 而非*虚拟**路径*(`/Brochures/SomeFile.pdf`)。 [ `Server.MapPath(virtPath)`方法](https://msdn.microsoft.com/library/system.web.httpserverutility.mappath.aspx)将虚拟路径，并返回其对应的物理路径。 在这里的虚拟路径是`~/Brochures/fileName`，其中*文件名*是上传的文件的名称。 请参阅[使用 Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml)有关详细信息，在虚拟和物理路径和使用`Server.MapPath`。
 
 完成后`Click`事件处理程序，请花费片刻时间来测试浏览器中的页。 单击浏览按钮并从您的硬盘中选择文件，然后单击上传所选文件按钮。 在回发会将所选文件的内容发送到 web 服务器，然后将显示有关文件的信息，然后将它保存到`~/Brochures`文件夹。 上传文件后, 返回到 Visual Studio 并单击解决方案资源管理器中的刷新按钮。 你应看到您只需上传 ~/Brochures 文件夹中的文件 ！
-
 
 [![文件 EvolutionValley.jpg 已上载到 Web 服务器](uploading-files-vb/_static/image14.gif)](uploading-files-vb/_static/image21.png)
 
 **图 14**:该文件`EvolutionValley.jpg`已上传到 Web 服务器 ([单击以查看实际尺寸的图像](uploading-files-vb/_static/image22.png))
 
-
 ![EvolutionValley.jpg 已保存到 ~/Brochures 文件夹](uploading-files-vb/_static/image15.gif)
 
 **图 15**:`EvolutionValley.jpg` 已保存到`~/Brochures`文件夹
-
 
 ## <a name="subtleties-with-saving-uploaded-files-to-the-file-system"></a>与将上传的文件保存到文件系统的微妙之处
 

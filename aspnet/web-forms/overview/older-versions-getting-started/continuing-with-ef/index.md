@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 25a6b7ba-e374-4c3f-9e53-83f665cfdd21
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef
 msc.type: chapter
-ms.openlocfilehash: 03eb0f69428c4f4f48487f8eefe91c33f9f1ebbd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a1c149bcc6efad712529bea21f4f13d8b05260d7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378794"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108431"
 ---
 # <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a>ASP.NET 4 - 继续使用 Entity Framework 4 和 Web 窗体
 
 > 如何构建 Contoso U 应用程序作为使用 ObjectDataSource 控件的 n 层应用程序以及如何处理的并发性和最大程度提高性能。
-
 
 - [实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
 - [实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

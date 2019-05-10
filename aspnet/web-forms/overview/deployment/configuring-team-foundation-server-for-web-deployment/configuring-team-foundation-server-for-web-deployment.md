@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: ff55233a-e795-4007-a4fc-861fe1bb590b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 188ab63dd84be5559d5a3646eb95caa77ab01bd1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 638d696abbc5f05957c0ed2eb7ebb65fce7813ea
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391996"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133860"
 ---
 # <a name="configuring-team-foundation-server-for-web-deployment"></a>配置用于 Web 部署的 Team Foundation Server
 
@@ -30,7 +30,6 @@ ms.locfileid: "59391996"
 > - 如何配置用于自动部署的权限。
 > 
 > 这些教程意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
-
 
 本教程假定已安装 TFS 2010 并创建初始配置过程的一部分的团队项目集合。 [Visual Studio 2010 的 Team Foundation 安装指南 》](https://go.microsoft.com/?linkid=9805132)这些任务提供全面的指导。
 

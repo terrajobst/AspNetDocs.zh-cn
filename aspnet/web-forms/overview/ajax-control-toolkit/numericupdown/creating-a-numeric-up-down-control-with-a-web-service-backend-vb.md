@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: afa59dfa-fef1-43d3-8fdd-aea3be36ed3c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0442b5e22e44e0767825026b26ad3da55777b962
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fffa670134d5b9aa3523603c60accb4e887747c8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384261"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132534"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>使用 Web 服务后端创建数字增大/减小控件 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384261"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/numericupdown1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/numericupdown1VB.pdf)
 
 > 而不是让用户复选框中键入一个值，数值加/减控件 （即存在于 Windows 和其他操作系统） 可以证明随着更多熟练。 默认情况下，NumericUpDown 控件始终每增加或减少值 1，但 web 服务可证明更大的灵活性。
-
 
 ## <a name="overview"></a>概述
 
@@ -52,7 +51,6 @@ ASP.NET AJAX 控件工具包包含`NumericUpDown`扩展程序，其会自动添�
 [!code-aspx[Main](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/samples/sample3.aspx)]
 
 如果运行该页面，请注意如何在文本框中的值始终加倍时单击上部的按钮，并单击低按钮时，减少了一半。
-
 
 [![出现是 2 的幂的数字](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: ad8dd396-30f7-4abe-ac02-a0b84422e5be
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: eab1ad6cd4636ab3d35988ec8dc762c8a8f51ef4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 40b143acc246ec47f29975177752d457c5413950
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421129"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108527"
 ---
 # <a name="protecting-connection-strings-and-other-configuration-information-c"></a>保护连接字符串和其他配置信息 (C#)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59421129"
 
 > ASP.NET 应用程序通常存储在 Web.config 文件中的配置信息。 此信息的一些敏感，需要保护。 默认情况下此文件，不会提供对 Web 站点访问者，但管理员或黑客可能获得对 Web 服务器的文件系统访问并查看该文件的内容。 在本教程中我们了解 ASP.NET 2.0，使我们能够通过加密 Web.config 文件的各个部分来保护敏感信息。
 
-
 ## <a name="introduction"></a>介绍
 
 ASP.NET 应用程序的配置信息通常存储在名为一个 XML 文件`Web.config`。 我们已更新过程中的这些教程`Web.config`少量的时间。 创建时`Northwind`类型中的数据集[第一个教程](../introduction/creating-a-data-access-layer-cs.md)，例如，连接字符串信息已自动添加到`Web.config`中`<connectionStrings>`部分。 在后面[母版页和站点导航](../introduction/master-pages-and-site-navigation-cs.md)教程中，我们手动更新`Web.config`，添加`<pages>`元素，该值指示所有 ASP.NET 页面在我们的项目应使用`DataWebControls`主题。
 
 由于`Web.config`可能包含连接字符串等敏感数据非常重要的内容`Web.config`保持安全和隐藏从未经授权的查看器。 默认情况下，任何 HTTP 请求到的文件`.config`由 ASP.NET 引擎，它将返回处理扩展插件*不提供此类型的页*图 1 所示的消息。 这意味着，访问者不能查看你`Web.config`只需输入文件 s 内容 http://www.YourServer.com/Web.config 到其 s 浏览器地址栏。
 
-
 [![访问 Web.config 通过浏览器返回此类型的页未处理消息](protecting-connection-strings-and-other-configuration-information-cs/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image1.png)
 
 **图 1**:访问`Web.config`通过浏览器返回此类型的页未处理消息 ([单击以查看实际尺寸的图像](protecting-connection-strings-and-other-configuration-information-cs/_static/image3.png))
-
 
 但如果攻击者能够找到一些其他攻击，允许她查看你`Web.config`文件 s 内容？ 可以做些什么攻击者使用此信息，并可以执行的步骤来进一步保护敏感信息`Web.config`？ 幸运的是，大多数部分中`Web.config`不包含敏感信息。 什么会造成伤害可以攻击者 perpetrate 如果他们知道默认使用由 ASP.NET 页主题的名称？
 
@@ -49,7 +46,6 @@ ASP.NET 应用程序的配置信息通常存储在名为一个 XML 文件`Web.co
 
 > [!NOTE]
 > 本教程最后一看 Microsoft 的建议从 ASP.NET 应用程序连接到数据库。 除了加密连接字符串，可以帮助强化通过确保您要连接到安全的方式中的数据库的系统。
-
 
 ## <a name="step-1-exploring-aspnet-20-s-protected-configuration-options"></a>步骤 1：探讨 ASP.NET 2.0 s 受保护的配置选项
 
@@ -69,7 +65,6 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 > [!NOTE]
 > `RSAProtectedConfigurationProvider`并`DPAPIProtectedConfigurationProvider`中注册提供程序`machine.config`文件和提供程序名称`RsaProtectedConfigurationProvider`和`DataProtectionConfigurationProvider`分别。 加密或解密我们将需要提供相应的提供程序名称的配置信息时 (`RsaProtectedConfigurationProvider`或`DataProtectionConfigurationProvider`) 而不是实际类型名称 (`RSAProtectedConfigurationProvider`和`DPAPIProtectedConfigurationProvider`)。 您可以找到`machine.config`文件中`$WINDOWS$\Microsoft.NET\Framework\version\CONFIG`文件夹。
 
-
 ## <a name="step-2-programmatically-encrypting-and-decrypting-configuration-sections"></a>步骤 2：以编程方式加密和解密的配置节
 
 使用几行代码，我们可以加密或解密特定配置部分使用指定的提供程序。 该代码中，我们会很快，只需以编程方式引用相应的配置部分中，调用其`ProtectSection`或`UnprotectSection`方法，，然后调用`Save`方法以持久保存所做的更改。 此外，.NET Framework 包括有用的命令行实用工具，可以加密和解密配置信息。 我们将探讨在步骤 3 中的该命令行实用程序。
@@ -82,21 +77,17 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 
 此时您的屏幕应类似于图 2。
 
-
 [![向页面添加一个文本框和两个按钮 Web 控件](protecting-connection-strings-and-other-configuration-information-cs/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image4.png)
 
 **图 2**:向页面添加一个文本框和两个按钮 Web 控件 ([单击此项可查看原尺寸图像](protecting-connection-strings-and-other-configuration-information-cs/_static/image6.png))
 
-
 接下来，我们需要编写代码，将加载并显示的内容`Web.config`在`WebConfigContents`文本框中第一个页面时加载。 将以下代码添加到页的代码隐藏类。 此代码将添加一个名为方法`DisplayWebConfig`并调用它从`Page_Load`事件处理程序时`Page.IsPostBack`是`false`:
-
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample1.cs)]
 
 `DisplayWebConfig`方法使用[`File`类](https://msdn.microsoft.com/library/system.io.file.aspx)若要打开应用程序 s`Web.config`文件[`StreamReader`类](https://msdn.microsoft.com/library/system.io.streamreader.aspx)其内容读入字符串，将[`Path`类](https://msdn.microsoft.com/library/system.io.path.aspx)生成的物理路径`Web.config`文件。 这三个类在中找到[`System.IO`命名空间](https://msdn.microsoft.com/library/system.io.aspx)。 因此，需要将添加`using``System.IO`语句或顶部的代码隐藏类，或者，这些类具有的名称的前缀`System.IO.`。
 
 接下来，我们需要添加两个 Button 控件的事件处理程序`Click`事件，并添加所需的代码来加密和解密`<connectionStrings>`部分计算机级密钥使用 DPAPI 提供程序。 从设计器中，双击要添加的按钮的每个`Click`代码隐藏中的事件处理程序类，然后添加以下代码：
-
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample2.cs)]
 
@@ -110,14 +101,11 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 
 输入上面的代码后, 对其进行测试，请访问`EncryptingConfigSections.aspx`通过浏览器的页。 您最初应看到列出的内容的页面`Web.config`与`<connectionStrings>`以纯文本形式显示的部分 （参见图 3）。
 
-
 [![向页面添加一个文本框和两个按钮 Web 控件](protecting-connection-strings-and-other-configuration-information-cs/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image7.png)
 
 **图 3**:向页面添加一个文本框和两个按钮 Web 控件 ([单击此项可查看原尺寸图像](protecting-connection-strings-and-other-configuration-information-cs/_static/image9.png))
 
-
 现在，单击加密连接字符串按钮。 如果启用请求验证，则返回从发布标记`WebConfigContents`文本框中将生成`HttpRequestValidationException`，其中显示消息，具有潜在危险`Request.Form`从客户端检测到值。 请求验证，启用 ASP.NET 2.0 中默认情况下，它禁止将包含未编码 HTML 的回发，设计用于帮助防止脚本注入攻击。 可以在页面或应用程序级别禁用此检查。 若要将其关闭此页，设置`ValidateRequest`设置为`false`中`@Page`指令。 `@Page`指令找到页面 s 声明性标记顶部。
-
 
 [!code-aspx[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample3.aspx)]
 
@@ -125,28 +113,22 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 
 禁用之后的页请求验证，请尝试再次单击加密连接字符串按钮。 将回发时，访问该配置文件并将其`<connectionStrings>`加密使用 DPAPI 提供程序的部分。 然后，更新文本框以显示新`Web.config`内容。 如图 4 所示，`<connectionStrings>`信息都会进行加密。
 
-
 [![单击加密连接字符串按钮加密&lt;connectionString&gt;部分](protecting-connection-strings-and-other-configuration-information-cs/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image10.png)
 
 **图 4**:单击加密连接字符串按钮加密`<connectionString>`部分 ([单击以查看实际尺寸的图像](protecting-connection-strings-and-other-configuration-information-cs/_static/image12.png))
 
-
 加密`<connectionStrings>`我的计算机上生成的部分将跟踪，尽管部分中的内容`<CipherData>`为简便起见已移除元素：
-
 
 [!code-xml[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample4.xml)]
 
 > [!NOTE]
 > `<connectionStrings>`元素指定用于执行加密的提供程序 (`DataProtectionConfigurationProvider`)。 此信息由`UnprotectSection`方法时单击解密连接字符串按钮。
 
-
 当从访问连接字符串信息时`Web.config`，无论是由我们编写的从 SqlDataSource 控件或从我们的类型化数据集在 Tableadapter 的自动生成的代码-会自动解密。 简单地说，我们不需要添加任何额外的代码或逻辑来解密加密`<connectionString>`部分。 若要演示此操作，请访问之前的教程之一在此时，如基本报告部分的简单显示教程 (`~/BasicReporting/SimpleDisplay.aspx`)。 如图 5 所示，教程适用于完全按照我们期望的那样，指示加密的连接字符串信息由 ASP.NET 页时被自动解密。
-
 
 [![数据访问层自动解密的连接字符串信息](protecting-connection-strings-and-other-configuration-information-cs/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image13.png)
 
 **图 5**:数据访问层自动解密连接字符串信息 ([单击此项可查看原尺寸图像](protecting-connection-strings-and-other-configuration-information-cs/_static/image15.png))
-
 
 若要还原`<connectionStrings>`部分回其纯文本表示形式中，单击解密连接字符串按钮。 应在回发时请参阅中的连接字符串`Web.config`以纯文本。 此时您的屏幕应看起来像第一次访问此页 （请参阅图 3 中） 时。
 
@@ -156,27 +138,22 @@ ASP.NET 2.0 包含受保护的配置系统用于加密和解密配置信息。 �
 
 以下语句显示了用来加密配置节的常规语法`aspnet_regiis.exe`命令行工具：
 
-
 [!code-console[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample5.cmd)]
 
 *部分*是配置节进行加密 （如 connectionStrings)，*物理\_directory*是 web 应用程序的根目录的完整的物理路径和*提供程序*是受保护的配置提供程序 （如 DataProtectionConfigurationProvider) 使用的名称。 或者，如果在 IIS 中注册 web 应用程序可以输入的虚拟路径而不是在物理路径中使用以下语法：
-
 
 [!code-console[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample6.cmd)]
 
 以下`aspnet_regiis.exe`示例加密`<connectionStrings>`部分使用 DPAPI 提供程序和计算机级别的密钥：
 
-
 [!code-console[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample7.cmd)]
 
 同样，`aspnet_regiis.exe`命令行工具可用于解密的配置节。 而不是使用`-pef`切换，请使用`-pdf`(或代替`-pe`，使用`-pd`)。 另请注意，提供程序名称时不需要解密。
-
 
 [!code-console[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample8.cmd)]
 
 > [!NOTE]
 > 因为我们要使用 DPAPI 提供程序，后者使用特定于的计算机的键时，必须运行`aspnet_regiis.exe`从您的浏览器提供从其在同一台计算机。 例如，如果从本地开发计算机上运行此命令行程序，然后将加密的 Web.config 文件上载到生产服务器，在生产服务器将不能对连接字符串信息解密加密之后使用特定于你的开发计算机密钥。 RSA 提供程序不具有此限制，因为可以将 RSA 密钥导出到另一台计算机。
-
 
 ## <a name="understanding-database-authentication-options"></a>了解数据库身份验证选项
 
@@ -201,7 +178,6 @@ Integrated Security = True 和缺少的用户名和密码指示使用 Windows �
 
 > [!NOTE]
 > 有关不同类型的 SQL Server 中提供的身份验证的详细信息，请参阅[Building Secure ASP.NET Applications:身份验证、 授权和安全通信](https://msdn.microsoft.com/library/aa302392.aspx)。 有关其他连接字符串示例演示 Windows 和 SQL 身份验证语法之间的差异，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
-
 
 ## <a name="summary"></a>总结
 

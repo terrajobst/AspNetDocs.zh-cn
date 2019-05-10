@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: a7fe5de5-a964-4780-ae5e-70821dfb50a0
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4254b7e1f2086a9cc5fbc1e8c2a4f7e2e3d2925e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 476b807ca48744648b6e2435af6db7b343c0f854
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416566"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108766"
 ---
 # <a name="changing-an-animation-using-client-side-code-vb"></a>使用客户端代码更改动画 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59416566"
 [下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)
 
 > ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 此外可以使用自定义客户端的 JavaScript 代码更改动画。
-
 
 ## <a name="overview"></a>概述
 
@@ -69,7 +68,6 @@ ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要�
 以下 JavaScript 代码将分配到此 JSON descripting`OnClick`动画的当前扩展程序并运行它：
 
 [!code-html[Main](changing-an-animation-using-client-side-code-vb/samples/sample7.html)]
-
 
 [![动画立即运行而无需单击鼠标 （和使用很少标记）](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)
 

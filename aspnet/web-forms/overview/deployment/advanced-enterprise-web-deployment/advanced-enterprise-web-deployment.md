@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 7dcaba80-f2ec-4db3-ad98-daadc3afdb49
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 2f27e9436f246e3da2fbb129bbcd2d80e39b5f28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bf4c7d021763017592483df35cb717295c4924aa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385314"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108911"
 ---
 # <a name="advanced-enterprise-web-deployment"></a>高级企业 Web 部署
 
@@ -24,7 +24,6 @@ ms.locfileid: "59385314"
 > 本教程将演示如何执行各种必需或在很多企业部署方案所需的任务。
 > 
 > 这些教程意大利语翻译，请访问[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
-
 
 这就构成的系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求本系列教程将使用的示例解决方案&#x2014;[联系人管理器](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)解决方案&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
