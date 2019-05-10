@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: a6e2e1a0-c925-43e9-b711-1f178fdd72d7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f0575474bc750cad15ac74c522e3138b326d880c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2b3cc02a170deabdd6248bacc9dab8a17b04e2b5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400004"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134125"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>从母版页与内容页交互 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59400004"
 [下载代码](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_07_VB.zip)或[下载 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_07_VB.pdf)
 
 > 探讨如何调用方法，从母版页中的代码中设置属性等的内容页。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -50,16 +49,13 @@ ms.locfileid: "59400004"
 
 我们首要任务是创建内容页，其中列出了 Northwind 数据库中的产品。 (我们 Northwind 数据库到项目中添加前面的教程[*与母版页从内容页交互*](interacting-with-the-master-page-from-the-content-page-vb.md)。)首先，通过添加新的 ASP.NET 页面到`~/Admin`名为的文件夹`Products.aspx`，确保将将其绑定到`Site.master`母版页。 图 1 显示此页添加到网站后的解决方案资源管理器。
 
-
 [![向管理员文件夹添加新的 ASP.NET 页面](interacting-with-the-content-page-from-the-master-page-vb/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image1.png)
 
 **图 01**:添加到新的 ASP.NET 页`Admin`文件夹 ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image3.png))
 
-
 回想一下，在[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教程中，我们创建一个名为的自定义基本页类`BasePage`，如果它不生成页面的标题显式设置。 转到`Products.aspx`页面的代码隐藏类，并将其派生`BasePage`(而不是从`System.Web.UI.Page`)。
 
 最后，更新`Web.sitemap`文件以便包括本课程中的一个条目。 添加以下标记下方`<siteMapNode>`Master 页交互的课程内容：
-
 
 [!code-xml[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample1.xml)]
 
@@ -67,42 +63,32 @@ ms.locfileid: "59400004"
 
 返回到`Products.aspx`。 中的内容控件`MainContent`中，添加 GridView 控件并将其命名`ProductsGrid`。 将 GridView 绑定到名为的新 SqlDataSource 控件`ProductsDataSource`。
 
-
 [![将 GridView 绑定到新的 SqlDataSource 控件](interacting-with-the-content-page-from-the-master-page-vb/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image4.png)
 
 **图 02**:将 GridView 绑定到新的 SqlDataSource 控件 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image6.png))
 
-
 将向导配置，使其使用 Northwind 数据库。 如果您已完成上一教程中，则应该已拥有一个名为的连接字符串`NorthwindConnectionString`在`Web.config`。 从下拉列表中，选择此连接字符串，如图 3 中所示。
-
 
 [![配置 SqlDataSource 使用 Northwind 数据库](interacting-with-the-content-page-from-the-master-page-vb/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image7.png)
 
 **图 03**:配置 SqlDataSource 使用 Northwind 数据库 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image9.png))
 
-
 接下来，指定数据源控件`SELECT`通过从下拉列表中选择产品表并返回语句`ProductName`和`UnitPrice`（请参阅图 4） 的列。 单击下一步并在完成以完成配置数据源向导。
-
 
 [![返回产品表中的产品名称和单价字段](interacting-with-the-content-page-from-the-master-page-vb/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image10.png)
 
 **图 04**:返回`ProductName`并`UnitPrice`字段从`Products`表 ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image12.png))
 
-
 就这么简单！ 完成向导后 Visual Studio 将两个 BoundFields 添加到 GridView 镜像 SqlDataSource 控件返回的两个字段。 遵循 GridView 和 SqlDataSource 控件的标记。 图 5 显示了通过浏览器查看时的结果。
 
-
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample2.aspx)]
-
 
 [![GridView 中列出每个产品和它的价格](interacting-with-the-content-page-from-the-master-page-vb/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image13.png)
 
 **图 05**:GridView 中列出每个产品和它的价格 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image15.png))
 
-
 > [!NOTE]
 > 随意清理的 GridView 的外观。 某些建议包括格式化为货币的显示的单价值以及如何使用背景颜色和字体以改善该网格的外观。 有关显示和格式设置在 ASP.NET 中的数据的详细信息，请参阅我[使用数据的系列教程](../../data-access/index.md)。
-
 
 ## <a name="step-2-adding-a-double-prices-button-to-the-master-page"></a>步骤 2：将双精度价格按钮添加到母版页
 
@@ -110,32 +96,25 @@ ms.locfileid: "59400004"
 
 接下来，将使用 SqlDataSource 控件添加到主页上，其命名为`DoublePricesDataSource`。 此 SqlDataSource 将用于执行`UPDATE`语句翻倍，所有价格。 具体而言，我们需要设置其`ConnectionString`并`UpdateCommand`属性设置为适当的连接字符串和`UPDATE`语句。 然后我们需要调用此 SqlDataSource 控件`Update`方法时`DoublePrice`单击按钮。 若要设置`ConnectionString`和`UpdateCommand`属性中，选择 SqlDataSource 控件，然后转到属性窗口。 `ConnectionString`属性列出了已存储在这些连接字符串`Web.config`在下拉列表中; 选择`NorthwindConnectionString`选项如图 6 中所示。
 
-
 [![配置为使用 NorthwindConnectionString SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image16.png)
 
 **图 06**:配置为使用 SqlDataSource `NorthwindConnectionString` ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image18.png))
 
-
 若要设置`UpdateCommand`属性，在属性窗口中找到 UpdateQuery 选项。 此属性，请选中时，显示一个具有省略号; 的按钮单击此按钮将显示在图 7 所示的命令和参数编辑器对话框。 键入以下内容`UPDATE`到对话框的文本框中的语句：
-
 
 [!code-sql[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample3.sql)]
 
 此语句中，执行时，将会翻倍`UnitPrice`值中的每条`Products`表。
 
-
 [![设置 SqlDataSource 的 UpdateCommand 属性](interacting-with-the-content-page-from-the-master-page-vb/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image19.png)
 
 **图 07**:设置的 SqlDataSource`UpdateCommand`属性 ([单击以查看实际尺寸的图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image21.png))
 
-
 以后设置这些属性，这些按钮和 SqlDataSource 控件的声明性标记看起来应类似于下面：
-
 
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample4.aspx)]
 
 剩下的就是调用其`Update`方法时`DoublePrice`单击按钮。 创建`Click`事件处理程序`DoublePrice`按钮并添加以下代码：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample5.vb)]
 
@@ -157,26 +136,21 @@ ms.locfileid: "59400004"
 > [!NOTE]
 > 有关创建的详细信息，提高，和处理事件，请参阅[事件和委托](https://msdn.microsoft.com/library/17sde2xt.aspx)并[简单英语中的事件委托](http://www.codeproject.com/KB/cs/eventdelegates.aspx)。
 
-
 若要定义一个事件，请使用以下语法：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample6.vb)]
 
 因为我们只需要用户单击时发出警报内容页`DoublePrice`按钮并不需要传递任何其他附加信息，我们可以使用事件委托`EventHandler`，用于定义的事件处理程序接受作为第二个操作数参数类型的对象`System.EventArgs`。 若要创建主页面中的事件，请到母版页的代码隐藏类添加以下代码行：
 
-
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample7.vb)]
 
 上面的代码将公共事件添加到名为母版页`PricesDoubled`。 现在，我们需要引发此事件后的价格已增加一倍。 若要引发事件，请使用以下语法：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample8.vb)]
 
 其中*发件人*并*eventArgs*是你想要传递到订阅服务器的事件处理程序的值。
 
 更新`DoublePrice``Click`事件处理程序使用以下代码：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample9.vb)]
 
@@ -188,11 +162,9 @@ ms.locfileid: "59400004"
 
 首先，创建名为一个事件处理程序`Master_PricesDoubled`。 由于我们是如何定义`PricesDoubled`母版页中的事件的事件处理程序的两个输入的参数必须是类型`Object`和`EventArgs`分别。 在事件处理程序调用`ProductsGrid`GridView 的`DataBind`方法重新绑定到网格的数据。
 
-
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample10.vb)]
 
 事件处理程序的代码已完成，但我们尚未为关联母版页的`PricesDoubled`到此事件处理程序的事件。 订阅服务器上将事件与事件处理程序通过以下语法：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample11.vb)]
 
@@ -201,7 +173,6 @@ ms.locfileid: "59400004"
 此事件绑定代码必须执行的第一次页面访问和后续回发，而应出现在之前可能会引发该事件时的页面生命周期中的点。 添加事件绑定代码的好时机是在 PreInit 阶段中，很早在页面生命周期中出现这种情况。
 
 打开`~/Admin/Products.aspx`并创建`Page_PreInit`事件处理程序：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample12.vb)]
 
@@ -212,11 +183,9 @@ ms.locfileid: "59400004"
 
 让我们使用后一种方法。 以下代码添加到`@MasterType`指令的声明性标记中页面的顶部：
 
-
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample13.aspx)]
 
 然后添加以下事件绑定代码在`Page_PreInit`事件处理程序：
-
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample14.vb)]
 
@@ -224,16 +193,13 @@ ms.locfileid: "59400004"
 
 图 8 和 9 说明了此行为。 图 8 显示了页面在首次访问时。 请注意，在这种价格值`RecentProducts`（在主页面的左侧列） 的 GridView 和`ProductsGrid`GridView （在内容页）。 图 9 显示了相同屏幕后立即`DoublePrice`单击按钮。 正如您所看到的新价格会立即反映在这两个 Gridview。
 
-
 [![初始的价格值](interacting-with-the-content-page-from-the-master-page-vb/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image22.png)
 
 **图 08**:初始的价格值 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image24.png))
 
-
 [![在 Gridview 中显示 Just-Doubled 价格](interacting-with-the-content-page-from-the-master-page-vb/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image25.png)
 
 **图 09**:在 Gridview 中显示 Just-Doubled 价格 ([单击此项可查看原尺寸图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png))
-
 
 ## <a name="summary"></a>总结
 

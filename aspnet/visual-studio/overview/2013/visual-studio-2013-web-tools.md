@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 874542305bd3f47066cfae595919285ed079aa53
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fb987dd9b26ad9f0e8a88fd881bde4505ec4148
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421064"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115900"
 ---
 # <a name="hands-on-lab-visual-studio-2013-web-tools"></a>动手实验：Visual Studio 2013 Web 工具
 
@@ -28,7 +28,6 @@ ms.locfileid: "59421064"
 > 所有这种能力也是可用于扩展，使其易于扩展，具有强大的新功能以满足你需求的编辑器。 Web Essentials 是一系列 （主要） 与 web 相关增强功能 Visual Studio。 它还包括了许多新的 IntelliSense 完成 （尤其是对于 CSS)、 新的浏览器链接功能、 自动 JSHint 的 JavaScript 文件、 HTML 和 CSS 和对新式 web 开发至关重要的许多其他功能的新的警告。
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>概述
@@ -64,7 +63,6 @@ ms.locfileid: "59421064"
 > [!NOTE]
 > 请确保您运行安装程序之前已为此实验室的所有依赖项。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用代码片段
 
@@ -72,7 +70,6 @@ ms.locfileid: "59421064"
 
 > [!NOTE]
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
-
 
 ---
 
@@ -87,9 +84,8 @@ ms.locfileid: "59421064"
 > [!NOTE]
 > 在首次启动 Visual Studio，您必须选择一个预定义的设置集合。 每个预定义的集合旨在符合特定的开发风格，并确定窗口布局、 编辑器行为、 IntelliSense 代码段和对话框选项。 此实验中的过程描述了完成给定的任务在 Visual Studio 中使用时所需的操作**常规开发设置**集合。 如果您为您的开发环境选择不同的设置集合，可能会中应考虑到的步骤有所不同。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>练习 1:使用浏览器链接和 Web Essentials
+### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>练习 1：使用浏览器链接和 Web Essentials
 
 **Web Essentials**是一个 Visual Studio 扩展，将添加各种新式 web 开发，主要侧重于使 web 开发体验更快、 更舒适的有用功能。 可以从 Visual Studio 中的扩展库安装 Web Essentials。
 
@@ -338,7 +334,7 @@ ms.locfileid: "59421064"
 5. 更改的值**内容**归于*GeekQuiz*并保存该文件。
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>练习 2:利用代码段和 IntelliSense
+### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>练习 2：利用代码段和 IntelliSense
 
 使用 Web Essentials HTML 编辑器已扩展具有额外功能。 在此练习中，你将看到一些新功能，开发 web 应用程序时很有用。
 

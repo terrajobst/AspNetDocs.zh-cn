@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 94885984ebad90523369dcf5771d0f77a753008f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aee0ff9d8d7f17e8a00dab12467bd3a3457fbe18
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405659"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117758"
 ---
 # <a name="iteration-6--use-test-driven-development-c"></a>迭代 6 – 使用测试驱动开发 (C#)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试并针对单元测试编写的代码。 在此迭代中，我们将添加联系人组。
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>生成联系人管理 ASP.NET MVC 应用程序 (C#)
-  
 
 在本系列教程，我们构建整个联系人管理应用程序从头到尾完成。 联系人管理器应用程序，可存储联系人信息的名称，电话号码和电子邮件地址的人的列表。
 
@@ -73,7 +71,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 若要了解有关测试驱动开发的详细信息，建议您阅读 Michael Feathers 书籍**处理有效地使用旧代码**。
 
-
 在此迭代中，我们将一项新功能添加到我们的联系人管理器应用程序。 我们将添加对联系人组的支持。 可以使用联系人组来组织你的联系人为如业务的类别和友元组。
 
 我们将这一新功能添加到我们的应用程序，通过的测试驱动的开发过程。 我们将首先编写单元测试，我们将编写所有这些测试针对我们的代码。
@@ -112,11 +109,9 @@ by [Microsoft](https://github.com/microsoft)
 
 创建新的单元测试，请右键单击 Controllers 文件夹在 ContactManager.Tests 项目中，选择**添加、 新测试**，并选择**单元测试**模板 （参见图 1）。 名称在新的单元测试 GroupControllerTest.cs，然后单击**确定**按钮。
 
-
 [![添加 GroupControllerTest 单元测试](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
 
 **图 01**:添加 GroupControllerTest 单元测试 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image2.png))
-
 
 在列表 1 中包含了第一个单元测试。 此测试验证组控制器的 index （） 方法返回一系列组。 此测试将验证组的集合视图中返回数据。
 
@@ -140,11 +135,9 @@ by [Microsoft](https://github.com/microsoft)
 
 我们将在 GroupController 和组类添加到我们的项目后，我们的第一个单元测试成功完成 （请参见图 2）。 我们已经通过该测试所需的最小工作。 为了庆祝就。
 
-
 [![成功 ！](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
 **图 02**:成功 ！([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image4.png))
-
 
 ## <a name="creating-contact-groups"></a>创建联系人组
 
@@ -220,7 +213,6 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample12.cs)]
 
-
 最后，我们的应用程序设计这些更改需要我们对我们的单元测试中进行一些修改。 我们现在需要执行单元测试时使用 FakeContactManagerRepository。 更新后的 GroupControllerTest 类都包含在列表 12。
 
 **Listing 12 - Controllers\GroupControllerTest.cs**
@@ -242,12 +234,10 @@ by [Microsoft](https://github.com/microsoft)
 
 <a id="0.11_table01"></a>
 
-
 | **列名称** | **数据类型** | **允许 null 值** |
 | --- | --- | --- |
 | Id | int | False |
 | 名称 | nvarchar(50) | False |
-
 
 接下来，我们需要从联系人表中删除的所有数据 （否则，我们将无法创建联系人和组表之间的关系）。 请执行以下步骤：
 
@@ -266,16 +256,13 @@ by [Microsoft](https://github.com/microsoft)
 8. 单击关闭按钮以关闭外键关系对话框。
 9. 单击保存按钮以将所做的更改保存到 Contacts 表。
 
-
 [![创建数据库表关系](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
 **图 03**:创建数据库表关系 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
-
 [![指定表关系](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
 **图 04**:指定表关系 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image8.png))
-
 
 ### <a name="updating-our-data-model"></a>更新数据模型
 
@@ -287,19 +274,15 @@ by [Microsoft](https://github.com/microsoft)
 4. 右键单击组实体，然后选择菜单选项**重命名**。 更改的名称*组*实体与*组*（单数）。
 5. 右键单击联系人实体的底部将显示的组导航属性。 更改的名称*组*导航属性设置为*组*（单数）。
 
-
 [![更新数据库中的实体框架模型](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
 **图 05**:更新数据库中的实体框架模型 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image10.png))
 
-
 完成这些步骤后，你的数据模型将表示的联系人和组的表。 在实体设计器应显示这两个实体 （请参阅图 6）。
-
 
 [![实体设计器显示组和联系人](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
 
 **图 06**:显示组和联系人实体设计器 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image12.png))
-
 
 ### <a name="creating-our-repository-classes"></a>创建存储库类
 
@@ -328,11 +311,9 @@ ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don 
 - Views\Group\Index.aspx-联系人组的显示列表
 - Views\Group\Delete.aspx-用于删除联系人组显示确认窗体
 
-
 [![组索引视图](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
 
 **图 07**:组索引视图 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image14.png))
-
 
 我们需要修改以下现有视图，使其包含联系人组：
 
@@ -342,11 +323,9 @@ ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don 
 
 通过查看此教程中随附的 Visual Studio 应用程序，可以看到修改后的视图。 例如，图 8 显示了联系人索引视图。
 
-
 [![请联系索引视图](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
 **图 08**:请联系索引视图 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-cs/_static/image16.png))
-
 
 ## <a name="summary"></a>总结
 

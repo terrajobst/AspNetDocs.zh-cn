@@ -8,12 +8,12 @@ ms.date: 05/22/2012
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: f97f214abeaeb88634dd10aaebacc0d58e91ab84
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6dad67d4e3d38d57a761c567d937d714a3184ea9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422455"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133716"
 ---
 # <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在具有 ASP.NET 网页 (Razor) 的图表中显示数据
 
@@ -33,7 +33,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > > [!NOTE]
 > > 在本文中的信息适用于 ASP.NET Web Pages 1.0 和 Web Pages 2。
-
 
 <a id="The_Chart_Helper"></a>
 ## <a name="the-chart-helper"></a>图表帮助程序
@@ -152,7 +151,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample8.cshtml)]
 > 
 > 您可以添加`using`有你想要引用任何其他.NET Framework 命名空间的语句。 但是，如所述，您无需执行此操作通常情况下，因为您将使用的类的大部分都是自动导入由 ASP.NET 在中使用的命名空间中 *.cshtml*并 *.vbhtml*页。
-
 
 <a id="Displaying_Charts"></a>
 ## <a name="displaying-charts-inside-a-web-page"></a>显示在网页上的图表

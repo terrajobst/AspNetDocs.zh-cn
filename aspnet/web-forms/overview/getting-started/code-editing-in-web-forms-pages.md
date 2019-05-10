@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: 5344b74e-b888-479a-92bc-601a33bd61a2
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 328dc6fb61ac562131b11b36b40f574ca5a53866
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3473ad476fbbebc58e12586334b4600f57cf17ed
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397365"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134240"
 ---
 # <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>在 Visual Studio 2013 中编辑 ASP.NET Web 窗体的代码
 
@@ -31,7 +31,6 @@ ms.locfileid: "59397365"
 - 插入代码段。
 
 ## <a name="prerequisites"></a>系统必备
-
 
 若要完成本演练，你将需要：
 
@@ -65,14 +64,11 @@ ms.locfileid: "59397365"
 
     Visual Studio 创建新的项目，包括基于 Web 窗体模板的预生成的功能。
 
-
 ## <a name="creating-a-new-aspnet-web-forms-page"></a>创建新的 ASP.NET Web 窗体页
-
 
 当您创建新的 Web 窗体应用程序使用**ASP.NET Web 应用程序**项目模板，Visual Studio 将添加名为的 ASP.NET 页 （Web 窗体页） *Default.aspx*，以及其他多个文件和文件夹。 可以使用*Default.aspx*为 Web 应用程序主页的页。 但是，对于本演练中，将创建和使用新的页面。
 
 ### <a name="to-add-a-page-to-the-web-application"></a>若要添加到 Web 应用程序页
-
 
 1. 在中**解决方案资源管理器**，右键单击 Web 应用程序名称 (在本教程中的应用程序名称是**BasicWebSite**)，然后单击**添加** - &gt;**新项**。   
 随即出现“添加新项”对话框。
@@ -82,14 +78,11 @@ ms.locfileid: "59397365"
  Visual Studio 创建新页面，并将其打开。
 4. 接下来，将此新的页设置为默认启动页。 在中**解决方案资源管理器**，右键单击名为的新页*FirstWebPage.aspx* ，然后选择**设为起始页**。 在下次运行此应用程序以测试我们的进度，将会自动看到此新页在浏览器中。
 
-
 ## <a name="correcting-inline-coding-errors"></a>更正内联编码错误
-
 
 Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代码，并且进行了错误，代码编辑器可帮助你更正此错误。 在本演练的此部分中，您将编写一行代码，用于演示在编辑器中的错误更正功能。
 
 ### <a name="to-correct-simple-coding-errors-in-visual-studio"></a>若要更正 Visual Studio 中的简单编码错误
-
 
 1. 在中**设计**视图中，双击空白页后，可以创建一个处理程序**负载**事件页。   
    使用仅作为一个位置的事件处理程序编写一些代码。
@@ -109,7 +102,6 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
     > [!NOTE] 
     > 
     > 查看当前代码格式设置在 Visual Studio 中的通过选择**工具** - &gt; **选项** - &gt; **字体和颜色**。
-
 
 ## <a name="refactoring-and-renaming"></a>重构和重命名
 
@@ -156,7 +148,6 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
 
 ### <a name="to-use-refactoring-to-rename-a-variable"></a>若要使用重构重命名变量
 
-
 1. 在中**单击**事件处理程序中，找到以下行：
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample6.cs)]
@@ -173,7 +164,6 @@ Visual Studio 中的代码编辑器可帮助你避免错误，因为你编写代
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample7.cs)]
 
     在变量`alist`此行中不重命名，因为它不表示相同的值与变量`alist`您重命名为。 在变量`alist`在`DisplayArray`声明为该方法的局部变量。 这说明了使用重构重命名变量是不同于只需在编辑器中执行查找和替换操作了解自己正在使用的变量的语义与重构重命名变量。
-
 
 ## <a name="inserting-snippets"></a>插入代码段
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: ecb004b5-82c0-44fb-bcaf-233fffac6195
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b01913b3ad3291d90bdf9455c3d35bb7b36b3f28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f56087b1e94653d2a6a06f915191db6ec5e358a2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415240"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116967"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>调整 DropShadow 的 Z-索引 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415240"
 [下载代码](http://download.microsoft.com/download/5/1/6/51652a81-500b-4f6b-88d3-617103e7941e/DropShadow1.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dropshadow1VB.pdf)
 
 > AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 但是此卷影有时会与其他控件，例如 ASP.NET 菜单控件冲突。 当菜单项会弹出，随即出现之后投影。
-
 
 ## <a name="overview"></a>概述
 
@@ -55,11 +54,9 @@ AJAX 控件工具包中的 DropShadow 控件扩展具有投影的面板。 但�
 
 然后，`DropShadowExtender`控件不与菜单控件不再冲突。
 
-
 [![之前：菜单项不可见](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)
 
 在此之前:菜单项不可见 ([单击此项可查看原尺寸图像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))
-
 
 [![之后：菜单项显示](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)
 

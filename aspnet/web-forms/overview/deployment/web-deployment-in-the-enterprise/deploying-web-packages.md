@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: a5c5eed2-8683-40a5-a2e1-35c9f8d17c29
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: c42fa327c324ac2b721268c56782a24755ec7225
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 91b99e6e250342851aea6860164b6f6af54818d1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391060"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119327"
 ---
 # <a name="deploying-web-packages"></a>部署 Web 程序包
 
@@ -37,7 +37,6 @@ ms.locfileid: "59391060"
 > - 你已生成并打包 web 应用程序，如中所述[构建和打包 Web 应用程序项目](building-and-packaging-web-application-projects.md)。
 > - 在你修改*SetParameters.xml*文件中所述为你的目标环境，提供正确的参数值[用于 Web 包部署的配置参数](configuring-parameters-for-web-package-deployment.md)。
 
-
 运行 [*项目名称*]*。 deploy.cmd*文件是最简单的方法来部署 web 包。 具体而言，使用 *。 deploy.cmd*文件可提供通过直接使用 MSDeploy.exe 以下优势：
 
 - 您无需指定 web 部署包的位置&#x2014; *。 deploy.cmd*文件已经知道其所在位置。
@@ -52,9 +51,7 @@ ms.locfileid: "59391060"
 
 *。 Deploy.cmd*文件支持各种命令行选项。 在命令提示符下运行该文件时，这是基本语法：
 
-
 [!code-console[Main](deploying-web-packages/samples/sample1.cmd)]
-
 
 您必须指定这两 **/T**标志或 **/Y**标志，以指示您是否要分别执行一次测试运行或在实时部署 （请勿使用这两个标志在同一命令中）。 下表解释了每个标记的用途。
 
@@ -71,7 +68,6 @@ ms.locfileid: "59391060"
 
 > [!NOTE]
 > 每次生成过程创建一个 web 包，它还会创建名为的文件 *[项目名称].deploy readme.txt*来解释这些部署选项。
-
 
 除了这些标志，还可以指定 Web 部署操作设置为其他 *。 deploy.cmd*参数。 您指定的任何其他设置只被传递到基础 MSDeploy.exe 命令。 有关这些设置的详细信息，请参阅[Web 部署操作设置](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。
 
@@ -94,9 +90,7 @@ ms.locfileid: "59391060"
 
 为了说明如何使用 *。 deploy.cmd*文件简化了部署过程，看一看 MSDeploy.exe 命令执行运行时，获取生成*ContactManager.Mvc.deploy.cmd*使用上面所示的选项。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
-
 
 有关使用的详细信息 *。 deploy.cmd*文件来部署 web 包，请参阅[如何：安装部署包使用 deploy.cmd 文件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
@@ -152,13 +146,10 @@ ms.locfileid: "59391060"
 
 在联系人管理器示例解决方案中，看一看**PublishWebPackages**中的 target *Publish.proj*文件。 此目标运行一次为每个 *。 deploy.cmd*由名为项列表的文件**PublishPackages**。 目标使用属性和项元数据来构建一套完整的参数值的每个 *。 deploy.cmd*文件，然后使用**Exec**任务来运行命令。
 
-
 [!code-xml[Main](deploying-web-packages/samples/sample8.xml)]
-
 
 > [!NOTE]
 > 示例解决方案中与常规中的自定义项目文件的简介中的项目文件模型的更广泛概述，请参阅[了解项目文件](understanding-the-project-file.md)并[了解生成过程](understanding-the-build-process.md)。
-
 
 ## <a name="endpoint-considerations"></a>终结点的注意事项
 
@@ -166,33 +157,24 @@ ms.locfileid: "59391060"
 
 如果目标 web 服务器配置为使用 Web 部署远程代理服务的部署，你会指定为目标的目标服务 URL。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample9.cmd)]
-
 
 或者，您可以单独的服务器名称指定为目标，和 Web 部署将推断远程代理服务 URL。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample10.cmd)]
-
 
 如果目标 web 服务器配置为使用 Web 部署处理程序的部署，您需要的 IIS Web 管理服务 (WMSvc) 的终结点地址指定为目标。 默认情况下，此形式：
 
-
 [!code-console[Main](deploying-web-packages/samples/sample11.cmd)]
-
 
 你可以面向任何使用这些终结点 *。 deploy.cmd*文件或直接 MSDeploy.exe。 但是，如果你想要作为非管理员用户，将部署到 Web 部署处理程序中所述[Web 服务器配置用于 Web 部署发布 （Web 部署处理程序）](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)，需要将查询字符串添加到服务终结点地址。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample12.cmd)]
-
 
 这是因为非管理员用户不具有对 IIS; 服务器级访问权限他或她仅有权访问特定的 IIS 网站。 在撰写本文之际，由于存在 bug 中 Web 发布管道 (WPP)，而不能运行 *。 deploy.cmd*文件中使用的终结点地址，包括查询字符串。 在此方案中，您需要直接使用 MSDeploy.exe 部署 web 包。
 
 > [!NOTE]
 > Web 部署远程代理服务和 Web 部署处理程序的详细信息，请参阅[选择右方法对 Web 部署](../configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md)。 有关如何配置特定于环境的项目文件将部署到这些终结点的指导，请参阅[为目标环境配置部署属性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
-
 
 ## <a name="authentication-considerations"></a>身份验证注意事项
 

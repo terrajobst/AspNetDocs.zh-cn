@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 39629ba404e536b29318db00bce8c4443a782497
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4f76728fa5e4602e35e1b7cb2d41b2245093cad8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411938"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115963"
 ---
 # <a name="configuring-aspnet-web-api-2"></a>配置 ASP.NET Web API 2
 
@@ -45,7 +45,6 @@ Web API 配置设置中定义[HttpConfiguration](https://msdn.microsoft.com/libr
 | **属性** | 一个泛型属性包。 |
 | **路由** | 路由的集合。 请参阅[ASP.NET Web API 中路由](../web-api-routing-and-actions/routing-in-aspnet-web-api.md)。 |
 | **服务** | 服务集合。 请参阅[Services](#services)。 |
-
 
 ## <a name="prerequisites"></a>系统必备
 
@@ -91,11 +90,9 @@ Web API 配置设置中定义[HttpConfiguration](https://msdn.microsoft.com/libr
 > [!NOTE]
 > **Services**集合不是一种用于服务发现或依赖关系注入的通用机制。 它只存储到 Web API 框架已知的服务类型。
 
-
 **Services**集合初始化与一组默认的服务，并可以提供自己的自定义实现。 某些服务支持多个实例，而其他人可以只有一个实例。 (但是，您还可以提供在控制器级别的服务; 请参阅[每个控制器配置](#percontrollerconfig)。
 
 单实例服务
-
 
 | 服务 | 描述 |
 | --- | --- |
@@ -116,7 +113,6 @@ Web API 配置设置中定义[HttpConfiguration](https://msdn.microsoft.com/libr
 | **IModelValidatorCache** | 提供模型验证程序的缓存。 |
 
 多实例服务
-
 
 |                 服务                 |                                                                                                              描述                                                                                                               |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
