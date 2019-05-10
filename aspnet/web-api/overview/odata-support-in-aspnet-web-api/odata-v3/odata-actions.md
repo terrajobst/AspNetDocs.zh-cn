@@ -8,160 +8,159 @@ ms.date: 02/25/2014
 ms.assetid: 2d7b3aa2-aa47-4e6e-b0ce-3d65a1c6fe02
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
 msc.type: authoredcontent
-ms.openlocfilehash: 62ac526a9b0861af73ab17e9714bde1266a86221
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 523225d86b06914349ebd689c4042b0b20393b9b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392360"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112326"
 ---
-# <a name="supporting-odata-actions-in-aspnet-web-api-2"></a><span data-ttu-id="ce2fe-104">支持 ASP.NET Web API 2 中的 OData 操作</span><span class="sxs-lookup"><span data-stu-id="ce2fe-104">Supporting OData Actions in ASP.NET Web API 2</span></span>
+# <a name="supporting-odata-actions-in-aspnet-web-api-2"></a><span data-ttu-id="bbe6e-104">支持 ASP.NET Web API 2 中的 OData 操作</span><span class="sxs-lookup"><span data-stu-id="bbe6e-104">Supporting OData Actions in ASP.NET Web API 2</span></span>
 
-<span data-ttu-id="ce2fe-105">通过[Mike Wasson](https://github.com/MikeWasson)</span><span class="sxs-lookup"><span data-stu-id="ce2fe-105">by [Mike Wasson](https://github.com/MikeWasson)</span></span>
+<span data-ttu-id="bbe6e-105">通过[Mike Wasson](https://github.com/MikeWasson)</span><span class="sxs-lookup"><span data-stu-id="bbe6e-105">by [Mike Wasson](https://github.com/MikeWasson)</span></span>
 
-[<span data-ttu-id="ce2fe-106">下载已完成的项目</span><span class="sxs-lookup"><span data-stu-id="ce2fe-106">Download Completed Project</span></span>](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
+[<span data-ttu-id="bbe6e-106">下载已完成的项目</span><span class="sxs-lookup"><span data-stu-id="bbe6e-106">Download Completed Project</span></span>](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
-> <span data-ttu-id="ce2fe-107">在 OData 中，*操作*是一种方法来添加未轻松地定义为对实体的 CRUD 操作的服务器端行为。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-107">In OData, *actions* are a way to add server-side behaviors that are not easily defined as CRUD operations on entities.</span></span> <span data-ttu-id="ce2fe-108">操作的一些用途包括：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-108">Some uses for actions include:</span></span>
+> <span data-ttu-id="bbe6e-107">在 OData 中，*操作*是一种方法来添加未轻松地定义为对实体的 CRUD 操作的服务器端行为。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-107">In OData, *actions* are a way to add server-side behaviors that are not easily defined as CRUD operations on entities.</span></span> <span data-ttu-id="bbe6e-108">操作的一些用途包括：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-108">Some uses for actions include:</span></span>
 > 
-> - <span data-ttu-id="ce2fe-109">实现复杂的事务处理。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-109">Implementing complex transactions.</span></span>
-> - <span data-ttu-id="ce2fe-110">在一次处理多个实体。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-110">Manipulating several entities at once.</span></span>
-> - <span data-ttu-id="ce2fe-111">允许仅对实体的某些属性的更新。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-111">Allowing updates only to certain properties of an entity.</span></span>
-> - <span data-ttu-id="ce2fe-112">将信息发送到未定义实体中的服务器。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-112">Sending information to the server that is not defined in an entity.</span></span>
+> - <span data-ttu-id="bbe6e-109">实现复杂的事务处理。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-109">Implementing complex transactions.</span></span>
+> - <span data-ttu-id="bbe6e-110">在一次处理多个实体。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-110">Manipulating several entities at once.</span></span>
+> - <span data-ttu-id="bbe6e-111">允许仅对实体的某些属性的更新。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-111">Allowing updates only to certain properties of an entity.</span></span>
+> - <span data-ttu-id="bbe6e-112">将信息发送到未定义实体中的服务器。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-112">Sending information to the server that is not defined in an entity.</span></span>
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="ce2fe-113">在本教程中使用的软件版本</span><span class="sxs-lookup"><span data-stu-id="ce2fe-113">Software versions used in the tutorial</span></span>
+> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="bbe6e-113">在本教程中使用的软件版本</span><span class="sxs-lookup"><span data-stu-id="bbe6e-113">Software versions used in the tutorial</span></span>
 > 
 > 
-> - <span data-ttu-id="ce2fe-114">Web API 2</span><span class="sxs-lookup"><span data-stu-id="ce2fe-114">Web API 2</span></span>
-> - <span data-ttu-id="ce2fe-115">OData 版本 3</span><span class="sxs-lookup"><span data-stu-id="ce2fe-115">OData Version 3</span></span>
-> - <span data-ttu-id="ce2fe-116">Entity Framework 6</span><span class="sxs-lookup"><span data-stu-id="ce2fe-116">Entity Framework 6</span></span>
+> - <span data-ttu-id="bbe6e-114">Web API 2</span><span class="sxs-lookup"><span data-stu-id="bbe6e-114">Web API 2</span></span>
+> - <span data-ttu-id="bbe6e-115">OData 版本 3</span><span class="sxs-lookup"><span data-stu-id="bbe6e-115">OData Version 3</span></span>
+> - <span data-ttu-id="bbe6e-116">Entity Framework 6</span><span class="sxs-lookup"><span data-stu-id="bbe6e-116">Entity Framework 6</span></span>
 
+## <a name="example-rating-a-product"></a><span data-ttu-id="bbe6e-117">示例:评级产品</span><span class="sxs-lookup"><span data-stu-id="bbe6e-117">Example: Rating a Product</span></span>
 
-## <a name="example-rating-a-product"></a><span data-ttu-id="ce2fe-117">示例:评级产品</span><span class="sxs-lookup"><span data-stu-id="ce2fe-117">Example: Rating a Product</span></span>
+<span data-ttu-id="bbe6e-118">在此示例中，我们想要让用户评级的产品，并公开的每个产品的平均分级。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-118">In this example, we want to let users rate products, and then expose the average ratings for each product.</span></span> <span data-ttu-id="bbe6e-119">在数据库中，我们会存储一组分级，对产品进行键控。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-119">On the database, we will store a list of ratings, keyed to products.</span></span>
 
-<span data-ttu-id="ce2fe-118">在此示例中，我们想要让用户评级的产品，并公开的每个产品的平均分级。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-118">In this example, we want to let users rate products, and then expose the average ratings for each product.</span></span> <span data-ttu-id="ce2fe-119">在数据库中，我们会存储一组分级，对产品进行键控。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-119">On the database, we will store a list of ratings, keyed to products.</span></span>
-
-<span data-ttu-id="ce2fe-120">下面是我们可能会用于表示实体框架中的评级的模型：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-120">Here is the model we might use to represent the ratings in Entity Framework:</span></span>
+<span data-ttu-id="bbe6e-120">下面是我们可能会用于表示实体框架中的评级的模型：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-120">Here is the model we might use to represent the ratings in Entity Framework:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample1.cs)]
 
-<span data-ttu-id="ce2fe-121">但我们不希望客户端针对 POST `ProductRating` "比率"集合的对象。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-121">But we don't want clients to POST a `ProductRating` object to a "Ratings" collection.</span></span> <span data-ttu-id="ce2fe-122">直观地说，此级别与产品集合中，关联，客户端应只需发布的分级值。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-122">Intuitively, the rating is associated with the Products collection, and the client should only need to post the rating value.</span></span>
+<span data-ttu-id="bbe6e-121">但我们不希望客户端针对 POST `ProductRating` "比率"集合的对象。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-121">But we don't want clients to POST a `ProductRating` object to a "Ratings" collection.</span></span> <span data-ttu-id="bbe6e-122">直观地说，此级别与产品集合中，关联，客户端应只需发布的分级值。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-122">Intuitively, the rating is associated with the Products collection, and the client should only need to post the rating value.</span></span>
 
-<span data-ttu-id="ce2fe-123">因此，而不是使用普通的 CRUD 操作，我们定义客户端可以调用的操作在产品上。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-123">Therefore, instead of using the normal CRUD operations, we define an action that a client can invoke on a Product.</span></span> <span data-ttu-id="ce2fe-124">在 OData 术语中，该操作是*绑定*对产品实体。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-124">In OData terminology, the action is *bound* to Product entities.</span></span>
+<span data-ttu-id="bbe6e-123">因此，而不是使用普通的 CRUD 操作，我们定义客户端可以调用的操作在产品上。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-123">Therefore, instead of using the normal CRUD operations, we define an action that a client can invoke on a Product.</span></span> <span data-ttu-id="bbe6e-124">在 OData 术语中，该操作是*绑定*对产品实体。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-124">In OData terminology, the action is *bound* to Product entities.</span></span>
 
-><span data-ttu-id="ce2fe-125">操作在服务器上产生负面影响。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-125">Actions have side-effects on the server.</span></span> <span data-ttu-id="ce2fe-126">出于此原因，它们会调用使用 HTTP POST 请求。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-126">For this reason, they are invoked using HTTP POST requests.</span></span> <span data-ttu-id="ce2fe-127">操作可以具有参数和返回类型，服务元数据中所述。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-127">Actions can have parameters and return types, which are described in the service metadata.</span></span> <span data-ttu-id="ce2fe-128">客户端请求正文中发送参数和服务器响应正文中发送的返回值。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-128">The client sends the parameters in the request body, and the server sends the return value in the response body.</span></span> <span data-ttu-id="ce2fe-129">若要调用的"速率产品"操作，客户端将 POST 发送到如下所示的 URI:</span><span class="sxs-lookup"><span data-stu-id="ce2fe-129">To invoke the "Rate Product" action, the client sends a POST to a URI like the following:</span></span>
+><span data-ttu-id="bbe6e-125">操作在服务器上产生负面影响。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-125">Actions have side-effects on the server.</span></span> <span data-ttu-id="bbe6e-126">出于此原因，它们会调用使用 HTTP POST 请求。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-126">For this reason, they are invoked using HTTP POST requests.</span></span> <span data-ttu-id="bbe6e-127">操作可以具有参数和返回类型，服务元数据中所述。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-127">Actions can have parameters and return types, which are described in the service metadata.</span></span> <span data-ttu-id="bbe6e-128">客户端请求正文中发送参数和服务器响应正文中发送的返回值。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-128">The client sends the parameters in the request body, and the server sends the return value in the response body.</span></span> <span data-ttu-id="bbe6e-129">若要调用的"速率产品"操作，客户端将 POST 发送到如下所示的 URI:</span><span class="sxs-lookup"><span data-stu-id="bbe6e-129">To invoke the "Rate Product" action, the client sends a POST to a URI like the following:</span></span>
 
 [!code-console[Main](odata-actions/samples/sample2.cmd)]
 
-<span data-ttu-id="ce2fe-130">POST 请求中的数据是只需产品评级：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-130">The data in the POST request is simply the product rating:</span></span>
+<span data-ttu-id="bbe6e-130">POST 请求中的数据是只需产品评级：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-130">The data in the POST request is simply the product rating:</span></span>
 
 [!code-console[Main](odata-actions/samples/sample3.cmd)]
 
-## <a name="declare-the-action-in-the-entity-data-model"></a><span data-ttu-id="ce2fe-131">声明的实体数据模型中的操作</span><span class="sxs-lookup"><span data-stu-id="ce2fe-131">Declare the Action in the Entity Data Model</span></span>
+## <a name="declare-the-action-in-the-entity-data-model"></a><span data-ttu-id="bbe6e-131">声明的实体数据模型中的操作</span><span class="sxs-lookup"><span data-stu-id="bbe6e-131">Declare the Action in the Entity Data Model</span></span>
 
-<span data-ttu-id="ce2fe-132">在 Web API 配置中，将添加到实体数据模型 (EDM 中) 的操作：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-132">In your Web API configuration, add the action to the entity data model (EDM):</span></span>
+<span data-ttu-id="bbe6e-132">在 Web API 配置中，将添加到实体数据模型 (EDM 中) 的操作：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-132">In your Web API configuration, add the action to the entity data model (EDM):</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample4.cs)]
 
-<span data-ttu-id="ce2fe-133">此代码定义"RateProduct"作为可以对产品实体执行的操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-133">This code defines "RateProduct" as an action that can be performed on Product entities.</span></span> <span data-ttu-id="ce2fe-134">它还声明将的操作**int**参数名为"Rating"，并返回**int**值。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-134">It also declares that the action takes an **int** parameter named "Rating", and returns an **int** value.</span></span>
+<span data-ttu-id="bbe6e-133">此代码定义"RateProduct"作为可以对产品实体执行的操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-133">This code defines "RateProduct" as an action that can be performed on Product entities.</span></span> <span data-ttu-id="bbe6e-134">它还声明将的操作**int**参数名为"Rating"，并返回**int**值。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-134">It also declares that the action takes an **int** parameter named "Rating", and returns an **int** value.</span></span>
 
-## <a name="add-the-action-to-the-controller"></a><span data-ttu-id="ce2fe-135">将操作添加到控制器</span><span class="sxs-lookup"><span data-stu-id="ce2fe-135">Add the Action to the Controller</span></span>
+## <a name="add-the-action-to-the-controller"></a><span data-ttu-id="bbe6e-135">将操作添加到控制器</span><span class="sxs-lookup"><span data-stu-id="bbe6e-135">Add the Action to the Controller</span></span>
 
-<span data-ttu-id="ce2fe-136">"RateProduct"操作绑定到产品实体。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-136">The "RateProduct" action is bound to Product entities.</span></span> <span data-ttu-id="ce2fe-137">若要实现此操作，添加一个名为`RateProduct`到产品控制器：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-137">To implement the action, add a method named `RateProduct` to the Products controller:</span></span>
+<span data-ttu-id="bbe6e-136">"RateProduct"操作绑定到产品实体。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-136">The "RateProduct" action is bound to Product entities.</span></span> <span data-ttu-id="bbe6e-137">若要实现此操作，添加一个名为`RateProduct`到产品控制器：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-137">To implement the action, add a method named `RateProduct` to the Products controller:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample5.cs)]
 
-<span data-ttu-id="ce2fe-138">请注意方法名与 EDM 中的操作的名称相匹配。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-138">Notice that the method name matches the name of the action in the EDM.</span></span> <span data-ttu-id="ce2fe-139">该方法具有两个参数：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-139">The method has two parameters:</span></span>
+<span data-ttu-id="bbe6e-138">请注意方法名与 EDM 中的操作的名称相匹配。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-138">Notice that the method name matches the name of the action in the EDM.</span></span> <span data-ttu-id="bbe6e-139">该方法具有两个参数：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-139">The method has two parameters:</span></span>
 
-- <span data-ttu-id="ce2fe-140">*密钥*:速率为该产品的密钥。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-140">*key*: The key for the product to rate.</span></span>
-- <span data-ttu-id="ce2fe-141">*参数*:操作参数值的字典。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-141">*parameters*: A dictionary of action parameter values.</span></span>
+- <span data-ttu-id="bbe6e-140">*密钥*:速率为该产品的密钥。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-140">*key*: The key for the product to rate.</span></span>
+- <span data-ttu-id="bbe6e-141">*参数*:操作参数值的字典。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-141">*parameters*: A dictionary of action parameter values.</span></span>
 
-<span data-ttu-id="ce2fe-142">如果使用的默认路由约定，key 参数必须命名为"密钥"。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-142">If you are using the default routing conventions, the key parameter must be named "key".</span></span> <span data-ttu-id="ce2fe-143">还有一点需要包括 **[FromOdataUri]** 属性，如所示。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-143">It is also important to include the **[FromOdataUri]** attribute, as shown.</span></span> <span data-ttu-id="ce2fe-144">此属性告知 Web API 使用 OData 语法规则分析请求 URI 中的键时。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-144">This attribute tells Web API to use OData syntax rules when it parses the key from the request URI.</span></span>
+<span data-ttu-id="bbe6e-142">如果使用的默认路由约定，key 参数必须命名为"密钥"。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-142">If you are using the default routing conventions, the key parameter must be named "key".</span></span> <span data-ttu-id="bbe6e-143">还有一点需要包括 **[FromOdataUri]** 属性，如所示。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-143">It is also important to include the **[FromOdataUri]** attribute, as shown.</span></span> <span data-ttu-id="bbe6e-144">此属性告知 Web API 使用 OData 语法规则分析请求 URI 中的键时。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-144">This attribute tells Web API to use OData syntax rules when it parses the key from the request URI.</span></span>
 
-<span data-ttu-id="ce2fe-145">使用*参数*获取操作参数的字典：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-145">Use the *parameters* dictionary to get the action parameters:</span></span>
+<span data-ttu-id="bbe6e-145">使用*参数*获取操作参数的字典：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-145">Use the *parameters* dictionary to get the action parameters:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample6.cs)]
 
-<span data-ttu-id="ce2fe-146">如果客户端中正确发送操作参数，值的格式设置**ModelState.IsValid**为 true。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-146">If the client sends the action parameters in the correct format, the value of **ModelState.IsValid** is true.</span></span> <span data-ttu-id="ce2fe-147">在这种情况下，可以使用**ODataActionParameters**获取参数值的字典。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-147">In that case, you can use the **ODataActionParameters** dictionary to get the parameter values.</span></span> <span data-ttu-id="ce2fe-148">在此示例中，`RateProduct`操作采用单个参数名为"Rating"。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-148">In this example, the `RateProduct` action takes a single parameter named "Rating".</span></span>
+<span data-ttu-id="bbe6e-146">如果客户端中正确发送操作参数，值的格式设置**ModelState.IsValid**为 true。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-146">If the client sends the action parameters in the correct format, the value of **ModelState.IsValid** is true.</span></span> <span data-ttu-id="bbe6e-147">在这种情况下，可以使用**ODataActionParameters**获取参数值的字典。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-147">In that case, you can use the **ODataActionParameters** dictionary to get the parameter values.</span></span> <span data-ttu-id="bbe6e-148">在此示例中，`RateProduct`操作采用单个参数名为"Rating"。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-148">In this example, the `RateProduct` action takes a single parameter named "Rating".</span></span>
 
-## <a name="action-metadata"></a><span data-ttu-id="ce2fe-149">操作元数据</span><span class="sxs-lookup"><span data-stu-id="ce2fe-149">Action Metadata</span></span>
+## <a name="action-metadata"></a><span data-ttu-id="bbe6e-149">操作元数据</span><span class="sxs-lookup"><span data-stu-id="bbe6e-149">Action Metadata</span></span>
 
-<span data-ttu-id="ce2fe-150">若要查看的服务元数据，请向 /odata/$ metadata 发送 GET 请求。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-150">To view the service metadata, send a GET request to /odata/$metadata.</span></span> <span data-ttu-id="ce2fe-151">下面是声明的元数据一部分`RateProduct`操作：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-151">Here is the portion of the metadata that declares the `RateProduct` action:</span></span>
+<span data-ttu-id="bbe6e-150">若要查看的服务元数据，请向 /odata/$ metadata 发送 GET 请求。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-150">To view the service metadata, send a GET request to /odata/$metadata.</span></span> <span data-ttu-id="bbe6e-151">下面是声明的元数据一部分`RateProduct`操作：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-151">Here is the portion of the metadata that declares the `RateProduct` action:</span></span>
 
 [!code-xml[Main](odata-actions/samples/sample7.xml)]
 
-<span data-ttu-id="ce2fe-152">**FunctionImport**元素声明了操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-152">The **FunctionImport** element declares the action.</span></span> <span data-ttu-id="ce2fe-153">大多数字段都很容易理解，但两个值得一提：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-153">Most of the fields are self-explanatory, but two are worth noting:</span></span>
+<span data-ttu-id="bbe6e-152">**FunctionImport**元素声明了操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-152">The **FunctionImport** element declares the action.</span></span> <span data-ttu-id="bbe6e-153">大多数字段都很容易理解，但两个值得一提：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-153">Most of the fields are self-explanatory, but two are worth noting:</span></span>
 
-- <span data-ttu-id="ce2fe-154">**IsBindable**意味着操作可以调用目标实体上至少部分时间。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-154">**IsBindable** means the action can be invoked on the target entity, at least some of the time.</span></span>
-- <span data-ttu-id="ce2fe-155">**IsAlwaysBindable**意味着始终可以在目标实体上调用操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-155">**IsAlwaysBindable** means the action can always be invoked on the target entity.</span></span>
+- <span data-ttu-id="bbe6e-154">**IsBindable**意味着操作可以调用目标实体上至少部分时间。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-154">**IsBindable** means the action can be invoked on the target entity, at least some of the time.</span></span>
+- <span data-ttu-id="bbe6e-155">**IsAlwaysBindable**意味着始终可以在目标实体上调用操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-155">**IsAlwaysBindable** means the action can always be invoked on the target entity.</span></span>
 
-<span data-ttu-id="ce2fe-156">不同之处是，某些操作始终都可供客户端，但其他操作可能取决于实体的状态。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-156">The difference is that some actions are always available to clients, but other actions might depend on the state of the entity.</span></span> <span data-ttu-id="ce2fe-157">例如，假设您定义一个操作，"购买"。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-157">For example, suppose you define a "Purchase" action.</span></span> <span data-ttu-id="ce2fe-158">你可以只购买是库存的项。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-158">You can only purchase an item that is in stock.</span></span> <span data-ttu-id="ce2fe-159">如果该项是脱销，客户端不能调用该操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-159">If the item is out of stock, a client cannot invoke that action.</span></span>
+<span data-ttu-id="bbe6e-156">不同之处是，某些操作始终都可供客户端，但其他操作可能取决于实体的状态。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-156">The difference is that some actions are always available to clients, but other actions might depend on the state of the entity.</span></span> <span data-ttu-id="bbe6e-157">例如，假设您定义一个操作，"购买"。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-157">For example, suppose you define a "Purchase" action.</span></span> <span data-ttu-id="bbe6e-158">你可以只购买是库存的项。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-158">You can only purchase an item that is in stock.</span></span> <span data-ttu-id="bbe6e-159">如果该项是脱销，客户端不能调用该操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-159">If the item is out of stock, a client cannot invoke that action.</span></span>
 
-<span data-ttu-id="ce2fe-160">定义 EDM 中，当**操作**方法创建一个始终可绑定的操作：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-160">When you define the EDM, the **Action** method creates an always-bindable action:</span></span>
+<span data-ttu-id="bbe6e-160">定义 EDM 中，当**操作**方法创建一个始终可绑定的操作：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-160">When you define the EDM, the **Action** method creates an always-bindable action:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample8.cs?highlight=1)]
 
-<span data-ttu-id="ce2fe-161">我将讨论不始终-绑定操作 (也称为*暂时性*操作) 在此主题的后面。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-161">I'll talk about not-always-bindable actions (also called *transient* actions) later in this topic.</span></span>
+<span data-ttu-id="bbe6e-161">我将讨论不始终-绑定操作 (也称为*暂时性*操作) 在此主题的后面。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-161">I'll talk about not-always-bindable actions (also called *transient* actions) later in this topic.</span></span>
 
-## <a name="invoking-the-action"></a><span data-ttu-id="ce2fe-162">调用操作</span><span class="sxs-lookup"><span data-stu-id="ce2fe-162">Invoking the Action</span></span>
+## <a name="invoking-the-action"></a><span data-ttu-id="bbe6e-162">调用操作</span><span class="sxs-lookup"><span data-stu-id="bbe6e-162">Invoking the Action</span></span>
 
-<span data-ttu-id="ce2fe-163">现在让我们看如何在客户端将调用此操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-163">Now let's see how a client would invoke this action.</span></span> <span data-ttu-id="ce2fe-164">假设客户端想要让其分级为 2 的产品 ID = 4。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-164">Suppose the client wants to give a rating of 2 to the product with ID = 4.</span></span> <span data-ttu-id="ce2fe-165">下面是使用 JSON 格式的请求正文的示例请求消息：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-165">Here is an example request message, using JSON format for the request body:</span></span>
+<span data-ttu-id="bbe6e-163">现在让我们看如何在客户端将调用此操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-163">Now let's see how a client would invoke this action.</span></span> <span data-ttu-id="bbe6e-164">假设客户端想要让其分级为 2 的产品 ID = 4。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-164">Suppose the client wants to give a rating of 2 to the product with ID = 4.</span></span> <span data-ttu-id="bbe6e-165">下面是使用 JSON 格式的请求正文的示例请求消息：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-165">Here is an example request message, using JSON format for the request body:</span></span>
 
 [!code-console[Main](odata-actions/samples/sample9.cmd)]
 
-<span data-ttu-id="ce2fe-166">下面是响应消息：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-166">Here is the response message:</span></span>
+<span data-ttu-id="bbe6e-166">下面是响应消息：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-166">Here is the response message:</span></span>
 
 [!code-console[Main](odata-actions/samples/sample10.cmd)]
 
-## <a name="binding-an-action-to-an-entity-set"></a><span data-ttu-id="ce2fe-167">绑定到实体集的操作</span><span class="sxs-lookup"><span data-stu-id="ce2fe-167">Binding an Action to an Entity Set</span></span>
+## <a name="binding-an-action-to-an-entity-set"></a><span data-ttu-id="bbe6e-167">绑定到实体集的操作</span><span class="sxs-lookup"><span data-stu-id="bbe6e-167">Binding an Action to an Entity Set</span></span>
 
-<span data-ttu-id="ce2fe-168">在上一示例中，操作绑定到单个实体：客户端费率一个产品。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-168">In the previous example, the action is bound to a single entity: The client rates a single product.</span></span> <span data-ttu-id="ce2fe-169">您还可以绑定到实体的集合的操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-169">You can also bind an action to a collection of entities.</span></span> <span data-ttu-id="ce2fe-170">只需进行以下更改：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-170">Just make the following changes:</span></span>
+<span data-ttu-id="bbe6e-168">在上一示例中，操作绑定到单个实体：客户端费率一个产品。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-168">In the previous example, the action is bound to a single entity: The client rates a single product.</span></span> <span data-ttu-id="bbe6e-169">您还可以绑定到实体的集合的操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-169">You can also bind an action to a collection of entities.</span></span> <span data-ttu-id="bbe6e-170">只需进行以下更改：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-170">Just make the following changes:</span></span>
 
-<span data-ttu-id="ce2fe-171">在 EDM 中，将操作添加到实体的**集合**属性。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-171">In the EDM, add the action to the entity's **Collection** property.</span></span>
+<span data-ttu-id="bbe6e-171">在 EDM 中，将操作添加到实体的**集合**属性。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-171">In the EDM, add the action to the entity's **Collection** property.</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample11.cs?highlight=1)]
 
-<span data-ttu-id="ce2fe-172">在控制器方法中，省略*密钥*参数。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-172">In the controller method, omit the *key* parameter.</span></span>
+<span data-ttu-id="bbe6e-172">在控制器方法中，省略*密钥*参数。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-172">In the controller method, omit the *key* parameter.</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample12.cs)]
 
-<span data-ttu-id="ce2fe-173">现在客户端调用 Products 实体集上的操作：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-173">Now the client invokes the action on the Products entity set:</span></span>
+<span data-ttu-id="bbe6e-173">现在客户端调用 Products 实体集上的操作：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-173">Now the client invokes the action on the Products entity set:</span></span>
 
 [!code-console[Main](odata-actions/samples/sample13.cmd)]
 
-## <a name="actions-with-collection-parameters"></a><span data-ttu-id="ce2fe-174">使用集合参数的操作</span><span class="sxs-lookup"><span data-stu-id="ce2fe-174">Actions with Collection Parameters</span></span>
+## <a name="actions-with-collection-parameters"></a><span data-ttu-id="bbe6e-174">使用集合参数的操作</span><span class="sxs-lookup"><span data-stu-id="bbe6e-174">Actions with Collection Parameters</span></span>
 
-<span data-ttu-id="ce2fe-175">操作可以获取的值的集合的参数。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-175">Actions can have parameters that take a collection of values.</span></span> <span data-ttu-id="ce2fe-176">在 EDM 中，使用**CollectionParameter&lt;T&gt;** 若要将参数声明。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-176">In the EDM, use **CollectionParameter&lt;T&gt;** to declare the parameter.</span></span>
+<span data-ttu-id="bbe6e-175">操作可以获取的值的集合的参数。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-175">Actions can have parameters that take a collection of values.</span></span> <span data-ttu-id="bbe6e-176">在 EDM 中，使用**CollectionParameter&lt;T&gt;** 若要将参数声明。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-176">In the EDM, use **CollectionParameter&lt;T&gt;** to declare the parameter.</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample14.cs)]
 
-<span data-ttu-id="ce2fe-177">这会将名为"分级"采用的集合的参数声明**int**值。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-177">This declares a parameter named "Ratings" that takes a collection of **int** values.</span></span> <span data-ttu-id="ce2fe-178">在控制器方法中，您仍获取参数值从**ODataActionParameters**对象，但现在的值是**ICollection&lt;int&gt;** 值：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-178">In the controller method, you still get the parameter value from the **ODataActionParameters** object, but now the value is an **ICollection&lt;int&gt;** value:</span></span>
+<span data-ttu-id="bbe6e-177">这会将名为"分级"采用的集合的参数声明**int**值。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-177">This declares a parameter named "Ratings" that takes a collection of **int** values.</span></span> <span data-ttu-id="bbe6e-178">在控制器方法中，您仍获取参数值从**ODataActionParameters**对象，但现在的值是**ICollection&lt;int&gt;** 值：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-178">In the controller method, you still get the parameter value from the **ODataActionParameters** object, but now the value is an **ICollection&lt;int&gt;** value:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample15.cs)]
 
-## <a name="transient-actions"></a><span data-ttu-id="ce2fe-179">暂时性的操作</span><span class="sxs-lookup"><span data-stu-id="ce2fe-179">Transient Actions</span></span>
+## <a name="transient-actions"></a><span data-ttu-id="bbe6e-179">暂时性的操作</span><span class="sxs-lookup"><span data-stu-id="bbe6e-179">Transient Actions</span></span>
 
-<span data-ttu-id="ce2fe-180">在"RateProduct"示例中，用户可以始终对产品评估，因此操作都可用。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-180">In the "RateProduct" example, users can always rate a product, so the action is always available.</span></span> <span data-ttu-id="ce2fe-181">但是，某些操作取决于实体的状态。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-181">But some actions depend on the state of the entity.</span></span> <span data-ttu-id="ce2fe-182">例如，在视频租赁服务中，"签出"操作不是始终可用。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-182">For example, in a video rental service, the "CheckOut" action is not always available.</span></span> <span data-ttu-id="ce2fe-183">（它取决于是否提供了该视频的一个副本。）此类型的操作称为*暂时性*操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-183">(It depends whether a copy of that video is available.) This type of action is called a *transient* action.</span></span>
+<span data-ttu-id="bbe6e-180">在"RateProduct"示例中，用户可以始终对产品评估，因此操作都可用。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-180">In the "RateProduct" example, users can always rate a product, so the action is always available.</span></span> <span data-ttu-id="bbe6e-181">但是，某些操作取决于实体的状态。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-181">But some actions depend on the state of the entity.</span></span> <span data-ttu-id="bbe6e-182">例如，在视频租赁服务中，"签出"操作不是始终可用。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-182">For example, in a video rental service, the "CheckOut" action is not always available.</span></span> <span data-ttu-id="bbe6e-183">（它取决于是否提供了该视频的一个副本。）此类型的操作称为*暂时性*操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-183">(It depends whether a copy of that video is available.) This type of action is called a *transient* action.</span></span>
 
-<span data-ttu-id="ce2fe-184">在服务元数据，暂时性操作具有**IsAlwaysBindable**等于 false。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-184">In the service metadata, a transient action has **IsAlwaysBindable** equal to false.</span></span> <span data-ttu-id="ce2fe-185">这是实际的默认值，因此元数据将如下所示：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-185">That's actually the default value, so the metadata will look like this:</span></span>
+<span data-ttu-id="bbe6e-184">在服务元数据，暂时性操作具有**IsAlwaysBindable**等于 false。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-184">In the service metadata, a transient action has **IsAlwaysBindable** equal to false.</span></span> <span data-ttu-id="bbe6e-185">这是实际的默认值，因此元数据将如下所示：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-185">That's actually the default value, so the metadata will look like this:</span></span>
 
 [!code-xml[Main](odata-actions/samples/sample16.xml)]
 
-<span data-ttu-id="ce2fe-186">下面是为什么这十分重要：如果操作是暂时性的服务器需要告诉客户端操作时可用。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-186">Here's why this matters: If an action is transient, the server needs to tell the client when the action is available.</span></span> <span data-ttu-id="ce2fe-187">通过在实体中包含指向操作的执行此操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-187">It does this by including a link to the action in the entity.</span></span> <span data-ttu-id="ce2fe-188">下面是一个示例，用于电影实体：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-188">Here is an example for a Movie entity:</span></span>
+<span data-ttu-id="bbe6e-186">下面是为什么这十分重要：如果操作是暂时性的服务器需要告诉客户端操作时可用。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-186">Here's why this matters: If an action is transient, the server needs to tell the client when the action is available.</span></span> <span data-ttu-id="bbe6e-187">通过在实体中包含指向操作的执行此操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-187">It does this by including a link to the action in the entity.</span></span> <span data-ttu-id="bbe6e-188">下面是一个示例，用于电影实体：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-188">Here is an example for a Movie entity:</span></span>
 
 [!code-console[Main](odata-actions/samples/sample17.cmd)]
 
-<span data-ttu-id="ce2fe-189">"#CheckOut"属性包含签出操作的链接。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-189">The "#CheckOut" property contains a link to the CheckOut action.</span></span> <span data-ttu-id="ce2fe-190">如果操作不可用，则服务器会忽略链接。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-190">If the action is not available, the server omits the link.</span></span>
+<span data-ttu-id="bbe6e-189">"#CheckOut"属性包含签出操作的链接。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-189">The "#CheckOut" property contains a link to the CheckOut action.</span></span> <span data-ttu-id="bbe6e-190">如果操作不可用，则服务器会忽略链接。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-190">If the action is not available, the server omits the link.</span></span>
 
-<span data-ttu-id="ce2fe-191">若要声明 EDM 中的暂时性操作，请调用**TransientAction**方法：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-191">To declare a transient action in the EDM, call the **TransientAction** method:</span></span>
+<span data-ttu-id="bbe6e-191">若要声明 EDM 中的暂时性操作，请调用**TransientAction**方法：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-191">To declare a transient action in the EDM, call the **TransientAction** method:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample18.cs)]
 
-<span data-ttu-id="ce2fe-192">此外，必须提供一个函数，返回给定实体的操作链接。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-192">Also, you must provide a function that returns an action link for a given entity.</span></span> <span data-ttu-id="ce2fe-193">设置此函数通过调用**HasActionLink**。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-193">Set this function by calling **HasActionLink**.</span></span> <span data-ttu-id="ce2fe-194">您可以编写函数作为 lambda 表达式：</span><span class="sxs-lookup"><span data-stu-id="ce2fe-194">You can write the function as a lambda expression:</span></span>
+<span data-ttu-id="bbe6e-192">此外，必须提供一个函数，返回给定实体的操作链接。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-192">Also, you must provide a function that returns an action link for a given entity.</span></span> <span data-ttu-id="bbe6e-193">设置此函数通过调用**HasActionLink**。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-193">Set this function by calling **HasActionLink**.</span></span> <span data-ttu-id="bbe6e-194">您可以编写函数作为 lambda 表达式：</span><span class="sxs-lookup"><span data-stu-id="bbe6e-194">You can write the function as a lambda expression:</span></span>
 
 [!code-csharp[Main](odata-actions/samples/sample19.cs)]
 
-<span data-ttu-id="ce2fe-195">如果操作不可用，lambda 表达式返回一个链接到的操作。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-195">If the action is available, the lambda expression returns a link to the action.</span></span> <span data-ttu-id="ce2fe-196">OData 序列化程序包括此链接时序列化实体。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-196">The OData serializer includes this link when it serializes the entity.</span></span> <span data-ttu-id="ce2fe-197">当操作不可用时，该函数返回`null`。</span><span class="sxs-lookup"><span data-stu-id="ce2fe-197">When the action is not available, the function returns `null`.</span></span>
+<span data-ttu-id="bbe6e-195">如果操作不可用，lambda 表达式返回一个链接到的操作。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-195">If the action is available, the lambda expression returns a link to the action.</span></span> <span data-ttu-id="bbe6e-196">OData 序列化程序包括此链接时序列化实体。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-196">The OData serializer includes this link when it serializes the entity.</span></span> <span data-ttu-id="bbe6e-197">当操作不可用时，该函数返回`null`。</span><span class="sxs-lookup"><span data-stu-id="bbe6e-197">When the action is not available, the function returns `null`.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="ce2fe-198">其他资源</span><span class="sxs-lookup"><span data-stu-id="ce2fe-198">Additional Resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="bbe6e-198">其他资源</span><span class="sxs-lookup"><span data-stu-id="bbe6e-198">Additional Resources</span></span>
 
-[<span data-ttu-id="ce2fe-199">OData 操作示例</span><span class="sxs-lookup"><span data-stu-id="ce2fe-199">OData Actions Sample</span></span>](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v3/ODataActionsSample/)
+[<span data-ttu-id="bbe6e-199">OData 操作示例</span><span class="sxs-lookup"><span data-stu-id="bbe6e-199">OData Actions Sample</span></span>](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v3/ODataActionsSample/)
