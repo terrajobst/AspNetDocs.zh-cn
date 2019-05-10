@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5dc49d7467db01e62db147c7083ed62379d23940
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 68f8bdeeb85bc66cf790c2005cf0f0ff24b3b653
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394154"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129773"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>使用实体框架在 ASP.NET MVC 应用程序 (共 10 个 6) 更新相关的数据
 
@@ -26,7 +26,6 @@ ms.locfileid: "59394154"
 > > [!NOTE] 
 > > 
 > > 如果遇到无法解决的问题[下载已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)并尝试重现你的问题。 通过比较您的代码与已完成的代码，通常可以找到问题的解决方案。 一些常见错误以及如何解决这些问题，请参阅[错误和解决方法。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 上一教程中显示相关的数据;在本教程中将更新相关的数据。 对于大多数关系，这可以通过更新相应的外键字段。 对于多对多关系，实体框架不会联接表直接公开，因此您必须显式添加和删除实体与相应的导航属性。
 
@@ -194,14 +193,12 @@ ms.locfileid: "59394154"
 更改某些课程分配，然后单击**保存**。 所作更改将反映在索引页上。
 
  注意:编辑讲师课程数据所用的方法适用于有限数量的课程。 若是远大于此的集合，则需要使用不同的 UI 和不同的更新方法。  
- 
 
 ## <a name="update-the-delete-method"></a>更新 Delete 方法
 
 更改 HttpPost Delete 方法中的代码，以便删除讲师时删除 office 分配记录 （如果有）：
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample22.cs?highlight=6,10)]
-
 
 如果尝试删除分配给某个部门以管理员身份的教师，您将收到引用完整性错误。 请参阅[本教程中的当前版本](../../getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)的其他代码，将自动从任何院系的讲师分配以管理员身份删除讲师。
 

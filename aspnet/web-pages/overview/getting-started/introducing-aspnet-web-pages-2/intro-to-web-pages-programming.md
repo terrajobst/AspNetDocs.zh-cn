@@ -8,12 +8,12 @@ ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 474de7671ac2931e5ba9ff635d77385403644521
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387342"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130504"
 ---
 # <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET 网页简介-编程基础知识
 
@@ -34,7 +34,6 @@ ms.locfileid: "59387342"
 > 
 > - NuGet 和包管理器。
 > - `Gravatar`帮助器。
-
 
 本教程是主要向您介绍的编程语法，将使用为 ASP.NET Web Pages 中练习。 你将了解如何*Razor 语法*和 C# 中编写代码的编程语言。 前面的教程; 中有大致了解此语法在本教程中我们将介绍详细的语法。
 
@@ -60,7 +59,6 @@ ms.locfileid: "59387342"
 
 > [!NOTE]
 > 复制时代码或标记示例中放入页中，缩进和对齐方式不可能与本教程中的相同。 缩进和对齐方式不会影响代码的运行方式，不过。
-
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample1.cshtml)]
 
@@ -126,7 +124,6 @@ ms.locfileid: "59387342"
 > 
 > 我们提起这个是因为如果您查看有关编程 ASP.NET Web Pages 的信息，您会发现大量对 Razor 的引用。 但是，很多这些引用不会应用于您要这样做并因此可能会令人困惑。 并且，事实上，许多编程问题实际上会采用有关使用 C# 或使用 ASP.NET。 因此如果您看专门为 Razor 有关的信息，您可能找不到所需的答案。
 
-
 ## <a name="adding-some-conditional-logic"></a>添加一些条件逻辑
 
 有关使用代码页中的强大功能之一是，您可以更改时会发生什么情况基于各种条件。 在本教程的此部分中，您将调整相关更改的页中显示的内容的一些方法。
@@ -166,7 +163,6 @@ ms.locfileid: "59387342"
 
 > [!NOTE]
 > 请确保您注意到等于 （= =） 比较运算符不是与 = 相同。 = 运算符仅用于将值分配 (var = 2)。 如果混合使用这些运算符，也会发生错误，否则将显示一些奇怪的结果。
-
 
 若要测试的内容是否为 true，完整的语法是 if(IsDone == true)。 但也可以使用快捷方式 if(IsDone)。 如果没有任何比较运算符，ASP.NET 假定您要测试为 true。
 
@@ -231,7 +227,6 @@ ms.locfileid: "59387342"
 > **数据类型和 as （） 方法**
 > 
 > 我们已只是说到目前为止创建变量时，使用关键字 var。 这不是整篇文章，不过。 为了操作值 — 若要添加数字，或连接字符串，或比较日期，或测试为 true/false-C# 必须使用适当的值的内部表示形式。 C# 可以*通常*找出该表示形式应为 (即，什么*类型*数据) 基于您所做的值。 现在，然后，不过，它无法做到这一点。 如果没有，您必须通过显式，该值指示如何 C# 应表示的数据帮助解决问题。 AsBool 方法执行的 — 它告诉 C# 字符串值"true"或"false"应视为一个布尔值。 存在类似的方法来表示字符串作为其他类型，如 AsInt （视为一个整数）、 AsDateTime （视为日期/时间）、 AsFloat （视为浮点数），等等。 当您使用它们作为 （） 方法，如果 C# 不能表示的字符串值的请求时，您将看到一个错误。
-
 
 在页面的标记中，删除或注释掉此元素 （此处它显示注释掉）：
 

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 1043dce4cdd62f94ae9d2344a9301c1b03426f3d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: de154dde122886976054159ad745982669ca9315
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422260"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121377"
 ---
 # <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>将成员身份和用户配置文件的通用提供程序数据迁移到 ASP.NET Identity (C#)
 
@@ -22,14 +22,12 @@ ms.locfileid: "59422260"
 
 > 本教程介绍所需迁移用户和角色的数据和创建使用现有的应用程序到 ASP.NET 标识模型的通用提供程序的用户配置文件数据的步骤。 迁移用户配置文件数据可在具有 SQL 成员身份的应用程序，此处提及的方法。
 
-
 使用 Visual Studio 2013 的发布，ASP.NET 团队引入了新的 ASP.NET 标识系统，并可以阅读更多有关该发行版[此处](../../index.md)。 后续文章将从 web 应用程序迁移[到新的标识系统的 SQL 成员资格](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)，本文将演示迁移现有应用程序的用户和角色管理的提供程序模型的步骤为新的身份标识模型。 本教程的焦点将主要在迁移用户配置文件数据，以无缝地将其挂接到新系统上。 迁移用户和角色的信息是类似的 SQL 成员身份。 可以使用 SQL 成员资格应用程序中使用迁移配置文件数据时遵循的方法。
 
 例如，我们将开始使用 Visual Studio 2012 使用的提供程序模型创建的 web 应用。 我们将然后添加代码来配置文件管理、 注册用户、 添加的用户配置文件数据、 将数据库架构，迁移，然后将更改应用程序使用的标识系统的用户和角色管理。 为迁移的测试，创建使用通用提供程序的用户应该能够以用户身份登录，新用户应能注册。
 
 > [!NOTE]
 > 您可以找到完整的示例在[ https://github.com/suhasj/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations)。
-
 
 ## <a name="profile-data-migration-summary"></a>配置文件数据迁移摘要
 

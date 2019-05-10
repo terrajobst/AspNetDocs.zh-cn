@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d9edcd61e52941c0fd69e645da7e2cf467a632ac
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407349"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131781"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法 (C#) 的 ASP.NET Web 编程简介
 
@@ -36,14 +36,12 @@ ms.locfileid: "59407349"
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
 
-
 ## <a name="the-top-8-programming-tips"></a>最重要的 8 编程提示
 
 本部分列出了绝对需要知道当你开始使用 Razor 语法的 ASP.NET 服务器代码编写的一些提示。
 
 > [!NOTE]
 > Razor 语法基于 C# 编程语言，这也最常使用使用 ASP.NET Web Pages 的语言。 但是，Razor 语法还支持 Visual Basic 语言以及你看到你还可以执行在 Visual Basic 中的所有内容。 有关详细信息，请参阅附录[Visual Basic 语言和语法](https://go.microsoft.com/fwlink/?LinkId=202908)。
-
 
 在本文的后面，可以找到有关这些编程技术的大多数的更多详细信息。
 
@@ -66,7 +64,6 @@ ms.locfileid: "59407349"
 > 如果你的目标是输出以标记形式呈现标记的 HTML 标记 (例如`<p></p>`段落或`<em></em>`来强调文本)，请参阅部分[组合文本、 标记和代码块中的代码](#BM_CombiningTextMarkupAndCode)这篇文章中更高版本。
 > 
 > 你可以阅读更多有关中的 HTML 编码[使用窗体](https://go.microsoft.com/fwlink/?LinkId=202892)。
-
 
 ### <a name="2-you-enclose-code-blocks-in-braces"></a>2.将代码块括在大括号中
 
@@ -116,7 +113,6 @@ ms.locfileid: "59407349"
 > [!NOTE]
 > 请注意，`@`标记在 C# 中的逐字字符串文本和标记 ASP.NET 页面中的代码使用字符。
 
-
 ### <a name="6-code-is-case-sensitive"></a>6.代码是区分大小写
 
 在 C# 中，关键字 (如`var`， `true`，和`if`) 和变量名称区分大小写。 以下代码行创建两个不同的变量，`lastName`和 `LastName.`
@@ -127,7 +123,6 @@ ms.locfileid: "59407349"
 
 > [!NOTE]
 > 在 Visual Basic 关键字和变量是*不*区分大小写。
-
 
 ### <a name="7-much-of-your-coding-involves-objects"></a>7.大部分代码涉及到对象
 
@@ -161,7 +156,6 @@ ms.locfileid: "59407349"
 > 用于网页 (HTTP) 的协议支持的方法 （谓词） 用来向服务器发出请求的数量很少。 两个最常见的是 GET、 用于读取某页和用于将网页提交的文章。 一般情况下，用户请求页面时，第一次请求页面时使用 GET。 如果用户在填写窗体，并单击提交按钮，浏览器向服务器发出的 POST 请求。
 > 
 > 在 web 编程中，它通常是有助于了解是否请求页面时正在作为 GET 或 POST，以便您知道如何处理页面。 ASP.NET Web Pages 中，可以使用`IsPost`属性以确定请求是否为 GET 或 POST。 如果请求为 POST，`IsPost`属性将返回 true，然后你可以执行诸如读取窗体上的文本框的值。 你将看到许多示例演示如何处理以不同的方式具体取决于值页面`IsPost`。
-
 
 ## <a name="a-simple-code-example"></a>简单的代码示例
 
@@ -217,7 +211,6 @@ Razor 语法提供 ASP.NET，但使用的简化的语法来更轻松地了解你
 > 当应用程序需要使用实际的客户信息时，它创建的实例 (或*实例化*) 客户对象。 每个单独的客户是一个单独的实例`Customer`类。 每个实例支持的相同的属性和方法，但每个实例的属性值通常不同，因为每个客户对象都是唯一。 一个客户对象中`LastName`属性可能是"Smith"; 在另一个客户对象，`LastName`属性可能会"Jones"。
 > 
 > 同样，在站点中任何单个 web 页是`Page`对象，它的实例`Page`类。 页面上的按钮是`Button`对象，它的实例`Button`类中，依次类推。 每个实例都有其自己的特征，但它们都基于对象的类定义中指定的内容。
-
 
 ## <a name="basic-syntax"></a>基本语法
 
@@ -439,7 +432,6 @@ Razor 在嵌套的块中的 C# 上存在限制。 有关详细信息请参阅[�
 ## <a name="operators"></a>运算符
 
 运算符是命令的关键字或告诉 ASP.NET 什么样来执行在表达式中的字符。 C# 语言 （及对其基于 Razor 语法） 支持很多运算符，但只需识别几个开始。 下表总结了最常见的运算符。
-
 
 :::row:::
     :::column:::
@@ -832,7 +824,6 @@ Razor 语法可以用于将参数传递给方法的两个选项：*位置参数*
 > [!NOTE]
 > 我们建议您不要使用`Response.Redirect`中的方法`try/catch`语句，因为它可以在页面中导致异常。
 
-
 下面的示例显示了创建第一个请求上的文本文件，然后显示一个按钮，使用户可以打开文件的页面。 该示例故意使用错误的文件名称，以便它将导致异常。 该代码包括`catch`两个可能的异常的语句： `FileNotFoundException`，就会出现此错误，文件名称是否和`DirectoryNotFoundException`，如果 ASP.NET 甚至找不到该文件夹将出现此情况。 （您可以取消注释该示例中的语句才能看到它时一切运行正常的运行。）
 
 如果你的代码未处理异常，会看到一个错误页面，如前面的屏幕截图。 但是，`try/catch`部分可帮助防止用户看到这些类型的错误。
@@ -843,12 +834,9 @@ Razor 语法可以用于将参数传递给方法的两个选项：*位置参数*
 
 **使用 Visual Basic 进行编程**
 
-
 [附录：Visual Basic 语言和语法](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-
 **参考文档**
-
 
 [ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
 

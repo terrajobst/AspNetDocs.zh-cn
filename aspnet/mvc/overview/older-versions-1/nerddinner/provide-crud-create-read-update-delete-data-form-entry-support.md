@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: bbb976e5-6150-4283-a374-c22fbafe29f5
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3123af9a1477bc496a0d229d628510fc202b6d2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410859"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128340"
 ---
 # <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD（创建、读取、更新和删除）数据窗体输入支持
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步骤 5 显示了如何通过启用支持编辑、 创建和使用它删除 Dinners 也使我们的 DinnersController 类进一步。
 > 
 > 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
-
 
 ## <a name="nerddinner-step-5-create-update-delete-form-scenarios"></a>NerdDinner 步骤 5:创建、 更新、 删除窗体方案
 

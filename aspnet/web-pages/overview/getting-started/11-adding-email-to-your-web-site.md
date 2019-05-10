@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: fc49bcb9-f1a9-4048-8c3f-b60951853200
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: 0263f736b96f8e8572536f3783d86c261d7c0512
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 23e9717329525fb5a0ed505c9dc94505d4f9dbbe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411223"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130550"
 ---
 # <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>从 ASP.NET Web Pages (Razor) 站点发送电子邮件
 
@@ -39,7 +39,6 @@ ms.locfileid: "59411223"
 > 
 > 本教程还适用于 ASP.NET Web Pages 2。
 
-
 <a id="Sending_Email_Messages"></a>
 ## <a name="sending-email-messages-from-your-website"></a>从你的网站发送电子邮件
 
@@ -57,7 +56,6 @@ ms.locfileid: "59411223"
 
 > [!NOTE]
 > 为了简化此示例中，代码将初始化`WebMail`帮助器直接在页，使用它。 但是，对于真实网站，很好地了解此类的初始化代码放在全局文件中，以便您初始化`WebMail`你的网站中的所有文件的帮助器。 有关详细信息，请参阅[自定义网站的行为为 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Setting_Values_For_Helpers)。
-
 
 1. 创建新的网站。
 2. 添加一个名为的新页*EmailRequest.cshtml*并添加以下标记： 
@@ -133,7 +131,6 @@ ms.locfileid: "59411223"
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
-
 
 - [ASP.NET 网页 (Razor) 疑难解答指南](https://go.microsoft.com/fwlink/?LinkId=253001)
 - [简单邮件传输协议](https://msdn.microsoft.com/library/aa480435.aspx)

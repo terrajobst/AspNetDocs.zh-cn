@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 794bd819-00fc-47e2-876d-fc5d15e0de1c
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
-ms.openlocfilehash: 79774c6a1a1d05d5a7bcd82a5d7aa888933cf089
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ad649dfff085a8774cc13c11d8a3e3d48277d66
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420102"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128706"
 ---
 # <a name="troubleshooting-the-packaging-process"></a>打包过程故障排除
 
@@ -34,7 +34,6 @@ ms.locfileid: "59420102"
 > > [!NOTE]
 > > **EnablePackageProcessLoggingAndAssert**只有在生成项目使用，仅适用于属性**调试**配置。 在其他配置中将忽略此属性。
 
-
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
 这些教程的核心部署方法取决于拆分项目文件方法中所述[了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在生成过程由控制这两个项目文件&#x2014;一个包含构建适用于每个目标环境和一个包含特定于环境的生成和部署设置的说明。 在生成时，特定于环境的项目文件合并到不限环境的项目文件，以形成一组完整的生成说明。
@@ -45,13 +44,10 @@ ms.locfileid: "59420102"
 
 许多这些 WPP 目标包括记录的其他信息的条件逻辑时**EnablePackageProcessLoggingAndAssert**属性设置为**true**。 例如，如果您查看**包**目标，可以看到它创建一个额外的日志目录，并将文件的列表写入到一个文本文件，如果**EnablePackageProcessLoggingAndAssert**等于 **，则返回 true**。
 
-
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample1.xml)]
-
 
 > [!NOTE]
 > 在中定义的 WPP 目标*Microsoft.Web.Publishing.targets* %programfiles (x86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web 文件夹中的文件。 您可以打开此文件并查看 Visual Studio 2010 或任何 XML 编辑器中的目标。 请注意不要修改该文件的内容。
-
 
 ## <a name="enabling-the-additional-logging"></a>启用其他日志记录
 
@@ -59,27 +55,20 @@ ms.locfileid: "59420102"
 
 如果生成你的项目从命令行，则可以提供的值**EnablePackageProcessLoggingAndAssert**属性作为命令行参数：
 
-
 [!code-console[Main](troubleshooting-the-packaging-process/samples/sample2.cmd)]
-
 
 如果您使用自定义项目文件来生成项目，则可以包括**EnablePackageProcessLoggingAndAssert**中的值**属性**属性的**MSBuild**任务：
 
-
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample3.xml)]
-
 
 如果要使用 Team Foundation Server (TFS) 生成定义来构建您的项目，则可以提供的值**EnablePackageProcessLoggingAndAssert**属性中的**MSBuild 参数**行：![](troubleshooting-the-packaging-process/_static/image1.png)
 
 > [!NOTE]
 > 有关创建和配置生成定义的详细信息，请参阅[创建生成定义，支持部署](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。
 
-
 或者，如果你想要在每次生成中包含的包，您可以修改 web 应用程序项目设置的项目文件**EnablePackageProcessLoggingAndAssert**属性设置为**true**。 应将属性添加到第一个**PropertyGroup** .csproj 或.vbproj 文件中的元素。
 
-
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample4.xml)]
-
 
 ## <a name="reviewing-the-log-files"></a>查看日志文件
 
@@ -100,7 +89,6 @@ ms.locfileid: "59420102"
 
 > [!NOTE]
 > 额外的日志文件的名称通常与 WPP 目标相对应。 你可以通过检查来查看这些目标*Microsoft.Web.Publishing.targets* %programfiles (x86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web 文件夹中的文件。
-
 
 如果 web 程序包的内容不是预期的内容，查看这些文件非常有用的方式来标识在处理操作中的哪个点发生了错误。
 

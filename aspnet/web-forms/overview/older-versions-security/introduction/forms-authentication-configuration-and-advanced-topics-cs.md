@@ -8,12 +8,12 @@ ms.date: 01/14/2008
 ms.assetid: b9c29865-a34e-48bb-92c0-c443a72cb860
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9665dafb23b885fdf9e4ea5f1a515a0c6dcc9a9a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 75e7da4c993bc59a2ff34c2838f36312e1571668
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410625"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134392"
 ---
 # <a name="forms-authentication-configuration-and-advanced-topics-c"></a>Forms 身份验证配置和高级主题 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59410625"
 [下载代码](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/ASPNET_Security_Tutorial_03_CS.zip)或[下载 PDF](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial03_AuthAdvanced_cs.pdf)
 
 > 在本教程中我们将检查各种窗体身份验证设置，并了解如何通过窗体元素对其进行修改。 这将需要自定义窗体身份验证票证超时值，使用自定义 URL （例如 SignIn.aspx 而不是 login.aspx 的情况) 和无 cookie forms 身份验证票证的登录页的详细的信息。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -37,7 +36,6 @@ ms.locfileid: "59410625"
 [!code-xml[Main](forms-authentication-configuration-and-advanced-topics-cs/samples/sample1.xml)]
 
 表 1 总结了可以通过自定义的属性&lt;窗体&gt;元素。 Web.config 是一个 XML 文件，因为左侧列中的属性名称是区分大小写。
-
 
 | <strong>特性</strong> |                                                                                                                                                                                                                                     <strong>说明</strong>                                                                                                                                                                                                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -60,7 +58,6 @@ ms.locfileid: "59410625"
 > [!NOTE]
 > 多个窗体身份验证设置，如超时、 域和路径，指定生成的窗体身份验证票证 cookie 的详细信息。 对 cookie、 工作原理和它们的各种属性的详细信息，请阅读[此 Cookie 教程](http://www.quirksmode.org/js/cookies.html)。
 
-
 ### <a name="specifying-the-tickets-timeout-value"></a>指定的票证超时值
 
 窗体身份验证票证是表示标识的令牌。 使用基于 cookie 的身份验证票证，此令牌中以 cookie 的形式保存并发送到 web 服务器上每个请求。 拥有的令牌，从本质上讲，声明，我*用户名*，我已登录，并使用，以便可以跨页面访问记住用户的标识。
@@ -72,7 +69,6 @@ ms.locfileid: "59410625"
 > [!NOTE]
 > 步骤 3 个窗体身份验证系统用来保护身份验证票证的详细信息更多技术。
 
-
 在创建时的身份验证票证，窗体身份验证系统通过咨询超时设置来确定其到期。 表 1 中，将默认值设置为 30 分钟的超时值中所述这意味着，在创建窗体身份验证票证时其到期设置为日期和时间在将来 30 分钟。
 
 到期时间定义一个绝对时间在将来的窗体身份验证票证过期时。 但开发人员通常要实现可调到期，一个每次用户将回顾站点重置。 此行为由 slidingExpiration 设置确定。 如果设置为 true （默认值），每次 FormsAuthenticationModule 将用户进行身份验证的时，它将更新票证的到期。 如果设置为 false，过期日期未更新对每个请求，从而导致票证过期完全超时分钟数票证最初创建。
@@ -80,28 +76,22 @@ ms.locfileid: "59410625"
 > [!NOTE]
 > 存储在身份验证票证的到期时间是绝对日期和时间值，如 2008 年 8 月 2 日上午 11:34。 此外，日期和时间都是相对于 web 服务器的本地时间。 这种设计决策可能会有一些有趣的副作用围绕夏时制 (DST)，这是在美国的时钟移动提前一小时 （假设 web 服务器所在的位置夏时制观察到的区域设置中） 时。 请考虑会发生什么情况为 ASP.NET 网站使用 DST 开始时间 30 分钟后到期 （这是凌晨 2:00）。 假设访问者登录到站点在 2008 年 3 月 11 日凌晨 1:55。 这会生成将在到期日期为 2008 年 3 月 11 日凌晨 2:25 （将来 30 分钟） 的窗体身份验证票证。 但是，一旦围绕回滚凌晨 2:00，时钟跳转到凌晨 3:00 由于 DST。 当用户加载新页面 （在上午 3:01） 在登录后的六分钟时，FormsAuthenticationModule 将说明在票证已过期，将用户重定向到登录页。 这和其他身份验证票证超时问题，以及解决方法有关的更全面讨论，选取一份 Stefan Schackow *Professional ASP.NET 2.0 安全、 成员资格和角色管理*(ISBN:978-0-7645-9698-8).
 
-
 图 1 说明了在工作流时 slidingExpiration 设置为 false，超时设置为 30。 请注意，在登录时生成的身份验证票证包含到期日期，并在后续请求中未更新此值。 如果 FormsAuthenticationModule 找到此票证已到期，它将其丢弃，并将请求视为匿名。
-
 
 [![以图形形式的窗体身份验证票证到期时 slidingExpiration 为 false](forms-authentication-configuration-and-advanced-topics-cs/_static/image2.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image1.png)
 
 **图 01**:以图形形式的窗体身份验证票证到期时 slidingExpiration 为 false ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image3.png))
 
-
 图 2 显示了工作流时 slidingExpiration 设置为 true，并且超时设置为 30。 时 （使用非过期票证） 收到的已经过身份验证的请求其到期将更新为在将来分钟的超时数。
-
 
 [![以图形形式的窗体身份验证票证 slidingExpiration 条件为 true 时](forms-authentication-configuration-and-advanced-topics-cs/_static/image5.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image4.png)
 
 **图 02**:以图形形式的窗体身份验证票证 slidingExpiration 条件为 true 时 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image6.png))
 
-
 在使用基于 cookie 的身份验证票证 （默认值），这一讨论将变得有点令人困惑，因为 cookie 还可以指定自己满。 Cookie 的到期 （或缺少局域） 会指示浏览器 cookie 应销毁时。 如果 cookie 缺少到期时间，销毁浏览器关闭时。 如果过期时间存在，但是，cookie 的日期之前会一直存储在用户计算机上，指定在到期时间已通过。 Cookie 时销毁由浏览器，它不能再发送到 web 服务器。 因此，进行销毁是 cookie 的类似于用户注销站点。
 
 > [!NOTE]
 > 当然，用户可以主动删除存储在其计算机上的任何 cookie。 在 Internet Explorer 7 中，将转到工具，选项，并单击浏览历史记录部分中的删除按钮。 在这里，单击删除 cookie 按钮。
-
 
 窗体身份验证系统将创建基于会话的或基于过期的 cookie，具体取决于传递给的值*persistCookie*参数。 回想一下，FormsAuthentication 类 GetAuthCookie、 SetAuthCookie 和 RedirectFromLoginPage 方法采用两个输入参数：*用户名*并*persistCookie*。 我们在前面的教程中创建的登录页包含一个记住我的复选框，来确定是否已创建持久 cookie。 永久 cookie 是基于到期的;非持久性 cookie 是基于会话的。
 
@@ -137,7 +127,6 @@ ms.locfileid: "59410625"
 > [!NOTE]
 > 设备功能的此数据库存储在多个 XML 文件符合[浏览器定义文件架构](https://msdn.microsoft.com/library/ms228122.aspx)。 默认设备配置文件位于 %windir%\microsoft.net\framework\v2.0.50727\config\browsers。 此外可以将自定义文件添加到应用程序的应用\_浏览器文件夹。 有关详细信息，请参阅[How To:在 ASP.NET Web Pages 中检测浏览器类型](https://msdn.microsoft.com/library/3yekbd5b.aspx)。
 
-
 因为默认设置为 UseDeviceProfile，将通过其配置文件报告它不支持 cookie 的设备访问该站点时使用无 cookie forms 身份验证票证。
 
 ### <a name="encoding-the-authentication-ticket-in-the-url"></a>编码的 URL 中的身份验证票证
@@ -169,7 +158,6 @@ Cookie 是一个自然媒体是默认窗体身份验证设置使用 cookie，如
 > [!NOTE]
 > 无 cookie forms 身份验证票证遵循相同的超时策略作为基于 cookie 的身份验证票证。 但是，无 cookie 身份验证票证的更容易出现重播攻击，因为在 URL 中直接嵌入身份验证票证。 假设访问网站并记录在中，然后再将 URL 粘贴到同事的电子邮件中的用户。 如果该同事达到过期日期之前单击该链接，它们将作为其发送电子邮件的用户记录 ！
 
-
 ## <a name="step-3-securing-the-authentication-ticket"></a>步骤 3：保护身份验证票证
 
 通过网络传输的窗体身份验证票证 cookie 中或直接在 URL 中嵌入。 标识信息的补充身份验证票证还可以包含用户数据，（正如我们将在步骤 4 中看到的）。 因此，很重要的已加密的票证数据防止被 （更重要的是） 的窗体身份验证系统可以保证票证被未篡改。
@@ -180,11 +168,9 @@ Cookie 是一个自然媒体是默认窗体身份验证设置使用 cookie，如
 
 创建 （或修改） 时的票证，窗体身份验证系统创建 MAC，并将其附加到的票证数据。 当后续请求到达时，窗体身份验证系统进行比较来验证票证数据的真实性的 MAC 和票证数据。 图 3 以图形方式显示此工作流。
 
-
 [![票证的真实性确保通过 MAC](forms-authentication-configuration-and-advanced-topics-cs/_static/image8.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image7.png)
 
 **图 03**:通过在 MAC 确保票证的真实性 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image9.png))
-
 
 什么是安全度量值应用于身份验证票证中的保护设置取决于&lt;窗体&gt;元素。 保护设置可能会分配给以下三个值之一：
 
@@ -226,7 +212,6 @@ Microsoft 强烈建议使用的所有设置。
 > [!NOTE]
 > DecryptionKey 和 validationKey 值截取自[Steve Gibson](http://www.grc.com/stevegibson.htm)的[完美密码网页](https://www.grc.com/passwords.htm)，其中每个页，请访问上生成 64 随机的十六进制字符。 若要降低对生产应用程序正在影响这些密钥的可能性，建议您的更高版本的密钥替换为从完美密码页随机生成的。
 
-
 ## <a name="step-4-storing-additional-user-data-in-the-ticket"></a>步骤 4：存储在票证中的其他用户数据
 
 许多 web 应用程序显示有关的信息，或使基于当前登录用户的页面的显示。 例如，web 页可能会显示用户的名称和她上次登录的每个页面右上角的日期。 窗体身份验证票证存储当前登录的用户的用户名，但页面需要的任何其他信息时，必须转到要查找不会存储在身份验证票证的信息的用户存储区-通常数据库。
@@ -237,11 +222,9 @@ Microsoft 强烈建议使用的所有设置。
 
 我们需要访问存储在票证中的数据，只要我们能做到获取当前请求的 FormsAuthenticationTicket 和反序列化的 UserData 属性。 出生和雇主名称示例的日期，在我们会将 UserData 字符串拆分为两个基于分隔符 (|) 的子字符串。
 
-
 [![其他用户信息可以存储在身份验证票证](forms-authentication-configuration-and-advanced-topics-cs/_static/image11.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image10.png)
 
 **图 04**:其他用户的信息可以存储在身份验证票证 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image12.png))
-
 
 ### <a name="writing-information-to-userdata"></a>UserData 将信息写入
 
@@ -288,7 +271,6 @@ authCookie.Value = FormsAuthentication.Encrypt(newTicket);
 > [!NOTE]
 > 我们刚检查的代码将特定于用户的信息存储在基于 cookie 的身份验证票证。 负责序列化到的 URL 的窗体身份验证票证的类是.NET Framework 的内部。 长话短说，不能在无 cookie forms 身份验证票证中存储用户数据。
 
-
 ### <a name="accessing-the-userdata-information"></a>访问用户数据信息
 
 现在每个用户的公司名称和标题存储在窗体身份验证票证的 UserData 属性在登录时。 可以从任何页面上的身份验证票证访问此信息，而无需用户存储到的行程。 为了说明如何从 UserData 属性检索此信息，让我们更新 Default.aspx，以便其欢迎消息包括不仅用户的名称，但还它们适用于公司和职位。
@@ -301,15 +283,12 @@ authCookie.Value = FormsAuthentication.Encrypt(newTicket);
 
 图 5 显示了操作中的此显示的屏幕截图。 日志记录为 Scott 显示包含 Scott 的公司和标题的欢迎使用后的消息。
 
-
 [![会显示当前登录的用户的公司和标题](forms-authentication-configuration-and-advanced-topics-cs/_static/image14.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image13.png)
 
 **图 05**:会显示当前登录的用户的公司和标题 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image15.png))
 
-
 > [!NOTE]
 > 身份验证票证的 UserData 属性将充当用户存储的缓存。 与任何缓存一样，它需要时修改基础数据进行更新。 例如，如果用户可以从中更新其配置文件的网页，必须刷新缓存 UserData 属性中的字段以反映用户所做的更改。
-
 
 ## <a name="step-5-using-a-custom-principal"></a>步骤 5：使用自定义主体
 
@@ -322,7 +301,6 @@ GenericPrincipal 类能满足大多数窗体基于的身份验证方案不使用
 > [!NOTE]
 > 我们会在将来的教程中，当 ASP。启用 NET 的角色框架创建类型的自定义主体对象[RolePrincipal](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx)并覆盖窗体身份验证创建 GenericPrincipal 对象。 若要自定义角色框架的 API 与主体的 IsInRole 方法执行此操作。
 
-
 由于我们具有不关心自己角色尚未，我们必须用于此时，必须查明创建自定义主体的唯一原因是将自定义的 IIdentity 对象向主体相关联。 在步骤 4 中还介绍了用户的公司名称和其标题中特定身份验证票证的 UserData 属性中存储其他用户信息。 但是，UserData 信息只是将可通过身份验证票证访问，然后仅为序列化字符串，这意味着，只要我们想要查看用户信息存储在票证中我们需要分析 UserData 属性。
 
 我们可以通过创建实现 IIdentity 和包括 CompanyName 和 Title 属性的类来提高开发人员体验。 这样一来，开发人员可以访问当前登录的用户的公司名称和标题直接通过公司名称和标题属性，而不需要了解如何分析 UserData 属性。
@@ -334,14 +312,11 @@ GenericPrincipal 类能满足大多数窗体基于的身份验证方案不使用
 > [!NOTE]
 > 应用\_管理通过网站项目模型项目时，应仅使用代码文件夹。 如果使用的[Web 应用程序项目模型](https://msdn.microsoft.com/asp.net/Aa336618.aspx)、 创建标准文件夹并将类添加到的。 例如，无法添加名为类的新文件夹，并那里将你的代码。
 
-
 接下来，将两个新类文件添加到应用\_代码文件夹，一个命名的 CustomIdentity.cs，另一个名为 CustomPrincipal.cs。
-
 
 [![将 CustomIdentity 和 CustomPrincipal 类添加到你的项目](forms-authentication-configuration-and-advanced-topics-cs/_static/image17.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image16.png)
 
 **图 06**:将 CustomIdentity 和 CustomPrincipal 类添加到你的项目 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image18.png))
-
 
 CustomIdentity 类负责实现 IIdentity 接口，定义 AuthenticationType、 IsAuthenticated 和名称属性。 除了这些必需的属性，我们感兴趣公开基础窗体身份验证票证，以及用户的公司名称和标题的属性。 下面的代码进入 CustomIdentity 类。
 
@@ -361,19 +336,15 @@ CustomIdentity 类负责实现 IIdentity 接口，定义 AuthenticationType、 I
 
 AuthenticateRequest 事件之后，ASP.NET 管道引发[PostAuthenticateRequest 事件](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx)，这是我们可以替换为创建的实例与 FormsAuthenticationModule 的 GenericPrincipal 对象我们CustomPrincipal 对象。 图 7 显示了此工作流。
 
-
 [![GenericPrincipal CustomPrincipal PostAuthenticationRequest 事件中被替换为](forms-authentication-configuration-and-advanced-topics-cs/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image19.png)
 
 **图 07**:GenericPrincipal CustomPrincipal PostAuthenticationRequest 事件中被替换为 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image21.png))
 
-
 若要执行的代码以响应 ASP.NET 管道事件，我们可以在 Global.asax 中创建相应的事件处理程序，或创建我们自己的 HTTP 模块。 对于本教程让我们在 Global.asax 中创建的事件处理程序。 首先将 Global.asax 添加到你的网站。 右键单击解决方案资源管理器中的项目名称并添加名为 Global.asax 的全局应用程序类类型的项。
-
 
 [![Global.asax 文件添加到你的网站](forms-authentication-configuration-and-advanced-topics-cs/_static/image23.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image22.png)
 
 **图 08**:Global.asax 文件添加到您的网站 ([单击此项可查看原尺寸图像](forms-authentication-configuration-and-advanced-topics-cs/_static/image24.png))
-
 
 默认 Global.asax 模板包括多个 ASP.NET 管道事件，包括开始时，最终的事件处理程序和[错误事件](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx)，等等。 可以删除这些事件处理程序，因为我们不需要这些服务为此应用程序。 我们感兴趣的事件是 PostAuthenticateRequest。 更新在 Global.asax 文件，使其标记看起来类似于以下：
 

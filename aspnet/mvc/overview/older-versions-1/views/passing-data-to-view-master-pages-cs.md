@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: 5fee879b-8bde-42a9-a434-60ba6b1cf747
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 863fe772a1d79201b83da8498bf7e981acf7fd0e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 852492211ace3cd14593e4a61a8015d49d3a41db
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401070"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130175"
 ---
 # <a name="passing-data-to-view-master-pages-c"></a>向视图母版页传递数据 (C#)
 
@@ -23,7 +23,6 @@ by [Microsoft](https://github.com/microsoft)
 
 > 本教程的目的是说明如何向视图母版页，从控制器传递数据。 我们将介绍两种策略用于向视图母版页传递数据。 首先，我们将讨论导致难以维护的应用程序的简单解决方案。 接下来，我们检查需要稍有更多的初始工作，但更易于维护的应用程序中的结果的更好的解决方案。
 
-
 ## <a name="passing-data-to-view-master-pages"></a>向视图母版页传递数据
 
 本教程的目的是说明如何向视图母版页，从控制器传递数据。 我们将介绍两种策略用于向视图母版页传递数据。 首先，我们将讨论导致难以维护的应用程序的简单解决方案。 接下来，我们检查需要稍有更多的初始工作，但更易于维护的应用程序中的结果的更好的解决方案。
@@ -32,11 +31,9 @@ by [Microsoft](https://github.com/microsoft)
 
 假设您要构建电影数据库应用程序，并且你想要在应用程序中每一页上显示电影类别列表 （见图 1）。 此外，假设电影类别的列表存储在数据库表中。 在这种情况下，最好从数据库检索类别和呈现的视图母版页中的电影类别列表。
 
-
 [![在视图母版页中显示电影类别](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
 
 **图 01**:在视图母版页中显示电影类别 ([单击此项可查看原尺寸图像](passing-data-to-view-master-pages-cs/_static/image3.png))
-
 
 下面是此问题。 如何检索在母版页中的电影类别的列表？ 它很容易在母版页中直接调用模型类的方法。 换而言之，很容易就包括用于从数据库直接在主页面中检索数据的代码。 但是，绕过 MVC 控制器来访问数据库会违反是构建一个 MVC 应用程序的主要优点之一完全分离关注点。
 
@@ -58,11 +55,9 @@ MVC 应用程序中传递给视图 （包括视图母版页） 的所有数据�
 
 Details() 操作还将添加名为类别和电影的两个密钥。 类别键中，再次重申，表示电影类别视图主页所显示的列表。 电影键表示电影的详细信息视图页所显示的特定类别的列表 （请参见图 2）。
 
-
 [![详细信息视图](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
 
 **图 02**:详细信息视图 ([单击此项可查看原尺寸图像](passing-data-to-view-master-pages-cs/_static/image6.png))
-
 
 索引视图包含在代码清单 2 中。 它只是循环访问列表中查看数据的电影项所表示的电影。
 

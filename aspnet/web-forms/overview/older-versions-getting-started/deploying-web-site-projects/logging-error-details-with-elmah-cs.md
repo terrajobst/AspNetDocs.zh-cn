@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 11f6fe44-64ef-4a38-a3b4-35c7bb992352
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 02c4371cccb56f0ef7c0a6244c3dcd8a30d241b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fedf3261fd1c73107575ea94186c6c895a7fd529
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415643"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127907"
 ---
 # <a name="logging-error-details-with-elmah-c"></a>ELMAH 的日志记录错误详细信息 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415643"
 [下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_CS.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_cs.pdf)
 
 > 错误日志记录模块和处理程序 (ELMAH) 提供了另一种方法在生产环境中记录运行时错误。 ELMAH 是一个免费的开放源代码错误日志记录库，包括错误筛选和查看错误日志在网页上，为 RSS 源，或下载作为以逗号分隔的文件的功能等功能。 本教程将指导完成下载和配置 ELMAH。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -36,7 +35,6 @@ ms.locfileid: "59415643"
 
 > [!NOTE]
 > 运行状况监控系统和 ELMAH 都有其自己的优点和缺点。 我鼓励您尝试这两个系统并决定哪一个最适合你的需求。
-
 
 ## <a name="adding-elmah-to-an-aspnet-web-application"></a>将 ELMAH 添加到 ASP.NET Web 应用程序
 
@@ -56,12 +54,10 @@ ELMAH 1.0 BETA 3 (生成 10617)，在本文撰写之际，最新版本包含在�
 > [!NOTE]
 > `Elmah.dll`文件位于下载的`Bin`文件夹，其中具有不同的.NET Framework 版本和版本和调试版本中的子文件夹。 使用合适的框架版本的发布版本。 例如，如果您正在构建的 ASP.NET 3.5 web 应用程序，复制`Elmah.dll`文件从`Bin\net-3.5\Release`文件夹。
 
-
 接下来，打开 Visual Studio 并右键单击网站名称，在解决方案资源管理器并从上下文菜单中选择添加引用添加到你的项目的程序集。 此时会打开添加引用对话框。 导航到浏览选项卡，然后选择`Elmah.dll`文件。 此操作将添加`Elmah.dll`web 应用程序的文件`Bin`文件夹。
 
 > [!NOTE]
 > Web 应用程序项目 (WAP) 类型不会显示`Bin`在解决方案资源管理器中的文件夹。 相反，它列出了引用文件夹下的这些项。
-
 
 `Elmah.dll`程序集包括 ELMAH 系统使用的类。 这些类分为三个类别之一：
 
@@ -100,7 +96,6 @@ ELMAH 1.0 BETA 3 (生成 10617)，在本文撰写之际，最新版本包含在�
 > [!NOTE]
 > 如果要配置 ELMAH ASP.NET 1.x 应用程序然后删除`requirePermission="false"`属性从`<section>`上面的元素。
 
-
 上述语法注册自定义`<elmah>`部分和其子章节： `<security>`， `<errorLog>`， `<errorMail>`，和`<errorFilter>`。
 
 接下来，添加`<elmah>`部分`Web.config`。 本部分中应出现在相同的级别`<system.web>`元素。 内部`<elmah>`部分中添加`<security>`和`<errorLog>`部分如下所示：
@@ -113,7 +108,6 @@ ELMAH 1.0 BETA 3 (生成 10617)，在本文撰写之际，最新版本包含在�
 
 > [!NOTE]
 > ELMAH 附带有其他错误的日志提供程序可用于 XML 文件、 Microsoft Access 数据库、 Oracle 数据库和其他数据存储中记录错误。 请参阅示例`Web.config`是包含有关如何使用这些备用错误日志提供程序的信息在 ELMAH 下载的文件。
-
 
 ### <a name="step-4-creating-the-error-log-source-infrastructure"></a>步骤 4：创建错误日志源基础结构
 
@@ -137,7 +131,6 @@ ELMAH 不会影响发生未经处理的异常; 时，向用户显示哪些内容
 
 > [!NOTE]
 > 此外可以使用`elmah.axd`页后，可以指示 ELMAH 生成一个测试错误。 访问`elmah.axd/test`(作为 in `http://localhost/BookReviews/elmah.axd/test`) 会导致引发异常的类型的 ELMAH `Elmah.TestException`，其中包含错误消息："这是可以安全地忽略测试异常"。
-
 
 **图 3**访问时显示的错误日志`elmah.axd`从开发环境。
 
@@ -184,7 +177,6 @@ ELMAH 不会影响发生未经处理的异常; 时，向用户显示哪些内容
 > [!NOTE]
 > 在添加了管理员角色和-Scott、 Jisun 和 Alice-在系统中的三个用户[*配置网站，使用应用程序服务*教程](configuring-a-website-that-uses-application-services-cs.md)。 用户 Scott 和 Jisun 是管理员角色的成员。 有关身份验证和授权的详细信息，请参阅我[网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
 
-
 远程用户; 可以立即查看错误日志在生产环境回头**图 3**， **4**，并**5**错误日志 web 页的屏幕截图。 但是，如果匿名或非管理员用户尝试查看错误日志页则自动重定向到登录页 (`Login.aspx`)，作为**图 7**显示。
 
 [![](logging-error-details-with-elmah-cs/_static/image18.png)](logging-error-details-with-elmah-cs/_static/image17.png)
@@ -229,7 +221,6 @@ ELMAH 的`ErrorLogModule`HTTP 模块将自动记录到指定的日志源的未�
 
 > [!NOTE]
 > 请不要忘记，若要使用错误筛选，必须注册`ErrorFilterModule`HTTP 模块。
-
 
 `<equal>`元素内的`<test>`部分被称为断言。 如果计算结果为 true 的断言错误则将筛选从 ELMAH 的日志。 有可用的其他断言，包括： `<greater>`， `<greater-or-equal>`， `<not-equal>`， `<lesser>`， `<lesser-or-equal>`，依次类推。 您也可以组合使用断言`<and>`和`<or>`布尔运算符。 更重要的是，甚至可以包括一个简单的 JavaScript 表达式用作断言，或在 C# 或 Visual Basic 中编写您自己断言。
 

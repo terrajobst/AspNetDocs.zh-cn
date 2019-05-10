@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c979535f-48a3-4ec4-a633-a77889b86ddb
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: 0ab58aee6f1203beaf3990536b059f8209e66547
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6bede6b36c24ade928ab052e14daec1e017bd0b2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393478"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131939"
 ---
 # <a name="deploying-a-specific-build"></a>部署特定生成
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393478"
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主题介绍如何部署 web 包和数据库脚本从特定的上一个生成到新的目标，如过渡或生产环境。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -47,21 +46,15 @@ ms.locfileid: "59393478"
 > [!NOTE]
 > **OutputRoot**是常用的属性名称。 Visual C# 和 Visual Basic 项目文件还声明此属性来存储所有生成输出的根位置。
 
-
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
-
 
 如果你想在项目文件来部署 web 包和数据库从不同位置的脚本&#x2014;像上一个 TFS 生成的输出&#x2014;只需重写**OutputRoot**属性。 在 Team Build 服务器上，您应设置为相关生成文件夹的属性值。 如果从命令行运行 MSBuild，可以指定的值**OutputRoot**作为命令行参数：
 
-
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
-
 
 在实践中，但是，您还想要跳过**构建**目标&#x2014;就不必在构建您的解决方案，如果不打算使用生成输出。 通过指定想要从命令行执行的目标，无法执行此操作：
 
-
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
-
 
 但是，在大多数情况下，你将想要为 TFS 生成定义，生成你的部署逻辑。 这使用户与**生成排队**触发到 TFS 服务器通过连接任何 Visual Studio 安装中的部署的权限。
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: ca47f6fe6d55153354d38fcf1ba5e844215279b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2b26224390af70e19ca0593abe93a6867140f8ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389032"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129729"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 基架和迁移
 
@@ -72,13 +72,12 @@ ms.locfileid: "59389032"
 > [!NOTE]
 > 此练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果您需要在完成该练习的更多帮助，可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**30 分钟**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_ASPNET_MVC_4_Scaffolding_with_Entity_Framework_Migrations"></a>
-### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>练习 1:使用 ASP.NET MVC 4 基架和实体框架迁移
+### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>练习 1：使用 ASP.NET MVC 4 基架和实体框架迁移
 
 ASP.NET MVC 基架提供了一种标准化方法，创建必要的逻辑，可让您与数据库层进行交互的应用程序生成的 CRUD 操作的快速方法。
 

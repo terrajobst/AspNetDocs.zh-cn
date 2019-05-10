@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 243db2ec-8f67-4a5e-a382-4ddcec4b4164
 msc.legacyurl: /web-api/overview/advanced/http-cookies
 msc.type: authoredcontent
-ms.openlocfilehash: cd6391582f05ab80c4bd45a455a2ce488d1186c1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ca26ff6776daa13bc4f8b06c2eba61afcfefba2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59418321"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126242"
 ---
 # <a name="http-cookies-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP Cookie
 
@@ -81,7 +81,6 @@ HTTP 响应可以包括多个 Set-cookie 标头。
 
 > [!NOTE]
 > RFC 6265 未定义 cookie 数据的结构。
-
 
 使用**CookieHeaderValue**类，您可以将传递 cookie 数据的名称-值对的列表。 这些名称 / 值对编码为 URL 编码格式的 Set-cookie 标头中的数据：
 

@@ -8,12 +8,12 @@ ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 29c3670ad7ab93acb0be878e5bd961d0ea446eee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7492c4aa4c2a0a8aeed64c3462bda8fc51f35a6b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396221"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134303"
 ---
 # <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保护 Web API 使用单个帐户和 ASP.NET Web API 2.2 中的本地登录名
 
@@ -29,7 +29,6 @@ ms.locfileid: "59396221"
 > - [Visual Studio 2013 Update 3](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - [Web API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
 > - [ASP.NET Identity 2.1](../../../identity/index.md)
-
 
 在 Visual Studio 2013 中，Web API 项目模板也提供三个选项用于身份验证：
 
@@ -239,7 +238,6 @@ OAuth 中间件完全不了解的用户帐户。 提供程序之间的中间件�
 
 > [!NOTE]
 > 具体而言，您的应用程序的 MVC 部分可能会使用窗体身份验证，将凭据存储在 cookie 中。 基于 cookie 的身份验证要求使用防伪令牌，以防止 CSRF 攻击。 这是因为没有 web API 的便捷方法以将防伪令牌发送到客户端 web Api 的问题。 (有关此问题的详细背景，请参阅[防止 CSRF 攻击 Web API 中](preventing-cross-site-request-forgery-csrf-attacks.md)。)调用**SuppressDefaultHostAuthentication**可确保 Web API 不会从凭据存储在 cookie 中容易受到 CSRF 攻击。
-
 
 当客户端请求的受保护的资源时，下面是 Web API 管道中会发生什么情况：
 

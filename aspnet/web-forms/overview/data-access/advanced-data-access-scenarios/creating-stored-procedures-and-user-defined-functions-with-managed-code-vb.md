@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b9432fe9e65b62a90c822fcf3227e5e60fd5dc50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9128d24b9c9e4a70c90d12ecc1f27b8613182369
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399861"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130734"
 ---
 # <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>使用托管代码创建存储过程和用户定义的函数 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59399861"
 [下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_75_VB.zip)或[下载 PDF](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/datatutorial75vb1.pdf)
 
 > Microsoft SQL Server 2005 与.NET 公共语言运行时以允许开发人员能够创建通过托管代码的数据库对象。 本教程演示如何创建托管存储的过程，并托管在 Visual Basic 或 C# 代码与用户定义函数。 我们还看到这些版本的 Visual Studio 如何使你能够调试此类托管的数据库对象。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -37,7 +36,6 @@ ms.locfileid: "59399861"
 > [!NOTE]
 > 托管的数据库对象提供了通过 SQL 对应的一些好处。 语言丰富性和熟悉程度和能够重复使用现有的代码和逻辑的主要优势。 但托管的数据库对象，可能需要使用不涉及多过程逻辑的数据集时效率较低。 有关使用与 T-SQL 的托管的代码的优点的更全面讨论，请参阅[优点的使用托管代码创建数据库对象](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx)。
 
-
 ## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>步骤 1：移出的 Northwind 数据库`App_Data`
 
 所有我们的教程到目前为止都使用 Microsoft SQL Server 2005 Express Edition 数据库文件中的 web 应用程序的`App_Data`文件夹。 将数据库中的放置`App_Data`简化分发和运行这些教程中的所有文件已位于一个目录和任何其他配置步骤来测试本教程所需的。
@@ -48,33 +46,26 @@ ms.locfileid: "59399861"
 
 启动 SQL Server Management Studio。 如图 1 所示，Management Studio 首先会询问要连接到的服务器。 输入 localhost\SQLExpress 作为服务器名称，在身份验证下拉列表中，选择 Windows 身份验证并单击连接。
 
-
 ![连接到相应的数据库实例](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image1.png)
 
 **图 1**:连接到相应的数据库实例
-
 
 你已连接后，对象资源管理器窗口将列出有关 SQL Server 2005 Express Edition 数据库实例，包括数据库、 安全信息、 管理选项和等的信息。
 
 我们需要将附加 Northwind 数据库中的`DataFiles`文件夹 （或任何位置你可能已移） 到 SQL Server 2005 Express Edition 数据库实例。 右键单击数据库文件夹并从上下文菜单中选择的附加选项。 此时会弹出附加数据库对话框。 单击添加按钮，向下钻取到相应`NORTHWND.MDF`文件，然后单击确定。 此时您的屏幕应类似于图 2。
 
-
 [![连接到相应的数据库实例](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image3.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image2.png)
 
 **图 2**:连接到相应的数据库实例 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image4.png))
 
-
 > [!NOTE]
 > 当连接到 SQL Server 2005 Express Edition 实例通过 Management Studio 附加数据库对话框中不允许您向下钻取到用户配置文件目录，如我的文档。 因此，请确保放置`NORTHWND.MDF`和`NORTHWND_log.LDF`非用户配置文件目录中的文件。
 
-
 单击确定按钮附加该数据库。 附加数据库对话框将关闭，并且在对象资源管理器现在应列出的只是附加的数据库。 您很可能的 Northwind 数据库具有一个名称，如`9FE54661B32FDD967F51D71D0D5145CC_LINE ARTICLES\DATATUTORIALS\VOLUME 3\CSHARP\73\ASPNET_DATA_TUTORIAL_75_CS\APP_DATA\NORTHWND.MDF`。 通过右键单击数据库，然后选择重命名数据库重命名为 Northwind。
-
 
 ![数据库重命名为 Northwind](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image5.png)
 
 **图 3**:数据库重命名为 Northwind
-
 
 ## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>步骤 2：在 Visual Studio 中创建一个新解决方案和 SQL Server 项目
 
@@ -83,51 +74,40 @@ ms.locfileid: "59399861"
 > [!NOTE]
 > 如果使用 Visual Web Developer 或 Visual Studio Standard edition，您将需要改为使用手动方法。 步骤 13 中提供了有关手动执行这些步骤的详细的说明。 我鼓励您之前需要阅读的步骤 2 到 12 读取第 13 步，因为这些步骤包括重要必须应用无论使用哪个版本的 Visual Studio 的 SQL Server 配置说明。
 
-
 首先打开 Visual Studio。 从文件菜单中，选择要显示新建项目对话框中的新项目框 （请参阅图 4）。 深化到数据库项目类型，然后，从右侧列出模板中选择要创建新的 SQL Server 项目。 我已选择此项目命名为`ManagedDatabaseConstructs`并放在名为的解决方案内`Tutorial75`。
-
 
 [![创建新的 SQL Server 项目](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image7.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image6.png)
 
 **图 4**:创建新的 SQL Server 项目 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image8.png))
 
-
 单击新建项目对话框中，创建解决方案和 SQL Server 项目中的确定按钮。
 
 SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server 项目后我们会立即要求指定此信息。 图 5 显示了已填写为指向我们在步骤 1 中返回的 SQL Server 2005 Express Edition 数据库实例中注册的 Northwind 数据库的新数据库引用对话框。
-
 
 ![将 SQL Server 项目与 Northwind 数据库相关联](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image9.png)
 
 **图 5**:将 SQL Server 项目与 Northwind 数据库相关联
 
-
 若要调试的托管存储的过程和 Udf，我们将创建此项目中，我们需要启用 SQL/CLR 调试连接支持。 每当将 SQL Server 项目将与新的数据库相关联 （就像我们一样在图 5） 时，Visual Studio 会询问我们是否我们想要启用 SQL/CLR 调试连接上 （请参阅图 6）。 单击是。
-
 
 ![启用 SQL/CLR 调试](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image10.png)
 
 **图 6**:启用 SQL/CLR 调试
 
-
 此时新的 SQL Server 项目具有已添加到解决方案。 它包含名为的文件夹`Test Scripts`与名为的文件`Test.sql`，用于调试的项目中创建的托管的数据库对象。 我们将介绍在步骤 12 中进行调试。
 
 我们现在可以向此项目中，添加新的托管存储的过程和 Udf，但好让我们之前首先包括现有的 web 应用程序解决方案中。 从文件菜单选择添加选项并选择现有网站。 浏览到相应的网站文件夹并单击确定。 如图 7 所示，这会更新以包括两个项目的解决方案： 在网站和`ManagedDatabaseConstructs`SQL Server 项目。
-
 
 ![在解决方案资源管理器现在包括两个项目](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image11.png)
 
 **图 7**:在解决方案资源管理器现在包括两个项目
 
-
 `NORTHWNDConnectionString`中的值`Web.config`当前引用`NORTHWND.MDF`文件中`App_Data`文件夹。 由于已删除此数据库从`App_Data`和显式注册在 SQL Server 2005 Express Edition 数据库实例中，我们需要相应地更新`NORTHWNDConnectionString`值。 打开`Web.config`文件中的网站和更改`NORTHWNDConnectionString`值，以便连接字符串中读取： `Data Source=localhost\SQLExpress;Initial Catalog=Northwind;Integrated Security=True`。 此更改后你`<connectionStrings>`主题中`Web.config`应如下所示：
-
 
 [!code-xml[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample1.xml)]
 
 > [!NOTE]
 > 如中所述[前面的教程](debugging-stored-procedures-vb.md)，当调试 SQL Server 对象从客户端应用程序，如 ASP.NET 网站，我们需要禁用连接池。 如上所示的连接字符串禁用连接池 ( `Pooling=false` )。 如果您不打算从 ASP.NET 网站中调试托管存储的过程和 Udf，启用连接池。
-
 
 ## <a name="step-3-creating-a-managed-stored-procedure"></a>步骤 3：创建托管存储的过程
 
@@ -135,14 +115,11 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 让我们来添加存储的过程只需返回所有已停用的产品。 将新的存储的过程文件`GetDiscontinuedProducts.vb`。
 
-
 [![添加新的存储的过程名为 GetDiscontinuedProducts.vb](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image13.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image12.png)
 
 **图 8**:添加新存储过程名为`GetDiscontinuedProducts.vb`([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image14.png))
 
-
 这将创建新的 Visual Basic 类文件包含以下内容：
-
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample2.vb)]
 
@@ -150,14 +127,12 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 下面的代码创建`SqlCommand`对象并设置其`CommandText`到`SELECT`返回所有的各列的查询`Products`表中的产品`Discontinued`字段等于 1。 然后执行命令，并将结果发送回客户端应用程序。 添加到此代码`GetDiscontinuedProducts`方法。
 
-
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample3.vb)]
 
 所有托管的数据库对象都有权访问[`SqlContext`对象](https://msdn.microsoft.com/library/ms131108.aspx)表示调用方的上下文。 `SqlContext`提供对访问[`SqlPipe`对象](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx)通过其[`Pipe`属性](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx)。 这`SqlPipe`对象用于在 SQL Server 数据库和调用应用程序之间 ferry 信息。 正如其名， [ `ExecuteAndSend`方法](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx)执行传入的`SqlCommand`对象，并将结果返回到客户端应用程序。
 
 > [!NOTE]
 > 托管的数据库对象非常适合于存储的过程和 Udf 使用过程逻辑，而不是基于集的逻辑。 过程逻辑包括在行的行的基础上使用的数据集或使用标量数据。 `GetDiscontinuedProducts`我们只需创建的方法，但是，涉及到任何过程逻辑。 因此，它会在理想情况下实现作为 T-SQL 存储过程。 它被实现为托管的存储的过程来演示用于创建和部署所必需的步骤托管存储的过程。
-
 
 ## <a name="step-4-deploying-the-managed-stored-procedure"></a>步骤 4：部署托管的存储的过程
 
@@ -167,47 +142,37 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 若要更新数据库 s 兼容性级别，请在 Management Studio 中打开一个新查询窗口并输入：
 
-
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample4.sql)]
 
 单击以运行上述查询中的执行图标。
-
 
 [![更新 Northwind 数据库 s 兼容性级别](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image15.png)
 
 **图 9**:更新 Northwind 数据库 s 兼容性级别 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image17.png))
 
-
 在更新后的兼容性级别，重新部署 SQL Server 项目。 这一次部署应完成不会出错。
 
 返回到 SQL Server Management Studio，Northwind 数据库中对象资源管理器，右键单击并选择刷新。 接下来，向下钻取到可编程性文件夹，然后展开程序集文件夹。 如图 10 所示，Northwind 数据库现在包括生成的程序集`ManagedDatabaseConstructs`项目。
-
 
 ![ManagedDatabaseConstructs 程序集是 Northwind 数据库中现在注册](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image18.png)
 
 **图 10**:`ManagedDatabaseConstructs`程序集是 Northwind 数据库中现在注册
 
-
 此外扩展存储过程文件夹。 你将看到一个名为的存储的过程`GetDiscontinuedProducts`。 此存储的过程已通过的部署过程和指向`GetDiscontinuedProducts`中的方法`ManagedDatabaseConstructs`程序集。 当`GetDiscontinuedProducts`执行存储的过程时，它，将依次执行`GetDiscontinuedProducts`方法。 由于这是托管存储的过程不能编辑它通过 Management Studio (因此存储的过程名称旁边的锁定图标)。
-
 
 ![GetDiscontinuedProducts 存储过程列出存储过程文件夹中](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image19.png)
 
 **图 11**:`GetDiscontinuedProducts`存储过程文件夹中列出的存储过程
 
-
 还有一个要克服前我们可以调用托管存储的过程的多个障碍： 数据库配置为阻止托管代码的执行。 通过打开新查询窗口并执行对此进行验证`GetDiscontinuedProducts`存储过程。 你将收到以下错误消息：禁用.NET Framework 中的用户代码的执行。 启用 clr 已启用配置选项。
 
 若要检查的 Northwind 数据库的配置信息、 输入和执行命令`exec sp_configure`在查询窗口中。 这将显示 clr 已启用设置当前设置为 0。
-
 
 [![Clr 已启用设置是当前设置为 0](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image20.png)
 
 **图 12**:Clr 已启用设置是当前设置为 0 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image22.png))
 
-
 请注意，图 12 中的每个配置设置都有与其一起列出的四个值： 所需的最低和最大值的配置和运行的值。 若要更新 clr 已启用设置的配置值，请执行以下命令：
-
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample5.sql)]
 
@@ -215,11 +180,9 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 使用完整 clr 已启用配置时，我们已准备好运行的托管`GetDiscontinuedProducts`存储过程。 在查询窗口中输入并执行命令`exec` `GetDiscontinuedProducts`。 调用存储的过程会导致相应的托管的代码中`GetDiscontinuedProducts`要执行的方法。 此代码发出`SELECT`查询以返回已不再使用并返回到调用应用程序，这是此实例中的 SQL Server Management Studio 的此数据的所有产品。 Management Studio 收到这些结果，并在结果窗口中显示它们。
 
-
 [![存储的过程将返回所有 GetDiscontinuedProducts 废止产品](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image23.png)
 
 **图 13**:`GetDiscontinuedProducts`存储过程返回所有废止产品 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image25.png))
-
 
 ## <a name="step-5-creating-managed-stored-procedures-that-accept-input-parameters"></a>步骤 5：创建托管存储过程接受输入的参数
 
@@ -231,18 +194,15 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 更新`GetProductsWithPriceLessThan`s 方法定义，以便它可以接受[ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx)名为输入的参数`price`和编写代码来执行并返回查询结果：
 
-
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample6.vb)]
 
 `GetProductsWithPriceLessThan` S 方法定义和代码非常相似的定义和代码`GetDiscontinuedProducts`步骤 3 中创建的方法。 唯一的区别是`GetProductsWithPriceLessThan`方法接受作为输入参数 (`price`)，则`SqlCommand`s 查询包含一个参数 (`@MaxPrice`)，并将参数添加到`SqlCommand`s`Parameters`集合是和分配的值`price`变量。
 
 添加此代码后，重新部署 SQL Server 项目。 接下来，返回到 SQL Server Management Studio 并刷新存储过程文件夹。 您应看到一个新条目， `GetProductsWithPriceLessThan`。 从查询窗口中，输入并执行该命令`exec GetProductsWithPriceLessThan 25`，后者将列表小于 25 美元，所有产品，如图 14 所示。
 
-
 [![显示产品下 25 美元](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image27.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image26.png)
 
 **图 14**:显示产品下 25 美元 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image28.png))
-
 
 ## <a name="step-6-calling-the-managed-stored-procedure-from-the-data-access-layer"></a>步骤 6：从数据访问层中调用托管存储的过程
 
@@ -253,53 +213,41 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 > [!NOTE]
 > 自迁移后从 Northwind 数据库`App_Data`到 SQL Server 2005 Express Edition 数据库实例的文件夹，则必须在 Web.config 中相应的连接字符串进行更新以反映此更改。 在步骤 2 中，我们讨论更新`NORTHWNDConnectionString`中的值`Web.config`。 如果您忘记了此更新，你将看到要添加查询的错误消息失败。 找不到连接`NORTHWNDConnectionString`对象`Web.config`对话框时尝试将新方法添加到 TableAdapter 中。 若要解决此错误，单击确定，然后转到`Web.config`并更新`NORTHWNDConnectionString`值在步骤 2 中所述。 然后尝试重新添加到 TableAdapter 的方法。 这次它应工作正常。
 
-
 添加新方法将启动 TableAdapter 查询配置向导中，我们有很多时间在过去的教程中使用。 第一步会要求我们指定 TableAdapter 应如何访问数据库： 通过临时 SQL 语句或通过新的或现有的存储过程。 由于我们已经创建并注册`GetDiscontinuedProducts`托管存储的过程与数据库中，选择使用现有存储过程选项并按下一步。
-
 
 [![选择使用现有存储的过程选项](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image30.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image29.png)
 
 **图 15**:选择使用现有存储过程选项 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image31.png))
 
-
 下一个屏幕提示我们输入方法将调用该存储过程。 选择`GetDiscontinuedProducts`托管存储的过程，从下拉列表并按下一步。
-
 
 [![选择 GetDiscontinuedProducts 托管存储的过程](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image33.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image32.png)
 
 **图 16**:选择`GetDiscontinuedProducts`托管存储过程 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image34.png))
 
-
 我们然后会要求指定存储的过程返回的行、 单个值，或执行任何操作。 由于`GetDiscontinuedProducts`返回集的已中止的产品行，选择第一个选项 （表格数据），然后单击下一步。
-
 
 [![选择表格数据选项](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image36.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image35.png)
 
 **图 17**:选择表格的数据选项 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image37.png))
 
-
 最后一个向导屏幕可以指定使用的数据访问模式和生成的方法的名称。 将选中的复选框和名称保留方法`FillByDiscontinued`和`GetDiscontinuedProducts`。 单击完成以完成向导。
-
 
 [![名称方法 FillByDiscontinued 和 GetDiscontinuedProducts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image38.png)
 
 **图 18**:命名方法`FillByDiscontinued`并`GetDiscontinuedProducts`([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image40.png))
 
-
 重复上述步骤，创建名为的方法`FillByPriceLessThan`并`GetProductsWithPriceLessThan`中`ProductsTableAdapter`为`GetProductsWithPriceLessThan`托管存储的过程。
 
 图 19 显示了添加到方法后的数据集设计器的屏幕截图`ProductsTableAdapter`有关`GetDiscontinuedProducts`和`GetProductsWithPriceLessThan`的托管存储的过程。
-
 
 [![ProductsTableAdapter 包括在此步骤中添加了新方法](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image42.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image41.png)
 
 **图 19**:`ProductsTableAdapter`包括在此步骤中的添加新方法 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image43.png))
 
-
 ## <a name="step-7-adding-corresponding-methods-to-the-business-logic-layer"></a>步骤 7：将相应的方法添加到业务逻辑层
 
 现在，我们已更新数据访问层，以便包括调用在步骤 4 和 5 中添加托管存储的过程的方法，我们需要将相应的方法添加到业务逻辑层。 添加到以下两种方法`ProductsBLLWithSprocs`类：
-
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample7.vb)]
 
@@ -311,21 +259,17 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 打开`ManagedFunctionsAndSprocs.aspx`页中`AdvancedDAL`文件夹并从工具箱将 GridView 拖到设计器。 设置 GridView s`ID`属性设置为`DiscontinuedProducts`并从其智能标记，请将其绑定到名为新 ObjectDataSource `DiscontinuedProductsDataSource`。 配置对象数据源以提取其数据从`ProductsBLLWithSprocs`类的`GetDiscontinuedProducts`方法。
 
-
 [![配置对象数据源以使用 ProductsBLLWithSprocs 类](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image45.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image44.png)
 
 **图 20**:配置为使用 ObjectDataSource`ProductsBLLWithSprocs`类 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image46.png))
-
 
 [![从下拉列表中选择的选项卡选择 GetDiscontinuedProducts 方法](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image48.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image47.png)
 
 **图 21**:选择`GetDiscontinuedProducts`从下拉列表中选择选项卡中的方法 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image49.png))
 
-
 将用于此网格将仅显示产品的信息，因为设置下拉列表中插入、 更新和删除选项卡添加到 （无），然后单击完成。
 
 完成该向导，时 Visual Studio 将自动添加 BoundField 或 CheckBoxField 中每个数据字段`ProductsDataTable`。 请花费片刻时间来删除所有这些字段除外`ProductName`和`Discontinued`、 的点在 GridView 和 ObjectDataSource s 声明性标记应如下所示：
-
 
 [!code-aspx[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample8.aspx)]
 
@@ -333,11 +277,9 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 托管存储过程返回的结果被打包成`ProductsDataTable`dal 然后返回到的 BLL，然后将其返回到表示层其中绑定到 GridView 并显示它们。 按预期运行，则网格将列出已停止使用这些产品。
 
-
 [![列出了停止使用的产品](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image51.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image50.png)
 
 **图 22**:列出了停止使用的产品 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image52.png))
-
 
 为进一步操作，向页面添加一个文本框和另一个 GridView。 具有此 GridView 显示产品小于输入到 TextBox，通过调用金额`ProductsBLLWithSprocs`类的`GetProductsWithPriceLessThan`方法。
 
@@ -347,43 +289,34 @@ SQL Server 项目绑定到特定数据库。 因此，在创建新的 SQL Server
 
 以下 UDF 计算特定产品的库存的估计的值。 它会在三个输入参数的取`UnitPrice`， `UnitsInStock`，并`Discontinued`某一特定产品的值，并返回类型的值`money`。 它将计算库存估计的值乘以`UnitPrice`通过`UnitsInStock`。 对于已停止使用的项，此值是缩减了一半。
 
-
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample9.sql)]
 
 此 UDF 添加到数据库后，它可以通过展开可编程性文件夹，然后函数，然后的标量值函数来找到通过 Management Studio。 可在`SELECT`查询如下所示：
-
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample10.sql)]
 
 我已添加`udf_ComputeInventoryValue`到 Northwind 数据库中; UDF图 23 显示上述输出`SELECT`时通过 Management Studio 查看查询。 另请注意对象资源管理器中的标量值函数文件夹下列出了 UDF。
 
-
 [![列出每个产品的清单值](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image54.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image53.png)
 
 **图 23**:列出每个产品的清单值 ([单击此项可查看原尺寸图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image55.png))
 
-
 Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定类别的产品的 UDF:
-
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample11.sql)]
 
 `udf_GetProductsByCategoryID` UDF 接受`@CategoryID`输入的参数并指定将结果返回`SELECT`查询。 创建后，可以在引用此 UDF `FROM` (或`JOIN`) 的子句`SELECT`查询。 下面的示例将返回`ProductID`， `ProductName`，和`CategoryID`饮料的每个值。
 
-
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample12.sql)]
 
 我已添加`udf_GetProductsByCategoryID`到 Northwind 数据库中; UDF图 24 显示上述输出`SELECT`时通过 Management Studio 查看查询。 可以在对象资源管理器的表值函数文件夹中找到返回表格数据的 Udf。
-
 
 [![产品 id、 产品名称和类别 Id 列出的每个饮料](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image57.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image56.png)
 
 **图 24**:`ProductID`， `ProductName`，并`CategoryID`列出的每个饮料 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image58.png))
 
-
 > [!NOTE]
 > 有关创建和使用 Udf 的详细信息，请参阅[用户定义的函数对简介](http://www.sqlteam.com/item.asp?ItemID=1955)。 另请参阅[优点和 Drawbacks of User-Defined 函数](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)。
-
 
 ## <a name="step-10-creating-a-managed-udf"></a>步骤 10：创建一个托管的 UDF
 
@@ -391,19 +324,15 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 
 若要添加到一个托管的 UDF`ManagedDatabaseConstructs`项目，右键单击解决方案资源管理器中的项目名称并选择要添加新项。 从添加新项对话框中选择用户定义模板，然后将新的 UDF 文件`udf_ComputeInventoryValue_Managed.vb`。
 
-
 [![将新的托管的 UDF 添加到 ManagedDatabaseConstructs 项目](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image60.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image59.png)
 
 **图 25**:添加到新的托管 UDF`ManagedDatabaseConstructs`项目 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
-
 用户定义的函数模板创建`Partial`名为类`UserDefinedFunctions`使用方法： 名称为类文件的名称相同 (`udf_ComputeInventoryValue_Managed`，在这种情况)。 此方法使用修饰[`SqlFunction`属性](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx)，该标记作为一个托管 UDF 方法。
-
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample13.vb)]
 
 `udf_ComputeInventoryValue`方法当前返回[`SqlString`对象](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx)并且不接受任何输入参数。 我们需要更新，使它接受三个输入参数的方法定义`UnitPrice`， `UnitsInStock`，并`Discontinued`-并返回`SqlMoney`对象。 逻辑以用于计算的库存值等同于在 T-SQL 中`udf_ComputeInventoryValue`UDF。
-
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample14.vb)]
 
@@ -413,7 +342,6 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 
 > [!NOTE]
 > `SqlMoney`对象只允许两个`SqlMoney`实例一起相乘。 它不允许`SqlMoney`实例要乘以的文字的浮点数。 因此，若要四倍`inventoryValue`我们将其由一个新`SqlMoney`具有值 0.5 的实例。
-
 
 ## <a name="step-11-deploying-the-managed-udf"></a>步骤 11：部署托管的 UDF
 
@@ -426,7 +354,6 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 
 若要测试此托管的 UDF，请执行以下查询从 Management Studio 中：
 
-
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample15.sql)]
 
 此命令使用的托管`udf ComputeInventoryValue_Managed`而不是 T-SQL 的 UDF `udf_ComputeInventoryValue` UDF，但输出是相同。 回顾图 23，若要查看的 UDF 的输出屏幕截图。
@@ -435,34 +362,27 @@ Udf 还可以返回表格数据。 例如，我们可以创建返回属于特定
 
 在中[调试存储过程](debugging-stored-procedures-vb.md)调试通过 Visual Studio 的 SQL Server 教程中，我们讨论了这三个选项：直接数据库调试、 应用程序调试，以及调试从 SQL Server 项目。 托管的数据库对象不能通过直接数据库调试调试，但可以进行调试，从客户端应用程序和直接从 SQL Server 项目。 为了使调试工作，但是，SQL Server 2005 数据库必须允许 SQL/CLR 调试。 回想一下，我们首次创建时`ManagedDatabaseConstructs`Visual Studio 要求我们是否我们想要启用 SQL/CLR 调试 （见图 6 在步骤 2 中） 的项目。 可以通过右键单击服务器资源管理器窗口中的数据库修改此设置。
 
-
 ![请确保数据库允许 SQL/CLR 调试](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image62.png)
 
 **图 26**:请确保数据库允许 SQL/CLR 调试
 
-
 假设我们想要调试`GetProductsWithPriceLessThan`托管存储的过程。 我们将首先设置断点的代码中`GetProductsWithPriceLessThan`方法。
-
 
 [![GetProductsWithPriceLessThan 方法中设置断点](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image64.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image63.png)
 
 **图 27**:中设置断点`GetProductsWithPriceLessThan`方法 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image65.png))
 
-
 让我们来首先看一下调试 SQL Server 项目中的托管的数据库对象。 由于我们的解决方案包括两个项目- `ManagedDatabaseConstructs` SQL Server 项目，以及我们的网站的我们需要指示 Visual Studio 启动 SQL Server 项目中调试`ManagedDatabaseConstructs`我们开始调试时的 SQL Server 项目。 右键单击`ManagedDatabaseConstructs`项目在解决方案资源管理器中，并为启动项目选项，从上下文菜单选择集。
 
 当`ManagedDatabaseConstructs`从执行 SQL 语句在调试器中启动项目`Test.sql`文件，它位于`Test Scripts`文件夹。 例如，若要测试`GetProductsWithPriceLessThan`托管存储的过程替换现有`Test.sql`文件内容与以下语句，将调用`GetProductsWithPriceLessThan`托管存储的过程中传递`@CategoryID`14.95 的值：
-
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample16.sql)]
 
 你已输入到上述脚本后`Test.sql`、 开始通过转到调试菜单并选择开始调试，或通过点击 F5 调试或在工具栏中的绿色播放图标。 这将生成解决方案中的项目、 对 Northwind 数据库中，部署托管的数据库对象，然后执行`Test.sql`脚本。 此时，将命中断点，然后我们可以单步执行`GetProductsWithPriceLessThan`方法，检查输入参数的值等。
 
-
 [![点击 GetProductsWithPriceLessThan 方法中的断点](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image67.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image66.png)
 
 **图 28**:中的断点`GetProductsWithPriceLessThan`命中方法 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image68.png))
-
 
 为了使 SQL 数据库对象调试通过客户端应用程序，则必须将数据库配置为支持应用程序进行调试。 右键单击服务器资源管理器中的数据库，并确保选中应用程序调试选项。 此外，我们需要配置 ASP.NET 应用程序将与 SQL 调试器集成并禁用连接池。 以下步骤所述的步骤 2 中的详细信息[调试存储过程](debugging-stored-procedures-vb.md)教程。
 
@@ -479,50 +399,40 @@ SQL Server 项目轻松地创建、 编译和部署托管的数据库对象。 �
 
 若要演示这些任务，让我们来创建新托管存储的过程将返回这些产品的`UnitPrice`大于指定值。 创建名为你计算机上的新文件`GetProductsWithPriceGreaterThan.vb`和文件中输入下面的代码 （您可以使用 Visual Studio、 记事本或任何文本编辑器来实现此目的）：
 
-
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample17.vb)]
 
 此代码是几乎完全相同的`GetProductsWithPriceLessThan`步骤 5 中创建的方法。 唯一的区别是方法名称`WHERE`子句，并在查询中使用的参数名称。 回到`GetProductsWithPriceLessThan`方法，`WHERE`子句读取： `WHERE UnitPrice < @MaxPrice`。 此处，请在`GetProductsWithPriceGreaterThan`，我们使用： `WHERE UnitPrice > @MinPrice` 。
 
 现在，我们需要此类编译为程序集。 从命令行中，导航到保存位置的目录`GetProductsWithPriceGreaterThan.vb`文件，并使用 C# 编译器 (`csc.exe`) 若要将类文件编译到程序集：
 
-
 [!code-console[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample18.cmd)]
 
 如果包含 v 的文件夹`bc.exe`中不在系统 s `PATH`，需要将完全引用其路径`%WINDOWS%\Microsoft.NET\Framework\version\`，如下所示：
 
-
 [!code-console[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample19.cmd)]
-
 
 [![GetProductsWithPriceGreaterThan.vb 编译为程序集](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image70.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image69.png)
 
 **图 29**:编译`GetProductsWithPriceGreaterThan.vb`到程序集 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image71.png))
-
 
 `/t`标志指定 Visual Basic 类文件，应编译为 DLL （而非可执行文件）。 `/out`标志指定生成的程序集的名称。
 
 > [!NOTE]
 > 而不是编译`GetProductsWithPriceGreaterThan.vb`从命令行或者，可以使用的类文件[Visual Basic 速成版](https://msdn.microsoft.com/vstudio/express/vb/)或在 Visual Studio Standard Edition 中创建一个单独的类库项目。 S ren Jacob Lauritsen 请先将其提供的代码具有此类的 Visual Basic 速成版项目`GetProductsWithPriceGreaterThan`存储的过程和两个托管存储的过程和步骤 3、 5 和 10 中创建的 UDF。 S ren s 项目还包括添加相应的数据库对象所需的 T-SQL 命令。
 
-
 代码编译到程序集中，我们已准备好注册 SQL Server 2005 数据库中的程序集。 这可以通过 T-SQL，使用该命令执行`CREATE ASSEMBLY`，或通过 SQL Server Management Studio。 使用 Management Studio 让 s 焦点。
 
 从 Management Studio 中，展开 Northwind 数据库中的可编程性文件夹。 它的子文件夹之一是程序集。 若要手动将新的程序集添加到数据库中，右键单击程序集文件夹，并从上下文菜单中选择新的程序集。 新建程序集对话框中 （见图 30） 此显示。 单击浏览按钮，选择`ManuallyCreatedDBObjects.dll`我们只需编译，并单击确定以向数据库添加程序集的程序集。 不应看到`ManuallyCreatedDBObjects.dll`在对象资源管理器中的程序集。
-
 
 [![向数据库添加 ManuallyCreatedDBObjects.dll 程序集](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image73.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image72.png)
 
 **图 30**:添加`ManuallyCreatedDBObjects.dll`到数据库的程序集 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image74.png))
 
-
 ![在对象资源管理器中列出 ManuallyCreatedDBObjects.dll](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image75.png)
 
 **图 31**:`ManuallyCreatedDBObjects.dll`对象资源管理器中列出
 
-
 虽然我们已添加到 Northwind 数据库的程序集，我们还未将使用存储的过程相关联`GetProductsWithPriceGreaterThan`中程序集的方法。 若要完成此操作，打开新查询窗口并执行以下脚本：
-
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample20.sql)]
 
@@ -530,16 +440,13 @@ SQL Server 项目轻松地创建、 编译和部署托管的数据库对象。 �
 
 执行上述脚本之后, 刷新对象资源管理器中的存储过程文件夹。 你应看到新的存储的过程项目- `GetProductsWithPriceGreaterThan` -它具有一个锁状图标旁边。 若要测试此存储的过程，请输入，并在查询窗口中执行以下脚本：
 
-
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample21.sql)]
 
 如图 32 所示，上面的命令将显示与这些产品的信息`UnitPrice`大于 24.95 美元。
 
-
 [![在对象资源管理器中列出 ManuallyCreatedDBObjects.dll](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image77.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image76.png)
 
 **图 32**:`ManuallyCreatedDBObjects.dll`对象资源管理器中列出 ([单击以查看实际尺寸的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png))
-
 
 ## <a name="summary"></a>总结
 

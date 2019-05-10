@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 90705b897f5cb3787bae35b48057eaf66abde579
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7fc90f978b9f9eca511feca70a3c0d02ec69b940
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402162"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125516"
 ---
 # <a name="use-ajax-to-implement-mapping-scenarios"></a>使用 AJAX 实现映射方案
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步骤 11 显示了如何将 AJAX 映射支持集成到我们 NerdDinner 的应用程序，使得创建、 编辑或查看 dinners，若要以图形方式查看 dinner 的位置的用户。
 > 
 > 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
-
 
 ## <a name="nerddinner-step-11-integrating-an-ajax-map"></a>NerdDinner 步骤 11:将集成的 AJAX 映射
 

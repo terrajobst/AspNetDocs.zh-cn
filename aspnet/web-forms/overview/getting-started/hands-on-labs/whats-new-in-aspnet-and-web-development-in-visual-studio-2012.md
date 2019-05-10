@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80c77ec65ed86b06e417d3f6ba608e404c46768b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420206"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132091"
 ---
 # <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中 ASP.NET 和 Web 开发的新增功能
 
@@ -30,7 +30,6 @@ ms.locfileid: "59420206"
 > 此实验室将引导你通过前面所述通过将细微的更改应用于源文件夹中提供的示例 Web 应用的新功能和增强功能。
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 
@@ -70,7 +69,7 @@ ms.locfileid: "59420206"
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Whats_New_in_the_CSS_Editor"></a>
-### <a name="exercise-1-whats-new-in-the-css-editor"></a>练习 1:什么是 CSS 编辑器中的新增功能
+### <a name="exercise-1-whats-new-in-the-css-editor"></a>练习 1：什么是 CSS 编辑器中的新增功能
 
 Web 开发人员应熟悉许多与 CSS 编辑相关的困难。 CSS 样式的最大问题之一是跨浏览器兼容性。 经常会发生，将样式应用于你的站点之后, 您注意到它看起来不同如果打开另一个浏览器或设备中。 因此，您可能修复意识到，最后进行了它在一个浏览器中工作时它是在中无效，其他这些 visual 问题上花费相当长的时间。
 
@@ -204,7 +203,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Whats_New_in_the_HTML_Editor"></a>
-### <a name="exercise-2-whats-new-in-the-html-editor"></a>练习 2:什么是新的 HTML 编辑器
+### <a name="exercise-2-whats-new-in-the-html-editor"></a>练习 2：什么是新的 HTML 编辑器
 
 Visual Studio 提供了改进的 HTML 编辑器。 某些包含在此版本中的增强功能是 HTML 文档、 HTML5 代码段、 HTML 开始和结束标记匹配，和 HTML 验证的智能缩进。 在此练习中，会看到在网站标记中工作时，这些更改如何改善你熟练使用。
 
@@ -331,7 +330,6 @@ HTML 编辑器中的另一个改进是智能标记功能。 智能标记，使�
 > [!NOTE]
 > 在以前版本的 Visual Studio，提供智能缩进的 XML 编辑器中，但不是在 HTML 编辑器中。
 
-
 1. 请确保在 HTML 编辑器中的缩进配置设置为智能缩进。 为此，请选择**工具 |选项**菜单选项，然后选择**文本编辑器 |HTML |选项卡**屏幕的左窗格中的页面。 选择智能缩进选项。
 
     ![HTML 编辑器设置](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image33.png "HTML 编辑器设置")
@@ -433,7 +431,6 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
 > [!NOTE]
 > Visual Studio 2010 实现 ECMAStript3 法规遵从性，而 Visual Studio 2012 提供 ECMAScript5 法规遵从性。
 
-
 1. 打开**ECMA5script5.js**位于**Scripts\custom**项目文件夹。 现在，您将测试针对 ECMAScript5 标准的验证。
 
     [!code-html[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample8.html)]
@@ -494,11 +491,10 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
 > [!NOTE]
 > 请确保 GotoDefinition.js 保存该文件之前具有没有语法错误。
 
-
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Bundling_and_Minification"></a>
-### <a name="exercise-4-bundling-and-minification"></a>练习 4:捆绑和缩小
+### <a name="exercise-4-bundling-and-minification"></a>练习 4：捆绑和缩小
 
 多少次你的网站是否包含多个 JavaScript 或 CSS 文件？ 这是非常常见的方案的捆绑和缩小可帮助以减小文件大小并使站点执行速度更快。 ASP.NET 4.5 中的新绑定功能 JS 或 CSS 文件的一组包为单个元素，并通过缩小内容 （即删除不是必需的空白区域，删除注释，减少标识符） 来减小其大小。
 
@@ -675,7 +671,6 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
 
 > [!NOTE]
 > 此外，可以部署此应用程序到 Windows Azure Web Sites 以下[附录 b:ASP.NET MVC 4 应用程序使用 Web 部署发布](#AppendixB)。
-
 
 <a id="Summary"></a>
 ## <a name="summary"></a>总结

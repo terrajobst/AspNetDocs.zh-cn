@@ -8,12 +8,12 @@ ms.date: 02/27/2014
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 0ac1982a9476ea324f2faea0bf06f9406f9af1cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 11dc52ec79ca91119b37ea60e08164eb1b1d0e2b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59389318"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130307"
 ---
 # <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>更新、 删除和创建数据与模型绑定和 web 窗体
 
@@ -32,7 +32,6 @@ ms.locfileid: "59389318"
 > 本教程基于第一个中创建的项目[一部分](retrieving-data.md)在本系列。
 > 
 > 你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。 可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。
-
 
 ## <a name="what-youll-build"></a>你将生成
 

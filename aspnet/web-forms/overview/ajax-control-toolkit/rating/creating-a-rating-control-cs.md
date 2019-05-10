@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa118b4d733d7848b838f80e9918d62ae60033af
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1fde131086d4fb29c499f7f7c6281153c2766166
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378970"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125066"
 ---
 # <a name="creating-a-rating-control-c"></a>创建分级控件 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59378970"
 [下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.cs.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0CS.pdf)
 
 > 很多网站，电子商务到社区站点，从其用户提供到速率项目或项。 这通常需要一些编码工作，但我们确实为我们提供有控件工具包。
-
 
 ## <a name="overview"></a>概述
 
@@ -64,7 +63,6 @@ ms.locfileid: "59378970"
 [!code-aspx[Main](creating-a-rating-control-cs/samples/sample5.aspx)]
 
 保存页面，并将其加载到你的浏览器。 将鼠标悬停 （最初为空） 分级项，当 JavaScript 效果：分级的更改。 单击组星级，保留当前的分级。 最后，当用户提交窗体，服务器端代码将输出的所选的分级。
-
 
 [![创建具有最少的代码的分级系统](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
 

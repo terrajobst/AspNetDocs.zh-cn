@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: ecd5a4de-beb7-4d1d-bbbb-e31003633267
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ccd265f0aa4e9e12dfa19b48f4715e498a429ece
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8805f874b7c686cecde02629cf1ea8406663ff2a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402072"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133135"
 ---
 # <a name="precompiling-your-website-c"></a>预编译网站 (C#)
 
@@ -23,14 +23,12 @@ ms.locfileid: "59402072"
 
 > Visual Studio 为 ASP.NET 开发人员提供了两种类型的项目：Web 应用程序项目 (Wap) 和网站项目 (Wsp)。 两种项目类型之间的主要差异之一是 Wap 必须具有而 WSP 中的代码自动编译 web 服务器上，在部署之前显式编译的代码。 但是，就可以在部署之前 WSP 预编译。 本教程探讨了预编译的优势，并演示如何预编译网站从 Visual Studio 中和从命令行。
 
-
 ## <a name="introduction"></a>介绍
 
 Visual Studio 为 ASP.NET 开发人员提供了两种不同的项目类型：Web 应用程序项目 (WAP) 和网站项目 (WSP)。 这些项目类型之间的主要区别之一是，需要 Wap*显式编译*而使用 Wsp*自动编译*，默认情况下。 使用 Wap，web 应用程序的代码编译为单个程序集，在网站中创建`Bin`文件夹。 部署需要复制标记内容 ( `.aspx.ascx`，并`.master`文件) 在项目中的程序集以及`Bin`文件夹; 代码隐藏类文件本身不需要部署。 但是，通过将标记页面和其相应的代码隐藏类复制到生产环境部署 Wsp。 Web 服务器上按需编译的代码隐藏类。
 
 > [!NOTE]
 > 引用的"显式编译与自动编译"一节中[*确定哪些文件需要将部署到*教程](determining-what-files-need-to-be-deployed-cs.md)的更多背景上项目之间的差异模型、 显式和自动编译和编译模型如何影响部署。
-
 
 自动编译选项是易于使用。 没有任何显式编译步骤，并且文件已修改需要部署，而显式编译要求部署已更改的标记页和只是编译的程序集。 但是，自动部署具有两个潜在的缺点：
 
@@ -49,7 +47,6 @@ Visual Studio 为 ASP.NET 开发人员提供了两种不同的项目类型：Web
 
 > [!NOTE]
 > 在使用自动编译，因为它需要一段时间来编译页面的代码并将保存到生成的程序集的服务器的站点中的第一次 （或第一次由于它被更改） 请求页时如您所料，是连接期间的轻微延迟磁盘。
-
 
 简单地说，与显式编译需要编译网站的源代码，然后再进行部署，无需执行该步骤中保存运行时。 与自动编译运行时处理页面第一次访问编译的页的源代码，但稍有初始化成本，其创建后或上次更新时间。
 
@@ -70,7 +67,6 @@ Visual Studio 为 ASP.NET 开发人员提供了两种不同的项目类型：Web
 > [!NOTE]
 > 有关就地预编译的详细信息，请参阅[How To:预编译 ASP.NET 网站](https://msdn.microsoft.com/library/ms227972.aspx)并[ASP.NET 2.0 中的预编译](http://www.odetocode.com/Articles/417.aspx)。
 
-
 而不是编译到的网站中的页`Temporary ASP.NET Files`文件夹中，为部署的预编译会编译到所选的和一种格式，可以部署到生产环境中的目录页面。
 
 有两种类型的预编译为我们在本教程中探讨的部署： 预编译使用的可更新用户界面，并利用非可更新用户界面的预编译。 使用的可更新用户界面的预编译离开中的声明性标记`.aspx`， `.ascx`，和`.master`文件，从而允许开发人员能够查看，如有需要，修改生产服务器上的声明性标记。 使用非可更新用户界面的预编译生成`.aspx`页的任何内容并删除 void`.ascx`和`.master`文件，从而隐藏在声明性标记和禁止开发人员从其进行更改生产环境。
@@ -88,7 +84,6 @@ Visual Studio 为 ASP.NET 开发人员提供了两种不同的项目类型：Web
 
 > [!NOTE]
 > 生成菜单中的发布网站选项不可用在 Visual Web Developer。 如果您使用的 Visual Web Developer 需要使用 ASP.NET 编译工具，它在"预编译命令行中的"部分中介绍的命令行版本。
-
 
 在预编译网站后, 导航到在发布网站对话框中输入的目标位置。 请花费片刻时间进行比较的你的网站的内容与此文件夹的内容。 **图 2**显示书评网站文件夹。 请注意它同时包含`.aspx`和`.aspx.cs`文件。 另请注意，`Bin`目录中只有一个文件，包括`Elmah.dll`，我们在添加[前面的教程](logging-error-details-with-elmah-cs.md)
 
@@ -108,7 +103,6 @@ Visual Studio 为 ASP.NET 开发人员提供了两种不同的项目类型：Web
 
 > [!NOTE]
 > 您可以指示编译工具来创建每个 ASP.NET 页、 用户控件或母版页的一个程序集从发布网站对话框中的"使用固定命名和单页程序集"复选框。 使每个 ASP.NET 页面编译到自己的程序集可以更加精细地控制部署。 例如，如果你已更新单个 ASP.NET 网页，且需要来部署所做的更改，你需要仅部署该页面的`.aspx`文件和关联的程序集到生产环境。 请查阅[如何：生成具有 ASP.NET 编译工具的固定名称](https://msdn.microsoft.com/library/ms228040.aspx)有关详细信息。
-
 
 目标位置目录还包含一个文件，即未预编译的 web 项目的一部分`PrecompiledApp.config`。 此文件告知应用程序进行预编译的 ASP.NET 运行时且是否它进行预编译可更新或中午可更新 ui。
 

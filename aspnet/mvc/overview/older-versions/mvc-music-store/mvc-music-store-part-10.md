@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 0c6e4c2f-fcdb-4978-9656-1990c6f15727
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 msc.type: authoredcontent
-ms.openlocfilehash: 48404f449ce2641bdff55b9ad75aa5eec1aee46b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f701d1fbabc3e1a97c3750d00e96bf8dba1105cd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403293"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129714"
 ---
 # <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>第 10 部分：导航和站点设计及结束语的最终更新
 
@@ -24,7 +24,6 @@ ms.locfileid: "59403293"
 > MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
 >   
 > 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 10 部分介绍如何导航和站点设计，结束语的最终更新。
-
 
 我们已经为我们的站点，完成所有主要功能，但我们仍有一些功能，可添加到 site navigation — 站点导航、 主页页面和应用商店浏览页。
 
@@ -133,7 +132,6 @@ CartSummary 分部视图是非常简单-只是一个链接到购物车索引视�
 ## <a name="conclusion"></a>结束语
 
 我们所见，ASP.NET MVC 可以轻松创建复杂的网站具有数据库访问，成员身份，AJAX，等等。 很快就会变。 希望本教程提供若要开始构建你自己的 ASP.NET MVC 应用程序所需的工具 ！
-
 
 > [!div class="step-by-step"]
 > [上一篇](mvc-music-store-part-9.md)

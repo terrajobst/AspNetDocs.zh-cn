@@ -8,12 +8,12 @@ ms.date: 07/25/2013
 ms.assetid: f8157be1-4ab9-469e-ad3a-0ccc80b56c00
 msc.legacyurl: /whitepapers/aspnet-data-access-content-map
 msc.type: content
-ms.openlocfilehash: d120c184f6cf7dd0db075bbfac17214d7467664a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1bb5c15f8b34c516dcc2d3c5723eb74b133a9188
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383715"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125694"
 ---
 # <a name="aspnet-data-access---recommended-resources"></a>ASP.NET 数据访问 - 推荐的资源
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383715"
 > 如果您知道很好的博客文章[堆栈溢出](http://stackoverflow.com)线程或都非常有用，任何其他链接[向我们发送一封电子邮件](mailto:aspnetue@microsoft.com?subject=Data Access Content Map)与链接。
 > 
 > 上次更新： 2014 年 4 月 3 日
-
 
 本主题包含以下各节：
 
@@ -74,7 +73,6 @@ ms.locfileid: "59383715"
 <a id="cf"></a>
 
 ### <a name="using-entity-framework-code-first"></a>使用实体框架 Code First
-  
 
 以下教程提供了可下载的示例应用程序：
 
@@ -94,7 +92,6 @@ ms.locfileid: "59383715"
 <a id="efcfmigrations"></a>
 
 ### <a name="using-entity-framework-code-first-migrations"></a>使用 Entity Framework Code First 迁移
-  
 
 大多数代码优先封面迁移上面列出的教程。 另请参阅以下资源。
 

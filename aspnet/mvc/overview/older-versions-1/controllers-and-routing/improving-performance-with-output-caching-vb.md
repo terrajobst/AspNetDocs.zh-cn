@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b713b56e149f196794b3223ba88e3b41bf3e34c4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405620"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123376"
 ---
 # <a name="improving-performance-with-output-caching-vb"></a>通过输出缓存提升性能 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教程中，您学习如何你可以显著提升性能的 ASP.NET MVC web 应用程序通过利用的输出缓存。 了解如何缓存，以便相同的内容不需要创建新用户调用该操作的每个时间的控制器操作返回的结果。
-
 
 本教程的目的是说明如何可以极大地改善性能 ASP.NET MVC 应用程序通过利用输出缓存。 输出缓存可以缓存由控制器操作返回的内容。 这样一来，相同的内容不需要为其生成每个调用相同的控制器操作的时间。
 
@@ -36,9 +35,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
-
 在 ASP.NET MVC 的 Beta 版本中，输出缓存不适合的 URL，如[ http://www.MySite.com/ ](http://www.mysite.com/)。 相反，您必须输入的 URL，如[ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index)。
-
 
 在列表 1 中，index （） 操作的输出缓存 10 秒。 如果您愿意，可以指定更长的时间的缓存持续时间。 例如，如果你想要缓存的一天的控制器操作输出则可以指定缓存持续时间为 86400 秒 (60 秒\*60 分钟\*24 小时)。
 
@@ -79,7 +76,6 @@ by [Microsoft](https://github.com/microsoft)
 > ·无
 > 
 > · ServerAndClient
-
 
 默认情况下，位置属性具有值 Any。 但是，有些情况下在其中可能要缓存仅在浏览器上或只能在服务器上。 例如，如果缓存的每个用户进行个性化设置的信息然后不应缓存在服务器上的信息。 如果您要为不同的用户显示不同的信息，则应缓存仅在客户端上的信息。
 
@@ -136,7 +132,6 @@ Details() 操作包括具有值"Id"的 VaryByParam 属性。 如果不同的 Id 
 > none = 从不创建不同的缓存的版本
 > 
 > 以分号的参数列表 = 创建不同的缓存的版本，只要任何窗体或查询字符串参数列表中各不相同
-
 
 #### <a name="creating-a-cache-profile"></a>创建缓存配置文件
 

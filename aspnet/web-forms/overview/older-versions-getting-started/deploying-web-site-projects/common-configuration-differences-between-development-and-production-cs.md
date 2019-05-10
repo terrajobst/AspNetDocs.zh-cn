@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: 721a5c37-7e21-48e0-832e-535c6351dcae
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b9d4ed08ea1e8429c1895d0631e1acac9c7eaba9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 265243a54eb5ab28a7f76d2df32a9442d61862a5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391450"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130653"
 ---
 # <a name="common-configuration-differences-between-development-and-production-c"></a>开发和生产之间的常见配置差异 (C#)
 
@@ -23,9 +23,7 @@ ms.locfileid: "59391450"
 
 > 在之前的教程，我们通过将所有相关文件从开发环境复制到生产环境中部署了我们的网站。 但是，不会配置差异，这使得每个环境有一个唯一的 Web.config 文件，需要在环境之间出现不常见。 本教程中检查典型配置差异，并维护单独的配置信息的策略。
 
-
 ## <a name="introduction"></a>介绍
-
 
 最后两个教程介绍了如何部署简单的 web 应用程序。 [*使用 FTP 客户端部署站点*](deploying-your-site-using-an-ftp-client-cs.md)教程介绍了如何使用独立的 FTP 客户端将所需的文件复制到生产的开发环境。 前面的教程[*部署您站点使用的 Visual Studio*](deploying-your-site-using-visual-studio-cs.md)、 给出了部署使用 Visual Studio 复制网站工具和发布选项。 在这两篇教程在生产环境中的每个文件是文件的在开发环境上的副本。 但是，不常见的开发环境中这些不同于在生产环境中的配置文件。 Web 应用程序的配置存储在`Web.config`文件，并通常包括有关外部资源，例如数据库、 web 和电子邮件服务器的信息。 它还规定了某些情况下，例如的未经处理的异常发生时要采取的操作过程中的应用程序的行为。
 
@@ -40,7 +38,6 @@ ms.locfileid: "59391450"
 > [!NOTE]
 > 将来的教程探索部署数据驱动的应用程序，此时我们将深入了解如何在配置文件中存储数据库连接字符串的详细信息。
 
-
 开发和生产环境的预期的行为与显著不同。 在开发环境中的 web 应用程序正在创建、 测试和调试由一组少量开发人员。 在生产环境中的许多不同的并发用户正在访问同一应用程序。 ASP.NET 提供了一些功能，可帮助开发人员在测试和调试应用程序，但应为性能和安全原因，在生产环境中的禁用这些功能。 我们来看几个此类配置设置。
 
 ### <a name="configuration-settings-that-impact-performance"></a>影响性能的配置设置
@@ -51,7 +48,6 @@ ASP.NET 页面访问时第一次 （或第一次更改后），必须将其声�
 
 > [!NOTE]
 > `WebResource.axd` 内置 HTTP 处理程序中引入了 ASP.NET 2.0 服务器控件用于检索嵌入的资源，例如脚本文件、 图像、 CSS 文件和其他内容。 详细了解如何`WebResource.axd`的工作原理以及如何使用它来访问嵌入的资源从自定义服务器控件，请参阅[访问嵌入的资源通过 URL 使用`WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)。
-
 
 `<compilation>`元素的`debug`属性通常设置为"true"，在开发环境中。 实际上，此属性必须设置为"true"才能调试 web 应用程序;如果你尝试调试 ASP.NET 应用程序从 Visual Studio 和`debug`属性设置为"false"，Visual Studio 将显示一个消息，其中说明无法直到调试应用程序`debug`属性设置为"true"，并将产品/服务为你进行此更改。
 
@@ -71,7 +67,6 @@ ASP.NET 页面访问时第一次 （或第一次更改后），必须将其声�
 
 > [!NOTE]
 > 默认值`<customErrors>`部分设置显示异常详细信息消息仅当页正在访问通过本地主机，并将否则显示通用运行时错误页。 这并不理想，但它确保要知道的默认行为不会显示对非本地的访客的异常详细信息。 将来的教程会说明`<customErrors>`中更多详细信息部分，并演示如何在自定义错误页面中所示在生产环境中发生的错误。
-
 
 跟踪在开发期间非常有用的另一种 ASP.NET 功能。 跟踪，如果启用，记录有关每个传入请求的信息，并提供特殊网页`Trace.axd`，以查看最近的请求详细信息。 可以启用和配置跟踪通过[`<trace>`元素](https://msdn.microsoft.com/library/6915t83k.aspx)中`Web.config`。
 
@@ -111,7 +106,6 @@ ASP.NET 页面访问时第一次 （或第一次更改后），必须将其声�
 
 > [!NOTE]
 > 不能使用 Visual Web Developer 使用 Web 部署项目，因为 Web 部署项目实现为 Visual Studio 外接程序和 Visual Studio 速成版 （包括 Visual Web Developer） 不支持外接程序。
-
 
 ## <a name="summary"></a>总结
 

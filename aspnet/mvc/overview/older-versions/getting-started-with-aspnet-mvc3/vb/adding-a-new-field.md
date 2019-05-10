@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: 28970e1b-1845-4015-86ef-121e52a6c397
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 387c0ab407df2badfd8ff848b6a13c68769fbba7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c723134e829da23db8a43ef228db47ce9826f3e8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379854"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129983"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>向电影模型和数据库表添加新字段 (VB)
 
@@ -28,7 +28,6 @@ ms.locfileid: "59379854"
 > 如果您使用 Visual Studio 2010 而不 Visual Web Developer 2010，请通过单击以下链接安装必备组件：[Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
 > 可随附于此项目具有 VB.NET 源代码的 Visual Web Developer 项目。 [下载 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您愿意 C#，切换到[C# 版本](../cs/adding-a-new-field.md)本教程。
-
 
 在本部分将对模型类进行一些更改，并了解如何更新数据库架构以匹配的模型更改。
 
@@ -80,7 +79,6 @@ ms.locfileid: "59379854"
 > [!NOTE] 
 > 
 > **警告**应该启用的自动删除并重新创建数据库，仅当你正在使用开发或测试数据库，这种方法和 *永远不会* 包含实际数据的生产数据库上。 使用生产服务器上可能会导致数据丢失。
-
 
 在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。
 

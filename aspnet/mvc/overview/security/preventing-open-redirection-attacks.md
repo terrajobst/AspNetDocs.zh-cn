@@ -8,19 +8,18 @@ ms.date: 02/27/2014
 ms.assetid: 69fb02e0-f5b7-4c35-878c-fa87164fc785
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 1d83ede97ec37166d8dec32ff9e21c65423f3fc5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cfa635d4fd14d031993c5b452325cbe334f82dc2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408480"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126439"
 ---
 # <a name="preventing-open-redirection-attacks-c"></a>阻止打开重定向攻击 (C#)
 
 通过[Jon Galloway](https://github.com/jongalloway)
 
 > 本教程介绍了如何在 ASP.NET MVC 应用程序中阻止打开重定向攻击。 本教程讨论在 AccountController 中在 ASP.NET MVC 3 中所做的更改，并演示如何在现有的 ASP.NET MVC 1.0 和 2 个应用程序中应用这些更改。
-
 
 ## <a name="what-is-an-open-redirection-attack"></a>打开重定向攻击是什么？
 

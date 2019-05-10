@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: cbebeb37-2594-41f2-b71a-f4f26520d512
 msc.legacyurl: /web-api/overview/error-handling/exception-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 08b3663c1f9a08b8b3600113c32aeffb36c0d990
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dbdbab6aefec840e2fec9e9cd33f3d124093750e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399315"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125306"
 ---
 # <a name="exception-handling-in-aspnet-web-api"></a>ASP.NET Web API 中的异常处理
 
@@ -49,7 +49,6 @@ ms.locfileid: "59399315"
 
 > [!NOTE]
 > ASP.NET Web API 中的异常筛选器是 ASP.NET MVC 中类似的。 但是，它们是在一个单独的命名空间和函数中单独声明。 具体而言， **HandleErrorAttribute**在 MVC 中使用的类不处理由 Web API 控制器引发的异常。
-
 
 下面是将转换的筛选器**NotImplementedException**异常转化为 HTTP 状态代码 501，未实现：
 

@@ -8,12 +8,12 @@ ms.date: 04/01/2008
 ms.assetid: 041854a5-ea8c-4de0-82f1-121ba6cb2893
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f6ade517bda60ac0f44811853ee9b9d06070091
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 05b82451fd3dc859109160dd6b8358c568194100
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384170"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126836"
 ---
 # <a name="unlocking-and-approving-user-accounts-vb"></a>解锁和审批用户帐户 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384170"
 [下载代码](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/VB.14.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial14_UnlockAndApprove_vb.pdf)
 
 > 本教程演示如何生成某一网页寻求管理员可以管理用户的锁定和批准状态。 我们还将了解如何批准新用户，仅后他们验证其电子邮件地址。
-
 
 ## <a name="introduction"></a>介绍
 
@@ -41,18 +40,15 @@ ms.locfileid: "59384170"
 > [!NOTE]
 > 如果你已下载的代码<a id="Tutorial13"> </a> [*恢复和更改密码*](recovering-and-changing-passwords-vb.md)教程，您可能已经注意到，`ManageUsers.aspx`页已包含的一组"管理"链接和`UserInformation.aspx`页会提供一个接口更改选定的用户的密码。 我决定不复制该功能在代码中与本教程中，因为它通过绕过成员身份 API 和操作直接与要更改用户的密码的 SQL Server 数据库的工作。 本教程开始使用从头`UserInformation.aspx`页。
 
-
 ### <a name="adding-manage-links-to-theuseraccountsgridview"></a>添加"管理"链接到`UserAccounts`GridView
 
 打开`ManageUsers.aspx`页上，添加到 HyperLinkField `UserAccounts` GridView。 设置 HyperLinkField`Text`属性设置为"管理"并将其`DataNavigateUrlFields`并`DataNavigateUrlFormatString`属性设置为`UserName`和"UserInformation.aspx?user={0}"分别。 这些设置以便所有超链接显示文本"管理"，但每个链接会将传递在相应配置 HyperLinkField*用户名*到查询字符串值。
 
 添加后 HyperLinkField 到 GridView，花点时间查看`ManageUsers.aspx`通过浏览器的页。 如图 1 所示，每个 GridView 行现在包括"管理"链接。 Bruce 的"管理"链接指向`UserInformation.aspx?user=Bruce`，而 Dave 的"管理"链接指向`UserInformation.aspx?user=Dave`。
 
-
 [![添加了 HyperLinkField](unlocking-and-approving-user-accounts-vb/_static/image2.png)](unlocking-and-approving-user-accounts-vb/_static/image1.png)
 
 **图 1**:HyperLinkField 将为每个用户帐户添加的"管理"链接 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-vb/_static/image3.png))
-
 
 创建用户界面，并为代码`UserInformation.aspx`页中时刻，但首先让我们讨论有关如何以编程方式更改用户的锁定和批准状态。 [ `MembershipUser`类](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)具有[ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx)并[`IsApproved`属性](https://msdn.microsoft.com/library/system.web.security.membershipuser.isapproved.aspx)。 `IsLockedOut`属性是只读的。 没有任何机制来以编程方式锁定用户;若要解锁用户，请使用`MembershipUser`类的[`UnlockUser`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)。 `IsApproved`属性是可读和可写。 若要保存对此属性的任何更改，我们需要调用`Membership`类的[`UpdateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)，并传入已修改`MembershipUser`对象。
 
@@ -71,11 +67,9 @@ ms.locfileid: "59384170"
 
 添加这些控件之后, 在 Visual Studio 中的设计视图应类似于屏幕截图图 2 中。
 
-
 [![创建 UserInformation.aspx 的用户界面](unlocking-and-approving-user-accounts-vb/_static/image5.png)](unlocking-and-approving-user-accounts-vb/_static/image4.png)
 
 **图 2**:创建的用户界面`UserInformation.aspx`([单击以查看实际尺寸的图像](unlocking-and-approving-user-accounts-vb/_static/image6.png))
-
 
 用户界面完成后，我们的下一个任务是设置`IsApproved`复选框和其他控件根据所选的用户的信息。 创建页面的一个事件处理程序`Load`事件，并添加以下代码：
 
@@ -97,29 +91,23 @@ ms.locfileid: "59384170"
 
 在发生这些事件处理程序，与重新访问该页和未批准的用户。 图 3 所示，你应该看到一条消息，指示在页上用户的简短`IsApproved`已成功修改属性。
 
-
 [![Chris 已被未批准](unlocking-and-approving-user-accounts-vb/_static/image8.png)](unlocking-and-approving-user-accounts-vb/_static/image7.png)
 
 **图 3**:Chris 已被未批准 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-vb/_static/image9.png))
 
-
 接下来，先注销，然后重试以用户身份登录其帐户时只是未批准。 用户未获批准，因为它们不能登录。 默认情况下，Login 控件显示同一消息，如果用户无法登录，无论是什么原因。 但在<a id="Tutorial6"> </a> [*验证用户凭据对成员身份用户存储*](../membership/validating-user-credentials-against-the-membership-user-store-vb.md)教程探讨了增强登录控件以显示更合适的消息。 如图 4 所示，Chris 是显示一条消息说明，他不能成功登录，因为他的帐户尚未批准。
-
 
 [![Chris 不能登录因为 His 帐户未批准](unlocking-and-approving-user-accounts-vb/_static/image11.png)](unlocking-and-approving-user-accounts-vb/_static/image10.png)
 
 **图 4**:Chris 不能登录因为 His 帐户是否未批准 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-vb/_static/image12.png))
 
-
 若要测试的锁定的功能，请尝试作为已批准用户，登录，但使用了错误的密码。 重复此过程所需数量的次多次，直至用户的帐户已锁定。Login 控件也已更新为显示自定义消息如果尝试从锁定的帐户登录。 您知道，帐户已锁定后，开始看到在登录页上的以下消息："你的帐户已锁定由于无效的登录尝试次数太多。 请与管理员联系以解锁帐户。"
 
 返回到`ManageUsers.aspx`页上，单击管理链接为锁定状态的用户。 图 5 所示，你应该看到中的值`LastLockedOutDateLabel`应启用解锁用户按钮。 单击解除锁定用户按钮以解锁用户帐户。 一旦解锁用户，他们将能够再次登录。
 
-
 [![Dave 锁定系统](unlocking-and-approving-user-accounts-vb/_static/image14.png)](unlocking-and-approving-user-accounts-vb/_static/image13.png)
 
 **图 5**:Dave 具有已锁定的系统 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-vb/_static/image15.png))
-
 
 ## <a name="step-2-specifying-new-users-approved-status"></a>步骤 2：指定新用户的批准状态
 
@@ -129,7 +117,6 @@ ms.locfileid: "59384170"
 
 > [!NOTE]
 > 默认情况下 CreateUserWizard 控件自动登录新用户帐户。 此行为由该控件的指定[`LoginCreatedUser`属性](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.createuserwizard.logincreateduser.aspx)。 未批准的用户无法登录到站点，因为当`DisableCreatedUser`是`True`新的用户帐户未登录到站点，而不考虑值`LoginCreatedUser`属性。
-
 
 如果要以编程方式创建新用户帐户通过`Membership.CreateUser`方法中，若要创建的未批准的用户帐户使用接受新用户的重载之一`IsApproved`作为输入参数的属性值。
 
@@ -148,7 +135,6 @@ ms.locfileid: "59384170"
 > [!NOTE]
 > 若要使用`MailDefinition`中的属性需要指定邮件传递选项`Web.config`。 有关详细信息，请参阅[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)。
 
-
 首先，创建一个名为的新电子邮件模板`CreateUserWizard.txt`在`EmailTemplates`文件夹。 模板使用以下文本：
 
 [!code-aspx[Main](unlocking-and-approving-user-accounts-vb/samples/sample3.aspx)]
@@ -165,15 +151,12 @@ ms.locfileid: "59384170"
 
 实际效果是新用户未批准的这意味着它们不能登录到网站。 此外，它们将自动发送包含链接的电子邮件到的验证 URL （请参阅图 6）。
 
-
 [![新用户会收到包含验证 URL 的链接的电子邮件](unlocking-and-approving-user-accounts-vb/_static/image17.png)](unlocking-and-approving-user-accounts-vb/_static/image16.png)
 
 **图 6**:新用户会收到一封电子邮件，其中包含指向验证 URL ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-vb/_static/image18.png))
 
-
 > [!NOTE]
 > CreateUserWizard 控件的默认 CreateUserWizard 步骤才会显示一条消息，告知的用户其帐户已创建并显示继续按钮。 单击此将用户转到由该控件的指定的 URL`ContinueDestinationPageUrl`属性。 在 CreateUserWizard`EnhancedCreateUserWizard.aspx`配置为发送新用户添加到`~/Membership/AdditionalUserInfo.aspx`，此时会提示用户输入其家乡，主页 URL 和签名。 因为此信息只能通过登录的用户，所以应该更新此属性，以向用户发送回站点的主页 (`~/Default.aspx`)。 此外，`EnhancedCreateUserWizard.aspx`应增加页面或 CreateUserWizard 步骤向用户通知它们已发送验证电子邮件和不会激活其帐户，直到它们按照此电子邮件中的说明。 我将这些修改作为练习留给读者。
-
 
 ### <a name="creating-the-verification-page"></a>创建验证页
 
@@ -187,11 +170,9 @@ ms.locfileid: "59384170"
 
 图 7 显示了`Verification.aspx`页上通过浏览器访问时。
 
-
 [![新用户的帐户是现在批准](unlocking-and-approving-user-accounts-vb/_static/image20.png)](unlocking-and-approving-user-accounts-vb/_static/image19.png)
 
 **图 7**:新用户的帐户是现在批准 ([单击此项可查看原尺寸图像](unlocking-and-approving-user-accounts-vb/_static/image21.png))
-
 
 ## <a name="summary"></a>总结
 

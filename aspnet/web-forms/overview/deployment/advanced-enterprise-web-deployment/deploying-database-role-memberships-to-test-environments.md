@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 9b2af539-7ad9-47aa-b66e-873bd9906e79
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: fd0914ed62a280fea290b9f1b150fc25c8ed6d40
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a15f5bf5f659d151e91ef9e53c5ad55bcd8e2b01
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385327"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130399"
 ---
 # <a name="deploying-database-role-memberships-to-test-environments"></a>将数据库角色成员身份部署到测试环境
 
@@ -32,7 +32,6 @@ ms.locfileid: "59385327"
 > 在此方案中，通常很有利，可自动创建数据库用户并分配数据库角色成员身份作为部署过程的一部分。
 > 
 > 关键因素是，此操作需要是有条件的目标环境。 如果要部署到过渡或生产环境中，你想要跳过该操作。 如果要部署到开发人员或测试环境，你想要部署而无需进一步干预的角色成员身份。 本主题介绍可用于解决这一难题的一种方法。
-
 
 本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
 
@@ -79,13 +78,10 @@ ms.locfileid: "59385327"
 
 理想情况下，在部署数据库项目时将作为后期部署脚本的一部分运行任何所需的 TRANSACT-SQL 脚本。 但是，部署后脚本不允许你执行有条件地根据解决方案配置或生成属性的逻辑。 替代方法是通过创建直接从 MSBuild 项目文件中，运行您的 SQL 脚本**目标**执行 sqlcmd.exe 命令的元素。 此命令可用于目标数据库上运行脚本：
 
-
 [!code-console[Main](deploying-database-role-memberships-to-test-environments/samples/sample2.cmd)]
-
 
 > [!NOTE]
 > Sqlcmd 命令行选项的详细信息，请参阅[sqlcmd 实用工具](https://msdn.microsoft.com/library/ms162773.aspx)。
-
 
 在 MSBuild 目标中嵌入此命令之前，需要考虑在什么条件下你想要运行的脚本：
 
@@ -100,15 +96,11 @@ ms.locfileid: "59385327"
 
 在特定于环境的项目文件中，您需要定义数据库服务器名称、 目标数据库名称和一个布尔属性，使用户可以指定是否部署角色成员身份。
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample3.xml)]
-
 
 在通用项目文件中，你需要提供 sqlcmd 可执行文件的位置以及你想要运行的 SQL 脚本的位置。 这些属性将保持不变而不考虑目标环境。 此外需要创建一个 MSBuild 目标执行 sqlcmd 命令。
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample4.xml)]
-
 
 请注意将 sqlcmd 可执行文件的位置添加作为静态属性，因为这可能是到其他目标很有用。 与此相反，您定义 SQL 脚本的位置和 sqlcmd 命令的语法在目标内的动态属性作为它们将不会需要之前执行该目标。 在这种情况下， **DeployTestDBPermissions**满足这些条件时，才会执行目标：
 
@@ -117,9 +109,7 @@ ms.locfileid: "59385327"
 
 最后，别忘了调用目标。 在中*Publish.proj*文件中，您可以执行此操作通过将目标添加到默认值的依赖项列表**FullPublish**目标。 您需要确保**DeployTestDBPermissions**之前未执行目标**PublishDbPackages**执行目标。
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample5.xml)]
-
 
 ## <a name="conclusion"></a>结束语
 

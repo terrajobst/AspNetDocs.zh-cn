@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: c5c14ef0-c128-4dc1-8c01-7f0fdb09e411
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 63930ebe35e4c37e0cc7c0882582c48348cf201a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1912a36c19b27993e2bf17368d671d5a3b7f6450
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417658"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130033"
 ---
 # <a name="improving-the-details-and-delete-methods-vb"></a>改进 Details 和 Delete 方法 (VB)
 
@@ -28,7 +28,6 @@ ms.locfileid: "59417658"
 > 如果您使用 Visual Studio 2010 而不 Visual Web Developer 2010，请通过单击以下链接安装必备组件：[Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
 > 可随附于此项目具有 VB.NET 源代码的 Visual Web Developer 项目。 [下载 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您愿意 C#，切换到[C# 版本](../cs/improving-the-details-and-delete-methods.md)本教程。
-
 
 在本教程的此部分中，您将进行自动生成的一些改进`Details`和`Delete`方法。 这些更改不是必需的但有几个小位的代码，可以轻松地增强应用程序。
 

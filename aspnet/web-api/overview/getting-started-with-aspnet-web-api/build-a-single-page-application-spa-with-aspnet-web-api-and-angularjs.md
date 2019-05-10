@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f093e348216750cbadb6e52f524e5edd4d6c498
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 86833a890da759e489dd11dc9afb128a9b7a75e3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390267"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125260"
 ---
 # <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)
 
@@ -34,7 +34,6 @@ ms.locfileid: "59390267"
 > 
 > 
 > 在 Web 训练营培训工具包中，可在包含所有示例代码和代码段[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
-
 
 ## <a name="overview"></a>概述
 
@@ -66,7 +65,6 @@ ms.locfileid: "59390267"
 > [!NOTE]
 > 请确保您运行安装程序之前已为此实验室的所有依赖项。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用代码片段
 
@@ -74,7 +72,6 @@ ms.locfileid: "59390267"
 
 > [!NOTE]
 > 每个练习均附带位于中的开始解决方案**开始**本练习，您可以按照独立于其他每个练习的文件夹。 请注意在练习期间添加的代码片段缺少这些开始解决方案中，并且可能无法工作，直到完成该练习。 在练习的源代码，您将发现**最终**包含具有无法完成相应练习中的步骤得到的代码的 Visual Studio 解决方案文件夹。 如果您在演练本动手实验需要更多帮助，可以使用这些解决方案作为指南。
-
 
 ---
 
@@ -91,9 +88,8 @@ ms.locfileid: "59390267"
 > [!NOTE]
 > 在首次启动 Visual Studio，您必须选择一个预定义的设置集合。 每个预定义的集合旨在符合特定的开发风格，并确定窗口布局、 编辑器行为、 IntelliSense 代码段和对话框选项。 此实验中的过程描述了完成给定的任务在 Visual Studio 中使用时所需的操作**常规开发设置**集合。 如果您为您的开发环境选择不同的设置集合，可能会中应考虑到的步骤有所不同。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-creating-a-web-api"></a>练习 1:创建 Web API
+### <a name="exercise-1-creating-a-web-api"></a>练习 1：创建 Web API
 
 SPA 的关键部分之一是服务层。 它负责处理的 UI 和返回数据，以响应该调用发送的 Ajax 调用。 为了进行分析和使用的客户端计算机可读格式显示检索到的数据。
 
@@ -251,7 +247,6 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 > 
 > ![Internet Explorer 选项](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image9.png)
 
-
 1. 按**F5**运行该解决方案。 **登录**页应显示在浏览器中。
 
     > [!NOTE]
@@ -296,7 +291,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 8. 返回到 Visual Studio 并按**SHIFT + F5**以停止调试。
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-creating-the-spa-interface"></a>练习 2:创建 SPA 接口
+### <a name="exercise-2-creating-the-spa-interface"></a>练习 2：创建 SPA 接口
 
 在此练习中您将首先生成的极客测验，web 前端部分将重点放在单页面应用程序交互使用**AngularJS**。 然后将增强 CSS3 执行丰富的动画，并提供可视化效果的上下文切换到下一个问题从转换时的用户体验。
 
@@ -309,7 +304,6 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
 > [!NOTE]
 > 有关 AngularJS 的详细信息，请参阅[ [ http://angularjs.org/ ](http://angularjs.org/) ](http://angularjs.org/)。
-
 
 1. 打开**Visual Studio Express 2013 for Web** ，然后打开**GeekQuiz.sln**解决方案位于**源/Ex2-CreatingASPAInterface/开始**文件夹。 或者，继续使用该解决方案并获得前一练习中。
 2. 打开**程序包管理器控制台**从**工具** > **NuGet 包管理器**。 键入以下命令以安装**AngularJS.Core** NuGet 包。

@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: f81f3d80-3674-4d8e-a9b1-87feed1a93c9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 15bdaa588792c3cf4a8e6eee651e0675f959f942
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2ba7ca22074fe3c131209482180f8f7706714dd5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382224"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129836"
 ---
 # <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>创建用于 ASP.NET MVC 应用程序 (4 个 10) 的更复杂的数据模型
 
@@ -26,7 +26,6 @@ ms.locfileid: "59382224"
 > > [!NOTE] 
 > > 
 > > 如果遇到无法解决的问题[下载已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)并尝试重现你的问题。 通过比较您的代码与已完成的代码，通常可以找到问题的解决方案。 一些常见错误以及如何解决这些问题，请参阅[错误和解决方法。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 在前面的教程中，您过了由三个实体组成的简单数据模型。 在本教程将添加更多实体和关系并将通过指定格式设置、 验证和数据库映射规则来自定义数据模型。 您将看到自定义数据模型的两个方法： 通过将属性添加到实体类并通过将代码添加到数据库上下文类。
 
@@ -52,9 +51,7 @@ ms.locfileid: "59382224"
 
 `DisplayFormat` 特性用于显式指定日期格式：
 
-
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample2.cs)]
-
 
 `ApplyFormatInEditMode`设置指定，指定的格式设置也应该应用时的值显示在文本框中以进行编辑。 (您可能不想为某些字段 — 例如，对于货币值，您可能不希望在文本框中的货币符号以进行编辑。)
 
@@ -124,7 +121,6 @@ ms.locfileid: "59382224"
 
 > [!NOTE]
 > 如果您尝试编译之前完成创建所有这些实体类，可能会收到编译器错误。
-
 
 ## <a name="create-the-instructor-entity"></a>创建 Instructor 实体
 
@@ -260,7 +256,6 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
-
 ## <a name="modifying-the-student-entity"></a>修改 Student 实体
 
 ![Student_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image10.png)
@@ -378,7 +373,6 @@ Course 实体具有外键属性`DepartmentID`它指向相关`Department`实体�
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample35.xml?highlight=1-2)]
 > 
 > 使用新数据库没有数据迁移，和`update-database`命令是更有望完成且未出错。 有关如何删除数据库的说明，请参阅[如何从 Visual Studio 2012 中删除数据库](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。
-
 
 打开中的数据库**服务器资源管理器**像前面，并展开**表**节点以查看是否已创建的所有表。 (如果仍有**服务器资源管理器**从较早的时间打开，请单击**刷新**按钮。)
 

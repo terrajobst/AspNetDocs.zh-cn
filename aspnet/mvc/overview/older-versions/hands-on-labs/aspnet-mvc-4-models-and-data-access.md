@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 53ca3bc4e550f488f3ae4c41f02a636e747107cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 90635b617930d0a9c126795f4c8790d542e33dc9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384885"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129693"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和数据访问
 
@@ -53,7 +53,6 @@ ms.locfileid: "59384885"
 > 
 > 如果你想要浏览整个**音乐应用商店**教程应用程序可以找到它在[MVC Music 商店](https://github.com/evilDave/MVC-Music-Store)。
 
-
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
@@ -90,13 +89,12 @@ ms.locfileid: "59384885"
 > [!NOTE]
 > 每个练习均附带**最终**包含生成应完成练习后获得的解决方案文件夹。 如果需要更多帮助，学习了几项练习，您可以使用此解决方案作为指南。
 
-
 估计的时间才能完成此实验：**35 だ 牧**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Adding_a_Database"></a>
-### <a name="exercise-1-adding-a-database"></a>练习 1:添加数据库
+### <a name="exercise-1-adding-a-database"></a>练习 1：添加数据库
 
 在此练习中，您将学习如何添加具有 MusicStore 应用程序，向解决方案以便使用其数据的表的数据库。 一旦使用该模型生成数据库并将其添加到解决方案中，将修改 StoreController 类，以查看模板提供从数据库中，而不是使用硬编码的值中获取的数据。
 
@@ -186,7 +184,6 @@ ms.locfileid: "59384885"
     > [!NOTE]
     > T4 模板 (.tt) 运行代码，以生成实体类，并将覆盖具有相同名称的现有类。 在此示例中，类&quot;唱片集&quot;，&quot;流派&quot;并&quot;艺术家&quot;覆盖与生成的代码。
 
-
 <a id="Ex1Task3"></a>
 
 <a id="Task_3_-_Building_the_Application"></a>
@@ -265,7 +262,7 @@ ms.locfileid: "59384885"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Database_Using_Code_First"></a>
-### <a name="exercise-2-creating-a-database-using-code-first"></a>练习 2:创建使用 Code First 数据库
+### <a name="exercise-2-creating-a-database-using-code-first"></a>练习 2：创建使用 Code First 数据库
 
 在此练习中，您将学习如何使用代码第一种方法来创建具有 MusicStore 应用程序的表的数据库以及如何访问其数据。
 
@@ -273,7 +270,6 @@ ms.locfileid: "59384885"
 
 > [!NOTE]
 > 如果已完成练习 1 中，已处理过数据库第一种方法，将现在了解如何获取与不同的进程相同的结果。 已标记与练习 1 中相同的任务以方便您阅读。 如果尚未完成练习 1，但想要了解代码第一种方法，可以从本练习中启动，并获取该主题的完整的覆盖范围。
-
 
 <a id="Ex2Task1"></a>
 
@@ -383,7 +379,6 @@ ms.locfileid: "59384885"
 > 此任务是与练习 1 中相同。
 > 
 > 如果你完成练习 1 中您将注意这些步骤都在这两种方法中相同的 (数据库优先或代码优先)。 它们是不同中如何将数据链接模型，但对数据实体的访问权限是尚未从控制器透明的。
-
 
 1. 打开**Controllers\StoreController.cs**并将以下字段添加到要保存的实例的类**MusicStoreEntities**类，名为**storeDB**:
 

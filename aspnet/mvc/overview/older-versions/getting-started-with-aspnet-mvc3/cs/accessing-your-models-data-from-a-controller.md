@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: 002ada5c-f114-47ab-a441-57dbdb728ea0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: a2e2957ffe766282f127b6fb537af00673aa440f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 48fe7af73a5e5d8a3cd4c4ec152c57726fb021ba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389838"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130210"
 ---
 # <a name="accessing-your-models-data-from-a-controller-c"></a>从控制器访问模型的数据 (C#)
 
@@ -115,7 +115,6 @@ ASP.NET MVC 还提供了能够传递强类型化数据或视图模板的对象�
 
 > [!NOTE]
 > 如果双击时将发生错误*Movies.sdf*，请确保已安装[SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（运行时和工具支持）。 （有关该软件的链接，请参阅本系列教程的第 1 部分中的先决条件列表）。如果现在安装版本，您必须关闭并重新打开 Visual Web Developer。
-
 
 [![DB_explorer](accessing-your-models-data-from-a-controller/_static/image14.png "DB_explorer")](accessing-your-models-data-from-a-controller/_static/image13.png)
 
