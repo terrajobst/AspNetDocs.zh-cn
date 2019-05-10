@@ -8,24 +8,23 @@ ms.date: 05/18/2012
 ms.assetid: ef969007-9e27-431c-b2f7-e1772af7a0b6
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2
 msc.type: chapter
-ms.openlocfilehash: 324a9d7b8666cbd387ff6ea17e9d341fe2f38423
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 743796c80b94f141bb5953ae29c7fa3667c3fb07
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409618"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130865"
 ---
-# <a name="introducing-aspnet-web-pages"></a><span data-ttu-id="aef71-103">ASP.NET 网页简介</span><span class="sxs-lookup"><span data-stu-id="aef71-103">Introducing ASP.NET Web Pages</span></span>
+# <a name="introducing-aspnet-web-pages"></a><span data-ttu-id="f6f30-103">ASP.NET 网页简介</span><span class="sxs-lookup"><span data-stu-id="f6f30-103">Introducing ASP.NET Web Pages</span></span>
 
-> <span data-ttu-id="aef71-104">ASP.NET Web Pages 2 简介</span><span class="sxs-lookup"><span data-stu-id="aef71-104">Introducing ASP.NET Web Pages 2</span></span>
+> <span data-ttu-id="f6f30-104">ASP.NET Web Pages 2 简介</span><span class="sxs-lookup"><span data-stu-id="f6f30-104">Introducing ASP.NET Web Pages 2</span></span>
 
-
-- [<span data-ttu-id="aef71-105">入门</span><span class="sxs-lookup"><span data-stu-id="aef71-105">Getting Started</span></span>](getting-started.md)
-- [<span data-ttu-id="aef71-106">编程基础知识</span><span class="sxs-lookup"><span data-stu-id="aef71-106">Programming Basics</span></span>](intro-to-web-pages-programming.md)
-- [<span data-ttu-id="aef71-107">显示数据</span><span class="sxs-lookup"><span data-stu-id="aef71-107">Displaying Data</span></span>](displaying-data.md)
-- [<span data-ttu-id="aef71-108">HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="aef71-108">HTML Form Basics</span></span>](form-basics.md)
-- [<span data-ttu-id="aef71-109">使用窗体输入数据库数据</span><span class="sxs-lookup"><span data-stu-id="aef71-109">Entering Database Data by Using Forms</span></span>](entering-data.md)
-- [<span data-ttu-id="aef71-110">更新数据库数据</span><span class="sxs-lookup"><span data-stu-id="aef71-110">Updating Database Data</span></span>](updating-data.md)
-- [<span data-ttu-id="aef71-111">删除数据库数据</span><span class="sxs-lookup"><span data-stu-id="aef71-111">Deleting Database Data</span></span>](deleting-data.md)
-- [<span data-ttu-id="aef71-112">创建一致布局</span><span class="sxs-lookup"><span data-stu-id="aef71-112">Creating a Consistent Layout</span></span>](layouts.md)
-- [<span data-ttu-id="aef71-113">使用 WebMatrix 发布站点</span><span class="sxs-lookup"><span data-stu-id="aef71-113">Publishing a Site by Using WebMatrix</span></span>](publishing.md)
+- [<span data-ttu-id="f6f30-105">入门</span><span class="sxs-lookup"><span data-stu-id="f6f30-105">Getting Started</span></span>](getting-started.md)
+- [<span data-ttu-id="f6f30-106">编程基础知识</span><span class="sxs-lookup"><span data-stu-id="f6f30-106">Programming Basics</span></span>](intro-to-web-pages-programming.md)
+- [<span data-ttu-id="f6f30-107">显示数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-107">Displaying Data</span></span>](displaying-data.md)
+- [<span data-ttu-id="f6f30-108">HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="f6f30-108">HTML Form Basics</span></span>](form-basics.md)
+- [<span data-ttu-id="f6f30-109">使用窗体输入数据库数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-109">Entering Database Data by Using Forms</span></span>](entering-data.md)
+- [<span data-ttu-id="f6f30-110">更新数据库数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-110">Updating Database Data</span></span>](updating-data.md)
+- [<span data-ttu-id="f6f30-111">删除数据库数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-111">Deleting Database Data</span></span>](deleting-data.md)
+- [<span data-ttu-id="f6f30-112">创建一致布局</span><span class="sxs-lookup"><span data-stu-id="f6f30-112">Creating a Consistent Layout</span></span>](layouts.md)
+- [<span data-ttu-id="f6f30-113">使用 WebMatrix 发布站点</span><span class="sxs-lookup"><span data-stu-id="f6f30-113">Publishing a Site by Using WebMatrix</span></span>](publishing.md)

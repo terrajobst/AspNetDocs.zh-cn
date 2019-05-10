@@ -8,23 +8,22 @@ ms.date: 11/14/2011
 ms.assetid: db4eca5d-b625-4e67-8e5b-a844639d4354
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup
 msc.type: chapter
-ms.openlocfilehash: c797e6556282ef6570d50d8a3e77587ac30dbbea
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 708d5646fed3a44ce9c0e82f115e24cc8b5c5978
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415227"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132634"
 ---
-# <a name="modalpopup"></a><span data-ttu-id="bcbcf-103">ModalPopup</span><span class="sxs-lookup"><span data-stu-id="bcbcf-103">ModalPopup</span></span>
+# <a name="modalpopup"></a><span data-ttu-id="c577a-103">ModalPopup</span><span class="sxs-lookup"><span data-stu-id="c577a-103">ModalPopup</span></span>
 
-> <span data-ttu-id="bcbcf-104">本教程演示如何结合使用 ModalPopup 控件，可以创建模式对话框的等效项。</span><span class="sxs-lookup"><span data-stu-id="bcbcf-104">This tutorial shows how to use the ModalPopup control, which lets you create the equivalent of a modal dialog box.</span></span>
+> <span data-ttu-id="c577a-104">本教程演示如何结合使用 ModalPopup 控件，可以创建模式对话框的等效项。</span><span class="sxs-lookup"><span data-stu-id="c577a-104">This tutorial shows how to use the ModalPopup control, which lets you create the equivalent of a modal dialog box.</span></span>
 
-
-- [<span data-ttu-id="bcbcf-105">通过服务器代码启动模式弹出窗口 (C#)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-105">Launching a Modal Popup Window from Server Code (C#)</span></span>](launching-a-modal-popup-window-from-server-code-cs.md)
-- [<span data-ttu-id="bcbcf-106">通过 Repeater 控件使用 ModalPopup (C#)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-106">Using ModalPopup with a Repeater Control (C#)</span></span>](using-modalpopup-with-a-repeater-control-cs.md)
-- [<span data-ttu-id="bcbcf-107">通过 ModalPopup 处理回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-107">Handling Postbacks from a ModalPopup (C#)</span></span>](handling-postbacks-from-a-modalpopup-cs.md)
-- [<span data-ttu-id="bcbcf-108">定位 ModalPopup (C#)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-108">Positioning a ModalPopup (C#)</span></span>](positioning-a-modalpopup-cs.md)
-- [<span data-ttu-id="bcbcf-109">通过服务器代码启动模式弹出窗口 (VB)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-109">Launching a Modal Popup Window from Server Code (VB)</span></span>](launching-a-modal-popup-window-from-server-code-vb.md)
-- [<span data-ttu-id="bcbcf-110">通过 Repeater 控件使用 ModalPopup (VB)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-110">Using ModalPopup with a Repeater Control (VB)</span></span>](using-modalpopup-with-a-repeater-control-vb.md)
-- [<span data-ttu-id="bcbcf-111">通过 ModalPopup 处理回发 (VB)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-111">Handling Postbacks from a ModalPopup (VB)</span></span>](handling-postbacks-from-a-modalpopup-vb.md)
-- [<span data-ttu-id="bcbcf-112">定位 ModalPopup (VB)</span><span class="sxs-lookup"><span data-stu-id="bcbcf-112">Positioning a ModalPopup (VB)</span></span>](positioning-a-modalpopup-vb.md)
+- [<span data-ttu-id="c577a-105">通过服务器代码启动模式弹出窗口 (C#)</span><span class="sxs-lookup"><span data-stu-id="c577a-105">Launching a Modal Popup Window from Server Code (C#)</span></span>](launching-a-modal-popup-window-from-server-code-cs.md)
+- [<span data-ttu-id="c577a-106">通过 Repeater 控件使用 ModalPopup (C#)</span><span class="sxs-lookup"><span data-stu-id="c577a-106">Using ModalPopup with a Repeater Control (C#)</span></span>](using-modalpopup-with-a-repeater-control-cs.md)
+- [<span data-ttu-id="c577a-107">通过 ModalPopup 处理回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="c577a-107">Handling Postbacks from a ModalPopup (C#)</span></span>](handling-postbacks-from-a-modalpopup-cs.md)
+- [<span data-ttu-id="c577a-108">定位 ModalPopup (C#)</span><span class="sxs-lookup"><span data-stu-id="c577a-108">Positioning a ModalPopup (C#)</span></span>](positioning-a-modalpopup-cs.md)
+- [<span data-ttu-id="c577a-109">通过服务器代码启动模式弹出窗口 (VB)</span><span class="sxs-lookup"><span data-stu-id="c577a-109">Launching a Modal Popup Window from Server Code (VB)</span></span>](launching-a-modal-popup-window-from-server-code-vb.md)
+- [<span data-ttu-id="c577a-110">通过 Repeater 控件使用 ModalPopup (VB)</span><span class="sxs-lookup"><span data-stu-id="c577a-110">Using ModalPopup with a Repeater Control (VB)</span></span>](using-modalpopup-with-a-repeater-control-vb.md)
+- [<span data-ttu-id="c577a-111">通过 ModalPopup 处理回发 (VB)</span><span class="sxs-lookup"><span data-stu-id="c577a-111">Handling Postbacks from a ModalPopup (VB)</span></span>](handling-postbacks-from-a-modalpopup-vb.md)
+- [<span data-ttu-id="c577a-112">定位 ModalPopup (VB)</span><span class="sxs-lookup"><span data-stu-id="c577a-112">Positioning a ModalPopup (VB)</span></span>](positioning-a-modalpopup-vb.md)

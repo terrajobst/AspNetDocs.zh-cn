@@ -8,21 +8,20 @@ ms.date: 10/05/2011
 ms.assetid: b715c4ec-6f4b-4f7e-8ee3-b1613477ce61
 msc.legacyurl: /web-forms/overview/older-versions-security/admin
 msc.type: chapter
-ms.openlocfilehash: c89da16bf4783198d2b4c173eba1b7a7191257a0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: aa267058e1697c94f49f886087f769e3fcac25ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383106"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130585"
 ---
-# <a name="aspnet-35---security-administration"></a><span data-ttu-id="c85fb-103">ASP.NET 3.5 - 安全管理</span><span class="sxs-lookup"><span data-stu-id="c85fb-103">ASP.NET 3.5 - Security Administration</span></span>
+# <a name="aspnet-35---security-administration"></a><span data-ttu-id="c1853-103">ASP.NET 3.5 - 安全管理</span><span class="sxs-lookup"><span data-stu-id="c1853-103">ASP.NET 3.5 - Security Administration</span></span>
 
-> <span data-ttu-id="c85fb-104">本系列教程演示了一种方法来创建可用于管理用户和角色的管理页。</span><span class="sxs-lookup"><span data-stu-id="c85fb-104">This tutorial series shows you one way to create an administration page that lets you manage users and roles.</span></span>
+> <span data-ttu-id="c1853-104">本系列教程演示了一种方法来创建可用于管理用户和角色的管理页。</span><span class="sxs-lookup"><span data-stu-id="c1853-104">This tutorial series shows you one way to create an administration page that lets you manage users and roles.</span></span>
 
-
-- [<span data-ttu-id="c85fb-105">生成用于从多个用户帐户中选择一个帐户的界面 (C#)</span><span class="sxs-lookup"><span data-stu-id="c85fb-105">Building an Interface to Select One User Account from Many (C#)</span></span>](building-an-interface-to-select-one-user-account-from-many-cs.md)
-- [<span data-ttu-id="c85fb-106">恢复和更改密码 (C#)</span><span class="sxs-lookup"><span data-stu-id="c85fb-106">Recovering and Changing Passwords (C#)</span></span>](recovering-and-changing-passwords-cs.md)
-- [<span data-ttu-id="c85fb-107">解锁和审批用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="c85fb-107">Unlocking and Approving User Accounts (C#)</span></span>](unlocking-and-approving-user-accounts-cs.md)
-- [<span data-ttu-id="c85fb-108">生成用于从多个用户帐户中选择一个帐户的接口 (VB)</span><span class="sxs-lookup"><span data-stu-id="c85fb-108">Building an Interface to Select One User Account from Many (VB)</span></span>](building-an-interface-to-select-one-user-account-from-many-vb.md)
-- [<span data-ttu-id="c85fb-109">恢复和更改密码 (VB)</span><span class="sxs-lookup"><span data-stu-id="c85fb-109">Recovering and Changing Passwords (VB)</span></span>](recovering-and-changing-passwords-vb.md)
-- [<span data-ttu-id="c85fb-110">解锁和审批用户帐户 (VB)</span><span class="sxs-lookup"><span data-stu-id="c85fb-110">Unlocking and Approving User Accounts (VB)</span></span>](unlocking-and-approving-user-accounts-vb.md)
+- [<span data-ttu-id="c1853-105">生成用于从多个用户帐户中选择一个帐户的界面 (C#)</span><span class="sxs-lookup"><span data-stu-id="c1853-105">Building an Interface to Select One User Account from Many (C#)</span></span>](building-an-interface-to-select-one-user-account-from-many-cs.md)
+- [<span data-ttu-id="c1853-106">恢复和更改密码 (C#)</span><span class="sxs-lookup"><span data-stu-id="c1853-106">Recovering and Changing Passwords (C#)</span></span>](recovering-and-changing-passwords-cs.md)
+- [<span data-ttu-id="c1853-107">解锁和审批用户帐户 (C#)</span><span class="sxs-lookup"><span data-stu-id="c1853-107">Unlocking and Approving User Accounts (C#)</span></span>](unlocking-and-approving-user-accounts-cs.md)
+- [<span data-ttu-id="c1853-108">生成用于从多个用户帐户中选择一个帐户的接口 (VB)</span><span class="sxs-lookup"><span data-stu-id="c1853-108">Building an Interface to Select One User Account from Many (VB)</span></span>](building-an-interface-to-select-one-user-account-from-many-vb.md)
+- [<span data-ttu-id="c1853-109">恢复和更改密码 (VB)</span><span class="sxs-lookup"><span data-stu-id="c1853-109">Recovering and Changing Passwords (VB)</span></span>](recovering-and-changing-passwords-vb.md)
+- [<span data-ttu-id="c1853-110">解锁和审批用户帐户 (VB)</span><span class="sxs-lookup"><span data-stu-id="c1853-110">Unlocking and Approving User Accounts (VB)</span></span>](unlocking-and-approving-user-accounts-vb.md)

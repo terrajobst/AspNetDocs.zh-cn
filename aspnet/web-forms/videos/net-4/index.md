@@ -8,57 +8,56 @@ ms.date: 10/05/2011
 ms.assetid: bac10aee-6731-4a0f-84d7-9eef5e560ae5
 msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
-ms.openlocfilehash: ea11b464329a755d5625797327f5a0a3ccb0f426
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 47d4c49762768351246402b48373374f99fd636f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400576"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128473"
 ---
-# <a name="net-4"></a><span data-ttu-id="7bf0f-103">.NET 4</span><span class="sxs-lookup"><span data-stu-id="7bf0f-103">.NET 4</span></span>
+# <a name="net-4"></a><span data-ttu-id="e340e-103">.NET 4</span><span class="sxs-lookup"><span data-stu-id="e340e-103">.NET 4</span></span>
 
-> <span data-ttu-id="7bf0f-104">新 ASP.NET 功能和.NET Framework 4 中提供的功能。</span><span class="sxs-lookup"><span data-stu-id="7bf0f-104">The new ASP.NET features and functionality available in the .NET Framework 4.</span></span>
+> <span data-ttu-id="e340e-104">新 ASP.NET 功能和.NET Framework 4 中提供的功能。</span><span class="sxs-lookup"><span data-stu-id="e340e-104">The new ASP.NET features and functionality available in the .NET Framework 4.</span></span>
 
+- [<span data-ttu-id="e340e-105">Ajax</span><span class="sxs-lookup"><span data-stu-id="e340e-105">Ajax</span></span>](ajax/index.md)
 
-- [<span data-ttu-id="7bf0f-105">Ajax</span><span class="sxs-lookup"><span data-stu-id="7bf0f-105">Ajax</span></span>](ajax/index.md)
+    - [<span data-ttu-id="e340e-106">Microsoft 客户端控件的命令性 JavaScript 语法</span><span class="sxs-lookup"><span data-stu-id="e340e-106">Imperative JavaScript Syntax for Microsoft Client Side Controls</span></span>](ajax/aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
+    - [<span data-ttu-id="e340e-107">ScriptLoader</span><span class="sxs-lookup"><span data-stu-id="e340e-107">ScriptLoader</span></span>](ajax/aspnet-4-quick-hit-the-scriptloader.md)
+    - [<span data-ttu-id="e340e-108">适用于 Microsoft Ajax 的 jQuery 语法</span><span class="sxs-lookup"><span data-stu-id="e340e-108">JQuery Syntax for Microsoft Ajax</span></span>](ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
+    - [<span data-ttu-id="e340e-109">AJAX 数据模板</span><span class="sxs-lookup"><span data-stu-id="e340e-109">AJAX Data Templates</span></span>](ajax/aspnet-4-quick-hit-ajax-data-templates.md)
+- [<span data-ttu-id="e340e-110">图表</span><span class="sxs-lookup"><span data-stu-id="e340e-110">Chart</span></span>](chart/index.md)
 
-    - [<span data-ttu-id="7bf0f-106">Microsoft 客户端控件的命令性 JavaScript 语法</span><span class="sxs-lookup"><span data-stu-id="7bf0f-106">Imperative JavaScript Syntax for Microsoft Client Side Controls</span></span>](ajax/aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls.md)
-    - [<span data-ttu-id="7bf0f-107">ScriptLoader</span><span class="sxs-lookup"><span data-stu-id="7bf0f-107">ScriptLoader</span></span>](ajax/aspnet-4-quick-hit-the-scriptloader.md)
-    - [<span data-ttu-id="7bf0f-108">适用于 Microsoft Ajax 的 jQuery 语法</span><span class="sxs-lookup"><span data-stu-id="7bf0f-108">JQuery Syntax for Microsoft Ajax</span></span>](ajax/aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
-    - [<span data-ttu-id="7bf0f-109">AJAX 数据模板</span><span class="sxs-lookup"><span data-stu-id="7bf0f-109">AJAX Data Templates</span></span>](ajax/aspnet-4-quick-hit-ajax-data-templates.md)
-- [<span data-ttu-id="7bf0f-110">图表</span><span class="sxs-lookup"><span data-stu-id="7bf0f-110">Chart</span></span>](chart/index.md)
+    - [<span data-ttu-id="e340e-111">Chart Control</span><span class="sxs-lookup"><span data-stu-id="e340e-111">Chart Control</span></span>](chart/aspnet-4-quick-hit-chart-control.md)
+    - [<span data-ttu-id="e340e-112">在 Visual Studio 2010 中引入新的图表控件</span><span class="sxs-lookup"><span data-stu-id="e340e-112">Introducing the New Chart Control in Visual Studio 2010</span></span>](chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
+- [<span data-ttu-id="e340e-113">核心</span><span class="sxs-lookup"><span data-stu-id="e340e-113">Core</span></span>](core/index.md)
 
-    - [<span data-ttu-id="7bf0f-111">Chart Control</span><span class="sxs-lookup"><span data-stu-id="7bf0f-111">Chart Control</span></span>](chart/aspnet-4-quick-hit-chart-control.md)
-    - [<span data-ttu-id="7bf0f-112">在 Visual Studio 2010 中引入新的图表控件</span><span class="sxs-lookup"><span data-stu-id="7bf0f-112">Introducing the New Chart Control in Visual Studio 2010</span></span>](chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
-- [<span data-ttu-id="7bf0f-113">核心</span><span class="sxs-lookup"><span data-stu-id="7bf0f-113">Core</span></span>](core/index.md)
+    - [<span data-ttu-id="e340e-114">自动启动</span><span class="sxs-lookup"><span data-stu-id="e340e-114">Auto Start</span></span>](core/aspnet-4-quick-hit-auto-start.md)
+    - [<span data-ttu-id="e340e-115">清理 Web.Config 文件</span><span class="sxs-lookup"><span data-stu-id="e340e-115">Clean Web.Config Files</span></span>](core/aspnet-4-quick-hit-clean-webconfig-files.md)
+    - [<span data-ttu-id="e340e-116">可预测客户端 ID</span><span class="sxs-lookup"><span data-stu-id="e340e-116">Predictable Client IDs</span></span>](core/aspnet-4-quick-hit-predictable-client-ids.md)
+    - [<span data-ttu-id="e340e-117">HtmlEncoder 实用工具方法</span><span class="sxs-lookup"><span data-stu-id="e340e-117">HtmlEncoder Utility Method</span></span>](core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
+- [<span data-ttu-id="e340e-118">Data</span><span class="sxs-lookup"><span data-stu-id="e340e-118">Data</span></span>](data/index.md)
 
-    - [<span data-ttu-id="7bf0f-114">自动启动</span><span class="sxs-lookup"><span data-stu-id="7bf0f-114">Auto Start</span></span>](core/aspnet-4-quick-hit-auto-start.md)
-    - [<span data-ttu-id="7bf0f-115">清理 Web.Config 文件</span><span class="sxs-lookup"><span data-stu-id="7bf0f-115">Clean Web.Config Files</span></span>](core/aspnet-4-quick-hit-clean-webconfig-files.md)
-    - [<span data-ttu-id="7bf0f-116">可预测客户端 ID</span><span class="sxs-lookup"><span data-stu-id="7bf0f-116">Predictable Client IDs</span></span>](core/aspnet-4-quick-hit-predictable-client-ids.md)
-    - [<span data-ttu-id="7bf0f-117">HtmlEncoder 实用工具方法</span><span class="sxs-lookup"><span data-stu-id="7bf0f-117">HtmlEncoder Utility Method</span></span>](core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-- [<span data-ttu-id="7bf0f-118">Data</span><span class="sxs-lookup"><span data-stu-id="7bf0f-118">Data</span></span>](data/index.md)
+    - [<span data-ttu-id="e340e-119">永久性 GridView 行选择</span><span class="sxs-lookup"><span data-stu-id="e340e-119">Persistent GridView Row Selection</span></span>](data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
+- [<span data-ttu-id="e340e-120">“标记”控件</span><span class="sxs-lookup"><span data-stu-id="e340e-120">Markup Control</span></span>](markup-control/index.md)
 
-    - [<span data-ttu-id="7bf0f-119">永久性 GridView 行选择</span><span class="sxs-lookup"><span data-stu-id="7bf0f-119">Persistent GridView Row Selection</span></span>](data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
-- [<span data-ttu-id="7bf0f-120">“标记”控件</span><span class="sxs-lookup"><span data-stu-id="7bf0f-120">Markup Control</span></span>](markup-control/index.md)
+    - [<span data-ttu-id="e340e-121">复选框列表和单选按钮列表的新呈现方案</span><span class="sxs-lookup"><span data-stu-id="e340e-121">New Rendering Option for Check Box Lists and Radio Button Lists</span></span>](markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
+    - [<span data-ttu-id="e340e-122">无表的模板化控件</span><span class="sxs-lookup"><span data-stu-id="e340e-122">Table Free Templated Controls</span></span>](markup-control/aspnet-4-quick-hit-table-free-templated-controls.md)
+    - [<span data-ttu-id="e340e-123">无表的菜单控件</span><span class="sxs-lookup"><span data-stu-id="e340e-123">Tableless Menu Control</span></span>](markup-control/aspnet-4-quick-hit-tableless-menu-control.md)
+    - [<span data-ttu-id="e340e-124">“隐藏字段”Div</span><span class="sxs-lookup"><span data-stu-id="e340e-124">Hidden Field Divs</span></span>](markup-control/aspnet-4-quick-hit-hidden-field-divs.md)
+    - [<span data-ttu-id="e340e-125">禁用的控件样式</span><span class="sxs-lookup"><span data-stu-id="e340e-125">Disabled Control Styling</span></span>](markup-control/aspnet-4-quick-hit-disabled-control-styling.md)
+- [<span data-ttu-id="e340e-126">性能</span><span class="sxs-lookup"><span data-stu-id="e340e-126">Performance</span></span>](performance/index.md)
 
-    - [<span data-ttu-id="7bf0f-121">复选框列表和单选按钮列表的新呈现方案</span><span class="sxs-lookup"><span data-stu-id="7bf0f-121">New Rendering Option for Check Box Lists and Radio Button Lists</span></span>](markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
-    - [<span data-ttu-id="7bf0f-122">无表的模板化控件</span><span class="sxs-lookup"><span data-stu-id="7bf0f-122">Table Free Templated Controls</span></span>](markup-control/aspnet-4-quick-hit-table-free-templated-controls.md)
-    - [<span data-ttu-id="7bf0f-123">无表的菜单控件</span><span class="sxs-lookup"><span data-stu-id="7bf0f-123">Tableless Menu Control</span></span>](markup-control/aspnet-4-quick-hit-tableless-menu-control.md)
-    - [<span data-ttu-id="7bf0f-124">“隐藏字段”Div</span><span class="sxs-lookup"><span data-stu-id="7bf0f-124">Hidden Field Divs</span></span>](markup-control/aspnet-4-quick-hit-hidden-field-divs.md)
-    - [<span data-ttu-id="7bf0f-125">禁用的控件样式</span><span class="sxs-lookup"><span data-stu-id="7bf0f-125">Disabled Control Styling</span></span>](markup-control/aspnet-4-quick-hit-disabled-control-styling.md)
-- [<span data-ttu-id="7bf0f-126">性能</span><span class="sxs-lookup"><span data-stu-id="7bf0f-126">Performance</span></span>](performance/index.md)
+    - [<span data-ttu-id="e340e-127">选择性的视图状态</span><span class="sxs-lookup"><span data-stu-id="e340e-127">Selective View State</span></span>](performance/aspnet-4-quick-hit-selective-view-state.md)
+    - [<span data-ttu-id="e340e-128">轻松的状态压缩</span><span class="sxs-lookup"><span data-stu-id="e340e-128">Easy State Compression</span></span>](performance/aspnet-4-quick-hit-easy-state-compression.md)
+    - [<span data-ttu-id="e340e-129">使用 ViewStateMode 属性管理视图状态</span><span class="sxs-lookup"><span data-stu-id="e340e-129">Use the ViewStateMode Property for Managing ViewState</span></span>](performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
+- [<span data-ttu-id="e340e-130">路由</span><span class="sxs-lookup"><span data-stu-id="e340e-130">Routing</span></span>](routing/index.md)
 
-    - [<span data-ttu-id="7bf0f-127">选择性的视图状态</span><span class="sxs-lookup"><span data-stu-id="7bf0f-127">Selective View State</span></span>](performance/aspnet-4-quick-hit-selective-view-state.md)
-    - [<span data-ttu-id="7bf0f-128">轻松的状态压缩</span><span class="sxs-lookup"><span data-stu-id="7bf0f-128">Easy State Compression</span></span>](performance/aspnet-4-quick-hit-easy-state-compression.md)
-    - [<span data-ttu-id="7bf0f-129">使用 ViewStateMode 属性管理视图状态</span><span class="sxs-lookup"><span data-stu-id="7bf0f-129">Use the ViewStateMode Property for Managing ViewState</span></span>](performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
-- [<span data-ttu-id="7bf0f-130">路由</span><span class="sxs-lookup"><span data-stu-id="7bf0f-130">Routing</span></span>](routing/index.md)
+    - [<span data-ttu-id="e340e-131">永久性重定向</span><span class="sxs-lookup"><span data-stu-id="e340e-131">Permanent Redirect</span></span>](routing/aspnet-4-quick-hit-permanent-redirect.md)
+    - [<span data-ttu-id="e340e-132">强制性 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="e340e-132">Imperative WebForms Routing</span></span>](routing/aspnet-4-quick-hit-imperative-webforms-routing.md)
+    - [<span data-ttu-id="e340e-133">声明性 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="e340e-133">Declarative WebForms Routing</span></span>](routing/aspnet-4-quick-hit-declarative-webforms-routing.md)
+    - [<span data-ttu-id="e340e-134">出站 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="e340e-134">Outbound WebForms Routing</span></span>](routing/aspnet-4-quick-hit-outbound-webforms-routing.md)
+    - [<span data-ttu-id="e340e-135">向 ASP.NET Web 窗体使用路由</span><span class="sxs-lookup"><span data-stu-id="e340e-135">Use Routing with ASP.NET Web Forms</span></span>](routing/how-do-i-use-routing-with-aspnet-web-forms.md)
+    - [<span data-ttu-id="e340e-136">使用 ASP.NET 路由中的 URL</span><span class="sxs-lookup"><span data-stu-id="e340e-136">Work with URLs in ASP.NET Routing</span></span>](routing/how-do-i-work-with-urls-in-aspnet-routing.md)
+- [<span data-ttu-id="e340e-137">SEO</span><span class="sxs-lookup"><span data-stu-id="e340e-137">SEO</span></span>](seo/index.md)
 
-    - [<span data-ttu-id="7bf0f-131">永久性重定向</span><span class="sxs-lookup"><span data-stu-id="7bf0f-131">Permanent Redirect</span></span>](routing/aspnet-4-quick-hit-permanent-redirect.md)
-    - [<span data-ttu-id="7bf0f-132">强制性 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="7bf0f-132">Imperative WebForms Routing</span></span>](routing/aspnet-4-quick-hit-imperative-webforms-routing.md)
-    - [<span data-ttu-id="7bf0f-133">声明性 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="7bf0f-133">Declarative WebForms Routing</span></span>](routing/aspnet-4-quick-hit-declarative-webforms-routing.md)
-    - [<span data-ttu-id="7bf0f-134">出站 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="7bf0f-134">Outbound WebForms Routing</span></span>](routing/aspnet-4-quick-hit-outbound-webforms-routing.md)
-    - [<span data-ttu-id="7bf0f-135">向 ASP.NET Web 窗体使用路由</span><span class="sxs-lookup"><span data-stu-id="7bf0f-135">Use Routing with ASP.NET Web Forms</span></span>](routing/how-do-i-use-routing-with-aspnet-web-forms.md)
-    - [<span data-ttu-id="7bf0f-136">使用 ASP.NET 路由中的 URL</span><span class="sxs-lookup"><span data-stu-id="7bf0f-136">Work with URLs in ASP.NET Routing</span></span>](routing/how-do-i-work-with-urls-in-aspnet-routing.md)
-- [<span data-ttu-id="7bf0f-137">SEO</span><span class="sxs-lookup"><span data-stu-id="7bf0f-137">SEO</span></span>](seo/index.md)
-
-    - [<span data-ttu-id="7bf0f-138">动态元数据</span><span class="sxs-lookup"><span data-stu-id="7bf0f-138">Dynamic Metadata</span></span>](seo/aspnet-4-quick-hit-dynamic-metadata.md)
+    - [<span data-ttu-id="e340e-138">动态元数据</span><span class="sxs-lookup"><span data-stu-id="e340e-138">Dynamic Metadata</span></span>](seo/aspnet-4-quick-hit-dynamic-metadata.md)

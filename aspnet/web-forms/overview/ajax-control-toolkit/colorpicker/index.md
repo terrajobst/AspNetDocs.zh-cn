@@ -8,17 +8,16 @@ ms.date: 11/14/2011
 ms.assetid: 7a46340d-d7b0-427d-abbc-7fee884219ed
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker
 msc.type: chapter
-ms.openlocfilehash: 5620710239c282b126fadd2e0ca09e71bac8786f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c8721c1594cf40ed766caffdc9024d438256ec20
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407388"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126088"
 ---
-# <a name="colorpicker"></a><span data-ttu-id="485de-103">ColorPicker</span><span class="sxs-lookup"><span data-stu-id="485de-103">ColorPicker</span></span>
+# <a name="colorpicker"></a><span data-ttu-id="fca65-103">ColorPicker</span><span class="sxs-lookup"><span data-stu-id="fca65-103">ColorPicker</span></span>
 
-> <span data-ttu-id="485de-104">本教程演示如何使用颜色选取器控件，使用户可以从弹出窗口选择一种颜色。</span><span class="sxs-lookup"><span data-stu-id="485de-104">This tutorial shows how to use the ColorPicker control, which lets users select a color from a popup window.</span></span>
+> <span data-ttu-id="fca65-104">本教程演示如何使用颜色选取器控件，使用户可以从弹出窗口选择一种颜色。</span><span class="sxs-lookup"><span data-stu-id="fca65-104">This tutorial shows how to use the ColorPicker control, which lets users select a color from a popup window.</span></span>
 
-
-- [<span data-ttu-id="485de-105">ColorPicker 控件扩展程序 (C#)</span><span class="sxs-lookup"><span data-stu-id="485de-105">ColorPicker Control Extender (C#)</span></span>](using-the-colorpicker-control-extender-cs.md)
-- [<span data-ttu-id="485de-106">ColorPicker 控件扩展程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="485de-106">ColorPicker Control Extender (VB)</span></span>](using-the-colorpicker-control-extender-vb.md)
+- [<span data-ttu-id="fca65-105">ColorPicker 控件扩展程序 (C#)</span><span class="sxs-lookup"><span data-stu-id="fca65-105">ColorPicker Control Extender (C#)</span></span>](using-the-colorpicker-control-extender-cs.md)
+- [<span data-ttu-id="fca65-106">ColorPicker 控件扩展程序 (VB)</span><span class="sxs-lookup"><span data-stu-id="fca65-106">ColorPicker Control Extender (VB)</span></span>](using-the-colorpicker-control-extender-vb.md)
