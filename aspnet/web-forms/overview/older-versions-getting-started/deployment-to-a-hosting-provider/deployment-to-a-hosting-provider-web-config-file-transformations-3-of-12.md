@@ -131,7 +131,7 @@ Contoso University web 页面读取中设置的值`appSettings`中*Web.config*�
 
 ## <a name="setting-connection-strings"></a>设置连接字符串
 
-在大多数情况下不需要设置连接字符串转换，因为你可以发布配置文件中指定连接字符串。 但有一点例外，在部署 SQL Server Compact 数据库时，并使用 Entity Framework Code First 迁移来更新目标服务器上的数据库。 对于此方案，您必须指定将可用于在服务器进行更新数据库架构的其他连接字符串。 若要设置此转换，将添加**&lt;connectionStrings&gt;** 紧跟左括号之后元素**&lt;configuration&gt;** 在这种标记*Web.Test.config*并*Web.Production.config*转换文件：
+在大多数情况下不需要设置连接字符串转换，因为你可以发布配置文件中指定连接字符串。 但有一点例外，在部署 SQL Server Compact 数据库时，并使用 Entity Framework Code First 迁移来更新目标服务器上的数据库。 对于此方案，您必须指定将可用于在服务器进行更新数据库架构的其他连接字符串。 若要设置此转换，将添加 **&lt;connectionStrings&gt;** 紧跟左括号之后元素 **&lt;configuration&gt;** 在这种标记*Web.Test.config*并*Web.Production.config*转换文件：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 

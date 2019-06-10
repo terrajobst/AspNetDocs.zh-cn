@@ -63,7 +63,7 @@ ms.locfileid: "65130436"
 
 Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将类别数据绑定到 Repeater 控件。 但是，如图 1 中的类别的项目符号列表所示，除了每个类别的名我们还需要显示与类别关联的产品数量。 若要访问此信息，我们可以：
 
-- **确定此信息从 ASP.NET page s 代码隐藏类。** 给定的特定*`categoryID`* 我们可以通过调用确定关联的产品数量`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 此方法返回`ProductsDataTable`对象，其`Count`属性指示多少`ProductsRow`s 存在，这是个指定的产品数量*`categoryID`*。 我们可以创建`ItemDataBound`Repeater，对于绑定到 Repeater，每个类别的调用的事件处理程序`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法并在输出中包含其计数。
+- **确定此信息从 ASP.NET page s 代码隐藏类。** 给定的特定 *`categoryID`* 我们可以通过调用确定关联的产品数量`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 此方法返回`ProductsDataTable`对象，其`Count`属性指示多少`ProductsRow`s 存在，这是个指定的产品数量 *`categoryID`* 。 我们可以创建`ItemDataBound`Repeater，对于绑定到 Repeater，每个类别的调用的事件处理程序`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法并在输出中包含其计数。
 - **更新`CategoriesDataTable`中要包括的类型化数据集`NumberOfProducts`列。** 然后，我们可以更新`GetCategories()`中的方法`CategoriesDataTable`若要包括此信息或，或者，将保留`GetCategories()`作为-并且创建一个新`CategoriesDataTable`调用方法`GetCategoriesAndNumberOfProducts()`。
 
 让我们来了解这两种方法。 第一种方法更容易实现的因为我们不需要更新数据访问层;但是，它需要多个与数据库通信。 在调用`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`中的方法`ItemDataBound`事件处理程序会添加用于显示中继器中每个类别的额外数据库调用。 使用此技术有*N* + 1 个数据库调用，其中*N*是显示中继器中的类别数。 第二种方法，产品计数会返回有关从每个类别的信息`CategoriesBLL`类 s `GetCategories()` (或`GetCategoriesAndNumberOfProducts()`) 方法，因而只需一次访问数据库。
@@ -186,13 +186,13 @@ DAL 和 BLL 完成后，我们重新准备要绑定到此数据`Categories`Repea
 
 **图 12**:配置为使用 ObjectDataSource`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image34.png))
 
-由于`GetProductsByCategoryID(categoryID)`方法需要一个输入的参数 (*`categoryID`*)，配置数据源向导可用于指定参数的源。 必须已在 GridView 或 DataList 中列出的类别，d 我们设置参数源下拉列表控件和到 ControlID`ID`的数据 Web 控件。 但是，由于 Repeater 缺少`SelectedValue`不能用作参数源属性。 如果选中，您会发现 ControlID 下拉列表仅包含一个控件`ID``CategoryProducts`，则`ID`的 DataList。
+由于`GetProductsByCategoryID(categoryID)`方法需要一个输入的参数 ( *`categoryID`* )，配置数据源向导可用于指定参数的源。 必须已在 GridView 或 DataList 中列出的类别，d 我们设置参数源下拉列表控件和到 ControlID`ID`的数据 Web 控件。 但是，由于 Repeater 缺少`SelectedValue`不能用作参数源属性。 如果选中，您会发现 ControlID 下拉列表仅包含一个控件`ID``CategoryProducts`，则`ID`的 DataList。
 
 现在，为无设置参数源下拉列表。 我们将得到以编程方式指定此参数值时中继器中单击 LinkButton 的类别。
 
 [![执行不指定参数的 categoryID 参数源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
 
-**图 13**:为未指定参数源*`categoryID`* 参数 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
+**图 13**:为未指定参数源 *`categoryID`* 参数 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
 
 完成配置数据源向导后，Visual Studio 会自动生成 DataList 的`ItemTemplate`。 替换此默认值`ItemTemplate`模板与我们在前面的教程中使用; 此外，还要设置 DataList 的`RepeatColumns`属性设置为 2。 进行这些更改后你 DataList 和其关联的 ObjectDataSource 的声明性标记应如下所示：
 

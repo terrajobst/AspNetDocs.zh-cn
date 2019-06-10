@@ -40,7 +40,7 @@ ms.locfileid: "65118259"
 
 [![](host-owin-in-an-azure-worker-role/_static/image2.png)](host-owin-in-an-azure-worker-role/_static/image1.png)
 
-在中**新的 Windows Azure 云服务**对话框中，双击**辅助角色**。 保留默认名称 ("WorkerRole1")。 此步骤将辅助角色添加到解决方案。 单击 **“确定”**。
+在中**新的 Windows Azure 云服务**对话框中，双击**辅助角色**。 保留默认名称 ("WorkerRole1")。 此步骤将辅助角色添加到解决方案。 单击 **“确定”** 。
 
 [![](host-owin-in-an-azure-worker-role/_static/image4.png)](host-owin-in-an-azure-worker-role/_static/image3.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "65118259"
 
 **WebApp.Start**方法启动的 OWIN 主机。 名称`Startup`类是方法的类型参数。 按照约定，宿主将调用`Configure`此类的方法。
 
-重写`OnStop`释放*\_应用*实例：
+重写`OnStop`释放 *\_应用* 实例：
 
 [!code-csharp[Main](host-owin-in-an-azure-worker-role/samples/sample6.cs)]
 
@@ -123,7 +123,7 @@ ms.locfileid: "65118259"
 
 对于此步骤，必须具有 Azure 帐户。 如果你还没有一个，可以在几分钟即可完成创建一个免费试用帐户。 有关详细信息，请参阅[Microsoft Azure 免费试用版](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)。
 
-在解决方案资源管理器，右键单击 AzureApp 项目。 选择“发布”。
+在解决方案资源管理器，右键单击 AzureApp 项目。 选择“发布”  。
 
 ![](host-owin-in-an-azure-worker-role/_static/image12.png)
 
@@ -135,11 +135,11 @@ ms.locfileid: "65118259"
 
 [![](host-owin-in-an-azure-worker-role/_static/image16.png)](host-owin-in-an-azure-worker-role/_static/image15.png)
 
-输入云服务的名称并选择区域。 单击 **“创建”**。
+输入云服务的名称并选择区域。 单击 **“创建”** 。
 
 ![](host-owin-in-an-azure-worker-role/_static/image17.png)
 
-单击“发布” 。
+单击“发布”  。
 
 [![](host-owin-in-an-azure-worker-role/_static/image19.png)](host-owin-in-an-azure-worker-role/_static/image18.png)
 

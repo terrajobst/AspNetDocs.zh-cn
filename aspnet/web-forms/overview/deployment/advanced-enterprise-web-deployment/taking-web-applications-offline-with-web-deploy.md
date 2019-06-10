@@ -94,7 +94,7 @@ ms.locfileid: "65131400"
 7. 添加名为的新目标**DeployAppOffline**。 在此目标中调用 MSDeploy.exe 命令部署你*应用程序\_脱机*到目标 web 服务器的文件。
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample5.xml)]
-8. 在此示例中， **ContactManagerIisPath**属性在项目文件中其他位置定义。 这是只需中的 IIS 应用程序路径，在窗体 *[IIS 网站名称] / [应用程序名称]*。 在目标中包括条件使用户能够切换*应用程序\_脱机*部署打开或关闭通过更改属性值或提供一个命令行参数。
+8. 在此示例中， **ContactManagerIisPath**属性在项目文件中其他位置定义。 这是只需中的 IIS 应用程序路径，在窗体 *[IIS 网站名称] / [应用程序名称]* 。 在目标中包括条件使用户能够切换*应用程序\_脱机*部署打开或关闭通过更改属性值或提供一个命令行参数。
 9. 添加名为的新目标**DeleteAppOffline**。 在此目标中调用 MSDeploy.exe 命令删除你*应用程序\_脱机*来自目标 web 服务器的文件。
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample6.xml)]
@@ -137,7 +137,7 @@ Web 发布管道 (WPP) 使用名为项列表**FilesForPackagingFromProject**来�
 1. 在 Visual Studio 2010 中打开你的解决方案。
 2. 在中**解决方案资源管理器**窗口中，右键单击你的 web 应用程序项目节点 (例如， **ContactManager.Mvc**)，指向**添加**，然后单击**新项**。
 3. 在中**添加新项**对话框中，选择**XML 文件**模板。
-4. 在 **名称** 框中，键入 *[项目名称]***.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击 **添加**.
+4. 在 **名称** 框中，键入 *[项目名称]* **.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击 **添加**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 

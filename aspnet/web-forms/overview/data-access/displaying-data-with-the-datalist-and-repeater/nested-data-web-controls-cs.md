@@ -79,13 +79,13 @@ ms.locfileid: "65134533"
 
 ## <a name="accessing-the-data-declaratively-with-an-objectdatasource-control-and-theitemdataboundevent-handler"></a>访问数据以声明方式使用 ObjectDataSource 控件和`ItemDataBound`事件处理程序
 
-自我们已使用在本系列教程的最适合用于访问数据，此示例中坚持使用 ObjectDataSource 整个广泛 ObjectDataSource。 `ProductsBLL`类具有`GetProductsByCategoryID(categoryID)`方法，它返回有关属于指定这些产品的信息*`categoryID`*。 因此，我们可以添加到 ObjectDataSource `CategoryList` Repeater 的`ItemTemplate`并将其配置为从此类的方法访问其数据。
+自我们已使用在本系列教程的最适合用于访问数据，此示例中坚持使用 ObjectDataSource 整个广泛 ObjectDataSource。 `ProductsBLL`类具有`GetProductsByCategoryID(categoryID)`方法，它返回有关属于指定这些产品的信息 *`categoryID`* 。 因此，我们可以添加到 ObjectDataSource `CategoryList` Repeater 的`ItemTemplate`并将其配置为从此类的方法访问其数据。
 
 遗憾的是，Repeater 不允许其模板无法通过设计视图编辑，因此我们需要手动添加此 ObjectDataSource 控件声明性语法。 下面的语法演示`CategoryList`Repeater s`ItemTemplate`后添加此新对象数据源 (`ProductsByCategoryDataSource`):
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample3.aspx)]
 
-使用 ObjectDataSource 方法时，我们需要设置`ProductsByCategoryList`Repeater s`DataSourceID`属性设置为`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 另请注意，我们 ObjectDataSource 已`<asp:Parameter>`指定的元素*`categoryID`* 值将传递到`GetProductsByCategoryID(categoryID)`方法。 但如何指定此值呢？ 理想情况下，我们 d 能够只需将设置`DefaultValue`属性的`<asp:Parameter>`元素使用数据绑定语法如下所示：
+使用 ObjectDataSource 方法时，我们需要设置`ProductsByCategoryList`Repeater s`DataSourceID`属性设置为`ID`的 ObjectDataSource (`ProductsByCategoryDataSource`)。 另请注意，我们 ObjectDataSource 已`<asp:Parameter>`指定的元素 *`categoryID`* 值将传递到`GetProductsByCategoryID(categoryID)`方法。 但如何指定此值呢？ 理想情况下，我们 d 能够只需将设置`DefaultValue`属性的`<asp:Parameter>`元素使用数据绑定语法如下所示：
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample4.aspx)]
 
@@ -113,7 +113,7 @@ ms.locfileid: "65134533"
 
 Repeater s`DataSource`属性使用的数据绑定语法来指示其数据来自于`GetProductsInCategory(categoryID)`方法。 由于`Eval("CategoryID")`返回类型的值`Object`，我们将对象转换为`Integer`然后再将其传递`GetProductsInCategory(categoryID)`方法。 请注意，`CategoryID`访问下面的语法是通过数据绑定`CategoryID`中*外部*Repeater (`CategoryList`)，即该 s 绑定到的记录`Categories`表。 因此，我们知道`CategoryID`不能为数据库`NULL`值，该值就是我们可以隐式强制转换的原因`Eval`方法，而如果检查我们重新处理`DBNull`。
 
-使用此方法时，我们需要创建`GetProductsInCategory(categoryID)`方法，并将其检索相应的一组给定所提供的产品*`categoryID`*。 可以为此，我们只需返回`ProductsDataTable`返回的`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 让我们来创建`GetProductsInCategory(categoryID)`中的代码隐藏类的方法我们`NestedControls.aspx`页。 完成此操作使用以下代码：
+使用此方法时，我们需要创建`GetProductsInCategory(categoryID)`方法，并将其检索相应的一组给定所提供的产品 *`categoryID`* 。 可以为此，我们只需返回`ProductsDataTable`返回的`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 让我们来创建`GetProductsInCategory(categoryID)`中的代码隐藏类的方法我们`NestedControls.aspx`页。 完成此操作使用以下代码：
 
 [!code-csharp[Main](nested-data-web-controls-cs/samples/sample7.cs)]
 

@@ -85,11 +85,11 @@ ms.locfileid: "65134488"
 
 **图 7**:选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
-单击下一步后, ObjectDataSource 向导提示我们输入的值的源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
+单击下一步后, ObjectDataSource 向导提示我们输入的值的源`GetProductsByCategoryID(categoryID)`方法的 *`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
 
 [![将类别 id 参数设置为 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
-**图 8**:设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
+**图 8**:设置 *`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
 Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`的显示名称和值的每个数据字段的 DataList。 让我们来改进要改为使用 DataList `ItemTemplate` ，它显示只需产品的名称、 类别、 供应商，每个单元和价格和数量`SeparatorTemplate`的注入`<hr>`每个项之间的元素。 我将使用`ItemTemplate`从示例，请参见[使用 DataList 和 Repeater 控件显示数据](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md)教程中，但可随时使用查找最引人注目的任何模板标记。
 
@@ -135,7 +135,7 @@ Visual Studio 将自动生成完成之后配置数据源向导，`ItemTemplate`�
 
 **图 13**:无产品时选择"--选择一个类别-"列表项时，会显示 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
-如果您而是会显示*所有*的产品时选择"--选择一个类别-"选项，则使用值为`-1`相反。 敏锐的读者都记得中的该重新*母版/详细信息筛选与 DropDownList*教程中，我们更新`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果*`categoryID`* 值`-1`返回记录的所有产品中传递。
+如果您而是会显示*所有*的产品时选择"--选择一个类别-"选项，则使用值为`-1`相反。 敏锐的读者都记得中的该重新*母版/详细信息筛选与 DropDownList*教程中，我们更新`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法，以便如果 *`categoryID`* 值`-1`返回记录的所有产品中传递。
 
 ## <a name="summary"></a>总结
 

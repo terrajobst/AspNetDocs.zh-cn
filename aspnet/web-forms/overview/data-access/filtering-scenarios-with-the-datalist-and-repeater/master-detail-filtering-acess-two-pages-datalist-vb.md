@@ -51,7 +51,7 @@ ms.locfileid: "65131614"
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>步骤 2：将类别名称转变为详细信息页的链接
 
-若要允许的用户以显示给定类别的"详细信息"信息，我们需要添加为每个项目符号列表项，当单击时，将用户转到第二个页面的链接 (`ProductsForCategoryDetails.aspx`)。 然后，此第二个页面将显示使用 DataList 所选类别的产品。 若要确定其链接被单击的类别，我们需要向单击的类别`CategoryID`通过一些机制的第二页。 从一页的标量数据传输到另一个的最简单、 最简单方法是通过在查询字符串，它是我们将在本教程中使用的选项。 具体而言，`ProductsForCategoryDetails.aspx`页将预期所选*`categoryID`* 通过名为的查询字符串字段的值`CategoryID`。 例如，若要查看饮料类别的产品具有`CategoryID`为 1，用户需要访问`ProductsForCategoryDetails.aspx?CategoryID=1`。
+若要允许的用户以显示给定类别的"详细信息"信息，我们需要添加为每个项目符号列表项，当单击时，将用户转到第二个页面的链接 (`ProductsForCategoryDetails.aspx`)。 然后，此第二个页面将显示使用 DataList 所选类别的产品。 若要确定其链接被单击的类别，我们需要向单击的类别`CategoryID`通过一些机制的第二页。 从一页的标量数据传输到另一个的最简单、 最简单方法是通过在查询字符串，它是我们将在本教程中使用的选项。 具体而言，`ProductsForCategoryDetails.aspx`页将预期所选 *`categoryID`* 通过名为的查询字符串字段的值`CategoryID`。 例如，若要查看饮料类别的产品具有`CategoryID`为 1，用户需要访问`ProductsForCategoryDetails.aspx?CategoryID=1`。
 
 在 Repeater 我们需要添加超链接 Web 控件或 HTML 定位点元素中创建每个项目符号列表项的超链接 (`<a>`) 到`ItemTemplate`。 在场景中，超链接是显示每个行相同，这两种方法就足够了。 为重复字符，我更愿意使用定位点元素。 若要使用的定位点元素，请更新到 Repeater 的 ItemTemplate:
 
@@ -79,7 +79,7 @@ ms.locfileid: "65131614"
 
 **图 4**:配置为使用 ObjectDataSource`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-acess-two-pages-datalist-vb/_static/image12.png))
 
-由于`GetProductsByCategoryID(categoryID)`方法接受一个输入的参数 (*`categoryID`*)，选择数据源向导为我们提供了可以指定参数的源。 设置参数源为查询字符串使用 QueryStringField `CategoryID`。
+由于`GetProductsByCategoryID(categoryID)`方法接受一个输入的参数 ( *`categoryID`* )，选择数据源向导为我们提供了可以指定参数的源。 设置参数源为查询字符串使用 QueryStringField `CategoryID`。
 
 [![使用查询字符串字段 CategoryID 作为参数的源](master-detail-filtering-acess-two-pages-datalist-vb/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-vb/_static/image13.png)
 

@@ -141,7 +141,7 @@ ms.locfileid: "65133829"
 让我们创建的系统 GridView 中列出的所有用户帐户的页面。 GridView 将包括每个用户的用户名、 电子邮件地址、 上次登录日期和有关用户的注释。 除了显示每个用户的信息，GridView 将包括编辑和删除功能。 我们最初将此页创建与编辑和删除功能可供所有用户。 在"使用 LoginView 控件"和"以编程方式限制功能"部分中，我们将了解如何启用或禁用这些功能基于来访的用户的角色。
 
 > [!NOTE]
-> 我们将要构建的 ASP.NET 页使用 GridView 控件来显示用户帐户。 本教程系列重点介绍窗体身份验证、 授权、 用户帐户和角色，因为我不想花费太多时间来讨论 GridView 控件的内部工作机制。 虽然本教程提供了特定设置此页的分步说明，它不会不研究一下为什么未进行某些选择，或影响特定属性对呈现的输出的详细信息。 有关对 GridView 控件的全面检查，请参阅我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
+> 我们将要构建的 ASP.NET 页使用 GridView 控件来显示用户帐户。 本教程系列重点介绍窗体身份验证、 授权、 用户帐户和角色，因为我不想花费太多时间来讨论 GridView 控件的内部工作机制。 虽然本教程提供了特定设置此页的分步说明，它不会不研究一下为什么未进行某些选择，或影响特定属性对呈现的输出的详细信息。 有关对 GridView 控件的全面检查，请参阅我 *[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
 
 首先打开`RoleBasedAuthorization.aspx`页中`Roles`文件夹。 从拖到设计器和组页将 GridView 及其`ID`到`UserGrid`。 稍后我们将编写代码，调用`Membership.GetAllUsers`方法，并将绑定生成`MembershipUserCollection`对象到 GridView。 `MembershipUserCollection`包含`MembershipUser`中系统; 每个用户帐户的对象`MembershipUser`对象具有属性，如`UserName`， `Email`， `LastLoginDate`，依次类推。
 
@@ -343,7 +343,7 @@ GridView 数据绑定到 GridView，只要枚举中的记录及其`DataSource`�
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢...
 

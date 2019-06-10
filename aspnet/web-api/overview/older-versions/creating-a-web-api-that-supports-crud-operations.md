@@ -71,7 +71,7 @@ API 的产品定义为两种资源类型的 Uri:
 
 首先运行 Visual Studio，然后选择**新的项目**从**启动**页。 或者，从**文件**菜单中，选择**新建**，然后**项目**。
 
-在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 将项目命名&quot;ProductStore&quot;然后单击**确定**。
+在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#** ，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 将项目命名&quot;ProductStore&quot;然后单击**确定**。
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image1.png)
 
@@ -81,7 +81,7 @@ API 的产品定义为两种资源类型的 Uri:
 
 ## <a name="adding-a-model"></a>添加模型
 
-模型是表示应用程序中的数据的对象。 在 ASP.NET Web API 中，可以为模型中，使用强类型的 CLR 对象和它们会自动串行化为 XML 或 JSON 为客户端。
+模型是表示应用程序中的数据的对象  。 在 ASP.NET Web API 中，可以为模型中，使用强类型的 CLR 对象和它们会自动串行化为 XML 或 JSON 为客户端。
 
 对于 ProductStore API 中，我们的数据中包含产品，因此我们将创建一个名为的新类`Product`。
 
@@ -128,7 +128,7 @@ API 的产品定义为两种资源类型的 Uri:
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image6.png)
 
-在中**添加控制器**向导中，将控制器命名&quot;ProductsController&quot;。 在中**模板**下拉列表中，选择**空 API 控制器**。 然后单击 **“添加”**。
+在中**添加控制器**向导中，将控制器命名&quot;ProductsController&quot;。 在中**模板**下拉列表中，选择**空 API 控制器**。 然后单击 **“添加”** 。
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image7.png)
 
@@ -160,7 +160,7 @@ ProductStore API 会公开多个&quot;读取&quot;作为 HTTP GET 方法的操�
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample6.cs)]
 
-方法名称开头&quot;获取&quot;，因此，它映射到 GET 请求的约定。 此外，由于该方法不具有任何参数，它映射到 URI 不包含*&quot;id&quot;* 路径中的段。
+方法名称开头&quot;获取&quot;，因此，它映射到 GET 请求的约定。 此外，由于该方法不具有任何参数，它映射到 URI 不包含 *&quot;id&quot;* 路径中的段。
 
 若要获取产品的 ID，将以下方法添加到`ProductsController`类：
 

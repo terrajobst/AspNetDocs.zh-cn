@@ -177,7 +177,7 @@ NuGet 2.7 包括一套丰富的新功能描述了这些详细的介绍[NuGet 2.7
 
 升级到 ASP.NET Razor 3 或 ASP.NET MVC 5 后，tilde(~) 表示法可能无法再正常工作如果您使用的 URL 重写。 URL 重写会影响 tilde(~) 表示法中的 HTML 元素，如&lt;A /&gt;，&lt;脚本 /&gt;，&lt;链接 /&gt;，并因此颚化符不再将映射到的根目录。
 
-例如，如果您重写的请求**asp.net/content**到**asp.net**中的 href 属性&lt;href ="~/content/"/&gt;解析为 **/content/内容 /** 而不是**/**。 若要禁止显示此更改，可以设置**IIS\_WasUrlRewritten**为 false，在每个网页中或在上下文**应用程序\_BeginRequest** Global.asax 中。
+例如，如果您重写的请求**asp.net/content**到**asp.net**中的 href 属性&lt;href ="~/content/"/&gt;解析为 **/content/内容 /** 而不是 **/** 。 若要禁止显示此更改，可以设置 **IIS\_WasUrlRewritten** 为 false，在每个网页中或在上下文 **应用程序\_BeginRequest** Global.asax 中。
 
 <a id="templateissue"></a>
 ### <a name="templates"></a>模板

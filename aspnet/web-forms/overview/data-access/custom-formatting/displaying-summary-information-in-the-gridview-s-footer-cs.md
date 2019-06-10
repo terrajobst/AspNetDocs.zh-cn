@@ -83,7 +83,7 @@ ms.locfileid: "65114991"
 
 [![从所选类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
-**图 8**:获取*`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
+**图 8**:获取 *`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
 完成向导后 GridView 将为每个产品属性具有 BoundField。 让我们来清理这些 BoundFields 以便仅`ProductName`， `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields 会显示。 可随意将任何字段级别设置添加到剩余 BoundFields (例如格式设置`UnitPrice`作为一种货币)。 进行这些更改后，GridView 的声明性标记应类似于下面：
 
@@ -93,7 +93,7 @@ ms.locfileid: "65114991"
 
 [![从所选类别 DropDownList 获取 categoryID 参数值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
-**图 9**:获取*`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
+**图 9**:获取 *`categoryID`* 从所选类别 DropDownList 的参数值 ([单击以查看实际尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>步骤 2：在 GridView 中显示页脚
 

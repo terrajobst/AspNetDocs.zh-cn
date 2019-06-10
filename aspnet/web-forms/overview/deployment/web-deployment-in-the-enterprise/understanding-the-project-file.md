@@ -83,7 +83,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
-若要检索的属性值，则使用格式 **$(***PropertyName***) * * *。* 例如，若要检索的值**ServerName**属性，你需要键入：
+若要检索的属性值，则使用格式 * *$(***PropertyName***)***。* 例如，若要检索的值**ServerName**属性，你需要键入：
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
 
@@ -161,8 +161,8 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 通常情况下，当您创建有用的任务和目标，将需要对属性和已在项目文件中其他位置定义的项，请参阅：
 
-- 若要使用的属性值，请键入 **$(***PropertyName***)**，其中*PropertyName*的名称**属性**元素或的名称参数。
-- 若要使用的项，请键入 **@(***ItemName***)**，其中*ItemName*的名称**项**元素。
+- 若要使用的属性值，请键入 **$(***PropertyName***)** ，其中*PropertyName*的名称**属性**元素或的名称参数。
+- 若要使用的项，请键入 **@(***ItemName***)** ，其中*ItemName*的名称**项**元素。
 
 > [!NOTE]
 > 请记住，是否具有相同名称创建多个项，你正在生成列表。 与此相反，如果具有相同名称创建多个属性，您提供的最后一个属性值将覆盖任何以前的属性具有相同名称&#x2014;属性可以仅包含单个值。

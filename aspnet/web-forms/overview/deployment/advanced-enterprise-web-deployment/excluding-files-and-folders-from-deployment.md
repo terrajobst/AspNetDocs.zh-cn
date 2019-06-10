@@ -88,7 +88,7 @@ ms.locfileid: "65133898"
 1. 在 Visual Studio 2010 中打开你的解决方案。
 2. 在中**解决方案资源管理器**窗口中，右键单击你的 web 应用程序项目节点 (例如， **ContactManager.Mvc**)，指向**添加**，然后单击**新项**。
 3. 在中**添加新项**对话框中，选择**XML 文件**模板。
-4. 在 **名称** 框中，键入 *[项目名称]***.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击 **添加**.
+4. 在 **名称** 框中，键入 *[项目名称]* **.wpp.targets** (例如， **ContactManager.Mvc.wpp.targets**)，然后单击 **添加**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 

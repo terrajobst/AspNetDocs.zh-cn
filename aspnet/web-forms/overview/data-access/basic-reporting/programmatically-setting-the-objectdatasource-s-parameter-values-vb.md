@@ -101,7 +101,7 @@ ms.locfileid: "65109255"
 
 **图 9**:单击属性窗口列出 Web 控件的事件中的闪电形图标
 
-所有这三种方法将新的事件处理程序添加了 ObjectDataSource 的`Selecting`到页面的代码隐藏类的事件。 此事件处理程序中我们可以读取和写入到使用的参数值`e.InputParameters(parameterName)`，其中*`parameterName`* 的值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`也可以是集合索引作为中序号， `e.InputParameters(index)`)。 若要设置`month`当前月份，参数添加到以下`Selecting`事件处理程序：
+所有这三种方法将新的事件处理程序添加了 ObjectDataSource 的`Selecting`到页面的代码隐藏类的事件。 此事件处理程序中我们可以读取和写入到使用的参数值`e.InputParameters(parameterName)`，其中 *`parameterName`* 的值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`也可以是集合索引作为中序号， `e.InputParameters(index)`)。 若要设置`month`当前月份，参数添加到以下`Selecting`事件处理程序：
 
 [!code-vb[Main](programmatically-setting-the-objectdatasource-s-parameter-values-vb/samples/sample3.vb)]
 

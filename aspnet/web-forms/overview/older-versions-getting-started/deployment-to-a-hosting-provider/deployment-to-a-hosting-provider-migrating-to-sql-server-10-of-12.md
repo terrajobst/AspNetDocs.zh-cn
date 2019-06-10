@@ -236,7 +236,7 @@ SqlServerCompact NuGet 包提供 SQL Server Compact 数据库引擎的 Contoso �
 
 选择**配置文件**选项卡。
 
-选择**&lt;新...&gt;** 从下拉列表中，并输入"Test"作为配置文件名称。
+选择 **&lt;新...&gt;** 从下拉列表中，并输入"Test"作为配置文件名称。
 
 在中**服务 URL**框中，输入*localhost*。
 
@@ -244,7 +244,7 @@ SqlServerCompact NuGet 包提供 SQL Server Compact 数据库引擎的 Contoso �
 
 在中**目标 URL**框中，输入 `http://localhost/ContosoUniversity/` 。
 
-单击 **“下一步”**。
+单击 **“下一步”** 。
 
 **设置**选项卡会发出警告，**打包/发布 SQL**已经配置了选项卡上，并且它使你有机会来覆盖它们通过单击启用新的数据库发布的改进。 为此部署，不想要重写**打包/发布 SQL**选项卡上设置，因此只需单击**下一步**。
 
@@ -252,7 +252,7 @@ SqlServerCompact NuGet 包提供 SQL Server Compact 数据库引擎的 Contoso �
 
 中的消息**预览版**选项卡指示**没有数据库选择发布**，但这只意味着未在发布配置文件中配置数据库发布。
 
-单击“发布” 。
+单击“发布”  。
 
 ![Publish_Web_wizard_Preview_tab_Migrate](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image20.png)
 

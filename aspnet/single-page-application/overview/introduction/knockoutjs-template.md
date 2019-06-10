@@ -42,7 +42,7 @@ AJAX 是什么新鲜事物，但如今有更加轻松地构建和维护大型复
 
 启动 Visual Studio 并选择**新的项目**从起始页。 或者，从**文件**菜单中，选择**新建**，然后**项目**。
 
-在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 命名项目，然后单击**确定**。
+在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#** ，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 命名项目，然后单击**确定**。
 
 ![](knockoutjs-template/_static/image2.png)
 
@@ -210,7 +210,7 @@ SPA 模板将客户端 JavaScript 组织到三个层：
 
 [!code-html[Main](knockoutjs-template/samples/sample8.html)]
 
-在此示例中，Knockout 会更新的内容**&lt;跨越&gt;** 元素的值与`myItems.count()`。 当此值发生更改时，Knockout 将更新的文档。
+在此示例中，Knockout 会更新的内容 **&lt;跨越&gt;** 元素的值与`myItems.count()`。 当此值发生更改时，Knockout 将更新的文档。
 
 Knockout 提供了多种不同的绑定类型。 下面是一些在 SPA 模板中使用的绑定：
 

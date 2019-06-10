@@ -116,7 +116,7 @@ ms.locfileid: "65132314"
 
 ![Publish_Web_wizard_Profile_tab](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image9.png)
 
-在下拉列表中，选择**&lt;新建...&gt;**.
+在下拉列表中，选择 **&lt;新建...&gt;** .
 
 在中**新的配置文件**对话框中，输入"Test"，然后单击**确定**。
 
@@ -172,7 +172,7 @@ ms.locfileid: "65132314"
 
 ![Publish_Web_wizard_Preview_tab_Test_with_file_list](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image15.png)
 
-单击“发布” 。
+单击“发布”  。
 
 如果 Visual Studio 不是在管理员模式下，可能会收到一个错误消息，指示权限错误。 在这种情况下，关闭 Visual Studio，在管理员模式下打开并尝试再次发布。
 
