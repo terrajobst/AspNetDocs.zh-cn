@@ -215,7 +215,7 @@ jQuery Mobile 是一个开源库，用于构建触控优化的 web UI。 如果�
 
 如果访问者单击链接时，它们被切换到桌面版本的相同页。
 
-因为桌面设备布局将不包括视图切换器，默认情况下，访客不会有一种方法以获取到移动模式。 若要启用此功能，将以下引用添加到 *\_ViewSwitcher*为桌面的布局，只需内*&lt;正文&gt;* 元素：
+因为桌面设备布局将不包括视图切换器，默认情况下，访客不会有一种方法以获取到移动模式。 若要启用此功能，将以下引用添加到 *\_ViewSwitcher*为桌面的布局，只需内 *&lt;正文&gt;* 元素：
 
 [!code-cshtml[Main](mvc4-beta-release-notes/samples/sample7.cshtml)]
 
@@ -239,7 +239,7 @@ jQuery Mobile 是一个开源库，用于构建触控优化的 web UI。 如果�
 <a id="_Toc303253813"></a>
 ### <a name="task-support-for-asynchronous-controllers"></a>任务支持异步控制器
 
-您现在可以编写异步操作方法的返回类型的对象为 single 方法*任务*或*任务&lt;ActionResult&gt;*。
+您现在可以编写异步操作方法的返回类型的对象为 single 方法*任务*或*任务&lt;ActionResult&gt;* 。
 
 例如，如果您使用的 Visual C# 5 (或使用[Async CTP](https://msdn.microsoft.com/vstudio/async.aspx))，可以创建异步操作方法，如以下所示：
 
@@ -301,7 +301,7 @@ ASP.NET MVC 4 Beta 支持 Windows Azure SDK 1.5 2011 年 9 月的发布。
 
     **所需的更新**
 
-  1. 在根 Web.config 文件中，添加一个新*&lt;appSettings&gt;* 具有键的项*webPages:Version*和值*1.0.0.0*。
+  1. 在根 Web.config 文件中，添加一个新 *&lt;appSettings&gt;* 具有键的项*webPages:Version*和值*1.0.0.0*。
 
       [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
   2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。
