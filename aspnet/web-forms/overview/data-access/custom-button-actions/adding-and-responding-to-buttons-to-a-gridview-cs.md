@@ -104,7 +104,7 @@ ms.locfileid: "65131743"
 
 [![指示，供应商 Id 参数应来自于供应商 FormView 控件](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image24.png)
 
-**图 10**:指示*`supplierID`* 参数应该来自于`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
+**图 10**:指示 *`supplierID`* 参数应该来自于`Suppliers`FormView 控件 ([单击以查看实际尺寸的图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
 
 完成 ObjectDataSource 向导后，命令将 BoundField 或 CheckBoxField 每个产品的数据字段包含 GridView。 让我们修整一下此显示只`ProductName`并`UnitPrice`连同 BoundFields `Discontinued` CheckBoxField; 此外，让我们来设置格式`UnitPrice`BoundField，使其文本设置为货币格式，如。 在 GridView 和`SuppliersProductsDataSource`ObjectDataSource 的声明性标记应类似于以下标记：
 
@@ -126,7 +126,7 @@ ms.locfileid: "65131743"
 
 **图 12**:创建 DAL 的方法使用一个临时 SQL 语句 ([单击此项可查看原尺寸图像](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image32.png))
 
-接下来，向导会提示我们关于哪些类型的查询来创建。 由于`DiscontinueAllProductsForSupplier(supplierID)`方法将需要更新`Products`设置的数据库表`Discontinued`为 1 的所有产品提供的指定字段*`supplierID`*，我们需要创建更新数据的查询。
+接下来，向导会提示我们关于哪些类型的查询来创建。 由于`DiscontinueAllProductsForSupplier(supplierID)`方法将需要更新`Products`设置的数据库表`Discontinued`为 1 的所有产品提供的指定字段 *`supplierID`* ，我们需要创建更新数据的查询。
 
 [![选择更新查询类型](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image33.png)
 

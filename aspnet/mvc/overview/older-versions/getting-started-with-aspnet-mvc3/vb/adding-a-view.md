@@ -51,7 +51,7 @@ ms.locfileid: "65129976"
 
 [!code-vbhtml[Main](adding-a-view/samples/sample2.vbhtml)]
 
-运行应用程序，并浏览到&quot;你好世界&quot;控制器 (`http://localhost:xxxx/HelloWorld`)。 `Index`控制器中的方法未做大量的工作; 它只需运行该语句`return View()`，这表示我们想要使用视图模板文件来呈现到客户端的响应。 因为我们未显式指定要使用的视图模板文件的名称，ASP.NET MVC 的默认设置为使用*Index.vbhtml*视图中的文件*\Views\HelloWorld*文件夹。 下图显示了字符串硬编码的视图中。
+运行应用程序，并浏览到&quot;你好世界&quot;控制器 (`http://localhost:xxxx/HelloWorld`)。 `Index`控制器中的方法未做大量的工作; 它只需运行该语句`return View()`，这表示我们想要使用视图模板文件来呈现到客户端的响应。 因为我们未显式指定要使用的视图模板文件的名称，ASP.NET MVC 的默认设置为使用*Index.vbhtml*视图中的文件 *\Views\HelloWorld* 文件夹。 下图显示了字符串硬编码的视图中。
 
 [![3HelloWorld](adding-a-view/_static/image8.png "3HelloWorld")](adding-a-view/_static/image7.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "65129976"
 
 首先，让我们来更改文本&quot;我的 MVC 应用程序。&quot;该文本共享，并显示在每一页。 它实际显示只能在一个位置，在我们的项目，即使它是在我们的应用程序中每一页上。 转到 */视图/共享*中的文件夹**解决方案资源管理器**，然后打开 *\_Layout.vbhtml*文件。 此文件称为布局页，它是共享&quot;shell&quot;所有其他页使用的。
 
-请注意`@RenderBody()`文件底部附近的代码行。 `RenderBody` 是你创建的所有页，都显示的其中一个占位符&quot;包装&quot;在布局页面中。 更改`<h1>`从标题**&quot;** My MVC Application&quot;到&quot;MVC 电影应用&quot;。
+请注意`@RenderBody()`文件底部附近的代码行。 `RenderBody` 是你创建的所有页，都显示的其中一个占位符&quot;包装&quot;在布局页面中。 更改`<h1>`从标题 **&quot;** My MVC Application&quot;到&quot;MVC 电影应用&quot;。
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 

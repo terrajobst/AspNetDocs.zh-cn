@@ -149,7 +149,7 @@ ASP.NET Web API 包括以下功能的支持：
 <a id="_Toc303253813"></a>
 ### <a name="task-support-for-asynchronous-controllers"></a>任务支持异步控制器
 
-您现在可以编写异步操作方法的返回类型的对象为 single 方法*任务*或*任务&lt;ActionResult&gt;*。
+您现在可以编写异步操作方法的返回类型的对象为 single 方法*任务*或*任务&lt;ActionResult&gt;* 。
 
  有关详细信息请参阅[ASP.NET MVC 4 中使用异步方法](../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)。
 
@@ -224,11 +224,11 @@ ASP.NET MVC 4 Release Candidate 的发行说明可在此处找到：
 
 - **每个控制器配置：** ASP.NET Web API 控制器可以与实现的自定义属性归*IControllerConfiguration*设置其自己的格式化程序、 操作选择器和参数绑定器。 *HttpControllerConfigurationAttribute*已删除。
 - **每个路由消息处理程序：** 现在可以在给定路由的请求链中指定的最后一条消息处理程序。 这使对持续一段时间沿框架路由以使用发送到其自身的支持 (非*IHttpController*) 终结点。
-- **进度通知：***ProgressMessageHandler*生成进度通知的请求实体正在上传和下载的响应实体。 使用此处理程序很可能延伸的范围是上传请求正文还是正在下载响应正文跟踪的。
-- **将内容推送：***PushStreamContent*类启用了数据生产者希望直接写入请求或响应 （同步或异步） 使用一个流的方案。 当*PushStreamContent*已准备好接受它调用一个操作委托，它与输出流的数据。 为长达必要和关闭时写入的流已完成，开发人员然后可以写入到流。 *PushStreamContent*检测到的流的结尾，并完成基础异步*任务*用于写出内容。
+- **进度通知：** *ProgressMessageHandler* 生成进度通知的请求实体正在上传和下载的响应实体。 使用此处理程序很可能延伸的范围是上传请求正文还是正在下载响应正文跟踪的。
+- **将内容推送：** *PushStreamContent* 类启用了数据生产者希望直接写入请求或响应 （同步或异步） 使用一个流的方案。 当*PushStreamContent*已准备好接受它调用一个操作委托，它与输出流的数据。 为长达必要和关闭时写入的流已完成，开发人员然后可以写入到流。 *PushStreamContent*检测到的流的结尾，并完成基础异步*任务*用于写出内容。
 - **创建错误响应：** 使用*HttpError*类型来一致地表示错误中的信息，例如验证错误和异常同时仍然允许*IncludeErrorDetailPolicy*。 使用新*CreateErrorResponse*扩展方法，可以轻松地创建错误的响应*HttpError*作为内容。 *HttpError*内容是完全内容协商。
 - **MediaRangeMapping 删除：** 现在的默认内容协商者来处理媒体类型范围。
-- **现在是简单类型参数的默认参数绑定 [FromUri]:** 在以前版本的 ASP.NET Web API 使用模型绑定简单类型参数的默认参数绑定。 简单类型参数的默认参数绑定现 *[FromUri]*。
+- **现在是简单类型参数的默认参数绑定 [FromUri]:** 在以前版本的 ASP.NET Web API 使用模型绑定简单类型参数的默认参数绑定。 简单类型参数的默认参数绑定现 *[FromUri]* 。
 - **操作选择遵循必需的参数：** 如果提供了所有必需的参数来自 URI 的 ASP.NET Web API 中的操作选择将现在仅选择一个操作。 参数可以通过提供操作方法签名中参数的默认值指定为可选。
 - **自定义 HTTP 参数绑定：** 使用*ParameterBindingAttribute*自定义特定的操作参数的参数绑定或使用*ParameterBindingRules*上*HttpConfiguration*自定义参数绑定更加广泛。
 - **MediaTypeFormatter 改进：** 格式化程序现在有权访问完整*HttpContent*实例。
@@ -238,7 +238,7 @@ ASP.NET MVC 4 Release Candidate 的发行说明可在此处找到：
 - **针对返回 406 不可接受的响应的支持：** 你现在可以返回 406 不可接受的响应在 ASP.NET Web API 中通过创建找不到合适的格式化程序时*为 DefaultContentNegotiator*与*excludeMatchOnTypeOnly*参数设置为 *，则返回 true*。
 - **读取作为 NameValueCollection 或 JToken 窗体数据：** 你可以读取窗体数据 URI 查询字符串中或在请求正文中作为*NameValueCollection*使用*ParseQueryString*并*ReadAsFormDataAsync*扩展方法分别。 同样，您可以读取窗体数据 URI 查询字符串中或在请求正文中作为*JToken*使用*TryReadQueryAsJson*并*ReadAsAsync*&lt;T&gt;扩展方法分别。
 - **多部分改进：** 现在就可以编写*MultipartStreamProvider*完全针对 MIME 多部分数据，它可以读取并以最佳方式向用户显示结果的类型。 您还可以挂接后续处理步骤上*MultipartStreamProvider*允许实现来完成任何后期处理它要将 MIME 多部分正文部分上的。 例如， *MultipartFormDataStreamProvider*实现读取 HTML 窗体数据部分，并将它们添加到*NameValueCollection*以便它们可以轻松从调用方处获取。
-- **链接生成改进：***UrlHelper*不再依赖于*HttpControllerContext*。 现在可以访问*UrlHelper*从任何上下文位置*HttpRequestMessage*可用。
+- **链接生成改进：** *UrlHelper* 不再依赖于 *HttpControllerContext*。 现在可以访问*UrlHelper*从任何上下文位置*HttpRequestMessage*可用。
 - **消息处理程序执行顺序更改：** 现在它们按相反的顺序配置而不是顺序执行消息处理程序。
 - **消息处理程序绑定的帮助器：** 新*HttpClientFactory*的接通*DelegatingHandlers* ，并创建*HttpClient*与所需的管道准备就绪。 它还提供有关使用备用的内部处理程序绑定的功能 (默认值是*HttpClientHandler*) 以及使用时，执行连接*HttpMessageInvoker*或另一个*DelegatingHandler*而不是*HttpClient*作为前调用程序。
 - **对 ASP.NET Web 优化 Cdn 的支持：** 现在 ASP.NET Web 优化的 CDN 备用路径，使您能够为每个捆绑包中指定其他 URL 的指向该资源上的内容交付网络提供支持。 支持 Cdn，可获取脚本和样式绑定地理位置更靠近最终使用者的 Web 应用程序。 当 CDN 不可用时，生产应用应实现回退。 测试回退。
@@ -271,7 +271,7 @@ ASP.NET MVC 4 Release Candidate 的发行说明可在此处找到：
 
     **所需的更新**
 
-  1. 在根 Web.config 文件中，添加一个新*&lt;appSettings&gt;* 具有键的项*webPages:Version*和值*1.0.0.0*。 
+  1. 在根 Web.config 文件中，添加一个新 *&lt;appSettings&gt;* 具有键的项*webPages:Version*和值*1.0.0.0*。 
 
       [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
   2. 在解决方案资源管理器，右键单击项目名称，然后选择卸载项目。 再次右键单击名称，然后选择编辑*ProjectName*.csproj。

@@ -130,7 +130,7 @@ ms.locfileid: "65112373"
 您的网站包含其他功能，让用户管理他们的帐户。 用户可以执行以下操作：
 
 - 更改其密码。 登录后，他们可以单击用户名 （这是一个链接）。 这使它们转到一个页面，用于创建新密码 (*Account/ChangePassword.cshtml*)。
-- 恢复忘记的密码。 在登录页上，是一个链接 (**是否忘记了密码？**)，使用户进入页面 (*Account/ForgotPassword.cshtml*) 可在其中输入电子邮件地址。 该站点将其发送电子邮件具有他们可以单击以设置新密码的链接 (*Account/PasswordReset.cshtml*)。
+- 恢复忘记的密码。 在登录页上，是一个链接 (**是否忘记了密码？** )，使用户进入页面 (*Account/ForgotPassword.cshtml*) 可在其中输入电子邮件地址。 该站点将其发送电子邮件具有他们可以单击以设置新密码的链接 (*Account/PasswordReset.cshtml*)。
 
 您还可以让用户还可以使用外部站点，登录，如下所述更高版本。
 
@@ -166,7 +166,7 @@ ms.locfileid: "65112373"
 若要保护对多个页的访问，可以执行此操作：
 
 - 添加到每个页面的安全检查。
-- 创建 *\_PageStart.cshtml*其中保留受保护的页面，并添加的安全检查的文件夹中的页。  *\_PageStart.cshtml*页充当一种的文件夹中的所有页面全局网页。 中更详细地解释此技术[自定义网站的行为为 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
+- 创建 *\_PageStart.cshtml*其中保留受保护的页面，并添加的安全检查的文件夹中的页。 *\_PageStart.cshtml* 页充当一种的文件夹中的所有页面全局网页。 中更详细地解释此技术[自定义网站的行为为 ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>创建安全组的用户 （角色）
 

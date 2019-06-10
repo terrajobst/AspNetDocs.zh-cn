@@ -91,7 +91,7 @@ IIS 7，但是，允许集成的 IIS 和 ASP.NET 管道。 使用几项配置设
 
 **图 03**:将主页面名为 Site.master 添加到网站 ([单击此项可查看原尺寸图像](an-overview-of-forms-authentication-vb/_static/image9.png))
 
-在母版页中定义站点级页面布局。 可以使用设计视图并添加所需的任何布局或 Web 控件也可以手动在源视图中手动添加标记。 我构建我的母版页的布局来模拟布局中使用我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* （请参阅图 4） 的系列教程。 使用母版页[级联样式表](http://www.w3schools.com/css/default.asp)定位和使用 CSS 设置文件 （其中包含在本教程中的关联的下载中） 的 Style.css 中定义的样式。 但您不能从标记如下所示，定义的 CSS 规则，以便导航&lt;div&gt;的内容绝对定位，以便它显示在左侧，并且具有固定的宽度为 200 像素。
+在母版页中定义站点级页面布局。 可以使用设计视图并添加所需的任何布局或 Web 控件也可以手动在源视图中手动添加标记。 我构建我的母版页的布局来模拟布局中使用我 *[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* （请参阅图 4） 的系列教程。 使用母版页[级联样式表](http://www.w3schools.com/css/default.asp)定位和使用 CSS 设置文件 （其中包含在本教程中的关联的下载中） 的 Style.css 中定义的样式。 但您不能从标记如下所示，定义的 CSS 规则，以便导航&lt;div&gt;的内容绝对定位，以便它显示在左侧，并且具有固定的宽度为 200 像素。
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample1.aspx)]
 
@@ -242,7 +242,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 除非你的网站包含敏感信息，只需要使用其中用户的密码将否则会通过网络发送以纯文本形式 SSL 登录页上和其他页上。 不需要担心如何保护窗体身份验证票证，因为默认情况下，则会同时加密和数字签名 （以防止篡改）。 以下教程中会显示在窗体身份验证票证安全的更深入讨论。
 
 > [!NOTE]
-> 很多财务和医疗网站配置为在上使用 SSL*所有*页可以访问身份验证的用户。 如果你正在构建网站可以配置窗体身份验证系统，以便窗体身份验证票证只传输通过安全连接。 我们将探讨在下一教程中的各种窗体身份验证配置选项*[窗体身份验证配置和高级主题](../membership/creating-the-membership-schema-in-sql-server-vb.md)*。
+> 很多财务和医疗网站配置为在上使用 SSL*所有*页可以访问身份验证的用户。 如果你正在构建网站可以配置窗体身份验证系统，以便窗体身份验证票证只传输通过安全连接。 我们将探讨在下一教程中的各种窗体身份验证配置选项 *[窗体身份验证配置和高级主题](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 。
 
 ## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步骤 4：检测已经过身份验证的访问者和确定其标识
 
@@ -422,7 +422,7 @@ ASP.NET 提供注销链接此类的常见功能包括专门用于注销用户的
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 

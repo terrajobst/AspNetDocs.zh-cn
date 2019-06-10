@@ -43,7 +43,7 @@ ms.locfileid: "65129983"
 
 重新编译应用程序中使用**调试** &gt;**构建电影**菜单命令。
 
-现在，已更新`Model`类，您还需要更新*\Views\Movies\Index.vbhtml*并 *\Views\Movies\Create.vbhtml* 查看模板以支持新`Rating`属性。
+现在，已更新`Model`类，您还需要更新 *\Views\Movies\Index.vbhtml* 并 *\Views\Movies\Create.vbhtml* 查看模板以支持新`Rating`属性。
 
 打开<em>\Views\Movies\Index.vbhtml</em>文件，并添加`<th>Rating</th>`列标题之后<strong>价格</strong>列。 然后添加`<td>`快要结束的模板来呈现列`@item.Rating`值。 下面是哪些更新<em>Index.vbhtml</em>视图模板如下所示：
 
@@ -112,7 +112,7 @@ ms.locfileid: "65129983"
 
 [![7_CreateRioII](adding-a-new-field/_static/image5.png)](adding-a-new-field/_static/image4.png)
 
-单击 **“创建”**。 新电影，包括分级，现在显示在列表的电影：
+单击 **“创建”** 。 新电影，包括分级，现在显示在列表的电影：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image6.png)
 
