@@ -67,7 +67,7 @@ ms.locfileid: "65126884"
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>测试视图数据返回的控制器
 
-一个 MVC 控制器将数据传递给视图通过使用所谓*`View Data`*。 例如，假设你想要显示某一特定产品的详细信息，当你调用`ProductController Details()`操作。 在这种情况下，可以创建的实例`Product`类 （在您的模型中定义），并将传递到实例`Details`视图通过利用`View Data`。
+一个 MVC 控制器将数据传递给视图通过使用所谓 *`View Data`* 。 例如，假设你想要显示某一特定产品的详细信息，当你调用`ProductController Details()`操作。 在这种情况下，可以创建的实例`Product`类 （在您的模型中定义），并将传递到实例`Details`视图通过利用`View Data`。
 
 已修改`ProductController`清单 3 中包括的已更新`Details()`返回产品的操作。
 

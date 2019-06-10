@@ -104,7 +104,7 @@ ObjectDataSource 的声明性标记稍有不同我们第一个示例中，使用
 
 ## <a name="showing-all-suppliers-by-default"></a>显示默认情况下的所有供应商
 
-而是不是首先查看网页时显示供应商提供的任何我们可能想要显示*所有*供应商在第一个，这样就允许用户通过在文本框中输入国家/地区名称列表中向下将端点。 当文本框为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传入`Nothing`有关其*`country`* 输入的参数。 这`Nothing`值然后传到 DAL`GetSupplierByCountry(country)`方法，它将转换到的数据库`NULL`值`@Country`在下面的查询参数：
+而是不是首先查看网页时显示供应商提供的任何我们可能想要显示*所有*供应商在第一个，这样就允许用户通过在文本框中输入国家/地区名称列表中向下将端点。 当文本框为空，`SuppliersBLL`类的`GetSuppliersByCountry(country)`方法传入`Nothing`有关其 *`country`* 输入的参数。 这`Nothing`值然后传到 DAL`GetSupplierByCountry(country)`方法，它将转换到的数据库`NULL`值`@Country`在下面的查询参数：
 
 [!code-sql[Main](declarative-parameters-vb/samples/sample3.sql)]
 

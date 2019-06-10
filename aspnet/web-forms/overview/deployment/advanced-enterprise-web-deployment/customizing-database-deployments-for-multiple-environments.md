@@ -88,7 +88,7 @@ ms.locfileid: "65108311"
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. 在中**新的部署配置文件**对话框框中，为该文件提供一个有意义的名称 (例如， **TestEnvironment.sqldeployment**)，然后单击**保存**。
-4. 上 *[文件名]***.sqldeployment** 页上，设置部署属性以匹配你的目标环境的要求，然后保存该文件。
+4. 上 *[文件名]* **.sqldeployment** 页上，设置部署属性以匹配你的目标环境的要求，然后保存该文件。
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. 请注意，新文件添加到您的数据库项目中的属性文件夹。
