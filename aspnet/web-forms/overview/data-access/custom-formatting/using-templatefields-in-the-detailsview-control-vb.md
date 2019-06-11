@@ -110,7 +110,7 @@ Templatefield 进一步提供了比 BoundField、 CheckBoxField、 HyperLinkFiel
 添加静态标记、 标签 Web 控件和数据绑定语法，以便价格和库存 templatefield 进一步显示的价格和库存信息如下所示：
 
 *UnitPrice*  
-(**库存 / 订单：***UnitsInStock* / *UnitsOnOrder*)
+( **库存 / 订单：** *UnitsInStock* / *UnitsOnOrder*)
 
 以后执行此任务 DetailsView 的声明性标记看起来应类似于下面：
 

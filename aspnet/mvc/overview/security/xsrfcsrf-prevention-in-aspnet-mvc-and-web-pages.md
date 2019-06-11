@@ -82,7 +82,7 @@ ANTI-XSRF 令牌的有效负载进行加密和签名，以便使用工具来检�
 若要生成的 ANTI-XSRF 令牌，调用[ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx) MVC 视图中的方法或@AntiForgery.GetHtml从 Razor 页面 （)。 然后，运行时将执行以下步骤：
 
 1. 如果当前的 HTTP 请求中已包含的 ANTI-XSRF 会话令牌 (的 ANTI-XSRF cookie \_ \_RequestVerificationToken)，从其提取的安全令牌。 如果 HTTP 请求不包含的 ANTI-XSRF 会话令牌或安全令牌提取失败，将生成新的随机的 ANTI-XSRF 令牌。
-2. 使用从上面的步骤 (1) 和当前登录的用户的标识的安全令牌生成的 ANTI-XSRF 字段令牌。 (有关确定用户标识的详细信息，请参阅 **[提供特殊支持的方案](#_Scenarios_with_special)** 下面一节。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx)是配置，则运行时会调用其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法，包括字段令牌中返回的字符串。 (请参阅**[配置和可扩展性](#_Configuration_and_extensibility)** 部分，了解详细信息。)
+2. 使用从上面的步骤 (1) 和当前登录的用户的标识的安全令牌生成的 ANTI-XSRF 字段令牌。 (有关确定用户标识的详细信息，请参阅 **[提供特殊支持的方案](#_Scenarios_with_special)** 下面一节。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx)是配置，则运行时会调用其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法，包括字段令牌中返回的字符串。 (请参阅 **[配置和可扩展性](#_Configuration_and_extensibility)** 部分，了解详细信息。)
 3. 如果在步骤 (1) 中生成新的 ANTI-XSRF 令牌，新的会话令牌将创建以包含它，并且将添加到的出站的 HTTP cookie 集合。 步骤 (2) 中的字段标记将包装在`<input type="hidden" />`将返回值的元素，并且此 HTML 标记`Html.AntiForgeryToken()`或`AntiForgery.GetHtml()`。
 
 ## <a name="validating-the-tokens"></a>验证的令牌
@@ -106,7 +106,7 @@ ANTI-XSRF 令牌的有效负载进行加密和签名，以便使用工具来检�
 - 嵌入的字段标记中的用户名与当前登录的用户的用户名不匹配。
 - *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 方法返回*false*。
 
-ANTI-XSRF 功能还可以执行附加检查在令牌生成或验证，过程和这些检查期间出现的故障可能会导致引发异常。 请参阅[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)并**[配置和可扩展性](#_Configuration_and_extensibility)** 部分，了解详细信息。
+ANTI-XSRF 功能还可以执行附加检查在令牌生成或验证，过程和这些检查期间出现的故障可能会导致引发异常。 请参阅[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)并 **[配置和可扩展性](#_Configuration_and_extensibility)** 部分，了解详细信息。
 
 <a id="_Scenarios_with_special"></a>
 
@@ -138,7 +138,7 @@ ANTI-XSRF 系统包含为匿名用户，其中"匿名"定义为用户的特殊�
 - `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35` （适用于 WIF SDK。)
 - `System.Security.Claims.ClaimsIdentity` （适用于.NET 4.5)。
 
-如果这些类型存在，并且当前用户的*IIIIdentity*实现或子类其中一种类型，（标识提供者、 名称标识符），将使用的 ANTI-XSRF 设施代替用户名时生成的元组和验证的令牌。 如果存在任何此类元组，不则请求将失败并出错向开发人员说明如何配置的 ANTI-XSRF 系统，以了解在使用特定的基于声明的身份验证机制。 请参阅**[配置和可扩展性](#_Configuration_and_extensibility)** 部分，了解详细信息。
+如果这些类型存在，并且当前用户的*IIIIdentity*实现或子类其中一种类型，（标识提供者、 名称标识符），将使用的 ANTI-XSRF 设施代替用户名时生成的元组和验证的令牌。 如果存在任何此类元组，不则请求将失败并出错向开发人员说明如何配置的 ANTI-XSRF 系统，以了解在使用特定的基于声明的身份验证机制。 请参阅 **[配置和可扩展性](#_Configuration_and_extensibility)** 部分，了解详细信息。
 
 ### <a name="oauth--openid-authentication"></a>OAuth / OpenID 身份验证
 
@@ -163,7 +163,7 @@ ANTI-XSRF 系统包含为匿名用户，其中"匿名"定义为用户的特殊�
 | --- | --- |
 | **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) ，在令牌的生成过程中提供额外的数据和在令牌验证期间会占用更多数据。 默认值是*null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
 | **CookieName** | 提供用于存储的 ANTI-XSRF 会话令牌的 HTTP cookie 的名称的字符串。 如果未设置此值，将自动生成名称基于应用程序的已部署的虚拟路径。 默认值是*null*。 |
-| **RequireSsl** | 一个布尔值，指示是否需要通过 SSL 安全通道提交的 ANTI-XSRF 令牌。 如果此值为 *，则返回 true*、 自动生成的任何 cookie 将具有"安全"标志设置，并且从通过 SSL 未提交的请求中调用，则会引发的 ANTI-XSRF Api。 默认值为“false”。 |
+| **RequireSsl** | 一个布尔值，指示是否需要通过 SSL 安全通道提交的 ANTI-XSRF 令牌。 如果此值为 *，则返回 true*、 自动生成的任何 cookie 将具有"安全"标志设置，并且从通过 SSL 未提交的请求中调用，则会引发的 ANTI-XSRF Api。 默认值为“false”  。 |
 | **SuppressIdentityHeuristicChecks** | 一个布尔值，指示的 ANTI-XSRF 系统是否应停用它对基于声明的标识的支持。 如果此值为 *，则返回 true*，系统将假定*IIdentity.Name*适合用作唯一的每个用户标识符并且不会尝试使用特殊处理*IClaimsIdentity*或*ClClaimsIdentity*中所述[WIF / ACS / 基于声明的身份验证](#_WIF_ACS)部分。 默认值为 `false`。 |
 | **UniqueClaimTypeIdentifier** | 一个字符串，指示哪些声明类型适合用作唯一的每个用户标识符。 如果此值是组和当前*IIdentity*基于声明的则系统将尝试提取声明的类型由指定*UniqueClaimTypeIdentifier*，并且将使用相应的值代替时生成的字段标记的用户的用户名。 如果找不到声明类型，系统将无法发送请求。 默认值是*null*，指示系统应使用 （标识提供者、 名称标识符） 代替用户的用户名按前面所述的元组。 |
 

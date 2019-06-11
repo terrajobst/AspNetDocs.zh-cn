@@ -25,7 +25,7 @@ ms.locfileid: "65108562"
 
 ## <a name="introduction"></a>介绍
 
-Microsoft SQL Server 允许*[计算所得的列](https://msdn.microsoft.com/library/ms191250.aspx)*，从通常引用同一个表中的其他列的值的表达式计算其值的列。 例如，时间跟踪数据模型可能有一个名为的表`ServiceLog`列包括与`ServicePerformed`， `EmployeeID`， `Rate`，和`Duration`，等等。 尽管到期金额每个服务项 （正在持续时间的乘积的速率） 可以计算通过 web 页或其他编程接口，它可能会比较方便包括中的列`ServiceLog`名为表`AmountDue`报告这信息。 此列可以创建为普通的列，但它需要随时更新`Rate`或`Duration`更改列的值。 更好的方法是建立`AmountDue`列使用表达式的计算列`Rate * Duration`。 执行此操作会导致 SQL Server 自动计算`AmountDue`只要它在查询中引用列的值。
+Microsoft SQL Server 允许 *[计算所得的列](https://msdn.microsoft.com/library/ms191250.aspx)* ，从通常引用同一个表中的其他列的值的表达式计算其值的列。 例如，时间跟踪数据模型可能有一个名为的表`ServiceLog`列包括与`ServicePerformed`， `EmployeeID`， `Rate`，和`Duration`，等等。 尽管到期金额每个服务项 （正在持续时间的乘积的速率） 可以计算通过 web 页或其他编程接口，它可能会比较方便包括中的列`ServiceLog`名为表`AmountDue`报告这信息。 此列可以创建为普通的列，但它需要随时更新`Rate`或`Duration`更改列的值。 更好的方法是建立`AmountDue`列使用表达式的计算列`Rate * Duration`。 执行此操作会导致 SQL Server 自动计算`AmountDue`只要它在查询中引用列的值。
 
 由于计算的列的值由一个表达式，此类列是只读的因此不能具有值分配给他们中`INSERT`或`UPDATE`语句。 但是，当计算的列使用的临时 SQL 语句的 TableAdapter 的主查询的一部分时，它们将自动包含在自动生成`INSERT`和`UPDATE`语句。 因此，TableAdapter s`INSERT`并`UPDATE`查询和`InsertCommand`和`UpdateCommand`属性必须更新以删除对任何计算列的引用。
 
