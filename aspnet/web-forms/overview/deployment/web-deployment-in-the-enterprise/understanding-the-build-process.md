@@ -164,7 +164,7 @@ MSBuild 的生成名为项列表来处理此指令**ProjectsToBuild**。 在这�
 
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
-这是一种*目标批处理*。 在 MSBuild 项目文件中，批处理是一种循环访问集合的方法。 值**输出**属性中， **"%(DbPublishPackages.Identity)"**，是指**标识**元数据属性**DbPublishPackages**项列表。 此表示法，**Outputs=%***(ItemList.ItemMetadataName)*，将被转换为：
+这是一种*目标批处理*。 在 MSBuild 项目文件中，批处理是一种循环访问集合的方法。 值**输出**属性中， **"%(DbPublishPackages.Identity)"** ，是指**标识**元数据属性**DbPublishPackages**项列表。 此表示法，**Outputs=%** *(ItemList.ItemMetadataName)* ，将被转换为：
 
 - 拆分中的项**DbPublishPackages**为包含相同的项目的多个批**标识**元数据值。
 - 执行一次每个批处理的目标。
@@ -178,7 +178,7 @@ MSBuild 的生成名为项列表来处理此指令**ProjectsToBuild**。 在这�
 
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
-在这种情况下， **%(DbPublishPackages.DatabaseConnectionString)**， **%(DbPublishPackages.TargetDatabase)**，并 **%(DbPublishPackages.FullPath)** 全都引用元数据值的**DbPublishPackages**项集合。  **\_Cmd**属性由**Exec**任务中，调用命令。
+在这种情况下， **%(DbPublishPackages.DatabaseConnectionString)** ， **%(DbPublishPackages.TargetDatabase)** ，并 **%(DbPublishPackages.FullPath)** 全都引用元数据值的**DbPublishPackages**项集合。 **\_Cmd** 属性由 **Exec** 任务中，调用命令。
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
 

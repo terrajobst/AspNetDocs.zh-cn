@@ -133,7 +133,7 @@ ASP.NET 已合并到 Movies.cshtml 页的内容 *\_Layout.cshtml*页面，在右
 
 ## <a name="passing-title-information-to-the-layout-page"></a>传递到布局页的标题信息
 
- *\_Layout.cshtml*创建的页具有`<title>`设置为"My 电影 Site"的元素。 大多数浏览器将此元素的内容显示为一个选项卡上的文本：
+*\_Layout.cshtml* 创建的页具有`<title>`设置为"My 电影 Site"的元素。 大多数浏览器将此元素的内容显示为一个选项卡上的文本：
 
 ![页面的&lt;标题&gt;浏览器选项卡中显示的元素](layouts/_static/image8.png)
 
