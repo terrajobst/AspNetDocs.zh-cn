@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: ec5ad784978b2d5191d59398fc4b5ed25ae516fb
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c7d4802063c8610a246afe67bd15eea429f7304a
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128408"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410833"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web Pages (Razor) 站点中的 HTML 窗体
 
@@ -51,7 +51,7 @@ ms.locfileid: "65128408"
     [!code-html[Main](4-working-with-forms/samples/sample1.html)]
 3. 启动你的浏览器中的页。 (在 WebMatrix 中，在**文件**工作区中，右键单击该文件，然后选择**浏览器中启动**。)具有三个输入字段的简单窗体和一个**提交**显示按钮。
 
-    ![具有三个文本框的窗体的屏幕截图。](4-working-with-forms/_static/image1.jpg)
+    ![具有三个文本框的窗体的屏幕截图。](4-working-with-forms/_static/image1.png)
 
     此时，如果您单击**提交**按钮，会执行任何操作。 若要使窗体非常有用，您必须添加一些代码将在服务器上运行。
 
@@ -67,7 +67,7 @@ ms.locfileid: "65128408"
 
     这一次提交页面时，你输入的值显示在窗体的正上方：
 
-    ![显示您输入的值在页面上显示的屏幕截图。](4-working-with-forms/_static/image2.jpg)
+    ![显示您输入的值在页面上显示的屏幕截图。](4-working-with-forms/_static/image2.png)
 
     看一下页面代码。 首先使用`IsPost`方法，以确定是否正在发布页面&#8212;，即是用户在单击**提交**按钮。 如果这是 post， `IsPost` ，则返回 true。 这是标准方法在 ASP.NET Web Pages 以确定是否正在使用初始请求 （GET 请求） 或回发 （POST 请求）。 (有关 GET 和 POST 的详细信息，请参阅侧栏"HTTP GET 和 POST 和 IsPost 属性的"中[ASP.NET Web Pages 编程使用 Razor 语法简介](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost)。)
 

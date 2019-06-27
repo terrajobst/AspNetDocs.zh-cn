@@ -9,12 +9,12 @@ ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 8e476f8a4172ebbe55819cda1ceb5458426243bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fa4b22438fffe4f5b95a877e96eb4ec26b6de8d9
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381895"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410896"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建议的资源
 
@@ -147,7 +147,6 @@ ms.locfileid: "59381895"
 - 博客：[实现 ASP.NET 标识](http://odetocode.com/blogs/scott/archive/2014/01/20/implementing-asp-net-identity.aspx)
 - 教程：[设置了基本的标识帐户，并指向外部 DB](http://typecastexception.com/post/2013/10/27/Configuring-Db-Connection-and-Code-First-Migration-for-Identity-Accounts-in-ASPNET-MVC-5-and-Visual-Studio-2013.aspx)。 通过[ @xivSolutions ](https://twitter.com/xivSolutions)。
 - 教程[:实现自定义 MySQL ASP.NET 标识存储提供程序](../extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider.md)
-- [CodeFluent 实体](http://blog.codefluententities.com/2014/04/30/asp-net-identity-v2-and-codefluent-entities/)通过[SoftFluent](http://www.softfluent.com/)
 - [Azure 表存储](https://www.nuget.org/packages/accidentalfish.aspnet.identity.azure/)由 James randall 简要介绍。
 - Azure 表存储：[AspNet.Identity.TableStorage](https://github.com/stuartleeks/leeksnet.AspNet.Identity.TableStorage)由[ @stuartleeks ](https://twitter.com/stuartleeks)。
 - [CouchDB / 通过 Daniel Wertheim Cloudant。](https://github.com/danielwertheim/mycouch.aspnet.identity)
@@ -170,14 +169,14 @@ ms.locfileid: "59381895"
 ## <a name="qampa-questionanswer"></a>问：&amp;（问题/答案）
 
 - 问：锁定用户对已启用"记住我"（因此它们无需在该计算机/浏览器经历 2FA） 未锁定。为何以及如何防止的？ 答案[此处](http://stackoverflow.com/questions/24312247/locked-out-users-can-login-if-they-have-auth-cookie)。
-- **问：**:如何在 ASP.NET 标识 cookie 以避免不必要的数据库上的每个请求的查询存储自定义声明，如用户的实际名称。 答案[此处](http://stackoverflow.com/questions/23622047/identity-cookie-loses-custom-claim-information-after-a-period-of-time)。
+- **问：** :如何在 ASP.NET 标识 cookie 以避免不必要的数据库上的每个请求的查询存储自定义声明，如用户的实际名称。 答案[此处](http://stackoverflow.com/questions/23622047/identity-cookie-loses-custom-claim-information-after-a-period-of-time)。
 - **问：正在更新 AspNetUser 密码哈希**:我有 2 个项目。 其中之一使用 ASP.NET 身份验证，另一个则使用 Windows 身份验证，这是管理层面。 我想要能够管理其他用户的管理员项目。 我可以修改密码以外的所有内容。 [此处回答](http://stackoverflow.com/questions/23880666/updating-aspnetuser-password-hash)。
-- **问：**:如何可以重置密码作为其他用户的管理员？ 答案[此处](http://stackoverflow.com/questions/23783249/identity-2-0-reset-password-by-admin/24211766#24211766)。
-- **问：**:可以更改在 ASP.NET MVC IdentityUser 中用户名字段的显示的名称？ 答案[此处](http://stackoverflow.com/questions/23256650/can-i-change-the-displayed-name-of-the-username-field-in-asp-net-mvc-identityuse)。
-- **问：**:如何将其他用户添加到特定角色的 gran 用户权限？ 答案[此处](http://stackoverflow.com/questions/23695373/allow-users-to-grant-permissions-to-other-users-for-their-account-in-asp-net-ide)。
-- **问：**:在 AspNetUsers 表中与 AspNetUserClaims 表中存储的个人资料信息。 答案[此处](http://stackoverflow.com/questions/23215727/is-there-any-benefit-to-storing-user-information-in-aspnetuserclaims-with-asp-ne)。
-- **问：**:使用外部身份验证提供程序时记住我。 答案[此处](http://stackoverflow.com/questions/23180896/how-to-remember-the-login-in-mvc5-when-an-external-provider-is-used)。
-- **问：**:为什么每个请求需要 ApplicationDBContext 那个例子不是过多开销？。 回答，否，开销会较低。
+- **问：** :如何可以重置密码作为其他用户的管理员？ 答案[此处](http://stackoverflow.com/questions/23783249/identity-2-0-reset-password-by-admin/24211766#24211766)。
+- **问：** :可以更改在 ASP.NET MVC IdentityUser 中用户名字段的显示的名称？ 答案[此处](http://stackoverflow.com/questions/23256650/can-i-change-the-displayed-name-of-the-username-field-in-asp-net-mvc-identityuse)。
+- **问：** :如何将其他用户添加到特定角色的 gran 用户权限？ 答案[此处](http://stackoverflow.com/questions/23695373/allow-users-to-grant-permissions-to-other-users-for-their-account-in-asp-net-ide)。
+- **问：** :在 AspNetUsers 表中与 AspNetUserClaims 表中存储的个人资料信息。 答案[此处](http://stackoverflow.com/questions/23215727/is-there-any-benefit-to-storing-user-information-in-aspnetuserclaims-with-asp-ne)。
+- **问：** :使用外部身份验证提供程序时记住我。 答案[此处](http://stackoverflow.com/questions/23180896/how-to-remember-the-login-in-mvc5-when-an-external-provider-is-used)。
+- **问：** :为什么每个请求需要 ApplicationDBContext 那个例子不是过多开销？。 回答，否，开销会较低。
 - 问：如何获取登录用户的列表？ 答案[此处](http://stackoverflow.com/questions/22995653/getting-a-list-of-logged-in-users-in-asp-net-identity/)。
 - 问：如何检测当用户登录 Microsoft.AspNet.Identity 时？ 答案[此处](http://stackoverflow.com/questions/22956486/how-can-i-detect-when-a-user-logs-in-with-microsoft-aspnet-identity/22970698#22970698)。
 - 问：如何获取标识本地化的错误消息？ 答案[此处](http://stackoverflow.com/questions/22835981/asp-net-identity-localization-publickeytoken/22845864#22845864)。

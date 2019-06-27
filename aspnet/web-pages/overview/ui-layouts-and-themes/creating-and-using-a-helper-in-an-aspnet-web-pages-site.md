@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 1f5109324ff3ce919e88fe976587a179eeaa5a5d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 380663951094c9fc7d5f0601e30995fa073a204b
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116036"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410968"
 ---
 # <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>创建和使用 ASP.NET 网页 (Razor) 站点中的一个帮助程序
 
@@ -71,7 +71,7 @@ ms.locfileid: "65116036"
     若要调用帮助器创建，使用`@`跟的文件名，该帮助器位置后，一个点，然后帮助程序名称。 (如果在具有多个文件夹*应用程序\_代码*文件夹中，可以使用语法`@FolderName.FileName.HelperName`调用帮助者内任何嵌套的文件夹级别)。 在括号中的引号中添加的文本是说明的帮助程序将显示在网页中的一部分的文本。
 3. 保存页面，并在浏览器中运行它。 帮助程序生成的注意项直接调用帮助程序的位置： 两个段落间。
 
-    ![在浏览器以及如何帮助程序生成标记放入指定的文本周围的框中显示的页面的屏幕截图。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.jpg)
+    ![在浏览器以及如何帮助程序生成标记放入指定的文本周围的框中显示的页面的屏幕截图。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.png)
 
 ## <a name="additional-resources"></a>其他资源
 

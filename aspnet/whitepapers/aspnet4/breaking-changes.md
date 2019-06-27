@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: 65b13065ae5324ce64ec1b87b2127e5277542fb8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8ccad3b40a723c92a3164de082e1f94577141008
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125678"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411197"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 重大更改
 
@@ -317,11 +317,11 @@ ASP.NET 使用加密算法和哈希算法来帮助保护数据（如窗体身份
 
 ASP.NET 4 中包含的更改的修改如何**操作**特性的 html**窗体**元素呈现时无扩展名 URL 解析为默认文档。 无扩展名 URL 解析为默认文档的示例将[ http://contoso.com/ ](http://contoso.com/)，从而导致对请求[ http://contoso.com/Default.aspx ](http://contoso.com/Default.aspx)。
 
-现在 ASP.NET 4 的 HTML 呈现**窗体**元素的**操作**属性值为空字符串，当请求时，有一个默认文档映射到它的无扩展名 URL。 例如，在早期版本的 ASP.NET 中，对请求[ http://contoso.com ](http://contoso.com)会导致对请求`Default.aspx`。 在该文档中，打开**窗体**标记的呈现如以下示例所示：
+现在 ASP.NET 4 的 HTML 呈现**窗体**元素的**操作**属性值为空字符串，当请求时，有一个默认文档映射到它的无扩展名 URL。 例如，在早期版本的 ASP.NET 中，对请求[ http://contoso.com ](http://contoso.com)会导致对请求`Default.aspx` 。 在该文档中，打开**窗体**标记的呈现如以下示例所示：
 
 `<form action="Default.aspx" />`
 
-在 ASP.NET 4 中，对请求[ http://contoso.com ](http://contoso.com)也会导致对请求`Default.aspx`。 但是，ASP.NET 现在也可以呈现 HTML 开始**窗体**标记如以下示例所示：
+在 ASP.NET 4 中，对请求[ http://contoso.com ](http://contoso.com)也会导致对请求`Default.aspx` 。 但是，ASP.NET 现在也可以呈现 HTML 开始**窗体**标记如以下示例所示：
 
 `<form action="" />`
 
@@ -362,7 +362,7 @@ ASP.NET 2.0 中，并通过扩展在 3.5 中，已添加的 ASP.NET 功能使用
 - 允许在单个应用程序域中的多个不同的权限集。
 - 显式权限断言不需要的 GAC 中程序集，只有 ASP.NET 或其他.NET Framework 代码位于堆栈上时调用。
 
-不能在.NET Framework 4 中还原一个方案： 非 Web 部分信任应用程序可以不再调用 System.Web.dll 和 System.Web.Extensions.dll 中的某些 Api。 在以前版本的.NET Framework 中，有可能使非 Web 部分信任应用程序要对其显式授予<strong>AspNetHostingPermission</strong>权限。 然后可以使用这些应用程序<strong>System.Web.HttpUtility</strong>，键入<strong>System.Web.ClientServices。\</ s > * 命名空间和类型与成员资格、 角色和配置文件。 在.NET Framework 4 中不再支持从非 Web 部分信任应用程序中调用这些类型。
+不能在.NET Framework 4 中还原一个方案： 非 Web 部分信任应用程序可以不再调用 System.Web.dll 和 System.Web.Extensions.dll 中的某些 Api。 在以前版本的.NET Framework 中，有可能使非 Web 部分信任应用程序要对其显式授予**AspNetHostingPermission**权限。 然后可以使用这些应用程序**System.Web.HttpUtility**，键入**System.Web.ClientServices。\*** 命名空间和类型与成员资格、 角色和配置文件。 在.NET Framework 4 中不再支持从非 Web 部分信任应用程序中调用这些类型。
 
 > [!NOTE]
 > **HtmlEncode**并**HtmlDecode**的功能**System.Web.HttpUtility**类已移至新的.NET Framework 4 **System.Net.WebUtility**类。 如果这是唯一使用的 ASP.NET 功能，应用程序的代码修改为使用新**WebUtility**类。

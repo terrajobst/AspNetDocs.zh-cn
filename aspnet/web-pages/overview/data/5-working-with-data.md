@@ -8,12 +8,12 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 4ed2a2a1ee3cff7a50e67b6571b85f74d01efab7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 45e988d037465e59ad352bb9444af2c69fd3cd70
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133218"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411267"
 ---
 # <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web 中的数据库简介页 (Razor) 站点
 
@@ -94,7 +94,7 @@ ms.locfileid: "65133218"
 
     完成后，定义将如下所示：
 
-    ![[image]](5-working-with-data/_static/image2.jpg)
+    ![[image]](5-working-with-data/_static/image2.png)
 17. 按 Ctrl + S 保存该表。
 
 ## <a name="adding-data-to-the-database"></a>向数据库添加数据
@@ -223,7 +223,7 @@ ms.locfileid: "65133218"
 
     ![[image]](5-working-with-data/_static/image5.jpg)
 2. 输入值的所有列，但请确保您离开*价格*列保留为空白。
-3. 单击“插入” 。 页会显示错误消息，如下图中所示。 （不创建任何新记录。）
+3. 单击“插入”  。 页会显示错误消息，如下图中所示。 （不创建任何新记录。）
 
     ![[image]](5-working-with-data/_static/image6.jpg)
 4. 完全，填写表单，然后依次**插入**。 这一次， *ListProducts.cshtml*页会显示，并显示新记录。

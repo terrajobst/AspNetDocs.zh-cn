@@ -8,12 +8,12 @@ ms.date: 05/18/2012
 ms.assetid: 79eca52c-e7ad-44ab-a3e4-d8093e9da5a7
 msc.legacyurl: /web-pages/pluralsight
 msc.type: content
-ms.openlocfilehash: 5485b68f8ed87952a6d09e1880e6d8ce39eea73a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ce6d8a678e07945eff05baa080bb877bf06f6c6e
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108569"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411231"
 ---
 # <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a>来自 Pluralsight 的 WebMatrix 和网页视频培训
 
@@ -39,4 +39,4 @@ Scott Hanselman、 首席项目经理、 Web 平台和 Azure 工具，Microsoft
 
 取消锁定其访问 3,000 + 开发人员，IT 和创造性随时随地可以观看的课程。
 
-**开始 29 美元/密苏里州**[开始免费试用版](https://pluralsight.com/microsoft/olt/subscribe/SubscriptionRedirector.aspx?freetrial=true&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)[立即订阅](https://pluralsight.com/microsoft/OLT/subscriptions.aspx?utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)
+**开始 35 美元/密苏里州**[开始免费试用版或立即订阅](https://www.pluralsight.com/pricing&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)

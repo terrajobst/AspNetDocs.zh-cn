@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 27d110fc-d1b7-4628-a763-26f1e6087549
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9041167af076d80ebf294e054ffe51293d11e888
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5612f2f25d06feb904a205505ed8f048d2263266
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033174"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410930"
 ---
 # <a name="tutorial-use-async-and-stored-procedures-with-ef-in-an-aspnet-mvc-app"></a>教程：使用 async 和 EF 在 ASP.NET MVC 应用中使用存储的过程
 
@@ -113,7 +113,7 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 
     `add-migration DepartmentSP`
 
-    打开*迁移\&l t; 时间戳&gt;\_DepartmentSP.cs*若要查看中的代码`Up`方法，可创建插入、 更新和删除存储过程：
+    打开*迁移\\&lt;时间戳&gt;\_DepartmentSP.cs*以查看中的代码`Up`方法，可创建插入、 更新和删除存储过程：
 
     [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs?highlight=3-4,26-27,42-43)]
 3. 在包管理控制台中，输入以下命令：
@@ -137,7 +137,7 @@ Web 服务器的可用线程是有限的，而在高负载情况下的可能所�
 该部分要求你已完成的可选**将其部署到 Azure**主题中[迁移和部署](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列教程。 如果必须通过删除在本地项目中的数据库解决的迁移错误，跳过此部分。
 
 1. 在 Visual Studio 中，右键单击该项目中的**解决方案资源管理器**，然后选择**发布**从上下文菜单。
-2. 单击“发布” 。
+2. 单击“发布”  。
 
     Visual Studio 将部署到 Azure，应用程序和应用程序打开在默认浏览器中，在 Azure 中运行。
 3. 测试应用程序以验证它是否正常工作。

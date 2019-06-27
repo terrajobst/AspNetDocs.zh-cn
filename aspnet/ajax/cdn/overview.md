@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 6040f1fa32e9df340ebf3f8635b9d07be871ee40
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 7b0b42c02439fdb76bceecc80af881e1d58e470d
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118931"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410827"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 内容分发网络
 
@@ -76,7 +76,7 @@ Microsoft Ajax CDN 还包括已由 Microsoft 上传以下库：
 
 Microsoft 不会声称此 CDN 上托管任何第三方库的所有权。 这些库的版权所有者许可给您这些库。 仅由各自版权所有者授予任何权限，可能需要下载并使用这样的库。 由于这些不是 Microsoft 库，Microsoft 将为此 CDN 上托管的第三方库提供任何保证或知识产权版权许可证 （包括任何隐式的专利权利）。
 
-如果你想要提交你的 JavaScript 库，并且你的库是一个顶级的 JavaScript 库 (如上列出 http://trends.builtwith.com)或扩展/插件的这些库的都是 （a） 受欢迎; 或 （b） 有助于在 ASP.NET 上使用，则请联系AjaxCDNSubmission@Microsoft.com。
+如果你想要提交你的 JavaScript 库，并且你的库是一个顶级的 JavaScript 库 (如上列出 http://trends.builtwith.com) 或扩展/插件的这些库的都是 （a） 受欢迎; 或 （b） 有助于在 ASP.NET 上使用，则请联系AjaxCDNSubmission@Microsoft.com 。
 
 <a id="ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18"></a>
 
@@ -164,7 +164,7 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 
 在 CDN 上托管以下版本的 jQuery:
 
-#### <a name="jquery-version-341"></a>3.4.1 的 jQuery 版本
+#### <a name="jquery-version-341"></a>3\.4.1 的 jQuery 版本
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.map
@@ -180,7 +180,7 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.slim.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.slim.min.map
 
-#### <a name="jquery-version-331"></a>3.3.1 的 jQuery 版本
+#### <a name="jquery-version-331"></a>3\.3.1 的 jQuery 版本
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.map
@@ -188,7 +188,7 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.slim.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.slim.min.map
 
-#### <a name="jquery-version-321"></a>3.2.1 的 jQuery 版本
+#### <a name="jquery-version-321"></a>3\.2.1 的 jQuery 版本
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.map
@@ -205,7 +205,7 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.slim.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.slim.min.map
 
-#### <a name="jquery-version-311"></a>3.1.1 的 jQuery 版本
+#### <a name="jquery-version-311"></a>3\.1.1 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js
@@ -232,13 +232,13 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.slim.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.slim.min.map
 
-#### <a name="jquery-version-224"></a>2.2.4 的 jQuery 版本
+#### <a name="jquery-version-224"></a>2\.2.4 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.map
 
-#### <a name="jquery-version-223"></a>2.2.3 的 jQuery 版本
+#### <a name="jquery-version-223"></a>2\.2.3 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js
@@ -262,7 +262,7 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.map
 
-#### <a name="jquery-version-214"></a>2.1.4 的 jQuery 版本
+#### <a name="jquery-version-214"></a>2\.1.4 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js
@@ -299,7 +299,7 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3-vsdoc.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.map
 
-#### <a name="jquery-version-202"></a>2.0.2 的 jQuery 版本
+#### <a name="jquery-version-202"></a>2\.0.2 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.2.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.2.min.js
@@ -410,13 +410,13 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0-vsdoc.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.map
 
-#### <a name="jquery-version-183"></a>1.8.3 的 jQuery 版本
+#### <a name="jquery-version-183"></a>1\.8.3 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3-vsdoc.js
 
-#### <a name="jquery-version-182"></a>1.8.2 的 jQuery 版本
+#### <a name="jquery-version-182"></a>1\.8.2 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js
@@ -434,12 +434,12 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0-vsdoc.js
 
-#### <a name="jquery-version-172"></a>1.7.2 的 jQuery 版本
+#### <a name="jquery-version-172"></a>1\.7.2 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js
 
-#### <a name="jquery-version-171"></a>1.7.1 的 jQuery 版本
+#### <a name="jquery-version-171"></a>1\.7.1 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js
@@ -481,13 +481,13 @@ CDN 托管某些最常用的第三方 JavaScript 库。 Microsoft 不会声称�
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6-vsdoc.js
 
-#### <a name="jquery-version-152"></a>1.5.2 的 jQuery 版本
+#### <a name="jquery-version-152"></a>1\.5.2 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.2.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.2.min.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.2-vsdoc.js
 
-#### <a name="jquery-version-151"></a>1.5.1 的 jQuery 版本
+#### <a name="jquery-version-151"></a>1\.5.1 的 jQuery 版本
 
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.js
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js
@@ -776,7 +776,7 @@ jQuery 迁移版本 1.2.0
 
 ### <a name="respond-releases-on-the-cdn"></a>响应在 CDN 上的版本
 
-以下版本的 [https://github.com/scottjehl/Respond](https://github.com/scottjehl/Respond "https://github.com/scottjehl/Respond") 响应托管在 CDN 上：
+以下版本的[响应](https://github.com/scottjehl/Respond "响应")托管在 CDN 上：
 
 #### <a name="respond-version-142"></a>响应版本 1.4.2
 
@@ -953,7 +953,7 @@ jQuery 迁移版本 1.2.0
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/fonts/glyphicons-halflings-regular.woff2
 
-#### <a name="bootstrap-version-334"></a>3.3.4 bootstrap 版本
+#### <a name="bootstrap-version-334"></a>3\.3.4 bootstrap 版本
 
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.js
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/bootstrap.min.js
@@ -969,7 +969,7 @@ jQuery 迁移版本 1.2.0
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/fonts/glyphicons-halflings-regular.woff
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.4/fonts/glyphicons-halflings-regular.woff2
 
-#### <a name="bootstrap-version-332"></a>3.3.2 bootstrap 版本
+#### <a name="bootstrap-version-332"></a>3\.3.2 bootstrap 版本
 
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/bootstrap.js
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/bootstrap.min.js
@@ -985,7 +985,7 @@ jQuery 迁移版本 1.2.0
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/fonts/glyphicons-halflings-regular.woff
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.2/fonts/glyphicons-halflings-regular.woff2
 
-#### <a name="bootstrap-version-331"></a>3.3.1 bootstrap 版本
+#### <a name="bootstrap-version-331"></a>3\.3.1 bootstrap 版本
 
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.1/bootstrap.js
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.1/bootstrap.min.js
@@ -1030,7 +1030,7 @@ jQuery 迁移版本 1.2.0
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.ttf
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.woff
 
-#### <a name="bootstrap-version-311"></a>3.1.1 bootstrap 版本
+#### <a name="bootstrap-version-311"></a>3\.1.1 bootstrap 版本
 
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.1.1/bootstrap.js
 - https://ajax.aspnetcdn.com/ajax/bootstrap/3.1.1/bootstrap.min.js

@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 3ff852232212ddda4930597731911be60c092667
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 684c47a8a8480dc040e5144144577c94c35d39e5
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108949"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411185"
 ---
 # <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 站点中使用文件
 
@@ -22,7 +22,7 @@ ms.locfileid: "65108949"
 > 此文章介绍了如何读取、 写入、 追加、 删除和将 ASP.NET Web Pages (Razor) 站点中的文件上传。
 > 
 > > [!NOTE]
-> > 如果你想要将图像上传并对其进行处理 （例如，翻转或调整其大小），请参阅[使用 ASP.NET Web Pages 站点中的图像](https://go.microsoft.com/fwlink/?LinkId=202897)。
+> > 如果你想要将图像上传并对其进行处理 （例如，翻转或调整其大小），请参阅[使用 ASP.NET Web Pages 站点中的图像](/aspnet/web-pages/overview/ui-layouts-and-themes/9-working-with-images)。
 > 
 > 
 > **你将学习：** 
@@ -72,7 +72,7 @@ ms.locfileid: "65108949"
 
     然后创建一个变量 (`dataFile`)，其中包含的位置和存储中的数据的文件的名称。 将位置设置需要一些特殊的处理。 在网站中它是个好办法在代码中引用为绝对路径，如*C:\Folder\File.txt* web 服务器上的文件。 如果移动网站，则会不正确的绝对路径。 此外，为托管站点 （与用于在你自己的计算机上） 通常不甚至知道正确的路径是当您编写的代码。
 
-    但有时 （例如 now，用于写入一个文件)，则需要完整路径。 解决方法是使用`MapPath`方法的`Server`对象。 这将返回到你的网站的完整路径。 若要获取网站根目录，你的用户的路径`~`运算符 (站点来表示您的虚拟根) 到`MapPath`。 (你还可以传递一个子文件夹名称到它，如 *~/App\_数据 /*，以获取此子文件夹的路径。)然后可以连接到任何方法返回若要创建的完整路径上的其他信息。 在此示例中，添加的文件名称。 (您可以阅读更多有关如何处理中的文件和文件夹路径[ASP.NET Web Pages 编程使用 Razor 语法简介](https://go.microsoft.com/fwlink/?LinkId=195205#ID_WorkingWithFileAndFolderPaths)。)
+    但有时 （例如 now，用于写入一个文件)，则需要完整路径。 解决方法是使用`MapPath`方法的`Server`对象。 这将返回到你的网站的完整路径。 若要获取网站根目录，你的用户的路径`~`运算符 (站点来表示您的虚拟根) 到`MapPath`。 (你还可以传递一个子文件夹名称到它，如 *~/App\_数据 /* ，以获取此子文件夹的路径。)然后可以连接到任何方法返回若要创建的完整路径上的其他信息。 在此示例中，添加的文件名称。 (您可以阅读更多有关如何处理中的文件和文件夹路径[ASP.NET Web Pages 编程使用 Razor 语法简介](https://go.microsoft.com/fwlink/?LinkId=195205#ID_WorkingWithFileAndFolderPaths)。)
 
     该文件保存在*应用程序\_数据*文件夹。 此文件夹是用于存储数据文件中所述的 ASP.NET 中的特殊文件夹[使用 ASP.NET Web Pages 站点中的数据库简介](https://go.microsoft.com/fwlink/?LinkId=195209)。
 
@@ -142,12 +142,12 @@ ms.locfileid: "65108949"
 > 
 > **显示 Microsoft Excel 以逗号分隔文件中的数据**
 > 
-> 您可以使用 Microsoft Excel 保存为逗号分隔的文件的电子表格中包含的数据 (*.csv*文件)。 执行操作时，该文件保存在纯文本，不以 Excel 格式。 由逗号分隔每个数据项，并且该电子表格中的每一行分隔文本文件，在一个分行符。 在前面的示例所示的代码可用于读取 Excel 以逗号分隔文件，只需通过更改在代码中的数据文件的名称。
+> 您可以使用 Microsoft Excel 保存为逗号分隔的文件的电子表格中包含的数据 ( *.csv*文件)。 执行操作时，该文件保存在纯文本，不以 Excel 格式。 由逗号分隔每个数据项，并且该电子表格中的每一行分隔文本文件，在一个分行符。 在前面的示例所示的代码可用于读取 Excel 以逗号分隔文件，只需通过更改在代码中的数据文件的名称。
 
 <a id="Deleting_Files"></a>
 ## <a name="deleting-files"></a>正在删除文件
 
-若要从你的网站中删除文件，可以使用`File.Delete`方法。 此过程说明如何以使用户可以删除图像 (*.jpg*文件) 从*映像*文件夹，如果他们知道文件的名称。
+若要从你的网站中删除文件，可以使用`File.Delete`方法。 此过程说明如何以使用户可以删除图像 ( *.jpg*文件) 从*映像*文件夹，如果他们知道文件的名称。
 
 > [!NOTE] 
 > 
@@ -211,7 +211,7 @@ ms.locfileid: "65108949"
     下一步的文本框**浏览**按钮将包含路径和文件位置。
 
     ![[image]](working-with-files/_static/image9.jpg)
-7. 单击“上载” 。
+7. 单击“上载”  。
 8. 在网站中，右键单击项目文件夹，然后依次**刷新**。
 9. 打开*UploadedFiles*文件夹。 已上传的文件的文件夹中。 
 
@@ -246,7 +246,7 @@ ms.locfileid: "65108949"
 6. 单击**添加另一个文件**。 该页将显示一个新的上传框。 
 
     ![[image]](working-with-files/_static/image12.jpg)
-7. 单击“上载” 。
+7. 单击“上载”  。
 8. 在网站中，右键单击项目文件夹，然后依次**刷新**。
 9. 打开*UploadedFiles*文件夹，以查看已成功上传的文件。
 

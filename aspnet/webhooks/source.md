@@ -6,12 +6,12 @@ description: ASP.NET Webhook 源代码和 NuGet 包的链接
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 91a62bfa-ea3a-41f9-a2e1-e90d2c8fc8ca
-ms.openlocfilehash: ff716b476f7dc69b6071d3febd5b5871e4f02689
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f88d9247f9d8aa0c5edc1ffc462be21d9319a725
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027184"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410802"
 ---
 # <a name="aspnet-webhooks-source-code-and-nuget-packages"></a>ASP.NET Webhook 源代码和 NuGet 包
 
@@ -25,6 +25,6 @@ Microsoft ASP.NET Webhook 是模块的 Microsoft ASP.NET 系列的一部分，�
 
 * [常见](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Common):发送者和接收者之间共享一个通用包。
 
-* [发件人](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Custom):一组支持你自己的 Webhook 发送给他人的包。 中更详细地介绍了用于发送 Webhook 功能[发送 Webhook](sending/index.md)。
+* [发件人](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Custom):一组支持你自己的 Webhook 发送给他人的包。 中更详细地介绍了用于发送 Webhook 功能[发送 Webhook](sending/senders)。
 
 * [接收方](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Receivers):一组支持从其他人接收 Webhook 的包。 中更详细地介绍了用于接收 Webhook 功能[接收 Webhook](receiving/index.md)。

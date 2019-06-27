@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: c42ec77b5d5107f3ef70e13b779fc1bebef70a14
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 264f2ec5c497682f5e3e202dd69a835ff228e75b
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120700"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410860"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>检查 Edit 方法和编辑视图
 
@@ -21,7 +21,7 @@ ms.locfileid: "65120700"
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
 
-在本部分中，将检查生成`Edit`操作方法和电影控制器的视图。 但首先需要短所要看起来更美观的发行日期。 打开*Models\Movie.cs*文件，并添加突出显示的行如下所示：
+在本部分中，将检查生成`Edit`操作方法和电影控制器的视图。 但首先我们将简短所要看起来更美观的发行日期。 打开*Models\Movie.cs*文件，并添加突出显示的行如下所示：
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample1.cs?highlight=2,12-14)]
 
@@ -69,7 +69,7 @@ ms.locfileid: "65120700"
 
 基架的代码使用多个*帮助器方法*来简化 HTML 标记。 [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx)帮助器显示的字段的名称 (&quot;标题&quot;， &quot;ReleaseDate&quot;，&quot;流派&quot;，或&quot;价格&quot;). [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx)帮助器呈现 HTML`<input>`元素。 [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx)帮助器将显示与该属性相关联的任何验证消息。
 
-运行应用程序并导航到 */Movies* URL。 点击“编辑”链接。 在浏览器中查看页面的源。 窗体元素的 HTML 如下所示。
+运行应用程序并导航到 */Movies* URL。 点击“编辑”链接  。 在浏览器中查看页面的源。 窗体元素的 HTML 如下所示。
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample8.cshtml?highlight=1-2)]
 
@@ -100,12 +100,12 @@ ms.locfileid: "65120700"
 如果使用的美国英语计算机，可以跳过此部分并转到下一步的教程。 您可以下载本教程的 Globalize 版本[此处](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475)。 关于国际化的精彩两个部分教程，请参阅[Nadeem 的 ASP.NET MVC 5 国际化](http://afana.me/post/aspnet-mvc-internationalization.aspx)。
 
 > [!NOTE]
-> 若要支持 jQuery 验证的非英语区域设置，请使用逗号 (&quot;，&quot;) 必须包含小数点，和非美国英语日期格式， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat`。 你可以从 NuGet 获取 jQuery 非英语验证。 （请勿安装 Globalize 如果您使用的英语区域设置。）
+> 若要支持 jQuery 验证的非英语区域设置，请使用逗号 (&quot;，&quot;) 必须包含小数点，和非美国英语日期格式， *globalize.js*和您的特定*cultures/globalize.cultures.js*文件 (从[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和 JavaScript 使用`Globalize.parseFloat` 。 你可以从 NuGet 获取 jQuery 非英语验证。 （请勿安装 Globalize 如果您使用的英语区域设置。）
 
 1. 从**工具**菜单上，单击**NuGet 包管理器**，然后单击**为解决方案管理 NuGet 包**。
 
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. 在左窗格中，选择<strong>浏览 *。</strong>*（请参阅下图。）
+2. 在左窗格中，选择<strong>浏览 *。</strong>* （请参阅下图。）
 3. 在输入框中，输入 * Globalize * *。
 
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 选择`jQuery.Validation.Globalize`，选择`MvcMovie`然后单击**安装**。 *Scripts\jquery.globalize\globalize.js*文件将添加到你的项目。 *Scripts\jquery.globalize\cultures\*文件夹将包含多个区域性 JavaScript 文件。 请注意，可能需要五分钟时间才能安装此包。

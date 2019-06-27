@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 39f4eb7b0859cf52fe3ed2531e9c349b465b9327
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4f0b021ca6ca151544dd9fb0587ed9e0cf14ff65
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116853"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411243"
 ---
 # <a name="caching"></a>缓存
 
@@ -94,7 +94,7 @@ SQL Server 7 和 2000年使用 SQL 缓存依赖项基于轮询的模型。 基�
 | AspNet\_SqlCacheUnRegisterTableStoredProcedure | 通过通知表中删除该条目注销 SQL 缓存依赖项的表和删除触发器。 |
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | 通过递增所更改表 changeId 更新通知表。 ASP.NET 使用此值来确定数据是否已更改。 如下所述，启用表时，创建触发器被执行此存储的过程。 |
 
-- SQL Server 触发器调用 ***表\_名称 *\_AspNet\_SqlCacheNotification\_触发器**为该表创建。 此触发器执行 AspNet\_SqlCacheUpdateChangeIdStoredProcedure 时对表执行 INSERT、 UPDATE 或 DELETE。
+- 调用 SQL Server 触发器 **_表\_名称_\_AspNet\_SqlCacheNotification\_触发器**为该表创建。 此触发器执行 AspNet\_SqlCacheUpdateChangeIdStoredProcedure 时对表执行 INSERT、 UPDATE 或 DELETE。
 - SQL Server 角色称为**aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess**添加到数据库。
 
 **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** SQL Server 角色具有 EXEC 权限到 AspNet\_SqlCachePollingStoredProcedure。 为了使轮询模型才能正常工作，必须将进程帐户添加到 aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess 角色。 Aspnet\_regsql.exe 工具将执行此操作为您。

@@ -8,12 +8,12 @@ ms.date: 03/10/2014
 ms.assetid: d7bd001b-6db2-4422-9b78-f3d08b743b00
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
 msc.type: authoredcontent
-ms.openlocfilehash: 7d580b3812c4a09d6bc8d34c46dc82339ba40ee8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3f63ce68ae4c13970ac0df196167ace0b22b592c
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133377"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411260"
 ---
 # <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>在 ASP.NET Web Pages (Razor) 站点中创建一致布局
 
@@ -53,7 +53,7 @@ ms.locfileid: "65133377"
 
 在此过程中，你将创建引用两个内容块 （页眉和页脚），它们位于单独的文件中的页。 在你的站点中的任意页面中，可以使用这些相同的内容块。 完成后，会显示如下页：
 
-![是在运行包括对 RenderPage 方法的调用的页面在浏览器中显示一个页面的屏幕截图。](3-creating-a-consistent-look/_static/image2.jpg)
+![是在运行包括对 RenderPage 方法的调用的页面在浏览器中显示一个页面的屏幕截图。](3-creating-a-consistent-look/_static/image2.png)
 
 1. 在你的网站的根文件夹中，创建名为的文件*Index.cshtml*。
 2. 使用以下内容替换现有标记：
@@ -118,7 +118,7 @@ ms.locfileid: "65133377"
     这是一个将使用布局页的页面。 在页面顶部的代码块指示要用于设置此内容的格式的布局页。
 7. 运行*Content1.cshtml*在浏览器中。 在呈现的页面将使用的格式和样式表中定义 *\_Layout1.cshtml*中定义的文本 （内容） 和*Content1.cshtml*。
 
-    ![[image]](3-creating-a-consistent-look/_static/image4.jpg)
+    ![[image]](3-creating-a-consistent-look/_static/image4.png)
 
     可以重复步骤 6 以创建然后可以共享相同的布局页的其他内容页面。
 
@@ -148,7 +148,7 @@ ms.locfileid: "65133377"
     本页内容包含在页面顶部的代码块。 每个命名的部分包含在部分块。 页的其余部分包含的默认 （未命名） 的内容部分。
 4. 运行*Content2.cshtml*在浏览器中。
 
-    ![是在运行包括对 RenderSection 方法的调用的页面在浏览器中显示一个页面的屏幕截图。](3-creating-a-consistent-look/_static/image6.jpg)
+    ![是在运行包括对 RenderSection 方法的调用的页面在浏览器中显示一个页面的屏幕截图。](3-creating-a-consistent-look/_static/image6.png)
 
 ## <a name="making-content-sections-optional"></a>使内容部分可选
 
@@ -165,7 +165,7 @@ ms.locfileid: "65133377"
     [!code-cshtml[Main](3-creating-a-consistent-look/samples/sample12.cshtml)]
 2. 保存页面，然后在浏览器中运行它。 显示一条错误消息，因为内容页面上不提供布局页，即标头部分中定义的部分的内容。
 
-    ![显示如果运行某个页面，则会发生该错误的屏幕截图调用 RenderSection 方法但未提供的相应部分。](3-creating-a-consistent-look/_static/image7.jpg)
+    ![显示如果运行某个页面，则会发生该错误的屏幕截图调用 RenderSection 方法但未提供的相应部分。](3-creating-a-consistent-look/_static/image7.png)
 3. 在中*共享*文件夹中，打开 *\_Layout2.cshtml*页上，并将以下代码行：
 
     [!code-javascript[Main](3-creating-a-consistent-look/samples/sample13.js)]
@@ -210,10 +210,10 @@ ms.locfileid: "65133377"
     [!code-html[Main](3-creating-a-consistent-look/samples/sample18.html)]
 4. 运行*Content3.cshtml*页在浏览器中。 在左侧和右侧的页上可见的列表将显示的页和一个**隐藏列表**底部的按钮。
 
-    ![显示包含列表和一个按钮，显示隐藏列表页屏幕截图。](3-creating-a-consistent-look/_static/image10.jpg)
+    ![显示包含列表和一个按钮，显示隐藏列表页屏幕截图。](3-creating-a-consistent-look/_static/image10.png)
 5. 单击**隐藏列表**。 列表会消失，按钮将变为**显示列表**。
 
-    ![显示不包含列表和一个按钮，显示显示列表页屏幕截图。](3-creating-a-consistent-look/_static/image11.jpg)
+    ![显示不包含列表和一个按钮，显示显示列表页屏幕截图。](3-creating-a-consistent-look/_static/image11.png)
 6. 单击**显示列表**按钮和列表会再次显示。
 
 ## <a name="additional-resources"></a>其他资源
