@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: f57d7597a1454a53f5e87b4d69eee8ec8972e37c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a72de5c143bf760292975778b0cf5e0ccdda0973
+ms.sourcegitcommit: 6a564984ad448db34cdfab5458af755d6b65e69c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121933"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538823"
 ---
 # <a name="understanding-the-project-file"></a>了解项目文件
 
@@ -83,7 +83,7 @@ MSBuild 项目文件基于[MSBuild XML 架构](https://msdn.microsoft.com/librar
 
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
-若要检索的属性值，则使用格式 * *$(***PropertyName***)***。* 例如，若要检索的值**ServerName**属性，你需要键入：
+若要检索的属性值，请使用格式 *$ （propertyname)* 。 例如，若要检索的值**ServerName**属性，你需要键入：
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
 
