@@ -125,7 +125,7 @@ ms.locfileid: "65130473"
 - 如果路径包含一个键到导航属性，该操作应具有名为的参数*relatedKey*。
 - 修饰*键*并*relatedKey*使用的参数 **[FromODataUri]** 参数。
 - POST 和 PUT 请求需要实体类型的参数。
-- PATCH 请求采用的类型参数**增量&lt;T&gt;**，其中*T*是实体类型。
+- PATCH 请求采用的类型参数**增量&lt;T&gt;** ，其中*T*是实体类型。
 
 有关参考，下面是一个示例，说明每个内置的 OData 路由约定的方法签名。
 
@@ -143,7 +143,7 @@ ms.locfileid: "65130473"
 
 对于这两种方法，如果约定不适用于该请求，该方法应返回 null。
 
-**ODataPath**参数表示已分析的 OData 资源路径。 它包含一系列**[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 实例，一个用于资源路径的每个段。 **ODataPathSegment**是一个抽象类; 每个段类型由派生的类**ODataPathSegment**。
+**ODataPath**参数表示已分析的 OData 资源路径。 它包含一系列 **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 实例，一个用于资源路径的每个段。 **ODataPathSegment**是一个抽象类; 每个段类型由派生的类**ODataPathSegment**。
 
 **ODataPath.TemplatePath**属性是一个字符串，表示串联所有路径段。 例如，如果 URI 是`/Products(1)/Supplier`，路径模板&quot;~/entityset/key/navigation&quot;。 请注意，段不直接对应于 URI 段。 例如，实体键 (1) 表示为其自身**ODataPathSegment**。
 

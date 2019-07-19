@@ -400,7 +400,7 @@ Windows 具有几个版本包含一种技术称为[取](http://en.wikipedia.org/
 
 [!code-aspx[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample22.aspx)]
 
-您创建*GetCategories*页面的代码中的方法。 对于简单的选择操作，该方法不需要参数，且应返回*IEnumerable*或*IQueryable*对象。 如果新*ItemType*属性设置 (它使强类型化数据绑定表达式，如下面所述[强类型数据控件](#_Toc318097386)之前)，这些接口的泛型版本应返回 — *IEnumerable&lt;T&gt;* 或*IQueryable&lt;T&gt;*，与*T*参数类型相匹配*ItemType*属性 (例如， *IQueryable&lt;类别&gt;*)。
+您创建*GetCategories*页面的代码中的方法。 对于简单的选择操作，该方法不需要参数，且应返回*IEnumerable*或*IQueryable*对象。 如果新*ItemType*属性设置 (它使强类型化数据绑定表达式，如下面所述[强类型数据控件](#_Toc318097386)之前)，这些接口的泛型版本应返回 — *IEnumerable&lt;T&gt;* 或*IQueryable&lt;T&gt;* ，与*T*参数类型相匹配*ItemType*属性 (例如， *IQueryable&lt;类别&gt;* )。
 
 下面的示例演示的代码*GetCategories*方法。 此示例使用 Northwind 示例数据库中使用 Entity Framework Code First 模型。 代码可确保查询将返回方式由的每个类别的相关产品的详细信息*Include*方法。 (这可确保*TemplateField*标记中的元素而无需在每个类别中显示的产品计数[n + 1 选择](http://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem)。)
 
@@ -484,7 +484,7 @@ Windows 具有几个版本包含一种技术称为[取](http://en.wikipedia.org/
 
 现在可以配置的内置验证程序控件可以将非介入式 JavaScript 用于客户端验证逻辑。 这大大减少了呈现页面标记中的内联 JavaScript 并减少整体的页面大小。 可以按照以下任意方式来配置非介入式 JavaScript 验证程序控件：
 
-- 添加以下设置，从而全局*&lt;appSettings&gt;* Web.config 文件中的元素： 
+- 添加以下设置，从而全局 *&lt;appSettings&gt;* Web.config 文件中的元素： 
 
     [!code-xml[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample33.xml)]
 - 通过设置静态全局*System.Web.UI.ValidationSettings.UnobtrusiveValidationMode*属性设置为*UnobtrusiveValidationMode.WebForms* (通常是在*应用程序\_启动*Global.asax 文件中的方法)。
@@ -742,7 +742,7 @@ IntelliSense for DOM Api 已得到改进，支持许多新 HTML5 Api 包括*quer
 <a id="_Toc318097413"></a>
 #### <a name="vsdoc-signature-overloads"></a>VSDOC 签名重载
 
-详细的 IntelliSense 注释现在为单独的 JavaScript 函数的重载使用新的声明*&lt;签名&gt;* 元素，在此示例中所示：
+详细的 IntelliSense 注释现在为单独的 JavaScript 函数的重载使用新的声明 *&lt;签名&gt;* 元素，在此示例中所示：
 
 [!code-csharp[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample35.cs)]
 

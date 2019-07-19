@@ -154,7 +154,7 @@ ms.locfileid: "65113072"
     *友好的 Url*
 
     > [!NOTE]
-    > 正如您所看到的该 URL 将变为 **/联系**。 从开始**ASP.NET 4**，已添加到 Web 窗体的 URL 路由功能，因此，可将 Url 等*[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* 而不是 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. 有关详细信息，请参阅[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
+    > 正如您所看到的该 URL 将变为 **/联系**。 从开始**ASP.NET 4**，已添加到 Web 窗体的 URL 路由功能，因此，可将 Url 等 *[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* 而不是 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)* . 有关详细信息，请参阅[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
 3. 现在，您将了解到应用程序集成的身份验证流。 若要执行此操作，请单击**注册**页面的右上角中。
 
     ![注册一个新用户](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)
@@ -192,7 +192,7 @@ Entity Framework Code First 建模工作流，可使用您自己的域类来表�
 现在，你将定义**人员**类，该类将基架过程用于创建 MVC 控制器和视图的模型。 将首先创建**人员**model 类，在控制器中的 CRUD 操作将自动创建和使用基架功能。
 
 1. 打开**Visual Studio Express 2013 for Web**并**MyHybridSite.sln**解决方案位于**源/Ex2-MvcScaffolding/开始**文件夹。 或者，继续使用该解决方案并获得前一练习中。
-2. 在中**解决方案资源管理器**，右键单击**模型**文件夹**MyHybridSite**项目，然后选择**添加 |类...**.
+2. 在中**解决方案资源管理器**，右键单击**模型**文件夹**MyHybridSite**项目，然后选择**添加 |类...** .
 
     ![添加人员 model 类](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image11.png)
 
@@ -214,7 +214,7 @@ Entity Framework Code First 建模工作流，可使用您自己的域类来表�
 
 既然**Person**创建模型，将使用与实体框架的 ASP.NET MVC 基架创建的 CRUD 控制器操作和视图**人员**。
 
-1. 在中**解决方案资源管理器**，右键单击**控制器**文件夹**MyHybridSite**项目，然后选择**添加 |新的基架的项...**.
+1. 在中**解决方案资源管理器**，右键单击**控制器**文件夹**MyHybridSite**项目，然后选择**添加 |新的基架的项...** .
 
     ![创建新的基架生成的控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image13.png)
 
@@ -229,7 +229,7 @@ Entity Framework Code First 建模工作流，可使用您自己的域类来表�
     ![添加基架 MVC 控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image15.png)
 
     *添加基架 MVC 控制器*
-4. 下**数据上下文类**，单击**新建数据上下文...**.
+4. 下**数据上下文类**，单击**新建数据上下文...** .
 
     ![创建新的数据上下文](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image16.png)
 
@@ -296,7 +296,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
 
     > [!NOTE]
     > 如果你将开始从练习 3 开始解决方案，请按**CTRL + SHIFT + B**以生成解决方案。
-2. 在中**解决方案资源管理器**，右键单击**控制器**文件夹**MyHybridSite**项目，然后选择**添加 |新的基架的项...**.
+2. 在中**解决方案资源管理器**，右键单击**控制器**文件夹**MyHybridSite**项目，然后选择**添加 |新的基架的项...** .
 
     ![创建新的基架生成的控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image23.png)
 
@@ -306,7 +306,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在使实现 HTTP 服务更容
     ![选择包含操作和实体框架的 Web API 2 控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image24.png "选择使用操作和 Entity Framework Web API 2 控制器")
 
     *选择 Web API 2 控制器包含操作和实体框架*
-4. 设置*ApiPersonController*作为**控制器名称**，选择**使用异步控制器操作**选项，然后选择**人员 (MyHybridSite.Models)** 并**PersonContext (MyHybridSite.Models)** 作为**模型**并**数据上下文**分别是类。 然后单击 **“添加”**。
+4. 设置*ApiPersonController*作为**控制器名称**，选择**使用异步控制器操作**选项，然后选择**人员 (MyHybridSite.Models)** 并**PersonContext (MyHybridSite.Models)** 作为**模型**并**数据上下文**分别是类。 然后单击 **“添加”** 。
 
     ![添加 Web API 控制器使用基架](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image25.png "添加使用基架 Web API 控制器")
 

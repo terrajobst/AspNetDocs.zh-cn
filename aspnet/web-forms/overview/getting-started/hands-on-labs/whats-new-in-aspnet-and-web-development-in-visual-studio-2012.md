@@ -143,7 +143,7 @@ Visual Studio 现在包含功能，可帮助开发人员访问、 工作和有�
     *颜色选取器不透明度*
 
     > [!NOTE]
-    > CSS3 中的 RGBA （红色、 绿色、 蓝色、 Alpha） 颜色定义可以定义单个项的颜色不透明度值。 与不同**不透明度-** 类似 CSS 特性**-** RGBA 颜色也是与最新的浏览器兼容。
+    > CSS3 中的 RGBA （红色、 绿色、 蓝色、 Alpha） 颜色定义可以定义单个项的颜色不透明度值。 与不同**不透明度-** 类似 CSS 特性 **-** RGBA 颜色也是与最新的浏览器兼容。
 
 <a id="Ex1Task3"></a>
 
@@ -293,7 +293,7 @@ Visual Studio 现在包含几个 HTML5 代码片段。 在本任务中，您将�
 
     > [!NOTE]
     > 此外可以尝试更多代码段包含在 Visual Studio 中，例如视频、 图，等等。
-5. 现在，请尝试插入控件页的某些部分。 例如，尝试插入**GridView**控件，但无需键入**&lt;网格，** 开始键入 **&lt;GV**。 请注意，IntelliSense 列表显示了**asp: GridView**控件。
+5. 现在，请尝试插入控件页的某些部分。 例如，尝试插入**GridView**控件，但无需键入 **&lt;网格，** 开始键入 **&lt;GV**。 请注意，IntelliSense 列表显示了**asp: GridView**控件。
 
     HTML 编辑器中 IntelliSense 现在提供了标题大小写搜索，以及部分匹配 （检索包含术语的所有元素）。
 
@@ -301,7 +301,7 @@ Visual Studio 现在包含几个 HTML5 代码片段。 在本任务中，您将�
 
     *插入智能感知列表与 GridView*
 
-    如果键入**&lt;网格**将获取词匹配的所有项，但 Visual Studio 将建议**gridview**控件：
+    如果键入 **&lt;网格**将获取词匹配的所有项，但 Visual Studio 将建议**gridview**控件：
 
     ![插入与 IntelliSense 列表和部分匹配 GridView](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image31.png "插入与 IntelliSense 列表和部分匹配的 GridView")
 
@@ -397,7 +397,7 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
 
     *页计数器*
 3. 关闭浏览器并返回到 Visual Studio。
-4. 打开**JavaScript.aspx**页上，找到**&lt;脚本&gt;** 块 （如下所示）。
+4. 打开**JavaScript.aspx**页上，找到 **&lt;脚本&gt;** 块 （如下所示）。
 
     下面的代码使用 HTML5 本地存储来存储*pageLoadCount*变量，用于存储当前用户访问页的次数。 本地存储是引入了 HTML5 标准的客户端的键 / 值数据库。 在用户的浏览器在本地计算机上保存的数据。
 
@@ -410,7 +410,7 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
     ![在 JavaScript 中的 HTML5 JavaScript 功能](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image39.png "在 JavaScript 中的 HTML5 JavaScript 功能")
 
     *在 JavaScript 中的 HTML5 JavaScript 功能*
-6. 单击任何左大括号 (**{**) 从脚本代码，并请注意，括号会突出显示。
+6. 单击任何左大括号 ( **{** ) 从脚本代码，并请注意，括号会突出显示。
 
     ![突出显示括号](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image40.png "括号突出显示")
 
@@ -441,8 +441,8 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
     ![JavaScript 验证错误消息](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image42.png "JavaScript 验证错误消息")
 
     *JavaScript 验证错误消息*
-3. 注释掉**&quot;使用严格&quot;** 方向和错误消失，但警告保留的注意。
-4. 在该文件的最后一行，编写任何字符串，如**&quot;测试&quot;** （包括引号以指示它是作为字符串）。 编写一段字符串可以显示 IntelliSense 列表中，并选择旁边**剪裁**选项。
+3. 注释掉 **&quot;使用严格&quot;** 方向和错误消失，但警告保留的注意。
+4. 在该文件的最后一行，编写任何字符串，如 **&quot;测试&quot;** （包括引号以指示它是作为字符串）。 编写一段字符串可以显示 IntelliSense 列表中，并选择旁边**剪裁**选项。
 
     在 ECMAScript5 标准中，字符串值和变量也有定义，如裁剪、 大写、 搜索和替换的字符串方法。
 
@@ -840,12 +840,12 @@ Visual Studio 已续订，它有望使代码模式，可访问和组织使用的
      ![配置目标连接字符串](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "配置目标连接字符串")
 
      *配置目标连接字符串*
-6. 然后单击“确定” 。 当系统提示你创建数据库时，单击**是**。
+6. 然后单击“确定”  。 当系统提示你创建数据库时，单击**是**。
 
     ![创建数据库](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image81.png "创建数据库字符串")
 
     *创建数据库*
-7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”**。
+7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”** 。
 
     ![连接字符串指向 SQL 数据库](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image82.png "指向 SQL 数据库连接字符串")
 

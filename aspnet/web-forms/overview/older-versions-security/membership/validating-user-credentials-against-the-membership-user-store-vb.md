@@ -202,7 +202,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>确定并验证所提供的凭据
 
-使用登录控件[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)并[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定用户输入的用户名和密码凭据。 若要确定任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框)，使用`LoginControlID.FindControl`("*`controlID`*") 来获取对 Web 的编程引用控件模板中`ID`属性等于*`controlID`*。 例如，若要获取对引用`Email`文本框中，使用以下代码：
+使用登录控件[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)并[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定用户输入的用户名和密码凭据。 若要确定任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框)，使用`LoginControlID.FindControl`(" *`controlID`* ") 来获取对 Web 的编程引用控件模板中`ID`属性等于 *`controlID`* 。 例如，若要获取对引用`Email`文本框中，使用以下代码：
 
 `Dim EmailTextBox As TextBox = CType(myLogin.FindControl("Email"), TextBox)`
 
@@ -277,7 +277,7 @@ Login 控件呈现标准登录名的用户界面，并会自动验证成员资�
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 

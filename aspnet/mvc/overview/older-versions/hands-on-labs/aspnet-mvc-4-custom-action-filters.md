@@ -258,7 +258,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > 此自定义操作筛选器是几乎比你在上一练习中创建相同的。 主要区别是，它有*&quot;记录由&quot;* 更新与此新类的名称以标识注册日志的筛选器的属性。
+    > 此自定义操作筛选器是几乎比你在上一练习中创建相同的。 主要区别是，它有 *&quot;记录由&quot;* 更新与此新类的名称以标识注册日志的筛选器的属性。
 
 <a id="Ex2Task2"></a>
 
@@ -324,7 +324,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 
 在此任务中，将更新解决方案，以注册新的筛选器 (**MyNewCustomActionFilter**) 作为全局筛选器。 通过执行此操作，将会触发的执行应用程序中，而不仅限 StoreController 的如在上一任务中所示的所有操作。
 
-1. 在中**StoreController**类中，删除 **[MyNewCustomActionFilter]** 属性和 order 属性从 **[CustomActionFilter]**。 其外观应如下所示：
+1. 在中**StoreController**类中，删除 **[MyNewCustomActionFilter]** 属性和 order 属性从 **[CustomActionFilter]** 。 其外观应如下所示：
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
 2. 打开**Global.asax**文件，找到**应用程序\_启动**方法。 请注意，每次应用程序启动时它正在注册全局筛选器，通过调用**RegisterGlobalFilters**方法内的**FilterConfig**类。
@@ -339,7 +339,7 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
 5. 更新**RegisterGlobalFilters**方法添加自定义筛选器。 若要执行此操作，添加突出显示的代码：
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample15.cs)]
-6. 按 F5 运行应用程序。
+6. 按 F5 运行应用程序  。
 7. 单击其中一个**流派**菜单中，并执行某些操作，例如浏览可用的唱片集。
 8. 检查现在 **[MyNewCustomActionFilter]** 太 HomeController 和 ActionLogController 中注入。
 
@@ -523,12 +523,12 @@ ASP.NET MVC 提供了用于执行筛选逻辑之前或之后调用操作方法�
      ![配置目标连接字符串](aspnet-mvc-4-custom-action-filters/_static/image33.png "配置目标连接字符串")
 
      *配置目标连接字符串*
-6. 然后单击“确定” 。 当系统提示你创建数据库时，单击**是**。
+6. 然后单击“确定”  。 当系统提示你创建数据库时，单击**是**。
 
     ![创建数据库](aspnet-mvc-4-custom-action-filters/_static/image34.png "创建数据库字符串")
 
     *创建数据库*
-7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”**。
+7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”** 。
 
     ![连接字符串指向 SQL 数据库](aspnet-mvc-4-custom-action-filters/_static/image35.png "指向 SQL 数据库连接字符串")
 

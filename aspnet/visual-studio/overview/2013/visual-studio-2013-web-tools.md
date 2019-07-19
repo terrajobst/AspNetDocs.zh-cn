@@ -100,7 +100,7 @@ ms.locfileid: "65115900"
 
 1. 打开**Microsoft Visual Studio**。
 2. 在中**文件**菜单中，选择**打开 |项目/解决方案...** 并浏览到**Ex1 WorkingwithBrowserLinkandWebEssentials\Begin**中**源**实验室 (C:\WebCampsTK\HOL\VSWebTooling\Source) 的文件夹。 选择**Begin.sln**然后单击**打开**。
-3. 在 Visual Studio 工具栏中，展开浏览器菜单并选择**浏览方式...**.
+3. 在 Visual Studio 工具栏中，展开浏览器菜单并选择**浏览方式...** .
 
     ![浏览与菜单选项](visual-studio-2013-web-tools/_static/image1.png "浏览与...在浏览器菜单")
 
@@ -137,7 +137,7 @@ ms.locfileid: "65115900"
 
 1. 切换回 Visual Studio。
 2. 打开**Index.cshtml**文件位于**视图** | **主页**文件夹。
-3. 替换**&lt;！-TODO： 添加选项-&gt;** 注释以下代码，然后按**选项卡**。
+3. 替换 **&lt;！-TODO： 添加选项-&gt;** 注释以下代码，然后按**选项卡**。
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. 代码应扩展到 HTML。
@@ -215,7 +215,7 @@ ms.locfileid: "65115900"
     ![在 Visual Studio HTML 编辑器中选择 HTML 元素](visual-studio-2013-web-tools/_static/image15.png "Visual Studio HTML 编辑器中选择 HTML 元素")
 
     *在 Visual Studio HTML 编辑器中选择 HTML 元素*
-4. 现在，你将更新**front**以更改所选元素的样式的 CSS 类。 若要执行此操作，按**CTRL** + **，** 以打开**导航到**搜索框中。 类型**site.css**然后按**ENTER**以打开该文件。
+4. 现在，你将更新**front**以更改所选元素的样式的 CSS 类。 若要执行此操作，按**CTRL** +  **，** 以打开**导航到**搜索框中。 类型**site.css**然后按**ENTER**以打开该文件。
 
     ![打开文件 Site.css](visual-studio-2013-web-tools/_static/image16.png "打开 Site.css 文件")
 
@@ -250,7 +250,7 @@ ms.locfileid: "65115900"
 
     *-webkit 边框半径属性的 btn 选择器*
 14. 将在光标 **-webkit 边框半径**属性。 属性的第一个单词的第一个字母下应显示一条蓝线。 这是**智能标记**。
-15. 按**CTRL** + **。** 若要打开建议菜单上，然后单击**缺少标准属性 （边框半径） 添加**。
+15. 按**CTRL** +  **。** 若要打开建议菜单上，然后单击**缺少标准属性 （边框半径） 添加**。
 
     ![添加缺少的标准属性建议](visual-studio-2013-web-tools/_static/image22.png "添加缺少的标准属性建议")
 
@@ -295,12 +295,12 @@ ms.locfileid: "65115900"
     ![编辑问题](visual-studio-2013-web-tools/_static/image28.png "编辑问题")
 
     *编辑问题*
-3. 应显示光标。 将原始文本替换为*什么它看起来像时我编写一个较长的问题？*，然后按**ESC**退出设计模式。
+3. 应显示光标。 将原始文本替换为*什么它看起来像时我编写一个较长的问题？* ，然后按**ESC**退出设计模式。
 
     ![编辑的问题](visual-studio-2013-web-tools/_static/image29.png "编辑的问题")
 
     *编辑的问题*
-4. 切换回 Visual Studio 并打开**Index.cshtml**，如果尚未打开。 请注意的内部文本**&lt;p&gt;** 更新元素。
+4. 切换回 Visual Studio 并打开**Index.cshtml**，如果尚未打开。 请注意的内部文本 **&lt;p&gt;** 更新元素。
 
     ![在 HTML 页面中的最新问题](visual-studio-2013-web-tools/_static/image30.png "HTML 页中的更新问题")
 
@@ -316,7 +316,7 @@ ms.locfileid: "65115900"
     ![错误列表视图中菜单](visual-studio-2013-web-tools/_static/image31.png "视图菜单中的错误列表")
 
     *错误列表视图中菜单*
-2. 请注意，没有通知的 SEO 警告**&lt;meta&gt;** 标记为缺少页说明。 双击 SEO 警告条目，以修复此错误。
+2. 请注意，没有通知的 SEO 警告 **&lt;meta&gt;** 标记为缺少页说明。 双击 SEO 警告条目，以修复此错误。
 
     ![错误列表窗口](visual-studio-2013-web-tools/_static/image32.png "错误列表窗口")
 
@@ -326,7 +326,7 @@ ms.locfileid: "65115900"
     ![Web Essentials 对话框](visual-studio-2013-web-tools/_static/image33.png "Web Essentials 对话框")
 
     *Web Essentials 对话框*
-4. 编辑器 **\_Layout.cshtml**此时将打开并**&lt;元&gt;** 标记自动添加到**头**部分HTML 文件。
+4. 编辑器 **\_Layout.cshtml**此时将打开并 **&lt;元&gt;** 标记自动添加到**头**部分HTML 文件。
 
     ![自动添加 _Layout 页中的 Meta 标记](visual-studio-2013-web-tools/_static/image34.png "Meta 标记自动添加在 _Layout 页")
 
@@ -347,7 +347,7 @@ ms.locfileid: "65115900"
 
 1. 打开**Visual Studio Express 2013 for Web**并**Begin.sln**解决方案位于**源/Ex2-TakingAdvantageofCodeSnippetsandIntelliSense/开始**文件夹。 或者，继续使用该解决方案并获得前一练习中。
 2. 在中**解决方案资源管理器**，打开**Index.cshtml**文件位于**视图** | **主页**文件夹。
-3. 添加以下形式内的**&lt;部分&gt;** 元素。
+3. 添加以下形式内的 **&lt;部分&gt;** 元素。
 
     (Code Snippet - *VisualStudio2013WebTooling* - *Ex2* - *Form*)
 
@@ -355,19 +355,19 @@ ms.locfileid: "65115900"
 4. 输入的标记前面应带有标签的字段的一些说明。 添加以下标签之前输入的标记。
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. **有关**的属性**&lt;标签&gt;** 指定标签的窗体元素绑定到。 该属性的值应设置为相关的元素的 id。 添加**有关**归于**&lt;标签&gt;** 元素。 下图中所示&quot;名称&quot;值会弹出在 IntelliSense 中，基于相同的作用域内的元素的 id (封闭**&lt;窗体&gt;**)。
+5. **有关**的属性 **&lt;标签&gt;** 指定标签的窗体元素绑定到。 该属性的值应设置为相关的元素的 id。 添加**有关**归于 **&lt;标签&gt;** 元素。 下图中所示&quot;名称&quot;值会弹出在 IntelliSense 中，基于相同的作用域内的元素的 id (封闭 **&lt;窗体&gt;** )。
 
     ![在 IntelliSense 中显示 id](visual-studio-2013-web-tools/_static/image35.png "id 显示在 IntelliSense 中")
 
     *显示在 IntelliSense 中的 id*
-6. 删除最近添加**&lt;窗体&gt;** 元素和其内容。
+6. 删除最近添加 **&lt;窗体&gt;** 元素和其内容。
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a>任务 2-使用 HTML 代码段
 
 HTML5 引入了 25 个以上的新语义标记。 Visual Studio 已具有对这些标记的 IntelliSense 支持，但 Visual Studio 2013 可以更快、 更轻松地通过添加新的代码片段编写标记。 尽管这些标记不是复杂的但这会产生一些小的微妙之处，例如添加为正确的编解码器回退*音频*标记。 在此任务中，您将看到的音频的标记的 HTML 代码段。
 
-1. 在中**Index.cshtml**文件中，键入 **&lt;aud**内**&lt;部分&gt;** 元素在下图中所示。
+1. 在中**Index.cshtml**文件中，键入 **&lt;aud**内 **&lt;部分&gt;** 元素在下图中所示。
 
     ![插入音频元素](visual-studio-2013-web-tools/_static/image36.png "插入音频元素")
 
@@ -410,7 +410,7 @@ Web Essentials 2013，样式表和 HTML 页面生成 Id 和类名称的列表。
     (Code Snippet - *VisualStudio2013WebTooling* - *Ex2* - *ReadyFunction*)
 
     [!code-javascript[Main](visual-studio-2013-web-tools/samples/sample9.js)]
-3. 将在光标**脚本**标记，然后按**CTRL** + **。** 若要打开建议菜单。
+3. 将在光标**脚本**标记，然后按**CTRL** +  **。** 若要打开建议菜单。
 4. 单击**提取到文件**。
 
     ![JavaScript 将解压缩到文件的建议](visual-studio-2013-web-tools/_static/image39.png "JavaScript 提取到文件的建议")
@@ -458,7 +458,7 @@ Web Essentials 2013，样式表和 HTML 页面生成 Id 和类名称的列表。
     ![GetElementByTagName 方法显示 IntelliSense](visual-studio-2013-web-tools/_static/image45.png "getElementByTagName 方法显示 IntelliSense")
 
     *GetElementsByTagName 方法显示 IntelliSense*
-13. 选择**&quot;音频&quot;** 列表然后按**ENTER**。 结果如下图所示。
+13. 选择 **&quot;音频&quot;** 列表然后按**ENTER**。 结果如下图所示。
 
     ![检索音频元素](visual-studio-2013-web-tools/_static/image46.png "检索音频元素")
 
@@ -490,7 +490,7 @@ Web Essentials 2013，样式表和 HTML 页面生成 Id 和类名称的列表。
     (代码段- *VisualStudio2013WebTooling* - *Ex2* - *PlayAudioElements*)
 
     [!code-csharp[Main](visual-studio-2013-web-tools/samples/sample12.cs)]
-18. 单击**CTRL** + **S**保存该文件。 由于缩小的文件已打开，您将看到对话框，指出，源编辑器外修改该文件。 单击 **“是”**。
+18. 单击**CTRL** + **S**保存该文件。 由于缩小的文件已打开，您将看到对话框，指出，源编辑器外修改该文件。 单击 **“是”** 。
 
     ![Microsoft Visual Studio 警告](visual-studio-2013-web-tools/_static/image51.png "Microsoft Visual Studio 警告")
 

@@ -194,7 +194,7 @@ ASP.NET 4 引入了新选项来扩展应用程序 Url 的大小。 ASP.NET 的�
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-若要允许较长或更短路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），请修改*[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。 若要允许较长或更短的查询字符串，请修改的值*[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。
+若要允许较长或更短路径 （不包括协议、 服务器名称和查询字符串的 URL 的部分），请修改 *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 属性。 若要允许较长或更短的查询字符串，请修改的值 *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 属性。
 
 ASP.NET 4 还可配置的 URL 字符检查使用的字符。 在 ASP.NET 中 URL 的路径部分找到无效的字符，它将拒绝该请求，并发出 HTTP 400 错误。 在以前版本的 ASP.NET 中，URL 字符检查的限制为一组固定的字符。 在 ASP.NET 4 中，你可以自定义使用新的有效字符集*requestPathInvalidChars*的属性*httpRuntime*配置元素，如下面的示例中所示：
 
@@ -825,7 +825,7 @@ ASP.NET 4 引入了以下新代码表达式的语法：
 
 [!code-aspx[Main](overview/samples/sample67.aspx)]
 
-例如， &lt;%:请求"/userinput&gt"%&gt;执行 HTML 编码的值*请求"/userinput&gt"*。
+例如， &lt;%:请求"/userinput&gt"%&gt;执行 HTML 编码的值*请求"/userinput&gt"* 。
 
 此功能旨在使其可以替换为旧语法的所有实例的新语法，以便将无需再决定每个步骤要使用哪一个。 但是，一些情况下要输出的文本要作为 HTML 或已经进行了编码，在这种情况下这可能会导致双重解码。
 

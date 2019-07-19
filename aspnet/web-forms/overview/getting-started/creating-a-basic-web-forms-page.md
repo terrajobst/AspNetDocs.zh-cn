@@ -54,10 +54,10 @@ ms.locfileid: "65134665"
 ### <a name="to-create-a-web-application-project"></a>若要创建 Web 应用程序项目
 
 1. 打开 Microsoft Visual Studio。
-2. 在“文件”菜单上，选择“新建项目”。  
+2. 在“文件”菜单上，选择“新建项目”。    
     ![文件菜单](creating-a-basic-web-forms-page/_static/image1.png)
 
-    此时将出现“新建项目”对话框。
+    此时将出现“新建项目”  对话框。
 3. 选择**模板** - &gt; **Visual C#**  - &gt; **Web**在左侧的模板组。
 4. 选择**ASP.NET Web 应用程序**在中心列中的模板。
 5. 将项目命名***BasicWebApp***然后单击**确定**按钮。   
@@ -100,7 +100,7 @@ ms.locfileid: "65134665"
 
 1. 关闭*Default.aspx*页。 若要执行此操作，单击显示文件名称的选项卡，然后单击关闭选项。
 2. 在中**解决方案资源管理器**，右键单击 Web 应用程序名称 (在本教程中的应用程序名称是**BasicWebSite**)，然后单击**添加** - &gt;**新项**。   
-随即出现“添加新项”对话框。
+随即出现“添加新项”  对话框。
 3. 选择**Visual C#**  - &gt; **Web**在左侧的模板组。 然后，选择**Web 窗体**从中间列表并将其命名*FirstWebPage.aspx*。   
     ![添加新项对话框](creating-a-basic-web-forms-page/_static/image6.png)
 4. 单击**添加**将 web 页面添加到你的项目。  
@@ -175,14 +175,14 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
     ![设置按钮文本](creating-a-basic-web-forms-page/_static/image10.png "设置按钮文本")
 3. 切换到**源**视图。
 
-    **源**视图显示该页面，其中包括 Visual Studio 已创建服务器控件的元素的 HTML。 控件使用类似于 HTML 的语法声明，只不过标记使用前缀**asp:** 和包含该特性**runat =&quot;server&quot;**。
+    **源**视图显示该页面，其中包括 Visual Studio 已创建服务器控件的元素的 HTML。 控件使用类似于 HTML 的语法声明，只不过标记使用前缀**asp:** 和包含该特性**runat =&quot;server&quot;** 。
 
     控件属性被声明为属性。 例如，设置[文本](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.text.aspx)属性[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件，在步骤 1 中，实际在设置**文本**控件的标记中的属性。
 
     > [!NOTE] 
     > 
-    > 所有控件都都位于**窗体**元素，它还具有特性**runat =&quot;server&quot;**。 **Runat =&quot;服务器&quot;** 属性并**asp:** 前缀将对控件标记将控件标记，以便它们是由 ASP.NET 在服务器上处理运行时。 外部的代码**&lt;形成 runat =&quot;服务器&quot;&gt;** 并**&lt;脚本 runat =&quot;server&quot; &gt;** 元素发送到浏览器中，这就是原因 ASP.NET 代码必须位于其开始标记中包含的元素不变**runat =&quot;服务器&quot;** 属性。
-4. 接下来，将添加到一个附加属性[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。 将插入点直接后的**asp: Label**中**&lt;asp: Label&gt;** 标记，并将然后按**空格键**。
+    > 所有控件都都位于**窗体**元素，它还具有特性**runat =&quot;server&quot;** 。 **Runat =&quot;服务器&quot;** 属性并**asp:** 前缀将对控件标记将控件标记，以便它们是由 ASP.NET 在服务器上处理运行时。 外部的代码 **&lt;形成 runat =&quot;服务器&quot;&gt;** 并 **&lt;脚本 runat =&quot;server&quot; &gt;** 元素发送到浏览器中，这就是原因 ASP.NET 代码必须位于其开始标记中包含的元素不变**runat =&quot;服务器&quot;** 属性。
+4. 接下来，将添加到一个附加属性[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。 将插入点直接后的**asp: Label**中 **&lt;asp: Label&gt;** 标记，并将然后按**空格键**。
 
     将显示下拉列表，显示为可以设置的可用属性的列表[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。 此功能，称为**智能感知**，可以帮助您应对**源**页面上的语法的服务器控件、 HTML 元素和其他项的视图。 如下图所示**智能感知**下拉列表[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。
 
@@ -194,7 +194,7 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
     > [!NOTE] 
     > 
     > 可以显示**智能感知**随时通过按下的下拉列表**CTRL + J**查看代码时。
-6. 选择的颜色**[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** 控件的文本。 请确保选择足够深，以便读取在白色背景的颜色。
+6. 选择的颜色 **[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** 控件的文本。 请确保选择足够深，以便读取在白色背景的颜色。
 
     **ForeColor**属性已完成，但已选择，包括右引号后面的颜色。
 
@@ -213,7 +213,7 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
     > [!NOTE] 
     > 
     > 双击中的控件**设计**视图只会是一种方式可以创建事件处理程序。
-3. 内部**Button1\_单击**事件处理程序中，键入**Label1**跟一个句点 (**。**)。
+3. 内部**Button1\_单击**事件处理程序中，键入**Label1**跟一个句点 ( **。** )。
 
     当您键入超过这个有效期之后**ID**标签的 (**Label1**)，Visual Studio 将显示为可用成员列表[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制，请在下面的示例所示图。 成员通常的属性、 方法或事件。
 
@@ -224,7 +224,7 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. 切换回查看**源**视图通过右键单击你的 HTML 标记*FirstWebPage.aspx*中**解决方案资源管理器**并选择**视图标记**。
-6. 滚动到**&lt;: Button&gt;** 元素。 请注意， **&lt;: Button&gt;** 元素现在具有特性**onclick =&quot;Button1\_单击&quot;**。
+6. 滚动到 **&lt;: Button&gt;** 元素。 请注意， **&lt;: Button&gt;** 元素现在具有特性**onclick =&quot;Button1\_单击&quot;** 。
 
     此属性将绑定的按钮[单击](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)到上一步中编码的处理程序方法的事件。
 
@@ -242,7 +242,7 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
     您输入的名称显示在[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控件。 请注意，当单击按钮时，页面将被发送到 Web 服务器。 ASP.NET 然后重新创建该页，运行你的代码 (在这种情况下，[按钮](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控件的[单击](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件处理程序将运行)，然后将新页发送到浏览器。 如果你观看在浏览器中的状态栏，可以看到，页面往返到 Web 服务器每次单击按钮。
 3. 在浏览器中，查看正在运行的页上右键单击并选择页面的源代码**查看源**。
 
-    在页的源代码，可以看到 HTML 而无需任何服务器代码。 具体而言，未看到**&lt;asp:&gt;** 你正在使用中的元素**源**视图。 页运行时，ASP.NET 会处理服务器控件，并呈现到页的 HTML 元素，可执行表示控件的功能。 例如， **&lt;: Button&gt;** 控件呈现为 HTML **&lt;输入类型 =&quot;提交&quot;&gt;** 元素。
+    在页的源代码，可以看到 HTML 而无需任何服务器代码。 具体而言，未看到 **&lt;asp:&gt;** 你正在使用中的元素**源**视图。 页运行时，ASP.NET 会处理服务器控件，并呈现到页的 HTML 元素，可执行表示控件的功能。 例如， **&lt;: Button&gt;** 控件呈现为 HTML **&lt;输入类型 =&quot;提交&quot;&gt;** 元素。
 4. 关闭浏览器。
 
 ## <a name="working-with-additional-controls"></a>中的其他控件
@@ -269,7 +269,7 @@ Visual Studio 提供了各种方法来设置页上的控件的属性。 在本�
 4. 从**选择一种方案**列表中，选择**简单**，然后单击**确定**。
 5. 切换到**源**视图。
 
-    您可以看到 **&lt;asp： 日历&gt;** 元素。 此元素是远远超过前面创建的简单控件的元素。 它还包括子元素，如 **&lt;WeekEndDayStyle&gt;**，这表示各种格式设置。 如下图所示[日历](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制**源**视图。 (请参阅中的确切标记**源**视图可能略有不同的图。)
+    您可以看到 **&lt;asp： 日历&gt;** 元素。 此元素是远远超过前面创建的简单控件的元素。 它还包括子元素，如 **&lt;WeekEndDayStyle&gt;** ，这表示各种格式设置。 如下图所示[日历](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制**源**视图。 (请参阅中的确切标记**源**视图可能略有不同的图。)
 
     ![月历控件在源视图](creating-a-basic-web-forms-page/_static/image15.png "月历控件在源视图中")
 

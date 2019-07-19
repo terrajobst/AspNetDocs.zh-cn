@@ -89,12 +89,12 @@ ASP.NET MVC 基架提供了一种标准化方法，创建必要的逻辑，可�
 #### <a name="task-1--creating-a-new-aspnet-mvc-4-project-using-scaffolding"></a>任务 1-创建新的 ASP.NET MVC 4 项目使用基架
 
 1. 如果尚未打开，启动**Visual Studio 2012**。
-2. 选择**文件 |新的项目**。 在新建项目对话框中，在**Visual C# |Web**部分中，选择**ASP.NET MVC 4 Web 应用程序**。 为项目命名为**MVC4andEFMigrations**并将位置设置为**Source\Ex1 UsingMVC4ScaffoldingEFMigrations**本实验的文件夹。 设置**解决方案名称**到**开始**，并确保**创建解决方案目录**检查。 单击 **“确定”**。
+2. 选择**文件 |新的项目**。 在新建项目对话框中，在**Visual C# |Web**部分中，选择**ASP.NET MVC 4 Web 应用程序**。 为项目命名为**MVC4andEFMigrations**并将位置设置为**Source\Ex1 UsingMVC4ScaffoldingEFMigrations**本实验的文件夹。 设置**解决方案名称**到**开始**，并确保**创建解决方案目录**检查。 单击 **“确定”** 。
 
     ![新建 ASP.NET MVC 4 项目对话框](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image1.png "新建 ASP.NET MVC 4 项目对话框")
 
     *新建 ASP.NET MVC 4 项目对话框*
-3. 在中**新的 ASP.NET MVC 4 项目**对话框中，选择**Internet 应用程序**模板，并确保选中**Razor**是所选**视图引擎**. 单击“确定”，创建项目。
+3. 在中**新的 ASP.NET MVC 4 项目**对话框中，选择**Internet 应用程序**模板，并确保选中**Razor**是所选**视图引擎**. 单击“确定”，创建项目  。
 
     ![新的 ASP.NET MVC 4 Internet 应用程序](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image2.png "新 ASP.NET MVC 4 Internet 应用程序")
 
@@ -115,7 +115,7 @@ ASP.NET MVC 基架提供了一种标准化方法，创建必要的逻辑，可�
 
    1. 在中**模板**下拉列表中，选择**读/写操作和视图使用 Entity Framework 的 MVC 控制器**选项。
    2. 在中**模型类**下拉列表中，选择**人员**类。
-   3. 在中**数据上下文类**列表中，选择**&lt;新建数据上下文...&gt;**. 选择任何名称，然后单击**确定**。
+   3. 在中**数据上下文类**列表中，选择 **&lt;新建数据上下文...&gt;** . 选择任何名称，然后单击**确定**。
    4. 在中**视图**下拉列表中，请确保**Razor**处于选中状态。
 
       ![添加人员控制器使用基架](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "添加基架的人员控制器")

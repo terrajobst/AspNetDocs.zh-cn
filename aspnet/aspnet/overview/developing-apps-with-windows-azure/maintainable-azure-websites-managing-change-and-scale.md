@@ -230,7 +230,7 @@ ms.locfileid: "65118302"
     ![更改列生成的 SQL 语句](maintainable-azure-websites-managing-change-and-scale/_static/image11.png "Alter column SQL 语句生成")
 
     *更改列生成的 SQL 语句*
-11. 在中**SQL Server 对象资源管理器**，刷新**dbo。TriviaQuestions**表，然后检查**提示**列的类型**nvarchar(150)**。
+11. 在中**SQL Server 对象资源管理器**，刷新**dbo。TriviaQuestions**表，然后检查**提示**列的类型**nvarchar(150)** 。
 
     ![显示新约束](maintainable-azure-websites-managing-change-and-scale/_static/image12.png "显示新约束")
 
@@ -421,7 +421,7 @@ ms.locfileid: "65118302"
     > 当将内容部署到的 FTP 主机或 GIT 存储库的 web 应用时，您必须使用进行身份验证**部署凭据**创建的 web 应用**快速启动**或**仪表板**管理页。 如果不知道你的部署凭据，可以轻松地重置它们使用管理门户。 打开 web 应用**仪表板**页上，单击**重置部署凭据**链接。 提供新密码，然后单击**确定**。 部署凭据可用于与你的订阅相关联的所有 web 应用。
 10. 若要验证 web 应用已成功推送到 Azure，请返回到管理门户并单击**网站**。
 11. 找到你的 web 应用并展开以显示过渡站点槽的条目。 单击其**名称**转到管理页。
-12. 单击**部署**若要查看**部署历史记录**。 验证是否有**活动的部署**与你*&quot;初始提交&quot;*。
+12. 单击**部署**若要查看**部署历史记录**。 验证是否有**活动的部署**与你 *&quot;初始提交&quot;* 。
 
     ![活动部署](maintainable-azure-websites-managing-change-and-scale/_static/image40.png)
 
@@ -497,7 +497,7 @@ ms.locfileid: "65118302"
     ![选择的代码](maintainable-azure-websites-managing-change-and-scale/_static/image47.png)
 
     *选择的代码*
-4. 右键单击所选的代码中，展开**重构**菜单，然后选择**提取方法...**.
+4. 右键单击所选的代码中，展开**重构**菜单，然后选择**提取方法...** .
 
     ![作为新方法提取代码](maintainable-azure-websites-managing-change-and-scale/_static/image48.png)
 
@@ -616,18 +616,18 @@ ms.locfileid: "65118302"
 
 1. 切换到包含 Visual Studio 实例**GeekQuiz**从上一练习的解决方案。
 2. 从菜单栏中，选择**视图**，然后单击**服务器资源管理器**。
-3. 在中**服务器资源管理器**，右键单击**Azure**节点，然后选择**连接到 Azure...**.使用与你的订阅关联的 Microsoft 帐户登录。
+3. 在中**服务器资源管理器**，右键单击**Azure**节点，然后选择**连接到 Azure...** .使用与你的订阅关联的 Microsoft 帐户登录。
 
     ![连接到 Windows Azure](maintainable-azure-websites-managing-change-and-scale/_static/image62.png)
 
     *连接到 Azure*
-4. 展开**Azure**节点，右键单击**存储**，然后选择**附加外部存储...**.
+4. 展开**Azure**节点，右键单击**存储**，然后选择**附加外部存储...** .
 5. 在中**添加新的存储帐户**对话框框中，输入**帐户名称**并**帐户密钥**获取在上一任务和单击**确定**.
 
     ![新的存储帐户添加对话框](maintainable-azure-websites-managing-change-and-scale/_static/image63.png)
 
     *新的存储帐户添加对话框*
-6. 应显示你的存储帐户**存储**节点。 展开你的存储帐户中，右键单击**Blob** ，然后选择**创建 Blob 容器...**.
+6. 应显示你的存储帐户**存储**节点。 展开你的存储帐户中，右键单击**Blob** ，然后选择**创建 Blob 容器...** .
 
     ![创建 Blob 容器](maintainable-azure-websites-managing-change-and-scale/_static/image64.png "创建 Blob 容器")
 
@@ -679,7 +679,7 @@ ms.locfileid: "65118302"
 
 在本任务中，您将配置**GeekQuiz**解决方案，以使用该映像上传到 Azure Blob 存储 （而不是位于 web 应用中的映像） 通过添加在 ASP.NET URL 重写规则**web.config**文件。
 
-1. 在 Visual Studio 中打开**Web.config**文件内**GeekQuiz**项目，然后找到**&lt;system.webServer&gt;** 元素。
+1. 在 Visual Studio 中打开**Web.config**文件内**GeekQuiz**项目，然后找到 **&lt;system.webServer&gt;** 元素。
 2. 添加以下代码以添加一个 URL 重写规则，更新存储帐户名称的占位符。
 
     (代码段- *WebSitesInProduction-Ex4-UrlRewriteRule*)
@@ -776,12 +776,12 @@ ms.locfileid: "65118302"
     ![将请求添加到 WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "将请求添加到 WebTest1")
 
     *将请求添加到 WebTest1*
-4. 在中**属性**窗口中的新的请求节点中，更新**Url**属性以指向你的 web 应用的 URL (例如*[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
+4. 在中**属性**窗口中的新的请求节点中，更新**Url**属性以指向你的 web 应用的 URL (例如 *[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)* ).
 
     ![更改 Url 属性](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "更改 Url 属性")
 
     *更改 Url 属性*
-5. 在中**WebTest1.webtest**窗口中，右键单击**WebTest1**单击**添加循环...**.
+5. 在中**WebTest1.webtest**窗口中，右键单击**WebTest1**单击**添加循环...** .
 
     ![将循环添加到 WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image83.png "向 WebTest1 中添加循环")
 
@@ -800,7 +800,7 @@ ms.locfileid: "65118302"
     ![选择循环的第一个和最后一项](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "选择循环的第一个和最后一个项")
 
     *选择循环的第一个和最后一个项*
-8. 在中**解决方案资源管理器**，右键单击**WebAndLoadTestProject**项目中，展开**添加**菜单，然后选择**负载测试...**.
+8. 在中**解决方案资源管理器**，右键单击**WebAndLoadTestProject**项目中，展开**添加**菜单，然后选择**负载测试...** .
 
     ![将负载测试添加到 WebAndLoadTestProject 项目](maintainable-azure-websites-managing-change-and-scale/_static/image86.png "将负载测试添加到 WebAndLoadTestProject 项目")
 

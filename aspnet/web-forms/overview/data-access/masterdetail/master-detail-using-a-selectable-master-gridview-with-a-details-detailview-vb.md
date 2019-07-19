@@ -107,11 +107,11 @@ GridView 的最后一个标记是：
 
 **图 9**:调用`ProductsBLL`类的`GetProductByProductID(productID)`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
-具有*`productID`* 参数的值从 GridView 控件获取`SelectedValue`属性。 如前面所述，GridView 的`SelectedValue`属性返回所选行的第一个数据键值。 因此，它是命令性的 GridView`DataKeyNames`属性设置为`ProductID`，因此，所选的行`ProductID`返回值`SelectedValue`。
+具有 *`productID`* 参数的值从 GridView 控件获取`SelectedValue`属性。 如前面所述，GridView 的`SelectedValue`属性返回所选行的第一个数据键值。 因此，它是命令性的 GridView`DataKeyNames`属性设置为`ProductID`，因此，所选的行`ProductID`返回值`SelectedValue`。
 
 [![将产品 id 参数设置为 GridView 的 SelectedValue 属性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
-**图 10**:设置*`productID`* GridView 的参数`SelectedValue`属性 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
+**图 10**:设置 *`productID`* GridView 的参数`SelectedValue`属性 ([单击以查看实际尺寸的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
 一次`productDetailsDataSource`正确配置对象数据源并将其绑定到 DetailsView，本教程中已完成 ！ 当首次访问页面时未选择行，因此 GridView`SelectedValue`属性返回`Nothing`。 由于不没有使用任何产品`NULL``ProductID`值，没有记录返回由`GetProductByProductID(productID)`方法，这意味着 DetailsView 不显示 （请参阅图 11）。 单击某 GridView 一行的选择按钮，才会进行回发和刷新 DetailsView。 这一次 GridView`SelectedValue`属性返回`ProductID`所选行的`GetProductByProductID(productID)`方法将返回`ProductsDataTable`以及有关该特定产品和 DetailsView 信息显示了这些详细信息 （请参阅图 12）。
 

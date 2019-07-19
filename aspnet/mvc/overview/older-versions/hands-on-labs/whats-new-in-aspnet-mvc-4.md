@@ -258,7 +258,7 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 
 1. 打开**PhotoGallery.sln**解决方案已在任务 1 中创建并选择**PhotoGallery**项目。 按**F5**运行该解决方案。
 2. 调整浏览器的宽度，设置 windows 到一半或小于其原始大小的四分之一。 请注意，在标头中的项会出现什么情况：某些元素不会出现在标头的可见区域。
-3. 打开**Site.css**文件从 Visual Studio 解决方案资源管理器，位于**内容**项目文件夹。 按**CTRL + F**若要打开 Visual Studio 集成的搜索，并写入**@media**查找**CSS 媒体查询**。
+3. 打开**Site.css**文件从 Visual Studio 解决方案资源管理器，位于**内容**项目文件夹。 按**CTRL + F**若要打开 Visual Studio 集成的搜索，并写入 **@media** 查找**CSS 媒体查询**。
 
     此模板中定义的媒体查询条件的工作原理以这种方式：浏览器的窗口大小低于**850 px**，应用的 CSS 规则是在此媒体块内定义的。
 
@@ -332,7 +332,7 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
     (代码段- *ASP.NET MVC 4 实验-Ex02-照片模型*)
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-4. 从“控制器”文件夹打开 HomeController.cs 文件。
+4. 从“控制器”  文件夹打开 HomeController.cs  文件。
 5. 添加下面的 using 语句。
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-HomeController Using*)
@@ -538,7 +538,7 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
     ![查看切换器在桌面视图中呈现](whats-new-in-aspnet-mvc-4/_static/image32.png "桌面视图中呈现的视图切换器")
 
     *在桌面视图中呈现的视图切换器*
-7. 再次切换到移动视图，然后浏览到**有关**页 (http://localhost[端口] / Home/有关)。 请注意，即使尚未创建 About.Mobile.cshtml 视图，关于页面将显示使用移动布局 (\_Layout.Mobile.cshtml)。
+7. 再次切换到移动视图，然后浏览到**有关**页 (http://localhost [端口] / Home/有关)。 请注意，即使尚未创建 About.Mobile.cshtml 视图，关于页面将显示使用移动布局 (\_Layout.Mobile.cshtml)。
 
     ![有关页面](whats-new-in-aspnet-mvc-4/_static/image33.png "有关页面")
 
@@ -577,7 +577,7 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
 
 4. 创建一份 **\_Layout.Mobile.cshtml**中的文件**views/shared**文件夹并将复制到重命名&quot;  **\_Layout.iPhone.cshtml**&quot;.
 5. 打开 **\_Layout.iPhone.cshtml**在上一步中创建。
-6. 数据角色属性设置为使用找到的 div 元素**页上**并将更改**数据主题**归于&quot; &quot;。
+6. 数据角色属性设置为使用找到的 div 元素**页上**并将更改**数据主题**归于&quot;  &quot;。
 
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
@@ -620,7 +620,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
 4. 更新**HomeController**类继承自**AsyncController**。 派生自 AsyncController 控制器使 ASP.NET 能够处理异步请求，并且它们仍可以服务同步操作方法。
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
-5. 添加**异步**关键字**索引**方法，并使其返回类型**任务&lt;ActionResult&gt;**。
+5. 添加**异步**关键字**索引**方法，并使其返回类型**任务&lt;ActionResult&gt;** 。
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
 
@@ -1005,12 +1005,12 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
      ![配置目标连接字符串](whats-new-in-aspnet-mvc-4/_static/image77.png "配置目标连接字符串")
 
      *配置目标连接字符串*
-6. 然后单击“确定” 。 当系统提示你创建数据库时，单击**是**。
+6. 然后单击“确定”  。 当系统提示你创建数据库时，单击**是**。
 
     ![创建数据库](whats-new-in-aspnet-mvc-4/_static/image78.png "创建数据库字符串")
 
     *创建数据库*
-7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”**。
+7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”** 。
 
     ![连接字符串指向 SQL 数据库](whats-new-in-aspnet-mvc-4/_static/image79.png "指向 SQL 数据库连接字符串")
 

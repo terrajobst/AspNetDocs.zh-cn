@@ -79,7 +79,7 @@ Visual Studio 将打开*Configuration.cs*文件。 替换`Seed`中的方法*Conf
 > 
 > 有关详细信息[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，请参阅[负责使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
-**按 CTRL-SHIFT-B 以生成项目。**（以下步骤将失败，如果此时不生成。）
+**按 CTRL-SHIFT-B 以生成项目。** （以下步骤将失败，如果此时不生成。）
 
 下一步是创建`DbMigration`类适用于初始迁移。 此迁移过程将创建一个新的数据库，这就是为什么你删除*movie.mdf*上一步中的文件。
 
@@ -111,7 +111,7 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 生成应用程序 (Ctrl + Shift + B)。
 
-因为你已将新字段添加到`Movie`类，你还需要更新绑定允许列表以便将包含此新属性。 更新`bind`特性`Create`并`Edit`操作方法，以包含`Rating`属性：
+因为你已将新字段添加到`Movie`类，你还需要更新绑定  允许列表以便将包含此新属性。 更新`bind`特性`Create`并`Edit`操作方法，以包含`Rating`属性：
 
 [!code-csharp[Main](adding-a-new-field/samples/sample7.cs?highlight=1)]
 
@@ -121,7 +121,7 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample8.cshtml?highlight=31-33,52-54)]
 
-接下来，打开*\Views\Movies\Create.cshtml*文件，并添加`Rating`字段的以下突出显示的标记。 这会使文本框中，以便创建新电影时，可以指定一个级别。
+接下来，打开 *\Views\Movies\Create.cshtml*文件，并添加`Rating`字段的以下突出显示的标记。 这会使文本框中，以便创建新电影时，可以指定一个级别。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample9.cshtml?highlight=9-15)]
 
@@ -131,7 +131,7 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 ![](adding-a-new-field/_static/image9.png)  
   
-创建数据库后，支持 MovieDBContext 上下文的模型已更改。 请考虑使用 Code First 迁移来更新数据库 (https://go.microsoft.com/fwlink/?LinkId=238269)。
+创建数据库后，支持 MovieDBContext 上下文的模型已更改。 请考虑使用 Code First 迁移来更新数据库 (https://go.microsoft.com/fwlink/?LinkId=238269) 。
 
 ![](adding-a-new-field/_static/image10.png)
 
@@ -173,7 +173,7 @@ Code First 迁移创建另一个类文件中的*迁移*文件夹 (具有名称 *
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-单击 **“创建”**。 新电影，包括分级，现在显示在列表的电影：
+单击 **“创建”** 。 新电影，包括分级，现在显示在列表的电影：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 

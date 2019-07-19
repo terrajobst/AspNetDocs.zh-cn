@@ -197,7 +197,7 @@ URL 授权轻松指定粗略的授权规则。 正如我们在步骤 1 中看到
 让我们创建一个页面，其中列出了在 GridView 中特定目录中的文件。 GridView 将列出每个文件的名称、 大小和其他信息，以及包含的 Linkbutton 的两个列： 一个标题为视图和一个名为的 Delete。 如果单击视图 LinkButton，则将显示所选文件的内容;如果单击删除 LinkButton 时，将删除该文件。 让我们最初创建此页，以便其视图和删除功能可供所有用户如此。 在使用中，我们将了解如何启用或禁用这些功能根据用户访问的页面的 LoginView 控件和以编程方式限制功能部分。
 
 > [!NOTE]
-> 我们将要构建的 ASP.NET 页使用 GridView 控件来显示文件的列表。 本教程系列重点介绍窗体身份验证、 授权、 用户帐户和角色，因为我不想花费太多时间来讨论 GridView 控件的内部工作机制。 虽然本教程提供了特定设置此页的分步说明，它不会不研究一下为什么未进行某些选择，或影响特定属性对呈现的输出的详细信息。 GridView 控件的全面介绍，请查阅我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
+> 我们将要构建的 ASP.NET 页使用 GridView 控件来显示文件的列表。 本教程系列重点介绍窗体身份验证、 授权、 用户帐户和角色，因为我不想花费太多时间来讨论 GridView 控件的内部工作机制。 虽然本教程提供了特定设置此页的分步说明，它不会不研究一下为什么未进行某些选择，或影响特定属性对呈现的输出的详细信息。 GridView 控件的全面介绍，请查阅我 *[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
 
 首先打开`UserBasedAuthorization.aspx`文件中`Membership`文件夹，然后将 GridView 控件添加到名为页`FilesGrid`。 从 GridView 的智能标记上，单击编辑列链接以启动字段对话框。 在这里，取消选中自动生成字段中的复选框左下角。 接下来，添加选择按钮、 删除按钮和两个 BoundFields 从左上角 （选择和删除按钮可以 CommandField 类型下找到）。 设置选择按钮`SelectText`属性设置为视图和第一个 BoundField`HeaderText`和`DataField`名称的属性。 设置第二个 BoundField`HeaderText`属性设置为大小 （字节），其`DataField`属性设置为长度，其`DataFormatString`属性设置为{0:N0}并将其`HtmlEncode`属性设置为 False。
 
@@ -369,7 +369,7 @@ URL 授权框架根据按页应用授权规则。 使用 URL 授权时，有权�
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 

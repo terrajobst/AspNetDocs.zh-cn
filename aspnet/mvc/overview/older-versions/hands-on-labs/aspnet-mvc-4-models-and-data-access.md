@@ -113,7 +113,7 @@ ms.locfileid: "65129693"
 
       > [!NOTE]
       > 使用 NuGet 的优点之一是，您不必提供在项目中的所有库项目大小减少。 使用 NuGet 增强工具，请通过在 Packages.config 文件中，指定包版本可以下载第一次运行该项目的所有所需的库。 这就是原因需要将从本实验中打开现有解决方案后运行这些步骤。
-2. 添加**MvcMusicStore**数据库文件。 在本动手实验中，你将使用名为已创建的数据库**MvcMusicStore.mdf**。 为此，请右键单击**应用程序\_数据**文件夹，指向**添加**，然后单击**现有项**。 浏览到**\Source\Assets** ，然后选择**MvcMusicStore.mdf**文件。
+2. 添加**MvcMusicStore**数据库文件。 在本动手实验中，你将使用名为已创建的数据库**MvcMusicStore.mdf**。 为此，请右键单击**应用程序\_数据**文件夹，指向**添加**，然后单击**现有项**。 浏览到 **\Source\Assets** ，然后选择**MvcMusicStore.mdf**文件。
 
     ![添加现有项目](aspnet-mvc-4-models-and-data-access/_static/image2.png "添加现有项目")
 
@@ -286,7 +286,7 @@ ms.locfileid: "65129693"
 
       > [!NOTE]
       > 使用 NuGet 的优点之一是，您不必提供在项目中的所有库项目大小减少。 使用 NuGet 增强工具，请通过在 Packages.config 文件中，指定包版本可以下载第一次运行该项目的所有所需的库。 这就是原因需要将从本实验中打开现有解决方案后运行这些步骤。
-2. 添加**SampleData.cs**的文件**模型**文件夹。 为此，请右键单击**模型**文件夹，指向**添加**，然后单击**现有项**。 浏览到**\Source\Assets** ，然后选择**SampleData.cs**文件。
+2. 添加**SampleData.cs**的文件**模型**文件夹。 为此，请右键单击**模型**文件夹，指向**添加**，然后单击**现有项**。 浏览到 **\Source\Assets** ，然后选择**SampleData.cs**文件。
 
     ![示例数据填充代码](aspnet-mvc-4-models-and-data-access/_static/image18.png "示例数据填充代码")
 
@@ -683,12 +683,12 @@ ms.locfileid: "65129693"
      ![配置目标连接字符串](aspnet-mvc-4-models-and-data-access/_static/image47.png "配置目标连接字符串")
 
      *配置目标连接字符串*
-6. 然后单击“确定” 。 当系统提示你创建数据库时，单击**是**。
+6. 然后单击“确定”  。 当系统提示你创建数据库时，单击**是**。
 
     ![创建数据库](aspnet-mvc-4-models-and-data-access/_static/image48.png "创建数据库字符串")
 
     *创建数据库*
-7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”**。
+7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”** 。
 
     ![连接字符串指向 SQL 数据库](aspnet-mvc-4-models-and-data-access/_static/image49.png "指向 SQL 数据库连接字符串")
 

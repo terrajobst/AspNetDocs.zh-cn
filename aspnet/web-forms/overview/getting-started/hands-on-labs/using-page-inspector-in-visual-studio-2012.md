@@ -162,7 +162,7 @@ ms.locfileid: "65133557"
     ![选择元素](using-page-inspector-in-visual-studio-2012/_static/image10.png "选择元素")
 
     *选择元素*
-12. 在样式窗格中，找到**背景图像**项下 **.main 内容**组。 **取消选中****背景图像**，看看效果。 您将注意到浏览器将立即反映所做的更改，并且该圆形处于隐藏状态。
+12. 在样式窗格中，找到**背景图像**项下 **.main 内容**组。 **取消选中** **背景图像**，看看效果。 您将注意到浏览器将立即反映所做的更改，并且该圆形处于隐藏状态。
 
     > [!NOTE]
     > 在页面检查器样式的选项卡上应用的更改不会影响原始样式表。 您可以取消选中样式或更改无数次，但它们会在还原刷新页面后，其值。
@@ -216,7 +216,7 @@ ms.locfileid: "65133557"
 2. 选择切换检查模式下，单击要关闭，但不是在注册链接以打开其代码。
 
     请注意，链接的源代码位于 **\_LoginPartial.cshtml**文件，不 Index.cshtml 和\_Layout.cshtml，是您可以在第一个位置中查找的位置。 你具有已直接放在正确的源文件。
-3. 在中**样式**选项卡上，找到并单击**\<部分 > #login**项，它是下面的链接的 HTML 容器。
+3. 在中**样式**选项卡上，找到并单击 **\<部分 > #login**项，它是下面的链接的 HTML 容器。
 
     请注意， **#login**样式会自动位于**Site.css**单击后。 此外，代码现在已突出显示。
 
@@ -237,7 +237,7 @@ ms.locfileid: "65133557"
     ![更新后的页面](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *更新后的页面*
-6. 使用检查模式下，选择任一**&lt;li&gt;** 包含的项&quot;注册&quot;并&quot;以用户身份登录&quot;链接。 然后，单击**&lt;部分&gt;#login**访问项**Styles.css**代码。
+6. 使用检查模式下，选择任一 **&lt;li&gt;** 包含的项&quot;注册&quot;并&quot;以用户身份登录&quot;链接。 然后，单击 **&lt;部分&gt;#login**访问项**Styles.css**代码。
 
     ![查找样式](using-page-inspector-in-visual-studio-2012/_static/image19.png "查找样式")
 
@@ -353,7 +353,7 @@ ms.locfileid: "65133557"
     ![选择元素](using-page-inspector-in-visual-studio-2012/_static/image33.png "选择元素")
 
     *选择元素*
-12. 在样式窗格中，找到**背景图像**项下 **.main 内容**组。 **取消选中****背景图像**，看看效果。 您将注意到浏览器将立即反映所做的更改，并且该圆形处于隐藏状态。
+12. 在样式窗格中，找到**背景图像**项下 **.main 内容**组。 **取消选中** **背景图像**，看看效果。 您将注意到浏览器将立即反映所做的更改，并且该圆形处于隐藏状态。
 
     > [!NOTE]
     > 在页面检查器样式的选项卡上应用的更改不会影响原始样式表。 您可以取消选中样式或更改无数次，但它们会在还原刷新页面后，其值。
@@ -361,7 +361,7 @@ ms.locfileid: "65133557"
     ![启用和禁用 CSS styles2](using-page-inspector-in-visual-studio-2012/_static/image34.png "启用和禁用 CSS 样式")
 
     *启用和禁用 CSS 样式*
-13. 现在，单击**你****此处显示的徽标**上使用检查模式下的标头的文本。
+13. 现在，单击**你** **此处显示的徽标**上使用检查模式下的标头的文本。
 14. 在中**样式**选项卡上，找到**字体大小**CSS 属性下 **.site 标题**组。 双击该属性一次以编辑其值。 值替换为 2.3em **3em**，然后按 ENTER。 请注意，标题看上去更大。
 
     ![更改页面 Inspector2 中的 CSS 值](using-page-inspector-in-visual-studio-2012/_static/image35.png "在 Page Inspector 中的更改的 CSS 值")
@@ -407,7 +407,7 @@ ms.locfileid: "65133557"
 2. 使用所选的切换检查模式下，选择日志中的链接以打开其代码。
 
     请注意，链接源代码位于**Site.Master**文件中，未在 Default.aspx 页，这是一个您可能会看到在第一个位置; 你具有已直接放在正确的源文件。
-3. 在中**样式**选项卡上，找到并单击**&lt;部分&gt;#login**项，它是下面的链接的 HTML 容器。
+3. 在中**样式**选项卡上，找到并单击 **&lt;部分&gt;#login**项，它是下面的链接的 HTML 容器。
 
     请注意， **#login**样式会自动位于**Site.css**单击后。 此外，代码现在已突出显示。
 
@@ -428,7 +428,7 @@ ms.locfileid: "65133557"
     ![更新后的页面](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *更新后的页面*
-6. 使用检查模式下，选择任一**&lt;li&gt;** 包含的项&quot;注册&quot;并&quot;以用户身份登录&quot;链接。 然后，单击**&lt;部分&gt;#login**访问项**Styles.css**代码。
+6. 使用检查模式下，选择任一 **&lt;li&gt;** 包含的项&quot;注册&quot;并&quot;以用户身份登录&quot;链接。 然后，单击 **&lt;部分&gt;#login**访问项**Styles.css**代码。
 
     ![查找样式](using-page-inspector-in-visual-studio-2012/_static/image42.png "查找样式")
 

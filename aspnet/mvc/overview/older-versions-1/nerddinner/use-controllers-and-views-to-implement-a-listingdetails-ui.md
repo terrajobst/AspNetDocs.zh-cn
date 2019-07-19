@@ -273,17 +273,17 @@ Index.aspx 视图中，我们将使用 Html.ActionLink() 帮助器方法的方�
 
 默认情况下的 ASP.NET MVC 应用程序使用基于约定的目录解析视图模板时命名结构。 这允许开发人员无需完全限定位置路径引用从控制器类中的视图时。 默认情况下 ASP.NET MVC 将查找视图模板文件内 * \Views\[ControllerName]\*应用程序下面的目录。
 
-例如，我们一直在努力 DinnersController 类 – 它显式引用三个视图模板："索引"、"详细信息"和"NotFound"。 ASP.NET MVC 将默认情况下查找中的这些视图*\Views\Dinners*目录下我们应用程序根目录：
+例如，我们一直在努力 DinnersController 类 – 它显式引用三个视图模板："索引"、"详细信息"和"NotFound"。 ASP.NET MVC 将默认情况下查找中的这些视图 *\Views\Dinners*目录下我们应用程序根目录：
 
 ![](use-controllers-and-views-to-implement-a-listingdetails-ui/_static/image26.png)
 
 请注意上面这里是当前项目中的三个控制器类 (DinnersController、 HomeController 和 AccountController – 最后两个默认情况下我们在创建项目时添加)，并且有三个子目录 （一个用于每个控制器） \Views 目录中。
 
-从主页和帐户控制器中引用的视图将自动解析及其各自的视图模板*\Views\Home*并*\Views\Account*目录。 *\Views\Shared*子目录提供了一种方法来存储跨多个控制器应用程序中重复使用的视图模板。 当 ASP.NET MVC 尝试解析视图模板时，它将首先检查内*\Views\[控制器]* 特定目录，并且如果它找不到视图模板那里它看起来将中*\Views\共享*目录。
+从主页和帐户控制器中引用的视图将自动解析及其各自的视图模板 *\Views\Home*并 *\Views\Account*目录。 *\Views\Shared*子目录提供了一种方法来存储跨多个控制器应用程序中重复使用的视图模板。 当 ASP.NET MVC 尝试解析视图模板时，它将首先检查内 *\Views\[控制器]* 特定目录，并且如果它找不到视图模板那里它看起来将中 *\Views\共享*目录。
 
 命名单个视图模板时，推荐的指导是已导致要呈现的操作方法同名的视图模板。 例如，以上我们的"索引"操作方法使用"索引"视图来呈现视图结果，而"详细信息"操作方法使用"详细信息"视图来呈现其结果。 这样，可以轻松快速查看哪些模板是与每个操作相关联。
 
-开发人员不需要显式指定视图模板名称，当视图模板具有与所调用的控制器上的操作方法相同的名称。 我们可以改为只是该模型对象传递给"View()"帮助器方法 （如果不指定视图名称），和 ASP.NET MVC 将自动推断我们想要使用*\Views\[ControllerName]\[ActionName]* 视图模板来呈现它的磁盘上。
+开发人员不需要显式指定视图模板名称，当视图模板具有与所调用的控制器上的操作方法相同的名称。 我们可以改为只是该模型对象传递给"View()"帮助器方法 （如果不指定视图名称），和 ASP.NET MVC 将自动推断我们想要使用 *\Views\[ControllerName]\[ActionName]* 视图模板来呈现它的磁盘上。
 
 这样，我们有点，清理我们的控制器代码并避免重复两次在代码中的名称：
 

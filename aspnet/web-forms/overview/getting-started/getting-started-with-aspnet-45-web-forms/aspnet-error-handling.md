@@ -100,9 +100,9 @@ Try-catch 语句由 try 块跟一个或多个 catch 子句，指定不同异常�
 添加错误处理 Wingtip Toys 示例应用程序之前, 中，您将添加错误日志记录支持通过添加`ExceptionUtility`类来*逻辑*文件夹。 通过执行此操作，请在每次应用程序处理错误，错误详细信息将添加到错误日志文件。
 
 1. 右键单击*逻辑*文件夹，然后选择**添加** - &gt; **新项**。   
-   随即出现“添加新项”对话框。
+   随即出现“添加新项”  对话框。
 2. 选择**Visual C#**  - &gt; **代码**在左侧的模板组。 然后，选择**类**从中间列表并将其命名**ExceptionUtility.cs**。
-3. 选择“添加”。 显示新类文件中。
+3. 选择“添加”  。 显示新类文件中。
 4. 将现有代码替换为以下代码：  
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample5.cs)]
@@ -114,7 +114,7 @@ Try-catch 语句由 try 块跟一个或多个 catch 子句，指定不同异常�
 Wingtip Toys 示例应用程序，在一页将用于显示错误。 错误页用于向站点的用户显示一条安全错误消息。 但是，如果用户是发出 HTTP 请求的计算机上本地提供代码所在的开发人员，其他错误详细信息将显示在错误页。
 
 1. 右键单击项目名称 (**Wingtip Toys**) 中**解决方案资源管理器**，然后选择**添加** - &gt; **新项**.   
-   随即出现“添加新项”对话框。
+   随即出现“添加新项”  对话框。
 2. 选择**Visual C#**  - &gt; **Web**在左侧的模板组。 从中间列表中选择**包含母版页的 Web 窗体**，并将其命名**ErrorPage.aspx**。
 3. 单击 **添加**。
 4. 选择*Site.Master*另存为母版页文件，然后选择**确定**。
@@ -309,7 +309,7 @@ ELMAH 现已准备好存储出现的任何未处理的错误。
 
 ## <a name="tutorial-series-conclusion"></a>系列教程结束
 
-*感谢您的随笔。我希望本系列教程帮助您成为更熟悉 ASP.NET Web 窗体。如果你需要有关在 ASP.NET 4.5 和 Visual Studio 2013 中可用的 Web 窗体功能的详细信息，请参阅* [*ASP.NET 和 Web Tools for Visual Studio 2013 发行说明*](../../../../visual-studio/overview/2013/release-notes.md)*.此外，一定要看一看本教程中所述* ***后续步骤****部分和 defintely 试用* [*免费 Azure 试用版*](https://azure.microsoft.com/pricing/free-trial/)*.*
+*感谢您的随笔。我希望本系列教程帮助您成为更熟悉 ASP.NET Web 窗体。如果你需要有关在 ASP.NET 4.5 和 Visual Studio 2013 中可用的 Web 窗体功能的详细信息，请参阅* [*ASP.NET 和 Web Tools for Visual Studio 2013 发行说明*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，一定要看一看本教程中所述* * **后续步骤****部分和 defintely 试用* [*免费 Azure 试用版*](https://azure.microsoft.com/pricing/free-trial/)* .*
 
 ![谢谢-Erik](aspnet-error-handling/_static/image10.png)  
 

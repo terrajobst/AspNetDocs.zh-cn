@@ -114,7 +114,7 @@ ms.locfileid: "65112508"
 
       > [!NOTE]
       > 使用 NuGet 的优点之一是，您不必提供在项目中的所有库项目大小减少。 使用 NuGet 增强工具，请通过在 Packages.config 文件中，指定包版本可以下载第一次运行该项目的所有所需的库。 这就是原因需要将从本实验中打开现有解决方案后运行这些步骤。
-2. 添加新的控制器。 若要执行此操作，右键单击**控制器**在解决方案资源管理器，选择文件夹**添加**，然后**控制器**命令。 更改**控制器****名称**到**StoreManagerController** ，并确保选择**包含空读/写操作的MVC控制器**处于选中状态。 单击 **添加**。
+2. 添加新的控制器。 若要执行此操作，右键单击**控制器**在解决方案资源管理器，选择文件夹**添加**，然后**控制器**命令。 更改**控制器** **名称**到**StoreManagerController** ，并确保选择**包含空读/写操作的MVC控制器**处于选中状态。 单击 **添加**。
 
     ![添加控制器对话框](aspnet-mvc-4-helpers-forms-and-validation/_static/image1.png "添加控制器对话框")
 
@@ -179,7 +179,7 @@ ms.locfileid: "65112508"
 1. 查看创建的代码。 生成的字段列表将属于以下 HTML 表**基架**使用用于显示表格数据。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
-2. 替换**&lt;表&gt;** 以下代码，以仅显示代码**流派**，**艺术家**，**唱片集标题**，并**价格**字段。 这会删除**AlbumId**并**唱片集画面 URL**列。 此外，它更改 GenreId 和 ArtistId 要显示的及其链接的类属性的列**Artist.Name**并**Genre.Name**，并删除**详细信息**链接。
+2. 替换 **&lt;表&gt;** 以下代码，以仅显示代码**流派**，**艺术家**，**唱片集标题**，并**价格**字段。 这会删除**AlbumId**并**唱片集画面 URL**列。 此外，它更改 GenreId 和 ArtistId 要显示的及其链接的类属性的列**Artist.Name**并**Genre.Name**，并删除**详细信息**链接。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample5.cshtml)]
 3. 更改以下说明。
@@ -269,9 +269,9 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
 
 在此练习中，您将学习如何创建一个窗体以允许存储管理器编辑唱片集。 在将浏览 **/StoreManager/Edit/id** URL (**id**正在编辑的唱片集的唯一 id)，从而使对服务器的 HTTP GET 调用。
 
-控制器编辑操作方法将从数据库中检索相应的唱片集，创建**StoreManagerViewModel**对象封装 （以及的艺术家和流派列表），然后将其传递给为视图模板向用户呈现的 HTML 页。 此页将包含**&lt;窗体&gt;** 使用文本框和下拉列表以进行编辑的唱片集属性的元素。
+控制器编辑操作方法将从数据库中检索相应的唱片集，创建**StoreManagerViewModel**对象封装 （以及的艺术家和流派列表），然后将其传递给为视图模板向用户呈现的 HTML 页。 此页将包含 **&lt;窗体&gt;** 使用文本框和下拉列表以进行编辑的唱片集属性的元素。
 
-一旦用户更新唱片集的表单值并单击**保存**按钮，将更改提交通过 HTTP POST 回叫 **/StoreManager/Edit/id**。尽管 URL 将保留与最后一次调用中的相同，但 ASP.NET MVC 标识，这次它是 HTTP POST，因此执行不同的编辑操作方法 (一个使用修饰 **[HttpPost]**)。
+一旦用户更新唱片集的表单值并单击**保存**按钮，将更改提交通过 HTTP POST 回叫 **/StoreManager/Edit/id**。尽管 URL 将保留与最后一次调用中的相同，但 ASP.NET MVC 标识，这次它是 HTTP POST，因此执行不同的编辑操作方法 (一个使用修饰 **[HttpPost]** )。
 
 <a id="Ex3Task1"></a>
 
@@ -342,7 +342,7 @@ StoreManager 索引页都有一个潜在的问题：标题和艺术家姓名属�
     > [!NOTE]
     > **Html.DropDownList**已添加帮助器来呈现下拉列表选择艺术家和流派。 参数传递给**Html.DropDownList**是：
     > 
-    > 1. 窗体字段的名称 (**&quot;ArtistId&quot;**)。
+    > 1. 窗体字段的名称 ( **&quot;ArtistId&quot;** )。
     > 2. **SelectList**的值的下拉列表。
 
 <a id="Ex3Task5"></a>

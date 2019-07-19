@@ -71,11 +71,11 @@ ms.locfileid: "65124245"
 
 **图 7**:选择`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
-选择此方法之后, 该 ObjectDataSource 向导会提示我们的方法的值*`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
+选择此方法之后, 该 ObjectDataSource 向导会提示我们的方法的值 *`categoryID`* 参数。 若要使用的所选的值`categories`DropDownList 项设置参数源为控件和到 ControlID `Categories`。
 
 [![将类别 id 参数设置为 Categories DropDownList 的值](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
-**图 8**:设置*`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
+**图 8**:设置 *`categoryID`* 参数的值`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
 请花费片刻时间来了解我们在浏览器中的进度。 当首次访问的页面，这些产品属于所选类别 （饮料） 会显示 （如图 9 中所示），但更改 DropDownList 不会更新数据。 这是因为必须 GridView 来更新在回发。 若要实现此目的我们具有两个选项 （这两者都不需要编写任何代码）：
 
@@ -118,11 +118,11 @@ ms.locfileid: "65124245"
 
 **图 13**:显示的初始页面负载否产品上 ([单击此项可查看原尺寸图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
-因为选择了"--选择一个类别-"列表项时显示任何产品的原因是它的值是`-1`并且与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想在此时完成，然后的行为 ！ 如果你想要显示的但是*所有*个类别时选择"--选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，使其调用`GetProducts()`方法如果传递中*`categoryID`* 参数小于零：
+因为选择了"--选择一个类别-"列表项时显示任何产品的原因是它的值是`-1`并且与数据库中有任何产品`CategoryID`的`-1`。 如果这是你想在此时完成，然后的行为 ！ 如果你想要显示的但是*所有*个类别时选择"--选择一个类别-"列表项时，返回到`ProductsBLL`类和自定义`GetProductsByCategoryID(categoryID)`方法，使其调用`GetProducts()`方法如果传递中 *`categoryID`* 参数小于零：
 
 [!code-vb[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample2.vb)]
 
-此处使用的方法是类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程中，尽管我们对于此示例使用的值为`-1`指示应在所有记录而不是检索`Nothing`。 这是因为*`categoryID`* 参数的`GetProductsByCategoryID(categoryID)`方法需要作为整数值传递，而声明性参数教程中我们已传入的字符串输入参数。
+此处使用的方法是类似于我们用来显示所有供应商的方法返回[声明性参数](../basic-reporting/declarative-parameters-cs.md)教程中，尽管我们对于此示例使用的值为`-1`指示应在所有记录而不是检索`Nothing`。 这是因为 *`categoryID`* 参数的`GetProductsByCategoryID(categoryID)`方法需要作为整数值传递，而声明性参数教程中我们已传入的字符串输入参数。
 
 图 14 显示了的屏幕截图`FilterByDropDownList.aspx`如果选择"--选择一个类别-"选项。 在这里，默认情况下显示的所有产品，用户可以通过选择特定类别，缩小显示。
 

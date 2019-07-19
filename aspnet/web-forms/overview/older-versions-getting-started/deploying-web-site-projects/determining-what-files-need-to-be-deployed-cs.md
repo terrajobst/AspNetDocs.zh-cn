@@ -39,7 +39,7 @@ ASP.NET 网页划分为标记和源代码的声明性代码。 声明性标记�
 
 为了使此页上，该页面的代码部分为请求提供服务的 ASP.NET 引擎 (`WebPage.aspx.cs`文件) 必须首先将其编译。 显式或自动，可能会发生此编译。
 
-如果编译是显式，则整个应用程序的源代码编译到一个或多个程序集 (`.dll`文件) 位于应用程序的`Bin`目录。 如果编译自动发生，则生成自动生成程序集，默认情况下为置于`Temporary ASP.NET`Files 文件夹，请参阅`%WINDOWS%\Microsoft.NET\Framework\` *&lt;版本&gt;*，尽管此位置是可通过配置[`<compilation>`元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中`Web.config`。 必须使用显式编译采取一些措施来将 ASP.NET 应用程序的代码编译为程序集，并在部署前会执行此步骤。 与自动编译在编译过程发生在 web 服务器上首次访问资源时。
+如果编译是显式，则整个应用程序的源代码编译到一个或多个程序集 (`.dll`文件) 位于应用程序的`Bin`目录。 如果编译自动发生，则生成自动生成程序集，默认情况下为置于`Temporary ASP.NET`Files 文件夹，请参阅`%WINDOWS%\Microsoft.NET\Framework\` *&lt;版本&gt;* ，尽管此位置是可通过配置[`<compilation>`元素](https://msdn.microsoft.com/library/s10awwz0.aspx)中`Web.config`。 必须使用显式编译采取一些措施来将 ASP.NET 应用程序的代码编译为程序集，并在部署前会执行此步骤。 与自动编译在编译过程发生在 web 服务器上首次访问资源时。
 
 无论何种编译模式使用时，所有 ASP.NET 页面的标记部分 (`WebPage.aspx`文件) 需要复制到生产环境。 您需要注册中的程序集将复制与显式编译`Bin`文件夹中，但不是需要复制 ASP.NET 页的代码的各个部分 (`WebPage.aspx.cs`文件)。 使用自动编译，您需要为复制的代码部分文件，以便代码，可以访问页面时自动编译。 每个 ASP.NET web 页面的标记部分包括`@Page`具有属性，指示是否已显式编译页面的关联的代码时，或者它是否需要自动编译指令。 因此，在生产环境可以无缝使用任一编译模型，不需要应用任何特殊的配置设置，以指示使用显式或自动编译。
 
@@ -102,7 +102,7 @@ Microsoft 发布 Visual Studio 2005 Service Pack 1 时恢复 Web 应用程序项
 
 本教程中的下载包含 web 应用程序的两个副本，每个实现为不同的 Visual Studio 项目类型：BookReviewsWAP、 Web 应用程序项目和 BookReviewsWSP，网站项目。 这两个项目使用 Visual Web Developer 2008 SP1 创建的并使用 ASP.NET 3.5 SP1。 若要使用这些项目，启动通过解压缩到您的桌面的内容。 若要打开 Web 应用程序项目 (BookReviewsWAP)，导航到 BookReviewsWAP 文件夹并双击解决方案文件、 `BookReviewsWAP.sln`。 若要打开的网站项目 (BookReviewsWSP)，启动 Visual Studio，然后，从文件菜单中，选择打开网站选项，浏览到`BookReviewsWSP`文件夹在桌面上，单击确定。
 
-在此教程查看哪些文件中的其余两个部分将需要部署该应用程序时将复制到生产环境。 接下来两个教程- *[部署您的站点使用 FTP](deploying-your-site-using-an-ftp-client-cs.md)* 并*[部署您站点使用的 Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -显示不同的方式将这些文件复制到 web 宿主提供程序。
+在此教程查看哪些文件中的其余两个部分将需要部署该应用程序时将复制到生产环境。 接下来两个教程- *[部署您的站点使用 FTP](deploying-your-site-using-an-ftp-client-cs.md)* 并 *[部署您站点使用的 Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -显示不同的方式将这些文件复制到 web 宿主提供程序。
 
 ## <a name="determining-the-files-to-deploy-for-the-web-application-project"></a>确定要部署的 Web 应用程序的文件
 

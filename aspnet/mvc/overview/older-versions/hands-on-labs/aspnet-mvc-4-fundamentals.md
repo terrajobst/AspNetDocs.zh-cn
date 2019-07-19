@@ -44,10 +44,10 @@ ms.locfileid: "65117254"
 <a id="ASPNET_MVC_4_Essentials"></a>
 ### <a name="aspnet-mvc-4-essentials"></a>ASP.NET MVC 4 Essentials
 
-音乐应用商店应用程序将使用构建**模型视图控制器 (MVC)**，体系结构模式，将应用程序分成三个主要组件：
+音乐应用商店应用程序将使用构建**模型视图控制器 (MVC)** ，体系结构模式，将应用程序分成三个主要组件：
 
 - **模型**:模型对象是实现域逻辑的应用程序部件。 通常情况下，模型对象还会检索并将模型状态存储在数据库中。
-- 视图：视图是显示应用程序的用户界面 (UI) 的组件。 通常，此 UI 被创建的模型数据。 示例将显示文本框和下拉列表根据唱片集对象的当前状态的唱片集的编辑视图。
+- 视图  ：视图是显示应用程序的用户界面 (UI) 的组件。 通常，此 UI 被创建的模型数据。 示例将显示文本框和下拉列表根据唱片集对象的当前状态的唱片集的编辑视图。
 - **控制器：** 控制器是处理用户交互、 处理模型，并最终选择的视图来呈现的 UI 的组件。 在 MVC 应用程序中，视图仅显示信息；控制器处理并响应用户输入和交互。
 
 MVC 模式有助于创建单独的应用程序 （输入的逻辑、 业务逻辑和 UI 逻辑），同时提供这些元素之间松散耦合的不同方面的应用程序。 这种隔离有助于管理复杂性时生成应用程序，因为这样你就可以专注于一次实现的一个方面。 此外，MVC 模式可以轻松地测试应用程序，还鼓励使用测试驱动开发 (TDD) 用于创建应用程序。
@@ -123,15 +123,15 @@ MVC 模式有助于创建单独的应用程序 （输入的逻辑、 业务逻�
 #### <a name="task-1---creating-the-aspnet-mvc-web-application-project"></a>任务 1-创建 ASP.NET MVC Web 应用程序项目
 
 1. 在本任务中，将创建一个空的 ASP.NET MVC 应用程序项目使用 MVC 的 Visual Studio 模板。 启动**VS Express for Web**。
-2. 在“文件”菜单上，单击“新建项目”。
+2. 在“文件”菜单上，单击“新建项目”。  
 3. 在中**新的项目**对话框中，选择**ASP.NET MVC 4 Web 应用程序**项目类型，位于**Visual C#** **Web**模板列表。
 4. 更改**名称**到*MvcMusicStore*。
-5. 设置在新解决方案的位置**开始**在此练习中的源文件夹中，例如文件夹 **[YOUR-h o L-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 单击 **“确定”**。
+5. 设置在新解决方案的位置**开始**在此练习中的源文件夹中，例如文件夹 **[YOUR-h o L-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 单击 **“确定”** 。
 
     ![创建新建项目对话框](aspnet-mvc-4-fundamentals/_static/image2.png "创建新建项目对话框")
 
     *创建新项目对话框*
-6. 在中**新的 ASP.NET MVC 4 项目**对话框中，选择**基本**模板并确保选中**视图引擎**所选**Razor**。 单击 **“确定”**。
+6. 在中**新的 ASP.NET MVC 4 项目**对话框中，选择**基本**模板并确保选中**视图引擎**所选**Razor**。 单击 **“确定”** 。
 
     ![新建 ASP.NET MVC 4 项目对话框](aspnet-mvc-4-fundamentals/_static/image3.png "新建 ASP.NET MVC 4 项目对话框")
 
@@ -269,9 +269,9 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 1. 按**F5**运行该应用程序。
 2. 在项目启动**主页**页。 更改 URL 以验证每个操作的实现。
 
-    1. **/ 存储**。 你将看到 **&quot;Hello from Store.Index()&quot;**。
-    2. **/ Store/浏览**。 你将看到 **&quot;Hello from Store.Browse()&quot;**。
-    3. **/ 存储/详细信息**。 你将看到 **&quot;Hello from Store.Details()&quot;**。
+    1. **/ 存储**。 你将看到 **&quot;Hello from Store.Index()&quot;** 。
+    2. **/ Store/浏览**。 你将看到 **&quot;Hello from Store.Browse()&quot;** 。
+    3. **/ 存储/详细信息**。 你将看到 **&quot;Hello from Store.Details()&quot;** 。
 
         ![浏览 StoreBrowse](aspnet-mvc-4-fundamentals/_static/image9.png "浏览 StoreBrowse")
 
@@ -309,7 +309,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
     [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
 
 > [!NOTE]
-> 正在使用**HttpUtility.HtmlEncode**到实用程序方法会阻止用户使用形式的链接将 Javascript 注入到视图  **/Store/浏览？Genre =&lt;脚本&gt;window.location = '[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**。
+> 正在使用**HttpUtility.HtmlEncode**到实用程序方法会阻止用户使用形式的链接将 Javascript 注入到视图  **/Store/浏览？Genre =&lt;脚本&gt;window.location = '[http://hackersite.com](http://hackersite.com)'&lt; /script&gt;** 。
 > 
 > 有关更多说明，请访问[此 msdn 文章](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx)。
 
@@ -393,7 +393,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample8.cshtml)]
 
     > [!NOTE]
-    > 你知道吗？ Visual Studio 2012 提供代码片段，轻松地将常用的代码添加 HTML、 代码文件等 ！ 尝试通过键入**&lt;div&gt;** ，然后按**选项卡**两次，插入一个完整**div**标记。
+    > 你知道吗？ Visual Studio 2012 提供代码片段，轻松地将常用的代码添加 HTML、 代码文件等 ！ 尝试通过键入 **&lt;div&gt;** ，然后按**选项卡**两次，插入一个完整**div**标记。
 
 <a id="Ex4Task2"></a>
 
@@ -418,7 +418,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 
 在此任务中，您将添加一个视图模板来生成 HTML 响应将使用布局母版页和 CSS 添加在本练习中。
 
-1. 若要浏览网站的主页上时，请使用视图模板，您将首先需要而不是返回一个字符串，则指示**HomeController 索引**方法将返回**视图**。 打开**HomeController**类，并更改其**索引**方法以返回**ActionResult**，并使其返回**View()**。
+1. 若要浏览网站的主页上时，请使用视图模板，您将首先需要而不是返回一个字符串，则指示**HomeController 索引**方法将返回**视图**。 打开**HomeController**类，并更改其**索引**方法以返回**ActionResult**，并使其返回**View()** 。
 
     (代码段- *ASP.NET MVC 4 基础知识--Ex4 HomeController 索引*)
 
@@ -459,8 +459,8 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 
 在浏览器中打开应用程序中，您应该注意的：
 
-1. 找到并显示了 HomeController 的索引操作方法**\Views\Home\Index.cshtml**查看模板，即使调用的代码**返回 View()**，因为视图模板，然后标准命名约定。
-2. 主页上显示欢迎使用中定义的消息**\Views\Home\Index.cshtml**视图模板。
+1. 找到并显示了 HomeController 的索引操作方法 **\Views\Home\Index.cshtml**查看模板，即使调用的代码**返回 View()** ，因为视图模板，然后标准命名约定。
+2. 主页上显示欢迎使用中定义的消息 **\Views\Home\Index.cshtml**视图模板。
 3. 使用主页页面 **\_layout.cshtml**模板，因此，欢迎使用消息包含在标准站点 HTML 布局。
 
     ![主索引视图使用定义 LayoutPage 和样式](aspnet-mvc-4-fundamentals/_static/image16.png "主页使用定义 LayoutPage 和样式的索引视图")
@@ -581,7 +581,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
     ![添加视图](aspnet-mvc-4-fundamentals/_static/image23.png "添加视图")
 
     *添加视图*
-3. 因为**添加视图对话框**从调用**StoreController**，它会将视图模板添加默认情况下**\Views\Store\Index.cshtml**文件。 检查**创建强类型化的视图**复选框，然后选择**StoreIndexViewModel**作为**模型类**。 此外，请确保选择的视图引擎是**Razor**。 单击 **添加**。
+3. 因为**添加视图对话框**从调用**StoreController**，它会将视图模板添加默认情况下 **\Views\Store\Index.cshtml**文件。 检查**创建强类型化的视图**复选框，然后选择**StoreIndexViewModel**作为**模型类**。 此外，请确保选择的视图引擎是**Razor**。 单击 **添加**。
 
     ![添加视图对话框](aspnet-mvc-4-fundamentals/_static/image24.png "添加视图对话框")
 
@@ -726,7 +726,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 
 1. 在创建新的视图模板之前, 应先生成项目，以便**添加视图**对话框知道**ViewModel**类使用。 通过选择生成项目**构建**菜单项，然后**生成 MvcMusicStore**。
 2. 添加**浏览**视图。 若要执行此操作，右键单击**浏览**的操作方法**StoreController**然后单击**添加视图**。
-3. 在中**添加视图**对话框框中，验证是否视图名称**浏览**。 检查**创建强类型化视图**复选框，然后选择**StoreBrowseViewModel**从**模型类**下拉列表。 其他字段保留为其默认值。 然后单击 **“添加”**。
+3. 在中**添加视图**对话框框中，验证是否视图名称**浏览**。 检查**创建强类型化视图**复选框，然后选择**StoreBrowseViewModel**从**模型类**下拉列表。 其他字段保留为其默认值。 然后单击 **“添加”** 。
 
     ![添加浏览视图](aspnet-mvc-4-fundamentals/_static/image29.png "添加浏览视图")
 
@@ -757,7 +757,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 在本任务中，您将实现**商店/详细信息**视图以显示有关特定唱片集信息。 在此动手实验中，将显示有关唱片集的所有内容已包含在**视图**模板。 是的而不是创建**StoreDetailsViewModel**类，您将使用当前**StoreBrowseViewModel**将唱片集传递给它的模板。
 
 1. 关闭浏览器，如果需要以返回到 Visual Studio 窗口。 添加一个新**详细信息**查看**StoreController**的**详细信息**操作方法。 若要执行此操作，右键单击**详细信息**中的方法**StoreController**类，并单击**添加视图**。
-2. 在中**添加视图**对话框中，确认**视图名称**是**详细信息**。 检查**创建强类型化视图**复选框，然后选择**唱片集**从**模型类**下拉列表。 其他字段保留为其默认值。 然后单击 **“添加”**。 这将创建并打开**\Views\Store\Details.cshtml**文件。
+2. 在中**添加视图**对话框中，确认**视图名称**是**详细信息**。 检查**创建强类型化视图**复选框，然后选择**唱片集**从**模型类**下拉列表。 其他字段保留为其默认值。 然后单击 **“添加”** 。 这将创建并打开 **\Views\Store\Details.cshtml**文件。
 
     ![添加详细信息视图](aspnet-mvc-4-fundamentals/_static/image31.png "添加详细信息视图")
 
@@ -788,7 +788,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 在本任务中，您将添加要为相应的每个流派名称中具有一个链接的存储区视图中的链接 **/Store/浏览**URL。 这样一来，例如单击某个类型时**Disco**，它将导航到 **/Store/浏览？ genre = Disco** URL。
 
 1. 关闭浏览器，如果需要以返回到 Visual Studio 窗口。 更新**索引**页，将添加到链接**浏览**页。 若要执行此操作，在**解决方案资源管理器**展开**视图**文件夹，然后**应用商店**文件夹，然后双击**Index.cshtml**页。
-2. 将链接添加到所选流派，该值指示浏览视图。 若要执行此操作，将以下突出显示的代码内**&lt;li&gt;** 标记：(C#)
+2. 将链接添加到所选流派，该值指示浏览视图。 若要执行此操作，将以下突出显示的代码内 **&lt;li&gt;** 标记：(C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample25.cshtml)]
 
@@ -834,7 +834,7 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
 
     > [!NOTE]
     > 此外可以使用语法**ViewBag [&quot;Starred&quot;]** 访问的属性。
-2. 星形图标**&quot;starred.png&quot;** 中包含**Source\Assets\Images**本实验的文件夹。 若要将其添加到应用程序，将从其内容**Windows 资源管理器**到窗口**解决方案资源管理器**Visual Web Developer 速成版中，如下所示：
+2. 星形图标 **&quot;starred.png&quot;** 中包含**Source\Assets\Images**本实验的文件夹。 若要将其添加到应用程序，将从其内容**Windows 资源管理器**到窗口**解决方案资源管理器**Visual Web Developer 速成版中，如下所示：
 
     ![向解决方案添加星形图像](aspnet-mvc-4-fundamentals/_static/image34.png "添加到解决方案的星形图像")
 
@@ -1123,12 +1123,12 @@ ASP.NET MVC 框架包括可帮助您创建支持 MVC 模式的 Web 应用程序�
      ![配置目标连接字符串](aspnet-mvc-4-fundamentals/_static/image64.png "配置目标连接字符串")
 
      *配置目标连接字符串*
-6. 然后单击“确定” 。 当系统提示你创建数据库时，单击**是**。
+6. 然后单击“确定”  。 当系统提示你创建数据库时，单击**是**。
 
     ![创建数据库](aspnet-mvc-4-fundamentals/_static/image65.png "创建数据库字符串")
 
     *创建数据库*
-7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”**。
+7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串是显示在默认连接文本框内。 然后，单击 **“下一步”** 。
 
     ![连接字符串指向 SQL 数据库](aspnet-mvc-4-fundamentals/_static/image66.png "指向 SQL 数据库连接字符串")
 

@@ -114,7 +114,7 @@ ASP。NET 的成员资格框架提供了一个灵活的管理用户界面。 成
 
 有多种方式以允许当前登录的用户可以查看和编辑其家庭的城镇、 主页和签名信息。 我们可以手动创建用户界面使用文本框和标签控件，或者我们可以使用一种数据 Web 控件，如 DetailsView 控件。 若要执行的数据库`SELECT`和`UPDATE`语句我们可以编写 ADO.NET 代码在我们的页面代码隐藏类中，或者，或者，使用声明性的方法与 SqlDataSource。 理想情况下我们的应用程序将包含分层体系结构，我们可以调用以编程方式从页面的代码隐藏类或以声明方式通过对象数据源控件。
 
-由于本系列教程着重于窗体身份验证、 授权、 用户帐户和角色，将不会有这些不同的数据访问选项或分层体系结构为何通过直接执行 SQL 语句是首选的全面讨论从 ASP.NET 页中。 我将引导完成使用 DetailsView 和 SqlDataSource – 最快且最简单选项 – 但当然，要讨论的概念可应用于备用 Web 控件和数据访问逻辑。 有关如何使用 ASP.NET 中的数据的详细信息，请参阅我*[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
+由于本系列教程着重于窗体身份验证、 授权、 用户帐户和角色，将不会有这些不同的数据访问选项或分层体系结构为何通过直接执行 SQL 语句是首选的全面讨论从 ASP.NET 页中。 我将引导完成使用 DetailsView 和 SqlDataSource – 最快且最简单选项 – 但当然，要讨论的概念可应用于备用 Web 控件和数据访问逻辑。 有关如何使用 ASP.NET 中的数据的详细信息，请参阅我 *[使用 ASP.NET 2.0 中的数据](../../data-access/index.md)* 系列教程。
 
 打开`AdditionalUserInfo.aspx`页中`Membership`文件夹并将的 DetailsView 控件添加到页上，其 ID 属性设置为`UserProfile`并清除其`Width`和`Height`属性。 展开 DetailsView 的智能标记，并选择将其绑定到新的数据源控件。 这将启动数据源配置向导 （请参阅图 7）。 第一步会要求您指定的数据源类型。 由于我们要直接连接到`SecurityTutorials`数据库，则选择数据库图标，指定`ID`作为`UserProfileDataSource`。
 
@@ -467,7 +467,7 @@ CreateUserWizard 控件的默认标记定义了两个`WizardSteps`:`CreateUserWi
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢...
 

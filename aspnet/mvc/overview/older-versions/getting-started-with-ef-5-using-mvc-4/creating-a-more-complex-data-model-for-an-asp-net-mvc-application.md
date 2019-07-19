@@ -89,7 +89,7 @@ ms.locfileid: "65129836"
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample4.cmd)]
 
-`add-migration MaxLengthOnNames`命令创建名为的文件*&lt;时间戳&gt;\_MaxLengthOnNames.cs*。 此文件包含将更新数据库以匹配当前数据模型的代码。 Entity Framework 使用迁移文件名前面预置的时间戳进行排序的迁移。 如果删除数据库，创建多个迁移后，或使用迁移部署该项目，在其中创建顺序应用所有迁移。
+`add-migration MaxLengthOnNames`命令创建名为的文件 *&lt;时间戳&gt;\_MaxLengthOnNames.cs*。 此文件包含将更新数据库以匹配当前数据模型的代码。 Entity Framework 使用迁移文件名前面预置的时间戳进行排序的迁移。 如果删除数据库，创建多个迁移后，或使用迁移部署该项目，在其中创建顺序应用所有迁移。
 
 运行**创建**页上，然后输入名称超过 50 个字符。 一旦超过 50 个字符时，客户端验证将立即显示一条错误消息。
 

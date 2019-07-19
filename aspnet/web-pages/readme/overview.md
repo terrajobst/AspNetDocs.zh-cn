@@ -175,7 +175,7 @@ ms.locfileid: "65133194"
 
 #### <a name="issue-in-visual-studio-invoking-the-web-based-package-manager-takes-the-application-offline"></a>问题：在 Visual Studio 中，调用的基于 web 的程序包管理器使应用程序脱机
 
-> 如果你在 Visual Studio (而不是 WebMatrix) 中工作，并使用*\_管理员* 功能，用于启动程序包管理器，Visual Studio 使应用程序脱机，并将发布 *应用\_offline.htm* 到网站根目录中，这样会中断你能够使用包管理器。
+> 如果你在 Visual Studio (而不是 WebMatrix) 中工作，并使用 *\_管理员* 功能，用于启动程序包管理器，Visual Studio 使应用程序脱机，并将发布 *应用\_offline.htm* 到网站根目录中，这样会中断你能够使用包管理器。
 > 
 > [!NOTE]
 > 尽管使用基于 web 的程序包管理器界面时，通常希望看到此行为，但如果添加、 删除或修改任何文件中的，相同的行为会发生*应用程序\_数据*文件夹。
@@ -236,7 +236,7 @@ ms.locfileid: "65133194"
 >    - 复制*C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
 >      **to** *\Bin*
 >    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*  **到** *\Bin\x86*
->    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **到** *\Bin\amd64*
+>    - 复制*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\* * **到** *\Bin\amd64*
 > 
 > 2. 在该网站的根文件夹中创建或打开*web.config*文件。 (此文件类型是在 WebMatrix 1.0 中，单击**所有**中**选择文件类型**对话框。)
 > 3. 将以下元素添加为的子`<configuration>`元素 (而不是在`<system.web>`元素):

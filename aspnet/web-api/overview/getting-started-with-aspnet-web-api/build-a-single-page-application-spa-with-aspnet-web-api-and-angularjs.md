@@ -115,7 +115,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
     ![使用 MVC 模板，其中包括 Web API 组件创建新项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image3.png)
 
     *使用 MVC 模板，其中包括 Web API 组件创建新项目*
-4. 在中**解决方案资源管理器**，右键单击**模型**文件夹**GeekQuiz**项目，然后选择**添加 |现有项...**.
+4. 在中**解决方案资源管理器**，右键单击**模型**文件夹**GeekQuiz**项目，然后选择**添加 |现有项...** .
 
     ![添加现有项目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image4.png "添加现有项目")
 
@@ -150,13 +150,13 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
     > [!NOTE]
     > **Authorize**筛选检查以确定用户进行身份验证。 如果用户未经过身份验证，则将返回 HTTP 状态代码 401 （未经授权），而无需调用该操作。 您可以应用筛选器全局范围内，在控制器级别，或在单个操作级别。
-9. 现在，您将自定义 web 页和品牌的布局。 若要执行此操作，打开 **\_Layout.cshtml**文件内**视图 |共享**文件夹和更新的内容**&lt;标题&gt;** 通过替换元素*My ASP.NET Application*与*极客测验*.
+9. 现在，您将自定义 web 页和品牌的布局。 若要执行此操作，打开 **\_Layout.cshtml**文件内**视图 |共享**文件夹和更新的内容 **&lt;标题&gt;** 通过替换元素*My ASP.NET Application*与*极客测验*.
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample4.cshtml)]
 10. 在同一文件中，通过删除更新的导航栏*有关*并*联系人*链接和重命名*主页*链接到*播放*。 此外，重命名*应用程序名称*链接到*极客测验*。 导航栏的 HTML 应如以下代码所示。
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample5.cshtml)]
-11. 通过替换来更新布局页的页脚*My ASP.NET Application*与*极客测验*。 若要执行此操作，请替换的内容**&lt;页脚&gt;** 具有以下突出显示的代码元素。
+11. 通过替换来更新布局页的页脚*My ASP.NET Application*与*极客测验*。 若要执行此操作，请替换的内容 **&lt;页脚&gt;** 具有以下突出显示的代码元素。
 
     [!code-html[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample6.html)]
 
@@ -180,7 +180,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
     > [!NOTE]
     > **CamelCasePropertyNamesContractResolver**会自动将转换到的属性名称*camel*情况，这就是 JavaScript 中的属性名称的常规约定。
-4. 在中**解决方案资源管理器**，右键单击**控制器**文件夹**GeekQuiz**项目，然后选择**添加 |新的基架的项...**.
+4. 在中**解决方案资源管理器**，右键单击**控制器**文件夹**GeekQuiz**项目，然后选择**添加 |新的基架的项...** .
 
     ![创建新的基架的项](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image6.png "创建新的基架的项")
 
@@ -399,7 +399,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 
 在此任务将使用 CSS3 属性通过添加一个翻转效果时找到相关问题和检索下一个问题时执行丰富的动画。
 
-1. 在中**解决方案资源管理器**，右键单击**内容**文件夹**GeekQuiz**项目，然后选择**添加 |现有项...**.
+1. 在中**解决方案资源管理器**，右键单击**内容**文件夹**GeekQuiz**项目，然后选择**添加 |现有项...** .
 
     ![将现有项添加到内容文件夹](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image22.png "的 Content 文件夹添加现有项目")
 
@@ -416,7 +416,7 @@ Web API 框架是 ASP.NET 堆栈的一部分，旨在更轻松地实现 HTTP 服
 5. 找到**翻转期间隐藏窗格的背面**注释。 下面的注释样式隐藏的人脸在后端时它们通过设置面向向后翻转**隐面可见性**CSS 属性设置为*隐藏*。
 
     [!code-css[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample23.css)]
-6. 打开**BundleConfig.cs**文件内**应用\_启动**文件夹并添加对引用**Flip.css**文件**&quot;~/Content/css&quot;** 样式捆绑包
+6. 打开**BundleConfig.cs**文件内**应用\_启动**文件夹并添加对引用**Flip.css**文件 **&quot;~/Content/css&quot;** 样式捆绑包
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample24.cs)]
 7. 按**F5**运行解决方案并使用你的凭据登录。
