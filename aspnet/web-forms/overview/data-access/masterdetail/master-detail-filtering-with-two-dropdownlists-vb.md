@@ -83,11 +83,11 @@ ms.locfileid: "65109210"
 
 **图 9**:配置为使用 ObjectDataSource`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image27.png))
 
-我们需要在向导的最后一步中指定的值*`categoryID`* 参数。 将此参数分配到中的选定项`Categories`DropDownList。
+我们需要在向导的最后一步中指定的值 *`categoryID`* 参数。 将此参数分配到中的选定项`Categories`DropDownList。
 
 [![从 Categories DropDownList 拉取 categoryID 参数值](master-detail-filtering-with-two-dropdownlists-vb/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image28.png)
 
-**图 10**:拉取*`categoryID`* 参数值从`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
+**图 10**:拉取 *`categoryID`* 参数值从`Categories`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
 
 使用 ObjectDataSource 配置，所有的就是以指定哪些数据源字段用于显示和 DropDownList 的项的值。 显示`ProductName`字段，并使用`ProductID`字段的值。
 
@@ -125,7 +125,7 @@ ms.locfileid: "65109210"
 
 [![从 ProductsByCategory DropDownList 拉取产品 id 参数值](master-detail-filtering-with-two-dropdownlists-vb/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image49.png)
 
-**图 17**:拉取*`productID`* 参数值从`ProductsByCategory`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
+**图 17**:拉取 *`productID`* 参数值从`ProductsByCategory`DropDownList ([单击以查看实际尺寸的图像](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
 
 您可以选择任何可用字段中显示`ProductDetails`DetailsView。 我选择要删除`ProductID`， `SupplierID`，和`CategoryID`字段重新排序和格式设置剩余字段。 此外，我已清理 DetailsView`Height`和`Width`属性，允许 DetailsView 其数据，而不是让它大容量限制为指定的大小扩展到最佳显示效果所需的宽度。 完整的标记如下所示：
 
