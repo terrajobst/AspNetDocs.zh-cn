@@ -35,9 +35,9 @@ ms.locfileid: "65131817"
 
 对于使用 forms 身份验证的网站，用户登录到网站访问登录页并输入其凭据。 然后，对用户存储比较这些凭据。 如果它们是有效，然后向用户授予窗体身份验证票证，这是一个安全标记，指示的标识和访问者的真实性。
 
-若要验证对成员资格框架用户，请使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数的*`username`* 并*`password`* -并返回指示凭据有效的布尔值。 与处理方式一样`CreateUser`方法在上一教程中，我们探讨`ValidateUser`方法委托实际验证到已配置的成员资格提供程序。
+若要验证对成员资格框架用户，请使用`Membership`类的[`ValidateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)。 `ValidateUser`方法采用两个输入参数的 *`username`* 并 *`password`* -并返回指示凭据有效的布尔值。 与处理方式一样`CreateUser`方法在上一教程中，我们探讨`ValidateUser`方法委托实际验证到已配置的成员资格提供程序。
 
-`SqlMembershipProvider`验证所提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 请记住，`SqlMembershipProvider`存储用户的密码使用三种格式之一： 清除，加密的或进行哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回的密码以其原始格式。 对于加密或哈希密码，`SqlMembershipProvider`转换*`password`* 值传递到`ValidateUser`方法转换成其等效加密或哈希处理状态，然后将其与从已返回的内容数据库。 如果在数据库中存储的密码与用户输入的格式化的密码匹配，凭据有效。
+`SqlMembershipProvider`验证所提供的凭据通过获取指定的用户的密码通过`aspnet_Membership_GetPasswordWithFormat`存储过程。 请记住，`SqlMembershipProvider`存储用户的密码使用三种格式之一： 清除，加密的或进行哈希处理。 `aspnet_Membership_GetPasswordWithFormat`存储的过程返回的密码以其原始格式。 对于加密或哈希密码，`SqlMembershipProvider`转换 *`password`* 值传递到`ValidateUser`方法转换成其等效加密或哈希处理状态，然后将其与从已返回的内容数据库。 如果在数据库中存储的密码与用户输入的格式化的密码匹配，凭据有效。
 
 让我们更新我们的登录页面 (~ /`Login.aspx`)，以便验证成员资格框架用户存储区对提供的凭据。 我们创建了此登录页回到<a id="Tutorial02"> </a> [*概述的窗体身份验证*](../introduction/an-overview-of-forms-authentication-cs.md)教程中，使用两个文本框输入用户名和密码，创建一个接口记住我复选框，并登录按钮 （请参阅图 1）。 代码验证输入的凭据与硬编码的用户名和密码对 （Scott/密码、 Jisun/密码和 Sam/密码） 的列表。 在中<a id="Tutorial03"> </a> [*窗体身份验证配置和高级主题*](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)教程，我们更新了登录页面的代码以在窗体中存储的其他信息身份验证票证`UserData`属性。
 
@@ -202,7 +202,7 @@ Login 控件提供了两个调整其用户界面控件的布局的属性。 [ `T
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>确定并验证所提供的凭据
 
-使用登录控件[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)并[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定用户输入的用户名和密码凭据。 若要确定任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框)，使用*`LoginControlID`* `.FindControl`("*`controlID`*") 以获取以编程方式引用到模板中的 Web 控件的`ID`属性等于*`controlID`*。 例如，若要获取对引用`Email`文本框中，使用以下代码：
+使用登录控件[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx)并[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx)来确定用户输入的用户名和密码凭据。 若要确定任何其他 Web 控件中输入的值 (如`Email`我们在上一步中添加的文本框)，使用 *`LoginControlID`* `.FindControl`(" *`controlID`* ") 以获取以编程方式引用到模板中的 Web 控件的`ID`属性等于 *`controlID`* 。 例如，若要获取对引用`Email`文本框中，使用以下代码：
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -277,7 +277,7 @@ Login 控件呈现标准登录名的用户界面，并会自动验证成员资�
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
