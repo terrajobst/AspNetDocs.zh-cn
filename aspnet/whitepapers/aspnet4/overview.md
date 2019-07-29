@@ -624,7 +624,7 @@ ASP.NET 会自动制定正确的路由 （即，它生成正确的 URL） 根据
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-在这种情况下，路由参数 searchterm 的值将用于@companyname中的参数*选择*语句。
+在这种情况下，路由参数 searchterm 的值将用于@companyname中的参数 *选择* 语句。
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
