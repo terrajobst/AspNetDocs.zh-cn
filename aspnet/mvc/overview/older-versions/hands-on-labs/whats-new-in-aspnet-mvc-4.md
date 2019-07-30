@@ -269,13 +269,13 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
 
     ![在左侧，应用页@media省略样式，请在右侧，样式](whats-new-in-aspnet-mvc-4/_static/image17.png "左侧，在应用页@media省略样式，请在右侧，样式")
 
-    *在左侧，应用页@media省略样式，请在右侧，样式*
+    *在左侧，应用页\@media省略样式，请在右侧，样式*
 
     现在，我们来看下在移动设备上会发生什么情况：
 
     ![在左侧，应用页@media省略样式，请在右侧，样式](whats-new-in-aspnet-mvc-4/_static/image18.png "左侧，在应用页@media省略样式，请在右侧，样式")
 
-    *在左侧，应用页@media省略样式，请在右侧，样式*
+    *在左侧，应用页\@media省略样式，请在右侧，样式*
 
     尽管您会注意到，在 Web 浏览器中呈现页时不更改非常重要，使用移动设备时的差异变得更明显。 在左侧和右侧的图像，我们可以看到的自定义样式提高了可读性。
 
@@ -332,7 +332,7 @@ ASP.NET MVC 4 便于网站适用于移动设备和平板电脑浏览器的开发
     (代码段- *ASP.NET MVC 4 实验-Ex02-照片模型*)
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-4. 从“控制器”  文件夹打开 HomeController.cs  文件。
+4. 从“控制器”文件夹打开 HomeController.cs 文件。
 5. 添加下面的 using 语句。
 
     (代码段- *ASP.NET MVC 4 实验-Ex02-HomeController Using*)
@@ -577,7 +577,7 @@ jQuery Mobile 的默认主题包括 5 个样本指定字母 (a、 b、 c、 d、
 
 4. 创建一份 **\_Layout.Mobile.cshtml**中的文件**views/shared**文件夹并将复制到重命名&quot;  **\_Layout.iPhone.cshtml**&quot;.
 5. 打开 **\_Layout.iPhone.cshtml**在上一步中创建。
-6. 数据角色属性设置为使用找到的 div 元素**页上**并将更改**数据主题**归于&quot;  &quot;。
+6. 数据角色属性设置为使用找到的 div 元素**页上**并将更改**数据主题**归于&quot; &quot;。
 
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
@@ -1005,7 +1005,7 @@ Microsoft.NET Framework 4.5 引入了 C# 和 Visual Basic 中为.NET 编程中�
      ![配置目标连接字符串](whats-new-in-aspnet-mvc-4/_static/image77.png "配置目标连接字符串")
 
      *配置目标连接字符串*
-6. 然后单击“确定”  。 当系统提示你创建数据库时，单击**是**。
+6. 然后单击“确定” 。 当系统提示你创建数据库时，单击**是**。
 
     ![创建数据库](whats-new-in-aspnet-mvc-4/_static/image78.png "创建数据库字符串")
 
