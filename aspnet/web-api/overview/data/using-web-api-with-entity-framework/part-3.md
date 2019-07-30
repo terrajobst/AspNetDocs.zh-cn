@@ -63,18 +63,18 @@ Visual Studio 运行时 web 项目，它将分配一个端口号。 下图中的
 
 | Authors |  |
 | --- | -- |
-| 获取 api/作者 | 获取所有作者。 |
-| 获取 api/作者 / {id} | 获取作者的 id。 |
-| POST/api/作者 | 创建新的作者。 |
-| PUT/api/作者 / {id} | 更新现有作者。 |
+| GET api/authors | 获取所有作者。 |
+| GET api/authors/{id} | 获取作者的 id。 |
+| POST /api/authors | 创建新的作者。 |
+| PUT /api/authors/{id} | 更新现有作者。 |
 | DELETE /api/authors/{id} | 删除作者。 |
 
 | 图书 |  |
 | --- | -- |
-| 获取 /api/books | 获取所有书籍。 |
-| 获取/api/丛书 / {id} | 获取的 id。 |
-| 发布/api/丛书 | 创建新的书籍。 |
-| PUT/api/丛书 / {id} | 更新现有书籍。 |
+| GET /api/books | 获取所有书籍。 |
+| GET /api/books/{id} | 获取的 id。 |
+| POST /api/books | 创建新的书籍。 |
+| PUT /api/books/{id} | 更新现有书籍。 |
 | DELETE /api/books/{id} | 删除一本书。 |
 
 ## <a name="view-the-database-optional"></a>查看数据库 （可选）
