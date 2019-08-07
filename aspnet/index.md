@@ -7,12 +7,12 @@ ms.author: riande
 title: ASP.NET 文档
 ms.date: 08/24/2018
 description: 了解如何开发 ASP.NET 和 ASP.NET Web 应用程序。 获取文档、示例代码、教程等等。
-ms.openlocfilehash: c907f2ba66ba6ff197ced0c67243a963ffab17e3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4bfa5b2a161cdf67f3d2df0057bd68958d8a5769
+ms.sourcegitcommit: f774732a3960fca079438a88a5472c37cf7be08a
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384716"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68810743"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -27,7 +27,7 @@ ms.locfileid: "59384716"
                         <ul id="core_overview" class="cardsC">
                             <li>
                                 <div class="container intro">
-                                    <p>ASP.NET Core 是一种全新的跨平台开源 .NET 框架，用于在 Windows、Mac 或 Linux 上生成基于云的新式 Web 应用程序。</p>
+                                    <p>ASP.NET Core 是一种跨平台的开放源代码 .NET 框架，用于在 Windows、Mac 或 Linux 上生成基于云的新式 Web 应用程序。</p>
                                     <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">了解 ASP.NET Core 和 ASP.NET 各自的优势</a>并选择最适合自己的。</p>
                                 </div>
                             </li>
@@ -148,7 +148,6 @@ ms.locfileid: "59384716"
                             <li class="fullSpan">
                                 <div class="container footer">
                                     <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">参与 ASP.NET Core 文档和示例</a></p>
-                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">查看文档的 Visual Studio 2015/project.json 版本</a></p>
                                 </div>
                             </li>
                         </ul>
