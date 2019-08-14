@@ -309,7 +309,7 @@ ELMAH 现已准备好存储出现的任何未处理的错误。
 
 ## <a name="tutorial-series-conclusion"></a>系列教程结束
 
-*感谢您的随笔。我希望本系列教程帮助您成为更熟悉 ASP.NET Web 窗体。如果你需要有关在 ASP.NET 4.5 和 Visual Studio 2013 中可用的 Web 窗体功能的详细信息，请参阅* [*ASP.NET 和 Web Tools for Visual Studio 2013 发行说明*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，一定要看一看本教程中所述* * **后续步骤****部分和 defintely 试用* [*免费 Azure 试用版*](https://azure.microsoft.com/pricing/free-trial/)* .*
+*感谢您的随笔。我希望本系列教程帮助您成为更熟悉 ASP.NET Web 窗体。如果你需要有关在 ASP.NET 4.5 和 Visual Studio 2013 中可用的 Web 窗体功能的详细信息，请参阅* [*ASP.NET 和 Web Tools for Visual Studio 2013 发行说明*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，一定要看一看本教程中所述 ** **后续步骤** **部分和 defintely 试用* [*免费 Azure 试用版*](https://azure.microsoft.com/pricing/free-trial/)* .*
 
 ![谢谢-Erik](aspnet-error-handling/_static/image10.png)  
 
