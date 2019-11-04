@@ -1,29 +1,29 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/working-with-data-part-1
-title: 使用数据 （第 1 部分） |Microsoft Docs
+title: 使用数据（第1部分） |Microsoft Docs
 author: JoeStagner
-description: 视频伴奏到使用数据教程 (第 1 部分)
+description: 视频 accompaniment 到使用数据教程（第1部分）
 ms.author: riande
 ms.date: 02/25/2011
 ms.assetid: ebeac83f-2bca-4225-899e-1687480476f6
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/working-with-data-part-1
 msc.type: video
-ms.openlocfilehash: b357d386ae11869d4c16f2b1d42d0b713bbd57c4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c49598dabeff488101893fca02c0ea67a2fc788f
+ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381375"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445724"
 ---
-# <a name="working-with-data-part-1"></a><span data-ttu-id="6698b-103">使用数据（第 1 部分）</span><span class="sxs-lookup"><span data-stu-id="6698b-103">Working with Data (Part 1)</span></span>
+# <a name="working-with-data-part-1"></a><span data-ttu-id="24d6f-103">使用数据（第 1 部分）</span><span class="sxs-lookup"><span data-stu-id="24d6f-103">Working with Data (Part 1)</span></span>
 
-<span data-ttu-id="6698b-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="6698b-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="24d6f-104">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="24d6f-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="6698b-105">视频伴奏到使用数据教程 (第 1 部分)</span><span class="sxs-lookup"><span data-stu-id="6698b-105">Video accompaniment to the Working with Data tutorial (Part 1)</span></span>
+<span data-ttu-id="24d6f-105">视频 accompaniment 到使用数据教程（第1部分）</span><span class="sxs-lookup"><span data-stu-id="24d6f-105">Video accompaniment to the Working with Data tutorial (Part 1)</span></span>
 
-[<span data-ttu-id="6698b-106">&#9654;观看视频 （8 分钟）</span><span class="sxs-lookup"><span data-stu-id="6698b-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-part-1)
+<span data-ttu-id="24d6f-106">[&#9654;观看视频（8分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-(part-1))</span><span class="sxs-lookup"><span data-stu-id="24d6f-106">[&#9654; Watch video (8 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-(part-1))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="6698b-107">[上一页](working-with-forms-part-2.md)
-> [下一页](working-with-data-part-2.md)</span><span class="sxs-lookup"><span data-stu-id="6698b-107">[Previous](working-with-forms-part-2.md)
+> <span data-ttu-id="24d6f-107">[上一页](working-with-forms-part-2.md)
+> [下一页](working-with-data-part-2.md)</span><span class="sxs-lookup"><span data-stu-id="24d6f-107">[Previous](working-with-forms-part-2.md)
 [Next](working-with-data-part-2.md)</span></span>
