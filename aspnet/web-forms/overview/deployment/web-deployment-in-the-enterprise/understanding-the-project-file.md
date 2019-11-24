@@ -97,13 +97,13 @@ MSBuild 项目文件基于[MSBUILD XML 架构](/visualstudio/msbuild/msbuild-pro
 > [!NOTE]
 > 有关可用于 Msbuild.exe 的参数和开关的详细信息，请参阅[Msbuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
-您可以使用相同的属性语法来获取环境变量和内置项目属性的值。 许多常用的属性是为你定义的，你可以通过包含相关参数名称在项目文件中使用它们。 例如，&#x2014;若要检索当前项目平台（例如**x86**或**AnyCpu**&#x2014;），可以在项目文件中包含 **$ （platform）** 属性引用。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)、[常用的 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)以及[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
+您可以使用相同的属性语法来获取环境变量和内置项目属性的值。 许多常用的属性是为你定义的，你可以通过包含相关参数名称在项目文件中使用它们。 例如，若要检索的当前项目平台&#x2014;例如 **x86** 或 **AnyCpu**&#x2014;可以包括 **$(Platform)** 中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)、[常用的 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)以及[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
 
 属性通常与*条件*结合使用。 大多数 MSBuild 元素都支持**Condition**特性，这使你可以指定 MSBuild 计算元素时所依据的条件。 例如，请考虑以下属性定义：
 
 [!code-xml[Main](understanding-the-project-file/samples/sample5.xml)]
 
-当 MSBuild 处理此属性定义时，它会首先检查 **$ （OutputRoot）** 属性值是否可用。 如果属性值为空&#x2014;，则该用户未提供此属性&#x2014;的值，条件的计算结果为**true** ，并且属性值设置为 **。\Publish\Out**。如果用户已为此属性提供值，则条件的计算结果为**false** ，并且不使用静态属性值。
+当 MSBuild 处理此属性定义时，它首先会检查以查看是否 **$(OutputRoot)** 属性值为可用。 如果属性值为空&#x2014;，则该用户未提供此属性&#x2014;的值，条件的计算结果为**true** ，并且属性值设置为 **。\Publish\Out**。如果用户已为此属性提供值，则条件的计算结果为**false** ，并且不使用静态属性值。
 
 有关可用于指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/library/7szfhaft.aspx)。
 
@@ -117,7 +117,7 @@ MSBuild 项目文件基于[MSBUILD XML 架构](/visualstudio/msbuild/msbuild-pro
 
 [!code-xml[Main](understanding-the-project-file/samples/sample7.xml)]
 
-通过这种方式，项目文件将指示 MSBuild 构造文件的列表，这些文件需要以**相同的方式**&#x2014;进行处理。若要成功生成，**编译**列表包含代码必须编译的文件和**内容**列表中包含必须原封不动地复制的资源。 我们将在本主题的后面部分介绍生成过程是如何引用和使用这些项的。
+通过这种方式，项目文件将指示 MSBuild 构造文件的列表，这些文件需要以**相同的方式**&#x2014;进行处理。若要成功生成，**编译**列表中包括必须编译的代码文件，并且**内容**列表包括必须以未经修改的方式复制的资源。 我们将在本主题的后面部分介绍生成过程是如何引用和使用这些项的。
 
 Item 元素还可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms164284.aspx)子元素。 这些是用户定义的键值对，本质上表示特定于该项目的属性。 例如，项目文件中的许多**编译**项元素都包含**DependentUpon**子元素。
 
@@ -130,7 +130,7 @@ Item 元素还可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms16
 
 ### <a name="targets-and-tasks"></a>目标和任务
 
-在 MSBuild 架构中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示单个生成指令（或任务）。 MSBuild 包含许多预定义任务。 例如:
+在 MSBuild 架构中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示单个生成指令（或任务）。 MSBuild 包含许多预定义任务。 例如：
 
 - **复制**任务将文件复制到新位置。
 - **Csc**任务调用 Visual C#编译器。
@@ -145,7 +145,7 @@ Item 元素还可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms16
 
 [!code-xml[Main](understanding-the-project-file/samples/sample9.xml)]
 
-可以通过使用 **/t**开关指定目标，从命令行调用目标。
+你可以通过调用从命令行中，目标 **/t** 开关指定目标。
 
 [!code-console[Main](understanding-the-project-file/samples/sample10.cmd)]
 

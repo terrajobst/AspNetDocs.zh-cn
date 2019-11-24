@@ -43,7 +43,7 @@ ms.locfileid: "70985860"
 
 有关在 Visual Studio 中使用 web 服务器的详细信息，请参阅[Visual studio for ASP.NET Web 项目中的 Web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)。
 
-一下如果在学习本教程时收到一条错误消息或某些内容不起作用，请确保查看[故障排除页](troubleshooting.md)。
+提醒：如果你收到一条错误消息或在你完成本教程时无法正常工作，请务必查看[故障排除页](troubleshooting.md)。
 
 ## <a name="download-the-contoso-university-starter-project"></a>下载 Contoso 大学初学者项目
 
@@ -67,7 +67,7 @@ ms.locfileid: "70985860"
 
      你将看到指示将安装 IIS 7 的消息。 该链接适用于 Windows 8 中的 IIS 8;但对于 Windows 8 及更高版本，请执行以下步骤，确保安装了 ASP.NET 4.7：
 
-   * 打开 **"控制面板" "**  >  > 程序" "**程序和功能** >  **" "打开或关闭 Windows 功能"** 。
+   * 打开 **"控制面板"**  > **程序**" > "**程序和功能 "，**  > **启用或禁用 Windows 功能**。
 
    * 展开**Internet Information Services**、 **World Wide Web 服务**和**应用程序开发功能**。
    
@@ -119,7 +119,7 @@ ms.locfileid: "70985860"
 
 LocalDB 不适用于 IIS，因此测试环境必须安装 SQL Server Express。 如果使用的是 Visual Studio 2010 SQL Server Express，则默认情况下已安装该程序。 如果使用的是 Visual Studio 2012 或更高版本，请安装 SQL Server Express。
 
-若要安装 SQL Server Express，请从[下载中心下载并安装它：Microsoft SQL Server 2017 Express edition](https://www.microsoft.com/sql-server/sql-server-editions-express)。 
+若要安装 SQL Server Express，请从下载中心下载并安装它[： Microsoft SQL Server 2017 Express edition](https://www.microsoft.com/sql-server/sql-server-editions-express)。 
 
 在 SQL Server 安装中心的第一页上，选择 "**新建 SQL Server 独立安装或向现有安装添加功能**"，并按照说明接受默认选择。 在安装向导中，接受默认设置。 有关安装选项的详细信息，请参阅安装[SQL Server 从安装向导（安装程序）](https://msdn.microsoft.com/library/ms143219.aspx)。
 
@@ -144,7 +144,7 @@ Contoso 大学应用程序有两个数据库：
 
 ![创建 aspnet-ContosoUniversity](deploying-to-iis/_static/image9.png)
 
-按照相同的过程创建名为`ContosoUniversity`的新 SQL Server Express School 数据库。
+按照相同的过程创建名为 `ContosoUniversity`的新 SQL Server Express School 数据库。
 
 **服务器资源管理器**显示两个新数据库。
 
@@ -164,7 +164,7 @@ Contoso 大学应用程序有两个数据库：
 > 此脚本旨在与 SQL Server Express 2012 或更高版本以及在本教程中指定的 windows 10、Windows 8 或 Windows 7 中的 IIS 设置一起使用。 如果使用的是其他版本的 SQL Server 或 Windows，或者在计算机上以不同的方式设置 IIS，则可能需要对此脚本进行更改。 有关 SQL Server 脚本的详细信息，请参阅[SQL Server 联机丛书](https://go.microsoft.com/fwlink/?LinkId=132511)。
 
 > [!NOTE] 
-> **安全说明**此脚本向`db_owner`用户授予在运行时访问数据库的权限，您将在生产环境中使用该权限。 在某些情况下，你可能想要指定具有仅用于部署的完整数据库架构更新权限的用户，并为运行时指定仅拥有读取和写入数据权限的其他用户。 有关详细信息，请参阅本教程后面的[查看自动的 Web.config 更改 Code First 迁移](#reviewingmigrations)。
+> **安全说明**此脚本向用户提供对在运行时访问数据库的 `db_owner` 权限，您将在生产环境中使用该权限。 在某些情况下，你可能想要指定具有仅用于部署的完整数据库架构更新权限的用户，并为运行时指定仅拥有读取和写入数据权限的其他用户。 有关详细信息，请参阅本教程后面的[查看自动的 Web.config 更改 Code First 迁移](#reviewingmigrations)。
 
 <a id="publish"></a>
 
@@ -205,7 +205,7 @@ Contoso 大学应用程序有两个数据库：
 
 2. 选择 "**新建配置文件**"。 此时将显示 "**选取发布目标**" 对话框。
 
-3. 选择 " **IIS"、"FTP" 等**。选择“创建配置文件”。 此时将显示**发布**向导。
+3. 选择 " **IIS"、"FTP" 等**。选择 "**创建配置文件**"。 此时将显示**发布**向导。
 
    ![发布 Web 向导 "配置文件" 选项卡](deploying-to-iis/_static/image26.png)
 
@@ -215,7 +215,7 @@ Contoso 大学应用程序有两个数据库：
 
 6. 对于 "**站点名称**"，输入*默认网站/ContosoUniversity*。
 
-7. 对于 "**目标 URL**" *http://localhost/ContosoUniversity* ，请输入。
+7. 对于 "**目标 URL**"，请输入 *http://localhost/ContosoUniversity* 。
 
    不需要 "**目标 URL** " 设置。 当 Visual Studio 完成应用程序的部署时，它会自动打开此 URL 的默认浏览器。 如果你不希望在部署后自动打开浏览器，请将此框留空。
 
@@ -229,9 +229,9 @@ Contoso 大学应用程序有两个数据库：
 
 10. "**配置**" 下拉框指定要部署的生成配置。 将其设置为 "**发布**" 的默认值。 在本教程中不会部署调试版本。
 
-11. 展开 "**文件发布选项**"。 **\_从 "应用程序数据" 文件夹中选择 "排除文件"** 。
+11. 展开 "**文件发布选项**"。 选择 **"从应用程序中排除文件\_Data 文件夹**。
 
-    在测试环境中，应用程序将访问在本地 SQL Server Express 实例中创建的数据库，而不是 *\_应用程序数据*文件夹中的 .mdf 文件。
+    在测试环境中，应用程序将访问在本地 SQL Server Express 实例中创建的数据库，而不是*应用\_Data*文件夹中的 .mdf 文件。
 
 12. 在 "发布并**删除目标中的其他文件**" 复选框处于清除状态**时保留预编译**。
 
@@ -246,7 +246,7 @@ Contoso 大学应用程序有两个数据库：
     > 
     > 例如，如果在将项目部署到根文件夹时在服务器上的子文件夹中有一个 web 应用程序，则该子文件夹将被删除。 你可能在 contoso.com 的主站点上有一个项目，另一个项目用于 contoso.com/blog 的博客。 博客应用程序位于子文件夹中。 如果您在部署主站点时选择了 "**删除目标位置的其他文件**"，则会删除该博客应用程序。
     > 
-    > 对于另一个示例，你\_的应用数据文件夹可能会被意外删除。 某些数据库（如 SQL Server Compact）将数据库文件存储在\_应用程序数据文件夹中。 初始部署后，你不想在后续部署中继续复制数据库文件，因此，你可以选择 "打包/发布 Web" 选项卡上的 " **\_排除应用数据**"。执行此操作后，如果选择了 "**在目标上删除其他文件**"，则在下\_一次发布时，将删除数据库文件和应用程序数据文件夹本身。
+    > 对于另一个示例，应用\_Data 文件夹可能会意外删除。 某些数据库（如 SQL Server Compact）将数据库文件存储在应用\_Data 文件夹中。 初始部署后，你不想在后续部署中继续复制数据库文件，因此，你可以在 "包/发布 Web" 选项卡上选择 "**排除应用程序\_数据**"。执行此操作后，如果选择了 "**在目标上删除其他文件**"，则在下一次发布时，将删除数据库文件和应用\_Data 文件夹本身。
 
 ### <a name="configure-deployment-for-the-membership-database"></a>为成员资格数据库配置部署
 
@@ -258,7 +258,7 @@ Contoso 大学应用程序有两个数据库：
 
    部署过程会将此连接字符串放在部署的 Web.config 文件中，原因是选择了 "**在运行时使用此连接字符串**"。
 
-    还可以从**服务器资源管理器**获取连接字符串。 在**服务器资源管理器**中，展开 "**数据连接**" 并选择 "  **&lt;&gt;machinename \sqlexpress.aspnet-ContosoUniversity** " 数据库，然后在 "**属性**" 窗口中复制**连接字符串**值。 该连接字符串将有一个可以删除的其他设置： `Pooling=False`。
+    还可以从**服务器资源管理器**获取连接字符串。 在**服务器资源管理器**中，展开 "**数据连接**"，然后选择 **&lt;machinename&gt;\sqlexpress.aspnet-ContosoUniversity**数据库，然后从 "**属性**" 窗口复制**连接字符串**值。 该连接字符串将有一个可以删除的其他设置： `Pooling=False`。
 
 2. 选择 "**更新数据库**"。
 
@@ -276,9 +276,9 @@ Contoso 大学应用程序有两个数据库：
 
 ### <a name="configure-deployment-for-the-application-database"></a>为应用程序数据库配置部署
 
-当 Visual Studio 检测到实体框架`DbContext`类时，它将在 "**数据库**" 部分创建一个具有 "**执行 Code First 迁移**" 复选框而不是 "**更新数据库**" 复选框的项。 对于本教程，你将使用此复选框来指定 Code First 迁移部署。
+当 Visual Studio 检测到实体框架 `DbContext` 类时，它将在 "**数据库**" 部分创建一个具有 "**执行 Code First 迁移**" 复选框而不是 "**更新数据库**" 复选框的条目。 对于本教程，你将使用此复选框来指定 Code First 迁移部署。
 
-在某些情况下，你可能使用`DbContext`的是数据库，但你想要使用 dbDacFx 提供程序而不是迁移来部署数据库。 在这种情况下，请参阅 MSDN 上的 ASP.NET Web 部署常见问题解答中的[如何实现部署 Code First 数据库（不迁移](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations)）。
+在某些情况下，你可能正在使用 `DbContext` 数据库，但你想要使用 dbDacFx 提供程序而不是迁移来部署数据库。 在这种情况下，请参阅 MSDN 上的 ASP.NET Web 部署常见问题解答中的[如何实现部署 Code First 数据库（不迁移](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations)）。
 
 以下步骤适用于对话框的 "**数据库**" 部分中的**SchoolContext**数据库。
 
@@ -292,7 +292,7 @@ Contoso 大学应用程序有两个数据库：
 
 2. 选择 **"执行 Code First 迁移（在应用程序启动时运行）** 。
 
-   此选项将导致部署过程配置部署的 web.config 文件，以指定`MigrateDatabaseToLatestVersion`初始值设定项。 当应用程序在部署后首次访问数据库时，此初始值设定项会将数据库自动更新到最新版本。
+   此选项将导致部署过程配置部署的 Web.config 文件以指定 `MigrateDatabaseToLatestVersion` 初始值设定项。 当应用程序在部署后首次访问数据库时，此初始值设定项会将数据库自动更新到最新版本。
 
 ### <a name="configure-publish-profile-transforms"></a>配置发布配置文件转换
 
@@ -314,7 +314,7 @@ Contoso 大学应用程序有两个数据库：
 
     使用测试发布配置文件时，此转换会将环境指示器设置为 "测试"。 在部署的站点中，你将看到 "Contoso 大学" H1 标题后面的 "（测试）"。
 
-6. 保存并关闭文件。
+6. 保存并关闭该文件。
 
 7. 右键单击 " *web.config* " 文件，然后选择 "**预览转换**"，以确保编码的转换生成所需的更改。
 
@@ -344,7 +344,7 @@ Contoso 大学应用程序有两个数据库：
 
 请注意，环境指示器显示 "（测试）"，而不是 "（开发）"，这表明环境指示器的*web.config 转换已*成功。
 
-运行**讲师**页，验证 Code First 用指导员数据对数据库进行种子设定。 选择此页时，可能需要几分钟的时间才能加载，因为 Code First 会创建数据库，然后运行`Seed`方法。 （如果你在主页上，则不会执行此操作，因为应用程序尚未尝试访问数据库。）
+运行**讲师**页，验证 Code First 用指导员数据对数据库进行种子设定。 选择此页时，可能需要几分钟的时间才能加载，因为 Code First 会创建数据库，然后运行 `Seed` 方法。 （如果你在主页上，则不会执行此操作，因为应用程序尚未尝试访问数据库。）
 
 选择 "**学生**" 选项卡，验证部署的数据库是否没有学生。
 
@@ -366,13 +366,13 @@ Contoso 大学应用程序有两个数据库：
 
 ![Database_Publish 连接字符串](deploying-to-iis/_static/image22.png)
 
-使用此附加连接字符串，您可以为数据库架构更新指定一个用户帐户，并为应用程序数据访问指定不同的用户帐户。 例如，可以将数据库 **\_所有者**角色分配 **\_** **\_到 Code First 迁移，并将 db** datawriter 角色分配给应用程序。 这是一种常见的深层防御模式，可防止应用程序中可能存在的恶意代码更改数据库架构。 （例如，这可能会在成功的 SQL 注入攻击中发生。）这些教程不使用这种模式。 若要在方案中实现此模式，请执行以下步骤：
+使用此附加连接字符串，您可以为数据库架构更新指定一个用户帐户，并为应用程序数据访问指定不同的用户帐户。 例如，可以将**db\_所有者**角色分配给应用程序的 Code First 迁移和**db\_** 与**db\_datawriter**角色。 这是一种常见的深层防御模式，可防止应用程序中可能存在的恶意代码更改数据库架构。 （例如，这可能会在成功的 SQL 注入攻击中发生。）这些教程不使用这种模式。 若要在方案中实现此模式，请执行以下步骤：
 
-1. 在 "**发布 Web** " 向导中的 "**设置**" 选项卡下，输入指定具有完整数据库架构更新权限的用户的连接字符串。 清除 "**在运行时使用此连接字符串**" 复选框。 在部署的 web.config 文件中，这将成为`DatabasePublish`连接字符串。
+1. 在 "**发布 Web** " 向导中的 "**设置**" 选项卡下，输入指定具有完整数据库架构更新权限的用户的连接字符串。 清除 "**在运行时使用此连接字符串**" 复选框。 在部署的 Web.config 文件中，这将成为 `DatabasePublish` 的连接字符串。
 
 2. 为希望应用程序在运行时使用的连接字符串创建 web.config 文件转换。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，你已将应用程序部署到 IIS 开发计算机上，并在其中进行测试。
 
@@ -380,7 +380,7 @@ Contoso 大学应用程序有两个数据库：
 
 这会验证部署过程是否已将应用程序的内容复制到适当的位置（不包括你不想部署的文件），同时还会在部署过程中正确 Web 部署配置 IIS。 在下一教程中，您将运行一个查找尚未完成的部署任务的测试：设置 "*榆树 ah* " 文件夹的文件夹权限。
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 有关在 Visual Studio 中运行 IIS 或 IIS Express 的信息，请参阅以下资源：
 
