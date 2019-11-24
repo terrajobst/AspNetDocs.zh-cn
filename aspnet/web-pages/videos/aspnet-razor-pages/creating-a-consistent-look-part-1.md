@@ -15,15 +15,15 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 11/02/2019
 ms.locfileid: "73445642"
 ---
-# <a name="creating-a-consistent-look-part-1"></a><span data-ttu-id="58d77-103">创建一致外观（第 1 部分）</span><span class="sxs-lookup"><span data-stu-id="58d77-103">Creating a Consistent Look (Part 1)</span></span>
+# <a name="creating-a-consistent-look-part-1"></a><span data-ttu-id="2ac5b-103">创建一致外观（第 1 部分）</span><span class="sxs-lookup"><span data-stu-id="2ac5b-103">Creating a Consistent Look (Part 1)</span></span>
 
-<span data-ttu-id="58d77-104">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="58d77-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="2ac5b-104">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="2ac5b-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="58d77-105">视频 accompaniment 创建一致的外观教程（第1部分）</span><span class="sxs-lookup"><span data-stu-id="58d77-105">Video accompaniment to the Creating a Consistent Look tutorial (part 1)</span></span>
+<span data-ttu-id="2ac5b-105">视频 accompaniment 创建一致的外观教程（第1部分）</span><span class="sxs-lookup"><span data-stu-id="2ac5b-105">Video accompaniment to the Creating a Consistent Look tutorial (part 1)</span></span>
 
-<span data-ttu-id="58d77-106">[&#9654;观看视频（23分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-1))</span><span class="sxs-lookup"><span data-stu-id="58d77-106">[&#9654; Watch video (23 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-1))</span></span>
+<span data-ttu-id="2ac5b-106">[&#9654;观看视频（23分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-1))</span><span class="sxs-lookup"><span data-stu-id="2ac5b-106">[&#9654; Watch video (23 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-1))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="58d77-107">[上一页](introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
-> [下一页](creating-a-consistent-look-part-2.md)</span><span class="sxs-lookup"><span data-stu-id="58d77-107">[Previous](introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
+> <span data-ttu-id="2ac5b-107">[上一页](introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
+> [下一页](creating-a-consistent-look-part-2.md)</span><span class="sxs-lookup"><span data-stu-id="2ac5b-107">[Previous](introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
 [Next](creating-a-consistent-look-part-2.md)</span></span>
