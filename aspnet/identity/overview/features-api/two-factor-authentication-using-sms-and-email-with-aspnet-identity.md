@@ -1,75 +1,75 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: 双因素身份验证使用 SMS 和电子邮件与 ASP.NET 标识的 ASP.NET 4.x
+title: 使用 SMS 和电子邮件的双因素身份验证与 ASP.NET Identity ASP.NET 4。x
 author: HaoK
-description: 本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。 由 Rick Anderson 撰写本文时 ( @RickAndMSFT )、 Pr....
+description: 本教程将演示如何使用 SMS 和电子邮件设置双因素身份验证（2FA）。 本文由 Rick Anderson （@RickAndMSFT）、Pr 。
 ms.author: riande
 ms.date: 09/15/2015
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4ca9c141b0b48acf2c775a083398d3fb66b51cc2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 5f5218ca6c65ed3a2cd39d4e100349efa35d14cd
+ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121425"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74115099"
 ---
-# <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和电子邮件与 ASP.NET 标识的双因素身份验证
+# <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和电子邮件的双因素身份验证 ASP.NET Identity
 
-通过[Hao 永远](https://github.com/HaoK)， [Pranav rastogi 撰写](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
+作者： [Hao Kung](https://github.com/HaoK)， [Pranav Rastogi 撰写](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
 
-> 本教程将演示如何设置双因素身份验证 (2FA) 使用 SMS 和电子邮件。
+> 本教程将演示如何使用 SMS 和电子邮件设置双因素身份验证（2FA）。
 > 
-> 由 Rick Anderson 撰写本文时 ([@RickAndMSFT](https://twitter.com/#!/RickAndMSFT))，Pranav rastogi 撰写 ([@rustd](https://twitter.com/rustd))，Hao 永远和 Suhas Joshi。 NuGet 示例主要由 Hao 永远编写。
+> 本文是由 Rick Anderson （[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)）、Pranav rastogi 撰写（[@rustd](https://twitter.com/rustd)）、Hao Kung 和 Suhas Joshi 编写的。 NuGet 示例主要由 Hao Kung 编写。
 
-本主题涵盖以下产品：
+本主题涵盖以下内容：
 
-- [生成标识示例](#build)
-- [为 SMS 设置双因素身份验证](#SMS)
+- [构建标识示例](#build)
+- [设置 SMS 以实现双重身份验证](#SMS)
 - [启用双因素身份验证](#enable2)
-- [如何注册的双因素身份验证提供程序](#reg)
-- [合并的社交和本地登录帐户](#combine)
-- [免受暴力攻击的帐户锁定](#lock)
+- [如何注册双因素身份验证提供程序](#reg)
+- [合并社会和本地登录帐户](#combine)
+- [防止暴力破解攻击](#lock)
 
 <a id="build"></a>
 
-## <a name="building-the-identity-sample"></a>生成标识示例
+## <a name="building-the-identity-sample"></a>构建标识示例
 
-在本部分中，您将使用 NuGet 来下载我们将使用的示例。 首先，安装并运行[Visual Studio Express 2013 for Web](https://go.microsoft.com/fwlink/?LinkId=299058)或[Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566)。 安装 Visual Studio [2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521)或更高版本。
+在本部分中，你将使用 NuGet 下载我们将使用的示例。 首先，安装并运行[适用于 Web 或 Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=299058) 的 [Visual Studio Express 2013](https://go.microsoft.com/fwlink/?LinkId=306566)。 安装 Visual Studio [2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521)或更高版本。
 
 > [!NOTE]
-> 警告：必须安装 Visual Studio [2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521)要完成本教程。
+> 警告：若要完成本教程，您必须安装 Visual Studio [2013 Update 2](https://go.microsoft.com/fwlink/?LinkId=390521) 。
 
-1. 创建一个新***空***ASP.NET Web 项目。
-2. 在包管理器控制台中，输入以下内容的以下命令：  
+1. 创建新的***空***ASP.NET Web 项目。
+2. 在 "程序包管理器控制台" 中，输入以下命令：  
   
     `Install-Package SendGrid`  
     `Install-Package -Prerelease Microsoft.AspNet.Identity.Samples`  
   
-   在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件并[Twilio](https://www.twilio.com/)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)的 sms 短。 `Identity.Samples`包将安装我们将使用的代码。
-3. 设置[项目，以使用 SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
-4. *可选*：按照中的说明我[电子邮件确认教程](account-confirmation-and-password-recovery-with-aspnet-identity.md)挂接 SendGrid 然后运行应用并注册的电子邮件帐户。
-5. *可选：* 删除示例中演示电子邮件链接确认代码 (`ViewBag.Link`帐户控制器中的代码。 请参阅`DisplayEmail`和`ForgotPasswordConfirmation`操作方法和 razor 视图)。
-6. *可选：* 删除`ViewBag.Status`中的代码的管理和帐户控制器以及从*Views\Account\VerifyCode.cshtml*并*Views\Manage\VerifyPhoneNumber.cshtml* razor 视图。 或者，可以保留`ViewBag.Status`显示效果以测试此应用本地而无需挂钩和发送电子邮件和短信的工作方式。
+   在本教程中，我们将使用[SendGrid](http://sendgrid.com/)发送电子邮件和[Twilio](https://www.twilio.com/)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) for sms 短信。 `Identity.Samples` 包将安装要使用的代码。
+3. 将[项目设置为使用 SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
+4. *可选*：按照 "我的[电子邮件确认" 教程](account-confirmation-and-password-recovery-with-aspnet-identity.md)中的说明挂钩 SendGrid，然后运行该应用程序并注册电子邮件帐户。
+5. *可选：* 从示例中删除演示电子邮件链接确认代码（帐户控制器中的 `ViewBag.Link` 代码。 请参阅 `DisplayEmail` 和 `ForgotPasswordConfirmation` 操作方法和 razor 视图）。
+6. *可选：* 从 "管理" 和 "帐户" 控制器以及*Views\Account\VerifyCode.cshtml*和*Views\Manage\VerifyPhoneNumber.cshtml* razor 视图中删除 `ViewBag.Status` 代码。 或者，你可以保留 `ViewBag.Status` 显示来测试此应用在本地的工作方式，而无需挂接和发送电子邮件和短信。
 
 > [!NOTE]
-> 警告：如果在此示例中的安全设置的任何更改，生产应用程序将需要进行显式调用所做的更改的安全审核。
+> 警告：如果更改此示例中的任何安全设置，则生产应用将需要进行安全审核，显式调用所做的更改。
 
 <a id="SMS"></a>
 
-## <a name="set-up-sms-for-two-factor-authentication"></a>为 SMS 设置双因素身份验证
+## <a name="set-up-sms-for-two-factor-authentication"></a>设置 SMS 以实现双重身份验证
 
-本教程提供了有关使用 Twilio 或 ASPSMS 的说明，但可以使用任何其他 SMS 提供程序。
+本教程提供了使用 Twilio 或 ASPSMS 的说明，但你可以使用任何其他 SMS 提供程序。
 
 1. **使用 SMS 提供程序创建用户帐户**  
   
    创建[Twilio](https://www.twilio.com/try-twilio)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/)帐户。
 2. **安装其他包或添加服务引用**  
   
-   Twilio:  
-   在包管理器控制台中，输入以下命令：  
+   Twilio  
+   在 "程序包管理器控制台" 中，输入以下命令：  
     `Install-Package Twilio`  
   
    ASPSMS:  
@@ -82,50 +82,50 @@ ms.locfileid: "65121425"
   
    命名空间:  
     `ASPSMSX2`
-3. **找出 SMS 提供程序用户凭据**  
+3. **了解 SMS 提供程序用户凭据**  
   
-   Twilio:  
-   从**仪表板**选项卡上的 Twilio 帐户，复制**帐户 SID**并**身份验证令牌**。  
-  
-   ASPSMS:  
-   在帐户设置中，导航到**Userkey**并将其复制以及自定义**密码**。  
-  
-   我们稍后将这些值存储在变量`SMSAccountIdentification`和`SMSAccountPassword`。
-4. **指定 SenderID / 原始发件人**  
-  
-   Twilio:  
-   从**数字**选项卡上，复制你的 Twilio 电话号码。  
+   Twilio  
+   在 Twilio 帐户的 "**仪表板**" 选项卡中，复制 "**帐户 SID** " 和 "**身份验证令牌**"。  
   
    ASPSMS:  
-   内**解锁原始发件人**菜单中，解锁始发者的一个或多个，或选择字母数字发信方 （不支持的所有网络）。  
+   从帐户设置中，导航到**用户密钥**，并将其与自定义**密码**一起复制。  
   
-   更高版本，我们会将此值存储在变量中`SMSAccountFrom`。
-5. **将 SMS 提供程序凭据传输到应用**  
+   稍后我们将这些值存储在变量 `SMSAccountIdentification` 和 `SMSAccountPassword` 中。
+4. **指定 SenderID/发起方**  
   
-   提供的凭据和发件人的电话号码向应用程序：
+   Twilio  
+   从 "**数字**" 选项卡中，复制 Twilio 的电话号码。  
+  
+   ASPSMS:  
+   在 "**解锁**工作项" 菜单中，解锁一个或多个发信方，或选择一个字母数字发信方（并非所有网络都支持）。  
+  
+   稍后我们将此值存储在变量 `SMSAccountFrom` 中。
+5. **将 SMS 提供程序凭据传输到应用中**  
+  
+   向应用程序提供凭据和发件人电话号码：
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample1.cs)]
 
     > [!WARNING]
-    > 安全性-永远不会存储在源代码中敏感数据。 帐户和凭据添加到上面的代码以使示例保持简单。 请参阅 Jon 输入[ASP.NET MVC:保留专用源代码管理设置带](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx)。
-6. **数据传输到 SMS 提供程序的实现**  
+    > 安全性-永远不要将敏感数据存储在源代码中。 帐户和凭据将添加到上面的代码中，以使示例简单。 请参阅吴建 Atten 的 [ASP.NET MVC：保留](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx)的源代码管理的专用设置。
+6. **将数据传输到 SMS 提供程序**  
   
-   配置`SmsService`类中*应用程序\_Start\IdentityConfig.cs*文件。  
+   在*应用\_Start\IdentityConfig.cs*文件中配置 `SmsService` 类。  
   
-   具体取决于使用 SMS 提供程序激活任一**Twilio**或**ASPSMS**部分： 
+   根据所使用的 SMS 提供程序，激活 " **Twilio** " 或 " **ASPSMS** " 部分： 
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample2.cs)]
-7. 运行应用并使用之前注册的帐户登录。
-8. 单击你的用户 ID，这便激活`Index`中的操作方法`Manage`控制器。  
+7. 运行该应用，然后用之前注册的帐户登录。
+8. 单击您的 "用户 ID"，在 `Manage` 控制器中激活 `Index` 操作方法。  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image2.png)
-9. 单击添加。  
+9. 单击“添加”。  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image3.png)
-10. 在几秒钟后将获得使用验证码的短信。 输入它，然后按**提交**。  
+10. 几秒钟后，会收到一条包含验证码的短信。 输入并按 "**提交**"。  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image4.png)
-11. 管理视图显示已添加你的电话号码。  
+11. "管理" 视图显示已添加的电话号码。  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image5.png)
 
@@ -133,151 +133,151 @@ ms.locfileid: "65121425"
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample3.cs?highlight=2)]
 
-`Index`中的操作方法`Manage`控制器设置根据上一操作的状态消息，并提供链接以更改您的本地密码或添加本地帐户。 `Index`方法还会显示状态或你 2FA 电话号码、 外部登录名、 2FA 启用，并请记住此浏览器 （稍后介绍） 的 2FA 方法。 单击你的标题栏中的用户 ID （电子邮件） 未通过一条消息。 单击**电话号码： 删除**链接传递`Message=RemovePhoneSuccess`作为查询字符串。  
+`Manage` 控制器中的 `Index` 操作方法基于之前的操作设置状态消息，并提供链接来更改本地密码或添加本地帐户。 `Index` 方法还显示状态或你的2FA 电话号码、外部登录名、启用2FA，并记住此浏览器的2FA 方法（稍后将进行介绍）。 单击标题栏中的用户 ID （电子邮件）不会传递消息。 单击**电话号码：删除**链接将 `Message=RemovePhoneSuccess` 作为查询字符串。  
   
 `https://localhost:44300/Manage?Message=RemovePhoneSuccess`
 
 [![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image6.png)]
 
-`AddPhoneNumber`操作方法显示一个对话框，输入可接收短信的电话号码。
+`AddPhoneNumber` 操作方法会显示一个对话框，用于输入可接收短信消息的电话号码。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample4.cs)]
 
 ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image7.png)
 
-单击**发送验证码**按钮将电话号码发送到 HTTP POST`AddPhoneNumber`操作方法。
+单击 "**发送验证码**" 按钮会将电话号码发送到 HTTP POST `AddPhoneNumber` 操作方法。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample5.cs?highlight=12)]
 
-`GenerateChangePhoneNumberTokenAsync`方法将生成安全令牌都将设置中的 SMS 消息。 如果 SMS 服务已配置，作为字符串发送令牌&quot;你的安全代码是&lt;令牌&gt;&quot;。 `SmsService.SendAsync`方法调用以异步方式，然后应用重定向到`VerifyPhoneNumber`操作方法 （后者将显示以下对话框），您可以在其中输入验证码。
+`GenerateChangePhoneNumberTokenAsync` 方法将生成在 SMS 消息中设置的安全令牌。 如果已配置 SMS 服务，则会将令牌作为字符串发送 &quot;你的安全代码是 &lt;令牌&gt;&quot;。 要以异步方式调用 `SmsService.SendAsync` 方法，然后将应用重定向到 `VerifyPhoneNumber` 操作方法（显示以下对话框），您可以在其中输入验证代码。
 
 ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image8.png)
 
-一旦您输入代码，然后单击提交，将代码发布到 HTTP POST`VerifyPhoneNumber`操作方法。
+输入代码并单击 "提交" 后，代码会发布到 HTTP POST `VerifyPhoneNumber` 操作方法。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample6.cs)]
 
-`ChangePhoneNumberAsync`方法检查的已发布的安全代码。 如果代码正确无误，电话号码添加到`PhoneNumber`字段的`AspNetUsers`表。 如果该调用成功，`SignInAsync`调用方法：
+`ChangePhoneNumberAsync` 方法检查已发布的安全代码。 如果代码正确，则会将电话号码添加到 `AspNetUsers` 表的 `PhoneNumber` 字段。 如果调用成功，则调用 `SignInAsync` 方法：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample7.cs)]
 
-`isPersistent`参数设置是否跨多个请求身份验证会话保持不变。
+`isPersistent` 参数设置是否在多个请求之间保留身份验证会话。
 
-更改安全配置文件时，生成并存储在一个新的安全戳`SecurityStamp`字段*AspNetUsers*表。 请注意，`SecurityStamp`字段是不同的安全 cookie。 安全 cookie 不会存储在`AspNetUsers`表 （或标识 DB 中的其他任何位置）。 使用自签名安全 cookie 令牌[DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx)并使用创建`UserId, SecurityStamp`和过期时间信息。
+更改安全配置文件时，会生成新的安全戳，并将其存储在*AspNetUsers*表的 `SecurityStamp` 字段中。 请注意，"`SecurityStamp`" 字段不同于 "安全" cookie。 安全 cookie 不会存储在 `AspNetUsers` 表中（或标识 DB 中的任何其他位置）。 安全 cookie 令牌使用[DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx)自签名，并使用 `UserId, SecurityStamp` 和过期时间信息创建。
 
-Cookie 中间件将检查每个请求的 cookie。 `SecurityStampValidator`中的方法`Startup`类达到数据库，并定期检查安全戳指定的`validateInterval`。 除非您更改安全配置文件，这仅发生 （在本示例中） 每隔 30 分钟。 选择 30 分钟时间间隔内的目的是尽量减少对数据库的访问。
+Cookie 中间件检查每个请求的 cookie。 `Startup` 类中的 `SecurityStampValidator` 方法将按 `validateInterval`指定的方式，定期访问数据库并检查安全标记。 这种情况仅每30分钟发生一次（在我们的示例中），除非你更改安全配置文件。 选择了30分钟间隔，以最大程度地减少对数据库的行程。
 
-`SignInAsync`方法需要对安全配置文件进行任何更改时调用。 安全配置文件发生更改，数据库将更新`SecurityStamp`字段，然后无需调用`SignInAsync`方法会保持登录*仅*直到下一个 OWIN 管道的时间达到数据库 ( `validateInterval`). 您可以通过更改对此进行测试`SignInAsync`方法以立即返回，并设置 cookie`validateInterval`属性从 30 分钟内为 5 秒：
+对安全配置文件进行任何更改时，需要调用 `SignInAsync` 方法。 当安全配置文件更改时，数据库将更新 `SecurityStamp` 字段，而不调用 `SignInAsync` 方法，*只*需在 OWIN 管道到达数据库（`validateInterval`）时才会保持登录状态。 可以通过将 `SignInAsync` 方法更改为立即返回，并将 cookie `validateInterval` 属性设置为30分钟到5秒，来对此进行测试：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample8.cs?highlight=3)]
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample9.cs?highlight=20-21)]
 
-使用上面的代码更改，可以更改安全配置文件 (例如，通过更改的状态**启用两个因素**)，你将注销 5 秒内时`SecurityStampValidator.OnValidateIdentity`方法失败。 删除中的返回行`SignInAsync`方法中，进行更改的另一个安全配置文件并将不记录。`SignInAsync`方法将生成一个新的安全 cookie。
+在上述代码更改的情况下，你可以更改安全配置文件（例如，通过更改**启用了两个因素**的状态），在 `SecurityStampValidator.OnValidateIdentity` 方法失败时，将在5秒后注销。 删除 `SignInAsync` 方法中的返回行，使另一个安全配置文件发生更改，并且不会被注销。`SignInAsync` 方法会生成新的安全 cookie。
 
 <a id="enable2"></a>
 
 ## <a name="enable-two-factor-authentication"></a>启用双因素身份验证
 
-在示例应用中，您需要使用 UI 启用双因素身份验证 (2FA)。 若要启用 2FA，请单击你在导航栏中的用户 ID （电子邮件别名）。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image9.png)  
-单击启用 2FA。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image10.png) 注销，然后重新登录。 如果已启用电子邮件 (请参阅我[前一篇教程](account-confirmation-and-password-recovery-with-aspnet-identity.md))，可以选择短信或 2FA 的电子邮件。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image11.png) 将显示验证代码页，其中 （从短信或电子邮件） 输入代码。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image12.png) 单击**记住此浏览器**复选框将免除你无需使用 2FA 登录使用该计算机和浏览器。 启用 2FA，并单击**记住此浏览器**将为您提供强 2FA 保护免受恶意用户尝试访问你的帐户，只要它们不能访问您的计算机。 您经常使用的任何专用计算机上，可以执行此操作。 通过设置**记住此浏览器**，请从计算机不经常使用的情况下，获取 2FA 提高的安全性，您可以方便地在无需在你自己的计算机上经过 2FA。 
+在示例应用中，需要使用 UI 启用双因素身份验证（2FA）。 若要启用2FA，请在导航栏中单击你的用户 ID （电子邮件别名）。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image9.png)  
+单击 "启用 2FA"。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image10.png) 注销，然后重新登录。 如果已启用电子邮件（请参阅[上一个教程](account-confirmation-and-password-recovery-with-aspnet-identity.md)），可以为2FA 选择 SMS 或电子邮件。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image11.png) 此时会显示 "验证代码" 页，您可以在其中输入代码（通过短信或电子邮件）。![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image12.png) 单击 "**记住此浏览器**" 复选框会使你不需要使用2FA 登录到该计算机和浏览器。 如果启用2FA 并单击 "**记住"，此浏览器**将为你提供强大的2FA 防护，防止恶意用户尝试访问你的帐户，只要他们无权访问你的计算机。 你可以在你经常使用的任何专用计算机上执行此操作。 通过设置**记住此浏览器**，你可以从不经常使用的计算机获得2FA 的增强的安全性，并且你无需在自己的计算机上使用2FA。 
 
 <a id="reg"></a>
-## <a name="how-to-register-a-two-factor-authentication-provider"></a>如何注册的双因素身份验证提供程序
+## <a name="how-to-register-a-two-factor-authentication-provider"></a>如何注册双因素身份验证提供程序
 
-创建一个新的 MVC 项目时*IdentityConfig.cs*文件包含注册的双因素身份验证提供程序的以下代码：
+创建新 MVC 项目时， *IdentityConfig.cs*文件包含以下代码来注册双因素身份验证提供程序：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample10.cs?highlight=22-35)]
 
-## <a name="add-a-phone-number-for-2fa"></a>添加用于 2FA 的电话号码
+## <a name="add-a-phone-number-for-2fa"></a>为2FA 添加电话号码
 
-`AddPhoneNumber`中的操作方法`Manage`控制器生成安全令牌，并提供了发送到手机号。
+`Manage` 控制器中的 `AddPhoneNumber` 操作方法会生成一个安全令牌，并将其发送到你提供的电话号码。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample11.cs)]
 
-发送令牌后，它将重定向到`VerifyPhoneNumber`操作方法，您可以在其中输入 2fa 注册短信的代码。 不使用 SMS 2FA，直到您已验证的电话号码。
+发送令牌后，它会重定向到 `VerifyPhoneNumber` 操作方法，你可以在该方法中输入代码，以便为2FA 注册 SMS。 在验证了电话号码之前，不会使用 SMS 2FA。
 
-## <a name="enabling-2fa"></a>启用 2FA
+## <a name="enabling-2fa"></a>启用2FA
 
-`EnableTFA`操作方法启用 2FA:
+`EnableTFA` 操作方法启用2FA：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample12.cs)]
 
-请注意`SignInAsync`必须调用，因为启用 2FA 是对安全配置文件的更改。 启用 2FA 后，用户将需要使用 2FA 登录，使用 2FA 方法注册 （SMS 和电子邮件示例中的）。
+请注意，必须调用 `SignInAsync`，因为 enable 2FA 是对安全配置文件的更改。 当启用2FA 时，用户将需要使用2FA 登录，并使用已注册的2FA 方法（示例中的 SMS 和电子邮件）。
 
-您可以添加更多 2FA 提供程序，如 QR 代码生成器也可以编写自己的 (请参阅[使用 Google 身份验证器与 ASP.NET 标识](http://www.beabigrockstar.com/blog/using-google-authenticator-asp-net-identity/))。
+可以添加更多的2FA 提供程序（如 QR 码生成器），也可以编写自己的提供程序（请参阅将[Google 身份验证器与 ASP.NET Identity 一起使用](https://www.jerriepelser.com//blog/using-google-authenticator-asp-net-identity/)）。
 
 > [!NOTE]
-> 使用生成 2FA 代码[基于时间的一次性密码算法](http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)和代码的有效期为 6 分钟。 如果需要多个六分钟，输入代码时，你将收到无效的代码错误消息。
+> 2FA 代码是使用[基于时间的一次性密码算法](http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm)生成的，代码的有效期为6分钟。 如果输入代码所用的时间超过6分钟，则将收到无效的代码错误消息。
 
 <a id="combine"></a>
 
-## <a name="combine-social-and-local-login-accounts"></a>合并的社交和本地登录帐户
+## <a name="combine-social-and-local-login-accounts"></a>合并社会和本地登录帐户
 
-您可以通过单击电子邮件链接组合本地和社交帐户。 按以下顺序&quot; RickAndMSFT@gmail.com &quot;首次创建为本地登录名，但可以作为第一个，一个社交登录创建帐户，然后添加本地登录名。
+可以通过单击电子邮件链接来合并本地帐户和社交帐户。 在下面的序列中 &quot;RickAndMSFT@gmail.com&quot; 最初创建为本地登录名，但你可以先将该帐户创建为社交日志，然后添加本地登录名。
 
 ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image13.png)
 
-单击**管理**链接。 请注意与此帐户关联的 0 外部 （社交登录名）。
+单击 "**管理**" 链接。 请注意与此帐户关联的0个外部（社交登录）。
 
 ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image14.png)
 
-单击服务中的另一个日志的链接，接受应用程序请求。 已合并两个帐户，你将能够使用任一帐户登录。 可能希望用户在身份验证服务中的其社交日志已关闭，或已为其社交帐户失去访问更有可能的情况下添加本地帐户。
+单击 "其他登录服务" 链接，并接受应用请求。 这两个帐户已合并，你将能够使用这两个帐户进行登录。 你可能希望用户在身份验证服务中的社交日志关闭或无法访问其社交帐户时添加本地帐户。
 
-在下图中，Tom 是社交登录 (其中可以看到从**外部登录名：1**的页上显示)。
+在下图中，Tom 是中的社交登录（可从 **外部登录中查看：1** 显示在页面上）。
 
 ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image15.png)
 
-单击**选取一个密码**允许你上添加本地日志使用相同的帐户相关联。
+单击 "**选择密码**" 可添加与同一帐户关联的本地日志。
 
 ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image16.png)
 
 <a id="lock"></a>
 
-## <a name="account-lockout-from-brute-force-attacks"></a>免受暴力攻击的帐户锁定
+## <a name="account-lockout-from-brute-force-attacks"></a>防止暴力破解攻击
 
-可以通过启用用户锁定字典式攻击中的应用上保护帐户。 下面的代码中`ApplicationUserManager Create`方法可配置锁定：
+可以通过启用用户锁定来保护应用上的帐户免遭字典攻击。 `ApplicationUserManager Create` 方法中的以下代码将配置锁定：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample13.cs)]
 
-上面的代码允许进行双因素身份验证的锁定。 尽管可以通过更改启用锁定登录名`shouldLockout`为 true`Login`在 account 控制器的方法，我们建议您不能启用锁定登录名，因为它使帐户遭受[DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack)登录名攻击。 在示例代码中，为管理员帐户中创建禁用锁定`ApplicationDbInitializer Seed`方法：
+上述代码仅启用了双因素身份验证的锁定。 虽然你可以通过在帐户控制器的 `Login` 方法中将 `shouldLockout` 更改为 true 来启用登录名锁定，但建议你不要为登录名启用锁定，因为这会使帐户容易受到[DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack)登录攻击。 在示例代码中，对在 `ApplicationDbInitializer Seed` 方法中创建的管理员帐户禁用锁定：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample14.cs?highlight=19)]
 
-## <a name="requiring-a-user-to-have-a-validated-email-account"></a>要求用户具有验证电子邮件帐户
+## <a name="requiring-a-user-to-have-a-validated-email-account"></a>要求用户具有已验证的电子邮件帐户
 
-下面的代码要求用户可以在登录前具有验证电子邮件帐户：
+以下代码要求用户先获得经过验证的电子邮件帐户，然后才能登录：
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample15.cs?highlight=8-17)]
 
-## <a name="how-signinmanager-checks-for-2fa-requirement"></a>SignInManager 如何检查 2FA 要求
+## <a name="how-signinmanager-checks-for-2fa-requirement"></a>提供对2FA 要求的检查方式
 
-在本地日志和检查，以查看是否已启用 2FA 的社交登录上。 如果启用 2FA，则`SignInManager`登录方法返回`SignInStatus.RequiresVerification`，并将用户重定向到`SendCode`操作方法，它们将需要输入用于完成日志序列中的代码。 如果用户有 RememberMe 设置上的用户本地 cookie`SignInManager`将返回`SignInStatus.Success`，它们不需要经历 2FA。
+本地登录和社交日志均检查是否启用了2FA。 如果启用了2FA，则 `SignInManager` logon 方法返回 `SignInStatus.RequiresVerification`，并且用户将被重定向到 `SendCode` 操作方法，在该方法中，他们必须输入代码以按顺序完成日志。 如果用户在用户本地 cookie 上设置了 RememberMe，则 `SignInManager` 将返回 `SignInStatus.Success`，并且不需要通过2FA。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample16.cs?highlight=20-22)]
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample17.cs?highlight=10-11,17-18)]
 
-下面的代码演示`SendCode`操作方法。 一个[SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)与为用户启用所有 2FA 方法创建。 [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)传递给[DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx)帮助程序，这样用户就可以选择使用 2FA 方法 （通常电子邮件和短信）。
+下面的代码演示 `SendCode` 操作方法。 [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)是使用为用户启用的所有2FA 方法创建的。 [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx)传递给[DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx) helper，使用户可以选择2FA 方法（通常为电子邮件和短信）。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample18.cs)]
 
-用户发送 2FA 方法，一旦`HTTP POST SendCode`调用操作方法时， `SignInManager` 2FA 代码和用户将重定向到的发送`VerifyCode`可在其中输入代码以完成的日志中的操作方法。
+用户发布2FA 方法后，将调用 `HTTP POST SendCode` 操作方法，`SignInManager` 发送2FA 代码，并将用户重定向到 `VerifyCode` 操作方法，用户可以在其中输入代码以完成登录。
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample19.cs?highlight=3,13-14,18)]
 
 ## <a name="2fa-lockout"></a>2FA 锁定
 
-尽管您可以设置帐户锁定登录名的密码尝试失败，这种方法使您的登录名到易受[DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack)锁定。 我们建议仅使用 2FA 使用帐户锁定。 当`ApplicationUserManager`是创建的示例代码设置 2FA 锁定和`MaxFailedAccessAttemptsBeforeLockout`五个。 后 （通过本地帐户或社交帐户） 在用户登录后，存储 2FA 在每次失败的尝试，并且如果达到最大尝试次数，锁定该用户是 5 分钟 (您可以设置时间与锁定`DefaultAccountLockoutTimeSpan`)。
+虽然你可以在登录密码尝试失败时设置帐户锁定，但该方法会使你的登录容易受到[DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack)锁定。 建议仅将帐户锁定用于2FA。 创建 `ApplicationUserManager` 时，示例代码将 2FA `MaxFailedAccessAttemptsBeforeLockout` 锁定设置为5。 用户登录（通过本地帐户或社交帐户）后，每次在2FA 中尝试失败，并且如果达到最大尝试次数，则用户将被锁定5分钟（可以使用 `DefaultAccountLockoutTimeSpan`设置锁定超时时间）。
 
 <a id="addRes"></a>
 
 ## <a name="additional-resources"></a>其他资源
 
-- [ASP.NET 标识建议的资源](../getting-started/aspnet-identity-recommended-resources.md)因此链接标识的博客、 视频、 教程和很好的完整列表。
-- [MVC 5 应用程序使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登录](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)还演示如何将配置文件信息添加到用户表。
-- [ASP.NET MVC 和标识 2.0:了解基础知识](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx)通过 John 输入。
-- [帐户确认和密码恢复与 ASP.NET 标识](account-confirmation-and-password-recovery-with-aspnet-identity.md)
+- [ASP.NET Identity 推荐的资源](../getting-started/aspnet-identity-recommended-resources.md)标识博客、视频、教程和优秀链接的完整列表。
+- [带有 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录的 MVC 5 应用程序](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)还演示如何将配置文件信息添加到用户表中。
+- [ASP.NET MVC 和标识2.0：了解 John Atten 的基础知识](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx)。
+- [帐户确认和密码恢复与 ASP.NET Identity](account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [ASP.NET 标识简介](../getting-started/introduction-to-aspnet-identity.md)
-- [宣布推出 RTM 的 ASP.NET 标识 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) Pranav rastogi 撰写。
-- [ASP.NET 标识 2.0:设置帐户验证和授权的双重](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx)通过 John 输入。
+- [公告 ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) By Pranav RASTOGI 撰写的 RTM。
+- [ASP.NET Identity 2.0：设置帐户验证和由 John Atten](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) 的双重身份验证。
