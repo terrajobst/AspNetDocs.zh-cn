@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
-title: 通过使用带 UpdatePanel (C#) 的弹出控件处理回发 |Microsoft Docs
+title: 使用 UpdatePanel （C#）从 Popup 控件处理回发Microsoft Docs
 author: wenz
-description: AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。 特别注意必须为其拍摄...
+description: AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法，可在激活任何其他控件时触发弹出窗口。 需要特别小心 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6b43822825de37903d6a15c3000ed896faae4d64
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8b9e58d68b3d6c5d01ceaba6c01653e9574b541b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132511"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606328"
 ---
-# <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a><span data-ttu-id="24a14-104">使用带 UpdatePanel 的弹出控件处理回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="24a14-104">Handling Postbacks from A Popup Control With an UpdatePanel (C#)</span></span>
+# <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a><span data-ttu-id="e015a-104">使用带 UpdatePanel 的弹出控件处理回发 (C#)</span><span class="sxs-lookup"><span data-stu-id="e015a-104">Handling Postbacks from A Popup Control With an UpdatePanel (C#)</span></span>
 
-<span data-ttu-id="24a14-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="24a14-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="e015a-105">作者： [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="e015a-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="24a14-106">[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.cs.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="24a14-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.cs.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2CS.pdf)</span></span>
+<span data-ttu-id="e015a-106">[下载代码](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.cs.zip)或[下载 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="e015a-106">[Download Code](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.cs.zip) or [Download PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2CS.pdf)</span></span>
 
-> <span data-ttu-id="24a14-107">AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="24a14-107">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="24a14-108">特别留意具有此类弹出窗口中产生的回发时要执行。</span><span class="sxs-lookup"><span data-stu-id="24a14-108">Special care has to be taken when a postback occurs within such a popup.</span></span>
+> <span data-ttu-id="e015a-107">AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法，可在激活任何其他控件时触发弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="e015a-107">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="e015a-108">在此类弹出窗口中发生回发时，必须特别小心。</span><span class="sxs-lookup"><span data-stu-id="e015a-108">Special care has to be taken when a postback occurs within such a popup.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="24a14-109">概述</span><span class="sxs-lookup"><span data-stu-id="24a14-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="e015a-109">概述</span><span class="sxs-lookup"><span data-stu-id="e015a-109">Overview</span></span>
 
-<span data-ttu-id="24a14-110">AJAX 控件工具包中的 PopupControl 扩展程序提供简单的方法来激活任何其他控件时触发一个弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="24a14-110">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="24a14-111">特别留意具有此类弹出窗口中产生的回发时要执行。</span><span class="sxs-lookup"><span data-stu-id="24a14-111">Special care has to be taken when a postback occurs within such a popup.</span></span>
+<span data-ttu-id="e015a-110">AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法，可在激活任何其他控件时触发弹出窗口。</span><span class="sxs-lookup"><span data-stu-id="e015a-110">The PopupControl extender in the AJAX Control Toolkit offers an easy way to trigger a popup when any other control is activated.</span></span> <span data-ttu-id="e015a-111">在此类弹出窗口中发生回发时，必须特别小心。</span><span class="sxs-lookup"><span data-stu-id="e015a-111">Special care has to be taken when a postback occurs within such a popup.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="24a14-112">步骤</span><span class="sxs-lookup"><span data-stu-id="24a14-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="e015a-112">步骤</span><span class="sxs-lookup"><span data-stu-id="e015a-112">Steps</span></span>
 
-<span data-ttu-id="24a14-113">使用时`PopupControl`带回发，`UpdatePanel`可以防止引起回发页面刷新。</span><span class="sxs-lookup"><span data-stu-id="24a14-113">When using a `PopupControl` with a postback, an `UpdatePanel` can prevent the page refresh caused by the postback.</span></span> <span data-ttu-id="24a14-114">以下标记定义了几个重要的元素：</span><span class="sxs-lookup"><span data-stu-id="24a14-114">The following markup defines a couple of important elements:</span></span>
+<span data-ttu-id="e015a-113">将 `PopupControl` 与回发一起使用时，`UpdatePanel` 可以防止由回发导致的页刷新。</span><span class="sxs-lookup"><span data-stu-id="e015a-113">When using a `PopupControl` with a postback, an `UpdatePanel` can prevent the page refresh caused by the postback.</span></span> <span data-ttu-id="e015a-114">以下标记定义了几个重要元素：</span><span class="sxs-lookup"><span data-stu-id="e015a-114">The following markup defines a couple of important elements:</span></span>
 
-- <span data-ttu-id="24a14-115">一个`ScriptManager`控件，以使 ASP.NET AJAX Control Toolkit 工作原理</span><span class="sxs-lookup"><span data-stu-id="24a14-115">A `ScriptManager` control so that the ASP.NET AJAX Control Toolkit works</span></span>
-- <span data-ttu-id="24a14-116">两个`TextBox`控件，这将触发一个弹出窗口</span><span class="sxs-lookup"><span data-stu-id="24a14-116">Two `TextBox` controls which will both trigger a popup</span></span>
-- <span data-ttu-id="24a14-117">一个`Panel`将充当弹出窗口的控件</span><span class="sxs-lookup"><span data-stu-id="24a14-117">A `Panel` control that will serve as the popup</span></span>
-- <span data-ttu-id="24a14-118">在面板内`Calendar`内嵌入控件`UpdatePanel`控件</span><span class="sxs-lookup"><span data-stu-id="24a14-118">Within the panel, a `Calendar` control is embedded within an `UpdatePanel` control</span></span>
-- <span data-ttu-id="24a14-119">两个`PopupControlExtender`将该面板分配到文本框中的控件</span><span class="sxs-lookup"><span data-stu-id="24a14-119">Two `PopupControlExtender` controls that assign the panel to the text boxes</span></span>
+- <span data-ttu-id="e015a-115">`ScriptManager` 控件以便 ASP.NET AJAX 控件工具包工作</span><span class="sxs-lookup"><span data-stu-id="e015a-115">A `ScriptManager` control so that the ASP.NET AJAX Control Toolkit works</span></span>
+- <span data-ttu-id="e015a-116">两个 `TextBox` 的控件，它们都将触发弹出窗口</span><span class="sxs-lookup"><span data-stu-id="e015a-116">Two `TextBox` controls which will both trigger a popup</span></span>
+- <span data-ttu-id="e015a-117">将用作弹出窗口的 `Panel` 控件</span><span class="sxs-lookup"><span data-stu-id="e015a-117">A `Panel` control that will serve as the popup</span></span>
+- <span data-ttu-id="e015a-118">在面板中，`Calendar` 控件嵌入 `UpdatePanel` 控件中</span><span class="sxs-lookup"><span data-stu-id="e015a-118">Within the panel, a `Calendar` control is embedded within an `UpdatePanel` control</span></span>
+- <span data-ttu-id="e015a-119">两个将面板分配给文本框的 `PopupControlExtender` 控件</span><span class="sxs-lookup"><span data-stu-id="e015a-119">Two `PopupControlExtender` controls that assign the panel to the text boxes</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="24a14-120">请注意，`OnSelectionChanged`属性的`Calendar`控件设置。</span><span class="sxs-lookup"><span data-stu-id="24a14-120">Note that the `OnSelectionChanged` attribute of the `Calendar` control is set.</span></span> <span data-ttu-id="24a14-121">因此当用户选择在日历中的日期，产生的回发和服务器端方法`c1_SelectionChanged()`执行。</span><span class="sxs-lookup"><span data-stu-id="24a14-121">So when the user selects a date within the calendar, a postback occurs and the server-side method `c1_SelectionChanged()` is executed.</span></span> <span data-ttu-id="24a14-122">在该方法中，必须检索和写回文本框中的当前日期。</span><span class="sxs-lookup"><span data-stu-id="24a14-122">Within that method, the current date must be retrieved and written back to the textbox.</span></span>
+<span data-ttu-id="e015a-120">请注意，将设置 `Calendar` 控件的 `OnSelectionChanged` 属性。</span><span class="sxs-lookup"><span data-stu-id="e015a-120">Note that the `OnSelectionChanged` attribute of the `Calendar` control is set.</span></span> <span data-ttu-id="e015a-121">因此，当用户选择日历中的日期时，将发生回发并执行服务器端方法 `c1_SelectionChanged()`。</span><span class="sxs-lookup"><span data-stu-id="e015a-121">So when the user selects a date within the calendar, a postback occurs and the server-side method `c1_SelectionChanged()` is executed.</span></span> <span data-ttu-id="e015a-122">在该方法中，必须检索当前日期并将其写回文本框。</span><span class="sxs-lookup"><span data-stu-id="e015a-122">Within that method, the current date must be retrieved and written back to the textbox.</span></span>
 
-<span data-ttu-id="24a14-123">为此，语法如下所示：首先，代理对象`PopupControlExtender`页面上必须生成。</span><span class="sxs-lookup"><span data-stu-id="24a14-123">The syntax for that is as follows: First of all, a proxy object for the `PopupControlExtender` on the page must be generated.</span></span> <span data-ttu-id="24a14-124">ASP.NET AJAX 控件工具包提供了`GetProxyForCurrentPopup()`方法。</span><span class="sxs-lookup"><span data-stu-id="24a14-124">The ASP.NET AJAX Control Toolkit offers the `GetProxyForCurrentPopup()` method.</span></span> <span data-ttu-id="24a14-125">此方法返回的对象支持`Commit()`方法可将值发送回控件触发的弹出窗口 （不触发方法调用的控件 ！）。</span><span class="sxs-lookup"><span data-stu-id="24a14-125">The object this method returns supports the `Commit()` method which sends a value back to the control that triggered the popup (not the control that triggered the method call!).</span></span> <span data-ttu-id="24a14-126">下面的代码提供的参数作为所选的日期`Commit()`方法，从而导致代码以便将所选的日期写回到文本框中：</span><span class="sxs-lookup"><span data-stu-id="24a14-126">The following code provides the selected date as the argument for the `Commit()` method, causing the code to write the selected date back to the text box:</span></span>
+<span data-ttu-id="e015a-123">的语法如下所示：首先，必须为页上的 `PopupControlExtender` 生成代理对象。</span><span class="sxs-lookup"><span data-stu-id="e015a-123">The syntax for that is as follows: First of all, a proxy object for the `PopupControlExtender` on the page must be generated.</span></span> <span data-ttu-id="e015a-124">ASP.NET AJAX 控件工具包提供 `GetProxyForCurrentPopup()` 方法。</span><span class="sxs-lookup"><span data-stu-id="e015a-124">The ASP.NET AJAX Control Toolkit offers the `GetProxyForCurrentPopup()` method.</span></span> <span data-ttu-id="e015a-125">此方法返回的对象支持 `Commit()` 方法，该方法将值发送回触发弹出窗口的控件（而不是触发方法调用的控件！）。</span><span class="sxs-lookup"><span data-stu-id="e015a-125">The object this method returns supports the `Commit()` method which sends a value back to the control that triggered the popup (not the control that triggered the method call!).</span></span> <span data-ttu-id="e015a-126">下面的代码将所选日期提供为 `Commit()` 方法的参数，从而使代码将所选日期写回文本框：</span><span class="sxs-lookup"><span data-stu-id="e015a-126">The following code provides the selected date as the argument for the `Commit()` method, causing the code to write the selected date back to the text box:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="24a14-127">现在每当您单击日历日期后，所选的日期将显示在关联的文本框中，创建日期选取器控件的当前可在许多网站上。</span><span class="sxs-lookup"><span data-stu-id="24a14-127">Now whenever you click on a calendar date, the selected date appears in the associated text box, creating a date picker control that can currently be found on many websites.</span></span>
+<span data-ttu-id="e015a-127">现在，只要单击日历日期，所选日期就会显示在关联的文本框中，创建当前可以在许多网站上找到的日期选取器控件。</span><span class="sxs-lookup"><span data-stu-id="e015a-127">Now whenever you click on a calendar date, the selected date appears in the associated text box, creating a date picker control that can currently be found on many websites.</span></span>
 
-<span data-ttu-id="24a14-128">[![当用户单击文本框中，将显示日历](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="24a14-128">[![The Calendar appears when the user clicks into the textbox](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)</span></span>
+<span data-ttu-id="e015a-128">[当用户单击文本框时，将显示日历 ![](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="e015a-128">[![The Calendar appears when the user clicks into the textbox](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="24a14-129">当用户单击文本框中，将显示日历 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="24a14-129">The Calendar appears when the user clicks into the textbox ([Click to view full-size image](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image3.png))</span></span>
+<span data-ttu-id="e015a-129">当用户在文本框中单击时，将显示该日历（[单击以查看完全大小的图像](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="e015a-129">The Calendar appears when the user clicks into the textbox ([Click to view full-size image](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image3.png))</span></span>
 
-<span data-ttu-id="24a14-130">[![单击某个日期将其放入文本框](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="24a14-130">[![Clicking on a date puts it in the textbox](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)</span></span>
+<span data-ttu-id="e015a-130">[![单击日期会将其放在文本框中。](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="e015a-130">[![Clicking on a date puts it in the textbox](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image4.png)</span></span>
 
-<span data-ttu-id="24a14-131">单击某个日期将其放在文本框中 ([单击此项可查看原尺寸图像](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="24a14-131">Clicking on a date puts it in the textbox ([Click to view full-size image](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image6.png))</span></span>
+<span data-ttu-id="e015a-131">单击某个日期会将其放在文本框中（[单击以查看完全大小的图像](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image6.png)）</span><span class="sxs-lookup"><span data-stu-id="e015a-131">Clicking on a date puts it in the textbox ([Click to view full-size image](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs/_static/image6.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="24a14-132">[上一页](using-multiple-popup-controls-cs.md)
-> [下一页](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)</span><span class="sxs-lookup"><span data-stu-id="24a14-132">[Previous](using-multiple-popup-controls-cs.md)
+> <span data-ttu-id="e015a-132">[上一页](using-multiple-popup-controls-cs.md)
+> [下一页](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)</span><span class="sxs-lookup"><span data-stu-id="e015a-132">[Previous](using-multiple-popup-controls-cs.md)
 [Next](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)</span></span>
