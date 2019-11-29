@@ -1,72 +1,72 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
-title: 创建分级控件 (VB) |Microsoft Docs
+title: 创建分级控件（VB） |Microsoft Docs
 author: wenz
-description: 很多网站，电子商务到社区站点，从其用户提供到速率项目或项。 这通常需要一些编码工作，但我们确实有...
+description: 许多网站（从电子商务到社区站点）都提供了对文章或项目进行评级的用户。 这通常需要进行一些编码工作，但我们有 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 6d0d70f4-725e-4258-8ae8-24a6ba1ddbf7
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 553eeaeedf20aee9217acb24786c0a587a409655
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 08e245edfe73db4e3896db51151e5d7a0fa9697c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125022"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74611524"
 ---
-# <a name="creating-a-rating-control-vb"></a><span data-ttu-id="d8b00-104">创建分级控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="d8b00-104">Creating a Rating Control (VB)</span></span>
+# <a name="creating-a-rating-control-vb"></a><span data-ttu-id="90e72-104">创建分级控件 (VB)</span><span class="sxs-lookup"><span data-stu-id="90e72-104">Creating a Rating Control (VB)</span></span>
 
-<span data-ttu-id="d8b00-105">通过[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="d8b00-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="90e72-105">作者： [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="90e72-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="d8b00-106">[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="d8b00-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.vb.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0VB.pdf)</span></span>
+<span data-ttu-id="90e72-106">[下载代码](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.vb.zip)或[下载 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="90e72-106">[Download Code](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.vb.zip) or [Download PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0VB.pdf)</span></span>
 
-> <span data-ttu-id="d8b00-107">很多网站，电子商务到社区站点，从其用户提供到速率项目或项。</span><span class="sxs-lookup"><span data-stu-id="d8b00-107">Many websites, from e-commerce to community sites, offer their users to rate articles or items.</span></span> <span data-ttu-id="d8b00-108">这通常需要一些编码工作，但我们确实为我们提供有控件工具包。</span><span class="sxs-lookup"><span data-stu-id="d8b00-108">This usually requires some coding effort, but we do have the Control Toolkit to our disposal.</span></span>
+> <span data-ttu-id="90e72-107">许多网站（从电子商务到社区站点）都提供了对文章或项目进行评级的用户。</span><span class="sxs-lookup"><span data-stu-id="90e72-107">Many websites, from e-commerce to community sites, offer their users to rate articles or items.</span></span> <span data-ttu-id="90e72-108">这通常需要进行一些编码工作，但我们会提供控制工具包来处理。</span><span class="sxs-lookup"><span data-stu-id="90e72-108">This usually requires some coding effort, but we do have the Control Toolkit to our disposal.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="d8b00-109">概述</span><span class="sxs-lookup"><span data-stu-id="d8b00-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="90e72-109">概述</span><span class="sxs-lookup"><span data-stu-id="90e72-109">Overview</span></span>
 
-<span data-ttu-id="d8b00-110">很多网站，电子商务到社区站点，从其用户提供到速率项目或项。</span><span class="sxs-lookup"><span data-stu-id="d8b00-110">Many websites, from e-commerce to community sites, offer their users to rate articles or items.</span></span> <span data-ttu-id="d8b00-111">这通常需要一些编码工作，但我们确实为我们提供有控件工具包。</span><span class="sxs-lookup"><span data-stu-id="d8b00-111">This usually requires some coding effort, but we do have the Control Toolkit to our disposal.</span></span>
+<span data-ttu-id="90e72-110">许多网站（从电子商务到社区站点）都提供了对文章或项目进行评级的用户。</span><span class="sxs-lookup"><span data-stu-id="90e72-110">Many websites, from e-commerce to community sites, offer their users to rate articles or items.</span></span> <span data-ttu-id="90e72-111">这通常需要进行一些编码工作，但我们会提供控制工具包来处理。</span><span class="sxs-lookup"><span data-stu-id="90e72-111">This usually requires some coding effort, but we do have the Control Toolkit to our disposal.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="d8b00-112">步骤</span><span class="sxs-lookup"><span data-stu-id="d8b00-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="90e72-112">步骤</span><span class="sxs-lookup"><span data-stu-id="90e72-112">Steps</span></span>
 
-<span data-ttu-id="d8b00-113">首先，需要 （至少） 两种类型的映像： 一个用于已填充评级项和一个用于空评级项。</span><span class="sxs-lookup"><span data-stu-id="d8b00-113">First of all, you need (at least) two kinds of images: one for a filled out rating item, and one for an empty rating item.</span></span> <span data-ttu-id="d8b00-114">评级项通常是一个星号或笑脸。</span><span class="sxs-lookup"><span data-stu-id="d8b00-114">A rating item is usually a star or a smiley.</span></span> <span data-ttu-id="d8b00-115">对于此方案，作为本教程中的源的代码下载内容的一部分找到三个文件、 smiley.png 和 empty.png 和笑脸 done.png。</span><span class="sxs-lookup"><span data-stu-id="d8b00-115">For this scenario, you find three files, smiley.png and empty.png and smiley-done.png as part of the source code downloads for this tutorial.</span></span>
+<span data-ttu-id="90e72-113">首先，你至少需要两种类型的映像：一个用于填写分级项，一个用于空分级项。</span><span class="sxs-lookup"><span data-stu-id="90e72-113">First of all, you need (at least) two kinds of images: one for a filled out rating item, and one for an empty rating item.</span></span> <span data-ttu-id="90e72-114">分级项通常为星形或笑脸。</span><span class="sxs-lookup"><span data-stu-id="90e72-114">A rating item is usually a star or a smiley.</span></span> <span data-ttu-id="90e72-115">对于这种情况，可在本教程的源代码下载内容中找到三个文件： "笑脸" 和 ".png" 和 "smiley-done"。</span><span class="sxs-lookup"><span data-stu-id="90e72-115">For this scenario, you find three files, smiley.png and empty.png and smiley-done.png as part of the source code downloads for this tutorial.</span></span>
 
-<span data-ttu-id="d8b00-116">然后，创建一个新的 ASP.NET 文件并开始添加`ScriptManager`对它控制：</span><span class="sxs-lookup"><span data-stu-id="d8b00-116">Then, create a new ASP.NET file and start with adding a `ScriptManager` control to it:</span></span>
+<span data-ttu-id="90e72-116">然后，创建一个新的 ASP.NET 文件，并从向其添加 `ScriptManager` 控件开始：</span><span class="sxs-lookup"><span data-stu-id="90e72-116">Then, create a new ASP.NET file and start with adding a `ScriptManager` control to it:</span></span>
 
 [!code-aspx[Main](creating-a-rating-control-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="d8b00-117">然后，添加`Rating`ASP.NET AJAX 控件工具包中的控件。</span><span class="sxs-lookup"><span data-stu-id="d8b00-117">Then, add the `Rating` control from the ASP.NET AJAX Control Toolkit.</span></span> <span data-ttu-id="d8b00-118">以下属性需要为此示例设置：</span><span class="sxs-lookup"><span data-stu-id="d8b00-118">The following attributes need to be set for this example:</span></span>
+<span data-ttu-id="90e72-117">然后，从 ASP.NET AJAX 控件工具包添加 `Rating` 控件。</span><span class="sxs-lookup"><span data-stu-id="90e72-117">Then, add the `Rating` control from the ASP.NET AJAX Control Toolkit.</span></span> <span data-ttu-id="90e72-118">需要为此示例设置以下属性：</span><span class="sxs-lookup"><span data-stu-id="90e72-118">The following attributes need to be set for this example:</span></span>
 
-- <span data-ttu-id="d8b00-119">`CurrentRating` 若要使用初始分级</span><span class="sxs-lookup"><span data-stu-id="d8b00-119">`CurrentRating` the initial rating to be used</span></span>
-- <span data-ttu-id="d8b00-120">`MaxRating` 最大评级</span><span class="sxs-lookup"><span data-stu-id="d8b00-120">`MaxRating` the maximum rating</span></span>
-- <span data-ttu-id="d8b00-121">`EmptyStarCssClass` 要使用的分级项 (star) 时的 CSS 类为空</span><span class="sxs-lookup"><span data-stu-id="d8b00-121">`EmptyStarCssClass` the CSS class to use when a rating item ( star ) is empty</span></span>
-- <span data-ttu-id="d8b00-122">`FilledStarCssClass` 填写要使用的分级项 (star) 时的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="d8b00-122">`FilledStarCssClass` the CSS class to use when a rating item ( star ) is filled out</span></span>
-- <span data-ttu-id="d8b00-123">`StarCssClass` 要使用的可见状态的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="d8b00-123">`StarCssClass` the CSS class to use for a visible stat</span></span>
-- <span data-ttu-id="d8b00-124">`WaitingStarCssClass` 要使用而星评级发送回发到服务器的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="d8b00-124">`WaitingStarCssClass` the CSS class to use while a star rating is sent back to the server</span></span>
+- <span data-ttu-id="90e72-119">`CurrentRating` 要使用的初始分级</span><span class="sxs-lookup"><span data-stu-id="90e72-119">`CurrentRating` the initial rating to be used</span></span>
+- <span data-ttu-id="90e72-120">`MaxRating` 最大分级</span><span class="sxs-lookup"><span data-stu-id="90e72-120">`MaxRating` the maximum rating</span></span>
+- <span data-ttu-id="90e72-121">`EmptyStarCssClass` 要在分级项（星号）为空时使用的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="90e72-121">`EmptyStarCssClass` the CSS class to use when a rating item ( star ) is empty</span></span>
+- <span data-ttu-id="90e72-122">`FilledStarCssClass` 填写分级项（星号）时要使用的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="90e72-122">`FilledStarCssClass` the CSS class to use when a rating item ( star ) is filled out</span></span>
+- <span data-ttu-id="90e72-123">`StarCssClass` 要用于可见状态的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="90e72-123">`StarCssClass` the CSS class to use for a visible stat</span></span>
+- <span data-ttu-id="90e72-124">`WaitingStarCssClass` 在向服务器发送星型分级时要使用的 CSS 类</span><span class="sxs-lookup"><span data-stu-id="90e72-124">`WaitingStarCssClass` the CSS class to use while a star rating is sent back to the server</span></span>
 
-<span data-ttu-id="d8b00-125">下面是用于创建具有五个评级控件的标记和其中无填充，最初的项 （表情符号）：</span><span class="sxs-lookup"><span data-stu-id="d8b00-125">And here is the markup which creates a rating control with five items (smileys) of which none is filled out initially:</span></span>
+<span data-ttu-id="90e72-125">下面是用于创建分级控件的标记，其中五个项（smileys）最初未填写：</span><span class="sxs-lookup"><span data-stu-id="90e72-125">And here is the markup which creates a rating control with five items (smileys) of which none is filled out initially:</span></span>
 
 [!code-aspx[Main](creating-a-rating-control-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="d8b00-126">三个引用的 CSS 类现在需要显示适当的图像文件，这是易于使用 CSS 来执行操作：</span><span class="sxs-lookup"><span data-stu-id="d8b00-126">The three referenced CSS classes now need to show the appropriate image files, which is easy to do using CSS:</span></span>
+<span data-ttu-id="90e72-126">这三个引用的 CSS 类现在需要显示适当的图像文件，这是使用 CSS 轻松完成的：</span><span class="sxs-lookup"><span data-stu-id="90e72-126">The three referenced CSS classes now need to show the appropriate image files, which is easy to do using CSS:</span></span>
 
 [!code-css[Main](creating-a-rating-control-vb/samples/sample3.css)]
 
-<span data-ttu-id="d8b00-127">请确保提供的宽度和高度的三个映像，否则显示可能看起来有点 messed 向上。</span><span class="sxs-lookup"><span data-stu-id="d8b00-127">Make sure that you provide the width and height of the three images, otherwise the display may look a bit messed up.</span></span>
+<span data-ttu-id="90e72-127">请确保提供三个图像的宽度和高度，否则显示可能会混乱了 ...。</span><span class="sxs-lookup"><span data-stu-id="90e72-127">Make sure that you provide the width and height of the three images, otherwise the display may look a bit messed up.</span></span>
 
-<span data-ttu-id="d8b00-128">最后，分级的结果应是向用户显示 （或至少保存在数据库中）。</span><span class="sxs-lookup"><span data-stu-id="d8b00-128">Finally, the result of the rating should be displayed to the user (or, at least saved in a database).</span></span> <span data-ttu-id="d8b00-129">因此，添加用于输出的回发到服务器分级窗体的文本消息和一个提交按钮的标签：</span><span class="sxs-lookup"><span data-stu-id="d8b00-129">So add a label for the output of a text message and a submit button to post back the rating form to the server:</span></span>
+<span data-ttu-id="90e72-128">最后，应向用户显示分级的结果（或者至少保存在数据库中）。</span><span class="sxs-lookup"><span data-stu-id="90e72-128">Finally, the result of the rating should be displayed to the user (or, at least saved in a database).</span></span> <span data-ttu-id="90e72-129">因此，请为文本消息的输出添加标签，并添加一个 "提交" 按钮，以将评分形式回发到服务器：</span><span class="sxs-lookup"><span data-stu-id="90e72-129">So add a label for the output of a text message and a submit button to post back the rating form to the server:</span></span>
 
 [!code-aspx[Main](creating-a-rating-control-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="d8b00-130">在服务器端代码中，访问分级控件通过其`ID`，然后访问其`CurrentRating`属性的所选的评级项目，在我们的示例值介于 0 到 5 之间的数。</span><span class="sxs-lookup"><span data-stu-id="d8b00-130">In the server-side code, access the Rating control via its `ID` and then access its `CurrentRating` property which is the number of the selected rating items, in our example a value between 0 and 5.</span></span>
+<span data-ttu-id="90e72-130">在服务器端代码中，通过其 `ID` 访问分级控制，然后访问其 `CurrentRating` 属性，该属性是所选分级项的编号，在本例中为0到5之间的值。</span><span class="sxs-lookup"><span data-stu-id="90e72-130">In the server-side code, access the Rating control via its `ID` and then access its `CurrentRating` property which is the number of the selected rating items, in our example a value between 0 and 5.</span></span>
 
 [!code-aspx[Main](creating-a-rating-control-vb/samples/sample5.aspx)]
 
-<span data-ttu-id="d8b00-131">保存页面，并将其加载到你的浏览器。</span><span class="sxs-lookup"><span data-stu-id="d8b00-131">Save the page and load it into your browser.</span></span> <span data-ttu-id="d8b00-132">将鼠标悬停 （最初为空） 分级项，当 JavaScript 效果：分级的更改。</span><span class="sxs-lookup"><span data-stu-id="d8b00-132">When you hover over the (initially empty) rating items, a JavaScript effect occurs: The rating changes.</span></span> <span data-ttu-id="d8b00-133">单击组星级，保留当前的分级。</span><span class="sxs-lookup"><span data-stu-id="d8b00-133">When you click on the set of stars, the current rating is retained.</span></span> <span data-ttu-id="d8b00-134">最后，当用户提交窗体，服务器端代码将输出的所选的分级。</span><span class="sxs-lookup"><span data-stu-id="d8b00-134">Finally, when you submit the form, the server-side code outputs the selected rating.</span></span>
+<span data-ttu-id="90e72-131">保存页面并将其加载到浏览器中。</span><span class="sxs-lookup"><span data-stu-id="90e72-131">Save the page and load it into your browser.</span></span> <span data-ttu-id="90e72-132">当你将鼠标悬停在（初始为空）分级项上时，将发生 JavaScript 影响：评级发生变化。</span><span class="sxs-lookup"><span data-stu-id="90e72-132">When you hover over the (initially empty) rating items, a JavaScript effect occurs: The rating changes.</span></span> <span data-ttu-id="90e72-133">单击星形组后，将保留当前评级。</span><span class="sxs-lookup"><span data-stu-id="90e72-133">When you click on the set of stars, the current rating is retained.</span></span> <span data-ttu-id="90e72-134">最后，当你提交窗体时，服务器端代码会输出所选评级。</span><span class="sxs-lookup"><span data-stu-id="90e72-134">Finally, when you submit the form, the server-side code outputs the selected rating.</span></span>
 
-<span data-ttu-id="d8b00-135">[![创建具有最少的代码的分级系统](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="d8b00-135">[![Creating a rating system with minimal code](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)</span></span>
+<span data-ttu-id="90e72-135">[![使用最小代码创建分级系统](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="90e72-135">[![Creating a rating system with minimal code](creating-a-rating-control-vb/_static/image2.png)](creating-a-rating-control-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="d8b00-136">创建分级系统具有最少的代码 ([单击此项可查看原尺寸图像](creating-a-rating-control-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="d8b00-136">Creating a rating system with minimal code ([Click to view full-size image](creating-a-rating-control-vb/_static/image3.png))</span></span>
+<span data-ttu-id="90e72-136">使用最小代码创建分级系统（[单击以查看完全大小的图像](creating-a-rating-control-vb/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="90e72-136">Creating a rating system with minimal code ([Click to view full-size image](creating-a-rating-control-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="d8b00-137">上一篇</span><span class="sxs-lookup"><span data-stu-id="d8b00-137">Previous</span></span>](creating-a-rating-control-cs.md)
+> [<span data-ttu-id="90e72-137">上一部分</span><span class="sxs-lookup"><span data-stu-id="90e72-137">Previous</span></span>](creating-a-rating-control-cs.md)
