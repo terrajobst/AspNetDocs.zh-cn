@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
-title: 第 1 部分：概述和创建项目 |Microsoft Docs
+title: 第1部分：概述和创建项目 |Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,86 +8,86 @@ ms.date: 07/03/2012
 ms.assetid: 94421d86-68c4-4471-bf5f-82d654a17252
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d5a72dbfe1530e457ec16df5c7d50b03b5f63502
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a76a18f2bd95969358452085ef342fdca8a386e2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384209"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600326"
 ---
-# <a name="part-1-overview-and-creating-the-project"></a>第 1 部分：概述和创建项目
+# <a name="part-1-overview-and-creating-the-project"></a>第1部分：概述和创建项目
 
-通过[Mike Wasson](https://github.com/MikeWasson)
+作者： [Mike Wasson](https://github.com/MikeWasson)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
+[下载完成的项目](https://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
 
-Entity Framework 是一个对象/关系映射框架。 它将在代码中的域对象映射到关系数据库中的实体。 大多数情况下，您无需担心数据库层，因为实体框架将为您处理它。 你的代码操作对象，并更改保存到数据库。
+实体框架是对象/关系映射框架。 它将代码中的域对象映射到关系数据库中的实体。 大多数情况下，你不必担心数据库层，因为实体框架会为你处理此层。 你的代码将操作这些对象，而更改将保存到数据库中。
 
-## <a name="about-the-tutorial"></a>有关本教程
+## <a name="about-the-tutorial"></a>关于教程
 
-在本教程中，将创建一个简单的应用商店应用程序。 有两个主要部分： 应用程序。 普通用户可以查看产品，并创建订单：
+在本教程中，你将创建一个简单的存储区应用程序。 应用程序有两个主要部分。 普通用户可以查看产品和创建订单：
 
 ![](using-web-api-with-entity-framework-part-1/_static/image1.png)
 
-管理员可以创建、 删除或编辑产品：
+管理员可以创建、删除或编辑产品：
 
 ![](using-web-api-with-entity-framework-part-1/_static/image2.png)
 
-## <a name="skills-youll-learn"></a>你将学习的技能
+## <a name="skills-youll-learn"></a>将要学到的技能
 
-下面是你将了解：
+学习内容：
 
-- 如何使用实体框架和 ASP.NET Web API。
-- 如何使用 knockout.js 创建动态客户端 UI。
-- 如何使用与 Web API 的窗体身份验证来对用户进行身份验证。
+- 如何对 ASP.NET Web API 使用实体框架。
+- 如何使用挖空创建动态客户端 UI。
+- 如何使用 Web API 的 forms 身份验证对用户进行身份验证。
 
-虽然本教程是自包含，但你可能想要先阅读以下教程：
+尽管本教程是独立的，但你可能希望先阅读以下教程：
 
-- [第一个 ASP.NET Web API](../../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
-- [创建 Web API 支持 CRUD 操作](../creating-a-web-api-that-supports-crud-operations.md)
+- [你的第一个 ASP.NET Web API](../../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
+- [创建支持 CRUD 操作的 Web API](../creating-a-web-api-that-supports-crud-operations.md)
 
-有一定的了解[ASP.NET MVC](../../../../mvc/index.md)也会有所帮助。
+[ASP.NET MVC](../../../../mvc/index.md)的一些知识也很有用。
 
 ## <a name="overview"></a>概述
 
-在高级别中，下面是应用程序的体系结构：
+从较高层次来看，此应用程序的体系结构如下：
 
-- ASP.NET MVC 为客户端生成的 HTML 页。
-- ASP.NET Web API 公开的数据 （产品和订单） 的 CRUD 操作。
-- 实体框架将转换成数据库的实体使用 Web API 的 C# 模型。
+- ASP.NET MVC 为客户端生成 HTML 页面。
+- ASP.NET Web API 公开对数据（产品和订单）的 CRUD 操作。
+- 实体框架将 Web C# API 使用的模型转换为数据库实体。
 
 ![](using-web-api-with-entity-framework-part-1/_static/image3.png)
 
-下图显示了如何在应用程序的各层表示域对象：数据库层、 对象模型，以及最后连网格式，用于将数据传输到客户端通过 HTTP。
+下图显示了如何在应用程序的各个层上表示域对象：数据库层、对象模型，最后是用于通过 HTTP 将数据传输到客户端的网络格式。
 
 ![](using-web-api-with-entity-framework-part-1/_static/image4.png)
 
 ## <a name="create-the-visual-studio-project"></a>创建 Visual Studio 项目
 
-可以创建使用 Visual Web Developer 速成版或 Visual Studio 的完整版本的教程项目。
+您可以使用 Visual Web Developer Express 或完整版 Visual Studio 创建教程项目。
 
-从**启动**页上，单击**新项目**。
+从**起始**页中，单击 "**新建项目**"。
 
-在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 命名项目"ProductStore"，然后单击**确定**。
+在 "**模板**" 窗格中，选择 "**已安装模板**"，然后展开**视觉对象C#** 节点。 在 **" C#视觉对象**" 下选择 " **Web**"。 在项目模板列表中，选择 " **ASP.NET MVC 4 Web 应用程序**"。 将项目命名为 "ProductStore"，然后单击 **"确定**"。
 
 ![](using-web-api-with-entity-framework-part-1/_static/image5.png)
 
-在中**新的 ASP.NET MVC 4 项目**对话框中，选择**Internet 应用程序**然后单击**确定**。
+在 "**新建 ASP.NET MVC 4 项目**" 对话框中，选择 " **Internet 应用程序**"，然后单击 **"确定"** 。
 
 ![](using-web-api-with-entity-framework-part-1/_static/image6.png)
 
-"Internet 应用程序"模板创建支持窗体身份验证的 ASP.NET MVC 应用程序。 如果您运行应用程序现在，它已包含一些功能：
+"Internet 应用程序" 模板创建一个支持窗体身份验证的 ASP.NET MVC 应用程序。 如果现在运行应用程序，该应用程序已经有一些功能：
 
-- 新用户可以通过单击右上角的"注册"链接注册。
-- 已注册的用户可以通过单击"登录"链接登录。
+- 新用户可以通过单击右上角的 "注册" 链接进行注册。
+- 注册用户可以通过单击 "登录" 链接登录。
 
-会自动创建的数据库中保留成员身份信息。 有关在 ASP.NET MVC 中的窗体身份验证的详细信息，请参阅[演练：在 ASP.NET MVC 中使用窗体身份验证](https://msdn.microsoft.com/library/ff398049(VS.98).aspx)。
+成员资格信息保留在自动创建的数据库中。 有关 ASP.NET MVC 中 forms 身份验证的详细信息，请参阅[演练：在 ASP.NET mvc 中使用 Forms 身份验证](https://msdn.microsoft.com/library/ff398049(VS.98).aspx)。
 
 ## <a name="update-the-css-file"></a>更新 CSS 文件
 
-此步骤是表面的但它将使呈现等早期的屏幕截图的页。
+此步骤是表面的，但它会使页面呈现为之前的屏幕快照。
 
-在解决方案资源管理器，展开内容文件夹并打开名为 Site.css 文件。 添加以下 CSS 样式：
+在解决方案资源管理器中，展开 "Content" 文件夹，然后打开名为 "web.config" 的文件。 添加以下 CSS 样式：
 
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 

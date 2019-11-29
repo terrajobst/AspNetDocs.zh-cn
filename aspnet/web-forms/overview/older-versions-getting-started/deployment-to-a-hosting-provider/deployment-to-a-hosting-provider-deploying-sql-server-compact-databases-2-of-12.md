@@ -1,242 +1,242 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
-title: 使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署：部署 SQL Server Compact 数据库-2 的 12 |Microsoft Docs
+title: 使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：部署 SQL Server Compact 数据库-2 个，共12个 |Microsoft Docs
 author: tdykstra
-description: 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的 SQL Server Compact 数据库使用包含的 Visual Stu...
+description: 本系列教程说明如何使用 Visual Stu 部署（发布）包含 SQL Server Compact 数据库的 ASP.NET web 应用程序项目。
 ms.author: riande
 ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: b265d210ff3b1eeb8697a973cc245f6c97b3eb07
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 56ceabc79947967846d342354fd033510be5f05a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134181"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74625546"
 ---
-# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>使用 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer 将 ASP.NET Web 应用程序部署：部署 SQL Server Compact 数据库-2 的 12
+# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：部署 SQL Server Compact 数据库-2 of 12
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-[下载初学者项目](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
+[下载初学者项目](https://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
-> 本系列教程演示如何将部署 （发布） ASP.NET web 应用程序项目的情况下使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web 包含 SQL Server Compact 数据库。 如果在安装 Web 发布更新，还可以使用 Visual Studio 2010。 该系列的简介，请参阅[系列中的第一个教程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
+> 本系列教程介绍了如何使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web，部署（发布）包含 SQL Server Compact 数据库的 ASP.NET web 应用程序项目。 如果安装 Web 发布更新，还可以使用 Visual Studio 2010。 有关系列的简介，请参阅本[系列中的第一个教程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 > 
-> 显示了 Visual Studio 2012 RC 版后引入的部署功能，演示如何部署 SQL Server Compact 以外的 SQL Server 版本并显示了如何将部署到 Azure 应用服务 Web 应用的教程，请参阅[ASP.NET Web 部署使用 Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md)。
+> 有关演示 Visual Studio 2012 RC 版本后引入的部署功能的教程，演示如何部署 SQL Server Compact 以外的 SQL Server 版本，并演示如何部署到 Azure App Service Web 应用，请参阅[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)。
 
 ## <a name="overview"></a>概述
 
-本教程演示如何设置两个 SQL Server Compact 数据库和用于部署的数据库引擎。
+本教程介绍如何设置两个 SQL Server Compact 数据库和用于部署的数据库引擎。
 
-用于数据库访问，Contoso 大学应用程序需要以下软件，因为它不包含在.NET Framework 必须与应用程序部署：
+对于数据库访问，Contoso 大学应用程序需要以下必须与应用程序一起部署的软件，因为它未包含在 .NET Framework 中：
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/en/us/editions/compact.aspx) （数据库引擎）。
-- [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) （启用 ASP.NET 成员资格系统，以使用 SQL Server Compact）
-- [实体框架 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)（代码首次进行迁移）。
+- [ASP.NET 通用提供程序](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx)（使 ASP.NET 成员资格系统可以使用 SQL Server Compact）
+- [实体框架 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)（Code First 迁移）。
 
-数据库结构和一些 （并非所有） 的应用程序的两个中的数据还必须部署数据库。 通常情况下，开发应用程序，您不想要将部署到实时站点的数据库中输入测试数据。 但是，您还可以输入一些要部署的生产数据。 在本教程中将配置 Contoso University 项目，以便在部署时，所需的软件和正确的数据将包括在内。
+数据库结构和应用程序的两个数据库中的某些（而非全部）数据也必须部署。 通常，在开发应用程序时，您可以将测试数据输入到不想部署到实时站点的数据库中。 不过，您也可以输入一些您要部署的生产数据。 在本教程中，你将配置 Contoso 大学项目，以便在部署时包括所需的软件和正确的数据。
 
-提醒：如果收到错误消息或某些操作无法按完成以下教程，请务必检查[故障排除页](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)。
+提醒：如果你收到一条错误消息或在你完成本教程时无法正常工作，请务必查看[故障排除页](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md)。
 
-## <a name="sql-server-compact-versus-sql-server-express"></a>与 SQL Server Express 的 SQL Server Compact
+## <a name="sql-server-compact-versus-sql-server-express"></a>SQL Server Compact 与 SQL Server Express
 
-示例应用程序使用 SQL Server Compact 4.0。 此数据库引擎是网站; 对于相对较新的选项早期版本的 SQL Server Compact 在 web 托管环境中无效。 SQL Server Compact 提供了与使用 SQL Server Express 进行开发和部署到完整的 SQL Server 的较常见的方案相比的几个优点。 具体取决于您选择托管提供商的情况下，SQL Server Compact 可能更便宜，若要部署，因为有些提供商会收取额外支持完整的 SQL Server 数据库。 因为您可以作为 web 应用程序的一部分部署的数据库引擎本身没有 SQL Server Compact 的无需额外付费。
+示例应用程序使用 SQL Server Compact 4.0。 此数据库引擎是网站的一个相对全新的选项;早期版本的 SQL Server Compact 在 web 宿主环境中不起作用。 与使用 SQL Server Express 进行开发并将其部署到完整 SQL Server 更常见的方案相比，SQL Server Compact 提供了几个优点。 根据所选的托管提供程序，SQL Server Compact 可能会更便宜，因为某些提供程序需要额外付费来支持完全 SQL Server 的数据库。 SQL Server Compact 不会额外收取费用，因为你可以在 web 应用程序中部署数据库引擎本身。
 
-但是，您还应了解其限制。 SQL Server Compact 不支持存储的过程、 触发器、 视图或复制。 (不支持的 SQL Server Compact 的 SQL Server 功能的完整列表，请参阅[差异之间 SQL Server Compact 和 SQL Server](https://msdn.microsoft.com/library/bb896140.aspx)。)此外，一些可用于处理架构和 SQL Server Express 和 SQL Server 数据库中的数据的工具不起作用 SQL Server Compact。 例如，您不能使用 SQL Server Management Studio 或 SQL Server Data Tools 在 Visual Studio 中使用 SQL Server Compact 数据库。 必须使用 SQL Server Compact 数据库的其他选项：
+但是，您还应知道其局限性。 SQL Server Compact 不支持存储过程、触发器、视图或复制。 （有关 SQL Server Compact 不支持 SQL Server 功能的完整列表，请参阅[SQL Server Compact 和 SQL Server 之间的差异](https://msdn.microsoft.com/library/bb896140.aspx)。）此外，某些可用于在 SQL Server Express 和 SQL Server 数据库中操作架构和数据的工具不能与 SQL Server Compact 一起使用。 例如，不能在 Visual Studio 中将 SQL Server Management Studio 或 SQL Server Data Tools 与 SQL Server Compact 数据库一起使用。 您可以使用其他选项来处理 SQL Server Compact 数据库：
 
-- 在 Visual Studio 中，为 SQL Server Compact 提供了有限的数据库操作功能，可以使用服务器资源管理器。
-- 可以使用的数据库操作功能[WebMatrix](https://www.microsoft.com/web/webmatrix/)，其中包含多个功能比服务器资源管理器。
-- 可以使用相对全功能的第三方或开源工具，如[SQL Server Compact Toolbox](https://github.com/ErikEJ/SqlCeToolbox)并[SQL Compact 数据和架构脚本实用程序](https://github.com/ErikEJ/SqlCeToolbox)。
-- 可以编写和运行自己的 DDL （数据定义语言） 脚本来处理数据库架构。
+- 你可以在 Visual Studio 中使用服务器资源管理器，这为 SQL Server Compact 提供了有限的数据库操作功能。
+- 您可以使用[WebMatrix](https://www.microsoft.com/web/webmatrix/)的数据库操作功能，该功能的功能比服务器资源管理器多。
+- 您可以使用相对功能最齐全的第三方或开源工具，如[SQL Server Compact 工具箱](https://github.com/ErikEJ/SqlCeToolbox)和[SQL Compact 数据和架构脚本实用工具](https://github.com/ErikEJ/SqlCeToolbox)。
+- 您可以编写和运行自己的 DDL （数据定义语言）脚本来处理数据库架构。
 
-你可以开始使用 SQL Server Compact，然后再升级随着需求的发展更高版本。 本系列教程的后续教程演示如何将到 SQL Server Express 和 SQL Server 迁移 SQL Server Compact 中。 但是，如果要创建新的应用程序并希望在不久的将来需要 SQL Server，则可能最好使用 SQL Server 或 SQL Server Express 启动。
+你可以从 SQL Server Compact 开始，然后随着需求的发展，稍后再升级。 本系列后面的教程介绍如何从 SQL Server Compact 迁移到 SQL Server Express 并 SQL Server。 但是，如果你要创建新的应用程序并希望在不久的将来需要 SQL Server，则最好是从 SQL Server 或 SQL Server Express 开始。
 
-## <a name="configuring-the-sql-server-compact-database-engine-for-deployment"></a>配置用于部署的 SQL Server Compact 数据库引擎
+## <a name="configuring-the-sql-server-compact-database-engine-for-deployment"></a>为部署配置 SQL Server Compact 数据库引擎
 
-通过安装以下 NuGet 包添加了 Contoso 大学应用程序中的数据访问所需的软件：
+通过安装以下 NuGet 包，添加了 Contoso 大学应用程序中数据访问所需的软件：
 
 - [SqlServerCompact](http://nuget.org/List/Packages/SqlServerCompact)
-- [System.Web.Providers](http://nuget.org/List/Packages/System.Web.Providers) （ASP.NET 通用提供程序）
+- [System.web. Providers](http://nuget.org/List/Packages/System.Web.Providers) （ASP.NET 通用提供程序）
 - [EntityFramework](http://nuget.org/List/Packages/EntityFramework)
-- [EntityFramework.SqlServerCompact](http://nuget.org/List/Packages/EntityFramework.sqlservercompact)
+- [EntityFramework. SqlServerCompact](http://nuget.org/List/Packages/EntityFramework.sqlservercompact)
 
-链接指向当前版本的这些包，这可能是比本教程中下载的初学者项目中安装的内容。 对于向宿主提供程序的部署，请确保您使用实体框架 5.0 或更高版本。 早期版本的 Code First 迁移需要完全信任权限，并在许多主机托管提供商应用程序将运行于中等信任级别。 中等信任级别的详细信息，请参阅[作为测试环境部署到 IIS](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)教程。
+这些链接指向这些包的当前版本，这些包可能比你在本教程中下载的初学者项目中安装的版本更新。 若要部署到宿主提供程序，请确保使用实体框架5.0 或更高版本。 更早版本的 Code First 迁移需要完全信任，在许多托管提供程序中，你的应用程序将在中等信任环境下运行。 有关中等信任的详细信息，请参阅 "[以测试环境部署到 IIS](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) " 教程。
 
-NuGet 包安装通常负责将部署应用程序使用此软件所需的所有内容。 在某些情况下，这涉及到任务，例如更改 Web.config 文件并添加 PowerShell 脚本，每当您生成解决方案时运行。 **如果你想要不使用 NuGet 添加对任何这些功能 （如 SQL Server Compact 和实体框架） 的支持，请确保您了解 NuGet 包安装，以便您可以手动执行相同的工作的用途。**
+NuGet 包安装通常负责将此软件与应用程序一起部署所需的所有内容。 在某些情况下，这涉及到任务，例如更改 Web.config 文件以及添加每次生成解决方案时运行的 PowerShell 脚本。 **如果要在不使用 NuGet 的情况下添加对其中任何功能（如 SQL Server Compact 和实体框架）的支持，请确保了解 NuGet 包安装的功能，以便可以手动执行相同的工作。**
 
-是一个例外，NuGet 不小心谨慎地所要做，才能确保成功部署的所有内容。 SqlServerCompact NuGet 包添加到项目，用于将复制到本机程序集的后期生成脚本*x86*并*amd64*项目下的子文件夹*bin*文件夹中，但该脚本不在项目中包括这些文件夹。 因此，Web 部署将不将它们复制到目标网站除非手动将其包含在项目中。 （此行为会导致从默认部署配置; 另一个选项，不会使用这些教程中，将更改控制此行为的设置。 您可以更改的设置是**仅运行该应用程序所需的文件**下**要部署的项**上**打包/发布 Web**选项卡**项目属性**窗口。 更改此设置通常建议不要因为它可能会导致许多其他文件部署到生产环境不是那里需要。 有关替代项的详细信息，请参阅[配置项目属性](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)教程。)
+有一个例外，NuGet 并不负责确保成功部署所需的一切内容。 SqlServerCompact NuGet 包将向项目中添加一个后期生成脚本，将本机程序集复制到项目*bin*文件夹下的*x86*和*amd64*子文件夹，但该脚本不包含项目中的这些文件夹。 因此，除非您手动将它们包含在项目中，否则 Web 部署不会将它们复制到目标网站。 （此行为是由默认部署配置生成的，另一个选项（在本教程中不会使用）是更改控制此行为的设置。 您可以更改的设置只是在**项目 "属性**" 窗口的 "**打包/发布 Web** " 选项卡下**要部署的项目**下**运行应用程序所需的文件**。 通常不建议更改此设置，因为这可能会导致将更多的文件部署到生产环境中，而不是所需的数量。 有关备选方案的详细信息，请参阅[配置项目属性](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)教程。）
 
-生成项目，然后在**解决方案资源管理器**单击**显示所有文件**如果尚未这样做。 您可能还需要单击**刷新**。
+生成项目，然后在**解决方案资源管理器**单击 "**显示所有文件**" （如果尚未这样做）。 你可能还需要单击 "**刷新**"。
 
 ![Solution_Explorer_Show_All_Files](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image1.png)
 
-展开**bin**文件夹，以查看**amd64**并**x86**文件夹，然后选择这些文件夹，右键单击，并选择**包括在项目**.
+展开**bin**文件夹以查看**amd64**和**x86**文件夹，然后选择这些文件夹，右键单击，然后选择 "**包括在项目中**"。
 
-![amd64_and_x86_in_Solution_Explorer.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
+![amd64_and_x86_in_Solution_Explorer .png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
 
-文件夹图标更改为显示该文件夹已包含在项目。
+文件夹图标将更改为显示该文件夹已包含在项目中。
 
-![Solution_Explorer_amd64_included.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
+![Solution_Explorer_amd64_included .png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
 
 ## <a name="configuring-code-first-migrations-for-application-database-deployment"></a>配置应用程序数据库部署的 Code First 迁移
 
-当您部署的应用程序数据库时，通常会不只需部署中它的数据的所有开发数据库到生产环境，因为很多的数据有可能仅用于测试目的。 例如，一个测试数据库中的学生名是虚构的。 但是，你通常不能部署只中它不包含数据的数据库结构根本。 某些测试数据库中的数据可能是真实数据，用户可以开始使用应用程序时，必须有为。 例如，您的数据库可能具有包含有效级别值或实际部门名称的表。
+当你部署应用程序数据库时，通常不会只是将你的开发数据库部署到生产数据库中的所有数据，因为其中的很多数据可能仅用于测试目的。 例如，测试数据库中的学生姓名是虚构的。 另一方面，通常不能只部署数据库结构，根本就不会包含任何数据。 测试数据库中的某些数据可能是真实数据，当用户开始使用该应用程序时必须存在。 例如，您的数据库可能有一个表包含有效的评分值或实际的部门名称。
 
-若要模拟这种常见方案，你将配置代码第一个迁移 Seed 方法，将想要在生产环境中存在将数据插入到数据库。 此 Seed 方法不会插入测试数据，因为它将 Code First 在生产环境中创建数据库后在生产环境中运行。
+若要模拟这种常见方案，你将配置一个 Code First 迁移种子方法，该方法仅在生产中插入到数据库中的数据。 此种子方法不插入测试数据，因为它将在生产中 Code First 创建数据库后在生产中运行。
 
-在早期版本的 Code First 迁移发布之前，过去通常 Seed 方法来插入测试数据，此外，因为在开发过程中每个模型更改使用该数据库必须完全删除并重新创建从零开始。 使用 Code First 迁移测试数据保留数据库发生更改后，因此不需要包括 Seed 方法中的测试数据。 下载的项目使用初始值设定项类的 Seed 方法中包括的所有数据的预迁移方法。 在本教程中将禁用初始值设定项类，并启用迁移。 然后将更新迁移配置类的 Seed 方法，以便它将插入想要在生产环境中要插入的数据。
+在发布迁移之前 Code First 早期版本中，种子方法经常插入测试数据，因为在开发过程中每个模型更改都必须完全删除并从头开始创建。 在 Code First 迁移的情况下，在数据库更改后会保留测试数据，因此不需要在 Seed 方法中包括测试数据。 下载的项目使用预迁移方法，将所有数据包含在初始值设定项类的 Seed 方法中。 在本教程中，您将禁用初始值设定项类并启用迁移。 然后，将更新迁移配置类中的 Seed 方法，以便只插入要在生产中插入的数据。
 
 下图说明了应用程序数据库的架构：
 
 [![School_database_diagram](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image5.png)](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image4.png)
 
-对于这些教程，将假定`Student`和`Enrollment`首次部署站点时，表应为空。 其他表包含必须在应用程序上线时预加载的数据。
+对于这些教程，你将假设首次部署站点时，`Student` 和 `Enrollment` 表应为空。 其他表包含在应用程序进入活动时必须预加载的数据。
 
-您将使用 Code First 迁移，因为不再需要使用**DropCreateDatabaseIfModelChanges** Code First 初始值设定项。 此初始值设定项的代码位于 SchoolInitializer.cs 文件 ContosoUniversity.DAL 项目中。 中的设置**appSettings** Web.config 文件的元素会导致应用程序尝试首次访问数据库时运行此初始值设定项：
+由于将使用 Code First 迁移，因此不再需要使用**DropCreateDatabaseIfModelChanges** Code First 初始值设定项。 此初始值设定项的代码位于 ContosoUniversity 项目的 SchoolInitializer.cs 文件中。 Web.config 文件的**appSettings**元素中的设置使此初始值设定项在应用程序首次尝试访问数据库时运行：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/samples/sample1.xml?highlight=3)]
 
-打开应用程序 Web.config 文件，移除指定的 appSettings 元素中的 Code First 初始值设定项类的元素。 AppSettings 元素现在如下所示：
+打开应用程序 Web.config 文件，并从 appSettings 元素中删除指定 Code First 初始值设定项类的元素。 AppSettings 元素现在如下所示：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/samples/sample2.xml)]
 
 > [!NOTE]
-> 若要指定一个初始值设定项类的另一种方法是执行此操作通过调用`Database.SetInitializer`中`Application_Start`中的方法*Global.asax*文件。 如果要使用该方法来指定初始值设定项的项目中启用迁移，删除该代码行。
+> 指定初始值设定项类的另一种方法是，在*global.asax*文件中的 `Application_Start` 方法中调用 `Database.SetInitializer`。 如果要在使用该方法来指定初始值设定项的项目中启用迁移，请删除该行代码。
 
 接下来，启用 Code First 迁移。
 
-第一步是确保 ContosoUniversity 项目设置为启动项目。 在中**解决方案资源管理器**，右键单击 ContosoUniversity 项目并选择**设为启动项目**。 Code First 迁移将查找要查找的数据库连接字符串的启动项目中。
+第一步是确保将 ContosoUniversity 项目设置为启动项目。 在**解决方案资源管理器**中，右键单击 ContosoUniversity 项目，然后选择 "**设为启动项目**"。 Code First 迁移将在启动项目中查找数据库连接字符串。
 
-从**工具**菜单上，单击**NuGet 包管理器**，然后**程序包管理器控制台**。
+从 "**工具**" 菜单中，依次单击 " **NuGet 包管理器**" 和 "**程序包管理器控制台**"。
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 
-在顶部**程序包管理器控制台**窗口中选择作为默认项目，并在 ContosoUniversity.DAL`PM>`提示符处输入"启用迁移"。
+在 "**包管理器控制台**" 窗口顶部，选择 "ContosoUniversity" 作为默认项目，然后在 `PM>` 提示符下输入 "启用-迁移"。
 
 ![enable-migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
 
-此命令将创建*Configuration.cs*文件中的新*迁移*ContosoUniversity.DAL 项目文件夹中的。
+此命令在 ContosoUniversity 项目中的新*迁移*文件夹中创建*Configuration.cs*文件。
 
 ![Migrations_folder_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image8.png)
 
-您选择 DAL 项目，因为必须在包含的第一个代码的上下文类的项目中执行"enable-migrations"命令。 在类库项目中的类时，Code First 迁移查找解决方案的启动项目中的数据库连接字符串。 在 ContosoUniversity 解决方案中，web 项目具有已设置为启动项目。 （如果你没有不想要指定有连接字符串为启动项目在 Visual Studio 中的项目，您可以指定启动项目中 PowerShell 命令。 若要查看 enable-migrations 命令的命令语法，您可以输入命令"获取帮助 enable-migrations"。）
+你选择了 DAL 项目，因为必须在包含 Code First 上下文类的项目中执行 "启用-迁移" 命令。 当该类在类库项目中时，Code First 迁移将在解决方案的启动项目中查找数据库连接字符串。 在 ContosoUniversity 解决方案中，web 项目已设置为启动项目。 （如果你不想在 Visual Studio 中指定具有连接字符串的项目作为启动项目，则可以在 PowerShell 命令中指定启动项目。 若要查看 "启用-迁移" 命令的命令语法，可以输入 "get-help 启用-迁移" 命令。
 
-打开 Configuration.cs 文件，将为中的注释`Seed`方法使用以下代码：
+打开 Configuration.cs 文件，并将 `Seed` 方法中的注释替换为以下代码：
 
 [!code-csharp[Main](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/samples/sample3.cs)]
 
-对引用`List`已在其下的红色波浪线，因为你没有`using`尚未为其命名空间语句。 右键单击其中一个的实例`List`然后单击**解决**，然后单击**using System.Collections.Generic**。
+对 `List` 的引用在其下有红色的波浪线，因为尚没有用于其命名空间的 `using` 语句。 右键单击其中一个 `List` 实例，单击 "**解析**"，然后单击 "**使用 system.object**"。
 
-![解决与 using 语句](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image9.png)
+![使用 using 语句解析](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image9.png)
 
-此菜单选项将添加到下面的代码`using`语句接近文件顶部。
+此菜单选择会将以下代码添加到文件顶部附近的 `using` 语句中。
 
 [!code-csharp[Main](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/samples/sample4.cs)]
 
 > [!NOTE]
-> 将代码添加到`Seed`方法是可以固定的数据插入到数据库的许多方式之一。 一种替代方法是将代码添加到`Up`和`Down`迁移的每个类的方法。 `Up`和`Down`方法包含实现数据库更改的代码。 您将看到示例中为它们[部署数据库更新](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)教程。
+> 将代码添加到 `Seed` 方法是将固定数据插入数据库的多种方式之一。 一种替代方法是向每个迁移类的 `Up` 和 `Down` 方法中添加代码。 `Up` 和 `Down` 方法包含实现数据库更改的代码。 在[部署数据库更新](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)教程中，你将看到这些示例的示例。
 > 
-> 您还可以编写通过使用执行 SQL 语句的代码`Sql`方法。 例如，如果您已将 Department 表向添加预算列并希望将所有部门的预算为 1,000.00 美元都初始化为迁移的一部分，您可以添加以下代码行`Up`迁移方法：
+> 你还可以使用 `Sql` 方法编写执行 SQL 语句的代码。 例如，如果您将某一预算列添加到部门表中，并且想要将所有部门预算初始化为 $1000.00，作为迁移的一部分，您可以将以下代码行添加到该迁移的 `Up` 方法中：
 > 
 > `Sql("UPDATE Department SET Budget = 1000");`
 > 
-> 此示例中所示为本教程使用`AddOrUpdate`中的方法`Seed`方法的 Code First 迁移`Configuration`类。 代码优先迁移调用`Seed`方法后每个迁移，且此方法将更新具有已插入，或将其插入，如果它们尚不存在的行。 `AddOrUpdate`方法可能不是你的方案的最佳选择。 有关详细信息，请参阅[负责与 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)Julie Lerman 的博客上。
+> 本教程中显示的此示例使用 Code First 迁移 `Configuration` 类的 `Seed` 方法中的 `AddOrUpdate` 方法。 Code First 迁移将在每次迁移后调用 `Seed` 方法，此方法将更新已插入的行，如果它们尚不存在，则将其插入。 对于你的方案，`AddOrUpdate` 方法可能不是最佳选择。 有关详细信息，请参阅 Julie Lerman 的博客上的[EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)。
 
-按 CTRL-SHIFT-B 以生成项目。
+按 CTRL-SHIFT-B 生成项目。
 
-下一步是创建`DbMigration`类适用于初始迁移。 您希望此迁移，以创建新的数据库，因此您必须删除已存在的数据库。 SQL Server Compact 数据库中包含 *.sdf*中的文件*应用\_数据*文件夹。 在中**解决方案资源管理器**，展开*应用\_数据*ContosoUniversity 项目，以查看两个 SQL Server Compact 数据库，在其中由 *.sdf*文件。
+下一步是创建用于初始迁移的 `DbMigration` 类。 希望此迁移创建新的数据库，因此必须删除已存在的数据库。 SQL Server Compact 数据库包含在*应用\_Data*文件夹中的 *.sdf*文件中。 在**解决方案资源管理器**中，展开 "ContosoUniversity" 项目中的 "*应用\_数据*" 以查看两个 SQL Server Compact 数据库，这些数据库由 *.sdf*文件表示。
 
-右键单击*School.sdf*文件，并单击**删除**。
+右键单击 " *School .sdf* " 文件，然后单击 "**删除**"。
 
 ![sdf_files_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image10.png)
 
-在中**程序包管理器控制台**窗口中，输入命令"add-migration Initial"若要创建初始迁移并将其命名为"初始"。
+在 "**程序包管理器控制台**" 窗口中，输入 "添加迁移初始" 命令以创建初始迁移，并将其命名为 "初始"。
 
-![add-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
+![添加-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
 
-Code First 迁移创建另一个类文件中的*迁移*文件夹中，并且此类包含创建数据库架构的代码。
+Code First 迁移在 "*迁移*" 文件夹中创建另一个类文件，此类包含用于创建数据库架构的代码。
 
-在中**程序包管理器控制台**，输入命令"更新数据库"以创建数据库并运行**种子**方法。
+在 "**程序包管理器控制台**" 中，输入命令 "更新数据库" 以创建数据库并运行**Seed**方法。
 
-![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![更新-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
-(如果收到一个错误，指示表已存在，无法创建，则可能是因为删除了该数据库后，您在执行前运行应用程序`update-database`。 这种情况下，删除*School.sdf*再次文件，然后重试`update-database`命令。)
+（如果您收到一条错误消息，指示表已存在并且无法创建，则可能是您在删除数据库之后和执行 `update-database`之前运行了该应用程序。 在这种情况下，再次删除*School .sdf*文件，然后重试 `update-database` 命令。）
 
-运行该应用程序。 现在学生页面为空，但讲师页包含讲师。 这是什么则会在生产环境中部署应用程序之后。
+运行该应用程序。 现在，学生页面为空，但讲师页面包含指导员。 这是在部署应用程序后将在生产中获得的内容。
 
 ![Empty_Students_page](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image13.png)
 
 ![Instructors_page_after_initial_migration](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image14.png)
 
-现在项目已准备好部署*学校*数据库。
+项目现已准备好部署*School*数据库。
 
 ## <a name="creating-a-membership-database-for-deployment"></a>为部署创建成员资格数据库
 
-Contoso 大学应用程序使用 ASP.NET 成员资格系统和窗体身份验证用户进行身份验证和授权。 只有管理员才能访问其页面之一。 若要查看此页上，运行该应用程序，并选择**更新信用额度**下飞出式菜单**课程**。 应用程序将显示**日志中**页上，因为只有管理员才有权使用**更新信用额度**页。
+Contoso 大学应用程序使用 ASP.NET 成员资格系统和 forms 身份验证对用户进行身份验证和授权。 只有管理员才能访问其中一个页面。 若要查看此页，请运行应用程序，并从 "**课程**" 下的弹出菜单中选择 "**更新信用**"。 应用程序将显示 "**登录**" 页，因为只有管理员有权使用 "**更新信用额度**" 页。
 
 [![Log_in_page](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image16.png)](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image15.png)
 
-以"管理员"使用密码"Pa$ w0rd"（请注意数字零来代替"w0rd"中的字母"o"）。 您登录后**更新信用额度**显示页。
+使用密码 "Pas $ w0rd" 以 "管理员" 身份登录（请注意，"w0rd" 中的字母 "o" 的位置数字为零）。 登录后，将显示 "**更新信用额度**" 页。
 
 [![Update_Credits_page](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image18.png)](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image17.png)
 
-将站点部署第一次，时，往往会排除大部分或全部创建用于测试的用户帐户。 在这种情况下，你将部署的管理员帐户和任何用户帐户。 而不是手动删除的测试帐户，将创建具有仅需要在生产环境中的一个管理员用户帐户的新成员资格数据库。
+首次部署站点时，通常会排除你为测试创建的大多数或所有用户帐户。 在这种情况下，你将部署一个管理员帐户，而不是用户帐户。 不是手动删除测试帐户，而是创建一个新的成员资格数据库，该数据库只具有在生产中需要的一个管理员用户帐户。
 
 > [!NOTE]
-> 成员资格数据库将存储帐户密码的哈希值。 若要部署从一台计算机到另一个帐户，必须确保哈希例程不生成目标服务器上的不同哈希值不是它们在源计算机上执行。 它们会生成相同的哈希时使用了 ASP.NET 通用提供程序，只要不更改默认的算法。 默认的算法是 HMACSHA256 和中指定**验证**的属性 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 文件中的元素。
+> 成员资格数据库存储帐户密码的哈希。 若要从一台计算机向另一台计算机部署帐户，必须确保在目标服务器上哈希例程不会生成不同于源计算机的哈希。 当你使用 ASP.NET 通用提供程序时，只要不更改默认算法，它们就会生成相同的哈希。 默认算法是 HMACSHA256，它是在 web.config 文件中 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** 元素的**验证**特性中指定的。
 
-成员资格数据库不由 Code First 迁移，维护并且没有使用测试帐户数据库种子 （因为没有为 School 数据库） 没有自动初始值设定项。 因此，要保持可用的测试数据将使测试数据库的副本之前创建一个新。
+成员资格数据库不是由 Code First 迁移维护的，并且没有自动初始值设定项，它将数据库与测试帐户（如 School 数据库）进行种子设定。 因此，为了使测试数据可用，在创建新的测试数据库之前，将创建一个测试数据库的副本。
 
-在中**解决方案资源管理器**，重命名*aspnet.sdf*文件中*应用\_数据*到的文件夹*aspnet Dev.sdf*。 (不复制，只需将其重命名，将在一段时间中创建新的数据库。)
+在**解决方案资源管理器**中，将*应用\_Data*文件夹中的*aspnet .Sdf*文件重命名为*aspnet-Dev*。 （不要制作副本，只需重命名即可，稍后会创建一个新数据库。）
 
-在中**解决方案资源管理器**，请确保选中 web 项目 （ContosoUniversity、 不 ContosoUniversity.DAL）。 然后在**项目**菜单中，选择**ASP.NET 配置**若要运行**网站管理工具**(WAT)。
+在**解决方案资源管理器**中，确保选中 web 项目（ContosoUniversity，而不是 ContosoUniversity）。 然后，在 "**项目**" 菜单中，选择 " **ASP.NET 配置**" 以运行**网站管理工具**（哪些）。
 
-选择**安全**选项卡。
+选择“安全性”选项卡。
 
 [![WAT_Security_tab](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image20.png)](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image19.png)
 
-单击**创建或管理角色**并添加**管理员**角色。
+单击 "**创建或管理角色**" 并添加**管理员**角色。
 
 [![WAT_Create_New_Role](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image22.png)](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image21.png)
 
-导航回到**安全**选项卡上，单击**Create User**，并以管理员身份添加用户"admin"。 在单击之前**Create User**按钮**Create User**页上，确保你选择**管理员**复选框。 在本教程中所用的密码已"Pa$ w0rd"，并且您可以输入任何电子邮件地址。
+向后导航到 "**安全**" 选项卡，单击 "**创建用户**"，并以管理员身份添加用户 "管理员"。 在单击 "**创建用户**" 页上的 "**创建用户**" 按钮之前，请确保选中 "**管理员**" 复选框。 本教程中使用的密码是 "Pas $ w0rd"，你可以输入任何电子邮件地址。
 
 [![WAT_Create_User](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image24.png)](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image23.png)
 
-关闭浏览器。 在中**解决方案资源管理器**，单击刷新按钮以查看新*aspnet.sdf*文件。
+关闭浏览器。 在**解决方案资源管理器**中，单击 "刷新" 按钮以查看新的*aspnet .sdf*文件。
 
-![New_aspnet.sdf_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image25.png)
+![New_aspnet. sdf_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image25.png)
 
-右键单击**aspnet.sdf** ，然后选择**包括在项目**。
+右键**单击 "** "，然后选择 **"包括在项目中"** 。
 
-## <a name="distinguishing-development-from-production-databases"></a>区分从生产数据库开发
+## <a name="distinguishing-development-from-production-databases"></a>与生产数据库的开发区分开来
 
-在本部分中，你将重命名数据库，以便开发版本是学校 Dev.sdf，aspnet Dev.sdf 和生产版本是学校 Prod.sdf 和 aspnet Prod.sdf。 这不是有必要，但这样做因此有助于使你获取的数据库的测试和生产版本相混淆。
+在本部分中，您将重命名数据库，使开发版本为 School-Dev 和 aspnet-Dev，并且生产版本为 School-Prod 和 aspnet-Prod。 这并不是必需的，但这样做将有助于使你无法获取数据库的测试版本和生产版本。
 
-在中**解决方案资源管理器**，单击**刷新**和扩展该应用程序\_数据文件夹，请参阅前面创建的 School 数据库，右键单击它并选择**包括在项目**.
+在**解决方案资源管理器**中，单击 "**刷新**"，然后展开 "应用\_数据" 文件夹以查看之前创建的 School 数据库;右键单击该项目，然后选择 **"包括在项目中"** 。
 
-![Including_School.sdf_in_project](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image26.png)
+![Including_School. sdf_in_project](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image26.png)
 
-重命名*aspnet.sdf*到*aspnet Prod.sdf*。
+将*aspnet .sdf*重命名为*aspnet-Prod*。
 
-重命名*School.sdf*到*学校 Dev.sdf*。
+将*School*重命名为*School-Dev*。
 
-当不想要使用的 Visual Studio 中运行应用程序 *-Prod*版本的数据库文件中，你想要使用 *-Dev*版本。 因此您需要更改 Web.config 文件中的连接字符串，以便它们指向 *-Dev*数据库版本。 （尚未创建的 School Prod.sdf 文件，但这是确定，因为 Code First 将创建该数据库中有运行你的应用的第一个生产时间。）
+当你在 Visual Studio 中运行应用程序时，不希望使用数据库文件的*生产*版本，你需要使用 *-Dev*版本。 因此，您必须更改 Web.config 文件中的连接字符串，以使其指向数据库的*开发*版本。 （您尚未创建 School-Prod 文件，但这是正常的，因为 Code First 在您首次运行应用程序时，会在生产环境中创建该数据库。）
 
-打开应用程序 Web.config 文件，并找到连接字符串：
+打开应用程序的 web.config 文件，然后找到连接字符串：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/samples/sample5.xml)]
 
-将"aspnet.sdf"更改为"aspnet-Dev.sdf"，并将"School.sdf"更改为"学校 Dev.sdf":
+将 "aspnet .sdf" 更改为 "aspnet-Dev"，并将 "School .sdf" 改为 "School-Dev"：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/samples/sample6.xml?highlight=4-5)]
 
-SQL Server Compact 数据库引擎和这两个数据库现已准备好进行部署。 在以下教程，将自动设置*Web.config*文件必须是不同的开发、 测试和生产环境中的设置的转换。 （在必须更改设置之间的连接字符串，但您将设置所做的更改更高版本创建的发布配置文件时。）
+现在可以部署 SQL Server Compact 数据库引擎和两个数据库。 在以下教程中，您将为开发、测试和生产环境中必须不同的设置*设置自动 web.config*文件转换。 （在必须更改的设置中是连接字符串，但稍后在创建发布配置文件时将设置这些更改。）
 
 ## <a name="more-information"></a>详细信息
 
-有关 NuGet 的详细信息，请参阅[使用 NuGet 管理项目库](https://msdn.microsoft.com/magazine/hh547106.aspx)并[NuGet 文档](http://docs.nuget.org/docs/start-here/overview)。 如果不想要使用 NuGet，您需要了解如何分析 NuGet 包，以确定它的作用时安装它。 (例如，可以配置*Web.config*转换，配置 PowerShell 脚本以运行在生成时，等等。)若要了解有关 NuGet 的工作原理的详细信息，请参阅尤其[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)并[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
+有关 NuGet 的详细信息，请参阅通过 NuGet 和[Nuget 文档](http://docs.nuget.org/docs/start-here/overview)[管理项目库](https://msdn.microsoft.com/magazine/hh547106.aspx)。 如果你不想使用 NuGet，你将需要了解如何分析 NuGet 包，以确定它在安装时执行的操作。 （例如，它可能配置*web.config*转换、将 PowerShell 脚本配置为在生成时运行，等等）若要详细了解 NuGet 的工作原理，请参阅特别是[创建和发布包](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)、[配置文件和源代码转换](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 
 > [!div class="step-by-step"]
 > [上一页](deployment-to-a-hosting-provider-introduction-1-of-12.md)

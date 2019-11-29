@@ -1,164 +1,164 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
-title: 排序自定义分页数据 (VB) |Microsoft Docs
+title: 排序自定义分页数据（VB） |Microsoft Docs
 author: rick-anderson
-description: 上一教程中我们介绍了如何在网页上显示数据时实现自定义分页。 在本教程中我们将了解如何扩展前面...
+description: 在上一教程中，我们学习了如何在网页上呈现数据时实现自定义分页。 在本教程中，我们将了解如何扩展前面的 。
 ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 4823a186-caaf-4116-a318-c7ff4d955ddc
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4c0d015c7d0a294464a3c22dd14a1ad98fbf3235
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 934c7558d907611732ae6f04c553bc9e295c569b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131383"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74618486"
 ---
 # <a name="sorting-custom-paged-data-vb"></a>排序自定义分页数据 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_VB.exe)或[下载 PDF](sorting-custom-paged-data-vb/_static/datatutorial26vb1.pdf)
+[下载示例应用](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_VB.exe)或[下载 PDF](sorting-custom-paged-data-vb/_static/datatutorial26vb1.pdf)
 
-> 上一教程中我们介绍了如何在网页上显示数据时实现自定义分页。 在本教程中我们将了解如何扩展前面的示例中包括排序自定义分页支持。
+> 在上一教程中，我们学习了如何在网页上呈现数据时实现自定义分页。 在本教程中，我们将介绍如何扩展前面的示例以包含对自定义分页排序的支持。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-与默认的分页，比较自定义分页可以通过几个数量级，使自定义分页事实上分页实现可以选择通过大量的数据分页时提高性能的数据分页。 实现自定义分页是比实现默认的分页，但是，尤其是在添加到组合排序更复杂。 在本教程中，我们将扩展以支持排序的前一次从示例*和*自定义分页。
+与默认分页相比，自定义分页可以提高按多种数量级对数据进行分页的性能，并在通过大量数据进行分页时，使自定义分页成为事实上的分页实现选择。 然而，实现自定义分页比实现默认分页更为重要，但在将排序添加到组合时尤其如此。 在本教程中，我们将扩展前面的示例，以支持排序*和*自定义分页。
 
 > [!NOTE]
-> 由于本教程基于前一次，一段时间来复制中的声明性语法开头才`<asp:Content>`元素从前面的教程的网页 (`EfficientPaging.aspx`) 并将其之间粘贴`<asp:Content>`中的元素`SortParameter.aspx`页。 请返回到的步骤 1[向编辑和插入界面添加验证控件](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)教程，了解复制到另一个 ASP.NET 页的功能的更多详细讨论。
+> 由于本教程基于前面的教程，因此在开始之前，请先从上一教程的网页（`EfficientPaging.aspx`）中复制 `<asp:Content>` 元素中的声明性语法，然后将其粘贴到 `SortParameter.aspx` 页面的 `<asp:Content>` 元素之间。 有关将一个 ASP.NET 页的功能复制到另一页的更详细的讨论，请参阅返回向[编辑和插入界面添加验证控件](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)教程中的步骤1。
 
-## <a name="step-1-reexamining-the-custom-paging-technique"></a>步骤 1：重新检查自定义分页方法
+## <a name="step-1-reexamining-the-custom-paging-technique"></a>步骤1： Reexamining 自定义分页技术
 
-对于自定义分页才能正常工作，我们必须实现一些技术，可以有效地获取给定的起始行索引和最大行数参数的记录的特定子集。 有少量的可用于实现此目标的技术。 在前面的教程，我们在实现这个目的使用 Microsoft SQL Server 2005 s 新`ROW_NUMBER()`排名函数。 简单地说，`ROW_NUMBER()`排名函数将行号分配给指定的排序顺序按排名的查询返回的每个行。 然后通过返回带编号的结果的特定部分，获取记录的相应的子集。 以下查询说明了如何使用此方法返回时按排名结果按字母顺序排序编号为 11 到 20 的那些产品`ProductName`:
+若要使自定义分页正常工作，必须实现一些技术，以便在给定起始行索引和最大行参数的情况下有效地获取特定的记录子集。 可以使用几种方法来实现此目标。 在前面的教程中，我们将介绍如何使用 Microsoft SQL Server 2005 s new `ROW_NUMBER()` 排名函数实现此功能。 简而言之，`ROW_NUMBER()` 排名函数为按指定的排序顺序排序的查询返回的每一行分配一个行号。 然后，通过返回编号结果的特定部分来获取相应的记录子集。 下面的查询演示了如何使用此方法在按 `ProductName`按字母顺序对结果进行排序时，返回编号为11到20的产品：
 
 [!code-sql[Main](sorting-custom-paged-data-vb/samples/sample1.sql)]
 
-此方法非常适用于使用特定的排序顺序的分页 (`ProductName`按字母顺序排列，在这种情况下)，但需要对查询进行修改，以显示按不同的排序表达式的结果。 理想情况下，上述查询可重写以使用中的参数`OVER`子句，如下所示：
+此方法适用于使用特定的排序顺序（`ProductName` 按字母顺序排序，在本例中为）的分页，但需要修改查询以显示按不同排序表达式排序的结果。 理想情况下，可以重写上面的查询以在 `OVER` 子句中使用参数，如下所示：
 
 [!code-sql[Main](sorting-custom-paged-data-vb/samples/sample2.sql)]
 
-遗憾的是，参数化`ORDER BY`子句不允许。 相反，我们必须创建存储的过程接受`@sortExpression`输入的参数，但使用同一种的以下解决方法：
+遗憾的是，不允许使用参数化 `ORDER BY` 子句。 相反，我们必须创建接受 `@sortExpression` 输入参数的存储过程，但使用以下解决方法之一：
 
-- 为每个可能使用; 的排序表达式编写硬编码的查询然后，使用`IF/ELSE`T-SQL 语句，以确定要执行的查询。
-- 使用`CASE`语句，以提供动态`ORDER BY`表达式基于`@sortExpressio`n 输入参数; 请参阅动态排序查询结果中的部分用[的 SQL Power`CASE`语句](http://www.4guysfromrolla.com/webtech/102704-1.shtml)有关详细信息。
-- 作为字符串存储过程中创建相应的查询，然后使用[`sp_executesql`系统存储过程](https://msdn.microsoft.com/library/ms188001.aspx)来执行动态查询。
+- 为每个可使用的排序表达式编写硬编码查询;然后，使用 `IF/ELSE` T-sql 语句确定要执行的查询。
+- 使用 `CASE` 语句，根据 `@sortExpressio` n 输入参数提供动态 `ORDER BY` 表达式;有关详细信息，请参阅[SQL `CASE` 语句的强大功能](http://www.4guysfromrolla.com/webtech/102704-1.shtml)中用于动态排序查询结果部分。
+- 在存储过程中将适当的查询创建为字符串，然后使用[`sp_executesql` 系统存储过程](https://msdn.microsoft.com/library/ms188001.aspx)来执行动态查询。
 
-每个这些解决方法有一些缺点。 第一个选项是不与其他两个因为它需要创建每个可能的排序表达式的查询，可维护。 因此，如果以后决定要将新的、 可排序的字段添加到 GridView 也需要返回并更新存储的过程。 第二种方法都有一些微妙之处按非字符串数据库列进行排序时带来性能问题，还存在与第一个相同的可维护性问题。 和第三个选项，它使用动态 SQL，引入了 SQL 注入攻击的风险，如果攻击者能够执行存储的过程在其选择的输入的参数值传递。
+其中每个解决方法都有一些缺点。 第一个选项与其他两个选项不同，因为它要求你为每个可能的排序表达式创建一个查询。 因此，如果以后决定向 GridView 添加新的可排序字段，则还需要返回并更新存储过程。 第二种方法有一些微妙之处，它会在按非字符串数据库列排序时引入性能问题，并且与第一种方法存在相同的可维护性问题。 如果攻击者能够在所选的输入参数值中执行存储过程，则使用动态 SQL 的第三个选择会引入 SQL 注入式攻击的风险。
 
-虽然这些方法都是完美无缺的我认为是最好的三个方法的第三个选项。 借助其使用动态 SQL，它提供某种程度的灵活性另外两个不这样做。 此外，如果攻击者能够执行在其选择的输入参数中传递该存储的过程可能仅利用 SQL 注入攻击。 由于 DAL 使用参数化的查询，ADO.NET 会保护发送到数据库中通过体系结构，这些参数，这意味着如果攻击者可以直接执行存储的过程，仅存在 SQL 注入攻击漏洞。
+尽管这些方法均不完美，但我认为第三个选项是这三个选项中的最佳选择。 通过使用动态 SQL，它提供了其他两个不同的灵活性。 此外，如果攻击者能够在其选择的输入参数中执行存储过程，则只能利用 SQL 注入式攻击。 由于 DAL 使用参数化查询，ADO.NET 将保护通过体系结构发送到数据库的参数，这意味着，仅当攻击者可以直接执行存储过程时，SQL 注入攻击漏洞才存在。
 
-若要实现此功能，在名为 Northwind 数据库中创建新的存储的过程`GetProductsPagedAndSorted`。 此存储的过程应接受三个输入参数： `@sortExpression`，输入的参数的类型`nvarchar(100`)，用于指定如何将结果应进行排序和后直接注入`ORDER BY`中的文本`OVER`子句; 并且`@startRowIndex`并`@maximumRows`，从相同的两个整数输入的参数`GetProductsPaged`存储过程检查在前面的教程。 创建`GetProductsPagedAndSorted`存储过程中使用以下脚本：
+若要实现此功能，请在 Northwind 数据库中创建名为 `GetProductsPagedAndSorted`的新存储过程。 此存储过程应接受三个输入参数： `@sortExpression`（类型为 `nvarchar(100`的输入参数），该参数指定如何对结果进行排序并直接注入 `OVER` 子句中 `ORDER BY` 文本的后面;并且 `@startRowIndex` 和 `@maximumRows`，则在上一教程中检查 `GetProductsPaged` 存储过程中的两个整数输入参数。 使用以下脚本创建 `GetProductsPagedAndSorted` 存储过程：
 
 [!code-sql[Main](sorting-custom-paged-data-vb/samples/sample3.sql)]
 
-存储的过程启动，确保值为`@sortExpression`指定参数。 如果缺少，结果进行排名的`ProductID`。 接下来，构造动态 SQL 查询。 请注意这里的动态 SQL 查询从我们用来从 Products 表中检索所有行的上一个查询会稍有不同。 在之前示例中，我们获取每个产品 s 关联的类别和供应商的名称使用子查询。 做出此决定是回到[创建数据访问层](../introduction/creating-a-data-access-layer-vb.md)教程和已完成而非使用`JOIN`s 因为 TableAdapter 不能自动创建的关联的插入、 更新和删除此类方法查询。 `GetProductsPagedAndSorted`存储的过程，但是，必须使用`JOIN`s，结果才会按类别或供应商名称进行排序。
+存储过程首先确保指定了 `@sortExpression` 参数的值。 如果缺少，结果将按 `ProductID`进行排名。 接下来，将构造动态 SQL 查询。 请注意，此处的动态 SQL 查询与之前用于检索 Products 表中所有行的查询略有不同。 在前面的示例中，我们使用子查询获取了与每个产品关联的类别和供应商的名称。 这一决定是在[创建数据访问层](../introduction/creating-a-data-access-layer-vb.md)教程中完成的，而不是使用 `JOIN` s，因为 TableAdapter 无法自动创建此类查询的关联插入、更新和删除方法。 不过，`GetProductsPagedAndSorted` 存储过程必须使用 `JOIN` 来按类别或供应商名称对结果进行排序。
 
-此动态查询旨在通过串联静态查询部分和`@sortExpression`， `@startRowIndex`，和`@maximumRows`参数。 由于`@startRowIndex`和`@maximumRows`整数参数，它们都必须转换为 nvarchar 为了正确连接。 一旦此动态 SQL 查询构造完成后，它执行通过`sp_executesql`。
+此动态查询是通过串联静态查询部分和 `@sortExpression`、`@startRowIndex`和 `@maximumRows` 参数生成的。 由于 `@startRowIndex` 和 `@maximumRows` 是整数参数，因此必须将它们转换为 nvarchar，以便正确连接。 构造此动态 SQL 查询后，将通过 `sp_executesql`执行该查询。
 
-请花费片刻时间来测试不同的值与此存储的过程`@sortExpression`， `@startRowIndex`，和`@maximumRows`参数。 从服务器资源管理器，右键单击存储的过程名称并选择执行。 此时会弹出运行存储过程对话框中，可以在其中输入 （请参阅图 1） 的输入的参数。 若要对结果进行排序的类别名称，使用为 CategoryName`@sortExpression`参数值; 若要按供应商的公司名称进行排序，请使用公司名称。 提供的参数值之后, 单击确定。 在输出窗口中显示结果。 图 2 显示了结果时排序时，返回产品排名 11 到 20`UnitPrice`降序排序。
+花点时间为 `@sortExpression`、`@startRowIndex`和 `@maximumRows` 参数的不同值测试此存储过程。 在服务器资源管理器中，右键单击存储过程名称，然后选择 "执行"。 这将打开 "运行存储过程" 对话框，您可以在其中输入输入参数（参见图1）。 若要按类别名称对结果进行排序，请对 `@sortExpression` 参数值使用 "类名称"。若要按供应商的公司名称进行排序，请使用 "公司名称"。 提供参数值之后，单击 "确定"。 结果将显示在 "输出" 窗口中。 图2显示了按 `UnitPrice` 按降序排序时返回11到20的产品时的结果。
 
-![对于存储的过程 s 三个输入参数尝试不同的值](sorting-custom-paged-data-vb/_static/image1.png)
+![对于存储过程，请尝试为三个输入参数提供不同的值](sorting-custom-paged-data-vb/_static/image1.png)
 
-**图 1**:对于存储的过程 s 三个输入参数尝试不同的值
+**图 1**：为存储过程尝试三个输入参数的不同值
 
-[![存储过程的结果显示在输出窗口](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
+[![存储过程的结果将显示在输出窗口](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
 
-**图 2**:存储过程的结果显示在输出窗口中 ([单击此项可查看原尺寸图像](sorting-custom-paged-data-vb/_static/image4.png))
+**图 2**：输出窗口中显示存储过程的结果（[单击查看完全大小的图像](sorting-custom-paged-data-vb/_static/image4.png)）
 
 > [!NOTE]
-> 当由指定排名结果`ORDER BY`中的列`OVER`子句，SQL Server 必须对结果进行排序。 这是一种快捷操作，如果有聚集的索引的结果的排序的列通过，或者如果没有覆盖索引，但可以否则成本更高。 若要提高足够大的查询的性能，请考虑添加按对结果排序所依据的列的非聚集索引。 请参阅[排名函数和 SQL Server 2005 中的性能](http://www.sql-server-performance.com/ak_ranking_functions.asp)的更多详细信息。
+> 按 `OVER` 子句中指定 `ORDER BY` 列对结果进行排序时，SQL Server 必须对结果进行排序。 如果对列有聚集索引或有覆盖索引，则这是一个快速操作，如果有覆盖索引，则这是一个快速操作，否则可能更昂贵。 若要改善足够大的查询的性能，请考虑为排序所依据的列添加非聚集索引。 有关更多详细信息，请参阅[SQL Server 2005 中的排名函数和性能](http://www.sql-server-performance.com/ak_ranking_functions.asp)。
 
-## <a name="step-2-augmenting-the-data-access-and-business-logic-layers"></a>步骤 2：扩充的数据访问和业务逻辑层
+## <a name="step-2-augmenting-the-data-access-and-business-logic-layers"></a>步骤2：扩充数据访问和业务逻辑层
 
-使用`GetProductsPagedAndSorted`创建的存储的过程，我们下一步是提供一种方法来执行该存储的过程通过我们的应用程序体系结构。 这需要将适当的方法添加到 DAL 和 BLL。 让我们来首先添加对 DAL 的一种方法。 打开`Northwind.xsd`类型化数据集，右键单击`ProductsTableAdapter`，并从上下文菜单中选择添加查询选项。 与我们在前面的教程中，我们想要配置此新的 DAL 方法以使用现有的存储的过程- `GetProductsPagedAndSorted`，在这种情况下。 首先，该值指示你想要使用现有的存储的过程的新的 TableAdapter 方法。
+创建 `GetProductsPagedAndSorted` 存储过程后，下一步就是提供通过我们的应用程序体系结构执行该存储过程的方法。 这就需要为 DAL 和 BLL 添加适当的方法。 首先，将方法添加到 DAL。 打开 `Northwind.xsd` 类型化数据集，右键单击 `ProductsTableAdapter`，然后从上下文菜单中选择 "添加查询" 选项。 如前面的教程中所述，我们希望将这一新的 DAL 方法配置为使用现有的存储过程 `GetProductsPagedAndSorted`（在本例中为）。 首先指示你希望新的 TableAdapter 方法使用现有的存储过程。
 
-![选择使用现有的存储的过程](sorting-custom-paged-data-vb/_static/image5.png)
+![选择使用现有存储过程](sorting-custom-paged-data-vb/_static/image5.png)
 
-**图 3**:选择使用现有的存储的过程
+**图 3**：选择使用现有存储过程
 
-若要指定要使用的存储的过程，请选择`GetProductsPagedAndSorted`下一个屏幕中的存储过程从下拉列表。
+若要指定要使用的存储过程，请从下一个屏幕的下拉列表中选择 `GetProductsPagedAndSorted` 存储过程。
 
 ![使用 GetProductsPagedAndSorted 存储过程](sorting-custom-paged-data-vb/_static/image6.png)
 
-**图 4**:使用 GetProductsPagedAndSorted 存储过程
+**图 4**：使用 GetProductsPagedAndSorted 存储过程
 
-此存储的过程返回一组记录，因为其结果，在下一屏幕中，指示它返回表格格式数据。
+此存储过程将返回一组记录作为其结果，因此，在下一屏幕中，指示返回表格数据。
 
-![指示存储的过程返回表格格式数据](sorting-custom-paged-data-vb/_static/image7.png)
+![指示存储过程返回表格数据](sorting-custom-paged-data-vb/_static/image7.png)
 
-**图 5**:指示存储的过程返回表格格式数据
+**图 5**：指示存储过程返回表格数据
 
-最后，创建 DAL 方法使用这两个填充的 DataTable，并返回 DataTable 模式、 命名方法`FillPagedAndSorted`和`GetProductsPagedAndSorted`分别。
+最后，创建同时使用 Fill 数据表和返回 DataTable 模式的 DAL 方法，分别 `FillPagedAndSorted` 和 `GetProductsPagedAndSorted`命名方法。
 
-![选择的方法名称](sorting-custom-paged-data-vb/_static/image8.png)
+![选择方法名称](sorting-custom-paged-data-vb/_static/image8.png)
 
-**图 6**:选择的方法名称
+**图 6**：选择方法名称
 
-现在，我们已扩展 DAL，我们准备好向 BLL。 打开`ProductsBLL`类文件并添加新方法， `GetProductsPagedAndSorted`。 此方法必须接受三个输入参数`sortExpression`， `startRowIndex`，并`maximumRows`并应只需向下调用 DAL s 到`GetProductsPagedAndSorted`方法，如下所示：
+至此，我们已扩展 DAL，接下来可以转到 BLL。 打开 `ProductsBLL` 类文件，并添加新方法 `GetProductsPagedAndSorted`。 此方法需要接受三个输入参数 `sortExpression`、`startRowIndex`和 `maximumRows`，只需向下调用 DAL s `GetProductsPagedAndSorted` 方法即可，如下所示：
 
 [!code-vb[Main](sorting-custom-paged-data-vb/samples/sample4.vb)]
 
-## <a name="step-3-configuring-the-objectdatasource-to-pass-in-the-sortexpression-parameter"></a>步骤 3：配置 SortExpression 参数中传递到 ObjectDataSource
+## <a name="step-3-configuring-the-objectdatasource-to-pass-in-the-sortexpression-parameter"></a>步骤3：将 ObjectDataSource 配置为传入 SortExpression 参数
 
-要包括使用的方法的 DAL 和 BLL 无扩充`GetProductsPagedAndSorted`存储的过程，所有剩余的是配置中的 ObjectDataSource`SortParameter.aspx`页以使用新的 BLL 方法并传入`SortExpression`参数基于用户已请求的结果进行排序的列。
+扩充 DAL 和 BLL 以包含利用 `GetProductsPagedAndSorted` 存储过程的方法，剩下的就是在 "`SortParameter.aspx`" 页中配置 ObjectDataSource 来使用新的 BLL 方法，并基于用户请求对结果进行排序的列传入 `SortExpression` 参数。
 
-首先更改 ObjectDataSource s`SelectMethod`从`GetProductsPaged`到`GetProductsPagedAndSorted`。 这可以通过配置数据源向导，从属性窗口中，或直接通过声明性语法。 接下来，我们需要为 ObjectDataSource s 提供值[`SortParameterName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx)。 如果设置此属性，尝试传入 GridView 的 ObjectDataSource`SortExpression`属性设置为`SelectMethod`。 具体而言，ObjectDataSource 查找的输入参数，其名称是等于的值`SortParameterName`属性。 由于 BLL s`GetProductsPagedAndSorted`方法具有名为排序表达式输入的参数`sortExpression`，设置 ObjectDataSource 的`SortExpression`sortExpression 属性。
+首先，将 ObjectDataSource `SelectMethod` 从 `GetProductsPaged` 更改为 `GetProductsPagedAndSorted`。 这可以通过配置数据源向导、属性窗口或直接通过声明性语法完成。 接下来，需要为 ObjectDataSource s [`SortParameterName` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx)提供一个值。 如果设置此属性，则 ObjectDataSource 尝试将 GridView s `SortExpression` 属性传入 `SelectMethod`。 具体而言，ObjectDataSource 查找其名称等于 `SortParameterName` 属性值的输入参数。 由于 BLL `GetProductsPagedAndSorted` 方法具有名为 `sortExpression`的排序表达式输入参数，因此请将 ObjectDataSource s `SortExpression` 属性设置为 sortExpression。
 
-以后进行这两项更改，ObjectDataSource s 声明性语法看起来应类似于下面：
+完成这两个更改后，ObjectDataSource 的声明性语法应类似于以下形式：
 
 [!code-aspx[Main](sorting-custom-paged-data-vb/samples/sample5.aspx)]
 
 > [!NOTE]
-> 如前面的教程中，确保 ObjectDataSource*不*SelectParameters 集合中包括的 sortExpression、 startRowIndex 或值的输入的参数。
+> 与前面的教程一样，请确保 ObjectDataSource 不在其 SelectParameters 集合*中包含 sortExpression* 、StartRowIndex 或 maximumRows 输入参数。
 
-若要启用在 GridView 中进行排序，只需选中 GridView s 智能标记，这会设置 GridView s 中的启用排序复选框`AllowSorting`属性设置为`true`，导致了要作为 LinkButton 呈现每个列的标头文本。 当最终用户单击 Linkbutton 的标头之一时，才会进行回发和要经过以下步骤：
+若要在 GridView 中启用排序，只需选中 "GridView s 智能" 标记中的 "启用排序" 复选框，这将 `AllowSorting` 属性设置为 `true`，并使每个列的标题文本呈现为 LinkButton。 当最终用户单击其中一个标头 LinkButtons 时，会发生回发可以和以下步骤：
 
-1. GridView 更新其[`SortExpression`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx)的值`SortExpression`其标头链接被单击的字段
-2. ObjectDataSource 调用 s 的 BLL`GetProductsPagedAndSorted`方法，传入的 GridView s`SortExpression`属性的值为 s 方法作为`sortExpression`输入的参数 (以及相应`startRowIndex`和`maximumRows`输入参数值)
-3. BLL 调用 DAL 的`GetProductsPagedAndSorted`方法
-4. DAL 执行`GetProductsPagedAndSorted`传递存储过程中，在`@sortExpression`参数 (连同`@startRowIndex`和`@maximumRows`输入参数值)
-5. 存储的过程向 BLL，将其返回给 ObjectDataSource; 返回适当的数据子集此数据然后绑定到 GridView，呈现为 HTML，并将发送给最终用户
+1. GridView 会将其[`SortExpression` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx)更新为已单击其标题链接的字段的 `SortExpression` 值
+2. ObjectDataSource 调用 `GetProductsPagedAndSorted` 方法，并传入 GridView s `SortExpression` 属性作为方法 s `sortExpression` 输入参数的值（以及相应的 `startRowIndex` 和 `maximumRows` 输入参数值）
+3. BLL 调用 DAL s `GetProductsPagedAndSorted` 方法
+4. DAL 执行 `GetProductsPagedAndSorted` 存储过程，并传入 `@sortExpression` 参数（连同 `@startRowIndex` 和 `@maximumRows` 输入参数值）
+5. 存储过程将相应的数据子集返回到 BLL，并将其返回到 ObjectDataSource;然后，将此数据绑定到 GridView，呈现为 HTML，并向下发送给最终用户
 
-图 7 显示了结果排序时的第一页`UnitPrice`按升序排序。
+图7显示了按 `UnitPrice` 按升序进行排序时的第一页结果。
 
-[![对结果进行排序单价](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
+[![结果按单价排序](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
 
-**图 7**:对结果进行排序单价 ([单击此项可查看原尺寸图像](sorting-custom-paged-data-vb/_static/image11.png))
+**图 7**：按单价对结果进行排序（[单击查看全尺寸图像](sorting-custom-paged-data-vb/_static/image11.png)）
 
-尽管当前实现可以正确对按产品名称、 类别名称、 每个计价单位和单价数量对结果进行排序，尝试对结果进行排序的供应商名称结果在运行时异常 （请参阅图 8）。
+尽管当前实现可以按产品名称、类别名称、每个单位的数量和单价正确地对结果进行排序，但尝试按供应商名称对结果进行排序会导致运行时异常（参见图8）。
 
-![尝试对由供应商可能会导致以下运行时异常结果进行排序](sorting-custom-paged-data-vb/_static/image12.png)
+![尝试按供应商对结果进行排序会导致以下运行时异常](sorting-custom-paged-data-vb/_static/image12.png)
 
-**图 8**:尝试对由供应商可能会导致以下运行时异常结果进行排序
+**图 8**：尝试按供应商对结果进行排序会导致以下运行时异常
 
-发生此异常的原因`SortExpression`的 GridView s `SupplierName` BoundField 设置为`SupplierName`。 但是，供应商 s 中的名称`Suppliers`实际调用表`CompanyName`我们已使用别名作为此列的列名`SupplierName`。 但是，`OVER`子句由`ROW_NUMBER()`函数不能使用别名，并且必须使用实际的列名称。 因此，更改`SupplierName`BoundField 的`SortExpression`从供应商名称为公司名称 （请参阅图 9）。 如图 10 所示，此更改之后可以按结果进行排序供应商。
+发生此异常的原因是，`SupplierName` BoundField 的 GridView `SortExpression` 设置为 `SupplierName`。 但是，实际上会调用 `Suppliers` 表中的供应商名称，`CompanyName` 我们已将此列名称作为 `SupplierName`的别名。 但是，`ROW_NUMBER()` 函数使用的 `OVER` 子句不能使用别名，并且必须使用实际列名。 因此，将 `SupplierName` BoundField s `SortExpression` 从供应商更改为公司名称（参见图9）。 如图10所示，在此更改后，可以按供应商对结果进行排序。
 
-![将供应商名称 BoundField 的 SortExpression 更改为公司名称](sorting-custom-paged-data-vb/_static/image13.png)
+![将 BoundField 的供应商更改为公司名称](sorting-custom-paged-data-vb/_static/image13.png)
 
-**图 9**:将供应商名称 BoundField 的 SortExpression 更改为公司名称
+**图 9**：将 BoundField 的供应商的 SortExpression 更改为公司名称
 
-[![现在可以按供应商排序结果](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
+[![结果现在可以按供应商排序](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
 
-**图 10**:可以现在按结果进行排序供应商 ([单击此项可查看原尺寸图像](sorting-custom-paged-data-vb/_static/image16.png))
+**图 10**：现在可以按供应商对结果进行排序（[单击查看全尺寸图像](sorting-custom-paged-data-vb/_static/image16.png)）
 
 ## <a name="summary"></a>总结
 
-在前面的教程中，我们探讨的自定义分页实现所需结果打算进行排序所依据的顺序在设计时指定。 简单地说，这意味着，我们实现的自定义分页实现可能不是，一次提供排序功能。 在本教程中我们可以克服此限制了通过从第一个包含扩展存储的过程`@sortExpression`无法按其对结果进行排序的输入的参数。
+我们在前面的教程中检查的自定义分页实现需要在设计时指定结果的排序顺序。 简而言之，这意味着我们实现的自定义分页实现无法同时提供排序功能。 在本教程中，我们将通过扩展存储过程来克服了这一限制，使其包含可对结果进行排序的 `@sortExpression` 输入参数。
 
-创建此存储过程和 BLL 和 DAL 中创建新的方法后，我们能够实现一个 GridView，提供这两个排序和自定义分页通过配置对象数据源传入的 GridView s 当前`SortExpression`向 BLL 属性`SelectMethod`.
+在 DAL 和 BLL 中创建了此存储过程并创建了新方法后，我们可以通过将 ObjectDataSource 配置为传入 GridView current `SortExpression` 属性到 BLL `SelectMethod`来实现提供排序和自定义分页的 GridView。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Carlos Santos。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Carlos Santos。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](efficiently-paging-through-large-amounts-of-data-vb.md)
