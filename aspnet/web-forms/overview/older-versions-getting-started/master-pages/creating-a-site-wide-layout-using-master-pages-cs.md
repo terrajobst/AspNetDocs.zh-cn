@@ -1,258 +1,258 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
-title: 创建站点范围内布局使用母版页 (C#) |Microsoft Docs
+title: 使用母版页创建站点范围的布局（C#） |Microsoft Docs
 author: rick-anderson
-description: 本教程会演示母版页基础知识。 也就是说，主页面，是什么如何一个创建主页面，什么是内容的占位符，如何执行一个 cr...
+description: 本教程将演示母版页基础知识。 也就是说，母版页是什么，如何创建母版页，什么是内容占位符，如何使用一个 cr 。
 ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4ef4cc44a5d1adb936beea421a295ae84052d3c4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 1a5e85c443a2a3642ec185ab1897c43cdb2ab1f7
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116611"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74619518"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-c"></a>使用母版页创建站点范围内布局 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_01_CS.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_01_CS.pdf)
+[下载代码](https://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_01_CS.zip)或[下载 PDF](https://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_01_CS.pdf)
 
-> 本教程会演示母版页基础知识。 也就是说，什么是主页面，其中一个会如何创建主页面，什么是内容的占位符，如何 does 之一创建的 ASP.NET 页使用母版页，如何修改母版页自动反映在其关联的内容页面，等等。
+> 本教程将演示母版页基础知识。 也就是说，母版页是什么、母版页如何创建母版页、什么是内容占位符、如何创建使用母版页的 ASP.NET 页、修改母版页在其关联的内容页中的自动反映方式等。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-设计良好的一个属性是网站的一致的站点级页面布局。 以 [www.asp.net](www.asp.net) 网站中，为例。 在撰写本文时，每个页都有相同的内容的顶部和页面的底部。 如图 1 所示，每个页面的顶部将显示包含一系列 Microsoft 社区的灰色栏。 下面是站点徽标，其中该站点已翻译，语言和核心部分的列表：主页，获取已启动，学习、 下载等。 同样，页面底部包括有关广告 www.asp.net 、 版权声明和指向隐私声明的链接上的信息。
+设计良好的网站的一个特性是站点范围内一致的页面布局。 例如，学习 www.asp.net 网站。 撰写本文时，每个页面的顶部和底部都具有相同的内容。 如图1所示，每个页面的顶部都显示一个包含 Microsoft 社区列表的灰色栏。 这是网站徽标，其中包含已翻译的网站的语言列表，以及核心部分：家庭版、入门版、学习版、下载版等。 同样，页面底部还包括有关 www.asp.net 上的广告、版权声明和隐私声明的链接的信息。
 
-[![Www.asp.net 网站跨所有页面采用一致的外观](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
+[![www.asp.net 网站在所有页面中采用一致的外观](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
-<strong>图 01</strong>:Www.asp.net 网站采用一致的外观和感觉跨所有页面 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
+<strong>图 01</strong>： www.asp.net 网站在所有页面中采用一致的外观（[单击查看全尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png)）
 
-设计良好的另一个属性是站点的可用于更改站点的外观的易用性。 图 1 显示了自 2008 年 3 月起 www.asp.net 主页，但现在，本教程中的发布，可能已更改外观和感觉。 可能是沿着顶部的菜单项将展开以包括新的节的 MVC 框架。 也可能是揭秘是全新图案中带有不同的颜色、 字体和布局。 将此类更改应用于整个站点应快速而简单的过程不需要修改构成该站点的 web 页面的数千个。
+设计良好的网站的另一个属性是可以轻松地更改网站的外观。 图1显示了2008年3月之前的 www.asp.net 主页，但在此教程中，外观可能已更改。 可能顶部的菜单项将扩展为包含 MVC 框架的新部分。 或许有不同颜色、字体和布局的全新设计是公开了的。 将此类更改应用到整个站点应该是一个快速而简单的过程，无需修改组成网站的数千个网页。
 
-在 ASP.NET 中创建的站点级页面模板是使用可能*母版页*。 简单地说，主页面是一种特殊的 ASP.NET 页，定义所有常见的标记*内容页*以及可自定义基于内容的页面的内容页面的区域。 （内容页面是 ASP.NET 页面绑定到主页面。）每当更改主页面的布局或格式化时，所有其内容页的输出是同样立即更新，这使得应用网站的外观更改为更新和部署单个文件 （即，母版页） 一样简单。
+通过使用*母版页*，可以在 ASP.NET 中创建站点范围的页面模板。 简而言之，母版页是一种特殊类型的 ASP.NET 页面，用于定义所有*内容页*中通用的标记，以及在内容页上按内容自定义的区域。 （内容页是绑定到母版页的 ASP.NET 页面。）只要更改了母版页的布局或格式设置，它的所有内容页的输出也会立即更新，这使得应用站点范围的外观与更新和部署单个文件（即母版页）一样简单。
 
-这是一系列教程，了解如何使用主页面中的第一个教程。 本系列教程的过程中我们：
+这是一系列教程中的第一篇教程，其中介绍了如何使用母版页。 在本系列教程中，我们将：
 
-- 检查创建主页面和其关联的内容页面
-- 讨论各种提示、 技巧和陷阱，
-- 识别母版页的常见问题和解决办法探索
-- 请参阅如何从内容页和进行相反的转换访问主页面
-- 了解如何指定在运行时，内容页面的母版页和
-- 其他高级主页面主题。
+- 检查创建母版页及其关联的内容页，
+- 讨论各种提示、技巧和陷阱，
+- 确定常见的母版页缺陷并探索解决方法，
+- 请参阅如何从内容页访问母版页，反之亦然。
+- 了解如何在运行时指定内容页的母版页，以及
+- 其他高级母版页主题。
 
-这些教程旨在是简洁并提供引导你完成该过程以可视方式很大的屏幕截图的分步说明。 每个教程是在 C# 和 Visual Basic 版本中可用，包括使用的完整代码下载。
+这些教程旨在简洁明了，并提供有关多个屏幕截图的分步说明，以直观地完成此过程。 每个教程都在C#和 Visual Basic 版本中提供，并包括所使用的完整代码的下载。
 
-此开篇教程首先介绍在母版页基础知识。 我们讨论如何母版页的工作原理，将了解如何创建主页面和关联的内容页，使用 Visual Web Developer 中，并请参阅如何对母版页的更改将立即反映在其内容页面中。 让我们进入正题！
+本便捷性教程首先介绍母版页的基本知识。 我们将讨论母版页的工作原理，查看如何使用 Visual Web Developer 创建母版页和关联的内容页，以及如何在其内容页中立即反映母版页的更改。 让我们进入正题！
 
-## <a name="understanding-how-master-pages-work"></a>了解如何母版页的工作原理
+## <a name="understanding-how-master-pages-work"></a>了解母版页的工作方式
 
-构建具有一致的站点级页面布局的网站，要求每个网页发出除了其自定义内容的常见格式设置标记。 例如，www.asp.net 上的每个教程或论坛帖子有自己唯一的内容，而每个这些页面还呈现了一系列常见`<div>`显示顶级部分链接的元素：主页，开始了解，和其他操作。
+构建具有一致站点范围的页面布局的网站要求每个网页发出常见格式标记以及其自定义内容。 例如，虽然 www.asp.net 上的每个教程或论坛帖子都具有自己独特的内容，但每个页面还会呈现一系列常见 `<div>` 元素，这些元素显示了顶层部分链接： Home、入门、学习等。
 
-有各种用于创建具有一致的外观的网页的技术。 一个幼稚的做法是只需复制并粘贴到所有网页的常见布局标记，但这种方法有许多缺点。 对于初学者而言，每次创建一个新页面时，您必须记住复制并粘贴到页的共享的内容。 此类复制和粘贴操作是错误的时机已经成熟，因为你可能会意外地将共享标记的一个子集复制到新页。 从而为了彻底，这种方法使用新建一个真正的困难因为每个站点中的单个页面必须编辑才能使用新的外观和感觉替换现有的网站的外观。
+有多种方法可以创建具有一致外观的网页。 一种简单的方法是将通用布局标记复制并粘贴到所有网页中，但这种方法有很多缺点。 对于初学者，每次创建新页面时，都必须记得将共享内容复制并粘贴到页面中。 此类复制和粘贴操作对错误准备好，因为可能会意外地将共享标记的一个子集复制到新页中。 然后，这种方法可以将现有站点范围内的外观替换为新的，因为必须对站点中的每个页面进行编辑才能使用新的外观。
 
-在 ASP.NET 2.0 版中之前, 页开发人员通常放在常见标记[用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)并随后添加到每个页面的这些用户控件。 这种方法所需页面开发人员记住手动将用户控件添加到每个新页，但允许更轻松的站点范围内修改，因为更新的常见标记时仅由用户控件所需进行修改。 遗憾的是，Visual Studio.NET 2002年和 2003 的 Visual Studio 版本的用于创建 ASP.NET 1.x 应用程序的用户控件在设计视图中呈现为灰色的框。 因此，页面开发人员使用这种方法并没有享受所见即所得设计时环境。
+在 ASP.NET 版本2.0 之前，页面开发人员通常将常见标记放在[用户控件](https://msdn.microsoft.com/library/y6wb1a0e.aspx)中，然后将这些用户控件添加到每个页面。 这种方法要求页面开发人员记得手动将用户控件添加到每个新页面，但允许进行站点范围的更简单的修改，因为当只更新需要修改的用户控件时。 遗憾的是，Visual Studio .NET 2002 和 2003-用于创建 ASP.NET 1.x 应用程序的 Visual Studio 版本（设计视图中显示为灰色框）。 因此，使用此方法的页开发人员并不喜欢所见即所得的设计时环境。
 
-使用用户控件的不足之处已解决在 ASP.NET 2.0 版和 Visual Studio 2005 中引入*母版页*。 主页面是一种特殊的 ASP.NET 页，定义这两个网站的标记和*区域*位置相关联*内容页*定义它们的自定义标记。 我们将在步骤 1 中看到的由 ContentPlaceHolder 控件定义这些区域。 ContentPlaceHolder 控件只是表示主页面的控件层次结构中的内容页面可以在其中注入自定义内容的位置。
-
-> [!NOTE]
-> ASP.NET 2.0 版以来未更改的核心概念和功能的主页面。 但是，Visual Studio 2008 提供设计时支持嵌套的母版页，缺少对 Visual Studio 2005 中的功能。 我们将介绍如何在以后的教程中使用嵌套的母版页。
-
-图 2 显示了为 www.asp.net 母版页可能如下所示。 请注意，主页面以及中间的左侧，每个单独的 web 页面的独特内容所在的位置中 ContentPlaceHolder 定义常见网站的布局的顶部、 底部，和每个页面的右侧的标记的。
-
-![母版页内容页面的内容页基于定义站点范围内布局和可编辑区域](creating-a-site-wide-layout-using-master-pages-cs/_static/image4.png)
-
-**图 02**:母版页内容页面的内容页基于定义站点范围内布局和可编辑区域
-
-定义一个母版页后它可以绑定到新的 ASP.NET 页面，通过一个复选框的刻度线。 这些 ASP.NET 页面-称为内容页面的每个母版页的 ContentPlaceHolder 控件包括内容控件。 通过浏览器访问内容页时 ASP.NET 引擎创建主页面的控件层次结构和内容页面的控件层次结构注入到相应的位置。 呈现此组合的控件层次结构和生成的 HTML 返回到最终用户的浏览器。 因此，内容页会发出其母版页之外 ContentPlaceHolder 控件中定义的常见标记和其自己的内容控件中定义的特定于页面的标记。 图 3 说明了这一概念。
-
-[![请求的页面的标记融合到母版页](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
-
-**图 03**:请求的页面的标记融合到母版页 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image7.png))
-
-现在，我们已讨论了如何母版页的工作原理，让我们看一看创建主页面和使用 Visual Web Developer 的关联内容页。
+使用用户控件的缺点在 ASP.NET 版本2.0 和 Visual Studio 2005 中进行了介绍，其中包含*母版页*。 母版页是一种特殊类型的 ASP.NET 页面，用于定义站点范围内的标记和关联的*内容页*定义其自定义标记的*区域*。 如我们将在步骤1中看到的，这些区域由 ContentPlaceHolder 控件定义。 ContentPlaceHolder 控件只是表示母版页控件层次结构中的一个位置，其中的自定义内容可由内容页注入。
 
 > [!NOTE]
-> 若要访问尽可能多的受众，我们在整个教程系列中生成 ASP.NET 网站将创建与 Microsoft 的免费版本的 Visual Studio 2008 中，使用 ASP.NET 3.5 [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)。 如果你尚未升级到 ASP.NET 3.5 中，别担心-在这些教程工作中讨论的概念同样有效的 ASP.NET 2.0 和 Visual Studio 2005。 但是，一些演示应用程序可以使用.NET framework 3.5; 版新增功能当使用特定于 3.5 的功能时，我会包含一条说明，介绍了如何在版本 2.0 中实现类似的功能。 执行操作请记住，可用于演示应用程序从每个教程的目标.NET Framework 3.5 版中，这会导致下载`Web.config`文件，其中包含特定于 3.5 的配置元素和对中的特定于 3.5 的命名空间的引用`using` ASP.NET 页的代码隐藏类中的语句。 长话短说，如果你尚未然后可下载的 web 应用程序在计算机上安装.NET 3.5 未事先删除中的特定于 3.5 的标记将无法工作`Web.config`。 请参阅[仔细分析 ASP.NET 3.5 版的`Web.config`文件](http://www.4guysfromrolla.com/articles/121207-1.aspx)有关本主题的详细信息。 您还需要删除`using`引用特定于 3.5 的命名空间的语句。
+> ASP.NET 版本2.0 后，母版页的核心概念和功能尚未更改。 但是，Visual Studio 2008 为嵌套母版页提供设计时支持，这是 Visual Studio 2005 中缺少的一项功能。 在将来的教程中，我们将介绍如何使用嵌套母版页。
 
-## <a name="step-1-creating-a-master-page"></a>步骤 1：创建主页面
+图2显示了 www.asp.net 的母版页的外观。 请注意，母版页定义公共站点范围的布局-每个页面的顶部、底部和右侧的标记，以及位于左侧的 ContentPlaceHolder （每个单独网页的唯一内容所在的位置）。
 
-我们可以了解创建和使用母版页和内容页之前，我们首先需要将 ASP.NET 网站。 首先创建一个新文件系统基于 ASP.NET 网站。 若要完成此操作，启动 Visual Web Developer 中，然后转到文件菜单并选择新网站，显示新建网站对话框 （请参见图 4）。 选择 ASP.NET 网站模板、 将位置下拉列表设置为文件系统、 选择一个文件夹以将该 web 站点，并将语言设置为 C#。 这将创建与新的 web 站点`Default.aspx`ASP.NET 页面`App_Data`文件夹中，和一个`Web.config`文件。
+![母版页按内容页定义站点范围的布局和每个内容的可编辑区域](creating-a-site-wide-layout-using-master-pages-cs/_static/image4.png)
+
+**图 02**：母版页定义站点范围的布局和内容每个内容页上的可编辑区域
+
+定义母版页后，可以通过 checkbox 的勾选标记将其绑定到新的 ASP.NET 页面。 这些 ASP.NET 页-称为内容页-包含母版页的每个 ContentPlaceHolder 控件的内容控件。 通过浏览器访问内容页时，ASP.NET 引擎将创建母版页的控件层次结构，并将内容页的控件层次结构注入到适当的位置。 将呈现此组合控件层次结构，并将生成的 HTML 返回到最终用户的浏览器。 因此，"内容" 页将同时在其母版页中定义的公共标记和在其自己的内容控件中定义的页特定标记发出 ContentPlaceHolder 控件。 图3说明了这一概念。
+
+[![将请求的页的标记融合到母版页中](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
+
+**图 03**：请求的页的标记融合到了母版页中（[单击以查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image7.png)）
+
+现在我们已讨论了母版页的工作原理，接下来让我们看看如何使用 Visual Web Developer 创建母版页和关联的内容页。
 
 > [!NOTE]
-> Visual Studio 支持项目管理的两种的模式：网站项目和 Web 应用程序项目。 网站项目缺少项目文件中，而 Web 应用程序项目模拟项目体系结构在 Visual Studio.NET 2002/2003年-它们包括项目文件并将项目的源代码编译到单个程序集，该值将被放`/bin`文件夹。 Visual Studio 2005 最初仅支持的网站项目，尽管[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)已重新引入 Service Pack 1;Visual Studio 2008 提供了这两种项目模型。 Visual Web Developer 2005 和 2008年版本，但是，仅支持网站项目。 我使用我在本系列教程中演示的网站项目模型。 如果您使用的是非速成版，并且想要改为使用 Web 应用程序项目模型，随时执行此操作，但请注意您所见的屏幕和必须与所示的屏幕快照和 instructio 采取的步骤之间可能存在某些差异这些教程中提供的 ns。
+> 为了吸引到最广泛的受众，我们在本系列教程中生成的 ASP.NET 网站将使用 ASP.NET 3.5 和 Microsoft 的 Visual Studio 2008 （ [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)）版本来创建。 如果尚未升级到 ASP.NET 3.5，别担心，这些教程中讨论的概念同样适用于 ASP.NET 2.0 和 Visual Studio 2005。 但是，某些演示应用程序可能使用 .NET Framework 版本3.5 的新增功能;如果使用了3.5 特定的功能，我将介绍如何在版本2.0 中实现类似功能。 请记住，可从每个教程下载的演示应用程序针对的是 .NET Framework 版本3.5，这会生成一个 `Web.config` 文件，其中包括3.5 特定的配置元素，并对 ASP.NET 页的代码隐藏类中的 `using` 语句中的特定于3.5 的命名空间的引用。 简短故事：如果尚未在计算机上安装 .NET 3.5，下载的 web 应用程序将无法运行，而无需先从 `Web.config`中删除3.5 特定标记。 有关本主题的详细信息，请参阅[二级 ASP.NET 版本3.5 的 `Web.config` 文件](http://www.4guysfromrolla.com/articles/121207-1.aspx)。 还需要删除引用3.5 特定命名空间的 `using` 语句。
 
-[![创建新的文件基于系统的 Web 站点](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
+## <a name="step-1-creating-a-master-page"></a>步骤1：创建母版页
 
-**图 04**:创建 New File System-Based 网站 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image10.png))
+首先，我们需要一个 ASP.NET 网站，然后才能探讨如何创建和使用母版页和内容页。 首先，创建新的基于文件系统的 ASP.NET 网站。 若要实现此目的，请启动 "Visual Web Developer"，然后在 "文件" 菜单中选择 "新建网站"，并显示 "新建网站" 对话框（请参阅图4）。 选择 ASP.NET 网站模板，将 "位置" 下拉列表设置为 "文件系统"，选择要放置该网站的文件夹，并将语言设置为C#。 这将创建一个新网站，其中包含 `Default.aspx` ASP.NET "页、一个 `App_Data` 文件夹和一个 `Web.config` 文件。
 
-接下来，添加一个母版页到站点的根目录中右键单击项目名称，选择添加新项，然后选择母版页模板。 请注意母版页的扩展名结尾`.master`。 命名此新的主页面`Site.master`并单击添加。
+> [!NOTE]
+> Visual Studio 支持以下两种模式的项目管理：网站项目和 Web 应用程序项目。 网站项目缺少项目文件，而 Web 应用程序项目在 Visual Studio .NET 2002/2003 中模拟项目体系结构-它们包含一个项目文件，并将项目的源代码编译到一个程序集中，该程序集放置在 `/bin` 文件夹中。 仅当[Web 应用程序项目模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)被引入 Service Pack 1 时，Visual Studio 2005 最初才支持网站项目;Visual Studio 2008 提供两个项目模型。 但是，Visual Web Developer 2005 和2008版本仅支持网站项目。 我在本系列教程中使用网站项目模型进行演示。 如果你使用的是非速成版，并且想要使用 Web 应用程序项目模型，则可以随意执行此操作，但请注意，你在屏幕上看到的内容和所需步骤与显示的屏幕截图和 instructio在这些教程中提供的 ns。
 
-[![添加母版页名为 Site.master 到网站](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
+[![创建基于文件系统的新网站](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
 
-**图 05**:添加主页面命名`Site.master`到网站 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image13.png))
+**图 04**：创建新的基于文件系统的网站（[单击查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image10.png)）
 
-添加 Visual Web Developer 中通过新的主页面文件使用以下声明性标记创建主页面：
+接下来，右键单击项目名称，选择 "添加新项"，然后选择 "母版页" 模板，将母版页添加到根目录。 请注意，母版页以扩展名 `.master`结尾。 将这个新的母版页命名 `Site.master` 然后单击 "添加"。
+
+[![将名为 "网站" 的母版页添加到网站](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
+
+**图 05**：将名为 `Site.master` 的母版页添加到网站（[单击查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image13.png)）
+
+通过 Visual Web Developer 添加新的母版页文件会创建包含以下声明性标记的母版页：
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample1.aspx)]
 
-声明性标记中的第一行是[`@Master`指令](https://msdn.microsoft.com/library/ms228176.aspx)。 `@Master`指令是类似于[`@Page`指令](https://msdn.microsoft.com/library/ydy4x04a.aspx)的 ASP.NET 页中显示。 它定义的服务器端的语言 (C#) 和信息的位置和主页面的代码隐藏类继承。
+声明性标记中的第一行是[`@Master` 指令](https://msdn.microsoft.com/library/ms228176.aspx)。 `@Master` 指令类似于 ASP.NET 页面中显示的[`@Page` 指令](https://msdn.microsoft.com/library/ydy4x04a.aspx)。 它定义服务器端语言（C#），以及有关母版页的代码隐藏类的位置和继承的信息。
 
-`DOCTYPE`和下会显示在页面的声明性标记`@Master`指令。 此页包含四个服务器端控件以及静态 HTML:
+`DOCTYPE` 和页面的声明性标记出现在 `@Master` 指令下。 此页包含静态 HTML 以及四个服务器端控件：
 
-- **Web 窗体 ( `<form runat="server">`)** -因为所有 ASP.NET 页面通常具有 Web 窗体的因为主页面可能包含必须出现在 Web 窗体的 Web 控件，所以一定要将 Web 窗体添加到主页面 （而不是将 Web 窗体添加到 e支票内容页）。
-- **一个名为 ContentPlaceHolder 控件`ContentPlaceHolder1`**  -此 ContentPlaceHolder 控件将显示在 Web 窗体，并作为内容页面的用户界面的区域。
-- **服务器端`<head>`元素**-`<head>`元素具有`runat="server"`属性，使其可通过服务器端代码访问。 `<head>`元素实现这种方式，以便页面的标题和其他`<head>`的相关标记可能添加或以编程方式调整。 例如，设置 ASP.NET 页的`Title`属性更改`<title>`元素呈现的`<head>`服务器控件。
-- **一个名为 ContentPlaceHolder 控件`head`**  -此 ContentPlaceHolder 控件出现在`<head>`服务器控件，并可用于以声明方式将内容添加到`<head>`元素。
+- **Web 窗体（`<form runat="server">`）** -因为所有 ASP.NET 页面通常都具有 Web 窗体，因此，因为母版页可能包含必须出现在 Web 窗体中的 web 控件，所以请确保将 Web 窗体添加到母版页（而不是向每个内容页添加 web 窗体）。
+- **名为 `ContentPlaceHolder1`的 ContentPlaceHolder 控件**-此 ContentPlaceHolder 控件显示在 Web 窗体中，用作内容页的用户界面的区域。
+- **服务器端 `<head>` 元素**-`<head>` 元素具有 `runat="server"` 特性，使其可以通过服务器端代码进行访问。 `<head>` 元素以这种方式实现，以便可以通过编程方式添加或调整页面的标题和其他与 `<head>`相关的标记。 例如，设置 ASP.NET 页的 `Title` 属性将更改由 `<head>` 服务器控件呈现的 `<title>` 元素。
+- **名为 `head`的 ContentPlaceHolder 控件**-此 ContentPlaceHolder 控件出现在 `<head>` 服务器控件中，可用于以声明方式向 `<head>` 元素添加内容。
 
-此默认母版页声明性标记作为一个起始点，在设计主页面。 随时编辑 HTML 或将其他 Web 控件或 Contentplaceholder 添加到母版页。
+此默认母版页声明性标记用作设计你自己的母版页的起点。 可以随意编辑 HTML 或向母版页添加其他 Web 控件或 Contentplaceholder。
 
 > [!NOTE]
-> 当设计母版页请确保包含 Web 窗体母版页和至少一个 ContentPlaceHolder 控件将显示在该 Web 窗体。
+> 设计母版页时，请确保母版页包含 Web 窗体并且此 Web 窗体中至少显示了一个 ContentPlaceHolder 控件。
 
 ### <a name="creating-a-simple-site-layout"></a>创建简单的站点布局
 
-让我们展开`Site.master`的默认声明性标记来创建站点布局，其中所有页面都共享： 常见标头; 的导航、 新闻和其他站点范围的内容; 和页脚显示"提供支持的 Microsoft ASP.NET"图标左侧的列。 图 6 显示了母版页的最终结果时的浏览器查看其内容的页面之一。 图 6 中的红色圆圈的区域是特定于正在访问过的网页 (`Default.aspx`); 其他内容跨所有内容页面的母版页中定义和因此一致性。
+接下来，展开 `Site.master`的默认声明性标记，以创建所有页面共享的站点布局：公用标头;具有导航、新闻和其他站点范围内容的左侧列;以及显示 "由 Microsoft ASP.NET 支持" 图标的页脚。 图6显示了在浏览器中查看母版页的其中一个内容页时母版页的最终结果。 图6中的红色圆圈区域特定于要访问的页（`Default.aspx`）;其他内容在母版页中定义，因此在所有内容页中都是一致的。
 
-[![母版页的顶部、 左侧和底部部分定义标记](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
+[![母版页定义上、左和下部分的标记](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
 
-**图 06**:主页面定义的顶部、 左侧和底部部分的标记 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image16.png))
+**图 06**：母版页定义上、左和下部分的标记（[单击以查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image16.png)）
 
-若要实现站点布局图 6 所示，通过更新开始`Site.master`母版页，使其包含以下声明性标记：
+若要实现图6中所示的站点布局，请首先更新 `Site.master` 母版页，使其包含以下声明性标记：
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample2.aspx)]
 
-使用一系列定义主页面的布局`<div>`HTML 元素。 `topContent` `<div>`包含每个页上，顶部显示的标记时`mainContent`， `leftContent`，并`footerContent` `<div>` s 用于显示页面的内容、 左侧的列中，以及"提供支持的 MicrosoftASP.NET"图标，分别。 除了添加这些`<div>`元素，我还将重命名`ID`属性中的主 ContentPlaceHolder 控件`ContentPlaceHolder1`到`MainContent`。
+母版页的布局使用一系列 `<div>` HTML 元素进行定义。 `topContent` `<div>` 包含在每页顶部显示的标记，而 `mainContent`、`leftContent`和 `footerContent` `<div>` 用于显示页面的内容、左侧的列和 "按 Microsoft ASP.NET 提供支持" 图标。 除了添加这些 `<div>` 元素外，还会将主 ContentPlaceHolder 控件的 `ID` 属性从 `ContentPlaceHolder1` 重命名为 `MainContent`。
 
-这些已分类的格式设置和布局规则`<div>`元素中的拼写是否[级联样式表 (CSS)](http://en.wikipedia.org/wiki/Cascading_Style_Sheets)文件`Styles.css`，这通过指定&lt;链接&gt;中的元素主页面&lt;head&gt;元素。 这些内容的各种规则定义的每个外观`<div>`上面记下的元素。 例如， `topContent` `<div>`元素，后者将显示"主页面教程"文本和链接，具有其格式设置规则中指定`Styles.css`，如下所示：
+在[级联样式表（CSS）文件 `Styles.css`中，会在级联样式表（CSS）](http://en.wikipedia.org/wiki/Cascading_Style_Sheets)文件中对这些 `<div>` 元素的格式设置和布局规则进行拼写设置，该文件通过母版页的 &lt;head&gt; 元素中的 &lt;链接&gt; 元素来指定。 这些不同的规则定义上面所述的每个 `<div>` 元素的外观。 例如，`topContent` `<div>` 元素（用于显示 "母版页教程" 文本和链接）在 `Styles.css` 中指定了其格式设置规则，如下所示：
 
 [!code-css[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample3.css)]
 
-如果遵循在您的计算机，则需要下载此教程随附的代码并将添加`Styles.css`到你的项目文件。 同样，您还需要创建一个名为映像并将"提供支持的 Microsoft ASP.NET"图标从下载的演示网站复制到你的项目。
+如果你正在计算机上进行以下工作，你将需要下载本教程附带的代码，并将 `Styles.css` 文件添加到你的项目中。 同样，您还需要创建一个名为 Images 的文件夹，然后将下载的演示网站中的 "Microsoft ASP.NET 提供支持" 图标复制到您的项目中。
 
 > [!NOTE]
-> CSS 和网页格式的讨论已超出本文的讨论范围。 有关 CSS 的详细信息，请参阅[CSS 教程](http://www.w3schools.com/css/default.asp)处[W3Schools.com](http://www.w3schools.com/)。 我还建议您下载本教程随附的代码并试用可以使用中的 CSS 设置`Styles.css`若要查看不同的格式设置规则的效果。
+> 对 CSS 和网页格式设置的讨论超出了本文的讨论范围。 有关 CSS 的详细信息，请参阅[W3Schools.com](http://www.w3schools.com/)上的[css 教程](http://www.w3schools.com/css/default.asp)。 我还鼓励您下载本教程附带的代码，并在 `Styles.css` 中开始处理 CSS 设置，以查看不同格式设置规则的效果。
 
-### <a name="creating-a-master-page-using-an-existing-design-template"></a>创建使用现有的设计模板的主页面
+### <a name="creating-a-master-page-using-an-existing-design-template"></a>使用现有设计模板创建母版页
 
-多年来我构建了大量的小型到中型公司的 ASP.NET web 应用程序。 我的客户端的某些公司使用了他们想要使用; 某个现有站点布局其他人雇用功能完善的图形设计器。 几个委托我设计网站布局。 图 6 中可以看到，任务调度程序员设计网站的布局通常为明智的做法是为具有执行 open-heart surgery，而您的医生却你的税额你会计。
+多年来，我为中小型公司构建了许多 ASP.NET 的 web 应用程序。 我的某些客户端要使用现有的站点布局;其他人雇用了一个有能力的图形设计器。 一些用于设计网站布局的委托。 如图6所示，设计网站布局的程序员的任务通常与在您的会计师执行开放心的工作时进行的工作非常明智。
 
-幸运的是，有 innumerous 提供免费的 HTML 设计模板的网站-Google 搜索词"免费网站模板。"返回六个 100 万个结果 我最喜欢的之一是[OpenDesigns.org](http://opendesigns.org/)。一旦找到您喜欢的网站模板，将 CSS 文件和图像添加到你的网站项目并将模板的 HTML 集成到主页面。
-
-> [!NOTE]
-> Microsoft 还提供了多种[免费 ASP.NET 设计启动工具包模板](https://msdn.microsoft.com/asp.net/aa336613.aspx)，将集成到 Visual Studio 中的新建网站对话框。
-
-## <a name="step-2-creating-associated-content-pages"></a>步骤 2：创建关联的内容页
-
-与创建母版页，我们就可以开始创建绑定到母版页的 ASP.NET 页。 这些页面称为*内容页面*。
-
-让我们向项目添加新的 ASP.NET 页面并将其绑定到`Site.master`母版页。 右键单击解决方案资源管理器中的项目名称并选择添加新项选项。 选择 Web 窗体模板中，输入名称`About.aspx`，然后选中"选择母版页"复选框，如图 7 中所示。 执行此操作将显示选择母版页对话框框中，您可以从中选择要使用的母版页的 （请参阅图 8）。
+幸运的是，有一些 innumerous 网站提供免费的 HTML 设计模板-Google 为搜索词 "免费网站模板" 返回了6000000多个结果。 我最喜欢的一个是[OpenDesigns.org](http://opendesigns.org/)。找到所需的网站模板后，将 CSS 文件和图像添加到网站项目，并将模板的 HTML 集成到母版页中。
 
 > [!NOTE]
-> 如果您创建了在 ASP.NET 网站中使用 Web 应用程序项目模型而不网站项目模型则不会在图 7 中所示的添加新项对话框中的"选择母版页"复选框。 若要创建内容页面时使用的 Web 应用程序项目模型，必须选择而不是 Web 窗体模板的 Web 内容窗体模板。 选择 Web 内容窗体模板并单击添加后, 相同选择图 8 所示的对话框将出现一个母版页。
+> Microsoft 还提供了许多[免费的 ASP.NET 设计入门工具包模板](https://msdn.microsoft.com/asp.net/aa336613.aspx)，这些模板集成到 Visual Studio 中的 "新建网站" 对话框。
 
-[![添加新的内容页面](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
+## <a name="step-2-creating-associated-content-pages"></a>步骤2：创建关联的内容页
 
-**图 07**:添加新的内容页 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image19.png))
+创建母版页后，便可以开始创建绑定到母版页的 ASP.NET 页面了。 此类页称为 "*内容页*"。
 
-[![选择 Site.master 母版页](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
+让我们向项目添加一个新的 ASP.NET 页面，并将其绑定到 `Site.master` 母版页。 右键单击 "解决方案资源管理器中的项目名称，然后选择" 添加新项 "选项。 选择 "Web 窗体" 模板，输入名称 `About.aspx`，然后选中 "选择母版页" 复选框，如图7所示。 这样做将显示 "选择母版页" 对话框（见图8），您可以从该对话框中选择要使用的母版页。
 
-**图 08**:选择`Site.master`母版页 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image22.png))
+> [!NOTE]
+> 如果你使用 Web 应用程序项目模型而不是网站项目模型创建了你的 ASP.NET 网站，则在图7所示的 "添加新项" 对话框中将看不到 "选择母版页" 复选框。 若要在使用 Web 应用程序项目模型时创建内容页，您必须选择 Web 内容表单模板而不是 Web 窗体模板。 选择 Web 内容表单模板并单击 "添加" 后，将显示图8中所示的 "选择母版页" 对话框。
 
-如下面的声明性标记所示，新的内容页包含`@Page`指令，指回其主页面和内容控件的每个母版页的 ContentPlaceHolder 控件。
+[!["添加新内容" 页](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
+
+**图 07**：添加新的内容页（[单击以查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image19.png)）
+
+[![选择网站。母版页母版页](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
+
+**图 08**：选择 `Site.master` 的母版页（[单击以查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image22.png)）
+
+如下面的声明性标记所示，新的内容页包含一个 `@Page` 指令，该指令指向其母版页，并为母版页的每个 ContentPlaceHolder 控件提供内容控件。
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample4.aspx)]
 
 > [!NOTE]
-> 在步骤 1 中的"创建简单站点布局"部分我重命名`ContentPlaceHolder1`到`MainContent`。 如果没有重命名此 ContentPlaceHolder 控件`ID`中相同的方式，内容页面的声明性标记会略有不同，根据上面所示的标记。 也就是说，第二个内容控件的`ContentPlaceHolderID`将反映`ID`相应 ContentPlaceHolder 控件在母版页中。
+> 在步骤1中的 "创建简单的站点布局" 部分中，将 `ContentPlaceHolder1` 重命名为 `MainContent`。 如果未以相同方式重命名此 ContentPlaceHolder 控件的 `ID`，则内容页的声明性标记将与上面显示的标记略有不同。 也就是说，第二个内容控件的 `ContentPlaceHolderID` 将反映母版页中对应 ContentPlaceHolder 控件的 `ID`。
 
-当呈现内容页、 ASP.NET 引擎必须 fuse 页面的内容与其母版页 ContentPlaceHolder 控件的控件。 ASP.NET 引擎确定从内容页面的母版页`@Page`指令的`MasterPageFile`属性。 如上面的标记所示，此内容页面绑定到`~/Site.master`。
+呈现内容页时，ASP.NET 引擎必须将页面的内容控件与母版页的 ContentPlaceHolder 控件一起使用。 ASP.NET 引擎根据 `@Page` 指令的 `MasterPageFile` 特性确定内容页的母版页。 如上标记所示，此内容页绑定到 `~/Site.master`。
 
-因为主页有两个 ContentPlaceHolder 控件-`head`和`MainContent`-Visual Web Developer 中生成两个内容控件。 每个内容控件引用通过特定 ContentPlaceHolder 其`ContentPlaceHolderID`属性。
+由于母版页具有两个 ContentPlaceHolder 控件-`head` 和 `MainContent`-Visual Web Developer 生成了两个内容控件。 每个内容控件通过其 `ContentPlaceHolderID` 属性引用特定的 ContentPlaceHolder。
 
-其中一种站点范围模板技术通过母版页闪光是其设计时支持。 图 9 显示了`About.aspx`时通过 Visual Web Developer 设计视图中查看的内容页。 请注意，主页面内容可见时，它将灰显并且不能修改。 与母版页的 Contentplaceholder 相对应的内容控件，但是，一些可编辑。 就像使用任何其他 ASP.NET 页上，可以创建内容页面的接口通过添加 Web 控件通过源或设计视图。
+其中，母版页通过以前站点范围内的模板技术来提供支持。 图9显示了通过 Visual Web Developer 的设计视图进行查看时 `About.aspx` 的内容页面。 请注意，母版页内容可见时，它将灰显并且无法修改。 但与母版页的 Contentplaceholder 相对应的内容控件是可编辑的。 与任何其他 ASP.NET 页一样，你可以通过在 "源" 或 "设计" 视图中添加 Web 控件来创建内容页的接口。
 
-[![内容页面的设计视图中显示这两个特定于页面的和主页面内容](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
+["内容" 页的 "设计" 视图 ![显示页面特定内容和母版页内容](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
 
-**图 09**:内容页面的设计视图显示的两个特定于页面的和主页面内容 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image25.png))
+**图 09**： "内容" 页的 "设计" 视图显示页面特定内容和母版页内容（[单击以查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image25.png)）
 
 ### <a name="adding-markup-and-web-controls-to-the-content-page"></a>将标记和 Web 控件添加到内容页
 
-请花费片刻时间创建的某些内容`About.aspx`页。 如您所见图 10 中，我输入"有关作者"标题和几个段落的文本，但您太添加 Web 控件。 在创建后此接口，请访问`About.aspx`通过浏览器的页。
+请花片刻时间为 `About.aspx` 页面创建一些内容。 如图10中所示，我输入了 "关于作者" 标题和几个文本段落，但也可以随意添加 Web 控件。 创建此接口后，通过浏览器访问 `About.aspx` 页面。
 
-[![请访问 About.aspx 页通过浏览器](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
+[![通过浏览器访问 About 页](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
 
-**图 10**:请访问`About.aspx`通过浏览器页面 ([单击以查看实际尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image28.png))
+**图 10**：通过浏览器访问 `About.aspx` 页面（[单击查看完全尺寸的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image28.png)）
 
-请务必了解请求的内容页面和其关联的母版页是融合，作为一个整体的 web 服务器上完全呈现。 最终用户的浏览器然后发送生成、 浮点混合 HTML。 若要验证这一点，查看由浏览器转到视图菜单并选择数据源收到的 HTML。 请注意，有没有帧或用于单个窗口中显示两个不同的网页的其他任何专用的方法。
+需要了解的是，所请求的内容页及其关联的母版页都已在 web 服务器上全部呈现并呈现为整体。 然后，最终用户的浏览器将发送到生成的带中的 HTML。 若要验证此情况，请转到 "视图" 菜单并选择 "源"，以查看浏览器收到的 HTML。 请注意，没有框架或任何其他用于在单个窗口中显示两个不同网页的专用技术。
 
-### <a name="binding-a-master-page-to-an-existing-aspnet-page"></a>绑定到现有的 ASP.NET 页面的母版页
+### <a name="binding-a-master-page-to-an-existing-aspnet-page"></a>将母版页绑定到现有的 ASP.NET 页
 
-正如我们看到在此步骤中，将新的内容页面添加到 ASP.NET web 应用程序是只需选中"选择母版页"复选框并选择主页面。 遗憾的是，将现有的 ASP.NET 页面转换为母版页并不那么容易。
+正如本步骤中所述，将新的内容页添加到 ASP.NET web 应用程序非常简单，只需选中 "选择母版页" 复选框并选择母版页即可。 遗憾的是，将现有的 ASP.NET 页转换为母版页并不容易。
 
-若要绑定到现有的 ASP.NET 页面的母版页需要执行以下步骤：
+若要将母版页绑定到现有的 ASP.NET 页面，需要执行以下步骤：
 
-1. 添加`MasterPageFile`属性为 ASP.NET 页面的`@Page`指令，指向相应的主页面。
-2. 为每个母版页中 Contentplaceholder 添加内容控件。
-3. 有选择地剪切并粘贴到相应的内容控件的 ASP.NET 页面的现有内容。 我说"有选择地"在此处，ASP.NET 页面有可能因为包含标记表示已通过母版页，如`DOCTYPE`，则`<html>`元素和 Web 窗体。
+1. 将 `MasterPageFile` 特性添加到 ASP.NET 页的 `@Page` 指令中，将其指向相应的母版页。
+2. 为母版页中的每个 Contentplaceholder 添加内容控件。
+3. 选择性地将 ASP.NET 页面的现有内容剪切并粘贴到相应的内容控件中。 我说 "有选择"，因为 ASP.NET 页面可能包含已由母版页表示的标记，例如 `DOCTYPE`、`<html>` 元素和 Web 窗体。
 
-屏幕快照以及此过程的分步说明，请查看[Scott Guthrie](https://weblogs.asp.net/scottgu/)的[使用母版页和站点导航](http://webproject.scottgu.com/CSharp/MasterPages/MasterPages.aspx)教程。 "更新`Default.aspx`和`DataSample.aspx`使用母版页"部分详细介绍这些步骤。
+有关此过程的分步说明以及屏幕截图，请查看[Scott Guthrie](https://weblogs.asp.net/scottgu/)的[使用母版页和站点导航](http://webproject.scottgu.com/CSharp/MasterPages/MasterPages.aspx)教程。 "更新 `Default.aspx` 和 `DataSample.aspx` 使用母版页" 部分详细介绍了这些步骤。
 
-因为它是比要将现有 ASP.NET 页面转换成内容页面创建新的内容页面容易得多，我建议，每次创建新的 ASP.NET 网站添加母版页到站点。 将所有新的 ASP.NET 页面绑定到此母版页。 不必担心初始的主页面是非常简单的还是纯;您可以更高版本更新母版页。
+由于创建新的内容页比将现有的 ASP.NET 页转换为内容页要容易得多，因此，我建议在每次创建新的 ASP.NET 网站时，将母版页添加到网站。 将所有新的 ASP.NET 页绑定到此母版页。 如果初始母版页非常简单或简洁，请不要担心;您可以在以后更新母版页。
 
 > [!NOTE]
-> 当创建新的 ASP.NET 应用程序，Visual Web Developer 将添加`Default.aspx`没有绑定到母版页的页面。 如果想要将现有的 ASP.NET 页面转换成内容页的做法，请继续并执行此操作与`Default.aspx`。 或者，可以删除`Default.aspx`并随后重新添加它，但这次，选中"选择母版页"复选框。
+> 创建新的 ASP.NET 应用程序时，Visual Web Developer 会添加一个未绑定到母版页的 `Default.aspx` 页面。 如果要练习将现有的 ASP.NET 页转换为内容页，请继续操作并 `Default.aspx`。 或者，你可以删除 `Default.aspx` 然后重新添加它，但这一次选中 "选择母版页" 复选框。
 
-## <a name="step-3-updating-the-master-pages-markup"></a>步骤 3：更新主页面的标记
+## <a name="step-3-updating-the-master-pages-markup"></a>步骤3：更新母版页的标记
 
-主页面的主要优点之一是使用单个母版页，可用于在站点上定义的许多页面的整体布局。 因此，更新站点的外观和感觉需要更新单个文件的主页面。
+母版页的主要优点之一是可以使用单个母版页来定义站点上许多页面的整体布局。 因此，更新站点的外观和感觉需要更新单个文件-母版页。
 
-为了演示此行为，让我们更新了主页，包括顶部的左侧列中的当前日期。 添加一个名为标签`DateDisplay`到`leftContent` `<div>`。
+为了说明此行为，我们将母版页更新为在左列顶部包含当前日期。 将名为 `DateDisplay` 的标签添加到 `leftContent` `<div>`中。
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample5.aspx)]
 
-接下来，创建`Page_Load`主事件处理程序页上，添加以下代码：
+接下来，为母版页创建 `Page_Load` 事件处理程序并添加以下代码：
 
 [!code-csharp[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample6.cs)]
 
-上面的代码中设置的标签`Text`属性设置为当前日期和时间格式为日期是星期几、 月和两位数日期的名称 （请参阅图 11）。 进行此更改后，重新访问您的内容页。 如图 11 所示，所得的标记是立即更新以包括对母版页的更改。
+上面的代码将标签的 `Text` 属性设置为当前日期和时间，其格式为一周中的某一天，月份名称和两位数日期（参见图11）。 进行此更改后，请重新访问其中一个内容页面。 如图11所示，生成的标记会立即更新，以包括对母版页所做的更改。
 
-[![母版页的更改会反映时查看的内容页](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
+[![查看 "内容" 页时，将反映母版页的更改](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
 
-**图 11**:母版页的更改会反映时查看的内容页 ([单击此项可查看原尺寸图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image31.png))
+**图 11**：查看 "内容" 页时，母版页的更改会反映出来（[单击查看完全大小的图像](creating-a-site-wide-layout-using-master-pages-cs/_static/image31.png)）
 
 > [!NOTE]
-> 如本示例所示，主页面可能包含服务器端 Web 控件、 代码和事件处理程序。
+> 如本示例所示，母版页可能包含服务器端 Web 控件、代码和事件处理程序。
 
 ## <a name="summary"></a>总结
 
-母版页使 ASP.NET 开发人员设计一致的网站的布局，可轻松地更新。 创建主页面和其关联的内容页面只需创建标准 ASP.NET 页，因为 Visual Web Developer 提供了丰富的设计时支持。
+通过母版页，ASP.NET 开发人员可以设计出一个易于更新的一致站点范围的布局。 创建母版页及其关联的内容页与创建标准 ASP.NET 页一样简单，因为 Visual Web Developer 提供丰富的设计时支持。
 
-在本教程中创建的主页面示例有两个 ContentPlaceHolder 控件`head`和`MainContent`。 我们仅指定标记`MainContent`ContentPlaceHolder 控件在内容页中，但是。 在下一教程中我们介绍如何使用多个内容控件中内容的页面。 我们还将了解如何定义默认内容标记控件的主页面，以及如何使用默认值之间进行切换标记中定义主页面并提供从内容页的自定义标记。
+本教程中创建的母版页示例有两个 ContentPlaceHolder 控件，`head` 和 `MainContent`。 但我们仅在内容页中为 `MainContent` ContentPlaceHolder 控件指定了标记。 在下一教程中，我们将介绍如何在内容页中使用多个内容控件。 我们还将了解如何在母版页中定义内容控件的默认标记，以及如何在使用在母版页中定义的默认标记和从内容页提供自定义标记之间切换。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [面向设计人员的 ASP.NET:使用 Web 标准构建 ASP.NET 网站上免费设计模板和指南](https://msdn.microsoft.com/asp.net/aa336602.aspx)
-- [ASP.NET 主机页面概述](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
-- [级联样式表 (CSS) 教程](http://www.w3schools.com/css/default.asp)
-- [动态设置页面的标题](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
-- [在 ASP.NET 中的母版页](http://www.odetocode.com/articles/419.aspx)
-- [母版页的快速入门教程](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/masterpages/default.aspx)
+- [面向设计人员的 ASP.NET：免费设计模板和有关使用 Web 标准构建 ASP.NET 网站的指南](https://msdn.microsoft.com/asp.net/aa336602.aspx)
+- [ASP.NET 母版页概述](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
+- [级联样式表（CSS）教程](http://www.w3schools.com/css/default.asp)
+- [动态设置页面标题](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
+- [ASP.NET 中的母版页](http://www.odetocode.com/articles/419.aspx)
+- [母版页快速入门教程](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/masterpages/default.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个部 asp/ASP.NET 书籍并创办了 4GuysFromRolla.com，一直从事 Microsoft Web 技术自 1998 年起。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的多个 ASP/asp 和4GuysFromRolla.com 的作者已使用 Microsoft Web 技术，1998。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以通过[http://ScottOnWriting.NET](http://scottonwriting.net/) [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或通过他的博客访问 Scott。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)放置一行。
 
 > [!div class="step-by-step"]
 > [下一页](multiple-contentplaceholders-and-default-content-cs.md)

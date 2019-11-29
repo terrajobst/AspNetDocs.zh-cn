@@ -1,24 +1,24 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: 教程：使用 SignalR 2 和 MVC 5 的实时聊天 |Microsoft Docs
+title: 教程： SignalR 2 和 MVC 5 的实时聊天 |Microsoft Docs
 author: bradygaster
-description: 本教程演示如何使用 ASP.NET SignalR 2 来创建实时聊天应用程序。 将 SignalR 添加到 MVC 5 应用程序。
+description: 本教程介绍如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 SignalR 添加到 MVC 5 应用程序。
 ms.author: bradyg
 ms.date: 01/22/2019
 ms.assetid: 80bfe5fb-bdfc-41fe-ac43-2132e5d69fac
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: 1b02aecc68a93dbd6373ca5304530e76c9d0b6b5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5671e4f0123ca2b0cb5314336cf4411467feac70
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065744"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600476"
 ---
-# <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>教程：通过 SignalR 2 和 MVC 5 进行实时聊天
+# <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>教程： SignalR 2 和 MVC 5 的实时聊天
 
-本教程演示如何使用 ASP.NET SignalR 2 来创建实时聊天应用程序。 将 SignalR 添加到 MVC 5 应用程序并创建聊天视图以发送和显示的消息。
+本教程介绍如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 SignalR 添加到 MVC 5 应用程序，并创建聊天视图来发送和显示消息。
 
 在本教程中，你将了解：
 
@@ -29,72 +29,72 @@ ms.locfileid: "57065744"
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)与**ASP.NET 和 web 开发**工作负荷。
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ，提供**ASP.NET 和 web 开发**工作负荷。
 
 ## <a name="set-up-the-project"></a>设置项目
 
-本部分演示如何使用 Visual Studio 2017 和 SignalR 2 来创建一个空的 ASP.NET MVC 5 应用程序、 添加 SignalR 库，并创建聊天应用程序。
+本部分演示如何使用 Visual Studio 2017 和 SignalR 2 创建一个空的 ASP.NET MVC 5 应用程序，添加 SignalR 库，并创建聊天应用程序。
 
-1. 在 Visual Studio 中，创建面向.NET Framework 4.5 的 C# ASP.NET 应用程序、 其命名为 SignalRChat，并单击确定。
+1. 在 Visual Studio 中，创建C#一个面向 .NET Framework 4.5 的 ASP.NET 应用程序，将其命名为 SignalRChat，然后单击 "确定"。
 
     ![创建 web](tutorial-getting-started-with-signalr-and-mvc/_static/image1.png)
 
-1. 在中**新 ASP.NET Web 应用程序-SignalRMvcChat**，选择**MVC** ，然后选择**更改身份验证**。
+1. 在**New ASP.NET Web 应用程序-SignalRMvcChat**中，选择 " **MVC** "，然后选择 "**更改身份验证**"。
 
-1. 在中**更改身份验证**，选择**无身份验证**然后单击**确定**。
+1. 在 "**更改身份验证**" 中，选择 "**无身份验证**" 并单击 **"确定"**
 
     ![选择无身份验证](tutorial-getting-started-with-signalr-and-mvc/_static/image2.png)
 
-1. 在中**新 ASP.NET Web 应用程序-SignalRMvcChat**，选择**确定**。
+1. 在**New ASP.NET Web 应用程序-SignalRMvcChat**中，选择 **"确定"** 。
 
-1. 在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **新项**。
+1. 在**解决方案资源管理器**中，右键单击项目，然后选择 "**添加** > **新项**"。
 
-1. 在中**添加新项-SignalRChat**，选择**已安装** > **Visual C#**   >  **Web**  > **SignalR** ，然后选择**SignalR Hub 类 (v2)**。
+1. 在 **"添加新项-SignalRChat**" 中，选择 "**安装** > **Visual C#**  > **Web** > " **SignalR** ，然后选择 " **SignalR Hub 类（v2）** "。
 
-1. 将类命名*ChatHub*并将其添加到项目。
+1. 将类命名为*ChatHub* ，并将其添加到项目。
 
-    此步骤将创建*ChatHub.cs*类文件并添加一组脚本文件和 SignalR 支持到项目的程序集引用。
+    此步骤将创建*ChatHub.cs*类文件，并向项目中添加一组支持 SignalR 的脚本文件和程序集引用。
 
-1. 在新的代码替换为*ChatHub.cs*类文件，此代码：
+1. 将新的*ChatHub.cs*类文件中的代码替换为以下代码：
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample1.cs)]
 
-1. 在中**解决方案资源管理器**，右键单击该项目并选择**添加** > **类**。
+1. 在**解决方案资源管理器**中，右键单击项目，然后选择 "**添加** > **类**"。
 
-1. 将新类命名*启动*并将其添加到项目。
+1. 将新类命名为*Startup* ，并将其添加到项目。
 
-1. 中的代码替换*Startup.cs*类文件，此代码：
+1. 将*Startup.cs*类文件中的代码替换为以下代码：
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample2.cs)]
 
-1. 在中**解决方案资源管理器**，选择**控制器** > **HomeController.cs**。
+1. 在**解决方案资源管理器**中，选择 "**控制器**" > **HomeController.cs**"。
 
-1. 将以下方法添加到*HomeController.cs*。
+1. 将此方法添加到*HomeController.cs*。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample3.cs)]
 
-    此方法返回**聊天**在稍后的步骤中创建的视图。
+    此方法返回在稍后的步骤中创建的**聊天**视图。
 
-1. 在中**解决方案资源管理器**，右键单击**视图** > **主页**，然后选择**添加** >   **视图**。
+1. 在**解决方案资源管理器**中，右键单击 > **Home**"的"**视图**"，然后选择"**添加** >  **视图**"。
 
-1. 在中**添加视图**，将新视图命名**聊天**，然后选择**添加**。
+1. 在 "**添加视图**" 中，将新视图命名为 "**聊天**" 并选择 "**添加**"。
 
-1. 内容替换为**Chat.cshtml**使用以下代码：
+1. 将**Chat**的内容替换为以下代码：
 
     [!code-cshtml[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample4.cshtml)]
 
-1. 在中**解决方案资源管理器**，展开**脚本**。
+1. 在**解决方案资源管理器**中，展开 "**脚本**"。
 
-    适用于 jQuery 和 SignalR 的脚本库将显示在该项目。
+    JQuery 和 SignalR 的脚本库在项目中可见。
 
     > [!IMPORTANT]
-    > 包管理器可能已安装的 SignalR 脚本的更高版本。
+    > 程序包管理器可能已安装了更高版本的 SignalR 脚本。
 
-1. 检查与项目中的脚本文件的版本相对应的代码块中的脚本引用。
+1. 检查代码块中的脚本引用是否对应于项目中的脚本文件的版本。
 
-    从原始的代码块的脚本引用：
+    从原始代码块编写引用脚本：
 
     ```cshtml
     <!--Script references. -->
@@ -103,82 +103,82 @@ ms.locfileid: "57065744"
     <script src="~/Scripts/jquery.signalR-2.1.0.min.js"></script>
     ```
 
-1. 如果不匹配，更新 *.cshtml*文件。
+1. 如果二者不匹配，则更新该*cshtml*文件。
 
-1. 从菜单栏中，选择**文件** > **全部保存**。
+1. 从菜单栏中选择 "**文件**" > "**全部保存**"。
 
 ## <a name="run-the-sample"></a>运行示例
 
-1. 在工具栏中，开启**脚本调试**，然后选择播放按钮以在调试模式下运行示例。
+1. 在工具栏中，启用 "**脚本调试**"，然后选择 "播放" 按钮以调试模式运行该示例。
 
     ![输入用户名](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
 
-1. 在浏览器打开时，输入你的聊天身份的名称。
+1. 当浏览器打开时，为聊天标识输入名称。
 
-1. 从浏览器中复制 URL、 打开两个其他浏览器，并将 Url 粘贴到地址栏。
+1. 从浏览器复制 URL，打开其他两个浏览器，然后将 Url 粘贴到地址栏中。
 
 1. 在每个浏览器中，输入唯一名称。
 
-1. 现在，添加注释并选择**发送**。 在其他浏览器中重复的。 注释将显示在真实时间中。
+1. 现在，请添加注释，然后选择 "**发送**"。 在其他浏览器中重复此操作。 注释会实时显示。
 
     > [!NOTE]
-    > 此简单的聊天应用程序不维护服务器上的讨论上下文。 在中心广播到所有当前用户的注释。 加入聊天更高版本的用户将看到消息从时添加它们加入。
+    > 这个简单的聊天应用程序不会在服务器上维护讨论上下文。 中心将注释广播给所有当前用户。 稍后加入聊天的用户将看到从他们加入的时间添加的消息。
 
-    请参阅聊天应用程序在三个不同的浏览器中的运行方式。 当 Tom、 Anand 和 Susan 发送消息时，所有浏览器实时更新：
+    了解如何在三种不同的浏览器中运行聊天应用程序。 当 Tom、Anand 和 Susan 发送消息时，所有浏览器都将实时更新：
 
-    ![所有三个浏览器显示相同的聊天历史记录](tutorial-getting-started-with-signalr-and-mvc/_static/image4.png)
+    ![所有三个浏览器都显示相同的聊天历史记录](tutorial-getting-started-with-signalr-and-mvc/_static/image4.png)
 
-1. 在中**解决方案资源管理器**，检查**脚本文档**节点运行的应用程序。 没有名为的脚本文件*中心*SignalR 库生成在运行时。 此文件管理的 jQuery 脚本和服务器端代码之间的通信。
+1. 在**解决方案资源管理器**中，检查正在运行的应用程序的 "**脚本文档**" 节点。 有一个名为*hub*的脚本文件，SignalR 库会在运行时生成。 此文件管理 jQuery 脚本和服务器端代码之间的通信。
 
-    ![在脚本文档节点中自动生成中心脚本](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
+    ![脚本文档节点中自动生成的中心脚本](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
 
 ## <a name="examine-the-code"></a>检查代码
 
-SignalR 聊天应用程序演示了两个基本的 SignalR 开发任务。 它显示了如何创建一个中心。 服务器使用的主要协调对象为该中心。 在中心使用 SignalR jQuery 库来发送和接收消息。
+SignalR chat 应用程序演示了两个基本 SignalR 开发任务。 其中介绍了如何创建中心。 服务器使用该集线器作为主协调对象。 中心使用 SignalR jQuery library 来发送和接收消息。
 
-### <a name="signalr-hubs-in-the-chathubcs"></a>SignalR 集线器中 ChatHub.cs
+### <a name="signalr-hubs-in-the-chathubcs"></a>ChatHub.cs 中的 SignalR 中心
 
-在代码示例中，`ChatHub`类派生自`Microsoft.AspNet.SignalR.Hub`类。 派生自`Hub`类是一种有用的方式来构建 SignalR 应用程序。 可以在中心类上创建的公共方法，然后通过调用从网页中的脚本中访问这些方法。
+在代码示例中，`ChatHub` 类派生自 `Microsoft.AspNet.SignalR.Hub` 类。 从 `Hub` 类派生是构建 SignalR 应用程序的一种有用方法。 可以在中心类上创建公共方法，并通过在网页中的脚本中调用这些方法来访问这些方法。
 
-在聊天代码中，客户端调用`ChatHub.Send`方法发送一封新邮件。 在中心反过来将消息发送给所有客户端，通过调用`Clients.All.addNewMessageToPage`。
+在聊天代码中，客户端调用 `ChatHub.Send` 方法来发送新消息。 集线器会通过调用 `Clients.All.addNewMessageToPage`将消息发送到所有客户端。
 
-`Send`方法演示了多个中心概念：
+`Send` 方法演示了几个中心概念：
 
-* 集线器上声明的公共方法，以便客户端可以调用它们。
+* 在中心声明公共方法，使客户端可以调用它们。
 
-* 使用`Microsoft.AspNet.SignalR.Hub.Clients`与所有客户端通信的动态属性连接到此中心。
+* 使用 `Microsoft.AspNet.SignalR.Hub.Clients` 动态属性与连接到此集线器的所有客户端通信。
 
-* 在客户端上调用的函数 (如`addNewMessageToPage`函数) 来更新客户端。
+* 在客户端上调用一个函数（如 `addNewMessageToPage` 函数）以更新客户端。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample5.cs)]
 
-### <a name="signalr-and-jquery-chatcshtml"></a>SignalR 和 jQuery Chat.cshtml
+### <a name="signalr-and-jquery-chatcshtml"></a>SignalR 和 jQuery Chat
 
-*Chat.cshtml*视图文件中的代码示例演示如何使用 SignalR jQuery 库与 SignalR 中心进行通信。  代码执行许多重要任务。 它创建为中心的自动生成代理的引用，声明一个函数可以调用服务器可将内容推送到客户端，并开始将消息发送到中心的连接。
+代码示例中的*Chat* view 文件演示了如何使用 SignalR jQuery 库与 SignalR 中心通信。  此代码将执行许多重要的任务。 它将创建对中心自动生成的代理的引用，并声明一个函数，服务器可以调用该函数将内容推送到客户端，并且启动连接以向中心发送消息。
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample6.js)]
 
 > [!NOTE]
-> 在 JavaScript 中，于服务器类及其成员的引用位于驼峰式大小写。 代码示例引用C#`ChatHub`中作为 JavaScript 类`chatHub`。
+> 在 JavaScript 中，对服务器类及其成员的引用位于 camelCase 中。 此代码示例将 JavaScript C#中的 `ChatHub` 类引用为 `chatHub`。
 
-在此代码块中，创建脚本中的回调函数。
+在此代码块中，你将在脚本中创建一个回调函数。
 
 [!code-html[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample7.html)]
 
-在服务器上的中心类会调用此函数可将内容更新推送到每个客户端。 可选调用`htmlEncode`函数将显示一种方式，向 HTML 页中显示之前编码消息内容。 它是一种方法，以防止脚本注入。
+服务器上的 hub 类调用此函数将内容更新推送到每个客户端。 对 `htmlEncode` 函数的可选调用显示了一种在页中显示消息内容之前对消息内容进行 HTML 编码的方法。 这是一种防止脚本注入的方式。
 
-此代码打开到中心的连接。
+此代码将打开与中心的连接。
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample8.js)]
 
 > [!NOTE]
-> 此方法可确保事件处理程序在执行之前建立的连接。
+> 此方法确保在事件处理程序执行之前建立连接。
 
-代码启动连接，然后将其传递函数来处理单击事件上**发送**聊天页中的按钮。
+该代码启动连接，然后将其传递到 "聊天" 页的 "**发送**" 按钮上的 click 事件。
 
 ## <a name="get-the-code"></a>获取代码
 
-[下载已完成的项目](http://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
+[下载完成的项目](https://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -199,6 +199,6 @@ SignalR 聊天应用程序演示了两个基本的 SignalR 开发任务。 它�
 > * 运行示例
 > * 检查代码
 
-转到下一步的文章，了解如何创建使用 ASP.NET SignalR 2 提供高频率的消息传送功能的 web 应用程序。
+转到下一篇文章，了解如何创建使用 ASP.NET SignalR 2 的 web 应用程序，以提供高频率消息传递功能。
 > [!div class="nextstepaction"]
-> [使用高频率消息传送的 web 应用](tutorial-high-frequency-realtime-with-signalr.md)
+> [具有高频率消息传送的 Web 应用](tutorial-high-frequency-realtime-with-signalr.md)

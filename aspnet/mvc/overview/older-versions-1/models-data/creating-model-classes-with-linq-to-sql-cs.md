@@ -1,183 +1,183 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
-title: 创建模型类使用 LINQ to SQL (C#) |Microsoft Docs
+title: 用 LINQ to SQL （C#）创建模型类 |Microsoft Docs
 author: microsoft
-description: 本教程的目的是说明创建 ASP.NET MVC 应用程序的模型类的一种方法。 在本教程中，您将学习如何构建模型 c...
+description: 本教程的目的是介绍为 ASP.NET MVC 应用程序创建模型类的一种方法。 在本教程中，您将了解如何生成模型 c 。
 ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: f84b4a16-e8bb-49e8-87a0-1832879a3501
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e81575a05a24c60ffb16c4a6688f6cfdc5a19f30
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c27d1ffac3846fe4bc13b32c2ae91a63b2493126
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122714"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74590224"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-c"></a>使用 LINQ to SQL 创建模型类 (C#)
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-[下载 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_CS.pdf)
+[下载 PDF](https://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_CS.pdf)
 
-> 本教程的目的是说明创建 ASP.NET MVC 应用程序的模型类的一种方法。 在本教程中，您将学习如何生成模型的类和执行通过利用 Microsoft LINQ 到 SQL 数据库访问权限。
+> 本教程的目的是介绍为 ASP.NET MVC 应用程序创建模型类的一种方法。 在本教程中，您将了解如何通过利用 Microsoft LINQ to SQL 来生成模型类并执行数据库访问。
 
-本教程的目的是说明创建 ASP.NET MVC 应用程序的模型类的一种方法。 在本教程中，了解如何生成模型的类和执行通过利用 Microsoft LINQ 到 SQL 数据库访问权限
+本教程的目的是介绍为 ASP.NET MVC 应用程序创建模型类的一种方法。 在本教程中，您将了解如何通过利用 Microsoft LINQ to SQL 来生成模型类并执行数据库访问
 
-在本教程中，我们构建一个基本的电影数据库应用程序。 我们先创建电影数据库应用程序中的最快且最简单的方法可能。 我们将执行我们的数据访问的所有直接从控制器操作。
+在本教程中，我们将构建一个基本的电影数据库应用程序。 首先，我们以尽可能快、最简单的方式创建电影数据库应用程序。 我们直接从控制器操作执行所有数据访问。
 
-接下来，您将了解如何使用存储库模式。 使用存储库模式需要更多工作。 但是，采用此模式的优点是它使你能够构建到自适应应用程序更改，可以轻松地测试。
+接下来，了解如何使用存储库模式。 使用存储库模式需要一些更多的工作。 但是，采用此模式的优点是，它使你能够构建可适应变化并可轻松测试的应用程序。
 
-## <a name="what-is-a-model-class"></a>什么是 Model 类？
+## <a name="what-is-a-model-class"></a>什么是模型类？
 
-MVC 模型包含所有未包含在 MVC 视图或 MVC 控制器中的应用程序逻辑。 具体而言，MVC 模型包含的所有应用程序业务和数据访问逻辑。
+MVC 模型包含未包含在 MVC 视图或 MVC 控制器中的所有应用程序逻辑。 特别是，MVC 模型包含所有应用程序业务和数据访问逻辑。
 
-可以使用各种不同的技术来实现数据访问逻辑。 例如，您可以构建使用 Microsoft 实体框架、 NHibernate、 Subsonic 或 ADO.NET 类的数据访问类。
+您可以使用各种不同的技术来实现您的数据访问逻辑。 例如，可以使用 Microsoft 实体框架、NHibernate、Subsonic 或 ADO.NET 类生成数据访问类。
 
-在本教程中，我使用 LINQ to SQL 来查询和更新数据库。 LINQ to SQL 提供的与 Microsoft SQL Server 数据库进行交互非常简单的方法。 但是，务必了解 ASP.NET MVC framework 不绑定到 LINQ to SQL 以任何方式。 ASP.NET MVC 是与任何数据访问技术兼容。
+在本教程中，我使用 LINQ to SQL 来查询和更新数据库。 LINQ to SQL 提供了一种非常简单的方法与 Microsoft SQL Server 数据库交互。 但是，请务必了解，ASP.NET MVC 框架不会以任何方式关联到 LINQ to SQL。 ASP.NET MVC 与任何数据访问技术兼容。
 
 ## <a name="create-a-movie-database"></a>创建电影数据库
 
-在此教程--为了说明如何构建模型类-我们构建一个简单的电影数据库应用程序。 第一步是创建新的数据库。 右键单击该应用\_在解决方案资源管理器窗口中，选择菜单选项的数据文件夹**添加、 新项**。 选择**SQL Server 数据库**模板，为其提供名称 MoviesDB.mdf，然后单击**添加**按钮 （请参见图 1）。
+在本教程中，为了说明如何生成模型类，我们构建了一个简单的电影数据库应用程序。 第一步是创建一个新数据库。 右键单击 "解决方案资源管理器" 窗口中的 "应用\_Data" 文件夹，然后选择 "**添加"、"新建项**" 菜单。 选择**SQL Server 的数据库**模板，为其指定名称 MoviesDB，然后单击 "**添加**" 按钮（请参阅图1）。
 
 [![添加新的 SQL Server 数据库](creating-model-classes-with-linq-to-sql-cs/_static/image2.png)](creating-model-classes-with-linq-to-sql-cs/_static/image1.png)
 
-**图 01**:添加新的 SQL Server 数据库 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image3.png))
+**图 01**：添加新的 SQL Server 数据库（[单击以查看完全大小的映像](creating-model-classes-with-linq-to-sql-cs/_static/image3.png)）
 
-创建新的数据库后，可以通过双击 MoviesDB.mdf 文件在应用中的打开数据库\_数据文件夹。 双击 MoviesDB.mdf 文件会打开服务器资源管理器窗口 （请参见图 2）。
+创建新数据库后，可以通过双击应用\_Data 文件夹中的 MoviesDB 文件打开数据库。 双击 MoviesDB 文件将打开 "服务器资源管理器" 窗口（参见图2）。
 
-使用 Visual Web Developer 时，服务器资源管理器窗口称为数据库资源管理器窗口。
+使用 Visual Web Developer 时，"服务器资源管理器" 窗口称为 "数据库资源管理器" 窗口。
 
-[![使用服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-cs/_static/image5.png)](creating-model-classes-with-linq-to-sql-cs/_static/image4.png)
+[使用服务器资源管理器窗口 ![](creating-model-classes-with-linq-to-sql-cs/_static/image5.png)](creating-model-classes-with-linq-to-sql-cs/_static/image4.png)
 
-**图 02**:使用服务器资源管理器窗口 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image6.png))
+**图 02**：使用服务器资源管理器窗口（[单击以查看完全大小的图像](creating-model-classes-with-linq-to-sql-cs/_static/image6.png)）
 
-我们需要将表添加到我们代表我们的电影的数据库。 右键单击表文件夹，然后选择菜单选项**添加新表**。 选择此菜单选项打开表设计器 （请参见图 3）。
+我们需要将一个表添加到表示电影的数据库。 右键单击 "表" 文件夹，然后选择 "**添加新表**" 菜单选项。 选择此菜单选项将打开表设计器（请参阅图3）。
 
-[![使用服务器资源管理器窗口](creating-model-classes-with-linq-to-sql-cs/_static/image8.png)](creating-model-classes-with-linq-to-sql-cs/_static/image7.png)
+[使用服务器资源管理器窗口 ![](creating-model-classes-with-linq-to-sql-cs/_static/image8.png)](creating-model-classes-with-linq-to-sql-cs/_static/image7.png)
 
-**图 03**:表设计器 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image9.png))
+**图 03**：表设计器（[单击查看完全尺寸的图像](creating-model-classes-with-linq-to-sql-cs/_static/image9.png)）
 
-我们需要向数据库表添加以下列：
+我们需要在数据库表中添加以下列：
 
-| **列名称** | **数据类型** | **允许 null 值** |
+| **列名** | **数据类型** | **允许空值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 标题 | Nvarchar(200) | False |
-| 主管 | Nvarchar(50) | False |
+| 职务 | Nvarchar （200） | False |
+| 9509 | Nvarchar （50） | False |
 
-需要两个特殊对执行的操作 Id 列。 首先，需要将 Id 列作为主键列标记通过在表设计器中选择列并单击密钥图标。 LINQ to SQL 要求您在执行插入或更新对数据库时指定主键列。
+需要为 Id 列执行两个特殊操作。 首先，您需要通过在表设计器中选择列并单击键的图标，将 Id 列标记为主键列。 LINQ to SQL 要求在对数据库执行插入或更新时指定主键列。
 
-接下来，需要将 Id 列标记为标识列中，通过是将值分配给**是标识**属性 （请参见图 3）。 标识列是自动分配新的数字，只要将新的数据行添加到表的列。
+接下来，需要通过将 "是" 值指定为 "**是" 标识**属性，将 Id 列标记为标识列（请参阅图3）。 标识列是在向表中添加新的数据行时，将自动分配新数字的列。
 
 ## <a name="create-linq-to-sql-classes"></a>创建 LINQ to SQL 类
 
-我们的 MVC 模型将包含 LINQ to SQL 类表示 tblMovie 数据库表。 若要创建这些 LINQ to SQL 类的最简单方法是右键单击 Models 文件夹中，选择**添加、 新建项**，选择的 LINQ to SQL 类模板，为指定类名称 Movie.dbml，然后单击**添加**按钮 （请参见图 4）。
+MVC 模型将包含表示 tblMovie 数据库表的 LINQ to SQL 类。 创建这些 LINQ to SQL 类的最简单方法是：右键单击 "模型" 文件夹，选择 "**添加"、"新建项**"，选择 "LINQ to SQL 类" 模板，为类命名为 "Movie"，然后单击 "**添加**" 按钮（见图4）。
 
 [![创建 LINQ to SQL 类](creating-model-classes-with-linq-to-sql-cs/_static/image11.png)](creating-model-classes-with-linq-to-sql-cs/_static/image10.png)
 
-**图 04**:创建 LINQ to SQL 类 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image12.png))
+**图 04**：创建 LINQ to SQL 类（[单击以查看完全大小的图像](creating-model-classes-with-linq-to-sql-cs/_static/image12.png)）
 
-立即创建电影 LINQ to SQL 类后，将显示对象关系设计器。 可以将数据库表拖到对象关系设计器创建 LINQ to SQL 类表示特定的数据库表上服务器资源管理器窗口中。 我们需要添加到对象关系设计器上的 tblMovie 数据库表 （请参见图 5）。
+LINQ to SQL 类创建影片后，会立即显示对象关系设计器。 您可以将数据库表从 "服务器资源管理器" 窗口拖到 "对象关系设计器上，以创建表示特定数据库表 LINQ to SQL 类。 需要将 tblMovie 数据库表添加到对象关系设计器（请参阅图5）。
 
-[![使用对象关系设计器](creating-model-classes-with-linq-to-sql-cs/_static/image14.png)](creating-model-classes-with-linq-to-sql-cs/_static/image13.png)
+[使用对象关系设计器 ![](creating-model-classes-with-linq-to-sql-cs/_static/image14.png)](creating-model-classes-with-linq-to-sql-cs/_static/image13.png)
 
-**图 05**:使用对象关系设计器 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image15.png))
+**图 05**：使用对象关系设计器（[单击查看完全尺寸的图像](creating-model-classes-with-linq-to-sql-cs/_static/image15.png)）
 
-默认情况下，对象关系设计器创建一个类具有与数据库表拖到设计器上完全相同的名称。 但是，我们不想要调用我们的类`tblMovie`。 因此，单击设计器中的类的名称，并将类的名称更改为电影。
+默认情况下，对象关系设计器会创建一个与拖到设计器上的数据库表同名的类。 但是，我们不想要 `tblMovie`的类。 因此，在设计器中单击类的名称，并将类的名称更改为 "电影"。
 
-最后，请记住单击**保存**按钮 （将软盘保存图片） 以保存 LINQ to SQL 类。 否则，不会通过对象关系设计器生成 LINQ to SQL 类。
+最后，请记住单击 "**保存**" 按钮（软盘的图片）以保存 LINQ to SQL 类。 否则，对象关系设计器不会生成 LINQ to SQL 类。
 
 ## <a name="using-linq-to-sql-in-a-controller-action"></a>在控制器操作中使用 LINQ to SQL
 
-现在，我们有我们 LINQ to SQL 类，我们可以使用这些类以从数据库检索数据。 在本部分中，您将了解如何使用 LINQ to SQL 类直接在控制器操作中。 我们将一个 MVC 视图中显示 tblMovies 数据库表中的电影的列表。
+现在我们有了 LINQ to SQL 类，可以使用这些类从数据库中检索数据。 本部分介绍如何直接在控制器操作中使用 LINQ to SQL 类。 我们将在 MVC 视图中的 tblMovies 数据库表中显示电影列表。
 
-首先，我们需要修改 HomeController 类。 可以在你的应用程序的控制器文件夹中找到此类。 修改类，以使它看起来像列表 1 中的类。
+首先，我们需要修改 HomeController 类。 此类可在应用程序的 "控制器" 文件夹中找到。 修改类，使其类似于列表1中的类。
 
-**代码清单 1 – `Controllers\HomeController.cs`**
+**列表1– `Controllers\HomeController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample1.cs)]
 
-`Index()`在列表 1 中的操作使用 LINQ to SQL DataContext 类 ( `MovieDataContext`) 来表示`MoviesDB`数据库。 `MoveDataContext`类由 Visual Studio 对象关系设计器生成。
+列表1中的 `Index()` 操作使用 LINQ to SQL DataContext 类（`MovieDataContext`）来表示 `MoviesDB` 数据库。 `MoveDataContext` 类是由 Visual Studio 对象关系设计器生成的。
 
-LINQ 查询执行针对 DataContext 检索所有从电影`tblMovies`数据库表。 电影列表分配给一个名为的本地变量`movies`。 最后，电影列表是通过传递给视图查看数据。
+针对 DataContext 执行 LINQ 查询，以检索 `tblMovies` 数据库表中的所有电影。 电影列表被分配给名为 `movies`的局部变量。 最后，将电影列表通过视图数据传递给视图。
 
-为了显示电影，我们接下来需要修改索引视图。 您可以发现中的索引视图`Views\Home\`文件夹。 更新索引视图，使它看起来像列表 2 中的视图。
+为了显示电影，接下来需要修改索引视图。 可以在 "`Views\Home\`" 文件夹中找到索引视图。 更新 "索引" 视图，使其看起来像列表2中的视图。
 
-**代码清单 2 – `Views\Home\Index.aspx`**
+**列表2– `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample2.aspx)]
 
-请注意，已修改的索引视图包含`<%@ import namespace %>`指令在视图的顶部。 此指令将导入`MvcApplication1.Models namespace`。 我们需要才能使用此命名空间`model`类-具体而言，`Movie`类-在视图中的。
+请注意，修改后的索引视图在视图顶部包含一个 `<%@ import namespace %>` 指令。 此指令将导入 `MvcApplication1.Models namespace`。 需要使用此命名空间才能处理 `model` 类（特别是视图中的 `Movie` 类）。
 
-代码清单 2 中的视图包含`foreach`循环循环访问的所有项所表示的`ViewData.Model`属性。 值`Title`属性显示为每个`movie`。
+清单2中的视图包含一个 `foreach` 循环，该循环遍历 `ViewData.Model` 属性表示的所有项。 为每个 `movie`显示 `Title` 属性的值。
 
-请注意，值`ViewData.Model`属性强制转换为`IEnumerable`。 这是必要的以循环访问的内容`ViewData.Model`。 此处的另一个选项是创建一个强类型`view`。 当你创建一个强类型`view`，则转换`ViewData.Model`到视图的代码隐藏类中的特定类型的属性。
+请注意，`ViewData.Model` 属性的值强制转换为 `IEnumerable`。 为了遍历 `ViewData.Model`的内容，这是必需的。 此处的另一个选项是创建强类型 `view`。 创建强类型 `view`时，将 `ViewData.Model` 属性强制转换为视图的代码隐藏类中的特定类型。
 
-如果运行修改后的应用程序`HomeController`类和索引视图，则会收到一个空白页。 您将受到空白页，因为在没有电影记录`tblMovies`数据库表。
+如果在修改 `HomeController` 类和索引视图后运行该应用程序，则会看到一个空白页。 您将看到一个空白页，因为 `tblMovies` 数据库表中没有电影记录。
 
-若要添加到记录`tblMovies`数据库表中，右键单击`tblMovies`数据库在服务器资源管理器窗口 （在 Visual Web Developer 中的数据库资源管理器窗口） 中的表并选择菜单选项显示表数据。 可以插入`movie`记录通过使用显示 （见图 6） 的网格。
+若要将记录添加到 `tblMovies` 数据库表，请在 "服务器资源管理器" 窗口（Visual Web Developer 中的数据库资源管理器窗口）中右键单击 `tblMovies` 数据库表，然后选择菜单选项 "显示表数据"。 您可以使用显示的网格插入 `movie` 记录（见图6）。
 
 [![插入电影](creating-model-classes-with-linq-to-sql-cs/_static/image17.png)](creating-model-classes-with-linq-to-sql-cs/_static/image16.png)
 
-**图 06**:插入电影 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image18.png))
+**图 06**：插入影片（[单击以查看完全尺寸的图像](creating-model-classes-with-linq-to-sql-cs/_static/image18.png)）
 
-添加到某些数据库记录后`tblMovies`表，并且运行该应用程序，您会看到图 7 中的页。 项目符号列表中将显示所有电影数据库记录。
+将一些数据库记录添加到 `tblMovies` 表中，并运行该应用程序后，将看到图7中的页面。 所有电影数据库记录都显示在项目符号列表中。
 
-[![显示与索引视图的电影](creating-model-classes-with-linq-to-sql-cs/_static/image20.png)](creating-model-classes-with-linq-to-sql-cs/_static/image19.png)
+[用索引视图 ![显示电影](creating-model-classes-with-linq-to-sql-cs/_static/image20.png)](creating-model-classes-with-linq-to-sql-cs/_static/image19.png)
 
-**图 07**:显示与索引视图的电影 ([单击此项可查看原尺寸图像](creating-model-classes-with-linq-to-sql-cs/_static/image21.png))
+**图 07**：通过 "索引" 视图显示电影（[单击以查看完全大小的图像](creating-model-classes-with-linq-to-sql-cs/_static/image21.png)）
 
 ## <a name="using-the-repository-pattern"></a>使用存储库模式
 
-在上一节中，我们使用 LINQ to SQL 类直接在控制器操作中。 我们使用了`MovieDataContext`类直接从`Index()`控制器操作。 没有什么不妥执行此操作在简单的应用程序的情况下。 但是，在控制器类中直接使用 LINQ to SQL 的工作会产生问题时构建更复杂的应用程序所需。
+在上一部分中，我们直接在控制器操作中使用 LINQ to SQL 类。 我们直接从 `Index()` 控制器操作使用了 `MovieDataContext` 类。 对于简单的应用程序，在执行此操作时没有任何错误。 但是，当你需要生成更复杂的应用程序时，直接在 controller 类中处理 LINQ to SQL 会产生问题。
 
-使用 LINQ to SQL 是控制器类中难以在将来切换数据访问技术。 例如，您可能决定切换到使用作为数据访问技术的 Microsoft 实体框架使用 Microsoft LINQ to SQL。 在这种情况下，你将需要重写访问该数据库在你的应用程序的每个控制器。
+使用控制器类中的 LINQ to SQL 使得将来难以切换数据访问技术。 例如，你可能决定从使用 Microsoft LINQ to SQL 切换为使用 Microsoft 实体框架作为你的数据访问技术。 在这种情况下，需要重新编写访问应用程序中的数据库的每个控制器。
 
-控制器类中使用 LINQ to SQL 还使得难以构建你的应用程序的单元测试。 通常情况下，您不想要执行单元测试时，与数据库交互。 你想要使用你的单元测试来测试应用程序逻辑并不是你的数据库服务器。
+使用控制器类中的 LINQ to SQL 也会很难为应用程序生成单元测试。 通常，在执行单元测试时不希望与数据库进行交互。 您希望使用您的单元测试来测试您的应用程序逻辑，而不是您的数据库服务器。
 
-若要生成的 MVC 应用程序这是到未来的适应能力更强的更改和进行更轻松地测试，则应考虑使用存储库模式。 当您使用的存储库模式时，您将创建包含所有数据库访问逻辑的一个独立的存储库类。
+为了构建一个可更好地适应将来的更改并且可以更轻松地测试的 MVC 应用程序，应考虑使用存储库模式。 使用存储库模式时，将创建一个单独的存储库类，其中包含所有数据库访问逻辑。
 
-在创建存储库类，您将创建表示的所有存储库类使用的方法的接口。 在你的控制器，您编写代码的依据而不是存储库的接口。 这样一来，您可以实现在将来使用不同的数据访问技术的存储库。
+创建存储库类时，将创建一个接口，该接口表示存储库类使用的所有方法。 在控制器中，可以针对接口而不是存储库来编写代码。 这样，以后就可以使用不同的数据访问技术来实现存储库。
 
-列表 3 中的接口名为`IMovieRepository`，它表示名为的单个方法`ListAll()`。
+清单3中的接口名为 `IMovieRepository`，它表示一个名为 `ListAll()`的方法。
 
-**代码清单 3 – `Models\IMovieRepository.cs`**
+**列表 3-`Models\IMovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample3.cs)]
 
-列表 4 中的存储库类实现`IMovieRepository`接口。 请注意，它包含一个名为方法`ListAll()`所需的方法对应`IMovieRepository`接口。
+列表4中的存储库类实现 `IMovieRepository` 接口。 请注意，它包含一个名为 `ListAll()` 的方法，该方法对应于 `IMovieRepository` 接口所需的方法。
 
-**列表 4 – `Models\MovieRepository.cs`**
+**列表 4-`Models\MovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample4.cs)]
 
-最后，`MoviesController`列表 5 中的类使用的存储库模式。 它不能再使用 LINQ to SQL 类直接。
+最后，列表5中的 `MoviesController` 类使用存储库模式。 它不再直接使用 LINQ to SQL 类。
 
-**列表 5 – `Controllers\MoviesController.cs`**
+**列表5– `Controllers\MoviesController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample5.cs)]
 
-请注意，`MoviesController`列表 5 中的类具有两个构造函数。 第一个构造函数，无参数构造函数中，应用程序在运行时调用。 此构造函数创建的实例`MovieRepository`类，并将其传递给第二个构造函数。
+请注意，列表5中的 `MoviesController` 类具有两个构造函数。 第一个构造函数（即无参数构造函数）在应用程序运行时调用。 此构造函数创建 `MovieRepository` 类的实例并将其传递给第二个构造函数。
 
-第二个构造函数具有单个参数：`IMovieRepository`参数。 此构造函数只需将参数的值分配给一个名为的类级字段`_repository`。
+第二个构造函数具有单个参数： `IMovieRepository` 参数。 此构造函数只是将参数的值分配给名为 `_repository`的类级字段。
 
-`MoviesController`类利用称为依赖关系注入模式的软件设计模式。 具体而言，它使用称为构造函数依赖关系注入。 你可以阅读更多有关此模式通过阅读 Martin Fowler 的以下文章：
+`MoviesController` 类利用称为依赖关系注入模式的软件设计模式。 具体而言，它使用称为构造函数依赖关系注入的内容。 若要阅读有关此模式的详细信息，请参阅以下文章： Fowler：
 
 [http://martinfowler.com/articles/injection.html](http://martinfowler.com/articles/injection.html)
 
-请注意，中的代码的所有`MoviesController`（除了第一个构造函数） 的类与交互`IMovieRepository`而不是实际接口`MovieRepository`类。 与而不是接口的具体实现的抽象接口进行交互的代码。
+请注意，`MoviesController` 类中的所有代码（第一个构造函数除外）都与 `IMovieRepository` 接口（而不是实际的 `MovieRepository` 类）交互。 此代码与抽象接口交互，而不是接口的具体实现。
 
-如果你想要修改应用程序使用的数据访问技术，则您可以仅实施`IMovieRepository`使用备用数据库访问技术的类的接口。 例如，可以创建`EntityFrameworkMovieRepository`类或`SubSonicMovieRepository`类。 由于控制器类针对接口进行编程，因此可以传递的新实现`IMovieRepository`到控制器类和类将继续运行。
+如果要修改应用程序使用的数据访问技术，只需使用使用备用数据库访问技术的类来实现 `IMovieRepository` 接口。 例如，可以创建 `EntityFrameworkMovieRepository` 类或 `SubSonicMovieRepository` 类。 由于控制器类基于接口进行编程，因此您可以将 `IMovieRepository` 的新实现传递到控制器类，并且类将继续工作。
 
-此外，如果你想要测试`MoviesController`类，则您可以传递假电影存储库类中的，以便`HomeController`。 您可以实现`IMovieRepository`却没有实际访问数据库，但包含所有所需的方法的类的类`IMovieRepository`接口。 这样一来，进行单元测试`MoviesController`而无需实际访问的实际数据库的类。
+此外，如果想要测试 `MoviesController` 类，则可以将假电影存储库类传递到 `HomeController`。 您可以使用类来实现 `IMovieRepository` 类，该类实际上不会访问数据库，而是包含 `IMovieRepository` 接口的所有所需方法。 这样，就可以对 `MoviesController` 类进行单元测试，而无需实际访问实际数据库。
 
 ## <a name="summary"></a>总结
 
-本教程的目的是演示如何通过利用 Microsoft LINQ to SQL 创建 MVC 模型类。 在 ASP.NET MVC 应用程序中显示数据库数据的两种策略，我们探讨。 首先，创建 LINQ to SQL 类，并使用直接在控制器操作中的类。 使用 LINQ to SQL 类在控制器内使你能够快速并轻松地在 MVC 应用程序中显示数据库数据。
+本教程的目的是演示如何通过利用 Microsoft LINQ to SQL 来创建 MVC 模型类。 我们检查了两种在 ASP.NET MVC 应用程序中显示数据库数据的策略。 首先，我们创建 LINQ to SQL 类并直接在控制器操作中使用类。 使用控制器中的 LINQ to SQL 类，可以快速轻松地在 MVC 应用程序中显示数据库数据。
 
-接下来，我们探讨了显示数据库数据的稍微有些困难，但绝对更为良性的路径。 我们利用了存储库模式，并放在单独的存储库类中的所有我们数据库访问逻辑。 在我们控制器中，我们编写了所有我们针对而不是具体类的接口的代码。 存储库模式的优点是它可让我们可以轻松地在将来更改数据库访问技术，并且它使我们能够轻松地测试了控制器类。
+接下来，我们探讨了稍微复杂一些的良性，显示数据库数据的路径。 我们充分利用了存储库模式，并在单独的存储库类中放置了所有数据库访问逻辑。 在我们的控制器中，我们针对接口而不是具体的类编写了所有代码。 存储库模式的优点在于，它使我们能够在以后轻松更改数据库访问技术，使我们可以轻松地测试控制器类。
 
 > [!div class="step-by-step"]
 > [上一页](creating-model-classes-with-the-entity-framework-cs.md)

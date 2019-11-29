@@ -1,305 +1,305 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
-title: 母版页 (VB) 中指定的标题、 元标记和其他 HTML 标头 |Microsoft Docs
+title: 指定母版页中的标题、元标记和其他 HTML 标头（VB） |Microsoft Docs
 author: rick-anderson
-description: 在不同的技术来定义各种类型的看起来&lt;head&gt;主页面从内容页中的元素。
+description: 查看用于在 "内容" 页中定义母版页中的 &lt;head&gt; 元素的不同技术。
 ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: ea8196f5-039d-43ec-8447-8997ad4d3900
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fd4e628e15fa95531175c83fdf5853a5d671e705
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 160af664cdf27f9ede1273aaf915da749a39ad48
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116300"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74637727"
 ---
 # <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>指定母版页中的标题、元标记和其他 HTML 标头 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_03_VB.zip)或[下载 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_03_VB.pdf)
+[下载代码](https://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_03_VB.zip)或[下载 PDF](https://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_03_VB.pdf)
 
-> 在不同的技术来定义各种类型的看起来&lt;head&gt;主页面从内容页中的元素。
+> 查看用于在 "内容" 页中定义母版页中的 &lt;head&gt; 元素的不同技术。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在 Visual Studio 2008 中创建新的主页面有，默认情况下，两个 ContentPlaceHolder 控件： 一个名为`head`，，位于`<head>`元素; 和一个名为`ContentPlaceHolder1`、 Web 窗体中放置。 用途`ContentPlaceHolder1`是可以按页基础自定义 Web 窗体中定义一个区域。 `head` ContentPlaceHolder 启用要添加到自定义内容页`<head>`部分。 （当然，可以修改或删除，这些两个 Contentplaceholder 和其他 ContentPlaceHolder 可能添加到母版页。 我们的主页面， `Site.master`，当前具有四个 ContentPlaceHolder 控件。)
+默认情况下，在 Visual Studio 2008 中创建的新母版页具有两个 ContentPlaceHolder 控件：一个名为 `head`，位于 `<head>` 元素中;并在 Web 窗体中放置一个名为 `ContentPlaceHolder1`。 `ContentPlaceHolder1` 的目的是在 Web 窗体中定义可以逐页自定义的区域。 `head` ContentPlaceHolder 使页面能够将自定义内容添加到 `<head>` 部分。 （当然，可以修改或删除这两个 Contentplaceholder，并且可能会向母版页添加其他 ContentPlaceHolder。 母版页 `Site.master`当前有四个 ContentPlaceHolder 控件。）
 
-HTML`<head>`元素充当有关不是文档本身的一部分的 web 页文档信息的存储库。 这包括诸如 web 页面的标题等，由搜索引擎或内部爬网程序和指向外部资源，如 RSS 源、 JavaScript 和 CSS 文件元数据信息。 其中一些信息可能相关网站中的所有页面。 例如，你可能想要全局导入相同的 CSS 规则和每个 ASP.NET 页面的 JavaScript 文件。 但是，有的某些部分`<head>`是特定于页面的元素。 页面标题是一个典型示例。
+HTML `<head>` 元素充当有关不属于文档本身的网页文档的信息的存储库。 其中包括网页标题、搜索引擎或内部爬网程序使用的元信息，以及指向外部资源（如 RSS 源、JavaScript 和 CSS 文件）的链接。 其中的某些信息可能与网站中的所有页面相关。 例如，你可能希望为每个 ASP.NET 页全局导入相同的 CSS 规则和 JavaScript 文件。 但 `<head>` 元素的某些部分是页特定的。 页面标题是一个主要的示例。
 
-在本教程中，我们将说明如何定义全局和特定于页面的`<head>`部分标记在母版页并在其内容页面中。
+在本教程中，我们将检查如何在母版页及其内容页中定义全局和特定于页的 `<head>` 节标记。
 
-## <a name="examining-the-master-pagesheadsection"></a>检查母版页`<head>`部分
+## <a name="examining-the-master-pagesheadsection"></a>检查母版页的`<head>`部分
 
-由 Visual Studio 2008 创建的默认主控页文件包含中的以下标记其`<head>`部分：
+Visual Studio 2008 创建的默认母版页文件在其 `<head>` 部分中包含以下标记：
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample1.aspx)]
 
-请注意，`<head>`元素包含`runat="server"`属性，指示它是服务器控件 （而非静态 HTML）。 所有 ASP.NET 页面都派生[`Page`类](https://msdn.microsoft.com/library/system.web.ui.page.aspx)，位于`System.Web.UI`命名空间。 此类包含[`Header`属性](https://msdn.microsoft.com/library/system.web.ui.page.header.aspx)使您可以访问页面的`<head>`区域。 使用`Header`属性可以设置 ASP.NET 页的标题或将其他标记添加到呈现`<head>`部分。 它是有可能，然后，自定义内容页面的`<head>`通过在页面的中编写的代码元素`Page_Load`事件处理程序。 我们介绍如何以编程方式在步骤 1 中设置页面的标题。
+请注意，`<head>` 元素包含一个 `runat="server"` 属性，该属性指示它是服务器控件（而不是静态 HTML）。 所有 ASP.NET 页派生自 `System.Web.UI` 命名空间中的[`Page` 类](https://msdn.microsoft.com/library/system.web.ui.page.aspx)。 此类包含一个[`Header` 属性](https://msdn.microsoft.com/library/system.web.ui.page.header.aspx)，该属性提供对页面的 `<head>` 区域的访问权限。 使用 `Header` 属性，我们可以设置 ASP.NET 页面的标题或向呈现的 `<head>` 部分添加其他标记。 然后，可以通过在页面的 `Page_Load` 事件处理程序中编写一段代码，自定义内容页的 `<head>` 元素。 我们检查如何以编程方式在步骤1中设置页面的标题。
 
-中的标记`<head>`上述元素还包括一个名为 ContentPlaceHolder 控件`head`。 此 ContentPlaceHolder 控件不是有必要，因为内容页可以添加到自定义内容`<head>`元素以编程方式。 它非常有用，但是，在内容页面需要静态将标记添加到的情况下`<head>`到相应的内容控件而不是以编程方式可以以声明方式添加元素作为静态标记。
+上面 `<head>` 元素中所示的标记还包括一个名为 `head`的 ContentPlaceHolder 控件。 此 ContentPlaceHolder 控件不是必需的，因为内容页可以通过编程方式将自定义内容添加到 `<head>` 元素。 但在内容页需要将静态标记添加到 `<head>` 元素的情况下很有用，因为可以通过声明方式将静态标记添加到相应的内容控件，而不是以编程方式添加。
 
-除了`<title>`元素和`head`ContentPlaceHolder，母版页`<head>`元素应包含任何`<head>`-级别普遍适用于所有页面的标记。 在我们的网站，所有页面都使用中定义的 CSS 规则`Styles.css`文件。 因此，我们更新`<head>`中的元素[*使用母版页创建站点范围内布局*](creating-a-site-wide-layout-using-master-pages-vb.md)教程，包括相应`<link>`元素。 我们`Site.master`母版页的当前`<head>`标记如下所示。
+除了 `<title>` 元素和 `head` ContentPlaceHolder，母版页的 `<head>` 元素应包含所有页面共有的所有 `<head>`级别的标记。 在我们的网站中，所有页面都使用 `Styles.css` 文件中定义的 CSS 规则。 因此，我们更新了 "[*使用母版页创建站点范围布局*](creating-a-site-wide-layout-using-master-pages-vb.md)" 教程中的 `<head>` 元素，以包含相应的 `<link>` 元素。 `Site.master` 母版页的当前 `<head>` 标记如下所示。
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample2.aspx)]
 
-## <a name="step-1-setting-a-content-pages-title"></a>步骤 1：设置内容页面的标题
+## <a name="step-1-setting-a-content-pages-title"></a>步骤1：设置内容页的标题
 
-通过指定 web 页面的标题`<title>`元素。 请务必设置为适当的值的每个页面的标题。 当访问一个页面，其标题将显示在浏览器的标题栏。 此外，当将一个页面加为书签，浏览器使用页面的标题为书签的建议名称。 此外，许多搜索引擎时显示搜索结果显示页面的标题。
+网页标题是通过 `<title>` 元素指定的。 必须将每个页面的标题设置为合适的值。 访问某个页面时，其标题将显示在浏览器的标题栏中。 此外，在为页面添加书签时，浏览器使用页面标题作为书签的建议名称。 另外，许多搜索引擎在显示搜索结果时显示页面的标题。
 
 > [!NOTE]
-> 默认情况下，Visual Studio 设置`<title>`"无标题页"到母版页中的元素。 同样，新的 ASP.NET 页面具有其`<title>`太设置为"无标题页"。 因为它很容易忘记设置为适当的值的页面的标题，许多页面上有了标题为"无标题页"Internet。 Web 页面和此标题搜索 Google 不会返回大致 2,460,000 结果。 即使是 Microsoft 也容易受到了标题为"无标题页"发布 web 页。 在撰写本文时，Google 搜索报告 Microsoft.com 域中的 236 此类网页。
+> 默认情况下，Visual Studio 会将母版页中的 `<title>` 元素设置为 "无标题页"。 同样，新的 ASP.NET 页也将其 `<title>` 设置为 "无标题页"。 由于可能很容易忘记将页面的标题设置为适当的值，因此 Internet 上的多个页面的标题为 "无标题页"。 在 Google for 带有此标题的网页中，会返回大约2460000的结果。 即使 Microsoft 也容易发布标题为 "无标题页" 的网页。 撰写本文时，Google search 在 Microsoft.com 域中报告了236这样的网页。
 
-ASP.NET 页可以指定其标题中的以下方法之一：
+ASP.NET 页可通过以下方式之一指定其标题：
 
-- 通过将值直接内的放置`<title>`元素
-- 使用`Title`属性中`<%@ Page %>`指令
-- 以编程方式设置页面的`Title`属性使用如下代码`Page.Title="title"`或`Page.Header.Title="title"`。
+- 通过将值直接置于 `<title>` 元素中
+- 在 `<%@ Page %>` 指令中使用 `Title` 特性
+- 使用 `Page.Title="title"` 或 `Page.Header.Title="title"`等代码以编程方式设置页面的 `Title` 属性。
 
-内容页没有`<title>`母版页中定义元素，因为它。 因此，若要设置内容页面的标题可以使用`<%@ Page %>`指令的`Title`属性，或以编程方式设置。
+内容页没有 `<title>` 元素，因为它是在母版页中定义的。 因此，若要设置内容页的标题，可以使用 `<%@ Page %>` 指令的 `Title` 特性，也可以通过编程方式进行设置。
 
-### <a name="setting-the-pages-title-declaratively"></a>以声明方式设置页面的标题
+### <a name="setting-the-pages-title-declaratively"></a>以声明方式设置页面标题
 
-可以以声明方式通过设置内容页面的标题`Title`的属性[`<%@ Page %>`指令](https://msdn.microsoft.com/library/ydy4x04a.aspx)。 此属性可以设置通过直接修改`<%@ Page %>`指令或通过属性窗口。 让我们看看这两种方法。
+内容页的标题可通过[`<%@ Page %>` 指令](https://msdn.microsoft.com/library/ydy4x04a.aspx)的 `Title` 属性以声明方式进行设置。 可以通过直接修改 `<%@ Page %>` 指令或属性窗口来设置此属性。 让我们看看这两种方法。
 
-从源视图中，找到`<%@ Page %>`指令，这是在页面的声明性标记的顶部。 `<%@ Page %>`指令`Default.aspx`后面：
+从 "源" 视图中，找到 `<%@ Page %>` 指令，该指令位于页面的声明性标记的顶部。 `Default.aspx` 的 `<%@ Page %>` 指令如下：
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample3.aspx)]
 
-`<%@ Page %>`指令指定使用 ASP.NET 引擎分析和编译页面时的特定于页面的属性。 这包括其主控页文件、 其代码文件和其标题，以及其他信息的位置。
+`<%@ Page %>` 指令指定 ASP.NET 引擎在分析和编译页面时使用的特定于页的属性。 这包括其母版页文件、其代码文件的位置及其标题以及其他信息。
 
-默认情况下，创建 Visual Studio 将设置新的内容页时`Title`属性为"无标题页"。 更改`Default.aspx`的`Title`属性从"无标题页"到"主页面教程"，然后查看通过浏览器页面。 图 1 显示了浏览器的标题栏中，这反映了新的页面标题。
+默认情况下，在创建新的内容页时，Visual Studio 会将 `Title` 特性设置为 "无标题页"。 将 `Default.aspx`的 `Title` 属性从 "无标题页面" 更改为 "母版页教程"，然后通过浏览器查看页面。 图1显示了浏览器的标题栏，其中反映了新的页面标题。
 
-![浏览器的标题栏现在显示&quot;Master 页教程&quot;而不是&quot;无标题的页&quot;](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image1.png)
+![现在，浏览器的标题栏显示 &quot;母版页教程&quot;，而不是 &quot;无标题页&quot;](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image1.png)
 
-**图 01**:浏览器的标题栏现在显示而不是"无标题页"的"主页面教程"
+**图 01**：浏览器的标题栏现在显示 "母版页教程" 而不是 "无标题页"
 
-此外可以从属性窗口设置页面的标题。 从属性窗口中，文档从列表中选择下拉列表到负载页级别的属性，其中包括`Title`属性。 图 2 显示了属性窗口后的`Title`已设置为"主页面教程"。
+还可以从属性窗口设置页的标题。 从 "属性窗口中，从下拉列表中选择" 文档 "以加载页面级属性，其中包括" `Title` "属性。 图2显示了 `Title` 设置为 "母版页教程" 后的属性窗口。
 
-![可以将标题从属性窗口中，配置过](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image2.png)
+![你还可以从 "属性" 窗口配置标题。](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image2.png)
 
-**图 02**:可以将标题从属性窗口中，配置过
+**图 02**：你也可以从 "属性" 窗口配置标题
 
-### <a name="setting-the-pages-title-programmatically"></a>以编程方式设置页面的标题
+### <a name="setting-the-pages-title-programmatically"></a>以编程方式设置页面标题
 
-母版页`<head runat="server">`标记转换成[`HtmlHead`类](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.aspx)实例时由 ASP.NET 引擎呈现页面。 `HtmlHead`类具有[`Title`属性](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.title.aspx)其值将反映在呈现`<title>`元素。 此属性是可从 ASP.NET 页的代码隐藏类通过访问`Page.Header.Title`; 这同样也可以通过访问属性`Page.Title`。
+ASP.NET 引擎呈现页面时，母版页的 `<head runat="server">` 标记将转换为[`HtmlHead` 的类](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.aspx)实例。 `HtmlHead` 类具有一个[`Title` 属性](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.title.aspx)，其值在呈现的 `<title>` 元素中反映出来。 可以通过 `Page.Header.Title`从 ASP.NET 页的代码隐藏类访问此属性;还可以通过 `Page.Title`访问此同一属性。
 
-若要练习以编程方式设置页面的标题，请导航到`About.aspx`页面的代码隐藏类，并创建事件处理程序的页面的`Load`事件。 接下来，设置页面的标题为"主页面教程::大约::*日期*"，其中*日期*为当前日期。 添加此代码后您`Page_Load`事件处理程序应看起来如下所示：
+若要以编程方式设置页面标题的设置，请导航到 `About.aspx` 页的代码隐藏类，并为该页的 `Load` 事件创建事件处理程序。 接下来，将页面的标题设置为 "母版页教程：： About：： *date*"，其中*date*为当前日期。 添加此代码后，`Page_Load` 事件处理程序应类似于以下内容：
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample4.vb)]
 
-图 3 显示了浏览器的标题栏，访问时`About.aspx`页。
+图3显示了访问 `About.aspx` 页面时浏览器的标题栏。
 
-![页面的标题是以编程方式设置，包括当前日期](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image3.png)
+![页面标题以编程方式设置并包含当前日期](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image3.png)
 
-**图 03**:页面的标题是以编程方式设置，包括当前日期
+**图 03**：页面标题以编程方式设置并包含当前日期
 
-## <a name="step-2-automatically-assigning-a-page-title"></a>步骤 2：自动分配页标题
+## <a name="step-2-automatically-assigning-a-page-title"></a>步骤2：自动分配页面标题
 
-正如我们看到在步骤 1 中，可以以声明方式或以编程方式设置页面的标题。 如果你忘记了显式更改为更具描述性标题，但是，在页将提供的默认标题，"无标题页"。 理想情况下，页面的标题会自动被设置为我们的事件中我们未显式指定其值。 例如，如果在运行时页面的标题为"无标题页"，我们可能想要自动更新，使 ASP.NET 页面的文件名相同的标题。 好消息是，使用少量的前期工作，就可以具有自动分配的标题。
+如我们在步骤1中所述，可以通过声明方式或编程方式设置页面的标题。 但是，如果您忘记将标题显式更改为更具描述性的内容，则页面将具有默认标题 "无标题页"。 理想情况下，如果未显式指定其值，则会为我们自动设置页面的标题。 例如，如果在运行时页面的标题为 "无标题页"，我们可能希望将标题自动更新为与 ASP.NET 页的文件名相同。 好消息是，有一点前期工作就可以自动分配标题了。
 
-派生自所有 ASP.NET web 页面`Page`System.Web.UI 命名空间中的类。 `Page`类定义由 ASP.NET 页面所需的最小功能，并公开基本属性，如`IsPostBack`， `IsValid`， `Request`，和`Response`，此外还有许多其他。 通常，web 应用程序中的每一页需要其他功能。 提供这一常见方法是创建自定义基本页类。 自定义基本页类是派生的类创建`Page`类，并包括附加功能。 一旦创建此基类的类后，你可以从其派生的 ASP.NET 页面 (而不是`Page`类)，从而提供对 ASP.NET 页面的扩展的功能。
+所有 ASP.NET 网页均派生自 System.web 命名空间中的 `Page` 类。 `Page` 类定义 ASP.NET 页面所需的最少功能，并公开 `IsPostBack`、`IsValid`、`Request`和 `Response`等重要属性。 通常，web 应用程序中的每个页面都需要其他特性或功能。 提供此方法的一种常用方法是创建一个自定义基本页类。 自定义基本页类是您创建的类，该类派生自 `Page` 类并包含附加功能。 一旦创建了此基类，就可以让 ASP.NET 页面从其派生（而不是 `Page` 类），从而为 ASP.NET 页面提供扩展功能。
 
-在此步骤中我们创建一个基本页面，如果标题不否则已显式设置将自动设置到 ASP.NET 页面的文件名的页面的标题。 步骤 3 介绍设置的站点映射的页面的标题。
-
-> [!NOTE]
-> 创建和使用自定义基本页类的全面介绍不在本系列教程的范围。 有关详细信息，请阅读[将自定义基本类用于在 ASP.NET 页的代码隐藏类](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)。
-
-### <a name="creating-the-base-page-class"></a>创建基础 Page 类
-
-我们的第一个任务是创建基本页类，这是一个类以扩展`Page`类。 首先，通过添加`App_Code`右键单击解决方案资源管理器中的项目名称，选择添加 ASP.NET 文件夹，然后选择你的项目的文件夹`App_Code`。 接下来，右键单击`App_Code`文件夹，并添加一个名为的新类`BasePage.vb`。 图 4 显示了在解决方案资源管理器后`App_Code`文件夹和`BasePage.vb`类已添加。
-
-![添加 App_Code 文件夹和一个名为 BasePage 类](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image4.png)
-
-**图 04**:添加`App_Code`文件夹和名为的类 `BasePage`
+在此步骤中，我们将创建一个基本页，如果未显式设置标题，则会自动将该页面的标题设置为 ASP.NET 页的文件名。 步骤3介绍了如何根据站点地图设置页面标题。
 
 > [!NOTE]
-> Visual Studio 支持项目管理的两种的模式：网站项目和 Web 应用程序项目。 `App_Code`文件夹旨在与网站项目模型一起使用。 如果使用的 Web 应用程序项目模型，将放`BasePage.vb`不是命名为类似的文件夹中的类`App_Code`，如`Classes`。 有关本主题的详细信息，请参阅[迁移到 Web 应用程序项目的 Web 站点项目](http://webproject.scottgu.com/VisualBasic/Migration2/Migration2.aspx)。
+> 创建和使用自定义基类类的彻底检查超出了本系列教程的范围。 有关详细信息，请阅读将[自定义基类用于 ASP.NET 页面的代码隐藏类](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)。
 
-由于自定义基本页用作 ASP.NET 页的代码隐藏类的基类，它需要扩展`Page`类。
+### <a name="creating-the-base-page-class"></a>创建基本页类
+
+我们的第一个任务是创建基类类，该类是一个扩展 `Page` 类的类。 首先，通过右键单击解决方案资源管理器中的项目名称，选择 "添加 ASP.NET" 文件夹，然后选择 "`App_Code`"，开始向项目添加 `App_Code` 文件夹。 接下来，右键单击 "`App_Code`" 文件夹，并添加名为 "`BasePage.vb`" 的新类。 图4显示了 `App_Code` 文件夹和 `BasePage.vb` 类添加后解决方案资源管理器。
+
+![添加 App_Code 文件夹和名为 BasePage 的类](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image4.png)
+
+**图 04**：添加 `App_Code` 文件夹和名为 `BasePage` 的类
+
+> [!NOTE]
+> Visual Studio 支持以下两种模式的项目管理：网站项目和 Web 应用程序项目。 `App_Code` 文件夹设计为与网站项目模型一起使用。 如果使用的是 Web 应用程序项目模型，请将 `BasePage.vb` 类放置在一个名为 "`App_Code`以外的文件夹，如 `Classes`"。 有关本主题的详细信息，请参阅将网站[项目迁移到 Web 应用程序项目](http://webproject.scottgu.com/VisualBasic/Migration2/Migration2.aspx)。
+
+因为自定义基本页充当 ASP.NET 页的代码隐藏类的基类，所以它需要扩展 `Page` 类。
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample5.vb)]
 
-每当请求 ASP.NET 页时将继续通过一系列的阶段，通过在请求的页面呈现到 HTML 中。 我们可以通过重写到该阶段点击`Page`类的`OnEvent`方法。 让我们为我们的群页自动设置标题 （如果它尚未显式指定的`LoadComplete`阶段 (其中之后, 您可能已经猜到，发生`Load`阶段)。
+每次请求 ASP.NET 页时，它都会经历一系列阶段，请求页中的 culminating 将呈现为 HTML。 可以通过重写 `Page` 类的 `OnEvent` 方法来利用阶段。 对于我们的基本页，如果未通过 `LoadComplete` 阶段显式指定标题，则会自动设置该标题（这在您可能已经猜到 `Load` 阶段后发生）。
 
-若要完成此操作，重写`OnLoadComplete`方法，并输入以下代码：
+若要实现此目的，请重写 `OnLoadComplete` 方法，并输入以下代码：
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample6.vb)]
 
-`OnLoadComplete`方法首先会确定如果`Title`尚未已显式设置属性。 如果`Title`属性是`Nothing`，空字符串，或具有"无标题页"的值分配给请求的 ASP.NET 页的文件名。 请求的 ASP.NET 页面-的物理路径`C:\MySites\Tutorial03\Login.aspx`，例如-是可通过访问`Request.PhysicalPath`属性。 `Path.GetFileNameWithoutExtension`方法用于拉出只是文件名的部分，并且此文件名然后分配到`Page.Title`属性。
+`OnLoadComplete` 方法首先确定 `Title` 属性是否尚未显式设置。 如果 `Title` 属性为 `Nothing`，则为空字符串，或具有值 "无标题页"，则会将其分配给请求的 ASP.NET 页的文件名。 例如，可以通过 `Request.PhysicalPath` 属性访问请求的 ASP.NET 页 `C:\MySites\Tutorial03\Login.aspx`的物理路径。 `Path.GetFileNameWithoutExtension` 方法仅提取文件名部分，然后将此文件名分配给 `Page.Title` 属性。
 
 > [!NOTE]
-> 我邀请您来增强此逻辑，用于改进标题的格式。 例如，如果页面的文件名为`Company-Products.aspx`，上面的代码将生成标题"公司的产品"，但理想情况下短划线将替换为一个空格，如"公司产品"中所示。 此外，请考虑大小写更改时添加一个空格。 也就是说，请考虑添加代码，通过转换文件名`OurBusinessHours.aspx`标题的"我们营业时间"。
+> 我邀请您增强这一逻辑，以改善标题的格式。 例如，如果 `Company-Products.aspx`页面的文件名，则上述代码将生成标题 "Company-Products"，但理想情况下，破折号会替换为空格，如 "公司产品" 中所示。 另外，请考虑在出现大小写更改时添加一个空格。 也就是说，请考虑添加代码，将文件名 `OurBusinessHours.aspx` 转换为 "我们的营业时间" 的标题。
 
-### <a name="having-the-content-pages-inherit-the-base-page-class"></a>具有继承的基类的页的内容页
+### <a name="having-the-content-pages-inherit-the-base-page-class"></a>使内容页继承基本页类
 
-现在，我们需要更新我们网站派生自定义基本页中的 ASP.NET 页面 (`BasePage`) 而不是`Page`类。 若要完成此，请转到每个代码隐藏类并将更改从类声明：
+现在，我们需要更新站点中的 ASP.NET 页面，使其从自定义基本页（`BasePage`）而不是 `Page` 类派生。 若要完成此操作，请转到每个代码隐藏类，并从以下位置更改类声明：
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample7.vb)]
 
-到:
+结束时间：
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample8.vb)]
 
-这样做之后，请访问通过浏览器的站点。 如果您访问的页，其标题显式设置，如`Default.aspx`或`About.aspx`，使用显式指定的标题。 如果，但是，在访问其标题未更改默认值 （"无标题页"） 从一个页面，基本页类将设置到页面的文件名的标题。
+完成此操作后，通过浏览器访问站点。 如果访问其标题被显式设置的页面（如 `Default.aspx` 或 `About.aspx`），则使用显式指定的标题。 但是，如果您访问其标题尚未从默认值（"无标题页"）更改的页，则基本页类会将标题设置为该页的文件名。
 
-图 5 显示了`MultipleContentPlaceHolders.aspx`页面的浏览器查看时。 请注意，标题是精确的页的文件名 （不太扩展名），"MultipleContentPlaceHolders"。
+图5显示了通过浏览器查看 `MultipleContentPlaceHolders.aspx` 页面。 请注意，标题正好是页面的文件名（更少扩展名），"MultipleContentPlaceHolders"。
 
-[![如果未显式指定一个标题，该页面的文件名是自动使用](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image5.png)
+[![如果未显式指定标题，则自动使用页面的文件名](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image5.png)
 
-**图 05**:如果未显式指定一个标题，该页面的文件名是自动使用 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image7.png))
+**图 05**：如果未显式指定标题，则自动使用页面的文件名（[单击以查看完全大小的图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image7.png)）
 
-## <a name="step-3-basing-the-page-title-on-the-site-map"></a>步骤 3：使基于站点图的页面标题
+## <a name="step-3-basing-the-page-title-on-the-site-map"></a>步骤3：在站点图上基于页面标题
 
-ASP.NET 还提供了一个强大的网站映射框架，允许页面开发人员在外部资源 （如 XML 文件或数据库表） 以及 Web 控件，用于显示信息 （如 SiteMapPath 站点地图中定义分层的站点地图菜单中和 TreeView 控件）。
+ASP.NET 提供了一个强大的站点地图框架，使页面开发人员能够在外部资源（如 XML 文件或数据库表）中定义一个层次结构的站点地图，并提供 Web 控件以显示有关站点地图的信息（例如 SiteMapPath）。菜单和 TreeView 控件）。
 
-此外可以从 ASP.NET 页的代码隐藏类以编程方式访问站点地图结构。 以这种方式我们自动在站点地图中设置到其相应的节点的标题的页面的标题。 让我们来改进`BasePage`，以便提供此功能在步骤 2 中创建的类。 但首先我们需要创建我们的站点的站点映射。
+还可以从 ASP.NET 页的代码隐藏类以编程方式访问站点地图结构。 通过这种方式，我们可以自动将页面标题设置为站点地图中其对应节点的标题。 让我们来增强在步骤2中创建的 `BasePage` 类，使其提供此功能。 但首先我们需要为站点创建一个站点图。
 
 > [!NOTE]
-> 本教程假设读者已经非常熟悉使用 ASP。NET 的站点映射功能。 使用站点图的详细信息，请查阅我的多个部分的文章系列，[检查 ASP。NET 的站点导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)。
+> 本教程假定读者已经熟悉 ASP。净地图功能。 有关使用站点地图的详细信息，请参阅我的多部分文章系列，[检查 ASP。网络导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)。
 
-### <a name="creating-the-site-map"></a>创建站点图
+### <a name="creating-the-site-map"></a>创建站点地图
 
-站点映射系统构建之上[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，其中将站点图 API 从序列化内存和持久存储区之间的站点映射信息的逻辑中分离出来。 .NET Framework 附带[`XmlSiteMapProvider`类](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx)，这是默认站点地图提供程序。 正如其名，`XmlSiteMapProvider`使用 XML 文件作为其站点映射存储。 让我们使用此提供程序来定义我们的站点映射。
+站点地图系统是在[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)的上方构建的，后者将站点地图 API 与在内存和永久存储之间序列化站点地图信息的逻辑分离。 .NET Framework 附带了[`XmlSiteMapProvider` 类](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx)，这是默认的站点地图提供程序。 顾名思义，`XmlSiteMapProvider` 使用 XML 文件作为其站点地图存储区。 让我们使用此提供程序来定义我们的网站图。
 
-首先，创建名为的网站的根文件夹中的站点地图文件`Web.sitemap`。 若要完成此操作，右键单击解决方案资源管理器中的网站名称，选择添加新项，然后选择站点图模板。 请确保该文件命名`Web.sitemap`并单击添加。
+首先在网站的根文件夹中创建一个名为 "`Web.sitemap`" 的站点映射文件。 若要实现此目的，请在解决方案资源管理器中右键单击网站名称，选择 "添加新项"，然后选择 "站点地图" 模板。 确保该文件命名为 "`Web.sitemap`"，然后单击 "添加"。
 
-[![添加一个名为网站的根文件夹的 Web.sitemap 文件](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image8.png)
+[![将名为 web.sitemap 的文件添加到网站的根文件夹中](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image8.png)
 
-**图 06**:添加名为文件`Web.sitemap`网站的根文件夹 ([单击以查看实际尺寸的图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image10.png))
+**图 06**：将名为 `Web.sitemap` 的文件添加到网站的根文件夹（[单击查看完全大小的映像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image10.png)）
 
-添加以下 XML 到`Web.sitemap`文件：
+将以下 XML 添加到 `Web.sitemap` 文件：
 
 [!code-xml[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample9.xml)]
 
-此 XML 定义分层站点地图结构图 7 所示。
+此 XML 定义图7中所示的层次结构站点地图结构。
 
-![站点图是当前组成的三个站点地图节点](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image11.png)
+![站点地图当前由三个站点地图节点组成](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image11.png)
 
-**图 07**:站点图是当前组成的三个站点地图节点
+**图 07**：站点地图当前由三个站点地图节点组成
 
-我们添加新示例，我们将在将来的教程中更新站点地图结构。
+我们将在将来的教程中更新站点地图结构，因为我们添加了新的示例。
 
-### <a name="updating-the-master-page-to-include-navigation-web-controls"></a>更新 Master 页以包含导航 Web 控件
+### <a name="updating-the-master-page-to-include-navigation-web-controls"></a>更新母版页以包含导航 Web 控件
 
-现在，我们已定义的站点图，让我们更新母版页，若要包括导航 Web 控件。 具体而言，让我们向 ListView 控件中呈现在站点地图中定义的每个节点一个列表项的未排序的列表的课程部分左边的列。
+现在我们已定义了一个站点地图，接下来请更新母版页，使其包含导航 Web 控件。 具体而言，让我们将 "ListView" 控件添加到 "课程" 部分中的左栏，该部分将呈现一个无序列表，其中包含站点地图中定义的每个节点的列表项。
 
 > [!NOTE]
-> ListView 控件是刚刚接触 ASP.NET 3.5 版。 如果使用的 ASP.NET 的早期版本，请改为使用 Repeater 控件。 ListView 控件的详细信息，请参阅[使用 ASP.NET 3.5 ListView 和 DataPager 控件](http://aspnet.4guysfromrolla.com/articles/122607-1.aspx)。
+> ListView 控件是 ASP.NET 版本3.5 的新控件。 如果使用的是早期版本的 ASP.NET，请改用 Repeater 控件。 有关 ListView 控件的详细信息，请参阅[Using ASP.NET 3.5 的 ListView 和 DataPager 控件](http://aspnet.4guysfromrolla.com/articles/122607-1.aspx)。
 
-首先，从课程部分中删除现有的未排序的列表标记。 接下来，从工具箱拖动 ListView 控件并将其下方课程标题。 ListView 将位于工具箱中，与其他视图控件的数据部分： GridView、 DetailsView 和 FormView。 设置 ListView`ID`属性设置为`LessonsList`。
+首先从课程部分删除现有的无序列表标记。 接下来，将 "ListView" 控件从 "工具箱" 拖放到课程标题的下方。 ListView 位于工具箱的 "数据" 部分，另一个视图控件与其他视图控件相同： GridView、DetailsView 和 FormView。 将 ListView 的 `ID` 属性设置为 "`LessonsList`"。
 
-从数据源配置向导选择要绑定到名为的新 SiteMapDataSource 控件的 ListView `LessonsDataSource`。 SiteMapDataSource 控件从站点映射系统返回层次结构。
+从 "数据源配置向导" 中，选择将 ListView 绑定到名为 `LessonsDataSource`的新 SiteMapDataSource 控件。 SiteMapDataSource 控件从站点地图系统返回层次结构。
 
-[![SiteMapDataSource 控件绑定到 LessonsList ListView 控件](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image12.png)
+[![将 SiteMapDataSource 控件绑定到 LessonsList ListView 控件](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image12.png)
 
-**图 08**:SiteMapDataSource 控件绑定到 LessonsList ListView 控件 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image14.png))
+**图 08**：将 SiteMapDataSource 控件绑定到 LessonsList ListView 控件（[单击以查看完全大小的图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image14.png)）
 
-在创建后 SiteMapDataSource 控件，我们需要定义 ListView 的模板，以便它将呈现 SiteMapDataSource 控制返回的每个节点一个列表项的未排序的列表。 可以使用以下模板标记完成此：
+创建 SiteMapDataSource 控件后，需要定义 ListView 的模板，使其为 SiteMapDataSource 控件返回的每个节点呈现一个列表项。 可使用以下模板标记完成此操作：
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample10.aspx)]
 
-`LayoutTemplate`生成的未排序列表的标记 (`<ul>...</ul>`) 时`ItemTemplate`呈现为列表项 SiteMapDataSource 所返回每个项 (`<li>`)，其中包含指向特定课程的链接。
+`LayoutTemplate` 为无序列表（`<ul>...</ul>`）生成标记，而 `ItemTemplate` 将 SiteMapDataSource 返回的每个项呈现为包含指向特定课程的链接的列表项（`<li>`）。
 
-在配置后 ListView 的模板，请访问网站。 如图 9 所示，课程部分包含单个项目符号项，主页。 关于和使用多个 ContentPlaceHolder 控件课程在哪里？ SiteMapDataSource 旨在返回一组分层数据，但 ListView 控件可以仅显示单个层次结构的级别。 因此，将显示仅返回 SiteMapDataSource 的站点地图节点的第一个级别。
+配置 ListView 的模板后，请访问网站。 如图9所示，"课程" 部分包含一个项目符号项 Home。 在哪里可以使用多个 ContentPlaceHolder 控件课程？ SiteMapDataSource 旨在返回分层的数据集，但 ListView 控件只能显示层次结构的一个级别。 因此，只显示 SiteMapDataSource 返回的第一级站点地图节点。
 
-[![课程部分包含的单个列表项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image15.png)
+[![课程部分包含单个列表项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image15.png)
 
-**图 09**:课程部分包含单个列表项 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image17.png))
+**图 09**：课程部分包含单个列表项（[单击以查看完全大小的图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image17.png)）
 
-显示多个级别，我们无法嵌套中的多个 Listview `ItemTemplate`。 这种方法在中检查[*母版页和站点导航*教程](../../data-access/introduction/master-pages-and-site-navigation-vb.md)的我[处理数据的系列教程](../../data-access/index.md)。 但是，对于本教程系列中我们站点的地图将包含只需两个级别：主页 （顶级）;和每个课程为主页的子级。 而不是创建嵌套的 ListView，我们可以改为指示 SiteMapDataSource 使其不返回起始节点通过设置其[`ShowStartingNode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx)到`False`。 实际效果是 SiteMapDataSource 首先返回站点地图节点的第二个层。
+若要显示多个级别，可以在 `ItemTemplate`中嵌套多个 Listview。 本技术在[*母版页和*](../../data-access/introduction/master-pages-and-site-navigation-vb.md)使用[数据教程系列](../../data-access/index.md)的站点导航教程中进行了检查。 但是，在本教程系列中，我们的网站图只包含两个级别：主页（顶层）;并且每个课程都作为 Home 的子项。 我们可以通过将 SiteMapDataSource[属性`ShowStartingNode`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx)设置为 `False`来指示不返回起始节点，而不是手工编写嵌套的 ListView。 最终效果是，SiteMapDataSource 首先返回站点地图节点的第二层。
 
-进行此更改后，ListView 显示关于项目符号项并使用多个 ContentPlaceHolder 控件课程，但忽略针对家庭的项目符号项。 若要解决此问题，我们可以显式添加项目符号项为家庭中`LayoutTemplate`:
+进行此更改后，ListView 将显示关于和使用多个 ContentPlaceHolder 控件课程的项目符号项，但省略 Home 的项目符号项。 若要解决此情况，可以在 `LayoutTemplate`中为 Home 显式添加项目符号项：
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample11.aspx)]
 
-通过配置 SiteMapDataSource 以忽略此参数起始节点和显式添加主页项目符号项，课程部分现在显示预期的输出。
+通过将 SiteMapDataSource 配置为省略开始节点并显式添加 Home 项目符号项，"课程" 部分现在会显示预期的输出。
 
-[![课程部分主页和每个子节点包含项目符号项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image18.png)
+[![课程部分包含 Home 和每个子节点的项目符号项](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image18.png)
 
-**图 10**:课程部分主页和每个子节点包含项目符号项 ([单击此项可查看原尺寸图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image20.png))
+**图 10**： "课程" 部分包含 "主页" 和每个子节点的项目符号项（[单击以查看完全大小的图像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image20.png)）
 
-### <a name="setting-the-title-based-on-the-site-map"></a>设置标题的站点映射
+### <a name="setting-the-title-based-on-the-site-map"></a>基于站点地图设置标题
 
-使用就地站点地图，我们可以更新我们`BasePage`类，以使用站点映射中指定的标题。 与我们在步骤 2 中，我们只想要使用站点地图节点的标题，如果页面的标题未显式设置由页面开发人员。 如果所请求的页面没有显式设置页面标题，然后我们会回退到使用请求的页的文件名 （不太扩展名），与我们在步骤 2 中站点图中未找到。 图 11 说明了这一决策。
+站点映射到位后，可将 `BasePage` 类更新为使用在站点图中指定的标题。 正如我们在步骤2中所做的那样，如果页面的标题尚未由页面开发人员显式设置，则我们只希望使用 "站点地图" 节点的标题。 如果请求的页面没有显式设置的页面标题，并且在站点映射中找不到，则我们将回退到使用请求的页面的文件名（较少扩展名），就像我们在步骤2中所做的那样。 图11说明了此决策过程。
 
-![如果没有显式设置页面标题，对应的站点地图节点的标题将用作](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image21.png)
+![如果没有显式设置的页面标题，则使用相应的网站地图节点的标题](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image21.png)
 
-**图 11**:如果没有显式设置页面标题，对应的站点地图节点的标题将用作
+**图 11**：在没有显式设置页面标题的情况下，将使用相应的网站地图节点的标题
 
-更新`BasePage`类的`OnLoadComplete`方法以包括以下代码：
+更新 `BasePage` 类的 `OnLoadComplete` 方法以包含以下代码：
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample12.vb)]
 
-与前面一样，`OnLoadComplete`方法开始时确定是否已显式设置页面的标题。 如果`Page.Title`是`Nothing`，为空字符串，则代码会自动分配到的值分配值"无标题页"或`Page.Title`。
+与之前一样，`OnLoadComplete` 方法首先确定是否已显式设置页面的标题。 如果 `Page.Title` `Nothing`，则为空字符串，或者为其分配值 "无标题页"，则代码会自动将一个值分配给 `Page.Title`。
 
-若要确定使用的标题，代码将开始通过引用[`SiteMap`类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)的[`CurrentNode`属性](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx)。 `CurrentNode` 返回[ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)对应于当前请求页的站点地图中的实例。 假设当前请求的页中站点图中，找到`SiteMapNode`的`Title`属性分配给页面的标题。 如果当前请求的页不在站点地图`CurrentNode`返回`Nothing`和请求的页的文件名用作标题 （如在步骤 2 中完成）。
+若要确定要使用的标题，代码首先引用[`SiteMap` 类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)的[`CurrentNode` 属性](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx)。 `CurrentNode` 返回站点地图中对应于当前请求的页面的[`SiteMapNode`](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)实例。 假设当前请求的页面在站点地图中找到，则 `SiteMapNode`的 `Title` 属性分配给页面的标题。 如果当前请求的页不在站点地图中，`CurrentNode` 将返回 `Nothing`，并且将请求的页的文件名用作标题（如步骤2中所述）。
 
-图 12 显示了`MultipleContentPlaceHolders.aspx`页面的浏览器查看时。 由于未显式设置此页面的标题，则改为使用其对应的站点地图节点的标题。
+图12显示了通过浏览器查看 `MultipleContentPlaceHolders.aspx` 页面。 由于未显式设置此页面的标题，因此改用其对应的站点地图节点的标题。
 
-![从站点地图拉取 MultipleContentPlaceHolders.aspx 页面的标题](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image22.png)
+![从站点地图中提取 MultipleContentPlaceHolders 页的标题](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image22.png)
 
-**图 12**:从站点地图拉取 MultipleContentPlaceHolders.aspx 页面的标题
+**图 12**：从站点地图中提取 MultipleContentPlaceHolders 页的标题
 
-## <a name="step-4-adding-other-page-specific-markup-to-theheadsection"></a>步骤 4：添加到其他特定于页面的标记`<head>`部分
+## <a name="step-4-adding-other-page-specific-markup-to-theheadsection"></a>步骤4：将其他特定于页的标记添加到`<head>`节
 
-步骤 1、 2 和 3 介绍了自定义`<title>`按页基础上的元素。 除了`<title>`，则`<head>`部分可以包含`<meta>`元素和`<link>`元素。 在本教程前面所述`Site.master`的`<head>`部分包括`<link>`元素`Styles.css`。 因为这`<link>`母版页中定义元素，它包含在`<head>`部分中的所有内容页面。 但我们有关添加`<meta>`和`<link>`按页基础上的元素？
+步骤1、2和3查看逐页自定义 `<title>` 元素。 除了 `<title>`之外，`<head>` 部分可能包含 `<meta>` 元素和 `<link>` 元素。 如本教程前面所述，`Site.master`的 `<head>` 部分包含要 `Styles.css`的 `<link>` 元素。 由于此 `<link>` 元素在母版页中定义，因此它包含在所有内容页的 `<head>` 部分中。 但我们如何逐页地添加 `<meta>` 和 `<link>` 元素呢？
 
-若要添加到特定于页面的内容的最简单方法`<head>`部分是通过 ContentPlaceHolder 控件创建主页面中。 我们已经有了此类 ContentPlaceHolder (名为`head`)。 因此，若要添加自定义`<head>`标记中，创建相应的内容页中的控件并将标记置于其中。
+向 `<head>` 部分添加特定于页面的内容的最简单方法是在母版页中创建 ContentPlaceHolder 控件。 我们已经有了这样的 ContentPlaceHolder （名为 `head`）。 因此，若要添加自定义 `<head>` 标记，请在页面中创建相应的内容控件，并将标记放在此处。
 
-为了说明添加自定义`<head>`标记到页面，让我们来包括`<meta>`向当前集的内容页面的 description 元素。 `<meta>` Description 元素提供了有关 web 页面的简短说明; 大多数搜索引擎将此信息以某种形式合并时显示搜索结果。
+为了说明如何向页面中添加自定义 `<head>` 标记，我们将向我们的当前内容页集提供 `<meta>` 的说明元素。 `<meta>` description 元素提供了有关网页的简要说明;大多数搜索引擎在显示搜索结果时将此信息以某种形式纳入。
 
-一个`<meta>`description 元素具有以下形式：
+`<meta>` description 元素具有以下格式：
 
 [!code-html[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample13.html)]
 
-若要将此标记添加到内容页，请将上述文本添加到内容控件映射到母版页的`head`ContentPlaceHolder。 例如，若要定义`<meta>`的说明元素`Default.aspx`，添加以下标记：
+若要将此标记添加到内容页，请将以上文本添加到将映射到母版页的 `head` ContentPlaceHolder 的内容控件。 例如，若要定义 `Default.aspx`的 `<meta>` description 元素，请添加以下标记：
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample14.aspx)]
 
-因为`head`ContentPlaceHolder 不在 HTML 页面的正文内，添加到内容控件的标记不会显示在设计视图中。 若要查看`<meta>`说明元素，请访问`Default.aspx`通过浏览器。 加载页面后，查看源，并请注意，`<head>`部分包括在内容控件中指定的标记。
+由于 `head` ContentPlaceHolder 不在 HTML 页的正文中，因此添加到内容控件的标记将不会显示在设计视图中。 若要查看 `<meta>` description 元素，请通过浏览器 `Default.aspx` 访问。 加载页面后，请查看源，并注意 "`<head>`" 部分包括内容控件中指定的标记。
 
-请花费片刻时间来添加`<meta>`说明元素`About.aspx`， `MultipleContentPlaceHolders.aspx`，和`Login.aspx`。
+请花点时间将 `<meta>` 说明元素添加到 `About.aspx`、`MultipleContentPlaceHolders.aspx`和 `Login.aspx`。
 
-### <a name="programmatically-adding-markup-to-theheadregion"></a>以编程方式添加到标记`<head>`区域
+### <a name="programmatically-adding-markup-to-theheadregion"></a>以编程方式将标记添加到`<head>`区域
 
-`head` ContentPlaceHolder 使我们能够以声明方式将自定义标记添加到母版页的`<head>`区域。 此外可能以编程方式添加自定义标记。 请记住，`Page`类的`Header`属性将返回`HtmlHead`母版页中定义的实例 ( `<head runat="server">`)。
+`head` ContentPlaceHolder 允许我们以声明方式向母版页的 `<head>` 区域添加自定义标记。 还可以通过编程方式添加自定义标记。 请记住，`Page` 类的 `Header` 属性返回在母版页中定义的 `HtmlHead` 实例（`<head runat="server">`）。
 
-能够以编程方式将内容添加到`<head>`区域时，要添加的内容是动态的。 可能基于用户访问的页面;也许它是正在从数据库中提取。 无论是什么原因，您可以将内容添加到`HtmlHead`通过将控件添加到其`Controls`集合如下所示：
+当要添加的内容为动态时，能够以编程方式向 `<head>` 区域添加内容非常有用。 它可能基于访问该页的用户，可能是从数据库中提取的。 无论出于何种原因，你都可以通过将控件添加 `Controls` 到 `HtmlHead` 来向添加内容，如下所示：
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample15.vb)]
 
-上面的代码将添加`<meta>`keywords 元素到`<head>`区域，提供以逗号分隔的列表，这些关键字描述页。 请注意，若要添加`<meta>`创建的标记[ `HtmlMeta` ](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlmeta.aspx)实例，设置其`Name`并`Content`属性，然后将其添加到`Header`的`Controls`集合。 同样，若要以编程方式添加`<link>`元素中，创建[ `HtmlLink` ](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmllink.aspx)对象和设置其属性，然后将其添加到`Header`的`Controls`集合。
+上面的代码将 `<meta>` 关键字元素添加到 `<head>` 区域中，该区域提供了用逗号分隔的描述页面的关键字列表。 请注意，若要添加 `<meta>` 标记，请创建[`HtmlMeta`](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlmeta.aspx)实例，设置其 `Name` 和 `Content` 属性，然后将其添加到 `Header`的 `Controls` 集合中。 同样，若要以编程方式添加 `<link>` 元素，请创建[`HtmlLink`](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmllink.aspx)对象，设置其属性，然后将其添加到 `Header`的 `Controls` 集合。
 
 > [!NOTE]
-> 若要添加任意标记，创建[ `LiteralControl` ](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx)实例，设置其`Text`属性，然后将其添加到`Header`的`Controls`集合。
+> 若要添加任意标记，请创建[`LiteralControl`](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx)实例，设置其 `Text` 属性，然后将其添加到 `Header`的 `Controls` 集合。
 
 ## <a name="summary"></a>总结
 
-在本教程中我们介绍了各种的方式来添加`<head>`按页按区域标记。 应包括母版页`HtmlHead`实例 (`<head runat="server">`) 使用 ContentPlaceHolder。 `HtmlHead`实例允许以编程方式访问的内容页面`<head>`区域，以声明方式和以编程方式设置页的标题; ContentPlaceHolder 控件启用自定义标记添加到`<head>`以声明方式通过内容控件的部分。
+在本教程中，我们将介绍多种方法来逐页添加 `<head>` 区域标记。 母版页应该包含具有 ContentPlaceHolder 的 `HtmlHead` 实例（`<head runat="server">`）。 `HtmlHead` 实例允许内容页以编程方式访问 `<head>` 区域，并以声明方式和编程方式设置页面的标题;ContentPlaceHolder 控件允许通过内容控件以声明方式将自定义标记添加到 `<head>` 部分。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [动态 ASP.NET 中设置页面的标题](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
-- [正在检查 ASP。NET 的 Site navigation — 站点导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
+- [在 ASP.NET 中动态设置页面的标题](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
+- [正在检查 ASP。网络站点导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [如何使用 HTML Meta 标记](http://searchenginewatch.com/showPage.html?page=2167931)
-- [在 ASP.NET 中的母版页](http://www.odetocode.com/articles/419.aspx)
+- [ASP.NET 中的母版页](http://www.odetocode.com/articles/419.aspx)
 - [使用 ASP.NET 3.5 的 ListView 和 DataPager 控件](http://aspnet.4guysfromrolla.com/articles/122607-1.aspx)
-- [将自定义的基本类用于 ASP.NET 页的代码隐藏类](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)
+- [为 ASP.NET 页的代码隐藏类使用自定义基类](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个部 asp/ASP.NET 书籍并创办了 4GuysFromRolla.com，一直从事 Microsoft Web 技术自 1998 年起。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的多个 ASP/asp 和4GuysFromRolla.com 的作者已使用 Microsoft Web 技术，1998。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以通过[http://ScottOnWriting.NET](http://scottonwriting.net/) [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或通过他的博客访问 Scott。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Zack Jones 和 Suchi Banerjee。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+此教程系列由许多有用的审阅者查看。 本教程的领导评审者是 Zack 的 Suchi Banerjee。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)放置一行。
 
 > [!div class="step-by-step"]
 > [上一页](multiple-contentplaceholders-and-default-content-vb.md)

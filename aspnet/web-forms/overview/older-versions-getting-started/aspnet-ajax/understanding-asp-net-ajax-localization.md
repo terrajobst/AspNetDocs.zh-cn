@@ -2,149 +2,149 @@
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 title: 了解 ASP.NET AJAX 本地化 |Microsoft Docs
 author: scottcate
-description: 本地化是设计并将对特定语言和区域性的支持集成到应用程序或应用程序组件的过程。 Mic...
+description: 本地化是设计特定语言和区域性并将其集成到应用程序或应用程序组件的支持的过程。 Mic 。
 ms.author: riande
 ms.date: 03/14/2008
 ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: ef4ee57496337fb13b4d1c09c058e89e04eb3138
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 003e7939accd7a68dab97441b3d999bca835b85a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114594"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600887"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>了解 ASP.NET AJAX 本地化
 
-通过[Scott Cate](https://github.com/scottcate)
+作者： [Scott Cate](https://github.com/scottcate)
 
-[下载 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
+[下载 PDF](https://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
 
-> 本地化是设计并将对特定语言和区域性的支持集成到应用程序或应用程序组件的过程。 Microsoft ASP.NET 平台通过集成标准.NET 本地化模型; 为标准 ASP.NET 应用程序的本地化提供广泛支持Microsoft AJAX 框架利用集成的模型，以支持可在其中执行本地化的各种方案。
+> 本地化是设计特定语言和区域性并将其集成到应用程序或应用程序组件的支持的过程。 通过集成标准 .NET 本地化模型，Microsoft ASP.NET 平台为标准 ASP.NET 应用程序的本地化提供了广泛的支持;Microsoft AJAX Framework 利用集成模式来支持可执行本地化的各种方案。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-Microsoft 的 ASP.NET 技术带来了面向对象和事件驱动的编程模型，并将其与已编译的代码的好处结合在一起。 但是，其服务器端处理模型有几个缺点固有的技术，其中很多可以通过 System.Web.Extensions 命名空间，它封装在.NET Framework 中的 Microsoft AJAX 服务中包括的新功能进行寻址3.5。 使用这些扩展，许多丰富的客户端功能，以前为 ASP.NET 2.0 AJAX Extensions 的一部分，但现在的 Framework 基类库的一部分提供。 控件和此命名空间中的功能而无需整页刷新，客户端脚本 （包括 ASP.NET 分析 API），通过访问 Web 服务的功能包括部分呈现的页和扩展的客户端的 API 设计要镜像的许多了解在 ASP.NET 服务器端控件集中控制方案。
+Microsoft 的 ASP.NET 技术引入了面向对象的和事件驱动的编程模型，并将其与编译的代码的优势结合起来。 但是，它的服务器端处理模型在技术方面有一些固有的缺点，其中许多功能都可以通过 System.web 命名空间中包含的新功能来解决，后者在 .NET Framework3.5。 这些扩展启用了许多丰富的客户端功能，以前作为 ASP.NET 2.0 AJAX 扩展的一部分提供，但现在是框架基类库的一部分。 此命名空间中的控件和功能包括页面的部分呈现，无需整页刷新、通过客户端脚本访问 Web 服务的能力（包括 ASP.NET 分析 API）以及用于镜像许多在 ASP.NET 服务器端控件集中显示的控件方案。
 
-本白皮书将检查中的 Microsoft AJAX Framework 和 Microsoft AJAX 脚本库，用于本地化支持和进行审阅已集成 web 中的本地化支持业务需求的上下文中存在的本地化功能提供的.NET Framework 的应用程序。 Microsoft AJAX 脚本库利用.resx 文件格式已由.NET 应用程序，它提供了集成的 IDE 支持和可共享的资源类型。
+本白皮书介绍了 Microsoft AJAX Framework 和 Microsoft AJAX 脚本库中存在的本地化功能，其中包含本地化支持的业务需求和对 web 中本地化的已集成支持.NET Framework 提供的应用程序。 Microsoft AJAX 脚本库利用了 .NET 应用程序已使用的 .resx 文件格式，该格式提供集成的 IDE 支持和可共享的资源类型。
 
-此白皮书基于在 Microsoft Visual Studio 2008 Beta 2 版本上。 本白皮书还假定你将使用 Visual Studio 2008 中，不 Visual Web Developer 速成版，并且将提供根据 Visual Studio 的用户界面的演练。 一些代码示例将使用可能是在 Visual Web Developer 速成版中不可用的项目模板。
+本白皮书基于 Microsoft Visual Studio 2008 的 Beta 2 版本。 本白皮书还假设你将使用 Visual Studio 2008，而不是 Visual Web Developer Express，并将根据 Visual Studio 的用户界面提供演练。 一些代码示例将利用在 Visual Web Developer 速成版中可能不可用的项目模板。
 
-## <a name="the-need-for-localization"></a>*需要本地化*
+## <a name="the-need-for-localization"></a>*本地化需要*
 
-特别是对于企业应用程序开发人员和组件开发人员，创建可以随时了解区域性和语言之间的差异的工具的功能已成为越来越有必要。 设计组件能够适应客户端的区域设置提高了开发人员工作效率并减少组件的自适应的全局函数所需的工作量。
+特别是对于企业应用程序开发人员和组件开发人员而言，创建可了解区域性与语言差异的工具的功能已变得越来越重要。 设计可适应客户端区域设置的组件可以提高开发人员的工作效率，并减少调整组件全局运行所需的工作量。
 
-本地化是设计并将对特定语言和区域性的支持集成到应用程序或应用程序组件的过程。 Microsoft ASP.NET 平台通过集成标准.NET 本地化模型; 为标准 ASP.NET 应用程序的本地化提供广泛支持Microsoft AJAX 框架利用集成的模型，以支持可在其中执行本地化的各种方案。 正在部署到附属程序集中，或使用静态文件系统结构，也可以使用 Microsoft AJAX 框架，本地化脚本。
+本地化是设计特定语言和区域性并将其集成到应用程序或应用程序组件的支持的过程。 通过集成标准 .NET 本地化模型，Microsoft ASP.NET 平台为标准 ASP.NET 应用程序的本地化提供了广泛的支持;Microsoft AJAX Framework 利用集成模式来支持可执行本地化的各种方案。 使用 Microsoft AJAX Framework，可以通过将脚本部署到附属程序集或利用静态文件系统结构来对脚本进行本地化。
 
 ## <a name="embedding-scripts-with-satellite-assemblies"></a>*将脚本嵌入附属程序集*
 
-与标准.NET Framework 本地化策略保持一致，资源可以包含在附属程序集。 附属程序集提供几项优势通过传统的资源包含在二进制文件的任何给定的本地化可以更新而不更新可查看大图像，可以只需通过安装附属程序集到部署其他本地化信息项目文件夹和附属程序集可以部署而不会导致主项目程序集的重新加载。 特别是在 ASP.NET 项目中，此功能非常有用，它可以显著减少增量更新所使用的系统资源的数量和最小日志会中断生产网站使用情况。
+与标准 .NET Framework 本地化策略一致，资源可以包括在附属程序集中。 与二进制文件中的传统资源包含相比，附属程序集具有多项优势-任何指定的本地化都可以更新，而无需更新较大的映像，只需将附属程序集安装到项目文件夹和附属程序集均可部署，而不会导致主项目程序集重新加载。 特别是在 ASP.NET 项目中，这是很有用的，因为它可以显著减少增量更新所使用的系统资源量，并最大限度地降低生产网站的使用。
 
-脚本嵌入到程序集将这些命令包含在管理.resx （或编译.resources） 文件，都将包括在编译时程序集。 其资源然后都提供给脚本的应用程序通过 AJAX 运行时生成的代码，通过程序集级别属性
+脚本嵌入到程序集中，方法是将它们包含在托管的 .resx （或编译的 .resources）文件中，这些文件将在编译时包含在程序集中。 然后通过程序集级别的属性，将其资源通过 AJAX 运行时生成的代码提供给脚本应用程序。
 
-*对于嵌入的脚本文件命名约定*
+*嵌入的脚本文件的命名约定*
 
-Microsoft AJAX Framework 脚本管理支持在部署和测试的脚本中使用的各种选项并提供指导原则以促进这些选项。
+Microsoft AJAX Framework 脚本管理支持用于在部署和测试脚本时使用的各种选项，并且提供了有助于这些选项的指导原则。
 
 *为了便于调试：*
 
-发行 （生产） 脚本不应包含`.debug`文件名中的限定符。 此演示适合对于调试应包含的脚本`.debug`文件名中。
+Release （生产）脚本不应在文件名中包含 `.debug` 限定符。 为调试而设计的脚本应在文件名中包含 `.debug`。
 
-*为了便于本地化：*
+*为简化本地化：*
 
-非特定区域性的脚本不应包括的文件的名称的任何区域性标识符。 对于包含本地化的资源的脚本，应在文件名中指定 ISO 语言代码。 例如，`es-CO`代表西班牙语 （哥伦比亚）。
+非特定区域性脚本不应在文件的名称中包含任何区域性标识符。 对于包含本地化资源的脚本，应在文件名中指定 ISO 语言代码。 例如，`es-CO` 代表西班牙语，哥伦比亚。
 
-下表总结了文件命名约定的示例：
+下表总结了包含示例的文件命名约定：
 
-| Filename | 含义 |
+| {2&gt;文件名&lt;2} | 含义 |
 | --- | --- |
-| Script.js | 一个发行版本的非特定于区域性的脚本。 |
-| Script.debug.js | 一个调试版本的非特定于区域性的脚本。 |
-| Script.en-US.js | 发行版适用于英语，美国脚本。 |
-| Script.debug.es-CO.js | 调试版本西班牙语，哥伦比亚脚本。 |
+| Script | 非特定于版本区域性的脚本。 |
+| Script node.js | 调试版本非特定于区域性的脚本。 |
+| En-US | 版本英语美国脚本。 |
+| Script.debug.es-CO | Debug 版本西班牙语，哥伦比亚脚本。 |
 
-## <a name="walkthrough-create-an-localized-embedded-script"></a>演练：创建本地化的嵌入式脚本
+## <a name="walkthrough-create-an-localized-embedded-script"></a>演练：创建本地化的嵌入脚本
 
-*请注意： 本演练需要 Visual Studio 2008 的使用，因为 Visual Web Developer 速成版不包括用于类库项目的项目模板。*
+*请注意：此演练要求使用 Visual Studio 2008，因为 Visual Web Developer Express 不包含用于类库项目的项目模板。*
 
-1. 使用集成的 ASP.NET AJAX Extensions 中创建新网站项目。 创建另一个项目，一个类库项目，名为 LocalizingResources 解决方案中。
-2. 将添加到 LocalizingResources 项目名 VerifyDeletion.js 的 Jscript 文件，以及名为 DeletionResources.resx 和 DeletionResources.es.resx.resx 资源文件。 前者将包含非特定区域性的资源;后一种将包含西班牙语语言资源。
-3. 将以下代码添加到 VerifyDeletion.js:
+1. 使用集成的 ASP.NET AJAX Extension 创建新的网站项目。 在名为 LocalizingResources 的解决方案中创建另一个项目（一个类库项目）。
+2. 将名为 VerifyDeletion 的 Jscript 文件添加到 LocalizingResources 项目，并添加名为 DeletionResources 和 DeletionResources 的 .resx 资源文件。 前者包含非特定区域性的资源;后者将包含西班牙语语言资源。
+3. 将以下代码添加到 VerifyDeletion：
 
 [!code-javascript[Main](understanding-asp-net-ajax-localization/samples/sample1.js)]
 
-熟悉 JavaScript 正则表达式语法中，在单个正斜杠的文本 （在上一示例中，/FILENAME/ 是一个例子） 表示的 RegExp 对象。 MSDN 库中包含大量的 JavaScript 引用，并可以在线找到 JavaScript 本机对象上的资源。
+对于使用 JavaScript Regex 语法不熟悉的对象，在单正斜杠中的文本（在上一个示例中，/FILENAME/是一个示例）表示 RegExp 对象。 MSDN Library 包含广泛的 JavaScript 参考，可以联机找到 JavaScript 本机对象上的资源。
 
-1. 将以下资源字符串添加到 DeletionResources.resx: 
+1. 向 DeletionResources 添加以下资源字符串： 
 
-    **VerifyDelete**:是否确实要删除文件名？
+    **VerifyDelete**：是否确实要删除文件名？
 
-    **删除**:已删除文件名。
+    **已删除**：已删除文件名。
 
-1. 将以下资源字符串添加到 DeletionResources.es.resx: 
+1. 向 DeletionResources 添加以下资源字符串： 
 
-    **VerifyDelete**:美国东部时间 seguro que desee quitar 文件名？
+    **VerifyDelete**： Est seguro 查询 DESEE quitar FILENAME？
 
-    **删除**:文件名 se ha quitado。
-2. 将以下代码行添加到程序集信息文件：
+    **已删除**： FILENAME se ha quitado。
+2. 将以下代码行添加到 AssemblyInfo 文件：
 
 [!code-csharp[Main](understanding-asp-net-ajax-localization/samples/sample2.cs)]
 
-1. 向 LocalizingResources 项目中添加对 System.Web 和 System.Web.Extensions 的引用。
-2. 添加对 LocalizingResources 项目中的网站项目的引用。
-3. 在 default.aspx 中，在网站项目下，使用以下其他标记中更新 ScriptManager 控件：
+1. 向 LocalizingResources 项目添加对 System.web 和 System.object 的引用。
+2. 从网站项目添加对 LocalizingResources 项目的引用。
+3. 在 default.aspx 中，在网站项目下，用以下附加标记更新 ScriptManager 控件：
 
 [!code-aspx[Main](understanding-asp-net-ajax-localization/samples/sample3.aspx)]
 
-1. 在 default.aspx 中，任意位置在页上，包括此标记：
+1. 在页面上的任何位置，在默认情况下，包括以下标记：
 
 [!code-aspx[Main](understanding-asp-net-ajax-localization/samples/sample4.aspx)]
 
-1. 按 F5。 如果系统提示，请启用调试。 加载页面时，按删除按钮。 请注意，您会提示您在英语中 （除非默认情况下，您的计算机设置为首选西班牙语语言资源） 进行确认。
-2. 关闭浏览器窗口并返回到 default.aspx。 在@Page标头指令，使用 ES-ES 区域性和 UICulture 替换为自动。 按 F5 再次启动 web 浏览器中一次应用程序。 这一次，请注意，系统会提示删除在西班牙语中的文件：
+1. 按 F5。 如果系统提示，请启用调试。 加载页面后，按 "删除" 按钮。 请注意，系统会提示你输入英语（除非默认情况下，你的计算机设置为首选西班牙语语言资源）才能确认。
+2. 关闭浏览器窗口并返回到 default.aspx。 在 @Page 标头指令中，将 Culture 和 UICulture 的 auto 替换为 es。 再次按 F5 在浏览器中重新启动 web 应用程序。 这一次，请注意，系统会提示删除西班牙语中的文件：
 
 [![](understanding-asp-net-ajax-localization/_static/image2.png)](understanding-asp-net-ajax-localization/_static/image1.png)
 
-([单击此项可查看原尺寸图像](understanding-asp-net-ajax-localization/_static/image3.png))
+（[单击以查看完全大小的映像](understanding-asp-net-ajax-localization/_static/image3.png)）
 
 [![](understanding-asp-net-ajax-localization/_static/image5.png)](understanding-asp-net-ajax-localization/_static/image4.png)
 
-([单击此项可查看原尺寸图像](understanding-asp-net-ajax-localization/_static/image6.png))
+（[单击以查看完全大小的映像](understanding-asp-net-ajax-localization/_static/image6.png)）
 
-请注意，在本演练中的多个变体。 例如，脚本不能注册使用 ScriptManager 控件以编程方式在页面加载过程。
+请注意，此演练有若干变化形式。 例如，可以在页面加载过程中以编程方式向 ScriptManager 控件注册脚本。
 
 ## <a name="including-a-static-script-file-structure"></a>*包括静态脚本文件结构*
 
-当使用静态脚本文件进行部署，您会失去一些使用固有的.NET 本地化方案的好处。 主要可见，则是你将失去包括脚本资源文件; 从生成的自动类型在上面的演练，例如，资源已公开由称为消息从 ScriptManager 控件自动生成类型。
+使用静态脚本文件进行部署时，会丧失使用固有的 .NET 本地化方案的一些优点。 主要是：你丢失了从包含脚本资源文件生成的自动类型;例如，在上面的演练中，资源已由来自 ScriptManager 控件的名为 Message 的自动生成类型公开。
 
-有，但是，到使用静态脚本文件结构的一些好处。 可以执行更新而无需重新编译和重新部署附属程序集，并使用静态文件结构也可以重写嵌入的脚本，以将一次要项可能尚未装运的功能与组件相集成。
+不过，使用静态脚本文件结构有一些优点。 可以在不重新编译和重新部署附属程序集的情况下执行更新，也可以通过使用静态文件结构来替代嵌入的脚本，从而集成可能未随组件一起提供的一小部分功能。
 
-Microsoft 建议避免通过自动在项目编译期间生成的脚本资源的版本控制问题。 维护大量的脚本代码基，它会变为越来越困难，以确保代码更改会反映在每个本地化的脚本。 或者，您可以只需维护一个逻辑脚本和多个本地化脚本，生成项目的同时合并文件。
+Microsoft 建议在项目编译期间自动生成脚本资源，以避免版本控制问题。 在维护广泛的脚本代码库时，确保代码更改反映在每个本地化脚本中可能会变得越来越困难。 作为替代方法，只需维护一个逻辑脚本和多个本地化脚本，生成项目时合并文件。
 
-由于不是以声明方式包含的资源，应包含文件的静态脚本引用通过添加`<asp:ScriptElement>`元素作为子级`<Scripts>`标记的 ScriptManager 控件，或以编程方式添加`ScriptReference`对象向`Scripts`属性的`ScriptManager`在运行时页面上的控件。
+由于没有要以声明方式包含的资源，因此应通过将 `<asp:ScriptElement>` 元素添加为 ScriptManager 控件的 `<Scripts>` 标记的子元素，或通过编程方式将 `ScriptReference` 对象添加到运行时页上的 `ScriptManager` 控件的 `Scripts` 属性来引用静态脚本文件。
 
-## <a name="the-scriptmanager-and-its-role-in-localization"></a>*ScriptManager 和本地化中的其角色*
+## <a name="the-scriptmanager-and-its-role-in-localization"></a>*ScriptManager 及其在本地化中的角色*
 
-ScriptManager 使本地化的应用程序的多个自动行为：
+ScriptManager 为本地化的应用程序启用了几种自动行为：
 
-- 它会自动查找基于设置和命名约定; 的脚本文件例如，它将加载在调试模式下，启用了调试的脚本，并加载本地化基于浏览器的用户界面选择的脚本。
-- 它使您能够定义包括自定义区域性的区域性。
-- 它支持通过 HTTP 的脚本文件的压缩。
-- 它将缓存脚本来有效地管理多个请求。
-- 它将一个间接层添加到脚本中，其通过管道通过加密的 URL。
+- 它基于设置和命名约定自动定位脚本文件;例如，在调试模式下，它加载启用了调试的脚本，并基于浏览器的用户界面选择加载本地化的脚本。
+- 它支持区域性的定义，其中包括自定义区域性。
+- 它支持通过 HTTP 压缩脚本文件。
+- 它缓存脚本以有效地管理多个请求。
+- 它通过将其通过加密的 URL 来管道来向脚本添加一个间接层。
 
-可以将脚本引用添加到 ScriptManager 控件，通过编程方式或声明性标记。 声明性标记时，尤其是使用脚本中嵌入的程序集，而不是网站项目本身，如脚本的名称可能不会更改如修订推送。
+可以通过编程方式或声明性标记将脚本引用添加到 ScriptManager 控件。 当处理嵌入在网站项目本身之外的程序集中的脚本时，声明性标记特别有用，因为在通过推送修订时，脚本的名称可能不会更改。
 
 ## <a name="summary"></a>总结
 
-随着 web 应用程序扩大受众更大，需要能够访问更广泛的区域性和社区将成为核心的业务模型;电子商务 web 应用程序需要能够处理外币，内容管理系统要求是其内容，但还其导航提示和其他语言和公司中的窗体字段需要知道这种需求不仅能存在可访问。
+随着 web 应用程序越来越多地增长到更大的受众，需要能够更广泛的文化和社区成为业务模型的核心;电子商务 web 应用程序需要能够处理外国货币，内容管理系统不仅需要能够显示其内容，而且还需要提供其他语言的导航提示和表单字段，并且公司需要知道这种需要方便.
 
-.NET Framework 本质上支持的丰富本地化框架，利用附属程序集和 XML 资源 (.resx) 文件以提供统一的方法来查找资源字符串和图像。 ASP.NET AJAX 扩展，其中包括 Microsoft AJAX Framework 和 Microsoft AJAX 脚本库中，为提供支持这一编程模型到客户端代码中，启用简单的资源字符串查找。 只要文件名遵循给定的命名方案，附属程序集支持自动包含通过 ScriptResource.axd 脚本资源 （实际的.js 文件）。 利用此支持，ASP.NET AJAX Extensions 简化脚本的本地化和全球化应用程序。
+.NET Framework 本质上支持丰富的本地化框架，使用附属程序集和 XML 资源（.resx）文件来提供一种统一的方法来查找资源字符串和图像。 ASP.NET AJAX 扩展（包括 Microsoft AJAX Framework 和 Microsoft AJAX 脚本库）提供了对客户端代码的此编程模型的支持，从而实现了简单的资源字符串查找。 附属程序集支持通过 ScriptResource 自动包含脚本资源（实际的 .js 文件），只要文件名遵循给定的命名方案即可。 通过这种支持，ASP.NET AJAX 扩展简化了脚本本地化和应用程序的全球化。
 
 ## <a name="bio"></a>*Bio*
 
-Scott Cate 自 1997 年以来一直致力于 Microsoft Web 技术和 myKB.com 总裁 ([www.myKB.com](http://www.myKB.com)) 专门负责编写 ASP.NET 基于侧重于知识库软件解决方案的应用程序。 可以通过电子邮件联系 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或他的博客[ScottCate.com](http://ScottCate.com)
+Scott Cate 一直在使用 Microsoft Web 技术，因为1997，是 myKB.com （[www.myKB.com](http://www.myKB.com)）的总裁，他致力于编写基于知识库软件解决方案的基于 ASP.NET 的应用程序。 可以通过电子邮件联系 Scott [scott.cate@myKB.com](mailto:scott.cate@myKB.com)或[ScottCate.com](http://ScottCate.com)上的博客
 
 > [!div class="step-by-step"]
 > [上一页](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
