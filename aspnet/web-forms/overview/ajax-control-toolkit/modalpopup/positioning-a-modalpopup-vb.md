@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
-title: 定位 ModalPopup (VB) |Microsoft Docs
+title: 定位 ModalPopup （VB） |Microsoft Docs
 author: wenz
-description: 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 但是该控件不提供...
+description: AJAX 控件工具包中的 ModalPopup 控件提供了使用客户端方法创建模式弹出窗口的简单方法。 但是，控件不提供 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 8a07210c-eb0e-485e-9ee8-82a101520e65
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d5cfcd2ff8956b54f241ee7002aa00a0bd47469e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fb79a08a339588ed8adc4b4236911819ea9286b4
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132657"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598970"
 ---
 # <a name="positioning-a-modalpopup-vb"></a>定位 ModalPopup (VB)
 
-通过[Christian Wenz](https://github.com/wenz)
+作者： [Christian Wenz](https://github.com/wenz)
 
-[下载代码](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.vb.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4VB.pdf)
+[下载代码](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.vb.zip)或[下载 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4VB.pdf)
 
-> 在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 但是该控件不提供内置的功能，用于定位弹出窗口。
+> AJAX 控件工具包中的 ModalPopup 控件提供了使用客户端方法创建模式弹出窗口的简单方法。 但是，控件不提供用于定位 popup 的内置功能。
 
 ## <a name="overview"></a>概述
 
-在 AJAX 控件工具包的 ModalPopup 控件提供了简单的方法来创建模式弹出框使用客户端的方式。 但是该控件不提供内置的功能，用于定位弹出窗口。
+AJAX 控件工具包中的 ModalPopup 控件提供了使用客户端方法创建模式弹出窗口的简单方法。 但是，控件不提供用于定位 popup 的内置功能。
 
 ## <a name="steps"></a>步骤
 
-若要激活 ASP.NET AJAX 控件工具包的功能`ScriptManager`。 控件必须添加到任何位置的页上 (但在`<form>`元素):
+为了激活 ASP.NET AJAX 和控件工具包的功能，`ScriptManager`。 控件必须置于页面上的任何位置（但位于 `<form>` 元素内）：
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample1.aspx)]
 
-接下来，添加一个面板作为模式弹出框。 一个按钮用于关闭弹出窗口：
+接下来，添加一个用于模式弹出窗口的面板。 按钮用于关闭弹出窗口：
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample2.aspx)]
 
-每当显示弹出窗口，它应定位在页中的某个特定位置中。 对于此任务中，创建客户端的 JavaScript 函数。 它首先尝试访问面板。 如果成功，将使用 CSS 和 JavaScript （更改将在弹出窗口的位置） 设置面板的位置。 但是，`ModalPopupExtender`还会控制尝试定位弹出窗口。 因此，JavaScript 代码重复定位弹出窗口中，每隔 10 秒。
+每当显示弹出窗口时，它都应定位在页面中的某个位置。 对于此任务，将创建客户端 JavaScript 函数。 它首先尝试访问面板。 如果成功，则使用 CSS 和 JavaScript 设置面板的位置（将 popup 的位置更改为）。 但 `ModalPopupExtender` 控件也会尝试定位弹出窗口。 因此，JavaScript 代码会重复定位 popup，每10秒一次。
 
 [!code-html[Main](positioning-a-modalpopup-vb/samples/sample3.html)]
 
-正如您所看到的返回值的`setTimeout()`JavaScript 方法将保存在全局变量。 这样就可以停止重复的按需、 弹出窗口定位使用`clearTimeout()`方法：
+正如您所看到的，`setTimeout()` JavaScript 方法的返回值保存在全局变量中。 这允许使用 `clearTimeout()` 方法，按需停止快捷方式的重复定位：
 
 [!code-javascript[Main](positioning-a-modalpopup-vb/samples/sample4.js)]
 
-现在剩下要做的是使浏览器调用这些函数在可能的情况。 `movePanel()`触发面板中单击该按钮时，必须调用 JavaScript 函数：
+现在，剩下的就是让浏览器在适当的时候调用这些函数。 当单击触发面板的按钮时，必须调用 `movePanel()` JavaScript 函数：
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample5.aspx)]
 
-并`stopMoving()`函数发挥作用时这可能关闭弹出窗口中触发`ModalPopupExtender`控件：
+当弹出窗口关闭时，`stopMoving()` 函数便会开始播放，此操作可在 `ModalPopupExtender` 控件中触发：
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample6.aspx)]
 
-[![模式弹出框显示在指定的位置](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
+[![在指定位置显示模式弹出窗口](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
 
-模式弹出框显示在指定的位置 ([单击此项可查看原尺寸图像](positioning-a-modalpopup-vb/_static/image3.png))
+模式弹出窗口出现在指定位置（[单击以查看完全大小的图像](positioning-a-modalpopup-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一篇](handling-postbacks-from-a-modalpopup-vb.md)
+> [上一部分](handling-postbacks-from-a-modalpopup-vb.md)

@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
-title: 第 7 部分：创建主页面 |Microsoft Docs
+title: 第7部分：创建主页 |Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -8,69 +8,69 @@ ms.date: 07/04/2012
 ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: aaffcecccd138d30355ac0e7ce6c86a67246cc08
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fe4074c701159a137be3644d65ca844f160c2399
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108927"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599992"
 ---
-# <a name="part-7-creating-the-main-page"></a>第 7 部分：创建主页面
+# <a name="part-7-creating-the-main-page"></a>第7部分：创建主页
 
-通过[Mike Wasson](https://github.com/MikeWasson)
+作者： [Mike Wasson](https://github.com/MikeWasson)
 
-[下载已完成的项目](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
+[下载完成的项目](https://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
 
 ## <a name="creating-the-main-page"></a>创建主页面
 
-在本部分中，将创建主应用程序页。 此页会比在管理页中，更复杂，因此我们将在几个步骤中处理它。 此过程中，你将看到一些更高级的 Knockout.js 技术。 下面是基本页的布局：
+在本部分中，你将创建主应用程序页。 此页将比管理页更复杂，因此，我们将通过几个步骤来进行处理。 在此过程中，您将看到一些更高级的挖空技术。 下面是页面的基本布局：
 
 ![](using-web-api-with-entity-framework-part-7/_static/image1.png)
 
-- "产品"包含产品的数组。
-- "购物车"包含产品数量与的数组。 单击"添加添加到购物车"更新购物车。
-- "Orders"保留订单 Id 的数组。
-- "详细信息"包含订单详细信息，这是一个数组项 （产品数量）
+- "产品" 包含一系列产品。
+- "购物车" 包含具有数量的产品的数组。 单击 "添加到购物车" 将更新购物车。
+- "Orders" 包含订单 Id 的数组。
+- "详细信息" 包含订单详细信息，这是一组项（产品，含数量）
 
-我们将开始通过不带任何数据绑定或脚本在 HTML 中，定义一些基本布局。 打开文件 Views/Home/Index.cshtml 并使用以下内容替换中的所有内容：
+首先，我们将在 HTML 中定义一些基本布局，而不包含数据绑定或脚本。 打开文件视图/Home/Index，并将所有内容替换为以下内容：
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample1.html)]
 
-接下来，添加脚本部分，并创建一个空的视图模型：
+接下来，添加脚本部分并创建空视图模型：
 
 [!code-cshtml[Main](using-web-api-with-entity-framework-part-7/samples/sample2.cshtml)]
 
-根据前面质地的设计，我们的视图模型需要的产品、 购物车、 订单和详细信息可观察量。 添加以下变量添加到`AppViewModel`对象：
+根据前面所绘的设计，视图模型需要可观察量产品、购物车、订单和详细信息。 将以下变量添加到 `AppViewModel` 对象：
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample3.js)]
 
-用户可以将项从产品列表添加到购物车中，并从购物车中删除项目。 若要将这些功能封装，我们将创建表示产品的另一个视图模型类。 将下列代码添加到 `AppViewModel`：
+用户可以将 "产品" 列表中的项添加到购物车中，并从购物车中删除商品。 为了封装这些函数，我们将创建另一个表示产品的视图模型类。 将下列代码添加到 `AppViewModel`：
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample4.js?highlight=4)]
 
-`ProductViewModel`类包含用于向 / 从购物车移动产品的两个函数：`addItemToCart`将该产品的一个单元添加到购物车中，和`removeAllFromCart`中移除所有的产品数量。
+`ProductViewModel` 类包含两个用于将产品移入和移出购物车的函数： `addItemToCart` 将产品的一个单位添加到购物车，`removeAllFromCart` 删除产品的所有数量。
 
-用户可以选择现有订单，并获取订单详细信息。 我们将封装此功能加入到另一个视图模型：
+用户可以选择现有订单并获取订单详细信息。 我们会将此功能封装到另一个视图模型中：
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample5.js?highlight=4)]
 
-`OrderDetailsViewModel`初始化采用的顺序，它通过向服务器发送 AJAX 请求提取订单详细信息。
+使用订单初始化 `OrderDetailsViewModel`，并通过将 AJAX 请求发送到服务器来提取订单详细信息。
 
-另请注意`total`属性上的`OrderDetailsViewModel`。 此属性是一种特殊的可观察对象调用[计算可观察量](http://knockoutjs.com/documentation/computedObservables.html)。 如名称所示，计算可观察量可数据绑定到计算值&#8212;在这种情况下，总费用的顺序。
+另外，请注意 `OrderDetailsViewModel`上的 `total` 属性。 此属性是名为计算的可[观察对象](http://knockoutjs.com/documentation/computedObservables.html)的特殊类型的可观察对象。 顾名思义，计算的可观测对象允许您在这种情况下，将&#8212;数据绑定到计算所得的值，这是订单的总成本。
 
-接下来，添加到这些函数`AppViewModel`:
+接下来，将这些函数添加到 `AppViewModel`：
 
-- `resetCart` 从购物车中移除所有项。
-- `getDetails` 获取订单的详细信息 (通过将一个新推送`OrderDetailsViewModel`拖动到`details`列表)。
-- `createOrder` 创建新订单并清空该购物车。
+- `resetCart` 从购物车中删除所有项。
+- `getDetails` 获取订单的详细信息（通过将新 `OrderDetailsViewModel` 推送到 `details` 列表）。
+- `createOrder` 创建新订单并清空购物车。
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample6.js?highlight=4)]
 
-最后，通过发出 AJAX 请求的产品和订单初始化视图模型：
+最后，通过对产品和订单进行 AJAX 请求来初始化视图模型：
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample7.js)]
 
-好了，这是很多代码，但我们构建它向上逐步进行，因此希望设计已清除。 现在我们可以将某些 Knockout.js 绑定添加到 HTML。
+好的，这是很多代码，但我们逐步构建了这种代码，因此，但愿设计是显而易见的。 现在，我们可以将一些挖空绑定添加到 HTML。
 
 **产品**
 
@@ -78,25 +78,25 @@ ms.locfileid: "65108927"
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample8.html)]
 
-此循环访问产品数组并显示的名称和价格。 仅当用户登录时，则显示"添加到 Order"按钮。
+这会循环访问 products 数组，并显示名称和价格。 仅当用户登录时，"添加到订单" 按钮才可见。
 
-"添加到 Order"按钮调用`addItemToCart`上`ProductViewModel`产品的实例。 此示例演示 Knockout.js 的一个不错的功能：当视图模型中包含其他视图模型时，您可对内部模型应用绑定。 在此示例中，在绑定`foreach`应用于每个`ProductViewModel`实例。 这种方法是功能的将所有放到一个视图模型更加清晰。
+"添加到订单" 按钮会对产品的 `ProductViewModel` 实例调用 `addItemToCart`。 这说明了挖空的一项不错的功能：当视图模型包含其他视图模型时，可以将绑定应用于内部模型。 在此示例中，`foreach` 中的绑定应用于每个 `ProductViewModel` 实例。 这种方法比将所有功能放入单一视图模型要简洁得多。
 
-**Cart**
+**放**
 
-下面是在购物车的绑定：
+下面是购物车的绑定：
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample9.html)]
 
-此循环车数组并显示名称、 价格和数量。 请注意，"删除"链接和"创建订单"按钮绑定到视图模型的函数。
+这会循环访问 cart 阵列，并显示名称、价格和数量。 请注意，"删除" 链接和 "创建顺序" 按钮已绑定到视图模型函数。
 
-**订单**
+**订购**
 
-下面是有关订单列表的绑定：
+下面是 orders 列表的绑定：
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample10.html)]
 
-此循环访问订单和显示订单 id。 链接的 click 事件绑定到`getDetails`函数。
+这会循环访问订单并显示订单 ID。 链接上的 click 事件绑定到 `getDetails` 函数。
 
 **订单详细信息**
 
@@ -104,11 +104,11 @@ ms.locfileid: "65108927"
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample11.html)]
 
-此循环按顺序的项并显示产品、 价格和数量。 周围的 div 是详细信息数组包含一个或多个项时才可见。
+这会循环访问订单中的项目，并显示产品、价格和数量。 仅当详细信息数组包含一个或多个项时，才会显示周围的 div。
 
 ## <a name="conclusion"></a>结束语
 
-在本教程中，您可以创建使用 Entity Framework 数据库和 ASP.NET Web API 提供面向公众的接口在数据层的顶部进行通信的应用程序。 我们使用 ASP.NET MVC 4 来呈现 HTML 页面和 Knockout.js 以及 jQuery，以提供动态交互，而无需重新加载页面。
+在本教程中，您创建了一个应用程序，该应用程序使用实体框架与数据库进行通信，并 ASP.NET Web API 在数据层的顶层提供面向公众的接口。 我们使用 ASP.NET MVC 4 来呈现 HTML 页面，并使用挖空和 jQuery 来提供动态交互，无需重新加载页面。
 
 其他资源：
 
@@ -116,4 +116,4 @@ ms.locfileid: "65108927"
 - [实体框架开发人员中心](https://msdn.microsoft.com/data/ef)
 
 > [!div class="step-by-step"]
-> [上一篇](using-web-api-with-entity-framework-part-6.md)
+> [上一部分](using-web-api-with-entity-framework-part-6.md)

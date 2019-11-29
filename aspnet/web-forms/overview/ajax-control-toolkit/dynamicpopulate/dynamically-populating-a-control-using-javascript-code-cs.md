@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-cs
-title: 动态填充控件使用 JavaScript 代码 (C#) |Microsoft Docs
+title: 使用 JavaScript 代码动态填充控件（C#） |Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页面方法），并将生成的值填充到 t 上的目标控件...
+description: ASP.NET AJAX 控件工具包中的通过 dynamicpopulate 控件调用 web 服务（或页面方法），并将生成的值填充到 t 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: cc4c2def-e88c-4456-ae8b-a6ae0ff8cc2d
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58084a65a2e34534b89daabdd74d8d7b19f6b4ae
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 24dc358427dec3ffcba16d00041c9a2db657e7e2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127010"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599237"
 ---
 # <a name="dynamically-populating-a-control-using-javascript-code-c"></a>使用 JavaScript 代码动态填充控件 (C#)
 
-通过[Christian Wenz](https://github.com/wenz)
+作者： [Christian Wenz](https://github.com/wenz)
 
-[下载代码](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate1CS.pdf)
+[下载代码](https://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate1.cs.zip)或[下载 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate1CS.pdf)
 
-> ASP.NET AJAX 控件工具包中的 DynamicPopulate 控件调用 web 服务 （或页面方法），并将生成的值填充到目标控件在页上，而无需刷新页面。 还有可能触发使用自定义客户端的 JavaScript 代码的填充。
+> ASP.NET AJAX 控件工具包中的通过 dynamicpopulate 控件调用 web 服务（或页面方法），并将生成的值填充到页面上的目标控件中，而无需进行页刷新。 还可以使用自定义客户端 JavaScript 代码触发填充。
 
 ## <a name="overview"></a>概述
 
-`DynamicPopulate` ASP.NET AJAX 控件工具包中的控件调用 web 服务 （或页面方法），并将生成的值填充到目标控件在页上，而无需刷新页面。 还有可能触发使用自定义客户端的 JavaScript 代码的填充。
+ASP.NET AJAX 控件工具包中的 `DynamicPopulate` 控件将调用 web 服务（或页面方法），并将生成的值填充到页面上的目标控件中，而无需进行页刷新。 还可以使用自定义客户端 JavaScript 代码触发填充。
 
 ## <a name="steps"></a>步骤
 
-首先，需要 ASP.NET Web 服务实现的方法调用的`DynamicPopulateExtender`控件。 Web 服务实现方法`getDate()`需要一个自变量的类型字符串，调用`contextKey`，因为`DynamicPopulate`控件将发送一条与每个 web 服务调用上下文信息。 下面是代码 (文件`DynamicPopulate.cs.asmx`) 中检索当前日期中三种格式之一：
+首先，需要一个 ASP.NET Web 服务，该服务实现 `DynamicPopulateExtender` 控件调用的方法。 Web 服务实现 `getDate()` 方法，该方法需要一个名为 `contextKey`的字符串类型参数，因为 `DynamicPopulate` 控件向每个 web 服务调用发送一段上下文信息。 下面是以下列三种格式之一检索当前日期的代码（文件 `DynamicPopulate.cs.asmx`）：
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-cs/samples/sample1.aspx)]
 
-在下一步中，创建一个新的 ASP.NET 站点并开始使用 ASP.NET AJAX ScriptManager 控件：
+在下一步中，创建一个新的 ASP.NET 网站，并从 ASP.NET AJAX ScriptManager 控件开始：
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-cs/samples/sample2.aspx)]
 
-然后，添加一个 label 控件 (例如使用具有相同名称的 HTML 控件或`<asp:Label />`web 控件) 的更高版本将显示 web 服务调用的结果。
+然后，添加 "标签" 控件（例如，使用同一名称的 HTML 控件或 `<asp:Label />` web 控件），稍后会显示 web 服务调用的结果。
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-cs/samples/sample3.aspx)]
 
-接下来，包括`DynamicPopulateExtender`控制并提供 web 服务信息、 目标控件，但不是这会触发这会在更高版本使用自定义 JavaScript 填充该控件的名称 ！
+接下来，请提供 `DynamicPopulateExtender` 控件并提供 web 服务信息、目标控件，但不能使用自定义 JavaScript 来触发填充的控件的名称。
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-cs/samples/sample4.aspx)]
 
-现在我们来的 JavaScript 部分。 `$find()`由 ASP.NET AJAX 库定义的函数返回对 ASP.NET AJAX 控件工具包的服务器端对象的引用如`DynamicPopulateExtender`。 在当前文件中，`$find("dpe")`返回到一个引用`DynamicPopulateExtender`页中的控件。 它公开一个名为方法`populate()`随即将会触发动态填充过程。 `populate()`方法需要一个参数： 参数作为上下文键`getDate()`web 方法。 因此，例如，`$find("dpe").populate("format1")`将填充与月-日-年格式的当前日期的标签。
+立即到 JavaScript 部分。 ASP.NET AJAX 库定义的 `$find()` 函数返回对 ASP.NET AJAX 控件工具包（如 `DynamicPopulateExtender`）的服务器端对象的引用。 在当前文件中，`$find("dpe")` 返回对页中一个 `DynamicPopulateExtender` 控件的引用。 它公开一个称为 `populate()` 的方法，该方法将触发动态填充过程。 `populate()` 方法需要一个参数：作为 `getDate()` web 方法的参数的上下文键。 例如，`$find("dpe").populate("format1")` 会用月格式的当前日期填充标签。
 
-为了让此示例更具灵活性，用户可能现在多个日期格式之间进行选择。 对于其中每项显示的单选按钮。 一次用户单击单选按钮，JavaScript 代码动态填充与所选的日期格式的标签。 下面是这些单选按钮：
+为了使示例更灵活，用户现在可以在几种日期格式之间进行选择。 对于其中的每个，将显示单选按钮。 用户单击某个单选按钮后，JavaScript 代码将使用所选日期格式动态填充该标签。 这些单选按钮如下所示：
 
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-cs/samples/sample5.aspx)]
 
-请注意，单选按钮，JavaScript 表达式的上下文中`this.value`当前按钮，它恰巧是完全相同的信息的值是指`getDate()`方法可以使用。
+请注意，在单选按钮的上下文中，JavaScript 表达式 `this.value` 引用当前按钮的值，这恰好与 `getDate()` 方法可以使用的信息完全相同。
 
-[![单击的按钮中指定的格式的服务器中检索日期](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
+[![单击该按钮将以指定的格式从服务器中检索日期](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
 
-单击的按钮中指定的格式的服务器中检索日期 ([单击此项可查看原尺寸图像](dynamically-populating-a-control-using-javascript-code-cs/_static/image3.png))
+单击该按钮将以指定的格式从服务器中检索日期（[单击查看完全大小的图像](dynamically-populating-a-control-using-javascript-code-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一页](dynamically-populating-a-control-cs.md)

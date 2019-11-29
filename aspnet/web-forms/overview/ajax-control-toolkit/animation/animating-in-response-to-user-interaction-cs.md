@@ -1,65 +1,65 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
-title: 以响应用户交互 (C#) 进行动画处理 |Microsoft Docs
+title: 针对用户交互（C#）响应进行动画处理 |Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 动画可以星型...
+description: ASP.NET AJAX 控件工具包中的动画控件不仅仅是一个控件，而是用于向控件添加动画的整个框架。 动画可以是 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: ea26549d-fbbf-4973-a108-b14cd1d6de26
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6bf69927c5a73f89d94282937d1d4e21ec75ea53
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d04fa680d0cd4f7fb54521ac6fbb47a2cf9a83cf
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108140"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599876"
 ---
 # <a name="animating-in-response-to-user-interaction-c"></a>响应用户交互的动画 (C#)
 
-通过[Christian Wenz](https://github.com/wenz)
+作者： [Christian Wenz](https://github.com/wenz)
 
-[下载代码](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.cs.zip)或[下载 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6CS.pdf)
+[下载代码](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.cs.zip)或[下载 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6CS.pdf)
 
-> ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 动画可以自动启动，也可能会触发由用户交互，例如通过使用鼠标单击。
+> ASP.NET AJAX 控件工具包中的动画控件不仅仅是一个控件，而是用于向控件添加动画的整个框架。 动画可以自动启动，也可以由用户交互触发，例如通过单击鼠标。
 
 ## <a name="overview"></a>概述
 
-ASP.NET AJAX 控件工具包中的动画控件不只是一个控件，但若要将动画添加到控件的整个框架。 动画可以自动启动，也可能会触发由用户交互，例如通过使用鼠标单击。
+ASP.NET AJAX 控件工具包中的动画控件不仅仅是一个控件，而是用于向控件添加动画的整个框架。 动画可以自动启动，也可以由用户交互触发，例如通过单击鼠标。
 
 ## <a name="steps"></a>步骤
 
-首先，包括`ScriptManager`在页中; 然后，ASP.NET AJAX 库加载时，使其可以使用控件工具包：
+首先，将 `ScriptManager` 包括在页面中;然后，加载 ASP.NET AJAX 库，使其可以使用控件工具包：
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-cs/samples/sample1.aspx)]
 
-动画将应用于文本的外观如下所示的面板：
+动画将应用于文本面板，如下所示：
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-cs/samples/sample2.aspx)]
 
-在面板关联的 CSS 类，定义一种很好的背景色和还设置面板的固定的宽度：
+在面板的关联 CSS 类中，定义良好的背景色，并为面板设置固定宽度：
 
 [!code-css[Main](animating-in-response-to-user-interaction-cs/samples/sample3.css)]
 
-然后，添加`AnimationExtender`到页上，提供`ID`，则`TargetControlID`属性和强制性`runat="server"`:
+然后，将 `AnimationExtender` 添加到页面，提供 `ID``TargetControlID` 属性和必备 `runat="server"`：
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-cs/samples/sample4.aspx)]
 
-内`<Animations>`节点中，有五种方法来启动通过用户交互动画 (缺少的元素是`<OnLoad>`整个页面完全加载后执行):
+在 "`<Animations>`" 节点中，有五种方法可通过用户交互启动动画（缺少的元素 `<OnLoad>` 在整个页面完全加载后执行）：
 
-- `<OnClick>` （在控件上的鼠标单击）
+- `<OnClick>` （鼠标单击控件）
 - `<OnHoverOut>` （鼠标离开控件）
-- `<OnHoverOver>` (鼠标悬停在控件，停止`<OnHoverOut>`动画)
+- `<OnHoverOver>` （将鼠标悬停在控件上，停止 `<OnHoverOut>` 动画）
 - `<OnMouseOut>` （鼠标离开控件）
-- `<OnMouseOver>` (鼠标悬停在控件，不会停止`<OnMouseOut>`动画)
+- `<OnMouseOver>` （将鼠标悬停在控件上，而不是停止 `<OnMouseOut>` 动画）
 
-在此方案中，`<OnClick>`使用。 当用户单击的面板中时，它将调整大小并同时淡出。
+在这种情况下，将使用 `<OnClick>`。 用户单击面板时，将同时调整其大小并淡出。
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-cs/samples/sample5.aspx)]
 
-[![鼠标单击启动动画](animating-in-response-to-user-interaction-cs/_static/image2.png)](animating-in-response-to-user-interaction-cs/_static/image1.png)
+[![鼠标单击开始动画](animating-in-response-to-user-interaction-cs/_static/image2.png)](animating-in-response-to-user-interaction-cs/_static/image1.png)
 
-鼠标单击启动动画 ([单击此项可查看原尺寸图像](animating-in-response-to-user-interaction-cs/_static/image3.png))
+鼠标单击开始动画（[单击查看完全大小的图像](animating-in-response-to-user-interaction-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一页](picking-one-animation-out-of-a-list-cs.md)
