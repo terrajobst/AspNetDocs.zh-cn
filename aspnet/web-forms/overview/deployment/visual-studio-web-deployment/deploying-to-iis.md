@@ -8,12 +8,12 @@ ms.date: 01/16/2019
 ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: c45003325832258466a787bc589bf40e844248a2
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.openlocfilehash: 738318cce442fdc5d58dd1e4c992d4941be2487e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985860"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74591241"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到测试
 
@@ -49,7 +49,7 @@ ms.locfileid: "70985860"
 
 下载并安装 Contoso 大学 Visual Studio starter 解决方案和项目。 此解决方案包含已完成的教程。 
 
-[下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[下载初学者项目](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 ## <a name="install-iis"></a>安装 IIS
 
@@ -91,7 +91,7 @@ ms.locfileid: "70985860"
 
 3. 在 "**连接**" 窗格中，展开服务器节点，然后选择 "**应用程序池**"。 如果将**DefaultAppPool**分配给 .net framework 版本4（如下图所示），请在 "**应用程序池**" 窗格中跳到下一部分。
 
-   ![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image5a.png)
+   ![Inetmgr_showing_4. 0_app_pools](deploying-to-iis/_static/image5a.png)
 
 4. 如果只看到两个应用程序池，并且两者都设置为 .NET Framework 2.0，请在 IIS 中安装 ASP.NET 4。
 
@@ -109,7 +109,7 @@ ms.locfileid: "70985860"
 
 7. 在 "**编辑应用程序池**" 对话框中，将 " **.net clr 版本**" 更改为 " **.net clr 4.0.30319**"。 选择“确定”。
 
-   ![Selecting_.NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
+   ![Selecting_. NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
 
 你现在可以将 web 应用程序发布到 IIS。 但首先要创建用于测试的数据库。
 
@@ -314,7 +314,7 @@ Contoso 大学应用程序有两个数据库：
 
     使用测试发布配置文件时，此转换会将环境指示器设置为 "测试"。 在部署的站点中，你将看到 "Contoso 大学" H1 标题后面的 "（测试）"。
 
-6. 保存并关闭该文件。
+6. 保存并关闭文件。
 
 7. 右键单击 " *web.config* " 文件，然后选择 "**预览转换**"，以确保编码的转换生成所需的更改。
 
@@ -372,7 +372,7 @@ Contoso 大学应用程序有两个数据库：
 
 2. 为希望应用程序在运行时使用的连接字符串创建 web.config 文件转换。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在，你已将应用程序部署到 IIS 开发计算机上，并在其中进行测试。
 

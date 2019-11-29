@@ -1,240 +1,240 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
-title: 与从内容页 (VB) 的母版页交互 |Microsoft Docs
+title: 从内容页与母版页交互（VB） |Microsoft Docs
 author: rick-anderson
-description: 探讨如何调用方法，从内容页中的代码中设置属性的母版页等。
+description: 检查如何从内容页中的代码调用母版页的方法、设置属性等。
 ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 04642dbcd62fe24d4e0fa379b90cbf4122c57066
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fe1f7b80b26ff25c1ce744e4f823e3fb35eea074
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134081"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74577259"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>从内容页与母版页交互 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_VB.zip)或[下载 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_VB.pdf)
+[下载代码](https://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_VB.zip)或[下载 PDF](https://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_VB.pdf)
 
-> 探讨如何调用方法，从内容页中的代码中设置属性的母版页等。
+> 检查如何从内容页中的代码调用母版页的方法、设置属性等。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在过去的过去的五个教程已介绍了如何创建主页面、 定义内容区域中，将 ASP.NET 页面绑定到母版页，和定义特定于页面的内容。 当访问者请求特定的内容页面时，内容和母版页的标记融合在运行时，从而导致统一的控件层次结构的呈现。 因此，我们已经看到了一种方式的主页面，其内容页面的另一个可以进行交互： 拼写 transfuse 到母版页的 ContentPlaceHolder 控件的标记为内容页。
+在过去的五个教程中，我们已经介绍了如何创建母版页、定义内容区域、将 ASP.NET 页面绑定到母版页，并定义特定于页面的内容。 当访问者请求特定内容页时，会在运行时将内容和母版页的标记融合在一起，从而呈现统一的控件层次结构。 因此，我们已了解到母版页和其中一个内容页可以交互的方式： "内容" 页将对要 transfuse 到母版页的 ContentPlaceHolder 控件中的标记进行了拼写。
 
-什么我们必须尚未检查是如何以编程方式交互的母版页和内容页。 除了定义母版页的 ContentPlaceHolder 控件的标记，内容页可以将值分配到其主页面的公共属性和调用它的公共方法。 同样，母版页可能会使用其内容页交互。 其声明性标记之间的交互比不太常见编程之间母版页和内容页交互时，有很多情况下需要此类编程交互的位置。
+我们尚未要检查的是母版页和内容页面如何以编程方式交互。 除了为母版页的 ContentPlaceHolder 控件定义标记外，内容页还可以为其母版页的公共属性赋值并调用其公共方法。 同样，母版页可能与其内容页交互。 尽管母版页和内容页面之间的编程交互不如其声明性标记之间的交互交互，但在很多情况下都需要此类编程交互。
 
-在本教程中我们介绍如何内容页面能以编程方式交互与其母版页;在下一教程将探讨如何母版页同样能与及其内容页交互。
+在本教程中，我们将检查内容页如何以编程方式与母版页交互。在下一教程中，我们将探讨母版页如何与内容页交互。
 
-## <a name="examples-of-programmatic-interaction-between-a-content-page-and-its-master-page"></a>之间的内容页和其母版页编程交互的示例
+## <a name="examples-of-programmatic-interaction-between-a-content-page-and-its-master-page"></a>内容页和其母版页之间的编程交互示例
 
-当一个页面的特定区域需要按页根据配置时，我们使用 ContentPlaceHolder 控件。 但是情况下，大多数页需要发出特定输出，但少量的页面需要自定义，以便显示其他内容呢？ 此类一个中，我们探讨的示例[*多个 Contentplaceholder 和默认内容*](multiple-contentplaceholders-and-default-content-vb.md)教程中，涉及到每个页面上显示登录界面。 虽然大多数页面应包含登录界面，它要抑制的少量的页面，如： 主登录页 (`Login.aspx`); 在创建帐户页和只是经过身份验证的用户可以访问其他页面。 [*多个 Contentplaceholder 和默认内容*](multiple-contentplaceholders-and-default-content-vb.md)教程介绍了如何为 ContentPlaceHolder 母版页中定义的默认内容和如何在这些重写该页面的位置不需要默认的内容。
+需要逐页配置页面的特定区域时，我们使用的是 ContentPlaceHolder 的控件。 但大多数页需要发出特定输出的情况如何，但少量页面需要对其进行自定义以显示其他内容呢？ 在[*多个 contentplaceholder 和默认内容*](multiple-contentplaceholders-and-default-content-vb.md)教程中，我们在此示例中所述的一个示例涉及在每一页上显示一个登录接口。 虽然大多数页应包括一个登录接口，但对于少量页面（例如：主登录页（`Login.aspx`）），应将其取消。"创建帐户" 页;和其他只有经过身份验证的用户可以访问的页面。 [*多 contentplaceholder 和默认内容*](multiple-contentplaceholders-and-default-content-vb.md)教程介绍了如何在母版页中定义 ContentPlaceHolder 的默认内容，以及如何在不需要默认内容的那些页面中替代该内容。
 
-另一种方法是创建的公共属性或母版页，该值指示是否显示或隐藏登录界面中的方法。 例如，主页面可能包含名为的公共属性`ShowLoginUI`其值用于设置`Visible`母版页中的登录名控件的属性。 然后可以以编程方式设置这些内容页面应取消显示登录用户界面`ShowLoginUI`属性设置为`False`。
+另一种方法是在母版页内创建一个公共属性或方法，该属性或方法指示是显示还是隐藏登录接口。 例如，母版页可能包含一个名为 `ShowLoginUI` 的公共属性，其值用于设置母版页中登录控件的 `Visible` 属性。 此时应禁止显示登录用户界面的内容页，然后以编程方式将 `ShowLoginUI` 属性设置为 `False`。
 
-可能的数据显示在母版页需要某种操作已经在内容页中产生后刷新时发生内容与母版页交互的最常见的例子。 请考虑包括一个 GridView，显示 5 个最新的主页面从特定数据库表中添加记录和其内容页面的一个包含用于将新记录添加到同一个表的接口。
+如果在 "内容" 页中早于当前某些操作后需要刷新母版页中显示的数据，则可能会发生内容和母版页交互的最常见示例。 假设有一个包含 GridView 的母版页，其中显示了来自特定数据库表的五个最近添加的记录，并且其一个内容页包含用于向同一表中添加新记录的接口。
 
-当用户访问页后，可以添加新记录时，她会看到的五个最近添加的记录显示在母版页。 在填写新记录的列的值，她将提交窗体。 假设在母版页中的这个 GridView 有其`EnableViewState`属性设置为 True （默认值），从视图状态重新加载其内容，并且即使只是较新记录添加到数据库，因此，显示 5 个同一个记录。 这可能会使用户感到困惑。
-
-> [!NOTE]
-> 即使禁用 GridView 的视图状态到在每个回发时其基础数据源重新绑定，它仍不会显示刚添加的记录因为数据绑定到 GridView 前面的页面生命周期比新记录添加到数据库时ase。
-
-若要解决此问题，以便刚添加的记录显示在母版页中的 GridView 在回发时我们需要指示 GridView 重新绑定到其数据源*后*新记录已添加到数据库。 这需要的内容和主页面之间的交互，因为用于添加新记录 （和其事件处理程序） 都在内容页，但需要刷新 GridView 接口是在母版页中。
-
-由于刷新从内容页中的事件处理程序的主页面的显示是一个对内容和母版页交互最常见的需求，我们来探讨本主题中更多详细信息。 本教程中下载内容还包括名为的 Microsoft SQL Server 2005 Express Edition 数据库`NORTHWIND.MDF`在网站的`App_Data`文件夹。 Northwind 数据库存储产品、 员工和针对虚构公司，Northwind Traders 的销售信息。
-
-步骤 1 演练显示的五个最近在母版页中的 GridView 中添加产品。 步骤 2 创建一个内容页面中添加新的产品。 步骤 3 介绍如何创建主页面中的公共属性和方法和步骤 4 说明了如何以编程方式与这些属性和方法从内容页交互。
+当用户访问页面以添加新记录时，她会看到在母版页中显示的五个最近添加的记录。 在填写新记录的列的值之后，她提交窗体。 假定母版页的 "`EnableViewState`" 属性设置为 "True" （默认值），则会将其内容从视图状态重新加载，因此即使刚将较新的记录添加到数据库中，也会显示五个相同的记录。 这可能会给用户造成混淆。
 
 > [!NOTE]
-> 本教程不会不深入探讨在 ASP.NET 中使用数据的具体情况。 设置主页面以显示数据和插入数据的内容页的步骤是完整的尚未轻松。 显示和插入数据以及使用 SqlDataSource 和 GridView 控件的更深入信息，请在本教程末尾查阅中进一步读数部分资源。
+> 即使您禁用了 GridView 的视图状态，以便它在每次回发时重新绑定到它的基础数据源，它仍不会显示刚刚添加的记录，因为数据在页生命周期中比将新记录添加到数据库时的数据绑定到ase.
 
-## <a name="step-1-displaying-the-five-most-recently-added-products-in-the-master-page"></a>步骤 1：最近显示的五个母版页中添加产品
+为了纠正这种情况，以便在回发的母版页上显示刚刚添加的记录，我们需要指示 GridView 在新记录添加到数据库*后*重新绑定到其数据源。 这需要在内容页和母版页之间进行交互，因为用于添加新记录（及其事件处理程序）的接口位于内容页，但需要刷新的 GridView 在母版页中。
 
-打开 Site.master 母版页并添加一个标签和 GridView 控件与`leftContent` `<div>`。 清除的标签`Text`属性，则设置其`EnableViewState`属性设置为`False`，并将其`ID`属性设置为`GridMessage`; 设置 GridView`ID`属性设置为`RecentProducts`。 接下来，从设计器中，展开 GridView 的智能标记，并选择将其绑定到新的数据源。 这将启动数据源配置向导。 因为 Northwind 数据库中`App_Data`文件夹是 Microsoft SQL Server 数据库中，选择通过选择 （见图 1） 创建 SqlDataSource; 名称 SqlDataSource `RecentProductsDataSource`。
+由于从内容页中的事件处理程序刷新母版页的显示是内容和母版页交互的最常见要求之一，接下来让我们更详细地探讨这一主题。 本教程的下载内容包括网站 `App_Data` 文件夹中名为 `NORTHWIND.MDF` Microsoft SQL Server 2005 Express Edition 数据库。 Northwind 数据库存储虚构公司、Northwind 商贸的产品、员工和销售信息。
 
-[![将 GridView 绑定到名为 RecentProductsDataSource SqlDataSource 控件](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
+步骤1指导完成在母版页的 GridView 中显示五个最近添加的产品。 步骤2创建一个用于添加新产品的内容页。 步骤3介绍了如何在母版页中创建公共属性和方法，步骤4说明了如何以编程方式通过内容页中的这些属性和方法进行界面。
 
-**图 01**:将 GridView 绑定到 SqlDataSource 控件命名为`RecentProductsDataSource`([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image3.png))
+> [!NOTE]
+> 本教程不深入探讨如何使用 ASP.NET 中的数据。 用于设置母版页以显示数据的步骤和用于插入数据的内容页已完成，但 breezy。 有关显示和插入数据以及使用 SqlDataSource 和 GridView 控件的更深入说明，请参阅本教程末尾的后续读取部分中的资源。
 
-下一步会要求我们指定要连接到内容数据库。 选择`NORTHWIND.MDF`数据库文件从下拉列表中，单击下一步。 由于这是首次我们使用此数据库，该向导将提供用于存储连接字符串中的`Web.config`。 将其存储连接字符串使用名称`NorthwindConnectionString`。
+## <a name="step-1-displaying-the-five-most-recently-added-products-in-the-master-page"></a>步骤1：在母版页中显示最近添加的五个产品
+
+打开 "网站母版页" 母版页，并向 `leftContent` `<div>`中添加标签和 GridView 控件。 清除标签的 `Text` 属性，将其 `EnableViewState` 属性设置为 `False`，并将其 `ID` 属性设置为 `GridMessage`;将 GridView 的 `ID` 属性设置为 "`RecentProducts`"。 接下来，从设计器展开 GridView 的智能标记，然后选择将其绑定到新的数据源。 这将启动 "数据源配置向导"。 由于 `App_Data` 文件夹中的 Northwind 数据库是 Microsoft SQL Server 数据库，因此请选择通过选择创建 SqlDataSource （请参阅图1）;将 SqlDataSource 命名为 `RecentProductsDataSource`。
+
+[![将 GridView 绑定到名为 RecentProductsDataSource 的 SqlDataSource 控件](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
+
+**图 01**：将 GridView 绑定到名为 `RecentProductsDataSource` 的 SqlDataSource 控件（[单击查看完全大小的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image3.png)）
+
+下一步将要求我们指定要连接到的数据库。 从下拉列表中选择 "`NORTHWIND.MDF` 数据库文件"，然后单击 "下一步"。 由于这是我们首次使用此数据库，因此向导将提供将连接字符串存储在 `Web.config`中。 让它使用名称 `NorthwindConnectionString`存储连接字符串。
 
 [![连接到 Northwind 数据库](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
 
-**图 02**:连接到 Northwind 数据库 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image6.png))
+**图 02**：连接到 Northwind 数据库（[单击以查看完全大小的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image6.png)）
 
-配置数据源向导提供了通过其中我们可以指定用于检索数据的查询的两个方法：
+"配置数据源" 向导提供了两种方法，通过该向导可以指定用于检索数据的查询：
 
-- 通过指定自定义 SQL 语句或存储的过程，或
-- 通过选择表或视图，然后指定要返回的列
+- 通过指定自定义 SQL 语句或存储过程，或
+- 选择表或视图，然后指定要返回的列
 
-因为我们想要返回 5 个最新添加的产品，我们需要指定自定义 SQL 语句。 使用以下`SELECT`查询：
+由于我们只需要返回最近添加的五个产品，因此需要指定自定义 SQL 语句。 使用以下 `SELECT` 查询：
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample1.sql)]
 
-`TOP 5`关键字的查询返回只有前五个记录。 `Products`表的主键`ProductID`，是`IDENTITY`列中，从而确保我们添加到表中每个新产品，将具有更大的值比以前的条目。 因此，对通过结果进行排序`ProductID`以降序返回从开始最新创建的产品。
+`TOP 5` 关键字只返回查询的前5条记录。 `Products` 表的主键 `ProductID`为 `IDENTITY` 列，这可确保添加到表中的每个新产品都将具有比上一个条目更大的值。 因此，`ProductID` 按降序对结果进行排序时，将返回以最近创建的产品开头的产品。
 
-[![返回最近添加的五种产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
+[![返回最近添加的五个产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
 
-**图 03**:返回五种最最近添加的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image9.png))
+**图 03**：返回最近添加的五个产品（[单击以查看完全大小的映像](interacting-with-the-master-page-from-the-content-page-vb/_static/image9.png)）
 
-完成向导后，Visual Studio 将生成的 GridView，其中显示两个 BoundFields`ProductName`和`UnitPrice`从数据库返回的字段。 此时主页面的声明性标记应包括标记类似于以下内容：
+完成向导后，Visual Studio 将为 GridView 生成两个 BoundFields，以显示从数据库返回的 `ProductName` 和 `UnitPrice` 字段。 此时，母版页的声明性标记应包含如下标记：
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample2.aspx)]
 
-正如您所看到的包含标记： 标签 Web 控件 (`GridMessage`); GridView `RecentProducts`，两个 BoundFields; 并且返回的五个最近添加的产品使用 SqlDataSource 控件。
+如您所见，标记包含：标签 Web 控件（`GridMessage`）;GridView `RecentProducts`，具有两个 BoundFields;和一个 SqlDataSource 控件，该控件返回最近添加的五个产品。
 
-与此 GridView 创建和配置，其 SqlDataSource 控件访问网站，通过浏览器。 如图 4 所示，你将看到其中列出了五个最近左下角中的一个网格添加产品。
+创建此 GridView 并配置其 SqlDataSource 控件后，通过浏览器访问网站。 如图4所示，将在左下角看到一个网格，其中列出了五个最近添加的产品。
 
-[![GridView 显示五个最近添加的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
+[![GridView 显示最近添加的五个产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
 
-**图 04**:GridView 显示五种最最近添加的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image12.png))
+**图 04**： GridView 显示最近添加的五个产品（[单击以查看完全大小的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image12.png)）
 
 > [!NOTE]
-> 随意清理的 GridView 的外观。 某些建议包括格式设置在显示`UnitPrice`值作为货币和使用背景颜色和字体以改善该网格的外观。
+> 随意清理 GridView 的外观。 某些建议包括将显示的 `UnitPrice` 值的格式设置为货币，并使用背景色和字体来改善网格的外观。
 
-## <a name="step-2-creating-a-content-page-to-add-new-products"></a>步骤 2：创建要添加的新产品的内容页面
+## <a name="step-2-creating-a-content-page-to-add-new-products"></a>步骤2：创建内容页以添加新产品
 
-我们的下一个任务是创建用户可以从其添加到新产品的内容页面`Products`表。 添加到新的内容页`Admin`名为的文件夹`AddProduct.aspx`，确保将将其绑定到`Site.master`母版页。 此页添加到网站后，图 5 显示了在解决方案资源管理器。
+下一个任务是创建一个内容页，用户可以从中将新产品添加到 `Products` 表。 将新的 "内容" 页添加到名为 "`AddProduct.aspx``Admin` 文件夹中，并确保将其绑定到 `Site.master` 母版页。 图5显示了在此页面添加到网站后解决方案资源管理器。
 
-[![向管理员文件夹添加新的 ASP.NET 页面](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
+[![将新的 ASP.NET 页面添加到管理文件夹](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
 
-**图 05**:添加到新的 ASP.NET 页`Admin`文件夹 ([单击以查看实际尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image15.png))
+**图 05**：将新的 "ASP.NET" 页添加到 `Admin` 文件夹（[单击查看完全大小的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image15.png)）
 
-回想一下，在[*母版页中指定的标题、 元标记和其他 HTML 标头*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教程中，我们创建一个名为的自定义基本页类`BasePage`如果它已生成了页面的标题未显式设置。 转到`AddProduct.aspx`页面的代码隐藏类，并将其派生`BasePage`(而不是从`System.Web.UI.Page`)。
+请记住，在母版页教程的 "[*指定标题、Meta 标记和其他 HTML 标题*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)" 中，我们创建了一个名为 `BasePage` 的自定义基类类，如果未显式设置该页面的标题，则生成该页面的标题。 转到 "`AddProduct.aspx`" 页的代码隐藏类，并使其从 `BasePage` （而不是从 `System.Web.UI.Page`）派生。
 
-最后，更新`Web.sitemap`文件以便包括本课程中的一个条目。 添加以下标记下方`<siteMapNode>`控件 ID 命名问题课程：
+最后，更新 `Web.sitemap` 文件以包含本课中的条目。 在控件 ID 命名问题课程的 `<siteMapNode>` 下面添加以下标记：
 
 [!code-xml[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample3.xml)]
 
-图 6 中，添加此中所示`<siteMapNode>`元素将反映在课程列表。
+如图6所示，此 `<siteMapNode>` 元素的添加在课程列表中反映出来。
 
-返回到`AddProduct.aspx`。 中的内容控件`MainContent`ContentPlaceHolder，添加的 DetailsView 控件并将其命名`NewProduct`。 绑定到名为的新 SqlDataSource 控件的 DetailsView `NewProductDataSource`。 例如，使其使用 Northwind 数据库，则使用在步骤 1 中 SqlDataSource，配置向导和选择来指定自定义 SQL 语句。 由于 DetailsView 将用于将项添加到数据库，我们需要同时指定`SELECT`语句和一个`INSERT`语句。 使用以下`SELECT`查询：
+返回 `AddProduct.aspx`。 在 `MainContent` ContentPlaceHolder 的内容控件中，添加 DetailsView 控件并将其命名为 `NewProduct`。 将 DetailsView 绑定到名为 `NewProductDataSource`的新 SqlDataSource 控件。 与步骤1中的 SqlDataSource 类似，将向导配置为使用 Northwind 数据库，并选择指定自定义 SQL 语句。 因为 DetailsView 将用于向数据库添加项，所以需要同时指定 `SELECT` 语句和 `INSERT` 语句。 使用以下 `SELECT` 查询：
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample4.sql)]
 
-然后，从插入选项卡，添加以下`INSERT`语句：
+然后，在 "插入" 选项卡中添加以下 `INSERT` 语句：
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample5.sql)]
 
-完成向导后转到 DetailsView 的智能标记，并选中"启用插入"复选框。 这会向与 DetailsView 添加 CommandField 其`ShowInsertButton`属性设置为 True。 由于此 DetailsView 将使用仅用于插入数据，因此设置 DetailsView`DefaultMode`属性设置为`Insert`。
+完成向导后，请跳到 DetailsView 的智能标记，并选中 "启用插入" 复选框。 这会将 CommandField 添加到 DetailsView，并将其 `ShowInsertButton` 属性设置为 True。 由于此 DetailsView 仅用于插入数据，因此请将 DetailsView 的 `DefaultMode` 属性设置为 `Insert`。
 
-就这么简单！ 让我们来测试此页。 请访问`AddProduct.aspx`通过浏览器中，输入名称和价格 （请参见图 6）。
+就这么简单！ 让我们测试此页。 通过浏览器访问 `AddProduct.aspx`，输入名称和价格（见图6）。
 
-[![向数据库添加一个新的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
+[![将新产品添加到数据库](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
 
-**图 06**:向数据库添加一个新的产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image18.png))
+**图 06**：向数据库添加新产品（[单击以查看完全大小的映像](interacting-with-the-master-page-from-the-content-page-vb/_static/image18.png)）
 
-键入后的名称和新产品的价格中，单击插入按钮。 这会导致窗体回发。 在回发时，SqlDataSource 控件的`INSERT`执行语句; 其两个参数都填入 DetailsView 的两个 TextBox 控件中的用户输入值。 遗憾的是，没有插入发生任何可视反馈。 很高兴有消息显示，确认已添加新记录。 我将此当作练习留给读者。 此外，从 DetailsView 添加一条新记录后在母版页中的 GridView 仍显示相同的五个记录作为之前;它不包括刚添加的记录。 我们将介绍如何解决此问题在即将发布的步骤。
+键入新产品的名称和价格后，单击 "插入" 按钮。 这将导致窗体回发。 在回发时，将执行 SqlDataSource 控件的 `INSERT` 语句;它的两个参数用用户输入的值填充到 DetailsView 的两个 TextBox 控件中。 遗憾的是，没有出现插入的视觉反馈。 最好显示一条消息，确认已添加新记录。 我将此留给读者的练习。 此外，在从 DetailsView 添加新记录后，母版页中的 GridView 仍显示与以前相同的五个记录;它不包含刚刚添加的记录。 我们将在后面的步骤中检查如何解决此情况。
 
 > [!NOTE]
-> 除了添加某种形式的可视反馈，已成功插入，我建议您也更新 DetailsView 插入接口，以包括验证。 目前，没有任何验证。 如果用户输入的值无效`UnitPrice`字段，如"过高，"时，系统尝试将该字符串转换成十进制数字，将在回发时引发异常。 有关自定义插入的详细信息的接口，请参阅[*自定义数据修改界面*教程](https://asp.net/learn/data-access/tutorial-20-vb.aspx)从我[使用数据教程系列](../../data-access/index.md).
+> 除了添加某种形式的视觉反馈以使插入成功，我还鼓励您同时更新 DetailsView 的插入界面以包括验证。 目前没有任何验证。 如果用户为 "`UnitPrice`" 字段输入无效的值（例如 "开销太高"），则当系统尝试将该字符串转换为十进制时，回发时将引发异常。 有关自定义插入界面的详细信息，请参阅使用[数据教程系列](../../data-access/index.md)中的[*自定义数据修改界面*教程](https://asp.net/learn/data-access/tutorial-20-vb.aspx)。
 
-## <a name="step-3-creating-public-properties-and-methods-in-the-master-page"></a>步骤 3：在母版页中创建的公共属性和方法
+## <a name="step-3-creating-public-properties-and-methods-in-the-master-page"></a>步骤3：在母版页中创建公共属性和方法
 
-步骤 1 中我们添加了一个名为标签 Web 控件`GridMessage`上面在母版页中 GridView。 此标签用于根据需要显示一条消息。 例如，在添加新记录到`Products`表中，我们可能想要显示一条消息："*ProductName*已添加到数据库。" 而不是硬编码的母版页中的此标签的文本，我们可能想要通过内容页可自定义的消息。
+在步骤1中，我们在母版页的 GridView 上方添加了名为 `GridMessage` 的标签 Web 控件。 此标签用于选择性地显示消息。 例如，将新记录添加到 `Products` 表后，我们可能希望显示一条消息，其中包含： "*ProductName*已添加到数据库中"。 我们可能想要通过内容页自定义该消息，而不是在母版页中对此标签文本进行硬编码。
 
-因为它不能直接从内容页访问的母版页中的受保护的成员变量作为实现标签控件。 我们需要在公开 Web 控件或充当其属性之一可以进行的代理的主页面中创建的公共属性才能使用母版页从内容页 （或，就此而言，母版页中的任何 Web 控件） 中的标签 访问。 将以下语法添加到主页面的代码隐藏类公开的标签`Text`属性：
+由于标签控件作为母版页内的受保护成员变量实现，因此无法直接从内容页访问它。 若要在内容页中处理母版页中的标签（或者在此情况下，在母版页中的任何 Web 控件），我们需要在公开 Web 控件或用作代理的母版页中创建一个公共属性，该属性可以是 存取. 将以下语法添加到母版页的代码隐藏类中，以公开标签的 `Text` 属性：
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample6.vb)]
 
-当一条新记录添加到`Products`从内容页表`RecentProducts`母版页中的 GridView 需要重新绑定到其基础数据源。 若要重新绑定的 GridView 调用其`DataBind`方法。 由于在母版页中的 GridView 不是以编程方式访问内容的页面，我们需要创建一个公共方法，主页面中，调用时，重新绑定到 GridView 数据。 将以下方法添加到主页面的代码隐藏类：
+将新记录从内容页添加到 `Products` 表时，母版页中的 `RecentProducts` GridView 需要重新绑定到其基础数据源。 若要重新绑定 GridView，请调用其 `DataBind` 方法。 由于不能通过编程方式访问母版页中的 GridView，因此需要在母版页中创建一个公共方法，该方法在被调用时将数据重新绑定到 GridView。 将以下方法添加到母版页的代码隐藏类：
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample7.vb)]
 
-与`GridMessageText`属性和`RefreshRecentProductsGrid`方法准备就绪后的，任何内容的页面可以以编程方式设置或读取的值`GridMessage`标签的`Text`属性或重新绑定到数据`RecentProducts`GridView。 步骤 4 探讨如何从内容页访问母版页的公共属性和方法。
+利用 `GridMessageText` 属性和 `RefreshRecentProductsGrid` 方法，任何内容页都可以以编程方式设置或读取 `GridMessage` 标签 `Text` 属性的值，或将数据重新绑定到 `RecentProducts` GridView。 步骤4检查如何从内容页访问母版页的公共属性和方法。
 
 > [!NOTE]
-> 别忘了将母版页的属性和方法作为标记`Public`。 如果您不显式表示这些属性和方法作为`Public`，它们将无法从内容页访问。
+> 不要忘记将母版页的属性和方法标记为 `Public`。 如果未将这些属性和方法显式表示为 `Public`，将无法从 "内容" 页访问这些属性和方法。
 
-## <a name="step-4-calling-the-master-pages-public-members-from-a-content-page"></a>步骤 4：从内容页调用母版页的公共成员
+## <a name="step-4-calling-the-master-pages-public-members-from-a-content-page"></a>步骤4：从内容页调用母版页的公共成员
 
-现在，主页面具有必要的公共属性和方法，我们已准备好调用这些属性和方法从`AddProduct.aspx`内容页。 具体而言，我们需要设置的母版页`GridMessageText`属性并调用其`RefreshRecentProductsGrid`方法后已添加到数据库的新产品。 所有 ASP.NET 数据 Web 控件都触发事件之前和之后完成各种任务，这样可以方便页面开发人员采取某些编程操作之前或之后的任务。 例如，当最终用户单击 DetailsView 的插入按钮，在回发，DetailsView 将引发其`ItemInserting`开始插入工作流之前的事件。 然后，它将记录插入到数据库。 接下来，DetailsView 引发其`ItemInserted`事件。 因此，若要添加的新产品后使用母版页，DetailsView 为创建事件处理程序`ItemInserted`事件。
+现在，母版页具有必要的公共属性和方法，接下来可以从 `AddProduct.aspx` 的内容页调用这些属性和方法。 具体而言，我们需要设置母版页的 `GridMessageText` 属性，并在将新产品添加到数据库后调用其 `RefreshRecentProductsGrid` 方法。 所有 ASP.NET 数据 Web 控件都在完成各种任务之前和之后引发事件，使页面开发人员可以轻松地在任务之前或之后执行某些编程操作。 例如，当最终用户单击 DetailsView 的 "插入" 按钮时，在回发之前，DetailsView 会引发其 `ItemInserting` 事件，然后再开始插入工作流。 然后，将记录插入到数据库中。 之后，DetailsView 会引发其 `ItemInserted` 事件。 因此，为了在添加新产品后使用母版页，请为 DetailsView 的 `ItemInserted` 事件创建事件处理程序。
 
-有两种方法的内容页面以编程方式可通过使用其主页面：
+内容页可以通过两种方式以编程方式与母版页交互：
 
-- 使用`Page.Master`属性，它返回到母版页的松散类型化引用，或
-- 指定通过该页面的母版页类型或文件路径`@MasterType`指令; 这会自动将强类型属性添加到名为页`Master`。
+- 使用 `Page.Master` 属性，该属性将返回对母版页的松散类型引用，或
+- 通过 `@MasterType` 指令指定页的母版页类型或文件路径;这会自动将强类型属性添加到名为 `Master`的页面。
 
-让我们看一下这两种方法。
+我们来看一下这两种方法。
 
-### <a name="using-the-loosely-typedpagemasterproperty"></a>使用松散类型`Page.Master`属性
+### <a name="using-the-loosely-typedpagemasterproperty"></a>使用松散类型的`Page.Master`属性
 
-所有 ASP.NET web 页面必须都派生自`Page`类，该类位于`System.Web.UI`命名空间。 `Page`类包括[`Master`属性](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx)返回到页面的母版页的引用。 如果页面没有母版页`Master`返回`Nothing`。
+所有 ASP.NET 网页必须派生自 `System.Web.UI` 命名空间中的 `Page` 类。 `Page` 类包含一个[`Master` 属性](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx)，该属性返回对页的母版页的引用。 如果页面没有 `Master` 返回 `Nothing`的母版页。
 
-`Master`属性返回类型的对象[ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (也位于`System.Web.UI`命名空间) 这是所有的主页面中从其派生的基类型。 因此，若要使用公共属性或方法定义在我们网站的主页面，我们必须强制转换`MasterPage`返回对象`Master`为适当的类型的属性。 由于我们命名我们主控页文件，因此`Site.master`，代码隐藏类名为`Site`。 因此，下面的代码的强制转换`Page.Master`指向的实例的属性`Site`类。
+`Master` 属性返回[`MasterPage`](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx)类型的对象（也位于 `System.Web.UI` 命名空间），该对象是所有母版页从中派生的基类型。 因此，若要使用网站母版页中定义的公共属性或方法，必须将从 `Master` 属性返回的 `MasterPage` 对象转换为相应的类型。 由于我们将母版页文件命名 `Site.master`，因此代码隐藏类名为 `Site`。 因此，以下代码将 `Page.Master` 属性强制转换为 `Site` 类的实例。
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample8.vb)]
 
-现在，我们已强制转换后的松散类型`Page.Master`属性，我们可以为站点类型引用的属性和特定于站点的方法。 如图 7 所示，公共属性`GridMessageText`IntelliSense 下拉列表中显示。
+现在，我们已将松散类型的 `Page.Master` 属性强制转换到站点类型，接下来我们可以引用特定于站点的属性和方法。 如图7所示，公共属性 `GridMessageText` 会出现在 IntelliSense 下拉。
 
-[![IntelliSense 显示了我们的主页面的公共属性和方法](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
+[![IntelliSense 显示母版页的公共属性和方法](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
 
-**图 07**:IntelliSense 显示了我们的主页面的公共属性和方法 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image21.png))
+**图 07**： IntelliSense 显示母版页的公共属性和方法（[单击以查看完全大小的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image21.png)）
 
 > [!NOTE]
-> 如果您在主页面文件命名为`MasterPage.master`母版页的代码隐藏类名为`MasterPage`。 这可能导致不明确的代码时的类型强制转换`System.Web.UI.MasterPage`到你`MasterPage`类。 简单地说，您需要完全限定的类型转换为，使用网站项目模型时，可以有点棘手。 我的建议是要确保，创建主页面时将其命名名称不是`MasterPage.master`或甚至更好地创建主页面的强类型引用。
+> 如果已将母版页文件命名 `MasterPage.master` 则母版页的代码隐藏类名称将 `MasterPage`。 从类型 `System.Web.UI.MasterPage` 转换到 `MasterPage` 类时，这可能导致不明确的代码。 简而言之，你需要完全限定要强制转换到的类型，这在使用网站项目模型时可能有点棘手。 我的建议是确保在创建母版页时将其命名为除 `MasterPage.master` 或更好的方式，即创建对母版页的强类型引用。
 
-### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>创建具有强类型化引用`@MasterType`指令
+### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>使用`@MasterType`指令创建强类型引用
 
-如果您仔细查看您所见，ASP.NET 页面的代码隐藏类是分部类 (请注意`Partial`类定义中的关键字)。 分部类在 C# 和 Visual Basic 使用.net Framework 2.0 中引入，并简单地说，允许跨多个文件中定义的类的成员。 代码隐藏类文件- `AddProduct.aspx.vb`，例如-包含页面开发人员，我们创建的代码。 除了我们代码中，ASP.NET 引擎会自动创建单独的类文件具有属性和事件处理程序中，将声明性标记转换为页的类层次结构。
+仔细查看时，可以看到 ASP.NET 页面的代码隐藏类是分部类（请注意类定义中的 `Partial` 关键字）。 分部类在C#和 Visual Basic with.NET Framework 2.0 中引入，并且简言之，允许跨多个文件定义类的成员。 例如，代码隐藏类文件 `AddProduct.aspx.vb`，其中包含开发人员创建的代码。 除了我们的代码，ASP.NET 引擎还会自动创建一个单独的类文件，其中包含中的属性和事件处理程序，将声明性标记转换为该页的类层次结构。
 
-只要访问 ASP.NET 页面时就会发生的自动代码生成铺平了一些相当有趣且有用的可能性。 对于主页面，如果我们告诉我们内容的页面正在使用哪些母版页的 ASP.NET 引擎就会生成强类型`Master`为我们的属性。
+只要访问 ASP.NET 页面，就会自动生成代码，铺平了道路为一些更有趣的有用方法。 对于母版页，如果我们告诉 ASP.NET 引擎我们的内容页面正在使用哪个母版页，它会为我们生成强类型的 `Master` 属性。
 
-使用[`@MasterType`指令](https://msdn.microsoft.com/library/ms228274.aspx)以通知 ASP.NET 引擎的内容页面的母版页类型。 `@MasterType`指令可以接受的母版页的类型名称或其文件路径。 若要指定的`AddProduct.aspx`页上使用`Site.master`作为其主页面的顶部添加以下指令`AddProduct.aspx`:
+使用[`@MasterType` 指令](https://msdn.microsoft.com/library/ms228274.aspx)通知 ASP.NET 引擎内容页的母版页类型。 `@MasterType` 指令可以接受母版页的类型名称或其文件路径。 若要指定 `AddProduct.aspx` 页使用 `Site.master` 作为其母版页，请将以下指令添加到 `AddProduct.aspx`的顶部：
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample9.aspx)]
 
-此指令指示要添加到名为的属性通过母版页的强类型化引用的 ASP.NET 引擎`Master`。 与`@MasterType`指令中的位置，我们可以调用`Site.master`主页面的公共属性和方法直接通过`Master`而无需任何强制转换的属性。
+此指令指示 ASP.NET 引擎通过名为 `Master`的属性向母版页添加强类型引用。 使用 `@MasterType` 指令后，可以直接通过 `Master` 属性调用 `Site.master` 母版页的公共属性和方法，无需进行任何强制转换。
 
 > [!NOTE]
-> 如果省略`@MasterType`指令，语法`Page.Master`和`Master`返回相同的操作： 将松散类型化对象传递给页面的母版页。 如果包括`@MasterType`指令然后`Master`返回对指定的母版页的强类型引用。 `Page.Master`但是，仍然会返回一个松散类型化的引用。 如原因更全面地了解这种情况以及如何`Master`构造属性时`@MasterType`指令是包含，请参阅[K.Scott Allen](http://odetocode.com/blogs/scott/default.aspx)的博客文章[`@MasterType`在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
+> 如果省略 `@MasterType` 指令，则语法 `Page.Master` 和 `Master` 返回相同的内容：到页面的母版页的松散类型的对象。 如果包括 `@MasterType` 指令，则 `Master` 返回对指定母版页的强类型引用。 但 `Page.Master`仍返回松类型引用。 若要更全面地了解这种情况的原因，以及如何在包含 `@MasterType` 指令时构造 `Master` 属性，请参阅[ASP.NET 2.0 中](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)的[Allen](http://odetocode.com/blogs/scott/default.aspx)的博客文章`@MasterType`。
 
-### <a name="updating-the-master-page-after-adding-a-new-product"></a>添加一个新的产品后更新母版页
+### <a name="updating-the-master-page-after-adding-a-new-product"></a>添加新产品后更新母版页
 
-既然我们知道如何调用主页面的公共属性和内容页面中的方法，我们就准备好更新`AddProduct.aspx`页，以便添加一个新的产品后刷新主页面。 我们的第 4 步开始处创建 DetailsView 控件的事件处理程序`ItemInserting`事件，新产品添加到数据库后立即执行。 将以下代码添加到该事件处理程序：
+现在，我们知道如何从内容页中调用母版页的公共属性和方法，接下来可以更新 `AddProduct.aspx` 页面，使母版页在添加新产品后进行刷新。 在步骤4开始时，我们为 DetailsView 控件的 `ItemInserting` 事件创建了一个事件处理程序，该事件将在新产品添加到数据库之后立即执行。 将以下代码添加到该事件处理程序：
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample10.vb)]
 
-上述代码使用这两种松散类型化`Page.Master`属性的和强类型`Master`属性。 请注意，`GridMessageText`属性设置为"*ProductName*添加到网格..."刚添加产品的值是可通过访问`e.Values`集合; 正如您所看到的刚添加`ProductName`通过访问值`e.Values("ProductName")`。
+上面的代码使用松散类型的 `Page.Master` 属性和强类型的 `Master` 属性。 请注意，`GridMessageText` 属性设置为 "已添加到网格的*ProductName* ..."可以通过 `e.Values` 集合访问刚刚添加的产品值;正如您所看到的，只需通过 `e.Values("ProductName")`访问刚添加的 `ProductName` 值即可。
 
-图 8 显示了`AddProduct.aspx`立即后一种新产品-Scott 的 Soda 的页已添加到数据库。 请注意，刚添加的产品名称将其记录在母版页的标签和 GridView 刷新以包括产品和它的价格。
+图8显示了一个新产品 Soda （已添加到数据库）后立即出现 `AddProduct.aspx` 页面。 请注意，在母版页的标签中将注明刚刚添加的产品名称，并且 GridView 已刷新为包含产品及其价格。
 
-[![母版页的标签和 GridView 显示刚添加产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
+[![母版页的标签和 GridView 显示刚刚添加的产品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
 
-**图 08**:母版页的标签和 GridView 显示 Just-Added 产品 ([单击此项可查看原尺寸图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png))
+**图 08**：母版页的标签和 GridView 显示刚刚添加的产品（[单击查看完全尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png)）
 
 ## <a name="summary"></a>总结
 
-理想情况下，主页面和其内容的页面是从另一个完全独立，不需要交互的任何级别。 母版页和内容页面应设计为具有该目标，虽然有多种常见方案中的内容页必须与其主页面。 最常见原因之一是围绕更新母版页显示根据在内容页中发生某些操作的特定部分。
+理想情况下，母版页及其内容页完全独立，无需交互。 尽管母版页和内容页面的设计目的应考虑到这一点，但在某些常见情况下，内容页必须与其母版页交互。 最常见的原因之一是，基于在内容页中早于当前的某个操作更新母版页显示的特定部分。
 
-好消息是，它是相对比较简单，在内容页面中以编程方式与其主页面进行交互。 首先在封装的功能，需要调用的内容页面的母版页中创建公共属性或方法。 然后，在内容页访问母版页的属性和方法通过松散类型化`Page.Master`属性或使用`@MasterType`指令来创建到母版页的强类型引用。
+好消息是，使内容页以编程方式与母版页交互是相对简单的。 首先在母版页中创建公共属性或方法，该母版页封装了内容页需要调用的功能。 然后，在 "内容" 页中，通过松散类型的 `Page.Master` 属性访问母版页的属性和方法，或使用 `@MasterType` 指令创建对母版页的强类型引用。
 
-在下一步的教程中，我们将说明如何有母版页与内容页面之一以编程方式进行交互。
+在下一教程中，我们将检查如何使母版页以编程方式与其中一个内容页交互。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [访问和更新在 ASP.NET 中的数据](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [ASP.NET 母版页：提示、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
-- [`@MasterType` 在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
-- [内容和母版页之间传递信息](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
-- [在 ASP.NET 教程中使用的数据](../../data-access/index.md)
+- [访问和更新 ASP.NET 中的数据](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
+- [ASP.NET 母版页：提示、技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
+- [ASP.NET 2.0 中的 `@MasterType`](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
+- [在内容和母版页之间传递信息](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
+- [使用 ASP.NET 教程中的数据](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个部 asp/ASP.NET 书籍并创办了 4GuysFromRolla.com，一直从事 Microsoft Web 技术自 1998 年起。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的多个 ASP/asp 和4GuysFromRolla.com 的作者已使用 Microsoft Web 技术，1998。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以通过[http://ScottOnWriting.NET](http://scottonwriting.net/) [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或通过他的博客访问 Scott。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Zack Jones。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的领导审查人员是 Zack 的。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](control-id-naming-in-content-pages-vb.md)

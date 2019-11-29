@@ -1,131 +1,131 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
-title: 以编程方式设置 ObjectDataSource 的参数值 (VB) |Microsoft Docs
+title: 以编程方式设置 ObjectDataSource 的参数值（VB） |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将介绍方法添加到我们的 DAL 和 BLL 接受一个输入的参数并返回数据。 该示例将设置此参数...
+description: 在本教程中，我们将介绍如何将方法添加到可接受单个输入参数并返回数据的 DAL 和 BLL。 此示例将设置此参数 。
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 0ecb03b6-52a0-4731-8c7a-436391d36838
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a5a5a764f3966a4e06a85a07e61047a0c72994fa
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: f1dd50f46528e8dd51f85e503604d3f0dbc21ad2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109255"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74601938"
 ---
 # <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>以编程方式设置 ObjectDataSource 的参数值 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_6_VB.exe)或[下载 PDF](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/datatutorial06vb1.pdf)
+[下载示例应用](https://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_6_VB.exe)或[下载 PDF](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/datatutorial06vb1.pdf)
 
-> 在本教程中我们将介绍方法添加到我们的 DAL 和 BLL 接受一个输入的参数并返回数据。 该示例将以编程方式设置此参数。
+> 在本教程中，我们将介绍如何将方法添加到可接受单个输入参数并返回数据的 DAL 和 BLL。 该示例将以编程方式设置此参数。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-中可以看到[前一篇教程](declarative-parameters-vb.md)，有多种选项都是可用于以声明方式将参数值传递给 ObjectDataSource 的方法。 如果参数值为硬编码，来自 Web 控件在页上，或者由数据源是可读的任何其他源中`Parameter`对象，例如，值绑定到输入参数上，而无需编写一行代码。
+正如在[上一教程](declarative-parameters-vb.md)中所看到的，有许多选项可用于以声明方式将参数值传递给 ObjectDataSource 的方法。 如果参数值是硬编码的，则来自页面上的 Web 控件，或来自数据源 `Parameter` 对象可读取的任何其他源，例如，该值可以绑定到输入参数而无需编写代码行。
 
-但是，有时时参数值来自某些源由一个内置数据源已不计`Parameter`对象。 如果我们的站点支持的用户帐户我们可能想要设置参数基于当前登录的访问者的用户 id。 或者，我们可能需要先将其发送到 ObjectDataSource 的基础对象的方法自定义参数值。
+但有时，当参数值来自某个内置数据源（`Parameter` 对象）未考虑的某些源时。 如果我们的站点支持的用户帐户，我们可能希望基于当前登录的访问者用户 ID 来设置参数。 或者，可能需要在将参数值发送到 ObjectDataSource 的基础对象的方法之前，对其进行自定义。
 
-每当 ObjectDataSource`Select`方法调用 ObjectDataSource 首先引发其[选择事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)。 然后调用 ObjectDataSource 的基础对象的方法。 该操作完成 ObjectDataSource 的后[选定事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx)激发 （图 1 展示了这一序列的事件）。 传递到 ObjectDataSource 的基础对象的方法的参数值可设置或自定义的事件处理程序中`Selecting`事件。
+每当调用 ObjectDataSource 的 `Select` 方法时，ObjectDataSource 首先引发其[选择事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)。 然后调用 ObjectDataSource 的基础对象的方法。 完成后，将引发 ObjectDataSource 的[选定事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx)（图1说明此事件序列）。 可以在事件处理程序中为 `Selecting` 事件的事件处理程序设置或自定义传入 ObjectDataSource 的基础对象的方法的参数值。
 
-[![ObjectDataSource 的选中和选择事件触发之前和之后及其基础对象的方法被调用](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
+[![所选的 ObjectDataSource，并选择在调用其基础对象的方法之前和之后激发的事件](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
 
-**图 1**:ObjectDataSource`Selected`并`Selecting`调用事件触发之前和之后及其基础对象的方法 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image3.png))
+**图 1**： ObjectDataSource 的 `Selected` 和 `Selecting` 事件会在其基础对象的方法被调用之前和之后激发（[单击以查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image3.png)）
 
-在本教程中我们将介绍方法添加到我们的 DAL 和接受一个输入的参数的 BLL `Month`，类型的`Integer`，并返回`EmployeesDataTable`填入这些员工将其招聘周年中指定的对象`Month`. 我们的示例将设置此参数以编程方式基于当前月的上显示一系列"员工周年纪念日本月。"
+在本教程中，我们将介绍如何将方法添加到 DAL 和 BLL，这些方法接受 `Integer` 类型的单个输入参数 `Month`，并返回一个 `EmployeesDataTable` 对象，该对象以在指定 `Month`中具有录用周年的员工填充。 本示例将基于当前月份以编程方式设置此参数，并显示 "本月员工周年纪念日" 列表。
 
 让我们进入正题！
 
-## <a name="step-1-adding-a-method-toemployeestableadapter"></a>步骤 1：添加到方法`EmployeesTableAdapter`
+## <a name="step-1-adding-a-method-toemployeestableadapter"></a>步骤1：将方法添加到`EmployeesTableAdapter`
 
-对于我们的第一个示例中我们需要添加一种方法来检索这些员工其`HireDate`发生在指定月份中。 若要提供此功能根据我们需要首先创建中的方法的体系结构`EmployeesTableAdapter`，它映射到正确的 SQL 语句。 若要完成此操作，先打开 Northwind 类型化数据集。 右键单击`EmployeesTableAdapter`标签，然后选择添加查询。
+对于我们的第一个示例，我们需要添加一个方法来检索 `HireDate` 在指定月份发生的雇员。 若要根据体系结构提供此功能，我们需要先在 `EmployeesTableAdapter` 中创建一个映射到正确 SQL 语句的方法。 若要实现此目的，请首先打开 Northwind 类型化数据集。 右键单击 "`EmployeesTableAdapter`" 标签，然后选择 "添加查询"。
 
-[![将一个新查询添加到 EmployeesTableAdapter](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image5.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image4.png)
+[![向 EmployeesTableAdapter 中添加新查询](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image5.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image4.png)
 
-**图 2**:添加到新的查询`EmployeesTableAdapter`([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png))
+**图 2**：向 `EmployeesTableAdapter` 中添加新查询（[单击查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png)）
 
-选择要添加将返回行的 SQL 语句。 在访问指定`SELECT`语句屏幕上的默认值`SELECT`语句`EmployeesTableAdapter`将加载。 只需在中添加`WHERE`子句： `WHERE DATEPART(m, HireDate) = @Month`。 [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx)是返回特定日期的一部分的 T-SQL 函数`datetime`类型; 我们使用这种情况下`DATEPART`返回的月份`HireDate`列。
+选择添加返回行的 SQL 语句。 到达 "指定 `SELECT` 语句" 屏幕时，`EmployeesTableAdapter` 的默认 `SELECT` 语句将被加载。 只需在 `WHERE` 子句中添加： `WHERE DATEPART(m, HireDate) = @Month`。 [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx)是一个 t-sql 函数，该函数返回 `datetime` 类型的特定日期部分;在此示例中，我们使用 `DATEPART` 返回 `HireDate` 列的月份。
 
-[![返回仅这些行位置的 HireDate 列是否小于或等于@HiredBeforeDate参数](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)
+[![仅返回雇佣日期列小于或等于 @HiredBeforeDate 参数的行](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)
 
-**图 3**:仅这些行，返回`HireDate`列是否小于或等于`@HiredBeforeDate`参数 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image9.png))
+**图 3**：仅返回 `HireDate` 列小于或等于 `@HiredBeforeDate` 参数的行（[单击以查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image9.png)）
 
-最后，更改`FillBy`并`GetDataBy`方法的名称到`FillByHiredDateMonth`和`GetEmployeesByHiredDateMonth`分别。
+最后，将 `FillBy` 和 `GetDataBy` 方法名称分别更改为 `FillByHiredDateMonth` 和 `GetEmployeesByHiredDateMonth`。
 
-[![选择比 FillBy 和 GetDataBy 更合适的方法名称](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image11.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image10.png)
+[![选择更适合的方法名称，而不是 FillBy 和 GetDataBy](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image11.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image10.png)
 
-**图 4**:选择更适当方法的名称比`FillBy`并`GetDataBy`([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image12.png))
+**图 4**：选择更适合的方法名称，而不是 `FillBy` 和 `GetDataBy` （[单击查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image12.png)）
 
-单击完成以完成向导并返回到数据集的设计图面上。 `EmployeesTableAdapter`现在应包含一组新的用于访问在指定月份中雇用的员工的方法。
+单击 "完成" 以完成向导并返回到数据集的设计图面。 `EmployeesTableAdapter` 现在应包含一组新方法用于访问在指定月份雇用的员工。
 
-[![在数据集的设计图面上显示的新方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image14.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image13.png)
+[![新方法将出现在数据集的 Design Surface 中](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image14.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image13.png)
 
-**图 5**:在数据集的设计图面上显示新方法 ([单击此项可查看原尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image15.png))
+**图 5**：新方法出现在数据集的 Design Surface 中（[单击查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image15.png)）
 
-## <a name="step-2-adding-thegetemployeesbyhireddatemonthmonthmethod-to-the-business-logic-layer"></a>步骤 2：添加`GetEmployeesByHiredDateMonth(month)`业务逻辑层方法
+## <a name="step-2-adding-thegetemployeesbyhireddatemonthmonthmethod-to-the-business-logic-layer"></a>步骤2：将`GetEmployeesByHiredDateMonth(month)`方法添加到业务逻辑层
 
-由于我们应用程序体系结构用于单独层业务逻辑和数据访问逻辑，我们需要将方法添加到 DAL 的调用来检索雇员雇佣在指定日期前我们 BLL。 打开`EmployeesBLL.vb`文件，并添加以下方法：
+由于我们的应用程序体系结构为业务逻辑和数据访问逻辑使用了单独的层，因此需要向向下调用 DAL 的 BLL 添加一个方法，用于检索在指定日期之前雇用的员工。 打开 `EmployeesBLL.vb` 文件并添加以下方法：
 
 [!code-vb[Main](programmatically-setting-the-objectdatasource-s-parameter-values-vb/samples/sample1.vb)]
 
-与我们在此类中的其他方法一样`GetEmployeesByHiredDateMonth(month)`只需调用 DAL 并返回结果。
+与此类中的其他方法一样，`GetEmployeesByHiredDateMonth(month)` 只需向下调用 DAL 并返回结果。
 
-## <a name="step-3-displaying-employees-whose-hiring-anniversary-is-this-month"></a>步骤 3：显示其招聘周年日是这个月的员工
+## <a name="step-3-displaying-employees-whose-hiring-anniversary-is-this-month"></a>步骤3：显示招聘周年纪念本月的雇员
 
-此示例中我们最后一步是要显示其招聘周年日是这个月的员工。 首先，通过添加到 GridView`ProgrammaticParams.aspx`页中`BasicReporting`文件夹并将新对象数据源添加为其数据源。 配置要使用 ObjectDataSource`EmployeesBLL`类的`SelectMethod`设置为`GetEmployeesByHiredDateMonth(month)`。
+此示例的最后一步是显示招聘周年为本月的雇员。 首先，将 GridView 添加到 `BasicReporting` 文件夹中的 "`ProgrammaticParams.aspx`" 页，然后添加一个新的 ObjectDataSource 作为其数据源。 将 ObjectDataSource 配置为使用 `EmployeesBLL` 类，将 `SelectMethod` 设置为 "`GetEmployeesByHiredDateMonth(month)`"。
 
 [![使用 EmployeesBLL 类](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image17.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image16.png)
 
-**图 6**:使用`EmployeesBLL`类 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image18.png))
+**图 6**：使用 `EmployeesBLL` 类（[单击以查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image18.png)）
 
-[![选择从 GetEmployeesByHiredDateMonth(month) 方法](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image20.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image19.png)
+[从 GetEmployeesByHiredDateMonth （月）方法中选择 ![](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image20.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image19.png)
 
-**图 7**:Select From`GetEmployeesByHiredDateMonth(month)`方法 ([单击以查看实际尺寸的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image21.png))
+**图 7**：从 `GetEmployeesByHiredDateMonth(month)` 方法中进行选择（[单击以查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image21.png)）
 
-最后一个屏幕询问我们提供`month`参数值的源。 由于我们将以编程方式设置此值，将保留参数源设置为默认值 None 选项，然后单击完成。
+最终屏幕会要求我们提供 `month` 参数值的源。 由于我们将以编程方式设置此值，因此，将参数源设置为默认值 "无"，然后单击 "完成"。
 
-[![将参数源设置为 None](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image23.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image22.png)
+[![将参数源设置为 "无"](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image23.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image22.png)
 
-**图 8**:将保留为无设置参数源 ([单击此项可查看原尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image24.png))
+**图 8**：将参数 "源" 设置为 "无" （[单击查看完全大小的图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image24.png)）
 
-这将创建`Parameter`对象中的 ObjectDataSource`SelectParameters`不具有指定的值的集合。
+这将在 ObjectDataSource 的 `SelectParameters` 集合中创建一个未指定值的 `Parameter` 对象。
 
 [!code-aspx[Main](programmatically-setting-the-objectdatasource-s-parameter-values-vb/samples/sample2.aspx)]
 
-若要以编程方式设置此值，我们需要为 ObjectDataSource 的创建事件处理程序`Selecting`事件。 若要实现此目的，请转到设计视图，并双击 ObjectDataSource。 或者，选择 ObjectDataSource 中，转到属性窗口中，并单击闪电形图标。 接下来，可以双击在文本框旁边`Selecting`事件或键入你想要使用的事件处理程序的名称。 如第三个选项，可以通过选择 ObjectDataSource 创建事件处理程序并将其`Selecting`页面的代码隐藏类顶部的两个下拉列表中的事件。
+若要以编程方式设置此值，需要为 ObjectDataSource 的 `Selecting` 事件创建事件处理程序。 若要实现此目的，请跳到设计视图，然后双击 ObjectDataSource。 或者，选择 "ObjectDataSource"，中转到 "属性窗口"，然后单击闪电形图标。 接下来，双击 "`Selecting`" 事件旁边的文本框，或键入要使用的事件处理程序的名称。 第三个选项是，可以通过从页面代码隐藏类顶部的两个下拉列表中选择 ObjectDataSource 及其 `Selecting` 事件来创建事件处理程序。
 
-![单击属性窗口列出 Web 控件的事件中的闪电形图标](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image25.png)
+![单击 "属性" 窗口中的闪电形图标以列出 Web 控件的事件](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image25.png)
 
-**图 9**:单击属性窗口列出 Web 控件的事件中的闪电形图标
+**图 9**：单击 "属性" 窗口中的闪电形图标以列出 Web 控件的事件
 
-所有这三种方法将新的事件处理程序添加了 ObjectDataSource 的`Selecting`到页面的代码隐藏类的事件。 此事件处理程序中我们可以读取和写入到使用的参数值`e.InputParameters(parameterName)`，其中 *`parameterName`* 的值`Name`属性中`<asp:Parameter>`标记 (`InputParameters`也可以是集合索引作为中序号， `e.InputParameters(index)`)。 若要设置`month`当前月份，参数添加到以下`Selecting`事件处理程序：
+所有这三种方法都会向页面的代码隐藏类添加 ObjectDataSource 的 `Selecting` 事件的新事件处理程序。 在此事件处理程序中，我们可以使用 `e.InputParameters(parameterName)`读取和写入参数值，其中 *`parameterName`* 是 `<asp:Parameter>` 标记中 `Name` 特性的值（`InputParameters` 集合也可以按序号）。 若要将 `month` 参数设置为当月，请将以下内容添加到 `Selecting` 事件处理程序中：
 
 [!code-vb[Main](programmatically-setting-the-objectdatasource-s-parameter-values-vb/samples/sample3.vb)]
 
-访问此页上的通过浏览器时，我们可以看到该只有一个雇员雇佣的这个月 （年 3 月） Laura Callahan，已在公司自 1994 年。
+通过浏览器访问此页时，可以看到，在本月（3月），她只聘用了一名员工，因为1994，她在该公司的 Callahan。
 
-[![这个月显示其周年纪念日这些员工](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image27.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image26.png)
+[![显示此月周年纪念的员工](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image27.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image26.png)
 
-**图 10**:这些员工其周年纪念日此月显示 ([单击此项可查看原尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image28.png))
+**图 10**：显示本月周年纪念的员工（[单击查看全尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image28.png)）
 
 ## <a name="summary"></a>总结
 
-虽然 ObjectDataSource 的参数值通常可以设置以声明方式，而无需一行代码，很容易地以编程方式设置参数值。 我们需要做的就是为 ObjectDataSource 的创建事件处理程序`Selecting`触发的事件，基础对象的方法是调用，并手动设置为通过一个或多个参数的值之前`InputParameters`集合。
+尽管 ObjectDataSource 的参数值通常可以通过声明方式进行设置，而无需编写代码行，但可以通过编程方式轻松地设置参数值。 我们需要做的就是为 ObjectDataSource 的 `Selecting` 事件创建事件处理程序，该事件处理程序在调用基础对象的方法之前激发，并通过 `InputParameters` 集合手动设置一个或多个参数的值。
 
-基本报告部分到本教程结束。 [下一教程](../masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md)开始为期筛选和母版-详细信息方案部分，我们将介绍的技术允许筛选数据的访问者并从主报表深化到详细信息报表。
+本教程介绍了基本报表部分。 [下一教程](../masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md)将介绍如何使用 "筛选和主要-详细方案" 部分，其中介绍了允许访问者筛选数据以及从主报表向下钻取到详细信息报表的方法。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Hilton Giesenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Hilton Giesenow。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](declarative-parameters-vb.md)
+> [上一部分](declarative-parameters-vb.md)

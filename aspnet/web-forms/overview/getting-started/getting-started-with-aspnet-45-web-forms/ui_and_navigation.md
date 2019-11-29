@@ -1,75 +1,75 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
-title: 用户界面和导航 |Microsoft Docs
+title: UI 和导航 |Microsoft Docs
 author: Erikre
-description: 本教程系列将指导您学习生成有关我们使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 的 ASP.NET Web 窗体应用程序的基础知识...
+description: 本系列教程将介绍使用 ASP.NET 4.5 构建 ASP.NET Web 窗体应用程序的基础知识，并为我们 Microsoft Visual Studio Express 2013 。
 ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 06816f3555a806d41caf562b910a4ec4427b13bd
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ac1dcaf1ba911fdcaeb3845c6836ec771733d93e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134223"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74636819"
 ---
 # <a name="ui-and-navigation"></a>UI 和导航
 
-通过[Erik Reitan](https://github.com/Erikre)
+作者： [Erik Reitan](https://github.com/Erikre)
 
-[下载 Wingtip Toys 示例项目 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[下载 Wingtip 玩具示例项目（C#）](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下载电子书（PDF）](https://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
-> 此教程系列将介绍构建 ASP.NET Web 窗体应用程序使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的基础知识。 Visual Studio 2013[包含 C# 源代码项目](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)可随附于本系列教程。
+> 本系列教程将介绍使用 ASP.NET 4.5 构建 ASP.NET Web 窗体应用程序的基础知识，并为 Web Microsoft Visual Studio Express 2013。 此教程系列附带有[ C#源代码](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)的 Visual Studio 2013 项目。
 
-在本教程中，您将修改默认的 Web 应用程序，以支持功能的 Wingtip Toys 应用商店前端应用程序的 UI。 此外，您将添加简单和数据绑定导航。 本教程基于上一教程"创建数据访问层"，而是 Wingtip Toys 教程系列的一部分。
+在本教程中，你将修改默认 Web 应用程序的 UI，以支持 Wingtip 玩具 store 前台应用程序的功能。 此外，还将添加简单的数据绑定导航。 本教程基于前面的 "创建数据访问层" 教程，是 Wingtip 玩具教程系列的一部分。
 
-## <a name="what-youll-learn"></a>你将学习：
+## <a name="what-youll-learn"></a>你将学习的内容：
 
-- 如何更改 UI 以支持 Wingtip Toys 应用商店前端应用程序的功能。
-- 如何配置要包括页面导航的 HTML5 元素。
-- 如何创建数据驱动的控件，以导航到特定产品数据。
-- 如何显示使用 Entity Framework Code First 创建数据库中的数据。
+- 如何将 UI 更改为支持 Wingtip 玩具 store 前台应用程序的功能。
+- 如何将 HTML5 元素配置为包括页面导航。
+- 如何创建数据驱动的控件以导航到特定的产品数据。
+- 如何显示使用实体框架 Code First 创建的数据库中的数据。
 
-ASP.NET Web 窗体允许您创建的 Web 应用程序的动态内容。 每个 ASP.NET 网页创建方式类似于静态 HTML Web 页面 （不包括基于服务器的处理的页），但 ASP.NET 网页包括 ASP.NET 识别并处理生成的 HTML 页在运行时的额外元素。
+ASP.NET Web 窗体使你可以为 Web 应用程序创建动态内容。 每个 ASP.NET 网页的创建方式类似于静态 HTML 网页（不包含基于服务器的处理的页面），但 ASP.NET 网页包含一些额外的元素，ASP.NET 在页面运行时识别并处理生成 HTML。
 
-与静态 HTML 页面 (*.htm*或 *.html*文件)，服务器担当`Web`通过读取文件并将其作为发送的请求-在浏览器。 与此相反，当有人请求 ASP.NET 网页 (*.aspx*文件)，该页面作为程序运行在 Web 服务器上。 运行页面时，它可以执行需要你的网站，其中包括计算值、 读取或写入数据库的信息，或调用其他程序的任何任务。 作为其输出页面动态生成标记 （例如 HTML 中的元素），并将此动态输出发送到浏览器。
+使用静态 HTML 页（ *.htm*或 *.html*文件），服务器通过读取文件并按原样将其发送到浏览器来完成 `Web` 请求。 与此相反，当某人请求 ASP.NET 网页（ *.aspx*文件）时，该页面在 Web 服务器上以程序的形式运行。 当该页正在运行时，它可以执行您的网站所需的任何任务，包括计算值、读取或写入数据库信息或调用其他程序。 作为其输出，页面会动态生成标记（例如 HTML 中的元素），并将此动态输出发送到浏览器。
 
 ## <a name="modifying-the-ui"></a>修改 UI
 
-您将通过修改继续本教程系列*Default.aspx*页。 您将修改用于创建应用程序的默认模板已建立的 UI。 创建任何 Web 窗体应用程序时，是典型的修改需要执行的操作类型。 将为此，将更改标题，替换某些内容，并删除不需要的默认的内容。
+通过修改*default.aspx*页，可以继续学习本系列教程。 您将修改已由用于创建应用程序的默认模板建立的 UI。 创建任何 Web 窗体应用程序时，通常会执行的修改类型。 你将通过更改标题、替换某些内容并删除不需要的默认内容来实现此目的。
 
-1. 打开或切换到*Default.aspx*页。
-2. 如果在显示的页面**设计**视图中，切换到**源**视图。
-3. 在页面顶部`@Page`指令，更改`Title`中下面的黄色突出显示"Welcome"属性。 
+1. 打开或切换到 " *default.aspx* " 页。
+2. 如果该页出现在 "**设计**" 视图中，请切换到 "**源**" 视图。
+3. 在页面顶部的 `@Page` 指令中，将 "`Title`" 属性更改为 "欢迎"，如下面的黄色突出显示部分所示。 
 
     [!code-aspx[Main](ui_and_navigation/samples/sample1.aspx?highlight=1)]
-4. 同样，在*Default.aspx*页上，将替换默认的内容中包含的所有`<asp:Content>`标记，以便标记显示为如下。 
+4. 同样，在*default.aspx*页上，替换 `<asp:Content>` 标记中包含的所有默认内容，以便标记显示如下。 
 
     [!code-aspx[Main](ui_and_navigation/samples/sample2.aspx)]
-5. 保存*Default.aspx*页上通过选择**保存 Default.aspx**从**文件**菜单。
+5. 通过从 "**文件**" 菜单中选择 "**保存**"，保存*default.aspx*页。
 
-   得到*Default.aspx*页将出现，如下所示： 
+   生成的*default.aspx*页将如下所示： 
 
 [!code-aspx[Main](ui_and_navigation/samples/sample3.aspx)]
 
-在示例中，设置`Title`属性的`@Page`指令。 当在浏览器中，服务器代码中显示 HTML`<%: Page.Title %>`解析为中包含的内容`Title`属性。
+在此示例中，您设置了 `@Page` 指令的 `Title` 属性。 当在浏览器中显示 HTML 时，服务器代码 `<%: Page.Title %>` 解析 `Title` 属性中包含的内容。
 
-此示例页包含构成 ASP.NET 网页的基本元素。 页包含静态文本，如你可能在 HTML 页中，以及特定于 ASP.NET 的元素。 中包含的内容*Default.aspx*页将与主页面内容，这将在本教程的后面进行说明集成。
+示例页面包含构成 ASP.NET 网页的基本元素。 此页包含静态文本，如您在 HTML 页中所拥有的一样，以及特定于 ASP.NET 的元素。 *Default.aspx*页中包含的内容将与母版页内容集成，本教程稍后将对此内容进行介绍。
 
 ### <a name="page-directive"></a>@Page 指令
 
-ASP.NET Web 窗体通常包含允许您指定的页的页属性和配置信息的指令。 指令被用作 ASP.NET 说明有关如何为进程页上，但它们将不呈现为发送到浏览器的标记的一部分。
+ASP.NET Web 窗体通常包含允许您为页面指定页面属性和配置信息的指令。 ASP.NET 使用指令作为如何处理页面的说明，但不会将其作为发送到浏览器的标记的一部分呈现。
 
-最常使用的指令是`@Page`指令，允许您指定的页上，其中包括多个配置选项：
+最常使用的指令是 `@Page` 指令，该指令允许您为页面指定许多配置选项，其中包括：
 
-1. 编程语言在页中，如 C# 代码的服务器。
-2. 该页是否是通过直接在页中，这称为单文件页，服务器代码页，或者它是否在单独的类文件，称为代码隐藏页中使用代码页。
-3. 是否该页具有关联的主页面，因此会被视为内容页。
+1. 页中代码的服务器编程语言，如C#。
+2. 该页是否是直接在页中包含服务器代码的页面（称为单文件页），还是在单独的类文件中包含代码的页面（称为代码隐藏页）。
+3. 页面是否具有关联的母版页，是否应将其视为内容页。
 4. 调试和跟踪选项。
 
-如果不包括`@Page`指令在页中，或如果该指令不包括特定的设置，将设置继承自*Web.config*配置文件或从*Machine.config*配置文件。 *Machine.config*文件提供了其他配置设置应用于所有应用程序的计算机上运行。
+如果未在页中包含 `@Page` 指令，或者如果指令不包含特定的设置 *，则将从 web.config 配置文件*或*machine.config 配置文件*继承设置。 *Machine.config*文件为计算机上运行的所有应用程序提供其他配置设置。
 
 > [!NOTE] 
 > 
@@ -77,209 +77,209 @@ ASP.NET Web 窗体通常包含允许您指定的页的页属性和配置信息�
 
 ### <a name="web-server-controls"></a>Web 服务器控件
 
-在大多数 ASP.NET Web 窗体应用程序，您将添加允许用户与页面，例如按钮、 文本框、 列表等交互的控件。 这些 Web 服务器控件都类似于 HTML 按钮和输入的元素。 但是，它们会处理在服务器上，您可以使用服务器代码来设置其属性。 这些控件也引发了可以在服务器代码中处理的事件。
+在大多数 ASP.NET Web 窗体应用程序中，您将添加允许用户与页面交互的控件，例如按钮、文本框、列表等。 这些 Web 服务器控件类似于 HTML 按钮和输入元素。 但是，它们是在服务器上处理的，因此可以使用服务器代码来设置其属性。 这些控件还会引发可在服务器代码中处理的事件。
 
-服务器控件使用 ASP.NET 识别运行页面时的特殊语法。 ASP.NET 服务器控件的标记名称开头`asp:`前缀。 这使 ASP.NET 可以识别和处理这些服务器控件。 前缀可能不同，如果该控件不是.NET Framework 的一部分。 除了`asp:`前缀，ASP.NET 服务器控件还包括`runat="server"`属性和一个`ID`可用于引用在服务器代码中的控件。
+服务器控件使用的特殊语法 ASP.NET 在页面运行时识别。 ASP.NET 服务器控件的标记名称以 `asp:` 前缀开头。 这允许 ASP.NET 识别并处理这些服务器控件。 如果控件不是 .NET Framework 的一部分，则前缀可能会有所不同。 除了 `asp:` 前缀以外，ASP.NET 服务器控件还包括 `runat="server"` 属性和可用于在服务器代码中引用控件的 `ID`。
 
-页运行时，ASP.NET 标识的服务器控件，并运行的代码，这些控件与相关联。 许多控件将呈现某些 HTML 或其他标记在页面的浏览器中显示时。
+当页面运行时，ASP.NET 将标识服务器控件，并运行与这些控件关联的代码。 许多控件在浏览器中显示时，会将一些 HTML 或其他标记呈现到页面中。
 
 ### <a name="server-code"></a>服务器代码
 
-大多数 ASP.NET Web 窗体应用程序包含在页处理时，在服务器运行的代码。 如上所述，服务器代码可以用于执行各种操作，如将数据添加到 ListView 控件。 ASP.NET 支持多种语言包括 C#、 Visual Basic、 J# 和其他服务器上运行。
+大多数 ASP.NET Web 窗体应用程序都包含处理页面时服务器上运行的代码。 如上所述，可以使用服务器代码执行多种操作，例如向 ListView 控件添加数据。 ASP.NET 支持在服务器上运行多种语言，包括C#、Visual Basic、j # 和其他语言。
 
-ASP.NET 支持用于编写用于网页的服务器代码的两个模型。 在单个文件模型中，页的代码是在脚本元素的开始标记，其中包括`runat="server"`属性。 或者，您可以在单独的类文件，称为代码隐藏模型中创建页的代码。 在这种情况下，ASP.NET Web 窗体页通常包含无服务器代码。 相反，`@Page`指令中包含链接的信息 *.aspx*与其关联的代码隐藏文件的页。
+ASP.NET 支持两种模型来编写网页的服务器代码。 在单文件模型中，页面的代码位于一个 script 元素中，其中开始标记包含 `runat="server"` 特性。 或者，您可以在单独的类文件中创建该页的代码，这称为 "代码隐藏" 模型。 在这种情况下，ASP.NET Web 窗体页通常不包含任何服务器代码。 相反，`@Page` 指令包含链接 *.aspx*页面及其关联的代码隐藏文件的信息。
 
-`CodeBehind`属性中包含`@Page`指令指定单独的类文件的名称和`Inherits`属性指定对应于页的代码隐藏文件中的类的名称。
+`@Page` 指令中包含的 `CodeBehind` 特性指定了单独的类文件的名称，而 `Inherits` 特性指定了代码隐藏文件中对应于页的类的名称。
 
 ### <a name="updating-the-master-page"></a>更新母版页
 
-在 ASP.NET Web 窗体，母版页允许你在应用程序中创建一致的页面布局。 使用单个母版页定义应用程序中的外观和感觉和所需的所有页面 （或一组页） 的标准行为。 然后可以创建包含要显示，如上文所述的内容的各个内容页。 当用户请求内容的页面时，ASP.NET 会将它们合并与母版页以生成将主控页的布局与内容页中的内容相结合的输出。
+在 ASP.NET Web 窗体中，母版页允许你在应用程序中创建一致的页面布局。 可以使用单个母版页定义应用程序中所有页（或一组页）的外观和标准行为。 然后，您可以创建包含要显示内容的单独内容页，如上文所述。 当用户请求内容页时，ASP.NET 会将内容页与母版页合并，以生成将母版面布局与内容页中的内容相结合的输出。
 
-新的站点需要要显示每一页上的一个徽标。 若要添加此徽标，您可以修改在母版页上的 HTML。
+新站点需要单个徽标才能在每一页上显示。 若要添加此徽标，可以修改母版页上的 HTML。
 
-1. 在中**解决方案资源管理器**，找到并打开**Site.Master**页。
-2. 如果在页处于**设计**视图中，切换到**源**视图。
-3. 更新通过母版页**修改或添加**以黄色突出显示的标记： 
+1. 在**解决方案资源管理器**中，查找并打开 "**网站母版页**"。
+2. 如果该页在 "**设计**" 视图中，请切换到 "**源**" 视图。
+3. 通过**修改或添加**以黄色突出显示的标记来更新母版页： 
 
     [!code-aspx[Main](ui_and_navigation/samples/sample4.aspx?highlight=9,49,76-81,87)]
 
-此 HTML 将显示名为图像*logo.jpg*从*映像*稍后将添加的 Web 应用程序的文件夹。 当使用母版页的页面在浏览器中显示时，将显示徽标。 如果用户单击在徽标上时，用户将导航回*Default.aspx*页。 HTML 定位点标记`<a>`包装映像服务器控件，并允许将图像作为链接的一部分。 `href`属性 (attribute) 的定位点标记指定的根"`~/`"作为链接位置的 Web 站点。 默认情况下*Default.aspx*用户导航到网站的根目录，会显示页面。 **图像**`<asp:Image>`服务器控件包括添加属性，如`BorderStyle`，呈现为 HTML 时浏览器中显示的。
+此 HTML 将在 Web 应用程序的*Images*文件夹中显示名为 "*徽标键*" 的图像，稍后将添加该图像。 当浏览器中显示使用母版页的页面时，将显示该徽标。 如果用户单击徽标，用户将导航回*default.aspx*页面。 HTML 定位点标记 `<a>` 包装图像服务器控件，并允许将该图像作为链接的一部分包含在内。 定位点标记的 `href` 特性指定网站的根 "`~/`" 作为链接位置。 默认情况下，当用户导航到网站的根目录时，将显示*default.aspx*页。 **Image** `<asp:Image>` server 控件包含在浏览器中显示时以 HTML 格式呈现的附加属性，如 `BorderStyle`。
 
 ### <a name="master-pages"></a>母版页
 
-主页面是 ASP.NET 与扩展.master 文件 (例如， *Site.Master*) 具有预定义布局可以包括静态文本、 HTML 元素和服务器控件。 主页面由一种特殊`@Master`指令将替换`@Page`用于普通的指令 *.aspx*页。
+母版页是扩展名为 master （例如，ASP.NET）的*文件，其*预定义布局可以包含静态文本、HTML 元素和服务器控件。 母版页由特殊的 `@Master` 指令标识，该指令替换用于普通 *.aspx*页面的 `@Page` 指令。
 
-除了`@Master`指令，主页面还包含的所有顶级 HTML 元素的页上，例如`html`， `head`，和`form`。 例如，在前面添加主页面上，则使用对应的 HTML`table`布局，`img`公司徽标、 静态文本和服务器控件能够处理你的站点的公共成员身份的元素。 作为到母版页的一部分，可以使用任何 HTML 和 ASP.NET 的任何元素。
+除了 `@Master` 指令外，母版页还包含页的所有顶级 HTML 元素，如 `html`、`head`和 `form`。 例如，在上面添加的母版页上，使用 HTML `table` 进行布局，使用公司徽标、静态文本和服务器控件的 `img` 元素来处理网站的公共成员身份。 您可以使用任何 HTML 和任何 ASP.NET 元素作为母版页的一部分。
 
-除了静态文本和控件将显示所有页，主页面还包括一个或多个**ContentPlaceHolder**控件。 这些占位符控件定义会显示可更换部件内容的区域。 反过来，可更换部件内容中定义内容页面，如*Default.aspx*，并使用**内容**服务器控件。
+除了在所有页面上显示的静态文本和控件外，母版页还包括一个或多个**ContentPlaceHolder**控件。 这些占位符控件定义要在其中显示可替换内容的区域。 接下来，使用**内容**服务器控件在内容页（如*default.aspx*）中定义可替换内容。
 
 #### <a name="adding-image-files"></a>添加图像文件
 
-徽标图像引用更高版本，以及所有产品映像，必须添加到 Web 应用程序，以便在浏览器中显示该项目时，可以看到它们。
+必须将上面引用的徽标图像与所有产品图像一起添加到 Web 应用程序，以便在浏览器中显示项目时可以查看它们。
 
 #### <a name="download-from-msdn-samples-site"></a>从 MSDN 示例站点下载：
 
-[开始使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2013-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#)
+[与 ASP.NET 4.5 Web 窗体和 Visual Studio 2013-Wingtip 玩具](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)（C#）入门
 
-此下载文件包括中的资源*WingtipToys 资产*用于创建示例应用程序的文件夹。
+下载内容包括用于创建示例应用程序的 " *WingtipToys* " 文件夹中的资源。
 
-1. 如果尚未这样做，下载压缩的示例文件从 MSDN 示例网站使用上面的链接。
-2. 下载完成后，打开.zip 文件，并将内容复制到你的计算机上的本地文件夹。
-3. 找到并打开*WingtipToys 资产*文件夹。
-4. 通过拖放，将复制*目录*从您的本地文件夹中的 Web 应用程序项目的根文件夹**解决方案资源管理器**的 Visual Studio。 
+1. 如果尚未执行此操作，请使用 MSDN 示例网站中的以上链接下载压缩的示例文件。
+2. 下载后，打开 .zip 文件并将内容复制到计算机上的本地文件夹。
+3. 查找并打开 " *WingtipToys* " 文件夹。
+4. 通过拖放，将*目录*文件夹从本地文件夹复制到 Visual Studio**解决方案资源管理器**中 Web 应用程序项目的根目录。 
 
     ![UI 和导航-复制文件](ui_and_navigation/_static/image1.png)
-5. 接下来，创建名为的新文件夹*映像*通过右击**WingtipToys**项目**解决方案资源管理器**，然后选择**添加** - &gt; **新文件夹**。
-6. 复制*logo.jpg*文件从*WingtipToys 资产*文件夹中的**文件资源管理器**到*映像*Web 应用程序文件夹项目中**解决方案资源管理器**的 Visual Studio。
-7. 单击**显示所有文件**顶部的选项**解决方案资源管理器**要更新的文件列表，如果看不到新文件。  
+5. 接下来，在**解决方案资源管理器**中右键单击 " **WingtipToys** " 项目，然后选择 "**添加** -&gt;**新文件夹**"，创建名为 "*映像*" 的新文件夹。
+6. 从**文件资源管理器**中的 WingtipToys 文件夹将文件复制到 Visual Studio**解决方案资源管理器**的 Web 应用程序项目的*Images*文件夹*中。*
+7. 如果看不到新文件，请单击**解决方案资源管理器**顶部的 "**显示所有文件**" 选项以更新文件列表。  
   
-    **解决方案资源管理器**现在显示已更新的项目文件。 
+    现在**解决方案资源管理器**显示已更新的项目文件。 
 
-    ![用户界面和导航的解决方案资源管理器](ui_and_navigation/_static/image2.png)
+    ![UI 和导航-解决方案资源管理器](ui_and_navigation/_static/image2.png)
 
 ### <a name="adding-pages"></a>添加页
 
-添加导航到之前的 Web 应用程序，你将首先添加将导航到的两个新页。 稍后在本系列教程中将这些新页上显示产品和产品详细信息。
+向 Web 应用程序添加导航之前，首先要添加两个要导航到的新页面。 稍后在本系列教程中，你将在这些新页面上显示产品和产品详细信息。
 
-1. 在中**解决方案资源管理器**，右键单击**WingtipToys**，单击**添加**，然后单击**新项**。   
+1. 在**解决方案资源管理器**中，右键单击**WingtipToys**，单击 "**添加**"，然后单击 "**新建项**"。   
  随即出现“添加新项”对话框。
-2. 选择**Visual C#**  - &gt; **Web**在左侧的模板组。 然后，选择**包含母版页的 Web 窗体**从中间列表并将其命名*ProductList.aspx*。 
+2. 选择左侧的 " **Visual C#**  -&gt; **Web**模板" 组。 然后，从中间列表中选择 "**带有母版页的 Web 窗体**"，并将其命名为*ProductList*。 
 
-    ![用户界面和导航的添加新项对话框](ui_and_navigation/_static/image3.png)
-3. 选择**Site.Master**附加到新创建的母版页 *.aspx*页。 
+    ![UI 和导航-"添加新项" 对话框](ui_and_navigation/_static/image3.png)
+3. 选择 "**站点**" 以将母版页附加到新创建的 *.aspx*页面。 
 
     ![UI 和导航-选择母版页](ui_and_navigation/_static/image4.png)
-4. 添加名为的其他页*ProductDetails.aspx*按照上述相同步骤。
+4. 按照相同的步骤，添加一个名为*ProductDetails*的附加页面。
 
-### <a name="updating-bootstrap"></a>正在更新 Bootstrap
+### <a name="updating-bootstrap"></a>更新启动
 
-使用 Visual Studio 2013 项目模板[Bootstrap](http://getbootstrap.com/)，创建的 Twitter 的布局和主题框架。 Bootstrap 使用 CSS3 提供响应式设计，这意味着布局可以动态地适应不同的浏览器窗口大小。 Bootstrap 的主题功能还可用于轻松地影响应用程序的外观和行为的更改。 默认情况下，Visual Studio 2013 中的 ASP.NET Web 应用程序模板包括 Bootstrap 作为 NuGet 包。
+Visual Studio 2013 项目模板使用由 Twitter 创建的[启动](http://getbootstrap.com/)、布局和主题框架。 启动使用 CSS3 来提供响应式设计，这意味着布局可以动态适应不同的浏览器窗口大小。 你还可以使用启动的主题功能轻松地对应用程序的外观进行更改。 默认情况下，Visual Studio 2013 中的 ASP.NET Web 应用程序模板包括作为 NuGet 包的启动。
 
-在本教程中，您将通过替换 Bootstrap CSS 文件来更改 Wingtip Toys 应用程序的外观和感觉。
+在本教程中，你将通过替换启动 CSS 文件来更改 Wingtip 玩具应用程序的外观。
 
-1. 在中**解决方案资源管理器**，打开*内容*文件夹。
-2. 右键单击*bootstrap.css*文件，并为其重命名*bootstrap original.css*。
-3. 重命名*bootstrap.min.css*到*bootstrap original.min.css*。
-4. 在中**解决方案资源管理器**，右键单击*内容*文件夹，然后选择**在文件资源管理器中打开文件夹**。  
-   将显示在文件资源管理器。 会将下载的 bootstrap CSS 文件保存到此位置。
-5. 在浏览器中，转到[ https://bootswatch.com/3/ ](https://bootswatch.com/3/)。
-6. 滚动浏览器窗口，直到看到 Cerulean 主题。 
+1. 在**解决方案资源管理器**中，打开 "*内容*" 文件夹。
+2. 右键单击 "bootstrap-original" 文件，*然后将其*重命名为 ""。
+3. 将 bootstrap-original 重命名*为 "* "。
+4. 在**解决方案资源管理器**中，右键单击 "*内容*" 文件夹，然后选择 "**在文件资源管理器中打开文件夹**"。  
+   将显示文件资源管理器。 将下载的启动 CSS 文件保存到此位置。
+5. 在浏览器中转到[https://bootswatch.com/3/](https://bootswatch.com/3/)。
+6. 滚动浏览器窗口，直到看到 "Cerulean" 主题。 
 
-    ![UI 和导航-Cerulean 主题](ui_and_navigation/_static/image5.png)
-7. 同时下载*bootstrap.css*文件并*bootstrap.min.css*文件发送到*内容*文件夹。 使用中显示的内容文件夹的路径**文件资源管理器**以前打开的窗口。
-8. 在中**Visual Studio**顶部**解决方案资源管理器**，选择**显示所有文件**选项以显示新文件的内容文件夹中。 
+    ![UI 和 Cerulean 主题](ui_and_navigation/_static/image5.png)
+7. 将*启动 .css*文件和文件*启动*文件都下载到*Content*文件夹中。 使用之前打开的 "**文件资源管理器**" 窗口中显示的内容文件夹的路径。
+8. 在**Visual Studio**中**解决方案资源管理器**的顶部，选择 "**显示所有文件**" 选项以显示 "内容" 文件夹中的新文件。 
 
-    ![用户界面和导航的解决方案资源管理器](ui_and_navigation/_static/image6.png)
+    ![UI 和导航-解决方案资源管理器](ui_and_navigation/_static/image6.png)
 
-   您将看到两个新 CSS 文件中的**内容**文件夹中，但请注意，每个文件名称旁边的图标将灰显。这意味着，该文件尚未尚未添加到项目。
-9. 右键单击*bootstrap.css*并*bootstrap.min.css*文件，然后选择**包括在项目**。   
-   本教程中稍后运行 Wingtip Toys 应用程序时，将显示新的用户界面。
+   你将在**Content**文件夹中看到两个新的 CSS 文件，但请注意，每个文件名旁边的图标都将灰显。这意味着该文件尚未添加到项目。
+9. 右键单击 "*启动*" 和 *"文件"* ，然后选择 "**包括在项目中**"。   
+   稍后在本教程中运行 Wingtip 玩具应用程序时，将显示新的 UI。
 
 > [!NOTE] 
 > 
-> ASP.NET Web 应用程序模板使用*Bundle.config*项目来存储 Bootstrap CSS 文件的路径的根目录下的文件。
+> ASP.NET Web 应用程序模板使用项目*根目录中的文件来*存储启动 CSS 文件的路径。
 
 ### <a name="modifying-the-default-navigation"></a>修改默认导航
 
-可以通过更改中的无序的导航列表元素修改应用程序中每一页的默认导航*Site.Master*页。
+对于应用程序中的每个页面，都可以通过更改 "*网站母版页*" 中的未排序导航列表元素来修改默认导航。
 
-1. 在中**解决方案资源管理器**，找到并打开*Site.Master*页。
-2. 添加到未排序列表如下所示的黄色突出显示的其他导航链接：   
+1. 在**解决方案资源管理器**中，找到并打开 "*网站母版页*"。
+2. 将以黄色突出显示的其他导航链接添加到下面显示的未排序列表中：   
 
     [!code-html[Main](ui_and_navigation/samples/sample5.html?highlight=5)]
 
-正如您所看到上述 HTML 中，修改每个行项`<li>`包含一个定位点标记`<a>`的链接`href`属性。 每个`href`指向 Web 应用程序中的页。 在浏览器中，当用户单击这些链接之一 (如**产品**)，它们将导航到页面中包含`href`(如**ProductList.aspx**)。 本教程结束时，将运行该应用程序。
+如以上 HTML 所示，你修改了每个行项 `<li>` 包含带有 link `href` 特性的定位点标记 `<a>`。 每个 `href` 指向 Web 应用程序中的某个页面。 在浏览器中，当用户单击其中一个链接（如**Products**）时，他们将导航到 `href` 中包含的页面（如**ProductList**）。 在本教程结束时，将运行该应用程序。
 
 > [!NOTE] 
 > 
-> 波形符 (`~`) 字符用于指定`href`在项目的根目录开始的路径。
+> 颚化符（`~`）用于指定 `href` 路径从项目的根开始。
 
 ### <a name="adding-a-data-control-to-display-navigation-data"></a>添加数据控件以显示导航数据
 
-接下来，你将添加一个控件以显示所有数据库中的类别。 每个类别将充当一个指向*ProductList.aspx*页。 当用户单击浏览器中的类别链接时，它们将导航到产品页，查看仅与所选类别关联的产品。
+接下来，您将添加一个控件以显示数据库中的所有类别。 每个类别都将充当*ProductList*页面的链接。 当用户在浏览器中单击某个类别链接时，他们将导航到 "产品" 页，并且仅查看与所选类别关联的产品。
 
-将使用**ListView**控件来显示数据库中包含的所有类别。 若要添加**ListView**到母版页的控件：
+使用**ListView**控件可以显示数据库中包含的所有类别。 向母版页添加**ListView**控件：
 
-1. 在中*Site.Master*页上，添加以下突出显示`<div>`元素**后**`<div>`元素，其中包含`id="TitleContent"`前面添加：  
+1. 在 "*网站母版页*" 页中，将以下突出显示的 `<div>` 元素添加到 `<div>` 元素**之后**，该元素包含之前添加的 `id="TitleContent"`：  
 
     [!code-aspx[Main](ui_and_navigation/samples/sample6.aspx?highlight=7-21)]
 
-此代码将显示数据库中的所有类别。 **ListView**控件显示为链接文本的每个类别名称和包含的链接*ProductList.aspx*带有查询字符串值包含页`ID`的类别。 通过设置`ItemType`中的属性**ListView**控件，数据绑定表达式`Item`中有可用`ItemTemplate`节点和控件将成为强类型化。 可以选择的详细信息`Item`对象使用 IntelliSense，例如，指定`CategoryName`。 此代码包含在容器内`<%#: %>`标记数据绑定表达式。 通过将 （:） 添加到末尾`<%#`前缀，数据绑定表达式的结果是 HTML 编码。 如果结果为 HTML 编码，您的应用程序更有效抵御跨站点脚本注入 (XSS) 和 HTML 注入攻击。
+此代码将显示数据库中的所有类别。 **ListView**控件将每个类别名称显示为链接文本，并包含指向*ProductList*页面的链接，该链接包含包含类别的 `ID` 的查询字符串值。 通过设置**ListView**控件中的 `ItemType` 属性，可在 `ItemTemplate` 节点内使用数据绑定表达式 `Item`，并将该控件变成强类型。 您可以使用 IntelliSense 选择 `Item` 对象的详细信息，例如指定 `CategoryName`。 此代码包含在标记数据绑定表达式的容器 `<%#: %>` 中。 通过添加（:)在 `<%#` 前缀的末尾，数据绑定表达式的结果是 HTML 编码的。 如果结果是 HTML 编码的，则您的应用程序会受到更好的保护，以防止出现跨站点脚本注入（XSS）和 HTML 注入攻击。
 
 > [!NOTE] 
 > 
 > **提示**
 > 
-> 时通过键入在开发过程中添加代码，您可以确定对象的有效成员找到因为强类型数据控件显示可用成员基于智能感知。 IntelliSense 提供了你键入代码，例如属性、 方法和对象选择相应上下文的代码。
+> 当你在开发过程中键入内容时，你可以确定是否找到了对象的有效成员，因为强类型数据控件显示基于 IntelliSense 的可用成员。 IntelliSense 在键入代码时提供了上下文适当的代码选项，如属性、方法和对象。
 
-在下一步，您将实现`GetCategories`方法来检索数据。
+在下一步中，你将实现 `GetCategories` 方法来检索数据。
 
 ### <a name="linking-the-data-control-to-the-database"></a>将数据控件链接到数据库
 
-您可以在数据控件中显示数据之前，需要将数据控件链接到该数据库。 若要使该链接，可以修改的代码隐藏*Site.Master.cs*文件。
+你需要将数据控件链接到数据库，然后才能在数据控件中显示数据。 若要创建该链接，可以修改*Site.Master.cs*文件的隐藏代码。
 
-1. 在中**解决方案资源管理器**，右键单击*Site.Master*页，然后单击**查看代码**。 *Site.Master.cs*在编辑器中打开文件。
-2. 附近的开头*Site.Master.cs*文件中，添加两个其他命名空间，以便所有包括的命名空间显示，如下所示：  
+1. 在**解决方案资源管理器**中，右键单击 "*站点" 母版页*，然后单击 "**查看代码**"。 *Site.Master.cs*文件将在编辑器中打开。
+2. 在*Site.Master.cs*文件的开头附近，添加另外两个命名空间，以使所有包含的命名空间如下所示：  
 
     [!code-csharp[Main](ui_and_navigation/samples/sample7.cs?highlight=8-9)]
-3. 添加突出显示`GetCategories`方法之后`Page_Load`事件处理程序，如下所示：  
+3. 将突出显示的 `GetCategories` 方法添加到 `Page_Load` 事件处理程序之后，如下所示：  
 
     [!code-csharp[Main](ui_and_navigation/samples/sample8.cs?highlight=6-11)]
 
-在浏览器中加载任何使用母版页的页面时执行上面的代码。 `ListView`在本教程前面添加的控件 (名为"categoryList") 使用模型绑定选择数据。 中的标记`ListView`设置控件的控件`SelectMethod`属性设置为`GetCategories`上面所示的方法。 `ListView`控制调用`GetCategories`方法在适当的时间在页生命周期并自动将绑定返回的数据。 您将了解有关下一步的教程中将数据绑定的详细信息。
+当在浏览器中加载使用母版页的任何页面时，将执行上述代码。 你之前在本教程中添加的 `ListView` 控件（名为 "categoryList"）使用模型绑定来选择数据。 在 `ListView` 控件的标记中，将控件的 `SelectMethod` 属性设置为 `GetCategories` 方法，如上所示。 `ListView` 控件在页面生命周期中的适当时间调用 `GetCategories` 方法，并自动绑定返回的数据。 在下一教程中，你将了解有关绑定数据的详细信息。
 
-### <a name="running-the-application-and-creating-the-database"></a>运行应用程序和创建数据库
+### <a name="running-the-application-and-creating-the-database"></a>运行应用程序并创建数据库
 
-之前在本系列教程创建一个初始值设定项类 （名为"ProductDatabaseInitializer"） 和指定在此类*global.asax.cs*文件。 实体框架将生成数据库时应用程序运行第一次，因为`Application_Start`方法中包含*global.asax.cs*文件将调用初始值设定项类。 初始值设定项类将使用的模型类 (`Category`和`Product`) 前面在本教程系列中创建的数据库中添加。
+在本教程的前面部分中，已创建一个名为 "ProductDatabaseInitializer" 的初始值设定项类，并在*global.asax.cs*文件中指定此类。 首次运行应用程序时，实体框架将生成数据库，因为*global.asax.cs*文件中包含的 `Application_Start` 方法将调用初始值设定项类。 初始值设定项类将使用之前在本教程系列中添加的模型类（`Category` 和 `Product`）来创建数据库。
 
-1. 在中**解决方案资源管理器**，右键单击*Default.aspx*页，然后选择**设为起始页**。
-2. 在 Visual Studio 中按**F5**。   
- 需要一些时间来完成所有设置在首次运行此过程。   
-    ![用户界面和导航的浏览器 Windows](ui_and_navigation/_static/image7.png)  
- 在运行该应用程序时，将编译该应用程序和数据库名为*wingtiptoys.mdf*将在其中创建*应用\_数据*文件夹。 在浏览器中，将看到类别导航菜单。 此菜单是通过从数据库检索类别生成的。 在下一步的教程中，您将实现导航。
-3. 关闭浏览器会停止运行的应用程序。
+1. 在**解决方案资源管理器**中，右键单击 " *default.aspx* " 页，然后选择 "**设为起始页**"。
+2. 在 Visual Studio 中，按**F5**。   
+ 在第一次运行期间设置所有内容需要花费一些时间。   
+    ![UI 和导航浏览器窗口](ui_and_navigation/_static/image7.png)  
+ 运行应用程序时，将编译该应用程序，并在*应用\_Data*文件夹中创建名为 wingtiptoys 的数据库 *。* 在浏览器中，会看到一个类别导航菜单。 此菜单是从数据库中检索类别生成的。 在下一教程中，你将实现导航。
+3. 关闭浏览器以停止正在运行的应用程序。
 
 ### <a name="reviewing-the-database"></a>查看数据库
 
-打开*Web.config*文件，并查看连接字符串部分。 你可以看到`AttachDbFilename`连接字符串中的值指向`DataDirectory`为 Web 应用程序项目。 该值`|DataDirectory|`是保留的值，表示*应用程序\_数据*项目文件夹中的。 此文件夹是从实体类创建的数据库所在的位置。
+打开 web.config*文件，* 并查看 "连接字符串" 部分。 您可以看到，连接字符串中的 `AttachDbFilename` 值指向 Web 应用程序项目的 `DataDirectory`。 `|DataDirectory|` 的值是一个保留值，表示项目中的*应用\_Data*文件夹。 此文件夹是从实体类创建的数据库所在的位置。
 
 [!code-xml[Main](ui_and_navigation/samples/sample9.xml)]
 
 > [!NOTE] 
 > 
-> 如果*应用程序\_数据*文件夹是不可见或如果文件夹为空，选择**刷新**图标，然后**显示所有文件**顶部图标**解决方案资源管理器**窗口。 扩展的宽度**解决方案资源管理器**windows 所要显示的所有可用的图标。
+> 如果*应用\_Data*文件夹不可见，或者如果文件夹为空，请选择 "**刷新**" 图标，然后选择 "**解决方案资源管理器**" 窗口顶部的 "**显示所有文件**" 图标。 若要显示所有可用的图标，可能需要扩展**解决方案资源管理器**窗口的宽度。
 
-现在可以检查中包含的数据*wingtiptoys.mdf*使用的数据库文件**服务器资源管理器**窗口。
+现在，可以使用 "**服务器资源管理器**" 窗口检查*wingtiptoys*数据库文件中包含的数据。
 
-1. 展开*应用程序\_数据*文件夹。 如果*应用程序\_数据*文件夹是不可见，请参阅上面的说明。
-2. 如果*wingtiptoys.mdf*数据库文件不可见，请选择**刷新**图标，然后**显示所有文件**顶部的图标**解决方案资源管理器**窗口。
-3. 右键单击*wingtiptoys.mdf*数据库文件，然后选择**打开**。  
-    **服务器资源管理器**显示。 
+1. 展开*应用\_Data*文件夹。 如果*应用\_Data*文件夹不可见，请参阅上述说明。
+2. 如果*wingtiptoys*数据库文件不可见，请选择 "**刷新**" 图标，然后选择 "**解决方案资源管理器**" 窗口顶部的 "**显示所有文件**" 图标。
+3. 右键单击*wingtiptoys*数据库文件，然后选择 "**打开**"。  
+    将显示**服务器资源管理器**。 
 
     ![UI 和导航-服务器资源管理器](ui_and_navigation/_static/image8.png)
-4. 展开*表*文件夹。
-5. 右键单击**产品**表，然后选择**显示表数据**。  
- **产品**显示表。 
+4. 展开 "*表*" 文件夹。
+5. 右键单击**Products**表，然后选择 "**显示表数据**"。  
+ 将显示**Products**表。 
 
-    ![用户界面和导航的 Products 表](ui_and_navigation/_static/image9.png)
-6. 此视图允许你查看和修改中的数据**产品**手动表。
-7. 关闭**产品**表窗口。
-8. 在中**服务器资源管理器**，右键单击**产品**再次表，然后选择**打开表定义**。  
- 有关设计数据**产品**显示表。 
+    ![UI 和导航产品表](ui_and_navigation/_static/image9.png)
+6. 使用此视图可以手动查看和修改**Products**表中的数据。
+7. 关闭 " **Products**表" 窗口。
+8. 在**服务器资源管理器**中，再次右键单击**Products**表，然后选择 "**打开表定义**"。  
+ 将显示**Products**表的数据设计。 
 
-    ![UI 和导航-产品设计](ui_and_navigation/_static/image10.png)
-9. 在中**T-SQL**选项卡上，您将看到用于创建表 SQL DDL 语句。 此外可以使用中的用户界面**设计**选项卡以修改架构。
-10. 在中**服务器资源管理器**，右键单击**WingtipToys**数据库并选择**关闭连接**。   
- 通过将数据库从 Visual Studio 分离，将能够更高版本在本系列教程中修改数据库架构。
-11. 返回到**解决方案资源管理器**通过选择**解决方案资源管理器**选项卡的底部**服务器资源管理器**窗口。
+    ![UI 和导航产品设计](ui_and_navigation/_static/image10.png)
+9. 在**t-sql**选项卡中，你将看到用于创建表的 SQL DDL 语句。 你还可以使用 "**设计**" 选项卡中的 UI 来修改架构。
+10. 在**服务器资源管理器**中，右键单击 " **WingtipToys**数据库"，然后选择 "**关闭连接**"。   
+ 通过从 Visual Studio 中分离数据库，可以在本系列教程的后面部分修改数据库架构。
+11. 选择**服务器资源管理器**窗口底部的 "**解决方案资源管理器**" 选项卡，返回到**解决方案资源管理器**。
 
 ## <a name="summary"></a>总结
 
-在本教程中的一系列您添加了一些基本的用户界面、 图形、 页和导航。 此外，在运行 Web 应用程序，从上一教程中添加的数据类创建数据库。 您还可以查看的内容*产品*通过直接查看数据库的数据库的表。 在下一步的教程中，将显示数据项和从数据库的详细信息。
+在本系列教程中，你添加了一些基本的 UI、图形、页面和导航。 此外，还运行了 Web 应用程序，该应用程序从你在上一教程中添加的数据类创建了数据库。 您还可以通过直接查看数据库来查看数据库的*Products*表的内容。 在下一教程中，您将显示数据库中的数据项和详细信息。
 
 ## <a name="additional-resources"></a>其他资源
 
-[ASP.NET 网页编程简介](https://msdn.microsoft.com/library/ms178125.aspx)   
+[编程 ASP.NET 网页  简介](https://msdn.microsoft.com/library/ms178125.aspx)  
 [ASP.NET Web 服务器控件概述](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [CSS 教程](http://www.w3schools.com/css/default.asp)
 

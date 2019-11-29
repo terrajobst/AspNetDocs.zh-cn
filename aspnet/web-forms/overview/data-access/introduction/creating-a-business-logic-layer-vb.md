@@ -1,88 +1,88 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
-title: 创建业务逻辑层 (VB) |Microsoft Docs
+title: 创建业务逻辑层（VB） |Microsoft Docs
 author: rick-anderson
-description: 在本教程中，我们将了解如何集中用作数据交换 t 之间的中介业务逻辑层 (BLL) 到您的业务规则...
+description: 在本教程中，我们将了解如何将业务规则集中到一种业务逻辑层（BLL）中，作为在 t 。
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 142e5181-29ce-4bb9-907b-2a0becf7928b
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e11d9d758d6bae5b657a8be51e7ee223923abc84
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2ee4789ea9567b7bcd70eb63695e0b1d73076dc2
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108239"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74572658"
 ---
 # <a name="creating-a-business-logic-layer-vb"></a>创建业务逻辑层 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_2_VB.exe)或[下载 PDF](creating-a-business-logic-layer-vb/_static/datatutorial02vb1.pdf)
+[下载示例应用](https://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_2_VB.exe)或[下载 PDF](creating-a-business-logic-layer-vb/_static/datatutorial02vb1.pdf)
 
-> 在本教程中，我们将了解如何集中用作表示层 DAL 之间交换数据的中介业务逻辑层 (BLL) 到您的业务规则。
+> 在本教程中，我们将了解如何将业务规则集中到业务逻辑层（BLL）中，以便作为表示层与 DAL 之间的数据交换中介。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-数据访问层 (DAL) 中创建[第一篇教程](creating-a-data-access-layer-vb.md)完全分隔数据访问逻辑与表示逻辑。 但是，尽管 DAL 从表示层清楚地划分数据访问详细信息，它不会强制任何可能适用的业务规则。 例如，我们的应用程序我们可能希望禁止`CategoryID`或`SupplierID`的字段`Products`表，以修改`Discontinued`字段设置为 1，或者我们可能想要强制实施资历规则，禁止情况下，员工的人在其之后雇佣的管理。 另一个常见方案是属于特定角色的授权可能只有用户可以删除产品，或者可以更改`UnitPrice`值。
+在[第一个教程](creating-a-data-access-layer-vb.md)中创建的数据访问层（DAL）将数据访问逻辑与表示逻辑完全分离。 但是，当 DAL 将数据访问详细信息与表示层完全分离时，它不会强制实施任何可能适用的业务规则。 例如，对于我们的应用程序，我们可能希望在 "`Discontinued`" 字段设置为1时不允许修改 `Products` 表的 `CategoryID` 或 `SupplierID` 字段，或者建议强制使用资历规则，禁止在员工由他们之后聘用的人员管理的情况。 另一种常见情况是授权，这种情况下，只有特定角色的用户才能删除产品，或者可以更改 `UnitPrice` 值。
 
-在本教程中，我们将了解如何集中用作表示层 DAL 之间交换数据的中介业务逻辑层 (BLL) 到这些业务规则。 在实际应用程序中，BLL 应实现作为一个单独的类库项目;但是，对于这些教程，我们将实现 BLL 作为一系列中的类我们`App_Code`文件夹，以便简化项目结构。 图 1 说明在表示层、 BLL 和 DAL 的体系结构关系。
+在本教程中，我们将了解如何将这些业务规则集中到一种业务逻辑层（BLL）中，作为表示层与 DAL 之间的数据交换中介。 在实际应用程序中，BLL 应作为单独的类库项目实现;但对于这些教程，我们会将 BLL 作为 `App_Code` 文件夹中的一系列类来实现，以便简化项目结构。 图1演示了表示层、BLL 和 DAL 之间的体系结构关系。
 
-![BLL 将表示层与数据访问层隔离和实施业务规则](creating-a-business-logic-layer-vb/_static/image1.png)
+![BLL 将表示层与数据访问层隔开，并施加业务规则](creating-a-business-logic-layer-vb/_static/image1.png)
 
-**图 1**:BLL 将表示层与数据访问层隔离和实施业务规则
+**图 1**： BLL 将表示层与数据访问层隔开，并施加业务规则
 
-而不是创建单独的类来实现我们[业务逻辑](http://en.wikipedia.org/wiki/Business_logic)，我们也可以直接在类型化数据集使用部分类中将此逻辑。 有关创建和扩展类型数据集的示例，请参阅返回第一个教程。
+我们也可以将此逻辑直接置于具有分部类的类型化数据集中，而不是创建单独的类来实现[业务逻辑](http://en.wikipedia.org/wiki/Business_logic)。 有关创建和扩展类型化数据集的示例，请参阅第一个教程。
 
-## <a name="step-1-creating-the-bll-classes"></a>步骤 1：创建 BLL 类
+## <a name="step-1-creating-the-bll-classes"></a>步骤1：创建 BLL 类
 
-我们 BLL 将组成以下四个类，一个用于在 DAL; 每个 TableAdapter每个 BLL 类将具有用于检索、 插入、 更新和删除从 DAL，将相应的业务规则应用中各自的 TableAdapter 方法。
+我们的 BLL 由四个类组成，其中一个用于 DAL 中的每个 TableAdapter;其中每个 BLL 类都具有从 DAL 中的相应 TableAdapter 检索、插入、更新和删除的方法，并应用相应的业务规则。
 
-来更顺利分隔 DAL 和 BLL 相关的类，让我们创建两个子文件夹中的`App_Code`文件夹中，`DAL`和`BLL`。 只需右键单击`App_Code`在解决方案资源管理器中的文件夹，然后选择新文件夹。 创建以下两个文件夹之后, 将移到第一个教程中创建的类型化数据集`DAL`子文件夹。
+若要更清晰地分隔 DAL 与 BLL 相关的类，请在 `App_Code` 文件夹中创建两个子文件夹，`DAL` 和 `BLL`。 只需右键单击解决方案资源管理器中的 "`App_Code`" 文件夹，然后选择 "新建文件夹" 即可。 创建这两个文件夹后，将在第一个教程中创建的类型化数据集移动到 `DAL` 子文件夹中。
 
-接下来，创建四个 BLL 类文件中的`BLL`子文件夹。 若要完成此操作，右键单击`BLL`子文件夹中，选择添加新项，然后选择类模板。 命名的四个类`ProductsBLL`， `CategoriesBLL`， `SuppliersBLL`，和`EmployeesBLL`。
+接下来，在 `BLL` 子文件夹中创建四个 BLL 类文件。 为此，请右键单击 `BLL` 子文件夹，选择 "添加新项"，然后选择 "类" 模板。 将四个类命名为 `ProductsBLL`、`CategoriesBLL`、`SuppliersBLL`和 `EmployeesBLL`。
 
 ![将四个新类添加到 App_Code 文件夹](creating-a-business-logic-layer-vb/_static/image2.png)
 
-**图 2**:添加到四个新类`App_Code`文件夹
+**图 2**：将四个新类添加到 `App_Code` 文件夹
 
-接下来，让我们将方法添加到每个类仅封装定义为从第一个教程 Tableadapter 的方法。 现在，这些方法将只需直接调用到 DAL;我们将返回更高版本中添加任何所需的业务逻辑。
+接下来，让我们向每个类添加方法，以便在第一个教程中简单地包装为 Tableadapter 定义的方法。 现在，这些方法只需直接调用 DAL;稍后我们将返回以添加任何所需的业务逻辑。
 
 > [!NOTE]
-> 如果使用 Visual Studio Standard Edition 或更高版本 (即，正在*不*使用 Visual Web Developer)，您可以根据需要设计您直观地使用的类[类设计器](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp)。 请参阅[类设计器博客](https://blogs.msdn.com/classdesigner/default.aspx)的 Visual Studio 中的此新功能的详细信息。
+> 如果你使用的是 Visual Studio Standard Edition 或更高版本（即，你*不*是使用 Visual Web Developer），则可以选择使用[类设计器](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp)直观地设计你的类。 有关 Visual Studio 中的此新功能的详细信息，请参阅[类设计器博客](https://blogs.msdn.com/classdesigner/default.aspx)。
 
-有关`ProductsBLL`我们需要添加总共七种方法的类：
+对于 `ProductsBLL` 类，我们需要添加全部七个方法：
 
 - `GetProducts()` 返回所有产品
-- `GetProductByProductID(productID)` 返回具有指定的产品 ID 的产品
-- `GetProductsByCategoryID(categoryID)` 返回从指定的类别的所有产品
-- `GetProductsBySupplier(supplierID)` 返回指定供应商提供的所有产品
-- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)` 将新产品插入到数据库中使用的值传入的程序;返回`ProductID`新插入记录的值
-- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` 更新现有产品使用传入的值; 在数据库中返回`True`精确一行已更新，如果`False`否则为
+- `GetProductByProductID(productID)` 返回具有指定产品 ID 的产品
+- `GetProductsByCategoryID(categoryID)` 返回指定类别中的所有产品
+- `GetProductsBySupplier(supplierID)` 返回指定供应商的所有产品
+- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)` 使用传入的值将新产品插入到数据库中;返回新插入记录的 `ProductID` 值
+- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` 使用传入的值更新数据库中的现有产品，如果精确更新一行，则返回 `True`，否则返回 `False`
 - `DeleteProduct(productID)` 从数据库中删除指定的产品
 
-ProductsBLL.vb
+ProductsBLL
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample1.vb)]
 
-只需返回数据的方法`GetProducts`， `GetProductByProductID`， `GetProductsByCategoryID`，和`GetProductBySuppliersID`是非常简单，因为它们只是向下调用 DAL 到。 尽管在某些情况下可能需要实现的业务规则在此级别 （例如，基于当前登录的用户或用户所属的角色的授权规则），我们将只是将这些方法作为-是。 有关这些方法，然后，BLL 用作只是通过该表示层所访问的数据访问层中的基础数据的代理。
+仅返回数据 `GetProducts`、`GetProductByProductID`、`GetProductsByCategoryID`和 `GetProductBySuppliersID` 的方法非常简单，因为它们只是向下调用 DAL。 在某些情况下，可能需要在此级别实现业务规则（例如基于当前登录用户的授权规则或用户所属的角色），只需按原样保留这些方法。 对于这些方法，BLL 只充当一个代理，通过该代理，表示层可以访问数据访问层中的基础数据。
 
-`AddProduct`和`UpdateProduct`方法同时作为参数采用各种产品字段的值并添加一个新的产品或分别更新一个现有。 因为其中许多`Product`表的列可以接受`NULL`值 (`CategoryID`， `SupplierID`，并`UnitPrice`，仅举几例)，这些输入参数`AddProduct`和`UpdateProduct`映射到此类列使用[为 null 的类型](https://msdn.microsoft.com/library/1t3y8s4s(v=vs.80).aspx)。 可以为 null 的类型不熟悉.NET 2.0 和，该值指示是否是值类型，而是提供一种技术`Nothing`。 请参阅[Paul Vick](http://www.panopticoncentral.net/)的博客文章[事实有关为 Null 的类型和 VB](http://www.panopticoncentral.net/archive/2004/06/04/1180.aspx)和的技术文档[Nullable](https://msdn.microsoft.com/library/b3h38hb0%28VS.80%29.aspx)结构的详细信息。
+`AddProduct` 和 `UpdateProduct` 方法均将各种产品字段的值作为参数，并分别添加新产品或更新现有产品。 由于许多 `Product` 表的列都可以接受 `NULL` 值（`CategoryID`、`SupplierID`和 `UnitPrice`），因此映射到此类列的 `AddProduct` 和 `UpdateProduct` 的输入参数使用[可以为 null 的类型](https://msdn.microsoft.com/library/1t3y8s4s(v=vs.80).aspx)。 可以为 null 的类型是 .NET 2.0 的新手，并提供一种方法，用于指示是否应 `Nothing`值类型。 有关更多详细信息，请参阅[Paul Vick](http://www.panopticoncentral.net/)的博客文章[可为 null 的类型和 VB](http://www.panopticoncentral.net/archive/2004/06/04/1180.aspx) ，以及[可为 null](https://msdn.microsoft.com/library/b3h38hb0%28VS.80%29.aspx)的结构的技术文档。
 
-所有三个方法返回布尔值，该值指示行是否已插入、 更新或删除，因为该操作不可能会导致受影响的行。 例如，如果页面开发人员调用`DeleteProduct`传入`ProductID`不存在产品，`DELETE`向数据库发出语句会有任何影响，因此`DeleteProduct`方法将返回`False`。
+所有这三种方法都返回一个布尔值，指示在该操作可能不会导致受影响的行后，是否插入、更新或删除行。 例如，如果页开发人员调用了不存在的产品 `DeleteProduct` 传入 `ProductID`，则向数据库发出的 `DELETE` 语句将不会产生任何影响，因此 `DeleteProduct` 方法将返回 `False`。
 
-请注意，当添加一个新的产品或更新现有我们需要新的或修改产品的字段值中的标量而不是接受列表作为`ProductsRow`实例。 选择这种方法是因为`ProductsRow`类派生自 ADO.NET`DataRow`类，其不具有默认的无参数构造函数。 若要创建一个新`ProductsRow`实例，必须先创建`ProductsDataTable`实例，然后调用其`NewProductRow()`方法 (中执行的操作`AddProduct`)。 我们打开到插入和更新使用 ObjectDataSource 产品时，这种缺陷 rears 它的头。 简单地说，ObjectDataSource 将尝试创建的输入参数的实例。 如果 BLL 方法需要`ProductsRow`实例，ObjectDataSource 将尝试创建一个，但由于缺少默认的无参数构造函数会失败。 有关此问题的详细信息，请参阅以下两个 ASP.NET 论坛帖子：[更新与 Objectdatasource 强类型化数据集](https://forums.asp.net/1098630/ShowPost.aspx)，并[问题 ObjectDataSource 和强类型化数据集](https://forums.asp.net/1048212/ShowPost.aspx)。
+请注意，当添加新的产品或更新现有的产品时，我们会将新的或已修改的产品的字段值作为标量列表，而不是接受 `ProductsRow` 的实例。 之所以选择此方法，是因为 `ProductsRow` 类派生自 ADO.NET `DataRow` 类，该类没有默认的无参数构造函数。 若要创建新的 `ProductsRow` 实例，必须首先创建一个 `ProductsDataTable` 实例，然后调用其 `NewProductRow()` 方法（在 `AddProduct`中执行此操作）。 当我们转而使用 ObjectDataSource 插入和更新产品时，这种缺点会 rears。 简而言之，ObjectDataSource 将尝试创建输入参数的实例。 如果 BLL 方法需要 `ProductsRow` 实例，则 ObjectDataSource 将尝试创建一个实例，但由于缺少默认的无参数构造函数而失败。 有关此问题的详细信息，请参阅以下两个 ASP.NET 论坛文章：[用强类型化数据集更新 objectdatasource](https://forums.asp.net/1098630/ShowPost.aspx)，并为[ObjectDataSource 和强类型化数据集提供问题](https://forums.asp.net/1048212/ShowPost.aspx)。
 
-接下来，在这种`AddProduct`并`UpdateProduct`，该代码会创建`ProductsRow`实例并填充它只是传递中的值。 将值分配到 DataRow 的 Datacolumn 会发生各种字段级验证检查。 因此，手动将传入的值返回放入 DataRow 有助于确保传递给 BLL 方法的数据的有效性。 遗憾的是由 Visual Studio 生成的强类型化 DataRow 类不使用 null 的类型。 相反，以指示应对应 DataRow 中的特定 DataColumn`NULL`数据库的值，必须使用`SetColumnNameNull()`方法。
+接下来，在 `AddProduct` 和 `UpdateProduct`中，代码创建一个 `ProductsRow` 实例，并使用刚刚传入的值填充该实例。 将值分配到 DataRow 的 Datacolumn 时，可能会发生不同的字段级验证检查。 因此，手动将传入的值放回 DataRow，有助于确保传递到 BLL 方法的数据的有效性。 遗憾的是，Visual Studio 生成的强类型 DataRow 类不使用可以为 null 的类型。 相反，若要指示 DataRow 中的特定 DataColumn 应对应于 `NULL` 数据库值，则必须使用 `SetColumnNameNull()` 方法。
 
-在中`UpdateProduct`我们首先在要更新使用的产品中加载`GetProductByProductID(productID)`。 虽然这可能看起来与数据库的不必要行程，此额外经历一次将证明值得在将来的教程中，探索了开放式并发。 乐观并发是一种技术，以确保要同时处理相同数据的两个用户避免意外覆盖彼此发生的变化。 获取整个记录还使在仅修改 DataRow 的列子集的 BLL 中创建的更新方法更加容易。 我们将探讨当`SuppliersBLL`我们会看到此类示例的类。
+在中 `UpdateProduct` 首先加载要使用 `GetProductByProductID(productID)`进行更新的产品。 尽管这可能是不必要的数据库行程，但在将来探索开放式并发的教程中，这种额外的行程会很有价值。 乐观并发是一项技术，可确保同时处理相同数据的两个用户不会意外覆盖另一个数据更改。 通过抓取整个记录，还可以更轻松地在 BLL 中创建仅修改 DataRow 列子集的更新方法。 当我们浏览 `SuppliersBLL` 类时，我们将看到这样一个示例。
 
-最后，请注意，`ProductsBLL`类具有[DataObject 属性](https://msdn.microsoft.com/library/system.componentmodel.dataobjectattribute.aspx)对其应用 (`[System.ComponentModel.DataObject]`之前的文件的顶部附近 class 语句的语法) 以及这些方法没有[DataObjectMethodAttribute 属性](https://msdn.microsoft.com/library/system.componentmodel.dataobjectmethodattribute.aspx)。 `DataObject`特性标记为适合绑定到的对象的类[ObjectDataSource 控件](https://msdn.microsoft.com/library/9a4kyhcx.aspx)，而`DataObjectMethodAttribute`指示此方法的用途。 我们将看到在将来教程，ASP.NET 2.0 ObjectDataSource 便于以声明方式访问类中的数据。 若要帮助筛选可能的类为 ObjectDataSource 的向导中要绑定到列表，默认情况下，只有标记为这些类`DataObjects`向导的下拉列表中所示。 `ProductsBLL`类也只是将工作而无需这些属性，但添加它们可以更轻松地使用 ObjectDataSource 的向导中。
+最后请注意，`ProductsBLL` 类应用了[DataObject 特性](https://msdn.microsoft.com/library/system.componentmodel.dataobjectattribute.aspx)（在文件顶部附近的类语句之前 `[System.ComponentModel.DataObject]` 语法），并且方法具有[DataObjectMethodAttribute 特性](https://msdn.microsoft.com/library/system.componentmodel.dataobjectmethodattribute.aspx)。 `DataObject` 特性将该类标记为适合绑定到[ObjectDataSource 控件](https://msdn.microsoft.com/library/9a4kyhcx.aspx)的对象，而 `DataObjectMethodAttribute` 指示该方法的用途。 我们将在将来的教程中看到，ASP.NET 2.0 的 ObjectDataSource 使你可以轻松地从类中轻松地访问数据。 为了帮助在 ObjectDataSource 的向导中筛选要绑定到的可能类的列表，默认情况下，仅在向导的下拉列表中显示标记为 `DataObjects` 的类。 `ProductsBLL` 类将同样适用于没有这些属性的情况，但添加它们可使其在 ObjectDataSource 的向导中更易于使用。
 
 ## <a name="adding-the-other-classes"></a>添加其他类
 
-使用`ProductsBLL`类完成后，我们仍需要添加用于处理类别、 供应商和员工的类。 请花费片刻时间来创建以下类和方法使用从上面的示例中的概念：
+由于 `ProductsBLL` 类完成，我们仍然需要添加类，以便与类别、供应商和员工一起使用。 使用上述示例中的概念花点时间创建以下类和方法：
 
 - **CategoriesBLL.cs**
 
@@ -100,96 +100,96 @@ ProductsBLL.vb
     - `GetEmployeeByEmployeeID(employeeID)`
     - `GetEmployeesByManager(managerID)`
 
-值得注意的一个方法是`SuppliersBLL`类的`UpdateSupplierAddress`方法。 此方法用于更新只是供应商的地址信息提供的接口。 此方法在内部，在读取`SupplierDataRow`的指定对象的`supplierID`(使用`GetSupplierBySupplierID`)，设置其与地址相关的属性，然后调入`SupplierDataTable`的`Update`方法。 `UpdateSupplierAddress`方法如下所示：
+需要注意的一种方法是 `SuppliersBLL` 类的 `UpdateSupplierAddress` 方法。 此方法提供了一个用于仅更新供应商地址信息的接口。 在内部，此方法在指定的 `supplierID` （使用 `GetSupplierBySupplierID`）的 `SupplierDataRow` 对象中读取，设置与地址相关的属性，然后向下调用 `SupplierDataTable`的 `Update` 方法。 `UpdateSupplierAddress` 方法如下：
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample2.vb)]
 
-请参阅本文的下载完整的 BLL 类实现的。
+请参阅本文的下载内容，了解如何实现 BLL 类的完整实现。
 
-## <a name="step-2-accessing-the-typed-datasets-through-the-bll-classes"></a>步骤 2：通过 BLL 类访问类型化数据集
+## <a name="step-2-accessing-the-typed-datasets-through-the-bll-classes"></a>步骤2：通过 BLL 类访问类型化数据集
 
-第一个教程中我们已了解示例直接使用的类型化数据集以编程方式，但添加了我们 BLL 类，与表示层应针对工作 BLL 相反。 在中`AllProducts.aspx`从第一个教程中，示例`ProductsTableAdapter`用于将产品列表绑定到 GridView 中后，如下面的代码中所示：
+在第一个教程中，我们看到了以编程方式直接使用类型化数据集的示例，但在添加了 BLL 类后，表示层应改为与 BLL 一起工作。 在第一个教程的 `AllProducts.aspx` 示例中，`ProductsTableAdapter` 用于将产品列表绑定到 GridView，如以下代码所示：
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample3.vb)]
 
-若要使用新的 BLL 类，所有需要的更改是第一行代码来代替`ProductsTableAdapter`对象与`ProductBLL`对象：
+若要使用新的 BLL 类，所有需要更改的都是代码的第一行，只需将 `ProductsTableAdapter` 对象替换为 `ProductBLL` 对象：
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample4.vb)]
 
-此外可以通过使用对象数据源 （如可能是类型化数据集） 以声明方式访问的 BLL 类。 我们将讨论 ObjectDataSource 中更详细地介绍以下教程中。
+还可以通过使用 ObjectDataSource 以声明方式（如类型化的数据集）访问 BLL 类。 我们将在以下教程中更详细地讨论 ObjectDataSource。
 
-[![在 GridView 中显示的产品列表](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
+[![产品列表显示在 GridView 中](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
 
-**图 3**:在 GridView 中显示的产品列表 ([单击此项可查看原尺寸图像](creating-a-business-logic-layer-vb/_static/image5.png))
+**图 3**：产品列表显示在 GridView 中（[单击以查看完全大小的图像](creating-a-business-logic-layer-vb/_static/image5.png)）
 
-## <a name="step-3-adding-field-level-validation-to-the-datarow-classes"></a>步骤 3：将字段级验证添加到 DataRow 类
+## <a name="step-3-adding-field-level-validation-to-the-datarow-classes"></a>步骤3：向 DataRow 类添加字段级验证
 
-字段级验证会检查与插入或更新时的业务对象的属性值相关。 产品的某些字段级验证规则包括：
+字段级验证是在插入或更新时与业务对象的属性值有关的检查。 某些产品的字段级验证规则包括：
 
-- `ProductName`字段必须为 40 个字符或更少字符
-- `QuantityPerUnit`字段必须为 20 个字符或更少字符
-- `ProductID`， `ProductName`，和`Discontinued`字段是必需的但所有其他字段为可选
-- `UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，和`ReorderLevel`字段必须为大于或等于零
+- `ProductName` 字段长度不能超过40个字符
+- `QuantityPerUnit` 字段长度不能超过20个字符
+- `ProductID`、`ProductName`和 `Discontinued` 字段是必需的，但所有其他字段都是可选的
+- `UnitPrice`、`UnitsInStock`、`UnitsOnOrder`和 `ReorderLevel` 字段必须大于或等于零
 
-这些规则可以和应表示在数据库级别。 字符的限制`ProductName`并`QuantityPerUnit`字段中的这些列的数据类型由捕获`Products`表 (`nvarchar(40)`和`nvarchar(20)`分别)。 如果数据库表列允许字段必选和可选来表示`NULL`s。 四个[check 约束](https://msdn.microsoft.com/library/ms188258.aspx)存在，确保只有大于或等于零的值可发出到`UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，或`ReorderLevel`列。
+这些规则可以和应在数据库级别表示。 `ProductName` 和 `QuantityPerUnit` 字段的字符限制由 `Products` 表中这些列的数据类型（分别为`nvarchar(40)` 和 `nvarchar(20)`）捕获。 如果数据库表列允许 `NULL`，则是否需要字段和可选字段。 存在四个[检查约束](https://msdn.microsoft.com/library/ms188258.aspx)，以确保只有大于或等于零的值才能使其成为 `UnitPrice`、`UnitsInStock`、`UnitsOnOrder`或 `ReorderLevel` 列。
 
-除了强制实施这些规则应用于数据库它们应还在进行强制数据集级别。 事实上，字段长度和一个值是必需还是可选已捕获的 Datacolumn 的每个 DataTable 的组。 若要查看自动提供的现有字段级别验证，请转到数据集设计器、 从 DataTables 之一中选择字段，然后转到属性窗口。 如图 4 所示，`QuantityPerUnit`中的 DataColumn `ProductsDataTable` 20 个字符的最大长度且允许`NULL`值。 如果我们尝试设置`ProductsDataRow`的`QuantityPerUnit`属性的长度超过 20 个字符的字符串值`ArgumentException`将引发。
+除了在数据库中实施这些规则外，还应在数据集级别强制执行这些规则。 事实上，对于每个 DataTable 的 Datacolumn 集，字段长度和值是必需的还是可选的。 若要查看自动提供的现有字段级别验证，请在 "数据集设计器" 中选择一个数据表中的字段，然后访问属性窗口。 如图4所示，`ProductsDataTable` 中的 `QuantityPerUnit` DataColumn 的最大长度为20个字符，且允许 `NULL` 值。 如果尝试将 `ProductsDataRow`的 `QuantityPerUnit` 属性设置为长度超过20个字符的字符串值，将会引发 `ArgumentException`。
 
-[![DataColumn 提供基本字段级验证](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
+[![DataColumn 提供基本的字段级验证](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
 
-**图 4**:DataColumn 提供基本字段级验证 ([单击此项可查看原尺寸图像](creating-a-business-logic-layer-vb/_static/image8.png))
+**图 4**： DataColumn 提供基本的字段级验证（[单击查看完全尺寸的图像](creating-a-business-logic-layer-vb/_static/image8.png)）
 
-遗憾的是，我们不能指定边界检查，如`UnitPrice`值必须大于或等于零，通过属性窗口。 为了提供此类型的字段级验证我们需要创建的 DataTable 的事件处理程序[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 如中所述[前面的教程](creating-a-data-access-layer-vb.md)，可以通过使用分部类扩展由类型化数据集创建的数据集、 数据表和 DataRow 对象。 使用这种方法，我们可以创建`ColumnChanging`事件处理程序`ProductsDataTable`类。 首先创建中的类`App_Code`文件夹名为`ProductsDataTable.ColumnChanging.vb`。
+遗憾的是，无法通过属性窗口指定边界检查（如 `UnitPrice` 值必须大于或等于零）。 为了提供此类型的字段级验证，需要为 DataTable 的[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件创建事件处理程序。 如[前面的教程](creating-a-data-access-layer-vb.md)中所述，可通过使用分部类扩展由类型化数据集创建的数据集、数据表和 DataRow 对象。 使用此技术，我们可以为 `ProductsDataTable` 类创建 `ColumnChanging` 事件处理程序。 首先在名为 `ProductsDataTable.ColumnChanging.vb``App_Code` 文件夹中创建一个类。
 
 [![将新类添加到 App_Code 文件夹](creating-a-business-logic-layer-vb/_static/image10.png)](creating-a-business-logic-layer-vb/_static/image9.png)
 
-**图 5**:添加新类中，以便`App_Code`文件夹 ([单击以查看实际尺寸的图像](creating-a-business-logic-layer-vb/_static/image11.png))
+**图 5**：将新类添加到 `App_Code` 文件夹（[单击查看完全大小的图像](creating-a-business-logic-layer-vb/_static/image11.png)）
 
-接下来，创建的事件处理程序`ColumnChanging`事件可确保`UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，并`ReorderLevel`列的值 (如果不是`NULL`) 是大于或等于零。 如果任何此类列不在范围内，则引发`ArgumentException`。
+接下来，为 `ColumnChanging` 事件创建事件处理程序，该事件可确保 `UnitPrice`、`UnitsInStock`、`UnitsOnOrder`和 `ReorderLevel` 列值（如果不 `NULL`）大于或等于零。 如果任何这样的列超出范围，则会引发 `ArgumentException`。
 
-ProductsDataTable.ColumnChanging.vb
+ProductsDataTable. ColumnChanging
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample5.vb)]
 
-## <a name="step-4-adding-custom-business-rules-to-the-blls-classes"></a>步骤 4：将自定义业务规则添加到 BLL 的类
+## <a name="step-4-adding-custom-business-rules-to-the-blls-classes"></a>步骤4：向 BLL 的类添加自定义业务规则
 
-除了字段级验证可能需要高级自定义业务规则来如涉及不同的实体或级别的单个列不表达的概念：
+除了字段级验证外，可能还存在一些高级自定义业务规则，这些规则涉及无法在单列级别表达的不同实体或概念，例如：
 
-- 如果产品缺货，其`UnitPrice`无法更新
-- 未成年人的员工的国家/地区必须与他们的经理的居住的国家/地区相同
-- 如果它是唯一的产品的供应商提供，不能停止产品
+- 如果产品停用，则无法更新其 `UnitPrice`
+- 员工居住的国家/地区必须与其居住的经理所在国家/地区相同
+- 如果产品是供应商提供的唯一产品，则无法停产
 
-BLL 类应包含检查，以确保对应用程序的业务规则的遵从性。 这些检查可以直接添加到它们适用于的方法。
+BLL 类应包含检查以确保遵守应用程序的业务规则。 这些检查可以直接添加到它们所应用到的方法中。
 
-假设我们的业务规则规定，产品无法将标记已停止使用是否它是唯一的产品从给定的供应商。 也就是说，如果产品*X*是唯一的产品，我们从供应商购买*Y*，我们无法将标记*X*如弃用; 如果有，但是，供应商*Y*提供三种产品，我们*A*， *B*，并*C*，然后我们可以将任何标记，并停止使用所有这些作为。 始终不被对齐的奇数的业务规则，但业务规则和常识 ！
+假设我们的业务规则规定，如果产品是来自给定供应商的唯一产品，则不能将其标记为停用。 也就是说，如果 product *X*是我们从供应商*Y*购买的唯一产品，我们无法将*X*标记为已停用;然而，如果供应商*Y*向我们提供了三种产品： *A*、 *B*和*C*，则可以将所有这些都标记为已停用。 不是一种很好的业务规则，但业务规则和常见意义并不总是一致！
 
-若要执行此业务规则中的`UpdateProducts`方法，我们将首先检查是否`Discontinued`已设置为`True`，因此，我们将调用`GetProductsBySupplierID`来确定多少产品我们从购买此产品的供应商。 如果只有一个产品购买此供应商，我们引发`ApplicationException`。
+若要在 `UpdateProducts` 方法中强制实施此业务规则，我们首先检查是否已将 `Discontinued` 设置为 `True`，如果是，我们会调用 `GetProductsBySupplierID` 来确定从此产品的供应商那里购买了多少产品。 如果仅从此供应商购买一种产品，则会引发 `ApplicationException`。
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample6.vb)]
 
-## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>响应的表示层中的验证错误
+## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>响应表示层中的验证错误
 
-从表示层调用 BLL 时我们可以决定是否尝试处理可能会引发或让他们归因于 ASP.NET 的任何异常 (这将引发`HttpApplication`的`Error`事件)。 若要处理的异常时以编程方式使用 BLL，我们可以使用[尝试...捕获](https://msdn.microsoft.com/library/fk6t46tz%28VS.80%29.aspx)块，如以下示例所示：
+从表示层调用 BLL 时，我们可以决定是尝试处理可能引发的任何异常，还是让它们向上冒泡到 ASP.NET （这会引发 `HttpApplication`的 `Error` 事件）。 若要在以编程方式使用 BLL 时处理异常，可以使用[Try 。Catch](https://msdn.microsoft.com/library/fk6t46tz%28VS.80%29.aspx)块，如以下示例所示：
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample7.vb)]
 
-因为我们会在将来的教程、 处理异常向上冒泡 BLL 时使用的数据从 Web 控件的插入，更新，或删除数据可以直接在事件处理程序而不是无需换行中的代码中处理`Try...Catch`块。
+正如我们将在将来的教程中看到的那样，在使用数据 Web 控件插入、更新或删除数据时，处理从 BLL 向上冒泡的异常可以直接在事件处理程序中处理，而不必在 `Try...Catch` 块中包装代码。
 
 ## <a name="summary"></a>总结
 
-良好的应用程序构建到不同的层，其中每个封装一个特定的角色。 在本系列文章的第一个教程中，我们将创建使用类型化数据集; 的数据访问层在本教程中我们构建业务逻辑层作为一系列类在应用程序中的`App_Code`向下调用 DAL 到的文件夹。 BLL 实现我们的应用程序的字段级别和业务级逻辑。 除了创建单独的 BLL，与我们在本教程中的另一个选项是扩展 Tableadapter 的方法通过使用分部类。 但是，使用此方法不允许我们重写现有方法也不会其单独的 DAL 和我们 BLL 清晰地为我们在本文中所用的方法。
+设计良好的应用程序可在不同的层中进行设计，每个层封装一个特定角色。 在本文的第一个教程中，我们创建了一个使用类型化数据集的数据访问层;在本教程中，我们构建了一个业务逻辑层作为应用程序 `App_Code` 文件夹中的一系列类，该文件夹向下调用 DAL。 BLL 实现了应用程序的字段级和业务级逻辑。 除了创建单独的 BLL 外，与我们在本教程中所做的一样，另一个选项是通过使用分部类来扩展 Tableadapter 的方法。 然而，使用这种方法并不允许我们覆盖现有方法，也不能将 DAL 和 BLL 与我们在本文中所采用的方法完全分离。
 
-DAL 和 BLL 完成后，我们准备好在我们的表示层上启动。 在中[下一教程](master-pages-and-site-navigation-vb.md)我们将会从数据访问主题简要 detour，并定义在整个教程中使用一致的页面布局。
+当 DAL 和 BLL 完成后，就可以开始在我们的表示层上着手。 在[下一教程](master-pages-and-site-navigation-vb.md)中，我们将简单 detour 数据访问主题，并定义一致的页面布局，以便在整个教程中使用。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Liz Shulok、 Dennis Patterson、 Carlos Santos 和 Hilton Giesenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Liz Shulok、Dennis Patterson 将、Carlos Santos 和 Hilton Giesenow。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](creating-a-data-access-layer-vb.md)

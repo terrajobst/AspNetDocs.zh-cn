@@ -1,249 +1,249 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs
-title: 创建和管理角色 (C#) |Microsoft Docs
+title: 创建和管理角色（C#） |Microsoft Docs
 author: rick-anderson
-description: 本教程探讨配置角色 framework 的所需的步骤。 接下来，我们将构建 web 页以创建和删除角色。
+description: 本教程将探讨配置角色框架所需的步骤。 接下来，我们将构建网页来创建和删除角色。
 ms.author: riande
 ms.date: 03/24/2008
 ms.assetid: 113f10b3-a19a-471b-8ff6-db3c79ce8a91
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a4028abf8b1593c98cb3daad03d8699a13af447d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a7883d0b05f2fa5a3fdac887f8c8b39d70418fb3
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132025"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74595837"
 ---
 # <a name="creating-and-managing-roles-c"></a>创建和管理角色 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/CS.09.zip)或[下载 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial09_CreatingRoles_cs.pdf)
+[下载代码](https://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/CS.09.zip)或[下载 PDF](https://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial09_CreatingRoles_cs.pdf)
 
-> 本教程探讨配置角色 framework 的所需的步骤。 接下来，我们将构建 web 页以创建和删除角色。
+> 本教程将探讨配置角色框架所需的步骤。 接下来，我们将构建网页来创建和删除角色。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在中<a id="_msoanchor_1"> </a> [*基于用户的授权*](../membership/user-based-authorization-cs.md)教程中我们介绍了使用 URL 授权页面的一组限制某些用户，并探讨了声明性和调整基于来访的用户的 ASP.NET 页面的功能的编程技术。 授予权限的访问页或基于用户的用户的功能，但是，可能会变得噩梦方案中的有多个用户帐户或经常更改用户的权限。 任何时候用户获得或失去授权来执行特定任务中，管理员需要更新相应的 URL 授权规则、 声明性标记和代码。
+<a id="_msoanchor_1"></a>在[*基于用户的授权*](../membership/user-based-authorization-cs.md)教程中，我们探讨了如何使用 URL 授权来限制一组页面中的某些用户，并探索了用于根据访问用户调整 ASP.NET 页面功能的声明性和编程技术。 但是，授予每个用户的页面访问权限或功能的权限，在存在多个用户帐户或用户的特权经常更改的情况下，这种情况会成为一项维护工作。 用户任何时候获得或失去执行特定任务的授权时，管理员都需要更新相应的 URL 授权规则、声明性标记和代码。
 
-通常最好先对用户进行分类为组或*角色*，然后应用基于角色的角色的权限。 例如，大多数 web 应用程序具有一组特定页面或保留仅供管理用户的任务。 在中使用的技术学习*基于用户的授权*教程中，我们将添加相应的 URL 授权规则、 声明性标记和代码，以允许指定的用户帐户以执行管理任务。 但如果已添加新的管理员或现有的管理员需要能够撤消其管理权限，则必须返回并更新配置文件和网页。 使用角色，但是，我们无法创建名为管理员角色并将这些受信任的用户分配到管理员角色。 接下来，我们将添加相应的 URL 授权规则、 声明性标记和代码，以允许管理员角色才能执行各种管理任务。 使用此基础结构，向站点添加新的管理员或删除现有只需包括或从管理员角色中删除用户。 无需配置、 声明性标记或代码更改是必需的。
+它通常有助于将用户划分到组或*角色*中，然后对角色按角色应用权限。 例如，大多数 web 应用程序都有一组特定的页面或任务，它们只为管理用户预留。 使用*基于用户的授权*教程中学习的技术，我们将添加相应的 URL 授权规则、声明性标记和代码，以允许指定的用户帐户执行管理任务。 但是，如果添加了新的管理员，或者如果现有管理员已撤消管理权限，则必须返回并更新配置文件和网页。 然而，使用角色，我们可以创建一个名为 "管理员" 的角色，并将这些受信任的用户分配给 "管理员" 角色。 接下来，我们将添加相应的 URL 授权规则、声明性标记和代码，以允许管理员角色执行各种管理任务。 此基础结构准备就绪后，将新管理员添加到该站点或删除现有管理员非常简单，只需要从管理员角色中包括或删除用户即可。 无需进行配置、声明性标记或代码更改。
 
-ASP.NET 还提供了用于定义角色，并将其与用户帐户关联的角色框架。 我们可以创建和删除角色的角色框架，添加用户或从角色中删除用户，请确定一组属于特定角色，并告知用户是否属于特定角色的用户。 一旦配置了角色框架，我们可以限制对页 URL 授权规则通过基于角色的角色的访问和显示或隐藏的其他信息或基于当前登录的用户的角色页面上的功能。
+ASP.NET 提供角色框架，用于定义角色并将其与用户帐户相关联。 使用角色框架，我们可以创建和删除角色，向角色添加用户或从中删除用户，确定属于特定角色的用户组，并判断用户是否属于特定角色。 配置角色框架后，我们可以通过 URL 授权规则限制每个角色对页面的访问，并基于当前登录用户的角色在页面上显示或隐藏其他信息或功能。
 
-本教程探讨配置角色 framework 的所需的步骤。 接下来，我们将构建 web 页以创建和删除角色。 在中<a id="_msoanchor_2"> </a> [*向用户分配角色*](assigning-roles-to-users-cs.md)教程我们将介绍如何添加和删除用户角色中。 然后在<a id="_msoanchor_3"> </a> [*基于角色的授权*](role-based-authorization-cs.md)教程中我们将了解如何限制对页以及如何调整页面功能根据基于角色的角色的访问正在访问用户的角色。 让我们进入正题！
+本教程将探讨配置角色框架所需的步骤。 接下来，我们将构建网页来创建和删除角色。 在将<a id="_msoanchor_2"> </a>[*角色分配给用户*](assigning-roles-to-users-cs.md)教程中，我们将介绍如何在角色中添加和删除用户。 在<a id="_msoanchor_3"> </a>[*基于角色的授权*](role-based-authorization-cs.md)教程中，我们将了解如何按角色限制对页面的访问，以及如何根据访问用户的角色调整页面功能。 让我们进入正题！
 
-## <a name="step-1-adding-new-aspnet-pages"></a>步骤 1：添加新的 ASP.NET 页面
+## <a name="step-1-adding-new-aspnet-pages"></a>步骤1：添加新的 ASP.NET 页面
 
-我们将在本教程并下一步的两个检查各种与角色相关的函数和功能。 我们将需要一系列的 ASP.NET 页面实现检查在这些教程中的主题。 让我们来创建这些页面和更新的站点映射。
+在本教程和接下来的两个教程中，我们将检查各种与角色相关的函数和功能。 我们将需要一系列 ASP.NET 页面来实现这些教程中所讨论的主题。 让我们创建这些页面并更新站点图。
 
-首先，创建一个新的文件夹在项目中名为`Roles`。 接下来，添加到四个新的 ASP.NET 页面`Roles`文件夹中，链接与每个页面`Site.master`母版页。 命名页：
+首先，在项目中创建一个名为 `Roles`的新文件夹。 接下来，将四个新的 ASP.NET 页面添加到 `Roles` 文件夹，将每个页面与 `Site.master` 的母版页链接。 命名页面：
 
 - `ManageRoles.aspx`
 - `UsersAndRoles.aspx`
 - `CreateUserWizardWithRoles.aspx`
 - `RoleBasedAuthorization.aspx`
 
-此时您的项目的解决方案资源管理器应类似于屏幕截图中图 1 所示。
+此时，项目的解决方案资源管理器应类似于图1所示的屏幕截图。
 
-[![四个新页面已添加到角色文件夹](creating-and-managing-roles-cs/_static/image2.png)](creating-and-managing-roles-cs/_static/image1.png)
+[已将四个新页面添加到 "角色" 文件夹中 ![](creating-and-managing-roles-cs/_static/image2.png)](creating-and-managing-roles-cs/_static/image1.png)
 
-**图 1**:四个新页已添加到`Roles`文件夹 ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image3.png))
+**图 1**：已将四个新页面添加到 `Roles` 文件夹（[单击查看完全大小的图像](creating-and-managing-roles-cs/_static/image3.png)）
 
-每个页面，此时，应有两个内容控件，另一个用于每个母版页的 Contentplaceholder:`MainContent`和`LoginContent`。
+此时，每个页面都应具有两个内容控件，一个用于母版页的每个 Contentplaceholder： `MainContent` 和 `LoginContent`。
 
 [!code-aspx[Main](creating-and-managing-roles-cs/samples/sample1.aspx)]
 
-请记住， `LoginContent` ContentPlaceHolder 的默认标记将显示在登录或注销的站点，具体取决于是否对用户进行身份验证的链接。 是否存在`Content2`内容控件在 ASP.NET 页中，但是，重写主页面的默认标记。 如中所述<a id="_msoanchor_4"> </a> [*概述的窗体身份验证*](../introduction/an-overview-of-forms-authentication-cs.md)教程中，重写默认标记很有用，我们不希望显示登录相关的页面中左侧列中的选项。
+请记住，`LoginContent` ContentPlaceHolder 的默认标记会显示一个用于登录或注销站点的链接，具体取决于是否对用户进行了身份验证。 但在 ASP.NET 页中存在 `Content2` 内容控件，但会重写母版页的默认标记。 如我们在<a id="_msoanchor_4"> </a> [*Forms 身份验证概述*](../introduction/an-overview-of-forms-authentication-cs.md)教程中所述，替代默认标记对于我们不想在左列中显示与登录相关的选项的页面非常有用。
 
-对于这四个页面，但是，我们想要显示的主页面的默认标记`LoginContent`ContentPlaceHolder。 因此，删除的声明性标记`Content2`内容控件。 执行此操作之后, 每四个页面的标记应只包含一个内容控件。
+但对于这四个页面，我们想要为 `LoginContent` ContentPlaceHolder 显示母版页的默认标记。 因此，删除 `Content2` 内容控件的声明性标记。 完成此操作后，四个页面的标记中的每一个都应该只包含一个内容控件。
 
-最后，让我们更新站点图 (`Web.sitemap`) 以包括这些新的 web 页面。 添加以下 XML 之后`<siteMapNode>`我们添加了成员身份的教程。
+最后，让我们更新网站图（`Web.sitemap`）以包含这些新网页。 在为成员资格教程添加的 `<siteMapNode>` 后面添加以下 XML。
 
 [!code-xml[Main](creating-and-managing-roles-cs/samples/sample2.xml)]
 
-使用更新的站点映射，请访问通过浏览器的站点。 如图 2 所示，在左侧的导航窗格现在为角色教程包括项。
+更新站点地图后，通过浏览器访问站点。 如图2所示，左侧的导航包含角色教程中的项。
 
-[![四个新页面已添加到角色文件夹](creating-and-managing-roles-cs/_static/image5.png)](creating-and-managing-roles-cs/_static/image4.png)
+[已将四个新页面添加到 "角色" 文件夹中 ![](creating-and-managing-roles-cs/_static/image5.png)](creating-and-managing-roles-cs/_static/image4.png)
 
-**图 2**:四个新页已添加到`Roles`文件夹 ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image6.png))
+**图 2**：已将四个新页面添加到 `Roles` 文件夹（[单击查看完全大小的图像](creating-and-managing-roles-cs/_static/image6.png)）
 
-## <a name="step-2-specifying-and-configuring-the-roles-framework-provider"></a>步骤 2：指定和配置角色框架提供程序
+## <a name="step-2-specifying-and-configuring-the-roles-framework-provider"></a>步骤2：指定和配置角色框架提供程序
 
-成员资格框架，如角色框架构建提供程序模型之上。 如中所述<a id="_msoanchor_5"> </a> [*安全基础知识和 ASP.NET 支持*](../introduction/security-basics-and-asp-net-support-cs.md)教程中，.NET Framework 附带有三个内置角色提供程序： [ `AuthorizationStoreRoleProvider` ](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx)[ `WindowsTokenRoleProvider` ](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx)，和[ `SqlRoleProvider` ](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx)。 本系列教程重点介绍`SqlRoleProvider`，它使用 Microsoft SQL Server 数据库作为角色存储。
+与成员身份框架一样，角色框架是在提供程序模型的顶层生成的。 如<a id="_msoanchor_5"> </a>[*安全基础知识和 ASP.NET 支持*](../introduction/security-basics-and-asp-net-support-cs.md)教程中所述，.NET Framework 附带了三个内置角色提供商： [`AuthorizationStoreRoleProvider`](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx)、 [`WindowsTokenRoleProvider`](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx)和[`SqlRoleProvider`](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx)。 本教程系列重点介绍 `SqlRoleProvider`，它使用 Microsoft SQL Server 数据库作为角色存储。
 
-幕后的角色框架和`SqlRoleProvider`就像成员资格框架工作和`SqlMembershipProvider`。 .NET Framework 包含`Roles`类，充当的角色框架的 API。 `Roles`类具有静态方法，如`CreateRole`， `DeleteRole`， `GetAllRoles`， `AddUserToRole`， `IsUserInRole`，依次类推。 调用下列方法之一时，`Roles`类将调用委托给配置的提供程序。 `SqlRoleProvider`适用于特定于角色的表 (`aspnet_Roles`和`aspnet_UsersInRoles`) 响应中。
+下面的内容涵盖角色框架和 `SqlRoleProvider` 工作，就像成员身份框架和 `SqlMembershipProvider`一样。 .NET Framework 包含一个 `Roles` 类，该类充当角色框架的 API。 `Roles` 类具有静态方法，如 `CreateRole`、`DeleteRole`、`GetAllRoles`、`AddUserToRole`、`IsUserInRole`等。 当调用其中一种方法时，`Roles` 类会将调用委托给已配置的提供程序。 `SqlRoleProvider` 与特定于角色的表（`aspnet_Roles` 和 `aspnet_UsersInRoles`）一起使用以响应。
 
-若要使用`SqlRoleProvider`我们的应用程序中的提供程序，我们需要指定什么数据库用作在存储区。 `SqlRoleProvider`预期要有特定的数据库表、 视图和存储的过程的指定的角色存储区。 可以使用添加这些必要的数据库对象[`aspnet_regsql.exe`工具](https://msdn.microsoft.com/library/ms229862.aspx)。 现在我们已有具有所需架构的数据库`SqlRoleProvider`。 回到<a id="_msoanchor_6"> </a> [ *SQL Server 中创建成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-cs.md)教程中，我们创建一个名为数据库`SecurityTutorials.mdf`并用`aspnet_regsql.exe`添加该应用程序服务，包括所需的数据库对象`SqlRoleProvider`。 因此我们只需告诉角色框架以启用角色支持，并使用`SqlRoleProvider`与`SecurityTutorials.mdf`作为角色存储的数据库。
+若要在应用程序中使用 `SqlRoleProvider` 提供程序，需要指定要用作存储的数据库。 `SqlRoleProvider` 要求指定的角色存储具有某些数据库表、视图和存储过程。 可以使用[`aspnet_regsql.exe` 工具](https://msdn.microsoft.com/library/ms229862.aspx)添加这些必需的数据库对象。 此时，我们已经有了一个数据库，其中包含 `SqlRoleProvider`所需的架构。 <a id="_msoanchor_6"></a>返回 SQL Server 教程创建[*成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-cs.md)中创建一个名为 `SecurityTutorials.mdf` 的数据库，并使用 `aspnet_regsql.exe` 添加应用程序服务，其中包括 `SqlRoleProvider`所需的数据库对象。 因此，只需告诉角色框架启用角色支持并将 `SqlRoleProvider` 与 `SecurityTutorials.mdf` 数据库作为角色存储。
 
-角色框架中，通过配置&lt; `roleManager` &gt;在应用程序的元素`Web.config`文件。 默认情况下，禁用角色支持。 若要启用它，必须设置[ &lt; `roleManager` &gt; ](https://msdn.microsoft.com/library/ms164660.aspx)元素的`enabled`归于`true`如下所示：
+角色框架是通过应用程序 `Web.config` 文件中的 &lt;`roleManager`&gt; 元素配置的。 默认情况下，禁用角色支持。 若要启用它，必须将[&lt;`roleManager`&gt;](https://msdn.microsoft.com/library/ms164660.aspx)元素的 `enabled` 特性设置为，`true` 如下所示：
 
 [!code-xml[Main](creating-and-managing-roles-cs/samples/sample3.xml)]
 
-默认情况下，所有 web 应用程序都具有名为角色提供程序`AspNetSqlRoleProvider`类型的`SqlRoleProvider`。 此默认提供程序中注册`machine.config`(位于`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG`):
+默认情况下，所有 web 应用程序都有一个名为 `AspNetSqlRoleProvider` 类型 `SqlRoleProvider`的角色提供程序。 此默认提供程序在 `machine.config` 中注册（位于 `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG`）：
 
 [!code-xml[Main](creating-and-managing-roles-cs/samples/sample4.xml)]
 
-提供程序的`connectionStringName`属性指定使用角色存储区。 `AspNetSqlRoleProvider`提供程序将此属性设置为`LocalSqlServer`，这也是在`machine.config`和点，默认情况下，到中的 SQL Server 2005 Express Edition 数据库`App_Data`文件夹名为`aspnet.mdf`。
+提供程序的 `connectionStringName` 属性指定使用的角色存储区。 `AspNetSqlRoleProvider` 提供程序将此属性设置为 `LocalSqlServer`，默认情况下，它也在 `machine.config` 和点中定义为名为 `App_Data` `aspnet.mdf`文件夹中的 SQL Server 2005 Express Edition 数据库。
 
-因此，如果我们只需启用角色框架未在我们的应用程序中指定的任何提供程序信息`Web.config`文件，该应用程序使用已注册的默认角色提供程序， `AspNetSqlRoleProvider`。 如果`~/App_Data/aspnet.mdf`数据库不存在，ASP.NET 运行时将自动创建并添加应用程序服务架构。 但是，我们不想要使用`aspnet.mdf`数据库; 而是，我们想要使用`SecurityTutorials.mdf`我们已经创建并添加到应用程序服务架构的数据库。 此修改可以在两种方式之一完成：
+因此，如果只是启用角色框架而不在应用程序的 `Web.config` 文件中指定任何提供程序信息，则应用程序将使用默认注册的角色提供程序，`AspNetSqlRoleProvider`。 如果 `~/App_Data/aspnet.mdf` 数据库不存在，ASP.NET 运行时将自动创建它并添加应用程序服务架构。 但是，我们不想使用 `aspnet.mdf` 数据库;相反，我们想要使用已创建的 `SecurityTutorials.mdf` 数据库，并将应用程序服务架构添加到。 可以通过以下两种方式之一完成此修改：
 
-- <strong>为指定值</strong><strong>`LocalSqlServer`</strong><strong>中的连接字符串名称</strong><strong>`Web.config`</strong><strong>。</strong> 通过覆盖`LocalSqlServer`中的连接字符串名称值`Web.config`，我们可以使用已注册的默认角色提供程序 (`AspNetSqlRoleProvider`)，并将其正确处理`SecurityTutorials.mdf`数据库。 有关此技术的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[配置为使用 SQL Server 2000 或 SQL Server 2005 ASP.NET 2.0 应用程序服务](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
-- <strong>添加新注册的提供程序类型</strong><strong>`SqlRoleProvider`</strong><strong>并配置其</strong><strong>`connectionStringName`</strong><strong>设置以指向</strong><strong>`SecurityTutorials.mdf`</strong><strong>数据库。</strong> 这是我建议，在中使用的方法<a id="_msoanchor_7"> </a> [ *SQL Server 中创建成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-cs.md)教程中，它是我在本教程还将使用的方法。
+- 为<strong>`Web.config`</strong>中<strong>`LocalSqlServer`</strong><strong>连接字符串名称</strong><strong>指定值</strong> <strong>。</strong> 通过覆盖 `Web.config`中的 `LocalSqlServer` 连接字符串名称值，我们可以使用默认的已注册角色提供程序（`AspNetSqlRoleProvider`）并使其与 `SecurityTutorials.mdf` 数据库一起正确使用。 有关此技术的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章将[ASP.NET 2.0 应用程序服务配置为使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
+- <strong>添加`SqlRoleProvider`类型的新注册的提供程序</strong> <strong>，并将其</strong><strong>`connectionStringName`</strong><strong>设置配置为指向</strong><strong>`SecurityTutorials.mdf`</strong><strong>数据库。</strong> 这是我在<a id="_msoanchor_7"> </a> [*SQL Server 教程中创建成员身份架构*](../membership/creating-the-membership-schema-in-sql-server-cs.md)时建议和使用的方法，也是我将在本教程中使用的方法。
 
-添加到以下角色配置标记`Web.config`文件。 此标记注册新的提供程序名为`SecurityTutorialsSqlRoleProvider`。
+将以下角色配置标记添加到 `Web.config` 文件中。 此标记将注册一个名为 `SecurityTutorialsSqlRoleProvider`的新提供程序。
 
 [!code-xml[Main](creating-and-managing-roles-cs/samples/sample5.xml)]
 
-上述标记定义`SecurityTutorialsSqlRoleProvider`作为默认提供程序 (通过`defaultProvider`属性中`<roleManager>`元素)。 它还设置`SecurityTutorialsSqlRoleProvider`的`applicationName`将设置为`SecurityTutorials`，这是相同`applicationName`成员资格提供程序所使用的设置 (`SecurityTutorialsSqlMembershipProvider`)。 虽然未在此处，显示[`<add>`元素](https://msdn.microsoft.com/library/ms164662.aspx)有关`SqlRoleProvider`还可能包含`commandTimeout`属性来指定数据库超时持续时间，以秒为单位。 默认值为 30。
+上面的标记将 `SecurityTutorialsSqlRoleProvider` 定义为默认提供程序（通过 `<roleManager>` 元素中的 `defaultProvider` 特性）。 它还将 `SecurityTutorialsSqlRoleProvider`的 `applicationName` 设置设置为 `SecurityTutorials`，这与成员资格提供程序（`SecurityTutorialsSqlMembershipProvider`）使用的 `applicationName` 设置相同。 尽管此处未显示，但 `SqlRoleProvider` 的[`<add>` 元素](https://msdn.microsoft.com/library/ms164662.aspx)还可能包含一个 `commandTimeout` 属性，用于指定数据库超时持续时间（以秒为单位）。 默认值为 30。
 
-与此配置标记中的位置，我们已做好开始使用我们的应用程序中的角色功能。
-
-> [!NOTE]
-> 上面的配置标记说明了如何使用&lt; `roleManager` &gt;元素的`enabled`和`defaultProvider`属性。 有多种影响角色框架如何将基于用户的用户角色信息相关联的其他属性。 我们将检查这些设置<a id="_msoanchor_8"> </a> [*基于角色的授权*](role-based-authorization-cs.md)教程。
-
-## <a name="step-3-examining-the-roles-api"></a>步骤 3：检查角色 API
-
-角色框架的功能已通过公开[`Roles`类](https://msdn.microsoft.com/library/system.web.security.roles.aspx)，其中包含十三个静态方法用于执行基于角色的操作。 当我们介绍创建和删除步骤 4 中的角色，6 我们将运用[ `CreateRole` ](https://msdn.microsoft.com/library/system.web.security.roles.createrole.aspx)并[ `DeleteRole` ](https://msdn.microsoft.com/library/system.web.security.roles.deleterole.aspx)方法，这将添加或从系统中删除角色。
-
-若要获取系统中的所有角色的列表，请使用[`GetAllRoles`方法](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx)（请参阅第 5 步）。 [ `RoleExists`方法](https://msdn.microsoft.com/library/system.web.security.roles.roleexists.aspx)返回一个布尔值，该值指示是否存在指定的角色。
-
-在下一教程中，我们将说明如何将用户与角色相关联。 `Roles`类的[ `AddUserToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertorole.aspx)， [ `AddUserToRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertoroles.aspx)， [ `AddUsersToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.adduserstorole.aspx)，和[ `AddUsersToRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.adduserstoroles.aspx)方法将一个或多个用户添加到一个或多个角色。 若要从角色中删除用户，请使用[ `RemoveUserFromRole` ](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromrole.aspx)， [ `RemoveUserFromRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromroles.aspx)， [ `RemoveUsersFromRole` ](https://msdn.microsoft.com/library/system.web.security.roles.removeusersfromrole.aspx)，或[ `RemoveUsersFromRoles` ](https://msdn.microsoft.com/library/system.web.security.roles.removeusersfromroles.aspx)方法。
-
-在中<a id="_msoanchor_9"> </a> [*基于角色的授权*](role-based-authorization-cs.md)我们将看看如何以编程方式显示或隐藏基于当前登录的用户的角色功能的教程。 若要实现此目的，我们可以使用`Role`类的[ `FindUsersInRole` ](https://msdn.microsoft.com/library/system.web.security.roles.findusersinrole.aspx)， [ `GetRolesForUser` ](https://msdn.microsoft.com/library/system.web.security.roles.getrolesforuser.aspx)， [ `GetUsersInRole` ](https://msdn.microsoft.com/library/system.web.security.roles.getusersinrole.aspx)，或[ `IsUserInRole`](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)方法。
+使用此配置标记后，便可以开始在应用程序中使用角色功能。
 
 > [!NOTE]
-> 请注意，调用这些方法之一的任何时间，`Roles`类将调用委托给配置的提供程序。 在本例中，这意味着发送到调用`SqlRoleProvider`。 `SqlRoleProvider`然后执行相应的数据库操作基于调用的方法。 例如，代码`Roles.CreateRole("Administrators")`会导致`SqlRoleProvider`执行`aspnet_Roles_CreateRole`存储过程，将插入新记录到`aspnet_Roles`表名为管理员。
+> 上述配置标记说明了如何使用 &lt;`roleManager`&gt; 元素的 `enabled` 和 `defaultProvider` 特性。 还有多个其他属性会影响角色框架如何按用户关联角色信息。 我们会在<a id="_msoanchor_8"> </a>[*基于角色的授权*](role-based-authorization-cs.md)教程中检查这些设置。
 
-本教程的其余部分介绍使用`Roles`类的`CreateRole`， `GetAllRoles`，和`DeleteRole`方法来管理系统中的角色。
+## <a name="step-3-examining-the-roles-api"></a>步骤3：检查角色 API
 
-## <a name="step-4-creating-new-roles"></a>步骤 4：创建新角色
+Role framework 的功能通过[`Roles` 类](https://msdn.microsoft.com/library/system.web.security.roles.aspx)公开，该类包含用于执行基于角色的操作的十三个静态方法。 在步骤4和6中查看创建和删除角色时，将使用[`CreateRole`](https://msdn.microsoft.com/library/system.web.security.roles.createrole.aspx)和[`DeleteRole`](https://msdn.microsoft.com/library/system.web.security.roles.deleterole.aspx)方法，这些方法可在系统中添加或删除角色。
 
-角色提供给任意组用户，一种方法，通常这种分组用于更方便的方式来应用授权规则。 但是，为了将用作我们首先需要定义在应用程序中有哪些角色的授权机制的角色。 遗憾的是，ASP.NET 没有包含 CreateRoleWizard 控件。 若要添加新角色，我们需要创建一个合适的用户界面和自己调用角色 API。 好消息是，这是很容易实现。
+若要获取系统中所有角色的列表，请使用[`GetAllRoles` 方法](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx)（请参阅步骤5）。 [`RoleExists` 方法](https://msdn.microsoft.com/library/system.web.security.roles.roleexists.aspx)返回一个布尔值，该值指示指定的角色是否存在。
+
+在下一教程中，我们将介绍如何将用户与角色相关联。 `Roles` 类的[`AddUserToRole`](https://msdn.microsoft.com/library/system.web.security.roles.addusertorole.aspx)、 [`AddUserToRoles`](https://msdn.microsoft.com/library/system.web.security.roles.addusertoroles.aspx)、 [`AddUsersToRole`](https://msdn.microsoft.com/library/system.web.security.roles.adduserstorole.aspx)和[`AddUsersToRoles`](https://msdn.microsoft.com/library/system.web.security.roles.adduserstoroles.aspx)方法将一个或多个用户添加到一个或多个角色。 若要从角色中删除用户，请使用[`RemoveUserFromRole`](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromrole.aspx)、 [`RemoveUserFromRoles`](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromroles.aspx)、 [`RemoveUsersFromRole`](https://msdn.microsoft.com/library/system.web.security.roles.removeusersfromrole.aspx)或[`RemoveUsersFromRoles`](https://msdn.microsoft.com/library/system.web.security.roles.removeusersfromroles.aspx)方法。
+
+<a id="_msoanchor_9"></a>在[*基于角色的授权*](role-based-authorization-cs.md)教程中，我们将探讨如何基于当前登录用户的角色以编程方式显示或隐藏功能。 为实现此目的，可以使用 `Role` 类的[`FindUsersInRole`](https://msdn.microsoft.com/library/system.web.security.roles.findusersinrole.aspx)、 [`GetRolesForUser`](https://msdn.microsoft.com/library/system.web.security.roles.getrolesforuser.aspx)、 [`GetUsersInRole`](https://msdn.microsoft.com/library/system.web.security.roles.getusersinrole.aspx)或[`IsUserInRole`](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)方法。
 
 > [!NOTE]
-> 虽然没有任何 CreateRoleWizard Web 控件，但没有[ASP.NET 网站管理工具](https://msdn.microsoft.com/library/ms228053.aspx)，这是本地 ASP.NET 应用程序，旨在帮助进行查看和管理 web 应用程序的配置。 但是，我并不非常热衷于 ASP.NET 网站管理工具有两个原因。 首先，有些错误并且用户体验离开还有很大。 其次，ASP.NET 网站管理工具旨在仅在本地运行，这意味着需要构建你自己的角色管理网页，如果需要远程管理在实时站点上的角色。 有关这两个原因，本教程，下一步将重点介绍在网页中的管理工具生成必要的角色，而不是依赖于 ASP.NET 网站管理工具。
+> 请记住，只要调用其中一种方法，`Roles` 类就会将调用委托给已配置的提供程序。 在我们的示例中，这意味着调用发送到 `SqlRoleProvider`。 然后，`SqlRoleProvider` 基于调用的方法执行相应的数据库操作。 例如，代码 `Roles.CreateRole("Administrators")` 生成 `SqlRoleProvider` 执行 `aspnet_Roles_CreateRole` 存储过程，该过程将新记录插入到名为 Administrators 的 `aspnet_Roles` 表中。
 
-打开`ManageRoles.aspx`页中`Roles`文件夹并向页面添加一个文本框和按钮 Web 控件。 设置 TextBox 控件`ID`属性设置为`RoleName`和按钮的`ID`并`Text`属性设置为`CreateRoleButton`和创建角色，分别。 在此情况下，页面的声明性标记应类似以下：
+本教程的其余部分介绍如何使用 `Roles` 类的 `CreateRole`、`GetAllRoles`和 `DeleteRole` 方法来管理系统中的角色。
+
+## <a name="step-4-creating-new-roles"></a>步骤4：创建新角色
+
+角色提供了任意分组用户的方式，并且大多数情况下，这种分组用于更方便地应用授权规则。 但是，若要使用角色作为授权机制，首先需要定义应用程序中存在哪些角色。 遗憾的是，ASP.NET 不包含 CreateRoleWizard 控件。 为了添加新的角色，我们需要创建合适的用户界面，并亲自调用角色 API。 好消息是，这很容易完成。
+
+> [!NOTE]
+> 尽管没有 CreateRoleWizard Web 控件，但仍有 ASP.NET 的网站[管理工具](https://msdn.microsoft.com/library/ms228053.aspx)，该工具是一个本地 ASP.NET 应用程序，旨在帮助查看和管理 Web 应用程序的配置。 但是，由于两个原因，我并不是 ASP.NET 网站管理工具的一个大风扇。 首先，这是一个很大的错误，用户体验会很有必要。 其次，ASP.NET 网站管理工具设计为仅在本地工作，这意味着，如果需要远程管理活动站点上的角色，则必须构建自己的角色管理网页。 出于这两个原因，本教程和下一个教程将重点介绍如何在网页中构建必要的角色管理工具，而不是依赖于 ASP.NET 网站管理工具。
+
+打开 `Roles` 文件夹中的 "`ManageRoles.aspx`" 页，并向页面添加一个文本框和一个按钮 Web 控件。 将 TextBox 控件的 `ID` 属性设置为 `RoleName`，按钮的 `ID` 和 `Text` 属性分别设置为 `CreateRoleButton` 和创建角色。 此时，页面的声明性标记应如下所示：
 
 [!code-aspx[Main](creating-and-managing-roles-cs/samples/sample6.aspx)]
 
-接下来，双击`CreateRoleButton`按钮在设计器中创建的控件`Click`事件处理程序，然后添加以下代码：
+接下来，双击设计器中的 "`CreateRoleButton`" 按钮控件以创建 `Click` 事件处理程序，然后添加以下代码：
 
 [!code-csharp[Main](creating-and-managing-roles-cs/samples/sample7.cs)]
 
-上面的代码首先会将修整的角色名称中输入`RoleName`文本框中的为`newRoleName`变量。 下一步，`Roles`类的`RoleExists`方法调用以确定如果角色`newRoleName`系统中已存在。 如果角色不存在，则创建它通过调用`CreateRole`方法。 如果`CreateRole`方法将传递在系统中，已存在的角色名称`ProviderException`引发异常。 这就是原因代码首先检查以确保该角色已中不存在之前调用系统`CreateRole`。 `Click`事件处理程序通过清除结束`RoleName`文本框的`Text`属性。
+上面的代码首先将在 "`RoleName`" 文本框中输入的剪裁角色名称分配给 `newRoleName` 变量。 接下来，调用 `Roles` 类的 `RoleExists` 方法来确定系统中是否已存在该角色 `newRoleName`。 如果角色不存在，则通过调用 `CreateRole` 方法创建。 如果向 `CreateRole` 方法传递系统中已存在的角色名称，则会引发 `ProviderException` 异常。 这就是代码首次检查以确保在调用 `CreateRole`之前该角色在系统中不存在的原因。 `Click` 事件处理程序通过清除 `RoleName` 文本框的 `Text` 属性来结束。
 
 > [!NOTE]
-> 您可能想知道会发生什么情况如果用户没有输入任何值`RoleName`文本框中。 如果将值传递到`CreateRole`方法是`null`或空字符串，异常引发。 同样，如果角色名称包含逗号被引发异常。 因此，页应包含验证控制措施来确保用户输入一个角色，并且它不包含任何逗号。 我将留给读者作为练习。
+> 如果用户没有在 "`RoleName`" 文本框中输入任何值，可能会想知道发生了什么情况。 如果传递到 `CreateRole` 方法的值为 `null` 或空字符串，则会引发异常。 同样，如果角色名称包含逗号，则会引发异常。 因此，页面应包含验证控件，以确保用户输入角色并且不包含任何逗号。 我为读者作了练习。
 
-让我们创建一个名为管理员角色。 请访问`ManageRoles.aspx`通过浏览器页上，在管理员键入到文本框 （请参见图 3），然后单击创建角色按钮。
+让我们创建一个名为 "管理员" 的角色。 通过浏览器访问 `ManageRoles.aspx` 页面，在文本框中键入 "管理员" （参见图3），然后单击 "创建角色" 按钮。
 
 [![创建管理员角色](creating-and-managing-roles-cs/_static/image8.png)](creating-and-managing-roles-cs/_static/image7.png)
 
-**图 3**:创建管理员角色 ([单击此项可查看原尺寸图像](creating-and-managing-roles-cs/_static/image9.png))
+**图 3**：创建管理员角色（[单击以查看完全大小的映像](creating-and-managing-roles-cs/_static/image9.png)）
 
-会发生什么情况？ 产生的回发，但没有任何视觉提示，角色实际上已被添加到系统。 我们将更新以包括可视反馈的步骤 5 中的此页面。 现在，但是，您可以验证是否已通过转到创建角色`SecurityTutorials.mdf`数据库和数据的`aspnet_Roles`表。 如图 4 所示，`aspnet_Roles`表包含一条记录为刚添加管理员角色。
+发生了什么情况？ 发生回发，但没有视觉提示，指出该角色实际上已添加到系统中。 我们将在步骤5中更新此页面以包括视觉反馈。 不过，现在可以通过转到 `SecurityTutorials.mdf` 数据库并显示 `aspnet_Roles` 表中的数据来验证角色是否已创建。 如图4所示，`aspnet_Roles` 表包含刚添加的管理员角色的记录。
 
-[![Aspnet_Roles 表中有一行管理员](creating-and-managing-roles-cs/_static/image11.png)](creating-and-managing-roles-cs/_static/image10.png)
+[![aspnet_Roles 表有一个适用于管理员的行](creating-and-managing-roles-cs/_static/image11.png)](creating-and-managing-roles-cs/_static/image10.png)
 
-**图 4**:`aspnet_Roles`表具有一个行管理员 ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image12.png))
+**图 4**： "`aspnet_Roles`" 表为管理员提供了一行（[单击以查看完全大小的图像](creating-and-managing-roles-cs/_static/image12.png)）
 
-## <a name="step-5-displaying-the-roles-in-the-system"></a>步骤 5：显示系统中的角色
+## <a name="step-5-displaying-the-roles-in-the-system"></a>步骤5：显示系统中的角色
 
-让我们来增强`ManageRoles.aspx`页以包含在系统中的当前角色的列表。 若要完成此操作，向页添加 GridView 控件并设置其`ID`属性设置为`RoleList`。 接下来，将方法添加到页面的代码隐藏类名为`DisplayRolesInGrid`使用以下代码：
+增加 `ManageRoles.aspx` 页面，使其包含系统中当前角色的列表。 若要实现此目的，请将 GridView 控件添加到页面，并将其 `ID` 属性设置为 `RoleList`。 接下来，使用以下代码将方法添加到名为 `DisplayRolesInGrid` 的页的代码隐藏类：
 
 [!code-csharp[Main](creating-and-managing-roles-cs/samples/sample8.cs)]
 
-`Roles`类的`GetAllRoles`方法返回的所有角色在系统中作为一个字符串数组。 此字符串数组，然后绑定到 GridView。 为了将角色列表绑定到 GridView，首次加载页面时，我们需要调用`DisplayRolesInGrid`方法从页面的`Page_Load`事件处理程序。 当首次访问页面，但不是在后续回发，以下代码将调用此方法。
+`Roles` 类的 `GetAllRoles` 方法以字符串数组的形式返回系统中的所有角色。 然后，将此字符串数组绑定到 GridView。 若要在第一次加载页面时将角色列表绑定到 GridView，需要从页面的 `Page_Load` 事件处理程序中调用 `DisplayRolesInGrid` 方法。 当首次访问页面时，以下代码调用此方法，而不是在后续回发时调用。
 
 [!code-csharp[Main](creating-and-managing-roles-cs/samples/sample9.cs)]
 
-利用此代码，请访问通过浏览器页面。 图 5 所示，你应该看到一个网格，包含单个列标记为项。 网格包含我们在步骤 4 中添加的管理员角色的行。
+使用此代码后，请通过浏览器访问此页。 如图5所示，你应该看到一个网格，其中包含一个标记为 "Item" 的列。 网格为在步骤4中添加的管理员角色包含一行。
 
 [![GridView 显示单个列中的角色](creating-and-managing-roles-cs/_static/image14.png)](creating-and-managing-roles-cs/_static/image13.png)
 
-**图 5**:GridView 显示单个列中的角色 ([单击此项可查看原尺寸图像](creating-and-managing-roles-cs/_static/image15.png))
+**图 5**： GridView 显示单个列中的角色（[单击以查看完全大小的图像](creating-and-managing-roles-cs/_static/image15.png)）
 
-GridView 显示单个列标记为项，因为 GridView`AutoGenerateColumns`属性设置为 True （默认值），这会导致 GridView 自动创建一个列中每个属性及其`DataSource`。 数组具有一个属性，即表示 GridView 中的单个列的数组，因此中的元素。
+GridView 将显示一个标记为 "Item" 的列，因为 GridView 的 `AutoGenerateColumns` 属性设置为 True （默认值），这会导致 GridView 自动为其 `DataSource`中的每个属性创建一个列。 数组有一个属性，该属性表示数组中的元素，因此是 GridView 中的单个列。
 
-显示与 GridView 数据时，我喜欢显式定义我的专栏，而不将它们隐式生成的 GridView。 通过显式定义列是更轻松地设置数据的格式、 重新排列这些列和执行其他常见任务。 因此，让我们更新 GridView 的声明性标记，以便其列显式定义如此。
+使用 GridView 显示数据时，我更喜欢显式定义列，而不是由 GridView 隐式生成。 通过显式定义列，可以更轻松地对数据进行格式设置、重新排列列以及执行其他常见任务。 因此，让我们更新 GridView 的声明性标记，以便显式定义其列。
 
-首先设置 GridView 的`AutoGenerateColumns`属性设置为 False。 接下来，将为 TemplateField 添加到网格中，设置其`HeaderText`属性设置为角色，并配置其`ItemTemplate`，以便它将显示数组的内容。 若要完成此操作，将添加一个名为标签 Web 控件`RoleNameLabel`到`ItemTemplate`，并将绑定其`Text`属性设置为`Container.DataItem`。
+首先，将 GridView 的 `AutoGenerateColumns` 属性设置为 False。 接下来，将 "TemplateField" 添加到网格，将其 `HeaderText` 属性设置为 "角色"，并将其 `ItemTemplate` 配置为显示数组的内容。 若要实现此目的，请将名为 `RoleNameLabel` 的标签 Web 控件添加到 `ItemTemplate`，并将其 `Text` 属性绑定到 `Container.DataItem`。
 
-这些属性和`ItemTemplate`的内容可以设置以声明方式或通过 GridView 的字段对话框和编辑模板接口。 若要访问字段对话框中，单击 GridView 的智能标记中的编辑列链接。 接下来，取消选中自动生成字段复选框以设置`AutoGenerateColumns`属性设置为 False，并将 TemplateField 添加到 GridView，设置其`HeaderText`到角色的属性。 若要定义`ItemTemplate`的内容，从 GridView 的智能标记中选择编辑模板选项。 将标签 Web 控件拖到`ItemTemplate`，请将其`ID`属性设置为`RoleNameLabel`，并配置其数据绑定设置，以便其`Text`属性绑定到`Container.DataItem`。
+可以通过声明方式或通过 GridView 的 "字段" 对话框和编辑模板界面来设置这些属性和 `ItemTemplate`的内容。 若要访问 "字段" 对话框，请单击 GridView 智能标记中的 "编辑列" 链接。 接下来，取消选中 "自动生成字段" 复选框，将 `AutoGenerateColumns` 属性设置为 False，并将 TemplateField 添加到 GridView，并将其 `HeaderText` 属性设置为 Role。 若要定义 `ItemTemplate`的内容，请从 GridView 的智能标记选择 "编辑模板" 选项。 将标签 Web 控件拖动到 `ItemTemplate`上，将其 `ID` 属性设置为 `RoleNameLabel`，并配置其数据绑定设置，以便将其 `Text` 属性绑定到 `Container.DataItem`。
 
-无论您使用什么方法，GridView 的所得的声明性标记应类似于以下完成后。
+不管你使用哪种方法，在完成后，GridView 生成的声明性标记应类似于以下内容。
 
 [!code-aspx[Main](creating-and-managing-roles-cs/samples/sample10.aspx)]
 
 > [!NOTE]
-> 数组的内容将显示使用数据绑定语法`<%# Container.DataItem %>`。 显示数组的内容绑定到 GridView 时为什么要使用此语法的详尽描述不在本教程的范围。 有关此问题的详细信息，请参阅[标量数组绑定到数据 Web 控件](http://aspnet.4guysfromrolla.com/articles/082504-1.aspx)。
+> 使用数据绑定语法 `<%# Container.DataItem %>`显示数组的内容。 有关在显示绑定到 GridView 的数组内容时使用此语法的详细说明，不在本教程的讨论范围之内。 有关此问题的详细信息，请参阅将[标量数组绑定到数据 Web 控件](http://aspnet.4guysfromrolla.com/articles/082504-1.aspx)。
 
-目前， `RoleList` GridView 只绑定到的角色列表，当首次访问页面时。 我们需要添加新角色时刷新该网格。 若要完成此操作，更新`CreateRoleButton`按钮的`Click`事件处理程序以便调用`DisplayRolesInGrid`方法如果创建新的角色。
+目前，在首次访问页面时，`RoleList` GridView 仅绑定到角色列表。 需要在添加新角色时刷新网格。 若要完成此操作，请更新 "`CreateRoleButton`" 按钮的 `Click` 事件处理程序，以便在创建新角色时调用 `DisplayRolesInGrid` 方法。
 
 [!code-csharp[Main](creating-and-managing-roles-cs/samples/sample11.cs)]
 
-现在当用户添加新角色`RoleList`GridView 显示刚添加的角色在回发时，提供视觉反馈已成功创建该角色。 若要说明这一点，请访问`ManageRoles.aspx`通过浏览器页上，添加名为在监督器的角色。 单击创建角色按钮，为在回发将会随之发生和网格将更新以包括管理员以及新角色，在监督器。
+现在，当用户添加新角色时，`RoleList` GridView 会在回发时显示刚刚添加的角色，并提供成功创建角色的视觉反馈。 为了说明这一点，请通过浏览器访问 `ManageRoles.aspx` 页面，并添加一个名为监察员的角色。 单击 "创建角色" 按钮后，将不幸回发，并将更新网格，使其包括管理员以及新的角色监察员。
 
-[![在监督器角色具有已添加](creating-and-managing-roles-cs/_static/image17.png)](creating-and-managing-roles-cs/_static/image16.png)
+[已添加 "监察员" 角色 ![](creating-and-managing-roles-cs/_static/image17.png)](creating-and-managing-roles-cs/_static/image16.png)
 
-**图 6**:在监督器角色具有已添加 ([单击此项可查看原尺寸图像](creating-and-managing-roles-cs/_static/image18.png))
+**图 6**：添加了 "监察员" 角色（[单击以查看完全大小的映像](creating-and-managing-roles-cs/_static/image18.png)）
 
-## <a name="step-6-deleting-roles"></a>步骤 6：删除角色
+## <a name="step-6-deleting-roles"></a>步骤6：删除角色
 
-现在用户可以创建新的角色并查看中的所有现有角色`ManageRoles.aspx`页。 让我们允许用户删除角色。 `Roles.DeleteRole`方法有两个重载：
+此时，用户可以创建新角色，并从 "`ManageRoles.aspx`" 页查看所有现有角色。 允许用户也删除角色。 `Roles.DeleteRole` 方法有两个重载：
 
-- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx) -删除该角色*roleName*。 如果角色包含一个或多个成员，将引发异常。
-- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx) -删除该角色*roleName*。 如果*throwOnPopulateRole*是`true`，则该角色包含一个或多个成员而引发异常。 如果*throwOnPopulateRole*是`false`，则它或不包含任何成员是否删除此角色。 在内部，`DeleteRole(roleName)`方法调用`DeleteRole(roleName, true)`。
+- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx) -*删除角色角色*。 如果角色包含一个或多个成员，则会引发异常。
+- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx) -*删除角色角色*。 如果 `true`*throwOnPopulateRole* ，则在角色包含一个或多个成员时将引发异常。 如果 `false`*throwOnPopulateRole* ，则无论角色是否包含任何成员，都将被删除。 在内部，`DeleteRole(roleName)` 方法调用 `DeleteRole(roleName, true)`。
 
-`DeleteRole`方法也将引发异常，如果*roleName*是`null`或空字符串或者，如果*roleName*包含逗号。 如果*roleName*不在系统中，存在`DeleteRole`失败以无提示方式，并且不会引发异常。
+如果使用了 "工作的 `null`" 或 "空字符串" 或 *"包含逗号* *"，则*`DeleteRole` 方法也将引发异常。 如果*系统中不存在*该工作项，`DeleteRole` 会悄悄地失败，而不会引发异常。
 
-让我们来增强 GridView 中的`ManageRoles.aspx`包括一个删除按钮，单击时，将删除所选的角色。 首先通过转到字段对话框并添加一个删除按钮，位于 CommandField 选项下将删除按钮添加到 GridView。 请删除按钮左侧的列，然后设置其`DeleteText`属性设置为删除的角色。
+接下来，我们将 `ManageRoles.aspx` 中的 GridView 补充为包含一个删除按钮，单击该按钮将删除所选角色。 首先将 "删除" 按钮添加到 GridView，方法是转到 "字段" 对话框并添加 "删除" 按钮，该按钮位于 "CommandField" 选项下。 使 "删除" 按钮成为最左侧的列，并将其 `DeleteText` 属性设置为 "删除角色"。
 
-[![将删除按钮添加到 RoleList GridView](creating-and-managing-roles-cs/_static/image20.png)](creating-and-managing-roles-cs/_static/image19.png)
+[![向 RoleList GridView 添加 "删除" 按钮](creating-and-managing-roles-cs/_static/image20.png)](creating-and-managing-roles-cs/_static/image19.png)
 
-**图 7**:添加到一个删除按钮`RoleList`GridView ([单击以查看实际尺寸的图像](creating-and-managing-roles-cs/_static/image21.png))
+**图 7**：将 "删除" 按钮添加到 `RoleList` GridView （[单击以查看完全大小的图像](creating-and-managing-roles-cs/_static/image21.png)）
 
-以后将添加删除按钮，GridView 的声明性标记看起来应类似于下面：
+添加 "删除" 按钮后，GridView 的声明性标记应如下所示：
 
 [!code-aspx[Main](creating-and-managing-roles-cs/samples/sample12.aspx)]
 
-接下来，为 GridView 的创建事件处理程序`RowDeleting`事件。 这是单击删除角色按钮时，在回发时引发的事件。 将以下代码添加到该事件处理程序中。
+接下来，为 GridView 的 `RowDeleting` 事件创建事件处理程序。 这是在单击 "删除角色" 按钮时对回发引发的事件。 将以下代码添加到该事件处理程序中。
 
 [!code-csharp[Main](creating-and-managing-roles-cs/samples/sample13.cs)]
 
-代码将开始通过以编程方式引用`RoleNameLabel`Web 控件中的删除角色按钮被单击的行。 `Roles.DeleteRole`然后调用方法，并传入`Text`的`RoleNameLabel`和`false`，从而删除该角色，而不管是否有任何与角色关联的用户。 最后， `RoleList` GridView 刷新，以便只删除角色不会再出现在网格中。
+代码首先以编程方式在单击了 "删除角色" 按钮的行中引用 `RoleNameLabel` Web 控件。 然后调用 `Roles.DeleteRole` 方法，并传入 `RoleNameLabel` 和 `false`的 `Text`，从而删除角色，无论是否存在任何与该角色关联的用户。 最后，将刷新 `RoleList` GridView，使刚删除的角色不再出现在网格中。
 
 > [!NOTE]
-> 删除角色按钮不需要用户确认删除该角色之前的任何排序。 若要确认某项操作的最简单方法之一是通过客户端的确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-cs.aspx)。
+> 删除角色之前，"删除角色" 按钮不需要用户进行任何类型的确认。 确认操作的最简单方法之一是通过客户端确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-cs.aspx)。
 
 ## <a name="summary"></a>总结
 
-许多 web 应用程序具有特定的授权规则或页级别仅可供特定类别的用户的功能。 例如，可能有一组只有管理员才可以访问的 web 页面。 而不是基于用户的用户定义这些授权规则，通常很多有用来定义基于角色的规则。 也就是说，而不是显式允许用户访问管理网页，Scott 并 Jisun，更易于维护的方法是，允许管理员角色的成员访问这些页面，然后分别表示为属于用户 Scott 和 Jisun管理员角色。
+许多 web 应用程序都有某些授权规则或页面级别的功能，这些功能仅适用于某些类的用户。 例如，可能有一组只有管理员才能访问的网页。 通常，根据角色定义规则更有用，而不是逐个用户地定义这些授权规则。 也就是说，更易于维护的方法是允许管理员角色的成员访问这些页面，然后将 Scott 和 Jisun 表示为用户，而不是明确地允许用户 Jisun 访问管理网页。Administrators 角色。
 
-角色框架轻松创建和管理角色。 在本教程中介绍了如何配置要使用的角色框架`SqlRoleProvider`，它使用 Microsoft SQL Server 数据库作为角色存储。 我们还创建一个网页，列出了系统中的现有角色，并允许创建的新角色和现有功能，可删除。 在后续教程中我们将看到如何将用户分配到角色以及如何将应用基于角色的授权。
+角色框架可以轻松创建和管理角色。 在本教程中，我们介绍了如何将角色框架配置为使用 `SqlRoleProvider`，后者使用 Microsoft SQL Server 数据库作为角色存储。 我们还创建了一个网页，其中列出了系统中的现有角色，并允许创建新角色并删除现有角色。 在后续教程中，我们将了解如何将用户分配到角色，以及如何应用基于角色的授权。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [检查 ASP.NET 2.0 的成员资格、 角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
+- [检查 ASP.NET 2.0 的成员资格、角色和配置文件](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [如何：在 ASP.NET 2.0 中使用角色管理器](https://msdn.microsoft.com/library/ms998314.aspx)
 - [角色提供程序](https://msdn.microsoft.com/library/aa478950.aspx)
 - [滚动你自己的网站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [技术文档`<roleManager>`元素](https://msdn.microsoft.com/library/ms164660.aspx)
-- [使用成员资格和角色管理器 Api](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/membership.aspx)
+- [`<roleManager>` 元素的技术文档](https://msdn.microsoft.com/library/ms164660.aspx)
+- [使用成员身份和角色管理器 Api](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/membership.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已使用 Microsoft Web 技术，1998。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是， *[在24小时内，sam ASP.NET 2.0](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以通过[http://ScottOnWriting.NET](http://scottonwriting.net/) [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com)或通过他的博客访问 Scott。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者包括 Alicja Maziarz、 Suchi Banerjee 和 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管评审者包括 Alicja Maziarz、Suchi Banerjee 和 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [下一页](assigning-roles-to-users-cs.md)

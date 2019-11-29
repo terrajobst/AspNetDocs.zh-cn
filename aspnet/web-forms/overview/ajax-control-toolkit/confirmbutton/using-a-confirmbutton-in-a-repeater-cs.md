@@ -1,53 +1,53 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
-title: 在 Repeater (C#) 中使用 ConfirmButton |Microsoft Docs
+title: 在 Repeater 中使用 ConfirmButton （C#） |Microsoft Docs
 author: wenz
-description: AJAX 控件工具包中的 ConfirmButton 扩展器创建答： 是/没有弹出菜单，用户单击按钮时 （包括 LinkButton 控件）。 仅当是是...
+description: 当用户单击按钮（包括 LinkButton 控件）时，AJAX 控件工具包中的 ConfirmButton 扩展器将创建 "是/否" 弹出窗口。 仅在 "是" 时 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a973ed3e-400c-4925-ace2-0b086b479301
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 783562bb1a8790e1254dab5bff92da480a6fd56d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 468a830f01c48dc39b22bc5d826f80533df65c1a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109154"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74574392"
 ---
 # <a name="using-a-confirmbutton-in-a-repeater-c"></a>在 Repeater 中使用 ConfirmButton (C#)
 
-通过[Christian Wenz](https://github.com/wenz)
+作者： [Christian Wenz](https://github.com/wenz)
 
-[下载代码](http://download.microsoft.com/download/8/6/d/86dea6c6-bb92-4fa6-aa14-f8c0f82100f5/ConfirmButton1.cs.zip)或[下载 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/confirmbutton1CS.pdf)
+[下载代码](https://download.microsoft.com/download/8/6/d/86dea6c6-bb92-4fa6-aa14-f8c0f82100f5/ConfirmButton1.cs.zip)或[下载 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/confirmbutton1CS.pdf)
 
-> AJAX 控件工具包中的 ConfirmButton 扩展器创建答： 是/没有弹出菜单，用户单击按钮时 （包括 LinkButton 控件）。 仅当单击是，则执行是按钮的操作，否则取消。 这也是可以在 repeater 中。
+> 当用户单击按钮（包括 LinkButton 控件）时，AJAX 控件工具包中的 ConfirmButton 扩展器将创建 "是/否" 弹出窗口。 仅当单击 "是" 时，才会执行该按钮的操作，否则取消该操作。 这也可能出现在中继器中。
 
 ## <a name="overview"></a>概述
 
-AJAX 控件工具包中的 ConfirmButton 扩展器创建答： 是/没有弹出菜单，用户单击按钮时 （包括 LinkButton 控件）。 仅当单击是，则执行是按钮的操作，否则取消。 这也是可以在 repeater 中。
+当用户单击按钮（包括 LinkButton 控件）时，AJAX 控件工具包中的 ConfirmButton 扩展器将创建 "是/否" 弹出窗口。 仅当单击 "是" 时，才会执行该按钮的操作，否则取消该操作。 这也可能出现在中继器中。
 
 ## <a name="steps"></a>步骤
 
-首先，数据源是必需的。 此示例使用 AdventureWorks 数据库和 Microsoft SQL Server 2005 Express Edition。 数据库是可选的组成部分 （包括速成版） 的 Visual Studio 安装，并且仍可单独下载下[ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064)。 AdventureWorks 数据库是 SQL Server 2005 示例和示例数据库的一部分 (在下载[ https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp; DisplayLang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en))。 若要设置数据库的最简单方法是使用 Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp; DisplayLang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en))，并将附加`AdventureWorks.mdf`数据库文件。
+首先，数据源是必需的。 此示例使用 AdventureWorks 数据库和 Microsoft SQL Server 2005 Express Edition。 数据库是 Visual Studio 安装（包括 express edition）的可选部分，也可在[https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064)下单独下载。 AdventureWorks 数据库是 SQL Server 2005 示例和示例数据库（ [https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en)）的一部分。 最简单的数据库设置方法是使用 Microsoft SQL Server Management Studio Express （[https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en)）并附加 `AdventureWorks.mdf` 数据库文件。
 
-对于此示例中，我们假定 SQL Server 2005 Express Edition 的实例称为`SQLEXPRESS`和驻留在与 web 服务器; 在同一台计算机上这也是默认设置。 如果你的设置不同，您必须调整数据库的连接信息。
+对于此示例，我们假定 SQL Server 2005 Express Edition 的实例 `SQLEXPRESS`，并驻留在与 web 服务器相同的计算机上;这也是默认设置。 如果你的设置不同，则必须修改数据库的连接信息。
 
-若要激活 ASP.NET AJAX 控件工具包的功能`ScriptManager`控件必须添加到任何位置的页上 (但在`<form>`元素):
+若要激活 ASP.NET AJAX 和控件工具包的功能，必须将 `ScriptManager` 控件放置在页面上的任何位置（但 `<form>` 元素中）：
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample1.aspx)]
 
-然后，数据源是必需的。 为简单起见，检索仅 AdventureWorks 的供应商表中的前五个条目。 请注意，当使用 Visual Studio 向导来创建数据源时，表名 (`Vendors`) 当前不使用正确的前缀与`Purchasing`。 以下标记是正确的订阅：
+然后需要数据源。 为了简单起见，只检索 AdventureWorks 的 "供应商" 表中的前五个条目。 请注意，使用 Visual Studio 向导创建数据源时，表名称（`Vendors`）当前没有正确地以 `Purchasing`为前缀。 以下标记是正确的：
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample2.aspx)]
 
-然后可以在 repeater 中使用此数据源。 像往常一样，`DataBinder.Eval()`方法从数据源检索数据。 `ConfirmButtonExtender`然后必须将控件放在`<ItemTemplate>`中继器使其显示为数据源中的每个条目的部分。
+然后，可以在中继器内使用此数据源。 与往常一样，`DataBinder.Eval()` 方法从数据源中检索数据。 然后，必须将 `ConfirmButtonExtender` 控件放置在 repeater 的 `<ItemTemplate>` 部分中，以便将其显示在数据源中的每个条目中。
 
 [!code-aspx[Main](using-a-confirmbutton-in-a-repeater-cs/samples/sample3.aspx)]
 
-[![数据源的每个项旁边显示确认按钮](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
+[!["确认" 按钮显示在数据源中的每个条目旁边](using-a-confirmbutton-in-a-repeater-cs/_static/image2.png)](using-a-confirmbutton-in-a-repeater-cs/_static/image1.png)
 
-数据源的每个项旁边显示确认按钮 ([单击此项可查看原尺寸图像](using-a-confirmbutton-in-a-repeater-cs/_static/image3.png))
+"确认" 按钮显示在数据源中的每个条目旁边（[单击以查看完全大小的图像](using-a-confirmbutton-in-a-repeater-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [下一页](using-a-confirmbutton-in-a-repeater-vb.md)

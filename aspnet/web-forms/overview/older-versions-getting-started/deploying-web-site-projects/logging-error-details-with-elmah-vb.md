@@ -1,248 +1,248 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
-title: ELMAH (VB) 的日志记录错误详细信息 |Microsoft Docs
+title: 日志记录错误详细信息（VB） |Microsoft Docs
 author: rick-anderson
-description: 错误日志记录模块和处理程序 (ELMAH) 提供了另一种方法在生产环境中记录运行时错误。 ELMAH 是免费的开放源代码错误...
+description: 错误日志记录模块和处理程序（ELMAH）提供了在生产环境中记录运行时错误的另一种方法。 ELMAH 是一个免费的开源错误 。
 ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: a5f0439f-18b2-4c89-96ab-75b02c616f46
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3b3b96232f46e7f9e7cbd47b109bf4b7056ed34a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 46b7fc22807c8cb9f47ff035639815d7b6104735
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132365"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74622258"
 ---
 # <a name="logging-error-details-with-elmah-vb"></a>ELMAH 的日志记录错误详细信息 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_VB.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_vb.pdf)
+[下载代码](https://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_VB.zip)或[下载 PDF](https://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_vb.pdf)
 
-> 错误日志记录模块和处理程序 (ELMAH) 提供了另一种方法在生产环境中记录运行时错误。 ELMAH 是一个免费的开放源代码错误日志记录库，包括错误筛选和查看错误日志在网页上，为 RSS 源，或下载作为以逗号分隔的文件的功能等功能。 本教程将指导完成下载和配置 ELMAH。
+> 错误日志记录模块和处理程序（ELMAH）提供了在生产环境中记录运行时错误的另一种方法。 ELMAH 是一个免费的开源错误日志记录库，其中包含一些功能，例如错误筛选功能，还可以查看网页中的错误日志，作为 RSS 源，或将其作为逗号分隔的文件下载。 本教程介绍如何下载和配置 ELMAH。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-[前面的教程](logging-error-details-with-asp-net-health-monitoring-vb.md)检查 ASP。NET 的运行状况监控系统，它提供用于记录了很多 Web 事件框库的扩展。 许多开发人员使用的运行状况监视日志并通过电子邮件的未经处理的异常详细信息。 但是，有与此系统的一些痛点。 首先是缺少任何类型的用户界面，用于查看有关已记录事件的信息。 如果你想要看到的 10 个的最后一个错误，摘要或查看过去一周发生了错误的详细信息，则必须通过数据库任一挤出、 浏览你的电子邮件收件箱，或生成显示的信息的网页`aspnet_WebEvent_Events`表。
+[前面的教程](logging-error-details-with-asp-net-health-monitoring-vb.md)探讨了 ASP。NET 的运行状况监视系统，它提供了一个现成的库，用于记录范围广泛的 Web 事件。 许多开发人员使用运行状况监视来记录未经处理的异常的详细信息并发送电子邮件。 不过，此系统有一些难题。 首先，最重要的是，缺少任何类型的用户界面来查看有关记录的事件的信息。 如果要查看最近10个错误的摘要，或查看上周发生的错误的详细信息，则必须浏览数据库、扫描电子邮件收件箱或生成显示 `aspnet_WebEvent_Events` 表中的信息的网页。
 
-另一个难题是围绕运行状况监视的复杂性。 由于运行状况监视可用于记录大量不同的事件，并且有多种选项来指导如何以及何时记录事件，正确配置运行状况监控系统可能相当繁琐的任务。 最后，还有一些兼容性问题。 因为运行状况监视第一次添加到.NET Framework 2.0 版中，不可用较旧 web 构建的应用程序使用的 ASP.NET 版本 1.x。 此外，`SqlWebEventProvider`类，我们使用在前面的教程到数据库的日志错误详细信息，仅适用于 Microsoft SQL Server 数据库。 您需要创建自定义日志提供程序类应需要到备用数据存储，如 XML 文件或 Oracle 数据库中记录错误。
+其他难点围绕运行状况监视的复杂性。 由于运行状况监视可用于记录不同事件的很多，因此，由于有多种选项可用于指示事件的记录方式和时间，正确配置运行状况监视系统可能是一件繁重的任务。 最后，存在兼容性问题。 由于运行状况监视首先添加到版本2.0 中的 .NET Framework，因此对于使用 ASP.NET 版本1.x 生成的旧版 web 应用程序不可用。 此外，在前面的教程中，我们使用的 `SqlWebEventProvider` 类将错误详细信息记录到数据库中，只适用于 Microsoft SQL Server 的数据库。 如果需要将错误记录到备用数据存储（如 XML 文件或 Oracle 数据库），则需要创建自定义日志提供程序类。
 
-运行状况监控系统的替代方法是错误日志记录模块和处理程序 (ELMAH)，通过创建一个免费、 开源的错误日志记录系统[Atif Aziz](http://www.raboof.com/)。 两个系统之间最明显的区别是 ELAMH 的功能，以显示 RSS 源的形式的错误和从网页和一个特定错误的详细信息的列表。 ELMAH 是更轻松地配置比运行状况监视，因为它仅记录错误。 此外，elmah 却包含支持 ASP.NET 1.x、 ASP.NET 2.0 中，和 ASP.NET 3.5 应用程序，以及与各种日志源提供程序一起提供。
+运行状况监视系统的替代方法是错误日志记录模块和处理程序（ELMAH），这是由[Atif Aziz](http://www.raboof.com/)创建的一个免费的开源错误日志记录系统。 这两个系统之间最明显的区别在于，ELAMH 可以显示一个错误列表，还可以在网页中显示特定错误的详细信息，并将其作为 RSS 源来显示。 ELMAH 比运行状况监视更易于配置，因为它只记录错误。 此外，ELMAH 还支持 ASP.NET 1.x、ASP.NET 2.0 和 ASP.NET 3.5 应用程序，并附带各种日志源提供程序。
 
-本教程将指导完成将 ELMAH 添加到 ASP.NET 应用程序所涉及的步骤。 让我们进入正题！
+本教程介绍了向 ASP.NET 应用程序添加 ELMAH 所涉及的步骤。 让我们进入正题！
 
 > [!NOTE]
-> 运行状况监控系统和 ELMAH 都有其自己的优点和缺点。 我鼓励您尝试这两个系统并决定哪一个最适合你的需求。
+> 运行状况监视系统和 ELMAH 都有其各自的优缺点。 我鼓励您尝试这两个系统，并决定哪一种最适合您的需求。
 
 ## <a name="adding-elmah-to-an-aspnet-web-application"></a>将 ELMAH 添加到 ASP.NET Web 应用程序
 
-将 ELMAH 集成到一个新的或现有的 ASP.NET 应用程序是一个简单、 直接的过程，将在五分钟。 简单地说，它涉及四个简单步骤：
+将 ELMAH 集成到新的或现有的 ASP.NET 应用程序是一个简单且简单的过程，只需5分钟即可完成。 简而言之，它涉及四个简单的步骤：
 
-1. 下载 ELMAH 并添加`Elmah.dll`到 web 应用程序，程序集
-2. ELMAH 的 HTTP 模块和处理程序中的注册`Web.config`，
-3. 指定 ELMAH 的配置选项和
-4. 如果需要，创建错误日志中的源基础结构。
+1. 下载 ELMAH 并将 `Elmah.dll` 程序集添加到你的 web 应用程序，
+2. 在 `Web.config`中注册 ELMAH 的 HTTP 模块和处理程序。
+3. 指定 ELMAH 的配置选项，并
+4. 如果需要，请创建错误日志源基础结构。
 
-让我们演练一下每个四个步骤，一次一个。
+让我们逐一演练其中每个步骤。
 
-### <a name="step-1-downloading-the-elmah-project-files-and-addingelmahdllto-your-web-application"></a>步骤 1：下载 ELMAH 项目文件并将添加`Elmah.dll`对 Web 应用程序
+### <a name="step-1-downloading-the-elmah-project-files-and-addingelmahdllto-your-web-application"></a>步骤1：下载 ELMAH 项目文件并将`Elmah.dll`添加到 Web 应用程序
 
-ELMAH 1.0 BETA 3 (生成 10617)，在本文撰写之际，最新版本包含在适用于本教程中下载。 或者，也可以访问[ELMAH 网站](https://code.google.com/p/elmah/)以获取最新版本，或要下载的源代码。 提取 ELMAH 下载到您的桌面上的文件夹并找到 ELMAH 程序集文件 (`Elmah.dll`)。
-
-> [!NOTE]
-> `Elmah.dll`文件位于下载的`Bin`文件夹，其中具有不同的.NET Framework 版本和版本和调试版本中的子文件夹。 使用合适的框架版本的发布版本。 例如，如果您正在构建的 ASP.NET 3.5 web 应用程序，复制`Elmah.dll`文件从`Bin\net-3.5\Release`文件夹。
-
-接下来，打开 Visual Studio 并右键单击网站名称，在解决方案资源管理器并从上下文菜单中选择添加引用添加到你的项目的程序集。 此时会打开添加引用对话框。 导航到浏览选项卡，然后选择`Elmah.dll`文件。 此操作将添加`Elmah.dll`web 应用程序的文件`Bin`文件夹。
+ELMAH 1.0 BETA 3 （版本10617）（编写时的最新版本）包含在随本教程提供的下载中。 或者，你可以访问[ELMAH 网站](https://code.google.com/p/elmah/)以获取最新版本或下载源代码。 将 ELMAH 下载内容提取到桌面上的文件夹，并找到 ELMAH assembly 文件（`Elmah.dll`）。
 
 > [!NOTE]
-> Web 应用程序项目 (WAP) 类型不会显示`Bin`在解决方案资源管理器中的文件夹。 相反，它列出了引用文件夹下的这些项。
+> `Elmah.dll` 文件位于下载 `Bin` 文件夹中，该文件夹包含不同 .NET Framework 版本的子文件夹，以及发布和调试版本。 使用适当 framework 版本的发布版本。 例如，如果要生成 ASP.NET 3.5 web 应用程序，请从 `Bin\net-3.5\Release` 文件夹复制 `Elmah.dll` 文件。
 
-`Elmah.dll`程序集包括 ELMAH 系统使用的类。 这些类分为三个类别之一：
+接下来，打开 Visual Studio，右键单击 "解决方案资源管理器中的" 网站名称 "，然后从上下文菜单中选择" 添加引用 "，将程序集添加到项目。 此时将打开 "添加引用" 对话框。 导航到 "浏览" 选项卡，然后选择 "`Elmah.dll` 文件。 此操作会将 `Elmah.dll` 文件添加到 web 应用程序的 `Bin` 文件夹中。
 
-- **HTTP 模块**的 HTTP 模块是一个定义的事件处理程序类`HttpApplication`事件，如`Error`事件。 Elmah 却包含多个 HTTP 模块，三个最无关的要： 
+> [!NOTE]
+> Web 应用程序项目（WAP）类型不会在解决方案资源管理器中显示 `Bin` 文件夹。 相反，它会在 "引用" 文件夹下列出这些项。
 
-    - `ErrorLogModule` -将未经处理的异常记录到日志源。
-    - `ErrorMailModule` -电子邮件中发送未经处理的异常的详细信息。
-    - `ErrorFilterModule` -应用开发人员指定筛选器，以确定哪些异常记录以及与将被忽略。
-- **HTTP 处理程序**-HTTP 处理程序是一个类，负责生成特定类型的请求的标记。 Elmah 却包含为网页、 RSS 源，或以逗号分隔的文件 (CSV) 呈现错误详细信息的 HTTP 处理程序。
-- **错误日志源**-现成 ELMAH 可以记录到 Microsoft SQL Server 数据库，到 Microsoft Access 数据库，到 Oracle 数据库的内存，错误到 XML 文件，到 SQLite 数据库，或 Vista DB 数据库。 运行状况监控系统，如 ELMAH 的体系结构是使用提供程序模型，这意味着你可以创建并无缝集成自己的自定义日志的源提供程序，如果需要生成的。
+`Elmah.dll` 程序集包括 ELMAH 系统使用的类。 这些类分为以下三个类别之一：
 
-### <a name="step-2-registering-elmahs-http-module-and-handler"></a>步骤 2：注册 ELMAH 的 HTTP 模块和处理程序
+- **Http**模块-http 模块是为 `HttpApplication` 事件（如 `Error` 事件）定义事件处理程序的类。 ELMAH 包含多个 HTTP 模块，其中三个最无关： 
 
-虽然`Elmah.dll`文件包含的 HTTP 模块和处理程序需要自动记录未处理的异常并显示在网页上的错误详细信息，这些必须显式注册 web 应用程序的配置中。 `ErrorLogModule` HTTP 模块，注册后，订阅`HttpApplication`的`Error`事件。 每当引发此事件`ErrorLogModule`将异常的详细信息记录到指定的日志源。 我们将了解如何在下一节中定义的日志源提供程序"的配置 ELMAH。" `ErrorLogPageFactory` HTTP 处理程序工厂负责生成标记，查看错误日志在网页上的时。
+    - `ErrorLogModule`-将未经处理的异常记录到日志源中。
+    - `ErrorMailModule`-发送电子邮件中未经处理的异常的详细信息。
+    - `ErrorFilterModule`-应用开发人员指定的筛选器，以确定要记录的异常以及忽略哪些异常。
+- **Http**处理程序-Http 处理程序是负责为特定类型的请求生成标记的类。 ELMAH 包含 HTTP 处理程序，该处理程序以网页形式呈现错误详细信息，作为 RSS 源，或以逗号分隔的文件（CSV）的形式呈现。
+- **错误日志源**-在此情况下，ELMAH 可以将错误记录到内存、Microsoft SQL Server 数据库、Microsoft Access 数据库、Oracle 数据库、XML 文件、SQLite 数据库或 Vista DB 数据库。 与运行状况监视系统一样，ELMAH 的体系结构是使用提供程序模型构建的，这意味着，如果需要，你可以创建并无缝集成你自己的自定义日志源提供程序。
 
-注册 HTTP 模块和处理程序的具体语法取决于为该站点提供强大支持的 web 服务器。 为 ASP.NET Development Server 和 Microsoft 的 IIS 6.0 及更早版本，HTTP 模块和处理程序中注册`<httpModules>`并`<httpHandlers>`部分，会出现`<system.web>`元素。 如果使用 IIS 7.0，则他们需要在中注册`<system.webServer>`元素的`<modules>`和`<handlers>`部分。 幸运的是，可以定义 HTTP 模块和处理程序中的*同时*放置而不考虑所使用的 web 服务器。 此选项是最可移植的一个，因为它允许同一配置，以在而不考虑所使用的 web 服务器在开发和生产环境中使用。
+### <a name="step-2-registering-elmahs-http-module-and-handler"></a>步骤2：注册 ELMAH 的 HTTP 模块和处理程序
 
-首先，注册`ErrorLogModule`HTTP 模块和`ErrorLogPageFactory`中的 HTTP 处理程序`<httpModules>`并`<httpHandlers>`主题中`<system.web>`。 如果你的配置已定义这两个元素然后只需包括`<add>`ELMAH 的 HTTP 模块和处理程序的元素。
+虽然 `Elmah.dll` 文件包含自动记录未经处理的异常和显示网页中的错误详细信息所需的 HTTP 模块和处理程序，但必须在 web 应用程序的配置中显式注册这些内容。 `ErrorLogModule` HTTP 模块在注册后会订阅 `HttpApplication`的 `Error` 事件。 每当引发此事件时，`ErrorLogModule` 会将异常的详细信息记录到指定的日志源中。 我们将在下一节 "配置 ELMAH" 中看到如何定义日志源提供程序。 在从网页查看错误日志时，`ErrorLogPageFactory` HTTP 处理程序工厂负责生成标记。
+
+注册 HTTP 模块和处理程序的特定语法取决于为站点提供支持的 web 服务器。 对于 ASP.NET 开发服务器和 Microsoft 的 IIS 版本6.0 及更早版本，HTTP 模块和处理程序在 `<httpModules>` 和 `<httpHandlers>` 节中注册，这些部分显示在 `<system.web>` 元素中。 如果使用 IIS 7.0，则需要在 `<system.webServer>` 元素的 `<modules>` 和 `<handlers>` 节中注册它们。 幸运的是，无论使用哪种 web 服务器，*都可以在这两个*位置定义 HTTP 模块和处理程序。 此选项是最易于移植的选项，因为它允许在开发和生产环境中使用相同的配置，而不考虑所使用的 web 服务器。
+
+首先，在 `<system.web>`的 `<httpModules>` 和 `<httpHandlers>` 部分中注册 `ErrorLogModule` HTTP 模块和 `ErrorLogPageFactory` HTTP 处理程序。 如果配置已定义了这两个元素，则只需包括 ELMAH 的 HTTP 模块和处理程序的 `<add>` 元素。
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample1.xml)]
 
-接下来，注册 ELMAH 的 HTTP 模块和处理程序中的`<system.webServer>`元素。 与前面一样，如果此元素不存在在配置中然后将其添加。
+接下来，在 `<system.webServer>` 元素中注册 ELMAH 的 HTTP 模块和处理程序。 如前所述，如果在配置中不存在此元素，请添加该元素。
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample2.xml)]
 
-默认情况下，IIS 7 会指出如果 HTTP 模块和处理程序注册中`<system.web>`部分。 `validateIntegratedModeConfiguration`属性中`<validation>`元素指示 IIS 7 以取消显示此类错误消息。
+默认情况下，如果在 `<system.web>` 部分注册了 HTTP 模块和处理程序，则使用 IIS 7 投诉原因。 `<validation>` 元素中的 `validateIntegratedModeConfiguration` 属性指示 IIS 7 禁止显示此类错误消息。
 
-请注意，注册的语法`ErrorLogPageFactory`HTTP 处理程序包括`path`属性设置为`elmah.axd`。 此特性告知 web 应用程序，如果为一个名为页的请求到达`elmah.axd`则应由处理该请求`ErrorLogPageFactory`HTTP 处理程序。 我们将看到`ErrorLogPageFactory`中稍后在本教程中的操作的 HTTP 处理程序。
+请注意，用于注册 `ErrorLogPageFactory` HTTP 处理程序的语法包括设置为 `elmah.axd`的 `path` 属性。 此属性通知 web 应用程序，如果请求到达名为 `elmah.axd` 的页，则该请求应由 `ErrorLogPageFactory` HTTP 处理程序进行处理。 在本教程的后面部分，我们将看到 `ErrorLogPageFactory` 的 HTTP 处理程序。
 
-### <a name="step-3-configuring-elmah"></a>步骤 3：配置 ELMAH
+### <a name="step-3-configuring-elmah"></a>步骤3：配置 ELMAH
 
-有关其配置选项的网站中查找 ELMAH`Web.config`文件中一个名为的自定义配置部分`<elmah>`。 若要使用中的自定义节`Web.config`必须先将定义在`<configSections>`元素。 打开`Web.config`文件，并添加以下标记到`<configSections>`:
+ELMAH 会在名为 `<elmah>`的自定义配置节中的网站 `Web.config` 文件中查找其配置选项。 若要在中使用自定义节 `Web.config` 必须先在 `<configSections>` 元素中定义它。 打开 `Web.config` 文件，并将以下标记添加到 `<configSections>`：
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample3.xml)]
 
 > [!NOTE]
-> 如果要配置 ELMAH ASP.NET 1.x 应用程序然后删除`requirePermission="false"`属性从`<section>`上面的元素。
+> 如果要为 ASP.NET 1.x 应用程序配置 ELMAH，请从上面的 `<section>` 元素中删除 `requirePermission="false"` 特性。
 
-上述语法注册自定义`<elmah>`部分和其子章节： `<security>`， `<errorLog>`， `<errorMail>`，和`<errorFilter>`。
+上面的语法注册自定义 `<elmah>` 节及其子节： `<security>`、`<errorLog>`、`<errorMail>`和 `<errorFilter>`。
 
-接下来，添加`<elmah>`部分`Web.config`。 本部分中应出现在相同的级别`<system.web>`元素。 内部`<elmah>`部分中添加`<security>`和`<errorLog>`部分如下所示：
+接下来，将 `<elmah>` 部分添加到 `Web.config`。 此部分应显示在与 `<system.web>` 元素相同的级别。 在 `<elmah>` 部分中，添加 `<security>` 和 `<errorLog>` 节，如下所示：
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample4.xml)]
 
-`<security>`节的`allowRemoteAccess`属性指示是否允许远程访问。 如果此值设置为 0，然后在错误日志 web 页只能查看本地。 如果此属性设置为 1 在错误日志 web 页可用于远程和本地访问者。 现在，让我们为远程访客禁用错误日志 web 页。 我们有机会讨论这样做的安全问题后，我们将更高版本允许远程访问。
+`<security>` 节的 `allowRemoteAccess` 属性指示是否允许远程访问。 如果此值设置为0，则只能在本地查看 "错误日志" 网页。 如果将此属性设置为1，则将为远程和本地访问者启用 "错误日志" 网页。 现在，让我们禁用远程访问者的错误日志网页。 稍后我们将允许远程访问，稍后我们有机会讨论这样做的安全问题。
 
-`<errorLog>`节定义错误日志源，其中记录错误详细信息; 它是类似于哪些决定`<providers>`运行状况监控系统中的部分。 上述语法指定`SqlErrorLog`类作为错误记录到 Microsoft SQL Server 数据库指定的错误日志源`connectionStringName`属性值。
+`<errorLog>` 部分定义错误日志源，该源指示记录错误详细信息的位置;它类似于运行状况监视系统中的 `<providers>` 部分。 上述语法将 `SqlErrorLog` 类指定为错误日志源，这会将错误记录到 `connectionStringName` 特性值所指定的 Microsoft SQL Server 数据库中。
 
 > [!NOTE]
-> ELMAH 附带有其他错误的日志提供程序可用于 XML 文件、 Microsoft Access 数据库、 Oracle 数据库和其他数据存储中记录错误。 请参阅示例`Web.config`是包含有关如何使用这些备用错误日志提供程序的信息在 ELMAH 下载的文件。
+> ELMAH 附带了额外的错误日志提供程序，可用于将错误记录到 XML 文件、Microsoft Access 数据库、Oracle 数据库和其他数据存储区中。 有关如何使用这些备用错误日志提供程序的信息，请参阅包含在 ELMAH 下载中的示例 `Web.config` 文件。
 
-### <a name="step-4-creating-the-error-log-source-infrastructure"></a>步骤 4：创建错误日志源基础结构
+### <a name="step-4-creating-the-error-log-source-infrastructure"></a>步骤4：创建错误日志源基础结构
 
-ELMAH 的`SqlErrorLog`提供程序错误详细信息记录到指定的 Microsoft SQL Server 数据库。 `SqlErrorLog`提供程序需要此数据库有一个名为表`ELMAH_Error`和三个存储过程： `ELMAH_GetErrorsXml`， `ELMAH_GetErrorXml`，和`ELMAH_LogError`。 ELMAH 下载内容还包括名为的文件`SQLServer.sql`在`db`文件夹包含用于创建此表并将这些 T-SQL 存储过程。 将需要使用在数据库上运行这些语句`SqlErrorLog`提供程序。
+ELMAH 的 `SqlErrorLog` 提供程序将错误详细信息记录到指定的 Microsoft SQL Server 数据库。 `SqlErrorLog` 提供程序要求此数据库具有一个名为 `ELMAH_Error` 的表和三个存储过程： `ELMAH_GetErrorsXml`、`ELMAH_GetErrorXml`和 `ELMAH_LogError`。 ELMAH 下载内容包括一个名为 `db` `SQLServer.sql` 的文件，该文件包含用于创建此表和这些存储过程的 T-sql。 需要在数据库上运行这些语句才能使用 `SqlErrorLog` 提供程序。
 
-**图 1**并**2**后所需的数据库对象显示在 Visual Studio 中的数据库资源管理器`SqlErrorLog`已添加提供程序。
+**图1和图** **2**显示了 `SqlErrorLog` 提供程序所需的数据库对象之后，Visual Studio 中的数据库资源管理器。
 
 [![](logging-error-details-with-elmah-vb/_static/image2.png)](logging-error-details-with-elmah-vb/_static/image1.png)
 
-**图 1**:`SqlErrorLog`提供程序记录到错误`ELMAH_Error`表
+**图 1**： `SqlErrorLog` 提供程序将错误记录到 `ELMAH_Error` 表中
 
 [![](logging-error-details-with-elmah-vb/_static/image4.png)](logging-error-details-with-elmah-vb/_static/image3.png)
 
-**图 2**:`SqlErrorLog`提供程序使用三个存储的过程
+**图 2**： `SqlErrorLog` 提供程序使用三个存储过程
 
-## <a name="elmah-in-action"></a>在操作中的 ELMAH
+## <a name="elmah-in-action"></a>操作中的 ELMAH
 
-现在我们已添加到注册的 web 应用程序的 ELMAH `ErrorLogModule` HTTP 模块和`ErrorLogPageFactory`HTTP 处理程序中，指定中的 ELMAH 的配置选项`Web.config`，并添加所需的数据库对象的`SqlErrorLog`错误日志提供程序。 我们现已准备好在操作中看到 ELMAH ！ 访问书评网站，请访问生成运行时错误，例如页面`Genre.aspx?ID=foo`，或不存在页，如`NoSuchPage.aspx`。 访问这些页面时看到的内容取决于`<customErrors>`配置和是否正在访问本地或远程。 (回头[*显示自定义错误页*教程](displaying-a-custom-error-page-vb.md)上本主题复习。)
+此时，我们已将 ELMAH 添加到 web 应用程序中，注册了 `ErrorLogModule` HTTP 模块和 `ErrorLogPageFactory` HTTP 处理程序，在 `Web.config`中指定了 ELMAH 的配置选项，并为 `SqlErrorLog` 错误日志提供程序添加了所需的数据库对象。 现在，我们已准备好在操作中看到 ELMAH！ 访问书籍评论网站并访问生成运行时错误的页面（如 `Genre.aspx?ID=foo`）或不存在的页面（如 `NoSuchPage.aspx`）。 访问这些页面时看到的内容取决于 `<customErrors>` 配置以及你是在本地还是远程访问。 （请返回到[*显示自定义错误页*教程](displaying-a-custom-error-page-vb.md)，了解本主题的复习。）
 
-ELMAH 不会影响发生未经处理的异常; 时，向用户显示哪些内容它只需记录其详细信息。 此错误日志是可访问的网页`elmah.axd`根目录中的你的网站，如`http://localhost/BookReviews/elmah.axd`。 (此文件不以物理方式存在于项目中，但为传入的请求时`elmah.axd`运行时将调度到`ErrorLogPageFactory`HTTP 处理程序，它将生成发送回浏览器的标记。)
+当发生未经处理的异常时，ELMAH 不会影响向用户显示的内容;它只记录其详细信息。 可以从网站的根 `elmah.axd` 访问此错误日志，如 `http://localhost/BookReviews/elmah.axd`。 （此文件在物理上并不存在于你的项目中，但当请求进入时，`elmah.axd` 运行时将它调度到 `ErrorLogPageFactory` HTTP 处理程序，该处理程序会生成发送回浏览器的标记。）
 
 > [!NOTE]
-> 此外可以使用`elmah.axd`页后，可以指示 ELMAH 生成一个测试错误。 访问`elmah.axd/test`(作为 in `http://localhost/BookReviews/elmah.axd/test`) 会导致引发异常的类型的 ELMAH `Elmah.TestException`，其中包含错误消息："这是可以安全地忽略测试异常"。
+> 还可以使用 "`elmah.axd`" 页指示 ELMAH 生成测试错误。 访问 `elmah.axd/test` （如在中 `http://localhost/BookReviews/elmah.axd/test`）将导致 ELMAH 引发类型 `Elmah.TestException`的异常，该异常包含以下错误消息： "这是可以安全忽略的测试异常。"
 
-**图 3**访问时显示的错误日志`elmah.axd`从开发环境。
+**图 3**显示了从开发环境中访问 `elmah.axd` 时的错误日志。
 
 [![](logging-error-details-with-elmah-vb/_static/image6.png)](logging-error-details-with-elmah-vb/_static/image5.png)
 
-**图 3**:`Elmah.axd` 显示在网页上的错误日志  
-([单击此项可查看原尺寸图像](logging-error-details-with-elmah-vb/_static/image7.png))
+**图 3**： `Elmah.axd` 显示网页中的错误日志  
+（[单击以查看完全大小的映像](logging-error-details-with-elmah-vb/_static/image7.png)）
 
-错误日志**图 3**包含六个错误条目。 每个条目包括 HTTP 状态代码 （404 或 500，对于这些错误）、 类型、 说明、 出现错误，已登录用户的名称以及日期和时间。 单击详细信息链接将显示包括错误详细信息黄色屏幕死机中所示相同的错误消息的页面 (请参阅**图 4**) 以及在出现此错误时服务器变量的值 (请参阅**图 5**)。 此外可以查看在其中保存错误详细信息，其中包括 HTTP POST 标头中的其他信息，例如值的原始 XML。
+**图 3**中的错误日志包含六个错误条目。 每个条目都包括 HTTP 状态代码（404或500，适用于这些错误）、类型、说明、发生错误时登录用户的名称以及日期和时间。 单击 "详细信息" 链接将显示一页，其中包含错误详细信息的黄色屏幕上显示的错误消息（请参阅**图 4**）以及错误发生时服务器变量的值（参见**图 5**）。 你还可以查看保存错误详细信息的原始 XML，其中包括其他信息，例如 HTTP POST 标头中的值。
 
 [![](logging-error-details-with-elmah-vb/_static/image9.png)](logging-error-details-with-elmah-vb/_static/image8.png)
 
-**图 4**:查看错误详细信息 YSOD  
-([单击此项可查看原尺寸图像](logging-error-details-with-elmah-vb/_static/image10.png))
+**图 4**：查看错误详细信息 YSOD  
+（[单击以查看完全大小的映像](logging-error-details-with-elmah-vb/_static/image10.png)）
 
 [![](logging-error-details-with-elmah-vb/_static/image12.png)](logging-error-details-with-elmah-vb/_static/image11.png)
 
-**图 5**:浏览服务器变量集合中错误的时间处的值  
-([单击此项可查看原尺寸图像](logging-error-details-with-elmah-vb/_static/image13.png))
+**图 5**：在发生错误时浏览服务器变量集合的值  
+（[单击以查看完全大小的映像](logging-error-details-with-elmah-vb/_static/image13.png)）
 
-部署到生产网站的 ELMAH 需要：
+将 ELMAH 部署到生产网站需要：
 
-- 复制`Elmah.dll`文件为`Bin`上生产中，文件夹
-- 复制到的特定于 ELMAH 的配置设置`Web.config`在生产环境中，使用文件和
-- 将错误日志源基础结构添加到生产数据库。
+- 将 `Elmah.dll` 文件复制到生产上的 `Bin` 文件夹中，
+- 将 ELMAH 特定的配置设置复制到生产环境中使用的 `Web.config` 文件，并
+- 将错误日志源基础结构添加到生产数据库中。
 
-我们已经探讨了技术，可将复制从开发到生产环境在前面的教程。 生产数据库上获取错误日志源基础结构的最简单方法是使用 SQL Server Management Studio 连接到生产数据库并执行可能`SqlServer.sql`脚本文件，这将创建所需的表和存储过程。
+我们已经探讨了在以前的教程中将文件从开发复制到生产的方法。 最简单的方法是在生产数据库中获取错误日志源基础结构，以便使用 SQL Server Management Studio 连接到生产数据库，然后执行 `SqlServer.sql` 脚本文件，这将创建所需的表和存储过程。
 
-### <a name="viewing-the-error-details-page-on-production"></a>在生产环境中查看错误详细信息页
+### <a name="viewing-the-error-details-page-on-production"></a>查看生产中的错误详细信息页
 
-之后您的网站部署到生产环境，请访问生产网站并生成未经处理的异常。 开发环境中，如 ELMAH 产生任何影响上发生未经处理的异常; 时显示的错误页面相反，它只是记录的错误。 如果你尝试访问错误日志页 (`elmah.axd`) 从生产环境中，你将看到与禁止访问页中所示**图 6**。
+将站点部署到生产环境后，请访问生产网站并生成未经处理的异常。 与开发环境一样，ELMAH 不会对在发生未经处理的异常时所显示的错误页产生任何影响;而只是记录错误。 如果尝试从生产环境访问 "错误日志" 页（`elmah.axd`），则将看到另与**图 6**中所示的 "禁止访问" 页。
 
 [![](logging-error-details-with-elmah-vb/_static/image15.png)](logging-error-details-with-elmah-vb/_static/image14.png)
 
-**图 6**:默认情况下，远程访问者不能查看错误日志 Web 页  
-([单击此项可查看原尺寸图像](logging-error-details-with-elmah-vb/_static/image16.png))
+**图 6**：默认情况下，远程访问者无法查看错误日志网页  
+（[单击以查看完全大小的映像](logging-error-details-with-elmah-vb/_static/image16.png)）
 
-请记住，ELMAH 配置中`<security>`部分中我们将设置`allowRemoteAccess`属性为 0，这将禁止远程用户查看错误日志。 请务必禁止匿名访问者查看错误日志，如安全漏洞或其他敏感信息可能会显示错误详细信息。 如果您决定将此属性设置为 1 并启用远程访问错误日志，则务必锁定`elmah.axd`路径，因此，只有经过授权的访问者可以访问它。 这可以通过添加`<location>`元素`Web.config`文件。
+请记住，在 ELMAH 配置的 `<security>` 部分，我们将 `allowRemoteAccess` 属性设置为0，这将禁止远程用户查看错误日志。 必须禁止匿名访问者查看错误日志，因为错误详细信息可能会显示安全漏洞或其他敏感信息。 如果决定将此属性设置为1并启用对错误日志的远程访问，请务必锁定 `elmah.axd` 路径，以便只有授权的访问者可以访问它。 这可以通过将 `<location>` 元素添加到 `Web.config` 文件来实现。
 
-下面的配置允许管理员角色才能访问错误日志 web 页只有用户：
+以下配置仅允许管理员角色中的用户访问错误日志网页：
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample5.xml)]
 
 > [!NOTE]
-> 在添加了管理员角色和-Scott、 Jisun 和 Alice-在系统中的三个用户[*配置网站，使用应用程序服务*教程](configuring-a-website-that-uses-application-services-vb.md)。 用户 Scott 和 Jisun 是管理员角色的成员。 有关身份验证和授权的详细信息，请参阅我[网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
+> 管理员角色和系统中的三个用户（Jisun 和 Alice）已在[*配置使用应用程序服务*教程的网站](configuring-a-website-that-uses-application-services-vb.md)中添加。 用户 Scott 和 Jisun 是管理员角色的成员。 有关身份验证和授权的详细信息，请参阅我的[网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
 
-远程用户; 可以立即查看错误日志在生产环境回头**图 3**， **4**，并**5**错误日志 web 页的屏幕截图。 但是，如果匿名或非管理员用户尝试查看错误日志页则自动重定向到登录页 (`Login.aspx`)，作为**图 7**显示。
+生产环境中的错误日志现在可以由远程用户查看;有关错误日志网页的屏幕截图，请参阅**图 3**、 **4**和**5** 。 但是，如果匿名或非管理员用户尝试查看错误日志页面，则会自动将其重定向到登录页（`Login.aspx`），如**图 7**所示。
 
 [![](logging-error-details-with-elmah-vb/_static/image18.png)](logging-error-details-with-elmah-vb/_static/image17.png)
 
-**图 7**:未经授权的用户会自动重定向到登录页  
-([单击此项可查看原尺寸图像](logging-error-details-with-elmah-vb/_static/image19.png))
+**图 7**：未经授权的用户将自动重定向到登录页  
+（[单击以查看完全大小的映像](logging-error-details-with-elmah-vb/_static/image19.png)）
 
 ### <a name="programmatically-logging-errors"></a>以编程方式记录错误
 
-ELMAH 的`ErrorLogModule`HTTP 模块将自动记录到指定的日志源的未经处理的异常。 此外，还可以记录错误而无需使用引发未经处理的异常`ErrorSignal`类并将其`Raise`方法。 `Raise`方法传递`Exception`对象并将其记录该异常被引发了异常且已达到 ASP.NET 运行时无需处理。 这种区别，但该请求将继续正常后执行`Raise`已调用了方法，而引发的未经处理异常中断请求的正常执行，并会导致 ASP.NET 运行时，若要显示已配置错误页。
+ELMAH 的 `ErrorLogModule` HTTP 模块自动将未经处理的异常记录到指定的日志源中。 或者，您可以通过使用 `ErrorSignal` 类及其 `Raise` 方法来记录错误，而无需引发未经处理的异常。 向 `Raise` 方法传递 `Exception` 对象，并将其记录为已引发该异常，并已在未处理的情况下到达 ASP.NET 运行时。 但差别在于，请求在调用 `Raise` 方法后继续正常执行，而引发的未经处理的异常将中断请求的正常执行，并导致 ASP.NET 运行时显示配置的错误页。
 
-`ErrorSignal`类是在其中某项操作，可能会失败，但其失败并不是灾难性的整体操作正在执行的情况下很有用。 例如，网站可能包含一个窗体，接受用户的输入、 将其存储在数据库中，然后将用户发送一封电子邮件，告知他们他们已处理的信息。 如果信息保存到数据库已成功，但存在错误时发送电子邮件消息，则应发生什么情况？ 一种方法是引发异常，并向用户发送到错误页。 但是，这可能会让用户迷惑误以为不保存这些输入的信息。 另一种方法是记录与电子邮件相关的错误，但不是会更改以任何方式的用户的体验。 这就是`ErrorSignal`类很有用。
+如果某些操作可能会失败，则 `ErrorSignal` 类非常有用，但其失败对执行的整体操作并不是灾难性的。 例如，网站可能包含一个采用用户输入的窗体，将其存储在数据库中，然后向用户发送一封电子邮件，告知他们信息已处理。 如果成功将信息保存到数据库，则会发生什么情况，但在发送电子邮件时出现错误？ 一种选择是引发异常，并将用户发送到错误页。 但是，这可能会让用户认为他们输入的信息未保存。 另一种方法是记录与电子邮件相关的错误，但不以任何方式更改用户的体验。 这就是 `ErrorSignal` 类有用的地方。
 
 [!code-vb[Main](logging-error-details-with-elmah-vb/samples/sample6.vb)]
 
-## <a name="error-notification-via-email"></a>通过电子邮件的错误通知
+## <a name="error-notification-via-email"></a>通过电子邮件发送的错误通知
 
-到数据库的日志记录错误，以及 ELMAH 还可以配置为通过电子邮件发送给指定收件人的错误详细信息。 提供此功能`ErrorMailModule`HTTP 模块中; 因此，必须注册此 HTTP 模块中`Web.config`才能发送错误详细信息通过电子邮件。
+除了将错误记录到数据库之外，还可以将 ELMAH 配置为向指定接收方发送电子邮件错误详细信息。 此功能由 `ErrorMailModule` HTTP 模块提供;因此，必须在 `Web.config` 中注册此 HTTP 模块，才能通过电子邮件发送错误详细信息。
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample7.xml)]
 
-接下来，指定有关中的错误电子邮件的信息`<elmah>`元素的`<errorMail>`部分中，电子邮件的发件人和收件人，其使用者，该值指示是否以异步方式发送电子邮件。
+接下来，在 `<elmah>` 元素的 `<errorMail>` 部分指定有关错误电子邮件的信息，指示电子邮件的发件人和收件人、主题以及是否以异步方式发送电子邮件。
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample8.xml)]
 
-在准备好上述设置，每当出现运行时错误，则 ELMAH 将发送一封电子邮件到support@example.com附带错误详细信息。 ELMAH 的错误电子邮件包含错误详细信息 web 页，即错误消息、 堆栈跟踪和服务器变量中显示的相同信息 (回头**图 4**并**5**)。 错误电子邮件还包括异常详细信息黄色屏幕死机内容作为附件 (`YSOD.html`)。
+使用上述设置后，当发生运行时错误时，ELMAH 会向 support@example.com 发送一封电子邮件，其中包含错误详细信息。 ELMAH 的错误电子邮件包含与 "错误详细信息" 网页中显示的信息相同的信息，即错误消息、堆栈跟踪和服务器变量（请参阅**图 4**和**5**）。 错误电子邮件还包括异常详细信息，即死亡内容的黄色屏幕（`YSOD.html`）。
 
-**图 8**显示了 ELMAH 的错误电子邮件，请访问生成`Genre.aspx?ID=foo`。 虽然**图 8**显示仅错误消息和堆栈跟踪，则服务器变量是包含进一步向下电子邮件的正文中。
+**图 8**显示了通过访问 `Genre.aspx?ID=foo`生成的 ELMAH 错误电子邮件。 虽然**图 8**只显示错误消息和堆栈跟踪，但服务器变量会在电子邮件的正文中进一步向下提供。
 
 [![](logging-error-details-with-elmah-vb/_static/image21.png)](logging-error-details-with-elmah-vb/_static/image20.png)
 
-**图 8**:你可以配置 ELMAH 发送错误详细信息通过电子邮件  
-([单击此项可查看原尺寸图像](logging-error-details-with-elmah-vb/_static/image22.png))
+**图 8**：你可以配置 ELMAH 以通过电子邮件发送错误详细信息  
+（[单击以查看完全大小的映像](logging-error-details-with-elmah-vb/_static/image22.png)）
 
-## <a name="only-logging-errors-of-interest"></a>仅记录感兴趣的错误
+## <a name="only-logging-errors-of-interest"></a>仅记录相关错误
 
-默认情况下，ELMAH 记录每个未处理的异常，包括 404 和其他 HTTP 错误的详细信息。 您可以指示 ELMAH 忽略这些文件路径或其他类型的使用错误筛选的错误。 ELMAH 的执行筛选逻辑`ErrorFilterModule`HTTP 模块，将需要在注册`Web.config`若要使用筛选逻辑。 中指定的筛选规则`<errorFilter>`部分。
+默认情况下，ELMAH 记录每个未处理的异常的详细信息，包括404和其他 HTTP 错误。 您可以指示 ELMAH 使用错误筛选来忽略这些错误或其他类型的错误。 筛选逻辑由 ELMAH 的 `ErrorFilterModule` HTTP 模块执行，你需要在 `Web.config` 中进行注册，才能使用筛选逻辑。 用于筛选的规则在 `<errorFilter>` 部分中指定。
 
-以下标记指示 ELMAH，记录 404 错误。
+以下标记指示 ELMAH 不记录404错误。
 
 [!code-xml[Main](logging-error-details-with-elmah-vb/samples/sample9.xml)]
 
 > [!NOTE]
-> 请不要忘记，若要使用错误筛选，必须注册`ErrorFilterModule`HTTP 模块。
+> 别忘了，若要使用错误筛选，必须注册 `ErrorFilterModule` HTTP 模块。
 
-`<equal>`元素内的`<test>`部分被称为断言。 如果计算结果为 true 的断言错误则将筛选从 ELMAH 的日志。 有可用的其他断言，包括： `<greater>`， `<greater-or-equal>`， `<not-equal>`， `<lesser>`， `<lesser-or-equal>`，依次类推。 您也可以组合使用断言`<and>`和`<or>`布尔运算符。 更重要的是，甚至可以包括一个简单的 JavaScript 表达式用作断言，或在 C# 或 Visual Basic 中编写您自己断言。
+`<test>` 部分内的 `<equal>` 元素称为 "断言"。 如果断言的计算结果为 true，则将根据 ELMAH 的日志筛选错误。 还有其他断言，其中包括： `<greater>`、`<greater-or-equal>`、`<not-equal>`、`<lesser>`、`<lesser-or-equal>`等。 你还可以使用 `<and>` 和 `<or>` 布尔运算符来合并断言。 此外，您甚至可以将简单的 JavaScript 表达式包含为断言，或在或 Visual Basic 中编写您自己C#的断言。
 
-有关筛选功能的 ELMAH 的错误的详细信息，请参阅[错误筛选部分](https://code.google.com/p/elmah/wiki/ErrorFiltering)中[ELMAH wiki](https://code.google.com/p/elmah/w/list)。
+有关 ELMAH 的错误筛选功能的详细信息，请参阅[ELMAH wiki](https://code.google.com/p/elmah/w/list)中的[错误筛选部分](https://code.google.com/p/elmah/wiki/ErrorFiltering)。
 
 ## <a name="summary"></a>总结
 
-ELMAH 提供了一种简单但功能强大的机制，用于将 ASP.NET web 应用程序中的日志记录错误。 Microsoft 的运行状况监视系统，如 ELMAH 可以将错误记录到数据库，并可以向开发人员通过电子邮件发送错误详细信息。 与不同的运行状况监控系统，elmah 却包含现成支持的更广泛的错误日志数据存储，包括：Microsoft SQL Server、 Microsoft Access、 Oracle、 XML 文件，以及其他几个人。 此外，ELMAH 提供了用于查看错误日志和 web 页上，从特定错误的详细信息的内置机制`elmah.axd`。 `elmah.axd`页还可以呈现为 RSS 源或为逗号分隔值文件 (CSV)，它可以使用 Microsoft Excel 读取的错误信息。 您可以从使用声明性或以编程方式断言日志筛选器的错误指示 ELMAH。 和 ELMAH 可与 ASP.NET 1.x 版应用程序。
+ELMAH 提供一种简单而强大的机制，用于在 ASP.NET web 应用程序中记录错误。 与 Microsoft 的运行状况监视系统类似，ELMAH 可以将错误记录到数据库中，并可以通过电子邮件将错误详细信息发送给开发人员。 与运行状况监视系统不同，ELMAH 包含对更广泛的错误日志数据存储的全新支持，包括： Microsoft SQL Server、Microsoft Access、Oracle、XML 文件，等等。 此外，ELMAH 还提供了一种内置机制，用于查看错误日志以及有关网页中特定错误的详细信息，`elmah.axd`。 `elmah.axd` 页还可以将错误信息作为 RSS 源或以逗号分隔的值文件（CSV）的形式呈现，您可以使用 Microsoft Excel 读取该文件。 还可以指示 ELMAH 使用声明性或编程断言从日志中筛选错误。 和 ELMAH 可以与 ASP.NET 版本1.x 应用程序一起使用。
 
-每个已部署的应用程序应具有一些机制来自动记录未处理的异常并将通知发送给开发团队。 是否使用运行状况监视或 ELMAH 完成这是辅助。 换而言之，并不真正重要得多使用运行状况监视还是 ELMAH;计算两个系统，然后选择最适合你的需求。 从根本上说重要的是某种机制将采取的措施，在生产环境中记录未处理的异常。
+每个已部署的应用程序都应有一些机制来自动记录未经处理的异常，并向开发团队发送通知。 此操作是使用运行状况监视来实现还是使用 ELMAH 为辅助。 换句话说，无论你使用的是运行状况监视还是 ELMAH，都不是很重要。评估两个系统，然后选择最符合你需求的系统。 基本上重要的是，一些机制可用于在生产环境中记录未经处理的异常。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [ELMAH 的错误日志记录模块和处理程序](http://dotnetslackers.com/articles/aspnet/ErrorLoggingModulesAndHandlers.aspx)
-- [ELMAH 项目页](https://code.google.com/p/elmah/)（来源为代码、 示例、 wiki）
-- [插入 ELMAH 到 Web 应用程序一捕获未经处理的异常](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx)（视频）
-- [安全错误日志页](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
-- [使用 HTTP 模块和处理程序来创建可插入的 ASP.NET 组件](https://msdn.microsoft.com/library/aa479332.aspx)
+- [ELMAH-错误日志记录模块和处理程序](http://dotnetslackers.com/articles/aspnet/ErrorLoggingModulesAndHandlers.aspx)
+- [ELMAH 项目页](https://code.google.com/p/elmah/)（源代码、示例、wiki）
+- [将 ELMAH 插入 Web 应用程序以捕获未经处理的异常](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx)（视频）
+- [安全错误日志页面](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
+- [使用 HTTP 模块和处理程序创建可插入的 ASP.NET 组件](https://msdn.microsoft.com/library/aa479332.aspx)
 - [网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 > [!div class="step-by-step"]

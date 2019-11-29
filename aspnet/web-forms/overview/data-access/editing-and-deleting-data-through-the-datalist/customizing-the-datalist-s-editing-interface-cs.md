@@ -1,171 +1,171 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs
-title: 自定义 DataList 的编辑界面 (C#) |Microsoft Docs
+title: 自定义 DataList 的编辑界面（C#） |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将创建更丰富的编辑界面 DataList，包括 Dropdownlist 和一个复选框。
+description: 在本教程中，我们将为 DataList 创建更丰富的编辑界面，其中包含 DropDownLists 和复选框。
 ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: a5d13067-ddfb-4c36-8209-0f69fd40e45c
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 626191c53ecce52fbfb37c3692c173bf0f27be90
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 81f5a7f6737f544f577447f263dbd37dbc8279d9
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114982"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74623857"
 ---
 # <a name="customizing-the-datalists-editing-interface-c"></a>自定义 DataList 的编辑界面 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_40_CS.exe)或[下载 PDF](customizing-the-datalist-s-editing-interface-cs/_static/datatutorial40cs1.pdf)
+[下载示例应用](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_40_CS.exe)或[下载 PDF](customizing-the-datalist-s-editing-interface-cs/_static/datatutorial40cs1.pdf)
 
-> 在本教程中我们将创建更丰富的编辑界面 DataList，包括 Dropdownlist 和一个复选框。
+> 在本教程中，我们将为 DataList 创建更丰富的编辑界面，其中包含 DropDownLists 和复选框。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-标记和 DataList s 中的 Web 控件`EditItemTemplate`定义其编辑界面。 在所有可编辑的 DataList 示例中我们 ve 检查到目前为止，可编辑界面组成文本框 Web 控件。 在中[前面的教程](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)我们改进了通过添加验证控件的编辑时的用户体验。
+DataList s 中的标记和 Web 控件 `EditItemTemplate` 定义其可编辑界面。 到目前为止，我们已经检查过的所有可编辑的 DataList 示例，该可编辑界面由 TextBox Web 控件组成。 在[前面的教程](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)中，我们通过添加验证控件改善了编辑时间用户体验。
 
-`EditItemTemplate`可以进一步扩展到包括文本框中，如 Dropdownlist，RadioButtonLists，日历之外的 Web 控件等。 与文本框中，自定义以包括其他 Web 控件的编辑界面时，使用以下步骤：
+`EditItemTemplate` 可以进一步扩展为包含文本框以外的 Web 控件，如 DropDownLists、RadioButtonLists、日历等。 与文本框一样，在自定义编辑界面以包括其他 Web 控件时，请使用以下步骤：
 
-1. 将 Web 控件添加到`EditItemTemplate`。
+1. 将 Web 控件添加到 `EditItemTemplate`。
 2. 使用数据绑定语法将相应的数据字段值分配给相应的属性。
-3. 在`UpdateCommand`事件处理程序，以编程方式访问 Web 控制值并将其传递到适当的 BLL 方法。
+3. 在 `UpdateCommand` 事件处理程序中，以编程方式访问 Web 控件值并将其传递到适当的 BLL 方法。
 
-在本教程中我们将创建更丰富的编辑界面 DataList，包括 Dropdownlist 和一个复选框。 具体而言，我们将创建 DataList，列出产品信息并允许 s 产品名称、 供应商、 类别和已停止使用的状态要更新 （请参阅图 1）。
+在本教程中，我们将为 DataList 创建更丰富的编辑界面，其中包含 DropDownLists 和复选框。 具体而言，我们将创建一个 DataList，其中列出了产品信息，并允许更新产品的名称、供应商、类别和停止状态（请参阅图1）。
 
-[![编辑接口包含一个文本框中，两个 Dropdownlist 和一个复选框](customizing-the-datalist-s-editing-interface-cs/_static/image2.png)](customizing-the-datalist-s-editing-interface-cs/_static/image1.png)
+[编辑界面 ![包括 TextBox、两个 DropDownLists 和一个复选框](customizing-the-datalist-s-editing-interface-cs/_static/image2.png)](customizing-the-datalist-s-editing-interface-cs/_static/image1.png)
 
-**图 1**:编辑接口包含一个文本框中，两个 Dropdownlist 和一个复选框 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image3.png))
+**图 1**：编辑界面包括 TextBox、两个 DropDownLists 和一个复选框（[单击查看完全大小的图像](customizing-the-datalist-s-editing-interface-cs/_static/image3.png)）
 
-## <a name="step-1-displaying-product-information"></a>步骤 1：显示产品信息
+## <a name="step-1-displaying-product-information"></a>步骤1：显示产品信息
 
-我们可以创建 DataList s 可编辑接口之前，我们首先需要生成只读接口。 首先打开`CustomizedUI.aspx`页上，从`EditDeleteDataList`文件夹并从设计器中，将 DataList 添加到页上，设置其`ID`属性设置为`Products`。 从 DataList s 智能标记，创建新对象数据源。 命名此新 ObjectDataSource`ProductsDataSource`并将其配置为从`ProductsBLL`类的`GetProducts`方法。 作为上一个可编辑 DataList 教程中，我们将更新已编辑的产品的信息直接转到业务逻辑层。 相应地，设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
+我们首先需要生成只读接口，然后才能创建 DataList s 可编辑界面。 首先，从 "`EditDeleteDataList`" 文件夹打开 "`CustomizedUI.aspx`" 页，然后从设计器中将 DataList 添加到页面，并将其 `ID` 属性设置为 "`Products`"。 从 DataList s 智能标记创建一个新的 ObjectDataSource。 将此新 ObjectDataSource 命名为 `ProductsDataSource` 并将其配置为从 `ProductsBLL` 类 `GetProducts` 方法检索数据。 与前面的可编辑 DataList 教程一样，我们将通过直接转到业务逻辑层来更新已编辑的产品信息。 相应地，将 "更新"、"插入" 和 "删除" 选项卡中的下拉列表设置为 "（无）"。
 
-[![设置为 （无） 的更新、 插入和删除选项卡下拉列表](customizing-the-datalist-s-editing-interface-cs/_static/image5.png)](customizing-the-datalist-s-editing-interface-cs/_static/image4.png)
+[![将 "更新"、"插入" 和 "删除选项卡" 下拉列表设置为 "（无）"](customizing-the-datalist-s-editing-interface-cs/_static/image5.png)](customizing-the-datalist-s-editing-interface-cs/_static/image4.png)
 
-**图 2**:设置更新、 插入和删除选项卡下拉列表列出了为 （无） ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image6.png))
+**图 2**：将 "更新"、"插入" 和 "删除选项卡" 下拉列表设置为 "（无）" （[单击查看完全大小的映像](customizing-the-datalist-s-editing-interface-cs/_static/image6.png)）
 
-在配置后 ObjectDataSource，Visual Studio 将创建默认值`ItemTemplate`DataList，来列出每个数据字段的名称和值返回。 修改`ItemTemplate`，以便在模板列表中的产品名称`<h4>`元素和类别名称、 供应商名称、 价格和已停止使用的状态。 此外，添加一个编辑按钮，并确保其`CommandName`属性设置为编辑。 声明性标记我`ItemTemplate`后面：
+配置 ObjectDataSource 后，Visual Studio 将为 DataList 创建默认 `ItemTemplate`，该 DataList 列出返回的每个数据字段的名称和值。 修改 `ItemTemplate`，使模板在 `<h4>` 元素中列出产品名称，以及类别名称、供应商名称、价格和停止状态。 此外，添加 "编辑" 按钮，确保其 `CommandName` 属性设置为 "编辑"。 `ItemTemplate` 的声明性标记如下所示：
 
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample1.aspx)]
 
-上述标记使用产品信息的布局&lt;h4&gt;产品的名称和四个列标题`<table>`其余字段。 `ProductPropertyLabel`并`ProductPropertyValue`中定义的 CSS 类`Styles.css`，在前面的教程讨论了。 图 3 显示了我们的浏览器查看时的进度。
+上述标记使用 &lt;h4&gt; 标题作为产品名称，并使用四列 `<table>` 为其余字段布局产品信息。 之前的教程中讨论了在 `Styles.css`中定义的 `ProductPropertyLabel` 和 `ProductPropertyValue` CSS 类。 图3显示了通过浏览器查看的进度。
 
-[![显示名称、 供应商、 类别、 停用状态和每个产品的价格](customizing-the-datalist-s-editing-interface-cs/_static/image8.png)](customizing-the-datalist-s-editing-interface-cs/_static/image7.png)
+[显示每个产品的名称、供应商、类别、已停用状态和价格的 ![](customizing-the-datalist-s-editing-interface-cs/_static/image8.png)](customizing-the-datalist-s-editing-interface-cs/_static/image7.png)
 
-**图 3**:显示名称、 供应商、 类别、 停用状态和每个产品的价格 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image9.png))
+**图 3**：显示了每个产品的名称、供应商、类别、已停用状态和价格（[单击查看全尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image9.png)）
 
-## <a name="step-2-adding-the-web-controls-to-the-editing-interface"></a>步骤 2：将 Web 控件添加到编辑界面
+## <a name="step-2-adding-the-web-controls-to-the-editing-interface"></a>步骤2：将 Web 控件添加到编辑界面
 
-构建自定义的 DataList 的编辑界面是添加到所需的 Web 控件的第一步`EditItemTemplate`。 具体而言，我们需要 DropDownList 的类别，另一个用于供应商，并已停止使用的状态的复选框。 由于产品的价格不在此示例中可编辑，我们可以继续使用标签 Web 控件中显示。
+构建自定义的 DataList 编辑界面的第一步是将所需的 Web 控件添加到 `EditItemTemplate`。 特别是，我们需要为该类别指定一个 DropDownList，为供应商提供另一个复选框，并在停用状态下复选框。 由于本示例中不能编辑产品的价格，因此我们可以继续使用标签 Web 控件显示它。
 
-若要自定义编辑界面，请单击 DataList s 智能标记中的编辑模板链接并选择`EditItemTemplate`从下拉列表选项。 添加到 DropDownList`EditItemTemplate`并设置其`ID`到`Categories`。
+若要自定义编辑界面，请单击 DataList s 智能标记的 "编辑模板" 链接，然后从下拉列表中选择 "`EditItemTemplate`" 选项。 将 DropDownList 添加到 `EditItemTemplate`，并将其 `ID` 设置为 "`Categories`"。
 
-[![将 DropDownList 添加类别](customizing-the-datalist-s-editing-interface-cs/_static/image11.png)](customizing-the-datalist-s-editing-interface-cs/_static/image10.png)
+[![为类别添加 DropDownList](customizing-the-datalist-s-editing-interface-cs/_static/image11.png)](customizing-the-datalist-s-editing-interface-cs/_static/image10.png)
 
-**图 4**:将 DropDownList 添加类别 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image12.png))
+**图 4**：为类别添加 DropDownList （[单击查看完全大小的图像](customizing-the-datalist-s-editing-interface-cs/_static/image12.png)）
 
-接下来，从 DropDownList s 智能标记，选择选择数据源选项并创建名为新 ObjectDataSource `CategoriesDataSource`。 配置要使用此 ObjectDataSource`CategoriesBLL`类的`GetCategories()`方法 （请参见图 5）。 接下来，DropDownList 的数据源配置向导提示输入要用于每个数据字段`ListItem`s`Text`和`Value`属性。 使 DropDownList 显示`CategoryName`数据字段并使用`CategoryID`作为值，如图 6 中所示。
+接下来，从 DropDownList s 智能标记中，选择 "选择数据源" 选项，并创建名为 `CategoriesDataSource`的新 ObjectDataSource。 将此 ObjectDataSource 配置为使用 `CategoriesBLL` 类 `GetCategories()` 方法（参见图5）。 接下来，DropDownList 的数据源配置向导会提示输入要用于每个 `ListItem` `Text` 和 `Value` 属性的数据字段。 让 DropDownList 显示 `CategoryName` 数据字段并使用 `CategoryID` 作为值，如图6所示。
 
-[![创建名为 CategoriesDataSource 新 ObjectDataSource](customizing-the-datalist-s-editing-interface-cs/_static/image14.png)](customizing-the-datalist-s-editing-interface-cs/_static/image13.png)
+[![创建一个名为 CategoriesDataSource 的新 ObjectDataSource](customizing-the-datalist-s-editing-interface-cs/_static/image14.png)](customizing-the-datalist-s-editing-interface-cs/_static/image13.png)
 
-**图 5**:创建新对象数据源命名`CategoriesDataSource`([单击以查看实际尺寸的图像](customizing-the-datalist-s-editing-interface-cs/_static/image15.png))
+**图 5**：创建名为 `CategoriesDataSource` 的新 ObjectDataSource （[单击以查看完全大小的映像](customizing-the-datalist-s-editing-interface-cs/_static/image15.png)）
 
-[![配置 DropDownList 的显示和数值字段](customizing-the-datalist-s-editing-interface-cs/_static/image17.png)](customizing-the-datalist-s-editing-interface-cs/_static/image16.png)
+[![配置 DropDownList s 显示和值字段](customizing-the-datalist-s-editing-interface-cs/_static/image17.png)](customizing-the-datalist-s-editing-interface-cs/_static/image16.png)
 
-**图 6**:配置 DropDownList 的显示和值字段 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image18.png))
+**图 6**：配置 DropDownList s 显示和值字段（[单击查看完全大小的图像](customizing-the-datalist-s-editing-interface-cs/_static/image18.png)）
 
-重复这一系列的步骤为供应商创建 DropDownList。 设置`ID`用于向此 DropDownList`Suppliers`并将命名其 ObjectDataSource `SuppliersDataSource`。
+重复此系列步骤，为供应商创建 DropDownList。 将此 DropDownList 的 `ID` 设置为 `Suppliers` 并将其 ObjectDataSource `SuppliersDataSource`命名为。
 
-添加后两个 Dropdownlist，添加已停止使用的状态的复选框和文本框的产品的名称。 设置`ID`复选框的文本框中的为`Discontinued`和`ProductName`分别。 添加一个 RequiredFieldValidator 以确保用户提供的产品的名称值。
+添加这两个 DropDownLists 后，为 "已停用" 状态添加复选框并为产品名称添加文本框。 将复选框和文本框的 `ID` 分别设置为 `Discontinued` 和 `ProductName`。 添加 RequiredFieldValidator 以确保用户为产品名称提供一个值。
 
-最后，添加更新和取消按钮。 请记住，这两个按钮是命令性，其`CommandName`属性设置为更新以及取消，分别。
+最后，添加 "更新" 和 "取消" 按钮。 请记住，对于这两个按钮，必须将其 `CommandName` 属性分别设置为 "更新" 和 "取消"。
 
-你的喜好的接口，可随时进行布局的编辑。 我已选择使用相同的四列`<table>`布局从只读接口，作为以下声明性语法和屏幕截图演示了：
+您可以随意布局编辑界面。 我选择在只读界面中使用相同的四列 `<table>` 布局，如以下声明性语法和屏幕截图所示：
 
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample2.aspx)]
 
-[![编辑界面将列出输出如只读接口](customizing-the-datalist-s-editing-interface-cs/_static/image20.png)](customizing-the-datalist-s-editing-interface-cs/_static/image19.png)
+[编辑界面的布局 ![如下所示](customizing-the-datalist-s-editing-interface-cs/_static/image20.png)](customizing-the-datalist-s-editing-interface-cs/_static/image19.png)
 
-**图 7**:编辑界面将列出输出如只读接口 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image21.png))
+**图 7**：编辑界面的布局类似于只读界面（[单击以查看完全大小的图像](customizing-the-datalist-s-editing-interface-cs/_static/image21.png)）
 
-## <a name="step-3-creating-the-editcommand-and-cancelcommand-event-handlers"></a>步骤 3：创建 EditCommand 和 CancelCommand 事件处理程序
+## <a name="step-3-creating-the-editcommand-and-cancelcommand-event-handlers"></a>步骤3：创建 EditCommand 和 CancelCommand 事件处理程序
 
-目前，没有在数据绑定语法`EditItemTemplate`(除了`UnitPriceLabel`，这按原样从复制`ItemTemplate`)。 我们将暂时不可用，添加数据绑定语法，但第一个让的 DataList s 为创建事件处理程序`EditCommand`和`CancelCommand`事件。 请记住的责任`EditCommand`事件处理程序来呈现其编辑按钮被单击，DataList 项的编辑界面，而`CancelCommand`的作业是要为其预编辑状态返回 DataList。
+目前 `EditItemTemplate` 中没有数据绑定语法（`UnitPriceLabel`（已从 `ItemTemplate`中的原义复制）。 接下来，我们将添加数据绑定语法，但首先，让我们为 DataList s `EditCommand` 和 `CancelCommand` 事件创建事件处理程序。 请记住，`EditCommand` 事件处理程序的责任是为单击了 "编辑" 按钮的 DataList 项呈现编辑界面，而 `CancelCommand` 的作业是将 DataList 返回到其预编辑状态。
 
-创建以下两个事件处理程序，并让他们使用以下代码：
+创建这两个事件处理程序，并让它们使用以下代码：
 
 [!code-csharp[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample3.cs)]
 
-使用这些两个事件处理程序中的位置，单击编辑按钮显示的编辑界面，并单击取消按钮返回到其只读模式下编辑的项。 图 8 显示了 DataList 后 Chef Anton s 秋葵组合已单击编辑按钮。 由于我们 ve 目前进行的编辑界面，添加任何数据绑定语法`ProductName`文本框中为空白，`Discontinued`从中选择复选框未选中和第一个项`Categories`和`Suppliers`Dropdownlist。
+准备好这两个事件处理程序后，单击 "编辑" 按钮将显示编辑界面，单击 "取消" 按钮会将编辑后的项返回到其只读模式。 图8显示了在单击 "编辑" 按钮后，Chef Anton s Gumbo 组合后的 DataList。 由于我们尚未将任何数据绑定语法添加到编辑界面，因此 `ProductName` TextBox 为空白，未选中 `Discontinued` 复选框，并且从 `Categories` 和 `Suppliers` DropDownLists 中选择的第一项。
 
-[![单击编辑按钮显示的编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image23.png)](customizing-the-datalist-s-editing-interface-cs/_static/image22.png)
+[![单击 "编辑" 按钮将显示编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image23.png)](customizing-the-datalist-s-editing-interface-cs/_static/image22.png)
 
-**图 8**:单击编辑按钮将显示编辑界面 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image24.png))
+**图 8**：单击 "编辑" 按钮将显示编辑界面（[单击以查看完全尺寸的图像](customizing-the-datalist-s-editing-interface-cs/_static/image24.png)）
 
-## <a name="step-4-adding-the-databinding-syntax-to-the-editing-interface"></a>步骤 4：向编辑界面添加数据绑定语法
+## <a name="step-4-adding-the-databinding-syntax-to-the-editing-interface"></a>步骤4：将数据绑定语法添加到编辑界面
 
-若要显示的当前产品的值的编辑界面，我们需要使用数据绑定语法将数据字段值指定为适当的 Web 控件值。 可以通过转到编辑模板屏幕设计器通过应用的数据绑定语法，并选择编辑 DataBindings 链接从 Web 控制智能标记。 或者，数据绑定语法可以直接添加到声明性标记。
+为了使编辑界面显示当前产品的值，我们需要使用数据绑定语法将数据字段值分配给相应的 Web 控件值。 可以通过访问设计器来应用数据绑定语法，方法是转到 "编辑模板" 屏幕并从 Web 控件智能标记中选择 "编辑数据绑定" 链接。 或者，可以将数据绑定语法直接添加到声明性标记中。
 
-分配`ProductName`数据字段值`ProductName`文本框 s`Text`属性，`CategoryID`并`SupplierID`数据字段值与`Categories`和`Suppliers`Dropdownlist`SelectedValue`属性，并`Discontinued`数据字段值`Discontinued`复选框的`Checked`属性。 进行这些更改，通过在设计器或直接通过声明性标记之后, 重新访问通过浏览器页并单击 Chef Anton s 秋葵汤编辑按钮。 如图 9 所示，数据绑定语法已添加到 TextBox、 Dropdownlist 和复选框中的当前值。
+将 `ProductName` 数据字段值分配给 `ProductName` TextBox s `Text` 属性，将 "`CategoryID`" 和 "`SupplierID` 数据" 字段值分配给 "`Categories`" 和 "`Suppliers`" `SelectedValue` 属性，将 "`Discontinued`" 数据字段值分配给 `Discontinued` CheckBox `Checked` 属性。 进行这些更改后，可以通过设计器或直接通过声明性标记，通过浏览器重新访问页面，然后单击 "Chef Anton s Gumbo Mix" 的 "编辑" 按钮。 如图9所示，数据绑定语法已将当前值添加到 TextBox、DropDownLists 和 CheckBox 中。
 
-[![单击编辑按钮显示的编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image26.png)](customizing-the-datalist-s-editing-interface-cs/_static/image25.png)
+[![单击 "编辑" 按钮将显示编辑界面](customizing-the-datalist-s-editing-interface-cs/_static/image26.png)](customizing-the-datalist-s-editing-interface-cs/_static/image25.png)
 
-**图 9**:单击编辑按钮将显示编辑界面 ([单击此项可查看原尺寸图像](customizing-the-datalist-s-editing-interface-cs/_static/image27.png))
+**图 9**：单击 "编辑" 按钮将显示编辑界面（[单击以查看完全大小的图像](customizing-the-datalist-s-editing-interface-cs/_static/image27.png)）
 
-## <a name="step-5-saving-the-user-s-changes-in-the-updatecommand-event-handler"></a>步骤 5：UpdateCommand 事件处理程序中保存用户的更改
+## <a name="step-5-saving-the-user-s-changes-in-the-updatecommand-event-handler"></a>步骤5：在 UpdateCommand 事件处理程序中保存用户的更改
 
-当用户编辑产品并单击更新按钮，产生的回发和 DataList 的`UpdateCommand`事件触发。 在事件处理程序中，我们需要能够读取的值中的 Web 控件从`EditItemTemplate`并与 BLL 来更新数据库中的产品。 正如我们在前面的教程，了解 ve`ProductID`的更新的产品是可通过访问`DataKeys`集合。 用户输入字段通过以编程方式引用使用的 Web 控件访问`FindControl("controlID")`，如下面的代码所示：
+当用户编辑产品并单击 "更新" 按钮时，将发生回发并引发 DataList `UpdateCommand` 事件。 在事件处理程序中，我们需要从 `EditItemTemplate` 中的 Web 控件读取值，并与 BLL 交互以更新数据库中的产品。 如前面的教程中所示，已更新产品的 `ProductID` 可通过 `DataKeys` 集合进行访问。 用户输入的字段通过使用 `FindControl("controlID")`以编程方式引用 Web 控件进行访问，如以下代码所示：
 
 [!code-csharp[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample4.cs)]
 
-代码首先咨询`Page.IsValid`属性以确保页面上的所有验证控件有效。 如果`Page.IsValid`是`True`，编辑的产品 s`ProductID`值从读取`DataKeys`收集和 Web 控件中的数据条目`EditItemTemplate`以编程方式引用。 接下来，将从这些 Web 控件的值读取到变量，然后传递到相应`UpdateProduct`重载。 在更新后的数据，DataList 回到其预先编辑状态。
+代码首先查看 `Page.IsValid` 属性，以确保页面上的所有验证控件都有效。 如果 `True``Page.IsValid`，则将从 `DataKeys` 集合读取已编辑的产品的 `ProductID` 值，并以编程方式引用 `EditItemTemplate` 中的数据输入 Web 控件。 接下来，将这些 Web 控件中的值读入变量，然后将其传递到相应的 `UpdateProduct` 重载。 更新数据后，DataList 返回到其预编辑状态。
 
 > [!NOTE]
-> 我已省略了异常处理逻辑中添加[处理 BLL-和 DAL 级别的异常](handling-bll-and-dal-level-exceptions-cs.md)为了使代码和此示例的教程已设定焦点。 作为一个练习，完成本教程后添加此功能。
+> 我省略了在[处理 BLL 和 DAL 级别的异常](handling-bll-and-dal-level-exceptions-cs.md)教程中添加的异常处理逻辑，目的是使代码和本示例重点保存。 作为练习，请在完成本教程后添加此功能。
 
-## <a name="step-6-handling-null-categoryid-and-supplierid-values"></a>步骤 6：处理 NULL CategoryID 和供应商 Id 值
+## <a name="step-6-handling-null-categoryid-and-supplierid-values"></a>步骤6：处理 NULL 类别 Id 和供应商值
 
-Northwind 数据库中允许`NULL`值为`Products`表 s`CategoryID`和`SupplierID`列。 但是，我们编辑接口没有 t 当前适应`NULL`值。 如果我们尝试编辑的产品的`NULL`值是其`CategoryID`或`SupplierID`列，我们将获取`ArgumentOutOfRangeException`使用类似的错误消息：*类别具有无效，因为它不存在的项列表的 SelectedValue。* 此外，有 s 目前没有办法更改产品的类别或供应商值从非`NULL`值设为`NULL`之一。
+Northwind 数据库允许 `Products` 表 s `CategoryID` 和 `SupplierID` 列 `NULL` 值。 但是，我们的编辑界面目前不能容纳 `NULL` 值。 如果尝试编辑其 `CategoryID` 或 `SupplierID` 列都具有 `NULL` 值的产品，我们将得到一个 `ArgumentOutOfRangeException`，其中包含类似于以下内容的错误消息： *"类别" 的 SelectedValue 无效，因为它不存在于项目列表中。* 此外，目前还没有办法将 product s 类别或供应商值从非`NULL` 值更改为 `NULL` 一。
 
-若要支持`NULL`类别和供应商 Dropdownlist 的值，我们需要添加其他`ListItem`。 我选择使用 （无） 作为 ve`Text`值为`ListItem`，但您可以如 d 将其更改为其他内容 （如空字符串）。 最后，请别忘记设置 Dropdownlist`AppendDataBoundItems`到`True`; 如果你忘记了为此，请将类别并绑定到 DropDownList 的供应商将覆盖静态地添加`ListItem`。
+若要支持类别和供应商 DropDownLists `NULL` 值，需要添加其他 `ListItem`。 我选择使用 "（无）" 作为此 `ListItem`的 `Text` 值，但您可以根据需要将其更改为其他内容（例如空字符串）。 最后，请记住将 DropDownLists `AppendDataBoundItems` 设置为 `True`;如果忘记这样做，则绑定到 DropDownList 的类别和供应商将覆盖静态添加的 `ListItem`。
 
-进行这些更改，DataList s 中的 Dropdownlist 标记之后`EditItemTemplate`应如下所示：
+进行这些更改后，DataList `EditItemTemplate` 中的 DropDownLists 标记应如下所示：
 
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample5.aspx)]
 
 > [!NOTE]
-> 静态`ListItem`s 可以添加到 DropDownList 通过设计器或直接通过声明性语法。 添加表示数据库的 DropDownList 项时`NULL`值时，请务必添加`ListItem`通过声明性语法。 如果您使用`ListItem`集合编辑器中在设计器中，将忽略生成的声明性语法`Value`完全设置何时分配一个空字符串，创建类似的声明性标记： `<asp:ListItem>(None)</asp:ListItem>`。 虽然这可能看起来无害，缺少`Value`导致要使用 DropDownList`Text`来代替属性值。 这意味着，如果这`NULL``ListItem`是选择，值 （无），将尝试分配给产品数据字段 (`CategoryID`或`SupplierID`，在本教程中)，这将导致异常。 通过显式设置`Value=""`、 一个`NULL`值将分配给该产品的数据字段`NULL``ListItem`处于选中状态。
+> 可以通过设计器或直接通过声明性语法将静态 `ListItem` 添加到 DropDownList。 添加 DropDownList 项以表示数据库 `NULL` 值时，请确保通过声明性语法添加 `ListItem`。 如果在设计器中使用 `ListItem` 集合编辑器，则生成的声明性语法将在分配空字符串时完全省略 `Value` 设置，创建类似于以下内容的声明性标记： `<asp:ListItem>(None)</asp:ListItem>`。 虽然这看起来可能无害，但缺少 `Value` 会导致 DropDownList 使用 `Text` 属性值。 这意味着，如果选择此 `NULL` `ListItem`，则会尝试将值（None）分配给 "产品数据" 字段（在本教程中为`CategoryID` 或 `SupplierID`），这会导致异常。 通过显式设置 `Value=""`，当选择 `NULL` `ListItem` 时，`NULL` 值将分配给产品数据字段。
 
-花点时间查看我们通过浏览器的进度。 在编辑某个产品时，请注意，`Categories`和`Suppliers`Dropdownlist 这两个具有 （无） 开始处的 DropDownList 的选项。
+花点时间通过浏览器查看进度。 编辑产品时，请注意，在 DropDownList 的开头，`Categories` 和 `Suppliers` DropDownLists 都有一个 "（无）" 选项。
 
-[![类别和供应商 Dropdownlist 包括 （无） 选项](customizing-the-datalist-s-editing-interface-cs/_static/image29.png)](customizing-the-datalist-s-editing-interface-cs/_static/image28.png)
+[![类别和供应商 DropDownLists 包括 "（无）" 选项](customizing-the-datalist-s-editing-interface-cs/_static/image29.png)](customizing-the-datalist-s-editing-interface-cs/_static/image28.png)
 
-**图 10**:`Categories`并`Suppliers`Dropdownlist 包括 （无） 选项 ([单击以查看实际尺寸的图像](customizing-the-datalist-s-editing-interface-cs/_static/image30.png))
+**图 10**： `Categories` 和 `Suppliers` DropDownLists 包含一个 "（无）" 选项（[单击以查看完全大小的图像](customizing-the-datalist-s-editing-interface-cs/_static/image30.png)）
 
-若要保存 (None) 选项作为数据库`NULL`值，我们需要返回到`UpdateCommand`事件处理程序。 更改`categoryIDValue`并`supplierIDValue`变量是可以为 null 的整数，并将其分配一个值，而不`Nothing`仅当 DropDownList 的`SelectedValue`不为空字符串：
+若要将 "（无）" 选项保存为数据库 `NULL` 值，需要返回 `UpdateCommand` 事件处理程序。 仅当 DropDownList s `SelectedValue` 不为空字符串时，将 `categoryIDValue` 和 `supplierIDValue` 变量更改为可为 null 的整数，并为其分配除 `Nothing` 之外的值。
 
 [!code-csharp[Main](customizing-the-datalist-s-editing-interface-cs/samples/sample6.cs)]
 
-进行此更改后，值为`Nothing`将传递到`UpdateProduct`BLL 方法，如果用户选择了 （无） 选项的下拉列表中，它对应于任一`NULL`数据库值。
+进行此更改后，如果用户从任一下拉列表中选择了 "（无）" 选项，则 `Nothing` 的值将传递到 `UpdateProduct` BLL 方法，这与 `NULL` 数据库值相对应。
 
 ## <a name="summary"></a>总结
 
-在本教程中我们已了解如何创建一个更复杂的 DataList 编辑界面，包含三个不同的输入的 Web 控件的 TextBox、 两个 Dropdownlist 和验证控件以及一个复选框。 在生成时编辑界面，步骤都而不考虑所使用的 Web 控件相同： 首先将 Web 控件添加到 DataList 的`EditItemTemplate`; 使用数据绑定语法将分配对应的数据字段值与相应的 Web控件属性;然后，在`UpdateCommand`事件处理程序，以编程方式访问的 Web 控件和其相应的属性，将其值传递到 BLL。
+在本教程中，我们了解了如何创建更复杂的 DataList 编辑界面，该界面包含三个不同的输入 Web 控件 TextBox、两个 DropDownLists 和一个复选框以及验证控件。 在生成编辑接口时，无论使用何种 Web 控件，步骤都是相同的：首先将 Web 控件添加到 DataList s `EditItemTemplate`;使用 databinding 语法将相应的数据字段值分配给相应的 Web 控件属性;并且，在 `UpdateCommand` 事件处理程序中，以编程方式访问 Web 控件及其相应的属性，并将其值传递到 BLL。
 
-时是否创建用于编辑的界面，它只是文本框或一系列不同的 Web 控件的 s 组成，请务必正确处理数据库`NULL`值。 当考虑`NULL`s，它是命令性，仅未正确显示的现有`NULL`中编辑界面，但你的值提供一种用于将值标为`NULL`。 对于在 DataLists Dropdownlist，这通常意味着添加一个静态`ListItem`其`Value`属性显式设置为空字符串 (`Value=""`)，并添加一些代码到`UpdateCommand`事件处理程序，以确定是否`NULL``ListItem`选择。
+创建编辑界面时，无论它是只由 textbox 还是由不同的 Web 控件组成的集合，都务必正确处理数据库 `NULL` 值。 在核算 `NULL` 时，必须在编辑界面中只正确地显示现有 `NULL` 值，还必须提供一种将值标记为 `NULL`的方式。 对于 DataLists 中的 DropDownLists，这通常意味着添加 `Value` 属性显式设置为空字符串（`Value=""`）的静态 `ListItem`，并将一些代码添加到 `UpdateCommand` 事件处理程序，以确定是否选择了 `NULL``ListItem`。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Dennis Patterson、 David Suru 和 Randy Schmidt。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的领导评审者是 Dennis Patterson 将、David Suru 和 Randy Schmidt。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)

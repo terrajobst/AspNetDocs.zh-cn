@@ -2,296 +2,296 @@
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 title: 使用 Visual Studio 的 ASP.NET Web 部署：部署到生产 |Microsoft Docs
 author: tdykstra
-description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用...
+description: 本系列教程介绍了如何通过来将 ASP.NET web 应用程序部署（发布）到 Azure App Service Web 应用或第三方托管提供程序。
 ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: b9c4a4d035c78b4f4c53942219ccfa3048c7a82b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ddc3d15f0436c4c3a24491cf0377111768da67df
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133808"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74617645"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生产中
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生产环境
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-[下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[下载初学者项目](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用 Visual Studio 2012 或 Visual Studio 2010。 有关序列的信息，请参阅[系列中的第一个教程](introduction.md)。
+> 本系列教程介绍了如何使用 Visual Studio 2012 或 Visual Studio 2010，将 ASP.NET web 应用程序部署（发布）到 Azure App Service Web 应用或第三方托管提供商。 有关序列的信息，请参阅本[系列中的第一个教程](introduction.md)。
 
 ## <a name="overview"></a>概述
 
-在本教程中，设置 Microsoft Azure 帐户、 创建过渡和生产环境和部署 ASP.NET web 应用程序到过渡环境和生产环境通过使用 Visual Studio 一键式发布功能。
+在本教程中，您将设置一个 Microsoft Azure 帐户，创建过渡和生产环境，并使用 Visual Studio 一键式发布功能将 ASP.NET web 应用程序部署到过渡环境和生产环境。
 
-如果您愿意，您可以将其部署到第三方托管提供商。 在本教程中所述的过程的大部分都是相同的宿主提供程序或适用于 Azure，只不过每个提供程序有其自己的帐户和 web 站点管理的用户界面。 您可以找到在托管提供商[库的提供程序](https://www.microsoft.com/web/hosting)Microsoft.com 网站上。
+如果愿意，可以部署到第三方托管提供商。 本教程中所述的大多数过程对于宿主提供程序或 Azure 都是相同的，只不过每个提供程序都有自己的用户界面用于帐户和网站管理。 可以在 Microsoft.com 网站上的[提供程序库](https://www.microsoft.com/web/hosting)中找到宿主提供程序。
 
-提醒：如果收到错误消息或某些操作无法按完成以下教程，，请务必检查本系列教程中的故障排除页。
+提醒：如果你收到一条错误消息或在你完成本教程时无法正常工作，请务必查看本系列教程中的故障排除页。
 
 ## <a name="get-a-microsoft-azure-account"></a>获取 Microsoft Azure 帐户
 
-如果还没有 Azure 帐户，可以只需几分钟内创建一个免费试用帐户。 有关详细信息，请参阅[Azure 免费试用版](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
+如果还没有 Azure 帐户，只需花费几分钟就能创建一个免费试用帐户。 有关详细信息，请参阅[Azure 免费试用](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
 
 ## <a name="create-a-staging-environment"></a>创建过渡环境
 
 > [!NOTE]
-> 由于在撰写本教程时，Azure 应用服务将添加用于自动执行多个用于创建过渡和生产环境的进程的新功能。 请参阅[设置过渡环境中 Azure 应用服务 web 应用的](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/)。
+> 由于本教程已编写，因此 Azure App Service 添加了一项新功能来自动执行许多创建过渡和生产环境的过程。 请参阅[在 Azure App Service 中设置 web 应用的过渡环境](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/)。
 
-中所述[部署到测试环境教程](deploying-to-iis.md)、 最可靠的测试环境是在只需像生产网站上的托管提供商的网站。 在许多主机托管提供商，您将不得不权衡与大量其他成本的优势，但在 Azure 中，您可以创建其他免费的 web 应用作为过渡应用。 您还需要一个数据库，并为此，通过创建生产数据库的费用的额外费用将为无或最小。 所使用的数据库存储量，而不是为每个数据库，在 Azure 中需要付费，你将在过渡环境中使用的额外存储量将是最小。
+如[部署到测试环境教程](deploying-to-iis.md)中所述，最可靠的测试环境是托管提供商的网站，就像生产网站一样。 在许多托管提供商上，你必须权衡此项的优势以增加额外成本，但在 Azure 中，可以创建其他免费的 web 应用作为暂存应用。 你还需要一个数据库，而超出生产数据库的费用的额外费用将是 "无" 或 "最小"。 在 Azure 中，你需要为你使用的数据库存储量（而不是每个数据库）付费，并且你将在暂存中使用的额外存储量将是最小值。
 
-中所述[部署到测试环境教程](deploying-to-iis.md)、 过渡和生产环境并打算将两个数据库部署到一个数据库中。 如果你想要将它们分开，过程将相同只不过将创建用于每个环境的其他数据库，并且在创建发布配置文件时，将选择每个数据库的正确的目标字符串。
+如[部署到测试环境教程](deploying-to-iis.md)中所述，在过渡和生产环境中，你要将两个数据库部署到一个数据库中。 如果您想要将它们分开，则该过程是相同的，只是您为每个环境创建了一个附加数据库，并在创建发布配置文件时为每个数据库选择正确的目标字符串。
 
-在本教程的本部分将创建 web 应用和数据库要用于过渡环境中，并将部署到过渡环境和在创建和部署到生产环境之前存在测试。
+在本教程的此部分中，你将创建用于过渡环境的 web 应用和数据库，并在创建并部署到生产环境之前，部署到此处进行过渡和测试。
 
 > [!NOTE]
-> 以下步骤说明如何使用 Azure 管理门户在 Azure 应用服务中创建 web 应用。 在 Azure SDK 的最新版本，您还可以执行这无需离开 Visual Studio 中，通过使用服务器资源管理器。 在 Visual Studio 2013 中，还可以直接从发布对话框中创建 web 应用。 有关详细信息，请参阅[在 Azure 应用服务中创建 ASP.NET web 应用。](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)
+> 以下步骤演示如何使用 Azure 管理门户在 Azure App Service 中创建 web 应用。 在最新版本的 Azure SDK 中，你还可以通过使用服务器资源管理器，无需离开 Visual Studio 即可实现此目的。 在 Visual Studio 2013 中，还可以直接从 "发布" 对话框创建一个 web 应用。 有关详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用。](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)
 
-1. 在中[Azure 管理门户](https://manage.windowsazure.com/)，单击**网站**，然后单击**新建**。
-2. 单击**网站**，然后单击**自定义创建**。
+1. 在[Azure 管理门户](https://manage.windowsazure.com/)中，单击 "**网站**"，然后单击 "**新建**"。
+2. 单击 "**网站**"，然后单击 "**自定义创建**"。
 
-    **新建网站-自定义创建**向导随即打开。 **自定义创建**向导，可在同一时间创建网站和数据库。
-3. 在中**创建网站**步骤的向导中，输入中的字符串**URL**框，以用作你的应用程序的唯一 URL 的过渡环境。 例如，输入 ContosoUniversity staging123 （包括末尾的随机数字，使其成为唯一执行 ContosoUniversity 过渡的情况下）。
+    **新网站-"自定义创建**" 向导将打开。 使用 "**自定义创建**" 向导，您可以同时创建网站和数据库。
+3. 在向导的 "**创建网站**" 步骤中，在 " **URL** " 框中输入一个字符串，用作应用程序过渡环境的唯一 URL。 例如，输入 ContosoUniversity-staging123 （在末尾添加随机数，以使其在 ContosoUniversity 的情况下是唯一的）。
 
-    完整的 URL 将包含的在此处输入和文本框旁边看到的后缀。
-4. 在中**区域**下拉列表中，选择离你最近的区域。
+    完整的 URL 将包含你在此处输入的内容和你在文本框旁边看到的后缀。
+4. 在 "**区域**" 下拉列表中，选择离你最近的区域。
 
-    此设置指定你的 web 应用将运行在哪个数据中心。
-5. 在中**数据库**下拉列表中，选择**创建新的 SQL 数据库**。
-6. 在中**数据库连接字符串名称**框中，保留默认值为*DefaultConnection*。
-7. 单击向右框底部的箭头。
+    此设置指定 web 应用将在哪个数据中心运行。
+5. 在 "**数据库**" 下拉列表中，选择 "**创建新的 SQL 数据库**"。
+6. 在 "**数据库连接字符串名称**" 框中，保留默认值*DefaultConnection*。
+7. 单击对话框底部的向右箭头。
 
-    如下图所示**创建网站**对话框，其中包含在其中的示例值。 将不同的 URL 和您输入的区域。
+    下图显示了 "**创建网站**" 对话框，其中包含示例值。 你输入的 URL 和区域将不同。
 
-    ![创建网站的步骤](deploying-to-production/_static/image1.png)
+    ![创建网站步骤](deploying-to-production/_static/image1.png)
 
-    该向导将前进到**指定数据库设置**步骤。
-8. 在中**名称**框中，输入*ContosoUniversity*加上随机的编号，以使之成为唯一的例如*ContosoUniversity123*。
-9. 在中**服务器**框中，选择**新建 SQL 数据库服务器**。
+    向导转到 "**指定数据库设置**" 步骤。
+8. 在 "**名称**" 框中，输入*ContosoUniversity*和随机数以使其唯一，例如*ContosoUniversity123*。
+9. 在 "**服务器**" 框中，选择 "**新建 SQL 数据库服务器**"。
 10. 输入管理员名称和密码。
 
-    不要输入现有名称和密码在此处。 应输入新名称和你现在定义，以后访问数据库时使用的密码。
-11. 在中**区域**框中，选择你为 web 应用选择的同一区域。
+    此处未输入现有名称和密码。 你正在输入新的名称和密码，你现在要定义该名称和密码，以便稍后在访问数据库时使用。
+11. 在 "**区域**" 框中，选择为 web 应用选择的相同区域。
 
-    将 web 服务器和数据库服务器放置在同一个区域提供最佳性能，并尽量减少费用。
-12. 单击底部的框以指示你已完成的复选标记。
+    将 web 服务器和数据库服务器保留在同一区域可以获得最佳性能并最大限度地减少费用。
+12. 单击框底部的复选标记以指示你已完成。
 
-    如下图所示**指定数据库设置**对话框，其中包含在其中的示例值。 你输入的值可能不同。
+    下图显示了 "**指定数据库设置**" 对话框，其中包含示例值。 输入的值可能不同。
 
-    ![数据库设置步骤使用数据库向导创建的新网站-](deploying-to-production/_static/image2.png)
+    !["新建网站-与数据库一起创建" 向导的 "数据库设置" 步骤](deploying-to-production/_static/image2.png)
 
-    管理门户返回到网站页面，并**状态**列显示正在创建 web 应用。 （通常不到一分钟），一段时间后**状态**列显示已成功创建 web 应用。 在左侧的导航栏中的 web 应用帐户中有数会显示下一步**网站**旁边显示图标，而数据库数量**SQL 数据库**图标。
+    管理门户返回到 "网站" 页面，"**状态**" 列显示正在创建的 web 应用。 经过一段时间（通常不到一分钟），"**状态**" 列会显示已成功创建 web 应用。 在左侧的导航栏中，在 "**网站**" 图标旁边会显示你的帐户中拥有的 web 应用的数目，并且数据库的数目将显示在 " **SQL 数据库**" 图标旁边。
 
-    ![管理门户中，创建网站的网站页面](deploying-to-production/_static/image3.png)
+    ![管理门户的网站页面，网站已创建](deploying-to-production/_static/image3.png)
 
-    Web 应用名称将不同于在图中的示例应用。
+    你的 web 应用名称将不同于图中的示例应用。
 
-## <a name="deploy-the-application-to-staging"></a>部署到过渡环境的应用程序
+## <a name="deploy-the-application-to-staging"></a>将应用程序部署到过渡环境
 
-现在，已创建 web 应用和过渡环境的数据库，可以将项目部署到它。
+现在，你已创建用于过渡环境的 web 应用和数据库，接下来可以将项目部署到该环境中。
 
 > [!NOTE]
-> 这些说明介绍了如何通过下载来创建发布配置文件 *.publishsettings*文件，它仅适用于不 Azure 还为第三方主机托管提供商。 最新 Azure SDK 还可直接连接到 Azure 从 Visual Studio 中，并从你有在 Azure 帐户中的 web 应用的列表中选择。 在 Visual Studio 2013 中，你可以登录到 Azure 从**Web 发布**对话框中或从**服务器资源管理器**窗口。 有关详细信息，请参阅[在 Azure 应用服务中创建 ASP.NET web 应用](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。
+> 这些说明演示如何通过下载 *.publishsettings*文件来创建发布配置文件，该文件不仅适用于 Azure，还适用于第三方托管提供商。 使用最新的 Azure SDK，你还可以从 Visual Studio 直接连接到 Azure，并从你的 Azure 帐户中的 web 应用列表中进行选择。 在 Visual Studio 2013 中，可以从**Web 发布**对话框或从**服务器资源管理器**窗口登录到 Azure。 有关详细信息，请参阅[在 Azure App Service 中创建 ASP.NET web 应用](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。
 
-### <a name="download-the-publishsettings-file"></a>下载.publishsettings 文件
+### <a name="download-the-publishsettings-file"></a>下载 .publishsettings 文件
 
 1. 单击刚刚创建的 web 应用的名称。
 
-    ![单击要转到仪表板的站点](deploying-to-production/_static/image4.png)
-2. 下**速览**中**仪表板**选项卡上，单击**下载发布配置文件**。
+    ![单击该站点以切换到仪表板](deploying-to-production/_static/image4.png)
+2. 在 "**仪表板**" 选项卡的 "**速览**" 下，单击 "**下载发布配置文件**"。
 
     ![下载发布配置文件链接](deploying-to-production/_static/image5.png)
 
-    此步骤下载包含所有将部署到 web 应用的应用程序所需的设置的文件。 这样就不必手动输入此信息，将导入 Visual Studio 的此文件。
-3. 保存 *.publishsettings*可以从 Visual Studio 访问的文件夹中的文件。
+    此步骤将下载一个文件，其中包含将应用程序部署到 web 应用所需的所有设置。 您将此文件导入到 Visual Studio 中，这样您就不必手动输入此信息。
+3. 将 *.publishsettings*文件保存在可从 Visual Studio 访问的文件夹中。
 
-    ![保存.publishsettings 文件](deploying-to-production/_static/image6.png)
+    ![保存 .publishsettings 文件](deploying-to-production/_static/image6.png)
 
     > [!WARNING]
-    > 安全性- *.publishsettings*文件包含用于管理你的 Azure 订阅和服务的凭据 （未编码）。 此文件的安全最佳做法是将其暂时存储 （例如在 Libraries\Documents 文件夹中），在源目录的外部，然后完成导入后删除它。 恶意用户获得访问权 *.publishsettings*文件可以编辑、 创建和删除 Azure 服务。
+    > 安全性- *.publishsettings*文件包含用于管理 Azure 订阅和服务的凭据（未编码）。 确保此文件安全的最佳做法是，将其暂时存储在您的源目录的外部（例如存储在 Libraries\Documents 文件夹中），然后在完成导入后将其删除。 获得 *.publishsettings*文件访问权的恶意用户可以编辑、创建和删除你的 Azure 服务。
 
 ### <a name="create-a-publish-profile"></a>创建发布配置文件
 
-1. 在 Visual Studio 中，右键单击中的 ContosoUniversity 项目**解决方案资源管理器**，然后选择**发布**从上下文菜单。
+1. 在 Visual Studio 中，右键单击**解决方案资源管理器**中的 ContosoUniversity 项目，然后从上下文菜单中选择 "**发布**"。
 
-    **发布 Web**向导随即打开。
-2. 单击**配置文件**选项卡。
-3. 单击“导入” 。
-4. 导航到 *.publishsettings*你之前已下载文件，然后单击**打开**。
+    "**发布 Web** " 向导将打开。
+2. 单击 "**配置文件**" 选项卡。
+3. 单击“导入”。
+4. 导航到之前下载的 *.publishsettings*文件，然后单击 "**打开**"。
 
-    ![导入发布设置对话框](deploying-to-production/_static/image7.png)
-5. 在中**连接**选项卡上，单击**验证连接**以确保设置正确无误。
+    !["导入发布设置" 对话框](deploying-to-production/_static/image7.png)
+5. 在 "**连接**" 选项卡中，单击 "**验证连接**" 确保设置正确。
 
-    当已验证的连接时，旁边会出现一个绿色复选标记**验证连接**按钮。
+    验证连接后，"**验证连接**" 按钮旁边会显示一个绿色复选标记。
 
-    对于某些宿主提供程序，当您单击时**验证连接**，你可能会看到**证书错误**对话框。 如果这样做，请验证服务器名称是你期望的内容。 如果服务器名称正确无误，请选择**Visual Studio 的将来会话保存此证书**然后单击**接受**。 （此错误表示宿主提供程序已选择以避免购买 SSL 证书部署到的 url 的费用。 如果想要通过使用有效的证书建立安全连接，请联系你托管提供商。）
-6. 单击 **“下一步”**。
+    对于某些宿主提供程序，单击 "**验证连接**" 时，可能会看到 "**证书错误**" 对话框。 如果执行此操作，请验证服务器名称是否与预期的相同。 如果服务器名称正确，请选择 "**为 Visual Studio 的未来会话保存此证书**"，然后单击 "**接受**"。 （此错误意味着宿主提供程序已选择避免为你要部署到的 URL 购买 SSL 证书。 如果你希望使用有效的证书建立安全连接，请与你的托管提供商联系。）
+6. 单击 **“下一步”** 。
 
-    ![连接成功图标和连接选项卡中的下一步按钮](deploying-to-production/_static/image8.png)
-7. 在中**设置**选项卡上，展开**文件发布选项**，然后选择**将应用程序中排除文件\_Data 文件夹**。
+    ![“连接”选项卡中的连接成功图标和“下一步”按钮](deploying-to-production/_static/image8.png)
+7. 在 "**设置**" 选项卡中，展开 "**文件发布选项**"，然后选择 **"从应用程序中排除文件\_Data 文件夹**。
 
-    有关下的其他选项的信息**文件发布选项**，请参阅[部署到 IIS](deploying-to-iis.md)教程。 屏幕截图数据库配置步骤结束时的此步骤和以下数据库配置步骤的结果是该显示。
-8. 下**DefaultConnection**中**数据库**部分中，配置成员资格数据库的数据库部署。
-9. 1. 选择**更新数据库**。
+    有关 "**文件发布选项**" 下的其他选项的信息，请参阅[部署到 IIS](deploying-to-iis.md)教程。 在数据库配置步骤结束时，显示此步骤的结果和以下数据库配置步骤的屏幕截图。
+8. 在 "**数据库**" 部分的 " **DefaultConnection** " 下，为成员资格数据库配置数据库部署。
+9. 1. 选择 "**更新数据库**"。
 
-        **远程连接字符串**框下方**DefaultConnection**使用.publishsettings 文件中的连接字符串填充。连接字符串包含存储在以纯文本中的 SQL Server 凭据 *.pubxml*文件。 如果不想将它们永久存在存储，可以部署数据库后，则会删除其从发布配置文件，并将其存储在 Azure 中。 有关详细信息，请参阅[如何保护您的 ASP.NET 数据库连接字符串从源部署到 Azure 时](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx)Scott Hanselman 的博客上。
-      2. 单击**配置数据库更新**。
-      3. 在中**配置数据库更新**对话框中，单击**添加 SQL 脚本**。
-      4. 在中**添加 SQL 脚本**框中，导航到*aspnet 数据 prod.sql*脚本，您之前保存在解决方案文件夹，然后单击**打开**。
-      5. 关闭**配置数据库更新**对话框。
-10. 下**SchoolContext**中**数据库**部分中，选择**执行 Code First 迁移 （应用程序启动时运行）**。
+        直接在**DefaultConnection**下的 "**远程连接字符串**" 框中填充了来自 .publishsettings 文件的连接字符串。连接字符串包含 SQL Server 凭据，这些凭据以纯文本形式存储在 *.pubxml*文件中。 如果不想将它们永久存储在该数据库中，则可以在部署数据库后将它们从发布配置文件中删除并将其存储在 Azure 中。 有关详细信息，请参阅在 Scott Hanselman 的博客上[从 ASP.NET 部署到 Azure 时如何保证你的数据库连接字符串的安全性](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx)。
+      2. 单击 "**配置数据库更新**"。
+      3. 在 "**配置数据库更新**" 对话框中，单击 "**添加 SQL 脚本**"。
+      4. 在 "**添加 SQL 脚本**" 框中，导航到之前在 "解决方案" 文件夹中保存的*aspnet-data-prod*脚本，然后单击 "**打开**"。
+      5. 关闭 "**配置数据库更新**" 对话框。
+10. 在 "**数据库**" 部分的 " **SchoolContext** " 下，选择 "**执行 Code First 迁移（在应用程序启动时运行）** 。
 
-    Visual Studio 将显示**执行 Code First 迁移**而不是**更新数据库**为`DbContext`类。 如果你想要使用 dbDacFx 提供程序而不是迁移部署使用访问数据库`DbContext`类，请参阅[如何将 Code First 数据库而无需迁移的部署？](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations)在 Visual Studio Web 部署常见问题和 MSDN 上的 ASP.NET。
+    Visual Studio 显示 `DbContext` 类的**执行 Code First 迁移**而不是**Update 数据库**。 如果要使用 dbDacFx 提供程序（而不是迁移）来部署使用 `DbContext` 类访问的数据库，请如何实现参阅 MSDN 上的 Visual Studio 的 Web 部署常见问题和 ASP.NET 中的[部署 Code First 数据库 "](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 。
 
-    **设置**选项卡现在看起来如下例所示：
+    "**设置**" 选项卡现在类似于以下示例：
 
-    ![过渡环境的设置选项卡](deploying-to-production/_static/image9.png)
-11. 执行以下步骤以保存配置文件并对其重命名*过渡*:
+    ![暂存的 "设置" 选项卡](deploying-to-production/_static/image9.png)
+11. 执行以下步骤以保存配置文件并将其重命名为*暂存*：
 
-    1. 单击**配置文件**选项卡，然后依次**管理配置文件**。
-    2. 导入创建两个新配置文件，一个用于 FTP，一个用于 Web 部署。 配置 Web 部署配置文件： 重命名为此配置文件*过渡*。
+    1. 单击 "**配置文件**" 选项卡，然后单击 "**管理配置文件**"。
+    2. 导入创建了两个新配置文件，一个用于 FTP，另一个用于 Web 部署。 你已配置 Web 部署配置文件：将此配置文件重命名为 "*暂存*"。
 
-        ![重命名到过渡环境的配置文件](deploying-to-production/_static/image10.png)
-    3. 关闭**编辑 Web 发布配置文件**对话框。
-    4. 关闭**发布 Web**向导。
+        ![将配置文件重命名为暂存](deploying-to-production/_static/image10.png)
+    3. 关闭 "**编辑 Web 发布配置文件**" 对话框。
+    4. 关闭 "**发布 Web** " 向导。
 
-### <a name="configure-a-publish-profile-transform-for-the-environment-indicator"></a>配置发布配置文件转换为环境的指示符
+### <a name="configure-a-publish-profile-transform-for-the-environment-indicator"></a>为环境指示器配置发布配置文件转换
 
 > [!NOTE]
-> 本部分演示如何设置 Web.config 转换为环境的指示符。 因为指示器位于`<appSettings>`元素，必须在部署到 Azure 应用服务时指定该转换的另一种方法。 有关详细信息，请参阅[在 Azure 中的指定 Web.config 设置](web-config-transformations.md#watransforms)。
+> 本部分说明如何为环境指示器设置 web.config 转换。 因为指示器位于 `<appSettings>` 元素中，所以在部署到 Azure App Service 时，可以使用另一种方法来指定转换。 有关详细信息，请参阅[在 Azure 中指定 web.config 设置](web-config-transformations.md#watransforms)。
 
-1. 在中**解决方案资源管理器**，展开**属性**，然后展开**PublishProfiles**。
-2. 右键单击*Staging.pubxml*，然后单击**添加配置转换**。
+1. 在**解决方案资源管理器**中，展开 "**属性**"，然后展开**PublishProfiles**。
+2. 右键单击 " *.pubxml*"，然后单击 "**添加配置转换**"。
 
-    ![用于临时添加配置转换](deploying-to-production/_static/image11.png)
+    ![为暂存添加配置转换](deploying-to-production/_static/image11.png)
 
-    Visual Studio 将创建*Web.Staging.config*转换文件并将其打开。
-3. 在中*Web.Staging.config*转换文件中，打开后立即插入以下代码`configuration`标记。
+    Visual *Studio 将创建 web.config 转换文件*并将其打开。
+3. 在 web.config*转换文件*中，将以下代码插入到紧随开始 `configuration` 标记之后。
 
     [!code-xml[Main](deploying-to-production/samples/sample1.xml)]
 
-    当使用过渡发布配置文件时，此转换将设置为"Prod"环境指示器。 在已部署的 web 应用中，不会在"Contoso University"H1 标题后看到任何后缀，例如"（开发）"（测试）"。
-4. 右键单击*Web.Staging.config*文件，并单击**预览版转换**以确保您编码的转换生成预期的更改。
+    当使用过渡发布配置文件时，此转换会将环境指示器设置为 "生产"。 在已部署的 web 应用中，你将看不到任何后缀，如 "Contoso 大学" H1 标题后面的 "（开发人员）" 或 "（测试）"。
+4. 右键单击 " *web.config* " 文件，然后单击 "**预览转换**"，以确保编码的转换生成所需的更改。
 
-    **Web.config 预览版**窗口中显示结果应用同时*Web.Release.config*转换并*Web.Staging.config*转换。
+    Web.config**预览**窗口显示了同时应用*web.config*转换和*web.config 转换的结果。 "转换*"。
 
-### <a name="prevent-public-use-of-the-test-app"></a>防止公共使用的测试应用
+### <a name="prevent-public-use-of-the-test-app"></a>阻止公共使用测试应用
 
-过渡应用的重要考虑事项是它将实时 Internet 上，但你不希望使用它的公共。 若要最大程度减少人将查找并使用它的可能性，可以使用一个或多个以下方法：
+过渡应用程序的一个重要注意事项是它将在 Internet 上出现，但您不希望公开使用它。 若要最大程度地减少用户查找和使用它的可能性，可以使用以下一种或多种方法：
 
-- 设置访问过渡应用仅允许使用来测试暂存的 IP 地址的防火墙规则。
+- 设置防火墙规则，仅允许从用于测试暂存的 IP 地址访问过渡应用。
 - 使用不可能猜到的经过模糊处理的 URL。
-- 创建*robots.txt*文件以确保，搜索引擎不会爬网测试应用程序和报表链接到它在搜索结果中。
+- 创建一个*机器人 .txt*文件，以确保搜索引擎不会对测试应用进行爬网，并在搜索结果中向其报告链接。
 
-第一种方法是最有效的但因为它可能要求你将部署到 Azure 云服务而不是 Azure 应用服务未涵盖在本教程中。 有关云服务的详细信息和在 Azure 中的 IP 限制，请参阅[计算托管选项提供的 Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)并[阻止特定 IP 地址访问 Web 角色](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx)。 如果要部署到第三方托管提供商，请联系提供商联系以了解如何实现 IP 限制。
+这些方法中的第一种方法是最有效的，但在本教程中不涉及，因为这将要求你部署到 Azure 云服务而不是 Azure App Service。 有关 Azure 中的云服务和 IP 限制的详细信息，请参阅[Azure 提供的计算托管选项](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me)和[阻止特定 IP 地址访问 Web 角色](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx)。 如果要部署到第三方托管提供商，请与提供商联系，以了解如何实现 IP 限制。
 
-对于本教程中，将创建*robots.txt*文件。
+在本教程中，你将创建一个*机器人 .txt*文件。
 
-1. 在中**解决方案资源管理器**，右键单击 ContosoUniversity 项目，然后单击**添加新项**。
-2. 创建一个新**文本文件**名为*robots.txt*，并将它置于以下文本：
+1. 在**解决方案资源管理器**中，右键单击 ContosoUniversity 项目，然后单击 "**添加新项**"。
+2. 创建一个名为 "*机器人*" 的新**文本文件**，然后在其中输入以下文本：
 
     [!code-console[Main](deploying-to-production/samples/sample2.cmd)]
 
-    `User-agent`一行告诉文件中的规则适用于所有搜索引擎 web 爬网程序 （机器人） 的搜索引擎和`Disallow`行指定应在站点上的任何页已爬网。
+    "`User-agent`" 行通知搜索引擎文件中的规则适用于所有搜索引擎 web 爬网程序（机器人），`Disallow` 行指定不应爬网网站上的任何页面。
 
-    您希望搜索引擎目录生产应用，因此您需要从生产部署中排除此文件。 若要执行操作，你将配置在生产环境中的设置发布配置文件时创建它。
+    你确实希望搜索引擎为你的生产应用程序编目，因此你需要从生产部署中排除此文件。 为此，你将在创建生产发布配置文件时配置其设置。
 
 ### <a name="deploy-to-staging"></a>部署到过渡环境
 
-1. 打开**发布 Web**右键单击 Contoso University 项目并单击向导**发布**。
-2. 请确保**过渡**选择配置文件。
-3. 单击“发布” 。
+1. 右键单击 Contoso 大学项目，然后单击 "**发布**"，打开 "**发布 Web** " 向导。
+2. 请确保选择了**暂存**配置文件。
+3. 单击“发布”。
 
-    **输出**窗口将显示已执行的部署操作并报告成功完成部署。 默认浏览器会自动打开指向已部署的 web 应用的 URL。
+    "**输出**" 窗口将显示已执行的部署操作并报告部署的成功完成。 默认浏览器会自动打开到已部署的 web 应用的 URL。
 
 ## <a name="test-in-the-staging-environment"></a>在过渡环境中测试
 
-请注意，该环境标记是不存在 (没有"（测试）"或"（开发）"H1 标题，显示后*Web.config*环境指示器的转换是否成功。
+请注意，环境指示器不存在（"（测试）" 或 "（开发）" 在 H1 标题后，这表明环境指示器的*web.config 转换已*成功。
 
-![主页上的过渡环境](deploying-to-production/_static/image12.png)
+![主页过渡](deploying-to-production/_static/image12.png)
 
-运行**学生**页后，可以验证是否已部署的数据库具有任何学生。
+运行 "**学生**" 页，验证部署的数据库是否没有学生。
 
-运行**讲师**页以验证，Code First 设定数据库种子的讲师数据：
+运行**讲师**页，验证 Code First 用指导员数据对数据库进行种子设定：
 
-选择**添加学生**从**学生**菜单中，添加一名学生，，然后查看中的新学生**学生**页以验证是否可以成功写入到数据库.
+从 "**学生**" 菜单中选择 "**添加学生**"，添加一个学生，然后在 "**学生**" 页中查看新学生，验证是否可以成功写入到数据库。
 
-从**课程**页上，单击**更新信用额度**。 **更新信用额度**页面需要管理员权限，因此**Log In**显示页。 输入创建早期 （"admin"和"prodpwd"） 的管理员帐户凭据。 **更新信用额度**显示页面时，用于验证在上一教程中创建的管理员帐户已正确部署到测试环境。
+在 "**课程**" 页上，单击 "**更新信用**"。 **更新信用**页面需要管理员权限，因此将显示 "**登录**" 页。 输入先前创建的管理员帐户凭据（"admin" 和 "prodpwd"）。 此时将显示 "**更新信用**" 页，该页面验证你在上一教程中创建的管理员帐户是否已正确部署到测试环境中。
 
-请求了无效的 URL 以产生错误 ELMAH 将跟踪，然后请求 ELMAH 错误报告。 如果要部署到第三方托管提供商，您可能会发现报表同样为空上一教程中为空。 必须使用托管提供商的帐户管理工具来配置启用 ELMAH 要写入的日志文件夹的文件夹权限。
+请求一个无效的 URL 来导致 ELMAH 将跟踪的错误，然后请求 ELMAH 错误报告。 如果要部署到第三方托管提供程序，则可能会发现报表为空，原因是在上一教程中，此报表为空。 你将需要使用宿主提供程序的帐户管理工具来配置文件夹权限，以允许 ELMAH 写入日志文件夹。
 
-现在就像将用于生产的 web 应用中在云中运行您创建的应用程序。 由于一切正常运行下, 一步是部署到生产环境。
+你创建的应用程序现在在云中的 web 应用中运行，就像你将用于生产的应用程序一样。 由于一切都能正常运行，因此下一步是部署到生产环境。
 
 ## <a name="deploy-to-production"></a>部署到生产环境
 
-创建生产 web 应用和部署到生产环境的过程与过渡环境，相同，只不过需要排除*robots.txt*从部署。 若要执行此操作将编辑发布配置文件。
+除了需要从部署中排除*机器人 .txt*外，创建生产 web 应用并将其部署到生产的过程与用于过渡的过程相同。 为此，你将编辑发布配置文件。
 
 ### <a name="create-the-production-environment-and-the-production-publish-profile"></a>创建生产环境和生产发布配置文件
 
-1. 在 Azure 中，用于过渡的相同过程创建的生产 web 应用和数据库。
+1. 按照用于过渡的相同过程，在 Azure 中创建生产 web 应用和数据库。
 
-    创建数据库时，可以选择将其放在同一台服务器之前，创建或创建新的服务器。
+    创建数据库时，可以选择将其放在之前创建的同一服务器上，或创建新服务器。
 2. 下载 *.publishsettings*文件。
-3. 通过导入生产环境创建发布配置文件 *.publishsettings*文件，用于过渡的相同过程。
+3. 通过导入 *.publishsettings*文件来创建发布配置文件，遵循用于过渡的相同过程。
 
-    别忘了配置数据部署脚本下的**DefaultConnection**中**数据库**一部分**设置**选项卡。
-4. 重命名为发布配置文件*生产*。
-5. 配置发布配置文件转换为环境的指示符，用于过渡的相同过程...
+    别忘了在 "**设置**" 选项卡的 "**数据库**" 部分中的**DefaultConnection**下配置数据部署脚本。
+4. 将发布配置文件重命名为 "*生产*"。
+5. 按照用于过渡的相同过程，为环境指示器配置发布配置文件转换。
 
-### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>编辑要排除 robots.txt 的.pubxml 文件
+### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>编辑 .pubxml 文件以排除机器人 .txt
 
-发布配置文件的文件命名&lt;profilename&gt;*.pubxml*并位于*PublishProfiles*文件夹。 *PublishProfiles*文件夹位于*属性*文件夹中的 C# web 应用程序项目，在*我的项目*在 VB web 应用程序项目中，或在文件夹*应用程序\_数据*文件夹中的 web 应用程序项目。 每个 *.pubxml*文件包含应用于一个设置发布配置文件。 在发布 Web 向导中输入的值存储在这些文件，并可以编辑它们以便创建或更改不会在 Visual Studio UI 中提供的设置。
+发布配置文件是 &lt;*profilename&gt;命名*的，位于*PublishProfiles*文件夹中。 *PublishProfiles*文件夹位于C# web 应用程序项目中的 "*属性*" 文件夹下、VB web 应用程序项目中的 "*我的项目*" 文件夹下或 Web 应用项目中的 "*应用\_Data* " 文件夹下。 每个 *.pubxml*文件都包含适用于一个发布配置文件的设置。 您在 "发布 Web" 向导中输入的值存储在这些文件中，您可以对其进行编辑以创建或更改不能在 Visual Studio UI 中使用的设置。
 
-默认情况下 *.pubxml*文件包含在项目中创建发布配置文件，但您可以从项目中排除它们和 Visual Studio 仍将使用它们时。 Visual Studio 查找*PublishProfiles*文件夹 *.pubxml*文件，而不管这些数据是否包括在项目中。
+默认情况下，当你创建发布配置文件时， *.pubxml*文件包含在项目中，但你可以将其从项目中排除，Visual Studio 仍将使用它们。 Visual Studio 将在*PublishProfiles*文件夹中查找 *.pubxml*文件，无论它们是否包含在项目中。
 
-每个 *.pubxml*文件有 *.pubxml 用户*文件。 *.Pubxml 用户*文件包含加密的密码，如果选择了**保存密码**选项，并且默认情况下会从项目中排除。
+对于每个 *.pubxml*文件，都有一个 *.pubxml*文件。 如果选择了 "**保存密码**" 选项，则 *.pubxml*文件将包含加密密码，并且默认情况下会将其从项目中排除。
 
-一个 *.pubxml*文件包含与特定的发布配置文件相关的设置。 如果你想要配置应用于所有配置文件的设置，则可以创建 *。 wpp.targets*文件。 生成过程将导入到这些文件 *.csproj*或 *.vbproj*项目文件中，因此可以在这些文件中配置大多数设置都可以在项目文件中配置。 有关详细信息 *.pubxml*文件并 *。 wpp.targets*文件，请参阅[如何：在编辑部署设置发布配置文件 (.pubxml) 文件和。 Visual Studio Web 项目中的.wpp.targets 文件](https://msdn.microsoft.com/library/ff398069.aspx)。
+*.Pubxml*文件包含与特定发布配置文件相关的设置。 如果要配置适用于所有配置文件的设置，则可以创建一个 *. .targets*文件。 生成过程会将这些文件导入 *.csproj*或 *.vbproj*项目文件中，因此可以在这些文件中配置可在项目文件中配置的大多数设置。 有关 *.pubxml* *文件和 .pubxml 文件的*详细信息，请参阅[如何：在发布配置文件中编辑部署设置（.）文件和 Visual Studio Web 项目中的文件](https://msdn.microsoft.com/library/ff398069.aspx)。
 
-1. 在中**解决方案资源管理器**，展开**属性**展开**PublishProfiles**。
-2. 右键单击*Production.pubxml*然后单击**打开**。
+1. 在**解决方案资源管理器**中，展开 "**属性**"，然后展开**PublishProfiles**。
+2. 右键单击 " *.pubxml* "，然后单击 "**打开**"。
 
-    ![打开.pubxml 文件](deploying-to-production/_static/image13.png)
-3. 右键单击*Production.pubxml*然后单击**打开**。
-4. 添加以下行之前结束`PropertyGroup`元素：
+    ![打开 .pubxml 文件](deploying-to-production/_static/image13.png)
+3. 右键单击 " *.pubxml* "，然后单击 "**打开**"。
+4. 在紧靠右 `PropertyGroup` 元素之前添加以下行：
 
     [!code-xml[Main](deploying-to-production/samples/sample3.xml)]
 
-    .Pubxml 文件现在看起来如下例所示：
+    .Pubxml 文件现在如以下示例所示：
 
     [!code-xml[Main](deploying-to-production/samples/sample4.xml?highlight=18-20)]
 
-    有关如何排除文件和文件夹的详细信息，请参阅[可以排除特定文件或文件夹从部署？](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)中**Visual Studio 和 ASP.NET 的 Web 部署常见问题解答**MSDN 上。
+    有关如何排除文件和文件夹的详细信息，请参阅 MSDN 上的**Visual Studio 和 ASP.NET 的 Web 部署常见问题解答**中的 "[能否从部署中排除特定文件或文件夹"](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) 。
 
 ### <a name="deploy-to-production"></a>部署到生产环境
 
-1. 打开**发布 Web**向导，确保**生产**发布配置文件已选择，然后单击**开始预览**上**预览**选项卡，确认*robots.txt*文件不会复制到生产应用。
+1. 打开 "**发布 Web** " 向导，确保已选择 "**生产**发布配置文件"，然后单击 "**预览**" 选项卡上的 "**开始预览**"，验证*机器人 .txt*文件是否不会复制到生产应用。
 
-    ![文件发布到生产环境的预览](deploying-to-production/_static/image14.png)
+    ![要发布到生产的文件预览](deploying-to-production/_static/image14.png)
 
-    查看将复制的文件的列表。 您会发现其中的所有 *.cs*文件，其中包括 *。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*省略文件。 所有这些代码已编译到*ContosoUniversity.dll*并*ContosoUniversity.pdb*您会发现中的文件*bin*文件夹。 因为仅 *.dll*需要向运行该应用程序，以及你前面指定应部署仅运行该应用程序所需的文件，则不 *.cs*文件已复制到目标环境。 *Obj*文件夹并*ContosoUniversity.csproj*并 *。 csproj.user*文件省略出于同样的原因。
+    查看要复制的文件的列表。 你将看到所有 *.cs*文件，包括*aspx.cs*、 *. aspx.designer.cs*、 *Master.cs*和*Master.designer.cs*文件。 所有此代码都已编译到*ContosoUniversity*和*ContosoUniversity*文件中，这些文件将在*bin*文件夹中找到。 由于只需要 *.dll*来运行应用程序，并且您之前指定仅应部署运行应用程序所需的文件，因此，不会将 *.cs*文件复制到目标环境。 由于相同的原因，将省略*obj*文件夹和*ContosoUniversity*和 *.csproj*文件。
 
-    单击**发布**将部署到生产环境。
-2. 在生产环境，用于过渡的相同过程中进行测试。
+    单击 "**发布**" 以部署到生产环境。
+2. 在生产环境中测试，遵循用于过渡的相同过程。
 
-    所有内容都是相同 URL 除外的过渡环境和缺少*robots.txt*文件。
+    除 URL 之外的所有内容和缺少*机器人 .txt*文件的内容完全相同。
 
 ## <a name="summary"></a>总结
 
-你现在已成功部署和测试你的 web 应用，它可公开通过 Internet。
+现在，你已成功部署并测试了 web 应用，并且该应用可通过 Internet 公开使用。
 
 ![主页生产](deploying-to-production/_static/image15.png)
 
-在下一步的教程中，将更新应用程序代码，将更改部署到测试、 过渡和生产环境。
+在下一教程中，你将更新应用程序代码并将更改部署到测试、过渡和生产环境。
 
 > [!NOTE]
-> 在生产环境中使用你的应用程序时您应实现的恢复计划。 即，应该定期备份的数据库从生产应用到一个安全存储位置，并应保留多个代的此类备份。 更新数据库时，应进行更改之前立即从备份副本。 然后，如果您有误并部署到生产环境后不发现它之前，您将仍将能够将数据库恢复到其损坏之前的状态。 有关详细信息，请参阅[Azure SQL 数据库备份和还原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
+> 当应用程序在生产环境中使用时，应实施恢复计划。 也就是说，应定期将数据库从生产应用备份到安全存储位置，并且应保留多代此类备份。 更新数据库时，应立即从更改之前创建备份副本。 然后，如果您在将其部署到生产环境之前，不会发现该错误，则您仍然能够将数据库恢复到其损坏之前的状态。 有关详细信息，请参阅[AZURE SQL 数据库备份和还原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
 > 
 > 
 > [!NOTE]
-> 在本教程中 SQL Server 要部署到的版本是 Azure SQL 数据库。 类似于其他版本的 SQL Server 部署过程时，实际的生产应用程序可能在某些情况下为 Azure SQL 数据库需要特殊的代码。 有关详细信息，请参阅[使用 Azure SQL 数据库](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb)并[SQL Server 和 Azure SQL 数据库之间进行选择](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing)。
+> 在本教程中，你要部署到的 SQL Server 版本是 Azure SQL 数据库。 尽管部署过程与 SQL Server 的其他版本类似，但在某些情况下，实际生产应用程序可能需要 Azure SQL 数据库的特殊代码。 有关详细信息，请参阅使用[AZURE Sql 数据库](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb)和[在 SQL SERVER 和 Azure SQL 数据库之间进行选择](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing)。
 > 
 > [!div class="step-by-step"]
 > [上一页](setting-folder-permissions.md)

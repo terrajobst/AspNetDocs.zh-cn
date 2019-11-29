@@ -8,20 +8,20 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 6fcfcda5b95e5844f7d357ac0cbb6d1fd2e215ac
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.openlocfilehash: fb7e76101cbe6a874ddf5b3429ca2dc6d474334b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445777"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74595765"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和网页中的 XSRF/CSRF 防护
 
 作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-> 跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 web 托管应用程序的攻击，恶意网站可能会影响客户端浏览器与受该浏览器信任的网站之间的交互。 这些攻击是可能的，因为 web 浏览器会自动向网站发送每个请求的身份验证令牌。 规范示例是一个身份验证 cookie，如 ASP。NET 的 Forms 身份验证票证。 然而，使用任何持久身份验证机制（例如 Windows 身份验证、基本等）的网站可以作为这些攻击的目标。
+> 跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 Web 托管型应用程序的攻击，恶意网站凭此可以影响客户端浏览器与受该浏览器信任的网站之间的交互。 这些攻击出现的原因可能是 Web 浏览器针对每一个对网站的请求自动发送身份验证令牌。 典型示例是身份验证 cookie，如 ASP.NET 的表单身份验证票证。 然而，使用任何持久身份验证（如 Windows Authentication、Basic 等）的网站也可能成为受攻击目标。
 > 
-> XSRF 攻击不同于网络钓鱼攻击。 网络钓鱼攻击需要与受害者进行交互。 在网络钓鱼攻击中，恶意网站将模仿目标网站，并欺骗受害者向攻击者提供敏感信息。 在 XSRF 攻击中，通常不需要受到受害者的交互。 相反，攻击者会依赖浏览器自动向目标网站发送所有相关 cookie。
+> XSRF 攻击不同于网络钓鱼攻击。 网络钓鱼攻击需要与受害者进行交互。 在网络钓鱼攻击中，恶意网站将仿冒目标网站，受到欺骗的受害者会向攻击者提供敏感信息。 在 XSRF 攻击中，通常不必与受害者进行交互。 相反，浏览器自动向目标网站发送所有相关 cookie 为攻击者提供了可乘之机。
 > 
 > 有关详细信息，请参阅[打开 Web 应用程序安全项目](https://www.owasp.org/index.php/Main_Page)（OWASP） [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
 
@@ -128,7 +128,7 @@ XSRF 设施还可以在令牌生成或验证过程中执行额外检查，这些
 
 使用基于声明的身份验证的许多部署将特别使用[Azure 访问控制服务](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx)（ACS）。 ACS 允许开发人员配置单个*标识提供者*（如 ADFS、Microsoft 帐户提供程序、OpenID 提供程序（例如 yahoo！等）），标识提供程序将返回*名称标识符*。 这些名称标识符可以包含个人身份信息（PII）（如电子邮件地址），也可以匿名，如专用个人标识符（PPID）。 无论如何，元组（标识提供者、名称标识符）在浏览站点时都能充分充当特定用户的相应跟踪令牌，因此，ASP.NET Web Stack 运行时可以使用元组来代替用户名，正在验证 XSRF 字段标记。 标识提供程序和名称标识符的特定 Uri 为：
 
-- `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
+- `https://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
 （有关详细信息，请参阅此[ACS 文档页](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx)。）

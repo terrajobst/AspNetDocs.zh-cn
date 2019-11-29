@@ -1,177 +1,177 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
-title: 创建自定义的排序用户界面 (C#) |Microsoft Docs
+title: 创建自定义的排序用户界面C#（） |Microsoft Docs
 author: rick-anderson
-description: 显示一长串的已排序数据，它可以是非常有帮助通过引入分隔符行组相关的数据。 在本教程中我们将了解如何创建...
+description: 显示已排序数据的长列表时，通过引入分隔符行对相关数据进行分组非常有用。 在本教程中，我们将了解如何凭据
 ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 6f81b633-9d01-4e52-ae4a-2ea6bc109475
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: af4f91ffed7b8884a7441b5ccf4f390aba867fed
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 93ec07a13de80e4c874ff46b5dfa626b60b632c8
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121901"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74597430"
 ---
 # <a name="creating-a-customized-sorting-user-interface-c"></a>创建自定义的排序用户界面 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_CS.exe)或[下载 PDF](creating-a-customized-sorting-user-interface-cs/_static/datatutorial27cs1.pdf)
+[下载示例应用](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_CS.exe)或[下载 PDF](creating-a-customized-sorting-user-interface-cs/_static/datatutorial27cs1.pdf)
 
-> 显示一长串的已排序数据，它可以是非常有帮助通过引入分隔符行组相关的数据。 在本教程中我们将了解如何创建此类的排序用户界面。
+> 显示已排序数据的长列表时，通过引入分隔符行对相关数据进行分组非常有用。 在本教程中，我们将了解如何创建此类排序用户界面。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-当显示一长串的已排序数据有少量的已排序的列中的不同值，最终用户可能会发现很难识别，确实如此，区别边界发生。 例如，有在数据库中，但仅有九个不同的类别选项 81 产品 (八个唯一类别以及`NULL`选项)。 请考虑有兴趣查看属于 Seafood 类别的产品的用户的情况。 从列出的页面*所有*单一 GridView 中的产品，用户可能会决定其最好的方法就是对结果进行排序的类别，将组合在一起的所有 Seafood 产品组合在一起。 按类别进行排序后, 用户然后需要 hunt 整个列表，寻找 Seafood 分组产品开始和结束的位置。 由于对结果进行按字母顺序排序的查找 Seafood 产品类别名称并不困难，但它仍需要仔细扫描中网格项的列表。
+当在已排序的列中显示仅有少量不同值的已排序数据的长列表时，最终用户可能会发现很难识别差异边界的确切位置。 例如，数据库中有81个产品，但仅有九个不同的类别选项（8个唯一类别加上 `NULL` 选项）。 假设有兴趣检查 "海鲜" 类别下的产品的用户。 从列出单个 GridView 中*所有*产品的页面中，用户可能会决定，最佳做法是按类别对结果进行排序，这会将所有海鲜产品组合在一起。 按类别排序后，用户需要通读列表，寻找海鲜分组的产品开始和结束的位置。 由于结果按类别名称的字母顺序排序，查找海鲜产品并不困难，但仍需要密切扫描网格中的项目列表。
 
-为了突出显示已排序组之间的边界，很多网站，请使用一个用户界面，将添加此类组之间的分隔符。 图 1 所示类似的分隔符使用户能够更快地查找特定组和标识其边界，以及确定在数据中存在哪些不同的组。
+为了帮助突出显示已排序组之间的边界，许多网站使用在此类组之间添加分隔符的用户界面。 类似于图1所示的分隔符使用户能够更快地查找特定组并标识其边界，还可以确定数据中存在哪些不同的组。
 
-[![每个类别组是明确标识](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
+[明确标识每个类别组 ![](creating-a-customized-sorting-user-interface-cs/_static/image2.png)](creating-a-customized-sorting-user-interface-cs/_static/image1.png)
 
-**图 1**:每个类别组是明确标识 ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image3.png))
+**图 1**：清楚地确定每个类别组（[单击以查看完全大小的图像](creating-a-customized-sorting-user-interface-cs/_static/image3.png)）
 
-在本教程中我们将了解如何创建此类的排序用户界面。
+在本教程中，我们将了解如何创建此类排序用户界面。
 
-## <a name="step-1-creating-a-standard-sortable-gridview"></a>步骤 1：创建标准的可排序的 GridView
+## <a name="step-1-creating-a-standard-sortable-gridview"></a>步骤1：创建标准的可排序 GridView
 
-我们将探讨如何增强 GridView 来提供增强的排序接口之前，让我们来首先创建一个标准的可排序的 GridView，列出的产品。 首先打开`CustomSortingUI.aspx`页中`PagingAndSorting`文件夹。 向页面添加一个 GridView，设置其`ID`属性设置为`ProductList`，并将其绑定到新对象数据源。 配置要使用 ObjectDataSource`ProductsBLL`类的`GetProducts()`用于选择记录的方法。
+在了解如何增强 GridView 来提供增强的排序界面之前，首先请创建一个列出产品的标准、可排序的 GridView。 首先打开 `PagingAndSorting` 文件夹中的 "`CustomSortingUI.aspx`" 页。 将 GridView 添加到页面，将其 `ID` 属性设置为 `ProductList`，并将其绑定到新的 ObjectDataSource。 将 ObjectDataSource 配置为使用 `ProductsBLL` 类 `GetProducts()` 方法来选择记录。
 
-接下来，以便它仅包含配置 GridView `ProductName`， `CategoryName`， `SupplierName`，和`UnitPrice`BoundFields 和停用 CheckBoxField。 最后，配置 GridView 支持排序 GridView s 智能标记中的启用排序复选框 (或通过设置其`AllowSorting`属性设置为`true`)。 建立到这些新增功能后`CustomSortingUI.aspx`页上，在声明性标记应如下所示：
+接下来，配置 GridView，使其仅包含 `ProductName`、`CategoryName`、`SupplierName`和 `UnitPrice` BoundFields 以及中止的 CheckBoxField。 最后，通过选中 GridView s 智能标记（或通过将其 `AllowSorting` 属性设置为 `true`）中的 "启用排序" 复选框来配置 GridView，以支持排序。 将这些添加到 `CustomSortingUI.aspx` 页后，声明性标记应如下所示：
 
 [!code-aspx[Main](creating-a-customized-sorting-user-interface-cs/samples/sample1.aspx)]
 
-请花费片刻时间为止的浏览器中查看我们的进度。 图 2 显示了可排序的 GridView，其数据按类别按字母顺序进行排序时。
+花点时间在浏览器中查看进度。 图2显示了按类别（按字母顺序）对其数据进行排序时可排序的 GridView。
 
 [![可排序的 GridView s 数据按类别排序](creating-a-customized-sorting-user-interface-cs/_static/image5.png)](creating-a-customized-sorting-user-interface-cs/_static/image4.png)
 
-**图 2**:按类别排序数据的可排序的 GridView s ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image6.png))
+**图 2**：可排序的 GridView 数据按类别排序（[单击以查看完全大小的图像](creating-a-customized-sorting-user-interface-cs/_static/image6.png)）
 
-## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>步骤 2：探索用于添加分隔符行的技术
+## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>步骤2：探索用于添加分隔符行的技术
 
-使用通用的可排序 GridView 中完成，所有的就是为了能够在每个唯一的已排序组之前 GridView 中添加分隔符行。 但如何可以这样的行注入到 GridView？ 从根本上来说，我们需要进行循环访问，GridView 的行，确定已排序的列的值之间的差异的发生位置，然后添加适当的分隔符行。 当考虑此问题，人们似乎很自然的解决方案处于某个位置中的 GridView 的`RowDataBound`事件处理程序。 如中所述[自定义格式设置基于数据的](../custom-formatting/custom-formatting-based-upon-data-cs.md)教程中，应用行级别格式基于行的数据时，通常使用此事件处理程序。 但是，`RowDataBound`事件处理程序不在这里，该解决方案，因为行不能添加到 GridView 以编程方式从此事件处理程序。 GridView 的`Rows`集合，实际上，是只读的。
+一般的可排序 GridView 完成后，剩下的就是能够在 GridView 中的每个唯一排序组之前添加分隔行。 但如何将此类行注入到 GridView 中呢？ 实质上，我们需要遍历 GridView 的行，确定排序列中的值之间的差异，然后添加相应的分隔符行。 在考虑此问题时，解决方案似乎很自然 `RowDataBound` 事件处理程序中的某个位置。 如我们在[基于数据的自定义格式设置](../custom-formatting/custom-formatting-based-upon-data-cs.md)教程中所述，此事件处理程序通常在基于行的数据应用行级格式设置时使用。 但 `RowDataBound` 事件处理程序并不是解决方案，因为不能通过此事件处理程序以编程方式向 GridView 添加行。 实际上，GridView `Rows` 集合为只读。
 
-若要将其他行添加到 GridView 我们有三个选择：
+若要将其他行添加到 GridView，我们有三个选择：
 
 - 将这些元数据分隔符行添加到绑定到 GridView 的实际数据
-- GridView 已绑定到数据后，将添加其他`TableRow`实例到 GridView s 控制集合
-- 创建扩展了 GridView 控件并重写这些方法负责构造 GridView 的结构的自定义服务器控件
+- 将 GridView 绑定到数据后，将其他 `TableRow` 实例添加到 GridView s 控件集合
+- 创建一个自定义服务器控件，该控件扩展 GridView 控件并替代负责构造 GridView s 结构的方法
 
-创建自定义服务器控件将是最好的方法，此功能需要多个网页上或跨多个网站。 但是，它将需要一小段代码和到探索的全面探讨，GridView s 内部工作原理。 因此，我们将不考虑该选项对于本教程。
+如果需要在多个网页上或在多个网站上使用此功能，则创建自定义服务器控件将是最佳方法。 不过，它会执行相当多的代码，并全面探索 GridView 内部工作原理的深度。 因此，在本教程中，我们不会考虑该选项。
 
-其他两种选项添加分隔符行的实际数据被绑定到 GridView 和 GridView 的控件集合后操作其已绑定-以不同方式攻击问题，值得讨论。
+其他两个选项可将分隔符行添加到要绑定到 GridView 的实际数据，并在其绑定后操作 GridView s 控制集合。
 
-## <a name="adding-rows-to-the-data-bound-to-the-gridview"></a>将行添加到数据绑定到 GridView
+## <a name="adding-rows-to-the-data-bound-to-the-gridview"></a>向 GridView 绑定的数据中添加行
 
-在 GridView 绑定到数据源，它会创建`GridViewRow`为数据源返回每个记录。 因此，我们可以通过添加分隔符记录到数据源绑定到 GridView 之前插入所需的分隔符行。 图 3 说明了这一概念。
+当 GridView 绑定到数据源时，它将为数据源返回的每个记录创建一个 `GridViewRow`。 因此，可以在将分隔符记录到 GridView 之前，通过在数据源中添加分隔符记录来注入所需的分隔行。 图3说明了这一概念。
 
-![一种方法涉及将分隔符行添加到数据源](creating-a-customized-sorting-user-interface-cs/_static/image7.png)
+![一种方法是向数据源添加分隔行](creating-a-customized-sorting-user-interface-cs/_static/image7.png)
 
-**图 3**:一种方法涉及将分隔符行添加到数据源
+**图 3**：其中一项技术涉及到将分隔符行添加到数据源
 
-我在引号中使用术语分隔符记录，因为没有特殊的分隔符记录;相反，我们必须以某种方式的标记中的数据源的特定记录用作分隔符，而不是普通的数据行。 有关我们的示例，我们重新绑定`ProductsDataTable`实例与 GridView，由组成`ProductRows`。 我们可能会通过设置一条记录标记为一个分隔符行及其`CategoryID`属性设置为`-1`（因为此类值无法正常情况下存在）。
+我在引号中使用术语分隔符记录，因为没有特殊的分隔符记录;相反，我们必须将数据源中的特定记录作为分隔符而不是普通数据行来标记。 对于我们的示例，我们将 `ProductsDataTable` 实例绑定到由 `ProductRows`组成的 GridView。 我们可能会将记录标记为分隔符行，方法是将其 `CategoryID` 属性设置为 `-1` （因为这样的值无法正常存在）。
 
-若要利用此技术 d 我们需要执行以下步骤：
+若要利用此方法，我们需要执行以下步骤：
 
-1. 以编程方式检索的数据绑定到 GridView (`ProductsDataTable`实例)
-2. 基于 GridView s 上的数据进行排序`SortExpression`和`SortDirection`属性
-3. 循环访问`ProductsRows`在`ProductsDataTable`，他们寻求在已排序的列中的差异的存在位置
-4. 在每个组边界注入分隔符记录`ProductsRow`实例到 DataTable，它具有 s`CategoryID`设置为`-1`（或任何指定决定时将标记作为分隔符记录一条记录）
-5. 插入分隔符行之后, 以编程方式将数据绑定到 GridView
+1. 以编程方式检索要绑定到 GridView 的数据（`ProductsDataTable` 实例）
+2. 基于 GridView `SortExpression` 和 `SortDirection` 属性对数据进行排序
+3. 遍历 `ProductsDataTable`中的 `ProductsRows`，查找排序列中的差异的位置
+4. 在每个组边界，将分隔符记录 `ProductsRow` 实例插入到 DataTable 中，其中一个 `CategoryID` 设置为 `-1` （或决定将记录标记为分隔符记录的任何指定）
+5. 注入分隔符行后，以编程方式将数据绑定到 GridView
 
-除了上述五个步骤 d 我们还需要提供事件处理程序的 GridView s`RowDataBound`事件。 在这里，我们 d 检查每个`DataRow`并确定它是一个分隔符行，其中一个其`CategoryID`设置的`-1`。 如果是这样，我们 d 可能想要调整其格式设置或单元中显示的文本。
+除了这五个步骤，我们还需要为 GridView `RowDataBound` 事件提供事件处理程序。 在这里，我们将检查每个 `DataRow`，并确定它是否是一个 `CategoryID` 设置 `-1`的分隔行。 如果是这样，则 d 可能需要调整其格式或单元格中显示的文本。
 
-使用此方法，因为您需要一个事件处理程序还为 GridView s 注入排序组边界需要多做一些工作不是，上面所述`Sorting`的跟踪事件并保留`SortExpression`和`SortDirection`值。
+使用此方法注入排序组边界需要的工作比上面所述的更多，因为还需要为 GridView `Sorting` 事件提供事件处理程序，并跟踪 `SortExpression` 和 `SortDirection` 值。
 
-## <a name="manipulating-the-gridview-s-control-collection-after-it-s-been-databound"></a>操作 GridView s s 控制其后集合被数据绑定
+## <a name="manipulating-the-gridview-s-control-collection-after-it-s-been-databound"></a>在数据绑定后操作 GridView s 控件集合
 
-而不是消息之前将其绑定到 GridView 数据，我们可以添加分隔符行*后*数据绑定到 GridView。 GridView 的控件层次结构，这实际上是生成的数据绑定过程只需`Table`实例组成的行，其中每个由单元格的集合的集合。 具体而言，GridView 的控件集合包含`Table`对象在其根目录`GridViewRow`(它派生自`TableRow`类) 中每个记录`DataSource`绑定到 GridView，和一个`TableCell`中每个对象`GridViewRow`实例中每个数据字段`DataSource`。
+在将数据绑定到 GridView 之前，我们可以添加*分隔符行，* 而不是将数据绑定到 gridview。 数据绑定过程构建 GridView s 控件层次结构，实际上只是一个由行集合组成的 `Table` 实例，其中每个行都由一个单元集合组成。 具体而言，GridView s 控件集合在其根上包含一个 `Table` 对象，对绑定到 GridView 的 `DataSource` 中的每个记录都包含一个 `GridViewRow` （派生自 `TableRow` 类），在 `TableCell` 中的每个数据字段的每个 `GridViewRow` 实例中包含一个 `DataSource`对象。
 
-若要添加每个排序组之间的分隔符行，我们可以直接操作此控件层次结构后已创建。 我们可以确信 GridView 的控件层次结构已创建最后一次通过呈现页面时的时间。 因此，这种方法都会重写`Page`类的`Render`方法，此时 GridView s 最终的控件层次结构更新以包含所需的分隔符的行。 图 4 说明了此过程。
+若要在每个排序组之间添加分隔行，可以在创建此控件层次结构后直接对其进行操作。 我们可以确信在呈现页面的时间上最后一次创建了 GridView s 控件层次结构。 因此，此方法会重写 `Page` 类的 `Render` 方法，此时将对 GridView s final 控件层次结构进行更新，以包括所需的分隔符行。 图4说明了此过程。
 
-[![一种替代方式操作 GridView 的控件层次结构](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
+[![一种替代方法，操作 GridView 的控件层次结构](creating-a-customized-sorting-user-interface-cs/_static/image9.png)](creating-a-customized-sorting-user-interface-cs/_static/image8.png)
 
-**图 4**:一种替代方式操作 GridView 的控件层次结构 ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image10.png))
+**图 4**：一种替代方法，操作 GridView s 控件层次结构（[单击以查看完全大小的图像](creating-a-customized-sorting-user-interface-cs/_static/image10.png)）
 
-对于本教程，我们将使用此后一种方法自定义排序的用户体验。
+对于本教程，我们将使用后一种方法自定义排序用户体验。
 
 > [!NOTE]
-> 代码我在本教程中的 m 呈现基于中提供的示例[Teemu Keiski](http://aspadvice.com/blogs/joteke/default.aspx)的博客条目[播放与 GridView 排序分组位](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx)。
+> 本教程中所示的代码是基于[Teemu Keiski](http://aspadvice.com/blogs/joteke/default.aspx) s 博客文章中提供的示例，[使用 GridView 排序分组](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx)。
 
-## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>步骤 3：将分隔符行添加到 GridView 的控件层次结构
+## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>步骤3：将分隔符行添加到 GridView s 控件层次结构
 
-由于我们只想要将分隔符行添加到 GridView 的控件层次结构，被创建并在该页面，请访问最后一次创建其控件层次结构后，我们希望执行结束时此添加的页面生命周期，但在实际的 GridView c 之前管理下层次结构已呈现为 HTML。 此时我们可以实现此目的的最新可能点是`Page`类的`Render`事件，我们可以在我们使用以下方法签名的代码隐藏类中重写：
+由于我们只想在创建了控件层次结构并为其创建了控件层次结构后，才需要将分隔符行添加到 GridView s 控件层次结构中，因此我们希望在页面生命周期结束时执行此添加，但在实际 GridView c 之前执行此添加控制层次结构已呈现为 HTML。 可以完成此操作的最新可能点是 `Page` 类 `Render` 事件，可以使用以下方法签名在代码隐藏类中重写：
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample2.cs)]
 
-当`Page`类 s 原始`Render`方法调用`base.Render(writer)`每个页面中控件将呈现，生成基于其控件层次结构的标记。 因此，它是命令性，我们都调用`base.Render(writer)`，以便呈现页面时，和我们处理的 GridView s 控件层次结构在调用之前`base.Render(writer)`，以便分隔符行已添加到之前的 GridView 的控件层次结构s 已呈现。
+当调用 `Page` 类的原始 `Render` 方法时 `base.Render(writer)` 将呈现该页中的每个控件，并根据控件层次结构生成标记。 因此，我们必须调用 `base.Render(writer)`，以便呈现页面，并在调用 `base.Render(writer)`之前操作 GridView s 控件层次结构，以便在呈现后将分隔符行添加到 GridView s 控制层次结构中。
 
-若要插入排序组标头我们首先需要确保用户已请求对数据进行排序。 默认情况下，未排序的 GridView 的内容，并因此我们不需要输入任何组排序标头。
+若要注入排序组标题，首先需要确保用户已请求对数据进行排序。 默认情况下，GridView 的内容不会进行排序，因此，我们不需要输入任何组排序标头。
 
 > [!NOTE]
-> 如果你想 GridView，其中首次加载页面时按特定列进行排序，调用 GridView 的`Sort`方法上第一次的页面访问 （但不是在后续回发）。 若要完成此操作，添加此调用中的`Page_Load`事件处理程序内的`if (!Page.IsPostBack)`条件。 回头[分页和排序报表数据](paging-and-sorting-report-data-cs.md)有关的详细信息的教程信息`Sort`方法。
+> 如果希望在第一次加载页面时按特定列对 GridView 进行排序，请在第一页上调用 GridView s `Sort` 方法（而不是在后续回发上）。 若要实现此目的，请将此调用添加到 `if (!Page.IsPostBack)` 条件下的 `Page_Load` 事件处理程序中。 有关 `Sort` 方法的详细信息，请参阅查看[分页和排序报表数据](paging-and-sorting-report-data-cs.md)教程信息。
 
-假设数据已排序，我们的下一个任务是确定哪些列的数据已按排序，然后扫描查找差异 s，该列中的行值。 下面的代码可确保数据已排序和查找数据已排序所依据的列：
+假设数据已排序，下一项任务是确定数据排序所依据的列，然后扫描行以查找该列的值之间的差异。 下面的代码可确保数据已排序，并找到数据排序所依据的列：
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample3.cs)]
 
-如果这个 GridView 有尚未为排序，GridView 的`SortExpression`属性将不设置。 因此，我们只想添加分隔符行，如果此属性具有某个值。 如果是这样，我们接下来需要确定的数据已排序所依据的列的索引。 这通过循环遍历 GridView s 实现`Columns`集合，它的搜索列`SortExpression`属性等于 GridView 的`SortExpression`属性。 除了列的索引中，我们还获取`HeaderText`显示分隔符行时使用的属性。
+如果 GridView 尚未进行排序，则将不会设置 GridView 的 `SortExpression` 属性。 因此，仅当此属性有一些值时，才需要添加分隔行。 如果是这样，接下来需要确定数据排序所依据的列的索引。 这是通过以下方式实现的：遍历 GridView `Columns` 集合，搜索其 `SortExpression` 属性等于 GridView `SortExpression` 属性的列。 除了列 s 索引外，我们还获取 `HeaderText` 属性，该属性在显示分隔符行时使用。
 
-对数据进行排序所依据的索引，最后一步是列的要枚举的 GridView 行。 每个行，我们需要确定是否已排序的列的值与以前的行排序的 s 列的值不同。 因此，我们需要将一个新如果`GridViewRow`在控件层次结构的实例。 这是使用以下代码来实现：
+通过对数据进行排序所依据的列的索引，最后一步是枚举 GridView 的行。 对于每一行，我们需要确定已排序的列的值是否与上一行的排序列值不同。 如果是这样，则需要将新的 `GridViewRow` 实例注入到控件层次结构中。 这是通过以下代码完成的：
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample4.cs)]
 
-此代码以编程方式引用`Table`对象的 GridView 的控件层次结构的根位置找到并创建一个名为的字符串变量`lastValue`。 `lastValue` 用于当前行排序的 s 列值与上一个行的值进行比较。 下一步，GridView s`Rows`枚举集合和每个行的已排序的列的值存储在`currentValue`变量。
+此代码首先以编程方式引用在 GridView s 控件层次结构的根中找到的 `Table` 对象，并创建一个名为 `lastValue`的字符串变量。 `lastValue` 用于将当前行的已排序列值与上一行的值进行比较。 接下来，将对 GridView `Rows` 集合进行枚举，并为每行存储已排序的列的值，并将其存储在 `currentValue` 变量中。
 
 > [!NOTE]
-> 若要确定特定行排序的 s 列的值，我使用的单元格的`Text`属性。 这非常适合 BoundFields，但将不按预期方式工作的 Templatefield，CheckBoxFields，等等。 我们将介绍如何立即考虑备用 GridView 字段。
+> 若要确定特定行的排序列值，请使用 cell `Text` 属性。 这适用于 BoundFields，但不会按所需的 Templatefield、CheckBoxFields 等方式工作。 接下来，我们将介绍如何考虑备用 GridView 字段。
 
-`currentValue`和`lastValue`变量然后进行比较。 如果它们不同，我们需要将一个新的分隔符行添加到的控件层次结构。 这通过确定的索引来实现`GridViewRow`中`Table`对象 s`Rows`集合中，创建新`GridViewRow`并`TableCell`实例，并添加`TableCell`和`GridViewRow`到控件层次结构。
+然后，比较 `currentValue` 和 `lastValue` 变量。 如果它们不同，我们需要向控件层次结构中添加一个新的分隔行。 这是通过以下方式实现的：确定 `Table` 对象 s `Rows` 集合中 `GridViewRow` 的索引，创建新的 `GridViewRow` 和 `TableCell` 实例，然后将 `TableCell` 和 `GridViewRow` 添加到控件层次结构。
 
-注意分隔符行 s 单独`TableCell`的格式设置该视图所跨越整个宽度的 GridView 中，使用格式化`SortHeaderRowStyle`CSS 类，并具有其`Text`属性等，其中显示这两个组的排序名称 （如类别） 和组 s 的值 （如饮料）。 最后，`lastValue`将更新的值为`currentValue`。
+请注意，分隔符行 `TableCell` 的格式设置为跨越整个 GridView 的宽度，并使用 `SortHeaderRowStyle` CSS 类进行格式化，并具有其 `Text` 属性，使其显示排序组名称（如类别）和组 s 值（如饮料）。 最后，`lastValue` 更新为 `currentValue`的值。
 
-用于设置格式的排序的组头行的 CSS 类`SortHeaderRowStyle`需要在指定`Styles.css`文件。 可随意使用任何样式设置有吸引力;我使用了以下程序：
+用于设置排序组标题行格式的 CSS 类 `SortHeaderRowStyle` 需要在 `Styles.css` 文件中指定。 可随意使用任何喜欢的样式设置;我使用了以下内容：
 
 [!code-css[Main](creating-a-customized-sorting-user-interface-cs/samples/sample5.css)]
 
-当前代码的排序接口添加排序组标头，通过任何 BoundField 进行排序时 （请参阅图 5 中，其中显示了屏幕截图，供应商进行排序时）。 但是，按任何其他字段类型 （如 CheckBoxField 或 TemplateField） 进行排序，排序组标头时，却找不到 （见图 6）。
+使用当前代码时，排序接口会在按任何 BoundField 进行排序时添加排序组标头（请参阅图5，其中显示按供应商进行排序时的屏幕截图）。 但是，如果按任何其他字段类型（如 CheckBoxField 或 TemplateField）进行排序，则不会找到排序组标头（见图6）。
 
-[![排序接口通过 BoundFields 进行排序时包含对组排序标头](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
+[![排序接口在按 BoundFields 排序时包括排序组标头](creating-a-customized-sorting-user-interface-cs/_static/image12.png)](creating-a-customized-sorting-user-interface-cs/_static/image11.png)
 
-**图 5**:排序接口包括排序组标头时排序 BoundFields ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image13.png))
+**图 5**：按 BoundFields 排序时，排序接口包括排序组标头（[单击以查看完全大小的图像](creating-a-customized-sorting-user-interface-cs/_static/image13.png)）
 
-[![排序组标头是缺少时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
+[排序 CheckBoxField 时，缺少排序组标头 ![](creating-a-customized-sorting-user-interface-cs/_static/image15.png)](creating-a-customized-sorting-user-interface-cs/_static/image14.png)
 
-**图 6**:排序组标头是缺少时排序 CheckBoxField ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image16.png))
+**图 6**：对 CheckBoxField 进行排序时排序组标头缺失（[单击以查看完全大小的图像](creating-a-customized-sorting-user-interface-cs/_static/image16.png)）
 
-通过 CheckBoxField 进行排序时，排序组标头会缺失的原因在于，代码当前只需使用`TableCell`s`Text`属性来确定已排序的列的每一行的值。 CheckBoxFields，对于`TableCell`s`Text`属性为空字符串; 相反，值是可通过位于内的复选框 Web 控件`TableCell`s`Controls`集合。
+当 CheckBoxField 进行排序时，排序组标头缺失是因为代码当前只使用 `TableCell` s `Text` 属性来确定每行的已排序列的值。 对于 CheckBoxFields，`TableCell` s `Text` 属性为空字符串;值可通过位于 `TableCell` `Controls` 集合中的复选框 Web 控件来使用。
 
-若要处理 BoundFields 以外的字段类型，我们需要扩充代码位置`currentValue`变量赋值来检查是否存在中的复选框`TableCell`s`Controls`集合。 而不是使用`currentValue = gvr.Cells[sortColumnIndex].Text`，此代码替换为以下代码：
+若要处理 BoundFields 以外的字段类型，我们需要增加指定 `currentValue` 变量的代码，以检查 `TableCell` s `Controls` 集合中是否存在复选框。 将此代码替换为以下代码，而不是使用 `currentValue = gvr.Cells[sortColumnIndex].Text`：
 
 [!code-csharp[Main](creating-a-customized-sorting-user-interface-cs/samples/sample6.cs)]
 
-此代码会检查已排序的列`TableCell`确定是否有任何控件中的当前行`Controls`集合。 如果有，并且第一个控件是一个复选框`currentValue`变量设置为是或否，具体取决于复选框的`Checked`属性。 否则，值取自`TableCell`s`Text`属性。 可以复制此逻辑以处理对 GridView 中可能存在任何 Templatefield 进行排序。
+此代码检查当前行的已排序列 `TableCell`，以确定 `Controls` 集合中是否有任何控件。 如果有，并且第一个控件为复选框，则 `currentValue` 变量将设置为 "是" 或 "否"，具体取决于 `Checked` 属性的复选框。 否则，将从 `TableCell` s `Text` 属性获取值。 可以复制此逻辑来处理 GridView 中可能存在的任何 Templatefield 的排序。
 
-上面的代码添加，现通过停止使用 CheckBoxField 进行排序时存在排序组标头 （请参阅图 7）。
+如果使用上面的代码添加，排序组标头将在按中止的 CheckBoxField 排序时立即存在（请参见图7）。
 
-[![排序组标头是现在存在时排序 CheckBoxField](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
+[![排序 CheckBoxField 时，排序组标头现在存在](creating-a-customized-sorting-user-interface-cs/_static/image18.png)](creating-a-customized-sorting-user-interface-cs/_static/image17.png)
 
-**图 7**:排序组标头是现在存在时排序 CheckBoxField ([单击此项可查看原尺寸图像](creating-a-customized-sorting-user-interface-cs/_static/image19.png))
+**图 7**：对 CheckBoxField 进行排序时，排序组标题现在存在（[单击以查看完全大小的图像](creating-a-customized-sorting-user-interface-cs/_static/image19.png)）
 
 > [!NOTE]
-> 如果使用的产品`NULL`数据库的值`CategoryID`， `SupplierID`，或`UnitPrice`字段，这些值将显示为 GridView 中的空字符串默认情况下，这分隔符行的文本意味着与这些产品`NULL`值将读取为类似类别: (即，有 s 类别之后没有名称： 喜欢个类别：饮料）。 如果你想在此处显示的值可以设置 BoundFields [ `NullDisplayText`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)于文本要显示或分配时，可以在 Render 方法中添加一个条件语句`currentValue`为分隔符行的`Text`属性。
+> 如果产品具有 `CategoryID`、`SupplierID`或 `UnitPrice` 字段的 `NULL` 数据库值，则默认情况下，这些值将在 GridView 中显示为空字符串，这意味着，具有 `NULL` 值的产品的分隔符行 s 将按如下所示读取：（也就是说，Category 后没有名称，如 category：饮料）。 如果需要此处显示的值，可以将 BoundFields [`NullDisplayText` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)设置为要显示的文本，或者可以在将 `currentValue` 分配给分隔符行 s `Text` 属性时，在 Render 方法中添加条件语句。
 
 ## <a name="summary"></a>总结
 
-GridView 不包括用于自定义排序接口的多个内置选项。 但是，对于一些低级别代码，它可以调整 GridView 的控件层次结构，以创建更多自定义的接口。 在本教程中我们已了解如何为一个可排序的 GridView，更轻松地标识不同的组和这些组边界添加排序组分隔符行。 有关自定义排序接口的其他示例，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/) s[几个 ASP.NET 2.0 GridView 排序提示和技巧](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx)博客文章。
+GridView 不包含用于自定义排序界面的许多内置选项。 但是，在很多低级别的代码中，可以调整 GridView s 控制层次结构，以创建更多的自定义界面。 在本教程中，我们介绍了如何为可排序的 GridView 添加排序组分隔符行，以便更轻松地识别不同组和这些组边界。 有关自定义排序接口的其他示例，请查看[Scott Guthrie](https://weblogs.asp.net/scottgu/) s [ASP.NET 2.0 GridView 排序提示和技巧](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx)博客条目。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
 > [上一页](sorting-custom-paged-data-cs.md)

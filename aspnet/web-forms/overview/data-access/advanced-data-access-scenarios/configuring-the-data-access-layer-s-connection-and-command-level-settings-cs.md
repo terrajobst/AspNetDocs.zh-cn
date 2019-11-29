@@ -1,161 +1,161 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
-title: 配置数据访问层的连接和命令级别的设置 (C#) |Microsoft Docs
+title: 配置数据访问层的连接和命令级别设置（C#） |Microsoft Docs
 author: rick-anderson
-description: 类型化数据集内的 Tableadapter 自动负责连接到数据库中，发出的命令，并填充 DataTable 与结果...
+description: 类型化数据集中的 Tableadapter 自动处理与数据库的连接、发出命令，并使用结果填充 DataTable 。
 ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 21b98ef4126c16054829d7183f59207de3e945f3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8fe7a5a2e410b47c8c2be62851f2b7b775d60209
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133359"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74604931"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>配置数据访问层的连接和命令级别的设置 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip)或[下载 PDF](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
+[下载代码](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip)或[下载 PDF](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
 
-> 类型化数据集内的 Tableadapter 自动负责连接到数据库中，发出的命令，并填充 DataTable 的结果。 但是，如果我们想要处理的这些详细信息，并在本教程中我们将了解如何访问 TableAdapter 中的数据库连接和命令级别设置有情况。
+> 类型化数据集中的 Tableadapter 自动处理与数据库的连接、发出命令，并使用结果填充 DataTable。 但在某些情况下，我们希望自己处理这些详细信息，在本教程中，我们将了解如何访问 TableAdapter 中的数据库连接和命令级别设置。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-整个系列教程我们使用了类型化数据集来实现数据访问层和业务对象的分层式体系结构。 如中所述[第一篇教程](../introduction/creating-a-data-access-layer-cs.md)，s 数据表用作数据的存储库而 Tableadapter 充当包装与要检索和修改基础数据的数据库进行通信的类型化数据集。 Tableadapter 封装在处理数据库中所涉及的复杂性，并使我们无需编写代码以连接到数据库中，发出命令，或填充到 DataTable 的结果。
+在本系列教程中，我们使用了类型化的数据集来实现分层体系结构的数据访问层和业务对象。 如[第一个教程](../introduction/creating-a-data-access-layer-cs.md)中所述，类型化数据集的数据表用作数据存储库，而 tableadapter 充当包装器，用于与数据库进行通信以检索和修改基础数据。 Tableadapter 封装了处理数据库所涉及的复杂性，使我们不必编写代码来连接到数据库、发出命令，或将结果填充到 DataTable。
 
-有些的时候，但是，当我们需要的 TableAdapter burrow 和编写代码，直接使用 ADO.NET 对象。 在中[包装事务内的数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)教程中，例如，我们添加方法到 TableAdapter 的开始、 提交和回滚 ADO.NET 的事务。 使用这些方法内部，手动创建`SqlTransaction`对象分配给 TableAdapter 的`SqlCommand`对象。
+但有时，当我们需要 burrow 到 TableAdapter 的深度并编写直接与 ADO.NET 对象结合使用的代码时。 例如，在[事务中包装数据库的修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)教程中，我们将方法添加到了用于开始、提交和回滚 ADO.NET 事务的 TableAdapter。 这些方法使用了内部手动创建的 `SqlTransaction` 对象，该对象已分配给 TableAdapter s `SqlCommand` 对象。
 
-在本教程中，我们将说明如何访问 TableAdapter 中的数据库连接和命令级别设置。 具体而言，我们将添加到功能`ProductsTableAdapter`允许访问为基础的连接字符串和命令超时设置。
+在本教程中，我们将检查如何访问 TableAdapter 中的数据库连接和命令级别设置。 具体而言，我们将向 `ProductsTableAdapter` 添加功能，以便能够访问基础连接字符串和命令超时设置。
 
 ## <a name="working-with-data-using-adonet"></a>使用 ADO.NET 处理数据
 
-Microsoft.NET Framework 包含大量专门用于处理数据的类。 这些类中找到[`System.Data`命名空间](https://msdn.microsoft.com/library/system.data.aspx)，称为*ADO.NET*类。 某些 ADO.NET 之下的类绑定到特定*数据提供程序*。 可以数据访问接口视为允许将信息 ADO.NET 类和基础数据存储区之间流动的通信通道。 没有通用提供程序，如 OleDb 和 ODBC，以及专门设计用于特定的数据库系统的提供程序。 例如，可能会连接到使用 OleDb 访问接口的 Microsoft SQL Server 数据库时，SqlClient 提供程序是高效得多因为它的设计和优化专门用于 SQL Server。
+Microsoft .NET 框架包含专门用于处理数据的类的很多。 在[`System.Data` 命名空间](https://msdn.microsoft.com/library/system.data.aspx)中找到的这些类称为*ADO.NET*类。 ADO.NET 伞下的某些类与特定*数据访问接口*相关联。 你可以将数据访问接口看作是一种信道，它允许信息在 ADO.NET 类和基础数据存储之间流动。 有一些通用化提供程序，如 OleDb 和 ODBC，以及专门为特定数据库系统设计的提供程序。 例如，虽然可以使用 OleDb 访问接口连接到 Microsoft SQL Server 数据库，但 SqlClient 提供程序的工作效率要高得多，因为它专门针对 SQL Server 设计和优化。
 
-当以编程方式访问数据时，通常使用以下模式：
+以编程方式访问数据时，通常使用以下模式：
 
-- 建立到数据库的连接。
+- 建立与数据库的连接。
 - 发出命令。
-- 有关`SELECT`查询，处理生成的记录。
+- 对于 `SELECT` 查询，请使用生成的记录。
 
-有单独的 ADO.NET 类来执行每个步骤。 若要连接到使用 SqlClient 提供程序的数据库，例如，使用[`SqlConnection`类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx)。 颁发`INSERT`， `UPDATE`， `DELETE`，或`SELECT`命令到数据库，请参考[`SqlCommand`类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx)。
+每个步骤都有单独的 ADO.NET 类。 例如，若要使用 SqlClient 提供程序连接到数据库，请使用[`SqlConnection` 类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx)。 若要向数据库发出 `INSERT`、`UPDATE`、`DELETE`或 `SELECT` 命令，请使用[`SqlCommand` 类](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx)。
 
-除[包装事务内的数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)教程中，我们不不得不编写任何低级别的 ADO.NET 代码，我们自己因为 Tableadapter 自动生成的代码包括到所需的功能连接到数据库、 发出命令，检索数据和该数据填充到数据表。 但是，可能是我们需要自定义这些低级别的设置。 通过以下几个步骤中，我们将说明如何利用在内部使用 Tableadapter 的 ADO.NET 对象。
+除了在[事务教程内包装数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)之外，我们还无需编写任何低级别的 ADO.NET 代码，因为 tableadapter 自动生成的代码包括连接到数据库所需的功能、发出命令、检索数据和将数据填充到数据表。 不过，有时我们需要自定义这些低级别设置。 在接下来的几个步骤中，我们将探讨如何使用 Tableadapter 内部使用的 ADO.NET 对象。
 
-## <a name="step-1-examining-with-the-connection-property"></a>步骤 1：检查连接属性
+## <a name="step-1-examining-with-the-connection-property"></a>步骤1：通过连接属性进行检查
 
-每个 TableAdapter 类具有`Connection`属性，用于指定数据库连接信息。 此属性的数据类型和`ConnectionString`值由 TableAdapter 配置向导中所做的选择。 回想一下，我们首先将 TableAdapter 添加到类型化数据集时此向导将询问我们数据库源 （请参阅图 1）。 此第一步中的下拉列表包括这些配置文件，以及在服务器资源管理器的数据连接中的任何其他数据库中指定的数据库。 如果下拉列表中，我们想要使用的数据库不存在，则可以通过单击新建连接按钮并提供所需的连接信息指定新的数据库连接。
+每个 TableAdapter 类都有一个指定数据库连接信息的 `Connection` 属性。 此属性的数据类型和 `ConnectionString` 值由在 "TableAdapter 配置向导" 中所做的选择决定。 请记住，当我们首次将 TableAdapter 添加到类型化数据集时，此向导会向我们询问数据库源（请参阅图1）。 此第一步中的下拉列表包含在配置文件中指定的这些数据库以及服务器资源管理器的数据连接中的任何其他数据库。 如果下拉列表中不存在要使用的数据库，则可以通过单击 "新建连接" 按钮并提供所需的连接信息，来指定新的数据库连接。
 
-[![TableAdapter 配置向导第一步](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
+[![TableAdapter 配置向导的第一步](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
-**图 1**:TableAdapter 配置向导的第一个步骤 ([单击此项可查看原尺寸图像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
+**图 1**： TableAdapter 配置向导的第一步（[单击查看完全大小的映像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png)）
 
-允许 s 花点时间检查 TableAdapter s 代码`Connection`属性。 如中所述[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中，我们可以转到类视图窗口中，向下合适的类，钻取，然后双击成员名称查看自动生成的 TableAdapter 代码。
+让我们花点时间来检查 TableAdapter s `Connection` 属性的代码。 如[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中所述，我们可以通过转到 "类视图" 窗口查看自动生成的 TableAdapter 代码，向下钻取到相应的类，然后双击成员名称。
 
-通过转到视图菜单并选择类视图 （或通过键入 Ctrl + Shift + C），请导航到类视图窗口。 从类视图窗口的上半部分，向下钻取`NorthwindTableAdapters`命名空间，然后选择`ProductsTableAdapter`类。 这将显示`ProductsTableAdapter`的成员在类视图，如图 2 中所示的下半部分。 双击`Connection`属性以查看其代码。
+转到 "视图" 菜单，然后选择 "类视图" （或通过键入 Ctrl + Shift + C），导航到 "类视图" 窗口。 在类视图窗口的上半部分，向下钻取到 `NorthwindTableAdapters` 命名空间，然后选择 `ProductsTableAdapter` 类。 这会在类视图的下半部分显示 `ProductsTableAdapter` 成员，如图2所示。 双击 `Connection` 属性以查看其代码。
 
-![双击要查看其自动生成的代码的类视图中的连接属性](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image4.png)
+![双击 "类视图中的连接属性以查看其自动生成的代码](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image4.png)
 
-**图 2**:双击要查看其自动生成的代码的类视图中的连接属性
+**图 2**：双击 "类视图中的连接属性以查看其自动生成的代码
 
-TableAdapter 的`Connection`属性和其他与连接相关的代码如下所示：
+TableAdapter s `Connection` 属性和其他与连接相关的代码如下所示：
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample1.cs)]
 
-TableAdapter 类实例化时，成员变量`_connection`等同于`null`。 当`Connection`访问属性时，它首先检查以查看是否`_connection`已实例化成员变量。 如果没有，`InitConnection`调用方法时，实例化`_connection`，并设置其`ConnectionString`TableAdapter 配置向导 s 第一个步骤中指定的连接字符串值的属性。
+当 TableAdapter 类实例化时，成员变量 `_connection` 等于 `null`。 访问 `Connection` 属性时，它首先检查 `_connection` 成员变量是否已实例化。 如果没有，则调用 `InitConnection` 方法，该方法将 `_connection` 实例化，并将其 `ConnectionString` 属性设置为从 TableAdapter 配置向导第一步中指定的连接字符串值。
 
-`Connection`还可以将属性分配给`SqlConnection`对象。 执行此操作将相关联的新`SqlConnection`对象与每个 TableAdapter 的`SqlCommand`对象。
+还可以将 `Connection` 属性分配给 `SqlConnection` 对象。 这样做会将新的 `SqlConnection` 对象与每个 TableAdapter `SqlCommand` 对象相关联。
 
-## <a name="step-2-exposing-connection-level-settings"></a>步骤 2：公开连接级别的设置
+## <a name="step-2-exposing-connection-level-settings"></a>步骤2：公开连接级设置
 
-连接信息应保持在 TableAdapter 中封装和无法访问应用程序体系结构中其他层。 但是，可能有的方案必须是可访问或进行自定义查询、 用户或 ASP.NET 页面的 TableAdapter 的连接级别信息。
+连接信息应保留在 TableAdapter 中，并且应用程序体系结构中的其他层不可访问。 但是，在某些情况下，可能需要为查询、用户或 ASP.NET 页访问或自定义 TableAdapter 连接级信息。
 
-让我们来扩展`ProductsTableAdapter`中`Northwind`要包括数据集`ConnectionString`业务逻辑层可以使用用于读取或更改所用的 TableAdapter 的连接字符串属性。
+让我们扩展 `Northwind` 数据集中的 `ProductsTableAdapter`，以包含一个 `ConnectionString` 属性，业务逻辑层可以使用该属性读取或更改 TableAdapter 使用的连接字符串。
 
 > [!NOTE]
-> 一个*连接字符串*是一个字符串，指定数据库连接信息，如要使用的数据库、 身份验证凭据和其他与数据库相关的设置的位置的提供程序。 使用的各种数据存储和提供程序的连接字符串模式的列表，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
+> *连接字符串*是一个字符串，用于指定数据库连接信息，如要使用的访问接口、数据库的位置、身份验证凭据和其他与数据库相关的设置。 有关各种数据存储和提供程序所使用的连接字符串模式的列表，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
 
-如中所述[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中，可以通过使用分部类扩展类型数据集的自动生成的类。 首先，创建新的子文件夹中名为的项目`ConnectionAndCommandSettings`下方`~/App_Code/DAL`文件夹。
+如[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中所述，可通过使用分部类扩展类型化数据集的自动生成的类。 首先，在 "`~/App_Code/DAL`" 文件夹下名为 `ConnectionAndCommandSettings` 的项目中创建一个新的子文件夹。
 
-![添加一个名为 ConnectionAndCommandSettings 子](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image5.png)
+![添加一个名为 ConnectionAndCommandSettings 的子文件夹](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image5.png)
 
-**图 3**:添加名为的子文件夹 `ConnectionAndCommandSettings`
+**图 3**：添加一个名为 `ConnectionAndCommandSettings` 的子文件夹
 
-添加名为的新类文件`ProductsTableAdapter.ConnectionAndCommandSettings.cs`并输入以下代码：
+添加一个名为 `ProductsTableAdapter.ConnectionAndCommandSettings.cs` 的新类文件，并输入以下代码：
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample2.cs)]
 
-此分部类添加`public`名为属性`ConnectionString`到`ProductsTableAdapter`类，该类允许读取或更新基础连接的 TableAdapter s 的连接字符串的任何层。
+此分部类向 `ProductsTableAdapter` 类添加一个名为 `ConnectionString` 的 `public` 属性，该属性允许任何层读取或更新 TableAdapter 基础连接的连接字符串。
 
-与此分部类创建 （和保存），打开`ProductsBLL`类。 请转到现有的方法之一，然后键入`Adapter`然后按句点键来打开智能感知。 你应看到新`ConnectionString`提供 IntelliSense，这意味着您可以以编程方式读取或调整此值从 BLL 中的属性。
+创建（并保存）此分部类后，打开 `ProductsBLL` 类。 转到其中一个现有方法，在 `Adapter` 中键入，然后按 period 键以显示 IntelliSense。 你应会看到 IntelliSense 中提供的新 `ConnectionString` 属性，这意味着你可以通过编程方式从 BLL 读取或调整此值。
 
 ## <a name="exposing-the-entire-connection-object"></a>公开整个连接对象
 
-此部分的类公开基础连接对象的一个属性： `ConnectionString`。 如果你想要使整个连接对象由于篇幅所限 TableAdapter 的更高版本，或者可以更改`Connection`属性的保护级别。 我们在步骤 1 中检查自动生成的代码演示的 TableAdapter s`Connection`属性标记为`internal`，这意味着，它只能访问由在同一程序集中的类。 这可以更改，但是，通过 TableAdapter 的`ConnectionModifier`属性。
+此分部类只公开基础连接对象的一个属性： `ConnectionString`。 如果要使整个连接对象在 TableAdapter 范围外可用，则可以选择更改 `Connection` 属性 "保护级别。 我们在步骤1中检查的自动生成的代码表明，TableAdapter s `Connection` 属性被标记为 `internal`，这意味着它只能由同一程序集中的类访问。 不过，可以通过 TableAdapter s `ConnectionModifier` 属性更改此属性。
 
-打开`Northwind`数据集，单击`ProductsTableAdapter`在设计器并导航到属性窗口。 您会看见`ConnectionModifier`设置为其默认值， `Assembly`。 若要使`Connection`属性的类型化数据集 s 程序集，更改外部可用`ConnectionModifier`属性设置为`Public`。
+打开 `Northwind` 数据集，在设计器中单击 `ProductsTableAdapter`，然后导航到 "属性窗口"。 在这里，你将看到 `ConnectionModifier` 设置为其默认值，`Assembly`。 若要使 `Connection` 属性在类型化数据集的程序集外部可用，请将 `ConnectionModifier` 属性更改为 "`Public`"。
 
-[![可通过 ConnectionModifier 属性配置连接属性 s 可访问性级别](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
+[![可以通过 ConnectionModifier 属性配置连接属性的可访问性级别](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
-**图 4**:`Connection`通过属性可访问性级别可配置的 s`ConnectionModifier`属性 ([单击以查看实际尺寸的图像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
+**图 4**：可以通过 `ConnectionModifier` 属性配置 `Connection` 属性的可访问性级别（[单击以查看完全大小的映像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png)）
 
-保存的数据集，然后返回到`ProductsBLL`类。 如之前，请转到现有的方法之一，然后键入`Adapter`然后按句点键来打开智能感知。 此列表应包括`Connection`属性; 也就是说，现在可以以编程方式读取或从 BLL 分配任何连接级别的设置。
+保存数据集，然后返回到 `ProductsBLL` 类。 与之前一样，请转到现有方法之一，键入 `Adapter`，然后按 period 键打开 IntelliSense。 此列表应包括一个 `Connection` 属性，这意味着现在可以通过编程方式从 BLL 中读取或分配任何连接级别设置。
 
-## <a name="step-3-examining-the-command-related-properties"></a>步骤 3：检查与命令相关的属性
+## <a name="step-3-examining-the-command-related-properties"></a>步骤3：检查与命令相关的属性
 
-包含的主查询，默认情况下，具有自动生成的 TableAdapter `INSERT`， `UPDATE`，和`DELETE`语句。 此主查询 s `INSERT`， `UPDATE`，并`DELETE`语句中的 TableAdapter 的代码实现作为 ADO.NET 数据适配器对象通过`Adapter`属性。 喜欢使用其`Connection`属性，`Adapter`属性的数据类型由使用的数据提供程序。 这些教程使用 SqlClient 提供程序，因为`Adapter`属性属于类型[ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx)。
+TableAdapter 包含一个主查询，默认情况下，它具有自动生成的 `INSERT`、`UPDATE`和 `DELETE` 语句。 此主查询 `INSERT`、`UPDATE`和 `DELETE` 语句通过 `Adapter` 属性作为 ADO.NET 数据适配器对象在 TableAdapter 代码中实现。 与 `Connection` 属性一样，`Adapter` 属性的数据类型由所使用的数据访问接口确定。 由于这些教程使用 SqlClient 提供程序，因此 `Adapter` 属性的类型[`SqlDataAdapter`](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx)。
 
-TableAdapter s`Adapter`属性具有三个属性的类型`SqlCommand`，它使用到问题`INSERT`， `UPDATE`，和`DELETE`语句：
+TableAdapter s `Adapter` 属性具有 `SqlCommand` 类型的三个属性，该属性用于发出 `INSERT`、`UPDATE`和 `DELETE` 语句：
 
 - `InsertCommand`
 - `UpdateCommand`
 - `DeleteCommand`
 
-一个`SqlCommand`对象负责将特定的查询发送到数据库，而且属性，例如： [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx)，其中包含的临时 SQL 语句或存储的过程来执行; 和[ `Parameters`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx)，这是一系列`SqlParameter`对象。 返回中可以看到[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中，这些命令通过属性窗口可以自定义对象。
+`SqlCommand` 对象负责向数据库发送特定查询，并具有如下所示的属性： [`CommandText`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx)，其中包含要执行的即席 SQL 语句或存储过程;和[`Parameters`](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx)，它是 `SqlParameter` 对象的集合。 正如我们在[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中看到的那样，可以通过属性窗口自定义这些命令对象。
 
-除了其主查询，TableAdapter 还可以包含数目可变的方法，调用时，调度到的数据库指定的命令。 主查询的命令对象和所有其他方法的命令对象存储在 TableAdapter 的`CommandCollection`属性。
+除了其主查询外，TableAdapter 还可以包含可变数量的方法，这些方法在调用时将指定的命令调度到数据库。 所有其他方法的主查询 command 对象和 command 对象均存储在 TableAdapter s `CommandCollection` 属性中。
 
-允许 s 花点时间查看生成的代码`ProductsTableAdapter`在`Northwind`这两个属性及其支持的成员变量和帮助器方法的数据集：
+让我们花点时间查看 `ProductsTableAdapter` 在 `Northwind` DataSet 中为这两个属性及其支持的成员变量和帮助程序方法生成的代码：
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample3.cs)]
 
-代码`Adapter`并`CommandCollection`属性精确模拟的`Connection`属性。 有保存的属性使用的对象的成员变量。 属性`get`访问器首先检查是否有相应的成员变量`null`。 如果是这样，它创建成员变量的实例并将核心分配与命令相关的属性调用初始化方法。
+`Adapter` 和 `CommandCollection` 属性的代码会充分模拟 `Connection` 属性的代码。 有一些成员变量保存属性使用的对象。 `get` 访问器的属性首先检查相应的成员变量是否 `null`。 如果是这样，将调用初始化方法，该方法创建成员变量的实例并分配与核心命令相关的属性。
 
-## <a name="step-4-exposing-command-level-settings"></a>步骤 4：公开命令级别的设置
+## <a name="step-4-exposing-command-level-settings"></a>步骤4：公开命令级设置
 
-理想情况下，命令级别信息应保持不封装内数据访问层。 应体系结构的其他层级中需要此信息，但是，它可以通过公开一个分部类，就像使用连接级设置。
+理想情况下，命令级信息应在数据访问层中保持封装。 如果在体系结构的其他层中需要此信息，则可以通过分部类公开此信息，就像连接级设置一样。
 
-因为 TableAdapter 仅具有单个`Connection`属性，用于公开连接级设置的代码是非常简单。 以下事项的更复杂时修改命令级别的设置，因为 TableAdapter 可以有多个命令对象的`InsertCommand`， `UpdateCommand`，并`DeleteCommand`，以及变量中的命令对象数目`CommandCollection`属性。 当更新命令级别的设置，这些设置将需要传播到所有命令对象。
+由于 TableAdapter 只有单个 `Connection` 属性，因此用于公开连接级设置的代码非常简单。 由于 TableAdapter 可以具有多个命令对象（`InsertCommand`、`UpdateCommand`和 `DeleteCommand`）以及 `CommandCollection` 属性中的可变数目的命令对象，因此在修改命令级别设置时，会稍微复杂一些。 更新命令级别设置时，这些设置将需要传播到所有命令对象。
 
-例如，假设已发生的某些查询中所需执行特别长时间的 TableAdapter。 在使用 TableAdapter 执行其中一个查询，我们可能想要增加命令对象 s [ `CommandTimeout`属性](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)。 此属性指定要等待的时间要执行的命令的秒数，默认为 30。
+例如，假设 TableAdapter 中存在一些需要很长时间执行的查询。 使用 TableAdapter 执行其中一个查询时，可能需要增加 command 对象的[`CommandTimeout` 属性](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)。 此属性指定等待命令执行的秒数，默认值为30。
 
-若要允许`CommandTimeout`属性来进行调整的 BLL，添加以下`public`方法`ProductsDataTable`步骤 2 中使用分部类文件创建 (`ProductsTableAdapter.ConnectionAndCommandSettings.cs`):
+若要允许由 BLL 调整 `CommandTimeout` 属性，请使用在步骤2（`ProductsTableAdapter.ConnectionAndCommandSettings.cs`）中创建的分部类文件，将以下 `public` 方法添加到 `ProductsDataTable`：
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample4.cs)]
 
-无法从设置命令的所有问题的命令超时的 BLL 或表示层调用此方法，通过该 TableAdapter 实例。
+可以从 BLL 或表示层调用此方法，以便为该 TableAdapter 实例发出的所有命令设置命令超时。
 
 > [!NOTE]
-> `Adapter`并`CommandCollection`属性标记为`private`，这意味着它们只能访问从 TableAdapter 中的代码。 与不同`Connection`属性，这些访问修饰符不能配置。 因此，如果您需要公开其他层体系结构中的命令级别属性必须使用以提供上文所述的分部类方法`public`方法或属性，可读取或写入`private`命令对象。
+> `Adapter` 和 `CommandCollection` 属性标记为 `private`，这意味着只能从 TableAdapter 内的代码访问这些属性。 与 `Connection` 属性不同，这些访问修饰符是不可配置的。 因此，如果需要向体系结构中的其他层公开命令级属性，则必须使用上述分部类方法来提供读取或写入 `private` 命令对象的 `public` 方法或属性。
 
 ## <a name="summary"></a>总结
 
-类型化数据集内的 Tableadapter 用于封装数据的访问细节和复杂性。 使用 Tableadapter，我们无需担心如何编写 ADO.NET 代码，以便连接到数据库中，发出命令，或填充到 DataTable 的结果。 它是所有处理自动为我们。
+类型化数据集中的 Tableadapter 用于封装数据访问详细信息和复杂性。 使用 Tableadapter，不必担心编写 ADO.NET 代码来连接数据库、发出命令，或将结果填充到 DataTable。 它将自动为我们自动处理。
 
-但是，可能是我们需要自定义的低级别的 ADO.NET 细节，例如，更改连接字符串值或默认连接或命令超时值。 TableAdapter 具有自动生成`Connection`， `Adapter`，并`CommandCollection`属性，但这些是`internal`或`private`，默认情况下。 可以通过扩展 TableAdapter 使用分部类包含公开此内部信息`public`方法或属性。 或者，TableAdapter s`Connection`属性访问修饰符可以配置通过 TableAdapter 的`ConnectionModifier`属性。
+不过，有时我们需要自定义低级 ADO.NET 细节，例如更改连接字符串或默认连接或命令超时值。 TableAdapter 具有自动生成的 `Connection`、`Adapter`和 `CommandCollection` 属性，但默认情况下这些属性为 `internal` 或 `private`。 通过使用分部类扩展 TableAdapter 以包括 `public` 方法或属性，可以公开此内部信息。 或者，可以通过 TableAdapter s `ConnectionModifier` 属性配置 TableAdapter s `Connection` 属性访问修饰符。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Burnadette Leigh，S ren Jacob Lauritsen Teresa Murphy 和 Hilton Geisenow。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Burnadette Leigh、S ren Jacob Lauritsen、Teresa Murphy 和 Hilton Geisenow。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](working-with-computed-columns-cs.md)

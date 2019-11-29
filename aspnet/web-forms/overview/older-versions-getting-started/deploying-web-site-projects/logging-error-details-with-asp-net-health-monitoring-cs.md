@@ -1,151 +1,151 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
-title: ASP.NET 运行状况监视 (C#) 的日志记录错误详细信息 |Microsoft Docs
+title: 通过 ASP.NET 运行状况监视记录错误详细C#信息（） |Microsoft Docs
 author: rick-anderson
-description: Microsoft 的运行状况监控系统提供了简单且可自定义的方式记录各种 web 事件，包括未经处理的异常。 本教程介绍如何对...
+description: Microsoft 的运行状况监视系统提供一种简单且可自定义的方式来记录各种 web 事件，包括未经处理的异常。 本教程将指导将 。
 ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6b444de67f3bce3d09dd8c3c172895cf07f58df8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e52ed94f78d053701771690fce432d5a1d465b62
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134415"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74637273"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 运行状况监视的日志记录错误详细信息 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip)或[下载 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
+[下载代码](https://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip)或[下载 PDF](https://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
-> Microsoft 的运行状况监控系统提供了简单且可自定义的方式记录各种 web 事件，包括未经处理的异常。 本教程将指导完成未经处理的异常记录到数据库并通知通过电子邮件的开发人员设置运行状况监控系统。
+> Microsoft 的运行状况监视系统提供一种简单且可自定义的方式来记录各种 web 事件，包括未经处理的异常。 本教程介绍如何设置运行状况监视系统，以将未经处理的异常记录到数据库，并通过电子邮件通知开发人员。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-日志记录是一个有用的工具用于监视部署的应用程序的运行状况和诊断可能会出现任何问题。 特别是，务必记录发生在已部署的应用程序中，以便它们可以纠正的错误。 `Error` ASP.NET 应用程序; 中出现未处理的异常时将引发事件[前面的教程](processing-unhandled-exceptions-cs.md)介绍了如何通知错误的开发人员并通过创建的事件处理程序记录其详细信息`Error`事件。 但是，创建`Error`事件处理程序来记录错误的详细信息并通知开发人员是不必要的因为可以由 ASP 执行此任务。NET 的*运行状况监控系统*。
+日志记录是一种有用的工具，用于监视已部署应用程序的运行状况，并诊断可能出现的任何问题。 尤其重要的是记录已部署的应用程序中发生的错误，以便可以对其进行修正。 ASP.NET 应用程序中发生未经处理的异常时，将引发 `Error` 事件;[前面的教程](processing-unhandled-exceptions-cs.md)演示了如何通过为 `Error` 事件创建事件处理程序，通知开发人员出现错误并记录其详细信息。 但是，创建一个 `Error` 事件处理程序来记录错误的详细信息并通知开发人员，这是不必要的，因为此任务可以由 ASP 执行。网络*运行状况监视系统*。
 
-运行状况监控系统在 ASP.NET 2.0 中引入，它旨在监视已部署的 ASP.NET 应用程序的运行状况，通过在应用程序或请求的生存期期间发生的日志记录事件。 记录运行状况监控系统的事件嘿*运行状况监视事件*或*Web 事件*，并且包括：
+运行状况监视系统是在 ASP.NET 2.0 中引入的，旨在通过记录应用程序或请求生存期内发生的事件来监视已部署的 ASP.NET 应用程序的运行状况。 运行状况监视系统记录的事件被称为*运行状况监视事件*或*Web 事件*，包括：
 
-- 应用程序生存期事件，例如当应用程序启动或停止
-- 安全事件，其中包括登录尝试失败和失败的 URL 授权请求
-- 应用程序错误，包括未经处理的异常，异常、 请求验证异常和其他类型的错误中的编译错误，分析的视图状态。
+- 应用程序生存期事件，例如当应用程序启动或停止时
+- 安全事件，包括登录尝试失败和失败的 URL 授权请求
+- 应用程序错误，包括未经处理的异常、查看状态分析异常、请求验证异常、编译错误以及其他类型的错误。
 
-当运行状况监视事件引发时它可以记录到任意数量的指定*日志源*。 运行状况监控系统附带 Web 事件记录到 Windows 事件日志中，或通过电子邮件，其他项中的 Microsoft SQL Server 数据库的日志源。 此外可以创建自己的日志源。
+当引发运行状况监视事件时，可以将其记录到任意数量的指定*日志源*中。 运行状况监视系统附带日志源，用于将 Web 事件记录到 Microsoft SQL Server 数据库、Windows 事件日志或通过电子邮件发送给其他人。 还可以创建自己的日志源。
 
-中定义的事件日志的运行状况监控系统，以及使用，日志源`Web.config`。 借助几行配置标记可以使用运行状况监视所有未经处理的异常记录到数据库并通知你通过电子邮件的异常。
+运行状况监视系统日志以及使用的日志源的事件是在 `Web.config`中定义的。 使用几行配置标记，您可以使用运行状况监视将所有未经处理的异常记录到数据库中，并通过电子邮件向您通知例外。
 
-## <a name="exploring-the-health-monitoring-systems-configuration"></a>探索的运行状况监视系统的配置
+## <a name="exploring-the-health-monitoring-systems-configuration"></a>了解运行状况监视系统的配置
 
-运行状况监视系统的行为由其配置信息，它位于[`<healthMonitoring>`元素](https://msdn.microsoft.com/library/2fwh2ss9.aspx)中`Web.config`。 此外，此配置节定义信息的以下 3 个重要部分：
+运行状况监视系统的行为由其在 `Web.config`的[`<healthMonitoring>` 元素](https://msdn.microsoft.com/library/2fwh2ss9.aspx)中的配置信息定义。 此配置节定义了以下三个重要信息，其中包括：
 
-1. 运行状况监视事件，当引发时，应记录
+1. 应记录引发时的运行状况监视事件，
 2. 日志源和
-3. 如何将每个运行状况监视事件 (1) 中定义映射到的日志源中 (2) 定义。
+3. （1）中定义的每个运行状况监视事件如何映射到（2）中定义的日志源。
 
-通过三个子配置元素指定此信息： [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx)， [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx)，以及[ `<rules>`](https://msdn.microsoft.com/library/fe5wyxa0.aspx)分别。
+此信息通过三个子配置元素来指定：分别[`<eventMappings>`](https://msdn.microsoft.com/library/yc5yk01w.aspx)、 [`<providers>`](https://msdn.microsoft.com/library/zaa41kz1.aspx)和[`<rules>`](https://msdn.microsoft.com/library/fe5wyxa0.aspx)。
 
-默认运行状况监控系统配置信息可在`Web.config`文件中`%WINDIR%\Microsoft.NET\Framework\version\CONFIG`文件夹。 此默认的配置信息，为简便起见，删除一些标记如下所示：
+默认的运行状况监视系统配置信息可在 `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` 文件夹中的 `Web.config` 文件中找到。 此默认配置信息（为了简洁起见，移除了一些标记）如下所示：
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample1.xml)]
 
-监视感兴趣的事件定义中的运行状况`<eventMappings>`元素，从而使运行状况监视事件的类用户友好名称。 在上面，标记`<eventMappings>`元素指定的用户友好名称"的所有错误"的运行状况监视事件的类型`WebBaseErrorEvent`和名称"失败审核"运行状况监视事件的类型为`WebFailureAuditEvent`。
+相关的运行状况监视事件在 `<eventMappings>` 元素中定义，该元素向运行状况监视事件的类提供一个友好名称。 在上面的标记中，`<eventMappings>` 元素将友好名称 "所有错误" 分配给类型为 `WebBaseErrorEvent` 的运行状况监视事件，并将名称 "失败审核" 分配给 `WebFailureAuditEvent`类型的运行状况监视事件。
 
-`<providers>`元素定义为他们提供用户友好名称和指定的任何日志特定于源的配置信息的日志源。 第一个`<add>`元素定义记录指定的运行状况监视事件使用的"EventLogProvider"提供程序`EventLogWebEventProvider`类。 `EventLogWebEventProvider`类将事件记录到 Windows 事件日志。 第二个`<add>`元素定义事件记录到通过在 Microsoft SQL Server 数据库的"SqlWebEventProvider"提供程序`SqlWebEventProvider`类。 "SqlWebEventProvider"配置指定数据库的连接字符串 (`connectionStringName`) 以及其他配置选项。
+`<providers>` 元素定义日志源，为它们提供友好名称，并指定任何特定于日志源的配置信息。 第一个 `<add>` 元素定义 "EventLogProvider" 提供程序，该提供程序使用 `EventLogWebEventProvider` 类记录指定的运行状况监视事件。 `EventLogWebEventProvider` 类将事件记录到 Windows 事件日志中。 第二个 `<add>` 元素定义 "SqlWebEventProvider" 提供程序，该提供程序通过 `SqlWebEventProvider` 类将事件记录到 Microsoft SQL Server 数据库。 "SqlWebEventProvider" 配置在其他配置选项中指定数据库的连接字符串（`connectionStringName`）。
 
-`<rules>`元素将映射中指定的事件`<eventMappings>`元素中的日志源`<providers>`元素。 默认情况下，ASP.NET web 应用程序记录所有未处理的异常和审核故障到 Windows 事件日志中。
+`<rules>` 元素将 `<eventMappings>` 元素中指定的事件映射到 `<providers>` 元素中的日志源。 默认情况下，ASP.NET web 应用程序将所有未经处理的异常和审核失败记录到 Windows 事件日志中。
 
-## <a name="logging-events-to-a-database"></a>到数据库的日志记录事件
+## <a name="logging-events-to-a-database"></a>将事件记录到数据库
 
-运行状况监视系统的默认配置可以自定义基于 web 的应用程序的 web 应用程序通过添加`<healthMonitoring>`应用程序的部分`Web.config`文件。 可以包含其他元素中的`<eventMappings>`， `<providers>`，并`<rules>`部分中的，通过使用`<add>`元素。 若要删除设置默认配置，请使用从`<remove>`元素或使用`<clear />`从上述部分之一删除所有默认值。 让我们书评 web 应用程序配置为记录所有未经处理的异常到 Microsoft SQL Server 数据库使用`SqlWebEventProvider`类。
+通过向应用程序的 `Web.config` 文件添加 `<healthMonitoring>` 部分，可以在 web 应用程序的基础上按 web 应用程序自定义运行状况监视系统的默认配置。 您可以使用 `<add>` 元素在 `<eventMappings>`、`<providers>`和 `<rules>` 部分中包含其他元素。 若要从默认配置中删除设置，请使用 `<remove>` 元素，或使用 `<clear />` 删除这些部分中的所有默认值。 接下来，让我们将书籍评论 web 应用程序配置为使用 `SqlWebEventProvider` 类将所有未经处理的异常记录到 Microsoft SQL Server 数据库中。
 
-`SqlWebEventProvider`类是运行状况监控系统的一部分，并记录运行状况监视事件到指定的 SQL Server 数据库。 `SqlWebEventProvider`类期望指定的数据库包括一个名为的存储的过程`aspnet_WebEvent_LogEvent`。 此存储的过程传递事件的详细信息，肩负存储事件的详细信息。 好消息是您不需要创建此存储过程，也不存储事件的详细信息的表。 可以将这些对象添加到你的数据库使用`aspnet_regsql.exe`工具。
+`SqlWebEventProvider` 类是运行状况监视系统的一部分，它将运行状况监视事件记录到指定的 SQL Server 数据库。 `SqlWebEventProvider` 类需要指定的数据库包含名为 `aspnet_WebEvent_LogEvent`的存储过程。 此存储过程将传递事件的详细信息，并负责存储事件的详细信息。 好消息是不需要创建此存储过程，也不需要创建表来存储事件的详细信息。 可以使用 `aspnet_regsql.exe` 工具将这些对象添加到数据库。
 
 > [!NOTE]
-> `aspnet_regsql.exe`工具已返回中所述[*配置网站，使用应用程序服务*教程](configuring-a-website-that-uses-application-services-cs.md)时，我们添加了对 ASP 支持。NET 的应用程序服务。 因此，书评网站的数据库已包含`aspnet_WebEvent_LogEvent`存储过程，将存储到名为的表的事件信息`aspnet_WebEvent_Events`。
+> 在[*配置使用应用程序服务*教程的网站时，将在配置使用教程的网站](configuring-a-website-that-uses-application-services-cs.md)上讨论 `aspnet_regsql.exe` 工具。网络的应用程序服务。 因此，书籍检查网站的数据库已经包含 `aspnet_WebEvent_LogEvent` 存储过程，该存储过程将事件信息存储到名为 `aspnet_WebEvent_Events`的表中。
 
-必需执行的存储的过程和表添加到你的数据库后，所有的就是以指示运行状况监视到数据库中记录所有未经处理的异常。 完成此操作通过将以下标记添加到你的网站`Web.config`文件：
+将所需的存储过程和表添加到数据库后，剩下的就是指示运行状况监视将所有未经处理的异常记录到数据库中。 通过将以下标记添加到网站的 `Web.config` 文件来完成此操作：
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample2.xml)]
 
-运行状况监视上面使用的配置标记`<clear />`擦除预定义的运行状况监视中的配置信息的元素`<eventMappings>`， `<providers>`，和`<rules>`部分。 然后，它将单个条目添加到以下各节。
+上面的运行状况监视配置标记使用 `<clear />` 元素从 `<eventMappings>`、`<providers>`和 `<rules>` 部分中擦除预定义的运行状况监视配置信息。 然后，它向其中每个部分添加一个条目。
 
-- `<eventMappings>`元素定义单一的运行状况监视感兴趣的名为"所有"的错误时出现未处理的异常，将引发的事件。
-- `<providers>`元素定义一个名为"SqlWebEventProvider"使用的单个日志源`SqlWebEventProvider`类。 `connectionStringName`属性已设置为"ReviewsConnectionString"，是我们连接的名称中定义的字符串`<connectionStrings>`部分。
-- 最后，&lt;规则&gt;元素指示的"所有错误"事件怎样时它应记录的使用"SqlWebEventProvider"提供程序。
+- `<eventMappings>` 元素定义了一个名为 "所有错误" 的名为 "所有错误" 的运行状况监视事件，每当发生未处理的异常时都会引发该事件。
+- `<providers>` 元素定义了使用 `SqlWebEventProvider` 类的名为 "SqlWebEventProvider" 的单一日志源。 `connectionStringName` 属性设置为 "ReviewsConnectionString"，这是在 `<connectionStrings>` 部分中定义的连接字符串的名称。
+- 最后，&lt;规则&gt; 元素指示当 "所有错误" 事件发生应使用 "SqlWebEventProvider" 提供程序记录它时的情况。
 
-此配置信息指示运行状况监视系统到书评数据库记录所有未经处理的异常。
+此配置信息指示运行状况监视系统将所有未经处理的异常记录到书籍检查数据库。
 
 > [!NOTE]
-> `WebBaseErrorEvent`服务器错误只引发事件; 它不会引发 HTTP 错误，例如找不到的 ASP.NET 资源的请求。 这不同于的行为`HttpApplication`类的`Error`事件，该服务器和 HTTP 错误引发事件。
+> 仅对服务器错误引发 `WebBaseErrorEvent` 事件;对于 HTTP 错误，不会引发此错误，例如，请求找不到 ASP.NET 资源。 这不同于为服务器和 HTTP 错误引发 `HttpApplication` 类的 `Error` 事件的行为。
 
-若要查看运行状况监视系统中操作，请访问网站和生成运行时错误，请访问`Genre.aspx?ID=foo`。 您会看到相应的错误页的异常详细信息黄色屏幕死机 （当访问本地） 或自定义错误页上 （当访问在生产环境中的站点）。 在后台运行状况监控系统记录到数据库中的错误信息。 应在一条记录`aspnet_WebEvent_Events`表 (请参阅**图 1**); 此记录包含有关刚刚发生运行时错误的信息。
+若要查看运行状况监视系统的运行状况，请访问网站并通过访问 `Genre.aspx?ID=foo`生成运行时错误。 应会看到相应的错误页-异常详细信息黄色屏幕死亡（在本地访问时）或自定义错误页（访问生产中的站点时）。 在后台，运行状况监视系统将错误信息记录到数据库中。 `aspnet_WebEvent_Events` 表中应有一条记录（请参阅**图 1**）;此记录包含有关刚刚发生的运行时错误的信息。
 
 [![](logging-error-details-with-asp-net-health-monitoring-cs/_static/image2.png)](logging-error-details-with-asp-net-health-monitoring-cs/_static/image1.png)
 
-**图 1**:错误详细信息记录到`aspnet_WebEvent_Events`表  
-([单击此项可查看原尺寸图像](logging-error-details-with-asp-net-health-monitoring-cs/_static/image3.png))
+**图 1**：错误详细信息已记录到 `aspnet_WebEvent_Events` 表中  
+（[单击以查看完全大小的映像](logging-error-details-with-asp-net-health-monitoring-cs/_static/image3.png)）
 
 ### <a name="displaying-the-error-log-in-a-web-page"></a>在网页中显示错误日志
 
-使用网站的当前配置运行状况监控系统数据库中记录所有未经处理的异常。 但是，运行状况监视不提供任何机制来查看通过网页错误日志。 但是，您可以构建 ASP.NET 页显示来自数据库的此信息。 （我们将看到暂时不可用，您可以选择将发送给你的电子邮件中的错误详细信息。）
+在网站的当前配置中，运行状况监视系统会将所有未经处理的异常记录到数据库中。 但是，运行状况监视并不提供通过网页查看错误日志的任何机制。 但是，您可以生成一个从数据库显示此信息的 ASP.NET 页面。 （正如我们稍后将看到的，你可以选择在电子邮件中向你发送错误详细信息。）
 
-如果创建此类页时，请确保您采取措施来仅允许授权的用户以查看错误详细信息。 如果您的网站已部署了用户帐户，则可以使用 URL 授权规则来限制对页向特定用户或角色的访问。 有关如何授予或限制对网页根据登录用户的访问的详细信息，请参阅我[网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
+如果创建此类页面，请确保只允许授权用户查看错误详细信息。 如果你的站点已使用用户帐户，则可以使用 URL 授权规则将对页面的访问限制为特定的用户或角色。 若要详细了解如何根据登录的用户授予或限制对网页的访问权限，请参阅[网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
 
 > [!NOTE]
-> 后续教程探讨了名为 ELMAH 备用错误日志记录和通知系统。 Elmah 却包含内置的机制来查看错误日志从这两个网页和 RSS 源的形式。
+> 后续教程将探讨一项名为 ELMAH 的替代错误日志记录和通知系统。 ELMAH 包含一种内置机制，用于从网页和 RSS 源查看错误日志。
 
-## <a name="logging-events-to-email"></a>日志事件记录到电子邮件
+## <a name="logging-events-to-email"></a>将事件记录到电子邮件
 
-运行状况监控系统包括到电子邮件"日志"事件日志源提供程序。 日志源包含相同的信息记录到电子邮件正文中的数据库。 此日志源可用于在某个运行状况监视事件发生时通知开发人员。
+运行状况监视系统包含一个日志源提供程序，该提供程序将事件 "记录" 到电子邮件中。 日志源包括在电子邮件正文中记录到数据库中的相同信息。 你可以使用此日志源在发生特定的运行状况监视事件时通知开发人员。
 
-让我们更新网站的配置，以便我们收到的电子邮件，无论异常何时发生书评。 若要实现此目的，我们需要执行三个任务：
+接下来，我们将对网站的配置进行更新，以便在出现异常时收到电子邮件。 若要实现此目的，我们需要执行三项任务：
 
-1. 配置 ASP.NET web 应用程序发送电子邮件。 这通过指定如何通过发送电子邮件实现`<system.net>`配置元素。 有关详细信息发送电子邮件中的 ASP.NET 应用程序的消息指[在 ASP.NET 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)和[System.Net.Mail 常见问题解答](http://systemnetmail.com/)。
-2. 注册电子邮件日志源提供程序中的`<providers>`元素，并
-3. 将条目添加到`<rules>`映射到在步骤 (2) 中添加的日志源提供程序的"所有错误"事件的元素。
+1. 将 ASP.NET web 应用程序配置为发送电子邮件。 这是通过指定如何通过 `<system.net>` 配置元素发送电子邮件来实现的。 有关在 ASP.NET 应用程序中发送电子邮件的详细信息，请参阅[在 ASP.NET 中发送电子](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)邮件和[系统 .NET. Mail 常见问题解答](http://systemnetmail.com/)。
+2. 在 `<providers>` 元素中注册电子邮件日志源提供程序，并
+3. 将一个项添加到 `<rules>` 元素，该元素将 "所有错误" 事件映射到步骤中添加的日志源提供程序（2）。
 
-运行状况监控系统包括两个电子邮件日志源提供程序类：`SimpleMailWebEventProvider`和`TemplatedMailWebEventProvider`。 [ `SimpleMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx)发送纯文本电子邮件消息，其中包含事件详细信息和提供的电子邮件正文的小自定义。 与[`TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)指定 ASP.NET 页面的呈现的标记用作电子邮件正文。 [ `TemplatedMailWebEventProvider`类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)可提供很好地控制更高版本的内容和格式的电子邮件，但需要更多前期工作，因为您必须创建生成电子邮件消息的正文的 ASP.NET 页。 本教程重点介绍使用`SimpleMailWebEventProvider`类。
+运行状况监视系统包括两个电子邮件日志源提供程序类： `SimpleMailWebEventProvider` 和 `TemplatedMailWebEventProvider`。 [`SimpleMailWebEventProvider` 类](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx)发送包含事件详细信息的纯文本电子邮件，并对电子邮件正文进行了很少的自定义。 使用[`TemplatedMailWebEventProvider` 类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)指定 ASP.NET 页，该页面的呈现的标记用作电子邮件的正文。 使用[`TemplatedMailWebEventProvider` 类](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx)可以更好地控制电子邮件的内容和格式，但需要更多的前期工作，因为必须创建 ASP.NET 页面来生成电子邮件的正文。 本教程重点介绍如何使用 `SimpleMailWebEventProvider` 类。
 
-更新监视系统的运行状况`<providers>`中的元素`Web.config`文件以包含的日志源`SimpleMailWebEventProvider`类：
+在 `Web.config` 文件中更新运行状况监视系统的 `<providers>` 元素，以包括 `SimpleMailWebEventProvider` 类的日志源：
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample3.xml)]
 
-上面的标记使用`SimpleMailWebEventProvider`类作为日志源提供程序，并将其分配的友好名称"EmailWebEventProvider"。 此外，`<add>`属性包含其他配置选项，例如收件人和从电子邮件地址。
+上述标记使用 `SimpleMailWebEventProvider` 类作为日志源提供程序，并为其指定友好名称 "EmailWebEventProvider"。 此外，`<add>` 属性还包括附加的配置选项，如电子邮件的 "发件地址" 和 "发件地址"。
 
-与电子邮件日志源定义，剩下的就是以指示运行状况监视系统使用此源用于"记录"未经处理的异常。 这通过添加新的规则中实现`<rules>`部分：
+定义电子邮件日志源后，剩下的就是指示运行状况监视系统使用此源来 "记录" 未处理的异常。 这是通过在 `<rules>` 部分中添加新规则来完成的：
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample4.xml)]
 
-`<rules>`部分现在包括两个规则。 第一个名为"所有错误到电子邮件"，将所有未经处理的异常发送到"EmailWebEventProvider"日志源。 此规则的效果在网站上的错误的详细信息发送到指定的地址。 "到数据库的所有错误"规则的站点数据库中记录错误详细信息。 因此，每当未处理的异常发生时在站点上其详细信息都记录到数据库并且发送到指定的电子邮件地址。
+`<rules>` 部分现在包括两个规则。 第一个名称为 "所有错误发至电子邮件"，将所有未经处理的异常发送到 "EmailWebEventProvider" 日志源。 此规则的效果是将网站上有关错误的详细信息发送到指定的以解决问题。 "对数据库的所有错误" 规则将错误详细信息记录到站点的数据库中。 因此，只要站点上出现未处理的异常，其详细信息就会记录到数据库中并发送到指定的电子邮件地址。
 
-**图 2**显示了生成的电子邮件`SimpleMailWebEventProvider`类访问时`Genre.aspx?ID=foo`。
+**图 2**显示访问 `Genre.aspx?ID=foo`时由 `SimpleMailWebEventProvider` 类生成的电子邮件。
 
 [![](logging-error-details-with-asp-net-health-monitoring-cs/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-cs/_static/image4.png)
 
-**图 2**:在电子邮件发送错误详细信息  
-([单击此项可查看原尺寸图像](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png))
+**图 2**：在电子邮件中发送错误详细信息  
+（[单击以查看完全大小的映像](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png)）
 
 ## <a name="summary"></a>总结
 
-ASP.NET 运行状况监视系统，旨在允许管理员监视已部署的 web 应用程序的运行状况。 当特定的操作，将展开，例如当应用程序停止时，当用户成功登录到站点，或发生未经处理的异常，则会引发运行状况监视事件。 这些事件可以记录到任意数量的日志源。 本教程介绍了如何记录未处理异常的详细信息，到数据库并通过电子邮件。
+ASP.NET 运行状况监视系统旨在允许管理员监视已部署的 web 应用程序的运行状况。 展开某些操作时，将引发运行状况监视事件，例如当应用程序停止时、用户成功登录到站点时或发生未经处理的异常时。 这些事件可以记录到任意数量的日志源中。 本教程演示了如何通过电子邮件将未经处理的异常的详细信息记录到数据库中。
 
-本教程侧重于使用运行状况监视记录未处理的异常，但请记住，运行状况监视用于度量已部署的 ASP.NET 应用程序的总体运行状况和包括丰富的运行状况监视事件和不日志源此处介绍了。 更多的是什么，您可以创建自己的运行状况监视事件和日志源需要出现。 如果您有兴趣学习有关运行状况监视的详细信息，很好的第一步是读取[Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)的[运行状况监视常见问题](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)。 接下来，请查阅[How To:使用 ASP.NET 2.0 中的运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)。
+本教程重点介绍如何使用运行状况监视来记录未经处理的异常，但请记住，运行状况监视旨在衡量已部署的 ASP.NET 应用程序的总体运行状况，并包括大量的运行状况监视事件和日志源本文探讨。 而且，如果需要，你可以创建自己的运行状况监视事件和日志源。 如果有兴趣了解有关运行状况监视的详细信息，最好是通读[Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)的[运行状况监视常见问题解答](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)。 请参阅[如何：在 ASP.NET 2.0 中使用运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [ASP.NET 运行状况监视概述](https://msdn.microsoft.com/library/bb398933.aspx)
-- [配置和自定义运行状况监视系统的 ASP.NET](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
-- [常见问题-ASP.NET 2.0 中监视的运行状况](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [如何：发送电子邮件运行状况监视通知](https://msdn.microsoft.com/library/ms227553.aspx)
-- [如何：使用 ASP.NET 中的运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)
-- [在 ASP.NET 中监视的运行状况](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
+- [配置和自定义 ASP.NET 的运行状况监视系统](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
+- [常见问题解答-ASP.NET 2.0 中的运行状况监视](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
+- [如何：发送用于运行状况监视通知的电子邮件](https://msdn.microsoft.com/library/ms227553.aspx)
+- [如何：在 ASP.NET 中使用运行状况监视](https://msdn.microsoft.com/library/ms998306.aspx)
+- [ASP.NET 中的运行状况监视](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 > [!div class="step-by-step"]
 > [上一页](processing-unhandled-exceptions-cs.md)

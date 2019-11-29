@@ -1,50 +1,50 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
-title: 测试 (VB) 的密码强度 |Microsoft Docs
+title: 测试密码强度（VB） |Microsoft Docs
 author: wenz
-description: 密码是必需几乎任意位置，以便延迟用户倾向于选择简单密码，这容易被破解。 在 ASP 中 PasswordStrength 控件。N...
+description: 几乎任何地方都需要密码，因此惰性用户往往会选择容易破解的简单密码。 ASP 中的 PasswordStrength 控件。N 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 9215a37f-3133-4887-8ed2-3689f3a53551
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e64b79b1ce477fca439dd0db519371ed11446c52
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b614e1788eeafc175dd792ec6d3e4619f9ea2b7a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115254"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606253"
 ---
 # <a name="testing-the-strength-of-a-password-vb"></a>测试密码强度 (VB)
 
-通过[Christian Wenz](https://github.com/wenz)
+作者： [Christian Wenz](https://github.com/wenz)
 
-[下载代码](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.vb.zip)或[下载 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0VB.pdf)
+[下载代码](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.vb.zip)或[下载 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0VB.pdf)
 
-> 密码是必需几乎任意位置，以便延迟用户倾向于选择简单密码，这容易被破解。 ASP.NET AJAX 控件工具包中的 PasswordStrength 控件可以检查得再好密码。
+> 几乎任何地方都需要密码，因此惰性用户往往会选择容易破解的简单密码。 ASP.NET AJAX 控件工具包中的 PasswordStrength 控件可以检查密码的良好程度。
 
 ## <a name="overview"></a>概述
 
-密码是必需几乎任意位置，以便延迟用户倾向于选择简单密码，这容易被破解。 `PasswordStrength` ASP.NET AJAX 控件工具包中的控件可以检查得再好密码的信息。
+几乎任何地方都需要密码，因此惰性用户往往会选择容易破解的简单密码。 ASP.NET AJAX 控件工具包中的 `PasswordStrength` 控件可以检查密码的良好程度。
 
 ## <a name="steps"></a>步骤
 
-`PasswordStrength`控件扩展的文本框中，并检查是否已经足够好中它的密码。 它提供了丰富的属性，则通过选项以下是只是其中一些：
+`PasswordStrength` 控件将扩展文本框，并检查其中的密码是否足够好。 它通过属性提供丰富的选项;下面只是其中的一部分：
 
-- `MinimumNumericCharacters` 密码中所需的数字字符的最小数量
-- `MinimumSymbolCharacters` 密码中所需的最小数量的符号字符 （不字母和数字）
-- `PreferredPasswordLength` 最小密码长度
-- `RequiresUpperAndLowerCaseCharacters` 是否需使用大写和小写字符的密码
+- 密码中所需的 `MinimumNumericCharacters` 最小数字字符数
+- 密码中所需的最小符号字符数（不 `MinimumSymbolCharacters` 字母和数字）
+- 密码 `PreferredPasswordLength` 最小长度
+- `RequiresUpperAndLowerCaseCharacters` 密码是否需要使用大写和小写字符
 
-`StrengthIndicatorType`提供的信息如何显示为文本的密码的强度 (值`"Text"`) 或作为一种类型的进度栏 (值`"BarIndicator"`)。 在`DisplayPosition`属性中，你将配置信息的显示位置。 下面是完整的示例，包括 ASP.NET AJAX`ScriptManager`控件，`PasswordStrength`控件和当然一个文本框，用户可能会在其中输入密码。 为了演示目的后, 一种形式字段是普通文本字段并不是密码字段，以便您可以看到在开发过程中您键入的内容。
+`StrengthIndicatorType` 提供了有关如何以文本（值 `"Text"`）或一种进度栏（值 `"BarIndicator"`）表示密码强度的信息。 在 `DisplayPosition` 特性中，你将配置信息的显示位置。 下面是一个完整的示例，包括 ASP.NET AJAX `ScriptManager` 控件、`PasswordStrength` 控件，当然还有一个文本框，用户可以在其中输入密码。 出于演示的目的，后者窗体字段是一个常规文本字段，而不是密码字段，以便您可以在开发过程中查看所键入的内容。
 
 [!code-aspx[Main](testing-the-strength-of-a-password-vb/samples/sample1.aspx)]
 
-运行页面，然后立即键入：仅输入小写字母、 大写字母、 数字和符号后，密码会被确认为不可换行。
+运行页并键入：只有在输入小写字母、大写字母、数字和符号后，密码才被视为 unbreakable。
 
-[![现在，密码是 （很） 高](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
+[![密码现在为（相当）](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
 
-现在，密码是 （非常） 很好 ([单击此项可查看原尺寸图像](testing-the-strength-of-a-password-vb/_static/image3.png))
+密码现在很好（[单击以查看完全大小的映像](testing-the-strength-of-a-password-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一篇](testing-the-strength-of-a-password-cs.md)
+> [上一部分](testing-the-strength-of-a-password-cs.md)

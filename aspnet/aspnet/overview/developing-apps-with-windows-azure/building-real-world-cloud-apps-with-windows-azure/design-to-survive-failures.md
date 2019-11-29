@@ -1,131 +1,131 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
-title: 设计来克服的故障 （使用 Azure 构建实际云应用） |Microsoft Docs
+title: 在出现故障时进行设计（通过 Azure 构建实际的云应用） |Microsoft Docs
 author: MikeWasson
-description: 构建真实世界云应用与 Azure 的电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践可以他...
+description: 使用 Azure 电子书构建真实的云应用基于 Scott Guthrie 开发的演示文稿。 它介绍了13种模式和实践，
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 54bfa40a7d853e29c42512ba375271587fb6f565
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 9bf9acb8b4f8521d03c053c124c5fc4a07d6cb9a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118830"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585657"
 ---
-# <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计来克服的故障 （使用 Azure 构建实际云应用）
+# <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计为可经受故障（通过 Azure 构建实际的云应用）
 
-通过[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
-[下载修复此错误项目](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **构建真实世界云应用，使用 Azure**电子书基于由 Scott Guthrie 开发的演示文稿。 它还说明了 13 模式和实践，从而帮助您获得成功开发适用于在云中的 web 应用。 有关电子书的信息，请参阅[的第一章](introduction.md)。
+> **使用 Azure 电子书构建真实的云应用**基于 Scott Guthrie 开发的演示文稿。 它介绍了可帮助你成功开发云的 web 应用的13种模式和实践。 有关电子书的信息，请参阅[第一章](introduction.md)。
 
-您不必考虑任何类型的应用程序，但尤其是将其中很多人将使用它，在云中运行的生成时的项目之一是如何设计应用程序，以便它可以适当地处理故障并继续提供的价值高达可能。 只要有足够的时间，操作将会在任何环境或任何软件系统中出错。 您的应用程序如何处理这些情况下确定你的客户将获得如何不安和多长时间需要花费分析和解决问题。
+在构建任意类型的应用程序时必须考虑的一个问题是，特别是在云中运行的应用程序，它是如何设计应用程序，以便能够正确地处理故障并继续提供价值，可以. 只要有足够的时间，在任何环境或任何软件系统中都会出错。 你的应用如何处理这些情况确定你的客户将获得的不确定程度，以及你需要花费多少时间来分析和解决问题。
 
-## <a name="types-of-failures"></a>类型的故障
+## <a name="types-of-failures"></a>失败类型
 
-有两种基本类别的故障，你将想要以不同方式处理：
+你需要以不同方式处理两种基本类别的故障：
 
-- 暂时性故障，自愈如间歇性网络连接问题的故障。
-- 需要干预的辩论失败。
+- 暂时性的自我修复故障，例如间歇性网络连接问题。
+- 需要干预的持久故障。
 
-对于暂时性故障，可以实现重试策略来确保该最快速和自动恢复应用程序的时间。 你的客户可能会注意到稍长的响应时间，但否则它们不会受到影响。 我们将介绍一些方法来处理这些错误中的[暂时性故障处理一章](transient-fault-handling.md)。
+对于暂时性故障，你可以实施重试策略，以确保应用程序在大多数情况下快速自动恢复。 你的客户可能会注意到响应时间稍长，否则不会受到影响。 我们将在[暂时性故障处理一章](transient-fault-handling.md)中介绍一些处理这些错误的方法。
 
-对于持久故障，可以实现监视和日志记录功能，当出现问题并促进根本原因分析时立即通知你。 我们将介绍一些方法可帮助您掌握这些类型中的错误[监视和遥测章](monitoring-and-telemetry.md)。
+对于持久故障，你可以实施监视和日志记录功能，以便在出现问题时及时通知你，从而促进根本原因分析。 我们将介绍一些方法，帮助你在 "[监视和遥测" 一章](monitoring-and-telemetry.md)中了解这些类型的错误。
 
 ## <a name="failure-scope"></a>故障范围
 
-您还必须考虑失败作用域 – 是否会影响一台计算机，例如 SQL 数据库或存储或整个区域的整个服务。
+还必须考虑故障范围–是否影响单个计算机、整个服务（如 SQL 数据库或存储）或整个区域。
 
 ![故障范围](design-to-survive-failures/_static/image1.png)
 
 ### <a name="machine-failures"></a>计算机故障
 
-在 Azure 中，一个新自动替换为出现故障的服务器和设计良好的云应用程序自动快速地从这种类型的故障恢复。 前面我们强调无状态 web 层的可伸缩性优势和易用性从发生故障的服务器恢复是无状态的另一个好处。 易用性恢复也是平台即服务 (PaaS) 功能，例如 SQL 数据库和 Azure 应用服务 Web 应用的优势之一。 硬件故障很少见，但当它们出现的这些服务处理它们自动保存功能。您甚至无需编写代码来处理计算机失败时要使用其中一种服务。
+在 Azure 中，发生故障的服务器自动替换为新的服务器，并且设计良好的云应用会自动、快速地从这种类型的故障中恢复。 更早地，我们增加了无状态 web 层的可伸缩性优势，并且从故障的服务器中轻松恢复是情形的另一个优点。 轻松恢复也是平台即服务（PaaS）功能（如 SQL 数据库和 Azure App Service Web 应用）的优点之一。 硬件故障很少见，但当它们发生时，这些服务会自动处理它们;在使用其中一种服务时，甚至无需编写代码来处理计算机故障。
 
 ### <a name="service-failures"></a>服务故障
 
-云应用程序通常使用多个服务。 例如，修复其应用程序使用 SQL 数据库服务，存储服务和 web 应用部署到 Azure 应用服务。 有什么将您的应用程序？ 如果你依赖的服务之一出现故障 某些服务失败友好"很抱歉，稍后重试"消息可能是的最佳做法。 但在许多情况下会更好。 例如，当后端数据存储区已关闭，你可以接受用户输入、 显示"你的请求已收到，"和存储其他任何位置的输入暂时;如果您需要的服务再次正常运行，然后可以检索输入，并对其进行处理。
+通常，云应用程序使用多个服务。 例如，Fix It 应用程序使用 SQL 数据库服务，存储服务和 web 应用程序部署到 Azure App Service。 如果你所依赖的服务之一发生故障，你的应用程序会执行什么操作？ 对于某些服务失败，"很抱歉，请稍后再试" 消息可能是最佳做法。 但在许多情况下，您可以更好地执行操作。 例如，当后端数据存储关闭时，可以接受用户输入，显示 "你的请求已收到"，并暂时将输入存储在其他位置;然后，当需要的服务再次运行时，可以检索并处理输入。
 
-[以队列为中心的工作模式](queue-centric-work-pattern.md)章演示一种方法来处理这种情况。 Fix It 应用将任务存储在 SQL 数据库中，但它无需退出工作时 SQL 数据库已关闭。 这一章中我们将了解如何将用户输入任务存储在队列中，并使用工作进程队列中读取和更新任务。 如果 SQL 已关闭，创建 Fix It 任务的能力会受到影响;工作进程可以等待和 SQL 数据库可用时处理新的任务。
+以[队列为中心的工作模式](queue-centric-work-pattern.md)一章介绍了处理此方案的一种方法。 Fix It 应用将任务存储在 SQL 数据库中，但在 SQL 数据库关闭时，无需退出工作。 在本章中，我们将了解如何将任务的用户输入存储在队列中，以及如何使用工作进程读取队列和更新任务。 如果 SQL 已关闭，创建 Fix It 任务的功能不受影响;当 SQL 数据库可用时，工作进程可以等待并处理新的任务。
 
 ### <a name="region-failures"></a>区域故障
 
-整个区域可能会失败。 自然灾难可能会破坏数据中心，它可能被 meteor 获取压扁，trunk 行到数据中心可能会中断通过 burying backhoe 等 cow farmer。如果您的应用程序托管在 stricken 数据中心要怎么做？ 可以将您的应用程序在 Azure 中设置多个区域中同时运行，以便如果在一个灾难，继续在另一个区域中运行它。 此类故障是极少发生，并通过将无需确保不间断的服务，通过这种故障，大多数应用程序不跳转。 请参阅有关如何使您的应用程序甚至通过区域故障的信息的一章末尾处的资源部分。
+整个区域可能会失败。 自然灾害可能会损坏数据中心，它可能会被 meteor 平展，farmer burying 可以使用 backhoe 等来剪切数据中心的干线行。如果你的应用程序托管在 stricken 数据中心，你该做什么？ 可以将 Azure 中的应用设置为同时在多个区域中运行，以便在某个区域发生灾难时，你可以继续在另一个区域中运行。 此类故障非常罕见，大多数应用程序都不会经历必要的阻碍，以确保通过此类故障的服务不中断。 请参阅本章末尾的资源部分，了解有关如何通过区域故障使应用保持可用的信息。
 
-Azure 的目标是使处理所有的故障更容易，这些类型，将看到我们所执行的以下章节中的一些示例。
+Azure 的目标是更轻松地处理所有这些类型的故障，你将在以下章节中看到有关如何执行此操作的一些示例。
 
-## <a name="slas"></a>服务级别协议
+## <a name="slas"></a>协议
 
-人们经常听到有关云环境中的服务级别协议 (Sla)。 基本上，这些都是如何可靠其服务的公司所做的承诺。 99.9 %sla 意味着你应该会正常 99.9%的时间运行的服务。 这个功能 SLA 的相当典型值，这听起来像数目很大，但是可能不知道多少停机时间。 1%实际上相当于。 下面是表显示了各种 SLA 百分比通过一年、 月和每周金额为多少停机时间。
+人们通常会在云环境中获悉服务级别协议（Sla）。 实质上，它们承诺公司对服务的可靠性。 99.9% 的 SLA 表示预计服务将在99.9% 的时间运行。 这是 SLA 的一个相当典型的值，并且听起来非常多，但你可能不会认识到多少个停机时间的实际数量为0.1%。 下面是一个表，其中显示了不同的 SLA 百分比在一年、一个月和一周内的停机时间。
 
 ![SLA 表](design-to-survive-failures/_static/image2.png)
 
-因此 99.9 %sla 意味着你的服务可能向 8.76 小时下一年或每个月的 43.2 分钟。 这是更多的停机时间不是大多数人都知道。 作为开发人员，因此你想要了解一定的停机时间，有可能，并妥善的方式对其进行处理。 在某一时刻人想要使用您的应用程序和服务将会关闭，并且想要最大程度减少的负面影响的客户。
+因此，99.9% 的 SLA 表示你的服务可能会在一年或每月43.2 分钟后关闭8.76 小时。 这比大多数人都认识到的时间更多。 因此，作为开发人员，您需要注意一定的停机时间，并以合理的方式对其进行处理。 有人将使用您的应用程序，而服务即将关闭，并且您想要将该客户的负面影响降至最低。
 
-您应该了解的 SLA 的一点是它为引用的哪个时间段： 时钟重置每周、 每个月或每年？ 在 Azure 中我们将时钟重置每个月，这是比每年的 SLA，为您好，因为每年 SLA 可以通过一系列的很好的几个月偏移它们隐藏错误几个月。
+你应了解的有关 SLA 的一项内容是它所引用的时间框架：每周、每月还是每年都会重置时钟？ 在 Azure 中，我们每月重置一次时钟，这比每年的 SLA 更好，因为每年 SLA 可以通过将它们偏移一系列好月份来隐藏错误月份。
 
-当然我们始终能够以合理方式做得更好 SLA;通常，您可以在下比这少得多。 承诺是，如果这就是不断失败的时间超过最大停机时间则可以要求退款。 您得到可能的金额不会完全弥补您的业务影响的停机时间，过多，但该方面的 SLA 充当强制策略，并让你知道，我们执行它非常重视。
+当然，我们总是比 SLA 努力做到更好;通常，您的工作时间比此小得多。 承诺是，如果我们的运行时间超过了你可以要求花钱回来的最长时间。 您取回的资金量可能并不能完全补偿您对超出时间的业务影响，但 SLA 的这一环节将充当强制策略，并让您知道我们确实要认真对待。
 
 ### <a name="composite-slas"></a>复合 Sla
 
-考虑时还需考虑服务级别协议的一个重点是在应用中，每个具有单独的 SLA 服务上使用多个服务的影响。 例如，修复其应用使用 Azure 应用服务 Web 应用、 Azure 存储和 SQL 数据库。 以下是截至日期在 2013 年 12 月，编写这本电子书其 SLA 号码：
+查看 Sla 时，需要考虑的一个重要事项是在应用中使用多个服务的影响，每个服务都有一个单独的 SLA。 例如，Fix It 应用使用 Azure App Service Web 应用、Azure 存储和 SQL 数据库。 下面是此电子书在2013年12月撰写的日期：
 
-![SLA 网站、 存储、 SQL 数据库](design-to-survive-failures/_static/image3.png)
+![SLA 网站、存储、SQL 数据库](design-to-survive-failures/_static/image3.png)
 
-停机时间你所期望的应用程序中基于这些服务 Sla 的最大值是什么？ 您可能认为，停机时间将等于最差的 SLA 百分比或 99.9%在这种情况下。 这将是 true，如果所有三个服务始终失败一次，但这并不是一定究竟发生了什么。 每个服务可能会失败独立地在不同的时间，因此您必须将单独的 SLA 数字相乘来计算的复合 SLA。
+基于这些服务 Sla，应用的最大停机时间是多少？ 您可能认为停机时间等于最差的 SLA 百分比，在这种情况下，可能为99.9%。 如果所有三个服务始终都出现故障，但这并不是实际发生的情况，则会为 true。 每个服务可能会在不同时间独立失败，因此，你必须通过将各个 SLA 编号相乘来计算复合 SLA。
 
 ![复合 SLA](design-to-survive-failures/_static/image4.png)
 
-因此您的应用程序是停机 43.2 分钟不只是一个月，但该 3 倍数量，每个月 – 108 分钟，仍是 Azure SLA 限制范围内。
+因此，你的应用程序可能不会在每月43.2 分钟，而是每月3倍，每月108分钟–并且仍处于 Azure SLA 限制范围内。
 
-此问题不是唯一的 Azure。 我们实际提供最佳云服务级别协议的任何云服务可用，并且你将有类似的问题，如果你使用任何供应商的云服务处理。 这突出显示是想法的关于如何可以设计您的应用程序正确地，处理不可避免地存在服务失败，因为它们可能会发生频率不够高，以影响会客户或用户的重要性。
+此问题在 Azure 中不是唯一的。 我们实际上提供了任何可用云服务的最佳云 Sla，如果你使用任何供应商的云服务，你将遇到类似的问题。 重点介绍如何设计你的应用程序以合理地处理不可避免的服务故障，这一点非常重要，因为它们可能会经常发生，以影响你的客户或用户。
 
-### <a name="cloud-slas-compared-to-enterprise-down-time-experience"></a>云与企业停机的情况下体验相比的 Sla
+### <a name="cloud-slas-compared-to-enterprise-down-time-experience"></a>与企业停机体验相比的云 Sla
 
-人们有时说，"我的企业应用程序中我永远不会有这些问题。" 如果需要多大停机时间是每月他们实际上有，他们通常所说，"嗯，它会发生情况有时。" 如果需要何种频率，它们的承认"有时我们需要备份或安装新的服务器或更新软件。" 当然的计数为停机时间。 大多数企业应用除非它们是特别是关键任务都已实际关闭对多个通过我们的服务的 Sla 所允许的时间量。 但你的服务器和基础结构，并且你要负责为它和它的控件中，往往会更少反响感受下降时间。 在云环境中，你是依赖于其他人并不知道正在运行的内容，因此可能往往容易变得更关注它。
+人们有时会说： "在我的企业应用程序中，我从未遇到过这些问题。" 如果你询问一个月的停机时间，他们通常会说： "当然，这是偶尔发生的。" 如果你询问的频率如何，他们将承认 "有时我们需要备份或安装新的服务器或更新软件"。 当然，这会计为关闭时间。 大多数企业应用程序（除非它们特别是任务关键型应用程序）实际上已超过服务 Sla 允许的时间量。 但是，当它是您的服务器和您的基础结构，并对其进行控制时，您的 angst 的时间可能不太大。 在云环境中，你依赖于其他人，并且你不知道发生了什么情况，因此你可能会担心更多的担心。
 
-当企业可实现更高版本的运行时间百分比不是从云 SLA 获取时，他们可以执行该操作在硬件上花费更多资金。 云服务可以做到这一点，但必须从其服务的更多收取相关费用。 不过，您可以利用经济高效的服务，设计您的软件，以便不可避免故障导致最小中断到你的客户。 为云应用程序设计器作业不这么多需要避免为了避免灾难，失败，则执行该操作通过侧重于软件，不在硬件上。 企业应用程序尽量以最大化平均无故障时间，而云应用程序尽可能最小化平均恢复时间。
+当企业实现比从云 SLA 获取更多的时间百分比时，他们可以通过在硬件上花费更多资金来实现此目的。 云服务可以这样做，但必须对其服务进行更多的收费。 相反，你可以利用经济高效的服务并设计你的软件，使你的客户无法实现最小中断。 作为云应用设计器，你的工作并不太多，无法避免发生灾难，并通过关注软件（而不是硬件）来实现此目的。 尽管企业应用会尽力最大限度地减少故障之间的平均时间，但云应用会尽力缩短平均恢复时间。
 
-### <a name="not-all-cloud-services-have-slas"></a>并非所有云服务都具有服务级别协议
+### <a name="not-all-cloud-services-have-slas"></a>并非所有云服务都具有 Sla
 
-注意还不是每个云服务甚至提供 SLA。 如果您的应用程序依赖于没有正常运行时间保证的服务，你可能关闭比您想象的更长。 例如，如果您启用到你的站点使用 Facebook 或 Twitter 等社交提供程序日志中，检查与服务提供商，以找出，是否没有 SLA，而且您会发现有根本没有连接。 但是，如果身份验证服务出现故障或无法支持你的请求数量，客户被锁定之外，您的应用程序。 天或更长时间，可能已关闭。 一个新的应用程序的创建者应数以亿计的下载内容和依赖于 Facebook 身份验证 – 但不太迟将实时和发现之前与 Facebook 联系，没有为该服务没有 SLA。
+还要注意，并非每个云服务都具有 SLA。 如果你的应用程序依赖于一个没有时间保证的服务，你可能会比你想像的时间更长。 例如，如果使用 Facebook 或 Twitter 等社交提供程序启用登录到你的网站，请与服务提供商联系，以了解是否存在 SLA，你可能会发现没有 SLA。 但是，如果身份验证服务出现故障，或者不能支持您在其上抛出的请求量，则您的客户将被锁定在您的应用程序之外。 你可能会关闭几天或更长时间。 一个新应用程序的创建者预计数以百计的下载并依赖于 Facebook 身份验证，但在进行实时操作之前，不会与 Facebook 交互，因为这种服务没有 SLA。
 
-### <a name="not-all-downtime-counts-toward-slas"></a>并非所有的停机时间将计入 Sla
+### <a name="not-all-downtime-counts-toward-slas"></a>并非所有停机时间都会计入 Sla
 
-如果您的应用程序过度使用这些，一些云服务可能会有意拒绝服务。 这称为*限制*。 如果服务提供 SLA，应说明条件，在其下您可能会受到限制，以及应用程序设计应避免出现这些情况并作出正确反应受到限制，如果发生这种情况。 例如，如果对服务发出请求开始时超过一定数量每秒失败时，你想要确保自动重试不发生如此之快，它们会导致限制以继续。 我们将更详细说明了中的阻止行为[暂时性故障处理一章](transient-fault-handling.md)。
+如果你的应用程序过度使用，某些云服务可能会有意拒绝服务。 这称为*限制*。 如果服务具有 SLA，则它应声明你可能会受到限制的条件，并且你的应用程序设计应避免出现这些情况，并在发生此限制时正确地做出响应。 例如，如果在超过特定数量的每秒时，对服务的请求将开始失败，则需要确保自动重试不会快速进行，因为它们会导致限制继续。 在[暂时性故障处理一章](transient-fault-handling.md)中，我们将详细介绍限制。
 
 ## <a name="summary"></a>总结
 
-这一章已尝试帮助您实现具有真实世界云应用程序设计为从故障中恢复正常的原因。 从开始[接下来的章节](monitoring-and-telemetry.md)，本系列教程的其余模式转到更详细地介绍一些策略可用于执行此操作：
+本章已尝试帮助你认识到现实世界的云应用程序不能正常工作的原因。 从[下一章](monitoring-and-telemetry.md)开始，本系列中的其余模式将更详细地介绍一些可用于执行此操作的策略：
 
-- 有好[监视和遥测](monitoring-and-telemetry.md)，以便您快速查明故障需要干预，并具有足够的信息来解决这些问题。
-- [处理暂时性故障](transient-fault-handling.md)通过实现智能重试逻辑，以便您的应用程序将自动恢复时可以并会返回到[断路器](transient-fault-handling.md#circuitbreakers)逻辑时它不能。
-- 使用[分布式缓存](distributed-caching.md)以尽可能减少吞吐量、 延迟和连接问题的数据库访问权限。
-- 实现松散耦合通过[以队列为中心的工作模式](queue-centric-work-pattern.md)，以便应用前端可以继续工作时后端已关闭。
+- 具有良好的[监视和遥测](monitoring-and-telemetry.md)，使你能够快速找到需要干预的故障，并提供足够的信息来解决这些问题。
+- 通过实现智能重试逻辑来[处理暂时性故障](transient-fault-handling.md)，以便您的应用程序在不能时自动恢复，并回退到[断路](transient-fault-handling.md#circuitbreakers)器逻辑。
+- 使用[分布式缓存](distributed-caching.md)来最大程度地减少数据库访问的吞吐量、延迟和连接问题。
+- 通过以[队列为中心的工作模式](queue-centric-work-pattern.md)实现松散耦合，以便在后端停止时应用前端可以继续工作。
 
 ## <a name="resources"></a>资源
 
-有关详细信息，请参阅后面的章节中这本电子书和以下资源。
+有关详细信息，请参阅此电子书中的后续章节和以下资源。
 
 文档：
 
-- [防故障：弹性云体系结构的指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 白皮书。 防故障系列视频的 web 页面版本。
-- [Azure 云服务上的大规模服务的设计的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 白皮书。
-- [Azure 业务连续性技术指南](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx)。 Patrick Wickline 和 Jason Roth 白皮书。
-- [灾难恢复和高可用性 Azure 应用程序的](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx)。 由 Michael McKeown、 Hanu Kommalapati 和 Jason Roth 白皮书。
-- [Microsoft 模式和做法-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅多数据中心部署指南，断路器模式。
+- [防故障：弹性云体系结构的指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮书 by Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 防故障视频系列的网页版本。
+- [在 Azure 云服务上设计大规模服务的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 通过标记 Simm 和 Michael Thomassy 的白皮书。
+- [Azure 业务连续性技术指南](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx)。 白皮书： Wickline 和 Jason Roth。
+- [Azure 应用程序的灾难恢复和高可用性](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx)。 白皮书： Michael McKeown、Hanu Kommalapati 和 Jason Roth。
+- [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅多个数据中心部署指南，断路器模式。
 - [Azure 支持-服务级别协议](https://azure.microsoft.com/support/legal/sla/)。
-- [Azure SQL 数据库中的业务连续性](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx)。 有关 SQL 数据库高可用性和灾难恢复功能的文档。
-- [高可用性和灾难恢复 Azure 虚拟机中 SQL Server 的](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)。
+- [AZURE SQL Database 中的业务连续性](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx)。 有关 SQL 数据库高可用性和灾难恢复功能的文档。
+- [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)。
 
 视频：
 
-- [防故障：构建可缩放、 可复原的云服务](https://channel9.msdn.com/Series/FailSafe)。 包含 9 个部分组成的系列 Ulrich Homann、 Marc Mercuri 和 Mark Simms。 提供高级概念和体系结构原则非常可访问且有趣的方式，来自 Microsoft 客户咨询团队 (CAT) 实际客户体验的情景。 剧集 1 和 8 进入中进行深入设计云应用程序以从故障中恢复的原因。 另请参阅第 2 节开始 49:57、 故障点和在第 2 节开始 56:05，故障模式的讨论和断路器在段 3 开始 40:55 的讨论中的阻止行为跟进的讨论。
-- [构建大：从 Azure 客户的第 ii 部分到的经验教训](https://channel9.msdn.com/Events/Build/2012/3-030)。 Mark Simms 介绍了设计失败以及检测所有内容。 类似于防故障系列但进入操作方法的更多详细信息。
+- [故障安全：构建可缩放且可复原的云服务](https://channel9.msdn.com/Series/FailSafe)。 九部分系列： Ulrich Homann、Marc Mercuri 和 Mark Simm。 以一种易于访问且有趣的方式展示高级概念和体系结构原则，其中的情景是通过 Microsoft 客户咨询团队（CAT）的实际客户体验。 集1和8深入探讨了设计云应用程序以保持故障的原因。 另请参阅有关从49:57 开始的剧集2中的限制的后续讨论，请参阅第2点中的故障点和故障模式（从56:05 开始）讨论，并讨论从40:55 开始的剧集3中的断路熔断器。
+- [构建大：从 Azure 客户获得的课程-第二部分](https://channel9.msdn.com/Events/Build/2012/3-030)。 标记 Simm 讨论了如何针对故障进行设计并检测所有内容。 与故障保护系列类似，但更详细地介绍了更多操作方法。
 
 > [!div class="step-by-step"]
 > [上一页](unstructured-blob-storage.md)

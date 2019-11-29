@@ -1,258 +1,258 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs
-title: 母版/详细信息的母版记录项目符号列表通过 DataList 使用母详细信息 (C#) |Microsoft Docs
+title: 使用带有详细信息 DataList （C#）的主记录的项目符号列表的母版/详细信息 |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将压缩上一教程两页母版/详细信息的报告到单个页面，t 上显示类别名称的项目符号列表...
+description: 在本教程中，我们将上一教程的两页主/从报表压缩为一个页面，并在 t 。
 ms.author: riande
 ms.date: 10/17/2006
 ms.assetid: c727bb73-7b59-41a1-8dc3-623c6d69e7c2
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ca9d0075c8185b6c8a532502c45359179acee8a5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4549ab8e64599b09c300c158bedfd5d85efafc4d
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130436"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74591876"
 ---
 # <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a>通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_35_CS.exe)或[下载 PDF](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/datatutorial35cs1.pdf)
+[下载示例应用](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_35_CS.exe)或[下载 PDF](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/datatutorial35cs1.pdf)
 
-> 在本教程中我们将压缩上一教程两页母版/详细信息的报告到单个页面，显示在左侧和右侧的屏幕，并在屏幕右侧的所选的类别的产品类别名称的项目符号列表。
+> 在本教程中，我们将上一教程的两页主/从报表压缩为一个页面，并在屏幕的左侧显示类别名称的项目符号列表，并在屏幕的右侧显示所选类别的产品。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在中[前面的教程](master-detail-filtering-acess-two-pages-datalist-cs.md)我们介绍了如何单独跨两个页面的母版/详细信息报表。 主页面中我们使用 Repeater 控件来呈现项目符号列表的类别。 每个类别名称为超链接，单击时，将采用指向详细信息页，其中两列 DataList 介绍了这些产品的用户属于所选的类别。
+在[前面的教程](master-detail-filtering-acess-two-pages-datalist-cs.md)中，我们介绍了如何在两个页面之间分隔主/详细信息报表。 在母版页中，我们使用了中继器控件来呈现类别的项目符号列表。 每个类别名称都是一个超链接，单击该超链接时，会将用户转到详细信息页，其中两列 DataList 显示属于所选类别的产品。
 
-在本教程中我们将压缩两页教程到单个页面，每个类别名称作为 LinkButton 呈现在屏幕的左侧显示类别名称的项目符号列表。 单击其中一个类别名称 Linkbutton 引发回发，并将所选的类别的产品绑定到屏幕的右侧两列 DataList。 除了显示每个类别的名称，在左侧 Repeater 显示有多少总产品是给定的类别 （请参阅图 1）。
+在本教程中，我们会将两页教程压缩为一个页面，并在屏幕的左侧显示类别名称的项目符号列表，每个类别名称呈现为 LinkButton。 单击其中一个类别名称 LinkButtons 会引发回发，并将所选类别的产品绑定到屏幕右侧的两列 DataList。 除了显示每个类别的名称外，左侧的中继器还显示给定类别的总产品数（参见图1）。
 
-[![在左侧显示的类别名称和产品的总计数](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image2.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image1.png)
+[![类别的名称和产品总数显示在左侧](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image2.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image1.png)
 
-**图 1**:在左侧显示的类别名称和产品的总数量 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image3.png))
+**图 1**：类别的名称和产品总数显示在左侧（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image3.png)）
 
-## <a name="step-1-displaying-a-repeater-in-the-left-portion-of-the-screen"></a>步骤 1：在屏幕的左侧部分中显示 Repeater
+## <a name="step-1-displaying-a-repeater-in-the-left-portion-of-the-screen"></a>步骤1：在屏幕左边部分显示中继器
 
-本教程中，我们需要能够显示所选的类别产品的左侧的类别项目符号列表。 可使用标准 HTML 元素段落标记，非换行空格，定位到 web 页中的内容`<table>`s，依次类推或通过级联样式表 (CSS) 技术。 我们的教程到目前为止已使用所有 CSS 技术用于定位。 当我们构建我们在母版页中的导航用户界面[母版页和站点导航](../introduction/master-pages-and-site-navigation-cs.md)教程中我们使用了*绝对定位*，指示精确像素偏移量的导航列表和主要内容。 或者，使用 CSS 来定位一个元素到另一个通过左或向右*浮动*。 我们可以通过浮点左侧的 DataList Repeater 显示所选的类别产品的左侧的类别项目符号列表
+对于本教程，我们需要在所选类别的产品左侧显示类别的项目符号列表。 网页中的内容可以使用标准 HTML 元素的段落标记、非换行空格、`<table>` s 等或通过级联样式表（CSS）技术进行定位。 到目前为止，我们的所有教程都使用了 CSS 技术进行定位。 当我们在母版页中的母版页[和站点导航](../introduction/master-pages-and-site-navigation-cs.md)教程中生成导航用户界面时，我们使用了*绝对定位*，指示导航列表和主要内容的精确像素偏移量。 此外，CSS 还可以用于通过*浮动*将一个元素定位到另一个元素的右侧或左侧。 对于所选类别的产品，我们可以将项目符号列表显示在所选类别的产品左侧
 
-打开`CategoriesAndProducts.aspx`页上从`DataListRepeaterFiltering`文件夹并添加到页面 Repeater 和 DataList。 设置 Repeater s`ID`到`Categories`和到 DataList 的`CategoryProducts`。 转到源视图，并将其自身的 Repeater 和 DataList 控件放`<div>`元素。 也就是说，将括在 Repeater`<div>`元素第一个，然后在自己 DataList `<div>` Repeater 之后紧邻的元素。 您的标记现在应类似于下面：
+从 `DataListRepeaterFiltering` 文件夹打开 "`CategoriesAndProducts.aspx`" 页，并向该页添加一个 Repeater 和一个 DataList。 将中继站 `ID` 设置为 "`Categories`"，并将 "DataList" 设置为 "`CategoryProducts`"。 中转到源视图，将 Repeater 和 DataList 控件放在其自己的 `<div>` 元素中。 也就是说，在中继器之后直接在 `<div>` 元素内包含 Repeater，然后在其自己的 `<div>` 元素中包含 DataList。 此时，你的标记应如下所示：
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample1.aspx)]
 
-若要 float 左侧的 DataList Repeater，我们需要使用`float`CSS 样式属性，如下所示：
+若要将中继器浮动到 DataList 的左侧，需要使用 `float` CSS 样式属性，如下所示：
 
 [!code-html[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample2.html)]
 
-`float: left;`浮动第一个`<div>`左侧的第二个元素。 `width`并`padding-right`设置指示第一个`<div>`s`width`之间添加填充量和`<div>`元素的内容和其右边距。 有关浮点 CSS 中的元素的详细信息，请查看[Floatutorial](http://css.maxdesign.com.au/floatutorial/)。
+`float: left;` 将第一个 `<div>` 元素左移到第二个元素的左侧。 "`width`" 和 "`padding-right`" 设置指示第一个 `<div>` `width` 以及在 "`<div>`" 元素的 "内容" 和 "右" 边距之间添加多少填充。 有关 CSS 中的浮动元素的详细信息，请参阅[Floatutorial](http://css.maxdesign.com.au/floatutorial/)。
 
-而不是指定的样式设置直接通过第一个`<p>`元素 s`style`属性，请让改为创建一个新的 CSS 类中的 s`Styles.css`名为`FloatLeft`:
+不是直接通过第一个 `<p>` 元素的 `style` 属性来指定样式设置，而是在名为 `FloatLeft`的 `Styles.css` 中创建一个新的 CSS 类：
 
 [!code-css[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample3.css)]
 
-然后我们可以替换`<div>`与`<div class="FloatLeft">`。
+然后，可以将 `<div>` 替换为 `<div class="FloatLeft">`。
 
-添加 CSS 类和配置中的标记后`CategoriesAndProducts.aspx`页上，转到设计器。 应会看到 Repeater 浮点到左侧的 DataList （尽管右现在这两项只是出现如以来我们 ve 尚未若要配置其数据源或模板灰色框）。
+添加 CSS 类并在 `CategoriesAndProducts.aspx` "页中配置标记后，请切换到设计器。 你应会看到浮动在 DataList 左侧的中继器（尽管现在这两个对话框只显示为灰色框，因为我们尚未配置其数据源或模板）。
 
-[![向 DataList 左浮动 Repeater](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image5.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image4.png)
+[![，Repeater 将浮动到 DataList 的左侧](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image5.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image4.png)
 
-**图 2**:向 DataList 左浮动 Repeater ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image6.png))
+**图 2**：中继器在 DataList 的左侧浮动（[单击以查看完全大小的映像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image6.png)）
 
-## <a name="step-2-determining-the-number-of-products-for-each-category"></a>步骤 2：确定每个类别的产品数量
+## <a name="step-2-determining-the-number-of-products-for-each-category"></a>步骤2：确定每个类别的产品数量
 
-Repeater 和 DataList s 周围标记完成，我们准备就绪后，若要将类别数据绑定到 Repeater 控件。 但是，如图 1 中的类别的项目符号列表所示，除了每个类别的名我们还需要显示与类别关联的产品数量。 若要访问此信息，我们可以：
+标记和 DataList 的标记完成后，我们就可以将类别数据绑定到 Repeater 控件了。 但是，如图1中的类别的项目符号列表所示，除了每个类别的名称，还需要显示与该类别关联的产品的数量。 若要访问此信息，可以：
 
-- **确定此信息从 ASP.NET page s 代码隐藏类。** 给定的特定 *`categoryID`* 我们可以通过调用确定关联的产品数量`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 此方法返回`ProductsDataTable`对象，其`Count`属性指示多少`ProductsRow`s 存在，这是个指定的产品数量 *`categoryID`* 。 我们可以创建`ItemDataBound`Repeater，对于绑定到 Repeater，每个类别的调用的事件处理程序`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法并在输出中包含其计数。
-- **更新`CategoriesDataTable`中要包括的类型化数据集`NumberOfProducts`列。** 然后，我们可以更新`GetCategories()`中的方法`CategoriesDataTable`若要包括此信息或，或者，将保留`GetCategories()`作为-并且创建一个新`CategoriesDataTable`调用方法`GetCategoriesAndNumberOfProducts()`。
+- **从 ASP.NET 页 s 代码隐藏类中确定此信息。** 对于特定 *`categoryID`* ，可以通过调用 `ProductsBLL` 类的 `GetProductsByCategoryID(categoryID)` 方法来确定关联的产品数。 此方法将返回一个 `ProductsDataTable` 对象，该对象的 `Count` 属性指示存在多少 `ProductsRow`，即指定 *`categoryID`* 的产品数。 我们可以为中继器创建 `ItemDataBound` 事件处理程序，对于绑定到中继器的每个类别，将调用 `ProductsBLL` 类 s `GetProductsByCategoryID(categoryID)` 方法，并在输出中包含其计数。
+- **更新类型化数据集中的 `CategoriesDataTable` 以包含 `NumberOfProducts` 列。** 然后，可以更新 `CategoriesDataTable` 中的 `GetCategories()` 方法以包含此信息，或将 `GetCategories()` 保留原样，并创建名为 `GetCategoriesAndNumberOfProducts()`的新 `CategoriesDataTable` 方法。
 
-让我们来了解这两种方法。 第一种方法更容易实现的因为我们不需要更新数据访问层;但是，它需要多个与数据库通信。 在调用`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`中的方法`ItemDataBound`事件处理程序会添加用于显示中继器中每个类别的额外数据库调用。 使用此技术有*N* + 1 个数据库调用，其中*N*是显示中继器中的类别数。 第二种方法，产品计数会返回有关从每个类别的信息`CategoriesBLL`类 s `GetCategories()` (或`GetCategoriesAndNumberOfProducts()`) 方法，因而只需一次访问数据库。
+让我们来浏览这两种方法。 第一种方法更容易实现，因为我们不需要更新数据访问层;但是，它需要更多与数据库的通信。 在 `ItemDataBound` 事件处理程序中对 `ProductsBLL` 类 s `GetProductsByCategoryID(categoryID)` 方法的调用为中继器中显示的每个类别添加了额外的数据库调用。 采用此方法时，有*n* + 1 个数据库调用，其中*N*是 Repeater 中显示的类别数。 对于第二种方法，将返回产品计数，其中包含来自 `CategoriesBLL` 类 `GetCategories()` （或 `GetCategoriesAndNumberOfProducts()`）方法的每个类别的信息，因此只需一次处理数据库。
 
-## <a name="determining-the-number-of-products-in-the-itemdatabound-event-handler"></a>确定 ItemDataBound 事件处理程序中的产品数量
+## <a name="determining-the-number-of-products-in-the-itemdatabound-event-handler"></a>确定 ItemDataBound 事件处理程序中的产品数
 
-确定对于 Repeater s 中的每个类别的产品数量`ItemDataBound`事件处理程序不需要对现有数据访问层进行任何修改。 可以直接在进行所有修改`CategoriesAndProducts.aspx`页。 首先，通过添加名为新 ObjectDataSource`CategoriesDataSource`通过 Repeater s 智能标记。 接下来，配置`CategoriesDataSource`以便其检索从其数据的 ObjectDataSource`CategoriesBLL`类的`GetCategories()`方法。
+在 Repeater `ItemDataBound` 事件处理程序中确定每个类别的产品数量并不需要对现有的数据访问层进行任何修改。 所有修改都可以直接在 "`CategoriesAndProducts.aspx`" 页中进行。 首先通过中继器 s 智能标记添加一个名为 `CategoriesDataSource` 的新 ObjectDataSource。 接下来，配置 `CategoriesDataSource` ObjectDataSource，使其从 `CategoriesBLL` 类 s `GetCategories()` 方法检索其数据。
 
-[![配置对象数据源以使用 CategoriesBLL 类的 GetCategories() 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image8.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image7.png)
+[![将 ObjectDataSource 配置为使用 CategoriesBLL class s GetCategories （）方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image8.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image7.png)
 
-**图 3**:配置为使用 ObjectDataSource`CategoriesBLL`类 s`GetCategories()`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image9.png))
+**图 3**：将 ObjectDataSource 配置为使用 `CategoriesBLL` 类 `GetCategories()` 方法（[单击以查看完全大小的映像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image9.png)）
 
-中的每项`Categories`Repeater 需要是可单击，并单击时，会导致`CategoryProducts`DataList 以显示所选类别产品。 这可以通过发出一个超链接，链接回此同一页面的每个类别 (`CategoriesAndProducts.aspx`)，但传递`CategoryID`通过查询字符串，就像我们在上一教程中看到。 此方法的优点是可以添加书签和搜索引擎编制索引显示特定类别的产品页面。
+`Categories` Repeater 中的每一项都需要是可单击的，单击此项时，将导致 `CategoryProducts` DataList 显示选定类别的产品。 这可以通过以下方式实现：将每个类别设为超链接，链接回此相同页面（`CategoriesAndProducts.aspx`），但将 `CategoryID` 传递到查询字符串，就像我们在上一教程中看到的那样。 此方法的优点是，可以通过搜索引擎将显示特定类别产品的页面加入书签并进行索引。
 
-或者，我们可以使每个类别 LinkButton，这是我们将在本教程使用的方法。 LinkButton 呈现为超链接在 s 用户浏览器中，但单击时，引发一个回发;在回发时，DataList 的 ObjectDataSource 需要刷新以显示属于所选类别的那些产品。 对于本教程，使用超链接更有意义比使用 LinkButton;但是，可能有其他场景中，使用 LinkButton 是更为有利。 尽管超链接方法是适用于此示例中，使改为尝试使用 LinkButton 的 s。 我们将看到，使用 LinkButton 引入了一些挑战，否则不会出现与超链接。 因此，在本教程中使用 LinkButton 将突出显示这些挑战并帮助我们可能想要使用 LinkButton 而不是一个超链接的情况下提供解决方案。
+另外，我们还可以将每个类别设为 LinkButton，这是我们在本教程中使用的方法。 LinkButton 在用户浏览器中呈现为超链接，但单击它时，将引发回发;在回发时，需要刷新 DataList 的 ObjectDataSource 以显示属于所选类别的产品。 对于本教程，使用超链接比使用 LinkButton 更有意义;但在其他情况下，使用 LinkButton 更有利。 尽管在本示例中，超链接方法非常适合，但让我们来看一下使用 LinkButton。 正如我们所看到的，使用 LinkButton 会带来一些挑战，不会在超链接的情况下出现。 因此，在本教程中使用 LinkButton 将突出显示这些挑战，并帮助为可能需要使用 LinkButton 而不是超链接的情况提供解决方案。
 
 > [!NOTE]
-> 建议重复本教程中使用超链接控件或`<a>`而非 LinkButton 的元素。
+> 建议使用超链接控件或 `<a>` 元素（而不是 LinkButton）重复本教程。
 
-以下标记显示了 Repeater 和 ObjectDataSource 的声明性语法。 请注意 Repeater 的模板呈现 LinkButton 作为每个项的项目符号列表：
+以下标记显示了中继器和 ObjectDataSource 的声明性语法。 请注意，Repeater 模板会呈现一个项目符号列表，其中每个项都是 LinkButton：
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample4.aspx)]
 
 > [!NOTE]
-> 对于本教程 Repeater 必须具有启用了其视图状态 (请注意省略`EnableViewState="False"`Repeater s 声明性语法中)。 在步骤 3 中我们将创建一个事件处理程序为 Repeater s`ItemCommand`事件在其中我们将更新 DataList 的 ObjectDataSource 的`SelectParameters`集合。 Repeater 的`ItemCommand`，但是，不会触发如果禁用视图状态。 请参阅[ASP.NET 问题的问题贴](http://scottonwriting.net/sowblog/posts/1263.aspx)并[其解决方案](http://scottonwriting.net/sowBlog/posts/1268.aspx)的原因的详细信息必须为 Repeater s 启用视图状态`ItemCommand`激发的事件。
+> 在本教程中，Repeater 必须已启用其视图状态（请注意，省略 Repeater 声明性语法中的 `EnableViewState="False"`）。 在步骤3中，我们将为中继器 `ItemCommand` 事件创建事件处理程序，我们将在此事件中更新 DataList s ObjectDataSource `SelectParameters` 集合。 但是，如果禁用了视图状态，则不会触发 Repeater `ItemCommand`。 有关[Stumper 的](http://scottonwriting.net/sowblog/posts/1263.aspx)详细信息，请参阅 ASP.NET 问题及其[解决方案](http://scottonwriting.net/sowBlog/posts/1268.aspx)的详细信息。必须为中继器 `ItemCommand` 事件启用视图状态。
 
-使用 LinkButton`ID`属性值为`ViewCategory`不具有其`Text`属性集。 如果我们只需有想要显示的类别名称，我们将具有设置的 Text 属性以声明方式，通过数据绑定语法如下所示：
+`ID` 属性值为 `ViewCategory` 的 LinkButton 没有其 `Text` 属性集。 如果只是想要显示类别名称，则可以通过数据绑定语法以声明方式设置文本属性，如下所示：
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample5.aspx)]
 
-但是，我们想要显示这两个类别的名称*和*属于该类别的产品数量。 可以检索此信息从 Repeater s`ItemDataBound`事件处理程序，方法调用`ProductBLL`类 s`GetCategoriesByProductID(categoryID)`方法，并确定在生成返回多少条记录`ProductsDataTable`，如以下代码说明：
+但是，我们想要显示类别的名称*以及*属于该类别的产品数。 可以通过调用 `ProductBLL` 类 s `GetCategoriesByProductID(categoryID)` 方法并确定在生成的 `ProductsDataTable`中返回多少记录，来从 Repeater `ItemDataBound` 事件处理程序检索此信息，如以下代码所示：
 
 [!code-csharp[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample6.cs)]
 
-首先，确保我们重新使用数据项 (一个其`ItemType`是`Item`或`AlternatingItem`)，然后引用`CategoriesRow`只绑定到当前实例`RepeaterItem`。 接下来，我们通过创建的实例来确定此类别的产品数量`ProductsBLL`类，调用其`GetCategoriesByProductID(categoryID)`方法，并确定使用返回的记录数`Count`属性。 最后， `ViewCategory` LinkButton 的 ItemTemplate 中是引用并将其`Text`属性设置为*CategoryName* (*NumberOfProductsInCategory*)，其中*NumberOfProductsInCategory*格式化为带小数位数为零的数字。
+首先，我们要确保我们正在处理一个数据项（其 `ItemType` 是 `Item` 或 `AlternatingItem`），然后引用刚刚绑定到当前 `RepeaterItem`的 `CategoriesRow` 实例。 接下来，我们通过创建 `ProductsBLL` 类的实例，调用其 `GetCategoriesByProductID(categoryID)` 方法并确定使用 `Count` 属性返回的记录数来确定此类别的产品数。 最后，ItemTemplate 中的 `ViewCategory` LinkButton 是引用，其 `Text` 属性设置为 "*类别名称*（*NumberOfProductsInCategory*）"，其中*NumberOfProductsInCategory*的格式为包含零位小数位的数字。
 
 > [!NOTE]
-> 或者，可以添加我们*格式设置函数*到 ASP.NET 页面 + s 代码隐藏类接受类别 s`CategoryName`并`CategoryID`值，并返回`CategoryName`加上的数字产品类别中的 (由调用`GetCategoriesByProductID(categoryID)`方法)。 此类格式设置函数的结果无法以声明方式分配给 Text 属性替换为要使用的 LinkButton s`ItemDataBound`事件处理程序。 请参阅[GridView 控件中使用 Templatefield](../custom-formatting/using-templatefields-in-the-gridview-control-cs.md)或[设置 DataList 和 Repeater 基于数据的格式](../displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs.md)教程有关使用格式设置函数的详细信息。
+> 另外，我们还可以将*格式设置函数*添加到 ASP.NET 页 s 代码隐藏类中，该类接受 `CategoryName` 和 `CategoryID` 值的类别，并返回与该类别中的产品数量相连接的 `CategoryName` （通过调用 `GetCategoriesByProductID(categoryID)` 方法确定）。 可以通过声明方式将此类格式设置函数的结果分配给 LinkButton s Text 属性，以替换 `ItemDataBound` 事件处理程序的需求。 有关使用格式设置函数的详细信息，请参阅[GridView 控件中的 Using templatefield](../custom-formatting/using-templatefields-in-the-gridview-control-cs.md)或[基于数据教程设置 DataList 和 Repeater 的格式](../displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs.md)。
 
-添加后此事件处理程序，请花费片刻时间来测试通过浏览器页面。 请注意如何在项目符号列表中，显示类别的名称和与类别关联的产品数列出每个类别 （请参阅图 4）。
+添加此事件处理程序后，请花点时间通过浏览器测试页面。 请注意每个类别在项目符号列表中的列出方式，并显示类别的名称以及与该类别关联的产品数（请参阅图4）。
 
-[![显示每个类别名称和数量的产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image11.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image10.png)
+[![显示每个类别的名称和产品数量](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image11.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image10.png)
 
-**图 4**:显示每个类别名称和数量的产品 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image12.png))
+**图 4**：显示每个类别的名称和产品数量（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image12.png)）
 
-## <a name="updating-thecategoriesdatatableandcategoriestableadapterto-include-the-number-of-products-for-each-category"></a>正在更新`CategoriesDataTable`和`CategoriesTableAdapter`中要包含的每个类别的产品数量
+## <a name="updating-thecategoriesdatatableandcategoriestableadapterto-include-the-number-of-products-for-each-category"></a>更新`CategoriesDataTable`和`CategoriesTableAdapter`以包含每个类别的产品数量
 
-而不是确定的每个类别的产品数 s 绑定到 Repeater 中，我们可以简化此过程通过调整`CategoriesDataTable`和`CategoriesTableAdapter`中数据访问层为本机包含此信息。 若要实现此目的，我们必须添加到一个新列`CategoriesDataTable`来保存关联的产品数量。 若要将新列添加到数据表中，打开类型化数据集 (`App_Code\DAL\Northwind.xsd`)，右键单击 DataTable，若要修改，然后选择添加 / 列。 添加到一个新列`CategoriesDataTable`（请参见图 5）。
+我们可以通过调整数据访问层中的 `CategoriesDataTable` 和 `CategoriesTableAdapter` 来将此信息集中在一起，来简化此过程，而不是确定每个类别绑定到中继器的产品数。 若要实现此目的，必须将一个新列添加到 `CategoriesDataTable` 以容纳关联的产品数。 若要将新列添加到 DataTable，请打开类型化数据集（`App_Code\DAL\Northwind.xsd`），右键单击要修改的 DataTable，然后选择 "添加/列"。 向 `CategoriesDataTable` 添加一个新列（参见图5）。
 
 [![将新列添加到 CategoriesDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image14.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image13.png)
 
-**图 5**:添加到一个新列`CategoriesDataSource`([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image15.png))
+**图 5**：将新列添加到 `CategoriesDataSource` （[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image15.png)）
 
-这将添加一个名为的新列`Column1`，你可以通过只需键入其他名称。 为此新列重命名`NumberOfProducts`。 接下来，我们需要配置此列的属性。 单击新列，并转到属性窗口。 更改列 s`DataType`属性从`System.String`到`System.Int32`并设置`ReadOnly`属性设置为`True`，如图 6 中所示。
+这会添加一个名为 "`Column1`" 的新列，只需键入不同的名称即可更改此列。 将此新列重命名为 `NumberOfProducts`。 接下来，需要配置此列的属性。 单击新列并中转到属性窗口。 将列 `DataType` 属性从 `System.String` 更改为 `System.Int32`，并将 `ReadOnly` 属性设置为 `True`，如图6所示。
 
-![设置数据类型和新的列的 ReadOnly 属性](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image16.png)
+![设置新列的 DataType 和 ReadOnly 属性](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image16.png)
 
-**图 6**:设置`DataType`和`ReadOnly`新列的属性
+**图 6**：设置新列的 "`DataType`" 和 "`ReadOnly`" 属性
 
-虽然`CategoriesDataTable`现在具有`NumberOfProducts`列中，未设置任何相应的 TableAdapter 的查询它的值。 我们可以更新`GetCategories()`方法以返回此信息，如果我们希望此类信息返回每次检索类别信息。 如果，但是，我们只需获取中极少数情况下 （例如，对于本教程，只需），类别相关联的产品数，则我们可以保留`GetCategories()`作为-并且创建一个返回此信息的新方法。 允许 s 使用此后一种方法，创建一个名为的新方法`GetCategoriesAndNumberOfProducts()`。
+虽然 `CategoriesDataTable` 现在具有 `NumberOfProducts` 列，但它的值不是由任何对应的 TableAdapter 查询设置的。 如果希望每次检索类别信息时返回此信息，我们可以更新 `GetCategories()` 方法以返回此信息。 但是，如果只需要获取极少实例（例如，仅用于本教程）中类别的关联产品数，则可以将 `GetCategories()` 原样保留并创建返回此信息的新方法。 让我们使用后一种方法，创建名为 `GetCategoriesAndNumberOfProducts()`的新方法。
 
-若要添加此新`GetCategoriesAndNumberOfProducts()`方法中，右键单击`CategoriesTableAdapter`，然后选择新查询。 此时将显示最多 TableAdapter 查询配置向导中，哪些我们已在前面的教程中多次使用。 此方法，该值指示该查询使用返回的行的临时 SQL 语句启动向导。
+若要添加此新的 `GetCategoriesAndNumberOfProducts()` 方法，请右键单击 `CategoriesTableAdapter` 并选择 "新建查询"。 这会显示 "TableAdapter 查询配置向导"，在前面的教程中，我们曾使用过多次。 对于此方法，通过指示查询使用返回行的即席 SQL 语句启动向导。
 
-[![创建使用的临时 SQL 语句的方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image18.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image17.png)
+[![使用即席 SQL 语句创建方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image18.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image17.png)
 
-**图 7**:创建方法使用一个临时 SQL 语句 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image19.png))
+**图 7**：使用即席 SQL 语句创建方法（[单击以查看完全大小的映像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image19.png)）
 
-[![SQL 语句返回的行](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image21.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image20.png)
+[![SQL 语句返回的行数](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image21.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image20.png)
 
-**图 8**:SQL 语句返回行 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image22.png))
+**图 8**： SQL 语句返回行（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image22.png)）
 
-下一步的向导屏幕提示我们要使用的查询。 若要返回每个类别 s `CategoryID`， `CategoryName`，并`Description`字段，以及数量的类别，与关联的产品使用以下`SELECT`语句：
+接下来的向导屏幕提示我们提供查询以供使用。 若要返回每个类别 `CategoryID`、`CategoryName`和 `Description` 字段以及与该类别关联的产品数量，请使用以下 `SELECT` 语句：
 
 [!code-sql[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample7.sql)]
 
 [![指定要使用的查询](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image24.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image23.png)
 
-**图 9**:指定要使用的查询 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image25.png))
+**图 9**：指定要使用的查询（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image25.png)）
 
-请注意，用于计算与类别关联的产品数量的子查询的别名为`NumberOfProducts`。 此命名的匹配项会使关联此子查询返回的值`CategoriesDataTable`s`NumberOfProducts`列。
+请注意，计算与该类别关联的产品数量的子查询的别名为 `NumberOfProducts`。 此命名匹配会导致此子查询返回的值与 `CategoriesDataTable` `NumberOfProducts` 列关联。
 
-输入此查询后, 的最后一步是选择新的方法的名称。 使用`FillWithNumberOfProducts`和`GetCategoriesAndNumberOfProducts`填充 DataTable 并返回数据表模式，分别。
+输入此查询后，最后一步是选择新方法的名称。 使用 `FillWithNumberOfProducts` 和 `GetCategoriesAndNumberOfProducts` 填充 DataTable 并分别返回 DataTable 模式。
 
-[![新的 TableAdapter 的方法 FillWithNumberOfProducts 名称和 GetCategoriesAndNumberOfProducts](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image27.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image26.png)
+[![命名新的 TableAdapter s 方法 FillWithNumberOfProducts 和 GetCategoriesAndNumberOfProducts](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image27.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image26.png)
 
-**图 10**:命名新的 TableAdapter s 方法`FillWithNumberOfProducts`并`GetCategoriesAndNumberOfProducts`([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image28.png))
+**图 10**：将新的 TableAdapter s 方法命名 `FillWithNumberOfProducts` 和 `GetCategoriesAndNumberOfProducts` （[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image28.png)）
 
-此时数据访问层已扩展为包含的每个类别的产品数目。 由于我们所有的表示层将路由到单独的业务逻辑层通过 DAL 的所有调用，因此我们需要添加相应`GetCategoriesAndNumberOfProducts`方法`CategoriesBLL`类：
+此时，数据访问层已扩展为包含每个类别的产品数。 由于所有表示层都通过单独的业务逻辑层将对 DAL 的所有调用路由，我们需要将相应的 `GetCategoriesAndNumberOfProducts` 方法添加到 `CategoriesBLL` 类：
 
 [!code-csharp[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample8.cs)]
 
-DAL 和 BLL 完成后，我们重新准备要绑定到此数据`Categories`Repeater 中的`CategoriesAndProducts.aspx`！ 如果你已创建 ObjectDataSource 用于确定从 Repeater 中的产品数量`ItemDataBound`事件处理程序部分中，删除此对象数据源，并删除 Repeater 的`DataSourceID`属性设置; 还无线免缠绕Repeater s`ItemDataBound`通过删除事件处理程序中的事件`Handles Categories.OnItemDataBound`ASP.NET 代码隐藏类中的语法。
+当 DAL 和 BLL 完成后，我们就可以将这些数据绑定到 `CategoriesAndProducts.aspx`中的 `Categories` 中继器！ 如果已从确定 `ItemDataBound` 事件处理程序部分中的产品数创建了用于 Repeater 的 ObjectDataSource，请删除此 ObjectDataSource 并删除中继器 s `DataSourceID` 属性设置;还通过删除 ASP.NET 代码隐藏类中的 `Handles Categories.OnItemDataBound` 语法，unwire 事件处理程序中的中继器 `ItemDataBound` 事件。
 
-返回在其原始状态 Repeater，添加名为新 ObjectDataSource`CategoriesDataSource`通过 Repeater s 智能标记。 配置要使用 ObjectDataSource`CategoriesBLL`类，而不是让它使用，但`GetCategories()`方法中，具有其使用`GetCategoriesAndNumberOfProducts()`改为 （请参阅图 11）。
+重新播放器恢复其原始状态后，通过中继器 s 智能标记添加一个名为 `CategoriesDataSource` 的新 ObjectDataSource。 将 ObjectDataSource 配置为使用 `CategoriesBLL` 类，但不使用 `GetCategories()` 方法，而是改为使用 `GetCategoriesAndNumberOfProducts()` （参见图11）。
 
-[![配置对象数据源使用 GetCategoriesAndNumberOfProducts 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image30.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image29.png)
+[![将 ObjectDataSource 配置为使用 GetCategoriesAndNumberOfProducts 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image30.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image29.png)
 
-**图 11**:配置为使用 ObjectDataSource`GetCategoriesAndNumberOfProducts`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image31.png))
+**图 11**：将 ObjectDataSource 配置为使用 `GetCategoriesAndNumberOfProducts` 方法（[单击查看完全大小的映像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image31.png)）
 
-接下来，更新`ItemTemplate`，以便 LinkButton s`Text`属性以声明方式分配使用数据绑定语法，并且同时包含`CategoryName`和`NumberOfProducts`数据字段。 中继器的完整声明性标记和`CategoriesDataSource`ObjectDataSource 按照：
+接下来，更新 `ItemTemplate`，以便使用数据绑定语法以声明方式分配 LinkButton s `Text` 属性，同时包含 `CategoryName` 和 `NumberOfProducts` 数据字段。 转发器和 `CategoriesDataSource` ObjectDataSource 的完整声明性标记如下所示：
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample9.aspx)]
 
-通过更新 DAL 包含呈现的输出`NumberOfProducts`列是使用相同`ItemDataBound`事件处理程序方法 (回头查看图 4，请参阅屏幕截图： 显示的类别名称和产品数量中继器)。
+通过将 DAL 更新为包含 `NumberOfProducts` 列时所呈现的输出与使用 `ItemDataBound` 事件处理程序方法相同（请参阅图4，以查看显示类别名称和产品数量的中继器屏幕截图）。
 
-## <a name="step-3-displaying-the-selected-category-s-products"></a>步骤 3：显示所选的类别的产品
+## <a name="step-3-displaying-the-selected-category-s-products"></a>步骤3：显示所选类别的产品
 
-现在我们有`Categories`Repeater 中每个类别中显示的类别以及数量的产品列表。 中继器的每个类别，单击时，会导致将回发时，在该点我们使用 LinkButton 需要显示在所选类别产品`CategoryProducts`DataList。
+此时，我们的 `Categories` Repeater 会显示类别列表以及每个类别中的产品数目。 中继器对每个类别使用 LinkButton，当单击此类别时，将导致回发，此时需要在 `CategoryProducts` DataList 中显示所选类别的产品。
 
-我们面临的难题之一是如何通过 DataList 显示只是这些所选类别的产品。 在中[母版/详细信息的详细信息说明如何通过使用可选择的母版 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)可以选择的教程，我们已了解如何生成 GridView 中的行、 与所选行 s 的详细信息显示在同一页面上 DetailsView。 GridView 的 ObjectDataSource 返回有关使用的所有产品的信息`ProductsBLL`s`GetProducts()`方法，同时 DetailsView s 对象数据源中检索有关所选的产品使用信息`GetProductsByProductID(productID)`方法。 *`productID`* 通过将它与 GridView s 的值相关联以声明方式提供参数值`SelectedValue`属性。 遗憾的是，Repeater 没有`SelectedValue`属性并不能用作参数源。
+一项挑战是，如何让 DataList 仅显示所选类别的产品。 在[大纲/详细信息中，使用可选择的主 GridView 和详细信息 DetailsView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)教程，我们看到了如何构建一个可以选择行的 GridView，其中所选的行详细信息显示在同一页上的 DetailsView 中。 GridView 的 ObjectDataSource 使用 `ProductsBLL` s `GetProducts()` 方法返回有关所有产品的信息，而 DetailsView s 则 ObjectDataSource 使用 `GetProductsByProductID(productID)` 方法检索有关选定产品的信息。 通过将 *`productID`* 参数值与 GridView s `SelectedValue` 属性的值相关联，以声明方式提供。 遗憾的是，中继器没有 `SelectedValue` 属性，无法用作参数源。
 
 > [!NOTE]
-> 这是显示在 Repeater 中使用 LinkButton 时这些挑战之一。 我们使用超链接以传入`CategoryID`通过在查询字符串相反，我们可以使用该查询字符串字段作为源参数 s 值。
+> 这是在 Repeater 中使用 LinkButton 时出现的难题之一。 如果我们使用了超链接通过 querystring 传入 `CategoryID`，则可以使用该 QueryString 字段作为参数 s 值的源。
 
-之前我们担心缺乏`SelectedValue`Repeater 的属性，让我们来首先将 DataList 绑定到对象数据源并指定其`ItemTemplate`。
+不过，在我们担心是否缺少用于中继器的 `SelectedValue` 属性之前，让我们先将 DataList 绑定到 ObjectDataSource 并指定其 `ItemTemplate`。
 
-通过 DataList s 智能标记，选择要添加名为新 ObjectDataSource`CategoryProductsDataSource`并将其配置为使用`ProductsBLL`类的`GetProductsByCategoryID(categoryID)`方法。 在本教程中 DataList 提供了一个只读的接口，因为随意设置下拉列表中插入、 更新、 以及删除选项卡添加到 （无）。
+在 DataList s 智能标记中，选择添加名为 `CategoryProductsDataSource` 的新 ObjectDataSource，并将其配置为使用 `ProductsBLL` 类 `GetProductsByCategoryID(categoryID)` 方法。 由于本教程中的 DataList 提供了一个只读界面，因此可随意将插入、更新和删除选项卡中的下拉列表设置为 "（无）"。
 
-[![配置对象数据源使用 ProductsBLL 类的 GetProductsByCategoryID(categoryID) 方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image33.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image32.png)
+[![将 ObjectDataSource 配置为使用 ProductsBLL 类 s GetProductsByCategoryID （类别 Id）方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image33.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image32.png)
 
-**图 12**:配置为使用 ObjectDataSource`ProductsBLL`类 s`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image34.png))
+**图 12**：将 ObjectDataSource 配置为使用 `ProductsBLL` 类 `GetProductsByCategoryID(categoryID)` 方法（[单击以查看完全大小的映像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image34.png)）
 
-由于`GetProductsByCategoryID(categoryID)`方法需要一个输入的参数 ( *`categoryID`* )，配置数据源向导可用于指定参数的源。 必须已在 GridView 或 DataList 中列出的类别，d 我们设置参数源下拉列表控件和到 ControlID`ID`的数据 Web 控件。 但是，由于 Repeater 缺少`SelectedValue`不能用作参数源属性。 如果选中，您会发现 ControlID 下拉列表仅包含一个控件`ID``CategoryProducts`，则`ID`的 DataList。
+由于 `GetProductsByCategoryID(categoryID)` 方法需要输入参数（ *`categoryID`* ），因此 "配置数据源" 向导允许我们指定参数 "源"。 如果类别已在 GridView 或 DataList 中列出，请将 "参数源" 下拉列表设置为 "控件"，并将 ControlID 设置为数据 Web 控件的 `ID`。 但是，由于中继器缺少 `SelectedValue` 属性，因此不能将其用作参数源。 如果选中，则会发现 ControlID 下拉列表仅包含一个控件 `ID``CategoryProducts`（DataList 的 `ID`）。
 
-现在，为无设置参数源下拉列表。 我们将得到以编程方式指定此参数值时中继器中单击 LinkButton 的类别。
+现在，将 "参数源" 下拉列表设置为 "无"。 当在 Repeater 中单击类别 LinkButton 时，我们将以编程方式分配此参数值。
 
-[![执行不指定参数的 categoryID 参数源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
+[![未指定类别 Id 参数的参数源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
 
-**图 13**:为未指定参数源 *`categoryID`* 参数 ([单击以查看实际尺寸的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
+**图 13**：不要为 *`categoryID`* 参数指定参数源（[单击查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png)）
 
-完成配置数据源向导后，Visual Studio 会自动生成 DataList 的`ItemTemplate`。 替换此默认值`ItemTemplate`模板与我们在前面的教程中使用; 此外，还要设置 DataList 的`RepeatColumns`属性设置为 2。 进行这些更改后你 DataList 和其关联的 ObjectDataSource 的声明性标记应如下所示：
+完成 "配置数据源" 向导后，Visual Studio 会自动生成 DataList s `ItemTemplate`。 将此默认 `ItemTemplate` 替换为在前面的教程中使用的模板;同时，将 DataList s `RepeatColumns` 属性设置为2。 进行这些更改后，DataList 及其关联的 ObjectDataSource 的声明性标记应如下所示：
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample10.aspx)]
 
-目前， `CategoryProductsDataSource` ObjectDataSource s *`categoryID`* 永远不会设置参数，以便查看网页时不显示任何产品。 我们需要做是有基于上设置此参数值`CategoryID`中继器中的被单击类别。 这就引入了两个质询： 首先，如何我们确定当中继器 s 中 LinkButton`ItemTemplate`已被单击; 和第二个，我们如何才能确定`CategoryID`其 LinkButton 被单击的相应类别的？
+当前不会设置 `CategoryProductsDataSource` ObjectDataSource s *`categoryID`* 参数，因此查看该页时不会显示任何产品。 我们需要做的就是基于中继器中单击的类别的 `CategoryID` 设置此参数值。 这就带来了两个难题：首先，如何确定何时单击了 LinkButton `ItemTemplate` 中的;其次，如何确定被单击 LinkButton 的相应类别的 `CategoryID`？
 
-如按钮和 ImageButton 控件 LinkButton 已`Click`事件和一个[`Command`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx)。 `Click`事件被设计为只需注意到已单击 LinkButton。 有时，但是，除了注意已单击 LinkButton 我们还需要将一些额外信息传递给事件处理程序。 如果出现这种情况，LinkButton s [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx)并[ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx)可以分配此额外信息的属性。 然后，当单击 LinkButton，其`Command`触发事件 (而不是其`Click`事件) 和事件处理程序传递的值`CommandName`和`CommandArgument`属性。
+LinkButton 和 ImageButton 控件一样，都有一个 `Click` 事件和一个[`Command` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx)。 `Click` 事件旨在只需注意 LinkButton 已被单击。 但有时，除了指出已单击 LinkButton 外，还需要将一些额外的信息传递给事件处理程序。 如果是这种情况，则可以为 LinkButton s [`CommandName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx)和[`CommandArgument`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx)属性分配此额外信息。 然后，在单击 LinkButton 时，将激发其 `Command` 事件（而不是其 `Click` 事件），并向事件处理程序传递 `CommandName` 和 `CommandArgument` 属性的值。
 
-时`Command`中继器 Repeater s 中的模板内从引发事件[`ItemCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeater.itemcommand.aspx)触发，并传递`CommandName`和`CommandArgument`单击 LinkButton 的值 (或按钮或ImageButton)。 因此，若要确定已单击 LinkButton 中继器中的类别时，我们需要执行以下操作：
+当从 Repeater 中的模板中引发 `Command` 事件时，将激发 Repeater [`ItemCommand` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeater.itemcommand.aspx)，并将该事件传递给所单击的 LinkButton （或按钮或 ImageButton）的 `CommandName` 和 `CommandArgument` 值。 因此，若要确定何时单击了 Repeater 中的类别 LinkButton，需要执行以下操作：
 
-1. 设置`CommandName`属性中 Repeater 的 LinkButton`ItemTemplate`为某个值 (我已使用 ListProducts)。 此值设置`CommandName`值，LinkButton 的`Command`单击 LinkButton 时激发的事件。
-2. 设置 LinkButton s`CommandArgument`属性的值的当前项的`CategoryID`。
-3. 为 Repeater s 创建事件处理程序`ItemCommand`事件。 在事件处理程序中，集中`CategoryProductsDataSource`ObjectDataSource s`CategoryID`参数的值的传入的`CommandArgument`。
+1. 将 Repeater `ItemTemplate` 中 LinkButton 的 `CommandName` 属性设置为某个值（我曾使用 ListProducts）。 通过设置此 `CommandName` 值，单击 LinkButton 时将触发 LinkButton s `Command` 事件。
+2. 将 LinkButton `CommandArgument` 属性设置为当前项的 `CategoryID`值。
+3. 为中继器 `ItemCommand` 事件创建事件处理程序。 在事件处理程序中，将 `CategoryProductsDataSource` ObjectDataSource s `CategoryID` 参数设置为传入 `CommandArgument`的值。
 
-以下`ItemTemplate`标记类别 Repeater 实现步骤 1 和 2。 请注意如何`CommandArgument`值分配数据项的`CategoryID`使用数据绑定语法：
+以下 `ItemTemplate` 类别 Repeater 标记的标记实现步骤1和2。 请注意如何使用数据绑定语法为 `CommandArgument` 值分配数据项 `CategoryID`：
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample11.aspx)]
 
-每当创建`ItemCommand`事件处理程序是比较明智的做法始终首先检查传入`CommandName`值，因为*任何*`Command`引发事件*任何*按钮、 LinkButton，或ImageButton Repeater 中的将导致`ItemCommand`激发的事件。 尽管我们当前仅有一个此类 LinkButton 现在，将来我们 （或我们的团队的其他开发人员） 可能会附加按钮 Web 将控件添加到 Repeater，单击时，将引发相同`ItemCommand`事件处理程序。 因此，它最好始终确保选中 s`CommandName`属性，如果它都匹配到预期的值，即可继续进行编程逻辑。
+无论何时创建 `ItemCommand` 事件处理程序，始终首先检查传入的 `CommandName` 值是明智的，因为在 Repeater 中*任何*LinkButton 或 ImageButton 引发的*任何*`Command` 事件都将导致触发 `ItemCommand` 事件。 虽然目前只有一个这样的 LinkButton，但在将来我们（或我们团队的另一个开发人员）可能会将其他按钮 Web 控件添加到中继器，单击该控件时，将引发相同的 `ItemCommand` 事件处理程序。 因此，最佳做法是始终确保检查 `CommandName` 属性，如果与所需的值匹配，只需继续编程逻辑。
 
-之后，确保传入的`CommandName`值等于 ListProducts，事件处理程序然后将分配`CategoryProductsDataSource`ObjectDataSource s`CategoryID`参数的值的传入的`CommandArgument`。 这种修改为 ObjectDataSource 的`SelectParameters`会自动导致 DataList 重新本身绑定到数据源，显示新选择的类别的产品。
+在确保传入的 `CommandName` 值等于 ListProducts 后，事件处理程序会将 `CategoryProductsDataSource` ObjectDataSource s `CategoryID` 参数分配给传入的 `CommandArgument`的值。 对 ObjectDataSource `SelectParameters` 的这一修改会自动导致 DataList 重新绑定到数据源，从而显示新选定类别的产品。
 
 [!code-csharp[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/samples/sample12.cs)]
 
-使用这些新功能，在本教程中已完成 ！ 请花费片刻时间进行测试的浏览器中。 图 14 显示了在屏幕首次访问页面时。 由于类别具有尚未被选中，将不显示任何产品。 单击一个类别，如生成，显示这些产品的产品类别中的两个列视图 （请参阅图 15）。
+添加这些内容后，我们的教程已完成！ 花点时间在浏览器中进行测试。 图14：首次访问页面时显示屏幕。 由于尚未选择类别，因此不会显示任何产品。 单击某一类别（如 "生产"）会在两列视图的 "产品" 类别中显示这些产品（参见图15）。
 
-[![无产品的显示时第一个访问的页面](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image39.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image38.png)
+[首次访问页面时，不会显示 ![产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image39.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image38.png)
 
-**图 14**:无产品的显示时第一个访问的页面 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image40.png))
+**图 14**：首次访问页面时未显示任何产品（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image40.png)）
 
-[![单击生成类别列表右侧的匹配产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image42.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image41.png)
+[![单击 "生成" 类别将列出匹配的产品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image42.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image41.png)
 
-**图 15**:单击生成类别列出右侧的匹配产品 ([单击此项可查看原尺寸图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image43.png))
+**图 15**：单击 "生成" 类别将列出匹配的产品（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image43.png)）
 
 ## <a name="summary"></a>总结
 
-正如我们看到在本教程并前一次，母版/详细信息报告可以分散到两个页面，或上一个合并。 在单页上显示母版/详细信息报表，但是，引入了一些挑战如何最到母版布局和页面上的详细信息记录。 在中*母版/详细信息的详细信息说明如何通过使用可选择的母版 GridView*我们上方的主记录的详细信息记录; 在本教程中我们使用 CSS 技术具有的主记录浮点型教程左侧的详细信息。
+正如我们在本教程中看到的那样，主/详细信息报表可以分散在两个页面上，也可以合并在一起。 但是，在单页上显示主/详细信息报表会给出一些有关如何最好地在页面上布局大纲和详细信息的问题。 在*主/详细信息中，使用可选择的主 GridView 和详细信息 DetailsView*教程，我们的详细信息记录显示在主记录上;在本教程中，我们使用了 CSS 技术将主记录浮动到详细信息的左侧。
 
-以及显示母版/详细信息报表，我们还必须有机会了解如何检索如何执行服务器端逻辑时，LinkButton （或按钮或 ImageButton） 单击内与以及每个类别相关联的产品数量Repeater。
+除了显示主/详细信息报表之外，我们还可以探索如何检索与每个类别关联的产品的数量，以及如何在从中继器内单击 LinkButton （或按钮或 ImageButton）时执行服务器端逻辑。
 
-本教程中完成我们的母版/详细信息报表使用 DataList 和 Repeater 的检查。 我们接下来的教程将说明如何添加编辑和删除 DataList 控件的功能。
+本教程通过 DataList 和中继器完成对主/详细信息报表的检查。 下一组教程将演示如何向 DataList 控件添加编辑和删除功能。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [Floatutorial](http://css.maxdesign.com.au/floatutorial/)浮点 CSS 元素使用 CSS 的教程
-- [CSS 定位](http://www.brainjar.com/css/positioning/)定位的元素使用 CSS 的详细信息
-- [对进行布局出内容与 HTML](http://www.w3schools.com/html/html_layout.asp)使用`<table>`s 和用于定位其他 HTML 元素
+- 使用 CSS [Floatutorial](http://css.maxdesign.com.au/floatutorial/)有关浮动 css 元素的教程
+- [Css 定位](http://www.brainjar.com/css/positioning/)有关将元素定位到 css 的详细信息
+- 使用 `<table>` 和用于定位的其他 HTML 元素，使用[Html 布局内容](http://www.w3schools.com/html/html_layout.asp)
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Zack Jones。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的领导审查人员是 Zack 的。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](master-detail-filtering-acess-two-pages-datalist-cs.md)

@@ -1,238 +1,238 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
-title: 使用现有存储过程的类型化数据集的 Tableadapter (C#) |Microsoft Docs
+title: 使用类型化数据集的 Tableadapter （C#）的现有存储过程 |Microsoft Docs
 author: rick-anderson
-description: 上一教程中我们介绍了如何使用 TableAdapter 向导来生成新的存储的过程。 在本教程中，我们将了解如何到同一 TableAdapter...
+description: 在上一教程中，我们学习了如何使用 TableAdapter 向导来生成新的存储过程。 在本教程中，我们将了解如何将同一 TableAdapter 。
 ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: 440bef2a-1641-4238-99e3-8e2d44e7d94c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bac8be11682237fff1bda637ddf5a4cd8cbf7d9e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: cfe03c244fb6f9f0a201aecb6eae211ab946175f
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108797"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74603895"
 ---
 # <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>使用适用于类型化数据集的 TableAdapter 的现有存储过程 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_68_CS.zip)或[下载 PDF](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/datatutorial68cs1.pdf)
+[下载代码](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_68_CS.zip)或[下载 PDF](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/datatutorial68cs1.pdf)
 
-> 上一教程中我们介绍了如何使用 TableAdapter 向导来生成新的存储的过程。 在本教程中我们了解如何同一 TableAdapter 向导才能使用现有的存储过程。 我们还了解如何手动将新的存储的过程添加到我们的数据库。
+> 在上一教程中，我们学习了如何使用 TableAdapter 向导来生成新的存储过程。 在本教程中，我们将了解相同的 TableAdapter 向导如何处理现有的存储过程。 我们还将了解如何将新存储过程手动添加到数据库中。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在中[前面的教程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)我们已了解如何类型化数据集的 Tableadapter 无法配置为使用存储的过程来访问数据而不是临时 SQL 语句。 具体而言，我们介绍了如何使用 TableAdapter 向导自动创建这些存储的过程。 移植到 ASP.NET 2.0 的旧版应用程序时或生成围绕现有的数据模型的 ASP.NET 2.0 网站时，很可能该数据库已包含我们需要的存储的过程。 或者，您可能更愿意手动或通过某些工具以外的存储的过程会自动生成的 TableAdapter 向导创建您的存储的过程。
+在[前面的教程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)中，我们看到了如何将类型化数据集 tableadapter 配置为使用存储过程来访问数据，而不是即席 SQL 语句。 具体而言，我们已经检查了如何让 TableAdapter 向导自动创建这些存储过程。 将旧应用程序迁移到 ASP.NET 2.0 时，或围绕现有数据模型构建 ASP.NET 2.0 网站时，该数据库可能已包含我们所需的存储过程。 或者，您可能更愿意手动或通过用于自动生成存储过程的 TableAdapter 向导以外的其他工具来创建存储过程。
 
-在本教程中我们将了解如何配置 TableAdapter 以使用现有存储的过程。 因为 Northwind 数据库只有少量的内置存储过程，我们还将在通过 Visual Studio 环境数据库中手动添加新的存储的过程所需的步骤。 让我们来开始 ！
+在本教程中，我们将介绍如何将 TableAdapter 配置为使用现有的存储过程。 由于 Northwind 数据库只包含一小部分内置存储过程，因此，我们还将了解通过 Visual Studio 环境将新存储过程手动添加到数据库时所需的步骤。 让我们开始吧！
 
 > [!NOTE]
-> 在中[包装事务内的数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)教程中我们将方法添加到 TableAdapter 以支持事务 (`BeginTransaction`， `CommitTransaction`，依此类推)。 或者，可以完全在存储过程，它不需要修改数据访问层代码中管理事务。 在本教程中我们将探讨用于执行存储的过程的 s 语句的作用域内的事务的 T-SQL 命令。
+> 在[事务中包装数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)教程中，我们向 TableAdapter 添加了一些方法，以支持事务（`BeginTransaction`、`CommitTransaction`等）。 或者，可以完全在存储过程中管理事务，这无需修改数据访问层代码。 在本教程中，我们将探讨用于在事务范围内执行存储过程语句的 T-sql 命令。
 
-## <a name="step-1-adding-stored-procedures-to-the-northwind-database"></a>步骤 1：将存储的过程添加到 Northwind 数据库
+## <a name="step-1-adding-stored-procedures-to-the-northwind-database"></a>步骤1：将存储过程添加到 Northwind 数据库
 
-Visual Studio 便于向数据库添加新的存储的过程。 允许 s 添加到 Northwind 数据库中的所有列返回新的存储的过程`Products`表为具有特定`CategoryID`值。 从服务器资源管理器窗口中，展开 Northwind 数据库，以便显示其文件夹-数据库关系图、 表、 视图和等的。 正如我们看到在前面的教程，存储过程文件夹包含的数据库 s 的现有存储的过程。 若要添加新的存储的过程，只需右键单击存储过程文件夹，然后从上下文菜单中选择添加新存储过程选项。
+使用 Visual Studio 可以轻松地向数据库添加新的存储过程。 在 Northwind 数据库中添加一个新的存储过程，该存储过程将返回 `Products` 表中具有特定 `CategoryID` 值的所有列。 在 "服务器资源管理器" 窗口中，展开 Northwind 数据库，以便显示其文件夹-数据库关系图、表、视图等。 如前面的教程中所述，"存储过程" 文件夹包含数据库的现有存储过程。 若要添加新的存储过程，只需右键单击 "存储过程" 文件夹，然后从上下文菜单中选择 "添加新存储过程" 选项。
 
-[![右键单击存储的过程文件夹并添加新的存储的过程](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image2.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image1.png)
+[![右键单击 "存储过程" 文件夹并添加一个新的存储过程](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image2.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image1.png)
 
-**图 1**:右键单击存储过程文件夹并添加新的存储过程 ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image3.png))
+**图 1**：右键单击 "存储过程" 文件夹并添加一个新的存储过程（[单击以查看完全大小的映像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image3.png)）
 
-如图 1 所示，选择添加新存储过程选项打开一个脚本窗口在 Visual Studio 中创建存储的过程所需的 SQL 脚本的轮廓。 它是我们充实此脚本并执行它的位置的存储的过程将添加到数据库的工作。
+如图1所示，选择 "添加新存储过程" 选项将在 Visual Studio 中打开一个脚本窗口，其中包含创建存储过程所需的 SQL 脚本的大纲。 我们的工作是增加此脚本并执行该脚本，此时将存储过程添加到数据库中。
 
 输入以下脚本：
 
 [!code-sql[Main](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample1.sql)]
 
-此脚本中，执行时，将新的存储的过程添加到名为 Northwind 数据库`Products_SelectByCategoryID`。 此存储的过程接受一个输入的参数 (`@CategoryID`，类型的`int`)，则返回的所有字段以匹配的那些产品`CategoryID`值。
+此脚本在执行时将向名为 `Products_SelectByCategoryID`的 Northwind 数据库添加一个新的存储过程。 此存储过程接受一个输入参数（`@CategoryID``int`类型），并返回这些产品中具有匹配 `CategoryID` 值的所有字段。
 
-若要执行此`CREATE PROCEDURE`脚本和将存储的过程添加到数据库中，单击工具栏中的保存图标或按 Ctrl + S。 执行此操作，存储过程文件夹刷新之后, 显示新创建的存储过程。 此外，窗口中的脚本将更改从一个要点`CREATE PROCEDURE dbo.Products_SelectProductByCategoryID`到`ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`。 `CREATE PROCEDURE` 将新的存储的过程添加到数据库，而`ALTER PROCEDURE`更新现有。 由于该脚本开头已更改为`ALTER PROCEDURE`，更改存储的过程输入参数或 SQL 语句，并单击保存图标将使用这些更改更新存储的过程。
+若要执行此 `CREATE PROCEDURE` 脚本并将该存储过程添加到数据库，请单击工具栏中的 "保存" 图标，或按 Ctrl + S。 完成此操作后，存储过程文件夹将刷新，并显示新创建的存储过程。 此外，此窗口中的脚本会将个很微妙从 `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` 更改为 `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`。 `CREATE PROCEDURE` 将新的存储过程添加到数据库，`ALTER PROCEDURE` 更新现有存储过程。 由于脚本开始已更改为 `ALTER PROCEDURE`，因此更改存储过程输入参数或 SQL 语句并单击 "保存" 图标将用这些更改更新存储过程。
 
-图 2 显示了 Visual Studio 后`Products_SelectByCategoryID`已保存存储的过程。
+图2显示了 `Products_SelectByCategoryID` 存储过程保存后的 Visual Studio。
 
-[![存储的过程 Products_SelectByCategoryID 已添加到数据库](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image5.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image4.png)
+[![存储过程 Products_SelectByCategoryID 已添加到数据库中](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image5.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image4.png)
 
-**图 2**:存储过程`Products_SelectByCategoryID`已添加到数据库 ([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image6.png))
+**图 2**：存储过程 `Products_SelectByCategoryID` 已添加到数据库中（[单击查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image6.png)）
 
-## <a name="step-2-configuring-the-tableadapter-to-use-an-existing-stored-procedure"></a>步骤 2：配置 TableAdapter 以使用现有的存储的过程
+## <a name="step-2-configuring-the-tableadapter-to-use-an-existing-stored-procedure"></a>步骤2：配置 TableAdapter 以使用现有存储过程
 
-现在，`Products_SelectByCategoryID`存储的过程已添加到数据库，我们可以配置我们的数据访问层时要使用此存储的过程调用其方法之一。 具体而言，我们将添加`GetProductsByCategoryID(categoryID)`方法`ProductsTableAdapter`中`NorthwindWithSprocs`类型的数据集调用`Products_SelectByCategoryID`我们只需创建存储的过程。
+`Products_SelectByCategoryID` 存储过程已添加到数据库中，我们可以将数据访问层配置为在调用它的方法之一时使用此存储过程。 具体而言，我们会将 `GetProductsByCategoryID(categoryID)` 方法添加到 `NorthwindWithSprocs` 类型化数据集中的 `ProductsTableAdapter`，该数据集调用我们刚刚创建的 `Products_SelectByCategoryID` 存储过程。
 
-首先打开`NorthwindWithSprocs`数据集。 右键单击`ProductsTableAdapter`和选择要启动 TableAdapter 查询配置向导将添加查询。 在中[前面的教程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)我们选择了为我们创建新的存储的过程的 TableAdapter。 对于本教程中，但是，我们想要将新的 TableAdapter 方法连接到现有`Products_SelectByCategoryID`存储过程。 因此，从向导 s 第一步中选择使用现有存储的过程选项，然后单击下一步。
+首先打开 `NorthwindWithSprocs` 数据集。 右键单击 `ProductsTableAdapter`，然后选择 "添加查询" 以启动 "TableAdapter 查询配置向导"。 在[前面的教程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)中，我们选择使用 TableAdapter 为我们创建一个新的存储过程。 但对于本教程，我们希望将新的 TableAdapter 方法连接到现有的 `Products_SelectByCategoryID` 存储过程。 因此，请在向导的第一步中选择 "使用现有存储过程" 选项，然后单击 "下一步"。
 
-[![选择使用现有存储的过程选项](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image8.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image7.png)
+[![选择 "使用现有存储过程" 选项](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image8.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image7.png)
 
-**图 3**:选择使用现有存储过程选项 ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image9.png))
+**图 3**：选择 "使用现有存储过程" 选项（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image9.png)）
 
-下面的屏幕提供了存储的过程使用数据库 s 填充下拉列表。 选择存储的过程列出了其左侧和右侧返回 （如果有） 的数据字段的输入的参数。 选择`Products_SelectByCategoryID`存储从列表中的过程，并单击下一步。
+以下屏幕提供了一个用数据库存储过程填充的下拉列表。 选择存储过程将在左侧列出其输入参数，并在右侧列出返回的数据字段（如果有）。 从列表中选择 `Products_SelectByCategoryID` 存储过程，并单击 "下一步"。
 
-[![选取 Products_SelectByCategoryID 存储过程](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image11.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image10.png)
+[![选择 Products_SelectByCategoryID 存储过程](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image11.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image10.png)
 
-**图 4**:选取`Products_SelectByCategoryID`存储过程 ([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image12.png))
+**图 4**：选择 `Products_SelectByCategoryID` 存储过程（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image12.png)）
 
-下一个屏幕询问我们的数据类型返回的存储过程，我们在本文中的答案确定 TableAdapter 的方法返回的类型。 例如，如果我们指示返回表格数据，该方法将返回`ProductsDataTable`使用存储过程返回的记录填充实例。 与此相反，如果我们指示此存储的过程返回单个值将返回 TableAdapter`object`分配存储过程返回的第一个记录的第一列中的值。
+下一个屏幕会询问我们存储过程返回的数据类型，此处的答案决定了由 TableAdapter s 方法返回的类型。 例如，如果我们指示返回表格数据，则该方法将返回使用存储过程返回的记录填充的 `ProductsDataTable` 实例。 与此相反，如果我们指出此存储过程返回单个值，则 TableAdapter 将返回一个 `object`，该对象被分配到存储过程返回的第一个记录的第一列中的值。
 
-由于`Products_SelectByCategoryID`存储的过程返回的所有产品的特定类别的详细信息，选择第一个答案的表格数据-然后单击下一步。
+由于 `Products_SelectByCategoryID` 存储过程返回属于特定类别的所有产品，因此请选择第一个应答表格数据，并单击 "下一步"。
 
-[![指示存储的过程返回表格格式数据](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image14.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image13.png)
+[![指示存储过程返回表格数据](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image14.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image13.png)
 
-**图 5**:指示存储过程返回表格格式数据 ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image15.png))
+**图 5**：指示存储过程返回表格数据（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image15.png)）
 
-剩下的就是以指示要使用的方法模式跟这些方法的名称。 保留这两种填充 DataTable 选项选中状态，但重命名的方法的 DataTable 和返回`FillByCategoryID`和`GetProductsByCategoryID`。 然后单击下一步以查看向导将执行的任务的摘要。 如果一切看上去正确，单击完成。
+剩下的就是指出要使用的方法模式，后跟这些方法的名称。 保留 "填充 DataTable" 和 "返回 DataTable" 选项，但将方法重命名为 "`FillByCategoryID`" 和 "`GetProductsByCategoryID`"。 然后单击 "下一步" 以查看向导将执行的任务的摘要。 如果一切正常，请单击 "完成"。
 
-[![名称方法 FillByCategoryID 和 GetProductsByCategoryID](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image17.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image16.png)
+[![命名方法 FillByCategoryID 和 GetProductsByCategoryID](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image17.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image16.png)
 
-**图 6**:命名方法`FillByCategoryID`并`GetProductsByCategoryID`([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image18.png))
+**图 6**： `FillByCategoryID` 和 `GetProductsByCategoryID` 命名方法（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image18.png)）
 
 > [!NOTE]
-> 我们刚刚创建的 TableAdapter 方法`FillByCategoryID`并`GetProductsByCategoryID`，预期类型的输入的参数`int`。 此输入的参数值传递到存储过程通过其`@CategoryID`参数。 如果您修改`Products_SelectByCategory`存储过程的参数，将需要更新这些 TableAdapter 方法的参数。 如中所述[前一篇教程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)，这可以通过两种方式之一： 通过手动添加或删除参数从参数集合中或通过重新运行 TableAdapter 向导。
+> 刚才创建的 TableAdapter 方法 `FillByCategoryID` 和 `GetProductsByCategoryID`需要 `int`类型的输入参数。 此输入参数值通过其 `@CategoryID` 参数传递到存储过程。 如果修改 `Products_SelectByCategory` 存储过程的参数，则还需要更新这些 TableAdapter 方法的参数。 如[前面的教程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)中所述，可以通过以下两种方式之一完成此操作：通过手动添加或删除参数集合中的参数或通过重新运行 TableAdapter 向导来执行此操作。
 
-## <a name="step-3-adding-agetproductsbycategoryidcategoryidmethod-to-the-bll"></a>步骤 3：添加`GetProductsByCategoryID(categoryID)`向 BLL 方法
+## <a name="step-3-adding-agetproductsbycategoryidcategoryidmethod-to-the-bll"></a>步骤3：将`GetProductsByCategoryID(categoryID)`方法添加到 BLL
 
-使用`GetProductsByCategoryID`DAL 方法完成下, 一步是提供对业务逻辑层中的此方法的访问。 打开`ProductsBLLWithSprocs`类文件，并添加以下方法：
+`GetProductsByCategoryID` DAL 方法完成后，下一步就是在业务逻辑层中提供对此方法的访问。 打开 `ProductsBLLWithSprocs` 类文件，并添加以下方法：
 
 [!code-csharp[Main](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample2.cs)]
 
-此 BLL 方法只需返回`ProductsDataTable`从返回`ProductsTableAdapter`s`GetProductsByCategoryID`方法。 `DataObjectMethodAttribute`属性提供了使用 ObjectDataSource s 配置数据源向导的元数据。 具体而言，此方法会在选择的选项卡的下拉列表中。
+此 BLL 方法只返回从 `ProductsTableAdapter` s `GetProductsByCategoryID` 方法返回的 `ProductsDataTable`。 `DataObjectMethodAttribute` 属性提供由 ObjectDataSource s 配置数据源向导使用的元数据。 具体而言，此方法将出现在 "选择选项卡 s" 下拉列表中。
 
-## <a name="step-4-displaying-products-by-category"></a>步骤 4：按类别显示产品
+## <a name="step-4-displaying-products-by-category"></a>步骤4：按类别显示产品
 
-若要测试新添加`Products_SelectByCategoryID`存储的过程和相应的 DAL 和 BLL 方法，让我们来创建一个包含 DropDownList 和 GridView 的 ASP.NET 页面。 GridView 将显示属于所选类别的产品时，下拉列表将列出所有数据库中的类别。
+若要测试新添加的 `Products_SelectByCategoryID` 存储过程和相应的 DAL 和 BLL 方法，请创建包含 DropDownList 和 GridView 的 ASP.NET 页面。 DropDownList 将列出数据库中的所有类别，而 GridView 将显示属于所选类别的产品。
 
 > [!NOTE]
-> 我们已创建母版/详细信息接口在前面的教程中使用 Dropdownlist。 有关实现此类母版/详细信息报告的更深入信息，请参阅[母版/详细信息筛选与 DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)教程。
+> 在前面的教程中，我们使用 DropDownLists 创建了 master/detail 接口。 若要深入了解如何实现此类主/详细信息报表，请参阅[使用 DropDownList 的大纲/详细信息筛选](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)。
 
-打开`ExistingSprocs.aspx`页中`AdvancedDAL`文件夹，然后从工具箱拖动到设计器将 DropDownList。 设置 DropDownList s`ID`属性设置为`Categories`并将其`AutoPostBack`属性设置为`true`。 接下来，从其智能标记绑定到名为新 ObjectDataSource DropDownList `CategoriesDataSource`。 配置对象数据源，以便检索其数据从`CategoriesBLL`类的`GetCategories`方法。 设置下拉列表中插入、 更新和删除选项卡添加到 （无）。
+打开 `AdvancedDAL` 文件夹中的 "`ExistingSprocs.aspx`" 页，并将 "DropDownList" 从 "工具箱" 拖到设计器上。 将 DropDownList `ID` 属性设置为 "`Categories`"，并将其 `AutoPostBack` 属性设置为 "`true`"。 接下来，从其智能标记将 DropDownList 绑定到名为 `CategoriesDataSource`的新 ObjectDataSource。 配置 ObjectDataSource，使其从 `CategoriesBLL` 类 `GetCategories` 方法检索其数据。 将 "更新"、"插入" 和 "删除" 选项卡中的下拉列表设置为 "（无）"。
 
-[![从 CategoriesBLL 类的 GetCategories 方法检索数据](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image20.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image19.png)
+[![从 CategoriesBLL 类 s GetCategories 方法检索数据](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image20.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image19.png)
 
-**图 7**:从中检索数据`CategoriesBLL`类 s`GetCategories`方法 ([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image21.png))
+**图 7**：从 `CategoriesBLL` 类 `GetCategories` 方法检索数据（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image21.png)）
 
-[![设置下拉列表中插入、 更新和删除选项卡为 （无）](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image23.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image22.png)
+[![在 "更新"、"插入" 和 "删除" 选项卡中将下拉列表设置为 "（无）"](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image23.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image22.png)
 
-**图 8**:设置下拉列表列出了在更新、 插入和删除选项卡中为 （无） ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image24.png))
+**图 8**：将 "更新"、"插入" 和 "删除" 选项卡中的下拉列表设置为 "（无）" （[单击查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image24.png)）
 
-完成 ObjectDataSource 向导后，配置要显示 DropDownList`CategoryName`数据字段，并使用`CategoryID`字段作为`Value`为每个`ListItem`。
+完成 ObjectDataSource 向导后，将 DropDownList 配置为显示 `CategoryName` 数据字段，并使用 `CategoryID` 字段作为每个 `ListItem`的 `Value`。
 
-此时，DropDownList 和 ObjectDataSource s 声明性标记应与以下类似：
+此时，DropDownList 和 ObjectDataSource 的声明性标记应类似于以下内容：
 
 [!code-aspx[Main](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample3.aspx)]
 
-接下来，将 GridView 拖到设计器中，将其放在 DropDownList 下面。 设置 GridView s`ID`到`ProductsByCategory`并从其智能标记，请将其绑定到名为新 ObjectDataSource `ProductsByCategoryDataSource`。 配置`ProductsByCategoryDataSource`若要使用的 ObjectDataSource`ProductsBLLWithSprocs`类，再对其检索其数据使用`GetProductsByCategoryID(categoryID)`方法。 由于此 GridView 仅将用于显示数据，设置下拉列表中插入、 更新和删除选项卡添加到 （无），然后单击下一步。
+接下来，将一个 GridView 拖到设计器上，将其放在 DropDownList 下。 将 GridView `ID` 设置为 `ProductsByCategory`，并从其智能标记将其绑定到名为 `ProductsByCategoryDataSource`的新 ObjectDataSource。 将 `ProductsByCategoryDataSource` ObjectDataSource 配置为使用 `ProductsBLLWithSprocs` 类，使其能够使用 `GetProductsByCategoryID(categoryID)` 方法检索其数据。 由于此 GridView 仅用于显示数据，因此请将 "更新"、"插入" 和 "删除" 选项卡中的下拉列表设置为 "（无）"，然后单击 "下一步"。
 
-[![配置对象数据源以使用 ProductsBLLWithSprocs 类](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image26.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image25.png)
+[![将 ObjectDataSource 配置为使用 ProductsBLLWithSprocs 类](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image26.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image25.png)
 
-**图 9**:配置为使用 ObjectDataSource`ProductsBLLWithSprocs`类 ([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image27.png))
+**图 9**：将 ObjectDataSource 配置为使用 `ProductsBLLWithSprocs` 类（[单击以查看完全大小的映像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image27.png)）
 
-[![从 GetProductsByCategoryID(categoryID) 方法检索数据](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image29.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image28.png)
+[![从 GetProductsByCategoryID （类别 Id）方法检索数据](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image29.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image28.png)
 
-**图 10**:从中检索数据`GetProductsByCategoryID(categoryID)`方法 ([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image30.png))
+**图 10**：从 `GetProductsByCategoryID(categoryID)` 方法检索数据（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image30.png)）
 
-在选择选项卡中选择的方法需要参数，因此该向导的最后一步提示我们输入参数的源。 为控件设置参数源下拉列表，并选择`Categories`ControlID 下拉列表中的控件。 单击完成以完成向导。
+在 "选择" 选项卡中选择的方法需要参数，因此向导的最后一步会提示我们输入源参数。 设置要控制的 "参数源" 下拉列表，然后从 "ControlID" 下拉列表中选择 "`Categories`" 控件。 单击“完成”按钮以完成向导。
 
-[![Categories DropDownList 用作源的 categoryID 参数](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image31.png)
+[![使用类别 DropDownList 作为类别 Id 参数的源](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image31.png)
 
-**图 11**:使用`Categories`作为源的 DropDownList`categoryID`参数 ([单击以查看实际尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image33.png))
+**图 11**：使用 `Categories` DropDownList 作为 `categoryID` 参数的源（[单击查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image33.png)）
 
-完成之后 ObjectDataSource 向导，Visual Studio 将为每个产品数据字段添加 BoundFields 和 CheckBoxField。 随时根据需要自定义这些字段。
+完成 ObjectDataSource 向导后，Visual Studio 将为每个产品数据字段添加 BoundFields 和 CheckBoxField。 您可以根据需要随意自定义这些字段。
 
-请访问通过浏览器页面。 当来访的饮料类别选择的页和网格中列出的相应产品。 下拉列表更改为替代的类别，作为图 12 显示了、 导致回发和重新加载新选择的类别的产品的网格。
+通过浏览器访问此页。 在访问该页面时，将选择 "饮料" 类别，并在网格中列出相应的产品。 如图12所示，将下拉列表更改为备用类别将导致回发，并使用新选定类别的产品重新加载网格。
 
-[![显示在生成类别的产品](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image35.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image34.png)
+[显示 "生成" 类别中的产品 ![](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image35.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image34.png)
 
-**图 12**:显示在生成类别的产品 ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image36.png))
+**图 12**：显示 "生成" 类别中的产品（[单击以查看完全尺寸的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image36.png)）
 
-## <a name="step-5-wrapping-a-stored-procedure-s-statements-within-the-scope-of-a-transaction"></a>步骤 5：包装在事务范围内的存储的过程的语句
+## <a name="step-5-wrapping-a-stored-procedure-s-statements-within-the-scope-of-a-transaction"></a>步骤5：在事务范围内包装存储过程语句
 
-在中[包装事务内的数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)我们讨论了用于执行一系列的范围内的数据库修改语句在事务的技术的教程。 回想一下，所有成功要么执行之下的一个事务修改或所有故障，请确保原子性。 使用事务的方法包括：
+在[事务中包装数据库修改](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md)教程中，我们讨论了在事务范围内执行一系列数据库修改语句的方法。 回忆一下，在事务中执行的修改要么全部成功，要么全部失败，从而保证原子性。 使用事务的方法包括：
 
-- 使用中的类`System.Transactions`命名空间，
-- 让数据访问层使用 ADO.NET 类，如`SqlTransaction`，和
-- 将 T-SQL 事务命令直接在存储过程中添加
+- 使用 `System.Transactions` 命名空间中的类，
+- 数据访问层使用 `SqlTransaction`等 ADO.NET 类，并
+- 直接在存储过程中添加 T-sql transaction 命令
 
-*包装事务内的数据库修改*教程中的 DAL 使用 ADO.NET 类。 本教程的其余部分探讨如何管理使用存储过程中的从 T-SQL 命令的事务。
+*事务教程中的包装数据库修改*使用 DAL 中的 ADO.NET 类。 本教程的其余部分将介绍如何使用存储过程中的 T-sql 命令来管理事务。
 
-为手动启动、 提交和回滚事务的三个关键 SQL 命令是`BEGIN TRANSACTION`， `COMMIT TRANSACTION`，和`ROLLBACK TRANSACTION`分别。 使用从存储过程，我们需要应用以下模式中的事务时使用 ADO.NET 方法时，如：
+用于手动启动、提交和回滚事务的三个关键 SQL 命令分别分别 `BEGIN TRANSACTION`、`COMMIT TRANSACTION`和 `ROLLBACK TRANSACTION`。 与 ADO.NET 方法一样，使用存储过程中的事务时，需要应用以下模式：
 
 1. 指示事务的开始。
 2. 执行构成事务的 SQL 语句。
-3. 如果出现错误的任何一种方法从步骤 2 中，回滚事务的语句
-4. 如果没有错误完成所有步骤 2 中的语句，则提交事务。
+3. 如果步骤2中的任何一个语句出错，则回滚事务
+4. 如果步骤2中的所有语句都完成且没有错误，请提交该事务。
 
-在 T-SQL 的语法中使用以下模板，可以实现此模式：
+可使用以下模板在 T-sql 语法中实现此模式：
 
 [!code-sql[Main](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample4.sql)]
 
-首先定义模板`TRY...CATCH`阻止 SQL Server 2005 到新的构造。 与处理方式一样`try...catch`C#，SQL 中的块`TRY...CATCH`执行中的语句块`TRY`块。 如果任何语句将引发错误，控制立即转移到`CATCH`块。
+该模板首先定义一个 `TRY...CATCH` 块，即一个构造 SQL Server 2005 的新构造。 与中C#`try...catch` 块一样，SQL `TRY...CATCH` 块会执行 `TRY` 块中的语句。 如果任何语句引发错误，控制将立即传输到 `CATCH` 块。
 
-如果执行 SQL 语句在事务中，该结构没有错误`COMMIT TRANSACTION`语句提交所做的更改并完成该事务。 如果其中一个语句导致错误，但是，`ROLLBACK TRANSACTION`在`CATCH`块将数据库返回到事务开始前的状态。 存储的过程也会引发错误使用[RAISERROR 命令](https://msdn.microsoft.com/library/ms178592.aspx)，这将导致`SqlException`以引发应用程序中。
+如果在执行构成事务的 SQL 语句时没有错误，`COMMIT TRANSACTION` 语句将提交更改并完成该事务。 但是，如果其中一个语句导致错误，则 `CATCH` 块中的 `ROLLBACK TRANSACTION` 会将数据库恢复到事务开始之前的状态。 该存储过程还使用[RAISERROR 命令](https://msdn.microsoft.com/library/ms178592.aspx)引发错误，这将导致应用程序中引发 `SqlException`。
 
 > [!NOTE]
-> 由于`TRY...CATCH`块是新的 SQL Server 2005 中，如果使用较旧版本的 Microsoft SQL Server，则上面的模板将无法工作。 如果不使用 SQL Server 2005，请查阅[在 SQL Server 存储过程中管理事务](http://www.4guysfromrolla.com/webtech/080305-1.shtml)会使用其他版本的 SQL Server 的模板。
+> 由于 `TRY...CATCH` 块是 SQL Server 2005 的新手，因此，如果使用的是较旧版本的 Microsoft SQL Server，则上述模板将不起作用。 如果使用的不是 SQL Server 2005，请参阅在将与其他版本的 SQL Server 一起使用的模板的[SQL Server 存储过程中管理事务](http://www.4guysfromrolla.com/webtech/080305-1.shtml)。
 
-让我们来看一个具体示例。 之间存在外键约束`Categories`并`Products`表，这意味着，每个`CategoryID`字段中`Products`表必须映射到`CategoryID`中的值`Categories`表。 任何违反此约束，如尝试删除具有关联的产品类别的操作导致违反外键约束。 若要验证这一点，重新访问二进制数据部分使用中的更新和删除现有的二进制数据示例 (`~/BinaryData/UpdatingAndDeleting.aspx`)。 此页列出每个类别 （请参阅图 13） 的编辑和删除按钮，以及系统中，但如果你尝试删除具有关联的产品-如饮料-类别删除失败由于外键约束冲突 （请参阅图 14）。
+让我们看一个具体的示例。 `Categories` 和 `Products` 表之间存在外键约束，这意味着 `Products` 表中的每个 `CategoryID` 字段必须映射到 `CategoryID` 表中的 `Categories` 值。 任何违反此约束的操作（例如，尝试删除具有关联产品的类别）都将导致外键约束冲突。 若要验证这一点，请在使用二进制数据部分（`~/BinaryData/UpdatingAndDeleting.aspx`）重新访问更新和删除现有的二进制数据示例。 此页将列出系统中的每个类别以及 "编辑" 和 "删除" 按钮（见图13），但如果您尝试删除某个类别，其中包含关联的产品（如饮料），则删除由于外键约束冲突而失败（请参阅图14）。
 
-[![使用编辑和删除按钮的 GridView 中显示每个类别](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image38.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image37.png)
+[使用 "编辑" 和 "删除" 按钮在 GridView 中显示每个类别 ![](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image38.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image37.png)
 
-**图 13**:使用编辑和删除按钮的 GridView 中显示每个类别 ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image39.png))
+**图 13**：按 "编辑" 和 "删除" 按钮在 GridView 中显示每个类别（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image39.png)）
 
 [![无法删除现有产品的类别](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image41.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image40.png)
 
-**图 14**:无法删除现有产品的类别 ([单击此项可查看原尺寸图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image42.png))
+**图 14**：无法删除现有产品的类别（[单击以查看完全大小的图像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image42.png)）
 
-但是，假设我们想要允许删除而不考虑它们是否具有关联的产品的类别。 应删除与产品类别，假设我们想要同时删除其现有的产品 (尽管是另一种方法只需设置其产品`CategoryID`值到`NULL`)。 可以通过外键约束的级联规则实现此功能。 此外，我们可以创建存储的过程接受`@CategoryID`输入的参数并调用时，显式删除所有关联的产品，然后指定的类别。
+不过，假设我们想要删除类别，而不考虑它们是否有关联的产品。 如果要删除包含产品的类别，假设我们还想要删除其现有产品（不过，另一个选项是将其产品 `CategoryID` 值设置为 `NULL`）。 可以通过 foreign key 约束的级联规则实现此功能。 另外，我们还可以创建接受 `@CategoryID` 输入参数的存储过程，并在调用它时显式删除所有关联的产品和指定的类别。
 
-此类存储过程，我们第一次尝试可能类似以下形式：
+此类存储过程的第一次尝试可能如下所示：
 
 [!code-sql[Main](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample5.sql)]
 
-虽然这肯定将删除关联的产品和类别，它并未这样之下的事务。 想象一下是一些其他外键约束上`Categories`，将禁止删除特定`@CategoryID`值。 问题在于，在这种情况中的所有产品之前，将删除我们尝试删除类别。 最终结果是，对于此类的类别，此存储的过程将删除其所有产品类别依然存在，因为它仍有相关的一些其他表中的记录。
+虽然这将会明确删除关联的产品和类别，但它不会在事务的涵盖下执行此操作。 假设 `Categories` 上有一些其他 foreign key 约束禁止删除特定 `@CategoryID` 值。 问题在于，在这种情况下，将在尝试删除类别之前删除所有产品。 最终结果是，对于这种类别，此存储过程将删除其所有产品，而类别仍保留，因为它仍在其他某个表中具有相关记录。
 
-如果存储的过程已换行在事务范围内，但是，到删除`Products`表将在遇到时未能删除上回滚`Categories`。 以下存储的过程脚本使用事务以确保两者之间的原子性`DELETE`语句：
+但是，如果存储过程已包装在事务范围内，则会在 `Categories`删除失败时回滚到 `Products` 表的删除。 以下存储过程脚本使用事务来确保两个 `DELETE` 语句之间的原子性：
 
 [!code-sql[Main](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample6.sql)]
 
-请花费片刻时间来添加`Categories_Delete`存储到 Northwind 数据库的过程。 有关将存储的过程添加到数据库的说明为步骤 1 返回引用。
+请花点时间将 `Categories_Delete` 存储过程添加到 Northwind 数据库。 有关将存储过程添加到数据库的说明，请参阅返回到步骤1。
 
-## <a name="step-6-updating-thecategoriestableadapter"></a>步骤 6：正在更新`CategoriesTableAdapter`
+## <a name="step-6-updating-thecategoriestableadapter"></a>步骤6：更新`CategoriesTableAdapter`
 
-尽管我们已添加`Categories_Delete`到数据库，DAL 的存储的过程当前配置为使用的临时 SQL 语句来执行删除。 我们需要更新`CategoriesTableAdapter`，并指示它使用`Categories_Delete`改为存储过程。
+虽然已将 `Categories_Delete` 存储过程添加到数据库中，但 DAL 当前配置为使用即席 SQL 语句执行删除操作。 我们需要更新 `CategoriesTableAdapter`，并将其指示为改用 `Categories_Delete` 存储过程。
 
 > [!NOTE]
-> 在本教程前面我们已使用`NorthwindWithSprocs`数据集。 但该数据集仅具有单个实体， `ProductsDataTable`，我们需要使用类别。 因此，对于本教程时我讨论的数据访问层 I m 指其余`Northwind`数据集，我们首先在中创建的那个[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程。
+> 在本教程的前面部分，我们使用的是 `NorthwindWithSprocs` 数据集。 但该数据集仅有一个实体 `ProductsDataTable`，我们需要使用类别。 因此，在本教程的剩余部分中，我讨论了引用 `Northwind` 数据集的数据访问层，这是我们在[创建数据访问层](../introduction/creating-a-data-access-layer-cs.md)教程中的第一个创建的数据集。
 
-打开罗斯文数据集，选择`CategoriesTableAdapter`，并转到属性窗口。 属性窗口中会列出`InsertCommand`， `UpdateCommand`， `DeleteCommand`，和`SelectCommand`使用 TableAdapter，以及其名称和连接信息。 展开`DeleteCommand`属性以查看其详细信息。 如图 15 所示， `DeleteCommand` s`CommandType`属性设置为文本，指示它发送的文本`CommandText`属性作为即席 SQL 查询。
+打开 Northwind 数据集，选择 `CategoriesTableAdapter`，并中转到属性窗口。 属性窗口列出了 TableAdapter 使用的 `InsertCommand`、`UpdateCommand`、`DeleteCommand`和 `SelectCommand`，以及其名称和连接信息。 展开 "`DeleteCommand`" 属性以查看其详细信息。 如图15所示，`DeleteCommand` s `CommandType` 属性设置为 Text，这指示它将 `CommandText` 属性中的文本作为即席 SQL 查询发送。
 
-![若要在属性窗口中查看其属性在设计器中选择 CategoriesTableAdapter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image43.png)
+![在设计器中选择 CategoriesTableAdapter，以在 "属性" 窗口中查看其属性。](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image43.png)
 
-**图 15**:选择`CategoriesTableAdapter`以在属性窗口中查看其属性在设计器中
+**图 15**：在设计器中选择 `CategoriesTableAdapter`，以在 "属性" 窗口中查看其属性
 
-若要更改这些设置，请在属性窗口中选择 (DeleteCommand) 文本并从下拉列表中选择 （新建）。 这将清除出的设置`CommandText`， `CommandType`，和`Parameters`属性。 接下来，设置`CommandType`属性设置为`StoredProcedure`，然后键入名称的存储过程`CommandText`(`dbo.Categories_Delete`)。 如果你请务必首先按此顺序输入属性`CommandType`，然后`CommandText`-Visual Studio 将自动填充的参数集合。 如果不按此顺序输入这些属性，将需要手动添加到参数集合编辑器中的参数。 在任一情况下，它比较明智的做法单击要打开参数集合编辑器来验证是否正确的参数设置进行了更改 （请参阅图 16） 的参数属性中的椭圆的 s。 如果看不到对话框的中的任何参数，将添加`@CategoryID`参数手动 (不需要添加`@RETURN_VALUE`参数)。
+若要更改这些设置，请在属性窗口中选择（DeleteCommand）文本，然后从下拉列表中选择 "（新建）"。 这将清除 `CommandText`、`CommandType`和 `Parameters` 属性的设置。 接下来，将 `CommandType` 属性设置为 `StoredProcedure`，然后键入 `CommandText` （`dbo.Categories_Delete`）的存储过程的名称。 如果确保按此顺序输入属性-首先为 `CommandType`，然后 `CommandText`-Visual Studio 将自动填充参数集合。 如果未按此顺序输入这些属性，则必须通过 "参数集合编辑器" 手动添加参数。 在这两种情况下，在 "参数" 属性中单击省略号即可显示 "参数集合编辑器"，以验证是否进行了正确的参数设置更改（请参阅图16）。 如果在对话框中看不到任何参数，请手动添加 `@CategoryID` 参数（不需要添加 `@RETURN_VALUE` 参数）。
 
 ![确保参数设置正确](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image44.png)
 
-**图 16**:确保参数设置正确
+**图 16**：确保参数设置正确
 
-一旦更新 DAL，如果删除某个类别自动将删除所有相关联的产品和之下的事务执行此操作。 若要验证这一点，返回到更新和删除现有的二进制数据页并单击删除按钮的一个类别。 鼠标的一次单击，将删除该类别及其所有相关联的产品。
+在对 DAL 进行更新后，删除类别将自动删除其所有关联的产品，并在事务的涵盖下执行此操作。 若要验证这一点，请返回到 "更新和删除现有的二进制数据" 页，然后单击其中一个类别的 "删除" 按钮。 只单击一次鼠标，就会删除类别及其所有关联的产品。
 
 > [!NOTE]
-> 然后再测试`Categories_Delete`存储的过程，这将删除数以及所选类别的产品，可能会比较明智的做法使您的数据库的备份副本。 如果使用的`NORTHWND.MDF`数据库中`App_Data`，只需关闭 Visual Studio，并复制中的 MDF 和 LDF 文件`App_Data`到其他文件夹。 测试功能之后, 您可以将数据库还原通过关闭 Visual Studio 和替换当前 MDF 和 LDF 文件中`App_Data`与备份副本。
+> 在测试 `Categories_Delete` 存储过程之前，将删除多个产品以及所选的类别，因此，创建数据库的备份副本可能是明智的。 如果在 `App_Data`中使用 `NORTHWND.MDF` 数据库，只需关闭 Visual Studio，并将 `App_Data` 中的 MDF 和 LDF 文件复制到其他文件夹。 测试功能后，可以通过关闭 Visual Studio 并将 `App_Data` 中的当前 MDF 和 LDF 文件替换为备份副本来还原数据库。
 
 ## <a name="summary"></a>总结
 
-TableAdapter 的向导将自动为我们生成的存储的过程，而有些的时候，当我们可能已有创建此类存储的过程或想改为创建这些手动或使用其他工具。 为了适应这种情况下，TableAdapter 还可以将配置为指向现有的存储过程。 在本教程中我们介绍了如何将存储的过程手动添加到通过 Visual Studio 环境数据库以及如何将 TableAdapter 的方法连接到这些存储过程。 我们还探讨了 T-SQL 的命令和用于启动、 提交和回滚从存储过程中的事务脚本模式。
+尽管 TableAdapter 向导会自动生成存储过程，但有时我们可能已创建了此类存储过程，或者想要使用其他工具手动创建这些存储过程。 为了满足此类情况，还可以将 TableAdapter 配置为指向现有的存储过程。 在本教程中，我们将介绍如何通过 Visual Studio 环境将存储过程手动添加到数据库，以及如何将 TableAdapter s 方法连接到这些存储过程。 我们还在存储过程中检查了用于启动、提交和回滚事务的 T-sql 命令和脚本模式。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Hilton Geisenow、 S ren Jacob Lauritsen 和 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Hilton Geisenow、S ren Jacob Lauritsen 和 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)

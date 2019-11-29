@@ -1,318 +1,318 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
-title: 更新和删除现有的二进制数据 (VB) |Microsoft Docs
+title: 更新和删除现有的二进制数据（VB） |Microsoft Docs
 author: rick-anderson
-description: 在之前的教程中我们已了解如何在 GridView 控件可以轻松地编辑和删除文本数据。 在本教程中我们看到如何在 GridView 控件还使...
+description: 在前面的教程中，我们看到了 GridView 控件如何使编辑和删除文本数据变得简单。 在本教程中，我们将了解 GridView 控件如何进行 。
 ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: 3a052ced-9cf5-47b8-a400-934f0b687c26
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ac38123e1acb8188648019d67423bd6452690b6c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 27ff6941008b4e7bf6d632e4c248fd1d35fb3589
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114792"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74621312"
 ---
 # <a name="updating-and-deleting-existing-binary-data-vb"></a>上载和删除现有的二进制数据 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_57_VB.exe)或[下载 PDF](updating-and-deleting-existing-binary-data-vb/_static/datatutorial57vb1.pdf)
+[下载示例应用](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_57_VB.exe)或[下载 PDF](updating-and-deleting-existing-binary-data-vb/_static/datatutorial57vb1.pdf)
 
-> 在之前的教程中我们已了解如何在 GridView 控件可以轻松地编辑和删除文本数据。 在本教程中我们看到如何在 GridView 控件还可以编辑和删除该二进制数据是保存在数据库中还是文件系统中存储二进制数据。
+> 在前面的教程中，我们看到了 GridView 控件如何使编辑和删除文本数据变得简单。 在本教程中，我们将了解 GridView 控件如何还可以编辑和删除二进制数据，无论二进制数据是保存在数据库中，还是存储在文件系统中。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在过去三个教程通过我们已添加一小段用于处理二进制数据的功能。 我们通过添加启动`BrochurePath`列添加到`Categories`表并相应地更新体系结构。 我们还添加了数据访问层和业务逻辑层方法，以便使用类别表 s 现有`Picture`列，包含图像文件的二进制内容 s。 我们已构建网页以提供类别的图片中所示的 GridView 中的二进制数据的小册子中，下载链接`<img>`元素并将其添加 DetailsView 以允许用户添加新类别，并将其手册和图片数据上传。
+过去三个教程中，我们添加了相当多的功能来处理二进制数据。 首先，将 `BrochurePath` 列添加到 `Categories` 表，并相应地更新体系结构。 此外，我们还添加了 "数据访问层" 和 "业务逻辑层" 方法来使用 "类别" 表的 "现有 `Picture`" 列，其中包含图像文件的二进制内容。 我们构建了一个网页，用于在 GridView 中显示二进制数据，其中的 "类别" 图片显示在 "`<img>`" 元素中，并已添加了 DetailsView 以允许用户添加新类别并上传其小册子和图片数据。
 
-所有这些其余实现是编辑和删除现有类别，我们要完成的操作在本教程中使用的 GridView s 内置编辑和删除功能的能力。 在编辑某个类别时，用户将能够根据需要上传新图片或继续使用现有的类别。 为小册子中，他们可以选择使用现有的小册子中，将上传新的手册，或指示类别不再具有与之关联的手册。 让我们来开始 ！
+仍要实现的所有功能都是编辑和删除现有类别的功能，我们将在本教程中使用 GridView 内置的编辑和删除功能完成这项工作。 编辑类别时，用户可以选择上传新图片，也可以让类别继续使用现有图片。 对于小册子，他们可以选择使用现有小册子、上传新小册子，或指示该类别不再有与之相关联的小册子。 让我们开始吧！
 
-## <a name="step-1-updating-the-data-access-layer"></a>步骤 1：更新数据访问层
+## <a name="step-1-updating-the-data-access-layer"></a>步骤1：更新数据访问层
 
-DAL 具有自动生成`Insert`， `Update`，并`Delete`方法，但这些方法生成的基于`CategoriesTableAdapter`s 主查询，这不包括`Picture`列。 因此，`Insert`和`Update`方法不包括的参数来指定类别的图片的二进制数据。 像执行[前面的教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)，我们需要创建新的 TableAdapter 方法用于更新`Categories`表时指定的二进制数据。
+DAL 具有自动生成的 `Insert`、`Update`和 `Delete` 方法，但这些方法是根据 `CategoriesTableAdapter` 的主查询生成的，该查询不包括 `Picture` 列。 因此，`Insert` 和 `Update` 方法不包含用于指定类别的图片的二进制数据的参数。 正如[前面的教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)中所述，在指定二进制数据时，我们需要创建一个新的 TableAdapter 方法来更新 `Categories` 表。
 
-打开类型化数据集，并从设计器中，右键单击`CategoriesTableAdapter`s 标头，然后从上下文菜单以启动 TableAdapter 查询配置向导中选择添加查询。 此向导首先会向我们询问 TableAdapter 查询应如何访问数据库。 选择使用 SQL 语句，然后单击下一步。 下一步会提示为查询的类型生成。 由于我们重新创建要添加到新的记录的查询`Categories`表中，选择更新并单击下一步。
+打开类型化数据集，然后在设计器中右键单击 `CategoriesTableAdapter` 的标头，然后从上下文菜单中选择 "添加查询" 以启动 "TableAdapter 查询配置向导"。 此向导首先向我们询问 TableAdapter 查询应如何访问数据库。 选择 "使用 SQL 语句"，然后单击 "下一步"。 下一步将提示输入要生成的查询类型。 由于我们要创建一个查询以将新记录添加到 `Categories` 表中，因此请选择 "更新"，然后单击 "下一步"。
 
 [![选择更新选项](updating-and-deleting-existing-binary-data-vb/_static/image2.png)](updating-and-deleting-existing-binary-data-vb/_static/image1.png)
 
-**图 1**:选择更新选项 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image3.png))
+**图 1**：选择更新选项（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image3.png)）
 
-现在，我们需要指定`UPDATE`SQL 语句。 该向导会自动建议`UPDATE`对应于 TableAdapter s 主查询的语句 (更新的那个`CategoryName`， `Description`，和`BrochurePath`值)。 更改的语句，以便`Picture`列则包含与`@Picture`参数，如下所示：
+现在，需要指定 `UPDATE` SQL 语句。 向导会自动提出与 TableAdapter s 主查询（更新 `CategoryName`、`Description`和 `BrochurePath` 值）对应的 `UPDATE` 语句。 更改语句，使 `Picture` 列随 `@Picture` 参数一起提供，如下所示：
 
 [!code-sql[Main](updating-and-deleting-existing-binary-data-vb/samples/sample1.sql)]
 
-在向导的最后一个屏幕询问我们要将新的 TableAdapter 方法。 输入`UpdateWithPicture`并单击完成。
+向导的最后一个屏幕要求我们命名新的 TableAdapter 方法。 输入 `UpdateWithPicture`，然后单击 "完成"。
 
 [![命名新的 TableAdapter 方法 UpdateWithPicture](updating-and-deleting-existing-binary-data-vb/_static/image5.png)](updating-and-deleting-existing-binary-data-vb/_static/image4.png)
 
-**图 2**:新的 TableAdapter 方法命名`UpdateWithPicture`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image6.png))
+**图 2**：将新的 TableAdapter 方法命名 `UpdateWithPicture` （[单击以查看完全大小的映像](updating-and-deleting-existing-binary-data-vb/_static/image6.png)）
 
-## <a name="step-2-adding-the-business-logic-layer-methods"></a>步骤 2：添加业务逻辑层方法
+## <a name="step-2-adding-the-business-logic-layer-methods"></a>步骤2：添加业务逻辑层方法
 
-除了更新 DAL，我们需要更新 BLL 可以包含用于更新和删除某个类别的方法。 这些是将从表示层调用的方法。
+除了更新 DAL 之外，我们还需要更新 BLL，使其包含用于更新和删除类别的方法。 这些是将从表示层调用的方法。
 
-如果删除某个类别，我们可以使用`CategoriesTableAdapter`自动生成的 s`Delete`方法。 添加以下方法`CategoriesBLL`类：
+对于删除类别，可以使用 `CategoriesTableAdapter` 自动生成的 `Delete` 方法。 将以下方法添加到 `CategoriesBLL` 类：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample2.vb)]
 
-对于本教程中，let s 创建两种方法来更新类别的期望二进制图片数据并调用`UpdateWithPicture`我们刚添加到方法`CategoriesTableAdapter`，另一个接受仅`CategoryName`， `Description`，和`BrochurePath`值，并使用`CategoriesTableAdapter`类自动生成的 s`Update`语句。 使用两种方法背后的基本原理是，在某些情况下，用户可能想要更新的类别的图片以及其其他字段，情况下，用户将需要在其中上传新的图片。 已上传的图片 s 二进制数据然后可在`UPDATE`语句。 在其他情况下，用户可能只关注中更新，例如，名称和说明。 但是，如果`UPDATE`语句等待的二进制数据`Picture`列，那么我们 d 需要提供这些信息。 这需要额外经历一次到数据库以使图片数据重新用于正在编辑的记录。 因此，我们希望两个`UPDATE`方法。 业务逻辑层将确定要使用哪一个基于图片数据以更新类别时提供。
+对于本教程，我们将创建两种方法用于更新类别-一种方法需要二进制图片数据，并调用我们刚刚添加到 `CategoriesTableAdapter` 中的 `UpdateWithPicture` 方法，另一种方法只接受 `CategoryName`、`Description`和 `BrochurePath` 值，并使用 `CategoriesTableAdapter` 类自动生成的 `Update` 语句。 使用两种方法背后的基本原理是，在某些情况下，用户可能需要更新类别的图片及其其他字段，在这种情况下，用户必须上传新图片。 然后，可以在 `UPDATE` 语句中使用上传的图片的二进制数据。 在其他情况下，用户可能只需要更新名称和说明。 但如果 `UPDATE` 语句也需要 `Picture` 列的二进制数据，则我们还需要提供该信息。 这需要额外的数据库行程才能恢复正在编辑的记录的图片数据。 因此，我们需要两个 `UPDATE` 方法。 业务逻辑层根据更新类别时是否提供图片数据，确定要使用哪一个。
 
-若要实现此目的，两个将方法添加到`CategoriesBLL`类，这两名为`UpdateCategory`。 第一个应接受三个`String`s，`Byte`数组和一个`Integer`作为其输入参数; 第二个，只需三个`String`s 和`Integer`。 `String`输入的参数仅适用于 s 类别名称、 说明和手册文件路径`Byte`数组是二进制内容的类别的图片，并`Integer`标识`CategoryID`要更新的记录。 请注意，第一个重载会调用传入的第二个 if`Byte`数组是`Nothing`:
+为此，请将两个方法添加到 `CategoriesBLL` 类，这两个方法都命名为 `UpdateCategory`。 第一个应接受三个 `String` s、`Byte` 数组和 `Integer` 作为其输入参数;第二个只是三个 `String` s 和一个 `Integer`。 `String` 输入参数适用于类别的 "名称"、"说明" 和 "小册子" 文件路径，`Byte` 数组适用于类别的图片的二进制内容，`Integer` 标识要更新的记录的 `CategoryID`。 请注意，如果传入的 `Byte` 数组 `Nothing`，则第一个重载将调用第二个：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample3.vb)]
 
-## <a name="step-3-copying-over-the-insert-and-view-functionality"></a>步骤 3：复制的插入和视图功能
+## <a name="step-3-copying-over-the-insert-and-view-functionality"></a>步骤3：通过插入和查看功能进行复制
 
-在中[前面的教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)我们创建一个名为页`UploadInDetailsView.aspx`，列出 GridView 中的所有类别，并提供说明如何将新类别添加到系统。 在本教程中我们将扩展 GridView，其中包括编辑和删除支持。 而不是继续使用从`UploadInDetailsView.aspx`，让 s 改为将放置在此教程的更改`UpdatingAndDeleting.aspx`同一文件夹中的页`~/BinaryData`。 复制并粘贴在声明性标记，代码从`UploadInDetailsView.aspx`到`UpdatingAndDeleting.aspx`。
+在[前面的教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)中，我们创建了一个名为 `UploadInDetailsView.aspx` 的页面，该页面列出了 GridView 中的所有类别，并提供了 DetailsView 来向系统添加新类别。 在本教程中，我们将对 GridView 进行扩展，以包括编辑和删除支持。 请不要从 `UploadInDetailsView.aspx`中继续工作，而是将本教程的更改从同一文件夹 `~/BinaryData`放置在 `UpdatingAndDeleting.aspx` 页中。 将声明性标记和代码从 `UploadInDetailsView.aspx` 复制并粘贴到 `UpdatingAndDeleting.aspx`中。
 
-首先打开`UploadInDetailsView.aspx`页。 复制的所有声明性语法中`<asp:Content>`元素，如图 3 中所示。 接下来，打开`UpdatingAndDeleting.aspx`并粘贴在此标记其`<asp:Content>`元素。 同样中的代码复制`UploadInDetailsView.aspx`页上为 s 代码隐藏类`UpdatingAndDeleting.aspx`。
+首先打开 "`UploadInDetailsView.aspx`" 页。 复制 `<asp:Content>` 元素中的所有声明性语法，如图3所示。 接下来，打开 `UpdatingAndDeleting.aspx` 并在其 `<asp:Content>` 元素中粘贴此标记。 同样，将 `UploadInDetailsView.aspx` 页 s 代码隐藏类中的代码复制到 `UpdatingAndDeleting.aspx`。
 
-[![将声明性标记从 UploadInDetailsView.aspx 复制](updating-and-deleting-existing-binary-data-vb/_static/image8.png)](updating-and-deleting-existing-binary-data-vb/_static/image7.png)
+[![从 UploadInDetailsView 复制声明性标记](updating-and-deleting-existing-binary-data-vb/_static/image8.png)](updating-and-deleting-existing-binary-data-vb/_static/image7.png)
 
-**图 3**:复制中的声明性标记`UploadInDetailsView.aspx`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image9.png))
+**图 3**：从 `UploadInDetailsView.aspx` 复制声明性标记（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image9.png)）
 
-在复制后通过声明性标记和代码，请访问`UpdatingAndDeleting.aspx`。 应该会看到相同输出，并且具有相同的用户体验与使用`UploadInDetailsView.aspx`页上从上一教程。
+复制声明性标记和代码后，请访问 `UpdatingAndDeleting.aspx`。 你应看到相同的输出，并且与上一教程中的 "`UploadInDetailsView.aspx`" 页具有相同的用户体验。
 
-## <a name="step-4-adding-deleting-support-to-the-objectdatasource-and-gridview"></a>步骤 4：添加删除到 ObjectDataSource 和 GridView 支持
+## <a name="step-4-adding-deleting-support-to-the-objectdatasource-and-gridview"></a>步骤4：将删除支持添加到 ObjectDataSource 和 GridView
 
-如后面所述[概述的插入、 更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教程中，GridView 提供内置的删除功能，并可在一个复选框的刻度线启用这些功能，如果网格 s 基础数据源支持删除。 当前 ObjectDataSource GridView 绑定到 (`CategoriesDataSource`) 不支持删除。
+正如我们在[插入、更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教程中讨论的那样，GridView 提供内置的删除功能，如果网格中的基础数据源支持删除，则可以在 checkbox 的勾选标记中启用这些功能。 当前 GridView 绑定到的 ObjectDataSource （`CategoriesDataSource`）不支持删除。
 
-若要解决此问题，单击从 ObjectDataSource s 智能标记的配置数据源选项，以启动向导。 第一个屏幕显示对象数据源配置为使用`CategoriesBLL`类。 单击下一步。 目前，仅的 ObjectDataSource s`InsertMethod`和`SelectMethod`指定属性。 但是，该向导自动填充具有更新和删除选项卡中的下拉列表`UpdateCategory`和`DeleteCategory`方法，分别。 这是因为在`CategoriesBLL`我们标记使用这些方法的类`DataObjectMethodAttribute`与更新和删除的默认方法。
+若要解决此情况，请单击 "ObjectDataSource s 智能" 标记中的 "配置数据源" 选项以启动向导。 第一个屏幕显示 ObjectDataSource 配置为使用 `CategoriesBLL` 类。 单击 "下一步"。 目前仅指定 ObjectDataSource `InsertMethod` 和 `SelectMethod` 属性。 但是，向导将分别自动填充 "更新" 和 "删除" 选项卡中的下拉列表，分别分别为 `UpdateCategory` 和 `DeleteCategory` 方法。 这是因为在 `CategoriesBLL` 类中，我们使用 `DataObjectMethodAttribute` 作为更新和删除的默认方法来标记这些方法。
 
-现在，请设置为 （无） 的更新选项卡的下拉列表，但将删除选项卡的下拉列表设置为保持为`DeleteCategory`。 我们将返回到该向导将在步骤 6 中添加更新的支持。
+现在，将 "更新" 选项卡 s 下拉列表设置为 "（无）"，但将 "删除选项卡 s" 下拉列表设置为 "`DeleteCategory`"。 我们将在步骤6中返回到此向导，以添加更新支持。
 
-[![配置对象数据源使用 DeleteCategory 方法](updating-and-deleting-existing-binary-data-vb/_static/image11.png)](updating-and-deleting-existing-binary-data-vb/_static/image10.png)
+[![将 ObjectDataSource 配置为使用 DeleteCategory 方法](updating-and-deleting-existing-binary-data-vb/_static/image11.png)](updating-and-deleting-existing-binary-data-vb/_static/image10.png)
 
-**图 4**:配置为使用 ObjectDataSource`DeleteCategory`方法 ([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image12.png))
+**图 4**：将 ObjectDataSource 配置为使用 `DeleteCategory` 方法（[单击查看完全大小的映像](updating-and-deleting-existing-binary-data-vb/_static/image12.png)）
 
 > [!NOTE]
-> 完成该向导，时 Visual Studio 可能会要求是否想要刷新字段和密钥，这将重新生成数据 Web 控件的字段。 因为选择是将覆盖可能已做的任何字段自定义，请选择否，。
+> 完成该向导后，Visual Studio 可能会询问你是否要刷新字段和键，这将重新生成数据 Web 控件字段。 选择 "否"，因为选择 "是" 将覆盖你可能已进行的任何字段自定义。
 
-ObjectDataSource 现在将包括的值及其`DeleteMethod`属性以及`DeleteParameter`。 回想一下，当使用向导指定的方法，Visual Studio 将设置 ObjectDataSource s`OldValuesParameterFormatString`属性设置为`original_{0}`，这会导致问题的更新和删除方法调用。 因此，完全清除此属性或其重置为默认情况下， `{0}`。 如果你需要刷新此对象数据源属性上的内存，请参阅[概述的插入、 更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教程。
+ObjectDataSource 现在将为其 `DeleteMethod` 属性和 `DeleteParameter`包含一个值。 请记住，使用该向导指定方法时，Visual Studio 会将 ObjectDataSource `OldValuesParameterFormatString` 属性设置为 `original_{0}`，这将导致更新和删除方法调用出现问题。 因此，请完全清除此属性，或将其重置为默认 `{0}`。 如果需要刷新此 ObjectDataSource 属性的内存，请参阅[插入、更新和删除数据](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教程的概述。
 
-完成向导并修复后`OldValuesParameterFormatString`，ObjectDataSource s 声明性标记应类似如下所示：
+完成向导并修复 `OldValuesParameterFormatString`后，ObjectDataSource 的声明性标记应如下所示：
 
 [!code-aspx[Main](updating-and-deleting-existing-binary-data-vb/samples/sample4.aspx)]
 
-配置 ObjectDataSource 之后, 删除通过将功能添加到 GridView 从 GridView s 智能标记的启用删除复选框。 这将添加到 GridView 的 CommandField 其`ShowDeleteButton`属性设置为`True`。
+配置 ObjectDataSource 后，通过选中 GridView s 智能标记中的 "启用删除" 复选框，将删除功能添加到 GridView。 这会将 CommandField 添加到 GridView，其 `ShowDeleteButton` 属性设置为 `True`。
 
-[![在 GridView 中删除为启用支持](updating-and-deleting-existing-binary-data-vb/_static/image14.png)](updating-and-deleting-existing-binary-data-vb/_static/image13.png)
+[![支持在 GridView 中删除](updating-and-deleting-existing-binary-data-vb/_static/image14.png)](updating-and-deleting-existing-binary-data-vb/_static/image13.png)
 
-**图 5**:启用对 GridView 中删除的支持 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image15.png))
+**图 5**：启用在 GridView 中删除支持（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image15.png)）
 
-请花费片刻时间来测试删除功能。 没有间的外键`Products`表 s`CategoryID`并`Categories`表的`CategoryID`，因此如果尝试删除的任何前八个类别，你会收到外键约束冲突异常。 若要测试此功能扩展，添加新类别，提供的手册和图片。 图 6 所示我测试类别包括一个名为测试手册文件`Test.pdf`和测试图片。 图 7 显示了 GridView 后添加测试类别。
+请花点时间测试删除功能。 `Products` 表 s `CategoryID` 和 `Categories` 表 `CategoryID`之间存在外键，因此，如果您尝试删除前八个类别中的任何一种，您将获得外键约束冲突异常。 若要测试此功能，请添加一个新类别，同时提供小册子和图片。 图6所示的 "我的测试" 类别包括一个名为 `Test.pdf` 的测试小册子文件和一个测试图片。 图7显示了测试类别添加后的 GridView。
 
-[![添加带有手册和图像的测试类别](updating-and-deleting-existing-binary-data-vb/_static/image17.png)](updating-and-deleting-existing-binary-data-vb/_static/image16.png)
+[![使用小册子和图像添加测试类别](updating-and-deleting-existing-binary-data-vb/_static/image17.png)](updating-and-deleting-existing-binary-data-vb/_static/image16.png)
 
-**图 6**:添加一个带有手册和图像的测试类别 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image18.png))
+**图 6**：使用小册子和图像添加测试类别（[单击以查看完全尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image18.png)）
 
-[![插入后测试类别，它会显示在 GridView](updating-and-deleting-existing-binary-data-vb/_static/image20.png)](updating-and-deleting-existing-binary-data-vb/_static/image19.png)
+[插入测试类别后 ![，它将显示在 GridView 中](updating-and-deleting-existing-binary-data-vb/_static/image20.png)](updating-and-deleting-existing-binary-data-vb/_static/image19.png)
 
-**图 7**:插入后测试类别，它会显示在 GridView ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image21.png))
+**图 7**：插入测试类别后，它将显示在 GridView 中（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image21.png)）
 
-在 Visual Studio 中，刷新解决方案资源管理器。 现在应看到新的文件中`~/Brochures`文件夹中， `Test.pdf` （请参阅图 8）。
+在 Visual Studio 中，刷新解决方案资源管理器。 你现在应该会在 `~/Brochures` 文件夹中看到一个新文件，`Test.pdf` （请参阅图8）。
 
-接下来，单击测试类别行，从而导致要回发的页面中的删除链接并`CategoriesBLL`类的`DeleteCategory`方法来触发。 这将调用 DAL s`Delete`方法，使相应`DELETE`语句发送到数据库。 然后，重新将数据绑定到 GridView 和标记发送回客户端不再存在的测试类别。
+接下来，单击 "测试类别" 行中的 "删除" 链接，使页面回发并引发 `CategoriesBLL` 类 `DeleteCategory` 方法。 这将调用 DAL s `Delete` 方法，导致适当的 `DELETE` 语句发送到数据库。 然后，将数据重新绑定到 GridView，并将标记发送回该测试类别不再存在的客户端。
 
-删除工作流已成功删除从测试类别记录时`Categories`表中，未从 web 服务器的文件系统中删除其手册文件。 刷新解决方案资源管理器，然后，你将看到`Test.pdf`仍处于`~/Brochures`文件夹。
+尽管 "删除" 工作流从 `Categories` 表中成功删除了测试类别记录，但它并未从 web 服务器的文件系统中删除其手册文件。 刷新解决方案资源管理器，你将看到 `Test.pdf` 仍处于 `~/Brochures` 文件夹中。
 
-![未从 Web 服务器文件系统中删除 Test.pdf 文件](updating-and-deleting-existing-binary-data-vb/_static/image1.gif)
+![未从 Web 服务器的文件系统中删除 Test .pdf 文件](updating-and-deleting-existing-binary-data-vb/_static/image1.gif)
 
-**图 8**:`Test.pdf`未从 Web 服务器的文件系统中删除文件
+**图 8**：未从 Web 服务器的文件系统中删除 `Test.pdf` 文件
 
-## <a name="step-5-removing-the-deleted-category-s-brochure-file"></a>步骤 5：删除已删除的类别的手册文件
+## <a name="step-5-removing-the-deleted-category-s-brochure-file"></a>步骤5：删除已删除的类别小册子文件
 
-存储数据库外部的二进制数据的缺点之一是必须执行额外步骤以删除关联的数据库记录时清理这些文件。 GridView 和 ObjectDataSource 提供之前并执行删除命令后激发的事件。 我们实际上需要创建前和操作后事件的事件处理程序。 之前`Categories`删除记录，我们需要确定其 PDF 文件的路径，但我们不想删除 pdf 文件，然后在没有某种异常，并且不会删除该类别的情况下删除类别。
+将二进制数据存储在数据库外部的缺点之一是，在删除关联的数据库记录时，必须采取额外的步骤来清理这些文件。 GridView 和 ObjectDataSource 提供在执行 delete 命令之前和之后激发的事件。 我们实际上需要为操作前和操作后事件创建事件处理程序。 删除 `Categories` 记录之前，我们需要确定其 PDF 文件路径，但不需要在删除类别之前删除 PDF，以防出现一些异常并且未删除类别。
 
-GridView s [ `RowDeleting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx)触发调用 ObjectDataSource s delete 命令之前，尽管其[`RowDeleted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx)后会激发。 创建使用下面的代码这两个事件的事件处理程序：
+在调用 ObjectDataSource s delete 命令之前激发了 GridView [`RowDeleting` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx)，而其[`RowDeleted` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx)在之后引发。 使用以下代码创建这两个事件的事件处理程序：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample5.vb)]
 
-在中`RowDeleting`事件处理程序`CategoryID`的行在从 GridView s 获取正在删除`DataKeys`集合，可通过此事件处理程序中访问`e.Keys`集合。 下一步，`CategoriesBLL`类的`GetCategoryByCategoryID(categoryID)`调用以返回有关要删除的记录的信息。 如果返回`CategoriesDataRow`对象具有一个非`NULL``BrochurePath`值则存储在该页面变量`deletedCategorysPdfPath`，以便可以在删除该文件`RowDeleted`事件处理程序。
+在 `RowDeleting` 事件处理程序中，正在删除的行的 `CategoryID` 是从 GridView 的 `DataKeys` 集合中进行的，可以通过 `e.Keys` 集合在此事件处理程序中访问该集合。 接下来，调用 `CategoriesBLL` 类 `GetCategoryByCategoryID(categoryID)`，以返回有关要删除的记录的信息。 如果返回的 `CategoriesDataRow` 对象具有非`NULL``BrochurePath` 值，则它将存储在页变量中 `deletedCategorysPdfPath` 以便可以在 `RowDeleted` 事件处理程序中删除该文件。
 
 > [!NOTE]
-> 而不是检索`BrochurePath`详细信息`Categories`记录中删除`RowDeleting`事件处理程序，我们可以或者添加`BrochurePath`到 GridView 的`DataKeyNames`属性和访问记录的值通过`e.Keys`集合。 执行此操作将稍有增加的 GridView 的视图状态大小，但会减少所需的代码和将行程保存到数据库。
+> 不是检索在 `RowDeleting` 事件处理程序中删除的 `Categories` 记录的 `BrochurePath` 详细信息，还可以将 `BrochurePath` 添加到 GridView s `DataKeyNames` 属性，并通过 `e.Keys` 集合访问记录 s 值。 这样做会稍微增加 GridView 的视图状态大小，但会减少所需的代码量，并保存到数据库的行程。
 
-ObjectDataSource 调用 s 基础 delete 命令，GridView s 后`RowDeleted`触发事件处理程序。 如果不没有删除数据中的任何异常，并且没有为`deletedCategorysPdfPath`，则从文件系统删除 pdf 文件。 请注意，不需要此额外代码以清理其图片与关联的类别 s 二进制数据。 该 s 由于图片数据存储直接在数据库中，因此删除`Categories`行也会删除该类别的图片数据。
+调用 ObjectDataSource s 基础 delete 命令后，将激发 GridView s `RowDeleted` 事件处理程序。 如果删除数据时没有任何例外，并且有 `deletedCategorysPdfPath`的值，则会从文件系统中删除 PDF。 请注意，清除与图片关联的类别的二进制数据不需要此额外代码。 这是因为图片数据直接存储在数据库中，因此删除 `Categories` 行将同时删除该类别的图片数据。
 
-添加后两个事件处理程序，再次运行此测试用例。 当删除该类别，也会删除其关联的 PDF。
+添加这两个事件处理程序后，再次运行此测试用例。 删除类别时，也会删除其关联的 PDF。
 
-更新现有的记录相关联的 s 二进制数据提供了一些有趣的挑战。 本教程的其余部分深入介绍将更新功能添加到的手册和图片。 步骤 6 探讨了步骤 7 所示在更新该图片的同时更新手册信息的方法。
+更新现有记录的关联二进制数据可提供一些有趣的挑战。 本教程的其余部分深入研究了将更新功能添加到小册子和图片中。 步骤6探讨了在步骤7查看更新图片时更新手册信息的方法。
 
-## <a name="step-6-updating-a-category-s-brochure"></a>步骤 6：更新类别的手册
+## <a name="step-6-updating-a-category-s-brochure"></a>步骤6：更新类别手册
 
-如所述在教程中概述的插入、 更新和删除数据，GridView 提供了内置行级编辑支持，如果正确配置其基础数据源可由一个复选框的计时周期实现。 目前， `CategoriesDataSource` ObjectDataSource 尚未配置以包括更新的支持，因此让 s 添加，在。
+如关于插入、更新和删除数据的概述教程中所述，GridView 提供内置行级编辑支持，如果正确配置了其基础数据源，则可以通过 checkbox 的勾选来实现这些支持。 目前，`CategoriesDataSource` ObjectDataSource 尚未配置为包含更新支持，因此让我们将其添加到中。
 
-单击 ObjectDataSource 的向导中的配置数据源链接并继续执行第二个步骤。 由于`DataObjectMethodAttribute`中使用`CategoriesBLL`，更新下拉列表应自动填充了`UpdateCategory`接受四个输入参数的重载 (所有列，但`Picture`)。 此更改，以便它使用带有五个参数的重载。
+单击 "ObjectDataSource" 向导中的 "配置数据源" 链接，然后转到第二步。 由于在 `CategoriesBLL`中使用的 `DataObjectMethodAttribute`，更新下拉列表应自动使用接受四个输入参数的 `UpdateCategory` 重载（对于所有列，但 `Picture`）进行填充。 更改此参数，使其使用具有五个参数的重载。
 
-[![配置对象数据源使用 UpdateCategory 包含的方法的参数的图片](updating-and-deleting-existing-binary-data-vb/_static/image23.png)](updating-and-deleting-existing-binary-data-vb/_static/image22.png)
+[![将 ObjectDataSource 配置为使用包含图片参数的 UpdateCategory 方法](updating-and-deleting-existing-binary-data-vb/_static/image23.png)](updating-and-deleting-existing-binary-data-vb/_static/image22.png)
 
-**图 9**:配置为使用 ObjectDataSource`UpdateCategory`包括的参数的方法`Picture`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image24.png))
+**图 9**：将 ObjectDataSource 配置为使用包括 `Picture` 参数的 `UpdateCategory` 方法（[单击查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image24.png)）
 
-ObjectDataSource 现在将包括的值及其`UpdateMethod`属性以及对应`UpdateParameter`s。 步骤 4 中所述，Visual Studio 将设置 ObjectDataSource s`OldValuesParameterFormatString`属性设置为`original_{0}`时使用配置数据源向导。 这将导致问题的更新和删除方法调用。 因此，完全清除此属性或其重置为默认情况下， `{0}`。
+ObjectDataSource 现在将包含其 `UpdateMethod` 属性的值以及对应的 `UpdateParameter`。 如步骤4中所述，在使用 "配置数据源" 向导时，Visual Studio 将 `OldValuesParameterFormatString` 属性设置为 `original_{0}`。 这将导致更新和删除方法调用出现问题。 因此，请完全清除此属性，或将其重置为默认 `{0}`。
 
-完成向导并修复后`OldValuesParameterFormatString`，ObjectDataSource s 声明性标记应如下所示：
+完成向导并修复 `OldValuesParameterFormatString`后，ObjectDataSource 的声明性标记应如下所示：
 
 [!code-aspx[Main](updating-and-deleting-existing-binary-data-vb/samples/sample6.aspx)]
 
-若要打开 GridView s 内置编辑功能，请从 GridView s 智能标记启用编辑选项。 这会设置 CommandField s`ShowEditButton`属性设置为`True`，从而导致添加了编辑按钮 （和所编辑的行的更新和取消按钮）。
+若要启用 GridView s 内置编辑功能，请从 GridView s 智能标记中选中 "启用编辑" 选项。 这会将 CommandField `ShowEditButton` 属性设置为 `True`，导致添加 "编辑" 按钮（并为正在编辑的行添加 "更新" 和 "取消" 按钮）。
 
-[![配置为支持编辑 GridView](updating-and-deleting-existing-binary-data-vb/_static/image26.png)](updating-and-deleting-existing-binary-data-vb/_static/image25.png)
+[![配置 GridView 以支持编辑](updating-and-deleting-existing-binary-data-vb/_static/image26.png)](updating-and-deleting-existing-binary-data-vb/_static/image25.png)
 
-**图 10**:配置为支持编辑 GridView ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image27.png))
+**图 10**：配置 GridView 以支持编辑（[单击查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image27.png)）
 
-访问通过浏览器页面并单击其中一个行的编辑按钮。 `CategoryName`和`Description`BoundFields 呈现为文本框。 `BrochurePath` TemplateField 缺少`EditItemTemplate`，因此它将继续显示其`ItemTemplate`小册子中的链接。 `Picture` ImageField 呈现为文本框的`Text`属性分配值为 ImageField s`DataImageUrlField`值，在这种情况下`CategoryID`。
+通过浏览器访问页面，然后单击 "编辑" 按钮之一。 `CategoryName` 和 `Description` BoundFields 以文本框的形式呈现。 `BrochurePath` TemplateField 缺少 `EditItemTemplate`，因此它将继续显示其 `ItemTemplate` 到小册子的链接。 `Picture` ImageField 呈现为一个文本框，其 `Text` 属性分配有 `DataImageUrlField` 值的值（在本例中为 `CategoryID`）。
 
-[![GridView 缺少 BrochurePath 编辑界面](updating-and-deleting-existing-binary-data-vb/_static/image29.png)](updating-and-deleting-existing-binary-data-vb/_static/image28.png)
+[![GridView 缺少用于 BrochurePath 的编辑界面](updating-and-deleting-existing-binary-data-vb/_static/image29.png)](updating-and-deleting-existing-binary-data-vb/_static/image28.png)
 
-**图 11**:GridView 缺少的编辑界面`BrochurePath`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image30.png))
+**图 11**： GridView 缺少 `BrochurePath` 的编辑界面（[单击查看全尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image30.png)）
 
-## <a name="customizing-thebrochurepaths-editing-interface"></a>自定义`BrochurePath`s 编辑接口
+## <a name="customizing-thebrochurepaths-editing-interface"></a>自定义编辑界面`BrochurePath`
 
-我们需要创建的用于编辑界面`BrochurePath`TemplateField，允许用户为：
+需要为 `BrochurePath` TemplateField 创建一个编辑界面，该界面允许用户执行以下操作之一：
 
-- 将保留为类别的手册-，
-- 通过上传新的手册，更新分类的手册或
-- （在类别不再具有关联的手册的情况下） 中完全删除分类的手册。
+- 按原样保留类别小册子，
+- 通过上传新的小册子或
+- 完全删除类别的小册子（如果类别不再有关联的小册子）。
 
-我们还需要更新`Picture`ImageField s 编辑界面，但我们会谈到这在步骤 7 中。
+我们还需要更新 `Picture` ImageField s 编辑界面，但我们将在步骤7中介绍这一点。
 
-从 GridView s 智能标记，单击编辑模板链接并选择`BrochurePath`TemplateField 的`EditItemTemplate`从下拉列表。 将 RadioButtonList Web 控件添加到此模板中，设置其`ID`属性设置为`BrochureOptions`并将其`AutoPostBack`属性设置为`True`。 从属性窗口中，单击中的椭圆`Items`属性，这将显示`ListItem`集合编辑器。 添加具有以下三个选项`Value`的 1、 2 和 3，分别：
+从 GridView s 智能标记中，单击 "编辑模板" 链接，然后从下拉列表中选择 `BrochurePath` TemplateField s `EditItemTemplate`。 将 RadioButtonList Web 控件添加到此模板，将其 `ID` 属性设置为 "`BrochureOptions`"，并将其 `AutoPostBack` 属性设置为 "`True`"。 在属性窗口中，单击 `Items` 属性中的省略号，这将显示 "`ListItem` 集合编辑器"。 分别添加以下三个选项，分别 `Value` s 1、2和3：
 
-- 使用当前的手册
-- 删除当前手册
-- 上传新的手册
+- 使用当前手册
+- 删除当前小册子
+- 上传新小册子
 
-设置第一个`ListItem`s`Selected`属性设置为`True`。
+将第一个 `ListItem` `Selected` 属性设置为 "`True`"。
 
-![将三个 Listitem 添加到 RadioButtonList](updating-and-deleting-existing-binary-data-vb/_static/image2.gif)
+![将三个 ListItems 添加到 RadioButtonList](updating-and-deleting-existing-binary-data-vb/_static/image2.gif)
 
-**图 12**:添加三个`ListItem`到 RadioButtonList
+**图 12**：向 RadioButtonList 添加三个 `ListItem`
 
-在 RadioButtonList，下面添加一个名为 FileUpload 控件`BrochureUpload`。 设置其`Visible`属性设置为`False`。
+在 RadioButtonList 下，添加名为 `BrochureUpload`的 FileUpload 控件。 将其 `Visible` 属性设置为 `False`。
 
 [![将 RadioButtonList 和 FileUpload 控件添加到 EditItemTemplate](updating-and-deleting-existing-binary-data-vb/_static/image32.png)](updating-and-deleting-existing-binary-data-vb/_static/image31.png)
 
-**图 13**:添加 FileUpload 控件和 RadioButtonList `EditItemTemplate` ([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image33.png))
+**图 13**：将 RadioButtonList 和 FileUpload 控件添加到 `EditItemTemplate` （[单击查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image33.png)）
 
-此 RadioButtonList 提供用户的三个选项。 其理念是仅当选择最后一个选项上, 传新小册子中，将显示 FileUpload 控件。 若要实现此目的，创建事件处理程序的 RadioButtonList s`SelectedIndexChanged`事件，并添加以下代码：
+此 RadioButtonList 为用户提供三个选项。 其思想是，只有在选择了最后一个选项 "上传新的小册子" 时才会显示 FileUpload 控件。 若要完成此操作，请为 RadioButtonList s `SelectedIndexChanged` 事件创建事件处理程序，并添加以下代码：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample7.vb)]
 
-由于 RadioButtonList 和 FileUpload 控件模板中，我们必须编写一些代码以编程方式访问这些控件。 `SelectedIndexChanged`事件处理程序传递的引用中 RadioButtonList`sender`输入的参数。 若要获取 FileUpload 控件，我们需要得到 RadioButtonList 的父控件，并且使用`FindControl("controlID")`从那里的方法。 FileUpload RadioButtonList 和 FileUpload 控件的引用后，控制 s`Visible`属性设置为`True`仅当 RadioButtonList s`SelectedValue`等于 3，这是`Value`有关上传新的手册`ListItem`.
+由于 RadioButtonList 和 FileUpload 控件在模板中，因此我们必须编写一些代码以编程方式访问这些控件。 `SelectedIndexChanged` 事件处理程序在 `sender` 输入参数中传递了 RadioButtonList 的引用。 若要获取 FileUpload 控件，需要获取 RadioButtonList 的父控件，并在其中使用 `FindControl("controlID")` 方法。 一旦我们引用了 RadioButtonList 和 FileUpload 控件，FileUpload control s `Visible` 属性将设置为仅当 RadioButtonList `SelectedValue` 等于3时才 `True`，这是上传新手册 `ListItem`的 `Value`。
 
-利用此代码，请花费片刻时间来测试编辑界面。 单击编辑按钮的行。 最初，应选择当前使用的手册选项。 更改所选的索引会导致回发。 如果选择第三个选项，则显示 FileUpload 控件，否则其处于隐藏状态。 图 14 显示了编辑界面，首先单击编辑按钮; 时图 15 显示了界面后选择上传新手册选项。
+使用此代码后，请花点时间测试编辑界面。 单击行的 "编辑" 按钮。 最初，应选择 "使用当前小册子" 选项。 更改所选索引会导致回发。 如果选择第三个选项，则会显示 FileUpload 控件，否则将隐藏该控件。 图14显示第一次单击 "编辑" 按钮时的编辑界面;图15显示了 "上传新的小册子" 选项之后的界面。
 
-[![最初，使用当前小册子中选择选项](updating-and-deleting-existing-binary-data-vb/_static/image35.png)](updating-and-deleting-existing-binary-data-vb/_static/image34.png)
+[![，请先选择 "使用当前小册子" 选项](updating-and-deleting-existing-binary-data-vb/_static/image35.png)](updating-and-deleting-existing-binary-data-vb/_static/image34.png)
 
-**图 14**:最初，使用当前小册子中选择选项 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image36.png))
+**图 14**：最初选择了 "使用当前小册子" 选项（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image36.png)）
 
-[![选择此选项可以显示在上传新小册子 FileUpload 控件](updating-and-deleting-existing-binary-data-vb/_static/image38.png)](updating-and-deleting-existing-binary-data-vb/_static/image37.png)
+[![选择 "上传新小册子" 选项会显示 FileUpload 控件](updating-and-deleting-existing-binary-data-vb/_static/image38.png)](updating-and-deleting-existing-binary-data-vb/_static/image37.png)
 
-**图 15**:选择此选项可以显示在上传新小册子 FileUpload 控件 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image39.png))
+**图 15**：选择 "上传新小册子" 选项会显示 FileUpload 控件（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image39.png)）
 
-## <a name="saving-the-brochure-file-and-updating-thebrochurepathcolumn"></a>正在保存手册文件和更新`BrochurePath`列
+## <a name="saving-the-brochure-file-and-updating-thebrochurepathcolumn"></a>保存小册子文件并更新`BrochurePath`列
 
-单击 GridView s 更新按钮时，其`RowUpdating`事件触发。 ObjectDataSource 调用 s 更新命令，然后 GridView 的`RowUpdated`事件触发。 像与删除的工作流，我们需要为这两种事件创建事件处理程序。 在中`RowUpdating`事件处理程序，我们需要确定要执行的操作根据`SelectedValue`的`BrochureOptions`RadioButtonList:
+单击 "GridView s 更新" 按钮时，将激发其 `RowUpdating` 事件。 调用 ObjectDataSource s update 命令，然后激发 GridView s `RowUpdated` 事件。 与删除工作流一样，我们需要为这两个事件创建事件处理程序。 在 `RowUpdating` 事件处理程序中，我们需要根据 `BrochureOptions` RadioButtonList 的 `SelectedValue` 确定要执行的操作：
 
-- 如果`SelectedValue`为 1，我们想要继续使用相同`BrochurePath`设置。 因此，我们需要设置 ObjectDataSource s`brochurePath`到现有的参数`BrochurePath`要更新的记录的值。 ObjectDataSource s`brochurePath`参数可以设置使用`e.NewValues["brochurePath"] = value`。
-- 如果`SelectedValue`为 2，则我们想要设置的记录 s`BrochurePath`值设为`NULL`。 这可以通过设置 ObjectDataSource s 来实现`brochurePath`参数`Nothing`，这会导致数据库`NULL`中正在使用`UPDATE`语句。 如果没有要删除的现有手册文件，我们需要删除现有文件。 但是，我们只想要执行此操作，如果在更新完成并且不会引发异常。
-- 如果`SelectedValue`为 3，则我们想要确保用户已经上传的 PDF 文件然后将其保存到文件系统并更新记录的`BrochurePath`列的值。 此外，如果要替换的现有手册文件，我们需要删除以前的文件。 但是，我们只想要执行此操作，如果在更新完成并且不会引发异常。
+- 如果 `SelectedValue` 为1，则需要继续使用相同的 `BrochurePath` 设置。 因此，需要将 ObjectDataSource `brochurePath` 参数设置为要更新的记录的现有 `BrochurePath` 值。 可以使用 `e.NewValues["brochurePath"] = value`设置 `brochurePath` 的 ObjectDataSource 参数。
+- 如果 `SelectedValue` 为2，则需要将记录的 `BrochurePath` 值设置为 `NULL`。 这可以通过将 ObjectDataSource `brochurePath` 参数设置为 `Nothing`来实现，这将导致 `UPDATE` 语句中使用数据库 `NULL`。 如果正在删除现有的小册子文件，则需要删除现有文件。 但是，如果更新完成时不引发异常，我们只需要执行此操作。
+- 如果 `SelectedValue` 为3，则我们需要确保用户已上传 PDF 文件，然后将其保存到文件系统并更新记录的 `BrochurePath` 列值。 此外，如果存在要替换的现有小册子文件，则需要删除之前的文件。 但是，如果更新完成时不引发异常，我们只需要执行此操作。
 
-当完成所需的步骤 RadioButtonList s`SelectedValue`是 3 个几乎完全相同，到使用的 DetailsView 的`ItemInserting`事件处理程序。 在 DetailsView 控件中添加之间添加新类别记录时执行此事件处理程序[前一篇教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)。 因此，它理应我们可以重构为单独的方法扩展此功能。 具体而言，我移出的常见功能为两个方法：
+RadioButtonList s `SelectedValue` 为3时需要完成的步骤与 DetailsView s `ItemInserting` 事件处理程序使用的步骤完全相同。 当从我们在[上一教程](including-a-file-upload-option-when-adding-a-new-record-vb.md)中添加的 DetailsView 控件添加新的类别记录时，将执行此事件处理程序。 因此，它 behooves 将此功能重构为单独的方法。 具体而言，我将常用功能移到了两个方法中：
 
-- `ProcessBrochureUpload(FileUpload, out bool)` FileUpload 控件实例和一个输出布尔值，指定是否在删除或编辑操作应继续执行或不应由于一些验证错误将其取消，则接受作为输入。 此方法返回的已保存文件的路径或`null`如果没有文件已保存。
-- `DeleteRememberedBrochurePath` 删除指定的页面变量中路径的文件`deletedCategorysPdfPath`如果`deletedCategorysPdfPath`不是`null`。
+- `ProcessBrochureUpload(FileUpload, out bool)` 接受 FileUpload 控件实例作为输入，并使用输出布尔值指定是否应继续执行删除或编辑操作，或者是否应因某些验证错误而取消该操作。 如果未保存文件，此方法将返回保存的文件的路径或 `null`。
+- 如果未 `null``deletedCategorysPdfPath`，`DeleteRememberedBrochurePath` 会删除页面变量中路径指定的文件 `deletedCategorysPdfPath`。
 
-这两种方法的代码如下所示。 请注意之间的相似性`ProcessBrochureUpload`和 DetailsView 的`ItemInserting`上一教程中的事件处理程序。 在本教程中，我已更新 DetailsView 的事件处理程序以使用这些新方法。 下载与本教程，若要查看对 DetailsView 的事件处理程序的修改关联的代码。
+这两个方法的代码如下所示。 请注意上一教程中 `ProcessBrochureUpload` 与 DetailsView s `ItemInserting` 事件处理程序之间的相似性。 在本教程中，我已更新 DetailsView 的事件处理程序，以使用这些新方法。 下载与本教程关联的代码，查看 DetailsView 事件处理程序的修改情况。
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample8.vb)]
 
-GridView s`RowUpdating`并`RowUpdated`事件处理程序用`ProcessBrochureUpload`和`DeleteRememberedBrochurePath`方法，如以下代码所示：
+GridView `RowUpdating` 和 `RowUpdated` 事件处理程序使用 `ProcessBrochureUpload` 和 `DeleteRememberedBrochurePath` 方法，如以下代码所示：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample9.vb)]
 
-请注意如何`RowUpdating`事件处理程序使用一系列条件语句以执行相应的操作根据`BrochureOptions`RadioButtonList 的`SelectedValue`属性值。
+请注意，`RowUpdating` 事件处理程序如何使用一系列条件语句基于 `BrochureOptions` RadioButtonList s `SelectedValue` 属性值执行适当的操作。
 
-使用此代码，可以编辑类别，并让它使用其当前手册、 不使用任何手册或上传新。 请继续并试用。在中设置断点`RowUpdating`和`RowUpdated`事件处理程序，了解工作流。
+使用此代码后，可以编辑类别，并使其使用当前小册子，不使用小册子，或上传新的手册。 继续尝试。在 `RowUpdating` 中设置断点，并 `RowUpdated` 事件处理程序获取工作流。
 
-## <a name="step-7-uploading-a-new-picture"></a>步骤 7：上传新的图片
+## <a name="step-7-uploading-a-new-picture"></a>步骤7：上传新图片
 
-`Picture` ImageField s 编辑接口呈现为文本框中的值填充其`DataImageUrlField`属性。 在编辑工作流，GridView 将参数传递给参数名称为 s ObjectDataSource ImageField s 的值`DataImageUrlField`属性和参数 s 值的文本框中编辑界面中输入的值。 图像另存为文件系统上的文件时，此行为是适合和`DataImageUrlField`包含图像的完整 URL。 使用这种情况下，编辑界面在文本框中，用户可以更改并保存回数据库中显示的图像的 URL。 当然，此默认接口不允许用户上传新映像，但它确实允许它们将从当前值的图像的 URL 更改为另一个。 对于本教程，但是，编辑界面 ImageField 的默认不满足需要因为`Picture`直接在数据库中存储二进制数据并`DataImageUrlField`属性包含只`CategoryID`。
+`Picture` ImageField s 编辑界面呈现为一个文本框，其中填充了其 `DataImageUrlField` 属性中的值。 在编辑工作流期间，GridView 会将参数传递给 ObjectDataSource，参数为 ImageField s `DataImageUrlField` 属性的值，而参数的值为输入到编辑界面的文本框中的值。 此行为适用于将图像保存为文件系统上的文件并且 `DataImageUrlField` 包含映像的完整 URL 的情况。 在这种情况下，编辑界面会在文本框中显示图像 s URL，用户可以更改该 URL 并将其保存回数据库。 当然，此默认接口不允许用户上传新图像，但它允许他们将图像的 URL 从当前值更改为另一个值。 但对于本教程而言，ImageField s 默认编辑接口无法满足要求，因为 `Picture` 二进制数据直接存储在数据库中，并且 `DataImageUrlField` 属性仅包含 `CategoryID`。
 
-若要更好地了解发生在我们的教程用户编辑 ImageField 具有的行时，请考虑下面的示例： 用户编辑具有的行`CategoryID`10，从而导致`Picture`ImageField 呈现为文本框值为 10。 假设用户在此文本框中的值更改为 50，并单击更新按钮。 产生的回发和 GridView 最初创建一个名为参数`CategoryID`值 50。 但是，GridView 发送此参数之前 (和`CategoryName`并`Description`参数)，它将从值中添加`DataKeys`集合。 因此，它将覆盖`CategoryID`参数与当前行 s 基础`CategoryID`值 10。 简单地说，编辑界面 ImageField s 产生任何影响编辑工作流上为本教程因为名称 ImageField s`DataImageUrlField`属性和网格的`DataKey`值是否相同。
+为了更好地了解当用户使用 ImageField 编辑行时在本教程中所发生的情况，请考虑以下示例：用户使用 `CategoryID` 10 编辑行，导致 `Picture` ImageField 呈现为带有值10的文本框。 假设用户将此文本框中的值更改为50，然后单击 "更新" 按钮。 发生回发，GridView 最初使用值50创建名为 `CategoryID` 的参数。 但是，在 GridView 发送此参数（以及 `CategoryName` 和 `Description` 参数）之前，它将添加到 `DataKeys` 集合的值中。 因此，它会用当前行的基础 `CategoryID` 值10覆盖 `CategoryID` 参数。 简而言之，ImageField s 编辑界面对此教程的编辑工作流不会有任何影响，因为 ImageField `DataImageUrlField` 属性的名称和网格 `DataKey` 值是相同的。
 
-尽管 ImageField 使得变得更容易地显示基于数据库数据的映像，我们不想要提供一个文本框中编辑界面。 相反，我们想要提供 FileUpload 控件，最终用户可以用于更改类别的图片。 与不同`BrochurePath`值，这些教程中我们已决定要求每个类别，必须具有一个图片。 因此，我们不需要允许用户指示，没有任何关联的图片用户可能会将.vhd 文件的新图片或保留当前的图片作为-是。
+尽管 ImageField 可让你轻松地根据数据库数据显示图像，但我们并不想在编辑界面中提供 textbox。 相反，我们希望提供一个 FileUpload 控件，最终用户可以使用该控件更改类别的图片。 与 `BrochurePath` 值不同，对于这些教程，我们决定要求每个类别都有一张图片。 因此，我们不需要让用户指出没有关联的图片。用户可以上载新图片，也可以原样保留当前图片。
 
-若要自定义 ImageField s 编辑界面，我们需要将其转换为 TemplateField。 从 GridView s 智能标记，单击编辑列链接选择 ImageField，并单击转换此字段转换为 TemplateField 链接。
+若要自定义 ImageField s 编辑界面，需要将其转换为 TemplateField。 从 GridView s 智能标记中，单击 "编辑列" 链接，选择 "ImageField"，然后单击 "将此字段转换为 TemplateField" 链接。
 
-![ImageField 转换为 TemplateField](updating-and-deleting-existing-binary-data-vb/_static/image3.gif)
+![将 ImageField 转换为 TemplateField](updating-and-deleting-existing-binary-data-vb/_static/image3.gif)
 
-**图 16**:ImageField 转换为 TemplateField
+**图 16**：将 ImageField 转换为 TemplateField
 
-ImageField 转换为 TemplateField 以这种方式生成 TemplateField 与两个模板。 如下面的声明性语法所示，`ItemTemplate`包含图像 Web 控件`ImageUrl`属性分配使用数据绑定语法基于 ImageField s`DataImageUrlField`和`DataImageUrlFormatString`属性。 `EditItemTemplate`包含一个文本框其`Text`属性绑定到指定的值`DataImageUrlField`属性。
+以这种方式将 ImageField 转换为 TemplateField 会生成包含两个模板的 TemplateField。 如下面的声明性语法所示，`ItemTemplate` 包含一个图像 Web 控件，该控件的 `ImageUrl` 属性基于 ImageField s `DataImageUrlField` 和 `DataImageUrlFormatString` 属性使用数据绑定语法分配。 `EditItemTemplate` 包含一个文本框，其 `Text` 属性绑定到由 `DataImageUrlField` 属性指定的值。
 
 [!code-aspx[Main](updating-and-deleting-existing-binary-data-vb/samples/sample10.aspx)]
 
-我们需要更新`EditItemTemplate`使用 FileUpload 控件。 从 GridView s 智能标记单击编辑模板链接，然后选择`Picture`TemplateField 的`EditItemTemplate`从下拉列表。 在模板中应看到此项中删除一个文本框。 接下来，将 FileUpload 控件从工具箱拖到该模板后，设置其`ID`到`PictureUpload`。 此外添加文本以更改类别的图片，请指定新图片。 若要保留相同类别的图片，字段留空模板。
+需要将 `EditItemTemplate` 更新为使用 FileUpload 控件。 在 GridView s 智能标记中，单击 "编辑模板" 链接，然后从下拉列表中选择 `Picture` TemplateField s `EditItemTemplate`。 在模板中，应会看到一个文本框，将其删除。 接下来，将 "FileUpload" 控件从 "工具箱" 拖放到模板中，将其 `ID` 设置为 "`PictureUpload`"。 同时添加文本以更改类别的图片，指定新图片。 若要使类别的图片保持不变，请将该字段保留为空。
 
-[![向 EditItemTemplate 添加 FileUpload 控件](updating-and-deleting-existing-binary-data-vb/_static/image41.png)](updating-and-deleting-existing-binary-data-vb/_static/image40.png)
+[![将 FileUpload 控件添加到 EditItemTemplate](updating-and-deleting-existing-binary-data-vb/_static/image41.png)](updating-and-deleting-existing-binary-data-vb/_static/image40.png)
 
-**图 17**:添加 FileUpload 控件与`EditItemTemplate`([单击以查看实际尺寸的图像](updating-and-deleting-existing-binary-data-vb/_static/image42.png))
+**图 17**：将 FileUpload 控件添加到 `EditItemTemplate` （[单击查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image42.png)）
 
-自定义后编辑界面，在浏览器中查看进度。 查看时行在只读模式下，类别的图像显示之前，但单击编辑按钮将图片列呈现为与 FileUpload 控件的文本。
+自定义编辑界面后，在浏览器中查看进度。 在只读模式下查看行时，类别的图像将显示在之前，但单击 "编辑" 按钮会将图片列呈现为带有 FileUpload 控件的文本。
 
-[![编辑界面包括 FileUpload 控件](updating-and-deleting-existing-binary-data-vb/_static/image44.png)](updating-and-deleting-existing-binary-data-vb/_static/image43.png)
+[![编辑界面包含 FileUpload 控件](updating-and-deleting-existing-binary-data-vb/_static/image44.png)](updating-and-deleting-existing-binary-data-vb/_static/image43.png)
 
-**图 18**:编辑界面包括 FileUpload 控件 ([单击此项可查看原尺寸图像](updating-and-deleting-existing-binary-data-vb/_static/image45.png))
+**图 18**：编辑界面包含一个 FileUpload 控件（[单击以查看完全大小的图像](updating-and-deleting-existing-binary-data-vb/_static/image45.png)）
 
-回想一下对象数据源配置为调用`CategoriesBLL`类 s`UpdateCategory`接受作为输入的图片作为二进制数据的方法`Byte`数组。 此数组是否`Nothing`，但是，备用`UpdateCategory`调用重载，哪些问题`UPDATE`不会修改的 SQL 语句`Picture`列，从而使类别 s 当前图片不变。 因此，在 GridView s`RowUpdating`事件处理程序，我们需要以编程方式引用`PictureUpload`FileUpload 控件并确定文件已上传。 如果其中一个未上载，那么我们要做*不*想要为指定值`picture`参数。 另一方面，如果文件已上传中`PictureUpload`FileUpload 控件中，我们想要确保它是一个 JPG 文件。 如果是，则我们可以将其二进制内容发送到通过 ObjectDataSource`picture`参数。
+请记住，ObjectDataSource 配置为调用 `CategoriesBLL` 类的 `UpdateCategory` 方法，该方法接受将图片的二进制数据作为 `Byte` 数组的输入作为输入。 但是，如果此数组 `Nothing`，则将调用备用 `UpdateCategory` 重载，这会发出不会修改 `Picture` 列的 `UPDATE` SQL 语句，从而使当前类别的当前图片保持不变。 因此，在 GridView `RowUpdating` 事件处理程序中，我们需要以编程方式引用 `PictureUpload` FileUpload 控件并确定是否已上传文件。 如果未上传一项，则*不*希望为 `picture` 参数指定值。 另一方面，如果在 `PictureUpload` FileUpload 控件中上传了文件，则需要确保它是 JPG 文件。 如果是，则可以通过 `picture` 参数将其二进制内容发送到 ObjectDataSource。
 
-像在步骤 6 中使用的代码，与很多已此处所需的代码存在于 DetailsView 的`ItemInserting`事件处理程序。 因此，我已将常见功能重构为新方法`ValidPictureUpload`，并更新`ItemInserting`事件处理程序以使用此方法。
+与步骤6中使用的代码一样，此处所需的很多代码已经存在于 DetailsView s `ItemInserting` 事件处理程序中。 因此，我已将公共功能重构为新方法 `ValidPictureUpload`，并将 `ItemInserting` 事件处理程序更新为使用此方法。
 
-将以下代码添加到 GridView 的开头`RowUpdating`事件处理程序。 它非常重要的是此代码将放在之前的代码，因为我们不会将手册文件保存想要保存到 web 服务器的文件系统的手册，如果无效的图片文件上传。
+将以下代码添加到 GridView `RowUpdating` 事件处理程序的开头。 这一点很重要，因为如果上传了无效的图片文件，我们不希望将小册子保存到 web 服务器的文件系统，但在保存小册子文件的代码之前，这一点很重要。
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample11.vb)]
 
-`ValidPictureUpload(FileUpload)`方法使用 FileUpload 控件作为其唯一的输入参数中，并检查以确保上传的文件是 JPG s 上传的文件扩展名; 如果上传图片文件，则仅调用。 如果不上载任何文件，则图片参数未设置属性，并因此使用其默认值为`Nothing`。 如果已上传图片并`ValidPictureUpload`返回`True`，则`picture`参数分配的二进制数据的上传的映像; 如果该方法返回`False`、 已取消更新工作流和事件处理程序已退出。
+`ValidPictureUpload(FileUpload)` 方法采用 FileUpload 控件作为其唯一的输入参数，并检查上传的文件的扩展名，以确保上传的文件是 JPG;仅当上传图片文件时，才会调用此方法。 如果未上传任何文件，则不会设置 picture 参数，因此将使用其默认值 `Nothing`。 如果上传了图片并且 `ValidPictureUpload` 返回 `True`，则会为 `picture` 参数分配已上传图像的二进制数据;如果该方法返回 `False`，则将取消更新工作流并退出事件处理程序。
 
-`ValidPictureUpload(FileUpload)`方法代码，从 DetailsView s 重构`ItemInserting`事件处理程序遵循：
+从 DetailsView s `ItemInserting` 事件处理程序重构的 `ValidPictureUpload(FileUpload)` 方法代码如下：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample12.vb)]
 
-## <a name="step-8-replacing-the-original-categories-pictures-with-jpgs"></a>步骤 8：使用 Jpg 替换原始类别图片
+## <a name="step-8-replacing-the-original-categories-pictures-with-jpgs"></a>步骤8：将原始类别的图片替换为 JPGs
 
-请记住，原始的八个类别图片包装在 OLE 标头的位图文件。 现在，我们已添加的功能，若要编辑现有记录的图片，请花费片刻时间使用 Jpg 替换这些位图。 如果你想要继续使用当前类别图片，可以直接将它们转换为 Jpg，通过执行以下步骤：
+回忆一下，最初的八个类别图片是包装在 OLE 标头中的位图文件。 现在，我们已添加了编辑现有记录图片的功能，请花点时间将这些位图替换为 JPGs。 如果要继续使用当前类别的图片，可以通过执行以下步骤将其转换为 JPGs：
 
-1. 将位图图像保存到您的硬盘。 请访问`UpdatingAndDeleting.aspx`在浏览器中和前八个类别的每个页上，右键单击该图像，选择要保存此图片。
-2. 在所选图像编辑器中打开该映像。 可以使用 Microsoft 画图，例如。
+1. 将位图图像保存到硬盘驱动器。 访问浏览器中的 "`UpdatingAndDeleting.aspx`" 页，为前八个类别中的每一个，右键单击图像并选择保存图片。
+2. 在所选的图像编辑器中打开图像。 例如，可以使用 Microsoft 画图。
 3. 将位图另存为 JPG 图像。
-4. 更新通过使用 JPG 文件的编辑界面的类别的图片。
+4. 使用 JPG 文件通过编辑界面更新类别的图片。
 
-后编辑某个类别并上传 JPG 图像，图像将不会呈现在浏览器中因为`DisplayCategoryPicture.aspx`页去除的前八个类别的图片中的第一个 78 字节。 通过删除 OLE 标头剥离执行的代码来解决此问题。 执行此操作，操作之后`DisplayCategoryPicture.aspx``Page_Load`事件处理程序应具有只会将以下代码：
+编辑类别并上传 JPG 图像后，图像将不会在浏览器中呈现，因为 `DisplayCategoryPicture.aspx` 页面会从前8个类别的图片中去除前78个字节。 通过删除执行 OLE 标头去除的代码来解决此问题。 完成此操作后，`DisplayCategoryPicture.aspx``Page_Load` 事件处理程序应该只包含以下代码：
 
 [!code-vb[Main](updating-and-deleting-existing-binary-data-vb/samples/sample13.vb)]
 
 > [!NOTE]
-> `UpdatingAndDeleting.aspx`页 s 插入和编辑接口可以使用多做一些工作。 `CategoryName`和`Description`BoundFields DetailsView 和 GridView 中的应转换为 Templatefield。 由于`CategoryName`不允许`NULL`值，应添加一个 RequiredFieldValidator。 和`Description`文本框可能应转换为多行文本框。 我为您作为练习保留这些完成收尾工作了。
+> 插入和编辑接口的 `UpdatingAndDeleting.aspx` 页可以使用更多的工作。 DetailsView 和 GridView 中的 `CategoryName` 和 `Description` BoundFields 应转换为 Templatefield。 由于 `CategoryName` 不允许 `NULL` 值，因此应添加 RequiredFieldValidator。 "`Description`" 文本框可能会转换为多行文本框。 我将这些完成的润色留给您。
 
 ## <a name="summary"></a>总结
 
-本教程中完成我们了解了如何对二进制数据。 在本教程和以前的三个，我们了解了如何二进制数据可以存储在文件系统上或直接在数据库中。 用户从他们的硬盘中选择一个文件并将其上载到 web 服务器，其中可以存储在文件系统或插入到数据库通过提供到系统的二进制数据。 ASP.NET 2.0 包括可以提供此类接口一样简单的拖放的 FileUpload 控件。 但是，如中所述[将文件上载](uploading-files-vb.md)教程中，FileUpload 控件才适合相对较小的文件上传，理想情况下不超过一兆字节。 我们还探讨了如何将上传的数据与基础数据模型中，相关联，以及如何编辑和删除现有记录中的二进制数据。
+本教程将介绍如何使用二进制数据。 在本教程和前三个教程中，我们了解了如何在文件系统中或直接在数据库中存储二进制数据。 用户通过从其硬盘中选择文件并将其上传到 web 服务器（可将其存储在文件系统上或插入到数据库中），向系统提供二进制数据。 ASP.NET 2.0 包含一个 FileUpload 控件，该控件可将此类接口提供为简单的拖放。 但是，如[上传文件](uploading-files-vb.md)教程中所述，FileUpload 控件仅适用于相对较小的文件上传，理想情况下不超过 mb。 我们还探讨了如何将上传的数据与基础数据模型相关联，以及如何从现有记录中编辑和删除二进制数据。
 
-我们接下来的教程探讨了各种缓存技术。 缓存提供了一种改进应用程序 s 成本高昂的操作的结果并将其存储在可更快地访问的位置的整体性能。
+下一组教程将探讨各种缓存技术。 缓存提供了一种方法来改善应用程序的总体性能，方法是从开销较高的操作中提取结果，并将它们存储在可更快速访问的位置。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一篇](including-a-file-upload-option-when-adding-a-new-record-vb.md)
+> [上一部分](including-a-file-upload-option-when-adding-a-new-record-vb.md)

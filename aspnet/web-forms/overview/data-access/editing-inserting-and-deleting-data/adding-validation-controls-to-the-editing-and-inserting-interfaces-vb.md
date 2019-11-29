@@ -1,245 +1,245 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb
-title: 添加验证控件向编辑和插入界面 (VB) |Microsoft Docs
+title: 向编辑和插入界面添加验证控件（VB） |Microsoft Docs
 author: rick-anderson
-description: 在本教程中我们将看到验证控件添加到 EditItemTemplate 和 InsertItemTemplate 数据 Web 控件，以便提供更是多么...
+description: 在本教程中，我们将了解如何轻松地将验证控件添加到数据 Web 控件的 EditItemTemplate 和则中，以提供更多 。
 ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: e3d7028a-7a22-4a4f-babe-d53afc41c0e2
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 02547e73dc1920f4c9228a9acd6a45344a875a55
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 5c5ad110ee0836f0a464b02a2b29254e2e06381e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134705"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74571345"
 ---
 # <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-vb"></a>向编辑和插入界面添加验证控件 (VB)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载示例应用程序](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_19_VB.exe)或[下载 PDF](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/datatutorial19vb1.pdf)
+[下载示例应用](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_19_VB.exe)或[下载 PDF](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/datatutorial19vb1.pdf)
 
-> 在本教程中我们将看到 EditItemTemplate 和 InsertItemTemplate 数据 Web 控件，以提供更能做到万无一失的用户界面添加验证控件是多么容易。
+> 在本教程中，我们将了解如何轻松地将验证控件添加到数据 Web 控件的 EditItemTemplate 和则，以提供更可靠的用户界面。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在示例中的 GridView 和 DetailsView 控件我们已经探讨了三个教程具有所有已 BoundFields 和组成 CheckBoxFields （字段类型绑定到数据源的 GridView 或 DetailsView 时由 Visual Studio 会自动添加在过去控制通过智能标记）。 在编辑 GridView 或 DetailsView 中的行时，不是只读的这些 BoundFields 转换为文本框中，从该最终用户可以修改现有数据。 同样，当插入一个新记录到 DetailsView 控件，这些 BoundFields`InsertVisible`属性设置为`True`（默认值） 将呈现为空文本框中，用户可以在其中提供新记录的字段值。 同样，CheckBoxFields，将禁用标准的、 只读的界面中，将转换为的编辑和插入界面中的已启用复选框。
+我们在过去三个教程中探讨过的示例中的 GridView 和 DetailsView 控件都包含 BoundFields 和 CheckBoxFields （在将 GridView 或 DetailsView 绑定到数据源时，Visual Studio 自动添加的字段类型）控制智能标记）。 在 GridView 或 DetailsView 中编辑行时，那些不是只读的 BoundFields 将转换为文本框，最终用户可以从这些文本框中修改现有数据。 同样，在将新记录插入到 DetailsView 控件中时，`InsertVisible` 属性设置为 `True` （默认值）的那些 BoundFields 将呈现为空文本框，用户可以在其中提供新记录的字段值。 同样，在标准只读接口中禁用的 CheckBoxFields 在编辑和插入界面中转换为启用的复选框。
 
-尽管默认编辑和插入界面 BoundField 和 CheckBoxField 可能很有帮助，接口中没有任何类型的验证。 如果用户是犯了数据条目-例如省略`ProductName`字段或输入的值无效`UnitsInStock`（如-50) 将引发异常从应用程序体系结构的深度中。 虽然此异常可以正常处理中所示[前一篇教程](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)，理想情况下编辑或插入用户界面将包括验证控制，以防止用户输入此类中的无效数据第一个位置。
+尽管 BoundField 和 CheckBoxField 的默认编辑和插入界面都很有用，但接口缺乏任何类型的验证。 如果用户进行数据输入错误（例如省略 `ProductName` 字段或为 `UnitsInStock` 输入无效值（如-50），则将从应用程序体系结构的深度中引发异常。 尽管可以正常处理此异常，如[前一教程](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)中所示，理想情况下，编辑或插入用户界面应包括验证控件，以防止用户首先输入这样的无效数据。
 
-为了提供自定义的编辑或插入的接口，我们需要使用 TemplateField 替换 BoundField 或 CheckBoxField。 Templatefield，所讨论的主题中[GridView 控件中使用 Templatefield](../custom-formatting/using-templatefields-in-the-gridview-control-cs.md)并[DetailsView 控件中使用 Templatefield](../custom-formatting/using-templatefields-in-the-detailsview-control-vb.md)教程中，可以包含多个定义的模板将不同的行状态的接口。 TemplateField`ItemTemplate`而是用于呈现只读字段或 DetailsView 或 GridView 控件中的行时`EditItemTemplate`和`InsertItemTemplate`指示要用于编辑和插入模式下，分别使用的接口。
+为了提供自定义的编辑或插入界面，需要将 BoundField 或 CheckBoxField 替换为 TemplateField。 Templatefield 是在 GridView 控件中[使用 templatefield](../custom-formatting/using-templatefields-in-the-gridview-control-cs.md)和在[DetailsView 控件教程中使用 templatefield](../custom-formatting/using-templatefields-in-the-detailsview-control-vb.md)中讨论的主题，可以包含多个模板，用于为不同的行状态定义单独的接口。 TemplateField 的 `ItemTemplate` 用于在 DetailsView 或 GridView 控件中呈现只读字段或行，而 `EditItemTemplate` 和 `InsertItemTemplate` 分别指示用于编辑和插入模式的接口。
 
-在本教程中我们将看到添加到 templatefield 进一步的验证控件是多么`EditItemTemplate`和`InsertItemTemplate`以提供更能做到万无一失的用户界面。 具体而言，本教程会引导创建中的示例[检查与插入、 更新和删除的事件相关联](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)教程和增强的编辑和插入界面，可包括适当的验证。
+在本教程中，我们将了解如何轻松地将验证控件添加到 TemplateField 的 `EditItemTemplate` 和 `InsertItemTemplate` 以提供更加可靠的用户界面。 具体而言，本教程采用在[检查与插入、更新和删除教程关联的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)中创建的示例，并补充编辑和插入界面以包括适当的验证。
 
-## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deletingexamining-the-events-associated-with-inserting-updating-and-deleting-vbmd"></a>步骤 1：复制从示例[与插入、 更新和删除检查有关的事件相关联](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deletingexamining-the-events-associated-with-inserting-updating-and-deleting-vbmd"></a>步骤1：复制示例[以检查与插入、更新和删除相关的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
 
-在中[检查与插入、 更新和删除的事件相关联](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)教程中，我们创建所列的名称和价格的可编辑的 GridView 中的产品页。 此外，页面包含 DetailsView 其`DefaultMode`属性设置为`Insert`，从而始终呈现在插入模式下。 此 DetailsView，从用户无法输入一个新的产品的名称和价格，单击插入，并将其添加到系统 （请参阅图 1）。
+在[检查与插入、更新和删除教程关联的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)中，我们创建了一个页面，其中列出了可编辑 GridView 中产品的名称和价格。 此外，此页还包括一个 DetailsView，其中 `DefaultMode` 属性设置为 `Insert`，因此始终以插入模式呈现。 从这一 DetailsView，用户可以输入新产品的名称和价格，单击 "插入"，然后将其添加到系统中（请参阅图1）。
 
-[![前面的示例，用户可以添加新产品并编辑现有的](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image2.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image1.png)
+[![前面的示例，用户可以添加新产品并编辑现有产品](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image2.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image1.png)
 
-**图 1**:上一示例允许用户以用于添加新的产品和编辑现有的 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image3.png))
+**图 1**：前面的示例允许用户添加新产品并编辑现有产品（[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image3.png)）
 
-对于本教程旨在扩充提供验证控件的 DetailsView 和 GridView。 具体而言，我们验证逻辑将：
+本教程的目标是增加 DetailsView 和 GridView 来提供验证控件。 具体而言，我们的验证逻辑将：
 
-- 要求在插入或编辑产品时提供的名称
-- 要求插入一条记录; 时提供的价格当编辑记录，我们仍需要价格，但编程逻辑将在 GridView 的`RowUpdating`从前面的教程中已存在的事件处理程序
-- 请确保输入的价格的值是一种有效的货币格式
+- 要求在插入或编辑产品时提供名称
+- 需要在插入记录时提供价格;编辑一条记录时，我们仍需要价格，但将使用在之前的教程中已经存在的 GridView `RowUpdating` 事件处理程序中的编程逻辑
+- 确保为 "价格" 输入的值是有效的货币格式
 
-我们可以看看扩充一示例，包括验证之前，我们首先需要复制中的示例`DataModificationEvents.aspx`到本教程中的页的页`UIValidation.aspx`。 若要完成此我们需要通过同时复制`DataModificationEvents.aspx`页面的声明性标记和其源代码。 将复制的声明性标记，请执行以下步骤：
+首先，我们需要将示例从 `DataModificationEvents.aspx` 页复制到本教程的页面，`UIValidation.aspx`，然后才能了解如何增强前面的示例以包括验证。 若要实现此目的，我们需要同时复制 `DataModificationEvents.aspx` 页面的声明性标记及其源代码。 首先，通过执行以下步骤，通过声明性标记进行复制：
 
-1. 打开`DataModificationEvents.aspx`Visual Studio 中的页
-2. 请转到页面的声明性标记 （在页面底部的源按钮单击）
-3. 复制中的文本`<asp:Content>`和`</asp:Content>`标记 （3 至 44 行），图 2 中所示。
+1. 在 Visual Studio 中打开 `DataModificationEvents.aspx` 页面
+2. 中转到页面的声明性标记（单击页面底部的 "源" 按钮）
+3. 复制 `<asp:Content>` 和 `</asp:Content>` 标记（第3行到第44行）中的文本，如图2所示。
 
-[![复制文本内&lt;asp: Content&gt;控件](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image5.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image4.png)
+[![复制 &lt;asp： Content&gt; 控件中的文本](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image5.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image4.png)
 
-**图 2**:复制文本内`<asp:Content>`控件 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image6.png))
+**图 2**：复制 `<asp:Content>` 控件中的文本（[单击查看完全尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image6.png)）
 
-1. 打开`UIValidation.aspx`页
-2. 请转到页面的声明性标记
-3. 中的文本将粘贴`<asp:Content>`控件。
+1. 打开 `UIValidation.aspx` 页面
+2. 中转到页面的声明性标记
+3. 将文本粘贴到 `<asp:Content>` 控件中。
 
-若要复制的源代码，请打开`DataModificationEvents.aspx.vb`页上，并将复制只是文本*内*`EditInsertDelete_DataModificationEvents`类。 将复制的三个事件处理程序 (`Page_Load`， `GridView1_RowUpdating`，并`ObjectDataSource1_Inserting`)，但不要**不**复制类声明。 粘贴复制的文本*内*`EditInsertDelete_UIValidation`类中`UIValidation.aspx.vb`。
+若要复制源代码，请打开 `DataModificationEvents.aspx.vb` 页面并只复制 `EditInsertDelete_DataModificationEvents` 类*中*的文本。 复制三个事件处理程序（`Page_Load`、`GridView1_RowUpdating`和 `ObjectDataSource1_Inserting`），但不要**复制类**声明。 将复制*的文本粘贴到 `UIValidation.aspx.vb`* 中的 `EditInsertDelete_UIValidation` 类中。
 
-移动的内容和从代码转移后`DataModificationEvents.aspx`到`UIValidation.aspx`，花点时间来测试您的浏览器中的进度。 你应看到相同输出和体验每个这些两个页中相同的功能 (回头查看图 1 的屏幕截图的`DataModificationEvents.aspx`操作中)。
+将内容和代码移到 `DataModificationEvents.aspx` 到 `UIValidation.aspx`后，请花点时间在浏览器中测试进度。 在这两个页面中，你应看到相同的输出和体验相同的功能（请参阅图1，了解 `DataModificationEvents.aspx` 操作中的屏幕截图）。
 
-## <a name="step-2-converting-the-boundfields-into-templatefields"></a>步骤 2：BoundFields 转换为 Templatefield
+## <a name="step-2-converting-the-boundfields-into-templatefields"></a>步骤2：将 BoundFields 转换为 Templatefield
 
-要向编辑和插入界面添加验证控件，需要将转换为 Templatefield BoundFields DetailsView 和 GridView 控件使用。 若要实现此目的，单击编辑列和编辑字段中链接的 GridView 和 DetailsView 的智能标记，分别。 选择每个 BoundFields 并单击"将此字段转换为 TemplateField"链接。
+若要向编辑和插入界面添加验证控件，需要将 DetailsView 和 GridView 控件使用的 BoundFields 转换为 Templatefield。 若要实现此目的，请分别单击 "编辑列" 和 "编辑字段" 链接。 在该字段中，选择每个 BoundFields，并单击 "将此字段转换为 TemplateField" 链接。
 
-[![每个 DetailsView 的和 GridView 的 BoundFields 转换为 Templatefield](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image8.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image7.png)
+[![将每个 DetailsView 和 GridView 的 BoundFields 转换为 Templatefield](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image8.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image7.png)
 
-**图 3**:转换每个 DetailsView 的和 GridView 的 BoundFields 到 Templatefield ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image9.png))
+**图 3**：将每个 DetailsView 和 GridView 的 BoundFields 转换为 Templatefield （[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image9.png)）
 
-BoundField 转换为 TemplateField 字段对话框通过生成 TemplateField 表现出作为 BoundField 本身相同的只读、 编辑以及插入接口。 以下标记显示的声明性语法`ProductName`字段中 DetailsView 转换转换为 TemplateField 后：
+通过 "字段" 对话框将 BoundField 转换为 TemplateField 时，将生成一个 TemplateField，该显示与 BoundField 本身相同的只读、编辑和插入接口。 下面的标记显示了在 DetailsView 转换为 TemplateField 后，DetailsView 中的 `ProductName` 字段的声明性语法：
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/samples/sample1.aspx)]
 
-请注意此 TemplateField 有三个模板自动创建`ItemTemplate`， `EditItemTemplate`，和`InsertItemTemplate`。 `ItemTemplate`显示单个数据字段值 (`ProductName`) 使用标签 Web 控件，而`EditItemTemplate`并`InsertItemTemplate`将数据字段与文本框的相关联的文本框中 Web 控件中显示数据字段值`Text`使用双向数据绑定的属性。 由于我们只用于插入，在此页中使用 DetailsView，可能会删除`ItemTemplate`和`EditItemTemplate`从两个 Templatefield，尽管它们保留没有什么坏处。
+请注意，此 TemplateField 会自动创建三个模板 `ItemTemplate`、`EditItemTemplate`和 `InsertItemTemplate`。 `ItemTemplate` 使用标签 Web 控件显示单个数据字段值（`ProductName`），而 `EditItemTemplate` 和 `InsertItemTemplate` 在 TextBox Web 控件中显示数据字段值，该控件会使用双向数据绑定将数据字段与文本框的 `Text` 属性相关联。 由于我们仅在此页中使用 DetailsView 来插入，因此你可以从两个 Templatefield 中删除 `ItemTemplate` 和 `EditItemTemplate`，不过，这并不会对保留它们有任何损害。
 
-因为 GridView 不支持内置插入的 DetailsView 功能、 转换 GridView`ProductName`仅在结果字段转换为 TemplateField`ItemTemplate`和`EditItemTemplate`:
+由于 GridView 不支持 DetailsView 的内置插入功能，因此将 GridView 的 `ProductName` 字段转换为 TemplateField 将仅生成 `ItemTemplate` 并 `EditItemTemplate`：
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/samples/sample2.aspx)]
 
-通过单击"转换此字段转换为 TemplateField"，Visual Studio 创建的模板模拟的用户界面的已转换 BoundField TemplateField。 可以通过访问此页上的通过浏览器对此进行验证。 您会发现的外观和行为的 Templatefield 是相同的体验 BoundFields 改为使用时。
+单击 "将此字段转换为 TemplateField" 后，Visual Studio 将创建一个 TemplateField，其模板模拟已转换 BoundField 的用户界面。 可以通过浏览器访问此页来验证这一点。 你会发现，Templatefield 的外观和行为与改用 BoundFields 时的体验相同。
 
 > [!NOTE]
-> 随意自定义中的模板，根据需要编辑的接口。 例如，我们可能想要在文本框中`UnitPrice`Templatefield 呈现为较小文本框比`ProductName`文本框中。 若要完成此操作可以设置文本框的`Columns`属性设置为适当的值或提供通过的绝对宽度`Width`属性。 在下一教程中我们将了解如何通过 Web 控件的备用数据条目替换文本框中编辑界面完全自定义。
+> 根据需要随意自定义模板中的编辑界面。 例如，我们可能希望 `UnitPrice` Templatefield 中的文本框呈现为小于 `ProductName` 文本框的文本框。 若要实现此目的，可以将文本框的 `Columns` 属性设置为适当的值，或通过 `Width` 属性提供绝对宽度。 在下一教程中，我们将了解如何通过将文本框替换为备用数据输入 Web 控件来完全自定义编辑界面。
 
-## <a name="step-3-adding-the-validation-controls-to-the-gridviewsedititemtemplate-s"></a>步骤 3：验证控件添加到 GridView 的`EditItemTemplate`s
+## <a name="step-3-adding-the-validation-controls-to-the-gridviewsedititemtemplate-s"></a>步骤3：将验证控件添加到 GridView 的`EditItemTemplate`
 
-在构造时数据输入窗体，务必用户输入所有必填的字段和所有提供的输入是合法的格式正确的值。 若要帮助确保用户的输入有效，ASP.NET 提供了五个内置的验证控件旨在用于验证的输入控件的值：
+构造数据输入窗体时，用户必须输入必填字段，并且提供的所有输入都是合法的格式正确的值，这一点非常重要。 为了帮助确保用户的输入有效，ASP.NET 提供了五个内置的验证控件，这些控件旨在用于验证单个输入控件的值：
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx)可确保已提供一个值
-- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx)验证值与另一个 Web 控件值或常量的值，或确保值的格式是合法的指定的数据类型
-- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx)可确保一个值，值范围内
-- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx)来验证针对值[正则表达式](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx)验证值与自定义、 用户定义方法
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx)确保已提供值
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx)根据另一个 Web 控件值或常数值验证值，或确保该值的格式对于指定的数据类型是合法的
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx)可确保值在值范围内
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx)根据[正则表达式](http://en.wikipedia.org/wiki/Regular_expression)验证值
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx)根据自定义的用户定义方法验证值
 
-有关这些五个控件的详细信息，请参阅[验证控件部分](https://quickstarts.asp.net/quickstartv20/aspnet/doc/ctrlref/validation/default.aspx)的[ASP.NET 快速入门教程](https://asp.net/QuickStart/aspnet/)。
+有关这五个控件的详细信息，请参阅[ASP.NET 快速入门教程](https://asp.net/QuickStart/aspnet/)中的 "[验证控件" 部分](https://quickstarts.asp.net/quickstartv20/aspnet/doc/ctrlref/validation/default.aspx)。
 
-本教程中，我们将需要使用在 DetailsView 和 GridView 的 RequiredFieldValidator `ProductName` Templatefield 和 DetailsView 中的 RequiredFieldValidator `UnitPrice` TemplateField。 此外，我们将需要为这两个控件的添加 CompareValidator `UnitPrice` Templatefield，以确保输入的价格的值大于或等于 0，并以一种有效的货币格式表示。
+对于本教程，我们将需要在 detailsview 和 GridView `ProductName` Templatefield 中使用 RequiredFieldValidator，并在 DetailsView 的 `UnitPrice` TemplateField 中使用 RequiredFieldValidator。 此外，我们还需要将 CompareValidator 添加到这两个控件的 `UnitPrice` Templatefield，以确保输入的价格的值大于或等于0，并且以有效的货币格式呈现。
 
 > [!NOTE]
-> 尽管 ASP.NET 1.x 有这些相同的五个验证控件、 ASP.NET 2.0 增添了大量改进、 主两人是客户端侧脚本支持 Internet Explorer 以外的浏览器和分区到页面上的验证控件的功能验证组。 有关 2.0 中新的验证控件功能的详细信息，请参阅[仔细分析 ASP.NET 2.0 中的验证控件](http://aspnet.4guysfromrolla.com/articles/112305-1.aspx)。
+> 尽管 ASP.NET 1.x 具有这些相同的五个验证控件，但 ASP.NET 2.0 已增加了许多改进，主要两个是 Internet Explorer 之外的浏览器的客户端脚本支持，并能够将页面上的验证控件分区到验证组。 有关2.0 中的新验证控制功能的详细信息，请参阅[二级 the ASP.NET 2.0 中的验证控件](http://aspnet.4guysfromrolla.com/articles/112305-1.aspx)。
 
-让我们首先，通过添加必要的验证控件到`EditItemTemplate`GridView 的 Templatefield。 若要完成此操作，单击 GridView 的智能标记，以显示模板编辑界面中的编辑模板链接。 在这里，可以选择要从下拉列表中编辑的模板。 由于我们想要增强的编辑界面，因此我们需要验证将控件添加到`ProductName`并`UnitPrice`的`EditItemTemplate`s。
+首先，将必要的验证控件添加到 GridView Templatefield 中的 `EditItemTemplate`。 若要实现此目的，请在 GridView 的智能标记中单击 "编辑模板" 链接，以打开模板编辑界面。 从这里，你可以从下拉列表中选择要编辑的模板。 由于我们要增加编辑界面，因此我们需要将验证控件添加到 `ProductName`，并 `UnitPrice`的 `EditItemTemplate`。
 
-[![我们需要将产品名称和单价的 EditItemTemplates 扩展](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image11.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image10.png)
+[![我们需要扩展 ProductName 和 EditItemTemplates 的](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image11.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image10.png)
 
-**图 4**:我们需要扩展`ProductName`并`UnitPrice`的`EditItemTemplate`s ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image12.png))
+**图 4**：需要扩展 `ProductName` 和 `UnitPrice`的 `EditItemTemplate` （[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image12.png)）
 
-在中`ProductName` `EditItemTemplate`，通过从工具箱拖动到模板编辑界面中，添加一个 RequiredFieldValidator 放置后文本框中。
+在 "`ProductName`" `EditItemTemplate`中，通过将 RequiredFieldValidator 拖放到模板编辑界面中来添加一个，并将其放置在文本框后面。
 
-[![将一个 RequiredFieldValidator 添加到产品名称 EditItemTemplate](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image14.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image13.png)
+[![将 RequiredFieldValidator 添加到 ProductName EditItemTemplate](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image14.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image13.png)
 
-**图 5**:添加到一个 RequiredFieldValidator `ProductName` `EditItemTemplate` ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image15.png))
+**图 5**：将 RequiredFieldValidator 添加到 `ProductName` `EditItemTemplate` （[单击查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image15.png)）
 
-通过验证单个 ASP.NET Web 控件的输入处理的所有验证控件。 因此，我们需要指出我们刚添加的 RequiredFieldValidator 应验证中文本框`EditItemTemplate`; 这通过设置验证控件的实现[ControlToValidate 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx)到`ID`适当的 Web 控件。 文本框中当前具有而不是无明显特征`ID`的`TextBox1`，但让我们将它更改为更合适。 单击该模板中的文本框，然后，从属性窗口中，更改`ID`从`TextBox1`到`EditProductName`。
+所有验证控件都是通过验证单个 ASP.NET Web 控件的输入来完成的。 因此，我们需要指出，我们刚刚添加的 RequiredFieldValidator 应根据 `EditItemTemplate`中的文本框进行验证;这是通过将验证控件的[ControlToValidate 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx)设置为相应 Web 控件的 `ID` 来完成的。 文本框当前具有 `TextBox1`的 nondescript `ID`，但我们将其更改为更合适的内容。 单击模板中的文本框，然后从属性窗口将 `ID` 从 `TextBox1` 更改为 `EditProductName`。
 
-[![将文本框的 ID 更改为 EditProductName](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image16.png)
+[![将文本框的 ID 改为 EditProductName](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image16.png)
 
-**图 6**:更改文本框的`ID`到`EditProductName`([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image18.png))
+**图 6**：将文本框的 `ID` 更改为 `EditProductName` （[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image18.png)）
 
-接下来，设置 RequiredFieldValidator`ControlToValidate`属性设置为`EditProductName`。 最后，设置[ErrorMessage 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx)到"必须提供产品的名称"和[Text 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx)到"\*"。 `Text`属性值，如果提供，则如果验证失败的验证控件显示的文本。 `ErrorMessage`属性值，该值是必需的由 ValidationSummary 控件; 如果`Text`省略属性值，则`ErrorMessage`属性值也是无效的输入上的验证控件显示的文本。
+接下来，将 RequiredFieldValidator 的 `ControlToValidate` 属性设置为 `EditProductName`。 最后，将[ErrorMessage 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx)设置为 "必须提供产品名称"，将[Text 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx)设置为 "\*"。 如果验证失败，则 `Text` 属性值（如果提供）是验证控件显示的文本。 ValidationSummary 控件使用所需的 `ErrorMessage` 属性值;如果省略 `Text` 属性值，则 `ErrorMessage` 属性值也是验证控件在无效输入上显示的文本。
 
-在设置后 RequiredFieldValidator 这三个属性，您的屏幕应类似于图 7。
+设置 RequiredFieldValidator 的这三个属性后，屏幕应类似于图7所示。
 
-[![设置 RequiredFieldValidator 的 ControlToValidate、 错误消息和文本属性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image20.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image19.png)
+[![设置 RequiredFieldValidator 的 ControlToValidate、ErrorMessage 和 Text 属性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image20.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image19.png)
 
-**图 7**:设置 RequiredFieldValidator `ControlToValidate`， `ErrorMessage`，并`Text`属性 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image21.png))
+**图 7**：设置 RequiredFieldValidator 的 `ControlToValidate`、`ErrorMessage`和 `Text` 属性（[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image21.png)）
 
-使用添加到 RequiredFieldValidator `ProductName` `EditItemTemplate`，则所有剩下是添加到需要验证`UnitPrice` `EditItemTemplate`。 由于我们已决定的此页上，为`UnitPrice`可选时，编辑记录，我们无需添加一个 RequiredFieldValidator。 我们执行操作，但是，需要添加 CompareValidator，确保`UnitPrice`，如果提供，作为一种货币格式正确，大于或等于 0。
+将 RequiredFieldValidator 添加到 `ProductName` `EditItemTemplate`后，剩下的就是将必要的验证添加到 `UnitPrice` `EditItemTemplate`。 由于我们决定，在编辑记录时，`UnitPrice` 是可选的，因此，不需要添加 RequiredFieldValidator。 但是，我们需要添加一个 CompareValidator，以确保 `UnitPrice`（如提供）的格式正确设置为货币，并且大于或等于0。
 
-我们将添加到 CompareValidator 之前`UnitPrice` `EditItemTemplate`，让我们首先将更改从 TextBox Web 控件的 ID`TextBox2`到`EditUnitPrice`。 此更改后，添加 CompareValidator，设置其`ControlToValidate`属性设置为`EditUnitPrice`，将其`ErrorMessage`属性设置为"价格必须大于或等于零，并且不能包含货币符号"并将其`Text`属性"\*".
+将 CompareValidator 添加到 `UnitPrice` `EditItemTemplate`之前，让我们先将 TextBox Web 控件的 ID 从 `TextBox2` 更改为 `EditUnitPrice`。 做出此更改后，添加 CompareValidator，将其 `ControlToValidate` 属性设置为 `EditUnitPrice`，其 `ErrorMessage` 属性设置为 "该价格必须大于或等于零，并且不能包含货币符号"，并将其 `Text` 属性设置为 "\*"。
 
-若要指示`UnitPrice`值必须是大于或等于 0，设置 CompareValidator[运算符属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx)到`GreaterThanEqual`，将其[ValueToCompare 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx)为"0"，并其[类型属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx)到`Currency`。 下面的声明性语法演示`UnitPrice`TemplateField 的`EditItemTemplate`在进行这些更改后：
+若要指示 `UnitPrice` 值必须大于或等于0，请将 CompareValidator 的[Operator 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx)设置为 "`GreaterThanEqual`，将其[ValueToCompare 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx)设置为" 0 "，并将其[Type 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx)设置为" `Currency`"。 以下声明性语法显示了进行这些更改之后 `UnitPrice` TemplateField 的 `EditItemTemplate`：
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/samples/sample3.aspx)]
 
-进行这些更改后，在浏览器中打开的网页。 如果尝试省略名称或编辑产品时输入无效的价格值文本框旁边将出现一个星号。 如图 8 所示，包含货币符号，例如 19.95 美元的价格值将被视为无效。 CompareValidator `Currency` `Type`允许数字分隔符 （如逗号或句点，具体取决于的区域性设置） 和前导加号或减号，但不*不*允许货币符号。 此行为可能 perplex 用户编辑界面当前呈现`UnitPrice`使用货币格式。
+进行这些更改后，在浏览器中打开该页。 如果在编辑产品时尝试省略名称或输入无效价格值，则文本框的旁边会出现一个星号。 如图8所示，包含货币符号（如 $19.95）的价格值被视为无效。 CompareValidator 的 `Currency` `Type` 允许使用数字分隔符（如逗号或句点）和前导加号或减号，但*不允许货币*符号。 此行为可能会 perplex 用户，因为编辑界面当前使用货币格式呈现 `UnitPrice`。
 
 > [!NOTE]
-> 回想一下，在*与插入、 更新和删除事件相关联*教程中，我们将设置 BoundField`DataFormatString`属性设置为`{0:c}`才能设置其格式为货币。 此外，我们将设置`ApplyFormatInEditMode`属性设为 true，从而导致 GridView 的编辑界面要设置格式`UnitPrice`作为一种货币。 Visual Studio 将 BoundField 转换为 TemplateField，记下这些设置和格式的文本框`Text`属性设置为使用数据绑定语法货币`<%# Bind("UnitPrice", "{0:c}") %>`。
+> 请记住，在*与插入、更新和删除教程关联的事件*中，我们将 BoundField 的 `DataFormatString` 属性设置为 `{0:c}`，以便将其设置为货币格式。 而且，我们将 `ApplyFormatInEditMode` 属性设置为 "true"，这会导致 GridView 的编辑界面将 `UnitPrice` 的格式设置为货币。 将 BoundField 转换为 TemplateField 时，Visual Studio 会记下这些设置，并使用数据绑定语法 `<%# Bind("UnitPrice", "{0:c}") %>`将文本框的 `Text` 属性的格式设置为货币。
 
-[![使用无效的输入文本框旁边会显示一个星号](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image23.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image22.png)
+[![带有无效输入的文本框旁边显示星号](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image23.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image22.png)
 
-**图 8**:星号显示下一步使用无效的输入文本框 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image24.png))
+**图 8**：包含无效输入的文本框旁边显示一个星号（[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image24.png)）
 
-尽管验证可充当的是，用户必须手动编辑一个记录，这不是可接受时删除的货币符号。 若要解决此问题，我们有三个选项：
+当验证按原样工作时，用户必须在编辑记录时手动删除货币符号，这是不可接受的。 为此，我们有三个选项：
 
-1. 配置`EditItemTemplate`，以便`UnitPrice`值未格式化为货币。
-2. 允许用户通过删除 CompareValidator 并将它替换为正确的格式正确的货币值检查 RegularExpressionValidator 输入货币符号。 此处的问题是，要验证的货币值的正则表达式不是漂亮，需要编写代码如果我们想要合并的区域性设置。
-3. 完全删除的验证控件和 GridView 中的服务器端验证逻辑依赖于`RowUpdating`事件处理程序。
+1. 将 `EditItemTemplate` 配置为将 `UnitPrice` 值设置为货币格式。
+2. 允许用户通过删除 CompareValidator 来输入货币符号，并将其替换为正确检查正确格式货币值的 RegularExpressionValidator。 此处的问题在于，用于验证货币值的正则表达式并不是很好，如果我们想要合并区域性设置，则需要编写代码。
+3. 完全移除验证控件，并依赖于 GridView `RowUpdating` 事件处理程序中的服务器端验证逻辑。
 
-让我们使用选项 #1 对于此练习。 目前`UnitPrice`格式化为货币的文本框中的数据绑定表达式由于`EditItemTemplate`: `<%# Bind("UnitPrice", "{0:c}") %>`。 绑定将语句更改为`Bind("UnitPrice", "{0:n2}")`，其中将结果格式化为带两位数字的精度的数字。 这可以通过声明性语法直接或通过单击从编辑 DataBindings 链接`EditUnitPrice`文本框中的`UnitPrice`TemplateField 的`EditItemTemplate`（请参阅图 9 和 10）。
+对于本练习，我们将提供选项 #1。 由于 `EditItemTemplate`： `<%# Bind("UnitPrice", "{0:c}") %>`中文本框的数据绑定表达式，当前 `UnitPrice` 被设置为货币格式。 将 Bind 语句更改为 `Bind("UnitPrice", "{0:n2}")`，该语句将结果的格式设置为具有两位数精度的数字。 这可以直接通过声明性语法或从 `UnitPrice` TemplateField 的 `EditItemTemplate` 中的 `EditUnitPrice` 文本框中单击 "编辑数据绑定" 链接来完成（请参阅图9和10）。
 
-[![单击文本框的编辑 DataBindings 链接](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image26.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image25.png)
+[![单击文本框的 "编辑 databinding" 链接](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image26.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image25.png)
 
-**图 9**:单击文本框的编辑 DataBindings 链接 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image27.png))
+**图 9**：单击文本框的 "编辑 databinding" 链接（[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image27.png)）
 
-[![在绑定语句中指定的格式说明符](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image29.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image28.png)
+[![在 Bind 语句中指定格式说明符](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image29.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image28.png)
 
-**图 10**:指定在格式说明符`Bind`语句 ([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image30.png))
+**图 10**：在 `Bind` 语句中指定格式说明符（[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image30.png)）
 
-进行此更改后，编辑界面中的格式化的价格包含组分隔符为逗号和句点作为小数分隔符，但哪儿货币符号。
+进行此更改后，编辑界面中的格式化价格以逗号作为组分隔符，将句点作为小数点分隔符，但保留货币符号。
 
 > [!NOTE]
-> `UnitPrice` `EditItemTemplate`不包括允许会随之发生回发和更新的逻辑，开始一个 RequiredFieldValidator。 但是，`RowUpdating`事件处理程序从复制*检查与插入、 更新和删除的事件相关联*教程包括可确保以编程方式检查`UnitPrice`提供。 随意删除此逻辑，请将其作为保留的或添加到一个 RequiredFieldValidator `UnitPrice` `EditItemTemplate`。
+> `UnitPrice` `EditItemTemplate` 不包含 RequiredFieldValidator，允许回发到不幸和更新逻辑来开始。 但是，从*检查与插入、更新和删除教程关联的事件*中复制的 `RowUpdating` 事件处理程序包括以编程方式进行检查，以确保提供 `UnitPrice`。 随意删除此逻辑，按原样保留，或将 RequiredFieldValidator 添加到 `UnitPrice` `EditItemTemplate`。
 
-## <a name="step-4-summarizing-data-entry-problems"></a>步骤 4：汇总数据输入问题
+## <a name="step-4-summarizing-data-entry-problems"></a>步骤4：汇总数据输入问题
 
-ASP.NET 包括五个验证控件中，除了[ValidationSummary 控件](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx)，其中显示`ErrorMessage`s 检测到无效数据这些验证控件。 此摘要数据可以显示为文本在网页上或通过模式、 客户端的消息框。 让我们来改进此教程，包括汇总的任何验证问题的客户端的 messagebox。
+除了五个验证控件外，ASP.NET 还包含[ValidationSummary 控件](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx)，该控件显示检测到无效数据的那些验证控件的 `ErrorMessage`。 此摘要数据可以在网页上或通过模式的客户端 messagebox 显示为文本。 让我们来增强本教程，使其包括客户端 messagebox，其中汇总了所有验证问题。
 
-若要实现此目的，请从工具箱拖到设计器拖动 ValidationSummary 控件。 验证控件的位置无关紧要，因为我们要将其配置为仅显示为一个消息框的摘要。 添加控件之后, 设置其[ShowSummary 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)到`False`并将其[ShowMessageBox 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 添加此元素后，客户端的 messagebox 中总结了任何验证错误。
+若要实现此目的，请将 ValidationSummary 控件从工具箱拖到设计器上。 验证控件的位置并不重要，因为我们要将它配置为仅将摘要显示为 messagebox。 添加控件后，将其[ShowSummary 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)设置为 "`False`"，并将其[ShowMessageBox 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)设置为 "`True`"。 添加此项后，会在客户端 messagebox 中汇总任何验证错误。
 
-[![客户端的 Messagebox 中总结了验证错误](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image31.png)
+[![在客户端 Messagebox 中汇总验证错误](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image31.png)
 
-**图 11**:客户端的 Messagebox 中总结了验证错误 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image33.png))
+**图 11**：在客户端 Messagebox 中汇总验证错误（[单击以查看完全大小的映像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image33.png)）
 
-## <a name="step-5-adding-the-validation-controls-to-the-detailsviewsinsertitemtemplate"></a>步骤 5：验证控件添加到 DetailsView`InsertItemTemplate`
+## <a name="step-5-adding-the-validation-controls-to-the-detailsviewsinsertitemtemplate"></a>步骤5：将验证控件添加到 DetailsView 的`InsertItemTemplate`
 
-所有的本教程中的就是向 DetailsView 插入界面添加验证控件。 向 DetailsView 的模板添加验证控件的过程等同于检查在步骤 3; 的因此，我们将轻松处理通过此步骤中的任务。 正如我们做 gridview `EditItemTemplate` s，我建议您重命名`ID`s 从无明显特征文本框`TextBox1`和`TextBox2`到`InsertProductName`和`InsertUnitPrice`。
+本教程剩下的所有工作就是将验证控件添加到 DetailsView 的插入界面。 将验证控件添加到 DetailsView 的模板的过程与步骤3中所述的过程相同。因此，在此步骤中，我们将逐步完成该任务。 正如我们在 GridView 的 `EditItemTemplate` 中所做的那样，我建议您将 nondescript `TextBox1` 和 `TextBox2` 中的文本框 `ID` 重命名为 `InsertProductName` 和 `InsertUnitPrice`。
 
-添加到一个 RequiredFieldValidator `ProductName` `InsertItemTemplate`。 设置`ControlToValidate`到`ID`在模板中，文本框的其`Text`属性设置为"\*"并将其`ErrorMessage`属性设置为"您必须提供产品的名称"。
+将 RequiredFieldValidator 添加到 `ProductName` `InsertItemTemplate`。 将 `ControlToValidate` 设置为模板中文本框的 `ID`，其 `Text` 属性设置为 "\*"，将其 `ErrorMessage` 属性设置为 "必须提供产品名称"。
 
-由于`UnitPrice`是添加新记录时，所需的此页，添加到一个 RequiredFieldValidator `UnitPrice` `InsertItemTemplate`，并设置其`ControlToValidate`， `Text`，和`ErrorMessage`属性正确。 最后，添加到 CompareValidator `UnitPrice` `InsertItemTemplate`以及配置其`ControlToValidate`， `Text`， `ErrorMessage`， `Type`， `Operator`，和`ValueToCompare`属性就像我们一样`UnitPrice`的 GridView 中的 CompareValidator `EditItemTemplate`。
+由于在添加新记录时此页需要 `UnitPrice`，因此请将 RequiredFieldValidator 添加到 `UnitPrice` `InsertItemTemplate`，并相应地设置其 `ControlToValidate`、`Text`和 `ErrorMessage` 属性。 最后，将 CompareValidator 添加到 `UnitPrice` `InsertItemTemplate`，同时配置其 `ControlToValidate`、`Text`、`ErrorMessage`、`Type`、`Operator`和 `ValueToCompare` 属性，就像我们在 GridView 的 `UnitPrice`中使用 `EditItemTemplate`的 CompareValidator 一样。
 
-添加这些验证控件之后, 不能添加到系统中，如果未提供其名称或它的价格是负数或非法格式化新产品。
+添加这些验证控件后，如果未提供其名称或者其价格为负数或非法格式，则不能将新产品添加到系统中。
 
-[![验证逻辑已添加到 DetailsView 插入接口](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image35.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image34.png)
+[已将 ![验证逻辑添加到 DetailsView 的插入界面](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image35.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image34.png)
 
-**图 12**:验证逻辑已添加到 DetailsView 插入接口 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image36.png))
+**图 12**：已将验证逻辑添加到 DetailsView 的插入界面（[单击以查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image36.png)）
 
-## <a name="step-6-partitioning-the-validation-controls-into-validation-groups"></a>步骤 6：分区到验证组的验证控件
+## <a name="step-6-partitioning-the-validation-controls-into-validation-groups"></a>步骤6：将验证控件分区为验证组
 
-我们的页面包含验证控件的两个逻辑上不同的集： 这些对应于 GridView 的编辑界面和那些与 DetailsView 相对应的插入接口。 默认情况下，为在回发发生时*所有*检查页上的验证控件。 但是，编辑记录时我们不希望 DetailsView 插入接口的验证控件验证。 图 13 说明了我们当前的难题，当用户编辑与完全合法值的产品，单击更新将导致验证错误，因为插入接口中的名称和价格值为空。
+我们的页面包含两个逻辑上不同的验证控件集：它们对应于 GridView 的编辑界面，后者对应于 DetailsView 的插入界面。 默认情况下，当发生回发时，将检查页上的*所有*验证控件。 但是，在编辑记录时，我们不想要验证 DetailsView 的插入界面的验证控件。 图13说明了当用户使用完全合法的值编辑产品时的当前难题，单击 "更新" 将导致验证错误，因为插入界面中的名称和价格值为空。
 
-[![正在更新产品用于引发导致插入接口的验证控件](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image38.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image37.png)
+[更新产品 ![会导致插入接口的验证控件激发](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image38.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image37.png)
 
-**图 13**:正在更新产品用于引发导致插入接口的验证控件 ([单击此项可查看原尺寸图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image39.png))
+**图 13**：更新产品会导致插入接口的验证控件激发（[单击查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image39.png)）
 
-ASP.NET 2.0 中的验证控件可以分区为验证组通过其`ValidationGroup`属性。 若要将组中的验证控件的一组相关联，只需设置其`ValidationGroup`属性设置为相同的值。 对于本教程中，设置`ValidationGroup`GridView 的 Templatefield 到中的验证控件的属性`EditValidationControls`并`ValidationGroup`到 DetailsView Templatefield 属性`InsertValidationControls`。 这些更改可以在声明性标记中直接或通过属性窗口时使用设计器的编辑模板界面。
+可以通过 `ValidationGroup` 属性将 ASP.NET 2.0 中的验证控件分区为验证组。 若要将组中的一组验证控件关联起来，只需将其 `ValidationGroup` 属性设置为相同的值。 对于本教程，请将 GridView Templatefield 中验证控件的 `ValidationGroup` 属性设置为 "`EditValidationControls`，并将 DetailsView 的 Templatefield 的 `ValidationGroup` 属性设置为" `InsertValidationControls`"。 使用设计器的编辑模板界面时，可以直接在声明性标记中或通过属性窗口来完成这些更改。
 
-除了验证控件、 按钮和按钮相关控件在 ASP.NET 2.0 中的还包含`ValidationGroup`属性。 验证组的验证程序检查的有效性仅为在回发引起的具有相同的按钮`ValidationGroup`属性设置。 例如，为了使 DetailsView 的插入按钮来触发`InsertValidationControls`验证组我们需要设置 CommandField`ValidationGroup`属性设置为`InsertValidationControls`（请参阅图 14）。 此外，设置 GridView 的 CommandField 的`ValidationGroup`属性设置为`EditValidationControls`。
+除了验证控件外，ASP.NET 2.0 中与按钮和按钮相关的控件也包含 `ValidationGroup` 属性。 仅当回发由具有相同 `ValidationGroup` 属性设置的按钮引发时，才检查验证组的验证程序的有效性。 例如，为了使 DetailsView 的 "插入" 按钮触发 `InsertValidationControls` 验证组，我们需要将 CommandField 的 `ValidationGroup` 属性设置为 "`InsertValidationControls`" （参见图14）。 此外，将 GridView 的 CommandField's `ValidationGroup` 属性设置为 `EditValidationControls`。
 
-[![集 DetailsView 的 InsertValidationControls CommandField 的 ValidationGroup 属性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image41.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image40.png)
+[![将 DetailsView 的 CommandField's ValidationGroup 属性设置为 InsertValidationControls](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image41.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image40.png)
 
-**图 14**:设置 DetailsView CommandField 的`ValidationGroup`属性设置为`InsertValidationControls`([单击以查看实际尺寸的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image42.png))
+**图 14**：将 DetailsView 的 CommandField's `ValidationGroup` 属性设置为 "`InsertValidationControls`[" （单击查看完全大小的图像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image42.png)）
 
-更改后，DetailsView 和 GridView 的 Templatefield 和命令应类似于下面：
+进行这些更改后，DetailsView 和 GridView 的 Templatefield 和 CommandFields 应类似于以下内容：
 
-DetailsView Templatefield 和 CommandField
+DetailsView 的 Templatefield 和 CommandField
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/samples/sample4.aspx)]
 
-GridView CommandField 和 Templatefield
+GridView 的 CommandField 和 Templatefield
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/samples/sample5.aspx)]
 
-现在编辑特定的验证控件激发仅在单击 GridView 的更新按钮时和特定于插入的验证控件即发即仅当单击 DetailsView 的插入按钮时，解决图 13 的突出显示了此问题时。 但是，进行此更改后我们 ValidationSummary 控件不再显示在输入无效数据时。 ValidationSummary 控件还包含`ValidationGroup`属性并仅显示这些验证控件在其验证组的摘要信息。 因此，我们需要在此页中，一个用于具有两个验证控件`InsertValidationControls`验证组，另一个用于`EditValidationControls`。
+此时，仅当单击了 GridView 的 "更新" 按钮并且特定于插入的验证控件仅在单击 DetailsView 的 "插入" 按钮时才会触发特定于编辑的验证控件，解决图13突出显示的问题。 但是，在这种情况下，当输入无效数据时，ValidationSummary 控件将不再显示。 ValidationSummary 控件还包含 `ValidationGroup` 属性，并且仅在其验证组中显示这些验证控件的摘要信息。 因此，在此页中需要有两个验证控件，一个用于 `InsertValidationControls` 验证组，另一个用于 `EditValidationControls`。
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/samples/sample6.aspx)]
 
-添加此元素在本教程中已完成 ！
+完成本教程后，我们的教程已完成！
 
 ## <a name="summary"></a>总结
 
-虽然 BoundFields 可以提供同时插入和编辑接口，该接口不是可自定义的。 通常情况下，我们想要将验证控件添加到的编辑和插入界面以确保用户在法律格式输入所需的输入。 若要实现此目的我们必须 BoundFields 转换为 Templatefield 并将验证控件添加到合适的模板。 在本教程中我们扩展中的示例*检查与插入、 更新和删除的事件相关联*教程中，为这两个 DetailsView 添加验证控件的插入接口和 GridView编辑界面。 此外，我们了解了如何显示验证摘要信息使用 ValidationSummary 控件以及如何进行分区的页上的验证控件为不同的验证组。
+尽管 BoundFields 可以提供插入和编辑接口，但接口不可自定义。 通常，我们想要向编辑和插入界面添加验证控件，以确保用户以合法格式输入所需的输入。 若要实现此目的，必须将 BoundFields 转换为 Templatefield，并将验证控件添加到相应的模板。 在本教程中，我们扩展了*检查与插入、更新和删除教程相关的事件*的示例，同时向 DetailsView 的插入界面和 GridView 的编辑界面添加验证控件。 此外，我们还了解了如何使用 ValidationSummary 控件显示摘要验证信息，以及如何将页面上的验证控件分为不同的验证组。
 
-正如我们看到在本教程中，Templatefield 允许进行扩充以包括验证控件的编辑和插入的接口。 Templatefield 还可以扩展以包括其他输入的 Web 控件，使文本框将替换为更适合的 Web 控件。 在我们的下一个教程将介绍如何使用数据绑定 DropDownList 控件，这是很理想，编辑外键时替换 TextBox 控件 (如`CategoryID`或`SupplierID`中`Products`表)。
+正如我们在本教程中看到的那样，Templatefield 允许对编辑和插入界面进行扩展，以包括验证控件。 还可以对 Templatefield 进行扩展以包含其他输入 Web 控件，使文本框替换为更适合的 Web 控件。 在下一教程中，我们将了解如何使用数据绑定 DropDownList 控件替换 TextBox 控件，这是编辑外键（如 `Products` 表中的 `CategoryID` 或 `SupplierID`）的理想选择。
 
-快乐编程 ！
+很高兴编程！
 
 ## <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)的七个部 asp/ASP.NET 书籍并创办了作者[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年以来一直致力于 Microsoft Web 技术。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 2.0 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以到达[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，其中，请参阅[ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者是 Liz Shulok 和 Zack Jones。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 本教程的领导评审者是 Liz Shulok 和 Zack。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)

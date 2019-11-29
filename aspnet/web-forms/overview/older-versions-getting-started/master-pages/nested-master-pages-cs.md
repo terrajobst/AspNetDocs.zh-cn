@@ -1,318 +1,318 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-cs
-title: 嵌套母版页 (C#) |Microsoft Docs
+title: 嵌套的母版页（C#） |Microsoft Docs
 author: rick-anderson
-description: 演示如何嵌套在另一个主页面。
+description: 演示如何将一个母版页嵌套在另一个母版页内。
 ms.author: riande
 ms.date: 07/28/2008
 ms.assetid: 32b7fb6e-d74b-4048-91f8-70631b2523ee
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6d39e898ea838b57b1cb33c91894e9ad11d58bc1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 67093266567a97cd22b353115616484fd9ef155e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126777"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74596475"
 ---
 # <a name="nested-master-pages-c"></a>嵌套的母版页 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_CS.zip)或[下载 PDF](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_CS.pdf)
+[下载代码](https://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_CS.zip)或[下载 PDF](https://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_CS.pdf)
 
-> 演示如何嵌套在另一个主页面。
+> 演示如何将一个母版页嵌套在另一个母版页内。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
-在过去的过去的九个教程中，我们已了解如何实现具有主页面的网站的布局。 简单地说，母版页允许我们，页面开发人员，以及可以自定义基于内容的页面的内容页面的特定区域母版页中定义常见的标记。 ContentPlaceHolder 控件在母版页中的指示的可自定义的区域;内容控件通过内容页中定义的 ContentPlaceHolder 控件的自定义的标记。
+在过去的九个教程中，我们了解了如何在母版页中实现站点范围的布局。 简而言之，母版页允许我们（页面开发人员）在母版页中定义常见标记，以及可以按内容页自定义的特定区域。 母版页中的 ContentPlaceHolder 控件表示可自定义的区域;ContentPlaceHolder 控件的自定义标记是通过内容控件在 "内容" 页中定义的。
 
-我们为止已探索的母版页技术非常棒，如果您有一个在整个站点上使用的布局。 但是，许多大型网站在多个部分能够自定义的站点布局。 例如，考虑医院员工用于管理患者信息、 活动和计费的卫生保健应用程序。 可能有三种类型的此应用程序中的网页：
+如果你在整个站点上使用单个布局，我们目前探索到的母版页技术非常好。 但是，许多大型网站都具有跨各个部分自定义的网站布局。 例如，请考虑医院工作人员用来管理患者信息、活动和计费的卫生保健应用程序。 在此应用程序中，可能有三种类型的网页：
 
-- 人员特定成员的页面，员工可以更新可用性，查看计划，或请求休假时间。
-- 员工在其中查看或编辑特定位患者的信息特定于患者的页。
-- 特定于计费的页会计师查看当前声明状态和财务报告。
+- 员工特定的页面，其中教职员工成员可以更新可用性、查看计划或请求休假时间。
+- 患者特定的页面，其中的教职员工成员查看或编辑特定患者的信息。
+- 会计查看当前声明状态和财务报告的计费特定页面。
 
-每一页可能会共享一个通用布局，如跨顶部和底部的频繁使用链接的一系列菜单。 但是，人员、 患者和特定于计费的页可能需要自定义此通用的布局。 例如，可能是所有特定于员工的页面应包含一个日历和任务列表，显示当前登录的用户的可用性和每日计划。 可能需要显示名称、 地址和患者正在编辑其信息的保险信息所有特定于患者的页。
+每个页面都可能共用一个通用布局，例如，在顶部有一个菜单，一系列频繁使用的链接。 但工作人员、患者和计费特定页面可能需要自定义此通用布局。 例如，可能是所有员工特定的页面都应包括显示当前登录用户的可用性和每日计划的日历和任务列表。 可能所有特定于患者的页面都需要显示其信息正在编辑的患者的名称、地址和保险信息。
 
-可以通过创建此类自定义的布局*嵌套的母版页*。 若要实现上述情况中，我们将首先创建使用 Contentplaceholder 定义可自定义区域定义整个站点布局、 菜单和页脚内容的母版页。 然后，将创建三个嵌套的母版页，一个用于每种类型的网页。 每个嵌套的母版页定义之间使用的母版页的内容页面的类型的内容。 换而言之，嵌套的母版页的特定于患者的内容页将包括标记和用于显示有关正在编辑患者信息的编程逻辑。 创建一个新的特定于患者的页面时我们会将其绑定到此嵌套的母版页。
+使用*嵌套的母版页*可以创建此类自定义的布局。 为实现上述方案，我们首先创建一个母版页，其中定义了站点范围的布局、菜单和页脚内容，并使用 Contentplaceholder 定义了可自定义的区域。 接下来，我们将创建三个嵌套的母版页，每个页面都有一个。 每个嵌套母版页都将定义使用母版页的内容页类型中的内容。 换句话说，特定于患者的内容页的嵌套母版页包含标记和编程逻辑，以便显示有关要编辑的患者的信息。 创建新的患者特定页面时，会将其绑定到此嵌套母版页。
 
-本教程首先会突出显示嵌套的母版页的好处。 然后，它显示了如何创建和使用嵌套的母版页。
-
-> [!NOTE]
-> .NET Framework 2.0 版以来，已可以嵌套的母版页。 但是，Visual Studio 2005 不包括嵌套的母版页的设计时支持。 值得高兴的是，Visual Studio 2008 提供了丰富的设计时体验的嵌套的母版页。 如果使用嵌套的母版页感兴趣，但仍在使用 Visual Studio 2005，请查看[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[VS 2005 设计时在嵌套的母版页的技巧](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)。
-
-## <a name="the-benefits-of-nested-master-pages"></a>嵌套的母版页的优点
-
-很多网站有总体的站点设计，以及更多的自定义的设计特定于某些类型的页。 例如，在我们的演示 web 应用程序中我们创建了一个基本的管理部分 (中的页`~/Admin`文件夹)。 当前在 web 页面`~/Admin`文件夹为这些页面不在管理部分中使用相同的母版页 (即`Site.master`或`Alternate.master`，取决于用户的选择)。
+本教程首先突出显示嵌套母版页的优点。 然后演示如何创建和使用嵌套母版页。
 
 > [!NOTE]
-> 现在，假设我们的站点具有一个母版页`Site.master`。 我们将解决本教程后面使用嵌套的母版页与两个 （或多个） 正在启动与"使用嵌套 Master 页的管理部分"的主页面。
+> 由于版本2.0 的 .NET Framework，因此可能会嵌套母版页。 但是，Visual Studio 2005 未包括对嵌套母版页的设计时支持。 好消息是，Visual Studio 2008 为嵌套母版页提供丰富的设计时体验。 如果你有兴趣使用嵌套母版页，但仍在使用 Visual Studio 2005，请查看[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章，以及[在 VS 2005 设计时嵌套母版页的提示](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)。
 
-想象一下，我们需要自定义布局管理页，以包含其他信息或不应存在于站点中其他页面的链接。 有四个技术来实现此要求：
+## <a name="the-benefits-of-nested-master-pages"></a>嵌套母版页的优点
 
-1. 手动将特定于管理的信息和链接添加到每个内容页面中`~/Admin`文件夹。
-2. 更新`Site.master`母版页要包含的管理部分特定的信息和链接，然后将代码添加到母版页中以显示或隐藏这些部分基于有关是否访问管理页面之一。
-3. 创建新的主页面专门针对管理部分中，复制从标记`Site.master`，添加管理特定于部分的信息和链接，并更新中的内容页`~/Admin`要使用此新的主文件夹页。
-4. 创建绑定到一个嵌套的母版页`Site.master`并且具有内容的页面中`~/Admin`文件夹使用这个新嵌套母版页。 此嵌套的母版页将包括只需其他信息和特定于的管理页面的链接，而不需要重复已在中定义的标记`Site.master`。
+许多网站的网站设计和特定于某些类型的页面都有更多的自定义设计。 例如，在我们的演示 web 应用程序中，我们创建了一个基本的管理部分（`~/Admin` 文件夹中的页）。 目前，`~/Admin` 文件夹中的网页使用的母版页与 "管理" 部分中的页面不相同（即 `Site.master` 或 `Alternate.master`，具体取决于用户的选择）。
 
-第一个选项是至少愉快。 使用母版页的全部意义是将从无需手动复制并粘贴到新的 ASP.NET 页面的常见标记移开。 第二个选项是可以接受的但使应用程序不太易于维护，因为它使用标记，只是偶尔显示并且需要开发人员可以编辑母版页若要解决此标记并要记得时，主页面向上 bulks完全正确，某些标记时将显示与其处于隐藏状态。 此方法将不太 tenable 作为自定义项从越来越多类型的此使用单个母版页满足所需的网页。
+> [!NOTE]
+> 现在，假设我们的站点只包含一个母版页，`Site.master`。 我们将使用嵌套母版页，其中包含了在本教程后面的两个（或多个）母版页，以 "使用嵌套母版页作为管理部分"。
 
-第三个选项可以删除混乱和复杂性问题可与第二个选项。 但是，选项 3 的主要缺点是它需要我们进行复制和粘贴的常见布局从`Site.master`到新的管理部分特定于主页面。 如果我们稍后决定更改站点范围内布局我们必须记住要在两个位置更改它。
+假设我们要求你自定义管理页面的布局，以包含其他信息或站点中其他页面不会出现的链接。 实现此要求有四种方法：
 
-第四个选项中，嵌套的母版页，让我们获得的第二个和第三个选项。 特定于特定区域的内容分离到不同的文件时，站点范围内布局信息保留在一个文件中的顶层母版页的。
+1. 手动添加特定于管理的信息并链接到 `~/Admin` 文件夹中的每个内容页。
+2. 更新 `Site.master` 母版页，使其包含特定于管理部分的信息和链接，然后将代码添加到母版页，以根据是否访问某个管理页面来显示或隐藏这些部分。
+3. 为 "管理" 部分专门创建一个母版页，从 `Site.master`复制标记，添加特定于管理部分的信息和链接，然后更新 `~/Admin` 文件夹中的内容页以使用此新的母版页。
+4. 创建一个绑定到 `Site.master` 的嵌套母版页，并使 `~/Admin` 文件夹中的内容页使用这一新的嵌套母版页。 此嵌套母版页只包含特定于 "管理" 页的附加信息和链接，并且不需要重复 `Site.master`中定义的标记。
 
-本教程首先介绍在创建和使用简单的嵌套的母版页。 我们创建全新的顶层母版页、 两个嵌套的主页面和两个内容页面。 从"使用嵌套 Master 页的管理部分"开始，我们介绍更新我们现有的主页面体系结构，以包括使用嵌套的母版页。 具体而言，我们创建嵌套的母版页并使用它来包括其他自定义内容中的内容页`~/Admin`文件夹。
+第一个选项是最小愉快。 使用母版页的要点就是不需要将常见标记手动复制并粘贴到新的 ASP.NET 页面。 第二个选项是可接受的，但使应用程序的可维护性更低，因为它 bulks 仅偶尔显示的包含标记的母版页，并要求开发人员编辑母版页来处理此标记，并记住何时确切地说，特定标记是在隐藏时显示的。 这种方法不太 tenable，因为此母版页需要满足更多类型的网页的自定义。
 
-## <a name="step-1-creating-a-simple-top-level-master-page"></a>步骤 1：创建简单的顶层母版页
+第三个选项通过第二个选项删除出现的混乱和复杂性问题。 不过，第三种方法的主要缺点是，需要我们将通用布局从 `Site.master` 复制并粘贴到新的管理特定于区域的母版页。 如果以后决定更改站点范围的布局，则必须记得在两个位置进行更改。
 
-创建嵌套的母版基于其中一个现有的主页面，然后更新现有的内容页，以便使用此新的嵌套的母版页，而不是顶层母版页需要某种程度的复杂性，因为现有内容页面已需要某些ContentPlaceHolder 控件在顶层母版页中定义。 因此，嵌套的母版页还必须包括具有相同名称的相同 ContentPlaceHolder 控件。 此外，我们演示特定的应用程序可以有两个母版页 (`Site.master`和`Alternate.master`) 的动态分配到内容页基于用户的首选项，从而进一步将添加到这种复杂性。 我们将探讨更新现有应用程序中，若要在本教程后面使用嵌套的母版页，但让我们首先应当集中一个简单的嵌套主页面示例。
+第四个选项（即嵌套母版页）为我们最大的第二个和第三个选项。 站点范围内的布局信息保留在一个文件中-顶级母版页，而特定区域特定区域的内容将被分为不同的文件。
 
-创建一个名为的新文件夹`NestedMasterPages`然后将新的主页面文件添加到该文件夹名为`Simple.master`。 （请参阅图 1 在解决方案资源管理器的屏幕截图后已添加此文件夹和文件。）拖动`AlternateStyles.css`从解决方案资源管理器中拖动到设计器的样式表文件。 这将添加`<link>`样式表文件中的元素`<head>`其后元素的母版页`<head>`元素的标记应如下所示：
+本教程首先介绍如何创建和使用简单的嵌套母版页。 我们创建了新的顶级母版页、两个嵌套母版页和两个内容页。 从 "使用用于管理的嵌套母版页" 部分开始，我们将介绍如何更新现有的母版页体系结构以包括嵌套母版页的使用。 具体而言，我们将创建一个嵌套的母版页，并使用它为 `~/Admin` 文件夹中的内容页包含其他自定义内容。
+
+## <a name="step-1-creating-a-simple-top-level-master-page"></a>步骤1：创建简单的顶层母版页
+
+基于某个现有的母版页创建嵌套的主控形状，然后更新现有内容页以使用此新的嵌套母版页，而不是顶层母版页，因为现有的内容页已经需要某些内容页顶层母版页中定义的 ContentPlaceHolder 控件。 因此，嵌套母版页还必须包含具有相同名称的相同 ContentPlaceHolder 控件。 而且，我们的特定演示应用程序有两个母版页（`Site.master` 和 `Alternate.master`），它们基于用户的首选项动态分配到内容页，这会进一步增加复杂性。 我们将在本教程的后面部分介绍如何更新现有应用程序以使用嵌套母版页，但我们首先要重点介绍简单的嵌套母版页示例。
+
+创建名为 `NestedMasterPages` 的新文件夹，然后将新的母版页文件添加到名为 `Simple.master`的文件夹中。 （请参阅图1，了解在添加此文件夹和文件后解决方案资源管理器的屏幕截图。）将 `AlternateStyles.css` 样式表文件从解决方案资源管理器拖到设计器上。 这会将 `<link>` 元素添加到 `<head>` 元素中的样式表文件中，之后母版页的 `<head>` 元素的标记应如下所示：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample1.aspx)]
 
-接下来，添加以下标记中的 Web 窗体`Simple.master`:
+接下来，在 `Simple.master`的 Web 窗体中添加以下标记：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample2.aspx)]
 
-此标记中深蓝色背景上的大型白色字体的页面顶部显示标题为"嵌套母版页 （简单）"的链接。 下面的`MainContent`ContentPlaceHolder。 图 1 显示了`Simple.master`母版页时在 Visual Studio 设计器中加载。
+此标记在页面顶部显示一个标题为 "嵌套母版页（Simple）" 的链接，在深蓝色背景上以大白色字体显示。 下面是 `MainContent` ContentPlaceHolder 的。 图1显示了在 Visual Studio 设计器中加载时的 `Simple.master` 母版页。
 
-[![嵌套的母版页定义特定于内容到管理部分中的页](nested-master-pages-cs/_static/image2.png)](nested-master-pages-cs/_static/image1.png)
+[![嵌套母版页会定义特定于 "管理" 部分页面的内容](nested-master-pages-cs/_static/image2.png)](nested-master-pages-cs/_static/image1.png)
 
-**图 01**:嵌套 Master 页定义内容特定于管理部分中的页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image3.png))
+**图 01**：嵌套母版页定义特定于 "管理" 部分中的页面的内容（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image3.png)）
 
-## <a name="step-2-creating-a-simple-nested-master-page"></a>步骤 2：创建简单的嵌套的母版页
+## <a name="step-2-creating-a-simple-nested-master-page"></a>步骤2：创建简单的嵌套母版页
 
-`Simple.master` 包含两个 ContentPlaceHolder 控件：`MainContent`我们在与 Web 窗体中添加了的 ContentPlaceHolder `head` ContentPlaceHolder 中的`<head>`元素。 如果我们要创建内容页面并将其绑定到`Simple.master`内容页必须引用两个 Contentplaceholder 的两个内容控件。 同样，如果我们创建嵌套的母版页，并将其绑定到`Simple.master`则嵌套的母版页将具有两个内容控件。
+`Simple.master` 包含两个 ContentPlaceHolder 控件：在 Web 窗体中添加的 `MainContent` ContentPlaceHolder 和 `<head>` 元素中的 `head` ContentPlaceHolder。 如果我们要创建内容页并将其绑定到 `Simple.master` 内容页将具有两个引用两个 Contentplaceholder 的内容控件。 同样，如果创建嵌套母版页并将其绑定到 `Simple.master`，则嵌套的母版页将具有两个内容控件。
 
-让我们添加到新的嵌套母版页上`NestedMasterPages`文件夹名为`SimpleNested.master`。 右键单击`NestedMasterPages`文件夹，然后选择添加新项。 此时将显示在图 2 所示的添加新项对话框。 选择母版页模板类型和键入新的主页面的名称。 若要指示新的主页面应为嵌套的母版页，选中"选择母版页"复选框。
+让我们将新的嵌套母版页添加到名为 `SimpleNested.master`的 `NestedMasterPages` 文件夹。 右键单击 "`NestedMasterPages`" 文件夹，然后选择 "添加新项"。 此时将打开图2所示的 "添加新项" 对话框。 选择 "母版页" 模板类型，然后键入新的母版页的名称。 若要指示新的母版页应为嵌套母版页，请选中 "选择母版页" 复选框。
 
-接下来，单击添加按钮。 这将显示相同的 Select 绑定到母版页的内容页面时，将显示一个母版页对话框 （参见图 3）。 选择`Simple.master`母版页中的`NestedMasterPages`文件夹并单击确定。
+接下来，单击 "添加" 按钮。 这会显示将内容页绑定到母版页时看到的相同的 "选择母版页" 对话框（请参阅图3）。 选择 `NestedMasterPages` 文件夹中的 `Simple.master` 母版页，然后单击 "确定"。
 
 > [!NOTE]
-> 如果您创建了在 ASP.NET 网站中使用 Web 应用程序项目模型而不网站项目模型则不会在图 2 中所示的添加新项对话框中的"选择母版页"复选框。 若要创建嵌套的母版页使用 Web 应用程序项目模型时必须选择嵌套的母版页模板 （而不是母版页模板中）。 选择嵌套的母版页模板并单击添加后, 相同选择图 3 所示的对话框将出现一个母版页。
+> 如果你使用 Web 应用程序项目模型而不是网站项目模型创建了你的 ASP.NET 网站，则在图2所示的 "添加新项" 对话框中将看不到 "选择母版页" 复选框。 若要在使用 Web 应用程序项目模型时创建嵌套母版页，必须选择嵌套母版页模板（而不是母版页模板）。 选择嵌套的母版页模板并单击 "添加" 后，将显示图3中所示的 "选择母版页" 对话框。
 
-[![检查&quot;选择母版页&quot;复选框，添加嵌套母版页](nested-master-pages-cs/_static/image5.png)](nested-master-pages-cs/_static/image4.png)
+[![选中 "&quot;选择母版页&quot;" 复选框添加嵌套母版页](nested-master-pages-cs/_static/image5.png)](nested-master-pages-cs/_static/image4.png)
 
-**图 02**:选中"选择母版页"复选框可添加嵌套的母版页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image6.png))
+**图 02**：选中 "选择母版页" 复选框以添加嵌套母版页（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image6.png)）
 
-[![将嵌套的母版页绑定到 Simple.master 母版页](nested-master-pages-cs/_static/image8.png)](nested-master-pages-cs/_static/image7.png)
+[![将嵌套母版页绑定到简单的母版页母版页](nested-master-pages-cs/_static/image8.png)](nested-master-pages-cs/_static/image7.png)
 
-**图 03**:将绑定到嵌套母版页`Simple.master`母版页 ([单击以查看实际尺寸的图像](nested-master-pages-cs/_static/image9.png))
+**图 03**：将嵌套母版页绑定到 `Simple.master` 母版页（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image9.png)）
 
-嵌套的母版页的声明性标记，如下所示，包含两个引用顶层母版页的两个 ContentPlaceHolder 控件的内容控件。
+嵌套母版页的声明性标记（如下所示）包含两个内容控件，它们引用顶层母版页的两个 ContentPlaceHolder 控件。
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample3.aspx)]
 
-除`<%@ Master %>`指令，嵌套的母版页的初始声明性标记等同于最初生成绑定到同一个顶层母版页的内容页面时的标记。 像的内容页面`<%@ Page %>`指令，`<%@ Master %>`此处指令中包含了`MasterPageFile`指定嵌套的母版页的父级母版页的属性。 嵌套的母版页和绑定到同一个顶层母版页的内容页面的主要区别是嵌套的母版页可以包括 ContentPlaceHolder 控件。 嵌套的母版页的 ContentPlaceHolder 控件定义其中内容的页面可以自定义标记的区域。
+除 `<%@ Master %>` 指令外，嵌套母版页的初始声明性标记与将内容页绑定到相同顶级母版页时最初生成的标记相同。 与内容页的 `<%@ Page %>` 指令一样，此处的 `<%@ Master %>` 指令包含一个指定嵌套母版页的父母版页的 `MasterPageFile` 特性。 嵌套母版页和绑定到相同顶级母版页的内容页之间的主要区别在于，嵌套母版页可以包含 ContentPlaceHolder 控件。 嵌套母版页的 ContentPlaceHolder 控件定义内容页可自定义标记的区域。
 
-更新此嵌套的母版页，使其显示文本"Hello，from SimpleNested ！" 对应于在内容控件中`MainContent`ContentPlaceHolder 控件。
+更新此嵌套母版页，使其显示文本 "Hello，from SimpleNested！" 在与 `MainContent` ContentPlaceHolder 控件相对应的内容控件中。
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample4.aspx)]
 
-进行此添加后, 保存嵌套的母版页，然后添加到新的内容页`NestedMasterPages`名为的文件夹`Default.aspx`，并将其绑定到`SimpleNested.master`母版页。 添加此页面时可能会惊讶地发现它包含任何内容控件 （请参阅图 4） ！ 内容页只能访问其*父*主页面的 Contentplaceholder。 `SimpleNested.master` 不包含任何 ContentPlaceHolder 控件;因此，任何绑定到此母版页的内容页不能包含任何内容控件。
+完成此添加后，保存嵌套的母版页，然后将新的内容页添加到名为 `Default.aspx``NestedMasterPages` 文件夹中，并将其绑定到 `SimpleNested.master` 母版页。 添加此页后，你可能会感到惊讶，因为它不包含任何内容控件（见图4）！ 内容页只能访问其*父*母版页的 contentplaceholder。 `SimpleNested.master` 不包含任何 ContentPlaceHolder 控件;因此，绑定到此母版页的任何内容页都不能包含任何内容控件。
 
-[![新的内容页面不包含任何内容控件](nested-master-pages-cs/_static/image11.png)](nested-master-pages-cs/_static/image10.png)
+[![新的内容页不包含任何内容控件](nested-master-pages-cs/_static/image11.png)](nested-master-pages-cs/_static/image10.png)
 
-**图 04**:新内容页包含无内容控件 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image12.png))
+**图 04**：新的内容页不包含任何内容控件（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image12.png)）
 
-我们需要做什么是更新嵌套的母版页 (`SimpleNested.master`) 若要包括 ContentPlaceHolder 控件。 建议您嵌套的母版页，以便将包含在由其父级母版页，从而使其子级母版页的页面或内容页后，可以使用任何顶级母版页的 ContentPlaceHolder 每个 ContentPlaceHolder ContentPlaceHolder控件。
+我们需要做的就是将嵌套的母版页（`SimpleNested.master`）更新为包含 ContentPlaceHolder 控件。 通常，您将希望嵌套母版页包含其父母版页所定义的每个 ContentPlaceHolder 的 ContentPlaceHolder，从而允许其子母版页或内容页使用顶层母版页的任何 ContentPlaceHolder控件.
 
-更新`SimpleNested.master`母版页 ContentPlaceHolder 纳入其两个内容控件。 为 ContentPlaceHolder 控件作为其内容控件是指 ContentPlaceHolder 控件相同的名称。 也就是说，添加一个名为 ContentPlaceHolder 控件`MainContent`的内容控件中`SimpleNested.master`引用`MainContent`ContentPlaceHolder 中的`Simple.master`。 执行相同的操作中引用的内容控件`head`ContentPlaceHolder。
+更新 `SimpleNested.master` 母版页，使其在其两个内容控件中包含 ContentPlaceHolder。 为 ContentPlaceHolder 控件指定与其内容控件引用的 ContentPlaceHolder 控件相同的名称。 也就是说，将名为 `MainContent` 的 ContentPlaceHolder 控件添加到 `SimpleNested.master` 中的内容控件，该控件引用 `Simple.master`中的 `MainContent` ContentPlaceHolder。 在引用 `head` ContentPlaceHolder 的内容控件中执行相同的操作。
 
 > [!NOTE]
-> 尽管我建议命名中嵌套的母版页的 ContentPlaceHolder 控件在顶层母版页 Contentplaceholder 相同，则不需要此命名对称性。 您可以为 ContentPlaceHolder 控件嵌套母版页中任何喜欢的名称。 但是，我发现更容易记住 Contentplaceholder 相对应使用哪些区域页上，如果我的顶层母版页和嵌套的母版页使用相同的名称。
+> 尽管建议在嵌套母版页中命名 ContentPlaceHolder 控件的方式与顶层母版页中的 Contentplaceholder 相同，但不需要此命名对称。 可以在嵌套母版页中为 ContentPlaceHolder 控件指定任意名称。 但是，我发现，如果顶层母版页和嵌套母版页使用相同的名称，则可以更方便地记住哪些 Contentplaceholder 与页面区域相对应。
 
-建立这些新增功能后你`SimpleNested.master`母版页的声明性标记应如下所示：
+进行这些添加后，`SimpleNested.master` 母版页的声明性标记应如下所示：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample5.aspx)]
 
-删除`Default.aspx`内容的页我们刚刚创建并随后重新添加它，将其绑定到`SimpleNested.master`母版页。 这一次 Visual Studio 将添加两个内容控件添加到`Default.aspx`，现在引用 Contentplaceholder 中定义`SimpleNested.master`（请参阅图 6）。 添加文本"Hello，from Default.aspx ！" 在内容中，控制引用`MainContent`。
+删除刚刚创建的 `Default.aspx` 内容页，然后重新添加该页面，并将其绑定到 `SimpleNested.master` 的母版页。 此时，Visual Studio 会将两个内容控件添加到 `Default.aspx`，同时引用 `SimpleNested.master` 中定义的 Contentplaceholder （参见图6）。 添加文本 "Hello，from default.aspx！" 在引用 `MainContent`的内容控件中。
 
-图 5 显示了所涉及的三个实体`Simple.master`， `SimpleNested.master`，和`Default.aspx`-和它们之间的相互。 如图所示，嵌套的母版页上为其父级的 ContentPlaceHolder 实施内容控件。 如果需要可供内容页访问这些区域，嵌套的母版页必须将其自身 Contentplaceholder 添加到内容控件。
+图5显示了此处涉及的三个实体-`Simple.master`、`SimpleNested.master`和 `Default.aspx`，以及它们彼此之间的关系。 如图所示，嵌套母版页实现其父对象的 ContentPlaceHolder 的内容控件。 如果需要对内容页访问这些区域，则嵌套母版页必须将其自己的 Contentplaceholder 添加到内容控件。
 
-[![顶层和嵌套的母版页规定内容页面的布局](nested-master-pages-cs/_static/image14.png)](nested-master-pages-cs/_static/image13.png)
+[![顶级和嵌套母版页决定内容页的布局](nested-master-pages-cs/_static/image14.png)](nested-master-pages-cs/_static/image13.png)
 
-**图 05**:顶层和嵌套的母版页规定内容页面的布局 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image15.png))
+**图 05**：顶级和嵌套母版页决定内容页的布局（[单击查看完全大小的图像](nested-master-pages-cs/_static/image15.png)）
 
-此行为说明了如何内容页或母版页是仅了解其父级母版页。 Visual Studio 设计器也可指示此行为。 图 6 显示的设计器`Default.aspx`。 同时，哪些区域是从内容页可编辑，部分不，清楚地显示了在设计器，它不会消除歧义不可编辑的区域是从嵌套的母版页和区域是从顶级的母版页。
+此行为说明内容页或母版页如何只 cognizant 其父母版页。 Visual Studio 设计器也指出了此行为。 图6显示了 `Default.aspx`的设计器。 虽然设计器清楚地显示了哪些区域可从 "内容" 页进行编辑以及哪些部分不能，但它并不区分嵌套母版页中的哪些不可编辑区域以及顶层母版页中的区域。
 
-[![内容页现在包含嵌套的母版页的 Contentplaceholder 内容控件](nested-master-pages-cs/_static/image17.png)](nested-master-pages-cs/_static/image16.png)
+[![内容页现在包含嵌套母版页的 Contentplaceholder 的内容控件。](nested-master-pages-cs/_static/image17.png)](nested-master-pages-cs/_static/image16.png)
 
-**图 06**:内容页现在包含内容控件的嵌套母版页的 Contentplaceholder ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image18.png))
+**图 06**： "内容" 页现在包含用于嵌套母版页 Contentplaceholder 的内容控件（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image18.png)）
 
-## <a name="step-3-adding-a-second-simple-nested-master-page"></a>步骤 3：添加第二个简单嵌套的母版页
+## <a name="step-3-adding-a-second-simple-nested-master-page"></a>步骤3：添加第二个简单嵌套母版页
 
-当有多个嵌套的母版页时，嵌套的母版页的好处是更为明显。 为了说明这一优势，创建中的另一个嵌套的母版页`NestedMasterPages`文件夹; 将这个新嵌套母版页`SimpleNestedAlternate.master`并将其绑定到`Simple.master`母版页。 嵌套的母版页的两个内容控件中添加 ContentPlaceHolder 控件，像在步骤 2 中执行。 此外将添加文本"Hello，from SimpleNestedAlternate ！" 对应于顶层母版页的内容控件中`MainContent`ContentPlaceHolder。 以后进行这些更改新嵌套的母版页的声明性标记看起来应类似于下面：
+如果有多个嵌套母版页，则嵌套母版页的优点更明显。 为了说明此权益，请在 `NestedMasterPages` 文件夹中创建另一个嵌套的母版页;将这一新的嵌套母版页命名 `SimpleNestedAlternate.master`，并将其绑定到 `Simple.master` 母版页。 将 ContentPlaceHolder 控件添加到嵌套母版页的两个内容控件中，就像我们在步骤2中所做的一样。 同时添加文本 "Hello，from SimpleNestedAlternate！" 在与顶层母版页的 `MainContent` ContentPlaceHolder 的内容控件中。 进行这些更改后，新的嵌套母版页的声明性标记应如下所示：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample6.aspx)]
 
-创建一个名为的内容页`Alternate.aspx`中`NestedMasterPages`文件夹并将其绑定到`SimpleNestedAlternate.master`嵌套的母版页。 添加文本"Hello，from 备用 ！" 对应于在内容控件中`MainContent`。 图 7 显示了`Alternate.aspx`查看通过 Visual Studio 设计器时。
+在 `NestedMasterPages` 文件夹中创建名为 `Alternate.aspx` 的内容页，并将其绑定到 `SimpleNestedAlternate.master` 嵌套母版页。 添加文本 "Hello，from 替补！" 在与 `MainContent`相对应的内容控件中。 图7显示了通过 Visual Studio 设计器查看 `Alternate.aspx`。
 
-[![Alternate.aspx 绑定到 SimpleNestedAlternate.master 母版页](nested-master-pages-cs/_static/image20.png)](nested-master-pages-cs/_static/image19.png)
+[![备用 .aspx 绑定到 SimpleNestedAlternate 母版页](nested-master-pages-cs/_static/image20.png)](nested-master-pages-cs/_static/image19.png)
 
-**图 07**:`Alternate.aspx`绑定到`SimpleNestedAlternate.master`母版页 ([单击以查看实际尺寸的图像](nested-master-pages-cs/_static/image21.png))
+**图 07**： `Alternate.aspx` 绑定到 `SimpleNestedAlternate.master` 母版页（[单击查看完全大小的图像](nested-master-pages-cs/_static/image21.png)）
 
-比较图 7 到图 6 中的设计器中的设计器。 这两个内容页面共享同一顶层母版页中定义的布局 (`Simple.master`)，即"嵌套 Master Pages 教程 （简单）"标题。 尚未都具有不同内容在其父主页面-中定义的文本"Hello，from SimpleNested ！" 图 6 和"Hello，from SimpleNestedAlternate ！"中 在图 7。 当然，此处的这些差异是微不足道的但您可以扩展此示例，包括更有意义的差异。 例如，`SimpleNested.master`页可能包含具有特定于其内容页面的选项的菜单，而`SimpleNestedAlternate.master`可能具有绑定到它的内容页面相关的信息。
+将图7中的设计器与图6中的设计器进行比较。 这两个内容页共享在顶层母版页（`Simple.master`）中定义的同一布局，即 "嵌套母版页教程（简单）" 标题。 但它们的父母版页中都定义了不同的内容-文本 "Hello，from SimpleNested！" 图6和 "Hello，from SimpleNestedAlternate！" 图7所示。 当然，这种差异很简单，但你可以扩展此示例，使其包含更有意义的差异。 例如，"`SimpleNested.master`" 页可能包含一个菜单，其中包含特定于其内容页的选项，而 `SimpleNestedAlternate.master` 可能包含与绑定到它的内容页相关的信息。
 
-现在，假设我们需要对总体站点布局进行更改。 例如，假设我们想要将一组公共链接添加到所有内容页面。 若要完成此我们更新顶层母版页`Simple.master`。 存在的任何更改将立即反映在其嵌套的母版页，并通过扩展，其内容的页面。
+现在，假设我们需要对 "网站布局" 进行更改。 例如，假设我们想要将常用链接列表添加到所有内容页。 为实现此目的，我们更新了顶层母版页，`Simple.master`。 任何更改都会立即反映在其嵌套的母版页中，并通过扩展的内容页进行。
 
-若要演示的易用性与我们可以更改总体站点布局，打开`Simple.master`母版页并添加以下标记之间`topContent`并`mainContent``<div>`元素：
+若要演示如何轻松地更改 "网站布局"，请打开 `Simple.master` 母版页，并在 `topContent` 和 `mainContent` `<div>` 元素之间添加以下标记：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample7.aspx)]
 
-这会向绑定到每个页的顶部添加两个链接`Simple.master`， `SimpleNested.master`，或`SimpleNestedAlternate.master`; 这些更改将立即应用于所有嵌套的母版页和其内容的页面。 图 8 显示了`Alternate.aspx`时的浏览器查看。 请注意添加的顶部 （图 7 相比） 的页的链接。
+这会将两个链接添加到绑定到 `Simple.master`、`SimpleNested.master`或 `SimpleNestedAlternate.master`的每个页面的顶部;这些更改将立即应用于所有嵌套母版页及其内容页。 图8显示了通过浏览器查看 `Alternate.aspx`。 请注意页面顶部的链接添加（与图7相比）。
 
-[![更改为顶级母版页会立即反映在其嵌套母版页和及其内容页面](nested-master-pages-cs/_static/image23.png)](nested-master-pages-cs/_static/image22.png)
+[![更改为顶层母版页会立即反映在其嵌套母版页及其内容页中。](nested-master-pages-cs/_static/image23.png)](nested-master-pages-cs/_static/image22.png)
 
-**图 08**:更改为顶级母版页会立即反映在其嵌套母版页和及其内容页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image24.png))
+**图 08**：更改为顶层母版页会立即反映在其嵌套母版页及其内容页面中（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image24.png)）
 
-## <a name="using-a-nested-master-page-for-the-administration-section"></a>对于管理部分中使用嵌套的母版页
+## <a name="using-a-nested-master-page-for-the-administration-section"></a>使用 "管理" 部分的嵌套母版页
 
-此时我们已经探讨的嵌套的主优点的页面并已全面了解如何创建和 ASP.NET 应用程序中使用它们。 但是，步骤 1、 2 和 3 中的示例涉及到创建新的顶层母版页、 新嵌套的母版页和新的内容页。 如何添加新嵌套的母版页的网站与现有顶级母版页和内容页面？
+此时，我们已经了解了嵌套母版页的优点，并了解了如何在 ASP.NET 应用程序中创建和使用它们。 不过，步骤1、2和3中的示例涉及到创建新的顶级母版页、新建嵌套母版页和新内容页。 如何使用现有顶级母版页和内容页向网站添加新的嵌套母版页呢？
 
-将嵌套的母版页集成到现有的网站并将其关联到现有内容页面需要比从零开始的更多工作。 步骤 4、 5、 6 和 7 浏览这些挑战，因为我们提供了我们的演示应用程序，以包括新嵌套的母版页，名为`AdminNested.master`，其中包含有关管理员的说明，使用由 ASP.NET 页`~/Admin`文件夹。
+将嵌套母版页集成到现有网站，并将其与现有内容页相关联需要比从头开始更多的工作。 步骤4、5、6和7介绍了这些难题，因为我们增加了演示应用程序以包括一个名为 `AdminNested.master` 的新嵌套母版页，其中包含管理员的说明，由 `~/Admin` 文件夹中的 ASP.NET 页使用。
 
-将嵌套的母版页集成到我们的演示应用程序引入了以下障碍：
+将嵌套母版页集成到演示应用程序中带来了以下障碍：
 
-- 中的现有内容页面`~/Admin`文件夹有特定的预期从其主页面。 对于初学者而言，他们期望存在某些 ContentPlaceHolder 控件。 此外，`~/Admin/AddProduct.aspx`和`~/Admin/Products.aspx`页面调用主页面的公共`RefreshRecentProductsGrid`方法，并将其`GridMessageText`属性，或使用事件处理程序为其`PricesDoubled`事件。 因此，我们嵌套的母版页必须提供相同 Contentplaceholder 和公共成员。
-- 在前面的教程中，我们将增强`BasePage`类来动态地设置`Page`对象的`MasterPageFile`属性基于会话变量。 我们如何为支持动态母版页使用嵌套的母版页时？
+- `~/Admin` 文件夹中的现有内容页具有其母版页的特定期望。 对于初学者，它们期望存在某些 ContentPlaceHolder 控件。 此外，`~/Admin/AddProduct.aspx` 和 `~/Admin/Products.aspx` 页将调用母版页的公共 `RefreshRecentProductsGrid` 方法，设置其 `GridMessageText` 属性，或具有其 `PricesDoubled` 事件的事件处理程序。 因此，嵌套母版页必须提供相同的 Contentplaceholder 和公共成员。
+- 在前面的教程中，我们增强了 `BasePage` 类，以便基于会话变量动态设置 `Page` 对象的 `MasterPageFile` 属性。 使用嵌套母版页时，如何支持动态母版页？
 
-如我们生成嵌套的母版页并从现有内容页面中使用它将呈现这些两个挑战。 我们将调查并克服了这些问题出现。
+当我们构建嵌套母版页，并从现有内容页中使用它时，这两个挑战将会出现。 我们会在出现这些问题时进行调查和克服。
 
-## <a name="step-4-creating-the-nested-master-page"></a>步骤 4：创建嵌套的母版页
+## <a name="step-4-creating-the-nested-master-page"></a>步骤4：创建嵌套母版页
 
-我们的第一个任务是创建嵌套的母版页中以供管理部分中的页。 当添加新嵌套母版页中步骤 2 中，可以看到我们需要指定嵌套的母版页的父级母版页。 但我们有两个顶层的主页面：`Site.master`和`Alternate.master`。 回想一下，我们创建了`Alternate.master`在前面的教程和代码中编写过`BasePage`设置 Page 对象的类`MasterPageFile`属性在运行时为`Site.master`或`Alternate.master`具体取决于值`MyMasterPage`会话变量。
+第一项任务是创建要由 "管理" 部分中的页面使用的嵌套母版页。 正如我们在步骤2中看到的，添加新的嵌套母版页时，需要指定嵌套母版页的父母版页。 但有两个顶级母版页： `Site.master` 和 `Alternate.master`。 回忆一下，我们在前面的教程中创建了 `Alternate.master`，并在 `BasePage` 类中编写了代码，该代码在运行时将页面对象的 `MasterPageFile` 属性设置为 `Site.master` 或 `Alternate.master`，具体取决于 `MyMasterPage` 会话变量的值。
 
-我们如何实现配置我们嵌套的母版页，使其使用适当的顶层母版页？ 我们有两个选项：
+如何配置嵌套母版页，使其使用适当的顶层母版页？ 我们有两个选项：
 
-- 创建两个嵌套的母版页`AdminNestedSite.master`并`AdminNestedAlternate.master`，并将其绑定到顶级的母版页`Site.master`和`Alternate.master`分别。 在中`BasePage`，然后，我们将设置`Page`对象的`MasterPageFile`到适当的嵌套母版页。
-- 创建单个嵌套的母版页和内容页使用此特定的母版页。 然后，在运行时，我们将需要设置嵌套的母版页的`MasterPageFile`属性设置为适当在运行时的顶层母版页。 (您可能已想到了目前为止，如主页面还有`MasterPageFile`属性。)
+- 创建两个嵌套母版页，`AdminNestedSite.master` 和 `AdminNestedAlternate.master`，并分别将它们绑定到顶层母版页 `Site.master` 和 `Alternate.master`。 在 `BasePage`中，我们将 `Page` 对象的 `MasterPageFile` 设置为相应的嵌套母版页。
+- 创建单个嵌套母版页，并使内容页使用该特定母版页。 然后，在运行时，需要在运行时将嵌套母版页的 `MasterPageFile` 属性设置为适当的顶级母版页。 （正如你现在可能已发现，母版页也有一个 `MasterPageFile` 属性。）
 
-让我们使用第二个选项。 创建单个嵌套母版页文件中的`~/Admin`文件夹名为`AdminNested.master`。 因为这两`Site.master`并`Alternate.master`具有相同的 ContentPlaceHolder 控件集，并不重要主页面，将其绑定到，尽管我建议您将其绑定到`Site.master`一致性的起见。
+我们将使用第二个选项。 在名为 `AdminNested.master``~/Admin` 文件夹中创建单个嵌套母版页文件。 由于 `Site.master` 和 `Alternate.master` 都具有相同的一组 ContentPlaceHolder 控件，因此，尽管我建议您将其绑定到 `Site.master` 以实现一致性。
 
-[![向 ~/Admin 文件夹中添加嵌套的母版页。](nested-master-pages-cs/_static/image26.png)](nested-master-pages-cs/_static/image25.png)
+[![将嵌套的母版页添加到 ~/Admin 文件夹中。](nested-master-pages-cs/_static/image26.png)](nested-master-pages-cs/_static/image25.png)
 
-**图 09**:添加到嵌套的母版页`~/Admin`文件夹。 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image27.png))
+**图 09**：将嵌套母版页添加到 `~/Admin` 文件夹。 （[单击以查看完全大小的映像](nested-master-pages-cs/_static/image27.png)）
 
-因为嵌套的母版页绑定到具有四个 ContentPlaceHolder 控件母版页，Visual Studio 添加了四个内容控件添加到新嵌套的母版页文件的初始标记。 我们在步骤 2 和 3，在每个内容控件中添加 ContentPlaceHolder 控件为其提供与顶级主页面的 ContentPlaceHolder 控件相同的名称。 此外将以下标记添加到内容控件对应于`MainContent`ContentPlaceHolder:
+由于嵌套母版页绑定到具有四个 ContentPlaceHolder 控件的母版页，因此 Visual Studio 会将四个内容控件添加到新的嵌套母版页文件的初始标记中。 与第2步和第3步一样，在每个内容控件中添加 ContentPlaceHolder 控件，使其与顶层母版页的 ContentPlaceHolder 控件的名称相同。 还将以下标记添加到与 `MainContent` ContentPlaceHolder 相对应的内容控件：
 
 [!code-html[Main](nested-master-pages-cs/samples/sample8.html)]
 
-接下来，定义`instructions`CSS 类中`Styles.css`和`AlternateStyles.css`CSS 文件。 下面的 CSS 规则会引发样式与 HTML 元素`instructions`类，以显示时带有浅黄色背景颜色，黑色的实线边框：
+接下来，在 `Styles.css` 和 `AlternateStyles.css` CSS 文件中定义 `instructions` CSS 类。 以下 CSS 规则会导致使用带有浅黄色背景色和黑色实线边框的 `instructions` 类样式的 HTML 元素显示：
 
 [!code-css[Main](nested-master-pages-cs/samples/sample9.css)]
 
-此标记已添加到嵌套的母版页，因为它将仅出现在使用此嵌套的母版页 （即，在管理部分中的页） 的页面。
+由于已将此标记添加到嵌套母版页，因此它将仅显示在使用此嵌套母版页的页面中（即，"管理" 部分中的页面）。
 
-以后进行到嵌套母版页这些新增功能，其声明性标记看起来应类似于下面：
+将这些添加到嵌套母版页后，其声明性标记应如下所示：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample10.aspx)]
 
-请注意，每个内容控件有 ContentPlaceHolder 控件并且 ContentPlaceHolder 控件的`ID`属性分配与顶层母版页中的相应 ContentPlaceHolder 控件相同的值。 此外，管理特定于部分的标记出现在`MainContent`ContentPlaceHolder。
+请注意，每个内容控件都有一个 ContentPlaceHolder 控件，并且为 ContentPlaceHolder 控件的 `ID` 属性分配与顶层母版页中对应 ContentPlaceHolder 控件相同的值。 此外，"管理" 部分特定的标记将显示在 `MainContent` ContentPlaceHolder 中。
 
-图 10 显示了`AdminNested.master`嵌套的母版页时通过 Visual Studio 设计器中查看。 可以看到在顶部的黄色框中的说明`MainContent`内容控件。
+图10显示了通过 Visual Studio 的设计器查看 `AdminNested.master` 嵌套母版页。 可以在 `MainContent` 内容控件顶部的黄色框中查看说明。
 
-[![嵌套的母版页扩展顶层的主页面，以包括有关管理员的说明。](nested-master-pages-cs/_static/image29.png)](nested-master-pages-cs/_static/image28.png)
+[![嵌套的母版页扩展了顶层母版页，以包含管理员的说明。](nested-master-pages-cs/_static/image29.png)](nested-master-pages-cs/_static/image28.png)
 
-**图 10**:嵌套的母版页扩展顶层的主页面，以包括有关管理员的说明。 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image30.png))
+**图 10**：嵌套的母版页扩展了顶层母版页，以包含管理员的说明。 （[单击以查看完全大小的映像](nested-master-pages-cs/_static/image30.png)）
 
-## <a name="step-5-updating-the-existing-content-pages-to-use-the-new-nested-master-page"></a>步骤 5：更新现有的内容页面以使用新的嵌套的母版页
+## <a name="step-5-updating-the-existing-content-pages-to-use-the-new-nested-master-page"></a>步骤5：更新现有内容页以使用新的嵌套母版页
 
-只要我们将新的内容页面添加到我们需要将其绑定到管理部分`AdminNested.master`我们刚刚创建的主页面。 但是，哪些有关现有内容页？ 目前，在站点中的所有内容页派生自`BasePage`类，该类以编程方式在运行时设置内容页面的母版页。 这不是我们想要在管理部分中的内容页面的行为。 相反，我们希望始终使用这些内容页面`AdminNested.master`页。 它将嵌套母版页中以选择在运行时的右顶级内容页的责任。
+每次将新的内容页添加到 "管理" 部分时，需要将其绑定到刚刚创建的 `AdminNested.master` 母版页。 但现有内容页呢？ 当前，站点中的所有内容页派生自 `BasePage` 类，该类在运行时以编程方式设置内容页的母版页。 这不是我们想要用于 "管理" 部分中的内容页的行为。 相反，我们希望这些内容页始终使用 `AdminNested.master` 页。 嵌套母版页负责在运行时选择正确的顶级内容页。
 
-最佳的方式来实现这所需的行为是创建一个名为的新自定义基本页类`AdminBasePage`该项`BasePage`类。 `AdminBasePage` 然后，可以覆盖`SetMasterPageFile`并设置`Page`对象的`MasterPageFile`为硬编码值"~ / Admin/AdminNested.master"。 这样一来，任何页面的派生`AdminBasePage`将使用`AdminNested.master`，而从派生的任何页面`BasePage`将具有其`MasterPageFile`属性设置动态地为"~ / Site.master"或"~ / Alternate.master"值的基础`MyMasterPage`会话变量。
+若要实现此所需行为，最佳方法是创建一个新的名为 `AdminBasePage` 的自定义基类类，以扩展 `BasePage` 类。 然后 `AdminBasePage` 可以重写 `SetMasterPageFile` 并将 `Page` 对象的 `MasterPageFile` 设置为硬编码值 "~/Admin/AdminNested.master"。 通过这种方式，派生自 `AdminBasePage` 的任何页面都将使用 `AdminNested.master`，而从 `BasePage` 派生的任何页面都将基于 `MyMasterPage` 会话变量的值将其 `MasterPageFile` 属性动态设置为 "~/Site.master" 或 "~/Alternate.master"。
 
-首先，通过添加到新的类文件`App_Code`文件夹名为`AdminBasePage.cs`。 具有`AdminBasePage`扩展`BasePage`，然后重写`SetMasterPageFile`方法。 在该方法将`MasterPageFile`值"~ / Admin/AdminNested.master"。 您的类进行这些更改后文件应该看起来类似于下面：
+首先将新的类文件添加到名为 `AdminBasePage.cs``App_Code` 文件夹。 让 `AdminBasePage` 扩展 `BasePage`，然后重写 `SetMasterPageFile` 方法。 在该方法中，将 `MasterPageFile` 值 "~/Admin/AdminNested.master"。 进行这些更改后，类文件应如下所示：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample11.cs)]
 
-我们现在需要在管理部分派生的现有的内容页面`AdminBasePage`而不是`BasePage`。 转到每个内容页面中的代码隐藏类文件`~/Admin`文件夹并进行此更改。 例如，在`~/Admin/Default.aspx`将更改从代码隐藏类声明：
+现在，我们需要在 "管理" 部分中的现有内容页派生自 `AdminBasePage` 而不是 `BasePage`。 转到 `~/Admin` 文件夹中每个内容页面的代码隐藏类文件，然后进行此更改。 例如，在 `~/Admin/Default.aspx` 你需要更改的代码隐藏类声明：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample12.cs)]
 
-到:
+结束时间：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample13.cs)]
 
-图 11 显示了如何顶层母版页 (`Site.master`或`Alternate.master`)，嵌套的母版页 (`AdminNested.master`)，并与另一个相关联的管理部分内容页面。
+图11描绘了顶层母版页（`Site.master` 或 `Alternate.master`）、嵌套母版页（`AdminNested.master`）和管理部分内容页之间的关系。
 
-[![嵌套的母版页定义特定于内容到管理部分中的页](nested-master-pages-cs/_static/image32.png)](nested-master-pages-cs/_static/image31.png)
+[![嵌套母版页会定义特定于 "管理" 部分页面的内容](nested-master-pages-cs/_static/image32.png)](nested-master-pages-cs/_static/image31.png)
 
-**图 11**:嵌套 Master 页定义内容特定于管理部分中的页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image33.png))
+**图 11**：嵌套母版页定义特定于 "管理" 部分中的页面的内容（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image33.png)）
 
-## <a name="step-6-mirroring-the-master-pages-public-methods-and-properties"></a>步骤 6：镜像母版页的公共方法和属性
+## <a name="step-6-mirroring-the-master-pages-public-methods-and-properties"></a>步骤6：镜像母版页的公共方法和属性
 
-请记住，`~/Admin/AddProduct.aspx`和`~/Admin/Products.aspx`页与母版页以编程方式进行交互：`~/Admin/AddProduct.aspx`调用母版页的公钥`RefreshRecentProductsGrid`方法并设置其`GridMessageText`属性;`~/Admin/Products.aspx`具有的事件处理程序`PricesDoubled`事件。 在前面的教程，我们创建一个抽象`BaseMasterPage`定义这些公共成员的类。
+回忆一下，`~/Admin/AddProduct.aspx` 和 `~/Admin/Products.aspx` 页面以编程方式与母版页交互： `~/Admin/AddProduct.aspx` 调用母版页的公共 `RefreshRecentProductsGrid` 方法并设置其 `GridMessageText` 属性;`~/Admin/Products.aspx` 具有 `PricesDoubled` 事件的事件处理程序。 在前面的教程中，我们创建了一个定义这些公共成员的抽象 `BaseMasterPage` 类。
 
-`~/Admin/AddProduct.aspx`并`~/Admin/Products.aspx`页面假定其母版页派生`BaseMasterPage`类。 `AdminNested.master`页上，但是，当前扩展`System.Web.UI.MasterPage`类。 因此，当来访`~/Admin/Products.aspx``InvalidCastException`引发并显示消息："找不到类型的对象强制转换 ASP.admin\_adminnested\_主键入 BaseMasterPage'。"
+"`~/Admin/AddProduct.aspx`" 和 "`~/Admin/Products.aspx`" 页假定其母版页派生自 `BaseMasterPage` 类。 但 `AdminNested.master` 页当前扩展了 `System.Web.UI.MasterPage` 类。 因此，当访问 `~/Admin/Products.aspx` 引发 `InvalidCastException` 时，消息： "无法将类型为\_" adminnested\_master "的对象强制转换为类型" BaseMasterPage "。
 
-若要解决此我们需要能够`AdminNested.master`代码隐藏类扩展`BaseMasterPage`。 更新从嵌套的母版页的代码隐藏类声明：
+若要解决此问题，我们需要让 `AdminNested.master` 代码隐藏类 `BaseMasterPage`扩展。 从以下项更新嵌套母版页的代码隐藏类声明：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample14.cs)]
 
-到:
+结束时间：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample15.cs)]
 
-我们还未完成。 因为`BaseMasterPage`类是抽象的我们需要重写`abstract`成员`RefreshRecentProductsGrid`和`GridMessageText`。 顶层母版页使用这些成员来更新其用户界面。 (实际上，只有`Site.master`母版页使用这些方法，尽管这两个顶层的主页面实现的这些方法，因为同时扩展`BaseMasterPage`。)
+尚未完成。 由于 `BaseMasterPage` 类是抽象类，因此需要重写 `abstract` 成员，`RefreshRecentProductsGrid` 和 `GridMessageText`。 顶级母版页使用这些成员更新其用户界面。 （实际上，只有 `Site.master` 的母版页使用这些方法，尽管这两个顶级母版页都实现了这些方法，因为这两种方法都扩展 `BaseMasterPage`。）
 
-而我们需要实现中的这些成员`AdminNested.master`，这些实现需要做的就是只需使用嵌套的母版页的顶层母版页中调用相同的成员。 例如，当管理部分中的内容页调用嵌套母版页上`RefreshRecentProductsGrid`方法，所有需要执行嵌套的母版页，反过来，则调用`Site.master`或`Alternate.master`的`RefreshRecentProductsGrid`方法。
+尽管我们需要在 `AdminNested.master`中实现这些成员，但所有这些实现都只需调用嵌套母版页所使用的顶级母版页中的同一成员。 例如，在 "管理" 部分中的 "内容" 页调用嵌套母版页的 `RefreshRecentProductsGrid` 方法时，所有嵌套母版页都需要做的就是调用 `Site.master` 或 `Alternate.master`的 `RefreshRecentProductsGrid` 方法。
 
-若要实现此目的，首先添加以下`@MasterType`指令的页首`AdminNested.master`:
+若要实现此目的，请首先将以下 `@MasterType` 指令添加到 `AdminNested.master`顶部：
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample16.aspx)]
 
-请记住，`@MasterType`指令将强类型属性添加到代码隐藏类名为`Master`。 然后，重写`RefreshRecentProductsGrid`并`GridMessageText`成员和只需委托调用`Master`的相应方法：
+请记住，`@MasterType` 指令将强类型属性添加到名为 `Master`的代码隐藏类。 然后，重写 `RefreshRecentProductsGrid` 和 `GridMessageText` 成员，只需将调用委托给 `Master`的相应方法即可：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample17.cs)]
 
-利用此代码，您应能够访问并使用管理部分中的内容页。 图 12 显示了`~/Admin/Products.aspx`页面的浏览器查看时。 正如您所看到的此页包含管理说明框中，嵌套的母版页中定义。
+使用此代码后，应能够访问并使用 "管理" 部分中的内容页。 图12显示了通过浏览器查看 `~/Admin/Products.aspx` 页面。 如您所见，页面包含在嵌套母版页中定义的 "管理说明" 框。
 
-[![在管理部分中的内容页包括在每个页面顶部的说明](nested-master-pages-cs/_static/image35.png)](nested-master-pages-cs/_static/image34.png)
+[!["管理" 部分中的内容页面包括每个页面顶部的说明](nested-master-pages-cs/_static/image35.png)](nested-master-pages-cs/_static/image34.png)
 
-**图 12**:在每个页面顶部的管理部分包含说明中的内容页 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image36.png))
+**图 12**： "管理" 部分中的内容页包含每个页面顶部的说明（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image36.png)）
 
-## <a name="step-7-using-the-appropriate-top-level-master-page-at-runtime"></a>步骤 7：在运行时使用相应的顶层母版页
+## <a name="step-7-using-the-appropriate-top-level-master-page-at-runtime"></a>步骤7：在运行时使用合适的顶级母版页
 
-当在管理部分中的所有内容页面完全可用时，它们都使用相同的顶级母版页并忽略母版页在用户选择`ChooseMasterPage.aspx`。 此行为是因为，嵌套的母版页及其`MasterPageFile`属性以静态方式设置为`Site.master`在其`<%@ Master %>`指令。
+尽管 "管理" 部分中的所有内容页都可以完全正常运行，但它们都使用相同的顶层母版页，并忽略用户在 `ChooseMasterPage.aspx`选择的母版页。 此行为的原因是嵌套母版页的 `MasterPageFile` 属性静态设置为在其 `<%@ Master %>` 指令中 `Site.master`。
 
-若要使用由我们需要设置最终用户选择顶层母版页`AdminNested.master`的`MasterPageFile`属性中的值为`MyMasterPage`会话变量。 因为我们将设置内容页的`MasterPageFile`中的属性`BasePage`，您可能会认为我们会将嵌套的母版页的设置`MasterPageFile`中的属性`BaseMasterPage`中或在`AdminNested.master`的代码隐藏类。 这不会起作用，但是，因为我们需要设置`MasterPageFile`PreInit 阶段结束时通过属性。 我们可以以编程方式利用从母版页的页面生命周期的最早时间是 Init 阶段 （发生此情况的 PreInit 阶段）。
+若要使用由最终用户选择的顶层母版页，需要将 `AdminNested.master`的 `MasterPageFile` 属性设置为 `MyMasterPage` Session 变量中的值。 由于我们在 `BasePage`中设置内容页的 `MasterPageFile` 属性，因此，你可能会认为在 `BaseMasterPage` 或 `AdminNested.master`的代码隐藏类中设置嵌套母版页的 `MasterPageFile` 属性。 但这不起作用，因为我们需要在 PreInit 阶段结束时设置 "`MasterPageFile`" 属性。 可以通过编程方式从母版页进入页面生命周期的最早时间是 Init 阶段（在 PreInit 阶段后发生）。
 
-因此，我们需要设置嵌套的母版页的`MasterPageFile`从内容页的属性。 只有内容页面，使用`AdminNested.master`母版页派生`AdminBasePage`。 因此，我们可以那里放置此逻辑。 步骤 5 中我们重写`SetMasterPageFile`方法，设置`Page`对象的`MasterPageFile`属性设置为"~ / Admin/AdminNested.master"。 更新`SetMasterPageFile`还要设置母版页的`MasterPageFile`属性设置为结果存储在会话中：
+因此，需要从内容页设置嵌套母版页的 `MasterPageFile` 属性。 使用 `AdminNested.master` 母版页的唯一内容页派生自 `AdminBasePage`。 因此，可以将此逻辑放在此处。 在步骤5中，我们 u.i 了 `SetMasterPageFile` 方法，将 `Page` 对象的 `MasterPageFile` 属性设置为 "~/Admin/AdminNested.master"。 更新 `SetMasterPageFile`，同时将母版页的 `MasterPageFile` 属性设置为会话中存储的结果：
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample18.cs)]
 
-`GetMasterPageFileFromSession`方法，我们将添加到`BasePage`在前面的教程中，返回适当的母版页文件路径基于会话的变量值的类。
+在前面的教程中，我们添加到 `BasePage` 类的 `GetMasterPageFileFromSession` 方法将根据会话变量值返回相应的母版页文件路径。
 
-与此更改后，用户的主页面选择内容将被传递到管理部分。 图 13 显示了在同一页，图 12，但之后，用户已更改到其主页面选择`Alternate.master`。
+进行此更改后，用户的母版页选择会转到 "管理" 部分。 图13显示了与图12相同的页，但在用户将其母版页选择更改为 `Alternate.master`后。
 
-[![嵌套的管理页使用用户选定的顶层母版页](nested-master-pages-cs/_static/image38.png)](nested-master-pages-cs/_static/image37.png)
+[!["嵌套的管理" 页使用用户选择的顶层母版页](nested-master-pages-cs/_static/image38.png)](nested-master-pages-cs/_static/image37.png)
 
-**图 13**:嵌套管理页使用顶级 Master 页中选择用户 ([单击此项可查看原尺寸图像](nested-master-pages-cs/_static/image39.png))
+**图 13**：嵌套管理页使用用户选择的顶层母版页（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image39.png)）
 
 ## <a name="summary"></a>总结
 
-多 like 如何在内容页面可以绑定到主页面，则可以创建嵌套的子级的母版页的母版页绑定到一个父级母版页。 子主页面可能为每个其父级的 Contentplaceholder; 定义内容控件它然后可以将其自身 ContentPlaceHolder 控件 （以及其他标记） 添加到这些内容控件。 嵌套的母版页是在其中所有页面都共享首要的外观和感觉，但站点的某些部分需要唯一自定义项的大型 web 应用程序中非常有用。
+与内容页绑定到母版页的方式非常类似，可以通过将子母版页绑定到父母版页来创建嵌套母版页。 子母版页可以为其每个父级的 Contentplaceholder 定义内容控件;然后，它可以将其自己的 ContentPlaceHolder 控件（以及其他标记）添加到这些内容控件。 嵌套的母版页在大 web 应用程序中非常有用，在这种情况下，所有页面都具有大致的外观，但站点的某些部分需要独有的自定义。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
-- [嵌套的 ASP.NET 母版页](https://msdn.microsoft.com/library/x2b3ktt7.aspx)
-- [嵌套的母版页和 VS 2005 设计时的提示](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)
-- [VS 2008 嵌套 Master 页支持](https://weblogs.asp.net/scottgu/archive/2007/07/09/vs-2008-nested-master-page-support.aspx)
+- [嵌套 ASP.NET 母版页](https://msdn.microsoft.com/library/x2b3ktt7.aspx)
+- [嵌套母版页和 VS 2005 设计时的提示](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)
+- [VS 2008 嵌套母版页支持](https://weblogs.asp.net/scottgu/archive/2007/07/09/vs-2008-nested-master-page-support.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多个部 asp/ASP.NET 书籍并创办了 4GuysFromRolla.com，一直从事 Microsoft Web 技术自 1998 年起。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是[ *Sams Teach 自己 ASP.NET 3.5 24 小时内*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以在达到 Scott [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的多个 ASP/asp 和4GuysFromRolla.com 的作者已使用 Microsoft Web 技术，1998。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 可以通过[http://ScottOnWriting.NET](http://scottonwriting.net/) [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或通过他的博客访问 Scott。
 
 ### <a name="special-thanks-to"></a>特别感谢
 
-很多有用的审阅者已评审本系列教程。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+此教程系列由许多有用的审阅者查看。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一页](specifying-the-master-page-programmatically-cs.md)
