@@ -1,150 +1,150 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
-title: 使用 Visual Studio 的 ASP.NET Web 部署：Web.config 文件转换 |Microsoft Docs
+title: 使用 Visual Studio 的 ASP.NET Web 部署： web.config 文件转换 |Microsoft Docs
 author: tdykstra
-description: 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用...
+description: 本系列教程介绍了如何通过来将 ASP.NET web 应用程序部署（发布）到 Azure App Service Web 应用或第三方托管提供程序。
 ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: 595723d9c6ea9cc40bb0ae896524ee828c4ebce2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a9d39547c94a63003442ba6fe1257693dde24b05
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128430"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74621793"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio 的 ASP.NET Web 部署：Web.config 文件转换
+# <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio 的 ASP.NET Web 部署： web.config 文件转换
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-[下载初学者项目](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[下载初学者项目](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> 本系列教程演示如何部署 （发布） ASP.NET web 应用程序到 Azure 应用服务 Web 应用或第三方托管提供商，通过使用 Visual Studio 2012 或 Visual Studio 2010。 有关序列的信息，请参阅[系列中的第一个教程](introduction.md)。
+> 本系列教程介绍了如何使用 Visual Studio 2012 或 Visual Studio 2010，将 ASP.NET web 应用程序部署（发布）到 Azure App Service Web 应用或第三方托管提供商。 有关序列的信息，请参阅本[系列中的第一个教程](introduction.md)。
 
 ## <a name="overview"></a>概述
 
-本教程演示如何自动执行更改的过程*Web.config*文件时将其部署到不同的目标环境。 大多数应用程序中具有设置*Web.config*部署应用程序必须是不同的文件。 自动执行进行这些更改的过程可以防止您无需手动执行它们，每次部署，这可能会比较繁琐且容易出错。
+本教程介绍如何在将 web.config 文件部署到不同目标环境时，自动完成更改*该文件的*过程。 大多数应用*程序的 web.config 文件中*的设置在部署应用程序时必须不同。 自动执行这些更改的过程使您无需在每次部署时手动执行这些更改，这会导致单调乏味且容易出错。
 
-提醒：如果收到错误消息或某些操作无法按完成以下教程，请务必检查[故障排除页](troubleshooting.md)。
+提醒：如果你收到一条错误消息或在你完成本教程时无法正常工作，请务必查看[故障排除页](troubleshooting.md)。
 
-## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>与 Web 部署参数的 Web.config 转换
+## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Web.config 转换与 Web 部署参数
 
-有两种方法来自动执行更改的过程*Web.config*文件设置：[Web.config 转换](https://msdn.microsoft.com/library/dd465326.aspx)并[Web 部署参数](https://msdn.microsoft.com/library/ff398068.aspx)。 一个*Web.config*转换文件包含用于指定如何更改 XML 标记*Web.config*文件部署时。 您可以指定不同的更改的特定生成配置，并为特定发布配置文件。 默认生成配置是调试和发布，并且可以创建自定义生成配置。 发布配置文件通常对应于目标环境。 (有关详细信息发布配置文件中的，您将学习[作为测试环境部署到 IIS](deploying-to-iis.md)教程。)
+可以通过两种方法自动*执行更改 web.config*文件设置的过程： web.config[转换](https://msdn.microsoft.com/library/dd465326.aspx)和[Web 部署参数](https://msdn.microsoft.com/library/ff398068.aspx)。 Web.config*转换文件*包含 XML 标记，该标记*指定在部署 web.config 文件时*如何对其进行更改。 您可以为特定的生成配置和特定发布配置文件指定不同的更改。 默认生成配置为 "调试" 和 "发布"，您可以创建自定义生成配置。 发布配置文件通常对应于目标环境。 （有关详细信息，请参阅在[部署到 IIS 作为测试环境](deploying-to-iis.md)教程中发布配置文件。）
 
-Web 部署参数可用于指定必须在部署期间，包括设置中找到的配置设置的许多不同种类*Web.config*文件。 用于指定当*Web.config*文件发生更改，Web 部署参数是更复杂，进行设置，但不是知道要在部署前设置的值时十分有用。 例如，在企业环境中，您可以创建*部署包*并将其提供给 IT 部门中的用户安装在生产中，并该用户有能够输入连接字符串或不这样做的密码知道。
+Web 部署参数可用于指定在部署过程中必须配置的多种不同类型的设置，包括在*web.config*文件中找到的设置。 当*用于指定 web.config*文件更改时，Web 部署参数的设置将更复杂，但在部署之前，您不知道要设置的值，则这些参数非常有用。 例如，在企业环境中，你可以创建一个*部署包*，并将其提供给 it 部门中的人员，以便在生产环境中安装，并且该用户必须能够输入你不知道的连接字符串或密码。
 
-对于本教程系列介绍了方案，您事先知道所有内容都采取的措施*Web.config*文件，因此不需要使用 Web 部署参数。 将配置一些转换，具体取决于使用，将生成配置不同，一些，具体取决于使用的发布配置文件不同。
+对于本教程系列涵盖的方案，你事先知道需要对*web.config 文件进行的所有*操作，因此你无需使用 Web 部署参数。 您将根据所使用的生成配置，配置一些不同的转换，并且某些转换因所使用的发布配置文件而有所不同。
 
 <a id="watransforms"></a>
 
-## <a name="specifying-webconfig-settings-in-azure"></a>在 Azure 中的指定 Web.config 设置
+## <a name="specifying-webconfig-settings-in-azure"></a>在 Azure 中指定 web.config 设置
 
-如果*Web.config*你想要更改的文件设置位于`<connectionStrings>`或`<appSettings>`元素，并且您要部署到 Azure 应用服务中的 Web 应用，则可以自动执行过程中的更改的另一个选项部署。 可以输入你想要在 Azure 中才会生效的设置**配置**的 web 应用的管理门户页的选项卡 (向下滚动到**应用程序设置**和**连接字符串**部分)。 时部署项目时，Azure 会自动应用所做的更改。 有关详细信息，请参阅[Windows Azure 网站：应用程序字符串和连接字符串的工作原理](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)。
+如果要更改的*web.config*文件设置位于 `<connectionStrings>` 或 `<appSettings>` 元素中，并且如果要部署到 Azure App Service 中的 web 应用，则可以使用另一个选项在部署期间自动执行更改。 可以在 web 应用的 "管理门户" 页的 "**配置**" 选项卡中输入想要在 Azure 中生效的设置（向下滚动到 "**应用设置**" 和 "**连接字符串**" 部分）。 部署项目时，Azure 会自动应用所做的更改。 有关详细信息，请参阅[Microsoft Azure 网站：应用程序字符串和连接字符串的工作原理](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)。
 
 ## <a name="default-transformation-files"></a>默认转换文件
 
-在中**解决方案资源管理器**，展开*Web.config*以查看*Web.Debug.config*并*Web.Release.config*转换文件默认情况下，对两个默认的生成配置创建。
+在**解决方案资源管理器**中，*展开 web.config*以查看默认情况下为两个默认生成配置*创建的 web.config 和* *web.config*转换文件。
 
-![Web.config_transform_files](web-config-transformations/_static/image1.png)
+![Web。 config_transform_files](web-config-transformations/_static/image1.png)
 
-可以通过右键单击 Web.config 文件，然后选择创建转换文件的自定义生成配置**添加配置转换**从上下文菜单。 对于本教程无需执行此操作，并已禁用的菜单选项，因为尚未创建任何自定义生成配置。
+您可以通过右键单击 web.config 文件，然后从上下文菜单中选择 "**添加配置转换**"，为自定义生成配置创建转换文件。 对于本教程，无需执行此操作，并且菜单选项被禁用，因为尚未创建任何自定义生成配置。
 
-稍后需要创建三个更多转换文件，每个测试，用于过渡和生产发布配置文件。 设置来处理在发布配置文件转换文件中因为它依赖于目标环境的一个典型示例是不同的测试与生产的 WCF 终结点。 你将创建发布配置文件转换文件中更高版本的教程后创建它们随附的发布配置文件。
+稍后，你将创建三个更多转换文件，分别用于测试、暂存和生产发布配置文件。 你将在发布配置文件转换文件中处理的设置的一个典型示例，因为它依赖于目标环境是一个不同于测试与生产的 WCF 终结点。 您将在后面的教程中创建发布配置文件转换文件，之后再创建这些文件。
 
 ## <a name="disable-debug-mode"></a>禁用调试模式
 
-而不是目标环境将是依赖于生成配置设置的示例`debug`属性。 为发布版本中，您通常希望调试被禁用而不考虑哪些环境要部署到。 因此，默认情况下，Visual Studio 项目模板创建*Web.Release.config*转换文件中删除的代码`debug`属性从`compilation`元素。 下面是默认值*Web.Release.config*： 除了被注释掉了一些示例转换代码，它包括中的代码`compilation`移除的元素`debug`属性：
+依赖于生成配置的设置（而不是目标环境）的一个示例是 `debug` 特性。 对于发布版本，通常要禁用调试，而不考虑要部署到的环境。 因此，默认情况下，Visual Studio 项目模板会创建*web.config*转换文件，其中包含从 `compilation` 元素中移除 `debug` 特性的代码。 下面是默认的*web.config*：除了注释掉的一些示例转换代码，它还包括删除 `debug` 属性的 `compilation` 元素中的代码：
 
 [!code-xml[Main](web-config-transformations/samples/sample1.xml?highlight=18)]
 
-`xdt:Transform="RemoveAttributes(debug)"`属性指定您希望`debug`属性从删除`system.web/compilation`元素中已部署*Web.config*文件。 这会在每次部署发布版本。
+`xdt:Transform="RemoveAttributes(debug)"` 特性指定要从已部署的*web.config*文件中的 `system.web/compilation` 元素中移除 `debug` 特性。 这将在每次部署发布版本时完成。
 
 ## <a name="limit-error-log-access-to-administrators"></a>限制对管理员的错误日志访问
 
-如果没有错误应用程序运行时，应用程序将显示一般错误页中代替系统生成的错误页上，并且它使用[Elmah NuGet 包](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx)错误日志记录和报告。 `customErrors`应用程序中的元素*Web.config*文件指定的错误页：
+如果在应用程序运行时出现错误，应用程序将显示一个通用错误页来代替系统生成的错误页，并使用[Elmah NuGet 包](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx)进行错误日志记录和报告。 应用程序*web.config*文件中的 `customErrors` 元素指定错误页：
 
 [!code-xml[Main](web-config-transformations/samples/sample2.xml)]
 
-若要查看错误页，暂时更改`mode`属性的`customErrors`"RemoteOnly"为"开"，并运行应用程序从 Visual Studio 中的元素。 导致错误的请求无效的 URL，如*Studentsxxx.aspx*。 而不是 IIS 生成"无法找到资源"错误页上，你看到*GenericErrorPage.aspx*页。
+若要查看错误页，请暂时将 `customErrors` 元素的 `mode` 属性从 "RemoteOnly" 更改为 "打开"，并从 Visual Studio 运行该应用程序。 请求无效的 URL （如*Studentsxxx*）会导致错误。 您将看到*GenericErrorPage*页，而不是 IIS 生成的 "找不到资源" 错误页。
 
 ![错误页](web-config-transformations/_static/image2.png)
 
-若要查看错误日志，替换 URL 中的所有内容后使用的端口号*elmah.axd* (例如， `http://localhost:51130/elmah.axd`) 并按 Enter:
+若要查看错误日志，请将 URL 中的所有内容替换为*elmah. axd*的端口号（例如 `http://localhost:51130/elmah.axd`），然后按 enter：
 
-![ELMAH 页](web-config-transformations/_static/image3.png)
+![ELMAH 页面](web-config-transformations/_static/image3.png)
 
-不要忘记设置`customErrors`返回到"RemoteOnly"模式下完成后的元素。
+完成后，不要忘记将 `customErrors` 元素设置回 "RemoteOnly" 模式。
 
-在开发计算机上是可以方便地允许免费访问错误日志页中，但在生产环境时可能带来安全风险中。 对于生产站点中，您要添加授权规则，将错误日志的访问限制为管理员，并确保，限制适用于你想在测试和过渡还。 因此，这是另一项更改，你想要实现和每次部署发布版本中，因此它属于*Web.Release.config*文件。
+在您的开发计算机上，可以方便地访问错误日志页，但在生产环境中，这会带来安全风险。 对于生产站点，你希望添加一个限制对管理员的错误日志访问的授权规则，并确保你还需要将此限制用于测试和过渡。 因此，这是你想要在每次部署发布版本时实现的另一项更改，因此它属于*web.config*文件。
 
-打开*Web.Release.config* ，并添加新`location`立即关闭之前的元素`configuration`标签，如下所示。
+打开*web.config*并在关闭 `configuration` 标记之前添加新的 `location` 元素，如下所示。
 
 [!code-xml[Main](web-config-transformations/samples/sample3.xml?highlight=27-34)]
 
-`Transform`属性值为"插入"，则这`location`要作为同级添加到任何现有元素`location`中的元素*Web.config*文件。 (已包含一个`location`元素，它指定授权规则**更新信用额度**页。)
+"Insert" `Transform` 特性值导致将此 `location` 元素添加为*web.config*文件中任何现有 `location` 元素的同级元素。 （已经有一个 `location` 元素指定了**更新信用额度**页面的授权规则。）
 
-现在可以预览要确保您正确编码的转换。
+现在可以预览转换，确保正确编码。
 
-在中**解决方案资源管理器**，右键单击*Web.Release.config*然后单击**预览版转换**。
+在**解决方案资源管理器**中，右键单击 " *web.config* " 并单击 "**预览转换**"。
 
 ![预览转换菜单](web-config-transformations/_static/image4.png)
 
-演示如何开发一个页随即打开*Web.config*上的左窗格和内容文件在已部署*Web.config*文件将如下所示在右侧，突出显示了更改。
+此时将打开一个页面，其中显示了左侧*的开发 web.config*文件，并突出显示了所部署的*web.config*文件。
 
-![调试转换的预览](web-config-transformations/_static/image5.png)
+![调试转换预览](web-config-transformations/_static/image5.png)
 
-![位置转换的预览](web-config-transformations/_static/image6.png)
+![位置转换预览](web-config-transformations/_static/image6.png)
 
-(在预览版中，您可能注意到不是自己编写一些附加更改转换为： 这些通常涉及到的空白区域，但不会影响功能删除。)
+（在预览版中，你可能会注意到一些你没有编写转换的其他更改：这通常涉及到删除不影响功能的空白。）
 
-在部署后测试该站点时，还将测试以验证授权规则有效。
+部署后测试站点时，还需进行测试，以验证授权规则是否有效。
 
 > [!NOTE] 
 > 
-> **安全说明**永远不会显示错误详细信息公开在生产应用程序中，或将该信息存储在公共位置。 攻击者可以使用错误的信息来发现站点中的漏洞。 如果在自己的应用程序中使用 ELMAH，配置 ELMAH，尽量降低安全风险。 在本教程中的 ELMAH 示例不应视为是建议的配置。 它是为了说明如何处理应用程序必须能够创建中的文件的文件夹选择了一个示例。 有关详细信息，请参阅[保护 ELMAH 终结点](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)。
+> **安全说明**切勿在生产应用程序中向公众显示错误详细信息，或者将该信息存储在公共位置。 攻击者可以使用错误信息发现站点中的漏洞。 如果在自己的应用程序中使用 ELMAH，请配置 ELMAH 以将安全风险降至最低。 本教程中的 ELMAH 示例不应被视为建议的配置。 这是一个示例，它是为了说明如何处理应用程序必须能够在其中创建文件的文件夹。 有关详细信息，请参阅[保护 ELMAH 终结点](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)。
 
-## <a name="a-setting-that-youll-handle-in-publish-profile-transformation-files"></a>将处理中的设置发布配置文件转换文件
+## <a name="a-setting-that-youll-handle-in-publish-profile-transformation-files"></a>你将在发布配置文件转换文件中处理的设置
 
-一种常见方案是让*Web.config*文件必须部署到每个环境中不同的设置。 例如，调用 WCF 服务的应用程序可能需要测试和生产环境中的不同终结点。 Contoso 大学应用程序还包括这种类型的设置。 此设置控制站点的页面上告诉您是在中，如开发、 测试或生产的环境的可见指示符。 设置值确定该应用程序是否将追加"（开发）"或"（测试）"中的主标题*Site.Master*母版页：
+常见的情况是，在你部署到的每个环境中必须有不同的*web.config 文件设置。* 例如，调用 WCF 服务的应用程序可能需要在测试环境和生产环境中使用不同的终结点。 Contoso 大学应用程序还包括此类型的设置。 此设置控制站点页面上的可见指示器，该指示器告诉你处于哪个环境（例如开发、测试或生产）。 设置值确定应用程序是将 "（Dev）" 还是 "（Test）" 追加到站点的主标题上 *。母版页*母版页：
 
 ![环境指示器](web-config-transformations/_static/image7.png)
 
-在过渡环境或生产环境中运行该应用程序时，将忽略环境指示器。
+当应用程序在过渡或生产环境中运行时，将省略环境指示器。
 
-Contoso University web 页面读取中设置的值`appSettings`中*Web.config*以便确定哪种环境中运行应用程序的文件：
+Contoso 大学网页读取在*web.config 文件 `appSettings`* 中设置的值，以确定应用程序运行的环境：
 
 [!code-xml[Main](web-config-transformations/samples/sample4.xml)]
 
-值应在测试环境中，将"Test"，"Prod"过渡和生产。
+在测试环境中，该值应为 "Test"，过渡和生产的值应为 "生产"。
 
 转换文件中的以下代码将实现此转换：
 
 [!code-xml[Main](web-config-transformations/samples/sample5.xml)]
 
-`xdt:Transform`属性的值"SetAttributes"指示此转换的目的是要更改属性值中的现有元素*Web.config*文件。 `xdt:Locator`属性的值"Match(key)"指示要修改的元素是一个其`key`属性匹配`key`此处指定的属性。 仅另一个属性的`add`元素是`value`，这也将更改的内容中已部署*Web.config*文件。 此处显示的原因的代码`value`的属性`Environment``appSettings`设置为"Test"中的元素*Web.config*部署的文件。
+`xdt:Transform` 属性值 "SetAttributes" 指示此转换的目的是更改*web.config 文件中*现有元素的属性值。 `xdt:Locator` 属性值 "Match （key）" 指示要修改的元素是其 `key` 属性与此处指定的 `key` 属性匹配的元素。 `add` 元素的唯一其他属性 `value`，这就是在部署的*web.config*文件中将更改的内容。 此处显示的代码导致在*部署的 web.config 文件中*将 `Environment` `appSettings` 元素的 `value` 属性设置为 "Test"。
 
-此转换属于你尚未创建的发布配置文件转换文件。 将创建并更新创建测试、 过渡和生产环境的发布配置文件时实施此更改的转换文件。 将在执行该操作[部署到 IIS](deploying-to-iis.md)并[部署到生产环境](deploying-to-production.md)教程。
+此转换属于尚未创建的发布配置文件转换文件。 在为测试、过渡和生产环境创建发布配置文件时，你将创建和更新实现此更改的转换文件。 你将在 "[部署到 IIS](deploying-to-iis.md) " 和 "[部署到生产](deploying-to-production.md)" 教程中执行此操作。
 
 > [!NOTE]
-> 因为此设置位于`<appSettings>`元素中，您有另一种方法，用于指定转换时你正在部署到 Azure 应用服务另请参阅中的 Web 应用[在 Azure 中的指定 Web.config 设置](#watransforms)前面的本主题中。
+> 由于此设置位于 `<appSettings>` 元素中，因此，你可以使用另一种方法在部署到 Web 应用时指定转换 Azure App Service 请参阅本主题前面的在[Azure 中指定 web.config 设置](#watransforms)。
 
 ## <a name="setting-connection-strings"></a>设置连接字符串
 
-尽管默认转换文件中包含的示例，演示如何更新连接字符串，但在大多数情况下不需要设置连接字符串转换，因为你可以发布配置文件中指定连接字符串。 将在执行该操作[部署到 IIS](deploying-to-iis.md)并[部署到生产环境](deploying-to-production.md)教程。
+尽管默认转换文件包含演示如何更新连接字符串的示例，但在大多数情况下，你不需要设置连接字符串转换，因为你可以在发布配置文件中指定连接字符串。 你将在 "[部署到 IIS](deploying-to-iis.md) " 和 "[部署到生产](deploying-to-production.md)" 教程中执行此操作。
 
 ## <a name="summary"></a>总结
 
-您现在要做为您就可以*Web.config*转换之前创建发布配置文件，并已了解的一切将会在部署的 Web.config 文件预览。
+在创建发布配置文件之前，你已完成*了与 web.config 转换相同*的操作，并且已查看部署的 web.config 文件中将包含的内容的预览。
 
-![位置转换的预览](web-config-transformations/_static/image8.png)
+![位置转换预览](web-config-transformations/_static/image8.png)
 
-在以下教程中，你将需要设置项目属性的部署设置任务的处理。
+在以下教程中，你将负责执行需要设置项目属性的部署设置任务。
 
 ## <a name="more-information"></a>详细信息
 
-本教程中所涉及的主题的详细信息，请参阅[使用 Web.config 转换，以在部署过程中更改目标 Web.config 文件或 app.config 文件中的设置](https://go.microsoft.com/fwlink/p/?LinkId=282413#transforms)中的 Web 部署内容映射Visual Studio 和 ASP.NET。
+有关本教程涵盖的主题的详细信息，请参阅在 Visual Studio 和 ASP.NET 的 Web 部署内容映射中的[部署过程中，使用 web.config 转换更改目标 web.config 文件或 app.config 文件中的设置](https://go.microsoft.com/fwlink/p/?LinkId=282413#transforms)。
 
 > [!div class="step-by-step"]
 > [上一页](preparing-databases.md)
