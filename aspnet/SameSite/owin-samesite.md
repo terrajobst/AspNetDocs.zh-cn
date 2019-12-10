@@ -5,12 +5,12 @@ description: 使用 SameSite cookie 和用于 .NET 的开放 Web 界面（OWIN�
 ms.author: riande
 ms.date: 12/6/2019
 uid: owin-samesite
-ms.openlocfilehash: fc64315e8c3614e460c9a8d551bcb0848b3fe8f9
-ms.sourcegitcommit: 516a168548252ff0eaae2c02ec4bd9ffcfa8375e
+ms.openlocfilehash: ac5ae24eeb9e8e1cc6296667a4bebef72c3eb62c
+ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951880"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993075"
 ---
 # <a name="samesite-cookies-and-the-open-web-interface-for-net-owin"></a>SameSite cookie 和用于 .NET 的开放 Web 接口（OWIN）
 
@@ -39,7 +39,7 @@ ms.locfileid: "74951880"
 
 `SystemWebCookieManager` 依赖于 .NET 4.7.2 `System.Web` Api 来启用 `SameSite` 支持，并使用修补程序来更改行为。
 
-[OWIN 和 system.web 响应 cookie 集成问题](https://github.com/aspnet/AspNetKatana/wiki/System.Web-response-cookie-integration-issues)中概述了使用 `SystemWebCookieManager` 的原因。 如果在 `System.Web`上运行，则建议 `SystemWebCookieManager`。 
+[OWIN 和 system.web 响应 cookie 集成问题](https://github.com/aspnet/AspNetKatana/wiki/System.Web-response-cookie-integration-issues)中概述了使用 `SystemWebCookieManager` 的原因。 如果在 `System.Web`上运行，则建议 `SystemWebCookieManager`。
 
 下面的代码将 `SameSite` 设置为 `Lax`：
 
@@ -74,9 +74,7 @@ owinContext.Response.Cookies.Append("My Key", "My Value", new CookieOptions()
 * 指定默认情况下将 cookie 视为 `SameSite=Lax`。
 * 指定显式断言 `SameSite=None` 以便启用跨站点传递的 cookie 应标记为 `Secure`。 `None` 是选择退出的新项。
 * 默认[情况下，计划](https://chromestatus.com/feature/5088147346030592)在[2020 年2月](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)启用。 浏览器已开始在2019中移动到此标准。
-* 颁发的修补程序支持，如以下 KB 所述：
-  * [知识库文章4531182](https://support.microsoft.com/help/4531182/kb4531182)
-  * [知识库文章4524421](https://support.microsoft.com/help/4524421/kb4524421)
+* 按照知识库文章中的说明，发布的修补程序支持。 有关更多信息，请参见<xref:samesite/kbs-samesite>。
 
 <a name="sob"></a>
 
@@ -128,7 +126,7 @@ Google 不会使旧版 chrome 版本可用。 遵循[下载 Chromium](https://ww
 
 ### <a name="test-with-safari"></a>用 Safari 测试
 
-Safari 12 严格实现了之前的草稿，在新的 `None` 值在 cookie 中时失败。 通过本文档中[支持旧版浏览](#sob)器的浏览器检测代码，可避免 `None`。 使用 MSAL、ADAL 或所使用的任何库，测试 Safari 12、Safari 13 和基于 WebKit 的 OS 样式登录。 此问题依赖于基础操作系统版本。 已知 OSX Mojave （10.14）和 iOS 12 对于新 `SameSite` 行为存在兼容性问题。 将 OS 升级到 OSX Catalina （10.15）或 iOS 13 会解决此问题。 Safari 当前没有用于测试新规范行为的选择标记。
+Safari 12 严格实现了之前的草稿，在新的 `None` 值在 cookie 中时失败。 通过本文档中[支持旧版浏览](#sob)器的浏览器检测代码，可避免 `None`。 使用 MSAL、ADAL 或所使用的任何库，测试 Safari 12、Safari 13 和基于 WebKit 的 OS 样式登录。 问题取决于基础 OS 版本。 已知 OSX Mojave （10.14）和 iOS 12 对于新 `SameSite` 行为存在兼容性问题。 将 OS 升级到 OSX Catalina （10.15）或 iOS 13 会解决此问题。 Safari 当前没有用于测试新规范行为的选择标记。
 
 ### <a name="test-with-firefox"></a>用 Firefox 测试
 

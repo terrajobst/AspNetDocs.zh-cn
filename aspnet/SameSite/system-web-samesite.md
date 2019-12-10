@@ -5,12 +5,12 @@ description: 了解如何使用在 ASP.NET 中 SameSite cookie
 ms.author: riande
 ms.date: 12/03/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: 40e5c13b6834912c13b41cbfad7da8cd84ca6c8b
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 47a3d7576edb0e818c39b32fbbcb98475248e18e
+ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74902008"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74993062"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
@@ -35,10 +35,7 @@ SameSite 是一种[IETF](https://ietf.org/about/)草案，旨在针对跨站点�
 
 SameSite 支持是在使用[2016 草案标准](https://tools.ietf.org/html/draft-west-first-party-cookies-07#section-4.1)的 .net 4.7.2 中首次实现的。
 
-2019年11月19日更新了 Windows 更新后的 .NET 4.7.2 + 2016 标准版和2019标准版。 其他版本的 Windows 即将推出其他更新。 有关详细信息，请参阅以下 KB：
-
-* [知识库文章4531182](https://support.microsoft.com/help/4531182/kb4531182)
-* [知识库文章4524421](https://support.microsoft.com/help/4524421/kb4524421)
+2019年11月19日更新了 Windows 更新后的 .NET 4.7.2 + 2016 标准版和2019标准版。 其他版本的 Windows 即将推出其他更新。 有关更多信息，请参见<xref:samesite/kbs-samesite>。
 
  SameSite 规范的2019草案：
 
@@ -85,7 +82,7 @@ Google 不会使旧版 chrome 版本可用。 遵循[下载 Chromium](https://ww
 
 ### <a name="test-with-safari"></a>用 Safari 测试
 
-Safari 12 严格实现了之前的草稿，在新的 `None` 值在 cookie 中时失败。 通过本文档中[支持旧版浏览](#sob)器的浏览器检测代码，可避免 `None`。 使用 MSAL、ADAL 或所使用的任何库，测试 Safari 12、Safari 13 和基于 WebKit 的 OS 样式登录。 此问题依赖于基础操作系统版本。 已知 OSX Mojave （10.14）和 iOS 12 与新的 SameSite 行为存在兼容性问题。 将 OS 升级到 OSX Catalina （10.15）或 iOS 13 会解决此问题。 Safari 当前没有用于测试新规范行为的选择标记。
+Safari 12 严格实现了之前的草稿，在新的 `None` 值在 cookie 中时失败。 通过本文档中[支持旧版浏览](#sob)器的浏览器检测代码，可避免 `None`。 使用 MSAL、ADAL 或所使用的任何库，测试 Safari 12、Safari 13 和基于 WebKit 的 OS 样式登录。 问题取决于基础 OS 版本。 已知 OSX Mojave （10.14）和 iOS 12 与新的 SameSite 行为存在兼容性问题。 将 OS 升级到 OSX Catalina （10.15）或 iOS 13 会解决此问题。 Safari 当前没有用于测试新规范行为的选择标记。
 
 ### <a name="test-with-firefox"></a>用 Firefox 测试
 
