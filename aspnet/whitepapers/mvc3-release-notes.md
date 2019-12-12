@@ -8,12 +8,12 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 46d051a5eba6501cf36910b7674ce6400597de8a
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.openlocfilehash: 504202068f5db4f8614bba02e8066ffecfd15b48
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057021"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74619243"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
@@ -298,7 +298,7 @@ ADO.NET 实体框架4.1 包括 Code First 功能。 “代码优先”是 ADO.NE
 - 在某些情况下，安装可能会失败，并出现错误消息 "安装失败，出现错误代码（0x80070643）"。 有关如何解决此问题的信息，请参阅[知识库文章 2531566](https://support.microsoft.com/kb/2531566)。
 - 用于添加控制器的创建基架功能不会为利用 Entity Framework 内的实体继承支持的实体创建基架。 例如，给定*学生*类继承的基本*Person*类，则*student*类的基架将导致生成的代码不进行编译。
 - 在解决方案文件夹中创建新的 ASP.NET MVC 3 项目会导致*NullReferenceException*错误。 解决方法是在解决方案的根中创建 ASP.NET MVC 3 项目，然后将其移到解决方案文件夹中。
-- 在安装 ReSharper 时，IntelliSense for Razor 语法不起作用。 如果你已安装 ReSharper，并且想要充分利用 ASP.NET MVC 3 中的 Razor IntelliSense 支持，请参阅 Hadi Hariri 博客上的入门[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中讨论了如何将它们一起使用。
+- 在安装 ReSharper 时，IntelliSense for Razor 语法不起作用。 如果你已安装 ReSharper，并且想要充分利用 ASP.NET MVC 3 中的 Razor IntelliSense 支持，请参阅 Hadi Hariri 博客上的入门[Razor intellisense 和 ReSharper](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中讨论了如何将它们一起使用。
 - 在安装过程中，EULA 接受对话框在一个小于预期的窗口中显示许可条款。
 - 编辑 Razor 视图（cshtml 或。*vbhtml*文件），视图。 ASP.NET MVC 3 不包括 Razor 视图的任何代码段。aspxselecting ASP.NET MVC 的代码片段将显示
 - 如果在未安装 Visual Studio 的计算机上安装适用于 Visual Web Developer Express 的 ASP.NET MVC 3，然后安装 Visual Studio，则必须重新安装 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共享由 ASP.NET MVC 3 安装程序升级的组件。 如果在没有 Visual Web Developer 速成版的计算机上安装适用于 Visual Studio 的 ASP.NET MVC 3，然后再安装 Visual Web Developer Express，则会遇到同样的问题。
@@ -347,7 +347,7 @@ ASP.NET MVC 3 的 RC2 版本引入了一个*CachedDataAnnotationsMetadataProvide
 - ASP.NET MVC 3 安装程序只能安装初始版本的 NuGet 包管理器。 安装初始版本后，可以使用 Visual Studio 扩展管理器安装和更新 NuGet。 如果已安装 NuGet，请前往 Visual Studio 扩展库，更新到最新版本的 NuGet。
 - 在解决方案文件夹中创建新的 ASP.NET MVC 3 项目会导致*NullReferenceException*错误。 解决方法是在解决方案的根中创建 ASP.NET MVC 3 项目，然后将其移到解决方案文件夹中。
 - 安装程序所需的时间可能比以前版本的 ASP.NET MVC 长得多。 这是因为它会更新 Visual Studio 2010 的组件。
-- 在安装 ReSharper 时，IntelliSense for Razor 语法不起作用。 如果你已安装 ReSharper，并且想要充分利用 ASP.NET MVC 3 中的 Razor IntelliSense 支持，请参阅 Hadi Hariri 博客上的入门[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中讨论了如何将它们一起使用。
+- 在安装 ReSharper 时，IntelliSense for Razor 语法不起作用。 如果你已安装 ReSharper，并且想要充分利用 ASP.NET MVC 3 中的 Razor IntelliSense 支持，请参阅 Hadi Hariri 博客上的入门[Razor intellisense 和 ReSharper](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中讨论了如何将它们一起使用。
 - 使用 ASP.NET MVC 3 的 Beta 版创建的 CCSHTML 和 VBHTML 视图没有正确设置其生成操作，这会导致在发布项目时省略这些视图类型。 应将这些文件的 "生成操作" 值设置为 "内容"。 ASP.NET MVC 3 RTM 修复了新文件的这一问题，但没有更正使用预发行版本创建的项目的现有文件的设置。
 - ![](mvc3-release-notes/_static/image3.png)
 - 在安装过程中，EULA 接受对话框在一个小于预期的窗口中显示许可条款。
@@ -470,7 +470,7 @@ ASP.NET MVC 3 的 RC 版本中引入了*ControllerSessionStateAttribute*类。 �
 - ASP.NET MVC 3 安装程序只能安装初始版本的 NuGet 包管理器。 安装初始版本后，可以使用 Visual Studio 扩展管理器安装和更新 NuGet。 如果已安装 NuGet，请前往 Visual Studio 扩展库，更新到最新版本的 NuGet。
 - 在解决方案文件夹中创建新的 ASP.NET MVC 3 项目会导致*NullReferenceException*错误。 解决方法是在解决方案的根中创建 ASP.NET MVC 3 项目，然后将其移到解决方案文件夹中。
 - 安装程序所需的时间可能比以前版本的 ASP.NET MVC 长得多。 这是因为它会更新 Visual Studio 2010 的组件。
-- 在安装 ReSharper 时，IntelliSense for Razor 语法不起作用。 如果你已安装 ReSharper，并且想要利用 ASP.NET MVC 3 RC2 中的 Razor IntelliSense 支持，请参阅 Hadi Hariri 博客上的入门[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中讨论了如何将它们一起使用。
+- 在安装 ReSharper 时，IntelliSense for Razor 语法不起作用。 如果你已安装 ReSharper，并且想要利用 ASP.NET MVC 3 RC2 中的 Razor IntelliSense 支持，请参阅 Hadi Hariri 博客上的入门[Razor intellisense 和 ReSharper](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中讨论了如何将它们一起使用。
 - 使用 ASP.NET MVC 3 的 Beta 版创建的 CSHTML 和 VBHTML 视图没有正确设置其生成操作，这会导致在发布项目时省略这些视图类型。 应将这些文件的*生成操作*值设置为 "内容"。 ASP.NET MVC 3 RC2 修复了新文件的这一问题，但并不更正使用 Beta 版本创建的项目的现有文件的设置。![](mvc3-release-notes/_static/image4.png)
 - 在安装过程中，EULA 接受对话框在一个小于预期的窗口中显示许可条款。
 - 编辑 Razor 视图（cshtml 文件）时，Visual Studio 中的 "转向控制器" 菜单项将不可用，且没有代码段。
@@ -613,7 +613,7 @@ Namespace.ClassName
 - 安装程序要完成的时间可能比以前版本的 ASP.NET MVC 长得多，因为它会更新 Visual Studio 2010 的组件。
 - 选择 astrongly 类型化视图基架只写属性时，"添加视图" 基架。 基架应始终忽略这些。 "添加视图" 对话框也会在生成 "编辑" 或 "创建" 视图时基架只读属性。 只读属性应该只基架显示和列表视图。
 - 当 ASP.NET MVC 3 与异步 CTP 一起安装时，调试不起作用。 ASP.NET MVC 3 不能与 Async CTP 并行安装。 卸载 Async CTP 以修复调试。 有关更多详细信息，请阅读[此博客文章](http://drew-prog.blogspot.com/2010/11/how-to-uninstall-microsoft-aspnet-mvc-3.html)，了解如何卸载 ASP.NET MVC 3 RC 的所有部分。
-- 当安装 Resharper 时，Razor Intellisense 不起作用。 如果你已安装 ReSharper，并且想要充分利用 ASP.NET MVC 3 RC 中的 Razor intellisense 支持，请阅读[此博客文章](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/)，其中介绍了如何立即使用它们。
+- 当安装 Resharper 时，Razor Intellisense 不起作用。 如果你已安装 ReSharper，并且想要充分利用 ASP.NET MVC 3 RC 中的 Razor intellisense 支持，请阅读[此博客文章](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/)，其中介绍了如何立即使用它们。
 - 用 ASP.NET MVC 3 的 Beta 版创建的 CSHTML 和 VBHTML 视图没有正确的生成操作，因此不会将其从发布中忽略。 应将这些文件的*生成操作*设置为 "内容"。 ASP.NET MVC 3 RC 修复了新文件的这一问题，但并不更正使用 Beta 版本创建的项目的现有文件的设置。
 - 安装程序要完成的时间可能比以前版本的 ASP.NET MVC 长得多，因为它会更新 Visual Studio 2010 的组件。
 - 选择 "编辑" 强类型视图时，"添加视图" 基架基架只读属性。 同样，只写属性基架用于 "显示" 视图。
