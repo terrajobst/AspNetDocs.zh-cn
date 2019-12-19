@@ -1,51 +1,51 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
-title: 创建用户帐户 (C#) |Microsoft Docs
+title: 创建用户帐户（C#） |Microsoft Docs
 author: rick-anderson
-description: 在本教程将探讨如何使用成员资格框架 （通过 SqlMembershipProvider) 来创建新的用户帐户。 我们将了解如何创建新我们...
+description: 在本教程中，我们将探讨如何使用成员身份框架（通过 SqlMembershipProvider）创建新的用户帐户。 我们将了解如何创建新的 。
 ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: f175278c-6079-4d91-b9b4-2493ed43d9ec
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 162461a05e0c19f1c89f48e3caf0f21b1634b4cf
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 955592320e7d36c7ae3b9c03a361bee2183f1776
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131290"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74625481"
 ---
 # <a name="creating-user-accounts-c"></a>创建用户帐户 (C#)
 
-通过[Scott Mitchell](https://twitter.com/ScottOnWriting)
+作者： [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下载代码](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_05_CS.zip)或[下载 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial05_CreatingUsers_cs.pdf)
+[下载代码](https://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_05_CS.zip)或[下载 PDF](https://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial05_CreatingUsers_cs.pdf)
 
-> 在本教程将探讨如何使用成员资格框架 （通过 SqlMembershipProvider) 来创建新的用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置的 CreateUserWizard 控件。
+> 在本教程中，我们将探讨如何使用成员身份框架（通过 SqlMembershipProvider）创建新的用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置 CreateUserWizard 控件。
 
 ## <a name="introduction"></a>介绍
 
-在中<a id="_msoanchor_1"> </a>[前面的教程](creating-the-membership-schema-in-sql-server-cs.md)我们在数据库中，添加表、 视图和存储过程所需的安装应用程序服务架构`SqlMembershipProvider`和`SqlRoleProvider`。 这创建了本系列教程的其余部分并需要基础结构。 在本教程将探讨如何使用成员资格框架 (通过`SqlMembershipProvider`) 来创建新的用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置的 CreateUserWizard 控件。
+在<a id="_msoanchor_1"> </a>[前面的教程](creating-the-membership-schema-in-sql-server-cs.md)中，我们在数据库中安装了应用程序服务架构，后者添加了 `SqlMembershipProvider` 和 `SqlRoleProvider`所需的表、视图和存储过程。 这会创建我们在本系列的其余教程中所需的基础结构。 在本教程中，我们将探讨如何使用成员身份框架（通过 `SqlMembershipProvider`）来创建新的用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置 CreateUserWizard 控件。
 
-除了学习如何创建新的用户帐户，我们还需要更新我们首次在中创建的演示网站 *<a id="_msoanchor_2"> </a>[概述的窗体身份验证](../introduction/an-overview-of-forms-authentication-cs.md)* 教程，然后中增强 *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"> </a>窗体身份验证配置和高级主题*教程。 我们的演示 web 应用程序具有登录页面，用于验证针对硬编码用户名/密码对用户的凭据。 此外，`Global.asax`包括用于创建自定义代码`IPrincipal`和`IIdentity`身份验证的用户的对象。 我们将更新登录页后，可以验证成员资格框架针对用户的凭据，并删除自定义主体和标识逻辑。
+除了学习如何创建新的用户帐户之外，我们还需要更新首次在 *<a id="_msoanchor_2"></a>[ forms authentication 概述](../introduction/an-overview-of-forms-authentication-cs.md)* 教程中创建的演示网站，并在 *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"></a>forms 身份验证配置和高级主题*教程中进行了改进。 我们的演示 web 应用程序具有一个登录页，该页面通过硬编码的用户名/密码对来验证用户的凭据。 此外，`Global.asax` 包括为经过身份验证的用户创建自定义 `IPrincipal` 和 `IIdentity` 对象的代码。 我们将更新登录页面，以根据成员身份框架验证用户的凭据，并删除自定义主体和标识逻辑。
 
 让我们进入正题！
 
-## <a name="the-forms-authentication-and-membership-checklist"></a>窗体身份验证和成员身份检查表
+## <a name="the-forms-authentication-and-membership-checklist"></a>Forms 身份验证和成员清单
 
-我们开始使用成员资格框架之前，让我们花点时间查看我们采取了来达到此限制的重要步骤。 使用与成员资格框架时`SqlMembershipProvider`需要在基于窗体的身份验证方案中，在 web 应用程序中实现成员资格功能之前执行以下步骤：
+在开始使用成员身份框架之前，让我们花点时间回顾一下我们所做的重要步骤。 在基于窗体的身份验证方案中将成员身份框架与 `SqlMembershipProvider` 结合使用时，需要在 web 应用程序中实现成员资格功能之前执行以下步骤：
 
-1. **启用基于表单的身份验证。** 如中所述 *<a id="_msoanchor_4"> </a>[概述的窗体身份验证](../introduction/an-overview-of-forms-authentication-cs.md)*，窗体身份验证启用通过编辑`Web.config`并设置`<authentication>`元素的`mode`属性为`Forms`。 启用窗体身份验证，每个传入请求将检查其用于*窗体身份验证票证*，其中，如果存在，标识请求者。
-2. **将应用程序服务架构添加到相应的数据库。** 当使用`SqlMembershipProvider`我们需要将应用程序服务架构安装到数据库。 通常此架构添加到同一个数据库用于保存应用程序的数据模型。  *<a id="_msoanchor_5"> </a> [SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 教程介绍了使用`aspnet_regsql.exe`工具来实现此目的。
-3. **自定义 Web 应用程序的设置以从步骤 2 中引用的数据库。** *SQL Server 中创建成员身份架构*教程介绍了两种方法配置 web 应用程序，以便`SqlMembershipProvider`将使用在步骤 2 中所选的数据库： 通过修改`LocalSqlServer`连接字符串名称;或通过将新注册的提供程序添加到成员资格框架提供程序的列表和自定义该新的提供程序以使用数据库从步骤 2。
+1. **启用基于窗体的身份验证。** 如我们在 *<a id="_msoanchor_4"></a>[forms 身份验证概述](../introduction/an-overview-of-forms-authentication-cs.md)* 中所述，通过编辑 `Web.config`，并将 `<authentication>` 元素的 `mode` 属性设置为 `Forms`，可以启用窗体身份验证。 启用窗体身份验证后，将检查每个传入请求中是否存在*forms 身份验证票证*（如果存在），则会标识请求者。
+2. **将应用程序服务架构添加到相应的数据库。** 使用 `SqlMembershipProvider` 时，需要将应用程序服务架构安装到数据库。 通常，此架构将添加到保存应用程序数据模型的同一数据库。 *<a id="_msoanchor_5"></a>[在 SQL Server 教程中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 介绍了如何使用 `aspnet_regsql.exe` 工具实现此目的。
+3. **自定义 Web 应用程序的设置，以引用步骤2中的数据库。** *在 SQL Server 教程中创建成员身份架构*介绍了两种配置 web 应用程序的方法，以便 `SqlMembershipProvider` 使用步骤2：修改 `LocalSqlServer` 连接字符串名称;或者，通过将新的已注册提供程序添加到成员身份框架提供程序列表，并自定义该新提供程序以使用步骤2中的数据库。
 
-当生成 web 应用程序使用的`SqlMembershipProvider`和基于窗体的身份验证，你将需要执行下列三个步骤才能使用`Membership`类或 ASP.NET 登录 Web 控件。 由于我们已在前面的教程中执行这些步骤，我们已准备好开始使用成员资格框架 ！
+生成使用 `SqlMembershipProvider` 和基于窗体的身份验证的 web 应用程序时，需要执行以下三个步骤，然后才能使用 `Membership` 类或 ASP.NET 登录 Web 控件。 由于我们已在前面的教程中执行这些步骤，因此可以开始使用成员资格框架！
 
 ## <a name="step-1-adding-new-aspnet-pages"></a>步骤 1：添加新的 ASP.NET 页面
 
-我们将在本教程并下一步的三种检查各种与成员资格相关的函数和功能。 我们将需要一系列的 ASP.NET 页面实现检查在这些教程中的主题。 让我们来创建这些页面，然后站点地图文件`(Web.sitemap)`。
+在本教程中，接下来的三个将检查与成员资格相关的各种功能。 我们将需要一系列 ASP.NET 页面来实现这些教程中所讨论的主题。 接下来，我们将创建这些页面，然后 `(Web.sitemap)`一个站点地图文件。
 
-首先，创建一个新的文件夹在项目中名为`Membership`。 接下来，添加到五个新的 ASP.NET 页面`Membership`文件夹中，链接与每个页面`Site.master`母版页。 命名页：
+首先，在项目中创建一个名为 `Membership`的新文件夹。 接下来，将五个新的 ASP.NET 页面添加到 `Membership` 文件夹，将每个页面与 `Site.master` 的母版页链接。 命名页面：
 
 - `CreatingUserAccounts.aspx`
 - `UserBasedAuthorization.aspx`
@@ -53,294 +53,294 @@ ms.locfileid: "65131290"
 - `AdditionalUserInfo.aspx`
 - `Guestbook.aspx`
 
-此时您的项目的解决方案资源管理器应类似于屏幕截图中图 1 所示。
+此时，项目的解决方案资源管理器应类似于图1所示的屏幕截图。
 
-[![新的 5 个页面已添加到成员资格文件夹](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
+[![五个新页面已添加到成员资格文件夹](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
 
-**图 1**:五个新页已添加到`Membership`文件夹 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image3.png))
+**图 1**：已将五个新页面添加到 `Membership` 文件夹（[单击查看完全大小的图像](creating-user-accounts-cs/_static/image3.png)）
 
-每个页面，此时，应有两个内容控件，另一个用于每个母版页的 Contentplaceholder:`MainContent`和`LoginContent`。
+此时，每个页面都应具有两个内容控件，一个用于母版页的每个 Contentplaceholder： `MainContent` 和 `LoginContent`。
 
 [!code-aspx[Main](creating-user-accounts-cs/samples/sample1.aspx)]
 
-请记住， `LoginContent` ContentPlaceHolder 的默认标记将显示在登录或注销的站点，具体取决于是否对用户进行身份验证的链接。 是否存在`Content2`内容控件，但是，将覆盖主页面的默认标记。 如中所述 *<a id="_msoanchor_6"> </a>[概述的窗体身份验证](../introduction/an-overview-of-forms-authentication-cs.md)* 教程中，这是在页中，我们不希望在左侧列中显示与登录相关的选项很有用。
+请记住，`LoginContent` ContentPlaceHolder 的默认标记会显示一个用于登录或注销站点的链接，具体取决于是否对用户进行了身份验证。 但 `Content2` 内容控件的存在会替代母版页的默认标记。 如我们在 *<a id="_msoanchor_6"></a>[Forms 身份验证概述](../introduction/an-overview-of-forms-authentication-cs.md)* 教程中所述，这在页面中很有用，我们不想在左列中显示与登录相关的选项。
 
-对于这些的 5 个页面，但是，我们想要显示的主页面的默认标记`LoginContent`ContentPlaceHolder。 因此，删除的声明性标记`Content2`内容控件。 这样做之后，每个五个页面的标记应只包含一个内容控件。
+但对于这五个页面，我们想要为 `LoginContent` ContentPlaceHolder 显示母版页的默认标记。 因此，删除 `Content2` 内容控件的声明性标记。 完成此操作后，五个页面的标记中的每一个都应该只包含一个内容控件。
 
-## <a name="step-2-creating-the-site-map"></a>步骤 2：创建站点图
+## <a name="step-2-creating-the-site-map"></a>步骤 2：创建站点地图
 
-除最普通的网站的所有需要实现某种形式的导航用户界面。 导航用户界面可能是一个简单的网站的各个部分的链接列表。 或者，这些链接可能排列成菜单或树视图。 作为页面开发人员创建导航用户界面是故事的一半。 我们还需要一些方法来以可维护且可更新的方式定义站点的逻辑结构。 新的页会添加或删除现有页面，我们希望能够更新单个源 – 站点图 – 和具有跨站点的导航用户界面会反映这些修改。
+除最普通的网站外，还需要实现某种形式的导航用户界面。 导航用户界面可能是指向网站各个部分的链接的简单列表。 或者，这些链接可能排列为菜单或树视图。 作为页面开发人员，创建导航用户界面只是故事的一半。 我们还需要通过某种方式来定义站点的逻辑结构，这是一个可维护且可更新的方式。 添加新页面或删除现有页面后，我们希望能够更新单个源（站点地图），并使这些修改在站点的导航用户界面中反映出来。
 
--定义了站点地图和实现基于站点地图导航用户界面-这两个任务都能够轻松地完成得益于站点图 framework 和 ASP.NET 2.0 版中添加导航 Web 控件。 站点图框架允许开发人员定义站点图，然后通过编程 API 访问它 ( [ `SiteMap`类](https://msdn.microsoft.com/library/system.web.sitemap.aspx))。 包含导航 Web 控件的内置[菜单控件](https://msdn.microsoft.com/library/bz09dy46.aspx)，则[TreeView 控件](https://msdn.microsoft.com/library/3eafky27.aspx)，并[SiteMapPath 控件](https://msdn.microsoft.com/library/3eafky27.aspx)。
+这两个任务（定义站点地图和实现基于站点图的导航用户界面）可以轻松完成，因为在 ASP.NET 版本2.0 中添加了站点地图框架和导航 Web 控件。 使用站点地图框架，开发人员可以定义站点地图，然后通过编程 API （ [`SiteMap` 类](https://msdn.microsoft.com/library/system.web.sitemap.aspx)）来访问它。 内置的导航 Web 控件包括[菜单控件](https://msdn.microsoft.com/library/bz09dy46.aspx)、 [TreeView 控件](https://msdn.microsoft.com/library/3eafky27.aspx)和[SiteMapPath 控件](https://msdn.microsoft.com/library/3eafky27.aspx)。
 
-成员身份和角色的框架，如站点图 framework 构建之上[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)。 站点地图提供程序类的任务是生成使用的内存中结构`SiteMap`永久性数据存储，如 XML 文件或数据库表中的类。 .NET Framework 附带的默认站点地图提供程序从 XML 文件读取站点地图数据 ([`XmlSiteMapProvider`](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx))，这是我们将在本教程中使用的提供程序。 对于一些备用的站点地图提供程序实现，请参阅进一步读数部分在本教程末尾。
+与成员身份和角色框架一样，站点地图框架是在[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)的顶层生成的。 站点地图提供程序类的工作是从永久性数据存储（如 XML 文件或数据库表）生成由 `SiteMap` 类使用的内存中结构。 该 .NET Framework 附带了一个默认的站点地图提供程序，该提供程序从 XML 文件（[`XmlSiteMapProvider`](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx)）读取站点地图数据，这是我们将在本教程中使用的提供程序。 有关某些备用站点地图提供程序的实现，请参阅本教程末尾的 "后续读取" 部分。
 
-默认站点地图提供程序需要一个格式正确的 XML 文件，名为`Web.sitemap`存在的根目录。 因为我们要使用此默认提供程序，我们需要添加此类文件，并在相应的 XML 格式中定义的站点映射的结构。 若要添加文件时，右键单击解决方案资源管理器中的项目名称并选择添加新项。 从对话框中，选择要添加的类型名为的站点地图文件`Web.sitemap`。
+默认站点地图提供程序需要一个名为 `Web.sitemap` 的格式正确的 XML 文件，才能存在根目录。 由于我们使用的是此默认提供程序，因此需要添加此类文件，并以适当的 XML 格式定义站点图的结构。 若要添加文件，请在解决方案资源管理器中右键单击项目名称，然后选择 "添加新项"。 在对话框中，选择添加一个名为 "站点地图" 的文件，其名称为 `Web.sitemap`。
 
-[![添加一个名为项目的根目录下的 Web.sitemap 文件](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
+[![将名为 web.sitemap 的文件添加到项目的根目录](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
 
-**图 2**:添加名为文件`Web.sitemap`到项目的根目录 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image6.png))
+**图 2**：将名为 `Web.sitemap` 的文件添加到项目的根目录（[单击查看完全大小的映像](creating-user-accounts-cs/_static/image6.png)）
 
-XML 映射文件定义作为层次结构的网站的结构。 此层次结构的关系建模的体系通过 XML 文件中`<siteMapNode>`元素。 `Web.sitemap`必须开头`<siteMap>`准确地说有的父节点`<siteMapNode>`子。 此顶级`<siteMapNode>`元素表示层次结构中的根，并可能包含任意数目的子代节点。 每个`<siteMapNode>`元素必须包括`title`属性，可以根据需要包含`url`并`description`属性，等等; 每个非空`url`属性必须是唯一的。
+XML 站点地图文件将网站的结构定义为层次结构。 此层次结构关系通过 `<siteMapNode>` 元素的体系在 XML 文件中建模。 `Web.sitemap` 必须以具有恰好一个 `<siteMapNode>` 子节点的 `<siteMap>` 父节点开头。 此顶级 `<siteMapNode>` 元素表示层次结构的根，可以具有任意数量的子代节点。 每个 `<siteMapNode>` 元素都必须包含一个 `title` 属性，还可以选择包括 `url` 和 `description` 属性以及其他属性;每个非空 `url` 特性都必须是唯一的。
 
-输入以下 XML`Web.sitemap`文件：
+在 `Web.sitemap` 文件中输入以下 XML：
 
 [!code-xml[Main](creating-user-accounts-cs/samples/sample2.xml)]
 
-更高版本的站点映射标记定义层次结构中图 3 所示。
+以上站点地图标记定义图3中所示的层次结构。
 
-[![站点图表示的分层导航结构](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
+[![站点地图表示分层导航结构](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
 
-**图 3**:站点图表示的分层导航结构 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image9.png))
+**图 3**：站点地图表示分层的导航结构（[单击以查看完全大小的图像](creating-user-accounts-cs/_static/image9.png)）
 
-## <a name="step-3-updating-the-master-page-to-include-a-navigational-user-interface"></a>步骤 3：更新 Master 页以包含导航用户界面
+## <a name="step-3-updating-the-master-page-to-include-a-navigational-user-interface"></a>步骤 3：更新母版页以包含导航用户界面
 
-ASP.NET 包括大量的与导航相关 Web 控件，用于设计用户界面。 其中包括菜单、 树视图和 SiteMapPath 控件。 菜单和 TreeView 控件呈现站点地图结构中一个菜单或树，分别而 SiteMapPath 显示显示了当前节点及其上级以及正在访问痕迹导航。 站点地图数据可以绑定到 Web 控件使用了 SiteMapDataSource 其他数据，可以通过以编程方式访问`SiteMap`类。
+ASP.NET 包含一些用于设计用户界面的与导航相关的 Web 控件。 其中包括菜单、TreeView 和 SiteMapPath 控件。 Menu 和 TreeView 控件分别在菜单或树中显示站点地图结构，而 SiteMapPath 显示一个痕迹导航，其中显示了当前正在访问的节点及其上级。 站点地图数据可以绑定到其他使用 SiteMapDataSource 的数据 Web 控件，并可通过 `SiteMap` 类以编程方式进行访问。
 
-由于站点图 framework 和导航控件的全面讨论超出了本系列教程的范围，而不是花费时间编写我们自己的导航用户界面，让我们改为借用中使用我 *[在 ASP.NET 2.0 中使用数据](../../data-access/index.md)* 教程系列中，使用 Repeater 控件显示两个深度项目符号列表的导航链接，如图 4 中所示。
+由于对站点地图框架和导航控件的全面讨论超出了本系列教程的范畴，而不是花时间手工编写自己的导航用户界面，而不是使用 *[ASP.NET 2.0](../../data-access/index.md)* 教程系列中的数据，而是使用一个 Repeater 控件来显示导航链接的两层项目符号列表，如图4所示。
 
-### <a name="adding-a-two-level-list-of-links-in-the-left-column"></a>在左侧列中添加两个级别的链接列表
+### <a name="adding-a-two-level-list-of-links-in-the-left-column"></a>在左列中添加一个两层链接列表
 
-若要创建此接口，将添加到下面的声明性标记`Site.master`主页面的左侧栏的文本"待办事项：菜单将转到此处..."当前驻留。
+若要创建此接口，请将以下声明性标记添加到 `Site.master` 母版页的左侧列中，其中文本 "TODO：将在此处显示菜单 ... "当前位于。
 
 [!code-aspx[Main](creating-user-accounts-cs/samples/sample3.aspx)]
 
-上述标记将绑定一个名为的 Repeater 控件`menu`到 SiteMapDataSource，它返回站点映射层次结构中定义`Web.sitemap`。 由于 SiteMapDataSource 控件[`ShowStartingNode`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx)设置为 False，就会开始返回站点地图的层次结构从"Home"节点的后代。 Repeater 显示每个节点 （当前只是"成员身份"） 中`<li>`元素。 另一个，内部 Repeater 中将显示当前节点的子级嵌套的未排序列表。
+上述标记将名为 `menu` 的中继器控件绑定到 SiteMapDataSource，后者返回在 `Web.sitemap`中定义的站点地图层次结构。 由于 SiteMapDataSource 控件的[`ShowStartingNode` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx)设置为 False，因此它将从 "Home" 节点的子代开始返回站点地图的层次结构。 中继器在 `<li>` 元素中显示每个节点（当前只是 "成员资格"）。 然后，内部中继器在嵌套的无序列表中显示当前节点的子节点。
 
-图 4 显示了上述标记的呈现的输出与我们在步骤 2 中创建站点地图结构。 Repeater 呈现普通的未排序的列表的标记;在中定义的级联样式表规则`Styles.css`负责的审美情趣的布局。 有关上述标记的工作原理的更详细说明，请参阅[母版页和站点导航](https://asp.net/learn/data-access/tutorial-03-cs.aspx)教程。
+图4显示了上述标记的呈现输出，以及我们在步骤2中创建的站点地图结构。 中继器呈现 vanilla 的无序列表标记;`Styles.css` 中定义的级联样式表规则负责具的布局。 有关上述标记如何工作的更详细说明，请参阅[母版页和站点导航](https://asp.net/learn/data-access/tutorial-03-cs.aspx)教程。
 
-[![导航用户界面是呈现使用嵌套的未排序列表](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
+[![使用嵌套的无序列表呈现导航用户界面](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
 
-**图 4**:导航用户界面是呈现使用嵌套的未排序列表 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image12.png))
+**图 4**：使用嵌套的无序列表呈现导航用户界面（[单击以查看完全大小的图像](creating-user-accounts-cs/_static/image12.png)）
 
 ### <a name="adding-breadcrumb-navigation"></a>添加痕迹导航
 
-除了左侧列中的链接列表，让我们还具有每个页面显示[痕迹导航](http://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29)。 痕迹导航是快速向用户显示其站点层次结构中的当前位置的导航用户界面元素。 SiteMapPath 控件使用的站点映射框架来确定站点图中的当前页的位置，然后显示痕迹根据此信息。
+除了左栏中的链接列表之外，我们还让每个页面显示一个[痕迹导航](http://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29)。 痕迹导航是一个导航用户界面元素，可快速向用户显示其在站点层次结构中的当前位置。 SiteMapPath 控件使用站点地图框架来确定当前页面在站点地图中的位置，然后基于此信息显示痕迹导航。
 
-具体而言，添加`<span>`到母版页的标头元素`<div>`元素，并设置新`<span>`元素的`class`属性为"痕迹导航"。 (`Styles.css`类包含一个"痕迹导航"类的规则。)接下来，将 SiteMapPath 添加到此新`<span>`元素。
+具体而言，将 `<span>` 元素添加到母版页的标头 `<div>` 元素，并将新的 `<span>` 元素的 `class` 特性设置为 "痕迹导航"。 （`Styles.css` 类包含 "痕迹导航" 类的规则。）接下来，将 SiteMapPath 添加到此新的 `<span>` 元素。
 
 [!code-aspx[Main](creating-user-accounts-cs/samples/sample4.aspx)]
 
-图 5 显示了输出 SiteMapPath 访问时`~/Membership/CreatingUserAccounts.aspx`。
+图5显示了访问 `~/Membership/CreatingUserAccounts.aspx`时 SiteMapPath 的输出。
 
-[![痕迹导航显示当前页，并将其站点中的上级映射](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
+[![痕迹导航显示当前页及其在站点地图中的上级](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
 
-**图 5**:痕迹导航中显示当前页和其祖先站点地图中 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image15.png))
+**图 5**：痕迹导航显示网站图中的当前页及其上级（[单击以查看完全大小的图像](creating-user-accounts-cs/_static/image15.png)）
 
 ## <a name="step-4-removing-the-custom-principal-and-identity-logic"></a>步骤 4：删除自定义主体和标识逻辑
 
-在中 *<a id="_msoanchor_7"> </a>[窗体身份验证配置和高级主题](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)* 我们已了解如何将自定义主体和标识对象向经过身份验证的用户相关联的教程。 我们通过创建事件处理程序中的完成这`Global.asax`的应用程序`PostAuthenticateRequest`后触发的事件`FormsAuthenticationModule`已进行身份验证的用户。 在此事件处理程序中，我们取代`GenericPrincipal`并`FormsIdentity`通过添加的对象`FormsAuthenticationModule`与`CustomPrincipal`和`CustomIdentity`对象我们在该教程中创建。
+在 *<a id="_msoanchor_7"></a>[Forms 身份验证配置和高级主题](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md)* 教程中，我们介绍了如何将自定义主体和标识对象关联到经过身份验证的用户。 为此，我们需要在应用程序的 `PostAuthenticateRequest` 事件 `Global.asax` 中创建一个事件处理程序，该事件处理程序会在对用户进行身份验证 `FormsAuthenticationModule` 后触发。 在此事件处理程序中，我们使用我们在本教程中创建的 `CustomPrincipal` 和 `CustomIdentity` 对象替换了 `FormsAuthenticationModule` 添加的 `GenericPrincipal` 和 `FormsIdentity` 对象。
 
-而自定义主体和标识对象是在某些情况下，在大多数情况下很有用`GenericPrincipal`和`FormsIdentity`对象已足够。 因此，我认为有必要以返回到默认行为。 进行此更改通过删除或注释掉`PostAuthenticateRequest`事件处理程序或通过删除`Global.asax`完全文件。
+尽管自定义主体和标识对象在某些情况下非常有用，但在大多数情况下，`GenericPrincipal` 和 `FormsIdentity` 对象就足够了。 因此，我认为有必要返回到默认行为。 通过移除或注释掉 `PostAuthenticateRequest` 事件处理程序或完全删除 `Global.asax` 文件来进行此更改。
 
-## <a name="step-5-programmatically-creating-a-new-user"></a>步骤 5：以编程方式创建一个新用户
+## <a name="step-5-programmatically-creating-a-new-user"></a>步骤 5：以编程方式创建新用户
 
-若要创建新的用户帐户通过使用成员资格 framework`Membership`类的[`CreateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.createuser.aspx)。 此方法的输入参数为用户名、 密码和其他与用户相关的字段。 在调用，它将新的用户帐户创建委托给配置成员资格提供程序，然后返回[`MembershipUser`对象](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)表示刚创建的用户帐户。
+若要通过成员身份框架创建新用户帐户，请使用 `Membership` 类的[`CreateUser` 方法](https://msdn.microsoft.com/library/system.web.security.membership.createuser.aspx)。 此方法具有用于用户名、密码和其他用户相关字段的输入参数。 调用时，它会将新用户帐户的创建委托给配置的成员资格提供程序，然后返回一个表示刚刚创建的用户帐户的[`MembershipUser` 对象](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)。
 
-`CreateUser`方法有四个重载，每个接受不同数量的输入参数：
+`CreateUser` 方法具有四个重载，每个重载接受不同数量的输入参数：
 
 - [`CreateUser(username, password)`](https://msdn.microsoft.com/library/d8t4h2es.aspx)
 - [`CreateUser(username, password, email)`](https://msdn.microsoft.com/library/t8yy6w3h.aspx)
 - [`CreateUser(username, password, email, passwordQuestion, passwordAnswer, isApproved, MembershipCreateStatus)`](https://msdn.microsoft.com/library/82xx2e62.aspx)
 - [`CreateUser(username, password, email, passwordQuestion, passwordAnswer, isApproved, providerUserKey, MembershipCreateStatus)`](https://msdn.microsoft.com/library/ms152012.aspx)
 
-这些四个重载的区别收集的信息的量。 第一个重载，例如，需要只是用户名和密码的新用户帐户，而第二个还要求用户的电子邮件地址。
+这四种重载不同于收集的信息量。 例如，第一个重载只需要新用户帐户的用户名和密码，而另一个重载还需要用户的电子邮件地址。
 
-这些重载存在，因为创建新的用户帐户所需的信息取决于成员资格提供程序的配置设置。 在中 *<a id="_msoanchor_8"> </a> [SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 教程中的指定成员资格提供程序配置设置，我们探讨`Web.config`。 表 2 包含的配置设置的完整列表。
+这些重载存在是因为创建新用户帐户所需的信息取决于成员资格提供程序的配置设置。 在 *<a id="_msoanchor_8"></a>[SQL Server 教程中 创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 中，我们检查了在 `Web.config` 中指定成员资格提供程序配置设置。 表2提供了配置设置的完整列表。
 
-一个此类成员资格提供程序配置设置的影响什么`CreateUser`可能会使用重载是`requiresQuestionAndAnswer`设置。 如果`requiresQuestionAndAnswer`设置为`true`（默认值），则创建新的用户帐户时我们必须指定一个安全提示问题和答案。 如果用户需要重置或更改其密码，稍后会使用此信息。 具体而言，在该时间它们会显示的安全问题，他们必须输入正确的答案来重置或更改其密码。 因此，如果`requiresQuestionAndAnswer`设置为`true`，然后调用前两个`CreateUser`重载会引发异常，因为缺少的安全问题和答案。 由于我们的应用程序当前配置为需要安全问题和答案，我们将需要时以编程方式创建用户的使用后一种两个重载之一。
+此类成员资格提供程序配置设置会影响可以使用的 `CreateUser` 重载，这是 `requiresQuestionAndAnswer` 设置。 如果 `requiresQuestionAndAnswer` 设置为 `true` （默认值），则在创建新的用户帐户时，必须指定安全问题和答案。 如果用户需要重置或更改其密码，以后会使用此信息。 具体而言，在这种情况下，他们会显示安全问题，必须输入正确答案才能重置或更改其密码。 因此，如果 `requiresQuestionAndAnswer` 设置为 `true` 则调用前两个 `CreateUser` 重载之一会导致异常，因为缺少安全问题和答案。 由于我们的应用程序当前配置为需要安全问题和答案，因此，在以编程方式创建用户时，我们需要使用后两种重载之一。
 
-为了说明使用`CreateUser`方法，让我们创建一个用户界面，我们其中提示用户输入其名称、 密码、 电子邮件和预定义的安全问题的答案。 打开`CreatingUserAccounts.aspx`页中`Membership`文件夹并将以下 Web 控件添加到内容控件：
+为了说明如何使用 `CreateUser` 方法，让我们创建一个用户界面，我们会在其中提示用户输入名称、密码、电子邮件和预定义安全问题的答案。 打开 `Membership` 文件夹中的 "`CreatingUserAccounts.aspx`" 页，并将以下 Web 控件添加到内容控件：
 
-- 名为一个文本框 `Username`
-- 名为的 TextBox `Password`，其`TextMode`属性设置为 `Password`
-- 名为一个文本框 `Email`
-- 一个名为标签`SecurityQuestion`使用其`Text`属性中清除
-- 名为一个文本框 `SecurityAnswer`
-- 名为的按钮`CreateAccountButton`其文本属性设置为"创建用户帐户"
-- 名为的标签控件`CreateAccountResults`使用其`Text`属性中清除
+- 名为 `Username` 的文本框
+- 名为 `Password`的文本框，其 `TextMode` 属性设置为 `Password`
+- 名为 `Email` 的文本框
+- 已清除其 `Text` 属性的名为 `SecurityQuestion` 的标签
+- 名为 `SecurityAnswer` 的文本框
+- 名为 `CreateAccountButton` 的按钮，其 Text 属性设置为 "创建用户帐户"
+- 已清除其 `Text` 属性的名为 `CreateAccountResults` 的标签控件
 
-此时您的屏幕应类似于屏幕截图中图 6 所示。
+此时，屏幕应类似于图6所示的屏幕截图。
 
-[![将各种 Web 控件添加到 CreatingUserAccounts.aspx 页](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
+[![将各种 Web 控件添加到 CreatingUserAccounts 页](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
 
-**图 6**:添加到各种 Web 控件`CreatingUserAccounts.aspx`页 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image18.png))
+**图 6**：将各种 Web 控件添加到 "`CreatingUserAccounts.aspx`" 页（[单击以查看完全大小的图像](creating-user-accounts-cs/_static/image18.png)）
 
-`SecurityQuestion`标签和`SecurityAnswer`文本框旨在显示预定义的安全问题并收集用户的答案。 请注意，安全问题和答案存储基于用户的用户，因此可以以允许每个用户定义其自己的安全问题。 但是，此示例中我已决定使用一个通用安全问题，即："什么是您喜爱的颜色？"
+"`SecurityQuestion` 标签" 和 "`SecurityAnswer`" 文本框旨在显示预定义的安全问题并收集用户的答案。 请注意，安全问题和答案都按用户单独存储，因此可以允许每个用户定义其自己的安全问题。 但是，在此示例中，我决定使用通用安全问题，即："您最喜欢的颜色是什么？"
 
-若要实现此预定义的安全问题，请将一个常量添加到页面的代码隐藏类名为`passwordQuestion`，将其分配的安全问题。 然后，在`Page_Load`事件处理程序中，分配给此常量`SecurityQuestion`标签的`Text`属性：
+若要实现此预定义的安全问题，请将一个常量添加到名为 `passwordQuestion`的页面的代码隐藏类中，并为其分配安全问题。 然后，在 `Page_Load` 事件处理程序中，将此常量分配给 `SecurityQuestion` 标签的 `Text` 属性：
 
 [!code-csharp[Main](creating-user-accounts-cs/samples/sample5.cs)]
 
-接下来，创建的事件处理程序`CreateAccountButton`的`Click`事件，并添加以下代码：
+接下来，为 `CreateAccountButton`的 `Click` 事件创建事件处理程序并添加以下代码：
 
 [!code-csharp[Main](creating-user-accounts-cs/samples/sample6.cs)]
 
-`Click`事件处理程序首先定义一个名为变量`createStatus`类型的[ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx)。 `MembershipCreateStatus` 是一个枚举，指示状态的`CreateUser`操作。 例如，如果用户帐户创建成功，从而`MembershipCreateStatus`实例将被设置为值为`Success`; 另一方面，如果操作失败，因为已存在具有相同的用户名的用户，它将设置为的值`DuplicateUserName`. 在中`CreateUser`我们使用的重载，我们需要传递`MembershipCreateStatus`实例转换为方法`out`参数。 此参数设置为适当的值中`CreateUser`方法，并且我们可以在方法调用，以确定是否已成功创建用户帐户后检查其值。
+`Click` 事件处理程序通过定义[`MembershipCreateStatus`](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx)类型的名为 `createStatus` 的变量开始。 `MembershipCreateStatus` 是指示 `CreateUser` 操作状态的枚举。 例如，如果成功创建了用户帐户，则生成的 `MembershipCreateStatus` 实例将设置为 `Success`的值;另一方面，如果由于已存在具有相同用户名的用户而导致操作失败，则会将其设置为 `DuplicateUserName`的值。 在我们使用的 `CreateUser` 重载中，需要将 `MembershipCreateStatus` 实例作为 `out` 参数传递到方法中。 此参数在 `CreateUser` 方法中设置为适当的值，我们可以在方法调用后检查其值，以确定是否已成功创建用户帐户。
 
-在调用`CreateUser`，并传入`createStatus`即`switch`语句用于输出取决于值分配给相应的消息`createStatus`。 图 7 显示的输出时已成功创建一个新用户。 图 8 和 9 显示输出时不创建用户帐户。 在图 8 中，访问者输入了不符合密码强度要求拼成员资格提供程序的配置设置中的五个字母密码。 在图 9 中，访问者正在尝试使用现有的用户名 （图 7 中创建一个） 创建用户帐户。
+在调用 `CreateUser`之后（传入 `createStatus`），`switch` 语句用于根据分配给 `createStatus`的值输出适当的消息。 图7显示了成功创建新用户时的输出。 图8和9显示用户帐户未创建时的输出。 在图8中，访问者输入了一个不满足成员资格提供程序的配置设置中所述密码强度要求的五字母密码。 在图9中，访问者尝试使用现有用户名（在图7中创建的用户名）创建用户帐户。
 
-[![新的用户帐户是已成功创建](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
+[![已成功创建新用户帐户](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
 
-**图 7**:已成功创建新的用户帐户是 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image21.png))
+**图 7**：已成功创建新用户帐户（[单击以查看完全大小的映像](creating-user-accounts-cs/_static/image21.png)）
 
-[![因为提供的密码强度太弱，不创建用户帐户](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
+[![未创建用户帐户，因为提供的密码太弱](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
 
-**图 8**:因为提供的密码强度太弱，不创建用户帐户 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image24.png))
+**图 8**：用户帐户未创建，因为提供的密码太弱（[单击以查看完全大小的映像](creating-user-accounts-cs/_static/image24.png)）
 
-[![用户帐户是不创建是因为用户名是已在使用中](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
+[![由于用户名已在使用中而不创建用户帐户](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
 
-**图 9**:用户帐户是不创建是因为用户名是已在使用中的 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image27.png))
-
-> [!NOTE]
-> 您可能想知道如何确定成功或失败时使用的前两个之一`CreateUser`方法重载，都不具有类型的参数的`MembershipCreateStatus`。 这些前两个重载会引发[`MembershipCreateUserException`异常](https://msdn.microsoft.com/library/system.web.security.membershipcreateuserexception.aspx)遇到故障时，其中包括[`StatusCode`属性](https://msdn.microsoft.com/library/system.web.security.membershipcreateuserexception.statuscode.aspx)类型的`MembershipCreateStatus`。
-
-在创建后的几个用户帐户，验证是否已通过列出的内容来创建帐户`aspnet_Users`并`aspnet_Membership`中的表`SecurityTutorials.mdf`数据库。 如图 10 所示，我已添加了两个用户通过`CreatingUserAccounts.aspx`页：Tito 和 Bruce。
-
-[![在成员资格用户存储区中有两个用户：Tito 和 Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
-
-**图 10**:在成员资格用户存储区中有两个用户：Tito 和 Bruce ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image30.png))
-
-成员身份用户存储现在包括 Bruce 和 Tito 的帐户的信息，我们尚未实现允许 Bruce 或 Tito 登录到该站点上的功能。 目前，`Login.aspx`验证用户的凭据硬编码的一组用户名/密码对 – 对它执行*不*验证针对成员资格框架提供的凭据。 现在查看中的新用户帐户`aspnet_Users`和`aspnet_Membership`表已经足够。 在下一步的教程中，  *<a id="_msoanchor_9"> </a>[验证用户凭据对成员身份用户存储](validating-user-credentials-against-the-membership-user-store-cs.md)*，我们将更新以验证针对成员身份存储的登录页。
+**图 9**：由于用户名已被使用，因此不会创建用户帐户（[单击以查看完全大小的映像](creating-user-accounts-cs/_static/image27.png)）
 
 > [!NOTE]
-> 如果您看不到任何用户在你`SecurityTutorials.mdf`数据库，则可能是因为 web 应用程序正在使用默认成员资格提供程序， `AspNetSqlMembershipProvider`，其中使用`ASPNETDB.mdf`作为其用户存储区数据库。 若要确定是否该问题，请单击解决方案资源管理器中的刷新按钮。 如果名为的数据库`ASPNETDB.mdf`已添加到`App_Data`文件夹中，这是问题。 返回到的第 4 步 *<a id="_msoanchor_10"> </a> [SQL Server 中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 教程，了解如何正确配置成员资格提供程序的说明。
+> 您可能想知道如何使用前两个 `CreateUser` 方法重载之一来确定是否成功或失败，这两种重载都没有 `MembershipCreateStatus`类型的参数。 在出现故障时，前两个重载引发[`MembershipCreateUserException` 异常](https://msdn.microsoft.com/library/system.web.security.membershipcreateuserexception.aspx)，其中包含类型 `MembershipCreateStatus`的[`StatusCode` 属性](https://msdn.microsoft.com/library/system.web.security.membershipcreateuserexception.statuscode.aspx)。
 
-在大多数创建用户帐户方案、 访问者提供某些界面来输入其用户名、 密码、 电子邮件和其他重要信息、 在哪个点创建一个新帐户。 在此步骤中我们介绍了手动构建此类接口，则会看到如何使用`Membership.CreateUser`方法以编程方式添加新用户帐户基于用户的输入。 但是，我们的代码，只需创建新用户帐户。 它没有执行任何后续操作，例如用户访问刚创建的用户帐户，该站点中的日志记录，或在向用户发送确认电子邮件。 以下附加步骤将需要额外的代码中按钮的`Click`事件处理程序。
+创建一些用户帐户后，验证是否已通过列出 `SecurityTutorials.mdf` 数据库中的 `aspnet_Users` 和 `aspnet_Membership` 表的内容来创建帐户。 如图10所示，我已通过 `CreatingUserAccounts.aspx` 页添加了两个用户：Tito 和 Bruce。
 
-ASP.NET 附带了 CreateUserWizard 控件，用于处理用户帐户创建过程中，从呈现用于创建新用户帐户，到成员资格框架中创建帐户和执行后的帐户的用户界面创建任务，例如发送确认电子邮件和刚创建的用户登录到网站。 使用 CreateUserWizard 控件只需将 CreateUserWizard 控件从工具箱拖到页上，然后再设置一些属性。 在大多数情况下，不需要编写一行代码。 我们将探讨此有用控件中第 6 步中的详细信息。
+[![成员资格用户存储中有两个用户：Tito 和 Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
 
-如果通过典型创建帐户网页仅创建新的用户帐户，则不太可能曾经需要编写代码，使用`CreateUser`方法中，为 CreateUserWizard 控件可能满足您的需求。 但是，`CreateUser`需要高度自定义的创建帐户的用户体验，或者当您需要以编程方式创建新的用户帐户通过替代接口，方法是在方案中非常方便。 例如，你可能允许用户上传 XML 文件包含从某个其他应用程序的用户信息的页面。 页可能会的分析内容上传的 XML 文件，并在 XML 中创建新的帐户用于表示每个用户，通过调用`CreateUser`方法。
+**图 10**：成员资格用户存储中有两个用户：Tito 和 Bruce （[单击以查看完全大小的映像](creating-user-accounts-cs/_static/image30.png)）
 
-## <a name="step-6-creating-a-new-user-with-the-createuserwizard-control"></a>步骤 6：使用 CreateUserWizard 控件创建一个新用户
+虽然成员身份用户存储现在包含 Bruce 和 Tito 的帐户信息，但我们仍要实现允许 Bruce 或 Tito 登录到站点的功能。 目前，`Login.aspx` 根据一组硬编码的用户名/密码对来验证用户的凭据，而*不*会根据成员身份框架验证提供的凭据。 现在，在 `aspnet_Users` 中查看新用户帐户，并且 `aspnet_Membership` 表将必须足够。 在下一教程中， *<a id="_msoanchor_9"></a>[根据成员身份用户存储验证用户凭据](validating-user-credentials-against-the-membership-user-store-cs.md)* ，我们将更新登录页，以根据成员资格存储区进行验证。
 
-ASP.NET 附带了大量登录 Web 控件。 这些控件可帮助许多常见用户帐户和登录名相关情况。 [CreateUserWizard 控件](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)是一个此类旨在提供用于将新的用户帐户添加到成员资格框架的用户界面的控件。
+> [!NOTE]
+> 如果你在 `SecurityTutorials.mdf` 数据库中看不到任何用户，则可能是因为你的 web 应用程序正在使用默认的成员资格提供程序，`AspNetSqlMembershipProvider`，该提供程序使用 `ASPNETDB.mdf` 数据库作为其用户存储。 若要确定这是否是问题，请单击 "解决方案资源管理器中的" 刷新 "按钮。 如果已将名为 `ASPNETDB.mdf` 的数据库添加到 `App_Data` 文件夹，则会出现此问题。 返回到 *<a id="_msoanchor_10"></a>[在 SQL Server 教程中创建成员身份架构](creating-the-membership-schema-in-sql-server-cs.md)* 的步骤4，以获取有关如何正确配置成员资格提供程序的说明。
 
-像许多其他与登录相关 Web 控件，而无需编写一行代码可以使用 CreateUserWizard。 直观地提供了基于成员资格提供程序的配置设置并在内部调用的用户界面`Membership`类的`CreateUser`方法后用户输入所需的信息并单击"创建用户"按钮。 CreateUserWizard 控件是极可自定义。 有大量在各个阶段的帐户创建过程期间触发的事件。 我们可以根据需要若要将自定义逻辑注入到帐户创建工作流创建事件处理程序。 此外，CreateUserWizard 的外观是非常灵活。 有多个定义的默认接口; 外观的属性如有必要，该控件可以转换为模板，或可能会添加其他用户注册"步骤"。
+在大多数 "创建用户帐户" 方案中，访问者将向用户提供一个接口，用于输入用户名、密码、电子邮件和其他重要信息，此时会创建新帐户。 在此步骤中，我们将介绍如何使用 `Membership.CreateUser` 方法以编程方式基于用户的输入来添加新用户帐户。 但我们的代码刚刚创建了新用户帐户。 它不执行任何后续操作，例如，将用户登录到刚刚创建的用户帐户下的站点，或者向用户发送一封确认电子邮件。 这些附加步骤将需要按钮 `Click` 事件处理程序中的附加代码。
 
-让我们开始看使用 CreateUserWizard 控件的默认接口和行为。 然后，我们将探讨如何自定义控件的属性和事件通过外观。
+ASP.NET 附带了 CreateUserWizard 控件，该控件旨在处理用户帐户创建过程，从呈现用于创建新用户帐户的用户界面，到在成员身份框架中创建帐户并执行后帐户创建任务，如发送确认电子邮件和将刚刚创建的用户记录到站点。 使用 CreateUserWizard 控件就像将 CreateUserWizard 控件从工具箱拖到页面上，然后设置几个属性一样简单。 在大多数情况下，无需编写一行代码。 我们将在步骤6中详细探讨此超酷控件。
 
-### <a name="examining-the-createuserwizards-default-interface-and-behavior"></a>检查 CreateUserWizard 的默认接口和行为
+如果仅通过典型的 "创建帐户" 网页创建新的用户帐户，则不可能需要编写使用 `CreateUser` 方法的代码，因为 CreateUserWizard 控件可能会满足你的需求。 但是，在需要高度自定义的创建帐户用户体验的情况下，或者在需要通过备用接口以编程方式创建新用户帐户时，`CreateUser` 方法非常方便。 例如，你可能有一个允许用户上传包含其他应用程序的用户信息的 XML 文件的页面。 该页可能会分析上传的 XML 文件的内容，并通过调用 `CreateUser` 方法为 XML 中表示的每个用户创建一个新帐户。
 
-返回到`CreatingUserAccounts.aspx`页中`Membership`文件夹中，切换到设计或拆分模式中，并将 CreateUserWizard 控件添加到页面顶部。 在工具箱的登录名控件部分下归档 CreateUserWizard 控件。 添加控件之后, 设置其`ID`属性设置为`RegisterUser`。 在图 11 所示的屏幕截图，如 CreateUserWizard 呈现文本框的新用户的用户名、 密码、 电子邮件地址和安全问题和答案的接口。
+## <a name="step-6-creating-a-new-user-with-the-createuserwizard-control"></a>步骤 6：使用 CreateUserWizard 控件创建新用户
 
-[![CreateUserWizard 控件呈现泛型创建用户界面](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
+ASP.NET 附带了大量登录 Web 控件。 这些控件有助于许多常见的用户帐户和登录相关方案。 [CreateUserWizard 控件](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)是一个这样的控件，旨在提供用于将新用户帐户添加到成员身份框架的用户界面。
 
-**图 11**:CreateUserWizard 控件呈现泛型的创建用户界面 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image33.png))
+与许多其他登录相关的 Web 控件一样，无需编写任何代码即可使用 CreateUserWizard。 它直观地提供基于成员资格提供程序的配置设置的用户界面，并在用户输入所需信息并单击 "创建用户" 按钮后，在内部调用 `Membership` 类的 `CreateUser` 方法。 CreateUserWizard 控件非常可自定义。 在帐户创建过程的各个阶段，会触发一个事件宿主。 我们可以根据需要创建事件处理程序，以将自定义逻辑注入帐户创建工作流。 而且，CreateUserWizard 的外观非常灵活。 定义默认接口外观的属性有很多;如有必要，可将该控件转换为模板或添加其他用户注册 "步骤"。
 
-让我们看一段时间来比较 CreateUserWizard 控件与我们在步骤 5 中创建的接口生成的默认用户界面。 对于初学者而言，CreateUserWizard 控件允许的访问者指定的安全问题和答案，而我们手动创建的接口使用预定义的安全问题。 CreateUserWizard 控件的界面还包括验证控件，而我们不得不尚未实现对我们接口的窗体字段的验证。 和 CreateUserWizard 控件接口包含"确认密码"文本框中 （以及以确保输入的文本的"密码"和"比较密码"文本框相等 CompareValidator)。
+首先，让我们看一下如何使用 CreateUserWizard 控件的默认接口和行为。 接下来，我们将探讨如何通过控件的属性和事件自定义外观。
 
-有趣的是 CreateUserWizard 控件咨询成员资格提供程序的配置设置，呈现其用户界面时。 例如，安全问题和答案文本框仅显示如果`requiresQuestionAndAnswer`设置为 True。 同样，CreateUserWizard 会自动添加 RegularExpressionValidator 控件，以确保密码强度要求满足，并设置其`ErrorMessage`并`ValidationExpression`属性基于`minRequiredPasswordLength`， `minRequiredNonalphanumericCharacters`，和`passwordStrengthRegularExpression`配置设置。
+### <a name="examining-the-createuserwizards-default-interface-and-behavior"></a>检查 CreateUserWizard 的默认界面和行为
 
-CreateUserWizard 控件，正如其名，派生自[向导控件](https://msdn.microsoft.com/library/s2etd1ek.aspx)。 向导控件旨在以提供用于完成多步骤任务的接口。 向导控件可能包含任意数目的`WizardSteps`、 其中每个是定义 HTML 的模板和 Web 控件的该步骤。 向导控件最初显示第一个`WizardStep`，以及允许用户可从某一步前进到下一步，或返回到上一步骤的导航控件。
+返回到 `Membership` 文件夹中的 "`CreatingUserAccounts.aspx`" 页，切换到 "设计" 或 "拆分" 模式，然后将 CreateUserWizard 控件添加到页面顶部。 CreateUserWizard 控件将在工具箱的登录控件部分下进行存档。 添加控件后，将其 `ID` 属性设置为 `RegisterUser`。 如图11所示的屏幕截图所示，CreateUserWizard 会呈现一个带有新用户用户名、密码、电子邮件地址和安全问题和答案的文本框界面。
 
-如图 11 中的声明性标记所示，CreateUserWizard 控件的默认接口包含两个 `WizardSteps:`
+[![CreateUserWizard 控件呈现通用创建用户界面](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
 
-- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx) -呈现收集用于创建新的用户帐户信息的界面。 这是在图 11 所示的步骤。
-- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx) -呈现一条消息指出已成功创建帐户。
+**图 11**：CreateUserWizard 控件呈现通用创建用户界面（[单击以查看完全大小的图像](creating-user-accounts-cs/_static/image33.png)）
 
-可以修改 CreateUserWizard 的外观和行为，通过将任一步骤转换为模板，或添加您自己`WizardSteps`。 我们将介绍添加`WizardStep`到中的注册界面*存储的其他用户信息*教程。
+让我们花点时间将 CreateUserWizard 控件生成的默认用户界面与我们在步骤5中创建的接口进行比较。 对于初学者，CreateUserWizard 控件允许访问者指定安全问题和答案，而我们手动创建的接口则使用预定义的安全问题。 CreateUserWizard 控件的界面还包括验证控件，而我们尚未对接口的窗体字段实施验证。 CreateUserWizard 控件接口包含一个 "确认密码" 文本框（以及一个 CompareValidator，以确保输入的 "Password" 和 "Compare Password" 文本框相同）。
 
-我们来看 CreateUserWizard 控件在操作中。 请访问`CreatingUserAccounts.aspx`通过浏览器的页。 首先 CreateUserWizard 的界面中输入无效值。 请尝试输入密码不符合密码强度要求或保留"用户名"文本框中为空。 CreateUserWizard 将显示相应的错误消息。 图 12 显示时尝试创建具有无法强密码的用户的输出。
+有趣的是，CreateUserWizard 控件在呈现其用户界面时，会咨询成员资格提供程序的配置设置。 例如，仅当 "`requiresQuestionAndAnswer`" 设置为 "True" 时才会显示 "安全问题" 和 "答案" 文本框。 同样，CreateUserWizard 会自动添加 RegularExpressionValidator 控件，以确保满足密码强度要求，并基于 `minRequiredPasswordLength`、`minRequiredNonalphanumericCharacters`和 `passwordStrengthRegularExpression` 配置设置来设置其 `ErrorMessage` 和 `ValidationExpression` 属性。
+
+如名称所示，CreateUserWizard 控件派生自[向导控件](https://msdn.microsoft.com/library/s2etd1ek.aspx)。 向导控件旨在提供用于完成多步骤任务的接口。 一个向导控件可能具有任意数量的 `WizardSteps`，其中每个都是定义该步骤的 HTML 和 Web 控件的模板。 向导控件最初显示第一 `WizardStep`，以及允许用户从一个步骤转到下一步的导航控件，或返回到前面的步骤。
+
+如图11中的声明性标记所示，CreateUserWizard 控件的默认接口包括两个 `WizardSteps:`
+
+- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx) –呈现接口以收集用于创建新用户帐户的信息。 此步骤如图11所示。
+- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx) –呈现一条消息，指示已成功创建帐户。
+
+可以通过将这些步骤转换为模板或添加自己的 `WizardSteps`来修改 CreateUserWizard 的外观和行为。 在*存储其他用户信息*教程中，我们将介绍如何将 `WizardStep` 添加到注册界面。
+
+让我们看看操作中的 CreateUserWizard 控件。 通过浏览器访问 `CreatingUserAccounts.aspx` 页面。 首先，将一些无效值输入到 CreateUserWizard 的接口中。 尝试输入不符合密码强度要求的密码，或将 "用户名" 文本框留空。 CreateUserWizard 将显示适当的错误消息。 图12显示了尝试使用不足强密码创建用户时的输出。
 
 [![CreateUserWizard 自动注入验证控件](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
 
-**图 12**:CreateUserWizard 自动注入验证控件 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image36.png))
+**图 12**：CreateUserWizard 自动注入验证控件（[单击查看完全大小的图像](creating-user-accounts-cs/_static/image36.png)）
 
-接下来，向 CreateUserWizard 中输入相应值，然后单击"创建用户"按钮。 假设已输入必填的字段，并且密码的强度就足够了，CreateUserWizard 将创建新的用户帐户通过成员资格框架，并随后显示`CompleteWizardStep`的接口 （请参阅图 13）。 在后台，CreateUserWizard 调用`Membership.CreateUser`方法，只需像在步骤 5 中执行。
+接下来，在 CreateUserWizard 中输入适当的值，然后单击 "创建用户" 按钮。 假设已输入必填字段并且密码强度足够，则 CreateUserWizard 将通过成员身份框架创建新的用户帐户，然后显示 `CompleteWizardStep`的接口（参见图13）。 在后台，CreateUserWizard 调用 `Membership.CreateUser` 方法，就像我们在步骤5中所做的一样。
 
-[![新的用户帐户已成功创建](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
+[![已成功创建新用户帐户](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
 
-**图 13**:新的用户帐户已成功创建 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image39.png))
-
-> [!NOTE]
-> 如图 13 所示，`CompleteWizardStep`的界面包括继续按钮。 但是，现在只需单击执行回发时，在同一页上保留访问者。 在"自定义 CreateUserWizard 的外观和行为通过其属性"部分，我们将了解如何具有此按钮将发送到访问者`Default.aspx`（或某些其他页面）。
-
-在创建新的用户帐户后, 返回到 Visual Studio，并检查`aspnet_Users`和`aspnet_Membership`我们图 10，以验证是否已成功创建该帐户中的表。
-
-### <a name="customizing-the-createuserwizards-behavior-and-appearance-through-its-properties"></a>自定义 CreateUserWizard 的行为和外观通过其属性
-
-中有许多种情况下，通过属性，可以自定义 CreateUserWizard `WizardSteps`，和事件处理程序。 在本部分中我们将探讨如何自定义控件的外观，通过其属性，下一节介绍扩展通过事件处理程序的控件的行为。
-
-几乎所有 CreateUserWizard 控件的默认用户界面中显示的文本可以进行自定义通过其大量的属性。 例如，显示在文本框左侧的"用户名"、"密码"、"确认密码"、"电子邮件"、"安全提示问题"和"安全答案"标签也可以通过自定义[ `UserNameLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.usernamelabeltext.aspx)， [ `PasswordLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.passwordlabeltext.aspx)， [ `ConfirmPasswordLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.confirmpasswordlabeltext.aspx)， [ `EmailLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.emaillabeltext.aspx)， [ `QuestionLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.questionlabeltext.aspx)，并[ `AnswerLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.answerlabeltext.aspx)属性，分别。 同样，有属性，用于指定的文本中的"创建用户"和"继续"按钮`CreateUserWizardStep`和`CompleteWizardStep`，因为如果这些按钮将呈现为按钮、 Linkbutton 或 ImageButtons 也。
-
-颜色、 边框、 字体和其他可视元素是可通过样式属性的主机配置。 CreateUserWizard 控件本身具有常见 Web 控件的样式属性 – `BackColor`， `BorderStyle`， `CssClass`， `Font`，依此类推 – 和提供多种用于定义的特定部分的外观的样式属性CreateUserWizard 的接口。 [ `TextBoxStyle`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.textboxstyle.aspx)，例如，定义中的文本框的样式`CreateUserWizardStep`，而[`TitleTextStyle`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.titletextstyle.aspx)定义 （"注册您新标题的样式帐户"）。
-
-除了与外观相关的属性，还有多个影响 CreateUserWizard 控件的行为的属性。 [ `DisplayCancelButton`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.wizard.displaycancelbutton.aspx)，如果设置为 True，显示 （默认值为 False） 的"创建用户"按钮旁边的取消按钮。 如果显示取消按钮，请确保还设置[`CancelDestinationPageUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)，它指定在单击取消按钮后将用户发送到的页。 在上一节中的继续按钮中所述`CompleteWizardStep`的接口导致回发，但在相同页上保留访问者。 若要发送到其他页面上的访问者，单击继续按钮后，只需指定中的 URL [ `ContinueDestinationPageUrl`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)。
-
-让我们更新`RegisterUser`CreateUserWizard 控件以显示取消按钮，并将发送到访问者`Default.aspx`时单击取消或继续按钮。 若要完成此操作，设置`DisplayCancelButton`属性设置为 True 且两`CancelDestinationPageUrl`和`ContinueDestinationPageUrl`属性设置为"~ / Default.aspx"。 图 14 显示了更新的 CreateUserWizard 时的浏览器查看。
-
-[![CreateUserWizardStep 包括一个取消按钮](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
-
-**图 14**:`CreateUserWizardStep`包括取消按钮 ([单击以查看实际尺寸的图像](creating-user-accounts-cs/_static/image42.png))
-
-当在访问者输入用户名、 密码、 电子邮件地址和安全问题和答案，并单击"创建用户"时，创建一个新的用户帐户和访问者中记录为该新创建的用户。 假定访问的页面的人正在为自己创建一个新的帐户，这可能是所需的行为。 但是，你可能想要允许管理员添加新用户帐户。 在执行此操作，将创建用户帐户，但管理员仍以管理员身份 （而不是新创建的帐户） 登录。 可以通过布尔值修改此行为[`LoginCreatedUser`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.logincreateduser.aspx)。
-
-成员资格框架中的用户帐户包含一个已批准的标志;未获批准的用户将无法登录到网站。 默认情况下，新创建的帐户标记为批准的这样就允许用户立即登录到网站。 它有可能，但是，有标记为未批准的新用户帐户。 您可能需要管理员手动批准新用户，他们可以登录; 之前或者，您可能想要验证允许用户在登录之前在注册时输入的电子邮件地址有效。 这种情况可能存在的内容，您可以通过设置 CreateUserWizard 控件的标记为未批准的新创建的用户帐户[`DisableCreatedUser`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.disablecreateduser.aspx)为 True （默认值为 False）。
-
-需要注意的其他行为相关的属性包括`AutoGeneratePassword`和`MailDefinition`。 如果[`AutoGeneratePassword`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.autogeneratepassword.aspx)设置为 True，`CreateUserWizardStep`不会显示在"密码"和"确认密码"文本框中; 相反，新创建用户的密码自动生成使用`Membership`类的[`GeneratePassword`方法](https://msdn.microsoft.com/library/system.web.security.membership.generatepassword.aspx)。 `GeneratePassword`方法构造一个指定长度的和使用足够数量的非字母数字字符，以满足配置的密码强度要求的密码。
-
-[ `MailDefinition`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx)如果你想要为帐户创建过程中指定的电子邮件地址发送一封电子邮件将很有用。 `MailDefinition`属性包含一系列的子属性用于定义构造的电子邮件消息有关的信息。 这些子属性包括诸如选项`Subject`， `Priority`， `IsBodyHtml`， `From`， `CC`，并`BodyFileName`。 [ `BodyFileName`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx)指向文本或 HTML 文件，其中包含电子邮件的正文。 正文支持两个预定义的占位符：`<%UserName%>`和`<%Password%>`。 这些占位符，如果存在中`BodyFileName`文件中，将替换为刚创建用户的名称和密码。
+**图 13**：已成功创建新用户帐户（[单击以查看完全大小的映像](creating-user-accounts-cs/_static/image39.png)）
 
 > [!NOTE]
-> `CreateUserWizard`控件的`MailDefinition`属性只需指定当创建一个新帐户时发送电子邮件消息的详细信息。 它不包含任何实际发送电子邮件方式的详细信息 （即，是否使用 SMTP 服务器或邮件投递目录、 任何身份验证信息等）。 需要在中定义这些低级别的详细信息`<system.net>`主题中`Web.config`。 有关这些配置设置和一般情况下发送电子邮件从 ASP.NET 2.0 的详细信息，请参阅[SystemNetMail.com 常见问题解答](http://www.systemnetmail.com/)和我的文章[ASP.NET 2.0 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)。
+> 如图13所示，`CompleteWizardStep`的接口包含一个 "继续" 按钮。 但是，在这种情况下，单击它只是执行回发，使访问者保持在同一页面上。 在 "通过其属性自定义 CreateUserWizard 的外观和行为" 部分中，我们将介绍如何使用此按钮将访问者发送到 `Default.aspx` （或其他某个页面）。
 
-### <a name="extending-the-createuserwizards-behavior-using-event-handlers"></a>扩展 CreateUserWizard 的行为使用事件处理程序
+创建新的用户帐户后，返回到 Visual Studio 并检查 `aspnet_Users`，并 `aspnet_Membership` 表中进行操作，如图10所示，验证是否已成功创建帐户。
 
-CreateUserWizard 控件在其工作流期间引发事件的数。 例如，访问者输入其用户名、 密码和其他相关信息并单击"创建用户"按钮后，CreateUserWizard 控件引发其[`CreatingUser`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.creatinguser.aspx)。 如果在创建过程中，问题[`CreateUserError`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createusererror.aspx)激发; 但是，如果已成功创建用户，则[`CreatedUser`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx)引发。 获取引发的其他 CreateUserWizard 控件事件，但这些是三个最无关的。
+### <a name="customizing-the-createuserwizards-behavior-and-appearance-through-its-properties"></a>通过其属性自定义 CreateUserWizard 的行为和外观
 
-在某些情况下我们可能想要利用 CreateUserWizard 工作流，我们可以通过创建相应的事件的事件处理程序来执行此操作。 为了说明这一点，让我们来改进`RegisterUser`CreateUserWizard 控件以包含一些自定义验证的用户名和密码。 具体而言，让我们来改进我们 CreateUserWizard，以便用户名不能包含前导或尾随空格和用户名不能在密码中任意位置出现如此。 简单地说，我们想要防止某人创建的用户名与"Scott"，或具有"Scott"和"Scott.1234"等用户名/密码组合。
+通过属性、`WizardSteps`和事件处理程序，可以通过多种方式自定义 CreateUserWizard。 在本部分中，我们将介绍如何通过其属性来自定义控件的外观;下一节将介绍如何通过事件处理程序扩展控件的行为。
 
-若要完成此我们将创建的事件处理程序`CreatingUser`事件执行我们额外的验证检查。 如果所提供的数据无效，我们需要取消创建过程。 我们还需要将标签 Web 控件添加到页后，可以显示一条消息说明的用户名或密码无效。 首先，通过添加设置的 CreateUserWizard 控件下方的标签控件及其`ID`属性设置为`InvalidUserNameOrPasswordMessage`并将其`ForeColor`属性设置为`Red`。 清除其`Text`属性并设置其`EnableViewState`和`Visible`属性为 False。
+几乎所有在 CreateUserWizard 控件的默认用户界面中显示的文本都可以通过其属性的很多进行自定义。 例如，文本框左侧显示的 "用户名"、"密码"、"确认密码"、"电子邮件"、"安全问题" 和 "安全答案" 标签可分别由[`UserNameLabelText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.usernamelabeltext.aspx)、 [`PasswordLabelText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.passwordlabeltext.aspx)、 [`ConfirmPasswordLabelText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.confirmpasswordlabeltext.aspx)、 [`EmailLabelText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.emaillabeltext.aspx)、 [`QuestionLabelText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.questionlabeltext.aspx)和[`AnswerLabelText`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.answerlabeltext.aspx)属性自定义。 同样，还有一些属性用于指定 `CreateUserWizardStep` 和 `CompleteWizardStep`中 "创建用户" 和 "继续" 按钮的文本，以及这些按钮是否呈现为按钮、LinkButtons 或 ImageButtons。
+
+颜色、边框、字体和其他可视元素可通过样式属性的主机进行配置。 CreateUserWizard 控件本身具有常见的 Web 控件样式属性（`BackColor`、`BorderStyle`、`CssClass`、`Font`等），并且有许多用于定义 CreateUserWizard 界面特定部分的外观的样式属性。 例如， [`TextBoxStyle` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.textboxstyle.aspx)定义 `CreateUserWizardStep`中的文本框的样式，而[`TitleTextStyle` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.titletextstyle.aspx)定义标题的样式（"注册新帐户"）。
+
+除了与外观相关的属性之外，还有许多属性会影响 CreateUserWizard 控件的行为。 如果设置为 True，则[`DisplayCancelButton` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.wizard.displaycancelbutton.aspx)将在 "创建用户" 按钮旁显示 "取消" 按钮（默认值为 False）。 如果显示 "取消" 按钮，请确保同时设置 " [`CancelDestinationPageUrl`" 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)，该属性指定单击 "取消" 后要将用户发送到的页面。 如上一节所述，`CompleteWizardStep`界面中的 "继续" 按钮会导致回发，但会将访问者留在同一页面上。 若要在单击 "继续" 按钮后将访问者发送到其他页面，只需在 " [`ContinueDestinationPageUrl`" 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)中指定 URL。
+
+让我们更新 `RegisterUser` CreateUserWizard 控件以显示 "取消" 按钮，并在单击 "取消" 或 "继续" 按钮后将访问者发送到 `Default.aspx`。 若要实现此目的，请将 `DisplayCancelButton` 属性设置为 True，并将 `CancelDestinationPageUrl` 和 `ContinueDestinationPageUrl` 属性设置为 "~/Default.aspx"。 图14显示了通过浏览器查看时更新的 CreateUserWizard。
+
+[![Createuserwizardstep.contenttemplate 包含 "取消" 按钮](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
+
+**图 14**：`CreateUserWizardStep` 包含 "取消" 按钮（[单击以查看完全大小的图像](creating-user-accounts-cs/_static/image42.png)）
+
+当访问者输入用户名、密码、电子邮件地址和安全问题，并单击 "创建用户" 时，将创建新的用户帐户，并以该新创建的用户身份登录。 假设访问该页的人员为自己创建了一个新帐户，这可能是所需的行为。 但是，你可能想要允许管理员添加新的用户帐户。 在此过程中，将创建用户帐户，但管理员仍将以管理员身份（而不是新创建的帐户）登录。 此行为可通过布尔[`LoginCreatedUser` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.logincreateduser.aspx)进行修改。
+
+成员身份框架中的用户帐户包含批准的标志;未获批准的用户无法登录到站点。 默认情况下，新创建的帐户将标记为 "已批准"，从而允许用户立即登录到该站点。 但是，有可能将新的用户帐户标记为未批准。 也许你希望管理员可以在用户登录之前手动批准新用户;或者，您可能希望在允许用户登录之前验证注册时输入的电子邮件地址是否有效。 无论是哪种情况，都可以将 CreateUserWizard 控件的[`DisableCreatedUser` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.disablecreateduser.aspx)设置为 True （默认值为 False），以将新创建的用户帐户标记为未批准。
+
+注释的其他与行为相关的属性包括 `AutoGeneratePassword` 和 `MailDefinition`。 如果[`AutoGeneratePassword` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.autogeneratepassword.aspx)设置为 True，则 `CreateUserWizardStep` 不会显示 "密码" 和 "确认密码" 文本框;而是使用 `Membership` 类的[`GeneratePassword` 方法](https://msdn.microsoft.com/library/system.web.security.membership.generatepassword.aspx)自动生成新创建的用户的密码。 `GeneratePassword` 方法构造指定长度的密码，并使用足够数量的非字母数字字符来满足配置的密码强度要求。
+
+如果你想要将电子邮件发送到在帐户创建过程中指定的电子邮件地址，则[`MailDefinition` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx)非常有用。 `MailDefinition` 属性包括一系列子属性，用于定义有关构造的电子邮件的信息。 这些子属性包括 `Subject`、`Priority`、`IsBodyHtml`、`From`、`CC`和 `BodyFileName`等选项。 [`BodyFileName` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx)指向包含电子邮件正文的文本文件或 HTML 文件。 正文支持两个预定义占位符： `<%UserName%>` 和 `<%Password%>`。 如果 `BodyFileName` 文件中存在这些占位符，则会将其替换为刚刚创建的用户的名称和密码。
+
+> [!NOTE]
+> `CreateUserWizard` 控件的 `MailDefinition` 属性仅指定在创建新帐户时发送的电子邮件的详细信息。 它不包含有关如何实际发送电子邮件的详细信息（即，是使用 SMTP 服务器还是使用邮件投递目录、任何身份验证信息等）。 需要在 `Web.config`中的 `<system.net>` 部分定义这些低级别的详细信息。 有关这些配置设置以及从 ASP.NET 2.0 发送电子邮件的详细信息，请参阅 SystemNetMail.com 和我的文章中的[常见问题解答](http://www.systemnetmail.com/)，并[在 ASP.NET 2.0 中发送电子邮件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)。
+
+### <a name="extending-the-createuserwizards-behavior-using-event-handlers"></a>使用事件处理程序扩展 CreateUserWizard 的行为
+
+CreateUserWizard 控件在其工作流中引发了许多事件。 例如，在访问者输入用户名、密码和其他相关信息并单击 "创建用户" 按钮后，CreateUserWizard 控件会引发其[`CreatingUser` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.creatinguser.aspx)。 如果在创建过程中出现问题，则激发[`CreateUserError` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createusererror.aspx);但是，如果已成功创建用户，则会引发[`CreatedUser` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx)。 还有其他 CreateUserWizard 控件事件会引发，但这是三个最无关的控件事件。
+
+在某些情况下，我们可能需要通过为相应的事件创建事件处理程序来利用 CreateUserWizard 工作流。 为了说明这一点，让我们来增强 `RegisterUser` CreateUserWizard 控件，以便在用户名和密码上包含一些自定义验证。 特别是，让我们来增强 CreateUserWizard，使用户名不能包含前导空格或尾随空格，用户名不能出现在密码中的任何位置。 简而言之，我们想要阻止他人创建用户名（如 "Scott"），或使用用户名/密码组合，如 "Scott" 和 "Scott. 1234"。
+
+为实现此目的，我们将为 `CreatingUser` 事件创建事件处理程序，以执行额外的验证检查。 如果提供的数据无效，我们需要取消创建进程。 还需要将 "标签" Web 控件添加到页面，以显示一条消息，说明用户名或密码无效。 首先将 "标签" 控件添加到 CreateUserWizard 控件下方，并将其 `ID` 属性设置为 "`InvalidUserNameOrPasswordMessage`"，并将其 `ForeColor` 属性设置为 "`Red`"。 清除其 `Text` 属性，并将其 `EnableViewState` 和 `Visible` 属性设置为 False。
 
 [!code-aspx[Main](creating-user-accounts-cs/samples/sample7.aspx)]
 
-接下来，创建 CreateUserWizard 控件的事件处理程序`CreatingUser`事件。 若要创建事件处理程序，在设计器中选择的控件，然后转到属性窗口。 从此处，单击闪电形图标，然后双击相应的事件创建事件处理程序。
+接下来，为 CreateUserWizard 控件的 `CreatingUser` 事件创建事件处理程序。 若要创建事件处理程序，请在设计器中选择控件，然后前往属性窗口。 在该处单击闪电形图标，然后双击相应的事件以创建事件处理程序。
 
 将以下代码添加到 `CreatingUser` 事件处理程序中：
 
 [!code-csharp[Main](creating-user-accounts-cs/samples/sample8.cs)]
 
-请注意，用户名和密码输入到 CreateUserWizard 控件是可通过其[ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.username.aspx)并[`Password`属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.password.aspx)分别。 我们可以使用上述的事件处理程序中的这些属性以确定提供的用户名是否包含前导或尾部空格，并且密码中找到用户名。 如果满足这些条件之一，则在显示一条错误消息`InvalidUserNameOrPasswordMessage`标签和事件处理程序的`e.Cancel`属性设置为`true`。 如果`e.Cancel`设置为`true`，CreateUserWizard 会简化其工作流，有效地取消用户帐户创建过程。
+请注意，在 CreateUserWizard 控件中输入的用户名和密码可分别通过其[`UserName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.username.aspx)和[`Password` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.password.aspx)提供。 在上述事件处理程序中使用这些属性来确定提供的用户名是否包含前导空格或尾随空格，以及是否在密码中找到用户名。 如果满足上述任一条件，则会在 "`InvalidUserNameOrPasswordMessage`" 标签中显示错误消息，并将事件处理程序的 `e.Cancel` 属性设置为 "`true`"。 如果 `e.Cancel` 设置为 `true`，CreateUserWizard 会将其工作流短路，从而有效地取消用户帐户创建过程。
 
-图 15 所示的屏幕截图`CreatingUserAccounts.aspx`当用户输入的用户名与前导空格。
+图15显示了用户输入具有前导空格的用户名时的 `CreatingUserAccounts.aspx` 屏幕截图。
 
-[![不允许使用前导或尾随空格的用户名](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
+[不允许使用带前导空格或尾随空格的用户名 ![](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
 
-**图 15**:不允许使用前导或尾随空格的用户名 ([单击此项可查看原尺寸图像](creating-user-accounts-cs/_static/image45.png))
+**图 15**：不允许使用带有前导空格或尾随空格的用户名（[单击查看完全大小的图像](creating-user-accounts-cs/_static/image45.png)）
 
 > [!NOTE]
-> 我们将看到使用 CreateUserWizard 控件的示例`CreatedUser`中的事件 *<a id="_msoanchor_11"> </a>[存储的其他用户信息](storing-additional-user-information-cs.md)* 教程。
+> 在 *<a id="_msoanchor_11"></a>[存储其他用户信息](storing-additional-user-information-cs.md)* 教程中，我们将看到一个使用 CreateUserWizard 控件的 `CreatedUser` 事件的示例。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>Summary
 
-`Membership`类的`CreateUser`方法在成员资格框架中创建新的用户帐户。 它会通过将调用委托给配置成员资格提供程序。 情况下`SqlMembershipProvider`，则`CreateUser`方法将添加到记录`aspnet_Users`和`aspnet_Membership`数据库表。
+`Membership` 类的 `CreateUser` 方法在成员身份框架中创建新的用户帐户。 它通过委托对配置的成员资格提供程序的调用来实现此目的。 在 `SqlMembershipProvider`的情况下，`CreateUser` 方法会向 `aspnet_Users` 和 `aspnet_Membership` 数据库表中添加一条记录。
 
-虽然可以创建新的用户帐户，以编程方式 （如我们在步骤 5 中看到），但速度更快、 更轻松的方法是使用 CreateUserWizard 控件。 此控件将呈现用于收集用户信息并在成员资格框架中创建一个新用户的多步骤的用户界面。 在后台，此控件使用相同`Membership.CreateUser`方法，如检查在步骤 5 中，但该控件中创建用户界面，验证控件和响应的用户帐户创建错误而无需编写一点代码。
+尽管可以通过编程方式创建新用户帐户（如我们在步骤5中看到的那样），但使用 CreateUserWizard 控件可以更快、更简单。 此控件呈现一个多步骤用户界面，用于收集用户信息并在成员身份框架中创建新用户。 在涵盖的下面，此控件使用步骤5中所述的相同 `Membership.CreateUser` 方法，但控件创建用户界面、验证控件并响应用户帐户创建错误，而无需编写代码的舔。
 
-现在我们来创建新的用户帐户具有的功能。 但是，登录页仍验证针对我们返回在第二个教程中指定这些硬编码的凭据。 在中<a id="_msoanchor_12"> </a>[下一教程](validating-user-credentials-against-the-membership-user-store-cs.md)我们将更新`Login.aspx`来验证用户的提供对成员资格框架的凭据。
+此时，我们已准备好创建新用户帐户的功能。 但是，登录页仍将对照我们在第二个教程中指定的硬编码凭据进行验证。 在<a id="_msoanchor_12"> </a>[下一教程](validating-user-credentials-against-the-membership-user-store-cs.md)中，我们将更新 `Login.aspx` 以根据成员身份框架验证用户提供的凭据。
 
-快乐编程 ！
+很高兴编程！
 
 ### <a name="further-reading"></a>其他阅读材料
 
-在本教程中讨论的主题的详细信息，请参阅以下资源：
+有关本教程中讨论的主题的详细信息，请参阅以下资源：
 
 - [`CreateUser` 技术文档](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
 - [CreateUserWizard 控件概述](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)
-- [创建文件基于系统的站点映射提供程序](http://aspnet.4guysfromrolla.com/articles/020106-1.aspx)
-- [使用 ASP.NET 2.0 向导控件中创建分步的用户界面](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
-- [检查 ASP.NET 2.0 的 Site navigation — 站点导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
+- [创建基于文件系统的站点地图提供程序](http://aspnet.4guysfromrolla.com/articles/020106-1.aspx)
+- [使用 ASP.NET 2.0 向导控件创建分步用户界面](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
+- [检查 ASP.NET 2.0 的站点导航](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [母版页和站点导航](https://asp.net/learn/data-access/tutorial-03-vb.aspx)
-- [SQL 站点地图提供程序您期待已久](https://msdn.microsoft.com/msdnmag/issues/06/02/WickedCode/default.aspx)
+- [已等待的 SQL 站点地图提供程序](https://msdn.microsoft.com/msdnmag/issues/06/02/WickedCode/default.aspx)
 
 ### <a name="about-the-author"></a>关于作者
 
-自 1998 年以来，Scott Mitchell，多部 asp/ASP.NET 书籍的作者及 4GuysFromRolla.com 的已从事 Microsoft Web 技术工作。 Scott 是独立的顾问、 培训师和编写器。 他最新著作是 *[Sams Teach 自己 ASP.NET 2.0 24 小时内](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 可以在达到 Scott [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或通过他的博客[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已使用 Microsoft Web 技术，1998。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是， *[在24小时内，sam ASP.NET 2.0](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 可以通过[http://ScottOnWriting.NET](http://scottonwriting.net/) [mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com)或通过他的博客访问 Scott。
 
-### <a name="special-thanks-to"></a>特别感谢...
+### <a name="special-thanks-to"></a>特别感谢 。
 
-很多有用的审阅者已评审本系列教程。 本教程中的潜在顾客审阅者已 Teresa Murphy。 是否有兴趣查看我即将推出的 MSDN 文章？ 如果是这样，给我在行[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)放置一行。
 
 > [!div class="step-by-step"]
 > [上一页](creating-the-membership-schema-in-sql-server-cs.md)
