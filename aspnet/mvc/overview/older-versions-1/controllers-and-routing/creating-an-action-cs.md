@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
 title: 创建操作 (C#) |Microsoft Docs
 author: microsoft
-description: 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被操作的要求。
+description: 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法的操作要求。
 ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: cb33b28c-3025-4bd1-a1fa-eaa3af7bb56f
@@ -19,7 +19,7 @@ ms.locfileid: "65123463"
 
 by [Microsoft](https://github.com/microsoft)
 
-> 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法将被操作的要求。
+> 了解如何向 ASP.NET MVC 控制器中添加新操作。 了解有关该方法的操作要求。
 
 本教程的目的是说明如何创建新的控制器操作。 了解有关操作方法的要求。 你还了解如何避免方法公开为一个操作。
 
