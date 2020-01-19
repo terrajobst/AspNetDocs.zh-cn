@@ -43,7 +43,7 @@ AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法�
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample3.html)]
 
-在服务器端代码中，必须读取隐藏字段的值。 由于隐藏的窗体字段是很简单的操作，因此需要使用白名单方法来验证隐藏的值。 标识正确的文本框后，会将日历中的日期写入该文本框。
+在服务器端代码中，必须读取隐藏字段的值。 由于隐藏的窗体字段是很简单的操作，因此需要使用允许列表方法来验证隐藏的值。 标识正确的文本框后，会将日历中的日期写入该文本框。
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 
