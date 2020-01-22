@@ -2,163 +2,163 @@
 uid: web-api/overview/security/authentication-filters
 title: ASP.NET Web API 2 中的身份验证筛选器 |Microsoft Docs
 author: MikeWasson
-description: 身份验证筛选器是 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 都支持身份验证筛选器，但它们略有不同...
+description: 身份验证筛选器是用于对 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 两者都支持身份验证筛选器，但它们略有不同。
 ms.author: riande
 ms.date: 09/25/2014
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 15a343a061c61313141dcb69bd329e08aa902d98
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b6815baf05303d5f47a14ee5fe0fdfc2836c1868
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126004"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519370"
 ---
 # <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的身份验证筛选器
 
-通过[Mike Wasson](https://github.com/MikeWasson)
+作者： [Mike Wasson](https://github.com/MikeWasson)
 
-> 身份验证筛选器是 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 都支持身份验证筛选器，但它们略有不同，主要是在筛选器接口的命名约定。 本主题介绍 Web API 身份验证筛选器。
+> 身份验证筛选器是用于对 HTTP 请求进行身份验证的组件。 Web API 2 和 MVC 5 都支持身份验证筛选器，但它们略有不同，这通常是在筛选器接口的命名约定中。 本主题介绍了 Web API 身份验证筛选器。
 
-身份验证筛选器，可以为各个控制器或操作设置身份验证方案。 这样一来，您的应用程序可以支持为不同的 HTTP 资源不同的身份验证机制。
+身份验证筛选器使你可以为单个控制器或操作设置一个身份验证方案。 这样一来，你的应用可以支持不同 HTTP 资源的不同身份验证机制。
 
-在本文中，我将介绍中的代码[基本身份验证](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt)上的示例[ http://aspnet.codeplex.com ](http://aspnet.codeplex.com)。 此示例演示实现 HTTP 基本访问身份验证方案 (RFC 2617) 的身份验证筛选器。 在名为的类中实现筛选器`IdentityBasicAuthenticationAttribute`。 我不会显示所有的示例代码只是说明了如何编写身份验证筛选器的部件。
+在本文中，我将在[https://github.com/aspnet/samples](https://github.com/aspnet/samples)上显示[基本身份验证](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)示例中的代码。 此示例显示了实现 HTTP 基本访问身份验证方案（RFC 2617）的身份验证筛选器。 该筛选器在名为 `IdentityBasicAuthenticationAttribute`的类中实现。 我不会显示示例中的所有代码，只是说明如何编写身份验证筛选器的部分。
 
-## <a name="setting-an-authentication-filter"></a>将身份验证筛选器设置
+## <a name="setting-an-authentication-filter"></a>设置身份验证筛选器
 
-类似于其他筛选器，身份验证筛选器可以是应用的每个控制器，每个操作或全局范围内为所有 Web API 控制器。
+与其他筛选器一样，身份验证筛选器可应用于每个控制器、每个操作或全局应用到所有 Web API 控制器。
 
-若要应用到控制器的身份验证筛选器，修饰具有筛选器特性的控制器类。 下面的代码设置`[IdentityBasicAuthentication]`上了控制器类，从而使所有控制器的操作的基本身份验证筛选器。
+若要将身份验证筛选器应用到控制器，请使用筛选器属性修饰控制器类。 下面的代码设置控制器类的 `[IdentityBasicAuthentication]` 筛选器，这将为控制器的所有操作启用基本身份验证。
 
 [!code-csharp[Main](authentication-filters/samples/sample1.cs)]
 
-要应用到一个操作筛选器，请使用筛选器修饰操作。 下面的代码设置`[IdentityBasicAuthentication]`在控制器上的筛选器`Post`方法。
+若要将筛选器应用于一个操作，请使用筛选器修饰该操作。 下面的代码在控制器的 `Post` 方法上设置 `[IdentityBasicAuthentication]` 筛选器。
 
 [!code-csharp[Main](authentication-filters/samples/sample2.cs)]
 
-若要将筛选器应用于所有的 Web API 控制器，将其添加到**GlobalConfiguration.Filters**。
+若要将筛选器应用于所有 Web API 控制器，请将其添加到**GlobalConfiguration**。
 
 [!code-csharp[Main](authentication-filters/samples/sample3.cs)]
 
 ## <a name="implementing-a-web-api-authentication-filter"></a>实现 Web API 身份验证筛选器
 
-在 Web API 中，身份验证筛选器实现[System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx)接口。 它们还应继承自**System.Attribute**，以便作为属性应用。
+在 Web API 中，身份验证筛选器实现了[IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx)接口。 它们还应继承自**system.object**，以便作为特性应用。
 
-**IAuthenticationFilter**接口有两个方法：
+**IAuthenticationFilter**接口有两种方法：
 
-- **AuthenticateAsync**请求进行身份验证通过验证凭据在请求中，如果存在。
-- **ChallengeAsync**必要到 HTTP 响应中，添加身份验证质询。
+- **AuthenticateAsync**通过验证请求（如果存在）中的凭据来对请求进行身份验证。
+- 如果需要， **ChallengeAsync**会将身份验证质询添加到 HTTP 响应。
 
-这些方法对应于定义中的身份验证流[RFC 2612](http://tools.ietf.org/html/rfc2616)并[RFC 2617](http://tools.ietf.org/html/rfc2617):
+这些方法与[rfc 2612](http://tools.ietf.org/html/rfc2616)和[rfc 2617](http://tools.ietf.org/html/rfc2617)中定义的身份验证流相对应：
 
-1. 客户端将 Authorization 标头中发送凭据。 这通常发生在客户端从服务器收到 401 （未经授权） 响应之后。 但是，客户端可以收到 401 后处理不只是发送的任何请求的凭据。
-2. 如果服务器不接受凭据，则返回 401 （未经授权） 响应。 响应包括 Www-authenticate 标头，其中包含一个或多个挑战。 每个质询指定服务器识别的身份验证方案。
+1. 客户端在授权标头中发送凭据。 这通常在客户端从服务器接收到401（未授权）响应之后发生。 但是，客户端可以使用任何请求发送凭据，而不是在收到401后发送。
+2. 如果服务器不接受凭据，则返回 "401 （未授权）" 响应。 响应包括 Www 身份验证标头，该标头包含一项或多项挑战。 每个质询都指定服务器识别的身份验证方案。
 
-服务器还可以通过匿名请求返回 401。 实际上，这通常是在发起身份验证过程的方式：
+服务器还可以从匿名请求返回401。 事实上，这通常是启动身份验证过程的方式：
 
-1. 客户端发送的匿名请求。
-2. 服务器将返回 401。
-3. 客户端重新发送请求使用的凭据。
+1. 客户端发送匿名请求。
+2. 服务器返回401。
+3. 客户端通过凭据重新发送请求。
 
-此流包括这两个*身份验证*并*授权*步骤。
+此流包括*身份验证*和*授权*步骤。
 
-- 身份验证可证明客户端的标识。
-- 授权将确定客户端是否可以访问特定资源。
+- 身份验证证明了客户端的标识。
+- 授权确定客户端是否可以访问特定资源。
 
-在 Web API 中，身份验证筛选器处理身份验证，但未授权。 通过授权筛选器或在控制器操作中，则应完成授权。
+在 Web API 中，身份验证筛选器处理身份验证，但不处理授权。 授权应由授权筛选器或在控制器操作内完成。
 
-下面是流中的 Web API 2 管道：
+下面是 Web API 2 管道中的流：
 
-1. 在调用之前操作，Web API 创建该操作的身份验证筛选器的列表。 这包括具有操作作用域、 控制器范围和全局范围的筛选器。
-2. Web API 调用**AuthenticateAsync**上列表中每个筛选器。 每个筛选器来验证请求中的凭据。 如果任何筛选器已成功验证凭据，该筛选器将创建**IPrincipal**并将其附加到请求。 筛选器还可以在此时触发错误。 如果是这样，则不运行管道的其余部分。
-3. 假设没有错误，该请求流通过管道的其余部分。
-4. 最后，Web API 调用每个身份验证筛选器**ChallengeAsync**方法。 筛选器使用此方法将一项挑战添加到响应中，如果需要。 通常 （但并非总是如此），会发生 401 错误响应。
+1. 在调用操作之前，Web API 将创建该操作的身份验证筛选器列表。 这包括具有操作范围、控制器范围和全局范围的筛选器。
+2. Web API 对列表中的每个筛选器调用**AuthenticateAsync** 。 每个筛选器都可以验证请求中的凭据。 如果任何筛选器成功验证凭据，则筛选器将创建**IPrincipal** ，并将其附加到请求。 此时，筛选器也会触发错误。 如果是这样，则管道的其余部分不会运行。
+3. 假设没有错误，请求会流过管道的其余部分。
+4. 最后，Web API 调用每个身份验证筛选器的**ChallengeAsync**方法。 如果需要，筛选器使用此方法将质询添加到响应中。 通常（但不总是）将因401错误而发生。
 
-下图显示两个可能的情况。 在第一个，身份验证筛选器已成功请求进行身份验证、 授权筛选器对请求，授权和控制器操作返回 200 （正常）。
+以下关系图显示了两种可能的情况。 在第一种情况下，身份验证筛选器成功对请求进行身份验证，授权筛选器授权请求，控制器操作返回200（OK）。
 
 ![](authentication-filters/_static/image1.png)
 
-在第二个示例中，身份验证筛选器进行身份验证请求，但授权筛选器将返回 401 （未经授权）。 在这种情况下，不会调用控制器操作。 身份验证筛选器将 Www-authenticate 标头添加到响应。
+在第二个示例中，身份验证筛选器对请求进行身份验证，但授权筛选器返回401（未授权）。 在这种情况下，不会调用控制器操作。 身份验证筛选器将 Www 身份验证标头添加到响应。
 
 ![](authentication-filters/_static/image2.png)
 
-其他组合都有可能&mdash;例如，如果控制器操作允许匿名请求，则可能必须身份验证筛选器，但没有授权。
+可能的其他组合&mdash;例如，如果控制器操作允许匿名请求，则可能具有身份验证筛选器，但没有授权。
 
 ## <a name="implementing-the-authenticateasync-method"></a>实现 AuthenticateAsync 方法
 
-**AuthenticateAsync**方法尝试进行身份验证请求。 以下是方法签名：
+**AuthenticateAsync**方法尝试对请求进行身份验证。 下面是方法签名：
 
 [!code-csharp[Main](authentication-filters/samples/sample4.cs)]
 
 **AuthenticateAsync**方法必须执行下列操作之一：
 
-1. 执行任何操作 （无操作）。
-2. 创建**IPrincipal**并将其设置在请求上。
+1. 无（无操作）。
+2. 创建**IPrincipal**并在请求中设置它。
 3. 设置错误结果。
 
-选项 (1) 表示该请求没有筛选器能够理解的任何凭据。 选项 (2) 表示筛选器已成功通过身份验证请求。 选项 (3) 表示该请求具有无效凭据 （如错误的密码），这将触发错误响应。
+选项（1）表示请求没有筛选器理解的任何凭据。 选项（2）表示筛选器已成功通过身份验证请求。 选项（3）表示请求具有无效的凭据（如错误密码），这会触发错误响应。
 
-下面是用于实现常规大纲**AuthenticateAsync**。
+下面是实现**AuthenticateAsync**的一般概述。
 
-1. 查找在请求中的凭据。
-2. 如果没有凭据，则不执行任何操作并返回 （无操作）。
-3. 如果没有凭据，但筛选器不能识别的身份验证方案，不执行任何操作并返回 （无操作）。 在管道中的另一个筛选器可能会理解此方案。
-4. 如果没有筛选器识别的凭据，请尝试对其进行身份验证。
-5. 如果凭据不正确，通过设置返回 401 `context.ErrorResult`。
-6. 如果凭据有效，创建**IPrincipal**并设置`context.Principal`。
+1. 在请求中查找凭据。
+2. 如果没有凭据，则不执行任何操作并返回（无操作）。
+3. 如果有凭据，但筛选器不能识别身份验证方案，则不执行任何操作并返回（无操作）。 管道中的另一个筛选器可能会了解该方案。
+4. 如果存在筛选器理解的凭据，请尝试对它们进行身份验证。
+5. 如果凭据错误，请通过设置 `context.ErrorResult`来返回401。
+6. 如果凭据有效，请创建**IPrincipal**并设置 `context.Principal`。
 
-以下代码所示**AuthenticateAsync**方法从[基本身份验证](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt)示例。 注释中描述的每个步骤。 代码显示了几种类型的错误：使用任何凭据、 格式不正确的凭据和用户名/密码错误 Authorization 标头。
+以下代码显示[基本身份验证](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)示例中的**AuthenticateAsync**方法。 注释指明了每个步骤。 此代码显示了几种类型的错误：不含凭据的授权标头、不正确的凭据以及错误的用户名/密码。
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 
 ## <a name="setting-an-error-result"></a>设置错误结果
 
-如果凭据无效，则必须设置的筛选器`context.ErrorResult`到**IHttpActionResult**创建错误响应。 有关详细信息**IHttpActionResult**，请参阅[Web API 2 中的操作结果](../getting-started-with-aspnet-web-api/action-results.md)。
+如果凭据无效，则筛选器必须将 `context.ErrorResult` 设置为创建错误响应的**IHttpActionResult** 。 有关**IHttpActionResult**的详细信息，请参阅[Web API 2 中的操作结果](../getting-started-with-aspnet-web-api/action-results.md)。
 
-基本身份验证示例包括`AuthenticationFailureResult`适用于此目的的类。
+基本身份验证示例包含一个适用于此目的的 `AuthenticationFailureResult` 类。
 
 [!code-csharp[Main](authentication-filters/samples/sample6.cs)]
 
 ## <a name="implementing-challengeasync"></a>实现 ChallengeAsync
 
-目的**ChallengeAsync**方法是将身份验证质询添加到响应中，如果需要。 以下是方法签名：
+**ChallengeAsync**方法的用途是在需要时将身份验证质询添加到响应中。 下面是方法签名：
 
 [!code-csharp[Main](authentication-filters/samples/sample7.cs)]
 
-在请求管道中每个身份验证筛选器上调用方法。
+对请求管道中的每个身份验证筛选器调用方法。
 
-务必要理解这**ChallengeAsync**称为*之前*HTTP 响应已创建，并甚至可能之前的控制器操作运行。 当**ChallengeAsync**调用时，`context.Result`包含**IHttpActionResult**，用于更高版本创建的 HTTP 响应。 因此，在**ChallengeAsync**是调用，你还没有了解有关 HTTP 响应的任何信息。 **ChallengeAsync**方法应替换的原始值`context.Result`用新**IHttpActionResult**。 这**IHttpActionResult**必须包装原始`context.Result`。
+必须了解的是，在创建 HTTP 响应*之前*调用**ChallengeAsync** ，甚至在控制器操作运行之前也是如此。 调用**ChallengeAsync**时，`context.Result` 包含 IHttpActionResult，稍后将使用该创建 HTTP 响应。 因此，在调用**ChallengeAsync**时，你还不知道有关 HTTP 响应的任何内容。 **ChallengeAsync**方法应使用新的**IHttpActionResult**替换 `context.Result` 的原始值。 此**IHttpActionResult**必须包装原始 `context.Result`。
 
 ![](authentication-filters/_static/image3.png)
 
-我将调用原始**IHttpActionResult** *内部结果*，并且新**IHttpActionResult** *外部结果*。 外部结果必须执行以下操作：
+我将调用原始**IHttpActionResult** *内部结果*，并将新的**IHttpActionResult**为*外部结果*。 外部结果必须执行以下操作：
 
-1. 调用内部的结果创建 HTTP 响应。
-2. 检查该响应。
-3. 如果需要为响应，添加身份验证质询。
+1. 调用内部结果以创建 HTTP 响应。
+2. 检查响应。
+3. 如果需要，请向响应中添加身份验证质询。
 
-下面的示例来自基本身份验证示例。 它定义**IHttpActionResult**外部的结果。
+下面的示例摘自基本身份验证示例。 它为外部结果定义**IHttpActionResult** 。
 
 [!code-csharp[Main](authentication-filters/samples/sample8.cs)]
 
-`InnerResult`属性包含内部**IHttpActionResult**。 `Challenge`属性表示 Www 身份验证标头。 请注意， **ExecuteAsync**首先调用`InnerResult.ExecuteAsync`创建 HTTP 响应，然后根据需要添加面临的挑战。
+`InnerResult` 属性保留了内部**IHttpActionResult**。 `Challenge` 属性表示 Www 身份验证标头。 请注意， **ExecuteAsync**首先调用 `InnerResult.ExecuteAsync` 来创建 HTTP 响应，然后在需要时添加质询。
 
-添加这一难题之前检查响应代码。 大多数身份验证方案只能添加一项挑战如果响应，则 401，如下所示。 但是，某些身份验证方案执行操作的成功响应向添加一项挑战。 有关示例，请参阅[Negotiate](http://tools.ietf.org/html/rfc4559#section-5) (RFC 4559)。
+在添加质询之前检查响应代码。 如果响应为401，则大多数身份验证方案仅添加质询，如下所示。 但是，某些身份验证方案确实会向成功响应添加质询。 例如，请参阅[Negotiate](http://tools.ietf.org/html/rfc4559#section-5) （RFC 4559）。
 
-给定`AddChallengeOnUnauthorizedResult`类中的实际代码**ChallengeAsync**很简单。 您只需创建的结果并将其附加到`context.Result`。
+给定 `AddChallengeOnUnauthorizedResult` 类， **ChallengeAsync**中的实际代码非常简单。 只需创建结果并将其附加到 `context.Result`。
 
 [!code-csharp[Main](authentication-filters/samples/sample9.cs)]
 
-注意:基本身份验证示例提取此逻辑一点，将其放在扩展方法。
+注意：基本身份验证示例通过将此逻辑放在扩展方法中来对其进行抽象。
 
-## <a name="combining-authentication-filters-with-host-level-authentication"></a>结合使用主机级别的身份验证的身份验证筛选器
+## <a name="combining-authentication-filters-with-host-level-authentication"></a>结合身份验证筛选器与主机级身份验证
 
-"主机级别的身份验证"是之前的请求到达 Web API 框架执行的主机 （如 IIS) 中，身份验证。
+"主机级身份验证" 是指主机（如 IIS）执行的身份验证，然后请求到达 Web API 框架。
 
-通常情况下，你可能想要启用应用程序的其余部分的主机级身份验证，但禁用的 Web API 控制器。 例如，典型的方案是启用表单身份验证在主机级别，但对 Web API 使用基于令牌的身份验证。
+通常情况下，你可能想要为应用程序的其余部分启用主机级身份验证，但为 Web API 控制器禁用主机级身份验证。 例如，典型的方案是在主机级别启用窗体身份验证，但对 Web API 使用基于令牌的身份验证。
 
-若要禁用 Web API 管道中的主机级身份验证，请调用`config.SuppressHostPrincipal()`在配置中。 这会导致 Web API 删除**IPrincipal**从输入 Web API 管道的任何请求。 实际上，它&quot;取消-进行身份验证&quot;请求。
+若要禁用 Web API 管道内的主机级身份验证，请在配置中调用 `config.SuppressHostPrincipal()`。 这会导致 Web API 从进入 Web API 管道的任何请求中删除**IPrincipal** 。 实际上，它 &quot;&quot; 请求进行身份验证。
 
 [!code-csharp[Main](authentication-filters/samples/sample10.cs)]
 

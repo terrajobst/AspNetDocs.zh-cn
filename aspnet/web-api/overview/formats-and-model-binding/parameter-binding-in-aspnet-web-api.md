@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5386532ab581e023d93d16a5d4107e07f40b986f
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.openlocfilehash: 032368f94ce32cf6231458649e8fdd42bee685e9
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985829"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519253"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的参数绑定
 
@@ -83,7 +83,7 @@ ms.locfileid: "70985829"
 
 `http://localhost/api/values/?location=47.678558,-122.130989`
 
-## <a name="model-binders"></a>模型绑定器
+## <a name="model-binders"></a>模型联编程序
 
 类型转换器更灵活的选项是创建自定义模型绑定器。 可以通过模型绑定器访问 HTTP 请求、操作说明、路由数据中的原始值等内容。
 
@@ -100,12 +100,12 @@ ms.locfileid: "70985829"
 - 值提供程序获取 HTTP 请求并填充键值对字典。
 - 模型绑定器使用此字典来填充模型。
 
-Web API 中的默认值提供程序从路由数据和查询字符串中获取值。 例如，如果 URI 为`http://localhost/api/values/1?location=48,-122`，则值提供程序将创建以下键值对：
+Web API 中的默认值提供程序从路由数据和查询字符串中获取值。 例如，如果 URI 是 `http://localhost/api/values/1?location=48,-122`的，则值提供程序将创建以下键值对：
 
 - id = &quot;1&quot;
 - location = &quot;48122&quot;
 
-(假设默认路由模板，这是&quot;api / {controller} / {id}&quot;。)
+（我假设默认路由模板是 &quot;api/{controller}/{id}&quot;。）
 
 要绑定的参数的名称存储在 **ModelBindingContext.ModelName** 属性中。 模型绑定器会在字典中查找包含此值的键。 如果此值存在，并且可以转换为 `GeoPoint`，模型绑定器会将绑定的值赋给 **ModelBindingContext.Model** 属性。
 
@@ -159,7 +159,7 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 
 **HttpParameterBinding** 负责将参数绑定到值。 如果使用 **[ModelBinder]** ，此特性会返回一个 **HttpParameterBinding** 实现，该实现使用 **IModelBinder** 执行实际的绑定。 你还可以实现你自己的**HttpParameterBinding**。
 
-例如，假设要从`if-match`请求中获取 etag 和`if-none-match`标头。 首先，我们将定义一个表示 Etag 的类。
+例如，假设要从 `if-match` 获取 Etag 并在请求中 `if-none-match` 标头。 首先，我们将定义一个表示 Etag 的类。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample19.cs)]
 
@@ -176,19 +176,19 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 > [!NOTE]
 > 如果**ExecuteBindingAsync**方法读取请求消息的正文，请重写**WillReadBody**属性以返回 true。 请求正文可能是一次只能读取一次的未缓冲流，因此 Web API 强制执行最多一个绑定可以读取消息正文的规则。
 
-若要应用自定义**HttpParameterBinding**，可以定义派生自**ParameterBindingAttribute**的属性。 对于`ETagParameterBinding`，我们将定义两个属性，一个`if-match`用于标头， `if-none-match`一个用于标头。 两者均派生自抽象基类。
+若要应用自定义**HttpParameterBinding**，可以定义派生自**ParameterBindingAttribute**的属性。 对于 `ETagParameterBinding`，我们将定义两个属性，一个用于 `if-match` 的标头，另一个用于 `if-none-match` 标头。 两者均派生自抽象基类。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample22.cs)]
 
-下面是使用`[IfNoneMatch]`属性的控制器方法。
+下面是使用 `[IfNoneMatch]` 特性的控制器方法。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample23.cs)]
 
-除了**ParameterBindingAttribute**以外，还有另一个挂钩用于添加自定义**HttpParameterBinding**。 在**HttpConfiguration**对象上， **ParameterBindingRules**属性是类型（**HttpParameterDescriptor**  - &gt; **HttpParameterBinding**）的匿名函数的集合。 例如，可以添加 GET 方法上的任何 ETag 参数使用`ETagParameterBinding`的`if-none-match`规则：
+除了**ParameterBindingAttribute**以外，还有另一个挂钩用于添加自定义**HttpParameterBinding**。 在**HttpConfiguration**对象上， **ParameterBindingRules**属性是类型（**HttpParameterDescriptor** -&gt; **HttpParameterBinding**）的匿名函数的集合。 例如，你可以添加一个规则，即 GET 方法上的任何 ETag 参数使用与 `if-none-match``ETagParameterBinding`：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample24.cs)]
 
-对于绑定不适用`null`的参数，函数应返回。
+函数应返回绑定不适用的参数 `null`。
 
 ## <a name="iactionvaluebinder"></a>IActionValueBinder
 
@@ -205,7 +205,7 @@ Web API 编写所有值提供程序，因此模型绑定器在调用 **ValueProv
 
 ## <a name="additional-resources"></a>其他资源
 
-[自定义参数绑定示例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/CustomParameterBinding/ReadMe.txt)
+[自定义参数绑定示例](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
 
 Mike 停止了撰写有关 Web API 参数绑定的一系列优秀博客文章：
 

@@ -1,52 +1,52 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: 从.NET 客户端调用 Web API (C#)-ASP.NET 4.x
+title: 从 .NET 客户端调用 Web API （C#）-ASP.NET 4。x
 author: MikeWasson
-description: 本教程演示如何从.NET 4.x 应用程序调用 web API。
+description: 本教程演示如何从 .NET 4.x 应用程序调用 web API。
 ms.author: riande
 ms.date: 11/24/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: ca3b9424f30f48c7b8c71b850ffeca64244b123b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 960960d26863cc3f725eee8a6c98844c5d3ce721
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112847"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519175"
 ---
-# <a name="call-a-web-api-from-a-net-client-c"></a>从.NET 客户端 (C#) 中调用 Web API
+# <a name="call-a-web-api-from-a-net-client-c"></a>从 .NET 客户端调用 Web API （C#）
 
-通过[Mike Wasson](https://github.com/MikeWasson)和[Rick Anderson](https://twitter.com/RickAndMSFT)
+作者： [Mike Wasson](https://github.com/MikeWasson)和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[下载已完成的项目](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 
+[下载完成的项目](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 
 
-本教程演示如何从.NET 应用程序调用 web API 使用[System.Net.Http.HttpClient。](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
+本教程演示如何使用[HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)从 .net 应用程序调用 web API。
 
-在本教程中，使用以下 web API 编写的客户端应用程序：
+在本教程中，编写了一个使用以下 web API 的客户端应用：
 
 | 操作 | HTTP 方法 | 相对 URI |
 | --- | --- | --- |
-| 获取按 ID 的产品 | GET | /api/products/*id* |
-| 创建一个新的产品 | 发布 | /api/products |
-| 将产品更新 | PUT | /api/products/*id* |
-| 删除产品 | DELETE | /api/products/*id* |
+| 按 ID 获取产品 | GET | /api/products/*id* |
+| 创建新产品 | POST | /api/products |
+| 更新产品 | PUT | /api/products/*id* |
+| 删除产品 | 删除 | /api/products/*id* |
 
-若要了解如何实现此 API 与 ASP.NET Web API 配合使用，请参阅[创建支持 CRUD 操作的 Web API](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
+若要了解如何使用 ASP.NET Web API 实现此 API，请参阅[创建支持 CRUD 操作的 WEB API](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 )。
 
-为简单起见，本教程中的客户端应用程序是一个 Windows 控制台应用程序。 **HttpClient**也支持 Windows Phone 和 Windows 应用商店应用。 有关详细信息，请参阅[编写 Web API 客户端代码的多个平台使用可移植库](https://blogs.msdn.com/b/webdev/archive/2013/07/19/writing-web-api-client-code-for-multiple-platforms-using-portable-libraries.aspx)
+为简单起见，本教程中的客户端应用程序是一个 Windows 控制台应用程序。 Windows Phone 和 Windows 应用商店应用程序也支持**HttpClient** 。 有关详细信息，请参阅[使用可移植库为多个平台编写 WEB API 客户端代码](https://blogs.msdn.com/b/webdev/archive/2013/07/19/writing-web-api-client-code-for-multiple-platforms-using-portable-libraries.aspx)
 
 <a id="CreateConsoleApp"></a>
 ## <a name="create-the-console-application"></a>创建控制台应用程序
 
-在 Visual Studio 中，创建一个新的 Windows 控制台应用，名为**HttpClientSample**并粘贴以下代码：
+在 Visual Studio 中，创建一个名为**HttpClientSample**的新 Windows 控制台应用程序，并粘贴以下代码：
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_all)]
 
-前面的代码是完整的客户端应用程序。
+上面的代码是完整的客户端应用程序。
 
-`RunAsync` 运行并阻止，直到它完成。 大多数**HttpClient**方法是异步，因为它们执行网络 I/O。 所有异步任务完成内`RunAsync`。 应用程序通常不会阻止主线程，但此应用不允许任何交互。
+`RunAsync` 运行并一直阻止到完成为止。 大多数**HttpClient**方法都是异步的，因为它们执行网络 i/o。 所有异步任务都在 `RunAsync`内完成。 通常，应用程序不会阻止主线程，但此应用程序不允许任何交互。
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
@@ -55,16 +55,16 @@ ms.locfileid: "65112847"
 
 使用 NuGet 包管理器安装 Web API 客户端库包。
 
-从“工具”菜单中，选择“NuGet 包管理器” > “包管理器控制台”。 在包管理器控制台 (PMC) 中，键入以下命令：
+从“工具”菜单中，选择“NuGet 包管理器” > “包管理器控制台”。 在 "程序包管理器控制台" （PMC）中，键入以下命令：
 
 `Install-Package Microsoft.AspNet.WebApi.Client`
 
-上述命令将以下 NuGet 包添加到项目：
+前面的命令将以下 NuGet 包添加到项目中：
 
 * Microsoft.AspNet.WebApi.Client
 * Newtonsoft.Json
 
-Json.NET 是用于.NET 的热门高性能 JSON 框架。
+Netwonsoft （也称为 Json.NET）是适用于 .NET 的常用高性能 JSON 框架。
 
 <a id="AddModelClass"></a>
 ## <a name="add-a-model-class"></a>添加模型类
@@ -73,7 +73,7 @@ Json.NET 是用于.NET 的热门高性能 JSON 框架。
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_prod)]
 
-此类匹配由 web API 使用的数据模型。 应用程序可以使用**HttpClient**读取`Product`的 HTTP 响应中的实例。 应用程序无需编写任何反序列化代码。
+此类与 web API 使用的数据模型相匹配。 应用可以使用**HttpClient**从 HTTP 响应读取 `Product` 实例。 应用无需编写任何反序列化代码。
 
 <a id="InitClient"></a>
 ## <a name="create-and-initialize-httpclient"></a>创建和初始化 HttpClient
@@ -82,39 +82,39 @@ Json.NET 是用于.NET 的热门高性能 JSON 框架。
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_HttpClient)]
 
-**HttpClient**是用于实例化一次，并在应用程序的生命周期中重复使用。 以下条件可能会导致**SocketException**错误：
+**HttpClient**仅可在应用程序的整个生命周期中实例化一次并重复使用。 以下情况可能会导致**SocketException**错误：
 
-* 创建一个新**HttpClient**每个请求的实例。
+* 为每个请求创建一个新的**HttpClient**实例。
 * 负载较重的服务器。
 
-创建一个新**HttpClient**每个请求的实例可以耗尽可用的套接字。
+为每个请求创建新的**HttpClient**实例可能会耗尽可用的套接字。
 
-下面的代码初始化**HttpClient**实例：
+下面的代码对**HttpClient**实例进行了初始化：
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5)]
 
 前面的代码：
 
-* 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用程序中使用的端口。 使用端口，服务器应用的应用程序才能工作。
-* 设置为"application/json"Accept 标头。 设置此标头指示服务器以 JSON 格式发送数据。
+* 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用中使用的端口。 除非使用服务器应用的端口，否则应用不起作用。
+* 将 Accept 标头设置为 "application/json"。 设置此标头将告知服务器以 JSON 格式发送数据。
 
 <a id="GettingResource"></a>
 ## <a name="send-a-get-request-to-retrieve-a-resource"></a>发送 GET 请求以检索资源
 
-以下代码将发送一个产品的 GET 请求：
+下面的代码发送一个产品的 GET 请求：
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_GetProductAsync)]
 
-**GetAsync**方法将发送 HTTP GET 请求。 当方法完成时，它将返回**HttpResponseMessage**包含 HTTP 响应。 如果在响应中的状态代码是一个成功代码，响应正文将包含产品的 JSON 表示形式。 调用**ReadAsAsync**要反序列化到 JSON 有效负载`Product`实例。 **ReadAsAsync**方法是异步的因为响应正文可以是任意大。
+**GetAsync**方法发送 HTTP GET 请求。 当方法完成时，它将返回一个包含 HTTP 响应的**HttpResponseMessage** 。 如果响应中的状态代码是成功代码，则响应正文包含产品的 JSON 表示形式。 调用**ReadAsAsync**将 JSON 负载反序列化为 `Product` 实例。 **ReadAsAsync**方法是异步的，因为响应正文可能会很大。
 
-**HttpClient** HTTP 响应包含错误代码时不引发异常。 相反， **IsSuccessStatusCode**属性是**false**如果状态为错误代码。 如果想要将视为异常的 HTTP 错误代码，调用[HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx)响应对象上。 `EnsureSuccessStatusCode` 如果超出了范围 200 状态代码将引发异常&ndash;299。 请注意， **HttpClient**可能会由于其他原因引发异常&mdash;例如，如果请求超时。
+当 HTTP 响应包含错误代码时， **HttpClient**不会引发异常。 相反，如果状态是错误代码，则 **.issuccessstatuscode**属性为**false** 。 如果希望将 HTTP 错误代码视为例外，请在响应对象上调用[HttpResponseMessage。](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) 如果状态代码不在 200&ndash;299 范围内，则 `EnsureSuccessStatusCode` 会引发异常。 请注意， **HttpClient**可能会出于其他原因而引发异常 &mdash; 例如，如果请求超时。
 
 <a id="MediaTypeFormatters"></a>
-### <a name="media-type-formatters-to-deserialize"></a>媒体类型格式化程序用于反序列化
+### <a name="media-type-formatters-to-deserialize"></a>要反序列化的媒体类型格式化程序
 
-当**ReadAsAsync**调用不带任何参数，它使用一组默认的*媒体格式化程序*读取响应正文。 默认格式化程序支持 JSON、 XML 和窗体 url 编码数据。
+如果在没有参数的情况下调用**ReadAsAsync** ，则它将使用一组默认的*媒体格式化*程序来读取响应正文。 默认格式化程序支持 JSON、XML 和窗体 url 编码数据。
 
-而不是使用默认格式化程序，可以提供到格式化程序的列表**ReadAsAsync**方法。  使用格式化程序的列表是如果您有自定义媒体类型格式化程序：
+您可以向**ReadAsAsync**方法提供格式化程序列表，而不是使用默认的格式化程序。  如果有自定义的媒体类型格式化程序，则使用格式化程序列表非常有用：
 
 ```csharp
 var formatters = new List<MediaTypeFormatter>() {
@@ -125,51 +125,51 @@ var formatters = new List<MediaTypeFormatter>() {
 resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 ```
 
-有关详细信息，请参阅[ASP.NET Web API 2 中的媒体格式化程序](../formats-and-model-binding/media-formatters.md)
+有关详细信息，请参阅[ASP.NET Web API 2 中的媒体格式化](../formats-and-model-binding/media-formatters.md)程序
 
-## <a name="sending-a-post-request-to-create-a-resource"></a>发送 POST 请求创建资源
+## <a name="sending-a-post-request-to-create-a-resource"></a>发送 POST 请求以创建资源
 
-下面的代码发送 POST 请求包含`Product`以 JSON 格式的实例：
+以下代码发送 POST 请求，其中包含 JSON 格式的 `Product` 实例：
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_CreateProductAsync)]
 
 **PostAsJsonAsync**方法：
 
-* 序列化到 JSON 对象。
-* 在 POST 请求中发送的 JSON 有效负载。
+* 将对象序列化为 JSON。
+* 发送 POST 请求中的 JSON 有效负载。
 
 如果请求成功：
 
-* 它应返回 201 （已创建） 响应。
-* 响应位置标头中应该包含创建的资源的 URL。
+* 它应返回201（已创建）响应。
+* 响应应在 Location 标头中包含已创建的资源的 URL。
 
 <a id="PuttingResource"></a>
-## <a name="sending-a-put-request-to-update-a-resource"></a>发送 PUT 的请求以更新资源
+## <a name="sending-a-put-request-to-update-a-resource"></a>发送 PUT 请求以更新资源
 
-以下代码将发送 PUT 请求将产品更新：
+以下代码发送 PUT 请求以更新产品：
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_UpdateProductAsync)]
 
-**PutAsJsonAsync**方法的工作方式类似于**PostAsJsonAsync**，只不过它将发送 PUT 请求，而不是 POST。
+**PutAsJsonAsync**方法的工作方式类似于**PostAsJsonAsync**，只不过它会发送 PUT 请求而不是 POST。
 
 <a id="DeletingResource"></a>
-## <a name="sending-a-delete-request-to-delete-a-resource"></a>发送 DELETE 请求以删除资源
+## <a name="sending-a-delete-request-to-delete-a-resource"></a>发送删除请求以删除资源
 
-以下代码将发送 DELETE 请求删除某个产品：
+以下代码发送删除请求以删除产品：
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_DeleteProductAsync)]
 
-如 GET、 DELETE 请求没有请求正文。 不需要删除与指定 JSON 或 XML 格式。
+与 GET 一样，删除请求没有请求正文。 不需要指定 JSON 或 XML 格式。
 
 ## <a name="test-the-sample"></a>测试示例
 
-若要测试客户端应用：
+测试客户端应用：
 
-1. [下载](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用程序。 [下载说明](/aspnet/core/#how-to-download-a-sample)。 验证服务器应用程序正常工作。 例如，`http://localhost:64195/api/products`应返回的产品的列表。
-2. 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用程序中使用的端口。
+1. [下载](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用。 [下载说明](/aspnet/core/#how-to-download-a-sample)。 验证服务器应用是否正常工作。 例如，`http://localhost:64195/api/products` 应返回产品列表。
+2. 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用中使用的端口。
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 
-3. 运行客户端应用程序。 将生成以下输出：
+3. 运行客户端应用。 将生成以下输出：
 
    ```console
    Created at http://localhost:64195/api/products/4

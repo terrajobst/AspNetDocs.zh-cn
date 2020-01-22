@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 11b494b4839c646b018098c76a8a9ae0a2169757
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 8dbc31a5c8d59fa55dc5b513c1a51d24d18a685f
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600493"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519396"
 ---
 # <a name="introduction-to-signalr"></a>SignalR 简介
 
@@ -39,11 +39,19 @@ SignalR 提供了一个简单的 API，用于创建从服务器端 .NET 代码�
 
 ![通过 SignalR 调用方法](introduction-to-signalr/_static/image1.png)
 
-SignalR 自动处理连接管理，并使你能够同时将消息广播到所有连接的客户端，如聊天室。 你还可以将消息发送到特定客户端。 客户端与服务器之间的连接是永久性的，不同于经典 HTTP 连接，这是为每个通信重新建立的。
+SignalR 自动处理连接管理，让你可同时向所有连接的客户端广播消息，就像聊天室一样。 也可以向特定客户端发送消息。 客户端和服务器之间的连接是持久的，不同于传统的 HTTP 连接，后者针对每次通信重新建立。
 
 SignalR 支持 "服务器推送" 功能，在此功能中，服务器代码可以使用远程过程调用（RPC），而不是 web 上常见的请求-响应模型，在浏览器中调用客户端代码。
 
-SignalR 应用程序可使用服务总线、SQL Server 或[Redis](http://redis.io)向外扩展到数千个客户端。
+使用内置和第三方横向扩展提供程序，SignalR 应用程序可以向外扩展到数千个客户端。
+
+内置提供程序包括：
+* [服务总线](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.ServiceBus3)
+* [SQL Server](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.SqlServer)
+* [Redis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.Redis)
+
+第三方提供程序包括：
+* [NCache](https://www.alachisoft.com/ncache/asp-net-core-signalr.html)。
 
 SignalR 是开放源代码，可通过[GitHub](https://github.com/signalr)访问。
 

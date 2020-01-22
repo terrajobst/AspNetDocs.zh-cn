@@ -8,20 +8,20 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 07f5b290b73f75000e6f29fe09e4dc25e144452f
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 6169c972ad0f4ee2079d3638c54a5accc4b8b3de
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899699"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519344"
 ---
 # <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>创建具有登录、电子邮件确认和密码重置功能的安全 ASP.NET MVC 5 Web 应用 (C#)
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 本教程演示如何使用 ASP.NET Identity 成员身份系统通过电子邮件确认和密码重置生成 ASP.NET MVC 5 web 应用。
 
-有关本教程中使用 .NET Core 的更新版本，请参阅 [帐户确认和密码恢复 ASP.NET Core [/aspnet/core/security/authentication/accconfirm）。
+有关本教程中使用 .NET Core 的更新版本，请参阅[ASP.NET Core 中的帐户确认和密码恢复](/aspnet/core/security/authentication/accconfirm)。
 
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>创建 ASP.NET MVC 应用

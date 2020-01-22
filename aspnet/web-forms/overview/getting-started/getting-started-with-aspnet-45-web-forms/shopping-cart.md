@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 46264a0ab2244cff24761ce94b41722e61e3f426
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: d3b619ebd9448d30857ffbaf17fd245b1d54a662
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614929"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519292"
 ---
 # <a name="shopping-cart"></a>购物车
 
@@ -25,7 +25,7 @@ ms.locfileid: "74614929"
 
 本教程介绍将购物车添加到 Wingtip 玩具示例 ASP.NET Web 窗体应用程序所需的业务逻辑。 本教程基于前面的 "显示数据项和详细信息" 教程，是 Wingtip 玩具商店教程系列的一部分。 完成本教程后，你的示例应用程序的用户将能够在其购物车中添加、删除和修改产品。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 1. 如何为 web 应用程序创建购物车。
 2. 如何使用户能够将物品添加到购物车。
@@ -60,7 +60,7 @@ ms.locfileid: "74614929"
 
     ![购物车-"添加新项" 对话框](shopping-cart/_static/image2.png)
 3. 将此新类命名为*CartItem.cs*。
-4. 单击 **添加**。  
+4. 单击“添加”。  
    新的类文件将显示在编辑器中。
 5. 将默认代码替换为以下代码：   
 
@@ -306,11 +306,13 @@ ms.locfileid: "74614929"
 
     ![购物车-购物车更新](shopping-cart/_static/image9.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，已创建 Wingtip 玩具 Web 窗体示例应用程序的购物车。 在本教程中，你使用了实体框架 Code First、数据批注、强类型化数据控件和模型绑定。
 
 购物车支持添加、删除和更新用户选择购买的商品。 除了实现购物车功能外，还了解了如何在**GridView**控件中显示购物车项，并计算订单总计。
+
+为了了解所述功能在实际的业务应用程序中的工作原理，你可以查看基于[nopCommerce](https://github.com/nopSolutions/nopCommerce) -ASP.NET 的开源电子商务购物车的示例。 最初，它是基于 Web 窗体构建的，并且已移动到 MVC 并现在 ASP.NET Core。
 
 ## <a name="addition-information"></a>附加信息
 

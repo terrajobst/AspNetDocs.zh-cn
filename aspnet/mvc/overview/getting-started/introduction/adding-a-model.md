@@ -8,22 +8,22 @@ ms.date: 05/28/2015
 ms.assetid: 276552b5-f349-4fcf-8f40-6d042f7aa88e
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 0221539f5e468faacf3e38374452c0cc2a7d31d3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0d926c7a8bd99c56820208921c10e609da56d236
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398743"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519032"
 ---
 # <a name="adding-a-model"></a>添加模型
 
-通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-[!INCLUDE [Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](index.md)]
 
-在本部分中将添加用于管理数据库中的电影的一些类。 这些类将是&quot;模型&quot;ASP.NET MVC 应用程序的一部分。
+在本部分中，你将添加一些用于在数据库中管理电影的类。 这些类将作为 ASP.NET MVC 应用&quot; 一部分的 &quot;模型。
 
-将使用名为.NET Framework 数据访问技术[Entity Framework](https://docs.microsoft.com/ef/)来定义和使用这些模型的类。 实体框架 （通常称为 EF） 支持开发模式称为*Code First*。 代码首先允许你通过编写简单的类来创建模型对象。 (这些是也称为 POCO 类，从&quot;普通旧 CLR 对象。&quot;)然后，您可以实现很整洁且快速的开发工作流的类，从动态创建的数据库。 如果您需要首先创建数据库，您仍可遵循此教程，了解有关 MVC 和 EF 应用程序开发。 然后可以按照 Tom Fizmakens [ASP.NET 基架](xref:visual-studio/overview/2013/aspnet-scaffolding-overview)教程，介绍了数据库第一种方法。
+您将使用一种称为[实体框架](https://docs.microsoft.com/ef/)的 .NET Framework 数据访问技术来定义和使用这些模型类。 实体框架（通常称为 EF）支持名为*Code First*的开发模式。 Code First 允许通过编写简单的类来创建模型对象。 （这些类也称为 POCO 类，来自 &quot;纯传统 CLR 对象。&quot;）然后，你可以从类动态创建数据库，这样就可以实现非常干净且快速的开发工作流。 如果需要首先创建数据库，仍可以遵循本教程来了解 MVC 和 EF 应用程序开发。 然后，你可以遵循 Tom Fizmakens [ASP.NET 基架](xref:visual-studio/overview/2013/aspnet-scaffolding-overview)教程，其中介绍了数据库优先方法。
 
 ## <a name="adding-model-classes"></a>添加模型类
 
@@ -31,35 +31,35 @@ ms.locfileid: "59398743"
 
 ![](adding-a-model/_static/image1.png)
 
-输入*类*名称&quot;电影&quot;。
+输入 &quot;Movie&quot;的*类*名。
 
-添加到以下五个属性`Movie`类：
+将以下五个属性添加到 `Movie` 类：
 
 [!code-csharp[Main](adding-a-model/samples/sample1.cs)]
 
-我们将使用`Movie`类来表示数据库中的电影。 每个实例`Movie`对象将对应于数据库表中，并的每个属性内的行`Movie`类将映射到表中的列。
+我们将使用 `Movie` 类来表示数据库中的影片。 `Movie` 对象的每个实例都对应于数据库表中的一行，而 `Movie` 类的每个属性都将映射到该表中的列。
 
-注意:为了使用 system.data.entity 的引用和相关的类，您需要安装[实体框架 NuGet 包](https://www.nuget.org/packages/EntityFramework/)。 请访问有关进一步说明链接。
+注意：若要使用 System.web 和相关类，需要安装[实体框架 NuGet 包](https://www.nuget.org/packages/EntityFramework/)。） 请单击链接获取进一步的说明。
 
-在同一文件中，添加以下`MovieDBContext`类：
+在同一文件中，添加以下 `MovieDBContext` 类：
 
 [!code-csharp[Main](adding-a-model/samples/sample2.cs?highlight=2,15-18)]
 
-`MovieDBContext`类表示处理提取、 存储和更新的实体框架电影数据库上下文`Movie`类在数据库中的实例。 `MovieDBContext`派生自`DbContext`实体框架提供的基类。
+`MovieDBContext` 类表示实体框架的电影数据库上下文，用于处理数据库中 `Movie` 类实例的提取、存储和更新。 `MovieDBContext` 从实体框架提供的 `DbContext` 基类派生。
 
-若要引用将`DbContext`并`DbSet`，你需要添加以下`using`在文件顶部的语句：
+为了能够引用 `DbContext` 和 `DbSet`，需要在文件的顶部添加以下 `using` 语句：
 
 [!code-csharp[Main](adding-a-model/samples/sample3.cs)]
 
-您可以执行此操作通过手动添加 using 语句，也可以悬停在红色的波浪线，再单击`Show potential fixes`单击 `using System.Data.Entity;`
+您可以通过手动添加 using 语句来实现此目的，也可以将鼠标悬停在红色波浪线上，单击 `Show potential fixes` 并单击 `using System.Data.Entity;`
 
 ![](adding-a-model/_static/image2.png)
 
-注意:多个未使用`using`语句已被删除。 Visual Studio 将显示为灰色的未使用的依赖项。 可以通过将鼠标悬停的灰色的依赖项上删除未使用的依赖项，再单击`Show potential fixes`单击**删除未使用的 Using。**
+注意：已删除多个未使用的 `using` 语句。 Visual Studio 会将未使用的依赖项显示为灰色。 您可以通过将鼠标悬停在灰色依赖项上来删除未使用的依赖项，单击 `Show potential fixes` 并单击 "**删除未使用的 using**
 
 ![](adding-a-model/_static/image3.png)
 
-最后，我们已添加模型 (在 MVC 中的 M)。 下一节中将使用数据库连接字符串。
+最后，我们添加了一个模型（MVC 中的 M）。 在下一部分中，你将使用数据库连接字符串。
 
 > [!div class="step-by-step"]
 > [上一页](adding-a-view.md)

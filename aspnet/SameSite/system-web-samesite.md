@@ -3,14 +3,14 @@ title: 在 ASP.NET 中使用 SameSite cookie
 author: rick-anderson
 description: 了解如何使用在 ASP.NET 中 SameSite cookie
 ms.author: riande
-ms.date: 12/03/2019
+ms.date: 1/22/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: 47a3d7576edb0e818c39b32fbbcb98475248e18e
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.openlocfilehash: d2160bd9aeb93398b49b3a0e5e7a8a4404a5bc63
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993062"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519188"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
@@ -25,7 +25,7 @@ SameSite 是一种[IETF](https://ietf.org/about/)草案，旨在针对跨站点�
 
 `None` 参数会导致实现之前[2016 草案标准](https://tools.ietf.org/html/draft-west-first-party-cookies-07)（例如，iOS 12）的客户端的兼容性问题。 请参阅本文档中的[支持旧版浏览器](#sob)。
 
-发出 cookie 的每个 ASP.NET Core 组件都需要确定 SameSite 是否合适。
+发出 cookie 的每个 ASP.NET 组件都需要确定 SameSite 是否适用。
 
 ## <a name="api-usage-with-samesite"></a>使用 SameSite 的 API 用法
 
@@ -44,6 +44,10 @@ SameSite 支持是在使用[2016 草案标准](https://tools.ietf.org/html/draft
 * 指定显式断言 `SameSite=None` 以便启用跨站点传递的 cookie 应标记为 `Secure`。 `None` 是选择退出的新项。
 * 按照上面列出的 KB 中所述，发布的修补程序支持。
 * 默认[情况下，计划](https://chromestatus.com/feature/5088147346030592)在[2020 年2月](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)启用。 浏览器已开始在2019中移动到此标准。
+
+### <a name="azure-app-servicesamesite-cookie-handling"></a>Azure App Service — SameSite cookie 处理
+
+有关详细信息，请参阅[Azure App Service-SameSite cookie 处理和 .NET Framework 4.7.2 修补程序](https://azure.microsoft.com/updates/app-service-samesite-cookie-update/)。
 
 <a name="sob"></a>
 
