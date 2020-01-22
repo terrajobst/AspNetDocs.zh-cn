@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: 2b0df3d9-450b-4ea6-b315-4c9650722cad
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: fe71e6cfb0f4c5f1d99b326e9d90edb6c8c5feee
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9e7902bcf8a16c154aee1a982824bfaedeea7d9d
+ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600545"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76309231"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序： web.config 文件转换-3/12
 
@@ -43,7 +43,7 @@ Web 部署参数可用于指定在部署过程中必须配置的多种不同类�
 
 在**解决方案资源管理器**中，*展开 web.config*以查看默认情况下为两个默认生成配置*创建的 web.config 和* *web.config*转换文件。
 
-![Web。 config_transform_files](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/_static/image1.png)
+![Web.config_transform_files](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/_static/image1.png)
 
 您可以创建自定义生成配置的转换文件，方法是右键单击 web.config 文件，然后从上下文菜单中选择 "**添加配置转换**"，但对于本教程，无需执行此操作。
 
@@ -131,11 +131,11 @@ Contoso 大学网页读取在*web.config 文件 `appSettings`* 中设置的值�
 
 ## <a name="setting-connection-strings"></a>设置连接字符串
 
-在大多数情况下，你不需要设置连接字符串转换，因为你可以在发布配置文件中指定连接字符串。 但在部署 SQL Server Compact 数据库时，如果使用 Entity Framework Code First 迁移更新目标服务器上的数据库，则会出现异常。 对于这种情况，您必须指定将在服务器上用于更新数据库架构的其他连接字符串。 若要设置此转换，请将一个 **&lt;connectionStrings&gt;** 元素添加到紧跟在*web.config*和*web.config 转换文件*中的打开 **&lt;配置&gt;** 标记之后：
+在大多数情况下，你不需要设置连接字符串转换，因为你可以在发布配置文件中指定连接字符串。 但在部署 SQL Server Compact 数据库时，如果使用 Entity Framework Code First 迁移更新目标服务器上的数据库，则会出现异常。 对于这种情况，您必须指定将在服务器上用于更新数据库架构的其他连接字符串。 若要设置此转换，将添加 **&lt;connectionStrings&gt;** 紧跟左括号之后元素 **&lt;configuration&gt;** 在这种标记*Web.Test.config*并*Web.Production.config*转换文件：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 
-`Transform` 特性指定此连接字符串将添加到已部署的*web.config*文件中的*connectionStrings*元素。 （如果不存在，则发布过程会自动创建此附加的连接字符串，但默认情况下， **providerName**特性设置为 `System.Data.SqlClient`，这不能 SQL Server Compact。 通过手动添加连接字符串，你可以保持部署过程创建具有错误的提供程序名称的连接字符串元素。）
+`Transform` 特性指定此连接字符串将添加到已部署的*web.config*文件中的*connectionStrings*元素。 （如果不存在，则发布过程会自动创建此附加的连接字符串，但默认情况下， **providerName**特性设置为 `System.Data.SqlClient`，这对 SQL Server Compact 不起作用。 通过手动添加连接字符串，你可以保持部署过程创建具有错误的提供程序名称的连接字符串元素。）
 
 你现在已经指定了部署 Contoso 大学应用程序进行测试和生产所*需的所有 web.config 转换。* 在以下教程中，你将负责执行需要设置项目属性的部署设置任务。
 
