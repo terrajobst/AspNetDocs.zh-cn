@@ -1,134 +1,134 @@
 ---
 uid: single-page-application/overview/templates/backbonejs-template
-title: Backbone 模板 |Microsoft Docs
+title: 骨干模板 |Microsoft Docs
 author: madskristensen
-description: Backbone.js SPA 模板
+description: 骨干的 SPA SPA 模板
 ms.author: riande
 ms.date: 04/04/2013
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
-ms.openlocfilehash: e5c98b7a9678f8251eccce05344c2014a769fc3b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 7297db7d5b35a53b40f9d9162960e529a167bd12
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113351"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074886"
 ---
 # <a name="backbone-template"></a>Backbone 模板
 
-通过[Mads Kristensen](https://github.com/madskristensen)
+作者： [Mads Kristensen](https://github.com/madskristensen)
 
-> 是由 Kazi Manzur Rashid 编写的主干 SPA 模板
+> 主干 SPA 模板由 Kazi Manzur Rashid 编写
 > 
-> [下载 Backbone.js SPA 模板](https://go.microsoft.com/fwlink/?LinkId=293631)
+> [下载骨干 SPA 模板](https://go.microsoft.com/fwlink/?LinkId=293631)
 
-Backbone.js SPA 模板旨在帮助你开始快速构建交互式客户端的 web 应用使用[Backbone.js。](http://backbonejs.org/)
+骨干的 SPA 模板旨在让你快速开始使用骨干构建交互式客户端 web 应用[。](http://backbonejs.org/)
 
-该模板用于开发 ASP.NET MVC 中的 Backbone.js 应用程序提供初始的主干。 在初始状态下，它提供基本的用户登录功能，包括用户注册、 登录、 密码重置，并使用基本电子邮件模板的用户确认。
+此模板提供了用于在 ASP.NET MVC 中开发主干 node.js 应用程序的初始主干。 它提供基本的用户登录功能，包括用户注册、登录、密码重置和具有基本电子邮件模板的用户确认。
 
 要求：
 
-- [ASP.NET 和 Web Tools 2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=282650)
+- [ASP.NET 和 Web 工具2012.2 更新](https://go.microsoft.com/fwlink/?LinkId=282650)
 
-## <a name="create-a-backbone-template-project"></a>创建一个主干模板项目
+## <a name="create-a-backbone-template-project"></a>创建主干模板项目
 
-下载并安装该模板通过单击上面的下载按钮。 该模板打包为 Visual Studio 扩展 (VSIX) 文件。 您可能需要重启 Visual Studio。
+单击上面的 "下载" 按钮，下载并安装模板。 模板打包为 Visual Studio 扩展（VSIX）文件。 可能需要重启 Visual Studio。
 
-在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 命名项目，然后单击**确定**。
+在 "**模板**" 窗格中，选择 "**已安装模板**"，然后展开**视觉对象C#** 节点。 在 **" C#视觉对象**" 下选择 " **Web**"。 在项目模板列表中，选择 " **ASP.NET MVC 4 Web 应用程序**"。 给该项目命名，然后单击“确定”。
 
 ![](backbonejs-template/_static/image1.png)
 
-在中**新的项目**向导，选择 Backbone.js SPA 项目。
+在 "**新建项目**" 向导中，选择 "骨干 SPA 项目"。
 
 ![](backbonejs-template/_static/image2.png)
 
-按 Ctrl-F5 生成并运行应用程序而不进行调试，或按 f5 边运行边调试。
+按 Ctrl-F5 以生成并运行应用程序而不进行调试，或按 F5 运行调试。
 
 ![](backbonejs-template/_static/image3.png)
 
-单击"我的帐户"将显示登录页：
+单击 "我的帐户" 会打开登录页：
 
 ![](backbonejs-template/_static/image4.png)
 
 ## <a name="walkthrough-client-code"></a>演练：客户端代码
 
-让我们开始在客户端。 客户端应用程序脚本位于 ~/Scripts/application 文件夹中。 编写的应用程序[TypeScript](http://www.typescriptlang.org/) （.ts 文件） 进行编译为 JavaScript （.js 文件）。
+让我们从客户端开始。 客户端应用程序脚本位于 ~/Scripts/application 文件夹中。 应用程序是用[TypeScript](http://www.typescriptlang.org/) （ts 文件）编写的，这些文件编译为 JavaScript （.js 文件）。
 
 **应用程序**
 
-`Application` application.ts 中定义。 此对象初始化应用程序，并且可作为根命名空间。 例如，用户已登录，它维护在该应用程序之间共享的配置和状态信息。
+`Application` 是在 application. ts 中定义的。 此对象初始化应用程序并充当根命名空间。 它保留在应用程序之间共享的配置和状态信息，例如用户是否已登录。
 
-`application.start`方法创建模式的视图，并将附加事件处理程序应用程序级事件，例如用户登录。 接下来，它将创建默认路由器，并检查是否指定了任何客户端的 URL。 如果不是，它将重定向到默认 url (# ！ /)。
+`application.start` 方法创建模式视图，并为应用程序级事件附加事件处理程序，如用户登录。 接下来，它会创建默认路由器，并检查是否指定了任何客户端 URL。 如果不是，则它将重定向到默认 url （#！/）。
 
 **事件**
 
-当开发松散耦合组件时，事件始终是非常重要。 通常，应用程序以响应用户操作执行多个操作。 主干提供内置事件与组件，如模型、 集合和视图。 而不是创建这些组件间的相互依赖关系，该模板使用"发布/订阅"模式：`events` Events.ts 中, 定义的对象充当用于发布和订阅的应用程序事件的事件中心。 `events`对象是单一实例。 下面的代码演示如何订阅事件，然后触发该事件：
+开发松散耦合组件时，事件始终很重要。 应用程序通常会执行多个操作来响应用户操作。 骨干提供内置事件，其中包含模型、集合和视图等组件。 该模板使用 "发布/订阅" 模型，而不是创建这些组件之间的依赖关系，而是使用 "发布/订阅" 模型：在事件中定义的 `events` 对象充当用于发布和订阅应用程序事件的事件中心。 `events` 对象是单一实例。 下面的代码演示如何订阅事件，并触发事件：
 
 [!code-csharp[Main](backbonejs-template/samples/sample1.cs)]
 
 **路由器**
 
-在 Backbone.js，路由器提供路由客户端的页面并将其连接到操作和事件的方法。 该模板定义中 router.ts 单一路由器。 路由器创建 activable 视图，并切换视图时维护状态。 （下一节描述了 activable 视图）。最初，该项目包含两个虚拟视图，家庭和有关。 它还具有找不到视图，如果不知道路由，则显示。
+在主干 node.js 中，路由器提供了用于路由客户端页以及将它们连接到操作和事件的方法。 此模板定义了路由器中的单个路由器。 路由器创建 activable 视图，并在切换视图时维持状态。 （下一节介绍了 Activable 视图。）最初，该项目有两个虚拟视图： "主页" 和 "关于"。 它还具有一个 NotFound 视图，如果该路由是未知的，则会显示此视图。
 
 **视图**
 
-~/Scripts/application/视图中定义这些视图。 有两种类型的视图、 activable 视图和模式对话框视图。 由路由器调用 activable 视图。 Activable 视图显示时，所有其他 activable 视图变为非活动状态。 若要创建 activable 视图，扩展视图提供`Activable`对象：
+视图在 ~/Scripts/application/views. 中定义。 有两种类型的视图： activable 视图和模式对话框视图。 Activable 视图由路由器调用。 显示 activable 视图时，所有其他 activable 视图都将变为非活动状态。 若要创建 activable 视图，请使用 `Activable` 对象扩展视图：
 
 [!code-javascript[Main](backbonejs-template/samples/sample2.js)]
 
-使用扩展`Activable`将两个新方法添加到视图中，`activate`和`deactivate`。 路由器调用这些方法来激活和停用仍视图。
+通过扩展 `Activable` 向视图添加两个新方法 `activate` 和 `deactivate`。 路由器调用这些方法来激活和停用视图。
 
-作为实现模式视图[Twitter Bootstrap](http://twitter.github.com/bootstrap/)模式对话框。 `Membership`和`Profile`视图是模式视图。 模型视图可由任何应用程序事件调用。 例如，在`Navigation`视图中，单击"我的帐户"链接显示任一`Membership`视图或`Profile`视图中的，具体取决于用户已登录。 `Navigation`附加 click 事件处理程序的具有任何子元素`data-command`属性。 以下是 HTML 标记：
+模式视图以[Twitter 启动](https://twitter.github.com/bootstrap/)模式对话框的形式实现。 `Membership` 视图和 `Profile` 视图都是模式视图。 所有应用程序事件都可以调用模型视图。 例如，在 "`Navigation`" 视图中，单击 "我的帐户" 链接将显示 "`Membership`" 视图或 "`Profile`" 视图，具体取决于用户是否已登录。 `Navigation` 将 click 事件处理程序附加到具有 `data-command` 属性的任何子元素。 HTML 标记如下所示：
 
 [!code-html[Main](backbonejs-template/samples/sample3.html)]
 
-此处是 navigation.ts 要挂钩到事件中的代码：
+下面是用于挂钩事件的导航中的代码：
 
 [!code-csharp[Main](backbonejs-template/samples/sample4.cs)]
 
 **模型**
 
-模型 ~/Scripts/application/模型中进行定义。 所有模型都具有三个基本操作： 默认属性、 验证规则和服务器端的终结点。 下面是一个典型示例：
+模型在 ~/Scripts/application/models. 中定义。 这些模型都有三个基本功能：默认属性、验证规则和服务器端终结点。 下面是一个典型示例：
 
 [!code-javascript[Main](backbonejs-template/samples/sample5.js)]
 
 **插件**
 
-~/Scripts/application/lib 文件夹包含一些便利的 jQuery 插件。Form.ts 文件定义的插件使用窗体数据。 通常，您需要进行序列化或反序列化窗体数据和显示的任何模型验证错误。 插件 form.ts 有方法，如`serializeFields`， `deserializeFields`，和`showFieldErrors`。 下面的示例演示如何序列化模型的窗体。
+~/Scripts/application/lib 文件夹包含几个方便的 jQuery 插件。此形式的 ts 文件定义用于处理窗体数据的插件。 通常，您需要序列化或反序列化窗体数据，并显示任何模型验证错误。 Ts 插件的方法 `serializeFields`、`deserializeFields`和 `showFieldErrors`。 下面的示例演示如何将窗体序列化到模型。
 
 [!code-javascript[Main](backbonejs-template/samples/sample6.js)]
 
-插件 flashbar.ts 分配给用户的各种类型的反馈消息。 方法是`$.showSuccessbar`，`$.showErrorbar`和`$.showInfobar`。 在后台，它使用 Twitter Bootstrap 警报显示可以很好地经过动画处理的消息。
+Flashbar 插件向用户提供各种类型的反馈消息。 方法 `$.showSuccessbar`、`$.showErrorbar` 和 `$.showInfobar`。 在后台，它使用 Twitter 启动警报显示有效果很好的消息。
 
-插件 confirm.ts 替换浏览器的确认对话框中，尽管该 API 是略有不同：
+尽管 API 略有不同，但 confirm 插件会替换浏览器的 "确认" 对话框：
 
 [!code-javascript[Main](backbonejs-template/samples/sample7.js)]
 
 ## <a name="walkthrough-server-code"></a>演练：服务器代码
 
-现在让我们看一下在服务器端。
+现在让我们看看服务器端。
 
-**控制器**
+**Controllers**
 
-在单页面应用程序中，服务器播放用户界面中只有很小的作用。 通常情况下，服务器将呈现的初始页面，然后发送和接收 JSON 数据。
+在单页面应用程序中，服务器仅在用户界面中扮演小型角色。 通常，服务器会呈现初始页面，然后发送和接收 JSON 数据。
 
-该模板具有两个 MVC 控制器：`HomeController`呈现的初始页，并`SupportsController`用于确认新的用户帐户和重置密码。 在模板中的所有其他控制器是 ASP.NET Web API 控制器，发送和接收 JSON 数据。 默认情况下，控制器都使用新`WebSecurity`类来执行与用户相关的任务。 但是，它们还具有可选的构造函数，让你将传递委托中对这些任务。 这简化了测试，并让您替换`WebSecurity`与其他事情，请使用 IoC 容器。 下面是一个示例：
+模板具有两个 MVC 控制器： `HomeController` 呈现初始页面，`SupportsController` 用于确认新用户帐户和重置密码。 模板中的所有其他控制器均为发送和接收 JSON 数据 ASP.NET Web API 控制器。 默认情况下，控制器使用新的 `WebSecurity` 类来执行用户相关的任务。 但是，它们还具有可选的构造函数，可让你为这些任务传入委托。 这使测试变得更加容易，并使你可以使用 IoC 容器将 `WebSecurity` 替换为其他内容。 以下是示例：
 
 [!code-csharp[Main](backbonejs-template/samples/sample8.cs)]
 
-## <a name="views"></a>Views
+## <a name="views"></a>视图
 
-设计视图是模块化：页面的每个部分具有其自己专用的视图。 单页面应用程序中很常见包括不具有任何相应的控制器的视图。 可以通过调用包括一个视图`@Html.Partial('myView')`，但是这会变得枯燥乏味。 若要简化此过程，该模板定义一个帮助器方法， `IncludeClientViews`，呈现的所有指定的文件夹视图：
+视图设计为模块化：页面的每个部分都有其自己的专用视图。 在单页面应用程序中，常见的情况是包含没有任何对应控制器的视图。 您可以通过调用 `@Html.Partial('myView')`来包含视图，但这会变得枯燥乏味。 为了使此操作变得更简单，模板定义了一个帮助器方法 `IncludeClientViews`，该方法呈现指定文件夹中的所有视图：
 
 [!code-cshtml[Main](backbonejs-template/samples/sample9.cshtml)]
 
-如果未指定文件夹名称，默认文件夹名称是"ClientViews"。 如果客户端视图也使用分部视图，名称以下划线字符的分部视图 (例如， `_SignUp`)。 `IncludeClientViews`方法不包括其名称以下划线开头的任何视图。 若要包括在客户端视图的分部视图，请调用`Html.ClientView('SignUp')`而不是`Html.Partial('_SignUp')`。
+如果未指定文件夹名称，则默认文件夹名称为 "ClientViews"。 如果客户端视图还使用分部视图，请使用下划线字符命名分部视图（例如 `_SignUp`）。 `IncludeClientViews` 方法排除名称以下划线开头的任何视图。 若要在客户端视图中包含分部视图，请调用 `Html.ClientView('SignUp')` 而不是 `Html.Partial('_SignUp')`。
 
 **发送电子邮件**
 
-若要发送电子邮件，该模板，请使用[邮政](http://aboutcode.net/postal)。 邮政抽象的与代码的其余部分，但是，`IMailer`接口，所以您可以轻松地将其替换为另一个实现。 电子邮件模板位于视图/电子邮件文件夹中。 发件人的电子邮件地址中，在 web.config 文件中，指定`sender.email`的关键**appSettings**部分。 此外，当`debug="true"`在 web.config 中，应用程序不需要用户电子邮件确认可加速开发。
+若要发送电子邮件，模板需要使用[邮政](http://aboutcode.net/postal)。 不过，从代码的其余部分中提取邮政的 `IMailer` 接口，因此你可以轻松地将其替换为另一实现。 电子邮件模板位于 "视图"/"电子邮件" 文件夹中。 发件人的电子邮件地址是在 web.config 文件中的**appSettings**节的 `sender.email` 项中指定的。 此外，当在 web.config 中 `debug="true"` 时，应用程序不需要用户电子邮件确认即可加快开发速度。
 
 ## <a name="github"></a>GitHub
 
-您还可以在找到 Backbone.js SPA 模板[GitHub](https://github.com/kazimanzurrashid/AspNetMvcBackboneJsSpa)。
+还可在[GitHub](https://github.com/kazimanzurrashid/AspNetMvcBackboneJsSpa)上找到主干 SPA 模板。

@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 51cb8d672139aaebd77bcdbe80bb579d4b3776aa
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 228194a7b35e116cabae6d819e7a3a8060a3ef6a
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899574"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074912"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 内容分发网络
 
@@ -61,11 +61,11 @@ Microsoft Ajax 内容交付网络（CDN）承载流行的第三方 JavaScript �
 
 CDN 承载以下第三方脚本库，这些库已上传并由这些库的所有者授权给你：
 
-- jQuery （www.jquery.com）
-- jQuery UI （www.jqueryui.com）
-- jQuery Mobile （www.jquerymobile.com）
-- jQuery 验证（www.jquery.com）
-- jQuery 循环（www.malsup.com/jquery/cycle/）
+- jQuery （ www.jquery.com）
+- jQuery UI （ www.jqueryui.com）
+- jQuery Mobile （ www.jquerymobile.com）
+- jQuery 验证（ https://jqueryvalidation.org/)
+- jQuery 循环（ www.malsup.com/jquery/cycle/）
 - jQuery 数据表（ http://datatables.net/)
 
 Microsoft Ajax CDN 还包括以下库，这些库已由 Microsoft 上传：
@@ -76,7 +76,7 @@ Microsoft Ajax CDN 还包括以下库，这些库已由 Microsoft 上传：
 
 Microsoft 不会宣称此 CDN 上托管的任何第三方库的所有权。 库的版权所有者将向你授权这些库。 你可能需要下载并使用此类库的任何权限仅由各自的版权所有者授予。 由于这些不是 Microsoft 库，Microsoft 不为此 CDN 上托管的第三方库提供任何担保或知识产权许可（包括无默示专利权限）。
 
-如果你想要提交 JavaScript 库，并且你的库是顶级 JavaScript 库之一（如 http://trends.builtwith.com) 或扩展插件上列出的那些库（），或者（b）可用于 ASP.NET，请联系 AjaxCDNSubmission@Microsoft.com 。
+如果你想要提交 JavaScript 库，并且你的库是顶级 JavaScript 库之一（如 http://trends.builtwith.com) 或扩展插件上列出的那些库（），或者（b）可用于 ASP.NET，请联系 AjaxCDNSubmission@Microsoft.com。
 
 <a id="ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18"></a>
 
@@ -148,7 +148,7 @@ CDN 还承载 jQuery UI 库。 JQuery UI 库包括一组丰富的小组件和效
 - Jquery ui 库 &mdash; jQuery ui library 包含所有 jQuery UI 效果和小组件，例如上一页中使用的 Datepicker 小组件。
 - Jquery ui 主题 &mdash; jQuery UI 支持不同的主题。 上述页面包含指向用于导入 Redmond 主题的 CSS 文件的链接。
 
-所有标准 jQuery UI 主题都在 CDN 上托管。 [访问此页](jquery-ui/cdnjqueryui1910.md "jMicrosoft Ajax CDN 上的查询 UI 1.8.10)可查看每个主题的缩略图。
+所有标准 jQuery UI 主题都在 CDN 上托管。 [访问此页](jquery-ui/cdnjqueryui1910.md "Microsoft Ajax CDN 的 jQuery UI 1.8.10")可查看每个主题的缩略图。
 
 若要了解有关 jQuery UI 库的详细信息，请访问官方[JQUERY ui 网站](http://jQueryUI.com "jQuery UI 网站")。
 
@@ -617,7 +617,7 @@ jQuery 迁移版本1.2。0
 
 ### <a name="jquery-validation-releases-on-the-cdn"></a>CDN 上的 jQuery 验证版本
 
-此 CDN 上承载了下面的 jQuery 验证库版本。 单击每个链接以查看文件的实际列表。
+此 CDN 上承载了以下版本的[JQuery 验证](https://jqueryvalidation.org/ "jQuery 验证插件")插件。 单击每个链接以查看文件的实际列表。
 
 - [jQuery 验证1.19。1](jquery-validate/cdnjqueryvalidate1191.md "jQuery 验证1.19。1")
 - [jQuery 验证1.19。0](jquery-validate/cdnjqueryvalidate1190.md "jQuery 验证1.19。0")

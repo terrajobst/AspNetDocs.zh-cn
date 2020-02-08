@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: b83f47c4-8521-4d0a-8644-e8f77e39733e
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 0383974baa16bb0d5fc588f9303290bdb0fd979c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9800a313879477f36a730e6a70c79bc06d403ae3
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595347"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074939"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>使用 ASP.NET MVC 应用程序中的实体框架处理并发（第7项，共10个）
 
@@ -21,7 +21,7 @@ ms.locfileid: "74595347"
 
 [下载完成的项目](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始学习本系列教程，也可以从此处[下载入门项目](building-the-ef5-mvc4-chapter-downloads.md)。
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始学习本系列教程，也可以从此处[下载入门项目](building-the-ef5-mvc4-chapter-downloads.md)。
 > 
 > > [!NOTE] 
 > > 
@@ -43,7 +43,7 @@ ms.locfileid: "74595347"
 
 管理锁定有缺点。 编程可能很复杂。 它需要大量的数据库管理资源，如果应用程序的用户数增加（也就是说，它不能很好地进行缩放），则可能会导致性能问题。 由于这些原因，并不是所有的数据库管理系统都支持悲观并发。 实体框架不提供对它的内置支持，本教程不会演示如何实现它。
 
-### <a name="optimistic-concurrency"></a>开放式并发
+### <a name="optimistic-concurrency"></a>乐观并发
 
 保守式并发的替代方法是*乐观并发*。 悲观并发是指允许发生并发冲突，并在并发冲突发生时作出正确反应。 例如，John 运行 "部门编辑" 页，将英语系的**预算**金额从 $350000.00 更改为 $0.00。
 
@@ -85,6 +85,8 @@ John 单击 "**保存**"，然后在浏览器返回到索引页时看到其更�
 [Timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx)特性指定此列将包含在发送到数据库的 `Update` 和 `Delete` 命令的 `Where` 子句中。 此属性被称为[时间戳](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx)，这是因为以前版本的 SQL SERVER 在 sql [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)将其替换之前使用 sql [Timestamp](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx)数据类型。 `rowversion` 的 .Net 类型是字节数组。 如果希望使用 Fluent API，可以使用[IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx)方法来指定跟踪属性，如以下示例中所示：
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
+
+请参阅 GitHub issue [Replace IsConcurrencyToken By IsRowVersion](https://github.com/aspnet/AspNetDocs/issues/302)。
 
 通过添加属性，更改了数据库模型，因此需要再执行一次迁移。 在包管理器控制台 (PMC) 中输入以下命令：
 

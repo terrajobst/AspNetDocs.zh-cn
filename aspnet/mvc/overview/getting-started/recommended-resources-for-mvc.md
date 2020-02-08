@@ -8,12 +8,12 @@ ms.date: 04/10/2014
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 98089df48550216b50330d9b354168f570d857cd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: daccaedae0b0e60f5086f270f214f87da564a85d
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583189"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074925"
 ---
 # <a name="mvc-recommended-resources"></a>MVC 推荐的资源
 
@@ -99,7 +99,7 @@ ms.locfileid: "74583189"
 - [ASP.NET MVC 中的安全性](http://www.codeproject.com/Articles/654846/Security-In-ASP-NET-MVC)
 - [保护 ASP.NET MVC 4 应用](https://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)
 - [Pluralsight 视频安全实践概述](http://www.pluralsight-training.net/microsoft/players/PSODPlayer?author=scott-allen&amp;name=mvc3-building-security&amp;mode=live&amp;clip=0&amp;course=aspdotnet-mvc3-intro)
-- [ASP.NET MVC 和网页中的 XSRF/CSRF 防护](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
+- [ASP.NET MVC 和网页中的 XSRF/CSRF 预防](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
 - [适用于 .NET 开发人员的 OWASP Top 10](http://www.troyhunt.com/2010/05/owasp-top-10-for-net-developers-part-1.html)
 - [通过 MVC 4 使用 OAuth 提供程序](../older-versions/using-oauth-providers-with-mvc.md)
 - [对 ASP.NET 应用程序进行抗攻击](https://msdn.microsoft.com/magazine/hh580736.aspx)2011年12月 MSDN 杂志文章
@@ -123,7 +123,7 @@ ms.locfileid: "74583189"
 - [成员身份与窗体身份验证不同](http://brockallen.com/2012/06/04/membership-is-not-the-same-as-forms-authentication/)
 - [请考虑使用 MembershipProvider （和 SimpleMembership）的两个](http://brockallen.com/2012/09/02/think-twice-about-using-membershipprovider-and-simplemembership/)
 - [通过 Google 身份验证器实现 MVC 双因素身份验证](http://www.codeproject.com/Articles/403355/Implementing-MVC-Two-Factor-Authentication-with-Go)
-- new
+- 新
 - [ASP.NET Identity 和 Azure 表存储](https://blogs.msdn.com/b/stuartleeks/archive/2014/01/15/asp-net-identity-and-windows-azure-table-storage.aspx)
 
 <a id="OWIN"></a>
@@ -274,7 +274,7 @@ ms.locfileid: "74583189"
 
 <a id="mobile"></a>
 
-## <a name="mobile"></a>移动设备
+## <a name="mobile"></a>移动型
 
 - [ASP.NET MVC 4 移动教程](../older-versions/aspnet-mvc-4-mobile-features.md)
 - [显示通过 MVC 4 构建移动友好网站](https://www.bitcast.io/v/building-mobile-friendly-websites-with-mvc-4)
@@ -315,7 +315,7 @@ ms.locfileid: "74583189"
 - [在 ASP.NET MVC 中创建单元可测试应用程序-初学者教程](http://www.codeproject.com/Articles/579035/Creating-Unit-Testable-Applications-in-ASP-NET-MVC)
 - [初学者的 ASP.NET MVC 控制器依赖关系注入](http://www.codeproject.com/Articles/560798/ASP-NET-MVC-controller-dependency-injection-for-be)
 - [编写处理 Ajax 请求和普通请求的 ASP.NET MVC 操作方法的单元测试](https://weblogs.asp.net/shijuvarghese/archive/2012/12/09/writing-unit-tests-for-an-asp-net-mvc-action-method-that-handles-ajax-request-and-normal-request.aspx)
-- [橡木：将 dynamic 顺畅和开发引入 ASP.NET MVC](http://amirrajan.github.com/Oak/)
+- [橡木：将 dynamic 顺畅和开发引入 ASP.NET MVC](https://amirrajan.github.com/Oak/)
 - [使用 xUnit 和 Moq 为 TDD 开发 ASP.NET MVC 4 应用程序](http://www.dotnetcurry.com/ShowArticle.aspx?ID=836)
 - [测试 ASP.NET MVC 视图，从新项目到生成服务器](https://channel9.msdn.com/Events/aspConf/aspConf/Testing-ASP-NET-MVC-Views-from-New-Project-to-the-Build-Server)（视频）
 - [快速入门：测试驱动开发](https://channel9.msdn.com/Events/aspConf/aspConf/Quick-Start-Test-Driven-Development)（视频）
@@ -327,7 +327,7 @@ ms.locfileid: "74583189"
 
 <a id="best"></a>
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 
 - [不得在 ASP.NET 中执行的操作和转而应执行的操作](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
 - [Web 开发人员清单](http://webdevchecklist.com/aspnet)
@@ -356,7 +356,7 @@ ms.locfileid: "74583189"
 
 <a id="general"></a>
 
-## <a name="general"></a>“常规”
+## <a name="general"></a>常规
 
 - [如何将 ASP.NET MVC 4 和 Web API 项目升级到 ASP.NET MVC 5 和 Web API 2](../releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)
 - [了解 ASP.NET MVC 筛选器和属性](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
@@ -380,7 +380,7 @@ ms.locfileid: "74583189"
 - [第5部分的 ASP.NET MVC](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-5)[ActionInvoker](https://msdn.microsoft.com/library/system.web.mvc.controller.actioninvoker(v=vs.108).aspx)
 - [第6部分中的 ASP.NET MVC](http://www.pieterg.com/2013/5/aspnet-mvc-under-the-hood-part-6)如何发现 ActionFilters 以及如何应用它们
 - [创建你自己的自定义 ViewWebPage for ASP.NET MVC](http://www.love2dev.com/#!article/Create-Your-Own-Custom-ViewWebPage-for-ASPNET-MVC)
-- [ASP.NET MVC Razor 视图中的跟踪](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)
+- [在 ASP.NET MVC Razor 视图中进行跟踪](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)
 - [在 MVC 的外部查看 ASP.NET MVC Razor 视图](http://www.west-wind.com/weblog/posts/2013/Jul/15/Rendering-ASPNET-MVC-Razor-Views-outside-of-MVC-revisited)
 - [适用于现代 MVC 项目的五个重要前端工具](http://www.adamtibi.net/06-2013/five-essential-front-end-tools-that-should-be-used-with-modern-mvc-projects)
 - [ASP.NET MVC 模型绑定的功能和缺点](https://msdn.microsoft.com/magazine/hh781022.aspx)

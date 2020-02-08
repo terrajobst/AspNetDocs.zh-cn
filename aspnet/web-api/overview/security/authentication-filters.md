@@ -8,12 +8,12 @@ ms.date: 09/25/2014
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: b6815baf05303d5f47a14ee5fe0fdfc2836c1868
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 2ef9e62a6c634237e920b6d7aba2127b835f959d
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519370"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075068"
 ---
 # <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的身份验证筛选器
 
@@ -23,7 +23,7 @@ ms.locfileid: "76519370"
 
 身份验证筛选器使你可以为单个控制器或操作设置一个身份验证方案。 这样一来，你的应用可以支持不同 HTTP 资源的不同身份验证机制。
 
-在本文中，我将在[https://github.com/aspnet/samples](https://github.com/aspnet/samples)上显示[基本身份验证](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)示例中的代码。 此示例显示了实现 HTTP 基本访问身份验证方案（RFC 2617）的身份验证筛选器。 该筛选器在名为 `IdentityBasicAuthenticationAttribute`的类中实现。 我不会显示示例中的所有代码，只是说明如何编写身份验证筛选器的部分。
+在本文中，我将在[https://github.com/aspnet/samples](https://github.com/aspnet/samples)上显示[基本身份验证](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)示例中的代码。 此示例显示了实现 HTTP 基本访问身份验证方案（RFC 2617）的身份验证筛选器。 该筛选器在名为 `IdentityBasicAuthenticationAttribute`的类中实现。 我不会显示示例中的所有代码，只是说明如何编写身份验证筛选器的部分。
 
 ## <a name="setting-an-authentication-filter"></a>设置身份验证筛选器
 
@@ -108,7 +108,7 @@ ms.locfileid: "76519370"
 5. 如果凭据错误，请通过设置 `context.ErrorResult`来返回401。
 6. 如果凭据有效，请创建**IPrincipal**并设置 `context.Principal`。
 
-以下代码显示[基本身份验证](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)示例中的**AuthenticateAsync**方法。 注释指明了每个步骤。 此代码显示了几种类型的错误：不含凭据的授权标头、不正确的凭据以及错误的用户名/密码。
+以下代码显示[基本身份验证](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)示例中的**AuthenticateAsync**方法。 注释指明了每个步骤。 此代码显示了几种类型的错误：不含凭据的授权标头、不正确的凭据以及错误的用户名/密码。
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 
