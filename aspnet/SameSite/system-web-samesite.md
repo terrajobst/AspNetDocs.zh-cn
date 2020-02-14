@@ -5,12 +5,12 @@ description: 了解如何使用在 ASP.NET 中 SameSite cookie
 ms.author: riande
 ms.date: 1/22/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: c81ca38648609aa5347d2a8cc11889fc85d81711
-ms.sourcegitcommit: 4d439e01c82c7c95b19216fedaf5b1a11a1deb06
+ms.openlocfilehash: c262e300361f33621e8bd126a34b251c23f56e1a
+ms.sourcegitcommit: 6bd0d7581ec36dc32cb85d0d5fc0e51068dd4423
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76826609"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77234757"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
@@ -55,7 +55,7 @@ ASP.Net 还为这些功能颁发了自己的四个特定 cookie：匿名身份�
    <forms cookieSameSite="Lax" requireSSL="false" />
   </authentication>
   <sessionState cookieSameSite="Lax" /> <!-- No config attribute for Secure -->
-  <roleManager cookieRequiresSSL="false" /> <!-- No config attribute for SameSite -->
+  <roleManager cookieRequireSSL="false" /> <!-- No config attribute for SameSite -->
  <system.web>
 <configuration>
 ```  
@@ -66,7 +66,7 @@ ASP.Net 还为这些功能颁发了自己的四个特定 cookie：匿名身份�
 
 SameSite 支持是在使用[2016 草案标准](https://tools.ietf.org/html/draft-west-first-party-cookies-07#section-4.1)的 .net 4.7.2 中首次实现的。
 
-2019年11月19日更新了 Windows 更新后的 .NET 4.7.2 + 2016 标准版和2019标准版。 其他版本的 Windows 即将推出其他更新。 有关更多信息，请参见<xref:samesite/kbs-samesite>。
+2019年11月19日更新了 Windows 更新后的 .NET 4.7.2 + 2016 标准版和2019标准版。 其他版本的 Windows 即将推出其他更新。 有关详细信息，请参阅 <xref:samesite/kbs-samesite>。
 
  SameSite 规范的2019草案：
 
