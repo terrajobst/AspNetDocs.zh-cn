@@ -8,16 +8,16 @@ ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6f445e46d41b646cf6c25af2e65bc73e831d5ed
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 5a1e0d7cd3c396d4be79c8958422602055eb3db1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583700"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457097"
 ---
 # <a name="source-control-building-real-world-cloud-apps-with-azure"></a>源代码管理（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -147,11 +147,11 @@ Visual Studio 会询问你是否要使用 TFVC （集中式版本控制）或 Gi
 
 选择 Git 并单击 **"确定"** 时，Visual Studio 将在解决方案文件夹中创建一个新的本地 Git 存储库。 新存储库尚无文件;必须通过执行 Git commit 将它们添加到存储库。 在**解决方案资源管理器**中右键单击该解决方案，然后单击 "**提交**"。
 
-![提交](source-control/_static/image11.png)
+![Commit](source-control/_static/image11.png)
 
 Visual Studio 会自动暂存提交的所有项目文件，并在 "**包含的更改**" 窗格中**团队资源管理器**列出它们。 （如果不想在提交中包含某些资源，请选择它们，右键单击，然后单击 "**排除**"。）
 
-![团队资源管理器](source-control/_static/image12.png)
+![Team Explorer](source-control/_static/image12.png)
 
 输入提交注释，然后单击 "**提交**"，Visual Studio 将执行提交，并显示提交 ID。
 

@@ -8,16 +8,16 @@ ms.date: 07/20/2015
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: c66187b990a828c53bd2f8115e3c9660fc6022ed
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 87a7516415895e761d1589fd459b93e5c15c0f85
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582813"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456993"
 ---
 # <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>分布式缓存（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -90,12 +90,12 @@ Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.co
 
 有关缓存的详细信息，请参阅以下资源。
 
-Documentation
+文档
 
 - [Azure 缓存](https://msdn.microsoft.com/library/gg278356.aspx)。 有关 Azure 中的缓存的官方 MSDN 文档。
 - [Microsoft 模式和实践-Azure 指南](https://msdn.microsoft.com/library/dn568099.aspx)。 请参阅缓存指南和缓存端模式。
 - [防故障：弹性云体系结构的指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮书 by Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 请参阅有关缓存的部分。
-- [在 Azure 云服务上设计大规模服务的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 水平. 通过标记 Simm 和 Michael Thomassy 的白皮书。 请参阅有关分布式缓存的部分。
+- [在 Azure 云服务上设计大规模服务的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 W. 通过标记 Simm 和 Michael Thomassy 的白皮书。 请参阅有关分布式缓存的部分。
 - [可伸缩性的路径上的分布式缓存](https://msdn.microsoft.com/magazine/dd942840.aspx)。 一篇较早（2009）的 MSDN 杂志文章，但在一般情况下编写了分布式缓存简介;与故障和最佳做法白皮书中的缓存部分相比，更深入。
 
 视频

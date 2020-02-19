@@ -8,16 +8,16 @@ ms.date: 03/26/2015
 ms.assetid: f1d2a916-626c-4a54-8df4-77e6b9fff355
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 4ec8d239377d37d7e27fa23c0b1caef7420046ae
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: da06815b5c1d76a939fdfb77ce11774081dfb881
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519006"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456395"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>检查 Details 和 Delete 方法
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -47,13 +47,13 @@ Code First 使用 `Find` 方法可以轻松地搜索数据。 内置于方法中
 
 公共语言运行时 (CLR) 需要重载方法拥有唯一的参数签名（相同的方法名称但不同的参数列表）。 但在这里，你需要两个删除方法-一个用于 GET，一个用于 POST，这两个方法具有相同的参数签名。 （它们都需要接受单个整数作为参数。）
 
-为此，可以执行几项操作。 一种方式是为方法指定不同的名称。 这正是前面的示例中的基架机制进行的操作。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `DeleteConfirmed` 方法添加 `ActionName("Delete")` 属性。 这将有效地为路由系统执行映射，以便包含 POST 请求的 */Delete/* 的 URL 将查找 `DeleteConfirmed` 方法。
+为此，可以执行几项操作。 一种方式是为方法指定不同的名称。 这正是前面的示例中的基架机制进行的操作。 但是，这会造成一个小问题：ASP.NET 按名称将 URL 段映射到操作方法，如果重命名方法，则路由通常无法找到该方法。 该示例中也提供了解决方案，即向 `ActionName("Delete")` 方法添加 `DeleteConfirmed` 属性。 这将有效地为路由系统执行映射，以便包含 POST 请求的 */Delete/* 的 URL 将查找 `DeleteConfirmed` 方法。
 
 避免使用具有相同名称和签名的方法的问题的另一种常见方法是：人为更改 POST 方法的签名以包含未使用的参数。 例如，某些开发人员添加了一个传递给 POST 方法的参数类型 `FormCollection`，只是不使用参数：
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 现在，你有了一个完整的 ASP.NET MVC 应用程序，它将数据存储在本地数据库中。 你可以创建、读取、更新、删除和搜索电影。
 
@@ -69,4 +69,4 @@ Code First 使用 `Find` 方法可以轻松地搜索数据。 内置于方法中
 \- [Scott Hanselman](http://www.hanselman.com/blog/) twitter： [@shanselman](https://twitter.com/shanselman)
 
 > [!div class="step-by-step"]
-> [上一篇](adding-validation.md)
+> [“上一步”](adding-validation.md)

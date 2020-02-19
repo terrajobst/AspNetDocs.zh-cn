@@ -3,14 +3,14 @@ title: 在 ASP.NET 中使用 SameSite cookie
 author: rick-anderson
 description: 了解如何使用在 ASP.NET 中 SameSite cookie
 ms.author: riande
-ms.date: 1/22/2019
+ms.date: 2/15/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: c262e300361f33621e8bd126a34b251c23f56e1a
-ms.sourcegitcommit: 6bd0d7581ec36dc32cb85d0d5fc0e51068dd4423
+ms.openlocfilehash: edb368910b24be2d042afe3c19ffa1fb23245443
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77234757"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455695"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
@@ -21,11 +21,10 @@ SameSite 是一种[IETF](https://ietf.org/about/)草案标准，旨在提供一�
 * 默认情况下，不带 SameSite 标头的 cookie 被视为 `SameSite=Lax`。
 * `SameSite=None` 必须用于允许跨站点 cookie。
 * 断言 `SameSite=None` 的 cookie 也必须标记为 `Secure`。
-* [2016 标准](https://tools.ietf.org/html/draft-west-first-party-cookies-07)不允许值 SameSite = None，导致某些实现将此类 Cookie 视为 SameSite = Strict。 请参阅本文档中的[支持旧版浏览器](#sob)。
+* 使用[`<iframe>`](https://developer.mozilla.org/docs/Web/HTML/Element/iframe)的应用程序可能会遇到 `sameSite=Lax` 或 `sameSite=Strict` cookie 的问题，因为 `<iframe>` 被视为跨站点方案。
+* [2016 标准](https://tools.ietf.org/html/draft-west-first-party-cookies-07)不允许使用值 `SameSite=None`，并导致某些实现将此类 cookie 视为 `SameSite=Strict`。 请参阅本文档中的[支持旧版浏览器](#sob)。
 
 `SameSite=Lax` 设置适用于大多数应用程序 cookie。 某些形式的身份验证，例如[OpenID connect](https://openid.net/connect/) （OIDC）和[ws-federation](https://auth0.com/docs/protocols/ws-fed)默认为基于 POST 的重定向。 基于后期的重定向会触发 SameSite 浏览器保护，因此，对这些组件禁用了 SameSite。 由于请求的流动方式不同，大多数[OAuth](https://oauth.net/)登录名不受影响。
-
-使用 `iframe` 的应用程序可能会遇到 `SameSite=Lax` 或 `SameSite=Strict` cookie 的问题，因为 iframe 被视为跨站点方案。
 
 发出 cookie 的每个 ASP.NET 组件都需要确定 SameSite 是否适用。
 
@@ -62,6 +61,74 @@ ASP.Net 还为这些功能颁发了自己的四个特定 cookie：匿名身份�
 
 **注意**：目前仅可 `system.web/httpCookies@sameSite` "未指定"。 我们希望在以后的更新中，将类似语法添加到前面所示的 cookieSameSite 属性。 在代码中设置 `(SameSiteMode)(-1)` 仍适用于这些 cookie 的实例。 *
 
+[!INCLUDE[](~/includes/MTcomments.md)]
+
+<a name="retargeting"></a>
+
+### <a name="retarget-net-apps"></a>重定目标 .NET 应用
+
+面向 .NET 4.7.2 或更高版本：
+
+* 确保*web.config*包含以下内容：  <!-- review, I removed `debug="true"` -->
+
+  ```xml
+  <system.web>
+    <compilation targetFramework="4.7.2"/>
+    <httpRuntime targetFramework="4.7.2"/>
+  </system.web>
+
+* Verify the project file contains the correct [TargetFrameworkVersion](/visualstudio/msbuild/msbuild-target-framework-and-target-platform?view=vs-2019):
+
+  ```xml
+  <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  ```
+
+  [.Net 迁移指南](/dotnet/framework/migration-guide/)提供了更多详细信息。
+
+* 验证项目中的 NuGet 包的版本是否正确。 可以通过检查*软件包 .config*文件来验证正确的框架版本，例如：
+
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <packages>
+    <package id="Microsoft.AspNet.Mvc" version="5.2.7" targetFramework="net472" />
+    <package id="Microsoft.ApplicationInsights" version="2.4.0" targetFramework="net451" />
+  </packages>
+  ```
+
+  在上述*包 .config*文件中，`Microsoft.ApplicationInsights` 包：
+    * 面向 .NET 4.5.1。
+    * 如果存在以框架目标为目标的更新包，则应将其 `targetFramework` 属性更新为 `net472`。
+
+<a name="nope"></a>
+
+### <a name="net-versions-earlier-than-472"></a>早于4.7.2 的 .NET 版本
+
+Microsoft 不支持将4.7.2 用于写入同一站点 cookie 属性的 .NET 版本。 我们找不到一种可靠的方法来执行以下操作：
+
+* 确保根据浏览器版本正确写入特性。
+* 在旧版本的 framework 上拦截并调整身份验证和会话 cookie。
+
+### <a name="december-patch-behavior-changes"></a>12月修补程序行为更改
+
+.NET Framework 的特定行为更改是 `SameSite` 属性如何解释 `None` 值：
+
+* 在修补之前，`None` 的值是：
+  * 根本不发出属性。
+* 修补后：
+  * `None`的值表示 "发出 `None`的值" 属性。
+  * `(SameSiteMode)(-1)` 的 `SameSite` 值将导致不发出特性。
+
+Forms 身份验证和会话状态 cookie 的默认 SameSite 值已从 `None` 更改为 `Lax`。
+
+### <a name="summary-of-change-impact-on-browsers"></a>更改对浏览器的影响
+
+如果安装了修补程序并使用 `SameSite.None`颁发了 cookie，则将发生以下两种情况之一：
+* Chrome v80 将根据新的实现来处理此 cookie，而不会对 cookie 强制实施相同的站点限制。
+* 尚未更新以支持新实现的任何浏览器都将遵循旧实现。 旧实现显示：
+  * 如果你看到不了解的值，请将其忽略，并切换到严格相同的站点限制。
+
+这样，应用程序就可以在 Chrome 中中断，也可以在很多其他地方中断。
+
 ## <a name="history-and-changes"></a>历史记录和更改
 
 SameSite 支持是在使用[2016 草案标准](https://tools.ietf.org/html/draft-west-first-party-cookies-07#section-4.1)的 .net 4.7.2 中首次实现的。
@@ -96,20 +163,73 @@ SameSite 支持是在使用[2016 草案标准](https://tools.ietf.org/html/draft
 
 ## <a name="supporting-older-browsers"></a>支持旧版浏览器
 
-2016 SameSite 标准规定，未知值必须被视为 `SameSite=Strict` 值。 从支持 2016 SameSite 标准的旧版浏览器访问的应用可能会在收到值为 "`None`" 的 SameSite 属性时中断。 如果 Web 应用要支持较旧的浏览器，则必须实现浏览器检测。 ASP.NET 不实现浏览器检测，因为用户代理值非常不稳定，并且经常更改。 可以在 <xref:HTTP.HttpCookie> 调用站点调用以下代码：
+2016 SameSite 标准规定，未知值必须被视为 `SameSite=Strict` 值。 从支持 2016 SameSite 标准的旧版浏览器访问的应用可能会在收到值为 "`None`" 的 SameSite 属性时中断。 如果 Web 应用要支持较旧的浏览器，则必须实现浏览器检测。 ASP.NET 不实现浏览器检测，因为用户代理值非常不稳定，并且经常更改。
+
+Microsoft 解决该问题的方法是帮助你实现浏览器检测组件，以便在浏览器不支持时从 cookie 中去除 `sameSite=None` 特性。 Google 建议颁发双重 cookie，一个具有新属性，另一个不包含属性。 但我们认为 Google 的建议有限。 某些浏览器，尤其是移动浏览器对站点的 cookie 数的限制非常小，或者域名可以发送。 发送多个 cookie，尤其是大型 cookie （例如身份验证 cookie）会很快达到移动浏览器限制，从而导致难以诊断和修复的应用失败。 此外，作为一个框架，有一大一小部分第三方代码和组件可能未更新为使用 double cookie 方法。
+
+[此 GitHub 存储库]()中的示例项目中使用的浏览器检测代码包含在两个文件中
+
+* [C#SameSiteSupport.cs](https://github.com/blowdart/AspNetSameSiteSamples/blob/master/SameSiteSupport.cs)
+* [VB SameSiteSupport](https://github.com/blowdart/AspNetSameSiteSamples/blob/master/SameSiteSupport.vb)
+
+这些检测是我们所见到的最常见的浏览器代理，它支持2016标准，并且需要完全删除该属性。 这并不是一种完整的实现方式：
+
+* 您的应用程序可能会看到我们的测试网站不提供的浏览器。
+* 应准备好根据环境需要添加检测。
+
+根据所使用的 .NET 版本和 web 框架的不同，检测检测的方式会有所不同。 可以在 <xref:HTTP.HttpCookie> 调用站点调用以下代码：
 
 [!code-csharp[](sample/SameSiteCheck.cs?name=snippet)]
 
-在前面的示例中，`MyUserAgentDetectionLib.DisallowsSameSiteNone` 是一个用户提供的库，用于检测用户代理是否不支持 SameSite `None`。 下面的代码演示 `DisallowsSameSiteNone` 方法示例：
+请参阅以下 ASP.NET 4.7.2 SameSite cookie 主题：
 
-> [!WARNING]
-> 以下代码仅用于演示：
-> * 不应将其视为已完成。
-> * 它不维护或不受支持。
+* [C#MVC](xref:samesite/csMVC)
+* [C#WebForms](xref:samesite/CSharpWebForms)
+* [VB WebForms](xref:samesite/vbWF)
+* [VB MVC](xref:samesite/vbMVC)
+<!--
+* <xref:samesite/csMVC>
+* <xref:samesite/CSharpWebForms>
+* <xref:samesite/vbWF>
+* <xref:samesite/vbMVC>
+-->
 
-[!code-csharp[](sample/SameSiteCheck.cs?name=snippet2)]
+### <a name="ensuring-your-site-redirects-to-https"></a>确保你的网站重定向到 HTTPS
+
+对于 ASP.NET 4.x、WebForms 和 MVC，可以使用[IIS 的 URL 重写](/iis/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module)功能将所有请求重定向到 HTTPS。 以下 XML 显示了一个示例规则：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="Redirect to https" stopProcessing="true">
+          <match url="(.*)"/>
+          <conditions>
+            <add input="{HTTPS}" pattern="Off"/>
+            <add input="{REQUEST_METHOD}" pattern="^get$|^head$" />
+          </conditions>
+          <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" redirectType="Permanent"/>
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>
+```
+
+[IIS URL 重写](https://www.iis.net/downloads/microsoft/url-rewrite)的本地安装是一项可选功能，可能需要安装。
 
 ## <a name="test-apps-for-samesite-problems"></a>测试应用的 SameSite 问题
+
+必须使用支持的浏览器测试应用程序，并完成涉及 cookie 的方案。 Cookie 方案通常涉及
+
+* 登录窗体
+* 外部登录机制，如 Facebook、Azure AD、OAuth 和 OIDC
+* 接受来自其他站点的请求的页面
+* 应用中旨在嵌入 iframe 的页面
+
+你应检查是否在应用中正确创建、保存并删除了 cookie。
 
 与远程站点（如通过第三方登录）交互的应用需要：
 
@@ -126,6 +246,15 @@ Google 不会使旧版 chrome 版本可用。 遵循[下载 Chromium](https://ww
 
 * [Chromium 76 Win64](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/664998/)
 * [Chromium 74 Win64](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/638880/)
+* 如果你不使用64位版本的 Windows，则可以使用[OmahaProxy 查看器](https://omahaproxy.appspot.com/)来查找与 Chrome 74 （v 74.0.3729.108）对应的 Chromium 分支，并使用[Chromium 提供的说明](https://www.chromium.org/getting-involved/download-chromium)。
+
+#### <a name="test-with-chrome-80"></a>用 Chrome 80 + 测试
+
+[下载](https://www.google.com/chrome/)支持新属性的 Chrome 版本。 编写时，当前版本为 Chrome 80。 Chrome 80 需要启用标志 `chrome://flags/#same-site-by-default-cookies` 才能使用新行为。 还应启用（`chrome://flags/#cookies-without-same-site-must-be-secure`）以测试不启用 sameSite 属性的 cookie 的即将发生的行为。 Chrome 80 位于目标上，以使交换机将不具有属性的 cookie 视为 `SameSite=Lax`，但对于某些请求，会出现超时宽限期。 若要禁用定时宽限期，可以通过以下命令行参数启动 Chrome 80：
+
+`--enable-features=SameSiteDefaultChecksMethodRigorously`
+
+Chrome 80 在浏览器控制台中包含缺少 sameSite 属性的警告消息。 使用 F12 打开浏览器控制台。
 
 ### <a name="test-with-safari"></a>用 Safari 测试
 
@@ -135,9 +264,9 @@ Safari 12 严格实现了之前的草稿，在新的 `None` 值在 cookie 中时
 
 可以在版本 68 + 上测试对新标准的 Firefox 支持，方法是在 "`about:config`" 页面上选择 "`network.cookie.sameSite.laxByDefault`的功能标志。 以前版本的 Firefox 没有出现兼容性问题的报告。
 
-### <a name="test-with-edge-browser"></a>通过 Edge 浏览器进行测试
+### <a name="test-with-edge-legacy-browser"></a>带边缘（旧版）浏览器的测试
 
-Edge 支持旧的 SameSite 标准。 边缘版本44与新的标准没有任何已知的兼容性问题。
+Edge 支持旧的 SameSite 标准。 边缘版本 44 + 与新的标准没有任何已知的兼容性问题。
 
 ### <a name="test-with-edge-chromium"></a>带边缘测试（Chromium）
 
@@ -145,10 +274,37 @@ Edge 支持旧的 SameSite 标准。 边缘版本44与新的标准没有任何�
 
 ### <a name="test-with-electron"></a>用 Electron 进行测试
 
-Electron 的版本包括较早版本的 Chromium。 例如，团队使用的 Electron 版本为 Chromium 66，该版本展示了较旧的行为。 你必须使用你的产品使用的 Electron 版本执行你自己的兼容性测试。 请参阅下一节中的[支持旧版浏览器](#sob)。
+Electron 的版本包括较早版本的 Chromium。 例如，团队使用的 Electron 版本为 Chromium 66，该版本展示了较旧的行为。 你必须使用你的产品使用的 Electron 版本执行你自己的兼容性测试。 请参阅[支持旧版浏览器](#sob)。
+
+## <a name="reverting-samesite-patches"></a>恢复 SameSite 修补程序
+
+你可以将 .NET Framework 应用中的已更新的 sameSite 行为还原到其以前的行为，其中未发出 `None`值的 sameSite 属性，并将身份验证和会话 cookie 恢复为不发出该值。 这应作为一种*极临时的修补程序*进行查看，因为 Chrome 更改会对使用支持标准更改的浏览器的用户中断任何外部 POST 请求或身份验证。
+
+### <a name="reverting-net-472-behavior"></a>恢复 .NET 4.7.2 行为
+
+更新*web.config*以包含以下配置设置：
+
+```xml
+<configuration> 
+  <appSettings>
+    <add key="aspnet:SuppressSameSiteNone" value="true" />
+  </appSettings>
+ 
+  <system.web> 
+    <authentication> 
+      <forms cookieSameSite="None" /> 
+    </authentication> 
+    <sessionState cookieSameSite="None" /> 
+  </system.web> 
+</configuration>
+```
 
 ## <a name="additional-resources"></a>其他资源
 
 * [即将推出 SameSite Cookie 更改 ASP.NET 和 ASP.NET Core](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
 * [Chromium 博客：开发人员：准备好新 SameSite = 无;安全 Cookie 设置](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [SameSite cookie 说明](https://web.dev/samesite-cookies-explained/)
+* [Chrome 更新](https://www.chromium.org/updates/same-site)
+* [.NET SameSite 修补程序](/aspnet/samesite/kbs-samesite)
+* [Azure Web 应用程序相同站点信息](https://azure.microsoft.com/updates/app-service-samesite-cookie-update/)
+* [Azure ActiveDirectory 相同站点信息](/azure/active-directory/develop/howto-handle-samesite-cookie-changes-chrome-browser)

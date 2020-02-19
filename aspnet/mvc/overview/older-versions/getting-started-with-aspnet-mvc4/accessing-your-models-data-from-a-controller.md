@@ -2,59 +2,59 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/accessing-your-models-data-from-a-controller
 title: 从控制器访问模型的数据 |Microsoft Docs
 author: Rick-Anderson
-description: 注意:本教程中的更新的版本提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示...
+description: 注意：本教程的更新版本可在此处使用 ASP.NET MVC 5 和 Visual Studio 2013。 更安全、更简单的操作和演示 。
 ms.author: riande
 ms.date: 08/28/2012
 ms.assetid: 61e0206d-7f32-4018-992d-0a51b48b37dc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: b40bb8b06ae7c89a33ae2aead9578cf507503531
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 7c4aa34567ac4fb31d1ed874cf65986c4e779e66
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129953"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456161"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问模型的数据
 
-通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > > [!NOTE]
-> > 本教程中的更新的版本是可用[此处](../../getting-started/introduction/getting-started.md)，它使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示更多的功能。
+> > [此处](../../getting-started/introduction/getting-started.md)提供了本教程的更新版本，其中使用 ASP.NET MVC 5 和 Visual Studio 2013。 更安全的方法是遵循更多功能，并演示更多的功能。
 
-在本部分中，将创建一个新`MoviesController`类，并编写代码来检索电影数据并将其显示在浏览器中使用视图模板。
+在本部分中，您将创建一个新的 `MoviesController` 类，然后编写代码来检索影片数据并使用视图模板在浏览器中显示该数据。
 
-**生成应用程序**然后才能转到下一步。
+在继续执行下一步之前，请**生成应用程序**。
 
-右键单击*控制器*文件夹，并创建一个新`MoviesController`控制器。 生成应用程序之前，不会显示以下选项。 选择以下选项：
+右键单击 "*控制器*" 文件夹，然后创建新的 `MoviesController` 控制器。 在生成应用程序之前，不会显示以下选项。 选择以下选项：
 
-- 控制器名称：**为 MoviesController**。 （这是默认值。 )
-- 模板：**使用实体框架包含读/写操作和视图的 MVC 控制器**。
-- 模型类：**Movie (MvcMovie.Models)**。
-- 数据上下文类：**MovieDBContext (MvcMovie.Models)**。
-- 视图：**Razor (CSHTML)**。 （默认值。）
+- 控制器名称： **MoviesController**。 （这是默认值。 )
+- 模板：**包含读/写操作和视图的 MVC 控制器，使用实体框架**。
+- Model 类：**电影（MvcMovie）** 。
+- 数据上下文类： **MovieDBContext （MvcMovie）** 。
+- 视图： **Razor （CSHTML）** 。 （默认值。）
 
 ![AddScaffoldedMovieController](accessing-your-models-data-from-a-controller/_static/image1.png)
 
-单击 **添加**。 Visual Studio 速成版创建以下文件和文件夹：
+单击“添加”。 Visual Studio Express 创建以下文件和文件夹：
 
-- *MoviesController.cs*在项目文件中的*控制器*文件夹。
-- 一个*电影*文件夹中项目的*视图*文件夹。
-- *Create.cshtml、 Delete.cshtml、 Details.cshtml、 Edit.cshtml*，并*Index.cshtml*中的新*视图 \ 电影*文件夹。
+- 项目的 "*控制器*" 文件夹中*的 MoviesController.cs*文件。
+- 项目的 "*视图*" 文件夹中的 "*电影*" 文件夹。
+- 在新的*Views\Movies* *文件夹中* *创建. cshtml、Delete （* cshtml）、Details、
 
-ASP.NET MVC 4 自动创建 CRUD （创建、 读取、 更新和删除） 操作方法和视图为您 （CRUD 操作方法和视图的自动创建被称为基架）。 现可完全正常运行的 web 应用程序，可用于创建、 列出、 编辑和删除的电影条目。
+ASP.NET MVC 4 自动创建 CRUD （创建、读取、更新和删除）操作方法和视图（创建、读取、更新和删除）操作方法和视图（自动创建 CRUD 操作方法和视图）。 现在，你有了一个功能完备的 web 应用程序，它允许你创建、列出、编辑和删除电影条目。
 
-运行应用程序，并浏览到`Movies`控制器通过追加 */Movies*到你的浏览器的地址栏中的 URL。 因为应用程序依赖于默认路由 (在中定义*Global.asax*文件)，浏览器请求`http://localhost:xxxxx/Movies`路由到默认`Index`操作方法的`Movies`控制器。 换而言之，将浏览器请求`http://localhost:xxxxx/Movies`实际上是浏览器请求相同`http://localhost:xxxxx/Movies/Index`。 结果是空列表的电影，因为还未添加任何。
+运行应用程序，并通过将 */Movies*追加到浏览器地址栏中的 URL 来浏览到 `Movies` 控制器。 由于应用程序依赖于默认路由（在*global.asax*文件中定义），因此浏览器请求 `http://localhost:xxxxx/Movies` 会路由到 `Movies` 控制器的默认 `Index` 操作方法。 换句话说，浏览器请求 `http://localhost:xxxxx/Movies` 与浏览器请求 `http://localhost:xxxxx/Movies/Index`有效。 结果为空电影列表，因为尚未添加任何影片。
 
 ![](accessing-your-models-data-from-a-controller/_static/image2.png)
 
 ### <a name="creating-a-movie"></a>创建电影
 
-选择“新建”链接。 输入有关电影的一些详细信息，然后单击**创建**按钮。
+选择“新建”链接。 输入有关电影的一些详细信息，然后单击 "**创建**" 按钮。
 
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)
 
-单击**创建**按钮后，窗体会发布到服务器，其中电影信息保存到数据库中。 然后，将重定向到 */Movies* URL，其中显示在列表中新创建的电影。
+单击 "**创建**" 按钮会将窗体发布到服务器，在该窗体中，电影信息保存在数据库中。 然后，你会被重定向到 */Movies* URL，在该 URL 中，你可以在列表中看到新创建的电影。
 
 ![IndexWhenHarryMet](accessing-your-models-data-from-a-controller/_static/image4.png "IndexWhenHarryMet")
 
@@ -62,88 +62,88 @@ ASP.NET MVC 4 自动创建 CRUD （创建、 读取、 更新和删除） 操作
 
 ## <a name="examining-the-generated-code"></a>检查生成的代码
 
-打开*Controllers\MoviesController.cs*文件并检查生成`Index`方法。 与电影控制器的一部分`Index`方法如下所示。
+打开*Controllers\MoviesController.cs*文件并检查生成的 `Index` 方法。 下面显示了包含 `Index` 方法的电影控制器的一部分。
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample1.cs)]
 
-以下代码行从`MoviesController`类实例化一个电影数据库上下文，如前面所述。 电影数据库上下文可用于查询、 编辑和删除电影。
+如前文所述，`MoviesController` 类中的以下行将实例化电影数据库上下文。 可以使用影片数据库上下文来查询、编辑和删除影片。
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample2.cs)]
 
-对请求`Movies`控制器返回中的所有条目`Movies`电影数据库表，然后将传递到结果`Index`视图。
+对 `Movies` 控制器的请求将返回电影数据库的 `Movies` 表中的所有条目，然后将结果传递到 `Index` 视图。
 
-## <a name="strongly-typed-models-and-the-model-keyword"></a>强类型模型和@model关键字
+## <a name="strongly-typed-models-and-the-model-keyword"></a>强类型模型和 @model 关键字
 
-前面在本教程中，您已了解如何在控制器可以传入数据或对象视图模板使用`ViewBag`对象。 `ViewBag`是一个动态对象，提供了方便的后期绑定方法将信息传递给视图。
+在本教程的前面部分，你已了解控制器如何使用 `ViewBag` 对象将数据或对象传递到视图模板。 `ViewBag` 是一个动态对象，它提供了一种用于向视图传递信息的后期绑定方法。
 
-ASP.NET MVC 还提供了能够传递强类型化数据或视图模板的对象。 此强类型化方法允许更好地进行编译时检查的代码和更丰富的 IntelliSense，Visual Studio 编辑器中。 在 Visual Studio 中的基架机制使用此方法`MoviesController`类和视图模板时将其创建方法和视图。
+ASP.NET MVC 还提供将强类型化数据或对象传递到视图模板的功能。 此强类型方法可在 Visual Studio 编辑器中更好地编译代码和更丰富的 IntelliSense。 Visual Studio 中的基架机制将此方法与 `MoviesController` 类结合使用，并在创建方法和视图时查看模板。
 
-在中*Controllers\MoviesController.cs*文件检查生成`Details`方法。 与电影控制器的一部分`Details`方法如下所示。
+在*Controllers\MoviesController.cs*文件中，检查生成的 `Details` 方法。 下面显示了包含 `Details` 方法的电影控制器的一部分。
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample3.cs?highlight=3,8)]
 
-如果`Movie`找到，则实例`Movie`的模型传递到详细信息视图。 检查的内容*Views\Movies\Details.cshtml*文件。
+如果找到 `Movie`，则 `Movie` 模型的实例将传递到详细信息视图。 检查*Views\Movies\Details.cshtml*文件的内容。
 
-通过包括`@model`语句在视图模板文件的顶部，可以指定视图期望的对象的类型。 创建电影控制器时，Visual Studio 会自动在 Details.cshtml 文件的顶端包括以下 `@model` 语句：
+通过将 `@model` 语句包含在视图模板文件的顶部，可以指定视图所需的对象类型。 创建电影控制器时，Visual Studio 会自动在 Details.cshtml 文件的顶端包括以下 `@model` 语句：
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample4.cshtml)]
 
-此 `@model` 指令使你能够使用强类型的 `Model` 对象访问控制器传递给视图的电影。 例如，在*Details.cshtml*模板，代码将传递到每个电影字段`DisplayNameFor`并[DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) HTML 帮助器与强类型化`Model`对象。 创建和编辑方法和视图模板还传递电影模型对象。
+此 `@model` 指令使你能够使用强类型的 `Model` 对象访问控制器传递给视图的电影。 例如，在*详细信息*模板中，代码将每个电影字段传递到 `DisplayNameFor`，并将[DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) HTML 帮助器与强类型 `Model` 对象一起传递。 "创建" 和 "编辑" 方法和 "视图" 模板也会传递影片模型对象。
 
-检查*Index.cshtml*视图模板和`Index`中的方法*MoviesController.cs*文件。 请注意，该代码会创建如何[ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx)对象时它将调用`View`帮助器方法`Index`操作方法。 该代码，然后将此`Movies`从控制器到视图的列表：
+检查*MoviesController.cs*文件中的*索引 cshtml*视图模板和 `Index` 方法。 请注意，当调用 `Index` 操作方法中的 `View` helper 方法时，代码如何创建[`List`](https://msdn.microsoft.com/library/6sh2ey19.aspx)对象。 然后，该代码将此 `Movies` 列表从控制器传递到视图：
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample5.cs?highlight=3)]
 
-创建电影控制器时，Visual Studio Express 自动包括以下`@model`顶部的语句*Index.cshtml*文件：
+创建影片控制器时，Visual Studio Express 会自动将以下 `@model` 语句包含在*索引 cshtml*文件的顶部：
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 
-这`@model`指令使你能够访问控制器传递给视图使用的电影列表`Model`强类型化的对象。 例如，在*Index.cshtml*模板，该代码循环访问电影通过这样做`foreach`语句通过强类型化`Model`对象：
+此 `@model` 指令允许使用强类型的 `Model` 对象访问控制器传递给视图的电影列表。 例如，在*索引 cshtml*模板中，代码通过对强类型化 `Model` 对象执行 `foreach` 语句来循环播放电影：
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample7.cshtml?highlight=1,4,7,10,13,16,19-21)]
 
-因为`Model`对象被强类型 (作为`IEnumerable<Movie>`对象)，每个`item`循环中的对象被类型化为`Movie`。 还具有其他优点，这意味着，获取编译时检查的代码，并完全在代码编辑器中的 IntelliSense 支持：
+因为 `Model` 对象是强类型的（作为 `IEnumerable<Movie>` 对象），所以循环中的每个 `item` 对象均键入为 `Movie`。 除此之外，这意味着您可以在代码编辑器中对代码进行编译时检查，并获得完整的 IntelliSense 支持：
 
 ![ModelIntelliSense](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 ## <a name="working-with-sql-server-localdb"></a>使用 SQL Server LocalDB
 
-提供数据库连接字符串指向实体框架 Code First 检测到`Movies`未尚未存在，因此 Code First 数据库自动创建的数据库。 你可以验证它已创建中查找*应用程序\_数据*文件夹。 如果没有看到*Movies.mdf*文件中，单击**显示所有文件**按钮**解决方案资源管理器**工具栏中，单击**刷新**按钮，，然后展开*应用程序\_数据*文件夹。
+实体框架 Code First 检测到提供的数据库连接字符串指向的 `Movies` 数据库尚不存在，因此 Code First 会自动创建数据库。 你可以通过查看*应用\_Data*文件夹来验证它是否已创建。 如果看不到 "*电影 .mdf* " 文件，请单击 "**解决方案资源管理器**" 工具栏中的 "**显示所有文件**" 按钮，单击 "**刷新**" 按钮，然后展开 "*应用\_数据*" 文件夹。
 
 ![](accessing-your-models-data-from-a-controller/_static/image6.png)
 
-双击*Movies.mdf*以打开**数据库资源管理器**，然后展开**表**文件夹，以查看电影表。
+双击 *""，以打开*"**数据库资源管理器**"，然后展开 "**表**" 文件夹以查看 "电影" 表。
 
 ![DB_explorer](accessing-your-models-data-from-a-controller/_static/image7.png "DB_explorer")
 
 > [!NOTE]
-> 如果未出现数据库资源管理器，从**工具**菜单中，选择**连接到数据库**，然后取消**选择数据源**对话框。 这将强制打开数据库资源管理器。
+> 如果 "数据库资源管理器" 未显示，请从 "**工具**" 菜单中选择 "**连接到数据库**"，然后取消 "**选择数据源**" 对话框。 这将强制打开数据库资源管理器。
 
 > [!NOTE]
-> 如果您正在使用 VWD 或 Visual Studio 2010 并遇到错误类似于以下的以下任何：
+> 如果使用的是 VWD 或 Visual Studio 2010，并收到类似于以下内容的错误：
 > 
-> - 数据库 C:\Webs\MVC4\MVCMOVIE\MVCMOVIE\APP\_DATA\MOVIES。MDF 无法打开，因为它是 706 的版本。 此服务器支持 655 及更早版本。 不支持降级路径。
-> - &quot;用户代码未处理 InvalidOperation 异常&quot;提供的 SqlConnection 未指定初始目录。
+> - 数据库 "C:\Webs\MVC4\MVCMOVIE\MVCMOVIE\APP\_DATA\MOVIES。无法打开 .MDF "，因为它是版本706。 此服务器支持版本655和更早版本。 不支持降级路径。
+> - 用户代码未处理 &quot;InvalidOperation 异常&quot; 提供的 SqlConnection 未指定初始目录。
 > 
-> 你需要安装[SQL Server Data Tools](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)并[LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)。 验证`MovieDBContext`前一页上指定的连接字符串。
+> 需要安装[SQL Server Data Tools](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)和[LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)。 验证在上一页中指定的 `MovieDBContext` 连接字符串。
 
-右键单击`Movies`表，然后选择**显示表数据**若要查看你创建的数据。
+右键单击 `Movies` 表，然后选择 "**显示表数据**" 以查看创建的数据。
 
 ![](accessing-your-models-data-from-a-controller/_static/image8.png)
 
-右键单击`Movies`表，然后选择**打开表定义**若要查看结构，该实体框架 Code First 为你创建的表。
+右键单击 `Movies` 表，然后选择 "**打开表定义**"，查看实体框架 Code First 创建的表结构。
 
 ![](accessing-your-models-data-from-a-controller/_static/image9.png "MoviesTable")
 
 ![](accessing-your-models-data-from-a-controller/_static/image10.png)
 
-请注意如何的架构`Movies`表映射到`Movie`前面创建的类。 实体框架 Code First 自动创建此架构根据你`Movie`类。
+请注意，`Movies` 表的架构是如何映射到前面创建的 `Movie` 类的。 实体框架 Code First 会根据 `Movie` 类自动为你创建此架构。
 
-完成后，通过右键单击关闭连接*MovieDBContext* ，然后选择**关闭连接**。 （如果不关闭连接，您可能会遇到错误在下次运行项目时）。
+完成后，请通过右键单击*MovieDBContext*并选择 "**关闭连接**" 来关闭连接。 （如果不关闭连接，则在下次运行项目时可能会收到错误）。
 
 ![](accessing-your-models-data-from-a-controller/_static/image11.png "CloseConnection")
 
-现在将具有对数据库和简单列表页，以显示从它的内容。 在下一步的教程中，我们将检查已搭建基架代码的其余部分并添加`SearchIndex`方法和一个`SearchIndex`使您可以搜索电影的此数据库的视图。
+现在，你已创建了数据库和一个简单的列表页，用于显示内容。 在下一教程中，我们将检查基架代码的其余部分，并添加 `SearchIndex` 方法和 `SearchIndex` 视图，使您能够在此数据库中搜索电影。
 
 > [!div class="step-by-step"]
 > [上一页](adding-a-model.md)

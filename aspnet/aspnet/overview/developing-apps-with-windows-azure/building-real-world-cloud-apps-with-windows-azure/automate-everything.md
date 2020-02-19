@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d5c8190d0b0c91bf9e42f6ef03adc5b07a65359a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: e741a753a36ebdaefbff8eee0b38911785c716ac
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582892"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457162"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有操作（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -254,7 +254,7 @@ Azure 提供了一项功能，使你能够存储设置和连接字符串，以�
 - [周末脚本编写：通过 Azure 和 PowerShell 入门](https://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx)。 在专用于 Windows PowerShell 的博客中，这篇文章提供了有关使用 PowerShell 进行 Azure 管理功能的很好的介绍。
 - [安装和配置 Azure 跨平台命令行界面](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。 适用于 Azure 脚本编写框架的入门教程，适用于 Mac 和 Linux 以及 Windows 系统。
 - [下载 Azure sdk 和工具主题的命令行工具](https://azure.microsoft.com/downloads/)。 与适用于 Azure 的命令行工具相关的文档和下载的门户页。
-- [通过 Azure 管理库和 .net 使一切自动化](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx)。 Scott Hanselman 介绍了适用于 Azure 的 .NET 管理 API。
+- [使用 Azure 管理库和 .NET 使一切自动化](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx)。 Scott Hanselman 介绍了适用于 Azure 的 .NET 管理 API。
 - [使用 Windows PowerShell 脚本发布到开发和测试环境](https://msdn.microsoft.com/library/azure/dn642480.aspx)。 介绍如何使用 Visual Studio 为 web 项目自动生成的发布脚本的 MSDN 文档。
 - [PowerShell Tools for Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597)。 Visual Studio 扩展，在 Visual Studio 中为 Windows PowerShell 添加语言支持。
 

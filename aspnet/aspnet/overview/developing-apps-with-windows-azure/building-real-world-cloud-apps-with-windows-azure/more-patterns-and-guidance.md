@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: afade34477d1136883e7543d09e73dfbe435690e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 57e32bf7568ecb0eb22f0f2b585310dcab2d5d43
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585359"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457071"
 ---
 # <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多模式和指导（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -45,7 +45,7 @@ ms.locfileid: "74585359"
 
 本电子书中的每个章节都提供了指向资源的链接，以获取有关该特定主题的详细信息。 以下列表提供了一些链接，这些链接指向使用 Azure 成功进行云开发的最佳做法和建议的模式。
 
-Documentation
+文档
 
 - [在 Azure 云服务上设计大规模服务的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 通过标记 Simm 和 Michael Thomassy 的白皮书。
 - [防故障：弹性云体系结构的指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮书 by Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 防故障视频系列的网页版本。
@@ -65,7 +65,7 @@ Documentation
 硬拷贝书籍
 
 - [云计算宝典](https://www.amazon.com/dp/0470903562)。 作者： Barrie Sosinsky。
-- [发布！设计和部署生产就绪软件](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 作者： Nygard。
+- [发布！设计和部署生产就绪软件](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 Michael nygard T。
 - [云体系结构模式：使用 Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do)。 按帐单 Wilder。
 - [Windows Azure 平台](https://www.amazon.com/dp/1430235632)。 作者： Tejaswi Redkar。
 - [用于启动的 Windows Azure 编程模式](https://www.amazon.com/dp/1849685606)。 作者： Riccardo Becker。
@@ -74,7 +74,7 @@ Documentation
 最后，当你开始构建真实的应用程序并在 Azure 中运行这些应用程序时，可能需要专家的帮助。 你可以在社区网站（如[azure 论坛或 StackOverflow](https://azure.microsoft.com/support/forums/)）中提问问题，也可以直接与 Microsoft 联系以获取 azure 支持。 Microsoft 提供了多个 Azure 技术支持级别：有关选项的摘要和比较，请参阅[Azure 支持](https://azure.microsoft.com/support/plans/)。
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>鸣谢
+## <a name="acknowledgments"></a>致谢
 
 此内容由 Tom Dykstra、Rick Anderson 和 Mike Wasson 编写。 大多数原始内容来自[Scott Guthrie](https://weblogs.asp.net/scottgu/)，他又从标记 Simm 和 Microsoft 客户咨询团队（CAT）的材料中进行了研究。
 

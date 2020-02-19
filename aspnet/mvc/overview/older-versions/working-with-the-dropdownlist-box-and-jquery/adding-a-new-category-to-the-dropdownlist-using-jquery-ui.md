@@ -8,16 +8,16 @@ ms.date: 01/12/2012
 ms.assetid: 44aa1ac4-6ea2-48a2-972d-52710c48eae5
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: cb9053593e2ea788638aec063c845cb91121861b
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.openlocfilehash: 3207079ee468232e5f75b081421241c232936baf
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075107"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455719"
 ---
 # <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>使用 jQuery UI 向 DropDownList 添加新类别
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 HTML `Select` 标记非常适合用于呈现固定类别数据的列表，但通常需要添加新类别。 假设我们要将流派 "Opera" 添加到数据库中的类别？ 在本部分中，我们将使用 jQuery UI 来添加一个对话框，可使用该对话框添加新类别。 下图显示了 UI 在浏览器中的显示方式。
 

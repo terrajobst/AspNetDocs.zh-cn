@@ -8,20 +8,20 @@ ms.date: 07/30/2013
 ms.assetid: d0a89089-eed8-4f61-a478-c5ffa30186f5
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 0e720b3e4c5d3b8f779afe3a6e2b47baa86eec4c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 10237af40e3914b65e5181f17555697e86adea4b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74592705"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457851"
 ---
 # <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>为 EF 5 MVC 4 教程构建章节下载
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [下载完成的项目](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 
 ## <a name="building-the-chapter-downloads"></a>生成章节下载
 
@@ -44,7 +44,7 @@ ms.locfileid: "74592705"
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image4.png)  
 
     > [!NOTE]
-    > 如果收到以下错误：  
+    > 如果收到以下错误信息：  
     >   
     >  *术语 "更新-数据库" 未被识别为 cmdlet、函数、脚本文件或可运行程序的名称。检查名称的拼写，如果包含路径，请验证路径是否正确，然后重试。*  
     > 退出并重新启动 Visual Studio。
@@ -54,4 +54,4 @@ ms.locfileid: "74592705"
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image5.png)
 
 > [!div class="step-by-step"]
-> [上一部分](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [“上一步”](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

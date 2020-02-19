@@ -8,16 +8,16 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 239980d747c6e0d6be1e9b4fe0371e276e37cf21
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 61bfe5dbac04b57e1461183b66ead2f01fe0734c
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519279"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457760"
 ---
-# <a name="bundling-and-minification"></a>Bundling and Minification（绑定和缩小）
+# <a name="bundling-and-minification"></a>捆绑和缩小
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 绑定和缩减是可以在 ASP.NET 4.5 中使用的两种技术来提高请求加载时间。 绑定和缩减减少了对服务器的请求数并减小了请求资产（如 CSS 和 JavaScript）的大小，从而缩短了加载时间。
 
@@ -54,7 +54,7 @@ ms.locfileid: "76519279"
 | **原始** | **更名** |
 | --- | --- |
 | imageTagAndImageID | n |
-| imageContext | T |
+| imageContext | t |
 | imageElement | i |
 
 ## <a name="impact-of-bundling-and-minification"></a>绑定和缩减的影响
@@ -154,8 +154,8 @@ ms.locfileid: "76519279"
 
 请考虑使用以下 JavaScript 文件的项目：
 
-- *Scripts\\Common\\AddAltToImg.js*
-- *Scripts\\Common\\ToggleDiv.js*
+- *脚本\\Common\\AddAltToImg*
+- *脚本\\Common\\ToggleDiv*
 - *脚本\\Common\\ToggleImg*
 - *脚本\\Common\\Sub1\\ToggleLinks*
 
@@ -165,12 +165,12 @@ ms.locfileid: "76519279"
 
 | **Call** | **添加的文件或引发的异常** |
 | --- | --- |
-| Include("~/Scripts/Common/\*.js") | *AddAltToImg*、 *ToggleDiv*、 *ToggleImg* |
-| Include("~/Scripts/Common/T\*.js") | 模式异常无效。 仅前缀或后缀允许使用通配符。 |
-| Include("~/Scripts/Common/\*og.\*") | 模式异常无效。 只允许使用一个通配符。 |
-| Include("~/Scripts/Common/T\*") | *ToggleDiv*， *ToggleImg* |
-| Include("~/Scripts/Common/\*") | 模式异常无效。 纯通配符段无效。 |
-| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv*， *ToggleImg* |
+| Include （"~/Scripts/Common/\*.js"） | *AddAltToImg*、 *ToggleDiv*、 *ToggleImg* |
+| Include （"~/Scripts/Common/T\*.js"） | 模式异常无效。 仅前缀或后缀允许使用通配符。 |
+| Include （"~/Scripts/Common/\*og。\*"） | 模式异常无效。 只允许使用一个通配符。 |
+| Include （"~/Scripts/Common/T\*"） | *ToggleDiv*， *ToggleImg* |
+| Include （"~/Scripts/Common/\*"） | 模式异常无效。 纯通配符段无效。 |
+| IncludeDirectory （"~/Scripts/Common"，"T\*"） | *ToggleDiv*， *ToggleImg* |
 | IncludeDirectory （"~/Scripts/Common"，"T\*"，true） | *ToggleDiv*、 *ToggleImg*、 *ToggleLinks* |
 
 通常，出于以下原因，将每个文件显式添加到捆绑包通常是首选的：
@@ -239,7 +239,7 @@ ms.locfileid: "76519279"
 - [使用 cdn 并过期](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx)，通过 Rick Anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)提高网站性能
 - [最小化 RTT （往返时间）](https://developers.google.com/speed/docs/best-practices/rtt)
 
-## <a name="contributors"></a>供稿人
+## <a name="contributors"></a>参与者
 
 - Hao Kung
 - [Howard Dierking](https://twitter.com/#!/howard_dierking)

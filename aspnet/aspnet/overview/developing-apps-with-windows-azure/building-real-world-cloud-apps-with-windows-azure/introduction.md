@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 8a4ef3aa37a9296e92fbeb513968e3abeee072d0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: b88573b3702b755b155e8da35f5f8a67931bafc6
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585520"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457110"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>用 Azure 构建实际的云应用
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -102,7 +102,7 @@ ms.locfileid: "74585520"
 - [附录：“Fix It”示例应用程序](the-fix-it-sample-application.md)
 
     - 已知问题
-    - 最佳做法
+    - 最佳实践
     - 如何下载、构建、运行和部署。
 
 这些模式适用于所有云环境，但我们将使用基于 Microsoft 技术和服务（如 Visual Studio、Team Foundation Service、ASP.NET 和 Azure）的示例来演示这些模式。
@@ -174,4 +174,4 @@ ms.locfileid: "74585520"
 - [Azure 网站与 Nir Mashkowski 的内部机制](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
 > [!div class="step-by-step"]
-> [下一页](automate-everything.md)
+> [Next](automate-everything.md)

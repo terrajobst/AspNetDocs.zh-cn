@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: d79655bfadff83095bf4cb84445f5efaf44d6a89
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 5974e53e4610dccc7812df261dc97a9b0327de85
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519071"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456681"
 ---
 # <a name="adding-a-new-field"></a>添加新字段
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -111,13 +111,13 @@ Code First 迁移在 "*迁移*" 文件夹（名称为 *{日期戳}\_Initial.cs* 
 
 构建应用程序（Ctrl + Shift + B）。
 
-因为你已将新字段添加到`Movie`类，你还需要更新绑定允许列表以便将包含此新属性。 更新 `Create` 和 `Edit` 操作方法的 `bind` 属性，以包括 `Rating` 属性：
+由于已将新字段添加到 `Movie` 类，因此还需要更新 "绑定"*白名单*，以便包括此新属性。 更新 `Create` 和 `Edit` 操作方法的 `bind` 属性，以包括 `Rating` 属性：
 
 [!code-csharp[Main](adding-a-new-field/samples/sample7.cs?highlight=1)]
 
 还需要更新视图模板，以便在浏览器视图中显示、创建和编辑新的 `Rating` 属性。
 
-打开 *\Views\Movies\Index.cshtml* 文件，并添加`<th>Rating</th>`列标题之后**价格**列。 然后，将 `<td>` 列添加到模板末尾附近，以呈现 `@item.Rating` 值。 下面是哪些更新 *Index.cshtml* 视图模板如下所示：
+打开 " *\Views\Movies\Index.cshtml* " 文件，然后在 " **Price** " 列之后添加 `<th>Rating</th>` 列标题。 然后，将 `<td>` 列添加到模板末尾附近，以呈现 `@item.Rating` 值。 更新后的*索引 cshtml*视图模板如下所示：
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample8.cshtml?highlight=31-33,52-54)]
 
@@ -131,7 +131,7 @@ Code First 迁移在 "*迁移*" 文件夹（名称为 *{日期戳}\_Initial.cs* 
 
 ![](adding-a-new-field/_static/image9.png)  
   
-创建数据库后，支持 "MovieDBContext" 上下文的模型已发生更改。 请考虑使用 Code First 迁移更新数据库（ https://go.microsoft.com/fwlink/?LinkId=238269) 。
+创建数据库后，支持 "MovieDBContext" 上下文的模型已发生更改。 请考虑使用 Code First 迁移更新数据库（ https://go.microsoft.com/fwlink/?LinkId=238269)。
 
 ![](adding-a-new-field/_static/image10.png)
 
@@ -139,7 +139,7 @@ Code First 迁移在 "*迁移*" 文件夹（名称为 *{日期戳}\_Initial.cs* 
 
 可通过几种方法解决此错误：
 
-1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 在测试数据库上进行开发时，此方法在开发周期早期很方便；通过它可以一起快速改进模型和数据库架构。 缺点，不过，是会丢失数据库中的现有数据，因此您 *不* 需要生产数据库上使用此方法 ！ 使用初始值设定项，以使用测试数据自动设定数据库种子，这通常是开发应用程序的有效方式。 有关实体框架数据库初始值设定项的详细信息，请参阅[ASP.NET MVC/实体框架教程](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+1. 让 Entity Framework 自动丢弃，并基于新的模型类架构重新创建数据库。 在测试数据库上进行开发时，此方法在开发周期早期很方便；通过它可以一起快速改进模型和数据库架构。 不过，缺点在于丢失了数据库中的现有数据，因此*不*希望在生产数据库上使用此方法！ 使用初始值设定项，以使用测试数据自动设定数据库种子，这通常是开发应用程序的有效方式。 有关实体框架数据库初始值设定项的详细信息，请参阅[ASP.NET MVC/实体框架教程](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 2. 对现有数据库架构进行显式修改，使它与模型类相匹配。 此方法的优点是可以保留数据。 可以手动或通过创建数据库更改脚本进行此更改。
 3. 使用 Code First 迁移更新数据库架构。
 
@@ -173,7 +173,7 @@ Code First 迁移在 "*迁移*" 文件夹（名称为 *{日期戳}\_Initial.cs* 
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-单击 **“创建”** 。 现在电影列表中显示了新电影，其中包括评分：
+单击“创建”。 现在电影列表中显示了新电影，其中包括评分：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 

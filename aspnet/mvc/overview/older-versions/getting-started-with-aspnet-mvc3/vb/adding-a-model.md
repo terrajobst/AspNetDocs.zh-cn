@@ -1,87 +1,87 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-model
-title: 添加模型 (VB) |Microsoft Docs
+title: 添加模型（VB） |Microsoft Docs
 author: Rick-Anderson
-description: 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是一个 ASP.NET MVC Web 应用程序的基础知识...
+description: 本教程将教你如何使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 构建 ASP.NET MVC Web 应用程序的基础知识 。
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: b3aa7720-5c78-4ca2-baef-9a52234fb7ce
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: c2ec1f4cf8f68a426fa4cabfc36c5e7bf928fe32
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e69d59aed4d74f08f1c653c4965b128c4dbe20ff
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130069"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457240"
 ---
 # <a name="adding-a-model-vb"></a>添加模型 (VB)
 
-通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> 本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装以下列出的先决条件。 可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，可以单独安装系统必备组件，使用以下链接：
+> 本教程将教你如何使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 （Microsoft Visual Studio 免费版）生成 ASP.NET MVC Web 应用程序的基础知识。 在开始之前，请确保已安装下列必备组件。 可以通过单击以下链接安装所有这些[程序： Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，你可以使用以下链接单独安装必备组件：
 > 
 > - [Visual Studio Web Developer Express SP1 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [ASP.NET MVC 3 工具更新](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（运行时和工具支持）
+> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（运行时 + 工具支持）
 > 
-> 如果您使用 Visual Studio 2010 而不 Visual Web Developer 2010，请通过单击以下链接安装必备组件：[Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
+> 如果你使用的是 Visual Studio 2010 而不是 Visual Web Developer 2010，请通过单击以下链接安装必备组件： [Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
-> 可随附于此项目具有 VB.NET 源代码的 Visual Web Developer 项目。 [下载 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您愿意 C#，切换到[C# 版本](../cs/adding-a-model.md)本教程。
+> 本主题附带有 VB.NET 源代码的 Visual Web Developer 项目。 [下载 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果愿意C#，请切换到本教程的[ C#版本](../cs/adding-a-model.md)。
 
 ## <a name="adding-a-model"></a>添加模型
 
-在本部分中将添加用于管理数据库中的电影的一些类。 这些类将 ASP.NET MVC 应用程序的"模型"部分。
+在本部分中，你将添加一些用于在数据库中管理电影的类。 这些类将是 ASP.NET MVC 应用程序的 "模型" 部分。
 
-将使用名为实体框架的.NET Framework 数据访问技术来定义和使用这些模型的类。 实体框架 （通常称为 EF） 支持开发模式称为*Code First*。 代码首先允许你通过编写简单的类来创建模型对象。 （这些也称为是 POCO 类，从"纯旧式 CLR 对象"。）然后，您可以实现很整洁且快速的开发工作流的类，从动态创建的数据库。
+您将使用一种称为实体框架的 .NET Framework 数据访问技术来定义和使用这些模型类。 实体框架（通常称为 EF）支持名为*Code First*的开发模式。 Code First 允许通过编写简单的类来创建模型对象。 （这些类也称为 POCO 类，来自 "纯旧 CLR 对象"）。然后，你可以从类动态创建数据库，这样就可以实现非常干净且快速的开发工作流。
 
 ## <a name="adding-model-classes"></a>添加模型类
 
-在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。
+在**解决方案资源管理器**中，右键单击 "*模型*" 文件夹，选择 "**添加**"，然后选择 "**类**"。
 
 ![](adding-a-model/_static/image1.png)
 
-命名类"电影"。
+将类命名为 "Movie"。
 
-添加到以下五个属性`Movie`类：
+将以下五个属性添加到 `Movie` 类：
 
 [!code-vb[Main](adding-a-model/samples/sample1.vb)]
 
-我们将使用`Movie`类来表示数据库中的电影。 每个实例`Movie`对象将对应于数据库表中，并的每个属性内的行`Movie`类将映射到表中的列。
+我们将使用 `Movie` 类来表示数据库中的影片。 `Movie` 对象的每个实例都对应于数据库表中的一行，而 `Movie` 类的每个属性都将映射到该表中的列。
 
-在同一文件中，添加以下`MovieDBContext`类：
+在同一文件中，添加以下 `MovieDBContext` 类：
 
 [!code-vb[Main](adding-a-model/samples/sample2.vb)]
 
-`MovieDBContext`类表示处理提取、 存储和更新的实体框架电影数据库上下文`Movie`类在数据库中的实例。 `MovieDBContext`派生自`DbContext`实体框架提供的基类。 有关详细信息`DbContext`并`DbSet`，请参阅[实体框架的工作效率改进](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)。
+`MovieDBContext` 类表示实体框架的电影数据库上下文，用于处理数据库中 `Movie` 类实例的提取、存储和更新。 `MovieDBContext` 从实体框架提供的 `DbContext` 基类派生。 有关 `DbContext` 和 `DbSet`的详细信息，请参阅[实体框架的工作效率改进](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)。
 
-若要引用将`DbContext`并`DbSet`，你需要添加以下`imports`在文件顶部的语句：
+为了能够引用 `DbContext` 和 `DbSet`，需要在文件的顶部添加以下 `imports` 语句：
 
 [!code-vb[Main](adding-a-model/samples/sample3.vb)]
 
-完整*Movie.vb*文件如下所示。
+下面显示了完整的*Movie .vb*文件。
 
 [!code-vb[Main](adding-a-model/samples/sample4.vb)]
 
-## <a name="creating-a-connection-string-and-working-with-sql-server-compact"></a>创建的连接字符串和使用 SQL Server Compact
+## <a name="creating-a-connection-string-and-working-with-sql-server-compact"></a>创建连接字符串并使用 SQL Server Compact
 
-`MovieDBContext`创建的类处理连接到数据库以及映射任务`Movie`数据库记录的对象。 您可能会问的一个问题，是如何指定将连接到的数据库。 您将通过添加中的连接信息来实现*Web.config*应用程序文件。
+你创建的 `MovieDBContext` 类将处理连接到数据库的任务，并将 `Movie` 对象映射到数据库记录。 但您可能会问的一个问题是如何指定它将连接到的数据库。 可以通过在应用程序的*web.config 文件中*添加连接信息来实现此目的。
 
-打开应用程序根目录*Web.config*文件。 (未*Web.config*中的文件*视图*文件夹。)下图显示两者*Web.config*文件; 打开*Web.config*用红线圈出文件。
+打开应用程序根*web.config*文件。 （而不是*Views*文件夹中的*web.config 文件。* ）下图显示了*web.config*文件;打开以红色*圆圈表示的 web.config 文件*。
 
 ![](adding-a-model/_static/image2.png)
 
-添加到以下连接字符串`<connectionStrings>`中的元素*Web.config*文件。
+将以下连接字符串添加到*web.config 文件中的 `<connectionStrings>`* 元素。
 
 [!code-xml[Main](adding-a-model/samples/sample5.xml)]
 
-下面的示例显示了一部分*Web.config*文件添加的新连接字符串：
+下面的示例演示了*web.config 文件的*一部分，并添加了新的连接字符串：
 
 [!code-xml[Main](adding-a-model/samples/sample6.xml)]
 
-这种少量的代码和 XML 是为了表示，并将影片数据存储在数据库中编写所需的一切。
+这少量的代码和 XML 是您需要编写的所有内容，以表示和将电影数据存储在数据库中。
 
-接下来，你将生成一个新`MoviesController`类，该类可以用于显示电影数据并允许用户创建新的影片列表。
+接下来，您将生成一个新的 `MoviesController` 类，该类可用于显示电影数据并允许用户创建新的电影节目表。
 
 > [!div class="step-by-step"]
 > [上一页](adding-a-view.md)

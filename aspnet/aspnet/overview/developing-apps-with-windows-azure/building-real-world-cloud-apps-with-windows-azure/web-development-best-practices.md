@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: 0956aaaf1f6a1a0d2f5d93f98cb6959cec98dbaf
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: dfd8a3ac2328d3f17dfbe36e68b37d181177b0f4
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582707"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457084"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 开发最佳做法（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -45,7 +45,7 @@ ms.locfileid: "74582707"
 
 例如，如果你的 Web 层是无状态的，则在 Windows Azure 网站中缩放应用程序的方法会很简单，请在管理门户中查看 Microsoft Azure 网站的 "**缩放**" 选项卡：
 
-![缩放选项卡](web-development-best-practices/_static/image1.png)
+![“缩放”选项卡](web-development-best-practices/_static/image1.png)
 
 如果要添加 web 服务器，只需将 "实例计数" 滑块拖到右侧即可。 将其设置为5并单击 "**保存**"，在几秒内，Windows Azure 中的5个 web 服务器处理你的网站的流量。
 
@@ -76,7 +76,7 @@ ms.locfileid: "74582707"
 <a id="sessionstate"></a>
 ## <a name="avoid-session-state"></a>避免会话状态
 
-在实际云应用中避免存储某种形式的用户会话状态通常是不现实的，但某些方法相比其他方法而言，对性能和可伸缩性的影响更大。 如果你需要存储状态，最佳解决方案是使状态量保持较小并将其存储在 Cookie 中。 如果这不可行，下一个最佳解决方案是将 ASP.NET 会话状态与提供程序配合使用[，以便使用分布式的内存中缓存](distributed-caching.md#sessionstate)。 从性能和可伸缩性的角度来看，最差的解决方案是使用数据库支持的会话状态提供程序。
+在实际云应用中避免存储某种形式的用户会话状态通常是不现实的，但某些方法相比其他方法而言，对性能和可伸缩性的影响更大。 如果需要存储状态，最佳解决方案是使状态量保持较小并将其存储在 Cookie 中。 如果这不可行，下一个最佳解决方案是将 ASP.NET 会话状态与提供程序配合使用[，以便使用分布式的内存中缓存](distributed-caching.md#sessionstate)。 从性能和可伸缩性的角度来看，最差的解决方案是使用数据库支持的会话状态提供程序。
 
 <a id="cdn"></a>
 ## <a name="use-a-cdn-to-cache-static-file-assets"></a>使用 CDN 缓存静态文件资产

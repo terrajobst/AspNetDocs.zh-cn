@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 7e32f444dc38132296cffd45ac658f5abf51f314
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1ca93cce22487295a24aae95437b3e69dfc5b504
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585285"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457136"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>单一登录（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -42,7 +42,7 @@ ms.locfileid: "74585285"
 
 它可以完全独立于本地 Active Directory;你可以将所需的任何人置于 Internet 应用中并对其进行身份验证。
 
-![Azure Active Directory](single-sign-on/_static/image2.png)
+![Microsoft Azure Active Directory](single-sign-on/_static/image2.png)
 
 也可以将其与本地 AD 集成。
 
@@ -177,7 +177,7 @@ Microsoft 已启用 ADFS，因此，当你输入 Microsoft ID 时，会重定向
 <a id="resources"></a>
 ## <a name="resources"></a>资源
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
 - [Azure Active Directory 文档](https://docs.microsoft.com/azure/active-directory/)。 Windowsazure.com 网站上 Azure AD 文档的门户页。 有关分步教程，请参阅**开发**部分。
 - [Azure 多重身份验证](https://docs.microsoft.com/azure/multi-factor-authentication/)。 有关 Azure 中多重身份验证的文档的门户页。

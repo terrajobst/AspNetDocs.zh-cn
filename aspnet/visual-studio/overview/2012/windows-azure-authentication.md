@@ -8,16 +8,16 @@ ms.date: 02/20/2013
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 41c4e6d02c965c10aa35b882964f4f04d9b8c44b
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.openlocfilehash: ce98effe18dd739504fb0d5453bae8a46c3ba102
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075146"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457474"
 ---
 # <a name="windows-azure-authentication"></a>Microsoft Azure 身份验证
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 适用于 Windows Azure Active Directory Microsoft ASP.NET 工具使为[Microsoft Azure 网站](https://www.windowsazure.com/home/features/web-sites/)上托管的 web 应用程序启用身份验证变得简单。 您可以使用 Microsoft Azure 身份验证对您的组织中的 Office 365 用户进行身份验证、从您的本地 Active Directory 或用户在自己的自定义 Windows Azure Active Directory 域中创建的用户进行身份验证。 启用 Windows Azure 身份验证可以将应用程序配置为使用单个[Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)租户对用户进行身份验证。
 >

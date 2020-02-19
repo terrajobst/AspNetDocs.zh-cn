@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: b8c901ec30b6d37237f80100a2978350ac389b7a
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: efc3fa0255aa765e515412c5fa4098303a9d9234
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519162"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457019"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>数据分区策略（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -85,7 +85,7 @@ ms.locfileid: "76519162"
 
 只要您在规划到生产环境之前对其进行规划，就可以管理这些问题。 许多人都不想这么做。 平均而言，我们的客户咨询团队（CAT）团队每月从其应用程序 panicked 的客户的每月一次拨打电话。 它们说： "帮助！ 我将所有内容放在一个数据存储区中，在45天内，我将用完了！ 而且，如果你有大量业务逻辑内置于你访问数据存储区的方式，并且你的客户使用的是你的应用程序，那么在迁移时，可能会有一天时间停机。 我们最终会经历 herculean 的工作，帮助客户动态地对数据进行分区，无停机时间。 如果可以避免遇到这种情况，这种方法非常令人兴奋，而且并不是您想要参与的事情！ 考虑到这一点，并将其集成到应用程序中，如果应用程序在以后增长，就会使生活变得更加轻松。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 使用有效的分区方案，你的云应用可以在没有瓶颈的情况下扩展到云中的 pb 数据。 如果你是在本地数据中心运行应用程序，则无需为大规模计算机或大量基础结构付费。 在云中，你可以根据需要增量添加容量，你只需在使用它时付费。
 

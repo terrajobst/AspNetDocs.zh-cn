@@ -8,16 +8,16 @@ ms.date: 11/03/2015
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: fc281e3d8f7c9edd4d98b029a67e58113132a8b3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: e798cb83cfb97db63fef6dc38c8f62804461d01b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583659"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456850"
 ---
 # <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暂时性故障处理（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -80,9 +80,9 @@ ms.locfileid: "74583659"
 
 ## <a name="resources"></a>资源
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
-Documentation
+文档
 
 - [在 Azure 云服务上设计大规模服务的最佳实践](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 通过标记 Simm 和 Michael Thomassy 的白皮书。 与故障保护系列类似，但更详细地介绍了更多操作方法。 请参阅遥测和诊断部分。
 - [防故障：弹性云体系结构的指南](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮书 by Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 防故障视频系列的网页版本。
@@ -98,7 +98,7 @@ Documentation
 
 代码示例
 
-- [Azure 中的云服务基础知识](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 Microsoft Azure Customer 咨询团队创建的示例应用程序，演示如何使用[企业库暂时性故障处理块](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)（TFH）。 有关详细信息，请参阅[云服务基础数据访问层-暂时性故障处理](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)。 建议使用 TFH 直接使用 ADO.NET （不使用实体框架）进行数据库访问。
+- [Azure 中的云服务基础知识](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 Microsoft Azure Customer 咨询团队创建的示例应用程序，演示如何使用[企业库暂时性故障处理块](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)（TFH）。 有关详细信息，请参阅[云服务基础数据访问层 - 临时故障处理](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)。 建议使用 TFH 直接使用 ADO.NET （不使用实体框架）进行数据库访问。
 
 > [!div class="step-by-step"]
 > [上一页](monitoring-and-telemetry.md)

@@ -8,16 +8,16 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 946c88d2b337e3bf634f815c7f1ce045f29d9d84
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 6cef963910b957e8b4ad7c7909385f6dbdff95c1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518734"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456058"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>检查 Edit 方法和编辑视图
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -77,13 +77,13 @@ ms.locfileid: "76518734"
 
 ## <a name="processing-the-post-request"></a>处理 POST 请求
 
-以下列表显示了 `Edit` 操作方法的 `HttpPost` 版本。
+以下列表显示了 `HttpPost` 操作方法的 `Edit` 版本。
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
 [ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx)属性验证视图中 `@Html.AntiForgeryToken()` 调用生成的[XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)标记。
 
-[ASP.NET MVC 模型联编](https://msdn.microsoft.com/library/dd410405.aspx)程序将使用已发布的窗体值，并创建一个作为 `movie` 参数传递的 `Movie` 对象。 `ModelState.IsValid` 验证在表单中提交的数据是否可用于修改（编辑或更新） `Movie` 的对象。 如果数据有效，则影片数据将保存到 `db`（`MovieDBContext` 实例）的 `Movies` 集合。 通过调用 `MovieDBContext`的 `SaveChanges` 方法，将新的电影数据保存到数据库中。 保存数据后，代码将用户重定向到 `MoviesController` 类的 `Index` 操作方法，此方法显示电影集合，包括刚才所做的更改。
+[ASP.NET MVC 模型联编](https://msdn.microsoft.com/library/dd410405.aspx)程序将使用已发布的窗体值，并创建一个作为 `movie` 参数传递的 `Movie` 对象。 `ModelState.IsValid` 验证在表单中提交的数据是否可用于修改（编辑或更新） `Movie` 的对象。 如果数据有效，则影片数据将保存到 `db`（`MovieDBContext` 实例）的 `Movies` 集合。 通过调用 `MovieDBContext`的 `SaveChanges` 方法，将新的电影数据保存到数据库中。 保存数据后，代码将用户重定向到 `Index` 类的 `MoviesController` 操作方法，此方法显示电影集合，包括刚才所做的更改。
 
 一旦客户端验证确定字段的值无效，就会显示一条错误消息。 如果禁用 JavaScript，将禁用客户端验证。 但是，服务器会检测到已发布的值无效，并且将显示错误消息的窗体值。
 
@@ -100,7 +100,7 @@ ms.locfileid: "76518734"
 如果你使用的是美国英语计算机，则可以跳过本部分并转到下一教程。 你可以在[此处](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475)下载本教程的全球化版本。 有关国际化的优秀两部分教程，请参阅[Nadeem 的 ASP.NET MVC 5 国际化](http://afana.me/post/aspnet-mvc-internationalization.aspx)。
 
 > [!NOTE]
-> 若要支持使用逗号（&quot;、&quot;）作为小数点和非美国英语日期格式的非英语区域设置的 jQuery 验证，你必须将*全球*化和特定*区域性/全球化. .js*文件（从[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ）和 JavaScript 用于 `Globalize.parseFloat` 。 可以从 NuGet 获取 jQuery 非英语验证。 （如果使用的是英语区域设置，请不要安装全球化。）
+> 若要支持使用逗号（&quot;、&quot;）作为小数点和非美国英语日期格式的非英语区域设置的 jQuery 验证，你必须将*全球*化和特定*区域性/全球化. .js*文件（从[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ）和 JavaScript 用于 `Globalize.parseFloat`。 可以从 NuGet 获取 jQuery 非英语验证。 （如果使用的是英语区域设置，请不要安装全球化。）
 
 1. 从 "**工具**" 菜单中，单击 " **Nuget 包管理器**"，然后单击 "**管理解决方案的 NuGet 包**"。
 

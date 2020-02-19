@@ -8,16 +8,16 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 44941c9fd0dcd3223604fc4a4f2836f587578acb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: f61810ea7b486b2fa0bbb234edea7541eedde835
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585619"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457058"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>监视和遥测（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -32,7 +32,7 @@ ms.locfileid: "74585619"
 
 云环境的优点之一就是可以很容易地购买或租借您的取胜方式。 遥测是一个示例。 如果没有太多的工作量，您可以非常经济高效地启动并运行非常好的遥测系统。 有很多与 Azure 集成的优秀合作伙伴，其中一些合作伙伴具有免费层–因此，无需获得基本的遥测数据。 下面只是 Azure 中当前可用的几个：
 
-- [新 Relic](http://newrelic.com/)
+- [New Relic](http://newrelic.com/)
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
@@ -58,7 +58,7 @@ ms.locfileid: "74585619"
 
 ![连接信息](monitoring-and-telemetry/_static/image5.png)
 
-在门户中转到 web 应用的 "**配置**" 选项卡，将 "**性能监视**" 设置为 "**外接程序**"，并将 "**选择外接程序**" 下拉列表设置为 "**新 Relic**"。 然后单击 "**保存**"。
+在门户中转到 web 应用的 "**配置**" 选项卡，将 "**性能监视**" 设置为 "**外接程序**"，并将 "**选择外接程序**" 下拉列表设置为 "**新 Relic**"。 然后单击“保存”。
 
 !["配置" 选项卡中的新 Relic](monitoring-and-telemetry/_static/image6.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "74585619"
     ![外部服务](monitoring-and-telemetry/_static/image17.png)
 - 有关世界上或在美国 web 应用流量中的位置的信息。
 
-    ![Geography](monitoring-and-telemetry/_static/image18.png)
+    ![地理位置](monitoring-and-telemetry/_static/image18.png)
 
 您还可以设置报表和事件。 例如，你可以在任何时候开始看到错误，发送一封电子邮件以通知支持人员解决问题。
 
@@ -129,7 +129,7 @@ ms.locfileid: "74585619"
 
 在 .NET System 诊断跟踪中，可以为日志分配错误、警告、信息和调试/详细级别。 你可以通过保留 ACT 日志的错误级别并使用通知日志的较低级别来区分操作与通知日志。
 
-![日志级别](monitoring-and-telemetry/_static/image20.png)
+![日志记录级别](monitoring-and-telemetry/_static/image20.png)
 
 ### <a name="configure-logging-levels-at-run-time"></a>在运行时配置日志记录级别
 
@@ -255,7 +255,7 @@ Fix It 应用使用诊断跟踪。 若要在 web 应用中启用系统诊断日�
 
 ## <a name="resources"></a>资源
 
-有关更多信息，请参见以下资源。
+有关详细信息，请参阅以下资源。
 
 文档主要介绍遥测：
 

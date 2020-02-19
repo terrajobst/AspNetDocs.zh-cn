@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: f97d973d87db895441f813376d757a8a2e94b255
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9357ed5aef39bed501cdac9ac26d46c884d4fae0
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585930"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457175"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -37,14 +37,14 @@ ms.locfileid: "74585930"
 
 该表显示了四种类型的 NoSQL 数据库：
 
-- [键/值数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec7)为每个键值存储单个序列化的对象。 它们适用于存储大量数据，在这些数据中你希望获取给定键值的一个项，而无需基于项的其他属性进行查询。
+- [键/值数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec7)为每个键值存储单个序列化的对象。 它们适用于存储大量数据，其中你希望为每个给定键值获取一个项，并且不必对该项的其他属性进行查询。
 
     [Azure Blob 存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/)是一个键/值数据库，其功能类似于云中的文件存储，其键值对应于文件夹和文件名。 按文件的文件夹和文件名检索文件，而不是通过搜索文件内容中的值。
 
     [Azure 表存储](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/)也是键/值数据库。 每个值都称为*实体*（类似于通过分区键和行键标识的行）并包含多个*属性*（与列相似，但并不是表中的所有实体都必须共享相同的列）。 对键以外的列进行查询非常低效，应避免这样做。 例如，你可以存储用户配置文件数据，其中一个分区存储有关单个用户的信息。 可以将用户名、密码哈希、出生日期等数据存储在一个实体的单独属性中，或存储在同一分区中的单独实体。 但您不希望查询具有给定的出生日期范围的所有用户，也不能在您的配置文件表和另一个表之间执行联接查询。 与关系数据库相比，表存储具有更高的可缩放性和更低的成本，但它不支持复杂的查询或联接。
 - [Documentdatabases](https://msdn.microsoft.com/library/dn313285.aspx#sec8)是键/值数据库，其中的值是*文档*。 此处的 "文档" 不能用于 Word 或 Excel 文档，而是指命名字段和值的集合，其中任何一个都可以是子文档。 例如，在订单历史记录表中，订单文档可能具有订单号、订单日期和客户字段;"客户" 字段可能有 "名称" 和 "地址" 字段。 数据库采用 XML、YAML、JSON 或 BSON 等格式编码字段数据;也可以使用纯文本。 除了键/值数据库外，一项功能是能够查询非键字段并定义辅助索引，从而使查询更有效。 此功能使文档数据库更适合于需要基于比文档键的值更复杂的条件检索数据的应用程序。 例如，在销售订单历史记录文档数据库中，您可以对各种字段进行查询，如产品 ID、客户 ID、客户名称等。 [MongoDB](http://www.mongodb.org/)是一个流行的文档数据库。
 - [列系列数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec9)是键/值数据存储，使你能够将数据存储结构到称为列系列的相关列的集合中。 例如，人口普查数据库可能有一组列用于人员姓名（名字、中间名、姓氏）、一个组作为人员地址，一个组用于个人的个人资料信息（DOB、性别等）。 然后，该数据库可以将每个列系列存储在一个单独的分区中，同时为同一个键的一个人员保留所有数据。 然后，你可以读取所有配置文件信息，而无需通读所有名称和地址信息。 [Cassandra](http://cassandra.apache.org/)是一种常用的列系列数据库。
-- [图形数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec10)以对象和关系的集合的形式存储信息。 Graph 数据库的目的是使应用程序能够有效地执行遍历对象网络的查询和它们之间的关系。 例如，对象可能是人力资源数据库中的员工，你可能想要简化诸如 "查找直接或间接处理 Scott 的所有员工" 之类的查询。 [Neo4j](http://www.neo4j.org/)是一个流行的图形数据库。
+- [图形数据库](https://msdn.microsoft.com/library/dn313285.aspx#sec10)以对象和关系的集合的形式存储信息。 Graph 数据库的目的是使应用程序能够有效地执行遍历对象网络的查询和它们之间的关系。 例如，对象可以是人力资源数据库中的员工，并且你可能希望使“查找直接或间接为 Scott 工作的所有员工”这类查询更为容易。 [Neo4j](http://www.neo4j.org/)是一个流行的图形数据库。
 
 与关系数据库相比，NoSQL 选项为存储和分析非结构化数据提供了更大的可伸缩性和成本效益。 其缺点是它们不提供关系数据库的丰富的 queryability 和强大的数据完整性功能。 NoSQL 适用于 IIS 日志数据，这涉及到大容量，无需联接查询。 NoSQL 不适用于银行交易，这需要绝对的数据完整性，并涉及到与其他与帐户相关的数据的多个关系。
 
@@ -125,7 +125,7 @@ Azure 使 IaaS 数据存储选项尽可能易用，但 PaaS 产品/服务具有�
 - 无需创建 Vm，只需使用门户或脚本即可设置数据存储。 如果需要 200 tb 的数据存储，只需单击一个按钮或运行命令，并在几秒钟后即可使用。
 - 无需管理或修补服务所使用的 Vm;Microsoft 将自动为你执行此功能。-无需担心为缩放或高可用性设置基础结构。Microsoft 将为你处理所有这些。
 - 无需购买许可证;许可费用包括在服务费用内。
-- 你只需为你使用的部分付费。
+- 仅为所用的部分付费。
 
 Azure 中的 PaaS 数据存储选项包含由第三方提供商提供的产品/服务。 例如，可以从 Azure 应用商店中选择[MongoLab 外接程序](https://azure.microsoft.com/documentation/articles/store-mongolab-web-sites-dotnet-store-data-mongodb/)，将 MongoDB 数据库配置为服务。
 
@@ -168,7 +168,7 @@ Fix It 应用使用关系数据库来存储任务。 "[自动完成所有操作"
 
 单击 "**新数据服务**" " -- **SQL 数据库** -- "**快速创建**"，输入数据库名称，选择你的帐户中已有的服务器或创建一个新服务器，然后单击"**创建 SQL 数据库**"。
 
-![新建 SQL 数据库](data-storage-options/_static/image9.png)
+![新 SQL 数据库](data-storage-options/_static/image9.png)
 
 请等待几秒钟，Azure 中有一个供你使用的数据库。
 
@@ -243,7 +243,7 @@ SQL Server 和 Azure SQL 数据库的一大好处是，这两个数据库的核�
 
 下面是有关如何在这两种模型之间进行选择的一些准则。
 
-| Azure SQL Database （PaaS） | 虚拟机（IaaS）中的 SQL Server |
+| Azure SQL 数据库 (PaaS) | 虚拟机（IaaS）中的 SQL Server |
 | --- | --- |
 | **专业人员**-无需创建或管理 vm、更新或修补 OS 或 SQL;Azure 会为你实现此功能。 -具有数据库级 SLA 的内置高可用性。 -低总拥有成本（TCO），因为你只需为你使用的内容付费（无需许可证）。 -适用于处理大量较小的数据库（每个数据库&lt;= 500 GB）。 -轻松动态创建新数据库以启用横向扩展。 | ***优点***-功能与本地 SQL Server 兼容。 -可以通过虚拟机级别的 SLA 在 2 + Vm 中实现 SQL Server[高可用性](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx)。 -你可以完全控制如何管理 SQL。 -可以重新使用已拥有的 SQL 许可证，也可以按小时支付一次。 -适用于处理较少但更大（1 TB +）的数据库。 |
 | **缺点**-与本地 SQL Server （缺少[CLR 集成](https://technet.microsoft.com/library/ms131102.aspx)、 [TDE](https://technet.microsoft.com/library/bb934049.aspx)、[压缩支持](https://technet.microsoft.com/library/cc280449.aspx)、 [SQL SERVER REPORTING SERVICES](https://technet.microsoft.com/library/ms159106.aspx)等）相比，数据库大小限制为500gb。 | ***缺点***-更新/修补程序（OS 和 SQL）你负责创建和管理数据库，这是你的责任磁盘 IOPS （每秒输入/输出操作数），其限制为大约8000（通过16个数据驱动器）。 |
@@ -262,7 +262,7 @@ SQL Server 和 Azure SQL 数据库的一大好处是，这两个数据库的核�
 
 ## <a name="resources"></a>资源
 
-有关更多信息，请参见以下资源。
+有关详细信息，请参阅以下资源。
 
 选择数据库平台：
 

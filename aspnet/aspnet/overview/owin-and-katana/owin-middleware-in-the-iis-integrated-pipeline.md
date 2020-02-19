@@ -1,91 +1,91 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
-title: 在 IIS 中的 OWIN 中间件集成管道 |Microsoft Docs
+title: IIS 集成管道中的 OWIN 中间件 |Microsoft Docs
 author: Praburaj
-description: 本文介绍如何运行 OWIN 中间件组件 (OMCs) 在 IIS 集成管道中，以及如何设置管道事件 OMC 上运行。 应...
+description: 本文介绍如何在 IIS 集成管道中运行 OWIN 中间件组件（OMCs），以及如何设置 OMC 运行的管道事件。 你应 。
 ms.author: riande
 ms.date: 11/07/2013
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: bb1211de0a3fe876f5640538034ab5a58b3a070c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 7d157fb6bd9e2ae9b55af41ef06c1eb5e6310ce1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118229"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456707"
 ---
 # <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 集成管道中的 OWIN 中间件
 
-通过[Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> 本文介绍如何运行 OWIN 中间件组件 (OMCs) 在 IIS 集成管道中，以及如何设置管道事件 OMC 上运行。 你应该查看[项目 Katana 概述](an-overview-of-project-katana.md)并[OWIN 启动类检测](owin-startup-class-detection.md)阅读本教程之前，先。 本教程由 Rick Anderson 编写 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Chris Ross、 Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
+> 本文介绍如何在 IIS 集成管道中运行 OWIN 中间件组件（OMCs），以及如何设置 OMC 运行的管道事件。 阅读本教程之前，应查看项目 Katana 和[OWIN Startup 类检测](owin-startup-class-detection.md)[的概述](an-overview-of-project-katana.md)。 本教程由 Rick Anderson （ [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT) ）、丽丽 Ross、Praburaj Thiagarajan 和 Howard Dierking （ [@howard\_Dierking](https://twitter.com/howard_dierking) ）撰写。
 
-尽管[OWIN](an-overview-of-project-katana.md)中间件组件 (OMCs) 主要用于在服务器不可知管道中运行，可以将 IIS 集成管道中还运行 OMC (**经典模式是*不*支持**)。 OMC 可以进行工作 IIS 集成管道中，通过安装以下包从包管理器控制台 (PMC):
+尽管[OWIN](an-overview-of-project-katana.md)中间件组件（OMCs）主要设计为在服务器不可知的管道中运行，但也可以在 IIS 集成管道中运行 OMC （ ***不*支持经典模式**）。 通过从包管理器控制台安装以下包（PMC），可以在 IIS 集成管道中使用 OMC：
 
 [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample1.cmd)]
 
-这意味着所有应用程序框架，甚至包括那些尚不能运行 IIS 和 System.Web，之外可以受益于现有的 OWIN 中间件组件。 
+这意味着所有应用程序框架（甚至还不能在 IIS 和 system.web 之外运行的框架）都可以从现有的 OWIN 中间件组件受益。 
 
 > [!NOTE]
-> 所有`Microsoft.Owin.Security.*`包随附在 Visual Studio 2013 中新的标识系统 (例如：Cookie、 Microsoft 帐户、 Google、 Facebook、 Twitter[持有者令牌](http://self-issued.info/docs/draft-ietf-oauth-v2-bearer.html)，OAuth 授权服务器，JWT、 Azure Active directory 和 Active directory 联合身份验证服务) 编写为 OMCs，并可在自承载和 IIS 承载的方案。
+> Visual Studio 2013 中的新标识系统附带的所有 `Microsoft.Owin.Security.*` 包（例如： Cookie、Microsoft 帐户、Google、Facebook、Twitter、[持有者令牌](http://self-issued.info/docs/draft-ietf-oauth-v2-bearer.html)、OAuth、授权服务器、JWT、Azure Active Directory 和 Active directory 联合身份验证服务）都是 OMCs，可用于自承载和 IIS 托管方案。
 
-## <a name="how-owin-middleware-executes-in-the-iis-integrated-pipeline"></a>如何在 IIS 集成管道中执行的 OWIN 中间件
+## <a name="how-owin-middleware-executes-in-the-iis-integrated-pipeline"></a>OWIN 中间件在 IIS 集成管道中的执行方式
 
-对于 OWIN 控制台应用程序，应用程序管道使用构建[启动配置](owin-startup-class-detection.md)通过使用添加组件的顺序设置`IAppBuilder.Use`方法。 在 OWIN 管道，即[Katana](an-overview-of-project-katana.md)运行时将使用注册的顺序处理 OMCs `IAppBuilder.Use`。 IIS 集成管道中请求管道组成[HttpModules](https://msdn.microsoft.com/library/ms178468(v=vs.85).aspx)如订阅一组预定义的管道事件[BeginRequest](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx)， [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx)， [AuthorizeRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx)，等等。
+对于 OWIN 控制台应用程序，使用[启动配置](owin-startup-class-detection.md)构建的应用程序管道由使用 `IAppBuilder.Use` 方法添加组件的顺序设置。 也就是说， [Katana](an-overview-of-project-katana.md)运行时中的 OWIN 管道将按照 `IAppBuilder.Use`的注册顺序处理 OMCs。 在 IIS 集成管道中，请求管道由已订阅预定义管道事件集的[HttpModules](https://msdn.microsoft.com/library/ms178468(v=vs.85).aspx) （如[BeginRequest](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx)、 [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx)、 [AuthorizeRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx)等）组成。
 
-如果我们进行比较的 OMC [HttpModule](https://msdn.microsoft.com/library/zec9k340(v=vs.85).aspx)在 ASP.NET 领域中，OMC 必须注册到正确的预定义的管道事件。 例如，HttpModule`MyModule`传入请求时将调用[AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx)管道中的阶段：
+如果比较 OMC 与 ASP.NET 世界[HttpModule](https://msdn.microsoft.com/library/zec9k340(v=vs.85).aspx)的比较，则必须将 OMC 注册到正确的预定义管道事件。 例如，当请求进入管道中的[AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx)阶段时，将会调用 HttpModule `MyModule`：
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample2.cs?highlight=10)]
 
-为了使 OMC 参与此相同的、 基于事件的执行顺序[Katana](an-overview-of-project-katana.md)通过扫描运行时代码[启动配置](owin-startup-class-detection.md)和订阅的每个到中间件组件集成的管道事件。 例如，以下 OMC 和注册代码，可看到中间件组件的默认事件注册。 (有关更多详细创建 OWIN 启动类的说明，请参阅[OWIN 启动类检测](owin-startup-class-detection.md)。)
+为了使 OMC 参与此相同的基于事件的执行排序， [Katana](an-overview-of-project-katana.md)运行时代码将扫描[启动配置](owin-startup-class-detection.md)，并将每个中间件组件订阅到集成管道事件。 例如，以下 OMC 和注册代码使你可以查看中间件组件的默认事件注册。 （有关创建 OWIN startup 类的更多详细说明，请参阅[OWIN Startup Class 检测](owin-startup-class-detection.md)。）
 
-1. 创建一个空的 web 应用程序项目并将其命名**owin2**。
-2. 从包管理器控制台 (PMC) 中，运行以下命令： 
+1. 创建一个空的 web 应用程序项目，并将其命名为**owin2**。
+2. 从包管理器控制台（PMC）运行以下命令： 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample3.cmd)]
-3. 添加`OWIN Startup Class`并将其命名`Startup`。 生成的代码替换为的以下 （突出显示所做的更改）：  
+3. 添加 `OWIN Startup Class`，并将其命名为 `Startup`。 将生成的代码替换为以下代码（更改已突出显示）：  
 
     [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample4.cs?highlight=5-7,15-36)]
-4. 按 F5 运行该应用程序。
+4. 按 F5 运行应用。
 
-启动配置设置了管道，其中包含三个中间件组件，前两个显示诊断信息和对事件作出响应的最后一个 （以及还显示诊断信息）。 `PrintCurrentIntegratedPipelineStage`方法显示此中间件调用的集成的管道事件和消息。 输出窗口显示以下信息：
+启动配置设置具有三个中间件组件的管道，前两个组件显示诊断信息，最后一个事件响应事件（同时显示诊断信息）。 `PrintCurrentIntegratedPipelineStage` 方法显示在其上调用该中间件的集成管道事件和消息。 "输出" 窗口显示以下内容：
 
 [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample5.cmd)]
 
-Katana 运行时映射到的 OWIN 中间件组件的每个[PreExecuteRequestHandler](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx)默认情况下，这对应于 IIS 管道事件[PreRequestHandlerExecute](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx)。
+默认情况下，Katana 运行时将每个 OWIN 中间件组件映射到[PreExecuteRequestHandler](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx) ，这对应于 IIS 管道事件[PreRequestHandlerExecute](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx)。
 
 ## <a name="stage-markers"></a>阶段标记
 
-您可以将标记 OMCs 使用执行特定阶段的管道`IAppBuilder UseStageMarker()`扩展方法。 若要在某个特定阶段期间运行的一组中间件组件，请插入阶段标记后的最后一个组件是在注册过程组。 可以在管道的哪个阶段执行中间件的规则和顺序组件必须运行 （这些规则在本教程后面介绍）。 添加`UseStageMarker`方法`Configuration`代码如下所示：
+使用 `IAppBuilder UseStageMarker()` 扩展方法，可以将 OMCs 标记为在管道的特定阶段执行。 若要在特定阶段运行一组中间件组件，请在注册过程中将最后一个组件设置为之后立即插入一个阶段标记。 可以在管道的哪个阶段执行中间件，以及必须运行的顺序组件（在本教程的后面部分将介绍这些规则）。 将 `UseStageMarker` 方法添加到 `Configuration` 代码，如下所示：
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample6.cs?highlight=13,19)]
 
-`app.UseStageMarker(PipelineStage.Authenticate)`调用配置 （在此情况下，我们两个诊断组件） 的所有以前注册的中间件组件上的身份验证阶段的管道运行。 最后一个中间件组件 （它将显示诊断和响应的请求） 将在上运行`ResolveCache`阶段 ( [ResolveRequestCache](https://msdn.microsoft.com/library/system.web.httpapplication.resolverequestcache.aspx)事件)。
+`app.UseStageMarker(PipelineStage.Authenticate)` 调用将配置之前注册的所有中间件组件（在本例中为两个诊断组件），以便在管道的身份验证阶段运行。 最后一个中间件组件（显示诊断和响应请求）将在 `ResolveCache` 阶段（ [ResolveRequestCache](https://msdn.microsoft.com/library/system.web.httpapplication.resolverequestcache.aspx)事件）上运行。
 
-按 F5 运行该应用程序。输出窗口显示以下信息：
+按 F5 运行应用。"输出" 窗口显示以下内容：
 
 [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample7.cmd)]
 
 ## <a name="stage-marker-rules"></a>阶段标记规则
 
-Owin 中间件组件 (OMC) 可以配置为运行在 OWIN 管道阶段的以下事件：
+Owin 中间件组件（OMC）可以配置为在以下 OWIN 管道阶段事件下运行：
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample8.cs)]
 
-1. 默认情况下，在最后一个事件运行 OMCs (`PreHandlerExecute`)。 这就是为什么我们的第一个示例代码显示"PreExecuteRequestHandler"。
-2. 可以使用`app.UseStageMarker`中列出的方法来注册 OMC 运行更早版本，在 OWIN 管道的任何阶段`PipelineStage`枚举。
-3. OWIN 管道和 IIS 管道的排序，因此调用`app.UseStageMarker`必须按顺序。 不能位于与已注册到的最后一个事件的事件设置事件处理程序`app.UseStageMarker`。 例如，*后*调用：
+1. 默认情况下，OMCs 在最后一个事件（`PreHandlerExecute`）上运行。 这就是我们的第一个示例代码显示为 "PreExecuteRequestHandler" 的原因。
+2. 您可以使用 `app.UseStageMarker` 方法来注册一个 OMC，以便在 `PipelineStage` 枚举中列出的 OWIN 管道的任意阶段运行。
+3. OWIN 管道和 IIS 管道已排序，因此对 `app.UseStageMarker` 的调用必须按顺序排列。 不能将事件处理程序设置为在向注册的最后一个事件之前 `app.UseStageMarker`的事件。 例如，*在调用后*：
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]
 
-   调用`app.UseStageMarker`传递`Authenticate`或`PostAuthenticate`不会遵循，并且会引发任何异常。 在最新的阶段，即默认情况下运行的 OMCs `PreHandlerExecute`。 使用阶段标记以使它们之前运行。 如果指定无序的阶段标记，我们将舍入到的早期标记。 换而言之，添加阶段标记显示"最晚阶段 X 运行"。 OMC 的运行时间最早的阶段标记后添加 OWIN 管道中。
-4. 对调用的最早阶段`app.UseStageMarker`wins。 例如，如果切换顺序`app.UseStageMarker`我们上一示例中的调用：
+   不会传递对 `app.UseStageMarker` 传递 `Authenticate` 或 `PostAuthenticate` 的调用，且不会引发异常。 OMCs 在最新阶段运行，默认情况下 `PreHandlerExecute`。 阶段标记用于使它们在前面运行。 如果按顺序指定阶段标记，我们将舍入到前面的标记。 换言之，添加一个阶段标记显示 "不晚于舞台 X 运行"。 OMC 在 OWIN 管道中添加之后的最早阶段标记处运行。
+4. 调用 `app.UseStageMarker` 入选的最早阶段。 例如，如果从前面的示例中切换 `app.UseStageMarker` 调用的顺序：
 
     [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample10.cs?highlight=13,19)]
 
-   输出窗口将显示： 
+   "输出" 窗口将显示： 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample11.cmd)]
 
-   均在中运行的 OMCs`AuthenticateRequest`阶段，因为使用注册的最后一个 OMC`Authenticate`事件，和`Authenticate`事件之前的所有其他事件。
+   OMCs 在 `AuthenticateRequest` 阶段中运行，因为最后一个 OMC 注册了 `Authenticate` 事件，`Authenticate` 事件在所有其他事件之前。

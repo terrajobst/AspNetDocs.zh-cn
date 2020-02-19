@@ -9,16 +9,16 @@ ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 5f5218ca6c65ed3a2cd39d4e100349efa35d14cd
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.openlocfilehash: 527b4392846e60dae0b216fdeabf21fd6618e4d7
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74115099"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456733"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和电子邮件的双因素身份验证 ASP.NET Identity
 
-作者： [Hao Kung](https://github.com/HaoK)， [Pranav Rastogi 撰写](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
+作者： [Hao Kung](https://github.com/HaoK)， [Pranav Rastogi 撰写](https://github.com/rustd)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程将演示如何使用 SMS 和电子邮件设置双因素身份验证（2FA）。
 > 
@@ -69,7 +69,7 @@ ms.locfileid: "74115099"
 2. **安装其他包或添加服务引用**  
   
    Twilio  
-   在 "程序包管理器控制台" 中，输入以下命令：  
+   在“包管理器控制台”中，输入以下命令：  
     `Install-Package Twilio`  
   
    ASPSMS:  

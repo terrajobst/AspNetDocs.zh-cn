@@ -5,12 +5,12 @@ description: 使用 SameSite cookie 和用于 .NET 的开放 Web 界面（OWIN�
 ms.author: riande
 ms.date: 12/6/2019
 uid: owin-samesite
-ms.openlocfilehash: ac5ae24eeb9e8e1cc6296667a4bebef72c3eb62c
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.openlocfilehash: a3353fd0f0332899aaba26b83aea0ff7c3a6d19b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993075"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455732"
 ---
 # <a name="samesite-cookies-and-the-open-web-interface-for-net-owin"></a>SameSite cookie 和用于 .NET 的开放 Web 接口（OWIN）
 
@@ -74,14 +74,14 @@ owinContext.Response.Cookies.Append("My Key", "My Value", new CookieOptions()
 * 指定默认情况下将 cookie 视为 `SameSite=Lax`。
 * 指定显式断言 `SameSite=None` 以便启用跨站点传递的 cookie 应标记为 `Secure`。 `None` 是选择退出的新项。
 * 默认[情况下，计划](https://chromestatus.com/feature/5088147346030592)在[2020 年2月](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)启用。 浏览器已开始在2019中移动到此标准。
-* 按照知识库文章中的说明，发布的修补程序支持。 有关更多信息，请参见<xref:samesite/kbs-samesite>。
+* 按照知识库文章中的说明，发布的修补程序支持。 有关详细信息，请参阅 <xref:samesite/kbs-samesite>。
 
 <a name="sob"></a>
 
 ## <a name="supporting-older-browsers"></a>支持旧版浏览器
 
 2016 `SameSite` 标准要求必须将未知值视为 `SameSite=Strict` 值。 从支持 2016 `SameSite` 标准的旧版浏览器访问的应用可能会在收到值为 `None`的 `SameSite` 属性时中断。 如果 Web 应用要支持较旧的浏览器，则必须实现浏览器检测。 ASP.NET 不实现浏览器检测，因为用户代理值非常不稳定，并且经常更改。 [ICookieManager](/previous-versions/aspnet/dn800238(v%3Dvs.113))中的扩展点允许插入特定于用户代理的逻辑。
-<!-- https://docs.microsoft.com/en-us/previous-versions/aspnet/dn800238(v%3Dvs.113) -->
+<!-- https://docs.microsoft.com/previous-versions/aspnet/dn800238(v%3Dvs.113) -->
 
 在 `Startup.Configuration`中，添加类似于下面的代码：
 

@@ -8,16 +8,16 @@ ms.date: 05/22/2015
 ms.assetid: 8513a57a-2d45-4d6b-881c-15a01c5cbb1c
 msc.legacyurl: /mvc/overview/getting-started/mvc-learning-sequence
 msc.type: authoredcontent
-ms.openlocfilehash: abaf01ed91dfab8429b872b74c30d4b31a8a2583
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.openlocfilehash: 46b089a896c6b1b92437ff1f5488214a3a0a9838
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445729"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455927"
 ---
 # <a name="mvc-recommended-tutorials-and-articles"></a>MVC 建议的教程和文章
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 <a id="pwd"></a>
 ## <a name="getting-started"></a>入门
@@ -33,7 +33,7 @@ ms.locfileid: "73445729"
 - [使用 MVC 5 Code First 入门](getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)Tom Dykstra 备受好评的系列深入深入到 EF。
 
 <a id="wj"></a>
-## <a name="security"></a>安全
+## <a name="security"></a>安全性
 
 - [使用身份验证和 SQL 数据库创建 ASP.NET MVC 应用并将其部署到 Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)此热门教程介绍了如何创建简单的应用程序，以及如何添加成员身份和角色。
 - [使用 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录创建 ASP.NET MVC 5 应用程序](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)本教程演示如何生成一个 ASP.NET MVC 5 web 应用程序，该应用程序允许用户2.0 使用来自外部身份验证提供程序（如 Facebook、Twitter、LinkedIn、Microsoft 或 Google）的凭据登录。

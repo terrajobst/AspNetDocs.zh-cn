@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 9bf9acb8b4f8521d03c053c124c5fc4a07d6cb9a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 348232af531b5d53dc3cb46d6d2c7931d95a572d
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585657"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457123"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计为可经受故障（通过 Azure 构建实际的云应用）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下载电子书](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -58,7 +58,7 @@ ms.locfileid: "74585657"
 
 Azure 的目标是更轻松地处理所有这些类型的故障，你将在以下章节中看到有关如何执行此操作的一些示例。
 
-## <a name="slas"></a>协议
+## <a name="slas"></a>SLA
 
 人们通常会在云环境中获悉服务级别协议（Sla）。 实质上，它们承诺公司对服务的可靠性。 99.9% 的 SLA 表示预计服务将在99.9% 的时间运行。 这是 SLA 的一个相当典型的值，并且听起来非常多，但你可能不会认识到多少个停机时间的实际数量为0.1%。 下面是一个表，其中显示了不同的 SLA 百分比在一年、一个月和一周内的停机时间。
 
@@ -70,7 +70,7 @@ Azure 的目标是更轻松地处理所有这些类型的故障，你将在以�
 
 当然，我们总是比 SLA 努力做到更好;通常，您的工作时间比此小得多。 承诺是，如果我们的运行时间超过了你可以要求花钱回来的最长时间。 您取回的资金量可能并不能完全补偿您对超出时间的业务影响，但 SLA 的这一环节将充当强制策略，并让您知道我们确实要认真对待。
 
-### <a name="composite-slas"></a>复合 Sla
+### <a name="composite-slas"></a>复合 SLA
 
 查看 Sla 时，需要考虑的一个重要事项是在应用中使用多个服务的影响，每个服务都有一个单独的 SLA。 例如，Fix It 应用使用 Azure App Service Web 应用、Azure 存储和 SQL 数据库。 下面是此电子书在2013年12月撰写的日期：
 

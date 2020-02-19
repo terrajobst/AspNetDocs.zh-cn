@@ -1,99 +1,99 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
-title: 使用 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 3 部分 |Microsoft Docs
+title: 将 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第3部分 |Microsoft Docs
 author: Rick-Anderson
-description: 本教程将讲述如何使用编辑器模板、 显示模板和 jQuery UI datepicker 快捷日历 ASP.NET MV 中的基础知识...
+description: 本教程将指导你了解如何在 ASP.NET MV ... 中使用编辑器模板、显示模板和 jQuery UI datepicker 快捷日历
 ms.author: riande
 ms.date: 08/29/2011
 ms.assetid: 8f5f91ae-12d7-4cf3-ac09-4bb53d07ee60
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 7afc6ab98c1a373e73e175a415e705698744abe7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b3249397e54e64538c4dc78e5fe8b94656e8962b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129591"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457890"
 ---
-# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>使用 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 3 部分
+# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>将 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC 一起使用-第3部分
 
-通过[Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> 本教程将讲述如何使用编辑器模板、 显示模板和 jQuery UI datepicker 快捷日历中的 ASP.NET MVC Web 应用程序的基础知识。
+> 本教程将指导你了解如何在 ASP.NET MVC Web 应用程序中使用编辑器模板、显示模板和 jQuery UI datepicker 快捷日历。
 
 ## <a name="working-with-complex-types"></a>使用复杂类型
 
-在本部分将创建 address 类，并了解如何创建模板，以显示它。
+在本部分中，你将创建一个地址类，并了解如何创建模板来显示它。
 
-在中*模型*文件夹中，创建名为的新类文件*Person.cs*放置两种类型：`Person`类和一个`Address`类。 `Person`类将包含一个属性，它被类型化为`Address`。 `Address`类型是复杂类型，这意味着它不属于内置类型，如`int`， `string`，或`double`。 相反，它具有多个属性。 新的类的代码如下所示：
+在 "*模型*" 文件夹中，创建一个名为*Person.cs*的新类文件，在其中放置两个类型：一个 `Person` 类和一个 `Address` 类。 `Person` 类将包含类型化为 `Address`的属性。 `Address` 类型是一种复杂类型，这意味着它不是 `int`、`string`或 `double`之类的内置类型之一。 相反，它具有多个属性。 新类的代码如下所示：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample1.cs)]
 
-在中`Movie`控制器中，添加以下`PersonDetail`操作以显示 person 实例：
+在 `Movie` 控制器中，添加以下 `PersonDetail` 操作以显示 person 实例：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample2.cs)]
 
-然后将以下代码添加到`Movie`控制器来填充`Person`具有一些示例数据的模型：
+然后，将以下代码添加到 `Movie` 控制器，用一些示例数据填充 `Person` 模型：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample3.cs)]
 
-打开*Views\Movies\PersonDetail.cshtml*文件，并添加以下标记为`PersonDetail`视图。
+打开*Views\Movies\PersonDetail.cshtml*文件并为 "`PersonDetail`" 视图添加以下标记。
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample4.cshtml)]
 
 按 Ctrl + F5 运行应用程序并导航到*电影/PersonDetail*。
 
-`PersonDetail`视图不包含`Address`复杂类型，可以看出，在此屏幕截图。 （不显示为任何地址。）
+`PersonDetail` 视图不包含 `Address` 复杂类型，如此屏幕截图中所示。 （不显示地址。）
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image1.png)
 
-`Address`因为它是一种复杂类型，不显示模型数据。 若要显示的地址信息，请打开*Views\Movies\PersonDetail.cshtml*再次文件，并添加以下标记。
+不显示 `Address` 模型数据，因为它是复杂类型。 若要显示地址信息，请再次打开*Views\Movies\PersonDetail.cshtml*文件并添加以下标记。
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample5.cshtml)]
 
-完整标记`PersonDetail`现在视图如下所示：
+现在 `PersonDetail` 视图的完整标记如下所示：
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample6.cshtml)]
 
-运行一次应用程序并显示`PersonDetail`视图。 现在显示的地址信息：
+再次运行该应用程序并显示 `PersonDetail` 视图。 现在会显示地址信息：
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image2.png)
 
 ### <a name="creating-a-template-for-a-complex-type"></a>为复杂类型创建模板
 
-在本部分将创建将用于呈现模板`Address`复杂类型。 当你创建的模板`Address`类型，ASP.NET MVC 可自动使用它来设置应用程序中的任意位置的地址模型的格式。 这提供了一种方法来控制的呈现`Address`从一个地方即可在应用程序中的类型。
+在本部分中，你将创建一个模板，该模板将用于呈现 `Address` 复杂类型。 为 `Address` 类型创建模板时，ASP.NET MVC 可以自动使用它在应用程序中的任何位置格式化地址模型。 这使你可以仅从应用程序中的一个位置控制 `Address` 类型的呈现。
 
-在中*Views\Shared\DisplayTemplates*文件夹中，创建名为的强类型化分部视图**地址**:
+在*Views\Shared\DisplayTemplates*文件夹中，创建名为**Address**的强类型分部视图：
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image3.png)
 
-单击**外**，然后打开新*Views\Shared\DisplayTemplates\Address.cshtml*文件。 新视图包含以下生成的标记：
+单击 "**添加**"，然后打开新的*Views\Shared\DisplayTemplates\Address.cshtml*文件。 新视图包含以下生成的标记：
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample7.cshtml)]
 
-运行应用程序并显示`PersonDetail`视图。 这一次，`Address`刚创建的模板用于显示`Address`复杂类型，以便显示看起来如下所示：
+运行应用程序并显示 "`PersonDetail`" 视图。 此时，您刚刚创建的 `Address` 模板用于显示 `Address` 复杂类型，因此显示如下所示：
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image4.png)
 
-### <a name="summary-ways-to-specify-the-model-display-format-and-template"></a>摘要:指定的模型显示格式和模板方法
+### <a name="summary-ways-to-specify-the-model-display-format-and-template"></a>摘要：指定模型显示格式和模板的方法
 
-您所见，您可以通过使用以下方法指定的格式或模型属性的模板：
+您已经了解到，您可以使用以下方法为模型属性指定格式或模板：
 
-- 将应用`DisplayFormat`属性为模型中的属性。 例如，下面的代码会导致没有时间的情况下显示的日期：
+- 将 `DisplayFormat` 特性应用于模型中的属性。 例如，以下代码将导致显示不带时间的日期：
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- 将应用[数据类型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)属性中的模型和指定的数据类型的属性。 例如，下面的代码会导致没有时间的情况下显示的日期。
+- 将[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)特性应用于模型中的属性并指定数据类型。 例如，以下代码将导致显示不带时间的日期。
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
-    如果应用程序包含*date.cshtml*中的模板*Views\Shared\DisplayTemplates*文件夹或*Views\Movies\DisplayTemplates*文件夹中，该模板将用于呈现`DateTime`属性。 否则内置的 ASP.NET 模板化系统将显示为日期属性。
-- 创建中的显示模板*Views\Shared\DisplayTemplates*文件夹或*Views\Movies\DisplayTemplates*其名称与你想要设置格式的数据类型相匹配的文件夹。 例如，您会看到*Views\Shared\DisplayTemplates\DateTime.cshtml*用于呈现`DateTime`模型，而无需添加到模型属性，而无需将任何标记添加到视图中的属性。
-- 使用[UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx)模型以指定要显示的模型属性的模板的属性。
-- 显式添加到的显示模板名称[Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx)在视图中调用。
+    如果应用程序在*Views\Shared\DisplayTemplates*文件夹或*Views\Movies\DisplayTemplates*文件夹中包含一个*日期 cshtml*模板，则该模板将用于呈现 `DateTime` 属性。 否则，内置 ASP.NET 模板系统会将属性显示为日期。
+- 在*Views\Shared\DisplayTemplates*文件夹或*Views\Movies\DisplayTemplates*文件夹中创建一个显示模板，其名称与要设置格式的数据类型相匹配。 例如，你发现*Views\Shared\DisplayTemplates\DateTime.cshtml*用于呈现模型中 `DateTime` 属性，而无需将属性添加到模型，也不会向视图添加任何标记。
+- 使用模型上的[UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx)属性来指定用于显示模型属性的模板。
+- 在视图中将显示模板名称显式添加到[DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx)调用。
 
-您使用的方法取决于您需要在你的应用程序中执行操作。 不少见混合使用这些方法以获取确切的类型的格式设置所需的。
+你使用的方法取决于你需要在应用程序中执行的操作。 混合这些方法以获得所需的格式，这种情况并不常见。
 
-在下一步部分中，将切换话题有点并从自定义如何向自定义输入的方式显示数据移动。 将挂接到应用程序，以便提供用于指定日期的巧妙方法中的编辑视图 jQuery datepicker。
+在下一节中，您将稍微切换齿轮，并从自定义数据的显示方式，以自定义如何输入数据。 你将在应用程序的 "编辑" 视图中挂接 jQuery datepicker，以便提供一种巧妙的方法来指定日期。
 
 > [!div class="step-by-step"]
 > [上一页](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

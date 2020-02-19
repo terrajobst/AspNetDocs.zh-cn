@@ -5,16 +5,16 @@ description: 将视图添加到 MVC 应用
 ms.author: riande
 ms.date: 01/23/2019
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 4b369028aca1e8a6cace60466b8049ccc02a2ec2
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 0bc6ac06d12aaee4b2a11c1bf246f9f20f0be017
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519058"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456642"
 ---
 # <a name="adding-a-view"></a>添加视图
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -56,7 +56,7 @@ ms.locfileid: "76519058"
 
 您还可以右键单击该*索引的 cshtml*文件，然后**在 Page Inspector 中选择 "查看"。** 有关详细信息，请参阅[Page Inspector 教程](../../views/using-page-inspector-in-aspnet-mvc.md)。
 
-或者，运行应用程序并浏览到 `HelloWorld` 控制器（`http://localhost:xxxx/HelloWorld`）。 控制器中的 `Index` 方法不会执行大量工作;它只是 `return View()`运行语句，该语句指定方法应使用视图模板文件来呈现对浏览器的响应。 由于未显式指定要使用的视图模板文件的名称，ASP.NET MVC 的默认设置为使用 *Index.cshtml* 视图中的文件 *\Views\HelloWorld* 文件夹。 下图显示了我们的视图模板 &quot;的字符串！视图中&quot; 硬编码。
+或者，运行应用程序并浏览到 `HelloWorld` 控制器（`http://localhost:xxxx/HelloWorld`）。 控制器中的 `Index` 方法不会执行大量工作;它只是 `return View()`运行语句，该语句指定方法应使用视图模板文件来呈现对浏览器的响应。 由于未显式指定要使用的视图模板文件的名称，因此 ASP.NET MVC 默认使用 *\Views\HelloWorld*文件夹中的*视图文件。* 下图显示了我们的视图模板 &quot;的字符串！视图中&quot; 硬编码。
 
 ![](adding-a-view/_static/image6.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "76519058"
 
 使用此 `ViewBag` 方法，可以轻松地在视图模板和布局文件之间传递其他参数。
 
-运行该应用程序。 请注意，浏览器标题、主标题和辅助标题已更改。 （如果没有在浏览器中看到更改，则可能正在查看缓存的内容。 在浏览器中按 Ctrl + F5 来强制加载来自服务器的响应。）浏览器标题是通过在*Index. cshtml*视图模板中设置的 `ViewBag.Title` 创建的，而其他 &quot;电影应用&quot; 添加到布局文件中。
+运行应用程序。 请注意，浏览器标题、主标题和辅助标题已更改。 （如果没有在浏览器中看到更改，则可能正在查看缓存的内容。 在浏览器中按 Ctrl + F5 来强制加载来自服务器的响应。）浏览器标题是通过在*Index. cshtml*视图模板中设置的 `ViewBag.Title` 创建的，而其他 &quot;电影应用&quot; 添加到布局文件中。
 
 另请注意， *Index.* view 模板中的内容是如何与 *\_Layout*视图模板合并的，并向浏览器发送单个 HTML 响应。 凭借布局模板可以很容易地对应用程序中所有页面进行更改。
 

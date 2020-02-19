@@ -8,16 +8,16 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 907a16946c93761cd543135b0b226c8696b041f0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9716def069ca9f7115af32e16381f41bd4d13342
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594643"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457643"
 ---
-# <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 Mobile Features（ASP.NET MVC 4 移动功能）
+# <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 移动功能
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 现在，在[Azure 网站上部署 ASP.NET mvc 5 移动 Web 应用程序](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)的代码示例中提供了本教程的 MVC 5 版本。
 
@@ -39,7 +39,7 @@ ms.locfileid: "74594643"
 - [初学者项目下载](https://go.microsoft.com/fwlink/?linkid=228307&amp;clcid=0x409)
 - [已完成项目下载](https://go.microsoft.com/fwlink/?linkid=228306&amp;clcid=0x409)
 
-### <a name="what-youll-build"></a>你将生成
+### <a name="what-youll-build"></a>所需操作
 
 在本教程中，你将向[初学者项目](https://go.microsoft.com/fwlink/?LinkId=228307)中提供的简单会议列表应用程序添加移动功能。 以下屏幕截图显示了已完成的应用程序的 "标记" 页，如[Windows 7 Phone 模拟器](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)中所示。 请参阅[Windows Phone 模拟器的键盘映射](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx)，简化键盘输入。
 
@@ -59,7 +59,7 @@ ms.locfileid: "74594643"
 
 ### <a name="getting-started"></a>入门
 
-使用以下链接下载初学者项目的会议列表应用程序：[下载](https://go.microsoft.com/fwlink/?LinkId=228307)。 然后在 Windows 资源管理器中，右键单击*mvcmobile.sln*文件，然后选择 "**属性**"。 在 " **Mvcmobile.sln 属性**" 对话框中，选择 "**取消阻止**" 按钮。 （取消阻止后，当你尝试使用从 web 下载的 *.zip*文件时，会阻止出现安全警告。）
+使用以下链接下载初学者项目的会议列表应用程序：[下载](https://go.microsoft.com/fwlink/?LinkId=228307)。 然后在 Windows 资源管理器中，右键单击*mvcmobile.sln*文件，然后选择 "**属性**"。 在 " **Mvcmobile.sln 属性**" 对话框中，选择 "**取消阻止**" 按钮。 （取消阻止后，尝试使用从 Web 下载的 *.zip* 文件时，不再显示安全警告。）
 
 ![p1_unBlock](aspnet-mvc-4-mobile-features/_static/image4.png)
 
@@ -113,13 +113,13 @@ ASP.NET MVC 4 布局文件中的视区 `<meta>` 标记将视区设置为设备�
 
 有关视区 `<meta>` 标记的详细信息，请参阅[第二个视区的 tale](http://www.quirksmode.org/mobile/viewports2.html)。
 
-在下一部分中，你将了解如何提供移动浏览器特定的视图。
+在下一部分中，将了解如何提供移动浏览器特定的视图。
 
 ## <a name="overriding-views-layouts-and-partial-views"></a>重写视图、布局和分部视图
 
-ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏览器、单个移动浏览器或任何特定浏览器重写任何视图（包括布局和分部视图）的简单机制。 若要提供移动特定的视图，你可以复制视图文件并添加 *。移动*到文件名。 例如，若要创建移动*索引*视图，请将*Views\Home\Index.cshtml*复制到*Views\Home\Index.Mobile.cshtml*。
+ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏览器、单个移动浏览器或任何特定浏览器重写任何视图（包括布局和分部视图）的简单机制。 要提供移动特定的视图，可以复制视图文件并在文件名中添加 *.Mobile*。 例如，若要创建移动*索引*视图，请将*Views\Home\Index.cshtml*复制到*Views\Home\Index.Mobile.cshtml*。
 
-在本节中，你将创建一个移动特定布局文件。
+在本节中，将创建一个移动特定布局文件。
 
 若要开始，请将*Views\Shared\\_Layout*中复制到*Views\Shared\\_Layout*。 打开 *\_* **MVC4** ，并将标题从 "会议" 更改为 "**会议（移动）** "。
 
@@ -141,7 +141,7 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 ## <a name="browser-specific-views"></a>特定于浏览器的视图
 
-除了移动特定和桌面特定的视图以外，你还可以为单个浏览器创建视图。 例如，可以创建专门针对 iPhone 浏览器的视图。 在本部分中，你将为 iPhone 浏览器和 iPhone 版本的*AllTags*视图创建布局。
+除了移动特定和桌面特定的视图以外，还可以为单个浏览器创建视图。 例如，可以创建专门针对 iPhone 浏览器的视图。 在本节中，将为 iPhone 浏览器和 iPhone 版本的 *AllTags* 视图创建布局。
 
 打开*global.asax*文件，并将以下代码添加到 `Application_Start` 方法。
 
@@ -149,11 +149,11 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 此代码定义要与每个传入请求匹配的名为“iPhone”的新显示模式。 如果传入请求与定义的条件（即，如果用户代理包含字符串“iPhone”）匹配，则 ASP.NET MVC 将查找名称包含“iPhone”后缀的视图。
 
-在代码中，右键单击 "`DefaultDisplayMode`"，选择 "**解析**"，然后选择 "`using System.Web.WebPages;`"。 这会添加对 `System.Web.WebPages` 命名空间的引用，在该命名空间中定义 `DisplayModes` 和 `DefaultDisplayMode` 类型。
+在代码中右键单击 `DefaultDisplayMode`，选择“解析”，并选择 `using System.Web.WebPages;`。 这会向 `System.Web.WebPages` 命名空间添加引用，该命名空间中定义了 `DisplayModes` 和 `DefaultDisplayMode` 类型。
 
 [![p2_resolve](aspnet-mvc-4-mobile-features/_static/image16.png)](aspnet-mvc-4-mobile-features/_static/image15.png)
 
-或者，只需将以下行手动添加到文件的 `using` 部分。
+或者，也可以简单地将以下行手动添加到文件的 `using` 章节。
 
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample8.cs)]
 
@@ -161,15 +161,15 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample9.cs)]
 
-保存所做更改。 将*MvcMobile\Views\Shared\\_Layout*文件复制到*MvcMobile\Views\Shared\\_Layout*。 打开新文件，然后将 `h1` 标题从 "`Conference (Mobile)`" 更改为 "`Conference (iPhone)`"。
+保存更改。 将*MvcMobile\Views\Shared\\_Layout*文件复制到*MvcMobile\Views\Shared\\_Layout*。 打开新文件，然后将 `h1` 标题从 "`Conference (Mobile)`" 更改为 "`Conference (iPhone)`"。
 
 将*MvcMobile\Views\Home\AllTags.Mobile.cshtml*文件复制到*MvcMobile\Views\Home\AllTags.iPhone.cshtml*。 在新文件中，将 `<h2>` 元素从 "Tags （M）" 更改为 "Tags （iPhone）"。
 
-运行该应用程序。 运行移动浏览器模拟器，确保将其用户代理设置为 "iPhone"，并浏览到*AllTags*视图。 以下屏幕截图显示了[Safari](http://www.apple.com/safari/download/)浏览器中呈现的*AllTags*视图。 可在[此处](https://support.apple.com/kb/DL1531)下载适用于 Windows 的 Safari。
+运行应用程序。 运行移动浏览器模拟器，确保将其用户代理设置为“iPhone”，并浏览到 *AllTags* 视图。 以下屏幕截图显示了[Safari](http://www.apple.com/safari/download/)浏览器中呈现的*AllTags*视图。 可在[此处](https://support.apple.com/kb/DL1531)下载适用于 Windows 的 Safari。
 
 [![p2_iphoneView](aspnet-mvc-4-mobile-features/_static/image18.png)](aspnet-mvc-4-mobile-features/_static/image17.png)
 
-在本部分中，我们已了解如何创建移动布局和视图，以及如何为特定的设备（如 iPhone）创建布局和视图。 在下一部分中，你将了解如何利用 jQuery Mobile 获得更引人注目的移动视图。
+在本节中，我们已了解如何创建移动布局和视图，以及如何为特定的设备（如 iPhone）创建布局和视图。 在下一部分中，你将了解如何利用 jQuery Mobile 获得更引人注目的移动视图。
 
 ## <a name="using-jquery-mobile"></a>使用 jQuery Mobile
 
@@ -221,7 +221,7 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample13.cshtml)]
 
-构建应用程序，在移动浏览器模拟器中浏览到*AllTags*视图。 您会看到如下内容：
+构建应用程序，在移动浏览器模拟器中浏览到*AllTags*视图。 会看到如下内容：
 
 [![p3_afterNuGet](aspnet-mvc-4-mobile-features/_static/image23.png)](aspnet-mvc-4-mobile-features/_static/image22.png)
 
@@ -255,7 +255,7 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 
 ## <a name="improving-the-speakers-list"></a>改进发言人列表
 
-在移动浏览器中，选择 "**发言人**" 链接。 因为没有移动视图（*allspeakers.mobile.cshtml*），所以使用移动布局视图（ *\_* allspeakers.mobile.cshtml）呈现默认的演讲者（）（可能为英语）。
+在移动浏览器中，选择“发言人”链接。 因为没有移动视图（*allspeakers.mobile.cshtml*），所以使用移动布局视图（ *\_* allspeakers.mobile.cshtml）呈现默认的演讲者（）（可能为英语）。
 
 [![p3_speakersDeskTop](aspnet-mvc-4-mobile-features/_static/image31.png)](aspnet-mvc-4-mobile-features/_static/image30.png)
 
@@ -386,9 +386,9 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 - 移动视图的视图切换器小组件（而不是在桌面视图中显示）。
 - 支持特定的浏览器，例如 iPhone 浏览器。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [JQuery mobile](http://jquerymobile.com)站点。
 - [jQuery Mobile 概述](http://jquerymobile.com/demos/1.0b3/docs/about/intro.html)
-- [W3C 建议移动 Web 应用程序最佳做法](http://www.w3.org/TR/mwabp/)
-- [用于媒体查询的 W3C 候选建议](http://www.w3.org/TR/css3-mediaqueries/)
+- [W3C 建议移动 Web 应用程序的最佳做法](http://www.w3.org/TR/mwabp/)
+- [用于媒体查询的 W3C 候选建议方案](http://www.w3.org/TR/css3-mediaqueries/)

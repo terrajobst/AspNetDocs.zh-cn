@@ -2,25 +2,25 @@
 uid: webhooks/diagnostics/logging
 title: ASP.NET Webhook 日志记录 |Microsoft Docs
 author: rick-anderson
-description: 如何执行 ASP.NET Webhook 中的日志记录。
+description: 如何在 ASP.NET Webhook 中进行日志记录。
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: f71bc442-5f80-481b-a32c-a0ec18dee9d6
-ms.openlocfilehash: 2e86d519c24da102075b4da0a32787c90deb0f6b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a05b32c4a8f9577bcf6170bd19a9e440b1aeb75b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061234"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457578"
 ---
 # <a name="aspnet-webhooks-logging"></a>ASP.NET Webhook 日志记录
 
-Microsoft ASP.NET Webhook 作为报告出现的问题的一种方法需要使用日志记录。 默认情况下使用写入日志[System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace)它们可以托管使用[跟踪侦听器](https://msdn.microsoft.com/library/system.diagnostics.tracelistener.aspx)像任何其他日志流。
+Microsoft ASP.NET Webhook 使用日志记录作为报告问题和问题的一种方式。 默认情况下，使用托管编写日志，使用[跟踪侦听器](https://msdn.microsoft.com/library/system.diagnostics.tracelistener.aspx)（如任何其他日志流）可以对其进行[。](https://msdn.microsoft.com/library/system.diagnostics.trace)
 
-在部署 Web 应用程序作为 Azure Web 应用，自动选取的日志，并可以与任何其他托管[System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace)日志记录。 有关详细信息，请参阅[启用 Azure 应用服务中的 web 应用的诊断日志记录](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/)
+将 Web 应用程序部署为 Azure Web 应用时，将自动提取日志，并可将其与任何其他[诊断](https://msdn.microsoft.com/library/system.diagnostics.trace)日志记录一起进行管理。 有关详细信息，请参阅[在 Azure App Service 中启用 web 应用的诊断日志记录](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/)
 
-此外，日志可以获取直接来自在 Visual Studio 中所述[使用 Visual Studio 的 Azure 应用服务中 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs)。
+此外，可以直接从 Visual Studio 内部获取日志，如[使用 Visual studio 在 Azure App Service 中对 web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs)中所述。
 
-## <a name="redirecting-logs"></a>将日志重定向
+## <a name="redirecting-logs"></a>重定向日志
 
-而不是写入到日志[System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace)，则可以提供一种备用日志记录实现，如记录到日志管理器直接[Log4Net](http://logging.apache.org/log4net/)和[NLog](http://nlog-project.org/). 只需提供的实现[ILogger](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Common/Diagnostics/ILogger.cs)并将其注册到所选的依赖项注入引擎并将获取 Microsoft ASP.NET Webhook 选取。 请参阅[ASP.NET Web API 2 中的依赖关系注入](https://www.asp.net/web-api/overview/advanced/dependency-injection)有关详细信息。
+可以提供可直接记录到日志管理器（例如[Log4Net](http://logging.apache.org/log4net/)和[NLog](http://nlog-project.org/)）的备用日志记录实现，而不是将日志[写入到 system.exception。](https://msdn.microsoft.com/library/system.diagnostics.trace) 只需提供[ILogger](https://github.com/aspnet/AspNetWebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Common/Diagnostics/ILogger.cs)的实现，并将其注册到所选的依赖项注入引擎，并 Microsoft ASP.NET webhook 获取它。 有关详细信息，请参阅[ASP.NET Web API 2 中的依赖关系注入](https://www.asp.net/web-api/overview/advanced/dependency-injection)。

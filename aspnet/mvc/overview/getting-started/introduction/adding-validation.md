@@ -8,16 +8,16 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 67df1a473cd13a651c1276054b93f34323479082
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: f508d9e38dab5cc4cc44cc5aaa4eae87cf273bd5
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519019"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456045"
 ---
 # <a name="adding-validation"></a>添加验证
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -124,7 +124,7 @@ Code First 确保在应用程序将更改保存到数据库中之前，强制执
 
 ## <a name="using-datatype-attributes"></a>使用 DataType 特性
 
-打开 Movie.cs 文件并检查 `Movie` 类。 除了内置的验证特性集外， [`System.ComponentModel.DataAnnotations`](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间还提供格式特性。 已将[`DataType`](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)枚举值应用于发布日期和价格字段。 下面的代码演示具有相应[`DataType`](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)特性的 `ReleaseDate` 和 `Price` 属性。
+打开 Movie.cs 文件并检查  *类*`Movie`。 除了内置的验证特性集外， [`System.ComponentModel.DataAnnotations`](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空间还提供格式特性。 已将[`DataType`](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)枚举值应用于发布日期和价格字段。 下面的代码演示具有相应[`DataType`](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)特性的 `ReleaseDate` 和 `Price` 属性。
 
 [!code-csharp[Main](adding-validation/samples/sample7.cs)]
 

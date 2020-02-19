@@ -8,16 +8,16 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: fb7e76101cbe6a874ddf5b3429ca2dc6d474334b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1965063a9b613d0e2857cddcc2165f5fda64ec0c
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595765"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455524"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和网页中的 XSRF/CSRF 防护
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 跨站点请求伪造（也称为 XSRF 或 CSRF）是一种针对 Web 托管型应用程序的攻击，恶意网站凭此可以影响客户端浏览器与受该浏览器信任的网站之间的交互。 这些攻击出现的原因可能是 Web 浏览器针对每一个对网站的请求自动发送身份验证令牌。 典型示例是身份验证 cookie，如 ASP.NET 的表单身份验证票证。 然而，使用任何持久身份验证（如 Windows Authentication、Basic 等）的网站也可能成为受攻击目标。
 > 
@@ -159,13 +159,13 @@ XSRF 设施还可以在令牌生成或验证过程中执行额外检查，这些
 
 开发人员可以从应用程序\_开始配置 XSRF 系统。 配置是以编程方式进行的。 下面描述了静态*AntiForgeryConfig*类型的属性。 大多数使用声明的用户都要设置 UniqueClaimTypeIdentifier 属性。
 
-| **Property** | **描述** |
+| **属性** | **说明** |
 | --- | --- |
-| **AdditionalDataProvider** | 在令牌生成过程中提供附加数据并在令牌验证期间使用其他数据的[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 。 默认值为*null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
-| **CookieName** | 一个字符串，它提供用于存储 XSRF 会话令牌的 HTTP cookie 的名称。 如果未设置此值，将根据应用程序的已部署虚拟路径自动生成名称。 默认值为*null*。 |
-| **RequireSsl** | 一个布尔值，指示是否需要在受 SSL 保护的通道上提交 XSRF 令牌。 如果此值为*true*，则自动生成的任何 cookie 都将设置 "安全" 标志，并在从未通过 SSL 提交的请求内调用时，将引发 XSRF api。 默认值为“false”。 |
-| **SuppressIdentityHeuristicChecks** | 一个布尔值，指示 XSRF 系统是否应停用其对基于声明的标识的支持。 如果此值为*true*，则系统将假设*IIdentity.Name*适用于用作唯一的每用户标识符，并且不会尝试如 WIF/ACS/中所述的特殊情况*IClaimsIdentity*或*ClClaimsIdentity* [基于声明的身份验证](#_WIF_ACS)部分。 默认值为 `false`。 |
-| **UniqueClaimTypeIdentifier** | 一个字符串，指示哪种声明类型适用于每个用户的唯一标识符。 如果设置了此值并且当前*IIdentity*是基于声明的，则系统将尝试提取*UniqueClaimTypeIdentifier*指定的类型的声明，并将在以下情况下使用相应的值来代替用户的用户名。正在生成字段标记。 如果找不到声明类型，则系统将无法请求。 默认值为*null*，指示系统应使用（标识提供者、名称标识符）元组作为前面介绍的替代用户的用户名。 |
+| **AdditionalDataProvider** | 在令牌生成过程中提供附加数据并在令牌验证期间使用其他数据的[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 。 默认值为 *null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
+| **CookieName** | 一个字符串，它提供用于存储 XSRF 会话令牌的 HTTP cookie 的名称。 如果未设置此值，将根据应用程序的已部署虚拟路径自动生成名称。 默认值为 *null*。 |
+| **RequireSsl** | 一个布尔值，指示是否需要在受 SSL 保护的通道上提交 XSRF 令牌。 如果此值为*true*，则自动生成的任何 cookie 都将设置 "安全" 标志，并在从未通过 SSL 提交的请求内调用时，将引发 XSRF api。 默认值是 *false*秒。 |
+| **SuppressIdentityHeuristicChecks** | 一个布尔值，指示 XSRF 系统是否应停用其对基于声明的标识的支持。 如果此值为*true*，则系统将假设*IIdentity.Name*适用于用作唯一的每用户标识符，并且不会尝试按[WIF/ACS/基于声明的身份验证](#_WIF_ACS)部分所述尝试使用特殊的*IClaimsIdentity*或*ClClaimsIdentity* 。 默认值是 `false`。 |
+| **UniqueClaimTypeIdentifier** | 一个字符串，指示哪种声明类型适用于每个用户的唯一标识符。 如果设置了此值并且当前*IIdentity*是基于声明的，则系统将尝试提取*UniqueClaimTypeIdentifier*指定的类型的声明，并在生成字段标记时使用相应的值来代替用户的用户名。 如果找不到声明类型，则系统将无法请求。 默认值为*null*，指示系统应使用（标识提供者、名称标识符）元组作为前面介绍的替代用户的用户名。 |
 
 <a id="_IAntiForgeryAdditionalDataProvider"></a>
 
@@ -185,6 +185,6 @@ XSRF 例程当前不防御[点击劫持](https://www.owasp.org/index.php/Clickja
 
 Web 开发人员应继续确保其网站不会受到 XSS 攻击。 XSS 攻击非常强大，成功利用漏洞还会破坏 ASP.NET Web Stack 运行时防御 XSRF 攻击。
 
-## <a name="acknowledgment"></a>回执
+## <a name="acknowledgment"></a>确认
 
 [@LeviBroderick](https://twitter.com/LeviBroderick)，其中大部分 ASP.NET 的安全代码都是此信息。

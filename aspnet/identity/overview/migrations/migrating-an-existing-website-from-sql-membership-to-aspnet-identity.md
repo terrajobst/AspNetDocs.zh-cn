@@ -9,16 +9,16 @@ ms.custom: seoapril2019
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: eacfbb8a5b2d1aa3678892bc2077a56185fdebbc
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 633229cc4311d151121bf6a91b9fa8aeecca1197
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519149"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456148"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>将现有网站从 SQL 成员身份迁移到 ASP.NET Identity
 
-作者： [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
+作者： [Rick Anderson](https://twitter.com/RickAndMSFT)， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教程演示了将现有 web 应用程序与使用 SQL 成员身份创建的用户和角色数据迁移到新的 ASP.NET Identity 系统的步骤。 此方法涉及将现有数据库架构更改为 ASP.NET Identity 所需的架构，并将旧的/新类中的挂钩到它。 在采用此方法之后，迁移数据库后，将会轻松地处理对标识的后续更新。
 
@@ -83,29 +83,29 @@ ms.locfileid: "76519149"
 
 为了使 ASP.NET Identity 类能够与现有用户的数据一起使用，我们需要将数据库架构迁移到 ASP.NET Identity 所需的架构。 为此，可以添加新表并将现有信息复制到这些表。 默认情况下 ASP.NET Identity 使用 EntityFramework 将标识模型类映射回数据库，以存储/检索信息。 这些模型类实现定义用户和角色对象的核心标识接口。 数据库中的表和列基于这些模型类。 标识 v 2.1.0 中的 EntityFramework 模型类及其属性如下所定义
 
-| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | 类型 | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
-| Id | string | Id | RoleId | ProviderKey | Id |
-| 用户名 | string | Name | UserId | UserId | ClaimType |
-| PasswordHash | string |  |  | LoginProvider | ClaimValue |
-| SecurityStamp | string |  |  |  | 用户\_Id |
-| 电子邮件 | string |  |  |  |  |
-| EmailConfirmed | 布尔 |  |  |  |  |
-| PhoneNumber | string |  |  |  |  |
-| PhoneNumberConfirmed | 布尔 |  |  |  |  |
-| LockoutEnabled | 布尔 |  |  |  |  |
+| ID | 字符串 | ID | RoleId | ProviderKey | ID |
+| 用户名 | 字符串 | 名称 | UserId | UserId | ClaimType |
+| PasswordHash | 字符串 |  |  | LoginProvider | ClaimValue |
+| SecurityStamp | 字符串 |  |  |  | 用户\_Id |
+| 电子邮件 | 字符串 |  |  |  |  |
+| EmailConfirmed | bool |  |  |  |  |
+| PhoneNumber | 字符串 |  |  |  |  |
+| PhoneNumberConfirmed | bool |  |  |  |  |
+| LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
 | AccessFailedCount | int |  |  |  |  |
 
 对于其中的每个模型，我们都需要具有与属性相对应的列。 类和表之间的映射是在 `IdentityDBContext`的 `OnModelCreating` 方法中定义的。 这称为配置的 Fluent API 方法，可在[此处](https://msdn.microsoft.com/data/jj591617.aspx)找到详细信息。 如下所述，类的配置如下所示
 
-| **类** | **Table** | **主键** | **外键** |
+| **类** | **表** | **主键** | **外键** |
 | --- | --- | --- | --- |
-| IdentityUser | AspnetUsers | Id |  |
-| IdentityRole | AspnetRoles | Id |  |
+| IdentityUser | AspnetUsers | ID |  |
+| IdentityRole | AspnetRoles | ID |  |
 | IdentityUserRole | AspnetUserRole | UserId + RoleId | User\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
 | IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | Id | User\_Id-&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | ID | 用户\_Id-&gt;AspnetUsers |
 
 利用此信息，我们可以创建 SQL 语句来创建新表。 我们可以单独编写每个语句，或使用 EntityFramework PowerShell 命令生成整个脚本，然后可以根据需要进行编辑。 为此，请在 VS 从 "**视图**" 或 "**工具**" 菜单中打开 "**程序包管理器控制台**"
 
@@ -129,7 +129,7 @@ ms.locfileid: "76519149"
 
 此脚本文件特定于此示例。 对于具有其他表的应用程序，开发人员可以遵循类似的方法在用户模型类上添加其他属性，并将其映射到 AspnetUsers 表中的列。 若要运行该脚本，
 
-1. 打开“服务器资源管理器”。 展开 "Microsoft.visualbasic.applicationservices.cantstartsingleinstanceexception" 连接以显示表。 右键单击 "表" 节点，然后选择 "新建查询" 选项
+1. 打开 Server Explorer。 展开 "Microsoft.visualbasic.applicationservices.cantstartsingleinstanceexception" 连接以显示表。 右键单击 "表" 节点，然后选择 "新建查询" 选项
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image7.png)
 2. 在查询窗口中，复制并粘贴从 "迁移" 文件中的整个 SQL 脚本。 通过按 "执行" 箭头按钮来运行脚本文件。
@@ -144,7 +144,7 @@ ms.locfileid: "76519149"
 
     下面介绍如何将 SQL 成员资格表中的信息映射到新的标识系统。
 
-    aspnet\_Roles --&gt; AspNetRoles
+    aspnet\_角色--&gt; AspNetRoles
 
     asp\_netUsers 和 asp\_netMembership--&gt; AspNetUsers
 
