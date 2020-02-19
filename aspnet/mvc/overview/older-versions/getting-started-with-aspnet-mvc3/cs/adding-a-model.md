@@ -1,91 +1,91 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
-title: 添加模型 (C#) |Microsoft Docs
+title: 添加模型（C#） |Microsoft Docs
 author: Rick-Anderson
-description: 注意:本教程中的更新的版本提供了使用 ASP.NET MVC 5 和 Visual Studio 2013。 它是更安全、 更易于遵循，并演示...
+description: 注意：本教程的更新版本可在此处使用 ASP.NET MVC 5 和 Visual Studio 2013。 更安全、更简单的操作和演示 。
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: 42355b95-5f1f-413e-8d16-14cdfaaefcd8
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 8cf8693b71509163860c78a87370c4765414fd5d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: a5f494eaa05bcfcd9d49873db728d71c1fd332c8
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130340"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457775"
 ---
-# <a name="adding-a-model-c"></a><span data-ttu-id="954ee-104">添加模型 (C#)</span><span class="sxs-lookup"><span data-stu-id="954ee-104">Adding a Model (C#)</span></span>
+# <a name="adding-a-model-c"></a><span data-ttu-id="5110f-104">添加模型 (C#)</span><span class="sxs-lookup"><span data-stu-id="5110f-104">Adding a Model (C#)</span></span>
 
-<span data-ttu-id="954ee-105">通过[Rick Anderson]((https://twitter.com/RickAndMSFT))</span><span class="sxs-lookup"><span data-stu-id="954ee-105">by [Rick Anderson]((https://twitter.com/RickAndMSFT))</span></span>
+<span data-ttu-id="5110f-105">作者： [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="5110f-105">by [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-> <span data-ttu-id="954ee-106">本教程将讲述构建使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，这是免费版本的 Microsoft Visual Studio 的 ASP.NET MVC Web 应用程序的基础知识。</span><span class="sxs-lookup"><span data-stu-id="954ee-106">This tutorial will teach you the basics of building an ASP.NET MVC Web application using Microsoft Visual Web Developer 2010 Express Service Pack 1, which is a free version of Microsoft Visual Studio.</span></span> <span data-ttu-id="954ee-107">在开始之前，请确保已安装以下列出的先决条件。</span><span class="sxs-lookup"><span data-stu-id="954ee-107">Before you start, make sure you've installed the prerequisites listed below.</span></span> <span data-ttu-id="954ee-108">可以通过单击以下链接安装所有这些：[Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。</span><span class="sxs-lookup"><span data-stu-id="954ee-108">You can install all of them by clicking the following link: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack).</span></span> <span data-ttu-id="954ee-109">或者，可以单独安装系统必备组件，使用以下链接：</span><span class="sxs-lookup"><span data-stu-id="954ee-109">Alternatively, you can individually install the prerequisites using the following links:</span></span>
+> <span data-ttu-id="5110f-106">本教程将教你如何使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 （Microsoft Visual Studio 免费版）生成 ASP.NET MVC Web 应用程序的基础知识。</span><span class="sxs-lookup"><span data-stu-id="5110f-106">This tutorial will teach you the basics of building an ASP.NET MVC Web application using Microsoft Visual Web Developer 2010 Express Service Pack 1, which is a free version of Microsoft Visual Studio.</span></span> <span data-ttu-id="5110f-107">在开始之前，请确保已安装下列必备组件。</span><span class="sxs-lookup"><span data-stu-id="5110f-107">Before you start, make sure you've installed the prerequisites listed below.</span></span> <span data-ttu-id="5110f-108">可以通过单击以下链接安装所有这些[程序： Web 平台安装程序](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。</span><span class="sxs-lookup"><span data-stu-id="5110f-108">You can install all of them by clicking the following link: [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack).</span></span> <span data-ttu-id="5110f-109">或者，你可以使用以下链接单独安装必备组件：</span><span class="sxs-lookup"><span data-stu-id="5110f-109">Alternatively, you can individually install the prerequisites using the following links:</span></span>
 > 
-> - [<span data-ttu-id="954ee-110">Visual Studio Web Developer Express SP1 必备组件</span><span class="sxs-lookup"><span data-stu-id="954ee-110">Visual Studio Web Developer Express SP1 prerequisites</span></span>](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [<span data-ttu-id="954ee-111">ASP.NET MVC 3 工具更新</span><span class="sxs-lookup"><span data-stu-id="954ee-111">ASP.NET MVC 3 Tools Update</span></span>](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - <span data-ttu-id="954ee-112">[SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（运行时和工具支持）</span><span class="sxs-lookup"><span data-stu-id="954ee-112">[SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(runtime + tools support)</span></span>
+> - [<span data-ttu-id="5110f-110">Visual Studio Web Developer Express SP1 必备组件</span><span class="sxs-lookup"><span data-stu-id="5110f-110">Visual Studio Web Developer Express SP1 prerequisites</span></span>](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
+> - [<span data-ttu-id="5110f-111">ASP.NET MVC 3 工具更新</span><span class="sxs-lookup"><span data-stu-id="5110f-111">ASP.NET MVC 3 Tools Update</span></span>](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - <span data-ttu-id="5110f-112">[SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（运行时 + 工具支持）</span><span class="sxs-lookup"><span data-stu-id="5110f-112">[SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(runtime + tools support)</span></span>
 > 
-> <span data-ttu-id="954ee-113">如果您使用 Visual Studio 2010 而不 Visual Web Developer 2010，请通过单击以下链接安装必备组件：[Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。</span><span class="sxs-lookup"><span data-stu-id="954ee-113">If you're using Visual Studio 2010 instead of Visual Web Developer 2010, install the prerequisites by clicking the following link: [Visual Studio 2010 prerequisites](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).</span></span>
+> <span data-ttu-id="5110f-113">如果你使用的是 Visual Studio 2010 而不是 Visual Web Developer 2010，请通过单击以下链接安装必备组件： [Visual Studio 2010 必备组件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。</span><span class="sxs-lookup"><span data-stu-id="5110f-113">If you're using Visual Studio 2010 instead of Visual Web Developer 2010, install the prerequisites by clicking the following link: [Visual Studio 2010 prerequisites](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).</span></span>
 > 
-> <span data-ttu-id="954ee-114">可随附于此项目具有 C# 源代码的 Visual Web Developer 项目。</span><span class="sxs-lookup"><span data-stu-id="954ee-114">A Visual Web Developer project with C# source code is available to accompany this topic.</span></span> <span data-ttu-id="954ee-115">[下载 C# 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。</span><span class="sxs-lookup"><span data-stu-id="954ee-115">[Download the C# version](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098).</span></span> <span data-ttu-id="954ee-116">如果您喜欢 Visual Basic，切换到[Visual Basic 版本](../vb/adding-a-model.md)本教程。</span><span class="sxs-lookup"><span data-stu-id="954ee-116">If you prefer Visual Basic, switch to the [Visual Basic version](../vb/adding-a-model.md) of this tutorial.</span></span>
+> <span data-ttu-id="5110f-114">本主题提供了包含C#源代码的 Visual Web Developer 项目。</span><span class="sxs-lookup"><span data-stu-id="5110f-114">A Visual Web Developer project with C# source code is available to accompany this topic.</span></span> <span data-ttu-id="5110f-115">[下载C#版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。</span><span class="sxs-lookup"><span data-stu-id="5110f-115">[Download the C# version](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098).</span></span> <span data-ttu-id="5110f-116">如果希望 Visual Basic，请切换到本教程的[Visual Basic 版本](../vb/adding-a-model.md)。</span><span class="sxs-lookup"><span data-stu-id="5110f-116">If you prefer Visual Basic, switch to the [Visual Basic version](../vb/adding-a-model.md) of this tutorial.</span></span>
 
-## <a name="adding-a-model"></a><span data-ttu-id="954ee-117">添加模型</span><span class="sxs-lookup"><span data-stu-id="954ee-117">Adding a Model</span></span>
+## <a name="adding-a-model"></a><span data-ttu-id="5110f-117">添加模型</span><span class="sxs-lookup"><span data-stu-id="5110f-117">Adding a Model</span></span>
 
-<span data-ttu-id="954ee-118">在本部分中将添加用于管理数据库中的电影的一些类。</span><span class="sxs-lookup"><span data-stu-id="954ee-118">In this section you'll add some classes for managing movies in a database.</span></span> <span data-ttu-id="954ee-119">这些类将 ASP.NET MVC 应用程序的"模型"部分。</span><span class="sxs-lookup"><span data-stu-id="954ee-119">These classes will be the "model" part of the ASP.NET MVC application.</span></span>
+<span data-ttu-id="5110f-118">在本部分中，你将添加一些用于在数据库中管理电影的类。</span><span class="sxs-lookup"><span data-stu-id="5110f-118">In this section you'll add some classes for managing movies in a database.</span></span> <span data-ttu-id="5110f-119">这些类将是 ASP.NET MVC 应用程序的 "模型" 部分。</span><span class="sxs-lookup"><span data-stu-id="5110f-119">These classes will be the "model" part of the ASP.NET MVC application.</span></span>
 
-<span data-ttu-id="954ee-120">将使用名为实体框架的.NET Framework 数据访问技术来定义和使用这些模型的类。</span><span class="sxs-lookup"><span data-stu-id="954ee-120">You'll use a .NET Framework data-access technology known as the Entity Framework to define and work with these model classes.</span></span> <span data-ttu-id="954ee-121">实体框架 （通常称为 EF） 支持开发模式称为*Code First*。</span><span class="sxs-lookup"><span data-stu-id="954ee-121">The Entity Framework (often referred to as EF) supports a development paradigm called *Code First*.</span></span> <span data-ttu-id="954ee-122">代码首先允许你通过编写简单的类来创建模型对象。</span><span class="sxs-lookup"><span data-stu-id="954ee-122">Code First allows you to create model objects by writing simple classes.</span></span> <span data-ttu-id="954ee-123">（这些也称为是 POCO 类，从"纯旧式 CLR 对象"。）然后，您可以实现很整洁且快速的开发工作流的类，从动态创建的数据库。</span><span class="sxs-lookup"><span data-stu-id="954ee-123">(These are also known as POCO classes, from "plain-old CLR objects.") You can then have the database created on the fly from your classes, which enables a very clean and rapid development workflow.</span></span>
+<span data-ttu-id="5110f-120">您将使用一种称为实体框架的 .NET Framework 数据访问技术来定义和使用这些模型类。</span><span class="sxs-lookup"><span data-stu-id="5110f-120">You'll use a .NET Framework data-access technology known as the Entity Framework to define and work with these model classes.</span></span> <span data-ttu-id="5110f-121">实体框架（通常称为 EF）支持名为*Code First*的开发模式。</span><span class="sxs-lookup"><span data-stu-id="5110f-121">The Entity Framework (often referred to as EF) supports a development paradigm called *Code First*.</span></span> <span data-ttu-id="5110f-122">Code First 允许通过编写简单的类来创建模型对象。</span><span class="sxs-lookup"><span data-stu-id="5110f-122">Code First allows you to create model objects by writing simple classes.</span></span> <span data-ttu-id="5110f-123">（这些类也称为 POCO 类，来自 "纯旧 CLR 对象"）。然后，你可以从类动态创建数据库，这样就可以实现非常干净且快速的开发工作流。</span><span class="sxs-lookup"><span data-stu-id="5110f-123">(These are also known as POCO classes, from "plain-old CLR objects.") You can then have the database created on the fly from your classes, which enables a very clean and rapid development workflow.</span></span>
 
-## <a name="adding-model-classes"></a><span data-ttu-id="954ee-124">添加模型类</span><span class="sxs-lookup"><span data-stu-id="954ee-124">Adding Model Classes</span></span>
+## <a name="adding-model-classes"></a><span data-ttu-id="5110f-124">添加模型类</span><span class="sxs-lookup"><span data-stu-id="5110f-124">Adding Model Classes</span></span>
 
-<span data-ttu-id="954ee-125">在中**解决方案资源管理器**，右键单击 *模型* 文件夹，选择**添加**，然后选择**类**。</span><span class="sxs-lookup"><span data-stu-id="954ee-125">In **Solution Explorer**, right click the *Models* folder, select **Add**, and then select **Class**.</span></span>
+<span data-ttu-id="5110f-125">在**解决方案资源管理器**中，右键单击 "*模型*" 文件夹，选择 "**添加**"，然后选择 "**类**"。</span><span class="sxs-lookup"><span data-stu-id="5110f-125">In **Solution Explorer**, right click the *Models* folder, select **Add**, and then select **Class**.</span></span>
 
 ![](adding-a-model/_static/image1.png)
 
-<span data-ttu-id="954ee-126">名称*类*"电影"。</span><span class="sxs-lookup"><span data-stu-id="954ee-126">Name the *class* "Movie".</span></span>
+<span data-ttu-id="5110f-126">将*类*命名为 "Movie"。</span><span class="sxs-lookup"><span data-stu-id="5110f-126">Name the *class* "Movie".</span></span>
 
-<span data-ttu-id="954ee-127">[![CreateMovieClass](adding-a-model/_static/image3.png)](adding-a-model/_static/image2.png)</span><span class="sxs-lookup"><span data-stu-id="954ee-127">[![CreateMovieClass](adding-a-model/_static/image3.png)](adding-a-model/_static/image2.png)</span></span>
+<span data-ttu-id="5110f-127">[![CreateMovieClass](adding-a-model/_static/image3.png)](adding-a-model/_static/image2.png)</span><span class="sxs-lookup"><span data-stu-id="5110f-127">[![CreateMovieClass](adding-a-model/_static/image3.png)](adding-a-model/_static/image2.png)</span></span>
 
-<span data-ttu-id="954ee-128">添加到以下五个属性`Movie`类：</span><span class="sxs-lookup"><span data-stu-id="954ee-128">Add the following five properties to the `Movie` class:</span></span>
+<span data-ttu-id="5110f-128">将以下五个属性添加到 `Movie` 类：</span><span class="sxs-lookup"><span data-stu-id="5110f-128">Add the following five properties to the `Movie` class:</span></span>
 
 [!code-csharp[Main](adding-a-model/samples/sample1.cs)]
 
-<span data-ttu-id="954ee-129">我们将使用`Movie`类来表示数据库中的电影。</span><span class="sxs-lookup"><span data-stu-id="954ee-129">We'll use the `Movie` class to represent movies in a database.</span></span> <span data-ttu-id="954ee-130">每个实例`Movie`对象将对应于数据库表中，并的每个属性内的行`Movie`类将映射到表中的列。</span><span class="sxs-lookup"><span data-stu-id="954ee-130">Each instance of a `Movie` object will correspond to a row within a database table, and each property of the `Movie` class will map to a column in the table.</span></span>
+<span data-ttu-id="5110f-129">我们将使用 `Movie` 类来表示数据库中的影片。</span><span class="sxs-lookup"><span data-stu-id="5110f-129">We'll use the `Movie` class to represent movies in a database.</span></span> <span data-ttu-id="5110f-130">`Movie` 对象的每个实例都对应于数据库表中的一行，而 `Movie` 类的每个属性都将映射到该表中的列。</span><span class="sxs-lookup"><span data-stu-id="5110f-130">Each instance of a `Movie` object will correspond to a row within a database table, and each property of the `Movie` class will map to a column in the table.</span></span>
 
-<span data-ttu-id="954ee-131">在同一文件中，添加以下`MovieDBContext`类：</span><span class="sxs-lookup"><span data-stu-id="954ee-131">In the same file, add the following `MovieDBContext` class:</span></span>
+<span data-ttu-id="5110f-131">在同一文件中，添加以下 `MovieDBContext` 类：</span><span class="sxs-lookup"><span data-stu-id="5110f-131">In the same file, add the following `MovieDBContext` class:</span></span>
 
 [!code-csharp[Main](adding-a-model/samples/sample2.cs)]
 
-<span data-ttu-id="954ee-132">`MovieDBContext`类表示处理提取、 存储和更新的实体框架电影数据库上下文`Movie`类在数据库中的实例。</span><span class="sxs-lookup"><span data-stu-id="954ee-132">The `MovieDBContext` class represents the Entity Framework movie database context, which handles fetching, storing, and updating `Movie` class instances in a database.</span></span> <span data-ttu-id="954ee-133">`MovieDBContext`派生自`DbContext`实体框架提供的基类。</span><span class="sxs-lookup"><span data-stu-id="954ee-133">The `MovieDBContext` derives from the `DbContext` base class provided by the Entity Framework.</span></span> <span data-ttu-id="954ee-134">有关详细信息`DbContext`并`DbSet`，请参阅[实体框架的工作效率改进](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)。</span><span class="sxs-lookup"><span data-stu-id="954ee-134">For more information about `DbContext` and `DbSet`, see [Productivity Improvements for the Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0).</span></span>
+<span data-ttu-id="5110f-132">`MovieDBContext` 类表示实体框架的电影数据库上下文，用于处理数据库中 `Movie` 类实例的提取、存储和更新。</span><span class="sxs-lookup"><span data-stu-id="5110f-132">The `MovieDBContext` class represents the Entity Framework movie database context, which handles fetching, storing, and updating `Movie` class instances in a database.</span></span> <span data-ttu-id="5110f-133">`MovieDBContext` 从实体框架提供的 `DbContext` 基类派生。</span><span class="sxs-lookup"><span data-stu-id="5110f-133">The `MovieDBContext` derives from the `DbContext` base class provided by the Entity Framework.</span></span> <span data-ttu-id="5110f-134">有关 `DbContext` 和 `DbSet`的详细信息，请参阅[实体框架的工作效率改进](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)。</span><span class="sxs-lookup"><span data-stu-id="5110f-134">For more information about `DbContext` and `DbSet`, see [Productivity Improvements for the Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0).</span></span>
 
-<span data-ttu-id="954ee-135">若要引用将`DbContext`并`DbSet`，你需要添加以下`using`在文件顶部的语句：</span><span class="sxs-lookup"><span data-stu-id="954ee-135">In order to be able to reference `DbContext` and `DbSet`, you need to add the following `using` statement at the top of the file:</span></span>
+<span data-ttu-id="5110f-135">为了能够引用 `DbContext` 和 `DbSet`，需要在文件的顶部添加以下 `using` 语句：</span><span class="sxs-lookup"><span data-stu-id="5110f-135">In order to be able to reference `DbContext` and `DbSet`, you need to add the following `using` statement at the top of the file:</span></span>
 
 [!code-csharp[Main](adding-a-model/samples/sample3.cs)]
 
-<span data-ttu-id="954ee-136">完整*Movie.cs*文件如下所示。</span><span class="sxs-lookup"><span data-stu-id="954ee-136">The complete *Movie.cs* file is shown below.</span></span>
+<span data-ttu-id="5110f-136">完整的*Movie.cs*文件如下所示。</span><span class="sxs-lookup"><span data-stu-id="5110f-136">The complete *Movie.cs* file is shown below.</span></span>
 
 [!code-csharp[Main](adding-a-model/samples/sample4.cs)]
 
-## <a name="creating-a-connection-string-and-working-with-sql-server-compact"></a><span data-ttu-id="954ee-137">创建的连接字符串和使用 SQL Server Compact</span><span class="sxs-lookup"><span data-stu-id="954ee-137">Creating a Connection String and Working with SQL Server Compact</span></span>
+## <a name="creating-a-connection-string-and-working-with-sql-server-compact"></a><span data-ttu-id="5110f-137">创建连接字符串并使用 SQL Server Compact</span><span class="sxs-lookup"><span data-stu-id="5110f-137">Creating a Connection String and Working with SQL Server Compact</span></span>
 
-<span data-ttu-id="954ee-138">`MovieDBContext`创建的类处理连接到数据库以及映射任务`Movie`数据库记录的对象。</span><span class="sxs-lookup"><span data-stu-id="954ee-138">The `MovieDBContext` class you created handles the task of connecting to the database and mapping `Movie` objects to database records.</span></span> <span data-ttu-id="954ee-139">您可能会问的一个问题，是如何指定将连接到的数据库。</span><span class="sxs-lookup"><span data-stu-id="954ee-139">One question you might ask, though, is how to specify which database it will connect to.</span></span> <span data-ttu-id="954ee-140">您将通过添加中的连接信息来实现*Web.config*应用程序文件。</span><span class="sxs-lookup"><span data-stu-id="954ee-140">You'll do that by adding connection information in the *Web.config* file of the application.</span></span>
+<span data-ttu-id="5110f-138">你创建的 `MovieDBContext` 类将处理连接到数据库的任务，并将 `Movie` 对象映射到数据库记录。</span><span class="sxs-lookup"><span data-stu-id="5110f-138">The `MovieDBContext` class you created handles the task of connecting to the database and mapping `Movie` objects to database records.</span></span> <span data-ttu-id="5110f-139">但您可能会问的一个问题是如何指定它将连接到的数据库。</span><span class="sxs-lookup"><span data-stu-id="5110f-139">One question you might ask, though, is how to specify which database it will connect to.</span></span> <span data-ttu-id="5110f-140">可以通过在应用程序的*web.config 文件中*添加连接信息来实现此目的。</span><span class="sxs-lookup"><span data-stu-id="5110f-140">You'll do that by adding connection information in the *Web.config* file of the application.</span></span>
 
-<span data-ttu-id="954ee-141">打开应用程序根目录*Web.config*文件。</span><span class="sxs-lookup"><span data-stu-id="954ee-141">Open the application root *Web.config* file.</span></span> <span data-ttu-id="954ee-142">(未*Web.config*中的文件*视图*文件夹。)下图显示两者*Web.config*文件; 打开*Web.config*用红线圈出文件。</span><span class="sxs-lookup"><span data-stu-id="954ee-142">(Not the *Web.config* file in the *Views* folder.) The image below show both *Web.config* files; open the *Web.config* file circled in red.</span></span>
+<span data-ttu-id="5110f-141">打开应用程序根*web.config*文件。</span><span class="sxs-lookup"><span data-stu-id="5110f-141">Open the application root *Web.config* file.</span></span> <span data-ttu-id="5110f-142">（而不是*Views*文件夹中的*web.config 文件。* ）下图显示了*web.config*文件;打开以红色*圆圈表示的 web.config 文件*。</span><span class="sxs-lookup"><span data-stu-id="5110f-142">(Not the *Web.config* file in the *Views* folder.) The image below show both *Web.config* files; open the *Web.config* file circled in red.</span></span>
 
 ![](adding-a-model/_static/image4.png)
 
-<span data-ttu-id="954ee-143">添加到以下连接字符串`<connectionStrings>`中的元素*Web.config*文件。</span><span class="sxs-lookup"><span data-stu-id="954ee-143">Add the following connection string to the `<connectionStrings>` element in the *Web.config* file.</span></span>
+<span data-ttu-id="5110f-143">将以下连接字符串添加到*web.config 文件中的 `<connectionStrings>`* 元素。</span><span class="sxs-lookup"><span data-stu-id="5110f-143">Add the following connection string to the `<connectionStrings>` element in the *Web.config* file.</span></span>
 
 [!code-xml[Main](adding-a-model/samples/sample5.xml)]
 
-<span data-ttu-id="954ee-144">下面的示例显示了一部分*Web.config*文件添加的新连接字符串：</span><span class="sxs-lookup"><span data-stu-id="954ee-144">The following example shows a portion of the *Web.config* file with the new connection string added:</span></span>
+<span data-ttu-id="5110f-144">下面的示例演示了*web.config 文件的*一部分，并添加了新的连接字符串：</span><span class="sxs-lookup"><span data-stu-id="5110f-144">The following example shows a portion of the *Web.config* file with the new connection string added:</span></span>
 
 [!code-xml[Main](adding-a-model/samples/sample6.xml)]
 
-<span data-ttu-id="954ee-145">这种少量的代码和 XML 是为了表示，并将影片数据存储在数据库中编写所需的一切。</span><span class="sxs-lookup"><span data-stu-id="954ee-145">This small amount of code and XML is everything you need to write in order to represent and store the movie data in a database.</span></span>
+<span data-ttu-id="5110f-145">这少量的代码和 XML 是您需要编写的所有内容，以表示和将电影数据存储在数据库中。</span><span class="sxs-lookup"><span data-stu-id="5110f-145">This small amount of code and XML is everything you need to write in order to represent and store the movie data in a database.</span></span>
 
-<span data-ttu-id="954ee-146">接下来，你将生成一个新`MoviesController`类，该类可以用于显示电影数据并允许用户创建新的影片列表。</span><span class="sxs-lookup"><span data-stu-id="954ee-146">Next, you'll build a new `MoviesController` class that you can use to display the movie data and allow users to create new movie listings.</span></span>
+<span data-ttu-id="5110f-146">接下来，您将生成一个新的 `MoviesController` 类，该类可用于显示电影数据并允许用户创建新的电影节目表。</span><span class="sxs-lookup"><span data-stu-id="5110f-146">Next, you'll build a new `MoviesController` class that you can use to display the movie data and allow users to create new movie listings.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="954ee-147">[上一页](adding-a-view.md)
-> [下一页](accessing-your-models-data-from-a-controller.md)</span><span class="sxs-lookup"><span data-stu-id="954ee-147">[Previous](adding-a-view.md)
+> <span data-ttu-id="5110f-147">[上一页](adding-a-view.md)
+> [下一页](accessing-your-models-data-from-a-controller.md)</span><span class="sxs-lookup"><span data-stu-id="5110f-147">[Previous](adding-a-view.md)
 [Next](accessing-your-models-data-from-a-controller.md)</span></span>
