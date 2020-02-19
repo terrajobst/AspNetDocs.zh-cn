@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6fda47babd3c2505315f42667c45f09482218c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 896196bdb6a6b0d12a6c798ead510e37dd38a9fc
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583748"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456876"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附录： Fix It 示例应用程序（通过 Azure 构建实际的云应用程序）
 
-作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom Dykstra](https://github.com/tdykstra)
 
 [下载 Fix It 项目](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
@@ -84,7 +84,7 @@ Fix It 应用将上传的图像存储为公用，这意味着查找 URL 的任�
 ASP.NET 通过在 "用户输入" 文本框中输入 script，来自动防止恶意用户可能尝试跨站点脚本攻击的多种方式。 MVC `DisplayFor` 帮助程序，用于显示任务标题和备注，自动对其发送到浏览器的值进行 HTML 编码。 但在生产应用程序中，你可能需要采取其他措施。 有关详细信息，请参阅[ASP.NET 中的请求验证](https://msdn.microsoft.com/library/hh882339.aspx)。
 
 <a id="bestpractices"></a>
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 下面是在代码评审和测试 Fix It 应用程序的原始版本中发现后修复的一些问题。 其中一些原因是最初的编码员无法识别特定的最佳实践，只是因为代码是快速编写的，而不是用于发布的软件。 我们将在此处列出问题，因为我们在此审查和测试中了解到的内容可能对也正在开发 web 应用的其他人员有所帮助。
 
@@ -215,7 +215,7 @@ ASP.NET 通过在 "用户输入" 文本框中输入 script，来自动防止恶�
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>运行基本应用程序
 
-1. 安装[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
+1. 安装 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
 2. 安装[适用于 Visual Studio 的 AZURE SDK for .net](https://azure.microsoft.com/downloads/)。
 3. 从[MSDN 代码库](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)下载 .zip 文件。
 4. 在文件资源管理器中，右键单击 .zip 文件并单击 "属性"，然后在属性窗口单击 "解除阻止"。
@@ -250,7 +250,7 @@ ASP.NET 通过在 "用户输入" 文本框中输入 script，来自动防止恶�
    4. 选择**多个启动项目**。
    5. 在 MyFixIt 和 MyFixItCloudService 下的 "**操作**" 下拉列表中，选择 "**启动**"。
    6. 单击“确定”。
-   7. 按**F5**运行这两个项目。
+   7. 按 **F5** 运行这两个项目。
 
       运行 MyFixItCloudService 项目时，Visual Studio 将启动 Azure 计算模拟器。 根据防火墙配置，可能需要通过防火墙允许模拟器。
 
@@ -395,4 +395,4 @@ ASP.NET 通过在 "用户输入" 文本框中输入 script，来自动防止恶�
 现在，你已准备好部署云服务。 在解决方案浏览器中，右键单击 MyFixItCloudService 项目，然后选择 "**发布**"。 有关详细信息，请参阅[本教程](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)第2部分中的 "将[应用程序部署到 Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)"。
 
 > [!div class="step-by-step"]
-> [上一部分](more-patterns-and-guidance.md)
+> [“上一步”](more-patterns-and-guidance.md)
