@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
-title: '[如何实现:]使用 CSS 外观为灵活且易于维护的 ASP.NET Web 站点 |Microsoft Docs'
+title: '[如何实现：]使用带有 CSS 的外观，实现灵活且可维护的 ASP.NET 网站 |Microsoft Docs'
 author: rick-anderson
-description: 在此视频的 Chris Pels 中显示了如何创建 ASP.NET 服务器控件的外观，然后将合并 CSS 样式来控制控制外观 contr.外观...
+description: 在此视频中，Chris 像素演示了如何为 ASP.NET 服务器控件创建外观，然后合并 CSS 样式以控制 skinned contr 。
 ms.author: riande
 ms.date: 08/07/2008
 ms.assetid: aaada05a-5735-4d90-b52d-b58e746a1074
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
 msc.type: video
 ms.openlocfilehash: 13edb10900a6278f5bff923be8f4ed9fe5eda9b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398977"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78488168"
 ---
-# <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a><span data-ttu-id="e4995-103">[如何实现:]使用 CSS 外观为灵活且易于维护的 ASP.NET Web 站点</span><span class="sxs-lookup"><span data-stu-id="e4995-103">[How Do I:] Use Skins with CSS for a Flexible and Maintainable ASP.NET Web Site</span></span>
+# <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a><span data-ttu-id="c570a-103">[如何实现：]使用带有 CSS 的外观，实现灵活且可维护的 ASP.NET 网站</span><span class="sxs-lookup"><span data-stu-id="c570a-103">[How Do I:] Use Skins with CSS for a Flexible and Maintainable ASP.NET Web Site</span></span>
 
-<span data-ttu-id="e4995-104">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="e4995-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="c570a-104">作者： [Chris 像素](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="c570a-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="e4995-105">在此视频的 Chris Pels 演示如何创建 ASP.NET 服务器控件的外观，然后将合并 CSS 样式来控制控制外观的控件的外观。</span><span class="sxs-lookup"><span data-stu-id="e4995-105">In this video Chris Pels shows how to create skins for ASP.NET server controls and then incorporate CSS styles to control the appearance of the skinned controls.</span></span> <span data-ttu-id="e4995-106">首先，了解如何创建 ASP.NET 服务器控件，例如控制的 web 站点内的标签外观的标签的外观。</span><span class="sxs-lookup"><span data-stu-id="e4995-106">First, learn how to create a skin for an ASP.NET server control such as a Label that controls the appearance of labels throughout a web site.</span></span> <span data-ttu-id="e4995-107">接下来，请参阅如何抽象对 CSS 样式的外观的可视外观的定义。</span><span class="sxs-lookup"><span data-stu-id="e4995-107">Next, see how to abstract the definition of the visual appearance for a skin to CSS styles.</span></span> <span data-ttu-id="e4995-108">在此过程中了解的 CSS 样式中具有一个外观的样式信息的优点。</span><span class="sxs-lookup"><span data-stu-id="e4995-108">During this process learn the advantages of having the styling information for a skin in the CSS styles.</span></span> <span data-ttu-id="e4995-109">然后了解如何创建多个外观和对应的一个单一的 ASP.NET 控件，例如可用于标准化的某些类型的 web 站点内的标签外观的标签的样式。</span><span class="sxs-lookup"><span data-stu-id="e4995-109">Then see how to create multiple skins and corresponding styles for a single ASP.NET control such as a Label that can be used to standardize the appearance of certain types of labels throughout a web site.</span></span> <span data-ttu-id="e4995-110">最后，了解将 CSS 样式应用于多个外观并将其应用于泛型的 HTML 元素的功能的优点。</span><span class="sxs-lookup"><span data-stu-id="e4995-110">Finally, learn the advantages of applying a CSS style to multiple skins and the ability to apply it to a generic HTML element.</span></span>
+<span data-ttu-id="c570a-105">在此视频中，Chris 像素演示了如何为 ASP.NET 服务器控件创建外观，然后合并 CSS 样式以控制 skinned 控件的外观。</span><span class="sxs-lookup"><span data-stu-id="c570a-105">In this video Chris Pels shows how to create skins for ASP.NET server controls and then incorporate CSS styles to control the appearance of the skinned controls.</span></span> <span data-ttu-id="c570a-106">首先，了解如何为 ASP.NET 服务器控件创建外观，例如在整个网站中控制标签外观的标签。</span><span class="sxs-lookup"><span data-stu-id="c570a-106">First, learn how to create a skin for an ASP.NET server control such as a Label that controls the appearance of labels throughout a web site.</span></span> <span data-ttu-id="c570a-107">接下来，请参阅如何将外观的视觉外观定义抽象到 CSS 样式。</span><span class="sxs-lookup"><span data-stu-id="c570a-107">Next, see how to abstract the definition of the visual appearance for a skin to CSS styles.</span></span> <span data-ttu-id="c570a-108">在此过程中，将了解具有 CSS 样式中的外观的样式信息的优点。</span><span class="sxs-lookup"><span data-stu-id="c570a-108">During this process learn the advantages of having the styling information for a skin in the CSS styles.</span></span> <span data-ttu-id="c570a-109">然后，了解如何为单个 ASP.NET 控件（如可用于标准化网站中某些类型的标签外观的标签）创建多个外观和相应的样式。</span><span class="sxs-lookup"><span data-stu-id="c570a-109">Then see how to create multiple skins and corresponding styles for a single ASP.NET control such as a Label that can be used to standardize the appearance of certain types of labels throughout a web site.</span></span> <span data-ttu-id="c570a-110">最后，了解将 CSS 样式应用于多个外观的优点，以及将其应用到一般 HTML 元素的功能。</span><span class="sxs-lookup"><span data-stu-id="c570a-110">Finally, learn the advantages of applying a CSS style to multiple skins and the ability to apply it to a generic HTML element.</span></span>
 
-[<span data-ttu-id="e4995-111">&#9654;观看视频 （29 分钟）</span><span class="sxs-lookup"><span data-stu-id="e4995-111">&#9654; Watch video (29 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site)
+[<span data-ttu-id="c570a-111">&#9654;观看视频（29分钟）</span><span class="sxs-lookup"><span data-stu-id="c570a-111">&#9654; Watch video (29 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site)

@@ -9,26 +9,26 @@ ms.assetid: cf0b487c-f387-46dd-b3bc-6b3c4af17c9c
 msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
 ms.openlocfilehash: de0e83d09d0610a72915173479c9ef0541093890
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132943"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518060"
 ---
-# <a name="sql-2005"></a><span data-ttu-id="519a1-103">SQL 2005</span><span class="sxs-lookup"><span data-stu-id="519a1-103">SQL 2005</span></span>
+# <a name="sql-2005"></a><span data-ttu-id="d9e29-103">SQL 2005</span><span class="sxs-lookup"><span data-stu-id="d9e29-103">SQL 2005</span></span>
 
-> <span data-ttu-id="519a1-104">如何使用 SQL Server Express 向 ASP.NET 应用程序添加数据库功能。</span><span class="sxs-lookup"><span data-stu-id="519a1-104">How to work with SQL Server Express to add database capabilities to your ASP.NET applications.</span></span>
+> <span data-ttu-id="d9e29-104">如何使用 SQL Server Express 向 ASP.NET 应用程序添加数据库功能。</span><span class="sxs-lookup"><span data-stu-id="d9e29-104">How to work with SQL Server Express to add database capabilities to your ASP.NET applications.</span></span>
 
-- [<span data-ttu-id="519a1-105">数据库是什么</span><span class="sxs-lookup"><span data-stu-id="519a1-105">What is a Database</span></span>](what-is-a-database.md)
-- [<span data-ttu-id="519a1-106">理解数据库表和记录</span><span class="sxs-lookup"><span data-stu-id="519a1-106">Understanding Database Tables and Records</span></span>](understanding-database-tables-and-records.md)
-- [<span data-ttu-id="519a1-107">有关列数据类型和其他属性的详细信息</span><span class="sxs-lookup"><span data-stu-id="519a1-107">More about Column Data Types and Other Properties</span></span>](more-about-column-data-types-and-other-properties.md)
-- [<span data-ttu-id="519a1-108">设计关系数据库表</span><span class="sxs-lookup"><span data-stu-id="519a1-108">Designing Relational Database Tables</span></span>](designing-relational-database-tables.md)
-- [<span data-ttu-id="519a1-109">操作数据库数据</span><span class="sxs-lookup"><span data-stu-id="519a1-109">Manipulating Database Data</span></span>](manipulating-database-data.md)
-- [<span data-ttu-id="519a1-110">更多结构化查询语言</span><span class="sxs-lookup"><span data-stu-id="519a1-110">More Structured Query Language</span></span>](more-structured-query-language.md)
-- [<span data-ttu-id="519a1-111">了解安全性和网络连接性</span><span class="sxs-lookup"><span data-stu-id="519a1-111">Understanding Security and Network Connectivity</span></span>](understanding-security-and-network-connectivity.md)
-- [<span data-ttu-id="519a1-112">将 Web 应用程序连接到 SQL Server 2005 Express Edition</span><span class="sxs-lookup"><span data-stu-id="519a1-112">Connecting your Web Application to SQL Server 2005 Express Edition</span></span>](connecting-your-web-application-to-sql-server-2005-express-edition.md)
-- [<span data-ttu-id="519a1-113">使用 SQL Server Management Studio</span><span class="sxs-lookup"><span data-stu-id="519a1-113">Using SQL Server Management Studio</span></span>](using-sql-server-management-studio.md)
-- [<span data-ttu-id="519a1-114">Reporting Services 入门</span><span class="sxs-lookup"><span data-stu-id="519a1-114">Getting Started with Reporting Services</span></span>](getting-started-with-reporting-services.md)
-- [<span data-ttu-id="519a1-115">在 Business Intelligence Development Studio 中生成和自定义报表</span><span class="sxs-lookup"><span data-stu-id="519a1-115">Building and Customizing Reports in Business Intelligence Development Studio</span></span>](building-and-customizing-reports-in-business-intelligence-development-studio.md)
-- [<span data-ttu-id="519a1-116">创建和使用存储过程</span><span class="sxs-lookup"><span data-stu-id="519a1-116">Creating and Using Stored Procedures</span></span>](creating-and-using-stored-procedures.md)
-- [<span data-ttu-id="519a1-117">在文本数据中实现全文搜索</span><span class="sxs-lookup"><span data-stu-id="519a1-117">Enabling Full-Text Search in your Text Data</span></span>](enabling-full-text-search-in-your-text-data.md)
+- [<span data-ttu-id="d9e29-105">数据库是什么</span><span class="sxs-lookup"><span data-stu-id="d9e29-105">What is a Database</span></span>](what-is-a-database.md)
+- [<span data-ttu-id="d9e29-106">理解数据库表和记录</span><span class="sxs-lookup"><span data-stu-id="d9e29-106">Understanding Database Tables and Records</span></span>](understanding-database-tables-and-records.md)
+- [<span data-ttu-id="d9e29-107">有关列数据类型和其他属性的详细信息</span><span class="sxs-lookup"><span data-stu-id="d9e29-107">More about Column Data Types and Other Properties</span></span>](more-about-column-data-types-and-other-properties.md)
+- [<span data-ttu-id="d9e29-108">设计关系数据库表</span><span class="sxs-lookup"><span data-stu-id="d9e29-108">Designing Relational Database Tables</span></span>](designing-relational-database-tables.md)
+- [<span data-ttu-id="d9e29-109">操作数据库数据</span><span class="sxs-lookup"><span data-stu-id="d9e29-109">Manipulating Database Data</span></span>](manipulating-database-data.md)
+- [<span data-ttu-id="d9e29-110">更多结构化查询语言</span><span class="sxs-lookup"><span data-stu-id="d9e29-110">More Structured Query Language</span></span>](more-structured-query-language.md)
+- [<span data-ttu-id="d9e29-111">了解安全性和网络连接性</span><span class="sxs-lookup"><span data-stu-id="d9e29-111">Understanding Security and Network Connectivity</span></span>](understanding-security-and-network-connectivity.md)
+- [<span data-ttu-id="d9e29-112">将 Web 应用程序连接到 SQL Server 2005 Express Edition</span><span class="sxs-lookup"><span data-stu-id="d9e29-112">Connecting your Web Application to SQL Server 2005 Express Edition</span></span>](connecting-your-web-application-to-sql-server-2005-express-edition.md)
+- [<span data-ttu-id="d9e29-113">使用 SQL Server Management Studio</span><span class="sxs-lookup"><span data-stu-id="d9e29-113">Using SQL Server Management Studio</span></span>](using-sql-server-management-studio.md)
+- [<span data-ttu-id="d9e29-114">Reporting Services 入门</span><span class="sxs-lookup"><span data-stu-id="d9e29-114">Getting Started with Reporting Services</span></span>](getting-started-with-reporting-services.md)
+- [<span data-ttu-id="d9e29-115">在 Business Intelligence Development Studio 中生成和自定义报表</span><span class="sxs-lookup"><span data-stu-id="d9e29-115">Building and Customizing Reports in Business Intelligence Development Studio</span></span>](building-and-customizing-reports-in-business-intelligence-development-studio.md)
+- [<span data-ttu-id="d9e29-116">创建和使用存储过程</span><span class="sxs-lookup"><span data-stu-id="d9e29-116">Creating and Using Stored Procedures</span></span>](creating-and-using-stored-procedures.md)
+- [<span data-ttu-id="d9e29-117">在文本数据中实现全文搜索</span><span class="sxs-lookup"><span data-stu-id="d9e29-117">Enabling Full-Text Search in your Text Data</span></span>](enabling-full-text-search-in-your-text-data.md)
