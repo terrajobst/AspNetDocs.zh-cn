@@ -9,11 +9,11 @@ ms.assetid: 22e99600-8d18-4a94-a20e-a3a62bb63798
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs
 msc.type: authoredcontent
 ms.openlocfilehash: af68d1a0b744a2c1fd9d21a8bf6165bafa4de683
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74624236"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78493682"
 ---
 # <a name="customizing-the-data-modification-interface-c"></a>自定义数据修改界面 (C#)
 
@@ -220,7 +220,7 @@ GridView 和 DetailsView 控件使用的 BoundFields 和 CheckBoxFields 可简�
 > [!NOTE]
 > 由于 `Products` 数据库中的 `Discontinued` 列不能具有 `NULL` 值，因此我们无需担心捕获接口中的 `NULL` 信息。 但是，如果 `Discontinued` 列可以包含 `NULL` 值，我们想要将第三个单选按钮添加到列表中，将其 `Value` 设置为空字符串（`Value=""`），就像类别和供应 DropDownLists 一样。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 BoundField 和 CheckBoxField 会自动呈现只读、编辑和插入界面，但它们缺乏自定义功能。 但通常，我们需要自定义编辑或插入界面，可能会添加验证控件（如前面教程中所述）或自定义数据收集用户界面（如本教程中所述）。 在以下步骤中，可以使用 TemplateField 自定义接口：
 

@@ -9,11 +9,11 @@ ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e52ed94f78d053701771690fce432d5a1d465b62
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74637273"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520994"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 运行状况监视的日志记录错误详细信息 (C#)
 
@@ -128,7 +128,7 @@ ms.locfileid: "74637273"
 **图 2**：在电子邮件中发送错误详细信息  
 （[单击以查看完全大小的映像](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 运行状况监视系统旨在允许管理员监视已部署的 web 应用程序的运行状况。 展开某些操作时，将引发运行状况监视事件，例如当应用程序停止时、用户成功登录到站点时或发生未经处理的异常时。 这些事件可以记录到任意数量的日志源中。 本教程演示了如何通过电子邮件将未经处理的异常的详细信息记录到数据库中。
 

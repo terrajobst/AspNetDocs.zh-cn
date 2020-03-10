@@ -9,11 +9,11 @@ ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
 ms.openlocfilehash: 1177336b25479c06706227e5c8ff4d027cdaebb8
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456980"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472568"
 ---
 # <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>以队列为中心的工作模式（使用 Azure 生成实际的云应用）
 
@@ -166,7 +166,7 @@ Fix It 应用适合合作的创建者和竞争使用者模型。
 
 在 web 项目中，添加异步代码可以自动提高性能，因为 IIS 会管理有限的线程池。 辅助角色项目中不会出现这种情况。 若要改善辅助角色的可伸缩性，可以编写多线程代码或使用异步代码来实现[并行编程](https://msdn.microsoft.com/library/ff963553.aspx)。 该示例不实现并行编程，而是演示如何使代码异步，以便实现并行编程。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本章中，你已了解如何通过实现以队列为中心的工作模式来提高应用程序的响应能力、可靠性和可伸缩性。
 

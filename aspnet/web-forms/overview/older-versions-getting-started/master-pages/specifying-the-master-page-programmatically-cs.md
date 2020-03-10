@@ -9,11 +9,11 @@ ms.assetid: 7c4a3445-2440-4aee-b9fd-779c05e6abb2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 0db23ea05ba001c2bf9fc5330a60a767caa568a0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590350"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507416"
 ---
 # <a name="specifying-the-master-page-programmatically-c"></a>以编程方式指定母版页 (C#)
 
@@ -159,7 +159,7 @@ ms.locfileid: "74590350"
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-cs/samples/sample11.aspx)]
 
-结束时间：
+到:
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-cs/samples/sample12.aspx)]
 
@@ -226,7 +226,7 @@ ms.locfileid: "74590350"
 
 **图 07**：现在使用 "`Alternate.master`" 母版页显示内容页面（[单击查看完全大小的图像](specifying-the-master-page-programmatically-cs/_static/image21.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 访问内容页时，其内容控件与母版页的 ContentPlaceHolder 控件一起融合。 内容页的母版页由 `Page` 类的 `MasterPageFile` 属性表示，该属性在初始化阶段分配给 `@Page` 指令的 `MasterPageFile` 特性。 在本教程中，我们可以为 `MasterPageFile` 属性分配一个值，前提是在 PreInit 阶段结束之前执行此操作。 如果能够以编程方式指定母版页，则会为更高级的方案打开门，如根据外部因素动态地将内容页绑定到母版页。
 

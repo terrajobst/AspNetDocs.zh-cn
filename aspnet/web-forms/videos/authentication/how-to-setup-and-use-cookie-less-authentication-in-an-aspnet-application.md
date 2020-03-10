@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application
-title: 如何设置和在 ASP.NET 应用程序中使用无 Cookie 身份验证 |Microsoft Docs
+title: 如何在 ASP.NET 应用程序中设置和使用不区分 Cookie 的身份验证 |Microsoft Docs
 author: JoeStagner
-description: Joe Stagner 利用前面的代码示例，演示如何使用无 cookie 身份验证。 有关此演示的详细信息，本教程位于...
+description: Joe Stagner 利用前面的代码示例演示如何使用不区分 cookie 的身份验证。 有关此演示的详细信息，请找到教程 。
 ms.author: riande
 ms.date: 07/16/2008
 ms.assetid: 10ba9106-514c-4776-8277-9c31312ceed2
 msc.legacyurl: /web-forms/videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application
 msc.type: video
 ms.openlocfilehash: ff6e21dad7598146a681615913dcbd37f72001ee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404385"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462308"
 ---
-# <a name="how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application"></a>如何在 ASP.NET 应用程序中的设置和使用无 Cookie 身份验证
+# <a name="how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application"></a>如何在 ASP.NET 应用程序中设置和使用不区分 Cookie 的身份验证
 
-通过[Joe Stagner](https://github.com/JoeStagner)
+作者： [Joe Stagner](https://github.com/JoeStagner)
 
-Joe Stagner 利用前面的代码示例，演示如何使用无 cookie 身份验证。 对于此演示的详细信息，本教程是所在[此处](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md)。
+Joe Stagner 利用前面的代码示例演示如何使用不区分 cookie 的身份验证。 有关此演示的详细信息，请参阅[此处](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md)的教程。
 
-[&#9654;观看视频 （4 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application)
+[&#9654;观看视频（4分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application)
 
 > [!div class="step-by-step"]
 > [上一页](how-to-change-the-forms-authentication-properties.md)

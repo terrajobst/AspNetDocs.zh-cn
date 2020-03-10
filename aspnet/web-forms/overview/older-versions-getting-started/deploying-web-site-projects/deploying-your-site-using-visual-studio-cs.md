@@ -9,11 +9,11 @@ ms.assetid: cde4ee53-a5d0-4937-a54b-67877e8266c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 4259e51f5a3e6a97bae2aa27b76cbd56ca3449d6
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636411"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522794"
 ---
 # <a name="deploying-your-site-using-visual-studio-c"></a>使用 Visual Studio 部署站点 (C#)
 
@@ -117,7 +117,7 @@ Visual Studio 的 "复制网站" 工具在功能上类似于独立的 FTP 客户
 
 某些文件的内容在生产环境和开发环境之间有所不同，这并不少见。 例如，应用程序的配置文件 `Web.config`。 由于发布选项会盲目地复制 web 应用程序文件，因此它将用开发环境中的版本覆盖生产环境的自定义配置文件。 后续教程进一步探讨了此主题，并提供了在存在此类差异时部署 web 应用程序的提示。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 部署网站需要将所需的文件从开发环境复制到生产环境。 前面的教程介绍了如何使用 FileZilla 等 FTP 客户端传输文件。 本教程在 Visual Studio 中检查了两种部署工具： "复制网站" 工具和 "发布" 选项。 "复制网站" 工具类似于 FTP 客户端，因为它具有一个平移接口，该接口列出了本地计算机上的文件和指定的远程计算机，使您可以轻松地在这两台计算机之间上传或下载文件。 "发布" 选项是一个更为钝的工具，它显式编译项目，然后将整个应用程序部署到指定的目标。
 

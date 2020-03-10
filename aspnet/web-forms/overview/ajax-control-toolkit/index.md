@@ -2,25 +2,25 @@
 uid: web-forms/overview/ajax-control-toolkit/index
 title: 旧版本-Ajax 控件工具包 |Microsoft Docs
 author: rick-anderson
-description: 如何开始使用 Ajax 控件工具包，以及如何使用某些最常用的控件。 DevExpress 维护免费的开放源代码 Ajax Contr....
+description: 如何开始使用 Ajax 控件工具包，以及如何使用某些最常见的控件。 DevExpress 维护了免费的开源 Contr 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 76242ce9-e611-41d2-95e8-dc5f406d4bfc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: d7d0426ed427f3b8fc8c7f9c2fe1518b1887d695
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115376"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446276"
 ---
 # <a name="older-versions---ajax-control-toolkit"></a>旧版本 - Ajax 控件工具包
 
-> 如何开始使用 Ajax 控件工具包，以及如何使用某些最常用的控件。 DevExpress 维护免费的开放源代码 Ajax 控件工具包。
+> 如何开始使用 Ajax 控件工具包，以及如何使用某些最常见的控件。 DevExpress 维护了免费的开源 Ajax 控制工具包。
 > 
 > 
-> ![](index/_static/image1.png) DevExpress，屡获殊荣的 ASP.NET WebForms、 MVC 和 HTML5 UI 控件和框架，开发人员现在登场的 ASP.NET AJAX 控件工具包维护以将此高要求的开源库恢复到可靠状态。 [了解详细信息](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_Tutorials.aspx)。
+> ![](index/_static/image1.png) DevExpress 是备受好评的 ASP.NET WebForms、MVC 和 HTML5 UI 控件和框架的开发人员，它接管了 ASP.NET AJAX 控件工具包的维护，使这一高度要求的开源库恢复为可靠状态。 [了解详细信息](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_Tutorials.aspx)。
 
 - [入门](getting-started/index.md)
 
@@ -160,7 +160,7 @@ ms.locfileid: "65115376"
     - [通过 ReorderList 进行拖放 (C#)](reorderlist/drag-and-drop-via-reorderlist-cs.md)
     - [通过 ReorderList 使用回发 (VB)](reorderlist/using-postbacks-with-reorderlist-vb.md)
     - [通过 ReorderList 进行拖放 (VB)](reorderlist/drag-and-drop-via-reorderlist-vb.md)
-- [Slider](slider/index.md)
+- [滑块](slider/index.md)
 
     - [带自动回发的滑块控件 (C#)](slider/using-the-slider-control-with-auto-postback-cs.md)
     - [数据绑定滑块控件 (C#)](slider/databinding-the-slider-control-cs.md)

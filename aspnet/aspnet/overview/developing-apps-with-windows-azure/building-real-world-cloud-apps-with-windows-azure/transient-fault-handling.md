@@ -9,11 +9,11 @@ ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
 ms.openlocfilehash: e798cb83cfb97db63fef6dc38c8f62804461d01b
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456850"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500420"
 ---
 # <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暂时性故障处理（通过 Azure 构建实际的云应用）
 
@@ -72,7 +72,7 @@ ms.locfileid: "77456850"
 
 有关 SQL 数据库重试策略指南，请参阅对[Sql 数据库的暂时性故障和连接错误进行故障排除](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在大多数情况下，重试/后退策略有助于使暂时错误对客户不可见，在使用 ADO.NET、实体框架或 Azure 存储服务时，Microsoft 提供了可用于最大程度地降低工作实现策略的框架。
 
@@ -80,7 +80,7 @@ ms.locfileid: "77456850"
 
 ## <a name="resources"></a>资源
 
-有关详细信息，请参阅以下资源：
+有关更多信息，请参见以下资源：
 
 文档
 

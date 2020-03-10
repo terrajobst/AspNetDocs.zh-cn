@@ -1,67 +1,67 @@
 ---
 uid: visual-studio/overview/2013/aspnet-scaffolding-overview
-title: 在 Visual Studio 2013 的 ASP.NET 基架 |Microsoft Docs
+title: Visual Studio 2013 中的 ASP.NET 基架 |Microsoft Docs
 author: Rick-Anderson
-description: ASP.NET 基架是包括在 Visual Studio 2013 的新功能。
+description: ASP.NET 基架是 Visual Studio 2013 中包含的一项新功能。
 ms.author: riande
 ms.date: 04/09/2014
 ms.assetid: a41ec9d4-8287-4f31-9e2a-460e7b7f04be
 msc.legacyurl: /visual-studio/overview/2013/aspnet-scaffolding-overview
 msc.type: authoredcontent
 ms.openlocfilehash: cf4669b769cee28475e2dd6a6ddf07ea1434d04d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126421"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449564"
 ---
 # <a name="aspnet-scaffolding-in-visual-studio-2013"></a>Visual Studio 2013 中的 ASP.NET 基架
 
-通过[Tom FitzMacken](https://github.com/tfitzmac)
+作者： [Tom FitzMacken](https://github.com/tfitzmac)
 
-> ASP.NET 基架是包括在 Visual Studio 2013 的新功能。
+> ASP.NET 基架是 Visual Studio 2013 中包含的一项新功能。
 
 ## <a name="overview"></a>概述
 
-ASP.NET 基架是用于 ASP.NET Web 应用程序的代码生成框架。 Visual Studio 2013 包括 MVC 和 Web API 项目的预安装的代码生成器。 当你想要快速添加与数据模型交互的代码基架添加到项目。 使用基架可以减少开发你的项目中的标准数据操作的时间量。
+ASP.NET 基架是用于 ASP.NET Web 应用程序的代码生成框架。 Visual Studio 2013 包含用于 MVC 和 Web API 项目的预安装代码生成器。 若要快速添加与数据模型交互的代码，请将基架添加到项目。 使用基架可以减少在项目中开发标准数据操作所需的时间。
 
-默认情况下，Visual Studio 2013 不支持的 Web 窗体项目，生成代码，但可以使用 Web 窗体中使用基架通过向项目添加 MVC 依赖项或安装扩展。 下面显示了这两种方法。
+默认情况下，Visual Studio 2013 不支持为 Web 窗体项目生成代码，但你可以通过将 MVC 依赖项添加到项目或安装扩展，将基架与 Web 窗体一起使用。 下面显示了这两种方法。
 
-Visual Studio 2013 Update 2 (当前 RC) 提供的功能来扩展 ASP.NET 基架以满足你的方案的要求。 使用此功能，可以创建自定义基架模板并将其添加到对话框中添加新的基架。 在自定义模板中，指定将添加基架的项时生成的代码。 有关详细信息，请参阅[用于 Visual Studio 中创建自定义基架](https://go.microsoft.com/fwlink/p/?LinkId=395029)。
+Visual Studio 2013 Update 2 （当前 RC）提供了扩展 ASP.NET 基架以满足方案要求的功能。 利用此功能，你可以创建一个自定义的基架模板并将其添加到 "添加新基架" 对话框。 在自定义模板中，指定添加基架项时生成的代码。 有关详细信息，请参阅[创建自定义 Scaffolder For Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=395029)。
 
 ## <a name="prerequisites"></a>系统必备
 
-若要使用 ASP.NET 基架，您必须具有：
+若要使用 ASP.NET 基架，必须具备：
 
 - Microsoft Visual Studio 2013
-- Web 开发人员工具 （默认 Visual Studio 2013 安装的一部分）
-- ASP.NET Web 框架和工具 2013 （默认 Visual Studio 2013 安装的一部分）
+- Web 开发人员工具（默认 Visual Studio 2013 安装的一部分）
+- ASP.NET Web 框架和工具2013（默认 Visual Studio 2013 安装的一部分）
 
-## <a name="add-a-scaffolded-item-to-mvc-or-web-api"></a>将基架的项添加到 MVC 或 Web API
+## <a name="add-a-scaffolded-item-to-mvc-or-web-api"></a>将基架项添加到 MVC 或 Web API
 
-若要添加基架，请右键单击项目或在项目中，一个文件夹并选择**外**–**新基架项**下, 图中所示。
+若要添加基架，请右键单击项目或项目中的文件夹，然后选择 "**添加**-**新建基架项**"，如下图所示。
 
 ![添加基架项](aspnet-scaffolding-overview/_static/image1.png)
 
-从**添加基架**窗口中，选择的基架添加的类型。
+从 "**添加基架**" 窗口中，选择要添加的基架类型。
 
-![选择类型的基架](aspnet-scaffolding-overview/_static/image2.png)
+![选择基架的类型](aspnet-scaffolding-overview/_static/image2.png)
 
-**添加控制器**窗口使您能够选择用于生成控制器，包括是否想要使用 Entity Framework 6 的新异步功能的选项。
+"**添加控制器**" 窗口可让你选择用于生成控制器的选项，包括是否要使用实体框架6中的新异步功能。
 
 ![添加控制器](aspnet-scaffolding-overview/_static/image3.png)
 
-你的方案为创建相关的类和页面。 例如下, 图显示了 MVC 控制器和视图通过名为电影模型类的基架创建的。
+将为你的方案创建相关的类和页。 例如，下图显示了通过基架为名为电影的模型类创建的 MVC 控制器和视图。
 
 ![创建的文件](aspnet-scaffolding-overview/_static/image4.png)
 
-## <a name="add-a-scaffolded-item-to-web-forms"></a>将基架的项添加到 Web 窗体
+## <a name="add-a-scaffolded-item-to-web-forms"></a>将基架项添加到 Web 窗体
 
-若要添加基架生成 Web 窗体代码，必须安装到 Visual Studio 扩展或添加 MVC 依赖项。 这两种方法如下所示，但只需执行其中一种方法。
+若要添加生成 Web 窗体代码的基架，你必须安装 Visual Studio 的扩展或添加 MVC 依赖项。 下面显示了这两种方法，但只需执行这些方法之一。
 
 ### <a name="web-forms-scaffolding-extension"></a>Web 窗体基架扩展
 
-你可以安装 Visual Studio 扩展中，您可以使用 Web 窗体项目中使用基架。 在 Visual Studio 中，选择**工具**，然后**扩展和更新**。 在此对话框中搜索有关 Visual Studio 库**Web 窗体基架**。
+可以安装 Visual Studio 扩展，使你能够将基架用于 Web 窗体项目。 在 Visual Studio 中，依次选择 "**工具**" 和 "**扩展和更新**"。 从此对话框中，在 Visual Studio 库中搜索**Web 窗体基架**。
 
 ![安装 web 窗体基架](aspnet-scaffolding-overview/_static/image5.png)
 
@@ -69,26 +69,26 @@ Visual Studio 2013 Update 2 (当前 RC) 提供的功能来扩展 ASP.NET 基架�
 
 ### <a name="mvc-dependencies"></a>MVC 依赖项
 
-若要添加 MVC 依赖项，请选择**外** - **新基架项**。 在添加基架窗口中，选择**MVC 依赖项**，如下所示。
+若要添加 MVC 依赖项，请选择 "**添加** - **新基架项**"。 在 "添加基架" 窗口中，选择 " **MVC 依赖项**"，如下所示。
 
 ![添加 MVC 依赖项](aspnet-scaffolding-overview/_static/image6.png)
 
-有两个选项基架 MVC;最小和完全。 如果你选择最小，NuGet 包和 ASP.NET MVC 的引用添加到你的项目。 如果选择完全选项，添加最小依赖项，以及对于 MVC 项目所需的内容文件。 若要轻松地使用基架，请选择完整的依赖项。
+基架 MVC 有两个选项：最小和完整。 如果选择 "最小"，则只会将 NuGet 包和 ASP.NET MVC 的引用添加到你的项目中。 如果选择 "完全" 选项，则会添加最小依赖项，以及 MVC 项目所需的内容文件。 若要轻松使用基架，请选择 "完全依赖项"。
 
-![选择全部依赖项](aspnet-scaffolding-overview/_static/image7.png)
+![选择完全依赖项](aspnet-scaffolding-overview/_static/image7.png)
 
-添加依赖项之后, 您将看到**readme.txt**文件。 请仔细按照此文件中的说明，以确保你的项目正常运行。
+添加依赖项后，你将看到 readme.txt**文件。** 仔细按照此文件中的说明进行操作，以确保您的项目正常工作。
 
-完成 readme.txt 文件中的步骤后，可以添加新的基架的项，如有关 MVC 和 Web API 在上一部分中所示。 自动生成的视图和控制器将在项目中正常工作。
+完成 readme.txt 文件中的步骤后，可以添加新的基架项，如上一部分有关 MVC 和 Web API 的内容所示。 自动生成的视图和控制器将在你的项目中正确运行。
 
 ## <a name="tutorials"></a>教程
 
-若要创建自定义基架，请参阅[用于 Visual Studio 中创建自定义基架](https://go.microsoft.com/fwlink/p/?LinkId=395029)。
+若要创建自定义的 scaffolder，请参阅[为 Visual Studio 创建自定义 scaffolder](https://go.microsoft.com/fwlink/p/?LinkId=395029)。
 
-若要自定义生成的文件，请参阅[如何自定义生成的文件从新建基架项对话框](https://blogs.msdn.com/b/webdev/archive/2013/12/26/how-to-customize-the-generated-files-from-the-new-scaffolded-item-dialog.aspx)。
+若要自定义生成的文件，请参阅[如何自定义 "新建基架项" 对话框中生成的文件](https://blogs.msdn.com/b/webdev/archive/2013/12/26/how-to-customize-the-generated-files-from-the-new-scaffolded-item-dialog.aspx)。
 
-有关使用与基架的示例**Database First 开发**，请参阅[EF Database First 使用 ASP.NET MVC](../../../mvc/overview/getting-started/database-first-development/setting-up-database.md)。
+有关将基架与**Database First 开发**结合使用的示例，请参阅[使用 ASP.NET MVC Database First EF](../../../mvc/overview/getting-started/database-first-development/setting-up-database.md)。
 
-有关使用中的基架的示例**MVC**项目，请参阅[Getting Started with ASP.NET MVC 5](../../../mvc/overview/getting-started/introduction/getting-started.md)。
+有关在**MVC**项目中使用基架的示例，请参阅[与 ASP.NET MVC 5 入门](../../../mvc/overview/getting-started/introduction/getting-started.md)。
 
-有关使用中的基架的示例**Web API**项目，请参阅[使用 Web API 2 中的属性路由创建 REST API](../../../web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing.md)。
+有关在**WEB api**项目中使用基架的示例，请参阅使用[web api 2 中的属性路由创建 REST API](../../../web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing.md)。

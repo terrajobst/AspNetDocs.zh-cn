@@ -2,45 +2,45 @@
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 title: 单元测试 ASP.NET Web API 2 |Microsoft Docs
 author: Rick-Anderson
-description: 此指南和应用程序演示了如何创建 Web API 2 应用程序的简单单元测试。 本教程演示如何包含单元测试项目...
+description: 本指南和应用程序演示了如何为 Web API 2 应用程序创建简单的单元测试。 本教程介绍如何包括单元测试的一 。
 ms.author: riande
 ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: f2d60b977475e048a3a74aabff4adc768ee22baf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402643"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446984"
 ---
 # <a name="unit-testing-aspnet-web-api-2"></a>单元测试 ASP.NET Web API 2
 
-通过[Tom FitzMacken](https://github.com/tfitzmac)
+作者： [Tom FitzMacken](https://github.com/tfitzmac)
 
-[下载已完成的项目](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
+[下载完成的项目](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
-> 此指南和应用程序演示了如何创建 Web API 2 应用程序的简单单元测试。 本教程演示如何在解决方案中，包括单元测试项目并编写检查从控制器方法的返回的值的测试方法。
+> 本指南和应用程序演示了如何为 Web API 2 应用程序创建简单的单元测试。 本教程演示如何在解决方案中包括单元测试项目，并编写用于检查控制器方法返回的值的测试方法。
 >
-> 本教程假定你熟悉的 ASP.NET Web API 的基本概念。 有关介绍性教程，请参阅[Getting Started with ASP.NET Web API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)。
+> 本教程假设你熟悉 ASP.NET Web API 的基本概念。 有关介绍性教程，请参阅[使用 ASP.NET Web API 2 入门](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)。
 >
-> 本主题中的单元测试是有意仅限使用简单的数据方案。 单元测试更高级的数据方案中，请参阅[模拟实体框架时单元测试 ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)。
+> 本主题中的单元测试有意限制为简单的数据应用场景。 有关更高级数据方案的单元测试，请参阅[单元测试 ASP.NET Web API 2 时的模拟实体框架](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)。
 >
-> ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
+> ## <a name="software-versions-used-in-the-tutorial"></a>本教程中使用的软件版本
 >
 > - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web API 2
 
-## <a name="in-this-topic"></a>在本主题中
+## <a name="in-this-topic"></a>主题内容
 
 本主题包含以下各节：
 
-- [系统必备](#prereqs)
+- [先决条件](#prereqs)
 - [下载代码](#download)
-- [使用单元测试项目创建应用程序](#appwithunittest)
+- [创建具有单元测试项目的应用程序](#appwithunittest)
     - [创建应用程序时添加单元测试项目](#whencreate)
-    - [将单元测试项目添加到现有应用程序](#addtoexisting)
+    - [向现有应用程序添加单元测试项目](#addtoexisting)
 - [设置 Web API 2 应用程序](#setupproject)
 - [在测试项目中安装 NuGet 包](#testpackages)
 - [创建测试](#tests)
@@ -49,112 +49,112 @@ ms.locfileid: "59402643"
 <a id="prereqs"></a>
 ## <a name="prerequisites"></a>系统必备
 
-[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community、 Professional 或 Enterprise edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)社区版、专业版或企业版
 
 <a id="download"></a>
 ## <a name="download-code"></a>下载代码
 
-下载[已完成的项目](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)。 可下载项目包含本主题以及单元测试代码[模拟实体框架时单元测试 ASP.NET Web API](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)主题。
+下载[完成的项目](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)。 可下载的项目包含本主题的单元测试代码以及[单元测试 ASP.NET Web API 主题的模拟实体框架](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)。
 
 <a id="appwithunittest"></a>
-## <a name="create-application-with-unit-test-project"></a>使用单元测试项目创建应用程序
+## <a name="create-application-with-unit-test-project"></a>创建具有单元测试项目的应用程序
 
-可以创建单元测试项目，创建你的应用程序时，也可以将单元测试项目添加到现有应用程序。 本教程演示了这两种方法用于创建单元测试项目。 若要遵循本教程中，可以使用以下两种方法。
+可在创建应用程序时创建单元测试项目，或者将单元测试项目添加到现有应用程序。 本教程演示创建单元测试项目的两种方法。 若要按照本教程操作，可以使用这两种方法。
 
 <a id="whencreate"></a>
 ### <a name="add-unit-test-project-when-creating-the-application"></a>创建应用程序时添加单元测试项目
 
-创建一个新的 ASP.NET Web 应用程序名为**StoreApp**。
+创建名为**StoreApp**的新 ASP.NET Web 应用程序。
 
 ![创建项目](unit-testing-with-aspnet-web-api/_static/image1.png)
 
-在新建 ASP.NET 项目窗口中，选择**空**模板和添加文件夹和核心引用有关 Web API。 选择**添加单元测试**选项。 单元测试项目将自动命名**StoreApp.Tests**。 可以保留此名称。
+在 "新建 ASP.NET 项目" 窗口中，选择 "**空**" 模板，并为 Web API 添加文件夹和核心引用。 选择 "**添加单元测试**" 选项。 单元测试项目被自动命名为**StoreApp**。 您可以保留此名称。
 
 ![创建单元测试项目](unit-testing-with-aspnet-web-api/_static/image2.png)
 
-创建程序后，会看到它包含两个项目。
+创建应用程序后，您将看到它包含两个项目。
 
 ![两个项目](unit-testing-with-aspnet-web-api/_static/image3.png)
 
 <a id="addtoexisting"></a>
-### <a name="add-unit-test-project-to-an-existing-application"></a>将单元测试项目添加到现有应用程序
+### <a name="add-unit-test-project-to-an-existing-application"></a>向现有应用程序添加单元测试项目
 
-如果未创建单元测试项目时创建的应用程序，则可以添加一个在任何时间。 例如，假设你已有应用程序名为 StoreApp，并且你想要添加单元测试。 若要添加单元测试项目，请右键单击解决方案并选择**外**并**新项目**。
+如果在创建应用程序时未创建单元测试项目，则可以随时添加一个。 例如，假设已有一个名为 StoreApp 的应用程序，并且想要添加单元测试。 若要添加单元测试项目，请右键单击解决方案，然后选择 "**添加**" 和 "**新建项目**"。
 
 ![向解决方案添加新项目](unit-testing-with-aspnet-web-api/_static/image4.png)
 
-选择**测试**左窗格中，然后选择**单元测试项目**对于项目类型。 将项目命名**StoreApp.Tests**。
+在左窗格中选择 "**测试**"，然后选择 "**单元测试项目**" 作为 "项目类型"。 将项目命名为**StoreApp**。
 
 ![添加单元测试项目](unit-testing-with-aspnet-web-api/_static/image5.png)
 
-您将看到你的解决方案中的单元测试项目。
+你将在你的解决方案中看到该单元测试项目。
 
 在单元测试项目中，添加对原始项目的项目引用。
 
 <a id="setupproject"></a>
 ## <a name="set-up-the-web-api-2-application"></a>设置 Web API 2 应用程序
 
-在 StoreApp 项目中，将添加到一个类文件**模型**名为文件夹**Product.cs**。 将以下代码替换为该文件的内容。
+在 StoreApp 项目中，将类文件添加到名为**Product.cs**的**模型**文件夹中。 将文件的内容替换为以下代码。
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample1.cs)]
 
 生成解决方案。
 
-右键单击 Controllers 文件夹，然后选择**外**并**新基架项**。 选择**Web API 2 控制器-空**。
+右键单击 "控制器" 文件夹，然后选择 "**添加**并**新建基架项**"。 选择 " **WEB API 2 控制器-空**"。
 
-![添加新的控制器](unit-testing-with-aspnet-web-api/_static/image6.png)
+![添加新控制器](unit-testing-with-aspnet-web-api/_static/image6.png)
 
-将控制器名称设置为**SimpleProductController**，然后单击**添加**。
+将控制器名称设置为**SimpleProductController**，并单击 "**添加**"。
 
 ![指定控制器](unit-testing-with-aspnet-web-api/_static/image7.png)
 
-用下面的代码替换现有代码。 若要简化此示例中，列表而不是数据库中存储数据。 此类中定义的列表表示生产数据。 请注意，该控制器包含一系列产品对象将作为参数的构造函数。 此构造函数，可将测试数据传递时单元测试。 该控制器还包含两个**异步**方法来演示单元测试异步方法。 这些异步方法实现通过调用**Task.FromResult**若要最大程度减少无关的代码，但通常情况下方法应包括资源密集型操作。
+用下面的代码替换现有代码。 为了简化此示例，数据存储在列表中，而不是数据库中。 此类中定义的列表表示生产数据。 请注意，控制器包含一个构造函数，该构造函数采用产品对象列表作为参数。 此构造函数使你能够在单元测试时传递测试数据。 控制器还包括两个**异步**方法，用于说明单元测试的异步方法。 这些异步方法是通过调用**system.threading.tasks.task.fromresult**来实现的，以最大程度地减少无关的代码，但通常情况下，方法会包括消耗大量资源的操作。
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-为 getproduct 方法返回的实例**IHttpActionResult**接口。 IHttpActionResult 是一个 Web API 2 中的新功能，这样可以简化单元测试开发。 实现 IHttpActionResult 接口的类中找到[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)命名空间。 这些类表示操作请求中可能的响应，它们对应于 HTTP 状态代码。
+GetProduct 方法返回**IHttpActionResult**接口的实例。 IHttpActionResult 是 Web API 2 中的一项新功能，它简化了单元测试的开发。 [在 IHttpActionResult 命名空间](https://msdn.microsoft.com/library/system.web.http.results.aspx)中找到实现了接口的类。 这些类表示来自操作请求的可能响应，它们对应于 HTTP 状态代码。
 
 生成解决方案。
 
-你现已准备好设置测试项目。
+你现在已准备好设置测试项目。
 
 <a id="testpackages"></a>
 ## <a name="install-nuget-packages-in-test-project"></a>在测试项目中安装 NuGet 包
 
-当使用空模板创建的应用程序时，单元测试项目 (StoreApp.Tests) 不包括任何已安装的 NuGet 包。 其他模板，例如 Web API 模板中，单元测试项目中包括一些 NuGet 包。 对于本教程中，必须包括 Microsoft ASP.NET Web API 2 核心包到测试项目。
+使用空模板创建应用程序时，单元测试项目（StoreApp）不包含任何已安装的 NuGet 包。 其他模板（如 Web API 模板）在单元测试项目中包含一些 NuGet 包。 对于本教程，必须将 Microsoft ASP.NET Web API 2 核心包添加到测试项目中。
 
-右键单击 StoreApp.Tests 项目并选择**管理 NuGet 包**。 必须选择要将包添加到该项目的 StoreApp.Tests 项目。
+右键单击 "StoreApp" 项目，然后选择 "**管理 NuGet 包**"。 您必须选择 StoreApp 项目，才能将包添加到该项目中。
 
 ![管理包](unit-testing-with-aspnet-web-api/_static/image8.png)
 
-查找和安装 Microsoft ASP.NET Web API 2 核心包。
+查找并安装 Microsoft ASP.NET Web API 2 核心包。
 
-![安装 web api core 包](unit-testing-with-aspnet-web-api/_static/image9.png)
+![安装 web api 核心包](unit-testing-with-aspnet-web-api/_static/image9.png)
 
-关闭管理 NuGet 包窗口。
+关闭 "管理 NuGet 包" 窗口。
 
 <a id="tests"></a>
 ## <a name="create-tests"></a>创建测试
 
-默认情况下，你的测试项目包括一个名为 UnitTest1.cs 的空测试文件。 此文件显示了用于创建测试方法的属性。 对单元测试，可以使用此文件，或创建你自己的文件。
+默认情况下，你的测试项目包含一个名为 UnitTest1.cs 的空测试文件。 此文件显示用于创建测试方法的属性。 对于单元测试，可以使用此文件，也可以创建自己的文件。
 
 ![UnitTest1](unit-testing-with-aspnet-web-api/_static/image10.png)
 
-对于本教程中，将创建测试类。 您可以删除 UnitTest1.cs 文件。 添加名为的类**TestSimpleProductController.cs**，并将代码替换下面的代码。
+在本教程中，您将创建自己的测试类。 你可以删除 UnitTest1.cs 文件。 添加一个名为**TestSimpleProductController.cs**的类，并将代码替换为以下代码。
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample3.cs)]
 
 <a id="runtests"></a>
 ## <a name="run-tests"></a>运行测试
 
-现在您就可以运行测试。 使用标记的方法的所有**TestMethod**属性进行测试。 从**测试**菜单项，运行测试。
+你现在已准备好运行测试。 将测试标记为**TestMethod**属性的所有方法。 从 "**测试**" 菜单项中，运行测试。
 
 ![运行测试](unit-testing-with-aspnet-web-api/_static/image11.png)
 
-打开**测试资源管理器**窗口中，并请注意，测试结果。
+打开 "**测试资源管理器**" 窗口，并注意测试的结果。
 
 ![测试结果](unit-testing-with-aspnet-web-api/_static/image12.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-已完成本教程。 在本教程中的数据已特意简化为专注于单元测试条件。 单元测试更高级的数据方案中，请参阅[模拟实体框架时单元测试 ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)。
+您已完成本教程的学习。 本教程中的数据特意进行了简化，以专注于单元测试情况。 有关更高级数据方案的单元测试，请参阅[单元测试 ASP.NET Web API 2 时的模拟实体框架](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)。

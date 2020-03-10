@@ -9,11 +9,11 @@ ms.assetid: 25444121-5a72-4dac-8e50-ad2b7ac667af
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 9c4c59bb9dbd3e2ba2b3b81ecf76271f21673bce
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598730"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496502"
 ---
 # <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-c"></a>使用没有 UpdatePanel 的弹出控件处理回发 (C#)
 
@@ -43,7 +43,7 @@ AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法�
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/samples/sample3.html)]
 
-在服务器端代码中，必须读取隐藏字段的值。 由于隐藏的窗体字段是很简单的操作，因此需要使用允许列表方法来验证隐藏的值。 标识正确的文本框后，会将日历中的日期写入该文本框。
+在服务器端代码中，必须读取隐藏字段的值。 由于隐藏的表单字段进行了一些无关紧要操作，一种允许列表方法验证隐藏的值是必需的。 标识正确的文本框后，会将日历中的日期写入该文本框。
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/samples/sample4.aspx)]
 

@@ -9,11 +9,11 @@ ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
 ms.openlocfilehash: be48db5ea3de4af46b0f864cc9e73d2f518294a4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607203"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484142"
 ---
 # <a name="dynamically-adding-an-accordion-pane-vb"></a>动态添加折叠窗格（VB）
 
@@ -58,4 +58,4 @@ AJAX 控件工具包中的可折叠控件提供多个窗格，并允许用户一
 折叠后的数据是由服务器端代码动态添加的（[单击查看完全大小的映像](dynamically-adding-an-accordion-pane-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](databinding-to-an-accordion-vb.md)
+> [上一页](databinding-to-an-accordion-vb.md)

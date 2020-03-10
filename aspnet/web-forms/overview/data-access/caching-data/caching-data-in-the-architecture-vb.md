@@ -9,11 +9,11 @@ ms.assetid: 5e189dd7-f4f9-4f28-9b3a-6cb7d392e9c7
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
 ms.openlocfilehash: dc991a205fa7e61f604bc0f26e9b24b3faefd3d3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607503"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78443588"
 ---
 # <a name="caching-data-in-the-architecture-vb"></a>缓存体系结构中的数据 (VB)
 
@@ -159,7 +159,7 @@ ms.locfileid: "74607503"
 > [!NOTE]
 > 本文随附的下载内容中提供的缓存层不完整。 它只包含一个类，`ProductsCL`，仅体育几个方法。 而且，只有单个 ASP.NET 页面使用 CL （`~/Caching/FromTheArchitecture.aspx`），所有其他页面仍直接引用 BLL。 如果你计划在应用程序中使用 CL，则表示层中的所有调用都应转向 CL，这将要求 CL 的类和方法涵盖表示层当前使用的 BLL 中的这些类和方法。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管可以使用 ASP.NET 2.0 s SqlDataSource 和 ObjectDataSource 控件在表示层应用缓存，但理想情况下，会将缓存责任委托给体系结构中的一个单独的层。 在本教程中，我们创建了一个驻留在表示层和业务逻辑层之间的缓存层。 缓存层需要提供相同的类和方法集，它们存在于 BLL 中，并从表示层中调用。
 

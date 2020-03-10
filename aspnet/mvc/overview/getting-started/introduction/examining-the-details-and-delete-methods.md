@@ -9,11 +9,11 @@ ms.assetid: f1d2a916-626c-4a54-8df4-77e6b9fff355
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
 ms.openlocfilehash: da06815b5c1d76a939fdfb77ce11774081dfb881
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456395"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78470588"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>检查 Details 和 Delete 方法
 
@@ -53,7 +53,7 @@ Code First 使用 `Find` 方法可以轻松地搜索数据。 内置于方法中
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，你有了一个完整的 ASP.NET MVC 应用程序，它将数据存储在本地数据库中。 你可以创建、读取、更新、删除和搜索电影。
 
@@ -69,4 +69,4 @@ Code First 使用 `Find` 方法可以轻松地搜索数据。 内置于方法中
 \- [Scott Hanselman](http://www.hanselman.com/blog/) twitter： [@shanselman](https://twitter.com/shanselman)
 
 > [!div class="step-by-step"]
-> [“上一步”](adding-validation.md)
+> [上一页](adding-validation.md)

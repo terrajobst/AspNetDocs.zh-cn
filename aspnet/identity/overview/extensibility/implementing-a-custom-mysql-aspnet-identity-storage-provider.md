@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
 ms.openlocfilehash: 2f0b47d45bce82c71d1864536309f9e2ffed2d63
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519123"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500066"
 ---
 # <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>实现自定义 MySQL ASP.NET Identity 存储提供程序
 
@@ -121,7 +121,7 @@ ms.locfileid: "76519123"
 5. 右键单击 "IdentityMySQLDemo" 项目，选择 "**添加**"、"**引用"、"解决方案"、"项目**"，选择 "AspNet" 项目并单击 **"确定"** 。
 6. 在 IdentityMySQLDemo 项目中，将所有引用替换为  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
-   带  
+   替换为  
      `using AspNet.Identity.MySQL;`
 7. 在 IdentityModels.cs 中，将**ApplicationDbContext**设置为从**MySqlDatabase**派生，并包含一个构造函数，该构造函数采用单个参数和连接名称。  
 

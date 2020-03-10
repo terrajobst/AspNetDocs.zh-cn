@@ -9,11 +9,11 @@ ms.assetid: 528acc48-f20c-4b4e-aa16-4cc02f068ebb
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 67ef370a90bc843f5c2da80bb43c8ef8de216b51
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74631946"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78477410"
 ---
 # <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>从 GridView 页脚插入新记录 (VB)
 
@@ -210,7 +210,7 @@ ms.locfileid: "74631946"
 
 这两个选项也同样适用。 在过去的教程中，我们使用后一种方法，为 `ProductsBLL` 类 `UpdateProduct` 方法创建多个重载。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 GridView 缺少在 DetailsView 和 FormView 中找到的内置插入功能，但有很大努力可以将插入界面添加到脚注行。 若要在 GridView 中显示页脚行，只需将其 `ShowFooter` 属性设置为 `True`。 可以通过将字段转换为 TemplateField 并将插入接口添加到 `FooterTemplate`为每个字段自定义页脚行内容。 如本教程中所述，`FooterTemplate` 可以包含按钮、文本框、DropDownLists、Checkbox、用于填充数据驱动的 Web 控件的数据源控件（如 DropDownLists）和验证控件。 除了收集用户输入的控件以外，还需要添加按钮、LinkButton 或 ImageButton。
 
@@ -229,4 +229,4 @@ GridView 缺少在 DetailsView 和 FormView 中找到的内置插入功能，但
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Bernadette Leigh。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](adding-a-gridview-column-of-checkboxes-vb.md)
+> [上一页](adding-a-gridview-column-of-checkboxes-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 1965063a9b613d0e2857cddcc2165f5fda64ec0c
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455524"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450740"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和网页中的 XSRF/CSRF 防护
 
@@ -159,12 +159,12 @@ XSRF 设施还可以在令牌生成或验证过程中执行额外检查，这些
 
 开发人员可以从应用程序\_开始配置 XSRF 系统。 配置是以编程方式进行的。 下面描述了静态*AntiForgeryConfig*类型的属性。 大多数使用声明的用户都要设置 UniqueClaimTypeIdentifier 属性。
 
-| **属性** | **说明** |
+| **Property** | **描述** |
 | --- | --- |
 | **AdditionalDataProvider** | 在令牌生成过程中提供附加数据并在令牌验证期间使用其他数据的[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 。 默认值为 *null*。 有关详细信息，请参阅[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)部分。 |
 | **CookieName** | 一个字符串，它提供用于存储 XSRF 会话令牌的 HTTP cookie 的名称。 如果未设置此值，将根据应用程序的已部署虚拟路径自动生成名称。 默认值为 *null*。 |
-| **RequireSsl** | 一个布尔值，指示是否需要在受 SSL 保护的通道上提交 XSRF 令牌。 如果此值为*true*，则自动生成的任何 cookie 都将设置 "安全" 标志，并在从未通过 SSL 提交的请求内调用时，将引发 XSRF api。 默认值是 *false*秒。 |
-| **SuppressIdentityHeuristicChecks** | 一个布尔值，指示 XSRF 系统是否应停用其对基于声明的标识的支持。 如果此值为*true*，则系统将假设*IIdentity.Name*适用于用作唯一的每用户标识符，并且不会尝试按[WIF/ACS/基于声明的身份验证](#_WIF_ACS)部分所述尝试使用特殊的*IClaimsIdentity*或*ClClaimsIdentity* 。 默认值是 `false`。 |
+| **RequireSsl** | 一个布尔值，指示是否需要在受 SSL 保护的通道上提交 XSRF 令牌。 如果此值为*true*，则自动生成的任何 cookie 都将设置 "安全" 标志，并在从未通过 SSL 提交的请求内调用时，将引发 XSRF api。 默认值为“false”。 |
+| **SuppressIdentityHeuristicChecks** | 一个布尔值，指示 XSRF 系统是否应停用其对基于声明的标识的支持。 如果此值为*true*，则系统将假设*IIdentity.Name*适用于用作唯一的每用户标识符，并且不会尝试按[WIF/ACS/基于声明的身份验证](#_WIF_ACS)部分所述尝试使用特殊的*IClaimsIdentity*或*ClClaimsIdentity* 。 默认值为 `false`。 |
 | **UniqueClaimTypeIdentifier** | 一个字符串，指示哪种声明类型适用于每个用户的唯一标识符。 如果设置了此值并且当前*IIdentity*是基于声明的，则系统将尝试提取*UniqueClaimTypeIdentifier*指定的类型的声明，并在生成字段标记时使用相应的值来代替用户的用户名。 如果找不到声明类型，则系统将无法请求。 默认值为*null*，指示系统应使用（标识提供者、名称标识符）元组作为前面介绍的替代用户的用户名。 |
 
 <a id="_IAntiForgeryAdditionalDataProvider"></a>

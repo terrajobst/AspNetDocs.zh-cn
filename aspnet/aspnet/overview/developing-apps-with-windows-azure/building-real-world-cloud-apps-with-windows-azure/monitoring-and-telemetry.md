@@ -9,11 +9,11 @@ ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
 ms.openlocfilehash: f61810ea7b486b2fa0bbb234edea7541eedde835
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457058"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471134"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>监视和遥测（通过 Azure 构建实际的云应用）
 
@@ -98,7 +98,7 @@ ms.locfileid: "77457058"
     ![外部服务](monitoring-and-telemetry/_static/image17.png)
 - 有关世界上或在美国 web 应用流量中的位置的信息。
 
-    ![地理位置](monitoring-and-telemetry/_static/image18.png)
+    ![Geography](monitoring-and-telemetry/_static/image18.png)
 
 您还可以设置报表和事件。 例如，你可以在任何时候开始看到错误，发送一封电子邮件以通知支持人员解决问题。
 
@@ -129,7 +129,7 @@ ms.locfileid: "77457058"
 
 在 .NET System 诊断跟踪中，可以为日志分配错误、警告、信息和调试/详细级别。 你可以通过保留 ACT 日志的错误级别并使用通知日志的较低级别来区分操作与通知日志。
 
-![日志记录级别](monitoring-and-telemetry/_static/image20.png)
+![日志级别](monitoring-and-telemetry/_static/image20.png)
 
 ### <a name="configure-logging-levels-at-run-time"></a>在运行时配置日志记录级别
 
@@ -247,7 +247,7 @@ Fix It 应用使用诊断跟踪。 若要在 web 应用中启用系统诊断日�
 
 ![服务器资源管理器中的日志](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 实现现成的遥测系统非常简单，可以在自己的代码中检测日志记录，并在 Azure 中配置日志记录。 当你有生产问题时，遥测系统和自定义日志的组合将有助于你快速解决问题，然后这些问题才会成为客户的重大问题。
 
@@ -255,7 +255,7 @@ Fix It 应用使用诊断跟踪。 若要在 web 应用中启用系统诊断日�
 
 ## <a name="resources"></a>资源
 
-有关详细信息，请参阅以下资源。
+有关更多信息，请参见以下资源。
 
 文档主要介绍遥测：
 

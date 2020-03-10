@@ -9,11 +9,11 @@ ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
 ms.openlocfilehash: 738318cce442fdc5d58dd1e4c992d4941be2487e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74591241"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520370"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到测试
 
@@ -91,7 +91,7 @@ ms.locfileid: "74591241"
 
 3. 在 "**连接**" 窗格中，展开服务器节点，然后选择 "**应用程序池**"。 如果将**DefaultAppPool**分配给 .net framework 版本4（如下图所示），请在 "**应用程序池**" 窗格中跳到下一部分。
 
-   ![Inetmgr_showing_4. 0_app_pools](deploying-to-iis/_static/image5a.png)
+   ![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image5a.png)
 
 4. 如果只看到两个应用程序池，并且两者都设置为 .NET Framework 2.0，请在 IIS 中安装 ASP.NET 4。
 
@@ -109,7 +109,7 @@ ms.locfileid: "74591241"
 
 7. 在 "**编辑应用程序池**" 对话框中，将 " **.net clr 版本**" 更改为 " **.net clr 4.0.30319**"。 选择“确定”。
 
-   ![Selecting_. NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
+   ![Selecting_.NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
 
 你现在可以将 web 应用程序发布到 IIS。 但首先要创建用于测试的数据库。
 
@@ -174,13 +174,13 @@ Contoso 大学应用程序有两个数据库：
 
 1. 在 Visual Studio 中，打开之前创建的*Grant .sql*文件。
 
-2. 选择 "**连接**"。 
+2. 选择“连接”。 
 
     ![连接按钮](deploying-to-iis/_static/image11.png)
 
-3. 在 "**连接到服务器**" 对话框中，输入 " *.\SQLExpress* " 作为**服务器名称**。 选择 "**连接**"。
+3. 在 "**连接到服务器**" 对话框中，输入 " *.\SQLExpress* " 作为**服务器名称**。 选择“连接”。
 
-4. 在 "数据库" 下拉列表中，选择 " **ContosoUniversity**"。 选择 "**执行**"。 
+4. 在 "数据库" 下拉列表中，选择 " **ContosoUniversity**"。 选择“执行”。 
 
    ![](deploying-to-iis/_static/image12.png)
 
@@ -372,7 +372,7 @@ Contoso 大学应用程序有两个数据库：
 
 2. 为希望应用程序在运行时使用的连接字符串创建 web.config 文件转换。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，你已将应用程序部署到 IIS 开发计算机上，并在其中进行测试。
 
@@ -380,7 +380,7 @@ Contoso 大学应用程序有两个数据库：
 
 这会验证部署过程是否已将应用程序的内容复制到适当的位置（不包括你不想部署的文件），同时还会在部署过程中正确 Web 部署配置 IIS。 在下一教程中，您将运行一个查找尚未完成的部署任务的测试：设置 "*榆树 ah* " 文件夹的文件夹权限。
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
 有关在 Visual Studio 中运行 IIS 或 IIS Express 的信息，请参阅以下资源：
 

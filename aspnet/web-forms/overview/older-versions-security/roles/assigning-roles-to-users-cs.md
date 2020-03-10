@@ -9,11 +9,11 @@ ms.assetid: d522639a-5aca-421e-9a76-d73f95607f57
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 3346e47cf604ed1d4003ca83203116666e37cb1b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634078"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78461384"
 ---
 # <a name="assigning-roles-to-users-c"></a>向用户分配角色 (C#)
 
@@ -305,7 +305,7 @@ ms.locfileid: "74634078"
 
 **图 14**： Bruce、Tito 和 Wanda 均为主管（[单击查看全尺寸图像](assigning-roles-to-users-cs/_static/image42.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 角色框架提供了一些方法，用于检索有关特定用户的角色和方法的信息，以确定哪些用户属于指定的角色。 此外，还提供了多种方法来向一个或多个角色添加和删除一个或多个用户。 在本教程中，我们只重点介绍两种方法： `AddUserToRole` 和 `RemoveUserFromRole`。 还有其他变体，旨在将多个用户添加到单个角色并向一个用户分配多个角色。
 

@@ -1,6 +1,6 @@
 ---
 uid: web-pages/overview/index
-title: Web Pages 指南 |Microsoft Docs
+title: 网页指南 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,13 +9,13 @@ ms.assetid: 1a2ed0e8-63da-4110-9896-e2731d86f7c4
 msc.legacyurl: /web-pages/overview
 msc.type: book
 ms.openlocfilehash: b4c9e9eb85f6ba9a1e2b2d0a1bbaf027ee25bc0d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381843"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520556"
 ---
-# <a name="web-pages-guidance"></a>Web Pages 指南
+# <a name="web-pages-guidance"></a>网页指南
 
 - [入门](getting-started/index.md)
 

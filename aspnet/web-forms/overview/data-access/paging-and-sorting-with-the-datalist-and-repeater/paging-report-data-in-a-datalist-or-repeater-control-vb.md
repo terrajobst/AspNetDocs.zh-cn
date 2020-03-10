@@ -9,11 +9,11 @@ ms.assetid: bbd6b7f7-b98a-48b4-93f3-341d6a4f53c0
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5c65ca1f263e41748d99323dbdf1c28fdd077246
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74570260"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78503090"
 ---
 # <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>分页 DataList 或 Repeater 控件中的报表数据 (VB)
 
@@ -225,7 +225,7 @@ ms.locfileid: "74570260"
 
 在下一教程中，我们将更详细地探讨如何实现自定义分页。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 DataList 和 Repeater 都不提供在 GridView、DetailsView 和 FormView 控件中提供的 "开箱即用" 支持，但这种功能可以极少地添加。 实现默认分页的最简单方法是将整个产品集包装在 `PagedDataSource` 中，然后将 `PagedDataSource` 绑定到 DataList 或 Repeater。 在本教程中，我们将 `GetProductsAsPagedDataSource` 方法添加到 `ProductsBLL` 类以返回 `PagedDataSource`。 `ProductsBLL` 类已经包含了自定义分页 `GetProductsPaged` 和 `TotalNumberOfProducts`所需的方法。
 

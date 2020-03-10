@@ -9,11 +9,11 @@ ms.assetid: 06a776fe-7c73-4ca7-8e02-5260a86edc03
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2bc203d694792716bbf4f7d7b8d152c589bf99b1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575125"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78483842"
 ---
 # <a name="picking-one-animation-out-of-a-list-c"></a>选取列表中的一个动画 (C#)
 

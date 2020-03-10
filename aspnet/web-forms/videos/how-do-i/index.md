@@ -9,11 +9,11 @@ ms.assetid: 27591afa-3c14-47e6-8323-573f8f7aa862
 msc.legacyurl: /web-forms/videos/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 12c988e64c5b724e04b6fc5f8eddc6a181764e1d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114926"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519842"
 ---
 # <a name="how-do-i"></a>“如何实现”
 
@@ -73,7 +73,7 @@ ms.locfileid: "65114926"
 - [检测 ASP.NET 网页中的浏览器功能](how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
 - [将 ASP.NET 服务器控件映射到用于呈现该控件的适配器](how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
 - [使用查询字符串从一个页面向另一页面传递信息](how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-- [使用 aspnet\_merge.exe 实用工具合并程序集](how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+- [使用 aspnet\_share.exe 实用程序来合并程序集](how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
 - [在 ASP.NET 中实现跨页回发](how-do-i-implement-a-cross-page-postback-in-aspnet.md)
 - [以编程方式向 ASP.NET 网页添加控件](how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
 - [使用隐藏字段存储和操作客户端信息](how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)

@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/getting-started/index
-title: ASP.NET Web 窗体入门 |Microsoft Docs
+title: 与 ASP.NET Web 窗体入门 |Microsoft Docs
 author: rick-anderson
-description: 了解有关 ASP.NET Web 窗体 ASP.NET Web 窗体，可以使用熟悉的拖放、 事件驱动模型生成动态网站。 设计图面和 hund...
+description: 了解 ASP.NET Web 窗体 ASP.NET Web 窗体使你能够使用熟悉的拖放、事件驱动的模型生成动态网站。 设计图面和 hund 。
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: f645d3b1-1092-43c6-a28a-074b413924b4
 msc.legacyurl: /web-forms/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: d76e65ae807b1da97d07199e7f0fce21fbf14af6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133435"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513614"
 ---
-# <a name="getting-started-with-aspnet-web-forms"></a>ASP.NET Web 窗体入门
+# <a name="getting-started-with-aspnet-web-forms"></a>入门与 ASP.NET Web 窗体一起提供
 
-> Web 窗体模型以及如何创建和使用控件。
+> Web 窗体模型以及如何创建页和使用控件。
 
 - [ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门](getting-started-with-aspnet-45-web-forms/index.md)
 

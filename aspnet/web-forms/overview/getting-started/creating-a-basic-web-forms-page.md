@@ -9,11 +9,11 @@ ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
 ms.openlocfilehash: 5d13a51128eecd92a82cfd06054448582a348e11
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445686"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511076"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 创建基本 ASP.NET 4.5 Web 窗体页
 
@@ -32,7 +32,7 @@ ms.locfileid: "73445686"
 - 添加事件处理程序。
 - 运行和测试 Visual Studio 中的页面。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>系统必备
 
 若要完成本演练，你将需要：
 
@@ -60,7 +60,7 @@ ms.locfileid: "73445686"
 3. 选择左侧的 "**模板**" -&gt; **Visual C#**  -&gt; **Web**模板 "组。
 4. 在中心列中选择 " **ASP.NET Web 应用程序**" 模板。
 5. 将项目命名为 " ***BasicWebApp*** "，然后单击 **"确定"** 按钮。   
-!["新建项目" 对话框](creating-a-basic-web-forms-page/_static/image2.png)
+![“新建项目”对话框](creating-a-basic-web-forms-page/_static/image2.png)
 6. 接下来，选择 " **Web 窗体**" 模板，然后单击 "**确定"** 按钮创建项目。  
 ![新的 ASP.NET 项目 "对话框](creating-a-basic-web-forms-page/_static/image3.png)  
 
@@ -101,7 +101,7 @@ ms.locfileid: "73445686"
 2. 在**解决方案资源管理器**中，右键单击 Web 应用程序名称（在本教程中，应用程序名称为 " **BasicWebSite**"），然后单击 "**添加** -&gt;**新项**"。   
 随即出现“添加新项”对话框。
 3. 选择左侧的 " **Visual C#**  -&gt; **Web**模板" 组。 然后，从中间列表中选择 " **Web 窗体**" 并将其命名为 " *FirstWebPage*"。   
-    !["添加新项" 对话框](creating-a-basic-web-forms-page/_static/image6.png)
+    ![“添加新项”对话框](creating-a-basic-web-forms-page/_static/image6.png)
 4. 单击 "**添加**" 以将网页添加到项目。  
 Visual Studio 将创建新页并将其打开。
 
@@ -180,7 +180,7 @@ Visual Studio 提供了各种方法来设置页面上控件的属性。 在本�
 
     > [!NOTE] 
     > 
-    > 所有控件都在**form**元素内，该元素还具有特性**runat =&quot;server&quot;** 。 **Runat =&quot;server&quot;** 属性和**asp：** control 标记的前缀标记这些控件，以便在页面运行时由服务器上的 ASP.NET 进行处理。 位于 **&lt;窗体 runat =&quot;server&quot;&gt;** 和 **&lt;script runat =&quot;server&quot;** &gt;元素的代码不会以任何形式发送到浏览器，这就是 ASP.NET 代码必须位于元素内的原因其开始标记包含**runat =&quot;server&quot;** 属性。
+    > 所有控件都在**form**元素内，该元素还具有特性**runat =&quot;server&quot;** 。 **Runat =&quot;server&quot;** 属性和**asp：** control 标记的前缀标记这些控件，以便在页面运行时由服务器上的 ASP.NET 进行处理。 位于 **&lt;窗体 runat =&quot;server&quot;&gt;** 和 **&lt;script runat =&quot;server&quot;** &gt;元素的代码不会以任何形式发送到浏览器，这就是 ASP.NET 代码必须位于其开始标记包含**runat =&quot;server&quot;** 特性的元素内的原因。
 4. 接下来，您将向 "[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)" 控件添加其他属性。 将插入点直接置于 **&lt;asp： label&gt;** **标记中，** 然后按**空格键**。
 
     此时将显示一个下拉列表，其中显示可以为 "[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)" 控件设置的可用属性列表。 此功能称为**IntelliSense**，可帮助你在**源**视图中包含服务器控件、HTML 元素和页面上其他项的语法。 下图显示了 "[标签](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)" 控件的**IntelliSense**下拉列表。

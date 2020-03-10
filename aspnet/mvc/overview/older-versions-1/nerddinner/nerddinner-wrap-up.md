@@ -1,49 +1,49 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
-title: NerdDinner 总结 |Microsoft Docs
+title: NerdDinner 汇总 |Microsoft Docs
 author: microsoft
-description: 这是 NerdDinner 教程结束后，若要了解详细信息了解如何为您提供。
+description: 这是 NerdDinner 教程的结论，并向您提供有关如何了解更多详细信息。
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 5c6371c0-a944-4adf-a28e-5afbdd011ca8
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
 ms.openlocfilehash: 4e25a4a3a953e97c9a292506a9511f28874925ab
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128363"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468902"
 ---
 # <a name="nerddinner-wrap-up"></a>NerdDinner 总结
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> 这是 NerdDinner 教程结束后，若要了解详细信息了解如何为您提供。
+> 这是 NerdDinner 教程的结论，并向您提供有关如何了解更多详细信息。
 > 
-> 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
+> 如果你使用的是 ASP.NET MVC 3，则建议你遵循[MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[Mvc 音乐应用商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程中的入门。
 
-NerdDinner 应用程序现在已完成并准备好部署在 web 上。
+我们的 NerdDinner 应用程序现已完成，可以在 web 上进行部署。
 
 ![](nerddinner-wrap-up/_static/image1.png)
 
-我们使用一系列的 ASP.NET MVC 功能来生成 NerdDinner。 希望开发它的过程介绍如何核心 ASP.NET MVC 功能工作，并提供有关如何将这些功能的上下文集成在一起应用程序中。
+我们使用了一组广泛的 ASP.NET MVC 功能来生成 NerdDinner。 但愿开发它的过程舍弃了核心 ASP.NET MVC 功能的工作原理，并提供了这些功能在应用程序中的集成方式的上下文。
 
 ### <a name="learning-more"></a>了解更多信息
 
-本教程中 NerdDinner 是新的第一章[Professional ASP.NET MVC 1.0](https://www.amazon.com/gp/product/0470384611?ie=UTF8&amp;tag=scoblo04-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0470384611) Wrox press 书籍。
+本 NerdDinner 教程是 Wrox 按下新的[专业 ASP.NET MVC 1.0](https://www.amazon.com/gp/product/0470384611?ie=UTF8&amp;tag=scoblo04-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0470384611)书籍的第一章。
 
 [![](https://mscblogs.blob.core.windows.net/media/scottgu/Media/bookcover1_6CAECF94.png)](https://www.amazon.com/gp/product/0470384611?ie=UTF8&amp;tag=scoblo04-20&amp;linkCode=xm2&amp;camp=1789&amp;creativeASIN=0470384611)
 
-您可以阅读书籍，甚至更多地了解 ASP.NET MVC 的其余部分。
+可以阅读该书的其余部分，了解有关 ASP.NET MVC 的详细信息。
 
-此外可以找到很好的 ASP.NET MVC 教程和视频，位于：[https://www.asp.net/mvc](../../../index.md) 很快将发布其他优秀的 ASP.NET MVC 书籍。 我将更新此页后，可以包括指向其他丛书时变得可用。
+你还可以在以下位置找到精彩的 ASP.NET MVC 教程和视频： [https://www.asp.net/mvc](../../../index.md)其他精彩 ASP.NET mvc 书籍不久将发布。 我将更新此页，以在其他书籍可用时包含这些书籍的链接。
 
-希望这能帮助，
+希望这会有所帮助，
 
 Scott
 
 > [!div class="step-by-step"]
-> [上一篇](enable-automated-unit-testing.md)
+> [上一页](enable-automated-unit-testing.md)

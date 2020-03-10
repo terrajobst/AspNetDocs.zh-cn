@@ -9,11 +9,11 @@ ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
 ms.openlocfilehash: 87a7516415895e761d1589fd459b93e5c15c0f85
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456993"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471476"
 ---
 # <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>分布式缓存（通过 Azure 构建实际的云应用）
 
@@ -82,7 +82,7 @@ Azure 提供以下缓存服务： [Azure Redis 缓存](https://msdn.microsoft.co
 
 如[web 开发最佳实践一章](web-development-best-practices.md)中所述，最佳做法是避免使用会话状态。 如果应用程序需要会话状态，则下一种最佳做法是避免默认的内存中提供程序，因为这不会启用 scale out （web 服务器的多个实例）。 ASP.NET SQL Server 的会话状态提供程序允许在多个 web 服务器上运行的站点使用会话状态，但与内存中提供程序相比，这会产生较高的延迟成本。 如果必须使用会话状态，最佳解决方案是使用缓存提供程序，例如[Azure 缓存的会话状态提供程序](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 您已经了解了 Fix It 应用程序可以如何实现缓存，以便提高响应时间和伸缩性，并使应用程序在数据库不可用时继续响应读取操作。 在[下一章](queue-centric-work-pattern.md)中，我们将演示如何进一步提高可伸缩性，并使应用程序继续响应写入操作。
 

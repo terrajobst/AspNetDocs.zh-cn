@@ -9,11 +9,11 @@ ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
 ms.openlocfilehash: d3b619ebd9448d30857ffbaf17fd245b1d54a662
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519292"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521114"
 ---
 # <a name="shopping-cart"></a>购物车
 
@@ -60,7 +60,7 @@ ms.locfileid: "76519292"
 
     ![购物车-"添加新项" 对话框](shopping-cart/_static/image2.png)
 3. 将此新类命名为*CartItem.cs*。
-4. 单击“添加”。  
+4. 单击 **“添加”** 。  
    新的类文件将显示在编辑器中。
 5. 将默认代码替换为以下代码：   
 

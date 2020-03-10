@@ -9,11 +9,11 @@ ms.assetid: ea918f62-c9d6-4a7f-9bc6-e054d3764b2c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a11dadfda8b6a189acedd7ac723d85f8b2084324
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569931"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515732"
 ---
 # <a name="determining-what-files-need-to-be-deployed-vb"></a>确定需要部署哪些文件 (VB)
 
@@ -47,7 +47,7 @@ ASP.NET 网页分为声明性标记和源代码。 声明性标记部分包括 H
 
 | **编译模型** | **部署标记部分文件？** | **部署源代码文件？** | **是否在 `Bin` Directory 中部署程序集？** |
 | --- | --- | --- | --- |
-| 显式编译 | 是 | 否 | 是 |
+| 显式编译 | 是 | No | 是 |
 | 自动编译 | 是 | 是 | 是（如果存在） |
 
 **表1：部署哪些文件取决于所使用的编译模型。**
@@ -148,7 +148,7 @@ Visual Studio 中的 "生成" 菜单选项同时存在于 Web 应用程序项目
 > [!NOTE]
 > 网站项目还可以使用显式编译。 将来的教程将介绍如何显式编译网站项目。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 部署 ASP.NET 应用程序需要将所需的文件从开发环境复制到生产环境。 需要同步的精确文件集取决于 ASP.NET 应用程序的代码是显式还是自动编译。 如果将 Visual Studio 配置为使用 Web 应用程序项目模型或网站项目模型管理 ASP.NET 应用程序，则所采用的编译策略将受到影响。
 

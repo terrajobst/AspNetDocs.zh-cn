@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/index
-title: ASP.NET Dynamic Data | Microsoft Docs
+title: ASP.NET 动态数据 |Microsoft Docs
 author: rick-anderson
-description: 如何使用 ASP.NET 动态数据创建基架会自动知道如何执行数据访问的应用程序。
+description: 如何使用 ASP.NET 动态数据创建自动知道如何执行数据访问的基架应用程序。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cd51e6c4-6ff9-419d-8ac8-a39b79d63c78
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
 ms.openlocfilehash: 622f4c5243d094d1ab6b58a909795bc5230c62ce
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116400"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514526"
 ---
 # <a name="aspnet-dynamic-data"></a>ASP.NET 动态数据
 
-> 如何使用 ASP.NET 动态数据创建基架会自动知道如何执行数据访问的应用程序。
+> 如何使用 ASP.NET 动态数据创建自动知道如何执行数据访问的基架应用程序。
 
 - [首个基架和动态数据概述](your-first-scaffold-and-what-is-dynamic-data.md)
 - [启用内联 GridView 编辑](how-do-i-enable-inline-gridview-editing.md)

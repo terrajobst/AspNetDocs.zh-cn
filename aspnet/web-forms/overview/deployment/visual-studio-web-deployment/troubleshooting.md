@@ -9,11 +9,11 @@ ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
 ms.openlocfilehash: b42476fca18b04f4557a216ee205cfd9220023e8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74623575"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465092"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署：疑难解答
 
@@ -25,10 +25,10 @@ ms.locfileid: "74623575"
 
 本页介绍使用 Visual Studio 部署 ASP.NET web 应用程序时可能出现的一些常见问题。 对于每个问题，都提供了一个或多个可能的原因和相应的解决方案。
 
-显示的方案适用于 Azure 和第三方托管提供程序。 有关 Azure App Service 中的 web 应用进行故障排除的详细信息，请参阅以下资源：
+显示的方案适用于 Azure 和第三方托管提供程序。 有关对 Azure 应用服务中的 Web 应用进行故障排除的详细信息，请参阅以下资源：
 
 - [使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
-- [监视 Azure App Service 中的 Web 应用](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
+- [监视 Azure 应用服务中的 Web 应用](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
 - [宣布推出 Windows AZURE SDK 2.0 for .net](http://https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net) （ScottGu 的博客，演示如何在 Visual Studio 中获取诊断日志）
 
 ## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>"/" 应用程序中的服务器错误-当前自定义错误设置阻止远程查看错误的详细信息
@@ -58,7 +58,7 @@ ms.locfileid: "74623575"
 
 尝试在 Visual Studio 中运行项目时，会出现一个错误页面，其中包含类似于以下示例的消息：
 
-“/”应用程序中的服务器错误ЎЈ 如果文件已存在，则无法创建/影像复制 ' ContosoUniversity '。
+'/' 应用程序中出现服务器错误。 如果文件已存在，则无法创建/影像复制 ' ContosoUniversity '。
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
@@ -276,7 +276,7 @@ IIS 中未安装 ASP.NET 4。 如果你要部署到的服务器是你的开发�
 
 部署一个应用程序，该应用程序使用 Entity Framework Code First 迁移和 DBMS （如 SQL Server Compact）将其数据库存储在应用\_Data 文件夹中的文件中。 你已 Code First 迁移配置为在第一次部署后创建数据库。 运行应用程序时，会收到类似于以下示例的错误消息：
 
-路径无效。 检查数据库的目录。 [路径 = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf]
+该路径无效。 检查数据库的目录。 [路径 = c:\inetpub\wwwroot\App\_Data\DatabaseName.sdf]
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解决方案
 
@@ -374,4 +374,4 @@ HTTP 错误 404.17-未找到
 ASP.NET 4.5 可能未安装在您的计算机上。 请参阅本系列中的部署到 IIS 作为测试环境教程教程中的步骤，其中介绍了如何安装 ASP.NET 4.5。
 
 > [!div class="step-by-step"]
-> [上一部分](deploying-extra-files.md)
+> [上一页](deploying-extra-files.md)

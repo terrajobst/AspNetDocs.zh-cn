@@ -9,11 +9,11 @@ ms.assetid: cfe2a6a0-1e56-4dc8-9537-c8ec76ba96a4
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5aaf97dc8448dcb7b94ef2e4e23f34fd37ac4426
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74115278"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489902"
 ---
 # <a name="creating-a-data-access-layer-c"></a>创建数据访问层 (C#)
 
@@ -168,7 +168,7 @@ TableAdapter 配置向导首先提示您选择要使用的数据库。 下拉列
 
 在此示例中使用的每个对象都是强类型的，允许 Visual Studio 提供 IntelliSense 和编译时类型检查。 并且最重要的是，TableAdapter 返回的所有数据表都可以绑定到 ASP.NET 数据 Web 控件，如 GridView、DetailsView、DropDownList、CheckBoxList 等。 下面的示例演示如何将**GetProducts （）** 方法返回的 DataTable 绑定到仅在**页面\_Load**事件处理程序中的扫描三行代码中。
 
-AllProducts .aspx
+AllProducts.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-cs/samples/sample2.aspx)]
 
@@ -226,7 +226,7 @@ AllProducts.aspx.cs
 
 对于 DAL 中的**GetProductsByCategoryID （*类别 id*）** 方法，我们现在可以创建只显示指定类别中的产品的 ASP.NET 页面。 下面的示例显示 "饮料" 类别中的所有产品，其类别**id**为 "1"。
 
-饮料
+Beverages.asp
 
 [!code-aspx[Main](creating-a-data-access-layer-cs/samples/sample4.aspx)]
 
@@ -422,7 +422,7 @@ DB 直接方法创建的**Insert （）** 、 **Update （）** 和**Delete （�
 
 我们将在以后的教程中检查如何显示此类主/详细信息报表。 现在，此示例旨在说明如何使用添加到**SuppliersRow**类的自定义方法。
 
-SuppliersAndProducts .aspx
+SuppliersAndProducts.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-cs/samples/sample24.aspx)]
 
@@ -434,7 +434,7 @@ SuppliersAndProducts.aspx.cs
 
 **图 35**：在左列中列出了供应商的公司名称，他们的产品显示在右侧（[单击以查看完全大小的图像](creating-a-data-access-layer-cs/_static/image93.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 构建 web 应用程序时，创建 DAL 的操作应该是您在开始创建表示层之前要执行的第一个步骤。 使用 Visual Studio 时，基于类型化数据集创建 DAL 是一项任务，可以在10-15 分钟内完成，而无需编写代码行。 后续教程将在此 DAL 上构建。 在[下一教程](creating-a-business-logic-layer-cs.md)中，我们将定义一些业务规则，并了解如何在单独的业务逻辑层中实现它们。
 
@@ -469,4 +469,4 @@ SuppliersAndProducts.aspx.cs
 此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Ron 绿、Hilton Giesenow、Dennis Patterson 将、Liz Shulok、Abel Gomez 和 Carlos Santos。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](creating-a-business-logic-layer-cs.md)
+> [下一部分](creating-a-business-logic-layer-cs.md)

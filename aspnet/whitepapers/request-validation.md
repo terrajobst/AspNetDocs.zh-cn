@@ -2,93 +2,93 @@
 uid: whitepapers/request-validation
 title: 请求验证-阻止脚本攻击 |Microsoft Docs
 author: rick-anderson
-description: 本白皮书介绍了请求验证功能的位置，默认情况下，应用程序无法处理未编码的 HTML 内容 submitt ASP.NET...
+description: 本文介绍了 ASP.NET 的请求验证功能，其中，默认情况下，阻止应用程序处理未编码的 HTML 内容 submitt 。
 ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
 ms.openlocfilehash: 807cccd6fe1acdd6359b014387abd3878840d4cd
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130503"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520580"
 ---
 # <a name="request-validation---preventing-script-attacks"></a>请求验证 - 阻止脚本攻击
 
-> 本白皮书介绍其中，默认情况下，应用程序会阻止处理提交到服务器的未编码的 HTML 内容的 ASP.NET 请求验证功能。 当应用程序已被设计来安全地处理 HTML 数据时，可以禁用此请求验证功能。
+> 本文介绍了 ASP.NET 的请求验证功能，其中，默认情况下，阻止应用程序处理提交给服务器的未编码的 HTML 内容。 当应用程序设计为安全处理 HTML 数据时，可以禁用此请求验证功能。
 > 
 > 适用于 ASP.NET 1.1 和 ASP.NET 2.0。
 
-请求验证的 ASP.NET 版本 1.1，一项功能可阻止服务器接受内容包含未编码 HTML。 此功能旨在帮助阻止某些脚本注入攻击，客户端脚本代码或 HTML 可以不知情的情况下提交到服务器、 存储，并随后呈现给其他用户。 我们仍强烈建议验证所有输入的数据和 HTML 对其在适当的时候进行编码。
+请求验证是 ASP.NET 版本 1.1 中的一项功能，可阻止服务器接受包含未编码 HTML 的内容。 此功能旨在帮助阻止某些脚本注入攻击，避免在不知情的情况下将客户端脚本代码或 HTML提交到服务器，然后将其存储并提供给其他用户。 尽管如此，我们仍旧强烈建议验证所有输入数据和 HTML，并在适当的情况下将其编码。
 
-例如，您创建一个网页，请求用户的电子邮件地址，然后选择电子邮件地址在数据库中的存储。 如果用户输入&lt;脚本&gt;警报 （"你好从脚本"）&lt;/script&gt;而不是一个有效的电子邮件地址，当提供该数据时，此脚本可执行如果内容未正确编码。 ASP.NET 请求验证功能可以避免这种情况发生。
+例如，你创建了一个网页，该网页请求用户的电子邮件地址，然后将该电子邮件地址存储在数据库中。 如果用户输入 &lt;脚本&gt;警报（"hello from SCRIPT"）&lt;/SCRIPT&gt; 而不是有效的电子邮件地址，则在显示该数据时，如果未正确编码内容，则可以执行此脚本。 ASP.NET 的请求验证功能可防止发生这种情况。
 
-## <a name="why-this-feature-is-useful"></a>为什么此功能很有用
+## <a name="why-this-feature-is-useful"></a>此功能的用途
 
-许多站点并不知道它们是打开到简单的脚本注入攻击。 这些攻击的目的是通过显示 HTML，破坏站点还是用于可能执行客户端脚本以将用户重定向到黑客的站点，脚本注入攻击是 Web 开发人员必须应对的问题。
+很多站点并不知道它们已经公开了简单的脚本注入攻击。 无论这些攻击的目的是通过显示 HTML 来 deface 站点，还是可能执行客户端脚本以将用户重定向到黑客的站点，脚本注入攻击都是 Web 开发人员必须遇到的问题。
 
-脚本注入攻击是需考虑的所有 web 开发人员，无论他们使用的 ASP.NET、 ASP 或其他 web 开发技术。
+脚本注入攻击是所有 web 开发人员的顾虑，无论他们使用的是 ASP.NET、ASP 还是其他 web 开发技术。
 
-ASP.NET 请求验证功能主动防止这些攻击通过不允许未编码的 HTML 内容，除非开发人员决定以允许该内容由服务器进行处理。
+ASP.NET 请求验证功能可主动阻止服务器处理未编码的 HTML 内容，除非开发人员决定允许该内容。
 
-## <a name="what-to-expect-error-page"></a>希望得到什么：错误页
+## <a name="what-to-expect-error-page"></a>预期内容：错误页
 
-下面的屏幕快照显示了一些示例 ASP.NET 代码：
+下面的屏幕截图显示了一些示例 ASP.NET 代码：
 
 ![](request-validation/_static/image1.png)
 
-运行此代码会生成一个简单的页面，您可以在文本框中输入一些文本中，单击按钮，并在标签控件中显示文本：
+运行此代码会生成一个简单的页面，使您可以在文本框中输入一些文本，单击按钮，然后在 "标签" 控件中显示文本：
 
 ![](request-validation/_static/image2.png)
 
-但是，如是 JavaScript，`<script>alert("hello!")</script>`输入并提交，则会得到了异常：
+然而，作为 JavaScript （如 `<script>alert("hello!")</script>` 输入和提交），我们会遇到异常：
 
 ![](request-validation/_static/image3.png)
 
-错误消息指出潜在的危险 Request.Form 的检测到值，并提供更多详细信息中并完全发生了什么以及如何更改行为的说明。 例如：
+该错误消息指出 "可能存在危险的请求。检测到窗体值"，并在说明中提供了确切发生的情况以及如何更改行为的详细信息。 例如:
 
-请求验证程序检测到潜在危险的客户端的输入的值，并在请求处理已中止。 此值可能表明攻击者尝试破坏应用程序，如跨站点脚本攻击的安全。 可以通过设置禁用请求验证`validateRequest=false`Page 指令中或在配置部分中。 但是，强烈建议，你的应用程序显式检查所有输入在这种情况下。
+请求验证检测到潜在危险的客户端输入值，并且已中止处理请求。 此值可能表示试图危害应用程序的安全性，如跨站点脚本攻击。 您可以通过在页指令或配置节中设置 `validateRequest=false` 来禁用请求验证。 不过，强烈建议您的应用程序在这种情况下显式检查所有输入。
 
-## <a name="disabling-request-validation-on-a-page"></a>禁用页面上的请求验证
+## <a name="disabling-request-validation-on-a-page"></a>在页面上禁用请求验证
 
-若要禁用请求验证，必须设置的页面上`validateRequest`到 Page 指令属性`false`:
+若要在页面上禁用请求验证，必须将 Page 指令的 `validateRequest` 属性设置为 `false`：
 
 [!code-aspx[Main](request-validation/samples/sample1.aspx)]
 
 > [!CAUTION]
-> 禁用请求验证后，可将内容提交到页;它是页面开发人员，以确保该内容的责任是正确编码或处理。
+> 禁用请求验证后，可以将内容提交到页面;页面开发人员负责确保内容经过正确编码或处理。
 
-## <a name="disabling-request-validation-for-your-application"></a>禁用你的应用程序的请求验证
+## <a name="disabling-request-validation-for-your-application"></a>禁用应用程序的请求验证
 
-若要为应用程序禁用请求验证，必须修改或为应用程序创建 Web.config 文件并将设置的 validateRequest 特性`<pages />`部分`false`:
+若要对应用程序禁用请求验证，必须修改或创建应用程序的 web.config 文件，并将 `<pages />` 部分的 validateRequest 属性设置为 `false`：
 
 [!code-xml[Main](request-validation/samples/sample2.xml)]
 
-如果你想要禁用请求验证的服务器上的所有应用程序，您可以执行此项修改 Machine.config 文件。
+如果要对服务器上的所有应用程序禁用请求验证，则可以对 Machine.config 文件进行此修改。
 
 > [!CAUTION]
-> 禁用请求验证后，可将内容提交到你的应用程序;它是应用程序开发人员，以确保该内容的责任是正确编码或处理。
+> 禁用请求验证后，可以将内容提交到应用程序;应用程序开发人员负责确保内容经过正确编码或处理。
 
-下面的代码修改以关闭请求验证：
+修改下面的代码以关闭请求验证：
 
 ![](request-validation/_static/image4.png)
 
-现在，如果以下 JavaScript 已输入到 textbox`<script>alert("hello!")</script>`结果将是：
+现在，如果在文本框中输入了以下 JavaScript `<script>alert("hello!")</script>` 则结果为：
 
 ![](request-validation/_static/image5.png)
 
-若要防止这种情况发生，与处于关闭状态的请求验证，我们需要为 HTML 编码内容。
+为了防止发生这种情况，在请求验证关闭的情况下，我们需要对内容进行 HTML 编码。
 
-## <a name="how-to-html-encode-content"></a>如何为 HTML 编码内容
+## <a name="how-to-html-encode-content"></a>如何对内容进行 HTML 编码
 
-如果禁用了请求验证，所以最好对 HTML 编码的内容将存储以供将来使用。 HTML 编码将自动替换任何 '&lt;或&gt;（以及其他多个符号） 与相应的 HTML 编码表示形式。 例如，'&lt;替换为&amp;l t; 和&gt;将替换为&amp;g t;。 浏览器使用这些特殊的代码以显示&lt;或&gt;在浏览器中。
+如果已禁用请求验证，则最好对将存储的内容进行 HTML 编码，以便将来使用。 HTML 编码会自动将所有 "&lt;" 或 "&gt;" （以及其他多个符号）替换为其对应的 HTML 编码表示形式。 例如，"&lt;" 替换为 "&amp;lt;"，而 "&gt;" 替换为 "&amp;gt;"。 浏览器使用这些特殊代码在浏览器中显示 "&lt;" 或 "&gt;"。
 
-内容可以轻松地在服务器使用的编码 HTML `Server.HtmlEncode(string)` API。 内容也可以很容易 HTML 解码，也就是说，就会返回到标准 HTML 使用`Server.HtmlDecode(string)`方法。
+使用 `Server.HtmlEncode(string)` API 可以在服务器上轻松地对内容进行 HTML 编码。 还可以轻松地对内容进行 HTML 解码，也就是说，使用 `Server.HtmlDecode(string)` 方法恢复为标准 HTML。
 
 ![](request-validation/_static/image6.png)
 
-生成中：
+导致：
 
 ![](request-validation/_static/image7.png)

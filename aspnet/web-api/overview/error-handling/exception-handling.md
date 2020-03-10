@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/error-handling/exception-handling
-title: 异常处理在 ASP.NET Web API-ASP.NET 4.x
+title: ASP.NET Web API-ASP.NET 4.x 中的异常处理
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -10,19 +10,19 @@ ms.assetid: cbebeb37-2594-41f2-b71a-f4f26520d512
 msc.legacyurl: /web-api/overview/error-handling/exception-handling
 msc.type: authoredcontent
 ms.openlocfilehash: dbdbab6aefec840e2fec9e9cd33f3d124093750e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125306"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504698"
 ---
 # <a name="exception-handling-in-aspnet-web-api"></a>ASP.NET Web API 中的异常处理
 
-通过[Mike Wasson](https://github.com/MikeWasson)
+作者： [Mike Wasson](https://github.com/MikeWasson)
 
-本指南介绍了错误和异常处理 ASP.NET Web API 中。
+本文介绍了 ASP.NET Web API 中的错误和异常处理。
 
-- [HttpResponseException](#httpresponserexception)
+- [带有 httpresponseexception](#httpresponserexception)
 - [异常筛选器](#exception_filters)
 - [注册异常筛选器](#registering_exception_filters)
 - [HttpError](#httperror)
@@ -30,86 +30,86 @@ ms.locfileid: "65125306"
 <a id="httpresponserexception"></a>
 ## <a name="httpresponseexception"></a>HttpResponseException
 
-如果 Web API 控制器引发未捕获的异常，则会发生什么情况？ 默认情况下，大多数异常将转换为状态代码 500 内部服务器错误的 HTTP 响应。
+如果 Web API 控制器引发未捕获的异常，会发生什么情况？ 默认情况下，大多数异常都转换为 HTTP 响应，状态代码为500，内部服务器错误。
 
-**HttpResponseException**类型是一种特殊情况。 此异常将返回异常构造函数中指定任何 HTTP 状态代码。 例如，以下方法将返回 404，找不到，如果*id*参数无效。
+**带有 httpresponseexception**类型是一种特殊情况。 此异常返回在异常构造函数中指定的任何 HTTP 状态代码。 例如，如果*id*参数无效，则以下方法返回404，但找不到。
 
 [!code-csharp[Main](exception-handling/samples/sample1.cs)]
 
-更好地响应的控制，还可以构造的整个响应消息，并将其与包含**HttpResponseException:** 
+为了更好地控制响应，你还可以构造整个响应消息，并将其包含在**带有 httpresponseexception 中：** 
 
 [!code-csharp[Main](exception-handling/samples/sample2.cs)]
 
 <a id="exception_filters"></a>
 ## <a name="exception-filters"></a>异常筛选器
 
-您可以自定义 Web API 通过编写处理异常的方式*异常筛选器*。 异常筛选器时，控制器方法引发任何未处理的异常时执行*不* **HttpResponseException**异常。 **HttpResponseException**类型是一种特殊情况，因为它专为返回的 HTTP 响应。
+可以通过编写*异常筛选器*来自定义 Web API 处理异常的方式。 当控制器方法引发*不*是**带有 httpresponseexception**异常的任何未经处理的异常时，将执行异常筛选器。 **带有 httpresponseexception**类型是一种特殊情况，因为它专用于返回 HTTP 响应。
 
-异常筛选器实现**System.Web.Http.Filters.IExceptionFilter**接口。 编写异常筛选器的最简单方法是从派生**System.Web.Http.Filters.ExceptionFilterAttribute**类并重写**OnException**方法。
+异常筛选器实现了**IExceptionFilter**接口。 编写异常筛选器的最简单方法是从**ExceptionFilterAttribute**类派生，并重写**OnException**方法。
 
 > [!NOTE]
-> ASP.NET Web API 中的异常筛选器是 ASP.NET MVC 中类似的。 但是，它们是在一个单独的命名空间和函数中单独声明。 具体而言， **HandleErrorAttribute**在 MVC 中使用的类不处理由 Web API 控制器引发的异常。
+> ASP.NET Web API 中的异常筛选器类似于 ASP.NET MVC 中的筛选器。 但是，它们分别在单独的命名空间和函数中声明。 特别是，MVC 中使用的**HandleErrorAttribute**类不处理 Web API 控制器引发的异常。
 
-下面是将转换的筛选器**NotImplementedException**异常转化为 HTTP 状态代码 501，未实现：
+下面的筛选器将**NotImplementedException**异常转换为 HTTP 状态代码501，而未实现：
 
 [!code-csharp[Main](exception-handling/samples/sample3.cs)]
 
-**响应**的属性**HttpActionExecutedContext**对象包含将发送到客户端的 HTTP 响应消息。
+**HttpActionExecutedContext**对象的**Response**属性包含将发送到客户端的 HTTP 响应消息。
 
 <a id="registering_exception_filters"></a>
 ## <a name="registering-exception-filters"></a>注册异常筛选器
 
-有几种方法来注册 Web API 异常筛选器：
+可通过多种方法注册 Web API 异常筛选器：
 
-- 由操作
-- 由控制器
+- 按操作
+- 按控制器
 - 全局
 
-筛选器应用到特定的操作，请将作为属性的筛选器添加到操作：
+要将筛选器应用到特定的操作，请将筛选器作为特性添加到该操作：
 
 [!code-csharp[Main](exception-handling/samples/sample4.cs)]
 
-筛选器应用到所有控制器上的操作，将筛选器作为属性添加到控制器类：
+若要将筛选器应用于控制器上的所有操作，请将筛选器作为属性添加到控制器类：
 
 [!code-csharp[Main](exception-handling/samples/sample5.cs)]
 
-若要对 Web API 的所有控制器全局应用筛选器，将添加到筛选器的实例**GlobalConfiguration.Configuration.Filters**集合。 在此集合中的异常筛选器适用于任何 Web API 控制器操作。
+若要将筛选器全局应用到所有 Web API 控制器，请将筛选器的实例添加到**GlobalConfiguration**集合。 此集合中的异常筛选器将应用到任何 Web API 控制器操作。
 
 [!code-csharp[Main](exception-handling/samples/sample6.cs)]
 
-如果使用"ASP.NET MVC 4 Web 应用程序"项目模板来创建你的项目，将 Web API 配置代码内的放`WebApiConfig`类，该类在应用程序位于\_开始文件夹：
+如果使用 "ASP.NET MVC 4 Web 应用程序" 项目模板来创建项目，请将 Web API 配置代码置于 `WebApiConfig` 类中，该代码位于应用\_启动文件夹中：
 
 [!code-csharp[Main](exception-handling/samples/sample7.cs?highlight=5)]
 
 <a id="httperror"></a>
 ## <a name="httperror"></a>HttpError
 
-**HttpError**对象提供一致的方法来响应正文中返回的错误信息。 下面的示例演示如何返回 HTTP 状态代码 404 （找不到） 与**HttpError**响应正文中。
+**HttpError**对象提供了一种一致的方式来在响应正文中返回错误信息。 下面的示例演示如何在响应正文中返回包含**HttpError**的 HTTP 状态代码404（未找到）。
 
 [!code-csharp[Main](exception-handling/samples/sample8.cs)]
 
-**CreateErrorResponse**中定义的扩展方法**System.Net.Http.HttpRequestMessageExtensions**类。 在内部， **CreateErrorResponse**创建**HttpError**实例，然后创建**HttpResponseMessage** ，其中包含**HttpError**.
+**CreateErrorResponse**是在**HttpRequestMessageExtensions**类中定义的扩展方法。 在内部， **CreateErrorResponse**创建一个**HttpError**实例，然后创建一个包含**HttpError**的**HttpResponseMessage** 。
 
-在此示例中，如果该方法成功，它将返回 HTTP 响应中的产品。 但是，如果找不到请求的产品，包含 HTTP 响应**HttpError**请求正文中。 响应可能如下所示：
+在此示例中，如果方法成功，它将在 HTTP 响应中返回产品。 但如果找不到请求的产品，HTTP 响应会在请求正文中包含**HttpError** 。 响应可能如下所示：
 
 [!code-console[Main](exception-handling/samples/sample9.cmd)]
 
-请注意， **HttpError**在此示例中，已将它们序列化为 JSON。 使用的一个优点**HttpError**是转到通过同一[内容协商](../formats-and-model-binding/content-negotiation.md)和序列化处理任何其他强类型化模型。
+请注意，在此示例中， **HttpError**已序列化为 JSON。 使用**HttpError**的一个优点是，它与任何其他强类型模型进行相同的[内容协商](../formats-and-model-binding/content-negotiation.md)和序列化过程。
 
 ### <a name="httperror-and-model-validation"></a>HttpError 和模型验证
 
-可以为模型验证，请将传递到模型状态**CreateErrorResponse**，以在响应中包括的验证错误：
+对于模型验证，可以将模型状态传递到**CreateErrorResponse**，以便在响应中包括验证错误：
 
 [!code-csharp[Main](exception-handling/samples/sample10.cs)]
 
-此示例中可能会返回以下响应：
+此示例可能返回以下响应：
 
 [!code-console[Main](exception-handling/samples/sample11.cmd)]
 
-有关模型验证的详细信息，请参阅[ASP.NET Web API 中的模型验证](../formats-and-model-binding/model-validation-in-aspnet-web-api.md)。
+有关模型验证的详细信息，请参阅[中的模型验证 ASP.NET Web API](../formats-and-model-binding/model-validation-in-aspnet-web-api.md)。
 
-### <a name="using-httperror-with-httpresponseexception"></a>使用 HttpResponseException HttpError
+### <a name="using-httperror-with-httpresponseexception"></a>将 HttpError 与带有 httpresponseexception 配合使用
 
-前面的示例返回**HttpResponseMessage**消息从控制器操作，但您还可以使用**HttpResponseException**返回**HttpError**。 这样就可以返回强类型化模型中正常成功的情况下，同时仍返回**HttpError**如果出现错误：
+前面的示例从控制器操作返回**HttpResponseMessage**消息，但也可以使用**带有 httpresponseexception**返回**HttpError**。 这使您可以在正常的成功情况下返回强类型化的模型，同时在出现错误时仍会返回**HttpError** ：
 
 [!code-csharp[Main](exception-handling/samples/sample12.cs)]

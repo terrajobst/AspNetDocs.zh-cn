@@ -9,11 +9,11 @@ ms.assetid: fd208ee9-69cc-4467-9783-b4e039bdd1d3
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-vb
 msc.type: authoredcontent
 ms.openlocfilehash: b53df4494eb0faef7c5e4547c2bf95e5fb071298
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74577859"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78507278"
 ---
 # <a name="assigning-roles-to-users-vb"></a>向用户分配角色 (VB)
 
@@ -305,7 +305,7 @@ ms.locfileid: "74577859"
 
 **图 14**： Bruce、Tito 和 Wanda 均为主管（[单击查看全尺寸图像](assigning-roles-to-users-vb/_static/image42.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 角色框架提供了一些方法，用于检索有关特定用户的角色和方法的信息，以确定哪些用户属于指定的角色。 此外，还提供了多种方法来向一个或多个角色添加和删除一个或多个用户。 在本教程中，我们只重点介绍两种方法： `AddUserToRole` 和 `RemoveUserFromRole`。 还有其他变体，旨在将多个用户添加到单个角色并向一个用户分配多个角色。
 

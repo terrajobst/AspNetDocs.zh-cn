@@ -9,11 +9,11 @@ ms.assetid: c76dbc35-a914-4ee3-919c-4f4d1fa05104
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
 ms.openlocfilehash: 3881833bfe2a50a38a357614f92f434a04a8ab08
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626782"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457640"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署代码更新
 
@@ -29,7 +29,7 @@ ms.locfileid: "74626782"
 
 提醒：如果你收到一条错误消息或在你完成本教程时无法正常工作，请务必查看[故障排除页](troubleshooting.md)。
 
-## <a name="make-a-code-change"></a>更改代码
+## <a name="make-a-code-change"></a>进行代码更改
 
 作为应用程序更新的简单示例，你将向**讲师**页添加选定讲师讲授的课程列表。
 
@@ -53,7 +53,7 @@ ms.locfileid: "74626782"
 
 1. 右键单击 "ContosoUniversity" 项目并单击 "**发布**"，打开 "**发布 Web** " 向导。
 2. 单击 "**配置文件**" 下拉列表中的**测试**配置文件。
-3. 单击 "**设置**" 选项卡。
+3. 单击 **“设置”** 选项卡。
 4. 在 "**数据库**" 部分的 " **DefaultConnection** " 下，清除 "**更新数据库**" 复选框。
 5. 单击 "**配置文件**" 选项卡，然后单击 "**配置文件**" 下拉列表中的**临时**配置文件。
 6. 当系统询问你是否要保存对**测试**配置文件所做的更改时，请单击 **"是"** 。
@@ -163,7 +163,7 @@ Visual Studio 2012 还提供了部署单个文件的能力。 对于选定的文
     ![预览对站点的更改](deploying-a-code-update/_static/image10.png)
 
     如果双击*web.config 文件，* 则 "**预览更改**" 对话框将显示生成配置转换和发布配置文件转换的效果。 此时，你未执行任何操作来导致服务器上的*web.config 文件发生*更改，因此你不会看到任何更改。 但是，"**预览更改**" 窗口错误地显示两个更改。 将删除两个 XML 元素。 当你在 Code First 上下文类的**应用程序启动上选择 "执行 Code First 迁移**时，发布过程将添加这些元素。 比较是在发布过程添加这些元素之前完成的，因此，它看起来像是要删除它们，不过它们将不会被删除。 此错误将在将来的版本中得到更正。
-5. 单击 **“关闭”** 。
+5. 单击“关闭”。
 6. 单击“发布”。
 7. 当浏览器打开到测试网站的主页时，按 CTRL + F5 以引发硬刷新，以便查看 CSS 更改的效果。
 
@@ -184,7 +184,7 @@ Visual Studio 2012 还提供了部署单个文件的能力。 对于选定的文
 
     此时会打开一个窗口，以显示本地文件与目标环境中的本地文件版本之间的差异。
 
-    ![Diff-Content/站点导航](deploying-a-code-update/_static/image13.png)
+    ![Diff-Content/Site.css](deploying-a-code-update/_static/image13.png)
 4. 在**解决方案资源管理器**中，再次右键单击 "**网站**"，然后单击 "**发布网站**"。
 
     " **Web 发布活动**" 窗口显示该文件已发布。
@@ -195,7 +195,7 @@ Visual Studio 2012 还提供了部署单个文件的能力。 对于选定的文
     ![包含普通 CSS 的主页](deploying-a-code-update/_static/image15.png)
 6. 关闭浏览器。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，您已看到了几种部署不涉及数据库更改的应用程序更新的方法，并且您已了解如何预览更改以验证将更新的内容。 讲师页现在提供了一个**课程讲授**部分。
 

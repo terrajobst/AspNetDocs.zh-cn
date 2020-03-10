@@ -9,11 +9,11 @@ ms.assetid: 83267f7d-64d9-41ee-82cf-da91b1bf534d
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
 ms.openlocfilehash: d8ceb6b5290300992e52199caa9314c573de1942
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626739"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514628"
 ---
 # <a name="an-overview-of-forms-authentication-vb"></a>Forms 身份验证概述（VB）
 
@@ -205,7 +205,7 @@ FormsAuthenticationModule 是 ASP.NET 运行时中的托管代码。 在 Microso
 
 当用户输入有效凭据时，我曾提到过，它们会重定向到相应的页面。 什么是合适的页面？ 请记住，当用户访问他们无权查看的页面时，FormsAuthenticationModule 会自动将其重定向到登录页。 在此过程中，它通过 ReturnUrl 参数在查询字符串中包含请求的 URL。 也就是说，如果用户试图访问 ProtectedPage，但没有授权，则 FormsAuthenticationModule 会将其重定向到：
 
-登录 .aspx？ReturnUrl = ProtectedPage
+Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 成功登录后，应将用户重定向回 ProtectedPage。 或者，用户可以访问他们自己的 volition 上的登录页面。 在这种情况下，在用户登录后，应将其发送到根文件夹的 default.aspx 页。
 
@@ -396,7 +396,7 @@ WelcomeBackMessage = "欢迎回来" &amp; User.Identity.Name &amp; "！"
 > [!NOTE]
 > 我鼓励您自定义 "ContentPlaceHolder" 页，以隐藏母版页的 LoginContent （与在步骤4中为 .aspx 做的一样）。 原因是因为 LoginStatus 控件（LinkButton、stranger 下的登录名）将用户发送到传递 ReturnUrl querystring 参数中当前 URL 的登录页。 简而言之，如果注销的用户单击此 LoginStatus 的登录名 LinkButton，然后登录，则会将这些用户重定向回，这很容易混淆用户。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们首先检查 forms 身份验证工作流，然后在 ASP.NET 应用程序中实现 forms 身份验证。 Forms 身份验证由 FormsAuthenticationModule 提供支持，其中有两个责任：根据用户的 forms 身份验证票证标识用户，以及将未经授权的用户重定向到登录页。
 

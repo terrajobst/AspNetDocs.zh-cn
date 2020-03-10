@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
-title: 教程：开始使用 Entity Framework 6 Code First 通过 MVC 5 |Microsoft Docs
-description: 在本系列教程，您将学习如何构建用于数据访问使用 Entity Framework 6 的 ASP.NET MVC 5 应用程序。
+title: 教程：使用 MVC 5 开始使用实体框架 6 Code First |Microsoft Docs
+description: 在本系列教程中，您将了解如何生成使用实体框架6进行数据访问的 ASP.NET MVC 5 应用程序。
 author: tdykstra
 ms.author: riande
 ms.date: 01/22/2019
@@ -10,16 +10,16 @@ ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: a00a5a3aa295c2584b90abbf931c258c9e1b58ca
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057964"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499406"
 ---
-# <a name="tutorial-get-started-with-entity-framework-6-code-first-using-mvc-5"></a>教程：开始使用 Entity Framework 6 Code First 通过 MVC 5
+# <a name="tutorial-get-started-with-entity-framework-6-code-first-using-mvc-5"></a>教程：使用 MVC 5 开始使用实体框架 6 Code First
 
 > [!NOTE]
-> 对于新开发，我们建议[ASP.NET Core Razor 页面](/aspnet/core/razor-pages)通过 ASP.NET MVC 控制器和视图。 有关类似于此系列教程使用 Razor 页面，请参阅[教程：开始使用 ASP.NET Core 中 Razor 页面](/aspnet/core/tutorials/razor-pages/razor-pages-start)。 新教程：
+> 对于新开发，我们建议[ASP.NET Core Razor Pages](/aspnet/core/razor-pages) ASP.NET MVC 控制器和视图。 有关使用 Razor Pages 的与此类似的系列教程，请参阅[教程： ASP.NET Core 中的 Razor Pages 入门](/aspnet/core/tutorials/razor-pages/razor-pages-start)。 新教程：
 > * 易于关注。
 > * 提供更多 EF Core 最佳做法。
 > * 使用更高效的查询。
@@ -27,9 +27,9 @@ ms.locfileid: "57057964"
 > * 涵盖更多功能。
 > * 是开发新应用程序的首选方法。
 
-在本系列教程，您将学习如何构建用于数据访问使用 Entity Framework 6 的 ASP.NET MVC 5 应用程序。 本教程使用 Code First 工作流。 有关如何选择第一个代码、 数据库第一个和第一个模型之间的信息，请参阅[创建模型](/ef/ef6/modeling/)。
+在本系列教程中，您将了解如何生成使用实体框架6进行数据访问的 ASP.NET MVC 5 应用程序。 本教程使用 Code First 工作流。 有关如何在 Code First、Database First 和 Model First 之间进行选择的详细信息，请参阅[创建模型](/ef/ef6/modeling/)。
 
-此教程系列介绍了如何构建 Contoso University 示例应用程序。 示例应用程序是一个简单的大学网站。 使用它，可以查看和更新学生、 课程和教师信息。 下面是两个您创建的屏幕：
+本系列教程介绍了如何构建 Contoso 大学的示例应用程序。 该示例应用程序是一个简单的大学网站。 利用它，你可以查看和更新学生、课程和教师信息。 下面是创建的两个屏幕：
 
 ![Students_Index_page](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
@@ -40,11 +40,11 @@ ms.locfileid: "57057964"
 > [!div class="checklist"]
 > * 创建 MVC web 应用
 > * 设置网站样式
-> * 安装 Entity Framework 6
+> * 安装实体框架6
 > * 创建数据模型
 > * 创建数据库上下文
 > * 使用测试数据初始化数据库
-> * 设置为使用 LocalDB 的 EF 6
+> * 设置 EF 6 以使用 LocalDB
 > * 创建控制器和视图
 > * 查看数据库
 
@@ -54,16 +54,16 @@ ms.locfileid: "57057964"
 
 ## <a name="create-an-mvc-web-app"></a>创建 MVC web 应用
 
-1. 打开 Visual Studio 并创建C#web 项目使用**ASP.NET Web 应用程序 (.NET Framework)** 模板。 将项目命名*ContosoUniversity* ，然后选择**确定**。
+1. 打开 Visual Studio，并使用C# " **ASP.NET web 应用程序（.NET Framework）** " 模板创建一个 web 项目。 将项目命名为*ContosoUniversity* ，然后选择 **"确定"** 。
 
-   ![在 Visual Studio 中的新建项目对话框](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/new-project-dialog.png)
+   ![Visual Studio 中的 "新建项目" 对话框](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/new-project-dialog.png)
 
-1. 在中**新 ASP.NET Web 应用程序-ContosoUniversity**，选择**MVC**。
+1. 在**New ASP.NET Web 应用程序-ContosoUniversity**中，选择 " **MVC**"。
 
-   ![在 Visual Studio 中的新 web 应用程序对话框中](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/new-web-app-dialog.png)
+   ![Visual Studio 中的 "新建 web 应用" 对话框](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/new-web-app-dialog.png)
 
     > [!NOTE]
-    > 默认情况下**身份验证**选项设置为**无身份验证**。 对于本教程，web 应用不需要用户进行登录。 此外，它并不限制基于谁登录访问。
+    > 默认情况下， **authentication**选项设置为 "**无身份验证**"。 对于本教程，web 应用不需要用户登录。 此外，它不会基于登录用户限制访问权限。
 
 1. 选择“确定”创建项目。
 
@@ -71,62 +71,62 @@ ms.locfileid: "57057964"
 
 通过几个简单的更改设置站点菜单、 布局和主页。
 
-1. 打开*views/shared\\_Layout.cshtml*，并进行以下更改：
+1. *_Layout\\打开 Views\Shared*，并进行以下更改：
 
-   - 将每个匹配项的"My ASP.NET Application"和"Application name"更改为"Contoso University"。
-   - 面向学生、 课程、 讲师和部门，添加菜单项和删除联系人条目。
+   - 将每次出现的 "我的 ASP.NET Application" 和 "Application name" 更改为 "Contoso 大学"。
+   - 为学生、课程、教师和部门添加菜单项，并删除联系人条目。
 
-   以下代码片段中突出显示所做的更改：
+   下面的代码片段突出显示了这些更改：
 
    [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample1.cshtml?highlight=6,19,24-27,38)]
 
-2. 在中*Views\Home\Index.cshtml*，该文件的内容替换为以下代码以将有关 ASP.NET 和 MVC 文本有关此应用程序的文本替换为：
+2. 在*Views\Home\Index.cshtml*中，将该文件的内容替换为以下代码，以将有关 ASP.NET 和 MVC 的文本替换为有关此应用程序的文本：
 
    [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample2.cshtml)]
 
-3. 按 Ctrl + F5 以运行该 web 站点。 请参阅主页，其中主菜单。
+3. 按 Ctrl + F5 运行该网站。 你将看到带有主菜单的主页。
 
-## <a name="install-entity-framework-6"></a>安装 Entity Framework 6
+## <a name="install-entity-framework-6"></a>安装实体框架6
 
-1. 从**工具**菜单中，选择**NuGet 包管理器**，然后选择**程序包管理器控制台**。
+1. 从 "**工具**" 菜单中，选择 " **NuGet 包管理器**"，然后选择 "**程序包管理器控制台**"。
 
-2. 在中**程序包管理器控制台**窗口中，输入以下命令：
+2. 在“程序包管理器控制台”窗口中，输入以下命令：
 
    ```text
    Install-Package EntityFramework
    ```
 
-此步骤是几个步骤，本教程要求您手动执行此，但是，无法进行了自动通过 ASP.NET MVC 基架功能之一。 要执行这些手动，以便您可以看到使用 Entity Framework (EF) 所需的步骤。 您将更高版本使用基架创建 MVC 控制器和视图。 一种替代方法是让基架会自动安装 EF NuGet 包、 创建数据库上下文类，并创建连接字符串。 如果你已准备好执行此操作通过这种方式，只需是跳过这些步骤，在创建实体类后，在 MVC 控制器搭建基架。
+此步骤是本教程手动执行的几个步骤中的一步，但这可能已由 ASP.NET MVC 基架功能自动完成。 您要手动执行这些操作，以便您可以查看使用实体框架（EF）所需的步骤。 稍后将使用基架创建 MVC 控制器和视图。 替代方法是让基架自动安装 EF NuGet 包、创建数据库上下文类并创建连接字符串。 当您准备好这样做时，您需要做的就是在创建实体类后，跳过这些步骤并基架 MVC 控制器。
 
 ## <a name="create-the-data-model"></a>创建数据模型
 
-接下来你将创建 Contoso 大学应用程序的实体类。 首先将以下三个实体：
+接下来你将创建 Contoso 大学应用程序的实体类。 你将从以下三个实体开始：
 
 **课程** <-> **注册** <-> **学生**
 
 | 实体 | 关系 |
 | -------- | ------------ |
-| 注册的课程 | 一个对多 |
-| 注册的学生 | 一个对多 |
+| 课程注册课程 | 一对多 |
+| 学生注册 | 一对多 |
 
 `Student` 和 `Enrollment`实体之间是一对多的关系，`Course` 和`Enrollment` 实体之间也是一个对多的关系。 换而言之，一名学生可以修读任意数量的课程, 并且某一课程可以被任意数量的学生修读。
 
-在以下部分中，你将创建这些实体的每个类。
+在下面几节中，你将为其中的每个实体创建一个类。
 
 > [!NOTE]
-> 如果您尝试编译项目，然后完成创建所有这些实体类，将收到编译器错误。
+> 如果尝试在完成所有这些实体类的创建之前编译项目，将会出现编译器错误。
 
 ### <a name="the-student-entity"></a>Student 实体
 
-- 在中*模型*文件夹中，创建名为的类文件*Student.cs*上的文件夹中右键单击**解决方案资源管理器**，然后选择**添加**  > **类**。 将模板代码替换为以下代码：
+- 在 "*模型*" 文件夹中，右键单击**解决方案资源管理器**的文件夹，然后选择 "**添加** > **类**"，创建名为*Student.cs*的类文件。 将模板代码替换为以下代码：
 
    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample3.cs)]
 
-`ID` 属性将成为对应于此类的数据库表中的主键。 名为的属性解释默认情况下，实体框架`ID`或*classname* `ID`为主键。
+`ID` 属性将成为对应于此类的数据库表中的主键。 默认情况下，实体框架会将名为 `ID` 或*classname* `ID` 的属性解释为主键。
 
-`Enrollments` 属性是*导航属性*。 导航属性中包含与此实体相关的其他实体。 在这种情况下，`Enrollments`的属性`Student`实体将保留所有`Enrollment`实体相关的`Student`实体。 换而言之，如果给定`Student`数据库中的行具有两个相关`Enrollment`行 (包含该学生的主键的行中的值及其`StudentID`外键列)，则该`Student`实体的`Enrollments`导航属性将包含这两个`Enrollment`实体。
+`Enrollments` 属性是*导航属性*。 导航属性中包含与此实体相关的其他实体。 在这种情况下，`Student` 实体的 `Enrollments` 属性将包含与该 `Student` 实体相关的所有 `Enrollment` 实体。 换言之，如果数据库中给定的 `Student` 行具有两个相关 `Enrollment` 行（其 `StudentID` 外键列中包含该学生的主键值的行），则该 `Student` 实体的 `Enrollments` 导航属性将包含这两个 `Enrollment` 的实体。
 
-导航属性通常定义为`virtual`，以便它们可以充分利用 Entity Framework 的特定功能，如*延迟加载*。 (将解释延迟加载在后面[读取相关数据](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)本系列后面的教程。)
+导航属性通常定义为 `virtual`，以便它们可以利用某些实体框架功能，如*延迟加载*。 （稍后将在本系列的 "[读取相关数据](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)" 教程中介绍延迟加载。）
 
 如果导航属性可以具有多个实体 （如多对多或一对多关系），那么导航属性的类型必须是可以添加、 删除和更新条目的容器，如 `ICollection`。
 
@@ -136,160 +136,160 @@ ms.locfileid: "57057964"
 
    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample4.cs)]
 
-`EnrollmentID`属性将被设为主键; 此实体使用*classname* `ID`模式而不是`ID`如示`Student`实体。 通常情况下，你选择一个主键模式，并在你的数据模型自始至终使用这种模式。 在这里，使用了两种不同的模式只是为了说明你可以使用任一模式来指定主键。 在后面的教程，您将看到如何使用`ID`而无需`classname`轻松地在数据模型中实现继承。
+`EnrollmentID` 属性将为主键;此实体使用*classname* `ID` 模式，而不是在 `Student` 实体中看到的那样 `ID`。 通常情况下，你选择一个主键模式，并在你的数据模型自始至终使用这种模式。 在这里，使用了两种不同的模式只是为了说明你可以使用任一模式来指定主键。 在后面的教程中，你将了解如何使用不带 `classname` 的 `ID`，从而更轻松地在数据模型中实现继承。
 
-`Grade`属性是[枚举](/ef/ef6/modeling/code-first/data-types/enums)。 问号后`Grade`类型声明指示`Grade`属性是[可以为 null](/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)。 评级为 null 是不同于评级为零，null 表示一个等级未知或者尚未分配。
+`Grade` 属性是一个[枚举](/ef/ef6/modeling/code-first/data-types/enums)。 `Grade` 声明类型后的`?`表示 `Grade` 属性可以为 [null](/dotnet/csharp/programming-guide/nullable-types/using-nullable-types)。 Null 的级别不同于零级别，null 表示分数未知或尚未赋值。
 
-`StudentID` 属性是外键，其对应的导航属性为 `Student`。 `Enrollment` 实体与一个 `Student` 实体相关联，因此该属性只包含单个 `Student` 实体 (与前面所看到的 `Student.Enrollments` 导航属性不同后，`Student`中可以容纳多个 `Enrollment` 实体)。
+`StudentID` 属性是一个外键，`Student` 是与其且对应的导航属性。 `Enrollment` 实体与一个 `Student` 实体相关联，因此该属性只包含单个 `Student` 实体 (与前面所看到的 `Student.Enrollments` 导航属性不同后，`Student`中可以容纳多个 `Enrollment` 实体)。
 
-`CourseID` 属性是一个外键， `Course` 是与其对应的导航属性。 `Enrollment` 实体与一个 `Course` 实体相关联。
+`CourseID` 属性是一个外键，`Course` 是与其且对应的导航属性。 `Enrollment` 实体与一个 `Course` 实体相关联。
 
-实体框架的属性解释为外键属性如果它名为 *&lt;导航属性名称&gt;&lt;主键属性名称&gt;* (例如， `StudentID`对于`Student`导航属性所以`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需 *&lt;主键属性名称&gt;* (例如，`CourseID`由于`Course`实体的主键是`CourseID`)。
+实体框架将属性指定为外键属性，如果该属性命名为 *&lt;导航属性名称&gt;&lt;主键属性名称&gt;* （例如，`StudentID` 导航属性 `Student`，因为 `Student` 实体的主键是 `ID`）。 也可以将外键属性命名为相同 *&lt;主键属性名称&gt;* （例如 `CourseID`，因为 `Course` 实体的主键是 `CourseID`）。
 
 ### <a name="the-course-entity"></a>Course 实体
 
-- 在中*模型*文件夹中，创建*Course.cs*，模板代码替换为以下代码：
+- 在 "*模型*" 文件夹中，创建*Course.cs*，并将模板代码替换为以下代码：
 
    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample5.cs)]
 
-`Enrollments` 属性是导航属性。 `Course` 实体可与任意数量的 `Enrollment` 实体相关。
+`Enrollments` 属性是导航属性。 一个 `Course` 体可以与任意数量的 `Enrollment` 实体相关。
 
-我们说更多有关<xref:System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute>本系列后面的教程中的属性。 简单来说，此特性让你能自行指定主键，而不是让数据库自动指定主键。
+在本系列的后续教程中，我们将详细介绍 <xref:System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedAttribute> 特性。 简单来说，此特性让你能自行指定主键，而不是让数据库自动指定主键。
 
 ## <a name="create-the-database-context"></a>创建数据库上下文
 
-协调为给定的数据模型的实体框架功能的主类是*数据库上下文*类。 通过从派生来创建此类[System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.113).aspx)类。 在代码中，指定数据模型中包含哪些实体。 你还可以定义某些 Entity Framework 行为。 在此项目中将数据库上下文类命名为 `SchoolContext`。
+为给定数据模型协调实体框架功能的主类是*数据库上下文*类。 可以通过从[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.113).aspx)类派生来创建此类。 在代码中，可以指定要包含在数据模型中的实体。 你还可以定义某些 Entity Framework 行为。 在此项目中将数据库上下文类命名为 `SchoolContext`。
 
-- 若要为 ContosoUniversity 项目中创建一个文件夹，右键单击项目中的**解决方案资源管理器**并单击**添加**，然后单击**新文件夹**。 将新文件夹命名*DAL* （适用于数据访问层）。 在该文件夹中创建名为的新类文件*SchoolContext.cs*，并使用以下代码替换模板代码：
+- 若要在 ContosoUniversity 项目中创建文件夹，请在**解决方案资源管理器**中右键单击该项目，然后单击 "**添加**"，然后单击 "**新建文件夹**"。 将新文件夹命名为*DAL* （适用于数据访问层）。 在该文件夹中，创建一个名为*SchoolContext.cs*的新类文件，并将模板代码替换为以下代码：
 
    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample6.cs)]
 
 ### <a name="specify-entity-sets"></a>指定实体集
 
-此代码将创建[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.113).aspx)每个实体集的属性。 在实体框架术语中，*实体集*通常对应于数据库表和一个*实体*对应于表中的行。
+此代码为每个实体集创建一个[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.113).aspx)属性。 在实体框架术语中，*实体集*通常对应于数据库表，*实体*对应于表中的行。
 
 > [!NOTE]
 >
-> 可以省略`DbSet<Enrollment>`和`DbSet<Course>`语句和它的工作方式相同。 实体框架因为将隐式包括它们`Student`实体引用`Enrollment`实体以及`Enrollment`实体引用`Course`实体。
+> 您可以省略 `DbSet<Enrollment>` 和 `DbSet<Course>` 语句，它的工作原理相同。 实体框架将隐式包含它们，因为 `Student` 实体引用 `Enrollment` 实体，而 `Enrollment` 实体引用 `Course` 实体。
 
 ### <a name="specify-the-connection-string"></a>指定连接字符串
 
-连接字符串 （它稍后将添加到 Web.config 文件） 的名称被传递给构造函数。
+连接字符串的名称（稍后要添加到 web.config 文件中）将传递到构造函数。
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs?highlight=1)]
 
-此外可以传递连接字符串本身而不是一个存储在 Web.config 文件的名称中。 有关使用用于指定数据库选项的详细信息，请参阅[连接字符串和模型](/ef/ef6/fundamentals/configuring/connection-strings)。
+你还可以传递连接字符串本身，而不是存储在 web.config 文件中的连接字符串的名称。 有关用于指定要使用的数据库的选项的详细信息，请参阅[连接字符串和模型](/ef/ef6/fundamentals/configuring/connection-strings)。
 
-如果未显式指定连接字符串或其中一个的名称，实体框架将假定该连接字符串名称是与类名称相同。 在此示例中的默认连接字符串名称都将`SchoolContext`，与您要指定的显式。
+如果未显式指定连接字符串或名称，则实体框架假设连接字符串名称与类名称相同。 然后，本示例中的默认连接字符串名称将为 `SchoolContext`，就像您显式指定的一样。
 
-### <a name="specify-singular-table-names"></a>指定单数形式的表名称
+### <a name="specify-singular-table-names"></a>指定单一表名称
 
-`modelBuilder.Conventions.Remove`中的语句[OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)方法会阻止表名正在变为复数形式。 如果不这样做，将命名为数据库中生成的表`Students`， `Courses`，和`Enrollments`。 相反，将表名`Student`， `Course`，和`Enrollment`。 开发者对表名称是否应为复数意见不一。 本教程使用单数形式，但重要的一点是，你可以选择任意窗体，您的首选，通过包括或省略这行代码。
+[OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx)方法中的 `modelBuilder.Conventions.Remove` 语句阻止复数表名称。 如果未执行此操作，则数据库中生成的表将被命名为 `Students`、`Courses`和 `Enrollments`。 相反，表名称将为 `Student`、`Course`和 `Enrollment`。 开发者对表名称是否应为复数意见不一。 本教程使用单数形式，但重要的是，您可以选择您喜欢的任何形式，包括或省略此行代码。
 
 ## <a name="initialize-db-with-test-data"></a>使用测试数据初始化数据库
 
-实体框架可以自动创建 （或删除并重新创建） 为您的应用程序运行时的数据库。 您可以指定应此操作每次你的应用程序运行时或仅在与现有的数据库不同步模型时。 此外可以编写`Seed`方法的实体框架会自动调用后才能填充测试数据创建数据库。
+当应用程序运行时，实体框架可以自动创建（或删除并重新创建）数据库。 您可以指定在每次应用程序运行时执行此操作，或仅在模型与现有数据库不同步时执行此操作。 您还可以编写一个 `Seed` 方法，该方法实体框架在创建数据库后自动调用，以便使用测试数据填充它。
 
-默认行为是创建数据库，仅当它不存在 （和引发异常，如果模型已更改，并且数据库已存在）。 在本部分中，将指定应删除并重新创建该模型发生更改时数据库。 删除数据库导致所有数据的丢失。 这通常是好了在开发期间，因为`Seed`方法将运行时重新创建数据库，并将重新创建您的测试数据。 但在生产环境中通常不想丢失所有数据，每次需要更改数据库架构。 稍后你将了解如何通过使用 Code First 迁移来更改数据库架构而不是删除并重新创建数据库来处理模型更改。
+默认行为是只在数据库不存在时才创建数据库（如果模型发生了更改并且数据库已存在，则会引发异常）。 在本部分中，你将指定在模型发生更改时应删除并重新创建数据库。 删除数据库将导致丢失所有数据。 这通常在开发过程中是正常的，因为在重新创建数据库时将运行 `Seed` 方法，并将重新创建测试数据。 但在生产环境中，您通常不希望每次需要更改数据库架构时都丢失所有数据。 稍后，您将了解如何使用 Code First 迁移更改数据库架构（而不是删除和重新创建数据库）来处理模型更改。
 
-1. 在 DAL 文件夹中，创建名为的新类文件*SchoolInitializer.cs*和模板代码替换为以下代码，这会导致要在需要时创建的数据库和加载到新的数据库测试数据。
+1. 在 DAL 文件夹中，创建一个名为*SchoolInitializer.cs*的新类文件，并将模板代码替换为以下代码，这会导致在需要时创建数据库，并将测试数据加载到新数据库中。
 
    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample8.cs)]
 
-   `Seed`方法采用数据库上下文对象作为输入参数，并在方法中的代码使用该对象来将新实体添加到数据库。 对于每个实体类型，代码创建新实体的集合，将它们添加到相应`DbSet`属性，然后单击保存到数据库的更改。 但并不需要调用`SaveChanges`后的实体的每个组的方法，正如在这里，但这样做可帮助您找到问题的根源，如果向数据库写入代码时出现异常。
+   `Seed` 方法采用数据库上下文对象作为输入参数，方法中的代码使用该对象将新实体添加到数据库中。 对于每个实体类型，代码将创建新实体的集合，将其添加到相应的 `DbSet` 属性，然后将更改保存到数据库。 不需要在每个实体组之后调用 `SaveChanges` 方法，如此处所示，但这样做可帮助您找到问题的根源（如果代码写入数据库时出现异常）。
 
-2. 若要指示 Entity Framework 使用初始值设定项类，将元素添加到`entityFramework`应用程序中的元素*Web.config*文件 （一个根项目文件夹中），如下面的示例中所示：
+2. 若要告诉实体框架使用初始值设定项类，请将一个元素添加到应用程序*web.config*文件（位于根项目文件夹中）的 `entityFramework` 元素中，如以下示例中所示：
 
    [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample9.xml?highlight=2-6)]
 
-   `context type`指定完全限定的上下文类名称和它所在的程序集和`databaseinitializer type`指定初始值设定项类和它所在的程序集的完全限定的名称。 (如果不希望 EF 使用初始值设定项，您可以设置属性`context`元素： `disableDatabaseInitialization="true"`。)有关详细信息，请参阅[配置文件设置](/ef/ef6/fundamentals/configuring/config-file)。
+   `context type` 指定完全限定的上下文类名称和它所在的程序集，并且 `databaseinitializer type` 指定初始值设定项类及其所在程序集的完全限定名称。 （如果不希望 EF 使用初始值设定项，则可在 `context` 元素上设置属性： `disableDatabaseInitialization="true"`。）有关详细信息，请参阅[配置文件设置](/ef/ef6/fundamentals/configuring/config-file)。
 
-   设置初始值设定项的一种替代方法*Web.config*文件是在代码中执行该操作通过添加`Database.SetInitializer`语句`Application_Start`中的方法*Global.asax.cs*文件。 有关详细信息，请参阅[了解数据库初始值设定项中 Entity Framework Code First](http://www.codeguru.com/csharp/article.php/c19999/Understanding-Database-Initializers-in-Entity-Framework-Code-First.htm)。
+   在*web.config 文件中*设置初始值设定项的替代方法是在*Global.asax.cs*文件中将 `Database.SetInitializer` 语句添加到 `Application_Start` 方法，以便在代码中执行此操作。 有关详细信息，请参阅[了解实体框架 Code First 中的数据库初始值设定项](http://www.codeguru.com/csharp/article.php/c19999/Understanding-Database-Initializers-in-Entity-Framework-Code-First.htm)。
 
-应用程序现在已设置，以便在首次在给定运行的应用程序中访问数据库时，实体框架进行比较对模型数据库 (您`SchoolContext`和实体类)。 如果差异，应用程序删除并重新创建数据库。
+现在已设置应用程序，以便在应用程序的给定运行中首次访问数据库时，实体框架将数据库与模型（`SchoolContext` 和实体类）进行比较。 如果存在差异，应用程序会删除并重新创建数据库。
 
 > [!NOTE]
-> 在部署到生产 web 服务器的应用程序时，必须删除或禁用删除并重新创建数据库的代码。 在本系列中下一个教程，将执行该操作。
+> 将应用程序部署到生产 web 服务器时，必须删除或禁用删除并重新创建该数据库的代码。 你将在本系列的后续教程中执行此操作。
 
-## <a name="set-up-ef-6-to-use-localdb"></a>设置为使用 LocalDB 的 EF 6
+## <a name="set-up-ef-6-to-use-localdb"></a>设置 EF 6 以使用 LocalDB
 
-[LocalDB](/sql/database-engine/configure-windows/sql-server-2016-express-localdb?view=sql-server-2017)是 SQL Server Express 数据库引擎的轻型版本。 它易于安装和配置、 按需、 启动并在用户模式下运行。 中的 SQL Server Express，使您可以使用数据库作为特殊执行模式运行 LocalDB *.mdf*文件。 可以将 LocalDB 数据库文件放入*应用程序\_数据*web 项目，如果你想要能够复制数据库与项目的文件夹。 在 SQL Server Express 用户实例功能还使您可以使用 *.mdf*文件，但用户实例功能已弃用; 因此，用于处理建议 LocalDB *.mdf*文件。 默认情况下使用 Visual Studio 安装 LocalDB。
+[LocalDB](/sql/database-engine/configure-windows/sql-server-2016-express-localdb?view=sql-server-2017)是 SQL Server Express 数据库引擎的轻型版本。 它易于安装和配置，可以按需启动并在用户模式下运行。 LocalDB 在 SQL Server Express 的特殊执行模式下运行，该模式使您能够将数据库用作 *.mdf*文件。 如果希望能够使用项目复制数据库，则可以将 LocalDB 数据库文件放在 web 项目的*应用\_Data*文件夹中。 使用 SQL Server Express 中的用户实例功能，还可以使用 *.mdf*文件，但不推荐使用用户实例功能;因此，建议使用 LocalDB 来处理 *.mdf*文件。 默认情况下，使用 Visual Studio 安装 LocalDB。
 
-通常情况下，SQL Server Express 不用于生产 web 应用程序。 LocalDB 具体而言不是建议用于生产 web 应用程序因为它不旨在与 IIS 配合使用。
+通常，SQL Server Express 不用于生产 web 应用程序。 不建议将 LocalDB 特别用于 web 应用程序，因为它不能与 IIS 一起使用。
 
-- 在本教程中，您将使用 LocalDB。 打开应用程序*Web.config*文件，并添加`connectionStrings`元素前面`appSettings`元素，如下面的示例中所示。 (请确保更新*Web.config*根项目文件夹中的文件。 此外，还有*Web.config*中的文件*视图*无需更新的子文件夹。)
+- 在本教程中，你将使用 LocalDB。 打开应用程序*web.config*文件，并在 `appSettings` 元素前面添加一个 `connectionStrings` 元素，如下面的示例中所示。 （请确保更新根项目文件夹中的*web.config 文件。* "*视图*" 子文件夹中还有一个不需要更新*的 web.config 文件*。
 
    [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample10.xml?highlight=1-3)]
 
-已添加的连接字符串指定实体框架将使用名为的 LocalDB 数据库*ContosoUniversity1.mdf*。 （该数据库尚不存在，但 EF 将创建它。）如果你想要在其中创建数据库你*应用程序\_数据*文件夹中，您可以添加`AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf`到连接字符串。 有关连接字符串的详细信息，请参阅[ASP.NET Web 应用程序的 SQL Server 连接字符串](/previous-versions/aspnet/jj653752(v=vs.110))。
+添加的连接字符串指定实体框架将使用名为*ContosoUniversity1*的 LocalDB 数据库。 （数据库尚不存在，但 EF 会创建它。）如果要在应用中创建数据库 *\_Data*文件夹，可以将 `AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf` 添加到连接字符串。 有关连接字符串的详细信息，请参阅[SQL Server ASP.NET Web 应用程序的连接字符串](/previous-versions/aspnet/jj653752(v=vs.110))。
 
-实际上并不需要的连接字符串*Web.config*文件。 如果不提供连接字符串，实体框架使用基于上下文类的默认连接字符串。 有关详细信息，请参阅[到新数据库 Code First](/ef/ef6/modeling/code-first/workflows/new-database)。
+在*web.config 文件中，实际上*不需要连接字符串。 如果没有提供连接字符串，实体框架会根据上下文类使用默认连接字符串。 有关详细信息，请参阅[Code First 到新的数据库](/ef/ef6/modeling/code-first/workflows/new-database)。
 
 ## <a name="create-controller-and-views"></a>创建控制器和视图
 
-现在将创建一个用于显示数据 web 页。 自动请求数据的过程将触发创建数据库。 您将首先创建一个新的控制器。 但这样做之前，请生成项目以使模型和上下文类可用于 MVC 控制器基架。
+现在，您将创建一个网页来显示数据。 请求数据的过程会自动触发数据库的创建。 首先创建一个新的控制器。 但在执行此操作之前，请生成项目，使模型和上下文类可用于 MVC 控制器基架。
 
-1. 右键单击**控制器**中的文件夹**解决方案资源管理器**，选择**添加**，然后单击**新基架项**。
-2. 在中**添加基架**对话框中，选择**包含的 MVC 5 控制器视图，使用实体框架**，然后选择**添加**。
+1. 右键单击**解决方案资源管理器**中的 "**控制器**" 文件夹，选择 "**添加**"，然后单击 "**新建基架项**"。
+2. 在 "**添加基架**" 对话框中，选择 "**包含视图的 MVC 5 控制器，使用实体框架**"，然后选择 "**添加**"。
 
      ![在 Visual Studio 中添加基架对话框](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/add-scaffold.png)
 
-3. 在中**添加控制器**对话框中，进行以下选择，然后选择**添加**:
+3. 在 "**添加控制器**" 对话框中，进行以下选择，然后选择 "**添加**"：
 
-   - 模型类：**学生 (ContosoUniversity.Models)**。 （如果看不到下拉列表中的此选项，生成项目，然后重试。）
-   - 数据上下文类：**SchoolContext (ContosoUniversity.DAL)**。
-   - 控制器名称：**StudentController** (不 StudentsController)。
-   - 保留其他字段的默认值。
+   - Model 类： **Student （ContosoUniversity）** 。 （如果未在下拉列表中看到此选项，请生成项目，然后重试。）
+   - 数据上下文类： **SchoolContext （ContosoUniversity）** 。
+   - 控制器名称： **StudentController** （而不是 StudentsController）。
+   - 为其他字段保留默认值。
 
-     当您单击**添加**，创建基架*StudentController.cs*文件和一组视图 (*.cshtml*文件) 与控制器的工作。 在将来创建使用实体框架的项目时，还可使用的基架一些附加功能： 创建第一个模型类，不要创建连接字符串，然后在**添加控制器**框中指定**新建数据上下文** 通过选择 **+** 旁边 **数据上下文类**。 基架将创建在`DbContext`类和你的连接字符串以及控制器和视图。
-4. Visual Studio 将打开*Controllers\StudentController.cs*文件。 您看到类变量已创建了实例化数据库上下文对象：
+     单击 "**添加**" 时，scaffolder 会创建一个*StudentController.cs*文件和一组与控制器一起使用的视图（*cshtml*文件）。 在将来创建使用实体框架的项目时，还可以利用 scaffolder 的一些附加功能：创建第一个模型类，不要创建连接字符串，然后在 "**添加控制器**" 框中，通过选择 "**数据上下文类**" 旁边的 **+** 按钮来指定**新的数据上下文**。 Scaffolder 将创建 `DbContext` 类和连接字符串以及控制器和视图。
+4. Visual Studio 将打开*Controllers\StudentController.cs*文件。 你会看到已创建实例化数据库上下文对象的类变量：
 
      [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
-     `Index`操作方法获取的学生列表*学生*实体集通过阅读`Students`数据库上下文实例的属性：
+     `Index` 操作方法通过读取数据库上下文实例的 `Students` 属性，从*学生*实体集中获取学生列表：
 
      [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
 
-     *Student\Index.cshtml*视图的表中显示此列表：
+     *Student\Index.cshtml*视图将此列表显示在表中：
 
      [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cshtml)]
-5. 按 Ctrl + F5 以运行该项目。 （如果收到"无法创建卷影副本"错误，关闭浏览器和重试。）
+5. 按 Ctrl+F5 运行项目。 （如果收到 "无法创建卷影副本" 错误，请关闭浏览器并重试。）
 
-     单击**学生**选项卡以查看测试数据的`Seed`插入的方法。 具体取决于如何窄浏览器窗口，您将看到顶部的地址栏中的学生选项卡链接或您必须单击右上角才能看到该链接。
+     单击 "**学生**" 选项卡以查看 `Seed` 方法插入的测试数据。 根据浏览器窗口的大小，你会在顶部的地址栏中看到 "学生" 选项卡链接，或单击右上角以查看链接。
 
      ![菜单按钮](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
 ## <a name="view-the-database"></a>查看数据库
 
-当运行学生页面和应用程序尝试访问数据库时，EF 发现存在已没有数据库并创建了一个。 然后，EF 运行 seed 方法来使用数据填充数据库。
+当你运行 "学生" 页且应用程序尝试访问数据库时，EF 发现没有数据库并创建了数据库。 然后，EF 运行 seed 方法来用数据填充数据库。
 
-你可以使用**服务器资源管理器**或**SQL Server 对象资源管理器**(SSOX) 在 Visual Studio 中查看数据库。 对于本教程中，你将使用**服务器资源管理器**。
+您可以使用**服务器资源管理器**或**SQL Server 对象资源管理器**（SSOX）在 Visual Studio 中查看数据库。 对于本教程，你将使用**服务器资源管理器**。
 
 1. 关闭浏览器。
-2. 在中**服务器资源管理器**，展开**数据连接**（可能需要首先选择刷新按钮），展开**学校上下文 (ContosoUniversity)**，然后展开**表**以查看新数据库中的表。
+2. 在**服务器资源管理器**中，展开 "**数据连接**" （可能需要首先选择 "刷新" 按钮），展开 "**学校上下文（ContosoUniversity）** "，然后展开 "**表**" 以查看新数据库中的表。
 
-3. 右键单击**学生**表，然后单击**显示表数据**若要查看已创建的列和插入到表的行。
+3. 右键单击**Student**表，然后单击 "**显示表数据**"，查看已创建的列和插入到该表中的行。
 
 4. 关闭**服务器资源管理器**连接。
 
-*ContosoUniversity1.mdf*并 *.ldf*数据库文件位于 *%USERPROFILE%* 文件夹。
+*ContosoUniversity1*和 *.ldf*数据库文件位于 *% USERPROFILE%* 文件夹中。
 
-正在使用，因此`DropCreateDatabaseIfModelChanges`初始值设定项，可以现在更改到`Student`类、 运行一次，应用程序和数据库会自动将重新创建，以匹配所做的更改。 例如，如果您将添加`EmailAddress`属性设置为`Student`类，学生页上再次运行，并可以看到一个新的然后查看表再次，`EmailAddress`列。
+由于你使用的是 `DropCreateDatabaseIfModelChanges` 初始值设定项，因此你现在可以对 `Student` 类进行更改，然后再次运行应用程序，并将自动重新创建数据库以匹配你的更改。 例如，如果向 `Student` 类添加 `EmailAddress` 属性，请再次运行 "学生" 页，然后再次查看表，您将看到一个新的 `EmailAddress` 列。
 
 ## <a name="conventions"></a>约定
 
-您必须在实体框架能够为您创建完整的数据库中编写的代码量是由于最小*约定*，或使实体框架的假设。 其中一些已记下或使用而无需你不知道的：
+您必须编写的代码量，以便实体框架能够为您创建完整数据库，这是因为*约定*或实体框架所做的假设。 其中一些内容已经过说明，或已被使用，无需注意它们：
 
-- 复数的形式的实体类名称用作表名。
+- 实体类名称的复数形式用作表名称。
 - 使用实体属性名作为列名。
-- 命名的实体属性`ID`或*classname* `ID`被视为主键属性。
-- 如果它名为一个属性将被解释为外键属性 *&lt;导航属性名称&gt;&lt;主键属性名称&gt;* (例如， `StudentID` 为`Student`导航属性所以`Student`实体的主键是`ID`)。 外键属性还可以进行命名相同只需&lt;主键属性名称&gt;(例如，`EnrollmentID`由于`Enrollment`实体的主键是`EnrollmentID`)。
+- 命名为 `ID` 或*classname* `ID` 的实体属性被识别为主键属性。
+- 如果属性命名为 *&lt;导航属性名称&gt;&lt;primary key 属性名称&gt;* （例如 `StudentID` 导航属性 `Student`，因为 `Student` 实体的主键是 `ID`），则该属性将被解释为外键属性。 也可以将外键属性命名为相同 &lt;主键属性名称&gt; （例如 `EnrollmentID`，因为 `Enrollment` 实体的主键是 `EnrollmentID`）。
 
-您已了解约定可以重写。 例如，指定表名不应变为复数形式，并稍后您将看到如何显式标记为外键属性的属性。
+你已了解到可以重写约定。 例如，你指定了表名不应为复数，稍后你将看到如何将属性显式标记为外键属性。
 
 ## <a name="get-the-code"></a>获取代码
 
-[下载已完成的项目](https://webpifeed.blob.core.windows.net/webpifeed/Partners/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip)
+[下载完成的项目](https://webpifeed.blob.core.windows.net/webpifeed/Partners/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip)
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -297,7 +297,7 @@ ms.locfileid: "57057964"
 
 * [ASP.NET 数据访问 - 推荐的资源](../../../../whitepapers/aspnet-data-access-content-map.md)
 
-* [代码优先约定](/ef/ef6/modeling/code-first/conventions/built-in)
+* [Code First 约定](/ef/ef6/modeling/code-first/conventions/built-in)
 
 * [创建更复杂的数据模型](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
 
@@ -308,14 +308,14 @@ ms.locfileid: "57057964"
 > [!div class="checklist"]
 > * 创建 MVC web 应用
 > * 设置网站样式
-> * 已安装的实体框架 6
+> * 安装实体框架6
 > * 已创建数据模型
 > * 已创建数据库上下文
 > * 已使用测试数据初始化数据库
-> * 设置为使用 LocalDB 的 EF 6
+> * 设置 EF 6 以使用 LocalDB
 > * 已创建控制器和视图
 > * 已查看数据库
 
-转到下一步的文章，了解如何查看和自定义创建、 读取、 更新、 删除 (CRUD) 在控制器和视图中的代码。
+转到下一篇文章，了解如何在控制器和视图中查看和自定义创建、读取、更新、删除（CRUD）代码。
 > [!div class="nextstepaction"]
 > [实现基本的 CRUD 功能](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

@@ -9,11 +9,11 @@ ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 8edaf1754eddd7b03f1c323d1bee13238582fc99
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74596921"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78475340"
 ---
 # <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>添加新纪录时增加文件上载选项 (VB)
 
@@ -224,7 +224,7 @@ ms.locfileid: "74596921"
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample13.vb)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 为了提供一个基于 web 的界面来添加包含二进制数据的记录，必须执行许多步骤。 如果二进制数据直接存储在数据库中，则需要更新体系结构，添加特定方法来处理二进制数据的插入事例。 更新体系结构后，下一步就是创建插入界面，该界面可以使用已自定义的 DetailsView 来实现，以包含每个二进制数据字段的 FileUpload 控件。 然后，可以将上传的数据保存到 web 服务器的文件系统中，或将其分配给 DetailsView s `ItemInserting` 事件处理程序中的数据源参数。
 

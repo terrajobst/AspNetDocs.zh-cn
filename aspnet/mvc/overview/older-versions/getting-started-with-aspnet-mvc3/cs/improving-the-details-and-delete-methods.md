@@ -9,11 +9,11 @@ ms.assetid: 3f42edd9-c5b8-4712-9055-970f7d38e350
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
 ms.openlocfilehash: 54d7be8fe1bff604ae9c9e9914d7c6426ab85c1c
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457500"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78498704"
 ---
 # <a name="improving-the-details-and-delete-methods-c"></a>改进 Details 和 Delete 方法 (C#)
 
@@ -79,9 +79,9 @@ Code First 使用 `Find` 方法可以轻松地搜索数据。 在方法中内置
 
 我现在建议你转到我们的中级，为 ASP.NET MVC 应用程序和[MVC 音乐应用商店](../../mvc-music-store/mvc-music-store-part-1.md)教程[创建实体框架数据模型](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)，探索[MSDN 上的 ASP.NET 文章](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)，并查看[https://asp.net/mvc](https://asp.net/mvc)的多个视频和资源，以便更多地了解 ASP.NET MVC！ [ASP.NET MVC 论坛](https://forums.asp.net/1146.aspx)是提出问题的好地方。
 
-请尽情享受其中的乐趣！
+请尽情体验吧！
 
 -Scott Hanselman （[http://hanselman.com](http://hanselman.com)和[@shanselman](http://twitter.com/shanselman)在 Twitter 上）和 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [“上一步”](adding-validation-to-the-model.md)
+> [上一页](adding-validation-to-the-model.md)

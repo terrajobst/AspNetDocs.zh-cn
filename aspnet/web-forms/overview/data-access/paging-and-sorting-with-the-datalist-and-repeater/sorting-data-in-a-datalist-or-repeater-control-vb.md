@@ -9,11 +9,11 @@ ms.assetid: 97c13898-0741-45f9-b3fa-7540ab1679e6
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 81e07bec8569b9ee987dfaa84dec9eec95a2692f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74638534"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465254"
 ---
 # <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>排序 DataList 或 Repeater 控件中的数据 (VB)
 
@@ -317,7 +317,7 @@ GridView 控件也有一个 `SortExpression` 属性，该属性存储数据排�
 > [!NOTE]
 > 在前面的示例中，当供应商供应商进行排序时，使用的是排序表达式。 但是，对于自定义分页实现，我们需要使用 "公司名称"。 这是因为负责实现自定义分页的存储过程 `GetProductsPagedAndSorted` 将排序表达式传递到 `ROW_NUMBER()` 关键字，`ROW_NUMBER()` 关键字需要实际列名而不是别名。 因此，必须使用 `CompanyName` （`Suppliers` 表中列的名称），而不是在用于排序表达式的 `SELECT` 查询（`SupplierName`）中使用的别名。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 DataList 和 Repeater 都无法提供内置排序支持，但有一些代码和自定义排序接口，可以添加此类功能。 实现排序而不是分页时，可以通过传递到 ObjectDataSource s `Select` 方法中的 `DataSourceSelectArguments` 对象指定排序表达式。 此 `DataSourceSelectArguments` 对象 s `SortExpression` 属性可在 ObjectDataSource `Selecting` 事件处理程序中进行分配。
 
@@ -336,4 +336,4 @@ DataList 和 Repeater 都无法提供内置排序支持，但有一些代码和�
 此教程系列由许多有用的审阅者查看。 本教程的领导审查人员是 David Suru。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+> [上一页](paging-report-data-in-a-datalist-or-repeater-control-vb.md)

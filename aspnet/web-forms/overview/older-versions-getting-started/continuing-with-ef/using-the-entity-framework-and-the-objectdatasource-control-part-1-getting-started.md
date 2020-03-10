@@ -1,72 +1,72 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
-title: 使用实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门 |Microsoft Docs
+title: 使用实体框架4.0 和 ObjectDataSource 控件，第1部分：入门 |Microsoft Docs
 author: tdykstra
-description: 本系列教程以 Contoso University web 应用程序创建的与实体框架教程系列入门教程为基础。 如果 yo...
+description: 本教程系列在使用实体框架教程系列的入门创建的 Contoso 大学 web 应用程序上构建。 如果 yo 。
 ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
 ms.openlocfilehash: 2f14707eb058d438495dd2bc4c17b976c471fc97
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131344"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440402"
 ---
-# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门
+# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用实体框架4.0 和 ObjectDataSource 控件，第1部分：入门
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-> 本系列教程为基础创建的 Contoso University web 应用程序[开始使用 Entity Framework 4.0](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)系列教程。 如果未完成之前的教程，作为本教程的起始点可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)，您已经创建的。 此外可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)由完整的系列教程。
+> 本教程系列在[使用实体框架 4.0](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)教程系列的入门创建的 Contoso 大学 web 应用程序上构建。 如果你没有完成前面的教程，作为本教程的起点，你可以下载你要创建[的应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)。 你还可以下载完整的系列教程创建的[应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)。
 > 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 示例应用程序是虚构的 Contoso 大学网站。 其中包括学生录取、课程创建和讲师分配等功能。
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架4.0 和 Visual Studio 2010 创建 ASP.NET Web 窗体应用程序。 该示例应用程序是一个虚构的 Contoso 大学的网站。 它包括诸如学生入学、 课程创建和导师分配等功能。
 > 
-> 本教程介绍了 C# 中的示例。 [可下载的示例](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)包含 C# 和 Visual Basic 中的代码。
+> 本教程演示中C#的示例。 [可下载的示例](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)包含C#和 Visual Basic 中的代码。
 > 
-> ## <a name="database-first"></a>数据库优先
+> ## <a name="database-first"></a>Database First
 > 
-> 有三种方法可以使用实体框架中的数据：*数据库优先*，*模型优先*，和*代码优先*。 本教程适用于第一个数据库。 有关如何选择最适合你的方案指南这些工作流之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
+> 可以通过三种方式使用实体框架中的数据： *Database First*、 *Model First*和*Code First*。 本教程适用于 Database First。 有关这些工作流之间的差异以及如何为你的方案选择最佳方案的指南的信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 > 
 > ## <a name="web-forms"></a>Web Forms — Web 窗体
 > 
-> 入门系列中，如本系列教程使用 ASP.NET Web 窗体模型，并假设你已了解如何使用 Visual Studio 中的 ASP.NET Web 窗体。 如果不这样做，请参阅[Getting Started with ASP.NET 4.5 Web 窗体](../../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md)。 如果想要使用的 ASP.NET MVC 框架，请参阅[开始使用 ASP.NET MVC 的 Entity Framework 使用](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> 与入门系列一样，本教程系列使用 ASP.NET Web 窗体模型，并假设你知道如何在 Visual Studio 中使用 ASP.NET Web 窗体。 否则，请参阅[ASP.NET 4.5 Web Forms 入门](../../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md)。 如果希望使用 ASP.NET MVC 框架，请参阅[使用 ASP.NET mvc 入门与实体框架](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 > 
 > ## <a name="software-versions"></a>软件版本
 > 
-> | **本教程中所示** | **也可用于** |
+> | **教程中所示** | **还适用于** |
 > | --- | --- |
 > | Windows 7 | Windows 8 |
-> | Visual Studio 2010 | Web 的 visual Studio 2010 Express。 本教程不经过了更高版本的 Visual Studio。 有许多差异菜单选项、 对话框和模板。 |
-> | .NET 4 | .NET 4.5 是与.NET 4 中，向后的兼容，但尚未安装.NET 4.5 测试本教程。 |
-> | 实体框架 4 | 本教程不经过了实体框架的更高版本。 从 Entity Framework 5 开始，默认情况下使用 EF `DbContext API` ，引入了 EF 4.1。 EntityDataSource 控件设计为使用`ObjectContext`API。 有关如何使用 EntityDataSource 控件，其`DbContext`API，请参阅[这篇博客文章](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx)。 |
+> | Visual Studio 2010 | Visual Studio 2010 Express for Web。 本教程尚未通过更高版本的 Visual Studio 进行测试。 菜单选择、对话框和模板有很多不同之处。 |
+> | .NET 4 | .NET 4.5 向后兼容 .NET 4，但本教程尚未通过 .NET 4.5 进行测试。 |
+> | 实体框架4 | 本教程尚未测试实体框架的更高版本。 从实体框架5开始，EF 默认使用 EF 4.1 引入的 `DbContext API`。 EntityDataSource 控件设计为使用 `ObjectContext` API。 有关如何将 EntityDataSource 控件与 `DbContext` API 一起使用的信息，请参阅[此博客文章](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx)。 |
 > 
 > ## <a name="questions"></a>问题
 > 
-> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)，则[实体框架和 LINQ to 实体论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
+> 如果你有与本教程不直接相关的问题，则可以将其发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 
-`EntityDataSource`控件可以非常快速地创建应用程序，但它通常要求您保留大量的业务逻辑和中的数据访问逻辑应用 *.aspx*页。 如果希望应用程序复杂性增长而增加，并要求不间断的维护，您可以为了创建预先投入更多的开发时间*n 层*或*分层*应用程序结构这就是更易于维护。 若要实现此体系结构，请从业务逻辑层 (BLL) 和数据访问层 (DAL) 分隔的表示层。 若要实现此结构的一种方法是使用`ObjectDataSource`而不是控制`EntityDataSource`控件。 当你使用`ObjectDataSource`控件，实现你自己的数据访问代码，然后调用其 *.aspx*页使用具有许多相同的控件功能的其他数据源控件。 这允许您将 n 层方法的优点与使用 Web 窗体控件进行数据访问的优势相结合。
+`EntityDataSource` 控件使您能够快速创建应用程序，但它通常要求您在 *.aspx*页面中保留大量的业务逻辑和数据访问逻辑。 如果你希望应用程序的复杂性增加并需要持续维护，则可以提前投入更多的开发时间，以便创建具有更好维护性的*n 层*或*分层*应用程序结构。 若要实现此体系结构，请将表示层与业务逻辑层（BLL）和数据访问层（DAL）分开。 实现此结构的一种方法是使用 `ObjectDataSource` 控件而不是 `EntityDataSource` 控件。 当使用 `ObjectDataSource` 控件时，可以实现自己的数据访问代码，然后使用与其他数据源控件具有许多相同功能的控件在 .aspx 页中调用该代码 *。* 这使您可以将 n 层方法的优点与使用 Web 窗体控件进行数据访问的好处结合起来。
 
-`ObjectDataSource`控制可以让你更大的灵活性以及通过其他方式。 编写你自己的数据访问代码，因为它是更轻松地执行不止是读取、 插入、 更新或删除特定实体类型，这是任务的`EntityDataSource`控件旨在执行。 例如，可以执行日志记录每次更新实体时，存档数据，每次删除一个实体，或自动检查和更新相关数据根据需要时具有的外键值的行插入。
+`ObjectDataSource` 控件也可为您提供更多的灵活性。 由于你编写自己的数据访问代码，因此更容易执行除读取、插入、更新或删除特定实体类型之外的其他操作，这是 `EntityDataSource` 控件旨在执行的任务。 例如，您可以在每次更新实体时执行日志记录、每次删除实体时存档数据，或在插入具有外键值的行时自动检查和更新相关数据。
 
 ## <a name="business-logic-and-repository-classes"></a>业务逻辑和存储库类
 
-`ObjectDataSource`控件通过调用创建的类的工作原理。 类包含方法用于检索和更新数据，并提供对这些方法的名称`ObjectDataSource`标记中的控件。 在呈现或回发处理期间`ObjectDataSource`调用你指定的方法。
+`ObjectDataSource` 控件的工作原理是调用你创建的类。 类包括用于检索和更新数据的方法，并向标记中的 `ObjectDataSource` 控件提供这些方法的名称。 在呈现或回发处理期间，`ObjectDataSource` 会调用您指定的方法。
 
-除了基本的 CRUD 操作，创建要用于类`ObjectDataSource`控件可能需要执行业务逻辑时`ObjectDataSource`读取或更新数据。 例如，更新部门时，您可能需要验证没有其他部门具有相同的管理员，因为一个人不能为多个部门的管理员。
+除了基本的 CRUD 操作，创建的用于 `ObjectDataSource` 控件的类在 `ObjectDataSource` 读取或更新数据时可能需要执行业务逻辑。 例如，在更新部门时，可能需要验证没有其他部门拥有相同的管理员，因为一个人员不能是多个部门的管理员。
 
-在某些`ObjectDataSource`文档，如[ObjectDataSource 类概述](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx)，该控件调用的类称为*业务对象*包括业务逻辑和数据访问逻辑. 在本教程将创建单独的类为业务逻辑和数据访问逻辑。 封装数据访问逻辑的类称为*存储库*。 业务逻辑类包括业务逻辑的方法和数据访问方法，但数据访问方法调用的存储库来执行数据访问任务。
+在某些 `ObjectDataSource` 文档（如[ObjectDataSource 类概述](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx)）中，控件调用一个称为*业务对象*的类，该对象同时包含业务逻辑和数据访问逻辑。 在本教程中，您将为业务逻辑和数据访问逻辑创建单独的类。 封装数据访问逻辑的类称为 "*存储库*"。 业务逻辑类既包含业务逻辑方法又包含数据访问方法，但数据访问方法调用存储库来执行数据访问任务。
 
-您还将创建一个抽象层之间 BLL 和 DAL 有助于自动化的单元测试的 BLL。 此抽象层是通过创建一个接口并实例化业务逻辑类中的存储库时使用该接口实现的。 这使您的业务逻辑类提供对任何实现存储库接口的对象的引用。 对于正常操作中，需要提供适用于实体框架的存储库对象。 对于测试，需要提供适用于一种方法，可以轻松地进行处理，如类变量定义为集合中存储的数据的存储库对象。
+你还将在 BLL 和 DAL 之间创建一个抽象层，用于简化 BLL 的自动单元测试。 此抽象层是通过以下方式实现的：创建一个接口，然后在业务逻辑类中实例化该存储库时使用接口。 这使你可以向业务逻辑类提供对实现存储库接口的任何对象的引用。 对于正常操作，提供与实体框架一起使用的存储库对象。 对于测试，你提供了一个存储库对象，该对象可处理以你可以轻松操作的方式（如定义为集合的类变量）存储的数据。
 
-下图显示了一个业务逻辑类，包含数据访问逻辑，而无需存储库，另一个使用存储库之间的差异。
+下图显示了业务逻辑类（其中包含没有存储库的数据访问逻辑）与使用存储库的数据访问逻辑之间的差异。
 
 [![Image05](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image1.png)
 
-将首先在其中创建网页`ObjectDataSource`控件绑定到的存储库直接，因为它仅执行基本的数据访问任务。 在下一教程将使用验证逻辑创建业务逻辑类并将绑定`ObjectDataSource`到存储库类而不是该类的控件。 此外将创建单元测试用于验证逻辑。 在此系列中的第三个教程中，您将添加排序和筛选的应用程序的功能。
+首先创建一个网页，将 `ObjectDataSource` 控件直接绑定到存储库，因为它只执行基本的数据访问任务。 在下一教程中，你将使用验证逻辑创建业务逻辑类，并将 `ObjectDataSource` 控件绑定到该类而不是存储库类。 你还将为验证逻辑创建单元测试。 在本系列教程的第三个教程中，你将向应用程序添加排序和筛选功能。
 
-本教程中创建的页面可使用`Departments`中创建的数据模型的实体集[入门系列教程](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)。
+您在本教程中创建的页面将使用您在[入门教程系列](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)中创建的数据模型的 `Departments` 实体集。
 
 [![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image3.png)
 
@@ -74,158 +74,158 @@ ms.locfileid: "65131344"
 
 ## <a name="updating-the-database-and-the-data-model"></a>更新数据库和数据模型
 
-在将开始本教程通过更改的数据库，这两个需要进行相应更改到数据模型中创建的两个[开始使用实体框架和 Web 窗体](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)教程。 在这些教程之一，设计器中手动数据库更改后与数据库同步数据模型进行更改。 在本教程中，您将使用设计器的**从数据库更新模型**工具来自动更新数据模型。
+在本教程中，将对数据库进行两次更改，这两个更改都需要[使用实体框架和 Web 窗体](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)教程对入门中创建的数据模型进行相应的更改。 在其中一个教程中，您在设计器中进行了手动更改，以便在数据库更改后将数据模型与数据库同步。 在本教程中，您将使用设计器的 "**从数据库更新模型**" 工具来自动更新数据模型。
 
-### <a name="adding-a-relationship-to-the-database"></a>添加到数据库的关系
+### <a name="adding-a-relationship-to-the-database"></a>向数据库添加关系
 
-在 Visual Studio 中，打开 Contoso University web 应用程序中创建[开始使用实体框架和 Web 窗体](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)系列教程，然后打开`SchoolDiagram`数据库关系图。
+在 Visual Studio 中，打开在 "[实体框架" 和 "Web 窗体](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)" 教程系列的入门中创建的 Contoso 大学 web 应用程序，然后打开 `SchoolDiagram` 数据库关系图。
 
-如果您看一下`Department`表在数据库关系图中，你将看到它具有`Administrator`列。 此列是外键的`Person`表中，但没有外键关系在数据库中定义。 您需要创建该关系并更新数据模型，使实体框架可以自动处理这种关系。
+如果在数据库关系图中查看 `Department` 表，将看到它有一个 `Administrator` 列。 此列是 `Person` 表的外键，但在数据库中未定义外键关系。 您需要创建关系并更新数据模型，以便实体框架可以自动处理此关系。
 
-在数据库关系图中，右键单击`Department`表，然后选择**关系**。
+在数据库关系图中，右键单击 `Department` 表，然后选择 "**关系**"。
 
 [![Image80](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image8.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image7.png)
 
-在中**Foreign Key Relationships**中，单击**添加**，然后单击省略号**表和列规范**。
+在 "**外键关系**" 对话框中，单击 "**添加**"，然后单击 "**表和列规范**" 的省略号。
 
 [![Image81](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image10.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image9.png)
 
-在**表和列**对话框框中，设置主键表和字段`Person`并`PersonID`，并设置外键表和字段`Department`和`Administrator`。 (关系名称时执行此操作时，将从`FK_Department_Department`到`FK_Department_Person`。)
+在 "**表和列**" 对话框中，将主键表和字段设置为 `Person` 和 `PersonID`，然后将外键表和字段设置为 `Department` 和 `Administrator`。 （如果执行此操作，关系名称将从 `FK_Department_Department` 更改为 `FK_Department_Person`。）
 
 [![Image82](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image12.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image11.png)
 
-单击**确定**中**表和列**框中，单击**关闭**中**外键关系**框，并保存所做的更改。 在系统询问你是否要保存`Person`并`Department`表，单击**是**。
+在 "**表和列**" 框中单击 **"确定"** ，在 "**外键关系**" 框中单击 "**关闭**"，并保存所做的更改。 如果系统询问您是否要保存 `Person` 和 `Department` 表，请单击 **"是"** 。
 
 > [!NOTE]
-> 如果已删除`Person`相对应的中已存在的数据行`Administrator`列中，您将无法保存此更改。 在这种情况下，使用中的表编辑器**服务器资源管理器**若要确保`Administrator`中的值每`Department`行包含中是否实际存在的记录 ID`Person`表。
+> 如果已删除 `Person` 与 `Administrator` 列中的数据相对应的行，则将无法保存此更改。 在这种情况下，请使用**服务器资源管理器**中的表编辑器来确保每个 `Department` 行中的 `Administrator` 值包含在 `Person` 表中实际存在的记录的 ID。
 > 
-> 保存更改后，你将不能删除中的行将`Person`表如果该人是部门管理员。 在生产应用程序中，会提供特定错误消息，当数据库约束会阻止删除，或将指定的级联删除。 有关如何指定级联删除的示例，请参阅[实体框架和 ASP.NET – 获取启动第 2 部分](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md)。
+> 保存更改后，如果用户是部门管理员，将无法从 `Person` 表中删除行。 在生产应用程序中，您可以在数据库约束阻止删除时提供特定的错误消息，也可以指定级联删除。 有关如何指定级联删除的示例，请参阅[实体框架和 ASP.NET –入门第2部分](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md)。
 
-### <a name="adding-a-view-to-the-database"></a>将视图添加到数据库
+### <a name="adding-a-view-to-the-database"></a>向数据库添加视图
 
-在新*Departments.aspx*你将需要创建的页上，你想要提供名称采用"姓氏，名字"格式的讲师，下拉列表，以便用户可以选择部门管理员。 若要更加轻松地执行此操作，将在数据库中创建一个视图。 该视图将包括只需通过下拉列表所需的数据: （正确格式） 的完整名称和记录密钥。
+在将创建*的新的*"node.js" 页面中，你想要提供讲师的下拉列表，名称采用 "last，first" 格式，以便用户可以选择部门管理员。 为了更轻松地执行此操作，您将在数据库中创建一个视图。 视图将只包含下拉列表所需的数据：完整名称（格式正确）和记录键。
 
-在中**服务器资源管理器**，展开*School.mdf*，右键单击**视图**文件夹，然后选择**添加新视图**。
+在**服务器资源管理器**中，展开 " *School*"，右键单击 "**视图**" 文件夹，然后选择 "**添加新视图**"。
 
 [![Image06](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image14.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image13.png)
 
-单击**关闭**时**添加表**对话框随即出现，并将以下 SQL 语句粘贴到 SQL 窗格：
+在显示 "**添加表**" 对话框时单击 "**关闭**"，然后将以下 SQL 语句粘贴到 SQL 窗格中：
 
 [!code-sql[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample1.sql)]
 
-保存为视图`vInstructorName`。
+将视图另存为 `vInstructorName`。
 
 ### <a name="updating-the-data-model"></a>更新数据模型
 
-在中*DAL*文件夹中，打开*SchoolModel.edmx*文件，右键单击设计图面上，然后选择**从数据库更新模型**。
+在*DAL*文件夹中，打开*SchoolModel*文件，右键单击设计图面，然后选择 "**从数据库更新模型**"。
 
 [![Image07](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image16.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image15.png)
 
-在中**选择数据库对象**对话框中，选择**添加**选项卡并选择刚创建的视图。
+在 "**选择数据库对象**" 对话框中，选择 "**添加**" 选项卡并选择刚创建的视图。
 
 [![Image08](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image18.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image17.png)
 
-单击 **“完成”**。
+单击“完成”。
 
-在设计器中，可以看到该工具创建`vInstructorName`实体和新的关联之间`Department`和`Person`实体。
+在设计器中，可以看到该工具创建了一个 `vInstructorName` 实体和 `Department` 与 `Person` 实体之间的新关联。
 
 [![Image13](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image20.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image19.png)
 
 > [!NOTE]
-> 在中**输出**并**错误列表**windows 可能会看到一条警告消息，通知您该工具自动创建主数据库密钥的新`vInstructorName`视图。 这是预期行为。
+> 在 "**输出**" 和 "**错误列表**" 窗口中，你可能会看到一条警告消息，告知你该工具为新的 `vInstructorName` 视图自动创建了主键。 这是预期行为。
 
-到新引用时`vInstructorName`在代码中的实体，你不想要使用的前缀为其小写字母"v"的数据库约定。 因此，您将重命名的实体和实体集在模型中。
+如果在代码中引用新的 `vInstructorName` 实体，则不希望使用将小写字母 "v" 作为前缀的数据库约定。 因此，您将重命名模型中的实体和实体集。
 
-打开**模型浏览器**。 您看到`vInstructorName`列为实体类型和视图。
+打开**模型浏览器**。 您将看到 `vInstructorName` 作为实体类型和视图列出。
 
 [![Image14](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image22.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image21.png)
 
-下**SchoolModel** (不**SchoolModel.Store**)，右键单击**vInstructorName** ，然后选择**属性**。 在中**属性**窗口中，更改**名称**属性设置为"InstructorName"，并更改**实体集名称**属性设置为"InstructorNames"。
+在**SchoolModel** （而不是**SchoolModel**）下，右键单击**VInstructorName** ，然后选择 "**属性**"。 在 "**属性**" 窗口中，将 "**名称**" 属性更改为 "InstructorName"，并将 "**实体集名称**" 属性更改为 "InstructorNames"。
 
 [![Image15](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image24.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image23.png)
 
-保存并关闭数据模型中，然后再重新生成项目。
+保存并关闭数据模型，然后重新生成项目。
 
 ## <a name="using-a-repository-class-and-an-objectdatasource-control"></a>使用存储库类和 ObjectDataSource 控件
 
-创建新的类文件中*DAL*文件夹中，其命名*SchoolRepository.cs*，和现有代码替换为以下代码：
+在*DAL*文件夹中创建一个新的类文件，将其命名为*SchoolRepository.cs*，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample2.cs)]
 
-此代码提供单个`GetDepartments`方法返回的实体中的所有`Departments`实体集。 因为您知道您将会访问`Person`导航属性的每一行返回，您指定的预先加载该属性使用`Include`方法。 类还实现`IDisposable`接口，以确保释放对象时释放数据库连接。
+此代码提供了一个 `GetDepartments` 方法，该方法返回 `Departments` 实体集中的所有实体。 因为你知道将访问返回的每个行的 `Person` 导航属性，所以可以通过使用 `Include` 方法为该属性指定预先加载。 类还实现 `IDisposable` 接口，以确保在释放对象时释放数据库连接。
 
 > [!NOTE]
-> 一种常见做法是创建每个实体类型的存储库类。 在本教程中，使用多个实体类型的一个存储库类。 有关存储库模式的详细信息，请参阅中的帖子[实体框架团队的博客](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx)并[Julie Lerman 的博客](http://thedatafarm.com/blog/data-access/agile-ef4-repository-part-3-fine-tuning-the-repository/)。
+> 常见的做法是为每个实体类型创建一个存储库类。 在本教程中，使用了多个实体类型的一个存储库类。 有关存储库模式的详细信息，请参阅[实体框架团队博客](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx)和[Julie Lerman 的博客](http://thedatafarm.com/blog/data-access/agile-ef4-repository-part-3-fine-tuning-the-repository/)文章。
 
-`GetDepartments`方法将返回`IEnumerable`对象而非`IQueryable`为了确保即使存储库对象本身被释放后返回的集合的可用对象。 `IQueryable`每当访问，但可能会尝试呈现数据的数据绑定控件时释放存储库对象，对象可能会导致数据库访问权限。 您可以返回另一个集合类型，如`IList`对象而不是`IEnumerable`对象。 但是，返回`IEnumerable`对象，可以确保你可以如执行典型的只读列表处理任务`foreach`循环和 LINQ 查询，但您不能添加或删除项在集合中，这可能意味着，此类更改会保存到数据库。
+`GetDepartments` 方法返回一个 `IEnumerable` 对象而不是 `IQueryable` 对象，以确保即使在存储存储库对象本身后，返回的集合也可用。 `IQueryable` 对象在访问时可能会导致数据库访问，但存储库对象可能会在数据绑定控件尝试呈现数据时被释放。 可以返回其他集合类型，例如 `IList` 对象，而不是 `IEnumerable` 对象。 然而，返回 `IEnumerable` 对象可确保执行典型的只读列表处理任务（如 `foreach` 循环和 LINQ 查询），但不能添加或删除集合中的项，这可能意味着此类更改会保留到数据库中。
 
-创建*Departments.aspx*使用页面*Site.Master*母版页，并添加中的以下标记`Content`控件命名为`Content2`:
+创建一个*使用* *网站*母版页的 "node.js" 页，并在名为 `Content2`的 `Content` 控件中添加以下标记：
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample3.aspx)]
 
-此标记创建`ObjectDataSource`控件，以使用刚刚创建的存储库类和一个`GridView`控件来显示数据。 `GridView`控件指定**编辑**并**删除**命令，但你尚未添加代码以尚未支持它们。
+此标记创建一个 `ObjectDataSource` 控件，该控件使用刚创建的存储库类，并使用 `GridView` 控件来显示数据。 `GridView` 控件指定了**Edit**和**Delete**命令，但你尚未添加代码来支持这些命令。
 
-多个列使用`DynamicField`控件，以便可以充分利用自动数据格式设置和验证功能。 对于这些工作，您必须调用`EnableDynamicData`中的方法`Page_Init`事件处理程序。 (`DynamicControl`控件中不使用`Administrator`字段，因为它们不使用导航属性。)
+几列使用 `DynamicField` 控件，以便您可以利用自动数据格式和验证功能。 要使其正常工作，必须在 `Page_Init` 事件处理程序中调用 `EnableDynamicData` 方法。 （`Administrator` 字段中不使用`DynamicControl` 控件，因为这些控件不适用于导航属性。）
 
-`Vertical-Align="Top"`属性将变得重要更高版本时，添加具有嵌套列`GridView`到网格控件。
+稍后，在将具有嵌套 `GridView` 控件的列添加到网格中时，`Vertical-Align="Top"` 属性将变得很重要。
 
-打开*Departments.aspx.cs*文件，并添加以下`using`语句：
+打开*Departments.aspx.cs*文件并添加以下 `using` 语句：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample4.cs)]
 
-然后添加以下处理程序的页面的`Init`事件：
+然后为该页的 `Init` 事件添加以下处理程序：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample5.cs)]
 
-在中*DAL*文件夹中，创建名为的新类文件*Department.cs*和现有代码替换为以下代码：
+在*DAL*文件夹中，创建一个名为*Department.cs*的新类文件，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample6.cs)]
 
-此代码添加到数据模型元数据。 它指定`Budget`的属性`Department`实体实际上表示货币，尽管其数据类型是`Decimal`，并指定值必须介于 0 到 1000，000.00 美元之间。 它还指定`StartDate`属性的格式应为日期格式 mm/dd/yyyy。
+此代码会将元数据添加到数据模型。 它指定 `Department` 实体的 `Budget` 属性实际上表示货币，但其数据类型 `Decimal`，并指定该值必须介于0到 $1000000.00 之间。 它还指定应采用格式 mm/dd/yyyy 格式将 `StartDate` 属性格式化为日期格式。
 
-运行*Departments.aspx*页。
+运行 " *node.js" 页。*
 
 [![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image26.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image25.png)
 
-请注意，尽管未指定的格式字符串*Departments.aspx*页面标记**预算**或**开始日期**货币和日期的列，默认值格式设置已应用到通过在它们`DynamicField`控件，使用中提供的元数据*Department.cs*文件。
+请注意，虽然未在 "**预算**" 或 "**开始日期**" 列的 " *.aspx* " 页标记中指定格式字符串，但 `DynamicField` 控件已使用在*Department.cs*文件中提供的元数据将默认货币和日期格式应用于它们。
 
 ## <a name="adding-insert-and-delete-functionality"></a>添加插入和删除功能
 
-打开*SchoolRepository.cs*，添加以下代码以创建`Insert`方法和一个`Delete`方法。 该代码还包括一个名为方法`GenerateDepartmentID`计算以供下一步的可用记录密钥值`Insert`方法。 这是必需的因为数据库未配置为计算此自动为`Department`表。
+打开*SchoolRepository.cs*，添加以下代码以创建 `Insert` 方法和 `Delete` 方法。 此代码还包括一个名为 `GenerateDepartmentID` 的方法，该方法用于计算 `Insert` 方法使用的下一个可用记录键值。 这是必需的，因为未将数据库配置为自动为 `Department` 表计算此数据。
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample7.cs)]
 
 ### <a name="the-attach-method"></a>Attach 方法
 
-`DeleteDepartment`方法调用`Attach`方法，以重新建立在内存中的实体和数据库之间的对象上下文的对象状态管理器维护的链接行它表示。 此方法调用之前必须发生`SaveChanges`方法。
+`DeleteDepartment` 方法将调用 `Attach` 方法，以便重新建立在对象上下文的对象状态管理器中维护的链接，该链接在内存中的实体和它所表示的数据库行之间。 此方法必须在方法调用 `SaveChanges` 方法之前发生。
 
-术语*对象上下文*派生的实体框架类是指`ObjectContext`类，用于访问实体集和实体。 在此项目的代码中，类命名为`SchoolEntities`，和它的一个实例始终命名为`context`。 对象上下文*对象状态管理器*是派生一个类`ObjectStateManager`类。 对象与使用对象状态管理器来存储实体对象，并用于跟踪是否每个为其相应的表行或数据库中的行与同步。
+术语 "*对象上下文*" 是指派生自 `ObjectContext` 类的实体框架类，该类用于访问实体集和实体。 在此项目的代码中，类命名为 `SchoolEntities`，它的实例始终命名为 `context`。 对象上下文的*对象状态管理器*是一个派生自 `ObjectStateManager` 类的类。 对象联系人使用对象状态管理器来存储实体对象，并跟踪每个实体对象是否与数据库中的相应表行同步。
 
-读取实体时，对象上下文将其存储在对象状态管理器和跟踪的对象的表示形式是否与数据库同步。 例如，如果更改属性值，是设置标志以指示您更改的属性不再与数据库同步。 然后调用`SaveChanges`方法，对象上下文知道要执行的操作数据库中由于对象状态管理器知道究竟什么是实体的当前状态和数据库的状态之间差别。
+读取实体时，对象上下文会将其存储在对象状态管理器中，并跟踪对象的表示形式是否与数据库同步。 例如，如果您更改属性值，则将设置一个标志以指示您更改的属性将不再与数据库同步。 然后，当调用 `SaveChanges` 方法时，对象上下文知道要在数据库中执行的操作，因为对象状态管理器确切知道实体的当前状态与数据库状态之间的差异。
 
-但是，此过程通常不使用在 web 应用程序，因为不读取实体，以及其对象状态管理器中的所有内容的对象上下文实例将在页面呈现后进行处理。 必须将更改应用的对象上下文实例是一个为回发处理实例化的新。 情况下`DeleteDepartment`方法，`ObjectDataSource`控件的实体的原始版本重新创建为你上，从视图状态中值，但此重新创建`Department`对象状态管理器中不存在实体。 如果您调用`DeleteObject`此重新创建实体的方法，该调用会失败，因为对象上下文不知道实体是否与数据库同步。 但是，调用`Attach`方法重新建立最初自动执行操作在对象上下文的早期实例读取实体时在数据库中重新创建的实体和值之间的同一个跟踪。
+但是，此过程通常在 web 应用程序中不起作用，因为在页面呈现后，读取实体的对象上下文实例以及其对象状态管理器中的所有内容都将被释放。 必须应用更改的对象上下文实例是为回发处理实例化的新实例。 如果是 `DeleteDepartment` 方法，`ObjectDataSource` 控件将从视图状态的值为你重新创建实体的原始版本，但此重新创建的 `Department` 实体在对象状态管理器中不存在。 如果在此重新创建的实体上调用了 `DeleteObject` 方法，则调用将失败，因为对象上下文不知道实体是否与数据库同步。 但是，调用 `Attach` 方法会重新建立重新创建的实体与数据库中的相同跟踪，该实体是在对象上下文的早期实例中读取实体时自动完成的。
 
-有不想要跟踪对象状态管理器中中的实体的对象上下文，并可以设置标志以防止它执行该操作。 本系列教程的后续教程中显示了此示例。
+有时，您不希望对象上下文跟踪对象状态管理器中的实体，并且可以设置标志来防止其执行此操作。 本系列后面的教程中显示了这种情况的示例。
 
 ### <a name="the-savechanges-method"></a>SaveChanges 方法
 
-此简单的存储库类说明了如何执行 CRUD 操作的基本原则。 在此示例中，`SaveChanges`每次更新后立即调用方法。 在生产应用程序中，可能想要调用`SaveChanges`从单独的方法来为您提供更好地控制更新数据库时的方法。 （下一个教程结尾处将找到指向讨论工作模式，这是一种协调相关的更新的方法的单元的白皮书的链接。）此外请注意，在示例中，`DeleteDepartment`方法不包括用于处理并发冲突的代码; 将在本系列后面的教程中添加代码来执行该操作。
+此简单存储库类阐释了如何执行 CRUD 操作的基本原则。 在此示例中，将在每次更新后立即调用 `SaveChanges` 方法。 在生产应用程序中，你可能需要从单独的方法中调用 `SaveChanges` 方法，以便更好地控制更新数据库的时间。 （在下一教程结束时，你会看到一个指向白皮书的链接，其中介绍了一种协调相关更新的工作单元。）另请注意，在此示例中，`DeleteDepartment` 方法不包括用于处理并发冲突的代码;本系列后面的教程中将添加要执行的代码。
 
-### <a name="retrieving-instructor-names-to-select-when-inserting"></a>检索讲师名称来选择插入时
+### <a name="retrieving-instructor-names-to-select-when-inserting"></a>检索要在插入时选择的指导员名称
 
-用户必须能够从下拉列表中的讲师列表中选择管理员创建的新部门时。 因此，将以下代码添加到*SchoolRepository.cs*若要创建一个方法来检索讲师使用前面创建的视图的列表：
+创建新的部门时，用户必须能够从下拉列表中的一组教师列表中选择管理员。 因此，请将以下代码添加到*SchoolRepository.cs* ，以创建一个方法来使用您之前创建的视图检索讲师列表：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample8.cs)]
 
-### <a name="creating-a-page-for-inserting-departments"></a>用于插入部门创建页
+### <a name="creating-a-page-for-inserting-departments"></a>创建用于插入部门的页面
 
-创建*DepartmentsAdd.aspx*使用页面*Site.Master*页上，并添加中的以下标记`Content`控件命名为`Content2`:
+创建一个使用 DepartmentsAdd*页的 "* " 页，并在名为 `Content2`的 `Content` 控件中添加以下标记：
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample9.aspx)]
 
-此标记创建两个`ObjectDataSource`控件，另一个用于插入新`Department`实体，另一个用于检索有关出现教师姓名`DropDownList`用于选择院系管理员的控制。 创建标记`DetailsView`输入新部门，和它，则指定的处理程序控件的控件`ItemInserting`事件，以便您可以设置`Administrator`外键的值。 在结束时`ValidationSummary`控件来显示错误消息。
+此标记创建两个 `ObjectDataSource` 控件，一个用于插入新的 `Department` 实体，另一个用于检索用于选择部门管理员的 `DropDownList` 控件的指导员名称。 标记创建用于输入新部门的 `DetailsView` 控件，并为控件的 `ItemInserting` 事件指定处理程序，以便可以设置 `Administrator` 外键值。 最后，`ValidationSummary` 控件可以显示错误消息。
 
-打开*DepartmentsAdd.aspx.cs*并添加以下`using`语句：
+打开*DepartmentsAdd.aspx.cs*并添加以下 `using` 语句：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample10.cs)]
 
@@ -233,88 +233,88 @@ ms.locfileid: "65131344"
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample11.cs)]
 
-`Page_Init`方法可启用动态数据功能。 处理程序`DropDownList`控件的`Init`事件保存到控件，并且的处理程序的引用`DetailsView`控件的`Inserting`事件使用该引用获取`PersonID`的所选的讲师和更新的值`Administrator`的外键属性`Department`实体。
+`Page_Init` 方法启用动态数据功能。 `DropDownList` 控件的 `Init` 事件的处理程序保存对控件的引用，而 `DetailsView` 控件的 `Inserting` 事件的处理程序使用该引用获取选定讲师的 `PersonID` 值并更新 `Administrator` 实体的 `Department` 外键属性。
 
-运行页上，为新系添加信息，然后单击**插入**链接。
+运行页面，为新部门添加信息，然后单击 "**插入**" 链接。
 
 [![Image04](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image28.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image27.png)
 
-输入的另一个新的部门值。 输入一个大于 1000，在 000.00**预算**字段和选项卡移动到下一个字段。 在字段中，会显示一个星号，如果鼠标指针悬停在其上时，可以看到该字段中输入的元数据中的错误消息。
+为另一个新部门输入值。 在 "**预算**" 字段和 "选项卡" 中，输入一个大于1000000.00 的数字作为下一个字段。 星号出现在字段中，如果将鼠标指针悬停在该字段上，则可以看到在该字段的元数据中输入的错误消息。
 
 [![Image03](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image30.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image29.png)
 
-单击**插入**，并查看显示的错误消息`ValidationSummary`控件在页面底部。
+单击 "**插入**"，可以看到由页面底部的 `ValidationSummary` 控件显示的错误消息。
 
 [![Image12](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image32.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image31.png)
 
-接下来，关闭浏览器并打开*Departments.aspx*页。 添加到删除功能*Departments.aspx*通过添加页面`DeleteMethod`属性为`ObjectDataSource`控件，和一个`DataKeyNames`属性为`GridView`控件。 这些控件的开始标记现在将类似于下面的示例：
+接下来，关闭浏览器并打开 "*部门*" 页。 通过向 `ObjectDataSource` 控件添加 `DeleteMethod` 特性，并将 `DataKeyNames` 特性添加到 `GridView` 控件中，将删除功能添加到了*node.js 页中。* 这些控件的开始标记现在将类似于以下示例：
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample12.aspx)]
 
-运行页。
+运行页面。
 
 [![Image09](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image34.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image33.png)
 
-删除在运行时添加了系*DepartmentsAdd.aspx*页。
+删除运行*DepartmentsAdd*页面时添加的部门。
 
 ## <a name="adding-update-functionality"></a>添加更新功能
 
-打开*SchoolRepository.cs*并添加以下`Update`方法：
+打开*SchoolRepository.cs*并添加以下 `Update` 方法：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample13.cs)]
 
-当您单击**更新**中*Departments.aspx*页上，`ObjectDataSource`控件创建两个`Department`实体要传递给`UpdateDepartment`方法。 一个包含视图状态中存储的原始值，另一个包含输入的新值`GridView`控件。 中的代码`UpdateDepartment`方法传递`Department`具有到的原始值的实体`Attach`方法，以建立的实体之间定义什么是数据库中跟踪。 然后代码将传递`Department`具有新值的实体`ApplyCurrentValues`方法。 对象上下文将旧的和新值进行比较。 如果新值不同于旧值，则对象上下文更改的属性值。 `SaveChanges`方法然后更新数据库中仅已更改的列。 （但是，如果此实体的更新函数映射到存储过程，整个行会更新而不考虑其列已更改。）
+当在 " *default.aspx* " 页中单击 "**更新**" 时，`ObjectDataSource` 控件将创建两个要传递给 `UpdateDepartment` 方法的 `Department` 实体。 一个包含已存储在视图状态中的原始值，另一个包含在 `GridView` 控件中输入的新值。 `UpdateDepartment` 方法中的代码将具有原始值的 `Department` 实体传递到 `Attach` 方法，以便在实体和数据库中的内容之间建立跟踪。 然后，该代码将具有新值的 `Department` 实体传递到 `ApplyCurrentValues` 方法。 对象上下文比较旧值和新值。 如果新值不同于旧值，则对象上下文将更改属性值。 然后 `SaveChanges` 方法仅更新数据库中已更改的列。 （但是，如果此实体的更新函数映射到存储过程，则无论更改了哪些列，整个行将被更新。）
 
-打开*Departments.aspx*文件，并添加以下属性，`DepartmentsObjectDataSource`控件：
+打开 "*部门 .aspx* " 文件，并将以下属性添加到 `DepartmentsObjectDataSource` 控件：
 
 - `UpdateMethod="UpdateDepartment"`
 - `ConflictDetection="CompareAllValues"`   
- 为此原因旧值存储在视图状态，以便它们可以与中的新值进行比较`Update`方法。
+ 这会导致旧值存储在视图状态中，以便可以将它们与 `Update` 方法中的新值进行比较。
 - `OldValuesParameterFormatString="orig{0}"`   
- 这会通知的控件的原始值参数的名称是`origDepartment`。
+ 这会通知控件 `origDepartment` 原始值参数的名称。
 
-开始标记的标记`ObjectDataSource`控件现在类似于下面的示例：
+`ObjectDataSource` 控件开始标记的标记现在类似于以下示例：
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample14.aspx)]
 
-添加`OnRowUpdating="DepartmentsGridView_RowUpdating"`属性为`GridView`控件。 将使用此设置`Administrator`属性值根据用户选择下拉列表中的行。 `GridView`现在开始标记类似于下面的示例：
+向 `GridView` 控件添加 `OnRowUpdating="DepartmentsGridView_RowUpdating"` 特性。 您将使用此设置基于用户在下拉列表中选择的行来设置 `Administrator` 属性值。 `GridView` 开始标记现在类似于以下示例：
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample15.aspx)]
 
-添加`EditItemTemplate`控制`Administrator`列与`GridView`控制后立即,`ItemTemplate`为该列的控件：
+将 `Administrator` 列的 `EditItemTemplate` 控件添加到 `GridView` 控件，紧跟在该列的 `ItemTemplate` 控件之后：
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample16.aspx)]
 
-这`EditItemTemplate`控件是类似于`InsertItemTemplate`控制*DepartmentsAdd.aspx*页。 不同之处是使用设置该控件的初始值`SelectedValue`属性。
+此 `EditItemTemplate` 控件类似于*DepartmentsAdd*页中的 `InsertItemTemplate` 控件。 不同之处在于，使用 `SelectedValue` 特性设置控件的初始值。
 
-之前`GridView`控件中，添加`ValidationSummary`控制中那样*DepartmentsAdd.aspx*页。
+在 `GridView` 控件之前，添加一个 `ValidationSummary` 控件，就像在*DepartmentsAdd*页中所做的一样。
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample17.aspx)]
 
-打开*Departments.aspx.cs* ，并立即分部类声明后，添加以下代码以创建私有字段以引用`DropDownList`控件：
+打开*Departments.aspx.cs* ，并紧接在分部类声明的后面添加以下代码，以创建用于引用 `DropDownList` 控件的私有字段：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample18.cs)]
 
-然后将处理程序添加`DropDownList`控件的`Init`事件并`GridView`控件的`RowUpdating`事件：
+然后为 `DropDownList` 控件的 `Init` 事件和 `GridView` 控件的 `RowUpdating` 事件添加处理程序：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/samples/sample19.cs)]
 
-处理程序`Init`事件将保存到的引用`DropDownList`类字段中的控件。 处理程序`RowUpdating`事件使用的引用以获取用户输入的值并将其应用于`Administrator`属性的`Department`实体。
+`Init` 事件的处理程序保存对类字段中的 `DropDownList` 控件的引用。 `RowUpdating` 事件的处理程序使用引用获取用户输入的值并将其应用于 `Department` 实体的 `Administrator` 属性。
 
-使用*DepartmentsAdd.aspx*页以添加新系，然后运行*Departments.aspx*页上，单击**编辑**您添加的行上。
+使用*DepartmentsAdd*页添加新的部门，然后运行 "node.js *" 页，* 并在添加的行上单击 "**编辑**"。
 
 > [!NOTE]
-> 你将无法再编辑未添加的行 (即，已在数据库中)，由于数据库; 中的无效数据创建与数据库的行的管理员是学生。 如果你尝试编辑其中之一，则会报告类似的错误的错误页 `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
+> 由于数据库中的数据无效，您将无法编辑您未添加的行（即，已经存在于数据库中）。与数据库一起创建的行的管理员是学生。 如果尝试编辑其中一个文件，则会出现一个错误页面，报告错误，如 `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
 
 [![Image10](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image36.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image35.png)
 
-如果输入无效**预算**金额，然后单击**更新**，请参阅相同星号和您在中看到的错误消息*Departments.aspx*页。
+如果输入的**预算**金额无效，然后单击 "**更新**"，则会看到与在 "云和 *.aspx* " 页中看到的相同星号和错误消息。
 
-更改字段值或选择不同的管理员，然后单击**更新**。 会显示更改。
+更改字段值或选择其他管理员，然后单击 "**更新**"。 将显示更改。
 
 [![Image09](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image38.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image37.png)
 
-这将完成介绍如何使用`ObjectDataSource`控件的基本的 CRUD （创建、 读取、 更新、 删除） 操作使用 Entity Framework。 已生成一个简单的 n 层应用程序，但与数据访问层，这会增加复杂性自动化的单元测试仍紧密耦合的业务逻辑层。 以下教程中，您将了解如何实现存储库模式，以便单元测试。
+这完成了将 `ObjectDataSource` 控件用于使用实体框架的基本 CRUD （创建、读取、更新、删除）操作的简介。 你已经构建了一个简单的 n 层应用程序，但业务逻辑层仍与数据访问层紧密耦合，这会使自动单元测试变得更加复杂。 在以下教程中，你将了解如何实现存储库模式，以便于进行单元测试。
 
 > [!div class="step-by-step"]
-> [下一页](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+> [下一部分](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

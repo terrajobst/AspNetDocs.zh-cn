@@ -9,11 +9,11 @@ ms.assetid: 9673bef3-892c-45ba-a7d8-0da3d6f48ec5
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4f7b282b09769272df8ff3a32aa4c509c8917481
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74597163"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508334"
 ---
 # <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-vb"></a>使用 SqlDataSource 插入、更新和删除数据 (VB)
 
@@ -175,7 +175,7 @@ ms.locfileid: "74597163"
 > [!NOTE]
 > 添加在数据 Web 控件中没有相应字段的参数时，请记住，这些参数值需要以某种方式分配值。 这些值可以是：在 `InsertCommand` 或 `UpdateCommand`中直接硬编码;可以来自一些预定义的源（查询字符串、会话状态、页面上的 Web 控件等）;可以通过编程方式进行分配，如前面的教程中所述。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 为了使数据 Web 控件能够利用内置的插入、编辑和删除功能，数据源控件绑定到的数据源控件必须提供此类功能。 对于 SqlDataSource，这意味着必须将 `INSERT`、`UPDATE`和 `DELETE` SQL 语句分配给 `InsertCommand`、`UpdateCommand`和 `DeleteCommand` 属性。 这些属性和相应的参数集合可以手动添加，也可以通过 "配置数据源" 向导自动生成。 在本教程中，我们将介绍这两种方法。
 

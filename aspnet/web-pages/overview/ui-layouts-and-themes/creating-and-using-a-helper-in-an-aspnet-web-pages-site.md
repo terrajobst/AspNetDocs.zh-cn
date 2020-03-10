@@ -1,82 +1,82 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
-title: 创建和使用一个帮助程序的 ASP.NET Web Pages (Razor) 站点 |Microsoft Docs
+title: 在 ASP.NET 网页（Razor）网站中创建和使用帮助器 |Microsoft Docs
 author: Rick-Anderson
-description: 本文介绍如何在 ASP.NET Web Pages (Razor) 的网站中创建一个帮助程序。 帮助器是包含代码和标记对性能的可重用组件...
+description: 本文介绍如何在 ASP.NET 网页（Razor）网站中创建帮助程序。 帮助器是一个可重用的组件，其中包含代码和到性能的标记 。
 ms.author: riande
 ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
 ms.openlocfilehash: 380663951094c9fc7d5f0601e30995fa073a204b
-ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410968"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78454304"
 ---
-# <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>创建和使用 ASP.NET 网页 (Razor) 站点中的一个帮助程序
+# <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET 网页（Razor）网站中创建和使用 Helper
 
-通过[Tom FitzMacken](https://github.com/tfitzmac)
+作者： [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 本文介绍如何在 ASP.NET Web Pages (Razor) 的网站中创建一个帮助程序。 一个*帮助器*是一个可重用的组件，包括代码和标记来执行可能繁琐或复杂的任务。
+> 本文介绍如何在 ASP.NET 网页（Razor）网站中创建帮助程序。 *帮助器*是一种可重用的组件，其中包括用于执行可能比较繁琐或复杂的任务的代码和标记。
 > 
-> **你将学习：** 
+> **你将学习的内容：** 
 > 
-> - 如何创建和使用简单的帮助程序。
+> - 如何创建和使用简单的帮助器。
 > 
-> 下面是在本文中引入的 ASP.NET 功能：
+> 下面是本文中介绍的 ASP.NET 功能：
 > 
-> - `@helper`语法。
+> - `@helper` 语法。
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
+> ## <a name="software-versions-used-in-the-tutorial"></a>本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 3
+> - ASP.NET 网页（Razor）3
 >   
 > 
-> 本教程还适用于 ASP.NET Web Pages 2。
+> 本教程还适用于 ASP.NET 网页2。
 
-## <a name="overview-of-helpers"></a>帮助程序的概述
+## <a name="overview-of-helpers"></a>帮助器概述
 
-如果需要在站点中的不同页上执行相同的任务，可以使用一个帮助程序。 ASP.NET 网页包括大量的帮助程序，并且有许多数据越多，您可以下载并安装。 (一组内置帮助程序 ASP.NET Web Pages 中所示[ASP.NET API 快速参考](https://go.microsoft.com/fwlink/?LinkId=202907)。)如果现有的帮助程序都不能满足您的需要，可以创建自己的帮助器。
+如果需要在站点中的不同页面上执行相同的任务，则可以使用帮助程序。 ASP.NET 网页包括多个帮助程序，你可以下载和安装更多的帮助程序。 （ [ASP.NET API 快速参考](https://go.microsoft.com/fwlink/?LinkId=202907)中列出了 ASP.NET 网页中的内置帮助程序列表。）如果现有的帮助程序都不能满足您的需要，您可以创建自己的帮助程序。
 
-一个帮助程序允许您使用的多个页面的一个常见的代码块。 假设在您的页面通常要创建的注意项目的设置除了普通段落。 注意为创建的可能是`<div>`元素，具有的样式设置为具有边框的框。 而不是每次想要显示注释，此相同的标记添加到页面，可打包为一个帮助程序标记。 然后，您可以插入便笺的一行代码需要的任意位置。
+利用帮助程序，可以在多个页中使用通用代码块。 假设你经常需要在页面中创建与普通段落分开设置的注释项。 也许会将便笺创建为样式为带有边框的框的 `<div>` 元素。 您不必在每次要显示便笺时将此同一标记添加到页面，而是可以将标记打包为帮助程序。 然后，你可以在所需的任何位置使用一行代码插入注释。
 
-使用此类的一个帮助程序使每个页面中的代码，更简单、 更容易阅读。 它还使得它更易于维护你的站点，因为如果需要更改外观的说明，你可以在一个位置的标记。
+使用与此类似的帮助程序使每个页面中的代码更简单且更易于阅读。 它还使您可以更轻松地维护站点，因为如果您需要更改便笺的外观，则可以在一个位置更改标记。
 
-## <a name="creating-a-helper"></a>创建一个帮助程序
+## <a name="creating-a-helper"></a>创建帮助程序
 
-此过程演示如何创建帮助程序将创建便笺，按前面所述。 这是一个简单的示例，但自定义帮助程序可以包含任何标记和所需的 ASP.NET 代码。
+此过程说明如何创建创建注释的帮助器，如刚才所述。 这是一个简单的示例，但自定义帮助器可以包含所需的任何标记和 ASP.NET 代码。
 
-1. 在该网站的根文件夹中，创建名为的文件夹*应用程序\_代码*。 这是在 ASP.NET 中的保留的文件夹名称可以放置的组件，如帮助程序的代码。
-2. 在中*应用程序\_代码*文件夹中创建一个新 *.cshtml*文件并将其命名*MyHelpers.cshtml*。
-3. 使用以下内容替换现有内容：
+1. 在网站的根文件夹中，创建名为 "*应用\_* 的文件夹"。 这是 ASP.NET 中的保留文件夹名称，你可以在其中将代码用于组件（如帮助程序）。
+2. 在*应用\_代码*文件夹中，创建一个新的*cshtml*文件并将其命名为*MyHelpers*。
+3. 将现有内容替换为以下内容：
 
     [!code-cshtml[Main](creating-and-using-a-helper-in-an-aspnet-web-pages-site/samples/sample1.cshtml)]
 
-    该代码使用`@helper`语法来声明一个新的帮助程序，名为`MakeNote`。 此特定的帮助器，可以传递参数名为`content`，可以包含的文本和标记组合。 帮助器将字符串插入到注意正文使用`@content`变量。
+    代码使用 `@helper` 语法来声明名为 `MakeNote`的新帮助器。 此特定帮助器使你可以传递一个名为 `content` 的参数，该参数可以包含文本和标记的组合。 帮助器使用 `@content` 变量将字符串插入到便笺正文中。
 
-    请注意，该文件命名*MyHelpers.cshtml*，但帮助者名为`MakeNote`。 可以将多个自定义帮助程序放入单个文件。
+    请注意，该文件命名为*MyHelpers*，但该帮助程序名为 `MakeNote`。 可以将多个自定义帮助程序放入单个文件中。
 4. 保存并关闭文件。
 
-## <a name="using-the-helper-in-a-page"></a>在页面中使用该帮助器
+## <a name="using-the-helper-in-a-page"></a>在页面中使用帮助器
 
-1. 在根文件夹中，创建新的空白文件称为*TestHelper.cshtml*。
+1. 在根文件夹中，创建名为*TestHelper*的新空白文件。
 2. 向文件中添加以下代码：
 
     [!code-html[Main](creating-and-using-a-helper-in-an-aspnet-web-pages-site/samples/sample2.html)]
 
-    若要调用帮助器创建，使用`@`跟的文件名，该帮助器位置后，一个点，然后帮助程序名称。 (如果在具有多个文件夹*应用程序\_代码*文件夹中，可以使用语法`@FolderName.FileName.HelperName`调用帮助者内任何嵌套的文件夹级别)。 在括号中的引号中添加的文本是说明的帮助程序将显示在网页中的一部分的文本。
-3. 保存页面，并在浏览器中运行它。 帮助程序生成的注意项直接调用帮助程序的位置： 两个段落间。
+    若要调用创建的帮助程序，请使用 `@` 后跟帮助器是的文件名、点，然后是帮助程序名称。 （如果应用中有多个文件夹 *\_代码*文件夹，则可以使用语法 `@FolderName.FileName.HelperName` 在任何嵌套文件夹级别中调用帮助程序）。 在括号内的引号内添加的文本是帮助程序将在网页中作为注释的一部分显示的文本。
+3. 保存页面并在浏览器中运行它。 帮助器生成注释项权限，在这两个段落之间调用帮助程序：。
 
-    ![在浏览器以及如何帮助程序生成标记放入指定的文本周围的框中显示的页面的屏幕截图。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.png)
+    ![显示浏览器中页的屏幕截图，以及帮助器生成的标记如何在指定文本周围放置一个框。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.png)
 
 ## <a name="additional-resources"></a>其他资源
 
-[为 Razor 帮助器的水平菜单](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2341)。 由 Mike 教皇此博客文章显示了如何创建使用标记、 CSS 和代码的帮助程序作为一个水平菜单。
+[作为 Razor helper 的水平菜单](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2341)。 Mike Pope 的此博客文章演示了如何使用标记、CSS 和代码将水平菜单创建为帮助器。
 
-[利用 ASP.NET Web 中的 HTML5 页帮助程序适用于 WebMatrix 和 ASP.NET MVC3](http://geekswithblogs.net/wildturtle/archive/2010/11/08/html5-in-asp.net-web-pages-helpers-for-webmatrix-and_aspnet_mvc3.aspx)。 由 Sam Abraham 此博客文章显示了一个帮助程序，将呈现一个 HTML5`Canvas`元素。
+[在 WebMatrix 和 ASP.NET MVC3 的 ASP.NET 网页帮助程序中利用 HTML5](http://geekswithblogs.net/wildturtle/archive/2010/11/08/html5-in-asp.net-web-pages-helpers-for-webmatrix-and_aspnet_mvc3.aspx)。 Sam Abraham 的此博客条目显示了一个帮助器，用于呈现 HTML5 `Canvas` 元素。
 
-[之间的差异@Helpers并@Functions在 WebMatrix 中](http://www.mikesdotnetting.com/Article/173/The-Difference-Between-@Helpers-and-@Functions-In-WebMatrix)。 由 Mike Brind 此博客条目描述`@helper`语法和`@function`语法以及何时使用每个。
+[WebMatrix 中 @Helpers 和 @Functions 之间的差异](http://www.mikesdotnetting.com/Article/173/The-Difference-Between-@Helpers-and-@Functions-In-WebMatrix)。 Mike Brind 的此博客文章介绍 `@helper` 语法和 `@function` 语法，以及何时使用它们。

@@ -2,22 +2,22 @@
 uid: web-forms/overview/presenting-and-managing-data/index
 title: 在 ASP.NET Web 窗体中使用数据 |Microsoft Docs
 author: rick-anderson
-description: 如何使用控件以及如何保留请求之间的信息的访问数据。
+description: 如何使用控件访问数据以及如何在请求之间保存信息。
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: bb2b79bd-aaf4-4f5e-82a1-fc199514a3e2
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data
 msc.type: chapter
 ms.openlocfilehash: 0a439ca8d0631dabdc224693f4d7bb23b04d4dad
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133078"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512570"
 ---
-# <a name="working-with-data-in-aspnet-web-forms"></a>使用 ASP.NET Web 窗体中的数据
+# <a name="working-with-data-in-aspnet-web-forms"></a>在 ASP.NET Web 窗体中使用数据
 
-> 如何使用控件以及如何保留请求之间的信息的访问数据。
+> 如何使用控件访问数据以及如何在请求之间保存信息。
 
 - [Visual Studio 2013 中的模型绑定和 Web 窗体](model-binding/index.md)
 

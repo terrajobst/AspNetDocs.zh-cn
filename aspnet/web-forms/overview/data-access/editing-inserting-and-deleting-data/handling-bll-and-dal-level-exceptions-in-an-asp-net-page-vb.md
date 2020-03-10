@@ -9,11 +9,11 @@ ms.assetid: 129d4338-1315-4f40-89b5-2b84b807707d
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: ee277596ade18d2603892d134b47c2c8697836bb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621049"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78478988"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>在 ASP.NET 页中处理 BLL 和 DAL 级别的异常 (VB)
 
@@ -177,7 +177,7 @@ ms.locfileid: "74621049"
 > [!NOTE]
 > 理想情况下，我们的业务逻辑规则将从 `UpdateProduct` 方法重载中重构并转变为常见方法。 这就是读者的练习。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在插入、更新和删除操作期间，数据 Web 控件和 ObjectDataSource 都涉及到 bookend 实际操作的前期和后级事件。 正如我们在本教程中看到的那样，在使用可编辑的 GridView 时，将激发 GridView 的 `RowUpdating` 事件，后跟 ObjectDataSource 的 `Updating` 事件，此时会对 ObjectDataSource 的基础对象执行 update 命令。 操作完成后，将触发 ObjectDataSource 的 `Updated` 事件，后跟 GridView 的 `RowUpdated` 事件。
 

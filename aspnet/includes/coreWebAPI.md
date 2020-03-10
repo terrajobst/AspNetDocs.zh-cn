@@ -9,6 +9,6 @@
 * 基于云的基于环境的配置系统。
 * 内置依赖关系注入。
 * 轻型高性能模块化 HTTP 请求管道。
-* 能够在[Kestrel](/aspnet/core/fundamentals/servers/kestrel)上承载 [IIS] （x：主机和部署/IIS/[索引、http.sys、](xref:fundamentals/servers/httpsys) [Nginx](xref:host-and-deploy/linux-nginx)、 [Apache](xref:host-and-deploy/linux-apache)和[Docker](xref:host-and-deploy/docker/index)。
+* 能够在[Kestrel](/aspnet/core/fundamentals/servers/kestrel)、 [IIS](xref:host-and-deploy/iis/index) [、http.sys](xref:fundamentals/servers/httpsys)、 [Nginx](xref:host-and-deploy/linux-nginx)、 [Apache](xref:host-and-deploy/linux-apache)和[Docker](xref:host-and-deploy/docker/index)上承载。
 * 并行版本。
 * 简化新式 Web 开发的工具。

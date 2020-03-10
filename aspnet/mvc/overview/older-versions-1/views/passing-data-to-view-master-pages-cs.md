@@ -9,11 +9,11 @@ ms.assetid: 5fee879b-8bde-42a9-a434-60ba6b1cf747
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1492175812b0a092cd1594a770e348efe9b4122b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593758"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485702"
 ---
 # <a name="passing-data-to-view-master-pages-c"></a>向视图母版页传递数据 (C#)
 
@@ -101,7 +101,7 @@ ApplicationController 类包含在列表4中。
 
 请注意，用于为视图母版页添加视图数据的此解决方案不违反晾干（不要自我重复）原则。 用于将电影类别列表添加到视图数据的代码仅包含在一个位置：应用程序控制器的构造函数。
 
-### <a name="summary"></a>总结
+### <a name="summary"></a>摘要
 
 在本教程中，我们讨论了将视图数据从控制器传递到视图母版页的两种方法。 首先，我们只是一种简单的方法，但难以维护。 在第一部分中，我们讨论了如何在应用程序的每个控制器操作中为视图母版页添加视图数据。 我们结论，这是一种不好的方法，因为它违反了晾干（不要自我重复）原则。
 

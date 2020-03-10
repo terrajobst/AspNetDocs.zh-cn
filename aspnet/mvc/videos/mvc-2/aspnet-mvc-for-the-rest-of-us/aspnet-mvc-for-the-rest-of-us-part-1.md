@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1
-title: 适用于我们其余所有人的 ASP.NET MVC：Part 1 | Microsoft Docs
+title: ASP.NET 的其他 MVC：第1部分 |Microsoft Docs
 author: JoeStagner
-description: 在此视频 Microsoft Joe Stagner 的基础之上构建 ASP.NET MVC 应用程序的联系我们功能视图、 控制器逻辑和自定义模型为 t...
+description: 在此视频中，Microsoft Joe Stagner 通过将视图、控制器逻辑和自定义模型添加到 t，为 ASP.NET MVC 应用程序生成 "联系我们" 功能
 ms.author: riande
 ms.date: 04/22/2010
 ms.assetid: c56355c3-821f-43e2-9058-9499a1d63f80
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1
 msc.type: video
 ms.openlocfilehash: ac872869f97aab679384c7cda9f6c8399cd966a3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384676"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450572"
 ---
-# <a name="aspnet-mvc-for-the-rest-of-us-part-1"></a>适用于我们其余所有人的 ASP.NET MVC：第 1 部分
+# <a name="aspnet-mvc-for-the-rest-of-us-part-1"></a>ASP.NET 的其他 MVC：第1部分
 
-通过[Joe Stagner](https://github.com/JoeStagner)
+作者： [Joe Stagner](https://github.com/JoeStagner)
 
-在此视频 Microsoft Joe Stagner 构建 ASP.NET MVC 应用程序的"联系我们"功能，通过将视图、 控制器逻辑和自定义模型添加到默认的 ASP.NET 应用程序。 你将看到一些使用 ASP.NET MVC 与 ASP.NET Web 窗体之间的基本区别。
+在此视频中，Microsoft Joe Stagner 通过向默认 ASP.NET 应用程序添加视图、控制器逻辑和自定义模型，为 ASP.NET MVC 应用程序生成 "联系我们" 功能。 你将看到使用 ASP.NET MVC 与 ASP.NET Web 窗体之间的一些基本差异。
 
-[&#9654;观看视频 （36 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-for-the-rest-of-us-part-1)
+[&#9654;观看视频（36分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-for-the-rest-of-us-part-1)
 
 > [!div class="step-by-step"]
-> [下一页](aspnet-mvc-for-the-rest-of-us-part-2.md)
+> [下一部分](aspnet-mvc-for-the-rest-of-us-part-2.md)

@@ -9,11 +9,11 @@ ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
 ms.openlocfilehash: c2f420bb7c2f7d2e31654c20fb9ec7497a30a9f7
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564876"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521204"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 语法的 ASP.NET Web 编程简介（C#）
 
@@ -221,7 +221,7 @@ Razor 语法提供了 ASP.NET 的全部功能，但使用简化的语法，可�
 <a id="BM_CombiningTextMarkupAndCode"></a>
 ### <a name="combining-text-markup-and-code-in-code-blocks"></a>在代码块中组合文本、标记和代码
 
-在服务器代码块中，通常需要将文本或标记（或两者）输出到页面。 如果服务器代码块包含不是代码的文本，而应按原样呈现，则 ASP.NET 需要能够区分该文本与代码。 有若干方法可实现此操作。
+在服务器代码块中，通常需要将文本或标记（或两者）输出到页面。 如果服务器代码块包含不是代码的文本，而应按原样呈现，则 ASP.NET 需要能够区分该文本与代码。 有多种方法可实现此目的。
 
 - 将文本括在 HTML 元素中，如 `<p></p>` 或 `<em></em>`：   
 
@@ -810,7 +810,7 @@ Razor 语法提供了两个用于将参数传递给方法的选项：*位置参�
 
 ### <a name="try-catch-statements"></a>Try-catch 语句
 
-由于控件外的原因，你的代码中经常会出现语句。 例如：
+由于控件外的原因，你的代码中经常会出现语句。 例如:
 
 - 如果代码尝试创建或访问文件，则可能会出现各种错误。 你需要的文件可能不存在，可能已被锁定，代码可能没有权限，等等。
 - 同样，如果你的代码尝试更新数据库中的记录，则可能存在权限问题，可能会删除与数据库的连接，要保存的数据可能会无效，依此类推。
@@ -838,6 +838,6 @@ Razor 语法提供了两个用于将参数传递给方法的选项：*位置参�
 
 **参考文档**
 
-[ASP.NET 2.0](https://msdn.microsoft.com/library/ee532866.aspx)
+[ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
 [C#语言](https://msdn.microsoft.com/library/kx37x362.aspx)
