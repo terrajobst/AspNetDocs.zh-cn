@@ -9,11 +9,11 @@ ms.assetid: eb35710d-1d99-44ac-b61f-e50af8cb328a
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 643faddaf6f9cd075131e8e5a9cccb303e355ceb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594704"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435380"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>为 ASP.NET MVC 应用程序创建单元测试 (VB)
 
@@ -103,7 +103,7 @@ MVC 控制器使用称为 *`View Data`* 的内容将数据传递给视图。 例
 
 当在控制器操作中调用 `RedirectToAction()` 方法时，控制器操作返回一个 `RedirectToRouteResult`。 测试检查 `RedirectToRouteResult` 是否会将用户重定向到名为 `Index`的控制器操作。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，您学习了如何生成 MVC 控制器操作的单元测试。 首先，您学习了如何验证控制器操作是否返回了正确的视图。 已了解如何使用 `ViewResult.ViewName` 属性验证视图的名称。
 
@@ -112,4 +112,4 @@ MVC 控制器使用称为 *`View Data`* 的内容将数据传递给视图。 例
 最后，我们讨论了如何测试控制器操作是否返回不同类型的操作结果。 了解了如何测试控制器是返回 `ViewResult` 还是 `RedirectToRouteResult`。
 
 > [!div class="step-by-step"]
-> [上一部分](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
+> [上一页](creating-unit-tests-for-asp-net-mvc-applications-cs.md)

@@ -2,270 +2,270 @@
 uid: mvc/overview/views/using-page-inspector-in-aspnet-mvc
 title: 在 ASP.NET MVC 中使用 Page Inspector |Microsoft Docs
 author: rick-anderson
-description: 在 Visual Studio 2012 中的 Page Inspector 是一个 web 开发工具，使用集成浏览器。 选择任何元素中的集成浏览器和 Page Inspector i...
+description: Visual Studio 2012 中的 Page Inspector 是一种使用集成浏览器的 web 开发工具。 在集成浏览器中选择任意元素，并 Page Inspector 。
 ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 5da3e142c52a770f59222c21d9f9a53cbbdbf498
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126342"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432452"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
 
-由 Tim Ammann
+通过 Tim Ammann
 
-> 在 Visual Studio 2012 中的 Page Inspector 是一个 web 开发工具，使用集成浏览器。 在集成浏览器中选择任何元素和 Page Inspector 立即突出显示元素的源和 CSS。 可以浏览任何 MVC 视图、 快速查找源呈现的标记，并使用浏览器工具直接在 Visual Studio 环境。
+> Visual Studio 2012 中的 Page Inspector 是一种使用集成浏览器的 web 开发工具。 在集成浏览器中选择任意元素，Page Inspector 会立即突出显示该元素的源和 CSS。 您可以浏览任意 MVC 视图，快速找到所呈现标记的源，并直接在 Visual Studio 环境中使用浏览器工具。
 > 
 > [观看视频](../../videos/mvc-4/using-page-inspector-in-aspnet-mvc.md)
 > 
-> 本教程演示如何启用检查模式下，然后快速找到并编辑你的 web 项目中的标记和 CSS。 本教程使用 MVC 项目中，但也可以使用用于 Page Inspector [Web 窗体](https://go.microsoft.com/?linkid=9802001)和其他 ASP.NET 应用程序。
+> 本教程演示如何启用检查模式，然后在你的 web 项目中快速查找和编辑标记和 CSS。 本教程使用 MVC 项目，但你也可以将 Page Inspector 用于[Web 窗体](https://go.microsoft.com/?linkid=9802001)和其他 ASP.NET 应用程序。
 > 
 > 本教程包含以下部分：
 > 
-> - [系统必备](#_1_prerequisites)
+> - [先决条件](#_1_prerequisites)
 > - [创建 Web 应用程序](#_2_creating_a)
 > - [使用 Page Inspector 浏览到视图](#_3_using_page)
 > - [启用检查模式](#_4_inspection_mode)
-> - [使用 Page Inspector 对标记进行的更改](#_5_using_page)
-> - [检查模式下和 HTML 窗口](#_6_inspection_mode)
-> - [在样式窗口中预览 CSS 更改](#_7_previewing_css)
+> - [使用 Page Inspector 对标记进行更改](#_5_using_page)
+> - [检查模式和 HTML 窗口](#_6_inspection_mode)
+> - [在 "样式" 窗口中预览 CSS 更改](#_7_previewing_css)
 > - [CSS 自动同步](#css_auto_sync)
 > - [使用 CSS 颜色选取器](#css_color_picker)
-> - [动态页元素映射到 JavaScript](#map_dynamic_elements)
+> - [将动态页面元素映射到 JavaScript](#map_dynamic_elements)
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
 ## <a name="prerequisites"></a>系统必备
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11)或[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)。
+- [用于 Web 的](https://www.microsoft.com/visualstudio/11/downloads#express-web) [Visual Studio 2012](https://www.microsoft.com/visualstudio/11)或 Visual Studio Express 2012。
 
 > [!NOTE]
-> 若要获取 Page Inspector 的最新版本，请使用[Web 平台安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)要安装 Windows Azure SDK for.NET 2.0。
+> 若要获取最新版本的 Page Inspector，请使用[Web 平台安装程序](https://go.microsoft.com/fwlink/?LinkId=255386)安装适用于 .net 2.0 的 MICROSOFT Azure SDK。
 
-Page Inspector 与 Microsoft Web 开发人员工具捆绑在一起。 最新版本是 1.3。 若要检查的版本，运行 Visual Studio 并选择**关于 Microsoft Visual Studio**从**帮助**菜单。
+Page Inspector 与 Microsoft Web 开发人员工具捆绑在一起。 最新版本为1.3。 若要检查你的版本，请运行 Visual Studio，然后从 "**帮助**" 菜单中选择 "**关于 Microsoft Visual Studio** 。
 
 <a id="_creating_a_web"></a><a id="_2_creating_a"></a>
 
 ## <a name="create-a-web-application"></a>创建 Web 应用程序
 
-首先，创建将使用与 Page Inspector 的 web 应用程序。 在 Visual Studio 中，选择**文件** &gt; **新项目**。 在左侧，展开**Visual C#**，选择**Web**，然后选择**ASP.NET MVC4 Web 应用程序**。
+首先，创建将 Page Inspector 使用的 web 应用程序。 在 Visual Studio 中，选择 "**文件**" &gt; "**新建项目**"。 在左侧展开 "**视觉对象C#** "，选择 " **web**"，然后选择 " **ASP.NET MVC4 web 应用程序**"。
 
-![新的 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image2.png)
+![New ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
-单击 **“确定”**。
+单击“确定”。
 
-在中**新的 ASP.NET MVC 4 项目**对话框中，选择**Internet 应用程序**。 将保留**Razor**作为默认视图引擎。
+在 "**新建 ASP.NET MVC 4 项目**" 对话框中，选择 " **Internet 应用程序**"。 保留**Razor**作为默认视图引擎。
 
-![新的 ASP.NET MVC 项目的 Internet 应用程序](using-page-inspector-in-aspnet-mvc/_static/image4.png)
+![New ASP.NET MVC 项目-Internet 应用程序](using-page-inspector-in-aspnet-mvc/_static/image4.png)
 
-应用程序中打开**源**视图。
+应用程序将在 "**源**" 视图中打开。
 
-![在源视图中的新 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image6.png)
+![源视图中的新 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image6.png)
 
-现在，已有要使用的应用程序，可以使用 Page Inspector 检查并对其进行修改。
+现在，你已经有了要使用的应用程序，可以使用 Page Inspector 来检查和修改它。
 
 <a id="_starting_page_inspector"></a><a id="_3_using_page"></a>
 
 ## <a name="use-page-inspector-to-browse-to-a-view"></a>使用 Page Inspector 浏览到视图
 
-在 Visual Studio 2012 中，您可以右键单击任何视图在项目中，选择**在 Page Inspector 中的查看**，Page Inspector 将找出路由并显示的页面。
+在 Visual Studio 2012 中，可以右键单击项目中的任何视图，**在 Page Inspector**中选择 "查看"，然后 Page Inspector 将找出路由并显示页面。
 
-在中**解决方案资源管理器**，展开**视图**文件夹，然后**主页**文件夹。 右键单击 Index.cshtml 文件，然后选择**在 Page Inspector 中的查看**。
+在**解决方案资源管理器**中，展开 " **Views** " 文件夹，然后展开 "**主**文件夹"。 右键单击 "索引 ..." 文件，然后选择 **"在 Page Inspector 中查看**"。
 
-![在 Page Inspector 中的视图 Index.cshtml](using-page-inspector-in-aspnet-mvc/_static/image8.png)
+![Page Inspector 中查看索引 。](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-默认情况下，Page Inspector 停靠为窗口在左侧和右侧的 Visual Studio 环境。 如果您愿意，可以将它停靠在其他位置，也可以取消停靠该窗口。 请参阅[如何：排列和停靠窗口](https://msdn.microsoft.com/library/z4y0hsax.aspx)。
+默认情况下，Page Inspector 作为窗口停靠在 Visual Studio 环境的左侧。 如果需要，可以将其固定到其他位置，或取消停靠窗口。 请参阅[如何：排列和停靠窗口](https://msdn.microsoft.com/library/z4y0hsax.aspx)。
 
-页面检查器窗口的顶部窗格会显示在浏览器窗口中当前页。 在底部窗格显示在 HTML 标记，以及允许您检查页的不同方面某些选项卡中的页。 在底部窗格是类似于[F12 开发人员工具](https://msdn.microsoft.com/ie/aa740478)Internet 资源管理器中。
+"Page Inspector" 窗口的顶部窗格显示浏览器窗口中的当前页。 下窗格显示 HTML 标记中的页面，以及一些选项卡，可用于检查页面的不同方面。 底部窗格类似于 Internet Explorer 中的[F12 开发人员工具](https://msdn.microsoft.com/ie/aa740478)。
 
-![在 Page Inspector 中的 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image10.png)
+![Page Inspector 中的 ASP.NET MVC 应用程序](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 
-在本教程中，您将使用**HTML**并**样式**选项卡来快速导航并对应用程序进行更改。
+在本教程中，您将使用 " **HTML** " 和 "**样式**" 选项卡快速导航并对应用程序进行更改。
 
 <a id="_examining_(&quot;decomposing&quot;)_the"></a><a id="_inspection_mode_and"></a><a id="_4_inspection_mode"></a>
 
 ## <a name="enableinspection-mode"></a>EnableInspection 模式
 
-若要将 Page Inspector 置于检查模式，请单击**检查**按钮。 在检查模式下，将鼠标指针拖过任何部分呈现的页中，相应的源标记或代码会突出显示。
+若要将 Page Inspector 放入检查模式中，请单击 "**检查**" 按钮。 在检查模式中，当您将鼠标指针悬停在呈现的页的任何部分时，相应的源标记或代码会突出显示。
 
 ![切换检查模式](using-page-inspector-in-aspnet-mvc/_static/image12.png)
 
-现在将鼠标移动 Page Inspector 中页面的不同部分。 执行操作时，鼠标指针更改为较大的加号，并突出显示下面的元素：
+现在，将鼠标移动到 Page Inspector 内页面的不同部分。 正如你所做的那样，鼠标指针将更改为大加号，并突出显示下面的元素：
 
-![悬停在 div.content 包装器](using-page-inspector-in-aspnet-mvc/_static/image14.png)
+![悬停在 div 上。内容包装](using-page-inspector-in-aspnet-mvc/_static/image14.png)
 
-移动鼠标指针时，Visual Studio 突出显示相应的 Razor 语法的源文件中。 如果 HTML 元素来自另一个源文件，Visual Studio 会自动打开该文件。
+移动鼠标指针时，Visual Studio 会突出显示源文件中的相应 Razor 语法。 如果 HTML 元素来自其他源文件，则 Visual Studio 会自动打开该文件。
 
-在 Page Inspector **HTML**选项卡显示了从 Razor 语法生成的 HTML。 移动鼠标指针时，将突出显示的 HTML 元素。 **样式**选项卡显示该元素的 CSS 规则。
+在 Page Inspector 中， **html**选项卡显示从 Razor 语法生成的 html。 移动鼠标指针时，会突出显示 HTML 元素。 "**样式**" 选项卡显示元素的 CSS 规则。
 
 <a id="_5_using_page"></a>
 
-## <a name="use-page-inspector-to-make-changes-to-markup"></a>使用 Page Inspector 对标记进行的更改
+## <a name="use-page-inspector-to-make-changes-to-markup"></a>使用 Page Inspector 对标记进行更改
 
-Page Inspector 允许您查找其位置可能不太明显的标记。 然后可以修改标记，并查看所产生的更改。
+Page Inspector 允许你查找位置可能不明显的标记。 然后，可以修改标记并查看生成的更改。
 
-若要看到此错误，请单击**检查**然后向下滚动到页面检查器窗口中的页的底部。
+若要查看此项，请单击 "**检查**"，然后滚动到页面底部的 "Page Inspector" 窗口。
 
-当您将鼠标指针移动到的页脚区域时，Page Inspector 将打开\_Layout.cshtml 文件并突出显示所选的布局页部分。 如您所见，页脚会在布局文件和视图本身中定义。
+当将鼠标指针移动到页脚区时，Page Inspector 会打开 \_的布局 cshtml 文件，并突出显示所选布局页的部分。 如您所见，页脚是在布局文件中定义的，而不是在视图本身中定义的。
 
 ![页脚](using-page-inspector-in-aspnet-mvc/_static/image16.png)
 
-现在将鼠标指针移在行的版权<a id="a"></a>注意到。 在\_Layout.cshtml 页上，相应的行突出显示。
+现在，将鼠标指针移动到带有版权声明<a id="a"></a>的行上。 在 \_Layout "页面中，将突出显示相应的行。
 
-![页脚版权行突出显示](using-page-inspector-in-aspnet-mvc/_static/image18.png)
+![突出显示了页脚版权行](using-page-inspector-in-aspnet-mvc/_static/image18.png)
 
-将一些文本添加到中的行末尾\_Layout.cshtml 文件。
+将一些文本添加到 \_布局 cshtml 文件中行的末尾。
 
-&lt;p&gt;&amp;复制;@DateTime.Now.Year -我的 ASP.NET MVC 应用程序 Rocks ！ &lt; /p&gt;
+&amp;copy &lt;p&gt;@DateTime.Now.Year-我的 ASP.NET MVC 应用程序 Rocks！&lt;/p&gt;
 
-现在，按 Ctrl + Alt + Enter 或单击更新条以查看 Page Inspector 浏览器窗口中的结果。
+现在，按 Ctrl + Alt + Enter，或单击 "更新" 栏以在 "Page Inspector 浏览器" 窗口中查看结果。
 
-![我的 ASP.NET 应用程序 Rocks ！](using-page-inspector-in-aspnet-mvc/_static/image20.png)
+![我的 ASP.NET 应用程序 Rocks！](using-page-inspector-in-aspnet-mvc/_static/image20.png)
 
-您可能会想到页脚定义在 Index.cshtml，但事实证明，在\_Layout.cshtml，并为你找到的 Page Inspector。
+您可能认为在索引中定义了注脚，但它已在 \_的布局中，并 Page Inspector 找到了它。
 
 <a id="_inspection_mode_and_1"></a><a id="_6_inspection_mode"></a>
 
-## <a name="inspection-mode-and-the-html-window"></a>检查模式下和 HTML 窗口
+## <a name="inspection-mode-and-the-html-window"></a>检查模式和 HTML 窗口
 
-接下来，您必须快速看一下 HTML 窗口以及它如何为您映射元素。
+接下来，您将快速了解 HTML 窗口以及它如何为您映射元素。
 
-单击**检查**将 Page Inspector 置于检查模式。
+单击 "**检查**" 以将 Page Inspector 置于检查模式。
 
-单击显示"Your logo here"的页的上半部分。 正在检查中更多详细信息，因此您将鼠标指针移动无法再更改浏览器窗口中的显示的特定元素。
+单击 "此处显示徽标" 页面的顶部部分。 您将更详细地检查特定元素，因此，在浏览器窗口中显示的内容将不再随着鼠标指针的移动而改变。
 
-现在，转到鼠标指针**HTML**窗口。 移动鼠标指针时，Page Inspector 概述了中的元素**HTML**窗口，并突出显示浏览器窗口中的相应元素。
+现在，将鼠标指针移动到**HTML**窗口。 移动鼠标指针时，Page Inspector 在**HTML**窗口中勾勒元素，并在浏览器窗口中突出显示相应的元素。
 
 ![HTML 窗口](using-page-inspector-in-aspnet-mvc/_static/image22.png)
 
-如前面一样，Page Inspector 将打开\_为你临时选项卡中的 Layout.cshtml 文件。单击\_Layout.cshtml 临时选项卡，并相应的标记将突出显示为&lt;标头&gt;为您的部分：
+与之前一样，Page Inspector 将在临时选项卡中打开 \_的布局. cshtml 文件。单击 \_的 "布局" "临时" 选项卡，将在 &lt;标头中突出显示相应的标记&gt; 部分：
 
-![突出显示的标记](using-page-inspector-in-aspnet-mvc/_static/image24.png)
+![突出显示标记](using-page-inspector-in-aspnet-mvc/_static/image24.png)
 
 <a id="_using_page_inspector"></a><a id="_7_previewing_css"></a>
 
-## <a name="preview-css-changes-in-the-styles-window"></a>在样式窗口中预览 CSS 更改
+## <a name="preview-css-changes-in-the-styles-window"></a>在 "样式" 窗口中预览 CSS 更改
 
-接下来，将使用 Page Inspector**样式**窗口来预览对 CSS 的更改。
+接下来，您将使用 "Page Inspector**样式**" 窗口来预览 CSS 的更改。
 
-单击**检查**将 Page Inspector 置于检查模式。
+单击 "**检查**" 以将 Page Inspector 置于检查模式。
 
-在 Page Inspector 浏览器窗口中，将鼠标指针移动到"主页"部分**div.content 包装**显示标签。
+在 "Page Inspector 浏览器" 窗口中，将鼠标指针移动到 "主页" 部分，直到显示 " **div. 内容包装**器" 标签。
 
-![悬停在 div.content 包装器](using-page-inspector-in-aspnet-mvc/_static/image26.png)
+![悬停在 div 上。内容包装](using-page-inspector-in-aspnet-mvc/_static/image26.png)
 
-单击后，div.content 包装器部分中，然后移动鼠标指针指向**样式**窗口。 **样式**窗口将显示所有此元素的 CSS 规则。 向下滚动到查找.featured.content 包装器类选择器。 现在，请清除复选框的背景色属性。
+在 div. 内容包装部分中单击一次，然后将鼠标指针移动到 "**样式**" 窗口。 "**样式**" 窗口显示此元素的所有 CSS 规则。 向下滚动以查找 ""。 现在清除背景色属性的复选框。
 
 ![清除背景色](using-page-inspector-in-aspnet-mvc/_static/image28.png)
 
-请注意如何更改预览可立即在 Page Inspector 浏览器窗口。
+请注意如何在 Page Inspector 浏览器窗口中立即更改预览。
 
-再次选中的复选框，然后双击属性值，并将其更改为红色。 更改立即显示：
+再次选中此复选框，然后双击属性值并将其更改为红色。 更改将立即显示：
 
 ![红色背景色](using-page-inspector-in-aspnet-mvc/_static/image30.png)
 
-**样式**窗口进行，可以轻松地测试并预览 CSS 更改之前将更改提交到样式表本身。
+在将更改提交到样式表本身之前，"**样式**" 窗口可让你轻松地测试和预览 CSS 更改。
 
 <a id="css_auto_sync"></a>
 ## <a name="css-auto-sync"></a>CSS 自动同步
 
 > [!NOTE]
-> 此功能需要 Page Inspector 的 1.3 版。
+> 此功能需要 Page Inspector 1.3 版。
 
-CSS 自动同步功能，可直接编辑 CSS 文件并查看立即在 Page Inspector 浏览器中的更改。
+使用 CSS 自动同步功能，可以直接编辑 CSS 文件，并立即在 Page Inspector 浏览器中查看更改。
 
-单击**检查**将 Page Inspector 置于检查模式。
+单击 "**检查**" 以将 Page Inspector 置于检查模式。
 
-在 Page Inspector 浏览器中，将移动鼠标指针的"主页"部分直到**div.content 包装**显示标签。 单击一次以选择此元素。
+在 "Page Inspector 浏览器" 中，将鼠标指针移动到 "主页" 部分，直到显示 " **div. 内容包装**器" 标签。 单击 "一次" 以选择此元素。
 
-**样式**窗口将显示所有此元素的 CSS 规则。 向下滚动到查找.featured.content 包装器类选择器。 单击"包装器.featured.content"。 Page Inspector 将打开定义此样式 (Site.css) 并突出显示相应的 CSS 样式的 CSS 文件。
+"**样式**" 窗口显示此元素的所有 CSS 规则。 向下滚动以查找 ""。 单击 "."。 Page Inspector 打开定义此样式（web.config）的 CSS 文件，并突出显示相应的 CSS 样式。
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image32.png)
 
-现在，更改的值为`background-color`为"red"。 Page Inspector 浏览器中立即显示更改。
+现在，将 `background-color` 的值更改为 "red"。 更改会立即显示在 Page Inspector 浏览器中。
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image34.png)
 
 <a id="css_color_picker"></a>
 ## <a name="using-the-css-color-picker"></a>使用 CSS 颜色选取器
 
-在 Visual Studio 2012 CSS 编辑器具有颜色选取器，轻松地选择和插入颜色。 颜色选取器包括一个标准颜色的调色板，支持标准颜色名称、 哈希代码、 RGB、 RGBA、 HSL 和 HSLA 颜色和维护已在文档中最近使用的颜色的列表。
+Visual Studio 2012 中的 CSS 编辑器提供了一个颜色选取器，使您可以轻松地选择和插入颜色。 颜色选取器包含一种标准颜色调色板，支持标准颜色名称、哈希代码、RGB、RGBA、HSL 和 HSLA 颜色，并维护最近在文档中使用的颜色的列表。
 
-在上一节中您已更改的值`background-color`属性。 若要调用的颜色选取器，将插入点放在属性名称和类型之后 **#** 或**rgb (**。
+在上一部分中，你更改了 "`background-color`" 属性的值。 若要调用颜色选取器，请将插入点放在属性名称后，然后键入 **#** 或**rgb （** 。
 
 ![CSS 颜色选取器栏](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 
-单击一种颜色来选择它，或按向下箭头键，然后使用左侧和右侧的箭头键遍历颜色。 当您访问一种颜色时，预览相应的十六进制值：
+单击某一颜色以将其选中，或按向下箭头键，然后使用向左箭头和向右箭头键来遍历这些颜色。 访问颜色时，会预览相应的十六进制值：
 
-![预览的背景色属性值](using-page-inspector-in-aspnet-mvc/_static/image38.png)
+![已预览背景色属性值](using-page-inspector-in-aspnet-mvc/_static/image38.png)
 
-如果在颜色栏不具有所需的确切颜色，可以使用颜色选取器 pop 列表。 若要打开它，请单击颜色栏右侧的双 v 形图标或按键盘上一次或两次的向下箭头。
+如果颜色条没有您所需的确切颜色，可以使用 "颜色选取器" 弹出窗口。 若要打开它，请单击颜色栏右端的双 v 形 v 形，或在键盘上按向下键一次或两次。
 
-![CSS 颜色选取器 Pop 列表](using-page-inspector-in-aspnet-mvc/_static/image40.png)
+![CSS 颜色选取器弹出窗口](using-page-inspector-in-aspnet-mvc/_static/image40.png)
 
-单击从右侧的垂直条的颜色。 这将在主窗口中显示该颜色渐变。 通过按 Enter，直接从垂直条中选择一种颜色，或单击以选择具有更高的精度在主窗口中的任意点。
+单击右侧垂直条中的颜色。 这会在主窗口中显示该颜色的渐变。 按 Enter 键直接从竖线中选择一种颜色，或单击主窗口中的任何点以选择更高的精度。
 
-你想要使用的计算机屏幕上是否存在一种颜色 （不一定要在 Visual Studio 用户界面内），你可以通过使用取色器工具右下角中捕获它的值。
+如果您要使用的计算机屏幕上有一种颜色（它不必在 Visual Studio 用户界面内），则可以使用右下方的吸管工具捕获其值。
 
-此外可以通过移动颜色选取器底部的滑块来更改一种颜色的不透明度。 这样做的更改颜色值为 RGBA 值，因为 RGBA 格式可以表示不透明度。
+还可以通过移动颜色选取器底部的滑块来更改颜色的不透明度。 这样做会将颜色值更改为 RGBA 值，因为 RGBA 格式可以表示不透明度。
 
-选择一种颜色后，按 Enter，，然后键入分号完成中的背景色条目*Site.css*文件。
+选择一种颜色后，按 Enter，然后键入一个分号来完成*站点导航*文件中的背景色项。
 
 <a id="_the_update_bar"></a>
 
-### <a name="the-page-inspector-update-bar"></a>页面检查器更新条
+### <a name="the-page-inspector-update-bar"></a>Page Inspector 更新栏
 
-Page Inspector 立即检测到更改*Site.css*文件，并显示更新条中的警报。
+Page Inspector 立即检测到对*web.config*文件所做的更改，并在更新栏中显示警报。
 
-![更新条](using-page-inspector-in-aspnet-mvc/_static/image42.png)
+![更新栏](using-page-inspector-in-aspnet-mvc/_static/image42.png)
 
-若要保存所有文件并刷新 Page Inspector 浏览器，请按 Ctrl + Alt + Enter 或单击更新条。 中的突出显示颜色更改显示在浏览器中。
+若要保存所有文件并刷新 Page Inspector 浏览器，请按 Ctrl + Alt + Enter，或单击更新栏。 突出显示颜色的更改会显示在浏览器中。
 
 <a id="map_dynamic_elements"></a>
-## <a name="mapping-dynamic-page-elements-to-javascript"></a>动态页元素映射到 JavaScript
+## <a name="mapping-dynamic-page-elements-to-javascript"></a>将动态页面元素映射到 JavaScript
 
-在新式 web 应用程序页面中的元素是通常动态生成的与 JavaScript 一起。 这意味着对应于这些页面元素没有静态标记 （HTML 或 Razor）。
+在新式 web 应用程序中，通常会动态地利用 JavaScript 生成页面中的元素。 这意味着不存在与这些页面元素对应的静态标记（HTML 或 Razor）。
 
-使用版本 1.3，Page Inspector 现在映射到页回发至相应的 JavaScript 代码动态添加的项。 为了演示此功能，我们将使用[单页面应用程序 (SPA) 模板](../../../single-page-application/overview/introduction/knockoutjs-template.md)。
+利用版本1.3，Page Inspector 现在可以将动态添加到页面的项映射回相应的 JavaScript 代码。 为了演示此功能，我们将使用[单页面应用程序（SPA）模板](../../../single-page-application/overview/introduction/knockoutjs-template.md)。
 
 > [!NOTE]
-> SPA 模板需要[ASP.NET 和 Web Tools 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)更新。
+> SPA 模板需要[ASP.NET 和 Web 工具 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)更新。
 
-在 Visual Studio 中，选择**文件** &gt; **新项目**。 在左侧，展开**Visual C#**，选择**Web**，然后选择**ASP.NET MVC4 Web 应用程序**。 单击 **“确定”**。
+在 Visual Studio 中，选择 "**文件**" &gt; "**新建项目**"。 在左侧展开 "**视觉对象C#** "，选择 " **web**"，然后选择 " **ASP.NET MVC4 web 应用程序**"。 单击“确定”。
 
-在中**新的 ASP.NET MVC 4 项目**对话框中，选择**单页面应用程序**。
+在 "**新建 ASP.NET MVC 4 项目**" 对话框中，选择 "**单页面应用程序**"。
 
-在解决方案资源管理器，展开**视图**文件夹，然后**主页**文件夹。 右键单击 Index.cshtml 文件，然后选择**在 Page Inspector 中的查看**。
+在解决方案资源管理器中，展开 " **Views** " 文件夹，然后展开 "**主**文件夹"。 右键单击 "索引 ..." 文件，然后选择 **"在 Page Inspector 中查看**"。
 
-第一件事就是显示在 Page Inspector 浏览器中是一个登录页面。 单击"注册"，创建一个用户名和密码。 一旦注册，应用程序会使你登录并创建包含一些示例项目的待办事项列表。
+Page Inspector 浏览器中显示的第一件事是登录页。 单击 "注册"，创建用户名和密码。 注册后，应用程序会将你登录，并创建待办事项列表，其中包含一些示例项。
 
-单击**检查**将 Page Inspector 置于检查模式。 在 Page Inspector 浏览器中，单击上一个待办事项。 请注意，而不是正在以蓝色突出显示，该元素以橙色突出显示，使用"JS"元素名称旁边。 这表示该元素已动态创建通过脚本。
+单击 "**检查**" 以将 Page Inspector 置于检查模式。 在 Page Inspector 浏览器中，单击其中一个待办事项。 请注意，元素以橙色突出显示，而不是以蓝色突出显示，元素名称旁边有 "JS"。 这表明该元素是通过脚本动态创建的。
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image44.png)
 
-此外，在出现一个橙色的下划线**调用堆栈**选项卡。这指示**调用堆栈**窗格会显示有关该元素的详细信息。
+此外，"**调用堆栈**" 选项卡上会显示橙色下划线。这指示 "**调用堆栈**" 窗格包含有关元素的详细信息。
 
-单击**调用堆栈**选项卡。**调用堆栈**窗格将显示创建该元素的 JavaScript 调用的调用堆栈。 调用外部库如 jQuery 处于折叠状态，以便可以轻松地查看对您的应用程序脚本的调用。
+单击 "**调用堆栈**" 选项卡。"**调用堆栈**" 窗格显示创建元素的 JavaScript 调用的调用堆栈。 对诸如 jQuery 的外部库的调用会折叠，因此你可以轻松地查看对应用程序脚本的调用。
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image46.png)
 
-若要查看完整的堆栈，包括对外部库的调用可以展开标记为"外部库"的节点：
+若要查看完整的堆栈（包括对外部库的调用），可以展开标记为 "外部库" 的节点：
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image48.png)
 
-如果单击调用堆栈中的项，Visual Studio 将打开代码文件，并突出显示相应的脚本。
+如果单击调用堆栈中的某个项，则 Visual Studio 将打开该代码文件并突出显示相应的脚本。
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image50.png)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-[使用 Visual Studio 的 ASP.NET MVC 4 简介](../older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)（ASP.net 网站）
+[Visual Studio ASP.NET MVC 4 简介](../older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)（ASP.net 网站）
 
-[引入了 Page Inspector](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector/) （第 9 频道视频）
+[简介 Page Inspector](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector/) （第9频道视频）
 
-[Page Inspector 错误信息](https://go.microsoft.com/?linkid=9813062)(MSDN)
+[Page Inspector 错误消息](https://go.microsoft.com/?linkid=9813062)（MSDN）

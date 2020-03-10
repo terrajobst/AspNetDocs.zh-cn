@@ -9,11 +9,11 @@ ms.assetid: a5a4a9ba-d18d-489a-a6b0-a3c26d6b0274
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a7cc890038e5bb4eb61c7c3b808154c196ab2423
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74605994"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78428708"
 ---
 # <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>新建适用于类型化数据集的 TableAdapter 的存储过程 (VB)
 
@@ -300,7 +300,7 @@ Tableadapter 执行的 SQL 命令可以是即席 SQL 语句，如 `SELECT column
 
 **图 24**：可以从 GridView 查看、编辑和删除产品（[单击以查看完全大小的图像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image58.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 类型化数据集中的 Tableadapter 可以使用即席 SQL 语句或存储过程来访问数据库中的数据。 使用存储过程时，可以使用现有存储过程，也可以指示使用 TableAdapter 向导根据 `SELECT` 查询创建新的存储过程。 在本教程中，我们探讨了如何为我们自动创建存储过程。
 

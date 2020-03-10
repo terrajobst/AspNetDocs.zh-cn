@@ -9,11 +9,11 @@ ms.assetid: 081fe010-ba0f-4e7d-b4ba-774840b601c2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: fe1f7b80b26ff25c1ce744e4f823e3fb35eea074
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74577259"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441194"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>从内容页与母版页交互 (VB)
 
@@ -208,7 +208,7 @@ ms.locfileid: "74577259"
 
 **图 08**：母版页的标签和 GridView 显示刚刚添加的产品（[单击查看完全尺寸的图像](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 理想情况下，母版页及其内容页完全独立，无需交互。 尽管母版页和内容页面的设计目的应考虑到这一点，但在某些常见情况下，内容页必须与其母版页交互。 最常见的原因之一是，基于在内容页中早于当前的某个操作更新母版页显示的特定部分。
 

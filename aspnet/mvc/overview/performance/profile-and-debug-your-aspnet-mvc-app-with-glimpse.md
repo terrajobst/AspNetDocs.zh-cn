@@ -9,11 +9,11 @@ ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
 ms.openlocfilehash: d3689147a3bc3aa1f4180c377d2483a94bdd95a9
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457656"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432896"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>使用 Glimpse 分析和调试 ASP.NET MVC 应用
 
@@ -78,7 +78,7 @@ ms.locfileid: "77457656"
 
 上述代码允许我传入查询字符串（`eager`）来控制数据的预先加载或显式加载。 在下图中，使用了显式加载，"计时" 页显示了在 `Index` 操作方法中加载的每个注册：
 
-![显式加载 (Explicit Loading)](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image8.png)
+![Explicit Loading — 显式加载](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image8.png)
 
 在下面的代码中，指定了渴望，并在调用 `Index` 视图后提取每个注册：
 

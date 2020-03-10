@@ -9,11 +9,11 @@ ms.assetid: 44aa1ac4-6ea2-48a2-972d-52710c48eae5
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
 ms.openlocfilehash: 3207079ee468232e5f75b081421241c232936baf
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455719"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433154"
 ---
 # <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>使用 jQuery UI 向 DropDownList 添加新类别
 
@@ -57,7 +57,7 @@ HTML `Select` 标记非常适合用于呈现固定类别数据的列表，但通
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image4.png)
 
-单击“保存”按钮 。 AJAX 调用创建了 "Opera" 类别，然后使用 Opera 填充下拉列表，并将 "Opera" 设置为所选的流派。
+单击“保存”按钮。 AJAX 调用创建了 "Opera" 类别，然后使用 Opera 填充下拉列表，并将 "Opera" 设置为所选的流派。
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image5.png)
 
@@ -139,4 +139,4 @@ Rick.Anderson[at]Microsoft.com
 - Tom Dykstra
 
 > [!div class="step-by-step"]
-> [“上一步”](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [上一页](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

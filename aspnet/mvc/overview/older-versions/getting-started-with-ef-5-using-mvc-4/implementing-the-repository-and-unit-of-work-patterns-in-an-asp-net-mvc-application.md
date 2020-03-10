@@ -9,11 +9,11 @@ ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: 18de9b125ee5d10795b9ce1a366918dadf4fc4e3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595242"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78434378"
 ---
 # <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>在 ASP.NET MVC 应用程序中实现存储库和工作单元模式（第9项，共10个）
 
@@ -21,7 +21,7 @@ ms.locfileid: "74595242"
 
 [下载完成的项目](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始学习本系列教程，也可以从此处[下载入门项目](building-the-ef5-mvc4-chapter-downloads.md)。
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始学习本系列教程，也可以从此处[下载入门项目](building-the-ef5-mvc4-chapter-downloads.md)。
 > 
 > > [!NOTE] 
 > > 
@@ -237,7 +237,7 @@ ms.locfileid: "74595242"
 
 页面的外观和工作方式与更改之前的效果相同，并且其他课程页面也相同。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，已实现存储库和工作单元模式。 已使用 lambda 表达式作为泛型存储库中的方法参数。 有关如何对 `IQueryable` 对象使用这些表达式的详细信息，请参阅 MSDN Library 中的[IQueryable （t）接口（system.object）](https://msdn.microsoft.com/library/bb351562.aspx) 。 在下一教程中，你将学习如何处理一些高级方案。
 

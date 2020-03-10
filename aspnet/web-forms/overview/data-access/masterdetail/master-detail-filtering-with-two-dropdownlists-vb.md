@@ -9,11 +9,11 @@ ms.assetid: 11ae4f64-01ba-4823-95f4-a2fe1f84f7d7
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 166d6a7664a326361dc2a3f115eddb988cd39d20
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74578398"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424292"
 ---
 # <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>使用两个 DropDownList 实现母版/详细信息筛选 (VB)
 
@@ -165,7 +165,7 @@ ms.locfileid: "74578398"
 
 **图 21**：当 `ProductsByCategory` DropDownList 的 `DataBound` 事件激发时，`ProductDetails` DetailsView 会显式刷新（[单击查看完全大小的映像](master-detail-filtering-with-two-dropdownlists-vb/_static/image63.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 DropDownList 用作主/详细信息报表的理想用户界面元素，在该元素中，主记录和详细记录之间存在一对多关系。 在前面的教程中，我们看到了如何使用单个 DropDownList 来筛选所选类别显示的产品。 在本教程中，我们将使用 DropDownList 替换产品的 GridView，并使用 DetailsView 显示所选产品的详细信息。 可以轻松地将本教程中讨论的概念扩展到涉及多个一对多关系（例如客户、订单和订单项）的数据模型。 通常，你始终可以为一对多关系中的每个 "one" 实体添加 DropDownList。
 

@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-choose-between-methods-of-ajax-page-updates
-title: '[如何实现:]AJAX 的方法之间进行选择页上的更新？ | Microsoft Docs'
+title: '[如何实现：]在 AJAX 页面更新的方法之间进行选择吗？ | Microsoft Docs'
 author: JoeStagner
-description: 在本视频中 Joe Stagner 比较了在 ASP.NET 应用程序中执行 AJAX 样式页更新的两个主要方法。 第一种方法是使用 Upd...
+description: 在此视频中，Stagner 比较了两种主要方法，即在 ASP.NET 应用程序中执行 AJAX 样式的页面更新。 第一种方法是使用 Upd 。
 ms.author: riande
 ms.date: 07/09/2007
 ms.assetid: a5e33a7d-ccb2-483f-a955-3d39f72ba4ec
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-choose-between-methods-of-ajax-page-updates
 msc.type: video
 ms.openlocfilehash: 56e3ebfbe0b5af4234791136725de79e38171cc1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395454"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420152"
 ---
-# <a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a>[如何实现:]AJAX 的方法之间进行选择页上的更新？
+# <a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a>[如何实现：]在 AJAX 页面更新的方法之间进行选择吗？
 
-通过[Joe Stagner](https://github.com/JoeStagner)
+作者： [Joe Stagner](https://github.com/JoeStagner)
 
-在本视频中 Joe Stagner 比较了在 ASP.NET 应用程序中执行 AJAX 样式页更新的两个主要方法。 第一种方法是使用的 UpdatePanel，没有其他代码需要编写客户端或服务器端上。 使用 UpdatePanel 的好处是所有内容自动工作。 该选项的影响是，在它需要大量的数据要包含在 AJAX 请求和响应，客户端和它需要完整页面生命周期要执行的服务器。 第二种方法是使用网络回叫，需要在客户端和服务器端上编写其他代码。 使用网络回叫的好处是，它在客户端需要很少数据包含在 AJAX 请求和响应，并且在服务器上需要仅调用的服务方法来执行。 大幅降低是时间和精力去编写所需的代码。 Joe 最后讨论 AJAX 样式页更新的两个主要方法之间进行选择时应考虑视频。 (此视频中使用来自代码[如何开始使用 ASP.NET AJAX](how-do-i-get-started-with-aspnet-ajax.md)视频并[如何实现使用 ASP.NET AJAX 使客户端网络回调](how-do-i-make-client-side-network-callbacks-with-aspnet-ajax.md)视频。)
+在此视频中，Stagner 比较了两种主要方法，即在 ASP.NET 应用程序中执行 AJAX 样式的页面更新。 第一种方法是使用 UpdatePanel，无需在客户端或服务器端编写其他代码。 使用 UpdatePanel 的好处是一切都能自动运行。 损失是，在客户端上，它要求在 AJAX 请求和响应中包含大量数据，并在服务器上需要执行完整的页生命周期。 第二种方法是使用网络回调，需要在客户端和服务器端同时编写附加代码。 使用网络回调的好处是，在客户端上，它要求在 AJAX 请求和响应中包含非常少的数据，并且在服务器上只需要执行调用的服务方法。 Penality 是编写所需代码所需的时间和精力。 Joe 通过讨论在 AJAX 样式的页面更新的两个主要方法之间进行选择时应考虑的内容来结束视频。 （此视频使用[如何开始使用 ASP.NET ajax](how-do-i-get-started-with-aspnet-ajax.md)视频，以及[如何使用 ASP.NET Ajax 视频进行客户端网络回调](how-do-i-make-client-side-network-callbacks-with-aspnet-ajax.md)。）
 
-[&#9654;观看视频 （11 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-choose-between-methods-of-ajax-page-updates)
+[&#9654;观看视频（11分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-choose-between-methods-of-ajax-page-updates)
 
 > [!div class="step-by-step"]
 > [上一页](how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax.md)

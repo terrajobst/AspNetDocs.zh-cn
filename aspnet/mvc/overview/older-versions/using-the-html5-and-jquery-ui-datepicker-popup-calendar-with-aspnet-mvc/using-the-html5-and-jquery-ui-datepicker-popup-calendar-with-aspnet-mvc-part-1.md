@@ -9,11 +9,11 @@ ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: c1c2380f24c72f6aabaaacaf975e95288a384ff1
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457617"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433286"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>将 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC 一起使用-第1部分
 
@@ -37,7 +37,7 @@ ms.locfileid: "77457617"
 
 本主题提供了包含C#和 Visual Basic 源代码的 Visual Studio 项目：[下载](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)。
 
-### <a name="what-youll-build"></a>所需操作
+### <a name="what-youll-build"></a>你将生成
 
 将模板（具体而言，是编辑和显示模板）添加到在[入门](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)中创建的简单电影列表应用程序。 还将添加[JQUERY UI datepicker](http://jqueryui.com/demos/datepicker/)快捷方式日历，以简化输入日期的过程。 以下屏幕截图显示了已修改的应用程序，其中显示了 jQuery UI datepicker 快捷日历。
 
@@ -83,9 +83,9 @@ ms.locfileid: "77457617"
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-运行应用程序。 现在，发布日期和价格属性的格式正确（即，使用适当的日期和货币格式）。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)特性提供内置 ASP.NET MVC 模板的类型元数据，以便字段以正确格式呈现。 使用 `DataType` 特性优于最初位于代码中的 `DisplayFormat` 属性，因为 `DataType` 特性使模型更整洁，更灵活地用于国际化。
+运行该应用程序。 现在，发布日期和价格属性的格式正确（即，使用适当的日期和货币格式）。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)特性提供内置 ASP.NET MVC 模板的类型元数据，以便字段以正确格式呈现。 使用 `DataType` 特性优于最初位于代码中的 `DisplayFormat` 属性，因为 `DataType` 特性使模型更整洁，更灵活地用于国际化。
 
 在下一部分中，你将了解如何创建自定义模板来显示日期字段。
 
 > [!div class="step-by-step"]
-> [Next](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
+> [下一部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

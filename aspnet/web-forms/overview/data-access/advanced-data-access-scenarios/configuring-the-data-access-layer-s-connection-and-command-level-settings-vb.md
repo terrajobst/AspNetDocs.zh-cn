@@ -9,11 +9,11 @@ ms.assetid: d57dfa2b-d627-45cb-b5b1-abbf3159d770
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
 ms.openlocfilehash: fa2868fc0dd8acd76f600b47d92adb984ce8d105
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573613"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78444272"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>配置数据访问层的连接和命令级别的设置 (VB)
 
@@ -141,7 +141,7 @@ TableAdapter s `Adapter` 属性具有 `SqlCommand` 类型的三个属性，该�
 > [!NOTE]
 > `Adapter` 和 `CommandCollection` 属性标记为 `Private`，这意味着只能从 TableAdapter 内的代码访问这些属性。 与 `Connection` 属性不同，这些访问修饰符是不可配置的。 因此，如果需要向体系结构中的其他层公开命令级属性，则必须使用上述分部类方法来提供读取或写入 `Private` 命令对象的 `Public` 方法或属性。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 类型化数据集中的 Tableadapter 用于封装数据访问详细信息和复杂性。 使用 Tableadapter，不必担心编写 ADO.NET 代码来连接数据库、发出命令，或将结果填充到 DataTable。 它将自动为我们自动处理。
 

@@ -9,11 +9,11 @@ ms.date: 08/10/2019
 msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: aa4f627bca99f0a7ffbbb53ea45ebdcf0850fd89
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519357"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431876"
 ---
 # <a name="aspnet-overview"></a>ASP.NET 概述
 
@@ -33,7 +33,7 @@ ASP.NET 是一个免费的 web 框架，用于使用 HTML、CSS 和 JavaScript �
 
 下面是每个框架的概述，以及如何在它们之间进行选择的一些建议。 如果你更喜欢视频简介，请参阅[使用 ASP.NET 生成网站](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET)和[什么是 Web 工具？](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)
 
-|   | 如果你有经验 | 开发样式 | 专业 |
+|   | 如果你有经验 | 开发样式 | 专业知识 |
 |-----------|----------------------|-----------------------------------------------------|----------------|
 | Web Forms — Web 窗体 | Win 窗体，WPF，.NET | 使用封装 HTML 标记的丰富控件库进行快速开发 | 中级、高级 RAD |
 | MVC       | Ruby on Rails，.NET  | 完全控制 HTML 标记、代码和标记的分隔，并易于编写测试。 适用于移动和单页应用程序（SPA）的最佳选择。 | 中级、高级 |
@@ -51,7 +51,7 @@ ASP.NET MVC 为你提供功能强大、基于模式的方法来构建实现完�
 
 [了解有关 MVC 的详细信息](mvc/index.md)
 
-### <a name="aspnet-web-pages"></a>ASP.NET Web Pages
+### <a name="aspnet-web-pages"></a>ASP.NET 网页
 
 ASP.NET 网页和 Razor 语法提供一种将服务器代码与 HTML 组合在一起以创建动态 Web 内容的快速、易学的简便方法。 连接到数据库，添加视频，链接到社交网络网站，并提供更多的功能，可帮助您创建符合最新 web 标准的精美站点。
 
@@ -65,7 +65,7 @@ ASP.NET 网页和 Razor 语法提供一种将服务器代码与 HTML 组合在�
 
 ## <a name="web-apis"></a>Web API
 
-ASP.NET Web API 是一种框架，用于轻松构建可以访问多种客户端（包括浏览器和移动设备）的 HTTP 服务。 ASP.NET Web API 是一种用于在 .NET Framework 上构建 RESTful 应用程序的理想平台。
+ASP.NET Web API 是一种框架，用于轻松构建可以访问多种客户端（包括浏览器和移动设备）的 HTTP 服务。 ASP.NET Web API 是用于在 .NET Framework 上生成 RESTful 应用程序的理想平台。
 
 [详细了解 Web API](web-api/index.md)
 

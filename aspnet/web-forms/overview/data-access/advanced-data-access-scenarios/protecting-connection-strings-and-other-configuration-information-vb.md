@@ -9,11 +9,11 @@ ms.assetid: cd17dbe1-c5e1-4be8-ad3d-57233d52cef1
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 070e1dccb80ef9af21ea621357c5b23e2ada6f9f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607730"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420998"
 ---
 # <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>保护连接字符串和其他配置信息 (VB)
 
@@ -27,7 +27,7 @@ ms.locfileid: "74607730"
 
 ASP.NET 应用程序的配置信息通常存储在名为 `Web.config`的 XML 文件中。 在这些教程中，我们已更新了几次 `Web.config`。 例如，在[第一个教程](../introduction/creating-a-data-access-layer-vb.md)中创建 `Northwind` 类型化的数据集时，会自动将连接字符串信息添加到 `<connectionStrings>` 部分的 `Web.config` 中。 稍后，在[母版页和站点导航](../introduction/master-pages-and-site-navigation-vb.md)教程中，我们手动更新 `Web.config`，添加一个 `<pages>` 元素，该元素指示项目中的所有 ASP.NET 页面都应使用 `DataWebControls` 主题。
 
-由于 `Web.config` 可能包含敏感数据（如连接字符串），因此 `Web.config` 的内容在未经授权的查看器中保持安全和隐藏非常重要。 默认情况下，ASP.NET 引擎将处理对具有 `.config` 扩展的文件发出的任何 HTTP 请求，该引擎将返回图1所示的 "*此类型的页未提供*" 消息。 这意味着，访问者只需在浏览器的地址栏中输入 http://www.YourServer.com/Web.config ，就不能查看 `Web.config` 的文件内容。
+由于 `Web.config` 可能包含敏感数据（如连接字符串），因此 `Web.config` 的内容在未经授权的查看器中保持安全和隐藏非常重要。 默认情况下，ASP.NET 引擎将处理对具有 `.config` 扩展的文件发出的任何 HTTP 请求，该引擎将返回图1所示的 "*此类型的页未提供*" 消息。 这意味着，访问者只需在浏览器的地址栏中输入 http://www.YourServer.com/Web.config，就不能查看 `Web.config` 的文件内容。
 
 [![通过浏览器访问 web.config 返回了此类型的页未提供消息](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
 
@@ -179,7 +179,7 @@ Windows 身份验证优于 SQL 身份验证，因为它更安全。 使用 Windo
 > [!NOTE]
 > 有关 SQL Server 中可用的不同身份验证类型的详细信息，请参阅[构建安全的 ASP.NET 应用程序：身份验证、授权和安全通信](https://msdn.microsoft.com/library/aa302392.aspx)。 若要进一步了解 Windows 和 SQL 身份验证语法之间的差异，请参阅[ConnectionStrings.com](http://www.connectionstrings.com/)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 默认情况下，不能通过浏览器访问 ASP.NET 应用程序中扩展名为 `.config` 的文件。 不会返回这些类型的文件，因为它们可能包含敏感信息，例如数据库连接字符串、用户名和密码等。 .NET 2.0 中的受保护配置系统通过允许加密指定的配置节来帮助进一步保护敏感信息。 有两个内置的受保护配置提供程序：一个使用 RSA 算法，另一个使用 Windows 数据保护 API （DPAPI）。
 

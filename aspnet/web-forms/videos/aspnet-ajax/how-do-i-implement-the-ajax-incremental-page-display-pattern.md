@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-incremental-page-display-pattern
-title: '[如何实现:]实现 AJAX 增量页面显示模式？ | Microsoft Docs'
+title: '[如何实现：]实现 AJAX 增量页面显示模式？ | Microsoft Docs'
 author: JoeStagner
-description: 传统上请求 Web 页时，用户必须等待，而从其后完成页将显示 sudde 服务器检索整个页面...
+description: 通常，在请求网页时，用户必须等待，同时从服务器检索整个页面后，整个页面将在 sudde 中显示。
 ms.author: riande
 ms.date: 03/05/2007
 ms.assetid: 17dfc331-1186-4240-8abf-f0220c90e081
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-incremental-page-display-pattern
 msc.type: video
 ms.openlocfilehash: f4678ca375c55c7bd3b02fb9707059418adb1bb7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395181"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438692"
 ---
-# <a name="how-do-i-implement-the-ajax-incremental-page-display-pattern"></a>[如何实现:]实现 AJAX 增量页面显示模式？
+# <a name="how-do-i-implement-the-ajax-incremental-page-display-pattern"></a>[如何实现：]实现 AJAX 增量页面显示模式？
 
-通过[Joe Stagner](https://github.com/JoeStagner)
+作者： [Joe Stagner](https://github.com/JoeStagner)
 
-传统上请求 Web 页时，用户必须等待，而从其后完成页将出现突然在浏览器中的服务器检索整个页面。 此视频演示如何 AJAX 增量页面显示模式改善了用户体验的快速顺利地完成提取和显示 Web 页面的部分。
+通常，在请求网页时，用户必须等待，同时从服务器检索整个页面后，浏览器中的 "完成" 页突然出现。 此视频演示了如何通过快速且流畅地获取和显示网页的部分来改善用户体验。
 
-[&#9654;观看视频 （11 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-ajax-incremental-page-display-pattern)
+[&#9654;观看视频（11分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-ajax-incremental-page-display-pattern)
 
 > [!div class="step-by-step"]
 > [上一页](how-do-i-implement-the-ajax-paging-pattern.md)

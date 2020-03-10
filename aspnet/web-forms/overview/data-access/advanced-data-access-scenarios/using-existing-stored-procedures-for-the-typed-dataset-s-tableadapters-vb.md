@@ -9,11 +9,11 @@ ms.assetid: 2da25f6a-757e-4e7b-a812-1575288d8f7a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e35c3d6a98516a07f6119e6cb9dbeb99bc28fe33
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74613535"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78427124"
 ---
 # <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>使用适用于类型化数据集的 TableAdapter 的现有存储过程 (VB)
 
@@ -220,7 +220,7 @@ ms.locfileid: "74613535"
 > [!NOTE]
 > 在测试 `Categories_Delete` 存储过程之前，将删除多个产品以及所选的类别，因此，创建数据库的备份副本可能是明智的。 如果在 `App_Data`中使用 `NORTHWND.MDF` 数据库，只需关闭 Visual Studio，并将 `App_Data` 中的 MDF 和 LDF 文件复制到其他文件夹。 测试功能后，可以通过关闭 Visual Studio 并将 `App_Data` 中的当前 MDF 和 LDF 文件替换为备份副本来还原数据库。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 TableAdapter 向导会自动生成存储过程，但有时我们可能已创建了此类存储过程，或者想要使用其他工具手动创建这些存储过程。 为了满足此类情况，还可以将 TableAdapter 配置为指向现有的存储过程。 在本教程中，我们将介绍如何通过 Visual Studio 环境将存储过程手动添加到数据库，以及如何将 TableAdapter s 方法连接到这些存储过程。 我们还在存储过程中检查了用于启动、提交和回滚事务的 T-sql 命令和脚本模式。
 

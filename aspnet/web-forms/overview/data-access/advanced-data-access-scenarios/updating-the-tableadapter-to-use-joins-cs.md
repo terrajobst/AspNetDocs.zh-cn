@@ -9,11 +9,11 @@ ms.assetid: 675531a7-cb54-4dd6-89ac-2636e4c285a5
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 24ff3645783dabfcdef5ac313a2d4833e4998efc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607890"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78427772"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-c"></a>更新 TableAdapter 以使用 JOIN (C#)
 
@@ -207,7 +207,7 @@ TableAdapter 自动生成的 `INSERT`、`UPDATE`和 `DELETE` 语句的易受攻�
 
 我将此留给读者的练习。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 使用关系数据库时，查询通常会从多个相关表中提取数据。 相关子查询和 `JOIN` 提供了两种不同的方法，可用于从查询中的相关表访问数据。 在前面的教程中，我们最常使用相关子查询，因为 TableAdapter 无法自动生成涉及 `JOIN` 的查询 `INSERT`、`UPDATE`和 `DELETE` 语句。 尽管可以手动提供这些值，但使用即席 SQL 语句时，在完成 TableAdapter 配置向导时，将覆盖任何自定义项。
 

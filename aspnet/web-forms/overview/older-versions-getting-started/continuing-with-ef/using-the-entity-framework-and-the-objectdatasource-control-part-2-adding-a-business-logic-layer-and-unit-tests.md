@@ -1,82 +1,82 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
-title: 使用实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试 |Microsoft Docs
+title: 使用实体框架4.0 和 ObjectDataSource 控件，第2部分：添加业务逻辑层和单元测试 |Microsoft Docs
 author: tdykstra
-description: 本系列教程以 Contoso University web 应用程序创建的与 Entity Framework 4.0 教程系列入门教程为基础。 我...
+description: 本教程系列在使用实体框架4.0 教程系列的入门创建的 Contoso 大学 web 应用程序上构建。 I...
 ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: efb0e677-10b8-48dc-93d3-9ba3902dd807
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
 ms.openlocfilehash: 24344cc33d7c26d7c408db26c0530ef2c708a7d3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133455"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439952"
 ---
-# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>使用实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试
+# <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>使用实体框架4.0 和 ObjectDataSource 控件，第2部分：添加业务逻辑层和单元测试
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-> 本系列教程为基础创建的 Contoso University web 应用程序[开始使用 Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)系列教程。 如果未完成之前的教程，作为本教程的起始点可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)，您已经创建的。 此外可以[下载应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)由完整的系列教程。 如果你有疑问的教程，您可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)。
+> 本教程系列在[使用实体框架 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)教程系列的入门创建的 Contoso 大学 web 应用程序上构建。 如果你没有完成前面的教程，作为本教程的起点，你可以下载你要创建[的应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)。 你还可以下载完整的系列教程创建的[应用程序](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)。 如果有关于这些教程的问题，可以将其发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)。
 
-在上一教程中创建使用实体框架的 n 层 web 应用程序和`ObjectDataSource`控件。 本教程演示如何添加业务逻辑，同时保持业务逻辑层 (BLL) 和数据访问层 (DAL) 是独立的以及如何为 BLL 创建自动化的单元测试。
+在上一教程中，你使用实体框架和 `ObjectDataSource` 控件创建了一个 n 层 web 应用程序。 本教程介绍如何在保持业务逻辑层（BLL）和数据访问层（DAL）的同时添加业务逻辑，并说明如何为 BLL 创建自动单元测试。
 
-在本教程中将完成以下任务：
+在本教程中，你将完成以下任务：
 
-- 创建存储库接口声明所需的数据访问方法。
-- 存储库类中实现存储库的接口。
-- 创建调用存储库类以执行数据访问功能的业务逻辑类。
-- 连接`ObjectDataSource`业务逻辑类而不是存储库类的控件。
-- 创建单元测试项目和使用内存中集合来存储其数据的存储库类。
-- 创建你想要添加到业务逻辑类，然后运行测试并查看其失败的业务逻辑的单元测试。
-- 在业务逻辑类中，实现业务逻辑，然后重新运行单元测试并查看它的传递。
+- 创建一个存储库接口，用于声明所需的数据访问方法。
+- 在存储库类中实现存储库接口。
+- 创建一个业务逻辑类，该类调用存储库类来执行数据访问函数。
+- 将 `ObjectDataSource` 控件连接到业务逻辑类，而不是存储库类。
+- 创建单元测试项目，并使用内存中集合的数据存储区。
+- 为想要添加到业务逻辑类的业务逻辑创建单元测试，然后运行测试并查看其失败。
+- 在业务逻辑类中实现业务逻辑，然后重新运行单元测试并查看它是否通过。
 
-您将使用*Departments.aspx*并*DepartmentsAdd.aspx*在上一教程中创建的页。
+你将使用在上一教程中创建的*DepartmentsAdd 和 .aspx*页。
 
 ## <a name="creating-a-repository-interface"></a>创建存储库接口
 
-您将首先创建存储库接口。
+首先，你将创建存储库接口。
 
 [![Image08](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image2.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image1.png)
 
-在中*DAL*文件夹中，创建一个新类文件，将其命名*ISchoolRepository.cs*，和现有代码替换为以下代码：
+在*DAL*文件夹中，创建一个新的类文件，将其命名为*ISchoolRepository.cs*，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample1.cs)]
 
-该接口定义的一种方法为每个 CRUD （创建、 读取、 更新、 删除） 存储库类中创建的方法。
+接口为你在存储库类中创建的每个 CRUD （创建、读取、更新、删除）方法定义一个方法。
 
-在中`SchoolRepository`类中*SchoolRepository.cs*，指示此类实现`ISchoolRepository`接口：
+在*SchoolRepository.cs*中的 `SchoolRepository` 类中，指示此类实现 `ISchoolRepository` 接口：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample2.cs)]
 
 ## <a name="creating-a-business-logic-class"></a>创建业务逻辑类
 
-接下来，你将创建业务逻辑类。 执行此操作，以便可以添加将由执行的业务逻辑`ObjectDataSource`控件，但不会尚未执行的。 现在，新的业务逻辑类将仅执行相同的 CRUD 操作的存储库。
+接下来，您将创建业务逻辑类。 这样做的目的是为了能够添加将由 `ObjectDataSource` 控件执行的业务逻辑，不过您还不会这样做。 现在，新的业务逻辑类将仅执行存储库所执行的相同 CRUD 操作。
 
 [![Image09](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image4.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image3.png)
 
-创建一个新文件夹并将其命名*BLL*。 (在实际应用程序中，业务逻辑层将通常作为实现的类库，一个单独的项目，但为了简化本教程中，BLL 类将保留在项目文件夹中。)
+创建一个新文件夹并将其命名为*BLL*。 （在实际应用程序中，业务逻辑层通常将作为一个类库实现，而不是一个单独的项目，但为了简化本教程，将在项目文件夹中保留 BLL 类。）
 
-在中*BLL*文件夹中，创建一个新类文件，将其命名*SchoolBL.cs*，和现有代码替换为以下代码：
+在*BLL*文件夹中，创建一个新的类文件，将其命名为*SchoolBL.cs*，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample3.cs)]
 
-此代码将创建前面在存储库类中，您看到的相同的 CRUD 方法，但调用而不是直接访问的实体框架方法，它在存储库类方法。
+此代码将创建你在存储库类前面看到的相同 CRUD 方法，但不直接访问实体框架方法，而是调用存储库类方法。
 
-保存对存储库类的引用的类变量定义为接口类型，并实例化存储库类的代码包含在两个构造函数。 无参数构造函数将由`ObjectDataSource`控件。 它创建的实例`SchoolRepository`前面创建的类。 另一个构造函数允许实例化业务逻辑类将实现存储库接口的任何对象中传递的任何代码。
+保存对存储库类的引用的类变量定义为接口类型，而实例化存储库类的代码包含在两个构造函数中。 `ObjectDataSource` 控件将使用无参数的构造函数。 它创建之前创建的 `SchoolRepository` 类的实例。 另一个构造函数允许对业务逻辑类进行实例化的任何代码传递到实现存储库接口的任何对象。
 
-调用存储库类和两个构造函数的 CRUD 方法，使其可以与您选择任何后端数据存储区一起使用的业务逻辑类。 业务逻辑类不需要，需要注意的调用类如何持久保存数据。 (此情况通常称作*持久性无感知*。)这有利于进行单元测试，因为你可以连接到使用的内容作为一种简单的存储库实现的业务逻辑类作为内存中`List`集合来存储数据。
+通过调用存储库类和两个构造函数的 CRUD 方法，可以将业务逻辑类用于所选的任何后端数据存储。 业务逻辑类无需知道它所调用的类如何持久保存数据。 （这通常称为*持久性无感知*。）这可以简化单元测试，因为可以将业务逻辑类连接到存储库实现，该实现使用与内存中 `List` 集合一样简单的内容来存储数据。
 
 > [!NOTE]
-> 从技术上讲，实体对象是仍不持久性未知，因为它们从实体框架的继承的类实例化`EntityObject`类。 可以使用完整的持久性无感知*普通旧 CLR 对象*，或*Poco*，来替代继承的对象`EntityObject`类。 使用 Poco 不在本教程的范围。 有关详细信息，请参阅[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) MSDN 网站上。)
+> 从技术上讲，实体对象仍然不是持久性未知的，因为它们是从从实体框架的 `EntityObject` 类继承的类实例化的。 对于完整的持久性无感知，可以使用*普通的旧 CLR 对象*或*poco*来代替从 `EntityObject` 类继承的对象。 使用 Poco 超出了本教程的范围。 有关详细信息，请参阅 MSDN 网站上的可[测试性和实体框架 4.0](https://msdn.microsoft.com/library/ff714955.aspx) 。）
 
-现在可以连接`ObjectDataSource`控件添加到业务逻辑类而不是到存储库并验证一切正常就像以前一样。
+现在，你可以将 `ObjectDataSource` 控件连接到业务逻辑类，而不是连接到存储库，并验证所有内容是否像以前一样正常工作。
 
-在中*Departments.aspx*并*DepartmentsAdd.aspx*，更改每个匹配项`TypeName="ContosoUniversity.DAL.SchoolRepository"`到`TypeName="ContosoUniversity.BLL.SchoolBL`"。 (有四个实例中所有。）
+在 *.aspx*和*DepartmentsAdd*中，将 `TypeName="ContosoUniversity.DAL.SchoolRepository"` 的每个匹配项更改 `TypeName="ContosoUniversity.BLL.SchoolBL`"。 （共有四个实例。）
 
-运行*Departments.aspx*并*DepartmentsAdd.aspx*页以验证它们仍能够与以前一样。
+运行 "node.js" 和 " *DepartmentsAdd* "*页，验证*它们是否仍像以前一样工作。
 
 [![Image01](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image6.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image5.png)
 
@@ -84,129 +84,129 @@ ms.locfileid: "65133455"
 
 ## <a name="creating-a-unit-test-project-and-repository-implementation"></a>创建单元测试项目和存储库实现
 
-将新项目添加到解决方案： 使用**测试项目**模板，并将其命名`ContosoUniversity.Tests`。
+使用 "**测试项目**" 模板将新项目添加到解决方案，并将其命名为 `ContosoUniversity.Tests`。
 
-在测试项目中，添加对的引用`System.Data.Entity`并添加到项目引用`ContosoUniversity`项目。
+在测试项目中，添加对 `System.Data.Entity` 的引用并将项目引用添加到 `ContosoUniversity` 项目。
 
-现在可以创建将用于单元测试的存储库类。 此存储库的数据存储将在类中。
+你现在可以创建将用于单元测试的存储库类。 此存储库的数据存储将位于类中。
 
 [![Image12](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image10.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image9.png)
 
-在测试项目中，创建一个新类文件，将其命名*MockSchoolRepository.cs*，和现有代码替换为以下代码：
+在测试项目中，创建一个新的类文件，将其命名为*MockSchoolRepository.cs*，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample4.cs)]
 
-此存储库类将具有与直接访问 Entity Framework 相同的 CRUD 方法，但它们适用于`List`内存而不是与数据库中的集合。 这简化了安装和验证业务逻辑类的单元测试的测试类。
+此存储库类具有与直接访问实体框架相同的 CRUD 方法，但它们使用的是内存中 `List` 集合，而不是与数据库一起使用。 这使得测试类可以更轻松地设置和验证业务逻辑类的单元测试。
 
 ## <a name="creating-unit-tests"></a>创建单元测试
 
-**测试**项目模板创建存根 （stub） 单元测试类，并将下一个任务是通过的业务逻辑的你想要添加到业务逻辑类向其添加单元测试方法中修改此类。
+**测试**项目模板为你创建了一个存根单元测试类，下一个任务是通过为要添加到业务逻辑类的业务逻辑添加单元测试方法来修改此类。
 
 [![Image13](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image12.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image11.png)
 
-Contoso 大学，任何单个 instructor 只能单个部门的管理员，您需要添加业务逻辑以强制实施此规则。 首先，将通过添加测试和运行测试后，若要查看这些失败。 然后，将添加代码，并重新运行测试，预期会看到它们通过。
+在 Contoso 大学，任何单个指导员只能成为单个部门的管理员，并且你需要添加业务逻辑来强制实施此规则。 首先添加测试并运行测试，以查看它们是否失败。 然后，你将添加代码并重新运行测试，并希望其通过。
 
-打开*UnitTest1.cs*文件，并添加`using`ContosoUniversity 项目中创建业务逻辑和数据访问层的语句：
+打开*UnitTest1.cs*文件并添加在 ContosoUniversity 项目中创建的业务逻辑和数据访问层的 `using` 语句：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample5.cs)]
 
-替换为`TestMethod1`方法使用以下方法：
+将 `TestMethod1` 方法替换为以下方法：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample6.cs)]
 
-`CreateSchoolBL`方法创建的存储库类创建的单元测试项目，然后将其传递到业务逻辑类的新实例的一个实例。 然后，该方法使用业务逻辑类在测试方法中插入三个可以使用的部门。
+`CreateSchoolBL` 方法创建为单元测试项目创建的存储库类的实例，然后将该实例传递给业务逻辑类的新实例。 然后，方法使用业务逻辑类插入三个可以在测试方法中使用的部门。
 
-测试方法验证业务逻辑类引发异常，如果有人试图插入新系与现有院系，作为同一管理员或者有人尝试通过将其设置为一个人的 ID 来更新部门的管理员谁已经是另一部门的管理员。
+如果有人尝试插入具有与现有部门相同的管理员的新部门，或者如果有人尝试通过将其设置为人员的 ID 来更新部门的管理员，则测试方法将验证业务逻辑类是否引发异常。谁已是另一个部门的管理员。
 
-你尚未创建异常类，因此此代码将不进行编译。 若要获取其进行编译，请右键单击`DuplicateAdministratorException`，然后选择**生成**，然后**类**。
+尚未创建异常类，因此此代码将不会编译。 若要进行编译，请右键单击 `DuplicateAdministratorException`，然后选择 "**生成**"，然后选择 "**类**"。
 
 [![Image14](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image14.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image13.png)
 
-这将创建一个类中的测试项目，您可以删除在主项目中创建的异常类后。 和实现业务逻辑。
+这会在测试项目中创建一个可在主项目中创建异常类后删除的类。 和实现业务逻辑。
 
-运行测试项目。 按预期运行，则测试失败。
+运行测试项目。 如预期那样，测试将失败。
 
 [![Image03](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image16.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image15.png)
 
-## <a name="adding-business-logic-to-make-a-test-pass"></a>添加业务逻辑，以使测试通过
+## <a name="adding-business-logic-to-make-a-test-pass"></a>添加业务逻辑以便进行测试
 
-接下来，将实现使我们无法设置为某个部门的管理员已经是另一部门的管理员的人员的业务逻辑。 将业务逻辑层中，从引发异常，然后将其表示层中捕获如果用户编辑院系，并单击**更新**选择已是管理员的人后。 （你还可以从下拉列表中的用户已是管理员之前呈现页上，, 删除教师，但此处的目的是要使用业务逻辑层。)
+接下来，你将实现业务逻辑，使其不能被设置为属于另一部门的管理员的部门的管理员。 如果用户编辑部门并在选择已成为管理员的人员后单击 "**更新**"，则将从业务逻辑层引发异常，然后在表示层中捕获该异常。 （您也可以从下拉列表中删除已在您呈现页面之前已经是管理员的指导员，但此处的目的是使用业务逻辑层。）
 
-首先创建在用户尝试使多个部门的管理员的一名讲师时将引发的异常类。 在主项目中，创建新的类文件中*BLL*文件夹中，其命名*DuplicateAdministratorException.cs*，和现有代码替换为以下代码：
+首先，创建一个异常类，当用户尝试使讲师成为多个部门的管理员时，将引发该异常类。 在主项目中，在*BLL*文件夹中创建一个新的类文件，将其命名为*DuplicateAdministratorException.cs*，并将现有代码替换为以下代码：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample7.cs)]
 
-现在，删除临时*DuplicateAdministratorException.cs*中创建测试项目之前为了能够编译的文件。
+现在删除之前在测试项目中创建的临时*DuplicateAdministratorException.cs*文件，以便能够进行编译。
 
-在主项目中，打开*SchoolBL.cs*文件，并添加以下方法，以便包含验证逻辑。 （代码将引用你将更高版本创建的方法。）
+在主项目中，打开*SchoolBL.cs*文件并添加以下包含验证逻辑的方法。 （代码引用稍后将创建的方法。）
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample8.cs)]
 
-要插入或更新时，将调用此方法`Department`以检查另一部门是否已具有相同的管理员的实体。
+在插入或更新 `Department` 实体时，将调用此方法，以检查其他部门是否已具有相同的管理员。
 
-该代码调用方法要搜索的数据库`Department`具有相同的实体`Administrator`作为正在插入或更新的实体的属性值。 如果找到一个对象，该代码将引发异常。 不进行验证检查是必需的如果正在插入或更新的实体不具有`Administrator`如果在更新过程中调用该方法，将引发值和任何异常并`Department`找到匹配项的实体`Department`实体正在更新。
+此代码将调用一个方法，以便在数据库中搜索与要插入或更新的实体具有相同 `Administrator` 属性值的 `Department` 实体。 如果找到一个，代码将引发异常。 如果要插入或更新的实体没有 `Administrator` 值，则不需要验证检查; 如果在更新过程中调用方法，则不会引发异常，并且找到的 `Department` 实体与正在更新的 `Department` 实体匹配。
 
-调用中的新方法`Insert`和`Update`方法：
+从 `Insert` 和 `Update` 方法中调用新方法：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample9.cs)]
 
-在中*ISchoolRepository.cs*，添加新的数据访问方法的以下声明：
+在*ISchoolRepository.cs*中，为新的数据访问方法添加以下声明：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample10.cs)]
 
-在中*SchoolRepository.cs*，添加以下`using`语句：
+在*SchoolRepository.cs*中，添加以下 `using` 语句：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample11.cs)]
 
-在中*SchoolRepository.cs*，添加以下新的数据访问方法：
+在*SchoolRepository.cs*中，添加以下新的数据访问方法：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample12.cs)]
 
-此代码检索`Department`具有指定的管理员的实体。 可以看到只有一个部门和 （如果有）。 但是，由于没有约束内置到数据库中，返回类型是集合找到多个部门的情况下。
+此代码检索具有指定管理员 `Department` 实体。 只应找到一个部门（如果有）。 但是，由于数据库中没有内置的约束，因此在找到多个部门的情况下，返回类型是一个集合。
 
-默认情况下，对象上下文从数据库检索实体时，它跟踪的它们在其对象状态管理器中。 `MergeOption.NoTracking`参数指定此查询将无法完成此跟踪。 这是必需的因为查询可能返回确切想要更新的实体，然后您就会无法附加该实体。 例如，如果您编辑在历史记录院系*Departments.aspx*页并将管理员保留不变，此查询将返回历史系。 如果`NoTracking`未设置，对象上下文将其对象状态管理器中已有的历史记录 department 实体。 对象上下文附加时重新创建从视图状态的历史记录 department 实体，将引发异常，指示`"An object with the same key already exists in the ObjectStateManager. The ObjectStateManager cannot track multiple objects with the same key"`。
+默认情况下，当对象上下文从数据库中检索实体时，它将在其对象状态管理器中进行跟踪。 `MergeOption.NoTracking` 参数指定不会对此查询执行此跟踪。 这是必需的，因为查询可能返回您尝试更新的确切实体，然后您将无法附加该实体。 例如，如果在 " *default.aspx* " 页中编辑历史记录部门并使管理员保持不变，则此查询将返回历史记录部门。 如果未设置 `NoTracking`，则对象上下文的对象状态管理器中已包含 "历史记录部门" 实体。 然后，在附加从视图状态重新创建的历史部门实体时，对象上下文将引发指出 `"An object with the same key already exists in the ObjectStateManager. The ObjectStateManager cannot track multiple objects with the same key"`的异常。
 
-(为指定的替代方法`MergeOption.NoTracking`，可以创建新的对象上下文只需为此查询。 因为新的对象上下文会有其自己的对象状态管理器，会有不会发生冲突时调用`Attach`方法。 新的对象上下文将与原始对象上下文中，共享元数据和数据库连接，因此此备用方法的性能损失最少。 但是，会在这里，所示的方法引入`NoTracking`选项，您会发现在其他上下文中非常有用。 `NoTracking`讨论选项进一步在本系列中下一个教程。)
+（作为指定 `MergeOption.NoTracking`的替代方法，您可以为此查询创建一个新的对象上下文。 由于新的对象上下文会有自己的对象状态管理器，因此在调用 `Attach` 方法时，不会发生冲突。 新的对象上下文将与原始对象上下文共享元数据和数据库连接，因此这种替代方法的性能损失会很小。 但此处显示的方法引入了 `NoTracking` 选项，你会在其他上下文中找到该选项。 本系列后面的教程进一步讨论了 `NoTracking` 选项。）
 
-在测试项目中，将添加到新的数据访问方法*MockSchoolRepository.cs*:
+在测试项目中，将新的数据访问方法添加到*MockSchoolRepository.cs*：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample13.cs)]
 
-此代码使用 LINQ 来执行相同的数据选择的`ContosoUniversity`项目存储库使用 LINQ to Entities 的。
+此代码使用 LINQ 执行 `ContosoUniversity` 的项目存储库使用 LINQ to Entities 的相同数据选择。
 
 再次运行测试项目。 这次测试通过了。
 
 [![Image04](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image18.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image17.png)
 
-## <a name="handling-objectdatasource-exceptions"></a>处理的异常对象数据源
+## <a name="handling-objectdatasource-exceptions"></a>处理 ObjectDataSource 异常
 
-在中`ContosoUniversity`项目中，运行*Departments.aspx*页上，并尝试将某个部门的管理员更改的人已经是另一部门的管理员。 （请记住，你只能编辑部门添加在本教程中，因为在数据库恢复包含无效的数据预加载。）获取以下服务器错误页：
+在 `ContosoUniversity` 项目中，运行 "node.js *" 页，* 然后尝试将某个部门的管理员更改为已是另一个部门的管理员的用户。 （请记住，您只能编辑您在本教程中添加的部门，因为数据库预加载了无效的数据。）出现以下服务器错误页：
 
 [![Image05](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image20.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image19.png)
 
-您不希望用户看到错误页上，此类，因此需要添加错误处理代码。 打开*Departments.aspx*并指定的处理程序`OnUpdated`事件的`DepartmentsObjectDataSource`。 `ObjectDataSource`现在开始标记类似于下面的示例。
+您不希望用户看到此类错误页面，因此您需要添加错误处理代码。 打开 "*部门*"，并为 `DepartmentsObjectDataSource`的 `OnUpdated` 事件指定处理程序。 `ObjectDataSource` 开始标记现在类似于以下示例。
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample14.aspx)]
 
-在中*Departments.aspx.cs*，添加以下`using`语句：
+在*Departments.aspx.cs*中，添加以下 `using` 语句：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample15.cs)]
 
-添加以下处理程序`Updated`事件：
+为 `Updated` 事件添加以下处理程序：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample16.cs)]
 
-如果`ObjectDataSource`控制捕获异常，当其尝试执行更新时，它将异常传递事件参数中 (`e`) 向此处理程序。 在处理程序中的代码检查异常是否重复管理员异常。 如果是，代码将创建包含的错误消息的验证程序控件`ValidationSummary`控件来显示。
+如果 `ObjectDataSource` 控件在尝试执行更新时捕获到异常，则它会将事件自变量（`e`）中的异常传递给该处理程序。 处理程序中的代码检查异常是否是重复的管理员异常。 如果是，该代码将创建一个验证程序控件，其中包含要显示的 `ValidationSummary` 控件的错误消息。
 
-运行页面并尝试再次使人成为两个部门的管理员。 这一次`ValidationSummary`控件将显示一条错误消息。
+运行该页并再次尝试让两个部门的管理员。 这次 `ValidationSummary` 控件将显示错误消息。
 
 [![Image06](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image22.png)](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/_static/image21.png)
 
-进行到类似的更改*DepartmentsAdd.aspx*页。 在中*DepartmentsAdd.aspx*，指定的处理程序`OnInserted`事件的`DepartmentsObjectDataSource`。 所得的标记将类似于下面的示例。
+对*DepartmentsAdd*页进行类似的更改。 在*DepartmentsAdd*中，为 `DepartmentsObjectDataSource`的 `OnInserted` 事件指定处理程序。 生成的标记将类似于下面的示例。
 
 [!code-aspx[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample17.aspx)]
 
-在中*DepartmentsAdd.aspx.cs*，将同一`using`语句：
+在*DepartmentsAdd.aspx.cs*中，添加相同的 `using` 语句：
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample18.cs)]
 
@@ -214,11 +214,11 @@ Contoso 大学，任何单个 instructor 只能单个部门的管理员，您需
 
 [!code-csharp[Main](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests/samples/sample19.cs)]
 
-现在可以测试*DepartmentsAdd.aspx.cs*页以验证它也可以正确处理尝试使多个部门的管理员的人。
+你现在可以测试*DepartmentsAdd.aspx.cs*页，验证它是否还正确地处理使一个用户成为多个部门的管理员的尝试。
 
-这将完成对实现使用的存储库模式引入`ObjectDataSource`使用实体框架的控件。 有关存储库模式和可测试性的详细信息，请参阅 MSDN 白皮书[可测试性和 Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx)。
+这就完成了实现使用实体框架的 `ObjectDataSource` 控件的存储库模式的简介。 有关存储库模式和可测试性的详细信息，请参阅 MSDN 白皮书可[测试性和4.0 实体框架](https://msdn.microsoft.com/library/ff714955.aspx)。
 
-以下教程中你将了解如何添加排序和筛选的应用程序的功能。
+在以下教程中，你将了解如何将排序和筛选功能添加到应用程序。
 
 > [!div class="step-by-step"]
 > [上一页](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)

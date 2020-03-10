@@ -2,22 +2,22 @@
 uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/index
 title: 来自 VB 团队的 LINQ 视频 |Microsoft Docs
 author: rick-anderson
-description: 这些视频提供通过一小时，另一半的内容侧重于 Visual Basic 9.0 包括在 Visual Studio 2008 的新 LINQ 语言功能。
+description: 这些视频提供了一小时和一半的内容，重点介绍 Visual Studio 2008 中包含的 Visual Basic 9.0 的新 LINQ 语言功能。
 ms.author: riande
 ms.date: 02/24/2012
 ms.assetid: 257373bb-eab0-47bc-b5a2-37a9e91666d6
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
 ms.openlocfilehash: fae7bc473ecbc655400220aa158dbd5285ae1ea8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106824"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421538"
 ---
 # <a name="linq-videos-from-the-vb-team"></a>来自 VB 团队的 LINQ 视频
 
-> 这些视频提供通过一小时，另一半的内容侧重于 Visual Basic 9.0 包括在 Visual Studio 2008 的新 LINQ 语言功能。
+> 这些视频提供了一小时和一半的内容，重点介绍 Visual Studio 2008 中包含的 Visual Basic 9.0 的新 LINQ 语言功能。
 
 - [开始使用 LINQ](how-do-i-get-started-with-linq.md)
 - [执行组和聚合查询](how-do-i-perform-group-and-aggregate-queries.md)

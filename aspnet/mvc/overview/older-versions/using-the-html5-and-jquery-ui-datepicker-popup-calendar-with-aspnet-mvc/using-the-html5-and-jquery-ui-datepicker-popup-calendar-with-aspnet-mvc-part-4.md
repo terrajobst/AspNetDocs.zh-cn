@@ -9,11 +9,11 @@ ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
 ms.openlocfilehash: 583e782641efea9a9517edb31f7718b28203d756
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457487"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433250"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>将 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC 一起使用-第4部分
 
@@ -31,7 +31,7 @@ ms.locfileid: "77457487"
 
 此代码将导致显示 "`ReleaseDate`" 字段，而不会在显示模板和编辑模板中显示时间。 如果你的应用程序在*Views\Shared\EditorTemplates*文件夹或*Views\Movies\EditorTemplates*文件夹中包含一个*日期 cshtml*模板，则该模板将用于在编辑时呈现任何 `DateTime` 属性。 否则，内置 ASP.NET 模板系统将以日期形式显示属性。
 
-按 Ctrl+F5 运行应用程序。 选择 "编辑" 链接以验证 "发布日期" 的输入字段是否只显示日期。
+按 Ctrl+F5 以运行应用程序。 选择 "编辑" 链接以验证 "发布日期" 的输入字段是否只显示日期。
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image1.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "77457487"
 
 选中 "**作为分部视图创建**" 复选框。 请确保未选中 "**使用布局或母版页**" 和 "**创建强类型视图**" 复选框。
 
-单击“添加”。 将创建*Views\Shared\EditorTemplates\Date.cshtml*模板。
+单击 **“添加”** 。 将创建*Views\Shared\EditorTemplates\Date.cshtml*模板。
 
 将以下代码添加到*Views\Shared\EditorTemplates\Date.cshtml*模板。
 
@@ -57,7 +57,7 @@ ms.locfileid: "77457487"
 
 "`date` 类型" 是一种 HTML5 输入类型，可用于启用 HTML5 感知浏览器来呈现 HTML5 日历控件。 稍后，你将使用 `datefield` 类添加一些 JavaScript，以将 jQuery datepicker 挂钩到 `Html.TextBox` 元素。
 
-按 Ctrl+F5 运行应用程序。 您可以验证 "编辑" 视图中的 "`ReleaseDate`" 属性是否正在使用编辑模板，因为模板显示 &quot;使用日期模板&quot; 紧靠 `ReleaseDate` 文本输入框之前，如下图所示：
+按 Ctrl+F5 以运行应用程序。 您可以验证 "编辑" 视图中的 "`ReleaseDate`" 属性是否正在使用编辑模板，因为模板显示 &quot;使用日期模板&quot; 紧靠 `ReleaseDate` 文本输入框之前，如下图所示：
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image2.png)
 
@@ -127,7 +127,7 @@ NuGet 将 jQuery UI Core 和 jQuery UI 日期选取器的这些调试版本和�
 
 [URL 内容帮助器](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.content.aspx)方法将资源路径转换为绝对路径。 当应用程序在 IIS 上运行时，必须使用 `@URL.Content` 来正确引用这些资源。
 
-按 Ctrl+F5 运行应用程序。 选择 "编辑" 链接，然后将插入点放入 " **ReleaseDate** " 字段。 显示 jQuery UI 快捷日历。
+按 Ctrl+F5 以运行应用程序。 选择 "编辑" 链接，然后将插入点放入 " **ReleaseDate** " 字段。 显示 jQuery UI 快捷日历。
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image7.png)
 
@@ -175,4 +175,4 @@ NuGet 将 jQuery UI Core 和 jQuery UI 日期选取器的这些调试版本和�
 - 有关 ASP.NET MVC 模板的详细信息，请参阅[ASP.NET MVC 2 模板](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)上的 Brad Wilson 的博客系列。 尽管此系列是为 ASP.NET MVC 2 编写的，但材料仍适用于当前版本的 ASP.NET MVC。
 
 > [!div class="step-by-step"]
-> [“上一步”](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [上一页](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

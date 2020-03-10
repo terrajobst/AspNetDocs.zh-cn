@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/index
-title: ASP.NET 4-企业部署系列 3 配置 TFS |Microsoft Docs
+title: ASP.NET 4-企业部署系列3配置 TFS |Microsoft Docs
 author: rick-anderson
-description: 本教程将演示如何配置 Team Foundation Server (TFS) 2010年构建解决方案并将 web 内容部署到各种目标环境。
+description: 本教程将演示如何配置 Team Foundation Server （TFS）2010来构建解决方案并将 web 内容部署到各种目标环境。
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: b71d1611-5f26-40dd-8315-b65b9d69b198
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: chapter
 ms.openlocfilehash: 7f0f1498ad8fa51983eef335c08754a17956058d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109246"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440792"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 - 企业部署系列 3 配置 TFS
 
-> 本教程将演示如何配置 Team Foundation Server (TFS) 2010年构建解决方案并将 web 内容部署到各种目标环境。
+> 本教程将演示如何配置 Team Foundation Server （TFS）2010来构建解决方案并将 web 内容部署到各种目标环境。
 
 - [配置用于 Web 部署的 Team Foundation Server](configuring-team-foundation-server-for-web-deployment.md)
 - [在 TFS 中创建团队项目](creating-a-team-project-in-tfs.md)
