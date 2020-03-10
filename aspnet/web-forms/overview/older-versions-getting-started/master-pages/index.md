@@ -2,22 +2,22 @@
 uid: web-forms/overview/older-versions-getting-started/master-pages/index
 title: ASP.NET 3.5-Web 窗体母版页 |Microsoft Docs
 author: rick-anderson
-description: 如何创建和使用 ASP.NET 母版页和内容页中 Web 窗体应用程序创建一致布局。
+description: 如何创建和使用 ASP.NET 母版页和内容页，以便在 Web 窗体应用程序中创建一致的布局。
 ms.author: riande
 ms.date: 11/04/2011
 ms.assetid: bc30f0ec-cf8f-4a33-9eee-513be872ac9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages
 msc.type: chapter
 ms.openlocfilehash: 3847269a495d54b0986bab245023daff4a43386a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134156"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78473480"
 ---
 # <a name="aspnet-35---web-forms-master-pages"></a>ASP.NET 3.5 - Web 窗体母版页
 
-> 如何创建和使用 ASP.NET 母版页和内容页中 Web 窗体应用程序创建一致布局。
+> 如何创建和使用 ASP.NET 母版页和内容页，以便在 Web 窗体应用程序中创建一致的布局。
 
 - [使用母版页创建站点范围内布局 (C#)](creating-a-site-wide-layout-using-master-pages-cs.md)
 - [多个 ContentPlaceHolder 和默认内容 (C#)](multiple-contentplaceholders-and-default-content-cs.md)

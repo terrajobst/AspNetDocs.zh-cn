@@ -9,11 +9,11 @@ ms.assetid: ee20742f-6fb7-49a0-a009-058fe363aacb
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 81d72c666925e89729464e7ea696bde8d323e277
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74641969"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78490688"
 ---
 # <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>通过详细信息 DataList 使用母版记录项目符号列表的母版/详细信息 (VB)
 
@@ -228,7 +228,7 @@ LinkButton 和 ImageButton 控件一样，都有一个 `Click` 事件和一个[`
 
 **图 15**：单击 "生成" 类别将列出匹配的产品（[单击以查看完全大小的图像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image43.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 正如我们在本教程中看到的那样，主/详细信息报表可以分散在两个页面上，也可以合并在一起。 但是，在单页上显示主/详细信息报表会给出一些有关如何最好地在页面上布局大纲和详细信息的问题。 在*主/详细信息中，使用可选择的主 GridView 和详细信息 DetailsView*教程，我们的详细信息记录显示在主记录上;在本教程中，我们使用了 CSS 技术将主记录浮动到详细信息的左侧。
 
@@ -255,4 +255,4 @@ LinkButton 和 ImageButton 控件一样，都有一个 `Click` 事件和一个[`
 此教程系列由许多有用的审阅者查看。 本教程的领导审查人员是 Zack 的。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](master-detail-filtering-acess-two-pages-datalist-vb.md)
+> [上一页](master-detail-filtering-acess-two-pages-datalist-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: 3ecc21c5-da0e-40ab-abb4-fac1e47398ad
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e3c14b7098da832bd28f57026e81dcb7f7ba7130
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640552"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78480854"
 ---
 # <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>向 DataList 的编辑界面添加验证控件 (C#)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74640552"
 
 在本教程中，我们将了解如何轻松地将验证控件添加到 DataList s `EditItemTemplate` 中，以便提供更可靠的编辑用户界面。 具体而言，本教程采用前面教程中创建的示例，并补充编辑界面以包括适当的验证。
 
-## <a name="step-1-replicating-the-example-fromhandling-bll--and-dal-level-exceptionshandling-bll-and-dal-level-exceptions-csmd"></a>步骤1：复制示例以[处理 BLL 和 DAL 级别的异常](handling-bll-and-dal-level-exceptions-cs.md)
+## <a name="step-1-replicating-the-example-fromhandling-bll--and-dal-level-exceptions"></a>步骤1：复制示例以[处理 BLL 和 DAL 级别的异常](handling-bll-and-dal-level-exceptions-cs.md)
 
 在[处理 BLL 和 DAL 级别的异常](handling-bll-and-dal-level-exceptions-cs.md)教程中，我们创建了一个页面，其中列出了两列的可编辑 DataList 中产品的名称和价格。 本教程的目标是增加 DataList 的编辑界面以包括验证控件。 具体而言，我们的验证逻辑将：
 
@@ -156,7 +156,7 @@ ms.locfileid: "74640552"
 
 **图 6**：在客户端 Messagebox 中汇总验证错误（[单击以查看完全大小的映像](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image18.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何通过使用验证控件主动确保用户输入有效，然后再尝试在更新工作流中使用它们，从而降低异常的可能性。 ASP.NET 提供了五个验证 Web 控件，这些控件旨在检查特定的 Web 控件的输入，并返回输入的有效性。 在本教程中，我们使用这五个控件中的两个控件 RequiredFieldValidator 和 CompareValidator，以确保已提供产品的名称，并且价格的货币格式值大于或等于零。
 

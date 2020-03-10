@@ -9,11 +9,11 @@ ms.assetid: 11be4211-2fb9-4e15-b6d4-2aa623d81f3e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a39adb9c06819f6f828add7d762effad430b8570
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574039"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497408"
 ---
 # <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>通过客户端代码操作 DropShadow 属性 (VB)
 
@@ -58,4 +58,4 @@ AJAX 控件工具包中的 DropShadow 控件扩展了一个带有投影的面板
 在客户端上更改不透明度（[单击以查看完全大小的映像](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [上一页](adjusting-the-z-index-of-a-dropshadow-vb.md)

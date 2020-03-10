@@ -9,11 +9,11 @@ ms.assetid: 83af9f5f-9a00-4f83-8afc-e98bdd49014e
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 825e2afb750925637d308b7ceb35e1b02b708c1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586305"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455912"
 ---
 # <a name="creating-and-managing-roles-vb"></a>创建和管理角色 (VB)
 
@@ -218,7 +218,7 @@ GridView 将显示一个标记为 "Item" 的列，因为 GridView 的 `AutoGener
 > [!NOTE]
 > 删除角色之前，"删除角色" 按钮不需要用户进行任何类型的确认。 确认操作的最简单方法之一是通过客户端确认对话框。 有关此技术的详细信息，请参阅[删除时添加客户端确认](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 许多 web 应用程序都有某些授权规则或页面级别的功能，这些功能仅适用于某些类的用户。 例如，可能有一组只有管理员才能访问的网页。 通常，根据角色定义规则更有用，而不是逐个用户地定义这些授权规则。 也就是说，更易于维护的方法是允许管理员角色的成员访问这些页面，然后将 Scott 和 Jisun 表示为用户，而不是明确地允许用户 Jisun 访问管理网页。Administrators 角色。
 

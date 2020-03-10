@@ -9,11 +9,11 @@ ms.assetid: 83b4f5a4-4f5a-4380-ba33-f0b5c5ac6a75
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-vb
 msc.type: authoredcontent
 ms.openlocfilehash: feb3e5eb992284033853e67bfab3872243cefe39
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74570970"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462572"
 ---
 # <a name="role-based-authorization-vb"></a>基于角色的授权 (VB)
 
@@ -324,7 +324,7 @@ ms.locfileid: "74570970"
 
 有关使用 `PrincipalPermission` 特性定义有关类和方法的授权规则的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[使用 `PrincipalPermissionAttributes`将授权规则添加到业务层和数据层](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何根据用户的角色指定粗粒度和精细授权规则。 ASP.NET.使用 NET URL 授权功能，页面开发人员可以指定允许或拒绝哪些标识访问哪些页面。 正如我们在<a id="_msoanchor_10"> </a>[*基于用户的授权*](../membership/user-based-authorization-vb.md)教程中看到的那样，可以对每个用户应用 URL 授权规则。 它们还可以按角色按角色应用，如本教程的步骤1所示。
 
@@ -350,4 +350,4 @@ Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已�
 此教程系列由许多有用的审阅者查看。 本教程的主管评审者包括 Suchi Banerjee 和 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](assigning-roles-to-users-vb.md)
+> [上一页](assigning-roles-to-users-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
 ms.openlocfilehash: 62d00a86c6c5845fb894896df65002c7086d039f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615145"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455930"
 ---
 # <a name="checkout-and-payment-with-paypal"></a>使用 PayPal 结帐和付款
 
@@ -31,7 +31,7 @@ ms.locfileid: "74615145"
 > 
 > Wingtip 玩具示例应用程序旨在演示 ASP.NET web 开发人员可用的特定 ASP.NET 概念和功能。 此示例应用程序未针对可伸缩性和安全性方面的所有可能情况进行优化。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何限制对文件夹中特定页面的访问。
 - 如何从匿名购物车创建已知购物车。
@@ -92,10 +92,10 @@ Wingtip 玩具示例应用程序允许匿名用户查看产品并将其添加到
 6. 与之前一样，选择 "*网站*" 作为母版页。
 7. 使用上述相同步骤将以下附加页面添加到*结帐*文件夹：   
 
-    - CheckoutReview .aspx
-    - CheckoutComplete .aspx
-    - CheckoutCancel .aspx
-    - CheckoutError .aspx
+    - CheckoutReview.aspx
+    - CheckoutComplete.aspx
+    - CheckoutCancel.aspx
+    - CheckoutError.aspx
 
 ### <a name="add-a-webconfig-file"></a>添加 web.config 文件
 
@@ -107,7 +107,7 @@ Wingtip 玩具示例应用程序允许匿名用户查看产品并将其添加到
 3. *将 web.config 文件中*的现有 XML 内容替换为以下内容：  
 
     [!code-xml[Main](checkout-and-payment-with-paypal/samples/sample4.xml)]
-4. 保存 web.config*文件。*
+4. 保存 *Web.config* 文件。
 
 Web.config*文件指定*必须对 web 应用程序的所有未知用户拒绝对*签出*文件夹中包含的页的访问权限。 但是，如果用户注册了某个帐户并登录，则这些用户将是已知用户，并且将有权访问*签出*文件夹中的页面。
 
@@ -188,11 +188,11 @@ ASP.NET Web 窗体为成员资格和身份验证提供了增强的选项。 这�
 15. 按**CTRL + F5**生成并运行应用程序。 单击 "**登录**" 链接。
 16. 在 "**使用其他服务进行登录**" 下，单击 " **Google**"。  
     ![登录](checkout-and-payment-with-paypal/_static/image11.png)
-17. 如果需要输入你的凭据，你将被重定向到 google 站点，你可以在这里输入你的凭据。  
+17. 如果你需要输入你的凭据，你将重定向到 google 站点将在此输入你的凭据。  
     ![Google - 登录](checkout-and-payment-with-paypal/_static/image12.png)
 18. 输入凭据后，系统会提示你向刚创建的 web 应用程序授予权限。  
     ![项目默认服务帐户](checkout-and-payment-with-paypal/_static/image13.png)
-19. 单击 "**接受**"。 你现在将重定向回**WingtipToys**应用程序的 "**注册**" 页，你可以在该应用程序中注册 Google 帐户。  
+19. 单击“接受”。 你现在将重定向回**WingtipToys**应用程序的 "**注册**" 页，你可以在该应用程序中注册 Google 帐户。  
     ![注册 Google 帐户](checkout-and-payment-with-paypal/_static/image14.png)
 20. 你可以选择更改 Gmail 帐户使用的本地电子邮件注册名称，但是，你通常会保留默认电子邮件别名（即，用于身份验证的名称）。 单击 "**登录"** ，如上所示。
 
@@ -290,7 +290,7 @@ PayPal 是一种基于 web 的计费平台，它接受在线商家支付的费�
    随即出现“添加新项”对话框。
 2. 在左侧的 "**已安装**" 窗格中，选择 "**代码**"。 **C#**
 3. 从中间窗格中选择 "**类**"。 将此新类命名为**PayPalFunctions.cs**。
-4. 单击 **添加**。  
+4. 单击 **“添加”** 。  
    新的类文件将显示在编辑器中。
 5. 将默认代码替换为以下代码：  
 
@@ -482,7 +482,7 @@ Wingtip 玩具示例应用程序通过导航到 PayPal 测试网站并返回到 
  可能需要选择文件夹的 "**显示所有文件**" 图标。
 4. 右键单击*Wingtiptoys*数据库文件，然后选择 "**打开**"。  
     将显示**服务器资源管理器**。
-5. 展开 "**表**" 文件夹。
+5. 展开 **“表”** 文件夹。
 6. 右键单击**Orders**表，然后选择 "**显示表数据**"。  
  显示 "**订单**" 表。
 7. 查看 " **PaymentTransactionID** " 列以确认事务是否成功。 
@@ -495,7 +495,7 @@ Wingtip 玩具示例应用程序通过导航到 PayPal 测试网站并返回到 
 12. 右键单击 "Wingtip 玩具" 数据库文件（*Wingtiptoys*），然后选择 "**关闭连接**"。
 13. 如果看不到 "**解决方案资源管理器**" 窗口，请单击 "**服务器资源管理器**" 窗口底部的 "**解决方案资源管理器**以再次显示**解决方案资源管理器**。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，您添加了订单和订单详细信息架构以跟踪产品的购买情况。 还将 PayPal 功能集成到了 Wingtip 玩具示例应用程序中。
 

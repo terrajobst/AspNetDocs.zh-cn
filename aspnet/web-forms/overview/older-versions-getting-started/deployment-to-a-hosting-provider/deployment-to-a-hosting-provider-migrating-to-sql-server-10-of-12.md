@@ -9,11 +9,11 @@ ms.assetid: a89d6f32-b71b-4036-8ff7-5f8ac2a6eca8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: c5281a42596d95e725b32e652c75785abe0fd64e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640583"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462836"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：迁移到 SQL Server-10 （共12个）
 
@@ -112,7 +112,7 @@ Contoso 大学应用程序有两个 SQL Server Compact 数据库：成员资格�
 
 单击 "**从 Web.config 导入**"。
 
-![Selecting_Import_from_Web .config](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image5.png)
+![Selecting_Import_from_Web.config](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image5.png)
 
 Visual Studio 将在*web.config*文件中查找连接字符串，找到一个用于成员资格数据库，另一个用于 School 数据库，并添加与**数据库条目**表中的每个连接字符串相对应的行。 它找到的连接字符串适用于现有 SQL Server Compact 数据库，下一步是配置这些数据库的部署方式和位置。
 
@@ -224,7 +224,7 @@ SqlServerCompact NuGet 包提供 Contoso 大学应用程序的 SQL Server Compac
 
 选择 "**配置文件**" 选项卡。
 
-单击 "**管理配置文件**"。
+单击“管理配置文件”。
 
 选择 "**测试**"，单击 "**删除**"，然后单击 "**关闭**"。
 
@@ -347,7 +347,7 @@ Visual Studio 将部署应用程序，并将浏览器打开到测试环境中站
 
 选择 "**配置文件**" 选项卡。
 
-单击 "**管理配置文件**"。
+单击“管理配置文件”。
 
 选择 "**生产**"，单击 "**删除**"，然后单击 "**关闭**"。
 
@@ -361,7 +361,7 @@ Visual Studio 将部署应用程序，并将浏览器打开到测试环境中站
 
 单击 "**导入**"，然后选择前面下载的 .publishsettings 文件。
 
-在 "**连接**" 选项卡上，将 "**目标 URL** " 更改为正确的临时 URL，在此示例中 http://contosouniversity.com.vserver01.cytanium.com 。
+在 "**连接**" 选项卡上，将 "**目标 URL** " 更改为正确的临时 URL，在此示例中 http://contosouniversity.com.vserver01.cytanium.com。
 
 将该配置文件重命名为生产。 （选择 "**配置文件**" 选项卡，然后单击 "**管理配置文件**"）。
 

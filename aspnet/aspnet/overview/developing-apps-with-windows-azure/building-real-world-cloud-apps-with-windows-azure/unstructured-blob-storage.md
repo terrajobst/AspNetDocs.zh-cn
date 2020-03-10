@@ -9,11 +9,11 @@ ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
 ms.openlocfilehash: f48b2be755b84dff9b2672bd348c73107602c6dd
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456786"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500408"
 ---
 # <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>非结构化 Blob 存储（通过 Azure 构建实际的云应用）
 
@@ -127,7 +127,7 @@ Fix It 应用程序在显示任务的详细信息时显示上传的图像文件�
 
 [!code-cshtml[Main](unstructured-blob-storage/samples/sample13.cshtml?highlight=11)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 已了解 Fix It 应用如何在 Blob 服务中存储映像，以及如何在 SQL 数据库中存储映像 Url。 使用 Blob 服务可以使 SQL 数据库比其他方式小得多，因此，可以扩展到几乎不受限制的任务，而无需编写大量代码即可完成。
 

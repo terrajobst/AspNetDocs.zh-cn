@@ -9,11 +9,11 @@ ms.assetid: 615f3361-f21f-4338-8bc1-fce8ae071de9
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a96f254aa54e7077456ac1a9bd6c5e2a17619d96
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74610857"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78444494"
 ---
 # <a name="adding-additional-datatable-columns-c"></a>添加其他 DataTable 列 (C#)
 
@@ -168,7 +168,7 @@ ms.locfileid: "74610857"
 
 本教程的下载内容包括 `NorthwindWithSprocs` 数据集中的 `ProductsWithPriceQuartileTableAdapter` 类，其中阐释了此替代方法。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在大多数情况下，TableAdapter 中的所有方法都将返回相同的一组数据字段，但在某些时候，特定的方法或两个可能需要返回一个附加字段。 例如，在[主/详细信息中，使用带有详细信息 DataList 教程的主记录的项目符号列表](../filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)，我们向 `CategoriesTableAdapter` 添加了一种方法，除了主查询的数据字段外，还返回了报告与每个类别关联的产品数量的 `NumberOfProducts` 字段。 在本教程中，我们将介绍如何在 `ProductsTableAdapter` 中添加一个方法，该方法将返回 "`PriceQuartile`" 字段以及主查询数据字段。 若要捕获由 TableAdapter s 方法返回的其他数据字段，需要将相应的列添加到 DataTable。
 

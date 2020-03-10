@@ -9,11 +9,11 @@ ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 19e7258b558372259c7554a36c6ad73ce572dfa8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588675"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521654"
 ---
 # <a name="configuring-a-website-that-uses-application-services-vb"></a>配置使用应用程序服务的网站 (VB)
 
@@ -127,7 +127,7 @@ ASP.NET 附带了一个不错的[*网站管理工具（WSAT）* ](https://msdn.m
 
 ### <a name="copying-user-accounts-from-development-to-production"></a>将用户帐户从开发复制到生产
 
-使用 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供程序类将应用程序服务信息存储在 SQL Server 数据库中时，用户帐户和角色信息将存储在不同的数据库表中，这些表包括 `aspnet_Users`、`aspnet_Membership`、`aspnet_Roles`和 `aspnet_UsersInRoles`等。 如果在开发过程中，您在开发环境中创建用户帐户，则可以通过从相应数据库表复制相应的记录，在生产环境中复制这些用户帐户。 如果你使用数据库发布向导来部署应用程序服务数据库对象，则可能还选择复制记录，这将导致在开发期间创建的用户帐户也会在生产环境中进行。 但是，根据您的配置设置，您可能会发现，在开发中创建并复制到生产的帐户的用户无法从生产网站登录。 提供了哪些功能？
+使用 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供程序类将应用程序服务信息存储在 SQL Server 数据库中时，用户帐户和角色信息将存储在不同的数据库表中，这些表包括 `aspnet_Users`、`aspnet_Membership`、`aspnet_Roles`和 `aspnet_UsersInRoles`等。 如果在开发过程中，您在开发环境中创建用户帐户，则可以通过从相应数据库表复制相应的记录，在生产环境中复制这些用户帐户。 如果你使用数据库发布向导来部署应用程序服务数据库对象，则可能还选择复制记录，这将导致在开发期间创建的用户帐户也会在生产环境中进行。 但是，根据您的配置设置，您可能会发现，在开发中创建并复制到生产的帐户的用户无法从生产网站登录。 这是怎么回事呢？
 
 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供程序类的设计使单个数据库可以充当多个应用程序的用户存储，因此，每个应用程序理论上都有一个具有相同名称的重叠用户名和角色的用户。 为了实现这种灵活性，数据库将维护 `aspnet_Applications` 表中的应用程序列表，并且每个用户与其中一个应用程序相关联。 具体而言，`aspnet_Users` 表有一个 `ApplicationId` 列，该列将每个用户与 `aspnet_Applications` 表中的一条记录联系起来。
 
@@ -161,7 +161,7 @@ ASP.NET 附带了一个不错的[*网站管理工具（WSAT）* ](https://msdn.m
 
 如果需要 WSAT 的全部功能，请使用 "查看[*自己的网站管理工具*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)"，其中作者 Dan Clem 逐步完成构建自定义 WSAT 工具的过程。 Dan 共享其应用程序的源代码（在C#中），并提供将其添加到托管网站的分步说明。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 部署使用应用程序服务数据库实现的 web 应用程序时，必须首先确保生产数据库具有必要的数据库对象。 可以使用在 "*部署数据库*" 教程中讨论的技术来添加这些对象。或者，您可以使用 `aspnet_regsql.exe` 工具，如本教程中所述。 我们围绕的其他挑战：同步开发环境和生产环境中使用的应用程序名称（如果您希望在开发环境中创建的用户和角色在生产环境中有效，这一点很重要）和技术管理生产环境中的用户和角色。
 

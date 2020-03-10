@@ -2,22 +2,22 @@
 uid: aspnet/overview/owin-and-katana/index
 title: OWIN 和 Katana |Microsoft Docs
 author: rick-anderson
-description: Katana 是灵活的一组用于构建和承载 Open Web Interface 的基于.NET OWIN 的 web 应用程序的组件。
+description: Katana 是一组灵活的组件，用于生成和托管基于 .NET （OWIN）的 web 应用程序的开放 Web 接口。
 ms.author: riande
 ms.date: 05/30/2013
 ms.assetid: 37e005e9-2f1c-4039-b6ef-15612e0fdbc9
 msc.legacyurl: /aspnet/overview/owin-and-katana
 msc.type: chapter
 ms.openlocfilehash: 24891736a9fee3cb6c14540cd0b1efe41aa7a841
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118188"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500264"
 ---
 # <a name="owin-and-katana"></a>OWIN 和 Katana
 
-> Katana 是灵活的一组用于构建和承载 Open Web Interface 的基于.NET OWIN 的 web 应用程序的组件。
+> Katana 是一组灵活的组件，用于生成和托管基于 .NET （OWIN）的 web 应用程序的开放 Web 接口。
 
 - [项目 Katana 概述](an-overview-of-project-katana.md)
 - [OWIN 和 Katana 入门](getting-started-with-owin-and-katana.md)

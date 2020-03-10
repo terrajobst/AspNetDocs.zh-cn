@@ -9,11 +9,11 @@ ms.assetid: ea8196f5-039d-43ec-8447-8997ad4d3900
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 160af664cdf27f9ede1273aaf915da749a39ad48
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74637727"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522488"
 ---
 # <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>指定母版页中的标题、元标记和其他 HTML 标头 (VB)
 
@@ -139,7 +139,7 @@ ASP.NET 引擎呈现页面时，母版页的 `<head runat="server">` 标记将�
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample7.vb)]
 
-结束时间：
+到:
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample8.vb)]
 
@@ -276,7 +276,7 @@ ASP.NET 提供了一个强大的站点地图框架，使页面开发人员能够
 > [!NOTE]
 > 若要添加任意标记，请创建[`LiteralControl`](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx)实例，设置其 `Text` 属性，然后将其添加到 `Header`的 `Controls` 集合。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们将介绍多种方法来逐页添加 `<head>` 区域标记。 母版页应该包含具有 ContentPlaceHolder 的 `HtmlHead` 实例（`<head runat="server">`）。 `HtmlHead` 实例允许内容页以编程方式访问 `<head>` 区域，并以声明方式和编程方式设置页面的标题;ContentPlaceHolder 控件允许通过内容控件以声明方式将自定义标记添加到 `<head>` 部分。
 

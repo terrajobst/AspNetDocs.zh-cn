@@ -9,11 +9,11 @@ ms.assetid: f215d6b9-8a84-4bd8-8881-e9527d814950
 msc.legacyurl: /web-forms/videos
 msc.type: book
 ms.openlocfilehash: 0082330e75a905469c66b04277d70416555c30c3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397209"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514400"
 ---
 # <a name="videos"></a>视频
 
@@ -73,7 +73,7 @@ ms.locfileid: "59397209"
     - [检测 ASP.NET 网页中的浏览器功能](how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
     - [将 ASP.NET 服务器控件映射到用于呈现该控件的适配器](how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
     - [使用查询字符串从一个页面向另一页面传递信息](how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-    - [使用 aspnet\_merge.exe 实用工具合并程序集](how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+    - [使用 aspnet\_share.exe 实用程序来合并程序集](how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
     - [在 ASP.NET 中实现跨页回发](how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet.md)
     - [以编程方式向 ASP.NET 网页添加控件](how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
     - [使用隐藏字段存储和操作客户端信息](how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)
@@ -221,16 +221,16 @@ ms.locfileid: "59397209"
     - [[ASP.NET 2.0 简介：] ASP.NET 2.0 基础知识](migrating/intro-to-aspnet-20-aspnet-20-fundamentals.md)
     - [[ASP.NET 2.0 简介：] 用户界面元素](migrating/intro-to-aspnet-20-user-interface-elements.md)
     - [[迁移对象] 经典 ASP 到 ASP.NET](migrating/migrating-from-classic-asp-to-aspnet.md)
-    - [为 JSP 开发人员的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
-    - [为 JSP 开发人员的 ASP.NET 简介：构建应用程序](migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
-    - [为 ColdFusion 开发人员的 ASP.NET 简介：将 ASP.NET 添加到您的清单](migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-    - [为 ColdFusion 开发人员的 ASP.NET 简介：构建 ASP.NET 应用程序](migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+    - [适用于 JSP 开发者的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+    - [适用于 JSP 开发者的 ASP.NET 简介：生成应用程序](migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
+    - [适用于 ColdFusion 开发者的 ASP.NET 简介：向库添加 ASP.NET](migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+    - [适用于 ColdFusion 开发者的 ASP.NET 简介：生成 ASP.NET 应用程序](migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
     - [PHP 和 Windows 平台之间的互操作](migrating/interop-between-php-and-the-windows-platform.md)
 - [生成 2.0 应用程序](building-20-applications/index.md)
 
     - [[第 1 课：] Visual Web Developer 速成版入门](building-20-applications/lesson-1-getting-started-with-visual-web-developer-express.md)
     - [[第 2 课：] 创建 Web 窗体用户界面](building-20-applications/lesson-2-creating-a-web-forms-user-interface.md)
-    - [[第 3 课:]了解有关事件和回发的更多信息](building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
+    - [[第3课：]了解有关事件和回发的详细信息](building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
     - [[第 4 课：] 了解 Web 应用程序状态](building-20-applications/lesson-4-understanding-web-application-state.md)
     - [[第 5 课：] 调试和跟踪网站](building-20-applications/lesson-5-debugging-and-tracing-your-website.md)
     - [[第 6 课：] 使用样式表和母版页](building-20-applications/lesson-6-working-with-stylesheets-and-master-pages.md)
@@ -353,15 +353,15 @@ ms.locfileid: "59397209"
         - [从 ASP 应用程序使用数据集和筛选器](data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
     - [如何使用 LINQ](data-access/how-do-i-with-linq/index.md)
 
-        - [LINQ to SQL:概述](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
-        - [LINQ to SQL:数据模型](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
-        - [LINQ to SQL:查询数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
-        - [LINQ to SQL:更新数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
-        - [LINQ to SQL:LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-        - [LINQ to SQL:Custom LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
-        - [LINQ to SQL:使用存储的过程](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-        - [LINQ to SQL:使用存储过程更新](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-        - [LINQ to SQL:执行任意 SQL](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+        - [LINQ to SQL：概述](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
+        - [LINQ to SQL：数据模型](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
+        - [LINQ to SQL：查询数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
+        - [LINQ to SQL：更新数据库](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
+        - [LINQ to SQL：LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
+        - [LINQ to SQL：自定义 LinqDataSource](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+        - [LINQ to SQL：使用存储过程](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
+        - [LINQ to SQL：使用存储过程更新](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+        - [LINQ to SQL：执行任意 SQL](data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
     - [来自 VB 团队的 LINQ 视频](data-access/linq-videos-from-the-vb-team/index.md)
 
         - [开始使用 LINQ](data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
@@ -410,7 +410,7 @@ ms.locfileid: "59397209"
         - [Visual Studio 2008 对 ASP.NET AJAX 的支持](aspnet-35/aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
         - [将 AJAX 功能添加到现有的 ASP.NET 页面](aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
         - [在网站中创建并使用启用 AJAX 的 Web 服务](aspnet-35/aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-        - [ASP.NET AJAX:ASP.NET AJAX 的演示](aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+        - [ASP.NET AJAX：关于 ASP.NET AJAX 的演示](aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
         - [ADO.NET 数据服务和 ASP.NET AJAX 支持](aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
         - [ASP.NET AJAX 历史记录简介](aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history.md)
         - [使用脚本组合提升 AJAX 性能](aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -443,7 +443,7 @@ ms.locfileid: "59397209"
         - [AJAX 数据模板](net-4/ajax/aspnet-4-quick-hit-ajax-data-templates.md)
     - [图表](net-4/chart/index.md)
 
-        - [Chart Control](net-4/chart/aspnet-4-quick-hit-chart-control.md)
+        - [Chart 控件](net-4/chart/aspnet-4-quick-hit-chart-control.md)
         - [在 Visual Studio 2010 中引入新的图表控件](net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
     - [核心](net-4/core/index.md)
 

@@ -1,73 +1,73 @@
 ---
 uid: web-pages/overview/security/using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site
-title: 使用验证码来防止机器人使用 ASP.NET Web Razor） 站点 |Microsoft Docs
+title: 使用 CAPTCHA 阻止 Bot 使用 ASP.NET Web Razor）网站 |Microsoft Docs
 author: microsoft
-description: 本文介绍如何使用 ReCaptcha （一种安全措施） 以防止自动的程序 （机器人） 执行的任务在 ASP.NET Web Pages (Razor) 我们...
+description: 本文介绍如何使用 ReCaptcha （安全措施）来防止自动程序（bot）在 ASP.NET 网页（Razor）中执行任务 。
 ms.author: riande
 ms.date: 05/21/2012
 ms.assetid: 2b381a41-2cb3-40c0-8545-1d393e22877f
 msc.legacyurl: /web-pages/overview/security/using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site
 msc.type: authoredcontent
 ms.openlocfilehash: 2647a3155893a3dfb3214795a5f9cf1e8931fa91
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128461"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440192"
 ---
-# <a name="using-a-captcha-to-prevent-bots-from-using-your-aspnet-web-razor-site"></a>使用验证码来防止机器人使用 ASP.NET Web Razor） 站点
+# <a name="using-a-captcha-to-prevent-bots-from-using-your-aspnet-web-razor-site"></a>使用 CAPTCHA 阻止 Bot 使用 ASP.NET Web Razor）站点
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 本文介绍如何使用 ReCaptcha （一种安全措施） 以防止自动的程序 （机器人） 在 ASP.NET Web Pages (Razor) 的网站中执行任务。
+> 本文介绍如何使用 ReCaptcha （安全措施）来防止自动程序（bot）在 ASP.NET 网页（Razor）网站中执行任务。
 > 
-> **你将学习：** 
+> **你将学习的内容：** 
 > 
-> - 如何将验证码测试添加到你的站点。
+> - 如何将 CAPTCHA 测试添加到您的站点。
 > 
-> 下面是在本文中引入的 ASP.NET 功能：
+> 下面是本文中介绍的 ASP.NET 功能：
 > 
-> - `ReCaptcha`帮助器。
+> - `ReCaptcha` 帮助程序。
 > 
 > > [!NOTE]
-> > 在本文中的信息适用于 ASP.NET Web Pages 1.0 和 Web Pages 2。
+> > 本文中的信息适用于 ASP.NET 网页1.0 和网页2。
 
-## <a name="about-captchas"></a>有关 CAPTCHAs
+## <a name="about-captchas"></a>关于 CAPTCHAs
 
-在你的站点，或甚至只是让用户注册任何时间输入的名称和 URL （例如，博客注释），则可能收到大量假名称。 这些通常保留由自动程序 （机器人） 尝试离开中可以找到的每个网站的 Url。 （常见的动机是要发布的产品销售的 Url。）
+只要你允许用户在你的网站中注册，甚至只是输入名称和 URL （如博客评论），你可能会收到大量的虚假名称。 这通常由自动程序（bot）留下，尝试将 Url 保留在他们可以找到的每个网站中。 （常见的动机是发布产品的 Url 以供销售。）
 
-可帮助确保用户是真实的人并不是计算机的程序，通过使用*CAPTCHA*来注册或否则输入其名称和站点时验证用户。 CAPTCHA 代表完全自动化的公共图灵测试，以告诉计算机和人类相隔。 验证码是*质询-响应*是便于人员完成，但难以执行的自动程序的测试要求用户执行某些操作。 验证码的最常见类型是指您看到一些失真的号或需要键入它们。 （被应该使机器人能够以解密字母难扭曲）。
+可以通过使用*CAPTCHA*在用户注册或输入其名称和站点时对用户进行验证，来帮助确保用户是真实人员而不是计算机程序。 CAPTCHA 代表完全自动化的公共把测试，使计算机和人与众不同。 CAPTCHA 是一种*质询-响应*测试，要求用户执行一项操作，该操作对于某个人来说是一件容易的事情，但这是一项很难实现的自动化计划。 最常见的 CAPTCHA 类型是：其中显示一些失真的字母并要求键入它们。 （这种扭曲应该会使机器人难以破解这些字母。）
 
 ## <a name="adding-a-recaptcha-test"></a>添加 ReCaptcha 测试
 
-在 ASP.NET 页中，你可以使用`ReCaptcha`帮助器来呈现基于 ReCaptcha 服务的验证码测试 ([http://recaptcha.net](http://recaptcha.net))。 `ReCaptcha`帮助程序显示用户必须输入正确验证页面之前的两个失真单词的图像。 由 ReCaptcha.Net 服务验证用户响应。
+在 ASP.NET 页中，可以使用 `ReCaptcha` 帮助器呈现基于 ReCaptcha 服务（[http://recaptcha.net](http://recaptcha.net)）的 CAPTCHA 测试。 `ReCaptcha` 帮助程序显示在验证页面之前用户必须正确输入的两个扭曲词的图像。 用户响应通过 ReCaptcha.Net 服务进行验证。
 
 ![](using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site/_static/image1.jpg)
 
-1. 注册你的网站在 ReCaptcha.Net ([http://recaptcha.net](http://recaptcha.net))。 完成注册后，您将获得一个公钥和私钥。
-2. 将 ASP.NET Web Helpers Library 添加到你的网站，如中所述[ASP.NET Web Pages 站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未准备好。
-3. 如果还没有 *\_AppStart.cshtml*文件中，网站的根文件夹中创建名为的文件 *\_AppStart.cshtml*。
-4. 添加以下`Recaptcha`中的帮助器设置 *\_AppStart.cshtml*文件： 
+1. 在 ReCaptcha.Net （[http://recaptcha.net](http://recaptcha.net)）注册你的网站。 完成注册后，你将获得一个公钥和一个私钥。
+2. 根据在[ASP.NET 网页站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)中所述，将 ASP.NET Web 帮助程序库添加到你的网站中（如果尚未安装）。
+3. 如果还没有 *\_AppStart*文件，请在网站的根文件夹中创建一个名为 *\_AppStart*的文件。
+4. 在 *\_AppStart*文件中添加以下 `Recaptcha` 帮助程序设置： 
 
     [!code-cshtml[Main](using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site/samples/sample1.cshtml?highlight=6-7)]
-5. 设置`PublicKey`和`PrivateKey`属性使用你自己的公共和私有密钥。
-6. 保存 *\_AppStart.cshtml*文件并将其关闭。
-7. 在网站的根文件夹中，创建名为的新页面*Recaptcha.cshtml*。
-8. 使用以下内容替换现有内容： 
+5. 使用自己的公钥和私钥设置 "`PublicKey`" 和 "`PrivateKey`" 属性。
+6. 保存 *\_AppStart*文件并将其关闭。
+7. 在网站的根文件夹中，创建名为*Recaptcha*的新页面。
+8. 将现有内容替换为以下内容： 
 
     [!code-cshtml[Main](using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site/samples/sample2.cshtml)]
-9. 运行*Recaptcha.cshtml*页在浏览器中。 如果`PrivateKey`值是否有效，该页显示 ReCaptcha 控件和一个按钮。 如果您必须在全局设置键 *\_AppStart.html*，页面将显示一个错误。 
+9. 在浏览器中运行*Recaptcha*页。 如果 `PrivateKey` 的值有效，则页面将显示 ReCaptcha 控件和按钮。 如果未在 *\_AppStart*中全局设置密钥，则页面将显示错误。 
 
     ![](using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site/_static/image1.png)
-10. 测试输入单词。 如果您通过 ReCaptcha 测试，您将看到一条消息以示意。 否则您会看到一条错误消息和 ReCaptcha 控件重新显示。
+10. 输入测试的字词。 如果通过了 ReCaptcha 测试，则会看到一条消息。 否则，会显示一条错误消息，并重新显示 ReCaptcha 控件。
 
 > [!NOTE]
-> 如果您的计算机上使用代理服务器的域中，您可能需要配置`defaultproxy`的元素*Web.config*文件。 下面的示例演示*Web.config*文件具有`defaultproxy`元素配置为启用 ReCaptcha 服务正常工作。
+> 如果您的计算机位于使用代理服务器的域中，则您可能需要配置*web.config*文件的 `defaultproxy` 元素。 下面的示例演示一个*web.config*文件，其中的 `defaultproxy` 元素配置为使 ReCaptcha 服务能够正常工作。
 > 
 > [!code-xml[Main](using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site/samples/sample3.xml)]
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他资源
 
-- [ASP.NET Web Pages 站点的自定义网站的行为](https://go.microsoft.com/fwlink/?LinkId=202906)
+- [为 ASP.NET 网页站点自定义站点范围的行为](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [ReCaptcha 站点](https://www.google.com/recaptcha)

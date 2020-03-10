@@ -9,11 +9,11 @@ ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2f77040316dadc218b8183e52628dc0cfe3b35a1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586801"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78502298"
 ---
 # <a name="paging-and-sorting-report-data-c"></a>分页和排序报表数据 (C#)
 
@@ -245,7 +245,7 @@ BoundField、CheckBoxField、TemplateField 等所有 GridView 字段都有一个
 
 **图 15**：单击按钮按最高到最低的顺序排列产品（[单击以查看完全尺寸的图像](paging-and-sorting-report-data-cs/_static/image33.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何实现默认分页和排序功能，这两者都与选中复选框一样简单！ 当用户通过数据对数据进行排序时，类似的工作流将：
 
@@ -263,4 +263,4 @@ BoundField、CheckBoxField、TemplateField 等所有 GridView 字段都有一个
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [下一页](efficiently-paging-through-large-amounts-of-data-cs.md)
+> [下一部分](efficiently-paging-through-large-amounts-of-data-cs.md)

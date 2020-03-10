@@ -10,15 +10,15 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 0afea8eacfc646f1489b87629fdb2d437815d88c
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519136"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472262"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>在 ASP.NET Identity 中更改用户的主键
 
-通过[Tom FitzMacken](https://github.com/tfitzmac)
+作者： [Tom FitzMacken](https://github.com/tfitzmac)
 
 > 在 Visual Studio 2013 中，默认的 web 应用程序使用用户帐户的键的字符串值。 ASP.NET Identity 使你能够更改密钥的类型，以满足你的数据需求。 例如，可以将键的类型从字符串更改为整数。
 > 

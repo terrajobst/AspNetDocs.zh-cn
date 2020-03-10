@@ -1,55 +1,55 @@
 ---
 uid: whitepapers/denied-access-to-iis-directories
-title: ASP.NET 拒绝对 IIS 目录的访问 |Microsoft Docs
+title: ASP.NET 拒绝了对 IIS 目录的访问 |Microsoft Docs
 author: rick-anderson
-description: 本白皮书介绍了对 ASP.NET 应用程序请求将返回错误，"拒绝访问 DirectoryName 目录如果您必须做什么。 失败为 s...
+description: 本白皮书介绍当 ASP.NET 应用程序的请求返回 "拒绝访问 DirectoryName 目录" 时必须执行的操作。 无法进行 。
 ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
 ms.openlocfilehash: a3a53aa88abbe1bcaaea7d691406800c8f9b988b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134557"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518570"
 ---
 # <a name="aspnet-denied-access-to-iis-directories"></a>ASP.NET 拒绝了对 IIS 目录的访问
 
-> 本白皮书介绍了对 ASP.NET 应用程序的请求将返回错误，如果您必须做什么"拒绝访问权限*DirectoryName*目录。 无法开始监视目录更改。"
+> 本白皮书介绍当 ASP.NET 应用程序的请求返回 "拒绝访问*DirectoryName*目录" 时必须执行的操作。 未能开始监视目录更改。 "
 > 
 > 适用于 ASP.NET 1.0 和 ASP.NET 1.1。
 
-ASP.NET V1 RTM 现在运行在使用无特权 windows 帐户的注册为本地计算机上的"ASPNET"帐户。
+现在，使用在本地计算机上注册为 "ASPNET" 帐户的特权较低的 windows 帐户运行 ASP.NET V1 RTM。
 
-在某些情况下系统锁定状态，此帐户可能会默认情况下不具有读取安全访问的网站内容目录、 应用程序根目录以外的目录或网站根目录。 在这种情况下从给定的 web 应用程序请求页时将收到以下错误：
+在某些锁定的系统上，默认情况下，此帐户不能访问网站的内容目录、应用程序根目录或网站根目录。 在这种情况下，当从给定的 web 应用程序请求页面时，你将收到以下错误：
 
 ![](denied-access-to-iis-directories/_static/image1.jpg)
 
-若要解决此问题将需要更改上的相应目录的安全权限。
+若要解决此问题，需要更改相应目录上的安全权限。
 
-具体而言，ASP.NET 需要读取、 执行和列出网站根目录的 ASPNET 帐户的访问权限 (例如： c:\inetpub\wwwroot 或可能在 IIS 中配置任何其他站点目录)，内容目录和应用程序根目录下若要监视的配置文件更改。 应用程序根对应于与 IIS 管理工具 (inetmgr) 中的应用程序虚拟目录关联的文件夹路径。
+具体而言，ASP.NET 需要对网站根目录（例如： c:\inetpub\wwwroot 或你可能已在 IIS 中配置的任何备用网站目录）的 ASPNET 帐户的读取、执行和列表访问权限，内容目录和应用程序根目录以便监视配置文件更改。 应用程序根目录对应于 IIS 管理工具（inetmgr）中与应用程序虚拟目录关联的文件夹路径。
 
-例如，考虑以下应用程序层次结构的 wwwroot 文件夹下。
+例如，请考虑 wwwroot 文件夹下的以下应用程序层次结构。
 
 `C:\inetpub\wwwroot\myapp\default.aspx`
 
-此示例中，为 ASPNET 帐户需上面定义 myapp 和的 wwwroot 目录中的内容的读取的权限。 在根文件夹的单个继承的 ACL 还可以选择可为两个目录如果它们嵌套。
+在此示例中，ASPNET 帐户需要在 myapp 和 wwwroot 目录中为内容定义以上的读取权限。 根文件夹中的单个继承 ACL 也可以选择性地用于这两个目录（如果它们是嵌套的）。
 
-若要添加到目录的权限，请执行以下步骤：
+若要将权限添加到目录，请执行以下步骤：
 
-- 使用 Windows 资源管理器，导航到的目录
-- 右键单击目录文件夹，然后选择"属性"
-- 导航到属性对话框上的"安全性"选项卡
-- 单击"添加"按钮并输入计算机名称后跟 ASPNET 帐户名称。 例如，在计算机上名为"webdev"，将输入 webdev\ASPNET 并点击"确定"。
-- 请确保 ASPNET 帐户具有"读取&amp;Execute"，"列出文件夹内容"，并选中"读取"复选框。
-- 点击确定以关闭该对话框并保存所做的更改。
+- 使用 Windows 资源管理器导航到目录
+- 右键单击目录文件夹，然后选择 "属性"
+- 导航到属性对话框上的 "安全" 选项卡
+- 单击 "添加" 按钮，然后输入计算机名称，后跟 ASPNET 帐户名称。 例如，在名为 "webdev.webserver.exe" 的计算机上，输入 webdev\ASPNET 并单击 "确定"。
+- 确保 ASPNET 帐户选中 "读取 &amp; 执行"、"列出文件夹内容" 和 "读取" 复选框。
+- 单击 "确定" 以关闭对话框并保存更改。
 
 ![](denied-access-to-iis-directories/_static/image2.jpg)
 
-如果需要，可以通过 Windows 使用脚本或附带的"cacls.exe"工具自动这些更改。 ASPNET 帐户的详细信息，请参阅[篇常见问题解答文档](https://go.microsoft.com/fwlink/?LinkId=5828)。
+如果需要，可以使用随 Windows 一起提供的脚本或 "cacls .exe" 工具自动执行这些更改。 有关 ASPNET 帐户的详细信息，请参阅[FAQ 文档](https://go.microsoft.com/fwlink/?LinkId=5828)。
 
-如果给定的 web 应用程序依赖于具有写入或修改特定文件夹或文件的权限，这可以授予通过遵循相同的过程，并检查"写入"和/或"修改"复选框。
+如果某个给定的 web 应用程序依赖于对特定文件夹或文件具有 "写入" 或 "修改" 权限，则可以按照相同的过程来授予此权限，并选中 "写入" 和/或 "修改" 复选框。
 
-将允许每个人或用户组读取访问权限 （这是默认配置） 这些目录的计算机上遇到任何问题，则不需要上述步骤。
+在 "允许每个人或用户组读取对这些目录的访问权限（这是默认配置）" 的计算机上，不会遇到任何问题，也不需要上述步骤。

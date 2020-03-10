@@ -9,11 +9,11 @@ ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 7297db7d5b35a53b40f9d9162960e529a167bd12
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074886"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449774"
 ---
 # <a name="backbone-template"></a>Backbone 模板
 
@@ -35,7 +35,7 @@ ms.locfileid: "77074886"
 
 单击上面的 "下载" 按钮，下载并安装模板。 模板打包为 Visual Studio 扩展（VSIX）文件。 可能需要重启 Visual Studio。
 
-在 "**模板**" 窗格中，选择 "**已安装模板**"，然后展开**视觉对象C#** 节点。 在 **" C#视觉对象**" 下选择 " **Web**"。 在项目模板列表中，选择 " **ASP.NET MVC 4 Web 应用程序**"。 给该项目命名，然后单击“确定”。
+在 "**模板**" 窗格中，选择 "**已安装模板**"，然后展开**视觉对象C#** 节点。 在 **" C#视觉对象**" 下选择 " **Web**"。 在项目模板列表中，选择 " **ASP.NET MVC 4 Web 应用程序**"。 命名项目并单击 **“确定”** 。
 
 ![](backbonejs-template/_static/image1.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "77074886"
 
 在主干 node.js 中，路由器提供了用于路由客户端页以及将它们连接到操作和事件的方法。 此模板定义了路由器中的单个路由器。 路由器创建 activable 视图，并在切换视图时维持状态。 （下一节介绍了 Activable 视图。）最初，该项目有两个虚拟视图： "主页" 和 "关于"。 它还具有一个 NotFound 视图，如果该路由是未知的，则会显示此视图。
 
-**视图**
+**Views**
 
 视图在 ~/Scripts/application/views. 中定义。 有两种类型的视图： activable 视图和模式对话框视图。 Activable 视图由路由器调用。 显示 activable 视图时，所有其他 activable 视图都将变为非活动状态。 若要创建 activable 视图，请使用 `Activable` 对象扩展视图：
 
@@ -87,7 +87,7 @@ ms.locfileid: "77074886"
 
 [!code-csharp[Main](backbonejs-template/samples/sample4.cs)]
 
-**模型**
+Models
 
 模型在 ~/Scripts/application/models. 中定义。 这些模型都有三个基本功能：默认属性、验证规则和服务器端终结点。 下面是一个典型示例：
 
@@ -113,7 +113,7 @@ Flashbar 插件向用户提供各种类型的反馈消息。 方法 `$.showSucce
 
 在单页面应用程序中，服务器仅在用户界面中扮演小型角色。 通常，服务器会呈现初始页面，然后发送和接收 JSON 数据。
 
-模板具有两个 MVC 控制器： `HomeController` 呈现初始页面，`SupportsController` 用于确认新用户帐户和重置密码。 模板中的所有其他控制器均为发送和接收 JSON 数据 ASP.NET Web API 控制器。 默认情况下，控制器使用新的 `WebSecurity` 类来执行用户相关的任务。 但是，它们还具有可选的构造函数，可让你为这些任务传入委托。 这使测试变得更加容易，并使你可以使用 IoC 容器将 `WebSecurity` 替换为其他内容。 以下是示例：
+模板具有两个 MVC 控制器： `HomeController` 呈现初始页面，`SupportsController` 用于确认新用户帐户和重置密码。 模板中的所有其他控制器均为发送和接收 JSON 数据 ASP.NET Web API 控制器。 默认情况下，控制器使用新的 `WebSecurity` 类来执行用户相关的任务。 但是，它们还具有可选的构造函数，可让你为这些任务传入委托。 这使测试变得更加容易，并使你可以使用 IoC 容器将 `WebSecurity` 替换为其他内容。 下面是一个示例：
 
 [!code-csharp[Main](backbonejs-template/samples/sample8.cs)]
 

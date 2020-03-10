@@ -9,11 +9,11 @@ ms.assetid: b45fede3-c53a-4ea1-824b-20200808dbae
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs
 msc.type: authoredcontent
 ms.openlocfilehash: da69e466a5b506b869dc8fc0624f3e6a479199a8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74624739"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489296"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-c"></a>包装事务内的数据库修改 (C#)
 
@@ -157,7 +157,7 @@ ms.locfileid: "74624739"
 
 **图 6**：将 "更新"、"插入" 和 "删除" 选项卡中的下拉列表设置为 "（无）" （[单击查看完全大小的映像](wrapping-database-modifications-within-a-transaction-cs/_static/image6.png)）
 
-完成 "配置数据源" 向导后，Visual Studio 将为 "产品数据" 字段创建 BoundFields 和一个 CheckBoxField。 删除除 `ProductID`、`ProductName`、`CategoryID`和 `CategoryName` 以外的所有字段，并将 `ProductName` `CategoryName` 属性分别重命名为 "产品" 和 "类别"。 从智能标记中，选中 "启用分页" 选项。 进行这些修改后，GridView 和 ObjectDataSource 的声明性标记应如下所示：
+完成 "配置数据源" 向导后，Visual Studio 将为 "产品数据" 字段创建 BoundFields 和一个 CheckBoxField。 删除除 `ProductID`、`ProductName`、`CategoryID`和 `CategoryName` 以外的所有字段，并将 `ProductName` `CategoryName` 属性分别重命名为 "产品" 和 "类别"。`HeaderText` 从智能标记中，选中 "启用分页" 选项。 进行这些修改后，GridView 和 ObjectDataSource 的声明性标记应如下所示：
 
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample7.aspx)]
 
@@ -199,7 +199,7 @@ ms.locfileid: "74624739"
 
 **图 10**：某些产品 `CategoryID` 值已更新，但其他产品未更新（[单击查看全尺寸映像](wrapping-database-modifications-within-a-transaction-cs/_static/image14.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 默认情况下，TableAdapter s 方法不会将已执行的数据库语句包装在事务范围内，但是，我们可以添加创建、提交和回滚事务的方法。 在本教程中，我们在 `ProductsTableAdapter` 类中创建了三种方法： `BeginTransaction`、`CommitTransaction`和 `RollbackTransaction`。 我们了解了如何将这些方法与 `try...catch` 块结合使用，使一系列数据修改语句成为原子的。 具体而言，我们在 `ProductsTableAdapter`中创建了 `UpdateWithTransaction` 方法，该方法使用批处理更新模式来对提供的 `ProductsDataTable`的行执行必要的修改。 我们还将 `DeleteProductsWithTransaction` 方法添加到 BLL 中的 `ProductsBLL` 类，该方法接受 `ProductID` 值的 `List` 作为其输入，并为每个 `Delete` 调用 DB 直通模式方法 `ProductID`。 这两种方法首先创建一个事务，然后在 `try...catch` 块内执行数据修改语句。 如果发生异常，事务将回滚，否则将被提交。
 
@@ -226,4 +226,4 @@ ms.locfileid: "74624739"
 此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Dave Gardner、Hilton Giesenow 和 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](batch-updating-cs.md)
+> [下一部分](batch-updating-cs.md)

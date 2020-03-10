@@ -9,11 +9,11 @@ ms.assetid: 9128aaac-afe2-449f-84b2-bb1d035083c4
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 241dc8c089d4faa9eb95a63684e8a56756bb302c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611296"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78444848"
 ---
 # <a name="using-parameterized-queries-with-the-sqldatasource-c"></a>通过 SqlDataSource 使用参数化查询 (C#)
 
@@ -143,7 +143,7 @@ SqlDataSource 控件的 "配置数据源" 向导提供三个用于定义要执�
 
 对于此方法，需要注意几个注意事项。 首先，请注意，参数的数据类型是由它在 SQL 查询中的使用情况推断出来的。 如果将 `WHERE` 子句从 `@MaximumPrice = -1.0` 改为 `@MaximumPrice = -1`，则运行时将参数视为整数。 如果你随后尝试将 `MaxPrice` TextBox 赋给小数值（如5.00），则会发生错误，因为它无法将5.00 转换为整数。 若要解决此情况，请确保在 `WHERE` 子句中使用 `@MaximumPrice = -1.0` 或者，更好的做法是将 `ControlParameter` 对象的 `Type` 属性设置为 Decimal。
 
-其次，通过将 `OR @MaximumPrice = -1.0` 添加到 `WHERE` 子句，查询引擎无法对 `UnitPrice` （假设存在）使用索引，从而导致表扫描。 如果 `Products` 表中有足够数量的记录，这可能会影响性能。 更好的方法是将此逻辑移到一个存储过程中，当需要返回所有记录时，`IF` 语句将从 `Products` `WHERE` 表执行 `SELECT` 查询，或者将所有记录都包含 `WHERE` 条件，这样就可以使用索引。
+其次，通过将 `OR @MaximumPrice = -1.0` 添加到 `WHERE` 子句，查询引擎无法对 `UnitPrice` （假设存在）使用索引，从而导致表扫描。 如果 `Products` 表中有足够数量的记录，这可能会影响性能。 更好的方法是将此逻辑移到一个存储过程中，当需要返回所有记录时，`IF` 语句将从 `Products` `WHERE` 表执行 `SELECT` 查询，或者将所有记录都包含 `WHERE` 条件，这样就可以使用索引。`UnitPrice`
 
 ## <a name="step-3-creating-and-using-parameterized-stored-procedures"></a>步骤3：创建和使用参数化存储过程
 
@@ -245,7 +245,7 @@ SqlDataSource 控件的 "配置数据源" 向导提供三个用于定义要执�
 
 **图 15**：不指定参数源或默认值（[单击以查看完全大小的图像](using-parameterized-queries-with-the-sqldatasource-cs/_static/image30.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 SqlDataSource 使页面开发人员能够定义参数值可以进行硬编码、从预定义参数源提取或以编程方式分配的参数化查询。 在本教程中，我们介绍了如何为即席 SQL 查询和存储过程从 "配置数据源" 向导中创建参数化查询。 还介绍了如何使用硬编码的参数源，将 Web 控件作为参数源，并以编程方式指定参数值。
 

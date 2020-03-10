@@ -9,11 +9,11 @@ ms.assetid: e2f401ae-37bb-4b19-aa97-d6b385d40f88
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c9b60e4dacd992962942034e84c01cb82e039c81
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636682"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508094"
 ---
 # <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>基于数据设置 DataList 和 Repeater 的格式 (VB)
 
@@ -139,7 +139,7 @@ ms.locfileid: "74636682"
 
 [!code-vb[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample3.vb)]
 
-请注意，`DisplayProductNameAndDiscontinuedStatus` 方法接受 `productName` 的值并将数据字段作为标量值 `discontinued`，而 `DisplayPrice` 方法接受 `ProductsRow` 的实例（而不是标量值）。 这两种方法都可行;但是，如果格式设置函数使用的标量值可以包含数据库 `NULL` 值（如 `UnitPrice`，则 `ProductName` 和 `Discontinued` 都不允许 `NULL` 值），则在处理这些标量输入时必须特别小心。
+请注意，`DisplayProductNameAndDiscontinuedStatus` 方法接受 `productName` 的值并将数据字段作为标量值 `discontinued`，而 `DisplayPrice` 方法接受 `ProductsRow` 的实例（而不是标量值）。`unitPrice` 这两种方法都可行;但是，如果格式设置函数使用的标量值可以包含数据库 `NULL` 值（如 `UnitPrice`，则 `ProductName` 和 `Discontinued` 都不允许 `NULL` 值），则在处理这些标量输入时必须特别小心。
 
 特别是，输入参数的类型必须为 `Object`，因为传入的值可能是 `DBNull` 实例，而不是预期的数据类型。 此外，必须进行检查以确定传入的值是否为数据库 `NULL` 值。 也就是说，如果我们希望 `DisplayPrice` 方法接受作为标量值的价格，则需要使用以下代码：
 
@@ -167,7 +167,7 @@ ms.locfileid: "74636682"
 
 **图 5**：对于昂贵的产品，价格将替换为文本，请拨打价格报价（[单击查看全尺寸图像](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image15.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 可以使用两种方法来基于数据设置 DataList 或 Repeater 控件的内容的格式。 第一种方法是为 `ItemDataBound` 事件创建事件处理程序，当数据源中的每条记录绑定到新的 `DataListItem` 或 `RepeaterItem`时，将触发该事件处理程序。 在 `ItemDataBound` 事件处理程序中，可以检查当前项的数据，然后将格式设置应用于模板的内容，或应用于将 `DataListItem` 的内容应用于整个项本身。
 

@@ -1,23 +1,23 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/index
-title: 模型 （数据） |Microsoft Docs
+title: 模型（数据） |Microsoft Docs
 author: rick-anderson
-description: 在本系列教程，您学习如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 在本教程的过程中，您构建 web 应用程序...
+description: 在本教程系列中，你将了解如何将 ASP.NET MVC 与 Microsoft 实体框架结合使用。 在本教程中，你将构建一个 web 应用程序 。
 ms.author: riande
 ms.date: 09/28/2011
 ms.assetid: 9086d8a8-7952-4a7e-82a7-724d48178555
 msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
 ms.openlocfilehash: e4e4cce840d46ceceeb3ea77db91ad99d73ef483
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117591"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78469424"
 ---
 # <a name="models-data"></a>模型（数据）
 
-> 在本系列教程，您学习如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 在本教程的过程中，您构建的 web 应用程序演示了如何选择、 插入、 更新和删除数据库数据使用实体框架。
+> 在本教程系列中，你将了解如何将 ASP.NET MVC 与 Microsoft 实体框架结合使用。 在本教程中，您将构建一个 web 应用程序，该应用程序演示如何使用实体框架来选择、插入、更新和删除数据库数据。
 
 - [使用 Entity Framework 创建模型类 (C#)](creating-model-classes-with-the-entity-framework-cs.md)
 - [使用 LINQ to SQL 创建模型类 (C#)](creating-model-classes-with-linq-to-sql-cs.md)

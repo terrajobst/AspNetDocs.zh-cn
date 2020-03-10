@@ -9,11 +9,11 @@ ms.assetid: 2b0df3d9-450b-4ea6-b315-4c9650722cad
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 9e7902bcf8a16c154aee1a982824bfaedeea7d9d
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76309231"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515504"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序： web.config 文件转换-3/12
 
@@ -131,7 +131,7 @@ Contoso 大学网页读取在*web.config 文件 `appSettings`* 中设置的值�
 
 ## <a name="setting-connection-strings"></a>设置连接字符串
 
-在大多数情况下，你不需要设置连接字符串转换，因为你可以在发布配置文件中指定连接字符串。 但在部署 SQL Server Compact 数据库时，如果使用 Entity Framework Code First 迁移更新目标服务器上的数据库，则会出现异常。 对于这种情况，您必须指定将在服务器上用于更新数据库架构的其他连接字符串。 若要设置此转换，将添加 **&lt;connectionStrings&gt;** 紧跟左括号之后元素 **&lt;configuration&gt;** 在这种标记*Web.Test.config*并*Web.Production.config*转换文件：
+在大多数情况下，你不需要设置连接字符串转换，因为你可以在发布配置文件中指定连接字符串。 但在部署 SQL Server Compact 数据库时，如果使用 Entity Framework Code First 迁移更新目标服务器上的数据库，则会出现异常。 对于这种情况，您必须指定将在服务器上用于更新数据库架构的其他连接字符串。 若要设置此转换，请将一个 **&lt;connectionStrings&gt;** 元素添加到紧跟在*web.config*和*web.config 转换文件*中的打开 **&lt;配置&gt;** 标记之后：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 

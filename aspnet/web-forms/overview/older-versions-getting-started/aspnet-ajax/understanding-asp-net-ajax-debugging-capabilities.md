@@ -9,11 +9,11 @@ ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
 ms.openlocfilehash: 08ced380f3551407d757524dbc84b5feeeb5482b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74601497"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510860"
 ---
 # <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 调试功能
 
@@ -314,4 +314,4 @@ Dan Wahlin （Microsoft 最有价值专家，适用于 ASP.NET 和 XML Web 服�
 Scott Cate 一直在使用 Microsoft Web 技术，因为1997，是 myKB.com （[www.myKB.com](http://www.myKB.com)）的总裁，他致力于编写基于知识库软件解决方案的基于 ASP.NET 的应用程序。 可以通过电子邮件联系 Scott [scott.cate@myKB.com](mailto:scott.cate@myKB.com)或[ScottCate.com](http://ScottCate.com)上的博客
 
 > [!div class="step-by-step"]
-> [上一部分](understanding-asp-net-ajax-web-services.md)
+> [上一页](understanding-asp-net-ajax-web-services.md)

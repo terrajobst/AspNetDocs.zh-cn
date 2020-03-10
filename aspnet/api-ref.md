@@ -9,11 +9,11 @@ ms.date: 01/30/2017
 msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 111fdb175fc24e29109b4868c686fbbb7014cda1
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905613"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472730"
 ---
 # <a name="aspnet-api-reference"></a>ASP.NET API 引用
 
@@ -23,10 +23,10 @@ ms.locfileid: "59905613"
 
 * [ASP.NET Web API API 参考](https://msdn.microsoft.com/library/mt174857)
 
-* [ASP.NET Web Pages API 参考](https://msdn.microsoft.com/library/hh396384)
+* [ASP.NET 网页 API 参考](https://msdn.microsoft.com/library/hh396384)
 
 * [ASP.NET SignalR API 参考](https://msdn.microsoft.com/library/dn440565)
 
-* [ASP.NET 标识 API 参考](https://msdn.microsoft.com/library/mt173608)
+* [ASP.NET Identity API 参考](https://msdn.microsoft.com/library/mt173608)
 
 * [Microsoft OWIN 组件 API 参考](https://msdn.microsoft.com/library/mt152002)

@@ -9,11 +9,11 @@ ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
 ms.openlocfilehash: ddc3d15f0436c4c3a24491cf0377111768da67df
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617645"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513668"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生产环境
 
@@ -33,7 +33,7 @@ ms.locfileid: "74617645"
 
 ## <a name="get-a-microsoft-azure-account"></a>获取 Microsoft Azure 帐户
 
-如果还没有 Azure 帐户，只需花费几分钟就能创建一个免费试用帐户。 有关详细信息，请参阅[Azure 免费试用](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
+如果还没有 Azure 帐户，只需花费几分钟就能创建一个免费试用帐户。 有关详细信息，请参阅 [Azure 免费试用](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
 
 ## <a name="create-a-staging-environment"></a>创建过渡环境
 
@@ -72,7 +72,7 @@ ms.locfileid: "74617645"
 9. 在 "**服务器**" 框中，选择 "**新建 SQL 数据库服务器**"。
 10. 输入管理员名称和密码。
 
-    此处未输入现有名称和密码。 你正在输入新的名称和密码，你现在要定义该名称和密码，以便稍后在访问数据库时使用。
+    此处未输入现有名称和密码。 需要输入新的名称和密码，这些名称和密码需要现在定义，供以后访问数据库时使用。
 11. 在 "**区域**" 框中，选择为 web 应用选择的相同区域。
 
     将 web 服务器和数据库服务器保留在同一区域可以获得最佳性能并最大限度地减少费用。
@@ -116,8 +116,8 @@ ms.locfileid: "74617645"
 
 1. 在 Visual Studio 中，右键单击**解决方案资源管理器**中的 ContosoUniversity 项目，然后从上下文菜单中选择 "**发布**"。
 
-    "**发布 Web** " 向导将打开。
-2. 单击 "**配置文件**" 选项卡。
+    “发布 Web”向导随即打开。
+2. 单击“配置文件”选项卡。
 3. 单击“导入”。
 4. 导航到之前下载的 *.publishsettings*文件，然后单击 "**打开**"。
 
@@ -204,7 +204,7 @@ ms.locfileid: "74617645"
 2. 请确保选择了**暂存**配置文件。
 3. 单击“发布”。
 
-    "**输出**" 窗口将显示已执行的部署操作并报告部署的成功完成。 默认浏览器会自动打开到已部署的 web 应用的 URL。
+    “输出”窗口会显示已执行的部署操作并报告部署的成功完成。 默认浏览器会自动打开到已部署的 web 应用的 URL。
 
 ## <a name="test-in-the-staging-environment"></a>在过渡环境中测试
 
@@ -278,7 +278,7 @@ ms.locfileid: "74617645"
 
     除 URL 之外的所有内容和缺少*机器人 .txt*文件的内容完全相同。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，你已成功部署并测试了 web 应用，并且该应用可通过 Internet 公开使用。
 
@@ -287,7 +287,7 @@ ms.locfileid: "74617645"
 在下一教程中，你将更新应用程序代码并将更改部署到测试、过渡和生产环境。
 
 > [!NOTE]
-> 当应用程序在生产环境中使用时，应实施恢复计划。 也就是说，应定期将数据库从生产应用备份到安全存储位置，并且应保留多代此类备份。 更新数据库时，应立即从更改之前创建备份副本。 然后，如果您在将其部署到生产环境之前，不会发现该错误，则您仍然能够将数据库恢复到其损坏之前的状态。 有关详细信息，请参阅[AZURE SQL 数据库备份和还原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
+> 当应用程序在生产环境中使用时，应实施恢复计划。 也就是说，应定期将数据库从生产应用备份到安全存储位置，并且应保留多代此类备份。 更新数据库时，应立即从更改之前创建备份副本。 然后，如果您在将其部署到生产环境之前，不会发现该错误，则您仍然能够将数据库恢复到其损坏之前的状态。 有关详细信息，请参阅 [Azure SQL 数据库备份和还原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
 > 
 > 
 > [!NOTE]

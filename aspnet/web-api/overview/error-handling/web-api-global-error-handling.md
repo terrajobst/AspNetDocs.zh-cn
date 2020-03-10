@@ -10,17 +10,17 @@ ms.assetid: bffd7863-f63b-4b23-a13c-372b5492e9fb
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 94f2d6d31d0b37f9bb0077e6258c70a2dfb1918d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457734"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448964"
 ---
 # <a name="global-error-handling-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的全局错误处理
 
 按[David Matson](https://github.com/davidmatson)， [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本主题概述了 ASP.NET 4.x ASP.NET Web API 2 中的全局错误处理。 现在，Web API 无法通过全局方式记录或处理错误。 某些未经处理的异常可以通过[异常筛选器](exception-handling.md)进行处理，但异常筛选器无法处理多种情况。 例如：
+本主题概述了 ASP.NET 4.x ASP.NET Web API 2 中的全局错误处理。 现在，Web API 无法通过全局方式记录或处理错误。 某些未经处理的异常可以通过[异常筛选器](exception-handling.md)进行处理，但异常筛选器无法处理多种情况。 例如:
 
 1. 从控制器构造函数引发的异常。
 2. 从消息处理程序引发的异常。

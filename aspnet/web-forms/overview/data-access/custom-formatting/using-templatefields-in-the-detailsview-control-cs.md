@@ -9,11 +9,11 @@ ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 55c667800a9fb19d200bcf4b68e2c59ca4ef5d0e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74622024"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481862"
 ---
 # <a name="using-templatefields-in-the-detailsview-control-c"></a>在 DetailsView 控件中使用 TemplateField (C#)
 
@@ -153,7 +153,7 @@ DetailsView 对 `UnitPrice`、`UnitsInStock`和 `UnitsOnOrder` 字段有一行�
 
 **图 10**： "是" 或 "否" 值现在显示在 "停止行" 中（[单击以查看完全大小的图像](using-templatefields-in-the-detailsview-control-cs/_static/image30.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 使用 DetailsView 控件中的 TemplateField，可以在显示数据时提供比其他字段控件更高的灵活性，这对于以下情况非常理想：
 

@@ -9,11 +9,11 @@ ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
 ms.openlocfilehash: baaebd32f08d3c6b861572c5c5a16ec0fb70aaf0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589038"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458636"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>配置用于 Web 部署发布的 Web 服务器（Web 部署处理程序）
 
@@ -86,7 +86,7 @@ ms.locfileid: "74589038"
 
     > [!NOTE]
     > 你现在可以从 "**开始**" 菜单启动 Web 平台安装程序。 为此，请在 "**开始**" 菜单上，单击 "**所有程序**"，然后单击 " **Microsoft Web 平台安装程序**"。
-3. 在**Web 平台安装程序**窗口的顶部，单击 "**产品**"。
+3. 在“Web 平台安装程序”窗口的顶部，单击“产品”。
 4. 在窗口左侧的导航窗格中，单击 "**框架**"。
 5. 在**Microsoft .NET Framework 4** "行中，如果尚未安装 .NET Framework，请单击"**添加**"。
 
@@ -204,7 +204,7 @@ ms.locfileid: "74589038"
     > [!NOTE]
     > 在生产环境中，你可能想要在端口80上托管你的网站，并配置主机标头和匹配的 DNS 记录。 有关在 IIS 7 中配置主机标头的详细信息，请参阅[配置网站的主机标头（IIS 7）](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 有关 Windows Server 中的 DNS 服务器角色的详细信息，请参阅[Dns 服务器概述](https://technet.microsoft.com/library/cc770392.aspx)和[dns 服务器](https://technet.microsoft.com/windowsserver/dd448607)。
 9. 在 "**操作**" 窗格中的 "**编辑站点**" 下，单击 "**绑定**"。
-10. 在 "**站点绑定**" 对话框中，单击 "**添加**"。
+10. 在“网站绑定”对话框中，单击“添加”。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image12.png)
 11. 在 "**添加站点绑定**" 对话框中，将 " **IP 地址**" 和 "**端口**" 设置为与现有站点配置匹配。
@@ -213,8 +213,8 @@ ms.locfileid: "74589038"
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image13.png)
 
     > [!NOTE]
-    > 第一个站点绑定允许使用 IP 地址和端口或 `http://localhost:85`本地访问站点。 第二个站点绑定允许使用计算机名称（例如 http://stageweb1:85) ，从域中的其他计算机访问站点。
-13. 在 "**站点绑定**" 对话框中，单击 "**关闭**"。
+    > 第一个站点绑定允许使用 IP 地址和端口或 `http://localhost:85`本地访问站点。 第二个站点绑定允许使用计算机名称（例如 http://stageweb1:85)，从域中的其他计算机访问站点。
+13. 在 **“网站绑定”** 对话框中，单击 **“关闭”** 。
 14. 在 "**连接**" 窗格中，单击 "**应用程序池**"。
 15. 在 "**应用程序池**" 窗格中，右键单击应用程序池的名称，然后单击 "**基本设置**"。 默认情况下，应用程序池的名称将与网站的名称匹配（例如， **DemoSite**）。
 16. 在 " **.NET clr 版本**" 列表中，选择 " **.net clr 4.0.30319**"，然后单击 **"确定"** 。
@@ -240,8 +240,8 @@ ms.locfileid: "74589038"
 
 1. 在 Windows 资源管理器中，浏览到本地文件夹的位置。
 2. 右键单击该文件夹，然后单击 "**属性**"。
-3. 在 "**安全**" 选项卡上，单击 "**编辑**"，然后单击 "**添加**"。
-4. 单击 "**位置**"。 在 "**位置**" 对话框中，选择本地服务器，然后单击 **"确定"** 。
+3. 在“**Security**”选项卡上，依次单击“**Edit**”、“**Add**”。
+4. 单击“位置”。 在 "**位置**" 对话框中，选择本地服务器，然后单击 **"确定"** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image15.png)
 5. 在 "**选择用户或组**" 对话框中，键入**IIS\_Iis-iusrs**，单击 "**检查名称**"，然后单击 **"确定"** 。
@@ -273,10 +273,10 @@ ms.locfileid: "74589038"
 
 默认情况下，IIS Web 管理服务在 TCP 端口8172上进行侦听。 如果在 web 服务器上启用了 Windows 防火墙，则需要创建新的入站规则，以允许端口8172上的 TCP 流量（默认情况下，Windows 防火墙中允许所有出站通信）。 如果使用第三方防火墙，则需要创建允许流量的规则。
 
-| Direction | 从端口 | 到端口 | 端口类型 |
+| 方向 | 从端口 | 到端口 | 端口类型 |
 | --- | --- | --- | --- |
-| 入站 | 所有 | 8172 | TCP |
-| 出站 | 8172 | 所有 | TCP |
+| 入站 | 任意 | 8172 | TCP |
+| 出站 | 8172 | 任意 | TCP |
 
 有关在 Windows 防火墙中配置规则的详细信息，请参阅[配置防火墙规则](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 对于第三方防火墙，请查阅你的产品文档。
 

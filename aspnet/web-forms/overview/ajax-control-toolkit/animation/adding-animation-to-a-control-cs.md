@@ -9,11 +9,11 @@ ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: dd63157fe616c5f6874b7cca11f4ede15018df04
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607126"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497966"
 ---
 # <a name="adding-animation-to-a-control-c"></a>将动画添加到控件 (C#)
 
@@ -75,4 +75,4 @@ ASP.NET AJAX 控件工具包中的动画控件不仅仅是一个控件，而是�
 面板会淡化（[单击以查看完全大小的图像](adding-animation-to-a-control-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一页](executing-several-animations-at-the-same-time-cs.md)
+> [下一部分](executing-several-animations-at-the-same-time-cs.md)

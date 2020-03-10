@@ -9,11 +9,11 @@ ms.assetid: 4e849bcc-c557-4bc3-937e-f7453ee87265
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
 ms.openlocfilehash: baaaf37c47cc57d90ea579a5c20949bf8cfc7a3c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583621"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78476402"
 ---
 # <a name="batch-updating-c"></a>批量更新 (C#)
 
@@ -232,7 +232,7 @@ ms.locfileid: "74583621"
 
 [!code-csharp[Main](batch-updating-cs/samples/sample8.cs)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 GridView 提供内置的按行编辑功能，但缺少创建完全可编辑的接口的支持。 正如我们在本教程中看到的那样，这些接口是可能的，但需要一些工作。 若要创建每个行都可编辑的 GridView，需要将 GridView 的字段转换为 Templatefield，并在 `ItemTemplate` 中定义编辑界面。 此外，必须将 "更新所有类型" 按钮 Web 控件添加到页面中，与 GridView 分离。 这些按钮 `Click` 事件处理程序需要枚举 GridView `Rows` 集合、将更改存储在 `ProductsDataTable`中，并将更新的信息传递到适当的 BLL 方法。
 

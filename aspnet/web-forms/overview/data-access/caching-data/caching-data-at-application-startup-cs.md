@@ -9,11 +9,11 @@ ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a0b55b0df1b7843120de284891e16178df23fabe
-ms.sourcegitcommit: fe5c7512383a9b0a05d321ff10d3cca1611556f0
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386611"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465788"
 ---
 # <a name="caching-data-at-application-startup-c"></a>在应用程序启动时缓存数据 (C#)
 
@@ -23,7 +23,7 @@ ms.locfileid: "70386611"
 
 > 在任何 Web 应用程序中，一些数据会频繁使用，一些数据将不常使用。 我们可以预先加载频繁使用的数据（一种称为 "缓存" 的方法），提高 ASP.NET 应用程序的性能。 本教程演示一种主动加载方法，该方法是在应用程序启动时将数据加载到缓存中。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 前面的两个教程介绍了如何在表示层和缓存层中缓存数据。 使用[Objectdatasource 缓存数据](caching-data-with-the-objectdatasource-cs.md)时，我们了解到使用 objectdatasource 的缓存功能来缓存表示层中的数据。 在[体系结构中缓存数据](caching-data-in-the-architecture-cs.md)在新的、单独的缓存层中检查了缓存。 这两个教程使用数据缓存中的 "*被动" 加载*。 对于被动加载，每次请求数据时，系统会先检查它是否在缓存中。 如果不是，则它从原始源中获取数据（如数据库），然后将其存储在缓存中。 被动加载的主要优点在于它的实现。 它的缺点之一是跨请求的性能不均衡。 假设某个页面使用前面教程中的缓存层来显示产品信息。 如果是第一次访问此页面，或由于内存限制或已达到指定的过期时间而逐出缓存数据后首次访问此页面，则必须从数据库中检索数据。 因此，这些用户请求所用的时间超过了可由缓存提供服务的用户请求。
 

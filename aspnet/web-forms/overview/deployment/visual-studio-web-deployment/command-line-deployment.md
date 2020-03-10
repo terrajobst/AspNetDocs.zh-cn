@@ -9,11 +9,11 @@ ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 13cfe4492398b59f2c80394689cc113ccb218c60
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634207"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512072"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署：命令行部署
 
@@ -132,7 +132,7 @@ Visual Studio 2010 的版本号为10.0。 有关详细信息，请参阅[Visual 
     对于实际的生产站点，如果也存在数据库更改，则通常会在部署之前将*应用\_脱机*文件复制到站点，并在部署成功后将其删除。
 4. 打开浏览器并中转到过渡站点的 URL，然后单击 "**关于**" 页以验证部署是否成功。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，你已使用命令行部署了一个应用程序更新。
 

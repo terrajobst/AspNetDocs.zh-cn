@@ -9,11 +9,11 @@ ms.assetid: 9410a23c-9697-4f07-bd71-e62b0ceac655
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 49b09cbf0f12f7c7233c3bb2a8b3b2c073bf117e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573400"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78495242"
 ---
 # <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>编辑和删除 DataList 中的数据的概述（VB）
 
@@ -282,7 +282,7 @@ GridView 控件由一组字段（BoundFields、CheckBoxFields、Templatefield �
 
 删除产品后，将数据重新绑定到 DataList （`DataList1.DataBind()`）非常重要，否则 DataList 将继续显示刚刚删除的产品。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 DataList 缺少点并单击编辑和删除 GridView 所能提供的支持，但有一小段代码可以对其进行增强，以包含这些功能。 在本教程中，我们介绍了如何创建一个两列的列表，其中列出了可删除的产品以及名称和价格。 添加编辑和删除支持是指在 `ItemTemplate` 和 `EditItemTemplate`中包含适当的 Web 控件，创建相应的事件处理程序，读取用户输入的值和主键值，并与业务逻辑层交互。
 

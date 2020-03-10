@@ -9,11 +9,11 @@ ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 66127630560141cd795beb15f525a7fba85f3993
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607384"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78502646"
 ---
 # <a name="creating-a-customized-sorting-user-interface-vb"></a>创建自定义的排序用户界面 (VB)
 
@@ -163,7 +163,7 @@ ms.locfileid: "74607384"
 > [!NOTE]
 > 如果产品具有 `CategoryID`、`SupplierID`或 `UnitPrice` 字段的 `NULL` 数据库值，则默认情况下，这些值将在 GridView 中显示为空字符串，这意味着，具有 `NULL` 值的产品的分隔符行 s 将按如下所示读取：（也就是说，Category 后没有名称，如 category：饮料）。 如果需要此处显示的值，可以将 BoundFields [`NullDisplayText` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx)设置为要显示的文本，或者可以在将 `currentValue` 分配给分隔符行 s `Text` 属性时，在 Render 方法中添加条件语句。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 GridView 不包含用于自定义排序界面的许多内置选项。 但是，在很多低级别的代码中，可以调整 GridView s 控制层次结构，以创建更多的自定义界面。 在本教程中，我们介绍了如何为可排序的 GridView 添加排序组分隔符行，以便更轻松地识别不同组和这些组边界。 有关自定义排序接口的其他示例，请查看[Scott Guthrie](https://weblogs.asp.net/scottgu/) s [ASP.NET 2.0 GridView 排序提示和技巧](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx)博客条目。
 
@@ -174,4 +174,4 @@ GridView 不包含用于自定义排序界面的许多内置选项。 但是，�
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [上一部分](sorting-custom-paged-data-vb.md)
+> [上一页](sorting-custom-paged-data-vb.md)

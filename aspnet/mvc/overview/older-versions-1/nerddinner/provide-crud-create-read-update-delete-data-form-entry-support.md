@@ -1,427 +1,427 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
-title: 提供 CRUD （创建、 读取、 更新、 删除） 数据窗体输入支持 |Microsoft Docs
+title: 提供 CRUD （创建、读取、更新、删除）数据窗体项支持 |Microsoft Docs
 author: microsoft
-description: 步骤 5 显示了如何通过启用支持编辑、 创建和使用它删除 Dinners 也使我们的 DinnersController 类进一步。
+description: 步骤5演示了如何通过支持编辑、创建和删除就，进一步获取我们的 DinnersController 类。
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: bbb976e5-6150-4283-a374-c22fbafe29f5
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
 ms.openlocfilehash: b3123af9a1477bc496a0d229d628510fc202b6d2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128340"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468914"
 ---
 # <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD（创建、读取、更新和删除）数据窗体输入支持
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> 这是一种免费的步骤 5 ["NerdDinner"应用程序教程](introducing-the-nerddinner-tutorial.md)，演练如何构建一个较小，但完成，使用 ASP.NET MVC 1 中的 web 应用程序。
+> 这是免费的["NerdDinner" 应用程序教程](introducing-the-nerddinner-tutorial.md)的第5步，其中演练了如何使用 ASP.NET MVC 1 构建一个小型的、完整的 web 应用程序。
 > 
-> 步骤 5 显示了如何通过启用支持编辑、 创建和使用它删除 Dinners 也使我们的 DinnersController 类进一步。
+> 步骤5演示了如何通过支持编辑、创建和删除就，进一步获取我们的 DinnersController 类。
 > 
-> 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
+> 如果你使用的是 ASP.NET MVC 3，则建议你遵循[MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[Mvc 音乐应用商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程中的入门。
 
-## <a name="nerddinner-step-5-create-update-delete-form-scenarios"></a>NerdDinner 步骤 5:创建、 更新、 删除窗体方案
+## <a name="nerddinner-step-5-create-update-delete-form-scenarios"></a>NerdDinner 步骤5：创建、更新、删除窗体方案
 
-我们引入了控制器和视图，并介绍如何使用它们来在站点上实现 Dinners 的列表/详细信息体验。 下一步将采取进一步的我们的 DinnersController 类，并启用对编辑、 创建和使用它还删除 Dinners 的支持。
+我们引入了控制器和视图，并介绍了如何使用它们来实现站点上就的列表/详细信息体验。 下一步是进一步学习我们的 DinnersController 类，并支持编辑、创建和删除就。
 
-### <a name="urls-handled-by-dinnerscontroller"></a>由 DinnersController 的 Url
+### <a name="urls-handled-by-dinnerscontroller"></a>DinnersController 处理的 Url
 
-我们之前添加操作方法向 DinnersController 实现对两个 Url 的支持： */Dinners*并 */Dinners/详细信息 / [id]*。
+我们之前向 DinnersController 添加了实现了对两个 Url 的支持的操作方法： */Dinners*和 */Dinners/Details/[id]* 。
 
-| **URL** | **VERB** | **目的** |
+| **URL** | **谓词** | **目的** |
 | --- | --- | --- |
-| */Dinners/* | GET | 显示即将到来的 dinners 的 HTML 列表。 |
-| */Dinners/Details/[id]* | GET | 显示有关特定 dinner 的详细信息。 |
+| *就* | GET | 显示即将发布的就的 HTML 列表。 |
+| */Dinners/Details/[id]* | GET | 显示有关特定晚餐的详细信息。 |
 
-我们现在将操作方法来实现三个其他 Url: */Dinners/编辑 / [id]*， */Dinners/创建*，并 */Dinners/Delete / [id]*。 这些 Url 将启用对编辑现有 Dinners，创建新 Dinners 和删除 Dinners 的支持。
+现在，我们将添加操作方法来实现另外三个 Url： */Dinners/Edit/[id]* 、 */Dinners/Create*和 */Dinners/Delete/[id]* 。 这些 Url 支持编辑现有的就、创建新的就以及删除就。
 
-我们将支持与这些新的 Url 的 HTTP GET 和 HTTP POST 谓词交互。 HTTP GET 请求到以下 Url 将显示数据 （使用在"编辑"的情况下的 Dinner 数据填充窗体，在"创建"的情况下的空白窗体和在"删除"的情况下删除确认屏幕） 的初始 HTML 视图。 这些 url 的 HTTP POST 请求将保存/更新/删除 Dinner 数据中我们 DinnerRepository （和从数据库到）。
+我们将支持 HTTP GET 和 HTTP POST 谓词与这些新的 Url 的交互。 对这些 Url 的 HTTP GET 请求将显示数据的初始 HTML 视图（在 "编辑" 的情况下，用晚餐数据填充的窗体，在 "创建" 的情况下为空白窗体，在 "删除" 情况下为删除确认屏幕）。 对这些 Url 发出的 HTTP POST 请求将保存/更新/删除 DinnerRepository （和数据库）中的晚餐数据。
 
-| **URL** | **VERB** | **目的** |
+| **URL** | **谓词** | **目的** |
 | --- | --- | --- |
-| */Dinners/Edit/[id]* | GET | 显示可编辑 HTML 窗体使用 Dinner 数据填充。 |
-| 发布 | 保存到数据库的晚餐窗体更改。 |
-| */Dinners/Create* | GET | 显示一个空的 HTML 窗体，用户可定义新 Dinners。 |
-| 发布 | 创建新的 Dinner 并将其保存在数据库中。 |
+| */Dinners/Edit/[id]* | GET | 显示可编辑的 HTML 窗体，其中填充了晚餐数据。 |
+| POST | 将特定晚餐的窗体更改保存到数据库。 |
+| */Dinners/Create* | GET | 显示允许用户定义新就的空 HTML 窗体。 |
+| POST | 创建新晚餐，并将其保存在数据库中。 |
 | */Dinners/Delete/[id]* | GET | 显示删除确认屏幕。 |
-| 发布 | 从数据库中删除指定的 dinner。 |
+| POST | 从数据库中删除指定的晚餐。 |
 
 ### <a name="edit-support"></a>编辑支持
 
-让我们首先将实现"编辑"方案。
+首先，我们要实现 "编辑" 方案。
 
-#### <a name="the-http-get-edit-action-method"></a>HTTP GET 编辑操作方法
+#### <a name="the-http-get-edit-action-method"></a>HTTP-获取编辑操作方法
 
-我们将首先实现我们的编辑操作方法的 HTTP"GET"行为。 此方法将调用何时 */Dinners/编辑 / [id]* 请求 URL。 我们的实现将如下所示：
+首先，我们将实现编辑操作方法的 HTTP "GET" 行为。 当请求 */Dinners/Edit/[id]* URL 时，将调用此方法。 我们的实现如下所示：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample1.cs)]
 
-上面的代码使用 DinnerRepository 检索 Dinner 对象。 然后，它将呈现视图模板使用 Dinner 对象。 因为我们尚未显式传递到的模板名称*View()* 帮助器方法，它将使用的约定，其默认路径来解析视图模板： /Views/Dinners/Edit.aspx。
+上面的代码使用 DinnerRepository 检索晚餐对象。 然后，它使用晚餐对象呈现视图模板。 由于我们未将模板名称显式传递给*view （）* helper 方法，因此它将使用基于约定的默认路径来解析视图模板：/Views/Dinners/Edit.aspx。
 
-让我们现在创建此视图模板。 我们将编辑方法内右键单击并选择"添加视图"上下文菜单命令来执行此操作：
+现在，创建此视图模板。 为此，我们将在编辑方法中右键单击，然后选择 "添加视图" 上下文菜单命令：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image1.png)
 
-在"添加视图"对话框中，我们将指示我们 Dinner 对象传递给视图模板作为它的模型，并选择"编辑"的模板自动基架：
+在 "添加视图" 对话框中，我们将指出我们要将晚餐对象作为其模型传递到我们的视图模板，并选择自动基架 "编辑" 模板：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image2.png)
 
-当我们单击"添加"按钮时，Visual Studio 将"\Views\Dinners"目录中为我们添加新的"Edit.aspx"视图模板文件。 它还会打开新的"Edit.aspx"视图模板代码的编辑器 – 填充初始"的编辑"基架实现如下下面内：
+单击 "添加" 按钮时，Visual Studio 将在 "\Views\Dinners" 目录中为我们添加新的 "Edit .aspx" 视图模板文件。 它还将在代码编辑器中打开新的 "Edit .aspx" 视图模板–用如下所示的初始 "编辑" 基架实现进行填充：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image3.png)
 
-让我们进行一些更改到默认"的编辑"基架生成，并更新具有以下内容 （从而删除几个我们不想要公开的属性） 的编辑视图模板：
+让我们对生成的默认 "编辑" 基架进行一些更改，并更新 "编辑视图" 模板，使其包含以下内容（这会删除一些我们不想公开的属性）：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample2.aspx)]
 
-当我们运行的应用程序和请求 *"/ Dinners/编辑/1"* 我们将看到以下页面的 URL:
+运行应用程序并请求 *"/Dinners/Edit/1"* URL 时，会看到以下页面：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image4.png)
 
-视图生成的 HTML 标记类似于下面。 这一点与标准 HTML –&lt;窗体&gt;执行 HTTP POST 到的元素 */Dinners/Edit/1* URL 时"保存" &lt;type ="提交"/&gt;按钮。 在 HTML &lt;type ="text"/&gt;元素已为每个可编辑的属性的输出：
+视图生成的 HTML 标记如下所示。 标准 HTML –带有 &lt;窗体&gt; 元素，该元素在推送 "Save" &lt;输入类型 = "submit"/&gt; 按钮时执行到 */Dinners/Edit/1* URL 的 HTTP POST。 为每个可编辑属性输出了 HTML &lt;输入类型 = "text"/&gt; 元素：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image5.png)
 
-#### <a name="htmlbeginform-and-htmltextbox-html-helper-methods"></a>Html.BeginForm() 和 Html.TextBox() 的 Html 帮助器方法
+#### <a name="htmlbeginform-and-htmltextbox-html-helper-methods"></a>Html.beginform （）和 .Html （） Html Helper 方法
 
-我们"Edit.aspx"视图模板使用多个"的 Html 帮助器"方法：Html.ValidationSummary()、 Html.BeginForm()、 Html.TextBox() 和 Html.ValidationMessage()。 除了为我们生成的 HTML 标记，这些帮助器方法提供了内置的错误处理和验证支持。
+我们的 "Edit .aspx" 视图模板使用几个 "Html Helper" 方法： ValidationSummary （）、Html.beginform （）、.Html （）和 ValidationMessage （）。 除了为我们生成 HTML 标记之外，这些帮助器方法还提供内置的错误处理和验证支持。
 
-##### <a name="htmlbeginform-helper-method"></a>Html.BeginForm() 帮助器方法
+##### <a name="htmlbeginform-helper-method"></a>Html.beginform （） helper 方法
 
-Html.BeginForm() 帮助程序方法是 HTML 输出内容是什么&lt;窗体&gt;我们标记中的元素。 我们 Edit.aspx 视图模板中您会注意到，我们要将应用的 C#"using"语句时使用此方法。 左大括号指示的开头&lt;窗体&gt;内容和右大括号是所指示的结束&lt;/&gt;元素：
+Html.beginform （） helper 方法是在标记中输出 HTML &lt;窗体&gt; 元素的内容。 在我们的 Edit .aspx 视图模板中，你会注意到，在C#使用此方法时，我们正在应用 "using" 语句。 左大括号指示 &lt;窗体&gt; 内容的开头，右大括号表示 &lt;/form&gt; 元素的末尾：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample3.cs)]
 
-或者，如果你发现"using"语句方法不自然的此类方案，您可以使用 Html.BeginForm() 和 Html.EndForm() 的组合 （这会执行相同的操作）：
+或者，如果你为这样的方案找到了 "using" 语句方法非自然，则可以使用 Html.beginform （）和 EndForm （）组合（执行相同的操作）：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample4.aspx)]
 
-不带任何参数调用 Html.BeginForm() 会让其输出到当前请求的 URL 执行 HTTP POST 的窗体元素。 编辑视图生成的它是为什么 *&lt;表单操作 ="/ Dinners/编辑/1"方法 ="post"&gt;* 元素。 我们无法具有或者传递显式参数给 Html.BeginForm() 如果我们想要发布到不同的 URL。
+如果调用不带任何参数的 Html.beginform （），则将导致它输出一个对当前请求的 URL 执行 HTTP POST 的窗体元素。 这就是为什么我们的编辑视图生成 *&lt;窗体 action = "/Dinners/Edit/1" method = "post"&gt;* 元素的原因。 如果要发布到不同的 URL，可以将显式参数传递给 Html.beginform （）。
 
-##### <a name="htmltextbox-helper-method"></a>Html.TextBox() 帮助器方法
+##### <a name="htmltextbox-helper-method"></a>.Html （） helper 方法
 
-Edit.aspx 视图使用 Html.TextBox() 帮助器方法来输出&lt;type ="text"/&gt;元素：
+Edit .aspx 视图使用 .Html （） helper 方法输出 &lt;输入类型 = "text"/&gt; 元素：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample5.aspx)]
 
-上面的 Html.TextBox() 方法采用单个参数 – 用于指定的 id/name 特性&lt;type ="text"/&gt;输出，以及要填充的文本框值的模型属性的元素。 例如，我们传递给编辑视图的 Dinner 对象具有".NET Future"的"Title"属性值，因此我们 Html.TextBox("Title") 方法调用输出： *&lt;输入的 id ="Title"名称 ="Title"type ="text"value =".NET Futures"/&gt;*.
+上面的 Html. TextBox （）方法采用单个参数，该参数用于指定要输出的 &lt;输入类型 = "text"/&gt; 元素的 id/名称特性，以及要从中填充 TextBox 值的模型属性。 例如，我们传递到 "编辑" 视图的晚餐对象的 "Title" 属性值为 ".NET 先期"，因此我们的 Html. TextBox （"Title"）方法调用输出： *&lt;输入 id = "title" name = "title" type = "text" value = "Net.tcp 先期备货"/&gt;* 。
 
-或者，我们可以使用第一个 Html.TextBox() 参数来指定 id/名称的元素，并显式传递值中要用作第二个参数：
+此外，我们还可以使用第一个 Html. TextBox （）参数指定元素的 id/名称，然后将值显式传递为用作第二个参数：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample6.aspx)]
 
-通常，我们需要执行的输出值的自定义格式设置。 内置于.NET string.format （) 的静态方法可用于这些方案。 我们 Edit.aspx 视图模板使用此 EventDate 值 （这是类型为 DateTime 的） 的格式设置，以便它不会显示时间 （秒）：
+通常，我们需要对输出的值执行自定义格式设置。 内置于 .NET 中的字符串. Format （）静态方法对于这些方案非常有用。 我们的 "Edit .aspx" 视图模板使用此来设置 EventDate 值（类型为 DateTime 的值）的格式，以便它不会显示时间的秒数：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample7.aspx)]
 
-Html.TextBox() 的第三个参数 （可选） 用于输出其他 HTML 特性。 的以下代码段演示如何呈现其他大小 ="30"属性和 class ="mycssclass"属性上&lt;输入类型 ="text"/&gt;元素。 请注意，我们如何转义的类属性使用名称"@" character because "类"是保留的关键字在 C# 中：
+可以选择使用 Html. TextBox （）的第三个参数来输出其他 HTML 特性。 下面的代码段演示如何在 &lt;输入类型 = "text"/&gt; 元素上呈现附加大小为 "30" 的属性和类 = "mycssclass" 属性。 请注意，在中C#，如何使用 "@" character because "类" 作为保留关键字来转义类属性的名称：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample8.aspx)]
 
 #### <a name="implementing-the-http-post-edit-action-method"></a>实现 HTTP POST 编辑操作方法
 
-现在，我们实现我们编辑操作方法的 HTTP GET 版本。 当用户请求 */Dinners/Edit/1*他们收到如下所示的 HTML 页面的 URL:
+现在，我们已实现了编辑操作方法的 HTTP 获取版本。 当用户请求 */Dinners/Edit/1* URL 时，他们将收到如下所示的 HTML 页面：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image6.png)
 
-按"保存"按钮会导致窗体发布到 */Dinners/Edit/1* URL，并将其提交 HTML&lt;输入&gt;窗体上使用 HTTP POST 谓词值。 现在让我们来实现我们编辑操作方法-保存 Dinner 将处理的 HTTP POST 行为。
+按 "保存" 按钮将导致窗体发布到 */Dinners/Edit/1* URL，并使用 HTTP post 谓词提交 HTML &lt;输入&gt; 窗体值。 现在，让我们实现编辑操作方法的 HTTP POST 行为-这将处理保存晚餐。
 
-我们将首先将重载的"编辑"操作方法添加到对其具有"AcceptVerbs"属性，指示它将处理 HTTP POST 方案我们 DinnersController:
+首先，我们将向 DinnersController 添加一个重载的 "Edit" 操作方法，该方法具有一个 "AcceptVerbs" 属性，指示它处理 HTTP POST 方案：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-当 [AcceptVerbs] 特性应用于重载的操作方法时，ASP.NET MVC 将自动处理将请求调度到相应的操作方法，具体取决于传入的 HTTP 谓词。 HTTP POST 请求到 */Dinners/编辑 / [id]* Url 将转到上面的编辑方法，同时对所有其他 HTTP 谓词请求 */Dinners/编辑 / [id]* Url 将转到第一个编辑方法我们实现 （它未不具有`[AcceptVerbs]`属性)。
+将 [AcceptVerbs] 特性应用于重载操作方法时，ASP.NET MVC 会自动根据传入的 HTTP 谓词来处理向相应操作方法发出的请求。 对 */Dinners/Edit/[id]* url 发出的 http POST 请求将跳到上述 Edit 方法，而对 */Dinners/Edit/[id]* url 发出的所有其他 HTTP 谓词请求将发送到我们实现的第一个编辑方法（没有 `[AcceptVerbs]` 属性）。
 
-| **端主题：为什么通过 HTTP 谓词区分？** |
+| **侧面主题：为何通过 HTTP 谓词进行区分？** |
 | --- |
-| 您可能会问 – 为什么是我们使用一个 URL 并且个性化的 HTTP 谓词通过其行为？ 为什么不只是具有两个不同的 Url 可以加载和保存的编辑更改？ 例如： /Dinners/编辑 / [id] 若要显示初始表单和 /Dinners/保存 / [id] 来处理窗体发布，将其保存？ 与发布两个不同的 Url 的缺点是，在其中我们发布到 /Dinners/Save/2，，然后需要重新 HTML 窗体显示由于输入错误的情况下，最终用户将最终 （因为这是在其浏览器地址栏中拥有 Dinners/保存/2 URLURL 发布到窗体)。 如果最终用户创建一个书签，本页 redisplayed 到用户浏览器的收藏夹列表，或复制/粘贴该 URL 和电子邮件发送给朋友，它们将得到保存 （因为该 URL 依赖于 post 值） 不会在将来工作的 URL。 通过公开一个 URL (例如： /Dinners/Edit/[id]) 并且个性化的处理它的 HTTP 谓词，它是安全的最终用户可以编辑页面加入书签和/或将 URL 发送给其他人。 |
+| 您可能会问，为什么使用单个 URL 并通过 HTTP 谓词来区分其行为呢？ 为什么不只使用两个单独的 Url 来处理加载和保存编辑更改？ 例如：/Dinners/Edit/[id] 显示初始窗体，并将/Dinners/Save/[id] 用于处理窗体发布以保存该窗体？ 发布两个单独的 Url 的缺点是，在以下情况下，我们将发布到/Dinners/Save/2，然后由于输入错误而需要重新显示 HTML 窗体，最终用户将在其浏览器的地址栏中显示/Dinners/Save/2 URL （因为这是窗体发布到的 URL）。 如果最终用户将此重新显示页面的书签设置为浏览器收藏夹列表，或复制/粘贴该 URL 并将其电子邮件发送给朋友，则他们将最终保存一个以后不起作用的 URL （因为该 URL 依赖于 post 值）。 通过公开单一 URL （如：/Dinners/Edit/[id]）并区分 HTTP 谓词对其进行处理，最终用户可以将编辑页面加入书签，并/或将 URL 发送给其他人。 |
 
 #### <a name="retrieving-form-post-values"></a>检索窗体发布值
 
-有多种方式我们就可以访问发布窗体中"的编辑"我们 HTTP POST 方法的参数。 一个简单的方法是只需使用控制器基类上的请求属性来访问窗体集合和直接检索已发布的值：
+可以通过多种方式访问 HTTP POST "编辑" 方法中的已发布表单参数。 一种简单的方法是只使用控制器基类上的 Request 属性访问窗体集合并直接检索已发布的值：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample10.cs)]
 
-不过，尤其是后我们将添加错误处理逻辑，上述方法是有些繁琐。
+不过，上述方法稍微详细一些，特别是添加错误处理逻辑。
 
-一个更好的方法了这种情况，可以利用内置*UpdateModel()* 控制器基类上的帮助器方法。 它支持更新的属性，我们将它使用传入的窗体参数传递的对象。 它使用反射来确定对对象的属性名称会自动将转换并将值分配给这些客户端提交的输入值。
+对于此方案，更好的方法是在控制器基类上利用内置的*UpdateModel （）* helper 方法。 它支持使用传入的窗体参数来更新对象的属性。 它使用反射来确定对象上的属性名称，然后根据客户端提交的输入值自动转换和分配值。
 
-我们可以使用 UpdateModel() 方法来简化使用此代码我们 HTTP POST 编辑操作：
+我们可以使用 UpdateModel （）方法来简化使用此代码的 HTTP POST 编辑操作：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample11.cs)]
 
-我们现在可以访问 */Dinners/Edit/1* URL，并更改我们 Dinner 标题：
+现在，我们可以访问 */Dinners/Edit/1* URL，更改晚餐的标题：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image7.png)
 
-当我们单击"保存"按钮时，我们将执行窗体发布到我们的编辑操作，并更新后的值将保留在数据库中。 我们将随后重定向到详细信息 URL 为 Dinner （这将显示新保存的值）：
+单击 "保存" 按钮时，将对编辑操作执行窗体发布，并且更新的值将保留在数据库中。 然后，我们将重定向到晚餐的详细信息 URL （将显示新保存的值）：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image8.png)
 
 #### <a name="handling-edit-errors"></a>处理编辑错误
 
-我们当前的 HTTP POST 实现 works 微调 – 除非有错误。
+当前的 HTTP POST 实现工作正常–出现错误时除外。
 
-当用户编辑窗体的一个错误，我们需要确保窗体将重新显示信息性错误消息，指导他们要修复此错误。 这包括最终用户在其中发布输入不正确的情况下 (例如： 的格式不正确的日期字符串)，如事例以及输入的格式是否有效，但没有业务规则冲突。 出现错误时在窗体应保留输入的数据最初输入，以便他们不需要手动重新填充其更改的用户。 窗体已成功完成之前，应根据需要多次重复此过程。
+如果用户编辑窗体时出错，则需要确保窗体重新显示，并显示信息性错误消息，指导他们修复该窗体。 这包括最终用户发布不正确输入（例如：格式错误的日期字符串）的情况，以及输入格式有效但存在业务规则冲突的情况。 出现错误时，窗体应保留用户最初输入的输入数据，以便他们无需手动重填其更改。 此过程应根据需要重复多次，直至窗体成功完成。
 
-ASP.NET MVC 包括一些不错的内置功能，可使错误处理和窗体起简单。 若要查看操作中的这些功能，让我们使用以下代码更新我们的编辑操作方法：
+ASP.NET MVC 包括一些极好的内置功能，这些功能可简化错误处理并使其变得简单。 若要在操作中查看这些功能，请将编辑操作方法更新为以下代码：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample12.cs)]
 
-上面的代码类似于我们以前的实现 – 只是我们现在包装在 try/catch 错误处理块围绕我们的工作。 调用 UpdateModel()，或在我们尝试并保存 DinnerRepository （这将引发异常，如果我们尝试保存的 Dinner 对象是无效的由于我们的模型中的规则冲突），如果发生异常时将我们 catch 错误处理块执行。 在其中我们循环访问 Dinner 对象中存在任何规则冲突，并将其添加到 ModelState 对象 （我们将稍后讨论）。 然后，我们重新显示该视图。
+上面的代码与我们以前的实现类似，只是我们正在包装工作的 try/catch 错误处理块。 如果在调用 UpdateModel （）时出现异常，或当我们尝试并保存 DinnerRepository 时（如果我们尝试保存的晚餐对象由于模型中的规则冲突而无效，将引发异常），我们的 catch 错误处理块将运行. 在此示例中，我们将遍历晚餐对象中存在的任何规则冲突，并将其添加到 ModelState 对象（我们稍后将对此进行讨论）。 然后重新显示视图。
 
-若要查看此工作让我们重新运行该应用程序，编辑 Dinner，并将其更改为具有空标题，EventDate"BOGUS"，并使用美国国家/地区值为英国电话号码。 当我们按"保存"按钮时我们编辑 HTTP POST 方法将不能保存 Dinner （因为有错误） 以及将重新显示该窗体：
+若要查看此工作，请重新运行该应用程序，编辑晚餐，并将其更改为具有空标题，EventDate 为 "假"，并使用英国电话号码，并使用美国国家/地区值。 当我们按下 "保存" 按钮时，我们的 HTTP POST 编辑方法将不能保存晚餐（因为存在错误）并将重新显示表单：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image9.png)
 
-我们的应用程序具有适当的错误体验。 具有无效的输入的文本元素突出显示为红色，并向最终用户有关其显示验证错误消息。 在窗体还保留用户最初输入 – 的输入的数据，以便他们无需重新填充任何内容。
+应用程序的错误体验非常不错。 具有无效输入的文本元素以红色突出显示，并向最终用户显示验证错误消息。 窗体还会保留用户最初输入的输入数据，从而无需重新填充任何内容。
 
-如何，您可能会问，这发生一样？ 如何没有 Title、 EventDate 和 contactphone 文本框以红色突出显示本身并知道要输出的最初输入的用户值？ 和如何未显示错误消息获取顶部列表中？ 值得高兴的是，这并不发生变魔术一样-而是因为我们使用一些内置的 ASP.NET MVC 功能，使输入的验证和错误处理方案轻松。
+您可能会问，这是不是吗？ "标题"、"EventDate" 和 "ContactPhone" 文本框的显示效果如何，并知道是否输出最初输入的用户值？ 如何在顶部列表中显示错误消息？ 好消息是，这种情况并不是因为，因为我们使用了一些内置的 ASP.NET MVC 功能，使输入验证和错误处理方案变得很简单。
 
-#### <a name="understanding-modelstate-and-the-validation-html-helper-methods"></a>了解 ModelState 和验证的 HTML 帮助器方法
+#### <a name="understanding-modelstate-and-the-validation-html-helper-methods"></a>了解 ModelState 和验证 HTML 帮助器方法
 
-控制器类具有一个"ModelState"属性集合，它提供了一种方法，以指示错误存在与传递给视图的模型对象。 ModelState 集合中的错误条目与问题标识模型属性的名称 (例如："Title"、"EventDate"或"ContactPhone"），并允许指定的用户友好错误消息 (例如："标题是必需"）。
+控制器类具有一个 "ModelState" 属性集合，它提供了一种方法，用于指示将模型对象传递到视图时存在错误。 ModelState 集合中的错误条目标识包含问题的模型属性的名称（例如： "Title"、"EventDate" 或 "ContactPhone"），并允许指定用户友好的错误消息（例如： "需要标题"）。
 
-*UpdateModel()* 帮助器方法尝试将窗体值分配给模型对象的属性时遇到错误时自动填充 ModelState 集合。 例如，我们的 Dinner 对象 EventDate 属性是 DateTime 类型。 当 UpdateModel() 方法不能为其分配的字符串值"BOGUS"，在上述方案中时，UpdateModel() 方法添加到表示分配错误的错误的 ModelState 集合的一个条目发生与该属性。
+当尝试将窗体值分配给模型对象的属性时， *UpdateModel （）* helper 方法会自动填充 ModelState 集合。 例如，晚餐对象的 EventDate 属性的类型为 DateTime。 在上述方案中，如果 UpdateModel （）方法无法将字符串值 "假" 赋给它，则 UpdateModel （）方法会将一个条目添加到 ModelState 集合，指示该属性发生了分配错误。
 
-开发人员还可以编写代码以显式添加到 ModelState 集合错误条目，像我们在下面我们"捕获"错误处理块内，这使用基于中活动的规则冲突项填充 ModelState 集合Dinner 对象：
+开发人员还可以编写代码，以显式将错误条目添加到 ModelState 集合中，如我们在我们的 "catch" 错误处理块中执行的操作。晚餐对象：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample13.cs)]
 
-#### <a name="html-helper-integration-with-modelstate"></a>与 ModelState 的 html 帮助器集成
+#### <a name="html-helper-integration-with-modelstate"></a>Html Helper 与 ModelState 的集成
 
-呈现输出时，HTML 帮助器方法-如 Html.TextBox()-检查 ModelState 集合。 如果存在错误的项，它们呈现用户输入值和 CSS 错误类。
+HTML 帮助器方法（如 Html. TextBox （））-在呈现输出时检查 ModelState 集合。 如果该项存在错误，它们将呈现用户输入的值和 CSS 错误类。
 
-例如，"编辑"视图中我们使用 Html.TextBox() 帮助器方法呈现的我们的 Dinner 对象 EventDate:
+例如，在我们的 "编辑" 视图中，我们使用 Html. TextBox （） helper 方法呈现晚餐对象的 EventDate：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample14.aspx)]
 
-错误方案中呈现视图时，Html.TextBox() 方法将检查以查看是否存在与我们的 Dinner 对象"EventDate"属性相关联的任何错误的 ModelState 集合。 当不确定时出错它将呈现提交的用户输入 ("BOGUS") 作为值，并添加 css 错误类中的，以便&lt;type ="textbox"/&gt;它生成的标记：
+当在错误情况下呈现视图时，Html. TextBox （）方法检查了 ModelState 集合，以查看是否存在与晚餐对象的 "EventDate" 属性相关联的任何错误。 当它确定出现错误时，它将提交的用户输入（"假"）作为值，并将 css 错误类添加到它生成的 &lt;输入类型 = "textbox"/&gt; 标记：
 
 [!code-html[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample15.html)]
 
-您可以自定义要查找但是您希望 css 错误类的外观。 中定义的默认 CSS 错误类 –"输入的验证错误"– *\content\site.css*样式表和看起来如下所示：
+您可以自定义 css 错误类的外观，以查找所需的外观。 默认的 CSS 错误类– "输入验证-错误" –在 *\content\site.css*样式表中定义，如下所示：
 
 [!code-css[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample16.css)]
 
-此 CSS 规则是什么导致我们无效的输入的元素，如下面突出显示：
+此 CSS 规则导致无效输入元素突出显示，如下所示：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image10.png)
 
-##### <a name="htmlvalidationmessage-helper-method"></a>Html.ValidationMessage() 帮助器方法
+##### <a name="htmlvalidationmessage-helper-method"></a>ValidationMessage （） Helper 方法
 
-Html.ValidationMessage() 帮助器方法可用于输出与特定的模型属性关联的 ModelState 错误消息：
+ValidationMessage （） helper 方法可用于输出与特定模型属性关联的 ModelState 错误消息：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample17.aspx)]
 
-上述代码输出：  *&lt;/><span class ="字段的验证错误"&gt;是无效的值 BOGUS &lt; /s p a n&gt;*
+上面的代码输出： *&lt;范围 = "字段验证-错误"&gt; 值 "虚假" 无效，&lt;/span&gt;*
 
-Html.ValidationMessage() 帮助器方法还支持允许开发人员重写为显示的错误文本消息的第二个参数：
+ValidationMessage （） helper 方法还支持第二个参数，使开发人员能够重写显示的错误文本消息：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-上述代码输出： *&lt;/><span class ="字段的验证错误"&gt;\*&lt;/s p a n&gt;* 而不是时出现错误时，将提供的默认错误文本EventDate 属性。
+上述代码输出：在 EventDate 属性存在错误时， *&lt;跨类 = "字段验证-错误"&gt;\*&lt;/span&gt;* 而不是默认错误文本。
 
-##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() 帮助器方法
+##### <a name="htmlvalidationsummary-helper-method"></a>ValidationSummary （） Helper 方法
 
-Html.ValidationSummary() 帮助器方法可用于呈现摘要错误消息，伴随&lt;ul&gt;&lt;li /&gt;&lt;/u l&gt;消息中的所有详细的错误列表ModelState 集合：
+ValidationSummary （） helper 方法可用于呈现摘要错误消息，该消息附带一个 &lt;ul&gt;&lt;li/&gt;&lt;/ul&gt; ModelState 集合中所有详细错误消息的列表：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image11.png)
 
-Html.ValidationSummary() 帮助程序方法采用一个可选的字符串参数 – 用于定义要显示详细的错误列表上方的摘要错误消息：
+ValidationSummary （） helper 方法使用可选的字符串参数，该参数定义要显示在详细错误列表上方的摘要错误消息：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample19.aspx)]
 
-您可以选择使用 CSS 来重写错误列表如下所示。
+您可以选择使用 CSS 来替代 "错误列表" 的外观。
 
-#### <a name="using-a-addruleviolations-helper-method"></a>使用 AddRuleViolations 帮助器方法
+#### <a name="using-a-addruleviolations-helper-method"></a>使用 AddRuleViolations Helper 方法
 
-我们的初始 HTTP POST 编辑实现使用它的 catch 块中的 foreach 语句循环访问 Dinner 对象的规则冲突，并将其添加到控制器的 ModelState 集合：
+初始的 HTTP POST 编辑实现使用其 catch 块内的 foreach 语句来循环接管晚餐对象的规则冲突，并将其添加到控制器的 ModelState 集合：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample20.cs)]
 
-我们可以使此代码通过添加"ControllerHelpers"小更加清晰明确到 NerdDinner 项目中，类，实现"AddRuleViolations"扩展方法在其中将一个帮助器方法添加到 ASP.NET MVC ModelStateDictionary 类。 此扩展方法可以封装填充 ModelStateDictionary RuleViolation 错误的列表所需的逻辑：
+我们可以通过将 "ControllerHelpers" 类添加到 NerdDinner 项目中来使此代码变得更清晰，并在其中实现 "AddRuleViolations" 扩展方法，将 helper 方法添加到 ASP.NET MVC ModelStateDictionary 类。 此扩展方法可以封装用 RuleViolation 错误列表填充 ModelStateDictionary 所需的逻辑：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample21.cs)]
 
-然后，我们可以更新我们编辑 HTTP POST 操作方法使用此扩展方法来填充我们 Dinner 规则冲突的 ModelState 集合。
+接下来，我们可以更新 HTTP POST 编辑操作方法，使用此扩展方法，通过晚餐规则违规填充 ModelState 集合。
 
-#### <a name="complete-edit-action-method-implementations"></a>完成编辑操作的方法实现
+#### <a name="complete-edit-action-method-implementations"></a>完成编辑操作方法实现
 
-下面的代码实现了所有我们的编辑方案所需的控制器逻辑：
+下面的代码实现了编辑方案所需的所有控制器逻辑：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample22.cs)]
 
-我们的编辑实现好处是，我们的控制器类和视图模板都不必须完全了解特定验证或通过我们的 Dinner 模型强制实施的业务规则。 我们可以将其他规则在将来添加到我们的模型并不需要对我们的控制器或视图以使其支持进行任何代码更改。 这为我们提供了灵活地可以方便地改进我们的应用程序要求在将来使用最少代码更改。
+我们的编辑实现的一个好办法是，我们的控制器类和我们的视图模板都不能了解有关我们的晚餐模型强制执行的特定验证或业务规则的任何信息。 将来，我们可以在我们的模型中添加更多规则，而无需对控制器或视图进行任何代码更改，就可以对其进行更改。 这为我们提供了灵活的灵活性，可以在将来轻松地轻松地改进应用程序要求，只需进行少量的代码更改。
 
-### <a name="create-support"></a>创建的支持
+### <a name="create-support"></a>创建支持
 
-我们已实现我们的 DinnersController 类的"编辑"行为。 让我们继续操作，以便可对其 – 这将使用户能够添加新 Dinners"创建"支持。
+我们已经完成了 DinnersController 类的 "编辑" 行为。 现在，让我们继续实现对它的 "创建" 支持-这将使用户能够添加新就。
 
-#### <a name="the-http-get-create-action-method"></a>HTTP GET 创建操作方法
+#### <a name="the-http-get-create-action-method"></a>HTTP 获取创建操作方法
 
-我们将首先实现 HTTP"GET"行为的我们创建操作方法。 在有人访问时，将调用此方法 */Dinners/创建*URL。 我们的实现如下所示：
+首先，我们将实现创建操作方法的 HTTP "GET" 行为。 当有人访问 */Dinners/Create* URL 时，将调用此方法。 我们的实现如下所示：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample23.cs)]
 
-上面的代码创建一个新的 Dinner 对象，并分配其 EventDate 属性设置为在将来的一周。 然后，它将呈现一个视图，它基于新的 Dinner 对象。 因为我们尚未显式传递将名称传递给*View()* 帮助器方法，它将使用的约定，其默认路径来解析视图模板： /Views/Dinners/Create.aspx。
+上面的代码创建一个新的晚餐对象，并将其 EventDate 属性分配为将来一周。 然后，它呈现基于新晚餐对象的视图。 由于我们未将名称显式传递给*view （）* helper 方法，因此它将使用基于约定的默认路径来解析视图模板：/Views/Dinners/Create.aspx。
 
-让我们现在创建此视图模板。 我们可以创建操作方法内右键单击并选择"添加视图"上下文菜单命令来执行此操作。 在"添加视图"对话框中，我们将指示我们要将 Dinner 对象传递给视图模板，然后选择自动基架"创建"模板：
+现在，创建此视图模板。 为此，可以在 "创建操作" 方法中右键单击，然后选择 "添加视图" 上下文菜单命令。 在 "添加视图" 对话框中，我们将指出我们要将晚餐对象传递到视图模板，并选择自动基架 "创建" 模板：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image12.png)
 
-当我们单击"添加"按钮时，Visual Studio 会将新的基架基于"Create.aspx"视图保存到"\Views\Dinners"目录，并在 IDE 中打开它：
+单击 "添加" 按钮时，Visual Studio 会将基于基架的新 "Create .aspx" 视图保存到 "\Views\Dinners" 目录中，并在 IDE 中打开它：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image13.png)
 
-让我们对我们而言，到默认"创建"基架生成的文件已进行一些更改，并向上修改要看到如下所示：
+让我们对为我们生成的默认 "创建" 基架文件进行一些更改，并将其修改为如下所示：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample24.aspx)]
 
-现在，当我们运行我们的应用程序和访问权限和 *"/ Dinners/创建"* 它会从我们创建的操作实现呈现 UI 中的，如下面的浏览器中的 URL:
+现在，当我们运行应用程序并访问浏览器内的 *"/Dinners/Create"* URL 时，它会在创建操作实现中呈现如下所示的 UI：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image14.png)
 
-#### <a name="implementing-the-http-post-create-action-method"></a>创建实现 HTTP POST 操作方法
+#### <a name="implementing-the-http-post-create-action-method"></a>实现 HTTP POST 创建操作方法
 
-我们已实现我们创建操作方法的 HTTP GET 版本。 当用户单击"保存"按钮时它会执行窗体发布到 */Dinners/创建*URL，并将其提交 HTML&lt;输入&gt;窗体上使用 HTTP POST 谓词值。
+我们已经实现了创建操作方法的 HTTP GET 版本。 当用户单击 "保存" 按钮时，它将执行窗体发布到 */Dinners/Create* URL，并使用 HTTP post 谓词提交 HTML &lt;输入&gt; 窗体值。
 
-让我们现在实现 HTTP POST 行为的我们创建操作方法。 我们将首先将重载的"创建"操作方法添加到对其具有"AcceptVerbs"属性，指示它将处理 HTTP POST 方案我们 DinnersController:
+现在，让我们实现 "创建操作" 方法的 HTTP POST 行为。 首先，我们将向 DinnersController 添加一个重载的 "Create" 操作方法，该方法的 "AcceptVerbs" 属性指示它处理 HTTP POST 方案：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample25.cs)]
 
-有多种方式可以访问已发布的表单参数中我们的 HTTP POST 启用"创建"方法。
+可以通过多种方式访问已启用 HTTP POST 的 "创建" 方法中的已发布表单参数。
 
-一种方法是创建一个新的 Dinner 对象，然后使用*UpdateModel()* 帮助器方法 （如我们所做的编辑操作） 要使用已发布的表单值填充它。 我们然后可以将其添加到我们 DinnerRepository、 将其保存到数据库，并将用户重定向到我们的详细信息操作以显示新创建的 Dinner 使用下面的代码：
+一种方法是创建一个新的晚餐对象，然后使用*UpdateModel （）* helper 方法（与 "编辑" 操作一样），用已发布的表单值来填充它。 接下来，我们可以将其添加到 DinnerRepository，将其保存到数据库中，然后将用户重定向到详细信息操作，以使用下面的代码显示新创建的晚餐：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample26.cs)]
 
-或者，我们可以使用一种方法还有我们采用 Dinner 对象作为方法参数的 create （） 操作方法。 ASP.NET MVC 将自动为我们实例化一个新的 Dinner 对象、 填充其属性使用窗体的输入，并将其传递给我们的操作方法：
+此外，我们还可以使用一种方法，在此方法中，我们的 Create （）操作方法将晚餐对象作为方法参数。 然后，ASP.NET MVC 将自动实例化新的晚餐对象，使用表单输入填充其属性，并将其传递给操作方法：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample27.cs)]
 
-我们上面的操作方法验证，Dinner 对象成功填充窗体发布值与通过检查 ModelState.IsValid 属性。 这将返回 false，如果有输入转换问题 (例如： EventDate 属性"BOGUS"的字符串)，并且如果有任何问题我们操作方法重新显示该窗体。
+上述操作方法通过检查 ModelState 属性来验证是否已使用窗体 post 值成功填充晚餐对象。 如果存在输入转换问题（例如： "EventDate" 属性的字符串 "虚假"），则此方法将返回 false; 如果有任何问题，则操作方法将重新出现该窗体。
 
-如果输入的值都有效，操作方法就尝试添加并将新的 Dinner 保存到 DinnerRepository。 它包装这项工作在 try/catch 块内的，并重新显示该窗体，如果有任何业务规则冲突 （这会导致 dinnerRepository.Save() 方法来引发异常）。
+如果输入值有效，则操作方法会尝试将新晚餐添加并保存到 DinnerRepository。 它在 try/catch 块中包装此工作，如果存在任何业务规则冲突（这会导致 dinnerRepository （）方法引发异常），则会重新出现该窗体。
 
-若要查看此错误处理操作中的行为，我们可以请求 */Dinners/创建*URL 和有关新 Dinner 的详细信息，请填写。 输入不正确或值将导致创建窗体以重新显示如以下突出显示的错误：
+若要查看此操作中的错误处理行为，可以请求 */Dinners/Create* URL 并填写有关新晚餐的详细信息。 输入或值不正确将导致重新显示 "创建窗体"，其中突出显示的错误如下所示：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image15.png)
 
-请注意，我们创建窗体如何遵循确切相同验证和业务规则作为我们的编辑窗体。 这是因为我们验证和业务规则在模型中，定义和未嵌入在 UI 或应用程序的控制器中。 这意味着我们可以稍后更改/改进我们验证或在单个的业务规则放置，并将它们应用于整个应用程序。 我们不会更改任何代码中的我们编辑或创建操作方法来自动接受任何新的规则或对现有的修改。
+请注意，我们的 "创建窗体" 将采用与编辑窗体完全相同的验证和业务规则。 这是因为我们的验证和业务规则是在模型中定义的，而不是嵌入在应用程序的 UI 或控制器中。 这意味着我们稍后可以在一个位置更改/发展验证或业务规则，并在整个应用程序中应用这些规则。 我们不需要在 "编辑" 或 "创建" 操作方法中更改任何代码，即可自动服从任何新规则或对现有规则的修改。
 
-我们修复输入的值并单击"保存"按钮时同样，我们加入 DinnerRepository 将成功，并且新 Dinner 将添加到数据库。 我们随后重定向到 */Dinners/详细信息 / [id]* URL – 其中我们将提供有关新创建的 Dinner 的详细信息：
+当我们修复输入值并再次单击 "保存" 按钮时，DinnerRepository 的添加将会成功，并且新的晚餐将添加到数据库中。 接下来，我们将重定向到 */Dinners/Details/[id]* URL，其中会显示有关新创建的晚餐的详细信息：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image16.png)
 
 ### <a name="delete-support"></a>删除支持
 
-让我们现在添加到我们 DinnersController 的"删除"支持。
+现在，我们将 "删除" 支持添加到我们的 DinnersController。
 
-#### <a name="the-http-get-delete-action-method"></a>HTTP GET Delete 操作方法
+#### <a name="the-http-get-delete-action-method"></a>HTTP 获取删除操作方法
 
-我们将首先实现我们的 delete 操作方法的 HTTP GET 行为。 在有人访问时，将会调用此方法 */Dinners/Delete / [id]* URL。 下面是实现：
+首先，我们将实现删除操作方法的 HTTP GET 行为。 当有人访问 */Dinners/Delete/[id]* URL 时，将调用此方法。 下面是实现：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample28.cs)]
 
-尝试检索 Dinner 要删除的操作方法。 如果 Dinner 存在，则呈现视图基于 Dinner 对象。 如果对象不存在 （或已被删除） 它返回一个视图，它将呈现"NotFound"查看我们以前为我们的"详细信息"操作方法创建的模板。
+操作方法尝试检索要删除的晚餐。 如果晚餐存在，它将基于晚餐对象呈现视图。 如果该对象不存在（或已删除），则它将返回一个视图，该视图呈现我们之前为我们的 "详细信息" 操作方法创建的 "NotFound" 视图模板。
 
-我们可以创建"删除"查看模板的 Delete 操作方法内右键单击并选择"添加视图"上下文菜单命令。 在"添加视图"对话框中，我们将指示我们 Dinner 对象传递给视图模板作为它的模型，并选择创建一个空的模板：
+可以通过在 "删除" 操作方法中右键单击并选择 "添加视图" 上下文菜单命令来创建 "删除" 视图模板。 在 "添加视图" 对话框中，我们将指出我们要将晚餐对象作为其模型传递到我们的视图模板，并选择创建一个空模板：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image17.png)
 
-当我们单击"添加"按钮时，Visual Studio 将我们"\Views\Dinners"目录中为我们添加新的"Delete.aspx"视图模板文件。 我们将向模板来实现删除确认屏幕中添加一些 HTML 和代码如下所示：
+单击 "添加" 按钮时，Visual Studio 将在 "\Views\Dinners" 目录中为我们添加新的 "删除 .aspx" 视图模板文件。 我们会将一些 HTML 和代码添加到模板，以实现如下所示的删除确认屏幕：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample29.aspx)]
 
-上面的代码显示的标题，Dinner 要删除，然后输出&lt;窗体&gt;执行 POST 到 /Dinners/Delete / [id] URL，如果最终用户单击"删除"按钮中的元素。
+上面的代码将显示要删除的晚餐的标题，如果最终用户单击其中的 "删除" 按钮，则输出 &lt;窗体&gt; 元素，该元素执行向/Dinners/Delete/[id] URL 的 POST。
 
-当我们运行我们的应用程序和访问 *"/ Dinners/Delete / [id]"* URL 有效 Dinner 对象它呈现用户界面与下面类似：
+当我们运行应用程序并访问有效晚餐对象的 *"/Dinners/Delete/[id]"* URL 时，它将呈现如下所示的 UI：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image18.png)
 
-| **端主题：我们为何做一个帖子？** |
+| **侧面主题：为什么要进行 POST？** |
 | --- |
-| 您可能会问 – 我们为何做通过创建的工作量&lt;窗体&gt;我们删除确认屏幕中？ 为什么不直接使用标准的超链接链接到操作方法执行实际删除操作？ 原因是因为我们想要小心操作以防范 web 爬网程序，搜索引擎发现了 Url 和无意中导致当他们单击链接时要删除的数据。 基于 HTTP GET 的 Url 被视为"安全"才能访问/爬网，并且它们应该遵循 HTTP POST 的。 很好的规则是，请确保您始终将放在破坏性或数据修改操作背后的 HTTP POST 请求。 |
+| 您可能会问：我们为什么要在我们的 "删除" 确认屏幕中创建 &lt;表单&gt;？ 为什么不只使用标准超链接链接到执行实际删除操作的操作方法？ 原因在于，我们想要小心防范 web 爬网程序和搜索引擎查找 Url，并在出现以下链接时意外导致数据被删除。 基于 HTTP GET 的 Url 被视为 "安全"，以便它们能够访问/爬网，它们应该不遵循 HTTP POST。 一个好的规则是确保始终将破坏性或数据修改操作置于 HTTP POST 请求后面。 |
 
-#### <a name="implementing-the-http-post-delete-action-method"></a>实现 HTTP POST Delete 操作方法
+#### <a name="implementing-the-http-post-delete-action-method"></a>实现 HTTP POST 删除操作方法
 
-现在，我们实现我们 Delete 操作方法的 HTTP GET 版本显示删除确认屏幕。 当最终用户单击"删除"按钮时它将执行到窗体发布 */Dinners/Dinner / [id]* URL。
+现在，我们已实现了 "删除" 操作方法的 HTTP 获取版本，其中显示了 "删除" 确认屏幕。 当最终用户单击 "删除" 按钮时，它将对 */Dinners/Dinner/[id]* URL 执行窗体发布。
 
-让我们现在实现的 HTTP"POST"行为的 delete 操作方法使用下面的代码：
+现在，让我们使用下面的代码来实现 delete 操作方法的 HTTP "POST" 行为：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample30.cs)]
 
-我们删除操作方法的 HTTP POST 版本尝试检索要删除的 dinner 对象。 如果它找不到它 （因为它已被删除） 将呈现"NotFound"模板。 如果找到 Dinner，它可以从 DinnerRepository 删除它。 然后，它将呈现"已删除"模板。
+删除操作方法的 HTTP POST 版本尝试检索要删除的晚餐对象。 如果找不到它（因为已删除），则它将呈现我们的 "NotFound" 模板。 如果找到晚餐，则会将其从 DinnerRepository 中删除。 然后呈现 "已删除" 模板。
 
-若要实现我们将在操作方法中右键单击并选择"添加视图"上下文菜单的"已删除"模板。 我们将命名为"已删除"视图，并将它是一个空的模板 （并且不采用强类型化模型对象）。 然后，我们将向其中添加一些 HTML 内容：
+若要实现 "已删除" 模板，我们将在操作方法中右键单击，然后选择 "添加视图" 上下文菜单。 我们会将视图命名为 "已删除"，并将其命名为空模板（而不采用强类型模型对象）。 然后，将一些 HTML 内容添加到其中：
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample31.aspx)]
 
-现在，当我们运行我们的应用程序和访问权限和 *"/ Dinners/Delete / [id]"* URL 有效 dinner 对象，它会呈现我们 Dinner 删除确认屏幕类似如下：
+现在，当我们运行应用程序并访问有效晚餐对象的 *"/Dinners/Delete/[id]"* URL 时，它将呈现我们的晚餐删除确认屏幕，如下所示：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image19.png)
 
-当我们单击"删除"按钮时它将执行到 HTTP POST */Dinners/Delete / [id]* URL，这将删除 Dinner 从我们的数据库，并显示"已删除"视图模板：
+当我们单击 "删除" 按钮时，它将对 */Dinners/Delete/[id]* URL 执行 HTTP POST，该 URL 将从数据库中删除晚餐，并显示 "已删除" 视图模板：
 
 ![](provide-crud-create-read-update-delete-data-form-entry-support/_static/image20.png)
 
 ### <a name="model-binding-security"></a>模型绑定安全性
 
-我们已经讨论了两种不同方式使用内置的 ASP.NET MVC 模型绑定功能。 首先使用 UpdateModel() 方法来更新现有的模型对象，属性和第二个使用对作为操作方法参数传递中的模型对象的 ASP.NET MVC 支持。 这两种方法是非常强大和极其有用。
+我们讨论了两种不同的方法来使用 ASP.NET MVC 的内置模型绑定功能。 第一种方法是使用 UpdateModel （）方法来更新现有模型对象上的属性，第二种方法是使用 ASP.NET MVC 支持将模型对象作为操作方法参数传入。 这两种方法都非常强大且非常有用。
 
-这种能力还提供了责任。 很重要的始终是有关安全性的警惕用户如果接受任何用户输入，并且这也是 true 时将对象绑定到窗体输入。 应为请注意，始终 HTML 编码以避免 HTML 和 JavaScript 注入攻击，并请注意 SQL 注入式攻击的任何用户输入值 (注意： 我们在我们的应用程序，它会自动将编码参数，防止这些使用 LINQ to SQL类型的攻击）。 永远不应依赖于客户端验证独立的并始终使用服务器端验证，可防止黑客试图向你发送虚假的值来。
+此功能还具有 it 责任。 在接受任何用户输入时始终偏执安全，这一点很重要，在将对象绑定到表单输入时也是如此。 应注意始终对任何用户输入的值进行 HTML 编码，以避免 HTML 和 JavaScript 注入攻击，并小心 SQL 注入式攻击（注意：我们使用的是应用程序的 LINQ to SQL，这会自动对参数进行编码，以防止出现这种情况攻击类型）。 切勿单独依赖于客户端验证，始终使用服务器端验证来防止黑客尝试发送虚假值。
 
-要确保你考虑使用 ASP.NET MVC 的绑定功能时的一个额外的安全项是要绑定的对象的作用域。 具体而言，你想要确保你了解你允许将绑定，并确保只允许那些实际上应为要更新的最终用户可更新的属性的属性的安全隐患。
+另外一个安全项目，请确保你在使用 ASP.NET MVC 的绑定功能时要考虑的是要绑定的对象的范围。 具体而言，你需要确保了解你允许绑定的属性的安全影响，并确保仅允许更新最终用户可以更新的那些属性，这一点非常明显。
 
-默认情况下，UpdateModel() 方法将尝试更新对模型对象与传入的窗体参数值匹配的所有属性。 同样，为操作方法参数还默认传递的对象可以具有所有通过窗体参数设置其属性。
+默认情况下，UpdateModel （）方法将尝试更新与传入窗体参数值匹配的模型对象的所有属性。 同样，作为操作方法参数传递的对象也会在默认情况下通过窗体参数设置其所有属性。
 
-#### <a name="locking-down-binding-on-a-per-usage-basis"></a>锁定在每个使用情况的基础上的绑定
+#### <a name="locking-down-binding-on-a-per-usage-basis"></a>按使用情况锁定绑定
 
-你可以通过提供一个显式"include 列表"的可更新的属性来锁定在每个使用情况的基础上的绑定策略。 这可以通过将额外的字符串数组参数传递给 UpdateModel() 类似方法的下方：
+可以通过提供可更新的属性的显式 "包含列表"，按使用情况锁定绑定策略。 为此，可将额外的字符串数组参数传递给 UpdateModel （）方法，如下所示：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample32.cs)]
 
-此外为操作方法参数传递的对象支持 [Bind] 属性，它使一个"include 列表"的允许使用属性来指定类似如下：
+作为操作方法参数传递的对象还支持 "[Bind]" 属性，该属性可指定如下所示的 "允许" 属性的 "包含列表"：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample33.cs)]
 
-#### <a name="locking-down-binding-on-a-type-basis"></a>锁定类型基础上的绑定
+#### <a name="locking-down-binding-on-a-type-basis"></a>基于类型锁定绑定
 
-你可以锁定在每种类型的基础上的绑定规则。 这允许您一次，指定绑定规则，然后让其在所有控制器和操作方法适合所有情况 （包括 UpdateModel 和操作方法参数方案）。
+你还可以基于每个类型锁定绑定规则。 这允许您指定一次绑定规则，然后将它们应用于所有控制器和操作方法的所有方案（包括 UpdateModel 和操作方法参数方案）。
 
-通过添加到类型上的 [Bind] 属性或通过注册 （适用于其中的类型不属于你的方案） 的应用程序的 Global.asax 文件中，可以自定义每种类型的绑定规则。 然后，可以使用的绑定属性的 Include 和 Exclude 属性来控制哪些属性是可绑定为特定类或接口。
+您可以自定义每种类型的绑定规则，方法是将 [Bind] 特性添加到类型上，或在应用程序的 global.asax 文件中注册它（对于不属于该类型的方案非常有用）。 然后，可以使用 Bind 特性的 Include 和 Exclude 属性控制哪些属性可绑定到特定类或接口。
 
-我们将 Dinner 类在 NerdDinner 应用程序中，使用这种方法，并将 [Bind] 属性添加到它的可绑定属性的列表限制到以下：
+我们将为 NerdDinner 应用程序中的晚餐类使用此技术，并向其添加一个 "[Bind]" 属性，将可绑定属性列表限制如下：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample34.cs)]
 
-请注意，我们不允许 Rsvp 集合操作通过绑定，也不我们允许 DinnerID 或 HostedBy 属性通过绑定设置。 出于安全原因我们将改为仅控制这些特定属性使用在我们的操作方法中的显式代码。
+请注意，我们不允许通过绑定操作 RSVPs 集合，也不允许通过绑定设置 DinnerID 或 HostedBy 属性。 出于安全原因，我们将改为仅使用操作方法中的显式代码来操作这些特定属性。
 
-### <a name="crud-wrap-up"></a>CRUD 总结
+### <a name="crud-wrap-up"></a>CRUD 向上环绕
 
-ASP.NET MVC 包括大量内置功能，帮助实现窗体发布方案。 我们使用了各种各样的这些功能在我们 DinnerRepository 之上提供 CRUD UI 支持。
+ASP.NET MVC 包含许多可帮助实现窗体发布方案的内置功能。 我们使用了各种功能，在我们的 DinnerRepository 上提供 CRUD UI 支持。
 
-我们使用的专注于模型的方法来实现我们的应用程序。 这意味着，我们所有的验证和业务规则中我们的模型层 – 而不是在我们的控制器或视图定义逻辑。 我们的控制器类和我们的视图模板都不知道我们 Dinner model 类通过强制实施的特定业务规则有关的任何信息。
+我们使用以模型为中心的方法来实现我们的应用程序。 这意味着，所有验证和业务规则逻辑都是在模型层中定义的，而不是在我们的控制器或视图中定义的。 我们的控制器类和我们的视图模板都不知道我们的晚餐模型类强制执行的特定业务规则。
 
-这将使我们的应用程序体系结构保持干净，并使其更易于测试。 我们可以将更多的业务规则在将来添加到我们的模型层和*无需进行任何代码更改*到我们的控制器或视图以使其支持。 这将向我们提供了大量的改进和更改在将来，我们的应用程序的灵活性。
+这会使应用程序体系结构保持整洁，并使测试更容易。 将来，我们可以将其他业务规则添加到我们的模型层中，而无需对控制器或视图*进行任何代码更改*，即可获得支持。 这将为我们提供大量的灵活性，以便在将来发展和更改应用程序。
 
-我们 DinnersController 现在使 Dinner 列表/详细信息，以及创建、 编辑和删除支持。 类的完整代码可在下文：
+我们的 DinnersController 现在启用晚餐列表/详细信息，以及创建、编辑和删除支持。 可以在下面找到类的完整代码：
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample35.cs)]
 
 ### <a name="next-step"></a>下一步
 
-现在，我们有我们 DinnersController 类中实现的基本 CRUD （创建、 读取、 更新和删除） 支持。
+现在，我们在 DinnersController 类中拥有基本的 CRUD （创建、读取、更新和删除）支持。
 
-让我们现在看一下如何使用 ViewData 和 ViewModel 类要在窗体上启用更丰富的 UI。
+现在我们来看看如何使用 ViewData 和 ViewModel 类在窗体上实现甚至更丰富的 UI。
 
 > [!div class="step-by-step"]
 > [上一页](use-controllers-and-views-to-implement-a-listingdetails-ui.md)

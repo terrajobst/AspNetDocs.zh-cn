@@ -1,95 +1,95 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
-title: 将动态内容添加到缓存的页面 (C#) |Microsoft Docs
+title: 向缓存的页（C#）中添加动态内容 |Microsoft Docs
 author: microsoft
-description: 了解如何混合在同一页中的动态和缓存内容。 缓存后替换使您能够显示动态内容，例如横幅广告 o...
+description: 了解如何在同一页面中混合动态和缓存内容。 通过缓存后替换，可以显示动态内容，例如横幅广告 o 。
 ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 2ddd4407-d143-4a94-877c-21771bfb97a6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
 ms.openlocfilehash: be43712d3dd5235117558e991d9dd71aa30ec470
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123738"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78486938"
 ---
 # <a name="adding-dynamic-content-to-a-cached-page-c"></a>向缓存页添加动态内容 (C#)
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 了解如何混合在同一页中的动态和缓存内容。 缓存后替换，可显示动态内容，例如横幅广告或中缓存已输出的页的新闻项。
+> 了解如何在同一页面中混合动态和缓存内容。 通过缓存后替换，可以在已缓存的页面内显示动态内容，例如横幅广告或新闻项。
 
-通过利用输出缓存，可以极大地提高 ASP.NET MVC 应用程序的性能。 而不是重新生成页面每次请求页面时，可以生成一次并在多个用户的内存中缓存的页面。
+利用输出缓存，可以显著提高 ASP.NET MVC 应用程序的性能。 并非每次请求页面时都重新生成页面，只需生成一次页面并将其缓存在多个用户的内存中即可。
 
-但存在一个问题。 如果你需要在页中显示动态内容？ 例如，假设你想要在页中显示横幅广告。 您不希望被缓存，以便每个用户将看到完全相同的播发，横幅广告。 通过这种方式不会进行任何费用 ！
+但出现问题。 如果需要在页面中显示动态内容，该怎么办？ 例如，假设您想要在页面上显示横幅广告。 您不希望对横幅广告进行缓存，以便每个用户都能看到非常相同的广告。 您不会这样做！
 
-幸运的是，没有简单的解决方案。 您可以充分利用 ASP.NET 框架调用的一项功能*缓存后替换*。 缓存后替换可以替换已缓存在内存中的页中的动态内容。
+幸运的是，有一个简单的解决方案。 可以利用名为*后缓存替换*的 ASP.NET 框架功能。 使用缓存后替换，可以替换缓存在内存中的页面中的动态内容。
 
-通常情况下，当缓存页面输出使用 [OutputCache] 属性时，进行了缓存服务器和客户端 （web 浏览器） 上。 当使用缓存后替换时，仅在服务器上缓存页。
+通常，当你通过使用 [OutputCache] 属性输出缓存页面时，将在服务器和客户端（web 浏览器）上缓存页面。 使用缓存后替换时，页仅缓存在服务器上。
 
 #### <a name="using-post-cache-substitution"></a>使用缓存后替换
 
-使用缓存后替换需要两个步骤。 首先，需要定义返回一个字符串，表示你想要在缓存的页面中显示的动态内容的方法。 接下来，您调用 HttpResponse.WriteSubstitution() 方法来将动态内容注入到页面。
+使用缓存后替换需要两个步骤。 首先，需要定义一个方法，该方法返回一个字符串，该字符串表示要在缓存页面中显示的动态内容。 接下来，调用 Httpresponse.cache WriteSubstitution （）方法将动态内容注入到页面中。
 
-例如，假设你想要在缓存上随机显示不同的新闻项。 在列表 1 中的类公开了一个方法，名为 RenderNews() 随机从列表中的三个新闻项返回一个新闻项。
+例如，假设您希望在缓存的页中随机显示不同的新闻项。 列表1中的类公开了一个名为 RenderNews （）的方法，该方法从三个新闻项的列表中随机返回一个新闻项。
 
-**代码清单 1 – Models\News.cs**
+**列表1– Models\News.cs**
 
 [!code-csharp[Main](adding-dynamic-content-to-a-cached-page-cs/samples/sample1.cs)]
 
-若要充分利用缓存后替换，则调用 HttpResponse.WriteSubstitution() 方法。 WriteSubstitution() 方法设置代码，以替换动态内容的缓存的页面区域。 WriteSubstitution() 方法用于在代码清单 2 中的视图中显示的随机新闻项。
+若要利用缓存后替换，请调用 Httpresponse.cache WriteSubstitution （）方法。 WriteSubstitution （）方法设置代码以将缓存页的区域替换为动态内容。 WriteSubstitution （）方法用于在列表2的视图中显示随机新闻项。
 
-**代码清单 2 – Views\Home\Index.aspx**
+**列表 2-Views\Home\Index.aspx**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-cs/samples/sample2.aspx)]
 
-RenderNews 方法传递给 WriteSubstitution() 方法。 请注意，不会调用 RenderNews 方法 （有没有括号）。 而是对方法的引用被传递给 WriteSubstitution()。
+RenderNews 方法传递给 WriteSubstitution （）方法。 请注意，不会调用 RenderNews 方法（没有括号）。 相反，对方法的引用将传递给 WriteSubstitution （）。
 
-缓存索引视图。 该视图返回的清单 3 中的控制器。 请注意，使用会导致要缓存 60 秒的索引视图 [OutputCache] 属性修饰的 index （） 操作。
+索引视图被缓存。 视图由列表3中的控制器返回。 请注意，Index （）操作使用 [OutputCache] 属性修饰，这会导致索引视图缓存60秒。
 
-**代码清单 3 – Controllers\HomeController.cs**
+**列表 3-Controllers\HomeController.cs**
 
 [!code-csharp[Main](adding-dynamic-content-to-a-cached-page-cs/samples/sample3.cs)]
 
-即使缓存索引视图，在请求索引页时显示不同的随机新闻项。 当请求索引页时，页所显示的时间将不会更改为 60 秒 （参见图 1）。 时间不会更改这一事实证明对页进行缓存。 但是，内容注入 WriteSubstitution() 方法-随机新闻项目-更改每个请求。
+即使已缓存索引视图，请求索引页时也会显示不同的随机新闻项。 请求 "索引" 页时，页面显示的时间不会更改60秒（参见图1）。 这种情况不会发生更改，证明页面已缓存。 但是，由 WriteSubstitution （）方法插入的内容–随机新闻项目–随每个请求而更改。
 
-**图 1 – 将注入中缓存的页面的动态新闻项**
+**图1–在缓存页面中注入动态新闻项**
 
 ![clip_image002](adding-dynamic-content-to-a-cached-page-cs/_static/image1.jpg)
 
-#### <a name="using-post-cache-substitution-in-helper-methods"></a>在帮助器方法中使用缓存后替换
+#### <a name="using-post-cache-substitution-in-helper-methods"></a>在 Helper 方法中使用后缓存替换
 
-充分利用缓存后替换的更简单方法是封装对自定义帮助程序方法内 WriteSubstitution() 方法的调用。 列表 4 中的帮助器方法进行了说明这种方法。
+更简单的方法是利用缓存后的替换方法，将对 WriteSubstitution （）方法的调用封装到自定义帮助器方法中。 此方法由列表4中的 helper 方法说明。
 
-**列表 4 – AdHelper.cs**
+**列表 4-AdHelper.cs**
 
 [!code-csharp[Main](adding-dynamic-content-to-a-cached-page-cs/samples/sample4.cs)]
 
-列表 4 包含一个静态类，公开两个方法：RenderBanner() 和 RenderBannerInternal()。 RenderBanner() 方法表示实际的帮助器方法。 此方法，以便你可以在一个视图，就像任何其他帮助器方法中调用 Html.RenderBanner() 扩展标准的 ASP.NET MVC HtmlHelper 类。
+列表4包含一个静态类，该类公开两个方法： RenderBanner （）和 RenderBannerInternal （）。 RenderBanner （）方法表示实际的帮助器方法。 此方法扩展了标准 ASP.NET MVC HtmlHelper 类，以便您可以在视图中调用 RenderBanner （），就像使用任何其他帮助器方法一样。
 
-RenderBanner() 方法调用将 RenderBannerInternal() 方法传递给 WriteSubstitution() 方法 HttpResponse.WriteSubstitution() 方法。
+RenderBanner （）方法调用 Httpresponse.cache （）方法将 RenderBannerInternal （）方法传递给 WriteSubstitution （）方法。
 
-RenderBannerInternal() 方法为私有方法。 此方法不会公开为一个帮助器方法。 RenderBannerInternal() 方法随机从列表中的三个横幅广告图像返回一个横幅广告图像。
+RenderBannerInternal （）方法是私有方法。 此方法不会公开为帮助器方法。 RenderBannerInternal （）方法从三个横幅广告图像的列表中随机返回一个横幅广告图像。
 
-列表 5 中经过修改的索引视图说明了如何使用 RenderBanner() 帮助器方法。 请注意，额外&lt;%@ 导入 %&gt;指令，则包含要导入 MvcApplication1.Helpers 命名空间的视图的顶部。 如果忘记导入此命名空间，则 RenderBanner() 方法不会显示为 Html 属性上的方法。
+"列表 5" 中修改的索引视图说明了如何使用 RenderBanner （） helper 方法。 请注意，视图顶部包含附加的 &lt;% @ Import%&gt; 指令以导入 MvcApplication1 命名空间。 如果忽略导入此命名空间，则 RenderBanner （）方法不会在 Html 属性上显示为方法。
 
-**列表 5 – Views\Home\Index.aspx （与 RenderBanner() 方法）**
+**列表5– Views\Home\Index.aspx （with RenderBanner （）方法）**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-cs/samples/sample5.aspx)]
 
-不同横幅广告时请求由列表 5 中查看呈现的页，将显示的每个请求 （请参见图 2）。 对页进行缓存，但由 RenderBanner() 帮助器方法动态注入横幅广告。
+在列表5中请求视图呈现的页面时，每个请求都会显示不同的横幅广告（参见图2）。 将缓存该页，但会通过 RenderBanner （） helper 方法动态注入标题广告。
 
-**图 2 – 索引视图显示随机横幅广告**
+**图 2-显示随机横幅广告的索引视图**
 
 ![clip_image004](adding-dynamic-content-to-a-cached-page-cs/_static/image2.jpg)
 
-#### <a name="summary"></a>总结
+#### <a name="summary"></a>摘要
 
-本教程介绍了如何动态更新缓存的页面中的内容。 您学习了如何使用 HttpResponse.WriteSubstitution() 方法以启用要注入到缓存的页面中的动态内容。 您还学习了如何封装对 HTML 帮助器方法内 WriteSubstitution() 方法的调用。
+本教程介绍了如何在缓存页面中动态更新内容。 已了解如何使用 Httpresponse.cache WriteSubstitution （）方法使动态内容注入到缓存页中。 还了解了如何在 HTML 帮助器方法中封装对 WriteSubstitution （）方法的调用。
 
-利用缓存应尽可能 – 它会对 web 应用程序的性能产生重大影响。 在本教程中所述，您可以充分利用缓存甚至当您需要在页面中显示动态内容时。
+尽可能利用缓存，这可能会对 web 应用程序的性能产生显著影响。 如本教程中所述，即使您需要在页面中显示动态内容，也可以利用缓存。
 
 > [!div class="step-by-step"]
 > [上一页](improving-performance-with-output-caching-cs.md)

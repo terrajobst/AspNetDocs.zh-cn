@@ -1,48 +1,48 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
-title: Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体 |Microsoft Docs
+title: 入门实体框架 4.0 Database First 和 ASP.NET 4 Web 窗体 |Microsoft Docs
 author: tdykstra
-description: Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序...
+description: Contoso 大学示例 web 应用程序演示如何使用实体框架4.0 和 Visual Studio 2010 。
 ms.author: riande
 ms.date: 12/03/2010
 ms.assetid: 5cb00916-8f46-491f-be25-4739a615d619
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: fd88b32ad2a65e5b4c7ead15f0d6dc5dc6e97e75
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126950"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511676"
 ---
-# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>入门实体框架 4.0 Database First 和 ASP.NET 4 Web 窗体
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 示例应用程序是虚构的 Contoso 大学网站。 其中包括学生录取、课程创建和讲师分配等功能。
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架4.0 和 Visual Studio 2010 创建 ASP.NET Web 窗体应用程序。 该示例应用程序是一个虚构的 Contoso 大学的网站。 它包括诸如学生入学、 课程创建和导师分配等功能。
 > 
-> 本教程介绍了 C# 中的示例。 [可下载的示例](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)包含 C# 和 Visual Basic 中的代码。
+> 本教程演示中C#的示例。 [可下载的示例](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)包含C#和 Visual Basic 中的代码。
 > 
-> ## <a name="database-first"></a>数据库优先
+> ## <a name="database-first"></a>Database First
 > 
-> 有三种方法可以使用实体框架中的数据：*数据库优先*，*模型优先*，和*代码优先*。 本教程适用于第一个数据库。 有关如何选择最适合你的方案指南这些工作流之间的差异信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
+> 可以通过三种方式使用实体框架中的数据： *Database First*、 *Model First*和*Code First*。 本教程适用于 Database First。 有关这些工作流之间的差异以及如何为你的方案选择最佳方案的指南的信息，请参阅[实体框架开发工作流](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)。
 > 
 > ## <a name="web-forms"></a>Web Forms — Web 窗体
 > 
-> 本系列教程使用 ASP.NET Web 窗体模型，并假设你已了解如何使用 Visual Studio 中的 ASP.NET Web 窗体。 如果不这样做，请参阅[Getting Started with ASP.NET 4.5 Web 窗体](../../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md)。 如果想要使用的 ASP.NET MVC 框架，请参阅[开始使用 ASP.NET MVC 的 Entity Framework 使用](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
+> 本教程系列使用 ASP.NET Web 窗体模型，并假设你知道如何在 Visual Studio 中使用 ASP.NET Web 窗体。 否则，请参阅[ASP.NET 4.5 Web Forms 入门](../../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md)。 如果希望使用 ASP.NET MVC 框架，请参阅[使用 ASP.NET mvc 入门与实体框架](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 > 
 > ## <a name="software-versions"></a>软件版本
 > 
-> | **本教程中所示** | **也可用于** |
+> | **教程中所示** | **还适用于** |
 > | --- | --- |
 > | Windows 7 | Windows 8 |
-> | Visual Studio 2010 | Web 的 visual Studio 2010 Express。 本教程不经过了更高版本的 Visual Studio。 有许多差异菜单选项、 对话框和模板。 |
-> | .NET 4 | .NET 4.5 是与.NET 4 中，向后的兼容，但尚未安装.NET 4.5 测试本教程。 |
-> | 实体框架 4 | 本教程不经过了实体框架的更高版本。 从 Entity Framework 5 开始，默认情况下使用 EF `DbContext API` ，引入了 EF 4.1。 EntityDataSource 控件设计为使用`ObjectContext`API。 有关如何使用 EntityDataSource 控件，其`DbContext`API，请参阅[这篇博客文章](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx)。 |
+> | Visual Studio 2010 | Visual Studio 2010 Express for Web。 本教程尚未通过更高版本的 Visual Studio 进行测试。 菜单选择、对话框和模板有很多不同之处。 |
+> | .NET 4 | .NET 4.5 向后兼容 .NET 4，但本教程尚未通过 .NET 4.5 进行测试。 |
+> | 实体框架4 | 本教程尚未测试实体框架的更高版本。 从实体框架5开始，EF 默认使用 EF 4.1 引入的 `DbContext API`。 EntityDataSource 控件设计为使用 `ObjectContext` API。 有关如何将 EntityDataSource 控件与 `DbContext` API 一起使用的信息，请参阅[此博客文章](https://blogs.msdn.com/b/webdev/archive/2012/09/13/how-to-use-the-entitydatasource-control-with-entity-framework-code-first.aspx)。 |
 > 
 > ## <a name="questions"></a>问题
 > 
-> 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)，则[实体框架和 LINQ to 实体论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
+> 如果你有与本教程不直接相关的问题，则可以将其发布到[ASP.NET 实体框架论坛](https://forums.asp.net/1227.aspx)、[实体框架和 LINQ to Entities 论坛](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
 
 ## <a name="overview"></a>概述
 
@@ -50,7 +50,7 @@ ms.locfileid: "65126950"
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-1/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image1.png)
 
-用户可以查看和更新学生、课程和讲师信息。 几个屏幕，您将创建如下所示。
+用户可以查看和更新学生、 课程和教师信息。 下面显示了你将创建的几个屏幕。
 
 [![Image30](the-entity-framework-and-aspnet-getting-started-part-1/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image3.png)
 
@@ -62,7 +62,7 @@ ms.locfileid: "65126950"
 
 ## <a name="creating-the-web-application"></a>创建 Web 应用程序
 
-若要开始本教程，请打开 Visual Studio，然后创建新的 ASP.NET Web 应用程序项目使用**ASP.NET Web 应用程序**模板：
+若要开始学习本教程，请打开 Visual Studio，然后使用**ASP.NET Web 应用程序**模板创建新的 ASP.NET Web 应用程序项目：
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-1/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image11.png)
 
@@ -70,145 +70,145 @@ ms.locfileid: "65126950"
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-1/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image13.png)
 
-打开*Site.Master*文件，并更改"My ASP.NET Application"到"Contoso University"。
+打开*网站 .master*文件，将 "My ASP.NET Application" 更改为 "Contoso 大学"。
 
 [!code-html[Main](the-entity-framework-and-aspnet-getting-started-part-1/samples/sample1.html)]
 
-查找*菜单*控件命名为`NavigationMenu`并替换为以下标记，将您要创建的页的菜单项添加。
+找到名为 `NavigationMenu` 的*菜单*控件，并将其替换为以下标记，该标记将为要创建的页添加菜单项。
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-1/samples/sample2.aspx)]
 
-打开*Default.aspx*页并更改`Content`控件命名为`BodyContent`于此：
+打开*default.aspx*页，将名为 `BodyContent` 的 `Content` 控件更改为：
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-1/samples/sample3.aspx)]
 
-现在有一个包含您要创建的各个页面的链接的简单主页：
+现在，你有了一个简单的主页，其中包含指向要创建的各个页面的链接：
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-1/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image15.png)
 
 ## <a name="creating-the-database"></a>创建数据库
 
-对于这些教程中，您将使用实体框架数据模型设计器会自动创建基于现有数据库的数据模型 (通常称为*数据库优先*方法)。 本系列教程中未涉及的替代方法是手动创建数据模型，然后让创建数据库的设计器生成脚本 (*实体数据模型*方法)。
+对于这些教程，您将使用实体框架数据模型设计器自动基于现有数据库创建数据模型（通常称为*数据库优先*的方法）。 本系列教程未涵盖的替代方法是手动创建数据模型，然后让设计器生成用于创建数据库的脚本（*模型优先*的方法）。
 
-对于本教程中使用数据库优先方法后下, 一步是将数据库添加到站点。 最简单方法是先下载与本教程中的项目。 然后右键单击*应用程序\_数据*文件夹，选择**添加现有项**，然后选择*School.mdf*数据库文件从下载的项目。
+对于本教程中使用的数据库优先方法，下一步是将数据库添加到站点。 最简单的方法是先下载本教程中的项目。 然后右键单击 "*应用\_Data* " 文件夹，选择 "**添加现有项**"，然后从下载的项目中选择*School .mdf*数据库文件。
 
-一种替代方法是遵循的说明[创建 School 示例数据库](https://msdn.microsoft.com/library/bb399731.aspx)。 下载数据库或创建它，还是复制*School.mdf*对应用程序的以下文件夹中的文件*应用\_数据*文件夹：
+一种替代方法是按照[创建 School 示例数据库](https://msdn.microsoft.com/library/bb399731.aspx)中的说明进行操作。 无论是下载数据库还是创建数据库，请将以下文件夹中的*School .mdf*文件复制到应用程序的应用程序 *\_Data*文件夹：
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 
-(此位置 *.mdf*文件假定您使用的 SQL Server 2008 Express。)
+（此 *.mdf*文件的位置假设你使用 SQL Server 2008 Express。）
 
-如果从脚本创建数据库，请执行以下步骤以创建数据库关系图：
+如果从脚本创建数据库，请执行以下步骤来创建数据库关系图：
 
-1. 在中**服务器资源管理器**，展开**数据连接**，展开*School.mdf*，右键单击**数据库关系图**，并选择**添加新关系图**。
+1. 在**服务器资源管理器**中，展开 "**数据连接**"，展开 " *School*"，右键单击 "**数据库关系图**"，然后选择 "**添加新关系图**"。
 
     [![Image35](the-entity-framework-and-aspnet-getting-started-part-1/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image17.png)
-2. 选择的所有表，然后单击**添加**。
+2. 选择所有表，然后单击 "**添加**"。
 
     [![Image36](the-entity-framework-and-aspnet-getting-started-part-1/_static/image20.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image19.png)
 
-    SQL Server 创建数据库关系图，显示了表，表和表之间的关系中的列。 您可以移动大约要对其进行组织，但是您喜欢的表。
-3. 保存为"SchoolDiagram"关系图并将其关闭。
+    SQL Server 创建一个数据库关系图，该关系图显示表、表中的列以及表之间的关系。 您可以根据自己的需要移动表以对它们进行组织。
+3. 将关系图保存为 "SchoolDiagram" 并将其关闭。
 
-如果您下载*School.mdf*文件，对于本教程中，您可以通过双击查看数据库关系图**SchoolDiagram**下**数据库关系图**中**服务器资源管理器**。
+如果下载本教程附带的*School .mdf*文件，则可以通过在**服务器资源管理器**中的 "**数据库关系图**" 下双击**SchoolDiagram**来查看数据库关系图。
 
 [![Image38](the-entity-framework-and-aspnet-getting-started-part-1/_static/image22.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image21.png)
 
-该图看起来类似于此 （这些表可能会在不同的位置，从此处所示）：
+关系图看起来类似于下面这样的内容（表可能位于不同位置，如下所示）：
 
 [![Image04](the-entity-framework-and-aspnet-getting-started-part-1/_static/image24.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image23.png)
 
 ## <a name="creating-the-entity-framework-data-model"></a>创建实体框架数据模型
 
-现在你可以从此数据库创建实体框架数据模型。 无法在该应用程序的根文件夹中创建数据模型，但对于本教程将放入名为的文件夹*DAL* （适用于数据访问层）。
+现在，您可以从该数据库创建实体框架的数据模型。 您可以在应用程序的根文件夹中创建数据模型，但对于本教程，您需要将其放在名为*DAL*的文件夹（对于数据访问层）中。
 
-在中**解决方案资源管理器**，添加名为的项目文件夹*DAL* （请确保它是在项目下，不在解决方案下）。
+在**解决方案资源管理器**中，添加一个名为*DAL*的项目文件夹（确保它位于项目下，而不是在解决方案下）。
 
-右键单击*DAL*文件夹，然后选择**添加**并**新项**。 下**已安装的模板**，选择**数据**，选择**ADO.NET 实体数据模型**模板，其命名为*SchoolModel.edmx*，和然后单击**添加**。
+右键单击*DAL*文件夹，然后选择 "**添加**" 和 "**新建项**"。 在 "**已安装的模板**" 下，选择 "**数据**"，选择 " **ADO.NET 实体数据模型**" 模板，将其命名为*SchoolModel*，然后单击 "**添加**"。
 
 [![Image05](the-entity-framework-and-aspnet-getting-started-part-1/_static/image26.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image25.png)
 
-这将启动实体数据模型向导。 在向导第一步**从数据库生成**默认情况下选择选项。 单击 **“下一步”**。
+这将启动实体数据模型向导。 在第一个向导步骤中，默认情况下将选择 "**从数据库生成**" 选项。 单击 **“下一步”** 。
 
 [![Image06](the-entity-framework-and-aspnet-getting-started-part-1/_static/image28.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image27.png)
 
-在中**选择数据连接**步骤中，保留默认值，然后单击**下一步**。 默认情况下选择 School 数据库和连接设置保存在*Web.config*另存为文件**SchoolEntities**。
+在 "**选择你的数据连接**" 步骤中，保留默认值，然后单击 "**下一步**"。 默认情况下，School 数据库处于选中状态，并且连接设置在 web.config*文件中*保存为**SchoolEntities**。
 
 [![Image07](the-entity-framework-and-aspnet-getting-started-part-1/_static/image30.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image29.png)
 
-在中**选择数据库对象**向导步骤中，选择的所有表除外`sysdiagrams`（这先前生成关系图创建的），然后单击**完成**。
+在 "**选择数据库对象**" 向导步骤中，选择除 "`sysdiagrams`" 之外的所有表（为之前生成的关系图创建），然后单击 "**完成**"。
 
 [![Image08](the-entity-framework-and-aspnet-getting-started-part-1/_static/image32.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image31.png)
 
-完成创建模型后，Visual Studio 将显示对应于数据库表的实体框架对象 （实体） 的图形表示形式。 （与数据库关系图中，各个元素的位置可能不同于在此图中看到的内容。 您可以拖动大约要与此图一致，如果你想要的元素。）
+模型创建完成后，Visual Studio 将显示与数据库表相对应的实体框架对象（实体）的图形化表示形式。 （与数据库关系图一样，各个元素的位置可能不同于在此图中看到的内容。 如果需要，可以拖动围绕的元素来匹配图。）
 
 [![Image09](the-entity-framework-and-aspnet-getting-started-part-1/_static/image34.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image33.png)
 
-## <a name="exploring-the-entity-framework-data-model"></a>探索实体框架数据模型
+## <a name="exploring-the-entity-framework-data-model"></a>浏览实体框架数据模型
 
-您可以看到实体关系图看起来非常类似于数据库关系图中，使用两个区别。 一个区别是添加了末尾的每个关联的符号，指示关联的类型 （表关系称为实体关联的数据模型中）：
+您可以看到，实体关系图与数据库关系图非常相似，但有几个不同之处。 一个不同之处是在每个关联的末尾添加符号，以指示关联的类型（数据模型中的表关系称为实体关联）：
 
-- 表示对零或一一关联为"1"和"0..1"。
+- 一对零或一的关联由 "1" 和 "0 .0" 表示。
 
     [![Image39](the-entity-framework-and-aspnet-getting-started-part-1/_static/image36.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image35.png)
 
-    在这种情况下，`Person`实体可能或不可能与关联`OfficeAssignment`实体。 `OfficeAssignment`必须与关联实体`Person`实体。 换而言之，一名讲师可能或可能不会分配给 office，并且任何 office 可以分配到仅一名讲师对应。
-- 一个对多关联由"1"和"\*"。
+    在这种情况下，`Person` 实体不一定与 `OfficeAssignment` 实体相关联。 `OfficeAssignment` 实体必须与 `Person` 实体相关联。 换句话说，指导员可以或不能分配到办公室，任何办公室都只能分配给一个教师。
+- 一对多关联由 "1" 和 "\*" 表示。
 
     [![Image40](the-entity-framework-and-aspnet-getting-started-part-1/_static/image38.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image37.png)
 
-    在这种情况下，`Person`实体可能或可能不包含关联`StudentGrade`实体。 一个`StudentGrade`实体必须与其中一个相关联`Person`实体。 `StudentGrade` 实体实际上表示此数据库; 中的已注册的课程如果一名学生参加课程并且尚未，没有任何级`Grade`属性为 null。 换而言之，一名学生可能未注册的任何课程，可注册在一个课程中，或可能在多个课程中注册。 每个年级的已注册的课程适用于只有一个学生。
-- 表示多对多关联"\*"和"\*"。
+    在这种情况下，`Person` 实体不一定有关联的 `StudentGrade` 实体。 `StudentGrade` 实体必须与一个 `Person` 实体相关联。 `StudentGrade` 实体实际表示此数据库中的已注册课程;如果学生已在课程中注册，但没有评分，则 `Grade` 属性为 null。 换句话说，一名学生可能尚未注册到任何课程中，可以在一个课程中注册，也可以在多个课程中注册。 注册课程中的每个成绩仅适用于一个学生。
+- 多对多关联由 "\*" 和 "\*" 表示。
 
     [![Image41](the-entity-framework-and-aspnet-getting-started-part-1/_static/image40.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image39.png)
 
-    在这种情况下，`Person`实体可能或可能不包含关联`Course`实体和相反也是如此：`Course`实体可能或可能不包含关联`Person`实体。 换而言之，一名讲师可能教授多个课程，并可能由多位讲师讲授课程。 （在此数据库中，此关系仅适用于教师; 它不包含指向学生的课程。 学生通过链接到课程 StudentGrades 表。）
+    在这种情况下，`Person` 实体可能具有也可能不具有关联的 `Course` 实体，反之亦然： `Course` 实体可能具有或没有关联的 `Person` 实体。 换句话说，讲师可以讲授多个课程，一个课程可能由多个讲师讲授。 （在此数据库中，此关系仅适用于讲师; 它不会将学生链接到课程。 学生通过 StudentGrades 表链接到课程。）
 
-数据库关系图和数据模型的另一个区别是附加**导航属性**部分，了解每个实体。 实体的导航属性引用相关的实体。 例如，`Courses`中的属性`Person`实体包含的所有集合`Course`实体相关的`Person`实体。
+数据库关系图和数据模型之间的另一个差异是每个实体的其他**导航属性**部分。 实体的导航属性引用相关实体。 例如，`Person` 实体中的 `Courses` 属性包含与该 `Person` 实体相关的所有 `Course` 实体的集合。
 
 [![Image12](the-entity-framework-and-aspnet-getting-started-part-1/_static/image42.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image41.png)
 
-数据库和数据模型的另一个区别是缺少`CourseInstructor`数据库中使用链接的关联表`Person`和`Course`多对多关系中的表。 导航属性，你可以获取相关`Course`中的实体`Person`实体和相关`Person`中的实体`Course`实体，因此无需来表示数据模型中的关联表。
+但数据库和数据模型之间的另一个差异在于，数据库中使用的 `CourseInstructor` 关联表与多对多关系中的 `Person` 和 `Course` 表之间没有关联。 使用导航属性，您可以从 "`Person`" 实体和 "`Course`" 实体中的相关 `Person` 实体获取相关 `Course` 实体，因此不需要在数据模型中表示关联表。
 
 [![Image11](the-entity-framework-and-aspnet-getting-started-part-1/_static/image44.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image43.png)
 
-出于本教程的目的，假设`FirstName`列的`Person`表实际上包含一个人的名字和中间名。 你想要更改的名称字段以反映此情况，但数据库管理员 (DBA) 可能不希望更改的数据库。 您可以更改名称`FirstName`在数据模型中，同时使其数据库等效属性保持不变。
+出于本教程的目的，假设 `Person` 表的 `FirstName` 列实际包含人员的名字和中间名。 您要更改字段的名称以反映这一点，但数据库管理员（DBA）可能不想更改数据库。 您可以在数据模型中更改 `FirstName` 属性的名称，同时使其数据库的等效项保持不变。
 
-在设计器中，右键单击**FirstName**中`Person`实体，并选择**重命名**。
+在设计器中，右键单击 "`Person`" 实体中的 "**名字**"，然后选择 "**重命名**"。
 
 [![Image13](the-entity-framework-and-aspnet-getting-started-part-1/_static/image46.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image45.png)
 
-键入新名称"FirstMidName"。 这会更改在不更改的数据库的情况下引用代码中的列的方式。
+键入新名称 "FirstMidName"。 这会改变您在代码中引用列的方式，而无需更改数据库。
 
 [![Image29](the-entity-framework-and-aspnet-getting-started-part-1/_static/image48.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image47.png)
 
-在模型浏览器提供了另一种方法可以查看数据库结构、 数据模型结构，以及两者之间的映射。 若要查看它，右键单击实体设计器中的空白区域，然后单击**模型浏览器**。
+模型浏览器提供另一种方法来查看数据库结构、数据模型结构以及它们之间的映射。 若要查看它，请在实体设计器中右键单击空白区域，然后单击 "**模型浏览器**"。
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-1/_static/image50.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image49.png)
 
-**模型浏览器**窗格中显示的树视图。 (**模型浏览器**可能与停靠窗格**解决方案资源管理器**窗格。)**SchoolModel**节点表示数据模型结构，并**SchoolModel.Store**节点表示的数据库结构。
+"**模型浏览器**" 窗格显示树视图。 （"**模型浏览器**" 窗格可能与 "**解决方案资源管理器**" 窗格停靠在一起。）**SchoolModel**节点表示数据模型结构， **SchoolModel**节点表示数据库结构。
 
 [![Image26](the-entity-framework-and-aspnet-getting-started-part-1/_static/image52.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image51.png)
 
-展开**SchoolModel.Store**若要查看的表，展开**表 / 视图**若要查看表，，然后展开**课程**若要查看表中的列。
+展开**SchoolModel**以查看表，展开 "**表/视图**" 以查看表，然后展开 "**课程**" 以查看表中的列。
 
 [![Image19](the-entity-framework-and-aspnet-getting-started-part-1/_static/image54.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image53.png)
 
-展开**SchoolModel**，展开**实体类型**，然后展开**课程**节点可查看的实体和实体中的属性。
+展开 " **SchoolModel**"，展开 "**实体类型**"，然后展开 "**课程**" 节点以查看实体和实体中的属性。
 
 [![Image20](the-entity-framework-and-aspnet-getting-started-part-1/_static/image56.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image55.png)
 
-在任一设计器或**模型浏览器**窗格中可以看到实体框架如何相关的两个模型对象。 右键单击`Person`实体，然后选择**表映射**。
+在 "设计器" 或 "**模型浏览器**" 窗格中，可以看到实体框架如何将这两个模型的对象相关联。 右键单击 "`Person`" 实体，然后选择 "**表映射**"。
 
 [![Image21](the-entity-framework-and-aspnet-getting-started-part-1/_static/image58.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image57.png)
 
-这将打开**映射详细信息**窗口。 请注意，此窗口可让你查看的数据库列`FirstName`映射到`FirstMidName`，这是什么，它重命名为数据模型中。
+这将打开 "**映射详细信息**" 窗口。 请注意，此窗口使你可以看到 `FirstName` 的数据库列映射到数据模型中将其重命名为的 `FirstMidName`。
 
 [![Image22](the-entity-framework-and-aspnet-getting-started-part-1/_static/image60.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image59.png)
 
-实体框架使用 XML 来存储有关数据库、 数据模型中，以及它们之间的映射信息。 *SchoolModel.edmx*文件实际上是 XML 文件，其中包含此信息。 在设计器呈现的信息以图形格式，但您还可以查看该文件为 XML，请右键单击 *.edmx*中的文件**解决方案资源管理器**，再单击**打开方式**，并选择**XML （文本） 编辑器**。 （数据模型设计器和 XML 编辑器是只是两种不同方式打开和使用同一文件中，因此不能具有设计器打开，并在同一时间在 XML 编辑器中打开文件。）
+实体框架使用 XML 存储有关数据库、数据模型和它们之间的映射的信息。 *SchoolModel*文件实际上是包含此信息的 XML 文件。 设计器以图形格式呈现信息，但您也可以通过在**解决方案资源管理器**中右键单击 *.edmx*文件，然后单击 "**打开方式**"，然后选择 " **xml （文本）编辑器**"，以 XML 格式查看文件。 （数据模型设计器和 XML 编辑器只是打开和使用同一文件的两种不同方式，因此您不能同时打开设计器并在 XML 编辑器中打开该文件。）
 
-你现在已创建网站、 数据库和数据模型。 在下一个演练中将开始处理数据使用的数据模型和 ASP.NET`EntityDataSource`控件。
+你现在已经创建了一个网站、一个数据库和一个数据模型。 在下一个演练中，你将开始使用数据模型和 ASP.NET `EntityDataSource` 控件处理数据。
 
 > [!div class="step-by-step"]
-> [下一页](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [下一部分](the-entity-framework-and-aspnet-getting-started-part-2.md)

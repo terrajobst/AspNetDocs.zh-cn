@@ -9,11 +9,11 @@ ms.assetid: 41c818b7-603a-402b-8847-890a63547b6f
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c208b4a756f5700be46eec924d8cf8f49b9d2507
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74616183"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78482078"
 ---
 # <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>在 GridView 的页脚中显示摘要信息 (VB)
 
@@ -175,7 +175,7 @@ GridView 控件可以同时显示页眉行和表尾行。 这些行将分别显�
 
 **图 13**： GridView 的页脚行现在具有 Reddish 背景色（[单击以查看完全尺寸的图像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 显示摘要数据是一种常见的报表要求，而使用 GridView 控件可以轻松地将此类信息包含在其页脚行中。 当 GridView 的 `ShowFooter` 属性设置为 `True` 时，将显示页脚行，并且可以通过 `RowDataBound` 事件处理程序以编程方式设置其单元格中的文本。 可以通过重新查询数据库或使用 ASP.NET 页的代码隐藏类中的代码以编程方式计算汇总数据，来计算汇总数据。
 
@@ -188,4 +188,4 @@ GridView 控件可以同时显示页眉行和表尾行。 这些行将分别显�
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [上一部分](using-the-formview-s-templates-vb.md)
+> [上一页](using-the-formview-s-templates-vb.md)

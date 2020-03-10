@@ -7,12 +7,12 @@ ms.date: 10/04/2018
 ms.assetid: f3d8adbe-55e7-4fd4-84a8-7155bc45c676
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: c74daa37f68dda641cae97d3b0c19718f62d474d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.openlocfilehash: ca39bc37c757c0452cf56624c8e37c04df4b41f2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456382"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78487952"
 ---
 # <a name="getting-started-with-aspnet-mvc-5"></a>ASP.NET MVC 5 入门
 
@@ -20,7 +20,7 @@ ms.locfileid: "77456382"
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
-本教程介绍使用[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)生成 ASP.NET MVC 5 web 应用程序的基础知识。 本教程的最终源代码位于[GitHub](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)上。
+本教程介绍使用[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)生成 ASP.NET MVC 5 web 应用程序的基础知识。 本教程的最终源代码位于[GitHub](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)上。
 
 本教程作者： [Scott Guthrie](https://weblogs.asp.net/scottgu/) （twitter[@scottgu](https://twitter.com/scottgu) ）、 [scott Hanselman](http://www.hanselman.com/blog/) （Twitter： [@shanselman](https://twitter.com/shanselman) ）和[Rick Anderson](https://twitter.com/RickAndMSFT) （ [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT) ）
 
@@ -37,7 +37,7 @@ Visual Studio 是一个 IDE，或集成的开发环境。 就像使用 Microsoft
 
 ![](getting-started/_static/image1.png)
 
-## <a name="create-your-first-app"></a>创建第一个应用
+## <a name="create-your-first-app"></a>创建你的第一个应用
 
 在 "**开始" 页**上，选择 "**新建项目**"。 在 "**新建项目**" 对话框中，选择左侧的**视觉对象C#** 类别，然后选择 " **web**"，然后选择 " **ASP.NET Web 应用程序（.NET Framework）** " 项目模板。 将项目命名为 "MvcMovie"，然后选择 **"确定**"。
 
@@ -51,7 +51,7 @@ Visual Studio 使用了你刚刚创建的 ASP.NET MVC 项目的默认模板，�
 
 ![](getting-started/_static/image4.png)
 
-按 **F5** 开始调试。 按**F5**时，Visual Studio 将启动[IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)并运行你的 web 应用。 然后，Visual Studio 会启动浏览器并打开应用程序的主页。 请注意，浏览器的地址栏会显示 `localhost:port#`，而不是类似 `example.com`。 这是因为 `localhost` 始终指向您自己的本地计算机，在本例中，该计算机运行刚构建的应用程序。 当 Visual Studio 运行 web 项目时，会将随机端口用于 web 服务器。 在下图中，端口号为1234。 运行应用程序时，将看到不同的端口号。
+按 **F5** 启动调试。 按**F5**时，Visual Studio 将启动[IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)并运行你的 web 应用。 然后，Visual Studio 会启动浏览器并打开应用程序的主页。 请注意，浏览器的地址栏会显示 `localhost:port#`，而不是类似 `example.com`。 这是因为 `localhost` 始终指向您自己的本地计算机，在本例中，该计算机运行刚构建的应用程序。 当 Visual Studio 运行 web 项目时，会将随机端口用于 web 服务器。 在下图中，端口号为1234。 运行应用程序时，将看到不同的端口号。
 
 ![](getting-started/_static/image5.png)
 
@@ -67,7 +67,7 @@ Visual Studio 使用了你刚刚创建的 ASP.NET MVC 项目的默认模板，�
 
 要查看作为实时 web 应用运行的已完成站点吗？ 只需单击以下按钮，即可将应用程序的完整版本部署到 Azure 帐户。
 
-[![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
+[![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/dotnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
 
 需要一个 Azure 帐户才能将此解决方案部署到 Azure。 如果还没有帐户，请使用以下选项之一创建一个帐户：
 
@@ -75,4 +75,4 @@ Visual Studio 使用了你刚刚创建的 ASP.NET MVC 项目的默认模板，�
 - [激活 Visual studio 订阅者权益](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers)-你的 visual studio 订阅每月为你提供可用于付费 Azure 服务的信用额度。
 
 > [!div class="step-by-step"]
-> [Next](adding-a-controller.md)
+> [下一部分](adding-a-controller.md)

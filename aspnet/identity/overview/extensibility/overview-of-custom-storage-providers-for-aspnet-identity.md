@@ -10,15 +10,15 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 21baedf6285b411f89627df9ca25d47a2a42e387
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519097"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472220"
 ---
 # <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自定义存储提供程序概述
 
-通过[Tom FitzMacken](https://github.com/tfitzmac)
+作者： [Tom FitzMacken](https://github.com/tfitzmac)
 
 > ASP.NET Identity 是一种可扩展系统，可让你创建自己的存储提供程序，并将其插入到应用程序中，而无需重新运行应用程序。 本主题介绍如何为 ASP.NET Identity 创建自定义的存储提供程序。 它介绍了用于创建自己的存储提供程序的重要概念，但它不是实现自定义存储提供程序的分步演练。
 > 
@@ -29,7 +29,7 @@ ms.locfileid: "76519097"
 > ## <a name="software-versions-used-in-the-tutorial"></a>本教程中使用的软件版本
 > 
 > 
-> - Visual Studio 2013（包含更新 2）
+> - Visual Studio 2013 更新2
 > - ASP.NET Identity 2
 
 ## <a name="introduction"></a>简介
@@ -68,7 +68,7 @@ ASP.NET Identity 由名为管理器和存储的类组成。 管理器是应用�
 
 若要实现自定义存储提供程序，您必须了解与 ASP.NET Identity 一起使用的数据类型，并决定哪些功能与您的应用程序相关。
 
-| 数据 | 描述 |
+| 数据 | 说明 |
 | --- | --- |
 | 用户 | 网站的已注册用户。 包括用户 Id 和用户名。 如果用户使用特定于你的站点的凭据（而不是使用 Facebook 之类的外部站点的凭据）登录，则可能包含哈希密码，以及用于指示用户凭据中是否有任何更改的安全标记。 还可能包括电子邮件地址、电话号码、是否启用了双因素身份验证、当前失败的登录数以及某个帐户是否已锁定。 |
 | 用户声明 | 有关表示用户标识的用户的一组语句（或声明）。 可以启用用户标识的更大表达式，而不能通过角色来实现。 |
@@ -86,11 +86,11 @@ ASP.NET Identity 由名为管理器和存储的类组成。 管理器是应用�
 
 在数据访问层中，提供用于将数据从 ASP.NET Identity 保存到数据源的逻辑。 自定义存储提供程序的数据访问层可能包含以下类来存储用户和角色信息。
 
-| 类 | 描述 | 示例 |
+| 类 | 说明 | 示例 |
 | --- | --- | --- |
 | 上下文 | 封装信息以连接到永久性机制并执行查询。 此类是你的数据访问层的核心。 其他数据类将需要此类的实例来执行其操作。 您还将使用此类的实例初始化您的存储类。 | [MySQLDatabase](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
 | 用户存储 | 存储和检索用户信息（例如用户名和密码哈希）。 | [UserTable （MySQL）](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserTable.cs) |
-| 角色存储 | 存储和检索角色信息（如角色名称）。 | [RoleTable (MySQL)](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/RoleTable.cs) |
+| 角色存储 | 存储和检索角色信息（如角色名称）。 | [RoleTable （MySQL）](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/RoleTable.cs) |
 | UserClaims 存储 | 存储和检索用户声明信息（如声明类型和值）。 | [UserClaimsTable （MySQL）](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserClaimsTable.cs) |
 | UserLogins 存储 | 存储和检索用户登录信息（如外部身份验证提供程序）。 | [UserLoginsTable （MySQL）](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserLoginsTable.cs) |
 | UserRole 存储 | 存储和检索用户分配到的角色。 | [UserRoleTable （MySQL）](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserRoleTable.cs) |

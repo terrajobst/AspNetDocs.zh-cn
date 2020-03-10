@@ -9,11 +9,11 @@ ms.assetid: 2646968c-2826-4418-b1d0-62610ed177e3
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 28c39fe2a290cc3a5b093fdd09de341630606137
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74629154"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78492362"
 ---
 # <a name="implementing-optimistic-concurrency-vb"></a>实现乐观并发 (VB)
 
@@ -354,7 +354,7 @@ DAL 和 BLL 完成后，剩下的就是创建一个可利用内置于系统中�
 
 **图 20**：发生并发冲突时取消用户删除（[单击以查看完全大小的映像](implementing-optimistic-concurrency-vb/_static/image58.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在允许多个并发用户更新或删除数据的每个应用程序中都存在并发冲突的机会。 如果未考虑此类冲突，则当两个用户同时更新在上一次写入 "wins" 时获取的相同数据时，将覆盖其他用户的更改更改。 或者，开发人员可以实现乐观或悲观并发控制。 乐观并发控制假定并发冲突不常发生，只是不允许使用导致并发冲突的更新或删除命令。 悲观并发控制假设经常发生并发冲突，只是拒绝一个用户的 update 或 delete 命令是不可接受的。 使用悲观并发控制，更新记录涉及锁定，从而防止任何其他用户在锁定时修改或删除记录。
 

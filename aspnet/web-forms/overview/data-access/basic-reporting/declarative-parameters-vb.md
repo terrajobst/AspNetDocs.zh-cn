@@ -9,11 +9,11 @@ ms.assetid: dc1234a3-114f-4c9a-8d25-50ca03cc8e8e
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cdc42752fc78d18366af037a81fe4ebe5a1646ef
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74612900"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78483128"
 ---
 # <a name="declarative-parameters-vb"></a>声明性参数 (VB)
 
@@ -122,7 +122,7 @@ ObjectDataSource 可用于调用需要输入参数的方法，但为了实现此
 
 **图 10**：默认情况下，所有供应商都显示（[单击以查看完全大小的图像](declarative-parameters-vb/_static/image30.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 为了将方法用于输入参数，我们需要在 ObjectDataSource 的 `SelectParameters` 集合中指定参数的值。 不同类型的参数允许从不同的源中获取参数值。 默认参数类型使用硬编码值，但与从查询字符串、会话变量、cookie，甚至是用户输入的值一样，可以从页上的 Web 控件获取参数值。
 

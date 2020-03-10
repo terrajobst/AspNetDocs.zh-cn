@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
-title: '[如何实现:]实现永久通信模式使用 Web 服务？ | Microsoft Docs'
+title: '[如何实现：]使用 Web 服务实现持久通信模式？ | Microsoft Docs'
 author: JoeStagner
-description: 在传统的 Web 站点在浏览器和服务器不维护正在进行的通信，但仅在响应执行行为的用户进行通信...
+description: 在传统的网站中，浏览器和服务器不保持正在进行的通信，而只是为了响应执行 act 。
 ms.author: riande
 ms.date: 08/22/2007
 ms.assetid: 424c06cd-6d61-43cd-a1f2-d1a6b62e47b1
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
 msc.type: video
 ms.openlocfilehash: de2eb281cd4bab46635af480ac2e8f07f60f1591
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408103"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510212"
 ---
-# <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[如何实现:]实现永久通信模式使用 Web 服务？
+# <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[如何实现：]使用 Web 服务实现持久通信模式？
 
-通过[Joe Stagner](https://github.com/JoeStagner)
+作者： [Joe Stagner](https://github.com/JoeStagner)
 
-在传统的网站上浏览器和服务器不维护正在进行的通信，但仅在执行操作的用户响应通信。 在新式网站页面其中成为应用程序容器，它可以是有好处的浏览器和维护正在进行的通信，以便执行操作的用户不会执行页面更新服务器。 这称为 AJAX 永久通信模式。 ASP.NET AJAX 提供了两种主要方法为 Web 开发人员实现永久通信模式。 在早期的视频中，我们已了解如何使用 ASP.NET AJAX UpdatePanel 作为实现的基础。 在本视频中，我们将了解如何实现使用 Web 服务，无需 ASP.NET AJAX UpdatePanel JavaScrpt 调用相同的模式。
+在传统网站中，浏览器和服务器不保持持续的通信，而只是为了响应执行操作的用户。 在页面成为应用程序容器的新式网站中，浏览器和服务器保持正在进行的通信很有利，这样，无需用户执行操作，即可进行页面更新。 这称为 AJAX 的持久通信模式。 ASP.NET AJAX 为 Web 开发人员提供了两种主要方式来实现持久通信模式。 在前面的视频中，我们看到了如何使用 ASP.NET AJAX UpdatePanel 作为实现的基础。 在此视频中，我们将了解如何使用对 Web 服务的 JavaScrpt 调用来实现同一模式，这不再需要 ASP.NET AJAX UpdatePanel。
 
-[&#9654;观看视频 （16 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-persistent-communications-pattern-using-web-services)
+[&#9654;观看视频（16分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-persistent-communications-pattern-using-web-services)
 
 > [!div class="step-by-step"]
 > [上一页](how-do-i-localize-an-aspnet-ajax-application.md)

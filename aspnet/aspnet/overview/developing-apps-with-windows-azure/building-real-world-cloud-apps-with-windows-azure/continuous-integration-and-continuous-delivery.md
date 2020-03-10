@@ -9,11 +9,11 @@ ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
 ms.openlocfilehash: cf3c65ef95528173eed3fb08984035b2512861c4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457032"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500858"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持续集成和持续交付（通过 Azure 构建实际的云应用）
 
@@ -54,7 +54,7 @@ Azure DevOps Services 提供了许多功能，可帮助你从规划到部署的�
 
 如果你正在寻找关键项目管理、团队协作和源代码管理解决方案，请查看 Azure DevOps Services。 注册[Azure DevOps Services](https://dev.azure.com/)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 前三种云开发模式已经介绍了如何实现一个可重复、可靠、可预测的开发过程，时间较短。 [下一章](web-development-best-practices.md)将介绍体系结构和编码模式。
 

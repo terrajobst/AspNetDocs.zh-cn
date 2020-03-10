@@ -9,11 +9,11 @@ ms.assetid: f904cd2c-a408-4484-9324-8b8d7fe33893
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 78051696bd75e1d574f55b1c5d5891fe67c3030d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74630114"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481610"
 ---
 # <a name="building-a-custom-database-driven-site-map-provider-vb"></a>生成自定义数据库驱动站点地图提供程序 (VB)
 
@@ -284,7 +284,7 @@ SiteMapPath 控件在 "`ProductsByCategory.aspx`" 和 "`ProductDetails.aspx`" �
 > [!NOTE]
 > 请务必测试 SQL 缓存依赖关系功能。 访问 `Default.aspx`、`ProductsByCategory.aspx`和 `ProductDetails.aspx` 页后，请在 "编辑"、"插入" 和 "删除" 部分中找到其中一个教程，然后编辑类别或产品的名称。 然后返回到 `SiteMapProvider` 文件夹中的某个页面。 假设已为轮询机制传递了足够的时间来记录对基础数据库的更改，则应更新站点地图以显示新的产品或类别名称。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 2.0 s 站点地图功能包括一个 `SiteMap` 类、许多内置的导航 Web 控件和一个需要将站点地图信息保存到 XML 文件的默认站点地图提供程序。 若要从某个其他源（例如数据库、应用程序的体系结构或远程 Web 服务）使用站点地图信息，我们需要创建自定义站点地图提供程序。 这涉及到从 `SiteMapProvider` 类创建直接或间接派生的类。
 
@@ -310,4 +310,4 @@ ASP.NET 2.0 s 站点地图功能包括一个 `SiteMap` 类、许多内置的导�
 此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Dave Gardner、Zack、Teresa Murphy 和 Bernadette Leigh。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](building-a-custom-database-driven-site-map-provider-cs.md)
+> [上一页](building-a-custom-database-driven-site-map-provider-cs.md)

@@ -9,11 +9,11 @@ ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
 ms.openlocfilehash: a9d39547c94a63003442ba6fe1257693dde24b05
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621793"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513710"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio 的 ASP.NET Web 部署： web.config 文件转换
 
@@ -47,7 +47,7 @@ Web 部署参数可用于指定在部署过程中必须配置的多种不同类�
 
 在**解决方案资源管理器**中，*展开 web.config*以查看默认情况下为两个默认生成配置*创建的 web.config 和* *web.config*转换文件。
 
-![Web。 config_transform_files](web-config-transformations/_static/image1.png)
+![Web.config_transform_files](web-config-transformations/_static/image1.png)
 
 您可以通过右键单击 web.config 文件，然后从上下文菜单中选择 "**添加配置转换**"，为自定义生成配置创建转换文件。 对于本教程，无需执行此操作，并且菜单选项被禁用，因为尚未创建任何自定义生成配置。
 
@@ -134,7 +134,7 @@ Contoso 大学网页读取在*web.config 文件 `appSettings`* 中设置的值�
 
 尽管默认转换文件包含演示如何更新连接字符串的示例，但在大多数情况下，你不需要设置连接字符串转换，因为你可以在发布配置文件中指定连接字符串。 你将在 "[部署到 IIS](deploying-to-iis.md) " 和 "[部署到生产](deploying-to-production.md)" 教程中执行此操作。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在创建发布配置文件之前，你已完成*了与 web.config 转换相同*的操作，并且已查看部署的 web.config 文件中将包含的内容的预览。
 

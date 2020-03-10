@@ -2,22 +2,22 @@
 uid: web-api/overview/web-api-routing-and-actions/index
 title: Web API 路由 |Microsoft Docs
 author: rick-anderson
-description: 如何 ASP.NET Web API 将 HTTP 请求路由到控制器和操作。
+description: ASP.NET Web API 如何将 HTTP 请求路由到控制器和操作。
 ms.author: riande
 ms.date: 01/26/2012
 ms.assetid: 8447679a-2556-4411-b758-bbe55cfa4805
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions
 msc.type: chapter
 ms.openlocfilehash: 965fb110e1c42d8e6ebe198da4a904e1601bcf29
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133669"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78498110"
 ---
 # <a name="web-api-routing"></a>Web API 路由
 
-> 如何 ASP.NET Web API 将 HTTP 请求路由到控制器和操作。
+> ASP.NET Web API 如何将 HTTP 请求路由到控制器和操作。
 
 - [Web API 中的路由](routing-in-aspnet-web-api.md)
 - [Web API 中的路由和操作选择](routing-and-action-selection.md)

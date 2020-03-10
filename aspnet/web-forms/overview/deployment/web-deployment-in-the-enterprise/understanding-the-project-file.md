@@ -9,11 +9,11 @@ ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
 ms.openlocfilehash: 419fe51aaf65bddcc2c50380f099f842a8d9439c
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445693"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508052"
 ---
 # <a name="understanding-the-project-file"></a>了解项目文件
 
@@ -23,7 +23,7 @@ ms.locfileid: "73445693"
 
 > Microsoft 生成引擎（MSBuild）项目文件位于生成和部署过程的核心。 本主题以 MSBuild 和项目文件的概念性概述开头。 它介绍了在处理项目文件时将遇到的关键组件，并通过一个示例来演示如何使用项目文件来部署真实的应用程序。
 > 
-> 你将学习的内容：
+> 学习内容：
 > 
 > - MSBuild 如何使用 MSBuild 项目文件来生成项目。
 > - MSBuild 如何与部署技术（如 Internet Information Services （IIS） Web 部署工具（Web 部署））集成。
@@ -97,13 +97,13 @@ MSBuild 项目文件基于[MSBUILD XML 架构](/visualstudio/msbuild/msbuild-pro
 > [!NOTE]
 > 有关可用于 Msbuild.exe 的参数和开关的详细信息，请参阅[Msbuild 命令行参考](https://msdn.microsoft.com/library/ms164311.aspx)。
 
-您可以使用相同的属性语法来获取环境变量和内置项目属性的值。 许多常用的属性是为你定义的，你可以通过包含相关参数名称在项目文件中使用它们。 例如，若要检索的当前项目平台&#x2014;例如 **x86** 或 **AnyCpu**&#x2014;可以包括 **$(Platform)** 中的属性引用你的项目文件。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)、[常用的 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)以及[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
+您可以使用相同的属性语法来获取环境变量和内置项目属性的值。 许多常用的属性是为你定义的，你可以通过包含相关参数名称在项目文件中使用它们。 例如，&#x2014;若要检索当前项目平台（例如**x86**或**AnyCpu**&#x2014;），可以在项目文件中包含 **$ （platform）** 属性引用。 有关详细信息，请参阅[用于生成命令和属性的宏](https://msdn.microsoft.com/library/c02as0cs.aspx)、[常用的 MSBuild 项目属性](https://msdn.microsoft.com/library/bb629394.aspx)以及[保留属性](https://msdn.microsoft.com/library/ms164309.aspx)。
 
 属性通常与*条件*结合使用。 大多数 MSBuild 元素都支持**Condition**特性，这使你可以指定 MSBuild 计算元素时所依据的条件。 例如，请考虑以下属性定义：
 
 [!code-xml[Main](understanding-the-project-file/samples/sample5.xml)]
 
-当 MSBuild 处理此属性定义时，它首先会检查以查看是否 **$(OutputRoot)** 属性值为可用。 如果属性值为空&#x2014;，则该用户未提供此属性&#x2014;的值，条件的计算结果为**true** ，并且属性值设置为 **。\Publish\Out**。如果用户已为此属性提供值，则条件的计算结果为**false** ，并且不使用静态属性值。
+当 MSBuild 处理此属性定义时，它会首先检查 **$ （OutputRoot）** 属性值是否可用。 如果属性值为空&#x2014;，则该用户未提供此属性&#x2014;的值，条件的计算结果为**true** ，并且属性值设置为 **。\Publish\Out**。如果用户已为此属性提供值，则条件的计算结果为**false** ，并且不使用静态属性值。
 
 有关可用于指定条件的不同方法的详细信息，请参阅[MSBuild 条件](https://msdn.microsoft.com/library/7szfhaft.aspx)。
 
@@ -130,7 +130,7 @@ Item 元素还可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms16
 
 ### <a name="targets-and-tasks"></a>目标和任务
 
-在 MSBuild 架构中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示单个生成指令（或任务）。 MSBuild 包含许多预定义任务。 例如：
+在 MSBuild 架构中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素表示单个生成指令（或任务）。 MSBuild 包含许多预定义任务。 例如:
 
 - **复制**任务将文件复制到新位置。
 - **Csc**任务调用 Visual C#编译器。
@@ -145,7 +145,7 @@ Item 元素还可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms16
 
 [!code-xml[Main](understanding-the-project-file/samples/sample9.xml)]
 
-你可以通过调用从命令行中，目标 **/t** 开关指定目标。
+可以通过使用 **/t**开关指定目标，从命令行调用目标。
 
 [!code-console[Main](understanding-the-project-file/samples/sample10.cmd)]
 
@@ -213,7 +213,7 @@ Item 元素还可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms16
 > [!NOTE]
 > 有关如何为自己的服务器环境自定义特定于环境的项目文件的指南，请参阅[配置目标环境的部署属性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
 
-## <a name="conclusion"></a>结论
+## <a name="conclusion"></a>结束语
 
 本主题提供了对 MSBuild 项目文件的常规介绍，并介绍了如何创建自己的自定义项目文件来控制生成过程。 它还引入了将项目文件拆分为通用生成指令和特定于环境的生成属性的概念，使你可以轻松地生成项目并将其部署到多个目标。
 

@@ -9,11 +9,11 @@ ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 4d9dbaf41926b43af171619ee34f58da84b5dab1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582211"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509384"
 ---
 # <a name="strategies-for-database-development-and-deployment-c"></a>数据库开发和部署策略 (C#)
 
@@ -55,9 +55,9 @@ ms.locfileid: "74582211"
 
 | **更改日期** | **更改详细信息** |
 | --- | --- |
-| 2009-02-03： | 向 `Employees` 表中添加了列 `DepartmentID` （`int`，而非 NULL）。 向 `Employees.DepartmentID`添加了 `Departments.DepartmentID` 的外键约束。 |
-| 2009-02-05： | 从 `Orders` 表中删除了列 `TotalWeight`。 已在关联的 `OrderDetails` 记录中捕获的数据。 |
-| 2009-02-12： | 已创建 `ProductCategories` 表。 有三列： `ProductCategoryID` （`int`、`IDENTITY`、`NOT NULL`）、`CategoryName` （`nvarchar(50)`、`NOT NULL`）和 `Active` （`bit`、`NOT NULL`）。 已将 primary key 约束添加到 `ProductCategoryID`，将默认值1添加到 `Active`。 |
+| 2009-02-03: | 向 `Employees` 表中添加了列 `DepartmentID` （`int`，而非 NULL）。 向 `Employees.DepartmentID`添加了 `Departments.DepartmentID` 的外键约束。 |
+| 2009-02-05: | 从 `Orders` 表中删除了列 `TotalWeight`。 已在关联的 `OrderDetails` 记录中捕获的数据。 |
+| 2009-02-12: | 已创建 `ProductCategories` 表。 有三列： `ProductCategoryID` （`int`、`IDENTITY`、`NOT NULL`）、`CategoryName` （`nvarchar(50)`、`NOT NULL`）和 `Active` （`bit`、`NOT NULL`）。 已将 primary key 约束添加到 `ProductCategoryID`，将默认值1添加到 `Active`。 |
 
 此方法有许多缺点。 对于初学者来说，无希望自动化。 无论何时需要将这些更改应用到数据库（例如，在部署应用程序时），开发人员都必须手动实现每个更改（一次一个）。 此外，如果您需要使用更改日志重构基线中的特定版本的数据库，则执行此操作将需要更多的时间，因为日志大小会增长。 此方法的另一个缺点是，每个更改日志条目的清晰度和详细程度会留给记录更改的人员。 在具有多个开发人员的团队中，某些开发人员可能会提供比其他开发人员更详细、更具可读性或更精确的条目。 此外，还可能会出现打字错误和其他与人工相关的数据输入错误。
 
@@ -134,7 +134,7 @@ SQL 比较将数据库对象分解为多个组，快速显示两个数据库中�
 
 在部署过程中使应用程序脱机，就像在开始部署过程之前将 `app_offline.htm` 文件上传到生产环境的根目录一样简单，然后在部署完成后将其删除（或将其重命名为其他内容）。 有关此技术的详细信息，请参阅 John Peterson 一文，使[*ASP.NET 应用程序脱机*](http://www.15seconds.com/issue/061207.htm)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在部署数据库时部署数据驱动的应用程序中心的主要挑战。 因为有两个版本的数据库-一个在开发环境中，另一个在生产环境中，因此在开发中添加新功能后，这两个数据库架构可能会变得不同步。 更多是，因为生产数据库是用真实用户的实际数据填充的，所以你不能用修改后的开发数据库覆盖生产数据库，就像部署构成应用程序的文件（ASP.NET 页）时，图像文件等。 相反，部署数据库需要实现自上次部署以来对生产数据库中的开发数据库所做的一系列更改。
 

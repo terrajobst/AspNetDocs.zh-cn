@@ -8,18 +8,18 @@ ms.date: 11/24/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 960960d26863cc3f725eee8a6c98844c5d3ce721
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: ab3ba71839123e848dffaa59871f9dac8c1a88d0
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519175"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78504956"
 ---
 # <a name="call-a-web-api-from-a-net-client-c"></a>从 .NET 客户端调用 Web API （C#）
 
 作者： [Mike Wasson](https://github.com/MikeWasson)和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[下载完成的项目](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 
+[下载完成的项目](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下载说明](/aspnet/core/tutorials/#how-to-download-a-sample)。 
 
 本教程演示如何使用[HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)从 .net 应用程序调用 web API。
 
@@ -30,7 +30,7 @@ ms.locfileid: "76519175"
 | 按 ID 获取产品 | GET | /api/products/*id* |
 | 创建新产品 | POST | /api/products |
 | 更新产品 | PUT | /api/products/*id* |
-| 删除产品 | 删除 | /api/products/*id* |
+| 删除产品 | DELETE | /api/products/*id* |
 
 若要了解如何使用 ASP.NET Web API 实现此 API，请参阅[创建支持 CRUD 操作的 WEB API](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 )。
@@ -55,7 +55,7 @@ ms.locfileid: "76519175"
 
 使用 NuGet 包管理器安装 Web API 客户端库包。
 
-从“工具”菜单中，选择“NuGet 包管理器” > “包管理器控制台”。 在 "程序包管理器控制台" （PMC）中，键入以下命令：
+从“工具”菜单中，选择“NuGet 包管理器” **“包管理器控制台”**  > 。 在 "程序包管理器控制台" （PMC）中，键入以下命令：
 
 `Install-Package Microsoft.AspNet.WebApi.Client`
 
@@ -165,7 +165,7 @@ resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 
 测试客户端应用：
 
-1. [下载](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用。 [下载说明](/aspnet/core/#how-to-download-a-sample)。 验证服务器应用是否正常工作。 例如，`http://localhost:64195/api/products` 应返回产品列表。
+1. [下载](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server)并运行服务器应用。 [下载说明](/aspnet/core/#how-to-download-a-sample)。 验证服务器应用是否正常工作。 例如，`http://localhost:64195/api/products` 应返回产品列表。
 2. 设置 HTTP 请求的基 URI。 将端口号更改为服务器应用中使用的端口。
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

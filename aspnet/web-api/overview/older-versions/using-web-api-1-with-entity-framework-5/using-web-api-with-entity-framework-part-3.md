@@ -9,11 +9,11 @@ ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
 ms.openlocfilehash: f39be7a84e85db93487d246e9f8cb59c401fe5ce
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600032"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447908"
 ---
 # <a name="part-3-creating-an-admin-controller"></a>第3部分：创建管理控制器
 
@@ -64,13 +64,13 @@ ms.locfileid: "74600032"
 
 `AdminController` 类定义了五种实现基本 CRUD 功能的方法。 每个方法都对应于客户端可以调用的 URI：
 
-| 控制器方法 | 描述 | URI | HTTP 方法 |
+| 控制器方法 | 说明 | URI | HTTP 方法 |
 | --- | --- | --- | --- |
 | GetProducts | 获取所有产品。 | api/产品 | GET |
 | GetProduct | 按 ID 查找产品。 | api/产品/*id* | GET |
 | PutProduct | 更新产品。 | api/产品/*id* | PUT |
 | PostProduct | 创建新产品。 | api/产品 | POST |
-| DeleteProduct | 删除产品。 | api/产品/*id* | 删除 |
+| DeleteProduct | 删除产品。 | api/产品/*id* | DELETE |
 
 每个方法都调用到 `OrdersContext` 来查询数据库。 修改集合（PUT、POST 和 DELETE）调用 `db.SaveChanges` 的方法将更改保存到数据库中。 控制器是根据每个 HTTP 请求创建的，然后被释放，因此，在方法返回之前需要保存更改。
 

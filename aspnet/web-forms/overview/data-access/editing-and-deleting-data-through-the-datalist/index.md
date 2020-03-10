@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/index
-title: 编辑和删除数据通过 DataList |Microsoft Docs
+title: 通过 DataList 编辑和删除数据 |Microsoft Docs
 author: rick-anderson
-description: 这些教程介绍如何调整 DataList 控件，使它允许使用修改的数据。
+description: 这些教程介绍了如何调整 DataList 控件，使其能够使用修改数据。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: a6f02826-428a-49b1-ab2c-8e080b72f51e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist
 msc.type: chapter
 ms.openlocfilehash: b19b983272988cc6802e56541a8dfed052eead04
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133529"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78494936"
 ---
 # <a name="editing-and-deleting-data-through-the-datalist"></a>通过 DataList 编辑和删除数据
 
-> 这些教程介绍如何调整 DataList 控件，使它允许使用修改的数据。
+> 这些教程介绍了如何调整 DataList 控件，使其能够使用修改数据。
 
 - [编辑和删除 DataList 中的数据的概述 (C#)](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
 - [执行批量更新 (C#)](performing-batch-updates-cs.md)

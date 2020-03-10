@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/index
-title: Visual Studio 2012 和 2013 ASP.NET |Microsoft Docs
+title: Visual Studio 2012 和 2013 with ASP.NET |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,17 +9,17 @@ ms.assetid: 7356f644-2b54-4d9f-8863-9d59b9f75532
 msc.legacyurl: /visual-studio
 msc.type: categoryindex
 ms.openlocfilehash: 929900911e96890ee635b9831e3759411fe93acb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022344"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78467078"
 ---
-# <a name="visual-studio-2012-and-2013-with-aspnet"></a>Visual Studio 2012 和 2013 使用 ASP.NET
+# <a name="visual-studio-2012-and-2013-with-aspnet"></a>Visual Studio 2012 和 2013 with ASP.NET
 
-有关 Visual Studio 的当前信息，请转到[visualstudio.microsoft.com](https://visualstudio.microsoft.com)。
+有关 Visual Studio 的最新信息，请参阅[visualstudio.microsoft.com](https://visualstudio.microsoft.com)。
 
-以下页面链接到有关如何使用 ASP.NET 的早期版本的 Visual Studio 的信息。
+以下页面提供了有关如何在 ASP.NET 中使用 Visual Studio 的早期版本的信息的链接。
 
 - [Visual Studio 2017](overview/2017/index.md)
 - [Visual Studio 2013](overview/2013/index.md)

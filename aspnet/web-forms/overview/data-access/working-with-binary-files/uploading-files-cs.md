@@ -9,11 +9,11 @@ ms.assetid: b381b1da-feb3-4776-bc1b-75db53eb90ab
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 4e3e32a829de386a681504c8d5d61dd258b8b2e6
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74581876"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441692"
 ---
 # <a name="uploading-files-c"></a>上载文件 (C#)
 
@@ -229,7 +229,7 @@ FileUpload `SaveAs(filePath)` 将上传的文件保存到指定的*filePath*。 
 
 如果你的应用程序需要处理大文件，则需要仔细调查这些挑战，并根据特定需求查找合适的解决方案。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 构建需要捕获二进制数据的应用程序带来了许多挑战。 在本教程中，我们探讨了前两个步骤：决定存储二进制数据的位置，并允许用户通过网页上传二进制内容。 在接下来的三个教程中，我们将了解如何将已上传的数据与数据库中的记录相关联，以及如何在其文本数据字段旁显示二进制数据。
 
@@ -253,4 +253,4 @@ FileUpload `SaveAs(filePath)` 将上传的文件保存到指定的*filePath*。 
 此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Teresa Murphy 和 Bernadette Leigh。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](displaying-binary-data-in-the-data-web-controls-cs.md)
+> [下一部分](displaying-binary-data-in-the-data-web-controls-cs.md)

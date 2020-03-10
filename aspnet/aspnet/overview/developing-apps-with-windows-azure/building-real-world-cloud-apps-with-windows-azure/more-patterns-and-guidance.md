@@ -9,11 +9,11 @@ ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
 ms.openlocfilehash: 57e32bf7568ecb0eb22f0f2b585310dcab2d5d43
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457071"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472616"
 ---
 # <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多模式和指导（通过 Azure 构建实际的云应用）
 
@@ -74,7 +74,7 @@ ms.locfileid: "77457071"
 最后，当你开始构建真实的应用程序并在 Azure 中运行这些应用程序时，可能需要专家的帮助。 你可以在社区网站（如[azure 论坛或 StackOverflow](https://azure.microsoft.com/support/forums/)）中提问问题，也可以直接与 Microsoft 联系以获取 azure 支持。 Microsoft 提供了多个 Azure 技术支持级别：有关选项的摘要和比较，请参阅[Azure 支持](https://azure.microsoft.com/support/plans/)。
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>致谢
+## <a name="acknowledgments"></a>鸣谢
 
 此内容由 Tom Dykstra、Rick Anderson 和 Mike Wasson 编写。 大多数原始内容来自[Scott Guthrie](https://weblogs.asp.net/scottgu/)，他又从标记 Simm 和 Microsoft 客户咨询团队（CAT）的材料中进行了研究。
 

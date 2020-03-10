@@ -9,11 +9,11 @@ ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
 ms.openlocfilehash: 62918b17f42e54dfe4e45a08927b1039dcbb7012
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576058"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78461570"
 ---
 # <a name="create-the-project"></a>创建项目
 
@@ -25,7 +25,7 @@ ms.locfileid: "74576058"
 
 在本教程中，你将在 Visual Studio 中创建、查看和运行默认项目，这将允许你熟悉 ASP.NET 的功能。 此外，你将查看 Visual Studio 环境。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何创建新的 Web 窗体项目。
 - Web 窗体项目的文件结构。
@@ -49,7 +49,7 @@ ms.locfileid: "74576058"
     > [!NOTE]
     > 本系列教程中的项目名称为**WingtipToys**。 建议使用此*准确*的项目名称，使整个教程系列提供的代码按预期方式工作。
 
-6. 单击 "**更改身份验证**" 按钮。 选择**单个用户帐户**，然后单击 **"确定"** 按钮。
+6. 单击“ **更改身份验证** ”按钮。 选择**单个用户帐户**，然后单击 **"确定"** 按钮。
 
 7. 选择 " **Web 窗体**" 模板，然后单击 "**确定"** 按钮。
 
@@ -182,7 +182,7 @@ Visual Studio 中的主窗口包括**解决方案资源管理器**、**服务器
 
 有关 Visual Studio 的详细信息，请参阅 visual [Web Developer 的可视指南](https://msdn.microsoft.com/library/ee410104.aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，您已创建、查看并运行了默认的 Web 窗体应用程序。 你已查看默认 Web 窗体应用程序的不同功能，并了解有关如何使用 Visual Studio 环境的一些基础知识。 在以下教程中，将创建数据访问层。
 

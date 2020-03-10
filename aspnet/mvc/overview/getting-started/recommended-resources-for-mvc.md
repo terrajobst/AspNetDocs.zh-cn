@@ -9,11 +9,11 @@ ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 11f4a7cae8d425873b1828a9e5f51471def954fb
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457149"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78470318"
 ---
 # <a name="mvc-recommended-resources"></a>MVC 推荐的资源
 
@@ -80,7 +80,7 @@ ms.locfileid: "77457149"
 
 <a id="security"></a>
 
-## <a name="security"></a>安全性
+## <a name="security"></a>安全
 
 - [使用 Facebook 和 Google OAuth2 登录创建 ASP.NET MVC 5 应用程序](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 - [不得在 ASP.NET 中执行的操作和转而应执行的操作](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
@@ -99,7 +99,7 @@ ms.locfileid: "77457149"
 - [ASP.NET MVC 中的安全性](http://www.codeproject.com/Articles/654846/Security-In-ASP-NET-MVC)
 - [保护 ASP.NET MVC 4 应用](https://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)
 - [Pluralsight 视频安全实践概述](http://www.pluralsight-training.net/microsoft/players/PSODPlayer?author=scott-allen&amp;name=mvc3-building-security&amp;mode=live&amp;clip=0&amp;course=aspdotnet-mvc3-intro)
-- [ASP.NET MVC 和网页中的 XSRF/CSRF 预防](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
+- [ASP.NET MVC 和网页中的 XSRF/CSRF 防护](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
 - [适用于 .NET 开发人员的 OWASP Top 10](http://www.troyhunt.com/2010/05/owasp-top-10-for-net-developers-part-1.html)
 - [通过 MVC 4 使用 OAuth 提供程序](../older-versions/using-oauth-providers-with-mvc.md)
 - [对 ASP.NET 应用程序进行抗攻击](https://msdn.microsoft.com/magazine/hh580736.aspx)2011年12月 MSDN 杂志文章
@@ -123,7 +123,7 @@ ms.locfileid: "77457149"
 - [成员身份与窗体身份验证不同](http://brockallen.com/2012/06/04/membership-is-not-the-same-as-forms-authentication/)
 - [请考虑使用 MembershipProvider （和 SimpleMembership）的两个](http://brockallen.com/2012/09/02/think-twice-about-using-membershipprovider-and-simplemembership/)
 - [通过 Google 身份验证器实现 MVC 双因素身份验证](http://www.codeproject.com/Articles/403355/Implementing-MVC-Two-Factor-Authentication-with-Go)
-- 新
+- new
 - [ASP.NET Identity 和 Azure 表存储](https://blogs.msdn.com/b/stuartleeks/archive/2014/01/15/asp-net-identity-and-windows-azure-table-storage.aspx)
 
 <a id="OWIN"></a>
@@ -274,7 +274,7 @@ ms.locfileid: "77457149"
 
 <a id="mobile"></a>
 
-## <a name="mobile"></a>移动型
+## <a name="mobile"></a>移动电话
 
 - [ASP.NET MVC 4 移动教程](../older-versions/aspnet-mvc-4-mobile-features.md)
 - [显示通过 MVC 4 构建移动友好网站](https://www.bitcast.io/v/building-mobile-friendly-websites-with-mvc-4)
@@ -327,7 +327,7 @@ ms.locfileid: "77457149"
 
 <a id="best"></a>
 
-## <a name="best-practices"></a>最佳实践
+## <a name="best-practices"></a>最佳做法
 
 - [不得在 ASP.NET 中执行的操作和转而应执行的操作](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
 - [Web 开发人员清单](http://webdevchecklist.com/aspnet)

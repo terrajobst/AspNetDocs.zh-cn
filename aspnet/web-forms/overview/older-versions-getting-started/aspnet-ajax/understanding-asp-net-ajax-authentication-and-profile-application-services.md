@@ -9,11 +9,11 @@ ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
 ms.openlocfilehash: cab9acb1ffd75cca87f6c575a6abdd000235828e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635683"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520310"
 ---
 # <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 身份验证和配置文件应用程序服务
 
@@ -57,7 +57,7 @@ Microsoft ASP.NET 配置文件和身份验证服务由 ASP.NET Forms 身份验�
 
 Login （）方法开始对用户凭据进行身份验证的请求。 此方法是异步的，不会阻止执行。
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -82,7 +82,7 @@ Login （）方法开始对用户凭据进行身份验证的请求。 此方法�
 
 注销（）方法将删除凭据 cookie，并从 web 应用程序注销当前用户。
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -107,11 +107,11 @@ Login （）方法开始对用户凭据进行身份验证的请求。 此方法�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample2.js)]
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
-| 错误 | 指定错误信息。 |
+| error | 指定错误信息。 |
 | userContext | 指定在调用登录或注销函数时提供的用户上下文信息。 |
 | methodName | 调用方法的名称。 |
 
@@ -123,7 +123,7 @@ Login （）方法开始对用户凭据进行身份验证的请求。 此方法�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample3.js)]
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -139,7 +139,7 @@ Login （）方法开始对用户凭据进行身份验证的请求。 此方法�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample4.js)]
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -203,7 +203,7 @@ ASP.NET 分析服务也通过 ASP.NET AJAX 扩展公开。 由于 ASP.NET 分析
 
 从服务器加载选定列表或所有属性。
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -220,7 +220,7 @@ Load 函数没有返回值。 如果调用成功完成，它将调用 `loadCompl
 
 Save （）方法会将指定的属性列表（或所有属性）保存到用户的 ASP.NET 配置文件。
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -241,11 +241,11 @@ Save 函数没有返回值。 如果调用成功完成，它将调用 `saveCompl
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample9.js)]
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
-| 错误 | 指定错误信息。 |
+| Error | 指定错误信息。 |
 | userContext | 指定在调用 load 或 save 函数时提供的用户上下文信息。 |
 | methodName | 调用方法的名称。 |
 
@@ -257,7 +257,7 @@ Save 函数没有返回值。 如果调用成功完成，它将调用 `saveCompl
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample10.js)]
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -273,7 +273,7 @@ Save 函数没有返回值。 如果调用成功完成，它将调用 `saveCompl
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample11.js)]
 
-*Parameters*
+*参数：*
 
 | **参数名称** | **含义** |
 | --- | --- |
@@ -331,7 +331,7 @@ ASP.NET AJAX Extension 允许您通过自定义 web 服务公开您的功能，�
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample16.aspx)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 服务-特别是分析、成员身份和身份验证服务-可在客户端浏览器上轻松地向 JavaScript 公开。 这使开发人员能够无缝地将其客户端代码与身份验证机制集成，而无需依赖 UpdatePanels 等控件来执行繁重的工作。 还可以通过使用 web 配置设置来保护来自客户端的配置文件数据;默认情况下不提供数据，开发人员必须选择配置文件属性。
 

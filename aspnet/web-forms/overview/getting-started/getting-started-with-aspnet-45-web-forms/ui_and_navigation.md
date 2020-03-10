@@ -9,11 +9,11 @@ ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
 ms.openlocfilehash: ac1dcaf1ba911fdcaeb3845c6836ec771733d93e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636819"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522902"
 ---
 # <a name="ui-and-navigation"></a>UI 和导航
 
@@ -25,7 +25,7 @@ ms.locfileid: "74636819"
 
 在本教程中，你将修改默认 Web 应用程序的 UI，以支持 Wingtip 玩具 store 前台应用程序的功能。 此外，还将添加简单的数据绑定导航。 本教程基于前面的 "创建数据访问层" 教程，是 Wingtip 玩具教程系列的一部分。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何将 UI 更改为支持 Wingtip 玩具 store 前台应用程序的功能。
 - 如何将 HTML5 元素配置为包括页面导航。
@@ -257,7 +257,7 @@ Visual Studio 2013 项目模板使用由 Twitter 创建的[启动](http://getboo
     将显示**服务器资源管理器**。 
 
     ![UI 和导航-服务器资源管理器](ui_and_navigation/_static/image8.png)
-4. 展开 "*表*" 文件夹。
+4. 展开 *“表”* 文件夹。
 5. 右键单击**Products**表，然后选择 "**显示表数据**"。  
  将显示**Products**表。 
 
@@ -273,7 +273,7 @@ Visual Studio 2013 项目模板使用由 Twitter 创建的[启动](http://getboo
  通过从 Visual Studio 中分离数据库，可以在本系列教程的后面部分修改数据库架构。
 11. 选择**服务器资源管理器**窗口底部的 "**解决方案资源管理器**" 选项卡，返回到**解决方案资源管理器**。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本系列教程中，你添加了一些基本的 UI、图形、页面和导航。 此外，还运行了 Web 应用程序，该应用程序从你在上一教程中添加的数据类创建了数据库。 您还可以通过直接查看数据库来查看数据库的*Products*表的内容。 在下一教程中，您将显示数据库中的数据项和详细信息。
 

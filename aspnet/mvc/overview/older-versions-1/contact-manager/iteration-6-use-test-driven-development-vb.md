@@ -1,339 +1,339 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
-title: 迭代 6 – 使用测试驱动开发 (VB) |Microsoft Docs
+title: '迭代 #6 –使用测试驱动开发（VB） |Microsoft Docs'
 author: microsoft
-description: 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试并针对单元测试编写的代码。 此小版本中...
+description: 在第六次迭代中，我们通过首先编写单元测试并针对单元测试编写代码，向应用程序添加新功能。 在此迭代中,。
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: e1fd226f-3f8e-4575-a179-5c75b240333d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
 ms.openlocfilehash: b166a1c6af29206d43558fa7de447c3f4da2ddfe
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123868"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78492698"
 ---
-# <a name="iteration-6--use-test-driven-development-vb"></a>迭代 6 – 使用测试驱动开发 (VB)
+# <a name="iteration-6--use-test-driven-development-vb"></a>迭代 #6 –使用测试驱动开发（VB）
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下载代码](iteration-6-use-test-driven-development-vb/_static/contactmanager_6_vb1.zip)
 
-> 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试并针对单元测试编写的代码。 在此迭代中，我们将添加联系人组。
+> 在第六次迭代中，我们通过首先编写单元测试并针对单元测试编写代码，向应用程序添加新功能。 在此迭代中，我们添加联系人组。
 
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>构建联系人管理 ASP.NET MVC 应用程序 (VB)
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>构建联系人管理 ASP.NET MVC 应用程序（VB）
 
-在本系列教程，我们构建整个联系人管理应用程序从头到尾完成。 联系人管理器应用程序，可存储联系人信息的名称，电话号码和电子邮件地址的人的列表。
+在本系列教程中，我们从一开始就生成一个完整的联系人管理应用程序。 联系人管理器应用程序允许您存储联系人信息名称、电话号码和电子邮件地址，以获取人员列表。
 
-我们通过多个迭代中生成应用程序。 每次迭代时，我们逐渐提高应用程序。 此多个迭代方法的目标是帮助你了解每个更改的原因。
+我们通过多个迭代生成应用程序。 随着每次迭代，我们将逐步改进应用程序。 此多个迭代方法的目标是使您能够了解每个更改的原因。
 
-- 迭代 1-创建应用程序。 在第一次迭代中，我们创建联系人管理器中的最简单方法可能。 我们将添加对基本数据库操作的支持：创建、 读取、 更新和删除 (CRUD)。
+- 迭代 #1-创建应用程序。 在第一次迭代中，我们以尽可能简单的方式创建联系人管理器。 添加对基本数据库操作的支持：创建、读取、更新和删除（CRUD）。
 
-- 迭代 2 – 使应用程序看上去更美观。 在此迭代中，我们通过修改默认 ASP.NET MVC 视图母版页和级联样式表提高应用程序的外观。
+- 迭代 #2-使应用程序看起来不错。 在此迭代中，我们通过修改默认的 ASP.NET MVC 视图母版页和级联样式表来改善应用程序的外观。
 
-- 迭代 3-添加窗体验证。 在第三个迭代中，我们将添加基本窗体验证。 我们阻止用户提交窗体而无法完成所需的窗体字段。 我们还验证电子邮件地址和电话号码。
+- 迭代 #3-添加窗体验证。 在第三次迭代中，我们将添加基本的窗体验证。 我们阻止用户提交窗体，而无需填写所需的窗体字段。 我们还验证了电子邮件地址和电话号码。
 
-- 迭代 4-使应用程序松散耦合。 在此第四个迭代中，我们将充分利用多个软件设计模式，以使其更轻松地监视和修改联系人管理器应用程序。 例如，我们将重构应用程序以使用存储库模式和依赖关系注入模式。
+- 迭代 #4-使应用程序松散耦合。 在第四次迭代中，我们将利用多种软件设计模式来更轻松地维护和修改联系人管理器应用程序。 例如，我们重构应用程序以使用存储库模式和依赖关系注入模式。
 
-- 迭代 5 — 创建单元测试。 在第五个迭代中，我们使我们的应用程序更轻松地监视和修改通过添加单元测试。 我们模拟我们数据模型类，并生成为控制器和验证逻辑单元测试。
+- 迭代 #5-创建单元测试。 在第五次迭代中，通过添加单元测试使应用程序更易于维护和修改。 我们模拟数据模型类，并为控制器和验证逻辑生成单元测试。
 
-- 迭代 6-使用测试驱动的开发。 在此第六个迭代中，我们将添加新功能到我们的应用程序通过首先编写单元测试并针对单元测试编写的代码。 在此迭代中，我们将添加联系人组。
+- 迭代 #6-使用测试驱动开发。 在第六次迭代中，我们通过首先编写单元测试并针对单元测试编写代码，向应用程序添加新功能。 在此迭代中，我们添加联系人组。
 
-- 迭代 7-添加 Ajax 功能。 在第七个迭代中，我们通过添加对 Ajax 支持提高响应能力和我们的应用程序的性能。
+- 迭代 #7-添加 Ajax 功能。 在第七次迭代中，我们通过添加对 Ajax 的支持来提高应用程序的响应能力和性能。
 
 ## <a name="this-iteration"></a>此迭代
 
-在联系人管理器应用程序上一次迭代，我们创建单元测试，以提供网络安全代码。 用于创建单元测试的动机是使我们的代码更具弹性，若要更改。 使用中的位置的单元测试，我们可以值得庆幸的是对我们的代码进行任何更改，并立即知道是否我们破坏现有功能。
+在联系人管理器应用程序的前一次迭代中，我们创建了单元测试，以便为代码提供安全网络。 创建单元测试的动机是使代码更具弹性性以进行更改。 使用单元测试后，我们可以对代码进行更改，并立即了解我们是否有损坏的现有功能。
 
-在此迭代中，我们使用单元测试进行完全不同的用途。 在此迭代中，我们使用单元测试作为一部分调用应用程序设计理念*测试驱动开发，*。 当您练习测试驱动开发，首先编写测试，然后编写针对测试的代码。
+在此迭代中，我们使用单元测试来实现完全不同的目的。 在此迭代中，我们将单元测试用作称为 "*测试驱动开发*" 的应用程序设计理念的一部分。 练习驱动开发时，先编写测试，然后针对测试编写代码。
 
-更确切地说，实践测试驱动开发，有三个步骤，在完成后创建的代码 (红 / 绿/重构):
+更准确地说，在完成测试驱动开发时，创建代码时，需要完成三个步骤（红色/绿色/重构）：
 
-1. 编写的单元测试失败 （红色）
-2. 编写代码，通过的单元测试 （绿色）
-3. 重构代码 （重构）
+1. 编写失败的单元测试（红色）
+2. 编写通过单元测试的代码（绿色）
+3. 重构你的代码（重构）
 
-首先，您编写单元测试。 单元测试应表达你打算为您的代码的预期行为。 当你首次创建单元测试时，单元测试应失败。 测试应失败，因为尚未编写满足测试任何应用程序代码。
+首先，编写单元测试。 单元测试应表示你希望你的代码的行为方式。 首次创建单元测试时，单元测试应失败。 测试应失败，因为尚未编写任何满足测试的应用程序代码。
 
-接下来，为了使单元测试通过编写刚好足够的代码。 目标是 laziest、 sloppiest 和可能最快的方式编写的代码。 你不应浪费时间考虑您的应用程序的体系结构。 相反，您应集中精力编写单元测试所表达的意图满足所需代码的最少工作量。
+接下来，编写足够的代码，使单元测试通过。 目标是以 laziest、sloppiest 和最快的方式编写代码。 您不应浪费时间思考您的应用程序的体系结构。 相反，应重点编写满足单元测试所需目的所需的最少量代码。
 
-最后，编写足够的代码后，你可以回过头想想您的应用程序的整体体系结构。 在此步骤中，重写 （重构） 你的代码通过利用的软件设计模式-存储库模式-例如，使代码更易于维护。 支持下大胆可以请你在此步骤中的代码重写原因由单元测试纳入您的代码。
+最后，在编写足够的代码后，你可以返回并考虑应用程序的总体体系结构。 在此步骤中，您将通过利用软件设计模式（例如存储库模式）重写（重构）您的代码，以便您的代码更易于维护。 你可以 fearlessly 在此步骤中重写代码，因为你的代码已被单元测试覆盖。
 
-有很多好处所产生的测试驱动开发，在其中完成练习。 首先，测试驱动开发强制您专注于实际需要编写的代码。 因为你不断地关注只需编写足够的代码来传递特定的测试，请您不能进入的这个井水和写入大量永远不会将使用的代码。
+通过测试驱动开发，有很多好处。 首先，由测试驱动的开发强制您关注实际需要编写的代码。 由于你一直致力于编写足够的代码来传递特定测试，因此会阻止你 wandering 到黄龙，并编写大量不会使用的代码。
 
-其次，"首先测试"的设计方法会强制您从将如何使用你的代码的角度来看编写代码。 换而言之，实践测试驱动开发，您会不断地编写你的测试从用户角度来看。 因此，测试驱动开发，可能导致更干净且更易于理解的 Api。
+其次，"测试优先" 设计方法会强制您编写代码，从代码的使用角度来看。 换句话说，当练习驱动开发时，会不断地从用户角度编写测试。 因此，测试驱动的开发会导致更清晰且更易于理解的 Api。
 
-最后，测试驱动开发，会强制你编写单元测试编写的应用程序的正常过程的一部分。 项目截止时间的临近，测试是通常超出窗口第一件事。 实践测试驱动开发，但是，则更有可能是良性有关编写单元测试，因为测试驱动开发，使单元测试中央为构建应用程序的过程。
+最后，测试驱动的开发将强制你编写单元测试，作为编写应用程序的正常过程的一部分。 作为项目截止时间方法，测试通常是第一次进入窗口。 另一方面，在进行测试驱动开发时，更有可能良性编写单元测试，因为测试驱动的开发会使单元测试成为构建应用程序的过程的核心。
 
 > [!NOTE] 
 > 
-> 若要了解有关测试驱动开发的详细信息，建议您阅读 Michael Feathers 书籍**处理有效地使用旧代码**。
+> 若要了解有关测试驱动开发的详细信息，建议阅读 Michael Feathers 书籍，**并有效地使用旧代码**。
 
-在此迭代中，我们将一项新功能添加到我们的联系人管理器应用程序。 我们将添加对联系人组的支持。 可以使用联系人组来组织你的联系人为如业务的类别和友元组。
+在此迭代中，我们将向联系人管理器应用程序添加新功能。 我们添加了对联系人组的支持。 您可以使用 "联系人组" 将您的联系人组织成不同的类别，例如业务和朋友组。
 
-我们将这一新功能添加到我们的应用程序，通过的测试驱动的开发过程。 我们将首先编写单元测试，我们将编写所有这些测试针对我们的代码。
+我们将按照测试驱动的开发过程将此新功能添加到我们的应用程序。 我们将首先编写单元测试，我们将针对这些测试编写所有代码。
 
-## <a name="what-gets-tested"></a>获取测试内容
+## <a name="what-gets-tested"></a>测试的内容
 
-如我们在上一次迭代中所述，通常没有为数据访问逻辑编写单元测试或查看逻辑。 您不 t 写入的数据访问逻辑的单元测试，因为访问数据库是一个相对较慢的操作。 您不视图逻辑的 t 写入单元测试，因为访问视图需要快速启动的 web 服务器，这是一个相对较慢的操作。 除非可以执行测试，非常快，不应编写单元测试
+如前面的迭代中所述，通常不为数据访问逻辑或查看逻辑编写单元测试。 你不为数据访问逻辑编写单元测试，因为访问数据库是相对较慢的操作。 你没有为视图逻辑编写单元测试，因为访问视图需要旋转 web 服务器，这是一个相对较慢的操作。 您不应编写单元测试，除非该测试可以在同一速度的情况上反复执行
 
-由于测试驱动开发，由单元测试，我们专注于最初编写控制器和业务逻辑。 我们避免触及视图的数据库。 我们不会修改数据库或本教程的最后才创建我们的视图。 我们开始可以测试内容。
+由于测试驱动的开发由单元测试驱动，因此我们最初重点介绍如何编写控制器和业务逻辑。 我们避免对数据库或视图进行触摸。 在本教程的最后结束之前，我们不会修改数据库或创建视图。 我们从可测试的内容开始。
 
 ## <a name="creating-user-stories"></a>创建用户情景
 
-实践测试驱动开发，始终首先编写测试。 这将立即引发问题：如何确定哪些测试，以首先编写？ 若要回答此问题，应编写一套[*用户情景*](http://en.wikipedia.org/wiki/User_stories)。
+在练习驱动开发时，您始终可以编写测试。 这会立即提出问题：如何确定要首先编写哪些测试？ 若要回答此问题，应编写一组[*用户情景*](http://en.wikipedia.org/wiki/User_stories)。
 
-用户情景是很短的软件要求 （通常一个句子） 说明。 它应该是从用户角度编写需求的非技术说明。
+用户情景是软件要求的一种非常简短的（通常是一句）说明。 它应该是从用户角度编写的要求的非技术说明。
 
-下面提供的一组描述新的联系人组功能所需的功能的用户情景：
+下面是描述新联系人组功能所需功能的一组用户情景：
 
 1. 用户可以查看联系人组的列表。
 2. 用户可以创建新的联系人组。
 3. 用户可以删除现有的联系人组。
-4. 创建一个新的联系人时，用户可以选择联系人组。
+4. 创建新联系人时，用户可以选择联系人组。
 5. 编辑现有联系人时，用户可以选择联系人组。
-6. 在索引视图中显示的联系人组列表。
-7. 当用户单击联系人组时，显示的匹配的联系人列表。
+6. 联系人组的列表显示在 "索引" 视图中。
+7. 当用户单击某个联系人组时，将显示匹配联系人的列表。
 
-请注意，此列表的用户情景的客户完全可以理解。 并没有提及的技术实现详细信息。
+请注意，用户情景列表完全可由客户理解。 没有提到技术实现细节。
 
-虽然在构建过程中你的应用程序，一组用户情景可能会变得更完善。 为多个情景 （要求），则可能会中断用户情景。 例如，可能会决定创建新的联系人组应涉及验证。 提交联系人组没有名称应返回验证错误。
+在构建应用程序的过程中，用户情景集可能会变得更加完善。 您可以将用户情景划分为多个情景（要求）。 例如，你可能会决定创建新的联系人组应涉及验证。 提交不带名称的联系人组应返回验证错误。
 
-创建用户情景的列表后，已准备好编写第一个单元测试。 我们将首先创建单元测试用于查看联系人组的列表。
+创建用户情景列表后，就可以编写第一个单元测试了。 首先，我们将创建一个单元测试，用于查看联系人组的列表。
 
-## <a name="listing-contact-groups"></a>列表联系人组
+## <a name="listing-contact-groups"></a>列出联系人组
 
-我们第一个用户情景是用户应该能够查看联系人组的列表。 我们需要使用测试 express 这篇文章。
+第一个用户情景是，用户应该能够查看联系人组的列表。 我们需要通过测试来表达这一故事。
 
-创建新的单元测试，请右键单击 Controllers 文件夹在 ContactManager.Tests 项目中，选择**添加、 新测试**，并选择**单元测试**模板 （参见图 1）。 名称在新的单元测试 GroupControllerTest.vb，然后单击**确定**按钮。
+通过在 ContactManager 项目中右键单击 "控制器" 文件夹，选择 "**添加"、"新建测试**"，然后选择**单元测试**模板来创建新的单元测试（请参阅图1）。 将新单元测试命名为 GroupControllerTest，然后单击 **"确定"** 按钮。
 
-[![添加 GroupControllerTest 单元测试](iteration-6-use-test-driven-development-vb/_static/image1.jpg)](iteration-6-use-test-driven-development-vb/_static/image1.png)
+[添加 GroupControllerTest 单元测试 ![](iteration-6-use-test-driven-development-vb/_static/image1.jpg)](iteration-6-use-test-driven-development-vb/_static/image1.png)
 
-**图 01**:添加 GroupControllerTest 单元测试 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image2.png))
+**图 01**：添加 GroupControllerTest 单元测试（[单击以查看完全大小的映像](iteration-6-use-test-driven-development-vb/_static/image2.png)）
 
-在列表 1 中包含了第一个单元测试。 此测试验证组控制器的 index （） 方法返回一系列组。 此测试将验证组的集合视图中返回数据。
+第一个单元测试包含在列表1中。 此测试验证组控制器的 Index （）方法是否返回一组组。 测试将验证是否在视图数据中返回了组的集合。
 
-**Listing 1 - Controllers\GroupControllerTest.vb**
+**列表 1-Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample1.vb)]
 
-当你首次在列表 1 中在 Visual Studio 中键入代码时，您将获得大量的红色波浪线。 我们尚未创建 GroupController 或组类。
+第一次在 Visual Studio 中的列表1中键入代码时，会收到大量红色波浪线。 尚未创建 GroupController 类或组类。
 
-此时，我们可以 t 甚至生成我们的应用程序，以便我们可以 t 执行了第一个单元测试。 很好的 s。 作为失败测试计数。 因此，我们现在必须开始编写应用程序代码的权限。 我们需要编写足够的代码来执行我们的测试。
+此时，我们甚至无法生成应用程序，因此我们不能执行第一个单元测试。 这就好了。 这会计为失败测试。 因此，我们现在有权开始编写应用程序代码。 我们需要编写足够的代码来执行测试。
 
-代码清单 2 中的组控制器类包含通过单元测试所需代码的最低。 Index （） 操作返回组 （组类定义中清单 3） 以静态方式编码的的列表。
+清单2中的组控制器类包含传递单元测试所需的最少代码。 Index （）操作返回一个静态编码的组列表（组类在列表3中定义）。
 
-**Listing 2 - Controllers\GroupController.vb**
+**列表 2-Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample2.vb)]
 
-**代码清单 3-Models\Group.vb**
+**列表 3-Models\Group.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample3.vb)]
 
-我们将在 GroupController 和组类添加到我们的项目后，我们的第一个单元测试成功完成 （请参见图 2）。 我们已经通过该测试所需的最小工作。 为了庆祝就。
+将 GroupController 和 Group 类添加到项目中后，第一个单元测试成功完成（参见图2）。 我们已经完成了通过测试所需的最少工作量。 现在可以庆祝了。
 
-[![成功 ！](iteration-6-use-test-driven-development-vb/_static/image2.jpg)](iteration-6-use-test-driven-development-vb/_static/image3.png)
+[![成功！](iteration-6-use-test-driven-development-vb/_static/image2.jpg)](iteration-6-use-test-driven-development-vb/_static/image3.png)
 
-**图 02**:成功 ！([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image4.png))
+**图 02**： Success！（[单击以查看完全大小的映像](iteration-6-use-test-driven-development-vb/_static/image4.png)）
 
 ## <a name="creating-contact-groups"></a>创建联系人组
 
-现在，我们可以转到第二个用户情景。 我们需要能够创建新联系人组。 我们需要与测试 express 此目的。
+现在，我们可以转到第二个用户案例。 我们需要能够创建新的联系人组。 我们需要通过测试表达这一意图。
 
-列表 4 中的测试验证调用 create （） 方法，通过新组将组添加到组 index （） 方法返回的列表。 换而言之，如果我创建一个新组然后我应该能够收到新的组的 index （） 方法返回的组的列表。
+列表4中的测试验证通过新组调用 Create （）方法将该组添加到 Index （）方法返回的组列表。 换句话说，如果我创建一个新组，则应该能够从 Index （）方法返回的组列表返回新组。
 
-**Listing 4 - Controllers\GroupControllerTest.vb**
+**列表 4-Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample4.vb)]
 
-列表 4 中的测试会调用组控制器与新联系人组 create （） 方法。 接下来，测试将验证，调用组控制器 index （） 方法返回新的组中查看数据。
+列表4中的测试通过新的联系人组调用组控制器 Create （）方法。 接下来，测试验证调用组控制器索引（）方法是否在视图数据中返回新组。
 
-列表 5 中已修改的组控制器包含的更改通过新的测试所需的最低要求。
+列表5中修改后的组控制器包含通过新测试所需的最小更改。
 
-**Listing 5 - Controllers\GroupController.vb**
+**列表 5-Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample5.vb)]
 
-## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>列表 5 中的组控制器具有一个新的 create （） 操作。 此操作将一组添加到组的集合。 请注意，index （） 操作已被修改以返回组的集合的内容。
+## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>列表5中的组控制器具有新的 Create （）操作。 此操作可将组添加到组的集合。 请注意，已修改 Index （）操作以返回组集合的内容。
 
-再次重申，我们已执行利用最少量的通过单元测试所需的工作。 我们对组控制器进行这些更改后，我们单位的所有测试都通过。
+同样，我们已执行完传递单元测试所需的最少工作量。 对组控制器进行这些更改后，我们的所有单元测试都通过。
 
 ## <a name="adding-validation"></a>添加验证
 
-显式用户情景中，未规定此要求。 但是，有理由需要一个组具有一个名称。 否则，将联系人组织到组将不会非常有用。
+用户情景中未明确说明此要求。 但是，要求组具有名称是合理的。 否则，将联系人组织到组中将不会非常有用。
 
-代码清单 6 包含新的测试表明此目的。 此测试验证尝试无需提供在模型状态中的验证错误消息中的名称结果中创建组。
+清单6包含一个表示此目的的新测试。 此测试验证尝试在未提供名称的情况下创建组会导致在模型状态中出现验证错误消息。
 
-**Listing 6 - Controllers\GroupControllerTest.vb**
+**列表 6-Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample6.vb)]
 
-为了满足此测试，我们需要添加到组类 （请参阅列表 7） 的 Name 属性。 此外，我们需要将小小的验证逻辑添加到组控制器 s create （） 操作 （请参阅代码清单 8）。
+为了满足此测试要求，我们需要将 "名称" 属性添加到我们的组类（请参阅列表7）。 此外，我们还需要向组控制器 s Create （）操作添加一小段验证逻辑（请参阅列表8）。
 
-**Listing 7 - Models\Group.vb**
+**列表 7-Models\Group.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample7.vb)]
 
-**Listing 8 - Controllers\GroupController.vb**
+**列表 8-Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample8.vb)]
 
-请注意组控制器 create （） 操作现在包含验证和数据库的逻辑。 当前，组控制器使用的数据库所包含的没有什么比内存中集合。
+请注意，组控制器 Create （）操作现在同时包含验证和数据库逻辑。 目前，组控制器使用的数据库不只包含内存中集合。
 
-## <a name="time-to-refactor"></a>重构的时间
+## <a name="time-to-refactor"></a>重构时间
 
-红/绿/重构的第三步是重构部分。 此时，我们需要我们的代码中，并考虑如何，我们可以重构应用程序以提高它的设计。 重构阶段是的我们认真考虑的最佳方法的实现软件设计原则和模式的阶段。
+红色/绿色/重构的第三步是重构部分。 此时，我们需要从代码返回，并考虑如何重构应用程序以改善其设计。 "重构" 阶段是我们认为难以实现软件设计原则和模式的最佳方式。
 
-我们可以随意修改我们的代码以任何方式，我们选择以提高代码的设计。 我们有单元测试，使我们无法破坏现有功能的安全网。
+我们可以按我们选择的任何方式修改代码，以改进代码设计。 我们有一个安全的单元测试，阻止我们破坏现有功能。
 
-现在，我们组控制器是从优秀的软件设计的角度来看乱。 组控制器包含纷繁混乱现象验证和数据访问代码。 为了避免违反单一责任原则，我们需要将这些问题分离到不同的类。
+目前，我们的组控制器从优秀的软件设计的角度来看是一种混乱。 组控制器包含验证和数据访问代码的混杂。 若要避免违反单一责任原则，需要将这些问题分隔到不同的类中。
 
-我们重构的组控制器类都包含在程序列表 9。 控制器已被修改为使用 ContactManager 服务层。 这是我们向联系人控制器使用的相同服务层。
+重构的组控制器类包含在列表9中。 已将控制器修改为使用 ContactManager 服务层。 这是与联系人控制器一起使用的服务层。
 
-代码清单 10 包含添加到 ContactManager 服务层以支持验证、 列出和创建组的新方法。 IContactManagerService 界面已更新为包括新的方法。
+列表10包含添加到 ContactManager 服务层的新方法，以支持验证、列出和创建组。 更新了 IContactManagerService 接口，以包含新的方法。
 
-代码清单 11 包含实现 IContactManagerRepository 接口的新 FakeContactManagerRepository 类。 与 EntityContactManagerRepository 类还实现 IContactManagerRepository 接口，不同新 FakeContactManagerRepository 类不与数据库通信。 FakeContactManagerRepository 类使用的内存中集合的代理的数据库。 我们将在我们的单元测试中使用此类，作为一个虚设储存库层。
+列表11包含一个实现 IContactManagerRepository 接口的新 FakeContactManagerRepository 类。 与也实现 IContactManagerRepository 接口的 EntityContactManagerRepository 类不同，我们的新 FakeContactManagerRepository 类不与数据库通信。 FakeContactManagerRepository 类使用内存中集合作为数据库的代理。 我们将在单元测试中使用此类作为假存储库层。
 
-**Listing 9 - Controllers\GroupController.vb**
+**列表 9-Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample9.vb)]
 
-**Listing 10 - Controllers\ContactManagerService.vb**
+**列表 10-Controllers\ContactManagerService.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample10.vb)]
 
-**Listing 11 - Controllers\FakeContactManagerRepository.vb**
+**列表 11-Controllers\FakeContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample11.vb)]
 
-修改接口需要的 IContactManagerRepository 使用 EntityContactManagerRepository 类中实现的 CreateGroup() 和 ListGroups() 方法。 执行此操作的 laziest 和最快方法是添加存根 （stub） 的方法如下所示：
+修改 IContactManagerRepository 接口需要使用来实现 EntityContactManagerRepository 类中的 CreateGroup （）和 ListGroups （）方法。 实现此目的的 laziest 和最快方法是添加如下所示的存根方法：
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample12.vb)]
 
-最后，我们的应用程序设计这些更改需要我们对我们的单元测试中进行一些修改。 我们现在需要执行单元测试时使用 FakeContactManagerRepository。 更新后的 GroupControllerTest 类都包含在列表 12。
+最后，对应用程序设计所做的这些更改需要我们对单元测试进行一些修改。 我们现在需要在执行单元测试时使用 FakeContactManagerRepository。 已更新的 GroupControllerTest 类包含在列表12中。
 
-**Listing 12 - Controllers\GroupControllerTest.vb**
+**列表 12-Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample13.vb)]
 
-建立所有这些后，再次重申，所有更改的我们通过单元测试。 我们已经完成红/绿/重构整个周期。 我们已实现的第一个的两个用户情景。 现在，我们具有支持单元测试的用户情景以表示的要求。 实现用户情景的剩余部分包括重复红/绿/重构的同一个周期。
+完成所有这些更改后，我们会再次通过所有单元测试。 我们已经完成了红色/绿色/重构的整个循环。 我们已经实现了前两个用户情景。 现在，我们已支持用户情景中表示的要求的单元测试。 实现用户情景的其余部分涉及重复相同的红色/绿色/重构循环。
 
-## <a name="modifying-our-database"></a>修改我们的数据库
+## <a name="modifying-our-database"></a>修改数据库
 
-遗憾的是，尽管我们已经满足所有要求通过我们的单元测试来表示，我们的工作不会进行。 我们仍需要修改我们的数据库。
+遗憾的是，尽管我们已经满足单元测试所表示的所有需求，但我们的工作却不能完成。 我们仍需要修改数据库。
 
-我们需要创建一个新的组数据库表。 请执行以下步骤：
+我们需要创建一个新的组数据库表。 请执行这些步骤：
 
-1. 在服务器资源管理器窗口中，右键单击表文件夹，然后选择菜单选项**添加新表**。
-2. 输入在表设计器中，如下所述的两个列。
-3. 将标记 Id 列作为主键和标识列。
-4. 通过单击的软盘图标与命名组保存的新表。
+1. 在 "服务器资源管理器" 窗口中，右键单击 "表" 文件夹，然后选择 "**添加新表**" 菜单选项。
+2. 在表设计器中输入下面所述的两个列。
+3. 将 Id 列标记为主键和标识列。
+4. 通过单击软盘的图标，使用名称组保存新表。
 
 <a id="0.12_table01"></a>
 
-| **列名称** | **数据类型** | **允许 null 值** |
+| **列名称** | **数据类型** | **允许 Null 值** |
 | --- | --- | --- |
 | Id | int | False |
-| 名称 | nvarchar(50) | False |
+| “属性” | nvarchar(50) | False |
 
-接下来，我们需要从联系人表中删除的所有数据 （否则，我们将无法创建联系人和组表之间的关系）。 请执行以下步骤：
+接下来，需要删除 Contacts 表中的所有数据（否则，我们将无法在 "联系人" 和 "组" 表之间创建关系）。 请执行这些步骤：
 
-1. 右键单击联系人表，然后选择菜单选项**显示表数据**。
-2. 删除的所有行。
+1. 右键单击 "联系人" 表，然后选择菜单选项 "**显示表数据**"。
+2. 删除所有行。
 
-接下来，我们需要定义组数据库表和现有的联系人数据库表之间的关系。 请执行以下步骤：
+接下来，需要定义组数据库表和现有联系人数据库表之间的关系。 请执行这些步骤：
 
-1. 双击服务器资源管理器窗口打开表设计器中的联系人表。
-2. 将新的整数列添加到名为 GroupId 联系人表。
-3. 单击关系按钮以打开外键关系对话框 （参见图 3）。
-4. 单击添加按钮。
-5. 单击显示表和列规范按钮旁边的省略号按钮。
-6. 在表和列对话框中，选择作为主键表和作为主键列的 Id 的组。 选择联系人作为外键表和外键列作为 GroupId （请参阅图 4）。 单击确定按钮。
-7. 下**INSERT 和 UPDATE 规范**，选择的值**Cascade**有关**删除规则**。
-8. 单击关闭按钮以关闭外键关系对话框。
-9. 单击保存按钮以将所做的更改保存到 Contacts 表。
+1. 双击 "服务器资源管理器" 窗口中的 "联系人" 表，打开表设计器。
+2. 向名为 GroupId 的联系人表中添加一个新的整数列。
+3. 单击 "关系" 按钮以打开 "外键关系" 对话框（请参阅图3）。
+4. 单击“添加”按钮。
+5. 单击出现在 "表和列规范" 按钮旁的省略号按钮。
+6. 在 "表和列" 对话框中，选择 "组" 作为主键表，Id 作为主键列。 选择 "联系人" 作为外键表，并选择 "GroupId" 作为外键列（参见图4）。 单击“确定”按钮。
+7. 在 "**插入和更新规范**" 下，选择 "**删除规则**的值**级联**"。
+8. 单击 "关闭" 按钮以关闭 "外键关系" 对话框。
+9. 单击 "保存" 按钮以保存对 "联系人" 表所做的更改。
 
-[![创建数据库表关系](iteration-6-use-test-driven-development-vb/_static/image3.jpg)](iteration-6-use-test-driven-development-vb/_static/image5.png)
+[创建数据库表关系 ![](iteration-6-use-test-driven-development-vb/_static/image3.jpg)](iteration-6-use-test-driven-development-vb/_static/image5.png)
 
-**图 03**:创建数据库表关系 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image6.png))
+**图 03**：创建数据库表关系（[单击查看完全大小的图像](iteration-6-use-test-driven-development-vb/_static/image6.png)）
 
-[![指定表关系](iteration-6-use-test-driven-development-vb/_static/image4.jpg)](iteration-6-use-test-driven-development-vb/_static/image7.png)
+[指定表关系 ![](iteration-6-use-test-driven-development-vb/_static/image4.jpg)](iteration-6-use-test-driven-development-vb/_static/image7.png)
 
-**图 04**:指定表关系 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image8.png))
+**图 04**：指定表关系（[单击查看完全大小的图像](iteration-6-use-test-driven-development-vb/_static/image8.png)）
 
 ### <a name="updating-our-data-model"></a>更新数据模型
 
-接下来，我们需要更新数据模型以表示新的数据库表。 请执行以下步骤：
+接下来，我们需要更新数据模型以表示新的数据库表。 请执行这些步骤：
 
-1. 双击 ContactManagerModel.edmx 文件在 Models 文件夹中打开实体设计器。
-2. 右键单击设计器图面，然后选择菜单选项**从数据库更新模型**。
-3. 在更新向导中，选择组表，然后单击完成按钮 （请参见图 5）。
-4. 右键单击组实体，然后选择菜单选项**重命名**。 更改的名称*组*实体与*组*（单数）。
-5. 右键单击联系人实体的底部将显示的组导航属性。 更改的名称*组*导航属性设置为*组*（单数）。
+1. 双击 "模型" 文件夹中的 ContactManagerModel 文件以打开 Entity Designer。
+2. 右键单击设计器图面，然后选择 "**从数据库更新模型**" 菜单选项。
+3. 在更新向导中，选择 "组" 表，然后单击 "完成" 按钮（见图5）。
+4. 右键单击 "组" 实体并选择 "**重命名**" 菜单选项。 将 "*组*" 实体的名称更改为 "*分组*（单数）"。
+5. 右键单击显示在 Contact 实体底部的 "组" 导航属性。 将*组*导航属性的名称更改为 "*分组*（单数）"。
 
-[![更新数据库中的实体框架模型](iteration-6-use-test-driven-development-vb/_static/image5.jpg)](iteration-6-use-test-driven-development-vb/_static/image9.png)
+[![从数据库更新实体框架模型](iteration-6-use-test-driven-development-vb/_static/image5.jpg)](iteration-6-use-test-driven-development-vb/_static/image9.png)
 
-**图 05**:更新数据库中的实体框架模型 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image10.png))
+**图 05**：从数据库更新实体框架模型（[单击以查看完全大小的映像](iteration-6-use-test-driven-development-vb/_static/image10.png)）
 
-完成这些步骤后，你的数据模型将表示的联系人和组的表。 在实体设计器应显示这两个实体 （请参阅图 6）。
+完成这些步骤后，你的数据模型将同时表示 "联系人" 和 "组" 表。 Entity Designer 应显示这两个实体（见图6）。
 
-[![实体设计器显示组和联系人](iteration-6-use-test-driven-development-vb/_static/image6.jpg)](iteration-6-use-test-driven-development-vb/_static/image11.png)
+[显示组和联系人 Entity Designer ![](iteration-6-use-test-driven-development-vb/_static/image6.jpg)](iteration-6-use-test-driven-development-vb/_static/image11.png)
 
-**图 06**:显示组和联系人实体设计器 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image12.png))
+**图 06**：显示组和联系人的 Entity Designer （[单击查看完全大小的图像](iteration-6-use-test-driven-development-vb/_static/image12.png)）
 
-### <a name="creating-our-repository-classes"></a>创建存储库类
+### <a name="creating-our-repository-classes"></a>创建我们的存储库类
 
-接下来，我们需要实现我们的存储库类。 此迭代的过程中，我们添加了几个新方法到 IContactManagerRepository 接口编写代码以满足我们的单元测试时。 IContactManagerRepository 接口的最终版本包含在列表 14。
+接下来，我们需要实现存储库类。 在此迭代过程中，我们在编写代码来满足单元测试的同时，在 IContactManagerRepository 接口中添加了几个新方法。 IContactManagerRepository 接口的最终版本包含在列表14中。
 
-**Listing 14 - Models\IContactManagerRepository.vb**
+**列表 14-Models\IContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample14.vb)]
 
-实际上，我们尚未实现任何一种方法与使用我们的真实 EntityContactManagerRepository 类中的联系人组相关。 目前，EntityContactManagerRepository 类 IContactManagerRepository 界面中列出的联系人组方法的每个具有存根 （stub） 方法。 例如，ListGroups() 方法当前如下所示：
+我们实际上并未实现任何与在实际 EntityContactManagerRepository 类中使用联系人组相关的方法。 目前，EntityContactManagerRepository 类具有 IContactManagerRepository 接口中列出的每个联系人组方法的存根方法。 例如，ListGroups （）方法当前如下所示：
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample15.vb)]
 
-存根 （stub） 方法使我们能够编译我们的应用程序并通过单元测试。 但是，现在就来实施这些方法。 EntityContactManagerRepository 类的最终版本包含在列表 13。
+存根方法使我们能够编译应用程序并传递单元测试。 不过，现在可以实际实现这些方法。 列表13中包含了 EntityContactManagerRepository 类的最终版本。
 
-**Listing 13 - Models\EntityContactManagerRepository.vb**
+**列表 13-Models\EntityContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample16.vb)]
 
 ### <a name="creating-the-views"></a>创建视图
 
-ASP.NET MVC 应用程序时使用的默认 ASP.NET 视图引擎。 因此，don t 创建视图以响应特定的单元测试。 但是，因为应用程序都是毫无用处，除非视图，我们可以 t 完成此迭代而无需创建和修改联系人管理器应用程序中包含的视图。
+当你使用默认的 ASP.NET 视图引擎时，ASP.NET MVC 应用程序。 因此，你不会创建用于响应特定单元测试的视图。 但是，因为在没有视图的情况下，应用程序不能使用，因此，我们无法在不创建和修改 Contact Manager 应用程序中包含的视图的情况下完成此迭代。
 
-我们需要创建以下新视图，用于管理联系人组 （请参阅图 7）：
+我们需要创建以下新视图来管理联系人组（请参阅图7）：
 
-- Views\Group\Index.aspx-联系人组的显示列表
-- Views\Group\Delete.aspx-用于删除联系人组显示确认窗体
+- Views\Group\Index.aspx-显示联系人组列表
+- Views\Group\Delete.aspx-显示用于删除联系人组的确认表单
 
 [![组索引视图](iteration-6-use-test-driven-development-vb/_static/image7.jpg)](iteration-6-use-test-driven-development-vb/_static/image13.png)
 
-**图 07**:组索引视图 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image14.png))
+**图 07**：组索引视图（[单击以查看完全大小的图像](iteration-6-use-test-driven-development-vb/_static/image14.png)）
 
-我们需要修改以下现有视图，使其包含联系人组：
+我们需要修改以下现有视图，使其包括联系人组：
 
 - Views\Home\Create.aspx
 - Views\Home\Edit.aspx
 - Views\Home\Index.aspx
 
-通过查看此教程中随附的 Visual Studio 应用程序，可以看到修改后的视图。 例如，图 8 显示了联系人索引视图。
+通过查看本教程附带的 Visual Studio 应用程序，可以看到修改后的视图。 例如，图8说明了联系人索引视图。
 
-[![请联系索引视图](iteration-6-use-test-driven-development-vb/_static/image8.jpg)](iteration-6-use-test-driven-development-vb/_static/image15.png)
+[![联系人索引视图](iteration-6-use-test-driven-development-vb/_static/image8.jpg)](iteration-6-use-test-driven-development-vb/_static/image15.png)
 
-**图 08**:请联系索引视图 ([单击此项可查看原尺寸图像](iteration-6-use-test-driven-development-vb/_static/image16.png))
+**图 08**：联系人索引视图（[单击查看完全大小的图像](iteration-6-use-test-driven-development-vb/_static/image16.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-在此迭代中，我们添加新功能到我们的联系人管理器应用程序按照测试驱动开发应用程序设计方法。 我们首先创建了一组用户情景。 我们创建了一组单元测试用户情景所表达的要求相对应。 最后，我们编写了刚好足够的代码以满足表示的单元测试的要求。
+在此迭代中，我们将按照测试驱动的开发应用程序设计方法，向联系人管理器应用程序添加新功能。 我们首先创建一组用户情景。 我们创建了一组与用户情景表示的要求相对应的单元测试。 最后，我们编写了足够的代码来满足单元测试所表示的需求。
 
-我们完成编写足够的代码以满足表示的单元测试的要求后，我们将更新我们的数据库和视图。 我们对我们的数据库添加新组表，并更新我们实体框架数据模型。 我们还创建和修改的一组视图。
+编写完足够的代码来满足单元测试所表示的要求后，我们更新了数据库和视图。 我们向数据库中添加了一个新的 "组" 表，并更新了实体框架数据模型。 我们还创建和修改了一组视图。
 
-在下一次迭代-最后一个迭代-我们重写应用程序以充分利用 Ajax。 通过利用 Ajax，我们将提高响应能力和联系人管理器应用程序的性能。
+在下一次迭代中，最后一次迭代-我们会重写应用程序以利用 Ajax。 利用 Ajax，我们将提高联系人管理器应用程序的响应能力和性能。
 
 > [!div class="step-by-step"]
 > [上一页](iteration-5-create-unit-tests-vb.md)

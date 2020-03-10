@@ -9,11 +9,11 @@ ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6785b5cd2d4d3a2c2e7f2c2fea93f5cd5e2fdf24
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74619130"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78502352"
 ---
 # <a name="paging-and-sorting-report-data-vb"></a>分页和排序报表数据 (VB)
 
@@ -245,7 +245,7 @@ BoundField、CheckBoxField、TemplateField 等所有 GridView 字段都有一个
 
 **图 15**：单击按钮按最高到最低的顺序排列产品（[单击以查看完全尺寸的图像](paging-and-sorting-report-data-vb/_static/image33.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何实现默认分页和排序功能，这两者都与选中复选框一样简单！ 当用户通过数据对数据进行排序时，类似的工作流将：
 

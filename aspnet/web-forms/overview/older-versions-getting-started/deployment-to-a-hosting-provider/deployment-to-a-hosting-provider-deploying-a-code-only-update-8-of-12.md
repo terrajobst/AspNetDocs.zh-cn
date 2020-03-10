@@ -9,11 +9,11 @@ ms.assetid: ddf6252f-9413-4c0c-a360-2cef8d231717
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: e4d094ef84a747c36ce05ddb0e3d1ce0391d5605
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74572789"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455072"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-code-only-update---8-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：部署仅限代码的更新-8 （共12个）
 

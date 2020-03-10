@@ -9,11 +9,11 @@ ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1ccaac101a83d0e28b07b220b8b7b61a9039227e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642414"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520070"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>安全基础知识和 ASP.NET 支持 (C#)
 
@@ -121,7 +121,7 @@ ASP.NET.NET 的窗体身份验证为用户提供了一种基础结构，使用�
 - GetAllUsers
 - GetUser
 - UpdateUser
-- System.web.security.membership.validateuser
+- ValidateUser
 
 成员身份框架使用[提供程序模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，该模型将成员身份框架的 API 与实现完全分离。 这使开发人员能够使用公共 API，但使他们能够使用满足其应用程序自定义需求的实现。 简而言之，成员身份类定义框架的基本功能（方法、属性和事件），但并不实际提供任何实现细节。 相反，成员资格类的方法将调用配置的提供程序，该提供程序将执行实际工作。 例如，当调用成员身份类的 CreateUser 方法时，成员身份类不知道用户存储的详细信息。 它不知道用户是在数据库中还是在 XML 文件或其他存储中进行维护。 成员身份类检查 web 应用程序的配置，以确定要将调用委托给哪个提供程序，并且该提供程序类负责在相应的用户存储中实际创建新的用户帐户。 图3演示了这种交互。
 
@@ -150,7 +150,7 @@ ASP.NET 2.0 还引入了角色框架。 与成员身份框架一样，角色框�
 
 下面的内容涵盖各种登录控件与成员身份和角色框架的交互。 大多数登录控件都无需编写一行代码即可实现。 我们将在以后的教程中更详细地检查这些控件，包括用于扩展和自定义其功能的技术。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 支持用户帐户的所有 web 应用程序都需要类似的功能，例如：允许用户登录，并使其登录状态在跨页访问时保留;用于创建帐户的新访问者的网页;还能让页面开发人员指定哪些资源、数据和功能可用于哪些用户或角色。 由于 forms 身份验证、URL 授权以及成员身份和角色框架，在 ASP.NET 应用程序中，对用户进行身份验证和授权以及管理用户帐户和角色的任务非常易于完成。
 
@@ -183,4 +183,4 @@ ASP.NET 2.0 还引入了角色框架。 与成员身份框架一样，角色框�
 此教程系列由许多有用的审阅者查看。 本教程的主要审阅者是此教程系列已由许多有用的审阅者查看。 本教程的主管评审者包括 Alicja Maziarz、John Suru 和 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](an-overview-of-forms-authentication-cs.md)
+> [下一部分](an-overview-of-forms-authentication-cs.md)

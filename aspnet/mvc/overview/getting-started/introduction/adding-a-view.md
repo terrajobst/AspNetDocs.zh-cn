@@ -6,11 +6,11 @@ ms.author: riande
 ms.date: 01/23/2019
 uid: mvc/overview/getting-started/introduction/adding-a-view
 ms.openlocfilehash: 0bc6ac06d12aaee4b2a11c1bf246f9f20f0be017
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456642"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78470768"
 ---
 # <a name="adding-a-view"></a>添加视图
 
@@ -100,7 +100,7 @@ ms.locfileid: "77456642"
 
 使用此 `ViewBag` 方法，可以轻松地在视图模板和布局文件之间传递其他参数。
 
-运行应用程序。 请注意，浏览器标题、主标题和辅助标题已更改。 （如果没有在浏览器中看到更改，则可能正在查看缓存的内容。 在浏览器中按 Ctrl + F5 来强制加载来自服务器的响应。）浏览器标题是通过在*Index. cshtml*视图模板中设置的 `ViewBag.Title` 创建的，而其他 &quot;电影应用&quot; 添加到布局文件中。
+运行该应用程序。 请注意，浏览器标题、主标题和辅助标题已更改。 （如果没有在浏览器中看到更改，则可能正在查看缓存的内容。 在浏览器中按 Ctrl + F5 来强制加载来自服务器的响应。）浏览器标题是通过在*Index. cshtml*视图模板中设置的 `ViewBag.Title` 创建的，而其他 &quot;电影应用&quot; 添加到布局文件中。
 
 另请注意， *Index.* view 模板中的内容是如何与 *\_Layout*视图模板合并的，并向浏览器发送单个 HTML 响应。 凭借布局模板可以很容易地对应用程序中所有页面进行更改。
 

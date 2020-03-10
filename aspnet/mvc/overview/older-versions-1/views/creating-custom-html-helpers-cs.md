@@ -9,11 +9,11 @@ ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 264ff9850bad397826b45649d52fbfefafc53a01
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594532"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485786"
 ---
 # <a name="creating-custom-html-helpers-c"></a>创建自定义 HTML 帮助程序 (C#)
 
@@ -33,17 +33,17 @@ HTML 帮助程序只是返回字符串的方法。 字符串可以表示所需�
 
 ASP.NET MVC 框架包含以下一组标准 HTML 帮助程序（这不是完整的列表）：
 
-- Html.actionlink （）
-- Html.beginform （）
-- Html. CheckBox （）
-- DropDownList （）
-- EndForm （）
-- .Html （隐藏）（）
-- Html. ListBox （）
-- .Html. Password （）
-- .Html （）
-- .Html （）
-- .Html （）
+- Html.ActionLink()
+- Html.BeginForm()
+- Html.CheckBox()
+- Html.DropDownList()
+- Html.EndForm()
+- Html.Hidden()
+- Html.ListBox()
+- Html.Password()
+- Html.RadioButton()
+- Html.TextArea()
+- Html.TextBox()
 
 例如，请考虑列表1中的窗体。 此窗体通过两个标准 HTML 帮助器的帮助进行呈现（参见图1）。 此窗体使用 `Html.BeginForm()` 和 `Html.TextBox()` 帮助程序方法来呈现简单的 HTML 窗体。
 
@@ -110,7 +110,7 @@ ASP.NET MVC 框架包含一小部分帮助程序。 大多数情况下，你将�
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample6.aspx)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本教程介绍了创建自定义 HTML 帮助程序的两种方法。 首先，您学习了如何通过创建返回字符串的静态方法来创建自定义 `Label()` HTML 帮助器。 接下来，你已了解如何通过在 `HtmlHelper` 类上创建扩展方法来创建自定义 `Label()` HTML 帮助器方法。
 

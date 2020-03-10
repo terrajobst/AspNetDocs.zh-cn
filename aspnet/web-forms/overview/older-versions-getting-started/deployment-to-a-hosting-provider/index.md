@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/index
-title: ASP.NET 4-通过 SQL Server Compact 使用 Visual Studio Web 部署 |Microsoft Docs
+title: ASP.NET 4-使用 Visual Studio SQL Server Compact 的 Web 部署 |Microsoft Docs
 author: rick-anderson
-description: 本系列教程演示如何使用 SQL Server Compact 可在 internet 上通过将其部署到第三方 h 使用 ASP.NET web 应用程序...
+description: 本系列教程介绍了如何通过将 SQL Server Compact 的 web 应用程序部署到第三方 h 。
 ms.author: riande
 ms.date: 11/29/2011
 ms.assetid: 6798c7e4-f08e-4802-9fa5-443f67d5df62
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider
 msc.type: chapter
 ms.openlocfilehash: bb9a47eeb4197348e85bb469b68c0055e7c696a0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65119442"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514694"
 ---
 # <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - 通过使用 Visual Studio 的 SQL Server Compact 进行 Web 部署
 
-> 本系列教程演示如何使用 SQL Server Compact 可在 internet 上通过将其部署到第三方托管提供商使用 ASP.NET web 应用程序。 需要 Visual Studio 2012 RC 或 Visual Studio 2010。 详细了解最新部署功能，或者有关如何部署 SQL Server Compact 以外的 SQL Server 版本的信息，请参阅[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)。
+> 本系列教程演示如何通过将 SQL Server Compact 的 web 应用程序部署到第三方托管提供商，使该应用程序使用通过 internet 提供的。 需要 Visual Studio 2012 RC 或 Visual Studio 2010。 有关部署功能的最新信息，或者有关如何部署 SQL Server Compact 以外 SQL Server 版本的信息，请参阅[使用 Visual Studio ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)。
 
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 简介](deployment-to-a-hosting-provider-introduction-1-of-12.md)
 - [通过 SQL Server Compact 进行 Visual Studio Web 部署 - 部署 SQL Server Compact 数据库](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

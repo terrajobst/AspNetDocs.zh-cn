@@ -9,11 +9,11 @@ ms.assetid: 9201656a-e1c2-4020-824b-18fb632d2925
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 27c901af092aa990f557750dc5d2c42ba2644c02
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640688"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489098"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>显示数据 Web 控件中的二进制数据 (VB)
 
@@ -180,7 +180,7 @@ ms.locfileid: "74640688"
 
 **图 13**：为每行显示类别的图片（[单击查看完全尺寸的图像](displaying-binary-data-in-the-data-web-controls-vb/_static/image20.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何提供二进制数据。 数据的显示方式取决于数据的类型。 对于 PDF 手册文件，我们向用户提供了一个 View 宣传册链接，单击该链接后，用户就可以直接使用 PDF 文件。 对于 "类别" 图，我们首先创建了一个页面，用于检索和返回数据库中的二进制数据，然后使用该页面显示 GridView 中的每个类别图片。
 

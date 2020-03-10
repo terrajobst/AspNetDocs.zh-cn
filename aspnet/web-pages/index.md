@@ -1,24 +1,24 @@
 ---
 uid: web-pages/index
-title: ASP.NET Web Pages |Microsoft Docs
+title: ASP.NET 网页 |Microsoft Docs
 author: rick-anderson
-description: 下载 WebMatrix 并了解如何快速简便的方法来组合服务器代码与 HTML 中构建网页。
+description: 下载 WebMatrix & 了解如何以一种简便的方式快速构建网页，以将服务器代码与 HTML 组合在一起。
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 5418ba96-ff49-4a43-9cbb-09dea4949d23
 msc.legacyurl: /web-pages
 msc.type: categoryindex
 ms.openlocfilehash: 56bf82e22b3562893ef842a90d42aa7b6ff5858f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114535"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520670"
 ---
 # <a name="aspnet-web-pages"></a>ASP.NET 网页
 
 > [!NOTE] 
-> WebMatrix 是不再建议将其作为一个集成的开发环境为 ASP.NET Web Pages。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或[Visual Studio Code](https://code.visualstudio.com/)。
+> WebMatrix 不再建议作为 ASP.NET 网页的集成开发环境。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或[Visual Studio Code](https://code.visualstudio.com/)。
 
 - [指南](overview/index.md)
 

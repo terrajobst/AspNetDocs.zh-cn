@@ -9,11 +9,11 @@ ms.assetid: 1c4588bb-255d-4088-b319-5208da756f4d
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8aa57172abcfc779fa74b128ad76d42c41dc5b98
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74602318"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465938"
 ---
 # <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>以编程方式设置 ObjectDataSource 的参数值 (C#)
 
@@ -101,7 +101,7 @@ ms.locfileid: "74602318"
 
 **图 9**：单击 "属性" 窗口中的闪电形图标以列出 Web 控件的事件
 
-这两种方法都会向页面的代码隐藏类添加 ObjectDataSource `Selecting` 事件的新事件处理程序。 在此事件处理程序中，我们可以使用 `e.InputParameters[parameterName]`读取和写入参数值，其中 *`parameterName`* 是 `<asp:Parameter>` 标记中 `Name` 特性的值（`InputParameters` 集合也可以按序号）。 若要将 `month` 参数设置为当月，请将以下内容添加到 `Selecting` 事件处理程序中：
+这两种方法都会向页面的代码隐藏类添加 ObjectDataSource `Selecting` 事件的新事件处理程序。 在此事件处理程序中，我们可以使用 `e.InputParameters[parameterName]`读取和写入参数值，其中 *`parameterName`* 是 `<asp:Parameter>` 标记中 `Name` 特性的值（`InputParameters` 集合也可以按序号）。`e.InputParameters[index]` 若要将 `month` 参数设置为当月，请将以下内容添加到 `Selecting` 事件处理程序中：
 
 [!code-csharp[Main](programmatically-setting-the-objectdatasource-s-parameter-values-cs/samples/sample3.cs)]
 
@@ -111,7 +111,7 @@ ms.locfileid: "74602318"
 
 **图 10**：显示本月周年纪念的员工（[单击查看全尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image28.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 ObjectDataSource 的参数值通常可以通过声明方式进行设置，而无需编写代码行，但可以通过编程方式轻松地设置参数值。 我们需要做的就是为 ObjectDataSource 的 `Selecting` 事件创建事件处理程序，该事件处理程序在调用基础对象的方法之前激发，并通过 `InputParameters` 集合手动设置一个或多个参数的值。
 

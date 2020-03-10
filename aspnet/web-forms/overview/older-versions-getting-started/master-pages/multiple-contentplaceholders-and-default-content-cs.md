@@ -9,11 +9,11 @@ ms.assetid: b9b9798b-027d-46cc-9636-473378e437ac
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e902bcae05c0e7976a20293f2b01e5f2e2bee13a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74639538"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511538"
 ---
 # <a name="multiple-contentplaceholders-and-default-content-c"></a>多个 ContentPlaceHolder 和默认内容 (C#)
 
@@ -148,7 +148,7 @@ ASP.NET 不要求所有内容页都包含母版页中定义的每个 ContentPlac
 
 **图 08**：显示 `LeftColumnContent` 和 `QuickLoginUI` Contentplaceholder 的默认内容（[单击以查看完全大小的图像](multiple-contentplaceholders-and-default-content-cs/_static/image24.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 母版页模型允许在母版页中使用任意数量的 Contentplaceholder。 此外，Contentplaceholder 包括默认内容，该内容在内容页中没有相应的内容控件的情况下发出。 在本教程中，我们介绍了如何在母版页中包含其他 ContentPlaceHolder 控件，以及如何在新的和现有的 ASP.NET 页中定义这些新 Contentplaceholder 的内容控件。 我们还介绍了如何在 ContentPlaceHolder 中指定默认内容，这在只有少数页需要自定义特定区域中的其他标准化内容的情况下非常有用。
 

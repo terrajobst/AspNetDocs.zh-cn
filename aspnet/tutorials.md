@@ -2,25 +2,25 @@
 uid: tutorials
 title: ASP.NET 教程 |Microsoft Docs
 author: tdykstra
-description: 用于开发 ASP.NET 应用程序的分步指南的列表。
+description: 开发 ASP.NET 应用程序的分步指南列表。
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
 ms.openlocfilehash: 106b4b88d2e7de90900b7a73570ecd6140e2db66
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113194"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449726"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 教程
 
 [!INCLUDE[](~/includes/rp.md)]
 
-下面的分步指南，用于开发 ASP.NET 应用程序都可用。
+下面提供了用于开发 ASP.NET 应用程序的分步指南。
 
 > [!NOTE]
-> 查找有关 ASP.NET Core 教程？  找到它们[此处](https://docs.microsoft.com/aspnet/core/tutorials/)。
+> 正在查找 ASP.NET Core 教程？  [在此处](https://docs.microsoft.com/aspnet/core/tutorials/)查找它们。
 
 ## <a name="web-forms"></a>Web Forms — Web 窗体
 
@@ -60,7 +60,7 @@ ms.locfileid: "65113194"
 * [Web API 2 入门 (C#)](web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
 * [向 ASP.NET Web 窗体使用 Web API](web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
 * [创建 Web API 帮助页](web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-* [动手实验：生成使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA)](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+* [动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 * [在 Web API 2 中使用属性路由创建 REST API](web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing.md)
 * [通过 Entity Framework 6 使用 Web API 2](web-api/overview/data/using-web-api-with-entity-framework/index.md)
 * [从 Windows Phone 8 应用程序调用 Web API (C#)](web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
@@ -78,8 +78,8 @@ ms.locfileid: "65113194"
 * [在 Azure 辅助角色中承载 Web API 2](web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role.md)
 * [Web API 2 中的依赖项注入](web-api/overview/advanced/dependency-injection.md)
 * [从 .NET 客户端调用 Web API (C#)](web-api/overview/advanced/calling-a-web-api-from-a-net-client.md)
-* [Web API 中发送 HTML 窗体数据：窗体 url 编码的数据](web-api/overview/advanced/sending-html-form-data-part-1.md)
-* [Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](web-api/overview/advanced/sending-html-form-data-part-2.md)
+* [在 Web API 中发送 HTML 窗体数据：窗体 URL 编码的数据](web-api/overview/advanced/sending-html-form-data-part-1.md)
+* [在 Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](web-api/overview/advanced/sending-html-form-data-part-2.md)
 
 ## <a name="web-pages"></a>网页
 
@@ -113,10 +113,10 @@ ms.locfileid: "65113194"
 ## <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 * [教程：SignalR 2 入门](signalr/overview/getting-started/tutorial-getting-started-with-signalr.md)
-* [教程：使用 SignalR 2 和 MVC 5 入门](signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
-* [教程：使用 signalr 2 实现高频率实时功能](signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
-* [教程：使用 signalr 2 实现服务器广播](signalr/overview/getting-started/tutorial-server-broadcast-with-signalr.md)
-* [动手实验：使用 SignalR 实时 Web 应用程序](signalr/overview/getting-started/real-time-web-applications-with-signalr.md)
+* [教程：SignalR 2 和 MVC 5 入门](signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+* [教程：使用 SignalR 2 实现高频率实时功能](signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
+* [教程：使用 SignalR 2 实现服务器广播](signalr/overview/getting-started/tutorial-server-broadcast-with-signalr.md)
+* [动手实验：使用 SignalR 实现实时 Web 应用程序](signalr/overview/getting-started/real-time-web-applications-with-signalr.md)
 * [对 SignalR 应用程序进行单元测试](signalr/overview/testing-and-debugging/unit-testing-signalr-applications.md)
 * [启用 SignalR 跟踪](signalr/overview/testing-and-debugging/enabling-signalr-tracing.md)
 * [使用 Azure 服务总线的 SignalR 横向扩展](signalr/overview/performance/scaleout-with-windows-azure-service-bus.md)
@@ -131,7 +131,7 @@ ms.locfileid: "65113194"
 
 * [向空的或现有的 Web 窗体项目添加 ASP.NET 标识](identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 * [借助 Azure Active Directory 开发 ASP.NET 应用](identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-* [ASP.NET 标识：使用 EntityFramework MySQL 提供程序使用 MySQL 存储 (C#)](identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
+* [ASP.NET 标识：通过 EntityFramework MySQL 提供程序使用 MySQL 存储 (C#)](identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
 * [ASP.NET 标识中的帐户确认和密码恢复 (C#)](identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 * [使用 SMS 和 ASP.NET Identity 的双因素身份验证](identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 * [实现自定义 MySQL ASP.NET 标识存储提供程序](identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider.md)

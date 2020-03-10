@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-8
-title: 显示项的详细信息 |Microsoft Docs
+title: 显示项详细信息 |Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -9,29 +9,29 @@ ms.assetid: 75ef94b1-bbec-4681-9210-452dba816144
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-8
 msc.type: authoredcontent
 ms.openlocfilehash: 3f48c5ad73ceb9a4873fbbb621b518553a498966
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389045"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449000"
 ---
 # <a name="display-item-details"></a>显示项详细信息
 
-通过[Mike Wasson](https://github.com/MikeWasson)
+作者： [Mike Wasson](https://github.com/MikeWasson)
 
-[下载已完成的项目](https://github.com/MikeWasson/BookService)
+[下载完成的项目](https://github.com/MikeWasson/BookService)
 
-在本部分中，将添加能够查看每个工作簿的详细信息。 在 app.js 中，将添加到视图模型的以下代码：
+在本部分中，你将添加查看每个书籍的详细信息的能力。 在 node.js 中，将以下代码添加到视图模型：
 
 [!code-javascript[Main](part-8/samples/sample1.js)]
 
-在 Views/Home/Index.cshtml，数据绑定元素添加到详细信息链接：
+在 Views/Home/索引中，将数据绑定元素添加到详细信息链接：
 
 [!code-html[Main](part-8/samples/sample2.html?highlight=5)]
 
-这会将绑定的单击处理程序&lt;&gt;元素`getBookDetail`视图模型上的函数。
+这会将 &lt;&gt; 元素的 click 处理程序绑定到视图模型上的 `getBookDetail` 函数。
 
-在同一文件中，将为以下标记上：
+在同一文件中，替换以下标记：
 
 [!code-html[Main](part-8/samples/sample3.html)]
 
@@ -39,13 +39,13 @@ ms.locfileid: "59389045"
 
 [!code-html[Main](part-8/samples/sample4.html)]
 
-此标记将创建一个表，其中是数据绑定到的属性`detail`视图模型中可观察量。
+此标记创建一个表，该表绑定到视图模型中的 `detail` 的属性。
 
-"&lt;！-Ko-&gt; &quot;语法允许您包括 Knockout 绑定之外的 DOM 元素。 在这种情况下，`if`绑定会导致标记要显示的此部分时，才`details`为非 null。
+"&lt;!--ko&gt;&quot; 语法允许在 DOM 元素之外包含挖空绑定。 在这种情况下，仅当 `details` 为非 null 时，`if` 绑定才会显示此部分标记。
 
 [!code-html[Main](part-8/samples/sample5.html)]
 
-现在，如果运行应用并单击其中一个&quot;详细信息&quot;的链接，该应用将显示书籍详细信息。
+现在，如果运行应用并单击 &quot;详细信息&quot; 链接之一，该应用将显示书籍详细信息。
 
 [![](part-8/_static/image2.png)](part-8/_static/image1.png)
 

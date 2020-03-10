@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender
-title: '[如何实现:]使用 ASP.NET AJAX ResizableControl 扩展程序吗？ | Microsoft Docs'
+title: '[如何实现：]使用 ASP.NET AJAX ResizableControl 扩展器？ | Microsoft Docs'
 author: JoeStagner
-description: 从 ASP.NET AJAX 控件工具包 ResizableControl 扩展程序可让开发人员指定的 Web 页的用户可能会调整大小的区域动态...
+description: 通过 ASP.NET AJAX 控件工具包中的 ResizableControl 扩展程序，开发人员可以指定用户可调整其动态大小的网页区域 。
 ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: 99b23369-dac6-458b-b002-56be35f43236
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender
 msc.type: video
 ms.openlocfilehash: 4ce14e555b8ef2e2746832322a488733a7c5c377
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398834"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510236"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-resizablecontrol-extender"></a>[如何实现:]使用 ASP.NET AJAX ResizableControl 扩展程序吗？
+# <a name="how-do-i-use-the-aspnet-ajax-resizablecontrol-extender"></a>[如何实现：]使用 ASP.NET AJAX ResizableControl 扩展器？
 
-通过[Joe Stagner](https://github.com/JoeStagner)
+作者： [Joe Stagner](https://github.com/JoeStagner)
 
-从 ASP.NET AJAX 控件工具包 ResizableControl 扩展程序允许开发人员指定的 Web 页的用户可能会动态调整大小的区域。 此视频演示如何配置外观和感觉的可调整大小的区域，以及如何运行时调整大小的客户端脚本。
+通过 ASP.NET AJAX 控件工具包中的 ResizableControl 扩展程序，开发人员可以指定用户可以动态调整大小的网页区域。 此视频演示如何配置可调整大小的区域的外观，以及如何在调整大小时运行客户端脚本。
 
-[&#9654;观看视频 （30 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender)
+[&#9654;观看视频（30分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender)
 
 > [!div class="step-by-step"]
 > [上一页](how-do-i-use-the-aspnet-ajax-validatorcallout-extender.md)

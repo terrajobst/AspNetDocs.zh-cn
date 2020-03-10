@@ -9,11 +9,11 @@ ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 56ceabc79947967846d342354fd033510be5f05a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625546"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458252"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：部署 SQL Server Compact 数据库-2 of 12
 
@@ -73,11 +73,11 @@ NuGet 包安装通常负责将此软件与应用程序一起部署所需的所�
 
 展开**bin**文件夹以查看**amd64**和**x86**文件夹，然后选择这些文件夹，右键单击，然后选择 "**包括在项目中**"。
 
-![amd64_and_x86_in_Solution_Explorer .png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
+![amd64_and_x86_in_Solution_Explorer.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image2.png)
 
 文件夹图标将更改为显示该文件夹已包含在项目中。
 
-![Solution_Explorer_amd64_included .png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
+![Solution_Explorer_amd64_included.png](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image3.png)
 
 ## <a name="configuring-code-first-migrations-for-application-database-deployment"></a>配置应用程序数据库部署的 Code First 迁移
 
@@ -108,7 +108,7 @@ NuGet 包安装通常负责将此软件与应用程序一起部署所需的所�
 
 第一步是确保将 ContosoUniversity 项目设置为启动项目。 在**解决方案资源管理器**中，右键单击 ContosoUniversity 项目，然后选择 "**设为启动项目**"。 Code First 迁移将在启动项目中查找数据库连接字符串。
 
-从 "**工具**" 菜单中，依次单击 " **NuGet 包管理器**" 和 "**程序包管理器控制台**"。
+在“工具”菜单中，单击“NuGet 包管理器”，然后单击“包管理器控制台”。
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 
@@ -153,13 +153,13 @@ NuGet 包安装通常负责将此软件与应用程序一起部署所需的所�
 
 在 "**程序包管理器控制台**" 窗口中，输入 "添加迁移初始" 命令以创建初始迁移，并将其命名为 "初始"。
 
-![添加-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
+![add-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
 
 Code First 迁移在 "*迁移*" 文件夹中创建另一个类文件，此类包含用于创建数据库架构的代码。
 
 在 "**程序包管理器控制台**" 中，输入命令 "更新数据库" 以创建数据库并运行**Seed**方法。
 
-![更新-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 （如果您收到一条错误消息，指示表已存在并且无法创建，则可能是您在删除数据库之后和执行 `update-database`之前运行了该应用程序。 在这种情况下，再次删除*School .sdf*文件，然后重试 `update-database` 命令。）
 
@@ -206,7 +206,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和 forms 身份验�
 
 关闭浏览器。 在**解决方案资源管理器**中，单击 "刷新" 按钮以查看新的*aspnet .sdf*文件。
 
-![New_aspnet. sdf_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image25.png)
+![New_aspnet.sdf_in_Solution_Explorer](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image25.png)
 
 右键**单击 "** "，然后选择 **"包括在项目中"** 。
 
@@ -216,7 +216,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和 forms 身份验�
 
 在**解决方案资源管理器**中，单击 "**刷新**"，然后展开 "应用\_数据" 文件夹以查看之前创建的 School 数据库;右键单击该项目，然后选择 **"包括在项目中"** 。
 
-![Including_School. sdf_in_project](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image26.png)
+![Including_School.sdf_in_project](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image26.png)
 
 将*aspnet .sdf*重命名为*aspnet-Prod*。
 

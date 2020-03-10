@@ -9,11 +9,11 @@ ms.assetid: 0ecb03b6-52a0-4731-8c7a-436391d36838
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f1dd50f46528e8dd51f85e503604d3f0dbc21ad2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74601938"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465914"
 ---
 # <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>以编程方式设置 ObjectDataSource 的参数值 (VB)
 
@@ -101,7 +101,7 @@ ms.locfileid: "74601938"
 
 **图 9**：单击 "属性" 窗口中的闪电形图标以列出 Web 控件的事件
 
-所有这三种方法都会向页面的代码隐藏类添加 ObjectDataSource 的 `Selecting` 事件的新事件处理程序。 在此事件处理程序中，我们可以使用 `e.InputParameters(parameterName)`读取和写入参数值，其中 *`parameterName`* 是 `<asp:Parameter>` 标记中 `Name` 特性的值（`InputParameters` 集合也可以按序号）。 若要将 `month` 参数设置为当月，请将以下内容添加到 `Selecting` 事件处理程序中：
+所有这三种方法都会向页面的代码隐藏类添加 ObjectDataSource 的 `Selecting` 事件的新事件处理程序。 在此事件处理程序中，我们可以使用 `e.InputParameters(parameterName)`读取和写入参数值，其中 *`parameterName`* 是 `<asp:Parameter>` 标记中 `Name` 特性的值（`InputParameters` 集合也可以按序号）。`e.InputParameters(index)` 若要将 `month` 参数设置为当月，请将以下内容添加到 `Selecting` 事件处理程序中：
 
 [!code-vb[Main](programmatically-setting-the-objectdatasource-s-parameter-values-vb/samples/sample3.vb)]
 
@@ -111,7 +111,7 @@ ms.locfileid: "74601938"
 
 **图 10**：显示本月周年纪念的员工（[单击查看全尺寸图像](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image28.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 ObjectDataSource 的参数值通常可以通过声明方式进行设置，而无需编写代码行，但可以通过编程方式轻松地设置参数值。 我们需要做的就是为 ObjectDataSource 的 `Selecting` 事件创建事件处理程序，该事件处理程序在调用基础对象的方法之前激发，并通过 `InputParameters` 集合手动设置一个或多个参数的值。
 
@@ -128,4 +128,4 @@ ms.locfileid: "74601938"
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Hilton Giesenow。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](declarative-parameters-vb.md)
+> [上一页](declarative-parameters-vb.md)

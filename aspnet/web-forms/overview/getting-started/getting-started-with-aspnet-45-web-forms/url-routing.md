@@ -9,11 +9,11 @@ ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 66b727b69ca4f9a3d35b67f492f9a554146e09ef
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590714"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474812"
 ---
 # <a name="url-routing"></a>URL 路由
 
@@ -25,7 +25,7 @@ ms.locfileid: "74590714"
 
 在本教程中，您将修改 Wingtip 玩具示例应用程序以支持 URL 路由。 使用路由，你的 web 应用程序可以使用友好、更易于记住且更好的搜索引擎支持的 Url。 本教程基于前面的 "成员资格和管理" 教程，是 Wingtip 玩具教程系列的一部分。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何注册 ASP.NET Web 窗体应用程序的路由。
 - 如何将路由添加到网页。
@@ -138,7 +138,7 @@ URL 模式可以包含文本值和变量占位符（称为 URL 参数）。 文�
     `https://localhost:44300/ProductDetails.aspx?productID=2`  
  如果用户具有标记为书签的链接，则代码仍会识别包含查询字符串的 URL。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，您已添加了类别和产品的路由。 您已经了解了如何将路由与使用模型绑定的数据控件集成。 在下一教程中，你将实现全局错误处理。
 

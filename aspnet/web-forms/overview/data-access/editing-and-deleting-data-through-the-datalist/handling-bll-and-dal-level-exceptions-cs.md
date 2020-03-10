@@ -9,11 +9,11 @@ ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 35ff60be6ed67ea8d1bf226ae70f590100597757
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634123"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78494966"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-c"></a>处理 BLL 和 DAL 级别的异常 (C#)
 
@@ -107,7 +107,7 @@ ms.locfileid: "74634123"
 
 **图 5**：输入负价格时显示错误消息（[单击查看全尺寸图像](handling-bll-and-dal-level-exceptions-cs/_static/image13.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 GridView 和 ObjectDataSource 提供了后端事件处理程序，这些处理程序包括有关在更新和删除工作流期间引发的任何异常的信息，以及可设置为指示异常是否已被设置的属性。妥善. 但是，在使用 DataList 并直接使用 BLL 时，这些功能不可用。 相反，我们负责实现异常处理。
 

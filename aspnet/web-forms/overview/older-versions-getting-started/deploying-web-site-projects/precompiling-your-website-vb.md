@@ -9,11 +9,11 @@ ms.assetid: c285dc6f-a1c6-46e6-ac03-3830947f57e3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 1a46870b73f95300ef5bc1f72dda74d7d62ab11f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588363"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509438"
 ---
 # <a name="precompiling-your-website-vb"></a>预编译网站 (VB)
 
@@ -164,7 +164,7 @@ ASP.NET 编译器工具还可用于预编译站点以使用不可更新的 UI �
 
 有关将文件从开发环境复制到生产环境的复习，请参阅[*使用 FTP 客户端部署网站*](deploying-your-site-using-an-ftp-client-vb.md)和[*使用 Visual Studio 部署网站*](determining-what-files-need-to-be-deployed-vb.md)教程。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 支持两种编译模式：自动和显式。 如前面的教程中所述，Web 应用程序项目（WAPs）使用显式编译，而网站项目（WSPs）在默认情况下使用自动编译。 但是，可以使用 ASP.NET 编译工具在部署之前显式编译 WSP。
 

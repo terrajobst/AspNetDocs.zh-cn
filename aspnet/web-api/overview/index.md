@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/index
-title: Web API Guidance - ASP.NET 4.x
+title: Web API 指南-ASP.NET 4。x
 author: rick-anderson
-description: ASP.NET Web API 指南列表 asp.net 4.x
+description: ASP.NET 4.x ASP.NET Web API 指南列表
 ms.author: riande
 ms.date: 01/17/2012
 ms.custom: seoapril2019
@@ -10,11 +10,11 @@ ms.assetid: daca6735-b5d3-4ef5-af33-ee682926238b
 msc.legacyurl: /web-api/overview
 msc.type: book
 ms.openlocfilehash: 304c0d71e5e18f9d3f0768464fe39d6e6946600d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422897"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448298"
 ---
 # <a name="web-api-guidance"></a>Web API 指南
 
@@ -24,7 +24,7 @@ ms.locfileid: "59422897"
     - [Web API 2 的操作结果](getting-started-with-aspnet-web-api/action-results.md)
     - [向 ASP.NET Web 窗体使用 Web API](getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
     - [创建 Web API 帮助页](getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-    - [动手实验：生成使用 ASP.NET Web API 和 Angular.js 的单页面应用程序 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+    - [动手实验：使用 ASP.NET Web API 和 Angular.js 生成单页应用程序 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 - [路由](web-api-routing-and-actions/index.md)
 
     - [Web API 中的路由](web-api-routing-and-actions/routing-in-aspnet-web-api.md)
@@ -112,8 +112,8 @@ ms.locfileid: "59422897"
     - [从 .NET 客户端调用 Web API (C#)](advanced/calling-a-web-api-from-a-net-client.md)
     - [Web API 中的 HTTP 消息处理程序](advanced/http-message-handlers.md)
     - [Web API 中的 HTTPClient 消息处理程序](advanced/httpclient-message-handlers.md)
-    - [Web API 中发送 HTML 窗体数据：窗体 url 编码的数据](advanced/sending-html-form-data-part-1.md)
-    - [Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](advanced/sending-html-form-data-part-2.md)
+    - [在 Web API 中发送 HTML 窗体数据：窗体 URL 编码的数据](advanced/sending-html-form-data-part-1.md)
+    - [在 Web API 中发送 HTML 窗体数据：文件上传和多部分 MIME](advanced/sending-html-form-data-part-2.md)
     - [ASP.NET Web API 中的 HTTP Cookie](advanced/http-cookies.md)
 - [发布](releases/index.md)
 

@@ -9,11 +9,11 @@ ms.assetid: a0b9186c-0912-4fff-916a-6d17e696a50b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb
 msc.type: authoredcontent
 ms.openlocfilehash: aaecf77c1d25f2c99ef4e9948d79fc01b837169b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611667"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446138"
 ---
 # <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-vb"></a>使用没有 UpdatePanel 的弹出控件处理回发 (VB)
 
@@ -43,7 +43,7 @@ AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法�
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample3.html)]
 
-在服务器端代码中，必须读取隐藏字段的值。 由于隐藏的窗体字段是很简单的操作，因此需要使用允许列表方法来验证隐藏的值。 标识正确的文本框后，会将日历中的日期写入该文本框。
+在服务器端代码中，必须读取隐藏字段的值。 由于隐藏的表单字段进行了一些无关紧要操作，一种允许列表方法验证隐藏的值是必需的。 标识正确的文本框后，会将日历中的日期写入该文本框。
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 
@@ -56,4 +56,4 @@ AJAX 控件工具包中的 PopupControl 扩展器提供了一种简单的方法�
 单击某个日期会将其放在文本框中（[单击以查看完全大小的图像](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/_static/image6.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
+> [上一页](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)

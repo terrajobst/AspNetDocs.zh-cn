@@ -9,11 +9,11 @@ ms.assetid: 142e5181-29ce-4bb9-907b-2a0becf7928b
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 2ee4789ea9567b7bcd70eb63695e0b1d73076dc2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74572658"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78490196"
 ---
 # <a name="creating-a-business-logic-layer-vb"></a>创建业务逻辑层 (VB)
 
@@ -62,7 +62,7 @@ ms.locfileid: "74572658"
 - `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` 使用传入的值更新数据库中的现有产品，如果精确更新一行，则返回 `True`，否则返回 `False`
 - `DeleteProduct(productID)` 从数据库中删除指定的产品
 
-ProductsBLL
+ProductsBLL.vb
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample1.vb)]
 
@@ -147,7 +147,7 @@ ProductsBLL
 
 接下来，为 `ColumnChanging` 事件创建事件处理程序，该事件可确保 `UnitPrice`、`UnitsInStock`、`UnitsOnOrder`和 `ReorderLevel` 列值（如果不 `NULL`）大于或等于零。 如果任何这样的列超出范围，则会引发 `ArgumentException`。
 
-ProductsDataTable. ColumnChanging
+ProductsDataTable.ColumnChanging.vb
 
 [!code-vb[Main](creating-a-business-logic-layer-vb/samples/sample5.vb)]
 
@@ -175,7 +175,7 @@ BLL 类应包含检查以确保遵守应用程序的业务规则。 这些检查
 
 正如我们将在将来的教程中看到的那样，在使用数据 Web 控件插入、更新或删除数据时，处理从 BLL 向上冒泡的异常可以直接在事件处理程序中处理，而不必在 `Try...Catch` 块中包装代码。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 设计良好的应用程序可在不同的层中进行设计，每个层封装一个特定角色。 在本文的第一个教程中，我们创建了一个使用类型化数据集的数据访问层;在本教程中，我们构建了一个业务逻辑层作为应用程序 `App_Code` 文件夹中的一系列类，该文件夹向下调用 DAL。 BLL 实现了应用程序的字段级和业务级逻辑。 除了创建单独的 BLL 外，与我们在本教程中所做的一样，另一个选项是通过使用分部类来扩展 Tableadapter 的方法。 然而，使用这种方法并不允许我们覆盖现有方法，也不能将 DAL 和 BLL 与我们在本文中所采用的方法完全分离。
 

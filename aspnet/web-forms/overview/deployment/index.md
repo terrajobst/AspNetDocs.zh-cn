@@ -9,11 +9,11 @@ ms.assetid: 05e4c88f-5101-4277-a323-b6774d98f69e
 msc.legacyurl: /web-forms/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 1483abc212b5f122ad3e2b88474c42b208bb748e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134293"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520376"
 ---
 # <a name="deployment"></a>部署
 
@@ -37,7 +37,7 @@ ms.locfileid: "65134293"
 
     - [使用 Visual Studio 2010 在企业方案中部署 Web 应用程序](deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
     - [企业 Web 部署：方案概述](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-    - [应用程序生命周期管理：从开发到生产环境](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+    - [应用程序生命周期管理：从开发到生产](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
 - [ASP.NET 4 - 企业部署系列 1](web-deployment-in-the-enterprise/index.md)
 
     - [企业中的 Web 部署](web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)
@@ -55,9 +55,9 @@ ms.locfileid: "65134293"
 
     - [配置用于 Web 部署的服务器环境](configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)
     - [选择 Web 部署的适当方法](configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md)
-    - [场景：配置用于 Web 部署测试环境](configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md)
-    - [场景：配置用于 Web 部署的过渡环境](configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md)
-    - [场景：配置用于 Web 部署的生产环境](configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md)
+    - [方案：配置用于 Web 部署的测试环境](configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md)
+    - [方案：配置用于 Web 部署的过渡环境](configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md)
+    - [方案：配置用于 Web 部署的生产环境](configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md)
     - [配置用于 Web 部署发布的 Web 服务器（远程代理）](configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
     - [配置用于 Web 部署发布的 Web 服务器（Web 部署处理程序）](configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
     - [配置用于 Web 部署发布的 Web 服务器（离线部署）](configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)

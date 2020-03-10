@@ -9,11 +9,11 @@ ms.assetid: ec1cec4c-a75f-47af-a2ba-b1e2f971d24b
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
 ms.openlocfilehash: b2811791a897c9166f6222c23dddc6921e5267ab
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614946"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522938"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>使用 Visual Studio 的 ASP.NET Web 部署：项目属性
 
@@ -60,7 +60,7 @@ ms.locfileid: "74614946"
 
 在**解决方案资源管理器**中，右键单击 " *Elmah* " 文件夹，选择 "**添加新项**"，然后创建一个名为 " *Placeholder*" 的文本文件。 将以下文本放入其中： "这是一个用于确保文件夹已部署的占位符文件。" 并保存该文件。 这就是您必须执行的所有操作，以确保 Visual Studio 部署此文件及其所在的文件夹，因为 *.txt*文件的 "**生成操作**" 属性默认设置为 "**内容**"。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 你现在已经完成了所有部署设置任务。 在下一教程中，你将把 Contoso 大学网站部署到测试环境，并在其中进行测试。
 

@@ -9,11 +9,11 @@ ms.assetid: ad0f1014-1eff-465f-bdc6-93058de00e44
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 537f8e76bc0cbfa759a014b63ae5f68b5d3ca64d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74629857"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491084"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用一个 DropDownList 实现母版/详细信息筛选 (VB)
 
@@ -137,7 +137,7 @@ ms.locfileid: "74629857"
 
 如果选择 "--选择类别--" 选项，而不是显示*所有*产品，请改用 `-1` 的值。 敏锐读取器将使用 DropDownList 教程重新开始*使用主/详细筛选*，我们更新了 `ProductsBLL` 类的 `GetProductsByCategoryID(categoryID)` 方法，以便在传入 `-1` *`categoryID`* 值后，返回了所有产品记录。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 显示分层相关的数据时，通常可以使用主/详细信息报表来显示数据，用户可以从层次结构顶部开始浏览数据，并向下钻取详细信息。 在本教程中，我们将介绍如何生成一个简单的大纲/详细信息报告，其中显示了所选类别的产品。 为此，可以使用 DropDownList 作为类别列表，并将 DataList 用于属于所选类别的产品。
 

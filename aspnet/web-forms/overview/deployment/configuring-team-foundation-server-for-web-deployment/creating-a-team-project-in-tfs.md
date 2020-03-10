@@ -2,200 +2,200 @@
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 title: 在 TFS 中创建团队项目 |Microsoft Docs
 author: jrjlee
-description: 本主题介绍如何创建在 Team Foundation Server (TFS) 2010年的新的团队项目。
+description: 本主题介绍如何在 Team Foundation Server （TFS）2010中创建新的团队项目。
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
 ms.openlocfilehash: d12e0636ce3b6239d125305db4354278f9f24960
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108782"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519560"
 ---
 # <a name="creating-a-team-project-in-tfs"></a>在 TFS 中创建团队项目
 
-通过[Jason Lee](https://github.com/jrjlee)
+作者： [Jason](https://github.com/jrjlee)
 
 [下载 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> 本主题介绍如何创建在 Team Foundation Server (TFS) 2010年的新的团队项目。
+> 本主题介绍如何在 Team Foundation Server （TFS）2010中创建新的团队项目。
 
-本主题窗体的一系列教程基于虚构公司 Fabrikam，Inc.的企业部署要求的一部分本系列教程将使用的示例解决方案&#x2014; [Contact Manager 解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示真实级别的复杂性，包括 ASP.NET MVC 3 应用程序，Windows 通信的 web 应用程序Foundation (WCF) 服务和数据库项目。
+本主题介绍一系列教程的一部分，这些教程基于名为 Fabrikam，Inc. 的虚构公司的企业部署要求。本教程系列使用一个示例解决方案&#x2014;，该解决方案使用[联系人管理器解决方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;来表示具有真实复杂性级别的 web 应用程序，包括 ASP.NET MVC 3 应用程序、Windows Communication Foundation （WCF）服务和数据库项目。
 
 ## <a name="task-overview"></a>任务概述
 
-若要预配，并在 TFS 中使用新的团队项目，你将需要完成以下高级步骤：
+若要预配和使用 TFS 中的新团队项目，需要完成以下高级步骤：
 
-- 向将创建新的团队项目的用户授予权限。
+- 向将创建新团队项目的用户授予权限。
 - 创建团队项目。
-- 向将处理该项目的团队成员授予权限。
-- 签入一些内容。
+- 向将处理项目的团队成员授予权限。
+- 签入某些内容。
 
-本主题将演示如何执行这些过程中，并且它将识别的用户和作业可能需要负责的每个过程的角色。 请注意，具体取决于你的组织的结构，每个任务可能是不同的人员的责任。
+本主题将演示如何执行这些过程，并将确定可能负责每个过程的用户和作业角色。 请注意，根据你的组织的结构，每个任务都可能是不同人员的责任。
 
-任务和本主题中的演练假定您已安装并配置 TFS，并创建了团队项目集合配置过程的一部分。 有关这些假设的详细信息和方案的更多常规背景信息，请参阅[TFS 生成服务器配置用于 Web 部署](configuring-a-tfs-build-server-for-web-deployment.md)。
+本主题中的任务和演练假定您已安装并配置 TFS，并且您已在配置过程中创建了一个团队项目集合。 有关这些假设的详细信息，以及有关该方案的更多常规背景信息，请参阅为[Web 部署配置 TFS 生成服务器](configuring-a-tfs-build-server-for-web-deployment.md)。
 
 ## <a name="grant-permissions-to-the-team-project-creator"></a>向团队项目创建者授予权限
 
-若要创建新的团队项目，则需要这些权限：
+若要创建新的团队项目，你需要具备以下权限：
 
-- 您必须具有**创建新的项目**TFS 应用层上的权限。 通常通过将用户添加到授予此权限**项目集合管理员**TFS 组。 **Team Foundation Administrators**全局组也包含此权限。
-- 您必须有权创建新的团队网站中对应于 TFS 团队项目集合的 SharePoint 站点集合。 通常通过将用户添加到与 SharePoint 组授予此权限**完全控制**权限在 sharepoint 站点集合。
-- 如果使用的 SQL Server Reporting Services 功能，您必须是的成员**Team Foundation 内容管理员**Reporting Services 中的角色。
+- 您必须具有 TFS 应用程序层上的 "**创建新项目**" 权限。 通常通过将用户添加到 "**项目集合管理员**" TFS 组来授予此权限。 **Team Foundation Administrators**全局组还包括此权限。
+- 您必须有权在与 TFS 团队项目集合相对应的 SharePoint 网站集内创建新的团队网站。 通常通过将用户添加到对 SharePoint 网站集具有**完全控制**权限的 sharepoint 组来授予此权限。
+- 如果使用 SQL Server Reporting Services 功能，则必须是 Reporting Services 中的 " **Team Foundation 内容管理员**" 角色的成员。
 
-### <a name="who-performs-these-procedures"></a>谁将执行以下步骤？
+### <a name="who-performs-these-procedures"></a>谁执行这些过程？
 
-通常情况下，用户或组管理 TFS 部署还会执行这些过程。
+通常，管理 TFS 部署的人员或组也会执行这些过程。
 
-由于这是一种高特权的组的权限，新的团队项目通常由创建的用户的一小部分与负责管理 TFS 部署。 开发人员将不通常被授予创建新的团队项目所需的权限。
+由于这是一个具有高特权的权限集，因此新团队项目通常由一小部分用户创建，负责管理 TFS 部署。 通常不会向开发人员授予创建新团队项目所需的权限。
 
 ### <a name="grant-permissions-in-tfs"></a>在 TFS 中授予权限
 
-如果你想要使用户能够创建新的团队项目，第一项高级任务是将用户添加到**项目集合管理员**组的团队项目集合。
+如果要使用户能够创建新的团队项目，则第一个高级任务是将用户添加到团队项目集合的 "**项目集合管理员**" 组。
 
-**若要将用户添加到项目集合管理员组**
+**将用户添加到 "项目集合管理员" 组**
 
-1. 在 TFS 服务器上，在**启动**菜单，依次指向**所有程序**，单击**Microsoft Team Foundation Server 2010**，然后单击**Team Foundation管理控制台**。
-2. 在导航树视图中，展开**应用程序层**，然后单击**团队项目集合**。
+1. 在 TFS 服务器上的 "**开始**" 菜单中，指向 "**所有程序**"，单击**Microsoft Team Foundation Server 2010**"，然后单击" **Team Foundation 管理控制台**"。
+2. 在导航树视图中，展开 "**应用层**"，然后单击 "**团队项目集合**"。
 
     ![](creating-a-team-project-in-tfs/_static/image1.png)
-3. 在中**团队项目集合**窗格中，选择的团队项目的集合你想要管理。
+3. 在 "**团队项目集合**" 窗格中，选择要管理的团队项目集合。
 
     ![](creating-a-team-project-in-tfs/_static/image2.png)
-4. 上**常规**选项卡上，单击**组成员身份**。
+4. 在 "**常规**" 选项卡上，单击 "**组成员身份**"。
 
     ![](creating-a-team-project-in-tfs/_static/image3.png)
-5. 在中**全局组**对话框中，选择**项目集合管理员**组，然后依次**属性**。
-6. 在中**Team Foundation Server 组属性**对话框中，选择**Windows 用户或组**，然后单击**添加**。
+5. 在 "**全局组**" 对话框中，选择 "**项目集合管理员**" 组，然后单击 "**属性**"。
+6. 在 " **Team Foundation Server 组属性**" 对话框中，选择 " **Windows 用户或组**"，然后单击 "**添加**"。
 
     ![](creating-a-team-project-in-tfs/_static/image4.png)
-7. 在中**选择用户、 计算机或组**对话框中，键入你想要能够创建新的团队项目的用户的用户名称，单击**检查名称**，然后单击**确定**.
+7. 在 "**选择用户、计算机或组**" 对话框中，键入你希望能够创建新团队项目的用户的用户名，单击 "**检查名称**"，然后单击 **"确定"** 。
 
     ![](creating-a-team-project-in-tfs/_static/image5.png)
-8. 在中**Team Foundation Server 组属性**对话框中，单击**确定**。
-9. 在中**全局组**对话框中，单击**关闭**。
+8. 在**Team Foundation Server 组属性**"对话框中，单击 **" 确定 "** 。
+9. 在 "**全局组**" 对话框中，单击 "**关闭**"。
 
 ### <a name="grant-permissions-in-sharepoint-services"></a>在 SharePoint Services 中授予权限
 
-接下来，您需要为用户授予权限对应于 TFS 团队项目集合的 SharePoint 站点集合中创建新的团队网站。
+接下来，您需要授予用户在与 TFS 团队项目集合对应的 SharePoint 网站集中创建新团队网站的权限。
 
-**若要授予对 SharePoint 站点集合的完全控制权限**
+**授予对 SharePoint 网站集的 "完全控制" 权限**
 
-1. 在 Team Foundation Server 管理控制台中，在**团队项目集合**页上，选择你想要管理的团队项目集合。
-2. 上**SharePoint 站点**选项卡上，记下的值**当前默认站点位置**URL。
+1. 在 Team Foundation Server 管理控制台的 "**团队项目集合**" 页上，选择要管理的团队项目集合。
+2. 在 " **SharePoint 站点**" 选项卡上，记下 "**当前默认站点位置**URL" 的值。
 
     ![](creating-a-team-project-in-tfs/_static/image6.png)
-3. 打开 Internet Explorer，然后转到你在步骤 2 中记下的 URL。
+3. 打开 Internet Explorer，然后前往步骤2中记下的 URL。
 
     > [!NOTE]
-    > 如果不以创建团队项目集合的用户登录到 Windows，您将需要登录到 SharePoint 作为此用户才能继续。
-4. 上**站点操作**菜单上，单击**站点设置**。
+    > 如果你未以创建团队项目集合的用户身份登录到 Windows，则需要以此用户身份登录到 SharePoint 以便继续。
+4. 在 **“网站操作”** 菜单上，单击 **“网站设置”** 。
 
     ![](creating-a-team-project-in-tfs/_static/image7.png)
-5. 上**站点设置**页面上，在**用户和权限**，单击**人员和组**。
-6. 在左侧的导航窗格中，单击**组**。
+5. 在 "**站点设置**" 页上的 "**用户和权限**" 下，单击 "**人员和组**"。
+6. 在左侧导航面板中，单击 "**组**"。
 
     ![](creating-a-team-project-in-tfs/_static/image8.png)
-7. 在**人员和组：所有组**页上，单击**为此站点设置用户组**。
+7. 在 "**用户和组：所有组**" 页上，单击 "**为此站点设置组**"。
 
     ![](creating-a-team-project-in-tfs/_static/image9.png)
 
    > [!NOTE]
-   > 您可能会收到<strong>HTTP 404 未找到</strong>由于双 HTTP 编码 bug 的错误。 如果发生这种情况，请与此替换 URL:   
+   > 由于双 HTTP 编码错误，你可能会收到 "<strong>找不到 http 404</strong> " 错误。 如果出现这种情况，请将 URL 替换为：   
    > `[site_collection_URL]/_layouts/permsetup.aspx` 例如：  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
-8. 上**为此站点设置用户组**页上，添加将创建到团队项目的用户**所有者**组，然后依次**确定**。
+8. 在 "**为此站点设置组**" 页上，将创建团队项目的用户添加到 "**所有者**" 组，然后单击 **"确定"** 。
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
 
-使用户能够创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。
+有关使用户能够在团队项目集合中创建新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。
 
 ## <a name="create-a-new-team-project-and-add-users"></a>创建新的团队项目并添加用户
 
-所需的权限后，可以使用**团队资源管理器**Visual Studio 2010 创建新的团队项目中的窗口。 这种方法提供了向导，收集所有所需的信息，并在 TFS、 SharePoint 和 SQL Server Reporting Services 中执行必要的任务。 此外需要针对新的团队项目的权限向成员授予权限的开发人员团队，以使他们能够添加和修改内容。
+获得必要的权限后，可以使用 Visual Studio 2010 中的 "**团队资源管理器**" 窗口创建新的团队项目。 此方法提供了一个向导，该向导收集所有必需的信息，并在 TFS、SharePoint 和 SQL Server Reporting Services 中执行必要的任务。 还需要向开发人员团队成员授予对新团队项目的权限，以使他们能够添加和修改内容。
 
-### <a name="who-performs-these-procedures"></a>谁将执行以下步骤？
+### <a name="who-performs-these-procedures"></a>谁执行这些过程？
 
-通常是 TFS 管理员或开发人员团队负责人将执行以下步骤。
+通常，TFS 管理员或开发人员团队负责人会执行这些过程。
 
 ### <a name="create-a-new-team-project"></a>创建新的团队项目
 
-下一个过程介绍如何在 TFS 2010 中创建新的团队项目。
+下一过程介绍如何在 TFS 2010 中创建新的团队项目。
 
-**若要创建新的团队项目**
+**创建新的团队项目**
 
-1. 上**启动**菜单，依次指向**所有程序**，单击**Microsoft Visual Studio 2010**，右键单击**Microsoft Visual Studio 2010**，然后单击**以管理员身份运行**。
-
-    > [!NOTE]
-    > 如果您不以管理员身份运行 Visual Studio 2010，新的团队项目向导将失败的最后一个步骤。
-2. 如果**用户帐户控制**出现对话框，请单击**是**。
-3. 在 Visual Studio 中，在**团队**菜单上，单击**连接到 Team Foundation Server**。
+1. 在 "**开始**" 菜单上，指向 "**所有程序**"，单击**Microsoft Visual Studio 2010**，右键单击**Microsoft Visual Studio 2010**"，然后单击" 以**管理员身份运行**"。
 
     > [!NOTE]
-    > 如果已配置 TFS 服务器的连接，则可以省略步骤 4-7。
-4. 在中**连接到团队项目**对话框中，单击**服务器**。
-5. 在中**添加/删除 Team Foundation Server**对话框中，单击**添加**。
-6. 在中**添加 Team Foundation Server**对话框中，提供你的 TFS 实例的详细信息，然后单击**确定**。
+    > 如果不以管理员身份运行 Visual Studio 2010，则 "新建团队项目向导" 将在上一步中失败。
+2. 如果此时出现 **“用户帐户控制”** 对话框，请单击 **“是”** 。
+3. 在 Visual Studio 的 "**团队**" 菜单上，单击 "**连接到 Team Foundation Server**"。
+
+    > [!NOTE]
+    > 如果已配置到 TFS 服务器的连接，则可以省略步骤4-7。
+4. 在 "**连接到团队项目**" 对话框中，单击 "**服务器**"。
+5. 在 "**添加/删除 Team Foundation Server** " 对话框中，单击 "**添加**"。
+6. 在 "**添加 Team Foundation Server** " 对话框中，提供 TFS 实例的详细信息，然后单击 **"确定"** 。
 
     ![](creating-a-team-project-in-tfs/_static/image11.png)
-7. 在中**添加/删除 Team Foundation Server**对话框中，单击**关闭**。
-8. 在中**连接到团队项目**对话框中，选择你想要连接到，选择团队的 TFS 实例项目的集合你想要添加到，，然后单击**Connect**。
+7. 在 "**添加/删除 Team Foundation Server** " 对话框中，单击 "**关闭**"。
+8. 在 "**连接到团队项目**" 对话框中，选择要连接到的 TFS 实例，选择要添加到的团队项目集合，然后单击 "**连接**"。
 
     ![](creating-a-team-project-in-tfs/_static/image12.png)
-9. 在中**团队资源管理器**窗口中，右键单击团队项目集合，然后单击**新团队项目**。
+9. 在 "**团队资源管理器**" 窗口中，右键单击团队项目集合，然后单击 "**新建团队项目**"。
 
     ![](creating-a-team-project-in-tfs/_static/image13.png)
-10. 在中**新的团队项目**对话框中，提供的名称和描述为团队项目，然后单击**下一步**。
+10. 在 "**新建团队项目**" 对话框中，为团队项目提供名称和说明，然后单击 "**下一步**"。
 
     > [!NOTE]
-    > 如果你的团队项目中包含空格，可能会遇到一些问题，当您使用 Internet 信息服务 (IIS) Web 部署工具 （Web 部署） 将输出路径从包部署。 路径中的空格可以使其更难运行 Web 部署命令。
+    > 如果你的团队项目包含空格，则当你使用 Internet Information Services （IIS） Web 部署工具（Web 部署）从输出路径部署包时可能会遇到一些问题。 路径中的空格会使运行 Web 部署命令变得更加困难。
 
     ![](creating-a-team-project-in-tfs/_static/image14.png)
-11. 上**选择过程模板**页上，选择你想要使用以管理开发过程中，然后单击的过程模板**下一步**。
+11. 在 "**选择过程模板**" 页上，选择要用于管理开发过程的过程模板，然后单击 "**下一步**"。
 
     > [!NOTE]
-    > 有关 TFS 过程模板的更多信息，请参阅[过程模板和工具](https://msdn.microsoft.com/vstudio/aa718795)。
-12. 上**团队站点设置**页上，保留默认设置保持不变，，然后单击**下一步**。
-13. 此设置创建，或标识，与 TFS 团队项目相关联的 SharePoint 团队站点。 您的开发团队可以使用此站点来管理文档、 参与讨论线索、 创建 wiki 页面和执行其他不与代码相关的各种任务。 有关详细信息，请参阅[SharePoint 产品之间的交互和 Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx)。
-14. 上**指定源代码管理设置**页上，保留默认设置保持不变，，然后单击**下一步**。
-15. 此设置标识，或将其用作内容的根文件夹的 TFS 文件夹层次结构创建位置。
-16. 上**确认团队项目设置**页上，单击**完成**。
-17. 新的团队项目已成功创建时，在**创建的团队项目**页上，单击**关闭**。
+    > 有关 TFS 过程模板的详细信息，请参阅[过程模板和工具](https://msdn.microsoft.com/vstudio/aa718795)。
+12. 在 "**团队网站设置**" 页上，保持默认设置不变，然后单击 "**下一步**"。
+13. 此设置创建或标识与 TFS 团队项目关联的 SharePoint 团队网站。 你的开发团队可以使用此网站来管理文档、参与讨论线索、创建 wiki 页，以及执行与代码无关的其他任务。 有关详细信息，请参阅[SharePoint 产品与 Team Foundation Server 之间的交互](https://msdn.microsoft.com/library/ms253177.aspx)。
+14. 在 "**指定源代码管理设置**" 页上，保持默认设置不变，然后单击 "**下一步**"。
+15. 此设置在 TFS 文件夹层次结构中标识或创建将充当内容根文件夹的位置。
+16. 在 "**确认团队项目设置**" 页上，单击 "**完成**"。
+17. 成功创建新团队项目后，在 "**团队项目创建**" 页上，单击 "**关闭**"。
 
 ### <a name="add-users-to-a-team-project"></a>将用户添加到团队项目
 
-现在，已创建新的团队项目，可以将权限授予用户，使他们可以开始添加内容并进行协作。
+现在，你已创建新的团队项目，你可以向用户授予权限，使其能够开始添加和合作内容。
 
-**若要将用户添加到团队项目**
+**将用户添加到团队项目**
 
-1. 在 Visual Studio 2010 中，在**团队资源管理器**窗口中，右键单击团队项目，依次指向**团队项目设置**，然后单击**组成员身份**。
+1. 在 Visual Studio 2010 的 "**团队资源管理器**" 窗口中，右键单击团队项目，指向 "**团队项目设置**"，然后单击 "**组成员资格**"。
 
     ![](creating-a-team-project-in-tfs/_static/image15.png)
-2. 若要使用户能够添加、 修改和删除代码在源代码管理下的，需要将他或她到添加**contributors （参与者)** 组。
-3. 在中**项目组**对话框中，选择**参与者**组，然后依次**属性**。
+2. 若要使用户能够添加、修改和删除源代码管理下的代码，你需要将其添加到 "**参与者**" 组。
+3. 在 "**项目组**" 对话框中，选择 "**参与者**" 组，然后单击 "**属性**"。
 
     ![](creating-a-team-project-in-tfs/_static/image16.png)
-4. 在中**Team Foundation Server 组属性**对话框中，选择**Windows 用户或组**，然后单击**添加**。
+4. 在 " **Team Foundation Server 组属性**" 对话框中，选择 " **Windows 用户或组**"，然后单击 "**添加**"。
 
     ![](creating-a-team-project-in-tfs/_static/image17.png)
-5. 在中**选择用户、 计算机或组**对话框中，键入你想要添加到团队项目中，用户的用户名称，单击**检查名称**，然后单击**确定**。
+5. 在 "**选择用户、计算机或组**" 对话框中，键入要添加到团队项目的用户的用户名，单击 "**检查名称**"，然后单击 **"确定"** 。
 
     ![](creating-a-team-project-in-tfs/_static/image18.png)
-6. 在中**Team Foundation Server 组属性**对话框中，单击**确定**。
-7. 在中**项目组**对话框中，单击**关闭**。
+6. 在**Team Foundation Server 组属性**"对话框中，单击 **" 确定 "** 。
+7. 在 "**项目组**" 对话框中，单击 "**关闭**"。
 
 ## <a name="conclusion"></a>结束语
 
-此时，新的团队项目已准备好使用，和你的开发人员团队可以开始添加内容和协作开发进程上。
+此时，你的新团队项目可以使用，并且你的开发人员团队可以开始添加内容并在开发过程中进行协作。
 
-下一主题[添加到源代码管理的内容](adding-content-to-source-control.md)，介绍如何将内容添加到源代码管理。
+下一主题[将内容添加到源代码管理](adding-content-to-source-control.md)中介绍了如何将内容添加到源代码管理。
 
 ## <a name="further-reading"></a>其他阅读材料
 
-有关在 TFS 中创建团队项目的更广泛指导，请参阅[创建团队项目](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx)。 使用户能够创建团队项目集合中的新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。 将用户添加到团队项目的详细信息，请参阅[将用户添加到团队项目](https://msdn.microsoft.com/library/bb558971.aspx)。
+若要更广泛地了解如何在 TFS 中创建团队项目，请参阅[创建团队项目](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx)。 有关使用户能够在团队项目集合中创建新团队项目的详细信息，请参阅[为团队项目集合设置管理员权限](https://msdn.microsoft.com/library/dd547204.aspx)。 有关将用户添加到团队项目的详细信息，请参阅[将用户添加到团队项目](https://msdn.microsoft.com/library/bb558971.aspx)。
 
 > [!div class="step-by-step"]
 > [上一页](configuring-team-foundation-server-for-web-deployment.md)

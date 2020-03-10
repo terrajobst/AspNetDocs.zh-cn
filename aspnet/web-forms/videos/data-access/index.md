@@ -2,22 +2,22 @@
 uid: web-forms/videos/data-access/index
 title: 数据访问 |Microsoft Docs
 author: rick-anderson
-description: 如何创建数据访问层 (DAL)。
+description: 如何创建数据访问层（DAL）。
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: a923735c-2d34-456c-8327-40aa62a4c1d6
 msc.legacyurl: /web-forms/videos/data-access
 msc.type: chapter
 ms.openlocfilehash: 66c8851d53cef59ea560818a054729115ca62b3b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106753"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464294"
 ---
 # <a name="data-access"></a>数据访问
 
-> 如何创建数据访问层 (DAL)。
+> 如何创建数据访问层（DAL）。
 
 - [ADO.NET 数据服务](adonet-data-services/index.md)
 
@@ -26,15 +26,15 @@ ms.locfileid: "65106753"
     - [从 ASP 应用程序使用数据集和筛选器](adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 - [如何使用 LINQ](how-do-i-with-linq/index.md)
 
-    - [LINQ to SQL:概述](how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
-    - [LINQ to SQL:数据模型](how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
-    - [LINQ to SQL:查询数据库](how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
-    - [LINQ to SQL:更新数据库](how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
-    - [LINQ to SQL:LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-    - [LINQ to SQL:Custom LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
-    - [LINQ to SQL:使用存储的过程](how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-    - [LINQ to SQL:使用存储过程更新](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-    - [LINQ to SQL:执行任意 SQL](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+    - [LINQ to SQL：概述](how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
+    - [LINQ to SQL：数据模型](how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
+    - [LINQ to SQL：查询数据库](how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
+    - [LINQ to SQL：更新数据库](how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
+    - [LINQ to SQL：LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
+    - [LINQ to SQL：自定义 LinqDataSource](how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+    - [LINQ to SQL：使用存储过程](how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
+    - [LINQ to SQL：使用存储过程更新](how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+    - [LINQ to SQL：执行任意 SQL](how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
 - [来自 VB 团队的 LINQ 视频](linq-videos-from-the-vb-team/index.md)
 
     - [开始使用 LINQ](linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)

@@ -9,11 +9,11 @@ ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
 ms.openlocfilehash: cde12a4d24555216adc49dd02818901278932eaa
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74631559"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78480044"
 ---
 # <a name="performing-batch-updates-c"></a>执行批量更新 (C#)
 
@@ -131,7 +131,7 @@ ADO.NET DataTable 和 DataAdapter 类的设计目的是支持批更新，在这�
 > [!NOTE]
 > 每次调用 `UpdateSupplierAddress` 方法时，对数据库进行调用以检索有关已更新记录的信息。 如果数据有任何更改，则会对数据库进行另一次调用以更新表行。 此工作流可以通过创建 `UpdateSupplierAddress` 方法重载来进行优化，该重载接受 `BatchUpdate.aspx` 页中*所有*更改的 `EmployeesDataTable` 实例。 然后，它可以调用数据库以获取 `Suppliers` 表中的所有记录。 然后，可以枚举这两个结果集，并且只能更新发生更改的记录。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们了解了如何创建完全可编辑的 DataList，使用户能够快速修改多个供应商的地址信息。 首先，我们为 DataList s `ItemTemplate`中的供应商地址、城市和国家/地区值定义了编辑界面。 接下来，我们添加了 "更新" DataList 上方和下方的所有按钮。 用户进行了更改，并单击了 "全部更新" 按钮之一后，会枚举 `DataListItem`，并对 `SuppliersBLL` 类 `UpdateSupplierAddress` 方法进行调用。
 

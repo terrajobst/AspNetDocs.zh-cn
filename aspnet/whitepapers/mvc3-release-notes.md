@@ -9,11 +9,11 @@ ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
 ms.openlocfilehash: 504202068f5db4f8614bba02e8066ffecfd15b48
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74619243"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78501038"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
@@ -34,10 +34,10 @@ ms.locfileid: "74619243"
     - [已知问题](#tu-KI)
 - [ASP.NET MVC 3 RTM （2011年1月13日）](#MVC3RTM)
 
-    - [更改：已将 jQuery UI 版本更新到 1.8.7](#RTM-1)
-    - [更改：已将默认 ModelMetadataProvider 更改回 DataAnnotationsModelMetadataProvider](#RTM-2)
-    - 固定 [：粘贴包含空格的 Razor 表达式的一部分将导致其反向](#RTM-3)
-    - 固定 [：重命名在编辑器中打开的 Razor 文件将禁用语法着色和 IntelliSense](#RTM-4)
+    - [Change：已将 jQuery UI 版本更新为1.8。7](#RTM-1)
+    - [更改：将默认 ModelMetadataProvider 更改回 DataAnnotationsModelMetadataProvider](#RTM-2)
+    - [已修复：粘贴包含空格的 Razor 表达式的一部分将导致其反向](#RTM-3)
+    - [已修复：重命名在编辑器中打开的 Razor 文件将禁用语法着色和 IntelliSense](#RTM-4)
     - [已知问题](#RTM-KI)
     - [重大更改](#RTM-BC)
 - [ASP.NET MVC 3 候选发布2（2010年12月10日）](#_Toc2)
@@ -169,7 +169,7 @@ ASP.NET MVC 3 运行时组件需要以下软件：
 
     [!code-console[Main](mvc3-release-notes/samples/sample1.cmd)]
 
-    将它替换为以下代码：
+    将其替换为以下内容：
 
     [!code-console[Main](mvc3-release-notes/samples/sample2.cmd)]
 6. 在解决方案资源管理器中，删除对*system.web* （指向版本2中的 DLL）的引用，然后*添加对3.0.0.0 的引用（v* ： v）。
@@ -309,12 +309,12 @@ ADO.NET 实体框架4.1 包括 Code First 功能。 “代码优先”是 ADO.NE
 本部分介绍自 RC2 版本以来在 ASP.NET MVC 3 RTM 版本中所做的更改和 bug 修复。
 
 <a id="RTM-1"></a>
-### <a name="change-updated-the-version-of-jquery-ui-to-187"></a>更改：已将 jQuery UI 版本更新为1.8。7
+### <a name="change-updated-the-version-of-jquery-ui-to-187"></a>Change：已将 jQuery UI 版本更新为1.8。7
 
 Visual Studio 的 ASP.NET MVC 项目模板已更新，以包括 jQuery UI 库的最新版本。 这些模板还包括 jQuery UI 所需的最小资源文件集，如关联的 CSS 和图像文件。
 
 <a id="RTM-2"></a>
-### <a name="change-changed-the-default-modelmetadataprovider-back-to-dataannotationsmodelmetadataprovider"></a>更改：已将默认 ModelMetadataProvider 更改回 DataAnnotationsModelMetadataProvider
+### <a name="change-changed-the-default-modelmetadataprovider-back-to-dataannotationsmodelmetadataprovider"></a>更改：将默认 ModelMetadataProvider 更改回 DataAnnotationsModelMetadataProvider
 
 ASP.NET MVC 3 的 RC2 版本引入了一个*CachedDataAnnotationsMetadataProvider*类，它提供了在现有*DataAnnotationsModelMetadataProvider*类的基础上进行缓存以提高性能。 但是，在此实现中报告了一些 bug，因此更改已还原并移入 MVC 先期备货项目，该项目可在[ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack)中找到。
 
@@ -666,7 +666,7 @@ Internet 应用程序。 包含演示如何在 ASP.NET MVC 内使用成员资格
 
 新的 ASP.NET 网页技术包括一组帮助器方法，这些方法可用于将常用功能添加到视图和控制器。 ASP.NET MVC 3 支持在控制器和视图中使用这些帮助器方法（如果适用）。 这些方法包含在 System.web. 助手程序集中。 下表列出了几个 ASP.NET 网页帮助器方法。
 
-| **Helper** | **说明** |
+| **Helper** | **描述** |
 | --- | --- |
 | Chart | 在视图中呈现图表。 包含诸如 ToWebImage、Chart 和 Chart 等方法。 |
 | 加密 | 使用哈希算法来创建正确的加盐和哈希密码。 |
@@ -839,7 +839,7 @@ Html.editorfor 和 DisplayFor 模板帮助器的默认对象模板现在支持�
 
 对于具有相同顺序值的异常筛选器，异常筛选器的执行顺序已更改。 在 ASP.NET MVC 2 及更早版本中，与操作方法上的异常筛选器顺序相同的异常筛选器在操作方法上的异常筛选器之前执行。 如果未指定顺序值应用了异常筛选器，通常会出现这种情况。 在 ASP.NET MVC 3 中，此顺序已反转，以便首先执行最具体的异常处理程序。 与早期版本一样，如果显式指定 Order 属性，则筛选器将按指定顺序运行。
 
-## <a id="0.1__Toc274034230"></a>已知问题
+## <a id="0.1__Toc274034230"></a>  已知问题
 
 在安装过程中，EULA 接受对话框在一个小于预期的窗口中显示许可条款。
 
@@ -861,6 +861,6 @@ Razor 视图没有 IntelliSense 支持或突出显示语法。 预计在 Visual 
 
 ## <a id="0.1__Toc274034231"></a>否认
 
-© 2011 Microsoft Corporation. 保留所有权利。 本文档按“原样”提供。 本文档中的信息和表达的观点，包括 URL 和其他 Internet 网站引用，如有更改恕不另行通知。 您自行承担其使用风险。
+© 2011 Microsoft Corporation。 保留所有权利。 本文档“按原样”提供。 本文档中的信息和表达的观点，包括 URL 和其他 Internet 网站引用，如有更改恕不另行通知。 您自行承担其使用风险。
 
 本文档未向您提供任何 Microsoft 产品中任何知识产权的任何合法权利。 您可为了内部参考目的复制和使用本文档。

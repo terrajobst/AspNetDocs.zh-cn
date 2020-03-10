@@ -9,151 +9,151 @@ ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 1aefa46dd0841b1b06675409cc8a09f9a218d7ac
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113508"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78467156"
 ---
 # <a name="emberjs-template"></a>EmberJS 模板
 
-通过[Xinyang Qiu](https://github.com/xqiu)
+作者： [Xinyang Qiu](https://github.com/xqiu)
 
-> EmberJS MVC 模板是由 Nathan Totten、 Thiago Santos 和 Xinyang Qiu 编写的。
+> EmberJS MVC 模板由 Nathan Totten、Thiago Santos 和 Xinyang Qiu 编写。
 > 
 > [下载 EmberJS MVC 模板](https://go.microsoft.com/fwlink/?LinkId=282647)
 
-EmberJS SPA 模板是为帮助你开始快速构建交互式客户端的 web 应用使用 EmberJS 而设计的。
+EmberJS SPA 模板旨在帮助你开始使用 EmberJS 快速构建交互式客户端 web 应用。
 
-"单页面应用程序"(SPA) 是加载单个 HTML 页面，然后页面动态更新，而不是加载新页面的 web 应用程序的常规术语。 初始页面加载后 SPA 通过 AJAX 请求与服务器通信。
+"单页应用程序（SPA）" 是 web 应用程序的常规术语，用于加载单个 HTML 页面，然后动态更新页面，而不是加载新页面。 初始页面加载后，SPA 通过 AJAX 请求与服务器进行通信。
 
 ![](emberjs-template/_static/image1.png)
 
-AJAX 是什么新鲜事物，但如今有更加轻松地构建和维护大型复杂的 SPA 应用程序的 JavaScript 框架。 此外，html5 和 CSS3 轻松地创建丰富的 Ui。
+AJAX 并非最新的内容，但现在提供了一些 JavaScript 框架，可以更轻松地构建和维护大型的 SPA 应用程序。 此外，HTML 5 和 CSS3 还可以更轻松地创建丰富的 Ui。
 
-EmberJS SPA 模板使用[Ember](http://emberjs.com/) JavaScript 库来处理从 AJAX 请求的页面更新。 Ember.js 使用数据绑定与最新的数据同步页。 这样一来，您无需编写任何代码，它将指导完成的 JSON 数据并更新 DOM 相反，你可以声明性属性置于告诉 Ember.js 如何呈现数据的 HTML。
+EmberJS SPA 模板使用[Ember](http://emberjs.com/) JavaScript 库处理 AJAX 请求的页面更新。 Ember 使用数据绑定将页面与最新数据同步。 这样，便无需编写任何代码来遍历 JSON 数据并更新 DOM。 而是将声明性特性置于 HTML 中，告诉 Ember 如何显示数据。
 
-在服务器端 EmberJS 模板是几乎完全相同[KnockoutJS SPA 模板](../introduction/knockoutjs-template.md)。 它使用 ASP.NET MVC 为 HTML 文档和 ASP.NET Web API，以处理来自客户端 AJAX 请求提供服务。 有关模板的这些方面的详细信息，请参阅[KnockoutJS 模板](../introduction/knockoutjs-template.md)文档。 本主题重点介绍 Knockout 模板和 EmberJS 模板之间的差异。
+在服务器端，EmberJS 模板与[KNOCKOUTJS SPA 模板](../introduction/knockoutjs-template.md)几乎完全相同。 它使用 ASP.NET MVC 为 HTML 文档提供服务，并 ASP.NET Web API 处理来自客户端的 AJAX 请求。 有关模板的这些方面的详细信息，请参阅[KnockoutJS 模板](../introduction/knockoutjs-template.md)文档。 本主题重点介绍挖空模板与 EmberJS 模板之间的差异。
 
 ## <a name="create-an-emberjs-spa-template-project"></a>创建 EmberJS SPA 模板项目
 
-下载并安装该模板通过单击上面的下载按钮。 您可能需要重启 Visual Studio。
+单击上面的 "下载" 按钮，下载并安装模板。 可能需要重启 Visual Studio。
 
-在中**模板**窗格中，选择**已安装的模板**展开**Visual C#** 节点。 下**Visual C#**，选择**Web**。 在项目模板列表中选择**ASP.NET MVC 4 Web 应用程序**。 命名项目，然后单击**确定**。
+在 "**模板**" 窗格中，选择 "**已安装模板**"，然后展开**视觉对象C#** 节点。 在 **" C#视觉对象**" 下选择 " **Web**"。 在项目模板列表中，选择 " **ASP.NET MVC 4 Web 应用程序**"。 命名项目并单击 **“确定”** 。
 
 ![](emberjs-template/_static/image2.png)
 
-在中**新的项目**向导中，选择**Ember.js SPA 项目**。
+在 "**新建项目**" 向导中，选择 " **Ember SPA 项目**"。
 
 ![](emberjs-template/_static/image4.png)
 
 ## <a name="emberjs-spa-template-overview"></a>EmberJS SPA 模板概述
 
-EmberJS 模板使用 jQuery、 Ember.js、 Handlebars.js 创建平滑的交互式用户界面的组合。
+EmberJS 模板结合使用 jQuery、Ember、Handlebars 来创建平滑的交互式 UI。
 
-Ember.js 是一个 JavaScript 库，使用客户端的 MVC 模式。
+Ember 是使用客户端 MVC 模式的 JavaScript 库。
 
-- 一个*模板*、 书面 Handlebars 模板化语言，描述的应用程序用户界面。 在发布模式下[Handlebars 编译器](https://github.com/Myslik/csharp-ember-handlebars)用于捆绑包和编译 handlebars 模板。
-- 一个*模型*将它从服务器 （待办事项列表和 ToDo 项） 中获取的应用程序数据存储。
-- 一个*控制器*存储应用程序状态。 控制器通常存在模型数据复制到相应的模板。
-- 一个*视图*将转换应用程序中的基元事件，并将传递给控制器。
-- 一个*路由器*管理应用程序状态，保持 Url 和模板的同步。
+- 用 Handlebars 模板化语言编写的*模板*描述了应用程序用户界面。 在发布模式下， [Handlebars 编译器](https://github.com/Myslik/csharp-ember-handlebars)用于捆绑和编译 Handlebars 模板。
+- *模型*存储从服务器获取的应用程序数据（ToDo 列表和 todo 项）。
+- *控制器*存储应用程序状态。 控制器通常将模型数据呈现给相应的模板。
+- *视图*将从应用程序转换基元事件并将这些事件传递给控制器。
+- *路由器*管理应用程序状态，使 url 和模板保持同步。
 
-此外，Ember 数据库可用于同步 （通过 RESTful API 从服务器获取） 的 JSON 对象和客户端模型。
+此外，Ember 数据库还可用于同步 JSON 对象（通过 RESTful API 从服务器获得）和客户端模型。
 
-EmberJS SPA 模板将脚本组织到八个层：
+EmberJS SPA 模板将脚本分为八层：
 
-- webapi\_adapter.js、 webapi\_serializer.js:扩展了 Ember 数据库以使用 ASP.NET Web API。
-- Scripts/helpers.js:定义新的 Ember Handlebars 帮助器。
-- Scripts/app.js:创建应用并配置适配器和序列化程序。
-- 脚本/应用/模型/\*.js:定义模型。
-- 脚本/应用/视图/\*.js:定义的视图。
-- 脚本/应用/控制器/\*.js:定义控制器。
-- 脚本/应用/路由，Scripts/app/router.js:定义路由。
-- 模板 /\*.hbs:定义 handlebars 模板。
+- webapi\_webapi，\_序列化程序：扩展 Ember 数据库以与 ASP.NET Web API 一起使用。
+- 脚本/帮助器 node.js：定义新的 Ember Handlebars 帮助程序。
+- Scripts/node.js：创建应用并配置适配器和序列化程序。
+- 脚本/应用/模型/\*：定义模型。
+- 脚本/应用/视图/\*：定义视图。
+- 脚本/应用/控制器/\*：定义控制器。
+- 脚本/应用/路由、脚本/app/路由器：定义路由。
+- Templates/\*：定义 handlebars 模板。
 
-让我们看一些更详细地这些脚本。
+让我们更详细地了解其中一些脚本。
 
-## <a name="models"></a>Models
+## <a name="models"></a>模型
 
-模型进行定义的脚本/应用/models 文件夹中。 有两个模型文件： 将 todoitem.js 文件和 todoList.js。
+这些模型是在 "脚本/应用/模型" 文件夹中定义的。 有两个模型文件： "todoItem" 和 "todoList"。
 
-**todo.model.js**定义待办事项列表客户端 （浏览器） 模型。 有两个模型类： todoItem 和 todoList。 在 Ember 中，模型是 DS 子类。模型。 一个模型可以有属性具有属性：
+**todo。 node.js**定义待办事项列表的客户端（浏览器）模型。 有两个模型类： todoItem 和 todoList。 在 Ember 中，模型是 DS 的子类。模式. 模型可以具有属性属性：
 
 [!code-javascript[Main](emberjs-template/samples/sample1.js)]
 
-模型可以与其他模型定义的关系：
+模型可以定义与其他模型的关系：
 
 [!code-css[Main](emberjs-template/samples/sample2.css)]
 
-模型可以计算出绑定到其他属性的属性：
+模型可以具有绑定到其他属性的计算属性：
 
 [!code-javascript[Main](emberjs-template/samples/sample3.js)]
 
-模型可以具有一个观察到的属性更改时调用的观察者函数：
+模型可以具有观察程序函数，这些函数在观察到的属性更改时被调用：
 
 [!code-javascript[Main](emberjs-template/samples/sample4.js)]
 
-## <a name="views"></a>Views
+## <a name="views"></a>视图
 
-在脚本/app/views 文件夹中定义这些视图。 视图将转换应用程序 UI 中的事件。 事件处理程序可以调用返回控制器的功能，或只需直接调用数据上下文。
+视图在 "脚本/应用/视图" 文件夹中定义。 视图从应用程序 UI 转换事件。 事件处理程序可以回调到控制器函数，或只是直接调用数据上下文。
 
-例如，以下代码是从 views/TodoItemEditView.js。 它定义的事件处理为输入的文本字段。
+例如，下面的代码来自 views/TodoItemEditView。 它定义输入文本字段的事件处理。
 
 [!code-javascript[Main](emberjs-template/samples/sample5.js)]
 
 ## <a name="controller"></a>控制器
 
-控制器定义的脚本/应用/controllers 文件夹中。 若要表示单个模型，扩展`Ember.ObjectController`:
+控制器在 "脚本/应用/控制器" 文件夹中定义。 若要表示单个模型，请扩展 `Ember.ObjectController`：
 
 [!code-javascript[Main](emberjs-template/samples/sample6.js)]
 
-在控制器还可以通过扩展表示的模型集合`Ember.ArrayController`。 例如，TodoListController 表示数组的`todoList`对象。 控制器按 todoList ID 以降序进行排序：
+控制器还可以通过扩展 `Ember.ArrayController`来表示模型的集合。 例如，Todolistcontroller.cs 表示 `todoList` 对象的数组。 控制器按 todoList ID 降序排序：
 
 [!code-javascript[Main](emberjs-template/samples/sample7.js)]
 
-控制器定义了一个名为函数`addTodoList`，它创建新的 todoList 并将其添加到数组。 若要查看如何调用此函数，请打开名为 todoListTemplate.html，在模板文件夹中的模板文件。 以下模板代码绑定到按钮`addTodoList`函数：
+控制器定义名为 `addTodoList`的函数，该函数创建新的 todoList 并将其添加到数组中。 若要查看如何调用此函数，请在 Templates 文件夹中打开名为 todoListTemplate 的模板文件。 以下模板代码将按钮绑定到 `addTodoList` 函数：
 
 [!code-html[Main](emberjs-template/samples/sample8.html)]
 
-该控制器还包含`error`属性，其中包含一条错误消息。 下面是用于显示错误消息 （也在 todoListTemplate.html) 的模板代码：
+控制器还包含一个 `error` 属性，该属性保存一条错误消息。 下面是用于显示错误消息的模板代码（也在 todoListTemplate 中）：
 
 [!code-html[Main](emberjs-template/samples/sample9.html)]
 
 ## <a name="routes"></a>路由
 
-Router.js 定义的路由和默认模板，以显示，还设置了应用程序状态，并与 Url 匹配的路由：
+Node.js 定义要显示的路由和默认模板，设置应用程序状态，并将 Url 与路由匹配：
 
 [!code-javascript[Main](emberjs-template/samples/sample10.js)]
 
-TodoListRoute.js 加载通过重写 setupController 函数 TodoListRoute 的数据：
+TodoListRoute 通过重写 setupController 函数为 TodoListRoute 加载数据：
 
 [!code-javascript[Main](emberjs-template/samples/sample11.js)]
 
-Ember 使用命名约定来匹配 Url、 路由名称、 控制器和模板。 有关详细信息，请参阅[ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/) EmberJS 文档。
+Ember 使用命名约定来匹配 Url、路由名称、控制器和模板。 有关详细信息，请参阅 EmberJS 文档中的[http://emberjs.com/guides/routing/defining-your-routes/](http://emberjs.com/guides/routing/defining-your-routes/) 。
 
 ## <a name="templates"></a>模板
 
-模板文件夹包含四个模板：
+Templates 文件夹包含四个模板：
 
-- application.hbs:默认模板的应用程序启动时的呈现。
-- about.hbs:"/ 关于"路由模板。
-- index.hbs:根模板"/"的路由。
-- todoList.hbs:为模板"/ todo"路由。
-- \_navbar.hbs:模板定义导航菜单。
+- hbs：在应用程序启动时呈现的默认模板。
+- hbs： "/about" 路由的模板。
+- hbs：根 "/" 路由的模板。
+- todoList hbs： "/todo" 路由的模板。
+- \_hbs：模板定义导航菜单。
 
-应用程序模板的作用类似于主页面。 它包含一个标头、 页脚和"{{outlet}}"要插入的路由中的其他模板。 有关在 Ember 中的应用程序模板的详细信息，请参阅[ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/)。
+应用程序模板的作用类似于母版页。 它包含页眉、页脚和 "{{输出口}}"，用于根据路由插入其他模板。 有关 Ember 中的应用程序模板的详细信息，请参阅[http://guides.emberjs.com/v1.10.0/templates/the-application-template//](http://guides.emberjs.com/v1.10.0/templates/the-application-template/)。
 
-"/ TodoList"模板包含两个循环表达式。 外部循环是`{{#each controller}}`，并内部循环是`{{#each todos}}`。 以下代码显示了内置`Ember.Checkbox`查看，以自定义`App.TodoItemEditView`，并使用链接`deleteTodo`操作。
+"/Todolist)" 模板包含两个循环表达式。 外部循环 `{{#each controller}}`，`{{#each todos}}`内循环。 下面的代码演示了一个内置 `Ember.Checkbox` 视图、一个自定义 `App.TodoItemEditView`和一个具有 `deleteTodo` 操作的链接。
 
 [!code-html[Main](emberjs-template/samples/sample12.html)]
 
-`HtmlHelperExtensions` Controllers/HtmlHelperExtensions.cs 中, 定义的类定义一个帮助程序函数来缓存，并插入模板文件时**调试**设置为**true** Web.config 文件中。 从 Views/Home/App.cshtml 中定义的 ASP.NET MVC 视图文件调用此函数：
+在 HtmlHelperExtensions 中定义的 `HtmlHelperExtensions` 类定义 helper 函数，以便在 web.config 文件中将**调试**设置为**true**时缓存和插入模板文件。 此函数从在 Views/Home/ASP.NET 中定义的 "MVC 视图文件" 中调用：
 
 [!code-cshtml[Main](emberjs-template/samples/sample13.cshtml)]
 
-调用不带任何参数，该函数将呈现的所有模板文件的模板文件夹中。 此外可以指定一个子文件夹或特定的模板文件。
+在没有参数的情况下调用，函数将在 Templates 文件夹中呈现所有模板文件。 还可以指定子文件夹或特定的模板文件。
 
-当**调试**是**false**在 Web.config 中，该应用程序包括绑定项"~/bundles/templates"。 此捆绑包项将添加在 BundleConfig.cs，使用 Handlebars 编译器库：
+Web.config 中的**debug**为**false**时，应用程序将包含绑定项 "~/bundles/templates"。 此捆绑项目使用 Handlebars 编译器库添加到 BundleConfig.cs 中：
 
 [!code-csharp[Main](emberjs-template/samples/sample14.cs)]

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
-title: ASP.NET Web API-ASP.NET 中的 OData 4.x
+title: ASP.NET Web API 中的 OData-ASP.NET 4。x
 author: rick-anderson
-description: 如何在 ASP.NET Web API 中的 OData 终结点创建的 ASP.NET 4.x
+description: 如何在 ASP.NET Web API for ASP.NET 4.x 中创建 OData 终结点
 ms.author: riande
 ms.date: 08/17/2012
 ms.custom: seoapril2019
@@ -10,15 +10,15 @@ ms.assetid: 9151c605-e911-4f24-95b5-ca310b105abf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
 ms.openlocfilehash: 6d84b458a02b63b24334b137afdb5b710d91c5ee
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133159"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484520"
 ---
 # <a name="odata-in-aspnet-web-api"></a>ASP.NET Web API 中的 OData
 
-> 如何在 ASP.NET Web API 中的 OData 终结点创建的 ASP.NET 4.x。 OData 是一种用于 web 的数据访问协议。 它提供了统一的方式来查询和操作数据集。 Web API 支持版本 3 和 OData 协议版本 4。
+> 如何在 ASP.NET Web API for ASP.NET 4.x 中创建 OData 终结点。 OData 是 web 的数据访问协议。 它提供一种统一的方法来查询和操作数据集。 Web API 支持版本3和 OData 协议版本4。
 
 - [OData v4](odata-v4/index.md)
 

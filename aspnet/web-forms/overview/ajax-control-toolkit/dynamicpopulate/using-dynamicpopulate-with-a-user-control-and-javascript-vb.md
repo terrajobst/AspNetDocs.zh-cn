@@ -9,11 +9,11 @@ ms.assetid: 778b9009-76f2-4665-940e-afc0e35bc917
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
 msc.type: authoredcontent
 ms.openlocfilehash: ee5923ad6d8b101f689a0564aef8b1e0e00a7639
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599117"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497300"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>通过用户控件和 JavaScript 使用 DynamicPopulate (VB)
 
@@ -70,4 +70,4 @@ ASP.NET AJAX 控件工具包中的 `DynamicPopulate` 控件将调用 web 服务�
 单选按钮位于用户控件中（[单击以查看完全大小的图像](using-dynamicpopulate-with-a-user-control-and-javascript-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](dynamically-populating-a-control-using-javascript-code-vb.md)
+> [上一页](dynamically-populating-a-control-using-javascript-code-vb.md)

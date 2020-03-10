@@ -9,11 +9,11 @@ ms.assetid: 718628e2-224c-455f-b33a-a41efd48d5a0
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
 ms.openlocfilehash: adee419764cff2f39ee16962080c24b52553aa14
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74637599"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78480458"
 ---
 # <a name="customizing-the-datalists-editing-interface-vb"></a>自定义 DataList 的编辑界面 (VB)
 
@@ -151,7 +151,7 @@ Northwind 数据库允许 `Products` 表 s `CategoryID` 和 `SupplierID` 列 `NU
 
 进行此更改后，如果用户从任一下拉列表中选择了 "（无）" 选项，则 `Nothing` 的值将传递到 `UpdateProduct` BLL 方法，这与 `NULL` 数据库值相对应。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们了解了如何创建更复杂的 DataList 编辑界面，该界面包含三个不同的输入 Web 控件 TextBox、两个 DropDownLists 和一个复选框以及验证控件。 在生成编辑接口时，无论使用何种 Web 控件，步骤都是相同的：首先将 Web 控件添加到 DataList s `EditItemTemplate`;使用 databinding 语法将相应的数据字段值分配给相应的 Web 控件属性;并且，在 `UpdateCommand` 事件处理程序中，以编程方式访问 Web 控件及其相应的属性，并将其值传递到 BLL。
 
@@ -168,4 +168,4 @@ Northwind 数据库允许 `Products` 表 s `CategoryID` 和 `SupplierID` 列 `NU
 此教程系列由许多有用的审阅者查看。 本教程的领导评审者是 Dennis Patterson 将、David Suru 和 Randy Schmidt。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](adding-validation-controls-to-the-datalist-s-editing-interface-vb.md)
+> [上一页](adding-validation-controls-to-the-datalist-s-editing-interface-vb.md)

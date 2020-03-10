@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
 ms.openlocfilehash: 4b2a6689839f66121f4a32ee5934f6cda50ae812
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456565"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499790"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建议的资源
 
@@ -42,7 +42,7 @@ ms.locfileid: "77456565"
 - [使用成员资格、OAuth 和 SQL 数据库将安全的 ASP.NET MVC 应用程序部署到 Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 本教程添加 Azure 部署，如何使用角色保护应用，如何使用成员资格 API 添加用户和角色以及其他安全功能。
 - [ASP.NET 标识简介](introduction-to-aspnet-identity.md)
 - [创建具有登录、电子邮件确认及密码重置功能的安全 ASP.NET MVC 5 Web 应用程序](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
-- [使用 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用程序](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
+- [具有 SMS 和电子邮件双因素身份验证的 ASP.NET MVC 5 应用](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
 

@@ -9,11 +9,11 @@ ms.assetid: 6d0d70f4-725e-4258-8ae8-24a6ba1ddbf7
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 08e245edfe73db4e3896db51151e5d7a0fa9697c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611524"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496034"
 ---
 # <a name="creating-a-rating-control-vb"></a>创建分级控件 (VB)
 
@@ -69,4 +69,4 @@ ms.locfileid: "74611524"
 使用最小代码创建分级系统（[单击以查看完全大小的图像](creating-a-rating-control-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](creating-a-rating-control-cs.md)
+> [上一页](creating-a-rating-control-cs.md)

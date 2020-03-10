@@ -1,119 +1,119 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
-title: 执行简单验证 (C#) |Microsoft Docs
+title: 执行简单验证（C#） |Microsoft Docs
 author: StephenWalther
-description: 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 引入到模型状态和验证 HTML 帮助程序...
+description: 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 介绍了模型状态和验证 HTML 帮助器 。
 ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 21383c9d-6aea-4bad-a99b-b5f2c9d6503f
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e33f522af74efe97b5a245e956bc0b918ea769af
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122356"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78436718"
 ---
 # <a name="performing-simple-validation-c"></a>执行简单验证 (C#)
 
-通过[Stephen Walther](https://github.com/StephenWalther)
+作者： [Stephen Walther](https://github.com/StephenWalther)
 
-> 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 引入到模型状态和验证 HTML 帮助程序。
+> 了解如何在 ASP.NET MVC 应用程序中执行验证。 在本教程中，Stephen Walther 介绍了模型状态和验证 HTML 帮助器。
 
-本教程的目的是说明如何执行验证的 ASP.NET MVC 应用程序中。 例如，您将了解如何防止有人提交窗体不包含必填字段的值。 了解如何使用模型状态和验证 HTML 帮助程序。
+本教程的目的是介绍如何在 ASP.NET MVC 应用程序中执行验证。 例如，您将了解如何防止某人提交不包含必填字段值的表单。 了解如何使用模型状态和验证 HTML 帮助器。
 
 ## <a name="understanding-model-state"></a>了解模型状态
 
-使用模型状态-或模型状态字典的更准确地说，来表示验证错误。 例如，在列表 1 中的 create （） 操作将产品类添加到数据库之前会验证产品类的属性。
+您可以使用模型状态（或者更准确地说，模型状态字典）来表示验证错误。 例如，在将 Product 类添加到数据库之前，列表1中的 Create （）操作将验证 Product 类的属性。
 
-我这里不建议将你验证或数据库的逻辑添加到控制器。 控制器应包含仅与应用程序流控制相关的逻辑。 我们正采取一种快捷方式为简单起见。
+我不建议将验证或数据库逻辑添加到控制器。 控制器仅应包含与应用程序流控制相关的逻辑。 我们将使用一种快捷方式，使其保持简单。
 
-**Listing 1 - Controllers\ProductController.cs**
+**列表 1-Controllers\ProductController.cs**
 
 [!code-csharp[Main](performing-simple-validation-cs/samples/sample1.cs)]
 
-在列表 1 中，Product 类的名称、 说明和 UnitsInStock 属性进行验证。 如果这些属性的任何失败的验证测试到模型状态字典 （由控制器类的 ModelState 属性） 添加一个错误。
+在 "列表 1" 中，将验证 Product 类的 "名称"、"说明" 和 "库存量" 属性。 如果这些属性中的任何一个未能通过验证测试，则会将错误添加到模型状态字典（由控制器类的 ModelState 属性表示）。
 
-如果在模型状态中有任何错误 ModelState.IsValid 属性返回 false。 在这种情况下，创建一个新的产品的 HTML 窗体将重新显示。 否则，如果没有任何验证错误，则新产品添加到数据库中。
+如果模型状态中有任何错误，则 ModelState 属性返回 false。 在这种情况下，将重新显示用于创建新产品的 HTML 表单。 否则，如果没有验证错误，则会将新产品添加到数据库中。
 
-## <a name="using-the-validation-helpers"></a>使用验证帮助程序
+## <a name="using-the-validation-helpers"></a>使用验证帮助器
 
-ASP.NET MVC 框架包括两个验证帮助程序： Html.ValidationMessage() 帮助器和 Html.ValidationSummary() 帮助器。 在视图中使用这两个帮助显示验证错误消息。
+ASP.NET MVC 框架包含两个验证帮助器： ValidationMessage （） helper 和 ValidationSummary （）帮助程序。 可在视图中使用这两个帮助器来显示验证错误消息。
 
-由 ASP.NET MVC 基架自动生成的创建和编辑视图中使用的 Html.ValidationMessage() 和 Html.ValidationSummary() 帮助器。 请按照下列步骤生成的创建视图：
+ValidationMessage （）和 ValidationSummary （）帮助器用于 ASP.NET MVC 基架自动生成的 "创建" 和 "编辑" 视图。 按照以下步骤生成创建视图：
 
-1. 右键单击产品控制器中的 create （） 操作，然后选择菜单选项**添加视图**（参见图 1）。
-2. 在中**添加视图**对话框中，选中复选框标记为**创建强类型化视图**（请参见图 2）。
-3. 从**查看数据类**下拉列表中，选择 Product 类。
-4. 从**查看内容**下拉列表中，选择创建。
+1. 右键单击产品控制器中的 "创建" （）操作，然后选择 "**添加视图**" 菜单选项（参见图1）。
+2. 在 "**添加视图**" 对话框中，选中标记为 "**创建强类型视图**" 的复选框（参见图2）。
+3. 从 "**查看数据类**" 下拉列表中，选择 "产品类"。
+4. 从 "**查看内容**" 下拉列表中，选择 "创建"。
 5. 单击“添加”按钮。
 
-请确保生成应用程序之前添加的视图。 否则，类的列表不会显示在**查看数据类**下拉列表中。
+请确保在添加视图之前生成应用程序。 否则，类的列表将不会显示在 "**查看数据类**" 下拉列表中。
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
+[!["新建项目" 对话框](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
-**图 01**:添加视图 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image2.png))
+**图 01**：添加视图（[单击查看完全尺寸的图像](performing-simple-validation-cs/_static/image2.png)）
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
+[!["新建项目" 对话框](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
-**图 02**:创建强类型化视图 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image4.png))
+**图 02**：创建强类型视图（[单击查看完全大小的图像](performing-simple-validation-cs/_static/image4.png)）
 
-完成这些步骤后，在代码清单 2 中获取创建视图。
+完成这些步骤后，将获得列表2中的 "创建" 视图。
 
-**Listing 2 - Views\Product\Create.aspx**
+**列表 2-Views\Product\Create.aspx**
 
 [!code-aspx[Main](performing-simple-validation-cs/samples/sample2.aspx)]
 
-在代码清单 2 Html.ValidationSummary() 帮助器调用立即上方的 HTML 窗体。 此帮助器用于显示验证错误消息的列表。 Html.ValidationSummary() 帮助程序呈现项目符号列表中的错误。
+在列表2中，html 窗体上立即调用 ValidationSummary （）帮助程序。 此帮助程序用于显示验证错误消息的列表。 ValidationSummary （） helper 在项目符号列表中呈现错误。
 
-Html.ValidationMessage() 帮助器旁边的 HTML 窗体字段的每个调用。 此帮助器用于显示窗体字段的右边一条错误消息。 在代码清单 2 的情况下 Html.ValidationMessage() 帮助程序错误时显示一个星号。
+在每个 HTML 窗体字段的旁边调用 ValidationMessage （）帮助程序。 此帮助器用于在窗体字段的旁边显示错误消息。 对于列表2，当出错时，ValidationMessage （） helper 会显示星号。
 
-图 3 中的页说明了呈现的验证帮助程序，在窗体提交使用缺少的字段和无效值时的错误消息。
+图3中的页说明了在使用缺失字段和无效值提交窗体时，验证帮助程序呈现的错误消息。
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
+[!["新建项目" 对话框](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
-**图 03**:提交问题与创建视图 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image6.png))
+**图 03**：已提交的创建视图出现问题（[单击以查看完全大小的图像](performing-simple-validation-cs/_static/image6.png)）
 
-请注意，HTML 的外观输入验证错误时，还会修改字段。 Html.TextBox() 帮助器呈现*类 ="输入验证错误"* 属性验证错误时由 Html.TextBox() 帮助器呈现的属性与相关联。
+请注意，当存在验证错误时，还会修改 HTML 输入字段的外观。 当存在与 Html. TextBox （） helper 呈现的属性关联的验证错误时，Html. TextBox （）帮助器将呈现*类 = "输入验证-错误"* 特性。
 
-有用于控制的验证错误的外观的三个级联样式表类：
+有三个用于控制验证错误外观的级联样式表类：
 
-- 输入验证错误的应用于&lt;输入&gt;Html.TextBox() 帮助程序呈现的标记。
-- 字段验证错误的应用于&lt;s p a n&gt; Html.ValidationMessage() 帮助程序呈现的标记。
-- 验证摘要错误-应用于&lt;ul&gt; Html.ValidationSummary() 帮助程序呈现的标记。
+- 输入验证-错误-应用于 Html. TextBox （） helper 呈现&gt; 标记的 &lt;输入。
+- 字段验证-错误-应用于 ValidationMessage （）帮助程序呈现&gt; 标记的 &lt;范围。
+- 验证-摘要-错误-应用于 ValidationSummary （）帮助程序呈现的 &lt;ul&gt; 标记。
 
-可以修改这些级联样式表类，并因此通过修改 Site.css 文件内容的文件夹中修改的验证错误，外观。
+您可以修改这些级联样式表类，并因此通过修改位于 Content 文件夹中的 web.config 文件来修改验证错误的外观。
 
 > [!NOTE] 
 > 
-> HtmlHelper 类包括只读的静态属性，检索验证的名称与相关的 CSS 类。 ValidationInputCssClassName、 ValidationFieldCssClassName 和 ValidationSummaryCssClassName 命名这些静态属性。
+> HtmlHelper 类包括只读静态属性，用于检索与验证相关的 CSS 类的名称。 这些静态属性名为 ValidationInputCssClassName、ValidationFieldCssClassName 和 ValidationSummaryCssClassName。
 
 ## <a name="prebinding-validation-and-postbinding-validation"></a>Prebinding 验证和 Postbinding 验证
 
-如果提交用于创建一种产品，HTML 窗体和 price 字段和库存量字段没有值输入值无效，则将获得图 4 中显示的验证消息。 这些验证错误消息来自何处？
+如果您提交用于创建产品的 HTML 表单，并且您为 "价格" 字段输入的值无效，而 "库存" 字段没有值，则您将收到图4中显示的验证消息。 这些验证错误消息来自何处？
 
-[![新建项目对话框](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
+[!["新建项目" 对话框](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
-**图 04**:Prebinding 验证错误 ([单击此项可查看原尺寸图像](performing-simple-validation-cs/_static/image8.png))
+**图 04**： Prebinding 验证错误（[单击以查看完全大小的图像](performing-simple-validation-cs/_static/image8.png)）
 
-有两种类型实际验证错误消息的那些之前 HTML 窗体字段绑定到一个类，这些生成的窗体字段绑定到类后生成。 换而言之，有 prebinding 验证错误和 postbinding 验证错误。
+实际上存在两种类型的验证错误消息：在将 HTML 窗体字段绑定到类之前生成的错误消息，以及在窗体字段绑定到类后生成的错误消息。 换句话说，存在 prebinding 验证错误和 postbinding 验证错误。
 
-在列表 1 中在产品控制器公开的 create （） 操作接受产品类的实例。 创建方法的签名如下所示：
+列表1中的产品控制器公开的 Create （）操作接受 Product 类的实例。 Create 方法的签名如下所示：
 
 [!code-csharp[Main](performing-simple-validation-cs/samples/sample3.cs)]
 
-创建窗体中的 HTML 窗体字段的值由称为模型绑定器绑定到 productToCreate 类。 默认模型联编程序将添加一条错误消息到模型状态自动时它不能将窗体字段绑定到窗体属性。
+Create 窗体中的 HTML 窗体字段的值通过称为模型绑定器的内容绑定到 productToCreate 类。 当不能将窗体字段绑定到窗体属性时，默认模型联编程序会自动将错误消息添加到模型状态。
 
-默认模型联编程序不能绑定到 Product 类的价格属性字符串"apple"。 无法将字符串分配给十进制属性。 因此，模型绑定器将错误添加到模型状态。
+默认模型联编程序不能将字符串 "apple" 绑定到 Product 类的 Price 属性。 不能将字符串分配给 decimal 属性。 因此，模型联编程序将错误添加到模型状态。
 
-此外，默认模型联编程序不能将 null 值分配给不接受 null 值的属性。 具体而言，模型绑定器不能将 null 值分配给的 UnitsInStock 属性。 再次重申，模型联编程序将放弃运行，并将一条错误消息添加到模型状态。
+默认模型联编程序也不能将 null 值分配给不接受 null 值的属性。 具体而言，模型联编程序不能将 null 值分配给 "库存" 属性。 同样，模型联编程序会提供并将错误消息添加到模型状态。
 
-如果你想要自定义这些外观 prebinding 错误消息，然后需要创建这些消息的资源字符串。
+如果要自定义这些 prebinding 错误消息的外观，则需要为这些消息创建资源字符串。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-本教程的目的是验证的介绍基本的 ASP.NET MVC 框架中机制。 您学习了如何使用模型状态和验证 HTML 帮助程序。 我们还讨论了 prebinding 和 postbinding 验证之间的区别。 在其他教程中，我们将讨论移动您的验证代码超出你的控制器和为模型类的各种策略。
+本教程的目的是介绍 ASP.NET MVC 框架中验证的基本机制。 已学习如何使用模型状态和验证 HTML 帮助器。 还介绍了 prebinding 和 postbinding 验证之间的区别。 在其他教程中，我们将讨论将验证代码移出控制器和模型类的各种策略。
 
 > [!div class="step-by-step"]
 > [上一页](displaying-a-table-of-database-data-cs.md)

@@ -9,11 +9,11 @@ ms.assetid: f555c531-bf33-4699-9987-42dbfef23c1f
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 17283dae192896fbaa48f1d7fe49afdbaf4c9a02
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74627579"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78495302"
 ---
 # <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>使用 DataList 控件每行显示多条记录 (VB)
 
@@ -89,7 +89,7 @@ ms.locfileid: "74627579"
 
 生成的表中显示的行数取决于绑定到 DataList 的记录总数。 准确地说，它是数据源项总数的上限除以 `RepeatColumns` 属性值。 由于 `Products` 表当前包含84个可被3整除的产品，因此有28行。 如果数据源中的项目数与 `RepeatColumns` 的属性值不能被整除，则最后一行或列将包含空白单元。 如果 `RepeatDirection` 设置为 `Vertical`，则最后一列将包含空单元格;如果 `Horizontal``RepeatDirection`，则最后一行将包含空单元。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 默认情况下，DataList 在单列多行表中列出其项，这将模拟具有单个 TemplateField 的 GridView 的布局。 尽管此默认布局是可接受的，但我们可通过每行显示多个数据源项来最大化屏幕空间。 完成这只是将 DataList s `RepeatColumns` 属性设置为每行显示的列数。 此外，DataList s `RepeatDirection` 属性可用于指示多列、多行表的内容是否应按从左到右、从上到下、从上到下、从左到右垂直布局。
 

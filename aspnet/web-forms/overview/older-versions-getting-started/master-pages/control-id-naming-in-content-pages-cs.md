@@ -9,11 +9,11 @@ ms.assetid: 1c7d0916-0988-4b4f-9a03-935e4b5af6af
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e849e5860dc988e112cc3a65d976c16ecdf77416
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74624368"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520184"
 ---
 # <a name="control-id-naming-in-content-pages-c"></a>内容页中的控件 ID 命名 (C#)
 
@@ -205,7 +205,7 @@ Visual Studio 会自动为母版页的四个 Contentplaceholder 创建一个内�
 > [!NOTE]
 > 此 JavaScript 示例只介绍如何添加正确引用服务器控件呈现的 HTML 元素的 JavaScript 函数。 若要使用此函数，需要创作额外的 JavaScript，以便在加载文档时或在特定的用户操作发生时调用该函数。 有关这些主题和相关主题的详细信息，请阅读使用[客户端脚本](https://msdn.microsoft.com/library/aa479302.aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 某些 ASP.NET 服务器控件充当命名容器，它们会影响其子代控件的呈现 `id` 属性值，以及 `FindControl` 方法 canvassed 的控件的作用域。 对于母版页，母版页本身及其 ContentPlaceHolder 控件都是命名容器。 因此，在使用 `FindControl`以编程方式引用内容页中的控件时，我们需要更多的工作。 在本教程中，我们介绍了两种方法：钻取到 ContentPlaceHolder 控件并调用其 `FindControl` 方法;并滚动我们自己的 `FindControl` 实现以递归方式搜索所有命名容器。
 

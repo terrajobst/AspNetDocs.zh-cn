@@ -9,11 +9,11 @@ ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
 ms.openlocfilehash: 9357ed5aef39bed501cdac9ac26d46c884d4fae0
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457175"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500828"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>数据存储选项（通过 Azure 构建实际的云应用）
 
@@ -151,7 +151,7 @@ Azure 中的 PaaS 数据存储选项包含由第三方提供商提供的产品/�
 
 我们通常建议你在选择数据存储解决方案之前，了解每个类别中的问题的答案。
 
-此外，工作负载可能具有某些平台比其他平台更好地支持的特定要求。 例如：
+此外，工作负载可能具有某些平台比其他平台更好地支持的特定要求。 例如:
 
 - 您的应用程序需要审核功能吗？
 - 你的数据寿命需求是什么？你需要自动存档或清除功能吗？
@@ -256,13 +256,13 @@ SQL Server 和 Azure SQL 数据库的一大好处是，这两个数据库的核�
 
 创建具有 SQL Server 映像的 VM 时，将根据 VM 的使用情况，按小时对 SQL Server 许可证成本进行评级。 如果你的项目只会运行几个月，则按小时支付会更便宜。 如果你认为你的项目将持续几年，则按你通常的方式购买许可证会成本更低。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 通过云计算，可以很好地混合和匹配数据存储方法，以最大程度地满足应用程序的需求。 如果要构建一个新的应用程序，请仔细考虑此处列出的问题，以选择在应用程序增长时将继续正常工作的方法。 [下一章](data-partitioning-strategies.md)将介绍一些可用于合并多个数据存储方法的分区策略。
 
 ## <a name="resources"></a>资源
 
-有关详细信息，请参阅以下资源。
+有关更多信息，请参见以下资源。
 
 选择数据库平台：
 

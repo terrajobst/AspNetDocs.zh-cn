@@ -9,11 +9,11 @@ ms.assetid: 68b8c023-92fa-4df6-9563-1764e16e4b04
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 545b24a66476c55aff88ac62d3a6528105fea6c0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74631290"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491648"
 ---
 # <a name="masterdetail-filtering-across-two-pages-c"></a>跨两个页面的母版/详细信息筛选 (C#)
 
@@ -144,7 +144,7 @@ Northwind 数据库中的所有类别都与一个或多个产品关联。 若要
 
 **图 9**：如果所选类别中没有产品，则显示一条消息（[单击查看全尺寸图像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image27.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 虽然大纲/详细信息报表可以在单个页面上显示主记录和详细记录，但在许多网站中，它们在两个网页之间分隔开。 在本教程中，我们将介绍如何通过使用 "主" 网页中的中继器以及 "详细信息" 页中列出的关联产品，来实现此类主/从报表。 主网页中的每个列表项都包含指向详细信息页的链接，该链接通过行的 `CategoryID` 值传递。
 

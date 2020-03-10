@@ -9,11 +9,11 @@ ms.assetid: 4fb72f75-32ab-4bf7-a764-be20367be726
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 0974a16764eee2ef03cf36b4b15f9ef41f99982b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621659"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78476456"
 ---
 # <a name="batch-deleting-vb"></a>批量删除 (VB)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74621659"
 
 **图 2**：将 `CheckBoxField.aspx` 的声明性标记复制到剪贴板（[单击以查看完全大小的图像](batch-deleting-vb/_static/image4.png)）
 
-接下来，`BatchDelete.aspx` 中的 "源" 视图，并将剪贴板的内容粘贴到 `<asp:Content>` 标记中。 此外，请从 `CheckBoxField.aspx.vb` 中的代码隐藏类中复制并粘贴代码，使其在 `BatchDelete.aspx.vb` 中的代码隐藏类（`DeleteSelectedProducts` "`Click`" 事件处理程序、`ToggleCheckState` 方法和 `Click` 和 `CheckAll` 的事件处理程序）中。 复制此内容后，`BatchDelete.aspx` 页 s 代码隐藏类应包含以下代码：
+接下来，`BatchDelete.aspx` 中的 "源" 视图，并将剪贴板的内容粘贴到 `<asp:Content>` 标记中。 此外，请从 `CheckBoxField.aspx.vb` 中的代码隐藏类中复制并粘贴代码，使其在 `BatchDelete.aspx.vb` 中的代码隐藏类（`DeleteSelectedProducts` "`Click`" 事件处理程序、`ToggleCheckState` 方法和 `Click` 和 `CheckAll` 的事件处理程序）中。`UncheckAll` 复制此内容后，`BatchDelete.aspx` 页 s 代码隐藏类应包含以下代码：
 
 [!code-vb[Main](batch-deleting-vb/samples/sample1.vb)]
 
@@ -82,7 +82,7 @@ ms.locfileid: "74621659"
 > [!NOTE]
 > 若要测试 `DeleteProductsWithTransaction` 方法的原子性，请在 "`Order Details`" 表中为产品手动添加一个条目，然后尝试删除该产品（以及其他产品）。 尝试删除具有关联顺序的产品时，将会收到外键约束冲突，但请注意其他选定的产品删除如何回滚。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 创建批处理删除接口涉及到添加一个包含复选框列和一个按钮 Web 控件的 GridView，单击该按钮时，将删除所有选定的行作为单个原子操作。 在本教程中，我们通过将两个前几个教程中完成的工作拼凑在一起来构建此类接口，[添加了一个 "GridView" 列并将](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb.md)[数据库中的数据库修改包装](wrapping-database-modifications-within-a-transaction-vb.md)起来。 在第一个教程中，我们创建了一个包含 checkbox 列的 GridView，并在其中实现了一个方法，该方法是在对 `ProductID` 值 `List(Of T)` 传递的情况下，在事务范围内删除了这些值。
 

@@ -9,11 +9,11 @@ ms.assetid: b4e76c1a-f66e-43a0-aa72-f39df79c07c1
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field
 msc.type: authoredcontent
 ms.openlocfilehash: 40b02a2f608f07091ce6b5339688a1e6290e2e37
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457428"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78434840"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>向电影模型和表添加新字段 (C#)
 
@@ -122,7 +122,7 @@ ms.locfileid: "77457428"
 
 [![7_CreateRioII](adding-a-new-field/_static/image7.png)](adding-a-new-field/_static/image6.png)
 
-单击“创建”。 现在电影列表中显示了新电影，其中包括评分：
+单击 **“创建”** 。 现在电影列表中显示了新电影，其中包括评分：
 
 [![7_ourNewMovie_SM](adding-a-new-field/_static/image9.png)](adding-a-new-field/_static/image8.png)
 

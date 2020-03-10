@@ -9,11 +9,11 @@ ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
 ms.openlocfilehash: b5e9874fb5b6d3e55c8af5b85d12bf1ffacc116b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574812"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497762"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填充列表 (C#)
 
@@ -64,4 +64,4 @@ AJAX 控件工具包中的 CascadingDropDown 控件扩展了 DropDownList 控件
 将自动填充列表（[单击以查看完全大小的图像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一页](using-cascadingdropdown-with-a-database-cs.md)
+> [下一部分](using-cascadingdropdown-with-a-database-cs.md)

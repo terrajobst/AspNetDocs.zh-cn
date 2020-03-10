@@ -9,11 +9,11 @@ ms.assetid: 1afdb14d-6e49-4e1f-aead-2934730d472e
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
 ms.openlocfilehash: bc7e94e59226b739c2948434c1bfecb46b3d7856
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607546"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465350"
 ---
 # <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>DataList 和 Repeater 中的自定义按钮 (VB)
 
@@ -130,7 +130,7 @@ ms.locfileid: "74607546"
 
 **图 7**： BulletedList 用于显示所选类别的产品（[单击以查看完全尺寸的图像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image17.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 DataList 和 Repeater 控件可以在其模板中包含任意数量的按钮、LinkButtons 或 ImageButtons。 当单击此类按钮时，将导致回发并引发 `ItemCommand` 事件。 若要将自定义服务器端操作与单击的按钮相关联，请为 `ItemCommand` 事件创建事件处理程序。 在此事件处理程序中，首先检查传入 `CommandName` 值以确定单击了哪个按钮。 还可以选择通过 "button `CommandArgument`" 属性提供其他信息。
 
@@ -145,4 +145,4 @@ DataList 和 Repeater 控件可以在其模板中包含任意数量的按钮、L
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Dennis Patterson 将。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](custom-buttons-in-the-datalist-and-repeater-cs.md)
+> [上一页](custom-buttons-in-the-datalist-and-repeater-cs.md)

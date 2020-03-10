@@ -9,11 +9,11 @@ ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
 ms.openlocfilehash: b88573b3702b755b155e8da35f5f8a67931bafc6
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457110"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500648"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>用 Azure 构建实际的云应用
 
@@ -102,7 +102,7 @@ ms.locfileid: "77457110"
 - [附录：“Fix It”示例应用程序](the-fix-it-sample-application.md)
 
     - 已知问题
-    - 最佳实践
+    - 最佳做法
     - 如何下载、构建、运行和部署。
 
 这些模式适用于所有云环境，但我们将使用基于 Microsoft 技术和服务（如 Visual Studio、Team Foundation Service、ASP.NET 和 Azure）的示例来演示这些模式。
@@ -154,7 +154,7 @@ ms.locfileid: "77457110"
 有关演示如何在 Visual Studio 中创建 web 应用程序并将其部署到 Azure 网站的快捷快捷教程，请参阅[Azure 和 ASP.NET 入门](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
 
 <a id="summary"></a>
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本简介提供了本书将介绍的主题的列表、示例应用程序的屏幕截图，以及 Azure App Service 云环境中的 Web 应用程序的简要概述。 在和中开发应用程序的一个很好的优点是，可以轻松地自动执行重复的开发任务，如创建测试环境并向其部署代码。 如何执行此操作是[下一章](automate-everything.md)的主题。
 
@@ -174,4 +174,4 @@ ms.locfileid: "77457110"
 - [Azure 网站与 Nir Mashkowski 的内部机制](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
 > [!div class="step-by-step"]
-> [Next](automate-everything.md)
+> [下一部分](automate-everything.md)

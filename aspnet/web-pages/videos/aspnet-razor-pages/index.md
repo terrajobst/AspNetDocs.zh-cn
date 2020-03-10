@@ -1,23 +1,23 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/index
-title: ASP.NET Razor Pages | Microsoft Docs
+title: ASP.NET Razor Pages |Microsoft Docs
 author: rick-anderson
-description: 哪些视频可以查看向下钻取到 Web Pages 和 WebMatrix。
+description: 您可以查看哪些视频向下钻取到 Web Pages 和 WebMatrix 中。
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: ffad842d-548c-40c6-84c5-10858133e972
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages
 msc.type: chapter
 ms.openlocfilehash: c1889f0eab6d2df41ac6e19d433303198c4789f4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127790"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78514190"
 ---
 # <a name="aspnet-web-pages"></a>ASP.NET 网页
 
-> 哪些视频可以查看向下钻取到 Web Pages 和 WebMatrix。
+> 您可以查看哪些视频向下钻取到 Web Pages 和 WebMatrix 中。
 
 - [WebMatrix 和 ASP.NET 网页入门](getting-started-with-webmatrix-and-aspnet-web-pages.md)
 - [ASP.NET Web 编程 Razor 语法简介](introduction-to-aspnet-web-programming-using-the-razor-syntax.md)

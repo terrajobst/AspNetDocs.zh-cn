@@ -9,11 +9,11 @@ ms.assetid: 2e31b60b-8723-4f14-b7ee-37859454dc3b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
 ms.openlocfilehash: ee67a4556c65d2c9570bf15b42fc3c8e5f555bda
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593190"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78477686"
 ---
 # <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>添加 GridView 单选按钮列 (VB)
 
@@ -268,7 +268,7 @@ GridView 控件提供大量的内置功能。 它包括多个用于显示文本�
 
 **图 20**： Bigfoot Breweries 提供的产品在同一页面上列出（[单击以查看完全大小的图像](adding-a-gridview-column-of-radio-buttons-vb/_static/image36.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 如[使用可选的主控 GridView 和详细信息 DetailView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)教程中所述，可以使用 CommandField （其 `ShowSelectButton` 属性设置为 `True`）从 GridView 中选择记录。 但 CommandField 将其按钮显示为普通的按钮、链接或图像。 备用行选择用户界面是在每个 GridView 行中提供单选按钮或复选框。 在本教程中，我们介绍了如何添加单选按钮的列。
 

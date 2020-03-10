@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/index
-title: ASP.NET Web 窗体的指南 |Microsoft Docs
+title: ASP.NET Web 窗体指南 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,13 +9,13 @@ ms.assetid: b3fb4480-0f41-495b-add6-163ca92dc8a3
 msc.legacyurl: /web-forms/overview
 msc.type: book
 ms.openlocfilehash: 4b38d6b54f53508f7b568207fe7f1a624a7af5f3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402266"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519380"
 ---
-# <a name="aspnet-web-forms-guidance"></a>ASP.NET Web 窗体的指导
+# <a name="aspnet-web-forms-guidance"></a>ASP.NET Web 窗体指南
 
 - [入门](getting-started/index.md)
 
@@ -76,7 +76,7 @@ ms.locfileid: "59402266"
 
         - [使用 Visual Studio 2010 在企业方案中部署 Web 应用程序](deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
         - [企业 Web 部署：方案概述](deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-        - [应用程序生命周期管理：从开发到生产环境](deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+        - [应用程序生命周期管理：从开发到生产](deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
     - [ASP.NET 4 - 企业部署系列 1](deployment/web-deployment-in-the-enterprise/index.md)
 
         - [企业中的 Web 部署](deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)
@@ -94,9 +94,9 @@ ms.locfileid: "59402266"
 
         - [配置用于 Web 部署的服务器环境](deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)
         - [选择 Web 部署的适当方法](deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md)
-        - [场景：配置用于 Web 部署测试环境](deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md)
-        - [场景：配置用于 Web 部署的过渡环境](deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md)
-        - [场景：配置用于 Web 部署的生产环境](deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md)
+        - [方案：配置用于 Web 部署的测试环境](deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md)
+        - [方案：配置用于 Web 部署的过渡环境](deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md)
+        - [方案：配置用于 Web 部署的生产环境](deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md)
         - [配置用于 Web 部署发布的 Web 服务器（远程代理）](deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
         - [配置用于 Web 部署发布的 Web 服务器（Web 部署处理程序）](deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
         - [配置用于 Web 部署发布的 Web 服务器（离线部署）](deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
@@ -130,14 +130,14 @@ ms.locfileid: "59402266"
 
     - [ASP.NET 4 - Tailspin Spyworks](older-versions-getting-started/tailspin-spyworks/index.md)
 
-        - [第 1 部分：文件-> 新建项目](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+        - [第 1 部分：“文件”->“新建项目”](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
         - [第 2 部分：数据访问层](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
         - [第 3 部分：布局和类别菜单](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
-        - [第 4 部分：列出了所有产品](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
+        - [第 4 部分：列出产品](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
         - [第 5 部分：业务逻辑](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
-        - [第 6 部分：ASP.NET 成员资格](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
+        - [第 6 部分：ASP.NET 成员身份](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
         - [第 7 部分：添加功能](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
-        - [第 8 部分：最终页面、 异常处理和结论](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
+        - [第 8 部分：最终页面、异常处理和结论](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
     - [ASP.NET 4 - Entity Framework 4 和 Web 窗体入门](older-versions-getting-started/getting-started-with-ef/index.md)
 
         - [Entity Framework 4.0 数据库入门](older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -150,9 +150,9 @@ ms.locfileid: "59402266"
         - [Entity Framework 4.0 数据库入门 - 第 8 部分](older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
     - [ASP.NET 4 - 继续使用 Entity Framework 4 和 Web 窗体](older-versions-getting-started/continuing-with-ef/index.md)
 
-        - [实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-        - [实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-        - [实体框架 4.0 和 ObjectDataSource 控件，第 3 部分：排序和筛选](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+        - [Entity Framework 4.0 和 ObjectDataSource 控件，第 1 部分：入门](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+        - [Entity Framework 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+        - [Entity Framework 4.0 和 ObjectDataSource 控件，第 3 部分：排序与筛选](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
         - [在 ASP.NET 4 中使用 Entity Framework 4.0 处理并发](older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [在 ASP.NET 4 中使用 Entity Framework 4.0 实现性能最大化](older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [Entity Framework 4.0 的新增功能](older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -374,7 +374,7 @@ ms.locfileid: "59402266"
         - [通过 ReorderList 进行拖放 (C#)](ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs.md)
         - [通过 ReorderList 使用回发 (VB)](ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb.md)
         - [通过 ReorderList 进行拖放 (VB)](ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb.md)
-    - [Slider](ajax-control-toolkit/slider/index.md)
+    - [滑块](ajax-control-toolkit/slider/index.md)
 
         - [带自动回发的滑块控件 (C#)](ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs.md)
         - [数据绑定滑块控件 (C#)](ajax-control-toolkit/slider/databinding-the-slider-control-cs.md)

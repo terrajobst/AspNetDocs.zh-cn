@@ -9,11 +9,11 @@ ms.assetid: 6f448917-ad23-4dcc-9789-897fad74051b
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
 ms.openlocfilehash: 6a289fcb843634eeeefef1e0767e04e0be8b6973
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600388"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78498164"
 ---
 # <a name="calling-an-odata-service-from-a-net-client-c"></a>从 .NET 客户端调用 OData 服务 (C#)
 

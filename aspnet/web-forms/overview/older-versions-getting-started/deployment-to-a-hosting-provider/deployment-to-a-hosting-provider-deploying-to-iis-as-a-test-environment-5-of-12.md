@@ -9,11 +9,11 @@ ms.assetid: 493b2a66-816c-485c-8315-952ed1085ccc
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 5d85232ff2cb229d771d517db7173721c9e277bf
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633467"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515678"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：作为测试环境部署到 IIS-第5个（共12个）
 
@@ -112,7 +112,7 @@ ms.locfileid: "74633467"
 
 在**解决方案资源管理器**中，右键单击 ContosoUniversity 项目（而不是 ContosoUniversity 项目），然后选择 "**发布**"。
 
-此时将显示 "**发布 Web** " 向导。
+此时会显示“发布 Web”向导。
 
 ![Publish_Web_wizard_Profile_tab](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image9.png)
 

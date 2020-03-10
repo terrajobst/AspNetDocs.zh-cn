@@ -2,22 +2,22 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/index
 title: 动画 |Microsoft Docs
 author: rick-anderson
-description: 本教程演示如何创建使用动画控件和动画框架的动画。
+description: 本教程演示如何使用动画控件和动画框架创建动画。
 ms.author: riande
 ms.date: 11/11/2011
 ms.assetid: 90b3a37e-2694-41c4-8b10-d6893b53a9d4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation
 msc.type: chapter
 ms.openlocfilehash: 1c0d8eac0314d989afecc5dcbd149f265a022bb6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127359"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497774"
 ---
 # <a name="animation"></a>动画
 
-> 本教程演示如何创建使用动画控件和动画框架的动画。
+> 本教程演示如何使用动画控件和动画框架创建动画。
 
 - [将动画添加到控件 (C#)](adding-animation-to-a-control-cs.md)
 - [同时执行多个动画 (C#)](executing-several-animations-at-the-same-time-cs.md)

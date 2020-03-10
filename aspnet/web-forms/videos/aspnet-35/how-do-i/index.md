@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/index
-title: 我如何 |Microsoft Docs
+title: 如何实现 |Microsoft Docs
 author: rick-anderson
-description: 此多个部分组成的系列视频演示了如何充分利用 ASP.NET 3.5 和 Visual Studio 2008 中的新增功能。
+description: 此多部分视频系列介绍了如何利用 ASP.NET 3.5 和 Visual Studio 2008 中的新增功能。
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: 6a25069b-c80f-45f3-a901-4548442c37b6
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 73e3191b168b7d7ea92d1ee7d6509d283a9d5b39
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133789"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462446"
 ---
 # <a name="how-do-i"></a>如何
 
-> 此多个部分组成的系列视频演示了如何充分利用 ASP.NET 3.5 和 Visual Studio 2008 中的新增功能。
+> 此多部分视频系列介绍了如何利用 ASP.NET 3.5 和 Visual Studio 2008 中的新增功能。
 
 - [在 Visual Studio 2008 中创建母版页](how-do-i-create-a-master-page-in-visual-studio-2008.md)
 - [在 Visual Studio 2008 中创建嵌套的母版页](how-do-i-create-nested-master-page-in-visual-studio-2008.md)

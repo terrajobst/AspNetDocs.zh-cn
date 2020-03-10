@@ -9,11 +9,11 @@ ms.assetid: 0177dabd-d888-449f-91b2-24190cf5e842
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 89941bb6db52316a259ad5f5577721e36f19bd84
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635916"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512594"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>配置生产 Web 应用程序以使用生产数据库 (C#)
 
@@ -121,7 +121,7 @@ Web 应用程序使用*连接字符串*中的信息建立与数据库的连接�
 > [!NOTE]
 > 您可以在单独的文件中指定任何 `Web.config` 元素的信息，然后使用 `configSource` 属性从 `Web.config`中引用该文件。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 数据驱动的应用程序通常在开发和生产环境中使用不同的数据库。 因此，存储在 web 应用程序中的数据库连接字符串在每个环境中必须是唯一的。 在本教程中，我们将介绍如何确定生产数据库连接字符串，以及在两个环境中维护唯一连接字符串信息的方法。
 

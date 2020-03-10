@@ -9,11 +9,11 @@ ms.assetid: 548e75f6-4d6c-4cb4-8da8-417915eb8393
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cc65af6eb4fca8b3b805e11e26da468a958a4221
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74619954"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78513248"
 ---
 # <a name="common-configuration-differences-between-development-and-production-vb"></a>开发和生产之间的常见配置差异 (VB)
 
@@ -107,7 +107,7 @@ Debug 特性是 `<compilation>` 元素中最重要的属性之一。 如果 `deb
 > [!NOTE]
 > 不能将 Web 部署项目与 Visual Web Developer 一起使用，因为 Web 部署项目是作为 Visual Studio 外接程序实现的，而 Visual Studio Express 版本（包括 Visual Web Developer）不支持外接程序。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 开发中的 web 应用程序的外部资源和行为通常不同于生产中的同一应用程序。 例如，在发生未经处理的异常时，数据库连接字符串、编译选项和行为通常在环境之间有所不同。 部署过程必须满足这些差异。 如本教程中所述，最简单的方法是将备用配置文件手动复制到生产环境。 当使用 Web 部署项目外接程序时，或者使用可容纳此类自定义项的更规范化的生成或部署过程时，可以使用更优雅的解决方案。
 

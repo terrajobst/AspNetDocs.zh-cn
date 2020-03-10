@@ -1,145 +1,145 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
-title: 验证与数据批注验证程序 (C#) |Microsoft Docs
+title: 通过数据批注验证程序进行验证C#（） |Microsoft Docs
 author: microsoft
-description: 充分利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序...
+description: 利用数据批注模型绑定器在 ASP.NET MVC 应用程序中执行验证。 了解如何使用不同类型的验证程序 。
 ms.author: riande
 ms.date: 05/29/2009
 ms.assetid: 7ca8013e-9dfc-4e33-8336-cdccfd5f9414
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e154384c08adf0c14920afff85e983a67b41707c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122290"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435980"
 ---
 # <a name="validation-with-the-data-annotation-validators-c"></a>使用数据注释验证程序进行验证 (C#)
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 充分利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 了解如何使用不同类型的验证程序属性和 Microsoft 实体框架中处理它们。
+> 利用数据批注模型绑定器在 ASP.NET MVC 应用程序中执行验证。 了解如何使用不同类型的验证程序属性并在 Microsoft 实体框架中处理它们。
 
-在本教程中，您将学习如何使用数据批注验证程序在 ASP.NET MVC 应用程序中执行验证。 使用数据批注验证程序的优点是它们使您能够执行验证，只需通过添加一个或多个属性 – 例如，Required 或 StringLength 属性 – 目标设定为类属性。
+在本教程中，将了解如何使用数据批注验证程序在 ASP.NET MVC 应用程序中执行验证。 使用数据批注验证程序的优点在于，只需将一个或多个属性（如 Required 或 StringLength 属性）添加到类属性即可执行验证。
 
-可以使用数据批注验证程序之前，必须下载数据批注模型联编程序。 可以通过单击从 CodePlex 网站下载数据批注模型绑定器示例[此处](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24471)。
+在可以使用数据批注验证程序之前，必须下载数据批注模型联编程序。 通过单击[此处](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24471)，可以从 CodePlex 网站下载数据批注模型绑定器示例。
 
-请务必了解数据批注模型联编程序不是 Microsoft ASP.NET MVC 框架的正式组成部分。 尽管数据批注模型联编程序由 Microsoft ASP.NET MVC 团队创建的但 Microsoft 不提供对数据批注模型联编程序的官方产品支持所述和本教程中使用。
+必须了解的是，数据批注模型联编程序不是 Microsoft ASP.NET MVC 框架的官方部分。 尽管数据批注模型联编程序由 Microsoft ASP.NET MVC 团队创建，但对于本教程中介绍和使用的数据批注模型联编程序，Microsoft 不提供正式的产品支持。
 
 ## <a name="using-the-data-annotation-model-binder"></a>使用数据批注模型联编程序
 
-若要在 ASP.NET MVC 应用程序中使用数据批注模型联编程序，首先需要添加对该 Microsoft.Web.Mvc.DataAnnotations.dll 程序集 System.ComponentModel.DataAnnotations.dll 程序集的引用。 选择菜单选项**项目中，添加引用**。 接下来，单击**浏览**选项卡上，浏览到下载 （并解压缩） 数据批注模型联编程序示例的位置 (请参阅**图 1**)。
+若要在 ASP.NET MVC 应用程序中使用数据批注模型联编程序，首先需要添加对 DataAnnotations 程序集和 System.componentmodel. DataAnnotations 程序集的引用的引用。 选择菜单选项 "**项目"、"添加引用"** 。 接下来，单击 "**浏览**" 选项卡，然后浏览到数据批注模型绑定器示例的下载位置（和解压 **）。**
 
 [![](validation-with-the-data-annotation-validators-cs/_static/image2.png)](validation-with-the-data-annotation-validators-cs/_static/image1.png)
 
-**图 1**:添加对数据批注模型联编程序的引用 ([单击此项可查看原尺寸图像](validation-with-the-data-annotation-validators-cs/_static/image3.png))
+**图 1**：添加对数据批注模型联编程序的引用（[单击查看完全大小的图像](validation-with-the-data-annotation-validators-cs/_static/image3.png)）
 
-选择 Microsoft.Web.Mvc.DataAnnotations.dll 程序集和 System.ComponentModel.DataAnnotations.dll 程序集，然后单击**确定**按钮。
+同时选择 DataAnnotations 程序集和 DataAnnotations 程序集，然后单击 **"确定" （"确定"** 按钮）。
 
-不能使用与数据批注模型联编程序的.NET Framework Service Pack 1 中包含的 System.ComponentModel.DataAnnotations.dll 程序集。 您必须使用数据批注模型绑定器示例下载中包含的 System.ComponentModel.DataAnnotations.dll 程序集的版本。
+不能将 .NET Framework Service Pack 1 随附的 DataAnnotations 程序集用于数据批注模型联编程序。 必须使用数据批注模型绑定器示例下载中包含的 System.componentmodel. DataAnnotations 程序集版本。
 
-最后，您需要在 Global.asax 文件中注册 DataAnnotations 模型联编程序。 将以下代码行添加到应用程序\_start （） 事件处理程序，以便应用程序\_start （） 方法如下所示：
+最后，需要在 global.asax 文件中注册 DataAnnotations 模型联编程序。 将以下代码行添加到应用程序\_Start （）事件处理程序，使应用程序\_Start （）方法如下所示：
 
 [!code-csharp[Main](validation-with-the-data-annotation-validators-cs/samples/sample1.cs)]
 
-这行代码将 ataAnnotationsModelBinder 注册为整个 ASP.NET MVC 应用程序的默认模型联编程序。
+下面这行代码会将 ataAnnotationsModelBinder 注册为整个 ASP.NET MVC 应用程序的默认模型联编程序。
 
-## <a name="using-the-data-annotation-validator-attributes"></a>使用数据注释验证程序属性
+## <a name="using-the-data-annotation-validator-attributes"></a>使用数据批注验证程序特性
 
-当您使用数据批注模型联编程序时，使用验证程序属性来执行验证。 System.ComponentModel.DataAnnotations 命名空间包含以下验证程序属性：
+使用数据批注模型绑定器时，将使用验证程序特性来执行验证。 System.componentmodel. DataAnnotations 命名空间包括以下验证程序特性：
 
-- 范围-可以验证是否属性的值介于指定的值范围之间。
-- 正则表达式 – 可以验证是否属性的值与指定正则表达式模式相匹配。
-- 所需 – 使你能够将标记为必需属性。
-- StringLength – 可用于指定字符串属性的最大长度。
-- 验证-所有验证程序属性的基类。
+- 范围–用于验证属性的值是否在指定的值范围之间。
+- RegularExpression –用于验证属性的值是否与指定的正则表达式模式匹配。
+- 必需–使你能够根据需要标记属性。
+- StringLength-用于指定字符串属性的最大长度。
+- 验证–所有验证程序特性的基类。
 
 > [!NOTE] 
 > 
-> 如果验证需求不满足任何标准的验证程序然后始终必须通过从基本的验证特性继承新的验证程序属性创建自定义验证程序属性的选项。
+> 如果任何标准验证程序都不满足您的验证需求，则您始终可以通过从基本验证属性继承新的验证程序属性，来创建自定义验证程序特性。
 
-中的产品类**清单 1**演示了如何使用这些验证程序属性。 名称、 说明和 UnitPrice 属性标记所需的方式。 名称属性必须是少于 10 个字符的字符串长度。 最后，UnitPrice 属性必须与表示货币金额的正则表达式模式匹配。
+**列表 1**中的 Product 类演示了如何使用这些验证程序特性。 "名称"、"说明" 和 "单价" 属性标记为 "必需"。 Name 属性的字符串长度必须小于10个字符。 最后，"单价" 属性必须与表示货币金额的正则表达式模式匹配。
 
 [!code-csharp[Main](validation-with-the-data-annotation-validators-cs/samples/sample2.cs)]
 
-**代码清单 1**:Models\Product.cs
+**列表 1**： Models\Product.cs
 
-Product 类说明了如何使用一个附加属性： DisplayName 属性。 DisplayName 属性，可修改的属性的名称，当属性显示在一条错误消息。 而不是显示错误消息"单价字段必填"可以显示错误消息"价格字段是必填"。
+Product 类阐释了如何使用另一个特性： DisplayName 特性。 当属性显示在错误消息中时，DisplayName 特性使你可以修改属性的名称。 您可以显示错误消息 "需要此价格字段"，而不是显示错误消息 "需要单价字段"。
 
 > [!NOTE] 
 > 
-> 如果你想要完全自定义验证程序显示的错误消息然后可以将此类验证程序的 ErrorMessage 属性分配自定义错误消息： `<Required(ErrorMessage:="This field needs a value!")>`
+> 如果要完全自定义验证程序所显示的错误消息，可以将自定义错误消息分配给验证程序的 ErrorMessage 属性，如下所示： `<Required(ErrorMessage:="This field needs a value!")>`
 
-可以使用中的产品类**清单 1** create （） 控制器操作中使用**代码清单 2**。 模型状态包含的任何错误时，此控制器操作重新显示创建视图。
+您可以在列表**1**中使用 Product 类，并在**列表 2**中使用 Create （）控制器操作。 当模型状态包含任何错误时，此控制器操作会重新显示 "创建" 视图。
 
 [!code-csharp[Main](validation-with-the-data-annotation-validators-cs/samples/sample3.cs)]
 
-**代码清单 2**:Controllers\ProductController.vb
+**列表 2**： Controllers\ProductController.vb
 
-最后，您可以创建中的视图**清单 3**右键单击 create （） 操作并选择菜单选项**添加视图**。 作为模型类使用 Product 类来创建强类型化视图。 选择**创建**视图内容的下拉列表中 (请参阅**图 2**)。
+最后，您可以通过右键单击 Create （）操作并选择菜单选项 "**添加视图**"，在**列表 3**中创建视图。 使用 Product 类作为模型类创建强类型视图。 从 "查看内容" 下拉列表中选择 "**创建**" （参见**图 2**）。
 
 [![](validation-with-the-data-annotation-validators-cs/_static/image5.png)](validation-with-the-data-annotation-validators-cs/_static/image4.png)
 
-**图 2**:添加 Create 视图
+**图 2**：添加 "创建" 视图
 
 [!code-aspx[Main](validation-with-the-data-annotation-validators-cs/samples/sample4.aspx)]
 
-**代码清单 3**:Views\Product\Create.aspx
+**列表 3**： Views\Product\Create.aspx
 
 > [!NOTE] 
 > 
-> 从生成的创建表单中删除 Id 字段**添加视图**菜单选项。 Id 字段对应于一个标识列，因为您不想允许用户输入此字段的值。
+> 从 "**添加视图**" 菜单选项生成的创建窗体中删除 Id 字段。 由于 Id 字段对应于标识列，因此不希望允许用户为此字段输入值。
 
-如果提交的窗体创建产品，并且不执行操作的必填字段，输入值则中的验证错误消息**图 3**显示。
+如果您提交用于创建产品的表单，并且没有为必填字段输入值，则将显示**图 3**中的验证错误消息。
 
 [![](validation-with-the-data-annotation-validators-cs/_static/image7.png)](validation-with-the-data-annotation-validators-cs/_static/image6.png)
 
-**图 3**:缺少必填的字段
+**图 3**：缺少必填字段
 
-如果输入无效的货币金额，则中的错误消息**图 4**显示。
+如果输入的货币金额无效，则会显示**图 4**中的错误消息。
 
 [![](validation-with-the-data-annotation-validators-cs/_static/image9.png)](validation-with-the-data-annotation-validators-cs/_static/image8.png)
 
-**图 4**:无效的货币金额
+**图 4**：货币金额无效
 
-## <a name="using-data-annotation-validators-with-the-entity-framework"></a>通过 Entity Framework 使用数据批注验证程序
+## <a name="using-data-annotation-validators-with-the-entity-framework"></a>将数据批注验证程序用于实体框架
 
-如果使用 Microsoft 实体框架来生成模型的数据类不能将验证程序特性应用直接向您的类。 由于实体框架设计器生成的模型类，的下次在设计器中进行任何更改将覆盖在 model 类的任何更改。
+如果使用 Microsoft 实体框架生成数据模型类，则不能将验证程序特性直接应用于类。 由于 Entity Framework Designer 会生成模型类，因此，在设计器中进行任何更改时，对模型类所做的任何更改都将被覆盖。
 
-如果你想要使用实体框架生成的类中使用验证程序然后您需要创建元数据类。 将验证程序应用于元数据类，而不是应用的实际类验证程序。
+如果要将验证程序与实体框架生成的类一起使用，则需要创建元数据类。 将验证程序应用于元数据类，而不是将验证程序应用于实际的类。
 
-例如，假设您创建使用实体框架的 Movie 类 (请参阅**图 5**)。 此外，假设你想要使电影标题和主管属性所需的属性。 在这种情况下，可以创建的分部类和元数据类中的**清单 4**。
+例如，假设您已使用实体框架创建了一个 Movie 类（见**图 5**）。 而且，假设要使影片标题和控制器属性为必填属性。 在这种情况下，可以在**列表 4**中创建分部类和元数据类。
 
 [![](validation-with-the-data-annotation-validators-cs/_static/image11.png)](validation-with-the-data-annotation-validators-cs/_static/image10.png)
 
-**图 5**:实体框架所生成的 movie 类
+**图 5**：由实体框架生成的 Movie 类
 
 [!code-csharp[Main](validation-with-the-data-annotation-validators-cs/samples/sample5.cs)]
 
-**列表 4**:Models\Movie.cs
+**列表 4**： Models\Movie.cs
 
-中的文件**清单 4**包含名为电影和 MovieMetaData 的两个类。 Movie 类是分部类。 它对应于由 DataModel.Designer.vb 文件中包含的实体框架生成的分部类。
+**列表 4**中的文件包含两个名为 "Movie" 和 "MovieMetaData" 的类。 Movie 类是一个分部类。 它对应于 DataModel 文件中包含的实体框架生成的分部类。
 
-目前，.NET framework 不支持部分属性。 因此，没有办法将验证程序特性应用于电影类 DataModel.Designer.vb 文件来将验证程序特性应用到在文件中定义的 Movie 类的属性定义的属性**清单 4**.
+目前，.NET framework 不支持部分属性。 因此，无法将验证程序特性应用于 DataModel 文件中定义的 Movie 类的属性，方法是将验证程序特性应用到在**列表 4**中定义的电影类的属性。
 
-请注意，使用指向 MovieMetaData 类利用 MetadataType 特性修饰的电影分部类。 MovieMetaData 类包含属性的 Movie 类的代理属性。
+请注意，Movie 分部类使用指向 MovieMetaData 类的 MetadataType 特性进行修饰。 MovieMetaData 类包含 Movie 类的属性的代理属性。
 
-验证程序属性应用于 MovieMetaData 类的属性。 所有标记为必需属性的标题、 总监和 DateReleased 属性。 必须将总监属性分配一个字符串，包含不超过 5 个字符。 最后，DisplayName 特性应用于 DateReleased 属性来显示错误消息，例如"日期已发布字段是必需"。 而不是错误"DateReleased 字段是必需。"
+验证程序属性应用于 MovieMetaData 类的属性。 Title、Director 和 DateReleased 属性都标记为必需属性。 必须为 Director 属性分配一个包含少于5个字符的字符串。 最后，将 DisplayName 特性应用到 DateReleased 属性，以显示一条错误消息，如 "所需的日期字段为必填字段"。 而不是 "DateReleased" 字段是必需的。
 
 > [!NOTE] 
 > 
-> 请注意，不需要 MovieMetaData 类中的代理属性来表示相同的 Movie 类中的相应属性类型。 例如，主管属性是 Movie 类中的字符串属性和 MovieMetaData 类中的对象属性。
+> 请注意，MovieMetaData 类中的代理属性不需要与 Movie 类中的相应属性表示相同的类型。 例如，Director 属性是 Movie 类中的字符串属性和 MovieMetaData 类中的对象属性。
 
-中的页**图 6**说明了电影属性的输入无效值时返回的错误消息。
+**图 6**中的页说明了为电影属性输入无效值时返回的错误消息。
 
 [![](validation-with-the-data-annotation-validators-cs/_static/image13.png)](validation-with-the-data-annotation-validators-cs/_static/image12.png)
 
-**图 6**:通过 Entity Framework 使用验证程序 ([单击此项可查看原尺寸图像](validation-with-the-data-annotation-validators-cs/_static/image14.png))
+**图 6**：在实体框架中使用验证器（[单击查看完全大小的图像](validation-with-the-data-annotation-validators-cs/_static/image14.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-在本教程中，您学习了如何利用数据批注模型联编程序来执行验证的 ASP.NET MVC 应用程序中。 您学习了如何使用不同类型的验证程序属性，例如，Required 和 StringLength 属性。 您还学习了如何使用 Microsoft 实体框架时使用这些属性。
+在本教程中，已学习如何利用数据批注模型联编程序在 ASP.NET MVC 应用程序中执行验证。 已了解如何使用不同类型的验证程序属性，如 Required 和 StringLength 属性。 还了解了如何在使用 Microsoft 实体框架时使用这些属性。
 
 > [!div class="step-by-step"]
 > [上一页](validating-with-a-service-layer-cs.md)

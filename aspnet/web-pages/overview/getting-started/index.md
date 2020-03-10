@@ -1,23 +1,23 @@
 ---
 uid: web-pages/overview/getting-started/index
-title: 开始使用 ASP.NET Web Pages |Microsoft Docs
+title: 与 ASP.NET 网页入门 |Microsoft Docs
 author: rick-anderson
-description: 了解有关 ASP.NET Web Pages ASP.NET Web Pages 和新的 Razor 语法提供的快速且易上手的轻型方法将服务器代码与 HTML t 结合起来...
+description: 了解 ASP.NET 网页 ASP.NET 网页和新 Razor 语法提供一种将服务器代码与 HTML t 结合起来的快速、易学和轻型方法 。
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 99253c4e-a125-4c21-85e7-a6dd74d93892
 msc.legacyurl: /web-pages/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 50a249d0e64cff2a8c4f16f38f530b6d52f755de
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133178"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520646"
 ---
-# <a name="getting-started-with-aspnet-web-pages"></a>开始使用 ASP.NET Web Pages
+# <a name="getting-started-with-aspnet-web-pages"></a>入门与 ASP.NET 网页
 
-> 哪些 Web Pages 和 WebMatrix 是，以及如何安装的所有内容、 开始，以及部署的网站。
+> 网页和 WebMatrix 是什么，以及如何安装所有内容、入门和部署站点。
 
 - [在 Visual Studio 中对 ASP.NET 网页进程编程](program-asp-net-web-pages-in-visual-studio.md)
 - [ASP.NET Web 编程 Razor 语法简介](introducing-razor-syntax-c.md)

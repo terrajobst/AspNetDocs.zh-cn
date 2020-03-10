@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/customizing-a-view
-title: 教程：自定义视图的 EF 数据库第一个与 ASP.NET MVC 应用
-description: 本教程重点介绍更改的自动生成的视图，以增强此演示文稿。
+title: 教程：通过 ASP.NET MVC 应用自定义 EF Database First 的视图
+description: 本教程重点介绍如何更改自动生成的视图以增强演示。
 author: Rick-Anderson
 ms.author: riande
 ms.date: 01/24/2019
@@ -10,51 +10,51 @@ ms.assetid: 269380ff-d7e1-4035-8ad1-fe1316a25f76
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/customizing-a-view
 msc.type: authoredcontent
 ms.openlocfilehash: 89b8a0eb84b6e287c45bc141c68a2c76e63b0e41
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028854"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471518"
 ---
-# <a name="tutorial-customize-view-for-ef-database-first-with-aspnet-mvc-app"></a>教程：自定义视图的 EF 数据库第一个与 ASP.NET MVC 应用
+# <a name="tutorial-customize-view-for-ef-database-first-with-aspnet-mvc-app"></a>教程：通过 ASP.NET MVC 应用自定义 EF Database First 的视图
 
-使用 MVC、 Entity Framework 和 ASP.NET 基架，可以创建提供接口的现有数据库的 web 应用程序。 本系列教程演示了如何自动生成代码，使用户能够显示、 编辑、 创建和删除驻留在数据库表中的数据。 生成的代码对应于数据库表中的列。
+使用 MVC、实体框架和 ASP.NET 基架，你可以创建一个 web 应用程序，用于向现有数据库提供接口。 本系列教程演示如何自动生成允许用户显示、编辑、创建和删除位于数据库表中的数据的代码。 生成的代码与数据库表中的列相对应。
 
-本教程重点介绍更改的自动生成的视图，以增强此演示文稿。
+本教程重点介绍如何更改自动生成的视图以增强演示。
 
 在本教程中，你将了解：
 
 > [!div class="checklist"]
-> * 将课程添加到学生详细信息页
-> * 确认课程都添加到页面
+> * 向 "学生详细信息" 页添加课程
+> * 确认已将课程添加到页面
 
 ## <a name="prerequisites"></a>系统必备
 
 * [更改数据库](changing-the-database.md)
 
-## <a name="add-courses-to-student-detail"></a>将课程添加到学生详细信息
+## <a name="add-courses-to-student-detail"></a>向学生详细信息添加课程
 
-生成的代码为应用程序提供很好的起点，但它不一定提供全部所需应用程序中的功能。 可以自定义代码来满足你的应用程序的特定要求。 目前，你的应用程序不显示所选学生的已注册的课程。 在本部分中，您将添加已注册的课程到每个学生**详细信息**学生的视图。
+生成的代码为应用程序提供了一个很好的起点，但它并不一定提供您的应用程序所需的所有功能。 你可以自定义代码来满足应用程序的特定要求。 目前，应用程序不会显示所选学生的已注册课程。 在本部分中，你将向学生的**详细信息**视图中添加每个学生的已注册课程。
 
-打开**视图** > **学生** > *Details.cshtml*。 最后一个下面&lt;/dl&gt;标记，但在关闭前&lt;/div&gt;标记中，添加以下代码。
+ > *详细信息，*  > **学生**打开**视图**。 在最后一个 &lt;/dl&gt; 标记下，但在结束 &lt;/div&gt; 标记之前，添加以下代码。
 
 [!code-cshtml[Main](customizing-a-view/samples/sample1.cshtml)]
 
-此代码将创建所选学生 Enrollment 表中显示为每个记录的行的表。 **显示**方法表示表达式的对象 (modelItem) 将呈现 HTML。 使用 Display 方法 （而不是只需在代码中嵌入的属性值） 以确保设置的值格式正确基于其类型和该类型的模板。 在此示例中，从当前记录在循环中，每个表达式返回的单个属性和值是基元类型的呈现为文本。
+此代码将创建一个表，该表为所选学生的注册表中的每个记录显示一行。 **显示**方法为表示表达式的对象（modelItem）呈现 HTML。 您可以使用显示方法（而不是只是将属性值嵌入到代码中）以确保值基于其类型和该类型的模板正确地进行格式设置。 在此示例中，每个表达式都将返回循环中的当前记录的单个属性，并且值是呈现为文本的基元类型。
 
-## <a name="confirm-courses-are-added"></a>确认也会添加课程
+## <a name="confirm-courses-are-added"></a>确认添加课程
 
-运行该解决方案。 单击**学生列表**，然后选择**详细信息**一个学生。 你将看到在视图中包含了已注册的课程。
+运行该解决方案。 单击 "**学生列表**"，然后选择其中一个学生的 "**详细信息**"。 你将看到已注册的课程已包含在视图中。
 
-![与注册的学生](customizing-a-view/_static/image1.png)
+![学生注册](customizing-a-view/_static/image1.png)
 
 ## <a name="next-steps"></a>后续步骤
 在本教程中，你将了解：
 
 > [!div class="checklist"]
-> * 添加了的课程为学生详细信息页
-> * 确认课程都添加到页面
+> * 向学生详细信息页添加了课程
+> * 已确认将课程添加到页面
 
-转到下一步的教程，了解如何添加数据批注以指定验证要求和显示格式。
+转到下一教程，了解如何添加数据批注来指定验证要求和显示格式。
 > [!div class="nextstepaction"]
 > [增强数据验证](enhancing-data-validation.md)

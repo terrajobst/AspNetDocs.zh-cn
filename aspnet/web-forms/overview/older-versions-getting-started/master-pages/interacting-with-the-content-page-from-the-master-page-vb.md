@@ -9,11 +9,11 @@ ms.assetid: a6e2e1a0-c925-43e9-b711-1f178fdd72d7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5367ad1b7f2fa11c635ad95754c9bcc1edcb6c1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615586"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464534"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>从母版页与内容页交互 (VB)
 
@@ -201,7 +201,7 @@ ms.locfileid: "74615586"
 
 **图 09**： GridViews 中显示最大的价格（[单击以查看完全大小的图像](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 理想情况下，母版页及其内容页完全独立，无需交互。 但是，如果您有一个母版页或内容页，其中显示了可从母版页或内容页修改的数据，则在修改数据以便可以更新显示内容页时，您可能需要将母版页通知内容页（或相反）。 在前面的教程中，我们看到了如何使内容页以编程方式与母版页交互;在本教程中，我们介绍了如何使母版页启动交互。
 

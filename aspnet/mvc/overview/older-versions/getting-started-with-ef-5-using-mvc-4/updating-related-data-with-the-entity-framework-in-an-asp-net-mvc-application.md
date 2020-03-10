@@ -9,11 +9,11 @@ ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: d29cb172d642b67947b461d1a7e55d01872bb8c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74592443"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468284"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>使用 ASP.NET MVC 应用程序中的实体框架更新相关数据（第6项，共10个）
 
@@ -21,7 +21,7 @@ ms.locfileid: "74592443"
 
 [下载完成的项目](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解教程系列，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始学习本系列教程，也可以从此处[下载入门项目](building-the-ef5-mvc4-chapter-downloads.md)。
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架 5 Code First 和 Visual Studio 2012 创建 ASP.NET MVC 4 应用程序。 若要了解系列教程，请参阅[本系列中的第一个教程](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 你可以从头开始学习本系列教程，也可以从此处[下载入门项目](building-the-ef5-mvc4-chapter-downloads.md)。
 > 
 > > [!NOTE] 
 > > 
@@ -105,7 +105,7 @@ ms.locfileid: "74592443"
 
 该代码执行以下操作：
 
-- 使用 `OfficeAssignment` 导航属性的预先加载从数据库获取当前的 `Instructor` 实体。 这与您在 `HttpGet` `Edit` 方法中所执行的操作相同。
+- 使用 `Instructor` 导航属性的预先加载从数据库获取当前的 `OfficeAssignment` 实体。 这与您在 `HttpGet` `Edit` 方法中所执行的操作相同。
 - 用模型绑定器中的值更新检索到的 `Instructor` 实体。 使用的[TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx)重载使你能够将你要包括的属性*列入*允许列表。 这可以防止过度发布，如[第二个教程中所](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)述。
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
@@ -202,7 +202,7 @@ ms.locfileid: "74592443"
 
 如果尝试删除以管理员身份分配到部门的指导员，将会出现引用完整性错误。 请参阅[本教程的当前版本](../../getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)，以获取其他代码，此代码将自动从指定为管理员的任何部门删除教师。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 你现在已经完成了使用相关数据的这一简介。 到目前为止，在这些教程中，您已完成了一系列完整的 CRUD 操作，但您并未处理并发问题。 下一教程将介绍并发性的主题、说明如何处理它，以及如何将并发处理添加到已为一种实体类型编写的代码段。
 

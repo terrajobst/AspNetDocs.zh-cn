@@ -9,11 +9,11 @@ ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
 ms.openlocfilehash: 5a1e0d7cd3c396d4be79c8958422602055eb3db1
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457097"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500528"
 ---
 # <a name="source-control-building-real-world-cloud-apps-with-azure"></a>源代码管理（通过 Azure 构建实际的云应用）
 
@@ -147,7 +147,7 @@ Visual Studio 会询问你是否要使用 TFVC （集中式版本控制）或 Gi
 
 选择 Git 并单击 **"确定"** 时，Visual Studio 将在解决方案文件夹中创建一个新的本地 Git 存储库。 新存储库尚无文件;必须通过执行 Git commit 将它们添加到存储库。 在**解决方案资源管理器**中右键单击该解决方案，然后单击 "**提交**"。
 
-![Commit](source-control/_static/image11.png)
+![提交](source-control/_static/image11.png)
 
 Visual Studio 会自动暂存提交的所有项目文件，并在 "**包含的更改**" 窗格中**团队资源管理器**列出它们。 （如果不想在提交中包含某些资源，请选择它们，右键单击，然后单击 "**排除**"。）
 
@@ -187,7 +187,7 @@ Visual Studio 会自动暂存提交的所有项目文件，并在 "**包含的�
 
 当然，这并不是实现敏捷分支策略的唯一方法。 您可以使用集中式的源代码管理存储库启用相同的敏捷工作流。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 基于你进行更改的速度，并以安全、可预测的方式，衡量你的源代码管理系统是否成功。 如果你发现自己的恐惧进行了更改，因为你必须对其进行一次或两次手动测试，你可能会问自己必须执行的操作或测试，以便可以在几分钟内或在最糟的时间不超过1小时进行该更改。 实现此目的的一种策略是实现持续集成和持续交付，这将在[下一章](continuous-integration-and-continuous-delivery.md)中介绍。
 

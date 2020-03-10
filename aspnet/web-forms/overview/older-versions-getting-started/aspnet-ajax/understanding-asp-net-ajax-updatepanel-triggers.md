@@ -9,11 +9,11 @@ ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
 ms.openlocfilehash: b1cc869f373d4f8283b4d92af74707c3f11fef61
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588850"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440540"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 触发器
 
@@ -53,7 +53,7 @@ Microsoft 的 ASP.NET 技术引入了面向对象的和事件驱动的编程模�
 
 *标记后代：*
 
-| **符** | **描述** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;asp： AsyncPostBackTrigger&gt; | 指定一个控件和事件，该控件和事件将导致包含此触发器引用的 UpdatePanel 的部分页面更新。 |
 | &lt;asp： PostBackTrigger&gt; | 指定将导致完整页面更新的控件和事件（完整页面刷新）。 此标记可用于在控件将以其他方式触发部分呈现时强制执行完全刷新。 |
@@ -129,7 +129,7 @@ Microsoft 的 ASP.NET 技术引入了面向对象的和事件驱动的编程模�
 
 但应指出的是，我已在页面\_Load 事件中初始化时间，该时间已正确递增。 因此，开发人员应小心地确保适当的代码在相应的事件处理程序中运行，并在适当的时候避免使用页面\_负载。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET AJAX Extensions UpdatePanel 控件是通用的，可以利用多种方法来识别应导致其更新的控件事件。 它支持由其子控件自动更新，但也可以响应页面上其他位置的控件事件。
 

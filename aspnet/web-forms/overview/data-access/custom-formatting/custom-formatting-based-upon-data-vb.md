@@ -9,11 +9,11 @@ ms.assetid: df5a1525-386f-4632-972c-57b199870bc3
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 268dc763ef6954903f721a3015daaf10bf9bccb1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74613076"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78482762"
 ---
 # <a name="custom-formatting-based-upon-data-vb"></a>基于数据的自定义格式设置 (VB)
 
@@ -266,7 +266,7 @@ FormView 不包含任何 BoundFields，因此缺少 `Rows` 的集合。 取而�
 
 **图 11**：最经济实惠的产品突出显示为黄色（[单击以查看完全大小的图像](custom-formatting-based-upon-data-vb/_static/image27.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们了解了如何根据绑定到控件的数据设置 GridView、DetailsView 和 FormView 的格式。 为实现此目的，我们为 `DataBound` 或 `RowDataBound` 事件创建了一个事件处理程序，如果需要，将根据格式更改对基础数据进行检查。 若要访问已绑定到 DetailsView 或 FormView 的数据，请使用 `DataBound` 事件处理程序中的 `DataItem` 属性;对于 GridView，每个 `GridViewRow` 实例的 `DataItem` 属性都包含绑定到该行的数据，`RowDataBound` 事件处理程序中提供该数据。
 

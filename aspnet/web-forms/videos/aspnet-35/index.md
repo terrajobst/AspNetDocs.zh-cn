@@ -2,22 +2,22 @@
 uid: web-forms/videos/aspnet-35/index
 title: ASP.NET 3.5 | Microsoft Docs
 author: rick-anderson
-description: 如何生成 ASP.NET 3.5 应用程序，这是新功能。
+description: 如何构建 ASP.NET 3.5 应用程序，重点介绍了新增功能。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 2e6e9c24-bb97-446a-b05e-1bd88824d352
 msc.legacyurl: /web-forms/videos/aspnet-35
 msc.type: chapter
 ms.openlocfilehash: 369f3f1516dace0c7d8fc3a87b2d50ec71889de0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133774"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462434"
 ---
 # <a name="aspnet-35"></a>ASP.NET 3.5
 
-> 如何生成 ASP.NET 3.5 应用程序，这是新功能。
+> 如何构建 ASP.NET 3.5 应用程序，重点介绍了新增功能。
 
 - [如何](how-do-i/index.md)
 
@@ -37,7 +37,7 @@ ms.locfileid: "65133774"
     - [Visual Studio 2008 对 ASP.NET AJAX 的支持](aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
     - [将 AJAX 功能添加到现有的 ASP.NET 页面](aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
     - [在网站中创建并使用启用 AJAX 的 Web 服务](aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-    - [ASP.NET AJAX:ASP.NET AJAX 的演示](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+    - [ASP.NET AJAX：关于 ASP.NET AJAX 的演示](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
     - [ADO.NET 数据服务和 ASP.NET AJAX 支持](aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
     - [ASP.NET AJAX 历史记录简介](aspnet-ajax/introduction-to-aspnet-ajax-history.md)
     - [使用脚本组合提升 AJAX 性能](aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)

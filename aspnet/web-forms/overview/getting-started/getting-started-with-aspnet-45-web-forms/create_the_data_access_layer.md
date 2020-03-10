@@ -9,11 +9,11 @@ ms.assetid: 0bbf7a6e-d7eb-4091-91e4-fff892777f32
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
 ms.openlocfilehash: 0fcf050474a57be9ed53ec0783a6d6b7dde2bf4c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575748"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438374"
 ---
 # <a name="create-the-data-access-layer"></a>创建数据访问层
 
@@ -25,7 +25,7 @@ ms.locfileid: "74575748"
 
 本教程介绍如何使用 ASP.NET Web 窗体和实体框架 Code First 从数据库创建、访问和查看数据。 本教程基于前面的 "创建项目" 教程，是 Wingtip 玩具应用商店教程系列的一部分。 完成本教程后，您将生成一组数据访问类，这些类位于项目的 "*模型*" 文件夹中。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何创建数据模型。
 - 如何初始化和播种数据库。
@@ -69,7 +69,7 @@ ms.locfileid: "74575748"
 
     ![创建数据访问层-新建项菜单](create_the_data_access_layer/_static/image2.png)
 3. 从中间窗格中选择 "**类**"，并将此新类命名为*Product.cs*。
-4. 单击 **添加**。  
+4. 单击 **“添加”** 。  
    新的类文件将显示在编辑器中。
 5. 将默认代码替换为以下代码：   
 
@@ -166,7 +166,7 @@ ms.locfileid: "74575748"
 
 如果遇到错误，请重新检查以上步骤。 "**输出**" 窗口中的信息将指示存在问题的文件，以及文件中需要进行更改的位置。 此信息使你能够确定需要在你的项目中查看和修复上述哪些步骤。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本系列教程中，您已创建了数据模型，并添加了将用于初始化和播种数据库的代码。 您还将应用程序配置为在应用程序运行时使用数据模型。
 

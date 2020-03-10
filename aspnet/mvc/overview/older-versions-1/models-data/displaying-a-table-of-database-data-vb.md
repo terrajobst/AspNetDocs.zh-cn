@@ -9,11 +9,11 @@ ms.assetid: 5bb4587f-5bcd-44f5-b368-3c1709162b35
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f2e2489ac8455913f55c746dbe05b9fe8272285b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590733"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78436736"
 ---
 # <a name="displaying-a-table-of-database-data-vb"></a>显示数据库数据表 (VB)
 
@@ -31,11 +31,11 @@ ms.locfileid: "74590733"
 
 <a id="0.4_table01"></a>
 
-| **列名** | **数据类型** | **允许空值** |
+| **列名称** | **数据类型** | **允许 Null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 职务 | Nvarchar （200） | False |
-| 9509 | NVarchar （50） | False |
+| 标题 | Nvarchar （200） | False |
+| 导演 | NVarchar(50) | False |
 | DateReleased | DateTime | False |
 
 为了表示我们的 ASP.NET MVC 应用程序中的电影表，我们需要创建一个模型类。 在本教程中，我们将使用 Microsoft 实体框架来创建模型类。
@@ -53,7 +53,7 @@ ms.locfileid: "74590733"
 单击 "添加" 按钮后，将显示 "实体数据模型" 向导（参见图1）。 按照以下步骤完成向导：
 
 1. 在 "**选择模型内容**" 步骤中，选择 "**从数据库生成**" 选项。
-2. 在 "**选择你的数据连接**" 步骤中，使用*MoviesDB*数据连接，并为连接设置使用名称 " *MoviesDBEntities* "。 单击 "**下一步**" 按钮。
+2. 在 "**选择你的数据连接**" 步骤中，使用*MoviesDB*数据连接，并为连接设置使用名称 " *MoviesDBEntities* "。 单击“下一步”按钮。
 3. 在 "**选择数据库对象**" 步骤中，展开 "表" 节点，然后选择 "电影" 表。 输入命名空间*模型*，然后单击 "**完成**" 按钮。
 
 [![创建 LINQ to SQL 类](displaying-a-table-of-database-data-vb/_static/image1.jpg)](displaying-a-table-of-database-data-vb/_static/image1.png)
@@ -158,7 +158,7 @@ ms.locfileid: "74590733"
 
 RenderPartial （）方法不同于大多数其他 helper 方法，因为它不返回字符串。 因此，你必须使用 &lt;% RenderPartial （）%&gt; 而不是 &lt;% = RenderPartial （）%&gt;来调用 RenderPartial （）方法。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本教程的目的是说明如何在 HTML 表中显示一组数据库记录。 首先，您学习了如何通过利用 Microsoft 实体框架从控制器操作返回一组数据库记录。 接下来，您学习了如何使用 Visual Studio 基架生成一个视图，该视图自动显示项的集合。 最后，您学习了如何通过利用部分来简化视图。 您已经学习了如何使用部分模板作为模板，以便您可以对每个数据库记录进行格式设置。
 

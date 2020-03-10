@@ -9,11 +9,11 @@ ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 79491118ba1cbbc8c1b67ca9646a817d941f17ba
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74630984"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78493838"
 ---
 # <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>插入、更新和删除数据概述（VB）
 
@@ -365,7 +365,7 @@ FormView 提供对插入、编辑和删除数据的内置支持，但由于它�
 > [!NOTE]
 > 与 DetailsView 一样，FormView 的 `CurrentMode` 属性指示正在显示的接口，其 `DefaultMode` 属性指示在完成编辑或插入后，FormView 返回到的模式。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们将介绍使用 GridView、DetailsView 和 FormView 插入、编辑和删除数据的基本知识。 这三种控件都提供了一定程度的内置数据修改功能，无需在 ASP.NET 页中编写单行代码即可使用这些功能，这是因为数据 Web 控件和 ObjectDataSource。 然而，简单的点和单击技巧会呈现一个相当 frail 的数据修改用户界面。 为了提供验证、注入编程值、合理地处理异常、自定义用户界面等，我们需要依赖于将在接下来的几个教程中讨论的一系列技术。
 

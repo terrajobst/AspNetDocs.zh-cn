@@ -9,11 +9,11 @@ ms.assetid: e6ee90bf-32a5-4987-a384-15cc7dd30c8a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 13ac0da5ca53756aa7c660cdc47c96f0c865b006
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611318"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508838"
 ---
 # <a name="using-textboxwatermark-in-a-formview-c"></a>在 FormView 中使用 TextBoxWatermark (C#)
 
@@ -52,4 +52,4 @@ AJAX 控件工具包中的 `TextBoxWatermark` 控件扩展了文本框，以便�
 该字段中的水印来自扩展器（[单击查看完全大小的图像](using-textboxwatermark-in-a-formview-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一页](using-textboxwatermark-with-validation-controls-cs.md)
+> [下一部分](using-textboxwatermark-with-validation-controls-cs.md)

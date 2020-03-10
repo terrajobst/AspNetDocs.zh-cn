@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/index
-title: ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门 |Microsoft Docs
+title: 入门 ASP.NET 4.5 Web 窗体和 Visual Studio 2013 |Microsoft Docs
 author: rick-anderson
-description: 此教程系列将介绍构建 ASP.NET Web 窗体应用程序使用 ASP.NET 4.5 和 Visual Studio 2013 Express for Web 的基础知识。 Visua...
+description: 本系列教程将介绍使用 ASP.NET 4.5 和 Visual Studio 2013 Express for Web 构建 ASP.NET Web 窗体应用程序的基础知识。 Visua 。
 ms.author: riande
 ms.date: 04/09/2012
 ms.assetid: dc6aa59a-9cb0-4a81-b5f3-ec545a0e958d
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 msc.type: chapter
 ms.openlocfilehash: 75ac7d454462a7f7f1e071ce5ee9d892eb329c6f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131391"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78461486"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web 窗体和 Visual Studio 2013 入门
 
-> 此教程系列将介绍构建 ASP.NET Web 窗体应用程序使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的基础知识。 使用 C# 源代码的 Visual Studio 2013 项目是可随附于本系列教程。
+> 本系列教程将介绍使用 ASP.NET 4.5 构建 ASP.NET Web 窗体应用程序的基础知识，并为 Web Microsoft Visual Studio Express 2013。 此教程系列附带C#有源代码的 Visual Studio 2013 项目。
 
 - [Web 窗体和 Visual Studio 入门](introduction-and-overview.md)
 - [创建项目](create-the-project.md)

@@ -9,11 +9,11 @@ ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
 ms.openlocfilehash: ecde48f6bd88ee5f569bfeb8b70c26a50bc869c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576872"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78511430"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 和 Visual Studio 2010 Web 开发概述
 
@@ -496,7 +496,7 @@ ASP.NET 4 包含一项称为*浏览器功能提供程序*的功能。 顾名思�
 
 #### <a name="caching-the-httpbrowsercapabilities-object"></a>缓存 HttpBrowserCapabilities 对象
 
-前面的示例有一个问题，即每次调用自定义提供程序来获取*HttpBrowserCapabilities*对象时，代码都将运行。 这可能会在每个请求期间发生多次。 在此示例中，提供程序的代码不会执行许多操作。 但是，如果你的自定义提供程序中的代码执行了大量工作来获取*HttpBrowserCapabilities*对象，则这可能会影响性能。 若要防止此情况发生，可以缓存*HttpBrowserCapabilities*对象。 按照以下步骤进行操作：
+前面的示例有一个问题，即每次调用自定义提供程序来获取*HttpBrowserCapabilities*对象时，代码都将运行。 这可能会在每个请求期间发生多次。 在此示例中，提供程序的代码不会执行许多操作。 但是，如果你的自定义提供程序中的代码执行了大量工作来获取*HttpBrowserCapabilities*对象，则这可能会影响性能。 若要防止此情况发生，可以缓存*HttpBrowserCapabilities*对象。 请执行这些步骤：
 
 1. 创建一个派生自*HttpCapabilitiesProvider*的类，如下例所示： 
 
@@ -927,8 +927,8 @@ ASP.NET 4 中的主要工作区域之一是帮助呈现符合最新 HTML 标准�
 
 *ControlRenderingCompatibility*的值是一个字符串，它允许将来的版本中可能出现新版本定义。 在当前版本中，此属性支持以下值：
 
-- "3.5"。 此设置表示旧的呈现和标记。 控件呈现的标记比向后兼容100%，并遵循*xhtmlConformance*属性的设置。
-- "4.0"。 如果属性具有此设置，ASP.NET Web 服务器控件将执行以下操作：
+- "3.5". 此设置表示旧的呈现和标记。 控件呈现的标记比向后兼容100%，并遵循*xhtmlConformance*属性的设置。
+- "4.0". 如果属性具有此设置，ASP.NET Web 服务器控件将执行以下操作：
 - *XhtmlConformance*属性始终被视为 "Strict"。 因此，控件呈现 XHTML 1.0 严格标记。
 - 禁用非输入控件将不再呈现无效样式。
 - 现在，隐藏字段周围的*div*元素的样式为，因此它们不会干扰用户创建的 CSS 规则。
@@ -977,10 +977,10 @@ ASP.NET 2.0 和更高版本会在*div*元素中呈现系统特定的隐藏字段
 默认情况下，支持模板的以下 ASP.NET Web 服务器控件将自动包装在用于应用内联样式的外部表中：
 
 - *FormView*
-- *Id*
+- *登录*
 - *PasswordRecovery*
 - *ChangePassword*
-- *Wizard*
+- *向导*
 - *CreateUserWizard*
 
 已将名为*RenderOuterTable*的新属性添加到这些控件，这些控件允许从标记中删除外部表。 例如，请看下面的*FormView*控件示例：
@@ -997,7 +997,7 @@ ASP.NET 2.0 和更高版本会在*div*元素中呈现系统特定的隐藏字段
 
 前面的示例将呈现以下输出，而不包含*table*、 *tr*和*td*元素：
 
-> Content
+> 内容
 
 这种增强功能使你可以更轻松地使用 CSS 设置控件内容的样式，因为控件不呈现意外标记。
 
@@ -1364,17 +1364,17 @@ Visual Studio 2010 部署包可以包含对 SQL Server 数据库的依赖关系�
 
 这是一份初稿，并可能在本文所述软件最终商业发布之前进行大幅更改。
 
-本文档中包含的信息代表 Microsoft Corporation 对文档发布时所讨论问题的当前观点。 由于 Microsoft 必须对市场情况的变化做出响应，因此不应将本文档视为 Microsoft 方的承诺，并且自本文档发布之日后，Microsoft 无法保证所提供的所有信息的准确性。
+本文所含信息代表 Microsoft Corporation 对截至发布之日所讨论问题持有的当前观点。 由于 Microsoft 必须对不断变化的市场情况作出响应，所以不应将本文解释为是 Microsoft 做出的承诺，Microsoft 并不保证所提供的任何信息在公布之日后的准确性。
 
-本白皮书仅供参考。 MICROSOFT 不对本文档中的信息做出任何明示、默示或法定的保证。
+本白皮书仅用于提供信息。 MICROSOFT 对本文档中的信息不做任何明示、暗示或法定的担保。
 
-用户有责任遵守所有适用的著作权法/版权法。 在不影响版权下的权利的情况下，事先未经 Microsoft Corporation 的明确书面许可，不得将本文档中的任何部分复制、存储或引入到检索系统中，也不得以任何形式、任何方式（电子、机械、复印、录制或其他方式）或出于任何目的而传输本文档中的任何部分。
+遵守所有适用的著作权法是用户的责任。 未经 Microsoft Corporation 明确的书面许可，不得出于任何目的或以任何形式或任何手段（电子、机械、影印、记录或其他方法）复制本文档的任何部分，或者将其存储或引入检索系统，或者将其进行传播。受版权法保护的权利不受此限制。
 
-对于本文档中涉及的主题，Microsoft 可能拥有专利、专利申请、商标、版权或其他知识产权。 除非 Microsoft 提供的书面许可协议中有明文规定，否则提供本文档并不授予您对这些专利、商标、版权或其他知识产权的许可。
+对于本文档中的主题，Microsoft 可能具有专利、专利申请、商标、版权或其他知识产权。 除非 Microsoft 的任何书面许可协议明确提出，否则，本文档的提供并不表示 Microsoft 已将这些专利、商标、版权或其他知识产权的任何许可权限授予您。
 
 除非另有说明，否则本示例中描述的公司、组织、产品、域名、电子邮件地址、徽标、人物、地点和事件均属虚构，与任何真实的公司、组织、产品、域名、电子邮件关联应推断地址、徽标、人物、地点或事件。
 
-© 2009 Microsoft Corporation。 保留所有权利。
+© 2009 Microsoft Corporation. 保留所有权利。
 
 Microsoft 和 Windows 是 Microsoft Corporation 在美国和/或其他国家/地区的注册商标或商标。
 

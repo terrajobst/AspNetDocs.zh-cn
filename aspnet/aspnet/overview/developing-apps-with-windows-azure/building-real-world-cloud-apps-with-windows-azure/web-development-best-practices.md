@@ -9,11 +9,11 @@ ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
 ms.openlocfilehash: dfd8a3ac2328d3f17dfbe36e68b37d181177b0f4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457084"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471404"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 开发最佳做法（通过 Azure 构建实际的云应用）
 
@@ -76,7 +76,7 @@ ms.locfileid: "77457084"
 <a id="sessionstate"></a>
 ## <a name="avoid-session-state"></a>避免会话状态
 
-在实际云应用中避免存储某种形式的用户会话状态通常是不现实的，但某些方法相比其他方法而言，对性能和可伸缩性的影响更大。 如果需要存储状态，最佳解决方案是使状态量保持较小并将其存储在 Cookie 中。 如果这不可行，下一个最佳解决方案是将 ASP.NET 会话状态与提供程序配合使用[，以便使用分布式的内存中缓存](distributed-caching.md#sessionstate)。 从性能和可伸缩性的角度来看，最差的解决方案是使用数据库支持的会话状态提供程序。
+在实际云应用中避免存储某种形式的用户会话状态通常是不现实的，但某些方法相比其他方法而言，对性能和可伸缩性的影响更大。 如果你需要存储状态，最佳解决方案是使状态量保持较小并将其存储在 Cookie 中。 如果这不可行，下一个最佳解决方案是将 ASP.NET 会话状态与提供程序配合使用[，以便使用分布式的内存中缓存](distributed-caching.md#sessionstate)。 从性能和可伸缩性的角度来看，最差的解决方案是使用数据库支持的会话状态提供程序。
 
 <a id="cdn"></a>
 ## <a name="use-a-cdn-to-cache-static-file-assets"></a>使用 CDN 缓存静态文件资产
@@ -126,7 +126,7 @@ Windows Azure 具有 CDN，你可以在 Windows Azure 中运行的应用程序�
 
 存在 `Async` 版本的 `ToList` 方法，因为在此代码中，这是导致查询发送到数据库的方法。 `Where` 和 `OrderByDescending` 方法仅配置查询，而 `ToListAsync` 方法执行查询，并将响应存储在 `result` 变量中。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 你可以在任何 web 编程框架和任何云环境中实现此处所述的 web 开发最佳做法，但我们在 ASP.NET 和 Microsoft Azure 中提供了一些工具来使其变得简单。 如果遵循这些模式，则可以轻松地横向扩展 web 层，并最大限度地减少支出，因为每个服务器都能处理更多流量。
 

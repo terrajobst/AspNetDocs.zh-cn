@@ -9,11 +9,11 @@ ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2551a5361256234883bb37e46e794037284445a4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640980"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78473450"
 ---
 # <a name="urls-in-master-pages-c"></a>母版页中的 URL (C#)
 
@@ -127,7 +127,7 @@ ASP.NET 使页面开发人员可以使用波形符（`~`）指示 web 应用程�
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample8.aspx)]
 
-就是这样简单！ 此时，无论母版页和内容页面位于哪个文件夹，都可以根据内容页面呈现母版页中的所有 Url。
+就这么简单！ 此时，无论母版页和内容页面位于哪个文件夹，都可以根据内容页面呈现母版页中的所有 Url。
 
 ### <a name="automatic-url-resolution-in-theheadsection"></a>`<head>`部分中的自动 URL 解析
 
@@ -141,7 +141,7 @@ ASP.NET 使页面开发人员可以使用波形符（`~`）指示 web 应用程�
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample10.html)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 母版页通常包含链接、图像和其他必须通过 URL 指定的外部资源。 由于同一文件夹中可能不存在母版页和内容页，因此 abstain 使用相对 Url 很重要。 尽管可以使用硬编码的绝对 Url，但这样做会将绝对 URL 紧密耦合到 web 应用程序。 如果绝对 URL 发生更改，则在移动或部署 web 应用程序时通常会发生更改-您必须记得返回并更新绝对 Url。
 

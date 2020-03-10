@@ -2,22 +2,22 @@
 uid: mvc/overview/older-versions/index
 title: 旧版本-MVC 3 和 4 |Microsoft Docs
 author: rick-anderson
-description: 了解如何使用 ASP.NET MVC 的早期版本的资源的链接。
+description: 用于了解如何使用早期版本的 ASP.NET MVC 的资源链接。
 ms.author: riande
 ms.date: 10/09/2014
 ms.assetid: 151cd274-3daa-4f88-ad3b-bffb99a9d545
 msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: aa38ea8984f958939261d494f65bfa2108f87068
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112456"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78451340"
 ---
 # <a name="older-versions---mvc-3-and-4"></a>旧版本 - MVC 3 和 MVC 4
 
-> 了解如何使用 ASP.NET MVC 的早期版本的资源的链接。
+> 用于了解如何使用早期版本的 ASP.NET MVC 的资源链接。
 
 - [ASP.NET MVC 4 入门](getting-started-with-aspnet-mvc4/index.md)
 
@@ -81,12 +81,12 @@ ms.locfileid: "65112456"
 - [使用 Razor 和非介入性 JavaScript 创建 MVC 3 应用程序](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript.md)
 - [MVC 3 Music 商店](mvc-music-store/index.md)
 
-    - [第 1 部分：概述和文件-> 新建项目](mvc-music-store/mvc-music-store-part-1.md)
+    - [第 1 部分：概述和文件->新建项目](mvc-music-store/mvc-music-store-part-1.md)
     - [第 2 部分：控制器](mvc-music-store/mvc-music-store-part-2.md)
-    - [第 3 部分：视图和 Viewmodel](mvc-music-store/mvc-music-store-part-3.md)
+    - [第 3 部分：视图和 ViewModel](mvc-music-store/mvc-music-store-part-3.md)
     - [第 4 部分：模型和数据访问](mvc-music-store/mvc-music-store-part-4.md)
     - [第 5 部分：编辑窗体和模板化](mvc-music-store/mvc-music-store-part-5.md)
-    - [第 6 部分：使用数据批注的模型验证](mvc-music-store/mvc-music-store-part-6.md)
+    - [第 6 部分：使用数据注释进行模型验证](mvc-music-store/mvc-music-store-part-6.md)
     - [第 7 部分：成员身份和授权](mvc-music-store/mvc-music-store-part-7.md)
     - [第 8 部分：购物车与 Ajax 更新](mvc-music-store/mvc-music-store-part-8.md)
     - [第 9 部分：注册和结帐](mvc-music-store/mvc-music-store-part-9.md)
@@ -95,10 +95,10 @@ ms.locfileid: "65112456"
 
     - [通过 ASP.NET MVC 实现 HTML5 和 jQuery UI Datepicker 快捷日历 - 第 1 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
     - [通过 ASP.NET MVC 实现 HTML5 和 jQuery UI Datepicker 快捷日历 - 第 2 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
-    - [HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC-第 3 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+    - [具有 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快捷日历-第3部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
     - [通过 ASP.NET MVC 实现 HTML5 和 jQuery UI Datepicker 快捷日历 - 第 4 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4.md)
 - [MVC 3 - 使用 DropDownList 对话框和 jQuery](working-with-the-dropdownlist-box-and-jquery/index.md)
 
     - [通过 ASP.NET MVC 使用 DropDownList 帮助程序](working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc.md)
-    - [检查 ASP.NET MVC 如何支持 DropDownList 帮助程序](working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+    - [检查 ASP.NET MVC 如何基架 DropDownList 帮助器](working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
     - [使用 jQuery UI 向 DropDownList 添加新类别](working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui.md)

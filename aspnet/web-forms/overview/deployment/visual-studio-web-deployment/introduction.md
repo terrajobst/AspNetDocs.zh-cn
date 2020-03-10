@@ -9,11 +9,11 @@ ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
 ms.openlocfilehash: 96dd31d949633e001fc595621bedbf74e98000fc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640239"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78521756"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio 的 ASP.NET Web 部署：简介
 
@@ -49,7 +49,7 @@ ms.locfileid: "74640239"
 除了演示如何从命令行部署的一个教程外，本教程中不涉及使用[持续交付](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)过程从[源代码管理](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md)进行的部署。 有关持续交付的信息，请参阅以下资源：
 
 - [持续集成和持续交付（通过 Microsoft Azure 构建实际的云应用）](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [在 Azure App Service 中部署 web 应用](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
+- [在 Azure 应用服务中部署 Web 应用](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [在企业方案中部署 Web 应用程序](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)（为 Visual Studio 2010 编写的一组较旧的教程，这些教程仍包含适用于企业环境的有用信息。）
 
 ## <a name="using-a-third-party-hosting-provider"></a>使用第三方托管提供程序
@@ -110,7 +110,7 @@ ms.locfileid: "74640239"
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 本教程已针对以下产品编写：
 
@@ -193,9 +193,9 @@ ms.locfileid: "74640239"
 - 应用程序包括某些必须在已部署的*web.config*文件中更改的设置，具体取决于目标环境（测试、过渡或生产），以及其他必须根据生成配置（调试或发布）更改的设置。
 - Visual Studio 解决方案包括一个类库项目。 只应部署此项目生成的程序集，而不部署项目本身。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本系列教程的第一个教程中，已下载示例 Visual Studio 项目和查看的站点功能，这些功能会影响你部署应用程序的方式。 在以下教程中，您将通过设置其中的某些项来准备自动处理的部署。 您手动处理的其他人。
 
 > [!div class="step-by-step"]
-> [下一页](preparing-databases.md)
+> [下一部分](preparing-databases.md)

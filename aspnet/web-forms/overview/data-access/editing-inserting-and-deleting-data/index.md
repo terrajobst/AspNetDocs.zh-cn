@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/index
-title: 编辑、 插入和删除数据 |Microsoft Docs
+title: 编辑、插入和删除数据 |Microsoft Docs
 author: rick-anderson
-description: 在这些教程中，请参阅如何将对象数据源控件的方法映射到的 BLL 方法，以及如何配置 GridView、 DetailsView 和 FormView 共同...
+description: 在这些教程中，你将了解如何将 ObjectDataSource 控件的方法映射到 BLL 方法，以及如何配置 GridView、DetailsView 和 FormView 共同 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
 ms.openlocfilehash: 4657a52b05c1cf8a991158f212d6b6ce849ef276
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109045"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78492194"
 ---
 # <a name="editing-inserting-and-deleting-data"></a>编辑、插入和删除数据
 
-> 在这些教程请参阅如何将对象数据源控件的方法映射到的 BLL 方法，以及如何配置 GridView、 DetailsView，和 FormView 控件以使用户可以修改数据。
+> 在这些教程中，你将了解如何将 ObjectDataSource 控件的方法映射到 BLL 方法，以及如何配置 GridView、DetailsView 和 FormView 控件以使用户能够修改数据。
 
 - [插入、更新和删除数据概述 (C#)](an-overview-of-inserting-updating-and-deleting-data-cs.md)
 - [检查与插入、更新和删除操作有关的事件 (C#)](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

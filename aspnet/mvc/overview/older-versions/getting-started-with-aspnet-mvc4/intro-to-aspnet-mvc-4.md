@@ -9,11 +9,11 @@ ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
 ms.openlocfilehash: 51709a9c6ddb39b8fcd1cd94cd08d530a595825a
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455537"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78485276"
 ---
 # <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 简介
 
@@ -36,7 +36,7 @@ ms.locfileid: "77455537"
 >
 > 本教程由 Rick Anderson （ [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT) ）编写。
 
-## <a name="what-youll-build"></a>所需操作
+## <a name="what-youll-build"></a>你将生成
 
 > [!NOTE]
 > 如果本教程可在[此处](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)，则为已更新的版本。 新教程使用 ASP.NET MVC 5，这在本教程中提供了许多改进。
@@ -84,4 +84,4 @@ F5 会使 Visual Studio 启动 IIS Express 并运行你的 web 应用程序。 �
 立即将此默认模板提供给你的 "主页"、"联系人" 和 "关于" 页。 它还支持注册和登录，并提供到 Facebook 和 Twitter 的链接。 下一步是更改此应用程序的工作原理，并了解 ASP.NET MVC 的一些相关信息。 关闭浏览器并更改某些代码。
 
 > [!div class="step-by-step"]
-> [Next](adding-a-controller.md)
+> [下一部分](adding-a-controller.md)

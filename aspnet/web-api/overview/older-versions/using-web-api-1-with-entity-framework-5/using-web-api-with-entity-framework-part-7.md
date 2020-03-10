@@ -9,11 +9,11 @@ ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
 ms.openlocfilehash: fe4074c701159a137be3644d65ca844f160c2399
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599992"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484448"
 ---
 # <a name="part-7-creating-the-main-page"></a>第7部分：创建主页
 
@@ -110,10 +110,10 @@ ms.locfileid: "74599992"
 
 在本教程中，您创建了一个应用程序，该应用程序使用实体框架与数据库进行通信，并 ASP.NET Web API 在数据层的顶层提供面向公众的接口。 我们使用 ASP.NET MVC 4 来呈现 HTML 页面，并使用挖空和 jQuery 来提供动态交互，无需重新加载页面。
 
-其他资源：
+其他资源:
 
 - [ASP.NET 数据访问内容映射](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [实体框架开发人员中心](https://msdn.microsoft.com/data/ef)
 
 > [!div class="step-by-step"]
-> [上一部分](using-web-api-with-entity-framework-part-6.md)
+> [上一页](using-web-api-with-entity-framework-part-6.md)

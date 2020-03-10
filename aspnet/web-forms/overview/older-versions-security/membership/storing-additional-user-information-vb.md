@@ -9,11 +9,11 @@ ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cb352de6f7c2d117b41532112a87956c8dde62f8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74639316"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78488342"
 ---
 # <a name="storing-additional-user-information-vb"></a>存储其他用户信息 (VB)
 
@@ -438,7 +438,7 @@ CreateUserWizard 控件的默认标记定义了两个 `WizardSteps`： `CreateUs
 > [!NOTE]
 > 网站当前有两个页面，访问者可以在其中创建新帐户： `CreatingUserAccounts.aspx` 和 `EnhancedCreateUserWizard.aspx`。 网站的 "站点地图" 和 "登录" 页指向 "`CreatingUserAccounts.aspx`" 页，但 "`CreatingUserAccounts.aspx`" 页不会提示用户输入其 home 城镇、主页和签名信息，也不会将相应的行添加到 `UserProfiles`中。 因此，请更新 `CreatingUserAccounts.aspx` 页面，使其提供此功能，或更新站点地图和登录页以引用 `EnhancedCreateUserWizard.aspx` 而不是 `CreatingUserAccounts.aspx`。 如果选择后一种方法，请确保更新 `Membership` 文件夹的 `Web.config` 文件，以便允许匿名用户访问 `EnhancedCreateUserWizard.aspx` 页面。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们将介绍与成员身份框架中的用户帐户相关的数据建模方法。 具体而言，我们了解到与用户帐户共享一对多关系的建模实体，以及共享一对一关系的数据。 此外，我们还看到了如何显示、插入和更新此相关信息，其中有一些示例使用 SqlDataSource 控件和其他使用 ADO.NET 代码的示例。
 
@@ -474,4 +474,4 @@ Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已�
 此教程系列由许多有用的审阅者查看。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)放置一行。
 
 > [!div class="step-by-step"]
-> [上一部分](user-based-authorization-vb.md)
+> [上一页](user-based-authorization-vb.md)

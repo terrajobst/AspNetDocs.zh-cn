@@ -9,11 +9,11 @@ ms.assetid: 829d2f56-5c48-445b-b826-3418a450c788
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4d77816a489a4fa16cd70ec4214cd2f8ee563029
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74632027"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518132"
 ---
 # <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>Forms 身份验证配置和高级主题 (VB)
 
@@ -40,14 +40,14 @@ ASP.NET 中的 forms 身份验证系统提供了许多配置设置，这些设�
 | <strong>特性</strong> |                                                                                                                                                                                                                                     <strong>描述</strong>                                                                                                                                                                                                                                      |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         无         |                                                                                                                此属性指定在什么条件下，在 cookie 中存储身份验证票证，而不是将其嵌入到 URL 中。 允许的值为： UseCookies;UseUri;检测和 UseDeviceProfile （默认值）。 步骤2更详细地检查此设置。                                                                                                                |
-|         defaultUrl         |                                                                                                                                                         如果查询字符串中未指定 RedirectUrl 值，则指示从登录页登录后用户重定向到的 URL。 默认值为 .aspx。                                                                                                                                                         |
+|         defaultUrl         |                                                                                                                                                         如果查询字符串中未指定 RedirectUrl 值，则指示从登录页登录后用户重定向到的 URL。 默认值为 default.aspx。                                                                                                                                                         |
 |           域           | 使用基于 cookie 的身份验证票证时，此设置指定 cookie 的域值。 默认值为空字符串，这将使浏览器使用其发出的域（如 www.yourdomain.com）。 在这种情况下，在向子域发出请求（如 admin.yourdomain.com）时，<strong>不</strong>会发送 cookie。 如果希望将 cookie 传递给所有子域，则需要自定义域属性将其设置为 yourdomain.com。 |
 |  enableCrossAppRedirects   |                                                                                                                                                                   一个布尔值，指示在重定向到同一服务器上的其他 web 应用程序中的 Url 时是否记住经过身份验证的用户。 默认值为 false。                                                                                                                                                                   |
-|          loginUrl          |                                                                                                                                                                                                                      登录页的 URL。 默认值为 default.aspx。                                                                                                                                                                                                                      |
-|            {2&gt;名称&lt;2}            |                                                                                                                                                                                                   使用基于 cookie 的身份验证票证时，该 cookie 的名称。 默认值为.ASPXAUTH.                                                                                                                                                                                                   |
-|            路径            |                                                                             使用基于 cookie 的身份验证票证时，此设置将指定 cookie 的 path 属性。 使用 path 特性，开发人员可以将 cookie 的作用域限制为特定的目录层次结构。 默认值为/，通知浏览器将身份验证票证 cookie 发送到向域发出的任何请求。                                                                              |
+|          loginUrl          |                                                                                                                                                                                                                      登录页的 URL。 默认值为 login.aspx。                                                                                                                                                                                                                      |
+|            NAME            |                                                                                                                                                                                                   使用基于 cookie 的身份验证票证时，该 cookie 的名称。 默认值为.ASPXAUTH.                                                                                                                                                                                                   |
+|            path            |                                                                             使用基于 cookie 的身份验证票证时，此设置将指定 cookie 的 path 属性。 使用 path 特性，开发人员可以将 cookie 的作用域限制为特定的目录层次结构。 默认值为/，通知浏览器将身份验证票证 cookie 发送到向域发出的任何请求。                                                                              |
 |         保护         |                                                                                                                                            指示用于保护 forms 身份验证票证的技术。 允许的值为： All （默认值）;密匙内容和验证。 步骤3中详细讨论了这些设置。                                                                                                                                            |
-|         requireSSL         |                                                                                                                                                                                一个布尔值，指示是否需要 SSL 连接来传输身份验证 cookie。 默认值是 false。                                                                                                                                                                                |
+|         requireSSL         |                                                                                                                                                                                一个布尔值，指示是否需要 SSL 连接来传输身份验证 cookie。 默认值为 False。                                                                                                                                                                                |
 |     slidingExpiration      |                                                                                                 一个布尔值，该值指示每次用户在单个会话期间访问站点时是否重置身份验证 cookie 的超时时间。 默认值为 true。 "指定票证超时值" 部分更详细地讨论了身份验证票证超时策略。                                                                                                 |
 |          超时           |                                                                                                                               指定身份验证票证 cookie 过期的时间，以分钟为单位。 默认值为 30。 "指定票证超时值" 部分更详细地讨论了身份验证票证超时策略。                                                                                                                               |
 
@@ -244,7 +244,7 @@ Forms authentication 系统用来加密和验证身份验证票证的加密和�
 
 这些步骤将在上面的代码中进行复制。 首先，我们最终存储在 UserData 属性中的字符串是通过组合公司名称和标题组成的，并用竖线字符（|）分隔这两个值。
 
-Dim userDataString As String = String： Concat （i）、"|"、titleAtCompany （i））
+Dim userDataString As String = String.Concat(companyName(i), "|", titleAtCompany(i))
 
 接下来，调用 FormsAuthentication GetAuthCookie 方法，该方法将创建身份验证票证，根据配置设置对其进行加密和验证，然后将其放在 HttpCookie 对象中。
 
@@ -252,7 +252,7 @@ Dim authCookie As HttpCookie = FormsAuthentication GetAuthCookie （UserName. Te
 
 若要处理 cookie 中嵌入的 FormAuthenticationTicket，需要调用 FormAuthentication 类的[解密方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.decrypt.aspx)，并传入 cookie 值。
 
-Dim ticket As FormsAuthenticationTicket = FormsAuthentication （authCookie）
+Dim ticket As FormsAuthenticationTicket = FormsAuthentication.Decrypt(authCookie.Value)
 
 然后，基于现有 FormsAuthenticationTicket 的值创建一个*新*的 FormsAuthenticationTicket 实例。 但是，此新票证包含用户特定的信息（userDataString）。
 
@@ -260,7 +260,7 @@ Dim newTicket As FormsAuthenticationTicket = New FormsAuthenticationTicket （ti
 
 然后，通过调用[encrypt 方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.encrypt.aspx)加密（和验证）新的 FormsAuthenticationTicket 实例，并将此加密（和验证）数据放回到 authCookie 中。
 
-authCookie = FormsAuthentication （newTicket）
+authCookie.Value = FormsAuthentication.Encrypt(newTicket)
 
 最后，authCookie 将添加到响应中。 Cookie 集合和调用 GetRedirectUrl 方法，以确定发送用户的相应页面。
 
@@ -368,7 +368,7 @@ ASP.NET 运行时自动为我们同步这些属性值。 但是，此同步发�
 
 [!code-vb[Main](forms-authentication-configuration-and-advanced-topics-vb/samples/sample12.vb)]
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何通过 web.config 自定义 forms 身份验证系统的设置。我们查看了如何处理身份验证票证的过期，以及如何使用加密和验证安全措施来保护票证不被检查和修改。 最后，我们讨论了如何使用身份验证票证的 UserData 属性在票证本身中存储其他用户信息，以及如何使用自定义主体和标识对象以更好的开发人员更好的方式公开这些信息。
 
@@ -408,4 +408,4 @@ Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已�
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Alicja Maziarz。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4guysfromrolla.com)放置一行。
 
 > [!div class="step-by-step"]
-> [上一部分](an-overview-of-forms-authentication-vb.md)
+> [上一页](an-overview-of-forms-authentication-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: bc937e9d-5c14-4fc4-aec7-440da924dd18
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
 ms.openlocfilehash: dfac0c6fa955e59c6ea996533f2447e89ec8d468
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587973"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78516374"
 ---
 # <a name="user-based-authorization-vb"></a>基于用户的身份验证 (VB)
 
@@ -279,7 +279,7 @@ ASP.NET 使为站点中的不同文件和文件夹定义不同的授权规则变
 
 [!code-aspx[Main](user-based-authorization-vb/samples/sample18.aspx)]
 
- 结束时间： 
+ 到: 
 
 [!code-aspx[Main](user-based-authorization-vb/samples/sample19.aspx)]
 
@@ -348,7 +348,7 @@ ASP.NET 使为站点中的不同文件和文件夹定义不同的授权规则变
 
 有关使用 `PrincipalPermission` 特性定义有关类和方法的授权规则的详细信息，请参阅[Scott Guthrie](https://weblogs.asp.net/scottgu/)的博客文章[使用 `PrincipalPermissionAttributes`将授权规则添加到业务层和数据层](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何应用基于用户的授权规则。 我们首先来看一下 ASP。NET 的 URL 授权框架。 对于每个请求，ASP.NET 引擎的 `UrlAuthorizationModule` 会检查在应用程序配置中定义的 URL 授权规则，以确定标识是否有权访问所请求的资源。 简而言之，使用 URL 授权，可以轻松地为特定页面或特定目录中的所有页面指定授权规则。
 

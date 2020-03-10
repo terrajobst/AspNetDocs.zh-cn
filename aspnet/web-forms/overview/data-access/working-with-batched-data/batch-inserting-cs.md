@@ -9,11 +9,11 @@ ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5dc4d0b6ac9bf3aa2baa54fe9f5d4149494e47d2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74584763"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78501446"
 ---
 # <a name="batch-inserting-c"></a>批量插入 (C#)
 
@@ -219,7 +219,7 @@ ms.locfileid: "74584763"
 > [!NOTE]
 > 本教程中使用的批插入逻辑将在事务范围内进行插入。 若要验证这一点，有意会引入数据库级别的错误。 例如，不是将新的 `ProductsRow` 实例的 `CategoryID` 属性分配到 `Categories` DropDownList 中的选定值，而是将其分配给 `i * 5`之类的值。 此处 `i` 为循环索引器，其值范围从1到5。 因此，在批插入中添加两个或更多产品时，第一个产品将具有有效的 `CategoryID` 值（5），但后面的产品将具有与 `Categories` 表中的 `CategoryID` 值不匹配的 `CategoryID` 值。 实际效果是，在第一次 `INSERT` 成功后，后续的将失败，并出现外键约束冲突。 由于批处理插入是原子的，因此第一个 `INSERT` 会回滚，并将数据库返回到批处理插入进程开始之前的状态。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在此过程中，我们创建了允许更新、删除和插入批处理数据的接口，所有这些数据都使用我们在事务教程中的[包装数据库修改](wrapping-database-modifications-within-a-transaction-cs.md)中添加到数据访问层的事务支持。 在某些情况下，此类批处理用户界面可通过减少点击次数、回发和键盘到鼠标的上下文切换，同时保持基础数据的完整性，从而极大地提高最终用户的工作效率。
 

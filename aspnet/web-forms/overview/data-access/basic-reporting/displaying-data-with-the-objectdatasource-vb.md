@@ -9,11 +9,11 @@ ms.assetid: d62c3a63-0940-4019-874e-4a4047df0c1c
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 754188352cbfb08e610027f5b7890a32bd88ae26
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74608883"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78483050"
 ---
 # <a name="displaying-data-with-the-objectdatasource-vb"></a>使用 ObjectDataSource 显示数据 (VB)
 
@@ -104,7 +104,7 @@ ObjectDataSource 的 "配置数据源" 向导提供了一种快速方法来指�
 
 ## <a name="using-themes-for-a-consistent-look"></a>使用主题实现一致的外观
 
-这些教程尽力删除任何控件级样式设置，而不是尽可能使用外部文件中定义的级联样式表。 `Styles.css` 文件包含 `DataWebControlStyle`、`HeaderStyle`、`RowStyle`和 `AlternatingRowStyle` CSS 类，它们应该用于决定这些教程中所使用的数据 Web 控件的外观。 为实现此目的，我们可以将 GridView 的 `CssClass` 属性设置为 `DataWebControlStyle`，并相应地设置其 `HeaderStyle`、`RowStyle`和 `AlternatingRowStyle` 属性。
+这些教程尽力删除任何控件级样式设置，而不是尽可能使用外部文件中定义的级联样式表。 `Styles.css` 文件包含 `DataWebControlStyle`、`HeaderStyle`、`RowStyle`和 `AlternatingRowStyle` CSS 类，它们应该用于决定这些教程中所使用的数据 Web 控件的外观。 为实现此目的，我们可以将 GridView 的 `CssClass` 属性设置为 `DataWebControlStyle`，并相应地设置其 `HeaderStyle`、`RowStyle`和 `AlternatingRowStyle` 属性。`CssClass`
 
 如果在 Web 控件中设置这些 `CssClass` 属性，我们需要记得为每个已添加到教程中的数据 Web 控件显式设置这些属性值。 更易于管理的方法是使用主题为 GridView、DetailsView 和 FormView 控件定义默认的与 CSS 相关的属性。 主题是可应用于站点中的页面以强制使用常见外观的控件级属性设置、图像和 CSS 类的集合。
 
@@ -198,7 +198,7 @@ DetailsView 在显示从 ObjectDataSource 返回的每条记录的方式上非�
 
 与 DetailsView 一样，FormView 只显示从 ObjectDataSource 返回的第一条记录。 可以在 FormView 中启用分页，以允许访问者一次单步执行一次产品。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 无需编写代码，就可以在不编写代码的情况下，访问和显示业务逻辑层中的数据，而无需编写代码。 ObjectDataSource 调用类的指定方法并返回结果。 这些结果可以显示在绑定到 ObjectDataSource 的数据 Web 控件中。 在本教程中，我们将介绍如何将 GridView、DetailsView 和 FormView 控件绑定到 ObjectDataSource。
 

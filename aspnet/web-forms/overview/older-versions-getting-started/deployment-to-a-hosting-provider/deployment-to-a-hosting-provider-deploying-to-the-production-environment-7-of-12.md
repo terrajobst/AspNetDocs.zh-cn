@@ -9,11 +9,11 @@ ms.assetid: b83ab819-2b05-4776-b7b4-79ef78d457a5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: db838633accdedd7c0693b126a007e254ca681e4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74627253"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458168"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：部署到生产环境-7/12
 
@@ -99,7 +99,7 @@ Cytanium 欢迎电子邮件包含一个链接，该链接指向有关如何更�
 
 ![控制面板 Web 发布选项卡](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image21.png)
 
-输入用户名和密码，创建 web 发布所使用的凭据。 您可以输入用于登录到控制面板的相同凭据。 然后单击 "**启用**"。
+输入用户名和密码，创建 web 发布所使用的凭据。 您可以输入用于登录到控制面板的相同凭据。 单击“启用”。
 
 ![控制面板创建发布凭据](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image22.png)
 
@@ -148,7 +148,7 @@ Cytanium 欢迎电子邮件包含一个链接，该链接指向有关如何更�
 
 ![发布 Web 向导管理配置文件](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image29.png)
 
-在 "**编辑 Web 发布配置文件**" 对话框中，选择 "生产" 配置文件，单击 "**重命名**"，然后将配置文件名称更改为 "生产"。 然后单击 "**关闭**"。
+在 "**编辑 Web 发布配置文件**" 对话框中，选择 "生产" 配置文件，单击 "**重命名**"，然后将配置文件名称更改为 "生产"。 然后单击 **“关闭”** 。
 
 !["编辑 Web 发布配置文件" 对话框](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image30.png)
 

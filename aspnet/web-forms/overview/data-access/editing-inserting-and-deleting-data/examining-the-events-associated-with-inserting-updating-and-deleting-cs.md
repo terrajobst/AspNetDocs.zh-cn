@@ -9,11 +9,11 @@ ms.assetid: dab291a0-a8b5-46fa-9dd8-3d35b249201f
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a8c1388b73524a8bb918b67aa265db894c07636f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74571926"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78493424"
 ---
 # <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a>检查与插入、更新和删除操作有关的事件 (C#)
 
@@ -264,7 +264,7 @@ GridView 的 `RowUpdating` 事件接受[GridViewUpdateEventArgs](https://msdn.mi
 
 **图 20**：新产品现在的 `CategoryID` 和 `SupplierID` 值设置为1（[单击查看完全大小的图像](examining-the-events-associated-with-inserting-updating-and-deleting-cs/_static/image58.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在编辑、插入和删除进程的过程中，数据 Web 控件和 ObjectDataSource 都继续经历多个前期和后期级别事件。 在本教程中，我们检查了预级别事件，并了解了如何使用这些事件来自定义输入参数或从数据 Web 控件和 ObjectDataSource 的事件中取消数据修改操作。 在下一教程中，我们将介绍如何创建和使用事件处理程序来执行后级事件。
 

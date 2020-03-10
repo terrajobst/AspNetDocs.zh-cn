@@ -1,23 +1,23 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/index
-title: ASP.NET MVC 4 动手实验室 |Microsoft Docs
+title: ASP.NET MVC 4 动手实验 |Microsoft Docs
 author: rick-anderson
-description: 了解如何使用 ASP.NET MVC 这些实践练习实验室和开发
+description: 了解如何通过这些动手实验与 ASP.NET MVC 进行开发
 ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: eb23eb99-bfca-4043-9b48-2cf7838dd754
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs
 msc.type: chapter
 ms.openlocfilehash: 02ef51cd3320df200920cba19a59d8ab23836c95
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023144"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78451412"
 ---
 # <a name="aspnet-mvc-4-hands-on-labs"></a>ASP.NET MVC 4 动手实验
 
-了解如何使用 ASP.NET MVC 这些实践练习实验室和开发
+了解如何通过这些动手实验与 ASP.NET MVC 进行开发
 
 - [ASP.NET MVC 4 的新增功能](whats-new-in-aspnet-mvc-4.md)
 - [ASP.NET MVC 4 基础知识](aspnet-mvc-4-fundamentals.md)
