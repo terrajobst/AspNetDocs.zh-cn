@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/index
-title: 部署网站项目在 Visual Studio 2008 和早期版本 |Microsoft Docs
+title: 在 Visual Studio 2008 和更早版本中部署网站项目 |Microsoft Docs
 author: rick-anderson
-description: ASP.NET web 应用程序通常设计、 创建，并在本地开发环境中测试和部署到生产环境 o...
+description: ASP.NET web 应用程序通常在本地开发环境中设计、创建和测试，并需要部署到生产环境 o 。
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 6f72bde8-f2f1-4e4a-94e5-494c3c153c14
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects
 msc.type: chapter
 ms.openlocfilehash: 43c2397ef4ccc5eacb2ff4c5d04f62b9c8c481b7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134425"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420488"
 ---
 # <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a>在 Visual Studio 2008 及更早版本中部署网站项目
 
-> ASP.NET web 应用程序通常是设计、 创建，并在本地开发环境和需求后已准备好发布部署到生产环境中测试。 本系列教程详细介绍了部署过程。
+> ASP.NET web 应用程序通常在本地开发环境中设计、创建和测试，并在准备好发布后，需要部署到生产环境中。 本教程系列详细介绍了部署过程。
 
 - [ASP.NET 承载选项 (C#)](asp-net-hosting-options-cs.md)
 - [确定需要部署哪些文件 (C#)](determining-what-files-need-to-be-deployed-cs.md)

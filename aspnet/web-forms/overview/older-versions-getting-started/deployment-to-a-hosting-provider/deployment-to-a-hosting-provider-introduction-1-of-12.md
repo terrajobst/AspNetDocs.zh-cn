@@ -9,11 +9,11 @@ ms.assetid: a2d7f33b-8c4a-4b48-9fb1-9139cf9b9878
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: ea88da1e6d510f706fc7ca370cfa32974c1243f8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587746"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421838"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>使用 Visual Studio SQL Server Compact 部署 ASP.NET Web 应用程序：第1项，共12项
 
@@ -77,7 +77,7 @@ Contoso 大学是 Visual Studio web 应用程序项目。 本教程中演示的�
 
 欢迎使用教程中的注释，并在每次更新本教程时，将对教程注释中提供的改进进行更正或建议。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保已在计算机上安装了 Windows 7 或更高版本以及以下产品之一：
 
@@ -139,4 +139,4 @@ Contoso 大学是 Visual Studio web 应用程序项目。 本教程中演示的�
 在本系列教程的第一个教程中，已下载示例 Visual Studio 项目和查看的站点功能，这些功能会影响你部署应用程序的方式。 在以下教程中，您将通过设置其中的某些项来准备自动处理的部署。 您手动处理的其他人。
 
 > [!div class="step-by-step"]
-> [下一页](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [下一部分](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

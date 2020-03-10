@@ -2,18 +2,18 @@
 uid: web-forms/index
 title: ASP.NET Web 窗体 |Microsoft Docs
 author: rick-anderson
-description: 下载 Visual Web Developer 速成版 （&) 了解如何快速构建的 web 应用使用 ASP.NET Web 窗体上将易于理解的控件在可视化设计环境...
+description: 下载 Visual Web Developer Express & 了解如何在可视化设计 environ 中使用 ASP.NET Web 窗体上的易于理解的控件快速构建 web 应用
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: 7e4ce5d2-ab22-44f0-9825-c12eed7b8fcb
 msc.legacyurl: /web-forms
 msc.type: categoryindex
 ms.openlocfilehash: 623df5d3ffe357f42d72ee0a33bc50aa60a8c4d0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397001"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446888"
 ---
 # <a name="aspnet-web-forms"></a>ASP.NET Web 窗体
 
@@ -78,7 +78,7 @@ ms.locfileid: "59397001"
 
             - [使用 Visual Studio 2010 在企业方案中部署 Web 应用程序](overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
             - [企业 Web 部署：方案概述](overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-            - [应用程序生命周期管理：从开发到生产环境](overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+            - [应用程序生命周期管理：从开发到生产](overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
         - [ASP.NET 4 - 企业部署系列 1](overview/deployment/web-deployment-in-the-enterprise/index.md)
 
             - [企业中的 Web 部署](overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)
@@ -96,9 +96,9 @@ ms.locfileid: "59397001"
 
             - [配置用于 Web 部署的服务器环境](overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)
             - [选择 Web 部署的适当方法](overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md)
-            - [场景：配置用于 Web 部署测试环境](overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md)
-            - [场景：配置用于 Web 部署的过渡环境](overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md)
-            - [场景：配置用于 Web 部署的生产环境](overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md)
+            - [方案：配置用于 Web 部署的测试环境](overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment.md)
+            - [方案：配置用于 Web 部署的过渡环境](overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment.md)
+            - [方案：配置用于 Web 部署的生产环境](overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment.md)
             - [配置用于 Web 部署发布的 Web 服务器（远程代理）](overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
             - [配置用于 Web 部署发布的 Web 服务器（Web 部署处理程序）](overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
             - [配置用于 Web 部署发布的 Web 服务器（离线部署）](overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
@@ -132,14 +132,14 @@ ms.locfileid: "59397001"
 
         - [ASP.NET 4 - Tailspin Spyworks](overview/older-versions-getting-started/tailspin-spyworks/index.md)
 
-            - [第 1 部分：文件-> 新建项目](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+            - [第 1 部分：“文件”->“新建项目”](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
             - [第 2 部分：数据访问层](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
             - [第 3 部分：布局和类别菜单](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
-            - [第 4 部分：列出了所有产品](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
+            - [第 4 部分：列出产品](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
             - [第 5 部分：业务逻辑](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
-            - [第 6 部分：ASP.NET 成员资格](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
+            - [第 6 部分：ASP.NET 成员身份](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
             - [第 7 部分：添加功能](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
-            - [第 8 部分：最终页面、 异常处理和结论](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
+            - [第 8 部分：最终页面、异常处理和结论](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
         - [ASP.NET 4 - Entity Framework 4 和 Web 窗体入门](overview/older-versions-getting-started/getting-started-with-ef/index.md)
 
             - [Entity Framework 4.0 数据库入门](overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -152,9 +152,9 @@ ms.locfileid: "59397001"
             - [Entity Framework 4.0 数据库入门 - 第 8 部分](overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
         - [ASP.NET 4 - 继续使用 Entity Framework 4 和 Web 窗体](overview/older-versions-getting-started/continuing-with-ef/index.md)
 
-            - [实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-            - [实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-            - [实体框架 4.0 和 ObjectDataSource 控件，第 3 部分：排序和筛选](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+            - [Entity Framework 4.0 和 ObjectDataSource 控件，第 1 部分：入门](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+            - [Entity Framework 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+            - [Entity Framework 4.0 和 ObjectDataSource 控件，第 3 部分：排序与筛选](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
             - [在 ASP.NET 4 中使用 Entity Framework 4.0 处理并发](overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
             - [在 ASP.NET 4 中使用 Entity Framework 4.0 实现性能最大化](overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
             - [Entity Framework 4.0 的新增功能](overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -376,7 +376,7 @@ ms.locfileid: "59397001"
             - [通过 ReorderList 进行拖放 (C#)](overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs.md)
             - [通过 ReorderList 使用回发 (VB)](overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb.md)
             - [通过 ReorderList 进行拖放 (VB)](overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb.md)
-        - [Slider](overview/ajax-control-toolkit/slider/index.md)
+        - [滑块](overview/ajax-control-toolkit/slider/index.md)
 
             - [带自动回发的滑块控件 (C#)](overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs.md)
             - [数据绑定滑块控件 (C#)](overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs.md)
@@ -680,7 +680,7 @@ ms.locfileid: "59397001"
         - [检测 ASP.NET 网页中的浏览器功能](videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
         - [将 ASP.NET 服务器控件映射到用于呈现该控件的适配器](videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
         - [使用查询字符串从一个页面向另一页面传递信息](videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-        - [使用 aspnet\_merge.exe 实用工具合并程序集](videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+        - [使用 aspnet\_share.exe 实用程序来合并程序集](videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
         - [在 ASP.NET 中实现跨页回发](videos/how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet.md)
         - [以编程方式向 ASP.NET 网页添加控件](videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
         - [使用隐藏字段存储和操作客户端信息](videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)
@@ -828,16 +828,16 @@ ms.locfileid: "59397001"
         - [[ASP.NET 2.0 简介：] ASP.NET 2.0 基础知识](videos/migrating/intro-to-aspnet-20-aspnet-20-fundamentals.md)
         - [[ASP.NET 2.0 简介：] 用户界面元素](videos/migrating/intro-to-aspnet-20-user-interface-elements.md)
         - [[迁移对象] 经典 ASP 到 ASP.NET](videos/migrating/migrating-from-classic-asp-to-aspnet.md)
-        - [为 JSP 开发人员的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
-        - [为 JSP 开发人员的 ASP.NET 简介：构建应用程序](videos/migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
-        - [为 ColdFusion 开发人员的 ASP.NET 简介：将 ASP.NET 添加到您的清单](videos/migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-        - [为 ColdFusion 开发人员的 ASP.NET 简介：构建 ASP.NET 应用程序](videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+        - [适用于 JSP 开发者的 ASP.NET 简介：欢迎使用 ASP.NET 2.0](videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
+        - [适用于 JSP 开发者的 ASP.NET 简介：生成应用程序](videos/migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
+        - [适用于 ColdFusion 开发者的 ASP.NET 简介：向库添加 ASP.NET](videos/migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+        - [适用于 ColdFusion 开发者的 ASP.NET 简介：生成 ASP.NET 应用程序](videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
         - [PHP 和 Windows 平台之间的互操作](videos/migrating/interop-between-php-and-the-windows-platform.md)
     - [生成 2.0 应用程序](videos/building-20-applications/index.md)
 
         - [[第 1 课：] Visual Web Developer 速成版入门](videos/building-20-applications/lesson-1-getting-started-with-visual-web-developer-express.md)
         - [[第 2 课：] 创建 Web 窗体用户界面](videos/building-20-applications/lesson-2-creating-a-web-forms-user-interface.md)
-        - [[第 3 课:]了解有关事件和回发的更多信息](videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
+        - [[第3课：]了解有关事件和回发的详细信息](videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
         - [[第 4 课：] 了解 Web 应用程序状态](videos/building-20-applications/lesson-4-understanding-web-application-state.md)
         - [[第 5 课：] 调试和跟踪网站](videos/building-20-applications/lesson-5-debugging-and-tracing-your-website.md)
         - [[第 6 课：] 使用样式表和母版页](videos/building-20-applications/lesson-6-working-with-stylesheets-and-master-pages.md)
@@ -960,15 +960,15 @@ ms.locfileid: "59397001"
             - [从 ASP 应用程序使用数据集和筛选器](videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
         - [如何使用 LINQ](videos/data-access/how-do-i-with-linq/index.md)
 
-            - [LINQ to SQL:概述](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
-            - [LINQ to SQL:数据模型](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
-            - [LINQ to SQL:查询数据库](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
-            - [LINQ to SQL:更新数据库](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
-            - [LINQ to SQL:LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-            - [LINQ to SQL:Custom LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
-            - [LINQ to SQL:使用存储的过程](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-            - [LINQ to SQL:使用存储过程更新](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-            - [LINQ to SQL:执行任意 SQL](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+            - [LINQ to SQL：概述](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
+            - [LINQ to SQL：数据模型](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
+            - [LINQ to SQL：查询数据库](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
+            - [LINQ to SQL：更新数据库](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
+            - [LINQ to SQL：LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
+            - [LINQ to SQL：自定义 LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+            - [LINQ to SQL：使用存储过程](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
+            - [LINQ to SQL：使用存储过程更新](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+            - [LINQ to SQL：执行任意 SQL](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
         - [来自 VB 团队的 LINQ 视频](videos/data-access/linq-videos-from-the-vb-team/index.md)
 
             - [开始使用 LINQ](videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
@@ -1017,7 +1017,7 @@ ms.locfileid: "59397001"
             - [Visual Studio 2008 对 ASP.NET AJAX 的支持](videos/aspnet-35/aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
             - [将 AJAX 功能添加到现有的 ASP.NET 页面](videos/aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
             - [在网站中创建并使用启用 AJAX 的 Web 服务](videos/aspnet-35/aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-            - [ASP.NET AJAX:ASP.NET AJAX 的演示](videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+            - [ASP.NET AJAX：关于 ASP.NET AJAX 的演示](videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
             - [ADO.NET 数据服务和 ASP.NET AJAX 支持](videos/aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
             - [ASP.NET AJAX 历史记录简介](videos/aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history.md)
             - [使用脚本组合提升 AJAX 性能](videos/aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -1050,7 +1050,7 @@ ms.locfileid: "59397001"
             - [AJAX 数据模板](videos/net-4/ajax/aspnet-4-quick-hit-ajax-data-templates.md)
         - [图表](videos/net-4/chart/index.md)
 
-            - [Chart Control](videos/net-4/chart/aspnet-4-quick-hit-chart-control.md)
+            - [Chart 控件](videos/net-4/chart/aspnet-4-quick-hit-chart-control.md)
             - [在 Visual Studio 2010 中引入新的图表控件](videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
         - [核心](videos/net-4/core/index.md)
 

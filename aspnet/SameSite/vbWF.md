@@ -6,11 +6,11 @@ ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/vbWF
 ms.openlocfilehash: 8979edecc5acf7dac81b9f53d31af00389f4727c
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77458383"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438434"
 ---
 # <a name="samesite-cookie-sample-for-aspnet-472-vb-webforms"></a>SameSite cookie sample for ASP.NET 4.7.2 VB WebForms
 .NET Framework 4.7 内置了对[SameSite](https://www.owasp.org/index.php/SameSite)属性的支持，但它符合原始标准。
@@ -136,7 +136,7 @@ Public Shared Sub AdjustSpecificCookieSettings()
 End Sub
 ```
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
 [Chrome 更新](https://www.chromium.org/updates/same-site)
 

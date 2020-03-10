@@ -2,283 +2,283 @@
 uid: mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 title: 启用自动单元测试 |Microsoft Docs
 author: microsoft
-description: 步骤 12 显示了如何开发一套自动化的单元测试用于验证我们 NerdDinner 的功能，而且这将向我们提供的置信度进行更改...
+description: 步骤12显示了如何开发一套自动单元测试，用于验证我们的 NerdDinner 功能，并将为我们提供信心来进行更改 。
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: a19ff2ce-3f7e-4358-9a51-a1403da9c63e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
 ms.openlocfilehash: 09a7aa186605a6cce48ee94028425ded957c00d3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117358"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435590"
 ---
 # <a name="enable-automated-unit-testing"></a>启用自动单元测试
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> 这是一种免费的步骤 12 ["NerdDinner"应用程序教程](introducing-the-nerddinner-tutorial.md)，演练如何构建一个较小，但完成，使用 ASP.NET MVC 1 中的 web 应用程序。
+> 这是免费的["NerdDinner" 应用程序教程](introducing-the-nerddinner-tutorial.md)的步骤12，该教程演示如何使用 ASP.NET MVC 1 构建小型但完整的 web 应用程序。
 > 
-> 步骤 12 显示了如何开发一套自动化的单元测试用于验证我们 NerdDinner 的功能，而且这将向我们提供的置信度进行更改和对应用程序在将来的改进。
+> 步骤12显示了如何开发一套自动单元测试，这些测试将验证我们的 NerdDinner 功能，并使我们能够在以后对应用程序进行更改和改进。
 > 
-> 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
+> 如果你使用的是 ASP.NET MVC 3，则建议你遵循[MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[Mvc 音乐应用商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程中的入门。
 
-## <a name="nerddinner-step-12-unit-testing"></a>NerdDinner 步骤 12:单元测试
+## <a name="nerddinner-step-12-unit-testing"></a>NerdDinner 步骤12：单元测试
 
-让我们来开发一套自动化的单元测试用于验证我们 NerdDinner 的功能，而且这将向我们提供的置信度进行更改和对应用程序在将来的改进。
+让我们来开发一套自动单元测试，以验证我们的 NerdDinner 功能，这将使我们能够在以后对应用程序进行更改和改进。
 
-### <a name="why-unit-test"></a>为什么单元测试？
+### <a name="why-unit-test"></a>为什么要进行单元测试？
 
-在工作一天早上的驱动器上可以启发您正在使用的应用程序突然立刻正式投入工作。 您意识到可以实现的更改，可让应用程序极大的改进。 它可能是一个重构的清理代码中，添加一个新功能或修复 bug。
+在该驱动器上，早上，你对正在处理的应用程序的灵感突然闪烁。 你认识到，你可以实现一种更改，这会使应用程序变得更好。 它可能是一个清理代码、添加新功能或修复 bug 的重构。
 
-Confronts，当您在您的计算机的问题-"安全是它，使这一改进？" 如果在更改具有副作用或中断的内容？ 更改可能很简单，只需几分钟才能实现，但如果需要手动测试的应用程序方案的所有小时？ 如果忘记方案和损坏的应用程序进入成品阶段？ 正在进行此项改进真的值得下的所有工作？
+当你到达计算机时，confronts 你的问题是 "如何安全地实现这一改进？" 如果更改有副作用或中断某些内容怎么办？ 更改可能很简单，只需几分钟即可完成，但如果手动测试所有应用程序方案需要数小时呢？ 如果您忘记涵盖某个方案并且损坏的应用程序进入生产环境，该怎么办？ 此改进是否确实值得努力？
 
-自动化的单元测试可以提供网络安全，使您能够不断改进您的应用程序，并避免害怕正在处理的代码。 具有自动快速验证功能，可以使用置信度 – 代码，使您可以进行改进可能否则不具有的感觉舒适的测试执行。 它们还帮助创建更易于维护的解决方案，并让较长的生存期的到高得多的潜在客户的投资回报。
+自动单元测试可以提供一个安全网络，使你能够持续增强你的应用程序，并避免对你正在处理的代码产生任何担心。 通过使自动测试快速验证功能，你可以放心地进行编码，并使你能够更轻松地进行改进。 它们还有助于创建更易于维护的解决方案，并具有较长的生存期-这将导致投资回报率更高。
 
-ASP.NET MVC 框架可以简单而自然到单元测试应用程序功能。 它还使支持测试优先的基于的开发的测试驱动开发 (TDD) 工作流。
+ASP.NET MVC 框架使单元测试应用程序功能变得简单快捷。 它还启用了一个测试驱动开发（TDD）工作流，该工作流启用了测试优先的开发。
 
-### <a name="nerddinnertests-project"></a>NerdDinner.Tests Project
+### <a name="nerddinnertests-project"></a>NerdDinner 项目
 
-我们在本教程开头创建了 NerdDinner 应用程序，我们已收到一个提示对话框询问我们是否想要创建单元测试项目随附的应用程序项目：
+当我们在本教程开始时创建 NerdDinner 应用程序时，会出现一个对话框，询问你是否想要创建单元测试项目来与应用程序项目一起使用：
 
 ![](enable-automated-unit-testing/_static/image1.png)
 
-我们保留"是的创建单元测试项目"单选按钮处于选中状态 – 这将导致"NerdDinner.Tests"项目添加到我们的解决方案：
+已选中 "是，创建单元测试项目" 单选按钮，这将导致向解决方案中添加 "NerdDinner" 项目：
 
 ![](enable-automated-unit-testing/_static/image2.png)
 
-NerdDinner.Tests 项目引用 NerdDinner 应用程序项目程序集，并使我们能够轻松地将自动的测试添加到其验证应用程序功能。
+NerdDinner 项目引用 NerdDinner 应用程序项目程序集，使我们可以轻松地向其添加验证应用程序功能的自动测试。
 
-### <a name="creating-unit-tests-for-our-dinner-model-class"></a>为我们 Dinner Model 类创建单元测试
+### <a name="creating-unit-tests-for-our-dinner-model-class"></a>为晚餐模型类创建单元测试
 
-让我们将一些测试添加到验证我们创建当我们构建我们的模型层的 Dinner 类我们 NerdDinner.Tests 项目。
+让我们向 NerdDinner 项目添加一些测试，以验证我们在构建模型层时创建的晚餐类。
 
-我们将首先创建模型相关的测试，我们将放置我们名为"Models"的测试项目的新文件夹。 我们然后右键单击文件夹并选择**Add-&gt;新的测试**菜单命令。 这将显示"添加新测试"对话框。
+首先，我们将在测试项目中创建一个名为 "模型" 的新文件夹，我们将在其中放置模型相关的测试。 然后，右键单击该文件夹，然后选择 "**添加-&gt;新测试**" 菜单命令。 此时将显示 "添加新测试" 对话框。
 
-我们将选择要创建一个"单元测试"并将其命名为"DinnerTest.cs":
+我们将选择创建 "单元测试" 并将其命名为 "DinnerTest.cs"：
 
 ![](enable-automated-unit-testing/_static/image3.png)
 
-当我们单击"确定"按钮时 Visual Studio 将添加 （和打开） DinnerTest.cs 文件到项目：
+单击 "确定" 按钮时，Visual Studio 会将 DinnerTest.cs 文件添加（并打开）到项目中：
 
 ![](enable-automated-unit-testing/_static/image4.png)
 
-默认 Visual Studio 单元测试模板有大量的样板代码在其中找到略为凌乱。 让我们把它整理出来以只包含以下代码：
+默认的 Visual Studio 单元测试模板在其中有一组样板代码，我发现有点杂乱。 让我们将其清理，只包含以下代码：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample1.cs)]
 
-在上面的 DinnerTest 类 [TestClass] 属性将其识别为测试，以及可选的测试初始化和拆卸代码将包含的类。 我们可以通过添加 [TestMethod] 特性对它们的公共方法来定义在其中测试。
+上述 DinnerTest 类的 [TestClass] 属性将其标识为包含测试的类，以及可选的测试初始化和拆卸代码。 可以通过在其上添加具有 [TestMethod] 属性的公共方法，在其中定义测试。
 
-下面是我们将添加的两个执行我们的 Dinner 类测试的第一个。 第一个测试将验证我们 Dinner 无效，是否创建新的 Dinner 时没有正确设置所有属性。 第二个测试验证我们 Dinner Dinner 具有所有属性都设置使用有效的值时有效：
+下面是我们要添加的两个测试中的第一个测试。 第一次测试验证在创建新晚餐后，如果没有正确设置所有属性，则晚餐无效。 第二个测试验证晚餐是否有效，并且所有属性都设置了有效值：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample2.cs)]
 
-您会注意到上面我们测试名称都是非常明确的 （并且却稍微有些繁琐的）。 因为我们最终可能会创建数百或数千个小测试，并且我们想要轻松地快速确定意向和每个行为 （尤其是在我们正在通过测试运行程序中的失败的列表），我们将执行此操作。 测试名称应以命名要测试的功能。 我们使用更高版本"名词\_应\_谓词"命名模式。
+你会注意到，我们的测试名称非常明确（并且稍有详细）。 我们这样做的原因是，我们可能最终会创建数百个或数千个小测试，因此，我们希望能够轻松快速地确定每个测试的意图和行为（特别是当我们要在测试运行程序中查找故障列表）。 测试名称应在要测试的功能之后命名。 以上我们使用的是 "名词\_应\_谓词" 命名模式。
 
-我们构建的测试使用测试模式 –"Arrange，Act，Assert"代表"AAA":
+我们使用 "AAA" 测试模式来构建测试，这种模式代表 "排列，Act，断言"：
 
-- 排列：安装程序要测试的单元
-- Act:执行测试的单元并捕获结果
-- 断言：验证行为
+- 排列：设置要测试的单元
+- Act：练习测试单元并捕获结果
+- Assert：验证行为
 
-当我们编写时我们想要避免的各个测试的测试执行过多操作。 而是每个测试应验证仅在一个概念 （这将使其更易于找出失败的原因）。 比较好的原则是尝试，且只能包含一个断言语句为每个测试。 如果你有多个断言测试方法中的语句，请确保它们都被用于测试相同的概念。 如有疑问，请另一个测试。
+编写测试时，我们希望避免各个测试的操作过多。 相反，每个测试应该只验证单个概念（这会使查找失败的原因变得更加容易）。 一种很好的指导原则是尝试每个测试只使用一个 assert 语句。 如果在测试方法中有多个 assert 语句，请确保它们都用于测试相同的概念。 如果有疑问，请进行另一个测试。
 
 ### <a name="running-tests"></a>正在运行测试
 
-Visual Studio 2008 Professional （和更高版本） 包括可用于运行 Visual Studio 单元测试项目在 IDE 中的内置测试运行程序。 我们可以选择**测试-&gt;运行-&gt;解决方案中的所有测试**菜单命令 （或类型 Ctrl R、 A） 若要运行所有单元测试。 或或者我们可以在特定的测试类或测试方法中我们光标的位置，并使用**测试-&gt;运行-&gt;当前上下文中的测试**菜单命令 （或类型 Ctrl R、 T） 运行的单元测试的子集。
+Visual Studio 2008 Professional （及更高版本）包含一个内置的测试运行程序，可用于在 IDE 中运行 Visual Studio 单元测试项目。 可以在 "解决方案" 菜单命令中选择 "**测试&gt;运行&gt;所有测试"** （或按 Ctrl R，A），以运行所有单元测试。 或者，也可以将游标定位在特定的测试类或测试方法中，并使用**测试&gt;在当前上下文菜单命令中运行&gt;测试**（或按 Ctrl R，t）来运行单元测试的子集。
 
-让我们 DinnerTest 类中的我们光标的位置并键入"Ctrl R、 T"到我们刚才定义的运行这两个测试。 当我们执行此操作的"测试结果"窗口将显示在 Visual Studio 中，我们将看到我们测试运行中列出的结果：
+让我们将光标置于 DinnerTest 类中，并键入 "Ctrl R，T" 以运行刚刚定义的两个测试。 执行此操作时，将在 Visual Studio 中显示 "测试结果" 窗口，并在其中列出测试运行的结果：
 
 ![](enable-automated-unit-testing/_static/image5.png)
 
-*注意：默认情况下，VS 测试结果窗口不显示类名称列。可以通过在测试结果窗口内右键单击并使用添加/删除列菜单命令添加此。*
+*注意：默认情况下，VS 测试结果窗口不显示 "类名" 列。可以通过在 "测试结果" 窗口中右键单击并使用 "添加/删除列" 菜单命令来添加此项。*
 
-我们的两个测试中花费了只有一小部分第二个运行，并为您可以在这两种传递，请参阅。 我们现在可以继续并通过它们来创建其他测试，验证特定的规则验证，以及涵盖两个帮助器方法-IsUserHost() 和 IsUserRegistered() – 我们添加到 Dinner 类扩充。 将所有这些测试放在 Dinner 类的位置将使其更容易且更安全，若要向其在将来添加新的业务规则和验证。 我们可以将我们新的规则逻辑添加到 Dinner，然后秒内验证它没有破坏任何我们以前的逻辑功能。
+这两个测试只需运行一小部分，并且可以看到它们都通过。 现在，我们可以通过创建其他测试来验证具体规则验证，并涵盖添加到晚餐类的两个帮助器方法-IsUserHost （）和 IsUserRegistered （），来对这些方法进行补充。 为晚餐类准备好所有这些测试后，就可以更轻松、更安全地添加新的业务规则并在将来对其进行验证。 我们可以将新的规则逻辑添加到晚餐，然后在几秒钟内验证它是否未被任何以前的逻辑功能中断。
 
-请注意如何使用描述性的测试名称轻松地快速了解每个测试验证。 我建议使用**工具-&gt;选项**菜单命令，打开的测试工具-&gt;测试执行配置屏幕中，并检查"双击已失败或无结论的单元测试结果显示测试失败的点"复选框。 这样，您可以双击测试结果窗口中的故障，立即跳转到断言失败。
+请注意，使用描述性测试名称可以轻松地快速了解每个测试要验证的内容。 我建议使用 "**工具-&gt;选项**" 菜单命令，打开 "测试工具-&gt;测试执行配置" 屏幕，并选中 "双击失败或无结论的单元测试结果将显示测试中的失败点" 复选框。 这将允许您双击 "测试结果" 窗口中的故障并立即跳转到断言失败。
 
-### <a name="creating-dinnerscontroller-unit-tests"></a>创建 DinnersController 的单元测试
+### <a name="creating-dinnerscontroller-unit-tests"></a>创建 DinnersController 单元测试
 
-让我们现在创建验证我们 DinnersController 的功能的一些单元测试。 我们将首先右键单击测试项目中的"控制器"文件夹，然后选择**Add-&gt;新的测试**菜单命令。 我们将创建一个"单元测试"并将其命名为"DinnersControllerTest.cs"。
+现在，让我们创建一些单元测试来验证我们的 DinnersController 功能。 首先，右键单击测试项目中的 "控制器" 文件夹，然后选择 "**添加-&gt;新测试**" 菜单命令。 我们将创建 "单元测试" 并将其命名为 "DinnersControllerTest.cs"。
 
-我们将创建两个验证 DinnersController 的 Details() 操作方法的测试方法。 第一个将验证现有 Dinner 请求时，返回一个视图。 第二个将验证不存在 Dinner 请求时，返回"NotFound"视图：
+我们将创建两个测试方法，用于验证 DinnersController 上的详细信息（）操作方法。 第一种验证是否在请求现有晚宴时返回视图。 第二个验证请求不存在的晚餐时返回 "NotFound" 视图：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample3.cs)]
 
-上面的代码将编译成清理。 当我们运行测试时，不过，它们都失败：
+上面的代码编译干净。 但在运行测试时，它们都将失败：
 
 ![](enable-automated-unit-testing/_static/image6.png)
 
-如果我们看一下错误消息，我们会看到测试失败的原因是因为我们 DinnersRepository 类无法连接到数据库。 我们 NerdDinner 应用程序到本地 SQL Server Express 文件存在于 \App 下使用连接字符串\_NerdDinner 应用程序项目的数据目录。 因为我们 NerdDinner.Tests 项目编译和运行在不同的目录中然后应用程序项目，我们连接字符串的相对路径位置不正确。
+如果查看错误消息，我们将看到测试失败的原因，因为我们的 DinnersRepository 类无法连接到数据库。 我们的 NerdDinner 应用程序使用连接字符串连接到本地 SQL Server Express 文件，该文件位于 NerdDinner 应用程序项目的 \App\_数据目录下。 由于我们的 NerdDinner 项目在不同的目录中进行编译和运行，因此，该应用程序项目的连接字符串的相对路径位置不正确。
 
-我们*无法*通过将 SQL Express 数据库文件复制到我们的测试项目，修复此问题，然后向其中添加了适当测试的连接字符串，我们的测试项目的 App.config 中。 此参数将被解除阻止，并运行上述测试。
+我们*可以*通过将 SQL Express 数据库文件复制到测试项目中来解决此问题，然后在测试项目的 app.config 中将相应的测试连接字符串添加到该文件中。 这会使上面的测试解除阻止并运行。
 
-单元测试代码中使用的实际数据库，不过，带来了许多挑战。 尤其是在下列情况下：
+然而，使用实际数据库的单元测试代码带来了许多挑战。 尤其是在下列情况下：
 
-- 会显著降低的单元测试执行时间。 它所花费的时间来运行测试，频繁地执行它们的可能性越小。 理想情况下，您希望单元测试，以能够在数秒内 – 运行并将其作为内容的自然作为编译项目。
-- 在测试中的设置和清理逻辑比较复杂。 您希望每个单元测试是独立的、 独立于其他人 （不带任何副作用或依赖项）。 实际数据库上运行时需要注意的状态和测试之间将它重置。
+- 它显著降低了单元测试的执行时间。 运行测试所花费的时间越长，频繁执行它们的可能性就越低。 理想情况下，你希望你的单元测试能够在数秒内运行，并将其作为编译项目的自然方式。
+- 它会使测试内的设置和清理逻辑复杂化。 您希望每个单元测试都是独立的，并且不依赖于其他单元测试（无副作用或依赖项）。 处理真实数据库时，必须注意状态，并在测试之间重置。
 
-让我们看一下名为"依赖关系注入"，可帮助我们解决这些问题，并避免与我们的测试中使用的实际数据库的需求的设计模式。
+让我们看一下称为 "依赖关系注入" 的设计模式，这可以帮助我们解决这些问题，并避免需要在测试中使用实际数据库。
 
 ### <a name="dependency-injection"></a>依赖关系注入
 
-稍后再试 DinnersController"与紧密耦合"DinnerRepository 类。 "耦合"是指在其中一个类显式依赖于另一个类才能正常工作的情况：
+现在，DinnersController 紧靠 DinnerRepository 类。 "耦合" 指的是类显式依赖于另一类以便正常工作的情况：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample4.cs)]
 
-由于 DinnerRepository 类需要对数据库的访问，紧密耦合的依赖关系 DinnersController 类具有 DinnerRepository 两端需要我们要测试的 DinnersController 操作方法的顺序中有一个数据库。
+由于 DinnerRepository 类需要对数据库的访问权限，DinnersController 类在 DinnerRepository 上具有紧密耦合的依赖项，因此，为了对 DinnersController 操作方法进行测试，要求我们具有一个数据库。
 
-通过使用称为"依赖关系注入"– 这是一种方法在其中依赖项 （如提供数据访问的存储库类） 不再隐式创建中使用它们的类的设计模式，我们可以获得解决此问题。 而是依赖项可以显式传递给使用它们的类使用构造函数自变量。 如果使用接口定义了依赖项，然后，我们可以灵活地在单元测试方案的"假"的依赖项实现中传递。 这让我们来创建实际上并不要求对数据库的访问的特定于测试的依赖项实现。
+我们可以通过使用名为 "依赖关系注入" 的设计模式来解决此问题，这种方法在使用它们的类中不再隐式创建依赖项（如提供数据访问的存储库类）。 相反，可以将依赖项显式传递到使用构造函数参数的类。 如果使用接口定义依赖项，则我们可以灵活地为单元测试方案传递 "假" 依赖项实现。 这样，我们便可以创建不需要访问数据库的特定于测试的依赖项实现。
 
-若要了解此操作，让我们来实现与我们 DinnersController 的依赖关系注入。
+要了解这一点，让我们通过 DinnersController 实现依赖关系注入。
 
 #### <a name="extracting-an-idinnerrepository-interface"></a>提取 IDinnerRepository 接口
 
-我们第一步将创建新的 IDinnerRepository 接口封装我们控制器要求以检索和更新 Dinners 的存储库协定。
+第一步是创建一个新的 IDinnerRepository 接口，用于封装控制器检索和更新就时所需的存储库协定。
 
-我们可以通过右键单击 \Models 文件夹，然后选择手动定义此接口协定**Add-&gt;新项**菜单命令，并创建名为 IDinnerRepository.cs 新接口。
+可以通过右键单击 \Models 文件夹，然后选择 "**添加-&gt;新项**" 菜单命令并创建一个名为 IDinnerRepository.cs 的新接口，来手动定义此接口协定。
 
-或者我们可以使用重构工具内置于 Visual Studio Professional （和更高版本） 自动提取，并为我们创建一个接口，从我们现有的 DinnerRepository 类。 若要提取使用与此接口，只需将光标置于 DinnerRepository 类中，在文本编辑器，然后右键单击并选择**重构-&gt;提取接口**菜单命令：
+此外，我们还可以使用内置 Visual Studio Professional （和更高版本）的重构工具为我们从现有的 DinnerRepository 类中自动提取和创建一个接口。 若要使用 VS 提取此接口，只需将光标置于 DinnerRepository 类的文本编辑器中，然后右键单击并选择 "**重构-&gt;提取接口**" 菜单命令：
 
 ![](enable-automated-unit-testing/_static/image7.png)
 
-这将启动"提取接口"对话框并提示我们输入要创建的接口的名称。 它将默认为 IDinnerRepository 并自动选择要添加到接口的现有 DinnerRepository 类上的所有公共方法：
+这将启动 "提取接口" 对话框，并提示我们输入要创建的接口的名称。 它将默认为 IDinnerRepository，并自动选择现有 DinnerRepository 类中的所有公共方法，以添加到接口：
 
 ![](enable-automated-unit-testing/_static/image8.png)
 
-当我们单击"确定"按钮时，Visual Studio 会将新 IDinnerRepository 接口添加到我们的应用程序：
+单击 "确定" 按钮时，Visual Studio 将向应用程序添加新的 IDinnerRepository 接口：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample5.cs)]
 
-并将更新我们现有的 DinnerRepository 类，以便它实现该接口：
+将更新现有的 DinnerRepository 类，使其实现接口：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample6.cs)]
 
-#### <a name="updating-dinnerscontroller-to-support-constructor-injection"></a>正在更新 DinnersController 以支持构造函数注入
+#### <a name="updating-dinnerscontroller-to-support-constructor-injection"></a>更新 DinnersController 以支持构造函数注入
 
-现在，我们将更新要使用的新界面的 DinnersController 类。
+现在，我们将更新 DinnersController 类以使用新的接口。
 
-当前 DinnersController 已经过硬编码，以便其"dinnerRepository"字段始终是 DinnerRepository 类：
+当前 DinnersController 是硬编码的，因此其 "dinnerRepository" 字段始终是一个 DinnerRepository 类：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample7.cs)]
 
-我们将更改它，以便"dinnerRepository"字段的类型而不是 DinnerRepository IDinnerRepository 是。 然后，我们将添加两个公共 DinnersController 构造函数。 一个构造函数允许将 IDinnerRepository 作为参数传递。 另一个是使用我们现有的 DinnerRepository 实现的默认构造函数：
+我们将对其进行更改，使 "dinnerRepository" 字段的类型为 IDinnerRepository 而不是 DinnerRepository。 接下来，我们将添加两个公共 DinnersController 构造函数。 其中一个构造函数允许将 IDinnerRepository 作为参数进行传递。 另一个是使用现有 DinnerRepository 实现的默认构造函数：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample8.cs)]
 
-由于默认情况下的 ASP.NET MVC 创建控制器类使用默认构造函数，在运行时我们 DinnersController 将继续使用 DinnerRepository 类来执行数据访问。
+由于 ASP.NET MVC 默认使用默认构造函数创建控制器类，因此，我们在运行时 DinnersController 将继续使用 DinnerRepository 类来执行数据访问。
 
-我们现在可以更新单元测试，不过，在"假"dinner 存储库实现中使用参数的构造函数传递。 此"假"dinner 存储库将不需要访问的实际数据库，而将使用内存中示例数据。
+不过，现在我们可以更新单元测试，以使用参数构造函数传入 "虚假" 晚餐存储库实现。 此 "虚假" 晚餐存储库不需要访问实际数据库，而是使用内存中示例数据。
 
 #### <a name="creating-the-fakedinnerrepository-class"></a>创建 FakeDinnerRepository 类
 
-让我们创建 FakeDinnerRepository 类。
+让我们创建一个 FakeDinnerRepository 类。
 
-我们将首先创建我们 NerdDinner.Tests 项目中的"Fakes"目录，然后向其中添加新的 FakeDinnerRepository 类 (右键单击文件夹并选择**Add-&gt;的新类**):
+首先，我们将在 NerdDinner 项目中创建一个 "Fakes" 目录，然后向其添加新的 FakeDinnerRepository 类（右键单击该文件夹，然后选择 "**添加-&gt;新类**）"：
 
 ![](enable-automated-unit-testing/_static/image9.png)
 
-我们将更新代码，以便 FakeDinnerRepository 类实现 IDinnerRepository 接口。 然后，我们可以右键单击它，并选择"实现接口 IDinnerRepository"上下文菜单命令：
+我们将更新代码，使 FakeDinnerRepository 类实现 IDinnerRepository 接口。 然后，可以右键单击它并选择 "实现接口 IDinnerRepository" 上下文菜单命令：
 
 ![](enable-automated-unit-testing/_static/image10.png)
 
-这会导致 Visual Studio 会自动将所有 IDinnerRepository 接口成员添加到"存根"的默认实现我们 FakeDinnerRepository 类：
+这将导致 Visual Studio 将所有 IDinnerRepository 接口成员自动添加到 FakeDinnerRepository 类，其默认值为 "stub out" 实现：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample9.cs)]
 
-我们然后可以更新 FakeDinnerRepository 实现，以便从内存中列表&lt;Dinner&gt;集合作为构造函数参数传递给它：
+然后，可以将 FakeDinnerRepository 实现更新为在内存中列表中工作，&lt;晚餐&gt; 集合作为构造函数参数传递给它：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample10.cs)]
 
-现在，我们不需要数据库，并且可以改为脱离 Dinner 对象的内存中列表的虚设 IDinnerRepository 实现。
+现在，我们有了一个不需要数据库的虚设 IDinnerRepository 实现，可以改为使用内存中的晚餐对象列表。
 
-#### <a name="using-the-fakedinnerrepository-with-unit-tests"></a>对单元测试使用 FakeDinnerRepository
+#### <a name="using-the-fakedinnerrepository-with-unit-tests"></a>将 FakeDinnerRepository 用于单元测试
 
-让我们返回到之前失败，因为该数据库不可用的 DinnersController 单元测试。 我们可以更新测试方法，用于填充向 DinnersController 使用下面的代码示例中内存 Dinner 数据 FakeDinnerRepository:
+让我们返回到以前失败的 DinnersController 单元测试，因为数据库不可用。 我们可以使用以下代码更新测试方法，以将使用内存中的内存导入数据的 FakeDinnerRepository 与 DinnersController 一起使用：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample11.cs)]
 
-和现在当我们运行这些测试都通过：
+现在，当我们运行这些测试时，它们都通过：
 
 ![](enable-automated-unit-testing/_static/image11.png)
 
-最重要的是，它们需要只有一小部分第二个运行，并且不需要任何复杂的安装程序清理逻辑。 我们可以现在单元测试所有我们 DinnersController 操作方法的代码 （包括列表中，分页的详细信息，创建、 更新和删除），而根本无需连接到真实的数据库。
+最重要的是，它们只需运行一小部分，无需任何复杂的设置/清理逻辑。 现在，我们可以对所有 DinnersController 操作方法代码（包括列表、分页、详细信息、创建、更新和删除）进行单元测试，而无需连接到实际数据库。
 
-| **端主题：依赖关系注入框架** |
+| **边主题：依赖关系注入框架** |
 | --- |
-| 执行手动依赖关系注入 （例如，我们是上面） 可正常使用，但会变成难以维护作为依赖项的数量并提高应用程序中的组件。 为有助于提供更多的依赖关系管理灵活性的.NET 而存在多个依赖关系注入框架。 这些框架，有时也称为"控制反转"(IoC) 容器，提供机制，以使一层额外的配置对指定并将依赖项传递给对象在运行时 （通常使用构造函数注入的支持). 一些更受欢迎的 OSS 依赖关系注入 / IOC 框架在.NET 中的包括：AutoFac、 Ninject、 Spring.NET、 StructureMap 和 Windsor。 ASP.NET MVC 公开扩展性 Api，允许开发人员参与的解决方法和实例化控制器，并可让依赖关系注入 / IoC 框架完全集成此进程中。 使用 DI/IOC 框架还会使我们能够从我们 DinnersController – 将完全删除它和 DinnerRepository 之间的耦合删除默认构造函数。 我们不会使用依赖关系注入 / IOC 框架与 NerdDinner 应用程序。 但是，这是一个我们可以考虑在将来，如果 NerdDinner 基本代码和功能的大小增长。 |
+| 执行手动依赖关系注入（如我们的工作方式）运行正常，但随着应用程序中的依赖项和组件数量的增加，维护变得越来越困难。 .NET 存在多个依赖关系注入框架，可帮助提供更多依赖关系管理灵活性。 这些框架（有时也称为 "控制反转" （IoC）容器）提供了一些机制，允许在运行时指定对象的依赖项并将依赖项传递到对象（最常使用构造函数注入）). .NET 中的一些更常见的 OSS 依赖关系注入/IOC 框架包括： AutoFac、Ninject、Spring.NET、StructureMap 和 Windsor。 ASP.NET MVC 公开了可扩展性 Api，使开发人员能够参与控制器的解析和实例化，并使依赖关系注入/IoC 框架在此过程中完全集成。 使用 DI/IOC 框架还可以从 DinnersController 中删除默认的构造函数，这将完全删除它与 DinnerRepository 之间的耦合。 我们不会在 NerdDinner 应用程序中使用依赖关系注入/IOC 框架。 但如果 NerdDinner 的基本代码和功能增长，我们可能会考虑到这一点。 |
 
 ### <a name="creating-edit-action-unit-tests"></a>创建编辑操作单元测试
 
-让我们现在创建一些单元测试以确认 DinnersController 的编辑功能。 我们首先测试我们的编辑操作的 HTTP GET 版本：
+现在，让我们创建一些单元测试来验证 DinnersController 的编辑功能。 首先，我们将测试编辑操作的 HTTP 获取版本：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample12.cs)]
 
-我们将创建一个测试，以便验证时请求有效 dinner 呈现由 DinnerFormViewModel 对象支持的视图：
+接下来，我们将创建一个测试，用于验证请求某个 DinnerFormViewModel 对象所支持的视图时，该视图将呈现回来：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample13.cs)]
 
-当我们运行测试时，不过，我们会发现失败，因为时编辑方法访问 User.Identity.Name 属性执行 Dinner.IsHostedBy() 检查将引发空引用异常。
+但在运行测试时，我们会发现它失败，因为在编辑方法访问 User.Identity.Name 属性以执行 IsHostedBy （）检查时，会引发空引用异常。
 
-控制器基类上的用户对象封装有关登录的用户的详细信息，并在运行时创建控制器时，由 ASP.NET MVC 填充。 因为我们要测试 web 服务器环境外部 DinnersController，未设置用户对象 （因此导致 null 引用异常）。
+控制器基类上的 User 对象封装了有关已登录用户的详细信息，并在运行时创建控制器时由 ASP.NET MVC 填充。 由于我们要在 web 服务器环境之外测试 DinnersController，因此不会设置 User 对象（因此为空引用异常）。
 
 ### <a name="mocking-the-useridentityname-property"></a>模拟 User.Identity.Name 属性
 
-模拟框架使测试变得更容易通过使我们能够动态创建虚设支持我们的测试中的依赖对象的版本。 例如，我们可以在我们的编辑操作测试使用的模拟框架，动态创建我们 DinnersController 可用于查找模拟的用户名的用户对象。 这可以避免当我们运行测试时引发空引用。
+模拟框架通过使我们能够动态创建支持测试的各种依赖对象，使测试变得更加轻松。 例如，我们可以在编辑操作测试中使用模拟框架来动态创建用户对象，DinnersController 可使用该对象查找模拟的用户名。 这将避免在我们运行测试时引发空引用。
 
-有很多.NET 模拟可与 ASP.NET MVC 框架 (见下面这些设置的列表： [ http://www.mockframeworks.com/ ](http://www.mockframeworks.com/))。 为了测试我们将使用一种开放源模拟框架名为"Moq"我们 NerdDinner 应用程序，这可以免费从下载[ http://www.mockframeworks.com/moq ](http://www.mockframeworks.com/moq)。
+可以将许多 .NET 模拟框架与 ASP.NET MVC 一起使用（可在此处查看这些框架的列表： [http://www.mockframeworks.com/](http://www.mockframeworks.com/)）。 若要测试我们的 NerdDinner 应用程序，我们将使用名为 "Moq" 的开源模拟 framework， [http://www.mockframeworks.com/moq](http://www.mockframeworks.com/moq)可以免费下载该框架。
 
-下载完成后，我们将对 Moq.dll 程序集 NerdDinner.Tests 项目中添加的引用：
+下载完成后，我们会在 NerdDinner 项目中添加对 Moq 程序集的引用：
 
 ![](enable-automated-unit-testing/_static/image12.png)
 
-然后，我们将添加一个"CreateDinnersControllerAs(username)"帮助器方法为我们的测试类的用户名将作为参数，哪些则"模拟"DinnersController 实例上的 User.Identity.Name 属性：
+然后，将 "CreateDinnersControllerAs （用户名）" 帮助器方法添加到将用户名作为参数的测试类，然后 "模拟" DinnersController 实例上的 User.Identity.Name 属性：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample14.cs)]
 
-更高版本，我们将使用 Moq 创建 fakes 的 ControllerContext 对象 （这是什么 ASP.NET MVC 将传递到控制器类，以公开运行时对象，如用户、 请求、 响应和会话） 的模拟对象。 我们在模拟来指示的 ControllerContext HttpContext.User.Identity.Name 属性应返回我们传递给帮助器方法的用户名字符串上调用"SetupGet"方法。
+以上我们使用 Moq 来创建 fakes ControllerContext 对象的 Mock 对象（这就是 ASP.NET MVC 传递到 Controller 类的对象，用于公开用户、请求、响应和会话等运行时对象）。 我们正在模拟模拟上的 "SetupGet" 方法，指示 ControllerContext 上的 HttpContext.User.Identity.Name 属性应返回传递给帮助器方法的用户名字符串。
 
-我们可以模拟任意数量的 ControllerContext 属性和方法。 为了说明这一点我还添加了 SetupGet() 调用 Request.IsAuthenticated 属性 （这不实际所需的下面 – 的测试，但这有助于解释如何可以模拟请求属性）。 当我们完成我们的 ControllerContext 模拟的一个实例分配向 DinnersController 我们帮助器方法返回。
+可以模拟任意数量的 ControllerContext 属性和方法。 为了说明这一点，我还添加了 SetupGet （）调用，以用于 IsAuthenticated 属性（对于下面的测试，实际上不需要此属性），但这有助于阐释您如何模拟请求属性。 完成后，我们将 ControllerContext mock 的实例分配给 DinnersController 的帮助器方法返回的。
 
-我们现在可以编写使用此帮助器方法来测试编辑方案涉及不同的用户的单元测试：
+现在，我们可以编写使用此帮助器方法的单元测试来测试涉及不同用户的编辑方案：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample15.cs)]
 
-现在当我们运行测试时传递：
+现在，当我们运行它们所通过的测试时：
 
 ![](enable-automated-unit-testing/_static/image13.png)
 
-### <a name="testing-updatemodel-scenarios"></a>测试 UpdateModel() 方案
+### <a name="testing-updatemodel-scenarios"></a>测试 UpdateModel （）方案
 
-我们创建了测试以涵盖编辑操作的 HTTP GET 版本。 让我们现在创建某些编辑操作的 HTTP POST 版本验证测试：
+我们已经创建了包含编辑操作的 HTTP GET 版本的测试。 现在，让我们创建一些测试来验证 HTTP POST 版本的编辑操作：
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample16.cs)]
 
-有关我们支持与此操作方法的有趣的新测试方案是控制器基类上的 UpdateModel() 帮助器方法的用法。 我们将使用此帮助器方法来将窗体发布值绑定到 Dinner 对象实例。
+我们使用此操作方法支持的有趣的新测试方案是在控制器基类上使用 UpdateModel （） helper 方法。 我们使用此帮助器方法将窗体发布值绑定到晚餐对象实例。
 
-下面是演示，我们可以如何提供窗体发布 UpdateModel() 帮助器方法，若要使用的值的两个测试。 我们将通过创建和填充 FormCollection 对象执行此操作，然后将其分配给在控制器上的"ValueProvider"属性。
+下面是两个测试，演示了如何为要使用的 UpdateModel （）帮助程序方法提供窗体的已发布值。 为此，我们将创建并填充 FormCollection 对象，然后将其分配给控制器上的 "ValueProvider" 属性。
 
-第一个测试验证，成功保存将浏览器重定向到详细信息的操作。 第二个测试将验证发送无效的输入时该操作显示编辑视图再次使用一条错误消息。
+第一次测试验证是否在成功保存浏览器时，将浏览器重定向到详细信息操作。 第二个测试验证在发布无效输入时，操作再次重新显示 "编辑" 视图并显示错误消息。
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample17.cs)]
 
-### <a name="testing-wrap-up"></a>测试总结
+### <a name="testing-wrap-up"></a>测试向上环绕
 
-我们已经介绍了在单元测试控制器类中所涉及的核心概念。 我们可以使用这些技术可以轻松地创建数百个简单的测试，验证我们的应用程序的行为。
+我们介绍了单元测试控制器类中涉及的核心概念。 我们可以使用这些技术轻松创建数百个验证应用程序行为的简单测试。
 
-我们的控制器和模型的测试不需要的实际数据库，因为它们是极其快速且轻松地运行。 我们将能够在数秒内，执行数百个自动测试并立即获取我们所做的更改是否中断的内容的反馈。 这将有助于向我们提供的置信度来持续改进，重构，并改进我们的应用程序。
+由于控制器和模型测试不需要实际数据库，因此它们的运行速度极快且运行非常简单。 我们将能够在几秒内执行数百个自动测试，并立即获得反馈，以确定是否有更改中断了某些内容。 这将有助于我们满怀信心地不断改进、重构和改进我们的应用程序。
 
-我们介绍如何测试作为最后一个主题中这一章 – 但不是因为测试是应在开发过程结束时执行 ！ 相反，应在开发过程中尽早编写自动的测试。 这样做因此可以立即获得反馈开发时，可帮助你仔细考虑应用程序的用例场景，并会引导您设计应用程序分层和记住耦合干净。
+我们已将测试作为本章中的最后一个主题进行，但不是因为在开发过程结束时应该执行测试！ 相反，应在开发过程中尽早编写自动测试。 这样做使您可以在开发时立即获得反馈，有助于您周全应用程序的用例方案，并指导您在设计应用程序时使用干净的分层和耦合。
 
-本书中的更高版本的章节将讨论测试驱动开发 (TDD) 以及如何使用 ASP.NET MVC。 首先编写的测试，都能满足你生成的代码，TDD 也迭代的编码实践。 与 TDD 开始每项功能通过创建一个测试，以便验证您将要实现的功能。 编写单元测试第一次可帮助确保你清楚地了解此功能，如何它应该适用。 仅编写该测试 （并已验证它失败后） 然后实现此测试将验证的实际功能。 因为您已经花了时间思考的功能是怎样工作的用例，你将具有更好地了解要求和如何最好地实现它们。 完成您可以重新运行测试 – 并立即获得反馈的实现时是否功能能够正常运行。 我们将介绍第 10 章中更 TDD。
+本书后面的一章将讨论测试驱动开发（TDD），以及如何将其与 ASP.NET MVC 一起使用。 TDD 是一种迭代编码实践，你首先编写生成的代码将满足的测试。 使用 TDD，通过创建用于验证要实现的功能的测试，开始每个功能。 首先编写单元测试有助于确保你清楚地了解该功能及其工作原理。 只有在编写测试（并且已验证它失败）后，才可以实现测试所验证的实际功能。 因为您已经花了时间考虑该功能的工作原理，您将更好地理解这些要求以及实现它们的最佳方式。 完成实现后，您可以重新运行测试，并获得有关该功能是否正常工作的即时反馈。 我们将在第10章中介绍 TDD。
 
 ### <a name="next-step"></a>下一步
 
-一些最后一个注释总结。
+某些最终的汇总注释。
 
 > [!div class="step-by-step"]
 > [上一页](use-ajax-to-implement-mapping-scenarios.md)

@@ -9,11 +9,11 @@ ms.assetid: bd87413c-8160-4520-a8a2-43b555c4183a
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c9883314d6153b9816d9bad2a281ab3c0a816448
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74612431"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420656"
 ---
 # <a name="caching-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 缓存数据 (C#)
 
@@ -187,7 +187,7 @@ ASP.NET 2.0 提供各种缓存选项。 可以通过*输出缓存*来缓存整�
 
 简而言之，只使用基于时间的 expiries，如果你愿意拥有过时数据的可能性，并且在数据的新鲜度非常重要的情况下使用较短的 expiries。 如果陈旧数据是不可接受的，则放弃缓存或使用 SQL 缓存依赖项（假定它是重新缓存的数据库数据）。 在将来的教程中，我们将探索 SQL 缓存依赖关系。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们将探讨 ObjectDataSource 的内置缓存功能。 只需设置几个属性，就可以指示 ObjectDataSource 将指定 `SelectMethod` 返回的结果缓存到 ASP.NET 数据缓存中。 `CacheDuration` 和 `CacheExpirationPolicy` 属性指示项缓存的持续时间，以及它是绝对过期还是可调过期。 `CacheKeyDependency` 属性将所有 ObjectDataSource s 缓存条目与现有缓存依赖关系关联。 这可用于在达到基于时间的过期之前从缓存中逐出 ObjectDataSource 条目，并且通常用于 SQL 缓存依赖项。
 
@@ -212,4 +212,4 @@ ASP.NET 2.0 提供各种缓存选项。 可以通过*输出缓存*来缓存整�
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](caching-data-in-the-architecture-cs.md)
+> [下一部分](caching-data-in-the-architecture-cs.md)

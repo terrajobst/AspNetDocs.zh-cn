@@ -9,11 +9,11 @@ ms.assetid: d34f90a1-6de3-482a-a326-f87fdcbaaaff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 97c0ecf1953cc54030656dd710a5150243877110
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593944"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435200"
 ---
 # <a name="creating-page-layouts-with-view-master-pages-vb"></a>使用视图母版页创建页面布局 (VB)
 
@@ -123,7 +123,7 @@ ms.locfileid: "74593944"
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample6.aspx)]
 
-### <a name="summary"></a>总结
+### <a name="summary"></a>摘要
 
 本教程提供了查看母版页和查看内容页的基本简介。 已了解如何创建新的视图母版页，并基于这些页面创建视图内容页。 还介绍了如何从特定的视图内容页修改视图母版页的内容。
 

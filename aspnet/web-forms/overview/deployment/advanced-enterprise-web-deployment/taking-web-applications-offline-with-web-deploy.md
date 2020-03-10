@@ -9,11 +9,11 @@ ms.assetid: 3e9f6e7d-8967-4586-94d5-d3a122f12529
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
 ms.openlocfilehash: ba60664a0c3daa0650cd7e7cfc4ab9da08df3440
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075133"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78422210"
 ---
 # <a name="taking-web-applications-offline-with-web-deploy"></a>使用 Web 部署使 Web 应用程序脱机
 
@@ -157,7 +157,7 @@ Web 发布管道（WPP）使用名为**FilesForPackagingFromProject**的项列�
 
 本主题介绍了如何在部署过程中使 web 应用程序脱机，方法是在部署过程开始时，将*应用程序\_脱机*文件发布到目标服务器，并将其删除。 本主题还介绍了如何在 web 部署包中将*应用\_脱机 .htm*文件。
 
-## <a name="further-reading"></a>延伸阅读
+## <a name="further-reading"></a>其他阅读材料
 
 有关打包和部署过程的详细信息，请参阅[生成和打包 Web 应用程序项目](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)、[配置 web 包部署的参数](../web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md)和[部署 web 包](../web-deployment-in-the-enterprise/deploying-web-packages.md)。
 

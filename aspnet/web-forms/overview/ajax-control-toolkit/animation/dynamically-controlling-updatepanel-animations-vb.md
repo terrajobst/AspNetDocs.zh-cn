@@ -9,11 +9,11 @@ ms.assetid: bea66072-59b6-42b4-98fa-211812f5925f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 97a52bd75fdf63ad62282afd9df772f0a9e4f931
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599690"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430856"
 ---
 # <a name="dynamically-controlling-updatepanel-animations-vb"></a>动态控制 UpdatePanel 动画 (VB)
 
@@ -56,4 +56,4 @@ ASP.NET AJAX 控件工具包中的动画控件不仅仅是一个控件，而是�
 当前时间已淡入（[单击查看完全大小的图像](dynamically-controlling-updatepanel-animations-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](animating-an-updatepanel-control-vb.md)
+> [上一页](animating-an-updatepanel-control-vb.md)

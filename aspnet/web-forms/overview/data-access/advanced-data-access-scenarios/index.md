@@ -2,22 +2,22 @@
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/index
 title: 高级数据访问方案 |Microsoft Docs
 author: rick-anderson
-description: 这些教程将介绍如何使用存储的过程和计算的列、 如何将使用与数据库表的联接和如何加密数据连接信息...
+description: 这些教程介绍了如何使用存储过程和计算列、如何使用与数据库表的联接以及如何加密数据连接信息 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 00d198ed-fddc-4fd3-a86e-3f29c5f707cc
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios
 msc.type: chapter
 ms.openlocfilehash: 25041560b9e8ff0a8c944572dad344e655100b0d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108547"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78428198"
 ---
 # <a name="advanced-data-access-scenarios"></a>高级数据访问方案
 
-> 这些教程将介绍如何使用存储的过程和计算的列、 如何将使用与数据库表的联接和如何加密数据连接信息。
+> 这些教程介绍了如何使用存储过程和计算列、如何使用与数据库表的联接，以及如何对数据连接信息进行加密。
 
 - [新建适用于类型化数据集的 TableAdapter 的存储过程 (C#)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
 - [使用适用于类型化数据集的 TableAdapter 的现有存储过程 (C#)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)

@@ -9,11 +9,11 @@ ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
 ms.openlocfilehash: 4235f4fe666cdeb7d0821127a2b349f2ff30cd6e
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057033"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433670"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新增功能
 
@@ -33,7 +33,7 @@ ASP.NET MVC 4 是一个框架，用于生成可缩放的基于标准的 web 应�
 <a id="Objectives"></a>
 ### <a name="objectives"></a>目标
 
-在此动手实验中，您将学习如何：
+在本动手实验中，您将了解如何：
 
 - 充分利用 ASP.NET MVC 项目模板的增强功能，包括新的移动应用程序项目模板
 - 使用 HTML5 视区属性和 CSS 媒体查询改善移动设备上的显示
@@ -45,7 +45,7 @@ ASP.NET MVC 4 是一个框架，用于生成可缩放的基于标准的 web 应�
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>系统必备
 
 你必须具有以下项才能完成此实验室：
 
@@ -59,7 +59,7 @@ ASP.NET MVC 4 是一个框架，用于生成可缩放的基于标准的 web 应�
 <a id="Setup"></a>
 ### <a name="setup"></a>安装
 
-在整个实验室文档中，系统会指示您插入代码块。 为方便起见，其中的大多数代码都作为 Visual Studio Code 代码段提供，你可以在 Visual Studio 中使用这些代码段，以避免手动添加它。
+在整个实验文档中，将指示您插入代码块。 为方便起见，其中的大多数代码都作为 Visual Studio Code 代码段提供，你可以在 Visual Studio 中使用这些代码段，以避免手动添加它。
 
 安装代码片段：
 
@@ -73,7 +73,7 @@ ASP.NET MVC 4 是一个框架，用于生成可缩放的基于标准的 web 应�
 <a id="Exercises"></a>
 ## <a name="exercises"></a>练习
 
-此动手实验包括以下练习：
+本动手实验包括以下练习：
 
 1. [New ASP.NET MVC 4 项目模板](#Exercise1)
 2. [创建照片库 Web 应用程序](#Exercise2)
@@ -101,7 +101,7 @@ ASP.NET MVC 4 是一个框架，用于生成可缩放的基于标准的 web 应�
     > [!NOTE]
     > 稍后将自定义要创建的 PhotoGallery ASP.NET MVC 4 解决方案。
 
-    ![创建新项目](whats-new-in-aspnet-mvc-4/_static/image1.png "创建新项目")
+    ![创建新项目](whats-new-in-aspnet-mvc-4/_static/image1.png "创建新的项目")
 
     *创建新项目*
 3. 在 "**新建 ASP.NET MVC 4 项目**" 对话框中，选择 " **Internet 应用程序**" 项目模板，然后单击 **"确定"** 。 请确保已选择 Razor 作为视图引擎。
@@ -203,18 +203,18 @@ ASP.NET MVC 4 简化了移动和平板浏览器的网站开发。 此模板的�
 
         "移动应用程序" 项目模板包含 jQuery Mobile 库，这是用于移动浏览器兼容性的开源库。 jQuery Mobile 可对支持 CSS 和 JavaScript 的移动浏览器应用渐进增强。 渐进式增强功能允许所有浏览器显示网页的基本内容，而仅允许最强大的浏览器显示丰富的内容。 JQuery Mobile style 中包含的 JavaScript 和 CSS 文件可帮助移动浏览器适应屏幕内容，而无需在页面标记中进行任何更改。
 
-        ![jQuery-包含模板中的](whats-new-in-aspnet-mvc-4/_static/image12.png)
+        ![jQuery-mobile-library-included-in-the-template](whats-new-in-aspnet-mvc-4/_static/image12.png)
 
         *模板中包含的 jQuery mobile 库*
     - **基于 HTML5 的标记**
 
-        ![移动应用程序-使用-HTML5-标记](whats-new-in-aspnet-mvc-4/_static/image13.png)
+        ![Mobile-application-template-using-HTML5-markup](whats-new-in-aspnet-mvc-4/_static/image13.png)
 
         *使用 HTML5 标记的移动应用程序模板（登录名和索引. cshtml）*
-4. 按**F5**运行解决方案。
+4. 按 **“F5”** 运行该解决方案。
 5. 打开**Windows Phone 7 模拟器**。
 6. 在手机的 "开始" 屏幕上，打开 Internet Explorer。 查看桌面应用程序的启动 URL，并从手机浏览到该 URL （例如 `http://localhost:[PortNumber]/`）。
-7. 现在，你可以输入登录页面或查看 "关于" 页。 请注意，网站的样式基于适用于移动设备的新地铁应用。 ASP.NET MVC 4 项目模板已正确显示在移动设备上，请确保页面的所有元素都可见且已启用。 请注意，标题上的链接足够大，可以单击或点击。
+7. 现在，你可以输入登录页面或查看 "关于" 页。 请注意到该网站的样式基于新美俏移动设备的应用程序。 ASP.NET MVC 4 项目模板已正确显示在移动设备上，请确保页面的所有元素都可见且已启用。 请注意，标题上的链接足够大，可以单击或点击。
 
     ![移动设备中的项目模板页](whats-new-in-aspnet-mvc-4/_static/image14.png "移动设备中的项目模板页")
 
@@ -256,7 +256,7 @@ ASP.NET MVC 4 简化了移动和平板浏览器的网站开发。 此模板的�
 
 现在，你将浏览自适应呈现的工作原理，提高 ASP.NET MVC 4 默认网站模板的可读性。
 
-1. 打开你在任务1创建的**PhotoGallery**解决方案，然后选择 " **PhotoGallery** " 项目。 按**F5**运行解决方案。
+1. 打开你在任务1创建的**PhotoGallery**解决方案，然后选择 " **PhotoGallery** " 项目。 按 **“F5”** 运行该解决方案。
 2. 调整浏览器的宽度，将窗口设置为半或小于其原始大小的四分之一。 请注意标题中的项会发生什么情况：某些元素将不会显示在标头的可见区域中。
 3. 从 Visual Studio 解决方案资源管理器中打开位于**内容**项目文件夹中的**web.config**文件。 按**CTRL + F**打开 Visual Studio 集成搜索，并编写 `@media` 以查找**CSS 媒体查询**。
 
@@ -318,7 +318,7 @@ ASP.NET MVC 4 简化了移动和平板浏览器的网站开发。 此模板的�
 
     *测试模拟照片服务*
 
-在实际实现中，可以使用[ASP.NET Web API](../../../../web-api/index.md)来实现照片库服务。 ASP.NET Web API 是一种框架，可让你轻松地生成可访问范围广泛的客户端（包括浏览器和移动设备）的 HTTP 服务。 ASP.NET Web API 是用于在 .NET Framework 上生成 RESTful 应用程序的理想平台。
+在实际实现中，可以使用[ASP.NET Web API](../../../../web-api/index.md)来实现照片库服务。 ASP.NET Web API 是一种框架，用于轻松构建可以访问多种客户端（包括浏览器和移动设备）的 HTTP 服务。 ASP.NET Web API 是用于在 .NET Framework 上生成 RESTful 应用程序的理想平台。
 
 <a id="Task_2_-_Displaying_the_Photo_Gallery"></a>
 #### <a name="task-2---displaying-the-photo-gallery"></a>任务 2-显示照片库
@@ -354,7 +354,7 @@ ASP.NET MVC 4 简化了移动和平板浏览器的网站开发。 此模板的�
 9. 打开文件资源管理器，将位于此实验室的**Source\Assets**文件夹下的整个**照片**文件夹复制到解决方案资源管理器中项目的根文件夹下。
 10. 运行该应用程序。 现在，你应看到在库中显示照片的主页。
 
-    ![照片库](whats-new-in-aspnet-mvc-4/_static/image21.png "照片库")
+    ![照片库](whats-new-in-aspnet-mvc-4/_static/image21.png "亮튬库")
 
     *照片库*
 11. 在 Visual Studio 中，按**SHIFT** + **F5**停止调试应用程序。
@@ -397,7 +397,7 @@ ASP.NET MVC 4 中的一个重要更新是支持移动开发。 在此练习中�
 
     - **Views/Shared/\_layout。** node.js：是一种针对小屏幕优化的基于 jQuery mobile 的布局。 当网站收到来自移动浏览器的请求时，它会将原始布局（\_Layout）替换为此布局。
     - 视图切换器组件：由**Views/Shared/\_ViewSwitcher**分部视图和**ViewSwitcherController.cs**控制器组成。 此组件将在移动浏览器上显示一个链接，以使用户能够切换到页面的桌面版本。  
-        ![具有移动支持的照片库项目](whats-new-in-aspnet-mvc-4/_static/image23.png "Ph带有移动支持的照片库项目
+        ![具有移动支持的照片库项目](whats-new-in-aspnet-mvc-4/_static/image23.png "具有移动支持的照片库项目")
 
         *具有移动支持的照片库项目*
 4. 注册移动捆绑包。 为此，请打开**Global.asax.cs**文件并添加以下行。
@@ -516,7 +516,7 @@ jQuery Mobile 的默认主题包括5个样本，其中包含字母（a、b、c�
 
     - **ClearOverriddenBrowser （）** 方法删除当前请求的任何重写的用户代理。
     - **SetOverriddenBrowser （）** 方法使用指定的用户代理覆盖请求的实际用户代理值。  
-        ![ViewSwitcher 控制器](whats-new-in-aspnet-mvc-4/_static/image31.png "ViewSwitcher 控制器 "）  
+        ![ViewSwitcher 控制器](whats-new-in-aspnet-mvc-4/_static/image31.png "ViewSwitcher 控制器")  
 *ViewSwitcher 控制器*
 
         浏览器重写是 ASP.NET MVC 4 的一项核心功能，即使不安装 jQuery. node.js 包也是如此。 但是，此功能只会影响视图、布局和分部视图，而不会影响依赖于请求 .Browser 对象的任何功能。
@@ -538,7 +538,7 @@ jQuery Mobile 的默认主题包括5个样本，其中包含字母（a、b、c�
     ![在桌面视图中呈现的视图切换器](whats-new-in-aspnet-mvc-4/_static/image32.png "在桌面视图中呈现的视图切换器")
 
     *在桌面视图中呈现的视图切换器*
-7. 再次切换到移动视图并浏览到 "**关于**" 页（ http://localhost [port]/Home/About）。 请注意，即使尚未创建 "关于" 视图，"关于" 页也会使用移动布局（\_Layout）来显示。
+7. 再次切换到移动视图并浏览到 "**关于**" 页（ http://localhost[port]/Home/About）。 请注意，即使尚未创建 "关于" 视图，"关于" 页也会使用移动布局（\_Layout）来显示。
 
     ![关于页面](whats-new-in-aspnet-mvc-4/_static/image33.png "“关于”页面")
 
@@ -589,7 +589,7 @@ jQuery Mobile 的默认主题包括5个样本，其中包含字母（a、b、c�
 7. 按**F5**运行应用程序并浏览**Windows Phone 模拟器**中的站点。
 8. 打开**iphone 模拟器**（有关如何安装和配置 iPhone 模拟器的说明，请参阅[附录 C](#AppendixC) ），并浏览到站点。 请注意，每个电话使用特定的模板。
 
-    ![使用-设备 2-不同的视图](whats-new-in-aspnet-mvc-4/_static/image35.png)
+    ![Using-different-views-for-each-mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
 
     *为每个移动设备使用不同的视图*
 
@@ -598,7 +598,7 @@ jQuery Mobile 的默认主题包括5个样本，其中包含字母（a、b、c�
 <a id="Exercise_4_Using_Asynchronous_Controllers"></a>
 ### <a name="exercise-4-using-asynchronous-controllers"></a>练习4：使用异步控制器
 
-Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能，以便为 .net 编程中的异步提供新的基础。 这一新基础使异步编程与-相关，并与同步编程一样简单。 现在可以使用**AsyncController**类在 ASP.NET MVC 4 中编写异步操作方法。 对于长时间运行的非 CPU 绑定请求，可以使用异步操作方法。 这可以避免在处理请求时阻止 Web 服务器执行工作。 AsyncController 类通常用于长时间运行的 Web 服务调用。
+Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能，以便为 .net 编程中的异步提供新的基础。 这一新基础使异步编程与-相关，并与同步编程一样简单。 现在可以使用**AsyncController**类在 ASP.NET MVC 4 中编写异步操作方法。 可以对长时间运行的、非 CPU 绑定的请求使用异步操作方法。 这样可避免在处理请求时阻塞 Web 服务器执行工作。 AsyncController 类通常用于长时间运行的 Web 服务调用。
 
 本练习介绍 ASP.NET MVC 4 中异步操作的基本知识。 如果需要深入了解，可以查看以下文章： [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
@@ -694,7 +694,7 @@ Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能�
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在此动手实验中，你已发现 ASP.NET MVC 4 中的一些新功能。 讨论了以下概念：
 
@@ -899,7 +899,7 @@ Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能�
     > [!NOTE]
     > 借助 Windows Azure，你可以免费托管10个 ASP.NET 的网站，然后随着流量的增长进行扩展。 你可以在[此处](https://aka.ms/aspnet-hol-azure)注册。
 
-    ![登录到 Windows Azure 门户](whats-new-in-aspnet-mvc-4/_static/image61.png "登录到 Windows Azure 门户")
+    ![登录到 Windows Azure 门户](whats-new-in-aspnet-mvc-4/_static/image61.png "登录到 Microsoft Azure 门户")
 
     *登录到 Windows Azure 管理门户*
 2. 单击命令栏上的 "**新建**"。
@@ -912,7 +912,7 @@ Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能�
     > [!NOTE]
     > Windows Azure 网站是在云中运行的 Web 应用程序的宿主，你可以控制和管理这些应用程序。 使用 "快速创建" 选项，可以从门户外部将已完成的 web 应用程序部署到 Microsoft Azure 网站。 它不包括设置数据库的步骤。
 
-    ![使用 "快速创建" 创建新网站](whats-new-in-aspnet-mvc-4/_static/image63.png "使用 "快速创建" 创建新网站")
+    ![使用 "快速创建" 创建新网站](whats-new-in-aspnet-mvc-4/_static/image63.png "使用“快速创建”创建新网站")
 
     *使用 "快速创建" 创建新网站*
 4. 请**等到新网站创建完毕。**
@@ -933,7 +933,7 @@ Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能�
 7. 在 "**仪表板**" 页的 "**速览**" 部分下，单击 "**下载发布配置文件**" 链接。
 
     > [!NOTE]
-    > *发布配置文件*包含为每个已启用的发布方法将 web 应用程序发布到 microsoft Azure 网站所需的所有信息。 发布配置文件包含连接到每个终结点并对其进行身份验证所需的 Url、用户凭据和数据库字符串。 **Microsoft WebMatrix 2**、 **Microsoft Visual Studio Express for Web**和**Microsoft Visual Studio 2012**支持读取发布配置文件，以便自动配置这些程序以将 Web 应用程序发布到 microsoft Azure 网站。
+    > *发布配置文件*包含为每个已启用的发布方法将 web 应用程序发布到 microsoft Azure 网站所需的所有信息。 发布配置文件包含有连接到并且验证该发布方法启用的每个端点所需的 URL、用户凭据和数据库字符串。 **Microsoft WebMatrix 2**、 **Microsoft Visual Studio Express for Web**和**Microsoft Visual Studio 2012**支持读取发布配置文件，以便自动配置这些程序以将 Web 应用程序发布到 microsoft Azure 网站。
 
     ![下载网站发布配置文件](whats-new-in-aspnet-mvc-4/_static/image67.png "下载网站发布配置文件")
 
@@ -1005,12 +1005,12 @@ Microsoft .NET Framework 4.5 介绍了和 Visual Basic 中C#的新语言功能�
      ![正在配置目标连接字符串](whats-new-in-aspnet-mvc-4/_static/image77.png "正在配置目标连接字符串")
 
      *正在配置目标连接字符串*
-6. 然后单击“确定”。 系统提示创建数据库时，单击 **"是"** 。
+6. 然后单击 **“确定”** 。 系统提示创建数据库时，单击 **"是"** 。
 
     ![创建数据库](whats-new-in-aspnet-mvc-4/_static/image78.png "创建数据库字符串")
 
     *创建数据库*
-7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串显示在 "默认连接" 文本框中。 然后单击 **“下一步”** 。
+7. 将用于连接到 Windows Azure 中的 SQL 数据库的连接字符串显示在 "默认连接" 文本框中。 再单击 **“下一步”** 。
 
     ![指向 SQL 数据库的连接字符串](whats-new-in-aspnet-mvc-4/_static/image79.png "指向 SQL 数据库的连接字符串")
 

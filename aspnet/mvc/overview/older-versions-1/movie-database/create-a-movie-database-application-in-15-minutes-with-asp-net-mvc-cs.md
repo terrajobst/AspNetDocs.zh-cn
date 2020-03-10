@@ -9,11 +9,11 @@ ms.assetid: dd1be137-91c5-47a8-8137-fecf0789c7f5
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1be5d135a44feb27626dd26a544b64cfb57b18a9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74596363"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435860"
 ---
 # <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>使用 ASP.NET MVC 在 15 分钟内创建电影数据库应用程序 (C#)
 
@@ -49,7 +49,7 @@ ms.locfileid: "74596363"
 4. 创建 ASP.NET MVC 控制器
 5. 创建 ASP.NET MVC 视图
 
-## <a name="preliminaries"></a>初步
+## <a name="preliminaries"></a>初步操作
 
 需要 Visual Studio 2008 或 Visual Web Developer 2008 Express 才能生成 ASP.NET MVC 应用程序。 还需要下载 ASP.NET MVC 框架。
 
@@ -120,11 +120,11 @@ ASP.NET MVC 应用程序具有一组标准文件夹：模型、视图和控制�
 
 <a id="0.1_table01"></a>
 
-| **列名** | **数据类型** | **允许空值** |
+| **列名称** | **数据类型** | **允许 Null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 职务 | Nvarchar （100） | False |
-| 9509 | Nvarchar （100） | False |
+| 标题 | Nvarchar(100) | False |
+| 导演 | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 第一列（Id 列）包含两个特殊属性。 首先，需要将 Id 列标记为主键列。 选择 Id 列后，单击 "**设置主键**" 按钮（它是看起来像一个键的图标）。 其次，需要将 Id 列标记为标识列。 在属性窗口列中，向下滚动到 "标识规范" 部分并展开它。 将 "**是" 标识**属性更改为 **"是"** 。 完成后，表应如图4所示。
@@ -158,7 +158,7 @@ ASP.NET MVC 应用程序具有一组标准文件夹：模型、视图和控制�
 单击 "添加" 按钮后，将显示 "实体数据模型" 向导（见图6）。 按照以下步骤完成向导：
 
 1. 在 "**选择模型内容**" 步骤中，选择 "**从数据库生成**" 选项。
-2. 在 "**选择你的数据连接**" 步骤中，使用*MoviesDB*数据连接，并为连接设置使用名称 " *MoviesDBEntities* "。 单击 "**下一步**" 按钮。
+2. 在 "**选择你的数据连接**" 步骤中，使用*MoviesDB*数据连接，并为连接设置使用名称 " *MoviesDBEntities* "。 单击“下一步”按钮。
 3. 在 "**选择数据库对象**" 步骤中，展开 "表" 节点，然后选择 "电影" 表。 输入命名空间*MovieApp* ，并单击 "**完成**" 按钮。
 
 [!["新建项目" 对话框](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image6.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image11.png)
@@ -179,7 +179,7 @@ ASP.NET MVC 应用程序具有一组标准文件夹：模型、视图和控制�
 
 下一步是创建 ASP.NET MVC 控制器。 控制器负责控制用户如何与 ASP.NET MVC 应用程序交互。
 
-按照以下步骤进行操作：
+请执行这些步骤：
 
 1. 在 "解决方案资源管理器" 窗口中，右键单击 "控制器" 文件夹，然后选择 "**添加"、"控制器**" 菜单。
 2. 在 "添加控制器" 对话框中，输入名称*HomeController* ，并选中标签为 "**添加" "创建"、"更新" 和 "详细信息" 方案的 "操作方法**" 的复选框（见图8）
@@ -211,7 +211,7 @@ Home 控制器的 Index （）方法是 ASP.NET MVC 应用程序的默认方法�
 
 [!code-csharp[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample2.cs)]
 
-Index （）方法返回一个名为 Index 的视图。 需要创建此视图来显示电影数据库记录的列表。 按照以下步骤进行操作：
+Index （）方法返回一个名为 Index 的视图。 需要创建此视图来显示电影数据库记录的列表。 请执行这些步骤：
 
 在打开 "**添加视图**" 对话框或在 "**查看数据类**" 下拉列表中未显示任何类之前，应生成项目（选择菜单选项 "**生成"、"生成解决方案**"）。
 
@@ -259,7 +259,7 @@ Home 控制器包含两个名为 Create （）的方法。 第一个 Create （�
 
 [!code-csharp[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample4.cs)]
 
-使用 Visual Studio 可以轻松地创建新的电影数据库记录（见图12）。 按照以下步骤进行操作：
+使用 Visual Studio 可以轻松地创建新的电影数据库记录（见图12）。 请执行这些步骤：
 
 1. 在代码编辑器中右键单击 Create （）方法，然后选择菜单选项 "**添加视图**"。
 2. 验证标记为 "**创建强类型视图**" 的复选框。
@@ -321,11 +321,11 @@ Visual Studio 会自动生成列表5中的视图。 此视图包含一个 HTML �
 
 请注意，必须检索原始电影，然后调用 ApplyPropertyChanges （）来更新数据库中的现有电影。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本教程的目的是让你了解构建 ASP.NET MVC 应用程序的体验。 我希望您发现生成 ASP.NET MVC web 应用程序的过程与生成 Active Server Pages 或 ASP.NET 应用程序的体验非常类似。
 
 在本教程中，我们仅检查了 ASP.NET MVC 框架的最基本功能。 在将来的教程中，我们将深入探讨控制器、控制器操作、视图、视图数据和 HTML 帮助器等主题。
 
 > [!div class="step-by-step"]
-> [下一页](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)
+> [下一部分](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)

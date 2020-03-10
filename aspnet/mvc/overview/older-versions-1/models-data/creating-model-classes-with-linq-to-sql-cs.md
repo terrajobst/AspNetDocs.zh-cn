@@ -9,11 +9,11 @@ ms.assetid: f84b4a16-e8bb-49e8-87a0-1832879a3501
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c27d1ffac3846fe4bc13b32c2ae91a63b2493126
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590224"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78437186"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-c"></a>使用 LINQ to SQL 创建模型类 (C#)
 
@@ -61,11 +61,11 @@ MVC 模型包含未包含在 MVC 视图或 MVC 控制器中的所有应用程序
 
 我们需要在数据库表中添加以下列：
 
-| **列名** | **数据类型** | **允许空值** |
+| **列名称** | **数据类型** | **允许 Null 值** |
 | --- | --- | --- |
 | Id | Int | False |
-| 职务 | Nvarchar （200） | False |
-| 9509 | Nvarchar （50） | False |
+| 标题 | Nvarchar （200） | False |
+| 导演 | nvarchar （50） | False |
 
 需要为 Id 列执行两个特殊操作。 首先，您需要通过在表设计器中选择列并单击键的图标，将 Id 列标记为主键列。 LINQ to SQL 要求在对数据库执行插入或更新时指定主键列。
 
@@ -173,7 +173,7 @@ LINQ to SQL 类创建影片后，会立即显示对象关系设计器。 您可�
 
 此外，如果想要测试 `MoviesController` 类，则可以将假电影存储库类传递到 `HomeController`。 您可以使用类来实现 `IMovieRepository` 类，该类实际上不会访问数据库，而是包含 `IMovieRepository` 接口的所有所需方法。 这样，就可以对 `MoviesController` 类进行单元测试，而无需实际访问实际数据库。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本教程的目的是演示如何通过利用 Microsoft LINQ to SQL 来创建 MVC 模型类。 我们检查了两种在 ASP.NET MVC 应用程序中显示数据库数据的策略。 首先，我们创建 LINQ to SQL 类并直接在控制器操作中使用类。 使用控制器中的 LINQ to SQL 类，可以快速轻松地在 MVC 应用程序中显示数据库数据。
 

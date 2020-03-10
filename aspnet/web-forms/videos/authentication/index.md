@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/authentication/index
-title: 身份验证 |Microsoft Docs
+title: 身份验证 | Microsoft Docs
 author: rick-anderson
-description: 如何实现和管理 ASP.NET 应用程序中的安全性 （身份验证）。
+description: 如何在 ASP.NET 应用程序中实现和管理安全性（身份验证）。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 4a365e58-9b18-4bd2-bfd5-6981e7f2e179
 msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
 ms.openlocfilehash: 9802eee31ecafeb17a09d6c154d811b3d0bb01de
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133750"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421718"
 ---
 # <a name="authentication"></a>身份验证
 
-> 如何实现和管理 ASP.NET 应用程序中的安全性 （身份验证）。
+> 如何在 ASP.NET 应用程序中实现和管理安全性（身份验证）。
 
 - [在 ASP.NET 中使用基本 Forms 身份验证](using-basic-forms-authentication-in-aspnet.md)
 - [更改 Forms 身份验证属性](how-to-change-the-forms-authentication-properties.md)

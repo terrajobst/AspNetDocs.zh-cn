@@ -2,22 +2,22 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/index
 title: ASP.NET Web API 中支持 OData v4 |Microsoft Docs
 author: rick-anderson
-description: 使用 ASP.NET Web API 来创建支持 OData 版本 4 的终结点。
+description: 使用 ASP.NET Web API 创建支持 OData 版本4的终结点。
 ms.author: riande
 ms.date: 06/26/2014
 ms.assetid: bb807fdd-0bd8-43d0-b068-e88de7e5fd87
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4
 msc.type: chapter
 ms.openlocfilehash: 2068b7ad8d7b47ba4dd8768e4e35a28c5cf84de3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132731"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421406"
 ---
 # <a name="supporting-odata-v4-in-aspnet-web-api"></a>ASP.NET Web API 中支持 OData v4
 
-> 使用 ASP.NET Web API 来创建支持 OData 版本 4 的终结点。
+> 使用 ASP.NET Web API 创建支持 OData 版本4的终结点。
 
 - [创建 OData v4 终结点](create-an-odata-v4-endpoint.md)
 - [创建 OData v4 客户端应用 (C#)](create-an-odata-v4-client-app.md)

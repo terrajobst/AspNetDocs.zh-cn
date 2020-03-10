@@ -1,127 +1,127 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
-title: Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体-第 5 部分 |Microsoft Docs
+title: 入门实体框架 4.0 Database First 和 ASP.NET 4 Web Forms-第5部分 |Microsoft Docs
 author: tdykstra
-description: Contoso 大学示例 web 应用程序演示如何创建使用实体框架的 ASP.NET Web 窗体应用程序。 示例应用程序是...
+description: Contoso 大学示例 web 应用程序演示了如何使用实体框架创建 ASP.NET Web 窗体应用程序。 示例应用程序为 。
 ms.author: riande
 ms.date: 12/03/2010
 ms.assetid: 24ad4379-3fb2-44dc-ba59-85fe0ffcb2ae
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
 ms.openlocfilehash: 75328e67abb4295b619cac5423a9eb970942fff7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133109"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78423866"
 ---
-# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>Getting Started with Entity Framework 4.0 数据库和 ASP.NET 4 Web 窗体-第 5 部分
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>入门实体框架 4.0 Database First 和 ASP.NET 4 Web Forms-第5部分
 
-通过[Tom Dykstra](https://github.com/tdykstra)
+作者： [Tom Dykstra](https://github.com/tdykstra)
 
-> Contoso 大学示例 web 应用程序演示如何创建使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web 窗体应用程序。 有关教程系列的信息，请参阅[系列中的第一个教程](the-entity-framework-and-aspnet-getting-started-part-1.md)
+> Contoso 大学示例 web 应用程序演示了如何使用实体框架4.0 和 Visual Studio 2010 创建 ASP.NET Web 窗体应用程序。 有关本教程系列的信息，请参阅[系列教程中的第一个教程](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
-## <a name="working-with-related-data-continued"></a>使用相关数据，继续执行
+## <a name="working-with-related-data-continued"></a>使用相关数据（续）
 
-开始使用上一教程中`EntityDataSource`控件能够使用相关数据。 显示多个级别的层次结构和编辑导航属性中的数据。 在本教程中将继续使用相关数据，通过添加和删除关系以及添加新实体具有与现有实体的关系。
+在上一教程中，您开始使用 `EntityDataSource` 控件来处理相关数据。 您在导航属性中显示了多个级别的层次结构和已编辑的数据。 在本教程中，您将通过添加和删除关系并添加与现有实体有关系的新实体来继续处理相关数据。
 
-你将创建页添加课程分配给部门。 部门已经存在，并且在创建新的课程，同时你将建立它与现有院系之间的关系。
+你将创建一个页面，用于添加分配给部门的课程。 这两个部门已经存在，当您创建一个新课程时，您将在其与现有部门之间建立关系。
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-5/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image1.png)
 
-你还将创建适用于多对多关系通过将一名讲师分配给一门课程 （添加您选择的两个实体之间的关系） 的页面或从一门课程中删除一名讲师 (删除两个实体之间的关系，您选择）。 在数据库中，添加一名讲师和课程之间的关系会导致新行添加到`CourseInstructor`关联表; 中删除关系涉及删除行从`CourseInstructor`关联表。 但是，您执行此操作在实体框架中通过参考的情况下设置导航属性`CourseInstructor`显式表。
+您还将创建一个使用多对多关系的页面，方法是将指导员分配给课程（在您选择的两个实体之间添加关系）或从课程中删除指导员（删除您的两个实体之间的关系select）。 在数据库中，添加讲师和课程之间的关系将导致新行添加到 `CourseInstructor` 关联表中;删除关系涉及到从 `CourseInstructor` 关联表中删除行。 不过，您可以在实体框架中通过设置导航属性来执行此操作，而无需显式引用 `CourseInstructor` 表。
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image3.png)
 
 ## <a name="adding-an-entity-with-a-relationship-to-an-existing-entity"></a>将具有关系的实体添加到现有实体
 
-创建一个名为的新 web 页*CoursesAdd.aspx* ，它使用*Site.Master*母版页，并添加到以下标记`Content`控件命名为`Content2`:
+创建一个使用 CoursesAdd*母版页的*名为的新网页，并将以下标记添加到名为 `Content2`的 `Content` 控件：
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample1.aspx)]
 
-此标记创建`EntityDataSource`选择课程，这样的插入，并且指定的的控件的处理程序`Inserting`事件。 将使用该处理程序来更新`Department`导航属性时的新`Course`创建实体。
+此标记创建一个 `EntityDataSource` 控件，该控件可选择用于启用插入的课程，并为 `Inserting` 事件指定处理程序。 创建新的 `Course` 实体时，将使用该处理程序更新 `Department` 导航属性。
 
-标记还会创建`DetailsView`用于添加新控件`Course`实体。 此标记使用的绑定的字段`Course`实体属性。 你必须输入`CourseID`值，因为这不是系统生成的 ID 字段。 相反，它是创建过程时必须手动指定课程编号。
+标记还会创建一个 `DetailsView` 控件以用于添加新的 `Course` 实体。 标记使用 `Course` 实体属性的绑定字段。 需要输入 `CourseID` 值，因为这不是系统生成的 ID 字段。 相反，它是在创建课程时必须手动指定的课程编号。
 
-使用的模板字段`Department`导航属性因为导航属性不能用于`BoundField`控件。 模板字段提供用于选择院系的下拉列表。 下拉列表绑定到`Departments`实体集通过使用`Eval`而非`Bind`、 再次因为不能直接将导航属性绑定来更新它们。 指定的处理程序`DropDownList`控件的`Init`事件，以便你可以通过更新的代码中存储对用于控件的引用`DepartmentID`外键。
+由于导航属性不能用于 `BoundField` 控件，因此可以对 `Department` 导航属性使用模板字段。 模板字段提供了一个下拉列表，用于选择部门。 下拉列表将通过使用 `Eval` （而不是 `Bind`）绑定到 `Departments` 实体集，因为你不能直接绑定导航属性来更新这些属性。 为 `DropDownList` 控件的 `Init` 事件指定处理程序，以便可以存储对控件的引用以供更新 `DepartmentID` 外键的代码使用。
 
-在中*CoursesAdd.aspx.cs*只是分部类声明后，添加一个类字段以保存对引用`DepartmentsDropDownList`控件：
+在*CoursesAdd.aspx.cs*的分部类声明的后面，添加一个类字段以保存对 `DepartmentsDropDownList` 控件的引用：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample2.cs)]
 
-添加的处理程序`DepartmentsDropDownList`控件的`Init`事件，以便可以将存储到控件的引用。 这样就可以获取用户输入的值，并使用它来更新`DepartmentID`的值`Course`实体。
+为 `DepartmentsDropDownList` 控件的 `Init` 事件添加处理程序，以便可以存储对该控件的引用。 这允许你获取用户输入的值，并使用它来更新 `Course` 实体的 `DepartmentID` 值。
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample3.cs)]
 
-添加的处理程序`DetailsView`控件的`Inserting`事件：
+为 `DetailsView` 控件的 `Inserting` 事件添加处理程序：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample4.cs)]
 
-当用户单击`Insert`，则`Inserting`插入新记录之前引发事件。 在处理程序中的代码获取`DepartmentID`从`DropDownList`控制，并使用它来设置值将用于`DepartmentID`属性的`Course`实体。
+当用户单击 "`Insert`" 时，将在插入新记录前引发 `Inserting` 事件。 处理程序中的代码从 `DropDownList` 控件获取 `DepartmentID`，并使用它来设置将用于 `Course` 实体的 `DepartmentID` 属性的值。
 
-实体框架将会负责处理添加到此课程`Courses`导航属性关联的`Department`实体。 它还会添加到部门`Department`导航属性`Course`实体。
+实体框架将负责将此课程添加到关联 `Department` 实体的 `Courses` 导航属性。 它还将部门添加到 `Course` 实体的 `Department` 导航属性。
 
-运行页。
+运行页面。
 
 [![Image02](the-entity-framework-and-aspnet-getting-started-part-5/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image5.png)
 
-输入 ID、 title、 数信用额度，并选择一个部门，然后单击**插入**。
+输入 "ID"、"标题"、"信用数" 并选择一个部门，然后单击 "**插入**"。
 
-运行*Courses.aspx*页，然后选择同一个部门，以确定新课程。
+运行 "球场 *" 页，* 然后选择同一部门查看新课程。
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-5/_static/image8.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image7.png)
 
 ## <a name="working-with-many-to-many-relationships"></a>使用多对多关系
 
-之间的关系`Courses`实体集和`People`实体集是多对多关系。 一个`Course`实体具有名为的导航属性`People`，可以包含零、 一个或多个相关`Person`实体 （表示讲师分配该课程的教授）。 和一个`Person`实体具有名为的导航属性`Courses`，可以包含零、 一个或多个相关`Course`实体 (表示课程分配该讲师教授)。 一个讲师可能教授多个课程和一门课程可能由多位讲师讲授。 在本演练的此部分中，您将添加和删除之间的关系`Person`和`Course`通过更新相关的实体的导航属性的实体。
+`Courses` 实体集与 `People` 实体集之间的关系是多对多关系。 `Course` 实体具有名为 `People` 的导航属性，该属性可包含零个、一个或多个相关 `Person` 实体（表示分配给讲授该课程的教师）。 `Person` 实体具有一个名为 `Courses` 的导航属性，该属性可包含零个、一个或多个相关 `Course` 实体（表示讲师分配给教授的课程）。 一个讲师可以讲授多个课程，一个课程可能由多个讲师讲授。 在本演练的此部分中，你将通过更新相关实体的导航属性来添加和删除 `Person` 与 `Course` 实体之间的关系。
 
-创建一个名为的新 web 页*InstructorsCourses.aspx* ，它使用*Site.Master*母版页，并添加到以下标记`Content`控件命名为`Content2`:
+创建一个使用 InstructorsCourses*母版页的*名为的新网页，并将以下标记添加到名为 `Content2`的 `Content` 控件：
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample5.aspx)]
 
-此标记创建`EntityDataSource`检索的名称的控件和`PersonID`的`Person`讲师的实体。 一个`DropDrownList`控件绑定到`EntityDataSource`控件。 `DropDownList`控制指定的处理程序`DataBound`事件。 你将使用此处理程序到 databind 这两个下拉列表中，显示课程。
+此标记创建一个 `EntityDataSource` 控件，该控件检索教师 `Person` 实体的名称和 `PersonID`。 `DropDrownList` 控件绑定到 `EntityDataSource` 控件。 `DropDownList` 控件指定 `DataBound` 事件的处理程序。 你将使用此处理程序来 databind 显示课程的两个下拉列表。
 
-标记还会创建将课程分配到所选讲师的使用的控件的以下组：
+标记还会创建以下控件组，用于将课程分配给所选讲师：
 
-- 一个`DropDownList`用于选择一门课程，分配的控件。 使用当前未指派给所选讲师的课程，将填充此控件。
-- 一个`Button`控件以启动分配。
-- 一个`Label`控件来显示一条错误消息，如果分配将失败。
+- 用于选择要分配的课程的 `DropDownList` 控件。 此控件将填充当前未分配给所选讲师的课程。
+- 用于启动赋值的 `Button` 控件。
+- 一个 `Label` 控件，在分配失败时显示错误消息。
 
-最后，标记还创建一组控件用于移除所选讲师的课程。
+最后，标记还会创建一组用于从所选指导员中删除课程的控件。
 
-在中*InstructorsCourses.aspx.cs*，添加 using 语句：
+在*InstructorsCourses.aspx.cs*中，添加 using 语句：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample6.cs)]
 
-添加用于填充两个下拉列表显示课程的一个方法：
+添加用于填充显示课程的两个下拉列表的方法：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample7.cs)]
 
-此代码获取中的所有课程`Courses`实体集，并都获取从课程`Courses`导航属性`Person`显示所选讲师的实体。 然后，确定将哪些课程分配给该讲师，并相应地填充下拉列表。
+此代码将获取 `Courses` 实体集中的所有课程，并从所选讲师的 `Person` 实体的 `Courses` 导航属性获取课程。 然后，它确定分配给该讲师的课程，并相应地填充下拉列表。
 
-添加的处理程序`Assign`按钮的`Click`事件：
+为 "`Assign`" 按钮的 `Click` 事件添加处理程序：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample8.cs)]
 
-此代码获取`Person`显示所选讲师的实体获取`Course`选定课程的实体，并将添加到所选的课程`Courses`讲师的导航属性`Person`实体。 然后，将所做的更改保存到数据库并重新填充下拉列表，因此可以立即看到结果。
+此代码获取选定讲师的 `Person` 实体，获取所选课程的 `Course` 实体，并将所选课程添加到讲师 `Person` 实体的 `Courses` 导航属性。 然后，它会将更改保存到数据库，并重新填充下拉列表，以便可以立即查看结果。
 
-添加的处理程序`Remove`按钮的`Click`事件：
+为 "`Remove`" 按钮的 `Click` 事件添加处理程序：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample9.cs)]
 
-此代码获取`Person`显示所选讲师的实体获取`Course`选定课程的实体，并删除从所选的课程`Person`实体的`Courses`导航属性。 然后，将所做的更改保存到数据库并重新填充下拉列表，因此可以立即看到结果。
+此代码获取选定讲师的 `Person` 实体，获取所选课程的 `Course` 实体，并从 `Person` 实体的 `Courses` 导航属性中删除所选课程。 然后，它会将更改保存到数据库，并重新填充下拉列表，以便可以立即查看结果。
 
-将代码添加到`Page_Load`时没有错误报告，并为添加处理程序，可确保错误消息的方法不可见`DataBound`和`SelectedIndexChanged`讲师下拉列表来填充课程下拉列表的事件：
+将代码添加到 `Page_Load` 方法，以便在报告没有错误时不显示错误消息，并为讲师下拉列表的 `DataBound` 和 `SelectedIndexChanged` 事件添加处理程序，以填充课程下拉列表：
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-5/samples/sample10.cs)]
 
-运行页。
+运行页面。
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-选择讲师。 <strong>分配一门课程</strong>下拉列表显示的课程的教师不讲解，并<strong>删除一门课程</strong>下拉列表显示已分配给讲师的课程。 在中<strong>分配一门课程</strong>部分，选择一门课程，然后单击<strong>分配</strong>。 本课程将移到<strong>删除一门课程</strong>下拉列表。 选择在一门课程<strong>删除一门课程</strong>部分，然后单击<strong>删除</strong><em>。</em> 本课程将移到<strong>分配一门课程</strong>下拉列表。
+选择指导员。 "<strong>分配课程</strong>" 下拉列表显示讲师未讲授的课程，"<strong>删除课程</strong>" 下拉列表显示教师已分配到的课程。 在 "<strong>分配课程</strong>" 部分中，选择课程，然后单击 "<strong>分配</strong>"。 课程将移至 "<strong>删除课程</strong>" 下拉列表。 选择 "<strong>删除课程</strong>" 部分中的课程，并单击 "<strong>删除</strong>"<em>。</em> 课程转到 "<strong>分配课程</strong>" 下拉列表。
 
-现已了解其他一些方法，使用相关数据。 在以下教程中，您将了解如何在数据模型中使用继承来提高您的应用程序的可维护性。
+你现在已经了解了一些使用相关数据的方法。 在以下教程中，你将了解如何在数据模型中使用继承来改善应用程序的可维护性。
 
 > [!div class="step-by-step"]
 > [上一页](the-entity-framework-and-aspnet-getting-started-part-4.md)

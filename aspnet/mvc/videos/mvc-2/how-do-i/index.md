@@ -2,22 +2,22 @@
 uid: mvc/videos/mvc-2/how-do-i/index
 title: How-Do-I | Microsoft Docs
 author: rick-anderson
-description: 在本部分中的视频介绍了 ASP.NET MVC 中，包括如何构建店面销售整个电子商务应用程序从头到尾完成。
+description: 本节中的视频涵盖 ASP.NET MVC，其中包括如何构建 "店面"-完整的电子商务应用程序。
 ms.author: riande
 ms.date: 09/15/2011
 ms.assetid: 9bc6c53a-3e54-4f9d-8bef-0f3359aecf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 7c2fd0d57cdd6775eb027c0dc9b360443bacbfed
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120530"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431954"
 ---
 # <a name="how-do-i"></a>如何
 
-> 在本部分中的视频介绍了 ASP.NET MVC 中，包括如何构建"店面销售"整个电子商务应用程序从头到尾完成。
+> 本节中的视频涵盖 ASP.NET MVC，其中包括如何构建 "店面"-完整的电子商务应用程序。
 
 - [使用 ASP.NET MVC 创建 Tasklist 应用程序](creating-a-tasklist-application-with-aspnet-mvc.md)
 - [使用 ASP.NET MVC 在 15 分钟内创建电影数据库应用程序](creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
@@ -33,10 +33,10 @@ ms.locfileid: "65120530"
 - [显示数据库数据表](displaying-a-table-of-database-data.md)
 - [适用于开发者、生成 NerdDinner 的 ASP.NET MVC 80 分钟技术视频](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
 - [为什么选择 ASP.NET MVC？决策者的 3 分钟概述视频](why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-- [ASP.NET MVC:面向开发人员如何 10 分钟技术视频](aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+- [ASP.NET MVC：怎么做？适用于开发者的 10 分钟技术视频](aspnet-mvc-how-10-minute-technical-video-for-developers.md)
 - [在 ASP.NET MVC Web 应用程序中针对 AJAX 调用返回 JSON 格式的数据](how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
 - [在 ASP.NET MVC 部分视图中使用数据](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-- [实现视图模型，用于管理数据的 ASP.NET MVC 视图](how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+- [实现视图模型以管理 ASP.NET MVC 视图的数据](how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
 - [为 MVC 应用程序创建自定义 HTML 帮助程序](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
 - [在 MVC 应用程序中使用模型绑定器](how-do-i-work-with-model-binders-in-an-mvc-application.md)
 - [在 MVC 应用程序中使用 HttpVerbs 属性](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)

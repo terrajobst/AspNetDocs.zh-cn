@@ -9,11 +9,11 @@ ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
 ms.openlocfilehash: ab00bc90bfc767d06e747be6dfb973245b5aae88
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615474"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439928"
 ---
 # <a name="membership-and-administration"></a>成员身份和管理
 
@@ -29,7 +29,7 @@ ms.locfileid: "74615474"
 
 本教程建立在 Wingtip 玩具教程系列标题为 "通过 PayPal 结帐和付款" 的前一教程中。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何使用代码将自定义角色和用户添加到应用程序。
 - 如何限制对管理文件夹和页面的访问。
@@ -61,7 +61,7 @@ ASP.NET Web 窗体提供成员资格功能。 通过使用默认模板，您可�
 5. 通过添加黄色突出显示的代码来修改*Global.asax.cs*文件，使其显示如下：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
-6. 请注意，`AddUserAndRole` 以红色下划线表示。 双击 "AddUserAndRole" 代码。  
+6. 请注意，`AddUserAndRole` 将为红色且带下划线。 双击 "AddUserAndRole" 代码。  
    突出显示的方法开头的字母 "A" 将带有下划线。
 7. 将鼠标悬停在该字母 "A" 上，并单击允许您为 `AddUserAndRole` 方法生成方法存根的 UI。 
 
@@ -128,7 +128,7 @@ Wingtip 玩具示例应用程序允许匿名用户和已登录用户查看和购
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
 
-保存 web.config*文件。* Web.config*文件指定*只有属于应用程序的 "canEdit" 角色的用户才能访问*管理*文件夹中包含的页。
+保存 *Web.config* 文件。 Web.config*文件指定*只有属于应用程序的 "canEdit" 角色的用户才能访问*管理*文件夹中包含的页。
 
 ### <a name="including-custom-role-navigation"></a>包括自定义角色导航
 
@@ -263,7 +263,7 @@ Wingtip 玩具示例应用程序允许匿名用户和已登录用户查看和购
 13. 单击 "**注销**" 以存在管理模式。   
     请注意，顶部导航窗格不再显示 "**管理**" 菜单项。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，你添加了一个自定义角色和一个属于该自定义角色的用户、对管理文件夹和页面的有限访问权限，并为属于该自定义角色的用户提供了导航。 你使用了模型绑定来用数据填充**DropDownList**控件。 实现了**FileUpload**控件和验证控件。 此外，您还了解了如何在数据库中添加和删除产品。 在下一教程中，你将学习如何实现 ASP.NET 路由。
 

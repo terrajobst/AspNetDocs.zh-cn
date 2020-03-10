@@ -9,11 +9,11 @@ ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c1ff4c112b9a489b8fb9ef3443663cd71eda7965
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625493"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420614"
 ---
 # <a name="displaying-a-custom-error-page-c"></a>显示自定义错误页 (C#)
 
@@ -55,7 +55,7 @@ ms.locfileid: "74625493"
 
 另一种类型的 YSOD 是运行时错误 YSOD，如**图 2**所示。 运行时错误 YSOD 通知访问者发生了运行时错误，但它不包含有关所引发异常的任何信息。 （但是，它还提供了有关如何通过修改 `Web.config` 文件来查看错误详细信息的说明，这是 YSOD 的外观 unprofessional 的一部分。）
 
-默认情况下，会向远程访问的用户显示运行时错误 YSOD （通过 http://www.yoursite.com) ，如**图 2**： `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo` 的浏览器地址栏中的 URL 出现。 存在两个不同的 YSOD 屏幕，因为开发人员对了解错误详细信息感兴趣，但不应在实时站点上显示此类信息，因为它可能会向访问你的网站.
+默认情况下，会向远程访问的用户显示运行时错误 YSOD （通过 http://www.yoursite.com)，如**图 2**： `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`的浏览器地址栏中的 URL 出现。 存在两个不同的 YSOD 屏幕，因为开发人员对了解错误详细信息感兴趣，但不应在实时站点上显示此类信息，因为它可能会向访问你的网站.
 
 > [!NOTE]
 > 如果你正在使用并使用 DiscountASP.NET 作为你的 web 主机，你可能会注意到，访问实时站点时，YSOD 不会显示运行时错误。 这是因为，DiscountASP.NET 将其服务器配置为默认显示异常详细信息 YSOD。 好消息是，可以通过向 `Web.config` 文件添加 `<customErrors>` 节来覆盖此默认行为。 "配置显示的错误页" 部分详细介绍了 `<customErrors>` 部分。
@@ -147,7 +147,7 @@ ms.locfileid: "74625493"
 > [!NOTE]
 > 仅当对由 ASP.NET 引擎处理的资源发出请求时，才会显示自定义错误页。 如我们在[IIS 与 ASP.NET 开发服务器教程之间的核心差异](core-differences-between-iis-and-the-asp-net-development-server-cs.md)中所述，web 服务器可能会自行处理某些请求。 默认情况下，IIS web 服务器处理静态内容（如图像和 HTML 文件）的请求，而不会调用 ASP.NET 引擎。 因此，如果用户请求不存在的图像文件，则会返回 IIS 默认的404错误消息，而不是 ASP。NET 的已配置错误页。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 当 ASP.NET 应用程序中发生未处理的异常时，用户将显示以下三个错误页之一：异常详细信息：绿色的黄屏;运行时错误黄色屏幕死亡;或自定义错误页。 显示哪一错误页取决于应用程序的 `<customErrors>` 配置以及用户是在本地还是远程访问。 默认行为是向本地访问者和运行时错误 YSOD 显示 YSOD 的异常详细信息。
 

@@ -1,57 +1,57 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
-title: 了解 ASP.NET MVC 的执行流程 |Microsoft Docs
+title: 了解 ASP.NET MVC 执行过程 |Microsoft Docs
 author: microsoft
-description: 了解 ASP.NET MVC framework 如何处理分步的浏览器请求。
+description: 了解 ASP.NET MVC 框架分步处理浏览器请求的方式。
 ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: d1608db3-660d-4079-8c15-f452ff01f1db
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
 msc.type: authoredcontent
 ms.openlocfilehash: 28940947253e0af43886cf1231f8aaf4615526cc
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125471"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435452"
 ---
 # <a name="understanding-the-aspnet-mvc-execution-process"></a>了解 ASP.NET MVC 的执行流程
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 了解 ASP.NET MVC framework 如何处理分步的浏览器请求。
+> 了解 ASP.NET MVC 框架分步处理浏览器请求的方式。
 
-对基于 ASP.NET MVC 的 Web 应用程序请求首先穿过**UrlRoutingModule**对象，它是一个 HTTP 模块。 此模块将分析请求并执行路由选择。 **UrlRoutingModule**对象将选择与当前请求匹配的第一个路由对象。 (路由对象是实现的类**RouteBase**，并且通常是实例**路由**类。)如果任何路由都不匹配， **UrlRoutingModule**对象不执行任何操作，并允许请求回退到常规的 ASP.NET 或 IIS 请求处理。
+对基于 ASP.NET MVC 的 Web 应用程序的请求首先通过**UrlRoutingModule**对象，这是一个 HTTP 模块。 此模块将分析请求并执行路由选择。 **UrlRoutingModule**对象选择与当前请求匹配的第一个路由对象。 （路由对象是实现**RouteBase**的类，并且通常是**路由**类的实例。）如果没有任何路由匹配，则**UrlRoutingModule**对象不执行任何操作，并允许请求回退到常规 ASP.NET 或 IIS 请求处理。
 
-从所选**路由**对象， **UrlRoutingModule**对象获取**IRouteHandler**与关联的对象**路由**对象。 通常情况下，在 MVC 应用程序，这将的实例**MvcRouteHandler**。 **IRouteHandler**实例创建**IHttpHandler**对象，并将其传递**IHttpContext**对象。 默认情况下**IHttpHandler**实例为 MVC **MvcHandler**对象。 **MvcHandler**对象然后选择将最终处理该请求的控制器。
+**UrlRoutingModule**对象从所选**路由**对象获取与**路由**对象关联的**IRouteHandler**对象。 通常，在 MVC 应用程序中，这将是**MvcRouteHandler**的实例。 **IRouteHandler**实例创建**IHttpHandler**对象并将其传递到**IHttpContext**对象。 默认情况下，MVC 的**IHttpHandler**实例是**MvcHandler**对象。 然后， **MvcHandler**对象选择将最终处理请求的控制器。
 
 > [!NOTE]
-> 在 IIS 7.0 中运行的 ASP.NET MVC Web 应用程序，没有文件扩展名时，对于 MVC 项目所需。 但是，在 IIS 6.0 中，处理程序要求将.mvc 文件扩展名映射到 ASP.NET ISAPI DLL。
+> 如果 ASP.NET MVC Web 应用程序运行在 IIS 7.0 中，则 MVC 项目不需要文件扩展名。 但是，在 IIS 6.0 中，处理程序要求将 .mvc 文件扩展名映射到 ASP.NET ISAPI DLL。
 
-模块和处理程序是 ASP.NET MVC 框架的入口点。 它们执行以下操作：
+模块和处理程序是 ASP.NET MVC 框架的入口点。 它们执行下列操作：
 
-- MVC Web 应用程序中选择相应的控制器。
+- 选择 MVC Web 应用程序中合适的控制器。
 - 获取特定的控制器实例。
 - 调用控制器的**Execute**方法。
 
 下面列出了 MVC Web 项目的执行阶段：
 
-- 接收应用程序的第一个请求 
+- 接收对应用程序的第一个请求 
 
-    - 在 Global.asax 文件中，**路由**对象添加到**RouteTable**对象。
-- 执行的路由 
+    - 在 global.asax 文件中，将**路由**对象添加到**RouteTable**对象。
+- 执行路由 
 
-    - **UrlRoutingModule**模块使用的第一个匹配**路由**对象中**RouteTable**集合创建**RouteData**对象，然后用来创建**RequestContext** (**IHttpContext**) 对象。
+    - **UrlRoutingModule**模块使用**RouteTable**集合中的第一个匹配**路由**对象来创建**RouteData**对象，然后使用该对象创建**RequestContext** （**IHttpContext**）对象。
 - 创建 MVC 请求处理程序 
 
-    - **MvcRouteHandler**对象创建的实例**MvcHandler**类，并将其传递**RequestContext**实例。
+    - **MvcRouteHandler**对象创建**MvcHandler**类的实例，并向其传递**RequestContext**实例。
 - 创建控制器 
 
-    - **MvcHandler**对象使用**RequestContext**实例，以识别**IControllerFactory**对象 (通常的实例**借助于 DefaultControllerFactory**类) 来创建控制器实例。
+    - **MvcHandler**对象使用**RequestContext**实例标识用于创建控制器实例的**IControllerFactory**对象（通常是**DefaultControllerFactory**类的实例）。
 - 执行控制器- **MvcHandler**实例调用控制器 s **Execute**方法。 |
 - 调用操作 
 
-    - 大多数控制器均继承**控制器**基类。 为此，请控制器**ControllerActionInvoker**与控制器关联的对象将决定哪些操作方法的控制器类来调用，然后调用该方法。
+    - 大多数控制器都从**控制器**基类继承。 对于这样的控制器，与控制器关联的**ControllerActionInvoker**对象确定要调用的 controller 类的操作方法，然后调用该方法。
 - 执行结果 
 
-    - 典型操作方法可能会接收用户输入，准备合适的响应数据，并通过返回的结果类型执行结果。 可以执行的内置结果类型包括：**ViewResult** （其中一个将视图呈现和是最常用的结果类型）， **RedirectToRouteResult**， **RedirectResult**， **ContentResult**， **JsonResult**，并**EmptyResult**。
+    - 典型的操作方法可能会接收用户输入，准备适当的响应数据，然后通过返回结果类型来执行结果。 可以执行的内置结果类型包括以下内容： **ViewResult** （呈现视图，是最常用的结果类型）、 **RedirectToRouteResult**、 **RedirectResult**、 **ContentResult**、 **JsonResult**和**EmptyResult**。

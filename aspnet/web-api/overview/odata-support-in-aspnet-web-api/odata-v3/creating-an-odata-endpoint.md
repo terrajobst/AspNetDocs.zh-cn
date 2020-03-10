@@ -9,11 +9,11 @@ ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: e68a454398f109dfd089be9c9a44d3fe662acc2f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600423"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78448220"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>使用 Web API 2 创建 OData v3 终结点
 
@@ -66,7 +66,7 @@ ms.locfileid: "74600423"
 
 模型是表示应用程序中的数据的对象。 对于本教程，我们需要一个表示产品的模型。 模型对应于 OData 实体类型。
 
-在解决方案资源管理器中，右键单击 "模型" 文件夹。 从上下文菜单中，选择 "**添加**"，然后选择 "**类**"。
+在解决方案资源管理器中，右键单击“模型”文件夹。 在上下文菜单中，依次选择“添加”、“类”。
 
 ![](creating-an-odata-endpoint/_static/image3.png)
 
@@ -90,7 +90,7 @@ ID 属性将为实体键。 客户端可以按 ID 查询产品。 此字段还�
 
 *控制器*是处理 HTTP 请求的类。 为 OData 服务中的每个实体集定义单独的控制器。 在本教程中，我们将创建单个控制器。
 
-在解决方案资源管理器中，右键单击 "控制器" 文件夹。 选择 "**添加**"，然后选择 "**控制器**"。
+在解决方案资源管理器中，右键单击 "控制器" 文件夹。 依次选择“添加”、“控制器”。
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
@@ -152,7 +152,7 @@ EDM 是数据的抽象模型。 EDM 用于创建元数据文档和定义服务�
 
 在此步骤中，您将使用实体框架来为数据库提供一些测试数据。 此步骤是可选的，但它允许立即测试 OData 终结点。
 
-从 "**工具**" 菜单中，选择 " **NuGet 包管理器**"，然后选择 "**程序包管理器控制台**"。 在“包管理器控制台”窗口中，输入以下命令：
+从 "**工具**" 菜单中，选择 " **NuGet 包管理器**"，然后选择 "**程序包管理器控制台**"。 在“Package Manager Console”窗口中，输入以下命令：
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
@@ -240,7 +240,7 @@ OData 支持多种序列化格式：
 
 默认情况下，Web API 使用 AtomPubJSON "light" 格式。
 
-若要获取 AtomPub 格式，请将 Accept 标头设置为 "application/atom + xml"。 下面是一个示例响应正文：
+若要获取 AtomPub 格式，请将 Accept 标头设置为 "application/atom + xml"。 下面是响应正文示例：
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample13.cmd)]
 

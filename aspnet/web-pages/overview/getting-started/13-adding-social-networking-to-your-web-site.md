@@ -1,109 +1,109 @@
 ---
 uid: web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
-title: 将社交网络添加到 ASP.NET Web Pages (Razor) 站点 |Microsoft Docs
+title: 将社交网络添加到 ASP.NET 网页（Razor）站点 |Microsoft Docs
 author: Rick-Anderson
-description: 这一章介绍了如何将您的网站与社交网络服务集成。 在本章中，您将学习如何让人们书签/链接你的网站...
+description: 本章介绍如何将站点与社交网络服务集成。 在本章中，你将了解如何允许人员将你的网站做成书签/链接 。
 ms.author: riande
 ms.date: 02/21/2014
 ms.assetid: 03c342f9-b35c-4d7c-b9ed-cd9aaaffedb6
 msc.legacyurl: /web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
 msc.type: authoredcontent
 ms.openlocfilehash: 1637464b0473bba8133acbbf8918d92b4f552701
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114480"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78422954"
 ---
-# <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a>添加社交网络到 ASP.NET 网页 (Razor) 站点
+# <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a>将社交网络添加到 ASP.NET 网页（Razor）站点
 
-通过[Tom FitzMacken](https://github.com/tfitzmac)
+作者： [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 本文介绍如何将适用于 Facebook、 Twitter、 Reddit 和 Digg 的社交网络链接添加到页面中的 ASP.NET Web Pages (Razor) 网站，以及如何包含 Twitter 源、 Xbox 玩家卡和 Gravatar 图像。
+> 本文介绍如何将适用于 Facebook、Twitter、Reddit 和 Digg 的社交网络链接添加到 ASP.NET 网页（Razor）网站中的页面，以及如何包含 Twitter 源、Xbox 游戏者卡和 Gravatar 映像。
 > 
-> 你将学习：
+> 学习内容：
 > 
-> - 如何让人们书签/链接你的站点。
+> - 如何让用户加入书签/链接您的网站。
 > - 如何添加 Twitter 源。
-> - 如何添加 Facebook**如**到页的按钮。
+> - 如何将**类似于**Facebook 的按钮添加到页面中。
 > - 如何呈现 Gravatar.com 图像。
-> - 如何在站点上显示的 Xbox 玩家卡。
+> - 如何在你的站点上显示 Xbox 游戏者卡。
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>在本教程中使用的软件版本
+> ## <a name="software-versions-used-in-the-tutorial"></a>本教程中使用的软件版本
 > 
 > 
-> - ASP.NET 网页 (Razor) 2
-> - ASP.NET Web 帮助程序库 （NuGet 包）
+> - ASP.NET 网页（Razor）2
+> - ASP.NET Web 帮助程序库（NuGet 包）
 >   
 > 
-> 本教程还适用于 ASP.NET 网页 3，但 ASP.NET Web 帮助程序库使用的部分除外。
+> 本教程还适用于 ASP.NET 网页3，但使用 ASP.NET Web Helper Library 的部分除外。
 
 <a id="Linking_Your_Website"></a>
-## <a name="linking-your-website-on-social-networking-sites"></a>链接你的网站上社交网络网站
+## <a name="linking-your-website-on-social-networking-sites"></a>链接社交网站上的网站
 
-如果用户喜欢你的站点上的某些内容，他们通常想要与朋友共享。 您可以通过使其轻松显示用户可以单击要共享的页，Digg、 Reddit、 Facebook、 Twitter 或类似的网站的标志符号 （图标）。
+如果用户赞了网站上的内容，通常需要与朋友分享。 可以通过显示用户可单击以在 Digg、Reddit、Facebook、Twitter 或类似站点上共享页面的字形（图标）来简化此过程。
 
-若要显示这些标志符号，请添加`LinkSharecode`到页面的帮助器。 访问您的页面的用户可以单击单个标志符号。 如果他们的帐户拥有的社交网站，它们可以在该站点上中发布您的页面的链接。
+若要显示这些字形，请将 `LinkSharecode` 帮助器添加到页面。 访问页面的用户可以单击单个字形。 如果他们具有使用该社交网络站点的帐户，则他们可以在该站点上发布指向页面的链接。
 
-![图 1](13-adding-social-networking-to-your-web-site/_static/image1.jpg)
+![图片1](13-adding-social-networking-to-your-web-site/_static/image1.jpg)
 
-1. 将 ASP.NET Web Helpers Library 添加到你的网站，如中所述[ASP.NET Web Pages 站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未添加它。-创建一个名为页*ListLinkShare.cshtml*并添加以下标记：
+1. 如在[ASP.NET 网页站点中安装帮助](https://go.microsoft.com/fwlink/?LinkId=252372)程序中所述，将 ASP.NET Web 帮助程序库添加到你的网站中（如果尚未添加）。-创建名为*ListLinkShare*的页并添加以下标记：
 
     [!code-cshtml[Main](13-adding-social-networking-to-your-web-site/samples/sample1.cshtml)]
 
-    在此示例中，当`LinkShare`帮助程序运行时，页面标题传递作为参数，再将传递到社交网络站点的页面标题。 但是，你可以传递所需的任何字符串。 此示例还指定要包含在列表中的社交网站。 您可以指定与你的站点相关的社交网络站点。
-2. 运行*ListLinkShare.cshtml*页在浏览器中。 (请确保的页中选择**文件**工作区之前运行它。)
-3. 单击其中一个已注册了站点的标志符号。 链接将您转至页面上所选的社交网络站点可以在其中共享链接。 例如，如果单击 Reddit 链接，您会转到`submit to reddit`Reddit 网站上的页。
+    在此示例中，当 `LinkShare` 帮助程序运行时，会将页标题作为参数传递，进而会将页面标题传递到社交网络站点。 但是，可以传入任何所需的字符串。 此示例还指定要包含在列表中的社交网络站点。 你可以指定与你的网站相关的社交网络站点。
+2. 在浏览器中运行*ListLinkShare*页。 （请确保在运行之前在 "**文件**" 工作区中选择了该页面。）
+3. 单击要注册的某个网站的标志符号。 该链接会将你转到所选社交网络站点上可共享链接的页面。 例如，如果单击 "Reddit" 链接，则转到 Reddit 网站上的 "`submit to reddit`" 页。
 
-     ![图 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
+     ![图片2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
 
 <a id="Adding_a_Twitter_Feed"></a>
 ## <a name="adding-a-twitter-feed"></a>添加 Twitter 源
 
-有关使用与 Twitter API 的当前版本兼容的 Twitter 帮助程序的信息，请参阅[Twitter 帮助程序](../ui-layouts-and-themes/twitter-helper.md)。 此示例演示如何编写您自己的帮助程序，因此可以轻松地重复使用很多页中的代码。
+有关使用与当前版本的 Twitter API 兼容的 Twitter 帮助器的信息，请参阅[twitter 帮助](../ui-layouts-and-themes/twitter-helper.md)程序。 此示例演示如何编写您自己的帮助程序，以便您可以轻松地重复使用多个页面中的代码。
 
 <a id="Displaying_a_Facebook_Button"></a>
-## <a name="displaying-a-facebook-quotlikequot-button"></a>显示是 Facebook&quot;如&quot;按钮
+## <a name="displaying-a-facebook-quotlikequot-button"></a>显示 Facebook &quot;如&quot; 按钮
 
-在某些情况下，最好的选择是，直接从社交网络提供程序，而无需依赖于一个帮助程序获取的代码。 这是特别是当社交网络提供商不是帮助程序更新更快地更新其自己的选项。
+在某些情况下，最好的选择是直接从社交网络提供商处获取代码，而不是依赖于帮助者。 如果社交网络提供程序更新其选项的速度比助手更新的速度更快，则更是如此。
 
-若要将 Facebook 功能 （如 Like 按钮） 添加到你的站点，可以检索从代码片段[developers.facebook.com](https://developers.facebook.com/)站点。 在 Facebook 网站上，使用其工具生成了与你的站点相关的代码段。
+若要将 Facebook 功能（如 "赞" 按钮）添加到站点，你可以从[developers.facebook.com](https://developers.facebook.com/)站点检索代码片段。 在 Facebook 网站上，使用其工具生成与你的网站相关的代码片段。
 
-以下突出显示的代码是从 developers.facebook.com 站点上的喜欢按钮工具中检索到的代码。 必须提供应用程序 id。
+以下突出显示的代码是从 developers.facebook.com 站点上的 "Like" 按钮工具检索到的代码。 你必须提供自己的应用 ID。
 
 [!code-html[Main](13-adding-social-networking-to-your-web-site/samples/sample2.html?highlight=7-14,16-17)]
 
 <a id="Rendering_a_Gravatar_Image"></a>
 ## <a name="rendering-a-gravatar-image"></a>呈现 Gravatar 图像
 
-一个*Gravatar* (&quot;全局识别虚拟形象&quot;) 是可以为您的头像的多个网站使用的图像&#8212;，即表示您的图像。 例如，Gravatar 可以识别一个人在论坛文章中，在博客评论中，依次类推。 (您可以注册在 Gravatar 网站在自己 Gravatar [ http://www.gravatar.com/ ](http://www.gravatar.com/)。)如果你想要在网站上显示人的名称或电子邮件地址旁边的图像，可以使用 Gravatar 帮助器。
+*Gravatar* （一种 &quot;全局识别的头像&quot;）是一个图像，可以在多个网站上用作你&#8212;的头像，即表示你的映像。 例如，Gravatar 可以标识论坛帖子中的人员、博客评论等。 （你可以在[http://www.gravatar.com/](http://www.gravatar.com/)上的 Gravatar 网站注册自己的 Gravatar。）如果要在网站上的人员姓名或电子邮件地址旁显示图像，则可以使用 Gravatar 帮助程序。
 
-在此示例中，您将自己表示单个 Gravatar。 使用 Gravatar 另一种方法是让它们在站点上注册时指定其 Gravatar 地址的人。 (您可以了解如何让用户在注册[添加安全性和 ASP.NET Web Pages 站点的成员身份](https://go.microsoft.com/fwlink/?LinkId=202904)。)然后每当显示为该用户的信息，您可以只需将 Gravatar 添加到其中显示用户的名称。
+在此示例中，你将使用代表自己的单个 Gravatar。 使用 Gravatar 的另一种方法是让用户在网站上注册时指定其 Gravatar 地址。 （您可以了解如何让人们注册[ASP.NET 网页站点添加安全性和成员身份](https://go.microsoft.com/fwlink/?LinkId=202904)。）然后，只要显示该用户的信息，只需将 Gravatar 添加到显示该用户名称的位置即可。
 
-1. 将 ASP.NET Web Helpers Library 添加到你的网站，如中所述[ASP.NET Web Pages 站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未准备好。
-2. 创建一个名为的新 web 页*Gravatar.cshtml*。
-3. 将以下标记添加到文件： 
+1. 根据在[ASP.NET 网页站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)中所述，将 ASP.NET Web 帮助程序库添加到你的网站中（如果尚未安装）。
+2. 创建名为*Gravatar*的新网页。
+3. 将以下标记添加到文件中： 
 
     [!code-cshtml[Main](13-adding-social-networking-to-your-web-site/samples/sample3.cshtml)]
 
-    `Gravatar.GetHtml`方法，该页显示 Gravatar 图像。 若要更改图像的大小，可以作为第二个参数包含一个数字。 默认大小为 80。 数字少于 80 使映像更小。 大于 80 使映像更大的数字。
-4. 在中`Gravatar.GetHtml`方法，将替换`<Your Gravatar account here>`Gravatar 帐户使用的电子邮件地址。 （如果没有 Gravatar 帐户，你可以使用能力的人员合作的电子邮件的地址）。
-5. 在浏览器中运行页。 该页面显示您指定的电子邮件地址的两个 Gravatar 图像。 第二个图像是比第一个较小。 
+    `Gravatar.GetHtml` 方法显示页面上的 Gravatar 图像。 若要更改图像的大小，可以将数字包含为第二个参数。 默认大小为80。 小于80的数字使图像更小。 大于80的数字会使图像变大。
+4. 在 `Gravatar.GetHtml` 方法中，将 `<Your Gravatar account here>` 替换为用于 Gravatar 帐户的电子邮件地址。 （如果没有 Gravatar 帐户，可以使用该用户的电子邮件地址。）
+5. 在浏览器中运行页。 该页为你指定的电子邮件地址显示两个 Gravatar 图像。 第二个图像小于第一个图像。 
 
-    ![图 4](13-adding-social-networking-to-your-web-site/_static/image3.jpg)
+    ![图片4](13-adding-social-networking-to-your-web-site/_static/image3.jpg)
 
 <a id="Displaying_an_Xbox_Gamer_Card"></a>
-## <a name="displaying-an-xbox-gamer-card"></a>显示 Xbox 玩家卡
+## <a name="displaying-an-xbox-gamer-card"></a>显示 Xbox 游戏玩家卡
 
-当人们可以玩 Microsoft Xbox 联机游戏时，每个用户具有唯一的 id。 为玩家卡，其中显示其信誉、 玩家分数，最近播放游戏的窗体中的每个玩家保留统计信息。 如果你是 Xbox 玩家，可以显示玩家卡在你的站点中的页上通过使用`GamerCard`帮助器。
+当人们联机玩 Microsoft Xbox 游戏时，每个用户都有唯一的 ID。 将以游戏者卡的形式为每个玩家保留统计信息，其中显示了其信誉、游戏玩家评分和最近玩的游戏。 如果你是 Xbox 游戏者，则可以使用 `GamerCard` 帮助程序在站点的页面上显示你的游戏者卡。
 
-1. 将 ASP.NET Web Helpers Library 添加到你的网站，如中所述[ASP.NET Web Pages 站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)，如果你尚未准备好。
-2. 创建一个名为的新页*XboxGamer.cshtml*并添加以下标记。
+1. 根据在[ASP.NET 网页站点中安装帮助程序](https://go.microsoft.com/fwlink/?LinkId=252372)中所述，将 ASP.NET Web 帮助程序库添加到你的网站中（如果尚未安装）。
+2. 创建名为*XboxGamer*的新页面，并添加以下标记。
 
     [!code-cshtml[Main](13-adding-social-networking-to-your-web-site/samples/sample4.cshtml)]
 
-    您使用`GamerCard.GetHtml`属性来指定要显示的玩家卡片的别名。
-3. 在浏览器中运行页。 该页面显示您指定的 Xbox 玩家卡。
+    使用 `GamerCard.GetHtml` 属性指定要显示的游戏玩家卡的别名。
+3. 在浏览器中运行页。 页面将显示您指定的 Xbox 游戏玩家卡。
 
-    ![图 5](13-adding-social-networking-to-your-web-site/_static/image4.jpg)
+    ![图片 5](13-adding-social-networking-to-your-web-site/_static/image4.jpg)

@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string
-title: '[如何实现:]将信息从一个页面传递到另一个使用查询字符串 |Microsoft Docs'
+title: '[如何实现：]使用查询字符串将信息从一个页面传递到另一个页面 |Microsoft Docs'
 author: rick-anderson
-description: 在本视频中 Chris Pels 将显示方式的信息可以从一个页面传递到另一个使用查询字符串。 首先，请参阅如何构造中的查询字符串...
+description: 在此视频中，Chris 像素将显示如何使用查询字符串将信息从一个页面传递到另一个页面。 首先，请参阅如何在中构造查询字符串 。
 ms.author: riande
 ms.date: 06/26/2008
 ms.assetid: 81bd2d32-53c5-4bd9-8d09-dd8a2c734f3b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string
 msc.type: video
 ms.openlocfilehash: cc52592bbb377e9f04e56f6cc1f02d16a271d158
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416995"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438290"
 ---
-# <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a>[如何实现:]将信息从一个页面传递到另一个使用查询字符串
+# <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a>[如何实现：]使用查询字符串将信息从一个页面传递到另一个页面
 
-通过[Chris Pels](https://twitter.com/chrispels)
+作者： [Chris 像素](https://twitter.com/chrispels)
 
-在本视频中 Chris Pels 将显示方式的信息可以从一个页面传递到另一个使用查询字符串。 首先，请参阅如何构造查询字符串包括变量名称和值中的数据输入窗体上的信息。 接下来，请参阅如何访问查询字符串信息，包括如何将多个查询字符串变量进行处理发布页面时。 作为查询字符串信息的服务器端处理的一部分，请参阅如何实现验证存在的查询字符串变量，并且如果它们包含预期的数据类型。 最后，了解如何将传递特殊字符进行编码的字符串的查询字符串中包括一个空格和符号。
+在此视频中，Chris 像素将显示如何使用查询字符串将信息从一个页面传递到另一个页面。 首先，请参阅如何构造查询字符串，包括数据输入窗体上的信息中的变量名称和值。 接下来，请参阅发布页面时如何访问查询字符串信息，其中包括如何处理多个查询字符串变量。 作为查询字符串信息的服务器端处理的一部分，请参阅如何实现验证以了解查询字符串变量是否包含所需的数据类型。 最后，了解如何通过对字符串进行编码，在查询字符串中传递特殊字符，包括空格和与号。
 
-[&#9654;观看视频 （25 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-pass-information-from-one-page-to-another-using-a-query-string)
+[&#9654;观看视频（25分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-pass-information-from-one-page-to-another-using-a-query-string)

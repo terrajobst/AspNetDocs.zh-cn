@@ -9,11 +9,11 @@ ms.assetid: 491ed5ae-9be1-4191-87be-65e4e1c57690
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
 ms.openlocfilehash: d4ce8b278322684be2d44faefd6e69fc524bbe18
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617942"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424094"
 ---
 # <a name="users-and-roles-on-the-production-website-vb"></a>生产网站上的用户和角色（VB）
 
@@ -97,7 +97,7 @@ ASP.NET 包括许多内置登录相关的 Web 控件，使您可以轻松地将�
 
 若要在生产网站上实现类似于 WSAT 的功能，你始终可以构建自己的一系列实现 WSAT 功能的网页。 若要开始，请查看 `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\ASP.NETWebAdminFiles`的文件夹中的 WSAT 源代码。 另一种方法是使用 Dan Clem 的 WSAT 替代项，他在本文中分享[自己的网站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)。 Dan 会指导读者完成构建类似于 WSAT 的自定义工具的过程，包括其应用程序用于下载的源代码（ C#在中为），并提供有关将自定义的 WSAT 添加到托管网站的逐步说明。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 网站管理工具（WSAT）可与成员资格和角色应用程序服务结合使用，以管理您的网站的用户和角色信息。 遗憾的是，WSAT 只能在本地访问，不能从您的生产网站访问。 但是，通过将开发环境中的连接字符串更改为指向生产数据库，你可以使用 WSAT 来管理生产网站上的用户和角色。
 
@@ -115,4 +115,4 @@ ASP.NET 网站管理工具（WSAT）可与成员资格和角色应用程序服�
 - [网站安全教程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 > [!div class="step-by-step"]
-> [上一部分](precompiling-your-website-vb.md)
+> [上一页](precompiling-your-website-vb.md)

@@ -9,11 +9,11 @@ ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 6375bb2be158cea18309ffa71c71ac3e67bc91ed
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457864"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433076"
 ---
 # <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>通过 ASP.NET MVC 使用 DropDownList 帮助程序
 
@@ -29,7 +29,7 @@ ms.locfileid: "77457864"
 
 本主题附带有已完成的教程C#源代码的 Visual Web Developer 项目。 [下载](https://code.msdn.microsoft.com/Using-the-DropDownList-67f9367d)。
 
-### <a name="what-youll-build"></a>所需操作
+### <a name="what-youll-build"></a>你将生成
 
 您将创建使用[DropDownList](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) helper 选择类别的操作方法和视图。 你还将使用**jQuery**添加可在需要新类别（如流派或艺术家）时使用的 "插入类别" 对话框。 下面是 "创建" 视图的屏幕截图，显示用于添加新流派并添加新音乐家的链接。
 
@@ -215,4 +215,4 @@ HTML 窗体通常用于将数据发布到服务器。 下面的代码演示 `Sel
 在下一部分中，你将了解 ASP.NET MVC 基架机制如何与**DropDownList** helper 一起工作。
 
 > [!div class="step-by-step"]
-> [Next](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [下一部分](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

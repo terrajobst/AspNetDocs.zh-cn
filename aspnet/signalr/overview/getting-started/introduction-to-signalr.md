@@ -9,11 +9,11 @@ ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
 ms.openlocfilehash: 8dbc31a5c8d59fa55dc5b513c1a51d24d18a685f
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519396"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431096"
 ---
 # <a name="introduction-to-signalr"></a>SignalR 简介
 
@@ -39,7 +39,7 @@ SignalR 提供了一个简单的 API，用于创建从服务器端 .NET 代码�
 
 ![通过 SignalR 调用方法](introduction-to-signalr/_static/image1.png)
 
-SignalR 自动处理连接管理，让你可同时向所有连接的客户端广播消息，就像聊天室一样。 也可以向特定客户端发送消息。 客户端和服务器之间的连接是持久的，不同于传统的 HTTP 连接，后者针对每次通信重新建立。
+SignalR 自动处理连接管理，并使你能够同时将消息广播到所有连接的客户端，如聊天室。 你还可以将消息发送到特定客户端。 客户端与服务器之间的连接是永久性的，不同于经典 HTTP 连接，这是为每个通信重新建立的。
 
 SignalR 支持 "服务器推送" 功能，在此功能中，服务器代码可以使用远程过程调用（RPC），而不是 web 上常见的请求-响应模型，在浏览器中调用客户端代码。
 

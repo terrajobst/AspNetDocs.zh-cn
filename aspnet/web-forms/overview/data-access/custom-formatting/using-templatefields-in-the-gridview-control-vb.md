@@ -9,11 +9,11 @@ ms.assetid: a92cd6ed-609a-4e40-ad23-004b54afd436
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3c090dbf65d9acbcc0e343cda5e8da7fff2d35d3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74581512"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78426848"
 ---
 # <a name="using-templatefields-in-the-gridview-control-vb"></a>在 GridView 控件中使用 TemplateField (VB)
 
@@ -213,7 +213,7 @@ Templatefield 的第三个用途是显示有关 GridView 的基础数据的元�
 
 **图 16**：显示了员工在该作业上的天数（[单击查看完全大小的图像](using-templatefields-in-the-gridview-control-vb/_static/image48.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 使用 GridView 控件中的 TemplateField，可以在显示数据时提供比其他字段控件更高的灵活性。 Templatefield 适用于以下情况：
 

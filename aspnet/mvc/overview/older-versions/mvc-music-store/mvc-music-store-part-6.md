@@ -1,78 +1,78 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: 第 6 部分：使用数据批注的模型验证 |Microsoft Docs
+title: 第6部分：使用数据批注进行模型验证 |Microsoft Docs
 author: jongalloway
-description: 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 6 部分介绍如何为模型 V 使用数据注释...
+description: 本教程系列详细介绍了生成 ASP.NET MVC 音乐应用商店示例应用程序所需执行的所有步骤。 第6部分介绍如何对模型 V 使用数据批注 。
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
 ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129657"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78433532"
 ---
-# <a name="part-6-using-data-annotations-for-model-validation"></a>第 6 部分：使用数据注释进行模型验证
+# <a name="part-6-using-data-annotations-for-model-validation"></a>第6部分：使用数据批注进行模型验证
 
-通过[Jon Galloway](https://github.com/jongalloway)
+作者： [Jon Galloway](https://github.com/jongalloway)
 
-> MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发分步教程应用程序。  
+> MVC 音乐应用商店是一个教程应用程序，该应用程序逐步介绍了如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发。  
 >   
-> MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。  
+> MVC 音乐应用商店是一种轻型示例存储实现，它可以在线销售音乐专辑，并实现基本的网站管理、用户登录和购物车功能。  
 >   
-> 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 6 部分介绍如何为模型验证中使用数据注释。
+> 本教程系列详细介绍了生成 ASP.NET MVC 音乐应用商店示例应用程序所需执行的所有步骤。 第6部分介绍如何使用数据批注进行模型验证。
 
-我们使用我们创建和编辑窗体具有一个主要问题： 未做任何验证。 我们可以执行某些操作，如在价格字段中，保留空白的必填的字段或键入字母，我们将看到的第一个错误来自数据库。
+我们在创建和编辑表单方面遇到了重大问题：它们未进行任何验证。 我们可以执行一些操作，例如将必填字段留空，或在 Price 字段中键入字母，将看到的第一个错误来自数据库。
 
-我们可以轻松添加验证到我们的应用程序，这需要通过将数据批注添加到我们的模型类来实现。 数据批注，我们可以描述应用于模型属性，我们想要的规则和 ASP.NET MVC 将负责强制执行它们并向我们的用户显示相应的消息。
+我们可以通过将数据批注添加到我们的模型类来轻松地向应用程序添加验证。 数据批注允许我们描述要应用于模型属性的规则，ASP.NET MVC 将负责强制执行这些规则并向用户显示相应的消息。
 
-## <a name="adding-validation-to-our-album-forms"></a>向我们唱片集窗体中添加验证
+## <a name="adding-validation-to-our-album-forms"></a>将验证添加到我们的相册窗体
 
-我们将使用以下数据注释属性：
+我们将使用以下数据批注属性：
 
-- **所需**– 指示该属性是必填的字段
-- **DisplayName** – 定义要我们在窗体字段和验证消息使用的文本
-- **StringLength** – 定义字符串字段的最大长度
-- **范围**– 为数字字段提供最大和最小值
-- **将绑定**– 列出要排除或包括当参数或窗体值绑定到模型属性的字段
-- **ScaffoldColumn** – 允许隐藏编辑器窗体中的字段
+- **必需**–指示属性是必填字段
+- **DisplayName** –定义要用于窗体字段和验证消息的文本
+- **StringLength** –定义字符串字段的最大长度
+- **范围**–为数值字段提供最大值和最小值
+- **绑定**–在将参数或窗体值绑定到模型属性时列出要排除或包含的字段
+- **ScaffoldColumn** –允许从编辑器窗体中隐藏字段
 
-*注意：有关使用数据注释属性的模型验证的详细信息，请参阅上的 MSDN 文档*[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
+*注意：有关使用数据批注属性进行模型验证的详细信息，请参阅 MSDN 文档，网址*为[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
 
-打开唱片集类并添加以下*使用*到顶部的语句。
+打开唱片集类并向顶部添加以下*using*语句。
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample1.cs)]
 
-接下来，更新以添加显示和验证属性，如下所示的属性。
+接下来，更新属性以添加显示和验证属性，如下所示。
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample2.cs)]
 
-我们可以在那里，我们已更改为虚拟属性的流派和艺术家。 这样，若要延迟加载它们根据需要的实体框架。
+在此过程中，我们还将流派和艺术家更改为虚拟属性。 这允许实体框架根据需要延迟加载它们。
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample3.cs)]
 
-后具有这些属性添加到我们唱片集的模型，我们创建和编辑屏幕立即开始验证字段，并使用显示名称，我们已选择 (例如唱片集画面 Url 而不是 AlbumArtUrl)。 运行应用程序并浏览到 /StoreManager/Create。
+将这些属性添加到唱集模型后，我们的 "创建和编辑" 屏幕会立即开始验证字段并使用所选的显示名称（例如唱片集画面 Url 而不是 AlbumArtUrl）。 运行应用程序并浏览到/StoreManager/Create。
 
 ![](mvc-music-store-part-6/_static/image1.png)
 
-接下来，我们将分一些验证规则。 输入 0 的价格，然后将标题留空。 当我们单击创建按钮时，我们将看到显示验证错误消息显示哪些字段不符合验证规则我们已定义的窗体。
+接下来，我们将中断某些验证规则。 输入0价格，并将标题留空。 单击 "创建" 按钮时，将看到显示了验证错误消息的窗体，其中显示了哪些字段不满足我们定义的验证规则。
 
 ![](mvc-music-store-part-6/_static/image2.png)
 
 ## <a name="testing-the-client-side-validation"></a>测试客户端验证
 
-服务器端验证是从应用程序的角度看，非常重要，因为用户可以绕过客户端验证。 但是，仅实现服务器端验证网页窗体表现出三个严重问题。
+从应用程序的角度来看，服务器端验证非常重要，因为用户可以绕过客户端验证。 但是，仅实现服务器端验证的网页窗体出现三个重要问题。
 
-1. 用户必须等待要发布，在服务器上，验证的窗体，并且要发送到其浏览器的响应。
-2. 他们会校正字段，以便它现在通过验证规则时，用户不会获得即时反馈。
-3. 我们都浪费服务器资源来执行验证逻辑，而不是利用用户的浏览器。
+1. 用户必须等待窗体发布、验证在服务器上，以及将响应发送到其浏览器。
+2. 当用户更正某个字段以便现在传递验证规则时，用户不会立即获得反馈。
+3. 我们会浪费服务器资源来执行验证逻辑，而不是利用用户的浏览器。
 
-幸运的是，ASP.NET MVC 3 基架模板具有客户端验证内置的需要说明，否则任何额外工作。
+幸运的是，ASP.NET MVC 3 基架模板内置了客户端验证，无需额外的工作。
 
-在标题字段中键入单个字母满足验证要求，以便验证消息将立即删除。
+在 "标题" 字段中键入一个字母可满足验证要求，因此将立即删除验证消息。
 
 ![](mvc-music-store-part-6/_static/image3.png)
 

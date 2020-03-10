@@ -9,11 +9,11 @@ ms.assetid: 86a80b35-88bd-4b7c-bd58-f6e7997197d4
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
 ms.openlocfilehash: e71275c93558c0b6ca087a145786e8c846b69721
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457517"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78434726"
 ---
 # <a name="intro-to-aspnet-mvc-3-c"></a>ASP.NET MVC 3 简介 (C#)
 
@@ -33,7 +33,7 @@ ms.locfileid: "77457517"
 > 
 > 本主题提供了包含C#源代码的 Visual Web Developer 项目。 [下载C#版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果希望 Visual Basic，请切换到本教程的[Visual Basic 版本](../vb/intro-to-aspnet-mvc-3.md)。
 
-## <a name="what-youll-build"></a>所需操作
+## <a name="what-youll-build"></a>你将生成
 
 您将实现一个简单的电影列表应用程序，该应用程序支持从数据库创建、编辑和列出影片。 下面是要生成的应用程序的两个屏幕截图。 它包含一个页面，其中显示了数据库中的电影列表：
 
@@ -88,4 +88,4 @@ Visual Web Developer 是一个 IDE 或集成开发环境。 就像使用 Microso
 右侧此默认模板提供两个要访问的页面和一个基本登录页。 下一步是更改此应用程序的工作方式，并在此过程中了解有关 ASP.NET MVC 的一些相关信息。 关闭浏览器并更改某些代码。
 
 > [!div class="step-by-step"]
-> [Next](adding-a-controller.md)
+> [下一部分](adding-a-controller.md)

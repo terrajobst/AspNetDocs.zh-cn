@@ -9,11 +9,11 @@ ms.assetid: 09279194-bcf9-4b59-a09d-c68e5926a758
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 7875304c672625d8c0eaaf0fea8ef509bb801a3a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611844"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438872"
 ---
 # <a name="deploying-your-site-using-an-ftp-client-vb"></a>使用 FTP 客户端部署站点 (VB)
 
@@ -134,7 +134,7 @@ Web 应用程序开发和部署不是一次性过程。 例如，在创建书籍
 
 最后，请记住，重新部署应用程序可能需要几秒钟到几分钟的时间，具体取决于需要复制到生产环境中的文件的数量和大小。 在此期间，访问站点的用户可能会遇到错误或错误行为。 你可以通过将名为 `App_Offline.htm` 的页添加到应用程序的根目录中来 "关闭" 你的整个应用程序，该目录向用户说明网站关闭进行维护（或任何其他），稍后将进行备份。 存在 `App_Offline.htm` 文件时，ASP.NET 运行时会将所有传入请求重定向到该页面。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 部署 web 应用程序需要将所需的文件从开发环境复制到生产环境。 通过网络传输文件的最常见方式是文件传输协议（FTP），大多数 web 主机提供程序支持对其 web 服务器的 FTP 访问。 在本教程中，我们介绍了如何使用 FTP 客户端将所需文件部署到 web 服务器。 部署后，任何连接到 Internet 的人都可以访问该网站！
 

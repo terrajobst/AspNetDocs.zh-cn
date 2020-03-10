@@ -9,11 +9,11 @@ ms.assetid: f7c00fbd-652c-433d-8ed3-0e5168a4d4df
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6e0d57ef2f1e8132f19777a7d14e94611c68adcd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615446"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441494"
 ---
 # <a name="uploading-files-vb"></a>上载文件 (VB)
 
@@ -229,7 +229,7 @@ FileUpload `SaveAs(filePath)` 将上传的文件保存到指定的*filePath*。 
 
 如果你的应用程序需要处理大文件，则需要仔细调查这些挑战，并根据特定需求查找合适的解决方案。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 构建需要捕获二进制数据的应用程序带来了许多挑战。 在本教程中，我们探讨了前两个步骤：决定存储二进制数据的位置，并允许用户通过网页上传二进制内容。 在接下来的三个教程中，我们将了解如何将已上传的数据与数据库中的记录相关联，以及如何在其文本数据字段旁显示二进制数据。
 

@@ -9,11 +9,11 @@ ms.assetid: 5aee8202-a4e3-4aa9-8a95-cd5d156cea4c
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e1ddd43524a61ff2e012171eba1a8dc8efbf8f1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587713"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78426302"
 ---
 # <a name="master-pages-and-site-navigation-c"></a>母版页和站点导航 (C#)
 
@@ -219,7 +219,7 @@ SiteMapDataSource 控件一次返回一个级别的站点地图层次结构，�
 
 **图 13**：将新的 Web 用户控件添加到 `UserControls` 文件夹（[单击查看完全大小的图像](master-pages-and-site-navigation-cs/_static/image31.png)）
 
-SectionLevelTutorialListing
+SectionLevelTutorialListing.ascx
 
 [!code-aspx[Main](master-pages-and-site-navigation-cs/samples/sample12.aspx)]
 
@@ -239,7 +239,7 @@ SectionLevelTutorialListing.ascx.cs
 
 **图 15**：列出了基本报表教程（[单击以查看完全大小的图像](master-pages-and-site-navigation-cs/_static/image37.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 定义站点地图并完成母版页后，我们为数据相关的教程提供了一致的页面布局和导航方案。 无论我们将多少页添加到我们的网站，更新站点范围的页面布局或站点导航信息都是一种快速而简单的过程，因为此信息是集中式的。 具体而言，页面布局信息在母版页 `Site.master` 中定义，并在 `Web.sitemap`中的站点映射中定义。 我们无需编写*任何*代码即可实现此站点范围的页面布局和导航机制，并在 Visual Studio 中保留完整的 WYSIWYG 设计器支持。
 

@@ -9,11 +9,11 @@ ms.assetid: 91ee29ee-0689-40ee-914a-e7dd733b6622
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 msc.type: authoredcontent
 ms.openlocfilehash: e0bf88e3477acbde910cde956042449bc86ce79a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600030"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421286"
 ---
 # <a name="part-6-creating-product-and-order-controllers"></a>第6部分：创建产品和订单控制器
 
@@ -68,7 +68,7 @@ ms.locfileid: "74600030"
 
 ![](using-web-api-with-entity-framework-part-6/_static/image2.png)
 
-单击 **添加**。 这会添加一个名为 OrdersController.cs 的文件。 接下来，需要修改控制器的默认实现。
+单击 **“添加”** 。 这会添加一个名为 OrdersController.cs 的文件。 接下来，需要修改控制器的默认实现。
 
 首先，删除 `PutOrder` 和 `DeleteOrder` 方法。 对于本示例，客户不能修改或删除现有订单。 在实际应用程序中，需要大量的后端逻辑来处理这些情况。 （例如，订单是否已发货？）
 

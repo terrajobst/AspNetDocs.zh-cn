@@ -9,11 +9,11 @@ ms.assetid: 53e659cc-eefb-40c1-a1dc-559481c99443
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 3ec549f9da7a2b3a021e77827f0039e6ae60b5c5
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74616066"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424568"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>使用一个 DropDownList 实现母版/详细信息筛选 (C#)
 
@@ -130,7 +130,7 @@ ms.locfileid: "74616066"
 
 **图 14**：默认情况下，所有产品均已列出（[单击以查看完全大小的图像](master-detail-filtering-with-a-dropdownlist-cs/_static/image40.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 显示分层相关的数据时，通常可以使用主/详细信息报表来显示数据，用户可以从层次结构顶部开始浏览数据，并向下钻取详细信息。 在本教程中，我们将介绍如何生成一个简单的大纲/详细信息报告，其中显示了所选类别的产品。 为此，可以使用 DropDownList 作为类别列表，并将 GridView 用于属于所选类别的产品。
 
@@ -143,4 +143,4 @@ ms.locfileid: "74616066"
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [下一页](master-detail-filtering-with-two-dropdownlists-cs.md)
+> [下一部分](master-detail-filtering-with-two-dropdownlists-cs.md)

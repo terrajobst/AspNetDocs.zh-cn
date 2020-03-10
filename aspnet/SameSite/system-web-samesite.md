@@ -5,12 +5,12 @@ description: 了解如何使用在 ASP.NET 中 SameSite cookie
 ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: edb368910b24be2d042afe3c19ffa1fb23245443
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.openlocfilehash: 7987a5d6c9b3a82679d42a2d381d471d56f495c2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455695"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439934"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
@@ -177,7 +177,7 @@ Microsoft 解决该问题的方法是帮助你实现浏览器检测组件，以�
 * 您的应用程序可能会看到我们的测试网站不提供的浏览器。
 * 应准备好根据环境需要添加检测。
 
-根据所使用的 .NET 版本和 web 框架的不同，检测检测的方式会有所不同。 可以在 <xref:HTTP.HttpCookie> 调用站点调用以下代码：
+根据所使用的 .NET 版本和 web 框架的不同，检测检测的方式会有所不同。 可在[HttpCookie](/dotnet/api/system.web.httpcookie)调用站点调用以下代码：
 
 [!code-csharp[](sample/SameSiteCheck.cs?name=snippet)]
 
@@ -248,6 +248,8 @@ Google 不会使旧版 chrome 版本可用。 遵循[下载 Chromium](https://ww
 * [Chromium 74 Win64](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/638880/)
 * 如果你不使用64位版本的 Windows，则可以使用[OmahaProxy 查看器](https://omahaproxy.appspot.com/)来查找与 Chrome 74 （v 74.0.3729.108）对应的 Chromium 分支，并使用[Chromium 提供的说明](https://www.chromium.org/getting-involved/download-chromium)。
 
+从未加 `80.0.3975.0`的抑制版本开始，可以使用新的标志 `--enable-features=SameSiteDefaultChecksMethodRigorously` 禁用宽松的 + 后续暂时缓解功能，以允许在删除缓解功能的最终状态下测试站点和服务。 有关详细信息，请参阅 Chromium 项目[SameSite Updates](https://www.chromium.org/updates/same-site)
+
 #### <a name="test-with-chrome-80"></a>用 Chrome 80 + 测试
 
 [下载](https://www.google.com/chrome/)支持新属性的 Chrome 版本。 编写时，当前版本为 Chrome 80。 Chrome 80 需要启用标志 `chrome://flags/#same-site-by-default-cookies` 才能使用新行为。 还应启用（`chrome://flags/#cookies-without-same-site-must-be-secure`）以测试不启用 sameSite 属性的 cookie 的即将发生的行为。 Chrome 80 位于目标上，以使交换机将不具有属性的 cookie 视为 `SameSite=Lax`，但对于某些请求，会出现超时宽限期。 若要禁用定时宽限期，可以通过以下命令行参数启动 Chrome 80：
@@ -302,6 +304,7 @@ Electron 的版本包括较早版本的 Chromium。 例如，团队使用的 Ele
 ## <a name="additional-resources"></a>其他资源
 
 * [即将推出 SameSite Cookie 更改 ASP.NET 和 ASP.NET Core](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
+* [SameSite 和 "SameSite = None" 测试和调试的提示安全 "cookie](https://www.chromium.org/updates/same-site/test-debug)
 * [Chromium 博客：开发人员：准备好新 SameSite = 无;安全 Cookie 设置](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [SameSite cookie 说明](https://web.dev/samesite-cookies-explained/)
 * [Chrome 更新](https://www.chromium.org/updates/same-site)

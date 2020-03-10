@@ -9,11 +9,11 @@ ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: fbb4cd7afa2506879d47bce980bf0164aad40c2c
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519266"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447200"
 ---
 # <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中创建 ASP.NET Web 项目
 
@@ -31,7 +31,7 @@ ms.locfileid: "76519266"
 > 有关如何为 Azure 云服务或 Azure 移动服务创建 web 项目的信息，请参阅[Azure 云服务和 ASP.NET 入门](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/)和[使用 azure 移动服务 .Net 后端创建排行榜应用程序](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 本文适用于安装了[Update 3](https://go.microsoft.com/fwlink/?linkid=397827&amp;clcid=0x409)的[Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566) 。
 
@@ -54,7 +54,7 @@ ASP.NET 提供了两种 web 项目之间的选择： *web 应用程序项目*和
 3. 如果需要应用程序的运行状况监视和使用情况监视，请在右窗格中单击 "**将 Application Insights 添加到项目**" 复选框。 有关详细信息，请参阅[在 Web 应用程序中监视性能](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/)。
 4. 指定项目**名称**、**位置**和其他选项，然后单击 **"确定"** 。
 
-    此时将显示 "**新建 ASP.NET 项目**" 对话框。
+    此时将出现 **“新建 ASP.NET 项目”** 对话框。
 
     ![“新建项目”对话框](creating-web-projects-in-visual-studio/_static/image2.png)
 5. 单击模板。
@@ -357,7 +357,7 @@ Visual Studio 2013 中，这些功能与在 Visual Studio 2012 中相同，但�
 
 如果要为在一个 Azure AD[租户](https://technet.microsoft.com/library/jj573650.aspx)中定义的用户帐户启用身份验证，请选择此选项。 例如，该站点是 contoso.com 的，它将可供 Contoso 公司的员工在 contoso.onmicrosoft.com 租户中使用。 无法将 Azure AD 配置为允许其他租户的用户访问该应用程序。
 
-#### <a name="domain"></a>域
+#### <a name="domain"></a>Domain
 
 输入要在其中安装应用程序的 Azure AD 域，例如： `contoso.onmicrosoft.com`。 如果有[自定义域](http://www.cloudidentity.com/blog/2013/04/14/adding-a-custom-domain-to-your-windows-azure-ad/)，如 `contoso.com` 而不是 `contoso.onmicrosoft.com`，则可以在此处输入。
 

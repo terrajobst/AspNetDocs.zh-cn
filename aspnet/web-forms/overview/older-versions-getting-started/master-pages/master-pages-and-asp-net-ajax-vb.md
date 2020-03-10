@@ -9,11 +9,11 @@ ms.assetid: 0ee9318c-29bb-4d58-b1dc-94e575b8ae10
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 7be4ff422b91321ff83ed1f1c731c9a0bfe768f1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74638080"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78421814"
 ---
 # <a name="master-pages-and-aspnet-ajax-vb"></a>母版页和 ASP.NET AJAX (VB)
 
@@ -204,7 +204,7 @@ ASP.NET AJAX 框架包含一个 Timer 控件，该控件在指定时间执行回
 
 **图 12**：单击 "继续" 按钮以重新启动计时器（[单击以查看完全大小的映像](master-pages-and-asp-net-ajax-vb/_static/image36.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 使用 ASP.NET AJAX framework 生成启用 AJAX 的 web 应用程序时，必须确保每个启用 AJAX 的网页都包含 ScriptManager 控件。 为简化此过程，我们可以将 ScriptManager 添加到母版页，而不必记得向每个内容页添加 ScriptManager。 步骤1说明了如何将 ScriptManager 添加到母版页，步骤2中介绍了如何实现内容页中的 AJAX 功能。
 

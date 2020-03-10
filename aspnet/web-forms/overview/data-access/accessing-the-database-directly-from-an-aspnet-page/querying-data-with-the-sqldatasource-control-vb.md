@@ -9,11 +9,11 @@ ms.assetid: b12f752d-3502-40a4-b695-fc7b7d08cfd3
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 199ddb46e877c3a0937672d33241a240660684da
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606043"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430058"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-vb"></a>使用 SqlDataSource 控件查询数据 (VB)
 
@@ -195,7 +195,7 @@ SqlDataSource 会出现另一个很微妙，其中包含分页和排序。 默�
 
 **图 15**： GridView 显示了每个产品的 ID、名称和关联的类别名称（[单击以查看完全大小的图像](querying-data-with-the-sqldatasource-control-vb/_static/image23.gif)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何使用 SqlDataSource 控件查询和显示数据。 与 ObjectDataSource 一样，SqlDataSource 充当代理，提供用于访问数据的声明性方法。 它的属性指定要连接到的数据库，以及要执行的 SQL `SELECT` 查询;可以通过属性窗口或使用 "配置数据源" 向导来指定。
 

@@ -9,11 +9,11 @@ ms.assetid: 67b25f4c-2823-42b6-b07d-1d650b3fd711
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
 msc.type: authoredcontent
 ms.openlocfilehash: cafe47cf5766bb14503852ec6e9f305d1e6d426f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618426"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78426578"
 ---
 # <a name="using-the-formviews-templates-vb"></a>使用 FormView 的模板（VB）
 
@@ -88,7 +88,7 @@ ms.locfileid: "74618426"
 
 **图 4**：流体的 FormView 输出（[单击以查看完全大小的图像](using-the-formview-s-templates-vb/_static/image12.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 GridView 和 DetailsView 控件可以使用 Templatefield 自定义其输出，但仍会以类似于网格的 boxy 格式显示其数据。 在需要使用不太严格的布局来显示单个记录的情况下，FormView 是理想选择。 与 DetailsView 一样，FormView 从其 `DataSource`呈现单条记录，但与 DetailsView 不同的是，它仅由模板组成，不支持字段。
 

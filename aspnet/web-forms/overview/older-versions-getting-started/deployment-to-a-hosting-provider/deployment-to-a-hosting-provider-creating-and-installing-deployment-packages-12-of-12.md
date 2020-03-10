@@ -9,11 +9,11 @@ ms.assetid: 3fc23eed-921d-4d46-a610-a2d156e4bd03
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: db8f58e3679e6dea865dadb6f64916032dd9f38c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74639864"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424034"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 应用程序：疑难解答（12/12）
 
@@ -317,4 +317,4 @@ Code First 正在尝试创建数据库，但应用\_数据文件夹不存在。 
 "项目**属性**" 窗口包含一个 "目标框架" 下拉列表，但不能通过只是将其从 **.NET Framework 4.5**改为 **.NET Framework 4**来解决此问题。 如果将目标框架更改为早期版本，则该项目仍将引用更高版本的程序集，并且将不会运行。 你必须手动更改这些引用或创建一个面向 .NET Framework 4 或更早版本的新项目。 有关详细信息，请参阅网站[的 .NET Framework 目标](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx)。
 
 > [!div class="step-by-step"]
-> [上一部分](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [上一页](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

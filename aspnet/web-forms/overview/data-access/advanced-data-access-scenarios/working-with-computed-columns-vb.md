@@ -9,11 +9,11 @@ ms.assetid: 5811b8ff-ed56-40fc-9397-6b69ae09a8f6
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e425d7363c2cdea6efb0ba51f3fc2b6a5330bf2a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74602827"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420854"
 ---
 # <a name="working-with-computed-columns-vb"></a>处理计算列 (VB)
 
@@ -210,7 +210,7 @@ Northwind 数据库没有任何计算列，因此我们需要添加一个。 在
 > [!NOTE]
 > GridView 当前对可编辑字段使用 BoundFields，从而导致默认编辑界面。 由于 `CompanyName` 字段是必需的，因此应将其转换为包含 RequiredFieldValidator 的 TemplateField。 对于感兴趣的读者来说，我将其作为练习。 有关将 BoundField 转换为 TemplateField 并添加验证控件的分步说明，请参阅向[编辑和插入界面添加验证控件](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)教程。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在定义表的架构时，Microsoft SQL Server 允许包含计算列。 这些列的值是从通常引用同一记录中其他列中的值的表达式计算得出的。 由于计算列的值基于表达式，因此它们是只读的，不能在 `INSERT` 或 `UPDATE` 语句中为其赋值。 这会在使用尝试自动生成相应的 `INSERT`、`UPDATE`和 `DELETE` 语句的 TableAdapter 的主查询中使用计算列时带来挑战。
 

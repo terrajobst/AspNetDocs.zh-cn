@@ -9,11 +9,11 @@ ms.assetid: e1fec43e-1daf-49d2-b0c7-7f1b930455cc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 24f88e44e0f878127314774d4e8846f80133413e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599289"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430556"
 ---
 # <a name="dynamically-populating-a-control-c"></a>动态填充控件 (C#)
 
@@ -69,4 +69,4 @@ HTML 按钮（作为 HTML 控件，因为我们不需要回发到服务器）将
 单击该按钮将从服务器中检索日期（[单击查看完全大小的图像](dynamically-populating-a-control-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一页](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [下一部分](dynamically-populating-a-control-using-javascript-code-cs.md)

@@ -1,48 +1,48 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-server
-title: ASP.NET SignalR 中心 API 指南-服务器 (C#) |Microsoft Docs
+title: ASP.NET SignalR Hub API 指南-Server （C#） |Microsoft Docs
 author: bradygaster
-description: 本文档介绍了 SignalR 版本 2，ASP.NET SignalR 中心 API 的服务器端编程的代码示例演示...
+description: 本文档介绍如何对 SignalR 版本2的 ASP.NET SignalR Hub API 的服务器端进行编程，并提供代码示例演示 。
 ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: b19913e5-cd8a-4e4b-a872-5ac7a858a934
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
 ms.openlocfilehash: c681b104b15bfc4a04587c7abf685dcf20def2ca
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112791"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431366"
 ---
-# <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR 中心 API 指南-服务器 (C#)
+# <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR Hub API 指南-Server （C#）
 
-通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 本文档提供了简介 SignalR 版本 2，ASP.NET SignalR 中心 API 的服务器端编程的代码示例演示常见的选项。
+> 本文档介绍了如何对 SignalR 版本2的 ASP.NET SignalR Hub API 的服务器端编程，其中的代码示例演示了常见选项。
 > 
-> SignalR 中心 API，可从连接的客户端到服务器和客户端到服务器进行远程过程调用 (Rpc)。 在服务器代码中，定义可由客户端，调用的方法和调用客户端运行的方法。 在客户端代码中，定义在服务器上，可以调用的方法，并调用在服务器运行的方法。 SignalR 将负责所有为你的客户端-服务器探测功能。
+> 利用 SignalR 中心 API，你可以将服务器中的远程过程调用（Rpc）连接到已连接的客户端和客户端。 在服务器代码中，你将定义可由客户端调用的方法，并调用在客户端上运行的方法。 在客户端代码中，定义可从服务器调用的方法，并调用在服务器上运行的方法。 SignalR 负责处理所有的客户端到服务器的操作。
 > 
-> SignalR 还提供了一个称为持久连接的较低级别 API。 SignalR、 集线器和持久性连接的介绍，请参阅[SignalR 2 简介](../getting-started/introduction-to-signalr.md)。
+> SignalR 还提供名为持久性连接的较低级别 API。 有关 SignalR、集线器和持续连接的简介，请参阅[SignalR 2 简介](../getting-started/introduction-to-signalr.md)。
 > 
 > ## <a name="software-versions-used-in-this-topic"></a>本主题中使用的软件版本
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - .NET 4.5
-> - SignalR 版本 2
+> - SignalR 版本2
 >   
 > 
 > 
 > ## <a name="topic-versions"></a>主题版本
 > 
-> 有关 SignalR 的早期版本的信息，请参阅[SignalR 较早版本](../older-versions/index.md)。
+> 有关早期版本的 SignalR 的信息，请参阅[SignalR 旧版本](../older-versions/index.md)。
 > 
-> ## <a name="questions-and-comments"></a>问题和提出的意见
+> ## <a name="questions-and-comments"></a>问题和注释
 > 
-> 请在你喜欢本教程的内容以及我们可以改进的页的底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，你可以发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
+> 请提供有关你喜欢本教程的方式的反馈，并在页面底部的评论中留下反馈。 如果你有与本教程不直接相关的问题，则可以将其发布到[ASP.NET SignalR 论坛](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 ## <a name="overview"></a>概述
 
@@ -52,81 +52,81 @@ ms.locfileid: "65112791"
 
     - [/Signalr URL](#signalrurl)
     - [配置 SignalR 选项](#options)
-- [如何创建和使用 Hub 类](#hubclass)
+- [如何创建和使用集线器类](#hubclass)
 
     - [中心对象生存期](#transience)
-    - [Camel 大小写的 JavaScript 客户端中的中心名称](#hubnames)
+    - [JavaScript 客户端中集线器名称的大小写大小写](#hubnames)
     - [多个中心](#multiplehubs)
-    - [强类型化中心](#stronglytypedhubs)
-- [如何在客户端可以调用的中心类中定义的方法](#hubmethods)
+    - [强类型中心](#stronglytypedhubs)
+- [如何在 Hub 类中定义客户端可以调用的方法](#hubmethods)
 
-    - [在 JavaScript 客户端中的方法名称的 camel 大小写](#methodnames)
-    - [当以异步方式执行](#asyncmethods)
+    - [JavaScript 客户端中方法名称的大小写大小写](#methodnames)
+    - [何时异步执行](#asyncmethods)
     - [定义重载](#overloads)
-    - [报告从集线器方法调用的进度](#progress)
-- [如何从 Hub 类方法调用客户端](#callfromhub)
+    - [报告集线器方法调用的进度](#progress)
+- [如何从中心类调用客户端方法](#callfromhub)
 
-    - [选择哪些客户端将收到 RPC](#selectingclients)
-    - [方法名称没有编译时验证](#dynamicmethodnames)
+    - [选择将接收 RPC 的客户端](#selectingclients)
+    - [没有方法名称的编译时验证](#dynamicmethodnames)
     - [不区分大小写的方法名称匹配](#caseinsensitive)
     - [异步执行](#asyncclient)
-- [如何从 Hub 类管理组成员身份](#groupsfromhub)
+- [如何从中心类管理组成员身份](#groupsfromhub)
 
-    - [异步执行 Add 和 Remove 方法](#asyncgroupmethods)
-    - [组成员身份暂留](#grouppersistence)
+    - [异步执行添加和移除方法](#asyncgroupmethods)
+    - [组成员持久性](#grouppersistence)
     - [单用户组](#singleusergroups)
 - [如何处理中心类中的连接生存期事件](#connectionlifetime)
 
-    - [OnConnected、 OnDisconnected 和 OnReconnected 调用时](#onreconnected)
-    - [调用方状态不会填充](#nocallerstate)
-- [如何从上下文属性中获取有关客户端的信息](#contextproperty)
-- [如何将客户端和 Hub 类之间传递状态](#passstate)
-- [如何处理错误，Hub 类](#handleErrors)
-- [如何调用方法的客户端和管理的中心类外部的组](#callfromoutsidehub)
+    - [如果调用 OnConnected、OnDisconnected 和 OnReconnected](#onreconnected)
+    - [未填充调用方状态](#nocallerstate)
+- [如何从上下文属性获取有关客户端的信息](#contextproperty)
+- [如何在客户端和中心类之间传递状态](#passstate)
+- [如何处理中心类中的错误](#handleErrors)
+- [如何从中心类的外部调用客户端方法和管理组](#callfromoutsidehub)
 
     - [调用客户端方法](#callingclientsoutsidehub)
-    - [管理组成员资格](#managinggroupsoutsidehub)
+    - [管理组成员身份](#managinggroupsoutsidehub)
 - [如何启用跟踪](#tracing)
-- [如何自定义中心管道](#hubpipeline)
+- [如何自定义集线器管道](#hubpipeline)
 
-有关如何将客户端程序的文档，请参阅以下资源：
+有关如何对客户端进行编程的文档，请参阅以下资源：
 
 - [SignalR 中心 API 指南-JavaScript 客户端](hubs-api-guide-javascript-client.md)
 - [SignalR 中心 API 指南-.NET 客户端](hubs-api-guide-net-client.md)
 
-仅在.NET 4.5 中提供了用于 SignalR 2 服务器组件。 运行.NET 4.0 的服务器必须使用 SignalR 1.x 版。
+SignalR 2 的服务器组件只在 .NET 4.5 中提供。 运行 .NET 4.0 的服务器必须使用 SignalR v1. x。
 
 <a id="route"></a>
 
 ## <a name="how-to-register-signalr-middleware"></a>如何注册 SignalR 中间件
 
-若要定义的路由的客户端将用于连接到中心，请调用`MapSignalR`方法时在应用程序启动。 `MapSignalR` 是[扩展方法](https://msdn.microsoft.com/library/vstudio/bb383977.aspx)为`OwinExtensions`类。 下面的示例演示如何定义使用的 OWIN 启动类的 SignalR 集线器路由。
+若要定义客户端将用于连接到中心的路由，请在应用程序启动时调用 `MapSignalR` 方法。 `MapSignalR` 是 `OwinExtensions` 类的[扩展方法](https://msdn.microsoft.com/library/vstudio/bb383977.aspx)。 下面的示例演示如何使用 OWIN startup 类定义 SignalR Hub 路由。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample1.cs)]
 
-如果要添加到 ASP.NET MVC 应用程序的 SignalR 功能，请确保 SignalR 路由在其他路由之前添加。 有关详细信息，请参阅[教程：使用 SignalR 2 和 MVC 5 入门](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)。
+如果要将 SignalR 功能添加到 ASP.NET MVC 应用程序，请确保将 SignalR 路由添加到其他路由之前。 有关详细信息，请参阅[教程：入门与 SignalR 2 和 MVC 5 结合](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)。
 
 <a id="signalrurl"></a>
 
 ### <a name="the-signalr-url"></a>/Signalr URL
 
-默认情况下，客户端将用于连接到中心的路由 URL 是"/ signalr"。 （不要将此 URL 使用"/ signalr/中心"URL，这是自动生成的 JavaScript 文件混淆。 有关生成的代理的详细信息，请参阅[SignalR 中心 API 指南-JavaScript 客户端-生成的代理和它为您完成](hubs-api-guide-javascript-client.md#genproxy)。)
+默认情况下，客户端将用于连接到中心的路由 URL 为 "/signalr"。 （请不要将此 URL 与自动生成的 JavaScript 文件的 "/signalr/hubs" URL 混淆。 有关生成的代理的详细信息，请参阅[SignalR 中心 API 指南-JavaScript 客户端-生成的代理及其功能](hubs-api-guide-javascript-client.md#genproxy)。）
 
-可能有特殊的情况下，它让 SignalR; 无法使用此基 URL例如，名为在项目中有一个文件夹*signalr*并且不想要更改的名称。 在这种情况下，更改基 URL，如以下示例所示 (替换为"/ signalr"在与你所需的 URL 的示例代码)。
+可能会出现一些特殊情况，使此基 URL 无法用于 SignalR;例如，你的项目中有一个名为*signalr*的文件夹，并且你不希望更改该名称。 在这种情况下，可以更改基 URL，如以下示例中所示（将示例代码中的 "/signalr" 替换为所需 URL）。
 
-**指定的 URL 的服务器代码**
+**指定 URL 的服务器代码**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample2.cs?highlight=1)]
 
-**指定的 URL （具有生成的代理） 的 JavaScript 客户端代码**
+**指定 URL 的 JavaScript 客户端代码（包含生成的代理）**
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample3.js?highlight=1)]
 
-**指定 （而不生成的代理） 的 URL 的 JavaScript 客户端代码**
+**指定 URL （不包含生成的代理）的 JavaScript 客户端代码**
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample4.js?highlight=1)]
 
-**.NET 客户端代码，它指定的 URL**
+**指定 URL 的 .NET 客户端代码**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample5.cs?highlight=1)]
 
@@ -134,47 +134,47 @@ ms.locfileid: "65112791"
 
 ### <a name="configuring-signalr-options"></a>配置 SignalR 选项
 
-重载的`MapSignalR`方法使您能够指定自定义 URL、 自定义依赖关系解析程序，以及以下选项：
+使用 `MapSignalR` 方法的重载可指定自定义 URL、自定义依赖关系解析程序和以下选项：
 
-- 启用从浏览器客户端使用 CORS 或 JSONP 的跨域调用。
+- 从浏览器客户端使用 CORS 或 JSONP 启用跨域调用。
 
-    通常如果浏览器加载来自的页面`http://contoso.com`，在同一个域中，是在的 SignalR 连接`http://contoso.com/signalr`。 如果从页`http://contoso.com`建立到`http://fabrikam.com/signalr`，即跨域连接。 出于安全原因，默认情况下将禁用跨域连接。 有关详细信息，请参阅[ASP.NET SignalR 中心 API 指南-JavaScript 客户端-如何建立跨域连接](hubs-api-guide-javascript-client.md#crossdomain)。
+    通常情况下，当浏览器从 `http://contoso.com`加载页面时，SignalR 连接位于同一域中 `http://contoso.com/signalr`。 如果 `http://contoso.com` 的页面与 `http://fabrikam.com/signalr`建立连接，则这是一个跨域连接。 出于安全原因，在默认情况下将禁用跨域连接。 有关详细信息，请参阅[ASP.NET SignalR HUB API 指南-JavaScript 客户端-如何建立跨域连接](hubs-api-guide-javascript-client.md#crossdomain)。
 - 启用详细的错误消息。
 
-    发生错误时，SignalR 的默认行为是将一条没有有关发生了什么情况的详细信息的通知消息发送到客户端。 向客户端发送详细的错误消息建议不要在生产中，因为恶意用户可能能够使用攻击针对应用程序中的信息。 有关故障排除，可以使用此选项以暂时启用更详细的错误报告。
+    出现错误时，SignalR 的默认行为是向客户端发送一条通知消息，而不会详细说明发生了什么情况。 不建议在生产环境中向客户端发送详细的错误信息，因为恶意用户可能会对你的应用程序使用该信息。 若要进行故障排除，可以使用此选项来暂时启用更丰富的错误报告。
 - 禁用自动生成的 JavaScript 代理文件。
 
-    默认情况下，与代理服务器的 JavaScript 文件的中心类生成响应的 URL"/ signalr/中心"。 如果不想要使用的 JavaScript 代理，或如果你想要手动生成此文件，并引用你的客户端中的物理文件，可以使用此选项以禁用代理生成。 有关详细信息，请参阅[SignalR 中心 API 指南-JavaScript 客户端-How to create for SignalR 的物理文件生成代理](hubs-api-guide-javascript-client.md#manualproxy)。
+    默认情况下，会生成一个带有中心类代理的 JavaScript 文件，以响应 URL "/signalr/hubs"。 如果你不想使用 JavaScript 代理，或者要手动生成此文件并在客户端中引用物理文件，则可以使用此选项来禁用代理生成。 有关详细信息，请参阅[SignalR 中心 API 指南-JavaScript 客户端-如何为 SignalR 生成的代理创建物理文件](hubs-api-guide-javascript-client.md#manualproxy)。
 
-下面的示例演示如何在调用中指定的 SignalR 连接 URL 和这些选项`MapSignalR`方法。 若要指定自定义 URL，将为"/ signalr"在你想要使用的 URL 的示例中。
+下面的示例演示如何在对 `MapSignalR` 方法的调用中指定 SignalR 连接 URL 和这些选项。 若要指定自定义 URL，请将示例中的 "/signalr" 替换为要使用的 URL。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample6.cs)]
 
 <a id="hubclass"></a>
 
-## <a name="how-to-create-and-use-hub-classes"></a>如何创建和使用 Hub 类
+## <a name="how-to-create-and-use-hub-classes"></a>如何创建和使用集线器类
 
-若要创建一个中心，请创建派生的类[Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)。 下面的示例演示一个简单的中心类的聊天应用程序。
+若要创建集线器，请创建一个从[Signalr](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)派生的类。 下面的示例演示了聊天应用程序的简单集线器类。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample7.cs)]
 
-在此示例中，连接的客户端可以调用`NewContosoChatMessage`方法，并接收的数据时，将广播到所有连接的客户端。
+在此示例中，连接的客户端可以调用 `NewContosoChatMessage` 方法，在此情况下，接收的数据将广播到所有连接的客户端。
 
 <a id="transience"></a>
 
 ### <a name="hub-object-lifetime"></a>中心对象生存期
 
-不实例化 Hub 类或从服务器; 在代码中调用其方法所有的可为您通过 SignalR 集线器管道。 SignalR 在每次需要处理一个中心操作，例如当客户端连接、 断开连接，或对服务器发出方法调用创建 Hub 类的新实例。
+不会在服务器上实例化 Hub 类或从自己的代码中调用其方法;SignalR 中心管道完成的所有操作。 SignalR 创建中心类的新实例，每次需要处理集线器操作时，例如客户端连接、断开连接或对服务器进行方法调用时。
 
-Hub 类的实例是暂时的因为不能使用它们来保持到下一个方法调用中的状态。 每次服务器接收方法调用从客户端，您的中心类流程的新实例的消息。 若要保留通过多个连接和方法调用的状态，使用如一个数据库或静态变量的某些其他方法，Hub 类或不是派生的不同类上`Hub`。 如果您将保留在内存中的数据，Hub 类上使用静态变量之类的方法的数据将丢失时应用域回收数。
+由于 Hub 类的实例是暂时性的，因此不能使用它们来维护对下一个方法调用的状态。 每次服务器接收来自客户端的方法调用时，中心类的新实例就会处理该消息。 若要通过多个连接和方法调用来维护状态，请使用一些其他方法（例如数据库）或中心类的静态变量，或不从 `Hub`派生的不同类。 如果在内存中保留数据，则使用方法（如中心类上的静态变量）将在应用程序域回收时丢失数据。
 
-如果你想要从你自己的中心类外运行的代码将消息发送到客户端，则不能通过实例化的中心类实例，但你可以执行此操作通过为您的中心类获取对 SignalR 上下文对象的引用。 有关详细信息，请参阅[如何调用方法的客户端和管理的中心类外部的组](#callfromoutsidehub)本主题中更高版本。
+如果要将消息从你自己的运行中心类的代码中发送到客户端，则无法通过实例化集线器类实例来执行此操作，但可以通过获取中心类的 SignalR 上下文对象的引用来执行此操作。 有关详细信息，请参阅本主题后面的[如何从此中心类外部调用客户端方法和管理组](#callfromoutsidehub)。
 
 <a id="hubnames"></a>
 
-### <a name="camel-casing-of-hub-names-in-javascript-clients"></a>Camel 大小写的 JavaScript 客户端中的中心名称
+### <a name="camel-casing-of-hub-names-in-javascript-clients"></a>JavaScript 客户端中集线器名称的大小写大小写
 
-默认情况下，JavaScript 客户端通过使用 camel 大小写版本的类名称引用中心。 SignalR 自动进行此更改，以便 JavaScript 代码可以遵循 JavaScript 约定。 前面的示例将称为`contosoChatHub`JavaScript 代码中。
+默认情况下，JavaScript 客户端使用类名的 camel 大小写形式引用中心。 SignalR 会自动进行此更改，以便 JavaScript 代码可以符合 JavaScript 约定。 前面的示例在 JavaScript 代码中称为 `contosoChatHub`。
 
 **服务器**
 
@@ -184,7 +184,7 @@ Hub 类的实例是暂时的因为不能使用它们来保持到下一个方法�
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample9.js?highlight=1)]
 
-如果你想要指定其他名称的客户端要使用，请添加`HubName`属性。 当你使用`HubName`属性，没有任何名称更改为 JavaScript 客户端上混合大小写。
+若要为客户端指定不同的名称，请添加 `HubName` 特性。 使用 `HubName` 特性时，JavaScript 客户端上不会更改为 camel 大小写格式。
 
 **服务器**
 
@@ -198,45 +198,45 @@ Hub 类的实例是暂时的因为不能使用它们来保持到下一个方法�
 
 ### <a name="multiple-hubs"></a>多个中心
 
-应用程序中，可以定义多个中心类。 当这样做时，共享此连接，但是独立的组：
+可以在一个应用程序中定义多个集线器类。 当你执行此操作时，将共享连接，但组是不同的：
 
-- 所有客户端将使用相同的 URL 来建立与你的服务的 SignalR 连接 ("/ signalr"或你的自定义 URL，如果你指定一个)，由服务定义和所有中心使用连接。
+- 所有客户端都将使用相同的 URL 来与服务建立 SignalR 连接（如果指定了 "/signalr" 或自定义 URL），并且该连接用于该服务定义的所有中心。
 
-    与单个类中定义所有中心功能相比的多个中心没有性能差异。
-- 所有中心都获取相同的 HTTP 请求信息。
+    与定义单个类中的所有集线器功能相比，多个中心没有性能差异。
+- 所有中心获取相同的 HTTP 请求信息。
 
-    由于所有中心都共享相同的连接，服务器获取的唯一 HTTP 请求信息是什么传入建立 SignalR 连接的原始 HTTP 请求。 如果使用连接请求将信息从客户端传递到服务器，通过指定查询字符串，不能向不同的中心提供不同的查询字符串。 所有中心将都接收相同的信息。
-- 生成的 JavaScript 代理文件将包含用于在一个文件中的所有集线器代理。
+    由于所有中心共享相同的连接，因此服务器获取的 HTTP 请求信息仅是建立 SignalR 连接的原始 HTTP 请求的信息。 如果使用连接请求通过指定查询字符串将信息从客户端传递到服务器，则不能向不同的中心提供不同的查询字符串。 所有集线器都将接收相同的信息。
+- 生成的 JavaScript 代理文件将包含一个文件中所有中心的代理。
 
-    有关 JavaScript 代理的信息，请参阅[SignalR 中心 API 指南-JavaScript 客户端-生成的代理和它为您完成](hubs-api-guide-javascript-client.md#genproxy)。
-- 在中心内定义组。
+    有关 JavaScript 代理的信息，请参阅[SignalR 中心 API 指南-JavaScript 客户端-生成的代理及其功能](hubs-api-guide-javascript-client.md#genproxy)。
+- 组在中心内定义。
 
-    在 SignalR 可以定义名为组，以将广播到连接的客户端的子集。 组单独为每个中心维护。 例如，一个名为"管理员"组将包括一组的客户端应用`ContosoChatHub`类和相同的组名称所指一组不同的客户端在`StockTickerHub`类。
+    在 SignalR 中，可以定义要广播到已连接的客户端子集的命名组。 为每个中心单独维护组。 例如，名为 "Administrators" 的组将包括一组适用于你的 `ContosoChatHub` 类的客户端，相同的组名将引用一组不同的客户端作为 `StockTickerHub` 类。
 
 <a id="stronglytypedhubs"></a>
-### <a name="strongly-typed-hubs"></a>强类型化中心
+### <a name="strongly-typed-hubs"></a>强类型中心
 
-若要定义一个接口，使您的客户端可以将集线器方法引用 （和集线器方法上的启用 Intellisense），派生从中心`Hub<T>`（在 SignalR 2.1 中引入） 而非`Hub`:
+若要为你的客户端可以引用（并在你的集线器方法上启用 Intellisense）的中心方法定义接口，请从 `Hub<T>` 派生中心（在 SignalR 2.1 中引入），而不是 `Hub`：
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample12.cs)]
 
 <a id="hubmethods"></a>
 
-## <a name="how-to-define-methods-in-the-hub-class-that-clients-can-call"></a>如何在客户端可以调用的中心类中定义的方法
+## <a name="how-to-define-methods-in-the-hub-class-that-clients-can-call"></a>如何在 Hub 类中定义客户端可以调用的方法
 
-若要公开你想要从客户端调用集线器上的方法，声明一个公共方法，如以下示例所示。
+若要在要从客户端调用的中心公开方法，请声明一个公共方法，如以下示例中所示。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample13.cs?highlight=3)]
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample14.cs?highlight=3)]
 
-您可以指定返回类型和参数，包括复杂类型和数组，就像在任何 C# 方法中。 客户端和服务器之间进行通信的接收中的参数或返回到调用方的任何数据是通过使用 JSON，和 SignalR 会自动处理复杂对象的绑定和对象的数组。
+您可以指定返回类型和参数（包括复杂类型和数组），就像在任何C#方法中一样。 您在参数中接收或返回到调用方的任何数据都通过使用 JSON 在客户端和服务器之间进行通信，而 SignalR 会自动处理复杂对象和对象数组的绑定。
 
 <a id="methodnames"></a>
 
-### <a name="camel-casing-of-method-names-in-javascript-clients"></a>在 JavaScript 客户端中的方法名称的 camel 大小写
+### <a name="camel-casing-of-method-names-in-javascript-clients"></a>JavaScript 客户端中方法名称的大小写大小写
 
-默认情况下，JavaScript 客户端通过使用 camel 大小写版本的方法名称引用中心的方法。 SignalR 自动进行此更改，以便 JavaScript 代码可以遵循 JavaScript 约定。
+默认情况下，JavaScript 客户端通过使用方法名称的 camel 大小写形式来引用中心方法。 SignalR 会自动进行此更改，以便 JavaScript 代码可以符合 JavaScript 约定。
 
 **服务器**
 
@@ -246,7 +246,7 @@ Hub 类的实例是暂时的因为不能使用它们来保持到下一个方法�
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample16.js?highlight=1)]
 
-如果你想要指定其他名称的客户端要使用，请添加`HubMethodName`属性。
+若要为客户端指定不同的名称，请添加 `HubMethodName` 特性。
 
 **服务器**
 
@@ -258,13 +258,13 @@ Hub 类的实例是暂时的因为不能使用它们来保持到下一个方法�
 
 <a id="asyncmethods"></a>
 
-### <a name="when-to-execute-asynchronously"></a>当以异步方式执行
+### <a name="when-to-execute-asynchronously"></a>何时异步执行
 
-如果该方法将是长时间运行或已进行的工作，将涉及等待，如数据库查找或 web 服务调用，使集线器方法通过返回异步[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)(来代替`void`返回) 或[任务&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx)对象 (来代替`T`返回类型)。 当您返回`Task`对象中的方法，SignalR 会等待`Task`若要完成，并将发送未包装的结果返回给客户端，以便在客户端中的方法调用的代码没有差别。
+如果该方法将是长时间运行的，或者必须执行涉及等待的工作（如数据库查找或 web 服务调用），则通过返回[任务](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)（代替 `void` 返回）或[task&lt;t&gt;](https://msdn.microsoft.com/library/dd321424.aspx)对象（取代 `T` 返回类型）使中心方法异步。 当你从方法返回 `Task` 对象时，SignalR 会等待 `Task` 完成，然后将已解包的结果发送回客户端，因此在客户端编写方法调用的方式没有差别。
 
-使集线器方法异步可避免阻止连接时使用 WebSocket 传输。 当集线器方法以同步方式执行，并传输协议是 WebSocket 时，中心方法完成之前，将阻止从同一个客户端集线器方法的后续调用。
+使中心方法异步可避免在使用 WebSocket 传输时阻止连接。 当集线器方法同步执行且传输为 WebSocket 时，将阻止来自同一客户端的集线器上的方法的后续调用，直到集线器方法完成。
 
-下面的示例演示的相同方法编码同步运行，或以异步方式后, 跟适用于调用任一版本的 JavaScript 客户端代码。
+下面的示例演示了编码为同步或异步运行的同一方法，后跟用于调用任一版本的 JavaScript 客户端代码。
 
 **同步**
 
@@ -278,51 +278,51 @@ Hub 类的实例是暂时的因为不能使用它们来保持到下一个方法�
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample21.js)]
 
-有关如何在 ASP.NET 4.5 中使用异步方法的详细信息，请参阅[ASP.NET MVC 4 中使用异步方法](../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)。
+有关如何在 ASP.NET 4.5 中使用异步方法的详细信息，请参阅[在 ASP.NET MVC 4 中使用异步方法](../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)。
 
 <a id="overloads"></a>
 
 ### <a name="defining-overloads"></a>定义重载
 
-如果你想要定义一种方法的重载，每个重载中的参数数量必须不同。 如果只是通过指定不同的参数类型区分重载方法，Hub 类会编译但 SignalR 服务将在引发异常时，客户端尝试运行时调用的重载之一。
+如果要定义方法的重载，每个重载中的参数数量必须不同。 如果只是通过指定不同的参数类型来区分重载，则中心类将编译，但当客户端尝试调用某个重载时，SignalR 服务将在运行时引发异常。
 
 <a id="progress"></a>
-### <a name="reporting-progress-from-hub-method-invocations"></a>报告从集线器方法调用的进度
+### <a name="reporting-progress-from-hub-method-invocations"></a>报告集线器方法调用的进度
 
-SignalR 2.1 添加了对支持[进度报告模式](https://blogs.msdn.com/b/dotnet/archive/2012/06/06/async-in-4-5-enabling-progress-and-cancellation-in-async-apis.aspx)在.NET 4.5 中引入的。 若要实现进度报告，定义`IProgress<T>`可以访问你的客户端在集线器方法的参数：
+SignalR 2.1 添加了对 .NET 4.5 中引入的[进度报告模式](https://blogs.msdn.com/b/dotnet/archive/2012/06/06/async-in-4-5-enabling-progress-and-cancellation-in-async-apis.aspx)的支持。 若要实现进度报告，请为你的客户端可以访问的中心方法定义 `IProgress<T>` 参数：
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample22.cs)]
 
-在编写长时间运行的服务器方法时，务必使用异步编程模式等 Async / Await 而不是阻塞中心线程。
+编写长时间运行的服务器方法时，应使用异步编程模式（如 Async/Await），而不是阻止集线器线程。
 
 <a id="callfromhub"></a>
 
-## <a name="how-to-call-client-methods-from-the-hub-class"></a>如何从 Hub 类方法调用客户端
+## <a name="how-to-call-client-methods-from-the-hub-class"></a>如何从中心类调用客户端方法
 
-若要从服务器调用客户端方法，请使用`Clients`Hub 类中的方法中的属性。 下面的示例演示调用的服务器代码`addNewMessageToPage`上所有连接的客户端，并在 JavaScript 客户端中定义的方法的客户端代码。
+若要从服务器调用客户端方法，请使用集线器类中方法的 `Clients` 属性。 下面的示例演示了在所有连接的客户端上调用 `addNewMessageToPage` 的服务器代码，以及在 JavaScript 客户端中定义方法的客户端代码。
 
 **服务器**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample23.cs?highlight=5)]
 
-调用客户端方法是一个异步操作并返回`Task`。 使用`await`:
+调用客户端方法是异步操作并返回 `Task`。 使用 `await`：
 
-* 若要确保将消息发送不会出错。 
-* 若要启用捕获和处理 try catch 块中的错误。
+* 确保消息发送时不出错。 
+* 启用捕获和处理 try-catch 块中的错误。
 
 **使用生成的代理的 JavaScript 客户端**
 
 [!code-html[Main](hubs-api-guide-server/samples/sample24.html?highlight=1)]
 
-无法从客户端方法; 获取返回值语法如下`int x = Clients.All.add(1,1)`不起作用。
+无法从客户端方法获取返回值;`int x = Clients.All.add(1,1)` 语法不起作用。
 
-您可以指定复杂类型和数组作为参数。 下面的示例将复杂类型传递给方法参数中的客户端。
+可以指定复杂类型和参数的数组。 下面的示例将一个复杂类型传递给方法参数中的客户端。
 
-**调用使用复杂对象的客户端方法的服务器代码**
+**使用复杂对象调用客户端方法的服务器代码**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample25.cs?highlight=3)]
 
-**定义的复杂对象的服务器代码**
+**定义复杂对象的服务器代码**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample26.cs?highlight=1)]
 
@@ -332,11 +332,11 @@ SignalR 2.1 添加了对支持[进度报告模式](https://blogs.msdn.com/b/dotn
 
 <a id="selectingclients"></a>
 
-### <a name="selecting-which-clients-will-receive-the-rpc"></a>选择哪些客户端将收到 RPC
+### <a name="selecting-which-clients-will-receive-the-rpc"></a>选择将接收 RPC 的客户端
 
-客户端属性返回[HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)提供若干选项用于指定哪些客户端将接收 RPC 的对象：
+Clients 属性返回一个[HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)对象，该对象提供几个选项用于指定哪些客户端将接收 RPC：
 
-- 所有连接的客户端。
+- 所有已连接的客户端。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample28.cs)]
 - 仅调用客户端。
@@ -345,29 +345,29 @@ SignalR 2.1 添加了对支持[进度报告模式](https://blogs.msdn.com/b/dotn
 - 除调用客户端之外的所有客户端。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample30.cs)]
-- 特定的客户端标识的连接 id。
+- 由连接 ID 标识的特定客户端。
 
     [!code-css[Main](hubs-api-guide-server/samples/sample31.css)]
 
-    此示例调用`addContosoChatMessageToPage`上调用客户端并且具有与使用相同的效果`Clients.Caller`。
-- 所有连接的客户端除外指定客户端，由连接 ID 标识。
+    此示例在调用客户端上调用 `addContosoChatMessageToPage`，其效果与使用 `Clients.Caller`相同。
+- 除指定客户端之外的所有连接的客户端，由连接 ID 标识。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample32.cs)]
 - 指定组中的所有连接的客户端。
 
     [!code-css[Main](hubs-api-guide-server/samples/sample33.css)]
-- 指定组中的所有连接的客户端除外指定客户端，由连接 ID 标识。
+- 指定组中除指定的客户端之外的所有连接的客户端，由连接 ID 标识。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample34.cs)]
-- 所有连接的客户端指定组中除调用客户端。
+- 指定组中除调用客户端之外的所有连接的客户端。
 
     [!code-css[Main](hubs-api-guide-server/samples/sample35.css)]
-- 用户 Id 标识的特定用户。
+- 由 userId 标识的特定用户。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample36.cs)]
 
-    默认情况下，这是`IPrincipal.Identity.Name`，但这可以通过更改[IUserIdProvider 实现注册到全局主机](mapping-users-to-connections.md#IUserIdProvider)。
-- 所有客户端和组列表中的连接 Id。
+    默认情况下，这是 `IPrincipal.Identity.Name`的，但是可以通过[向全局主机注册 IUserIdProvider 的实现](mapping-users-to-connections.md#IUserIdProvider)来更改此值。
+- 连接 Id 列表中的所有客户端和组。
 
     [!code-css[Main](hubs-api-guide-server/samples/sample37.css)]
 - 组的列表。
@@ -376,47 +376,47 @@ SignalR 2.1 添加了对支持[进度报告模式](https://blogs.msdn.com/b/dotn
 - 按名称的用户。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample39.cs)]
-- （在 SignalR 2.1 中引入） 的用户名称的列表。
+- 用户名列表（在 SignalR 2.1 中引入）。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample40.cs)]
 
 <a id="dynamicmethodnames"></a>
 
-### <a name="no-compile-time-validation-for-method-names"></a>方法名称没有编译时验证
+### <a name="no-compile-time-validation-for-method-names"></a>没有方法名称的编译时验证
 
-您指定的方法名称被解释为动态对象，这意味着没有 IntelliSense 或它的编译时验证。 在运行时计算表达式。 方法调用执行时，SignalR 将方法名称和参数值发送到客户端，并在客户端有一种方法名称相匹配，调用方法和参数值传递到它。 如果在客户端上不找到任何匹配的方法，则不会引发错误。 SignalR 将传输到后台客户端时调用的客户端方法的数据格式的信息，请参阅[SignalR 简介](../getting-started/introduction-to-signalr.md)。
+指定的方法名称被解释为动态对象，这意味着它没有 IntelliSense 或编译时验证。 在运行时计算表达式。 当执行方法调用时，SignalR 会将方法名称和参数值发送到客户端，如果客户端具有与名称匹配的方法，则调用该方法，并将参数值传递给该方法。 如果在客户端上找不到匹配的方法，则不会引发错误。 有关在调用客户端方法时 SignalR 传输到后台客户端的数据格式的信息，请参阅[SignalR 简介](../getting-started/introduction-to-signalr.md)。
 
 <a id="caseinsensitive"></a>
 
 ### <a name="case-insensitive-method-name-matching"></a>不区分大小写的方法名称匹配
 
-方法名称匹配不区分大小写。 例如，`Clients.All.addContosoChatMessageToPage`在服务器上将执行`AddContosoChatMessageToPage`， `addcontosochatmessagetopage`，或`addContosoChatMessageToPage`客户端上。
+方法名称匹配不区分大小写。 例如，服务器上的 `Clients.All.addContosoChatMessageToPage` 会在客户端上执行 `AddContosoChatMessageToPage`、`addcontosochatmessagetopage`或 `addContosoChatMessageToPage`。
 
 <a id="asyncclient"></a>
 
 ### <a name="asynchronous-execution"></a>异步执行
 
-调用该方法以异步方式执行。 对客户端的方法调用将立即执行而无需等待 SignalR 完成传输到客户端的数据，除非您指定后面的代码行应等待方法完成后的任何代码。 下面的代码示例演示如何按顺序执行两个客户端方法。
+调用的方法以异步方式执行。 对客户端调用方法之后的任何代码都将立即执行，而无需等待 SignalR 完成将数据传输到客户端的操作，除非指定后续代码行应等待方法完成。 下面的代码示例演示如何按顺序执行两个客户端方法。
 
-**使用 Await (.NET 4.5)**
+**使用 Await （.NET 4.5）**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample41.cs?highlight=1,3)]
 
-如果使用`await`等待，直到下的一行代码执行之前完成了客户端方法，这并不表示客户端在下的一行代码执行之前，将实际接收该消息。 "完成"的客户端方法调用仅意味着，SignalR 已完成发送消息所需的所有内容。 如果需要验证客户端收到消息，您必须自己进行编程的机制。 例如，您可以编写代码`MessageReceived`方法的中心，并在`addContosoChatMessageToPage`方法在客户端可以调用`MessageReceived`执行操作之后任何起作用，您需要在客户端上执行操作。 在`MessageReceived`在中心可以执行任何工作取决于实际的客户端接收和处理的原始方法调用。
+如果使用 `await` 等待客户端方法完成，然后再执行下一行代码，这并不意味着客户端将在执行下一行代码之前实际接收消息。 仅客户端方法调用的 "完成" 表示 SignalR 已完成发送消息所需的所有操作。 如果需要客户端接收消息的验证，则必须自行编写该机制。 例如，可以在中心对 `MessageReceived` 方法进行编码，并且在 `MessageReceived` 客户端上的 `addContosoChatMessageToPage` 方法中，你可以在完成需要在客户端上执行的任何工作。 在中心 `MessageReceived` 中，你可以执行任何操作，具体取决于原始方法调用的实际客户端接收和处理。
 
 ### <a name="how-to-use-a-string-variable-as-the-method-name"></a>如何使用字符串变量作为方法名称
 
-如果你想要调用的客户端方法通过使用字符串变量作为方法名称，将强制转换`Clients.All`(或`Clients.Others`，`Clients.Caller`等) 对`IClientProxy`，然后调用[Invoke （methodName，args...）](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+如果要使用字符串变量作为方法名称来调用客户端方法，请 `IClientProxy` 将 `Clients.All` （或 `Clients.Others`，`Clients.Caller`等）强制转换为，然后调用[invoke （方法名称，参数 ...）](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx)。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample42.cs)]
 
 <a id="groupsfromhub"></a>
 
-## <a name="how-to-manage-group-membership-from-the-hub-class"></a>如何从 Hub 类管理组成员身份
+## <a name="how-to-manage-group-membership-from-the-hub-class"></a>如何从中心类管理组成员身份
 
-SignalR 中的组提供一种方法将消息广播到连接的客户端的指定子集。 一个组可以具有任意数量的客户端，并在客户端可以是任意数量的组的成员。
+SignalR 中的组提供一种方法，用于将消息广播到连接的已连接客户端的指定子集。 一个组可以具有任意数量的客户端，客户端可以是任意数量的组的成员。
 
-若要管理组成员身份，使用[添加](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx)并[删除](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx)提供的方法`Groups`Hub 类的属性。 下面的示例演示`Groups.Add`和`Groups.Remove`集线器方法调用的客户端代码中使用的方法后跟调用它们的 JavaScript 客户端代码。
+若要管理组成员身份，请使用 Hub 类的 `Groups` 属性提供的[添加](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx)和[移除](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx)方法。 下面的示例演示了在客户端代码调用的集线器方法中使用的 `Groups.Add` 和 `Groups.Remove` 方法，以及调用它们的 JavaScript 客户端代码。
 
 **服务器**
 
@@ -428,109 +428,109 @@ SignalR 中的组提供一种方法将消息广播到连接的客户端的指定
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample45.js)]
 
-您无需显式创建组。 一组自动创建第一次调用中指定其名称的有效`Groups.Add`，并从它的成员身份中删除最后一次连接时将其删除。
+无需显式创建组。 实际上，在对 `Groups.Add`的调用中首次指定组的名称时，会自动创建一个组，并在从其成员身份中删除最后一个连接时将其删除。
 
-没有 API 用于获取组成员身份列表或组的列表。 SignalR 将消息发送到客户端和基于组[发布/订阅模型](http://en.wikipedia.org/wiki/Publish/subscribe)，和服务器不会维护的组或组成员身份列表。 这有助于最大程度提高可伸缩性，因为只要将节点添加到 web 场中，SignalR 维护任何状态已传播到新节点。
+没有用于获取组成员身份列表或组列表的 API。 SignalR 基于发布[/订阅模型](http://en.wikipedia.org/wiki/Publish/subscribe)将消息发送到客户端和组，并且服务器不维护组或组成员身份列表。 这有助于最大程度地提高可伸缩性，因为每次将节点添加到 web 场时，SignalR 维护的任何状态都必须传播到新节点。
 
 <a id="asyncgroupmethods"></a>
 
-### <a name="asynchronous-execution-of-add-and-remove-methods"></a>异步执行 Add 和 Remove 方法
+### <a name="asynchronous-execution-of-add-and-remove-methods"></a>异步执行添加和移除方法
 
-`Groups.Add`和`Groups.Remove`方法以异步方式执行。 如果你想要向组添加客户端并立即将消息发送到客户端使用的组，则必须确保`Groups.Add`方法首先完成。 下面的代码示例演示如何执行该操作。
+`Groups.Add` 和 `Groups.Remove` 方法以异步方式执行。 如果要将客户端添加到组，并使用组立即将消息发送到客户端，必须确保 `Groups.Add` 方法先完成。 下面的代码示例演示如何执行此操作。
 
-**向组添加客户端，然后消息传送该客户端**
+**将客户端添加到组，然后将客户端发送到客户端**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample46.cs?highlight=1,3)]
 
 <a id="grouppersistence"></a>
 
-### <a name="group-membership-persistence"></a>组成员身份暂留
+### <a name="group-membership-persistence"></a>组成员持久性
 
-SignalR 跟踪的连接，而不是用户，因此，如果您希望用户为同一组中每次用户建立连接，则必须调用`Groups.Add`每次用户建立新连接。
+SignalR 跟踪连接，而不是用户，因此，如果希望用户在每次建立连接时都位于同一个组中，则必须在每次用户建立新连接时调用 `Groups.Add`。
 
-后的连接暂时中断，有时 SignalR 可以连接自动还原。 在这种情况下，SignalR 还原相同的连接，不建立新连接，并因此客户端的组成员身份将自动恢复。 这是可能甚至临时中断时的结果在服务器重新启动或故障，因为每个客户端，包括组成员身份的连接状态是往返到客户端。 如果一台服务器出现故障时，将替换为新的服务器的连接超时之前，客户端可以自动重新连接到新服务器并重新注册其是成员的组中。
+暂时断开连接后，SignalR 可能会自动恢复连接。 在这种情况下，SignalR 将还原相同的连接，而不建立新的连接，因此客户端的组成员身份将自动还原。 即使暂时中断是服务器重启或失败的结果，也可能出现这种情况，因为每个客户端（包括组成员身份）的连接状态都将往返给客户端。 如果服务器发生故障，并且在连接超时之前被新服务器替换，则客户端可以自动重新连接到新的服务器并重新注册其所属的组。
 
-当连接无法自动还原后的连接，断开或连接超时时，或当客户端断开 （例如，当浏览器导航到新页） 时，组成员身份将丢失。 下次用户连接的时将新的连接。 若要维护组成员身份，当同一用户建立新连接时，你的应用程序必须跟踪用户和组之间的关联和还原每次用户建立新连接的组成员身份。
+当连接丢失或连接超时时，或者当客户端断开连接时（例如，当浏览器导航到新页面时），组成员身份将会丢失。 用户下次连接时将是新连接。 若要在同一个用户建立新连接时维护组成员身份，你的应用程序必须跟踪用户和组之间的关联，并在每次用户建立新连接时还原组成员身份。
 
-有关连接和重新连接的详细信息，请参阅[如何处理连接生存期事件，Hub 类](#connectionlifetime)本主题中更高版本。
+有关连接和重新连接的详细信息，请参阅本主题后面的[如何处理 Hub 类中的连接生存期事件](#connectionlifetime)。
 
 <a id="singleusergroups"></a>
 
 ### <a name="single-user-groups"></a>单用户组
 
-应用程序通常使用 SignalR 有来跟踪用户和连接之间的关联这样才能知道哪些用户已发送的消息以及哪些用户应收到一条消息。 实现这一目的，在两种常用模式之一中使用组。
+使用 SignalR 的应用程序通常需要跟踪用户和连接之间的关联，以便知道哪个用户已发送消息以及哪些用户应该接收消息。 组用于执行此操作的两种常用模式之一。
 
 - 单用户组。
 
-    可以指定的用户名与组的名称，并将当前的连接 ID 添加到组，每次用户连接或重新连接。 若要将消息发送到发送到组的用户。 此方法的缺点是组不会为您提供了一种方式找出用户是联机还是脱机。
-- 跟踪用户名称和连接 Id 之间的关联。
+    你可以指定用户名作为组名称，并在每次用户连接或重新连接时将当前连接 ID 添加到组。 向发送到组的用户发送消息。 此方法的缺点是，组不会提供一种方法来找出用户处于联机还是脱机状态。
+- 跟踪用户名和连接 Id 之间的关联。
 
-    可以将每个用户名称和一个或多个连接 Id 之间的关联存储在字典或数据库，并更新每次用户连接或断开连接的存储的数据。 要将消息发送到用户指定连接 Id。 此方法的缺点是它会占用更多内存。
+    你可以在每个用户名与字典或数据库中的一个或多个连接 Id 之间存储关联，并在每次用户连接或断开连接时更新存储的数据。 若要向用户发送消息，请指定连接 Id。 此方法的一个缺点是它会占用更多内存。
 
 <a id="connectionlifetime"></a>
 
 ## <a name="how-to-handle-connection-lifetime-events-in-the-hub-class"></a>如何处理中心类中的连接生存期事件
 
-处理连接生存期事件的典型原因是用于跟踪是否用户连接，并跟踪的用户名称和连接 Id 之间的关联。 若要运行你自己的代码，当客户端连接或断开连接时，重写`OnConnected`， `OnDisconnected`，和`OnReconnected`类的中心的虚拟方法，如下面的示例中所示。
+处理连接生存期事件的典型原因是跟踪用户是否已连接，以及跟踪用户名和连接 Id 之间的关联。 若要在客户端连接或断开连接时运行你自己的代码，请重写中心类的 `OnConnected`、`OnDisconnected`和 `OnReconnected` 虚拟方法，如以下示例中所示。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample47.cs?highlight=3,14,22)]
 
 <a id="onreconnected"></a>
 
-### <a name="when-onconnected-ondisconnected-and-onreconnected-are-called"></a>OnConnected、 OnDisconnected 和 OnReconnected 调用时
+### <a name="when-onconnected-ondisconnected-and-onreconnected-are-called"></a>如果调用 OnConnected、OnDisconnected 和 OnReconnected
 
-浏览器导航到新的页上，每次新的连接已建立，这意味着将执行 SignalR`OnDisconnected`方法后跟`OnConnected`方法。 建立新连接时，SignalR 始终创建一个新的连接 ID。
+每次浏览器导航到新页时，必须建立新的连接，这意味着 SignalR 将执行 `OnDisconnected` 方法，后跟 `OnConnected` 方法。 建立新连接时，SignalR 始终创建新的连接 ID。
 
-`OnReconnected`当 SignalR 可以从自动恢复，例如当电缆是暂时断开连接并重新连接的连接超时之前的连接已临时中断时调用方法。`OnDisconnected`断开客户端和 SignalR 无法自动重新连接，例如当浏览器导航到新页时调用方法。 因此，一个可能对于给定客户端的事件序列是`OnConnected`， `OnReconnected`， `OnDisconnected`; 或者`OnConnected`， `OnDisconnected`。 不会看到该序列`OnConnected`， `OnDisconnected`，`OnReconnected`为给定的连接。
+当 SignalR 可自动从其恢复的连接（如在连接超时之前暂时断开和重新连接）时，将调用 `OnReconnected` 方法。当客户端断开连接并且 SignalR 无法自动重新连接时（例如，当浏览器导航到新页面时），将调用 `OnDisconnected` 方法。 因此，给定客户端的可能的事件序列 `OnConnected`、`OnReconnected``OnDisconnected`;或 `OnConnected`，`OnDisconnected`。 你不会看到给定连接 `OnConnected`、`OnDisconnected``OnReconnected` 的顺序。
 
-`OnDisconnected`某些情况下，例如当一台服务器出现故障不会调用方法或应用程序域都能重启。 当另一台服务器随附在行上或在应用程序域完成其回收时，某些客户端可能无法重新连接，并触发`OnReconnected`事件。
+在某些情况下（例如服务器出现故障或应用程序域回收时）不会调用 `OnDisconnected` 方法。 当另一个服务器联机或应用程序域完成其回收时，某些客户端可能能够重新连接并激发 `OnReconnected` 事件。
 
-有关详细信息，请参阅[理解和 SignalR 中的处理连接生存期事件](handling-connection-lifetime-events.md)。
+有关详细信息，请参阅[了解和处理 SignalR 中的连接生存期事件](handling-connection-lifetime-events.md)。
 
 <a id="nocallerstate"></a>
 
-### <a name="caller-state-not-populated"></a>调用方状态不会填充
+### <a name="caller-state-not-populated"></a>未填充调用方状态
 
-在服务器上，这意味着您将放入任何状态称为连接生存期事件处理程序方法`state`客户端上的对象不会填充在`Caller`在服务器上的属性。 有关信息`state`对象和`Caller`属性，请参阅[如何将状态传递客户端和 Hub 类之间](#passstate)本主题中更高版本。
+连接生存期事件处理程序方法是从服务器调用的，这意味着在客户端上的 `state` 对象中放置的任何状态都不会在服务器上的 `Caller` 属性中填充。 有关 `state` 对象和 `Caller` 属性的信息，请参阅本主题后面的[如何在客户端和 Hub 类之间传递状态](#passstate)。
 
 <a id="contextproperty"></a>
 
-## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>如何从上下文属性中获取有关客户端的信息
+## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>如何从上下文属性获取有关客户端的信息
 
-若要获取有关客户端的信息，请使用`Context`Hub 类的属性。 `Context`属性返回[HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx)对象提供了访问权的以下信息：
+若要获取有关客户端的信息，请使用 Hub 类的 `Context` 属性。 `Context` 属性返回一个[HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx)对象，该对象提供对以下信息的访问：
 
-- 调用客户端连接 ID。
+- 调用客户端的连接 ID。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample48.cs?highlight=1)]
 
-    连接 ID 是的 SignalR （不能在你自己的代码中指定值） 分配的 GUID。 不存在的每个连接，以及相同的连接 ID 由所有中心，如果应用程序中有多个中心的一个连接 ID。
+    连接 ID 是 SignalR 分配的 GUID （您不能在自己的代码中指定值）。 每个连接都有一个连接 ID，如果应用程序中有多个中心，则所有中心都将使用相同的连接 ID。
 - HTTP 标头数据。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample49.cs?highlight=1)]
 
-    此外可以获取来自 HTTP 标头`Context.Headers`。 多个引用相同的操作的原因在于`Context.Headers`首先，创建`Context.Request`更高版本，添加属性和`Context.Headers`被保留用于向后兼容性。
-- 查询字符串的数据。
+    还可以从 `Context.Headers`获取 HTTP 标头。 对同一事情进行多次引用的原因是：首先创建了 `Context.Headers`，后来添加了 `Context.Request` 属性，并保留了 `Context.Headers` 以便向后兼容。
+- 查询字符串数据。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample50.cs?highlight=1)]
 
-    此外可以获取查询字符串数据从`Context.QueryString`。
+    您还可以从 `Context.QueryString`获取查询字符串数据。
 
-    在此属性中获取的查询字符串是用于建立 SignalR 连接的 HTTP 请求。 通过配置连接，这是从客户端将有关客户端的数据发送到服务器的简便方法，可以在客户端中添加查询字符串参数。 下面的示例演示使用生成的代理时，JavaScript 客户端中添加的查询字符串的一种方法。
+    在此属性中获取的查询字符串是与建立 SignalR 连接的 HTTP 请求一起使用的查询字符串。 您可以通过配置连接在客户端中添加查询字符串参数，这是将客户端的数据从客户端传递到服务器的一种简便方法。 下面的示例演示了在使用生成的代理时在 JavaScript 客户端中添加查询字符串的一种方法。
 
     [!code-javascript[Main](hubs-api-guide-server/samples/sample51.js?highlight=1)]
 
-    有关设置查询字符串参数的详细信息，请参阅针对的 API 指南[JavaScript](hubs-api-guide-javascript-client.md)并[.NET](hubs-api-guide-net-client.md)客户端。
+    有关设置查询字符串参数的详细信息，请参阅[JavaScript](hubs-api-guide-javascript-client.md)和[.net](hubs-api-guide-net-client.md)客户端的 API 指南。
 
-    您可以找到用于查询字符串数据，以及由 SignalR 在内部使用的一些其他值中的连接的传输方法：
+    可以在查询字符串数据中找到用于连接的传输方法，还可以在 SignalR 内部使用某些其他值：
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample52.cs)]
 
-    值`transportMethod`将是"webSockets"、"serverSentEvents"、"foreverFrame"或"longPolling"。 请注意，如果在签入此值`OnConnected`事件处理程序方法中，在某些情况下可能一开始就会传输该值不是连接的最终协商的传输方法。 在这种情况下该方法将引发异常，并建立最终传输方法时将稍后调用。
+    `transportMethod` 的值将为 "Websocket"、"serverSentEvents"、"foreverFrame" 或 "longPolling"。 请注意，如果您在 `OnConnected` 事件处理程序方法中检查此值，则在某些情况下，您最初可能会获得一个传输值，它不是连接的最终协商传输方法。 在这种情况下，方法将引发异常，稍后在建立最终传输方法时将再次调用该方法。
 - Cookie。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample53.cs?highlight=1)]
 
-    此外可以获取来自 cookie `Context.RequestCookies`。
+    你还可以从 `Context.RequestCookies`获取 cookie。
 - 用户信息。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample54.cs?highlight=1)]
@@ -538,34 +538,34 @@ SignalR 跟踪的连接，而不是用户，因此，如果您希望用户为同
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample55.cs?highlight=1)]
 
-    使用此方法，而不会收到`HttpContext.Current`若要获取`HttpContext`SignalR 连接对象。
+    使用此方法而不是获取 `HttpContext.Current` 来获取 SignalR 连接的 `HttpContext` 对象。
 
 <a id="passstate"></a>
 
-## <a name="how-to-pass-state-between-clients-and-the-hub-class"></a>如何将客户端和 Hub 类之间传递状态
+## <a name="how-to-pass-state-between-clients-and-the-hub-class"></a>如何在客户端和中心类之间传递状态
 
-客户端代理提供`state`对象可以在其中存储要传输到每个方法调用与服务器的数据。 可以在服务器上访问这些数据在`Clients.Caller`的客户端调用集线器方法中的属性。 `Clients.Caller`属性未填充的连接生存期事件处理程序方法`OnConnected`， `OnDisconnected`，和`OnReconnected`。
+客户端代理提供一个 `state` 对象，您可以在其中存储要使用每个方法调用传输到服务器的数据。 在服务器上，可以通过客户端调用的集线器方法中的 `Clients.Caller` 属性访问此数据。 `OnConnected`、`OnDisconnected`和 `OnReconnected`的连接生存期事件处理程序方法不会填充 `Clients.Caller` 属性。
 
-创建或更新中的数据`state`对象和`Clients.Caller`属性在这两个方向上的工作原理。 它们会传递回客户端和可更新服务器中的值。
+在这两个方向上创建或更新 `state` 对象和 `Clients.Caller` 属性中的数据。 您可以更新服务器中的值，并将这些值传递回客户端。
 
-下面的示例显示了存储传输到每个方法调用的服务器的状态的 JavaScript 客户端代码。
+下面的示例演示了 JavaScript 客户端代码，该代码存储每个方法调用的用于传输到服务器的状态。
 
 [!code-javascript[Main](hubs-api-guide-server/samples/sample56.js?highlight=1-2)]
 
-下面的示例显示了.NET 客户端中的等效代码。
+下面的示例演示 .NET 客户端中的等效代码。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample57.cs?highlight=1-2)]
 
-在中心类中，可以访问这些数据在`Clients.Caller`属性。 以下示例显示检索到上一示例中所引用的状态的代码。
+在你的中心类中，你可以访问 `Clients.Caller` 属性中的这些数据。 下面的示例演示了检索上一示例中引用的状态的代码。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample58.cs?highlight=3-4)]
 
 > [!NOTE]
-> 状态持久化此机制不适用于大量数据，因为所有内容将放入`state`或`Clients.Caller`属性是往返与每个方法调用。 它可用于较小的项，如用户名称或计数器。
+> 用于保持状态的这种机制不适用于大量数据，因为放入 `state` 或 `Clients.Caller` 属性的所有内容都将随每个方法调用一起往返。 它适用于较小的项，例如用户名或计数器。
 
-在 VB.NET 或强类型化的中心，不能通过访问调用方状态对象`Clients.Caller`; 相反，使用`Clients.CallerState`（SignalR 2.1 中引入）：
+在 VB.NET 或强类型中心中，无法通过 `Clients.Caller`访问调用方状态对象。请改用 `Clients.CallerState` （在 SignalR 2.1 中引入）：
 
-**在 C# 中使用 CallerState**
+**使用 CallerStateC#**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample59.cs?highlight=3-4)]
 
@@ -575,89 +575,89 @@ SignalR 跟踪的连接，而不是用户，因此，如果您希望用户为同
 
 <a id="handleErrors"></a>
 
-## <a name="how-to-handle-errors-in-the-hub-class"></a>如何处理错误，Hub 类
+## <a name="how-to-handle-errors-in-the-hub-class"></a>如何处理中心类中的错误
 
-若要处理你的中心类方法中发生的错误，请首先确保您"观察"异步操作 （如调用客户端方法） 中的任何异常使用`await`。 然后，使用一个或多个以下方法：
+若要处理中心类方法中发生的错误，请首先确保使用 `await`"观察" 异步操作中的任何异常（如调用客户端方法）。 然后，使用以下一种或多种方法：
 
-- 将方法代码包装在 try catch 块和日志的异常对象。 出于调试目的可以将异常发送到客户端，但出于安全原因的详细的信息发送给在生产环境中的客户端不建议。
-- 创建中心管道处理模块时， [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx)方法。 下面的示例演示记录错误，将模块注入到集线器管道的 Startup.cs 中的代码后跟一个管道模块。
+- 在 try-catch 块中包装方法代码，并记录 exception 对象。 出于调试目的，您可以将异常发送到客户端，但出于安全原因，不建议将详细信息发送到生产中的客户端。
+- 创建处理[OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx)方法的集线器管道模块。 下面的示例演示一个管道模块，该模块记录错误，然后是 Startup.cs 中的代码，该模块将模块注入集线器管道。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample61.cs)]
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample62.cs?highlight=4)]
-- 使用`HubException`（SignalR 2 中引入） 的类。 可以从任何集线器调用引发此错误。 `HubError`构造函数采用一个字符串消息和一个对象，用于存储额外的错误数据。 SignalR 将自动序列化异常，并将其发送到客户端，其中它将用于拒绝或失败集线器方法调用。
+- 使用 `HubException` 类（在 SignalR 2 中引入）。 任何集线器调用都可能会引发此错误。 `HubError` 构造函数采用字符串消息和用于存储额外错误数据的对象。 SignalR 会自动将异常序列化，并将其发送到客户端，该客户端将用于拒绝或拒绝集线器方法调用。
 
-    下面的代码示例演示如何引发`HubException`期间的集线器调用，以及如何处理在 JavaScript 和.NET 客户端上的异常。
+    下面的代码示例演示如何在中心调用期间引发 `HubException`，以及如何在 JavaScript 和 .NET 客户端上处理异常。
 
-    **服务器代码演示 HubException 类**
+    **演示 HubException 类的服务器代码**
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample63.cs)]
 
-    **演示在一个中心引发 HubException 响应的 JavaScript 客户端代码**
+    **JavaScript 客户端代码演示在中心引发 HubException 的响应**
 
     [!code-html[Main](hubs-api-guide-server/samples/sample64.html)]
 
-    **演示在一个中心引发 HubException 响应的.NET 客户端代码**
+    **.NET 客户端代码演示在中心引发 HubException 的响应**
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample65.cs)]
 
-有关中心管道模块的详细信息，请参阅[如何自定义中心管道](#hubpipeline)本主题中更高版本。
+有关集线器管道模块的详细信息，请参阅本主题后面的[如何自定义集线器管道](#hubpipeline)。
 
 <a id="tracing"></a>
 
 ## <a name="how-to-enable-tracing"></a>如何启用跟踪
 
-若要启用服务器端跟踪，system.diagnostics 将元素添加到 Web.config 文件中，在此示例中所示：
+若要启用服务器端跟踪，请将一个 system.exception 元素添加到 Web.config 文件中，如以下示例中所示：
 
 [!code-html[Main](hubs-api-guide-server/samples/sample66.html?highlight=17-72)]
 
-在 Visual Studio 中运行应用程序时，可以查看中的日志**输出**窗口。
+在 Visual Studio 中运行应用程序时，可以在 "**输出**" 窗口中查看日志。
 
 <a id="callfromoutsidehub"></a>
 
-## <a name="how-to-call-client-methods-and-manage-groups-from-outside-the-hub-class"></a>如何调用方法的客户端和管理的中心类外部的组
+## <a name="how-to-call-client-methods-and-manage-groups-from-outside-the-hub-class"></a>如何从中心类的外部调用客户端方法和管理组
 
-若要从 Hub 类比另一个类调用客户端方法，获取集线器的 SignalR 上下文对象的引用并使用它来在客户端上调用方法或管理组。
+若要从不同于中心类的类调用客户端方法，请获取对中心的 SignalR 上下文对象的引用，并使用该对象调用客户端上的方法或管理组。
 
-下面的示例`StockTicker`类获取上下文对象、 将其存储在类的实例，将类实例存储在静态属性，并使用从单一实例类实例的上下文来调用`updateStockPrice`在客户端上的方法连接到名为集线器`StockTickerHub`。
+下面的示例 `StockTicker` 类获取上下文对象，将其存储在类的实例中，将类实例存储在静态属性中，并使用 singleton 类实例中的上下文对连接到名为 `StockTickerHub`的集线器的客户端调用 `updateStockPrice` 方法。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample67.cs?highlight=8,24)]
 
-如果需要在长生存期对象中使用上下文多时间，一次获取该引用，并保存它而不是每次重新获取它。 一次获取上下文可确保 SignalR 将消息发送到客户端集线器方法使得这客户端方法调用的相同顺序。 本教程演示如何使用集线器的 SignalR 上下文，请参阅[服务器与 ASP.NET SignalR 广播](../getting-started/tutorial-server-broadcast-with-signalr.md)。
+如果需要在长生存期的对象中多次使用上下文，请获取引用一次并保存，而不是每次都重新获取。 只要获取上下文，就可以确保 SignalR 将消息以集线器方法发出客户端方法调用的相同顺序发送到客户端。 有关演示如何使用集线器的 SignalR 上下文的教程，请参阅[使用 ASP.NET SignalR 进行服务器广播](../getting-started/tutorial-server-broadcast-with-signalr.md)。
 
 <a id="callingclientsoutsidehub"></a>
 
 ### <a name="calling-client-methods"></a>调用客户端方法
 
-你可以指定哪些客户端将接收 RPC，但具有更少选项比从 Hub 类时调用。 这样做的原因是，上下文不相关联的特定调用从客户端，因此任何方法，如需要了解当前的连接 ID `Clients.Others`，或`Clients.Caller`，或`Clients.OthersInGroup`，不可用。 可用选项如下：
+您可以指定将接收 RPC 的客户端，但选择的选项比从集线器类调用时更少。 出现这种情况的原因是上下文未与客户端的特定调用相关联，因此，任何需要了解当前连接 ID 的方法（如 `Clients.Others`、`Clients.Caller`或 `Clients.OthersInGroup`）都不可用。 可用选项如下：
 
-- 所有连接的客户端。
+- 所有已连接的客户端。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample68.cs)]
-- 特定的客户端标识的连接 id。
+- 由连接 ID 标识的特定客户端。
 
     [!code-css[Main](hubs-api-guide-server/samples/sample69.css)]
-- 所有连接的客户端除外指定客户端，由连接 ID 标识。
+- 除指定客户端之外的所有连接的客户端，由连接 ID 标识。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample70.cs)]
 - 指定组中的所有连接的客户端。
 
     [!code-css[Main](hubs-api-guide-server/samples/sample71.css)]
-- 除指定客户端，由连接 id。 指定的组中的所有已连接客户端
+- 指定组中除指定的客户端之外的所有连接的客户端，由连接 ID 标识。
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample72.cs)]
 
-如果要调用到非中心类从方法中 Hub 类，可以传入当前的连接 ID 并使用与该`Clients.Client`， `Clients.AllExcept`，或`Clients.Group`来模拟`Clients.Caller`， `Clients.Others`，或`Clients.OthersInGroup`。 在以下示例中，`MoveShapeHub`类将传递到的连接 ID`Broadcaster`类，以便`Broadcaster`类来模拟`Clients.Others`。
+如果要从中心类中的方法调用到非集线器类，可以传入当前连接 ID 并将其与 `Clients.Client`、`Clients.AllExcept`或 `Clients.Group` 一起使用，以模拟 `Clients.Caller`、`Clients.Others`或 `Clients.OthersInGroup`。 在下面的示例中，`MoveShapeHub` 类将连接 ID 传递到 `Broadcaster` 类，以便 `Broadcaster` 类可以模拟 `Clients.Others`。
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample73.cs?highlight=12,36)]
 
 <a id="managinggroupsoutsidehub"></a>
 
-### <a name="managing-group-membership"></a>管理组成员资格
+### <a name="managing-group-membership"></a>管理组成员身份
 
-用于管理组中，Hub 类中一样具有相同的选项。
+对于管理组，你具有与在 Hub 类中相同的选项。
 
-- 向组添加客户端
+- 将客户端添加到组
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample74.cs)]
 - 从组中删除客户端
@@ -666,13 +666,13 @@ SignalR 跟踪的连接，而不是用户，因此，如果您希望用户为同
 
 <a id="hubpipeline"></a>
 
-## <a name="how-to-customize-the-hubs-pipeline"></a>如何自定义中心管道
+## <a name="how-to-customize-the-hubs-pipeline"></a>如何自定义集线器管道
 
-SignalR，可将你自己的代码注入到集线器管道。 下面的示例显示了记录从客户端和客户端上调用的传出方法调用中接收每个传入方法调用的自定义中心管道模块：
+SignalR 使你能够将自己的代码注入中心管道。 下面的示例演示一个自定义中心管道模块，该模块记录从客户端接收的每个传入方法调用，以及在客户端上调用的传出方法调用：
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample76.cs)]
 
-下面的代码中*Startup.cs*文件会注册要在中心管道中运行的模块：
+*Startup.cs*文件中的以下代码将在中心管道中注册要运行的模块：
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample77.cs?highlight=3)]
 
