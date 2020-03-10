@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/net-4/routing/aspnet-4-quick-hit-imperative-webforms-routing
-title: ASP.NET 4 快速命中的强制性 WebForms 路由
+title: ASP.NET 4 快速命中-命令性 WebForms 路由
 author: JoeStagner
-description: 在此视频中，您将学习如何使用表达式生成器来执行 WebForms 路由以强制方式。
+description: 在此视频中，您将学习如何使用表达式生成器来强制执行 WebForms 路由。
 ms.author: riande
 ms.date: 11/05/2009
 ms.assetid: c78fd810-4309-4d58-afd9-81e9ffa77429
 msc.legacyurl: /web-forms/videos/net-4/routing/aspnet-4-quick-hit-imperative-webforms-routing
 msc.type: video
 ms.openlocfilehash: a034d6f934da055d06130302c288066e98d9a7e9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403709"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438554"
 ---
-# <a name="aspnet-4-quick-hit---imperative-webforms-routing"></a><span data-ttu-id="b040e-103">ASP.NET 4"快速命中"的强制性 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="b040e-103">ASP.NET 4 "Quick Hit" - Imperative WebForms Routing</span></span>
+# <a name="aspnet-4-quick-hit---imperative-webforms-routing"></a><span data-ttu-id="f84ef-103">ASP.NET 4 "快速点击"-命令性 WebForms 路由</span><span class="sxs-lookup"><span data-stu-id="f84ef-103">ASP.NET 4 "Quick Hit" - Imperative WebForms Routing</span></span>
 
-<span data-ttu-id="b040e-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="b040e-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="f84ef-104">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f84ef-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="b040e-105">在此视频中，您将学习如何使用表达式生成器来执行 WebForms 路由以强制方式。</span><span class="sxs-lookup"><span data-stu-id="b040e-105">In this video you will learn how to use an expression builder to do WebForms routing imperatively.</span></span> 
+<span data-ttu-id="f84ef-105">在此视频中，您将学习如何使用表达式生成器来强制执行 WebForms 路由。</span><span class="sxs-lookup"><span data-stu-id="f84ef-105">In this video you will learn how to use an expression builder to do WebForms routing imperatively.</span></span> 
 
-[<span data-ttu-id="b040e-106">&#9654;观看视频 （12 分钟）</span><span class="sxs-lookup"><span data-stu-id="b040e-106">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-imperative-webforms-routing)
+[<span data-ttu-id="f84ef-106">&#9654;观看视频（12分钟）</span><span class="sxs-lookup"><span data-stu-id="f84ef-106">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-imperative-webforms-routing)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="b040e-107">[上一页](aspnet-4-quick-hit-permanent-redirect.md)
-> [下一页](aspnet-4-quick-hit-declarative-webforms-routing.md)</span><span class="sxs-lookup"><span data-stu-id="b040e-107">[Previous](aspnet-4-quick-hit-permanent-redirect.md)
+> <span data-ttu-id="f84ef-107">[上一页](aspnet-4-quick-hit-permanent-redirect.md)
+> [下一页](aspnet-4-quick-hit-declarative-webforms-routing.md)</span><span class="sxs-lookup"><span data-stu-id="f84ef-107">[Previous](aspnet-4-quick-hit-permanent-redirect.md)
 [Next](aspnet-4-quick-hit-declarative-webforms-routing.md)</span></span>

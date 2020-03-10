@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/aspnet-ajax/set-up-your-development-environment-for-aspnet-20
-title: 为 ASP.NET 2.0 设置开发环境 |Microsoft Docs
+title: 设置 ASP.NET 2.0 的开发环境 |Microsoft Docs
 author: JoeStagner
-description: 在本视频中将了解如何设置开发环境用于开发 ASP.NET AJAX 应用程序，如果你面向的 ASP.NET 2.0。
+description: 在此视频中，你将了解如何设置开发环境以开发 ASP.NET AJAX 应用程序（如果面向 ASP.NET 2.0）。
 ms.author: riande
 ms.date: 05/13/2009
 ms.assetid: 9cf05d32-6c0e-487a-89da-7ef42666c0a3
 msc.legacyurl: /web-forms/videos/aspnet-ajax/set-up-your-development-environment-for-aspnet-20
 msc.type: video
 ms.openlocfilehash: 5baa7e432c77643196deb321e8bfd99a1adec833
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408402"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438668"
 ---
-# <a name="set-up-your-development-environment-for-aspnet-20"></a><span data-ttu-id="447c8-103">设置用于 ASP.NET 2.0 的开发环境</span><span class="sxs-lookup"><span data-stu-id="447c8-103">Set Up Your Development Environment for ASP.NET 2.0</span></span>
+# <a name="set-up-your-development-environment-for-aspnet-20"></a><span data-ttu-id="e5cd4-103">设置用于 ASP.NET 2.0 的开发环境</span><span class="sxs-lookup"><span data-stu-id="e5cd4-103">Set Up Your Development Environment for ASP.NET 2.0</span></span>
 
-<span data-ttu-id="447c8-104">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="447c8-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="e5cd4-104">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="e5cd4-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="447c8-105">在本视频中将了解如何设置开发环境用于开发 ASP.NET AJAX 应用程序，如果你面向的 ASP.NET 2.0。</span><span class="sxs-lookup"><span data-stu-id="447c8-105">In this video you'll learn how to set up your Development Environment for developing ASP.NET AJAX Applications if you are targeting ASP.NET 2.0.</span></span>
+<span data-ttu-id="e5cd4-105">在此视频中，你将了解如何设置开发环境以开发 ASP.NET AJAX 应用程序（如果面向 ASP.NET 2.0）。</span><span class="sxs-lookup"><span data-stu-id="e5cd4-105">In this video you'll learn how to set up your Development Environment for developing ASP.NET AJAX Applications if you are targeting ASP.NET 2.0.</span></span>
 
-[<span data-ttu-id="447c8-106">&#9654;观看视频 （15 分钟）</span><span class="sxs-lookup"><span data-stu-id="447c8-106">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/set-up-your-development-environment-for-aspnet-20)
+[<span data-ttu-id="e5cd4-106">&#9654;观看视频（15分钟）</span><span class="sxs-lookup"><span data-stu-id="e5cd4-106">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/set-up-your-development-environment-for-aspnet-20)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="447c8-107">[上一页](set-up-your-development-environment-for-aspnet-35.md)
-> [下一页](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)</span><span class="sxs-lookup"><span data-stu-id="447c8-107">[Previous](set-up-your-development-environment-for-aspnet-35.md)
+> <span data-ttu-id="e5cd4-107">[上一页](set-up-your-development-environment-for-aspnet-35.md)
+> [下一页](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)</span><span class="sxs-lookup"><span data-stu-id="e5cd4-107">[Previous](set-up-your-development-environment-for-aspnet-35.md)
 [Next](how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel.md)</span></span>
