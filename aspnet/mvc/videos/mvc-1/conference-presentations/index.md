@@ -1,24 +1,24 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/index
-title: 访谈 |Microsoft Docs
+title: 讨论 |Microsoft Docs
 author: rick-anderson
-description: ASP.NET MVC 1 访谈
+description: ASP.NET MVC 1 讨论
 ms.author: riande
 ms.date: 09/28/2011
 ms.assetid: 276507d5-e9bd-46ba-8e98-32a8957504fa
 msc.legacyurl: /mvc/videos/mvc-1/conference-presentations
 msc.type: chapter
 ms.openlocfilehash: edca6bd618422e64886a3c4ececd5edf5eaeca76
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120802"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432128"
 ---
-# <a name="talks"></a><span data-ttu-id="9a691-103">谈话</span><span class="sxs-lookup"><span data-stu-id="9a691-103">Talks</span></span>
+# <a name="talks"></a><span data-ttu-id="04674-103">谈话</span><span class="sxs-lookup"><span data-stu-id="04674-103">Talks</span></span>
 
-> <span data-ttu-id="9a691-104">ASP.NET MVC 1 访谈</span><span class="sxs-lookup"><span data-stu-id="9a691-104">ASP.NET MVC 1 Talks</span></span>
+> <span data-ttu-id="04674-104">ASP.NET MVC 1 讨论</span><span class="sxs-lookup"><span data-stu-id="04674-104">ASP.NET MVC 1 Talks</span></span>
 
-- [<span data-ttu-id="9a691-105">使用 Microsoft ASP.NET 模型视图控制器创建 NerdDinner.com (MVC)</span><span class="sxs-lookup"><span data-stu-id="9a691-105">Creating NerdDinner.com with Microsoft ASP.NET Model View Controller (MVC)</span></span>](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
-- [<span data-ttu-id="9a691-106">美国达人秀视图控制器框架</span><span class="sxs-lookup"><span data-stu-id="9a691-106">America's Next Top Model View Controller Framework</span></span>](americas-next-top-model-view-controller-framework.md)
-- [<span data-ttu-id="9a691-107">愤怒的忍者黑带技巧</span><span class="sxs-lookup"><span data-stu-id="9a691-107">Ninja on Fire Black Belt Tips</span></span>](ninja-on-fire-black-belt-tips.md)
+- [<span data-ttu-id="04674-105">使用 Microsoft ASP.NET 模型视图控制器创建 NerdDinner.com (MVC)</span><span class="sxs-lookup"><span data-stu-id="04674-105">Creating NerdDinner.com with Microsoft ASP.NET Model View Controller (MVC)</span></span>](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
+- [<span data-ttu-id="04674-106">美国达人秀视图控制器框架</span><span class="sxs-lookup"><span data-stu-id="04674-106">America's Next Top Model View Controller Framework</span></span>](americas-next-top-model-view-controller-framework.md)
+- [<span data-ttu-id="04674-107">愤怒的忍者黑带技巧</span><span class="sxs-lookup"><span data-stu-id="04674-107">Ninja on Fire Black Belt Tips</span></span>](ninja-on-fire-black-belt-tips.md)
