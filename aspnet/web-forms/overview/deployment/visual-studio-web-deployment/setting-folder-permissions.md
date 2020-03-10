@@ -9,11 +9,11 @@ ms.assetid: 9715a121-fa55-4f1b-a5d2-fb3f6cd8be8f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/setting-folder-permissions
 msc.type: authoredcontent
 ms.openlocfilehash: 410525bb2e3f6e5a0be6d7d6b33fb3a40509041a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614939"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78465062"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-setting-folder-permissions"></a>使用 Visual Studio 的 ASP.NET Web 部署：设置文件夹权限
 
@@ -63,11 +63,11 @@ ms.locfileid: "74614939"
 
 ![ELMAH 错误日志页](setting-folder-permissions/_static/image4.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 你现在已经完成了在本地计算机上的 IIS 中正常工作所需的所有任务。 在下一教程中，你将通过将网站部署到 Azure 使其公开发布。
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
 在此示例中，Elmah 无法保存日志文件的原因相当明显。 在出现问题的原因不太明显的情况下，可以使用 IIS 跟踪;请参阅 IIS.net 站点上的[使用 IIS 7 中的跟踪对失败请求进行故障排除](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis)。
 

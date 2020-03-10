@@ -1,174 +1,174 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
-title: 第 5 部分：编辑窗体和模板化 |Microsoft Docs
+title: 第5部分：编辑窗体和模板化 |Microsoft Docs
 author: jongalloway
-description: 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 5 部分介绍如何编辑窗体和模板化。
+description: 本教程系列详细介绍了生成 ASP.NET MVC 音乐应用商店示例应用程序所需执行的所有步骤。 第5部分涵盖编辑窗体和模板化。
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
 ms.openlocfilehash: 20b99cbe57b5dfa623205838a5929733a6c2d70d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112989"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450908"
 ---
-# <a name="part-5-edit-forms-and-templating"></a>第 5 部分：编辑窗体和模板化
+# <a name="part-5-edit-forms-and-templating"></a>第5部分：编辑窗体和模板化
 
-通过[Jon Galloway](https://github.com/jongalloway)
+作者： [Jon Galloway](https://github.com/jongalloway)
 
-> MVC Music 商店是介绍，并说明如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发分步教程应用程序。  
+> MVC 音乐应用商店是一个教程应用程序，该应用程序逐步介绍了如何使用 ASP.NET MVC 和 Visual Studio 进行 web 开发。  
 >   
-> MVC Music 商店是该类销售音乐 album 联机，并实现基本的站点管理、 用户登录，和购物车功能存储区实现轻量的示例。
+> MVC 音乐应用商店是一种轻型示例存储实现，它可以在线销售音乐专辑，并实现基本的网站管理、用户登录和购物车功能。
 > 
-> 本系列教程详细介绍所有构建 ASP.NET MVC Music 商店示例应用程序所采取的步骤。 第 5 部分介绍如何编辑窗体和模板化。
+> 本教程系列详细介绍了生成 ASP.NET MVC 音乐应用商店示例应用程序所需执行的所有步骤。 第5部分涵盖编辑窗体和模板化。
 
-在过去的章中，我们已从数据库加载数据并显示它。 在本章中，我们还将启用编辑数据。
+在过去的章节中，我们从数据库加载数据并显示数据。 在本章中，我们还将启用数据编辑。
 
 ## <a name="creating-the-storemanagercontroller"></a>创建 StoreManagerController
 
-我们将首先创建名为的新控制器**StoreManagerController**。 此控制器中，我们将充分利用 ASP.NET MVC 3 Tools Update 中提供的基架功能。 设置添加控制器对话框的选项，如下所示。
+首先，我们将创建一个名为**StoreManagerController**的新控制器。 对于这一控制器，我们将利用 ASP.NET MVC 3 工具更新中提供的基架功能。 设置 "添加控制器" 对话框的选项，如下所示。
 
 ![](mvc-music-store-part-5/_static/image1.png)
 
-当你单击添加按钮时，会看到 ASP.NET MVC 3 基架机制为您完成大量的工作：
+当你单击 "添加" 按钮时，你将看到 ASP.NET MVC 3 基架机制为你执行了很好的工作：
 
-- 它使用实体框架局部变量创建新 StoreManagerController
-- 它将 StoreManager 文件夹添加到项目的 Views 文件夹
-- 它将添加 Create.cshtml、 Delete.cshtml、 Details.cshtml、 Edit.cshtml 和 Index.cshtml 视图中，强类型化为唱片集类
+- 它使用本地实体框架变量创建新的 StoreManagerController
+- 它将 StoreManager 文件夹添加到项目的 Views 文件夹中
+- 它向唱片集类添加了 Create. cshtml、Delete. cshtml、Details、node.js、和 Index。
 
 ![](mvc-music-store-part-5/_static/image2.png)
 
-新 StoreManager 控制器类包括 CRUD （创建、 读取、 更新、 删除） 控制器操作在其知道如何处理与唱片集的模型和我们的 Entity Framework 上下文用于数据库访问权限。
+新的 StoreManager 控制器类包括 CRUD （创建、读取、更新、删除）控制器操作，这些操作知道如何使用唱片集模型类，并使用我们的实体框架上下文进行数据库访问。
 
-## <a name="modifying-a-scaffolded-view"></a>修改基架生成的视图
+## <a name="modifying-a-scaffolded-view"></a>修改基架视图
 
-请务必记住，虽然我们已生成此代码，这是标准的 ASP.NET MVC 代码，就像已在本教程中，我们已编写的一样。 它可用于为你节省将会花费的时间编写样板控制器代码和手动创建强类型化的视图，但这不是生成的代码可能会看到前面加上有关如何不能更改的注释中的可怕警告类型代码。 这是你的代码，并且你应将其更改。
+请务必记住，尽管此代码是为我们生成的，但它是标准的 ASP.NET MVC 代码，就像我们在本教程中编写的一样。 它旨在节省编写样板控制器代码和手动创建强类型视图所需的时间，但这并不是你在可怕警告的注释中所看到的生成代码的类型。编写. 这是你的代码，你应更改它。
 
-因此，让我们先快速编辑到 StoreManager 索引视图 (/ Views/StoreManager/Index.cshtml)。 此视图将显示一个表，该表列出了在我们的存储与编辑相册 / 详细信息 / 删除的链接，并包含唱片集的公共属性。 我们将删除 AlbumArtUrl 字段，因为它不是在此显示中非常有用。 中&lt;表&gt;部分的查看代码中，删除&lt;th&gt;并&lt;td&gt;元素周围 AlbumArtUrl 引用，如以下突出显示的行所示：
+接下来，让我们从快速编辑 StoreManager 索引视图（/Views/StoreManager/Index.cshtml）开始。 此视图将显示一个表，其中列出了使用 "编辑/详细信息/删除" 链接的商店中的专辑，并包括唱片集的公共属性。 我们将删除 AlbumArtUrl 字段，因为它在此显示中不太有用。 在视图代码 &lt;表&gt; 部分中，删除围绕 AlbumArtUrl 引用 &lt;的&gt; 和 &lt;td&gt; 元素，如下所示：
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample1.cshtml)]
 
-经过修改的视图代码将如下所示：
+修改后的视图代码将如下所示：
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample2.cshtml)]
 
-## <a name="a-first-look-at-the-store-manager"></a>初步了解存储管理器
+## <a name="a-first-look-at-the-store-manager"></a>第一次查看存储管理器
 
-现在运行应用程序并浏览到/StoreManager /。 此时将显示存储管理器我们只需修改索引，其中包含用于编辑的详细信息，和删除链接的存储中显示的唱片集列表。
+现在，运行应用程序并浏览到/StoreManager/。 这会显示刚刚修改的存储管理器索引，并显示存储中具有要编辑、详细信息和删除链接的唱片集列表。
 
 ![](mvc-music-store-part-5/_static/image3.png)
 
-单击编辑链接显示的唱片集、 流派和艺术家包括下拉列表的字段的编辑窗体。
+单击 "编辑" 链接将显示包含唱片集字段的编辑窗体，包括用于流派和艺术家的下拉列表。
 
 ![](mvc-music-store-part-5/_static/image4.png)
 
-单击"返回到列表"链接，在底部，然后单击唱片集的详细信息链接。 这将显示单个唱片集的详细信息。
+单击底部的 "返回列表" 链接，然后单击唱片集的详细信息链接。 这将显示单个唱片集的详细信息。
 
 ![](mvc-music-store-part-5/_static/image5.png)
 
-同样，单击列表链接回，然后单击删除链接。 此时将显示确认对话框中，显示的唱片集详细信息并询问我们要确保我们想要将其删除。
+再次单击 "返回列表" 链接，然后单击 "删除" 链接。 此时将显示一个确认对话框，其中显示了唱片集详细信息，并询问是否确实要删除它。
 
 ![](mvc-music-store-part-5/_static/image6.png)
 
-单击底部的删除按钮，将删除唱片集，并使你返回到索引页，其中显示了已删除的唱片集。
+单击底部的 "删除" 按钮将删除该唱片集，并返回到 "索引" 页，其中显示了已删除的唱片集。
 
-我们还没有完成与存储管理器，但我们具有有效的控制器和视图的 CRUD 操作从启动代码。
+我们并不是使用存储管理器完成的，但我们有工作控制器和查看代码，使 CRUD 操作开始。
 
 ## <a name="looking-at-the-store-manager-controller-code"></a>查看存储管理器控制器代码
 
-存储管理器控制器包含大量的代码。 让我们通过此从上到下。 该控制器包含一个 MVC 控制器，以及对我们的模型命名空间的引用的某些标准命名空间。 控制器有 MusicStoreEntities，使用每个控制器操作进行数据访问的专用实例。
+存储管理器控制器包含大量的代码。 接下来，从上到下。 控制器包括 MVC 控制器的一些标准命名空间，以及对模型命名空间的引用。 控制器具有 MusicStoreEntities 的专用实例，每个控制器操作都使用该实例来进行数据访问。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample3.cs)]
 
 ### <a name="store-manager-index-and-details-actions"></a>存储管理器索引和详细信息操作
 
-索引视图中检索唱片集，包括每个唱片集的被引用的流派和艺术家信息，正如我们以前看到的应用商店浏览方法上工作时的列表。 索引视图，以便它可以使控制器进行高效的查询的原始请求中的此信息显示每个唱片集的类型名称和艺术家姓名关注对所链接的对象的引用。
+索引视图检索唱片集列表，包括每个唱片集的引用流派和艺术家信息，正如我们先前在处理 Store Browse 方法时看到的一样。 索引视图位于对链接对象的引用之后，因此它可以显示每个唱片集的流派名称和艺术家名称，因此控制器有效并在原始请求中查询此信息。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample4.cs)]
 
-StoreManager 控制器的详细信息控制器操作的工作方式，我们编写了以前为-它会询问是否唱片集的存储控制器的详细信息操作完全相同的 ID 使用 find （） 方法，然后将其返回到视图。
+StoreManager 控制器的详细信息控制器操作的工作原理与我们以前使用 Find （）方法按 ID 向唱片集提供的存储控制器详细信息操作完全相同，然后将其返回给视图。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample5.cs)]
 
 ### <a name="the-create-action-methods"></a>创建操作方法
 
-创建操作方法是稍有不同的为止，我们所看到的因为它们处理窗体输入。 当用户首次访问时 /StoreManager/创建/他们将看到一个空窗体。 此 HTML 页将包含&lt;窗体&gt;元素，其中包含下拉列表中，文本框中输入的元素可在其中输入唱片集的详细信息。
+创建操作方法与我们目前为止所看到的方法稍有不同，因为它们处理窗体输入。 用户首次访问/StoreManager/Create/时，将显示一个空窗体。 此 HTML 页面将包含一个 &lt;窗体&gt; 元素，其中包含可在其中输入唱片集详细信息的 dropdown 和 textbox 输入元素。
 
-唱片集窗体值中填充用户后，他们可以按"保存"按钮提交这些更改回我们的应用程序保存在数据库中。 当用户按"保存"按钮&lt;窗体&gt;将执行 HTTP POST 回 /StoreManager/创建/URL，并提交&lt;窗体&gt;作为 HTTP POST 的一部分的值。
+用户填写唱片集格式值后，可以按 "保存" 按钮将这些更改提交回应用程序，以便保存到数据库中。 当用户按下 "保存" 按钮时，&lt;窗体&gt; 会执行 HTTP 回发到/StoreManager/Create/URL，并将 &lt;窗体&gt; 值作为 HTTP POST 的一部分提交。
 
-ASP.NET MVC 使我们能够轻松地通过使我们能够实现两个单独的"创建"操作方法中我们 StoreManagerController 类-另一个用于处理初始的 HTTP GET 浏览到 /StoreManager/Create 拆分这两个 URL 调用方案的逻辑/ URL 和其他处理 HTTP POST 提交的更改。
+通过使我们能够在 StoreManagerController 类中实现两个单独的 "创建" 操作方法（一个用于处理最初的 HTTP-GET 浏览到/StoreManager/Create/URL，另一个用于处理提交的更改的 HTTP POST），ASP.NET MVC 使我们可以轻松地将这两个 URL 调用方案的逻辑拆分开来。
 
-### <a name="passing-information-to-a-view-using-viewbag"></a>将信息传递给视图使用 ViewBag
+### <a name="passing-information-to-a-view-using-viewbag"></a>使用 ViewBag 将信息传递给视图
 
-我们之前在本教程中已使用 ViewBag 但探讨它得还不够。 ViewBag 使我们能够将信息传递给视图，而无需使用强类型化的模型对象。 在这种情况下，需要将这两个流派和艺术家的列表传递给窗体来填充下拉列表中，我们编辑 HTTP-GET 控制器操作和执行此操作的最简单方法是将其返回作为 ViewBag 项。
+我们已在本教程的前面部分使用了 ViewBag，但尚未谈论它。 ViewBag 允许我们将信息传递给视图，而无需使用强类型化的模型对象。 在这种情况下，"编辑 HTTP-获取控制器" 操作需要将流派和音乐家列表同时传递给窗体来填充下拉列表，最简单的方法是将其返回为 ViewBag 项。
 
-ViewBag 是动态对象，这意味着你可以无需编写代码来定义这些属性键入 ViewBag.Foo 或 ViewBag.YourNameHere。 在这种情况下，控制器代码使用 ViewBag.GenreId 和 ViewBag.ArtistId，以便处理该窗体提交的下拉列表中值将 GenreId 和 ArtistId，即会设置它们的唱片集属性。
+ViewBag 是动态对象，这意味着你可以在不编写代码的情况下键入 ViewBag 或 ViewBag 来定义这些属性。 在这种情况下，控制器代码使用 ViewBag GenreId 和 ViewBag，这样，使用窗体提交的下拉值将为 GenreId 和 ArtistId，这些值是他们将设置的唱片集属性。
 
-这些下拉列表中的值返回到窗体使用 SelectList 对象，它专门为此目的。 这是使用如下代码：
+将使用 SelectList 对象将这些下拉值返回到窗体，此对象只是为此目的而构建的。 这是使用如下所示的代码完成的：
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample6.cs)]
 
-您可以看到从操作方法代码，三个参数是要用于创建此对象：
+从操作方法代码中可以看到，三个参数用于创建此对象：
 
-- 将显示在下拉列表中的项的列表。 请注意，这并不只是一个字符串-我们传入影片类型列表。
-- 下一个参数传递给 SelectList 是所选的值。 此 SelectList 如何知道如何预选择列表中的项。 这将是更易于理解时我们了解一下编辑窗体，这是非常相似。
-- 最后一个参数是要显示的属性。 在这种情况下，这指示 Genre.Name 属性什么将向用户显示。
+- 下拉列表将显示的项的列表。 请注意，这不只是一个字符串，而是传递一个流派列表。
+- 传递给 SelectList 的下一个参数是选定的值。 SelectList 如何知道如何在列表中预先选择一项。 当我们查看 "编辑" 窗体时，这会很容易理解，这非常类似。
+- 最终参数是要显示的属性。 在这种情况下，这指示 Genre.Name 属性将显示给用户。
 
-这一点后，然后，创建 HTTP GET 操作是非常简单-两个 SelectLists 添加到 ViewBag，并没有模型对象传递给窗体 （因为它尚未创建）。
+考虑到这一点，HTTP GET Create 操作非常简单-两个 SelectLists 已添加到 ViewBag，并且没有模型对象传递到窗体（因为尚未创建）。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample7.cs)]
 
-### <a name="html-helpers-to-display-the-drop-downs-in-the-create-view"></a>若要在创建视图中显示在删除列表的 HTML 帮助器
+### <a name="html-helpers-to-display-the-drop-downs-in-the-create-view"></a>用于在创建视图中显示下拉的 HTML 帮助器
 
-由于我们已经讨论过的下拉列表值传递到视图的方式，让我们快速看一下视图以查看这些值的显示方式。 查看代码中 (/ Views/StoreManager/Create.cshtml)，可以看到进行以下调用以显示流派下拉列表。
+由于我们已经讨论了下拉值如何传递给视图，接下来让我们快速查看一下视图，查看这些值的显示方式。 在视图代码（/Views/StoreManager/Create.cshtml）中，你将看到执行以下调用以显示流派下拉。
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample8.cshtml)]
 
-这被称为 HTML 帮助器的实用工具方法，后者将执行一项常见视图任务。 HTML 帮助程序是在保持简洁和可读的我们查看代码中非常有用。 Html.DropDownList 帮助程序提供的 ASP.NET MVC 中，但我们稍后会看到它是可以创建适用于查看代码，我们将在我们的应用程序中重复使用我们的帮助程序。
+这称为 HTML 帮助器-一种执行常见视图任务的实用工具方法。 HTML 帮助程序非常适用于保持视图代码的简洁和可读性。 ASP.NET MVC 提供 DropDownList 帮助程序，但正如我们稍后将看到的，我们可以创建自己的用于查看代码的帮助程序，我们将在应用程序中重复使用这些代码。
 
-Html.DropDownList 调用只需告知两件事-何处进行 get 列表后，若要显示，和哪些值 （如果有） 应预先选择。 第一个参数，GenreId，告知 DropDownList 以寻找名 GenreId 为模型或 ViewBag 中的值。 第二个参数用于指示要显示的值最初在下拉列表中选择。 由于此窗体是创建窗体，因此没有要预先选择的值，并传递 String.Empty。
+只需对 DropDownList 调用进行以下两项通知：在何处获取要显示的列表，以及应预先选择的值（如果有）。 第一个参数 GenreId 指示 DropDownList 在模型或 ViewBag 中查找名为 GenreId 的值。 第二个参数用于指示要在下拉列表中以初始方式显示的值。 由于此窗体是 Create 窗体，因此没有要预先选择的值和 String。将传递空值。
 
-### <a name="handling-the-posted-form-values"></a>处理发布窗体值
+### <a name="handling-the-posted-form-values"></a>处理已发布的表单值
 
-如之前所述，有两个操作方法与每个窗体相关联。 第一个处理 HTTP GET 请求，并显示该窗体。 第二个处理 HTTP POST 请求，其中包含的提交的窗体值。 请注意控制器操作具有 [HttpPost] 属性，它将告诉 ASP.NET MVC 它只应响应 HTTP POST 请求。
+如前文所述，有两个与每个窗体相关联的操作方法。 首先处理 HTTP GET 请求，并显示窗体。 第二个处理 HTTP POST 请求，其中包含已提交的窗体值。 请注意，"控制器操作" 有一个 "[HttpPost]" 属性，该属性指示 ASP.NET MVC 只应响应 HTTP POST 请求。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample9.cs)]
 
-此操作有四个职责：
+此操作具有四个责任：
 
 - 1. 读取窗体值
-- 2. 检查窗体值是否传递的任何验证规则
-- 3. 如果表单提交有效，将数据保存并显示更新的列表
-- 4. 如果提交窗体不是有效的重新显示具有验证错误的窗体
+- 2. 检查窗体值是否通过任何验证规则
+- 3. 如果表单提交有效，请保存数据并显示更新后的列表
+- 4. 如果窗体提交无效，将重新显示具有验证错误的窗体
 
-#### <a name="reading-form-values-with-model-binding"></a>使用模型绑定的读取窗体值
+#### <a name="reading-form-values-with-model-binding"></a>用模型绑定读取窗体值
 
-控制器操作正在处理包括用于标题、 价格和 AlbumArtUrl GenreId 和 ArtistId 值 （从下拉列表） 和文本框值的窗体提交。 可以直接访问窗体值时，更好的方法是使用内置到 ASP.NET MVC 模型绑定功能。 模型类型作为参数的控制器操作时，ASP.NET MVC 将尝试填充该类型使用窗体输入 （以及路由和查询字符串值） 的对象。 此查找的值名称匹配的模型对象的属性，例如，它会设置新的唱片集对象的 GenreId 值时，它会查找与名称 GenreId 的输入。 创建 ASP.NET MVC 中使用的标准方法的视图时，将始终为输入的字段名称，使用属性名称，因此此字段名称将只匹配呈现窗体。
+控制器操作正在处理窗体提交，其中包含 GenreId 和 ArtistId 的值（从下拉列表中）和文本框的标题、价格和 AlbumArtUrl 的值。 尽管可以直接访问窗体值，但更好的方法是使用内置于 ASP.NET MVC 中的模型绑定功能。 当控制器操作采用模型类型作为参数时，ASP.NET MVC 将尝试使用窗体输入（以及路由和查询字符串值）来填充该类型的对象。 它通过查找名称与模型对象的属性匹配的值来实现此目标，例如，设置新的唱片集对象的 GenreId 值时，它会查找名称为 GenreId 的输入。 当使用 ASP.NET MVC 中的标准方法创建视图时，窗体将始终使用属性名称作为输入字段名称进行呈现，因此，字段名称将与之匹配。
 
 #### <a name="validating-the-model"></a>验证模型
 
-通过简单调用 ModelState.IsValid 验证模型。 我们尚未向我们唱片集的类添加任何验证规则，但-我们将执行在位-好了，现在这一检查没有太大关系。 重要的是此 ModelStat.IsValid 检查将适应，我们在我们的模型，以便将来对验证规则的更改将不需要任何更新到控制器操作代码的验证规则。
+使用对 ModelState 的简单调用来验证模型。 我们尚未将任何验证规则添加到我们的唱集类中-我们将立即执行此操作，因此，现在这项检查并不太多了。 重要的是，此 ModelStat 检查将适合我们在我们的模型中进行的验证规则，因此，以后对验证规则的更改不需要对控制器操作代码进行任何更新。
 
-#### <a name="saving-the-submitted-values"></a>保存已提交的值
+#### <a name="saving-the-submitted-values"></a>保存提交的值
 
-如果提交窗体通过验证，就可以将值保存到数据库。 使用实体框架，只需将模型添加到唱片集集合并调用 SaveChanges。
+如果表单提交通过验证，则可以将这些值保存到数据库。 对于实体框架，只需将模型添加到 "唱片集" 集合并调用 SaveChanges 即可。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample10.cs)]
 
-实体框架生成相应的 SQL 命令，以保留的值。 在保存后的数据，我们将重定向回唱片集的列表，我们可以看到我们的更新。 这是通过返回 RedirectToAction 与我们要显示的控制器操作的名称。 在这种情况下，这是 Index 方法。
+实体框架生成合适的 SQL 命令来持久保存值。 保存数据后，我们将重定向回唱集列表，以便我们可以看到更新。 这是通过将 RedirectToAction 返回到我们要显示的控制器操作的名称来完成的。 在这种情况下，这是 Index 方法。
 
-#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>显示无效的窗体提交带有验证错误
+#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>显示具有验证错误的无效窗体提交
 
-在无效的窗体输入的情况下的下拉列表中值添加到 ViewBag （如 HTTP GET） 和绑定的模型值传递回视图进行显示。 验证错误将自动显示使用@Html.ValidationMessageFor的 HTML 帮助器。
+对于无效的窗体输入，会将 dropdown 值添加到 ViewBag （如在 HTTP GET case 中），并将绑定的模型值传递回要显示的视图。 使用 @Html.ValidationMessageFor HTML 帮助器自动显示验证错误。
 
-#### <a name="testing-the-create-form"></a>测试创建窗体
+#### <a name="testing-the-create-form"></a>测试 "创建" 窗体
 
-若要测试此扩展，运行的应用程序和浏览到 /StoreManager/创建 /-这将显示您 StoreController 创建 HTTP GET 方法返回的空白表单。
+若要对此进行测试，请运行应用程序并浏览到/StoreManager/Create/-这将显示 StoreController Create HTTP-GET 方法返回的空白窗体。
 
-填写一些值并单击创建按钮提交窗体。
+填写某些值并单击 "创建" 按钮以提交窗体。
 
 ![](mvc-music-store-part-5/_static/image7.png)
 
@@ -176,89 +176,89 @@ Html.DropDownList 调用只需告知两件事-何处进行 get 列表后，若�
 
 ### <a name="handling-edits"></a>处理编辑
 
-编辑操作对 （HTTP GET 和 HTTP POST） 都非常类似于我们刚了解的创建操作方法。 由于编辑方案涉及使用现有的相册，编辑 HTTP-GET 方法加载的唱片集基于"id"参数传递通过路由中。 如我们以前介绍了中的详细信息控制器操作，这段代码用于检索通过 AlbumId 唱片集都是相同的。 创建与 / HTTP GET 方法，通过 ViewBag 返回的下拉列表值。 这使得我们可以将唱片集作为我们的模型对象返回到视图 （这强类型化的唱片集类） 时通过 ViewBag 传递其他数据 （例如影片类型列表）。
+编辑操作对（HTTP GET 和 HTTP POST）非常类似于我们刚才查看的创建操作方法。 由于编辑方案涉及使用现有唱片集，因此编辑 HTTP-GET 方法会根据通过路由传入的 "id" 参数加载唱片集。 此用于通过 AlbumId 检索唱片集的代码与我们以前在详细信息控制器操作中查看的代码相同。 与创建/HTTP-GET 方法一样，下拉值通过 ViewBag 返回。 这样一来，我们就可以将唱片集作为模型对象返回到视图（强类型化为唱片集类），同时通过 ViewBag 传递附加数据（例如，流派列表）。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample11.cs)]
 
-编辑 HTTP POST 操作是非常类似于创建 HTTP POST 操作。 唯一的区别是，而不是向数据库添加新唱片集。唱片集集合中，我们要查找唱片集的当前实例使用 db。Entry(album) 并将其状态设置为已修改。 这会告诉实体框架，我们正在修改现有而不是创建一个新的相册。
+编辑 HTTP POST 操作与创建 HTTP POST 操作非常相似。 唯一的区别是，不是将新的唱片集添加到 db。唱集，我们正在使用 db 查找唱集的当前实例。条目（唱片集），并将其状态设置为 "已修改"。 这会告知实体框架我们正在修改现有的唱片集，而不是创建一个新的。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample12.cs)]
 
-我们可以通过运行应用程序并浏览到/StoreManger/，然后单击唱片集的编辑链接它进行测试。
+通过运行应用程序并浏览到/StoreManger/，然后单击唱片集的编辑链接，我们可以对此进行测试。
 
 ![](mvc-music-store-part-5/_static/image9.png)
 
-此时将显示所示编辑 HTTP GET 方法的编辑表单。 填写一些值并单击保存按钮。
+这会显示由编辑 HTTP-GET 方法显示的编辑窗体。 填写某些值并单击 "保存" 按钮。
 
 ![](mvc-music-store-part-5/_static/image10.png)
 
-此发布窗体、 保存值，并返回我们到唱片集列表中，显示已更新值。
+这会发送窗体，保存值并将我们返回到唱片集列表，其中显示值已更新。
 
 ![](mvc-music-store-part-5/_static/image11.png)
 
 ### <a name="handling-deletion"></a>处理删除
 
-删除遵循与编辑和创建，使用一个控制器操作可以确认窗体，显示和另一个控制器操作来处理提交窗体相同的模式。
+删除遵循与编辑和创建相同的模式，使用一个控制器操作显示确认窗体，并使用另一个控制器操作来处理窗体提交。
 
-HTTP GET 删除控制器操作正是我们之前的存储管理器详细信息控制器操作相同。
+HTTP-获取删除控制器操作与先前的 "存储管理器详细信息" 控制器操作完全相同。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample13.cs)]
 
-我们显示为唱片集类型，使用 Delete 视图内容模板的强类型化的窗体。
+我们将使用 "删除视图内容" 模板来显示已强类型化为唱片集类型的窗体。
 
 ![](mvc-music-store-part-5/_static/image12.png)
 
-删除模板显示所有字段的模型，但我们可以相当简化该列表。 更改为以下 /Views/StoreManager/Delete.cshtml 中的查看代码。
+"删除" 模板显示了该模型的所有字段，但我们可简化这一点。 将/Views/StoreManager/Delete.cshtml 中的视图代码更改为以下代码。
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample14.cshtml)]
 
-此时将显示简化的删除确认。
+这会显示简化的删除确认。
 
 ![](mvc-music-store-part-5/_static/image13.png)
 
-单击删除按钮后，窗体会回发到服务器，执行 DeleteConfirmed 操作。
+单击 "删除" 按钮会使窗体回发到服务器，这将执行 DeleteConfirmed 操作。
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample15.cs)]
 
-我们 HTTP POST 删除控制器操作将执行以下操作：
+我们的 HTTP POST 删除控制器操作执行以下操作：
 
-- 1. 加载的唱片集的 ID
-- 2. 将其删除唱片集并保存更改
-- 3. 重定向到显示唱片集已从列表中删除的索引
+- 1. 按 ID 加载唱片集
+- 2. 删除相册并保存更改
+- 3. 重定向到索引，显示已从列表中删除唱片集
 
-若要测试这一点，运行该应用程序，并浏览到 /StoreManager。 从列表中选择唱片集，然后单击删除链接。
+若要对此进行测试，请运行应用程序并浏览到/StoreManager。 从列表中选择一个唱片集，然后单击 "删除" 链接。
 
 ![](mvc-music-store-part-5/_static/image14.png)
 
-此时会显示我们删除确认屏幕。
+此时将显示 "删除" 确认屏幕。
 
 ![](mvc-music-store-part-5/_static/image15.png)
 
-单击删除按钮移除唱片集，并返回我们为存储管理器索引页，其中显示了已删除的唱片集。
+单击 "删除" 按钮将删除该唱片集并返回到 "商店经理索引" 页，其中显示已删除该唱片集。
 
 ![](mvc-music-store-part-5/_static/image16.png)
 
-### <a name="using-a-custom-html-helper-to-truncate-text"></a>使用自定义 HTML 帮助器要截断的文本
+### <a name="using-a-custom-html-helper-to-truncate-text"></a>使用自定义 HTML 帮助程序截断文本
 
-我们有一个潜在的问题与我们的存储管理器索引页。 唱片集标题和艺术家姓名属性都可以是时间足够长，它们可能会引发关闭我们表格的格式。 我们将创建自定义的 HTML 帮助程序，以便我们能够轻松地截断这些和我们的视图中的其他属性。
+我们的商店经理索引页有一个潜在的问题。 "唱片集标题" 和 "艺术家名称" 属性的长度可能会超出我们的表格格式。 我们将创建自定义 HTML 帮助程序，以便在视图中轻松截断这些属性和其他属性。
 
 ![](mvc-music-store-part-5/_static/image17.png)
 
-Razor 的@helper语法变得很容易在视图中创建您自己使用的帮助器函数。 打开 /Views/StoreManager/Index.cshtml 视图，并添加以下代码直接后的@model行。
+Razor 的 @helper 语法使创建自己的 helper 函数以便在视图中使用非常简单。 打开/Views/StoreManager/Index.cshtml 视图并直接在 @model 行后添加以下代码。
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample16.cshtml)]
 
-此帮助程序方法采用一个字符串，以允许的最大长度。 帮助程序提供的文本是短于指定的长度，如果将其作为输出的是。 如果长度，然后它将截断的文本，并且"..."剩余时间内呈现。
+此帮助器方法使用一个字符串和最大长度以允许。 如果提供的文本小于指定的长度，则助手会按原样输出该文本。 如果更长，则会截断文本，并呈现 "..."余数。
 
-现在我们可以使用我们截断的帮助器以确保不超过 25 个字符的唱片集标题和艺术家姓名的属性。 使用我们新的截断帮助程序的完整视图代码如下所示。
+现在，我们可以使用截断帮助器来确保唱片集标题和艺术家名称属性少于25个字符。 使用新的截断帮助器的完整视图代码如下所示。
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample17.cshtml)]
 
-现在当我们浏览 /StoreManager/ URL 时，唱片集和标题保留下面我们最大长度。
+现在，浏览/StoreManager/URL 时，唱片集和标题会保持在最大长度以下。
 
 ![](mvc-music-store-part-5/_static/image18.png)
 
-注意:这将显示创建和使用一个帮助程序在一个视图中的简单情况。 若要了解有关创建可在整个站点的帮助程序的详细信息，请参阅我的博客文章： [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
+注意：这会显示在一个视图中创建和使用帮助器的简单案例。 若要详细了解如何创建可在整个站点中使用的帮助程序，请参阅我的博客文章： [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
 
 > [!div class="step-by-step"]
 > [上一页](mvc-music-store-part-4.md)

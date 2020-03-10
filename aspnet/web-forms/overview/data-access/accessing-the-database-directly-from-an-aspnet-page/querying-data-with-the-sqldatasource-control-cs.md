@@ -9,11 +9,11 @@ ms.assetid: 60512d6a-b572-4b7a-beb3-3e44b4d2020c
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5bda42965f7d1db71b207c0b76e251b8fff64e31
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606131"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508220"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-c"></a>使用 SqlDataSource 控件查询数据 (C#)
 
@@ -195,7 +195,7 @@ SqlDataSource 会出现另一个很微妙，其中包含分页和排序。 默�
 
 **图 15**： GridView 显示了每个产品的 ID、名称和关联的类别名称（[单击以查看完全大小的图像](querying-data-with-the-sqldatasource-control-cs/_static/image23.gif)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何使用 SqlDataSource 控件查询和显示数据。 与 ObjectDataSource 一样，SqlDataSource 充当代理，提供用于访问数据的声明性方法。 它的属性指定要连接到的数据库，以及要执行的 SQL `SELECT` 查询;可以通过属性窗口或使用 "配置数据源" 向导来指定。
 
@@ -222,4 +222,4 @@ SqlDataSource 会出现另一个很微妙，其中包含分页和排序。 默�
 此教程系列由许多有用的审阅者查看。 本教程的领导评审者是 Susan Connery、Bernadette Leigh 和 David Suru。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [下一部分](using-parameterized-queries-with-the-sqldatasource-cs.md)

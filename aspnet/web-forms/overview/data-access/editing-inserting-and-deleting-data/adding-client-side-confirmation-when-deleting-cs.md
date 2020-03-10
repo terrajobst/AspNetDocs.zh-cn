@@ -9,11 +9,11 @@ ms.assetid: f6e2a12a-2b5e-48fd-8db3-1e94a500c19a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e7d53bc65fdbbfa9ce9bfa5fbdbfa0dea598eebe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74623492"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78479816"
 ---
 # <a name="adding-client-side-confirmation-when-deleting-c"></a>删除时添加客户端确认 (C#)
 
@@ -125,7 +125,7 @@ CommandField 的缺点之一是必须通过索引访问其按钮，并且必须�
 
 其中， *controlID*是按钮 `ID` 属性的值。 虽然此模式仍需要强制转换的硬编码类型，但它无需对索引进行索引，因此布局可以更改，而不会导致运行时错误。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 JavaScript `confirm(string)` 函数是用于控制窗体提交工作流的常用方法。 执行时，该函数将显示一个模式客户端对话框，其中包含两个按钮，即 "确定" 和 "取消"。 如果用户单击 "确定"，`confirm(string)` 函数将返回 `true`;单击 "取消" 将返回 `false`。 此功能与浏览器的行为相结合，如果提交过程中的事件处理程序返回 `false`，则可用于在删除记录时显示确认消息。
 

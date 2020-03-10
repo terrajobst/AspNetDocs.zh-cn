@@ -2,84 +2,84 @@
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 title: SignalR 1.x 中心 API 指南-JavaScript 客户端 |Microsoft Docs
 author: bradygaster
-description: 本文档介绍了使用 SignalR JavaScript 客户端，例如浏览器和 Windows 应用商店 (WinJS) 应用中的版本 1.1 的中心 API...
+description: 本文档介绍了如何在 JavaScript 客户端（如浏览器和 Windows 应用商店（WinJS）应用 ... 中使用适用于 SignalR 版本1.1 的中心 API
 ms.author: bradyg
 ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
 ms.openlocfilehash: 24850fe5229490bf600e09ad4718abb575a845fa
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116976"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431102"
 ---
 # <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 中心 API 指南 - JavaScript 客户端
 
-通过[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
+作者： [Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 本文档提供使用 SignalR JavaScript 客户端，例如浏览器和 Windows 应用商店 (WinJS) 应用程序中的版本 1.1 的中心 API 的简介。
+> 本文档介绍了如何在 JavaScript 客户端（如浏览器和 Windows 应用商店（WinJS）应用程序）中使用适用于 SignalR 版本1.1 的中心 API。
 > 
-> SignalR 中心 API，可从连接的客户端到服务器和客户端到服务器进行远程过程调用 (Rpc)。 在服务器代码中，定义可由客户端，调用的方法和调用客户端运行的方法。 在客户端代码中，定义在服务器上，可以调用的方法，并调用在服务器运行的方法。 SignalR 将负责所有为你的客户端-服务器探测功能。
+> 利用 SignalR 中心 API，你可以将服务器中的远程过程调用（Rpc）连接到已连接的客户端和客户端。 在服务器代码中，你将定义可由客户端调用的方法，并调用在客户端上运行的方法。 在客户端代码中，定义可从服务器调用的方法，并调用在服务器上运行的方法。 SignalR 负责处理所有的客户端到服务器的操作。
 > 
-> SignalR 还提供了一个称为持久连接的较低级别 API。 简介 SignalR、 集线器和持久性连接，或者显示了如何构建一个完整的 SignalR 应用程序的教程，请参阅[SignalR-Getting Started](../getting-started/index.md)。
+> SignalR 还提供名为持久性连接的较低级别 API。 有关 SignalR、集线器和持久性连接的简介，或有关演示如何生成完整 SignalR 应用程序的教程，请参阅[SignalR-入门](../getting-started/index.md)。
 
 ## <a name="overview"></a>概述
 
 本文档包含以下各节：
 
-- [生成的代理和它为您的作用](#genproxy)
+- [生成的代理以及它为你执行的操作](#genproxy)
 
     - [何时使用生成的代理](#cantusegenproxy)
-- [客户端安装程序](#clientsetup)
+- [客户端设置](#clientsetup)
 
     - [如何引用动态生成的代理](#dynamicproxy)
-    - [如何为 SignalR 创建物理文件生成代理](#manualproxy)
+    - [如何为 SignalR 生成的代理创建物理文件](#manualproxy)
 - [如何建立连接](#establishconnection)
 
-    - [$。 connection.hub 是相同对象的 $.hubConnection() 创建](#connequivalence)
-    - [异步执行的 start 方法](#asyncstart)
+    - [$. 连接中心是 hubConnection （）创建的同一对象](#connequivalence)
+    - [开始方法的异步执行](#asyncstart)
 - [如何建立跨域连接](#crossdomain)
 - [如何配置连接](#configureconnection)
 
     - [如何指定查询字符串参数](#querystring)
     - [如何指定传输方法](#transport)
-- [如何获取代理的 Hub 类](#getproxy)
-- [如何定义服务器可以调用的客户端上的方法](#callclient)
+- [如何获取集线器类的代理](#getproxy)
+- [如何在客户端上定义服务器可以调用的方法](#callclient)
 - [如何从客户端调用服务器方法](#callserver)
 - [如何处理连接生存期事件](#connectionlifetime)
 - [如何处理错误](#handleerrors)
-- [如何启用客户端的日志记录](#logging)
+- [如何启用客户端日志记录](#logging)
 
-有关如何进行编程的服务器或.NET 客户端的文档，请参阅以下资源：
+有关如何对服务器或 .NET 客户端进行编程的文档，请参阅以下资源：
 
 - [SignalR 中心 API 指南-服务器](../guide-to-the-api/hubs-api-guide-server.md)
 - [SignalR 中心 API 指南-.NET 客户端](../guide-to-the-api/hubs-api-guide-net-client.md)
 
-API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 4，请参阅[API 主题的.NET 4 版本](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
+API 参考主题的链接适用于 .NET 4.5 版本的 API。 如果使用的是 .NET 4，请参阅[.net 4 版本的 API 主题](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
 
 <a id="genproxy"></a>
 
-## <a name="the-generated-proxy-and-what-it-does-for-you"></a>生成的代理和它为您的作用
+## <a name="the-generated-proxy-and-what-it-does-for-you"></a>生成的代理以及它为你执行的操作
 
-您可以编写 JavaScript 客户端与 SignalR 服务使用或不使用 SignalR 将为您生成的代理进行通信。 代理为你的用途是代码的简化的语法用于连接服务器调用，写入方法并在服务器上调用方法。
+你可以对 JavaScript 客户端进行编程，以便使用或不使用 SignalR 生成的代理来与 SignalR 服务进行通信。 代理的作用是简化用于连接的代码的语法，编写服务器调用的方法，并在服务器上调用方法。
 
-生成的代理时编写代码来调用服务器方法，使您可以使用看起来像执行本地函数的语法： 您可以编写`serverMethod(arg1, arg2)`而不是`invoke('serverMethod', arg1, arg2)`。 如果您键入了错误的服务器方法名称，生成的代理语法还允许即时和可识别客户端的错误。 如果您手动创建用于定义这些代理的文件，还可以用于编写调用服务器方法的代码获得 IntelliSense 支持。
+当你编写代码来调用服务器方法时，生成的代理使你可以使用类似于执行本地函数的语法：你可以编写 `serverMethod(arg1, arg2)` 而不是 `invoke('serverMethod', arg1, arg2)`。 如果错误键入服务器方法名称，生成的代理语法还会启用立即和可识别的客户端错误。 如果手动创建定义代理的文件，还可以获取对编写调用服务器方法的代码的 IntelliSense 支持。
 
-例如，假设在服务器上有以下 Hub 类：
+例如，假设您在服务器上具有以下中心类：
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample1.cs?highlight=1,3,5)]
 
-下面的代码示例显示用于调用什么如的 JavaScript 代码所示`NewContosoChatMessage`服务器和接收的调用的方法`addContosoChatMessageToPage`从服务器的方法。
+下面的代码示例演示了在服务器上调用 `NewContosoChatMessage` 方法以及从服务器接收 `addContosoChatMessageToPage` 方法的调用时，JavaScript 代码的外观。
 
-**使用生成代理**
+**与生成的代理**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample2.js?highlight=1-2,8)]
 
-**不生成代理**
+**没有生成的代理**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample3.js?highlight=2-3,9)]
 
@@ -87,168 +87,168 @@ API 参考主题的链接将指向.NET 4.5 版本的 API。 如果使用的.NET 
 
 ### <a name="when-to-use-the-generated-proxy"></a>何时使用生成的代理
 
-如果你想要注册的服务器调用的客户端方法的多个事件处理程序，则无法使用生成的代理。 否则为您可以选择使用生成的代理，或不基于您编码的首选项。 如果您选择不使用它，无需引用中的"signalr/中心"URL`script`在客户端代码中的元素。
+如果要为服务器调用的客户端方法注册多个事件处理程序，则不能使用生成的代理。 否则，你可以选择使用生成的代理，而不是基于编码首选项。 如果选择不使用此方法，则无需在客户端代码中引用 `script` 元素中的 "signalr/hub" URL。
 
 <a id="clientsetup"></a>
 
-## <a name="client-setup"></a>客户端安装程序
+## <a name="client-setup"></a>客户端设置
 
-JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用。 JQuery 版本必须是 1.6.4 或主要的更高版本，如 1.7.2、 1.8.2 或 1.9.1。 如果您决定使用生成的代理，则还需要对 SignalR 生成代理的 JavaScript 文件的引用。 下面的示例显示了哪些引用可能如下所示使用生成的代理的 HTML 页面中。
+JavaScript 客户端需要引用 jQuery 和 SignalR core JavaScript 文件。 JQuery 版本必须是1.6.4 或主要版本，如1.7.2、1.8.2 或1.9.1。 如果决定使用生成的代理，则还需要引用 SignalR 生成的代理 JavaScript 文件。 下面的示例演示在使用生成的代理的 HTML 页中，引用可能如下所示。
 
 [!code-html[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample4.html)]
 
-必须按以下顺序包含这些引用： jQuery 在此之后，SignalR core SignalR 代理 first、 last。
+这些引用必须按以下顺序包含： jQuery first、SignalR core 之后，以及 SignalR 代理 last。
 
 <a id="dynamicproxy"></a>
 
 ### <a name="how-to-reference-the-dynamically-generated-proxy"></a>如何引用动态生成的代理
 
-在前面的示例中，对 SignalR 生成代理的引用是动态生成的 JavaScript 代码，不是指向物理文件。 SignalR 为动态代理创建的 JavaScript 代码，并提供给客户端以响应"/ signalr/中心"URL。 如果指定的 SignalR 连接不同的基 URL 中的服务器上你`MapHubs`方法中，动态生成的代理文件的 URL 是你使用的自定义 URL"/ 中心"追加到它。
+在前面的示例中，对 SignalR 生成的代理的引用是动态生成的 JavaScript 代码，而不是物理文件。 SignalR 会动态地为代理创建 JavaScript 代码，并将其提供给客户端，以响应 "/signalr/hubs" URL。 如果在 `MapHubs` 方法中为服务器上的 SignalR 连接指定了不同的基 URL，则动态生成的代理文件的 URL 为自定义 URL，后面追加了 "/hubs"。
 
 > [!NOTE]
-> 对于 Windows 8 （Windows 应用商店） JavaScript 客户端，而不是动态生成一个使用物理代理文件。 有关详细信息，请参阅[How to create for SignalR 的物理文件生成代理](#manualproxy)本主题中更高版本。
+> 对于 Windows 8 （Windows 应用商店） JavaScript 客户端，请使用物理代理文件而不是动态生成的文件。 有关详细信息，请参阅本主题后面的[如何为 SignalR 生成的代理创建物理文件](#manualproxy)。
 
-在 ASP.NET MVC 4 Razor 视图中，使用波形符来指代将代理文件引用中的应用程序根目录：
+在 ASP.NET MVC 4 Razor 视图中，使用波形符在代理文件引用中引用应用程序根目录：
 
 [!code-html[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample5.html)]
 
-有关在 MVC 4 中使用 SignalR 的详细信息，请参阅[SignalR 和 MVC 4 入门](tutorial-getting-started-with-signalr-and-mvc-4.md)。
+有关在 MVC 4 中使用 SignalR 的详细信息，请参阅[使用 SignalR 和 MVC 4 入门](tutorial-getting-started-with-signalr-and-mvc-4.md)。
 
-在 ASP.NET MVC 3 Razor 视图中，使用`Url.Content`以供代理文件参考：
+在 ASP.NET MVC 3 Razor 视图中，为代理文件引用使用 `Url.Content`：
 
 [!code-cshtml[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample6.cshtml)]
 
-在 ASP.NET Web 窗体应用程序，使用`ResolveClientUrl`代理文件引用或通过使用应用程序根目录相对路径 （开头波形符） ScriptManager 注册：
+在 ASP.NET Web 窗体应用程序中，为代理文件引用使用 `ResolveClientUrl`，或使用应用根相对路径（以颚化符开头）通过 ScriptManager 注册它：
 
 [!code-aspx[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample7.aspx)]
 
-作为一般规则，用于指定将用于 CSS 或 JavaScript 文件"/ signalr/中心"URL 中使用相同的方法。 如果不使用波形符指定 URL，在某些情况下你的应用程序将正常工作时在 Visual Studio 中使用 IIS Express 测试，但部署到完整 IIS 时将失败并显示 404 错误。 有关详细信息，请参阅**解析对根级资源的引用**中[对于 ASP.NET Web 项目的 Visual Studio 中的 Web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)MSDN 站点上。
+作为一般规则，请使用与指定用于 CSS 或 JavaScript 文件的 "/signalr/hubs" URL 相同的方法。 如果在不使用波形符的情况下指定 URL，则在 Visual Studio 中使用 IIS Express 进行测试时，应用程序将正常工作，但在部署到完整 IIS 时将失败并出现404错误。 有关详细信息，请参阅 MSDN 网站上的在[Visual Studio for ASP.NET Web 项目的 Web 服务器](https://msdn.microsoft.com/library/58wxa9w5.aspx)中**解析对根级资源的引用**。
 
-当在调试模式下，Visual Studio 2012 中运行 web 项目，如果你使用 Internet Explorer 为您的浏览器，可以看到中的代理文件**解决方案资源管理器**下**脚本文档**，如中所示下图。
+在调试模式下运行 Visual Studio 2012 中的 web 项目时，如果使用 Internet Explorer 作为浏览器，则可以在**脚本文档**下的**解决方案资源管理器**中查看该代理文件，如下图所示。
 
-![在解决方案资源管理器中的 JavaScript 生成的代理文件](signalr-1x-hubs-api-guide-javascript-client/_static/image1.png)
+![JavaScript 在解决方案资源管理器中生成的代理文件](signalr-1x-hubs-api-guide-javascript-client/_static/image1.png)
 
-若要查看该文件的内容，请双击**中心**。 如果没有使用 Visual Studio 2012 和 Internet Explorer 中，或者你不在调试模式下，还可以通过浏览到"/ signalR/中心"URL 来获取文件的内容。 例如，如果您的网站在运行时`http://localhost:56699`，请转到`http://localhost:56699/SignalR/hubs`在浏览器中。
+若要查看文件的内容，请双击 "**中心**"。 如果使用的不是 Visual Studio 2012 和 Internet Explorer，或者不处于调试模式，还可以通过浏览到 "/signalR/hubs" URL 来获取文件的内容。 例如，如果你的站点正在 `http://localhost:56699`上运行，请在浏览器中转到 `http://localhost:56699/SignalR/hubs`。
 
 <a id="manualproxy"></a>
 
-### <a name="how-to-create-a-physical-file-for-the-signalr-generated-proxy"></a>如何为 SignalR 创建物理文件生成代理
+### <a name="how-to-create-a-physical-file-for-the-signalr-generated-proxy"></a>如何为 SignalR 生成的代理创建物理文件
 
-作为动态生成的代理的替代方法，可以创建具有代理代码的物理文件并引用该文件。 可能想要执行该操作，控制缓存，或者将行为，或若要获取 IntelliSense，在编码时对服务器方法的调用。
+作为动态生成的代理的替代方法，可以创建包含代理代码的物理文件，并引用该文件。 您可能想要执行此操作以控制缓存或绑定行为，或者在编码对服务器方法的调用时获取 IntelliSense。
 
 若要创建代理文件，请执行以下步骤：
 
-1. 安装[Microsoft.AspNet.SignalR.Utils](https://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) NuGet 包。
-2. 打开命令提示符并浏览到*工具*SignalR.exe 文件所在的文件夹。 工具文件夹位于以下位置：
+1. 安装[SignalR. Utils](https://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) NuGet 包。
+2. 打开命令提示符并浏览到包含 SignalR 文件的 "*工具*" 文件夹。 "工具" 文件夹位于以下位置：
 
     `[your solution folder]\packages\Microsoft.AspNet.SignalR.Utils.1.0.1\tools`
 3. 输入以下命令：
 
     `signalr ghp /path:[path to the .dll that contains your Hub class]`
 
-    通往你 *.dll*通常*bin*项目文件夹中的文件夹。
+    *.Dll*的路径通常为项目文件夹中的*bin*文件夹。
 
-    此命令创建名为的文件*server.js*所在的同一文件夹中*signalr.exe*。
-4. 将放*server.js*文件在项目中的相应文件夹中，根据应用程序中，将其重命名，并添加对它的引用来代替"signalr/中心"引用。
+    此命令在*signalr*所在的文件夹中创建名为*node.js*的文件。
+4. 将*服务器 .js*文件放在项目中的适当文件夹中，将其重命名为适用于你的应用程序，并在 "signalr/hub" 引用的位置添加对该文件的引用。
 
 <a id="establishconnection"></a>
 
 ## <a name="how-to-establish-a-connection"></a>如何建立连接
 
-您可以建立连接之前，必须创建连接对象，创建代理，并注册事件处理程序可以从服务器调用的方法的。 当安装的代理和事件处理程序，通过调用建立连接`start`方法。
+建立连接之前，必须先创建连接对象、创建代理，并为可从服务器调用的方法注册事件处理程序。 设置代理和事件处理程序后，通过调用 `start` 方法来建立连接。
 
-如果使用生成的代理，你无需因为生成的代理代码会为你自己的代码中创建连接对象。
+如果使用生成的代理，则无需在自己的代码中创建连接对象，因为生成的代理代码会为你执行该连接。
 
 <a id="nogenconnection"></a>
 
-**（与生成的代理） 建立连接**
+**建立连接（使用生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample8.js?highlight=5)]
 
-**建立连接 （而不生成的代理）**
+**建立连接（没有生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample9.js?highlight=1,6)]
 
-示例代码使用默认值"/ signalr"连接到 SignalR 服务的 URL。 有关如何指定不同的基 URL 的信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-/signalr URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl)。
+示例代码使用默认的 "/signalr" URL 连接到 SignalR 服务。 有关如何指定其他基 URL 的信息，请参阅[ASP.NET SignalR HUB API 指南-Server-/SIGNALR URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl)。
 
 > [!NOTE]
-> 通常情况下注册事件处理程序之前调用`start`方法以建立连接。 如果你想要建立连接后注册一些事件处理程序，您可以这样做，但您必须注册之前，调用在事件处理程序中至少一个`start`方法。 原因之一就是在应用程序，可以有多个中心，但您可能不希望触发`OnConnected`如果仅要使用到其中的每个中心上的事件。 建立连接后，在中心的代理服务器上的客户端方法的存在是告知 SignalR 来触发`OnConnected`事件。 如果你未注册任何事件处理程序之前调用`start`方法中，你将能够在中心，但集线器上调用方法`OnConnected`不会调用方法并没有客户端的方法将调用从服务器。
+> 通常，在调用 `start` 方法之前注册事件处理程序以建立连接。 如果要在建立连接后注册某些事件处理程序，可以这样做，但必须在调用 `start` 方法之前注册至少一个事件处理程序。 导致这种情况的原因之一是，应用程序中可以有很多的中心，但如果只打算使用其中一种，则不希望在每个中心触发 `OnConnected` 事件。 建立连接后，在集线器代理上存在客户端方法会告诉 SignalR 触发 `OnConnected` 事件。 如果在调用 `start` 方法之前未注册任何事件处理程序，你将能够在中心调用方法，但不会调用中心的 `OnConnected` 方法，也不会从服务器中调用任何客户端方法。
 
 <a id="connequivalence"></a>
 
-### <a name="connectionhub-is-the-same-object-that-hubconnection-creates"></a>$。 connection.hub 是相同对象的 $.hubConnection() 创建
+### <a name="connectionhub-is-the-same-object-that-hubconnection-creates"></a>$. 连接中心是 hubConnection （）创建的同一对象
 
-使用生成的代理时，可以看到示例中，从`$.connection.hub`引用的连接对象。 这是通过调用获取的相同对象`$.hubConnection()`时不使用生成的代理。 生成的代理代码创建您的连接通过执行以下语句：
+如示例中所示，当你使用生成的代理时，`$.connection.hub` 引用连接对象。 这是通过在不使用生成的代理时调用 `$.hubConnection()` 获取的相同对象。 生成的代理代码通过执行以下语句来创建连接：
 
-![在生成的代理文件中创建的连接](signalr-1x-hubs-api-guide-javascript-client/_static/image3.png)
+![在生成的代理文件中创建连接](signalr-1x-hubs-api-guide-javascript-client/_static/image3.png)
 
-当您使用生成的代理时，您可以执行任何操作`$.connection.hub`不使用时生成的代理可以执行与连接对象。
+当你使用生成的代理时，你可以使用 `$.connection.hub` 执行任何操作，当你未使用生成的代理时，你可以对连接对象执行此操作。
 
 <a id="asyncstart"></a>
 
-### <a name="asynchronous-execution-of-the-start-method"></a>异步执行的 start 方法
+### <a name="asynchronous-execution-of-the-start-method"></a>开始方法的异步执行
 
-`start`方法以异步方式执行。 它将返回[jQuery 延迟对象](http://api.jquery.com/category/deferred-object/)，这意味着您可以通过调用方法，如添加回调函数`pipe`， `done`，和`fail`。 如果你想要在建立连接后，执行的代码，如服务器方法调用，该代码放在回调函数中或从回调函数中调用它。 `.done`后已建立的连接，并且任何代码，之后必须执行回调方法在`OnConnected`事件处理程序方法在服务器上的完成执行。
+`start` 方法以异步方式执行。 它将返回[JQuery 延迟的对象](http://api.jquery.com/category/deferred-object/)，这意味着你可以通过调用 `pipe`、`done`和 `fail`等方法来添加回调函数。 如果你有想要在建立连接后执行的代码（例如，对服务器方法的调用），请将该代码放入回调函数或从回调函数调用它。 `.done` 回调方法在建立连接之后、在服务器上的 `OnConnected` 事件处理程序方法中完成执行的任何代码之后执行。
 
-如果将"现已连接"语句从前面的示例作为代码后的下一行`start`方法调用 (不在`.done`回调)，则`console.log`行将按如下所示执行才能建立连接，示例：
+如果将前面的示例中的 "当前连接的" 语句作为 `start` 方法调用（而不是在 `.done` 回调）之后的下一行代码，则在建立连接之前将执行 `console.log` 行，如下面的示例中所示：
 
-![错误的处理方式写入运行建立连接后的代码](signalr-1x-hubs-api-guide-javascript-client/_static/image5.png)
+![编写在建立连接后运行的代码的错误方法](signalr-1x-hubs-api-guide-javascript-client/_static/image5.png)
 
 <a id="crossdomain"></a>
 
 ## <a name="how-to-establish-a-cross-domain-connection"></a>如何建立跨域连接
 
-通常如果浏览器加载来自的页面`http://contoso.com`，在同一个域中，是在的 SignalR 连接`http://contoso.com/signalr`。 如果从页`http://contoso.com`建立到`http://fabrikam.com/signalr`，即跨域连接。 出于安全原因，默认情况下将禁用跨域连接。 若要建立跨域连接，请确保跨域连接已启用的服务器上，并在创建连接对象时指定的连接 URL。 SignalR 将使用适当的技术跨域连接，如[JSONP](http://en.wikipedia.org/wiki/JSONP)或[CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing)。
+通常情况下，当浏览器从 `http://contoso.com`加载页面时，SignalR 连接位于同一域中 `http://contoso.com/signalr`。 如果 `http://contoso.com` 的页面与 `http://fabrikam.com/signalr`建立连接，则这是一个跨域连接。 出于安全原因，在默认情况下将禁用跨域连接。 若要建立跨域连接，请确保在服务器上启用跨域连接，并在创建连接对象时指定连接 URL。 SignalR 将使用适当的技术进行跨域连接，例如[JSONP](http://en.wikipedia.org/wiki/JSONP)或[CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing)。
 
-选择该选项，在调用时，在服务器上启用跨域连接`MapHubs`方法。
+在服务器上，当你调用 `MapHubs` 方法时，请通过选择该选项来启用跨域连接。
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample10.cs?highlight=2)]
 
-在客户端上创建连接对象 （而不生成的代理） 时或在调用 start 方法 （与生成的代理） 之前指定的 URL。
+在客户端上，在创建连接对象（没有生成的代理）时或在调用 start 方法（包含生成的代理）之前，指定 URL。
 
-**指定 （与生成的代理） 的跨域连接的客户端代码**
+**指定跨域连接的客户端代码（使用生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample11.js?highlight=1)]
 
-**指定 （而不生成的代理） 的跨域连接的客户端代码**
+**指定跨域连接的客户端代码（没有生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample12.js?highlight=1)]
 
-当你使用`$.hubConnection`构造函数中，您无需包括`signalr`在 URL 中因为它将自动添加 (除非指定，否则`useDefaultUrl`作为`false`)。
+使用 `$.hubConnection` 构造函数时，无需将 `signalr` 包含在 URL 中，因为它是自动添加的（除非指定 `useDefaultUrl` `false`）。
 
-可以创建多个连接到不同的终结点。
+你可以创建与不同终结点的多个连接。
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample13.js)]
 
 > [!NOTE] 
 > 
-> - 未设置`jQuery.support.cors`为 true，在代码中。
+> - 不要在代码中将 `jQuery.support.cors` 设置为 true。
 > 
->     ![未将 jQuery.support.cors 设置为 true](signalr-1x-hubs-api-guide-javascript-client/_static/image7.png)
+>     ![请勿将 jQuery. 支持 cors 设置为 true](signalr-1x-hubs-api-guide-javascript-client/_static/image7.png)
 > 
->     SignalR 处理使用 JSONP 还是 CORS。 设置`jQuery.support.cors`以 true 禁用 JSONP，因为它会导致 SignalR 假设浏览器支持 CORS。
-> - 时要连接到本地主机 URL，Internet Explorer 10 不会考虑它的跨域连接，因此应用程序将在本地处理与 IE 10 即使尚未启用跨域服务器上的连接。
-> - 使用的 Internet Explorer 9 的跨域连接的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work)。
-> - 有关与 Chrome 使用跨域连接的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/15467373/signalr-1-0-1-cross-domain-request-cors-with-chrome)。
-> - 示例代码使用默认值"/ signalr"连接到 SignalR 服务的 URL。 有关如何指定不同的基 URL 的信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-/signalr URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl)。
+>     SignalR 处理 JSONP 或 CORS 的使用。 如果将 `jQuery.support.cors` 设置为 true，则将禁用 JSONP，因为这会导致 SignalR 假定浏览器支持 CORS。
+> - 当你连接到 localhost URL 时，Internet Explorer 10 不会将其视为跨域连接，因此，即使你未在服务器上启用跨域连接，应用程序也会在本地使用 IE 10。
+> - 有关使用 Internet Explorer 9 的跨域连接的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work)。
+> - 有关将跨域连接与 Chrome 一起使用的信息，请参阅[此 StackOverflow 线程](http://stackoverflow.com/questions/15467373/signalr-1-0-1-cross-domain-request-cors-with-chrome)。
+> - 示例代码使用默认的 "/signalr" URL 连接到 SignalR 服务。 有关如何指定其他基 URL 的信息，请参阅[ASP.NET SignalR HUB API 指南-Server-/SIGNALR URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl)。
 
 <a id="configureconnection"></a>
 
 ## <a name="how-to-configure-the-connection"></a>如何配置连接
 
-建立连接之前，您可以指定查询字符串参数或指定的传输方法。
+在建立连接之前，您可以指定查询字符串参数或指定传输方法。
 
 <a id="querystring"></a>
 
 ### <a name="how-to-specify-query-string-parameters"></a>如何指定查询字符串参数
 
-如果你想要将数据发送到服务器，客户端连接时，您可以将查询字符串参数添加到连接对象。 以下示例演示如何在客户端代码中设置的查询字符串参数。
+如果要在客户端连接时将数据发送到服务器，则可以将查询字符串参数添加到连接对象。 下面的示例演示如何在客户端代码中设置查询字符串参数。
 
-**（使用生成的代理） 调用 start 方法之前设置查询字符串值**
+**在调用 start 方法之前设置查询字符串值（使用生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample14.js?highlight=1)]
 
-**在调用 start 方法 （而不生成的代理） 之前设置查询字符串值**
+**在调用 start 方法之前设置查询字符串值（不包含生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample15.js?highlight=2)]
 
@@ -260,98 +260,98 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 
 ### <a name="how-to-specify-the-transport-method"></a>如何指定传输方法
 
-作为连接的过程的一部分，SignalR 客户端通常与服务器协商以确定支持的最佳传输服务器和客户端。 如果您已经知道你想要使用哪种的传输，您可以通过在调用时指定的传输方法来绕过这个协商过程`start`方法。
+作为连接过程的一部分，SignalR 客户端通常与服务器协商以确定服务器和客户端支持的最佳传输。 如果已知道要使用的传输，则在调用 `start` 方法时，可以通过指定传输方法来绕过此协商过程。
 
-**指定的传输方法 （具有生成的代理） 的客户端代码**
+**用于指定传输方法（带有生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample17.js?highlight=1)]
 
-**指定的传输方法 （而不生成的代理） 的客户端代码**
+**指定传输方法（不包含生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample18.js?highlight=2)]
 
-或者，可以指定要在其中 SignalR 尝试它们的顺序多个传输方法：
+作为替代方法，你可以按你希望 SignalR 尝试的顺序指定多个传输方法：
 
-**指定自定义传输的回退方案 （具有生成的代理） 的客户端代码**
+**指定自定义传输回退方案（使用生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample19.js?highlight=1)]
 
-**指定自定义传输的回退方案 （而不生成的代理） 的客户端代码**
+**指定自定义传输回退方案（不包含生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample20.js?highlight=2)]
 
-用于指定的传输方法，可以使用以下值：
+您可以使用以下值来指定传输方法：
 
-- "webSockets"
+- Websocket
 - "foreverFrame"
 - "serverSentEvents"
 - "longPolling"
 
-以下示例演示如何确定哪种传输方法使用建立的连接。
+下面的示例演示如何查明某个连接正在使用哪种传输方法。
 
-**显示使用 （与生成的代理） 的连接的传输方法的客户端代码**
+**显示连接使用的传输方法（使用生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample21.js?highlight=2)]
 
-**显示连接 （而不生成的代理） 使用的传输方法的客户端代码**
+**显示连接使用的传输方法（没有生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample22.js?highlight=3)]
 
-有关如何检查服务器代码中的传输方法的信息，请参阅[ASP.NET SignalR 中心 API 指南-服务器-如何从上下文属性中获取有关客户端信息](../guide-to-the-api/hubs-api-guide-server.md#contextproperty)。 有关传输和回退的详细信息，请参阅[简介 SignalR 的传输和回退](../getting-started/introduction-to-signalr.md#transports)。
+有关如何在服务器代码中检查传输方法的信息，请参阅[ASP.NET SignalR HUB API 指南-服务器-如何从上下文属性获取有关客户端的信息](../guide-to-the-api/hubs-api-guide-server.md#contextproperty)。 有关传输和回退的详细信息，请参阅[SignalR-传输和回退简介](../getting-started/introduction-to-signalr.md#transports)。
 
 <a id="getproxy"></a>
 
-## <a name="how-to-get-a-proxy-for-a-hub-class"></a>如何获取代理的 Hub 类
+## <a name="how-to-get-a-proxy-for-a-hub-class"></a>如何获取集线器类的代理
 
-创建每个连接对象封装有关与包含一个或多个 Hub 类的 SignalR 服务的连接信息。 若要与 Hub 类进行通信，你使用代理对象 （如果不使用的生成的代理），会创建您自己或为您生成。
+你创建的每个连接对象将封装有关与包含一个或多个中心类的 SignalR 服务的连接的信息。 若要与 Hub 类通信，可以使用自己创建的代理对象（如果不使用生成的代理）或为你生成。
 
-在客户端上的代理服务器名称是中心类名称的 camel 大小写版本。 SignalR 自动进行此更改，以便 JavaScript 代码可以遵循 JavaScript 约定。
+在客户端上，代理名称为集线器类名的 camel 大小写形式。 SignalR 会自动进行此更改，以便 JavaScript 代码可以符合 JavaScript 约定。
 
-**在服务器上的 hub 类**
+**服务器上的中心类**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample23.cs?highlight=1)]
 
-**获取对生成的客户端代理的引用为中心**
+**获取对中心生成的客户端代理的引用**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample24.js?highlight=1)]
 
-**创建 Hub 类 （而不生成的代理） 的客户端代理**
+**创建中心类的客户端代理（不包含生成的代理）**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample25.cs?highlight=1)]
 
-如果修饰在中心类`HubName`属性，而无需更改情况下使用的确切名称。
+如果使用 `HubName` 特性来修饰中心类，请使用完全相同的名称，而无需更改大小写。
 
-**HubName 属性与服务器上的 hub 类**
+**服务器上具有 HubName 属性的中心类**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample26.cs?highlight=1)]
 
-**获取对生成的客户端代理的引用为中心**
+**获取对中心生成的客户端代理的引用**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample27.js?highlight=1)]
 
-**创建 Hub 类 （而不生成的代理） 的客户端代理**
+**创建中心类的客户端代理（不包含生成的代理）**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample28.cs?highlight=1)]
 
 <a id="callclient"></a>
 
-## <a name="how-to-define-methods-on-the-client-that-the-server-can-call"></a>如何定义服务器可以调用的客户端上的方法
+## <a name="how-to-define-methods-on-the-client-that-the-server-can-call"></a>如何在客户端上定义服务器可以调用的方法
 
-若要定义服务器可以从集线器调用的方法，将添加一个事件处理程序到集线器代理通过使用`client`属性生成的代理，或调用`on`方法，如果不使用生成的代理。 参数可以是复杂对象。
+若要定义服务器可从集线器调用的方法，请使用生成的代理的 `client` 属性向中心代理添加一个事件处理程序，如果未使用生成的代理，则调用 `on` 方法。 参数可以是复杂对象。
 
-添加事件处理程序，然后再调用`start`方法以建立连接。 (如果你想要添加事件处理程序之后调用`start`方法，请参阅中的说明[如何建立连接](#establishconnection)先前在此文档，并使用用于定义一种方法，而无需使用生成的代理所示的语法。)
+在调用 `start` 方法之前添加事件处理程序以建立连接。 （如果要在调用 `start` 方法后添加事件处理程序，请参阅本文档前面[如何建立连接](#establishconnection)中的说明，并使用所示的语法来定义方法，而不使用生成的代理。）
 
-方法名称匹配不区分大小写。 例如，`Clients.All.addContosoChatMessageToPage`在服务器上将执行`AddContosoChatMessageToPage`， `addContosoChatMessageToPage`，或`addcontosochatmessagetopage`客户端上。
+方法名称匹配不区分大小写。 例如，服务器上的 `Clients.All.addContosoChatMessageToPage` 会在客户端上执行 `AddContosoChatMessageToPage`、`addContosoChatMessageToPage`或 `addcontosochatmessagetopage`。
 
-**（具有生成的代理） 的客户端上定义方法**
+**定义客户端上的方法（具有生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample29.js?highlight=2)]
 
-**另一种方法 （具有生成的代理） 的客户端上定义方法**
+**用于在客户端上定义方法的另一种方法（带有生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample30.js?highlight=1-2)]
 
-**客户端 （而无需生成的代理，或在调用 start 方法之后添加时） 上定义方法**
+**定义客户端上的方法（不包含生成的代理，或在调用 start 方法之后添加）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample31.js?highlight=3)]
 
@@ -359,21 +359,21 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample32.cs?highlight=5)]
 
-下面的示例包括复杂对象作为方法参数。
+下面的示例包含一个作为方法参数的复杂对象。
 
-**采用 （具有生成的代理） 的复杂对象的客户端上定义方法**
+**在采用复杂对象（使用生成的代理）的客户端上定义方法**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample33.js?highlight=2-3)]
 
-**使用复杂对象 （而不生成的代理） 的客户端上定义方法**
+**在采用复杂对象（没有生成的代理）的客户端上定义方法**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample34.js?highlight=3-4)]
 
-**定义的复杂对象的服务器代码**
+**定义复杂对象的服务器代码**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample35.cs?highlight=1)]
 
-**使用复杂对象的客户端方法调用的服务器代码**
+**使用复杂对象调用客户端方法的服务器代码**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample36.cs?highlight=3)]
 
@@ -381,57 +381,57 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 
 ## <a name="how-to-call-server-methods-from-the-client"></a>如何从客户端调用服务器方法
 
-若要从客户端调用服务器方法，使用`server`属性生成的代理或`invoke`中心代理，如果不使用生成的代理上的方法。 返回值或参数可能是复杂对象。
+若要从客户端调用服务器方法，请在不使用生成的代理的情况下，使用生成的代理的 `server` 属性或中心代理上的 `invoke` 方法。 返回值可以是复杂对象。
 
-在该中心传入方法名称的 camel 大小写格式版本。 SignalR 自动进行此更改，以便 JavaScript 代码可以遵循 JavaScript 约定。
+在集线器上传入方法名称的 camel 大小写形式。 SignalR 会自动进行此更改，以便 JavaScript 代码可以符合 JavaScript 约定。
 
-以下示例演示如何调用服务器方法没有返回值以及如何调用服务器方法没有返回值。
+下面的示例演示如何调用没有返回值的服务器方法，以及如何调用具有返回值的服务器方法。
 
-**服务器没有 HubMethodName 属性方法**
+**不带 HubMethodName 属性的服务器方法**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample37.cs?highlight=3)]
 
-**在参数中传递的定义的复杂对象的服务器代码**
+**定义在参数中传递的复杂对象的服务器代码**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample38.cs)]
 
-**调用服务器方法 （包含生成的代理） 的客户端代码**
+**调用服务器方法（与生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample39.js?highlight=1)]
 
-**客户端代码调用服务器方法 （而不生成的代理）**
+**调用服务器方法（没有生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample40.js?highlight=1)]
 
-如果修饰中心方法替换`HubMethodName`属性，而无需更改情况下使用该名称。
+如果使用 `HubMethodName` 特性修饰了 Hub 方法，请在不更改大小写的情况下使用该名称。
 
-**服务器方法**HubMethodName 属性
+具有 HubMethodName 属性的**服务器方法**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample41.cs?highlight=3)]
 
-**调用服务器方法 （包含生成的代理） 的客户端代码**
+**调用服务器方法（与生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample42.js?highlight=1)]
 
-**客户端代码调用服务器方法 （而不生成的代理）**
+**调用服务器方法（没有生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample43.js?highlight=1)]
 
-前面的示例说明如何调用没有返回值的服务器方法。 以下示例演示如何调用服务器方法具有返回值。
+前面的示例演示如何调用没有返回值的服务器方法。 下面的示例演示如何调用具有返回值的服务器方法。
 
-**服务器代码的方法的返回值**
+**具有返回值的方法的服务器代码**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample44.cs?highlight=3)]
 
-**Stock 类用于**返回值
+用于返回值的**Stock 类**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample45.cs?highlight=1)]
 
-**调用服务器方法 （包含生成的代理） 的客户端代码**
+**调用服务器方法（与生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample46.js?highlight=2,4-5)]
 
-**客户端代码调用服务器方法 （而不生成的代理）**
+**调用服务器方法（没有生成的代理）的客户端代码**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample47.js?highlight=2,4-5)]
 
@@ -439,72 +439,72 @@ JavaScript 客户端需要对 jQuery 和 SignalR core JavaScript 文件的引用
 
 ## <a name="how-to-handle-connection-lifetime-events"></a>如何处理连接生存期事件
 
-SignalR 提供了以下连接可以处理的生存期事件：
+SignalR 提供以下连接生存期事件，你可以处理这些事件：
 
-- `starting`：通过连接发送任何数据之前引发。
-- `received`：在连接上接收到任何数据时引发。 提供接收到的数据。
-- `connectionSlow`：当客户端检测到慢速或频繁删除连接时引发。
+- `starting`：在通过连接发送任何数据之前引发。
+- `received`：在连接上接收到任何数据时引发。 提供接收的数据。
+- `connectionSlow`：当客户端检测到连接缓慢或频繁断开时引发。
 - `reconnecting`：基础传输开始重新连接时引发。
-- `reconnected`：当基础传输已重新连接时引发。
-- `stateChanged`：连接状态更改时引发。 提供的旧状态和新的状态 （连接、 已连接、 正在重新连接或已断开连接）。
-- `disconnected`：当连接已断开连接时引发。
+- `reconnected`：在基础传输重新连接后引发。
+- `stateChanged`：在连接状态发生更改时引发。 提供旧状态和新状态（连接、连接、重新连接或断开连接）。
+- `disconnected`：连接断开连接时引发。
 
-例如，如果你想要有可能会导致明显延迟的连接问题时显示警告消息，处理`connectionSlow`事件。
+例如，如果要在存在可能导致明显延迟的连接问题时显示警告消息，请处理 `connectionSlow` 事件。
 
-**句柄 （具有生成的代理） 的 connectionSlow 事件**
+**处理 connectionSlow 事件（与生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample48.js?highlight=1)]
 
-**处理 connectionSlow 事件 （而不生成的代理）**
+**处理 connectionSlow 事件（不包含生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample49.js?highlight=2)]
 
-有关详细信息，请参阅[理解和 SignalR 中的处理连接生存期事件](index.md)。
+有关详细信息，请参阅[了解和处理 SignalR 中的连接生存期事件](index.md)。
 
 <a id="handleerrors"></a>
 
 ## <a name="how-to-handle-errors"></a>如何处理错误
 
-SignalR JavaScript 客户端提供了`error`可以添加的处理程序的事件。 失败方法还可用于添加处理程序从服务器方法调用导致的错误。
+SignalR JavaScript 客户端提供可为其添加处理程序的 `error` 事件。 还可以使用 fail 方法为服务器方法调用导致的错误添加处理程序。
 
-如果未显式启用服务器上的详细的错误消息，SignalR 返回出现错误后的异常对象包含有关错误的最少信息。 例如，如果调用`newContosoChatMessage`失败，错误对象中的错误消息包含"`There was an error invoking Hub method 'contosoChatHub.newContosoChatMessage'.`"发送到在生产环境中的客户端的详细的错误消息不建议出于安全原因，但如果你想要启用详细的错误消息在服务器上进行故障排除，使用下面的代码。
+如果未在服务器上显式启用详细的错误消息，则在出现错误后 SignalR 返回的异常对象包含有关错误的最小信息。 例如，如果对 `newContosoChatMessage` 的调用失败，则出于安全原因，不建议将错误对象中的错误消息包含 "`There was an error invoking Hub method 'contosoChatHub.newContosoChatMessage'.`" 向生产中的客户端发送详细的错误消息，但如果想要启用详细的错误消息以进行故障排除，请在服务器上使用以下代码。
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample50.cs?highlight=2)]
 
-下面的示例演示如何添加错误事件的处理程序。
+下面的示例演示如何为错误事件添加处理程序。
 
-**添加错误处理程序 （具有生成的代理）**
+**添加错误处理程序（使用生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample51.js?highlight=1)]
 
-**添加错误处理程序 （而不生成的代理）**
+**添加错误处理程序（没有生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample52.js?highlight=2)]
 
-下面的示例演示如何处理来自方法调用的错误。
+下面的示例演示如何处理方法调用中的错误。
 
-**处理来自方法调用 （与生成的代理） 的错误**
+**处理方法调用中的错误（使用生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample53.js?highlight=2)]
 
-**处理从方法调用 （而不生成的代理） 错误**
+**处理方法调用中的错误（不包含生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample54.js?highlight=2)]
 
-如果方法调用失败，`error`也会引发事件，因此你的代码中`error`方法处理程序并在`.fail`方法回调会执行。
+如果方法调用失败，则也会引发 `error` 事件，因此将执行 `error` 方法处理程序和 `.fail` 方法回调中的代码。
 
 <a id="logging"></a>
 
-## <a name="how-to-enable-client-side-logging"></a>如何启用客户端的日志记录
+## <a name="how-to-enable-client-side-logging"></a>如何启用客户端日志记录
 
-若要启用客户端的日志记录的连接上，设置`logging`属性对 connection 对象，然后再调用`start`方法以建立连接。
+若要对连接启用客户端日志记录，请在调用 `start` 方法来建立连接之前，设置连接对象上的 `logging` 属性。
 
-**（使用生成的代理） 启用日志记录**
+**启用日志记录（使用生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample55.js?highlight=1)]
 
-**启用日志记录 （而不生成的代理）**
+**启用日志记录（不包含生成的代理）**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample56.js?highlight=2)]
 
-若要查看日志，请打开浏览器的开发人员工具，并转到控制台选项卡。本教程介绍的分步说明和屏幕截图显示如何执行此操作，请参阅[服务器与 ASP.NET Signalr-启用日志记录广播](index.md)。
+若要查看日志，请打开浏览器的开发人员工具，并切换到 "控制台" 选项卡。有关显示如何执行此操作的分步说明和屏幕截图的教程，请参阅[使用 ASP.NET Signalr 进行服务器广播-启用日志记录](index.md)。

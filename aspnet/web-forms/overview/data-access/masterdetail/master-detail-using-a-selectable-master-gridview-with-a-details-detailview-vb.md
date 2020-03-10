@@ -9,11 +9,11 @@ ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a953c00acc4c37fd563321477b6b21689d6e686c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576445"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78503486"
 ---
 # <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>使用带有详细信息 DetailView 的可选母版 GridView 来实现母版/详细信息查看 (VB)
 
@@ -123,7 +123,7 @@ GridView 的最终标记为：
 
 **图 12**：选择行后，将显示产品的详细信息（[单击以查看完全大小的图像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image36.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程和前面三个教程中，我们已介绍了几种显示大纲/详细信息报表的方法。 在本教程中，我们介绍了如何使用可选的 GridView 来容纳主记录，并使用 DetailsView 在同一页上显示所选主记录的详细信息。 在前面的教程中，我们介绍了如何使用 DropDownLists 显示主/详细信息报表，并在一个网页上显示主记录，并在另一个网页上显示详细记录。
 
@@ -140,4 +140,4 @@ GridView 的最终标记为：
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Hilton Giesenow。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](master-detail-filtering-across-two-pages-vb.md)
+> [上一页](master-detail-filtering-across-two-pages-vb.md)

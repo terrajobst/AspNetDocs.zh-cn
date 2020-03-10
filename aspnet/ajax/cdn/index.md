@@ -9,11 +9,11 @@ ms.assetid: fc98bde7-484a-4191-bba2-04d29551cb8f
 msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 10ee617ff5653bcc478364b7bea75bac4f4770f6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388850"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78455210"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 内容分发网络
 
@@ -57,7 +57,7 @@ ms.locfileid: "59388850"
     - [Microsoft Azure CDN 的 jQuery UI 1.12.1](jquery-ui/cdnjqueryui1121.md)
 - [jQuery 验证](jquery-validate/index.md)
 
-    - [jQuery 验证 1.17.0](jquery-validate/cdnjqueryvalidate1170.md)
+    - [jQuery 验证1.17。0](jquery-validate/cdnjqueryvalidate1170.md)
     - [jQuery 验证 1.16.0](jquery-validate/cdnjqueryvalidate1160.md)
     - [jQuery 验证 1.15.1](jquery-validate/cdnjqueryvalidate1151.md)
     - [jQuery 验证 1.15.0](jquery-validate/cdnjqueryvalidate1150.md)

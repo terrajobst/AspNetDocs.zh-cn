@@ -9,11 +9,11 @@ ms.assetid: 94421d86-68c4-4471-bf5f-82d654a17252
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: a76a18f2bd95969358452085ef342fdca8a386e2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600326"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447932"
 ---
 # <a name="part-1-overview-and-creating-the-project"></a>第1部分：概述和创建项目
 
@@ -43,7 +43,7 @@ ms.locfileid: "74600326"
 
 尽管本教程是独立的，但你可能希望先阅读以下教程：
 
-- [你的第一个 ASP.NET Web API](../../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
+- [第一个 ASP.NET Web API](../../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
 - [创建支持 CRUD 操作的 Web API](../creating-a-web-api-that-supports-crud-operations.md)
 
 [ASP.NET MVC](../../../../mvc/index.md)的一些知识也很有用。
@@ -92,4 +92,4 @@ ms.locfileid: "74600326"
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 
 > [!div class="step-by-step"]
-> [下一页](using-web-api-with-entity-framework-part-2.md)
+> [下一部分](using-web-api-with-entity-framework-part-2.md)

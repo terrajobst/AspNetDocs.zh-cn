@@ -9,11 +9,11 @@ ms.assetid: ea44717e-ab2e-46cd-a692-e4a9c0de194c
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 62cd296a3f36e1779666a6b5db15b0ce2488d0e4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74639905"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424484"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用一个 DropDownList 实现母版/详细信息筛选 (VB)
 
@@ -130,7 +130,7 @@ ms.locfileid: "74639905"
 
 **图 14**：默认情况下，所有产品均已列出（[单击以查看完全大小的图像](master-detail-filtering-with-a-dropdownlist-vb/_static/image40.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 显示分层相关的数据时，通常可以使用主/详细信息报表来显示数据，用户可以从层次结构顶部开始浏览数据，并向下钻取详细信息。 在本教程中，我们将介绍如何生成一个简单的大纲/详细信息报告，其中显示了所选类别的产品。 为此，可以使用 DropDownList 作为类别列表，并将 GridView 用于属于所选类别的产品。
 

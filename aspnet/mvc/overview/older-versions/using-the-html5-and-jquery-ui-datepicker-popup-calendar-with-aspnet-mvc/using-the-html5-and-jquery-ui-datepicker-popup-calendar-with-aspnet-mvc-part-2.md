@@ -9,11 +9,11 @@ ms.assetid: 21a178de-4c5a-4211-8a9c-74ec576c0f30
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: 325cc90eb6e717c47863eda6253e0d48d796386b
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455888"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78498416"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>将 HTML5 和 jQuery UI Datepicker 快捷日历与 ASP.NET MVC 一起使用-第2部分
 
@@ -41,7 +41,7 @@ ms.locfileid: "77455888"
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample3.cs)]
 
-按 Ctrl+F5 运行应用程序。
+按 Ctrl+F5 以运行应用程序。
 
 请注意，`ReleaseDate` 属性现在同时显示日期和时间，因为在未提供格式设置信息时，这是默认值。
 
@@ -73,7 +73,7 @@ ms.locfileid: "77455888"
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/_static/image2.png)
 
-单击“添加”。 在*Views\Shared\DisplayTemplates*中创建一个*日期时间的日期。*
+单击 **“添加”** 。 在*Views\Shared\DisplayTemplates*中创建一个*日期时间的日期。*
 
 下图显示了在创建 `DateTime` 显示和编辑器模板之后**解决方案资源管理器**中的*Views*文件夹。
 
@@ -91,7 +91,7 @@ ms.locfileid: "77455888"
 
 已创建的内容，以及 ASP.NET 将用于显示日期的自定义模板。 更常规的模板（在*Views\Shared\DisplayTemplates*文件夹中）显示一个简单的短日期。 专门用于 `Movie` 控制器的模板（在*Views\Movies\DisplayTemplates*文件夹中）将显示一个也设置为粗体红色文本的短日期。
 
-按 Ctrl+F5 运行应用程序。 浏览器呈现应用程序的索引视图。
+按 Ctrl+F5 以运行应用程序。 浏览器呈现应用程序的索引视图。
 
 `ReleaseDate` 属性现在以粗体显示日期，而不显示时间。这可以帮助你确认*Views\Movies\DisplayTemplates*文件夹中的 `DateTime` 模板化帮助器是在共享文件夹（*Views\Shared\DisplayTemplates*）中的 `DateTime` 模板化帮助器上选择的。
 
@@ -99,7 +99,7 @@ ms.locfileid: "77455888"
 
 现在，将*Views\Movies\DisplayTemplates\DateTime.cshtml*文件重命名为*Views\Movies\DisplayTemplates\LoudDateTime.cshtml*。
 
-按 Ctrl+F5 运行应用程序。
+按 Ctrl+F5 以运行应用程序。
 
 这次 `ReleaseDate` 属性显示一个日期，该日期没有时间且不带粗体。 这说明了具有数据类型名称（在本例中为 `DateTime`）的模板会自动用于显示该类型的所有模型属性。 将 LoudDateTime*文件重*命名为后，ASP.NET 不再在*Views\Movies\DisplayTemplates*文件夹中找到模板，因此它使用了 *\* *Views\Movies\Shared 中的模板。*
 
@@ -123,11 +123,11 @@ ms.locfileid: "77455888"
 
 这会告知 ASP.NET MVC 当它显示 `ReleaseDate` 属性时（具体而言，并不只是任何 `DateTime` 对象），它应使用*LoudDateTime*模板。
 
-按 Ctrl+F5 运行应用程序。
+按 Ctrl+F5 以运行应用程序。
 
 请注意，`ReleaseDate` 属性现在以大绿色字体显示日期和时间。
 
-返回*Movie.cs*文件中的 `UIHint` 属性，将其注释掉，以便不使用*LoudDateTime*模板。 再次运行应用程序。 发布日期不会显示为 "大" 和 "绿色"。 这会验证 "索引" 和 "详细信息" 视图中是否使用了*Views\Shared\DisplayTemplates\DateTime.cshtml*模板。
+返回*Movie.cs*文件中的 `UIHint` 属性，将其注释掉，以便不使用*LoudDateTime*模板。 再次运行该应用程序。 发布日期不会显示为 "大" 和 "绿色"。 这会验证 "索引" 和 "详细信息" 视图中是否使用了*Views\Shared\DisplayTemplates\DateTime.cshtml*模板。
 
 如前文所述，还可以在视图中应用模板，这样就可以将模板应用于某些数据的单个实例。 打开 " *Views\Movies\Details.cshtml* " 视图。 添加 `"LoudDateTime"` 作为 `ReleaseDate` 字段的[DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx)调用的第二个参数。 完整代码如下所示：
 
@@ -135,7 +135,7 @@ ms.locfileid: "77455888"
 
 这将指定 `LoudDateTime` 模板应用于显示模型属性，而不考虑应用于模型的属性。
 
-按 Ctrl+F5 运行应用程序。
+按 Ctrl+F5 以运行应用程序。
 
 验证电影索引页使用的是*Views\Shared\DisplayTemplates\DateTime.cshtml*模板（红色粗体），并且*Movie\Details*页使用的是*Views\Movies\DisplayTemplates\LoudDateTime.cshtml*模板（大和绿色）。
 

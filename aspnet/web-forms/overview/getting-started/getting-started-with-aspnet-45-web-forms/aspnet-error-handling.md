@@ -9,11 +9,11 @@ ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 9514142ca50b33470a3f4c033e4f8e319a9ee09b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636460"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457022"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET 错误处理
 
@@ -25,7 +25,7 @@ ms.locfileid: "74636460"
 
 在本教程中，您将修改 Wingtip 玩具示例应用程序以包括错误处理和错误日志记录。 错误处理将使应用程序能够正常处理错误并相应地显示错误消息。 错误日志记录将允许你查找并修复已发生的错误。 本教程以上一教程 "URL 路由" 为基础，是 Wingtip 玩具教程系列的一部分。
 
-## <a name="what-youll-learn"></a>你将学习的内容：
+## <a name="what-youll-learn"></a>学习内容：
 
 - 如何将全局错误处理添加到应用程序的配置。
 - 如何在应用程序、页和代码级别添加错误处理。
@@ -54,7 +54,7 @@ Exception 类是异常从中继承的基类。 大多数异常对象是异常类
 在 ASP.NET Web 窗体应用程序中，可以根据特定的处理层次结构来处理异常。 可以在以下级别处理异常：
 
 - 应用程序级别
-- 页面级别
+- 页级别
 - 代码级别
 
 当应用程序处理异常时，通常可以检索有关继承自异常类的异常的其他信息，并向用户显示这些信息。 除应用程序、页和代码级别外，还可以使用 IIS 自定义处理程序来处理 HTTP 模块级别的异常。
@@ -116,7 +116,7 @@ Try-catch 语句包含一个 try 块，后跟一个或多个 catch 子句，这�
 1. 在**解决方案资源管理器**中右键单击项目名称（**Wingtip 玩具**），然后选择 "**添加** -&gt;**新项**"。   
    随即出现“添加新项”对话框。
 2. 选择左侧的 " **Visual C#**  -&gt; **Web**模板" 组。 从中间列表中，选择 "**带有母版页的 Web 窗体**"，并将其命名为**ErrorPage**。
-3. 单击 **添加**。
+3. 单击 **“添加”** 。
 4. 选择 "*网站*" 作为母版页的主文件，然后选择 **"确定"** 。
 5. 将现有标记替换为以下内容：   
 
@@ -139,7 +139,7 @@ Try-catch 语句包含一个 try 块，后跟一个或多个 catch 子句，这�
 2. 将 `customErrors` 部分添加到 `<system.web>` 节点*内的 web.config 文件中*，如下所示：   
 
     [!code-xml[Main](aspnet-error-handling/samples/sample8.xml?highlight=3-5)]
-3. 保存 web.config*文件。*
+3. 保存 *Web.config* 文件。
 
 "`customErrors`" 部分指定模式，该模式设置为 "打开"。 它还指定了 `defaultRedirect`，它会告知应用程序发生错误时要导航到的页面。 此外，还添加了特定的 error 元素，该元素指定在找不到页面时如何处理404错误。 稍后在本教程中，你将添加其他错误处理，以在应用程序级别捕获错误的详细信息。
 
@@ -303,7 +303,7 @@ ELMAH 现在可以存储发生的任何未经处理的错误。
 
     ![ASP.NET 错误处理-ELMAH 错误日志](aspnet-error-handling/_static/image9.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，已了解如何在应用程序级别、页级别和代码级别处理错误。 还了解了如何记录已处理和未处理的错误，以便以后查看。 你已添加了 ELMAH 实用工具，使用 NuGet 向应用程序提供异常日志记录和通知。 此外，您还了解了安全错误消息的重要性。
 
@@ -359,4 +359,4 @@ ELMAH 现在可以存储发生的任何未经处理的错误。
   Visual Studio 2012 翻译： [Iniciando com ASP.NET Web Forms 4.5-Parte 1-Introdução e Visão Geral](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
 > [!div class="step-by-step"]
-> [上一部分](url-routing.md)
+> [上一页](url-routing.md)

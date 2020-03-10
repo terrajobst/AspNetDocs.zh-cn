@@ -9,11 +9,11 @@ ms.assetid: c655c324-2ffa-4c21-8265-a254d79a693d
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 12a8500b107345b9cc9ab457016fdef09ca1bb9d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74604828"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78428390"
 ---
 # <a name="debugging-stored-procedures-c"></a>调试存储过程 (C#)
 
@@ -151,7 +151,7 @@ Visual Studio 可以在本地和远程 SQL Server 实例上调试存储过程。
 > [!NOTE]
 > 如果开发计算机运行的是 Windows XP Service Pack 2，则需要配置 Internet 连接防火墙以允许远程调试。 How [To： Enable SQL Server 2005 调试](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx)文章说明这涉及两个步骤：（a）在 Visual Studio 主机上，必须将 `Devenv.exe` 添加到 "例外" 列表中并打开 TCP 135 端口;在远程（SQL）计算机上，必须打开 TCP 135 端口并将 `sqlservr.exe` 添加到 "例外" 列表中。 如果域策略要求通过 IPSec 进行网络通信，则必须打开 UDP 4500 和 UDP 500 端口。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 除了提供对 .NET 应用程序代码的调试支持之外，Visual Studio 还提供了用于 SQL Server 2005 的各种调试选项。 在本教程中，我们讨论了两个选项：直接数据库调试和应用程序调试。 若要直接调试 T-sql 数据库对象，请通过服务器资源管理器找到对象，然后右键单击该对象并选择 "单步执行"。 这会启动调试器并在数据库对象中的第一个语句处暂停，此时可以单步执行对象的语句并查看和修改参数值。 在步骤1中，我们使用此方法单步执行 `Products_SelectByCategoryID` 存储过程。
 

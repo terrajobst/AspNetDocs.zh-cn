@@ -9,11 +9,11 @@ ms.assetid: 6227233a-6254-4b6b-9a89-947efef22330
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 51c9255f80f83a68cf26decf318347752498491a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635136"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78489488"
 ---
 # <a name="creating-a-data-access-layer-vb"></a>创建数据访问层 (VB)
 
@@ -168,11 +168,11 @@ TableAdapter 配置向导首先提示您选择要使用的数据库。 下拉列
 
 在此示例中使用的每个对象都是强类型的，允许 Visual Studio 提供 IntelliSense 和编译时类型检查。 并且最重要的是，TableAdapter 返回的所有数据表都可以绑定到 ASP.NET 数据 Web 控件，如 GridView、DetailsView、DropDownList、CheckBoxList 等。 下面的示例演示如何将 `GetProducts()` 方法返回的 DataTable 绑定到 `Page_Load` 事件处理程序中的扫描三行代码中的 GridView。
 
-AllProducts .aspx
+AllProducts.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-vb/samples/sample2.aspx)]
 
-AllProducts
+AllProducts.aspx.vb
 
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample3.vb)]
 
@@ -226,11 +226,11 @@ AllProducts
 
 对于 DAL 中的 `GetProductsByCategoryID(categoryID)` 方法，我们现在可以创建 ASP.NET 页面，只显示指定类别中的产品。 以下示例显示了 "饮料" 类别中的所有产品，其 `CategoryID` 为1。
 
-饮料
+Beverages.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-vb/samples/sample4.aspx)]
 
-饮料 .vb
+Beverages.aspx.vb
 
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample5.vb)]
 
@@ -422,11 +422,11 @@ DB 直接方法创建的 `Insert()`、`Update()`和 `Delete()` 方法可能有�
 
 我们将在以后的教程中检查如何显示此类主/详细信息报表。 现在，此示例旨在说明如何使用添加到 `Northwind.SuppliersRow` 类的自定义方法。
 
-SuppliersAndProducts .aspx
+SuppliersAndProducts.aspx
 
 [!code-aspx[Main](creating-a-data-access-layer-vb/samples/sample24.aspx)]
 
-SuppliersAndProducts
+SuppliersAndProducts.aspx.vb
 
 [!code-vb[Main](creating-a-data-access-layer-vb/samples/sample25.vb)]
 
@@ -434,7 +434,7 @@ SuppliersAndProducts
 
 **图 35**：在左列中列出了供应商的公司名称，他们的产品显示在右侧（[单击以查看完全大小的图像](creating-a-data-access-layer-vb/_static/image93.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 构建 web 应用程序时，创建 DAL 的操作应该是您在开始创建表示层之前要执行的第一个步骤。 使用 Visual Studio 时，基于类型化数据集创建 DAL 是一项任务，可以在10-15 分钟内完成，而无需编写代码行。 后续教程将在此 DAL 上构建。 在[下一教程](creating-a-business-logic-layer-vb.md)中，我们将定义一些业务规则，并了解如何在单独的业务逻辑层中实现它们。
 

@@ -9,11 +9,11 @@ ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a8ca71b96cb84c97b1a60ae6a3d1a129cd1b0b10
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606397"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78509048"
 ---
 # <a name="fighting-bots-vb"></a>外部测试机器人 (VB)
 
@@ -68,4 +68,4 @@ ms.locfileid: "74606397"
 此错误消息可能是由机器人引起的（[单击查看完全大小的映像](fighting-bots-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](fighting-bots-cs.md)
+> [上一页](fighting-bots-cs.md)

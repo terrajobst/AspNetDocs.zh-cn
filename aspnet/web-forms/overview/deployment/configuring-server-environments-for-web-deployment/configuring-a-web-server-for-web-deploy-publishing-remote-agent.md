@@ -9,11 +9,11 @@ ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
 ms.openlocfilehash: ce0d246afdfb65c2ea15a287064511e7d1d58622
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589052"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78457700"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>配置用于 Web 部署发布的 Web 服务器（远程代理）
 
@@ -150,7 +150,7 @@ ms.locfileid: "74589052"
     > [!NOTE]
     > 在生产环境中，你可能想要在端口80上托管你的网站，并配置主机标头和匹配的 DNS 记录。 有关在 IIS 7 中配置主机标头的详细信息，请参阅[配置网站的主机标头（IIS 7）](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 有关 Windows Server 2008 R2 中的 DNS 服务器角色的详细信息，请参阅[Dns 服务器概述](https://technet.microsoft.com/library/cc770392.aspx)和[dns 服务器](https://technet.microsoft.com/windowsserver/dd448607)。
 9. 在 "**操作**" 窗格中的 "**编辑站点**" 下，单击 "**绑定**"。
-10. 在 "**站点绑定**" 对话框中，单击 "**添加**"。
+10. 在“网站绑定”对话框中，单击“添加”。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image5.png)
 11. 在 "**添加站点绑定**" 对话框中，将 " **IP 地址**" 和 "**端口**" 设置为与现有站点配置匹配。
@@ -159,8 +159,8 @@ ms.locfileid: "74589052"
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image6.png)
 
     > [!NOTE]
-    > 第一个站点绑定允许使用 IP 地址和端口或 `http://localhost:85`本地访问站点。 第二个站点绑定允许使用计算机名称（例如 http://testweb1:85) ，从域中的其他计算机访问站点。
-13. 在 "**站点绑定**" 对话框中，单击 "**关闭**"。
+    > 第一个站点绑定允许使用 IP 地址和端口或 `http://localhost:85`本地访问站点。 第二个站点绑定允许使用计算机名称（例如 http://testweb1:85)，从域中的其他计算机访问站点。
+13. 在 **“网站绑定”** 对话框中，单击 **“关闭”** 。
 14. 在 "**连接**" 窗格中，单击 "**应用程序池**"。
 15. 在 "**应用程序池**" 窗格中，右键单击应用程序池的名称，然后单击 "**基本设置**"。 默认情况下，应用程序池的名称将与网站的名称匹配（例如， **DemoSite**）。
 16. 在 **.NET Framework 版本**"列表中，选择" **.NET Framework v 4.0.30319**"，然后单击 **" 确定 "** 。
@@ -186,8 +186,8 @@ ms.locfileid: "74589052"
 
 1. 在 Windows 资源管理器中，浏览到本地文件夹的位置。
 2. 右键单击该文件夹，然后单击 "**属性**"。
-3. 在 "**安全**" 选项卡上，单击 "**编辑**"，然后单击 "**添加**"。
-4. 单击 "**位置**"。 在 "**位置**" 对话框中，选择本地服务器，然后单击 **"确定"** 。
+3. 在“**Security**”选项卡上，依次单击“**Edit**”、“**Add**”。
+4. 单击“位置”。 在 "**位置**" 对话框中，选择本地服务器，然后单击 **"确定"** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image8.png)
 5. 在 "**选择用户或组**" 对话框中，键入**IIS\_Iis-iusrs**，单击 "**检查名称**"，然后单击 **"确定"** 。

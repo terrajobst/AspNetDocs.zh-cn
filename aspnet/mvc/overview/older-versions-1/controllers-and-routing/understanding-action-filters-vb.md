@@ -9,11 +9,11 @@ ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 263658231ccaa7863508c691a3570bc00b9e8039
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590043"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78486584"
 ---
 # <a name="understanding-action-filters-vb"></a>了解操作筛选器 (VB)
 
@@ -113,7 +113,7 @@ ASP.NET MVC 框架支持四种不同类型的筛选器：
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample3.vb)]
 
-### <a name="summary"></a>总结
+### <a name="summary"></a>摘要
 
 本教程介绍了如何 ASP.NET MVC 操作筛选器。 已了解四种不同类型的筛选器：授权筛选器、操作筛选器、结果筛选器和异常筛选器。 还了解了基本 `ActionFilterAttribute` 类。
 

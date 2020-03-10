@@ -9,11 +9,11 @@ ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
 ms.openlocfilehash: 1b47f1ade3619cfd010260352f6a96985ab3598b
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445708"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447026"
 ---
 # <a name="troubleshoot-web-api2-apps-that-work-in-visual-studio-and-fail-on-a-production-iis-server"></a>对在 Visual Studio 中工作并在生产 IIS 服务器上失败的 Web API2 应用进行故障排除
 
@@ -29,23 +29,23 @@ Web API 应用通常使用几个 HTTP 谓词： GET、POST、PUT、DELETE 和有
 
 ## <a name="what-causes-http-405-errors"></a>导致 HTTP 405 错误的原因
 
-了解如何排查 HTTP 405 错误的第一步是了解 HTTP 405 错误的实际含义。 HTTP 的主要管理文档是[RFC 2616](http://www.ietf.org/rfc/rfc2616.txt)，它将 http 405 状态代码定义为***不允许的方法***，并在不允许 &quot;请求行中指定的方法的情况下，进一步描述了此状态代码。由请求 URI 标识的资源。&quot; 换言之，http 客户端请求的特定 URL 不允许使用 HTTP 谓词。
+了解如何排查 HTTP 405 错误的第一步是了解 HTTP 405 错误的实际含义。 HTTP 的主要管理文档是[RFC 2616](http://www.ietf.org/rfc/rfc2616.txt)，它将 http 405 状态代码定义为***不允许的方法***，并在请求-URI 标识的资源中 &quot;，进一步描述了请求行中指定的方法。&quot; 换言之，http 客户端请求的特定 URL 不允许使用 HTTP 谓词。
 
 下面是 RFC 2616 中定义的几个最常用的 HTTP 方法，RFC 4918 和 RFC 5789：
 
-| HTTP 方法 | 描述 |
+| HTTP 方法 | 说明 |
 | --- | --- |
-| **获取** | 此方法用于从 URI 检索数据，它可能是最常用的 HTTP 方法。 |
+| **GET** | 此方法用于从 URI 检索数据，它可能是最常用的 HTTP 方法。 |
 | **HEAD** | 此方法与 GET 方法非常相似，不同之处在于它不会从请求 URI 中实际检索数据，而只是检索 HTTP 状态。 |
-| **发布** | 此方法通常用于将新数据发送到 URI;POST 通常用于提交表单数据。 |
-| **准备** | 此方法通常用于将原始数据发送到 URI;PUT 通常用于向 Web API 应用程序提交 JSON 或 XML 数据。 |
+| **POST** | 此方法通常用于将新数据发送到 URI;POST 通常用于提交表单数据。 |
+| **PUT** | 此方法通常用于将原始数据发送到 URI;PUT 通常用于向 Web API 应用程序提交 JSON 或 XML 数据。 |
 | **DELETE** | 此方法用于从 URI 中删除数据。 |
 | **OPTIONS** | 此方法通常用于检索 URI 支持的 HTTP 方法的列表。 |
 | **复制移动** | 这两种方法与 WebDAV 一起使用，其目的一目了然。 |
 | **MKCOL** | 此方法与 WebDAV 一起使用，它用于在指定的 URI 处创建集合（例如目录）。 |
 | **PROPFIND PROPPATCH** | 这两个方法与 WebDAV 一起使用，它们用于查询或设置 URI 的属性。 |
 | **锁定解锁** | 这两个方法与 WebDAV 一起使用，并且在创作时用于锁定/解锁由请求 URI 标识的资源。 |
-| **跳** | 此方法用于修改现有 HTTP 资源。 |
+| **PATCH** | 此方法用于修改现有 HTTP 资源。 |
 
 如果将其中一种 HTTP 方法配置为在服务器上使用，服务器将使用 HTTP 状态和适用于该请求的其他数据进行响应。 （例如，GET 方法可能会收到 HTTP 200 ***OK***响应，PUT 方法可能会收到 Http 201***创建***的响应。）
 
@@ -69,7 +69,7 @@ HTTP 响应：
 
 ## <a name="resolve-http-405-errors"></a>解决 HTTP 405 错误
 
-有几个原因可能导致无法允许特定的 HTTP 谓词，但在 IIS 中，有一个主要原因是此错误的主要原因：多个处理程序是为同一谓词/方法定义的，其中一个处理程序正在阻止所需的处理程序正在处理请求。 通过解释方式，IIS 会根据*applicationhost.config*和*web.config 文件中*的顺序处理程序项处理从第一个到最后一个的处理程序，其中路径、谓词、资源等的第一个匹配组合将用于处理请求。
+有几个原因可能导致无法允许特定的 HTTP 谓词，但在 IIS 中有一个主要原因是此错误的主要原因：多个处理程序是为同一谓词/方法定义的，其中一个处理程序阻止预期处理程序处理请求。 通过说明，IIS 会根据*applicationhost.config*和 web.config 文件中的顺序处理程序项处理从第一个到最后一个的处理*程序，其中*使用路径、谓词、资源等的第一个匹配组合来处理请求。
 
 下面的示例摘自在使用 PUT 方法将数据提交到 Web API 应用程序时返回 HTTP 405 错误的 IIS 服务器的*applicationhost.config*文件。 在此摘录中，定义了几个 HTTP 处理程序，并且每个处理程序都有一组不同的 HTTP 方法，其中为其配置了一个。列表中的最后一项是静态内容处理程序，这是在其他处理程序具有 chanc 后使用的默认处理程序。e：检查请求：
 
@@ -96,6 +96,6 @@ HTTP 响应：
 
 若要解决此问题，需要重新安装尝试使用 HTTP 方法的任何应用程序，而该应用程序没有相应的模块或处理程序定义。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 当 web 服务器不允许 HTTP 方法用于请求的 URL 时，将导致 HTTP 405 错误。 如果已为特定谓词定义了特定的处理程序，并且该处理程序重写了预期处理请求的处理程序，则通常会出现这种情况。

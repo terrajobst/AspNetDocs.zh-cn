@@ -9,11 +9,11 @@ ms.assetid: 3a052ced-9cf5-47b8-a400-934f0b687c26
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 27ff6941008b4e7bf6d632e4c248fd1d35fb3589
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621312"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78475010"
 ---
 # <a name="updating-and-deleting-existing-binary-data-vb"></a>上载和删除现有的二进制数据 (VB)
 
@@ -298,7 +298,7 @@ GridView `RowUpdating` 和 `RowUpdated` 事件处理程序使用 `ProcessBrochur
 > [!NOTE]
 > 插入和编辑接口的 `UpdatingAndDeleting.aspx` 页可以使用更多的工作。 DetailsView 和 GridView 中的 `CategoryName` 和 `Description` BoundFields 应转换为 Templatefield。 由于 `CategoryName` 不允许 `NULL` 值，因此应添加 RequiredFieldValidator。 "`Description`" 文本框可能会转换为多行文本框。 我将这些完成的润色留给您。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本教程将介绍如何使用二进制数据。 在本教程和前三个教程中，我们了解了如何在文件系统中或直接在数据库中存储二进制数据。 用户通过从其硬盘中选择文件并将其上传到 web 服务器（可将其存储在文件系统上或插入到数据库中），向系统提供二进制数据。 ASP.NET 2.0 包含一个 FileUpload 控件，该控件可将此类接口提供为简单的拖放。 但是，如[上传文件](uploading-files-vb.md)教程中所述，FileUpload 控件仅适用于相对较小的文件上传，理想情况下不超过 mb。 我们还探讨了如何将上传的数据与基础数据模型相关联，以及如何从现有记录中编辑和删除二进制数据。
 
@@ -315,4 +315,4 @@ GridView `RowUpdating` 和 `RowUpdated` 事件处理程序使用 `ProcessBrochur
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Teresa Murphy。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](including-a-file-upload-option-when-adding-a-new-record-vb.md)
+> [上一页](including-a-file-upload-option-when-adding-a-new-record-vb.md)

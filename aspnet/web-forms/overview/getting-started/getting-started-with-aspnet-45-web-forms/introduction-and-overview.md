@@ -9,11 +9,11 @@ ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
 ms.openlocfilehash: 52d5eb7abe4520ebdf6667d299d055fc7619a635
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615456"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78458342"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>与 ASP.NET 4.5 Web 窗体和 Visual Studio 2017 入门
 
@@ -25,7 +25,7 @@ ms.locfileid: "74615456"
 
 本教程系列将指导你使用 Visual Studio 2017 和 ASP.NET 4.5 创建 ASP.NET Web 窗体应用程序。 你将创建一个名为 " **Wingtip 玩具**" 的应用程序，它是一个可联机销售项目的简化店面网站。 在序列中，将突出显示新的 ASP.NET 4.5 功能。
 
-### <a name="target-audience"></a>目标受众
+### <a name="target-audience"></a>目标读者
 
 对于 ASP.NET Web 窗体，开发人员是本系列教程的目标受众。
 
@@ -128,13 +128,13 @@ ms.locfileid: "74615456"
 
 PayPal 确认你的帐户、订单和付款信息。
 
-![Wingtip 玩具-PayPal](introduction-and-overview/_static/image6.png)
+![Wingtip Toys - PayPal](introduction-and-overview/_static/image6.png)
 
 从 PayPal 返回后，你可以查看并完成你的订单。
 
 ![Wingtip 玩具-订购审核](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
 在开始之前，请确保已在计算机上安装以下软件：
 
@@ -191,4 +191,4 @@ PayPal 确认你的帐户、订单和付款信息。
 如果发生错误，相应的错误消息可能会令人困惑，并没有关于如何修复此问题的好说明。 若要获得帮助，你可以查看[ASP.NET 论坛](https://forums.asp.net/)。 另一种好的来源是[入门使用 ASP.NET 4.5 Web 窗体和 Visual Studio 2013 Wingtip 玩具](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)（C#）示例页的 "问答" 部分。 
 
 > [!div class="step-by-step"]
-> [下一页](create-the-project.md)
+> [下一部分](create-the-project.md)

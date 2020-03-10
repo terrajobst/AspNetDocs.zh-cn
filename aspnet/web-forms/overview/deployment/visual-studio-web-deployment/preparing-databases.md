@@ -9,11 +9,11 @@ ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
 ms.openlocfilehash: cdcb3578725c41e3c801afd54e6d34455bc4b281
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618535"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517280"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署：准备数据库部署
 
@@ -197,7 +197,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和 forms 身份验�
 10. 单击 "**下一步**" 以切换到 "**摘要**" 选项卡，然后再次单击 "**下一步**" 以创建脚本。
 
     ![已创建 SSMS 脚本](preparing-databases/_static/image14.png)
-11. 单击 **“完成”** 。
+11. 单击“完成”。
 
 ### <a name="create-the-production-database-script"></a>创建生产数据库脚本
 
@@ -212,7 +212,7 @@ Contoso 大学应用程序使用 ASP.NET 成员资格系统和 forms 身份验�
 3. 单击“确定”。
 4. 按照前面使用的相同过程为生产文件创建脚本。 将脚本文件命名为*aspnet-data-prod*。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，两个数据库都已准备好进行部署，您的解决方案文件夹中有两个数据部署脚本。
 

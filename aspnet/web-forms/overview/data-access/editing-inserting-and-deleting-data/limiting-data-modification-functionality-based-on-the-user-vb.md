@@ -9,11 +9,11 @@ ms.assetid: 9dc264a6-feb8-474b-8b91-008c50708065
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c257a930e4d27fcd42591a541e700786bf413bf0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626908"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491918"
 ---
 # <a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>限制基于用户的数据修改功能 (VB)
 
@@ -194,7 +194,7 @@ ms.locfileid: "74626908"
 
 我在本教程中并未包括此类 BLL 层检查，因为在本教程中，用户的权限由 DropDownList 上的一个非层次，而 BLL 类无法访问。 当使用 ASP.NET （如 Windows 身份验证）提供的成员资格系统或现成的身份验证方案之一时，可以从 BLL 访问当前登录的用户的信息和角色信息，从而进行此类访问可在表示层和 BLL 层上检查权限。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 大多数提供用户帐户的站点都需要基于登录用户自定义数据修改接口。 管理用户可以删除和编辑任何记录，而非管理用户可能被限制为仅更新或删除他们自行创建的记录。 无论方案是哪种情况，都可以通过扩展数据 Web 控件、ObjectDataSource 和业务逻辑层类来添加或拒绝基于登录用户的某些功能。 在本教程中，我们了解了如何根据用户是否与特定的供应商相关联，或是否为公司工作，来限制可查看和可编辑的数据。
 
@@ -207,4 +207,4 @@ ms.locfileid: "74626908"
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [上一部分](adding-client-side-confirmation-when-deleting-vb.md)
+> [上一页](adding-client-side-confirmation-when-deleting-vb.md)

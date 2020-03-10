@@ -9,11 +9,11 @@ ms.assetid: 2f67d8ef-73ca-447d-a0cc-6e3168431e6a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
 ms.openlocfilehash: fec0ce2cdd24333f65201301718440e1a09d930e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599051"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496976"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-c"></a>通过服务器代码启动模式弹出窗口 (C#)
 
@@ -68,4 +68,4 @@ AJAX 控件工具包中的 ModalPopup 控件提供了使用客户端方法创建
 单击任一按钮时，将显示模式弹出窗口（[单击以查看完全大小的图像](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一页](using-modalpopup-with-a-repeater-control-cs.md)
+> [下一部分](using-modalpopup-with-a-repeater-control-cs.md)

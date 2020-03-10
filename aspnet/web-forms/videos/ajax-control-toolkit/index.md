@@ -2,22 +2,22 @@
 uid: web-forms/videos/ajax-control-toolkit/index
 title: Ajax 控件工具包 |Microsoft Docs
 author: rick-anderson
-description: 如何创建响应迅速的 ASP.NET Web 页面使用 Ajax 控件工具包。
+description: 如何使用 Ajax 控件工具包创建具有良好响应能力的 ASP.NET 网页。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 6f7b1c74-cc73-42f9-8ef0-8b3d058dabfa
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: c92d686cdb7883efbb5e5b2997e4a490f83607f0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131523"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518936"
 ---
 # <a name="ajax-control-toolkit"></a>Ajax 控件工具包
 
-> 如何创建响应迅速的 ASP.NET Web 页面使用 Ajax 控件工具包。
+> 如何使用 Ajax 控件工具包创建具有良好响应能力的 ASP.NET 网页。
 
 - [ASP.NET AJAX 控件工具包入门](how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md)
 - [ASP.NET AJAX CascadingDropDown 控件扩展程序](how-do-i-use-the-aspnet-ajax-cascadingdropdown-control-extender.md)

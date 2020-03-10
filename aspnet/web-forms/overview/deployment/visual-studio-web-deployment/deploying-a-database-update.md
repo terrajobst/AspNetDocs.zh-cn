@@ -9,11 +9,11 @@ ms.assetid: 9cad0833-486a-4474-a7f3-7715542ec4ce
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
 ms.openlocfilehash: 805eb84c24764cf921291f89054435601dbac48e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636834"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78440786"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署数据库更新
 
@@ -129,14 +129,14 @@ ms.locfileid: "74636834"
 
 1. 右键单击 "ContosoUniversity" 项目并单击 "**发布**"，打开 "**发布 Web** " 向导。
 2. 选择**测试**配置文件。
-3. 单击 "**设置**" 选项卡。
+3. 单击 **“设置”** 选项卡。
 4. 在**DefaultConnection**下，选择 "**更新数据库**"。
 5. 禁用您配置为初始部署运行的其他脚本：
 
     1. 单击 "**配置数据库更新**"。
     2. 在 "**配置数据库更新**" 对话框中，清除 " *Grant* " 和 " *aspnet-data-dev*" 旁边的复选框。
-    3. 单击 **“关闭”** 。
-6. 单击 "**预览**" 选项卡。
+    3. 单击“关闭”。
+6. 单击 **预览** 选项卡。
 7. 在**DefaultConnection**下的 "**数据库**" 下，单击 "**预览数据库**" 链接。
 
     ![数据库预览](deploying-a-database-update/_static/image7.png)
@@ -156,7 +156,7 @@ ms.locfileid: "74636834"
 
     对于包含数据库更改的实际生产应用程序更新，通常还需要在部署过程中将应用程序脱机，方法是在发布和删除应用程序后将其上载 *\_* ，如[前一教程](deploying-a-code-update.md)中所述。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 现在，你已部署了一个应用程序更新，其中包含使用 Code First 迁移和 dbDacFx 提供程序的数据库更改。
 

@@ -9,11 +9,11 @@ ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
 ms.openlocfilehash: dfe09085f26c62c566649bc6f570aa25367a0f07
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594755"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78506222"
 ---
 # <a name="preventing-javascript-injection-attacks-vb"></a>阻止 JavaScript 注入攻击 (VB)
 
@@ -107,9 +107,9 @@ ms.locfileid: "74594755"
 
 为什么这很糟糕？ 如果需要在网页以外的其他内容中显示数据库数据，则会出现问题。 例如，你无法在 Windows 窗体的应用程序中轻松地显示数据。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本教程的目的是心有余悸您对 JavaScript 注入攻击的目标。 本教程讨论了两种防御 JavaScript 注入式攻击的 ASP.NET MVC 应用程序的方法：可以通过 HTML 编码方式在视图中编码用户提交的数据，也可以在控制器中对用户提交的数据进行 HTML 编码。
 
 > [!div class="step-by-step"]
-> [上一部分](authenticating-users-with-windows-authentication-vb.md)
+> [上一页](authenticating-users-with-windows-authentication-vb.md)

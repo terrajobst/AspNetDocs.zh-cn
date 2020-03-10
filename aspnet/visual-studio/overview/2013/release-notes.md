@@ -9,11 +9,11 @@ ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: d8af9c8e7ee1316a5eac90c5959d07c628154e09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600440"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449522"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>适用于 Visual Studio 2013 的 ASP.NET 和 Web 工具发行说明
 
@@ -54,7 +54,7 @@ ms.locfileid: "74600440"
 Visual Studio 2013 的 ASP.NET 和 Web 工具捆绑在主安装程序中，可在[此处](https://www.asp.net/downloads)下载。
 
 <a id="TOC2"></a>
-## <a name="documentation"></a>Documentation
+## <a name="documentation"></a>文档
 
 [ASP.NET 网站](https://www.asp.net/)提供了有关 Visual Studio 2013 ASP.NET 和 Web 工具的教程和其他信息。
 
@@ -139,7 +139,7 @@ Visual Studio 2013 还附带了内置的 CoffeeScript 和 LESS 编辑器。 更�
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Web 发布增强功能
 
-Visual Studio 2013 包括新的和增强的 Web 发布功能。 下面是其中几个：
+Visual Studio 2013 包括新的和增强的 Web 发布功能。 下面是其中几个示例：
 
 - 轻松[实现 web.config 文件加密的自动化](https://go.microsoft.com/fwlink/?LinkId=325529)。 （此链接和以下两个指向 MSDN 上的文档，这些文档在10/17 年的最晚日期之前可能不可用。）
 - [在部署过程中轻松地自动使应用程序脱机](https://go.microsoft.com/fwlink/?LinkId=325530)。
@@ -218,7 +218,7 @@ ASP.NET MVC 现在支持属性路由，因为 Tim McCall （ [http://attributero
 
 有关属性路由的详细信息，请参阅[WEB API 2 中的属性路由](../../../web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2.md)。
 
-### <a name="oauth-20"></a>OAuth 2。0
+### <a name="oauth-20"></a>OAuth 2.0
 
 Web API 和单页应用程序项目模板现在支持使用 OAuth 2.0 的授权。 OAuth 2.0 是一个框架，用于授权客户端对受保护资源的访问。 它适用于各种客户端，包括浏览器和移动设备。
 
@@ -280,7 +280,7 @@ Web API 2 使对 API 控制器进行单元测试变得更加容易。 只需用�
 
 由于 Brock Allen 的另一大贡献，ASP.NET 现在完全支持跨域请求共享（CORS）。
 
-Browser security 阻止网页向另一个域发出 AJAX 请求。 [CORS](http://www.w3.org/TR/cors/)是一种 W3C 标准，可让服务器放宽相同的源策略。 使用 CORS，服务器可以在拒绝其他跨域请求时显式允许一些跨域请求。
+浏览器安全策略阻止 Web 页向另一个域发出 AJAX 请求。 [CORS](http://www.w3.org/TR/cors/)是一种 W3C 标准，可让服务器放宽相同的源策略。 使用 CORS，服务器可以在显式允许某些跨域请求时拒绝其他跨域请求。
 
 Web API 2 现在支持 CORS，包括自动处理预检请求。 有关详细信息，请参阅[在 ASP.NET Web API 中启用跨域请求](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md)。
 
@@ -392,7 +392,7 @@ SignalR 2.0 完全建立在[OWIN （.net 的开放 Web 接口）](http://owin.or
 
 为了更好地促进跨平台开发，Silverlight、WinRT 和 Windows Phone 客户端已替换为支持以下平台的单个可移植 .NET 客户端：
 
-- NET 4。5
+- NET 4.5
 - Silverlight 5
 - WinRT （适用于 Windows 应用商店应用的 .NET）
 - Windows Phone 8
@@ -630,7 +630,7 @@ ASP.NET 应用暂停是 .NET Framework 4.5.1 中的游戏变化功能，它在�
 
     <em>所提供的 ClaimsIdentity 上不存在类型为 "<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>" 或 "<https://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>" 的声明。若要使用基于声明的身份验证启用防伪令牌支持，请验证配置的声明提供程序是否在其生成的 ClaimsIdentity 实例上同时提供这两个声明。如果配置的声明提供程序改用不同的声明类型作为唯一标识符，则可以通过设置静态属性 AntiForgeryConfig 来配置它。</em>
 
-    **解决方法**：
+    **解决办法**：
 
     在 global.asax 中添加以下行以修复此问题：
 
@@ -659,7 +659,7 @@ ASP.NET 应用暂停是 .NET Framework 4.5.1 中的游戏变化功能，它在�
 
     `@Html.EditorFor(person => person.Age)`
 
-    结束时间：
+    到:
 
     `@Html.TextBoxFor(person => person.Age)`
 4. ASP.NET MVC 5 不再支持部分信任。 链接到 MVC 或 WebAPI 二进制文件的项目应删除[SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx)属性和[AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx)属性。 删除这些属性将消除编译器错误，如下所示。

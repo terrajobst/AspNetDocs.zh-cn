@@ -9,11 +9,11 @@ ms.assetid: cf0b487c-f387-46dd-b3bc-6b3c4af17c9c
 msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
 ms.openlocfilehash: de0e83d09d0610a72915173479c9ef0541093890
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132943"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518060"
 ---
 # <a name="sql-2005"></a>SQL 2005
 

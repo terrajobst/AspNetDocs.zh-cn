@@ -9,11 +9,11 @@ ms.assetid: 492f5ae2-bad7-4107-89a9-f04a9525dee7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4293114002aee15ddace1a3f19c240f35e6065f5
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74620761"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520790"
 ---
 # <a name="aspnet-hosting-options-vb"></a>ASP.NET 托管选项 (VB)
 
@@ -76,7 +76,7 @@ Web 托管公司通常提供共享的托管计划和专用的托管计划。 使
 > [!NOTE]
 > 某些 web 宿主公司将其业务集中在特定的技术堆栈上，如 .NET[或灯泡](http://en.wikipedia.org/wiki/LAMP_stack)（**L** Inux **、Pache** 、 **M** ySQL 和**P** HP），因此请确保选择的公司托管 ASP.NET 应用程序。 另外，请检查以确保它们支持用于生成应用程序的 ASP.NET 版本。 如果要构建数据驱动的应用程序，请确保 web 主机提供了所用的相同数据库服务器和版本。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET web 应用程序通常在本地开发环境中设计、创建和测试。 版本准备好发布后，将移到生产环境。 尽管可以在个人计算机或公司内的服务器上托管 ASP.NET 网站，但许多企业和个人都选择将其托管外包给 web 主机提供商。
 

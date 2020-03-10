@@ -9,11 +9,11 @@ ms.assetid: afa59dfa-fef1-43d3-8fdd-aea3be36ed3c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 2bf6e1b27180589d39e308de62b5be1f47fa8fe2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606370"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78496718"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>使用 Web 服务后端创建数字增大/减小控件 (VB)
 
@@ -57,4 +57,4 @@ ASP.NET AJAX 控件工具包包含自动将两个按钮添加到文本框的 `Nu
 仅显示2的幂的数字（[单击以查看完全大小的图像](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)
+> [上一页](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)

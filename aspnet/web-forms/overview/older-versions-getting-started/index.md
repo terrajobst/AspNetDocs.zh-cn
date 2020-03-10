@@ -1,34 +1,34 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/index
-title: 较旧版本的 Web 窗体入门 |Microsoft Docs
+title: 旧版本-Web 窗体入门 |Microsoft Docs
 author: rick-anderson
-description: 有关 ASP.NET Web 窗体 4 及更早版本的教程。
+description: 有关 ASP.NET Web 窗体4及更早版本的教程。
 ms.author: riande
 ms.date: 10/18/2014
 ms.assetid: e03585c2-80bf-4083-99ba-9fcbc883ccd8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started
 msc.type: chapter
 ms.openlocfilehash: 94c995ee1e636f1250efb3a90887d8d73badeca7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393634"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78474566"
 ---
-# <a name="older-versions---web-forms-getting-started"></a>较旧版本的 Web 窗体入门
+# <a name="older-versions---web-forms-getting-started"></a>旧版本-Web Forms 入门
 
-> 有关 ASP.NET Web 窗体 4 及更早版本的文档。
+> 有关 ASP.NET Web 窗体4及更早版本的文档。
 
 - [ASP.NET 4 - Tailspin Spyworks](tailspin-spyworks/index.md)
 
-    - [第 1 部分：文件-> 新建项目](tailspin-spyworks/tailspin-spyworks-part-1.md)
+    - [第 1 部分：“文件”->“新建项目”](tailspin-spyworks/tailspin-spyworks-part-1.md)
     - [第 2 部分：数据访问层](tailspin-spyworks/tailspin-spyworks-part-2.md)
     - [第 3 部分：布局和类别菜单](tailspin-spyworks/tailspin-spyworks-part-3.md)
-    - [第 4 部分：列出了所有产品](tailspin-spyworks/tailspin-spyworks-part-4.md)
+    - [第 4 部分：列出产品](tailspin-spyworks/tailspin-spyworks-part-4.md)
     - [第 5 部分：业务逻辑](tailspin-spyworks/tailspin-spyworks-part-5.md)
-    - [第 6 部分：ASP.NET 成员资格](tailspin-spyworks/tailspin-spyworks-part-6.md)
+    - [第 6 部分：ASP.NET 成员身份](tailspin-spyworks/tailspin-spyworks-part-6.md)
     - [第 7 部分：添加功能](tailspin-spyworks/tailspin-spyworks-part-7.md)
-    - [第 8 部分：最终页面、 异常处理和结论](tailspin-spyworks/tailspin-spyworks-part-8.md)
+    - [第 8 部分：最终页面、异常处理和结论](tailspin-spyworks/tailspin-spyworks-part-8.md)
 - [ASP.NET 4 - Entity Framework 4 和 Web 窗体入门](getting-started-with-ef/index.md)
 
     - [Entity Framework 4.0 数据库入门](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -41,9 +41,9 @@ ms.locfileid: "59393634"
     - [Entity Framework 4.0 数据库入门 - 第 8 部分](getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
 - [ASP.NET 4 - 继续使用 Entity Framework 4 和 Web 窗体](continuing-with-ef/index.md)
 
-    - [实体框架 4.0 和 ObjectDataSource 控件，第 1 部分：入门](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-    - [实体框架 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-    - [实体框架 4.0 和 ObjectDataSource 控件，第 3 部分：排序和筛选](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+    - [Entity Framework 4.0 和 ObjectDataSource 控件，第 1 部分：入门](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+    - [Entity Framework 4.0 和 ObjectDataSource 控件，第 2 部分：添加业务逻辑层和单元测试](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+    - [Entity Framework 4.0 和 ObjectDataSource 控件，第 3 部分：排序与筛选](continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
     - [在 ASP.NET 4 中使用 Entity Framework 4.0 处理并发](continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [在 ASP.NET 4 中使用 Entity Framework 4.0 实现性能最大化](continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
     - [Entity Framework 4.0 的新增功能](continuing-with-ef/what-s-new-in-the-entity-framework-4.md)

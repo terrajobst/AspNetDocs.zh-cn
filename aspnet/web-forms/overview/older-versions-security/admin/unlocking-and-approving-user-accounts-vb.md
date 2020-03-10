@@ -9,11 +9,11 @@ ms.assetid: 041854a5-ea8c-4de0-82f1-121ba6cb2893
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4a7474676b8f502c583e226678de2b275e0ea3c7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590617"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78517730"
 ---
 # <a name="unlocking-and-approving-user-accounts-vb"></a>解锁和审批用户帐户 (VB)
 
@@ -174,7 +174,7 @@ ms.locfileid: "74590617"
 
 **图 7**：新用户的帐户现已获得批准（[单击查看完全大小的映像](unlocking-and-approving-user-accounts-vb/_static/image21.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 所有成员身份用户帐户都有两个状态来确定用户是否可以登录到站点： `IsLockedOut` 和 `IsApproved`。 若要登录，用户必须 `True` 这两个属性。
 
@@ -193,4 +193,4 @@ Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已�
 此教程系列由许多有用的审阅者查看。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](recovering-and-changing-passwords-vb.md)
+> [上一页](recovering-and-changing-passwords-vb.md)

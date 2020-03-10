@@ -9,11 +9,11 @@ ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
 ms.openlocfilehash: f38de7adcd77b3dc2622759646168cf533b8308f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642583"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78475628"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-c"></a>显示数据 Web 控件中的二进制数据 (C#)
 
@@ -180,7 +180,7 @@ ms.locfileid: "74642583"
 
 **图 13**：为每行显示类别的图片（[单击查看完全尺寸的图像](displaying-binary-data-in-the-data-web-controls-cs/_static/image20.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何提供二进制数据。 数据的显示方式取决于数据的类型。 对于 PDF 手册文件，我们向用户提供了一个 View 宣传册链接，单击该链接后，用户就可以直接使用 PDF 文件。 对于 "类别" 图，我们首先创建了一个页面，用于检索和返回数据库中的二进制数据，然后使用该页面显示 GridView 中的每个类别图片。
 

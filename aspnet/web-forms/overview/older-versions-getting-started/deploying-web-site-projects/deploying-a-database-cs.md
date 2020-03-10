@@ -9,11 +9,11 @@ ms.assetid: ff537a10-9f1f-43fe-9bcb-3dda161ba8f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 83657be794e1ea31f6ad2f2b4adc274724d60cf2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74579914"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78518318"
 ---
 # <a name="deploying-a-database-c"></a>部署数据库 (C#)
 
@@ -153,7 +153,7 @@ ms.locfileid: "74579914"
 
 此时，我们只将开发数据库部署到生产环境。 我们尚未介绍如何部署 web 应用程序，或检查在生产环境中使用生产数据库所需的配置更改。 在下一教程中，我们将介绍这些问题！
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 部署数据驱动的 web 应用程序需要将开发期间使用的数据库复制到生产环境中。 许多 web 宿主提供程序提供工具来简化数据库的部署过程。 例如，使用 DiscountASP.NET 可以将数据库 `.mdf` 文件（或备份）的 FTP，然后将数据库附加到控制面板中的数据库服务器。 如果你的 web 宿主提供程序提供的功能是 Microsoft 的数据库发布向导工具，则可以使用另一个选项，它将生成 SQL 命令的脚本来创建开发数据库的架构和数据。 生成此脚本后，可以在生产数据库中执行它。
 

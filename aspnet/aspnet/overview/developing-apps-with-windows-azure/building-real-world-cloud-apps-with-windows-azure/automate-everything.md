@@ -9,11 +9,11 @@ ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
 ms.openlocfilehash: e741a753a36ebdaefbff8eee0b38911785c716ac
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457162"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472676"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自动执行所有操作（通过 Azure 构建实际的云应用）
 
@@ -84,7 +84,7 @@ ms.locfileid: "77457162"
 
 ![appSettings 和 connectionStrings](automate-everything/_static/image6.png)
 
-*自动化*文件夹现在还包含一个 *&lt;websitename&gt;.pubxml*文件。 此文件存储 MSBuild 将用于将应用程序部署到刚刚创建的 Azure 环境的设置。 例如：
+*自动化*文件夹现在还包含一个 *&lt;websitename&gt;.pubxml*文件。 此文件存储 MSBuild 将用于将应用程序部署到刚刚创建的 Azure 环境的设置。 例如:
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 
@@ -239,7 +239,7 @@ Azure 提供了一项功能，使你能够存储设置和连接字符串，以�
 
 ![修复部署到 Windows Azure 的 It 应用](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 使用这些脚本，可以确信相同的步骤将始终使用相同的顺序执行。 这有助于确保团队中的每个开发人员不会错过某些事情，或在自己的计算机上部署自定义的内容，或将其部署到其他团队成员环境或生产环境中。
 

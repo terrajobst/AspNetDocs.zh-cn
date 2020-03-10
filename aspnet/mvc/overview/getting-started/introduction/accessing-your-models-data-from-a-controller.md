@@ -9,11 +9,11 @@ ms.assetid: caa1ba4a-f9f0-4181-ba21-042e3997861d
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
 ms.openlocfilehash: 5d882d765133d32d3acdba9ffb5d43b69119a273
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457227"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499226"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>从控制器访问模型的数据
 
@@ -41,7 +41,7 @@ ms.locfileid: "77457227"
   
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)   
 
-单击“添加”。 （如果出现错误，则可能不会在开始添加控制器之前构建应用程序。）Visual Studio 会创建以下文件和文件夹：
+单击 **“添加”** 。 （如果出现错误，则可能不会在开始添加控制器之前构建应用程序。）Visual Studio 会创建以下文件和文件夹：
 
 - "*控制器*" 文件夹中的*MoviesController.cs*文件。
 - 一个*Views\Movies*文件夹。

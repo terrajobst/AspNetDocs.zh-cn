@@ -9,11 +9,11 @@ ms.assetid: 13a5a423-9235-4dde-b408-2fd10f791d63
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7fea3939bd910a052340215c207013e2269f32a2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617550"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522080"
 ---
 # <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>IIS 和 ASP.NET 开发服务器之间的核心差异 (C#)
 
@@ -110,7 +110,7 @@ ASP.NET 运行时执行多个步骤来生成请求的内容，包括身份验证
 > [!NOTE]
 > 如果 web 主机提供商仍在使用 IIS 6，则无法使用集成管道功能。 一种解决方法是将私有文档放在禁止 HTTP 访问的文件夹中（例如 `App_Data`），然后创建一个用于服务这些文档的页面。 此页可能会被 `GetPDF.aspx`调用，并通过 querystring 参数传递 PDF 的名称。 `GetPDF.aspx` 页将首先验证用户是否有权查看该文件，如果是，则将使用[`Response.WriteFile(filePath)`](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx)方法将请求的 PDF 文件的内容发送回发出请求的客户端。 如果你不想启用集成管道，此方法也适用于 IIS 7。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 生产环境中的 Web 应用程序是使用 Microsoft 的 IIS web 服务器软件托管的。 但是，在开发环境中，可以使用 IIS 或 ASP.NET 开发服务器来承载应用程序。 理想情况下，应在这两个环境中使用相同的 web 服务器软件，因为使用不同的软件会在混合中添加另一个变量。 但是，易用性 ASP.NET 开发服务器使其成为开发环境中的一个极具吸引力的选择。 好消息是，IIS 与 ASP.NET 开发服务器之间只有几个基本差异，并且如果你知道这些差异，你可以采取措施来帮助确保应用程序的工作方式和功能，无论环境.
 

@@ -9,11 +9,11 @@ ms.assetid: 85554606-47cb-4e4f-9848-eed9da579056
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: df96f3e7422a0537bf1b003a33fe8d71a671ac33
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586217"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78490400"
 ---
 # <a name="creating-a-business-logic-layer-c"></a>创建业务逻辑层 (C#)
 
@@ -173,7 +173,7 @@ BLL 类应包含检查以确保遵守应用程序的业务规则。 这些检查
 
 正如我们将在将来的教程中看到的那样，在使用数据 Web 控件插入、更新或删除数据时，处理从 BLL 向上冒泡的异常可以直接在事件处理程序中处理，而不必在 `try...catch` 块中包装代码。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 设计良好的应用程序可在不同的层中进行设计，每个层封装一个特定角色。 在本文的第一个教程中，我们创建了一个使用类型化数据集的数据访问层;在本教程中，我们构建了一个业务逻辑层作为应用程序 `App_Code` 文件夹中的一系列类，该文件夹向下调用 DAL。 BLL 实现了应用程序的字段级和业务级逻辑。 除了创建单独的 BLL 外，与我们在本教程中所做的一样，另一个选项是通过使用分部类来扩展 Tableadapter 的方法。 然而，使用这种方法并不允许我们覆盖现有方法，也不能将 DAL 和 BLL 与我们在本文中所采用的方法完全分离。
 

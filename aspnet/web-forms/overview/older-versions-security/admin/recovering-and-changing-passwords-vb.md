@@ -9,11 +9,11 @@ ms.assetid: f9adcb5d-6d70-4885-a3bf-ed95efb4da1a
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 0ed1df9455af94a86ce59ecc06c55846a4880596
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618859"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78510608"
 ---
 # <a name="recovering-and-changing-passwords-vb"></a>恢复和更改密码 (VB)
 
@@ -253,7 +253,7 @@ ChangePassword 控件可以更新当前已登录用户的密码*或*其他指定
 > [!NOTE]
 > 如果成员身份框架配置为以明文或哈希格式存储密码，则当前仅适用于 `UserInformation.aspx` 页。 尽管邀请你添加此功能，但它缺少加密新密码的代码。 我建议添加所需的代码的方法是使用反编译程序等[反射](http://www.aisto.com/roeder/dotnet/)器来检查 .NET Framework 中方法的源代码：首先检查 `SqlMembershipProvider` 类的 `ChangePassword` 方法。 这是我用来编写用于创建密码哈希的代码的方法。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ASP.NET 提供了两个控件来帮助用户管理其密码。 PasswordRecovery 控件对于忘记了密码的用户非常有用。 根据成员身份框架的配置，用户可以通过电子邮件发送其现有密码或随机生成的新密码。 通过 ChangePassword 控件，用户可以更新其密码。
 

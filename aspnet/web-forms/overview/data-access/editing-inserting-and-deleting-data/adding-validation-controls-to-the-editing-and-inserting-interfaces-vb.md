@@ -9,11 +9,11 @@ ms.assetid: e3d7028a-7a22-4a4f-babe-d53afc41c0e2
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 5c5ad110ee0836f0a464b02a2b29254e2e06381e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74571345"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78479432"
 ---
 # <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-vb"></a>向编辑和插入界面添加验证控件 (VB)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74571345"
 
 在本教程中，我们将了解如何轻松地将验证控件添加到 TemplateField 的 `EditItemTemplate` 和 `InsertItemTemplate` 以提供更加可靠的用户界面。 具体而言，本教程采用在[检查与插入、更新和删除教程关联的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)中创建的示例，并补充编辑和插入界面以包括适当的验证。
 
-## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deletingexamining-the-events-associated-with-inserting-updating-and-deleting-vbmd"></a>步骤1：复制示例[以检查与插入、更新和删除相关的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deleting"></a>步骤1：复制示例[以检查与插入、更新和删除相关的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
 
 在[检查与插入、更新和删除教程关联的事件](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)中，我们创建了一个页面，其中列出了可编辑 GridView 中产品的名称和价格。 此外，此页还包括一个 DetailsView，其中 `DefaultMode` 属性设置为 `Insert`，因此始终以插入模式呈现。 从这一 DetailsView，用户可以输入新产品的名称和价格，单击 "插入"，然后将其添加到系统中（请参阅图1）。
 
@@ -225,7 +225,7 @@ GridView 的 CommandField 和 Templatefield
 
 完成本教程后，我们的教程已完成！
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 BoundFields 可以提供插入和编辑接口，但接口不可自定义。 通常，我们想要向编辑和插入界面添加验证控件，以确保用户以合法格式输入所需的输入。 若要实现此目的，必须将 BoundFields 转换为 Templatefield，并将验证控件添加到相应的模板。 在本教程中，我们扩展了*检查与插入、更新和删除教程相关的事件*的示例，同时向 DetailsView 的插入界面和 GridView 的编辑界面添加验证控件。 此外，我们还了解了如何使用 ValidationSummary 控件显示摘要验证信息，以及如何将页面上的验证控件分为不同的验证组。
 

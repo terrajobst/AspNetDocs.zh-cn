@@ -9,11 +9,11 @@ ms.assetid: 9e4e687c-b4ec-434f-a4ef-edb0b8f365e4
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8057cfbcd33c74376076363bc27940cebd522c08
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575997"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78522026"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>生成用于从多个用户帐户中选择一个帐户的界面 (C#)
 
@@ -218,7 +218,7 @@ GridView 可以配置为使用自定义分页，但仅在绑定到 ObjectDataSou
 
 **图 9**：单击 "下一步" 链接将显示用户帐户的第二页（[单击以查看完全大小的映像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 管理员通常需要从帐户列表中选择一个用户。 在前面的教程中，我们介绍了如何使用以用户填充的下拉列表，但此方法不能很好地进行缩放。 在本教程中，我们探讨了更好的替代方法：其结果显示在分页 GridView 中的可筛选接口。 利用此用户界面，管理员可以快速高效地查找和选择数千个用户帐户。
 
@@ -241,4 +241,4 @@ Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已�
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Alicja Maziarz。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一页](recovering-and-changing-passwords-cs.md)
+> [下一部分](recovering-and-changing-passwords-cs.md)

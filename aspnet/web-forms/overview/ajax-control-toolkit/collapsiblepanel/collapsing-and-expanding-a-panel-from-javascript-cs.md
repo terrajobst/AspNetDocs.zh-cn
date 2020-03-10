@@ -9,11 +9,11 @@ ms.assetid: de5500be-75e5-461a-8064-b70ae52ea6a4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
 msc.type: authoredcontent
 ms.openlocfilehash: bed14d82394d28336493bec10e31ddb4d411a192
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599427"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497714"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>通过 JavaScript 折叠和展开面板 (C#)
 
@@ -68,4 +68,4 @@ ASP.NET AJAX 控件工具包中的 CollapsiblePanel 控件扩展了面板，使�
 第三个按钮更改面板的状态：从折叠到展开和后退（[单击以查看完全大小的图像](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一页](collapsing-and-expanding-a-panel-from-javascript-vb.md)
+> [下一部分](collapsing-and-expanding-a-panel-from-javascript-vb.md)

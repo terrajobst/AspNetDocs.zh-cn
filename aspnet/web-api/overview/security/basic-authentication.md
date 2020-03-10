@@ -9,75 +9,75 @@ ms.assetid: 41423767-0021-47c3-9e53-0021b457c39f
 msc.legacyurl: /web-api/overview/security/basic-authentication
 msc.type: authoredcontent
 ms.openlocfilehash: 1470bd4b5abd5199b9a5105973b053812d643351
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59412549"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78447632"
 ---
 # <a name="basic-authentication-in-aspnet-web-api"></a>ASP.NET Web API 中的基本身份验证
 
-通过[Mike Wasson](https://github.com/MikeWasson)
+作者： [Mike Wasson](https://github.com/MikeWasson)
 
-基本身份验证定义中[RFC 2617、 HTTP 身份验证：基本和摘要式身份验证访问](http://www.ietf.org/rfc/rfc2617.txt)。
+基本身份验证在[RFC 2617 中定义，HTTP 身份验证：基本和摘要式访问身份验证](http://www.ietf.org/rfc/rfc2617.txt)。
 
 缺点
 
-- 在请求中发送用户凭据。
-- 以纯文本形式发送凭据。
-- 与每个请求发送凭据。
-- 无法注销，除非通过浏览器会话结束。
-- 易受到跨站点请求伪造 (CSRF);需要反 CSRF 的度量值。
+- 用户凭据是在请求中发送的。
+- 凭据以纯文本形式发送。
+- 凭据随每个请求一起发送。
+- 除了在浏览器会话结束以外，没有办法注销。
+- 易受跨站点请求伪造（CSRF）的攻击;需要反 CSRF 度量值。
 
 优点
 
-- Internet 标准。
-- 支持所有主要浏览器。
+- Internet 标准版。
+- 受所有主要浏览器的支持。
 - 相对简单的协议。
 
-基本身份验证的工作方式如下：
+基本身份验证的工作原理如下所示：
 
-1. 如果请求需要身份验证，则服务器将返回 401 （未经授权）。 响应包括 Www-authenticate 标头，该值指示服务器支持基本身份验证。
-2. 客户端将发送另一个请求，授权标头中的客户端凭据。 凭据的格式为"名称： password"base64 编码的字符串。 未加密的凭据。
+1. 如果请求要求身份验证，则服务器将返回401（未授权）。 响应包括 WWW 身份验证标头，指示服务器支持基本身份验证。
+2. 客户端向授权标头中的客户端凭据发送另一个请求。 凭据的格式为字符串 "名称： password"，采用 base64 编码。 凭据未加密。
 
-"Realm。"的上下文中执行基本身份验证 服务器 Www-authenticate 标头中包含的领域的名称。 用户的凭据是在该领域内有效。 是领域的确切的作用域是由服务器。 例如，您可能对分区资源定义几个领域。
+基本身份验证在 "领域" 的上下文中执行。 服务器在 WWW 身份验证标头中包含领域的名称。 用户的凭据在该领域内有效。 领域的确切范围由服务器定义。 例如，你可以定义多个领域来对资源进行分区。
 
 ![](basic-authentication/_static/image1.png)
 
-因为将凭据发送未加密，基本身份验证才安全通过 HTTPS。 请参阅[使用 Web API 中的 SSL](working-with-ssl-in-web-api.md)。
+由于凭据未加密发送，因此基本身份验证仅通过 HTTPS 进行保护。 请参阅[在 WEB API 中使用 SSL](working-with-ssl-in-web-api.md)。
 
-基本身份验证也容易受到 CSRF 攻击。 用户输入凭据后，浏览器会自动将它们发送在后续请求到同一个域中，会话的持续时间。 这包括 AJAX 请求。 请参阅[防止跨站点请求伪造 (CSRF) 攻击](preventing-cross-site-request-forgery-csrf-attacks.md)。
+基本身份验证也容易受到 CSRF 攻击。 用户输入凭据后，浏览器会在会话期间自动将其发送到相同域的后续请求。 这包括 AJAX 请求。 请参阅[防止跨站点请求伪造（CSRF）攻击](preventing-cross-site-request-forgery-csrf-attacks.md)。
 
-## <a name="basic-authentication-with-iis"></a>使用 IIS 基本身份验证
+## <a name="basic-authentication-with-iis"></a>带有 IIS 的基本身份验证
 
-IIS 支持基本身份验证，但有一点需要：用户进行身份验证针对其 Windows 凭据。 这意味着用户必须具有服务器的域帐户。 对于面向公众的网站，通常需要针对 ASP.NET 成员资格提供程序进行身份验证。
+IIS 支持基本身份验证，但有一些需要注意的事项：根据用户的 Windows 凭据对用户进行身份验证。 这意味着用户必须拥有服务器域中的帐户。 对于面向公众的网站，通常需要针对 ASP.NET 成员资格提供程序进行身份验证。
 
-若要启用使用 IIS 的基本身份验证，请将身份验证模式设置为 ASP.NET 项目的 web.config 文件中的"Windows"中：
+若要使用 IIS 启用基本身份验证，请在 ASP.NET 项目的 web.config 中将身份验证模式设置为 "Windows"：
 
 [!code-xml[Main](basic-authentication/samples/sample1.xml)]
 
-在此模式下，IIS 使用 Windows 凭据进行身份验证。 此外，还必须启用基本身份验证在 IIS 中。 在 IIS 管理器中，转到功能视图中，选择身份验证，并启用基本身份验证。
+在此模式下，IIS 使用 Windows 凭据进行身份验证。 此外，还必须在 IIS 中启用基本身份验证。 在 IIS 管理器中转到 "功能" 视图，选择 "身份验证"，并启用基本身份验证。
 
 ![](basic-authentication/_static/image2.png)
 
-在 Web API 项目中，添加`[Authorize]`需要进行身份验证的任何控制器操作的属性。
+在 Web API 项目中，为需要身份验证的任何控制器操作添加 `[Authorize]` 特性。
 
-客户端自行进行身份验证请求中设置授权标头。 浏览器客户端自动执行此步骤。 Nonbrowser 客户端将需要设置标头。
+客户端通过设置请求中的 Authorization 标头对自身进行身份验证。 浏览器客户端会自动执行此步骤。 Nonbrowser 客户端将需要设置标头。
 
-## <a name="basic-authentication-with-custom-membership"></a>使用自定义成员资格进行基本身份验证
+## <a name="basic-authentication-with-custom-membership"></a>具有自定义成员身份的基本身份验证
 
-如前文所述，内置于 IIS 基本身份验证使用 Windows 凭据。 这意味着您需要在托管服务器上创建为你的用户帐户。 但 internet 应用程序，用户帐户通常存储在外部数据库。
+如前所述，IIS 中内置的基本身份验证使用 Windows 凭据。 这意味着你需要为你的宿主服务器上的用户创建帐户。 但对于 internet 应用程序，用户帐户通常存储在外部数据库中。
 
-下面的代码如何执行基本身份验证的 HTTP 模块。 您可以轻松地插入 ASP.NET 成员资格提供程序中通过将替换为`CheckPassword`方法，这是在此示例中的虚拟方法。
+下面的代码演示如何执行基本身份验证。 您可以通过替换 `CheckPassword` 方法来轻松插入 ASP.NET 成员资格提供程序，这是本示例中的一个虚方法。
 
 在 Web API 2 中，应考虑编写[身份验证筛选器](authentication-filters.md)或[OWIN 中间件](../../../aspnet/overview/owin-and-katana/index.md)，而不是 HTTP 模块。
 
 [!code-csharp[Main](basic-authentication/samples/sample2.cs)]
 
-若要启用 HTTP 模块，将以下代码添加到 web.config 文件中**system.webServer**部分：
+若要启用 HTTP 模块，请将以下内容添加到**system.webserver 节中的 web.config**文件中：
 
 [!code-xml[Main](basic-authentication/samples/sample3.xml?highlight=4)]
 
-"程序集名称"替换为 （不包括"dll"扩展名） 的程序集的名称。
+将 "; Yourassemblyname&gt" 替换为程序集的名称（不包括 "dll" 扩展名）。
 
-您应该禁用其他身份验证方案，例如，窗体或 Windows 身份验证。
+你应禁用其他身份验证方案，如窗体或 Windows 身份验证。

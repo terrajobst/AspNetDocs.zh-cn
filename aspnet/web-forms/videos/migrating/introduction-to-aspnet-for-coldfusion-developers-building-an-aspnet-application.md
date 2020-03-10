@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application
-title: ColdFusion 开发人员介绍 ASP.NET 的:构建 ASP.NET 应用程序 |Microsoft Docs
+title: 适用于 ColdFusion 开发人员的 ASP.NET 简介：生成 ASP.NET 应用程序 |Microsoft Docs
 author: microsoft
-description: 此网络广播中演示了如何生成 ASP.NET 应用程序从空白表单开始为经验丰富的 ColdFusion 开发人员提供清晰的思路的究竟是什么...
+description: 此网络广播介绍了如何构建从空白窗体开始的 ASP.NET 应用程序，以便让丰富的 ColdFusion 开发人员清楚地了解具体内容：
 ms.author: riande
 ms.date: 07/25/2006
 ms.assetid: 47316dec-a4cd-4818-8ba7-87e29d963c38
 msc.legacyurl: /web-forms/videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application
 msc.type: video
 ms.openlocfilehash: 8ebbd7a8e8fa4adb9835cea9560797beee2b86fa
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383855"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519716"
 ---
-# <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a>ColdFusion 开发人员介绍 ASP.NET 的:生成 ASP.NET 应用程序
+# <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a>适用于 ColdFusion 开发人员的 ASP.NET 简介：生成 ASP.NET 应用程序
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-此网络广播演示如何生成 ASP.NET 应用程序从空白表单开始为经验丰富的 ColdFusion 开发人员提供清楚地完全所涉及的内容。
+此网络广播介绍了如何构建从空白窗体开始的 ASP.NET 应用程序，以使丰富的 ColdFusion 开发人员清楚地了解所涉及的内容。
 
-[&#9654;观看视频 （77 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application)
+[&#9654;观看视频（77分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application)
 
 > [!div class="step-by-step"]
 > [上一页](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)

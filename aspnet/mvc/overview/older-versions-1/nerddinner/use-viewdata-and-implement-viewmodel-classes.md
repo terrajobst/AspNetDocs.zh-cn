@@ -2,126 +2,126 @@
 uid: mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 title: 使用 ViewData 和实现 ViewModel 类 |Microsoft Docs
 author: microsoft
-description: 步骤 6 显示了如何启用对更丰富的窗体编辑方案中，支持，并还讨论了可用于将数据从控制器传递到视图的两种方法:...
+description: 步骤6显示了如何启用对更丰富的窗体编辑方案的支持，并讨论了可用于将数据从控制器传递到视图的两种方法： 。
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 5755ec4c-60f1-4057-9ec0-3a5de3a20e23
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 msc.type: authoredcontent
 ms.openlocfilehash: ca9775417c2e25952511a73096fb76d5d4edaea2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125451"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78435530"
 ---
 # <a name="use-viewdata-and-implement-viewmodel-classes"></a>使用 ViewData 和实现 ViewModel 类
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下载 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> 这是一种免费的第 6 步["NerdDinner"应用程序教程](introducing-the-nerddinner-tutorial.md)，演练如何构建一个较小，但完成，使用 ASP.NET MVC 1 中的 web 应用程序。
+> 这是免费的["NerdDinner" 应用程序教程](introducing-the-nerddinner-tutorial.md)的第6步，该教程演示如何使用 ASP.NET MVC 1 构建小型但完整的 web 应用程序。
 > 
-> 步骤 6 显示了如何启用对更丰富的窗体编辑方案中，支持，并还讨论了可用于将数据从控制器传递到视图的两种方法：ViewData 和 ViewModel。
+> 步骤6显示了如何启用对更丰富的窗体编辑方案的支持，并讨论了可用于将数据从控制器传递到视图的两种方法： ViewData 和 ViewModel。
 > 
-> 如果使用的 ASP.NET MVC 3，我们建议你遵循[获取启动使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[MVC Music 商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程。
+> 如果你使用的是 ASP.NET MVC 3，则建议你遵循[MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[Mvc 音乐应用商店](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教程中的入门。
 
-## <a name="nerddinner-step-6-viewdata-and-viewmodel"></a>NerdDinner 步骤 6:ViewData 和 ViewModel
+## <a name="nerddinner-step-6-viewdata-and-viewmodel"></a>NerdDinner 步骤6： ViewData 和 ViewModel
 
-我们已涵盖了多个窗体发布方案，并讨论了如何实现创建、 更新和删除 (CRUD) 支持。 现在，我们将采取进一步的我们 DinnersController 的实现，并启用对更丰富的窗体编辑方案的支持。 在此期间，我们将讨论可用于将数据从控制器传递到视图的两种方法：ViewData 和 ViewModel。
+我们介绍了大量的窗体发布方案，并讨论了如何实现创建、更新和删除（CRUD）支持。 现在我们将进一步 DinnersController 实现，并支持更丰富的窗体编辑方案。 在此过程中，我们将讨论可用于将数据从控制器传递到视图的两种方法： ViewData 和 ViewModel。
 
-### <a name="passing-data-from-controllers-to-view-templates"></a>将数据从控制器传递到视图模板
+### <a name="passing-data-from-controllers-to-view-templates"></a>将数据从控制器传递到视图-模板
 
-MVC 模式的定义特征之一是严格"关注点分离"它可帮助应用程序的不同组件之间强制实施。 模型、 控制器和视图每个良好定义的角色和责任，并且它们彼此之间相互进行通信以定义完善的方式。 这有助于提升可测试性和代码重用。
+MVC 模式的一项定义特征是严格的 "问题分离"，它有助于在应用程序的不同组件之间强制实施。 每个模型、控制器和视图都具有完善定义的角色和职责，它们彼此之间以定义的方式相互通信。 这有助于提高可测试性和代码重用。
 
-当控制器类决定呈现 HTML 响应返回给客户端时，它负责显式传递到视图模板的所有数据所需呈现响应。 视图模板应永远不会执行任何数据检索或应用程序逻辑，并应改为其本身限制为只包含从控制器传递给它的模型/数据驱动的呈现代码。
+当控制器类决定向客户端呈现 HTML 响应时，它负责将呈现响应所需的所有数据显式传递给视图模板。 视图模板不应执行任何数据检索或应用程序逻辑，而应将其限制为仅包含由控制器传递给它的模型/数据驱动的呈现代码。
 
-稍后再试模型数据按我们 DinnersController 传递到我们的视图模板的类很简单，简单 – index （），对于 Dinner 对象的列表，以及单个 Dinner 对象在 Details()、 edit （）、 create （） 和 delete （） 的情况下。 因为我们将更多的 UI 功能添加到我们的应用程序时，我们通常要需要传递多个只是呈现 HTML 响应我们视图模板中的此数据。 例如，我们可能想要修改我们编辑中的"国家/地区"字段，从而成为一个 HTML 文本框，到 dropdownlist 创建视图。 而不是硬编码的视图模板中的国家/地区名称的下拉列表，我们可能想要生成基于的受支持的国家/地区，我们动态填充的列表。 我们将需要一种方法将 Dinner 对象传递*和*支持国家/地区列表从控制器到我们的视图模板。
+现在，我们的 DinnersController 类传递到我们的视图模板的模型数据简单直接明了，其中显示了索引（）的晚餐对象的列表，并在出现详细信息（）、编辑（）、Create （）和 Delete （）的情况下使用了一个晚餐对象。 随着我们向应用程序中添加更多的 UI 功能，我们通常需要只传递此数据以在视图模板中呈现 HTML 响应。 例如，我们可能需要更改编辑中的 "国家/地区" 字段，并创建 dropdownlist 为 HTML 文本框的视图。 我们可能想要从我们动态填充的支持国家/地区列表中生成，而不是硬编码查看模板中的国家/地区名称列表。 我们需要一种方法，将晚餐对象*和*支持的国家/地区列表从我们的控制器传递到我们的视图模板。
 
-让我们看看我们可以实现此目的的两种方法。
+让我们看看可以实现此目的的两种方法。
 
 ### <a name="using-the-viewdata-dictionary"></a>使用 ViewData 字典
 
-控制器基类公开可用于将其他数据项从控制器传递给视图的"ViewData"字典属性。
+控制器基类公开了 "ViewData" 字典属性，该属性可用于将其他数据项从控制器传递到视图。
 
-例如，若要支持我们想要从正在 dropdownlist 到一个 HTML 文本框，更改"国家/地区"文本框中的，我们编辑视图中的方案，我们可以更新将可用作 m SelectList 对象传递 （除了一个 Dinner 对象） 我们 edit （） 操作方法国家/地区 dropdownlist odel。
+例如，若要支持我们想要将编辑视图中的 "国家/地区" 文本框从 HTML 文本框更改为 dropdownlist 的方案，我们可以更新 Edit （）操作方法以传递（除了晚餐对象） SelectList 对象，该对象可用作 mdropdownlist 的模型。
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample1.cs)]
 
-上述 SelectList 的构造函数接受县来填充，下拉 downlist，以及当前所选的值的列表。
+上述 SelectList 的构造函数将接受用来填充 downlist 的县列表，以及当前选定的值。
 
-然后，我们可以更新我们 Edit.aspx 视图模板，而不是我们使用了以前的 Html.TextBox() 帮助器方法使用 Html.DropDownList() 帮助器方法：
+然后，我们可以更新我们的 "Edit .aspx" 视图模板，以使用我们之前使用的 Html. TextBox （） helper 方法，而不是使用的 Html. TextBox （） helper 方法。
 
 [!code-aspx[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample2.aspx)]
 
-上面的 Html.DropDownList() 帮助程序方法采用两个参数。 第一个是要输出的 HTML 窗体元素的名称。 第二个是我们通过 ViewData 字典传递"SelectList"模型。 我们使用 C#"作为"关键字将强制转换为 SelectList 字典中的类型。
+上面的 DropDownList （） helper 方法使用两个参数。 第一个是要输出的 HTML form 元素的名称。 第二个是通过 ViewData 字典传递的 "SelectList" 模型。 我们使用C# "as" 关键字将字典中的类型转换为 SelectList。
 
-现在，当我们运行我们的应用程序和访问权限和 */Dinners/Edit/1* URL 在浏览器中我们将看到我们编辑 UI 更新以显示 dropdownlist 的国家/地区而不是一个文本框：
+现在，当我们运行应用程序并在浏览器中访问 */Dinners/Edit/1* URL 时，我们将看到编辑 UI 已更新，以显示 dropdownlist 的国家/地区，而不是文本框：
 
 ![](use-viewdata-and-implement-viewmodel-classes/_static/image1.png)
 
-因为我们还呈现中 （在方案中发生错误时） 的 HTTP POST 编辑方法的编辑视图模板，我们将需要确保我们还更新此方法将 SelectList 添加到 ViewData，在错误情况中呈现的视图模板时：
+由于我们还会从 HTTP-POST 编辑方法呈现编辑视图模板（在发生错误的情况下），因此我们将需要确保在错误情况下呈现视图模板时，我们还将更新此方法以将 SelectList 添加到 ViewData 中：
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample3.cs)]
 
-并且我们 DinnersController 的编辑方案现在支持 DropDownList。
+现在我们的 DinnersController 编辑方案支持 DropDownList。
 
-### <a name="using-a-viewmodel-pattern"></a>使用视图模型的模式
+### <a name="using-a-viewmodel-pattern"></a>使用 ViewModel 模式
 
-ViewData 字典方法具有优势是相当快速且轻松地实现。 一些开发人员不喜欢使用基于字符串的字典，不过，由于拼写错误可能会导致将不会在编译时捕获的错误。 非类型化的 ViewData 字典还需要使用"为"运算符或强制转换时使用 C# 等视图模板中的强类型化语言。
+ViewData 字典方法的好处是，实现起来非常快捷快捷。 不过，某些开发人员不喜欢使用基于字符串的字典，因为键入错误会导致编译时不会捕获到错误。 使用强类型化语言（如C#在视图模板中）时，非类型化的 ViewData 字典还需要使用 "as" 运算符或强制转换。
 
-我们可以使用另一种方法是一个通常称为"视图模型的"模式。 使用此模式时我们将创建强类型化的类，针对我们特定视图的方案，进行了优化和其公开动态值/内容所需的视图模板的属性。 我们的控制器类可以填充，然后将这些视图优化类传递给我们要使用的视图模板。 这样，类型安全性、 编译时检查，以及在视图模板中的编辑器 intellisense。
+我们可以使用的另一种方法是 "ViewModel" 模式。 使用此模式时，我们将创建针对特定视图方案进行了优化的强类型类，并公开了视图模板所需的动态值/内容的属性。 然后，控制器类可以填充这些视图优化类并将其传递给视图模板以供使用。 这会在视图模板中启用类型安全、编译时检查和编辑器 intellisense。
 
-例如，若要启用 dinner 窗体类似如下的编辑方案，我们可以创建"DinnerFormViewModel"类公开两个强类型属性： 一个 Dinner 对象和所需填充国家/地区 dropdownlist 的 SelectList 模型：
+例如，若要启用晚餐窗体编辑方案，我们可以创建一个如下所示的 "DinnerFormViewModel" 类，该类公开两个强类型的属性：晚餐对象和填充国家 dropdownlist 所需的 SelectList 模型：
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample4.cs)]
 
-我们可以然后更新要创建使用从存储库中，我们检索的 Dinner 对象 DinnerFormViewModel 我们 edit （） 操作方法，并将其传递给视图模板：
+然后，可以使用我们从存储库中检索到的晚餐对象，更新 Edit （）操作方法来创建 DinnerFormViewModel，然后将其传递到我们的视图模板：
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample5.cs)]
 
-然后我们视图模板，因此它需要"DinnerFormViewModel"而不是"Dinner"对象通过更改 edit.aspx 页面顶部的"继承"特性的更新如下所示，我们将：
+接下来，我们将更新视图模板，使其需要一个 "DinnerFormViewModel" 而不是 "晚餐" 对象，方法是更改 "编辑 .aspx" 页顶部的 "继承" 属性，如下所示：
 
 [!code-cshtml[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample6.cshtml)]
 
-我们执行此操作，我们视图模板中的"模型"属性的 intellisense 将更新以反映我们传递给它的 DinnerFormViewModel 类型的对象模型：
+完成此操作后，我们的视图模板中的 "模型" 属性的 intellisense 将会更新，以反映我们传递它的 DinnerFormViewModel 类型的对象模型：
 
 ![](use-viewdata-and-implement-viewmodel-classes/_static/image2.png)
 
 ![](use-viewdata-and-implement-viewmodel-classes/_static/image3.png)
 
-我们然后可以更新其工作我们查看代码。 请注意，我们未更改的输入元素的名称如何我们正在创建 （窗体元素将仍被命名为"Title"，"国家/地区"） – 但我们正在更新的 HTML 帮助器方法来检索使用 DinnerFormViewModel 类的值：
+然后，我们可以更新我们的视图代码来处理它。 请注意，我们不会更改我们正在创建的输入元素的名称（窗体元素仍将命名为 "Title"、"国家/地区"），但我们正在更新 HTML 帮助器方法以使用 DinnerFormViewModel 类检索值：
 
 [!code-aspx[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample7.aspx)]
 
-我们还会更新我们编辑 post 方法以呈现错误时所使用的 DinnerFormViewModel 类：
+在呈现错误时，我们还将更新编辑 post 方法以使用 DinnerFormViewModel 类：
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample8.cs)]
 
-我们还可以更新我们的 create （） 操作方法，以重复使用的完全相同*DinnerFormViewModel*类来启用的国家/地区 DropDownList 中那些也。 下面是 HTTP GET 实现：
+我们还可以更新 Create （）操作方法，以便重复使用完全相同的*DinnerFormViewModel*类，以便在这些国家/地区中 DropDownList。 下面是 HTTP GET 实现：
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample9.cs)]
 
-下面是创建 HTTP POST 方法的实现：
+下面是 HTTP POST Create 方法的实现：
 
 [!code-csharp[Main](use-viewdata-and-implement-viewmodel-classes/samples/sample10.cs)]
 
-并且我们编辑和创建屏幕现在支持方法是下拉列表选择国家/地区。
+同时，我们的 "编辑" 和 "创建" 屏幕支持用于挑选国家/地区的下拉 downlists。
 
-### <a name="custom-shaped-viewmodel-classes"></a>自定义形状 ViewModel 类
+### <a name="custom-shaped-viewmodel-classes"></a>自定义形状的 ViewModel 类
 
-在上述方案中，我们 DinnerFormViewModel 类直接将 Dinner 模型对象公开为属性，以及支持 SelectList 模型属性。 这种方法，我们要创建我们视图模板中的 HTML UI 方法相对较接近于我们的域模型对象的方案中工作正常。
+在上述方案中，我们的 DinnerFormViewModel 类直接将晚餐模型对象公开为属性，同时将支持 SelectList 模型属性公开。 如果我们要在视图模板中创建的 HTML UI 相对接近我们的域模型对象，则此方法适用于这种情况。
 
-这并不适合的情况下，可以使用的一种选择是创建一个自定义形状的 ViewModel 类的对象模型更适用于使用由视图 – 和可能看起来完全不同的基础的域模型对象。 例如，它可能会公开不同的属性名和/或从多个模型对象收集的聚合属性。
+对于这种情况不是这样的情况，可以使用的一种方法是创建一个自定义形状的 ViewModel 类，该类的对象模型对视图的使用进行了更多的优化，并可能与基础域模型对象完全不同。 例如，它可能会公开从多个模型对象中收集的不同属性名称和/或聚合属性。
 
-自定义形状 ViewModel 类可用于同时将数据从控制器传递到要呈现，以及用于帮助处理回发到控制器的操作方法的窗体数据的视图。 对于此更高版本的情况下，可能必须使用窗体发布数据中，更新 ViewModel 对象，然后使用 ViewModel 实例映射或检索实际域模型对象的操作方法。
+自定义形状的 ViewModel 类可用于将数据从控制器传递到要呈现的视图，以及帮助处理回发到控制器操作方法的窗体数据。 对于此后一种情况，您可能让操作方法使用窗体发布数据更新 ViewModel 对象，然后使用 ViewModel 实例映射或检索实际的域模型对象。
 
-自定义形状 ViewModel 类可以提供了很大的灵活性，并需要调查任何时间在您开始太过于复杂的操作方法中的视图模板或窗体发布代码中找到的呈现代码。 这通常是登录域模型不完全对应于要生成的 UI 和中间形自定义 ViewModel 类可帮助。
+自定义形状的 ViewModel 类可以提供很大的灵活性，并且可以在任何时候在视图模板内查找呈现代码，或在操作方法内的窗体发布代码太复杂时进行调查。 这通常是因为您的域模型并不完全对应于您所生成的 UI，并且中间的自定义形状的 ViewModel 类可以帮助。
 
 ### <a name="next-step"></a>下一步
 
-让我们现在看一下如何使用分区和母版页的重复使用并在我们的应用程序之间共享 UI。
+现在我们来看看如何使用分区和母版页跨应用程序重复使用和共享 UI。
 
 > [!div class="step-by-step"]
 > [上一页](provide-crud-create-read-update-delete-data-form-entry-support.md)

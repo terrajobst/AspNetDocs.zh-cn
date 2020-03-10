@@ -9,11 +9,11 @@ ms.assetid: 128fdb5f-4c5e-42b5-b485-f3aee90a8e38
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5c87386e4fe2c53b39162071689f2522dcc6c7ac
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74602330"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78442418"
 ---
 # <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>添加和响应 GridView 的按钮 (C#)
 
@@ -247,7 +247,7 @@ ButtonField 自动传入其按钮通过 `e.CommandArgument` 参数单击的行�
 > GridView （和 DetailsView）还可以将按钮、LinkButtons 或 ImageButtons 添加到其 Templatefield。 与 BoundField 一样，单击这些按钮时，将引发回发，引发 GridView 的 `RowCommand` 事件。 但是，当在 TemplateField 中添加按钮时，该按钮的 `CommandArgument` 不会自动设置为行的索引，因为使用 ButtonFields 时。 如果需要确定在 `RowCommand` 事件处理程序中单击的按钮的行索引，则需要使用类似如下的代码，在 TemplateField 中手动设置该按钮的声明性语法中的 `CommandArgument` 属性：  
 > `<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 GridView、DetailsView 和 FormView 控件都可以包括按钮、LinkButtons 或 ImageButtons。 当单击此类按钮时，会导致回发，并引发在 "FormView" 和 "DetailsView" 控件中的 `ItemCommand` 事件和 GridView 中的 `RowCommand` 事件。 这些数据 Web 控件具有内置功能，可处理常见的命令相关操作，例如删除或编辑记录。 但是，我们还可以使用按钮，在单击该按钮时，会通过执行我们自己的自定义代码来做出响应。
 
@@ -260,4 +260,4 @@ GridView、DetailsView 和 FormView 控件都可以包括按钮、LinkButtons �
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，创始人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)，已在使用 Microsoft Web 技术，自1998开始。 Scott 的工作方式是独立的顾问、培训师和撰稿人。 他的最新书籍是，[*在24小时内，sam ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 可以[mitchell@4GuysFromRolla.com访问。](mailto:mitchell@4GuysFromRolla.com) 或通过他的博客，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [下一页](adding-and-responding-to-buttons-to-a-gridview-vb.md)
+> [下一部分](adding-and-responding-to-buttons-to-a-gridview-vb.md)

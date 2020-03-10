@@ -9,11 +9,11 @@ ms.assetid: 32b7fb6e-d74b-4048-91f8-70631b2523ee
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 67093266567a97cd22b353115616484fd9ef155e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74596475"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78463622"
 ---
 # <a name="nested-master-pages-c"></a>嵌套的母版页 (C#)
 
@@ -185,7 +185,7 @@ ms.locfileid: "74596475"
 
 第一项任务是创建要由 "管理" 部分中的页面使用的嵌套母版页。 正如我们在步骤2中看到的，添加新的嵌套母版页时，需要指定嵌套母版页的父母版页。 但有两个顶级母版页： `Site.master` 和 `Alternate.master`。 回忆一下，我们在前面的教程中创建了 `Alternate.master`，并在 `BasePage` 类中编写了代码，该代码在运行时将页面对象的 `MasterPageFile` 属性设置为 `Site.master` 或 `Alternate.master`，具体取决于 `MyMasterPage` 会话变量的值。
 
-如何配置嵌套母版页，使其使用适当的顶层母版页？ 我们有两个选项：
+如何配置嵌套母版页，使其使用适当的顶层母版页？ 有两种做法：
 
 - 创建两个嵌套母版页，`AdminNestedSite.master` 和 `AdminNestedAlternate.master`，并分别将它们绑定到顶层母版页 `Site.master` 和 `Alternate.master`。 在 `BasePage`中，我们将 `Page` 对象的 `MasterPageFile` 设置为相应的嵌套母版页。
 - 创建单个嵌套母版页，并使内容页使用该特定母版页。 然后，在运行时，需要在运行时将嵌套母版页的 `MasterPageFile` 属性设置为适当的顶级母版页。 （正如你现在可能已发现，母版页也有一个 `MasterPageFile` 属性。）
@@ -232,7 +232,7 @@ ms.locfileid: "74596475"
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample12.cs)]
 
-结束时间：
+到:
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample13.cs)]
 
@@ -252,7 +252,7 @@ ms.locfileid: "74596475"
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample14.cs)]
 
-结束时间：
+到:
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample15.cs)]
 
@@ -292,7 +292,7 @@ ms.locfileid: "74596475"
 
 **图 13**：嵌套管理页使用用户选择的顶层母版页（[单击以查看完全大小的图像](nested-master-pages-cs/_static/image39.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 与内容页绑定到母版页的方式非常类似，可以通过将子母版页绑定到父母版页来创建嵌套母版页。 子母版页可以为其每个父级的 Contentplaceholder 定义内容控件;然后，它可以将其自己的 ContentPlaceHolder 控件（以及其他标记）添加到这些内容控件。 嵌套的母版页在大 web 应用程序中非常有用，在这种情况下，所有页面都具有大致的外观，但站点的某些部分需要独有的自定义。
 

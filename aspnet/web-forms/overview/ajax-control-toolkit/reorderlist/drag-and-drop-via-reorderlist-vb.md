@@ -9,11 +9,11 @@ ms.assetid: 848e6bcf-4c3f-4d14-974d-e45b9444ab79
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3f7c5749053d8bf587467fb1939fca05ce2872a4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598657"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78446084"
 ---
 # <a name="drag-and-drop-via-reorderlist-vb"></a>通过 ReorderList 进行拖放 (VB)
 
@@ -82,4 +82,4 @@ AJAX 表中的初始数据（[单击以查看完全大小的图像](drag-and-dro
 数据库中的数据会根据新的列表项顺序进行更改（[单击查看完全大小的图像](drag-and-drop-via-reorderlist-vb/_static/image9.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](using-postbacks-with-reorderlist-vb.md)
+> [上一页](using-postbacks-with-reorderlist-vb.md)

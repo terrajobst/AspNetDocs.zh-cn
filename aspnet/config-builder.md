@@ -7,11 +7,11 @@ ms.author: riande
 ms.date: 10/29/2018
 msc.type: content
 ms.openlocfilehash: 5299d9ab057c3096773955a7461e77a80673ebfe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586765"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472304"
 ---
 # <a name="configuration-builders-for-aspnet"></a>ASP.NET 的配置生成器
 
@@ -82,7 +82,7 @@ Web.config 中的以下标记*将启用 `Strict`* 模式下的[EnvironmentConfig
 
 * 在默认 `Strict` 模式下 `EnvironmentConfigBuilder`，并在配置文件中设置相应的密钥名称。 前面的代码和标记采用这种方法。 使用此方法时，`<appSettings/>` 和 `<connectionStrings/>`中的密钥**不**能相同。
 * 在具有不同前缀和 `stripPrefix`的 `Greedy` 模式下使用两个 `EnvironmentConfigBuilder`s。 利用此方法，应用程序可以读取 `<appSettings/>` 和 `<connectionStrings/>`，而无需更新配置文件。 下一部分[stripPrefix](#stripprefix)介绍了如何执行此操作。
-* 在 `Greedy` 模式下使用具有不同前缀的两 `EnvironmentConfigBuilder`。 使用此方法时，不能具有重复的键名，因为键名称必须以前缀来区分。  例如：
+* 在 `Greedy` 模式下使用具有不同前缀的两 `EnvironmentConfigBuilder`。 使用此方法时，不能具有重复的键名，因为键名称必须以前缀来区分。  例如:
 
 [!code-xml[Main](config-builder/MyConfigBuilders/WebPrefix.config?name=snippet&highlight=11-99)]
 
@@ -103,7 +103,7 @@ Web.config 中的以下标记*将启用 `Strict`* 模式下的[EnvironmentConfig
 
 例如，使用以前的*web.config*文件、先前环境编辑器图像中的键/值和前面的代码，将设置以下值：
 
-|  键              | {2&gt;值&lt;2} |
+|  键              | “值” |
 | ----------------- | ------------ |
 |     AppSetting_ServiceID           | 从 env 变量 AppSetting_ServiceID|
 |    AppSetting_default            | 从 env AppSetting_default 值 |
@@ -136,11 +136,11 @@ Web.config 中的以下标记*将启用 `Strict`* 模式下的[EnvironmentConfig
 
 例如，使用以前的*web.config*文件、先前环境编辑器图像中的键/值和前面的代码，将设置以下值：
 
-|  键              | {2&gt;值&lt;2} |
+|  键              | “值” |
 | ----------------- | ------------ |
 |     ServiceID           | 从 env 变量 AppSetting_ServiceID|
-|    默认值            | 从 env AppSetting_default 值 |
-|    默认值         | 从 env ConnStr_default val|
+|    default            | 从 env AppSetting_default 值 |
+|    default         | 从 env ConnStr_default val|
 
 ### <a name="tokenpattern"></a>tokenPattern
 
@@ -280,7 +280,7 @@ Web.config 中的以下标记*将启用 `Strict`* 模式下的[EnvironmentConfig
 * `jsonMode` - `[Flat|Sectional]`。 默认为 `Flat`。 当 `Flat``jsonMode` 时，JSON 文件是单个平面键/值源。 `EnvironmentConfigBuilder` 和 `AzureKeyVaultConfigBuilder` 也是单层的键/值源。 在 `Sectional` 模式下配置 `SimpleJsonConfigBuilder` 时：
 
   * JSON 文件在概念上只分成了多个字典。
-  * 每个字典仅适用于与附加到它们的顶级属性名称匹配的配置节。 例如：
+  * 每个字典仅适用于与附加到它们的顶级属性名称匹配的配置节。 例如:
 
 ```json
     {

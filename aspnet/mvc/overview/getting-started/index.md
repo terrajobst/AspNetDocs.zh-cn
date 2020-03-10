@@ -2,22 +2,22 @@
 uid: mvc/overview/getting-started/index
 title: ASP.NET MVC 入门 |Microsoft Docs
 author: rick-anderson
-description: 了解有关 ASP.NET MVC ASP.NET MVC 提供了功能强大、 基于模式的方法，来构建实现完全分离关注点和该 g 的动态网站...
+description: 了解 ASP.NET MVC ASP.NET MVC 为你提供了一种功能强大的、基于模式的方法来构建动态网站，使问题和
 ms.author: riande
 ms.date: 08/31/2011
 ms.assetid: d916dbe0-1895-491b-8bb6-93f4594ce757
 msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 8e25c3a01634df6c3d9c81df8ab1738cc079d341
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121127"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78471020"
 ---
 # <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 入门
 
-> 以下指南介绍了 ASP.NET MVC 是，介绍如何开始。
+> 以下指南说明了什么是 ASP.NET MVC，并说明了如何开始操作。
 
 - [ASP.NET MVC 5 入门](introduction/index.md)
 

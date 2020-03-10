@@ -2,18 +2,18 @@
 uid: single-page-application/index
 title: ASP.NET 单页面应用程序 |Microsoft Docs
 author: rick-anderson
-description: 下载 ASP.NET Fall 2012 Update，并具有更好的端到端体验与使用 JavaScrip 的重要客户端交互构建应用程序...
+description: 下载 ASP.NET 秋季2012更新，并提供更好的端到端体验，以便使用 Javascript 。
 ms.author: riande
 ms.date: 11/14/2012
 ms.assetid: 4760328c-3d73-4757-a36f-ab80a5b3f611
 msc.legacyurl: /single-page-application
 msc.type: categoryindex
 ms.openlocfilehash: 74ebdc39a81d31fb3c1ef3e5bab1857915cdc247
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400928"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449798"
 ---
 # <a name="aspnet-single-page-application"></a>ASP.NET 单页面应用程序
 

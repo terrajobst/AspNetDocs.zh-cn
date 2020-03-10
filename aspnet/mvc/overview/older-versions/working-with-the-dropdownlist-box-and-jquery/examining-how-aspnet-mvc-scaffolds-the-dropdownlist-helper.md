@@ -9,11 +9,11 @@ ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
 ms.openlocfilehash: 275b20ad964b3e8ddc272a7448f0740ed0891eff
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457604"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78498356"
 ---
 # <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>检查 ASP.NET MVC 如何支持 DropDownList 帮助程序
 
@@ -43,7 +43,7 @@ ms.locfileid: "77457604"
 
 需要 `AlbumId` 才能对唱片集记录进行更改。
 
-按 Ctrl+F5 运行应用程序。 选择 "**管理**" 链接，然后选择 "**新建" 链接**创建新的唱片集。 验证唱片集信息已保存。 编辑唱片集并验证所做的更改是否已保存。
+按 Ctrl+F5 以运行应用程序。 选择 "**管理**" 链接，然后选择 "**新建" 链接**创建新的唱片集。 验证唱片集信息已保存。 编辑唱片集并验证所做的更改是否已保存。
 
 ### <a name="the-album-schema"></a>唱片集架构
 
@@ -99,7 +99,7 @@ HTML `<select>` 元素（由 HTML [DropDownList](https://msdn.microsoft.com/libr
 
 您可以使用[fiddler 工具](http://www.fiddler2.com/fiddler2/)来检查 ASP.NET MVC 模型绑定用来创建唱片集对象的已发布的窗体值。
 
-![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png) 列中的一个值匹配。
+![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)。
 
 ### <a name="refactoring-the-viewbag-selectlist-creation"></a>重构 ViewBag SelectList 创建
 

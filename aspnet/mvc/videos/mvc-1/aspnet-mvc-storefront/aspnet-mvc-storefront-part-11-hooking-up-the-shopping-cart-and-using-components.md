@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components
-title: ASP.NET MVC 店面第 11 部分：挂接购物车和使用组件 |Microsoft Docs
+title: ASP.NET MVC 店面第11部分：与购物车挂钩并使用组件 |Microsoft Docs
 author: robconery
-description: 在这一集中，我挂接站点提升为购物车和我控制器上运行一些测试。 我还生成具有的 MVC 中，第一项鲜为人知的功能的组件...
+description: 在此剧集中，我将站点挂钩到购物车，然后在控制器上运行一些测试。 我还构建了一个组件，其中包含 MVC 的一些已知功能 。
 ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: 25cc35b4-601e-448b-abf1-bc253b30d232
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components
 msc.type: video
 ms.openlocfilehash: dbf2a5966227466ba4ddd2e5a07383066054ce60
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395298"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450668"
 ---
-# <a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a>ASP.NET MVC 店面第 11 部分：挂接购物车并使用组件
+# <a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a>ASP.NET MVC 店面第11部分：与购物车挂钩并使用组件
 
-通过[Rob conery 专攻](https://github.com/robconery)
+作者： [Conery](https://github.com/robconery)
 
-在这一集中，我挂接站点提升为购物车和我控制器上运行一些测试。 我还构建具有 MVC，System.Web.MVC.ComponentController 的一项鲜为人知的功能的组件。
+在此剧集中，我将站点挂钩到购物车，然后在控制器上运行一些测试。 我还构建了一个组件，其中包含 MVC、ComponentController 的一些已知功能。
 
-[&#9654;观看视频 （31 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components)
+[&#9654;观看视频（31分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components)
 
 > [!div class="step-by-step"]
 > [上一页](aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization.md)

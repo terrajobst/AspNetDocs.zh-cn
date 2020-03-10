@@ -9,11 +9,11 @@ ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
 ms.openlocfilehash: 348232af531b5d53dc3cb46d6d2c7931d95a572d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457123"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78500762"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>设计为可经受故障（通过 Azure 构建实际的云应用）
 
@@ -98,7 +98,7 @@ Azure 的目标是更轻松地处理所有这些类型的故障，你将在以�
 
 如果你的应用程序过度使用，某些云服务可能会有意拒绝服务。 这称为*限制*。 如果服务具有 SLA，则它应声明你可能会受到限制的条件，并且你的应用程序设计应避免出现这些情况，并在发生此限制时正确地做出响应。 例如，如果在超过特定数量的每秒时，对服务的请求将开始失败，则需要确保自动重试不会快速进行，因为它们会导致限制继续。 在[暂时性故障处理一章](transient-fault-handling.md)中，我们将详细介绍限制。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 本章已尝试帮助你认识到现实世界的云应用程序不能正常工作的原因。 从[下一章](monitoring-and-telemetry.md)开始，本系列中的其余模式将更详细地介绍一些可用于执行此操作的策略：
 

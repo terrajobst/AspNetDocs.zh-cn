@@ -9,14 +9,14 @@ ms.assetid: 5da4c4de-0836-4815-b524-3166fd3e6d0f
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-2012-html-editing-features
 msc.type: video
 ms.openlocfilehash: deecb47497c802751cd0b940474052a7753156b9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384482"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78449600"
 ---
 # <a name="visual-studio-2012-html-editing-features"></a>Visual Studio 2012 HTML 编辑功能
 
-通过[Scott Hanselman](https://github.com/shanselman)
+作者： [Scott Hanselman](https://github.com/shanselman)
 
-[&#9654;观看视频 （4 分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2012-html-editing-features)
+[&#9654;观看视频（4分钟）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2012-html-editing-features)

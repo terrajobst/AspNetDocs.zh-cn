@@ -9,11 +9,11 @@ ms.assetid: 54d9df99-1161-4899-b4e8-2679c85915e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
 ms.openlocfilehash: 4b87cb8f58dbd7f27b16bcb0d488ff361770d4fe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74623009"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78439268"
 ---
 # <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>了解使用 ASP.NET AJAX 的部分页面更新
 
@@ -49,7 +49,7 @@ Microsoft 的 ASP.NET 技术引入了面向对象的和事件驱动的编程模�
 
 1. 在 Microsoft Visual Studio 2008 中，通过转到 "<em>文件</em><em>-" &gt; 新</em>的<em>-&gt;</em>网站并从对话框中选择 "ASP.NET" 网站来创建新的 ASP.NET 网站项目。 可以将其命名为任何所需内容，并且可以将其安装到文件系统或 Internet Information Services （IIS）中。
 2. 将显示具有基本 ASP.NET 标记（服务器端窗体和 `@Page` 指令）的空白默认页。 将名为 `Label1` 的标签和一个名为 `Button1` 的按钮拖到窗体元素中的页上。 可以将其文本属性设置为所需的任何内容。
-3. 在设计视图中，双击 "`Button1`" 生成代码隐藏事件处理程序。 在此事件处理程序中，将 `Label1.Text` 设置为单击按钮！ 。
+3. 在设计视图中，双击 "`Button1`" 生成代码隐藏事件处理程序。 在此事件处理程序中，将 `Label1.Text` 设置为单击按钮！ .
 
 **列表1：启用部分呈现之前的默认 .aspx 标记**
 
@@ -105,36 +105,36 @@ Visual Studio 2008 似乎不带有预定义的模板，适用于启用 AJAX ASP.
 
 | **属性名称** | **Type** | **描述** |
 | --- | --- | --- |
-| AllowCustomErrors-重定向 | Bool | 指定是否使用 web.config 文件的自定义错误部分来处理错误。 |
-| AsyncPostBackError-消息 | 字符串 | 获取或设置在引发错误时发送给客户端的错误消息。 |
-| AsyncPostBack-超时 | Int32 | 获取或设置客户端应等待异步请求完成的默认时间量。 |
-| EnableScript-全球化 | Bool | 获取或设置是否启用脚本全球化。 |
-| EnableScript-本地化 | Bool | 获取或设置是否启用脚本本地化。 |
+| AllowCustomErrors-Redirect | Bool | 指定是否使用 web.config 文件的自定义错误部分来处理错误。 |
+| AsyncPostBackError-Message | String | 获取或设置在引发错误时发送给客户端的错误消息。 |
+| AsyncPostBack-Timeout | Int32 | 获取或设置客户端应等待异步请求完成的默认时间量。 |
+| EnableScript-Globalization | Bool | 获取或设置是否启用脚本全球化。 |
+| EnableScript-Localization | Bool | 获取或设置是否启用脚本本地化。 |
 | ScriptLoadTimeout | Int32 | 确定允许将脚本加载到客户端的秒数 |
 | ScriptMode | Enum （自动、调试、发布、继承） | 获取或设置是否呈现脚本的发布版本 |
-| ScriptPath | 字符串 | 获取或设置指向要发送到客户端的脚本文件的位置的根路径。 |
+| ScriptPath | String | 获取或设置指向要发送到客户端的脚本文件的位置的根路径。 |
 
 仅限代码的属性：
 
 | **属性名称** | **Type** | **描述** |
 | --- | --- | --- |
-| AuthenticationService | AuthenticationService | 获取有关将发送到客户端的 ASP.NET Authentication 服务代理的详细信息。 |
+| AuthenticationService | AuthenticationService-Manager | 获取有关将发送到客户端的 ASP.NET Authentication 服务代理的详细信息。 |
 | IsDebuggingEnabled | Bool | 获取是否启用脚本和代码调试。 |
 | IsInAsyncPostback | Bool | 获取页面当前是否处于异步回发请求。 |
-| ProfileService | ProfileService | 获取有关将发送到客户端的 ASP.NET 分析服务代理的详细信息。 |
+| ProfileService | ProfileService-Manager | 获取有关将发送到客户端的 ASP.NET 分析服务代理的详细信息。 |
 | 脚本 | &lt;脚本引用的集合&gt; | 获取将发送到客户端的脚本引用的集合。 |
-| Services | 集合&lt;服务引用&gt; | 获取将发送到客户端的 Web 服务代理引用的集合。 |
+| 服务 | 集合&lt;服务引用&gt; | 获取将发送到客户端的 Web 服务代理引用的集合。 |
 | SupportsPartialRendering | Bool | 获取当前客户端是否支持部分呈现。 如果此属性返回**false**，则所有页面请求均为标准回发。 |
 
 公共代码方法：
 
 | **方法名称** | **Type** | **描述** |
 | --- | --- | --- |
-| SetFocus （string） | Void | 当请求完成时，将客户端的焦点设置到特定控件。 |
+| SetFocus(string) | Void | 当请求完成时，将客户端的焦点设置到特定控件。 |
 
 标记后代：
 
-| **符** | **描述** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;AuthenticationService&gt; | 提供有关 ASP.NET authentication 服务的代理的详细信息。 |
 | &lt;ProfileService&gt; | 提供有关 ASP.NET 分析服务代理的详细信息。 |
@@ -179,7 +179,7 @@ ScriptManager 控件为脚本字符串和用户界面组件的本地化提供了
 
 | **属性名称** | **Type** | **描述** |
 | --- | --- | --- |
-| ChildrenAsTriggers | 布尔 | 指定子控件在回发时是否自动调用刷新。 |
+| ChildrenAsTriggers | bool | 指定子控件在回发时是否自动调用刷新。 |
 | RenderMode | enum （块，内联） | 指定内容的直观显示方式。 |
 | UpdateMode | enum （Always，条件） | 指定 UpdatePanel 是否始终在部分呈现期间刷新，或是否仅在命中触发器时刷新。 |
 
@@ -187,10 +187,10 @@ ScriptManager 控件为脚本字符串和用户界面组件的本地化提供了
 
 | **属性名称** | **Type** | **描述** |
 | --- | --- | --- |
-| IsInPartialRendering | 布尔 | 获取 UpdatePanel 是否支持当前请求的部分呈现。 |
-| System.windows.controls.contentcontrol.contenttemplate | ITemplate | 获取更新请求的标记模板。 |
+| IsInPartialRendering | bool | 获取 UpdatePanel 是否支持当前请求的部分呈现。 |
+| ContentTemplate | ITemplate | 获取更新请求的标记模板。 |
 | ContentTemplateContainer | 控件 | 获取更新请求的编程模板。 |
-| 触发器 | UpdatePanel-TriggerCollection | 获取与当前 UpdatePanel 关联的触发器的列表。 |
+| 触发器 | UpdatePanel- TriggerCollection | 获取与当前 UpdatePanel 关联的触发器的列表。 |
 
 公共代码方法：
 
@@ -200,7 +200,7 @@ ScriptManager 控件为脚本字符串和用户界面组件的本地化提供了
 
 标记后代：
 
-| **符** | **描述** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;System.windows.controls.contentcontrol.contenttemplate&gt; | 指定要用于呈现部分呈现结果的标记。 &lt;asp： UpdatePanel&gt;的子项。 |
 | &lt;触发器&gt; | 指定与更新此 UpdatePanel 关联的*n*个控件的集合。 &lt;asp： UpdatePanel&gt;的子项。 |
@@ -269,13 +269,13 @@ UpdatePanels 不应作为全部捕获解决方案。 相反，它们为某些情
 
 | **属性名称** | **Type** | **描述** |
 | --- | --- | --- |
-| AssociatedUpdate-PanelID | 字符串 | 指定此 UpdateProgress 应报告的 UpdatePanel 的 ID。 |
+| AssociatedUpdate-PanelID | String | 指定此 UpdateProgress 应报告的 UpdatePanel 的 ID。 |
 | DisplayAfter | Int | 指定在异步请求开始后显示此控件之前的超时时间（以毫秒为单位）。 |
-| DynamicLayout | 布尔 | 指定是否动态呈现进度。 |
+| DynamicLayout | bool | 指定是否动态呈现进度。 |
 
 标记后代：
 
-| **符** | **描述** |
+| **标记** | **描述** |
 | --- | --- |
 | &lt;ProgressTemplate&gt; | 包含将与此控件一起显示的内容的控件模板集。 |
 
@@ -283,7 +283,7 @@ UpdateProgress 控件提供了一种反馈措施，可以在执行传输到服�
 
 请注意，UpdateProgress 控件可以出现在页层次结构上的任何位置。 但是，在从子 UpdatePanel （其中，UpdatePanel 嵌套在另一个 UpdatePanel 内）启动部分回发的情况下，触发子 UpdatePanel 的回发将导致为子项显示 UpdateProgress 模板UpdatePanel 以及父 UpdatePanel。 但如果触发器是父级 UpdatePanel 的直接子级，则只会显示与父级关联的 UpdateProgress 模板。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 Microsoft ASP.NET AJAX 扩展是一种复杂的产品，旨在帮助使 web 内容更易于访问，并为 web 应用程序提供更丰富的用户体验。 作为 ASP.NET AJAX 扩展的一部分，部分页面呈现控件（包括 ScriptManager、UpdatePanel 和 UpdateProgress 控件）是该工具包的一些最明显的组件。
 
@@ -302,4 +302,4 @@ UpdateProgress 控件使用户可以知道，她或他不会被忽略，并且�
 Scott Cate 一直在使用 Microsoft Web 技术，因为1997，是 myKB.com （[www.myKB.com](http://www.myKB.com)）的总裁，他致力于编写基于知识库软件解决方案的基于 ASP.NET 的应用程序。 可以通过电子邮件联系 Scott [scott.cate@myKB.com](mailto:scott.cate@myKB.com)或[ScottCate.com](http://ScottCate.com)上的博客
 
 > [!div class="step-by-step"]
-> [下一页](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [下一部分](understanding-asp-net-ajax-updatepanel-triggers.md)

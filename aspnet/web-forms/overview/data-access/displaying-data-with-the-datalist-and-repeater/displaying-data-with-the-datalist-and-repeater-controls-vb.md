@@ -9,11 +9,11 @@ ms.assetid: 58618954-a9ed-4ca0-8c2d-95a5ffd9c03e
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4e7aaa1701da67aec61505b64a835ef41031bb13
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614283"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78508166"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 和 Repeater 控件显示数据 (VB)
 
@@ -248,7 +248,7 @@ ms.locfileid: "74614283"
 
 **图 18**：类别列以背景色替换并包括标题行（[单击以查看完全大小的图像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image50.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 尽管 GridView 控件可以轻松地对数据进行显示、编辑、删除、排序和分页，但其外观非常 boxy，类似于网格。 为了更好地控制外观，需要转到 DataList 或 Repeater 控件。 这两个控件都使用模板显示一组记录，而不是使用 BoundFields、CheckBoxFields 等。
 

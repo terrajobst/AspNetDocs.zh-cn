@@ -9,11 +9,11 @@ ms.assetid: 39253d05-75c0-41c7-b9d4-a6c58ecf69ce
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c620b2eac5844d4030c1309b45e7d6a72d1f386a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74592426"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78491882"
 ---
 # <a name="adding-a-gridview-column-of-checkboxes-vb"></a>添加 GridView 复选框列 (VB)
 
@@ -122,7 +122,7 @@ GridView s [`Rows` 属性](https://msdn.microsoft.com/library/system.web.ui.webc
 > [!NOTE]
 > 显示复选框列时，选择或取消选择所有复选框的一种方法是通过标题行中的复选框。 而且，当前的 "全部检查"/"取消选中" 所有实现都需要回发。 不过，可以通过客户端脚本完全选中或取消选中这些复选框，从而提供快捷的用户体验。 若要浏览 "全部选中并取消选中所有内容" 复选框，以及有关使用客户端技术的讨论，请参阅[使用客户端脚本检查 GridView 中的所有复选框和 "全部选中](http://aspnet.4guysfromrolla.com/articles/053106-1.aspx)" 复选框。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 如果需要让用户在继续操作之前从 GridView 中选择任意数量的行，则添加一个 checkbox 列就是一个选项。 正如我们在本教程中看到的那样，在 GridView 中包含一列复选框，这需要使用 CheckBox Web 控件添加 TemplateField。 通过使用 Web 控件（与在模板中直接注入模板中的操作一样），ASP.NET 会自动记住哪些复选框，且未在回发中检查。 我们还可以通过编程方式访问代码中的复选框，以确定是否选中了给定的复选框，或更改选中的状态。
 

@@ -9,11 +9,11 @@ ms.assetid: 11f6fe44-64ef-4a38-a3b4-35c7bb992352
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5018023eced23e7a70eab90e649f85862c548940
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74570541"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78462806"
 ---
 # <a name="logging-error-details-with-elmah-c"></a>ELMAH 的日志记录错误详细信息 (C#)
 
@@ -226,7 +226,7 @@ ELMAH 的 `ErrorLogModule` HTTP 模块自动将未经处理的异常记录到指
 
 有关 ELMAH 的错误筛选功能的详细信息，请参阅[ELMAH wiki](https://code.google.com/p/elmah/w/list)中的[错误筛选部分](https://code.google.com/p/elmah/wiki/ErrorFiltering)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 ELMAH 提供一种简单而强大的机制，用于在 ASP.NET web 应用程序中记录错误。 与 Microsoft 的运行状况监视系统类似，ELMAH 可以将错误记录到数据库中，并可以通过电子邮件将错误详细信息发送给开发人员。 与运行状况监视系统不同，ELMAH 包含对更广泛的错误日志数据存储的全新支持，包括： Microsoft SQL Server、Microsoft Access、Oracle、XML 文件，等等。 此外，ELMAH 还提供了一种内置机制，用于查看错误日志以及有关网页中特定错误的详细信息，`elmah.axd`。 `elmah.axd` 页还可以将错误信息作为 RSS 源或以逗号分隔的值文件（CSV）的形式呈现，您可以使用 Microsoft Excel 读取该文件。 还可以指示 ELMAH 使用声明性或编程断言从日志中筛选错误。 和 ELMAH 可以与 ASP.NET 版本1.x 应用程序一起使用。
 

@@ -9,11 +9,11 @@ ms.assetid: 33af23f1-4016-4740-8fb2-37d1773452cd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 895708ebecc30c5f35e6ecd0349604bb777cbd93
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573946"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497162"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>仅允许在文本框中使用特定字符 (VB)
 
@@ -59,4 +59,4 @@ ASP.NET AJAX 控件工具包包含用于扩展文本框的 `FilteredTextBox` 控
 只能输入数字（[单击以查看完全大小的图像](allowing-only-certain-characters-in-a-text-box-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一部分](allowing-only-certain-characters-in-a-text-box-cs.md)
+> [上一页](allowing-only-certain-characters-in-a-text-box-cs.md)

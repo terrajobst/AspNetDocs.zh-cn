@@ -2,36 +2,36 @@
 uid: mvc/mvc4
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: ASP.NET MVC 4 ASP.NET MVC 4 是用于构建可缩放的基于标准的 web 应用程序使用成熟设计模式和 AS.的强大功能的框架...
+description: ASP.NET MVC 4 ASP.NET MVC 4 是一个框架，用于生成可缩放的基于标准的 web 应用程序，该应用程序使用完善的设计模式和的强大功能
 ms.author: riande
 ms.date: 09/12/2011
 ms.assetid: 1279f5b1-390f-4b4b-9e6e-f947cb1ef5f5
 msc.legacyurl: /mvc/mvc4
 msc.type: content
 ms.openlocfilehash: 72719cb9c3aaf03f2b12ff788259fc4927785d05
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121334"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78499628"
 ---
 # <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 
-### <a name="top-features"></a>常用功能
+### <a name="top-features"></a>顶级功能
 
 - ASP.NET Web API
-- 刷新和现代化的默认项目模板
-- 新的移动项目模板
-- 许多新功能，以支持移动应用
-- 对异步方法的增强的支持
-- *读取的完整功能列表中[发行说明](../whitepapers/mvc4-release-notes.md)*
+- 刷新并现代化默认项目模板
+- 新建移动项目模板
+- 支持移动应用的许多新功能
+- 增强的异步方法支持
+- *阅读[发行说明](../whitepapers/mvc4-release-notes.md)中的完整功能列表*
 
 ### <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新增功能
 
 - [ASP.NET Web API](../web-api/index.md)
-- 教程：[ASP.NET MVC 4 移动功能](overview/older-versions/aspnet-mvc-4-mobile-features.md)
-- [ASP.NET mvc 4 发行说明](../whitepapers/mvc4-release-notes.md)
-- [新的 ASP.NET MVC 4 教程系列](overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)
+- 教程： [ASP.NET MVC 4 移动功能](overview/older-versions/aspnet-mvc-4-mobile-features.md)
+- [ASP.NET MVC 4 发行说明](../whitepapers/mvc4-release-notes.md)
+- [New ASP.NET MVC 4 教程系列](overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)
 
 ### <a name="install-aspnet-mvc-4-for-visual-studio-2010"></a>安装适用于 Visual Studio 2010 的 ASP.NET MVC 4
 
@@ -39,11 +39,11 @@ ms.locfileid: "65121334"
 
 ### <a name="install-visual-studio-2012-includes-aspnet-mvc-4"></a>安装 Visual Studio 2012 （包括 ASP.NET MVC 4）
 
-- [Visual Studio 2012 Ultimate](https://go.microsoft.com/fwlink/?linkid=247148)
+- [Visual Studio 2012 旗舰版](https://go.microsoft.com/fwlink/?linkid=247148)
 
-### <a name="getting-help-and-reporting-issues"></a>获取帮助和报告的问题
+### <a name="getting-help-and-reporting-issues"></a>获取帮助和报告问题
 
-- [已知的问题和重大更改列表](../whitepapers/mvc4-release-notes.md#_Toc303253815)
-- 获取帮助和讨论中的 ASP.NET MVC 4[论坛](https://forums.asp.net/1146.aspx)
-- [报告在 ASP.NET MVC 4 中的 bug](https://github.com/aspnet/AspNetWebStack/issues)
-- [提出功能请求](http://aspnet.uservoice.com/forums/41201-asp-net-mvc)
+- [已知问题和重大更改列表](../whitepapers/mvc4-release-notes.md#_Toc303253815)
+- 获取帮助并讨论[论坛](https://forums.asp.net/1146.aspx)中的 ASP.NET MVC 4
+- [报告 ASP.NET MVC 4 中的 bug](https://github.com/aspnet/AspNetWebStack/issues)
+- [发出功能请求](http://aspnet.uservoice.com/forums/41201-asp-net-mvc)

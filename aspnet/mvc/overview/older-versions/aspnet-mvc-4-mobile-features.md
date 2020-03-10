@@ -9,11 +9,11 @@ ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
 ms.openlocfilehash: 9716def069ca9f7115af32e16381f41bd4d13342
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457643"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78468428"
 ---
 # <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 移动功能
 
@@ -39,7 +39,7 @@ ms.locfileid: "77457643"
 - [初学者项目下载](https://go.microsoft.com/fwlink/?linkid=228307&amp;clcid=0x409)
 - [已完成项目下载](https://go.microsoft.com/fwlink/?linkid=228306&amp;clcid=0x409)
 
-### <a name="what-youll-build"></a>所需操作
+### <a name="what-youll-build"></a>你将生成
 
 在本教程中，你将向[初学者项目](https://go.microsoft.com/fwlink/?LinkId=228307)中提供的简单会议列表应用程序添加移动功能。 以下屏幕截图显示了已完成的应用程序的 "标记" 页，如[Windows 7 Phone 模拟器](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)中所示。 请参阅[Windows Phone 模拟器的键盘映射](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx)，简化键盘输入。
 
@@ -113,13 +113,13 @@ ASP.NET MVC 4 布局文件中的视区 `<meta>` 标记将视区设置为设备�
 
 有关视区 `<meta>` 标记的详细信息，请参阅[第二个视区的 tale](http://www.quirksmode.org/mobile/viewports2.html)。
 
-在下一部分中，将了解如何提供移动浏览器特定的视图。
+在下一部分中，你将了解如何提供移动浏览器特定的视图。
 
 ## <a name="overriding-views-layouts-and-partial-views"></a>重写视图、布局和分部视图
 
 ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏览器、单个移动浏览器或任何特定浏览器重写任何视图（包括布局和分部视图）的简单机制。 要提供移动特定的视图，可以复制视图文件并在文件名中添加 *.Mobile*。 例如，若要创建移动*索引*视图，请将*Views\Home\Index.cshtml*复制到*Views\Home\Index.Mobile.cshtml*。
 
-在本节中，将创建一个移动特定布局文件。
+在本节中，你将创建一个移动特定布局文件。
 
 若要开始，请将*Views\Shared\\_Layout*中复制到*Views\Shared\\_Layout*。 打开 *\_* **MVC4** ，并将标题从 "会议" 更改为 "**会议（移动）** "。
 
@@ -141,7 +141,7 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 ## <a name="browser-specific-views"></a>特定于浏览器的视图
 
-除了移动特定和桌面特定的视图以外，还可以为单个浏览器创建视图。 例如，可以创建专门针对 iPhone 浏览器的视图。 在本节中，将为 iPhone 浏览器和 iPhone 版本的 *AllTags* 视图创建布局。
+除了移动特定和桌面特定的视图以外，你还可以为单个浏览器创建视图。 例如，可以创建专门针对 iPhone 浏览器的视图。 在本节中，将为 iPhone 浏览器和 iPhone 版本的 *AllTags* 视图创建布局。
 
 打开*global.asax*文件，并将以下代码添加到 `Application_Start` 方法。
 
@@ -165,11 +165,11 @@ ASP.NET MVC 4 中的一个重要新功能是一种允许您针对常规移动浏
 
 将*MvcMobile\Views\Home\AllTags.Mobile.cshtml*文件复制到*MvcMobile\Views\Home\AllTags.iPhone.cshtml*。 在新文件中，将 `<h2>` 元素从 "Tags （M）" 更改为 "Tags （iPhone）"。
 
-运行应用程序。 运行移动浏览器模拟器，确保将其用户代理设置为“iPhone”，并浏览到 *AllTags* 视图。 以下屏幕截图显示了[Safari](http://www.apple.com/safari/download/)浏览器中呈现的*AllTags*视图。 可在[此处](https://support.apple.com/kb/DL1531)下载适用于 Windows 的 Safari。
+运行该应用程序。 运行移动浏览器模拟器，确保将其用户代理设置为“iPhone”，并浏览到 *AllTags* 视图。 以下屏幕截图显示了[Safari](http://www.apple.com/safari/download/)浏览器中呈现的*AllTags*视图。 可在[此处](https://support.apple.com/kb/DL1531)下载适用于 Windows 的 Safari。
 
 [![p2_iphoneView](aspnet-mvc-4-mobile-features/_static/image18.png)](aspnet-mvc-4-mobile-features/_static/image17.png)
 
-在本节中，我们已了解如何创建移动布局和视图，以及如何为特定的设备（如 iPhone）创建布局和视图。 在下一部分中，你将了解如何利用 jQuery Mobile 获得更引人注目的移动视图。
+在本部分中，我们已了解如何创建移动布局和视图，以及如何为特定的设备（如 iPhone）创建布局和视图。 在下一部分中，你将了解如何利用 jQuery Mobile 获得更引人注目的移动视图。
 
 ## <a name="using-jquery-mobile"></a>使用 jQuery Mobile
 
@@ -221,7 +221,7 @@ jQuery.Mobile.MVC NuGet 程序包将安装以下内容：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample13.cshtml)]
 
-构建应用程序，在移动浏览器模拟器中浏览到*AllTags*视图。 会看到如下内容：
+构建应用程序，在移动浏览器模拟器中浏览到*AllTags*视图。 您会看到如下内容：
 
 [![p3_afterNuGet](aspnet-mvc-4-mobile-features/_static/image23.png)](aspnet-mvc-4-mobile-features/_static/image22.png)
 

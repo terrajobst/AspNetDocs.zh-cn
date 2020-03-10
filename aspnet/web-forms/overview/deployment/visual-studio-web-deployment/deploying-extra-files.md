@@ -9,11 +9,11 @@ ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
 ms.openlocfilehash: eaa3141c22980f0c816e2f33b5597ac9fe69c23c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594896"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78441362"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署额外文件
 
@@ -73,11 +73,11 @@ ms.locfileid: "74594896"
 
 如果使用一键式发布，则可以在**预览**窗口中验证是否将复制*机器人。* 否则，请使用 FTP 工具来验证*机器人 .txt*文件是否在部署后位于该网站的根文件夹中。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 这将完成这一系列教程，介绍如何将 ASP.NET web 应用程序部署到第三方托管提供程序。 有关这些教程中所涉及的任何主题的详细信息，请参阅[ASP.NET 部署内容映射](https://go.microsoft.com/fwlink/p/?LinkId=282413)。
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
 如果你知道如何使用 MSBuild 文件，则可以通过在 *.pubxml*文件中（对于特定于配置文件的任务）或项目*wpp*文件（适用于适用于所有配置文件的任务）编写代码来自动执行许多其他部署任务。 有关 *.pubxml*和 .pubxml 文件的详细*信息，请*参阅[如何：在发布配置文件中编辑部署设置（.）文件和 Visual Studio Web 项目中的文件](https://msdn.microsoft.com/library/ff398069)。 有关 MSBuild 代码的基本介绍，请参阅企业部署系列中的**项目文件解析** [：了解项目文件](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 若要了解如何使用 MSBuild 文件来为自己的方案执行任务，请参阅此书籍：在[Microsoft 生成引擎：使用 MSBuild 和 Team Foundation build](http://msbuildbook.com) By Sayed Ibraham Hashimi 和 William Bartholomew。
 

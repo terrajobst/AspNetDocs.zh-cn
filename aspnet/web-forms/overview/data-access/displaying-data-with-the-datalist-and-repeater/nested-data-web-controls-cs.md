@@ -9,11 +9,11 @@ ms.assetid: ad3cb0ec-26cf-42d7-b81b-184a34ec9f86
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8ef15bebb2c29976274b0cca1d6ace434ccc55ce
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640306"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78481268"
 ---
 # <a name="nested-data-web-controls-c"></a>嵌套的数据 Web 控件 (C#)
 
@@ -145,7 +145,7 @@ Repeater `DataSource` 属性使用 databinding 语法来指示它的数据来自
 
 与往常一样，在分析两种方法的性能时，唯一的 surefire 度量值是针对应用程序的常见案例运行受控测试。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程中，我们介绍了如何将一个数据 Web 控件嵌套在另一个数据控件中，特别是检查如何让外部中继器为每个类别显示一个项，并在列表中列出每个类别的产品。 构建嵌套用户界面的主要难题在于访问和将正确的数据绑定到内部数据 Web 控件。 有多种方法可供使用，这两个方法在本教程中进行了介绍。 第一种方法是使用外部数据 Web 控件中的 ObjectDataSource `ItemTemplate` 通过其 `DataSourceID` 属性绑定到内部数据 Web 控件。 第二种方法是通过 ASP.NET 页 s 代码隐藏类中的方法访问数据。 然后，可以通过数据绑定语法将此方法绑定到内部数据 Web 控件的 `DataSource` 属性。
 
