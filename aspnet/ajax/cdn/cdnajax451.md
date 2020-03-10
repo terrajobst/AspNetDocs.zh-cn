@@ -9,15 +9,15 @@ ms.assetid: d7ec655d-49b0-4968-af5e-3064616aff9a
 msc.legacyurl: /ajax/cdn/cdnajax451
 msc.type: content
 ms.openlocfilehash: a81abf2c57d1400a9c4b2f1d1febaddc9c569c6d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414538"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78454172"
 ---
-# <a name="aspnet-web-forms-and-ajax-451"></a><span data-ttu-id="e8c29-102">ASP.NET Web 窗体和 Ajax 4.5.1</span><span class="sxs-lookup"><span data-stu-id="e8c29-102">ASP.NET Web Forms and Ajax 4.5.1</span></span>
+# <a name="aspnet-web-forms-and-ajax-451"></a><span data-ttu-id="bc194-102">ASP.NET Web 窗体和 Ajax 4.5.1</span><span class="sxs-lookup"><span data-stu-id="bc194-102">ASP.NET Web Forms and Ajax 4.5.1</span></span>
 
-<span data-ttu-id="e8c29-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="e8c29-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="bc194-103">以下文件托管在 CDN 上：</span><span class="sxs-lookup"><span data-stu-id="bc194-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/4.5.1/1/Date.HijriCalendar.debug.js
 - https://ajax.aspnetcdn.com/ajax/4.5.1/1/Date.HijriCalendar.js
@@ -56,6 +56,6 @@ ms.locfileid: "59414538"
 - https://ajax.aspnetcdn.com/ajax/4.5.1/1/WebParts.js
 - https://ajax.aspnetcdn.com/ajax/4.5.1/1/WebUIValidation.js
 
-<span data-ttu-id="e8c29-104">注意:全球化脚本，如 fr FR.js，可以找到以下文件夹中：</span><span class="sxs-lookup"><span data-stu-id="e8c29-104">Note: The globalization scripts, such as fr-FR.js, can be found in the following folder:</span></span>
+<span data-ttu-id="bc194-104">注意：可以在以下文件夹中找到全球化脚本（如 fr-FR）：</span><span class="sxs-lookup"><span data-stu-id="bc194-104">Note: The globalization scripts, such as fr-FR.js, can be found in the following folder:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/4.5.1/1/globalization/

@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-the-ajax-toolkit-reorder-control
-title: '[如何实现:]AJAX 工具包重新排序控件 |Microsoft Docs'
+title: '[如何实现：]AJAX 工具包重新排序控件 |Microsoft Docs'
 author: JoeStagner
-description: 在本视频中，我将演示附带了 AJAX 工具包重新排序控件使用。 重新排序控件，你向你的用户列表 o...
+description: 在此视频中，我将演示如何使用随 AJAX 工具包一起提供的 "重新排序" 控件。 使用 "重新排序" 控件，你可以向用户显示列表 o 。
 ms.author: riande
 ms.date: 02/21/2008
 ms.assetid: 1bc7e41a-633c-4ade-ba7a-486c9484a0ba
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-the-ajax-toolkit-reorder-control
 msc.type: video
 ms.openlocfilehash: 81a2ff1ae7deb69902e9e366cc68f9bb4fdadc0b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407141"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519026"
 ---
-# <a name="how-do-i-the-ajax-toolkit-reorder-control"></a><span data-ttu-id="ba5e2-104">[如何实现:]AJAX 工具包重新排序控件</span><span class="sxs-lookup"><span data-stu-id="ba5e2-104">[How Do I:] The AJAX Toolkit Reorder Control</span></span>
+# <a name="how-do-i-the-ajax-toolkit-reorder-control"></a><span data-ttu-id="027ed-104">[如何实现：]AJAX 工具包重新排序控件</span><span class="sxs-lookup"><span data-stu-id="027ed-104">[How Do I:] The AJAX Toolkit Reorder Control</span></span>
 
-<span data-ttu-id="ba5e2-105">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ba5e2-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="027ed-105">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="027ed-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="ba5e2-106">在本视频中，我将演示附带了 AJAX 工具包重新排序控件使用。</span><span class="sxs-lookup"><span data-stu-id="ba5e2-106">In this video I will demonstrate the use of the reorder control that ships with the AJAX toolkit.</span></span> <span data-ttu-id="ba5e2-107">为用户提供的、 重新排序控件可使优先选择的可以为用户重新排序的数据项列表。</span><span class="sxs-lookup"><span data-stu-id="ba5e2-107">The reorder control lets you present to your users a list of data items that can be reordered as the user prefers.</span></span>
+<span data-ttu-id="027ed-106">在此视频中，我将演示如何使用随 AJAX 工具包一起提供的 "重新排序" 控件。</span><span class="sxs-lookup"><span data-stu-id="027ed-106">In this video I will demonstrate the use of the reorder control that ships with the AJAX toolkit.</span></span> <span data-ttu-id="027ed-107">使用 "重新排序" 控件，可以向用户显示可按用户首选的顺序重新排序的数据项列表。</span><span class="sxs-lookup"><span data-stu-id="027ed-107">The reorder control lets you present to your users a list of data items that can be reordered as the user prefers.</span></span>
 
-[<span data-ttu-id="ba5e2-108">&#9654;观看视频 （21 分钟）</span><span class="sxs-lookup"><span data-stu-id="ba5e2-108">&#9654; Watch video (21 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-the-ajax-toolkit-reorder-control)
+[<span data-ttu-id="027ed-108">&#9654;观看视频（21分钟）</span><span class="sxs-lookup"><span data-stu-id="027ed-108">&#9654; Watch video (21 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-the-ajax-toolkit-reorder-control)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="ba5e2-109">[上一页](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)
-> [下一页](utilize-the-ajax-rating-control-in-the-aspnet-toolkit.md)</span><span class="sxs-lookup"><span data-stu-id="ba5e2-109">[Previous](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)
+> <span data-ttu-id="027ed-109">[上一页](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)
+> [下一页](utilize-the-ajax-rating-control-in-the-aspnet-toolkit.md)</span><span class="sxs-lookup"><span data-stu-id="027ed-109">[Previous](how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender.md)
 [Next](utilize-the-ajax-rating-control-in-the-aspnet-toolkit.md)</span></span>

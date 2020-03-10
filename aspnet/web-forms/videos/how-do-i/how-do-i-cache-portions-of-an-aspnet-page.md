@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
-title: '[如何实现:]缓存部分 ASP.NET 页面 |Microsoft Docs'
+title: '[如何实现：]缓存 ASP.NET 页面的部分 |Microsoft Docs'
 author: rick-anderson
-description: 在此视频的 Chris Pels 演示如何通过实现页上的用户控件的 OutputCache 缓存 ASP.NET 页面的一个或多个部分。 首先，...
+description: 在此视频中，Chris 像素演示了如何通过实现页面上用户控件的 OutputCache，来缓存 ASP.NET 页面的一个或多个部分。 首先，。
 ms.author: riande
 ms.date: 02/12/2009
 ms.assetid: b20b2b30-a557-4567-8e27-56f1e04235e2
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
 msc.type: video
 ms.openlocfilehash: f7ca1b9adc781bbca4bc9fb9637f61660cdbf0a5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396864"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78506846"
 ---
-# <a name="how-do-i-cache-portions-of-an-aspnet-page"></a><span data-ttu-id="99525-104">[如何实现:]缓存部分 ASP.NET 页面</span><span class="sxs-lookup"><span data-stu-id="99525-104">[How Do I:] Cache Portions of an ASP.NET Page</span></span>
+# <a name="how-do-i-cache-portions-of-an-aspnet-page"></a><span data-ttu-id="d6737-104">[如何实现：]缓存 ASP.NET 页面的部分</span><span class="sxs-lookup"><span data-stu-id="d6737-104">[How Do I:] Cache Portions of an ASP.NET Page</span></span>
 
-<span data-ttu-id="99525-105">通过[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="99525-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="d6737-105">作者： [Chris 像素](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="d6737-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="99525-106">在此视频的 Chris Pels 演示如何通过实现页上的用户控件的 OutputCache 缓存 ASP.NET 页面的一个或多个部分。</span><span class="sxs-lookup"><span data-stu-id="99525-106">In this video Chris Pels shows how to cache one or more portions of an ASP.NET page by implementing the OutputCache for user controls on the page.</span></span> <span data-ttu-id="99525-107">首先，ASP.NET 页面创建并使用 OutputCache 指令缓存。</span><span class="sxs-lookup"><span data-stu-id="99525-107">First, an ASP.NET page is created and cached using the OutputCache directive.</span></span> <span data-ttu-id="99525-108">多个用户控件然后创建和缓存持续时间不同。</span><span class="sxs-lookup"><span data-stu-id="99525-108">Several user controls are then created and cached for different durations.</span></span> <span data-ttu-id="99525-109">页之间的关系缓存持续时间并查看控件缓存持续时间。</span><span class="sxs-lookup"><span data-stu-id="99525-109">The relationship between page cached duration and control cache duration is reviewed.</span></span> <span data-ttu-id="99525-110">缓存控件的不同条件已经过评审包括的 VaryByControl 其中嵌套的用户控件可以控制其父控件的缓存的示例。</span><span class="sxs-lookup"><span data-stu-id="99525-110">The different criteria for caching controls are reviewed including an example of VaryByControl where nested user controls can control caching of their parent controls.</span></span>
+<span data-ttu-id="d6737-106">在此视频中，Chris 像素演示了如何通过实现页面上用户控件的 OutputCache，来缓存 ASP.NET 页面的一个或多个部分。</span><span class="sxs-lookup"><span data-stu-id="d6737-106">In this video Chris Pels shows how to cache one or more portions of an ASP.NET page by implementing the OutputCache for user controls on the page.</span></span> <span data-ttu-id="d6737-107">首先，使用 OutputCache 指令创建并缓存 ASP.NET 页。</span><span class="sxs-lookup"><span data-stu-id="d6737-107">First, an ASP.NET page is created and cached using the OutputCache directive.</span></span> <span data-ttu-id="d6737-108">然后，将创建多个用户控件并缓存不同的持续时间。</span><span class="sxs-lookup"><span data-stu-id="d6737-108">Several user controls are then created and cached for different durations.</span></span> <span data-ttu-id="d6737-109">检查页的缓存持续时间和控件缓存持续时间之间的关系。</span><span class="sxs-lookup"><span data-stu-id="d6737-109">The relationship between page cached duration and control cache duration is reviewed.</span></span> <span data-ttu-id="d6737-110">查看缓存控件的不同条件，其中包含 VaryByControl 的示例，在此示例中，嵌套用户控件可以控制其父控件的缓存。</span><span class="sxs-lookup"><span data-stu-id="d6737-110">The different criteria for caching controls are reviewed including an example of VaryByControl where nested user controls can control caching of their parent controls.</span></span>
 
-[<span data-ttu-id="99525-111">&#9654;观看视频 （19 分钟）</span><span class="sxs-lookup"><span data-stu-id="99525-111">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cache-portions-of-an-aspnet-page)
+[<span data-ttu-id="d6737-111">&#9654;观看视频（19分钟）</span><span class="sxs-lookup"><span data-stu-id="d6737-111">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cache-portions-of-an-aspnet-page)

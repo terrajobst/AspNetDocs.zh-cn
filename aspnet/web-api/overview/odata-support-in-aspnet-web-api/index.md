@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
-title: ASP.NET Web API-ASP.NET 中的 OData 4.x
+title: ASP.NET Web API 中的 OData-ASP.NET 4。x
 author: rick-anderson
-description: 如何在 ASP.NET Web API 中的 OData 终结点创建的 ASP.NET 4.x
+description: 如何在 ASP.NET Web API for ASP.NET 4.x 中创建 OData 终结点
 ms.author: riande
 ms.date: 08/17/2012
 ms.custom: seoapril2019
@@ -10,33 +10,33 @@ ms.assetid: 9151c605-e911-4f24-95b5-ca310b105abf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
 ms.openlocfilehash: 6d84b458a02b63b24334b137afdb5b710d91c5ee
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133159"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78484520"
 ---
-# <a name="odata-in-aspnet-web-api"></a><span data-ttu-id="7b44c-103">ASP.NET Web API 中的 OData</span><span class="sxs-lookup"><span data-stu-id="7b44c-103">OData in ASP.NET Web API</span></span>
+# <a name="odata-in-aspnet-web-api"></a><span data-ttu-id="e27d1-103">ASP.NET Web API 中的 OData</span><span class="sxs-lookup"><span data-stu-id="e27d1-103">OData in ASP.NET Web API</span></span>
 
-> <span data-ttu-id="7b44c-104">如何在 ASP.NET Web API 中的 OData 终结点创建的 ASP.NET 4.x。</span><span class="sxs-lookup"><span data-stu-id="7b44c-104">How to create OData endpoints in ASP.NET Web API for ASP.NET 4.x.</span></span> <span data-ttu-id="7b44c-105">OData 是一种用于 web 的数据访问协议。</span><span class="sxs-lookup"><span data-stu-id="7b44c-105">OData is a data access protocol for the web.</span></span> <span data-ttu-id="7b44c-106">它提供了统一的方式来查询和操作数据集。</span><span class="sxs-lookup"><span data-stu-id="7b44c-106">It provides a uniform way to query and manipulate data sets.</span></span> <span data-ttu-id="7b44c-107">Web API 支持版本 3 和 OData 协议版本 4。</span><span class="sxs-lookup"><span data-stu-id="7b44c-107">Web API supports both Version 3 and Version 4 of the OData protocol.</span></span>
+> <span data-ttu-id="e27d1-104">如何在 ASP.NET Web API for ASP.NET 4.x 中创建 OData 终结点。</span><span class="sxs-lookup"><span data-stu-id="e27d1-104">How to create OData endpoints in ASP.NET Web API for ASP.NET 4.x.</span></span> <span data-ttu-id="e27d1-105">OData 是 web 的数据访问协议。</span><span class="sxs-lookup"><span data-stu-id="e27d1-105">OData is a data access protocol for the web.</span></span> <span data-ttu-id="e27d1-106">它提供一种统一的方法来查询和操作数据集。</span><span class="sxs-lookup"><span data-stu-id="e27d1-106">It provides a uniform way to query and manipulate data sets.</span></span> <span data-ttu-id="e27d1-107">Web API 支持版本3和 OData 协议版本4。</span><span class="sxs-lookup"><span data-stu-id="e27d1-107">Web API supports both Version 3 and Version 4 of the OData protocol.</span></span>
 
-- [<span data-ttu-id="7b44c-108">OData v4</span><span class="sxs-lookup"><span data-stu-id="7b44c-108">OData v4</span></span>](odata-v4/index.md)
+- [<span data-ttu-id="e27d1-108">OData v4</span><span class="sxs-lookup"><span data-stu-id="e27d1-108">OData v4</span></span>](odata-v4/index.md)
 
-    - [<span data-ttu-id="7b44c-109">创建 OData v4 终结点</span><span class="sxs-lookup"><span data-stu-id="7b44c-109">Create an OData v4 Endpoint</span></span>](odata-v4/create-an-odata-v4-endpoint.md)
-    - [<span data-ttu-id="7b44c-110">创建 OData v4 客户端应用 (C#)</span><span class="sxs-lookup"><span data-stu-id="7b44c-110">Create an OData v4 Client App (C#)</span></span>](odata-v4/create-an-odata-v4-client-app.md)
-    - [<span data-ttu-id="7b44c-111">OData v4 中的实体关系</span><span class="sxs-lookup"><span data-stu-id="7b44c-111">Entity Relations in OData v4</span></span>](odata-v4/entity-relations-in-odata-v4.md)
-    - [<span data-ttu-id="7b44c-112">OData v4 中的操作和函数</span><span class="sxs-lookup"><span data-stu-id="7b44c-112">Actions and Functions in OData v4</span></span>](odata-v4/odata-actions-and-functions.md)
-    - [<span data-ttu-id="7b44c-113">OData v4 中的包含关系</span><span class="sxs-lookup"><span data-stu-id="7b44c-113">Containment in OData v4</span></span>](odata-v4/odata-containment-in-web-api-22.md)
-    - [<span data-ttu-id="7b44c-114">在 OData v4 中创建单一实例</span><span class="sxs-lookup"><span data-stu-id="7b44c-114">Create a Singleton in OData v4</span></span>](odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22.md)
-    - [<span data-ttu-id="7b44c-115">OData v4 中的开放类型</span><span class="sxs-lookup"><span data-stu-id="7b44c-115">Open Types in OData v4</span></span>](odata-v4/use-open-types-in-odata-v4.md)
-    - [<span data-ttu-id="7b44c-116">OData v4 中的复杂类型继承</span><span class="sxs-lookup"><span data-stu-id="7b44c-116">Complex Type Inheritance in OData v4</span></span>](odata-v4/complex-type-inheritance-in-odata-v4.md)
-- [<span data-ttu-id="7b44c-117">OData v3</span><span class="sxs-lookup"><span data-stu-id="7b44c-117">OData v3</span></span>](odata-v3/index.md)
+    - [<span data-ttu-id="e27d1-109">创建 OData v4 终结点</span><span class="sxs-lookup"><span data-stu-id="e27d1-109">Create an OData v4 Endpoint</span></span>](odata-v4/create-an-odata-v4-endpoint.md)
+    - [<span data-ttu-id="e27d1-110">创建 OData v4 客户端应用 (C#)</span><span class="sxs-lookup"><span data-stu-id="e27d1-110">Create an OData v4 Client App (C#)</span></span>](odata-v4/create-an-odata-v4-client-app.md)
+    - [<span data-ttu-id="e27d1-111">OData v4 中的实体关系</span><span class="sxs-lookup"><span data-stu-id="e27d1-111">Entity Relations in OData v4</span></span>](odata-v4/entity-relations-in-odata-v4.md)
+    - [<span data-ttu-id="e27d1-112">OData v4 中的操作和函数</span><span class="sxs-lookup"><span data-stu-id="e27d1-112">Actions and Functions in OData v4</span></span>](odata-v4/odata-actions-and-functions.md)
+    - [<span data-ttu-id="e27d1-113">OData v4 中的包含关系</span><span class="sxs-lookup"><span data-stu-id="e27d1-113">Containment in OData v4</span></span>](odata-v4/odata-containment-in-web-api-22.md)
+    - [<span data-ttu-id="e27d1-114">在 OData v4 中创建单一实例</span><span class="sxs-lookup"><span data-stu-id="e27d1-114">Create a Singleton in OData v4</span></span>](odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22.md)
+    - [<span data-ttu-id="e27d1-115">OData v4 中的开放类型</span><span class="sxs-lookup"><span data-stu-id="e27d1-115">Open Types in OData v4</span></span>](odata-v4/use-open-types-in-odata-v4.md)
+    - [<span data-ttu-id="e27d1-116">OData v4 中的复杂类型继承</span><span class="sxs-lookup"><span data-stu-id="e27d1-116">Complex Type Inheritance in OData v4</span></span>](odata-v4/complex-type-inheritance-in-odata-v4.md)
+- [<span data-ttu-id="e27d1-117">OData v3</span><span class="sxs-lookup"><span data-stu-id="e27d1-117">OData v3</span></span>](odata-v3/index.md)
 
-    - [<span data-ttu-id="7b44c-118">创建 OData v3 终结点</span><span class="sxs-lookup"><span data-stu-id="7b44c-118">Creating an OData v3 Endpoint</span></span>](odata-v3/creating-an-odata-endpoint.md)
-    - [<span data-ttu-id="7b44c-119">OData v3 对实体关系的支持</span><span class="sxs-lookup"><span data-stu-id="7b44c-119">Supporting Entity Relations in OData v3</span></span>](odata-v3/working-with-entity-relations.md)
-    - [<span data-ttu-id="7b44c-120">Web API 2 中的 OData 操作</span><span class="sxs-lookup"><span data-stu-id="7b44c-120">OData Actions in Web API 2</span></span>](odata-v3/odata-actions.md)
-    - [<span data-ttu-id="7b44c-121">从 .NET 客户端调用 OData 服务 (C#)</span><span class="sxs-lookup"><span data-stu-id="7b44c-121">Calling an OData Service From a .NET Client (C#)</span></span>](odata-v3/calling-an-odata-service-from-a-net-client.md)
-- [<span data-ttu-id="7b44c-122">Web API 2 对 OData 查询选项的支持</span><span class="sxs-lookup"><span data-stu-id="7b44c-122">Supporting OData Query Options in Web API 2</span></span>](supporting-odata-query-options.md)
-- [<span data-ttu-id="7b44c-123">在 Web API 2 OData 中使用 $select、$expand 和 $value</span><span class="sxs-lookup"><span data-stu-id="7b44c-123">Using $select, $expand, and $value in Web API 2 OData</span></span>](using-select-expand-and-value.md)
-- [<span data-ttu-id="7b44c-124">Web API 2 OData 中的路由约定</span><span class="sxs-lookup"><span data-stu-id="7b44c-124">Routing Conventions in Web API 2 OData</span></span>](odata-routing-conventions.md)
-- [<span data-ttu-id="7b44c-125">Web API 2 OData 安全指南</span><span class="sxs-lookup"><span data-stu-id="7b44c-125">Security Guidance for Web API 2 OData</span></span>](odata-security-guidance.md)
+    - [<span data-ttu-id="e27d1-118">创建 OData v3 终结点</span><span class="sxs-lookup"><span data-stu-id="e27d1-118">Creating an OData v3 Endpoint</span></span>](odata-v3/creating-an-odata-endpoint.md)
+    - [<span data-ttu-id="e27d1-119">OData v3 对实体关系的支持</span><span class="sxs-lookup"><span data-stu-id="e27d1-119">Supporting Entity Relations in OData v3</span></span>](odata-v3/working-with-entity-relations.md)
+    - [<span data-ttu-id="e27d1-120">Web API 2 中的 OData 操作</span><span class="sxs-lookup"><span data-stu-id="e27d1-120">OData Actions in Web API 2</span></span>](odata-v3/odata-actions.md)
+    - [<span data-ttu-id="e27d1-121">从 .NET 客户端调用 OData 服务 (C#)</span><span class="sxs-lookup"><span data-stu-id="e27d1-121">Calling an OData Service From a .NET Client (C#)</span></span>](odata-v3/calling-an-odata-service-from-a-net-client.md)
+- [<span data-ttu-id="e27d1-122">Web API 2 对 OData 查询选项的支持</span><span class="sxs-lookup"><span data-stu-id="e27d1-122">Supporting OData Query Options in Web API 2</span></span>](supporting-odata-query-options.md)
+- [<span data-ttu-id="e27d1-123">在 Web API 2 OData 中使用 $select、$expand 和 $value</span><span class="sxs-lookup"><span data-stu-id="e27d1-123">Using $select, $expand, and $value in Web API 2 OData</span></span>](using-select-expand-and-value.md)
+- [<span data-ttu-id="e27d1-124">Web API 2 OData 中的路由约定</span><span class="sxs-lookup"><span data-stu-id="e27d1-124">Routing Conventions in Web API 2 OData</span></span>](odata-routing-conventions.md)
+- [<span data-ttu-id="e27d1-125">Web API 2 OData 安全指南</span><span class="sxs-lookup"><span data-stu-id="e27d1-125">Security Guidance for Web API 2 OData</span></span>](odata-security-guidance.md)

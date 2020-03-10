@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/vs-2005/introduction-to-managing-and-running-tests-with-team-system
-title: 使用 Team System 测试管理和运行简介 |Microsoft Docs
+title: 通过 Team System 管理和运行测试简介 |Microsoft Docs
 author: rick-anderson
-description: 在本视频中我们将了解如何可以管理所有或您的各种测试用例使用 Visual Studio Team System 的测试管理功能。 我们还将看到...
+description: 在此视频中，我们将了解如何使用 Visual Studio Team System 的测试管理功能来管理所有或不同的测试用例。 我们还会看到 。
 ms.author: riande
 ms.date: 02/09/2007
 ms.assetid: e262ca69-55e5-4ec2-b278-78ee129b4649
 msc.legacyurl: /web-forms/videos/vs-2005/introduction-to-managing-and-running-tests-with-team-system
 msc.type: video
 ms.openlocfilehash: da305fcb2c47279df200d3b1229df927aceec764
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401928"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512894"
 ---
-# <a name="introduction-to-managing-and-running-tests-with-team-system"></a><span data-ttu-id="4c7db-104">管理和运行与 Team System 测试简介</span><span class="sxs-lookup"><span data-stu-id="4c7db-104">Introduction to Managing and Running Tests with Team System</span></span>
+# <a name="introduction-to-managing-and-running-tests-with-team-system"></a><span data-ttu-id="64d64-104">管理和运行团队系统测试简介</span><span class="sxs-lookup"><span data-stu-id="64d64-104">Introduction to Managing and Running Tests with Team System</span></span>
 
-<span data-ttu-id="4c7db-105">由 Eric Lee</span><span class="sxs-lookup"><span data-stu-id="4c7db-105">by Eric Lee</span></span>
+<span data-ttu-id="64d64-105">作者： Eric</span><span class="sxs-lookup"><span data-stu-id="64d64-105">by Eric Lee</span></span>
 
-<span data-ttu-id="4c7db-106">在本视频中我们将了解如何可以管理所有或您的各种测试用例使用 Visual Studio Team System 的测试管理功能。</span><span class="sxs-lookup"><span data-stu-id="4c7db-106">In this video we see how you can manage all or your various test cases using the test management capabilities of Visual Studio Team System.</span></span> <span data-ttu-id="4c7db-107">我们还将看到如何运行测试并配置。</span><span class="sxs-lookup"><span data-stu-id="4c7db-107">We will also see how tests are run and configured.</span></span>
+<span data-ttu-id="64d64-106">在此视频中，我们将了解如何使用 Visual Studio Team System 的测试管理功能来管理所有或不同的测试用例。</span><span class="sxs-lookup"><span data-stu-id="64d64-106">In this video we see how you can manage all or your various test cases using the test management capabilities of Visual Studio Team System.</span></span> <span data-ttu-id="64d64-107">我们还将了解如何运行和配置测试。</span><span class="sxs-lookup"><span data-stu-id="64d64-107">We will also see how tests are run and configured.</span></span>
 
-[<span data-ttu-id="4c7db-108">&#9654;观看视频 （8 分钟）</span><span class="sxs-lookup"><span data-stu-id="4c7db-108">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-managing-and-running-tests-with-team-system)
+[<span data-ttu-id="64d64-108">&#9654;观看视频（8分钟）</span><span class="sxs-lookup"><span data-stu-id="64d64-108">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/introduction-to-managing-and-running-tests-with-team-system)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="4c7db-109">[上一页](introduction-to-manual-testing-with-team-system.md)
-> [下一页](measuring-the-business-value-of-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="4c7db-109">[Previous](introduction-to-manual-testing-with-team-system.md)
+> <span data-ttu-id="64d64-109">[上一页](introduction-to-manual-testing-with-team-system.md)
+> [下一页](measuring-the-business-value-of-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="64d64-109">[Previous](introduction-to-manual-testing-with-team-system.md)
 [Next](measuring-the-business-value-of-ajax.md)</span></span>

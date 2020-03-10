@@ -9,14 +9,14 @@ ms.assetid: d8f5d0e8-1ddd-4005-a7aa-50ae87f9f9f3
 msc.legacyurl: /signalr/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: 7172807e0a5c0c1dad422baa2d30043aee28307f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120056"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450218"
 ---
-# <a name="signalr-advanced-topics"></a><span data-ttu-id="2e03a-103">SignalR 高级主题</span><span class="sxs-lookup"><span data-stu-id="2e03a-103">SignalR Advanced Topics</span></span>
+# <a name="signalr-advanced-topics"></a><span data-ttu-id="1a926-103">SignalR 高级主题</span><span class="sxs-lookup"><span data-stu-id="1a926-103">SignalR Advanced Topics</span></span>
 
-> <span data-ttu-id="2e03a-104">SignalR 文档-高级主题。</span><span class="sxs-lookup"><span data-stu-id="2e03a-104">SignalR documentation - advanced topics.</span></span>
+> <span data-ttu-id="1a926-104">SignalR 文档-高级主题。</span><span class="sxs-lookup"><span data-stu-id="1a926-104">SignalR documentation - advanced topics.</span></span>
 
-- [<span data-ttu-id="2e03a-105">SignalR 中的依赖项注入</span><span class="sxs-lookup"><span data-stu-id="2e03a-105">Dependency Injection in SignalR</span></span>](dependency-injection.md)
+- [<span data-ttu-id="1a926-105">SignalR 中的依赖项注入</span><span class="sxs-lookup"><span data-stu-id="1a926-105">Dependency Injection in SignalR</span></span>](dependency-injection.md)

@@ -1,6 +1,6 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/index
-title: Introducing ASP.NET Web Pages |Microsoft Docs
+title: 简介 ASP.NET 网页 |Microsoft Docs
 author: rick-anderson
 description: ASP.NET Web Pages 2 简介
 ms.author: riande
@@ -9,22 +9,22 @@ ms.assetid: ef969007-9e27-431c-b2f7-e1772af7a0b6
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2
 msc.type: chapter
 ms.openlocfilehash: 743796c80b94f141bb5953ae29c7fa3667c3fb07
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130865"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78473864"
 ---
-# <a name="introducing-aspnet-web-pages"></a><span data-ttu-id="f6f30-103">ASP.NET 网页简介</span><span class="sxs-lookup"><span data-stu-id="f6f30-103">Introducing ASP.NET Web Pages</span></span>
+# <a name="introducing-aspnet-web-pages"></a><span data-ttu-id="4e700-103">ASP.NET 网页简介</span><span class="sxs-lookup"><span data-stu-id="4e700-103">Introducing ASP.NET Web Pages</span></span>
 
-> <span data-ttu-id="f6f30-104">ASP.NET Web Pages 2 简介</span><span class="sxs-lookup"><span data-stu-id="f6f30-104">Introducing ASP.NET Web Pages 2</span></span>
+> <span data-ttu-id="4e700-104">ASP.NET Web Pages 2 简介</span><span class="sxs-lookup"><span data-stu-id="4e700-104">Introducing ASP.NET Web Pages 2</span></span>
 
-- [<span data-ttu-id="f6f30-105">入门</span><span class="sxs-lookup"><span data-stu-id="f6f30-105">Getting Started</span></span>](getting-started.md)
-- [<span data-ttu-id="f6f30-106">编程基础知识</span><span class="sxs-lookup"><span data-stu-id="f6f30-106">Programming Basics</span></span>](intro-to-web-pages-programming.md)
-- [<span data-ttu-id="f6f30-107">显示数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-107">Displaying Data</span></span>](displaying-data.md)
-- [<span data-ttu-id="f6f30-108">HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="f6f30-108">HTML Form Basics</span></span>](form-basics.md)
-- [<span data-ttu-id="f6f30-109">使用窗体输入数据库数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-109">Entering Database Data by Using Forms</span></span>](entering-data.md)
-- [<span data-ttu-id="f6f30-110">更新数据库数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-110">Updating Database Data</span></span>](updating-data.md)
-- [<span data-ttu-id="f6f30-111">删除数据库数据</span><span class="sxs-lookup"><span data-stu-id="f6f30-111">Deleting Database Data</span></span>](deleting-data.md)
-- [<span data-ttu-id="f6f30-112">创建一致布局</span><span class="sxs-lookup"><span data-stu-id="f6f30-112">Creating a Consistent Layout</span></span>](layouts.md)
-- [<span data-ttu-id="f6f30-113">使用 WebMatrix 发布站点</span><span class="sxs-lookup"><span data-stu-id="f6f30-113">Publishing a Site by Using WebMatrix</span></span>](publishing.md)
+- [<span data-ttu-id="4e700-105">入门</span><span class="sxs-lookup"><span data-stu-id="4e700-105">Getting Started</span></span>](getting-started.md)
+- [<span data-ttu-id="4e700-106">编程基础知识</span><span class="sxs-lookup"><span data-stu-id="4e700-106">Programming Basics</span></span>](intro-to-web-pages-programming.md)
+- [<span data-ttu-id="4e700-107">显示数据</span><span class="sxs-lookup"><span data-stu-id="4e700-107">Displaying Data</span></span>](displaying-data.md)
+- [<span data-ttu-id="4e700-108">HTML 窗体基础知识</span><span class="sxs-lookup"><span data-stu-id="4e700-108">HTML Form Basics</span></span>](form-basics.md)
+- [<span data-ttu-id="4e700-109">使用窗体输入数据库数据</span><span class="sxs-lookup"><span data-stu-id="4e700-109">Entering Database Data by Using Forms</span></span>](entering-data.md)
+- [<span data-ttu-id="4e700-110">更新数据库数据</span><span class="sxs-lookup"><span data-stu-id="4e700-110">Updating Database Data</span></span>](updating-data.md)
+- [<span data-ttu-id="4e700-111">删除数据库数据</span><span class="sxs-lookup"><span data-stu-id="4e700-111">Deleting Database Data</span></span>](deleting-data.md)
+- [<span data-ttu-id="4e700-112">创建一致布局</span><span class="sxs-lookup"><span data-stu-id="4e700-112">Creating a Consistent Layout</span></span>](layouts.md)
+- [<span data-ttu-id="4e700-113">使用 WebMatrix 发布站点</span><span class="sxs-lookup"><span data-stu-id="4e700-113">Publishing a Site by Using WebMatrix</span></span>](publishing.md)

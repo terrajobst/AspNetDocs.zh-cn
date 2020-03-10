@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
-title: '[如何实现:]强制实施编码标准使用代码分析？ | Microsoft Docs'
+title: '[如何实现：]通过代码分析强制实施编码标准？ | Microsoft Docs'
 author: rick-anderson
-description: 使用 Visual Studio Team System 可以很好的控制应用到类库项目、 web 站点项目和源代码共同的代码分析规则...
+description: 使用 Visual Studio Team System，你可以很好地控制适用于类库项目、网站项目和源代码共同 ... 的代码分析规则。
 ms.author: riande
 ms.date: 07/09/2007
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
 ms.openlocfilehash: 1a9cf8ac7e8618dd3733080ba6a065e14f1cb68c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417138"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520898"
 ---
-# <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a><span data-ttu-id="97c93-104">[如何实现:]强制实施编码标准使用代码分析？</span><span class="sxs-lookup"><span data-stu-id="97c93-104">[How Do I:] Enforce Coding Standards with Code Analysis?</span></span>
+# <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a><span data-ttu-id="5a286-104">[如何实现：]通过代码分析强制实施编码标准？</span><span class="sxs-lookup"><span data-stu-id="5a286-104">[How Do I:] Enforce Coding Standards with Code Analysis?</span></span>
 
-<span data-ttu-id="97c93-105">通过[Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="97c93-105">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
+<span data-ttu-id="5a286-105">作者： [Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="5a286-105">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
 
-<span data-ttu-id="97c93-106">使用 Visual Studio Team System 可以对适用于类库项目、 网站项目和源代码管理的代码分析规则进行精细控制。</span><span class="sxs-lookup"><span data-stu-id="97c93-106">With Visual Studio Team System you have fine control over the code analysis rules that apply to class library projects, web site projects, and source code control.</span></span> <span data-ttu-id="97c93-107">在本视频中我们了解如何指定的错误和警告将在项目过程中应用的生成和代码签入和我们将了解如何取消将应用于特定的类成员的特定规则。</span><span class="sxs-lookup"><span data-stu-id="97c93-107">In this video we learn how to specify the errors and warnings that will apply during project builds and code check ins, and we see how to suppress a particular rule from applying to a specific class member.</span></span> <span data-ttu-id="97c93-108">使用此可配置性，可以强制实施编码标准，以提高质量的代码中，同时确保不适用的规则永远不会获得在自己的方式。</span><span class="sxs-lookup"><span data-stu-id="97c93-108">With this configurability you can enforce coding standards to improve the quality of your code, while ensuring inapplicable rules never get in your way.</span></span>
+<span data-ttu-id="5a286-106">使用 Visual Studio Team System，你可以很好地控制适用于类库项目、网站项目和源代码管理的代码分析规则。</span><span class="sxs-lookup"><span data-stu-id="5a286-106">With Visual Studio Team System you have fine control over the code analysis rules that apply to class library projects, web site projects, and source code control.</span></span> <span data-ttu-id="5a286-107">在此视频中，我们将了解如何指定将在项目生成和代码签入期间应用的错误和警告，并了解如何禁止将特定规则应用于特定的类成员。</span><span class="sxs-lookup"><span data-stu-id="5a286-107">In this video we learn how to specify the errors and warnings that will apply during project builds and code check ins, and we see how to suppress a particular rule from applying to a specific class member.</span></span> <span data-ttu-id="5a286-108">利用这种可配置性，你可以强制实施编码标准，以提高代码的质量，同时确保不适用规则永远不会出现。</span><span class="sxs-lookup"><span data-stu-id="5a286-108">With this configurability you can enforce coding standards to improve the quality of your code, while ensuring inapplicable rules never get in your way.</span></span>
 
-[<span data-ttu-id="97c93-109">&#9654;观看视频 （6 分钟）</span><span class="sxs-lookup"><span data-stu-id="97c93-109">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enforce-coding-standards-with-code-analysis)
+[<span data-ttu-id="5a286-109">&#9654;观看视频（6分钟）</span><span class="sxs-lookup"><span data-stu-id="5a286-109">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enforce-coding-standards-with-code-analysis)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="97c93-110">[上一页](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
-> [下一页](how-do-i-use-generic-tests.md)</span><span class="sxs-lookup"><span data-stu-id="97c93-110">[Previous](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
+> <span data-ttu-id="5a286-110">[上一页](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
+> [下一页](how-do-i-use-generic-tests.md)</span><span class="sxs-lookup"><span data-stu-id="5a286-110">[Previous](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
 [Next](how-do-i-use-generic-tests.md)</span></span>

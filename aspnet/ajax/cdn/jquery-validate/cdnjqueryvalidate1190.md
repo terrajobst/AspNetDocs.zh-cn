@@ -7,18 +7,18 @@ ms.author: csfanos
 ms.date: 01/10/2019
 msc.type: content
 ms.openlocfilehash: b5f38285128bd2119fb88b94ffa84cb6e1af3401
-ms.sourcegitcommit: 6a564984ad448db34cdfab5458af755d6b65e69c
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67538788"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78438038"
 ---
-# <a name="jquery-validation-1190"></a><span data-ttu-id="2c2fc-102">jQuery 验证 1.19.0</span><span class="sxs-lookup"><span data-stu-id="2c2fc-102">jQuery Validation 1.19.0</span></span>
+# <a name="jquery-validation-1190"></a><span data-ttu-id="e5b93-102">jQuery 验证1.19。0</span><span class="sxs-lookup"><span data-stu-id="e5b93-102">jQuery Validation 1.19.0</span></span>
 
-<span data-ttu-id="2c2fc-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="2c2fc-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="e5b93-103">以下文件托管在 CDN 上：</span><span class="sxs-lookup"><span data-stu-id="e5b93-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/additional-methods.min.js
-- <span data-ttu-id="2c2fc-104">本地化文件 https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/localization/messages\_##.js 其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="2c2fc-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="e5b93-104">https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/localization/messages\_##.js 中的本地化文件 # # 是 loc 代码。</span><span class="sxs-lookup"><span data-stu-id="e5b93-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/localization/messages\_##.js where ## is the loc code.</span></span>
