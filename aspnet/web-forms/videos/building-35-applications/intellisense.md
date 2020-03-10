@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/building-35-applications/intellisense
-title: IntelliSense | Microsoft Docs
+title: IntelliSense |Microsoft Docs
 author: JoeStagner
-description: IntelliSense 是有价值的 Visual Studio 功能适用于这两种学习.NET 编程，以及加快编码效率。 此视频将介绍...
+description: IntelliSense 是一项重要的 Visual Studio 功能，适用于学习 .NET 编程和提高编码效率。 此视频将介绍 。
 ms.author: riande
 ms.date: 04/09/2009
 ms.assetid: 541d38fd-2d62-4db5-bb9f-182163829326
 msc.legacyurl: /web-forms/videos/building-35-applications/intellisense
 msc.type: video
 ms.openlocfilehash: 040557898c3181e5a8258a04617fc7d1c7b268ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420283"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520970"
 ---
-# <a name="intellisense"></a><span data-ttu-id="dd414-104">IntelliSense</span><span class="sxs-lookup"><span data-stu-id="dd414-104">IntelliSense</span></span>
+# <a name="intellisense"></a><span data-ttu-id="75df2-104">IntelliSense</span><span class="sxs-lookup"><span data-stu-id="75df2-104">IntelliSense</span></span>
 
-<span data-ttu-id="dd414-105">通过[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="dd414-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="75df2-105">作者： [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="75df2-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="dd414-106">IntelliSense 是有价值的 Visual Studio 功能适用于这两种学习.NET 编程，以及加快编码效率。</span><span class="sxs-lookup"><span data-stu-id="dd414-106">IntelliSense is a valuable Visual Studio feature for both learning .NET programming as well as accelerating your coding efficiency.</span></span> <span data-ttu-id="dd414-107">此视频将向您介绍 Visual Web Developer 中的 IntelliSense 的值。</span><span class="sxs-lookup"><span data-stu-id="dd414-107">This video will introduce you to the value of IntelliSense in Visual Web Developer.</span></span>
+<span data-ttu-id="75df2-106">IntelliSense 是一项重要的 Visual Studio 功能，适用于学习 .NET 编程和提高编码效率。</span><span class="sxs-lookup"><span data-stu-id="75df2-106">IntelliSense is a valuable Visual Studio feature for both learning .NET programming as well as accelerating your coding efficiency.</span></span> <span data-ttu-id="75df2-107">本视频将介绍如何在 Visual Web Developer 中显示 IntelliSense 的价值。</span><span class="sxs-lookup"><span data-stu-id="75df2-107">This video will introduce you to the value of IntelliSense in Visual Web Developer.</span></span>
 
-[<span data-ttu-id="dd414-108">&#9654;观看视频 （14 分钟）</span><span class="sxs-lookup"><span data-stu-id="dd414-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/intellisense)
+[<span data-ttu-id="75df2-108">&#9654;观看视频（14分钟）</span><span class="sxs-lookup"><span data-stu-id="75df2-108">&#9654; Watch video (14 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/intellisense)

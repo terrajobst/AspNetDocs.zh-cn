@@ -9,18 +9,18 @@ ms.assetid: b2a62d3a-de63-4c8e-94af-1cb904d81aeb
 msc.legacyurl: /ajax/cdn/jquery-validate/cdnjqueryvalidate1131
 msc.type: content
 ms.openlocfilehash: 10d385026b7fd4a10cd08e2d01649088e10ca690
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414980"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472838"
 ---
-# <a name="jquery-validation-1131"></a><span data-ttu-id="db987-102">jQuery 验证 1.13.1</span><span class="sxs-lookup"><span data-stu-id="db987-102">jQuery Validation 1.13.1</span></span>
+# <a name="jquery-validation-1131"></a><span data-ttu-id="165dd-102">jQuery 验证 1.13.1</span><span class="sxs-lookup"><span data-stu-id="165dd-102">jQuery Validation 1.13.1</span></span>
 
-<span data-ttu-id="db987-103">在 CDN 上托管的以下文件：</span><span class="sxs-lookup"><span data-stu-id="db987-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="165dd-103">以下文件托管在 CDN 上：</span><span class="sxs-lookup"><span data-stu-id="165dd-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/additional-methods.min.js
-- <span data-ttu-id="db987-104">本地化文件 https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js 其中 # # 是本地化代码。</span><span class="sxs-lookup"><span data-stu-id="db987-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="165dd-104">https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js 中的本地化文件 # # 是 loc 代码。</span><span class="sxs-lookup"><span data-stu-id="165dd-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/localization/messages\_##.js where ## is the loc code.</span></span>
