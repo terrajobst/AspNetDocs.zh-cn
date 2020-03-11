@@ -9,11 +9,11 @@ ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 7d095538bd92d50675e5fce44f5ca68e8ee6c0e8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74603522"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78442904"
 ---
 # <a name="using-sql-cache-dependencies-vb"></a>使用 SQL 缓存依赖项 (VB)
 
@@ -248,7 +248,7 @@ ASP.NET 2.0 提供[`SqlCacheDependency` 类](https://msdn.microsoft.com/library/
 > [!NOTE]
 > SQL 缓存依赖项还可与[输出缓存](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)一起使用。 有关此功能的演示，请参阅：将[ASP.NET Output 缓存与 SQL Server 配合使用](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 缓存数据库数据时，数据在数据库中被修改之前，理想情况下将保留在缓存中。 使用 ASP.NET 2.0，可以在声明性和编程方案中创建和使用 SQL 缓存依赖项。 此方法的一大挑战是在数据被修改时发现。 Microsoft SQL Server 2005 的完整版本提供了通知功能，可以在查询结果发生更改时向应用程序发出警报。 对于 SQL Server 2005 和早期版本 SQL Server 的 Express 版本，必须改用轮询系统。 幸运的是，设置必要的轮询基础结构相当简单。
 
@@ -273,4 +273,4 @@ ASP.NET 2.0 提供[`SqlCacheDependency` 类](https://msdn.microsoft.com/library/
 此教程系列由许多有用的审阅者查看。 本教程的主管评审者是 Marko Rangel、Teresa Murphy 和 Hilton Giesenow。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](caching-data-at-application-startup-vb.md)
+> [上一页](caching-data-at-application-startup-vb.md)

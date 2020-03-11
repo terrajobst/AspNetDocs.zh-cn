@@ -9,11 +9,11 @@ ms.assetid: 552d2d50-fe73-4153-9a7f-2b379bec4625
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ccb3bfa5f215ba6e65b8a10b40041d5c2896c7e3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74620029"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78424874"
 ---
 # <a name="masterdetail-filtering-across-two-pages-c"></a>跨两个页面的母版/详细信息筛选 (C#)
 
@@ -168,7 +168,7 @@ ms.locfileid: "74620029"
 
 **图 18**：通知用户供应商未提供任何产品（[单击查看完全尺寸的图像](master-detail-filtering-across-two-pages-cs/_static/image52.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 虽然大纲/详细信息报表可以在单个页面上显示主记录和详细记录，但在许多网站中，它们在两个网页之间分隔开。 在本教程中，我们将介绍如何通过 "主" 网页和 "详细信息" 页中列出的关联产品中列出的供应商，来实现此类主/从报表。 主网页中的每个供应商行都包含指向详细信息页的链接，该链接通过行的 `SupplierID` 值传递。 使用 GridView 的 HyperLinkField 可以轻松地添加这类特定于行的链接。
 

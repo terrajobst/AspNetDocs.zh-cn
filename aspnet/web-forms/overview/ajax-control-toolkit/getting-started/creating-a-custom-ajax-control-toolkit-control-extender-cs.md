@@ -1,217 +1,217 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
-title: 创建自定义 AJAX 控件工具包扩展程序控件 (C#) |Microsoft Docs
+title: 创建自定义 AJAX 控件工具包控件扩展器C#（） |Microsoft Docs
 author: microsoft
-description: 自定义扩展程序，可以自定义和扩展的 ASP.NET 控件的功能而无需创建新的类。
+description: 自定义扩展程序使你可以自定义和扩展 ASP.NET 控件的功能，而无需创建新类。
 ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 96b56eca-a892-45a4-96b4-67e61178650a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7850e745f5985688c95fc7f649ccbb06b2f66e20
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127167"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78430286"
 ---
 # <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>创建自定义 AJAX 控件工具包控件扩展程序 (C#)
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 自定义扩展程序，可以自定义和扩展的 ASP.NET 控件的功能而无需创建新的类。
+> 自定义扩展程序使你可以自定义和扩展 ASP.NET 控件的功能，而无需创建新类。
 
-在本教程中，您将学习如何创建自定义 AJAX 控件工具包控件扩展程序。 我们创建一个简单，但更改按钮的状态从禁用启用时文本框中键入文本的有用、 新的扩展程序。 阅读本教程之后, 你将能够扩展 ASP.NET AJAX 工具包使用您自己控件扩展器。
+在本教程中，将了解如何创建自定义 AJAX 控件工具包控件扩展器。 我们创建了一个简单但有用的新扩展器，该扩展程序将按钮的状态从 "已禁用" 更改为 "已启用"，以便在文本框中键入文本。 阅读本教程后，你将能够用自己的控件扩展器扩展 ASP.NET AJAX 工具包。
 
-您可以创建自定义控件扩展程序使用 Visual Studio 或 Visual Web Developer （请确保具有最新版本的 Visual Web Developer）。
+你可以使用 Visual Studio 或 Visual Web Developer 创建自定义控件扩展器（确保具有最新版本的 Visual Web Developer）。
 
-## <a name="overview-of-the-disabledbutton-extender"></a>DisabledButton 扩展程序的概述
+## <a name="overview-of-the-disabledbutton-extender"></a>DisabledButton 扩展器概述
 
-我们新的控件扩展程序名称为 DisabledButton 扩展程序。 此扩展器将具有三个属性：
+新的控件扩展器命名为 DisabledButton 扩展器。 此扩展器将有三个属性：
 
 - TargetControlID-控件扩展的文本框。
-- TargetButtonIID-已禁用或启用的按钮。
-- DisabledText-最初在按钮中显示的文本。 当您开始键入时，按钮将显示按钮文本属性的值。
+- TargetButtonIID-已禁用或已启用的按钮。
+- DisabledText-按钮中最初显示的文本。 开始键入时，按钮会显示 "按钮文本" 属性的值。
 
-可以将挂接到文本框和按钮控件 DisabledButton 扩展器。 键入的任何文本之前，将禁用的按钮和文本框和按钮如下所示：
+将 DisabledButton 扩展器挂钩到 TextBox 和 Button 控件。 键入任何文本之前，按钮将被禁用，文本框和按钮如下所示：
 
 [![](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image2.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image1.png)
 
-([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image3.png))
+（[单击以查看完全大小的映像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image3.png)）
 
-开始键入文本后，启用该按钮和文本框和按钮如下所示：
+开始键入文本后，按钮将启用，文本框和按钮如下所示：
 
 [![](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image5.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image4.png)
 
-([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image6.png))
+（[单击以查看完全大小的映像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image6.png)）
 
-若要创建我们控件扩展程序，我们需要创建以下三个文件：
+若要创建控件扩展器，需要创建以下三个文件：
 
-- DisabledButtonExtender.cs-此文件是将管理创建您的扩展器，并允许您在设计时设置的属性的服务器端控件类。 它还定义了可以在您的扩展器设置的属性。 这些属性可通过代码和设计时访问和 DisableButtonBehavior.js 文件中定义的属性匹配。
-- DisabledButtonBehavior.js-此文件是您将添加所有客户端脚本逻辑。
-- DisabledButtonDesigner.cs-此类使设计时功能。 如果你想要正常使用 Visual Studio/Visual Web Developer 设计器的控件扩展程序，则需要此类。
+- DisabledButtonExtender.cs-此文件是服务器端控件类，将管理创建扩展器，并允许您在设计时设置属性。 它还定义了可在扩展器上设置的属性。 这些属性可通过代码和设计时访问，并与 DisableButtonBehavior 文件中定义的属性相匹配。
+- DisabledButtonBehavior-此文件是你将在其中添加所有客户端脚本逻辑的位置。
+- DisabledButtonDesigner.cs-此类启用设计时功能。 如果希望控件扩展器能够正常使用 Visual Studio/Visual Web Developer 设计器，则需要此类。
 
-因此控件扩展程序包含服务器端控件、 客户端的行为和服务器端设计器类。 了解如何在以下各节中创建所有这三个这些文件。
+因此，控件扩展器由服务器端控件、客户端行为和服务器端设计器类组成。 你将在以下部分中了解如何创建这三个文件。
 
-## <a name="creating-the-custom-extender-website-and-project"></a>创建自定义扩展程序网站和项目
+## <a name="creating-the-custom-extender-website-and-project"></a>创建自定义扩展器网站和项目
 
-第一步是在 Visual Studio/Visual Web Developer 中创建一个类库项目和网站。 我们将在类库项目中创建自定义扩展程序和网站中测试自定义扩展程序。
+第一步是在 Visual Studio/Visual Web Developer 中创建类库项目和网站。 我们将在类库项目中创建自定义扩展器，并测试网站中的自定义扩展器。
 
-让我们来开始与网站。 请按照下列步骤以创建网站：
+让我们从网站开始。 按照以下步骤创建网站：
 
-1. 选择菜单选项**文件，新的 Web 站点**。
-2. 选择**ASP.NET Web 站点**模板。
-3. 新网站命名*Website1*。
-4. 单击**确定**按钮。
+1. 选择菜单选项 "**文件" "新建**网站"。
+2. 选择**ASP.NET**网站模板。
+3. 将新网站命名为 " *Website1*"。
+4. 单击“确定”按钮。
 
-接下来，我们需要创建将包含控件扩展程序的代码类库项目：
+接下来，我们需要创建一个类库项目，该项目将包含控件扩展程序的代码：
 
-1. 选择菜单选项**文件中，添加新项目**。
-2. 选择**类库**模板。
-3. 具有名称命名的新类库**CustomExtenders**。
-4. 单击**确定**按钮。
+1. 选择菜单选项**文件 "添加" "新建项目**"。
+2. 选择 "**类库**" 模板。
+3. 将名为**CustomExtenders**的新类库命名为。
+4. 单击“确定”按钮。
 
-完成这些步骤后，在解决方案资源管理器窗口应如图 1 所示。
+完成这些步骤后，"解决方案资源管理器" 窗口应如图1所示。
 
-[![与网站和类的类库项目的解决方案](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image7.png)
+[![包含网站和类库项目的解决方案](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image7.png)
 
-**图 01**:与网站和类的类库项目的解决方案 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image9.png))
+**图 01**：包含网站和类库项目的解决方案（[单击以查看完全大小的图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image9.png)）
 
-接下来，您需要添加所有必要的程序集引用对类库项目：
+接下来，需要将所有必需的程序集引用添加到类库项目中：
 
-1. 右键单击 CustomExtenders 项目，然后选择菜单选项**添加引用**。
-2. 选择.NET 选项卡。
+1. 右键单击 "CustomExtenders" 项目，然后选择 "**添加引用**" 菜单选项。
+2. 选择 .NET 选项卡。
 3. 添加对下列程序集的引用：
 
     1. System.Web.dll
     2. System.Web.Extensions.dll
     3. System.Design.dll
     4. System.Web.Extensions.Design.dll
-4. 选择浏览选项卡。
-5. 添加对 AjaxControlToolkit.dll 程序集的引用。 此程序集位于在其中下载 AJAX 控件工具包的文件夹中。
+4. 选择 "浏览" 选项卡。
+5. 添加对 AjaxControlToolkit 程序集的引用。 此程序集位于下载 AJAX 控件工具包的文件夹中。
 
-完成这些步骤后，将类库项目的引用文件夹应如图 2 所示。
+完成这些步骤后，类库项目的 "引用" 文件夹应如图2所示。
 
-[![使用所需的引用引用文件夹](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image10.png)
+[![引用具有所需引用的文件夹](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image10.png)
 
-**图 02**:使用所需的引用引用文件夹 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image12.png))
+**图 02**：引用具有所需引用的文件夹（[单击查看完全大小的图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image12.png)）
 
-## <a name="creating-the-custom-control-extender"></a>创建自定义控件扩展程序
+## <a name="creating-the-custom-control-extender"></a>创建自定义控件扩展器
 
-现在，我们有我们的类库，我们可以开始构建我们的扩展程序控件。 让我们来开始准系统的自定义扩展程序控件类 （请参阅代码清单 1）。
+现在我们有了类库，接下来我们可以开始构建扩展器控件。 让我们从自定义扩展程序控件类的 bare 骨骼开始（请参阅列表1）。
 
-**代码清单 1-MyCustomExtender.cs**
+**列表 1-MyCustomExtender.cs**
 
 [!code-csharp[Main](creating-a-custom-ajax-control-toolkit-control-extender-cs/samples/sample1.cs)]
 
-有几种您注意到有关列表 1 中的控件扩展程序类的方法。 首先，请注意该类继承 ExtenderControlBase 类的基类。 所有 AJAX 控件工具包扩展程序控件都派生自这个基类。 例如，基本类包括为每个控件扩展程序的必需的属性的 TargetID 属性。
+有关列表1中的控件扩展器类，有几个方面需要注意。 首先，请注意该类继承自基 ExtenderControlBase 类。 所有 AJAX 控件工具包扩展程序控件都从此基类派生。 例如，基类包含 TargetID 属性，该属性是每个控件扩展器的必需属性。
 
-接下来，请注意，类包含与客户端脚本相关的以下两个属性：
+接下来，请注意，类包含以下两个与客户端脚本相关的属性：
 
-- WebResource-导致文件以将其包含在程序集中嵌入的资源。
-- ClientScriptResource-会导致要从程序集中检索的脚本资源。
+- WebResource-使文件作为嵌入资源包含在程序集中。
+- ClientScriptResource-导致从程序集检索脚本资源。
 
-WebResource 属性用于编译自定义扩展器时，将 MyControlBehavior.js JavaScript 文件嵌入到程序集。 ClientScriptResource 属性用于在网页中使用自定义扩展器时，从该程序集检索 MyControlBehavior.js 脚本。
+当编译自定义扩展器时，WebResource 属性用于将 MyControlBehavior JavaScript 文件嵌入到程序集中。 当在网页中使用自定义扩展器时，ClientScriptResource 属性用于从程序集中检索 MyControlBehavior 脚本。
 
-为了使 WebResource 和 ClientScriptResource 属性，若要运行，必须作为嵌入资源编译 JavaScript 文件。 选择解决方案资源管理器窗口中的文件，打开属性页中，并将该值赋*嵌入的资源*到**生成操作**属性。
+为了使 WebResource 和 ClientScriptResource 属性正常工作，必须将 JavaScript 文件编译为嵌入的资源。 在 "解决方案资源管理器" 窗口中选择文件，打开属性表，并将值 "*嵌入资源*" 分配给 "**生成操作**" 属性。
 
-请注意，控件扩展程序还包含 TargetControlType 属性。 此属性用于指定由扩展程序控件扩展的控件的类型。 列表 1 中，对于控件扩展程序用于扩展一个文本框。
+请注意，控件扩展器还包括 TargetControlType 属性。 此属性用于指定控件扩展器所扩展的控件类型。 对于列表1，控件扩展器用于扩展文本框。
 
-最后，请注意，自定义扩展器包括名为 MyProperty 的属性。 该属性用 ExtenderControlProperty 特性标记。 GetPropertyValue() 和 SetPropertyValue() 方法用于将属性值从服务器端控件扩展程序传递到客户端的行为。
+最后请注意，自定义扩展器包含一个名为 T.myproperty 的属性。 该属性标记有 ExtenderControlProperty 特性。 GetPropertyValue （）和 SetPropertyValue （）方法用于将属性值从服务器端控件扩展程序传递到客户端行为。
 
-让我们来继续操作并实现我们 DisabledButton 扩展程序的代码。 可以在代码清单 2 中找到此扩展器的代码。
+接下来，为 DisabledButton 扩展器实现代码。 此扩展器的代码可以在 "清单 2" 中找到。
 
-**代码清单 2-DisabledButtonExtender.cs**
+**列表 2-DisabledButtonExtender.cs**
 
 [!code-csharp[Main](creating-a-custom-ajax-control-toolkit-control-extender-cs/samples/sample2.cs)]
 
-列表 2 中的 DisabledButton 扩展器具有两个名为 TargetButtonID 和 DisabledText 的属性。 应用于 TargetButtonID 属性 IDReferenceProperty 防止将按钮控件的 ID 以外的任何分配给此属性。
+清单2中的 DisabledButton 扩展器具有两个名为 TargetButtonID 和 DisabledText 的属性。 应用于 TargetButtonID 属性的 IDReferenceProperty 阻止你将 Button 控件的 ID 之外的任何内容分配给此属性。
 
-WebResource 和 ClientScriptResource 属性将位于名为 DisabledButtonBehavior.js 此扩展器的文件中的客户端的行为相关联。 我们将讨论下一节中的此 JavaScript 文件。
+WebResource 和 ClientScriptResource 属性将位于名为 DisabledButtonBehavior 的文件中的客户端行为与此扩展器相关联。 我们将在下一节中讨论此 JavaScript 文件。
 
 ## <a name="creating-the-custom-extender-behavior"></a>创建自定义扩展器行为
 
-控件扩展程序的客户端组件称为一种行为。 禁用和启用该按钮的实际逻辑包含在 DisabledButton 行为。 行为的 JavaScript 代码包含在列表 3 中。
+控件扩展器的客户端组件称为行为。 "禁用" 和 "启用" 按钮的实际逻辑包含在 DisabledButton 行为中。 此行为的 JavaScript 代码包含在列表3中。
 
-**代码清单 3-DisabledButton.js**
+**列表 3-DisabledButton**
 
 [!code-javascript[Main](creating-a-custom-ajax-control-toolkit-control-extender-cs/samples/sample3.js)]
 
-列表 3 中的 JavaScript 文件包含一个名为 DisabledButtonBehavior 的客户端类。 此类，如其服务器端孪生，包括两个属性名为 TargetButtonID 并使用户能够使用 DisabledText 获取\_TargetButtonID/set\_TargetButtonID 并获取\_DisabledText/设置\_DisabledText。
+清单3中的 JavaScript 文件包含名为 DisabledButtonBehavior 的客户端类。 此类（如其服务器端克隆）包含两个名为 TargetButtonID 和 DisabledText 的属性，可以使用 get\_TargetButtonID/set\_TargetButtonID 并获取\_DisabledText/set\_DisabledText。
 
-Initialize （） 方法的行为的目标元素相关联的 keyup 事件处理程序。 与此行为关联的文本框中键入字母每次 keyup 处理程序执行。 Keyup 处理程序可以启用或禁用按钮具体取决于是否包含任何文本与该行为关联的文本框。
+Initialize （）方法将一个 keyup 事件处理程序与该行为的目标元素相关联。 每次在与此行为相关联的文本框中键入字母时，keyup 处理程序都将执行。 Keyup 处理程序启用或禁用该按钮，具体取决于与该行为关联的文本框是否包含任何文本。
 
-请记住，必须编译 JavaScript 文件作为嵌入资源清单 3 中。 选择解决方案资源管理器窗口中的文件，打开属性页中，并将该值赋*嵌入的资源*到**生成操作**属性 （请参见图 3）。 此选项是在 Visual Studio 和 Visual Web Developer 中可用。
+请记住，你必须将清单3中的 JavaScript 文件编译为嵌入资源。 在 "解决方案资源管理器" 窗口中选择文件，打开属性表，并将值 "*嵌入资源*" 分配给 "**生成操作**" 属性（参见图3）。 Visual Studio 和 Visual Web Developer 中都提供了此选项。
 
-[![添加一个 JavaScript 文件作为嵌入资源](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image13.png)
+[![将 JavaScript 文件添加为嵌入资源](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image13.png)
 
-**图 03**:添加一个 JavaScript 文件作为嵌入资源 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image15.png))
+**图 03**：添加作为嵌入资源的 JavaScript 文件（[单击以查看完全大小的映像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image15.png)）
 
-## <a name="creating-the-custom-extender-designer"></a>创建自定义扩展程序设计器
+## <a name="creating-the-custom-extender-designer"></a>创建自定义扩展器设计器
 
-没有一个我们需要进行创建，以完成我们的扩展程序的最后一个类。 我们需要在列表 4 中创建设计器类。 此类是使扩展器与 Visual Studio/Visual Web Developer 设计器正常运行所必需的。
+需要创建一个最后一个类来完成扩展器。 需要在列表4中创建设计器类。 此类是使扩展程序正确运行 Visual Studio/Visual Web Developer 设计器所必需的。
 
 **列表 4-DisabledButtonDesigner.cs**
 
 [!code-csharp[Main](creating-a-custom-ajax-control-toolkit-control-extender-cs/samples/sample4.cs)]
 
-将列表 4 中的设计器与使用设计器属性 DisabledButton 扩展程序相关联。需要将设计器特性应用于 DisabledButtonExtender 类如下：
+将清单4中的设计器与具有设计器属性的 DisabledButton 扩展器相关联。需要将设计器属性应用于 DisabledButtonExtender 类，如下所示：
 
 [!code-csharp[Main](creating-a-custom-ajax-control-toolkit-control-extender-cs/samples/sample5.cs)]
 
-## <a name="using-the-custom-extender"></a>使用自定义扩展程序
+## <a name="using-the-custom-extender"></a>使用自定义扩展器
 
-现在，我们已完成创建 DisabledButton 扩展程序控件，就可以在我们的 ASP.NET 网站中使用它。 首先，我们需要向工具箱添加自定义扩展程序。 请执行以下步骤：
+现在，我们已完成了 DisabledButton 控件扩展器的创建，接下来可以在我们的 ASP.NET 网站中使用它。 首先，需要将自定义扩展器添加到 "工具箱"。 请执行这些步骤：
 
-1. 通过双击解决方案资源管理器窗口中的页中打开 ASP.NET 页。
-2. 右键单击工具箱，然后选择菜单选项**选择项**。
-3. 在选择工具箱项对话框中，浏览到 CustomExtenders.dll 程序集。
-4. 单击**确定**按钮以关闭对话框。
+1. 双击 "解决方案资源管理器" 窗口中的页面，打开 "ASP.NET" 页。
+2. 右键单击 "工具箱"，然后选择菜单选项 "**选择项**"。
+3. 在 "选择工具箱项" 对话框中，浏览到 CustomExtenders 程序集。
+4. 单击 **"确定"** 按钮关闭对话框。
 
-完成这些步骤后，DisabledButton 控件扩展程序应显示在工具箱中 （请参阅图 4）。
+完成这些步骤后，DisabledButton 控件扩展器应会出现在 "工具箱" 中（参见图4）。
 
-[![在工具箱 DisabledButton](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image16.png)
+[工具箱中的 ![DisabledButton](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image16.png)
 
-**图 04**:在工具箱 DisabledButton ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image18.png))
+**图 04**：工具箱中的 DisabledButton （[单击查看完全尺寸的图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image18.png)）
 
-接下来，我们需要创建一个新的 ASP.NET 页面。 请执行以下步骤：
+接下来，我们需要创建一个新的 ASP.NET 页面。 请执行这些步骤：
 
-1. 创建一个名为 ShowDisabledButton.aspx 的新 ASP.NET 页。
-2. 将 ScriptManager 拖到绘图页上。
-3. 将 TextBox 控件拖到绘图页上。
-4. 将按钮控件拖到绘图页上。
-5. 在属性窗口中，将按钮 ID 属性更改为值<em>btnSave</em>的值的 Text 属性*保存\**。
+1. 创建名为 ShowDisabledButton 的新 ASP.NET 页。
+2. 将 ScriptManager 拖到页面上。
+3. 将 TextBox 控件拖到页面上。
+4. 将一个 "按钮" 控件拖到页面上。
+5. 在属性窗口中，将 "Button ID" 属性更改为值 " <em>btnsave.dock</em> "，并将 "Text" 属性更改为 " *Save\** " 值。
 
-我们使用标准 ASP.NET 文本框和按钮控件创建一个页面。
+我们创建了一个包含标准 ASP.NET 文本框和按钮控件的页面。
 
-接下来，我们需要扩展具有 DisabledButton 扩展程序的文本框控件：
+接下来，我们需要扩展 TextBox 控件和 DisabledButton 扩展器：
 
-1. 选择**添加扩展程序**任务选项以打开扩展程序向导对话框 （请参见图 5）。 请注意，该对话框包含我们自定义 DisabledButton 扩展程序。
-2. 选择 DisabledButton 扩展器，然后单击**确定**按钮。
+1. 选择 "**添加扩展**器任务" 选项以打开扩展器向导对话框（请参阅图5）。 请注意，此对话框包含我们的自定义 DisabledButton 扩展器。
+2. 选择 DisabledButton 扩展器，然后单击 **"确定"** 按钮。
 
-[![扩展程序向导对话框](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image19.png)
+[![扩展器向导对话框](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image19.png)
 
-**图 05**:扩展程序向导对话框 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image21.png))
+**图 05**：扩展器向导对话框（[单击以查看完全大小的映像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image21.png)）
 
-最后，我们可以设置 DisabledButton 扩展程序的属性。 可以通过修改的 TextBox 控件的属性来修改 DisabledButton 扩展程序属性：
+最后，我们可以设置 DisabledButton 扩展器的属性。 可以通过修改 TextBox 控件的属性来修改 DisabledButton 扩展器的属性：
 
-1. 在设计器中选择文本框中。
-2. 在属性窗口中，展开的扩展程序节点 （请参阅图 6）。
-3. 将该值赋*保存*DisabledText 属性以及值*btnSave* TargetButtonID 属性。
+1. 在设计器中选择文本框。
+2. 在属性窗口中，展开 "扩展器" 节点（见图6）。
+3. 将值*Save*赋给 DisabledText 属性，并将值*Btnsave.dock*分配到 TargetButtonID 属性。
 
-[![设置扩展程序属性](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image22.png)
+[![设置扩展器属性](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image22.png)
 
-**图 06**:设置扩展程序属性 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image24.png))
+**图 06**：设置扩展器属性（[单击以查看完全大小的映像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image24.png)）
 
-（按 F5） 运行页面时，按钮控件最初处于禁用状态。 一旦您开始在文本框中输入文本，则控件被启用的按钮 （请参阅图 7）。
+运行页面时（通过按 F5），按钮控件最初处于禁用状态。 开始在文本框中输入文本后，就会启用 Button 控件（参见图7）。
 
-[![在操作中 DisabledButton 扩展器](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image25.png)
+[![操作中的 DisabledButton 扩展器](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image25.png)
 
-**图 07**:DisabledButton 扩展器操作 ([单击此项可查看原尺寸图像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image27.png))
+**图 07**：操作中的 DisabledButton 扩展器（[单击以查看完全大小的映像](creating-a-custom-ajax-control-toolkit-control-extender-cs/_static/image27.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
-本教程的目的是说明如何扩展 AJAX 控件工具包与自定义扩展程序控件。 在本教程中，我们创建一个简单的 DisabledButton 控件扩展程序。 我们通过创建 DisabledButtonExtender 类、 DisabledButtonBehavior JavaScript 行为和 DisabledButtonDesigner 类实现此扩展器。 每当创建自定义控件扩展程序时遵循一组类似的步骤。
+本教程的目的是说明如何通过自定义扩展器控件扩展 AJAX 控件工具包。 在本教程中，我们创建了一个简单的 DisabledButton 控件扩展器。 我们通过创建 DisabledButtonExtender 类、DisabledButtonBehavior JavaScript 行为和 DisabledButtonDesigner 类实现了这种扩展。 每当创建自定义控件扩展器时，都应遵循一组类似的步骤。
 
 > [!div class="step-by-step"]
 > [上一页](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)

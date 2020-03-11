@@ -9,11 +9,11 @@ ms.assetid: b4ac129d-1b8e-41ca-a38f-9b19d7c7bb0e
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 97623e7c13ab7799b9dadbb8e52be8e0cd99e252
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594980"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78464438"
 ---
 # <a name="creating-the-membership-schema-in-sql-server-c"></a>在 SQL Server 中创建成员身份架构 (C#)
 
@@ -202,13 +202,13 @@ ASP.NET 应用程序的数据通常存储在数据库的多个表中。 在实�
 
 负责存储密码的列 `Password`、`PasswordFormat`和 `PasswordSalt`。 `PasswordFormat` 是类型 `int` 的字段，其值指示用于存储密码的方法：0表示明文;1表示哈希;2表示已加密。 无论使用何种密码存储技术，都将为 `PasswordSalt` 分配一个随机生成的字符串。仅在计算密码的哈希值时才使用 `PasswordSalt` 的值。 最后，`Password` 列包含实际的密码数据，即纯文本密码、密码哈希或加密密码。
 
-表1说明了在存储密码 MySecret 时，这三列可能会显示在各种存储技术中的情况！ 。
+表1说明了在存储密码 MySecret 时，这三列可能会显示在各种存储技术中的情况！ .
 
 | **存储技术&lt;\_o3a\_p/&gt;** | **密码&lt;\_o3a\_p/&gt;** | **PasswordFormat&lt;\_o3a\_p/&gt;** | **PasswordSalt&lt;\_o3a\_p/&gt;** |
 | --- | --- | --- | --- |
-| “清除”， | MySecret! | 0 | tTnkPlesqissc2y2SMEygA = = |
-| 计算 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM = | 1 | wFgjUfhdUFOCKQiI61vtiQ = = |
-| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw = = |
+| 清除 | MySecret! | 0 | tTnkPlesqissc2y2SMEygA== |
+| 计算 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |
+| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw== |
 
 **表 1**：存储密码 MySecret 时与密码相关的字段的示例值！
 
@@ -303,7 +303,7 @@ ASP.NET 应用程序的数据通常存储在数据库的多个表中。 在实�
 > [!NOTE]
 > 请记住，成员身份框架允许跨多个应用程序对单个用户存储进行分区。 成员资格提供程序的 `applicationName` 设置指示当使用用户存储区时提供程序所使用的应用程序。 为 `applicationName` 配置设置显式设置值非常重要，因为如果未显式设置 `applicationName`，则在运行时将其分配给 web 应用程序的虚拟根路径。 只要应用程序的虚拟根路径不改变，此操作就会正常运行，但如果将应用程序移到不同的路径，则 `applicationName` 设置也会更改。 发生这种情况时，成员资格提供程序将开始处理与以前使用的应用程序分区不同的应用程序分区。 在移动之前创建的用户帐户将驻留在不同的应用程序分区中，这些用户将无法再登录到该站点。 有关此问题的更深入讨论，请参阅[配置 ASP.NET 2.0 成员身份和其他提供程序时，始终设置 `applicationName` 属性](https://weblogs.asp.net/scottgu/443634)。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 此时，我们有了一个具有配置的应用程序服务（`SecurityTutorials.mdf`）的数据库，并配置了 web 应用程序，以便成员身份框架使用刚才注册的 `SecurityTutorialsSqlMembershipProvider` 提供程序。 此注册的提供程序的类型为 `SqlMembershipProvider`，其 `connectionStringName` 设置为适当的连接字符串（`SecurityTutorialsConnectionString`）并显式设置其 `applicationName` 值。
 
@@ -340,4 +340,4 @@ Scott Mitchell，创始人的多个 ASP/ASP 和4GuysFromRolla.com 的作者已�
 此教程系列由许多有用的审阅者查看。 本教程的主管审查人员是 Alicja Maziarz。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在[mitchell@4GuysFromRolla.com](mailto:mitchell@4guysfromrolla.com)放置一行。
 
 > [!div class="step-by-step"]
-> [下一页](creating-user-accounts-cs.md)
+> [下一部分](creating-user-accounts-cs.md)

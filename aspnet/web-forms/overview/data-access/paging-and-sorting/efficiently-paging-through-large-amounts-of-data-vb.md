@@ -9,11 +9,11 @@ ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 0c788c4109d0d2839de969c628399290376a1ccd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74612970"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78476960"
 ---
 # <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>通过大量数据有效分页 (VB)
 
@@ -302,12 +302,12 @@ DAL s `TotalNumberOfProducts` 方法返回一个可以为 null 的整数;但是�
 | --- | --- | --- |
 | **默认分页 SQL 事件探查器** | 1.411 | 383 |
 | **自定义分页 SQL 事件探查器** | 0.002 | 29 |
-| **默认分页 ASP.NET 跟踪** | 2.379 | *不适用* |
-| **自定义分页 ASP.NET 跟踪** | 0.029 | *不适用* |
+| **默认分页 ASP.NET 跟踪** | 2.379 | *空值* |
+| **自定义分页 ASP.NET 跟踪** | 0.029 | *空值* |
 
 正如您所看到的，检索特定的数据页需要354的平均读取量，而一小部分时间完成。 在 ASP.NET 页上，自定义页面在使用默认分页时，可以在<sup>接近1/100 的</sup>时间进行呈现。 请参阅[我的文章](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)，以了解有关这些结果的详细信息以及代码和数据库，你可以下载这些内容以在你自己的环境中重现这些测试。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 默认分页是一个 cinch，只需检查数据 Web 控件的 "智能标记" 中的 "启用分页" 复选框，就会产生性能的代价。 使用默认分页时，当用户请求任何数据页时，将返回*所有*记录，即使只显示一小部分记录。 为了应对这种性能开销，ObjectDataSource 提供了一个可选的分页选项自定义分页。
 

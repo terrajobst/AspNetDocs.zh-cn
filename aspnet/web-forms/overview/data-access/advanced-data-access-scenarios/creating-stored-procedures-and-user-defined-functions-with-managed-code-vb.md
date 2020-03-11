@@ -9,11 +9,11 @@ ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 0ac5f71d519689a9dc84fb82a04196d520cca6e1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74609876"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78443840"
 ---
 # <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>使用托管代码创建存储过程和用户定义的函数 (VB)
 
@@ -448,7 +448,7 @@ SQL Server 项目可以轻松地创建、编译和部署托管数据库对象。
 
 **图 32**：对象资源管理器中列出了 `ManuallyCreatedDBObjects.dll` （[单击查看完全大小的图像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 Microsoft SQL Server 2005 提供与公共语言运行时（CLR）的集成，从而允许使用托管代码创建数据库对象。 以前，只能使用 T-sql 创建这些数据库对象，但现在可以使用诸如 Visual Basic 的 .NET 编程语言创建这些对象。 在本教程中，我们创建了两个托管存储过程和一个托管的用户定义函数。
 
@@ -468,7 +468,7 @@ Visual Studio s SQL Server 项目类型有助于创建、编译和部署托管�
 - [如何：编辑 `Test.sql` 脚本以运行 SQL 对象](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [用户定义函数简介](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [托管代码和 SQL Server 2005 （视频）](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [Transact-sql 参考](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [Transact-SQL 参考](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
 - [演练：在托管代码中创建存储过程](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>关于作者
@@ -480,4 +480,4 @@ Visual Studio s SQL Server 项目类型有助于创建、编译和部署托管�
 此教程系列由许多有用的审阅者查看。 本教程的潜在客户审阅者为 Jacob Lauritsen。 除了查看本文，S ren 还创建了本文的C#下载，以手动编译托管数据库对象。 想要查看我即将发布的 MSDN 文章？ 如果是这样，请在mitchell@4GuysFromRolla.com放置一行[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一部分](debugging-stored-procedures-vb.md)
+> [上一页](debugging-stored-procedures-vb.md)

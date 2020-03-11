@@ -9,11 +9,11 @@ ms.assetid: 61aa4e08-aa81-4aeb-8ebe-19ba7a65e04c
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
 ms.openlocfilehash: aaf6df6f52253ef0f7369a7e77211b6786b97db1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618051"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78420290"
 ---
 # <a name="validating-user-credentials-against-the-membership-user-store-c"></a>针对成员身份用户存储验证用户凭据 (C#)
 
@@ -230,7 +230,7 @@ ms.locfileid: "74618051"
 
 ## <a name="step-4-improving-the-login-controls-invalid-credentials-message"></a>步骤4：提高登录控件的无效凭据消息
 
-当用户尝试使用无效凭据登录时，登录控件会显示一条消息，说明登录尝试失败。 具体而言，控件显示由其[`FailureText` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.failuretext.aspx)指定的消息，该属性的默认值为登录尝试失败。 请稍后重试。
+当用户尝试使用无效凭据登录时，登录控件会显示一条消息，说明登录尝试失败。 具体而言，控件显示由其[`FailureText` 属性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.failuretext.aspx)指定的消息，该属性的默认值为登录尝试失败。 请重试。
 
 回忆一下，用户的凭据可能无效的原因有很多：
 
@@ -255,7 +255,7 @@ ms.locfileid: "74618051"
 
 **图 11**： Tito 执行了过多无效的登录尝试并且已被锁定（[单击以查看完全大小的映像](validating-user-credentials-against-the-membership-user-store-cs/_static/image33.png)）
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 在本教程之前，我们的登录页根据用户名/密码对的硬编码列表验证了提供的凭据。 在本教程中，我们更新了页面，以根据成员身份框架验证凭据。 在步骤1中，我们查看了以编程方式使用 `Membership.ValidateUser` 方法。 在步骤2中，我们将手动创建的用户界面和代码替换为登录控件。
 
