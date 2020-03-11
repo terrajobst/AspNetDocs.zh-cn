@@ -9,11 +9,11 @@ ms.assetid: 30945276-8ed9-4b27-8e50-4309244d3559
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c0ee6ed9d944b9a8ff2b2996e93706b8416de905
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74584316"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519224"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>使用母版页创建站点范围内布局 (VB)
 
@@ -25,7 +25,7 @@ ms.locfileid: "74584316"
 
 ## <a name="introduction"></a>简介
 
-设计良好的网站的一个特性是站点范围内一致的页面布局。 例如，学习 www.asp.net 网站。 撰写本文时，每个页面的顶部和底部都具有相同的内容。 如图1所示，每个页面的顶部都显示一个包含 Microsoft 社区列表的灰色栏。 这是网站徽标，其中包含已翻译的网站的语言列表，以及核心部分：家庭版、入门版、学习版、下载版等。 同样，页面底部还包括有关 www.asp.net 上的广告、版权声明和隐私声明的链接的信息。
+设计良好的网站的一个特性是站点范围内一致的页面布局。 以 www.asp.net 网站中，为例。 撰写本文时，每个页面的顶部和底部都具有相同的内容。 如图1所示，每个页面的顶部都显示一个包含 Microsoft 社区列表的灰色栏。 这是网站徽标，其中包含已翻译的网站的语言列表，以及核心部分：家庭版、入门版、学习版、下载版等。 同样，页面底部包括有关广告 www.asp.net 、 版权声明和指向隐私声明的链接上的信息。
 
 [![www.asp.net 网站在所有页面中采用一致的外观](creating-a-site-wide-layout-using-master-pages-vb/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image1.png)
 
@@ -227,7 +227,7 @@ ms.locfileid: "74584316"
 > [!NOTE]
 > 如本示例所示，母版页可能包含服务器端 Web 控件、代码和事件处理程序。
 
-## <a name="summary"></a>总结
+## <a name="summary"></a>摘要
 
 通过母版页，ASP.NET 开发人员可以设计出一个易于更新的一致站点范围的布局。 创建母版页及其关联的内容页与创建标准 ASP.NET 页一样简单，因为 Visual Web Developer 提供丰富的设计时支持。
 

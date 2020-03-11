@@ -2,18 +2,18 @@
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 title: 调整 DropShadow （C#）的 Z 索引 |Microsoft Docs
 author: wenz
-description: AJAX 控件工具包中的 DropShadow 控件扩展了一个带有投影的面板。 但是，这种阴影有时会与其他控件冲突，(.。。
+description: AJAX 控件工具包中的 DropShadow 控件扩展了一个带有投影的面板。 但是，这种阴影有时会与其他控件冲突，(...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 14133833-e518-4347-87b9-6b6f71f14a77
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 12bc7f0430f1f30ff964cd9547ee1e9b0aa7423c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574316"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497480"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>调整 DropShadow 的 Z-索引 (C#)
 
@@ -63,4 +63,4 @@ AJAX 控件工具包中的 DropShadow 控件扩展了一个带有投影的面板
 后：菜单项出现（[单击以查看完全大小的图像](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png)）
 
 > [!div class="step-by-step"]
-> [下一页](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [下一部分](manipulating-dropshadow-properties-from-client-code-cs.md)

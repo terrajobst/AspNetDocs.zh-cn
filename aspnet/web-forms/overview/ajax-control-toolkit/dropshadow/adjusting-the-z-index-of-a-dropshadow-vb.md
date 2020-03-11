@@ -2,18 +2,18 @@
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 title: 调整 DropShadow 的 Z 索引（VB） |Microsoft Docs
 author: wenz
-description: AJAX 控件工具包中的 DropShadow 控件扩展了一个带有投影的面板。 但是，这种阴影有时会与其他控件冲突，(.。。
+description: AJAX 控件工具包中的 DropShadow 控件扩展了一个带有投影的面板。 但是，这种阴影有时会与其他控件冲突，(...
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: ecb004b5-82c0-44fb-bcaf-233fffac6195
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 10495a9590ce1f25e9e3fa218ac5144268f50711
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574143"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78497510"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>调整 DropShadow 的 Z-索引 (VB)
 
