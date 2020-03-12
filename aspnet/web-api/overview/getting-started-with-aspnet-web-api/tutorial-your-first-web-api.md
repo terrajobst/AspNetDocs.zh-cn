@@ -8,12 +8,12 @@ ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 2717d93f47be9d4a6548731d8deeca312b25f39f
+ms.sourcegitcommit: 9e3ca74997a67c18589729d4b7303799905473eb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78448550"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79084054"
 ---
 # <a name="get-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 （C#）入门
 
@@ -137,7 +137,7 @@ ASP.NET Web API 是一个用于在 .NET Framework 之上构建 Web API 的框架
 
 若要获取产品列表，请将 HTTP GET 请求发送到 &quot;/api/products&quot;。
 
-JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函数发送 AJAX 请求。 For response 包含 JSON 对象的数组。 `done` 函数指定在请求成功时调用的回调。 在回调中，我们用产品信息更新 DOM。
+JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函数发送 AJAX 请求。 响应包含 JSON 对象的数组。 `done` 函数指定在请求成功时调用的回调。 在回调中，我们用产品信息更新 DOM。
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample4.html)]
 
@@ -165,7 +165,7 @@ JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函数发送 AJAX 请求�
 
 ## <a name="using-f12-to-view-the-http-request-and-response"></a>使用 F12 查看 HTTP 请求和响应
 
-使用 HTTP 服务时，查看 HTTP 请求和请求消息可能非常有用。 可以通过使用 Internet Explorer 9 中的 F12 开发人员工具来执行此操作。 在 Internet Explorer 9 中，按**F12**打开工具。 单击 "**网络**" 选项卡，然后按 "**开始捕获**"。 现在返回网页并按**F5**重新加载网页。 Internet Explorer 将捕获浏览器与 web 服务器之间的 HTTP 流量。 "摘要" 视图显示页面的所有网络流量：
+使用 HTTP 服务时，查看 HTTP 请求和响应消息可能非常有用。 可以通过使用 Internet Explorer 9 中的 F12 开发人员工具来执行此操作。 在 Internet Explorer 9 中，按**F12**打开工具。 单击 "**网络**" 选项卡，然后按 "**开始捕获**"。 现在返回网页并按**F5**重新加载网页。 Internet Explorer 将捕获浏览器与 web 服务器之间的 HTTP 流量。 "摘要" 视图显示页面的所有网络流量：
 
 ![](tutorial-your-first-web-api/_static/image14.png)
 
