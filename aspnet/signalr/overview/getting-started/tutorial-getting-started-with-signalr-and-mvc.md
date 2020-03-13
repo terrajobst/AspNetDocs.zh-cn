@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: 教程： SignalR 2 和 MVC 5 的实时聊天 |Microsoft Docs
+title: 教程：与 SignalR 2 和 MVC 5 实时聊天 |Microsoft Docs
 author: bradygaster
 description: 本教程介绍如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 SignalR 添加到 MVC 5 应用程序。
 ms.author: bradyg
@@ -10,13 +10,13 @@ msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-s
 msc.type: authoredcontent
 ms.topic: tutorial
 ms.openlocfilehash: 5671e4f0123ca2b0cb5314336cf4411467feac70
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600476"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78431618"
 ---
-# <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>教程： SignalR 2 和 MVC 5 的实时聊天
+# <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>教程：通过 SignalR 2 和 MVC 5 进行实时聊天
 
 本教程介绍如何使用 ASP.NET SignalR 2 创建实时聊天应用程序。 将 SignalR 添加到 MVC 5 应用程序，并创建聊天视图来发送和显示消息。
 
@@ -29,9 +29,9 @@ ms.locfileid: "74600476"
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ，提供**ASP.NET 和 web 开发**工作负荷。
+* 带有 ASP.NET 和 Web 开发工作负荷的 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)。
 
 ## <a name="set-up-the-project"></a>设置项目
 

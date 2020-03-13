@@ -10,11 +10,11 @@ msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtim
 msc.type: authoredcontent
 ms.topic: tutorial
 ms.openlocfilehash: 2503e90735d6cfa445ee08c9e43f8443aa106096
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600457"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78450116"
 ---
 # <a name="tutorial-create-high-frequency-real-time-app-with-signalr-2"></a>教程：通过 SignalR 2 创建高频实时应用
 
@@ -38,9 +38,9 @@ ms.locfileid: "74600457"
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>系统必备
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ，提供**ASP.NET 和 web 开发**工作负荷。
+* 带有 ASP.NET 和 Web 开发工作负荷的 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)。
 
 ## <a name="set-up-the-project"></a>设置项目
 
@@ -62,7 +62,7 @@ ms.locfileid: "74600457"
 
     此步骤将创建*MoveShapeHub.cs*类文件。 同时，它将一组支持 SignalR 的脚本文件和程序集引用添加到该项目中。
 
-1.  > **NuGet 包管理器**" > **程序包管理器控制台**" 中选择 "**工具**"。
+1. 选择“工具” > “NuGet 包管理器” > “包管理器控制台”。
 
 1. 在 "**程序包管理器控制台**" 中运行以下命令：
 

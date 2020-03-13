@@ -9,22 +9,22 @@ ms.date: 03/12/2010
 msc.legacyurl: /entity-framework
 msc.type: content
 ms.openlocfilehash: c6fe7605a7386621bd4a962b3c3b011fb80b11c8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118253"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78472274"
 ---
 # <a name="entity-framework"></a>Entity Framework
 
-实体框架 (EF) 是一种对象关系映射程序支持.NET 开发人员可以使用关系数据使用特定于域的对象。 它不要求提供开发人员通常需要编写的大部分数据访问代码。
+实体框架（EF）是一个对象关系映射程序，它使 .NET 开发人员能够使用特定于域的对象处理关系数据。 开发人员无需再像往常一样编写大部分数据访问代码。
 
-- [明白了吧：](https://msdn.com/data/ee712906)添加到你的项目并开始充分利用此强大 O/rm。
-- [开始使用：](https://msdn.com/data/ee712907)请访问视频和教程，可帮助您充分利用你的数据的指南。
-- [获取帮助：](https://msdn.com/data/hh913619)了解如何获取专家的帮助和 Stack Overflow 上的数据社区参与。
-- [参与：](https://github.com/aspnet/EntityFramework6)了解如何有助于使实体框架中，一个开放式开发模型，甚至更好地通过访问 GitHub 站点。
+- [获取：](https://msdn.com/data/ee712906)将此项添加到项目，开始利用此强大的 O/RM。
+- [入门：](https://msdn.com/data/ee712907)请访问有关可帮助你充分利用数据的视频和教程的指南。
+- [获取帮助：](https://msdn.com/data/hh913619)了解如何从专家那里获取帮助并向数据社区提供 Stack Overflow。
+- [归入](https://github.com/aspnet/EntityFramework6)了解如何通过访问 GitHub 站点来帮助建立实体框架、开放开发模型，甚至更好。
 
-使用实体框架和 ASP.NET
+将实体框架与 ASP.NET 一起使用
 
 - [Web 窗体教程](web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
 - [MVC 教程](mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)

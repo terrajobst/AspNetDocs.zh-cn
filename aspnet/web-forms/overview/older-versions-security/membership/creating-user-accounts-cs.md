@@ -9,11 +9,11 @@ ms.assetid: f175278c-6079-4d91-b9b4-2493ed43d9ec
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 955592320e7d36c7ae3b9c03a361bee2183f1776
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625481"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78512978"
 ---
 # <a name="creating-user-accounts-c"></a>创建用户帐户 (C#)
 
@@ -23,7 +23,7 @@ ms.locfileid: "74625481"
 
 > 在本教程中，我们将探讨如何使用成员身份框架（通过 SqlMembershipProvider）创建新的用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置 CreateUserWizard 控件。
 
-## <a name="introduction"></a>介绍
+## <a name="introduction"></a>简介
 
 在<a id="_msoanchor_1"> </a>[前面的教程](creating-the-membership-schema-in-sql-server-cs.md)中，我们在数据库中安装了应用程序服务架构，后者添加了 `SqlMembershipProvider` 和 `SqlRoleProvider`所需的表、视图和存储过程。 这会创建我们在本系列的其余教程中所需的基础结构。 在本教程中，我们将探讨如何使用成员身份框架（通过 `SqlMembershipProvider`）来创建新的用户帐户。 我们将了解如何以编程方式和通过 ASP 创建新用户。NET 的内置 CreateUserWizard 控件。
 

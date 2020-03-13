@@ -9,11 +9,11 @@ ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
 ms.openlocfilehash: 6169c972ad0f4ee2079d3638c54a5accc4b8b3de
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519344"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78432734"
 ---
 # <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>创建具有登录、电子邮件确认和密码重置功能的安全 ASP.NET MVC 5 Web 应用 (C#)
 
@@ -29,7 +29,7 @@ ms.locfileid: "76519344"
 首先，安装并运行[适用于 Web 或 Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=299058) 的 [Visual Studio Express 2013](https://go.microsoft.com/fwlink/?LinkId=306566)。 安装[Visual Studio 2013 更新 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更高版本。
 
 > [!NOTE]
-> 警告：必须安装[Visual Studio 2013 更新 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更高版本才能完成本教程。
+> 警告：若要完成本教程，您必须安装[Visual Studio 2013 更新 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更高版本。
 
 1. 创建新的 ASP.NET Web 项目，并选择 MVC 模板。 Web 窗体还支持 ASP.NET Identity，因此你可以按照 web 窗体应用程序中的类似步骤进行操作。  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
@@ -155,13 +155,13 @@ ms.locfileid: "76519344"
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image5.png)
 
-单击 "**管理**" 链接。 请注意与此帐户关联的**外部登录名： 0** 。
+单击 "**管理**" 链接。 请注意 **外部登录名：0** 与此帐户关联。
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image6.png)
 
 单击 "其他登录服务" 链接，并接受应用请求。 这两个帐户已合并，你将能够使用这两个帐户进行登录。 你可能希望用户在身份验证服务中的社交日志关闭或无法访问其社交帐户时添加本地帐户。
 
-在下图中，Tom 是中的社交登录（你可以在页面上显示的**外部登录名： 1**中查看）。
+在下图中，Tom 是中的社交登录（可从 **外部登录中查看：1** 显示在页面上）。
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image7.png)
 

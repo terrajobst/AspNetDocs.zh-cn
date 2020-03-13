@@ -9,11 +9,11 @@ ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
 ms.openlocfilehash: 81cca22cb4752d071d2a68986ae9ac2bed737594
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633176"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78520022"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>通过模型绑定和 web 窗体检索和显示数据
 
@@ -121,7 +121,7 @@ ms.locfileid: "74633176"
 
 本教程使用[Code First 迁移](https://docs.microsoft.com/ef/ef6/modeling/code-first/migrations/)来创建对象和数据库表。 这些表存储有关学生及其课程的信息。
 
-   1.  > **NuGet 包管理器**" > **程序包管理器控制台**" 中选择 "**工具**"。
+   1. 选择“工具” > “NuGet 包管理器” > “包管理器控制台”。
 
    2. 在 "**程序包管理器控制台**" 中运行以下命令：  
       `enable-migrations -ContextTypeName ContosoUniversityModelBinding.Models.SchoolContext`

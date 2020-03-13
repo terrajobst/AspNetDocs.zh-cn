@@ -10,8 +10,8 @@
 
 需要对 [Git 和 GitHub.com](https://guides.github.com/activities/hello-world/) 有基本的理解。
 
-* 创建一个[问题](https://github.com/aspnet/AspNetDocs/issues/new)，描述你想要执行的操作，例如更改现有项目或创建一个新项目。 我们经常要求提供新主题建议的大纲。 请等待团队批准后再投入时间参与进来。
-* 分叉[aspnet/AspNetDocs](https://github.com/aspnet/AspNetDocs/)存储库和分支所做的更改。
+* 创建一个[问题](https://github.com/dotnet/AspNetDocs/issues/new)，描述你想要执行的操作，例如更改现有项目或创建一个新项目。 我们经常要求提供新主题建议的大纲。 请等待团队批准后再投入时间参与进来。
+* 将[dotnet/AspNetDocs](https://github.com/dotnet/AspNetDocs/)存储库分叉，并为更改创建分支。
 * 提交拉取请求以掌握更改。
 * 如果拉取请求分配的标签为 “cla-required”，则[完成贡献许可协议 (CLA)](https://cla.dotnetfoundation.org/)。
 * 对拉取请求反馈进行响应。
@@ -24,11 +24,11 @@
 
 ## <a name="markdown-syntax"></a>Markdown 语法
 
-文章采用 [DocFx 风格的 Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) 编写，它是 [GitHub 风格的 Markdown (GFM)](https://guides.github.com/features/mastering-markdown/) 的超集。 DFM 语法的 ASP.NET 文档中常用的 UI 功能的示例，请参阅[元数据和 Markdown 模板](https://github.com/dotnet/docs/blob/master/styleguide/template.md).NET 文档存储库样式指南中。
+文章采用 [DocFx 风格的 Markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) 编写，它是 [GitHub 风格的 Markdown (GFM)](https://guides.github.com/features/mastering-markdown/) 的超集。 有关 ASP.NET 文档中常用的 UI 功能的 DFM 语法示例，请参阅 .NET 文档存储库样式指南中的[元数据和 Markdown 模板](https://github.com/dotnet/docs/blob/master/styleguide/template.md)。
 
 ## <a name="folder-structure-conventions"></a>文件夹结构约定
 
-对于每个Markdown 文件，可能存在图像文件夹和示例代码文件夹。 如果该项目是[signalr/overview/advanced/dependency-injection.md](https://github.com/aspnet/AspNetDocs/blob/master/aspnet/signalr/overview/advanced/dependency-injection.md)，图像位于[signalr/概述/高级/依赖关系注入 /\_静态](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/signalr/overview/advanced/dependency-injection/_static)和示例应用程序项目文件位于[signalr/概述/高级/依赖关系的注入/samples](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/signalr/overview/advanced/dependency-injection/samples)。 中的映像*signalr/overview/advanced/dependency-injection.md*文件呈现的以下 Markdown:
+对于每个Markdown 文件，可能存在图像文件夹和示例代码文件夹。 如果项目是[signalr/概述/高级/依赖关系-注入](https://github.com/dotnet/AspNetDocs/blob/master/aspnet/signalr/overview/advanced/dependency-injection.md)，则这些图像处于[signalr/概述/advanced/依赖关系注入/\_静态](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/signalr/overview/advanced/dependency-injection/_static)，示例应用项目文件位于[signalr/概述/高级/依赖关系注入/示例](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/signalr/overview/advanced/dependency-injection/samples)中。 *Signalr/概述/advanced/依赖关系注入*文件中的图像由以下 Markdown 呈现：
 
 ```md
 ![description of image for alt attribute](dependency-injection/_static/image1.png)
@@ -67,7 +67,7 @@ Markdown 文件名称和图像文件名称使用小写。
 
 ## <a name="code-snippets"></a>代码片段
 
-文章经常使用代码片段来说明要点。 DFM 允许将代码复制到 Markdown 文件或引用单独的代码文件。 请尽可能使用单独的代码文件，以最大限度地减少代码中出错的可能性。 代码文件存储在存储库中使用前面所述的示例项目的文件夹结构。
+文章经常使用代码片段来说明要点。 DFM 允许将代码复制到 Markdown 文件或引用单独的代码文件。 请尽可能使用单独的代码文件，以最大限度地减少代码中出错的可能性。 使用前面所述的示例项目的文件夹结构将代码文件存储在存储库中。
 
 以下示例说明了用于 configuration/index.md 文件的 [DFM 代码片段语法](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html#code-snippet)。
 
@@ -114,7 +114,7 @@ DocFX 要求：
 
 * 从 [DocFX 发布](https://github.com/dotnet/docfx/releases)下载并解压缩 “docfx.zip”。
 * 将 DocFX 添加到路径。
-* 在命令外壳中，导航到*aspnet*所在的文件夹*形式包含到 docfx.json*文件，然后运行以下命令：
+* 在命令外壳中，导航到包含*docfx*文件的*aspnet*文件夹，并运行以下命令：
 
   ```console
   docfx --serve
@@ -139,7 +139,7 @@ DocFX 要求：
   alias docfx-serve='mono $HOME/bin/docfx/docfx.exe --serve'
   ```
 
-* 在命令外壳中，导航到*aspnet*所在的文件夹*形式包含到 docfx.json*文件，然后运行以下命令以创建并提供通过其别名的文档：
+* 在命令行界面中，导航到包含*docfx*文件的*aspnet*文件夹，并运行以下命令以通过其别名生成和提供文档：
 
   ```console
   docfx-serve
@@ -149,7 +149,7 @@ DocFX 要求：
 
 ## <a name="voice-and-tone"></a>语气和语调
 
-我们的目标是编写被广泛受众所理解的易懂文档。 为此，我们编写了写作风格指南，请参与者遵守。 有关详细信息，请参阅[语音和语调准则](https://github.com/dotnet/docs/blob/master/styleguide/voice-tone.md).NET 存储库中。
+我们的目标是编写被广泛受众所理解的易懂文档。 为此，我们编写了写作风格指南，请参与者遵守。 有关详细信息，请参阅 .NET 存储库中的[语音和音调指导原则](https://github.com/dotnet/docs/blob/master/styleguide/voice-tone.md)。
 
 ## <a name="microsoft-writing-style-guide"></a>Microsoft 编写风格指南
 
@@ -157,4 +157,4 @@ DocFX 要求：
 
 ## <a name="redirects"></a>重定向
 
-如果删除某篇文章、更改文章的文件名或将其移到另一个文件夹，请创建一个重定向，确保将此项目收藏为书签的人不会收到 404 Not Found 错误。 添加重定向到[主重定向文件](https://github.com/aspnet/AspNetDocs/blob/master/.openpublishing.redirection.json)。
+如果删除某篇文章、更改文章的文件名或将其移到另一个文件夹，请创建一个重定向，确保将此项目收藏为书签的人不会收到 404 Not Found 错误。 添加重定向到[主重定向文件](https://github.com/dotnet/AspNetDocs/blob/master/.openpublishing.redirection.json)。
