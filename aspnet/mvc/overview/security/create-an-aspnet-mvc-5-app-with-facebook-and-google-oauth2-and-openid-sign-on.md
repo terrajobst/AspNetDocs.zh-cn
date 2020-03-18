@@ -2,18 +2,18 @@
 uid: mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 title: 通过 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录（C#）创建 MVC 5 应用 |Microsoft Docs
 author: Rick-Anderson
-description: 本教程演示如何生成一个 ASP.NET MVC 5 web 应用程序，该应用程序使用户能够使用带有外部身份的凭据的 OAuth 2.0 登录 。
+description: 本教程演示如何生成一个 ASP.NET MVC 5 web 应用程序，该应用程序使用户能够使用带有外部身份的凭据的 OAuth 2.0 登录 .。。
 ms.author: riande
 ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
 ms.openlocfilehash: dd2e55d68ceb5a90134e394c00f3a3a231cb27d6
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457682"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78456506"
 ---
 # <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>创建 ASP.NET MVC 5 应用，实现 Facebook、Twitter、LinkedIn 和 Google OAuth2 登录 (C#)
 
@@ -100,7 +100,7 @@ ms.locfileid: "77457682"
 10. IE 会显示“主页”页面，而且不会出现 SSL 警告。  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image13.png)
-11. Google Chrome 也会接受证书，并且不出现警告便显示 HTTPS 内容。 Firefox 会使用自己的证书存储区，因此会显示警告。 对于我们的应用程序，你可以安全地单击 **"我了解风险"** 。   
+11. Google Chrome 也会接受证书，并且不出现警告便显示 HTTPS 内容。 Firefox 会使用自己的证书存储区，因此会显示警告。 对于我们的应用程序，你可以安全地单击 **"我了解风险"**。   
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image14.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "77457682"
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image32.png)
 
-展开**DefaultConnection （MvcAuth）** ，展开 "**表**"，右键单击**AspNetUsers** ，然后单击 "**显示表数据**"。
+展开**DefaultConnection （MvcAuth）**，展开 "**表**"，右键单击**AspNetUsers** ，然后单击 "**显示表数据**"。
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image33.png)
 
