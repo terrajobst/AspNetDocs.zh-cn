@@ -6,18 +6,18 @@ ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/CSharpWebForms
 ms.openlocfilehash: 50d4745eca5954275abaa59dab726e7cf7ea193f
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
-ms.translationtype: MT
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78422252"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77458419"
 ---
 # <a name="samesite-cookie-sample-for-aspnet-472-c-webforms"></a>SameSite cookie sample for ASP.NET 4.7.2 C# WebForms
 
 .NET Framework 4.7 内置了对[SameSite](https://www.owasp.org/index.php/SameSite)属性的支持，但它符合原始标准。
 修补后的行为更改了 `SameSite.None` 的含义，以使用 `None`值发出属性，而不是根本就发出值。 如果要不发出该值，可以将 cookie 的 `SameSite` 属性设置为-1。
 
-## <a name="sampleCode"></a>编写 SameSite 属性
+## <a name="writing-the-samesite-attribute"></a><a name="sampleCode"></a>编写 SameSite 属性
 
 下面是如何在 cookie 上编写 SameSite 属性的示例;
 
@@ -71,13 +71,13 @@ Forms 身份验证 cookie 的默认 sameSite 属性在 `web.config` 中窗体身
 ### <a name="running-the-sample"></a>运行示例
 
 如果运行示例项目，请在初始页面上加载浏览器调试器，并使用它查看站点的 cookie 集合。
-若要在 Edge 和 Chrome 中进行此操作，请按 `F12` 选择 "`Application`" 选项卡，然后单击 "`Storage`" 部分中 "`Cookies`" 选项下的 "站点 URL"。
+若要在 Microsoft Edge 和 Chrome 中进行此操作，请按 `F12` 选择 "`Application`" 选项卡，然后单击 "`Storage`" 部分中 "`Cookies`" 选项下的 "站点 URL"。
 
 ![浏览器调试器 Cookie 列表](sample/img/BrowserDebugger.png)
 
 你可以从上图中看到，当你单击 "创建 Cookie" 按钮的 SameSite 属性值为 `Lax`（与[示例代码](#sampleCode)中设置的值匹配）时，该示例所创建的 cookie 就会看到。
 
-## <a name="interception"></a>拦截不控制的 cookie
+## <a name="intercepting-cookies-you-do-not-control"></a><a name="interception"></a>拦截不控制的 cookie
 
 .NET 4.5.2 引入了新的事件，用于截获标头的写入 `Response.AddOnSendingHeaders`。 这可用于在 cookie 返回到客户端计算机之前截获 cookie。 在示例中，我们将事件绑定到静态方法，该方法检查浏览器是否支持新的 sameSite 更改，如果未设置，则将 cookie 更改为不发出 `None` 属性。
 
@@ -139,7 +139,7 @@ public static void AdjustSpecificCookieSettings()
 }
 ```
 
-## <a name="more-information"></a>详细信息
+## <a name="more-information"></a>更多信息
 
 [Chrome 更新](https://www.chromium.org/updates/same-site)
 

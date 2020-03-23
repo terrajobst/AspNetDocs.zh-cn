@@ -9,11 +9,11 @@ ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
 ms.openlocfilehash: 5974e53e4610dccc7812df261dc97a9b0327de85
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
-ms.translationtype: MT
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78470930"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456681"
 ---
 # <a name="adding-a-new-field"></a>添加新字段
 
@@ -111,7 +111,7 @@ Code First 迁移在 "*迁移*" 文件夹（名称为 *{日期戳}\_Initial.cs* 
 
 构建应用程序（Ctrl + Shift + B）。
 
-由于已将新字段添加到 `Movie` 类，因此还需要更新 "绑定"*白名单*，以便包括此新属性。 更新 `Create` 和 `Edit` 操作方法的 `bind` 属性，以包括 `Rating` 属性：
+由于已将新字段添加到 `Movie` 类，因此还需要更新 "绑定"*允许列表*，以便包括此新属性。 更新 `Create` 和 `Edit` 操作方法的 `bind` 属性，以包括 `Rating` 属性：
 
 [!code-csharp[Main](adding-a-new-field/samples/sample7.cs?highlight=1)]
 
@@ -173,7 +173,7 @@ Code First 迁移在 "*迁移*" 文件夹（名称为 *{日期戳}\_Initial.cs* 
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-单击 **“创建”** 。 现在电影列表中显示了新电影，其中包括评分：
+单击“创建”。 现在电影列表中显示了新电影，其中包括评分：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 
