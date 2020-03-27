@@ -1,98 +1,98 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
-title: 使用模型绑定和 web 窗体的项目添加业务逻辑层 |Microsoft Docs
+title: 向使用模型绑定和 web 窗体的项目添加业务逻辑层 |Microsoft Docs
 author: Rick-Anderson
-description: 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定使数据交互...更多直接-
+description: 本教程系列演示了将模型绑定用于 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互更加直接-。
 ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 7ef664b3-1cc8-4cbf-bb18-9f0f3a3ada2b
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
 ms.openlocfilehash: a824d06d3781e11706f2a48d44ea3ad89bdb7c8b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109166"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78515426"
 ---
-# <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>使用模型绑定和 web 窗体的项目添加业务逻辑层
+# <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>向使用模型绑定和 web 窗体的项目添加业务逻辑层
 
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
-> 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。 本系列开始介绍性材料，后续教程将移动到更高级的概念。
+> 本教程系列演示了将模型绑定用于 ASP.NET Web 窗体项目的基本方面。 与处理数据源对象（如 ObjectDataSource 或 SqlDataSource）相比，模型绑定使数据交互更直接。 此系列从介绍性材料开始，并在后面的教程中转到更高级的概念。
 > 
-> 本教程演示如何使用业务逻辑层模型绑定。 您将设置 OnCallingDataMethods 成员以指定当前页以外的其他对象用于调用数据方法。
+> 本教程演示如何通过业务逻辑层使用模型绑定。 你将设置 OnCallingDataMethods 成员，以指定使用当前页以外的对象来调用数据方法。
 > 
-> 本教程中创建的项目为基础[早期](retrieving-data.md)在本系列的部分。
+> 本教程基于在序列的[前面](retrieving-data.md)部分中创建的项目构建。
 > 
-> 你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。 可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。
+> 可以在或 VB 中C#[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整项目。 可下载的代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，该模板与本教程中所示的 Visual Studio 2013 模板略有不同。
 
-## <a name="what-youll-build"></a>你将生成
+## <a name="what-youll-build"></a>要生成的内容
 
-模型绑定，可将数据交互代码放在 web 页的代码隐藏文件中或在单独的业务逻辑类中。 前面的教程已经演示了如何使用代码隐藏文件进行数据交互的代码。 此方法适用于小型站点，但它可能导致时维护大型站点代码重复和面临更大困难。 它可以是以编程方式测试由于没有抽象层驻留在代码隐藏文件中的代码非常困难。
+通过模型绑定，可以将数据交互代码放入网页的代码隐藏文件中，也可以放在单独的业务逻辑类中。 前面的教程演示了如何使用代码隐藏文件来实现数据交互代码。 此方法适用于小型站点，但在维护大型站点时，这可能会导致代码重复并更难。 由于没有抽象层，因此也可能很难以编程方式测试驻留在代码隐藏文件中的代码。
 
-若要集中进行数据交互代码，可以创建包含所有与数据进行交互的逻辑将业务逻辑层。 然后从您的 web 页面中调用业务逻辑层。 本教程介绍如何将所有已在前面的教程到业务逻辑层，编写的代码移动，然后使用该代码从页中。
+为了集中数据交互代码，你可以创建一个包含用于与数据进行交互的所有逻辑的业务逻辑层。 然后从网页调用业务逻辑层。 本教程介绍如何将您在前面的教程中编写的所有代码移到业务逻辑层，然后使用这些页面中的代码。
 
 在本教程中，你将：
 
-1. 将代码从代码隐藏文件移到业务逻辑层
-2. 更改数据绑定控件，以调用业务逻辑层中的方法
+1. 将代码从代码隐藏文件移动到业务逻辑层
+2. 更改数据绑定控件以调用业务逻辑层中的方法
 
 ## <a name="create-business-logic-layer"></a>创建业务逻辑层
 
-现在，您将创建在 web 页面中调用的类。 此类中的方法看起来类似于前面教程中使用的方法，并包括值提供程序属性。
+现在，您将创建从网页中调用的类。 此类中的方法与您在前面的教程中使用的方法类似，并包括值提供程序特性。
 
-首先，添加一个名为的新文件夹**BLL**。
+首先，添加一个名为**BLL**的新文件夹。
 
 ![添加文件夹](adding-business-logic-layer/_static/image1.png)
 
-在 BLL 文件夹中，创建一个名为的新类**SchoolBL.cs**。 它将包含所有原先位于代码隐藏文件中的数据操作。 方法是在代码隐藏文件中，方法几乎相同，但将包括一些更改。
+在 BLL 文件夹中，创建一个名为**SchoolBL.cs**的新类。 它将包含最初驻留在代码隐藏文件中的所有数据操作。 方法与代码隐藏文件中的方法几乎相同，但会包含一些更改。
 
-请注意，最重要的更改是无法再执行中的实例中的代码**页**类。 页类包含**TryUpdateModel**方法并**ModelState**属性。 当此代码移到业务逻辑层中时，再也不调用这些成员的页类的实例。 若要解决此问题，必须添加**ModelMethodContext**访问 TryUpdateModel 或 ModelState 任何方法参数。 使用此 ModelMethodContext 参数来调用 TryUpdateModel 或检索 ModelState。 不需要更改 web 页后，可以为此新参数帐户中的任何内容。
+需要注意的最重要的更改是，您不再从**Page**类的实例中执行该代码。 Page 类包含**TryUpdateModel**方法和**ModelState**属性。 将此代码移到业务逻辑层后，将不再具有 Page 类的实例来调用这些成员。 若要解决此问题，必须将**ModelMethodContext**参数添加到访问 TryUpdateModel 或 ModelState 的任何方法。 使用此 ModelMethodContext 参数可以调用 TryUpdateModel 或检索 ModelState。 无需更改网页中的任何内容即可为此新参数提供帐户。
 
-将以下代码替换为 SchoolBL.cs 中的代码。
+将 SchoolBL.cs 中的代码替换为以下代码。
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample1.cs)]
 
-## <a name="revise-existing-pages-to-retrieve-data-from-business-logic-layer"></a>修改现有页面以从业务逻辑层中检索数据
+## <a name="revise-existing-pages-to-retrieve-data-from-business-logic-layer"></a>修改现有页面以从业务逻辑层检索数据
 
-最后，将从在使用业务逻辑层的代码隐藏文件中使用查询来转换 Students.aspx、 AddStudent.aspx 和 Courses.aspx 的页。
+最后，通过将代码隐藏文件中的查询转换为使用业务逻辑层，将 pages. .aspx、AddStudent 和 default.aspx 页转换为。
 
-面向学生、 AddStudent 和课程的代码隐藏文件，在删除或注释掉以下的查询方法：
+在学生、AddStudent 和课程的代码隐藏文件中，删除或注释掉以下查询方法：
 
 - studentsGrid\_GetData
 - studentsGrid\_UpdateItem
-- studentsGrid\_DeleteItem
+- studentsGrid\_Deleteitem.php
 - addStudentForm\_InsertItem
 - coursesGrid\_GetData
 
-现在应在与数据操作相关的代码隐藏文件中具有任何代码。
+你现在应在代码隐藏文件中没有代码，这与数据操作有关。
 
-**OnCallingDataMethods**事件处理程序，您可以指定要用于数据方法的对象。 Students.aspx，在添加该事件处理程序的值并将数据方法的名称更改为业务逻辑类中方法的名称。
+使用**OnCallingDataMethods**事件处理程序可以指定要用于数据方法的对象。 在 "student" 中，为该事件处理程序添加一个值，然后将数据方法的名称更改为业务逻辑类中的方法的名称。
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample2.aspx?highlight=3-4,8)]
 
-在 Students.aspx 的代码隐藏文件，定义 CallingDataMethods 事件的事件处理程序。 在此事件处理程序中，指定数据操作的业务逻辑类。
+在 "student" 的代码隐藏文件中，为 CallingDataMethods 事件定义事件处理程序。 在此事件处理程序中，您将指定数据操作的业务逻辑类。
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample3.cs)]
 
-在 AddStudent.aspx，进行类似更改。
+在 AddStudent 中，进行类似的更改。
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample4.aspx?highlight=3-4)]
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample5.cs)]
 
-在 Courses.aspx，进行类似更改。
+在 default.aspx 中，进行类似的更改。
 
 [!code-aspx[Main](adding-business-logic-layer/samples/sample6.aspx?highlight=3-4)]
 
 [!code-csharp[Main](adding-business-logic-layer/samples/sample7.cs)]
 
-运行应用程序，并注意到的所有页函数与在其之前。 验证逻辑也可以正常工作。
+运行应用程序，并注意所有页面的功能都与以前相同。 验证逻辑也能正常工作。
 
-## <a name="conclusion"></a>结束语
+## <a name="conclusion"></a>结论
 
-在本教程中，你重新结构化应用程序以使用数据访问层和业务逻辑层。 指定数据控件使用不是当前页的数据操作的对象。
+在本教程中，您将重新构建应用程序以使用数据访问层和业务逻辑层。 您指定数据控件使用的对象不是数据操作的当前页。
 
 > [!div class="step-by-step"]
 > [上一篇](using-query-string-values-to-retrieve-data.md)

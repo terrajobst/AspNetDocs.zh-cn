@@ -1,85 +1,85 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
-title: 使用查询字符串值以使用模型绑定筛选数据和 web 窗体 |Microsoft Docs
+title: 使用查询字符串值通过模型绑定和 web 窗体筛选数据 |Microsoft Docs
 author: Rick-Anderson
-description: 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定使数据交互...更多直接-
+description: 本教程系列演示了将模型绑定用于 ASP.NET Web 窗体项目的基本方面。 模型绑定使数据交互更加直接-。
 ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
 ms.openlocfilehash: 143ddcb40b576a3129e659b90bfc8321c061a547
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130239"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78519080"
 ---
-# <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>模型绑定和 web 窗体中使用查询字符串值以筛选数据
+# <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>使用查询字符串值通过模型绑定和 web 窗体筛选数据
 
 通过[Tom FitzMacken](https://github.com/tfitzmac)
 
-> 本系列教程演示了一个 ASP.NET Web 窗体项目中使用模型绑定的基本方面。 模型绑定可以更直接的比处理数据源对象 （如 ObjectDataSource 或 SqlDataSource） 的数据交互。 本系列开始介绍性材料，后续教程将移动到更高级的概念。
+> 本教程系列演示了将模型绑定用于 ASP.NET Web 窗体项目的基本方面。 与处理数据源对象（如 ObjectDataSource 或 SqlDataSource）相比，模型绑定使数据交互更直接。 此系列从介绍性材料开始，并在后面的教程中转到更高级的概念。
 > 
-> 本教程演示如何在查询字符串中传递一个值，并使用该值来通过模型绑定检索数据。
+> 本教程介绍如何在查询字符串中传递值，并使用该值通过模型绑定来检索数据。
 > 
-> 本教程中创建的项目为基础[早期](retrieving-data.md)在本系列的部分。
+> 本教程基于在序列的[前面](retrieving-data.md)部分中创建的项目构建。
 > 
-> 你可以[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整的项目 C# 或 vb。 可下载代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，为在本教程中所示的 Visual Studio 2013 模板稍有不同。
+> 可以在或 VB 中C#[下载](https://go.microsoft.com/fwlink/?LinkId=286116)完整项目。 可下载的代码适用于 Visual Studio 2012 或 Visual Studio 2013。 它使用 Visual Studio 2012 模板，该模板与本教程中所示的 Visual Studio 2013 模板略有不同。
 
-## <a name="what-youll-build"></a>你将生成
+## <a name="what-youll-build"></a>要生成的内容
 
 在本教程中，你将：
 
-1. 添加新的页显示已注册的课程的学生
-2. 基于查询字符串中的值所选学生检索已注册的课程
-3. 从网格视图中为超链接使用查询字符串值添加到新页面
+1. 添加新页面以显示学生的已注册课程
+2. 根据查询字符串中的值检索所选学生的已注册课程
+3. 使用从网格视图到新页面的查询字符串值添加超链接
 
-本教程中的步骤是非常类似于你未在早期[教程](sorting-paging-and-filtering-data.md)以筛选根据用户选择下拉列表中显示的学生。 在该教程中，使用**控制**中选择的方法来指定参数值来自控件的属性。 在本教程中，你将使用**QueryString** select 方法来指定参数值来自查询字符串中的属性。
+本教程中的步骤与您在前面的[教程](sorting-paging-and-filtering-data.md)中执行的步骤非常相似，可以根据下拉列表中的用户选择筛选显示的学生。 在本教程中，您在 select 方法中使用了**control**特性来指定参数值来自控件。 在本教程中，您将使用 select 方法中的**QueryString**特性来指定参数值来自查询字符串。
 
-## <a name="add-new-page-for-displaying-a-students-courses"></a>添加用于显示学生的课程的新页面
+## <a name="add-new-page-for-displaying-a-students-courses"></a>添加新页面以显示学生的课程
 
-添加使用 Site.master 母版页的新 web 窗体并将该页命名为**课程**。
+添加新的 web 窗体，该窗体使用网站母版页，并为页面**课程**命名。
 
-在中**Courses.aspx**文件中，添加要显示所选学生的课程的网格视图。
+在 " **default.aspx** " 文件中，添加 "网格" 视图以显示所选学生的课程。
 
 [!code-aspx[Main](using-query-string-values-to-retrieve-data/samples/sample1.aspx)]
 
 ## <a name="define-the-select-method"></a>定义 select 方法
 
-在中**Courses.aspx.cs**，将添加 select 方法使用网格视图中指定的名称**SelectMethod**属性。 在该方法中，将定义用于检索学生的课程，查询和指定参数来自具有相同名称作为参数的查询字符串值。
+在**Courses.aspx.cs**中，您将用在网格视图的**SelectMethod**属性中指定的名称添加 select 方法。 在该方法中，你将定义用于检索学生课程的查询，并指定参数来自与参数名称相同的查询字符串值。
 
-首先，必须添加以下**使用**语句。
+首先，必须添加以下**using**语句。
 
 [!code-csharp[Main](using-query-string-values-to-retrieve-data/samples/sample2.cs)]
 
-然后，将以下代码添加到 Courses.aspx.cs:
+然后，将以下代码添加到 Courses.aspx.cs：
 
 [!code-csharp[Main](using-query-string-values-to-retrieve-data/samples/sample3.cs)]
 
-查询字符串属性意味着，一个名为 StudentID 的查询字符串值自动分配给此方法中的参数。
+QueryString 属性表示将名为 StudentID 的查询字符串值自动分配给此方法中的参数。
 
-## <a name="add-hyperlink-with-query-string-value"></a>添加超链接使用查询字符串值
+## <a name="add-hyperlink-with-query-string-value"></a>添加带查询字符串值的超链接
 
-在上 Students.aspx 网格视图中，您将添加超链接字段链接到新的课程页。 超链接将包含学生的 id 的查询字符串值。
+在 "student" 的 "网格" 视图中，您将添加链接到您的新课程页面的超链接字段。 超链接将包含一个包含学生 id 的查询字符串值。
 
-在 Students.aspx，将以下字段添加到字段的正下方的网格视图列的总信用额度。
+在 "student" 中，将以下字段添加到 "网格" 视图中紧靠总信用额度字段下方的列。
 
 [!code-aspx[Main](using-query-string-values-to-retrieve-data/samples/sample4.aspx?highlight=7-8)]
 
-运行应用程序，并注意到网格视图现在包含课程链接。
+运行应用程序，并注意 "网格" 视图现在包含 "课程" 链接。
 
 ![添加超链接](using-query-string-values-to-retrieve-data/_static/image1.png)
 
-当您单击的链接之一时，您将看到该学生的已注册的课程。
+单击其中一个链接时，将看到该学生注册的课程。
 
 ![显示课程](using-query-string-values-to-retrieve-data/_static/image2.png)
 
-## <a name="conclusion"></a>结束语
+## <a name="conclusion"></a>结论
 
-在本教程中，您添加了使用查询字符串值的链接。 该查询字符串值用于在 select 方法的参数值。
+在本教程中，你添加了一个带有查询字符串值的链接。 你将查询字符串值用于 select 方法中的参数值。
 
-在接下来[教程](adding-business-logic-layer.md)，会将代码隐藏文件的代码移动到业务逻辑层和数据访问层。
+在下一[教程](adding-business-logic-layer.md)中，你将代码从代码隐藏文件移动到业务逻辑层和数据访问层。
 
 > [!div class="step-by-step"]
 > [上一页](integrating-jquery-ui.md)
